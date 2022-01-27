@@ -34,8 +34,8 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.live.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.live.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -55,6 +55,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private string casterName;
 
 		private string sideOutputUrl;
+
+		private string syncGroupsConfig;
 
 		private string casterId;
 
@@ -167,6 +169,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				sideOutputUrl = value;
 				DictionaryUtil.Add(QueryParameters, "SideOutputUrl", value);
+			}
+		}
+
+		public string SyncGroupsConfig
+		{
+			get
+			{
+				return syncGroupsConfig;
+			}
+			set	
+			{
+				syncGroupsConfig = value;
+				DictionaryUtil.Add(QueryParameters, "SyncGroupsConfig", value);
 			}
 		}
 

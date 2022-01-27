@@ -34,8 +34,8 @@ namespace Aliyun.Acs.foas.Model.V20181111
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.foas.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.foas.Endpoint.endpointRegionalType, null);
             }
 			Protocol = ProtocolType.HTTPS;
 			UriPattern = "/api/v2/projects/[projectName]/jobs/[jobName]/commit";
@@ -44,6 +44,10 @@ namespace Aliyun.Acs.foas.Model.V20181111
 
 		private string projectName;
 
+		private bool? recommendOnly;
+
+		private string suspendPeriods;
+
 		private float? maxCU;
 
 		private string configure;
@@ -51,6 +55,8 @@ namespace Aliyun.Acs.foas.Model.V20181111
 		private bool? isOnOff;
 
 		private string jobName;
+
+		private List<SuspendPeriodParam> suspendPeriodParams = new List<SuspendPeriodParam>(){ };
 
 		public string ProjectName
 		{
@@ -62,6 +68,32 @@ namespace Aliyun.Acs.foas.Model.V20181111
 			{
 				projectName = value;
 				DictionaryUtil.Add(PathParameters, "projectName", value);
+			}
+		}
+
+		public bool? RecommendOnly
+		{
+			get
+			{
+				return recommendOnly;
+			}
+			set	
+			{
+				recommendOnly = value;
+				DictionaryUtil.Add(BodyParameters, "recommendOnly", value.ToString());
+			}
+		}
+
+		public string SuspendPeriods
+		{
+			get
+			{
+				return suspendPeriods;
+			}
+			set	
+			{
+				suspendPeriods = value;
+				DictionaryUtil.Add(BodyParameters, "suspendPeriods", value);
 			}
 		}
 
@@ -114,6 +146,86 @@ namespace Aliyun.Acs.foas.Model.V20181111
 			{
 				jobName = value;
 				DictionaryUtil.Add(PathParameters, "jobName", value);
+			}
+		}
+
+		public List<SuspendPeriodParam> SuspendPeriodParams
+		{
+			get
+			{
+				return suspendPeriodParams;
+			}
+
+			set
+			{
+				suspendPeriodParams = value;
+				for (int i = 0; i < suspendPeriodParams.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"suspendPeriodParam." + (i + 1) + ".endTime", suspendPeriodParams[i].EndTime);
+					DictionaryUtil.Add(BodyParameters,"suspendPeriodParam." + (i + 1) + ".startTime", suspendPeriodParams[i].StartTime);
+					DictionaryUtil.Add(BodyParameters,"suspendPeriodParam." + (i + 1) + ".plan", suspendPeriodParams[i].Plan);
+					DictionaryUtil.Add(BodyParameters,"suspendPeriodParam." + (i + 1) + ".policy", suspendPeriodParams[i].Policy);
+				}
+			}
+		}
+
+		public class SuspendPeriodParam
+		{
+
+			private string endTime;
+
+			private string startTime;
+
+			private string plan;
+
+			private string policy;
+
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			public string Plan
+			{
+				get
+				{
+					return plan;
+				}
+				set	
+				{
+					plan = value;
+				}
+			}
+
+			public string Policy
+			{
+				get
+				{
+					return policy;
+				}
+				set	
+				{
+					policy = value;
+				}
 			}
 		}
 

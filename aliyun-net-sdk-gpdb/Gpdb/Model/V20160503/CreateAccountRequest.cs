@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.gpdb;
 using Aliyun.Acs.gpdb.Transform;
 using Aliyun.Acs.gpdb.Transform.V20160503;
 
@@ -30,34 +31,38 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
     public class CreateAccountRequest : RpcAcsRequest<CreateAccountResponse>
     {
         public CreateAccountRequest()
-            : base("gpdb", "2016-05-03", "CreateAccount", "gpdb", "openAPI")
+            : base("gpdb", "2016-05-03", "CreateAccount")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
-		private string accountPassword;
+		private string accountDescription;
 
 		private string accountName;
-
-		private string databaseName;
 
 		private string dBInstanceId;
 
 		private long? ownerId;
 
-		private string accountDescription;
+		private string accountPassword;
 
-		private string accessKeyId;
+		private string databaseName;
 
-		public string AccountPassword
+		public string AccountDescription
 		{
 			get
 			{
-				return accountPassword;
+				return accountDescription;
 			}
 			set	
 			{
-				accountPassword = value;
-				DictionaryUtil.Add(QueryParameters, "AccountPassword", value);
+				accountDescription = value;
+				DictionaryUtil.Add(QueryParameters, "AccountDescription", value);
 			}
 		}
 
@@ -71,19 +76,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			{
 				accountName = value;
 				DictionaryUtil.Add(QueryParameters, "AccountName", value);
-			}
-		}
-
-		public string DatabaseName
-		{
-			get
-			{
-				return databaseName;
-			}
-			set	
-			{
-				databaseName = value;
-				DictionaryUtil.Add(QueryParameters, "DatabaseName", value);
 			}
 		}
 
@@ -113,29 +105,29 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public string AccountDescription
+		public string AccountPassword
 		{
 			get
 			{
-				return accountDescription;
+				return accountPassword;
 			}
 			set	
 			{
-				accountDescription = value;
-				DictionaryUtil.Add(QueryParameters, "AccountDescription", value);
+				accountPassword = value;
+				DictionaryUtil.Add(QueryParameters, "AccountPassword", value);
 			}
 		}
 
-		public string AccessKeyId
+		public string DatabaseName
 		{
 			get
 			{
-				return accessKeyId;
+				return databaseName;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				databaseName = value;
+				DictionaryUtil.Add(QueryParameters, "DatabaseName", value);
 			}
 		}
 

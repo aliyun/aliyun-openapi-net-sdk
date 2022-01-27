@@ -30,17 +30,35 @@ namespace Aliyun.Acs.cr.Model.V20160607
     public class CancelRepoBuildRequest : RoaAcsRequest<CancelRepoBuildResponse>
     {
         public CancelRepoBuildRequest()
-            : base("cr", "2016-06-07", "CancelRepoBuild", "cr", "openAPI")
+            : base("cr", "2016-06-07", "CancelRepoBuild", "acr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/repos/[RepoNamespace]/[RepoName]/build/[BuildId]/cancel";
 			Method = MethodType.POST;
         }
+
+		private string buildId;
 
 		private string repoNamespace;
 
 		private string repoName;
 
-		private string buildId;
+		public string BuildId
+		{
+			get
+			{
+				return buildId;
+			}
+			set	
+			{
+				buildId = value;
+				DictionaryUtil.Add(PathParameters, "BuildId", value);
+			}
+		}
 
 		public string RepoNamespace
 		{
@@ -65,19 +83,6 @@ namespace Aliyun.Acs.cr.Model.V20160607
 			{
 				repoName = value;
 				DictionaryUtil.Add(PathParameters, "RepoName", value);
-			}
-		}
-
-		public string BuildId
-		{
-			get
-			{
-				return buildId;
-			}
-			set	
-			{
-				buildId = value;
-				DictionaryUtil.Add(PathParameters, "BuildId", value);
 			}
 		}
 

@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class UpdateUserRequest : RpcAcsRequest<UpdateUserResponse>
     {
         public UpdateUserRequest()
-            : base("dms-enterprise", "2018-11-01", "UpdateUser", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "UpdateUser", "dms-enterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -55,6 +55,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private long? uid;
 
+		[JsonProperty(PropertyName = "RoleNames")]
 		public string RoleNames
 		{
 			get
@@ -68,6 +69,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxResultCount")]
 		public long? MaxResultCount
 		{
 			get
@@ -81,6 +83,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxExecuteCount")]
 		public long? MaxExecuteCount
 		{
 			get
@@ -94,6 +97,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserNick")]
 		public string UserNick
 		{
 			get
@@ -107,6 +111,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Mobile")]
 		public string Mobile
 		{
 			get
@@ -120,6 +125,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -133,6 +139,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Uid")]
 		public long? Uid
 		{
 			get

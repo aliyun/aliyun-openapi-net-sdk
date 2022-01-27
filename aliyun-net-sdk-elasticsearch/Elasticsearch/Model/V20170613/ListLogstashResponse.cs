@@ -29,6 +29,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private List<ListLogstash_Instance> result;
 
+		private ListLogstash_Headers headers;
+
 		public string RequestId
 		{
 			get
@@ -53,6 +55,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
+		public ListLogstash_Headers Headers
+		{
+			get
+			{
+				return headers;
+			}
+			set	
+			{
+				headers = value;
+			}
+		}
+
 		public class ListLogstash_Instance
 		{
 
@@ -71,6 +85,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			private string createdAt;
 
 			private string updatedAt;
+
+			private List<ListLogstash_TagsItem> tags;
 
 			private ListLogstash_NodeSpec nodeSpec;
 
@@ -172,6 +188,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public List<ListLogstash_TagsItem> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public ListLogstash_NodeSpec NodeSpec
 			{
 				get
@@ -196,6 +224,38 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public class ListLogstash_TagsItem
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
+					}
+				}
+			}
+
 			public class ListLogstash_NodeSpec
 			{
 
@@ -204,6 +264,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				private int? disk;
 
 				private string diskType;
+
+				private bool? diskEncryption;
 
 				public string Spec
 				{
@@ -238,6 +300,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						diskType = value;
+					}
+				}
+
+				public bool? DiskEncryption
+				{
+					get
+					{
+						return diskEncryption;
+					}
+					set	
+					{
+						diskEncryption = value;
 					}
 				}
 			}
@@ -299,6 +373,24 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					{
 						vsArea = value;
 					}
+				}
+			}
+		}
+
+		public class ListLogstash_Headers
+		{
+
+			private int? xTotalCount;
+
+			public int? XTotalCount
+			{
+				get
+				{
+					return xTotalCount;
+				}
+				set	
+				{
+					xTotalCount = value;
 				}
 			}
 		}

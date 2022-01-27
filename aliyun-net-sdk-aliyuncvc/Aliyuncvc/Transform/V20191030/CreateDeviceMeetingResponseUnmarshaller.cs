@@ -26,19 +26,19 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class CreateDeviceMeetingResponseUnmarshaller
     {
-        public static CreateDeviceMeetingResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDeviceMeetingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateDeviceMeetingResponse createDeviceMeetingResponse = new CreateDeviceMeetingResponse();
 
-			createDeviceMeetingResponse.HttpResponse = context.HttpResponse;
-			createDeviceMeetingResponse.ErrorCode = context.IntegerValue("CreateDeviceMeeting.ErrorCode");
-			createDeviceMeetingResponse.Message = context.StringValue("CreateDeviceMeeting.Message");
-			createDeviceMeetingResponse.Success = context.BooleanValue("CreateDeviceMeeting.Success");
-			createDeviceMeetingResponse.RequestId = context.StringValue("CreateDeviceMeeting.RequestId");
+			createDeviceMeetingResponse.HttpResponse = _ctx.HttpResponse;
+			createDeviceMeetingResponse.ErrorCode = _ctx.IntegerValue("CreateDeviceMeeting.ErrorCode");
+			createDeviceMeetingResponse.Message = _ctx.StringValue("CreateDeviceMeeting.Message");
+			createDeviceMeetingResponse.Success = _ctx.BooleanValue("CreateDeviceMeeting.Success");
+			createDeviceMeetingResponse.RequestId = _ctx.StringValue("CreateDeviceMeeting.RequestId");
 
 			CreateDeviceMeetingResponse.CreateDeviceMeeting_Devices devices = new CreateDeviceMeetingResponse.CreateDeviceMeeting_Devices();
-			devices.MeetingCode = context.StringValue("CreateDeviceMeeting.Devices.MeetingCode");
-			devices.MeetingUUID = context.StringValue("CreateDeviceMeeting.Devices.MeetingUUID");
+			devices.MeetingCode = _ctx.StringValue("CreateDeviceMeeting.Devices.MeetingCode");
+			devices.MeetingUUID = _ctx.StringValue("CreateDeviceMeeting.Devices.MeetingUUID");
 			createDeviceMeetingResponse.Devices = devices;
         
 			return createDeviceMeetingResponse;

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class ReleasePublicIpAddressResponseUnmarshaller
     {
-        public static ReleasePublicIpAddressResponse Unmarshall(UnmarshallerContext context)
+        public static ReleasePublicIpAddressResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ReleasePublicIpAddressResponse releasePublicIpAddressResponse = new ReleasePublicIpAddressResponse();
 
-			releasePublicIpAddressResponse.HttpResponse = context.HttpResponse;
-			releasePublicIpAddressResponse.RequestId = context.StringValue("ReleasePublicIpAddress.RequestId");
+			releasePublicIpAddressResponse.HttpResponse = _ctx.HttpResponse;
+			releasePublicIpAddressResponse.RequestId = _ctx.StringValue("ReleasePublicIpAddress.RequestId");
         
 			return releasePublicIpAddressResponse;
         }

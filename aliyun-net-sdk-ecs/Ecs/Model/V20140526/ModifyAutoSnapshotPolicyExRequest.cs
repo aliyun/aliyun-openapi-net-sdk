@@ -35,8 +35,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -63,6 +63,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string targetCopyRegions;
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -76,6 +77,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "autoSnapshotPolicyId")]
 		public string AutoSnapshotPolicyId
 		{
 			get
@@ -89,6 +91,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "CopiedSnapshotsRetentionDays")]
 		public int? CopiedSnapshotsRetentionDays
 		{
 			get
@@ -102,6 +105,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "timePoints")]
 		public string TimePoints
 		{
 			get
@@ -115,6 +119,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "repeatWeekdays")]
 		public string RepeatWeekdays
 		{
 			get
@@ -128,6 +133,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "EnableCrossRegionCopy")]
 		public bool? EnableCrossRegionCopy
 		{
 			get
@@ -141,6 +147,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -154,6 +161,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -167,6 +175,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "autoSnapshotPolicyName")]
 		public string AutoSnapshotPolicyName
 		{
 			get
@@ -180,6 +189,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "retentionDays")]
 		public int? RetentionDays
 		{
 			get
@@ -193,6 +203,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "TargetCopyRegions")]
 		public string TargetCopyRegions
 		{
 			get

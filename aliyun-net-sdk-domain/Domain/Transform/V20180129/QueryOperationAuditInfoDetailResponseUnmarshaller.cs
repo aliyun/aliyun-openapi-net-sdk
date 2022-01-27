@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class QueryOperationAuditInfoDetailResponseUnmarshaller
     {
-        public static QueryOperationAuditInfoDetailResponse Unmarshall(UnmarshallerContext context)
+        public static QueryOperationAuditInfoDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryOperationAuditInfoDetailResponse queryOperationAuditInfoDetailResponse = new QueryOperationAuditInfoDetailResponse();
 
-			queryOperationAuditInfoDetailResponse.HttpResponse = context.HttpResponse;
-			queryOperationAuditInfoDetailResponse.RequestId = context.StringValue("QueryOperationAuditInfoDetail.RequestId");
-			queryOperationAuditInfoDetailResponse.Id = context.StringValue("QueryOperationAuditInfoDetail.Id");
-			queryOperationAuditInfoDetailResponse.CreateTime = context.LongValue("QueryOperationAuditInfoDetail.CreateTime");
-			queryOperationAuditInfoDetailResponse.UpdateTime = context.LongValue("QueryOperationAuditInfoDetail.UpdateTime");
-			queryOperationAuditInfoDetailResponse.BusinessName = context.StringValue("QueryOperationAuditInfoDetail.BusinessName");
-			queryOperationAuditInfoDetailResponse.DomainName = context.StringValue("QueryOperationAuditInfoDetail.DomainName");
-			queryOperationAuditInfoDetailResponse.AuditType = context.IntegerValue("QueryOperationAuditInfoDetail.AuditType");
-			queryOperationAuditInfoDetailResponse.AuditStatus = context.IntegerValue("QueryOperationAuditInfoDetail.AuditStatus");
-			queryOperationAuditInfoDetailResponse.AuditInfo = context.StringValue("QueryOperationAuditInfoDetail.AuditInfo");
-			queryOperationAuditInfoDetailResponse.Remark = context.StringValue("QueryOperationAuditInfoDetail.Remark");
+			queryOperationAuditInfoDetailResponse.HttpResponse = _ctx.HttpResponse;
+			queryOperationAuditInfoDetailResponse.RequestId = _ctx.StringValue("QueryOperationAuditInfoDetail.RequestId");
+			queryOperationAuditInfoDetailResponse.Id = _ctx.StringValue("QueryOperationAuditInfoDetail.Id");
+			queryOperationAuditInfoDetailResponse.CreateTime = _ctx.LongValue("QueryOperationAuditInfoDetail.CreateTime");
+			queryOperationAuditInfoDetailResponse.UpdateTime = _ctx.LongValue("QueryOperationAuditInfoDetail.UpdateTime");
+			queryOperationAuditInfoDetailResponse.BusinessName = _ctx.StringValue("QueryOperationAuditInfoDetail.BusinessName");
+			queryOperationAuditInfoDetailResponse.DomainName = _ctx.StringValue("QueryOperationAuditInfoDetail.DomainName");
+			queryOperationAuditInfoDetailResponse.AuditType = _ctx.IntegerValue("QueryOperationAuditInfoDetail.AuditType");
+			queryOperationAuditInfoDetailResponse.AuditStatus = _ctx.IntegerValue("QueryOperationAuditInfoDetail.AuditStatus");
+			queryOperationAuditInfoDetailResponse.AuditInfo = _ctx.StringValue("QueryOperationAuditInfoDetail.AuditInfo");
+			queryOperationAuditInfoDetailResponse.Remark = _ctx.StringValue("QueryOperationAuditInfoDetail.Remark");
         
 			return queryOperationAuditInfoDetailResponse;
         }

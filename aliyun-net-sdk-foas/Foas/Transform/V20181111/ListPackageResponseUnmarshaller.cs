@@ -26,35 +26,39 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class ListPackageResponseUnmarshaller
     {
-        public static ListPackageResponse Unmarshall(UnmarshallerContext context)
+        public static ListPackageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListPackageResponse listPackageResponse = new ListPackageResponse();
 
-			listPackageResponse.HttpResponse = context.HttpResponse;
-			listPackageResponse.RequestId = context.StringValue("ListPackage.RequestId");
-			listPackageResponse.PageIndex = context.IntegerValue("ListPackage.PageIndex");
-			listPackageResponse.PageSize = context.IntegerValue("ListPackage.PageSize");
-			listPackageResponse.TotalPage = context.IntegerValue("ListPackage.TotalPage");
-			listPackageResponse.TotalCount = context.LongValue("ListPackage.TotalCount");
+			listPackageResponse.HttpResponse = _ctx.HttpResponse;
+			listPackageResponse.RequestId = _ctx.StringValue("ListPackage.RequestId");
+			listPackageResponse.PageIndex = _ctx.IntegerValue("ListPackage.PageIndex");
+			listPackageResponse.PageSize = _ctx.IntegerValue("ListPackage.PageSize");
+			listPackageResponse.TotalPage = _ctx.IntegerValue("ListPackage.TotalPage");
+			listPackageResponse.TotalCount = _ctx.LongValue("ListPackage.TotalCount");
 
 			List<ListPackageResponse.ListPackage_Package> listPackageResponse_packages = new List<ListPackageResponse.ListPackage_Package>();
-			for (int i = 0; i < context.Length("ListPackage.Packages.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListPackage.Packages.Length"); i++) {
 				ListPackageResponse.ListPackage_Package package = new ListPackageResponse.ListPackage_Package();
-				package.ProjectName = context.StringValue("ListPackage.Packages["+ i +"].ProjectName");
-				package.PackageName = context.StringValue("ListPackage.Packages["+ i +"].PackageName");
-				package.Creator = context.StringValue("ListPackage.Packages["+ i +"].Creator");
-				package.Modifier = context.StringValue("ListPackage.Packages["+ i +"].Modifier");
-				package.CreateTime = context.LongValue("ListPackage.Packages["+ i +"].CreateTime");
-				package.ModifyTime = context.LongValue("ListPackage.Packages["+ i +"].ModifyTime");
-				package.OriginName = context.StringValue("ListPackage.Packages["+ i +"].OriginName");
-				package.Type = context.StringValue("ListPackage.Packages["+ i +"].Type");
-				package.Md5 = context.StringValue("ListPackage.Packages["+ i +"].Md5");
-				package.Description = context.StringValue("ListPackage.Packages["+ i +"].Description");
-				package.OssEndpoint = context.StringValue("ListPackage.Packages["+ i +"].OssEndpoint");
-				package.OssBucket = context.StringValue("ListPackage.Packages["+ i +"].OssBucket");
-				package.OssOwner = context.StringValue("ListPackage.Packages["+ i +"].OssOwner");
-				package.OssPath = context.StringValue("ListPackage.Packages["+ i +"].OssPath");
-				package.Tag = context.StringValue("ListPackage.Packages["+ i +"].Tag");
+				package.ProjectName = _ctx.StringValue("ListPackage.Packages["+ i +"].ProjectName");
+				package.PackageName = _ctx.StringValue("ListPackage.Packages["+ i +"].PackageName");
+				package.Creator = _ctx.StringValue("ListPackage.Packages["+ i +"].Creator");
+				package.Modifier = _ctx.StringValue("ListPackage.Packages["+ i +"].Modifier");
+				package.CreateTime = _ctx.LongValue("ListPackage.Packages["+ i +"].CreateTime");
+				package.ModifyTime = _ctx.LongValue("ListPackage.Packages["+ i +"].ModifyTime");
+				package.OriginName = _ctx.StringValue("ListPackage.Packages["+ i +"].OriginName");
+				package.Type = _ctx.StringValue("ListPackage.Packages["+ i +"].Type");
+				package.Md5 = _ctx.StringValue("ListPackage.Packages["+ i +"].Md5");
+				package.Description = _ctx.StringValue("ListPackage.Packages["+ i +"].Description");
+				package.OssEndpoint = _ctx.StringValue("ListPackage.Packages["+ i +"].OssEndpoint");
+				package.OssBucket = _ctx.StringValue("ListPackage.Packages["+ i +"].OssBucket");
+				package.OssOwner = _ctx.StringValue("ListPackage.Packages["+ i +"].OssOwner");
+				package.OssPath = _ctx.StringValue("ListPackage.Packages["+ i +"].OssPath");
+				package.Tag = _ctx.StringValue("ListPackage.Packages["+ i +"].Tag");
+				package.ScanState = _ctx.StringValue("ListPackage.Packages["+ i +"].ScanState");
+				package.ScanLink = _ctx.StringValue("ListPackage.Packages["+ i +"].ScanLink");
+				package.ScanExtBizNo = _ctx.StringValue("ListPackage.Packages["+ i +"].ScanExtBizNo");
+				package.ScanErrorMessage = _ctx.StringValue("ListPackage.Packages["+ i +"].ScanErrorMessage");
 
 				listPackageResponse_packages.Add(package);
 			}

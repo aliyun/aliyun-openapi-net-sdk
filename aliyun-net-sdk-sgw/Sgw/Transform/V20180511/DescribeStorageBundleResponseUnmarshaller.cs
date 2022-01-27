@@ -26,22 +26,22 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeStorageBundleResponseUnmarshaller
     {
-        public static DescribeStorageBundleResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeStorageBundleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeStorageBundleResponse describeStorageBundleResponse = new DescribeStorageBundleResponse();
 
-			describeStorageBundleResponse.HttpResponse = context.HttpResponse;
-			describeStorageBundleResponse.RequestId = context.StringValue("DescribeStorageBundle.RequestId");
-			describeStorageBundleResponse.Success = context.BooleanValue("DescribeStorageBundle.Success");
-			describeStorageBundleResponse.Code = context.StringValue("DescribeStorageBundle.Code");
-			describeStorageBundleResponse.Message = context.StringValue("DescribeStorageBundle.Message");
-			describeStorageBundleResponse.StorageBundleId = context.StringValue("DescribeStorageBundle.StorageBundleId");
-			describeStorageBundleResponse.Name = context.StringValue("DescribeStorageBundle.Name");
-			describeStorageBundleResponse.Description = context.StringValue("DescribeStorageBundle.Description");
-			describeStorageBundleResponse.BackendBucketRegionId = context.StringValue("DescribeStorageBundle.BackendBucketRegionId");
-			describeStorageBundleResponse.Location = context.StringValue("DescribeStorageBundle.Location");
-			describeStorageBundleResponse.CreatedTime = context.LongValue("DescribeStorageBundle.CreatedTime");
-			describeStorageBundleResponse.ResourceGroupId = context.StringValue("DescribeStorageBundle.ResourceGroupId");
+			describeStorageBundleResponse.HttpResponse = _ctx.HttpResponse;
+			describeStorageBundleResponse.Description = _ctx.StringValue("DescribeStorageBundle.Description");
+			describeStorageBundleResponse.CreatedTime = _ctx.LongValue("DescribeStorageBundle.CreatedTime");
+			describeStorageBundleResponse.RequestId = _ctx.StringValue("DescribeStorageBundle.RequestId");
+			describeStorageBundleResponse.ResourceGroupId = _ctx.StringValue("DescribeStorageBundle.ResourceGroupId");
+			describeStorageBundleResponse.Message = _ctx.StringValue("DescribeStorageBundle.Message");
+			describeStorageBundleResponse.StorageBundleId = _ctx.StringValue("DescribeStorageBundle.StorageBundleId");
+			describeStorageBundleResponse.BackendBucketRegionId = _ctx.StringValue("DescribeStorageBundle.BackendBucketRegionId");
+			describeStorageBundleResponse.Code = _ctx.StringValue("DescribeStorageBundle.Code");
+			describeStorageBundleResponse.Success = _ctx.BooleanValue("DescribeStorageBundle.Success");
+			describeStorageBundleResponse.Name = _ctx.StringValue("DescribeStorageBundle.Name");
+			describeStorageBundleResponse.Location = _ctx.StringValue("DescribeStorageBundle.Location");
         
 			return describeStorageBundleResponse;
         }

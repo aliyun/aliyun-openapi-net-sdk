@@ -26,14 +26,15 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeDomainCountResponseUnmarshaller
     {
-        public static DescribeDomainCountResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainCountResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainCountResponse describeDomainCountResponse = new DescribeDomainCountResponse();
 
-			describeDomainCountResponse.HttpResponse = context.HttpResponse;
-			describeDomainCountResponse.RequestId = context.StringValue("DescribeDomainCount.RequestId");
-			describeDomainCountResponse.TotalDomainsCount = context.IntegerValue("DescribeDomainCount.TotalDomainsCount");
-			describeDomainCountResponse.RootDomainsCount = context.IntegerValue("DescribeDomainCount.RootDomainsCount");
+			describeDomainCountResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainCountResponse.RequestId = _ctx.StringValue("DescribeDomainCount.RequestId");
+			describeDomainCountResponse.TotalDomainsCount = _ctx.IntegerValue("DescribeDomainCount.TotalDomainsCount");
+			describeDomainCountResponse.RootDomainsCount = _ctx.IntegerValue("DescribeDomainCount.RootDomainsCount");
+			describeDomainCountResponse.SubDomainsCount = _ctx.IntegerValue("DescribeDomainCount.SubDomainsCount");
         
 			return describeDomainCountResponse;
         }

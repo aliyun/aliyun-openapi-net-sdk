@@ -25,17 +25,55 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class ModifyScriptResponse : AcsResponse
 	{
 
+		private string code;
+
+		private int? httpStatusCode;
+
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
-
-		private string message;
-
-		private int? httpStatusCode;
+		private string chatbotId;
 
 		private ModifyScript_Script script;
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -61,39 +99,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string Code
+		public string ChatbotId
 		{
 			get
 			{
-				return code;
+				return chatbotId;
 			}
 			set	
 			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
+				chatbotId = value;
 			}
 		}
 
@@ -112,25 +126,97 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class ModifyScript_Script
 		{
 
+			private string debugStatus;
+
+			private string industry;
+
+			private bool? isDebugDrafted;
+
+			private bool? isDrafted;
+
+			private string scene;
+
+			private string scriptDescription;
+
 			private string scriptId;
 
 			private string scriptName;
 
-			private string scriptDescription;
-
-			private string industry;
-
-			private string scene;
-
 			private string status;
-
-			private string debugStatus;
 
 			private long? updateTime;
 
-			private bool? isDrafted;
+			public string DebugStatus
+			{
+				get
+				{
+					return debugStatus;
+				}
+				set	
+				{
+					debugStatus = value;
+				}
+			}
 
-			private bool? isDebugDrafted;
+			public string Industry
+			{
+				get
+				{
+					return industry;
+				}
+				set	
+				{
+					industry = value;
+				}
+			}
+
+			public bool? IsDebugDrafted
+			{
+				get
+				{
+					return isDebugDrafted;
+				}
+				set	
+				{
+					isDebugDrafted = value;
+				}
+			}
+
+			public bool? IsDrafted
+			{
+				get
+				{
+					return isDrafted;
+				}
+				set	
+				{
+					isDrafted = value;
+				}
+			}
+
+			public string Scene
+			{
+				get
+				{
+					return scene;
+				}
+				set	
+				{
+					scene = value;
+				}
+			}
+
+			public string ScriptDescription
+			{
+				get
+				{
+					return scriptDescription;
+				}
+				set	
+				{
+					scriptDescription = value;
+				}
+			}
 
 			public string ScriptId
 			{
@@ -156,42 +242,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string ScriptDescription
-			{
-				get
-				{
-					return scriptDescription;
-				}
-				set	
-				{
-					scriptDescription = value;
-				}
-			}
-
-			public string Industry
-			{
-				get
-				{
-					return industry;
-				}
-				set	
-				{
-					industry = value;
-				}
-			}
-
-			public string Scene
-			{
-				get
-				{
-					return scene;
-				}
-				set	
-				{
-					scene = value;
-				}
-			}
-
 			public string Status
 			{
 				get
@@ -204,18 +254,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string DebugStatus
-			{
-				get
-				{
-					return debugStatus;
-				}
-				set	
-				{
-					debugStatus = value;
-				}
-			}
-
 			public long? UpdateTime
 			{
 				get
@@ -225,30 +263,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					updateTime = value;
-				}
-			}
-
-			public bool? IsDrafted
-			{
-				get
-				{
-					return isDrafted;
-				}
-				set	
-				{
-					isDrafted = value;
-				}
-			}
-
-			public bool? IsDebugDrafted
-			{
-				get
-				{
-					return isDebugDrafted;
-				}
-				set	
-				{
-					isDebugDrafted = value;
 				}
 			}
 		}

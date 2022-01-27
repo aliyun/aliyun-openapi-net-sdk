@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class AddTrancodeSEIResponseUnmarshaller
     {
-        public static AddTrancodeSEIResponse Unmarshall(UnmarshallerContext context)
+        public static AddTrancodeSEIResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddTrancodeSEIResponse addTrancodeSEIResponse = new AddTrancodeSEIResponse();
 
-			addTrancodeSEIResponse.HttpResponse = context.HttpResponse;
-			addTrancodeSEIResponse.RequestId = context.StringValue("AddTrancodeSEI.RequestId");
+			addTrancodeSEIResponse.HttpResponse = _ctx.HttpResponse;
+			addTrancodeSEIResponse.RequestId = _ctx.StringValue("AddTrancodeSEI.RequestId");
         
 			return addTrancodeSEIResponse;
         }

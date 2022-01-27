@@ -26,18 +26,18 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 {
     public class GetDocTranslateTaskResponseUnmarshaller
     {
-        public static GetDocTranslateTaskResponse Unmarshall(UnmarshallerContext context)
+        public static GetDocTranslateTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetDocTranslateTaskResponse getDocTranslateTaskResponse = new GetDocTranslateTaskResponse();
 
-			getDocTranslateTaskResponse.HttpResponse = context.HttpResponse;
-			getDocTranslateTaskResponse.RequestId = context.StringValue("GetDocTranslateTask.RequestId");
-			getDocTranslateTaskResponse.TaskId = context.StringValue("GetDocTranslateTask.TaskId");
-			getDocTranslateTaskResponse.Status = context.StringValue("GetDocTranslateTask.Status");
-			getDocTranslateTaskResponse.TranslateFileUrl = context.StringValue("GetDocTranslateTask.TranslateFileUrl");
-			getDocTranslateTaskResponse.TranslateErrorCode = context.StringValue("GetDocTranslateTask.TranslateErrorCode");
-			getDocTranslateTaskResponse.TranslateErrorMessage = context.StringValue("GetDocTranslateTask.TranslateErrorMessage");
-			getDocTranslateTaskResponse.PageCount = context.IntegerValue("GetDocTranslateTask.PageCount");
+			getDocTranslateTaskResponse.HttpResponse = _ctx.HttpResponse;
+			getDocTranslateTaskResponse.Status = _ctx.StringValue("GetDocTranslateTask.Status");
+			getDocTranslateTaskResponse.RequestId = _ctx.StringValue("GetDocTranslateTask.RequestId");
+			getDocTranslateTaskResponse.TranslateFileUrl = _ctx.StringValue("GetDocTranslateTask.TranslateFileUrl");
+			getDocTranslateTaskResponse.TranslateErrorCode = _ctx.StringValue("GetDocTranslateTask.TranslateErrorCode");
+			getDocTranslateTaskResponse.PageCount = _ctx.IntegerValue("GetDocTranslateTask.PageCount");
+			getDocTranslateTaskResponse.TaskId = _ctx.StringValue("GetDocTranslateTask.TaskId");
+			getDocTranslateTaskResponse.TranslateErrorMessage = _ctx.StringValue("GetDocTranslateTask.TranslateErrorMessage");
         
 			return getDocTranslateTaskResponse;
         }

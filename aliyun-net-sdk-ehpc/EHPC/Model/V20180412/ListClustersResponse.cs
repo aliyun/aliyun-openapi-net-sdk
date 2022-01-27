@@ -150,6 +150,10 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private float? computeSpotPriceLimit;
 
+			private string clientVersion;
+
+			private bool? isComputeEss;
+
 			private ListClusters_Managers managers;
 
 			private ListClusters_Computes computes;
@@ -467,6 +471,30 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					computeSpotPriceLimit = value;
+				}
+			}
+
+			public string ClientVersion
+			{
+				get
+				{
+					return clientVersion;
+				}
+				set	
+				{
+					clientVersion = value;
+				}
+			}
+
+			public bool? IsComputeEss
+			{
+				get
+				{
+					return isComputeEss;
+				}
+				set	
+				{
+					isComputeEss = value;
 				}
 			}
 

@@ -26,23 +26,23 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 {
     public class DescribeScdnDomainHitRateDataResponseUnmarshaller
     {
-        public static DescribeScdnDomainHitRateDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeScdnDomainHitRateDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeScdnDomainHitRateDataResponse describeScdnDomainHitRateDataResponse = new DescribeScdnDomainHitRateDataResponse();
 
-			describeScdnDomainHitRateDataResponse.HttpResponse = context.HttpResponse;
-			describeScdnDomainHitRateDataResponse.RequestId = context.StringValue("DescribeScdnDomainHitRateData.RequestId");
-			describeScdnDomainHitRateDataResponse.DomainName = context.StringValue("DescribeScdnDomainHitRateData.DomainName");
-			describeScdnDomainHitRateDataResponse.StartTime = context.StringValue("DescribeScdnDomainHitRateData.StartTime");
-			describeScdnDomainHitRateDataResponse.EndTime = context.StringValue("DescribeScdnDomainHitRateData.EndTime");
-			describeScdnDomainHitRateDataResponse.DataInterval = context.StringValue("DescribeScdnDomainHitRateData.DataInterval");
+			describeScdnDomainHitRateDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnDomainHitRateDataResponse.RequestId = _ctx.StringValue("DescribeScdnDomainHitRateData.RequestId");
+			describeScdnDomainHitRateDataResponse.DomainName = _ctx.StringValue("DescribeScdnDomainHitRateData.DomainName");
+			describeScdnDomainHitRateDataResponse.StartTime = _ctx.StringValue("DescribeScdnDomainHitRateData.StartTime");
+			describeScdnDomainHitRateDataResponse.EndTime = _ctx.StringValue("DescribeScdnDomainHitRateData.EndTime");
+			describeScdnDomainHitRateDataResponse.DataInterval = _ctx.StringValue("DescribeScdnDomainHitRateData.DataInterval");
 
 			List<DescribeScdnDomainHitRateDataResponse.DescribeScdnDomainHitRateData_DataModule> describeScdnDomainHitRateDataResponse_hitRatePerInterval = new List<DescribeScdnDomainHitRateDataResponse.DescribeScdnDomainHitRateData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeScdnDomainHitRateData.HitRatePerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeScdnDomainHitRateData.HitRatePerInterval.Length"); i++) {
 				DescribeScdnDomainHitRateDataResponse.DescribeScdnDomainHitRateData_DataModule dataModule = new DescribeScdnDomainHitRateDataResponse.DescribeScdnDomainHitRateData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeScdnDomainHitRateData.HitRatePerInterval["+ i +"].TimeStamp");
-				dataModule.ReqHitRate = context.StringValue("DescribeScdnDomainHitRateData.HitRatePerInterval["+ i +"].ReqHitRate");
-				dataModule.ByteHitRate = context.StringValue("DescribeScdnDomainHitRateData.HitRatePerInterval["+ i +"].ByteHitRate");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeScdnDomainHitRateData.HitRatePerInterval["+ i +"].TimeStamp");
+				dataModule.ReqHitRate = _ctx.StringValue("DescribeScdnDomainHitRateData.HitRatePerInterval["+ i +"].ReqHitRate");
+				dataModule.ByteHitRate = _ctx.StringValue("DescribeScdnDomainHitRateData.HitRatePerInterval["+ i +"].ByteHitRate");
 
 				describeScdnDomainHitRateDataResponse_hitRatePerInterval.Add(dataModule);
 			}

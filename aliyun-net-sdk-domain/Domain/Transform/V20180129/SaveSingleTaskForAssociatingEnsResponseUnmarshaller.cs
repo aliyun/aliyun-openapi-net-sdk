@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class SaveSingleTaskForAssociatingEnsResponseUnmarshaller
     {
-        public static SaveSingleTaskForAssociatingEnsResponse Unmarshall(UnmarshallerContext context)
+        public static SaveSingleTaskForAssociatingEnsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SaveSingleTaskForAssociatingEnsResponse saveSingleTaskForAssociatingEnsResponse = new SaveSingleTaskForAssociatingEnsResponse();
 
-			saveSingleTaskForAssociatingEnsResponse.HttpResponse = context.HttpResponse;
-			saveSingleTaskForAssociatingEnsResponse.RequestId = context.StringValue("SaveSingleTaskForAssociatingEns.RequestId");
-			saveSingleTaskForAssociatingEnsResponse.TaskNo = context.StringValue("SaveSingleTaskForAssociatingEns.TaskNo");
+			saveSingleTaskForAssociatingEnsResponse.HttpResponse = _ctx.HttpResponse;
+			saveSingleTaskForAssociatingEnsResponse.RequestId = _ctx.StringValue("SaveSingleTaskForAssociatingEns.RequestId");
+			saveSingleTaskForAssociatingEnsResponse.TaskNo = _ctx.StringValue("SaveSingleTaskForAssociatingEns.TaskNo");
         
 			return saveSingleTaskForAssociatingEnsResponse;
         }

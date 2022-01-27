@@ -47,6 +47,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string name;
 
+		private string sourceType;
+
 		private int? page;
 
 		private string resId;
@@ -87,6 +89,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "name", value);
+			}
+		}
+
+		public string SourceType
+		{
+			get
+			{
+				return sourceType;
+			}
+			set	
+			{
+				sourceType = value;
+				DictionaryUtil.Add(QueryParameters, "sourceType", value);
 			}
 		}
 

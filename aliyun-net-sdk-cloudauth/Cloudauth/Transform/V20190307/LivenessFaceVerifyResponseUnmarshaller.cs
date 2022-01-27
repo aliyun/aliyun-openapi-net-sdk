@@ -26,19 +26,20 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 {
     public class LivenessFaceVerifyResponseUnmarshaller
     {
-        public static LivenessFaceVerifyResponse Unmarshall(UnmarshallerContext context)
+        public static LivenessFaceVerifyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			LivenessFaceVerifyResponse livenessFaceVerifyResponse = new LivenessFaceVerifyResponse();
 
-			livenessFaceVerifyResponse.HttpResponse = context.HttpResponse;
-			livenessFaceVerifyResponse.RequestId = context.StringValue("LivenessFaceVerify.RequestId");
-			livenessFaceVerifyResponse.Message = context.StringValue("LivenessFaceVerify.Message");
-			livenessFaceVerifyResponse.Code = context.StringValue("LivenessFaceVerify.Code");
+			livenessFaceVerifyResponse.HttpResponse = _ctx.HttpResponse;
+			livenessFaceVerifyResponse.Code = _ctx.StringValue("LivenessFaceVerify.Code");
+			livenessFaceVerifyResponse.Message = _ctx.StringValue("LivenessFaceVerify.Message");
+			livenessFaceVerifyResponse.RequestId = _ctx.StringValue("LivenessFaceVerify.RequestId");
 
 			LivenessFaceVerifyResponse.LivenessFaceVerify_ResultObject resultObject = new LivenessFaceVerifyResponse.LivenessFaceVerify_ResultObject();
-			resultObject.Passed = context.StringValue("LivenessFaceVerify.ResultObject.Passed");
-			resultObject.MaterialInfo = context.StringValue("LivenessFaceVerify.ResultObject.MaterialInfo");
-			resultObject.SubCode = context.StringValue("LivenessFaceVerify.ResultObject.SubCode");
+			resultObject.CertifyId = _ctx.StringValue("LivenessFaceVerify.ResultObject.CertifyId");
+			resultObject.SubCode = _ctx.StringValue("LivenessFaceVerify.ResultObject.SubCode");
+			resultObject.MaterialInfo = _ctx.StringValue("LivenessFaceVerify.ResultObject.MaterialInfo");
+			resultObject.Passed = _ctx.StringValue("LivenessFaceVerify.ResultObject.Passed");
 			livenessFaceVerifyResponse.ResultObject = resultObject;
         
 			return livenessFaceVerifyResponse;

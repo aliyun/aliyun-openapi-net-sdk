@@ -26,33 +26,33 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class GetGatewayBySubDeviceResponseUnmarshaller
     {
-        public static GetGatewayBySubDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static GetGatewayBySubDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetGatewayBySubDeviceResponse getGatewayBySubDeviceResponse = new GetGatewayBySubDeviceResponse();
 
-			getGatewayBySubDeviceResponse.HttpResponse = context.HttpResponse;
-			getGatewayBySubDeviceResponse.RequestId = context.StringValue("GetGatewayBySubDevice.RequestId");
-			getGatewayBySubDeviceResponse.Success = context.BooleanValue("GetGatewayBySubDevice.Success");
-			getGatewayBySubDeviceResponse.Code = context.StringValue("GetGatewayBySubDevice.Code");
-			getGatewayBySubDeviceResponse.ErrorMessage = context.StringValue("GetGatewayBySubDevice.ErrorMessage");
+			getGatewayBySubDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			getGatewayBySubDeviceResponse.RequestId = _ctx.StringValue("GetGatewayBySubDevice.RequestId");
+			getGatewayBySubDeviceResponse.Success = _ctx.BooleanValue("GetGatewayBySubDevice.Success");
+			getGatewayBySubDeviceResponse.Code = _ctx.StringValue("GetGatewayBySubDevice.Code");
+			getGatewayBySubDeviceResponse.ErrorMessage = _ctx.StringValue("GetGatewayBySubDevice.ErrorMessage");
 
 			GetGatewayBySubDeviceResponse.GetGatewayBySubDevice_Data data = new GetGatewayBySubDeviceResponse.GetGatewayBySubDevice_Data();
-			data.ProductKey = context.StringValue("GetGatewayBySubDevice.Data.ProductKey");
-			data.ProductName = context.StringValue("GetGatewayBySubDevice.Data.ProductName");
-			data.DeviceSecret = context.StringValue("GetGatewayBySubDevice.Data.DeviceSecret");
-			data.DeviceName = context.StringValue("GetGatewayBySubDevice.Data.DeviceName");
-			data.FirmwareVersion = context.StringValue("GetGatewayBySubDevice.Data.FirmwareVersion");
-			data.GmtCreate = context.StringValue("GetGatewayBySubDevice.Data.GmtCreate");
-			data.UtcCreate = context.StringValue("GetGatewayBySubDevice.Data.UtcCreate");
-			data.GmtActive = context.StringValue("GetGatewayBySubDevice.Data.GmtActive");
-			data.UtcActive = context.StringValue("GetGatewayBySubDevice.Data.UtcActive");
-			data.GmtOnline = context.StringValue("GetGatewayBySubDevice.Data.GmtOnline");
-			data.UtcOnline = context.StringValue("GetGatewayBySubDevice.Data.UtcOnline");
-			data.Status = context.StringValue("GetGatewayBySubDevice.Data.Status");
-			data.IpAddress = context.StringValue("GetGatewayBySubDevice.Data.IpAddress");
-			data.NodeType = context.StringValue("GetGatewayBySubDevice.Data.NodeType");
-			data.Region = context.StringValue("GetGatewayBySubDevice.Data.region");
-			data.IotId = context.StringValue("GetGatewayBySubDevice.Data.iotId");
+			data.ProductKey = _ctx.StringValue("GetGatewayBySubDevice.Data.ProductKey");
+			data.ProductName = _ctx.StringValue("GetGatewayBySubDevice.Data.ProductName");
+			data.DeviceSecret = _ctx.StringValue("GetGatewayBySubDevice.Data.DeviceSecret");
+			data.DeviceName = _ctx.StringValue("GetGatewayBySubDevice.Data.DeviceName");
+			data.FirmwareVersion = _ctx.StringValue("GetGatewayBySubDevice.Data.FirmwareVersion");
+			data.GmtCreate = _ctx.StringValue("GetGatewayBySubDevice.Data.GmtCreate");
+			data.UtcCreate = _ctx.StringValue("GetGatewayBySubDevice.Data.UtcCreate");
+			data.GmtActive = _ctx.StringValue("GetGatewayBySubDevice.Data.GmtActive");
+			data.UtcActive = _ctx.StringValue("GetGatewayBySubDevice.Data.UtcActive");
+			data.GmtOnline = _ctx.StringValue("GetGatewayBySubDevice.Data.GmtOnline");
+			data.UtcOnline = _ctx.StringValue("GetGatewayBySubDevice.Data.UtcOnline");
+			data.Status = _ctx.StringValue("GetGatewayBySubDevice.Data.Status");
+			data.IpAddress = _ctx.StringValue("GetGatewayBySubDevice.Data.IpAddress");
+			data.NodeType = _ctx.StringValue("GetGatewayBySubDevice.Data.NodeType");
+			data.Region = _ctx.StringValue("GetGatewayBySubDevice.Data.region");
+			data.IotId = _ctx.StringValue("GetGatewayBySubDevice.Data.iotId");
 			getGatewayBySubDeviceResponse.Data = data;
         
 			return getGatewayBySubDeviceResponse;

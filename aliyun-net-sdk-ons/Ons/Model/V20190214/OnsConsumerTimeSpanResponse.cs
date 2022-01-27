@@ -70,39 +70,15 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 		public class OnsConsumerTimeSpan_Data
 		{
 
-			private string topic;
-
-			private long? minTimeStamp;
-
 			private long? maxTimeStamp;
 
 			private long? consumeTimeStamp;
 
+			private string topic;
+
+			private long? minTimeStamp;
+
 			private string instanceId;
-
-			public string Topic
-			{
-				get
-				{
-					return topic;
-				}
-				set	
-				{
-					topic = value;
-				}
-			}
-
-			public long? MinTimeStamp
-			{
-				get
-				{
-					return minTimeStamp;
-				}
-				set	
-				{
-					minTimeStamp = value;
-				}
-			}
 
 			public long? MaxTimeStamp
 			{
@@ -125,6 +101,30 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					consumeTimeStamp = value;
+				}
+			}
+
+			public string Topic
+			{
+				get
+				{
+					return topic;
+				}
+				set	
+				{
+					topic = value;
+				}
+			}
+
+			public long? MinTimeStamp
+			{
+				get
+				{
+					return minTimeStamp;
+				}
+				set	
+				{
+					minTimeStamp = value;
 				}
 			}
 

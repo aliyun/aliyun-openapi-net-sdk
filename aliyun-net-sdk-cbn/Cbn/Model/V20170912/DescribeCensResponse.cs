@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 	public class DescribeCensResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeCens_Cen> cens;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,69 +98,25 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		public class DescribeCens_Cen
 		{
 
-			private string cenId;
-
-			private string name;
-
-			private string description;
-
-			private string protectionLevel;
-
 			private string status;
 
 			private string creationTime;
 
+			private string ipv6Level;
+
+			private string description;
+
+			private string resourceGroupId;
+
+			private string cenId;
+
+			private string protectionLevel;
+
+			private string name;
+
 			private List<DescribeCens_Tag> tags;
 
 			private List<string> cenBandwidthPackageIds;
-
-			public string CenId
-			{
-				get
-				{
-					return cenId;
-				}
-				set	
-				{
-					cenId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string ProtectionLevel
-			{
-				get
-				{
-					return protectionLevel;
-				}
-				set	
-				{
-					protectionLevel = value;
-				}
-			}
 
 			public string Status
 			{
@@ -183,6 +139,78 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string Ipv6Level
+			{
+				get
+				{
+					return ipv6Level;
+				}
+				set	
+				{
+					ipv6Level = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string CenId
+			{
+				get
+				{
+					return cenId;
+				}
+				set	
+				{
+					cenId = value;
+				}
+			}
+
+			public string ProtectionLevel
+			{
+				get
+				{
+					return protectionLevel;
+				}
+				set	
+				{
+					protectionLevel = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 

@@ -26,34 +26,34 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 {
     public class DescribeRuleAttributeResponseUnmarshaller
     {
-        public static DescribeRuleAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRuleAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRuleAttributeResponse describeRuleAttributeResponse = new DescribeRuleAttributeResponse();
 
-			describeRuleAttributeResponse.HttpResponse = context.HttpResponse;
-			describeRuleAttributeResponse.RuleId = context.StringValue("DescribeRuleAttribute.RuleId");
-			describeRuleAttributeResponse.RequestId = context.StringValue("DescribeRuleAttribute.RequestId");
-			describeRuleAttributeResponse.RuleName = context.StringValue("DescribeRuleAttribute.RuleName");
-			describeRuleAttributeResponse.LoadBalancerId = context.StringValue("DescribeRuleAttribute.LoadBalancerId");
-			describeRuleAttributeResponse.ListenerPort = context.StringValue("DescribeRuleAttribute.ListenerPort");
-			describeRuleAttributeResponse.Domain = context.StringValue("DescribeRuleAttribute.Domain");
-			describeRuleAttributeResponse.Url = context.StringValue("DescribeRuleAttribute.Url");
-			describeRuleAttributeResponse.VServerGroupId = context.StringValue("DescribeRuleAttribute.VServerGroupId");
-			describeRuleAttributeResponse.ListenerSync = context.StringValue("DescribeRuleAttribute.ListenerSync");
-			describeRuleAttributeResponse.Scheduler = context.StringValue("DescribeRuleAttribute.Scheduler");
-			describeRuleAttributeResponse.StickySession = context.StringValue("DescribeRuleAttribute.StickySession");
-			describeRuleAttributeResponse.StickySessionType = context.StringValue("DescribeRuleAttribute.StickySessionType");
-			describeRuleAttributeResponse.CookieTimeout = context.IntegerValue("DescribeRuleAttribute.CookieTimeout");
-			describeRuleAttributeResponse.Cookie = context.StringValue("DescribeRuleAttribute.Cookie");
-			describeRuleAttributeResponse.HealthCheck = context.StringValue("DescribeRuleAttribute.HealthCheck");
-			describeRuleAttributeResponse.HealthCheckDomain = context.StringValue("DescribeRuleAttribute.HealthCheckDomain");
-			describeRuleAttributeResponse.HealthCheckURI = context.StringValue("DescribeRuleAttribute.HealthCheckURI");
-			describeRuleAttributeResponse.HealthyThreshold = context.IntegerValue("DescribeRuleAttribute.HealthyThreshold");
-			describeRuleAttributeResponse.UnhealthyThreshold = context.IntegerValue("DescribeRuleAttribute.UnhealthyThreshold");
-			describeRuleAttributeResponse.HealthCheckTimeout = context.IntegerValue("DescribeRuleAttribute.HealthCheckTimeout");
-			describeRuleAttributeResponse.HealthCheckInterval = context.IntegerValue("DescribeRuleAttribute.HealthCheckInterval");
-			describeRuleAttributeResponse.HealthCheckConnectPort = context.IntegerValue("DescribeRuleAttribute.HealthCheckConnectPort");
-			describeRuleAttributeResponse.HealthCheckHttpCode = context.StringValue("DescribeRuleAttribute.HealthCheckHttpCode");
+			describeRuleAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			describeRuleAttributeResponse.RuleId = _ctx.StringValue("DescribeRuleAttribute.RuleId");
+			describeRuleAttributeResponse.RequestId = _ctx.StringValue("DescribeRuleAttribute.RequestId");
+			describeRuleAttributeResponse.RuleName = _ctx.StringValue("DescribeRuleAttribute.RuleName");
+			describeRuleAttributeResponse.LoadBalancerId = _ctx.StringValue("DescribeRuleAttribute.LoadBalancerId");
+			describeRuleAttributeResponse.ListenerPort = _ctx.StringValue("DescribeRuleAttribute.ListenerPort");
+			describeRuleAttributeResponse.Domain = _ctx.StringValue("DescribeRuleAttribute.Domain");
+			describeRuleAttributeResponse.Url = _ctx.StringValue("DescribeRuleAttribute.Url");
+			describeRuleAttributeResponse.VServerGroupId = _ctx.StringValue("DescribeRuleAttribute.VServerGroupId");
+			describeRuleAttributeResponse.ListenerSync = _ctx.StringValue("DescribeRuleAttribute.ListenerSync");
+			describeRuleAttributeResponse.Scheduler = _ctx.StringValue("DescribeRuleAttribute.Scheduler");
+			describeRuleAttributeResponse.StickySession = _ctx.StringValue("DescribeRuleAttribute.StickySession");
+			describeRuleAttributeResponse.StickySessionType = _ctx.StringValue("DescribeRuleAttribute.StickySessionType");
+			describeRuleAttributeResponse.CookieTimeout = _ctx.IntegerValue("DescribeRuleAttribute.CookieTimeout");
+			describeRuleAttributeResponse.Cookie = _ctx.StringValue("DescribeRuleAttribute.Cookie");
+			describeRuleAttributeResponse.HealthCheck = _ctx.StringValue("DescribeRuleAttribute.HealthCheck");
+			describeRuleAttributeResponse.HealthCheckDomain = _ctx.StringValue("DescribeRuleAttribute.HealthCheckDomain");
+			describeRuleAttributeResponse.HealthCheckURI = _ctx.StringValue("DescribeRuleAttribute.HealthCheckURI");
+			describeRuleAttributeResponse.HealthyThreshold = _ctx.IntegerValue("DescribeRuleAttribute.HealthyThreshold");
+			describeRuleAttributeResponse.UnhealthyThreshold = _ctx.IntegerValue("DescribeRuleAttribute.UnhealthyThreshold");
+			describeRuleAttributeResponse.HealthCheckTimeout = _ctx.IntegerValue("DescribeRuleAttribute.HealthCheckTimeout");
+			describeRuleAttributeResponse.HealthCheckInterval = _ctx.IntegerValue("DescribeRuleAttribute.HealthCheckInterval");
+			describeRuleAttributeResponse.HealthCheckConnectPort = _ctx.IntegerValue("DescribeRuleAttribute.HealthCheckConnectPort");
+			describeRuleAttributeResponse.HealthCheckHttpCode = _ctx.StringValue("DescribeRuleAttribute.HealthCheckHttpCode");
         
 			return describeRuleAttributeResponse;
         }

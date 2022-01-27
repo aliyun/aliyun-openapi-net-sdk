@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DescribeRunningLogRecordsRequest : RpcAcsRequest<DescribeRunningLogRecordsResponse>
     {
         public DescribeRunningLogRecordsRequest()
-            : base("Dds", "2015-12-01", "DescribeRunningLogRecords", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "DescribeRunningLogRecords", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         }
 
 		private long? resourceOwnerId;
+
+		private string roleId;
 
 		private string startTime;
 
@@ -80,6 +82,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string RoleId
+		{
+			get
+			{
+				return roleId;
+			}
+			set	
+			{
+				roleId = value;
+				DictionaryUtil.Add(QueryParameters, "RoleId", value);
 			}
 		}
 

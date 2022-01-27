@@ -26,13 +26,13 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class ModifyCasterLayoutResponseUnmarshaller
     {
-        public static ModifyCasterLayoutResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyCasterLayoutResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyCasterLayoutResponse modifyCasterLayoutResponse = new ModifyCasterLayoutResponse();
 
-			modifyCasterLayoutResponse.HttpResponse = context.HttpResponse;
-			modifyCasterLayoutResponse.RequestId = context.StringValue("ModifyCasterLayout.RequestId");
-			modifyCasterLayoutResponse.LayoutId = context.StringValue("ModifyCasterLayout.LayoutId");
+			modifyCasterLayoutResponse.HttpResponse = _ctx.HttpResponse;
+			modifyCasterLayoutResponse.RequestId = _ctx.StringValue("ModifyCasterLayout.RequestId");
+			modifyCasterLayoutResponse.LayoutId = _ctx.StringValue("ModifyCasterLayout.LayoutId");
         
 			return modifyCasterLayoutResponse;
         }

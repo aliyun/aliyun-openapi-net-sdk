@@ -25,27 +25,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class CreateQualityEntityResponse : AcsResponse
 	{
 
-		private bool? success;
+		private int? httpStatusCode;
 
 		private int? data;
 
-		private string errorCode;
-
 		private string errorMessage;
-
-		private int? httpStatusCode;
 
 		private string requestId;
 
-		public bool? Success
+		private bool? success;
+
+		private string errorCode;
+
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return success;
+				return httpStatusCode;
 			}
 			set	
 			{
-				success = value;
+				httpStatusCode = value;
 			}
 		}
 
@@ -61,18 +61,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
 		public string ErrorMessage
 		{
 			get
@@ -85,18 +73,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
 		public string RequestId
 		{
 			get
@@ -106,6 +82,30 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 	}

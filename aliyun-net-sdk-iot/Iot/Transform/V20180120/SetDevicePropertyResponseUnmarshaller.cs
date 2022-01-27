@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class SetDevicePropertyResponseUnmarshaller
     {
-        public static SetDevicePropertyResponse Unmarshall(UnmarshallerContext context)
+        public static SetDevicePropertyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetDevicePropertyResponse setDevicePropertyResponse = new SetDevicePropertyResponse();
 
-			setDevicePropertyResponse.HttpResponse = context.HttpResponse;
-			setDevicePropertyResponse.RequestId = context.StringValue("SetDeviceProperty.RequestId");
-			setDevicePropertyResponse.Success = context.BooleanValue("SetDeviceProperty.Success");
-			setDevicePropertyResponse.ErrorMessage = context.StringValue("SetDeviceProperty.ErrorMessage");
-			setDevicePropertyResponse.Code = context.StringValue("SetDeviceProperty.Code");
+			setDevicePropertyResponse.HttpResponse = _ctx.HttpResponse;
+			setDevicePropertyResponse.RequestId = _ctx.StringValue("SetDeviceProperty.RequestId");
+			setDevicePropertyResponse.Success = _ctx.BooleanValue("SetDeviceProperty.Success");
+			setDevicePropertyResponse.ErrorMessage = _ctx.StringValue("SetDeviceProperty.ErrorMessage");
+			setDevicePropertyResponse.Code = _ctx.StringValue("SetDeviceProperty.Code");
 
 			SetDevicePropertyResponse.SetDeviceProperty_Data data = new SetDevicePropertyResponse.SetDeviceProperty_Data();
-			data.MessageId = context.StringValue("SetDeviceProperty.Data.MessageId");
+			data.MessageId = _ctx.StringValue("SetDeviceProperty.Data.MessageId");
 			setDevicePropertyResponse.Data = data;
         
 			return setDevicePropertyResponse;

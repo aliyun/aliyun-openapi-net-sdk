@@ -118,6 +118,14 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string comment;
 
+			private string hostGroupId;
+
+			private string hostGroupName;
+
+			private string hostInstanceId;
+
+			private string hostName;
+
 			public string ServiceName
 			{
 				get
@@ -235,6 +243,54 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					comment = value;
+				}
+			}
+
+			public string HostGroupId
+			{
+				get
+				{
+					return hostGroupId;
+				}
+				set	
+				{
+					hostGroupId = value;
+				}
+			}
+
+			public string HostGroupName
+			{
+				get
+				{
+					return hostGroupName;
+				}
+				set	
+				{
+					hostGroupName = value;
+				}
+			}
+
+			public string HostInstanceId
+			{
+				get
+				{
+					return hostInstanceId;
+				}
+				set	
+				{
+					hostInstanceId = value;
+				}
+			}
+
+			public string HostName
+			{
+				get
+				{
+					return hostName;
+				}
+				set	
+				{
+					hostName = value;
 				}
 			}
 		}

@@ -146,6 +146,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string payType;
 
+			private string chargeType;
+
 			private int? nodeCount;
 
 			private string vswitchId;
@@ -157,6 +159,24 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			private string gmtCreate;
 
 			private string gmtModified;
+
+			private string hostGroupChangeType;
+
+			private string hostGroupChangeStatus;
+
+			private string scalingGroupBizId;
+
+			private string scalingGroupActiveStatus;
+
+			private string scalingInMode;
+
+			private int? scalingGroupMinNode;
+
+			private int? scalingGroupMaxNode;
+
+			private string scalingGroupConfigState;
+
+			private float? costSavingPercent;
 
 			public string HostGroupId
 			{
@@ -362,6 +382,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				}
 			}
 
+			public string ChargeType
+			{
+				get
+				{
+					return chargeType;
+				}
+				set	
+				{
+					chargeType = value;
+				}
+			}
+
 			public int? NodeCount
 			{
 				get
@@ -431,6 +463,114 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					gmtModified = value;
+				}
+			}
+
+			public string HostGroupChangeType
+			{
+				get
+				{
+					return hostGroupChangeType;
+				}
+				set	
+				{
+					hostGroupChangeType = value;
+				}
+			}
+
+			public string HostGroupChangeStatus
+			{
+				get
+				{
+					return hostGroupChangeStatus;
+				}
+				set	
+				{
+					hostGroupChangeStatus = value;
+				}
+			}
+
+			public string ScalingGroupBizId
+			{
+				get
+				{
+					return scalingGroupBizId;
+				}
+				set	
+				{
+					scalingGroupBizId = value;
+				}
+			}
+
+			public string ScalingGroupActiveStatus
+			{
+				get
+				{
+					return scalingGroupActiveStatus;
+				}
+				set	
+				{
+					scalingGroupActiveStatus = value;
+				}
+			}
+
+			public string ScalingInMode
+			{
+				get
+				{
+					return scalingInMode;
+				}
+				set	
+				{
+					scalingInMode = value;
+				}
+			}
+
+			public int? ScalingGroupMinNode
+			{
+				get
+				{
+					return scalingGroupMinNode;
+				}
+				set	
+				{
+					scalingGroupMinNode = value;
+				}
+			}
+
+			public int? ScalingGroupMaxNode
+			{
+				get
+				{
+					return scalingGroupMaxNode;
+				}
+				set	
+				{
+					scalingGroupMaxNode = value;
+				}
+			}
+
+			public string ScalingGroupConfigState
+			{
+				get
+				{
+					return scalingGroupConfigState;
+				}
+				set	
+				{
+					scalingGroupConfigState = value;
+				}
+			}
+
+			public float? CostSavingPercent
+			{
+				get
+				{
+					return costSavingPercent;
+				}
+				set	
+				{
+					costSavingPercent = value;
 				}
 			}
 		}

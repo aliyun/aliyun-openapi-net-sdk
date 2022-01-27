@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,52 +25,17 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class DescribeGatewayCachesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string message;
 
-		private bool? success;
+		private string requestId;
 
 		private string code;
 
-		private string message;
+		private bool? success;
 
 		private List<DescribeGatewayCaches_Cache> caches;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -83,6 +48,46 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Caches")]
 		public List<DescribeGatewayCaches_Cache> Caches
 		{
 			get
@@ -98,7 +103,11 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 		public class DescribeGatewayCaches_Cache
 		{
 
+			private string performanceLevel;
+
 			private long? sizeInGB;
+
+			private string buyURL;
 
 			private long? iops;
 
@@ -108,126 +117,17 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 
 			private bool? isUsed;
 
+			private long? expiredTime;
+
 			private string localFilePath;
 
-			private string renewURL;
-
-			private long? expiredTime;
+			private string subscriptionInstanceId;
 
 			private int? expireStatus;
 
-			private string performanceLevel;
+			private string renewURL;
 
-			private string buyURL;
-
-			public long? SizeInGB
-			{
-				get
-				{
-					return sizeInGB;
-				}
-				set	
-				{
-					sizeInGB = value;
-				}
-			}
-
-			public long? Iops
-			{
-				get
-				{
-					return iops;
-				}
-				set	
-				{
-					iops = value;
-				}
-			}
-
-			public string CacheId
-			{
-				get
-				{
-					return cacheId;
-				}
-				set	
-				{
-					cacheId = value;
-				}
-			}
-
-			public string CacheType
-			{
-				get
-				{
-					return cacheType;
-				}
-				set	
-				{
-					cacheType = value;
-				}
-			}
-
-			public bool? IsUsed
-			{
-				get
-				{
-					return isUsed;
-				}
-				set	
-				{
-					isUsed = value;
-				}
-			}
-
-			public string LocalFilePath
-			{
-				get
-				{
-					return localFilePath;
-				}
-				set	
-				{
-					localFilePath = value;
-				}
-			}
-
-			public string RenewURL
-			{
-				get
-				{
-					return renewURL;
-				}
-				set	
-				{
-					renewURL = value;
-				}
-			}
-
-			public long? ExpiredTime
-			{
-				get
-				{
-					return expiredTime;
-				}
-				set	
-				{
-					expiredTime = value;
-				}
-			}
-
-			public int? ExpireStatus
-			{
-				get
-				{
-					return expireStatus;
-				}
-				set	
-				{
-					expireStatus = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "PerformanceLevel")]
 			public string PerformanceLevel
 			{
 				get
@@ -240,6 +140,20 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "SizeInGB")]
+			public long? SizeInGB
+			{
+				get
+				{
+					return sizeInGB;
+				}
+				set	
+				{
+					sizeInGB = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BuyURL")]
 			public string BuyURL
 			{
 				get
@@ -249,6 +163,123 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				set	
 				{
 					buyURL = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Iops")]
+			public long? Iops
+			{
+				get
+				{
+					return iops;
+				}
+				set	
+				{
+					iops = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CacheId")]
+			public string CacheId
+			{
+				get
+				{
+					return cacheId;
+				}
+				set	
+				{
+					cacheId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CacheType")]
+			public string CacheType
+			{
+				get
+				{
+					return cacheType;
+				}
+				set	
+				{
+					cacheType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IsUsed")]
+			public bool? IsUsed
+			{
+				get
+				{
+					return isUsed;
+				}
+				set	
+				{
+					isUsed = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExpiredTime")]
+			public long? ExpiredTime
+			{
+				get
+				{
+					return expiredTime;
+				}
+				set	
+				{
+					expiredTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LocalFilePath")]
+			public string LocalFilePath
+			{
+				get
+				{
+					return localFilePath;
+				}
+				set	
+				{
+					localFilePath = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SubscriptionInstanceId")]
+			public string SubscriptionInstanceId
+			{
+				get
+				{
+					return subscriptionInstanceId;
+				}
+				set	
+				{
+					subscriptionInstanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExpireStatus")]
+			public int? ExpireStatus
+			{
+				get
+				{
+					return expireStatus;
+				}
+				set	
+				{
+					expireStatus = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RenewURL")]
+			public string RenewURL
+			{
+				get
+				{
+					return renewURL;
+				}
+				set	
+				{
+					renewURL = value;
 				}
 			}
 		}

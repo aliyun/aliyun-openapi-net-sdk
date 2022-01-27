@@ -26,20 +26,20 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class UpgradeResourcePackageResponseUnmarshaller
     {
-        public static UpgradeResourcePackageResponse Unmarshall(UnmarshallerContext context)
+        public static UpgradeResourcePackageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpgradeResourcePackageResponse upgradeResourcePackageResponse = new UpgradeResourcePackageResponse();
 
-			upgradeResourcePackageResponse.HttpResponse = context.HttpResponse;
-			upgradeResourcePackageResponse.RequestId = context.StringValue("UpgradeResourcePackage.RequestId");
-			upgradeResourcePackageResponse.OrderId = context.LongValue("UpgradeResourcePackage.OrderId");
-			upgradeResourcePackageResponse.Success = context.BooleanValue("UpgradeResourcePackage.Success");
-			upgradeResourcePackageResponse.Code = context.StringValue("UpgradeResourcePackage.Code");
-			upgradeResourcePackageResponse.Message = context.StringValue("UpgradeResourcePackage.Message");
+			upgradeResourcePackageResponse.HttpResponse = _ctx.HttpResponse;
+			upgradeResourcePackageResponse.RequestId = _ctx.StringValue("UpgradeResourcePackage.RequestId");
+			upgradeResourcePackageResponse.OrderId = _ctx.LongValue("UpgradeResourcePackage.OrderId");
+			upgradeResourcePackageResponse.Success = _ctx.BooleanValue("UpgradeResourcePackage.Success");
+			upgradeResourcePackageResponse.Code = _ctx.StringValue("UpgradeResourcePackage.Code");
+			upgradeResourcePackageResponse.Message = _ctx.StringValue("UpgradeResourcePackage.Message");
 
 			UpgradeResourcePackageResponse.UpgradeResourcePackage_Data data = new UpgradeResourcePackageResponse.UpgradeResourcePackage_Data();
-			data.OrderId = context.LongValue("UpgradeResourcePackage.Data.OrderId");
-			data.InstanceId = context.StringValue("UpgradeResourcePackage.Data.InstanceId");
+			data.OrderId = _ctx.LongValue("UpgradeResourcePackage.Data.OrderId");
+			data.InstanceId = _ctx.StringValue("UpgradeResourcePackage.Data.InstanceId");
 			upgradeResourcePackageResponse.Data = data;
         
 			return upgradeResourcePackageResponse;

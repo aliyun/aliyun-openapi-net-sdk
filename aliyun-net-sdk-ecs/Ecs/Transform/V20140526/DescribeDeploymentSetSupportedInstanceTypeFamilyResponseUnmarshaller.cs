@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DescribeDeploymentSetSupportedInstanceTypeFamilyResponseUnmarshaller
     {
-        public static DescribeDeploymentSetSupportedInstanceTypeFamilyResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDeploymentSetSupportedInstanceTypeFamilyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDeploymentSetSupportedInstanceTypeFamilyResponse describeDeploymentSetSupportedInstanceTypeFamilyResponse = new DescribeDeploymentSetSupportedInstanceTypeFamilyResponse();
 
-			describeDeploymentSetSupportedInstanceTypeFamilyResponse.HttpResponse = context.HttpResponse;
-			describeDeploymentSetSupportedInstanceTypeFamilyResponse.RequestId = context.StringValue("DescribeDeploymentSetSupportedInstanceTypeFamily.RequestId");
-			describeDeploymentSetSupportedInstanceTypeFamilyResponse.InstanceTypeFamilies = context.StringValue("DescribeDeploymentSetSupportedInstanceTypeFamily.InstanceTypeFamilies");
+			describeDeploymentSetSupportedInstanceTypeFamilyResponse.HttpResponse = _ctx.HttpResponse;
+			describeDeploymentSetSupportedInstanceTypeFamilyResponse.InstanceTypeFamilies = _ctx.StringValue("DescribeDeploymentSetSupportedInstanceTypeFamily.InstanceTypeFamilies");
+			describeDeploymentSetSupportedInstanceTypeFamilyResponse.RequestId = _ctx.StringValue("DescribeDeploymentSetSupportedInstanceTypeFamily.RequestId");
         
 			return describeDeploymentSetSupportedInstanceTypeFamilyResponse;
         }

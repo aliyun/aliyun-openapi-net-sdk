@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class PurgeDBInstanceLogResponseUnmarshaller
     {
-        public static PurgeDBInstanceLogResponse Unmarshall(UnmarshallerContext context)
+        public static PurgeDBInstanceLogResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PurgeDBInstanceLogResponse purgeDBInstanceLogResponse = new PurgeDBInstanceLogResponse();
 
-			purgeDBInstanceLogResponse.HttpResponse = context.HttpResponse;
-			purgeDBInstanceLogResponse.RequestId = context.StringValue("PurgeDBInstanceLog.RequestId");
+			purgeDBInstanceLogResponse.HttpResponse = _ctx.HttpResponse;
+			purgeDBInstanceLogResponse.RequestId = _ctx.StringValue("PurgeDBInstanceLog.RequestId");
         
 			return purgeDBInstanceLogResponse;
         }

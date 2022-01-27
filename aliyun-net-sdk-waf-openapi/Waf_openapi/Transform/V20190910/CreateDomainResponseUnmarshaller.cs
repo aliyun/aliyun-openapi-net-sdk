@@ -31,8 +31,8 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 			CreateDomainResponse createDomainResponse = new CreateDomainResponse();
 
 			createDomainResponse.HttpResponse = _ctx.HttpResponse;
-			createDomainResponse.RequestId = _ctx.StringValue("CreateDomain.RequestId");
 			createDomainResponse.Cname = _ctx.StringValue("CreateDomain.Cname");
+			createDomainResponse.RequestId = _ctx.StringValue("CreateDomain.RequestId");
         
 			return createDomainResponse;
         }

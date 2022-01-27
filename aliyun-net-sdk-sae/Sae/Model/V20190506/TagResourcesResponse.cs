@@ -25,29 +25,53 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class TagResourcesResponse : AcsResponse
 	{
 
-		private string code;
+		private string requestId;
+
+		private string message;
+
+		private string traceId;
 
 		private bool? data;
 
 		private string errorCode;
 
-		private string message;
-
-		private string requestId;
+		private string code;
 
 		private bool? success;
 
-		private string traceId;
-
-		public string Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public string TraceId
+		{
+			get
+			{
+				return traceId;
+			}
+			set	
+			{
+				traceId = value;
 			}
 		}
 
@@ -75,27 +99,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Message
+		public string Code
 		{
 			get
 			{
-				return message;
+				return code;
 			}
 			set	
 			{
-				message = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
+				code = value;
 			}
 		}
 
@@ -108,18 +120,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string TraceId
-		{
-			get
-			{
-				return traceId;
-			}
-			set	
-			{
-				traceId = value;
 			}
 		}
 	}

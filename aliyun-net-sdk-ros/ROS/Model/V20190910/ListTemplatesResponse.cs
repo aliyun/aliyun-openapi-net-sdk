@@ -108,6 +108,14 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 			private string updateTime;
 
+			private string templateVersion;
+
+			private string shareType;
+
+			private string ownerId;
+
+			private string templateARN;
+
 			public string CreateTime
 			{
 				get
@@ -165,6 +173,54 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 				set	
 				{
 					updateTime = value;
+				}
+			}
+
+			public string TemplateVersion
+			{
+				get
+				{
+					return templateVersion;
+				}
+				set	
+				{
+					templateVersion = value;
+				}
+			}
+
+			public string ShareType
+			{
+				get
+				{
+					return shareType;
+				}
+				set	
+				{
+					shareType = value;
+				}
+			}
+
+			public string OwnerId
+			{
+				get
+				{
+					return ownerId;
+				}
+				set	
+				{
+					ownerId = value;
+				}
+			}
+
+			public string TemplateARN
+			{
+				get
+				{
+					return templateARN;
+				}
+				set	
+				{
+					templateARN = value;
 				}
 			}
 		}

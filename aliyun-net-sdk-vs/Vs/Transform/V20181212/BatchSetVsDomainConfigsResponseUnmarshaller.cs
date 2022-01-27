@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class BatchSetVsDomainConfigsResponseUnmarshaller
     {
-        public static BatchSetVsDomainConfigsResponse Unmarshall(UnmarshallerContext context)
+        public static BatchSetVsDomainConfigsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchSetVsDomainConfigsResponse batchSetVsDomainConfigsResponse = new BatchSetVsDomainConfigsResponse();
 
-			batchSetVsDomainConfigsResponse.HttpResponse = context.HttpResponse;
-			batchSetVsDomainConfigsResponse.RequestId = context.StringValue("BatchSetVsDomainConfigs.RequestId");
+			batchSetVsDomainConfigsResponse.HttpResponse = _ctx.HttpResponse;
+			batchSetVsDomainConfigsResponse.RequestId = _ctx.StringValue("BatchSetVsDomainConfigs.RequestId");
         
 			return batchSetVsDomainConfigsResponse;
         }

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class DeleteDeviceResponseUnmarshaller
     {
-        public static DeleteDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDeviceResponse deleteDeviceResponse = new DeleteDeviceResponse();
 
-			deleteDeviceResponse.HttpResponse = context.HttpResponse;
-			deleteDeviceResponse.ErrorCode = context.IntegerValue("DeleteDevice.ErrorCode");
-			deleteDeviceResponse.Message = context.StringValue("DeleteDevice.Message");
-			deleteDeviceResponse.Success = context.BooleanValue("DeleteDevice.Success");
-			deleteDeviceResponse.RequestId = context.StringValue("DeleteDevice.RequestId");
+			deleteDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDeviceResponse.ErrorCode = _ctx.IntegerValue("DeleteDevice.ErrorCode");
+			deleteDeviceResponse.Message = _ctx.StringValue("DeleteDevice.Message");
+			deleteDeviceResponse.Success = _ctx.BooleanValue("DeleteDevice.Success");
+			deleteDeviceResponse.RequestId = _ctx.StringValue("DeleteDevice.RequestId");
         
 			return deleteDeviceResponse;
         }

@@ -34,19 +34,21 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.live.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.live.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private string template;
 
-		private string lazy;
-
 		private string gop;
 
+		private string kmsKeyExpireInterval;
+
 		private string audioCodec;
+
+		private string kmsUID;
 
 		private string templateType;
 
@@ -55,6 +57,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private int? height;
 
 		private string app;
+
+		private string encryptParameters;
 
 		private int? audioChannelNum;
 
@@ -74,6 +78,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? videoBitrate;
 
+		private string kmsKeyID;
+
 		public string Template
 		{
 			get
@@ -84,19 +90,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				template = value;
 				DictionaryUtil.Add(QueryParameters, "Template", value);
-			}
-		}
-
-		public string Lazy
-		{
-			get
-			{
-				return lazy;
-			}
-			set	
-			{
-				lazy = value;
-				DictionaryUtil.Add(QueryParameters, "Lazy", value);
 			}
 		}
 
@@ -113,6 +106,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string KmsKeyExpireInterval
+		{
+			get
+			{
+				return kmsKeyExpireInterval;
+			}
+			set	
+			{
+				kmsKeyExpireInterval = value;
+				DictionaryUtil.Add(QueryParameters, "KmsKeyExpireInterval", value);
+			}
+		}
+
 		public string AudioCodec
 		{
 			get
@@ -123,6 +129,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				audioCodec = value;
 				DictionaryUtil.Add(QueryParameters, "AudioCodec", value);
+			}
+		}
+
+		public string KmsUID
+		{
+			get
+			{
+				return kmsUID;
+			}
+			set	
+			{
+				kmsUID = value;
+				DictionaryUtil.Add(QueryParameters, "KmsUID", value);
 			}
 		}
 
@@ -175,6 +194,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				app = value;
 				DictionaryUtil.Add(QueryParameters, "App", value);
+			}
+		}
+
+		public string EncryptParameters
+		{
+			get
+			{
+				return encryptParameters;
+			}
+			set	
+			{
+				encryptParameters = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptParameters", value);
 			}
 		}
 
@@ -292,6 +324,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				videoBitrate = value;
 				DictionaryUtil.Add(QueryParameters, "VideoBitrate", value.ToString());
+			}
+		}
+
+		public string KmsKeyID
+		{
+			get
+			{
+				return kmsKeyID;
+			}
+			set	
+			{
+				kmsKeyID = value;
+				DictionaryUtil.Add(QueryParameters, "KmsKeyID", value);
 			}
 		}
 

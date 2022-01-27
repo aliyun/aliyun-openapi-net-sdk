@@ -34,8 +34,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointRegionalType, null);
             }
 			UriPattern = "/pop/v1/sam/app/listApplications";
 			Method = MethodType.GET;
@@ -47,7 +47,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private int? pageSize;
 
+		private string orderBy;
+
 		private int? currentPage;
+
+		private string fieldValue;
+
+		private bool? reverse;
+
+		private string fieldType;
 
 		private string tags;
 
@@ -90,6 +98,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public string OrderBy
+		{
+			get
+			{
+				return orderBy;
+			}
+			set	
+			{
+				orderBy = value;
+				DictionaryUtil.Add(QueryParameters, "OrderBy", value);
+			}
+		}
+
 		public int? CurrentPage
 		{
 			get
@@ -100,6 +121,45 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				currentPage = value;
 				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string FieldValue
+		{
+			get
+			{
+				return fieldValue;
+			}
+			set	
+			{
+				fieldValue = value;
+				DictionaryUtil.Add(QueryParameters, "FieldValue", value);
+			}
+		}
+
+		public bool? Reverse
+		{
+			get
+			{
+				return reverse;
+			}
+			set	
+			{
+				reverse = value;
+				DictionaryUtil.Add(QueryParameters, "Reverse", value.ToString());
+			}
+		}
+
+		public string FieldType
+		{
+			get
+			{
+				return fieldType;
+			}
+			set	
+			{
+				fieldType = value;
+				DictionaryUtil.Add(QueryParameters, "FieldType", value);
 			}
 		}
 

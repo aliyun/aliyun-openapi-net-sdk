@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Dyplsapi.Transform.V20170525
 {
     public class QueryCallStatusResponseUnmarshaller
     {
-        public static QueryCallStatusResponse Unmarshall(UnmarshallerContext context)
+        public static QueryCallStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryCallStatusResponse queryCallStatusResponse = new QueryCallStatusResponse();
 
-			queryCallStatusResponse.HttpResponse = context.HttpResponse;
-			queryCallStatusResponse.RequestId = context.StringValue("QueryCallStatus.RequestId");
-			queryCallStatusResponse.Code = context.StringValue("QueryCallStatus.Code");
-			queryCallStatusResponse.Message = context.StringValue("QueryCallStatus.Message");
+			queryCallStatusResponse.HttpResponse = _ctx.HttpResponse;
+			queryCallStatusResponse.Code = _ctx.StringValue("QueryCallStatus.Code");
+			queryCallStatusResponse.Message = _ctx.StringValue("QueryCallStatus.Message");
+			queryCallStatusResponse.RequestId = _ctx.StringValue("QueryCallStatus.RequestId");
 
 			QueryCallStatusResponse.QueryCallStatus_SecretCallStatusDTO secretCallStatusDTO = new QueryCallStatusResponse.QueryCallStatus_SecretCallStatusDTO();
-			secretCallStatusDTO.Status = context.IntegerValue("QueryCallStatus.SecretCallStatusDTO.Status");
-			secretCallStatusDTO.CalledNo = context.StringValue("QueryCallStatus.SecretCallStatusDTO.CalledNo");
+			secretCallStatusDTO.CalledNo = _ctx.StringValue("QueryCallStatus.SecretCallStatusDTO.CalledNo");
+			secretCallStatusDTO.Status = _ctx.IntegerValue("QueryCallStatus.SecretCallStatusDTO.Status");
 			queryCallStatusResponse.SecretCallStatusDTO = secretCallStatusDTO;
         
 			return queryCallStatusResponse;

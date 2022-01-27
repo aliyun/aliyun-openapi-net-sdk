@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class ImportKeyPairResponseUnmarshaller
     {
-        public static ImportKeyPairResponse Unmarshall(UnmarshallerContext context)
+        public static ImportKeyPairResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ImportKeyPairResponse importKeyPairResponse = new ImportKeyPairResponse();
 
-			importKeyPairResponse.HttpResponse = context.HttpResponse;
-			importKeyPairResponse.RequestId = context.StringValue("ImportKeyPair.RequestId");
-			importKeyPairResponse.KeyPairName = context.StringValue("ImportKeyPair.KeyPairName");
-			importKeyPairResponse.KeyPairFingerPrint = context.StringValue("ImportKeyPair.KeyPairFingerPrint");
+			importKeyPairResponse.HttpResponse = _ctx.HttpResponse;
+			importKeyPairResponse.RequestId = _ctx.StringValue("ImportKeyPair.RequestId");
+			importKeyPairResponse.KeyPairName = _ctx.StringValue("ImportKeyPair.KeyPairName");
+			importKeyPairResponse.KeyPairFingerPrint = _ctx.StringValue("ImportKeyPair.KeyPairFingerPrint");
         
 			return importKeyPairResponse;
         }

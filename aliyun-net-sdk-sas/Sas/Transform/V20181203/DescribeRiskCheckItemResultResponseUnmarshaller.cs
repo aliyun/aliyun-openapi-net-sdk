@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeRiskCheckItemResultResponseUnmarshaller
     {
-        public static DescribeRiskCheckItemResultResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRiskCheckItemResultResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRiskCheckItemResultResponse describeRiskCheckItemResultResponse = new DescribeRiskCheckItemResultResponse();
 
-			describeRiskCheckItemResultResponse.HttpResponse = context.HttpResponse;
-			describeRiskCheckItemResultResponse.RequestId = context.StringValue("DescribeRiskCheckItemResult.RequestId");
+			describeRiskCheckItemResultResponse.HttpResponse = _ctx.HttpResponse;
+			describeRiskCheckItemResultResponse.RequestId = _ctx.StringValue("DescribeRiskCheckItemResult.RequestId");
 
 			DescribeRiskCheckItemResultResponse.DescribeRiskCheckItemResult_PageContentResource pageContentResource = new DescribeRiskCheckItemResultResponse.DescribeRiskCheckItemResult_PageContentResource();
-			pageContentResource.ContentResource = context.StringValue("DescribeRiskCheckItemResult.PageContentResource.ContentResource");
-			pageContentResource.CurrentPage = context.IntegerValue("DescribeRiskCheckItemResult.PageContentResource.CurrentPage");
-			pageContentResource.PageSize = context.IntegerValue("DescribeRiskCheckItemResult.PageContentResource.PageSize");
-			pageContentResource.TotalCount = context.IntegerValue("DescribeRiskCheckItemResult.PageContentResource.TotalCount");
-			pageContentResource.Count = context.IntegerValue("DescribeRiskCheckItemResult.PageContentResource.Count");
-			pageContentResource.PageCount = context.IntegerValue("DescribeRiskCheckItemResult.PageContentResource.PageCount");
+			pageContentResource.ContentResource = _ctx.StringValue("DescribeRiskCheckItemResult.PageContentResource.ContentResource");
+			pageContentResource.CurrentPage = _ctx.IntegerValue("DescribeRiskCheckItemResult.PageContentResource.CurrentPage");
+			pageContentResource.PageSize = _ctx.IntegerValue("DescribeRiskCheckItemResult.PageContentResource.PageSize");
+			pageContentResource.TotalCount = _ctx.IntegerValue("DescribeRiskCheckItemResult.PageContentResource.TotalCount");
+			pageContentResource.Count = _ctx.IntegerValue("DescribeRiskCheckItemResult.PageContentResource.Count");
+			pageContentResource.PageCount = _ctx.IntegerValue("DescribeRiskCheckItemResult.PageContentResource.PageCount");
 			describeRiskCheckItemResultResponse.PageContentResource = pageContentResource;
         
 			return describeRiskCheckItemResultResponse;

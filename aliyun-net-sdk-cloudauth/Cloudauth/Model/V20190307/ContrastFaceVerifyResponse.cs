@@ -25,23 +25,23 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 	public class ContrastFaceVerifyResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string code;
 
 		private string message;
 
-		private string code;
+		private string requestId;
 
 		private ContrastFaceVerify_ResultObject resultObject;
 
-		public string RequestId
+		public string Code
 		{
 			get
 			{
-				return requestId;
+				return code;
 			}
 			set	
 			{
-				requestId = value;
+				code = value;
 			}
 		}
 
@@ -57,15 +57,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public string Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
 			}
 		}
 
@@ -84,35 +84,37 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 		public class ContrastFaceVerify_ResultObject
 		{
 
-			private string passed;
-
-			private string identityInfo;
-
-			private string materialInfo;
+			private string certifyId;
 
 			private string subCode;
 
-			public string Passed
+			private string materialInfo;
+
+			private string identityInfo;
+
+			private string passed;
+
+			public string CertifyId
 			{
 				get
 				{
-					return passed;
+					return certifyId;
 				}
 				set	
 				{
-					passed = value;
+					certifyId = value;
 				}
 			}
 
-			public string IdentityInfo
+			public string SubCode
 			{
 				get
 				{
-					return identityInfo;
+					return subCode;
 				}
 				set	
 				{
-					identityInfo = value;
+					subCode = value;
 				}
 			}
 
@@ -128,15 +130,27 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				}
 			}
 
-			public string SubCode
+			public string IdentityInfo
 			{
 				get
 				{
-					return subCode;
+					return identityInfo;
 				}
 				set	
 				{
-					subCode = value;
+					identityInfo = value;
+				}
+			}
+
+			public string Passed
+			{
+				get
+				{
+					return passed;
+				}
+				set	
+				{
+					passed = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -56,27 +56,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeAvailableResource_AvailableZone
 		{
 
-			private string regionId;
-
 			private string zoneId;
 
 			private string status;
 
 			private string statusCategory;
 
-			private List<DescribeAvailableResource_AvailableResource> availableResources;
+			private string regionId;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+			private List<DescribeAvailableResource_AvailableResource> availableResources;
 
 			public string ZoneId
 			{
@@ -111,6 +99,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					statusCategory = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 
@@ -160,29 +160,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				public class DescribeAvailableResource_SupportedResource
 				{
 
-					private string _value;
-
 					private string status;
 
-					private string statusCategory;
-
-					private int? min;
+					private string _value;
 
 					private int? max;
 
 					private string unit;
 
-					public string _Value
-					{
-						get
-						{
-							return _value;
-						}
-						set	
-						{
-							_value = value;
-						}
-					}
+					private string statusCategory;
+
+					private int? min;
 
 					public string Status
 					{
@@ -196,27 +184,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						}
 					}
 
-					public string StatusCategory
+					public string _Value
 					{
 						get
 						{
-							return statusCategory;
+							return _value;
 						}
 						set	
 						{
-							statusCategory = value;
-						}
-					}
-
-					public int? Min
-					{
-						get
-						{
-							return min;
-						}
-						set	
-						{
-							min = value;
+							_value = value;
 						}
 					}
 
@@ -241,6 +217,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						set	
 						{
 							unit = value;
+						}
+					}
+
+					public string StatusCategory
+					{
+						get
+						{
+							return statusCategory;
+						}
+						set	
+						{
+							statusCategory = value;
+						}
+					}
+
+					public int? Min
+					{
+						get
+						{
+							return min;
+						}
+						set	
+						{
+							min = value;
 						}
 					}
 				}

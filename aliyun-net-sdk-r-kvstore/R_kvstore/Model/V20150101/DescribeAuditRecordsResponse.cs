@@ -156,6 +156,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string accountName;
 
+			private string nodeId;
+
 			public string HostAddress
 			{
 				get
@@ -249,6 +251,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					accountName = value;
+				}
+			}
+
+			public string NodeId
+			{
+				get
+				{
+					return nodeId;
+				}
+				set	
+				{
+					nodeId = value;
 				}
 			}
 		}

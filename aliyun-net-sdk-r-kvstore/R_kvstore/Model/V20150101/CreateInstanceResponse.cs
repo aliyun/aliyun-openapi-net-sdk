@@ -25,153 +25,57 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class CreateInstanceResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string instanceId;
-
-		private string instanceName;
-
-		private string connectionDomain;
-
-		private int? port;
-
-		private string userName;
-
-		private string instanceStatus;
-
-		private string regionId;
-
-		private long? capacity;
+		private string vpcId;
 
 		private long? qPS;
 
-		private long? bandwidth;
+		private long? capacity;
 
-		private long? connections;
-
-		private string zoneId;
-
-		private string config;
+		private string connectionDomain;
 
 		private string chargeType;
 
-		private string endTime;
-
-		private string nodeType;
-
 		private string networkType;
 
-		private string vpcId;
+		private string instanceId;
+
+		private int? port;
+
+		private string config;
+
+		private string regionId;
+
+		private string endTime;
 
 		private string vSwitchId;
 
+		private string requestId;
+
+		private string nodeType;
+
+		private long? connections;
+
+		private long? bandwidth;
+
+		private string instanceName;
+
+		private string zoneId;
+
+		private string instanceStatus;
+
 		private string privateIpAddr;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string userName;
 
-		public string InstanceId
+		public string VpcId
 		{
 			get
 			{
-				return instanceId;
+				return vpcId;
 			}
 			set	
 			{
-				instanceId = value;
-			}
-		}
-
-		public string InstanceName
-		{
-			get
-			{
-				return instanceName;
-			}
-			set	
-			{
-				instanceName = value;
-			}
-		}
-
-		public string ConnectionDomain
-		{
-			get
-			{
-				return connectionDomain;
-			}
-			set	
-			{
-				connectionDomain = value;
-			}
-		}
-
-		public int? Port
-		{
-			get
-			{
-				return port;
-			}
-			set	
-			{
-				port = value;
-			}
-		}
-
-		public string UserName
-		{
-			get
-			{
-				return userName;
-			}
-			set	
-			{
-				userName = value;
-			}
-		}
-
-		public string InstanceStatus
-		{
-			get
-			{
-				return instanceStatus;
-			}
-			set	
-			{
-				instanceStatus = value;
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
-
-		public long? Capacity
-		{
-			get
-			{
-				return capacity;
-			}
-			set	
-			{
-				capacity = value;
+				vpcId = value;
 			}
 		}
 
@@ -187,51 +91,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public long? Bandwidth
+		public long? Capacity
 		{
 			get
 			{
-				return bandwidth;
+				return capacity;
 			}
 			set	
 			{
-				bandwidth = value;
+				capacity = value;
 			}
 		}
 
-		public long? Connections
+		public string ConnectionDomain
 		{
 			get
 			{
-				return connections;
+				return connectionDomain;
 			}
 			set	
 			{
-				connections = value;
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-			}
-		}
-
-		public string Config
-		{
-			get
-			{
-				return config;
-			}
-			set	
-			{
-				config = value;
+				connectionDomain = value;
 			}
 		}
 
@@ -247,30 +127,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
-
-		public string NodeType
-		{
-			get
-			{
-				return nodeType;
-			}
-			set	
-			{
-				nodeType = value;
-			}
-		}
-
 		public string NetworkType
 		{
 			get
@@ -283,15 +139,63 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string VpcId
+		public string InstanceId
 		{
 			get
 			{
-				return vpcId;
+				return instanceId;
 			}
 			set	
 			{
-				vpcId = value;
+				instanceId = value;
+			}
+		}
+
+		public int? Port
+		{
+			get
+			{
+				return port;
+			}
+			set	
+			{
+				port = value;
+			}
+		}
+
+		public string Config
+		{
+			get
+			{
+				return config;
+			}
+			set	
+			{
+				config = value;
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
 			}
 		}
 
@@ -307,6 +211,90 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string NodeType
+		{
+			get
+			{
+				return nodeType;
+			}
+			set	
+			{
+				nodeType = value;
+			}
+		}
+
+		public long? Connections
+		{
+			get
+			{
+				return connections;
+			}
+			set	
+			{
+				connections = value;
+			}
+		}
+
+		public long? Bandwidth
+		{
+			get
+			{
+				return bandwidth;
+			}
+			set	
+			{
+				bandwidth = value;
+			}
+		}
+
+		public string InstanceName
+		{
+			get
+			{
+				return instanceName;
+			}
+			set	
+			{
+				instanceName = value;
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+			}
+		}
+
+		public string InstanceStatus
+		{
+			get
+			{
+				return instanceStatus;
+			}
+			set	
+			{
+				instanceStatus = value;
+			}
+		}
+
 		public string PrivateIpAddr
 		{
 			get
@@ -316,6 +304,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				privateIpAddr = value;
+			}
+		}
+
+		public string UserName
+		{
+			get
+			{
+				return userName;
+			}
+			set	
+			{
+				userName = value;
 			}
 		}
 	}

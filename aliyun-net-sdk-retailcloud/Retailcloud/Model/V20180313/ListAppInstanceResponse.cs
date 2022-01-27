@@ -144,6 +144,10 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 
 			private string limits;
 
+			private string version;
+
+			private string status;
+
 			public string AppInstanceId
 			{
 				get
@@ -249,6 +253,30 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 				set	
 				{
 					limits = value;
+				}
+			}
+
+			public string Version
+			{
+				get
+				{
+					return version;
+				}
+				set	
+				{
+					version = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

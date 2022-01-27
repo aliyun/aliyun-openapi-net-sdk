@@ -26,26 +26,35 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 {
     public class DescribeOssObjectDetailResponseUnmarshaller
     {
-        public static DescribeOssObjectDetailResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeOssObjectDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeOssObjectDetailResponse describeOssObjectDetailResponse = new DescribeOssObjectDetailResponse();
 
-			describeOssObjectDetailResponse.HttpResponse = context.HttpResponse;
-			describeOssObjectDetailResponse.RequestId = context.StringValue("DescribeOssObjectDetail.RequestId");
+			describeOssObjectDetailResponse.HttpResponse = _ctx.HttpResponse;
+			describeOssObjectDetailResponse.RequestId = _ctx.StringValue("DescribeOssObjectDetail.RequestId");
 
 			DescribeOssObjectDetailResponse.DescribeOssObjectDetail_OssObjectDetail ossObjectDetail = new DescribeOssObjectDetailResponse.DescribeOssObjectDetail_OssObjectDetail();
-			ossObjectDetail.Name = context.StringValue("DescribeOssObjectDetail.OssObjectDetail.Name");
-			ossObjectDetail.RegionId = context.StringValue("DescribeOssObjectDetail.OssObjectDetail.RegionId");
-			ossObjectDetail.RiskLevelName = context.StringValue("DescribeOssObjectDetail.OssObjectDetail.RiskLevelName");
-			ossObjectDetail.BucketName = context.StringValue("DescribeOssObjectDetail.OssObjectDetail.BucketName");
-			ossObjectDetail.CategoryName = context.StringValue("DescribeOssObjectDetail.OssObjectDetail.CategoryName");
+			ossObjectDetail.Name = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.Name");
+			ossObjectDetail.RegionId = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.RegionId");
+			ossObjectDetail.RiskLevelName = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.RiskLevelName");
+			ossObjectDetail.BucketName = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.BucketName");
+			ossObjectDetail.CategoryName = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.CategoryName");
 
 			List<DescribeOssObjectDetailResponse.DescribeOssObjectDetail_OssObjectDetail.DescribeOssObjectDetail_Rule> ossObjectDetail_ruleList = new List<DescribeOssObjectDetailResponse.DescribeOssObjectDetail_OssObjectDetail.DescribeOssObjectDetail_Rule>();
-			for (int i = 0; i < context.Length("DescribeOssObjectDetail.OssObjectDetail.RuleList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeOssObjectDetail.OssObjectDetail.RuleList.Length"); i++) {
 				DescribeOssObjectDetailResponse.DescribeOssObjectDetail_OssObjectDetail.DescribeOssObjectDetail_Rule rule = new DescribeOssObjectDetailResponse.DescribeOssObjectDetail_OssObjectDetail.DescribeOssObjectDetail_Rule();
-				rule.RuleName = context.StringValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].RuleName");
-				rule.Count = context.LongValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].Count");
-				rule.Category = context.IntegerValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].Category");
+				rule.RuleName = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].RuleName");
+				rule.Count = _ctx.LongValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].Count");
+				rule.Category = _ctx.IntegerValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].Category");
+				rule.CategoryName = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].CategoryName");
+				rule.RiskLevelName = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].RiskLevelName");
+				rule.RiskLevelId = _ctx.LongValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].RiskLevelId");
+
+				List<string> rule_sampleList = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].SampleList.Length"); j++) {
+					rule_sampleList.Add(_ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].SampleList["+ j +"]"));
+				}
+				rule.SampleList = rule_sampleList;
 
 				ossObjectDetail_ruleList.Add(rule);
 			}

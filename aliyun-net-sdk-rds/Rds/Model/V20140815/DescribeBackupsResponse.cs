@@ -27,15 +27,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
-		private string totalRecordCount;
-
-		private string pageNumber;
+		private long? totalEcsSnapshotSize;
 
 		private string pageRecordCount;
 
+		private string totalRecordCount;
+
 		private long? totalBackupSize;
 
-		private long? totalEcsSnapshotSize;
+		private string pageNumber;
 
 		private List<DescribeBackups_Backup> items;
 
@@ -51,27 +51,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string TotalRecordCount
+		public long? TotalEcsSnapshotSize
 		{
 			get
 			{
-				return totalRecordCount;
+				return totalEcsSnapshotSize;
 			}
 			set	
 			{
-				totalRecordCount = value;
-			}
-		}
-
-		public string PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
+				totalEcsSnapshotSize = value;
 			}
 		}
 
@@ -87,6 +75,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
+			}
+		}
+
 		public long? TotalBackupSize
 		{
 			get
@@ -99,15 +99,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? TotalEcsSnapshotSize
+		public string PageNumber
 		{
 			get
 			{
-				return totalEcsSnapshotSize;
+				return pageNumber;
 			}
 			set	
 			{
-				totalEcsSnapshotSize = value;
+				pageNumber = value;
 			}
 		}
 
@@ -126,77 +126,83 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeBackups_Backup
 		{
 
-			private string backupId;
+			private string storageClass;
 
-			private string dBInstanceId;
+			private string encryption;
 
 			private string backupStatus;
 
-			private string backupStartTime;
-
-			private string backupEndTime;
-
-			private string backupType;
-
-			private string backupMode;
-
-			private string backupMethod;
-
-			private string backupDownloadURL;
-
-			private string backupIntranetDownloadURL;
-
-			private string backupLocation;
-
-			private string backupExtractionStatus;
-
-			private string backupScale;
-
-			private string backupDBNames;
-
-			private long? totalBackupSize;
-
-			private long? backupSize;
-
-			private string hostInstanceID;
-
 			private string storeStatus;
-
-			private string metaStatus;
-
-			private string slaveStatus;
 
 			private long? consistentTime;
 
-			private string backupInitiator;
+			private string backupType;
 
 			private string copyOnlyBackup;
 
-			private string storageClass;
+			private string backupEndTime;
+
+			private string metaStatus;
+
+			private string backupScale;
+
+			private string backupInitiator;
+
+			private string backupIntranetDownloadURL;
+
+			private string backupMethod;
+
+			private string slaveStatus;
+
+			private string backupStartTime;
+
+			private string backupLocation;
+
+			private long? totalBackupSize;
+
+			private string backupDownloadURL;
 
 			private int? isAvail;
 
-			public string BackupId
+			private string backupId;
+
+			private string backupDBNames;
+
+			private string hostInstanceID;
+
+			private long? backupSize;
+
+			private string backupMode;
+
+			private string dBInstanceId;
+
+			private string backupExtractionStatus;
+
+			private string checksum;
+
+			private List<DescribeBackups_BackupDownloadLinkByDBItem> backupDownloadLinkByDB;
+
+			public string StorageClass
 			{
 				get
 				{
-					return backupId;
+					return storageClass;
 				}
 				set	
 				{
-					backupId = value;
+					storageClass = value;
 				}
 			}
 
-			public string DBInstanceId
+			public string Encryption
 			{
 				get
 				{
-					return dBInstanceId;
+					return encryption;
 				}
 				set	
 				{
-					dBInstanceId = value;
+					encryption = value;
 				}
 			}
 
@@ -212,174 +218,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string BackupStartTime
-			{
-				get
-				{
-					return backupStartTime;
-				}
-				set	
-				{
-					backupStartTime = value;
-				}
-			}
-
-			public string BackupEndTime
-			{
-				get
-				{
-					return backupEndTime;
-				}
-				set	
-				{
-					backupEndTime = value;
-				}
-			}
-
-			public string BackupType
-			{
-				get
-				{
-					return backupType;
-				}
-				set	
-				{
-					backupType = value;
-				}
-			}
-
-			public string BackupMode
-			{
-				get
-				{
-					return backupMode;
-				}
-				set	
-				{
-					backupMode = value;
-				}
-			}
-
-			public string BackupMethod
-			{
-				get
-				{
-					return backupMethod;
-				}
-				set	
-				{
-					backupMethod = value;
-				}
-			}
-
-			public string BackupDownloadURL
-			{
-				get
-				{
-					return backupDownloadURL;
-				}
-				set	
-				{
-					backupDownloadURL = value;
-				}
-			}
-
-			public string BackupIntranetDownloadURL
-			{
-				get
-				{
-					return backupIntranetDownloadURL;
-				}
-				set	
-				{
-					backupIntranetDownloadURL = value;
-				}
-			}
-
-			public string BackupLocation
-			{
-				get
-				{
-					return backupLocation;
-				}
-				set	
-				{
-					backupLocation = value;
-				}
-			}
-
-			public string BackupExtractionStatus
-			{
-				get
-				{
-					return backupExtractionStatus;
-				}
-				set	
-				{
-					backupExtractionStatus = value;
-				}
-			}
-
-			public string BackupScale
-			{
-				get
-				{
-					return backupScale;
-				}
-				set	
-				{
-					backupScale = value;
-				}
-			}
-
-			public string BackupDBNames
-			{
-				get
-				{
-					return backupDBNames;
-				}
-				set	
-				{
-					backupDBNames = value;
-				}
-			}
-
-			public long? TotalBackupSize
-			{
-				get
-				{
-					return totalBackupSize;
-				}
-				set	
-				{
-					totalBackupSize = value;
-				}
-			}
-
-			public long? BackupSize
-			{
-				get
-				{
-					return backupSize;
-				}
-				set	
-				{
-					backupSize = value;
-				}
-			}
-
-			public string HostInstanceID
-			{
-				get
-				{
-					return hostInstanceID;
-				}
-				set	
-				{
-					hostInstanceID = value;
-				}
-			}
-
 			public string StoreStatus
 			{
 				get
@@ -389,30 +227,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					storeStatus = value;
-				}
-			}
-
-			public string MetaStatus
-			{
-				get
-				{
-					return metaStatus;
-				}
-				set	
-				{
-					metaStatus = value;
-				}
-			}
-
-			public string SlaveStatus
-			{
-				get
-				{
-					return slaveStatus;
-				}
-				set	
-				{
-					slaveStatus = value;
 				}
 			}
 
@@ -428,15 +242,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string BackupInitiator
+			public string BackupType
 			{
 				get
 				{
-					return backupInitiator;
+					return backupType;
 				}
 				set	
 				{
-					backupInitiator = value;
+					backupType = value;
 				}
 			}
 
@@ -452,15 +266,135 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string StorageClass
+			public string BackupEndTime
 			{
 				get
 				{
-					return storageClass;
+					return backupEndTime;
 				}
 				set	
 				{
-					storageClass = value;
+					backupEndTime = value;
+				}
+			}
+
+			public string MetaStatus
+			{
+				get
+				{
+					return metaStatus;
+				}
+				set	
+				{
+					metaStatus = value;
+				}
+			}
+
+			public string BackupScale
+			{
+				get
+				{
+					return backupScale;
+				}
+				set	
+				{
+					backupScale = value;
+				}
+			}
+
+			public string BackupInitiator
+			{
+				get
+				{
+					return backupInitiator;
+				}
+				set	
+				{
+					backupInitiator = value;
+				}
+			}
+
+			public string BackupIntranetDownloadURL
+			{
+				get
+				{
+					return backupIntranetDownloadURL;
+				}
+				set	
+				{
+					backupIntranetDownloadURL = value;
+				}
+			}
+
+			public string BackupMethod
+			{
+				get
+				{
+					return backupMethod;
+				}
+				set	
+				{
+					backupMethod = value;
+				}
+			}
+
+			public string SlaveStatus
+			{
+				get
+				{
+					return slaveStatus;
+				}
+				set	
+				{
+					slaveStatus = value;
+				}
+			}
+
+			public string BackupStartTime
+			{
+				get
+				{
+					return backupStartTime;
+				}
+				set	
+				{
+					backupStartTime = value;
+				}
+			}
+
+			public string BackupLocation
+			{
+				get
+				{
+					return backupLocation;
+				}
+				set	
+				{
+					backupLocation = value;
+				}
+			}
+
+			public long? TotalBackupSize
+			{
+				get
+				{
+					return totalBackupSize;
+				}
+				set	
+				{
+					totalBackupSize = value;
+				}
+			}
+
+			public string BackupDownloadURL
+			{
+				get
+				{
+					return backupDownloadURL;
+				}
+				set	
+				{
+					backupDownloadURL = value;
 				}
 			}
 
@@ -473,6 +407,160 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					isAvail = value;
+				}
+			}
+
+			public string BackupId
+			{
+				get
+				{
+					return backupId;
+				}
+				set	
+				{
+					backupId = value;
+				}
+			}
+
+			public string BackupDBNames
+			{
+				get
+				{
+					return backupDBNames;
+				}
+				set	
+				{
+					backupDBNames = value;
+				}
+			}
+
+			public string HostInstanceID
+			{
+				get
+				{
+					return hostInstanceID;
+				}
+				set	
+				{
+					hostInstanceID = value;
+				}
+			}
+
+			public long? BackupSize
+			{
+				get
+				{
+					return backupSize;
+				}
+				set	
+				{
+					backupSize = value;
+				}
+			}
+
+			public string BackupMode
+			{
+				get
+				{
+					return backupMode;
+				}
+				set	
+				{
+					backupMode = value;
+				}
+			}
+
+			public string DBInstanceId
+			{
+				get
+				{
+					return dBInstanceId;
+				}
+				set	
+				{
+					dBInstanceId = value;
+				}
+			}
+
+			public string BackupExtractionStatus
+			{
+				get
+				{
+					return backupExtractionStatus;
+				}
+				set	
+				{
+					backupExtractionStatus = value;
+				}
+			}
+
+			public string Checksum
+			{
+				get
+				{
+					return checksum;
+				}
+				set	
+				{
+					checksum = value;
+				}
+			}
+
+			public List<DescribeBackups_BackupDownloadLinkByDBItem> BackupDownloadLinkByDB
+			{
+				get
+				{
+					return backupDownloadLinkByDB;
+				}
+				set	
+				{
+					backupDownloadLinkByDB = value;
+				}
+			}
+
+			public class DescribeBackups_BackupDownloadLinkByDBItem
+			{
+
+				private string intranetDownloadLink;
+
+				private string dataBase;
+
+				private string downloadLink;
+
+				public string IntranetDownloadLink
+				{
+					get
+					{
+						return intranetDownloadLink;
+					}
+					set	
+					{
+						intranetDownloadLink = value;
+					}
+				}
+
+				public string DataBase
+				{
+					get
+					{
+						return dataBase;
+					}
+					set	
+					{
+						dataBase = value;
+					}
+				}
+
+				public string DownloadLink
+				{
+					get
+					{
+						return downloadLink;
+					}
+					set	
+					{
+						downloadLink = value;
+					}
 				}
 			}
 		}

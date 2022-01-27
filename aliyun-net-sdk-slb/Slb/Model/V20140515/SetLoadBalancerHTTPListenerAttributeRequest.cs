@@ -34,9 +34,10 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Slb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Slb.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -58,6 +59,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string aclId;
 
 		private string cookie;
+
+		private string healthCheckMethod;
 
 		private string healthCheckDomain;
 
@@ -234,6 +237,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				cookie = value;
 				DictionaryUtil.Add(QueryParameters, "Cookie", value);
+			}
+		}
+
+		public string HealthCheckMethod
+		{
+			get
+			{
+				return healthCheckMethod;
+			}
+			set	
+			{
+				healthCheckMethod = value;
+				DictionaryUtil.Add(QueryParameters, "HealthCheckMethod", value);
 			}
 		}
 

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 {
     public class RegistDeviceResponseUnmarshaller
     {
-        public static RegistDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static RegistDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RegistDeviceResponse registDeviceResponse = new RegistDeviceResponse();
 
-			registDeviceResponse.HttpResponse = context.HttpResponse;
-			registDeviceResponse.Status = context.BooleanValue("RegistDevice.Status");
-			registDeviceResponse.Msg = context.StringValue("RegistDevice.Msg");
-			registDeviceResponse.Data = context.StringValue("RegistDevice.Data");
-			registDeviceResponse.ErrorCode = context.StringValue("RegistDevice.ErrorCode");
-			registDeviceResponse.RequestId = context.StringValue("RegistDevice.RequestId");
+			registDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			registDeviceResponse.Status = _ctx.BooleanValue("RegistDevice.Status");
+			registDeviceResponse.Msg = _ctx.StringValue("RegistDevice.Msg");
+			registDeviceResponse.Data = _ctx.StringValue("RegistDevice.Data");
+			registDeviceResponse.ErrorCode = _ctx.StringValue("RegistDevice.ErrorCode");
+			registDeviceResponse.RequestId = _ctx.StringValue("RegistDevice.RequestId");
         
 			return registDeviceResponse;
         }

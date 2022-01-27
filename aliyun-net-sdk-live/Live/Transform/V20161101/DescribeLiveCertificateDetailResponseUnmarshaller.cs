@@ -26,16 +26,15 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveCertificateDetailResponseUnmarshaller
     {
-        public static DescribeLiveCertificateDetailResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveCertificateDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveCertificateDetailResponse describeLiveCertificateDetailResponse = new DescribeLiveCertificateDetailResponse();
 
-			describeLiveCertificateDetailResponse.HttpResponse = context.HttpResponse;
-			describeLiveCertificateDetailResponse.RequestId = context.StringValue("DescribeLiveCertificateDetail.RequestId");
-			describeLiveCertificateDetailResponse.Cert = context.StringValue("DescribeLiveCertificateDetail.Cert");
-			describeLiveCertificateDetailResponse.Key = context.StringValue("DescribeLiveCertificateDetail.Key");
-			describeLiveCertificateDetailResponse.CertId = context.LongValue("DescribeLiveCertificateDetail.CertId");
-			describeLiveCertificateDetailResponse.CertName = context.StringValue("DescribeLiveCertificateDetail.CertName");
+			describeLiveCertificateDetailResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveCertificateDetailResponse.RequestId = _ctx.StringValue("DescribeLiveCertificateDetail.RequestId");
+			describeLiveCertificateDetailResponse.Cert = _ctx.StringValue("DescribeLiveCertificateDetail.Cert");
+			describeLiveCertificateDetailResponse.CertId = _ctx.LongValue("DescribeLiveCertificateDetail.CertId");
+			describeLiveCertificateDetailResponse.CertName = _ctx.StringValue("DescribeLiveCertificateDetail.CertName");
         
 			return describeLiveCertificateDetailResponse;
         }

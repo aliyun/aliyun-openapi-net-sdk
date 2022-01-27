@@ -26,35 +26,35 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class QueryTaskDetailListResponseUnmarshaller
     {
-        public static QueryTaskDetailListResponse Unmarshall(UnmarshallerContext context)
+        public static QueryTaskDetailListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryTaskDetailListResponse queryTaskDetailListResponse = new QueryTaskDetailListResponse();
 
-			queryTaskDetailListResponse.HttpResponse = context.HttpResponse;
-			queryTaskDetailListResponse.RequestId = context.StringValue("QueryTaskDetailList.RequestId");
-			queryTaskDetailListResponse.TotalItemNum = context.IntegerValue("QueryTaskDetailList.TotalItemNum");
-			queryTaskDetailListResponse.CurrentPageNum = context.IntegerValue("QueryTaskDetailList.CurrentPageNum");
-			queryTaskDetailListResponse.TotalPageNum = context.IntegerValue("QueryTaskDetailList.TotalPageNum");
-			queryTaskDetailListResponse.PageSize = context.IntegerValue("QueryTaskDetailList.PageSize");
-			queryTaskDetailListResponse.PrePage = context.BooleanValue("QueryTaskDetailList.PrePage");
-			queryTaskDetailListResponse.NextPage = context.BooleanValue("QueryTaskDetailList.NextPage");
+			queryTaskDetailListResponse.HttpResponse = _ctx.HttpResponse;
+			queryTaskDetailListResponse.RequestId = _ctx.StringValue("QueryTaskDetailList.RequestId");
+			queryTaskDetailListResponse.TotalItemNum = _ctx.IntegerValue("QueryTaskDetailList.TotalItemNum");
+			queryTaskDetailListResponse.CurrentPageNum = _ctx.IntegerValue("QueryTaskDetailList.CurrentPageNum");
+			queryTaskDetailListResponse.TotalPageNum = _ctx.IntegerValue("QueryTaskDetailList.TotalPageNum");
+			queryTaskDetailListResponse.PageSize = _ctx.IntegerValue("QueryTaskDetailList.PageSize");
+			queryTaskDetailListResponse.PrePage = _ctx.BooleanValue("QueryTaskDetailList.PrePage");
+			queryTaskDetailListResponse.NextPage = _ctx.BooleanValue("QueryTaskDetailList.NextPage");
 
 			List<QueryTaskDetailListResponse.QueryTaskDetailList_TaskDetail> queryTaskDetailListResponse_data = new List<QueryTaskDetailListResponse.QueryTaskDetailList_TaskDetail>();
-			for (int i = 0; i < context.Length("QueryTaskDetailList.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryTaskDetailList.Data.Length"); i++) {
 				QueryTaskDetailListResponse.QueryTaskDetailList_TaskDetail taskDetail = new QueryTaskDetailListResponse.QueryTaskDetailList_TaskDetail();
-				taskDetail.TaskNo = context.StringValue("QueryTaskDetailList.Data["+ i +"].TaskNo");
-				taskDetail.TaskDetailNo = context.StringValue("QueryTaskDetailList.Data["+ i +"].TaskDetailNo");
-				taskDetail.TaskType = context.StringValue("QueryTaskDetailList.Data["+ i +"].TaskType");
-				taskDetail.InstanceId = context.StringValue("QueryTaskDetailList.Data["+ i +"].InstanceId");
-				taskDetail.DomainName = context.StringValue("QueryTaskDetailList.Data["+ i +"].DomainName");
-				taskDetail.TaskStatus = context.StringValue("QueryTaskDetailList.Data["+ i +"].TaskStatus");
-				taskDetail.UpdateTime = context.StringValue("QueryTaskDetailList.Data["+ i +"].UpdateTime");
-				taskDetail.CreateTime = context.StringValue("QueryTaskDetailList.Data["+ i +"].CreateTime");
-				taskDetail.TryCount = context.IntegerValue("QueryTaskDetailList.Data["+ i +"].TryCount");
-				taskDetail.ErrorMsg = context.StringValue("QueryTaskDetailList.Data["+ i +"].ErrorMsg");
-				taskDetail.TaskStatusCode = context.IntegerValue("QueryTaskDetailList.Data["+ i +"].TaskStatusCode");
-				taskDetail.TaskResult = context.StringValue("QueryTaskDetailList.Data["+ i +"].TaskResult");
-				taskDetail.TaskTypeDescription = context.StringValue("QueryTaskDetailList.Data["+ i +"].TaskTypeDescription");
+				taskDetail.TaskNo = _ctx.StringValue("QueryTaskDetailList.Data["+ i +"].TaskNo");
+				taskDetail.TaskDetailNo = _ctx.StringValue("QueryTaskDetailList.Data["+ i +"].TaskDetailNo");
+				taskDetail.TaskType = _ctx.StringValue("QueryTaskDetailList.Data["+ i +"].TaskType");
+				taskDetail.InstanceId = _ctx.StringValue("QueryTaskDetailList.Data["+ i +"].InstanceId");
+				taskDetail.DomainName = _ctx.StringValue("QueryTaskDetailList.Data["+ i +"].DomainName");
+				taskDetail.TaskStatus = _ctx.StringValue("QueryTaskDetailList.Data["+ i +"].TaskStatus");
+				taskDetail.UpdateTime = _ctx.StringValue("QueryTaskDetailList.Data["+ i +"].UpdateTime");
+				taskDetail.CreateTime = _ctx.StringValue("QueryTaskDetailList.Data["+ i +"].CreateTime");
+				taskDetail.TryCount = _ctx.IntegerValue("QueryTaskDetailList.Data["+ i +"].TryCount");
+				taskDetail.ErrorMsg = _ctx.StringValue("QueryTaskDetailList.Data["+ i +"].ErrorMsg");
+				taskDetail.TaskStatusCode = _ctx.IntegerValue("QueryTaskDetailList.Data["+ i +"].TaskStatusCode");
+				taskDetail.TaskResult = _ctx.StringValue("QueryTaskDetailList.Data["+ i +"].TaskResult");
+				taskDetail.TaskTypeDescription = _ctx.StringValue("QueryTaskDetailList.Data["+ i +"].TaskTypeDescription");
 
 				queryTaskDetailListResponse_data.Add(taskDetail);
 			}

@@ -26,24 +26,24 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 {
     public class ValidateTemplateContentResponseUnmarshaller
     {
-        public static ValidateTemplateContentResponse Unmarshall(UnmarshallerContext context)
+        public static ValidateTemplateContentResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ValidateTemplateContentResponse validateTemplateContentResponse = new ValidateTemplateContentResponse();
 
-			validateTemplateContentResponse.HttpResponse = context.HttpResponse;
-			validateTemplateContentResponse.RequestId = context.StringValue("ValidateTemplateContent.RequestId");
-			validateTemplateContentResponse.Parameters = context.StringValue("ValidateTemplateContent.Parameters");
-			validateTemplateContentResponse.RamRole = context.StringValue("ValidateTemplateContent.RamRole");
-			validateTemplateContentResponse.Outputs = context.StringValue("ValidateTemplateContent.Outputs");
+			validateTemplateContentResponse.HttpResponse = _ctx.HttpResponse;
+			validateTemplateContentResponse.RequestId = _ctx.StringValue("ValidateTemplateContent.RequestId");
+			validateTemplateContentResponse.Parameters = _ctx.StringValue("ValidateTemplateContent.Parameters");
+			validateTemplateContentResponse.RamRole = _ctx.StringValue("ValidateTemplateContent.RamRole");
+			validateTemplateContentResponse.Outputs = _ctx.StringValue("ValidateTemplateContent.Outputs");
 
 			List<ValidateTemplateContentResponse.ValidateTemplateContent_Task> validateTemplateContentResponse_tasks = new List<ValidateTemplateContentResponse.ValidateTemplateContent_Task>();
-			for (int i = 0; i < context.Length("ValidateTemplateContent.Tasks.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ValidateTemplateContent.Tasks.Length"); i++) {
 				ValidateTemplateContentResponse.ValidateTemplateContent_Task task = new ValidateTemplateContentResponse.ValidateTemplateContent_Task();
-				task.Name = context.StringValue("ValidateTemplateContent.Tasks["+ i +"].Name");
-				task.Type = context.StringValue("ValidateTemplateContent.Tasks["+ i +"].Type");
-				task.Description = context.StringValue("ValidateTemplateContent.Tasks["+ i +"].Description");
-				task.Properties = context.StringValue("ValidateTemplateContent.Tasks["+ i +"].Properties");
-				task.Outputs = context.StringValue("ValidateTemplateContent.Tasks["+ i +"].Outputs");
+				task.Name = _ctx.StringValue("ValidateTemplateContent.Tasks["+ i +"].Name");
+				task.Type = _ctx.StringValue("ValidateTemplateContent.Tasks["+ i +"].Type");
+				task.Description = _ctx.StringValue("ValidateTemplateContent.Tasks["+ i +"].Description");
+				task.Properties = _ctx.StringValue("ValidateTemplateContent.Tasks["+ i +"].Properties");
+				task.Outputs = _ctx.StringValue("ValidateTemplateContent.Tasks["+ i +"].Outputs");
 
 				validateTemplateContentResponse_tasks.Add(task);
 			}

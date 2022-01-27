@@ -26,27 +26,27 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 {
     public class QueryConversationsResponseUnmarshaller
     {
-        public static QueryConversationsResponse Unmarshall(UnmarshallerContext context)
+        public static QueryConversationsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryConversationsResponse queryConversationsResponse = new QueryConversationsResponse();
 
-			queryConversationsResponse.HttpResponse = context.HttpResponse;
-			queryConversationsResponse.RequestId = context.StringValue("QueryConversations.RequestId");
-			queryConversationsResponse.TotalCount = context.LongValue("QueryConversations.TotalCount");
-			queryConversationsResponse.PageNumber = context.IntegerValue("QueryConversations.PageNumber");
-			queryConversationsResponse.PageSize = context.IntegerValue("QueryConversations.PageSize");
+			queryConversationsResponse.HttpResponse = _ctx.HttpResponse;
+			queryConversationsResponse.RequestId = _ctx.StringValue("QueryConversations.RequestId");
+			queryConversationsResponse.TotalCount = _ctx.LongValue("QueryConversations.TotalCount");
+			queryConversationsResponse.PageNumber = _ctx.IntegerValue("QueryConversations.PageNumber");
+			queryConversationsResponse.PageSize = _ctx.IntegerValue("QueryConversations.PageSize");
 
 			List<QueryConversationsResponse.QueryConversations_Conversation> queryConversationsResponse_conversations = new List<QueryConversationsResponse.QueryConversations_Conversation>();
-			for (int i = 0; i < context.Length("QueryConversations.Conversations.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryConversations.Conversations.Length"); i++) {
 				QueryConversationsResponse.QueryConversations_Conversation conversation = new QueryConversationsResponse.QueryConversations_Conversation();
-				conversation.CallingNumber = context.StringValue("QueryConversations.Conversations["+ i +"].CallingNumber");
-				conversation.BeginTime = context.LongValue("QueryConversations.Conversations["+ i +"].BeginTime");
-				conversation.EndTime = context.LongValue("QueryConversations.Conversations["+ i +"].EndTime");
-				conversation.TransferredToAgent = context.BooleanValue("QueryConversations.Conversations["+ i +"].TransferredToAgent");
-				conversation.SkillGroupId = context.StringValue("QueryConversations.Conversations["+ i +"].SkillGroupId");
-				conversation.UserUtteranceCount = context.IntegerValue("QueryConversations.Conversations["+ i +"].UserUtteranceCount");
-				conversation.EffectiveAnswerCount = context.IntegerValue("QueryConversations.Conversations["+ i +"].EffectiveAnswerCount");
-				conversation.ConversationId = context.StringValue("QueryConversations.Conversations["+ i +"].ConversationId");
+				conversation.CallingNumber = _ctx.StringValue("QueryConversations.Conversations["+ i +"].CallingNumber");
+				conversation.BeginTime = _ctx.LongValue("QueryConversations.Conversations["+ i +"].BeginTime");
+				conversation.EndTime = _ctx.LongValue("QueryConversations.Conversations["+ i +"].EndTime");
+				conversation.TransferredToAgent = _ctx.BooleanValue("QueryConversations.Conversations["+ i +"].TransferredToAgent");
+				conversation.SkillGroupId = _ctx.StringValue("QueryConversations.Conversations["+ i +"].SkillGroupId");
+				conversation.UserUtteranceCount = _ctx.IntegerValue("QueryConversations.Conversations["+ i +"].UserUtteranceCount");
+				conversation.EffectiveAnswerCount = _ctx.IntegerValue("QueryConversations.Conversations["+ i +"].EffectiveAnswerCount");
+				conversation.ConversationId = _ctx.StringValue("QueryConversations.Conversations["+ i +"].ConversationId");
 
 				queryConversationsResponse_conversations.Add(conversation);
 			}

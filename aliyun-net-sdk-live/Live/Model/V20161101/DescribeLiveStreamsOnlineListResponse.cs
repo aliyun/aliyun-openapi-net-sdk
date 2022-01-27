@@ -124,11 +124,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string publishDomain;
 
+			private string streamUrlArgs;
+
 			private string publishType;
 
 			private string transcoded;
 
 			private string transcodeId;
+
+			private string transcodeDrm;
 
 			private string serverIp;
 
@@ -220,6 +224,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			public string StreamUrlArgs
+			{
+				get
+				{
+					return streamUrlArgs;
+				}
+				set	
+				{
+					streamUrlArgs = value;
+				}
+			}
+
 			public string PublishType
 			{
 				get
@@ -253,6 +269,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					transcodeId = value;
+				}
+			}
+
+			public string TranscodeDrm
+			{
+				get
+				{
+					return transcodeDrm;
+				}
+				set	
+				{
+					transcodeDrm = value;
 				}
 			}
 

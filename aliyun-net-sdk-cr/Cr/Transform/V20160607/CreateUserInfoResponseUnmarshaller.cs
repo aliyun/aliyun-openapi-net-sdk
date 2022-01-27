@@ -26,11 +26,11 @@ namespace Aliyun.Acs.cr.Transform.V20160607
 {
     public class CreateUserInfoResponseUnmarshaller
     {
-        public static CreateUserInfoResponse Unmarshall(UnmarshallerContext context)
+        public static CreateUserInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateUserInfoResponse createUserInfoResponse = new CreateUserInfoResponse();
 
-			createUserInfoResponse.HttpResponse = context.HttpResponse;
+			createUserInfoResponse.HttpResponse = _ctx.HttpResponse;
         
 			return createUserInfoResponse;
         }

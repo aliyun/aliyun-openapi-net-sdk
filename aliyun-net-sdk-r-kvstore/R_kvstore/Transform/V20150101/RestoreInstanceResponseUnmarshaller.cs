@@ -26,12 +26,12 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class RestoreInstanceResponseUnmarshaller
     {
-        public static RestoreInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static RestoreInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RestoreInstanceResponse restoreInstanceResponse = new RestoreInstanceResponse();
 
-			restoreInstanceResponse.HttpResponse = context.HttpResponse;
-			restoreInstanceResponse.RequestId = context.StringValue("RestoreInstance.RequestId");
+			restoreInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			restoreInstanceResponse.RequestId = _ctx.StringValue("RestoreInstance.RequestId");
         
 			return restoreInstanceResponse;
         }

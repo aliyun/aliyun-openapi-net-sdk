@@ -26,15 +26,15 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class SubmitDynamicImageJobResponseUnmarshaller
     {
-        public static SubmitDynamicImageJobResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitDynamicImageJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitDynamicImageJobResponse submitDynamicImageJobResponse = new SubmitDynamicImageJobResponse();
 
-			submitDynamicImageJobResponse.HttpResponse = context.HttpResponse;
-			submitDynamicImageJobResponse.RequestId = context.StringValue("SubmitDynamicImageJob.RequestId");
+			submitDynamicImageJobResponse.HttpResponse = _ctx.HttpResponse;
+			submitDynamicImageJobResponse.RequestId = _ctx.StringValue("SubmitDynamicImageJob.RequestId");
 
 			SubmitDynamicImageJobResponse.SubmitDynamicImageJob_DynamicImageJob dynamicImageJob = new SubmitDynamicImageJobResponse.SubmitDynamicImageJob_DynamicImageJob();
-			dynamicImageJob.JobId = context.StringValue("SubmitDynamicImageJob.DynamicImageJob.JobId");
+			dynamicImageJob.JobId = _ctx.StringValue("SubmitDynamicImageJob.DynamicImageJob.JobId");
 			submitDynamicImageJobResponse.DynamicImageJob = dynamicImageJob;
         
 			return submitDynamicImageJobResponse;

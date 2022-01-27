@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeInstancesFullStatusResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeInstancesFullStatus_InstanceFullStatusType> instanceFullStatusSet;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -157,33 +157,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeInstancesFullStatus_ScheduledSystemEventType
 			{
 
-				private string eventId;
-
 				private string eventPublishTime;
+
+				private string eventId;
 
 				private string notBefore;
 
-				private string reason;
-
 				private string impactLevel;
+
+				private string reason;
 
 				private DescribeInstancesFullStatus_EventCycleStatus eventCycleStatus;
 
 				private DescribeInstancesFullStatus_EventType eventType;
 
 				private DescribeInstancesFullStatus_ExtendedAttribute extendedAttribute;
-
-				public string EventId
-				{
-					get
-					{
-						return eventId;
-					}
-					set	
-					{
-						eventId = value;
-					}
-				}
 
 				public string EventPublishTime
 				{
@@ -194,6 +182,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						eventPublishTime = value;
+					}
+				}
+
+				public string EventId
+				{
+					get
+					{
+						return eventId;
+					}
+					set	
+					{
+						eventId = value;
 					}
 				}
 
@@ -209,18 +209,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public string Reason
-				{
-					get
-					{
-						return reason;
-					}
-					set	
-					{
-						reason = value;
-					}
-				}
-
 				public string ImpactLevel
 				{
 					get
@@ -230,6 +218,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						impactLevel = value;
+					}
+				}
+
+				public string Reason
+				{
+					get
+					{
+						return reason;
+					}
+					set	
+					{
+						reason = value;
 					}
 				}
 
@@ -272,21 +272,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				public class DescribeInstancesFullStatus_EventCycleStatus
 				{
 
-					private int? code;
-
 					private string name;
 
-					public int? Code
-					{
-						get
-						{
-							return code;
-						}
-						set	
-						{
-							code = value;
-						}
-					}
+					private int? code;
 
 					public string Name
 					{
@@ -297,6 +285,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						set	
 						{
 							name = value;
+						}
+					}
+
+					public int? Code
+					{
+						get
+						{
+							return code;
+						}
+						set	
+						{
+							code = value;
 						}
 					}
 				}
@@ -304,21 +304,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				public class DescribeInstancesFullStatus_EventType
 				{
 
-					private int? code;
-
 					private string name;
 
-					public int? Code
-					{
-						get
-						{
-							return code;
-						}
-						set	
-						{
-							code = value;
-						}
-					}
+					private int? code;
 
 					public string Name
 					{
@@ -331,28 +319,28 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 							name = value;
 						}
 					}
+
+					public int? Code
+					{
+						get
+						{
+							return code;
+						}
+						set	
+						{
+							code = value;
+						}
+					}
 				}
 
 				public class DescribeInstancesFullStatus_ExtendedAttribute
 				{
 
-					private string diskId;
-
 					private string device;
 
-					private List<DescribeInstancesFullStatus_InactiveDisk> inactiveDisks;
+					private string diskId;
 
-					public string DiskId
-					{
-						get
-						{
-							return diskId;
-						}
-						set	
-						{
-							diskId = value;
-						}
-					}
+					private List<DescribeInstancesFullStatus_InactiveDisk> inactiveDisks;
 
 					public string Device
 					{
@@ -363,6 +351,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						set	
 						{
 							device = value;
+						}
+					}
+
+					public string DiskId
+					{
+						get
+						{
+							return diskId;
+						}
+						set	
+						{
+							diskId = value;
 						}
 					}
 
@@ -383,13 +383,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 						private string creationTime;
 
-						private string releaseTime;
-
-						private string deviceType;
+						private string deviceSize;
 
 						private string deviceCategory;
 
-						private string deviceSize;
+						private string deviceType;
+
+						private string releaseTime;
 
 						public string CreationTime
 						{
@@ -403,27 +403,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 							}
 						}
 
-						public string ReleaseTime
+						public string DeviceSize
 						{
 							get
 							{
-								return releaseTime;
+								return deviceSize;
 							}
 							set	
 							{
-								releaseTime = value;
-							}
-						}
-
-						public string DeviceType
-						{
-							get
-							{
-								return deviceType;
-							}
-							set	
-							{
-								deviceType = value;
+								deviceSize = value;
 							}
 						}
 
@@ -439,15 +427,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 							}
 						}
 
-						public string DeviceSize
+						public string DeviceType
 						{
 							get
 							{
-								return deviceSize;
+								return deviceType;
 							}
 							set	
 							{
-								deviceSize = value;
+								deviceType = value;
+							}
+						}
+
+						public string ReleaseTime
+						{
+							get
+							{
+								return releaseTime;
+							}
+							set	
+							{
+								releaseTime = value;
 							}
 						}
 					}
@@ -457,21 +457,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeInstancesFullStatus_Status
 			{
 
-				private int? code;
-
 				private string name;
 
-				public int? Code
-				{
-					get
-					{
-						return code;
-					}
-					set	
-					{
-						code = value;
-					}
-				}
+				private int? code;
 
 				public string Name
 				{
@@ -482,6 +470,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						name = value;
+					}
+				}
+
+				public int? Code
+				{
+					get
+					{
+						return code;
+					}
+					set	
+					{
+						code = value;
 					}
 				}
 			}
@@ -489,21 +489,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeInstancesFullStatus_HealthStatus
 			{
 
-				private int? code;
-
 				private string name;
 
-				public int? Code
-				{
-					get
-					{
-						return code;
-					}
-					set	
-					{
-						code = value;
-					}
-				}
+				private int? code;
 
 				public string Name
 				{
@@ -514,6 +502,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						name = value;
+					}
+				}
+
+				public int? Code
+				{
+					get
+					{
+						return code;
+					}
+					set	
+					{
+						code = value;
 					}
 				}
 			}

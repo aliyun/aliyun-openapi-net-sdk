@@ -26,15 +26,15 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class ModifyMeetingPasswordResponseUnmarshaller
     {
-        public static ModifyMeetingPasswordResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyMeetingPasswordResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyMeetingPasswordResponse modifyMeetingPasswordResponse = new ModifyMeetingPasswordResponse();
 
-			modifyMeetingPasswordResponse.HttpResponse = context.HttpResponse;
-			modifyMeetingPasswordResponse.ErrorCode = context.IntegerValue("ModifyMeetingPassword.ErrorCode");
-			modifyMeetingPasswordResponse.Message = context.StringValue("ModifyMeetingPassword.Message");
-			modifyMeetingPasswordResponse.Success = context.BooleanValue("ModifyMeetingPassword.Success");
-			modifyMeetingPasswordResponse.RequestId = context.StringValue("ModifyMeetingPassword.RequestId");
+			modifyMeetingPasswordResponse.HttpResponse = _ctx.HttpResponse;
+			modifyMeetingPasswordResponse.ErrorCode = _ctx.IntegerValue("ModifyMeetingPassword.ErrorCode");
+			modifyMeetingPasswordResponse.Message = _ctx.StringValue("ModifyMeetingPassword.Message");
+			modifyMeetingPasswordResponse.Success = _ctx.BooleanValue("ModifyMeetingPassword.Success");
+			modifyMeetingPasswordResponse.RequestId = _ctx.StringValue("ModifyMeetingPassword.RequestId");
         
 			return modifyMeetingPasswordResponse;
         }

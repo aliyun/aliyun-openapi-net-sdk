@@ -26,20 +26,20 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class BatchBindPurchasedDevicesResponseUnmarshaller
     {
-        public static BatchBindPurchasedDevicesResponse Unmarshall(UnmarshallerContext context)
+        public static BatchBindPurchasedDevicesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchBindPurchasedDevicesResponse batchBindPurchasedDevicesResponse = new BatchBindPurchasedDevicesResponse();
 
-			batchBindPurchasedDevicesResponse.HttpResponse = context.HttpResponse;
-			batchBindPurchasedDevicesResponse.RequestId = context.StringValue("BatchBindPurchasedDevices.RequestId");
+			batchBindPurchasedDevicesResponse.HttpResponse = _ctx.HttpResponse;
+			batchBindPurchasedDevicesResponse.RequestId = _ctx.StringValue("BatchBindPurchasedDevices.RequestId");
 
 			List<BatchBindPurchasedDevicesResponse.BatchBindPurchasedDevices_Result> batchBindPurchasedDevicesResponse_results = new List<BatchBindPurchasedDevicesResponse.BatchBindPurchasedDevices_Result>();
-			for (int i = 0; i < context.Length("BatchBindPurchasedDevices.Results.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("BatchBindPurchasedDevices.Results.Length"); i++) {
 				BatchBindPurchasedDevicesResponse.BatchBindPurchasedDevices_Result result = new BatchBindPurchasedDevicesResponse.BatchBindPurchasedDevices_Result();
-				result.Region = context.StringValue("BatchBindPurchasedDevices.Results["+ i +"].Region");
-				result.GroupId = context.StringValue("BatchBindPurchasedDevices.Results["+ i +"].GroupId");
-				result.DeviceId = context.StringValue("BatchBindPurchasedDevices.Results["+ i +"].DeviceId");
-				result.Error = context.StringValue("BatchBindPurchasedDevices.Results["+ i +"].Error");
+				result.Region = _ctx.StringValue("BatchBindPurchasedDevices.Results["+ i +"].Region");
+				result.GroupId = _ctx.StringValue("BatchBindPurchasedDevices.Results["+ i +"].GroupId");
+				result.DeviceId = _ctx.StringValue("BatchBindPurchasedDevices.Results["+ i +"].DeviceId");
+				result.Error = _ctx.StringValue("BatchBindPurchasedDevices.Results["+ i +"].Error");
 
 				batchBindPurchasedDevicesResponse_results.Add(result);
 			}

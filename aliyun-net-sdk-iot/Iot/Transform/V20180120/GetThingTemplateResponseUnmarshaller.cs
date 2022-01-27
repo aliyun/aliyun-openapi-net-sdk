@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class GetThingTemplateResponseUnmarshaller
     {
-        public static GetThingTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static GetThingTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetThingTemplateResponse getThingTemplateResponse = new GetThingTemplateResponse();
 
-			getThingTemplateResponse.HttpResponse = context.HttpResponse;
-			getThingTemplateResponse.RequestId = context.StringValue("GetThingTemplate.RequestId");
-			getThingTemplateResponse.Success = context.BooleanValue("GetThingTemplate.Success");
-			getThingTemplateResponse.Code = context.StringValue("GetThingTemplate.Code");
-			getThingTemplateResponse.ErrorMessage = context.StringValue("GetThingTemplate.ErrorMessage");
-			getThingTemplateResponse.ThingModelJSON = context.StringValue("GetThingTemplate.ThingModelJSON");
+			getThingTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			getThingTemplateResponse.RequestId = _ctx.StringValue("GetThingTemplate.RequestId");
+			getThingTemplateResponse.Success = _ctx.BooleanValue("GetThingTemplate.Success");
+			getThingTemplateResponse.Code = _ctx.StringValue("GetThingTemplate.Code");
+			getThingTemplateResponse.ErrorMessage = _ctx.StringValue("GetThingTemplate.ErrorMessage");
+			getThingTemplateResponse.ThingModelJSON = _ctx.StringValue("GetThingTemplate.ThingModelJSON");
         
 			return getThingTemplateResponse;
         }

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class UnlockDeviceResponseUnmarshaller
     {
-        public static UnlockDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static UnlockDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UnlockDeviceResponse unlockDeviceResponse = new UnlockDeviceResponse();
 
-			unlockDeviceResponse.HttpResponse = context.HttpResponse;
-			unlockDeviceResponse.RequestId = context.StringValue("UnlockDevice.RequestId");
-			unlockDeviceResponse.Id = context.StringValue("UnlockDevice.Id");
+			unlockDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			unlockDeviceResponse.RequestId = _ctx.StringValue("UnlockDevice.RequestId");
+			unlockDeviceResponse.Id = _ctx.StringValue("UnlockDevice.Id");
         
 			return unlockDeviceResponse;
         }

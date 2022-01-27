@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Config.Model.V20190108
@@ -56,13 +56,25 @@ namespace Aliyun.Acs.Config.Model.V20190108
 		public class GetResourceComplianceTimeline_ResourceComplianceTimeline
 		{
 
+			private string nextToken;
+
 			private int? limit;
 
 			private long? totalCount;
 
-			private string nextToken;
-
 			private List<GetResourceComplianceTimeline_ComplianceListItem> complianceList;
+
+			public string NextToken
+			{
+				get
+				{
+					return nextToken;
+				}
+				set	
+				{
+					nextToken = value;
+				}
+			}
 
 			public int? Limit
 			{
@@ -88,18 +100,6 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				}
 			}
 
-			public string NextToken
-			{
-				get
-				{
-					return nextToken;
-				}
-				set	
-				{
-					nextToken = value;
-				}
-			}
-
 			public List<GetResourceComplianceTimeline_ComplianceListItem> ComplianceList
 			{
 				get
@@ -115,19 +115,23 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			public class GetResourceComplianceTimeline_ComplianceListItem
 			{
 
+				private string tags;
+
 				private string accountId;
 
 				private string availabilityZone;
 
-				private long? captureTime;
+				private string resourceType;
 
-				private string configuration;
-
-				private string configurationDiff;
+				private long? resourceCreateTime;
 
 				private string region;
 
-				private long? resourceCreateTime;
+				private string configuration;
+
+				private long? captureTime;
+
+				private string configurationDiff;
 
 				private string resourceId;
 
@@ -135,9 +139,17 @@ namespace Aliyun.Acs.Config.Model.V20190108
 
 				private string resourceStatus;
 
-				private string resourceType;
-
-				private string tags;
+				public string Tags
+				{
+					get
+					{
+						return tags;
+					}
+					set	
+					{
+						tags = value;
+					}
+				}
 
 				public string AccountId
 				{
@@ -163,39 +175,27 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					}
 				}
 
-				public long? CaptureTime
+				public string ResourceType
 				{
 					get
 					{
-						return captureTime;
+						return resourceType;
 					}
 					set	
 					{
-						captureTime = value;
+						resourceType = value;
 					}
 				}
 
-				public string Configuration
+				public long? ResourceCreateTime
 				{
 					get
 					{
-						return configuration;
+						return resourceCreateTime;
 					}
 					set	
 					{
-						configuration = value;
-					}
-				}
-
-				public string ConfigurationDiff
-				{
-					get
-					{
-						return configurationDiff;
-					}
-					set	
-					{
-						configurationDiff = value;
+						resourceCreateTime = value;
 					}
 				}
 
@@ -211,15 +211,39 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					}
 				}
 
-				public long? ResourceCreateTime
+				public string Configuration
 				{
 					get
 					{
-						return resourceCreateTime;
+						return configuration;
 					}
 					set	
 					{
-						resourceCreateTime = value;
+						configuration = value;
+					}
+				}
+
+				public long? CaptureTime
+				{
+					get
+					{
+						return captureTime;
+					}
+					set	
+					{
+						captureTime = value;
+					}
+				}
+
+				public string ConfigurationDiff
+				{
+					get
+					{
+						return configurationDiff;
+					}
+					set	
+					{
+						configurationDiff = value;
 					}
 				}
 
@@ -256,30 +280,6 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					set	
 					{
 						resourceStatus = value;
-					}
-				}
-
-				public string ResourceType
-				{
-					get
-					{
-						return resourceType;
-					}
-					set	
-					{
-						resourceType = value;
-					}
-				}
-
-				public string Tags
-				{
-					get
-					{
-						return tags;
-					}
-					set	
-					{
-						tags = value;
 					}
 				}
 			}

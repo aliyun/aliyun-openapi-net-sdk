@@ -26,16 +26,16 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 {
     public class DescribeDcdnStagingIpResponseUnmarshaller
     {
-        public static DescribeDcdnStagingIpResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDcdnStagingIpResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDcdnStagingIpResponse describeDcdnStagingIpResponse = new DescribeDcdnStagingIpResponse();
 
-			describeDcdnStagingIpResponse.HttpResponse = context.HttpResponse;
-			describeDcdnStagingIpResponse.RequestId = context.StringValue("DescribeDcdnStagingIp.RequestId");
+			describeDcdnStagingIpResponse.HttpResponse = _ctx.HttpResponse;
+			describeDcdnStagingIpResponse.RequestId = _ctx.StringValue("DescribeDcdnStagingIp.RequestId");
 
 			List<string> describeDcdnStagingIpResponse_iPV4s = new List<string>();
-			for (int i = 0; i < context.Length("DescribeDcdnStagingIp.IPV4s.Length"); i++) {
-				describeDcdnStagingIpResponse_iPV4s.Add(context.StringValue("DescribeDcdnStagingIp.IPV4s["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeDcdnStagingIp.IPV4s.Length"); i++) {
+				describeDcdnStagingIpResponse_iPV4s.Add(_ctx.StringValue("DescribeDcdnStagingIp.IPV4s["+ i +"]"));
 			}
 			describeDcdnStagingIpResponse.IPV4s = describeDcdnStagingIpResponse_iPV4s;
         

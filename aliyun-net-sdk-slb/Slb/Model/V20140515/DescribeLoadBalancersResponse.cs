@@ -134,6 +134,24 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 			private string addressIPVersion;
 
+			private string businessStatus;
+
+			private string modificationProtectionStatus;
+
+			private string modificationProtectionReason;
+
+			private int? bandwidth;
+
+			private string internetChargeTypeAlias;
+
+			private string loadBalancerSpec;
+
+			private string deleteProtection;
+
+			private bool? specBpsFlag;
+
+			private string specType;
+
 			private List<DescribeLoadBalancers_Tag> tags;
 
 			public string LoadBalancerId
@@ -349,6 +367,114 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					addressIPVersion = value;
+				}
+			}
+
+			public string BusinessStatus
+			{
+				get
+				{
+					return businessStatus;
+				}
+				set	
+				{
+					businessStatus = value;
+				}
+			}
+
+			public string ModificationProtectionStatus
+			{
+				get
+				{
+					return modificationProtectionStatus;
+				}
+				set	
+				{
+					modificationProtectionStatus = value;
+				}
+			}
+
+			public string ModificationProtectionReason
+			{
+				get
+				{
+					return modificationProtectionReason;
+				}
+				set	
+				{
+					modificationProtectionReason = value;
+				}
+			}
+
+			public int? Bandwidth
+			{
+				get
+				{
+					return bandwidth;
+				}
+				set	
+				{
+					bandwidth = value;
+				}
+			}
+
+			public string InternetChargeTypeAlias
+			{
+				get
+				{
+					return internetChargeTypeAlias;
+				}
+				set	
+				{
+					internetChargeTypeAlias = value;
+				}
+			}
+
+			public string LoadBalancerSpec
+			{
+				get
+				{
+					return loadBalancerSpec;
+				}
+				set	
+				{
+					loadBalancerSpec = value;
+				}
+			}
+
+			public string DeleteProtection
+			{
+				get
+				{
+					return deleteProtection;
+				}
+				set	
+				{
+					deleteProtection = value;
+				}
+			}
+
+			public bool? SpecBpsFlag
+			{
+				get
+				{
+					return specBpsFlag;
+				}
+				set	
+				{
+					specBpsFlag = value;
+				}
+			}
+
+			public string SpecType
+			{
+				get
+				{
+					return specType;
+				}
+				set	
+				{
+					specType = value;
 				}
 			}
 

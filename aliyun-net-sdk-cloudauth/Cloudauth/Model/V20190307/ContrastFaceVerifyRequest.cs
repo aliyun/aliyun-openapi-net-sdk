@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cloudauth.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cloudauth.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -68,9 +68,13 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 		private string mobile;
 
+		private string faceContrastFile;
+
 		private long? sceneId;
 
 		private string ossBucketName;
+
+		private string crop;
 
 		public string ProductCode
 		{
@@ -254,6 +258,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
+		public string FaceContrastFile
+		{
+			get
+			{
+				return faceContrastFile;
+			}
+			set	
+			{
+				faceContrastFile = value;
+				DictionaryUtil.Add(BodyParameters, "FaceContrastFile", value);
+			}
+		}
+
 		public long? SceneId
 		{
 			get
@@ -277,6 +294,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				ossBucketName = value;
 				DictionaryUtil.Add(BodyParameters, "OssBucketName", value);
+			}
+		}
+
+		public string Crop
+		{
+			get
+			{
+				return crop;
+			}
+			set	
+			{
+				crop = value;
+				DictionaryUtil.Add(BodyParameters, "Crop", value);
 			}
 		}
 

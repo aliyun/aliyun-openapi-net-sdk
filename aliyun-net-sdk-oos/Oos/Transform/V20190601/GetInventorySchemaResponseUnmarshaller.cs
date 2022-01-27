@@ -26,25 +26,25 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 {
     public class GetInventorySchemaResponseUnmarshaller
     {
-        public static GetInventorySchemaResponse Unmarshall(UnmarshallerContext context)
+        public static GetInventorySchemaResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetInventorySchemaResponse getInventorySchemaResponse = new GetInventorySchemaResponse();
 
-			getInventorySchemaResponse.HttpResponse = context.HttpResponse;
-			getInventorySchemaResponse.RequestId = context.StringValue("GetInventorySchema.RequestId");
-			getInventorySchemaResponse.NextToken = context.StringValue("GetInventorySchema.NextToken");
+			getInventorySchemaResponse.HttpResponse = _ctx.HttpResponse;
+			getInventorySchemaResponse.RequestId = _ctx.StringValue("GetInventorySchema.RequestId");
+			getInventorySchemaResponse.NextToken = _ctx.StringValue("GetInventorySchema.NextToken");
 
 			List<GetInventorySchemaResponse.GetInventorySchema_Schema> getInventorySchemaResponse_schemas = new List<GetInventorySchemaResponse.GetInventorySchema_Schema>();
-			for (int i = 0; i < context.Length("GetInventorySchema.Schemas.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetInventorySchema.Schemas.Length"); i++) {
 				GetInventorySchemaResponse.GetInventorySchema_Schema schema = new GetInventorySchemaResponse.GetInventorySchema_Schema();
-				schema.TypeName = context.StringValue("GetInventorySchema.Schemas["+ i +"].TypeName");
-				schema.Version = context.StringValue("GetInventorySchema.Schemas["+ i +"].Version");
+				schema.TypeName = _ctx.StringValue("GetInventorySchema.Schemas["+ i +"].TypeName");
+				schema.Version = _ctx.StringValue("GetInventorySchema.Schemas["+ i +"].Version");
 
 				List<GetInventorySchemaResponse.GetInventorySchema_Schema.GetInventorySchema_Attribute> schema_attributes = new List<GetInventorySchemaResponse.GetInventorySchema_Schema.GetInventorySchema_Attribute>();
-				for (int j = 0; j < context.Length("GetInventorySchema.Schemas["+ i +"].Attributes.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("GetInventorySchema.Schemas["+ i +"].Attributes.Length"); j++) {
 					GetInventorySchemaResponse.GetInventorySchema_Schema.GetInventorySchema_Attribute attribute = new GetInventorySchemaResponse.GetInventorySchema_Schema.GetInventorySchema_Attribute();
-					attribute.Name = context.StringValue("GetInventorySchema.Schemas["+ i +"].Attributes["+ j +"].Name");
-					attribute.DataType = context.StringValue("GetInventorySchema.Schemas["+ i +"].Attributes["+ j +"].DataType");
+					attribute.Name = _ctx.StringValue("GetInventorySchema.Schemas["+ i +"].Attributes["+ j +"].Name");
+					attribute.DataType = _ctx.StringValue("GetInventorySchema.Schemas["+ i +"].Attributes["+ j +"].DataType");
 
 					schema_attributes.Add(attribute);
 				}

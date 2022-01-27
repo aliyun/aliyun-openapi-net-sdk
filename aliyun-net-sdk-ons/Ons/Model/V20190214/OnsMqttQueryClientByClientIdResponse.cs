@@ -72,11 +72,11 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 			private bool? online;
 
-			private string clientId;
+			private long? lastTouch;
 
 			private string socketChannel;
 
-			private long? lastTouch;
+			private string clientId;
 
 			private List<OnsMqttQueryClientByClientId_SubscriptionDo> subScriptonData;
 
@@ -92,15 +92,15 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
-			public string ClientId
+			public long? LastTouch
 			{
 				get
 				{
-					return clientId;
+					return lastTouch;
 				}
 				set	
 				{
-					clientId = value;
+					lastTouch = value;
 				}
 			}
 
@@ -116,15 +116,15 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
-			public long? LastTouch
+			public string ClientId
 			{
 				get
 				{
-					return lastTouch;
+					return clientId;
 				}
 				set	
 				{
-					lastTouch = value;
+					clientId = value;
 				}
 			}
 
@@ -143,23 +143,11 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			public class OnsMqttQueryClientByClientId_SubscriptionDo
 			{
 
-				private string parentTopic;
-
 				private string subTopic;
 
-				private int? qos;
+				private string parentTopic;
 
-				public string ParentTopic
-				{
-					get
-					{
-						return parentTopic;
-					}
-					set	
-					{
-						parentTopic = value;
-					}
-				}
+				private int? qos;
 
 				public string SubTopic
 				{
@@ -170,6 +158,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					set	
 					{
 						subTopic = value;
+					}
+				}
+
+				public string ParentTopic
+				{
+					get
+					{
+						return parentTopic;
+					}
+					set	
+					{
+						parentTopic = value;
 					}
 				}
 

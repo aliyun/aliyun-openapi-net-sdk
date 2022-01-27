@@ -26,30 +26,31 @@ namespace Aliyun.Acs.codeup.Transform.V20200414
 {
     public class AddWebhookResponseUnmarshaller
     {
-        public static AddWebhookResponse Unmarshall(UnmarshallerContext context)
+        public static AddWebhookResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddWebhookResponse addWebhookResponse = new AddWebhookResponse();
 
-			addWebhookResponse.HttpResponse = context.HttpResponse;
-			addWebhookResponse.RequestId = context.StringValue("AddWebhook.RequestId");
-			addWebhookResponse.ErrorCode = context.StringValue("AddWebhook.ErrorCode");
-			addWebhookResponse.Success = context.BooleanValue("AddWebhook.Success");
-			addWebhookResponse.ErrorMessage = context.StringValue("AddWebhook.ErrorMessage");
+			addWebhookResponse.HttpResponse = _ctx.HttpResponse;
+			addWebhookResponse.RequestId = _ctx.StringValue("AddWebhook.RequestId");
+			addWebhookResponse.ErrorCode = _ctx.StringValue("AddWebhook.ErrorCode");
+			addWebhookResponse.Success = _ctx.BooleanValue("AddWebhook.Success");
+			addWebhookResponse.ErrorMessage = _ctx.StringValue("AddWebhook.ErrorMessage");
 
 			AddWebhookResponse.AddWebhook_Result result = new AddWebhookResponse.AddWebhook_Result();
-			result.Id = context.LongValue("AddWebhook.Result.Id");
-			result.Url = context.StringValue("AddWebhook.Result.Url");
-			result.CreatedAt = context.StringValue("AddWebhook.Result.CreatedAt");
-			result.ProjectId = context.LongValue("AddWebhook.Result.ProjectId");
-			result.PushEvents = context.BooleanValue("AddWebhook.Result.PushEvents");
-			result.IssuesEvents = context.BooleanValue("AddWebhook.Result.IssuesEvents");
-			result.MergeRequestsEvents = context.BooleanValue("AddWebhook.Result.MergeRequestsEvents");
-			result.TagPushEvents = context.BooleanValue("AddWebhook.Result.TagPushEvents");
-			result.BuildEvents = context.BooleanValue("AddWebhook.Result.BuildEvents");
-			result.NoteEvents = context.BooleanValue("AddWebhook.Result.NoteEvents");
-			result.EnableSslVerification = context.BooleanValue("AddWebhook.Result.EnableSslVerification");
-			result.LastTestResult = context.StringValue("AddWebhook.Result.LastTestResult");
-			result.Description = context.StringValue("AddWebhook.Result.Description");
+			result.Id = _ctx.LongValue("AddWebhook.Result.Id");
+			result.Url = _ctx.StringValue("AddWebhook.Result.Url");
+			result.CreatedAt = _ctx.StringValue("AddWebhook.Result.CreatedAt");
+			result.ProjectId = _ctx.LongValue("AddWebhook.Result.ProjectId");
+			result.PushEvents = _ctx.BooleanValue("AddWebhook.Result.PushEvents");
+			result.IssuesEvents = _ctx.BooleanValue("AddWebhook.Result.IssuesEvents");
+			result.MergeRequestsEvents = _ctx.BooleanValue("AddWebhook.Result.MergeRequestsEvents");
+			result.TagPushEvents = _ctx.BooleanValue("AddWebhook.Result.TagPushEvents");
+			result.BuildEvents = _ctx.BooleanValue("AddWebhook.Result.BuildEvents");
+			result.NoteEvents = _ctx.BooleanValue("AddWebhook.Result.NoteEvents");
+			result.EnableSslVerification = _ctx.BooleanValue("AddWebhook.Result.EnableSslVerification");
+			result.LastTestResult = _ctx.StringValue("AddWebhook.Result.LastTestResult");
+			result.Description = _ctx.StringValue("AddWebhook.Result.Description");
+			result.SecretToken = _ctx.StringValue("AddWebhook.Result.SecretToken");
 			addWebhookResponse.Result = result;
         
 			return addWebhookResponse;

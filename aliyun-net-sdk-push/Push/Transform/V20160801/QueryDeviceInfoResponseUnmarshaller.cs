@@ -26,24 +26,24 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 {
     public class QueryDeviceInfoResponseUnmarshaller
     {
-        public static QueryDeviceInfoResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDeviceInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDeviceInfoResponse queryDeviceInfoResponse = new QueryDeviceInfoResponse();
 
-			queryDeviceInfoResponse.HttpResponse = context.HttpResponse;
-			queryDeviceInfoResponse.RequestId = context.StringValue("QueryDeviceInfo.RequestId");
+			queryDeviceInfoResponse.HttpResponse = _ctx.HttpResponse;
+			queryDeviceInfoResponse.RequestId = _ctx.StringValue("QueryDeviceInfo.RequestId");
 
 			QueryDeviceInfoResponse.QueryDeviceInfo_DeviceInfo deviceInfo = new QueryDeviceInfoResponse.QueryDeviceInfo_DeviceInfo();
-			deviceInfo.DeviceId = context.StringValue("QueryDeviceInfo.DeviceInfo.DeviceId");
-			deviceInfo.DeviceType = context.StringValue("QueryDeviceInfo.DeviceInfo.DeviceType");
-			deviceInfo.Account = context.StringValue("QueryDeviceInfo.DeviceInfo.Account");
-			deviceInfo.DeviceToken = context.StringValue("QueryDeviceInfo.DeviceInfo.DeviceToken");
-			deviceInfo.Tags = context.StringValue("QueryDeviceInfo.DeviceInfo.Tags");
-			deviceInfo.Alias = context.StringValue("QueryDeviceInfo.DeviceInfo.Alias");
-			deviceInfo.LastOnlineTime = context.StringValue("QueryDeviceInfo.DeviceInfo.LastOnlineTime");
-			deviceInfo.Online = context.BooleanValue("QueryDeviceInfo.DeviceInfo.Online");
-			deviceInfo.PhoneNumber = context.StringValue("QueryDeviceInfo.DeviceInfo.PhoneNumber");
-			deviceInfo.PushEnabled = context.BooleanValue("QueryDeviceInfo.DeviceInfo.PushEnabled");
+			deviceInfo.DeviceId = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.DeviceId");
+			deviceInfo.DeviceType = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.DeviceType");
+			deviceInfo.Account = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.Account");
+			deviceInfo.DeviceToken = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.DeviceToken");
+			deviceInfo.Tags = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.Tags");
+			deviceInfo.Alias = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.Alias");
+			deviceInfo.LastOnlineTime = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.LastOnlineTime");
+			deviceInfo.Online = _ctx.BooleanValue("QueryDeviceInfo.DeviceInfo.Online");
+			deviceInfo.PhoneNumber = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.PhoneNumber");
+			deviceInfo.PushEnabled = _ctx.BooleanValue("QueryDeviceInfo.DeviceInfo.PushEnabled");
 			queryDeviceInfoResponse.DeviceInfo = deviceInfo;
         
 			return queryDeviceInfoResponse;

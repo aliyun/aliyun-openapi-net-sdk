@@ -26,19 +26,19 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribePayAsYouGoPriceResponseUnmarshaller
     {
-        public static DescribePayAsYouGoPriceResponse Unmarshall(UnmarshallerContext context)
+        public static DescribePayAsYouGoPriceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribePayAsYouGoPriceResponse describePayAsYouGoPriceResponse = new DescribePayAsYouGoPriceResponse();
 
-			describePayAsYouGoPriceResponse.HttpResponse = context.HttpResponse;
-			describePayAsYouGoPriceResponse.RequestId = context.StringValue("DescribePayAsYouGoPrice.RequestId");
-			describePayAsYouGoPriceResponse.Success = context.BooleanValue("DescribePayAsYouGoPrice.Success");
-			describePayAsYouGoPriceResponse.Code = context.StringValue("DescribePayAsYouGoPrice.Code");
-			describePayAsYouGoPriceResponse.Message = context.StringValue("DescribePayAsYouGoPrice.Message");
-			describePayAsYouGoPriceResponse.Currency = context.StringValue("DescribePayAsYouGoPrice.Currency");
-			describePayAsYouGoPriceResponse.GatewayClassPrice = context.FloatValue("DescribePayAsYouGoPrice.GatewayClassPrice");
-			describePayAsYouGoPriceResponse.CacheCloudEfficiencySizePrice = context.FloatValue("DescribePayAsYouGoPrice.CacheCloudEfficiencySizePrice");
-			describePayAsYouGoPriceResponse.CacheCloudSSDSizePrice = context.FloatValue("DescribePayAsYouGoPrice.CacheCloudSSDSizePrice");
+			describePayAsYouGoPriceResponse.HttpResponse = _ctx.HttpResponse;
+			describePayAsYouGoPriceResponse.RequestId = _ctx.StringValue("DescribePayAsYouGoPrice.RequestId");
+			describePayAsYouGoPriceResponse.Message = _ctx.StringValue("DescribePayAsYouGoPrice.Message");
+			describePayAsYouGoPriceResponse.Currency = _ctx.StringValue("DescribePayAsYouGoPrice.Currency");
+			describePayAsYouGoPriceResponse.CacheCloudEfficiencySizePrice = _ctx.FloatValue("DescribePayAsYouGoPrice.CacheCloudEfficiencySizePrice");
+			describePayAsYouGoPriceResponse.GatewayClassPrice = _ctx.FloatValue("DescribePayAsYouGoPrice.GatewayClassPrice");
+			describePayAsYouGoPriceResponse.Code = _ctx.StringValue("DescribePayAsYouGoPrice.Code");
+			describePayAsYouGoPriceResponse.Success = _ctx.BooleanValue("DescribePayAsYouGoPrice.Success");
+			describePayAsYouGoPriceResponse.CacheCloudSSDSizePrice = _ctx.FloatValue("DescribePayAsYouGoPrice.CacheCloudSSDSizePrice");
         
 			return describePayAsYouGoPriceResponse;
         }

@@ -26,24 +26,24 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class DescribeClusterServiceConfigTagResponseUnmarshaller
     {
-        public static DescribeClusterServiceConfigTagResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeClusterServiceConfigTagResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeClusterServiceConfigTagResponse describeClusterServiceConfigTagResponse = new DescribeClusterServiceConfigTagResponse();
 
-			describeClusterServiceConfigTagResponse.HttpResponse = context.HttpResponse;
-			describeClusterServiceConfigTagResponse.RequestId = context.StringValue("DescribeClusterServiceConfigTag.RequestId");
+			describeClusterServiceConfigTagResponse.HttpResponse = _ctx.HttpResponse;
+			describeClusterServiceConfigTagResponse.RequestId = _ctx.StringValue("DescribeClusterServiceConfigTag.RequestId");
 
 			List<DescribeClusterServiceConfigTagResponse.DescribeClusterServiceConfigTag_ConfigTag> describeClusterServiceConfigTagResponse_configTagList = new List<DescribeClusterServiceConfigTagResponse.DescribeClusterServiceConfigTag_ConfigTag>();
-			for (int i = 0; i < context.Length("DescribeClusterServiceConfigTag.ConfigTagList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeClusterServiceConfigTag.ConfigTagList.Length"); i++) {
 				DescribeClusterServiceConfigTagResponse.DescribeClusterServiceConfigTag_ConfigTag configTag = new DescribeClusterServiceConfigTagResponse.DescribeClusterServiceConfigTag_ConfigTag();
-				configTag.Tag = context.StringValue("DescribeClusterServiceConfigTag.ConfigTagList["+ i +"].Tag");
-				configTag.TagDesc = context.StringValue("DescribeClusterServiceConfigTag.ConfigTagList["+ i +"].TagDesc");
+				configTag.Tag = _ctx.StringValue("DescribeClusterServiceConfigTag.ConfigTagList["+ i +"].Tag");
+				configTag.TagDesc = _ctx.StringValue("DescribeClusterServiceConfigTag.ConfigTagList["+ i +"].TagDesc");
 
 				List<DescribeClusterServiceConfigTagResponse.DescribeClusterServiceConfigTag_ConfigTag.DescribeClusterServiceConfigTag__Value> configTag_valueList = new List<DescribeClusterServiceConfigTagResponse.DescribeClusterServiceConfigTag_ConfigTag.DescribeClusterServiceConfigTag__Value>();
-				for (int j = 0; j < context.Length("DescribeClusterServiceConfigTag.ConfigTagList["+ i +"].ValueList.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeClusterServiceConfigTag.ConfigTagList["+ i +"].ValueList.Length"); j++) {
 					DescribeClusterServiceConfigTagResponse.DescribeClusterServiceConfigTag_ConfigTag.DescribeClusterServiceConfigTag__Value _value = new DescribeClusterServiceConfigTagResponse.DescribeClusterServiceConfigTag_ConfigTag.DescribeClusterServiceConfigTag__Value();
-					_value._Value = context.StringValue("DescribeClusterServiceConfigTag.ConfigTagList["+ i +"].ValueList["+ j +"].Value");
-					_value.ValueDesc = context.StringValue("DescribeClusterServiceConfigTag.ConfigTagList["+ i +"].ValueList["+ j +"].ValueDesc");
+					_value._Value = _ctx.StringValue("DescribeClusterServiceConfigTag.ConfigTagList["+ i +"].ValueList["+ j +"].Value");
+					_value.ValueDesc = _ctx.StringValue("DescribeClusterServiceConfigTag.ConfigTagList["+ i +"].ValueList["+ j +"].ValueDesc");
 
 					configTag_valueList.Add(_value);
 				}

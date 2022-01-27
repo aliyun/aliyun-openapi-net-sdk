@@ -86,6 +86,24 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private int? agentHeartBeatLostNum;
 
+			private long? createdTime;
+
+			private string healthStatus;
+
+			private int? stoppedHealthNum;
+
+			private int? goodHealthNum;
+
+			private int? warningHealthNum;
+
+			private int? badHealthNum;
+
+			private int? unknownHealthNum;
+
+			private int? disabledHealthNum;
+
+			private int? noneHealthNum;
+
 			private List<ListClusterServiceComponentHealthInfo_HealthDetail> healthDetailList;
 
 			public string ServiceName
@@ -181,6 +199,114 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					agentHeartBeatLostNum = value;
+				}
+			}
+
+			public long? CreatedTime
+			{
+				get
+				{
+					return createdTime;
+				}
+				set	
+				{
+					createdTime = value;
+				}
+			}
+
+			public string HealthStatus
+			{
+				get
+				{
+					return healthStatus;
+				}
+				set	
+				{
+					healthStatus = value;
+				}
+			}
+
+			public int? StoppedHealthNum
+			{
+				get
+				{
+					return stoppedHealthNum;
+				}
+				set	
+				{
+					stoppedHealthNum = value;
+				}
+			}
+
+			public int? GoodHealthNum
+			{
+				get
+				{
+					return goodHealthNum;
+				}
+				set	
+				{
+					goodHealthNum = value;
+				}
+			}
+
+			public int? WarningHealthNum
+			{
+				get
+				{
+					return warningHealthNum;
+				}
+				set	
+				{
+					warningHealthNum = value;
+				}
+			}
+
+			public int? BadHealthNum
+			{
+				get
+				{
+					return badHealthNum;
+				}
+				set	
+				{
+					badHealthNum = value;
+				}
+			}
+
+			public int? UnknownHealthNum
+			{
+				get
+				{
+					return unknownHealthNum;
+				}
+				set	
+				{
+					unknownHealthNum = value;
+				}
+			}
+
+			public int? DisabledHealthNum
+			{
+				get
+				{
+					return disabledHealthNum;
+				}
+				set	
+				{
+					disabledHealthNum = value;
+				}
+			}
+
+			public int? NoneHealthNum
+			{
+				get
+				{
+					return noneHealthNum;
+				}
+				set	
+				{
+					noneHealthNum = value;
 				}
 			}
 

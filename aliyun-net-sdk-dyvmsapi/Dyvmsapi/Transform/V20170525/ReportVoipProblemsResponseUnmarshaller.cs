@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
     public class ReportVoipProblemsResponseUnmarshaller
     {
-        public static ReportVoipProblemsResponse Unmarshall(UnmarshallerContext context)
+        public static ReportVoipProblemsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ReportVoipProblemsResponse reportVoipProblemsResponse = new ReportVoipProblemsResponse();
 
-			reportVoipProblemsResponse.HttpResponse = context.HttpResponse;
-			reportVoipProblemsResponse.RequestId = context.StringValue("ReportVoipProblems.RequestId");
-			reportVoipProblemsResponse.Code = context.StringValue("ReportVoipProblems.Code");
-			reportVoipProblemsResponse.Module = context.StringValue("ReportVoipProblems.Module");
-			reportVoipProblemsResponse.Message = context.StringValue("ReportVoipProblems.Message");
+			reportVoipProblemsResponse.HttpResponse = _ctx.HttpResponse;
+			reportVoipProblemsResponse.RequestId = _ctx.StringValue("ReportVoipProblems.RequestId");
+			reportVoipProblemsResponse.Code = _ctx.StringValue("ReportVoipProblems.Code");
+			reportVoipProblemsResponse.Module = _ctx.StringValue("ReportVoipProblems.Module");
+			reportVoipProblemsResponse.Message = _ctx.StringValue("ReportVoipProblems.Message");
         
 			return reportVoipProblemsResponse;
         }

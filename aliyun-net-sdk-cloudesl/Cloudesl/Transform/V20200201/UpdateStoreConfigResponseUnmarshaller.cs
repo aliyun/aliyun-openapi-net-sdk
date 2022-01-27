@@ -26,19 +26,19 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
     public class UpdateStoreConfigResponseUnmarshaller
     {
-        public static UpdateStoreConfigResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateStoreConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateStoreConfigResponse updateStoreConfigResponse = new UpdateStoreConfigResponse();
 
-			updateStoreConfigResponse.HttpResponse = context.HttpResponse;
-			updateStoreConfigResponse.ErrorMessage = context.StringValue("UpdateStoreConfig.ErrorMessage");
-			updateStoreConfigResponse.ErrorCode = context.StringValue("UpdateStoreConfig.ErrorCode");
-			updateStoreConfigResponse.Message = context.StringValue("UpdateStoreConfig.Message");
-			updateStoreConfigResponse.DynamicCode = context.StringValue("UpdateStoreConfig.DynamicCode");
-			updateStoreConfigResponse.Code = context.StringValue("UpdateStoreConfig.Code");
-			updateStoreConfigResponse.DynamicMessage = context.StringValue("UpdateStoreConfig.DynamicMessage");
-			updateStoreConfigResponse.RequestId = context.StringValue("UpdateStoreConfig.RequestId");
-			updateStoreConfigResponse.Success = context.BooleanValue("UpdateStoreConfig.Success");
+			updateStoreConfigResponse.HttpResponse = _ctx.HttpResponse;
+			updateStoreConfigResponse.ErrorMessage = _ctx.StringValue("UpdateStoreConfig.ErrorMessage");
+			updateStoreConfigResponse.ErrorCode = _ctx.StringValue("UpdateStoreConfig.ErrorCode");
+			updateStoreConfigResponse.Message = _ctx.StringValue("UpdateStoreConfig.Message");
+			updateStoreConfigResponse.DynamicCode = _ctx.StringValue("UpdateStoreConfig.DynamicCode");
+			updateStoreConfigResponse.Code = _ctx.StringValue("UpdateStoreConfig.Code");
+			updateStoreConfigResponse.DynamicMessage = _ctx.StringValue("UpdateStoreConfig.DynamicMessage");
+			updateStoreConfigResponse.RequestId = _ctx.StringValue("UpdateStoreConfig.RequestId");
+			updateStoreConfigResponse.Success = _ctx.BooleanValue("UpdateStoreConfig.Success");
         
 			return updateStoreConfigResponse;
         }

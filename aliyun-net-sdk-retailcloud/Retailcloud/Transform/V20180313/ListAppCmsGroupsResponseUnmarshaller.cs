@@ -26,21 +26,21 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class ListAppCmsGroupsResponseUnmarshaller
     {
-        public static ListAppCmsGroupsResponse Unmarshall(UnmarshallerContext context)
+        public static ListAppCmsGroupsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListAppCmsGroupsResponse listAppCmsGroupsResponse = new ListAppCmsGroupsResponse();
 
-			listAppCmsGroupsResponse.HttpResponse = context.HttpResponse;
-			listAppCmsGroupsResponse.Code = context.IntegerValue("ListAppCmsGroups.Code");
-			listAppCmsGroupsResponse.ErrorMsg = context.StringValue("ListAppCmsGroups.ErrorMsg");
-			listAppCmsGroupsResponse.PageNumber = context.IntegerValue("ListAppCmsGroups.PageNumber");
-			listAppCmsGroupsResponse.PageSize = context.IntegerValue("ListAppCmsGroups.PageSize");
-			listAppCmsGroupsResponse.RequestId = context.StringValue("ListAppCmsGroups.RequestId");
-			listAppCmsGroupsResponse.TotalCount = context.LongValue("ListAppCmsGroups.TotalCount");
+			listAppCmsGroupsResponse.HttpResponse = _ctx.HttpResponse;
+			listAppCmsGroupsResponse.Code = _ctx.IntegerValue("ListAppCmsGroups.Code");
+			listAppCmsGroupsResponse.ErrorMsg = _ctx.StringValue("ListAppCmsGroups.ErrorMsg");
+			listAppCmsGroupsResponse.PageNumber = _ctx.IntegerValue("ListAppCmsGroups.PageNumber");
+			listAppCmsGroupsResponse.PageSize = _ctx.IntegerValue("ListAppCmsGroups.PageSize");
+			listAppCmsGroupsResponse.RequestId = _ctx.StringValue("ListAppCmsGroups.RequestId");
+			listAppCmsGroupsResponse.TotalCount = _ctx.LongValue("ListAppCmsGroups.TotalCount");
 
 			List<string> listAppCmsGroupsResponse_data = new List<string>();
-			for (int i = 0; i < context.Length("ListAppCmsGroups.Data.Length"); i++) {
-				listAppCmsGroupsResponse_data.Add(context.StringValue("ListAppCmsGroups.Data["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("ListAppCmsGroups.Data.Length"); i++) {
+				listAppCmsGroupsResponse_data.Add(_ctx.StringValue("ListAppCmsGroups.Data["+ i +"]"));
 			}
 			listAppCmsGroupsResponse.Data = listAppCmsGroupsResponse_data;
         

@@ -37,8 +37,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 
 			DescribePriceResponse.DescribePrice_Order order = new DescribePriceResponse.DescribePrice_Order();
 			order.OriginalAmount = _ctx.StringValue("DescribePrice.Order.OriginalAmount");
-			order.TradeAmount = _ctx.StringValue("DescribePrice.Order.TradeAmount");
 			order.DiscountAmount = _ctx.StringValue("DescribePrice.Order.DiscountAmount");
+			order.TradeAmount = _ctx.StringValue("DescribePrice.Order.TradeAmount");
 			order.Currency = _ctx.StringValue("DescribePrice.Order.Currency");
 
 			List<string> order_ruleIds1 = new List<string>();
@@ -50,33 +50,22 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			List<DescribePriceResponse.DescribePrice_Order.DescribePrice_Coupon> order_coupons = new List<DescribePriceResponse.DescribePrice_Order.DescribePrice_Coupon>();
 			for (int i = 0; i < _ctx.Length("DescribePrice.Order.Coupons.Length"); i++) {
 				DescribePriceResponse.DescribePrice_Order.DescribePrice_Coupon coupon = new DescribePriceResponse.DescribePrice_Order.DescribePrice_Coupon();
-				coupon.CouponNo = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].CouponNo");
-				coupon.Name = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].Name");
 				coupon.Description = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].Description");
 				coupon.IsSelected = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].IsSelected");
+				coupon.CouponNo = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].CouponNo");
+				coupon.Name = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].Name");
 
 				order_coupons.Add(coupon);
 			}
 			order.Coupons = order_coupons;
 			describePriceResponse.Order = order;
 
-			List<DescribePriceResponse.DescribePrice_Rule> describePriceResponse_rules = new List<DescribePriceResponse.DescribePrice_Rule>();
-			for (int i = 0; i < _ctx.Length("DescribePrice.Rules.Length"); i++) {
-				DescribePriceResponse.DescribePrice_Rule rule = new DescribePriceResponse.DescribePrice_Rule();
-				rule.RuleDescId = _ctx.LongValue("DescribePrice.Rules["+ i +"].RuleDescId");
-				rule.Name = _ctx.StringValue("DescribePrice.Rules["+ i +"].Name");
-				rule.Title = _ctx.StringValue("DescribePrice.Rules["+ i +"].Title");
-
-				describePriceResponse_rules.Add(rule);
-			}
-			describePriceResponse.Rules = describePriceResponse_rules;
-
 			List<DescribePriceResponse.DescribePrice_SubOrder> describePriceResponse_subOrders = new List<DescribePriceResponse.DescribePrice_SubOrder>();
 			for (int i = 0; i < _ctx.Length("DescribePrice.SubOrders.Length"); i++) {
 				DescribePriceResponse.DescribePrice_SubOrder subOrder = new DescribePriceResponse.DescribePrice_SubOrder();
 				subOrder.OriginalAmount = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].OriginalAmount");
-				subOrder.TradeAmount = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].TradeAmount");
 				subOrder.DiscountAmount = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].DiscountAmount");
+				subOrder.TradeAmount = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].TradeAmount");
 				subOrder.InstanceId = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].InstanceId");
 
 				List<string> subOrder_ruleIds = new List<string>();
@@ -88,6 +77,17 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				describePriceResponse_subOrders.Add(subOrder);
 			}
 			describePriceResponse.SubOrders = describePriceResponse_subOrders;
+
+			List<DescribePriceResponse.DescribePrice_Rule> describePriceResponse_rules = new List<DescribePriceResponse.DescribePrice_Rule>();
+			for (int i = 0; i < _ctx.Length("DescribePrice.Rules.Length"); i++) {
+				DescribePriceResponse.DescribePrice_Rule rule = new DescribePriceResponse.DescribePrice_Rule();
+				rule.RuleDescId = _ctx.LongValue("DescribePrice.Rules["+ i +"].RuleDescId");
+				rule.Title = _ctx.StringValue("DescribePrice.Rules["+ i +"].Title");
+				rule.Name = _ctx.StringValue("DescribePrice.Rules["+ i +"].Name");
+
+				describePriceResponse_rules.Add(rule);
+			}
+			describePriceResponse.Rules = describePriceResponse_rules;
         
 			return describePriceResponse;
         }

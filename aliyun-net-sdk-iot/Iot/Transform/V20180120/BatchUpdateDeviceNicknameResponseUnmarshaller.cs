@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class BatchUpdateDeviceNicknameResponseUnmarshaller
     {
-        public static BatchUpdateDeviceNicknameResponse Unmarshall(UnmarshallerContext context)
+        public static BatchUpdateDeviceNicknameResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchUpdateDeviceNicknameResponse batchUpdateDeviceNicknameResponse = new BatchUpdateDeviceNicknameResponse();
 
-			batchUpdateDeviceNicknameResponse.HttpResponse = context.HttpResponse;
-			batchUpdateDeviceNicknameResponse.RequestId = context.StringValue("BatchUpdateDeviceNickname.RequestId");
-			batchUpdateDeviceNicknameResponse.Success = context.BooleanValue("BatchUpdateDeviceNickname.Success");
-			batchUpdateDeviceNicknameResponse.Code = context.StringValue("BatchUpdateDeviceNickname.Code");
-			batchUpdateDeviceNicknameResponse.ErrorMessage = context.StringValue("BatchUpdateDeviceNickname.ErrorMessage");
+			batchUpdateDeviceNicknameResponse.HttpResponse = _ctx.HttpResponse;
+			batchUpdateDeviceNicknameResponse.RequestId = _ctx.StringValue("BatchUpdateDeviceNickname.RequestId");
+			batchUpdateDeviceNicknameResponse.Success = _ctx.BooleanValue("BatchUpdateDeviceNickname.Success");
+			batchUpdateDeviceNicknameResponse.Code = _ctx.StringValue("BatchUpdateDeviceNickname.Code");
+			batchUpdateDeviceNicknameResponse.ErrorMessage = _ctx.StringValue("BatchUpdateDeviceNickname.ErrorMessage");
         
 			return batchUpdateDeviceNicknameResponse;
         }

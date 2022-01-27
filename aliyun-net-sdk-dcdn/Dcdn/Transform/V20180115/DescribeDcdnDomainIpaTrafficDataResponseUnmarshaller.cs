@@ -26,22 +26,22 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 {
     public class DescribeDcdnDomainIpaTrafficDataResponseUnmarshaller
     {
-        public static DescribeDcdnDomainIpaTrafficDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDcdnDomainIpaTrafficDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDcdnDomainIpaTrafficDataResponse describeDcdnDomainIpaTrafficDataResponse = new DescribeDcdnDomainIpaTrafficDataResponse();
 
-			describeDcdnDomainIpaTrafficDataResponse.HttpResponse = context.HttpResponse;
-			describeDcdnDomainIpaTrafficDataResponse.RequestId = context.StringValue("DescribeDcdnDomainIpaTrafficData.RequestId");
-			describeDcdnDomainIpaTrafficDataResponse.DomainName = context.StringValue("DescribeDcdnDomainIpaTrafficData.DomainName");
-			describeDcdnDomainIpaTrafficDataResponse.StartTime = context.StringValue("DescribeDcdnDomainIpaTrafficData.StartTime");
-			describeDcdnDomainIpaTrafficDataResponse.EndTime = context.StringValue("DescribeDcdnDomainIpaTrafficData.EndTime");
-			describeDcdnDomainIpaTrafficDataResponse.DataInterval = context.StringValue("DescribeDcdnDomainIpaTrafficData.DataInterval");
+			describeDcdnDomainIpaTrafficDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDcdnDomainIpaTrafficDataResponse.RequestId = _ctx.StringValue("DescribeDcdnDomainIpaTrafficData.RequestId");
+			describeDcdnDomainIpaTrafficDataResponse.DomainName = _ctx.StringValue("DescribeDcdnDomainIpaTrafficData.DomainName");
+			describeDcdnDomainIpaTrafficDataResponse.StartTime = _ctx.StringValue("DescribeDcdnDomainIpaTrafficData.StartTime");
+			describeDcdnDomainIpaTrafficDataResponse.EndTime = _ctx.StringValue("DescribeDcdnDomainIpaTrafficData.EndTime");
+			describeDcdnDomainIpaTrafficDataResponse.DataInterval = _ctx.StringValue("DescribeDcdnDomainIpaTrafficData.DataInterval");
 
 			List<DescribeDcdnDomainIpaTrafficDataResponse.DescribeDcdnDomainIpaTrafficData_DataModule> describeDcdnDomainIpaTrafficDataResponse_trafficDataPerInterval = new List<DescribeDcdnDomainIpaTrafficDataResponse.DescribeDcdnDomainIpaTrafficData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeDcdnDomainIpaTrafficData.TrafficDataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDcdnDomainIpaTrafficData.TrafficDataPerInterval.Length"); i++) {
 				DescribeDcdnDomainIpaTrafficDataResponse.DescribeDcdnDomainIpaTrafficData_DataModule dataModule = new DescribeDcdnDomainIpaTrafficDataResponse.DescribeDcdnDomainIpaTrafficData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeDcdnDomainIpaTrafficData.TrafficDataPerInterval["+ i +"].TimeStamp");
-				dataModule.IpaTraffic = context.FloatValue("DescribeDcdnDomainIpaTrafficData.TrafficDataPerInterval["+ i +"].IpaTraffic");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDcdnDomainIpaTrafficData.TrafficDataPerInterval["+ i +"].TimeStamp");
+				dataModule.IpaTraffic = _ctx.FloatValue("DescribeDcdnDomainIpaTrafficData.TrafficDataPerInterval["+ i +"].IpaTraffic");
 
 				describeDcdnDomainIpaTrafficDataResponse_trafficDataPerInterval.Add(dataModule);
 			}

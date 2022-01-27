@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DescribeSnapshotPackageResponseUnmarshaller
     {
-        public static DescribeSnapshotPackageResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSnapshotPackageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSnapshotPackageResponse describeSnapshotPackageResponse = new DescribeSnapshotPackageResponse();
 
-			describeSnapshotPackageResponse.HttpResponse = context.HttpResponse;
-			describeSnapshotPackageResponse.RequestId = context.StringValue("DescribeSnapshotPackage.RequestId");
-			describeSnapshotPackageResponse.TotalCount = context.IntegerValue("DescribeSnapshotPackage.TotalCount");
-			describeSnapshotPackageResponse.PageNumber = context.IntegerValue("DescribeSnapshotPackage.PageNumber");
-			describeSnapshotPackageResponse.PageSize = context.IntegerValue("DescribeSnapshotPackage.PageSize");
+			describeSnapshotPackageResponse.HttpResponse = _ctx.HttpResponse;
+			describeSnapshotPackageResponse.PageSize = _ctx.IntegerValue("DescribeSnapshotPackage.PageSize");
+			describeSnapshotPackageResponse.RequestId = _ctx.StringValue("DescribeSnapshotPackage.RequestId");
+			describeSnapshotPackageResponse.PageNumber = _ctx.IntegerValue("DescribeSnapshotPackage.PageNumber");
+			describeSnapshotPackageResponse.TotalCount = _ctx.IntegerValue("DescribeSnapshotPackage.TotalCount");
 
 			List<DescribeSnapshotPackageResponse.DescribeSnapshotPackage_SnapshotPackage> describeSnapshotPackageResponse_snapshotPackages = new List<DescribeSnapshotPackageResponse.DescribeSnapshotPackage_SnapshotPackage>();
-			for (int i = 0; i < context.Length("DescribeSnapshotPackage.SnapshotPackages.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeSnapshotPackage.SnapshotPackages.Length"); i++) {
 				DescribeSnapshotPackageResponse.DescribeSnapshotPackage_SnapshotPackage snapshotPackage = new DescribeSnapshotPackageResponse.DescribeSnapshotPackage_SnapshotPackage();
-				snapshotPackage.StartTime = context.StringValue("DescribeSnapshotPackage.SnapshotPackages["+ i +"].StartTime");
-				snapshotPackage.EndTime = context.StringValue("DescribeSnapshotPackage.SnapshotPackages["+ i +"].EndTime");
-				snapshotPackage.InitCapacity = context.LongValue("DescribeSnapshotPackage.SnapshotPackages["+ i +"].InitCapacity");
-				snapshotPackage.DisplayName = context.StringValue("DescribeSnapshotPackage.SnapshotPackages["+ i +"].DisplayName");
+				snapshotPackage.DisplayName = _ctx.StringValue("DescribeSnapshotPackage.SnapshotPackages["+ i +"].DisplayName");
+				snapshotPackage.EndTime = _ctx.StringValue("DescribeSnapshotPackage.SnapshotPackages["+ i +"].EndTime");
+				snapshotPackage.StartTime = _ctx.StringValue("DescribeSnapshotPackage.SnapshotPackages["+ i +"].StartTime");
+				snapshotPackage.InitCapacity = _ctx.LongValue("DescribeSnapshotPackage.SnapshotPackages["+ i +"].InitCapacity");
 
 				describeSnapshotPackageResponse_snapshotPackages.Add(snapshotPackage);
 			}

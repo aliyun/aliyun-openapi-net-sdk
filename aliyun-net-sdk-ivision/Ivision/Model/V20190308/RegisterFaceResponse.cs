@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ivision.Model.V20190308
@@ -101,25 +101,13 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			public class RegisterFace_Rect
 			{
 
-				private int? left;
-
 				private int? top;
 
 				private int? width;
 
 				private int? height;
 
-				public int? Left
-				{
-					get
-					{
-						return left;
-					}
-					set	
-					{
-						left = value;
-					}
-				}
+				private int? left;
 
 				public int? Top
 				{
@@ -154,6 +142,18 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 					set	
 					{
 						height = value;
+					}
+				}
+
+				public int? Left
+				{
+					get
+					{
+						return left;
+					}
+					set	
+					{
+						left = value;
 					}
 				}
 			}

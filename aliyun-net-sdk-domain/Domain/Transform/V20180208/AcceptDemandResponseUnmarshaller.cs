@@ -26,12 +26,13 @@ namespace Aliyun.Acs.Domain.Transform.V20180208
 {
     public class AcceptDemandResponseUnmarshaller
     {
-        public static AcceptDemandResponse Unmarshall(UnmarshallerContext context)
+        public static AcceptDemandResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AcceptDemandResponse acceptDemandResponse = new AcceptDemandResponse();
 
-			acceptDemandResponse.HttpResponse = context.HttpResponse;
-			acceptDemandResponse.RequestId = context.StringValue("AcceptDemand.RequestId");
+			acceptDemandResponse.HttpResponse = _ctx.HttpResponse;
+			acceptDemandResponse.RequestId = _ctx.StringValue("AcceptDemand.RequestId");
+			acceptDemandResponse.BindUrl = _ctx.StringValue("AcceptDemand.BindUrl");
         
 			return acceptDemandResponse;
         }

@@ -56,21 +56,9 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 		public class RecognizeVATInvoice_Data
 		{
 
-			private RecognizeVATInvoice_Content content;
-
 			private RecognizeVATInvoice_Box box;
 
-			public RecognizeVATInvoice_Content Content
-			{
-				get
-				{
-					return content;
-				}
-				set	
-				{
-					content = value;
-				}
-			}
+			private RecognizeVATInvoice_Content content;
 
 			public RecognizeVATInvoice_Box Box
 			{
@@ -84,376 +72,58 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 				}
 			}
 
-			public class RecognizeVATInvoice_Content
+			public RecognizeVATInvoice_Content Content
 			{
-
-				private string invoiceCode;
-
-				private string invoiceNo;
-
-				private string invoiceDate;
-
-				private string antiFakeCode;
-
-				private string payerName;
-
-				private string payerRegisterNo;
-
-				private string payerAddress;
-
-				private string payerBankName;
-
-				private string withoutTaxAmount;
-
-				private string taxAmount;
-
-				private string sumAmount;
-
-				private string invoiceAmount;
-
-				private string payeeName;
-
-				private string payeeRegisterNo;
-
-				private string payeeAddress;
-
-				private string payeeBankName;
-
-				private string payee;
-
-				private string checker;
-
-				private string clerk;
-
-				public string InvoiceCode
+				get
 				{
-					get
-					{
-						return invoiceCode;
-					}
-					set	
-					{
-						invoiceCode = value;
-					}
+					return content;
 				}
-
-				public string InvoiceNo
+				set	
 				{
-					get
-					{
-						return invoiceNo;
-					}
-					set	
-					{
-						invoiceNo = value;
-					}
-				}
-
-				public string InvoiceDate
-				{
-					get
-					{
-						return invoiceDate;
-					}
-					set	
-					{
-						invoiceDate = value;
-					}
-				}
-
-				public string AntiFakeCode
-				{
-					get
-					{
-						return antiFakeCode;
-					}
-					set	
-					{
-						antiFakeCode = value;
-					}
-				}
-
-				public string PayerName
-				{
-					get
-					{
-						return payerName;
-					}
-					set	
-					{
-						payerName = value;
-					}
-				}
-
-				public string PayerRegisterNo
-				{
-					get
-					{
-						return payerRegisterNo;
-					}
-					set	
-					{
-						payerRegisterNo = value;
-					}
-				}
-
-				public string PayerAddress
-				{
-					get
-					{
-						return payerAddress;
-					}
-					set	
-					{
-						payerAddress = value;
-					}
-				}
-
-				public string PayerBankName
-				{
-					get
-					{
-						return payerBankName;
-					}
-					set	
-					{
-						payerBankName = value;
-					}
-				}
-
-				public string WithoutTaxAmount
-				{
-					get
-					{
-						return withoutTaxAmount;
-					}
-					set	
-					{
-						withoutTaxAmount = value;
-					}
-				}
-
-				public string TaxAmount
-				{
-					get
-					{
-						return taxAmount;
-					}
-					set	
-					{
-						taxAmount = value;
-					}
-				}
-
-				public string SumAmount
-				{
-					get
-					{
-						return sumAmount;
-					}
-					set	
-					{
-						sumAmount = value;
-					}
-				}
-
-				public string InvoiceAmount
-				{
-					get
-					{
-						return invoiceAmount;
-					}
-					set	
-					{
-						invoiceAmount = value;
-					}
-				}
-
-				public string PayeeName
-				{
-					get
-					{
-						return payeeName;
-					}
-					set	
-					{
-						payeeName = value;
-					}
-				}
-
-				public string PayeeRegisterNo
-				{
-					get
-					{
-						return payeeRegisterNo;
-					}
-					set	
-					{
-						payeeRegisterNo = value;
-					}
-				}
-
-				public string PayeeAddress
-				{
-					get
-					{
-						return payeeAddress;
-					}
-					set	
-					{
-						payeeAddress = value;
-					}
-				}
-
-				public string PayeeBankName
-				{
-					get
-					{
-						return payeeBankName;
-					}
-					set	
-					{
-						payeeBankName = value;
-					}
-				}
-
-				public string Payee
-				{
-					get
-					{
-						return payee;
-					}
-					set	
-					{
-						payee = value;
-					}
-				}
-
-				public string Checker
-				{
-					get
-					{
-						return checker;
-					}
-					set	
-					{
-						checker = value;
-					}
-				}
-
-				public string Clerk
-				{
-					get
-					{
-						return clerk;
-					}
-					set	
-					{
-						clerk = value;
-					}
+					content = value;
 				}
 			}
 
 			public class RecognizeVATInvoice_Box
 			{
 
-				private List<string> invoiceCodes;
-
-				private List<string> invoiceNoes;
-
-				private List<string> invoiceDates;
-
-				private List<string> invoiceFakeCodes;
-
-				private List<string> payerNames;
-
 				private List<string> payerRegisterNoes;
-
-				private List<string> payerAddresses;
-
-				private List<string> payerBankNames;
-
-				private List<string> withoutTaxAmounts;
-
-				private List<string> taxAmounts;
-
-				private List<string> sumAmounts;
-
-				private List<string> invoiceAmounts;
-
-				private List<string> payeeNames;
-
-				private List<string> payeeRegisterNoes;
 
 				private List<string> payeeAddresses;
 
 				private List<string> payeeBankNames;
 
-				private List<string> payees;
-
 				private List<string> checkers;
+
+				private List<string> taxAmounts;
+
+				private List<string> sumAmounts;
 
 				private List<string> clerks;
 
-				public List<string> InvoiceCodes
-				{
-					get
-					{
-						return invoiceCodes;
-					}
-					set	
-					{
-						invoiceCodes = value;
-					}
-				}
+				private List<string> invoiceNoes;
 
-				public List<string> InvoiceNoes
-				{
-					get
-					{
-						return invoiceNoes;
-					}
-					set	
-					{
-						invoiceNoes = value;
-					}
-				}
+				private List<string> invoiceDates;
 
-				public List<string> InvoiceDates
-				{
-					get
-					{
-						return invoiceDates;
-					}
-					set	
-					{
-						invoiceDates = value;
-					}
-				}
+				private List<string> invoiceCodes;
 
-				public List<string> InvoiceFakeCodes
-				{
-					get
-					{
-						return invoiceFakeCodes;
-					}
-					set	
-					{
-						invoiceFakeCodes = value;
-					}
-				}
+				private List<string> invoiceFakeCodes;
 
-				public List<string> PayerNames
-				{
-					get
-					{
-						return payerNames;
-					}
-					set	
-					{
-						payerNames = value;
-					}
-				}
+				private List<string> payerNames;
+
+				private List<string> payerBankNames;
+
+				private List<string> payees;
+
+				private List<string> payeeNames;
+
+				private List<string> invoiceAmounts;
+
+				private List<string> withoutTaxAmounts;
+
+				private List<string> payerAddresses;
+
+				private List<string> payeeRegisterNoes;
 
 				public List<string> PayerRegisterNoes
 				{
@@ -464,102 +134,6 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					set	
 					{
 						payerRegisterNoes = value;
-					}
-				}
-
-				public List<string> PayerAddresses
-				{
-					get
-					{
-						return payerAddresses;
-					}
-					set	
-					{
-						payerAddresses = value;
-					}
-				}
-
-				public List<string> PayerBankNames
-				{
-					get
-					{
-						return payerBankNames;
-					}
-					set	
-					{
-						payerBankNames = value;
-					}
-				}
-
-				public List<string> WithoutTaxAmounts
-				{
-					get
-					{
-						return withoutTaxAmounts;
-					}
-					set	
-					{
-						withoutTaxAmounts = value;
-					}
-				}
-
-				public List<string> TaxAmounts
-				{
-					get
-					{
-						return taxAmounts;
-					}
-					set	
-					{
-						taxAmounts = value;
-					}
-				}
-
-				public List<string> SumAmounts
-				{
-					get
-					{
-						return sumAmounts;
-					}
-					set	
-					{
-						sumAmounts = value;
-					}
-				}
-
-				public List<string> InvoiceAmounts
-				{
-					get
-					{
-						return invoiceAmounts;
-					}
-					set	
-					{
-						invoiceAmounts = value;
-					}
-				}
-
-				public List<string> PayeeNames
-				{
-					get
-					{
-						return payeeNames;
-					}
-					set	
-					{
-						payeeNames = value;
-					}
-				}
-
-				public List<string> PayeeRegisterNoes
-				{
-					get
-					{
-						return payeeRegisterNoes;
-					}
-					set	
-					{
-						payeeRegisterNoes = value;
 					}
 				}
 
@@ -587,18 +161,6 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					}
 				}
 
-				public List<string> Payees
-				{
-					get
-					{
-						return payees;
-					}
-					set	
-					{
-						payees = value;
-					}
-				}
-
 				public List<string> Checkers
 				{
 					get
@@ -611,6 +173,30 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					}
 				}
 
+				public List<string> TaxAmounts
+				{
+					get
+					{
+						return taxAmounts;
+					}
+					set	
+					{
+						taxAmounts = value;
+					}
+				}
+
+				public List<string> SumAmounts
+				{
+					get
+					{
+						return sumAmounts;
+					}
+					set	
+					{
+						sumAmounts = value;
+					}
+				}
+
 				public List<string> Clerks
 				{
 					get
@@ -620,6 +206,420 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					set	
 					{
 						clerks = value;
+					}
+				}
+
+				public List<string> InvoiceNoes
+				{
+					get
+					{
+						return invoiceNoes;
+					}
+					set	
+					{
+						invoiceNoes = value;
+					}
+				}
+
+				public List<string> InvoiceDates
+				{
+					get
+					{
+						return invoiceDates;
+					}
+					set	
+					{
+						invoiceDates = value;
+					}
+				}
+
+				public List<string> InvoiceCodes
+				{
+					get
+					{
+						return invoiceCodes;
+					}
+					set	
+					{
+						invoiceCodes = value;
+					}
+				}
+
+				public List<string> InvoiceFakeCodes
+				{
+					get
+					{
+						return invoiceFakeCodes;
+					}
+					set	
+					{
+						invoiceFakeCodes = value;
+					}
+				}
+
+				public List<string> PayerNames
+				{
+					get
+					{
+						return payerNames;
+					}
+					set	
+					{
+						payerNames = value;
+					}
+				}
+
+				public List<string> PayerBankNames
+				{
+					get
+					{
+						return payerBankNames;
+					}
+					set	
+					{
+						payerBankNames = value;
+					}
+				}
+
+				public List<string> Payees
+				{
+					get
+					{
+						return payees;
+					}
+					set	
+					{
+						payees = value;
+					}
+				}
+
+				public List<string> PayeeNames
+				{
+					get
+					{
+						return payeeNames;
+					}
+					set	
+					{
+						payeeNames = value;
+					}
+				}
+
+				public List<string> InvoiceAmounts
+				{
+					get
+					{
+						return invoiceAmounts;
+					}
+					set	
+					{
+						invoiceAmounts = value;
+					}
+				}
+
+				public List<string> WithoutTaxAmounts
+				{
+					get
+					{
+						return withoutTaxAmounts;
+					}
+					set	
+					{
+						withoutTaxAmounts = value;
+					}
+				}
+
+				public List<string> PayerAddresses
+				{
+					get
+					{
+						return payerAddresses;
+					}
+					set	
+					{
+						payerAddresses = value;
+					}
+				}
+
+				public List<string> PayeeRegisterNoes
+				{
+					get
+					{
+						return payeeRegisterNoes;
+					}
+					set	
+					{
+						payeeRegisterNoes = value;
+					}
+				}
+			}
+
+			public class RecognizeVATInvoice_Content
+			{
+
+				private string payerAddress;
+
+				private string payeeRegisterNo;
+
+				private string payeeBankName;
+
+				private string invoiceNo;
+
+				private string payerRegisterNo;
+
+				private string checker;
+
+				private string taxAmount;
+
+				private string invoiceDate;
+
+				private string withoutTaxAmount;
+
+				private string invoiceAmount;
+
+				private string antiFakeCode;
+
+				private string payerName;
+
+				private string payee;
+
+				private string sumAmount;
+
+				private string payerBankName;
+
+				private string clerk;
+
+				private string payeeName;
+
+				private string payeeAddress;
+
+				private string invoiceCode;
+
+				public string PayerAddress
+				{
+					get
+					{
+						return payerAddress;
+					}
+					set	
+					{
+						payerAddress = value;
+					}
+				}
+
+				public string PayeeRegisterNo
+				{
+					get
+					{
+						return payeeRegisterNo;
+					}
+					set	
+					{
+						payeeRegisterNo = value;
+					}
+				}
+
+				public string PayeeBankName
+				{
+					get
+					{
+						return payeeBankName;
+					}
+					set	
+					{
+						payeeBankName = value;
+					}
+				}
+
+				public string InvoiceNo
+				{
+					get
+					{
+						return invoiceNo;
+					}
+					set	
+					{
+						invoiceNo = value;
+					}
+				}
+
+				public string PayerRegisterNo
+				{
+					get
+					{
+						return payerRegisterNo;
+					}
+					set	
+					{
+						payerRegisterNo = value;
+					}
+				}
+
+				public string Checker
+				{
+					get
+					{
+						return checker;
+					}
+					set	
+					{
+						checker = value;
+					}
+				}
+
+				public string TaxAmount
+				{
+					get
+					{
+						return taxAmount;
+					}
+					set	
+					{
+						taxAmount = value;
+					}
+				}
+
+				public string InvoiceDate
+				{
+					get
+					{
+						return invoiceDate;
+					}
+					set	
+					{
+						invoiceDate = value;
+					}
+				}
+
+				public string WithoutTaxAmount
+				{
+					get
+					{
+						return withoutTaxAmount;
+					}
+					set	
+					{
+						withoutTaxAmount = value;
+					}
+				}
+
+				public string InvoiceAmount
+				{
+					get
+					{
+						return invoiceAmount;
+					}
+					set	
+					{
+						invoiceAmount = value;
+					}
+				}
+
+				public string AntiFakeCode
+				{
+					get
+					{
+						return antiFakeCode;
+					}
+					set	
+					{
+						antiFakeCode = value;
+					}
+				}
+
+				public string PayerName
+				{
+					get
+					{
+						return payerName;
+					}
+					set	
+					{
+						payerName = value;
+					}
+				}
+
+				public string Payee
+				{
+					get
+					{
+						return payee;
+					}
+					set	
+					{
+						payee = value;
+					}
+				}
+
+				public string SumAmount
+				{
+					get
+					{
+						return sumAmount;
+					}
+					set	
+					{
+						sumAmount = value;
+					}
+				}
+
+				public string PayerBankName
+				{
+					get
+					{
+						return payerBankName;
+					}
+					set	
+					{
+						payerBankName = value;
+					}
+				}
+
+				public string Clerk
+				{
+					get
+					{
+						return clerk;
+					}
+					set	
+					{
+						clerk = value;
+					}
+				}
+
+				public string PayeeName
+				{
+					get
+					{
+						return payeeName;
+					}
+					set	
+					{
+						payeeName = value;
+					}
+				}
+
+				public string PayeeAddress
+				{
+					get
+					{
+						return payeeAddress;
+					}
+					set	
+					{
+						payeeAddress = value;
+					}
+				}
+
+				public string InvoiceCode
+				{
+					get
+					{
+						return invoiceCode;
+					}
+					set	
+					{
+						invoiceCode = value;
 					}
 				}
 			}

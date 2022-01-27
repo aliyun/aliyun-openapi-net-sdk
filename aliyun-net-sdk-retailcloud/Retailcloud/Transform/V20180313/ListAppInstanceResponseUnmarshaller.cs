@@ -26,30 +26,32 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class ListAppInstanceResponseUnmarshaller
     {
-        public static ListAppInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static ListAppInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListAppInstanceResponse listAppInstanceResponse = new ListAppInstanceResponse();
 
-			listAppInstanceResponse.HttpResponse = context.HttpResponse;
-			listAppInstanceResponse.RequestId = context.StringValue("ListAppInstance.RequestId");
-			listAppInstanceResponse.Code = context.IntegerValue("ListAppInstance.Code");
-			listAppInstanceResponse.PageSize = context.IntegerValue("ListAppInstance.PageSize");
-			listAppInstanceResponse.PageNumber = context.IntegerValue("ListAppInstance.PageNumber");
-			listAppInstanceResponse.TotalCount = context.LongValue("ListAppInstance.TotalCount");
-			listAppInstanceResponse.ErrMsg = context.StringValue("ListAppInstance.ErrMsg");
+			listAppInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			listAppInstanceResponse.RequestId = _ctx.StringValue("ListAppInstance.RequestId");
+			listAppInstanceResponse.Code = _ctx.IntegerValue("ListAppInstance.Code");
+			listAppInstanceResponse.PageSize = _ctx.IntegerValue("ListAppInstance.PageSize");
+			listAppInstanceResponse.PageNumber = _ctx.IntegerValue("ListAppInstance.PageNumber");
+			listAppInstanceResponse.TotalCount = _ctx.LongValue("ListAppInstance.TotalCount");
+			listAppInstanceResponse.ErrMsg = _ctx.StringValue("ListAppInstance.ErrMsg");
 
 			List<ListAppInstanceResponse.ListAppInstance_AppInstanceDetail> listAppInstanceResponse_data = new List<ListAppInstanceResponse.ListAppInstance_AppInstanceDetail>();
-			for (int i = 0; i < context.Length("ListAppInstance.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListAppInstance.Data.Length"); i++) {
 				ListAppInstanceResponse.ListAppInstance_AppInstanceDetail appInstanceDetail = new ListAppInstanceResponse.ListAppInstance_AppInstanceDetail();
-				appInstanceDetail.AppInstanceId = context.StringValue("ListAppInstance.Data["+ i +"].AppInstanceId");
-				appInstanceDetail.CreateTime = context.StringValue("ListAppInstance.Data["+ i +"].CreateTime");
-				appInstanceDetail.Spec = context.StringValue("ListAppInstance.Data["+ i +"].Spec");
-				appInstanceDetail.RestartCount = context.IntegerValue("ListAppInstance.Data["+ i +"].RestartCount");
-				appInstanceDetail.HostIp = context.StringValue("ListAppInstance.Data["+ i +"].HostIp");
-				appInstanceDetail.PodIp = context.StringValue("ListAppInstance.Data["+ i +"].PodIp");
-				appInstanceDetail.Health = context.StringValue("ListAppInstance.Data["+ i +"].Health");
-				appInstanceDetail.Requests = context.StringValue("ListAppInstance.Data["+ i +"].Requests");
-				appInstanceDetail.Limits = context.StringValue("ListAppInstance.Data["+ i +"].Limits");
+				appInstanceDetail.AppInstanceId = _ctx.StringValue("ListAppInstance.Data["+ i +"].AppInstanceId");
+				appInstanceDetail.CreateTime = _ctx.StringValue("ListAppInstance.Data["+ i +"].CreateTime");
+				appInstanceDetail.Spec = _ctx.StringValue("ListAppInstance.Data["+ i +"].Spec");
+				appInstanceDetail.RestartCount = _ctx.IntegerValue("ListAppInstance.Data["+ i +"].RestartCount");
+				appInstanceDetail.HostIp = _ctx.StringValue("ListAppInstance.Data["+ i +"].HostIp");
+				appInstanceDetail.PodIp = _ctx.StringValue("ListAppInstance.Data["+ i +"].PodIp");
+				appInstanceDetail.Health = _ctx.StringValue("ListAppInstance.Data["+ i +"].Health");
+				appInstanceDetail.Requests = _ctx.StringValue("ListAppInstance.Data["+ i +"].Requests");
+				appInstanceDetail.Limits = _ctx.StringValue("ListAppInstance.Data["+ i +"].Limits");
+				appInstanceDetail.Version = _ctx.StringValue("ListAppInstance.Data["+ i +"].Version");
+				appInstanceDetail.Status = _ctx.StringValue("ListAppInstance.Data["+ i +"].Status");
 
 				listAppInstanceResponse_data.Add(appInstanceDetail);
 			}

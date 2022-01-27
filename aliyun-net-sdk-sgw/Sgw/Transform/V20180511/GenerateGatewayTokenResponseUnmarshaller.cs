@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class GenerateGatewayTokenResponseUnmarshaller
     {
-        public static GenerateGatewayTokenResponse Unmarshall(UnmarshallerContext context)
+        public static GenerateGatewayTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GenerateGatewayTokenResponse generateGatewayTokenResponse = new GenerateGatewayTokenResponse();
 
-			generateGatewayTokenResponse.HttpResponse = context.HttpResponse;
-			generateGatewayTokenResponse.RequestId = context.StringValue("GenerateGatewayToken.RequestId");
-			generateGatewayTokenResponse.Success = context.BooleanValue("GenerateGatewayToken.Success");
-			generateGatewayTokenResponse.Code = context.StringValue("GenerateGatewayToken.Code");
-			generateGatewayTokenResponse.Message = context.StringValue("GenerateGatewayToken.Message");
-			generateGatewayTokenResponse.Token = context.StringValue("GenerateGatewayToken.Token");
+			generateGatewayTokenResponse.HttpResponse = _ctx.HttpResponse;
+			generateGatewayTokenResponse.Message = _ctx.StringValue("GenerateGatewayToken.Message");
+			generateGatewayTokenResponse.RequestId = _ctx.StringValue("GenerateGatewayToken.RequestId");
+			generateGatewayTokenResponse.Token = _ctx.StringValue("GenerateGatewayToken.Token");
+			generateGatewayTokenResponse.Code = _ctx.StringValue("GenerateGatewayToken.Code");
+			generateGatewayTokenResponse.Success = _ctx.BooleanValue("GenerateGatewayToken.Success");
         
 			return generateGatewayTokenResponse;
         }

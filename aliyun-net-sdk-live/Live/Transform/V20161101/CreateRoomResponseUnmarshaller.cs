@@ -26,15 +26,15 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class CreateRoomResponseUnmarshaller
     {
-        public static CreateRoomResponse Unmarshall(UnmarshallerContext context)
+        public static CreateRoomResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateRoomResponse createRoomResponse = new CreateRoomResponse();
 
-			createRoomResponse.HttpResponse = context.HttpResponse;
-			createRoomResponse.RequestId = context.StringValue("CreateRoom.RequestId");
-			createRoomResponse.AppId = context.StringValue("CreateRoom.AppId");
-			createRoomResponse.RoomId = context.StringValue("CreateRoom.RoomId");
-			createRoomResponse.AnchorId = context.StringValue("CreateRoom.AnchorId");
+			createRoomResponse.HttpResponse = _ctx.HttpResponse;
+			createRoomResponse.RequestId = _ctx.StringValue("CreateRoom.RequestId");
+			createRoomResponse.AppId = _ctx.StringValue("CreateRoom.AppId");
+			createRoomResponse.RoomId = _ctx.StringValue("CreateRoom.RoomId");
+			createRoomResponse.AnchorId = _ctx.StringValue("CreateRoom.AnchorId");
         
 			return createRoomResponse;
         }

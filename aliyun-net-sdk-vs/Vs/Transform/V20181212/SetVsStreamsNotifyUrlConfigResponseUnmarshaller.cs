@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class SetVsStreamsNotifyUrlConfigResponseUnmarshaller
     {
-        public static SetVsStreamsNotifyUrlConfigResponse Unmarshall(UnmarshallerContext context)
+        public static SetVsStreamsNotifyUrlConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetVsStreamsNotifyUrlConfigResponse setVsStreamsNotifyUrlConfigResponse = new SetVsStreamsNotifyUrlConfigResponse();
 
-			setVsStreamsNotifyUrlConfigResponse.HttpResponse = context.HttpResponse;
-			setVsStreamsNotifyUrlConfigResponse.RequestId = context.StringValue("SetVsStreamsNotifyUrlConfig.RequestId");
+			setVsStreamsNotifyUrlConfigResponse.HttpResponse = _ctx.HttpResponse;
+			setVsStreamsNotifyUrlConfigResponse.RequestId = _ctx.StringValue("SetVsStreamsNotifyUrlConfig.RequestId");
         
 			return setVsStreamsNotifyUrlConfigResponse;
         }

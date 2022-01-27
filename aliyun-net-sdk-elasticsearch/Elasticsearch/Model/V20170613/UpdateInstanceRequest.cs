@@ -47,6 +47,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string clientToken;
 
+		private string orderActionType;
+
 		public bool? IgnoreStatus
 		{
 			get
@@ -83,6 +85,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "clientToken", value);
+			}
+		}
+
+		public string OrderActionType
+		{
+			get
+			{
+				return orderActionType;
+			}
+			set	
+			{
+				orderActionType = value;
+				DictionaryUtil.Add(QueryParameters, "orderActionType", value);
 			}
 		}
 

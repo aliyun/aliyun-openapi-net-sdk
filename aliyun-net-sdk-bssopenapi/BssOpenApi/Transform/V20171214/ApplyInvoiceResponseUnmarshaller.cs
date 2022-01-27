@@ -26,18 +26,18 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class ApplyInvoiceResponseUnmarshaller
     {
-        public static ApplyInvoiceResponse Unmarshall(UnmarshallerContext context)
+        public static ApplyInvoiceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ApplyInvoiceResponse applyInvoiceResponse = new ApplyInvoiceResponse();
 
-			applyInvoiceResponse.HttpResponse = context.HttpResponse;
-			applyInvoiceResponse.RequestId = context.StringValue("ApplyInvoice.RequestId");
-			applyInvoiceResponse.Success = context.BooleanValue("ApplyInvoice.Success");
-			applyInvoiceResponse.Code = context.StringValue("ApplyInvoice.Code");
-			applyInvoiceResponse.Message = context.StringValue("ApplyInvoice.Message");
+			applyInvoiceResponse.HttpResponse = _ctx.HttpResponse;
+			applyInvoiceResponse.RequestId = _ctx.StringValue("ApplyInvoice.RequestId");
+			applyInvoiceResponse.Success = _ctx.BooleanValue("ApplyInvoice.Success");
+			applyInvoiceResponse.Code = _ctx.StringValue("ApplyInvoice.Code");
+			applyInvoiceResponse.Message = _ctx.StringValue("ApplyInvoice.Message");
 
 			ApplyInvoiceResponse.ApplyInvoice_Data data = new ApplyInvoiceResponse.ApplyInvoice_Data();
-			data.InvoiceApplyId = context.LongValue("ApplyInvoice.Data.InvoiceApplyId");
+			data.InvoiceApplyId = _ctx.LongValue("ApplyInvoice.Data.InvoiceApplyId");
 			applyInvoiceResponse.Data = data;
         
 			return applyInvoiceResponse;

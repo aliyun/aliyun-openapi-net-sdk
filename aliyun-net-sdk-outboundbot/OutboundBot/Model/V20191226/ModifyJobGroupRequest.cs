@@ -34,26 +34,50 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
+
+		private string recallStrategyJson;
 
 		private string description;
 
-		private List<string> callingNumbers = new List<string>(){ };
-
 		private string scriptId;
 
-		private string instanceId;
-
 		private string strategyJson;
+
+		private long? ringingDuration;
+
+		private string scenarioId;
+
+		private string jobGroupStatus;
+
+		private string priority;
+
+		private List<string> callingNumbers = new List<string>(){ };
+
+		private string instanceId;
 
 		private string jobGroupId;
 
 		private string name;
 
-		private string scenarioId;
+		private long? minConcurrency;
+
+		public string RecallStrategyJson
+		{
+			get
+			{
+				return recallStrategyJson;
+			}
+			set	
+			{
+				recallStrategyJson = value;
+				DictionaryUtil.Add(QueryParameters, "RecallStrategyJson", value);
+			}
+		}
 
 		public string Description
 		{
@@ -65,6 +89,84 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string ScriptId
+		{
+			get
+			{
+				return scriptId;
+			}
+			set	
+			{
+				scriptId = value;
+				DictionaryUtil.Add(QueryParameters, "ScriptId", value);
+			}
+		}
+
+		public string StrategyJson
+		{
+			get
+			{
+				return strategyJson;
+			}
+			set	
+			{
+				strategyJson = value;
+				DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
+			}
+		}
+
+		public long? RingingDuration
+		{
+			get
+			{
+				return ringingDuration;
+			}
+			set	
+			{
+				ringingDuration = value;
+				DictionaryUtil.Add(QueryParameters, "RingingDuration", value.ToString());
+			}
+		}
+
+		public string ScenarioId
+		{
+			get
+			{
+				return scenarioId;
+			}
+			set	
+			{
+				scenarioId = value;
+				DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
+			}
+		}
+
+		public string JobGroupStatus
+		{
+			get
+			{
+				return jobGroupStatus;
+			}
+			set	
+			{
+				jobGroupStatus = value;
+				DictionaryUtil.Add(QueryParameters, "JobGroupStatus", value);
+			}
+		}
+
+		public string Priority
+		{
+			get
+			{
+				return priority;
+			}
+			set	
+			{
+				priority = value;
+				DictionaryUtil.Add(QueryParameters, "Priority", value);
 			}
 		}
 
@@ -85,19 +187,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string ScriptId
-		{
-			get
-			{
-				return scriptId;
-			}
-			set	
-			{
-				scriptId = value;
-				DictionaryUtil.Add(QueryParameters, "ScriptId", value);
-			}
-		}
-
 		public string InstanceId
 		{
 			get
@@ -108,19 +197,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string StrategyJson
-		{
-			get
-			{
-				return strategyJson;
-			}
-			set	
-			{
-				strategyJson = value;
-				DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
 			}
 		}
 
@@ -150,16 +226,16 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string ScenarioId
+		public long? MinConcurrency
 		{
 			get
 			{
-				return scenarioId;
+				return minConcurrency;
 			}
 			set	
 			{
-				scenarioId = value;
-				DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
+				minConcurrency = value;
+				DictionaryUtil.Add(QueryParameters, "MinConcurrency", value.ToString());
 			}
 		}
 

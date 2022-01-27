@@ -26,41 +26,46 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 {
     public class ListUsersResponseUnmarshaller
     {
-        public static ListUsersResponse Unmarshall(UnmarshallerContext context)
+        public static ListUsersResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListUsersResponse listUsersResponse = new ListUsersResponse();
 
-			listUsersResponse.HttpResponse = context.HttpResponse;
-			listUsersResponse.RequestId = context.StringValue("ListUsers.RequestId");
-			listUsersResponse.Success = context.BooleanValue("ListUsers.Success");
-			listUsersResponse.ErrorMessage = context.StringValue("ListUsers.ErrorMessage");
-			listUsersResponse.ErrorCode = context.StringValue("ListUsers.ErrorCode");
-			listUsersResponse.TotalCount = context.LongValue("ListUsers.TotalCount");
+			listUsersResponse.HttpResponse = _ctx.HttpResponse;
+			listUsersResponse.TotalCount = _ctx.LongValue("ListUsers.TotalCount");
+			listUsersResponse.RequestId = _ctx.StringValue("ListUsers.RequestId");
+			listUsersResponse.ErrorCode = _ctx.StringValue("ListUsers.ErrorCode");
+			listUsersResponse.ErrorMessage = _ctx.StringValue("ListUsers.ErrorMessage");
+			listUsersResponse.Success = _ctx.BooleanValue("ListUsers.Success");
 
 			List<ListUsersResponse.ListUsers_User> listUsersResponse_userList = new List<ListUsersResponse.ListUsers_User>();
-			for (int i = 0; i < context.Length("ListUsers.UserList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListUsers.UserList.Length"); i++) {
 				ListUsersResponse.ListUsers_User user = new ListUsersResponse.ListUsers_User();
-				user.UserId = context.StringValue("ListUsers.UserList["+ i +"].UserId");
-				user.Uid = context.LongValue("ListUsers.UserList["+ i +"].Uid");
-				user.NickName = context.StringValue("ListUsers.UserList["+ i +"].NickName");
-				user.Mobile = context.StringValue("ListUsers.UserList["+ i +"].Mobile");
-				user.ParentUid = context.LongValue("ListUsers.UserList["+ i +"].ParentUid");
-				user.State = context.StringValue("ListUsers.UserList["+ i +"].State");
-				user.LastLoginTime = context.StringValue("ListUsers.UserList["+ i +"].LastLoginTime");
-				user.CurExecuteCount = context.LongValue("ListUsers.UserList["+ i +"].CurExecuteCount");
-				user.CurResultCount = context.LongValue("ListUsers.UserList["+ i +"].CurResultCount");
-				user.MaxExecuteCount = context.LongValue("ListUsers.UserList["+ i +"].MaxExecuteCount");
-				user.MaxResultCount = context.LongValue("ListUsers.UserList["+ i +"].MaxResultCount");
+				user.State = _ctx.StringValue("ListUsers.UserList["+ i +"].State");
+				user.CurResultCount = _ctx.LongValue("ListUsers.UserList["+ i +"].CurResultCount");
+				user.UserId = _ctx.StringValue("ListUsers.UserList["+ i +"].UserId");
+				user.LastLoginTime = _ctx.StringValue("ListUsers.UserList["+ i +"].LastLoginTime");
+				user.MaxResultCount = _ctx.LongValue("ListUsers.UserList["+ i +"].MaxResultCount");
+				user.ParentUid = _ctx.StringValue("ListUsers.UserList["+ i +"].ParentUid");
+				user.NickName = _ctx.StringValue("ListUsers.UserList["+ i +"].NickName");
+				user.MaxExecuteCount = _ctx.LongValue("ListUsers.UserList["+ i +"].MaxExecuteCount");
+				user.CurExecuteCount = _ctx.LongValue("ListUsers.UserList["+ i +"].CurExecuteCount");
+				user.Mobile = _ctx.StringValue("ListUsers.UserList["+ i +"].Mobile");
+				user.Uid = _ctx.StringValue("ListUsers.UserList["+ i +"].Uid");
+				user.Email = _ctx.StringValue("ListUsers.UserList["+ i +"].Email");
+				user.DingRobot = _ctx.StringValue("ListUsers.UserList["+ i +"].DingRobot");
+				user.Webhook = _ctx.StringValue("ListUsers.UserList["+ i +"].Webhook");
+				user.SignatureMethod = _ctx.StringValue("ListUsers.UserList["+ i +"].SignatureMethod");
+				user.NotificationMode = _ctx.StringValue("ListUsers.UserList["+ i +"].NotificationMode");
 
 				List<string> user_roleIdList = new List<string>();
-				for (int j = 0; j < context.Length("ListUsers.UserList["+ i +"].RoleIdList.Length"); j++) {
-					user_roleIdList.Add(context.StringValue("ListUsers.UserList["+ i +"].RoleIdList["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("ListUsers.UserList["+ i +"].RoleIdList.Length"); j++) {
+					user_roleIdList.Add(_ctx.StringValue("ListUsers.UserList["+ i +"].RoleIdList["+ j +"]"));
 				}
 				user.RoleIdList = user_roleIdList;
 
 				List<string> user_roleNameList = new List<string>();
-				for (int j = 0; j < context.Length("ListUsers.UserList["+ i +"].RoleNameList.Length"); j++) {
-					user_roleNameList.Add(context.StringValue("ListUsers.UserList["+ i +"].RoleNameList["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("ListUsers.UserList["+ i +"].RoleNameList.Length"); j++) {
+					user_roleNameList.Add(_ctx.StringValue("ListUsers.UserList["+ i +"].RoleNameList["+ j +"]"));
 				}
 				user.RoleNameList = user_roleNameList;
 

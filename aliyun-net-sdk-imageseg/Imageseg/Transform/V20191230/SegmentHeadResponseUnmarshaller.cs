@@ -38,11 +38,11 @@ namespace Aliyun.Acs.imageseg.Transform.V20191230
 			List<SegmentHeadResponse.SegmentHead_Data.SegmentHead_Element> data_elements = new List<SegmentHeadResponse.SegmentHead_Data.SegmentHead_Element>();
 			for (int i = 0; i < _ctx.Length("SegmentHead.Data.Elements.Length"); i++) {
 				SegmentHeadResponse.SegmentHead_Data.SegmentHead_Element element = new SegmentHeadResponse.SegmentHead_Data.SegmentHead_Element();
-				element.ImageURL = _ctx.StringValue("SegmentHead.Data.Elements["+ i +"].ImageURL");
 				element.X = _ctx.IntegerValue("SegmentHead.Data.Elements["+ i +"].X");
 				element.Y = _ctx.IntegerValue("SegmentHead.Data.Elements["+ i +"].Y");
-				element.Width = _ctx.IntegerValue("SegmentHead.Data.Elements["+ i +"].Width");
+				element.ImageURL = _ctx.StringValue("SegmentHead.Data.Elements["+ i +"].ImageURL");
 				element.Height = _ctx.IntegerValue("SegmentHead.Data.Elements["+ i +"].Height");
+				element.Width = _ctx.IntegerValue("SegmentHead.Data.Elements["+ i +"].Width");
 
 				data_elements.Add(element);
 			}

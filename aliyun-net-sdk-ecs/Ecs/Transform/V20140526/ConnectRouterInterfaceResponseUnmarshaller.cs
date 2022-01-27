@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class ConnectRouterInterfaceResponseUnmarshaller
     {
-        public static ConnectRouterInterfaceResponse Unmarshall(UnmarshallerContext context)
+        public static ConnectRouterInterfaceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ConnectRouterInterfaceResponse connectRouterInterfaceResponse = new ConnectRouterInterfaceResponse();
 
-			connectRouterInterfaceResponse.HttpResponse = context.HttpResponse;
-			connectRouterInterfaceResponse.RequestId = context.StringValue("ConnectRouterInterface.RequestId");
+			connectRouterInterfaceResponse.HttpResponse = _ctx.HttpResponse;
+			connectRouterInterfaceResponse.RequestId = _ctx.StringValue("ConnectRouterInterface.RequestId");
         
 			return connectRouterInterfaceResponse;
         }

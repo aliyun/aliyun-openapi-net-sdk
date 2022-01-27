@@ -74,6 +74,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private bool? globalInstance;
 
+		private string privateIp;
+
 		private long? ownerId;
 
 		private string vSwitchId;
@@ -311,6 +313,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				globalInstance = value;
 				DictionaryUtil.Add(QueryParameters, "GlobalInstance", value.ToString());
+			}
+		}
+
+		public string PrivateIp
+		{
+			get
+			{
+				return privateIp;
+			}
+			set	
+			{
+				privateIp = value;
+				DictionaryUtil.Add(QueryParameters, "PrivateIp", value);
 			}
 		}
 

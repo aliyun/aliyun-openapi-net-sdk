@@ -26,23 +26,23 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class BatchCreateDeviceResponseUnmarshaller
     {
-        public static BatchCreateDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static BatchCreateDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchCreateDeviceResponse batchCreateDeviceResponse = new BatchCreateDeviceResponse();
 
-			batchCreateDeviceResponse.HttpResponse = context.HttpResponse;
-			batchCreateDeviceResponse.ErrorCode = context.IntegerValue("BatchCreateDevice.ErrorCode");
-			batchCreateDeviceResponse.Message = context.StringValue("BatchCreateDevice.Message");
-			batchCreateDeviceResponse.Success = context.BooleanValue("BatchCreateDevice.Success");
-			batchCreateDeviceResponse.RequestId = context.StringValue("BatchCreateDevice.RequestId");
+			batchCreateDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			batchCreateDeviceResponse.ErrorCode = _ctx.IntegerValue("BatchCreateDevice.ErrorCode");
+			batchCreateDeviceResponse.Message = _ctx.StringValue("BatchCreateDevice.Message");
+			batchCreateDeviceResponse.Success = _ctx.BooleanValue("BatchCreateDevice.Success");
+			batchCreateDeviceResponse.RequestId = _ctx.StringValue("BatchCreateDevice.RequestId");
 
 			List<BatchCreateDeviceResponse.BatchCreateDevice_Data> batchCreateDeviceResponse_devices = new List<BatchCreateDeviceResponse.BatchCreateDevice_Data>();
-			for (int i = 0; i < context.Length("BatchCreateDevice.Devices.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("BatchCreateDevice.Devices.Length"); i++) {
 				BatchCreateDeviceResponse.BatchCreateDevice_Data data = new BatchCreateDeviceResponse.BatchCreateDevice_Data();
-				data.DeviceErrorCode = context.IntegerValue("BatchCreateDevice.Devices["+ i +"].DeviceErrorCode");
-				data.DeviceMessage = context.StringValue("BatchCreateDevice.Devices["+ i +"].DeviceMessage");
-				data.SN = context.StringValue("BatchCreateDevice.Devices["+ i +"].SN");
-				data.ActiveCode = context.StringValue("BatchCreateDevice.Devices["+ i +"].ActiveCode");
+				data.DeviceErrorCode = _ctx.IntegerValue("BatchCreateDevice.Devices["+ i +"].DeviceErrorCode");
+				data.DeviceMessage = _ctx.StringValue("BatchCreateDevice.Devices["+ i +"].DeviceMessage");
+				data.SN = _ctx.StringValue("BatchCreateDevice.Devices["+ i +"].SN");
+				data.ActiveCode = _ctx.StringValue("BatchCreateDevice.Devices["+ i +"].ActiveCode");
 
 				batchCreateDeviceResponse_devices.Add(data);
 			}

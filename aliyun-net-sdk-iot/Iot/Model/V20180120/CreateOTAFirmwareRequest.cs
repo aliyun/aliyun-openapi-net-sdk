@@ -34,13 +34,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Iot.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Iot.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private string signMethod;
+
+		private List<MultiFiles> multiFiless = new List<MultiFiles>(){ };
 
 		private bool? needToVerify;
 
@@ -64,6 +66,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string srcVersion;
 
+		private string udi;
+
 		private string destVersion;
 
 		public string SignMethod
@@ -76,6 +80,27 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				signMethod = value;
 				DictionaryUtil.Add(QueryParameters, "SignMethod", value);
+			}
+		}
+
+		public List<MultiFiles> MultiFiless
+		{
+			get
+			{
+				return multiFiless;
+			}
+
+			set
+			{
+				multiFiless = value;
+				for (int i = 0; i < multiFiless.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"MultiFiles." + (i + 1) + ".Size", multiFiless[i].Size);
+					DictionaryUtil.Add(QueryParameters,"MultiFiles." + (i + 1) + ".Name", multiFiless[i].Name);
+					DictionaryUtil.Add(QueryParameters,"MultiFiles." + (i + 1) + ".SignValue", multiFiless[i].SignValue);
+					DictionaryUtil.Add(QueryParameters,"MultiFiles." + (i + 1) + ".FileMd5", multiFiless[i].FileMd5);
+					DictionaryUtil.Add(QueryParameters,"MultiFiles." + (i + 1) + ".Url", multiFiless[i].Url);
+				}
 			}
 		}
 
@@ -222,6 +247,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public string Udi
+		{
+			get
+			{
+				return udi;
+			}
+			set	
+			{
+				udi = value;
+				DictionaryUtil.Add(QueryParameters, "Udi", value);
+			}
+		}
+
 		public string DestVersion
 		{
 			get
@@ -232,6 +270,80 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				destVersion = value;
 				DictionaryUtil.Add(QueryParameters, "DestVersion", value);
+			}
+		}
+
+		public class MultiFiles
+		{
+
+			private int? size;
+
+			private string name;
+
+			private string signValue;
+
+			private string fileMd5;
+
+			private string url;
+
+			public int? Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string SignValue
+			{
+				get
+				{
+					return signValue;
+				}
+				set	
+				{
+					signValue = value;
+				}
+			}
+
+			public string FileMd5
+			{
+				get
+				{
+					return fileMd5;
+				}
+				set	
+				{
+					fileMd5 = value;
+				}
+			}
+
+			public string Url
+			{
+				get
+				{
+					return url;
+				}
+				set	
+				{
+					url = value;
+				}
 			}
 		}
 

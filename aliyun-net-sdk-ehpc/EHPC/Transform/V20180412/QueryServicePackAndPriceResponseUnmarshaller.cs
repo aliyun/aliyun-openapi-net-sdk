@@ -26,27 +26,27 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class QueryServicePackAndPriceResponseUnmarshaller
     {
-        public static QueryServicePackAndPriceResponse Unmarshall(UnmarshallerContext context)
+        public static QueryServicePackAndPriceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryServicePackAndPriceResponse queryServicePackAndPriceResponse = new QueryServicePackAndPriceResponse();
 
-			queryServicePackAndPriceResponse.HttpResponse = context.HttpResponse;
-			queryServicePackAndPriceResponse.RequestId = context.StringValue("QueryServicePackAndPrice.RequestId");
-			queryServicePackAndPriceResponse.RegionId = context.StringValue("QueryServicePackAndPrice.RegionId");
-			queryServicePackAndPriceResponse.TradePrice = context.FloatValue("QueryServicePackAndPrice.TradePrice");
-			queryServicePackAndPriceResponse.OriginalPrice = context.FloatValue("QueryServicePackAndPrice.OriginalPrice");
-			queryServicePackAndPriceResponse.DiscountPrice = context.FloatValue("QueryServicePackAndPrice.DiscountPrice");
-			queryServicePackAndPriceResponse.Currency = context.StringValue("QueryServicePackAndPrice.Currency");
-			queryServicePackAndPriceResponse.OriginalAmount = context.IntegerValue("QueryServicePackAndPrice.OriginalAmount");
-			queryServicePackAndPriceResponse.ChargeAmount = context.IntegerValue("QueryServicePackAndPrice.ChargeAmount");
+			queryServicePackAndPriceResponse.HttpResponse = _ctx.HttpResponse;
+			queryServicePackAndPriceResponse.RequestId = _ctx.StringValue("QueryServicePackAndPrice.RequestId");
+			queryServicePackAndPriceResponse.RegionId = _ctx.StringValue("QueryServicePackAndPrice.RegionId");
+			queryServicePackAndPriceResponse.TradePrice = _ctx.FloatValue("QueryServicePackAndPrice.TradePrice");
+			queryServicePackAndPriceResponse.OriginalPrice = _ctx.FloatValue("QueryServicePackAndPrice.OriginalPrice");
+			queryServicePackAndPriceResponse.DiscountPrice = _ctx.FloatValue("QueryServicePackAndPrice.DiscountPrice");
+			queryServicePackAndPriceResponse.Currency = _ctx.StringValue("QueryServicePackAndPrice.Currency");
+			queryServicePackAndPriceResponse.OriginalAmount = _ctx.IntegerValue("QueryServicePackAndPrice.OriginalAmount");
+			queryServicePackAndPriceResponse.ChargeAmount = _ctx.IntegerValue("QueryServicePackAndPrice.ChargeAmount");
 
 			List<QueryServicePackAndPriceResponse.QueryServicePackAndPrice_ServicePackInfo> queryServicePackAndPriceResponse_servicePack = new List<QueryServicePackAndPriceResponse.QueryServicePackAndPrice_ServicePackInfo>();
-			for (int i = 0; i < context.Length("QueryServicePackAndPrice.ServicePack.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryServicePackAndPrice.ServicePack.Length"); i++) {
 				QueryServicePackAndPriceResponse.QueryServicePackAndPrice_ServicePackInfo servicePackInfo = new QueryServicePackAndPriceResponse.QueryServicePackAndPrice_ServicePackInfo();
-				servicePackInfo.InstanceName = context.StringValue("QueryServicePackAndPrice.ServicePack["+ i +"].InstanceName");
-				servicePackInfo.Capacity = context.IntegerValue("QueryServicePackAndPrice.ServicePack["+ i +"].Capacity");
-				servicePackInfo.StartTime = context.IntegerValue("QueryServicePackAndPrice.ServicePack["+ i +"].StartTime");
-				servicePackInfo.EndTime = context.IntegerValue("QueryServicePackAndPrice.ServicePack["+ i +"].EndTime");
+				servicePackInfo.InstanceName = _ctx.StringValue("QueryServicePackAndPrice.ServicePack["+ i +"].InstanceName");
+				servicePackInfo.Capacity = _ctx.IntegerValue("QueryServicePackAndPrice.ServicePack["+ i +"].Capacity");
+				servicePackInfo.StartTime = _ctx.IntegerValue("QueryServicePackAndPrice.ServicePack["+ i +"].StartTime");
+				servicePackInfo.EndTime = _ctx.IntegerValue("QueryServicePackAndPrice.ServicePack["+ i +"].EndTime");
 
 				queryServicePackAndPriceResponse_servicePack.Add(servicePackInfo);
 			}

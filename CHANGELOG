@@ -1,3 +1,1932 @@
+2022-01-26 Version: 1.8.15
+- Fix some bugs.
+
+2022-01-25 Version: 3.0.2
+- Create Lindorm Open api.
+
+2022-01-25 Version: 1.2.0
+- Supported new features for outbound.
+
+2022-01-25 Version: 1.8.4
+- Add APIs, include, ListSharedReports, ListFavoriteReports, ListRecentViewReports, CreateTicket, QueryTicketInfo, UpdateTicketNum, DelayTicketExpireTime, DelayTicketExpireTime.
+
+2022-01-25 Version: 3.9.14
+- Generated 2016-11-01 for `live`.
+
+2022-01-25 Version: 1.0.8
+- Supported Get Worker List.
+- Execute Job Support Designate Machine.
+- Job Interface Add Config.
+
+2022-01-21 Version: 1.2.0
+- Supported new features etc.
+
+2022-01-21 Version: 1.28.0
+- Supported RestartDataCorrectSQLJob,PauseDataCorrectSQLJob API.
+- Supported ListDataCorrectPreCheckSQL to return tableNames information.
+
+2022-01-19 Version: 4.1.4
+- Release some feature APIs.
+
+2022-01-19 Version: 4.1.3
+- Release some feature APIs.
+
+2022-01-18 Version: 1.1.8
+- Upgrade SDK.
+
+2022-01-18 Version: 1.18.16
+- Support describe price.
+
+2022-01-13 Version: 1.1.7
+- Supported New Features.
+
+2022-01-12 Version: 1.1.0
+- Supported new features for outbound.
+
+2022-01-11 Version: 1.0.14
+- Support  DeleteTransitRouter API.
+
+2022-01-11 Version: 3.14.7
+- Added reserve price range.
+
+2022-01-07 Version: 1.0.7
+- Support resource scheduler.
+
+2022-01-07 Version: 1.8.3
+- Add or modify APIs, include, QueryEmbeddedStaus, QueryWorks, QueryWorksByWorkspace.
+
+2022-01-07 Version: 1.8.2
+- Add or modify APIs, include, QueryEmbeddedStaus, QueryWorks, QueryWorksByWorkspace.
+
+2022-01-07 Version: 1.27.0
+- Supported GetSparkJobDetail,GetSparkJobExecutorLogs,KillSparkJob,GetSparkJobDriverLog,GetSparkJobLog,SubmitSparkJob API.
+
+2022-01-07 Version: 1.18.15
+- Supported minReadyInstanceRatio parameter for deploy.
+
+2022-01-07 Version: 1.1.6
+- Support New API for Dypnsapi.
+
+2022-01-06 Version: 3.9.13
+- Generated 2016-11-01 for `live`.
+
+2022-01-05 Version: 2.2.2
+- Add new interface.
+
+2021-12-31 Version: 3.7.1
+- Update ErrorCode.
+
+2021-12-30 Version: 1.0.7
+- Supported Get Worker List.
+- Execute Job Support Designate Machine.
+
+2021-12-30 Version: 3.0.1
+- Create Lindorm Open api.
+
+2021-12-30 Version: 2.20.2
+- Update by sdk platform.
+
+2021-12-30 Version: 1.0.30
+- Add new interface.
+
+2021-12-29 Version: 1.1.4
+- Supported new features etc.
+
+2021-12-29 Version: 1.0.9
+- Supported new features for outbound.
+
+2021-12-27 Version: 1.18.1
+- Support ACR EE, OSS, EIP for deploy.
+
+2021-12-27 Version: 3.6.3
+- DescribeDBInstances Add CapacityUnit.
+
+2021-12-27 Version: 3.7.0
+- Update DeleteFCTrigger.
+
+2021-12-27 Version: 2.1.9
+- Add CreateDcdnSubTask.
+
+2021-12-27 Version: 2.2.7
+- Add DescribeScdnDomainCcInfo.
+
+2021-12-24 Version: 1.0.3
+- Updated CheckBlockVolumeName api for Checking the volume name has been already used by the OSS bucket folder.
+
+2021-12-22 Version: 2.16.5
+- Add return fields to UploadStreamByURL.
+- Set DescribeVodDomainSrcTrafficData pulic.
+
+2021-12-21 Version: 1.0.13
+- Support Darabonba API.
+
+2021-12-21 Version: 2.2.1
+- Add RAM ID in resonse of listUsers API.
+
+2021-12-21 Version: 1.0.6
+- Supported Designate Workers.
+- Supported Get WorkFlow.
+
+2021-12-20 Version: 4.24.12
+- Add Request Param Ipv6AddressCount For API CreateLaunchTemplate AND CreateLaunchTemplateVersion.
+- Add Response Data Ipv6AddressCount For API DescribeLaunchTemplateVersions.
+
+2021-12-20 Version: 3.3.6
+- Generated 2016-04-08 for `Emr`.
+
+2021-12-20 Version: 1.26.0
+- Supported ListLogicDatabases to return Alias information.
+- Supported ListDBTaskSQLJobDetail to return sql execute startTime and endTime information.
+
+2021-12-17 Version: 1.0.6
+- Support Endpoint Protect.
+
+2021-12-17 Version: 3.2.3
+- Supported ACL for SMB.
+
+2021-12-16 Version: 2.2.0
+- Release for sprint 2_2_0.
+
+2021-12-16 Version: 7.31.0
+- Update OTA API, including CreateOTADynamicUpgradeJob,CreateOTAStaticUpgradeJob,QueryOTAJob.
+
+2021-12-14 Version: 2.0.3
+- Support query resourceType.
+
+2021-12-14 Version: 1.1.7
+- Generated 2019-09-10 for `waf-openapi`.
+
+2021-12-13 Version: 3.6.2
+- CreateServerlessDBInstance Add CapacityUnit.
+
+2021-12-13 Version: 1.0.7
+- Openapi support querydisplay.
+
+2021-12-13 Version: 2.0.2
+- Support query resourceType.
+
+2021-12-09 Version: 1.18.0
+- Support ACR EE, OSS, EIP for deploy.
+
+2021-12-07 Version: 2.9.8
+- Fix DescribeInstances clusterId.
+
+2021-12-06 Version: 3.4.7
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-12-06 Version: 1.0.12
+- Modify the input parameter Action of DescribeCenInterRegionBandwidthLimits to be required.
+
+2021-12-03 Version: 1.0.5
+- Support EndpointType and ServiceType.
+
+2021-12-01 Version: 1.0.11
+- Support not switching routes when VBR health check fails.
+- Support order type when cross-account authorization and display.
+
+2021-12-01 Version: 3.0.1
+- Supported RequestDecision For YN.
+
+2021-11-30 Version: 3.4.6
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-11-30 Version: 2.4.3
+- GetUnionTaskStatus add channelId.
+
+2021-11-29 Version: 2.1.0
+- Add API for unregister sip phone device, masked callee, etc.
+
+2021-11-29 Version: 3.6.9
+- Update DescribeCdnSMCertificateDetail.
+
+2021-11-29 Version: 2.1.8
+- Update SetDcdnDomainSMCertificate.
+
+2021-11-29 Version: 1.25.0
+- Supported ListLogicTableRouteConfig, AddLogicTableRouteConfig, DeleteLogicTableRouteConfig API.
+- Supported ModifyDataCorrectExecSQL, RetryDataCorrectPreCheck API.
+- Supported GetDBTaskSQLJobLog API.
+- Supported ListDBTaskSQLJobDetail to return execute log information.
+
+2021-11-29 Version: 3.9.12
+- Generated 2016-11-01 for `live`.
+
+2021-11-26 Version: 1.0.5
+- Support CEN Qos Apis.
+- Support TransitRouter Latest Apis.
+
+2021-11-26 Version: 4.1.0
+- Update GetSyncResult.
+
+2021-11-25 Version: 1.1.3
+- Supported new features etc.
+
+2021-11-25 Version: 1.1.2
+- Supported new features etc.
+
+2021-11-25 Version: 1.0.8
+- Supported new features for outbound.
+
+2021-11-24 Version: 2.16.4
+- Set API DescribeVodDomainSrcBpsData to public.
+
+2021-11-23 Version: 0.0.5
+- Update RecognizeCharacter.
+
+2021-11-23 Version: 2.9.7
+- Fix BdsColdStorage.
+
+2021-11-23 Version: 3.3.4
+- Generated 2016-04-08 for `Emr`.
+
+2021-11-23 Version: 3.1.8
+- Support the IP restrictions in ram policy.
+
+2021-11-18 Version: 1.24.0
+- Support ListInstanceLoginAuditLog, ListProxySQLExecAuditLog API.
+- Support GetOpLog API to return OpUserId information.
+
+2021-11-17 Version: 3.0.29
+- Update apm interface parameter.
+
+2021-11-16 Version: 2.16.3
+- Add parameter type HDRType.
+
+2021-11-16 Version: 3.0.28
+- Update apm interface parameter.
+
+2021-11-16 Version: 3.0.27
+- Update apm interface parameter.
+
+2021-11-16 Version: 3.6.8
+- Update SetCdnDomainSMCertificate.
+
+2021-11-16 Version: 3.4.5
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-11-16 Version: 3.0.26
+- Update apm interface parameter.
+
+2021-11-15 Version: 1.0.4
+- Generated 2020-01-01 for `ddoscoo`.
+
+2021-11-15 Version: 3.1.1
+- Add Ext parameter to image translation API.
+
+2021-11-12 Version: 3.6.1
+- Update by sdk platform.
+
+2021-11-12 Version: 1.8.13
+- Optimize the API for querying storage package information.
+
+2021-11-08 Version: 3.0.25
+- Supported apm restful api.
+
+2021-11-05 Version: 2.1.7
+- Add SetDcdnDomainSMCertificate.
+
+2021-11-05 Version: 3.6.7
+- Add SetCdnDomainSMCertificate.
+
+2021-11-05 Version: 7.30.0
+- Update OTA API, including CreateOTAVerifyJob.
+
+2021-11-04 Version: 1.0.4
+- Adjust some param.
+
+2021-11-04 Version: 1.23.0
+- Support ListSQLExecAuditLog API.
+- Support ListUsers, GetUser API to return information of Email, Webhook and DingRobot.
+- Support GetApprovalDetail API to return information of CreateTime.
+
+2021-11-02 Version: 2.16.2
+- Add GetVideoPlayAuth API parameter.
+
+2021-11-02 Version: 2.16.1
+- Add GetVideoPlayAuth API parameter.
+
+2021-11-02 Version: 2.11.1
+- Support multi language.
+
+2021-11-02 Version: 2.16.0
+- Add API UploadStreamByURL.
+
+2021-11-02 Version: 3.6.6
+- Fixed SDK update delay.
+
+2021-10-28 Version: 2.0.31
+- Generated 2019-03-07, 2020-06-18, 2018-09-16, 2020-11-12 for `Cloudauth`.
+
+2021-10-27 Version: 2.0.30
+- Generated 2019-03-07 for `Cloudauth`.
+
+2021-10-27 Version: 2.9.6
+- Fix ModifyInstanceName.
+
+2021-10-26 Version: 1.8.0
+- Add QueryEmbedTokenInfo,DeleteEmbedToken,CreateEmbedToken,DelayEmbedToken,BuildSignatureUrl, and update QueryDatasetInfo,AuthorizeMenu,AddUserTagMeta,AddUser.
+
+2021-10-26 Version: 3.2.0
+- Update Dyvmsapi SDK.
+
+2021-10-25 Version: 1.22.0
+- Support ListInstances and GetInstance API to return StandardGroup information.
+- Support ListUserPermissions, GrantUserPermission, GrantUserPermission to operate instance permission.
+- Support ChangeColumnSecLevel API.
+- Support CreateLogicDatabase, EditLogicDatabase, DeleteLogicDatabase API.
+
+2021-10-25 Version: 3.3.3
+- Generated 2016-04-08 for `Emr`.
+
+2021-10-25 Version: 3.9.11
+- Generated 2016-11-01 for `live`.
+
+2021-10-21 Version: 2.6.1
+- Update Open API.
+
+2021-10-21 Version: 3.4.4
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-10-21 Version: 3.4.3
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-10-20 Version: 7.29.0
+- Add DeviceCenter API, including CreateDeviceDynamicGroup, DeleteDeviceDynamicGroup, QueryDynamicGroupDevices.
+- Update DeviceCenter API, including SetDeviceGroupTags, QueryDeviceGroupByFuzzyName, QueryDeviceGroupByDevice, QueryDeviceGroupTagList, UpdateDeviceGroup, QueryDeviceGroupList, QueryDeviceGroupInfo.
+- Update OTA API, including CreateOTADynamicUpgradeJob, CreateOTAStaticUpgradeJob, QueryOTAJob.
+
+2021-10-19 Version: 2.0.19
+- Supported ScaleApp totalPartitions.
+
+2021-10-18 Version: 1.1.6
+- Generated 2019-09-10, 2018-01-17 for `waf-openapi`.
+
+2021-10-18 Version: 4.24.11
+- Adjust ecs openapi endpoint.
+- Fix SDK array format.
+
+2021-10-15 Version: 3.14.6
+- Added audit status.
+
+2021-10-15 Version: 2.0.7
+- Generated 2020-02-01 for `cloudesl`.
+
+2021-10-14 Version: 2.0.18
+- Add API for predictive dialer.
+
+2021-10-11 Version: 1.0.4
+- Fixed SDK update delay.
+
+2021-10-08 Version: 3.6.5
+- Fixed SDK update delay.
+
+2021-10-08 Version: 2.1.6
+- Fixed SDK update delay.
+
+2021-10-08 Version: 2.2.6
+- Fixed SDK update delay.
+
+2021-09-29 Version: 3.1.0
+- Supported AssumeRoleWithOIDC.
+
+2021-09-28 Version: 3.4.2
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-09-28 Version: 1.0.29
+- Add new internal API.
+
+2021-09-26 Version: 3.4.1
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-09-26 Version: 1.10.4
+- Support odcap device.
+
+2021-09-26 Version: 1.10.3
+- Support odcap device.
+
+2021-09-26 Version: 0.0.4
+- Update imageenhan.
+
+2021-09-26 Version: 1.0.3
+- Supported sdk for sddp.
+
+2021-09-24 Version: 3.4.0
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-09-24 Version: 1.0.2
+- Fixed SDK update delay.
+
+2021-09-23 Version: 1.8.11
+- Supports the purchase of polardb storage packages.
+- Support temporary upgrades and allocations of instances.
+- Query the detailed information of the node returned by the GDN instance.
+
+2021-09-23 Version: 3.6.0
+- Update by sdk platform.
+
+2021-09-22 Version: 2.6.32
+- Supported API for GTM.
+
+2021-09-22 Version: 1.0.2
+- Generated 2018-05-09 for `Green`.
+
+2021-09-22 Version: 1.1.5
+- Support Sms Verification for Dypnsapi.
+
+2021-09-22 Version: 1.1.4
+- Support Sms Verification for Dypnsapi.
+
+2021-09-22 Version: 1.0.1
+- Modify CreateK8sSecret.
+
+2021-09-17 Version: 3.13.9
+- Supported SendChannels, AndroidMessageHuaweiUrgency, AndroidMessageHuaweiCategory for Push and MassPush.
+
+2021-09-17 Version: 1.3.1
+- Fixed bug for GetSecretAsrDetail.
+
+2021-09-16 Version: 3.9.10
+- Generated 2016-11-01 for `live`.
+
+2021-09-13 Version: 1.0.4
+- Generated 2019-03-01 for `LinkWAN`.
+
+2021-09-13 Version: 2.0.17
+- Supported CallerLocation, CalleeLocation in CDR API.
+
+2021-09-10 Version: 1.0.5
+- Support crop face image.
+
+2021-09-09 Version: 1.2.0
+- Public version.
+
+2021-09-06 Version: 7.27.0
+- Update LinkSpeech API, including SpeechByCombination, SyncSpeechByCombination.
+
+2021-09-01 Version: 1.14.7
+- SDK updated.
+
+2021-08-31 Version: 1.2.2
+- Supported cro algorithm.
+
+2021-08-31 Version: 3.13.8
+- Supported AndroidBigPictureUrl, AndroidInboxBody, AndroidImageUrl, AndroidOppoImageId, AndroidXiaomiImageUrl, iOSNotificationThreadId for Push and MassPush.
+
+2021-08-31 Version: 1.0.0
+- Generated 2017-08-01 for `Edas`.
+
+2021-08-27 Version: 1.14.6
+- ListAvailableEcsTypes set param ZoneId not required.
+- ListAvailableEcsTypes return ZoneIds.
+
+2021-08-26 Version: 1.14.5
+- ListAvailableEcsTypes set param ZoneId not required.
+- ListAvailableEcsTypes return ZoneIds.
+
+2021-08-20 Version: 3.1.1
+- Update Dyvmsapi SDK.
+- Add GetCallInfo.
+
+2021-08-20 Version: 3.3.29
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-08-19 Version: 3.3.28
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-08-19 Version: 1.14.4
+- Support Round and Interval for ApplyNodes API.
+
+2021-08-19 Version: 1.0.7
+- Supported new features for outbound.
+
+2021-08-19 Version: 3.3.27
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-08-13 Version: 5.1.18
+- Supported etlOperatorColumnReference for ModifyDtsJob.
+
+2021-08-12 Version: 2.0.0
+- Support query dbfs specification.
+
+2021-08-12 Version: 2.20.1
+- DescirbeAvailableResource add NodeId input parameter.
+- CreateTairInstance add GlobalInstanceId input paramter.
+
+2021-08-12 Version: 1.21.0
+- Support CreateProxy, DeleteProxy, GetProxy, ListProxies, CreateProxyAccess, DeleteProxyAccess, ListProxyAccesses, InspectProxyAccessSecret Safety Protection Management APIs.
+
+2021-08-11 Version: 1.0.4
+- Support CEN latest Apis.
+
+2021-08-10 Version: 1.7.7
+- Supported DescribeSavingsPlansUsageTotal.
+- Supported DescribeSavingsPlansUsageDetail.
+- Supported DescribeSavingsPlansCoverageTotal.
+- Supported DescribeSavingsPlansCoverageDetail.
+
+2021-08-10 Version: 2.0.15
+- Export instance relative API.
+
+2021-08-10 Version: 0.0.8
+- Update TaggingAdImage.
+
+2021-08-10 Version: 5.1.17
+- Supported DescribeSubscriptionMeta for distributed subscription.
+- Supported ParentChannelId for DescribeConsumerChannel.
+- Supported Reserve for ModifyDtsJob.
+
+2021-08-09 Version: 5.1.16
+- Supported DescribeSubscriptionMeta for distributed subscription.
+- Supported ParentChannelId for DescribeConsumerChannel.
+- Supported Reserve for ModifyDtsJob.
+
+2021-08-09 Version: 5.1.15
+- Support Job Status With Phase.
+
+2021-08-06 Version: 0.0.7
+- Update TaggingAdImage.
+
+2021-08-04 Version: 3.3.26
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-08-04 Version: 0.0.6
+- Release TaggingAdImage.
+
+2021-08-04 Version: 3.0.0
+- Create Lindorm Open api.
+
+2021-08-04 Version: 2.0.0
+- Create Lindorm Open api.
+
+2021-08-03 Version: 3.3.25
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-08-02 Version: 0.0.5
+- Update TaggingImage.
+
+2021-08-02 Version: 1.9.0-beta
+- Support upgrade.
+
+2021-07-30 Version: 3.1.0
+- Update Dyvmsapi SDK.
+
+2021-07-29 Version: 1.8.10
+- Supported DescribeMaskingRules.
+- ModifyMaskingRules.
+- DeleteMaskingRules.
+
+2021-07-29 Version: 2.0.18
+- ListAppInstanceResponse add status field.
+
+2021-07-28 Version: 2.0.17
+- Generated 2018-03-13 for `retailcloud`.
+
+2021-07-27 Version: 3.3.24
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-07-27 Version: 2.20.0
+- Add DescribeAuditLogConfig API.
+
+2021-07-23 Version: 2.0.14
+- Export instance relative API.
+
+2021-07-22 Version: 3.3.23
+- Generated 2018-06-01, 2020-05-18 for `dataworks-public`.
+
+2021-07-22 Version: 3.0.24
+- Add private-link support.
+- Add download dicts.
+- Add whiteIpGroup support.
+- Add recovery infos support.
+
+2021-07-21 Version: 1.7.12
+- Create Lindorm Open api.
+
+2021-07-21 Version: 1.7.2
+- Create Lindorm Open api.
+
+2021-07-21 Version: 3.3.8
+- Support HealthCheckMethod for HTTP and HTTPS listener.
+
+2021-07-19 Version: 4.24.4
+- CreateNetworkInterface supports to allocate Ipv6.
+
+2021-07-19 Version: 0.0.10
+- Update ScreenChestCT.
+
+2021-07-15 Version: 3.3.22
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-07-15 Version: 1.0.3
+- Generated 2020-01-01 for `ddoscoo`.
+
+2021-07-13 Version: 3.3.21
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-07-09 Version: 3.13.7
+- Add `CheckCertificate` Api.
+- Supported AndroidRenderStyle, AndroidBigTitle, AndroidBigBody, AndroidXiaomiBigPictureUrl for Push and MassPush.
+
+2021-07-09 Version: 2.0.2
+- Fix ListPIpelineTemplates.
+
+2021-07-08 Version: 2.0.15
+- Support app group.
+
+2021-07-08 Version: 3.3.20
+- Generated 2020-05-18, 2018-06-01 for `dataworks-public`.
+
+2021-07-08 Version: 1.0.7
+- Generated 2019-01-01 for `Cassandra`.
+
+2021-07-08 Version: 3.9.9
+- Generated 2016-11-01 for `live`.
+
+2021-07-07 Version: 1.8.9
+- Supported DescribeGlobalDatabaseNetworks set pages.
+
+2021-07-07 Version: 3.5.4
+- Add ModifyResourceGroup API.
+
+2021-07-07 Version: 2.19.0
+- Support FilterKey for RestoreInstance.
+- DescribeInstanceAttribute add return argument BackupLogStartTime.
+- Add RemoveSubInstance for Global Distributed Cache.
+
+2021-07-06 Version: 1.20.0
+- Support ListDataCorrectPreCheckDB,ListDataCorrectPreCheckSQL Order API.
+
+2021-07-05 Version: 2.0.6
+- Supported deleteItem for sdk.
+
+2021-07-02 Version: 2.9.5
+- Fix DescribeInstance EncryptionType.
+
+2021-07-02 Version: 3.3.19
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-07-02 Version: 0.0.4
+- Release RecognizeQuotaInvoice RecognizeTicketInvoice RecognizePdf.
+
+2021-07-02 Version: 0.0.9
+- Release AnalyzeChestVessel.
+
+2021-06-30 Version: 7.26.0
+- Add RerunJob.
+- Add Message API, QueryMessageInfo.
+- Update OTA API, including CreateOTAFirmware, QueryOTAFirmware.
+
+2021-06-28 Version: 1.1.6281
+- Create 6281 sdk.
+
+2021-06-28 Version: 1.19.0
+- Support GetSQLReviewOptimizeDetail,ListSQLReviewOriginSQL Order API.
+
+2021-06-25 Version: 1.0.6
+- Supported new features for outbound.
+
+2021-06-25 Version: 1.7.6
+- Update DescribeSplitItemBill to support daily report.
+
+2021-06-24 Version: 5.1.14
+- DescribeSynchronizationJobs, DescribeSubscriptionInstances, DescribeMigrationJobs, Add InstanceCreateTime and JobCreateTime.
+
+2021-06-24 Version: 1.7.1
+- Create Lindorm Open api.
+
+2021-06-24 Version: 1.7.5
+- Update QueryBillOverview, QuerySettleBill, QueryAccountBill, DescribeInstanceBill and support trusteeship bill query.
+
+2021-06-22 Version: 1.8.8
+- Supported CreateGlobalDatabaseNetwork for PolarDB Global Database Network.
+- Supported ModifyGlobalDatabaseNetwork for PolarDB Global Database Network.
+- Supported DeleteGlobalDatabaseNetwork for PolarDB Global Database Network.
+- Supported DescribeGlobalDatabaseNetworks for PolarDB Global Database Network.
+- Supported DescribeGlobalDatabaseNetwork for PolarDB Global Database Network.
+- Supported RemoveDBClusterFromGDN for PolarDB Global Database Network.
+- Supported parameter SSLEnabled for ModifyDBClusterSSL changed to non-required.
+
+2021-06-21 Version: 3.0.8
+- Generated 2016-04-28 for `Vpc`.
+
+2021-06-18 Version: 1.1.10
+- Support DescribeInstallCaptcha API.
+
+2021-06-18 Version: 2.0.5
+- Supported 20210618 version for sdk.
+
+2021-06-16 Version: 1.0.3
+- Update imageaudit.
+
+2021-06-16 Version: 1.6.3
+- Encrypt Dialog Content.
+
+2021-06-15 Version: 1.9.9
+- Add ListDevopsProjects.
+
+2021-06-15 Version: 1.0.3
+- Support API for Trail.
+
+2021-06-15 Version: 1.8.7
+- Supported EncryptNewTables for ModifyDBClusterTDE.
+- Supported SSLAutoRotate for ModifyDBClusterSSL.
+
+2021-06-11 Version: 0.1.3
+- Add CreateSshKey OpenAPI.
+
+2021-06-10 Version: 1.18.0
+- Support SQLReview Order API.
+
+2021-06-10 Version: 3.9.8
+- Generated 2016-11-01 for `live`.
+
+2021-06-10 Version: 2.9.4
+- DiskEncryption.
+
+2021-06-10 Version: 3.0.7
+- Generated 2016-04-28 for `Vpc`.
+
+2021-06-09 Version: 7.25.0
+- Update TMP API, including QueryDevice, CreateThingModel, UpdateThingModel, ImportThingModelTsl, BatchPickThingModel, ListDeviceDistributeJob.
+- Add TMP API, including QueryDeviceInfo.
+- Update OTA API, including CreateOTAVerifyJob, CreateOTAStaticUpgradeJob, CreateOTADynamicUpgradeJob, CancelOTATaskByJob, QueryOTAJob.
+- Add OTA API, including ListOTAUnfinishedTaskByDevice,ConfirmOTATask.
+
+2021-06-09 Version: 1.6.11
+- Create Lindorm Open api.
+
+2021-06-09 Version: 1.6.1
+- Create Lindorm Open api.
+
+2021-06-08 Version: 1.6.2
+- Support Aliyun Workorder OpenAPI.
+
+2021-06-08 Version: 2.0.13
+- Refine API response for GetCallDetailRecord.
+
+2021-06-08 Version: 4.24.3
+- Support input parameter LaunchConfigurationHostNames and MinTargetCapacity for CreateAutoProvisioningGroup.
+
+2021-06-08 Version: 3.3.18
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-06-08 Version: 3.3.17
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-06-05 Version: 1.6.1
+- Supported new version of Ticket for Alibaba Cloud.
+
+2021-06-05 Version: 1.6.0
+- New API Version of Work Order System.
+
+2021-06-04 Version: 3.0.22
+- Add Emon-Service support.
+- Remove Deprecated Interfaces.
+
+2021-06-04 Version: 4.24.2
+- Supported multi attach feature for disk.
+
+2021-06-04 Version: 3.6.4
+- Delete live API.
+
+2021-06-03 Version: 1.9.7
+- Add name.
+
+2021-06-03 Version: 1.9.6
+- Support name.
+
+2021-06-02 Version: 2.15.0
+- Support key deletion protection.
+
+2021-05-31 Version: 1.8.9-beta
+- Support upgrade.
+
+2021-05-31 Version: 3.3.16
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-05-28 Version: 1.0.1
+- Add TriggerRemoteSync api.
+
+2021-05-28 Version: 1.5.11
+- Create Lindorm Open api.
+
+2021-05-28 Version: 1.5.1
+- Create Lindorm Open api.
+
+2021-05-27 Version: 1.1.5
+- Generated 2019-09-10 for `waf-openapi`.
+
+2021-05-25 Version: 2.0.12
+- Export new API for IVR tracking.
+
+2021-05-24 Version: 5.1.13
+- Support a2a openapi.
+
+2021-05-24 Version: 2.0.11
+- Export new API for report.
+
+2021-05-24 Version: 1.8.6
+- Support TransformDBClusterPayType.
+
+2021-05-22 Version: 1.0.0
+- Aaaaa.
+
+2021-05-21 Version: 3.3.7
+- Supported DescribeLoadBalancers with DeleteProtection and so on.
+
+2021-05-21 Version: 1.14.3
+- Support StrictResourceProvision in ApplyNodes.
+
+2021-05-20 Version: 3.3.15
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-05-20 Version: 3.5.3
+- Upgrade mongodb sdk.
+
+2021-05-20 Version: 2.9.3
+- DescribeAvailableResource frequency.
+
+2021-05-19 Version: 3.3.14
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-05-19 Version: 3.1.3
+- Update API.
+
+2021-05-18 Version: 7.24.0
+- Add IoT Studio SetStudioProjectCooperation API.
+- Add IoT Studio QueryStudioProjectList API.
+- Add IoT Studio QueryStudioAppList API.
+- Add IoT Studio QueryStudioAppPageListOpen API.
+- Add IoT Studio QueryStudioAppDomainListOpen API.
+- Add IoT Studio DeleteStudioAppDomainOpen API.
+- Add IoT Studio CreateStudioAppDomainOpen API.
+- Add IoT Studio GetStudioAppTokenOpen API.
+- Add IoT Studio SetupStudioAppAuthModeOpen API.
+- Add IoT Studio RefreshStudioAppTokenOpen API.
+- Add IoT Studio PublishStudioApp API.
+
+2021-05-18 Version: 1.14.2
+- Support MinCount for AddNodes.
+- Support HostNamePreffix and HostNameSuffix for ListNodes.
+
+2021-05-17 Version: 0.12.0
+- Add API ListQuotaReviewTasks.
+
+2021-05-17 Version: 1.1.9
+- Support DescribeInstallCaptcha API.
+
+2021-05-17 Version: 1.0.28
+- Export new API for predictive dialer.
+
+2021-05-17 Version: 2.1.5
+- Add DescribeDcdnRefreshTaskById.
+
+2021-05-14 Version: 2.18.1
+- EnableAdditionalBandwidth add AutoRenew,AutoRenewPeriod parameter.
+
+2021-05-14 Version: 0.0.8
+- Update ScreenChestCT.
+
+2021-05-14 Version: 2.5.2
+- Support Private RDS management through OpenAPI.
+- ManagePrivateRds to do RDS information query and some management.
+- DescribeDrdsRdsInstances to find RDS under a certain DRDS instance.
+- UpdatePrivateRdsClass to Upgrade or Downgrade your Private RDS class.
+
+2021-05-13 Version: 1.0.0
+- Support query quota.
+- Supprt create quota increase request.
+
+2021-05-13 Version: 1.0.2
+- Generated 2020-01-01 for `ddoscoo`.
+
+2021-05-13 Version: 3.0.21
+- Add Indexing-Service support.
+- Remove jsonItem form.
+
+2021-05-12 Version: 0.1.2
+- Add GetRepositoryCommit and ListRepositoryCommitDiff API.
+
+2021-05-12 Version: 1.1.0
+- Create Lindorm Open api.
+
+2021-05-12 Version: 3.3.13
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-05-11 Version: 3.3.12
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-05-11 Version: 2.18.0
+- CreateInstance API add Port, Tags, DryRun.
+
+2021-05-11 Version: 1.0.1
+- SDK device authorization API.
+
+2021-05-11 Version: 2.2.4
+- Generated 2017-11-15 for `scdn`.
+
+2021-05-10 Version: 0.0.3
+- Update RecognizeDriverLicense RecognizeLicensePlate.
+
+2021-05-10 Version: 0.11.0
+- Add API GenerateMergedTable.
+- Add API ListDateSourceTables.
+- Add API ListDateSourceTableFields.
+- Add API ListRamRoles.
+
+2021-05-10 Version: 3.6.3
+- Delete live API.
+
+2021-05-10 Version: 2.1.4
+- Delete Api.
+
+2021-05-08 Version: 3.3.6
+- Support SLB DescribeLoadBalancerListeners.
+
+2021-05-08 Version: 3.3.11
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-05-08 Version: 7.23.0
+- Generated 2018-01-20 for `Iot`.
+
+2021-05-08 Version: 1.0.1
+- Generated 2018-12-12, 2018-12-07 for `UniMkt`.
+
+2021-05-07 Version: 2.5.11
+- Support interface DescribeDBInstanceEncryptionKey for DB Instance Cloud Disk Encryption.
+
+2021-05-06 Version: 3.9.7
+- Generated 2016-11-01 for `live`.
+
+2021-05-06 Version: 3.1.2
+- Update Open API.
+
+2021-05-06 Version: 1.8.5
+- Support DescribePolarSQLCollectorPolicy.
+
+2021-04-29 Version: 3.5.2
+- ModifyNodeSpec API add SwitchTime.
+
+2021-04-29 Version: 2.17.0
+- Add DescribeInstances API.
+
+2021-04-29 Version: 3.3.5
+- Support latest openAPIs.
+
+2021-04-28 Version: 2.0.10
+- Export new API.
+
+2021-04-27 Version: 1.9.5
+- GetProjectMember support pageSize.
+
+2021-04-27 Version: 1.1.8
+- Support GetVulStatistics API.
+- Support GetSuspiciousStatistics API.
+
+2021-04-27 Version: 3.9.6
+- Generated 2016-11-01 for `live`.
+
+2021-04-27 Version: 1.23.4
+- Add CustomMessage to CreateMergeFaceGroupsJob.
+
+2021-04-26 Version: 1.0.3
+- Generated 2019-06-01 for `smc`.
+
+2021-04-23 Version: 1.1.423
+- Create 423 sdk.
+
+2021-04-22 Version: 4.24.1
+- Support NetworkInterface TrafficMode.
+
+2021-04-22 Version: 4.24.0
+- AcceptInquiredSystemEvent adds Choice parameter.
+- DescribeInstanceHistoryEvents supports multiple resource types.
+
+2021-04-22 Version: 1.0.3
+- Support CEN latest Apis.
+
+2021-04-22 Version: 1.17.0
+- Support GetPhysicalDatabase API.
+
+2021-04-21 Version: 0.1.1
+- Add API to list repo members with group inherited info.
+
+2021-04-20 Version: 1.23.3
+- Support Tag.
+
+2021-04-20 Version: 1.0.27
+- Export predictive dialer API.
+
+2021-04-20 Version: 1.0.2
+- Create Lindorm Open api.
+
+2021-04-20 Version: 2.0.29
+- LivenessFaceVerify ContrastFaceVerify CompareFaceVerify API Return CertifyId.
+
+2021-04-19 Version: 2.0.9
+- Export StartBack2BackCall API.
+
+2021-04-19 Version: 1.2.1
+- Generated 2020-10-29 for `reid_cloud`.
+
+2021-04-17 Version: 0.0.7
+- Update RunMedQA.
+
+2021-04-16 Version: 1.9.3
+- Support devops organization deletion.
+
+2021-04-16 Version: 1.0.3
+- Add CheckProductOpen.
+- Add az routing policy.
+
+2021-04-16 Version: 1.2.0
+- Generated 2020-10-29 for `reid_cloud`.
+
+2021-04-16 Version: 0.10.0
+- Add API GetDomain.
+- Add API ListSystemAnalyzers.
+- Add parameter domain to API ListAppGroups, ModifyAppGroup, CreateAppGroup, DescribeAppGroup, DescribeApp.
+
+2021-04-14 Version: 3.3.4
+- Support latest openAPIs.
+
+2021-04-14 Version: 3.6.5
+- Delete MultiMedia Post Scan API.
+
+2021-04-14 Version: 1.0.4
+- Download url add fixed domain.
+
+2021-04-13 Version: 5.1.12
+- Supported ConfigureDtsJob SynchronizationDirection.
+- Fixed DescribePreCheckStatus JobProgress bootTime.
+
+2021-04-13 Version: 1.6.2
+- Release AddFaceVideoTemplate DeleteFaceVideoTemplate QueryFaceVideoTemplate MergeVideoModelFace.
+
+2021-04-12 Version: 2.0.8
+- Export config api.
+
+2021-04-12 Version: 1.16.0
+- Support GetDBTopology API.
+
+2021-04-09 Version: 2.0.28
+- Bank Card Ocr and Verify.
+
+2021-04-09 Version: 3.1.1
+- Update API param.
+
+2021-04-08 Version: 5.1.11
+- Supported ModifyDtsJob and DeleteDtsJob.
+
+2021-04-06 Version: 0.0.6
+- Update ScreenChestCT DetectRibFracture.
+
+2021-04-01 Version: 7.22.0
+- Add data service api, including ListAnalyticsData.
+- Update file uploading api, including GenerateFileUploadURL.
+
+2021-03-31 Version: 4.23.11
+- Ecs support hibernation.
+- DescribeSnapshotGroups add ProgressStatus.
+
+2021-03-30 Version: 3.3.4
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-03-30 Version: 3.3.3
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-03-30 Version: 2.0.1
+- Generated 2020-11-26 for `Airec`.
+
+2021-03-30 Version: 3.6.4
+- Supported MultiMedia Post scan.
+
+2021-03-30 Version: 1.15.0
+- Support ListDDLPublishRecords API.
+- Fixed GetMetaTableColumn, GetMetaTableDetailInfo API response param DataLength lack of precision.
+
+2021-03-30 Version: 1.0.33
+- Add CreateAndStartBackupPlan.
+- Add DescribeFullBackupSet.
+- Add DescribeLogicalBackupSet.
+
+2021-03-26 Version: 3.1.0
+- Update api.
+
+2021-03-26 Version: 2.16.0
+- Add RenewAdditionalBandwidth API.
+
+2021-03-26 Version: 3.5.1
+- Upgrade mongodb sdk.
+
+2021-03-25 Version: 1.6.8
+- Add DescribeInstanceBill.
+- Update QuerySettleBill to support RecordID filter.
+
+2021-03-25 Version: 1.15.0
+- Release autoscaling apis for timer features.
+
+2021-03-25 Version: 2.0.7
+- Change indicator date type of ListHistoriticalAgentReport.
+
+2021-03-24 Version: 2.0.6
+- Export new API.
+
+2021-03-23 Version: 2.5.10
+- Update Open API.
+
+2021-03-22 Version: 3.0.20
+- Add OneConsole support.
+- Add ACK support.
+- Edit ListSearchLog etc.
+
+2021-03-21 Version: 1.23.2
+- Support watermark.
+- Support pdf preview.
+
+2021-03-19 Version: 1.5.0
+- StateConfiguration in CreateStateConfigurationResponse changes from list to single object.
+
+2021-03-19 Version: 3.1.7
+- Modify the helpUrl parameter of OnsTopicList and OnsGroupList API to be invisible.
+
+2021-03-19 Version: 2.0.5
+- Export new API.
+
+2021-03-19 Version: 1.0.26
+- Export new API for predictive dialer.
+
+2021-03-18 Version: 3.3.2
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-03-17 Version: 0.1.0
+- Add organizaition security center API.
+
+2021-03-17 Version: 2.15.0
+- EnableAdditionalBandwidth API add SourceBiz.
+- DescribeAvailableResource add ProductType to support buy OnECS instance.
+
+2021-03-17 Version: 0.0.3
+- Update MakeSuperResolutionImage.
+
+2021-03-16 Version: 1.1.9
+- Supported aliyun cloud environment.
+
+2021-03-13 Version: 1.0.6
+- Supportd DescribeTableStatisticsRequest.
+
+2021-03-12 Version: 2.14.0
+- Add EnableAdditionalBandwidth API.
+- Add CreateTairInstance API.
+
+2021-03-12 Version: 3.14.5
+- Supported batch delete for contact template.
+- Supported save for contact template.
+- Supported set default for contact template.
+
+2021-03-10 Version: 3.3.1
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-03-10 Version: 1.14.0
+- Support CreateDataCorrectOrder, CreateDataImportOrder, CreateFreeLockCorrectOrder, CreateDataCronClearOrder API.
+- Support GetDataCorrectTaskDetail API.
+- Support GetTableTopology API.
+- Support CreateOrder API to apply order attachment.
+
+2021-03-09 Version: 1.0.25
+- Export new API for predictive dialer.
+
+2021-03-08 Version: 1.8.4
+- Support Mysql Parameter Group API.
+
+2021-03-08 Version: 1.0.32
+- Update CreateAndStartBackupPlan Response with createBackupSet.
+
+2021-03-08 Version: 3.3.0
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-03-08 Version: 3.2.9
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-03-04 Version: 0.0.2
+- Update Ocr.
+
+2021-03-03 Version: 0.0.9
+- Add GetRepositoryTagV2 and DeleteRepositoryTagV2 API.
+
+2021-03-03 Version: 2.5.9
+- Update Open API.
+
+2021-03-03 Version: 2.1.3
+- Add Api.
+
+2021-03-03 Version: 3.6.2
+- Delete API.
+
+2021-03-03 Version: 0.3.3
+- Generated 2018-06-01 for `dataworks-public`.
+
+2021-03-03 Version: 0.0.5
+- Update ScreenChestCT.
+
+2021-03-02 Version: 2.6.29
+- Update default endpoints.
+
+2021-03-02 Version: 2.6.28
+- Supported API for dnsCache.
+- Supported API for GTM.
+
+2021-03-02 Version: 1.23.1
+- Support GroupCoverFace ExternalId for ListFaceGroups.
+- Support ResetItems for UpdateFaceGroup.
+
+2021-03-01 Version: 1.10.14
+- AMP Version Change.
+
+2021-02-28 Version: 1.13.10
+- AMP Version Change.
+
+2021-02-26 Version: 5.1.10
+- Add TaskId for DescribeMigrationJobStatus, DescribeSubscriptionInstanceStatus, DescribeSynchronizationJobStatus.
+- Add API CreateDtsInstance, ConfigureDtsJob, StartDtsJob.
+
+2021-02-26 Version: 1.0.31
+- Support SLR by InitializeDbsServiceLinkedRole action.
+- Change DescribeIncrementBackupList and DescribeFullBackupList to Support Range filter by endTimestamp.
+- Change DescribeRestoreTaskList to Support Range filter by createTime.
+
+2021-02-25 Version: 1.0.30
+- Support SLR by InitializeDbsServiceLinkedRole action.
+- Change DescribeIncrementBackupList and DescribeFullBackupList to Support Range filter.
+
+2021-02-25 Version: 3.2.8
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-02-24 Version: 3.2.7
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-02-24 Version: 3.2.7
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-02-24 Version: 2.0.27
+- ALL API.
+
+2021-02-23 Version: 1.0.5
+- Supported List Namespaces.
+- Supported List Groups.
+- Supported List Jobs.
+
+2021-02-23 Version: 4.23.10
+- Support input parameter DeploymentSetId for CreateAutoProvisioningGroup.
+
+2021-02-22 Version: 4.23.10
+- Support input parameter DeploymentSetId for CreateAutoProvisioningGroup.
+
+2021-02-22 Version: 4.23.10
+- Support input parameter DeploymentSetId for CreateAutoProvisioningGroup.
+
+2021-02-19 Version: 2.0.3
+- Add dingTalk applets function.
+
+2021-02-19 Version: 1.0.5
+- Supported scheduler for outbound call.
+
+2021-02-08 Version: 7.21.1
+- Fix IoT Studio BatchBindDevicesIntoProject API return datatype.
+- Fix IoT Studio BatchBindProductsIntoProject API return datatype.
+- Fix IoT Studio BatchUnbindProjectDevices API return datatype.
+- Fix IoT Studio BatchUnbindProjectProducts API return datatype.
+
+2021-02-08 Version: 4.23.9
+- Add username for RunCommand and InvokeCommand.
+
+2021-02-07 Version: 7.21.0
+- Add IoT Studio BatchBindDevicesIntoProject API.
+- Add IoT Studio BatchBindProductsIntoProject API.
+- Add IoT Studio BatchUnbindProjectDevices API.
+- Add IoT Studio BatchUnbindProjectProducts API.
+
+2021-02-07 Version: 1.4.0
+- Support patch manager apis.
+
+2021-02-07 Version: 0.0.8
+- Support some MergeRequest API.
+
+2021-02-05 Version: 3.2.6
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-02-05 Version: 2.5.8
+- Update Open API.
+
+2021-02-05 Version: 3.2.5
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-02-04 Version: 1.0.5
+- Supported scheduler for outbound call.
+
+2021-02-04 Version: 1.0.1
+- Supported console.
+
+2021-02-04 Version: 1.0.0
+- Supported console.
+
+2021-02-04 Version: 0.0.4
+- Update TaggingImage.
+
+2021-02-03 Version: 2.0.0
+- After normalizing the API group name, regenerate the SDK.
+
+2021-02-03 Version: 2.13.0
+- Add ModifyAuditLogConfig API.
+
+2021-02-03 Version: 3.3.3
+- Support connection drain.
+
+2021-02-02 Version: 1.9.0
+- Add.
+
+2021-02-02 Version: 3.5.0
+- CreateShardingDBInstance add ReadOnlyReplicas in ReplicaSet.
+
+2021-02-01 Version: 1.0.5
+- Support device credential for mqtt.
+
+2021-02-01 Version: 1.1.0
+- Add.
+
+2021-02-01 Version: 1.2.8
+- Release GenerateHumanSketchStyle MergeImageFace AddFaceImageTemplate QueryFaceImageTemplate DeleteFaceImageTemplate.
+
+2021-02-01 Version: 0.0.3
+- Release RecognizeFood.
+
+2021-02-01 Version: 0.0.2
+- Release UnderstandVideoContent.
+
+2021-02-01 Version: 0.0.2
+- Release SegmentGreenScreenVideo.
+
+2021-01-31 Version: 2.9.2
+- ConvertInstance.
+
+2021-01-30 Version: 5.1.9
+- Update rate limit.
+
+2021-01-29 Version: 1.0.0
+- Update Monitor Api.
+
+2021-01-29 Version: 1.0.0
+- Update Monitor Api.
+
+2021-01-29 Version: 2.5.7
+- Update Open API.
+
+2021-01-29 Version: 3.2.4
+- Generated 2020-05-18 for `dataworks-public`.
+
+2021-01-28 Version: 2.0.12
+- Generated 2018-03-13 for `retailcloud`.
+
+2021-01-27 Version: 3.0.30
+- Add New BatchTranslate API.
+
+2021-01-27 Version: 3.0.29
+- Add New BatchTranslate API.
+
+2021-01-27 Version: 2.0.26
+- DetectFaceAttributes Add Score.
+
+2021-01-26 Version: 1.8.3
+- Support ModifyDBClusterPrimaryZone timer task.
+
+2021-01-25 Version: 4.23.7
+- Regenerate SDK to override list implement.
+
+2021-01-25 Version: 2.5.6
+- Update Open API.
+
+2021-01-22 Version: 1.0.9
+- Update Function.
+
+2021-01-21 Version: 1.0.2
+- Modify some field types.
+
+2021-01-21 Version: 1.1.4
+- Generated 2019-09-10 for `waf-openapi`.
+
+2021-01-21 Version: 3.6.0
+- The creation and update APIs of the stack supports specifing tags, and the query and list APIs supports obtaining tags.
+
+2021-01-21 Version: 1.0.9
+- Add.
+
+2021-01-21 Version: 4.23.6
+- Supported RunInstances specifiy Dedicated Host Cluster Id.
+
+2021-01-19 Version: 1.0.8
+- Update Function.
+
+2021-01-18 Version: 1.0.9
+- Generated 2019-03-27 for `dg`.
+
+2021-01-18 Version: 7.20.0
+- Add a set of API to support device distribution management, including CreateProductDistributeJob, CreateDeviceDistributeJob, QueryDeviceDistributeJob, ListDeviceDistributeJob, QueryDeviceDistributeDetail, DeleteDeviceDistributeJob, ListDistributedDevice, ListDistributedProduct etc.
+
+2021-01-18 Version: 7.19.1
+- Add a set of api to support device distribution management, including CreateProductDistributeJob, CreateDeviceDistributeJob, QueryDeviceDistributeJob, ListDeviceDistributeJob, QueryDeviceDistributeDetail, DeleteDeviceDistributeJob, ListDistributedDevice, ListDistributedProduct etc.
+
+2021-01-18 Version: 0.0.7
+- Add ListMergeRequests api.
+- Add protected branch api, CreateRepositoryProtectedBranch and DeleteRepositoryProtectedBranch.
+- Add repository deploy key api, EnableRepositoryDeployKey and CreateRepositoryDeployKey.
+- Add UpdateRepository api.
+- Update GetUserInfo, support use OrganizationId param to get user organization name.
+
+
+2021-01-18 Version: 1.6.5
+- Add logistics for createinstance.
+
+2021-01-15 Version: 1.0.7
+- Update Function.
+
+2021-01-15 Version: 1.0.6
+- Update Function.
+
+2021-01-15 Version: 0.9.0
+- Add API CreateSortScriptValidation.
+- Add parameter resourceGroupId to API ListAppGroups.
+
+2021-01-15 Version: 5.1.8
+- Remove drcGuidRouteApi, ModifyDtsJobPassword API.
+
+2021-01-14 Version: 1.0.5
+- Add function.
+
+2021-01-14 Version: 1.6.2
+- Add BillingDate support in QueryAccontBill.
+- Add SplitAccountId, SplitAccountName, SplitBillingCycle, SplitProductDetail, SplitCommodityCode, ServicePeriodUnit support in QuerySplitItemBill.
+
+2021-01-14 Version: 2.5.5
+- Update Open API.
+
+2021-01-14 Version: 1.0.4
+- Update function.
+
+2021-01-14 Version: 1.12.0
+- Fixed ListUsers, GetUser, EnableUser, RegisterUser, DisableUser, DeleteUser API parameter of uid data type error, from number into string.
+- Supported ListInstances, GetInstance API to return Owner information.
+- Supported SetOwners API to set INSTANCE owner.
+
+2021-01-14 Version: 1.0.1
+- Create Lindorm Open api.
+
+2021-01-13 Version: 2.12.0
+- Add SwitchInstanceHA API.
+- ModifyInstanceSpec add SourceBiz param.
+
+2021-01-13 Version: 3.9.5
+- Generated 2016-11-01 for `live`.
+
+2021-01-12 Version: 7.19.0
+- Add support for IoT jobs, including job management and query APIs like CreateJob, UpdateJob, QueryJob, CancelJob, ListTask, QueryTask, QueryJobStatistics etc.
+
+2021-01-12 Version: 2.0.4
+- Add new API for recording.
+
+2021-01-11 Version: 0.2.2
+- Add result value spanId for GetTrace api.
+
+2021-01-11 Version: 1.8.2
+- Support DescribeScheduleTasks.
+- Support CancelScheduleTasks.
+- Upgrade UpgradeDBClusterMinorVersion.
+
+2021-01-11 Version: 5.0.7
+- Add DescribeConnectionStatus and DescribeDTSIP, remove UpgradeTwoWay.
+
+2021-01-08 Version: 3.14.4
+- Added batch drop list domain.
+
+2021-01-08 Version: 2.0.3
+- Add new API for configuration and report, generate SDK again.
+
+2021-01-07 Version: 2.0.1
+- Add new API for configuration and report.
+
+2021-01-07 Version: 1.0.29
+- Add CreateAndStartBackupPlan.
+- Add DescribeDLAService.
+- Add CreateDLAService.
+- Add CloseDLAService.
+
+2021-01-07 Version: 1.1.3
+- Generated 2019-09-10 for `waf-openapi`.
+
+2021-01-06 Version: 2.9.1
+- DescribeAvailableResource.
+
+2021-01-06 Version: 2.0.0
+- Initial release.
+
+2021-01-06 Version: 0.0.4
+- Update DetectLungNodule.
+
+2021-01-06 Version: 4.23.5
+- Support input parameter ClientToken for CreateAutoProvisioningGroup.
+
+2021-01-06 Version: 1.0.3
+- Add API.
+
+2021-01-05 Version: 1.23.0
+- Remove legacy APIs.
+
+2021-01-05 Version: 2.11.0
+- Add DescribeBackupTasks API.
+
+2021-01-04 Version: 4.23.4
+- Generated 2014-05-26 for `Ecs`.
+
+2021-01-04 Version: 2.6.20
+- Supported API for GTM.
+
+2020-12-31 Version: 7.18.0
+- Add support for thing model function block features, including thing model APIs like CreateThingModel,UpdateThingModel,SetDeviceProperty,InvokeThingService etc.
+
+2020-12-31 Version: 2.5.4
+- Update Open API.
+
+2020-12-30 Version: 2.10.0
+- Add DescribeActiveOperationTask API.
+- Add ModifyActiveOperationTask API.
+
+2020-12-30 Version: 2.0.11
+- Support directly specify image version deploy.
+
+2020-12-29 Version: 4.23.3
+- Supported SystemDiskPerformanceLevel, SystemDiskDeleteWithInstance, DataDiskPerformanceLevel, NetworkInterfaceSecurityGroupIds, SecurityGroupIds, PrivateIpAddress for CreateLaunchTemplate, CreateLaunchTemplateVersion, DescribeLaunchTemplateVersion.
+
+2020-12-29 Version: 1.19.0
+- Support Open Service API.
+
+2020-12-29 Version: 2.0.18
+- ContrastFaceVerify API Add Model Parameter.
+
+2020-12-29 Version: 1.14.1
+- ListNodesNoPaging return with instance type.
+
+2020-12-29 Version: 1.6.1
+- Release InterpolateVideoFrame ToneSdrVideo ConvertHdrVideo.
+
+2020-12-28 Version: 3.2.3
+- Generated 2020-05-18 for `dataworks-public`.
+
+2020-12-28 Version: 0.0.3
+- Release InterpolateVideoFrame ToneSdrVideo ConvertHdrVideo.
+
+2020-12-28 Version: 1.6.0
+- Add CommodityCode For QueryOrderAPI.
+
+2020-12-28 Version: 0.0.9
+- Add some console API operations.
+
+2020-12-25 Version: 3.3.2
+- Generated 2016-04-08 for `Emr`.
+
+2020-12-25 Version: 1.22.0
+- Supported for weboffice edit.
+
+2020-12-24 Version: 1.0.28
+- Modify ConfigureBackupPlan.
+
+2020-12-24 Version: 2.5.3
+- Update Open API.
+
+2020-12-23 Version: 1.0.0
+- CDRS First edition.
+
+2020-12-23 Version: 2.9.0
+- Add 2019 openapi.
+
+2020-12-23 Version: 1.0.1
+- Create Lindorm Open api.
+
+2020-12-23 Version: 1.0.1
+- Create TSDB Open api.
+
+2020-12-22 Version: 1.21.0
+- Minor chagnes.
+
+2020-12-22 Version: 0.0.6
+- Update SegmentAnimal SegmentCommonImage.
+
+2020-12-22 Version: 3.3.2
+- Support SLB latest OpenAPIs.
+
+2020-12-22 Version: 0.0.3
+- Release InterpolateVideoFrame ToneSdrVideo ConvertHdrVideo.
+
+2020-12-22 Version: 0.0.3
+- Release DetectRibFracture.
+
+2020-12-22 Version: 1.20.0
+- Minor chagnes.
+
+2020-12-22 Version: 3.2.2
+- Generated 2020-05-18 for `dataworks-public`.
+
+2020-12-21 Version: 4.23.2
+- Support Device of LaunchConfiguration_DataDisk.
+
+2020-12-21 Version: 1.8.1
+- Support DescribeDatabases for page query.
+- Support DescribeAccounts for page query.
+
+2020-12-18 Version: 0.0.6
+- Support ListRepositories, ListOrganizations, GetUserInfo, ListRepositoryWebhook, DeleteRepositoryWebhook api.
+- AddWebhook api support SecretToken.
+
+2020-12-18 Version: 2.14.0
+- Release Full Managed Credentials for Aliyun RDS.
+
+2020-12-18 Version: 0.0.2
+- Release EvaluateCertificateQuality.
+
+2020-12-18 Version: 3.2.1
+- Generated 2020-05-18 for `dataworks-public`.
+
+2020-12-17 Version: 1.0.10.2
+- Public beta version.
+- Add Api Overseas.
+
+2020-12-17 Version: 3.5.0
+- Support template version.
+- Support to share template.
+- Stack and StackGroup support TemplateId and TemplateVersion.
+- Add GenerateTemplatePolicy which can generate RAM policy by template.
+
+2020-12-17 Version: 0.0.5
+- Update SegmentFood.
+
+2020-12-17 Version: 2.2.3
+- Update DeleteScdnDomain.
+
+2020-12-17 Version: 4.23.1
+- Generated 2014-05-26 for `Ecs`.
+
+2020-12-17 Version: 2.1.2
+- Update DeleteDcdnDomain.
+
+2020-12-17 Version: 3.6.1
+- Update DeleteCdnDomain.
+
+2020-12-17 Version: 1.0.5
+- Generated 2020-01-11 for `servicemesh`.
+
+2020-12-17 Version: 3.0.9
+- Update api.
+
+2020-12-16 Version: 1.1.2
+- Generated 2019-09-10 for `waf-openapi`.
+
+2020-12-16 Version: 1.0.8.2-release
+- Support show pipeline history.
+- Support show log details.
+
+2020-12-16 Version: 2.0.23
+- Add Face Attributes.
+
+2020-12-15 Version: 2.5.2
+- Update Open API.
+
+2020-12-15 Version: 1.0.0
+- CDRS First edition.
+
+2020-12-15 Version: 1.0.0
+- CDRS First edition.
+
+2020-12-14 Version: 1.8.0.1-RELEASE
+- Add update task api.
+
+2020-12-14 Version: 1.8.0.1
+- Add update task api.
+
+2020-12-14 Version: 1.0.0
+- CDRS First edition.
+
+2020-12-14 Version: 1.8.0.1
+- Add update task api.
+
+2020-12-11 Version: 3.0.19
+- Add Emon route-API support.
+
+2020-12-09 Version: 0.0.4
+- Update SegmentCommodity.
+
+2020-12-07 Version: 5.0.6
+- Remove DescribeSubscriptionObjectModifyStatus.
+
+2020-12-04 Version: 3.14.4
+- Supported broker demand.
+
+2020-12-04 Version: 3.6.3
+- Support manual scan interface.
+
+2020-12-03 Version: 2.1.1
+- Update ModifyDcdnService.
+
+2020-12-03 Version: 2.2.2
+- Update DescribeScdnDomainCertificateInfo.
+
+2020-12-03 Version: 3.6.0
+- Update DescribeDomainMax95BpsData.
+
+2020-12-03 Version: 2.2.1
+- Update DescribeScdnDomainCertificateInfo.
+
+2020-12-03 Version: 2.2.0
+- Update DescribeScdnDomainCertificateInfo.
+
+2020-12-03 Version: 3.6.0
+- Update DescribeDomainMax95BpsData.
+
+2020-12-03 Version: 2.1.0
+- Update ModifyDcdnService.
+
+2020-12-03 Version: 2.1.9
+- Update DescribeScdnDomainCertificateInfo.
+
+2020-12-03 Version: 3.2.0
+- Generated 2020-05-18 for `dataworks-public`.
+
+2020-12-03 Version: 1.1.2
+- Supported all language sdk.
+- Fixed some bugs for polardbx.
+
+2020-12-03 Version: 7.17.0
+- Support data retrieval of Ota module.
+- Added script management API,including CreateThingScript,UpdateThingScript,GetThingScript.
+- Update OTA API, including DeleteOTAModule,UpdateOTAModule,ListOTATaskByJob.
+- Add OTA API, ListOTAModuleVersionsByDevice.
+
+2020-12-03 Version: 0.0.2
+- Update DetectLungNodule.
+
+2020-12-02 Version: 1.8.0
+- Support CreateDBLink for polardb oracle.
+- Support DeleteDBLink for polardb oracle.
+- Support DescribeDBLinks for polardb oracle.
+
+2020-12-02 Version: 1.1.1
+- Update version.
+
+2020-12-02 Version: 1.0.4
+- Update version.
+
+2020-12-02 Version: 1.3.2
+- Support TemplateContent.
+
+2020-12-02 Version: 5.0.0
+- Support C Sharp.
+
+2020-12-02 Version: 0.1.1
+- Supported OpenAPI for SDK.
+
+2020-12-02 Version: 0.0.2
+- Release ColorizeImage.
+
+2020-12-02 Version: 0.0.2
+- Release MergeVideoFace EnhanceVideoQuality.
+
+2020-12-02 Version: 0.0.3
+- Update SegmentHead.
+
+2020-12-01 Version: 1.0.8
+- Add task api.
+
+2020-12-01 Version: 1.0.8
+- Add task api.
+
+2020-12-01 Version: 1.0.24
+- Fixed bugs for CCC.
+
+2020-11-30 Version: 3.5.9
+- Update SetVideoSeekConfig.
+
+2020-11-30 Version: 3.5.9
+- Update SetVideoSeekConfig.
+
+2020-11-30 Version: 2.1.8
+- Update DescribeScdnDomainCertificateInfo.
+
+2020-11-30 Version: 4.22.2
+- Support autoPtovisioning whth DiskConfigs.
+
+2020-11-30 Version: 2.0.9
+- Update OpenDcdnService.
+
+2020-11-30 Version: 2.8.4
+- Add SourceType for severless instance.
+
+2020-11-30 Version: 1.1.3
+- Video Content analytics template introduced to this SDK.
+
+2020-11-30 Version: 1.1.3
+- Video Content analytics template introduced to this SDK.
+
+2020-11-30 Version: 1.1.3
+- Video Content analytics template introduced to this SDK.
+
+2020-11-30 Version: 2.0.8
+- Update OpenDcdnService.
+
+2020-11-27 Version: 2020-11-27
+- Supported all language sdk.
+- Fixed some bugs for polardbx.
+
+2020-11-27 Version: 2020-11-27
+- Supported all language sdk.
+- Fixed some bugs for polardbx.
+
+2020-11-27 Version: 1.2.5
+- Generated 2018-01-11 for `rtc`.
+
+2020-11-27 Version: 2.13.0
+- Add Certificate Manager Api.
+
+2020-11-27 Version: 1.0.7.1
+- Support taskList.
+
+2020-11-26 Version: 2.0.22
+- ContrastFaceVerify Support Video.
+
+2020-11-26 Version: 1.0.2
+- Generated 2020-07-06, 2017-12-04 for `Actiontrail`.
+
+2020-11-26 Version: 1.0.0
+- Generated 2020-07-06 for `Actiontrail`.
+
+2020-11-26 Version: 0.0.5
+- Add tags api, include GetRepositoryTag, ListRepositoryTags, DeleteRepositoryTag.
+
+2020-11-25 Version: 2.1.7
+- Update DescribeScdnDomainCertificateInfo.
+
+2020-11-25 Version: 3.5.8
+- Update SetVideoSeekConfig.
+
+2020-11-25 Version: 1.7.9
+- Support DescribeDBClusterVersion.
+
+2020-11-25 Version: 3.0.28
+- Add extension field for image translation.
+
+2020-11-25 Version: 4.22.1
+- Supported Primary NetworkInterface IP for API DescribeInstances.
+
+2020-11-24 Version: 1.0.1
+- Create TSDB Open api.
+
+2020-11-24 Version: 1.0.0
+- Create TSDB Open api.
+
+2020-11-24 Version: 1.0.0
+- Create lindorm Open api.
+
+2020-11-24 Version: 1.0.0
+- Create lindorm Open api.
+
+2020-11-24 Version: 1.2.7
+- Update SearchFace.
+
+2020-11-24 Version: 1.0.1
+- Generated 2020-01-01 for `ddoscoo`.
+
+2020-11-23 Version: 2.1.1
+- Supported multiple Language.
+
+2020-11-23 Version: 2.0.21
+- Add LivenessDetect API.
+
+2020-11-22 Version: 2.8.3
+- DescribeClusterConnection.
+
+2020-11-20 Version: 1.8.0
+- Support ListExecutions with filter functionality.
+
+2020-11-20 Version: 1.0.10.2
+- Public beta version.
+- Add Api Overseas.
+
+2020-11-20 Version: 1.2.6
+- Update DetectFace.
+- Update RecognizeFace.
+
+2020-11-20 Version: 3.0.27
+- Add a new interface for asynchronous image translation.
+
+2020-11-20 Version: 1.1.1
+- Generated 2019-09-10 for `waf-openapi`.
+
 2020-11-19 Version: 3.4.1
 - Update DescribeDedicatedClusterInstanceList return data.
 

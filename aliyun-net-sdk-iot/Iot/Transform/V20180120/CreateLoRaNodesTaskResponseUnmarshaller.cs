@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class CreateLoRaNodesTaskResponseUnmarshaller
     {
-        public static CreateLoRaNodesTaskResponse Unmarshall(UnmarshallerContext context)
+        public static CreateLoRaNodesTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateLoRaNodesTaskResponse createLoRaNodesTaskResponse = new CreateLoRaNodesTaskResponse();
 
-			createLoRaNodesTaskResponse.HttpResponse = context.HttpResponse;
-			createLoRaNodesTaskResponse.RequestId = context.StringValue("CreateLoRaNodesTask.RequestId");
-			createLoRaNodesTaskResponse.Success = context.BooleanValue("CreateLoRaNodesTask.Success");
-			createLoRaNodesTaskResponse.Code = context.StringValue("CreateLoRaNodesTask.Code");
-			createLoRaNodesTaskResponse.ErrorMessage = context.StringValue("CreateLoRaNodesTask.ErrorMessage");
-			createLoRaNodesTaskResponse.TaskId = context.StringValue("CreateLoRaNodesTask.TaskId");
+			createLoRaNodesTaskResponse.HttpResponse = _ctx.HttpResponse;
+			createLoRaNodesTaskResponse.RequestId = _ctx.StringValue("CreateLoRaNodesTask.RequestId");
+			createLoRaNodesTaskResponse.Success = _ctx.BooleanValue("CreateLoRaNodesTask.Success");
+			createLoRaNodesTaskResponse.Code = _ctx.StringValue("CreateLoRaNodesTask.Code");
+			createLoRaNodesTaskResponse.ErrorMessage = _ctx.StringValue("CreateLoRaNodesTask.ErrorMessage");
+			createLoRaNodesTaskResponse.TaskId = _ctx.StringValue("CreateLoRaNodesTask.TaskId");
         
 			return createLoRaNodesTaskResponse;
         }

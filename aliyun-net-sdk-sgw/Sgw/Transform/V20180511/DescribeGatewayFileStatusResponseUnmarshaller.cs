@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeGatewayFileStatusResponseUnmarshaller
     {
-        public static DescribeGatewayFileStatusResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGatewayFileStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGatewayFileStatusResponse describeGatewayFileStatusResponse = new DescribeGatewayFileStatusResponse();
 
-			describeGatewayFileStatusResponse.HttpResponse = context.HttpResponse;
-			describeGatewayFileStatusResponse.RequestId = context.StringValue("DescribeGatewayFileStatus.RequestId");
-			describeGatewayFileStatusResponse.Success = context.BooleanValue("DescribeGatewayFileStatus.Success");
-			describeGatewayFileStatusResponse.Code = context.StringValue("DescribeGatewayFileStatus.Code");
-			describeGatewayFileStatusResponse.Message = context.StringValue("DescribeGatewayFileStatus.Message");
-			describeGatewayFileStatusResponse.Status = context.StringValue("DescribeGatewayFileStatus.Status");
+			describeGatewayFileStatusResponse.HttpResponse = _ctx.HttpResponse;
+			describeGatewayFileStatusResponse.Status = _ctx.StringValue("DescribeGatewayFileStatus.Status");
+			describeGatewayFileStatusResponse.Message = _ctx.StringValue("DescribeGatewayFileStatus.Message");
+			describeGatewayFileStatusResponse.RequestId = _ctx.StringValue("DescribeGatewayFileStatus.RequestId");
+			describeGatewayFileStatusResponse.Code = _ctx.StringValue("DescribeGatewayFileStatus.Code");
+			describeGatewayFileStatusResponse.Success = _ctx.BooleanValue("DescribeGatewayFileStatus.Success");
         
 			return describeGatewayFileStatusResponse;
         }

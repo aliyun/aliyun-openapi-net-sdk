@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 	public class ReserveDomainResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string auctionId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string AuctionId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 			set	
 			{
 				auctionId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dyplsapi.Model.V20170525
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 	public class QuerySecretNoRemainResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string code;
 
 		private string message;
 
-		private QuerySecretNoRemain_SecretRemainDTO secretRemainDTO;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private QuerySecretNoRemain_SecretRemainDTO secretRemainDTO;
 
 		public string Code
 		{
@@ -69,6 +57,18 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public QuerySecretNoRemain_SecretRemainDTO SecretRemainDTO
 		{
 			get
@@ -84,23 +84,11 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 		public class QuerySecretNoRemain_SecretRemainDTO
 		{
 
-			private string city;
-
 			private long? amount;
 
-			private List<QuerySecretNoRemain_RemainDTO> remainDTOList;
+			private string city;
 
-			public string City
-			{
-				get
-				{
-					return city;
-				}
-				set	
-				{
-					city = value;
-				}
-			}
+			private List<QuerySecretNoRemain_RemainDTO> remainDTOList;
 
 			public long? Amount
 			{
@@ -111,6 +99,18 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 				set	
 				{
 					amount = value;
+				}
+			}
+
+			public string City
+			{
+				get
+				{
+					return city;
+				}
+				set	
+				{
+					city = value;
 				}
 			}
 
@@ -129,21 +129,9 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			public class QuerySecretNoRemain_RemainDTO
 			{
 
-				private string city;
-
 				private long? amount;
 
-				public string City
-				{
-					get
-					{
-						return city;
-					}
-					set	
-					{
-						city = value;
-					}
-				}
+				private string city;
 
 				public long? Amount
 				{
@@ -154,6 +142,18 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 					set	
 					{
 						amount = value;
+					}
+				}
+
+				public string City
+				{
+					get
+					{
+						return city;
+					}
+					set	
+					{
+						city = value;
 					}
 				}
 			}

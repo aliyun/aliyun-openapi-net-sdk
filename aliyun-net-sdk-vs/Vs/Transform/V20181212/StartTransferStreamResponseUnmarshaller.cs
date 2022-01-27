@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class StartTransferStreamResponseUnmarshaller
     {
-        public static StartTransferStreamResponse Unmarshall(UnmarshallerContext context)
+        public static StartTransferStreamResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StartTransferStreamResponse startTransferStreamResponse = new StartTransferStreamResponse();
 
-			startTransferStreamResponse.HttpResponse = context.HttpResponse;
-			startTransferStreamResponse.RequestId = context.StringValue("StartTransferStream.RequestId");
+			startTransferStreamResponse.HttpResponse = _ctx.HttpResponse;
+			startTransferStreamResponse.RequestId = _ctx.StringValue("StartTransferStream.RequestId");
         
 			return startTransferStreamResponse;
         }

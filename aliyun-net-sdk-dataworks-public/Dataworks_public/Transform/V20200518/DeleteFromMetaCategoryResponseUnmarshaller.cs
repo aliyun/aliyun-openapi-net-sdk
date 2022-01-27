@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class DeleteFromMetaCategoryResponseUnmarshaller
     {
-        public static DeleteFromMetaCategoryResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteFromMetaCategoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteFromMetaCategoryResponse deleteFromMetaCategoryResponse = new DeleteFromMetaCategoryResponse();
 
-			deleteFromMetaCategoryResponse.HttpResponse = context.HttpResponse;
-			deleteFromMetaCategoryResponse.RequestId = context.StringValue("DeleteFromMetaCategory.RequestId");
-			deleteFromMetaCategoryResponse.ErrorCode = context.StringValue("DeleteFromMetaCategory.ErrorCode");
-			deleteFromMetaCategoryResponse.ErrorMessage = context.StringValue("DeleteFromMetaCategory.ErrorMessage");
-			deleteFromMetaCategoryResponse.HttpStatusCode = context.IntegerValue("DeleteFromMetaCategory.HttpStatusCode");
-			deleteFromMetaCategoryResponse.Success = context.BooleanValue("DeleteFromMetaCategory.Success");
-			deleteFromMetaCategoryResponse.Data = context.BooleanValue("DeleteFromMetaCategory.Data");
+			deleteFromMetaCategoryResponse.HttpResponse = _ctx.HttpResponse;
+			deleteFromMetaCategoryResponse.RequestId = _ctx.StringValue("DeleteFromMetaCategory.RequestId");
+			deleteFromMetaCategoryResponse.ErrorCode = _ctx.StringValue("DeleteFromMetaCategory.ErrorCode");
+			deleteFromMetaCategoryResponse.ErrorMessage = _ctx.StringValue("DeleteFromMetaCategory.ErrorMessage");
+			deleteFromMetaCategoryResponse.HttpStatusCode = _ctx.IntegerValue("DeleteFromMetaCategory.HttpStatusCode");
+			deleteFromMetaCategoryResponse.Success = _ctx.BooleanValue("DeleteFromMetaCategory.Success");
+			deleteFromMetaCategoryResponse.Data = _ctx.BooleanValue("DeleteFromMetaCategory.Data");
         
 			return deleteFromMetaCategoryResponse;
         }

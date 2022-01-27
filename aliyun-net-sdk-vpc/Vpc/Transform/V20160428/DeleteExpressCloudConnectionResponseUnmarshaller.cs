@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DeleteExpressCloudConnectionResponseUnmarshaller
     {
-        public static DeleteExpressCloudConnectionResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteExpressCloudConnectionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteExpressCloudConnectionResponse deleteExpressCloudConnectionResponse = new DeleteExpressCloudConnectionResponse();
 
-			deleteExpressCloudConnectionResponse.HttpResponse = context.HttpResponse;
-			deleteExpressCloudConnectionResponse.RequestId = context.StringValue("DeleteExpressCloudConnection.RequestId");
+			deleteExpressCloudConnectionResponse.HttpResponse = _ctx.HttpResponse;
+			deleteExpressCloudConnectionResponse.RequestId = _ctx.StringValue("DeleteExpressCloudConnection.RequestId");
         
 			return deleteExpressCloudConnectionResponse;
         }

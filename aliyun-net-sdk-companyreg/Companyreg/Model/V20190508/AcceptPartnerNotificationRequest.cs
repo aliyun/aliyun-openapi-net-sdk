@@ -32,13 +32,64 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
         public AcceptPartnerNotificationRequest()
             : base("companyreg", "2019-05-08", "AcceptPartnerNotification", "companyreg", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.companyreg.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.companyreg.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
+
+		private string certificateEndTime;
+
+		private int? applicationStatus;
+
+		private string certificateNumber;
 
 		private string officialFileURL;
 
+		private string certificateStartTime;
+
 		private string bizId;
 
-		private int? applicationStatus;
+		public string CertificateEndTime
+		{
+			get
+			{
+				return certificateEndTime;
+			}
+			set	
+			{
+				certificateEndTime = value;
+				DictionaryUtil.Add(QueryParameters, "CertificateEndTime", value);
+			}
+		}
+
+		public int? ApplicationStatus
+		{
+			get
+			{
+				return applicationStatus;
+			}
+			set	
+			{
+				applicationStatus = value;
+				DictionaryUtil.Add(QueryParameters, "ApplicationStatus", value.ToString());
+			}
+		}
+
+		public string CertificateNumber
+		{
+			get
+			{
+				return certificateNumber;
+			}
+			set	
+			{
+				certificateNumber = value;
+				DictionaryUtil.Add(QueryParameters, "CertificateNumber", value);
+			}
+		}
 
 		public string OfficialFileURL
 		{
@@ -53,6 +104,19 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 			}
 		}
 
+		public string CertificateStartTime
+		{
+			get
+			{
+				return certificateStartTime;
+			}
+			set	
+			{
+				certificateStartTime = value;
+				DictionaryUtil.Add(QueryParameters, "CertificateStartTime", value);
+			}
+		}
+
 		public string BizId
 		{
 			get
@@ -63,19 +127,6 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 			{
 				bizId = value;
 				DictionaryUtil.Add(QueryParameters, "BizId", value);
-			}
-		}
-
-		public int? ApplicationStatus
-		{
-			get
-			{
-				return applicationStatus;
-			}
-			set	
-			{
-				applicationStatus = value;
-				DictionaryUtil.Add(QueryParameters, "ApplicationStatus", value.ToString());
 			}
 		}
 

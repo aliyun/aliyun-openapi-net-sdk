@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DeleteBoardResponseUnmarshaller
     {
-        public static DeleteBoardResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteBoardResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteBoardResponse deleteBoardResponse = new DeleteBoardResponse();
 
-			deleteBoardResponse.HttpResponse = context.HttpResponse;
-			deleteBoardResponse.RequestId = context.StringValue("DeleteBoard.RequestId");
+			deleteBoardResponse.HttpResponse = _ctx.HttpResponse;
+			deleteBoardResponse.RequestId = _ctx.StringValue("DeleteBoard.RequestId");
         
 			return deleteBoardResponse;
         }

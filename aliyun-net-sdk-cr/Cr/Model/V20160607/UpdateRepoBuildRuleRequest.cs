@@ -30,17 +30,35 @@ namespace Aliyun.Acs.cr.Model.V20160607
     public class UpdateRepoBuildRuleRequest : RoaAcsRequest<UpdateRepoBuildRuleResponse>
     {
         public UpdateRepoBuildRuleRequest()
-            : base("cr", "2016-06-07", "UpdateRepoBuildRule", "cr", "openAPI")
+            : base("cr", "2016-06-07", "UpdateRepoBuildRule", "acr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/repos/[RepoNamespace]/[RepoName]/rules/[BuildRuleId]";
 			Method = MethodType.POST;
         }
+
+		private long? buildRuleId;
 
 		private string repoNamespace;
 
 		private string repoName;
 
-		private long? buildRuleId;
+		public long? BuildRuleId
+		{
+			get
+			{
+				return buildRuleId;
+			}
+			set	
+			{
+				buildRuleId = value;
+				DictionaryUtil.Add(PathParameters, "BuildRuleId", value.ToString());
+			}
+		}
 
 		public string RepoNamespace
 		{
@@ -65,19 +83,6 @@ namespace Aliyun.Acs.cr.Model.V20160607
 			{
 				repoName = value;
 				DictionaryUtil.Add(PathParameters, "RepoName", value);
-			}
-		}
-
-		public long? BuildRuleId
-		{
-			get
-			{
-				return buildRuleId;
-			}
-			set	
-			{
-				buildRuleId = value;
-				DictionaryUtil.Add(PathParameters, "BuildRuleId", value.ToString());
 			}
 		}
 

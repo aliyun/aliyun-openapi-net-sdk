@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DeleteFlowLogResponseUnmarshaller
     {
-        public static DeleteFlowLogResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteFlowLogResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteFlowLogResponse deleteFlowLogResponse = new DeleteFlowLogResponse();
 
-			deleteFlowLogResponse.HttpResponse = context.HttpResponse;
-			deleteFlowLogResponse.RequestId = context.StringValue("DeleteFlowLog.RequestId");
-			deleteFlowLogResponse.Success = context.StringValue("DeleteFlowLog.Success");
+			deleteFlowLogResponse.HttpResponse = _ctx.HttpResponse;
+			deleteFlowLogResponse.RequestId = _ctx.StringValue("DeleteFlowLog.RequestId");
+			deleteFlowLogResponse.Success = _ctx.StringValue("DeleteFlowLog.Success");
         
 			return deleteFlowLogResponse;
         }

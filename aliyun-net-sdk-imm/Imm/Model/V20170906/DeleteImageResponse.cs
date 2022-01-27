@@ -27,9 +27,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string requestId;
 
-		private string setId;
-
 		private string imageUri;
+
+		private string setId;
 
 		public string RequestId
 		{
@@ -43,18 +43,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string SetId
-		{
-			get
-			{
-				return setId;
-			}
-			set	
-			{
-				setId = value;
-			}
-		}
-
 		public string ImageUri
 		{
 			get
@@ -64,6 +52,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				imageUri = value;
+			}
+		}
+
+		public string SetId
+		{
+			get
+			{
+				return setId;
+			}
+			set	
+			{
+				setId = value;
 			}
 		}
 	}

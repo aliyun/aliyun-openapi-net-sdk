@@ -26,23 +26,23 @@ namespace Aliyun.Acs.ocr.Transform.V20191230
 {
     public class DetectCardScreenshotResponseUnmarshaller
     {
-        public static DetectCardScreenshotResponse Unmarshall(UnmarshallerContext context)
+        public static DetectCardScreenshotResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DetectCardScreenshotResponse detectCardScreenshotResponse = new DetectCardScreenshotResponse();
 
-			detectCardScreenshotResponse.HttpResponse = context.HttpResponse;
-			detectCardScreenshotResponse.RequestId = context.StringValue("DetectCardScreenshot.RequestId");
+			detectCardScreenshotResponse.HttpResponse = _ctx.HttpResponse;
+			detectCardScreenshotResponse.RequestId = _ctx.StringValue("DetectCardScreenshot.RequestId");
 
 			DetectCardScreenshotResponse.DetectCardScreenshot_Data data = new DetectCardScreenshotResponse.DetectCardScreenshot_Data();
-			data.IsCard = context.BooleanValue("DetectCardScreenshot.Data.IsCard");
-			data.IsBlur = context.BooleanValue("DetectCardScreenshot.Data.IsBlur");
+			data.IsCard = _ctx.BooleanValue("DetectCardScreenshot.Data.IsCard");
+			data.IsBlur = _ctx.BooleanValue("DetectCardScreenshot.Data.IsBlur");
 
 			DetectCardScreenshotResponse.DetectCardScreenshot_Data.DetectCardScreenshot_SpoofResult spoofResult = new DetectCardScreenshotResponse.DetectCardScreenshot_Data.DetectCardScreenshot_SpoofResult();
-			spoofResult.IsSpoof = context.BooleanValue("DetectCardScreenshot.Data.SpoofResult.IsSpoof");
+			spoofResult.IsSpoof = _ctx.BooleanValue("DetectCardScreenshot.Data.SpoofResult.IsSpoof");
 
 			DetectCardScreenshotResponse.DetectCardScreenshot_Data.DetectCardScreenshot_SpoofResult.DetectCardScreenshot_ResultMap resultMap = new DetectCardScreenshotResponse.DetectCardScreenshot_Data.DetectCardScreenshot_SpoofResult.DetectCardScreenshot_ResultMap();
-			resultMap.ScreenScore = context.FloatValue("DetectCardScreenshot.Data.SpoofResult.ResultMap.ScreenScore");
-			resultMap.ScreenThreshold = context.FloatValue("DetectCardScreenshot.Data.SpoofResult.ResultMap.ScreenThreshold");
+			resultMap.ScreenScore = _ctx.FloatValue("DetectCardScreenshot.Data.SpoofResult.ResultMap.ScreenScore");
+			resultMap.ScreenThreshold = _ctx.FloatValue("DetectCardScreenshot.Data.SpoofResult.ResultMap.ScreenThreshold");
 			spoofResult.ResultMap = resultMap;
 			data.SpoofResult = spoofResult;
 			detectCardScreenshotResponse.Data = data;

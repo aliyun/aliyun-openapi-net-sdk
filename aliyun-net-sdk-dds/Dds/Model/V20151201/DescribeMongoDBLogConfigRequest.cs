@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DescribeMongoDBLogConfigRequest : RpcAcsRequest<DescribeMongoDBLogConfigResponse>
     {
         public DescribeMongoDBLogConfigRequest()
-            : base("Dds", "2015-12-01", "DescribeMongoDBLogConfig", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "DescribeMongoDBLogConfig", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

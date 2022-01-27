@@ -26,12 +26,12 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class MVFolderResponseUnmarshaller
     {
-        public static MVFolderResponse Unmarshall(UnmarshallerContext context)
+        public static MVFolderResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			MVFolderResponse mVFolderResponse = new MVFolderResponse();
 
-			mVFolderResponse.HttpResponse = context.HttpResponse;
-			mVFolderResponse.RequestId = context.StringValue("MVFolder.RequestId");
+			mVFolderResponse.HttpResponse = _ctx.HttpResponse;
+			mVFolderResponse.RequestId = _ctx.StringValue("MVFolder.RequestId");
         
 			return mVFolderResponse;
         }

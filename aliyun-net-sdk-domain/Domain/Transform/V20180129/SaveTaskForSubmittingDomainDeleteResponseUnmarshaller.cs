@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class SaveTaskForSubmittingDomainDeleteResponseUnmarshaller
     {
-        public static SaveTaskForSubmittingDomainDeleteResponse Unmarshall(UnmarshallerContext context)
+        public static SaveTaskForSubmittingDomainDeleteResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SaveTaskForSubmittingDomainDeleteResponse saveTaskForSubmittingDomainDeleteResponse = new SaveTaskForSubmittingDomainDeleteResponse();
 
-			saveTaskForSubmittingDomainDeleteResponse.HttpResponse = context.HttpResponse;
-			saveTaskForSubmittingDomainDeleteResponse.RequestId = context.StringValue("SaveTaskForSubmittingDomainDelete.RequestId");
-			saveTaskForSubmittingDomainDeleteResponse.TaskNo = context.StringValue("SaveTaskForSubmittingDomainDelete.TaskNo");
+			saveTaskForSubmittingDomainDeleteResponse.HttpResponse = _ctx.HttpResponse;
+			saveTaskForSubmittingDomainDeleteResponse.RequestId = _ctx.StringValue("SaveTaskForSubmittingDomainDelete.RequestId");
+			saveTaskForSubmittingDomainDeleteResponse.TaskNo = _ctx.StringValue("SaveTaskForSubmittingDomainDelete.TaskNo");
         
 			return saveTaskForSubmittingDomainDeleteResponse;
         }

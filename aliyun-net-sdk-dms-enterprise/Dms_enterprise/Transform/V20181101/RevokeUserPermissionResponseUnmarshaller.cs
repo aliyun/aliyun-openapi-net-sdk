@@ -26,15 +26,15 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 {
     public class RevokeUserPermissionResponseUnmarshaller
     {
-        public static RevokeUserPermissionResponse Unmarshall(UnmarshallerContext context)
+        public static RevokeUserPermissionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RevokeUserPermissionResponse revokeUserPermissionResponse = new RevokeUserPermissionResponse();
 
-			revokeUserPermissionResponse.HttpResponse = context.HttpResponse;
-			revokeUserPermissionResponse.RequestId = context.StringValue("RevokeUserPermission.RequestId");
-			revokeUserPermissionResponse.Success = context.BooleanValue("RevokeUserPermission.Success");
-			revokeUserPermissionResponse.ErrorMessage = context.StringValue("RevokeUserPermission.ErrorMessage");
-			revokeUserPermissionResponse.ErrorCode = context.StringValue("RevokeUserPermission.ErrorCode");
+			revokeUserPermissionResponse.HttpResponse = _ctx.HttpResponse;
+			revokeUserPermissionResponse.RequestId = _ctx.StringValue("RevokeUserPermission.RequestId");
+			revokeUserPermissionResponse.ErrorCode = _ctx.StringValue("RevokeUserPermission.ErrorCode");
+			revokeUserPermissionResponse.ErrorMessage = _ctx.StringValue("RevokeUserPermission.ErrorMessage");
+			revokeUserPermissionResponse.Success = _ctx.BooleanValue("RevokeUserPermission.Success");
         
 			return revokeUserPermissionResponse;
         }

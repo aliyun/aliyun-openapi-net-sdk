@@ -34,15 +34,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Rds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Rds.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string flag;
+		private int? flag;
 
 		private string clientToken;
 
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Flag
+		public int? Flag
 		{
 			get
 			{
@@ -78,7 +78,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				flag = value;
-				DictionaryUtil.Add(QueryParameters, "Flag", value);
+				DictionaryUtil.Add(QueryParameters, "Flag", value.ToString());
 			}
 		}
 

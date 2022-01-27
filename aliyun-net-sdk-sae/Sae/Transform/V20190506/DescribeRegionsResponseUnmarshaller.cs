@@ -26,21 +26,27 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class DescribeRegionsResponseUnmarshaller
     {
-        public static DescribeRegionsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRegionsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRegionsResponse describeRegionsResponse = new DescribeRegionsResponse();
 
-			describeRegionsResponse.HttpResponse = context.HttpResponse;
-			describeRegionsResponse.RequestId = context.StringValue("DescribeRegions.RequestId");
-			describeRegionsResponse.Code = context.IntegerValue("DescribeRegions.Code");
-			describeRegionsResponse.Message = context.StringValue("DescribeRegions.Message");
+			describeRegionsResponse.HttpResponse = _ctx.HttpResponse;
+			describeRegionsResponse.Message = _ctx.StringValue("DescribeRegions.Message");
+			describeRegionsResponse.RequestId = _ctx.StringValue("DescribeRegions.RequestId");
+			describeRegionsResponse.Code = _ctx.IntegerValue("DescribeRegions.Code");
 
 			List<DescribeRegionsResponse.DescribeRegions_Region> describeRegionsResponse_regions = new List<DescribeRegionsResponse.DescribeRegions_Region>();
-			for (int i = 0; i < context.Length("DescribeRegions.Regions.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRegions.Regions.Length"); i++) {
 				DescribeRegionsResponse.DescribeRegions_Region region = new DescribeRegionsResponse.DescribeRegions_Region();
-				region.RegionId = context.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
-				region.RegionEndpoint = context.StringValue("DescribeRegions.Regions["+ i +"].RegionEndpoint");
-				region.LocalName = context.StringValue("DescribeRegions.Regions["+ i +"].LocalName");
+				region.LocalName = _ctx.StringValue("DescribeRegions.Regions["+ i +"].LocalName");
+				region.RegionEndpoint = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionEndpoint");
+				region.RegionId = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
+
+				List<string> region_recommendZones = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeRegions.Regions["+ i +"].RecommendZones.Length"); j++) {
+					region_recommendZones.Add(_ctx.StringValue("DescribeRegions.Regions["+ i +"].RecommendZones["+ j +"]"));
+				}
+				region.RecommendZones = region_recommendZones;
 
 				describeRegionsResponse_regions.Add(region);
 			}

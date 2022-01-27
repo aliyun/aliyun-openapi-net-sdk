@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,70 +25,23 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class DescribeGatewayBucketCachesResponse : AcsResponse
 	{
 
+		private int? totalCount;
+
 		private string requestId;
-
-		private bool? success;
-
-		private string code;
 
 		private string message;
 
-		private int? totalCount;
+		private int? pageSize;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private string code;
+
+		private bool? success;
 
 		private List<DescribeGatewayBucketCaches_BucketCache> bucketCaches;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TotalCount")]
 		public int? TotalCount
 		{
 			get
@@ -101,18 +54,33 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public int? PageNumber
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return pageNumber;
+				return requestId;
 			}
 			set	
 			{
-				pageNumber = value;
+				requestId = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -125,6 +93,46 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "BucketCaches")]
 		public List<DescribeGatewayBucketCaches_BucketCache> BucketCaches
 		{
 			get
@@ -140,166 +148,35 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 		public class DescribeGatewayBucketCaches_BucketCache
 		{
 
-			private string gatewayId;
-
-			private string gatewayName;
-
-			private string regionId;
-
-			private string location;
-
-			private string category;
+			private string vpcId;
 
 			private string type;
 
-			private string bucketName;
+			private string mountPoint;
+
+			private string gatewayId;
+
+			private string cacheMode;
 
 			private string protocol;
 
-			private string cacheMode;
+			private string gatewayName;
 
 			private string cacheStats;
 
 			private string shareName;
 
-			private string vpcId;
+			private string regionId;
 
 			private string vpcCidr;
 
-			private string mountPoint;
+			private string bucketName;
 
-			public string GatewayId
-			{
-				get
-				{
-					return gatewayId;
-				}
-				set	
-				{
-					gatewayId = value;
-				}
-			}
+			private string category;
 
-			public string GatewayName
-			{
-				get
-				{
-					return gatewayName;
-				}
-				set	
-				{
-					gatewayName = value;
-				}
-			}
+			private string location;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string Location
-			{
-				get
-				{
-					return location;
-				}
-				set	
-				{
-					location = value;
-				}
-			}
-
-			public string Category
-			{
-				get
-				{
-					return category;
-				}
-				set	
-				{
-					category = value;
-				}
-			}
-
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-
-			public string BucketName
-			{
-				get
-				{
-					return bucketName;
-				}
-				set	
-				{
-					bucketName = value;
-				}
-			}
-
-			public string Protocol
-			{
-				get
-				{
-					return protocol;
-				}
-				set	
-				{
-					protocol = value;
-				}
-			}
-
-			public string CacheMode
-			{
-				get
-				{
-					return cacheMode;
-				}
-				set	
-				{
-					cacheMode = value;
-				}
-			}
-
-			public string CacheStats
-			{
-				get
-				{
-					return cacheStats;
-				}
-				set	
-				{
-					cacheStats = value;
-				}
-			}
-
-			public string ShareName
-			{
-				get
-				{
-					return shareName;
-				}
-				set	
-				{
-					shareName = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "VpcId")]
 			public string VpcId
 			{
 				get
@@ -312,6 +189,124 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "Type")]
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MountPoint")]
+			public string MountPoint
+			{
+				get
+				{
+					return mountPoint;
+				}
+				set	
+				{
+					mountPoint = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "GatewayId")]
+			public string GatewayId
+			{
+				get
+				{
+					return gatewayId;
+				}
+				set	
+				{
+					gatewayId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CacheMode")]
+			public string CacheMode
+			{
+				get
+				{
+					return cacheMode;
+				}
+				set	
+				{
+					cacheMode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Protocol")]
+			public string Protocol
+			{
+				get
+				{
+					return protocol;
+				}
+				set	
+				{
+					protocol = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "GatewayName")]
+			public string GatewayName
+			{
+				get
+				{
+					return gatewayName;
+				}
+				set	
+				{
+					gatewayName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CacheStats")]
+			public string CacheStats
+			{
+				get
+				{
+					return cacheStats;
+				}
+				set	
+				{
+					cacheStats = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ShareName")]
+			public string ShareName
+			{
+				get
+				{
+					return shareName;
+				}
+				set	
+				{
+					shareName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RegionId")]
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "VpcCidr")]
 			public string VpcCidr
 			{
 				get
@@ -324,15 +319,42 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
-			public string MountPoint
+			[JsonProperty(PropertyName = "BucketName")]
+			public string BucketName
 			{
 				get
 				{
-					return mountPoint;
+					return bucketName;
 				}
 				set	
 				{
-					mountPoint = value;
+					bucketName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Category")]
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Location")]
+			public string Location
+			{
+				get
+				{
+					return location;
+				}
+				set	
+				{
+					location = value;
 				}
 			}
 		}

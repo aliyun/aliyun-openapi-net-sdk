@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -58,21 +58,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string zoneId;
 
+			private string zoneType;
+
 			private string localName;
 
 			private List<DescribeZones_ResourcesInfo> availableResources;
 
 			private List<string> availableResourceCreation;
 
-			private List<string> availableDiskCategories;
+			private List<string> dedicatedHostGenerations;
 
 			private List<string> availableInstanceTypes;
 
-			private List<string> availableVolumeCategories;
+			private List<string> availableDiskCategories;
 
 			private List<string> availableDedicatedHostTypes;
 
-			private List<string> dedicatedHostGenerations;
+			private List<string> availableVolumeCategories;
 
 			public string ZoneId
 			{
@@ -83,6 +85,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					zoneId = value;
+				}
+			}
+
+			public string ZoneType
+			{
+				get
+				{
+					return zoneType;
+				}
+				set	
+				{
+					zoneType = value;
 				}
 			}
 
@@ -122,15 +136,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public List<string> AvailableDiskCategories
+			public List<string> DedicatedHostGenerations
 			{
 				get
 				{
-					return availableDiskCategories;
+					return dedicatedHostGenerations;
 				}
 				set	
 				{
-					availableDiskCategories = value;
+					dedicatedHostGenerations = value;
 				}
 			}
 
@@ -146,15 +160,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public List<string> AvailableVolumeCategories
+			public List<string> AvailableDiskCategories
 			{
 				get
 				{
-					return availableVolumeCategories;
+					return availableDiskCategories;
 				}
 				set	
 				{
-					availableVolumeCategories = value;
+					availableDiskCategories = value;
 				}
 			}
 
@@ -170,15 +184,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public List<string> DedicatedHostGenerations
+			public List<string> AvailableVolumeCategories
 			{
 				get
 				{
-					return dedicatedHostGenerations;
+					return availableVolumeCategories;
 				}
 				set	
 				{
-					dedicatedHostGenerations = value;
+					availableVolumeCategories = value;
 				}
 			}
 
@@ -189,15 +203,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private List<string> systemDiskCategories;
 
-				private List<string> dataDiskCategories;
+				private List<string> instanceGenerations;
 
-				private List<string> networkTypes;
+				private List<string> dataDiskCategories;
 
 				private List<string> instanceTypes;
 
 				private List<string> instanceTypeFamilies;
 
-				private List<string> instanceGenerations;
+				private List<string> networkTypes;
 
 				public bool? IoOptimized
 				{
@@ -223,6 +237,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
+				public List<string> InstanceGenerations
+				{
+					get
+					{
+						return instanceGenerations;
+					}
+					set	
+					{
+						instanceGenerations = value;
+					}
+				}
+
 				public List<string> DataDiskCategories
 				{
 					get
@@ -232,18 +258,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						dataDiskCategories = value;
-					}
-				}
-
-				public List<string> NetworkTypes
-				{
-					get
-					{
-						return networkTypes;
-					}
-					set	
-					{
-						networkTypes = value;
 					}
 				}
 
@@ -271,15 +285,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public List<string> InstanceGenerations
+				public List<string> NetworkTypes
 				{
 					get
 					{
-						return instanceGenerations;
+						return networkTypes;
 					}
 					set	
 					{
-						instanceGenerations = value;
+						networkTypes = value;
 					}
 				}
 			}

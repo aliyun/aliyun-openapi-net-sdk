@@ -35,8 +35,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.BssOpenApi.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.BssOpenApi.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -51,7 +51,11 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private long? billOwnerId;
 
+		private string billingDate;
+
 		private bool? isGroupByProduct;
+
+		private string granularity;
 
 		private int? pageSize;
 
@@ -120,6 +124,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public string BillingDate
+		{
+			get
+			{
+				return billingDate;
+			}
+			set	
+			{
+				billingDate = value;
+				DictionaryUtil.Add(QueryParameters, "BillingDate", value);
+			}
+		}
+
 		public bool? IsGroupByProduct
 		{
 			get
@@ -130,6 +147,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				isGroupByProduct = value;
 				DictionaryUtil.Add(QueryParameters, "IsGroupByProduct", value.ToString());
+			}
+		}
+
+		public string Granularity
+		{
+			get
+			{
+				return granularity;
+			}
+			set	
+			{
+				granularity = value;
+				DictionaryUtil.Add(QueryParameters, "Granularity", value);
 			}
 		}
 

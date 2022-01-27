@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class CreateSimilarSecurityEventsQueryTaskResponseUnmarshaller
     {
-        public static CreateSimilarSecurityEventsQueryTaskResponse Unmarshall(UnmarshallerContext context)
+        public static CreateSimilarSecurityEventsQueryTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateSimilarSecurityEventsQueryTaskResponse createSimilarSecurityEventsQueryTaskResponse = new CreateSimilarSecurityEventsQueryTaskResponse();
 
-			createSimilarSecurityEventsQueryTaskResponse.HttpResponse = context.HttpResponse;
-			createSimilarSecurityEventsQueryTaskResponse.RequestId = context.StringValue("CreateSimilarSecurityEventsQueryTask.RequestId");
+			createSimilarSecurityEventsQueryTaskResponse.HttpResponse = _ctx.HttpResponse;
+			createSimilarSecurityEventsQueryTaskResponse.RequestId = _ctx.StringValue("CreateSimilarSecurityEventsQueryTask.RequestId");
 
 			CreateSimilarSecurityEventsQueryTaskResponse.CreateSimilarSecurityEventsQueryTask_CreateSimilarSecurityEventsQueryTaskResponse1 createSimilarSecurityEventsQueryTaskResponse1 = new CreateSimilarSecurityEventsQueryTaskResponse.CreateSimilarSecurityEventsQueryTask_CreateSimilarSecurityEventsQueryTaskResponse1();
-			createSimilarSecurityEventsQueryTaskResponse1.TaskId = context.LongValue("CreateSimilarSecurityEventsQueryTask.CreateSimilarSecurityEventsQueryTaskResponse.TaskId");
-			createSimilarSecurityEventsQueryTaskResponse1.Status = context.StringValue("CreateSimilarSecurityEventsQueryTask.CreateSimilarSecurityEventsQueryTaskResponse.Status");
+			createSimilarSecurityEventsQueryTaskResponse1.TaskId = _ctx.LongValue("CreateSimilarSecurityEventsQueryTask.CreateSimilarSecurityEventsQueryTaskResponse.TaskId");
+			createSimilarSecurityEventsQueryTaskResponse1.Status = _ctx.StringValue("CreateSimilarSecurityEventsQueryTask.CreateSimilarSecurityEventsQueryTaskResponse.Status");
 			createSimilarSecurityEventsQueryTaskResponse.CreateSimilarSecurityEventsQueryTaskResponse1 = createSimilarSecurityEventsQueryTaskResponse1;
         
 			return createSimilarSecurityEventsQueryTaskResponse;

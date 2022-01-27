@@ -26,16 +26,16 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class ApplyRecordTokenResponseUnmarshaller
     {
-        public static ApplyRecordTokenResponse Unmarshall(UnmarshallerContext context)
+        public static ApplyRecordTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ApplyRecordTokenResponse applyRecordTokenResponse = new ApplyRecordTokenResponse();
 
-			applyRecordTokenResponse.HttpResponse = context.HttpResponse;
-			applyRecordTokenResponse.RequestId = context.StringValue("ApplyRecordToken.RequestId");
-			applyRecordTokenResponse.SecurityToken = context.StringValue("ApplyRecordToken.SecurityToken");
-			applyRecordTokenResponse.AccessKeySecret = context.StringValue("ApplyRecordToken.AccessKeySecret");
-			applyRecordTokenResponse.AccessKeyId = context.StringValue("ApplyRecordToken.AccessKeyId");
-			applyRecordTokenResponse.Expiration = context.StringValue("ApplyRecordToken.Expiration");
+			applyRecordTokenResponse.HttpResponse = _ctx.HttpResponse;
+			applyRecordTokenResponse.RequestId = _ctx.StringValue("ApplyRecordToken.RequestId");
+			applyRecordTokenResponse.SecurityToken = _ctx.StringValue("ApplyRecordToken.SecurityToken");
+			applyRecordTokenResponse.AccessKeySecret = _ctx.StringValue("ApplyRecordToken.AccessKeySecret");
+			applyRecordTokenResponse.AccessKeyId = _ctx.StringValue("ApplyRecordToken.AccessKeyId");
+			applyRecordTokenResponse.Expiration = _ctx.StringValue("ApplyRecordToken.Expiration");
         
 			return applyRecordTokenResponse;
         }

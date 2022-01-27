@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.gpdb.Model.V20160503
@@ -73,109 +73,37 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			public class DescribeRdsVSwitchs_VSwitchItem
 			{
 
-				private string vSwitchId;
-
-				private string vSwitchName;
-
-				private string izNo;
-
-				private string bid;
-
-				private string aliUid;
-
-				private string regionNo;
-
-				private string cidrBlock;
+				private string status;
 
 				private bool? isDefault;
 
-				private string status;
+				private string vSwitchId;
+
+				private string cidrBlock;
+
+				private string regionNo;
 
 				private string gmtCreate;
 
+				private string aliUid;
+
 				private string gmtModified;
 
-				public string VSwitchId
-				{
-					get
-					{
-						return vSwitchId;
-					}
-					set	
-					{
-						vSwitchId = value;
-					}
-				}
+				private string bid;
 
-				public string VSwitchName
-				{
-					get
-					{
-						return vSwitchName;
-					}
-					set	
-					{
-						vSwitchName = value;
-					}
-				}
+				private string izNo;
 
-				public string IzNo
-				{
-					get
-					{
-						return izNo;
-					}
-					set	
-					{
-						izNo = value;
-					}
-				}
+				private string vSwitchName;
 
-				public string Bid
+				public string Status
 				{
 					get
 					{
-						return bid;
+						return status;
 					}
 					set	
 					{
-						bid = value;
-					}
-				}
-
-				public string AliUid
-				{
-					get
-					{
-						return aliUid;
-					}
-					set	
-					{
-						aliUid = value;
-					}
-				}
-
-				public string RegionNo
-				{
-					get
-					{
-						return regionNo;
-					}
-					set	
-					{
-						regionNo = value;
-					}
-				}
-
-				public string CidrBlock
-				{
-					get
-					{
-						return cidrBlock;
-					}
-					set	
-					{
-						cidrBlock = value;
+						status = value;
 					}
 				}
 
@@ -191,15 +119,39 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 					}
 				}
 
-				public string Status
+				public string VSwitchId
 				{
 					get
 					{
-						return status;
+						return vSwitchId;
 					}
 					set	
 					{
-						status = value;
+						vSwitchId = value;
+					}
+				}
+
+				public string CidrBlock
+				{
+					get
+					{
+						return cidrBlock;
+					}
+					set	
+					{
+						cidrBlock = value;
+					}
+				}
+
+				public string RegionNo
+				{
+					get
+					{
+						return regionNo;
+					}
+					set	
+					{
+						regionNo = value;
 					}
 				}
 
@@ -215,6 +167,18 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 					}
 				}
 
+				public string AliUid
+				{
+					get
+					{
+						return aliUid;
+					}
+					set	
+					{
+						aliUid = value;
+					}
+				}
+
 				public string GmtModified
 				{
 					get
@@ -224,6 +188,42 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 					set	
 					{
 						gmtModified = value;
+					}
+				}
+
+				public string Bid
+				{
+					get
+					{
+						return bid;
+					}
+					set	
+					{
+						bid = value;
+					}
+				}
+
+				public string IzNo
+				{
+					get
+					{
+						return izNo;
+					}
+					set	
+					{
+						izNo = value;
+					}
+				}
+
+				public string VSwitchName
+				{
+					get
+					{
+						return vSwitchName;
+					}
+					set	
+					{
+						vSwitchName = value;
 					}
 				}
 			}

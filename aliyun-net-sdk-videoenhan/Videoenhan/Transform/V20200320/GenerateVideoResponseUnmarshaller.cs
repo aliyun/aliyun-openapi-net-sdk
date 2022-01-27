@@ -26,16 +26,16 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 {
     public class GenerateVideoResponseUnmarshaller
     {
-        public static GenerateVideoResponse Unmarshall(UnmarshallerContext context)
+        public static GenerateVideoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GenerateVideoResponse generateVideoResponse = new GenerateVideoResponse();
 
-			generateVideoResponse.HttpResponse = context.HttpResponse;
-			generateVideoResponse.RequestId = context.StringValue("GenerateVideo.RequestId");
+			generateVideoResponse.HttpResponse = _ctx.HttpResponse;
+			generateVideoResponse.RequestId = _ctx.StringValue("GenerateVideo.RequestId");
 
 			GenerateVideoResponse.GenerateVideo_Data data = new GenerateVideoResponse.GenerateVideo_Data();
-			data.VideoUrl = context.StringValue("GenerateVideo.Data.VideoUrl");
-			data.VideoCoverUrl = context.StringValue("GenerateVideo.Data.VideoCoverUrl");
+			data.VideoUrl = _ctx.StringValue("GenerateVideo.Data.VideoUrl");
+			data.VideoCoverUrl = _ctx.StringValue("GenerateVideo.Data.VideoCoverUrl");
 			generateVideoResponse.Data = data;
         
 			return generateVideoResponse;

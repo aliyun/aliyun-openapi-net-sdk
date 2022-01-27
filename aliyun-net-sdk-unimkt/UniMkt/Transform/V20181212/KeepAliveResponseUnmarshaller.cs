@@ -26,16 +26,16 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 {
     public class KeepAliveResponseUnmarshaller
     {
-        public static KeepAliveResponse Unmarshall(UnmarshallerContext context)
+        public static KeepAliveResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			KeepAliveResponse keepAliveResponse = new KeepAliveResponse();
 
-			keepAliveResponse.HttpResponse = context.HttpResponse;
-			keepAliveResponse.Status = context.BooleanValue("KeepAlive.Status");
-			keepAliveResponse.Msg = context.StringValue("KeepAlive.Msg");
-			keepAliveResponse.Data = context.StringValue("KeepAlive.Data");
-			keepAliveResponse.ErrorCode = context.StringValue("KeepAlive.ErrorCode");
-			keepAliveResponse.RequestId = context.StringValue("KeepAlive.RequestId");
+			keepAliveResponse.HttpResponse = _ctx.HttpResponse;
+			keepAliveResponse.Status = _ctx.BooleanValue("KeepAlive.Status");
+			keepAliveResponse.Msg = _ctx.StringValue("KeepAlive.Msg");
+			keepAliveResponse.Data = _ctx.StringValue("KeepAlive.Data");
+			keepAliveResponse.ErrorCode = _ctx.StringValue("KeepAlive.ErrorCode");
+			keepAliveResponse.RequestId = _ctx.StringValue("KeepAlive.RequestId");
         
 			return keepAliveResponse;
         }

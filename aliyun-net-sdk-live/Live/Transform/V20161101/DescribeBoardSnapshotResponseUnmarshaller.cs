@@ -26,35 +26,35 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeBoardSnapshotResponseUnmarshaller
     {
-        public static DescribeBoardSnapshotResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeBoardSnapshotResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeBoardSnapshotResponse describeBoardSnapshotResponse = new DescribeBoardSnapshotResponse();
 
-			describeBoardSnapshotResponse.HttpResponse = context.HttpResponse;
-			describeBoardSnapshotResponse.RequestId = context.StringValue("DescribeBoardSnapshot.RequestId");
+			describeBoardSnapshotResponse.HttpResponse = _ctx.HttpResponse;
+			describeBoardSnapshotResponse.RequestId = _ctx.StringValue("DescribeBoardSnapshot.RequestId");
 
 			DescribeBoardSnapshotResponse.DescribeBoardSnapshot_Snapshot snapshot = new DescribeBoardSnapshotResponse.DescribeBoardSnapshot_Snapshot();
 
 			DescribeBoardSnapshotResponse.DescribeBoardSnapshot_Snapshot.DescribeBoardSnapshot_Board board = new DescribeBoardSnapshotResponse.DescribeBoardSnapshot_Snapshot.DescribeBoardSnapshot_Board();
-			board.BoardId = context.StringValue("DescribeBoardSnapshot.Snapshot.Board.BoardId");
-			board.AppUid = context.StringValue("DescribeBoardSnapshot.Snapshot.Board.AppUid");
-			board.EventTimestamp = context.LongValue("DescribeBoardSnapshot.Snapshot.Board.EventTimestamp");
-			board.CreateTimestamp = context.LongValue("DescribeBoardSnapshot.Snapshot.Board.CreateTimestamp");
-			board.UpdateTimestamp = context.LongValue("DescribeBoardSnapshot.Snapshot.Board.UpdateTimestamp");
+			board.BoardId = _ctx.StringValue("DescribeBoardSnapshot.Snapshot.Board.BoardId");
+			board.AppUid = _ctx.StringValue("DescribeBoardSnapshot.Snapshot.Board.AppUid");
+			board.EventTimestamp = _ctx.LongValue("DescribeBoardSnapshot.Snapshot.Board.EventTimestamp");
+			board.CreateTimestamp = _ctx.LongValue("DescribeBoardSnapshot.Snapshot.Board.CreateTimestamp");
+			board.UpdateTimestamp = _ctx.LongValue("DescribeBoardSnapshot.Snapshot.Board.UpdateTimestamp");
 
 			List<DescribeBoardSnapshotResponse.DescribeBoardSnapshot_Snapshot.DescribeBoardSnapshot_Board.DescribeBoardSnapshot_Page> board_pages = new List<DescribeBoardSnapshotResponse.DescribeBoardSnapshot_Snapshot.DescribeBoardSnapshot_Board.DescribeBoardSnapshot_Page>();
-			for (int i = 0; i < context.Length("DescribeBoardSnapshot.Snapshot.Board.Pages.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeBoardSnapshot.Snapshot.Board.Pages.Length"); i++) {
 				DescribeBoardSnapshotResponse.DescribeBoardSnapshot_Snapshot.DescribeBoardSnapshot_Board.DescribeBoardSnapshot_Page page = new DescribeBoardSnapshotResponse.DescribeBoardSnapshot_Snapshot.DescribeBoardSnapshot_Board.DescribeBoardSnapshot_Page();
-				page.PageIndex = context.IntegerValue("DescribeBoardSnapshot.Snapshot.Board.Pages["+ i +"].PageIndex");
+				page.PageIndex = _ctx.IntegerValue("DescribeBoardSnapshot.Snapshot.Board.Pages["+ i +"].PageIndex");
 
 				List<DescribeBoardSnapshotResponse.DescribeBoardSnapshot_Snapshot.DescribeBoardSnapshot_Board.DescribeBoardSnapshot_Page.DescribeBoardSnapshot_Element> page_elements = new List<DescribeBoardSnapshotResponse.DescribeBoardSnapshot_Snapshot.DescribeBoardSnapshot_Board.DescribeBoardSnapshot_Page.DescribeBoardSnapshot_Element>();
-				for (int j = 0; j < context.Length("DescribeBoardSnapshot.Snapshot.Board.Pages["+ i +"].Elements.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeBoardSnapshot.Snapshot.Board.Pages["+ i +"].Elements.Length"); j++) {
 					DescribeBoardSnapshotResponse.DescribeBoardSnapshot_Snapshot.DescribeBoardSnapshot_Board.DescribeBoardSnapshot_Page.DescribeBoardSnapshot_Element element = new DescribeBoardSnapshotResponse.DescribeBoardSnapshot_Snapshot.DescribeBoardSnapshot_Board.DescribeBoardSnapshot_Page.DescribeBoardSnapshot_Element();
-					element.ElementIndex = context.StringValue("DescribeBoardSnapshot.Snapshot.Board.Pages["+ i +"].Elements["+ j +"].ElementIndex");
-					element.OwnerId = context.StringValue("DescribeBoardSnapshot.Snapshot.Board.Pages["+ i +"].Elements["+ j +"].OwnerId");
-					element.ElementType = context.IntegerValue("DescribeBoardSnapshot.Snapshot.Board.Pages["+ i +"].Elements["+ j +"].ElementType");
-					element.UpdateTimestamp = context.LongValue("DescribeBoardSnapshot.Snapshot.Board.Pages["+ i +"].Elements["+ j +"].UpdateTimestamp");
-					element.Data = context.StringValue("DescribeBoardSnapshot.Snapshot.Board.Pages["+ i +"].Elements["+ j +"].Data");
+					element.ElementIndex = _ctx.StringValue("DescribeBoardSnapshot.Snapshot.Board.Pages["+ i +"].Elements["+ j +"].ElementIndex");
+					element.OwnerId = _ctx.StringValue("DescribeBoardSnapshot.Snapshot.Board.Pages["+ i +"].Elements["+ j +"].OwnerId");
+					element.ElementType = _ctx.IntegerValue("DescribeBoardSnapshot.Snapshot.Board.Pages["+ i +"].Elements["+ j +"].ElementType");
+					element.UpdateTimestamp = _ctx.LongValue("DescribeBoardSnapshot.Snapshot.Board.Pages["+ i +"].Elements["+ j +"].UpdateTimestamp");
+					element.Data = _ctx.StringValue("DescribeBoardSnapshot.Snapshot.Board.Pages["+ i +"].Elements["+ j +"].Data");
 
 					page_elements.Add(element);
 				}
@@ -65,10 +65,10 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			board.Pages = board_pages;
 
 			List<DescribeBoardSnapshotResponse.DescribeBoardSnapshot_Snapshot.DescribeBoardSnapshot_Board.DescribeBoardSnapshot_Config> board_configs = new List<DescribeBoardSnapshotResponse.DescribeBoardSnapshot_Snapshot.DescribeBoardSnapshot_Board.DescribeBoardSnapshot_Config>();
-			for (int i = 0; i < context.Length("DescribeBoardSnapshot.Snapshot.Board.Configs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeBoardSnapshot.Snapshot.Board.Configs.Length"); i++) {
 				DescribeBoardSnapshotResponse.DescribeBoardSnapshot_Snapshot.DescribeBoardSnapshot_Board.DescribeBoardSnapshot_Config config = new DescribeBoardSnapshotResponse.DescribeBoardSnapshot_Snapshot.DescribeBoardSnapshot_Board.DescribeBoardSnapshot_Config();
-				config.AppUid = context.StringValue("DescribeBoardSnapshot.Snapshot.Board.Configs["+ i +"].AppUid");
-				config.Data = context.StringValue("DescribeBoardSnapshot.Snapshot.Board.Configs["+ i +"].Data");
+				config.AppUid = _ctx.StringValue("DescribeBoardSnapshot.Snapshot.Board.Configs["+ i +"].AppUid");
+				config.Data = _ctx.StringValue("DescribeBoardSnapshot.Snapshot.Board.Configs["+ i +"].Data");
 
 				board_configs.Add(config);
 			}

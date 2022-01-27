@@ -26,19 +26,19 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
     public class AddPlanogramShelfResponseUnmarshaller
     {
-        public static AddPlanogramShelfResponse Unmarshall(UnmarshallerContext context)
+        public static AddPlanogramShelfResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddPlanogramShelfResponse addPlanogramShelfResponse = new AddPlanogramShelfResponse();
 
-			addPlanogramShelfResponse.HttpResponse = context.HttpResponse;
-			addPlanogramShelfResponse.ErrorMessage = context.StringValue("AddPlanogramShelf.ErrorMessage");
-			addPlanogramShelfResponse.ErrorCode = context.StringValue("AddPlanogramShelf.ErrorCode");
-			addPlanogramShelfResponse.Message = context.StringValue("AddPlanogramShelf.Message");
-			addPlanogramShelfResponse.DynamicCode = context.StringValue("AddPlanogramShelf.DynamicCode");
-			addPlanogramShelfResponse.Code = context.StringValue("AddPlanogramShelf.Code");
-			addPlanogramShelfResponse.DynamicMessage = context.StringValue("AddPlanogramShelf.DynamicMessage");
-			addPlanogramShelfResponse.RequestId = context.StringValue("AddPlanogramShelf.RequestId");
-			addPlanogramShelfResponse.Success = context.BooleanValue("AddPlanogramShelf.Success");
+			addPlanogramShelfResponse.HttpResponse = _ctx.HttpResponse;
+			addPlanogramShelfResponse.ErrorMessage = _ctx.StringValue("AddPlanogramShelf.ErrorMessage");
+			addPlanogramShelfResponse.ErrorCode = _ctx.StringValue("AddPlanogramShelf.ErrorCode");
+			addPlanogramShelfResponse.Message = _ctx.StringValue("AddPlanogramShelf.Message");
+			addPlanogramShelfResponse.DynamicCode = _ctx.StringValue("AddPlanogramShelf.DynamicCode");
+			addPlanogramShelfResponse.Code = _ctx.StringValue("AddPlanogramShelf.Code");
+			addPlanogramShelfResponse.DynamicMessage = _ctx.StringValue("AddPlanogramShelf.DynamicMessage");
+			addPlanogramShelfResponse.RequestId = _ctx.StringValue("AddPlanogramShelf.RequestId");
+			addPlanogramShelfResponse.Success = _ctx.BooleanValue("AddPlanogramShelf.Success");
         
 			return addPlanogramShelfResponse;
         }

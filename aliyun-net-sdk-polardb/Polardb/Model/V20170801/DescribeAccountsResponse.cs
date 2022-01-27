@@ -27,6 +27,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string requestId;
 
+		private int? pageNumber;
+
+		private int? pageRecordCount;
+
 		private List<DescribeAccounts_DBAccount> accounts;
 
 		public string RequestId
@@ -38,6 +42,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		public int? PageRecordCount
+		{
+			get
+			{
+				return pageRecordCount;
+			}
+			set	
+			{
+				pageRecordCount = value;
 			}
 		}
 

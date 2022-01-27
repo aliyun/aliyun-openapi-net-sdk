@@ -26,25 +26,25 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetMetaTableListByCategoryResponseUnmarshaller
     {
-        public static GetMetaTableListByCategoryResponse Unmarshall(UnmarshallerContext context)
+        public static GetMetaTableListByCategoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMetaTableListByCategoryResponse getMetaTableListByCategoryResponse = new GetMetaTableListByCategoryResponse();
 
-			getMetaTableListByCategoryResponse.HttpResponse = context.HttpResponse;
-			getMetaTableListByCategoryResponse.RequestId = context.StringValue("GetMetaTableListByCategory.RequestId");
-			getMetaTableListByCategoryResponse.ErrorCode = context.StringValue("GetMetaTableListByCategory.ErrorCode");
-			getMetaTableListByCategoryResponse.ErrorMessage = context.StringValue("GetMetaTableListByCategory.ErrorMessage");
-			getMetaTableListByCategoryResponse.HttpStatusCode = context.IntegerValue("GetMetaTableListByCategory.HttpStatusCode");
-			getMetaTableListByCategoryResponse.Success = context.BooleanValue("GetMetaTableListByCategory.Success");
+			getMetaTableListByCategoryResponse.HttpResponse = _ctx.HttpResponse;
+			getMetaTableListByCategoryResponse.RequestId = _ctx.StringValue("GetMetaTableListByCategory.RequestId");
+			getMetaTableListByCategoryResponse.ErrorCode = _ctx.StringValue("GetMetaTableListByCategory.ErrorCode");
+			getMetaTableListByCategoryResponse.ErrorMessage = _ctx.StringValue("GetMetaTableListByCategory.ErrorMessage");
+			getMetaTableListByCategoryResponse.HttpStatusCode = _ctx.IntegerValue("GetMetaTableListByCategory.HttpStatusCode");
+			getMetaTableListByCategoryResponse.Success = _ctx.BooleanValue("GetMetaTableListByCategory.Success");
 
 			GetMetaTableListByCategoryResponse.GetMetaTableListByCategory_Data data = new GetMetaTableListByCategoryResponse.GetMetaTableListByCategory_Data();
-			data.PageNumber = context.IntegerValue("GetMetaTableListByCategory.Data.PageNumber");
-			data.PageSize = context.IntegerValue("GetMetaTableListByCategory.Data.PageSize");
-			data.TotalCount = context.LongValue("GetMetaTableListByCategory.Data.TotalCount");
+			data.PageNumber = _ctx.IntegerValue("GetMetaTableListByCategory.Data.PageNumber");
+			data.PageSize = _ctx.IntegerValue("GetMetaTableListByCategory.Data.PageSize");
+			data.TotalCount = _ctx.LongValue("GetMetaTableListByCategory.Data.TotalCount");
 
 			List<string> data_tableGuidList = new List<string>();
-			for (int i = 0; i < context.Length("GetMetaTableListByCategory.Data.TableGuidList.Length"); i++) {
-				data_tableGuidList.Add(context.StringValue("GetMetaTableListByCategory.Data.TableGuidList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetMetaTableListByCategory.Data.TableGuidList.Length"); i++) {
+				data_tableGuidList.Add(_ctx.StringValue("GetMetaTableListByCategory.Data.TableGuidList["+ i +"]"));
 			}
 			data.TableGuidList = data_tableGuidList;
 			getMetaTableListByCategoryResponse.Data = data;

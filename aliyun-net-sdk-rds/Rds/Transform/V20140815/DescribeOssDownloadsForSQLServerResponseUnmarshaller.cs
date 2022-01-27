@@ -26,26 +26,26 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeOssDownloadsForSQLServerResponseUnmarshaller
     {
-        public static DescribeOssDownloadsForSQLServerResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeOssDownloadsForSQLServerResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeOssDownloadsForSQLServerResponse describeOssDownloadsForSQLServerResponse = new DescribeOssDownloadsForSQLServerResponse();
 
-			describeOssDownloadsForSQLServerResponse.HttpResponse = context.HttpResponse;
-			describeOssDownloadsForSQLServerResponse.RequestId = context.StringValue("DescribeOssDownloadsForSQLServer.RequestId");
-			describeOssDownloadsForSQLServerResponse.DBInstanceName = context.StringValue("DescribeOssDownloadsForSQLServer.DBInstanceName");
-			describeOssDownloadsForSQLServerResponse.MigrateIaskId = context.StringValue("DescribeOssDownloadsForSQLServer.MigrateIaskId");
+			describeOssDownloadsForSQLServerResponse.HttpResponse = _ctx.HttpResponse;
+			describeOssDownloadsForSQLServerResponse.RequestId = _ctx.StringValue("DescribeOssDownloadsForSQLServer.RequestId");
+			describeOssDownloadsForSQLServerResponse.DBInstanceName = _ctx.StringValue("DescribeOssDownloadsForSQLServer.DBInstanceName");
+			describeOssDownloadsForSQLServerResponse.MigrateIaskId = _ctx.StringValue("DescribeOssDownloadsForSQLServer.MigrateIaskId");
 
 			List<DescribeOssDownloadsForSQLServerResponse.DescribeOssDownloadsForSQLServer_OssDownload> describeOssDownloadsForSQLServerResponse_items = new List<DescribeOssDownloadsForSQLServerResponse.DescribeOssDownloadsForSQLServer_OssDownload>();
-			for (int i = 0; i < context.Length("DescribeOssDownloadsForSQLServer.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeOssDownloadsForSQLServer.Items.Length"); i++) {
 				DescribeOssDownloadsForSQLServerResponse.DescribeOssDownloadsForSQLServer_OssDownload ossDownload = new DescribeOssDownloadsForSQLServerResponse.DescribeOssDownloadsForSQLServer_OssDownload();
-				ossDownload.FileName = context.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].FileName");
-				ossDownload.CreateTime = context.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].CreateTime");
-				ossDownload.CreateTime1 = context.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].CreateTime");
-				ossDownload.BakType = context.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].BakType");
-				ossDownload.FileSize = context.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].FileSize");
-				ossDownload.Status = context.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].Status");
-				ossDownload.IsAvail = context.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].IsAvail");
-				ossDownload.Desc = context.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].Desc");
+				ossDownload.FileName = _ctx.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].FileName");
+				ossDownload.CreateTime = _ctx.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].CreateTime");
+				ossDownload.CreateTime1 = _ctx.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].CreateTime");
+				ossDownload.BakType = _ctx.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].BakType");
+				ossDownload.FileSize = _ctx.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].FileSize");
+				ossDownload.Status = _ctx.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].Status");
+				ossDownload.IsAvail = _ctx.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].IsAvail");
+				ossDownload.Desc = _ctx.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].Desc");
 
 				describeOssDownloadsForSQLServerResponse_items.Add(ossDownload);
 			}

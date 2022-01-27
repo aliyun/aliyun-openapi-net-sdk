@@ -26,19 +26,19 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class CreateLiveResponseUnmarshaller
     {
-        public static CreateLiveResponse Unmarshall(UnmarshallerContext context)
+        public static CreateLiveResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateLiveResponse createLiveResponse = new CreateLiveResponse();
 
-			createLiveResponse.HttpResponse = context.HttpResponse;
-			createLiveResponse.ErrorCode = context.IntegerValue("CreateLive.ErrorCode");
-			createLiveResponse.Message = context.StringValue("CreateLive.Message");
-			createLiveResponse.Success = context.BooleanValue("CreateLive.Success");
-			createLiveResponse.RequestId = context.StringValue("CreateLive.RequestId");
+			createLiveResponse.HttpResponse = _ctx.HttpResponse;
+			createLiveResponse.ErrorCode = _ctx.IntegerValue("CreateLive.ErrorCode");
+			createLiveResponse.Message = _ctx.StringValue("CreateLive.Message");
+			createLiveResponse.Success = _ctx.BooleanValue("CreateLive.Success");
+			createLiveResponse.RequestId = _ctx.StringValue("CreateLive.RequestId");
 
 			CreateLiveResponse.CreateLive_LiveInfo liveInfo = new CreateLiveResponse.CreateLive_LiveInfo();
-			liveInfo.LiveUUID = context.StringValue("CreateLive.LiveInfo.LiveUUID");
-			liveInfo.StreamUUID = context.StringValue("CreateLive.LiveInfo.StreamUUID");
+			liveInfo.LiveUUID = _ctx.StringValue("CreateLive.LiveInfo.LiveUUID");
+			liveInfo.StreamUUID = _ctx.StringValue("CreateLive.LiveInfo.StreamUUID");
 			createLiveResponse.LiveInfo = liveInfo;
         
 			return createLiveResponse;

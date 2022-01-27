@@ -34,9 +34,10 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Sas.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Sas.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -48,6 +49,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		private string lang;
 
 		private string assetType;
+
+		private string queryFlag;
 
 		private long? groupId;
 
@@ -123,6 +126,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				assetType = value;
 				DictionaryUtil.Add(QueryParameters, "AssetType", value);
+			}
+		}
+
+		public string QueryFlag
+		{
+			get
+			{
+				return queryFlag;
+			}
+			set	
+			{
+				queryFlag = value;
+				DictionaryUtil.Add(QueryParameters, "QueryFlag", value);
 			}
 		}
 

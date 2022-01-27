@@ -52,6 +52,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string effectiveTime;
 
+		private string sourceBiz;
+
 		private string businessInfo;
 
 		private bool? autoPay;
@@ -145,6 +147,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				effectiveTime = value;
 				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
+			}
+		}
+
+		public string SourceBiz
+		{
+			get
+			{
+				return sourceBiz;
+			}
+			set	
+			{
+				sourceBiz = value;
+				DictionaryUtil.Add(QueryParameters, "SourceBiz", value);
 			}
 		}
 

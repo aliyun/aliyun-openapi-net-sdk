@@ -26,18 +26,18 @@ namespace Aliyun.Acs.videorecog.Transform.V20200320
 {
     public class DetectVideoShotResponseUnmarshaller
     {
-        public static DetectVideoShotResponse Unmarshall(UnmarshallerContext context)
+        public static DetectVideoShotResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DetectVideoShotResponse detectVideoShotResponse = new DetectVideoShotResponse();
 
-			detectVideoShotResponse.HttpResponse = context.HttpResponse;
-			detectVideoShotResponse.RequestId = context.StringValue("DetectVideoShot.RequestId");
+			detectVideoShotResponse.HttpResponse = _ctx.HttpResponse;
+			detectVideoShotResponse.RequestId = _ctx.StringValue("DetectVideoShot.RequestId");
 
 			DetectVideoShotResponse.DetectVideoShot_Data data = new DetectVideoShotResponse.DetectVideoShot_Data();
 
 			List<string> data_shotFrameIds = new List<string>();
-			for (int i = 0; i < context.Length("DetectVideoShot.Data.ShotFrameIds.Length"); i++) {
-				data_shotFrameIds.Add(context.StringValue("DetectVideoShot.Data.ShotFrameIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DetectVideoShot.Data.ShotFrameIds.Length"); i++) {
+				data_shotFrameIds.Add(_ctx.StringValue("DetectVideoShot.Data.ShotFrameIds["+ i +"]"));
 			}
 			data.ShotFrameIds = data_shotFrameIds;
 			detectVideoShotResponse.Data = data;

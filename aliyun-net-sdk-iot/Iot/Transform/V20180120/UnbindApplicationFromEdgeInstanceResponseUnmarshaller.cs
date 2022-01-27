@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class UnbindApplicationFromEdgeInstanceResponseUnmarshaller
     {
-        public static UnbindApplicationFromEdgeInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static UnbindApplicationFromEdgeInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UnbindApplicationFromEdgeInstanceResponse unbindApplicationFromEdgeInstanceResponse = new UnbindApplicationFromEdgeInstanceResponse();
 
-			unbindApplicationFromEdgeInstanceResponse.HttpResponse = context.HttpResponse;
-			unbindApplicationFromEdgeInstanceResponse.RequestId = context.StringValue("UnbindApplicationFromEdgeInstance.RequestId");
-			unbindApplicationFromEdgeInstanceResponse.Success = context.BooleanValue("UnbindApplicationFromEdgeInstance.Success");
-			unbindApplicationFromEdgeInstanceResponse.Code = context.StringValue("UnbindApplicationFromEdgeInstance.Code");
-			unbindApplicationFromEdgeInstanceResponse.ErrorMessage = context.StringValue("UnbindApplicationFromEdgeInstance.ErrorMessage");
+			unbindApplicationFromEdgeInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			unbindApplicationFromEdgeInstanceResponse.RequestId = _ctx.StringValue("UnbindApplicationFromEdgeInstance.RequestId");
+			unbindApplicationFromEdgeInstanceResponse.Success = _ctx.BooleanValue("UnbindApplicationFromEdgeInstance.Success");
+			unbindApplicationFromEdgeInstanceResponse.Code = _ctx.StringValue("UnbindApplicationFromEdgeInstance.Code");
+			unbindApplicationFromEdgeInstanceResponse.ErrorMessage = _ctx.StringValue("UnbindApplicationFromEdgeInstance.ErrorMessage");
         
 			return unbindApplicationFromEdgeInstanceResponse;
         }

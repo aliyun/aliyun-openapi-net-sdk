@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 	public class DescribeCenVbrHealthCheckResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeCenVbrHealthCheck_VbrHealthCheck> vbrHealthChecks;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,29 +98,37 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		public class DescribeCenVbrHealthCheck_VbrHealthCheck
 		{
 
-			private string cenId;
+			private string healthCheckTargetIp;
 
 			private string vbrInstanceId;
 
-			private string linkStatus;
-
-			private long? packetLoss;
-
-			private string healthCheckSourceIp;
-
-			private string healthCheckTargetIp;
+			private string vbrInstanceRegionId;
 
 			private long? delay;
 
-			public string CenId
+			private string linkStatus;
+
+			private string cenId;
+
+			private int? healthyThreshold;
+
+			private int? healthCheckInterval;
+
+			private string healthCheckSourceIp;
+
+			private long? packetLoss;
+
+			private bool? healthCheckOnly;
+
+			public string HealthCheckTargetIp
 			{
 				get
 				{
-					return cenId;
+					return healthCheckTargetIp;
 				}
 				set	
 				{
-					cenId = value;
+					healthCheckTargetIp = value;
 				}
 			}
 
@@ -136,6 +144,30 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
+			public string VbrInstanceRegionId
+			{
+				get
+				{
+					return vbrInstanceRegionId;
+				}
+				set	
+				{
+					vbrInstanceRegionId = value;
+				}
+			}
+
+			public long? Delay
+			{
+				get
+				{
+					return delay;
+				}
+				set	
+				{
+					delay = value;
+				}
+			}
+
 			public string LinkStatus
 			{
 				get
@@ -148,15 +180,39 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public long? PacketLoss
+			public string CenId
 			{
 				get
 				{
-					return packetLoss;
+					return cenId;
 				}
 				set	
 				{
-					packetLoss = value;
+					cenId = value;
+				}
+			}
+
+			public int? HealthyThreshold
+			{
+				get
+				{
+					return healthyThreshold;
+				}
+				set	
+				{
+					healthyThreshold = value;
+				}
+			}
+
+			public int? HealthCheckInterval
+			{
+				get
+				{
+					return healthCheckInterval;
+				}
+				set	
+				{
+					healthCheckInterval = value;
 				}
 			}
 
@@ -172,27 +228,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string HealthCheckTargetIp
+			public long? PacketLoss
 			{
 				get
 				{
-					return healthCheckTargetIp;
+					return packetLoss;
 				}
 				set	
 				{
-					healthCheckTargetIp = value;
+					packetLoss = value;
 				}
 			}
 
-			public long? Delay
+			public bool? HealthCheckOnly
 			{
 				get
 				{
-					return delay;
+					return healthCheckOnly;
 				}
 				set	
 				{
-					delay = value;
+					healthCheckOnly = value;
 				}
 			}
 		}

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DeleteStorageBundleResponseUnmarshaller
     {
-        public static DeleteStorageBundleResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteStorageBundleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteStorageBundleResponse deleteStorageBundleResponse = new DeleteStorageBundleResponse();
 
-			deleteStorageBundleResponse.HttpResponse = context.HttpResponse;
-			deleteStorageBundleResponse.RequestId = context.StringValue("DeleteStorageBundle.RequestId");
-			deleteStorageBundleResponse.Success = context.BooleanValue("DeleteStorageBundle.Success");
-			deleteStorageBundleResponse.Code = context.StringValue("DeleteStorageBundle.Code");
-			deleteStorageBundleResponse.Message = context.StringValue("DeleteStorageBundle.Message");
+			deleteStorageBundleResponse.HttpResponse = _ctx.HttpResponse;
+			deleteStorageBundleResponse.Message = _ctx.StringValue("DeleteStorageBundle.Message");
+			deleteStorageBundleResponse.RequestId = _ctx.StringValue("DeleteStorageBundle.RequestId");
+			deleteStorageBundleResponse.Code = _ctx.StringValue("DeleteStorageBundle.Code");
+			deleteStorageBundleResponse.Success = _ctx.BooleanValue("DeleteStorageBundle.Success");
         
 			return deleteStorageBundleResponse;
         }

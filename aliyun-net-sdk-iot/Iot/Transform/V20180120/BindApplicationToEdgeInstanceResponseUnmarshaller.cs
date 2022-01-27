@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class BindApplicationToEdgeInstanceResponseUnmarshaller
     {
-        public static BindApplicationToEdgeInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static BindApplicationToEdgeInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BindApplicationToEdgeInstanceResponse bindApplicationToEdgeInstanceResponse = new BindApplicationToEdgeInstanceResponse();
 
-			bindApplicationToEdgeInstanceResponse.HttpResponse = context.HttpResponse;
-			bindApplicationToEdgeInstanceResponse.RequestId = context.StringValue("BindApplicationToEdgeInstance.RequestId");
-			bindApplicationToEdgeInstanceResponse.Success = context.BooleanValue("BindApplicationToEdgeInstance.Success");
-			bindApplicationToEdgeInstanceResponse.Code = context.StringValue("BindApplicationToEdgeInstance.Code");
-			bindApplicationToEdgeInstanceResponse.ErrorMessage = context.StringValue("BindApplicationToEdgeInstance.ErrorMessage");
+			bindApplicationToEdgeInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			bindApplicationToEdgeInstanceResponse.RequestId = _ctx.StringValue("BindApplicationToEdgeInstance.RequestId");
+			bindApplicationToEdgeInstanceResponse.Success = _ctx.BooleanValue("BindApplicationToEdgeInstance.Success");
+			bindApplicationToEdgeInstanceResponse.Code = _ctx.StringValue("BindApplicationToEdgeInstance.Code");
+			bindApplicationToEdgeInstanceResponse.ErrorMessage = _ctx.StringValue("BindApplicationToEdgeInstance.ErrorMessage");
         
 			return bindApplicationToEdgeInstanceResponse;
         }

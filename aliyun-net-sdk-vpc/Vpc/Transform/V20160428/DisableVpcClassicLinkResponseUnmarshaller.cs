@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DisableVpcClassicLinkResponseUnmarshaller
     {
-        public static DisableVpcClassicLinkResponse Unmarshall(UnmarshallerContext context)
+        public static DisableVpcClassicLinkResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DisableVpcClassicLinkResponse disableVpcClassicLinkResponse = new DisableVpcClassicLinkResponse();
 
-			disableVpcClassicLinkResponse.HttpResponse = context.HttpResponse;
-			disableVpcClassicLinkResponse.RequestId = context.StringValue("DisableVpcClassicLink.RequestId");
+			disableVpcClassicLinkResponse.HttpResponse = _ctx.HttpResponse;
+			disableVpcClassicLinkResponse.RequestId = _ctx.StringValue("DisableVpcClassicLink.RequestId");
         
 			return disableVpcClassicLinkResponse;
         }

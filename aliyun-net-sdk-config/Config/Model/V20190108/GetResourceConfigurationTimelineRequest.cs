@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Config;
 using Aliyun.Acs.Config.Transform;
 using Aliyun.Acs.Config.Transform.V20190108;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Config.Model.V20190108
     public class GetResourceConfigurationTimelineRequest : RpcAcsRequest<GetResourceConfigurationTimelineResponse>
     {
         public GetResourceConfigurationTimelineRequest()
-            : base("Config", "2019-01-08", "GetResourceConfigurationTimeline", "Config", "openAPI")
+            : base("Config", "2019-01-08", "GetResourceConfigurationTimeline")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

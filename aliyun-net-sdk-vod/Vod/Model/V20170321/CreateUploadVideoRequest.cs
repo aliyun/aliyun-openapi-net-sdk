@@ -34,15 +34,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
-
-		private long? resourceOwnerId;
-
-		private string transcodeMode;
 
 		private string description;
 
@@ -60,14 +56,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string workflowId;
 
-		private string customMediaInfo;
-
-		private string resourceOwnerAccount;
-
-		private string iP;
-
-		private long? ownerId;
-
 		private string tags;
 
 		private string fileName;
@@ -75,32 +63,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string templateGroupId;
 
 		private string appId;
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string TranscodeMode
-		{
-			get
-			{
-				return transcodeMode;
-			}
-			set	
-			{
-				transcodeMode = value;
-				DictionaryUtil.Add(QueryParameters, "TranscodeMode", value);
-			}
-		}
 
 		public string Description
 		{
@@ -203,58 +165,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				workflowId = value;
 				DictionaryUtil.Add(QueryParameters, "WorkflowId", value);
-			}
-		}
-
-		public string CustomMediaInfo
-		{
-			get
-			{
-				return customMediaInfo;
-			}
-			set	
-			{
-				customMediaInfo = value;
-				DictionaryUtil.Add(QueryParameters, "CustomMediaInfo", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string IP
-		{
-			get
-			{
-				return iP;
-			}
-			set	
-			{
-				iP = value;
-				DictionaryUtil.Add(QueryParameters, "IP", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

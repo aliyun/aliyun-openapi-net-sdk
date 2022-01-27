@@ -34,11 +34,13 @@ namespace Aliyun.Acs.Iot.Model.V20180120
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Iot.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Iot.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
+
+		private List<string> groupTypess = new List<string>(){ };
 
 		private string superGroupId;
 
@@ -49,6 +51,23 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private int? currentPage;
 
 		private string groupName;
+
+		public List<string> GroupTypess
+		{
+			get
+			{
+				return groupTypess;
+			}
+
+			set
+			{
+				groupTypess = value;
+				for (int i = 0; i < groupTypess.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"GroupTypes." + (i + 1) , groupTypess[i]);
+				}
+			}
+		}
 
 		public string SuperGroupId
 		{

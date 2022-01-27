@@ -26,16 +26,16 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveDomainRealtimeLogDeliveryResponseUnmarshaller
     {
-        public static DescribeLiveDomainRealtimeLogDeliveryResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveDomainRealtimeLogDeliveryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveDomainRealtimeLogDeliveryResponse describeLiveDomainRealtimeLogDeliveryResponse = new DescribeLiveDomainRealtimeLogDeliveryResponse();
 
-			describeLiveDomainRealtimeLogDeliveryResponse.HttpResponse = context.HttpResponse;
-			describeLiveDomainRealtimeLogDeliveryResponse.RequestId = context.StringValue("DescribeLiveDomainRealtimeLogDelivery.RequestId");
-			describeLiveDomainRealtimeLogDeliveryResponse.Project = context.StringValue("DescribeLiveDomainRealtimeLogDelivery.Project");
-			describeLiveDomainRealtimeLogDeliveryResponse.Region = context.StringValue("DescribeLiveDomainRealtimeLogDelivery.Region");
-			describeLiveDomainRealtimeLogDeliveryResponse.Logstore = context.StringValue("DescribeLiveDomainRealtimeLogDelivery.Logstore");
-			describeLiveDomainRealtimeLogDeliveryResponse.Status = context.StringValue("DescribeLiveDomainRealtimeLogDelivery.Status");
+			describeLiveDomainRealtimeLogDeliveryResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveDomainRealtimeLogDeliveryResponse.RequestId = _ctx.StringValue("DescribeLiveDomainRealtimeLogDelivery.RequestId");
+			describeLiveDomainRealtimeLogDeliveryResponse.Project = _ctx.StringValue("DescribeLiveDomainRealtimeLogDelivery.Project");
+			describeLiveDomainRealtimeLogDeliveryResponse.Region = _ctx.StringValue("DescribeLiveDomainRealtimeLogDelivery.Region");
+			describeLiveDomainRealtimeLogDeliveryResponse.Logstore = _ctx.StringValue("DescribeLiveDomainRealtimeLogDelivery.Logstore");
+			describeLiveDomainRealtimeLogDeliveryResponse.Status = _ctx.StringValue("DescribeLiveDomainRealtimeLogDelivery.Status");
         
 			return describeLiveDomainRealtimeLogDeliveryResponse;
         }

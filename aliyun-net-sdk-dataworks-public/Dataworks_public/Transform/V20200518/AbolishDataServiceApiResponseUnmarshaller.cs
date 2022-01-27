@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class AbolishDataServiceApiResponseUnmarshaller
     {
-        public static AbolishDataServiceApiResponse Unmarshall(UnmarshallerContext context)
+        public static AbolishDataServiceApiResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AbolishDataServiceApiResponse abolishDataServiceApiResponse = new AbolishDataServiceApiResponse();
 
-			abolishDataServiceApiResponse.HttpResponse = context.HttpResponse;
-			abolishDataServiceApiResponse.Data = context.BooleanValue("AbolishDataServiceApi.Data");
-			abolishDataServiceApiResponse.ErrorCode = context.StringValue("AbolishDataServiceApi.ErrorCode");
-			abolishDataServiceApiResponse.ErrorMessage = context.StringValue("AbolishDataServiceApi.ErrorMessage");
-			abolishDataServiceApiResponse.HttpStatusCode = context.IntegerValue("AbolishDataServiceApi.HttpStatusCode");
-			abolishDataServiceApiResponse.RequestId = context.StringValue("AbolishDataServiceApi.RequestId");
-			abolishDataServiceApiResponse.Success = context.BooleanValue("AbolishDataServiceApi.Success");
+			abolishDataServiceApiResponse.HttpResponse = _ctx.HttpResponse;
+			abolishDataServiceApiResponse.Data = _ctx.BooleanValue("AbolishDataServiceApi.Data");
+			abolishDataServiceApiResponse.ErrorCode = _ctx.StringValue("AbolishDataServiceApi.ErrorCode");
+			abolishDataServiceApiResponse.ErrorMessage = _ctx.StringValue("AbolishDataServiceApi.ErrorMessage");
+			abolishDataServiceApiResponse.HttpStatusCode = _ctx.IntegerValue("AbolishDataServiceApi.HttpStatusCode");
+			abolishDataServiceApiResponse.RequestId = _ctx.StringValue("AbolishDataServiceApi.RequestId");
+			abolishDataServiceApiResponse.Success = _ctx.BooleanValue("AbolishDataServiceApi.Success");
         
 			return abolishDataServiceApiResponse;
         }

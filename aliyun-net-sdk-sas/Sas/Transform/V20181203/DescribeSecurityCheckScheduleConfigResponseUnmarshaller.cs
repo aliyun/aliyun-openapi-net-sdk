@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeSecurityCheckScheduleConfigResponseUnmarshaller
     {
-        public static DescribeSecurityCheckScheduleConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSecurityCheckScheduleConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSecurityCheckScheduleConfigResponse describeSecurityCheckScheduleConfigResponse = new DescribeSecurityCheckScheduleConfigResponse();
 
-			describeSecurityCheckScheduleConfigResponse.HttpResponse = context.HttpResponse;
-			describeSecurityCheckScheduleConfigResponse.RequestId = context.StringValue("DescribeSecurityCheckScheduleConfig.RequestId");
+			describeSecurityCheckScheduleConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeSecurityCheckScheduleConfigResponse.RequestId = _ctx.StringValue("DescribeSecurityCheckScheduleConfig.RequestId");
 
 			DescribeSecurityCheckScheduleConfigResponse.DescribeSecurityCheckScheduleConfig_RiskCheckJobConfig riskCheckJobConfig = new DescribeSecurityCheckScheduleConfigResponse.DescribeSecurityCheckScheduleConfig_RiskCheckJobConfig();
-			riskCheckJobConfig.StartTime = context.IntegerValue("DescribeSecurityCheckScheduleConfig.RiskCheckJobConfig.StartTime");
-			riskCheckJobConfig.EndTime = context.IntegerValue("DescribeSecurityCheckScheduleConfig.RiskCheckJobConfig.EndTime");
-			riskCheckJobConfig.DaysOfWeek = context.StringValue("DescribeSecurityCheckScheduleConfig.RiskCheckJobConfig.DaysOfWeek");
+			riskCheckJobConfig.StartTime = _ctx.IntegerValue("DescribeSecurityCheckScheduleConfig.RiskCheckJobConfig.StartTime");
+			riskCheckJobConfig.EndTime = _ctx.IntegerValue("DescribeSecurityCheckScheduleConfig.RiskCheckJobConfig.EndTime");
+			riskCheckJobConfig.DaysOfWeek = _ctx.StringValue("DescribeSecurityCheckScheduleConfig.RiskCheckJobConfig.DaysOfWeek");
 			describeSecurityCheckScheduleConfigResponse.RiskCheckJobConfig = riskCheckJobConfig;
         
 			return describeSecurityCheckScheduleConfigResponse;

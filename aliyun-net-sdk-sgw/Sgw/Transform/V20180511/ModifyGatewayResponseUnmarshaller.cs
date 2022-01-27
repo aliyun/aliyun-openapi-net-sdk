@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class ModifyGatewayResponseUnmarshaller
     {
-        public static ModifyGatewayResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyGatewayResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyGatewayResponse modifyGatewayResponse = new ModifyGatewayResponse();
 
-			modifyGatewayResponse.HttpResponse = context.HttpResponse;
-			modifyGatewayResponse.RequestId = context.StringValue("ModifyGateway.RequestId");
-			modifyGatewayResponse.Success = context.BooleanValue("ModifyGateway.Success");
-			modifyGatewayResponse.Code = context.StringValue("ModifyGateway.Code");
-			modifyGatewayResponse.Message = context.StringValue("ModifyGateway.Message");
-			modifyGatewayResponse.GatewayId = context.StringValue("ModifyGateway.GatewayId");
+			modifyGatewayResponse.HttpResponse = _ctx.HttpResponse;
+			modifyGatewayResponse.Message = _ctx.StringValue("ModifyGateway.Message");
+			modifyGatewayResponse.RequestId = _ctx.StringValue("ModifyGateway.RequestId");
+			modifyGatewayResponse.GatewayId = _ctx.StringValue("ModifyGateway.GatewayId");
+			modifyGatewayResponse.Code = _ctx.StringValue("ModifyGateway.Code");
+			modifyGatewayResponse.Success = _ctx.BooleanValue("ModifyGateway.Success");
         
 			return modifyGatewayResponse;
         }

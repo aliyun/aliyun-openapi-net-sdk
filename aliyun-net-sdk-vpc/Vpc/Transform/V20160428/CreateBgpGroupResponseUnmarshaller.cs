@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class CreateBgpGroupResponseUnmarshaller
     {
-        public static CreateBgpGroupResponse Unmarshall(UnmarshallerContext context)
+        public static CreateBgpGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateBgpGroupResponse createBgpGroupResponse = new CreateBgpGroupResponse();
 
-			createBgpGroupResponse.HttpResponse = context.HttpResponse;
-			createBgpGroupResponse.RequestId = context.StringValue("CreateBgpGroup.RequestId");
-			createBgpGroupResponse.BgpGroupId = context.StringValue("CreateBgpGroup.BgpGroupId");
+			createBgpGroupResponse.HttpResponse = _ctx.HttpResponse;
+			createBgpGroupResponse.RequestId = _ctx.StringValue("CreateBgpGroup.RequestId");
+			createBgpGroupResponse.BgpGroupId = _ctx.StringValue("CreateBgpGroup.BgpGroupId");
         
 			return createBgpGroupResponse;
         }

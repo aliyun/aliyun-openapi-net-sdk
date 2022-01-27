@@ -26,23 +26,23 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveAsrConfigResponseUnmarshaller
     {
-        public static DescribeLiveAsrConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveAsrConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveAsrConfigResponse describeLiveAsrConfigResponse = new DescribeLiveAsrConfigResponse();
 
-			describeLiveAsrConfigResponse.HttpResponse = context.HttpResponse;
-			describeLiveAsrConfigResponse.RequestId = context.StringValue("DescribeLiveAsrConfig.RequestId");
+			describeLiveAsrConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveAsrConfigResponse.RequestId = _ctx.StringValue("DescribeLiveAsrConfig.RequestId");
 
 			List<DescribeLiveAsrConfigResponse.DescribeLiveAsrConfig_LiveAsrConfigList> describeLiveAsrConfigResponse_liveAsrConfig = new List<DescribeLiveAsrConfigResponse.DescribeLiveAsrConfig_LiveAsrConfigList>();
-			for (int i = 0; i < context.Length("DescribeLiveAsrConfig.LiveAsrConfig.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveAsrConfig.LiveAsrConfig.Length"); i++) {
 				DescribeLiveAsrConfigResponse.DescribeLiveAsrConfig_LiveAsrConfigList liveAsrConfigList = new DescribeLiveAsrConfigResponse.DescribeLiveAsrConfig_LiveAsrConfigList();
-				liveAsrConfigList.DomainName = context.IntegerValue("DescribeLiveAsrConfig.LiveAsrConfig["+ i +"].DomainName");
-				liveAsrConfigList.AppName = context.StringValue("DescribeLiveAsrConfig.LiveAsrConfig["+ i +"].AppName");
-				liveAsrConfigList.StreamName = context.StringValue("DescribeLiveAsrConfig.LiveAsrConfig["+ i +"].StreamName");
-				liveAsrConfigList.Period = context.IntegerValue("DescribeLiveAsrConfig.LiveAsrConfig["+ i +"].Period");
-				liveAsrConfigList.MnsTopic = context.StringValue("DescribeLiveAsrConfig.LiveAsrConfig["+ i +"].MnsTopic");
-				liveAsrConfigList.MnsRegion = context.StringValue("DescribeLiveAsrConfig.LiveAsrConfig["+ i +"].MnsRegion");
-				liveAsrConfigList.HttpCallbackURL = context.StringValue("DescribeLiveAsrConfig.LiveAsrConfig["+ i +"].HttpCallbackURL");
+				liveAsrConfigList.DomainName = _ctx.IntegerValue("DescribeLiveAsrConfig.LiveAsrConfig["+ i +"].DomainName");
+				liveAsrConfigList.AppName = _ctx.StringValue("DescribeLiveAsrConfig.LiveAsrConfig["+ i +"].AppName");
+				liveAsrConfigList.StreamName = _ctx.StringValue("DescribeLiveAsrConfig.LiveAsrConfig["+ i +"].StreamName");
+				liveAsrConfigList.Period = _ctx.IntegerValue("DescribeLiveAsrConfig.LiveAsrConfig["+ i +"].Period");
+				liveAsrConfigList.MnsTopic = _ctx.StringValue("DescribeLiveAsrConfig.LiveAsrConfig["+ i +"].MnsTopic");
+				liveAsrConfigList.MnsRegion = _ctx.StringValue("DescribeLiveAsrConfig.LiveAsrConfig["+ i +"].MnsRegion");
+				liveAsrConfigList.HttpCallbackURL = _ctx.StringValue("DescribeLiveAsrConfig.LiveAsrConfig["+ i +"].HttpCallbackURL");
 
 				describeLiveAsrConfigResponse_liveAsrConfig.Add(liveAsrConfigList);
 			}

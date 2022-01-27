@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class OperateBatchDomainResponseUnmarshaller
     {
-        public static OperateBatchDomainResponse Unmarshall(UnmarshallerContext context)
+        public static OperateBatchDomainResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			OperateBatchDomainResponse operateBatchDomainResponse = new OperateBatchDomainResponse();
 
-			operateBatchDomainResponse.HttpResponse = context.HttpResponse;
-			operateBatchDomainResponse.RequestId = context.StringValue("OperateBatchDomain.RequestId");
-			operateBatchDomainResponse.TaskId = context.LongValue("OperateBatchDomain.TaskId");
+			operateBatchDomainResponse.HttpResponse = _ctx.HttpResponse;
+			operateBatchDomainResponse.RequestId = _ctx.StringValue("OperateBatchDomain.RequestId");
+			operateBatchDomainResponse.TaskId = _ctx.LongValue("OperateBatchDomain.TaskId");
         
 			return operateBatchDomainResponse;
         }

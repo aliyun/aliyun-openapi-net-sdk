@@ -35,14 +35,16 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.EHPC.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.EHPC.Endpoint.endpointRegionalType, null);
             }
         }
 
 		private List<Instance> instances = new List<Instance>(){ };
 
 		private string clusterId;
+
+		private bool? sync;
 
 		private bool? releaseInstance;
 
@@ -73,6 +75,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				clusterId = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public bool? Sync
+		{
+			get
+			{
+				return sync;
+			}
+			set	
+			{
+				sync = value;
+				DictionaryUtil.Add(QueryParameters, "Sync", value.ToString());
 			}
 		}
 

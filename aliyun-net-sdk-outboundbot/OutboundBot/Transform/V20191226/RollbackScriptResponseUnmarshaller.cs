@@ -26,16 +26,16 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class RollbackScriptResponseUnmarshaller
     {
-        public static RollbackScriptResponse Unmarshall(UnmarshallerContext context)
+        public static RollbackScriptResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RollbackScriptResponse rollbackScriptResponse = new RollbackScriptResponse();
 
-			rollbackScriptResponse.HttpResponse = context.HttpResponse;
-			rollbackScriptResponse.RequestId = context.StringValue("RollbackScript.RequestId");
-			rollbackScriptResponse.Success = context.BooleanValue("RollbackScript.Success");
-			rollbackScriptResponse.Code = context.StringValue("RollbackScript.Code");
-			rollbackScriptResponse.Message = context.StringValue("RollbackScript.Message");
-			rollbackScriptResponse.HttpStatusCode = context.IntegerValue("RollbackScript.HttpStatusCode");
+			rollbackScriptResponse.HttpResponse = _ctx.HttpResponse;
+			rollbackScriptResponse.Code = _ctx.StringValue("RollbackScript.Code");
+			rollbackScriptResponse.HttpStatusCode = _ctx.IntegerValue("RollbackScript.HttpStatusCode");
+			rollbackScriptResponse.Message = _ctx.StringValue("RollbackScript.Message");
+			rollbackScriptResponse.RequestId = _ctx.StringValue("RollbackScript.RequestId");
+			rollbackScriptResponse.Success = _ctx.BooleanValue("RollbackScript.Success");
         
 			return rollbackScriptResponse;
         }

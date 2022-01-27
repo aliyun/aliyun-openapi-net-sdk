@@ -26,20 +26,20 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 {
     public class DescribeScdnCcTopUrlResponseUnmarshaller
     {
-        public static DescribeScdnCcTopUrlResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeScdnCcTopUrlResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeScdnCcTopUrlResponse describeScdnCcTopUrlResponse = new DescribeScdnCcTopUrlResponse();
 
-			describeScdnCcTopUrlResponse.HttpResponse = context.HttpResponse;
-			describeScdnCcTopUrlResponse.RequestId = context.StringValue("DescribeScdnCcTopUrl.RequestId");
-			describeScdnCcTopUrlResponse.Total = context.StringValue("DescribeScdnCcTopUrl.Total");
-			describeScdnCcTopUrlResponse.DomainName = context.StringValue("DescribeScdnCcTopUrl.DomainName");
+			describeScdnCcTopUrlResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnCcTopUrlResponse.RequestId = _ctx.StringValue("DescribeScdnCcTopUrl.RequestId");
+			describeScdnCcTopUrlResponse.Total = _ctx.StringValue("DescribeScdnCcTopUrl.Total");
+			describeScdnCcTopUrlResponse.DomainName = _ctx.StringValue("DescribeScdnCcTopUrl.DomainName");
 
 			List<DescribeScdnCcTopUrlResponse.DescribeScdnCcTopUrl_AttackUrlDatas> describeScdnCcTopUrlResponse_attackUrlDataList = new List<DescribeScdnCcTopUrlResponse.DescribeScdnCcTopUrl_AttackUrlDatas>();
-			for (int i = 0; i < context.Length("DescribeScdnCcTopUrl.AttackUrlDataList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeScdnCcTopUrl.AttackUrlDataList.Length"); i++) {
 				DescribeScdnCcTopUrlResponse.DescribeScdnCcTopUrl_AttackUrlDatas attackUrlDatas = new DescribeScdnCcTopUrlResponse.DescribeScdnCcTopUrl_AttackUrlDatas();
-				attackUrlDatas.Url = context.StringValue("DescribeScdnCcTopUrl.AttackUrlDataList["+ i +"].Url");
-				attackUrlDatas.AttackCount = context.StringValue("DescribeScdnCcTopUrl.AttackUrlDataList["+ i +"].AttackCount");
+				attackUrlDatas.Url = _ctx.StringValue("DescribeScdnCcTopUrl.AttackUrlDataList["+ i +"].Url");
+				attackUrlDatas.AttackCount = _ctx.StringValue("DescribeScdnCcTopUrl.AttackUrlDataList["+ i +"].AttackCount");
 
 				describeScdnCcTopUrlResponse_attackUrlDataList.Add(attackUrlDatas);
 			}

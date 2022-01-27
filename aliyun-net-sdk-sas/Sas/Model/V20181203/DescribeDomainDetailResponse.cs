@@ -31,6 +31,10 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string rootDomain;
 
+		private int? vulCount;
+
+		private int? alarmCount;
+
 		private List<DescribeDomainDetail_DomainDetailItem> domainDetailItems;
 
 		public string RequestId
@@ -66,6 +70,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				rootDomain = value;
+			}
+		}
+
+		public int? VulCount
+		{
+			get
+			{
+				return vulCount;
+			}
+			set	
+			{
+				vulCount = value;
+			}
+		}
+
+		public int? AlarmCount
+		{
+			get
+			{
+				return alarmCount;
+			}
+			set	
+			{
+				alarmCount = value;
 			}
 		}
 

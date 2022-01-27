@@ -76,7 +76,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private string config;
 
+			private string resourceGroupId;
+
 			private List<DescribeLogstash_Endpoint> endpointList;
+
+			private List<DescribeLogstash_TagsItem> tags;
+
+			private List<DescribeLogstash_ZoneInfosItem> zoneInfos;
+
+			private List<Dictionary<string, string>> extendConfigs;
 
 			private DescribeLogstash_NodeSpec nodeSpec;
 
@@ -202,6 +210,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
 			public List<DescribeLogstash_Endpoint> EndpointList
 			{
 				get
@@ -211,6 +231,42 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					endpointList = value;
+				}
+			}
+
+			public List<DescribeLogstash_TagsItem> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public List<DescribeLogstash_ZoneInfosItem> ZoneInfos
+			{
+				get
+				{
+					return zoneInfos;
+				}
+				set	
+				{
+					zoneInfos = value;
+				}
+			}
+
+			public List<Dictionary<string, string>> ExtendConfigs
+			{
+				get
+				{
+					return extendConfigs;
+				}
+				set	
+				{
+					extendConfigs = value;
 				}
 			}
 
@@ -245,6 +301,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 				private string port;
 
+				private string zoneId;
+
 				public string Host
 				{
 					get
@@ -268,6 +326,82 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						port = value;
 					}
 				}
+
+				public string ZoneId
+				{
+					get
+					{
+						return zoneId;
+					}
+					set	
+					{
+						zoneId = value;
+					}
+				}
+			}
+
+			public class DescribeLogstash_TagsItem
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
+					}
+				}
+			}
+
+			public class DescribeLogstash_ZoneInfosItem
+			{
+
+				private string zoneId;
+
+				private string status;
+
+				public string ZoneId
+				{
+					get
+					{
+						return zoneId;
+					}
+					set	
+					{
+						zoneId = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 			}
 
 			public class DescribeLogstash_NodeSpec
@@ -278,6 +412,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				private int? disk;
 
 				private string diskType;
+
+				private bool? diskEncryption;
 
 				public string Spec
 				{
@@ -312,6 +448,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						diskType = value;
+					}
+				}
+
+				public bool? DiskEncryption
+				{
+					get
+					{
+						return diskEncryption;
+					}
+					set	
+					{
+						diskEncryption = value;
 					}
 				}
 			}

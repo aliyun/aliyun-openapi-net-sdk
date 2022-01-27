@@ -26,25 +26,31 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 {
     public class DescribeSecretResponseUnmarshaller
     {
-        public static DescribeSecretResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSecretResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSecretResponse describeSecretResponse = new DescribeSecretResponse();
 
-			describeSecretResponse.HttpResponse = context.HttpResponse;
-			describeSecretResponse.RequestId = context.StringValue("DescribeSecret.RequestId");
-			describeSecretResponse.Arn = context.StringValue("DescribeSecret.Arn");
-			describeSecretResponse.SecretName = context.StringValue("DescribeSecret.SecretName");
-			describeSecretResponse.EncryptionKeyId = context.StringValue("DescribeSecret.EncryptionKeyId");
-			describeSecretResponse.Description = context.StringValue("DescribeSecret.Description");
-			describeSecretResponse.CreateTime = context.StringValue("DescribeSecret.CreateTime");
-			describeSecretResponse.UpdateTime = context.StringValue("DescribeSecret.UpdateTime");
-			describeSecretResponse.PlannedDeleteTime = context.StringValue("DescribeSecret.PlannedDeleteTime");
+			describeSecretResponse.HttpResponse = _ctx.HttpResponse;
+			describeSecretResponse.RequestId = _ctx.StringValue("DescribeSecret.RequestId");
+			describeSecretResponse.Arn = _ctx.StringValue("DescribeSecret.Arn");
+			describeSecretResponse.SecretName = _ctx.StringValue("DescribeSecret.SecretName");
+			describeSecretResponse.EncryptionKeyId = _ctx.StringValue("DescribeSecret.EncryptionKeyId");
+			describeSecretResponse.Description = _ctx.StringValue("DescribeSecret.Description");
+			describeSecretResponse.CreateTime = _ctx.StringValue("DescribeSecret.CreateTime");
+			describeSecretResponse.UpdateTime = _ctx.StringValue("DescribeSecret.UpdateTime");
+			describeSecretResponse.PlannedDeleteTime = _ctx.StringValue("DescribeSecret.PlannedDeleteTime");
+			describeSecretResponse.AutomaticRotation = _ctx.StringValue("DescribeSecret.AutomaticRotation");
+			describeSecretResponse.LastRotationDate = _ctx.StringValue("DescribeSecret.LastRotationDate");
+			describeSecretResponse.RotationInterval = _ctx.StringValue("DescribeSecret.RotationInterval");
+			describeSecretResponse.NextRotationDate = _ctx.StringValue("DescribeSecret.NextRotationDate");
+			describeSecretResponse.ExtendedConfig = _ctx.StringValue("DescribeSecret.ExtendedConfig");
+			describeSecretResponse.SecretType = _ctx.StringValue("DescribeSecret.SecretType");
 
 			List<DescribeSecretResponse.DescribeSecret_Tag> describeSecretResponse_tags = new List<DescribeSecretResponse.DescribeSecret_Tag>();
-			for (int i = 0; i < context.Length("DescribeSecret.Tags.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeSecret.Tags.Length"); i++) {
 				DescribeSecretResponse.DescribeSecret_Tag tag = new DescribeSecretResponse.DescribeSecret_Tag();
-				tag.TagKey = context.StringValue("DescribeSecret.Tags["+ i +"].TagKey");
-				tag.TagValue = context.StringValue("DescribeSecret.Tags["+ i +"].TagValue");
+				tag.TagKey = _ctx.StringValue("DescribeSecret.Tags["+ i +"].TagKey");
+				tag.TagValue = _ctx.StringValue("DescribeSecret.Tags["+ i +"].TagValue");
 
 				describeSecretResponse_tags.Add(tag);
 			}

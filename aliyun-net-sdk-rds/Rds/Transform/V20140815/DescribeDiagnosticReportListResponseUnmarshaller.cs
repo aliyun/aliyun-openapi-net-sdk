@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeDiagnosticReportListResponseUnmarshaller
     {
-        public static DescribeDiagnosticReportListResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDiagnosticReportListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDiagnosticReportListResponse describeDiagnosticReportListResponse = new DescribeDiagnosticReportListResponse();
 
-			describeDiagnosticReportListResponse.HttpResponse = context.HttpResponse;
-			describeDiagnosticReportListResponse.RequestId = context.StringValue("DescribeDiagnosticReportList.RequestId");
+			describeDiagnosticReportListResponse.HttpResponse = _ctx.HttpResponse;
+			describeDiagnosticReportListResponse.RequestId = _ctx.StringValue("DescribeDiagnosticReportList.RequestId");
 
 			List<DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report> describeDiagnosticReportListResponse_reportList = new List<DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report>();
-			for (int i = 0; i < context.Length("DescribeDiagnosticReportList.ReportList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDiagnosticReportList.ReportList.Length"); i++) {
 				DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report report = new DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report();
-				report.DiagnosticTime = context.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].DiagnosticTime");
-				report.Score = context.IntegerValue("DescribeDiagnosticReportList.ReportList["+ i +"].Score");
-				report.StartTime = context.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].StartTime");
-				report.EndTime = context.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].EndTime");
-				report.DownloadURL = context.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].DownloadURL");
+				report.DiagnosticTime = _ctx.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].DiagnosticTime");
+				report.Score = _ctx.IntegerValue("DescribeDiagnosticReportList.ReportList["+ i +"].Score");
+				report.StartTime = _ctx.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].StartTime");
+				report.EndTime = _ctx.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].EndTime");
+				report.DownloadURL = _ctx.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].DownloadURL");
 
 				describeDiagnosticReportListResponse_reportList.Add(report);
 			}

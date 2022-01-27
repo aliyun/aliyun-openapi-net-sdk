@@ -26,35 +26,35 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class PollTaskResultResponseUnmarshaller
     {
-        public static PollTaskResultResponse Unmarshall(UnmarshallerContext context)
+        public static PollTaskResultResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PollTaskResultResponse pollTaskResultResponse = new PollTaskResultResponse();
 
-			pollTaskResultResponse.HttpResponse = context.HttpResponse;
-			pollTaskResultResponse.RequestId = context.StringValue("PollTaskResult.RequestId");
-			pollTaskResultResponse.TotalItemNum = context.IntegerValue("PollTaskResult.TotalItemNum");
-			pollTaskResultResponse.CurrentPageNum = context.IntegerValue("PollTaskResult.CurrentPageNum");
-			pollTaskResultResponse.TotalPageNum = context.IntegerValue("PollTaskResult.TotalPageNum");
-			pollTaskResultResponse.PageSize = context.IntegerValue("PollTaskResult.PageSize");
-			pollTaskResultResponse.PrePage = context.BooleanValue("PollTaskResult.PrePage");
-			pollTaskResultResponse.NextPage = context.BooleanValue("PollTaskResult.NextPage");
+			pollTaskResultResponse.HttpResponse = _ctx.HttpResponse;
+			pollTaskResultResponse.RequestId = _ctx.StringValue("PollTaskResult.RequestId");
+			pollTaskResultResponse.TotalItemNum = _ctx.IntegerValue("PollTaskResult.TotalItemNum");
+			pollTaskResultResponse.CurrentPageNum = _ctx.IntegerValue("PollTaskResult.CurrentPageNum");
+			pollTaskResultResponse.TotalPageNum = _ctx.IntegerValue("PollTaskResult.TotalPageNum");
+			pollTaskResultResponse.PageSize = _ctx.IntegerValue("PollTaskResult.PageSize");
+			pollTaskResultResponse.PrePage = _ctx.BooleanValue("PollTaskResult.PrePage");
+			pollTaskResultResponse.NextPage = _ctx.BooleanValue("PollTaskResult.NextPage");
 
 			List<PollTaskResultResponse.PollTaskResult_TaskDetail> pollTaskResultResponse_data = new List<PollTaskResultResponse.PollTaskResult_TaskDetail>();
-			for (int i = 0; i < context.Length("PollTaskResult.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("PollTaskResult.Data.Length"); i++) {
 				PollTaskResultResponse.PollTaskResult_TaskDetail taskDetail = new PollTaskResultResponse.PollTaskResult_TaskDetail();
-				taskDetail.TaskNo = context.StringValue("PollTaskResult.Data["+ i +"].TaskNo");
-				taskDetail.TaskDetailNo = context.StringValue("PollTaskResult.Data["+ i +"].TaskDetailNo");
-				taskDetail.TaskType = context.StringValue("PollTaskResult.Data["+ i +"].TaskType");
-				taskDetail.InstanceId = context.StringValue("PollTaskResult.Data["+ i +"].InstanceId");
-				taskDetail.DomainName = context.StringValue("PollTaskResult.Data["+ i +"].DomainName");
-				taskDetail.TaskStatus = context.StringValue("PollTaskResult.Data["+ i +"].TaskStatus");
-				taskDetail.UpdateTime = context.StringValue("PollTaskResult.Data["+ i +"].UpdateTime");
-				taskDetail.CreateTime = context.StringValue("PollTaskResult.Data["+ i +"].CreateTime");
-				taskDetail.TryCount = context.IntegerValue("PollTaskResult.Data["+ i +"].TryCount");
-				taskDetail.ErrorMsg = context.StringValue("PollTaskResult.Data["+ i +"].ErrorMsg");
-				taskDetail.TaskStatusCode = context.IntegerValue("PollTaskResult.Data["+ i +"].TaskStatusCode");
-				taskDetail.TaskResult = context.StringValue("PollTaskResult.Data["+ i +"].TaskResult");
-				taskDetail.TaskTypeDescription = context.StringValue("PollTaskResult.Data["+ i +"].TaskTypeDescription");
+				taskDetail.TaskNo = _ctx.StringValue("PollTaskResult.Data["+ i +"].TaskNo");
+				taskDetail.TaskDetailNo = _ctx.StringValue("PollTaskResult.Data["+ i +"].TaskDetailNo");
+				taskDetail.TaskType = _ctx.StringValue("PollTaskResult.Data["+ i +"].TaskType");
+				taskDetail.InstanceId = _ctx.StringValue("PollTaskResult.Data["+ i +"].InstanceId");
+				taskDetail.DomainName = _ctx.StringValue("PollTaskResult.Data["+ i +"].DomainName");
+				taskDetail.TaskStatus = _ctx.StringValue("PollTaskResult.Data["+ i +"].TaskStatus");
+				taskDetail.UpdateTime = _ctx.StringValue("PollTaskResult.Data["+ i +"].UpdateTime");
+				taskDetail.CreateTime = _ctx.StringValue("PollTaskResult.Data["+ i +"].CreateTime");
+				taskDetail.TryCount = _ctx.IntegerValue("PollTaskResult.Data["+ i +"].TryCount");
+				taskDetail.ErrorMsg = _ctx.StringValue("PollTaskResult.Data["+ i +"].ErrorMsg");
+				taskDetail.TaskStatusCode = _ctx.IntegerValue("PollTaskResult.Data["+ i +"].TaskStatusCode");
+				taskDetail.TaskResult = _ctx.StringValue("PollTaskResult.Data["+ i +"].TaskResult");
+				taskDetail.TaskTypeDescription = _ctx.StringValue("PollTaskResult.Data["+ i +"].TaskTypeDescription");
 
 				pollTaskResultResponse_data.Add(taskDetail);
 			}

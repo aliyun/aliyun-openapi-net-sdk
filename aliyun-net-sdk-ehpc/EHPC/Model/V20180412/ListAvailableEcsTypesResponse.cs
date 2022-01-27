@@ -137,6 +137,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 				private string status;
 
+				private List<string> zoneIds;
+
 				public int? CpuCoreCount
 				{
 					get
@@ -266,6 +268,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 					set	
 					{
 						status = value;
+					}
+				}
+
+				public List<string> ZoneIds
+				{
+					get
+					{
+						return zoneIds;
+					}
+					set	
+					{
+						zoneIds = value;
 					}
 				}
 			}

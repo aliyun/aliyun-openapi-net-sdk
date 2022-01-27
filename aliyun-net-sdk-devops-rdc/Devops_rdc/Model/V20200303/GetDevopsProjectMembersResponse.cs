@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,25 +25,41 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class GetDevopsProjectMembersResponse : AcsResponse
 	{
 
-		private bool? successful;
+		private string requestId;
+
+		private string nextPageToken;
 
 		private string errorCode;
 
 		private string errorMsg;
 
-		private string requestId;
+		private bool? successful;
+
+		private int? total;
 
 		private List<GetDevopsProjectMembers_Member> _object;
 
-		public bool? Successful
+		public string RequestId
 		{
 			get
 			{
-				return successful;
+				return requestId;
 			}
 			set	
 			{
-				successful = value;
+				requestId = value;
+			}
+		}
+
+		public string NextPageToken
+		{
+			get
+			{
+				return nextPageToken;
+			}
+			set	
+			{
+				nextPageToken = value;
 			}
 		}
 
@@ -71,15 +87,27 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
-		public string RequestId
+		public bool? Successful
 		{
 			get
 			{
-				return requestId;
+				return successful;
 			}
 			set	
 			{
-				requestId = value;
+				successful = value;
+			}
+		}
+
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
 			}
 		}
 
@@ -98,29 +126,41 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 		public class GetDevopsProjectMembers_Member
 		{
 
-			private string memberId;
+			private string email;
+
+			private string avatarUrl;
 
 			private string userId;
+
+			private string memberId;
 
 			private int? role;
 
 			private string name;
 
-			private string avatarUrl;
-
-			private string email;
-
 			private string phone;
 
-			public string MemberId
+			public string Email
 			{
 				get
 				{
-					return memberId;
+					return email;
 				}
 				set	
 				{
-					memberId = value;
+					email = value;
+				}
+			}
+
+			public string AvatarUrl
+			{
+				get
+				{
+					return avatarUrl;
+				}
+				set	
+				{
+					avatarUrl = value;
 				}
 			}
 
@@ -133,6 +173,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				set	
 				{
 					userId = value;
+				}
+			}
+
+			public string MemberId
+			{
+				get
+				{
+					return memberId;
+				}
+				set	
+				{
+					memberId = value;
 				}
 			}
 
@@ -157,30 +209,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				set	
 				{
 					name = value;
-				}
-			}
-
-			public string AvatarUrl
-			{
-				get
-				{
-					return avatarUrl;
-				}
-				set	
-				{
-					avatarUrl = value;
-				}
-			}
-
-			public string Email
-			{
-				get
-				{
-					return email;
-				}
-				set	
-				{
-					email = value;
 				}
 			}
 

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.gpdb;
 using Aliyun.Acs.gpdb.Transform;
 using Aliyun.Acs.gpdb.Transform.V20160503;
 
@@ -30,28 +31,32 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
     public class ModifyDBInstanceMaintainTimeRequest : RpcAcsRequest<ModifyDBInstanceMaintainTimeResponse>
     {
         public ModifyDBInstanceMaintainTimeRequest()
-            : base("gpdb", "2016-05-03", "ModifyDBInstanceMaintainTime", "gpdb", "openAPI")
+            : base("gpdb", "2016-05-03", "ModifyDBInstanceMaintainTime")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string endTime;
-
-		private string dBInstanceId;
 
 		private string startTime;
 
-		private string accessKeyId;
+		private string dBInstanceId;
 
-		public string EndTime
+		private string endTime;
+
+		public string StartTime
 		{
 			get
 			{
-				return endTime;
+				return startTime;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -68,29 +73,16 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public string StartTime
+		public string EndTime
 		{
 			get
 			{
-				return startTime;
+				return endTime;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 

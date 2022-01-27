@@ -26,20 +26,20 @@ namespace Aliyun.Acs.videorecog.Transform.V20200320
 {
     public class GenerateVideoCoverResponseUnmarshaller
     {
-        public static GenerateVideoCoverResponse Unmarshall(UnmarshallerContext context)
+        public static GenerateVideoCoverResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GenerateVideoCoverResponse generateVideoCoverResponse = new GenerateVideoCoverResponse();
 
-			generateVideoCoverResponse.HttpResponse = context.HttpResponse;
-			generateVideoCoverResponse.RequestId = context.StringValue("GenerateVideoCover.RequestId");
+			generateVideoCoverResponse.HttpResponse = _ctx.HttpResponse;
+			generateVideoCoverResponse.RequestId = _ctx.StringValue("GenerateVideoCover.RequestId");
 
 			GenerateVideoCoverResponse.GenerateVideoCover_Data data = new GenerateVideoCoverResponse.GenerateVideoCover_Data();
 
 			List<GenerateVideoCoverResponse.GenerateVideoCover_Data.GenerateVideoCover_Output> data_outputs = new List<GenerateVideoCoverResponse.GenerateVideoCover_Data.GenerateVideoCover_Output>();
-			for (int i = 0; i < context.Length("GenerateVideoCover.Data.Outputs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GenerateVideoCover.Data.Outputs.Length"); i++) {
 				GenerateVideoCoverResponse.GenerateVideoCover_Data.GenerateVideoCover_Output output = new GenerateVideoCoverResponse.GenerateVideoCover_Data.GenerateVideoCover_Output();
-				output.ImageURL = context.StringValue("GenerateVideoCover.Data.Outputs["+ i +"].ImageURL");
-				output.Confidence = context.FloatValue("GenerateVideoCover.Data.Outputs["+ i +"].Confidence");
+				output.ImageURL = _ctx.StringValue("GenerateVideoCover.Data.Outputs["+ i +"].ImageURL");
+				output.Confidence = _ctx.FloatValue("GenerateVideoCover.Data.Outputs["+ i +"].Confidence");
 
 				data_outputs.Add(output);
 			}

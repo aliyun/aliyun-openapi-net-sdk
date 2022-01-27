@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 	public class DescribeCenAttachedChildInstancesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeCenAttachedChildInstances_ChildInstance> childInstances;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,43 +98,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		public class DescribeCenAttachedChildInstances_ChildInstance
 		{
 
-			private string cenId;
-
-			private string childInstanceId;
-
 			private string childInstanceType;
+
+			private string status;
 
 			private string childInstanceRegionId;
 
 			private long? childInstanceOwnerId;
 
-			private string status;
+			private string childInstanceId;
+
+			private string cenId;
 
 			private string childInstanceAttachTime;
-
-			public string CenId
-			{
-				get
-				{
-					return cenId;
-				}
-				set	
-				{
-					cenId = value;
-				}
-			}
-
-			public string ChildInstanceId
-			{
-				get
-				{
-					return childInstanceId;
-				}
-				set	
-				{
-					childInstanceId = value;
-				}
-			}
 
 			public string ChildInstanceType
 			{
@@ -145,6 +121,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					childInstanceType = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 
@@ -172,15 +160,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string Status
+			public string ChildInstanceId
 			{
 				get
 				{
-					return status;
+					return childInstanceId;
 				}
 				set	
 				{
-					status = value;
+					childInstanceId = value;
+				}
+			}
+
+			public string CenId
+			{
+				get
+				{
+					return cenId;
+				}
+				set	
+				{
+					cenId = value;
 				}
 			}
 

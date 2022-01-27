@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -30,31 +31,37 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class ResolveAndRouteServiceInCenRequest : RpcAcsRequest<ResolveAndRouteServiceInCenResponse>
     {
         public ResolveAndRouteServiceInCenRequest()
-            : base("Cbn", "2017-09-12", "ResolveAndRouteServiceInCen", "cbn", "openAPI")
+            : base("Cbn", "2017-09-12", "ResolveAndRouteServiceInCen")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
-
-		private string resourceOwnerAccount;
 
 		private string clientToken;
 
 		private string cenId;
 
-		private string ownerAccount;
+		private string description;
 
 		private string host;
 
 		private string hostRegionId;
 
-		private string action;
+		private string hostVpcId;
 
-		private string accessRegionId;
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
 
 		private long? ownerId;
 
-		private long? updateInterval;
+		private List<string> accessRegionIdss = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -66,19 +73,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -108,16 +102,16 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string OwnerAccount
+		public string Description
 		{
 			get
 			{
-				return ownerAccount;
+				return description;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -147,29 +141,42 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string Action
+		public string HostVpcId
 		{
 			get
 			{
-				return action;
+				return hostVpcId;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				hostVpcId = value;
+				DictionaryUtil.Add(QueryParameters, "HostVpcId", value);
 			}
 		}
 
-		public string AccessRegionId
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return accessRegionId;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				accessRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessRegionId", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -186,16 +193,16 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public long? UpdateInterval
+		public List<string> AccessRegionIdss
 		{
 			get
 			{
-				return updateInterval;
+				return accessRegionIdss;
 			}
-			set	
+
+			set
 			{
-				updateInterval = value;
-				DictionaryUtil.Add(QueryParameters, "UpdateInterval", value.ToString());
+				accessRegionIdss = value;
 			}
 		}
 

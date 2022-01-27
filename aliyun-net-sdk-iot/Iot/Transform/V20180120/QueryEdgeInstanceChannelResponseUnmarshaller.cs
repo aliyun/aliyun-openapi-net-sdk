@@ -26,38 +26,38 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryEdgeInstanceChannelResponseUnmarshaller
     {
-        public static QueryEdgeInstanceChannelResponse Unmarshall(UnmarshallerContext context)
+        public static QueryEdgeInstanceChannelResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryEdgeInstanceChannelResponse queryEdgeInstanceChannelResponse = new QueryEdgeInstanceChannelResponse();
 
-			queryEdgeInstanceChannelResponse.HttpResponse = context.HttpResponse;
-			queryEdgeInstanceChannelResponse.RequestId = context.StringValue("QueryEdgeInstanceChannel.RequestId");
-			queryEdgeInstanceChannelResponse.Success = context.BooleanValue("QueryEdgeInstanceChannel.Success");
-			queryEdgeInstanceChannelResponse.Code = context.StringValue("QueryEdgeInstanceChannel.Code");
-			queryEdgeInstanceChannelResponse.ErrorMessage = context.StringValue("QueryEdgeInstanceChannel.ErrorMessage");
+			queryEdgeInstanceChannelResponse.HttpResponse = _ctx.HttpResponse;
+			queryEdgeInstanceChannelResponse.RequestId = _ctx.StringValue("QueryEdgeInstanceChannel.RequestId");
+			queryEdgeInstanceChannelResponse.Success = _ctx.BooleanValue("QueryEdgeInstanceChannel.Success");
+			queryEdgeInstanceChannelResponse.Code = _ctx.StringValue("QueryEdgeInstanceChannel.Code");
+			queryEdgeInstanceChannelResponse.ErrorMessage = _ctx.StringValue("QueryEdgeInstanceChannel.ErrorMessage");
 
 			QueryEdgeInstanceChannelResponse.QueryEdgeInstanceChannel_Data data = new QueryEdgeInstanceChannelResponse.QueryEdgeInstanceChannel_Data();
-			data.Total = context.IntegerValue("QueryEdgeInstanceChannel.Data.Total");
-			data.PageSize = context.IntegerValue("QueryEdgeInstanceChannel.Data.PageSize");
-			data.CurrentPage = context.IntegerValue("QueryEdgeInstanceChannel.Data.CurrentPage");
+			data.Total = _ctx.IntegerValue("QueryEdgeInstanceChannel.Data.Total");
+			data.PageSize = _ctx.IntegerValue("QueryEdgeInstanceChannel.Data.PageSize");
+			data.CurrentPage = _ctx.IntegerValue("QueryEdgeInstanceChannel.Data.CurrentPage");
 
 			List<QueryEdgeInstanceChannelResponse.QueryEdgeInstanceChannel_Data.QueryEdgeInstanceChannel_Channel> data_channelList = new List<QueryEdgeInstanceChannelResponse.QueryEdgeInstanceChannel_Data.QueryEdgeInstanceChannel_Channel>();
-			for (int i = 0; i < context.Length("QueryEdgeInstanceChannel.Data.ChannelList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryEdgeInstanceChannel.Data.ChannelList.Length"); i++) {
 				QueryEdgeInstanceChannelResponse.QueryEdgeInstanceChannel_Data.QueryEdgeInstanceChannel_Channel channel = new QueryEdgeInstanceChannelResponse.QueryEdgeInstanceChannel_Data.QueryEdgeInstanceChannel_Channel();
-				channel.ChannelId = context.StringValue("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].ChannelId");
-				channel.ChannelName = context.StringValue("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].ChannelName");
-				channel.GmtCreate = context.StringValue("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].GmtCreate");
-				channel.GmtModified = context.StringValue("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].GmtModified");
-				channel.GmtCreateTimestamp = context.LongValue("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].GmtCreateTimestamp");
-				channel.GmtModifiedTimestamp = context.LongValue("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].GmtModifiedTimestamp");
+				channel.ChannelId = _ctx.StringValue("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].ChannelId");
+				channel.ChannelName = _ctx.StringValue("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].ChannelName");
+				channel.GmtCreate = _ctx.StringValue("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].GmtCreate");
+				channel.GmtModified = _ctx.StringValue("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].GmtModified");
+				channel.GmtCreateTimestamp = _ctx.LongValue("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].GmtCreateTimestamp");
+				channel.GmtModifiedTimestamp = _ctx.LongValue("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].GmtModifiedTimestamp");
 
 				List<QueryEdgeInstanceChannelResponse.QueryEdgeInstanceChannel_Data.QueryEdgeInstanceChannel_Channel.QueryEdgeInstanceChannel_Config> channel_configList = new List<QueryEdgeInstanceChannelResponse.QueryEdgeInstanceChannel_Data.QueryEdgeInstanceChannel_Channel.QueryEdgeInstanceChannel_Config>();
-				for (int j = 0; j < context.Length("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].ConfigList.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].ConfigList.Length"); j++) {
 					QueryEdgeInstanceChannelResponse.QueryEdgeInstanceChannel_Data.QueryEdgeInstanceChannel_Channel.QueryEdgeInstanceChannel_Config config = new QueryEdgeInstanceChannelResponse.QueryEdgeInstanceChannel_Data.QueryEdgeInstanceChannel_Channel.QueryEdgeInstanceChannel_Config();
-					config.ConfigId = context.StringValue("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].ConfigList["+ j +"].ConfigId");
-					config.Format = context.StringValue("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].ConfigList["+ j +"].Format");
-					config.Content = context.StringValue("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].ConfigList["+ j +"].Content");
-					config.Key = context.StringValue("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].ConfigList["+ j +"].Key");
+					config.ConfigId = _ctx.StringValue("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].ConfigList["+ j +"].ConfigId");
+					config.Format = _ctx.StringValue("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].ConfigList["+ j +"].Format");
+					config.Content = _ctx.StringValue("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].ConfigList["+ j +"].Content");
+					config.Key = _ctx.StringValue("QueryEdgeInstanceChannel.Data.ChannelList["+ i +"].ConfigList["+ j +"].Key");
 
 					channel_configList.Add(config);
 				}

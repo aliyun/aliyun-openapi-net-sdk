@@ -26,16 +26,16 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class PublishScriptForDebugResponseUnmarshaller
     {
-        public static PublishScriptForDebugResponse Unmarshall(UnmarshallerContext context)
+        public static PublishScriptForDebugResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PublishScriptForDebugResponse publishScriptForDebugResponse = new PublishScriptForDebugResponse();
 
-			publishScriptForDebugResponse.HttpResponse = context.HttpResponse;
-			publishScriptForDebugResponse.RequestId = context.StringValue("PublishScriptForDebug.RequestId");
-			publishScriptForDebugResponse.Success = context.BooleanValue("PublishScriptForDebug.Success");
-			publishScriptForDebugResponse.Code = context.StringValue("PublishScriptForDebug.Code");
-			publishScriptForDebugResponse.Message = context.StringValue("PublishScriptForDebug.Message");
-			publishScriptForDebugResponse.HttpStatusCode = context.IntegerValue("PublishScriptForDebug.HttpStatusCode");
+			publishScriptForDebugResponse.HttpResponse = _ctx.HttpResponse;
+			publishScriptForDebugResponse.Code = _ctx.StringValue("PublishScriptForDebug.Code");
+			publishScriptForDebugResponse.HttpStatusCode = _ctx.IntegerValue("PublishScriptForDebug.HttpStatusCode");
+			publishScriptForDebugResponse.Message = _ctx.StringValue("PublishScriptForDebug.Message");
+			publishScriptForDebugResponse.RequestId = _ctx.StringValue("PublishScriptForDebug.RequestId");
+			publishScriptForDebugResponse.Success = _ctx.BooleanValue("PublishScriptForDebug.Success");
         
 			return publishScriptForDebugResponse;
         }

@@ -26,23 +26,23 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetVodTemplateResponseUnmarshaller
     {
-        public static GetVodTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static GetVodTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetVodTemplateResponse getVodTemplateResponse = new GetVodTemplateResponse();
 
-			getVodTemplateResponse.HttpResponse = context.HttpResponse;
-			getVodTemplateResponse.RequestId = context.StringValue("GetVodTemplate.RequestId");
+			getVodTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			getVodTemplateResponse.RequestId = _ctx.StringValue("GetVodTemplate.RequestId");
 
 			GetVodTemplateResponse.GetVodTemplate_VodTemplateInfo vodTemplateInfo = new GetVodTemplateResponse.GetVodTemplate_VodTemplateInfo();
-			vodTemplateInfo.Name = context.StringValue("GetVodTemplate.VodTemplateInfo.Name");
-			vodTemplateInfo.VodTemplateId = context.StringValue("GetVodTemplate.VodTemplateInfo.VodTemplateId");
-			vodTemplateInfo.TemplateType = context.StringValue("GetVodTemplate.VodTemplateInfo.TemplateType");
-			vodTemplateInfo.SubTemplateType = context.StringValue("GetVodTemplate.VodTemplateInfo.SubTemplateType");
-			vodTemplateInfo.Source = context.StringValue("GetVodTemplate.VodTemplateInfo.Source");
-			vodTemplateInfo.IsDefault = context.StringValue("GetVodTemplate.VodTemplateInfo.IsDefault");
-			vodTemplateInfo.TemplateConfig = context.StringValue("GetVodTemplate.VodTemplateInfo.TemplateConfig");
-			vodTemplateInfo.CreationTime = context.StringValue("GetVodTemplate.VodTemplateInfo.CreationTime");
-			vodTemplateInfo.ModifyTime = context.StringValue("GetVodTemplate.VodTemplateInfo.ModifyTime");
+			vodTemplateInfo.Name = _ctx.StringValue("GetVodTemplate.VodTemplateInfo.Name");
+			vodTemplateInfo.VodTemplateId = _ctx.StringValue("GetVodTemplate.VodTemplateInfo.VodTemplateId");
+			vodTemplateInfo.TemplateType = _ctx.StringValue("GetVodTemplate.VodTemplateInfo.TemplateType");
+			vodTemplateInfo.SubTemplateType = _ctx.StringValue("GetVodTemplate.VodTemplateInfo.SubTemplateType");
+			vodTemplateInfo.Source = _ctx.StringValue("GetVodTemplate.VodTemplateInfo.Source");
+			vodTemplateInfo.IsDefault = _ctx.StringValue("GetVodTemplate.VodTemplateInfo.IsDefault");
+			vodTemplateInfo.TemplateConfig = _ctx.StringValue("GetVodTemplate.VodTemplateInfo.TemplateConfig");
+			vodTemplateInfo.CreationTime = _ctx.StringValue("GetVodTemplate.VodTemplateInfo.CreationTime");
+			vodTemplateInfo.ModifyTime = _ctx.StringValue("GetVodTemplate.VodTemplateInfo.ModifyTime");
 			getVodTemplateResponse.VodTemplateInfo = vodTemplateInfo;
         
 			return getVodTemplateResponse;

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.multimediaai.Transform.V20190810
 {
     public class GetTaskStatusResponseUnmarshaller
     {
-        public static GetTaskStatusResponse Unmarshall(UnmarshallerContext context)
+        public static GetTaskStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetTaskStatusResponse getTaskStatusResponse = new GetTaskStatusResponse();
 
-			getTaskStatusResponse.HttpResponse = context.HttpResponse;
-			getTaskStatusResponse.RequestId = context.StringValue("GetTaskStatus.RequestId");
-			getTaskStatusResponse.Status = context.IntegerValue("GetTaskStatus.Status");
+			getTaskStatusResponse.HttpResponse = _ctx.HttpResponse;
+			getTaskStatusResponse.RequestId = _ctx.StringValue("GetTaskStatus.RequestId");
+			getTaskStatusResponse.Status = _ctx.IntegerValue("GetTaskStatus.Status");
         
 			return getTaskStatusResponse;
         }

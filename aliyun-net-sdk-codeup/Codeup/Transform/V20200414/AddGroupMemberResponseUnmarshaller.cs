@@ -26,25 +26,25 @@ namespace Aliyun.Acs.codeup.Transform.V20200414
 {
     public class AddGroupMemberResponseUnmarshaller
     {
-        public static AddGroupMemberResponse Unmarshall(UnmarshallerContext context)
+        public static AddGroupMemberResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddGroupMemberResponse addGroupMemberResponse = new AddGroupMemberResponse();
 
-			addGroupMemberResponse.HttpResponse = context.HttpResponse;
-			addGroupMemberResponse.RequestId = context.StringValue("AddGroupMember.RequestId");
-			addGroupMemberResponse.ErrorCode = context.StringValue("AddGroupMember.ErrorCode");
-			addGroupMemberResponse.Success = context.BooleanValue("AddGroupMember.Success");
-			addGroupMemberResponse.ErrorMessage = context.StringValue("AddGroupMember.ErrorMessage");
+			addGroupMemberResponse.HttpResponse = _ctx.HttpResponse;
+			addGroupMemberResponse.RequestId = _ctx.StringValue("AddGroupMember.RequestId");
+			addGroupMemberResponse.ErrorCode = _ctx.StringValue("AddGroupMember.ErrorCode");
+			addGroupMemberResponse.Success = _ctx.BooleanValue("AddGroupMember.Success");
+			addGroupMemberResponse.ErrorMessage = _ctx.StringValue("AddGroupMember.ErrorMessage");
 
 			List<AddGroupMemberResponse.AddGroupMember_ResultItem> addGroupMemberResponse_result = new List<AddGroupMemberResponse.AddGroupMember_ResultItem>();
-			for (int i = 0; i < context.Length("AddGroupMember.Result.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("AddGroupMember.Result.Length"); i++) {
 				AddGroupMemberResponse.AddGroupMember_ResultItem resultItem = new AddGroupMemberResponse.AddGroupMember_ResultItem();
-				resultItem.AccessLevel = context.IntegerValue("AddGroupMember.Result["+ i +"].AccessLevel");
-				resultItem.ExternUserId = context.StringValue("AddGroupMember.Result["+ i +"].ExternUserId");
-				resultItem.Id = context.LongValue("AddGroupMember.Result["+ i +"].Id");
-				resultItem.State = context.StringValue("AddGroupMember.Result["+ i +"].State");
-				resultItem.AvatarUrl = context.StringValue("AddGroupMember.Result["+ i +"].AvatarUrl");
-				resultItem.Email = context.StringValue("AddGroupMember.Result["+ i +"].Email");
+				resultItem.AccessLevel = _ctx.IntegerValue("AddGroupMember.Result["+ i +"].AccessLevel");
+				resultItem.ExternUserId = _ctx.StringValue("AddGroupMember.Result["+ i +"].ExternUserId");
+				resultItem.Id = _ctx.LongValue("AddGroupMember.Result["+ i +"].Id");
+				resultItem.State = _ctx.StringValue("AddGroupMember.Result["+ i +"].State");
+				resultItem.AvatarUrl = _ctx.StringValue("AddGroupMember.Result["+ i +"].AvatarUrl");
+				resultItem.Email = _ctx.StringValue("AddGroupMember.Result["+ i +"].Email");
 
 				addGroupMemberResponse_result.Add(resultItem);
 			}

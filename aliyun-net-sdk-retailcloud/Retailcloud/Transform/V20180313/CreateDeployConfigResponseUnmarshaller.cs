@@ -26,19 +26,19 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class CreateDeployConfigResponseUnmarshaller
     {
-        public static CreateDeployConfigResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDeployConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateDeployConfigResponse createDeployConfigResponse = new CreateDeployConfigResponse();
 
-			createDeployConfigResponse.HttpResponse = context.HttpResponse;
-			createDeployConfigResponse.Code = context.IntegerValue("CreateDeployConfig.Code");
-			createDeployConfigResponse.RequestId = context.StringValue("CreateDeployConfig.RequestId");
-			createDeployConfigResponse.ErrMessage = context.StringValue("CreateDeployConfig.ErrMessage");
+			createDeployConfigResponse.HttpResponse = _ctx.HttpResponse;
+			createDeployConfigResponse.Code = _ctx.IntegerValue("CreateDeployConfig.Code");
+			createDeployConfigResponse.RequestId = _ctx.StringValue("CreateDeployConfig.RequestId");
+			createDeployConfigResponse.ErrMessage = _ctx.StringValue("CreateDeployConfig.ErrMessage");
 
 			CreateDeployConfigResponse.CreateDeployConfig_Result result = new CreateDeployConfigResponse.CreateDeployConfig_Result();
-			result.AppId = context.LongValue("CreateDeployConfig.Result.AppId");
-			result.Name = context.StringValue("CreateDeployConfig.Result.Name");
-			result.SchemaId = context.LongValue("CreateDeployConfig.Result.SchemaId");
+			result.AppId = _ctx.LongValue("CreateDeployConfig.Result.AppId");
+			result.Name = _ctx.StringValue("CreateDeployConfig.Result.Name");
+			result.SchemaId = _ctx.LongValue("CreateDeployConfig.Result.SchemaId");
 			createDeployConfigResponse.Result = result;
         
 			return createDeployConfigResponse;

@@ -26,67 +26,73 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetFileResponseUnmarshaller
     {
-        public static GetFileResponse Unmarshall(UnmarshallerContext context)
+        public static GetFileResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetFileResponse getFileResponse = new GetFileResponse();
 
-			getFileResponse.HttpResponse = context.HttpResponse;
-			getFileResponse.RequestId = context.StringValue("GetFile.RequestId");
-			getFileResponse.Success = context.BooleanValue("GetFile.Success");
-			getFileResponse.ErrorCode = context.StringValue("GetFile.ErrorCode");
-			getFileResponse.ErrorMessage = context.StringValue("GetFile.ErrorMessage");
-			getFileResponse.HttpStatusCode = context.IntegerValue("GetFile.HttpStatusCode");
+			getFileResponse.HttpResponse = _ctx.HttpResponse;
+			getFileResponse.HttpStatusCode = _ctx.IntegerValue("GetFile.HttpStatusCode");
+			getFileResponse.ErrorMessage = _ctx.StringValue("GetFile.ErrorMessage");
+			getFileResponse.RequestId = _ctx.StringValue("GetFile.RequestId");
+			getFileResponse.ErrorCode = _ctx.StringValue("GetFile.ErrorCode");
+			getFileResponse.Success = _ctx.BooleanValue("GetFile.Success");
 
 			GetFileResponse.GetFile_Data data = new GetFileResponse.GetFile_Data();
 
 			GetFileResponse.GetFile_Data.GetFile_File file = new GetFileResponse.GetFile_Data.GetFile_File();
-			file.ConnectionName = context.StringValue("GetFile.Data.File.ConnectionName");
-			file.ParentId = context.LongValue("GetFile.Data.File.ParentId");
-			file.IsMaxCompute = context.BooleanValue("GetFile.Data.File.IsMaxCompute");
-			file.CreateTime = context.LongValue("GetFile.Data.File.CreateTime");
-			file.CreateUser = context.StringValue("GetFile.Data.File.CreateUser");
-			file.BizId = context.LongValue("GetFile.Data.File.BizId");
-			file.FileFolderId = context.StringValue("GetFile.Data.File.FileFolderId");
-			file.FileName = context.StringValue("GetFile.Data.File.FileName");
-			file.FileType = context.IntegerValue("GetFile.Data.File.FileType");
-			file.UseType = context.StringValue("GetFile.Data.File.UseType");
-			file.FileDescription = context.StringValue("GetFile.Data.File.FileDescription");
-			file.Content = context.StringValue("GetFile.Data.File.Content");
-			file.NodeId = context.LongValue("GetFile.Data.File.NodeId");
-			file.CurrentVersion = context.IntegerValue("GetFile.Data.File.CurrentVersion");
-			file.Owner = context.StringValue("GetFile.Data.File.Owner");
-			file.LastEditUser = context.StringValue("GetFile.Data.File.LastEditUser");
-			file.LastEditTime = context.LongValue("GetFile.Data.File.LastEditTime");
-			file.CommitStatus = context.IntegerValue("GetFile.Data.File.CommitStatus");
+			file.CommitStatus = _ctx.IntegerValue("GetFile.Data.File.CommitStatus");
+			file.AutoParsing = _ctx.BooleanValue("GetFile.Data.File.AutoParsing");
+			file.Owner = _ctx.StringValue("GetFile.Data.File.Owner");
+			file.CreateTime = _ctx.LongValue("GetFile.Data.File.CreateTime");
+			file.FileType = _ctx.IntegerValue("GetFile.Data.File.FileType");
+			file.CurrentVersion = _ctx.IntegerValue("GetFile.Data.File.CurrentVersion");
+			file.BizId = _ctx.LongValue("GetFile.Data.File.BizId");
+			file.LastEditUser = _ctx.StringValue("GetFile.Data.File.LastEditUser");
+			file.FileName = _ctx.StringValue("GetFile.Data.File.FileName");
+			file.ConnectionName = _ctx.StringValue("GetFile.Data.File.ConnectionName");
+			file.UseType = _ctx.StringValue("GetFile.Data.File.UseType");
+			file.FileFolderId = _ctx.StringValue("GetFile.Data.File.FileFolderId");
+			file.ParentId = _ctx.LongValue("GetFile.Data.File.ParentId");
+			file.CreateUser = _ctx.StringValue("GetFile.Data.File.CreateUser");
+			file.IsMaxCompute = _ctx.BooleanValue("GetFile.Data.File.IsMaxCompute");
+			file.BusinessId = _ctx.LongValue("GetFile.Data.File.BusinessId");
+			file.FileDescription = _ctx.StringValue("GetFile.Data.File.FileDescription");
+			file.DeletedStatus = _ctx.StringValue("GetFile.Data.File.DeletedStatus");
+			file.LastEditTime = _ctx.LongValue("GetFile.Data.File.LastEditTime");
+			file.Content = _ctx.StringValue("GetFile.Data.File.Content");
+			file.NodeId = _ctx.LongValue("GetFile.Data.File.NodeId");
 			data.File = file;
 
 			GetFileResponse.GetFile_Data.GetFile_NodeConfiguration nodeConfiguration = new GetFileResponse.GetFile_Data.GetFile_NodeConfiguration();
-			nodeConfiguration.AutoRerunTimes = context.IntegerValue("GetFile.Data.NodeConfiguration.AutoRerunTimes");
-			nodeConfiguration.AutoRerunIntervalMillis = context.IntegerValue("GetFile.Data.NodeConfiguration.AutoRerunIntervalMillis");
-			nodeConfiguration.RerunMode = context.StringValue("GetFile.Data.NodeConfiguration.RerunMode");
-			nodeConfiguration.Stop = context.BooleanValue("GetFile.Data.NodeConfiguration.Stop");
-			nodeConfiguration.ParaValue = context.StringValue("GetFile.Data.NodeConfiguration.ParaValue");
-			nodeConfiguration.StartEffectDate = context.LongValue("GetFile.Data.NodeConfiguration.StartEffectDate");
-			nodeConfiguration.EndEffectDate = context.LongValue("GetFile.Data.NodeConfiguration.EndEffectDate");
-			nodeConfiguration.CronExpress = context.StringValue("GetFile.Data.NodeConfiguration.CronExpress");
-			nodeConfiguration.CycleType = context.StringValue("GetFile.Data.NodeConfiguration.CycleType");
-			nodeConfiguration.DependentType = context.StringValue("GetFile.Data.NodeConfiguration.DependentType");
-			nodeConfiguration.DependentNodeIdList = context.StringValue("GetFile.Data.NodeConfiguration.DependentNodeIdList");
+			nodeConfiguration.RerunMode = _ctx.StringValue("GetFile.Data.NodeConfiguration.RerunMode");
+			nodeConfiguration.SchedulerType = _ctx.StringValue("GetFile.Data.NodeConfiguration.SchedulerType");
+			nodeConfiguration.Stop = _ctx.BooleanValue("GetFile.Data.NodeConfiguration.Stop");
+			nodeConfiguration.ParaValue = _ctx.StringValue("GetFile.Data.NodeConfiguration.ParaValue");
+			nodeConfiguration.StartEffectDate = _ctx.LongValue("GetFile.Data.NodeConfiguration.StartEffectDate");
+			nodeConfiguration.EndEffectDate = _ctx.LongValue("GetFile.Data.NodeConfiguration.EndEffectDate");
+			nodeConfiguration.CycleType = _ctx.StringValue("GetFile.Data.NodeConfiguration.CycleType");
+			nodeConfiguration.DependentNodeIdList = _ctx.StringValue("GetFile.Data.NodeConfiguration.DependentNodeIdList");
+			nodeConfiguration.ResourceGroupId = _ctx.LongValue("GetFile.Data.NodeConfiguration.ResourceGroupId");
+			nodeConfiguration.DependentType = _ctx.StringValue("GetFile.Data.NodeConfiguration.DependentType");
+			nodeConfiguration.AutoRerunTimes = _ctx.IntegerValue("GetFile.Data.NodeConfiguration.AutoRerunTimes");
+			nodeConfiguration.AutoRerunIntervalMillis = _ctx.IntegerValue("GetFile.Data.NodeConfiguration.AutoRerunIntervalMillis");
+			nodeConfiguration.CronExpress = _ctx.StringValue("GetFile.Data.NodeConfiguration.CronExpress");
 
 			List<GetFileResponse.GetFile_Data.GetFile_NodeConfiguration.GetFile_NodeInputOutput> nodeConfiguration_inputList = new List<GetFileResponse.GetFile_Data.GetFile_NodeConfiguration.GetFile_NodeInputOutput>();
-			for (int i = 0; i < context.Length("GetFile.Data.NodeConfiguration.InputList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetFile.Data.NodeConfiguration.InputList.Length"); i++) {
 				GetFileResponse.GetFile_Data.GetFile_NodeConfiguration.GetFile_NodeInputOutput nodeInputOutput = new GetFileResponse.GetFile_Data.GetFile_NodeConfiguration.GetFile_NodeInputOutput();
-				nodeInputOutput.Input = context.StringValue("GetFile.Data.NodeConfiguration.InputList["+ i +"].Input");
+				nodeInputOutput.Input = _ctx.StringValue("GetFile.Data.NodeConfiguration.InputList["+ i +"].Input");
+				nodeInputOutput.ParseType = _ctx.StringValue("GetFile.Data.NodeConfiguration.InputList["+ i +"].ParseType");
 
 				nodeConfiguration_inputList.Add(nodeInputOutput);
 			}
 			nodeConfiguration.InputList = nodeConfiguration_inputList;
 
 			List<GetFileResponse.GetFile_Data.GetFile_NodeConfiguration.GetFile_NodeInputOutput1> nodeConfiguration_outputList = new List<GetFileResponse.GetFile_Data.GetFile_NodeConfiguration.GetFile_NodeInputOutput1>();
-			for (int i = 0; i < context.Length("GetFile.Data.NodeConfiguration.OutputList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetFile.Data.NodeConfiguration.OutputList.Length"); i++) {
 				GetFileResponse.GetFile_Data.GetFile_NodeConfiguration.GetFile_NodeInputOutput1 nodeInputOutput1 = new GetFileResponse.GetFile_Data.GetFile_NodeConfiguration.GetFile_NodeInputOutput1();
-				nodeInputOutput1.Output = context.StringValue("GetFile.Data.NodeConfiguration.OutputList["+ i +"].Output");
-				nodeInputOutput1.RefTableName = context.StringValue("GetFile.Data.NodeConfiguration.OutputList["+ i +"].RefTableName");
+				nodeInputOutput1.RefTableName = _ctx.StringValue("GetFile.Data.NodeConfiguration.OutputList["+ i +"].RefTableName");
+				nodeInputOutput1.Output = _ctx.StringValue("GetFile.Data.NodeConfiguration.OutputList["+ i +"].Output");
 
 				nodeConfiguration_outputList.Add(nodeInputOutput1);
 			}

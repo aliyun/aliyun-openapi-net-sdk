@@ -40,13 +40,41 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			Method = MethodType.POST;
         }
 
+		private float? threshold;
+
+		private string orgName;
+
 		private string dataFormat;
 
 		private List<URLList> uRLLists = new List<URLList>(){ };
 
 		private string orgId;
 
-		private string orgName;
+		public float? Threshold
+		{
+			get
+			{
+				return threshold;
+			}
+			set	
+			{
+				threshold = value;
+				DictionaryUtil.Add(BodyParameters, "Threshold", value.ToString());
+			}
+		}
+
+		public string OrgName
+		{
+			get
+			{
+				return orgName;
+			}
+			set	
+			{
+				orgName = value;
+				DictionaryUtil.Add(BodyParameters, "OrgName", value);
+			}
+		}
 
 		public string DataFormat
 		{
@@ -88,19 +116,6 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			{
 				orgId = value;
 				DictionaryUtil.Add(BodyParameters, "OrgId", value);
-			}
-		}
-
-		public string OrgName
-		{
-			get
-			{
-				return orgName;
-			}
-			set	
-			{
-				orgName = value;
-				DictionaryUtil.Add(BodyParameters, "OrgName", value);
 			}
 		}
 

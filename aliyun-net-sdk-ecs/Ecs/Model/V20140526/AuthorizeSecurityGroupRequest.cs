@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string nicType;
 
 		private long? resourceOwnerId;
+
+		private string sourcePrefixListId;
 
 		private string sourcePortRange;
 
@@ -103,6 +105,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string SourcePrefixListId
+		{
+			get
+			{
+				return sourcePrefixListId;
+			}
+			set	
+			{
+				sourcePrefixListId = value;
+				DictionaryUtil.Add(QueryParameters, "SourcePrefixListId", value);
 			}
 		}
 

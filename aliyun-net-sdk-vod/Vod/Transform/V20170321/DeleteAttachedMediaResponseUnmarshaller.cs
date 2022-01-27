@@ -26,16 +26,16 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DeleteAttachedMediaResponseUnmarshaller
     {
-        public static DeleteAttachedMediaResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteAttachedMediaResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteAttachedMediaResponse deleteAttachedMediaResponse = new DeleteAttachedMediaResponse();
 
-			deleteAttachedMediaResponse.HttpResponse = context.HttpResponse;
-			deleteAttachedMediaResponse.RequestId = context.StringValue("DeleteAttachedMedia.RequestId");
+			deleteAttachedMediaResponse.HttpResponse = _ctx.HttpResponse;
+			deleteAttachedMediaResponse.RequestId = _ctx.StringValue("DeleteAttachedMedia.RequestId");
 
 			List<string> deleteAttachedMediaResponse_nonExistMediaIds = new List<string>();
-			for (int i = 0; i < context.Length("DeleteAttachedMedia.NonExistMediaIds.Length"); i++) {
-				deleteAttachedMediaResponse_nonExistMediaIds.Add(context.StringValue("DeleteAttachedMedia.NonExistMediaIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DeleteAttachedMedia.NonExistMediaIds.Length"); i++) {
+				deleteAttachedMediaResponse_nonExistMediaIds.Add(_ctx.StringValue("DeleteAttachedMedia.NonExistMediaIds["+ i +"]"));
 			}
 			deleteAttachedMediaResponse.NonExistMediaIds = deleteAttachedMediaResponse_nonExistMediaIds;
         

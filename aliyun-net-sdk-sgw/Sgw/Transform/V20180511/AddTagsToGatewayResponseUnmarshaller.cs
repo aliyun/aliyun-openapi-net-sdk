@@ -26,15 +26,15 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class AddTagsToGatewayResponseUnmarshaller
     {
-        public static AddTagsToGatewayResponse Unmarshall(UnmarshallerContext context)
+        public static AddTagsToGatewayResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddTagsToGatewayResponse addTagsToGatewayResponse = new AddTagsToGatewayResponse();
 
-			addTagsToGatewayResponse.HttpResponse = context.HttpResponse;
-			addTagsToGatewayResponse.RequestId = context.StringValue("AddTagsToGateway.RequestId");
-			addTagsToGatewayResponse.Success = context.BooleanValue("AddTagsToGateway.Success");
-			addTagsToGatewayResponse.Code = context.StringValue("AddTagsToGateway.Code");
-			addTagsToGatewayResponse.Message = context.StringValue("AddTagsToGateway.Message");
+			addTagsToGatewayResponse.HttpResponse = _ctx.HttpResponse;
+			addTagsToGatewayResponse.Message = _ctx.StringValue("AddTagsToGateway.Message");
+			addTagsToGatewayResponse.RequestId = _ctx.StringValue("AddTagsToGateway.RequestId");
+			addTagsToGatewayResponse.Code = _ctx.StringValue("AddTagsToGateway.Code");
+			addTagsToGatewayResponse.Success = _ctx.BooleanValue("AddTagsToGateway.Success");
         
 			return addTagsToGatewayResponse;
         }

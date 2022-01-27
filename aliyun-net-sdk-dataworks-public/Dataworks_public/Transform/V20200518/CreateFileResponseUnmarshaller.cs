@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class CreateFileResponseUnmarshaller
     {
-        public static CreateFileResponse Unmarshall(UnmarshallerContext context)
+        public static CreateFileResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateFileResponse createFileResponse = new CreateFileResponse();
 
-			createFileResponse.HttpResponse = context.HttpResponse;
-			createFileResponse.RequestId = context.StringValue("CreateFile.RequestId");
-			createFileResponse.Success = context.BooleanValue("CreateFile.Success");
-			createFileResponse.ErrorCode = context.StringValue("CreateFile.ErrorCode");
-			createFileResponse.ErrorMessage = context.StringValue("CreateFile.ErrorMessage");
-			createFileResponse.Data = context.LongValue("CreateFile.Data");
-			createFileResponse.HttpStatusCode = context.IntegerValue("CreateFile.HttpStatusCode");
+			createFileResponse.HttpResponse = _ctx.HttpResponse;
+			createFileResponse.HttpStatusCode = _ctx.IntegerValue("CreateFile.HttpStatusCode");
+			createFileResponse.Data = _ctx.LongValue("CreateFile.Data");
+			createFileResponse.RequestId = _ctx.StringValue("CreateFile.RequestId");
+			createFileResponse.ErrorMessage = _ctx.StringValue("CreateFile.ErrorMessage");
+			createFileResponse.Success = _ctx.BooleanValue("CreateFile.Success");
+			createFileResponse.ErrorCode = _ctx.StringValue("CreateFile.ErrorCode");
         
 			return createFileResponse;
         }

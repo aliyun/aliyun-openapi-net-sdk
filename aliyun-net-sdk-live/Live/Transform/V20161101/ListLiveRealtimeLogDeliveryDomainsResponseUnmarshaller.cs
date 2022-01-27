@@ -26,18 +26,18 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class ListLiveRealtimeLogDeliveryDomainsResponseUnmarshaller
     {
-        public static ListLiveRealtimeLogDeliveryDomainsResponse Unmarshall(UnmarshallerContext context)
+        public static ListLiveRealtimeLogDeliveryDomainsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListLiveRealtimeLogDeliveryDomainsResponse listLiveRealtimeLogDeliveryDomainsResponse = new ListLiveRealtimeLogDeliveryDomainsResponse();
 
-			listLiveRealtimeLogDeliveryDomainsResponse.HttpResponse = context.HttpResponse;
-			listLiveRealtimeLogDeliveryDomainsResponse.RequestId = context.StringValue("ListLiveRealtimeLogDeliveryDomains.RequestId");
+			listLiveRealtimeLogDeliveryDomainsResponse.HttpResponse = _ctx.HttpResponse;
+			listLiveRealtimeLogDeliveryDomainsResponse.RequestId = _ctx.StringValue("ListLiveRealtimeLogDeliveryDomains.RequestId");
 
 			List<ListLiveRealtimeLogDeliveryDomainsResponse.ListLiveRealtimeLogDeliveryDomains_Domains> listLiveRealtimeLogDeliveryDomainsResponse_content = new List<ListLiveRealtimeLogDeliveryDomainsResponse.ListLiveRealtimeLogDeliveryDomains_Domains>();
-			for (int i = 0; i < context.Length("ListLiveRealtimeLogDeliveryDomains.Content.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListLiveRealtimeLogDeliveryDomains.Content.Length"); i++) {
 				ListLiveRealtimeLogDeliveryDomainsResponse.ListLiveRealtimeLogDeliveryDomains_Domains domains = new ListLiveRealtimeLogDeliveryDomainsResponse.ListLiveRealtimeLogDeliveryDomains_Domains();
-				domains.DomainName = context.StringValue("ListLiveRealtimeLogDeliveryDomains.Content["+ i +"].DomainName");
-				domains.Status = context.StringValue("ListLiveRealtimeLogDeliveryDomains.Content["+ i +"].Status");
+				domains.DomainName = _ctx.StringValue("ListLiveRealtimeLogDeliveryDomains.Content["+ i +"].DomainName");
+				domains.Status = _ctx.StringValue("ListLiveRealtimeLogDeliveryDomains.Content["+ i +"].Status");
 
 				listLiveRealtimeLogDeliveryDomainsResponse_content.Add(domains);
 			}

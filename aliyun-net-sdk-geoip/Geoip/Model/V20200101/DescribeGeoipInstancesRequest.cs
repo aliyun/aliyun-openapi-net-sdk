@@ -32,6 +32,7 @@ namespace Aliyun.Acs.geoip.Model.V20200101
         public DescribeGeoipInstancesRequest()
             : base("geoip", "2020-01-01", "DescribeGeoipInstances", "geoip", "openAPI")
         {
+			Method = MethodType.POST;
         }
 
 		private string lang;

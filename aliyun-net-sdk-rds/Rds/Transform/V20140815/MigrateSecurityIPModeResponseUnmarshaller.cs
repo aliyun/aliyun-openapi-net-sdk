@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class MigrateSecurityIPModeResponseUnmarshaller
     {
-        public static MigrateSecurityIPModeResponse Unmarshall(UnmarshallerContext context)
+        public static MigrateSecurityIPModeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			MigrateSecurityIPModeResponse migrateSecurityIPModeResponse = new MigrateSecurityIPModeResponse();
 
-			migrateSecurityIPModeResponse.HttpResponse = context.HttpResponse;
-			migrateSecurityIPModeResponse.RequestId = context.StringValue("MigrateSecurityIPMode.RequestId");
-			migrateSecurityIPModeResponse.DBInstanceId = context.StringValue("MigrateSecurityIPMode.DBInstanceId");
-			migrateSecurityIPModeResponse.SecurityIPMode = context.StringValue("MigrateSecurityIPMode.SecurityIPMode");
+			migrateSecurityIPModeResponse.HttpResponse = _ctx.HttpResponse;
+			migrateSecurityIPModeResponse.RequestId = _ctx.StringValue("MigrateSecurityIPMode.RequestId");
+			migrateSecurityIPModeResponse.DBInstanceId = _ctx.StringValue("MigrateSecurityIPMode.DBInstanceId");
+			migrateSecurityIPModeResponse.SecurityIPMode = _ctx.StringValue("MigrateSecurityIPMode.SecurityIPMode");
         
 			return migrateSecurityIPModeResponse;
         }

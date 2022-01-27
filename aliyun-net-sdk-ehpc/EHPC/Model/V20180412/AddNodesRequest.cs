@@ -35,12 +35,14 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.EHPC.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.EHPC.Endpoint.endpointRegionalType, null);
             }
         }
 
 		private string imageId;
+
+		private string systemDiskLevel;
 
 		private string clientToken;
 
@@ -53,6 +55,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		private string imageOwnerAlias;
 
 		private string systemDiskType;
+
+		private int? minCount;
 
 		private int? systemDiskSize;
 
@@ -73,6 +77,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		private string computeSpotStrategy;
 
 		private string hostNameSuffix;
+
+		private bool? sync;
 
 		private string vSwitchId;
 
@@ -102,6 +108,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				imageId = value;
 				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+			}
+		}
+
+		public string SystemDiskLevel
+		{
+			get
+			{
+				return systemDiskLevel;
+			}
+			set	
+			{
+				systemDiskLevel = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDiskLevel", value);
 			}
 		}
 
@@ -180,6 +199,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				systemDiskType = value;
 				DictionaryUtil.Add(QueryParameters, "SystemDiskType", value);
+			}
+		}
+
+		public int? MinCount
+		{
+			get
+			{
+				return minCount;
+			}
+			set	
+			{
+				minCount = value;
+				DictionaryUtil.Add(QueryParameters, "MinCount", value.ToString());
 			}
 		}
 
@@ -310,6 +342,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				hostNameSuffix = value;
 				DictionaryUtil.Add(QueryParameters, "HostNameSuffix", value);
+			}
+		}
+
+		public bool? Sync
+		{
+			get
+			{
+				return sync;
+			}
+			set	
+			{
+				sync = value;
+				DictionaryUtil.Add(QueryParameters, "Sync", value.ToString());
 			}
 		}
 

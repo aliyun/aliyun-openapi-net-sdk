@@ -26,13 +26,13 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 {
     public class DescribeBlackListClientsResponseUnmarshaller
     {
-        public static DescribeBlackListClientsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeBlackListClientsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeBlackListClientsResponse describeBlackListClientsResponse = new DescribeBlackListClientsResponse();
 
-			describeBlackListClientsResponse.HttpResponse = context.HttpResponse;
-			describeBlackListClientsResponse.RequestId = context.StringValue("DescribeBlackListClients.RequestId");
-			describeBlackListClientsResponse.Clients = context.StringValue("DescribeBlackListClients.Clients");
+			describeBlackListClientsResponse.HttpResponse = _ctx.HttpResponse;
+			describeBlackListClientsResponse.RequestId = _ctx.StringValue("DescribeBlackListClients.RequestId");
+			describeBlackListClientsResponse.Clients = _ctx.StringValue("DescribeBlackListClients.Clients");
         
 			return describeBlackListClientsResponse;
         }

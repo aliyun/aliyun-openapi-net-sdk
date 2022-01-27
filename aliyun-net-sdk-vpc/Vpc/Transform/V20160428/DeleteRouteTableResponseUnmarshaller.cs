@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DeleteRouteTableResponseUnmarshaller
     {
-        public static DeleteRouteTableResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteRouteTableResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteRouteTableResponse deleteRouteTableResponse = new DeleteRouteTableResponse();
 
-			deleteRouteTableResponse.HttpResponse = context.HttpResponse;
-			deleteRouteTableResponse.RequestId = context.StringValue("DeleteRouteTable.RequestId");
+			deleteRouteTableResponse.HttpResponse = _ctx.HttpResponse;
+			deleteRouteTableResponse.RequestId = _ctx.StringValue("DeleteRouteTable.RequestId");
         
 			return deleteRouteTableResponse;
         }

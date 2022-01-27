@@ -35,8 +35,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.EHPC.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.EHPC.Endpoint.endpointRegionalType, null);
             }
         }
 
@@ -98,6 +98,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string imageId;
 
+		private string systemDiskLevel;
+
 		private string clientToken;
 
 		private string ehpcVersion;
@@ -121,6 +123,10 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		private string clientVersion;
 
 		private string osTag;
+
+		private string clusterVersion;
+
+		private bool? isComputeEss;
 
 		private List<Application> applications = new List<Application>(){ };
 
@@ -535,6 +541,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public string SystemDiskLevel
+		{
+			get
+			{
+				return systemDiskLevel;
+			}
+			set	
+			{
+				systemDiskLevel = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDiskLevel", value);
+			}
+		}
+
 		public string ClientToken
 		{
 			get
@@ -688,6 +707,32 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				osTag = value;
 				DictionaryUtil.Add(QueryParameters, "OsTag", value);
+			}
+		}
+
+		public string ClusterVersion
+		{
+			get
+			{
+				return clusterVersion;
+			}
+			set	
+			{
+				clusterVersion = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterVersion", value);
+			}
+		}
+
+		public bool? IsComputeEss
+		{
+			get
+			{
+				return isComputeEss;
+			}
+			set	
+			{
+				isComputeEss = value;
+				DictionaryUtil.Add(QueryParameters, "IsComputeEss", value.ToString());
 			}
 		}
 

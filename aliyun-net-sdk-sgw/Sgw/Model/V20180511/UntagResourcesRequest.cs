@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -34,8 +35,8 @@ namespace Aliyun.Acs.sgw.Model.V20180511
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.sgw.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.sgw.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -50,6 +51,9 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 
 		private List<string> tagKeys = new List<string>(){ };
 
+		private string resourceRegionId;
+
+		[JsonProperty(PropertyName = "All")]
 		public bool? All
 		{
 			get
@@ -63,6 +67,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceId")]
 		public List<string> ResourceIds
 		{
 			get
@@ -73,13 +78,10 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			set
 			{
 				resourceIds = value;
-				for (int i = 0; i < resourceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
-				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceType")]
 		public string ResourceType
 		{
 			get
@@ -93,6 +95,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecurityToken")]
 		public string SecurityToken
 		{
 			get
@@ -106,6 +109,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "TagKey")]
 		public List<string> TagKeys
 		{
 			get
@@ -116,10 +120,20 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			set
 			{
 				tagKeys = value;
-				for (int i = 0; i < tagKeys.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TagKey." + (i + 1) , tagKeys[i]);
-				}
+			}
+		}
+
+		[JsonProperty(PropertyName = "ResourceRegionId")]
+		public string ResourceRegionId
+		{
+			get
+			{
+				return resourceRegionId;
+			}
+			set	
+			{
+				resourceRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceRegionId", value);
 			}
 		}
 

@@ -60,6 +60,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string localName;
 
+			private string zoneType;
+
 			public string ZoneId
 			{
 				get
@@ -81,6 +83,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					localName = value;
+				}
+			}
+
+			public string ZoneType
+			{
+				get
+				{
+					return zoneType;
+				}
+				set	
+				{
+					zoneType = value;
 				}
 			}
 		}

@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class CreateQualityEntityResponseUnmarshaller
     {
-        public static CreateQualityEntityResponse Unmarshall(UnmarshallerContext context)
+        public static CreateQualityEntityResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateQualityEntityResponse createQualityEntityResponse = new CreateQualityEntityResponse();
 
-			createQualityEntityResponse.HttpResponse = context.HttpResponse;
-			createQualityEntityResponse.Success = context.BooleanValue("CreateQualityEntity.Success");
-			createQualityEntityResponse.Data = context.IntegerValue("CreateQualityEntity.Data");
-			createQualityEntityResponse.ErrorCode = context.StringValue("CreateQualityEntity.ErrorCode");
-			createQualityEntityResponse.ErrorMessage = context.StringValue("CreateQualityEntity.ErrorMessage");
-			createQualityEntityResponse.HttpStatusCode = context.IntegerValue("CreateQualityEntity.HttpStatusCode");
-			createQualityEntityResponse.RequestId = context.StringValue("CreateQualityEntity.RequestId");
+			createQualityEntityResponse.HttpResponse = _ctx.HttpResponse;
+			createQualityEntityResponse.HttpStatusCode = _ctx.IntegerValue("CreateQualityEntity.HttpStatusCode");
+			createQualityEntityResponse.Data = _ctx.IntegerValue("CreateQualityEntity.Data");
+			createQualityEntityResponse.ErrorMessage = _ctx.StringValue("CreateQualityEntity.ErrorMessage");
+			createQualityEntityResponse.RequestId = _ctx.StringValue("CreateQualityEntity.RequestId");
+			createQualityEntityResponse.Success = _ctx.BooleanValue("CreateQualityEntity.Success");
+			createQualityEntityResponse.ErrorCode = _ctx.StringValue("CreateQualityEntity.ErrorCode");
         
 			return createQualityEntityResponse;
         }

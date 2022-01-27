@@ -34,8 +34,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.cloudesl.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.cloudesl.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -49,6 +49,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 		private string apMac;
 
 		private string storeId;
+
+		private string serialNumber;
 
 		public string ExtraParams
 		{
@@ -112,6 +114,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				storeId = value;
 				DictionaryUtil.Add(BodyParameters, "StoreId", value);
+			}
+		}
+
+		public string SerialNumber
+		{
+			get
+			{
+				return serialNumber;
+			}
+			set	
+			{
+				serialNumber = value;
+				DictionaryUtil.Add(BodyParameters, "SerialNumber", value);
 			}
 		}
 

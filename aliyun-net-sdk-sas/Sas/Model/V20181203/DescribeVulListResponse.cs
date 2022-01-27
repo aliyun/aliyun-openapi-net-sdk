@@ -156,6 +156,26 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string canFix;
 
+			private string containerImageId;
+
+			private string containerImageName;
+
+			private string containerName;
+
+			private string containerInnerPath;
+
+			private string containerId;
+
+			private string k8sNamespace;
+
+			private string k8sClusterId;
+
+			private string k8sNodeId;
+
+			private string k8sPodName;
+
+			private string k8sNodeName;
+
 			private DescribeVulList_ExtendContentJson extendContentJson;
 
 			private DescribeVulList_ProcessInfo processInfo;
@@ -508,6 +528,126 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string ContainerImageId
+			{
+				get
+				{
+					return containerImageId;
+				}
+				set	
+				{
+					containerImageId = value;
+				}
+			}
+
+			public string ContainerImageName
+			{
+				get
+				{
+					return containerImageName;
+				}
+				set	
+				{
+					containerImageName = value;
+				}
+			}
+
+			public string ContainerName
+			{
+				get
+				{
+					return containerName;
+				}
+				set	
+				{
+					containerName = value;
+				}
+			}
+
+			public string ContainerInnerPath
+			{
+				get
+				{
+					return containerInnerPath;
+				}
+				set	
+				{
+					containerInnerPath = value;
+				}
+			}
+
+			public string ContainerId
+			{
+				get
+				{
+					return containerId;
+				}
+				set	
+				{
+					containerId = value;
+				}
+			}
+
+			public string K8sNamespace
+			{
+				get
+				{
+					return k8sNamespace;
+				}
+				set	
+				{
+					k8sNamespace = value;
+				}
+			}
+
+			public string K8sClusterId
+			{
+				get
+				{
+					return k8sClusterId;
+				}
+				set	
+				{
+					k8sClusterId = value;
+				}
+			}
+
+			public string K8sNodeId
+			{
+				get
+				{
+					return k8sNodeId;
+				}
+				set	
+				{
+					k8sNodeId = value;
+				}
+			}
+
+			public string K8sPodName
+			{
+				get
+				{
+					return k8sPodName;
+				}
+				set	
+				{
+					k8sPodName = value;
+				}
+			}
+
+			public string K8sNodeName
+			{
+				get
+				{
+					return k8sNodeName;
+				}
+				set	
+				{
+					k8sNodeName = value;
+				}
+			}
+
 			public DescribeVulList_ExtendContentJson ExtendContentJson
 			{
 				get
@@ -539,7 +679,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 				private string osRelease;
 
-				private int? status;
+				private string status;
 
 				private long? lastTs;
 
@@ -609,7 +749,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					}
 				}
 
-				public int? Status
+				public string Status
 				{
 					get
 					{

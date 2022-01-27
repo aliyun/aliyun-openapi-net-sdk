@@ -26,14 +26,14 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20180601
 {
     public class CheckCallbackResponseUnmarshaller
     {
-        public static CheckCallbackResponse Unmarshall(UnmarshallerContext context)
+        public static CheckCallbackResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckCallbackResponse checkCallbackResponse = new CheckCallbackResponse();
 
-			checkCallbackResponse.HttpResponse = context.HttpResponse;
-			checkCallbackResponse.ReturnCode = context.StringValue("CheckCallback.ReturnCode");
-			checkCallbackResponse.ReturnValue = context.BooleanValue("CheckCallback.ReturnValue");
-			checkCallbackResponse.RequestId = context.StringValue("CheckCallback.RequestId");
+			checkCallbackResponse.HttpResponse = _ctx.HttpResponse;
+			checkCallbackResponse.ReturnCode = _ctx.StringValue("CheckCallback.ReturnCode");
+			checkCallbackResponse.ReturnValue = _ctx.BooleanValue("CheckCallback.ReturnValue");
+			checkCallbackResponse.RequestId = _ctx.StringValue("CheckCallback.RequestId");
         
 			return checkCallbackResponse;
         }

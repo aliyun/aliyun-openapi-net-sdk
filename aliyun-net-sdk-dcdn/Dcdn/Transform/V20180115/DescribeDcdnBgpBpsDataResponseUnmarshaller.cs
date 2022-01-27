@@ -26,21 +26,21 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 {
     public class DescribeDcdnBgpBpsDataResponseUnmarshaller
     {
-        public static DescribeDcdnBgpBpsDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDcdnBgpBpsDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDcdnBgpBpsDataResponse describeDcdnBgpBpsDataResponse = new DescribeDcdnBgpBpsDataResponse();
 
-			describeDcdnBgpBpsDataResponse.HttpResponse = context.HttpResponse;
-			describeDcdnBgpBpsDataResponse.RequestId = context.StringValue("DescribeDcdnBgpBpsData.RequestId");
-			describeDcdnBgpBpsDataResponse.StartTime = context.StringValue("DescribeDcdnBgpBpsData.StartTime");
-			describeDcdnBgpBpsDataResponse.EndTime = context.StringValue("DescribeDcdnBgpBpsData.EndTime");
+			describeDcdnBgpBpsDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDcdnBgpBpsDataResponse.RequestId = _ctx.StringValue("DescribeDcdnBgpBpsData.RequestId");
+			describeDcdnBgpBpsDataResponse.StartTime = _ctx.StringValue("DescribeDcdnBgpBpsData.StartTime");
+			describeDcdnBgpBpsDataResponse.EndTime = _ctx.StringValue("DescribeDcdnBgpBpsData.EndTime");
 
 			List<DescribeDcdnBgpBpsDataResponse.DescribeDcdnBgpBpsData_BgpData> describeDcdnBgpBpsDataResponse_bgpDataInterval = new List<DescribeDcdnBgpBpsDataResponse.DescribeDcdnBgpBpsData_BgpData>();
-			for (int i = 0; i < context.Length("DescribeDcdnBgpBpsData.BgpDataInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDcdnBgpBpsData.BgpDataInterval.Length"); i++) {
 				DescribeDcdnBgpBpsDataResponse.DescribeDcdnBgpBpsData_BgpData bgpData = new DescribeDcdnBgpBpsDataResponse.DescribeDcdnBgpBpsData_BgpData();
-				bgpData._In = context.FloatValue("DescribeDcdnBgpBpsData.BgpDataInterval["+ i +"].In");
-				bgpData._Out = context.FloatValue("DescribeDcdnBgpBpsData.BgpDataInterval["+ i +"].Out");
-				bgpData.TimeStamp = context.StringValue("DescribeDcdnBgpBpsData.BgpDataInterval["+ i +"].TimeStamp");
+				bgpData._In = _ctx.FloatValue("DescribeDcdnBgpBpsData.BgpDataInterval["+ i +"].In");
+				bgpData._Out = _ctx.FloatValue("DescribeDcdnBgpBpsData.BgpDataInterval["+ i +"].Out");
+				bgpData.TimeStamp = _ctx.StringValue("DescribeDcdnBgpBpsData.BgpDataInterval["+ i +"].TimeStamp");
 
 				describeDcdnBgpBpsDataResponse_bgpDataInterval.Add(bgpData);
 			}

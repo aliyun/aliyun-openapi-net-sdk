@@ -144,6 +144,14 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private long? lastAccessTime;
 
+			private string databaseName;
+
+			private string partitionKeys;
+
+			private string location;
+
+			private string clusterId;
+
 			private List<GetMetaTableFullInfo_ColumnListItem> columnList;
 
 			public string TableName
@@ -338,6 +346,54 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
+			public string DatabaseName
+			{
+				get
+				{
+					return databaseName;
+				}
+				set	
+				{
+					databaseName = value;
+				}
+			}
+
+			public string PartitionKeys
+			{
+				get
+				{
+					return partitionKeys;
+				}
+				set	
+				{
+					partitionKeys = value;
+				}
+			}
+
+			public string Location
+			{
+				get
+				{
+					return location;
+				}
+				set	
+				{
+					location = value;
+				}
+			}
+
+			public string ClusterId
+			{
+				get
+				{
+					return clusterId;
+				}
+				set	
+				{
+					clusterId = value;
+				}
+			}
+
 			public List<GetMetaTableFullInfo_ColumnListItem> ColumnList
 			{
 				get
@@ -368,6 +424,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				private bool? isForeignKey;
 
 				private string caption;
+
+				private int? position;
 
 				public string ColumnGuid
 				{
@@ -462,6 +520,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						caption = value;
+					}
+				}
+
+				public int? Position
+				{
+					get
+					{
+						return position;
+					}
+					set	
+					{
+						position = value;
 					}
 				}
 			}

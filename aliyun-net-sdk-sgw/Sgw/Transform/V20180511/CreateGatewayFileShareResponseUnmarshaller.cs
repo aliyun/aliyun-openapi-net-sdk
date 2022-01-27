@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class CreateGatewayFileShareResponseUnmarshaller
     {
-        public static CreateGatewayFileShareResponse Unmarshall(UnmarshallerContext context)
+        public static CreateGatewayFileShareResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateGatewayFileShareResponse createGatewayFileShareResponse = new CreateGatewayFileShareResponse();
 
-			createGatewayFileShareResponse.HttpResponse = context.HttpResponse;
-			createGatewayFileShareResponse.RequestId = context.StringValue("CreateGatewayFileShare.RequestId");
-			createGatewayFileShareResponse.Success = context.BooleanValue("CreateGatewayFileShare.Success");
-			createGatewayFileShareResponse.Code = context.StringValue("CreateGatewayFileShare.Code");
-			createGatewayFileShareResponse.Message = context.StringValue("CreateGatewayFileShare.Message");
-			createGatewayFileShareResponse.TaskId = context.StringValue("CreateGatewayFileShare.TaskId");
+			createGatewayFileShareResponse.HttpResponse = _ctx.HttpResponse;
+			createGatewayFileShareResponse.TaskId = _ctx.StringValue("CreateGatewayFileShare.TaskId");
+			createGatewayFileShareResponse.Message = _ctx.StringValue("CreateGatewayFileShare.Message");
+			createGatewayFileShareResponse.RequestId = _ctx.StringValue("CreateGatewayFileShare.RequestId");
+			createGatewayFileShareResponse.Code = _ctx.StringValue("CreateGatewayFileShare.Code");
+			createGatewayFileShareResponse.Success = _ctx.BooleanValue("CreateGatewayFileShare.Success");
         
 			return createGatewayFileShareResponse;
         }

@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class AssignPrivateIpAddressesResponseUnmarshaller
     {
-        public static AssignPrivateIpAddressesResponse Unmarshall(UnmarshallerContext context)
+        public static AssignPrivateIpAddressesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AssignPrivateIpAddressesResponse assignPrivateIpAddressesResponse = new AssignPrivateIpAddressesResponse();
 
-			assignPrivateIpAddressesResponse.HttpResponse = context.HttpResponse;
-			assignPrivateIpAddressesResponse.RequestId = context.StringValue("AssignPrivateIpAddresses.RequestId");
+			assignPrivateIpAddressesResponse.HttpResponse = _ctx.HttpResponse;
+			assignPrivateIpAddressesResponse.RequestId = _ctx.StringValue("AssignPrivateIpAddresses.RequestId");
 
 			AssignPrivateIpAddressesResponse.AssignPrivateIpAddresses_AssignedPrivateIpAddressesSet assignedPrivateIpAddressesSet = new AssignPrivateIpAddressesResponse.AssignPrivateIpAddresses_AssignedPrivateIpAddressesSet();
-			assignedPrivateIpAddressesSet.NetworkInterfaceId = context.StringValue("AssignPrivateIpAddresses.AssignedPrivateIpAddressesSet.NetworkInterfaceId");
+			assignedPrivateIpAddressesSet.NetworkInterfaceId = _ctx.StringValue("AssignPrivateIpAddresses.AssignedPrivateIpAddressesSet.NetworkInterfaceId");
 
 			List<string> assignedPrivateIpAddressesSet_privateIpSet = new List<string>();
-			for (int i = 0; i < context.Length("AssignPrivateIpAddresses.AssignedPrivateIpAddressesSet.PrivateIpSet.Length"); i++) {
-				assignedPrivateIpAddressesSet_privateIpSet.Add(context.StringValue("AssignPrivateIpAddresses.AssignedPrivateIpAddressesSet.PrivateIpSet["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("AssignPrivateIpAddresses.AssignedPrivateIpAddressesSet.PrivateIpSet.Length"); i++) {
+				assignedPrivateIpAddressesSet_privateIpSet.Add(_ctx.StringValue("AssignPrivateIpAddresses.AssignedPrivateIpAddressesSet.PrivateIpSet["+ i +"]"));
 			}
 			assignedPrivateIpAddressesSet.PrivateIpSet = assignedPrivateIpAddressesSet_privateIpSet;
 			assignPrivateIpAddressesResponse.AssignedPrivateIpAddressesSet = assignedPrivateIpAddressesSet;

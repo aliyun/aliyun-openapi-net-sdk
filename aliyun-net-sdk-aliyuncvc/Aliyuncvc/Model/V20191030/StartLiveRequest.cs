@@ -34,15 +34,19 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.aliyuncvc.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.aliyuncvc.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private string liveUUID;
 
+		private string pushInfo;
+
 		private string userId;
+
+		private string layoutInfo;
 
 		public string LiveUUID
 		{
@@ -57,6 +61,19 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			}
 		}
 
+		public string PushInfo
+		{
+			get
+			{
+				return pushInfo;
+			}
+			set	
+			{
+				pushInfo = value;
+				DictionaryUtil.Add(BodyParameters, "PushInfo", value);
+			}
+		}
+
 		public string UserId
 		{
 			get
@@ -67,6 +84,19 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			{
 				userId = value;
 				DictionaryUtil.Add(BodyParameters, "UserId", value);
+			}
+		}
+
+		public string LayoutInfo
+		{
+			get
+			{
+				return layoutInfo;
+			}
+			set	
+			{
+				layoutInfo = value;
+				DictionaryUtil.Add(BodyParameters, "LayoutInfo", value);
 			}
 		}
 

@@ -50,6 +50,8 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 		private string taskId;
 
+		private List<ClockWidgets> clockWidgetss = new List<ClockWidgets>(){ };
+
 		private List<Watermarks> watermarkss = new List<Watermarks>(){ };
 
 		private long? ownerId;
@@ -138,6 +140,28 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				taskId = value;
 				DictionaryUtil.Add(QueryParameters, "TaskId", value);
+			}
+		}
+
+		public List<ClockWidgets> ClockWidgetss
+		{
+			get
+			{
+				return clockWidgetss;
+			}
+
+			set
+			{
+				clockWidgetss = value;
+				for (int i = 0; i < clockWidgetss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ClockWidgets." + (i + 1) + ".X", clockWidgetss[i].X);
+					DictionaryUtil.Add(QueryParameters,"ClockWidgets." + (i + 1) + ".Y", clockWidgetss[i].Y);
+					DictionaryUtil.Add(QueryParameters,"ClockWidgets." + (i + 1) + ".FontType", clockWidgetss[i].FontType);
+					DictionaryUtil.Add(QueryParameters,"ClockWidgets." + (i + 1) + ".FontSize", clockWidgetss[i].FontSize);
+					DictionaryUtil.Add(QueryParameters,"ClockWidgets." + (i + 1) + ".FontColor", clockWidgetss[i].FontColor);
+					DictionaryUtil.Add(QueryParameters,"ClockWidgets." + (i + 1) + ".ZOrder", clockWidgetss[i].ZOrder);
+				}
 			}
 		}
 
@@ -488,6 +512,94 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 					{
 						zOrder = value;
 					}
+				}
+			}
+		}
+
+		public class ClockWidgets
+		{
+
+			private float? x;
+
+			private float? y;
+
+			private int? fontType;
+
+			private int? fontSize;
+
+			private int? fontColor;
+
+			private int? zOrder;
+
+			public float? X
+			{
+				get
+				{
+					return x;
+				}
+				set	
+				{
+					x = value;
+				}
+			}
+
+			public float? Y
+			{
+				get
+				{
+					return y;
+				}
+				set	
+				{
+					y = value;
+				}
+			}
+
+			public int? FontType
+			{
+				get
+				{
+					return fontType;
+				}
+				set	
+				{
+					fontType = value;
+				}
+			}
+
+			public int? FontSize
+			{
+				get
+				{
+					return fontSize;
+				}
+				set	
+				{
+					fontSize = value;
+				}
+			}
+
+			public int? FontColor
+			{
+				get
+				{
+					return fontColor;
+				}
+				set	
+				{
+					fontColor = value;
+				}
+			}
+
+			public int? ZOrder
+			{
+				get
+				{
+					return zOrder;
+				}
+				set	
+				{
+					zOrder = value;
 				}
 			}
 		}

@@ -32,15 +32,23 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public CreateClusterWithTemplateRequest()
             : base("Emr", "2016-04-08", "CreateClusterWithTemplate", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
 		private string uniqueTag;
 
-		private string templateBizId;
+		private string clusterName;
 
-		private string accessKeyId;
+		private string resourceGroupId;
+
+		private string templateBizId;
 
 		public long? ResourceOwnerId
 		{
@@ -68,6 +76,32 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
+		public string ClusterName
+		{
+			get
+			{
+				return clusterName;
+			}
+			set	
+			{
+				clusterName = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterName", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
 		public string TemplateBizId
 		{
 			get
@@ -78,19 +112,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				templateBizId = value;
 				DictionaryUtil.Add(QueryParameters, "TemplateBizId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

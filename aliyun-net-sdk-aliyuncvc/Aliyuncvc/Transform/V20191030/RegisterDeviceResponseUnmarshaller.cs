@@ -26,49 +26,49 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class RegisterDeviceResponseUnmarshaller
     {
-        public static RegisterDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static RegisterDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RegisterDeviceResponse registerDeviceResponse = new RegisterDeviceResponse();
 
-			registerDeviceResponse.HttpResponse = context.HttpResponse;
-			registerDeviceResponse.ErrorCode = context.IntegerValue("RegisterDevice.ErrorCode");
-			registerDeviceResponse.Success = context.BooleanValue("RegisterDevice.Success");
-			registerDeviceResponse.RequestId = context.StringValue("RegisterDevice.RequestId");
-			registerDeviceResponse.Message = context.StringValue("RegisterDevice.Message");
+			registerDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			registerDeviceResponse.ErrorCode = _ctx.IntegerValue("RegisterDevice.ErrorCode");
+			registerDeviceResponse.Success = _ctx.BooleanValue("RegisterDevice.Success");
+			registerDeviceResponse.RequestId = _ctx.StringValue("RegisterDevice.RequestId");
+			registerDeviceResponse.Message = _ctx.StringValue("RegisterDevice.Message");
 
 			RegisterDeviceResponse.RegisterDevice_DeviceInfo deviceInfo = new RegisterDeviceResponse.RegisterDevice_DeviceInfo();
-			deviceInfo.ChannelType = context.StringValue("RegisterDevice.DeviceInfo.ChannelType");
-			deviceInfo.RegisterTime = context.LongValue("RegisterDevice.DeviceInfo.RegisterTime");
-			deviceInfo.DeviceName = context.StringValue("RegisterDevice.DeviceInfo.DeviceName");
-			deviceInfo.DeviceSessionId = context.StringValue("RegisterDevice.DeviceInfo.DeviceSessionId");
-			deviceInfo.MessageKey = context.StringValue("RegisterDevice.DeviceInfo.MessageKey");
-			deviceInfo.ScreenCode = context.StringValue("RegisterDevice.DeviceInfo.ScreenCode");
+			deviceInfo.ChannelType = _ctx.StringValue("RegisterDevice.DeviceInfo.ChannelType");
+			deviceInfo.RegisterTime = _ctx.LongValue("RegisterDevice.DeviceInfo.RegisterTime");
+			deviceInfo.DeviceName = _ctx.StringValue("RegisterDevice.DeviceInfo.DeviceName");
+			deviceInfo.DeviceSessionId = _ctx.StringValue("RegisterDevice.DeviceInfo.DeviceSessionId");
+			deviceInfo.MessageKey = _ctx.StringValue("RegisterDevice.DeviceInfo.MessageKey");
+			deviceInfo.ScreenCode = _ctx.StringValue("RegisterDevice.DeviceInfo.ScreenCode");
 
 			RegisterDeviceResponse.RegisterDevice_DeviceInfo.RegisterDevice_MqttParam mqttParam = new RegisterDeviceResponse.RegisterDevice_DeviceInfo.RegisterDevice_MqttParam();
-			mqttParam.ClientId = context.StringValue("RegisterDevice.DeviceInfo.MqttParam.ClientId");
-			mqttParam.GroupId = context.StringValue("RegisterDevice.DeviceInfo.MqttParam.GroupId");
-			mqttParam.CleanSession = context.StringValue("RegisterDevice.DeviceInfo.MqttParam.CleanSession");
-			mqttParam.Password = context.StringValue("RegisterDevice.DeviceInfo.MqttParam.Password");
-			mqttParam.Port = context.StringValue("RegisterDevice.DeviceInfo.MqttParam.Port");
-			mqttParam.Host = context.StringValue("RegisterDevice.DeviceInfo.MqttParam.Host");
-			mqttParam.Topic = context.StringValue("RegisterDevice.DeviceInfo.MqttParam.Topic");
-			mqttParam.SDKClientPort = context.StringValue("RegisterDevice.DeviceInfo.MqttParam.SDKClientPort");
-			mqttParam.TLSPort = context.StringValue("RegisterDevice.DeviceInfo.MqttParam.TLSPort");
-			mqttParam.UseTLS = context.StringValue("RegisterDevice.DeviceInfo.MqttParam.UseTLS");
-			mqttParam.UserName = context.StringValue("RegisterDevice.DeviceInfo.MqttParam.UserName");
-			mqttParam.ReconnectTimeout = context.StringValue("RegisterDevice.DeviceInfo.MqttParam.ReconnectTimeout");
+			mqttParam.ClientId = _ctx.StringValue("RegisterDevice.DeviceInfo.MqttParam.ClientId");
+			mqttParam.GroupId = _ctx.StringValue("RegisterDevice.DeviceInfo.MqttParam.GroupId");
+			mqttParam.CleanSession = _ctx.StringValue("RegisterDevice.DeviceInfo.MqttParam.CleanSession");
+			mqttParam.Password = _ctx.StringValue("RegisterDevice.DeviceInfo.MqttParam.Password");
+			mqttParam.Port = _ctx.StringValue("RegisterDevice.DeviceInfo.MqttParam.Port");
+			mqttParam.Host = _ctx.StringValue("RegisterDevice.DeviceInfo.MqttParam.Host");
+			mqttParam.Topic = _ctx.StringValue("RegisterDevice.DeviceInfo.MqttParam.Topic");
+			mqttParam.SDKClientPort = _ctx.StringValue("RegisterDevice.DeviceInfo.MqttParam.SDKClientPort");
+			mqttParam.TLSPort = _ctx.StringValue("RegisterDevice.DeviceInfo.MqttParam.TLSPort");
+			mqttParam.UseTLS = _ctx.StringValue("RegisterDevice.DeviceInfo.MqttParam.UseTLS");
+			mqttParam.UserName = _ctx.StringValue("RegisterDevice.DeviceInfo.MqttParam.UserName");
+			mqttParam.ReconnectTimeout = _ctx.StringValue("RegisterDevice.DeviceInfo.MqttParam.ReconnectTimeout");
 			deviceInfo.MqttParam = mqttParam;
 
 			RegisterDeviceResponse.RegisterDevice_DeviceInfo.RegisterDevice_AuthWsChannelConfig authWsChannelConfig = new RegisterDeviceResponse.RegisterDevice_DeviceInfo.RegisterDevice_AuthWsChannelConfig();
-			authWsChannelConfig.AuthWsUrl = context.StringValue("RegisterDevice.DeviceInfo.AuthWsChannelConfig.AuthWsUrl");
-			authWsChannelConfig.WsOuterReconnTime = context.IntegerValue("RegisterDevice.DeviceInfo.AuthWsChannelConfig.WsOuterReconnTime");
-			authWsChannelConfig.Token = context.StringValue("RegisterDevice.DeviceInfo.AuthWsChannelConfig.Token");
+			authWsChannelConfig.AuthWsUrl = _ctx.StringValue("RegisterDevice.DeviceInfo.AuthWsChannelConfig.AuthWsUrl");
+			authWsChannelConfig.WsOuterReconnTime = _ctx.IntegerValue("RegisterDevice.DeviceInfo.AuthWsChannelConfig.WsOuterReconnTime");
+			authWsChannelConfig.Token = _ctx.StringValue("RegisterDevice.DeviceInfo.AuthWsChannelConfig.Token");
 			deviceInfo.AuthWsChannelConfig = authWsChannelConfig;
 
 			RegisterDeviceResponse.RegisterDevice_DeviceInfo.RegisterDevice_SlsConfig slsConfig = new RegisterDeviceResponse.RegisterDevice_DeviceInfo.RegisterDevice_SlsConfig();
-			slsConfig.Project = context.StringValue("RegisterDevice.DeviceInfo.SlsConfig.Project");
-			slsConfig.LogStore = context.StringValue("RegisterDevice.DeviceInfo.SlsConfig.LogStore");
-			slsConfig.LogServiceEndpoint = context.StringValue("RegisterDevice.DeviceInfo.SlsConfig.LogServiceEndpoint");
+			slsConfig.Project = _ctx.StringValue("RegisterDevice.DeviceInfo.SlsConfig.Project");
+			slsConfig.LogStore = _ctx.StringValue("RegisterDevice.DeviceInfo.SlsConfig.LogStore");
+			slsConfig.LogServiceEndpoint = _ctx.StringValue("RegisterDevice.DeviceInfo.SlsConfig.LogServiceEndpoint");
 			deviceInfo.SlsConfig = slsConfig;
 			registerDeviceResponse.DeviceInfo = deviceInfo;
         

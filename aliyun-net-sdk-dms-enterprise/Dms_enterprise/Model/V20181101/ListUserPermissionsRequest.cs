@@ -31,15 +31,17 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class ListUserPermissionsRequest : RpcAcsRequest<ListUserPermissionsResponse>
     {
         public ListUserPermissionsRequest()
-            : base("dms-enterprise", "2018-11-01", "ListUserPermissions", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "ListUserPermissions", "dms-enterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
+
+		private string searchKey;
 
 		private string userId;
 
@@ -59,6 +61,21 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private bool? logic;
 
+		[JsonProperty(PropertyName = "SearchKey")]
+		public string SearchKey
+		{
+			get
+			{
+				return searchKey;
+			}
+			set	
+			{
+				searchKey = value;
+				DictionaryUtil.Add(QueryParameters, "SearchKey", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "UserId")]
 		public string UserId
 		{
 			get
@@ -72,6 +89,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -85,6 +103,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -98,6 +117,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PermType")]
 		public string PermType
 		{
 			get
@@ -111,6 +131,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DatabaseName")]
 		public string DatabaseName
 		{
 			get
@@ -124,6 +145,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "EnvType")]
 		public string EnvType
 		{
 			get
@@ -137,6 +159,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DbType")]
 		public string DbType
 		{
 			get
@@ -150,6 +173,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -163,6 +187,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Logic")]
 		public bool? Logic
 		{
 			get

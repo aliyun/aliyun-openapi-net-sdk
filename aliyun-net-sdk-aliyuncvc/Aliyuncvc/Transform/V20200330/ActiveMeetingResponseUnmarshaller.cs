@@ -26,19 +26,19 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20200330
 {
     public class ActiveMeetingResponseUnmarshaller
     {
-        public static ActiveMeetingResponse Unmarshall(UnmarshallerContext context)
+        public static ActiveMeetingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ActiveMeetingResponse activeMeetingResponse = new ActiveMeetingResponse();
 
-			activeMeetingResponse.HttpResponse = context.HttpResponse;
-			activeMeetingResponse.ErrorCode = context.IntegerValue("ActiveMeeting.ErrorCode");
-			activeMeetingResponse.Message = context.StringValue("ActiveMeeting.Message");
-			activeMeetingResponse.Success = context.BooleanValue("ActiveMeeting.Success");
-			activeMeetingResponse.RequestId = context.StringValue("ActiveMeeting.RequestId");
+			activeMeetingResponse.HttpResponse = _ctx.HttpResponse;
+			activeMeetingResponse.ErrorCode = _ctx.IntegerValue("ActiveMeeting.ErrorCode");
+			activeMeetingResponse.Message = _ctx.StringValue("ActiveMeeting.Message");
+			activeMeetingResponse.Success = _ctx.BooleanValue("ActiveMeeting.Success");
+			activeMeetingResponse.RequestId = _ctx.StringValue("ActiveMeeting.RequestId");
 
 			ActiveMeetingResponse.ActiveMeeting_MeetingInfo meetingInfo = new ActiveMeetingResponse.ActiveMeeting_MeetingInfo();
-			meetingInfo.ValidTime = context.LongValue("ActiveMeeting.MeetingInfo.ValidTime");
-			meetingInfo.MeetingCode = context.StringValue("ActiveMeeting.MeetingInfo.MeetingCode");
+			meetingInfo.ValidTime = _ctx.LongValue("ActiveMeeting.MeetingInfo.ValidTime");
+			meetingInfo.MeetingCode = _ctx.StringValue("ActiveMeeting.MeetingInfo.MeetingCode");
 			activeMeetingResponse.MeetingInfo = meetingInfo;
         
 			return activeMeetingResponse;

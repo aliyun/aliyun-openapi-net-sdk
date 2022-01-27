@@ -35,8 +35,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.BssOpenApi.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.BssOpenApi.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -46,6 +46,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		private string subscribeType;
 
 		private string subscribeBucket;
+
+		private string beginBillingCycle;
 
 		private string multAccountRelSubscribe;
 
@@ -85,6 +87,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				subscribeBucket = value;
 				DictionaryUtil.Add(QueryParameters, "SubscribeBucket", value);
+			}
+		}
+
+		public string BeginBillingCycle
+		{
+			get
+			{
+				return beginBillingCycle;
+			}
+			set	
+			{
+				beginBillingCycle = value;
+				DictionaryUtil.Add(QueryParameters, "BeginBillingCycle", value);
 			}
 		}
 

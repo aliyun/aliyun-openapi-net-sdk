@@ -26,12 +26,12 @@ namespace Aliyun.Acs.gpdb.Transform.V20160503
 {
     public class AllocateInstancePublicConnectionResponseUnmarshaller
     {
-        public static AllocateInstancePublicConnectionResponse Unmarshall(UnmarshallerContext context)
+        public static AllocateInstancePublicConnectionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AllocateInstancePublicConnectionResponse allocateInstancePublicConnectionResponse = new AllocateInstancePublicConnectionResponse();
 
-			allocateInstancePublicConnectionResponse.HttpResponse = context.HttpResponse;
-			allocateInstancePublicConnectionResponse.RequestId = context.StringValue("AllocateInstancePublicConnection.RequestId");
+			allocateInstancePublicConnectionResponse.HttpResponse = _ctx.HttpResponse;
+			allocateInstancePublicConnectionResponse.RequestId = _ctx.StringValue("AllocateInstancePublicConnection.RequestId");
         
 			return allocateInstancePublicConnectionResponse;
         }

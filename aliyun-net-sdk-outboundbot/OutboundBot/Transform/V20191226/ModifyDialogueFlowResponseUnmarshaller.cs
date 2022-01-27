@@ -26,18 +26,18 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class ModifyDialogueFlowResponseUnmarshaller
     {
-        public static ModifyDialogueFlowResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDialogueFlowResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyDialogueFlowResponse modifyDialogueFlowResponse = new ModifyDialogueFlowResponse();
 
-			modifyDialogueFlowResponse.HttpResponse = context.HttpResponse;
-			modifyDialogueFlowResponse.RequestId = context.StringValue("ModifyDialogueFlow.RequestId");
-			modifyDialogueFlowResponse.Success = context.BooleanValue("ModifyDialogueFlow.Success");
-			modifyDialogueFlowResponse.Code = context.StringValue("ModifyDialogueFlow.Code");
-			modifyDialogueFlowResponse.Message = context.StringValue("ModifyDialogueFlow.Message");
-			modifyDialogueFlowResponse.HttpStatusCode = context.IntegerValue("ModifyDialogueFlow.HttpStatusCode");
-			modifyDialogueFlowResponse.DialogueFlowId = context.StringValue("ModifyDialogueFlow.DialogueFlowId");
-			modifyDialogueFlowResponse.DialogueFlowDefinition = context.StringValue("ModifyDialogueFlow.DialogueFlowDefinition");
+			modifyDialogueFlowResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDialogueFlowResponse.Code = _ctx.StringValue("ModifyDialogueFlow.Code");
+			modifyDialogueFlowResponse.DialogueFlowDefinition = _ctx.StringValue("ModifyDialogueFlow.DialogueFlowDefinition");
+			modifyDialogueFlowResponse.DialogueFlowId = _ctx.StringValue("ModifyDialogueFlow.DialogueFlowId");
+			modifyDialogueFlowResponse.HttpStatusCode = _ctx.IntegerValue("ModifyDialogueFlow.HttpStatusCode");
+			modifyDialogueFlowResponse.Message = _ctx.StringValue("ModifyDialogueFlow.Message");
+			modifyDialogueFlowResponse.RequestId = _ctx.StringValue("ModifyDialogueFlow.RequestId");
+			modifyDialogueFlowResponse.Success = _ctx.BooleanValue("ModifyDialogueFlow.Success");
         
 			return modifyDialogueFlowResponse;
         }

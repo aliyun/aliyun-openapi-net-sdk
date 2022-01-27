@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 {
     public class MassPushResponseUnmarshaller
     {
-        public static MassPushResponse Unmarshall(UnmarshallerContext context)
+        public static MassPushResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			MassPushResponse massPushResponse = new MassPushResponse();
 
-			massPushResponse.HttpResponse = context.HttpResponse;
-			massPushResponse.RequestId = context.StringValue("MassPush.RequestId");
+			massPushResponse.HttpResponse = _ctx.HttpResponse;
+			massPushResponse.RequestId = _ctx.StringValue("MassPush.RequestId");
 
 			List<string> massPushResponse_messageIds = new List<string>();
-			for (int i = 0; i < context.Length("MassPush.MessageIds.Length"); i++) {
-				massPushResponse_messageIds.Add(context.StringValue("MassPush.MessageIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("MassPush.MessageIds.Length"); i++) {
+				massPushResponse_messageIds.Add(_ctx.StringValue("MassPush.MessageIds["+ i +"]"));
 			}
 			massPushResponse.MessageIds = massPushResponse_messageIds;
         

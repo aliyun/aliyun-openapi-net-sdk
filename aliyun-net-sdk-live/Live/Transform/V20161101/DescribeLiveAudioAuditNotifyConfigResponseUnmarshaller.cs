@@ -26,19 +26,19 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveAudioAuditNotifyConfigResponseUnmarshaller
     {
-        public static DescribeLiveAudioAuditNotifyConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveAudioAuditNotifyConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveAudioAuditNotifyConfigResponse describeLiveAudioAuditNotifyConfigResponse = new DescribeLiveAudioAuditNotifyConfigResponse();
 
-			describeLiveAudioAuditNotifyConfigResponse.HttpResponse = context.HttpResponse;
-			describeLiveAudioAuditNotifyConfigResponse.RequestId = context.StringValue("DescribeLiveAudioAuditNotifyConfig.RequestId");
+			describeLiveAudioAuditNotifyConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveAudioAuditNotifyConfigResponse.RequestId = _ctx.StringValue("DescribeLiveAudioAuditNotifyConfig.RequestId");
 
 			List<DescribeLiveAudioAuditNotifyConfigResponse.DescribeLiveAudioAuditNotifyConfig_LiveAudioAuditNotifyConfig> describeLiveAudioAuditNotifyConfigResponse_liveAudioAuditNotifyConfigList = new List<DescribeLiveAudioAuditNotifyConfigResponse.DescribeLiveAudioAuditNotifyConfig_LiveAudioAuditNotifyConfig>();
-			for (int i = 0; i < context.Length("DescribeLiveAudioAuditNotifyConfig.LiveAudioAuditNotifyConfigList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveAudioAuditNotifyConfig.LiveAudioAuditNotifyConfigList.Length"); i++) {
 				DescribeLiveAudioAuditNotifyConfigResponse.DescribeLiveAudioAuditNotifyConfig_LiveAudioAuditNotifyConfig liveAudioAuditNotifyConfig = new DescribeLiveAudioAuditNotifyConfigResponse.DescribeLiveAudioAuditNotifyConfig_LiveAudioAuditNotifyConfig();
-				liveAudioAuditNotifyConfig.DomainName = context.StringValue("DescribeLiveAudioAuditNotifyConfig.LiveAudioAuditNotifyConfigList["+ i +"].DomainName");
-				liveAudioAuditNotifyConfig.Callback = context.StringValue("DescribeLiveAudioAuditNotifyConfig.LiveAudioAuditNotifyConfigList["+ i +"].Callback");
-				liveAudioAuditNotifyConfig.CallbackTemplate = context.StringValue("DescribeLiveAudioAuditNotifyConfig.LiveAudioAuditNotifyConfigList["+ i +"].CallbackTemplate");
+				liveAudioAuditNotifyConfig.DomainName = _ctx.StringValue("DescribeLiveAudioAuditNotifyConfig.LiveAudioAuditNotifyConfigList["+ i +"].DomainName");
+				liveAudioAuditNotifyConfig.Callback = _ctx.StringValue("DescribeLiveAudioAuditNotifyConfig.LiveAudioAuditNotifyConfigList["+ i +"].Callback");
+				liveAudioAuditNotifyConfig.CallbackTemplate = _ctx.StringValue("DescribeLiveAudioAuditNotifyConfig.LiveAudioAuditNotifyConfigList["+ i +"].CallbackTemplate");
 
 				describeLiveAudioAuditNotifyConfigResponse_liveAudioAuditNotifyConfigList.Add(liveAudioAuditNotifyConfig);
 			}

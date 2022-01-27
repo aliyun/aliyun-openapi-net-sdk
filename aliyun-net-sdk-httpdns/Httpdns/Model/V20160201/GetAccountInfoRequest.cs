@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Httpdns;
 using Aliyun.Acs.Httpdns.Transform;
 using Aliyun.Acs.Httpdns.Transform.V20160201;
 
@@ -30,24 +31,10 @@ namespace Aliyun.Acs.Httpdns.Model.V20160201
     public class GetAccountInfoRequest : RpcAcsRequest<GetAccountInfoResponse>
     {
         public GetAccountInfoRequest()
-            : base("Httpdns", "2016-02-01", "GetAccountInfo", "httpdns", "openAPI")
+            : base("Httpdns", "2016-02-01", "GetAccountInfo")
         {
+			Method = MethodType.POST;
         }
-
-		private string accessKeyId;
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
 
         public override GetAccountInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

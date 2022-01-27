@@ -26,27 +26,27 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 {
     public class QueryPushStatByMsgResponseUnmarshaller
     {
-        public static QueryPushStatByMsgResponse Unmarshall(UnmarshallerContext context)
+        public static QueryPushStatByMsgResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryPushStatByMsgResponse queryPushStatByMsgResponse = new QueryPushStatByMsgResponse();
 
-			queryPushStatByMsgResponse.HttpResponse = context.HttpResponse;
-			queryPushStatByMsgResponse.RequestId = context.StringValue("QueryPushStatByMsg.RequestId");
+			queryPushStatByMsgResponse.HttpResponse = _ctx.HttpResponse;
+			queryPushStatByMsgResponse.RequestId = _ctx.StringValue("QueryPushStatByMsg.RequestId");
 
 			List<QueryPushStatByMsgResponse.QueryPushStatByMsg_PushStat> queryPushStatByMsgResponse_pushStats = new List<QueryPushStatByMsgResponse.QueryPushStatByMsg_PushStat>();
-			for (int i = 0; i < context.Length("QueryPushStatByMsg.PushStats.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryPushStatByMsg.PushStats.Length"); i++) {
 				QueryPushStatByMsgResponse.QueryPushStatByMsg_PushStat pushStat = new QueryPushStatByMsgResponse.QueryPushStatByMsg_PushStat();
-				pushStat.MessageId = context.StringValue("QueryPushStatByMsg.PushStats["+ i +"].MessageId");
-				pushStat.AcceptCount = context.LongValue("QueryPushStatByMsg.PushStats["+ i +"].AcceptCount");
-				pushStat.SentCount = context.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SentCount");
-				pushStat.ReceivedCount = context.LongValue("QueryPushStatByMsg.PushStats["+ i +"].ReceivedCount");
-				pushStat.OpenedCount = context.LongValue("QueryPushStatByMsg.PushStats["+ i +"].OpenedCount");
-				pushStat.DeletedCount = context.LongValue("QueryPushStatByMsg.PushStats["+ i +"].DeletedCount");
-				pushStat.SmsSentCount = context.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SmsSentCount");
-				pushStat.SmsSkipCount = context.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SmsSkipCount");
-				pushStat.SmsFailedCount = context.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SmsFailedCount");
-				pushStat.SmsReceiveSuccessCount = context.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SmsReceiveSuccessCount");
-				pushStat.SmsReceiveFailedCount = context.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SmsReceiveFailedCount");
+				pushStat.MessageId = _ctx.StringValue("QueryPushStatByMsg.PushStats["+ i +"].MessageId");
+				pushStat.AcceptCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].AcceptCount");
+				pushStat.SentCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SentCount");
+				pushStat.ReceivedCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].ReceivedCount");
+				pushStat.OpenedCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].OpenedCount");
+				pushStat.DeletedCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].DeletedCount");
+				pushStat.SmsSentCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SmsSentCount");
+				pushStat.SmsSkipCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SmsSkipCount");
+				pushStat.SmsFailedCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SmsFailedCount");
+				pushStat.SmsReceiveSuccessCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SmsReceiveSuccessCount");
+				pushStat.SmsReceiveFailedCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SmsReceiveFailedCount");
 
 				queryPushStatByMsgResponse_pushStats.Add(pushStat);
 			}

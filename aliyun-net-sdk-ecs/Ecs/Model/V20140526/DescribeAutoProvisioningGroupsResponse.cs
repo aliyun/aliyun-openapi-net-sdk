@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeAutoProvisioningGroupsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeAutoProvisioningGroups_AutoProvisioningGroup> autoProvisioningGroups;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,35 +98,35 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeAutoProvisioningGroups_AutoProvisioningGroup
 		{
 
-			private string autoProvisioningGroupId;
+			private string creationTime;
 
 			private string autoProvisioningGroupName;
 
-			private string autoProvisioningGroupType;
-
 			private string status;
-
-			private string state;
-
-			private string regionId;
-
-			private string validFrom;
-
-			private string validUntil;
-
-			private string excessCapacityTerminationPolicy;
-
-			private float? maxSpotPrice;
-
-			private string launchTemplateId;
-
-			private string launchTemplateVersion;
 
 			private bool? terminateInstances;
 
+			private float? maxSpotPrice;
+
+			private string state;
+
+			private string launchTemplateId;
+
+			private string validFrom;
+
+			private string launchTemplateVersion;
+
 			private bool? terminateInstancesWithExpiration;
 
-			private string creationTime;
+			private string regionId;
+
+			private string validUntil;
+
+			private string autoProvisioningGroupType;
+
+			private string autoProvisioningGroupId;
+
+			private string excessCapacityTerminationPolicy;
 
 			private List<DescribeAutoProvisioningGroups_LaunchTemplateConfig> launchTemplateConfigs;
 
@@ -136,15 +136,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private DescribeAutoProvisioningGroups_TargetCapacitySpecification targetCapacitySpecification;
 
-			public string AutoProvisioningGroupId
+			public string CreationTime
 			{
 				get
 				{
-					return autoProvisioningGroupId;
+					return creationTime;
 				}
 				set	
 				{
-					autoProvisioningGroupId = value;
+					creationTime = value;
 				}
 			}
 
@@ -160,18 +160,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string AutoProvisioningGroupType
-			{
-				get
-				{
-					return autoProvisioningGroupType;
-				}
-				set	
-				{
-					autoProvisioningGroupType = value;
-				}
-			}
-
 			public string Status
 			{
 				get
@@ -181,102 +169,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					status = value;
-				}
-			}
-
-			public string State
-			{
-				get
-				{
-					return state;
-				}
-				set	
-				{
-					state = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string ValidFrom
-			{
-				get
-				{
-					return validFrom;
-				}
-				set	
-				{
-					validFrom = value;
-				}
-			}
-
-			public string ValidUntil
-			{
-				get
-				{
-					return validUntil;
-				}
-				set	
-				{
-					validUntil = value;
-				}
-			}
-
-			public string ExcessCapacityTerminationPolicy
-			{
-				get
-				{
-					return excessCapacityTerminationPolicy;
-				}
-				set	
-				{
-					excessCapacityTerminationPolicy = value;
-				}
-			}
-
-			public float? MaxSpotPrice
-			{
-				get
-				{
-					return maxSpotPrice;
-				}
-				set	
-				{
-					maxSpotPrice = value;
-				}
-			}
-
-			public string LaunchTemplateId
-			{
-				get
-				{
-					return launchTemplateId;
-				}
-				set	
-				{
-					launchTemplateId = value;
-				}
-			}
-
-			public string LaunchTemplateVersion
-			{
-				get
-				{
-					return launchTemplateVersion;
-				}
-				set	
-				{
-					launchTemplateVersion = value;
 				}
 			}
 
@@ -292,6 +184,66 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public float? MaxSpotPrice
+			{
+				get
+				{
+					return maxSpotPrice;
+				}
+				set	
+				{
+					maxSpotPrice = value;
+				}
+			}
+
+			public string State
+			{
+				get
+				{
+					return state;
+				}
+				set	
+				{
+					state = value;
+				}
+			}
+
+			public string LaunchTemplateId
+			{
+				get
+				{
+					return launchTemplateId;
+				}
+				set	
+				{
+					launchTemplateId = value;
+				}
+			}
+
+			public string ValidFrom
+			{
+				get
+				{
+					return validFrom;
+				}
+				set	
+				{
+					validFrom = value;
+				}
+			}
+
+			public string LaunchTemplateVersion
+			{
+				get
+				{
+					return launchTemplateVersion;
+				}
+				set	
+				{
+					launchTemplateVersion = value;
+				}
+			}
+
 			public bool? TerminateInstancesWithExpiration
 			{
 				get
@@ -304,15 +256,63 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string CreationTime
+			public string RegionId
 			{
 				get
 				{
-					return creationTime;
+					return regionId;
 				}
 				set	
 				{
-					creationTime = value;
+					regionId = value;
+				}
+			}
+
+			public string ValidUntil
+			{
+				get
+				{
+					return validUntil;
+				}
+				set	
+				{
+					validUntil = value;
+				}
+			}
+
+			public string AutoProvisioningGroupType
+			{
+				get
+				{
+					return autoProvisioningGroupType;
+				}
+				set	
+				{
+					autoProvisioningGroupType = value;
+				}
+			}
+
+			public string AutoProvisioningGroupId
+			{
+				get
+				{
+					return autoProvisioningGroupId;
+				}
+				set	
+				{
+					autoProvisioningGroupId = value;
+				}
+			}
+
+			public string ExcessCapacityTerminationPolicy
+			{
+				get
+				{
+					return excessCapacityTerminationPolicy;
+				}
+				set	
+				{
+					excessCapacityTerminationPolicy = value;
 				}
 			}
 
@@ -367,27 +367,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeAutoProvisioningGroups_LaunchTemplateConfig
 			{
 
-				private string instanceType;
-
 				private float? maxPrice;
+
+				private float? priority;
 
 				private string vSwitchId;
 
 				private float? weightedCapacity;
 
-				private float? priority;
-
-				public string InstanceType
-				{
-					get
-					{
-						return instanceType;
-					}
-					set	
-					{
-						instanceType = value;
-					}
-				}
+				private string instanceType;
 
 				public float? MaxPrice
 				{
@@ -398,6 +386,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						maxPrice = value;
+					}
+				}
+
+				public float? Priority
+				{
+					get
+					{
+						return priority;
+					}
+					set	
+					{
+						priority = value;
 					}
 				}
 
@@ -425,15 +425,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public float? Priority
+				public string InstanceType
 				{
 					get
 					{
-						return priority;
+						return instanceType;
 					}
 					set	
 					{
-						priority = value;
+						instanceType = value;
 					}
 				}
 			}
@@ -441,11 +441,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeAutoProvisioningGroups_SpotOptions
 			{
 
+				private int? instancePoolsToUseCount;
+
 				private string allocationStrategy;
 
 				private string instanceInterruptionBehavior;
 
-				private int? instancePoolsToUseCount;
+				public int? InstancePoolsToUseCount
+				{
+					get
+					{
+						return instancePoolsToUseCount;
+					}
+					set	
+					{
+						instancePoolsToUseCount = value;
+					}
+				}
 
 				public string AllocationStrategy
 				{
@@ -468,18 +480,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						instanceInterruptionBehavior = value;
-					}
-				}
-
-				public int? InstancePoolsToUseCount
-				{
-					get
-					{
-						return instancePoolsToUseCount;
-					}
-					set	
-					{
-						instancePoolsToUseCount = value;
 					}
 				}
 			}
@@ -505,23 +505,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeAutoProvisioningGroups_TargetCapacitySpecification
 			{
 
-				private float? totalTargetCapacity;
+				private float? spotTargetCapacity;
 
 				private float? payAsYouGoTargetCapacity;
 
-				private float? spotTargetCapacity;
-
 				private string defaultTargetCapacityType;
 
-				public float? TotalTargetCapacity
+				private float? totalTargetCapacity;
+
+				public float? SpotTargetCapacity
 				{
 					get
 					{
-						return totalTargetCapacity;
+						return spotTargetCapacity;
 					}
 					set	
 					{
-						totalTargetCapacity = value;
+						spotTargetCapacity = value;
 					}
 				}
 
@@ -537,18 +537,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public float? SpotTargetCapacity
-				{
-					get
-					{
-						return spotTargetCapacity;
-					}
-					set	
-					{
-						spotTargetCapacity = value;
-					}
-				}
-
 				public string DefaultTargetCapacityType
 				{
 					get
@@ -558,6 +546,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						defaultTargetCapacityType = value;
+					}
+				}
+
+				public float? TotalTargetCapacity
+				{
+					get
+					{
+						return totalTargetCapacity;
+					}
+					set	
+					{
+						totalTargetCapacity = value;
 					}
 				}
 			}

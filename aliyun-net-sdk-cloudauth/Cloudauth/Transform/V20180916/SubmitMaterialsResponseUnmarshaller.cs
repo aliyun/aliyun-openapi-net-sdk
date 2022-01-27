@@ -26,24 +26,24 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20180916
 {
     public class SubmitMaterialsResponseUnmarshaller
     {
-        public static SubmitMaterialsResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitMaterialsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitMaterialsResponse submitMaterialsResponse = new SubmitMaterialsResponse();
 
-			submitMaterialsResponse.HttpResponse = context.HttpResponse;
-			submitMaterialsResponse.RequestId = context.StringValue("SubmitMaterials.RequestId");
-			submitMaterialsResponse.Success = context.BooleanValue("SubmitMaterials.Success");
-			submitMaterialsResponse.Code = context.StringValue("SubmitMaterials.Code");
-			submitMaterialsResponse.Message = context.StringValue("SubmitMaterials.Message");
+			submitMaterialsResponse.HttpResponse = _ctx.HttpResponse;
+			submitMaterialsResponse.RequestId = _ctx.StringValue("SubmitMaterials.RequestId");
+			submitMaterialsResponse.Success = _ctx.BooleanValue("SubmitMaterials.Success");
+			submitMaterialsResponse.Code = _ctx.StringValue("SubmitMaterials.Code");
+			submitMaterialsResponse.Message = _ctx.StringValue("SubmitMaterials.Message");
 
 			SubmitMaterialsResponse.SubmitMaterials_Data data = new SubmitMaterialsResponse.SubmitMaterials_Data();
 
 			SubmitMaterialsResponse.SubmitMaterials_Data.SubmitMaterials_VerifyStatus verifyStatus = new SubmitMaterialsResponse.SubmitMaterials_Data.SubmitMaterials_VerifyStatus();
-			verifyStatus.StatusCode = context.IntegerValue("SubmitMaterials.Data.VerifyStatus.StatusCode");
-			verifyStatus.TrustedScore = context.FloatValue("SubmitMaterials.Data.VerifyStatus.TrustedScore");
-			verifyStatus.SimilarityScore = context.FloatValue("SubmitMaterials.Data.VerifyStatus.SimilarityScore");
-			verifyStatus.AuditConclusions = context.StringValue("SubmitMaterials.Data.VerifyStatus.AuditConclusions");
-			verifyStatus.AuthorityComparisonScore = context.FloatValue("SubmitMaterials.Data.VerifyStatus.AuthorityComparisonScore");
+			verifyStatus.StatusCode = _ctx.IntegerValue("SubmitMaterials.Data.VerifyStatus.StatusCode");
+			verifyStatus.TrustedScore = _ctx.FloatValue("SubmitMaterials.Data.VerifyStatus.TrustedScore");
+			verifyStatus.SimilarityScore = _ctx.FloatValue("SubmitMaterials.Data.VerifyStatus.SimilarityScore");
+			verifyStatus.AuditConclusions = _ctx.StringValue("SubmitMaterials.Data.VerifyStatus.AuditConclusions");
+			verifyStatus.AuthorityComparisonScore = _ctx.FloatValue("SubmitMaterials.Data.VerifyStatus.AuthorityComparisonScore");
 			data.VerifyStatus = verifyStatus;
 			submitMaterialsResponse.Data = data;
         

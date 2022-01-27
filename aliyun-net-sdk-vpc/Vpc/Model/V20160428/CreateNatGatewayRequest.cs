@@ -34,9 +34,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -50,8 +51,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private string duration;
 
 		private string natType;
-
-		private List<BandwidthPackage> bandwidthPackages = new List<BandwidthPackage>(){ };
 
 		private string instanceChargeType;
 
@@ -148,27 +147,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				natType = value;
 				DictionaryUtil.Add(QueryParameters, "NatType", value);
-			}
-		}
-
-		public List<BandwidthPackage> BandwidthPackages
-		{
-			get
-			{
-				return bandwidthPackages;
-			}
-
-			set
-			{
-				bandwidthPackages = value;
-				for (int i = 0; i < bandwidthPackages.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".Bandwidth", bandwidthPackages[i].Bandwidth);
-					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".Zone", bandwidthPackages[i].Zone);
-					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".InternetChargeType", bandwidthPackages[i].InternetChargeType);
-					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".ISP", bandwidthPackages[i].ISP);
-					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".IpCount", bandwidthPackages[i].IpCount);
-				}
 			}
 		}
 
@@ -299,80 +277,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				pricingCycle = value;
 				DictionaryUtil.Add(QueryParameters, "PricingCycle", value);
-			}
-		}
-
-		public class BandwidthPackage
-		{
-
-			private int? bandwidth;
-
-			private string zone;
-
-			private string internetChargeType;
-
-			private string iSP;
-
-			private int? ipCount;
-
-			public int? Bandwidth
-			{
-				get
-				{
-					return bandwidth;
-				}
-				set	
-				{
-					bandwidth = value;
-				}
-			}
-
-			public string Zone
-			{
-				get
-				{
-					return zone;
-				}
-				set	
-				{
-					zone = value;
-				}
-			}
-
-			public string InternetChargeType
-			{
-				get
-				{
-					return internetChargeType;
-				}
-				set	
-				{
-					internetChargeType = value;
-				}
-			}
-
-			public string ISP
-			{
-				get
-				{
-					return iSP;
-				}
-				set	
-				{
-					iSP = value;
-				}
-			}
-
-			public int? IpCount
-			{
-				get
-				{
-					return ipCount;
-				}
-				set	
-				{
-					ipCount = value;
-				}
 			}
 		}
 

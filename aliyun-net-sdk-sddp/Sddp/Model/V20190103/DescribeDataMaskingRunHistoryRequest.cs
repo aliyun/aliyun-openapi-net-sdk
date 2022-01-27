@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sddp;
 using Aliyun.Acs.Sddp.Transform;
 using Aliyun.Acs.Sddp.Transform.V20190103;
 
@@ -30,16 +31,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
     public class DescribeDataMaskingRunHistoryRequest : RpcAcsRequest<DescribeDataMaskingRunHistoryResponse>
     {
         public DescribeDataMaskingRunHistoryRequest()
-            : base("Sddp", "2019-01-03", "DescribeDataMaskingRunHistory", "sddp", "openAPI")
+            : base("Sddp", "2019-01-03", "DescribeDataMaskingRunHistory")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Sddp.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Sddp.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private int? srcType;
+
+		private long? mainProcessId;
 
 		private long? startTime;
 
@@ -48,6 +52,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		private string lang;
 
 		private string taskId;
+
+		private string srcTableName;
 
 		private long? endTime;
 
@@ -67,6 +73,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				srcType = value;
 				DictionaryUtil.Add(QueryParameters, "SrcType", value.ToString());
+			}
+		}
+
+		public long? MainProcessId
+		{
+			get
+			{
+				return mainProcessId;
+			}
+			set	
+			{
+				mainProcessId = value;
+				DictionaryUtil.Add(QueryParameters, "MainProcessId", value.ToString());
 			}
 		}
 
@@ -119,6 +138,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				taskId = value;
 				DictionaryUtil.Add(QueryParameters, "TaskId", value);
+			}
+		}
+
+		public string SrcTableName
+		{
+			get
+			{
+				return srcTableName;
+			}
+			set	
+			{
+				srcTableName = value;
+				DictionaryUtil.Add(QueryParameters, "SrcTableName", value);
 			}
 		}
 

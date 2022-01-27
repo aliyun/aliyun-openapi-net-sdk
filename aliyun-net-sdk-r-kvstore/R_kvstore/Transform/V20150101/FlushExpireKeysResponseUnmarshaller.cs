@@ -26,14 +26,14 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class FlushExpireKeysResponseUnmarshaller
     {
-        public static FlushExpireKeysResponse Unmarshall(UnmarshallerContext context)
+        public static FlushExpireKeysResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			FlushExpireKeysResponse flushExpireKeysResponse = new FlushExpireKeysResponse();
 
-			flushExpireKeysResponse.HttpResponse = context.HttpResponse;
-			flushExpireKeysResponse.RequestId = context.StringValue("FlushExpireKeys.RequestId");
-			flushExpireKeysResponse.InstanceId = context.StringValue("FlushExpireKeys.InstanceId");
-			flushExpireKeysResponse.TaskId = context.StringValue("FlushExpireKeys.TaskId");
+			flushExpireKeysResponse.HttpResponse = _ctx.HttpResponse;
+			flushExpireKeysResponse.RequestId = _ctx.StringValue("FlushExpireKeys.RequestId");
+			flushExpireKeysResponse.InstanceId = _ctx.StringValue("FlushExpireKeys.InstanceId");
+			flushExpireKeysResponse.TaskId = _ctx.StringValue("FlushExpireKeys.TaskId");
         
 			return flushExpireKeysResponse;
         }

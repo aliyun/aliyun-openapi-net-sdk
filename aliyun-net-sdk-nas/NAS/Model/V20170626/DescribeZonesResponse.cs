@@ -58,9 +58,11 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string zoneId;
 
-			private List<string> capacity;
+			private List<DescribeZones_InstanceType> instanceTypes;
 
 			private List<string> performance;
+
+			private List<string> capacity;
 
 			public string ZoneId
 			{
@@ -71,6 +73,30 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					zoneId = value;
+				}
+			}
+
+			public List<DescribeZones_InstanceType> InstanceTypes
+			{
+				get
+				{
+					return instanceTypes;
+				}
+				set	
+				{
+					instanceTypes = value;
+				}
+			}
+
+			public List<string> Performance
+			{
+				get
+				{
+					return performance;
+				}
+				set	
+				{
+					performance = value;
 				}
 			}
 
@@ -86,15 +112,35 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
-			public List<string> Performance
+			public class DescribeZones_InstanceType
 			{
-				get
+
+				private string storageType;
+
+				private string protocolType;
+
+				public string StorageType
 				{
-					return performance;
+					get
+					{
+						return storageType;
+					}
+					set	
+					{
+						storageType = value;
+					}
 				}
-				set	
+
+				public string ProtocolType
 				{
-					performance = value;
+					get
+					{
+						return protocolType;
+					}
+					set	
+					{
+						protocolType = value;
+					}
 				}
 			}
 		}

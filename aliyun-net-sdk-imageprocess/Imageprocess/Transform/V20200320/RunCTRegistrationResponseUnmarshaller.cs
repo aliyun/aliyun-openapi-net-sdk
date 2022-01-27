@@ -26,16 +26,16 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 {
     public class RunCTRegistrationResponseUnmarshaller
     {
-        public static RunCTRegistrationResponse Unmarshall(UnmarshallerContext context)
+        public static RunCTRegistrationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RunCTRegistrationResponse runCTRegistrationResponse = new RunCTRegistrationResponse();
 
-			runCTRegistrationResponse.HttpResponse = context.HttpResponse;
-			runCTRegistrationResponse.RequestId = context.StringValue("RunCTRegistration.RequestId");
+			runCTRegistrationResponse.HttpResponse = _ctx.HttpResponse;
+			runCTRegistrationResponse.RequestId = _ctx.StringValue("RunCTRegistration.RequestId");
 
 			RunCTRegistrationResponse.RunCTRegistration_Data data = new RunCTRegistrationResponse.RunCTRegistration_Data();
-			data.DUrl = context.StringValue("RunCTRegistration.Data.DUrl");
-			data.NUrl = context.StringValue("RunCTRegistration.Data.NUrl");
+			data.DUrl = _ctx.StringValue("RunCTRegistration.Data.DUrl");
+			data.NUrl = _ctx.StringValue("RunCTRegistration.Data.NUrl");
 			runCTRegistrationResponse.Data = data;
         
 			return runCTRegistrationResponse;

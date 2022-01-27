@@ -26,27 +26,24 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetMetaDBTableListResponseUnmarshaller
     {
-        public static GetMetaDBTableListResponse Unmarshall(UnmarshallerContext context)
+        public static GetMetaDBTableListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMetaDBTableListResponse getMetaDBTableListResponse = new GetMetaDBTableListResponse();
 
-			getMetaDBTableListResponse.HttpResponse = context.HttpResponse;
-			getMetaDBTableListResponse.RequestId = context.StringValue("GetMetaDBTableList.RequestId");
-			getMetaDBTableListResponse.ErrorCode = context.StringValue("GetMetaDBTableList.ErrorCode");
-			getMetaDBTableListResponse.ErrorMessage = context.StringValue("GetMetaDBTableList.ErrorMessage");
-			getMetaDBTableListResponse.HttpStatusCode = context.IntegerValue("GetMetaDBTableList.HttpStatusCode");
-			getMetaDBTableListResponse.Success = context.BooleanValue("GetMetaDBTableList.Success");
+			getMetaDBTableListResponse.HttpResponse = _ctx.HttpResponse;
+			getMetaDBTableListResponse.RequestId = _ctx.StringValue("GetMetaDBTableList.RequestId");
 
 			GetMetaDBTableListResponse.GetMetaDBTableList_Data data = new GetMetaDBTableListResponse.GetMetaDBTableList_Data();
-			data.PageNumber = context.IntegerValue("GetMetaDBTableList.Data.PageNumber");
-			data.PageSize = context.IntegerValue("GetMetaDBTableList.Data.PageSize");
-			data.TotalCount = context.LongValue("GetMetaDBTableList.Data.TotalCount");
+			data.PageNumber = _ctx.IntegerValue("GetMetaDBTableList.Data.PageNumber");
+			data.PageSize = _ctx.IntegerValue("GetMetaDBTableList.Data.PageSize");
+			data.TotalCount = _ctx.LongValue("GetMetaDBTableList.Data.TotalCount");
 
 			List<GetMetaDBTableListResponse.GetMetaDBTableList_Data.GetMetaDBTableList_TableEntityListItem> data_tableEntityList = new List<GetMetaDBTableListResponse.GetMetaDBTableList_Data.GetMetaDBTableList_TableEntityListItem>();
-			for (int i = 0; i < context.Length("GetMetaDBTableList.Data.TableEntityList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetMetaDBTableList.Data.TableEntityList.Length"); i++) {
 				GetMetaDBTableListResponse.GetMetaDBTableList_Data.GetMetaDBTableList_TableEntityListItem tableEntityListItem = new GetMetaDBTableListResponse.GetMetaDBTableList_Data.GetMetaDBTableList_TableEntityListItem();
-				tableEntityListItem.TableName = context.StringValue("GetMetaDBTableList.Data.TableEntityList["+ i +"].TableName");
-				tableEntityListItem.TableGuid = context.StringValue("GetMetaDBTableList.Data.TableEntityList["+ i +"].TableGuid");
+				tableEntityListItem.TableName = _ctx.StringValue("GetMetaDBTableList.Data.TableEntityList["+ i +"].TableName");
+				tableEntityListItem.TableGuid = _ctx.StringValue("GetMetaDBTableList.Data.TableEntityList["+ i +"].TableGuid");
+				tableEntityListItem.DatabaseName = _ctx.StringValue("GetMetaDBTableList.Data.TableEntityList["+ i +"].DatabaseName");
 
 				data_tableEntityList.Add(tableEntityListItem);
 			}

@@ -35,8 +35,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string defaultTargetCapacityType;
 
 		private string excessCapacityTerminationPolicy;
+
+		private List<string> launchTemplateConfigs = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -67,6 +69,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string autoProvisioningGroupName;
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -80,6 +83,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "TerminateInstancesWithExpiration")]
 		public bool? TerminateInstancesWithExpiration
 		{
 			get
@@ -93,6 +97,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "DefaultTargetCapacityType")]
 		public string DefaultTargetCapacityType
 		{
 			get
@@ -106,6 +111,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ExcessCapacityTerminationPolicy")]
 		public string ExcessCapacityTerminationPolicy
 		{
 			get
@@ -119,6 +125,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "LaunchTemplateConfig")]
+		public List<string> LaunchTemplateConfigs
+		{
+			get
+			{
+				return launchTemplateConfigs;
+			}
+
+			set
+			{
+				launchTemplateConfigs = value;
+				if(launchTemplateConfigs != null)
+				{
+					for (int depth1 = 0; depth1 < launchTemplateConfigs.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (depth1 + 1), launchTemplateConfigs[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (depth1 + 1), launchTemplateConfigs[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (depth1 + 1), launchTemplateConfigs[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (depth1 + 1), launchTemplateConfigs[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (depth1 + 1), launchTemplateConfigs[depth1]);
+					}
+				}
+			}
+		}
+
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -132,6 +164,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -145,6 +178,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -158,6 +192,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "AutoProvisioningGroupId")]
 		public string AutoProvisioningGroupId
 		{
 			get
@@ -171,6 +206,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "PayAsYouGoTargetCapacity")]
 		public string PayAsYouGoTargetCapacity
 		{
 			get
@@ -184,6 +220,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalTargetCapacity")]
 		public string TotalTargetCapacity
 		{
 			get
@@ -197,6 +234,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SpotTargetCapacity")]
 		public string SpotTargetCapacity
 		{
 			get
@@ -210,6 +248,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxSpotPrice")]
 		public float? MaxSpotPrice
 		{
 			get
@@ -223,6 +262,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "AutoProvisioningGroupName")]
 		public string AutoProvisioningGroupName
 		{
 			get
@@ -233,6 +273,85 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				autoProvisioningGroupName = value;
 				DictionaryUtil.Add(QueryParameters, "AutoProvisioningGroupName", value);
+			}
+		}
+
+		public class LaunchTemplateConfig
+		{
+
+			private string vSwitchId;
+
+			private double? maxPrice;
+
+			private int? priority;
+
+			private string instanceType;
+
+			private double? weightedCapacity;
+
+			[JsonProperty(PropertyName = "VSwitchId")]
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaxPrice")]
+			public double? MaxPrice
+			{
+				get
+				{
+					return maxPrice;
+				}
+				set	
+				{
+					maxPrice = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Priority")]
+			public int? Priority
+			{
+				get
+				{
+					return priority;
+				}
+				set	
+				{
+					priority = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceType")]
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "WeightedCapacity")]
+			public double? WeightedCapacity
+			{
+				get
+				{
+					return weightedCapacity;
+				}
+				set	
+				{
+					weightedCapacity = value;
+				}
 			}
 		}
 

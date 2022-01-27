@@ -27,7 +27,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string requestId;
 
-		private List<string> result;
+		private List<ListInstanceIndices_ResultItem> result;
+
+		private ListInstanceIndices_Headers headers;
 
 		public string RequestId
 		{
@@ -41,7 +43,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public List<string> Result
+		public List<ListInstanceIndices_ResultItem> Result
 		{
 			get
 			{
@@ -50,6 +52,194 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			set	
 			{
 				result = value;
+			}
+		}
+
+		public ListInstanceIndices_Headers Headers
+		{
+			get
+			{
+				return headers;
+			}
+			set	
+			{
+				headers = value;
+			}
+		}
+
+		public class ListInstanceIndices_ResultItem
+		{
+
+			private string isManaged;
+
+			private string createTime;
+
+			private long? size;
+
+			private string managedStatus;
+
+			private string name;
+
+			private string health;
+
+			private string phase;
+
+			private string ilmExplain;
+
+			public string IsManaged
+			{
+				get
+				{
+					return isManaged;
+				}
+				set	
+				{
+					isManaged = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public long? Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
+				}
+			}
+
+			public string ManagedStatus
+			{
+				get
+				{
+					return managedStatus;
+				}
+				set	
+				{
+					managedStatus = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string Health
+			{
+				get
+				{
+					return health;
+				}
+				set	
+				{
+					health = value;
+				}
+			}
+
+			public string Phase
+			{
+				get
+				{
+					return phase;
+				}
+				set	
+				{
+					phase = value;
+				}
+			}
+
+			public string IlmExplain
+			{
+				get
+				{
+					return ilmExplain;
+				}
+				set	
+				{
+					ilmExplain = value;
+				}
+			}
+		}
+
+		public class ListInstanceIndices_Headers
+		{
+
+			private long? xManagedStorageSize;
+
+			private int? xManagedCount;
+
+			private long? xOSSStorageSize;
+
+			private int? xOSSCount;
+
+			public long? XManagedStorageSize
+			{
+				get
+				{
+					return xManagedStorageSize;
+				}
+				set	
+				{
+					xManagedStorageSize = value;
+				}
+			}
+
+			public int? XManagedCount
+			{
+				get
+				{
+					return xManagedCount;
+				}
+				set	
+				{
+					xManagedCount = value;
+				}
+			}
+
+			public long? XOSSStorageSize
+			{
+				get
+				{
+					return xOSSStorageSize;
+				}
+				set	
+				{
+					xOSSStorageSize = value;
+				}
+			}
+
+			public int? XOSSCount
+			{
+				get
+				{
+					return xOSSCount;
+				}
+				set	
+				{
+					xOSSCount = value;
+				}
 			}
 		}
 	}

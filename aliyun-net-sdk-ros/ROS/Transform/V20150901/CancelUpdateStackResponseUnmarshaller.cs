@@ -26,11 +26,11 @@ namespace Aliyun.Acs.ROS.Transform.V20150901
 {
     public class CancelUpdateStackResponseUnmarshaller
     {
-        public static CancelUpdateStackResponse Unmarshall(UnmarshallerContext context)
+        public static CancelUpdateStackResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CancelUpdateStackResponse cancelUpdateStackResponse = new CancelUpdateStackResponse();
 
-			cancelUpdateStackResponse.HttpResponse = context.HttpResponse;
+			cancelUpdateStackResponse.HttpResponse = _ctx.HttpResponse;
         
 			return cancelUpdateStackResponse;
         }

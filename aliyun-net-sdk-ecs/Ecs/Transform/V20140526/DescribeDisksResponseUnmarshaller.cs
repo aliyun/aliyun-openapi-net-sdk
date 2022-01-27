@@ -26,87 +26,100 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DescribeDisksResponseUnmarshaller
     {
-        public static DescribeDisksResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDisksResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDisksResponse describeDisksResponse = new DescribeDisksResponse();
 
-			describeDisksResponse.HttpResponse = context.HttpResponse;
-			describeDisksResponse.RequestId = context.StringValue("DescribeDisks.RequestId");
-			describeDisksResponse.TotalCount = context.IntegerValue("DescribeDisks.TotalCount");
-			describeDisksResponse.PageNumber = context.IntegerValue("DescribeDisks.PageNumber");
-			describeDisksResponse.PageSize = context.IntegerValue("DescribeDisks.PageSize");
-			describeDisksResponse.NextToken = context.StringValue("DescribeDisks.NextToken");
+			describeDisksResponse.HttpResponse = _ctx.HttpResponse;
+			describeDisksResponse.NextToken = _ctx.StringValue("DescribeDisks.NextToken");
+			describeDisksResponse.PageSize = _ctx.IntegerValue("DescribeDisks.PageSize");
+			describeDisksResponse.PageNumber = _ctx.IntegerValue("DescribeDisks.PageNumber");
+			describeDisksResponse.RequestId = _ctx.StringValue("DescribeDisks.RequestId");
+			describeDisksResponse.TotalCount = _ctx.IntegerValue("DescribeDisks.TotalCount");
 
 			List<DescribeDisksResponse.DescribeDisks_Disk> describeDisksResponse_disks = new List<DescribeDisksResponse.DescribeDisks_Disk>();
-			for (int i = 0; i < context.Length("DescribeDisks.Disks.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDisks.Disks.Length"); i++) {
 				DescribeDisksResponse.DescribeDisks_Disk disk = new DescribeDisksResponse.DescribeDisks_Disk();
-				disk.DiskId = context.StringValue("DescribeDisks.Disks["+ i +"].DiskId");
-				disk.RegionId = context.StringValue("DescribeDisks.Disks["+ i +"].RegionId");
-				disk.ZoneId = context.StringValue("DescribeDisks.Disks["+ i +"].ZoneId");
-				disk.DiskName = context.StringValue("DescribeDisks.Disks["+ i +"].DiskName");
-				disk.Description = context.StringValue("DescribeDisks.Disks["+ i +"].Description");
-				disk.Type = context.StringValue("DescribeDisks.Disks["+ i +"].Type");
-				disk.Category = context.StringValue("DescribeDisks.Disks["+ i +"].Category");
-				disk.Size = context.IntegerValue("DescribeDisks.Disks["+ i +"].Size");
-				disk.ImageId = context.StringValue("DescribeDisks.Disks["+ i +"].ImageId");
-				disk.SourceSnapshotId = context.StringValue("DescribeDisks.Disks["+ i +"].SourceSnapshotId");
-				disk.AutoSnapshotPolicyId = context.StringValue("DescribeDisks.Disks["+ i +"].AutoSnapshotPolicyId");
-				disk.ProductCode = context.StringValue("DescribeDisks.Disks["+ i +"].ProductCode");
-				disk.Portable = context.BooleanValue("DescribeDisks.Disks["+ i +"].Portable");
-				disk.Status = context.StringValue("DescribeDisks.Disks["+ i +"].Status");
-				disk.InstanceId = context.StringValue("DescribeDisks.Disks["+ i +"].InstanceId");
-				disk.Device = context.StringValue("DescribeDisks.Disks["+ i +"].Device");
-				disk.DeleteWithInstance = context.BooleanValue("DescribeDisks.Disks["+ i +"].DeleteWithInstance");
-				disk.DeleteAutoSnapshot = context.BooleanValue("DescribeDisks.Disks["+ i +"].DeleteAutoSnapshot");
-				disk.EnableAutoSnapshot = context.BooleanValue("DescribeDisks.Disks["+ i +"].EnableAutoSnapshot");
-				disk.EnableAutomatedSnapshotPolicy = context.BooleanValue("DescribeDisks.Disks["+ i +"].EnableAutomatedSnapshotPolicy");
-				disk.CreationTime = context.StringValue("DescribeDisks.Disks["+ i +"].CreationTime");
-				disk.AttachedTime = context.StringValue("DescribeDisks.Disks["+ i +"].AttachedTime");
-				disk.DetachedTime = context.StringValue("DescribeDisks.Disks["+ i +"].DetachedTime");
-				disk.DiskChargeType = context.StringValue("DescribeDisks.Disks["+ i +"].DiskChargeType");
-				disk.ExpiredTime = context.StringValue("DescribeDisks.Disks["+ i +"].ExpiredTime");
-				disk.ResourceGroupId = context.StringValue("DescribeDisks.Disks["+ i +"].ResourceGroupId");
-				disk.Encrypted = context.BooleanValue("DescribeDisks.Disks["+ i +"].Encrypted");
-				disk.StorageSetId = context.StringValue("DescribeDisks.Disks["+ i +"].StorageSetId");
-				disk.StorageSetPartitionNumber = context.IntegerValue("DescribeDisks.Disks["+ i +"].StorageSetPartitionNumber");
-				disk.MountInstanceNum = context.IntegerValue("DescribeDisks.Disks["+ i +"].MountInstanceNum");
-				disk.IOPS = context.IntegerValue("DescribeDisks.Disks["+ i +"].IOPS");
-				disk.IOPSRead = context.IntegerValue("DescribeDisks.Disks["+ i +"].IOPSRead");
-				disk.IOPSWrite = context.IntegerValue("DescribeDisks.Disks["+ i +"].IOPSWrite");
-				disk.KMSKeyId = context.StringValue("DescribeDisks.Disks["+ i +"].KMSKeyId");
-				disk.PerformanceLevel = context.StringValue("DescribeDisks.Disks["+ i +"].PerformanceLevel");
-				disk.BdfId = context.StringValue("DescribeDisks.Disks["+ i +"].BdfId");
-				disk.SerialNumber = context.StringValue("DescribeDisks.Disks["+ i +"].SerialNumber");
+				disk.SerialNumber = _ctx.StringValue("DescribeDisks.Disks["+ i +"].SerialNumber");
+				disk.CreationTime = _ctx.StringValue("DescribeDisks.Disks["+ i +"].CreationTime");
+				disk.Status = _ctx.StringValue("DescribeDisks.Disks["+ i +"].Status");
+				disk.Type = _ctx.StringValue("DescribeDisks.Disks["+ i +"].Type");
+				disk.PerformanceLevel = _ctx.StringValue("DescribeDisks.Disks["+ i +"].PerformanceLevel");
+				disk.BdfId = _ctx.StringValue("DescribeDisks.Disks["+ i +"].BdfId");
+				disk.EnableAutoSnapshot = _ctx.BooleanValue("DescribeDisks.Disks["+ i +"].EnableAutoSnapshot");
+				disk.StorageSetId = _ctx.StringValue("DescribeDisks.Disks["+ i +"].StorageSetId");
+				disk.StorageSetPartitionNumber = _ctx.IntegerValue("DescribeDisks.Disks["+ i +"].StorageSetPartitionNumber");
+				disk.DiskId = _ctx.StringValue("DescribeDisks.Disks["+ i +"].DiskId");
+				disk.DeleteAutoSnapshot = _ctx.BooleanValue("DescribeDisks.Disks["+ i +"].DeleteAutoSnapshot");
+				disk.StorageClusterId = _ctx.StringValue("DescribeDisks.Disks["+ i +"].StorageClusterId");
+				disk.Encrypted = _ctx.BooleanValue("DescribeDisks.Disks["+ i +"].Encrypted");
+				disk.IOPSRead = _ctx.IntegerValue("DescribeDisks.Disks["+ i +"].IOPSRead");
+				disk.MountInstanceNum = _ctx.IntegerValue("DescribeDisks.Disks["+ i +"].MountInstanceNum");
+				disk.Description = _ctx.StringValue("DescribeDisks.Disks["+ i +"].Description");
+				disk.Device = _ctx.StringValue("DescribeDisks.Disks["+ i +"].Device");
+				disk.DiskName = _ctx.StringValue("DescribeDisks.Disks["+ i +"].DiskName");
+				disk.Portable = _ctx.BooleanValue("DescribeDisks.Disks["+ i +"].Portable");
+				disk.ImageId = _ctx.StringValue("DescribeDisks.Disks["+ i +"].ImageId");
+				disk.KMSKeyId = _ctx.StringValue("DescribeDisks.Disks["+ i +"].KMSKeyId");
+				disk.DeleteWithInstance = _ctx.BooleanValue("DescribeDisks.Disks["+ i +"].DeleteWithInstance");
+				disk.DetachedTime = _ctx.StringValue("DescribeDisks.Disks["+ i +"].DetachedTime");
+				disk.SourceSnapshotId = _ctx.StringValue("DescribeDisks.Disks["+ i +"].SourceSnapshotId");
+				disk.AutoSnapshotPolicyId = _ctx.StringValue("DescribeDisks.Disks["+ i +"].AutoSnapshotPolicyId");
+				disk.EnableAutomatedSnapshotPolicy = _ctx.BooleanValue("DescribeDisks.Disks["+ i +"].EnableAutomatedSnapshotPolicy");
+				disk.IOPSWrite = _ctx.IntegerValue("DescribeDisks.Disks["+ i +"].IOPSWrite");
+				disk.InstanceId = _ctx.StringValue("DescribeDisks.Disks["+ i +"].InstanceId");
+				disk.IOPS = _ctx.IntegerValue("DescribeDisks.Disks["+ i +"].IOPS");
+				disk.RegionId = _ctx.StringValue("DescribeDisks.Disks["+ i +"].RegionId");
+				disk.ExpiredTime = _ctx.StringValue("DescribeDisks.Disks["+ i +"].ExpiredTime");
+				disk.Size = _ctx.IntegerValue("DescribeDisks.Disks["+ i +"].Size");
+				disk.ResourceGroupId = _ctx.StringValue("DescribeDisks.Disks["+ i +"].ResourceGroupId");
+				disk.DiskChargeType = _ctx.StringValue("DescribeDisks.Disks["+ i +"].DiskChargeType");
+				disk.ZoneId = _ctx.StringValue("DescribeDisks.Disks["+ i +"].ZoneId");
+				disk.AttachedTime = _ctx.StringValue("DescribeDisks.Disks["+ i +"].AttachedTime");
+				disk.Category = _ctx.StringValue("DescribeDisks.Disks["+ i +"].Category");
+				disk.ProductCode = _ctx.StringValue("DescribeDisks.Disks["+ i +"].ProductCode");
+				disk.MultiAttach = _ctx.StringValue("DescribeDisks.Disks["+ i +"].MultiAttach");
 
 				List<DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_OperationLock> disk_operationLocks = new List<DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_OperationLock>();
-				for (int j = 0; j < context.Length("DescribeDisks.Disks["+ i +"].OperationLocks.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeDisks.Disks["+ i +"].OperationLocks.Length"); j++) {
 					DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_OperationLock operationLock = new DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_OperationLock();
-					operationLock.LockReason = context.StringValue("DescribeDisks.Disks["+ i +"].OperationLocks["+ j +"].LockReason");
+					operationLock.LockReason = _ctx.StringValue("DescribeDisks.Disks["+ i +"].OperationLocks["+ j +"].LockReason");
 
 					disk_operationLocks.Add(operationLock);
 				}
 				disk.OperationLocks = disk_operationLocks;
 
 				List<DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_MountInstance> disk_mountInstances = new List<DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_MountInstance>();
-				for (int j = 0; j < context.Length("DescribeDisks.Disks["+ i +"].MountInstances.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeDisks.Disks["+ i +"].MountInstances.Length"); j++) {
 					DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_MountInstance mountInstance = new DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_MountInstance();
-					mountInstance.InstanceId = context.StringValue("DescribeDisks.Disks["+ i +"].MountInstances["+ j +"].InstanceId");
-					mountInstance.Device = context.StringValue("DescribeDisks.Disks["+ i +"].MountInstances["+ j +"].Device");
-					mountInstance.AttachedTime = context.StringValue("DescribeDisks.Disks["+ i +"].MountInstances["+ j +"].AttachedTime");
+					mountInstance.AttachedTime = _ctx.StringValue("DescribeDisks.Disks["+ i +"].MountInstances["+ j +"].AttachedTime");
+					mountInstance.InstanceId = _ctx.StringValue("DescribeDisks.Disks["+ i +"].MountInstances["+ j +"].InstanceId");
+					mountInstance.Device = _ctx.StringValue("DescribeDisks.Disks["+ i +"].MountInstances["+ j +"].Device");
 
 					disk_mountInstances.Add(mountInstance);
 				}
 				disk.MountInstances = disk_mountInstances;
 
 				List<DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_Tag> disk_tags = new List<DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_Tag>();
-				for (int j = 0; j < context.Length("DescribeDisks.Disks["+ i +"].Tags.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeDisks.Disks["+ i +"].Tags.Length"); j++) {
 					DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_Tag tag = new DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_Tag();
-					tag.TagKey = context.StringValue("DescribeDisks.Disks["+ i +"].Tags["+ j +"].TagKey");
-					tag.TagValue = context.StringValue("DescribeDisks.Disks["+ i +"].Tags["+ j +"].TagValue");
+					tag.TagValue = _ctx.StringValue("DescribeDisks.Disks["+ i +"].Tags["+ j +"].TagValue");
+					tag.TagKey = _ctx.StringValue("DescribeDisks.Disks["+ i +"].Tags["+ j +"].TagKey");
 
 					disk_tags.Add(tag);
 				}
 				disk.Tags = disk_tags;
+
+				List<DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_Attachment> disk_attachments = new List<DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_Attachment>();
+				for (int j = 0; j < _ctx.Length("DescribeDisks.Disks["+ i +"].Attachments.Length"); j++) {
+					DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_Attachment attachment = new DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_Attachment();
+					attachment.InstanceId = _ctx.StringValue("DescribeDisks.Disks["+ i +"].Attachments["+ j +"].InstanceId");
+					attachment.Device = _ctx.StringValue("DescribeDisks.Disks["+ i +"].Attachments["+ j +"].Device");
+					attachment.AttachedTime = _ctx.StringValue("DescribeDisks.Disks["+ i +"].Attachments["+ j +"].AttachedTime");
+
+					disk_attachments.Add(attachment);
+				}
+				disk.Attachments = disk_attachments;
 
 				describeDisksResponse_disks.Add(disk);
 			}

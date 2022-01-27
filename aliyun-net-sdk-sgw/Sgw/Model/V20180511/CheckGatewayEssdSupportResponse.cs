@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,17 +25,29 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class CheckGatewayEssdSupportResponse : AcsResponse
 	{
 
+		private bool? isSupportEssd;
+
 		private string requestId;
-
-		private bool? success;
-
-		private string code;
 
 		private string message;
 
-		private bool? isSupportEssd;
-
 		private bool? isServiceAffect;
+
+		private string code;
+
+		private bool? success;
+
+		public bool? IsSupportEssd
+		{
+			get
+			{
+				return isSupportEssd;
+			}
+			set	
+			{
+				isSupportEssd = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -46,30 +58,6 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
 			}
 		}
 
@@ -85,18 +73,6 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public bool? IsSupportEssd
-		{
-			get
-			{
-				return isSupportEssd;
-			}
-			set	
-			{
-				isSupportEssd = value;
-			}
-		}
-
 		public bool? IsServiceAffect
 		{
 			get
@@ -106,6 +82,30 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			set	
 			{
 				isServiceAffect = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

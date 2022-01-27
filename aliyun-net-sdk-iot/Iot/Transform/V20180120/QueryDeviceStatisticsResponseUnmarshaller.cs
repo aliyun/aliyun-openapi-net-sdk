@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryDeviceStatisticsResponseUnmarshaller
     {
-        public static QueryDeviceStatisticsResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDeviceStatisticsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDeviceStatisticsResponse queryDeviceStatisticsResponse = new QueryDeviceStatisticsResponse();
 
-			queryDeviceStatisticsResponse.HttpResponse = context.HttpResponse;
-			queryDeviceStatisticsResponse.RequestId = context.StringValue("QueryDeviceStatistics.RequestId");
-			queryDeviceStatisticsResponse.Success = context.BooleanValue("QueryDeviceStatistics.Success");
-			queryDeviceStatisticsResponse.Code = context.StringValue("QueryDeviceStatistics.Code");
-			queryDeviceStatisticsResponse.ErrorMessage = context.StringValue("QueryDeviceStatistics.ErrorMessage");
+			queryDeviceStatisticsResponse.HttpResponse = _ctx.HttpResponse;
+			queryDeviceStatisticsResponse.RequestId = _ctx.StringValue("QueryDeviceStatistics.RequestId");
+			queryDeviceStatisticsResponse.Success = _ctx.BooleanValue("QueryDeviceStatistics.Success");
+			queryDeviceStatisticsResponse.Code = _ctx.StringValue("QueryDeviceStatistics.Code");
+			queryDeviceStatisticsResponse.ErrorMessage = _ctx.StringValue("QueryDeviceStatistics.ErrorMessage");
 
 			QueryDeviceStatisticsResponse.QueryDeviceStatistics_Data data = new QueryDeviceStatisticsResponse.QueryDeviceStatistics_Data();
-			data.DeviceCount = context.LongValue("QueryDeviceStatistics.Data.deviceCount");
-			data.OnlineCount = context.LongValue("QueryDeviceStatistics.Data.onlineCount");
-			data.ActiveCount = context.LongValue("QueryDeviceStatistics.Data.activeCount");
+			data.DeviceCount = _ctx.LongValue("QueryDeviceStatistics.Data.deviceCount");
+			data.OnlineCount = _ctx.LongValue("QueryDeviceStatistics.Data.onlineCount");
+			data.ActiveCount = _ctx.LongValue("QueryDeviceStatistics.Data.activeCount");
 			queryDeviceStatisticsResponse.Data = data;
         
 			return queryDeviceStatisticsResponse;

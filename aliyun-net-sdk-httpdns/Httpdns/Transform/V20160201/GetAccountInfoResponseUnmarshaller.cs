@@ -26,24 +26,24 @@ namespace Aliyun.Acs.Httpdns.Transform.V20160201
 {
     public class GetAccountInfoResponseUnmarshaller
     {
-        public static GetAccountInfoResponse Unmarshall(UnmarshallerContext context)
+        public static GetAccountInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetAccountInfoResponse getAccountInfoResponse = new GetAccountInfoResponse();
 
-			getAccountInfoResponse.HttpResponse = context.HttpResponse;
-			getAccountInfoResponse.RequestId = context.StringValue("GetAccountInfo.RequestId");
+			getAccountInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getAccountInfoResponse.RequestId = _ctx.StringValue("GetAccountInfo.RequestId");
 
 			GetAccountInfoResponse.GetAccountInfo_AccountInfo accountInfo = new GetAccountInfoResponse.GetAccountInfo_AccountInfo();
-			accountInfo.AccountId = context.StringValue("GetAccountInfo.AccountInfo.AccountId");
-			accountInfo.MonthFreeCount = context.IntegerValue("GetAccountInfo.AccountInfo.MonthFreeCount");
-			accountInfo.MonthHttpsResolveCount = context.IntegerValue("GetAccountInfo.AccountInfo.MonthHttpsResolveCount");
-			accountInfo.MonthResolveCount = context.IntegerValue("GetAccountInfo.AccountInfo.MonthResolveCount");
-			accountInfo.PackageCount = context.IntegerValue("GetAccountInfo.AccountInfo.PackageCount");
-			accountInfo.UserStatus = context.IntegerValue("GetAccountInfo.AccountInfo.UserStatus");
-			accountInfo.SignSecret = context.StringValue("GetAccountInfo.AccountInfo.SignSecret");
-			accountInfo.UnsignedEnabled = context.BooleanValue("GetAccountInfo.AccountInfo.UnsignedEnabled");
-			accountInfo.SignedCount = context.LongValue("GetAccountInfo.AccountInfo.SignedCount");
-			accountInfo.UnsignedCount = context.LongValue("GetAccountInfo.AccountInfo.UnsignedCount");
+			accountInfo.AccountId = _ctx.StringValue("GetAccountInfo.AccountInfo.AccountId");
+			accountInfo.MonthFreeCount = _ctx.IntegerValue("GetAccountInfo.AccountInfo.MonthFreeCount");
+			accountInfo.MonthHttpsResolveCount = _ctx.IntegerValue("GetAccountInfo.AccountInfo.MonthHttpsResolveCount");
+			accountInfo.MonthResolveCount = _ctx.IntegerValue("GetAccountInfo.AccountInfo.MonthResolveCount");
+			accountInfo.PackageCount = _ctx.IntegerValue("GetAccountInfo.AccountInfo.PackageCount");
+			accountInfo.UserStatus = _ctx.IntegerValue("GetAccountInfo.AccountInfo.UserStatus");
+			accountInfo.SignSecret = _ctx.StringValue("GetAccountInfo.AccountInfo.SignSecret");
+			accountInfo.UnsignedEnabled = _ctx.BooleanValue("GetAccountInfo.AccountInfo.UnsignedEnabled");
+			accountInfo.SignedCount = _ctx.LongValue("GetAccountInfo.AccountInfo.SignedCount");
+			accountInfo.UnsignedCount = _ctx.LongValue("GetAccountInfo.AccountInfo.UnsignedCount");
 			getAccountInfoResponse.AccountInfo = accountInfo;
         
 			return getAccountInfoResponse;

@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class CreateEdgeOssPreSignedAddressResponseUnmarshaller
     {
-        public static CreateEdgeOssPreSignedAddressResponse Unmarshall(UnmarshallerContext context)
+        public static CreateEdgeOssPreSignedAddressResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateEdgeOssPreSignedAddressResponse createEdgeOssPreSignedAddressResponse = new CreateEdgeOssPreSignedAddressResponse();
 
-			createEdgeOssPreSignedAddressResponse.HttpResponse = context.HttpResponse;
-			createEdgeOssPreSignedAddressResponse.RequestId = context.StringValue("CreateEdgeOssPreSignedAddress.RequestId");
-			createEdgeOssPreSignedAddressResponse.Success = context.BooleanValue("CreateEdgeOssPreSignedAddress.Success");
-			createEdgeOssPreSignedAddressResponse.Code = context.StringValue("CreateEdgeOssPreSignedAddress.Code");
-			createEdgeOssPreSignedAddressResponse.ErrorMessage = context.StringValue("CreateEdgeOssPreSignedAddress.ErrorMessage");
+			createEdgeOssPreSignedAddressResponse.HttpResponse = _ctx.HttpResponse;
+			createEdgeOssPreSignedAddressResponse.RequestId = _ctx.StringValue("CreateEdgeOssPreSignedAddress.RequestId");
+			createEdgeOssPreSignedAddressResponse.Success = _ctx.BooleanValue("CreateEdgeOssPreSignedAddress.Success");
+			createEdgeOssPreSignedAddressResponse.Code = _ctx.StringValue("CreateEdgeOssPreSignedAddress.Code");
+			createEdgeOssPreSignedAddressResponse.ErrorMessage = _ctx.StringValue("CreateEdgeOssPreSignedAddress.ErrorMessage");
 
 			CreateEdgeOssPreSignedAddressResponse.CreateEdgeOssPreSignedAddress_Data data = new CreateEdgeOssPreSignedAddressResponse.CreateEdgeOssPreSignedAddress_Data();
-			data.OssPreSignedAddress = context.StringValue("CreateEdgeOssPreSignedAddress.Data.OssPreSignedAddress");
-			data.OssAddress = context.StringValue("CreateEdgeOssPreSignedAddress.Data.OssAddress");
+			data.OssPreSignedAddress = _ctx.StringValue("CreateEdgeOssPreSignedAddress.Data.OssPreSignedAddress");
+			data.OssAddress = _ctx.StringValue("CreateEdgeOssPreSignedAddress.Data.OssAddress");
 			createEdgeOssPreSignedAddressResponse.Data = data;
         
 			return createEdgeOssPreSignedAddressResponse;

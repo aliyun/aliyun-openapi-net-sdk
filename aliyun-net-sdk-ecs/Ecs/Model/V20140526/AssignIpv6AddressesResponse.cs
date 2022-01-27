@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -26,6 +26,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	{
 
 		private string requestId;
+
+		private string networkInterfaceId;
+
+		private List<string> ipv6Sets;
 
 		public string RequestId
 		{
@@ -36,6 +40,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string NetworkInterfaceId
+		{
+			get
+			{
+				return networkInterfaceId;
+			}
+			set	
+			{
+				networkInterfaceId = value;
+			}
+		}
+
+		public List<string> Ipv6Sets
+		{
+			get
+			{
+				return ipv6Sets;
+			}
+			set	
+			{
+				ipv6Sets = value;
 			}
 		}
 	}

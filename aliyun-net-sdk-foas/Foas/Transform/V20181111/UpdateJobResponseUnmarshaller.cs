@@ -26,12 +26,12 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class UpdateJobResponseUnmarshaller
     {
-        public static UpdateJobResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateJobResponse updateJobResponse = new UpdateJobResponse();
 
-			updateJobResponse.HttpResponse = context.HttpResponse;
-			updateJobResponse.RequestId = context.StringValue("UpdateJob.RequestId");
+			updateJobResponse.HttpResponse = _ctx.HttpResponse;
+			updateJobResponse.RequestId = _ctx.StringValue("UpdateJob.RequestId");
         
 			return updateJobResponse;
         }

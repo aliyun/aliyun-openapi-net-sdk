@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class UpdateDataServiceApiResponseUnmarshaller
     {
-        public static UpdateDataServiceApiResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateDataServiceApiResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateDataServiceApiResponse updateDataServiceApiResponse = new UpdateDataServiceApiResponse();
 
-			updateDataServiceApiResponse.HttpResponse = context.HttpResponse;
-			updateDataServiceApiResponse.Data = context.BooleanValue("UpdateDataServiceApi.Data");
-			updateDataServiceApiResponse.ErrorCode = context.StringValue("UpdateDataServiceApi.ErrorCode");
-			updateDataServiceApiResponse.ErrorMessage = context.StringValue("UpdateDataServiceApi.ErrorMessage");
-			updateDataServiceApiResponse.HttpStatusCode = context.IntegerValue("UpdateDataServiceApi.HttpStatusCode");
-			updateDataServiceApiResponse.Success = context.BooleanValue("UpdateDataServiceApi.Success");
-			updateDataServiceApiResponse.RequestId = context.StringValue("UpdateDataServiceApi.RequestId");
+			updateDataServiceApiResponse.HttpResponse = _ctx.HttpResponse;
+			updateDataServiceApiResponse.Data = _ctx.BooleanValue("UpdateDataServiceApi.Data");
+			updateDataServiceApiResponse.ErrorCode = _ctx.StringValue("UpdateDataServiceApi.ErrorCode");
+			updateDataServiceApiResponse.ErrorMessage = _ctx.StringValue("UpdateDataServiceApi.ErrorMessage");
+			updateDataServiceApiResponse.HttpStatusCode = _ctx.IntegerValue("UpdateDataServiceApi.HttpStatusCode");
+			updateDataServiceApiResponse.Success = _ctx.BooleanValue("UpdateDataServiceApi.Success");
+			updateDataServiceApiResponse.RequestId = _ctx.StringValue("UpdateDataServiceApi.RequestId");
         
 			return updateDataServiceApiResponse;
         }

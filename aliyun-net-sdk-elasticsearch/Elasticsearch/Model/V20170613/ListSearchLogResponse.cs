@@ -74,11 +74,13 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private string host;
 
+			private string instanceId;
+
+			private string contentCollection;
+
 			private string level;
 
 			private string content;
-
-			private string instanceId;
 
 			public long? Timestamp
 			{
@@ -104,6 +106,30 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string ContentCollection
+			{
+				get
+				{
+					return contentCollection;
+				}
+				set	
+				{
+					contentCollection = value;
+				}
+			}
+
 			public string Level
 			{
 				get
@@ -125,18 +151,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					content = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
 				}
 			}
 		}

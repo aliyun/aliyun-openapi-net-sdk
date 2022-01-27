@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 {
     public class ExportDataKeyResponseUnmarshaller
     {
-        public static ExportDataKeyResponse Unmarshall(UnmarshallerContext context)
+        public static ExportDataKeyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ExportDataKeyResponse exportDataKeyResponse = new ExportDataKeyResponse();
 
-			exportDataKeyResponse.HttpResponse = context.HttpResponse;
-			exportDataKeyResponse.ExportedDataKey = context.StringValue("ExportDataKey.ExportedDataKey");
-			exportDataKeyResponse.KeyId = context.StringValue("ExportDataKey.KeyId");
-			exportDataKeyResponse.RequestId = context.StringValue("ExportDataKey.RequestId");
-			exportDataKeyResponse.KeyVersionId = context.StringValue("ExportDataKey.KeyVersionId");
+			exportDataKeyResponse.HttpResponse = _ctx.HttpResponse;
+			exportDataKeyResponse.ExportedDataKey = _ctx.StringValue("ExportDataKey.ExportedDataKey");
+			exportDataKeyResponse.KeyId = _ctx.StringValue("ExportDataKey.KeyId");
+			exportDataKeyResponse.RequestId = _ctx.StringValue("ExportDataKey.RequestId");
+			exportDataKeyResponse.KeyVersionId = _ctx.StringValue("ExportDataKey.KeyVersionId");
         
 			return exportDataKeyResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string requestId;
 
-		private string regionId;
-
 		private int? totalCount;
+
+		private string regionId;
 
 		private List<DescribeInstanceRamRole_InstanceRamRoleSet> instanceRamRoleSets;
 
@@ -45,18 +45,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
-
 		public int? TotalCount
 		{
 			get
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
 			}
 		}
 
@@ -84,21 +84,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeInstanceRamRole_InstanceRamRoleSet
 		{
 
-			private string instanceId;
-
 			private string ramRoleName;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private string instanceId;
 
 			public string RamRoleName
 			{
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					ramRoleName = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 		}

@@ -34,10 +34,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
+
+		private bool? asyncQuery;
+
+		private string searchText;
 
 		private long? endTime;
 
@@ -47,7 +52,35 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string instanceId;
 
+		private string jobGroupStatusFilter;
+
 		private int? pageSize;
+
+		public bool? AsyncQuery
+		{
+			get
+			{
+				return asyncQuery;
+			}
+			set	
+			{
+				asyncQuery = value;
+				DictionaryUtil.Add(QueryParameters, "AsyncQuery", value.ToString());
+			}
+		}
+
+		public string SearchText
+		{
+			get
+			{
+				return searchText;
+			}
+			set	
+			{
+				searchText = value;
+				DictionaryUtil.Add(QueryParameters, "SearchText", value);
+			}
+		}
 
 		public long? EndTime
 		{
@@ -98,6 +131,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string JobGroupStatusFilter
+		{
+			get
+			{
+				return jobGroupStatusFilter;
+			}
+			set	
+			{
+				jobGroupStatusFilter = value;
+				DictionaryUtil.Add(QueryParameters, "JobGroupStatusFilter", value);
 			}
 		}
 

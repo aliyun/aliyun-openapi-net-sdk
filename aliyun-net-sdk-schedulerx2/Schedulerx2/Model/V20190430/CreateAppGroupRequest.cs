@@ -35,8 +35,8 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointRegionalType, null);
             }
 			Protocol = ProtocolType.HTTPS;
         }
@@ -46,8 +46,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 		private string namespaceName;
 
 		private string namespaceSource;
-
-		private string metricsThresholdJson;
 
 		private string groupId;
 
@@ -95,19 +93,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				namespaceSource = value;
 				DictionaryUtil.Add(QueryParameters, "NamespaceSource", value);
-			}
-		}
-
-		public string MetricsThresholdJson
-		{
-			get
-			{
-				return metricsThresholdJson;
-			}
-			set	
-			{
-				metricsThresholdJson = value;
-				DictionaryUtil.Add(QueryParameters, "MetricsThresholdJson", value);
 			}
 		}
 

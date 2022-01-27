@@ -26,13 +26,13 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 {
     public class DescribeScdnUserProtectInfoResponseUnmarshaller
     {
-        public static DescribeScdnUserProtectInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeScdnUserProtectInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeScdnUserProtectInfoResponse describeScdnUserProtectInfoResponse = new DescribeScdnUserProtectInfoResponse();
 
-			describeScdnUserProtectInfoResponse.HttpResponse = context.HttpResponse;
-			describeScdnUserProtectInfoResponse.RequestId = context.StringValue("DescribeScdnUserProtectInfo.RequestId");
-			describeScdnUserProtectInfoResponse.ServiceDDoS = context.IntegerValue("DescribeScdnUserProtectInfo.ServiceDDoS");
+			describeScdnUserProtectInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnUserProtectInfoResponse.RequestId = _ctx.StringValue("DescribeScdnUserProtectInfo.RequestId");
+			describeScdnUserProtectInfoResponse.ServiceDDoS = _ctx.IntegerValue("DescribeScdnUserProtectInfo.ServiceDDoS");
         
 			return describeScdnUserProtectInfoResponse;
         }

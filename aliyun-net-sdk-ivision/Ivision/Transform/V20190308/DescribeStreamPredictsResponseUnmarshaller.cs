@@ -26,35 +26,35 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 {
     public class DescribeStreamPredictsResponseUnmarshaller
     {
-        public static DescribeStreamPredictsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeStreamPredictsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeStreamPredictsResponse describeStreamPredictsResponse = new DescribeStreamPredictsResponse();
 
-			describeStreamPredictsResponse.HttpResponse = context.HttpResponse;
-			describeStreamPredictsResponse.RequestId = context.StringValue("DescribeStreamPredicts.RequestId");
-			describeStreamPredictsResponse.TotalNum = context.LongValue("DescribeStreamPredicts.TotalNum");
-			describeStreamPredictsResponse.CurrentPage = context.LongValue("DescribeStreamPredicts.CurrentPage");
-			describeStreamPredictsResponse.PageSize = context.LongValue("DescribeStreamPredicts.PageSize");
-			describeStreamPredictsResponse.NextPageToken = context.StringValue("DescribeStreamPredicts.NextPageToken");
+			describeStreamPredictsResponse.HttpResponse = _ctx.HttpResponse;
+			describeStreamPredictsResponse.TotalNum = _ctx.LongValue("DescribeStreamPredicts.TotalNum");
+			describeStreamPredictsResponse.PageSize = _ctx.LongValue("DescribeStreamPredicts.PageSize");
+			describeStreamPredictsResponse.RequestId = _ctx.StringValue("DescribeStreamPredicts.RequestId");
+			describeStreamPredictsResponse.CurrentPage = _ctx.LongValue("DescribeStreamPredicts.CurrentPage");
+			describeStreamPredictsResponse.NextPageToken = _ctx.StringValue("DescribeStreamPredicts.NextPageToken");
 
 			List<DescribeStreamPredictsResponse.DescribeStreamPredicts_StreamPredict> describeStreamPredictsResponse_streamPredicts = new List<DescribeStreamPredictsResponse.DescribeStreamPredicts_StreamPredict>();
-			for (int i = 0; i < context.Length("DescribeStreamPredicts.StreamPredicts.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeStreamPredicts.StreamPredicts.Length"); i++) {
 				DescribeStreamPredictsResponse.DescribeStreamPredicts_StreamPredict streamPredict = new DescribeStreamPredictsResponse.DescribeStreamPredicts_StreamPredict();
-				streamPredict.PredictId = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].PredictId");
-				streamPredict.PredictTemplateId = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].PredictTemplateId");
-				streamPredict.StreamType = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].StreamType");
-				streamPredict.StreamId = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].StreamId");
-				streamPredict.ModelIds = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].ModelIds");
-				streamPredict.ProbabilityThresholds = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].ProbabilityThresholds");
-				streamPredict.DetectIntervals = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].DetectIntervals");
-				streamPredict.Output = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].Output");
-				streamPredict.Notify = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].Notify");
-				streamPredict.UserData = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].UserData");
-				streamPredict.FaceGroupId = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].FaceGroupId");
-				streamPredict.ModelUserData = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].ModelUserData");
-				streamPredict.CreationTime = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].CreationTime");
-				streamPredict.AutoStart = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].AutoStart");
-				streamPredict.Status = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].Status");
+				streamPredict.CreationTime = _ctx.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].CreationTime");
+				streamPredict.Status = _ctx.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].Status");
+				streamPredict.Notify = _ctx.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].Notify");
+				streamPredict.PredictId = _ctx.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].PredictId");
+				streamPredict.ModelUserData = _ctx.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].ModelUserData");
+				streamPredict.Output = _ctx.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].Output");
+				streamPredict.PredictTemplateId = _ctx.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].PredictTemplateId");
+				streamPredict.StreamId = _ctx.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].StreamId");
+				streamPredict.AutoStart = _ctx.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].AutoStart");
+				streamPredict.ProbabilityThresholds = _ctx.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].ProbabilityThresholds");
+				streamPredict.DetectIntervals = _ctx.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].DetectIntervals");
+				streamPredict.StreamType = _ctx.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].StreamType");
+				streamPredict.UserData = _ctx.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].UserData");
+				streamPredict.ModelIds = _ctx.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].ModelIds");
+				streamPredict.FaceGroupId = _ctx.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].FaceGroupId");
 
 				describeStreamPredictsResponse_streamPredicts.Add(streamPredict);
 			}

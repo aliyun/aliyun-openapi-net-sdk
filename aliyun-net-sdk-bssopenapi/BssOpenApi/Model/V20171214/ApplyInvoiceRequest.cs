@@ -35,8 +35,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.BssOpenApi.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.BssOpenApi.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -58,6 +58,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		private long? customerId;
 
 		private List<long?> selectedIdss = new List<long?>(){ };
+
+		private string userRemark;
 
 		public int? InvoicingType
 		{
@@ -177,6 +179,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				{
 					DictionaryUtil.Add(QueryParameters,"SelectedIds." + (i + 1) , selectedIdss[i]);
 				}
+			}
+		}
+
+		public string UserRemark
+		{
+			get
+			{
+				return userRemark;
+			}
+			set	
+			{
+				userRemark = value;
+				DictionaryUtil.Add(QueryParameters, "UserRemark", value);
 			}
 		}
 

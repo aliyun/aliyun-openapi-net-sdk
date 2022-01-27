@@ -32,13 +32,23 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
         public CreateBookkeepingIntentionRequest()
             : base("companyreg", "2019-05-08", "CreateBookkeepingIntention", "companyreg", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.companyreg.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.companyreg.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string area;
 
 		private string mobile;
 
+		private string channel;
+
 		private string description;
+
+		private string token;
 
 		private string verifyCode;
 
@@ -70,6 +80,19 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 			}
 		}
 
+		public string Channel
+		{
+			get
+			{
+				return channel;
+			}
+			set	
+			{
+				channel = value;
+				DictionaryUtil.Add(QueryParameters, "Channel", value);
+			}
+		}
+
 		public string Description
 		{
 			get
@@ -80,6 +103,19 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string Token
+		{
+			get
+			{
+				return token;
+			}
+			set	
+			{
+				token = value;
+				DictionaryUtil.Add(QueryParameters, "Token", value);
 			}
 		}
 

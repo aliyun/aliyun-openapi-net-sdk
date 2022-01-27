@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class UpdateLiveAudioAuditNotifyConfigResponseUnmarshaller
     {
-        public static UpdateLiveAudioAuditNotifyConfigResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateLiveAudioAuditNotifyConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateLiveAudioAuditNotifyConfigResponse updateLiveAudioAuditNotifyConfigResponse = new UpdateLiveAudioAuditNotifyConfigResponse();
 
-			updateLiveAudioAuditNotifyConfigResponse.HttpResponse = context.HttpResponse;
-			updateLiveAudioAuditNotifyConfigResponse.RequestId = context.StringValue("UpdateLiveAudioAuditNotifyConfig.RequestId");
+			updateLiveAudioAuditNotifyConfigResponse.HttpResponse = _ctx.HttpResponse;
+			updateLiveAudioAuditNotifyConfigResponse.RequestId = _ctx.StringValue("UpdateLiveAudioAuditNotifyConfig.RequestId");
         
 			return updateLiveAudioAuditNotifyConfigResponse;
         }

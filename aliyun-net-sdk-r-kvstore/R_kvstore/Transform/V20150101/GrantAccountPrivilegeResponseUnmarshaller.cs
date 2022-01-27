@@ -26,12 +26,12 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class GrantAccountPrivilegeResponseUnmarshaller
     {
-        public static GrantAccountPrivilegeResponse Unmarshall(UnmarshallerContext context)
+        public static GrantAccountPrivilegeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GrantAccountPrivilegeResponse grantAccountPrivilegeResponse = new GrantAccountPrivilegeResponse();
 
-			grantAccountPrivilegeResponse.HttpResponse = context.HttpResponse;
-			grantAccountPrivilegeResponse.RequestId = context.StringValue("GrantAccountPrivilege.RequestId");
+			grantAccountPrivilegeResponse.HttpResponse = _ctx.HttpResponse;
+			grantAccountPrivilegeResponse.RequestId = _ctx.StringValue("GrantAccountPrivilege.RequestId");
         
 			return grantAccountPrivilegeResponse;
         }

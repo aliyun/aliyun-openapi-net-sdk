@@ -26,15 +26,15 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class WriteCommunicationLogResponseUnmarshaller
     {
-        public static WriteCommunicationLogResponse Unmarshall(UnmarshallerContext context)
+        public static WriteCommunicationLogResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			WriteCommunicationLogResponse writeCommunicationLogResponse = new WriteCommunicationLogResponse();
 
-			writeCommunicationLogResponse.HttpResponse = context.HttpResponse;
-			writeCommunicationLogResponse.RequestId = context.StringValue("WriteCommunicationLog.RequestId");
-			writeCommunicationLogResponse.Success = context.BooleanValue("WriteCommunicationLog.Success");
-			writeCommunicationLogResponse.ErrorMsg = context.StringValue("WriteCommunicationLog.ErrorMsg");
-			writeCommunicationLogResponse.ErrorCode = context.StringValue("WriteCommunicationLog.ErrorCode");
+			writeCommunicationLogResponse.HttpResponse = _ctx.HttpResponse;
+			writeCommunicationLogResponse.RequestId = _ctx.StringValue("WriteCommunicationLog.RequestId");
+			writeCommunicationLogResponse.Success = _ctx.BooleanValue("WriteCommunicationLog.Success");
+			writeCommunicationLogResponse.ErrorMsg = _ctx.StringValue("WriteCommunicationLog.ErrorMsg");
+			writeCommunicationLogResponse.ErrorCode = _ctx.StringValue("WriteCommunicationLog.ErrorCode");
         
 			return writeCommunicationLogResponse;
         }

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class SetCasterSyncGroupResponseUnmarshaller
     {
-        public static SetCasterSyncGroupResponse Unmarshall(UnmarshallerContext context)
+        public static SetCasterSyncGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetCasterSyncGroupResponse setCasterSyncGroupResponse = new SetCasterSyncGroupResponse();
 
-			setCasterSyncGroupResponse.HttpResponse = context.HttpResponse;
-			setCasterSyncGroupResponse.RequestId = context.StringValue("SetCasterSyncGroup.RequestId");
+			setCasterSyncGroupResponse.HttpResponse = _ctx.HttpResponse;
+			setCasterSyncGroupResponse.RequestId = _ctx.StringValue("SetCasterSyncGroup.RequestId");
         
 			return setCasterSyncGroupResponse;
         }

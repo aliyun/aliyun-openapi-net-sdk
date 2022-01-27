@@ -34,8 +34,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.cloudesl.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.cloudesl.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -43,6 +43,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 		private string extraParams;
 
 		private string storeId;
+
+		private bool? syncByItemId;
 
 		private List<ItemInfo> itemInfos = new List<ItemInfo>(){ };
 
@@ -69,6 +71,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				storeId = value;
 				DictionaryUtil.Add(BodyParameters, "StoreId", value);
+			}
+		}
+
+		public bool? SyncByItemId
+		{
+			get
+			{
+				return syncByItemId;
+			}
+			set	
+			{
+				syncByItemId = value;
+				DictionaryUtil.Add(BodyParameters, "SyncByItemId", value.ToString());
 			}
 		}
 
@@ -120,6 +135,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".Manufacturer", itemInfos[i].Manufacturer);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".SourceCode", itemInfos[i].SourceCode);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".ItemId", itemInfos[i].ItemId);
+					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".BeMember", itemInfos[i].BeMember);
+					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".TemplateSceneId", itemInfos[i].TemplateSceneId);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".SalesPrice", itemInfos[i].SalesPrice);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".OriginalPrice", itemInfos[i].OriginalPrice);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".ItemShortTitle", itemInfos[i].ItemShortTitle);
@@ -212,6 +229,10 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			private string sourceCode;
 
 			private string itemId;
+
+			private bool? beMember;
+
+			private string templateSceneId;
 
 			private int? salesPrice;
 
@@ -670,6 +691,30 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					itemId = value;
+				}
+			}
+
+			public bool? BeMember
+			{
+				get
+				{
+					return beMember;
+				}
+				set	
+				{
+					beMember = value;
+				}
+			}
+
+			public string TemplateSceneId
+			{
+				get
+				{
+					return templateSceneId;
+				}
+				set	
+				{
+					templateSceneId = value;
 				}
 			}
 

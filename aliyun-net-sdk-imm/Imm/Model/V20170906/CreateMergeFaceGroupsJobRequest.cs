@@ -32,12 +32,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
         public CreateMergeFaceGroupsJobRequest()
             : base("imm", "2017-09-06", "CreateMergeFaceGroupsJob", "imm", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.imm.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.imm.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
 		private string project;
 
 		private string notifyEndpoint;
+
+		private string customMessage;
 
 		private string groupIdFrom;
 
@@ -70,6 +77,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				notifyEndpoint = value;
 				DictionaryUtil.Add(QueryParameters, "NotifyEndpoint", value);
+			}
+		}
+
+		public string CustomMessage
+		{
+			get
+			{
+				return customMessage;
+			}
+			set	
+			{
+				customMessage = value;
+				DictionaryUtil.Add(QueryParameters, "CustomMessage", value);
 			}
 		}
 

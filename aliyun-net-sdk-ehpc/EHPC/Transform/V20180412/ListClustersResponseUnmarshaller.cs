@@ -26,72 +26,74 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class ListClustersResponseUnmarshaller
     {
-        public static ListClustersResponse Unmarshall(UnmarshallerContext context)
+        public static ListClustersResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListClustersResponse listClustersResponse = new ListClustersResponse();
 
-			listClustersResponse.HttpResponse = context.HttpResponse;
-			listClustersResponse.RequestId = context.StringValue("ListClusters.RequestId");
-			listClustersResponse.TotalCount = context.IntegerValue("ListClusters.TotalCount");
-			listClustersResponse.PageNumber = context.IntegerValue("ListClusters.PageNumber");
-			listClustersResponse.PageSize = context.IntegerValue("ListClusters.PageSize");
+			listClustersResponse.HttpResponse = _ctx.HttpResponse;
+			listClustersResponse.RequestId = _ctx.StringValue("ListClusters.RequestId");
+			listClustersResponse.TotalCount = _ctx.IntegerValue("ListClusters.TotalCount");
+			listClustersResponse.PageNumber = _ctx.IntegerValue("ListClusters.PageNumber");
+			listClustersResponse.PageSize = _ctx.IntegerValue("ListClusters.PageSize");
 
 			List<ListClustersResponse.ListClusters_ClusterInfoSimple> listClustersResponse_clusters = new List<ListClustersResponse.ListClusters_ClusterInfoSimple>();
-			for (int i = 0; i < context.Length("ListClusters.Clusters.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListClusters.Clusters.Length"); i++) {
 				ListClustersResponse.ListClusters_ClusterInfoSimple clusterInfoSimple = new ListClustersResponse.ListClusters_ClusterInfoSimple();
-				clusterInfoSimple.Id = context.StringValue("ListClusters.Clusters["+ i +"].Id");
-				clusterInfoSimple.RegionId = context.StringValue("ListClusters.Clusters["+ i +"].RegionId");
-				clusterInfoSimple.ZoneId = context.StringValue("ListClusters.Clusters["+ i +"].ZoneId");
-				clusterInfoSimple.VSwitchId = context.StringValue("ListClusters.Clusters["+ i +"].VSwitchId");
-				clusterInfoSimple.VpcId = context.StringValue("ListClusters.Clusters["+ i +"].VpcId");
-				clusterInfoSimple.Name = context.StringValue("ListClusters.Clusters["+ i +"].Name");
-				clusterInfoSimple.Description = context.StringValue("ListClusters.Clusters["+ i +"].Description");
-				clusterInfoSimple.Status = context.StringValue("ListClusters.Clusters["+ i +"].Status");
-				clusterInfoSimple.OsTag = context.StringValue("ListClusters.Clusters["+ i +"].OsTag");
-				clusterInfoSimple.AccountType = context.StringValue("ListClusters.Clusters["+ i +"].AccountType");
-				clusterInfoSimple.SchedulerType = context.StringValue("ListClusters.Clusters["+ i +"].SchedulerType");
-				clusterInfoSimple.DeployMode = context.StringValue("ListClusters.Clusters["+ i +"].DeployMode");
-				clusterInfoSimple.Count = context.IntegerValue("ListClusters.Clusters["+ i +"].Count");
-				clusterInfoSimple.InstanceType = context.StringValue("ListClusters.Clusters["+ i +"].InstanceType");
-				clusterInfoSimple.LoginNodes = context.StringValue("ListClusters.Clusters["+ i +"].LoginNodes");
-				clusterInfoSimple.CreateTime = context.StringValue("ListClusters.Clusters["+ i +"].CreateTime");
-				clusterInfoSimple.ImageOwnerAlias = context.StringValue("ListClusters.Clusters["+ i +"].ImageOwnerAlias");
-				clusterInfoSimple.ImageId = context.StringValue("ListClusters.Clusters["+ i +"].ImageId");
-				clusterInfoSimple.Location = context.StringValue("ListClusters.Clusters["+ i +"].Location");
-				clusterInfoSimple.EhpcVersion = context.StringValue("ListClusters.Clusters["+ i +"].EhpcVersion");
-				clusterInfoSimple.NodePrefix = context.StringValue("ListClusters.Clusters["+ i +"].NodePrefix");
-				clusterInfoSimple.NodeSuffix = context.StringValue("ListClusters.Clusters["+ i +"].NodeSuffix");
-				clusterInfoSimple.BaseOsTag = context.StringValue("ListClusters.Clusters["+ i +"].BaseOsTag");
-				clusterInfoSimple.InstanceChargeType = context.StringValue("ListClusters.Clusters["+ i +"].InstanceChargeType");
-				clusterInfoSimple.ComputeSpotStrategy = context.StringValue("ListClusters.Clusters["+ i +"].ComputeSpotStrategy");
-				clusterInfoSimple.ComputeSpotPriceLimit = context.FloatValue("ListClusters.Clusters["+ i +"].ComputeSpotPriceLimit");
+				clusterInfoSimple.Id = _ctx.StringValue("ListClusters.Clusters["+ i +"].Id");
+				clusterInfoSimple.RegionId = _ctx.StringValue("ListClusters.Clusters["+ i +"].RegionId");
+				clusterInfoSimple.ZoneId = _ctx.StringValue("ListClusters.Clusters["+ i +"].ZoneId");
+				clusterInfoSimple.VSwitchId = _ctx.StringValue("ListClusters.Clusters["+ i +"].VSwitchId");
+				clusterInfoSimple.VpcId = _ctx.StringValue("ListClusters.Clusters["+ i +"].VpcId");
+				clusterInfoSimple.Name = _ctx.StringValue("ListClusters.Clusters["+ i +"].Name");
+				clusterInfoSimple.Description = _ctx.StringValue("ListClusters.Clusters["+ i +"].Description");
+				clusterInfoSimple.Status = _ctx.StringValue("ListClusters.Clusters["+ i +"].Status");
+				clusterInfoSimple.OsTag = _ctx.StringValue("ListClusters.Clusters["+ i +"].OsTag");
+				clusterInfoSimple.AccountType = _ctx.StringValue("ListClusters.Clusters["+ i +"].AccountType");
+				clusterInfoSimple.SchedulerType = _ctx.StringValue("ListClusters.Clusters["+ i +"].SchedulerType");
+				clusterInfoSimple.DeployMode = _ctx.StringValue("ListClusters.Clusters["+ i +"].DeployMode");
+				clusterInfoSimple.Count = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].Count");
+				clusterInfoSimple.InstanceType = _ctx.StringValue("ListClusters.Clusters["+ i +"].InstanceType");
+				clusterInfoSimple.LoginNodes = _ctx.StringValue("ListClusters.Clusters["+ i +"].LoginNodes");
+				clusterInfoSimple.CreateTime = _ctx.StringValue("ListClusters.Clusters["+ i +"].CreateTime");
+				clusterInfoSimple.ImageOwnerAlias = _ctx.StringValue("ListClusters.Clusters["+ i +"].ImageOwnerAlias");
+				clusterInfoSimple.ImageId = _ctx.StringValue("ListClusters.Clusters["+ i +"].ImageId");
+				clusterInfoSimple.Location = _ctx.StringValue("ListClusters.Clusters["+ i +"].Location");
+				clusterInfoSimple.EhpcVersion = _ctx.StringValue("ListClusters.Clusters["+ i +"].EhpcVersion");
+				clusterInfoSimple.NodePrefix = _ctx.StringValue("ListClusters.Clusters["+ i +"].NodePrefix");
+				clusterInfoSimple.NodeSuffix = _ctx.StringValue("ListClusters.Clusters["+ i +"].NodeSuffix");
+				clusterInfoSimple.BaseOsTag = _ctx.StringValue("ListClusters.Clusters["+ i +"].BaseOsTag");
+				clusterInfoSimple.InstanceChargeType = _ctx.StringValue("ListClusters.Clusters["+ i +"].InstanceChargeType");
+				clusterInfoSimple.ComputeSpotStrategy = _ctx.StringValue("ListClusters.Clusters["+ i +"].ComputeSpotStrategy");
+				clusterInfoSimple.ComputeSpotPriceLimit = _ctx.FloatValue("ListClusters.Clusters["+ i +"].ComputeSpotPriceLimit");
+				clusterInfoSimple.ClientVersion = _ctx.StringValue("ListClusters.Clusters["+ i +"].ClientVersion");
+				clusterInfoSimple.IsComputeEss = _ctx.BooleanValue("ListClusters.Clusters["+ i +"].IsComputeEss");
 
 				ListClustersResponse.ListClusters_ClusterInfoSimple.ListClusters_Managers managers = new ListClustersResponse.ListClusters_ClusterInfoSimple.ListClusters_Managers();
-				managers.Total = context.IntegerValue("ListClusters.Clusters["+ i +"].Managers.Total");
-				managers.NormalCount = context.IntegerValue("ListClusters.Clusters["+ i +"].Managers.NormalCount");
-				managers.OperatingCount = context.IntegerValue("ListClusters.Clusters["+ i +"].Managers.OperatingCount");
-				managers.StoppedCount = context.IntegerValue("ListClusters.Clusters["+ i +"].Managers.StoppedCount");
-				managers.ExceptionCount = context.IntegerValue("ListClusters.Clusters["+ i +"].Managers.ExceptionCount");
+				managers.Total = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].Managers.Total");
+				managers.NormalCount = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].Managers.NormalCount");
+				managers.OperatingCount = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].Managers.OperatingCount");
+				managers.StoppedCount = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].Managers.StoppedCount");
+				managers.ExceptionCount = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].Managers.ExceptionCount");
 				clusterInfoSimple.Managers = managers;
 
 				ListClustersResponse.ListClusters_ClusterInfoSimple.ListClusters_Computes computes = new ListClustersResponse.ListClusters_ClusterInfoSimple.ListClusters_Computes();
-				computes.Total = context.IntegerValue("ListClusters.Clusters["+ i +"].Computes.Total");
-				computes.NormalCount = context.IntegerValue("ListClusters.Clusters["+ i +"].Computes.NormalCount");
-				computes.OperatingCount = context.IntegerValue("ListClusters.Clusters["+ i +"].Computes.OperatingCount");
-				computes.StoppedCount = context.IntegerValue("ListClusters.Clusters["+ i +"].Computes.StoppedCount");
-				computes.ExceptionCount = context.IntegerValue("ListClusters.Clusters["+ i +"].Computes.ExceptionCount");
+				computes.Total = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].Computes.Total");
+				computes.NormalCount = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].Computes.NormalCount");
+				computes.OperatingCount = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].Computes.OperatingCount");
+				computes.StoppedCount = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].Computes.StoppedCount");
+				computes.ExceptionCount = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].Computes.ExceptionCount");
 				clusterInfoSimple.Computes = computes;
 
 				ListClustersResponse.ListClusters_ClusterInfoSimple.ListClusters_TotalResources totalResources = new ListClustersResponse.ListClusters_ClusterInfoSimple.ListClusters_TotalResources();
-				totalResources.Cpu = context.IntegerValue("ListClusters.Clusters["+ i +"].TotalResources.Cpu");
-				totalResources.Memory = context.IntegerValue("ListClusters.Clusters["+ i +"].TotalResources.Memory");
-				totalResources.Gpu = context.IntegerValue("ListClusters.Clusters["+ i +"].TotalResources.Gpu");
+				totalResources.Cpu = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].TotalResources.Cpu");
+				totalResources.Memory = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].TotalResources.Memory");
+				totalResources.Gpu = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].TotalResources.Gpu");
 				clusterInfoSimple.TotalResources = totalResources;
 
 				ListClustersResponse.ListClusters_ClusterInfoSimple.ListClusters_UsedResources usedResources = new ListClustersResponse.ListClusters_ClusterInfoSimple.ListClusters_UsedResources();
-				usedResources.Cpu = context.IntegerValue("ListClusters.Clusters["+ i +"].UsedResources.Cpu");
-				usedResources.Memory = context.IntegerValue("ListClusters.Clusters["+ i +"].UsedResources.Memory");
-				usedResources.Gpu = context.IntegerValue("ListClusters.Clusters["+ i +"].UsedResources.Gpu");
+				usedResources.Cpu = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].UsedResources.Cpu");
+				usedResources.Memory = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].UsedResources.Memory");
+				usedResources.Gpu = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].UsedResources.Gpu");
 				clusterInfoSimple.UsedResources = usedResources;
 
 				listClustersResponse_clusters.Add(clusterInfoSimple);

@@ -26,49 +26,65 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeCasterConfigResponseUnmarshaller
     {
-        public static DescribeCasterConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCasterConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCasterConfigResponse describeCasterConfigResponse = new DescribeCasterConfigResponse();
 
-			describeCasterConfigResponse.HttpResponse = context.HttpResponse;
-			describeCasterConfigResponse.RequestId = context.StringValue("DescribeCasterConfig.RequestId");
-			describeCasterConfigResponse.CasterId = context.StringValue("DescribeCasterConfig.CasterId");
-			describeCasterConfigResponse.CasterName = context.StringValue("DescribeCasterConfig.CasterName");
-			describeCasterConfigResponse.DomainName = context.StringValue("DescribeCasterConfig.DomainName");
-			describeCasterConfigResponse.Delay = context.FloatValue("DescribeCasterConfig.Delay");
-			describeCasterConfigResponse.UrgentMaterialId = context.StringValue("DescribeCasterConfig.UrgentMaterialId");
-			describeCasterConfigResponse.SideOutputUrl = context.StringValue("DescribeCasterConfig.SideOutputUrl");
-			describeCasterConfigResponse.CallbackUrl = context.StringValue("DescribeCasterConfig.CallbackUrl");
-			describeCasterConfigResponse.ProgramName = context.StringValue("DescribeCasterConfig.ProgramName");
-			describeCasterConfigResponse.ProgramEffect = context.IntegerValue("DescribeCasterConfig.ProgramEffect");
-			describeCasterConfigResponse.ChannelEnable = context.IntegerValue("DescribeCasterConfig.ChannelEnable");
+			describeCasterConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeCasterConfigResponse.RequestId = _ctx.StringValue("DescribeCasterConfig.RequestId");
+			describeCasterConfigResponse.CasterId = _ctx.StringValue("DescribeCasterConfig.CasterId");
+			describeCasterConfigResponse.CasterName = _ctx.StringValue("DescribeCasterConfig.CasterName");
+			describeCasterConfigResponse.DomainName = _ctx.StringValue("DescribeCasterConfig.DomainName");
+			describeCasterConfigResponse.Delay = _ctx.FloatValue("DescribeCasterConfig.Delay");
+			describeCasterConfigResponse.UrgentMaterialId = _ctx.StringValue("DescribeCasterConfig.UrgentMaterialId");
+			describeCasterConfigResponse.SideOutputUrl = _ctx.StringValue("DescribeCasterConfig.SideOutputUrl");
+			describeCasterConfigResponse.CallbackUrl = _ctx.StringValue("DescribeCasterConfig.CallbackUrl");
+			describeCasterConfigResponse.ProgramName = _ctx.StringValue("DescribeCasterConfig.ProgramName");
+			describeCasterConfigResponse.ProgramEffect = _ctx.IntegerValue("DescribeCasterConfig.ProgramEffect");
+			describeCasterConfigResponse.ChannelEnable = _ctx.IntegerValue("DescribeCasterConfig.ChannelEnable");
 
 			DescribeCasterConfigResponse.DescribeCasterConfig_TranscodeConfig transcodeConfig = new DescribeCasterConfigResponse.DescribeCasterConfig_TranscodeConfig();
-			transcodeConfig.CasterTemplate = context.StringValue("DescribeCasterConfig.TranscodeConfig.CasterTemplate");
+			transcodeConfig.CasterTemplate = _ctx.StringValue("DescribeCasterConfig.TranscodeConfig.CasterTemplate");
 
 			List<string> transcodeConfig_liveTemplateIds = new List<string>();
-			for (int i = 0; i < context.Length("DescribeCasterConfig.TranscodeConfig.LiveTemplateIds.Length"); i++) {
-				transcodeConfig_liveTemplateIds.Add(context.StringValue("DescribeCasterConfig.TranscodeConfig.LiveTemplateIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeCasterConfig.TranscodeConfig.LiveTemplateIds.Length"); i++) {
+				transcodeConfig_liveTemplateIds.Add(_ctx.StringValue("DescribeCasterConfig.TranscodeConfig.LiveTemplateIds["+ i +"]"));
 			}
 			transcodeConfig.LiveTemplateIds = transcodeConfig_liveTemplateIds;
 			describeCasterConfigResponse.TranscodeConfig = transcodeConfig;
 
 			DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig recordConfig = new DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig();
-			recordConfig.OssEndpoint = context.StringValue("DescribeCasterConfig.RecordConfig.OssEndpoint");
-			recordConfig.OssBucket = context.StringValue("DescribeCasterConfig.RecordConfig.OssBucket");
+			recordConfig.OssEndpoint = _ctx.StringValue("DescribeCasterConfig.RecordConfig.OssEndpoint");
+			recordConfig.OssBucket = _ctx.StringValue("DescribeCasterConfig.RecordConfig.OssBucket");
 
 			List<DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig.DescribeCasterConfig_RecordFormatItem> recordConfig_recordFormat = new List<DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig.DescribeCasterConfig_RecordFormatItem>();
-			for (int i = 0; i < context.Length("DescribeCasterConfig.RecordConfig.RecordFormat.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCasterConfig.RecordConfig.RecordFormat.Length"); i++) {
 				DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig.DescribeCasterConfig_RecordFormatItem recordFormatItem = new DescribeCasterConfigResponse.DescribeCasterConfig_RecordConfig.DescribeCasterConfig_RecordFormatItem();
-				recordFormatItem.Format = context.StringValue("DescribeCasterConfig.RecordConfig.RecordFormat["+ i +"].Format");
-				recordFormatItem.OssObjectPrefix = context.StringValue("DescribeCasterConfig.RecordConfig.RecordFormat["+ i +"].OssObjectPrefix");
-				recordFormatItem.SliceOssObjectPrefix = context.StringValue("DescribeCasterConfig.RecordConfig.RecordFormat["+ i +"].SliceOssObjectPrefix");
-				recordFormatItem.CycleDuration = context.IntegerValue("DescribeCasterConfig.RecordConfig.RecordFormat["+ i +"].CycleDuration");
+				recordFormatItem.Format = _ctx.StringValue("DescribeCasterConfig.RecordConfig.RecordFormat["+ i +"].Format");
+				recordFormatItem.OssObjectPrefix = _ctx.StringValue("DescribeCasterConfig.RecordConfig.RecordFormat["+ i +"].OssObjectPrefix");
+				recordFormatItem.SliceOssObjectPrefix = _ctx.StringValue("DescribeCasterConfig.RecordConfig.RecordFormat["+ i +"].SliceOssObjectPrefix");
+				recordFormatItem.CycleDuration = _ctx.IntegerValue("DescribeCasterConfig.RecordConfig.RecordFormat["+ i +"].CycleDuration");
 
 				recordConfig_recordFormat.Add(recordFormatItem);
 			}
 			recordConfig.RecordFormat = recordConfig_recordFormat;
 			describeCasterConfigResponse.RecordConfig = recordConfig;
+
+			List<DescribeCasterConfigResponse.DescribeCasterConfig_SyncGroup> describeCasterConfigResponse_syncGroupsConfig = new List<DescribeCasterConfigResponse.DescribeCasterConfig_SyncGroup>();
+			for (int i = 0; i < _ctx.Length("DescribeCasterConfig.SyncGroupsConfig.Length"); i++) {
+				DescribeCasterConfigResponse.DescribeCasterConfig_SyncGroup syncGroup = new DescribeCasterConfigResponse.DescribeCasterConfig_SyncGroup();
+				syncGroup.Mode = _ctx.IntegerValue("DescribeCasterConfig.SyncGroupsConfig["+ i +"].Mode");
+				syncGroup.HostResourceId = _ctx.StringValue("DescribeCasterConfig.SyncGroupsConfig["+ i +"].HostResourceId");
+
+				List<string> syncGroup_resourceIds = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeCasterConfig.SyncGroupsConfig["+ i +"].ResourceIds.Length"); j++) {
+					syncGroup_resourceIds.Add(_ctx.StringValue("DescribeCasterConfig.SyncGroupsConfig["+ i +"].ResourceIds["+ j +"]"));
+				}
+				syncGroup.ResourceIds = syncGroup_resourceIds;
+
+				describeCasterConfigResponse_syncGroupsConfig.Add(syncGroup);
+			}
+			describeCasterConfigResponse.SyncGroupsConfig = describeCasterConfigResponse_syncGroupsConfig;
         
 			return describeCasterConfigResponse;
         }

@@ -26,29 +26,29 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class QueryPrepaidCardsResponseUnmarshaller
     {
-        public static QueryPrepaidCardsResponse Unmarshall(UnmarshallerContext context)
+        public static QueryPrepaidCardsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryPrepaidCardsResponse queryPrepaidCardsResponse = new QueryPrepaidCardsResponse();
 
-			queryPrepaidCardsResponse.HttpResponse = context.HttpResponse;
-			queryPrepaidCardsResponse.RequestId = context.StringValue("QueryPrepaidCards.RequestId");
-			queryPrepaidCardsResponse.Success = context.BooleanValue("QueryPrepaidCards.Success");
-			queryPrepaidCardsResponse.Code = context.StringValue("QueryPrepaidCards.Code");
-			queryPrepaidCardsResponse.Message = context.StringValue("QueryPrepaidCards.Message");
+			queryPrepaidCardsResponse.HttpResponse = _ctx.HttpResponse;
+			queryPrepaidCardsResponse.RequestId = _ctx.StringValue("QueryPrepaidCards.RequestId");
+			queryPrepaidCardsResponse.Success = _ctx.BooleanValue("QueryPrepaidCards.Success");
+			queryPrepaidCardsResponse.Code = _ctx.StringValue("QueryPrepaidCards.Code");
+			queryPrepaidCardsResponse.Message = _ctx.StringValue("QueryPrepaidCards.Message");
 
 			List<QueryPrepaidCardsResponse.QueryPrepaidCards_PrepaidCard> queryPrepaidCardsResponse_data = new List<QueryPrepaidCardsResponse.QueryPrepaidCards_PrepaidCard>();
-			for (int i = 0; i < context.Length("QueryPrepaidCards.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryPrepaidCards.Data.Length"); i++) {
 				QueryPrepaidCardsResponse.QueryPrepaidCards_PrepaidCard prepaidCard = new QueryPrepaidCardsResponse.QueryPrepaidCards_PrepaidCard();
-				prepaidCard.PrepaidCardId = context.LongValue("QueryPrepaidCards.Data["+ i +"].PrepaidCardId");
-				prepaidCard.PrepaidCardNo = context.StringValue("QueryPrepaidCards.Data["+ i +"].PrepaidCardNo");
-				prepaidCard.GrantedTime = context.StringValue("QueryPrepaidCards.Data["+ i +"].GrantedTime");
-				prepaidCard.EffectiveTime = context.StringValue("QueryPrepaidCards.Data["+ i +"].EffectiveTime");
-				prepaidCard.ExpiryTime = context.StringValue("QueryPrepaidCards.Data["+ i +"].ExpiryTime");
-				prepaidCard.ApplicableProducts = context.StringValue("QueryPrepaidCards.Data["+ i +"].ApplicableProducts");
-				prepaidCard.ApplicableScenarios = context.StringValue("QueryPrepaidCards.Data["+ i +"].ApplicableScenarios");
-				prepaidCard.NominalValue = context.StringValue("QueryPrepaidCards.Data["+ i +"].NominalValue");
-				prepaidCard.Balance = context.StringValue("QueryPrepaidCards.Data["+ i +"].Balance");
-				prepaidCard.Status = context.StringValue("QueryPrepaidCards.Data["+ i +"].Status");
+				prepaidCard.PrepaidCardId = _ctx.LongValue("QueryPrepaidCards.Data["+ i +"].PrepaidCardId");
+				prepaidCard.PrepaidCardNo = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].PrepaidCardNo");
+				prepaidCard.GrantedTime = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].GrantedTime");
+				prepaidCard.EffectiveTime = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].EffectiveTime");
+				prepaidCard.ExpiryTime = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].ExpiryTime");
+				prepaidCard.ApplicableProducts = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].ApplicableProducts");
+				prepaidCard.ApplicableScenarios = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].ApplicableScenarios");
+				prepaidCard.NominalValue = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].NominalValue");
+				prepaidCard.Balance = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].Balance");
+				prepaidCard.Status = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].Status");
 
 				queryPrepaidCardsResponse_data.Add(prepaidCard);
 			}

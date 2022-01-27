@@ -124,6 +124,16 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 			private string resourceGroupId;
 
+			private int? elasticIOResource;
+
+			private string engineVersion;
+
+			private bool? userENIStatus;
+
+			private bool? enableSpark;
+
+			private bool? enableAirflow;
+
 			private List<DescribeDBClusterAttribute_Tag> tags;
 
 			public string RegionId
@@ -531,6 +541,66 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public int? ElasticIOResource
+			{
+				get
+				{
+					return elasticIOResource;
+				}
+				set	
+				{
+					elasticIOResource = value;
+				}
+			}
+
+			public string EngineVersion
+			{
+				get
+				{
+					return engineVersion;
+				}
+				set	
+				{
+					engineVersion = value;
+				}
+			}
+
+			public bool? UserENIStatus
+			{
+				get
+				{
+					return userENIStatus;
+				}
+				set	
+				{
+					userENIStatus = value;
+				}
+			}
+
+			public bool? EnableSpark
+			{
+				get
+				{
+					return enableSpark;
+				}
+				set	
+				{
+					enableSpark = value;
+				}
+			}
+
+			public bool? EnableAirflow
+			{
+				get
+				{
+					return enableAirflow;
+				}
+				set	
+				{
+					enableAirflow = value;
 				}
 			}
 

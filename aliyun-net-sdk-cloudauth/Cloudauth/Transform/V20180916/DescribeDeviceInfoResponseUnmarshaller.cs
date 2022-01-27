@@ -26,24 +26,24 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20180916
 {
     public class DescribeDeviceInfoResponseUnmarshaller
     {
-        public static DescribeDeviceInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDeviceInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDeviceInfoResponse describeDeviceInfoResponse = new DescribeDeviceInfoResponse();
 
-			describeDeviceInfoResponse.HttpResponse = context.HttpResponse;
-			describeDeviceInfoResponse.RequestId = context.StringValue("DescribeDeviceInfo.RequestId");
-			describeDeviceInfoResponse.PageSize = context.IntegerValue("DescribeDeviceInfo.PageSize");
-			describeDeviceInfoResponse.CurrentPage = context.IntegerValue("DescribeDeviceInfo.CurrentPage");
-			describeDeviceInfoResponse.TotalCount = context.IntegerValue("DescribeDeviceInfo.TotalCount");
+			describeDeviceInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeDeviceInfoResponse.RequestId = _ctx.StringValue("DescribeDeviceInfo.RequestId");
+			describeDeviceInfoResponse.PageSize = _ctx.IntegerValue("DescribeDeviceInfo.PageSize");
+			describeDeviceInfoResponse.CurrentPage = _ctx.IntegerValue("DescribeDeviceInfo.CurrentPage");
+			describeDeviceInfoResponse.TotalCount = _ctx.IntegerValue("DescribeDeviceInfo.TotalCount");
 
 			List<DescribeDeviceInfoResponse.DescribeDeviceInfo_DeviceInfo> describeDeviceInfoResponse_deviceInfoList = new List<DescribeDeviceInfoResponse.DescribeDeviceInfo_DeviceInfo>();
-			for (int i = 0; i < context.Length("DescribeDeviceInfo.DeviceInfoList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDeviceInfo.DeviceInfoList.Length"); i++) {
 				DescribeDeviceInfoResponse.DescribeDeviceInfo_DeviceInfo deviceInfo = new DescribeDeviceInfoResponse.DescribeDeviceInfo_DeviceInfo();
-				deviceInfo.DeviceId = context.StringValue("DescribeDeviceInfo.DeviceInfoList["+ i +"].DeviceId");
-				deviceInfo.UserDeviceId = context.StringValue("DescribeDeviceInfo.DeviceInfoList["+ i +"].UserDeviceId");
-				deviceInfo.BizType = context.StringValue("DescribeDeviceInfo.DeviceInfoList["+ i +"].BizType");
-				deviceInfo.BeginDay = context.StringValue("DescribeDeviceInfo.DeviceInfoList["+ i +"].BeginDay");
-				deviceInfo.ExpiredDay = context.StringValue("DescribeDeviceInfo.DeviceInfoList["+ i +"].ExpiredDay");
+				deviceInfo.DeviceId = _ctx.StringValue("DescribeDeviceInfo.DeviceInfoList["+ i +"].DeviceId");
+				deviceInfo.UserDeviceId = _ctx.StringValue("DescribeDeviceInfo.DeviceInfoList["+ i +"].UserDeviceId");
+				deviceInfo.BizType = _ctx.StringValue("DescribeDeviceInfo.DeviceInfoList["+ i +"].BizType");
+				deviceInfo.BeginDay = _ctx.StringValue("DescribeDeviceInfo.DeviceInfoList["+ i +"].BeginDay");
+				deviceInfo.ExpiredDay = _ctx.StringValue("DescribeDeviceInfo.DeviceInfoList["+ i +"].ExpiredDay");
 
 				describeDeviceInfoResponse_deviceInfoList.Add(deviceInfo);
 			}

@@ -35,8 +35,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string description;
 
 		private string startTime;
+
+		private string issueCategory;
 
 		private List<string> diskIds = new List<string>(){ };
 
@@ -63,6 +65,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<string> devices = new List<string>(){ };
 
+		[JsonProperty(PropertyName = "Reason")]
 		public string Reason
 		{
 			get
@@ -76,6 +79,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -89,6 +93,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -102,6 +107,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartTime")]
 		public string StartTime
 		{
 			get
@@ -115,6 +121,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "IssueCategory")]
+		public string IssueCategory
+		{
+			get
+			{
+				return issueCategory;
+			}
+			set	
+			{
+				issueCategory = value;
+				DictionaryUtil.Add(QueryParameters, "IssueCategory", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DiskId")]
 		public List<string> DiskIds
 		{
 			get
@@ -125,13 +146,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				diskIds = value;
-				for (int i = 0; i < diskIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DiskId." + (i + 1) , diskIds[i]);
-				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -145,6 +163,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -158,6 +177,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
 		{
 			get
@@ -171,6 +191,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -184,6 +205,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceId")]
 		public List<string> InstanceIds
 		{
 			get
@@ -194,13 +216,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				instanceIds = value;
-				for (int i = 0; i < instanceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
-				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "Device")]
 		public List<string> Devices
 		{
 			get
@@ -211,10 +230,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				devices = value;
-				for (int i = 0; i < devices.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Device." + (i + 1) , devices[i]);
-				}
 			}
 		}
 

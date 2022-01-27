@@ -26,12 +26,12 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class ShrinkClusterResponseUnmarshaller
     {
-        public static ShrinkClusterResponse Unmarshall(UnmarshallerContext context)
+        public static ShrinkClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ShrinkClusterResponse shrinkClusterResponse = new ShrinkClusterResponse();
 
-			shrinkClusterResponse.HttpResponse = context.HttpResponse;
-			shrinkClusterResponse.RequestId = context.StringValue("ShrinkCluster.RequestId");
+			shrinkClusterResponse.HttpResponse = _ctx.HttpResponse;
+			shrinkClusterResponse.RequestId = _ctx.StringValue("ShrinkCluster.RequestId");
         
 			return shrinkClusterResponse;
         }

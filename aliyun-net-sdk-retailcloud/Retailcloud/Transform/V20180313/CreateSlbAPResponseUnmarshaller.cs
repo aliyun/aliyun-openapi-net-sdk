@@ -26,18 +26,18 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class CreateSlbAPResponseUnmarshaller
     {
-        public static CreateSlbAPResponse Unmarshall(UnmarshallerContext context)
+        public static CreateSlbAPResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateSlbAPResponse createSlbAPResponse = new CreateSlbAPResponse();
 
-			createSlbAPResponse.HttpResponse = context.HttpResponse;
-			createSlbAPResponse.Code = context.IntegerValue("CreateSlbAP.Code");
-			createSlbAPResponse.ErrMsg = context.StringValue("CreateSlbAP.ErrMsg");
-			createSlbAPResponse.RequestId = context.StringValue("CreateSlbAP.RequestId");
-			createSlbAPResponse.Success = context.BooleanValue("CreateSlbAP.Success");
+			createSlbAPResponse.HttpResponse = _ctx.HttpResponse;
+			createSlbAPResponse.Code = _ctx.IntegerValue("CreateSlbAP.Code");
+			createSlbAPResponse.ErrMsg = _ctx.StringValue("CreateSlbAP.ErrMsg");
+			createSlbAPResponse.RequestId = _ctx.StringValue("CreateSlbAP.RequestId");
+			createSlbAPResponse.Success = _ctx.BooleanValue("CreateSlbAP.Success");
 
 			CreateSlbAPResponse.CreateSlbAP_Result result = new CreateSlbAPResponse.CreateSlbAP_Result();
-			result.SlbAPId = context.LongValue("CreateSlbAP.Result.SlbAPId");
+			result.SlbAPId = _ctx.LongValue("CreateSlbAP.Result.SlbAPId");
 			createSlbAPResponse.Result = result;
         
 			return createSlbAPResponse;

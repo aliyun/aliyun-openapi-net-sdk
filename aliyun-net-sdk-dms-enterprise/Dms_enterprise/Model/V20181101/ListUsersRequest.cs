@@ -31,21 +31,17 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class ListUsersRequest : RpcAcsRequest<ListUsersResponse>
     {
         public ListUsersRequest()
-            : base("dms-enterprise", "2018-11-01", "ListUsers", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "ListUsers", "dms-enterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
-		private string userState;
-
 		private string role;
-
-		private int? pageSize;
 
 		private string searchKey;
 
@@ -53,19 +49,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private int? pageNumber;
 
-		public string UserState
-		{
-			get
-			{
-				return userState;
-			}
-			set	
-			{
-				userState = value;
-				DictionaryUtil.Add(QueryParameters, "UserState", value);
-			}
-		}
+		private string userState;
 
+		private int? pageSize;
+
+		[JsonProperty(PropertyName = "Role")]
 		public string Role
 		{
 			get
@@ -79,19 +67,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
+		[JsonProperty(PropertyName = "SearchKey")]
 		public string SearchKey
 		{
 			get
@@ -105,6 +81,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -118,6 +95,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -128,6 +106,34 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "UserState")]
+		public string UserState
+		{
+			get
+			{
+				return userState;
+			}
+			set	
+			{
+				userState = value;
+				DictionaryUtil.Add(QueryParameters, "UserState", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageSize")]
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

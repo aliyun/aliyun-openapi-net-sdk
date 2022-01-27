@@ -32,6 +32,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
         public ListSetsRequest()
             : base("imm", "2017-09-06", "ListSets", "imm", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.imm.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.imm.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 

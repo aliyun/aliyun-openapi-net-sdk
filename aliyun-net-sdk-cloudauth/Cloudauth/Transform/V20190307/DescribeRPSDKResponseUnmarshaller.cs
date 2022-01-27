@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 {
     public class DescribeRPSDKResponseUnmarshaller
     {
-        public static DescribeRPSDKResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRPSDKResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRPSDKResponse describeRPSDKResponse = new DescribeRPSDKResponse();
 
-			describeRPSDKResponse.HttpResponse = context.HttpResponse;
-			describeRPSDKResponse.RequestId = context.StringValue("DescribeRPSDK.RequestId");
-			describeRPSDKResponse.SdkUrl = context.StringValue("DescribeRPSDK.SdkUrl");
+			describeRPSDKResponse.HttpResponse = _ctx.HttpResponse;
+			describeRPSDKResponse.RequestId = _ctx.StringValue("DescribeRPSDK.RequestId");
+			describeRPSDKResponse.SdkUrl = _ctx.StringValue("DescribeRPSDK.SdkUrl");
         
 			return describeRPSDKResponse;
         }

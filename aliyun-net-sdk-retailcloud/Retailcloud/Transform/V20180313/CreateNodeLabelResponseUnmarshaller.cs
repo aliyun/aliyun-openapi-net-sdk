@@ -26,21 +26,21 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class CreateNodeLabelResponseUnmarshaller
     {
-        public static CreateNodeLabelResponse Unmarshall(UnmarshallerContext context)
+        public static CreateNodeLabelResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateNodeLabelResponse createNodeLabelResponse = new CreateNodeLabelResponse();
 
-			createNodeLabelResponse.HttpResponse = context.HttpResponse;
-			createNodeLabelResponse.Code = context.IntegerValue("CreateNodeLabel.Code");
-			createNodeLabelResponse.ErrMsg = context.StringValue("CreateNodeLabel.ErrMsg");
-			createNodeLabelResponse.RequestId = context.StringValue("CreateNodeLabel.RequestId");
-			createNodeLabelResponse.Success = context.BooleanValue("CreateNodeLabel.Success");
+			createNodeLabelResponse.HttpResponse = _ctx.HttpResponse;
+			createNodeLabelResponse.Code = _ctx.IntegerValue("CreateNodeLabel.Code");
+			createNodeLabelResponse.ErrMsg = _ctx.StringValue("CreateNodeLabel.ErrMsg");
+			createNodeLabelResponse.RequestId = _ctx.StringValue("CreateNodeLabel.RequestId");
+			createNodeLabelResponse.Success = _ctx.BooleanValue("CreateNodeLabel.Success");
 
 			CreateNodeLabelResponse.CreateNodeLabel_Result result = new CreateNodeLabelResponse.CreateNodeLabel_Result();
-			result.ClusterId = context.StringValue("CreateNodeLabel.Result.ClusterId");
-			result.Id = context.LongValue("CreateNodeLabel.Result.Id");
-			result.LabelKey = context.StringValue("CreateNodeLabel.Result.LabelKey");
-			result.LabelValue = context.StringValue("CreateNodeLabel.Result.LabelValue");
+			result.ClusterId = _ctx.StringValue("CreateNodeLabel.Result.ClusterId");
+			result.Id = _ctx.LongValue("CreateNodeLabel.Result.Id");
+			result.LabelKey = _ctx.StringValue("CreateNodeLabel.Result.LabelKey");
+			result.LabelValue = _ctx.StringValue("CreateNodeLabel.Result.LabelValue");
 			createNodeLabelResponse.Result = result;
         
 			return createNodeLabelResponse;

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -27,20 +27,21 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 
 		private string requestId;
 
-		private bool? success;
-
-		private string code;
-
 		private string message;
 
 		private string currency;
 
+		private float? cacheCloudEfficiencySizePrice;
+
 		private float? gatewayClassPrice;
 
-		private float? cacheCloudEfficiencySizePrice;
+		private string code;
+
+		private bool? success;
 
 		private float? cacheCloudSSDSizePrice;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -53,30 +54,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -89,6 +67,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "Currency")]
 		public string Currency
 		{
 			get
@@ -101,18 +80,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public float? GatewayClassPrice
-		{
-			get
-			{
-				return gatewayClassPrice;
-			}
-			set	
-			{
-				gatewayClassPrice = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "CacheCloudEfficiencySizePrice")]
 		public float? CacheCloudEfficiencySizePrice
 		{
 			get
@@ -125,6 +93,46 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "GatewayClassPrice")]
+		public float? GatewayClassPrice
+		{
+			get
+			{
+				return gatewayClassPrice;
+			}
+			set	
+			{
+				gatewayClassPrice = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "CacheCloudSSDSizePrice")]
 		public float? CacheCloudSSDSizePrice
 		{
 			get

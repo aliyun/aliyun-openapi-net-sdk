@@ -34,9 +34,10 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dyvmsapi.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dyvmsapi.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -44,6 +45,10 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 		private string voiceCodeParam;
 
 		private bool? earlyMediaAsr;
+
+		private int? backgroundSpeed;
+
+		private int? backgroundVolume;
 
 		private int? speed;
 
@@ -61,6 +66,8 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 
 		private string calledShowNumber;
 
+		private bool? enableITN;
+
 		private int? actionCodeTimeBreak;
 
 		private bool? ttsConf;
@@ -75,9 +82,13 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 
 		private int? ttsVolume;
 
+		private int? streamAsr;
+
 		private int? volume;
 
 		private int? muteTime;
+
+		private string backgroundFileCode;
 
 		private string outId;
 
@@ -123,6 +134,32 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			{
 				earlyMediaAsr = value;
 				DictionaryUtil.Add(QueryParameters, "EarlyMediaAsr", value.ToString());
+			}
+		}
+
+		public int? BackgroundSpeed
+		{
+			get
+			{
+				return backgroundSpeed;
+			}
+			set	
+			{
+				backgroundSpeed = value;
+				DictionaryUtil.Add(QueryParameters, "BackgroundSpeed", value.ToString());
+			}
+		}
+
+		public int? BackgroundVolume
+		{
+			get
+			{
+				return backgroundVolume;
+			}
+			set	
+			{
+				backgroundVolume = value;
+				DictionaryUtil.Add(QueryParameters, "BackgroundVolume", value.ToString());
 			}
 		}
 
@@ -230,6 +267,19 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
+		public bool? EnableITN
+		{
+			get
+			{
+				return enableITN;
+			}
+			set	
+			{
+				enableITN = value;
+				DictionaryUtil.Add(QueryParameters, "EnableITN", value.ToString());
+			}
+		}
+
 		public int? ActionCodeTimeBreak
 		{
 			get
@@ -321,6 +371,19 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
+		public int? StreamAsr
+		{
+			get
+			{
+				return streamAsr;
+			}
+			set	
+			{
+				streamAsr = value;
+				DictionaryUtil.Add(QueryParameters, "StreamAsr", value.ToString());
+			}
+		}
+
 		public int? Volume
 		{
 			get
@@ -344,6 +407,19 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			{
 				muteTime = value;
 				DictionaryUtil.Add(QueryParameters, "MuteTime", value.ToString());
+			}
+		}
+
+		public string BackgroundFileCode
+		{
+			get
+			{
+				return backgroundFileCode;
+			}
+			set	
+			{
+				backgroundFileCode = value;
+				DictionaryUtil.Add(QueryParameters, "BackgroundFileCode", value);
 			}
 		}
 

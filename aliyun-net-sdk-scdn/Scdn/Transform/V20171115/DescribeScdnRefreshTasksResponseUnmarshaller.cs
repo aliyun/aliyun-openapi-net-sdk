@@ -26,26 +26,26 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 {
     public class DescribeScdnRefreshTasksResponseUnmarshaller
     {
-        public static DescribeScdnRefreshTasksResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeScdnRefreshTasksResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeScdnRefreshTasksResponse describeScdnRefreshTasksResponse = new DescribeScdnRefreshTasksResponse();
 
-			describeScdnRefreshTasksResponse.HttpResponse = context.HttpResponse;
-			describeScdnRefreshTasksResponse.RequestId = context.StringValue("DescribeScdnRefreshTasks.RequestId");
-			describeScdnRefreshTasksResponse.PageNumber = context.LongValue("DescribeScdnRefreshTasks.PageNumber");
-			describeScdnRefreshTasksResponse.PageSize = context.LongValue("DescribeScdnRefreshTasks.PageSize");
-			describeScdnRefreshTasksResponse.TotalCount = context.LongValue("DescribeScdnRefreshTasks.TotalCount");
+			describeScdnRefreshTasksResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnRefreshTasksResponse.RequestId = _ctx.StringValue("DescribeScdnRefreshTasks.RequestId");
+			describeScdnRefreshTasksResponse.PageNumber = _ctx.LongValue("DescribeScdnRefreshTasks.PageNumber");
+			describeScdnRefreshTasksResponse.PageSize = _ctx.LongValue("DescribeScdnRefreshTasks.PageSize");
+			describeScdnRefreshTasksResponse.TotalCount = _ctx.LongValue("DescribeScdnRefreshTasks.TotalCount");
 
 			List<DescribeScdnRefreshTasksResponse.DescribeScdnRefreshTasks_Task> describeScdnRefreshTasksResponse_tasks = new List<DescribeScdnRefreshTasksResponse.DescribeScdnRefreshTasks_Task>();
-			for (int i = 0; i < context.Length("DescribeScdnRefreshTasks.Tasks.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeScdnRefreshTasks.Tasks.Length"); i++) {
 				DescribeScdnRefreshTasksResponse.DescribeScdnRefreshTasks_Task task = new DescribeScdnRefreshTasksResponse.DescribeScdnRefreshTasks_Task();
-				task.TaskId = context.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].TaskId");
-				task.ObjectPath = context.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].ObjectPath");
-				task.Process = context.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].Process");
-				task.Status = context.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].Status");
-				task.CreationTime = context.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].CreationTime");
-				task.Description = context.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].Description");
-				task.ObjectType = context.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].ObjectType");
+				task.TaskId = _ctx.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].TaskId");
+				task.ObjectPath = _ctx.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].ObjectPath");
+				task.Process = _ctx.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].Process");
+				task.Status = _ctx.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].Status");
+				task.CreationTime = _ctx.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].CreationTime");
+				task.Description = _ctx.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].Description");
+				task.ObjectType = _ctx.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].ObjectType");
 
 				describeScdnRefreshTasksResponse_tasks.Add(task);
 			}

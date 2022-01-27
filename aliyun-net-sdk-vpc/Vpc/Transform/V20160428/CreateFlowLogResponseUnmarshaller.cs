@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class CreateFlowLogResponseUnmarshaller
     {
-        public static CreateFlowLogResponse Unmarshall(UnmarshallerContext context)
+        public static CreateFlowLogResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateFlowLogResponse createFlowLogResponse = new CreateFlowLogResponse();
 
-			createFlowLogResponse.HttpResponse = context.HttpResponse;
-			createFlowLogResponse.RequestId = context.StringValue("CreateFlowLog.RequestId");
-			createFlowLogResponse.Success = context.StringValue("CreateFlowLog.Success");
-			createFlowLogResponse.FlowLogId = context.StringValue("CreateFlowLog.FlowLogId");
+			createFlowLogResponse.HttpResponse = _ctx.HttpResponse;
+			createFlowLogResponse.RequestId = _ctx.StringValue("CreateFlowLog.RequestId");
+			createFlowLogResponse.Success = _ctx.StringValue("CreateFlowLog.Success");
+			createFlowLogResponse.FlowLogId = _ctx.StringValue("CreateFlowLog.FlowLogId");
         
 			return createFlowLogResponse;
         }

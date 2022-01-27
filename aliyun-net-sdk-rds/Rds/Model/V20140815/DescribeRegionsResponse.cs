@@ -56,9 +56,51 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeRegions_RDSRegion
 		{
 
+			private string zoneId;
+
+			private string regionEndpoint;
+
+			private string localName;
+
 			private string regionId;
 
-			private string zoneId;
+			private string zoneName;
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public string RegionEndpoint
+			{
+				get
+				{
+					return regionEndpoint;
+				}
+				set	
+				{
+					regionEndpoint = value;
+				}
+			}
+
+			public string LocalName
+			{
+				get
+				{
+					return localName;
+				}
+				set	
+				{
+					localName = value;
+				}
+			}
 
 			public string RegionId
 			{
@@ -72,15 +114,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string ZoneId
+			public string ZoneName
 			{
 				get
 				{
-					return zoneId;
+					return zoneName;
 				}
 				set	
 				{
-					zoneId = value;
+					zoneName = value;
 				}
 			}
 		}

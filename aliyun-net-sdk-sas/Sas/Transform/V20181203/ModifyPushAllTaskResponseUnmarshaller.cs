@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class ModifyPushAllTaskResponseUnmarshaller
     {
-        public static ModifyPushAllTaskResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyPushAllTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyPushAllTaskResponse modifyPushAllTaskResponse = new ModifyPushAllTaskResponse();
 
-			modifyPushAllTaskResponse.HttpResponse = context.HttpResponse;
-			modifyPushAllTaskResponse.RequestId = context.StringValue("ModifyPushAllTask.RequestId");
+			modifyPushAllTaskResponse.HttpResponse = _ctx.HttpResponse;
+			modifyPushAllTaskResponse.RequestId = _ctx.StringValue("ModifyPushAllTask.RequestId");
 
 			ModifyPushAllTaskResponse.ModifyPushAllTask_PushTaskRsp pushTaskRsp = new ModifyPushAllTaskResponse.ModifyPushAllTask_PushTaskRsp();
 
 			List<ModifyPushAllTaskResponse.ModifyPushAllTask_PushTaskRsp.ModifyPushAllTask_PushTaskResult> pushTaskRsp_pushTaskResultList = new List<ModifyPushAllTaskResponse.ModifyPushAllTask_PushTaskRsp.ModifyPushAllTask_PushTaskResult>();
-			for (int i = 0; i < context.Length("ModifyPushAllTask.PushTaskRsp.PushTaskResultList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ModifyPushAllTask.PushTaskRsp.PushTaskResultList.Length"); i++) {
 				ModifyPushAllTaskResponse.ModifyPushAllTask_PushTaskRsp.ModifyPushAllTask_PushTaskResult pushTaskResult = new ModifyPushAllTaskResponse.ModifyPushAllTask_PushTaskRsp.ModifyPushAllTask_PushTaskResult();
-				pushTaskResult.InstanceId = context.StringValue("ModifyPushAllTask.PushTaskRsp.PushTaskResultList["+ i +"].InstanceId");
-				pushTaskResult.OsVersion = context.StringValue("ModifyPushAllTask.PushTaskRsp.PushTaskResultList["+ i +"].OsVersion");
-				pushTaskResult.InstanceName = context.StringValue("ModifyPushAllTask.PushTaskRsp.PushTaskResultList["+ i +"].InstanceName");
-				pushTaskResult.Success = context.BooleanValue("ModifyPushAllTask.PushTaskRsp.PushTaskResultList["+ i +"].Success");
-				pushTaskResult.GroupId = context.LongValue("ModifyPushAllTask.PushTaskRsp.PushTaskResultList["+ i +"].GroupId");
-				pushTaskResult.Ip = context.StringValue("ModifyPushAllTask.PushTaskRsp.PushTaskResultList["+ i +"].Ip");
-				pushTaskResult.Online = context.BooleanValue("ModifyPushAllTask.PushTaskRsp.PushTaskResultList["+ i +"].Online");
-				pushTaskResult.Message = context.StringValue("ModifyPushAllTask.PushTaskRsp.PushTaskResultList["+ i +"].Message");
-				pushTaskResult.Region = context.StringValue("ModifyPushAllTask.PushTaskRsp.PushTaskResultList["+ i +"].Region");
-				pushTaskResult.Uuid = context.StringValue("ModifyPushAllTask.PushTaskRsp.PushTaskResultList["+ i +"].Uuid");
+				pushTaskResult.InstanceId = _ctx.StringValue("ModifyPushAllTask.PushTaskRsp.PushTaskResultList["+ i +"].InstanceId");
+				pushTaskResult.OsVersion = _ctx.StringValue("ModifyPushAllTask.PushTaskRsp.PushTaskResultList["+ i +"].OsVersion");
+				pushTaskResult.InstanceName = _ctx.StringValue("ModifyPushAllTask.PushTaskRsp.PushTaskResultList["+ i +"].InstanceName");
+				pushTaskResult.Success = _ctx.BooleanValue("ModifyPushAllTask.PushTaskRsp.PushTaskResultList["+ i +"].Success");
+				pushTaskResult.GroupId = _ctx.LongValue("ModifyPushAllTask.PushTaskRsp.PushTaskResultList["+ i +"].GroupId");
+				pushTaskResult.Ip = _ctx.StringValue("ModifyPushAllTask.PushTaskRsp.PushTaskResultList["+ i +"].Ip");
+				pushTaskResult.Online = _ctx.BooleanValue("ModifyPushAllTask.PushTaskRsp.PushTaskResultList["+ i +"].Online");
+				pushTaskResult.Message = _ctx.StringValue("ModifyPushAllTask.PushTaskRsp.PushTaskResultList["+ i +"].Message");
+				pushTaskResult.Region = _ctx.StringValue("ModifyPushAllTask.PushTaskRsp.PushTaskResultList["+ i +"].Region");
+				pushTaskResult.Uuid = _ctx.StringValue("ModifyPushAllTask.PushTaskRsp.PushTaskResultList["+ i +"].Uuid");
 
 				pushTaskRsp_pushTaskResultList.Add(pushTaskResult);
 			}

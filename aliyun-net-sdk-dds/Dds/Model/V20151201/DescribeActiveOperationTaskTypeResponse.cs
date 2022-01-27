@@ -58,6 +58,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string taskType;
 
+			private string taskTypeInfoEn;
+
+			private string taskTypeInfoZh;
+
 			private int? count;
 
 			public string TaskType
@@ -69,6 +73,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					taskType = value;
+				}
+			}
+
+			public string TaskTypeInfoEn
+			{
+				get
+				{
+					return taskTypeInfoEn;
+				}
+				set	
+				{
+					taskTypeInfoEn = value;
+				}
+			}
+
+			public string TaskTypeInfoZh
+			{
+				get
+				{
+					return taskTypeInfoZh;
+				}
+				set	
+				{
+					taskTypeInfoZh = value;
 				}
 			}
 

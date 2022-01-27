@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 	public class DescribeCenRegionDomainRouteEntriesResponse : AcsResponse
 	{
 
+		private int? pageSize;
+
 		private string requestId;
 
 		private int? pageNumber;
 
 		private int? totalCount;
 
-		private int? pageSize;
-
 		private List<DescribeCenRegionDomainRouteEntries_CenRouteEntry> cenRouteEntries;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -71,18 +83,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
 		public List<DescribeCenRegionDomainRouteEntries_CenRouteEntry> CenRouteEntries
 		{
 			get
@@ -98,25 +98,39 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		public class DescribeCenRegionDomainRouteEntries_CenRouteEntry
 		{
 
-			private string destinationCidrBlock;
+			private string toOtherRegionStatus;
 
 			private string type;
 
-			private string nextHopInstanceId;
+			private string status;
 
 			private string nextHopType;
 
+			private string nextHopInstanceId;
+
 			private string nextHopRegionId;
 
-			public string DestinationCidrBlock
+			private string destinationCidrBlock;
+
+			private int? preference;
+
+			private List<DescribeCenRegionDomainRouteEntries_CenRouteMapRecord> cenRouteMapRecords;
+
+			private List<DescribeCenRegionDomainRouteEntries_CenOutRouteMapRecord> cenOutRouteMapRecords;
+
+			private List<string> communities;
+
+			private List<string> asPaths;
+
+			public string ToOtherRegionStatus
 			{
 				get
 				{
-					return destinationCidrBlock;
+					return toOtherRegionStatus;
 				}
 				set	
 				{
-					destinationCidrBlock = value;
+					toOtherRegionStatus = value;
 				}
 			}
 
@@ -132,15 +146,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string NextHopInstanceId
+			public string Status
 			{
 				get
 				{
-					return nextHopInstanceId;
+					return status;
 				}
 				set	
 				{
-					nextHopInstanceId = value;
+					status = value;
 				}
 			}
 
@@ -156,6 +170,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
+			public string NextHopInstanceId
+			{
+				get
+				{
+					return nextHopInstanceId;
+				}
+				set	
+				{
+					nextHopInstanceId = value;
+				}
+			}
+
 			public string NextHopRegionId
 			{
 				get
@@ -165,6 +191,142 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					nextHopRegionId = value;
+				}
+			}
+
+			public string DestinationCidrBlock
+			{
+				get
+				{
+					return destinationCidrBlock;
+				}
+				set	
+				{
+					destinationCidrBlock = value;
+				}
+			}
+
+			public int? Preference
+			{
+				get
+				{
+					return preference;
+				}
+				set	
+				{
+					preference = value;
+				}
+			}
+
+			public List<DescribeCenRegionDomainRouteEntries_CenRouteMapRecord> CenRouteMapRecords
+			{
+				get
+				{
+					return cenRouteMapRecords;
+				}
+				set	
+				{
+					cenRouteMapRecords = value;
+				}
+			}
+
+			public List<DescribeCenRegionDomainRouteEntries_CenOutRouteMapRecord> CenOutRouteMapRecords
+			{
+				get
+				{
+					return cenOutRouteMapRecords;
+				}
+				set	
+				{
+					cenOutRouteMapRecords = value;
+				}
+			}
+
+			public List<string> Communities
+			{
+				get
+				{
+					return communities;
+				}
+				set	
+				{
+					communities = value;
+				}
+			}
+
+			public List<string> AsPaths
+			{
+				get
+				{
+					return asPaths;
+				}
+				set	
+				{
+					asPaths = value;
+				}
+			}
+
+			public class DescribeCenRegionDomainRouteEntries_CenRouteMapRecord
+			{
+
+				private string routeMapId;
+
+				private string regionId;
+
+				public string RouteMapId
+				{
+					get
+					{
+						return routeMapId;
+					}
+					set	
+					{
+						routeMapId = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
+				}
+			}
+
+			public class DescribeCenRegionDomainRouteEntries_CenOutRouteMapRecord
+			{
+
+				private string routeMapId;
+
+				private string regionId;
+
+				public string RouteMapId
+				{
+					get
+					{
+						return routeMapId;
+					}
+					set	
+					{
+						routeMapId = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
 				}
 			}
 		}

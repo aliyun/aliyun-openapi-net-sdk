@@ -27,11 +27,11 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string requestId;
 
-		private bool? success;
+		private string message;
 
 		private string code;
 
-		private string message;
+		private bool? success;
 
 		private GetOrderDetail_Data data;
 
@@ -47,15 +47,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public bool? Success
+		public string Message
 		{
 			get
 			{
-				return success;
+				return message;
 			}
 			set	
 			{
-				success = value;
+				message = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string Message
+		public bool? Success
 		{
 			get
 			{
-				return message;
+				return success;
 			}
 			set	
 			{
-				message = value;
+				success = value;
 			}
 		}
 
@@ -98,37 +98,25 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class GetOrderDetail_Data
 		{
 
-			private string hostName;
-
-			private int? pageNum;
+			private int? totalCount;
 
 			private int? pageSize;
 
-			private int? totalCount;
+			private int? pageNum;
+
+			private string hostName;
 
 			private List<GetOrderDetail_Order> orderList;
 
-			public string HostName
+			public int? TotalCount
 			{
 				get
 				{
-					return hostName;
+					return totalCount;
 				}
 				set	
 				{
-					hostName = value;
-				}
-			}
-
-			public int? PageNum
-			{
-				get
-				{
-					return pageNum;
-				}
-				set	
-				{
-					pageNum = value;
+					totalCount = value;
 				}
 			}
 
@@ -144,15 +132,27 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public int? TotalCount
+			public int? PageNum
 			{
 				get
 				{
-					return totalCount;
+					return pageNum;
 				}
 				set	
 				{
-					totalCount = value;
+					pageNum = value;
+				}
+			}
+
+			public string HostName
+			{
+				get
+				{
+					return hostName;
+				}
+				set	
+				{
+					hostName = value;
 				}
 			}
 
@@ -171,295 +171,69 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class GetOrderDetail_Order
 			{
 
-				private string orderId;
-
-				private string subOrderId;
-
-				private string productCode;
-
-				private string productType;
-
-				private string subscriptionType;
-
-				private string orderType;
-
-				private string createTime;
-
-				private string paymentTime;
-
-				private string paymentStatus;
-
-				private string region;
-
-				private string config;
-
-				private string quantity;
-
-				private string usageStartTime;
-
-				private string usageEndTime;
-
-				private string instanceIDs;
-
-				private string pretaxGrossAmount;
-
-				private string pretaxAmount;
-
-				private string currency;
-
-				private string pretaxAmountLocal;
-
-				private string tax;
+				private string _operator;
 
 				private string afterTaxAmount;
 
+				private string subOrderId;
+
+				private string config;
+
+				private string tax;
+
+				private string paymentTime;
+
 				private string paymentCurrency;
 
-				private string _operator;
+				private string usageEndTime;
 
-				private string relatedOrderId;
+				private string subscriptionType;
 
-				private string orderSubType;
+				private string pretaxGrossAmount;
+
+				private string orderType;
+
+				private string currency;
+
+				private string usageStartTime;
 
 				private string originalConfig;
 
-				public string OrderId
-				{
-					get
-					{
-						return orderId;
-					}
-					set	
-					{
-						orderId = value;
-					}
-				}
+				private string paymentStatus;
 
-				public string SubOrderId
-				{
-					get
-					{
-						return subOrderId;
-					}
-					set	
-					{
-						subOrderId = value;
-					}
-				}
+				private string productCode;
 
-				public string ProductCode
-				{
-					get
-					{
-						return productCode;
-					}
-					set	
-					{
-						productCode = value;
-					}
-				}
+				private string createTime;
 
-				public string ProductType
-				{
-					get
-					{
-						return productType;
-					}
-					set	
-					{
-						productType = value;
-					}
-				}
+				private string productType;
 
-				public string SubscriptionType
-				{
-					get
-					{
-						return subscriptionType;
-					}
-					set	
-					{
-						subscriptionType = value;
-					}
-				}
+				private string relatedOrderId;
 
-				public string OrderType
-				{
-					get
-					{
-						return orderType;
-					}
-					set	
-					{
-						orderType = value;
-					}
-				}
+				private string quantity;
 
-				public string CreateTime
-				{
-					get
-					{
-						return createTime;
-					}
-					set	
-					{
-						createTime = value;
-					}
-				}
+				private string orderId;
 
-				public string PaymentTime
-				{
-					get
-					{
-						return paymentTime;
-					}
-					set	
-					{
-						paymentTime = value;
-					}
-				}
+				private string pretaxAmount;
 
-				public string PaymentStatus
-				{
-					get
-					{
-						return paymentStatus;
-					}
-					set	
-					{
-						paymentStatus = value;
-					}
-				}
+				private string orderSubType;
 
-				public string Region
-				{
-					get
-					{
-						return region;
-					}
-					set	
-					{
-						region = value;
-					}
-				}
+				private string region;
 
-				public string Config
-				{
-					get
-					{
-						return config;
-					}
-					set	
-					{
-						config = value;
-					}
-				}
+				private string instanceIDs;
 
-				public string Quantity
-				{
-					get
-					{
-						return quantity;
-					}
-					set	
-					{
-						quantity = value;
-					}
-				}
+				private string pretaxAmountLocal;
 
-				public string UsageStartTime
-				{
-					get
-					{
-						return usageStartTime;
-					}
-					set	
-					{
-						usageStartTime = value;
-					}
-				}
+				private string commodityCode;
 
-				public string UsageEndTime
+				public string _Operator
 				{
 					get
 					{
-						return usageEndTime;
+						return _operator;
 					}
 					set	
 					{
-						usageEndTime = value;
-					}
-				}
-
-				public string InstanceIDs
-				{
-					get
-					{
-						return instanceIDs;
-					}
-					set	
-					{
-						instanceIDs = value;
-					}
-				}
-
-				public string PretaxGrossAmount
-				{
-					get
-					{
-						return pretaxGrossAmount;
-					}
-					set	
-					{
-						pretaxGrossAmount = value;
-					}
-				}
-
-				public string PretaxAmount
-				{
-					get
-					{
-						return pretaxAmount;
-					}
-					set	
-					{
-						pretaxAmount = value;
-					}
-				}
-
-				public string Currency
-				{
-					get
-					{
-						return currency;
-					}
-					set	
-					{
-						currency = value;
-					}
-				}
-
-				public string PretaxAmountLocal
-				{
-					get
-					{
-						return pretaxAmountLocal;
-					}
-					set	
-					{
-						pretaxAmountLocal = value;
-					}
-				}
-
-				public string Tax
-				{
-					get
-					{
-						return tax;
-					}
-					set	
-					{
-						tax = value;
+						_operator = value;
 					}
 				}
 
@@ -475,6 +249,54 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				public string SubOrderId
+				{
+					get
+					{
+						return subOrderId;
+					}
+					set	
+					{
+						subOrderId = value;
+					}
+				}
+
+				public string Config
+				{
+					get
+					{
+						return config;
+					}
+					set	
+					{
+						config = value;
+					}
+				}
+
+				public string Tax
+				{
+					get
+					{
+						return tax;
+					}
+					set	
+					{
+						tax = value;
+					}
+				}
+
+				public string PaymentTime
+				{
+					get
+					{
+						return paymentTime;
+					}
+					set	
+					{
+						paymentTime = value;
+					}
+				}
+
 				public string PaymentCurrency
 				{
 					get
@@ -487,15 +309,135 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string _Operator
+				public string UsageEndTime
 				{
 					get
 					{
-						return _operator;
+						return usageEndTime;
 					}
 					set	
 					{
-						_operator = value;
+						usageEndTime = value;
+					}
+				}
+
+				public string SubscriptionType
+				{
+					get
+					{
+						return subscriptionType;
+					}
+					set	
+					{
+						subscriptionType = value;
+					}
+				}
+
+				public string PretaxGrossAmount
+				{
+					get
+					{
+						return pretaxGrossAmount;
+					}
+					set	
+					{
+						pretaxGrossAmount = value;
+					}
+				}
+
+				public string OrderType
+				{
+					get
+					{
+						return orderType;
+					}
+					set	
+					{
+						orderType = value;
+					}
+				}
+
+				public string Currency
+				{
+					get
+					{
+						return currency;
+					}
+					set	
+					{
+						currency = value;
+					}
+				}
+
+				public string UsageStartTime
+				{
+					get
+					{
+						return usageStartTime;
+					}
+					set	
+					{
+						usageStartTime = value;
+					}
+				}
+
+				public string OriginalConfig
+				{
+					get
+					{
+						return originalConfig;
+					}
+					set	
+					{
+						originalConfig = value;
+					}
+				}
+
+				public string PaymentStatus
+				{
+					get
+					{
+						return paymentStatus;
+					}
+					set	
+					{
+						paymentStatus = value;
+					}
+				}
+
+				public string ProductCode
+				{
+					get
+					{
+						return productCode;
+					}
+					set	
+					{
+						productCode = value;
+					}
+				}
+
+				public string CreateTime
+				{
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
+					}
+				}
+
+				public string ProductType
+				{
+					get
+					{
+						return productType;
+					}
+					set	
+					{
+						productType = value;
 					}
 				}
 
@@ -511,6 +453,42 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				public string Quantity
+				{
+					get
+					{
+						return quantity;
+					}
+					set	
+					{
+						quantity = value;
+					}
+				}
+
+				public string OrderId
+				{
+					get
+					{
+						return orderId;
+					}
+					set	
+					{
+						orderId = value;
+					}
+				}
+
+				public string PretaxAmount
+				{
+					get
+					{
+						return pretaxAmount;
+					}
+					set	
+					{
+						pretaxAmount = value;
+					}
+				}
+
 				public string OrderSubType
 				{
 					get
@@ -523,15 +501,51 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string OriginalConfig
+				public string Region
 				{
 					get
 					{
-						return originalConfig;
+						return region;
 					}
 					set	
 					{
-						originalConfig = value;
+						region = value;
+					}
+				}
+
+				public string InstanceIDs
+				{
+					get
+					{
+						return instanceIDs;
+					}
+					set	
+					{
+						instanceIDs = value;
+					}
+				}
+
+				public string PretaxAmountLocal
+				{
+					get
+					{
+						return pretaxAmountLocal;
+					}
+					set	
+					{
+						pretaxAmountLocal = value;
+					}
+				}
+
+				public string CommodityCode
+				{
+					get
+					{
+						return commodityCode;
+					}
+					set	
+					{
+						commodityCode = value;
 					}
 				}
 			}

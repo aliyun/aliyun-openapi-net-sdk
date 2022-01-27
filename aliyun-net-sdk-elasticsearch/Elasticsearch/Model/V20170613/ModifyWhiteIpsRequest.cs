@@ -41,9 +41,28 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			Method = MethodType.POST;
         }
 
+		private string modifyMode;
+
 		private string instanceId;
 
+		private string nodeType;
+
 		private string clientToken;
+
+		private string networkType;
+
+		public string ModifyMode
+		{
+			get
+			{
+				return modifyMode;
+			}
+			set	
+			{
+				modifyMode = value;
+				DictionaryUtil.Add(BodyParameters, "modifyMode", value);
+			}
+		}
 
 		public string InstanceId
 		{
@@ -58,6 +77,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
+		public string NodeType
+		{
+			get
+			{
+				return nodeType;
+			}
+			set	
+			{
+				nodeType = value;
+				DictionaryUtil.Add(BodyParameters, "nodeType", value);
+			}
+		}
+
 		public string ClientToken
 		{
 			get
@@ -68,6 +100,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "clientToken", value);
+			}
+		}
+
+		public string NetworkType
+		{
+			get
+			{
+				return networkType;
+			}
+			set	
+			{
+				networkType = value;
+				DictionaryUtil.Add(BodyParameters, "networkType", value);
 			}
 		}
 

@@ -34,18 +34,23 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private int? maxConcurrentConversation;
 
+		private string resourceGroupId;
+
+		private List<string> callingNumbers = new List<string>(){ };
+
 		private string instanceName;
 
-		private string callCenterInstanceId;
-
 		private string instanceDescription;
+
+		private string nluServiceType;
 
 		public int? MaxConcurrentConversation
 		{
@@ -57,6 +62,36 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				maxConcurrentConversation = value;
 				DictionaryUtil.Add(QueryParameters, "MaxConcurrentConversation", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public List<string> CallingNumbers
+		{
+			get
+			{
+				return callingNumbers;
+			}
+
+			set
+			{
+				callingNumbers = value;
+				for (int i = 0; i < callingNumbers.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"CallingNumber." + (i + 1) , callingNumbers[i]);
+				}
 			}
 		}
 
@@ -73,19 +108,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string CallCenterInstanceId
-		{
-			get
-			{
-				return callCenterInstanceId;
-			}
-			set	
-			{
-				callCenterInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "CallCenterInstanceId", value);
-			}
-		}
-
 		public string InstanceDescription
 		{
 			get
@@ -96,6 +118,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				instanceDescription = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceDescription", value);
+			}
+		}
+
+		public string NluServiceType
+		{
+			get
+			{
+				return nluServiceType;
+			}
+			set	
+			{
+				nluServiceType = value;
+				DictionaryUtil.Add(QueryParameters, "NluServiceType", value);
 			}
 		}
 

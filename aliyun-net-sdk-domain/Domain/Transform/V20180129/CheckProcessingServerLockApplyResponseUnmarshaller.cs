@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class CheckProcessingServerLockApplyResponseUnmarshaller
     {
-        public static CheckProcessingServerLockApplyResponse Unmarshall(UnmarshallerContext context)
+        public static CheckProcessingServerLockApplyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckProcessingServerLockApplyResponse checkProcessingServerLockApplyResponse = new CheckProcessingServerLockApplyResponse();
 
-			checkProcessingServerLockApplyResponse.HttpResponse = context.HttpResponse;
-			checkProcessingServerLockApplyResponse.RequestId = context.StringValue("CheckProcessingServerLockApply.RequestId");
-			checkProcessingServerLockApplyResponse.Exists = context.BooleanValue("CheckProcessingServerLockApply.Exists");
+			checkProcessingServerLockApplyResponse.HttpResponse = _ctx.HttpResponse;
+			checkProcessingServerLockApplyResponse.RequestId = _ctx.StringValue("CheckProcessingServerLockApply.RequestId");
+			checkProcessingServerLockApplyResponse.Exists = _ctx.BooleanValue("CheckProcessingServerLockApply.Exists");
         
 			return checkProcessingServerLockApplyResponse;
         }

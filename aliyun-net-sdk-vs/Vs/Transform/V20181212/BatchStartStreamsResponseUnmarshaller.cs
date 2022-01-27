@@ -26,19 +26,19 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class BatchStartStreamsResponseUnmarshaller
     {
-        public static BatchStartStreamsResponse Unmarshall(UnmarshallerContext context)
+        public static BatchStartStreamsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchStartStreamsResponse batchStartStreamsResponse = new BatchStartStreamsResponse();
 
-			batchStartStreamsResponse.HttpResponse = context.HttpResponse;
-			batchStartStreamsResponse.RequestId = context.StringValue("BatchStartStreams.RequestId");
+			batchStartStreamsResponse.HttpResponse = _ctx.HttpResponse;
+			batchStartStreamsResponse.RequestId = _ctx.StringValue("BatchStartStreams.RequestId");
 
 			List<BatchStartStreamsResponse.BatchStartStreams_Result> batchStartStreamsResponse_results = new List<BatchStartStreamsResponse.BatchStartStreams_Result>();
-			for (int i = 0; i < context.Length("BatchStartStreams.Results.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("BatchStartStreams.Results.Length"); i++) {
 				BatchStartStreamsResponse.BatchStartStreams_Result result = new BatchStartStreamsResponse.BatchStartStreams_Result();
-				result.Id = context.StringValue("BatchStartStreams.Results["+ i +"].Id");
-				result.Name = context.StringValue("BatchStartStreams.Results["+ i +"].Name");
-				result.Error = context.StringValue("BatchStartStreams.Results["+ i +"].Error");
+				result.Id = _ctx.StringValue("BatchStartStreams.Results["+ i +"].Id");
+				result.Name = _ctx.StringValue("BatchStartStreams.Results["+ i +"].Name");
+				result.Error = _ctx.StringValue("BatchStartStreams.Results["+ i +"].Error");
 
 				batchStartStreamsResponse_results.Add(result);
 			}

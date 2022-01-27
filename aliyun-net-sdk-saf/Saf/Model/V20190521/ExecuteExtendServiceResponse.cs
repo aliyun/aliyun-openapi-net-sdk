@@ -25,17 +25,29 @@ namespace Aliyun.Acs.saf.Model.V20190521
 	public class ExecuteExtendServiceResponse : AcsResponse
 	{
 
+		private string httpStatusCode;
+
 		private string code;
+
+		private string message;
 
 		private string requestId;
 
 		private bool? success;
 
-		private string message;
-
-		private string httpStatusCode;
-
 		private ExecuteExtendService_Data data;
+
+		public string HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
 
 		public string Code
 		{
@@ -46,6 +58,18 @@ namespace Aliyun.Acs.saf.Model.V20190521
 			set	
 			{
 				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -70,30 +94,6 @@ namespace Aliyun.Acs.saf.Model.V20190521
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public string HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
 			}
 		}
 

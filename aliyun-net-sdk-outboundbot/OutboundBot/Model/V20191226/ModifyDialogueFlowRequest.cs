@@ -34,10 +34,13 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
+
+		private bool? isDrafted;
 
 		private string scriptId;
 
@@ -46,6 +49,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private string dialogueFlowDefinition;
 
 		private string dialogueFlowId;
+
+		public bool? IsDrafted
+		{
+			get
+			{
+				return isDrafted;
+			}
+			set	
+			{
+				isDrafted = value;
+				DictionaryUtil.Add(QueryParameters, "IsDrafted", value.ToString());
+			}
+		}
 
 		public string ScriptId
 		{

@@ -26,26 +26,26 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 {
     public class DescribeDcdnDomainBpsDataResponseUnmarshaller
     {
-        public static DescribeDcdnDomainBpsDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDcdnDomainBpsDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDcdnDomainBpsDataResponse describeDcdnDomainBpsDataResponse = new DescribeDcdnDomainBpsDataResponse();
 
-			describeDcdnDomainBpsDataResponse.HttpResponse = context.HttpResponse;
-			describeDcdnDomainBpsDataResponse.RequestId = context.StringValue("DescribeDcdnDomainBpsData.RequestId");
-			describeDcdnDomainBpsDataResponse.DomainName = context.StringValue("DescribeDcdnDomainBpsData.DomainName");
-			describeDcdnDomainBpsDataResponse.StartTime = context.StringValue("DescribeDcdnDomainBpsData.StartTime");
-			describeDcdnDomainBpsDataResponse.EndTime = context.StringValue("DescribeDcdnDomainBpsData.EndTime");
-			describeDcdnDomainBpsDataResponse.DataInterval = context.StringValue("DescribeDcdnDomainBpsData.DataInterval");
+			describeDcdnDomainBpsDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDcdnDomainBpsDataResponse.RequestId = _ctx.StringValue("DescribeDcdnDomainBpsData.RequestId");
+			describeDcdnDomainBpsDataResponse.DomainName = _ctx.StringValue("DescribeDcdnDomainBpsData.DomainName");
+			describeDcdnDomainBpsDataResponse.StartTime = _ctx.StringValue("DescribeDcdnDomainBpsData.StartTime");
+			describeDcdnDomainBpsDataResponse.EndTime = _ctx.StringValue("DescribeDcdnDomainBpsData.EndTime");
+			describeDcdnDomainBpsDataResponse.DataInterval = _ctx.StringValue("DescribeDcdnDomainBpsData.DataInterval");
 
 			List<DescribeDcdnDomainBpsDataResponse.DescribeDcdnDomainBpsData_DataModule> describeDcdnDomainBpsDataResponse_bpsDataPerInterval = new List<DescribeDcdnDomainBpsDataResponse.DescribeDcdnDomainBpsData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeDcdnDomainBpsData.BpsDataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDcdnDomainBpsData.BpsDataPerInterval.Length"); i++) {
 				DescribeDcdnDomainBpsDataResponse.DescribeDcdnDomainBpsData_DataModule dataModule = new DescribeDcdnDomainBpsDataResponse.DescribeDcdnDomainBpsData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeDcdnDomainBpsData.BpsDataPerInterval["+ i +"].TimeStamp");
-				dataModule.Bps = context.FloatValue("DescribeDcdnDomainBpsData.BpsDataPerInterval["+ i +"].Bps");
-				dataModule.DynamicHttpBps = context.FloatValue("DescribeDcdnDomainBpsData.BpsDataPerInterval["+ i +"].DynamicHttpBps");
-				dataModule.DynamicHttpsBps = context.FloatValue("DescribeDcdnDomainBpsData.BpsDataPerInterval["+ i +"].DynamicHttpsBps");
-				dataModule.StaticHttpBps = context.FloatValue("DescribeDcdnDomainBpsData.BpsDataPerInterval["+ i +"].StaticHttpBps");
-				dataModule.StaticHttpsBps = context.FloatValue("DescribeDcdnDomainBpsData.BpsDataPerInterval["+ i +"].StaticHttpsBps");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDcdnDomainBpsData.BpsDataPerInterval["+ i +"].TimeStamp");
+				dataModule.Bps = _ctx.FloatValue("DescribeDcdnDomainBpsData.BpsDataPerInterval["+ i +"].Bps");
+				dataModule.DynamicHttpBps = _ctx.FloatValue("DescribeDcdnDomainBpsData.BpsDataPerInterval["+ i +"].DynamicHttpBps");
+				dataModule.DynamicHttpsBps = _ctx.FloatValue("DescribeDcdnDomainBpsData.BpsDataPerInterval["+ i +"].DynamicHttpsBps");
+				dataModule.StaticHttpBps = _ctx.FloatValue("DescribeDcdnDomainBpsData.BpsDataPerInterval["+ i +"].StaticHttpBps");
+				dataModule.StaticHttpsBps = _ctx.FloatValue("DescribeDcdnDomainBpsData.BpsDataPerInterval["+ i +"].StaticHttpsBps");
 
 				describeDcdnDomainBpsDataResponse_bpsDataPerInterval.Add(dataModule);
 			}

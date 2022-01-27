@@ -26,19 +26,19 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
     public class AddRoleActionsResponseUnmarshaller
     {
-        public static AddRoleActionsResponse Unmarshall(UnmarshallerContext context)
+        public static AddRoleActionsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddRoleActionsResponse addRoleActionsResponse = new AddRoleActionsResponse();
 
-			addRoleActionsResponse.HttpResponse = context.HttpResponse;
-			addRoleActionsResponse.ErrorMessage = context.StringValue("AddRoleActions.ErrorMessage");
-			addRoleActionsResponse.ErrorCode = context.StringValue("AddRoleActions.ErrorCode");
-			addRoleActionsResponse.Message = context.StringValue("AddRoleActions.Message");
-			addRoleActionsResponse.DynamicCode = context.StringValue("AddRoleActions.DynamicCode");
-			addRoleActionsResponse.Code = context.StringValue("AddRoleActions.Code");
-			addRoleActionsResponse.DynamicMessage = context.StringValue("AddRoleActions.DynamicMessage");
-			addRoleActionsResponse.RequestId = context.StringValue("AddRoleActions.RequestId");
-			addRoleActionsResponse.Success = context.BooleanValue("AddRoleActions.Success");
+			addRoleActionsResponse.HttpResponse = _ctx.HttpResponse;
+			addRoleActionsResponse.ErrorMessage = _ctx.StringValue("AddRoleActions.ErrorMessage");
+			addRoleActionsResponse.ErrorCode = _ctx.StringValue("AddRoleActions.ErrorCode");
+			addRoleActionsResponse.Message = _ctx.StringValue("AddRoleActions.Message");
+			addRoleActionsResponse.DynamicCode = _ctx.StringValue("AddRoleActions.DynamicCode");
+			addRoleActionsResponse.Code = _ctx.StringValue("AddRoleActions.Code");
+			addRoleActionsResponse.DynamicMessage = _ctx.StringValue("AddRoleActions.DynamicMessage");
+			addRoleActionsResponse.RequestId = _ctx.StringValue("AddRoleActions.RequestId");
+			addRoleActionsResponse.Success = _ctx.BooleanValue("AddRoleActions.Success");
         
 			return addRoleActionsResponse;
         }

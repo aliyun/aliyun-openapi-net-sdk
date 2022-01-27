@@ -26,32 +26,33 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListFlowInstanceResponseUnmarshaller
     {
-        public static ListFlowInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static ListFlowInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListFlowInstanceResponse listFlowInstanceResponse = new ListFlowInstanceResponse();
 
-			listFlowInstanceResponse.HttpResponse = context.HttpResponse;
-			listFlowInstanceResponse.RequestId = context.StringValue("ListFlowInstance.RequestId");
-			listFlowInstanceResponse.PageNumber = context.IntegerValue("ListFlowInstance.PageNumber");
-			listFlowInstanceResponse.PageSize = context.IntegerValue("ListFlowInstance.PageSize");
-			listFlowInstanceResponse.Total = context.IntegerValue("ListFlowInstance.Total");
+			listFlowInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			listFlowInstanceResponse.RequestId = _ctx.StringValue("ListFlowInstance.RequestId");
+			listFlowInstanceResponse.PageNumber = _ctx.IntegerValue("ListFlowInstance.PageNumber");
+			listFlowInstanceResponse.PageSize = _ctx.IntegerValue("ListFlowInstance.PageSize");
+			listFlowInstanceResponse.Total = _ctx.IntegerValue("ListFlowInstance.Total");
 
 			List<ListFlowInstanceResponse.ListFlowInstance_FlowInstance> listFlowInstanceResponse_flowInstances = new List<ListFlowInstanceResponse.ListFlowInstance_FlowInstance>();
-			for (int i = 0; i < context.Length("ListFlowInstance.FlowInstances.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListFlowInstance.FlowInstances.Length"); i++) {
 				ListFlowInstanceResponse.ListFlowInstance_FlowInstance flowInstance = new ListFlowInstanceResponse.ListFlowInstance_FlowInstance();
-				flowInstance.Id = context.StringValue("ListFlowInstance.FlowInstances["+ i +"].Id");
-				flowInstance.GmtCreate = context.LongValue("ListFlowInstance.FlowInstances["+ i +"].GmtCreate");
-				flowInstance.GmtModified = context.LongValue("ListFlowInstance.FlowInstances["+ i +"].GmtModified");
-				flowInstance.FlowId = context.StringValue("ListFlowInstance.FlowInstances["+ i +"].FlowId");
-				flowInstance.FlowName = context.StringValue("ListFlowInstance.FlowInstances["+ i +"].FlowName");
-				flowInstance.ProjectId = context.StringValue("ListFlowInstance.FlowInstances["+ i +"].ProjectId");
-				flowInstance.Status = context.StringValue("ListFlowInstance.FlowInstances["+ i +"].Status");
-				flowInstance.ClusterId = context.StringValue("ListFlowInstance.FlowInstances["+ i +"].ClusterId");
-				flowInstance.Owner = context.StringValue("ListFlowInstance.FlowInstances["+ i +"].Owner");
-				flowInstance.StartTime = context.LongValue("ListFlowInstance.FlowInstances["+ i +"].StartTime");
-				flowInstance.EndTime = context.LongValue("ListFlowInstance.FlowInstances["+ i +"].EndTime");
-				flowInstance.Duration = context.LongValue("ListFlowInstance.FlowInstances["+ i +"].Duration");
-				flowInstance.HasNodeFailed = context.BooleanValue("ListFlowInstance.FlowInstances["+ i +"].HasNodeFailed");
+				flowInstance.Id = _ctx.StringValue("ListFlowInstance.FlowInstances["+ i +"].Id");
+				flowInstance.GmtCreate = _ctx.LongValue("ListFlowInstance.FlowInstances["+ i +"].GmtCreate");
+				flowInstance.GmtModified = _ctx.LongValue("ListFlowInstance.FlowInstances["+ i +"].GmtModified");
+				flowInstance.FlowId = _ctx.StringValue("ListFlowInstance.FlowInstances["+ i +"].FlowId");
+				flowInstance.FlowName = _ctx.StringValue("ListFlowInstance.FlowInstances["+ i +"].FlowName");
+				flowInstance.ProjectId = _ctx.StringValue("ListFlowInstance.FlowInstances["+ i +"].ProjectId");
+				flowInstance.Status = _ctx.StringValue("ListFlowInstance.FlowInstances["+ i +"].Status");
+				flowInstance.ClusterId = _ctx.StringValue("ListFlowInstance.FlowInstances["+ i +"].ClusterId");
+				flowInstance.Owner = _ctx.StringValue("ListFlowInstance.FlowInstances["+ i +"].Owner");
+				flowInstance.ScheduleTime = _ctx.LongValue("ListFlowInstance.FlowInstances["+ i +"].ScheduleTime");
+				flowInstance.StartTime = _ctx.LongValue("ListFlowInstance.FlowInstances["+ i +"].StartTime");
+				flowInstance.EndTime = _ctx.LongValue("ListFlowInstance.FlowInstances["+ i +"].EndTime");
+				flowInstance.Duration = _ctx.LongValue("ListFlowInstance.FlowInstances["+ i +"].Duration");
+				flowInstance.HasNodeFailed = _ctx.BooleanValue("ListFlowInstance.FlowInstances["+ i +"].HasNodeFailed");
 
 				listFlowInstanceResponse_flowInstances.Add(flowInstance);
 			}

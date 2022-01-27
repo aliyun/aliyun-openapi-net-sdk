@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryCertUrlByApplyIdResponseUnmarshaller
     {
-        public static QueryCertUrlByApplyIdResponse Unmarshall(UnmarshallerContext context)
+        public static QueryCertUrlByApplyIdResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryCertUrlByApplyIdResponse queryCertUrlByApplyIdResponse = new QueryCertUrlByApplyIdResponse();
 
-			queryCertUrlByApplyIdResponse.HttpResponse = context.HttpResponse;
-			queryCertUrlByApplyIdResponse.RequestId = context.StringValue("QueryCertUrlByApplyId.RequestId");
-			queryCertUrlByApplyIdResponse.Success = context.BooleanValue("QueryCertUrlByApplyId.Success");
-			queryCertUrlByApplyIdResponse.Code = context.StringValue("QueryCertUrlByApplyId.Code");
-			queryCertUrlByApplyIdResponse.ErrorMessage = context.StringValue("QueryCertUrlByApplyId.ErrorMessage");
-			queryCertUrlByApplyIdResponse.CertUrl = context.StringValue("QueryCertUrlByApplyId.CertUrl");
+			queryCertUrlByApplyIdResponse.HttpResponse = _ctx.HttpResponse;
+			queryCertUrlByApplyIdResponse.RequestId = _ctx.StringValue("QueryCertUrlByApplyId.RequestId");
+			queryCertUrlByApplyIdResponse.Success = _ctx.BooleanValue("QueryCertUrlByApplyId.Success");
+			queryCertUrlByApplyIdResponse.Code = _ctx.StringValue("QueryCertUrlByApplyId.Code");
+			queryCertUrlByApplyIdResponse.ErrorMessage = _ctx.StringValue("QueryCertUrlByApplyId.ErrorMessage");
+			queryCertUrlByApplyIdResponse.CertUrl = _ctx.StringValue("QueryCertUrlByApplyId.CertUrl");
         
 			return queryCertUrlByApplyIdResponse;
         }

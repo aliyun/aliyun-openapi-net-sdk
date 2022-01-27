@@ -124,6 +124,12 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private string bucketName;
 
+			private string regionName;
+
+			private long? lastScanTime;
+
+			private List<DescribeOssObjects_Rule> ruleList;
+
 			public string Id
 			{
 				get
@@ -277,6 +283,88 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					bucketName = value;
+				}
+			}
+
+			public string RegionName
+			{
+				get
+				{
+					return regionName;
+				}
+				set	
+				{
+					regionName = value;
+				}
+			}
+
+			public long? LastScanTime
+			{
+				get
+				{
+					return lastScanTime;
+				}
+				set	
+				{
+					lastScanTime = value;
+				}
+			}
+
+			public List<DescribeOssObjects_Rule> RuleList
+			{
+				get
+				{
+					return ruleList;
+				}
+				set	
+				{
+					ruleList = value;
+				}
+			}
+
+			public class DescribeOssObjects_Rule
+			{
+
+				private string name;
+
+				private long? count;
+
+				private long? riskLevelId;
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public long? Count
+				{
+					get
+					{
+						return count;
+					}
+					set	
+					{
+						count = value;
+					}
+				}
+
+				public long? RiskLevelId
+				{
+					get
+					{
+						return riskLevelId;
+					}
+					set	
+					{
+						riskLevelId = value;
+					}
 				}
 			}
 		}

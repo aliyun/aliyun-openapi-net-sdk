@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Config.Model.V20190108
@@ -115,99 +115,41 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			public class ListConfigRules_ConfigRule
 			{
 
-				private long? accountId;
-
-				private string configRuleArn;
-
-				private string configRuleId;
-
-				private string configRuleName;
-
-				private string configRuleState;
-
-				private string description;
+				private string compliancePackId;
 
 				private int? riskLevel;
 
-				private string sourceIdentifier;
-
 				private string sourceOwner;
 
+				private long? accountId;
+
+				private string configRuleState;
+
+				private string sourceIdentifier;
+
+				private string configRuleArn;
+
+				private string description;
+
 				private string automationType;
+
+				private string configRuleName;
+
+				private string configRuleId;
 
 				private ListConfigRules_Compliance compliance;
 
 				private ListConfigRules_CreateBy createBy;
 
-				public long? AccountId
+				public string CompliancePackId
 				{
 					get
 					{
-						return accountId;
+						return compliancePackId;
 					}
 					set	
 					{
-						accountId = value;
-					}
-				}
-
-				public string ConfigRuleArn
-				{
-					get
-					{
-						return configRuleArn;
-					}
-					set	
-					{
-						configRuleArn = value;
-					}
-				}
-
-				public string ConfigRuleId
-				{
-					get
-					{
-						return configRuleId;
-					}
-					set	
-					{
-						configRuleId = value;
-					}
-				}
-
-				public string ConfigRuleName
-				{
-					get
-					{
-						return configRuleName;
-					}
-					set	
-					{
-						configRuleName = value;
-					}
-				}
-
-				public string ConfigRuleState
-				{
-					get
-					{
-						return configRuleState;
-					}
-					set	
-					{
-						configRuleState = value;
-					}
-				}
-
-				public string Description
-				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
+						compliancePackId = value;
 					}
 				}
 
@@ -223,18 +165,6 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					}
 				}
 
-				public string SourceIdentifier
-				{
-					get
-					{
-						return sourceIdentifier;
-					}
-					set	
-					{
-						sourceIdentifier = value;
-					}
-				}
-
 				public string SourceOwner
 				{
 					get
@@ -247,6 +177,66 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					}
 				}
 
+				public long? AccountId
+				{
+					get
+					{
+						return accountId;
+					}
+					set	
+					{
+						accountId = value;
+					}
+				}
+
+				public string ConfigRuleState
+				{
+					get
+					{
+						return configRuleState;
+					}
+					set	
+					{
+						configRuleState = value;
+					}
+				}
+
+				public string SourceIdentifier
+				{
+					get
+					{
+						return sourceIdentifier;
+					}
+					set	
+					{
+						sourceIdentifier = value;
+					}
+				}
+
+				public string ConfigRuleArn
+				{
+					get
+					{
+						return configRuleArn;
+					}
+					set	
+					{
+						configRuleArn = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
 				public string AutomationType
 				{
 					get
@@ -256,6 +246,30 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					set	
 					{
 						automationType = value;
+					}
+				}
+
+				public string ConfigRuleName
+				{
+					get
+					{
+						return configRuleName;
+					}
+					set	
+					{
+						configRuleName = value;
+					}
+				}
+
+				public string ConfigRuleId
+				{
+					get
+					{
+						return configRuleId;
+					}
+					set	
+					{
+						configRuleId = value;
 					}
 				}
 
@@ -318,25 +332,53 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				public class ListConfigRules_CreateBy
 				{
 
-					private string creatorId;
+					private string compliancePackId;
+
+					private string configRuleSceneId;
+
+					private string compliancePackName;
 
 					private string creatorName;
 
 					private string creatorType;
 
-					private string configRuleSceneId;
+					private string creatorId;
 
 					private string configRuleSceneName;
 
-					public string CreatorId
+					public string CompliancePackId
 					{
 						get
 						{
-							return creatorId;
+							return compliancePackId;
 						}
 						set	
 						{
-							creatorId = value;
+							compliancePackId = value;
+						}
+					}
+
+					public string ConfigRuleSceneId
+					{
+						get
+						{
+							return configRuleSceneId;
+						}
+						set	
+						{
+							configRuleSceneId = value;
+						}
+					}
+
+					public string CompliancePackName
+					{
+						get
+						{
+							return compliancePackName;
+						}
+						set	
+						{
+							compliancePackName = value;
 						}
 					}
 
@@ -364,15 +406,15 @@ namespace Aliyun.Acs.Config.Model.V20190108
 						}
 					}
 
-					public string ConfigRuleSceneId
+					public string CreatorId
 					{
 						get
 						{
-							return configRuleSceneId;
+							return creatorId;
 						}
 						set	
 						{
-							configRuleSceneId = value;
+							creatorId = value;
 						}
 					}
 

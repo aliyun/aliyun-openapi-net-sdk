@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class UpgradeGatewayResponseUnmarshaller
     {
-        public static UpgradeGatewayResponse Unmarshall(UnmarshallerContext context)
+        public static UpgradeGatewayResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpgradeGatewayResponse upgradeGatewayResponse = new UpgradeGatewayResponse();
 
-			upgradeGatewayResponse.HttpResponse = context.HttpResponse;
-			upgradeGatewayResponse.RequestId = context.StringValue("UpgradeGateway.RequestId");
-			upgradeGatewayResponse.Success = context.BooleanValue("UpgradeGateway.Success");
-			upgradeGatewayResponse.Code = context.StringValue("UpgradeGateway.Code");
-			upgradeGatewayResponse.Message = context.StringValue("UpgradeGateway.Message");
-			upgradeGatewayResponse.TaskId = context.StringValue("UpgradeGateway.TaskId");
+			upgradeGatewayResponse.HttpResponse = _ctx.HttpResponse;
+			upgradeGatewayResponse.TaskId = _ctx.StringValue("UpgradeGateway.TaskId");
+			upgradeGatewayResponse.Message = _ctx.StringValue("UpgradeGateway.Message");
+			upgradeGatewayResponse.RequestId = _ctx.StringValue("UpgradeGateway.RequestId");
+			upgradeGatewayResponse.Code = _ctx.StringValue("UpgradeGateway.Code");
+			upgradeGatewayResponse.Success = _ctx.BooleanValue("UpgradeGateway.Success");
         
 			return upgradeGatewayResponse;
         }

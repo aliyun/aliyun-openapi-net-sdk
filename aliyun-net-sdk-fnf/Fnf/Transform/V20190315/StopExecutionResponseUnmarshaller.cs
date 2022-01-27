@@ -26,22 +26,22 @@ namespace Aliyun.Acs.fnf.Transform.V20190315
 {
     public class StopExecutionResponseUnmarshaller
     {
-        public static StopExecutionResponse Unmarshall(UnmarshallerContext context)
+        public static StopExecutionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StopExecutionResponse stopExecutionResponse = new StopExecutionResponse();
 
-			stopExecutionResponse.HttpResponse = context.HttpResponse;
-			stopExecutionResponse.RequestId = context.StringValue("StopExecution.RequestId");
-			stopExecutionResponse.Name = context.StringValue("StopExecution.Name");
-			stopExecutionResponse.FlowName = context.StringValue("StopExecution.FlowName");
-			stopExecutionResponse.FlowDefinition = context.StringValue("StopExecution.FlowDefinition");
-			stopExecutionResponse.Input = context.StringValue("StopExecution.Input");
-			stopExecutionResponse.Output = context.StringValue("StopExecution.Output");
-			stopExecutionResponse.Status = context.StringValue("StopExecution.Status");
-			stopExecutionResponse.StartedTime = context.StringValue("StopExecution.StartedTime");
-			stopExecutionResponse.StoppedTime = context.StringValue("StopExecution.StoppedTime");
-			stopExecutionResponse.ExternalInputUri = context.StringValue("StopExecution.ExternalInputUri");
-			stopExecutionResponse.ExternalOutputUri = context.StringValue("StopExecution.ExternalOutputUri");
+			stopExecutionResponse.HttpResponse = _ctx.HttpResponse;
+			stopExecutionResponse.RequestId = _ctx.StringValue("StopExecution.RequestId");
+			stopExecutionResponse.Name = _ctx.StringValue("StopExecution.Name");
+			stopExecutionResponse.FlowName = _ctx.StringValue("StopExecution.FlowName");
+			stopExecutionResponse.FlowDefinition = _ctx.StringValue("StopExecution.FlowDefinition");
+			stopExecutionResponse.Input = _ctx.StringValue("StopExecution.Input");
+			stopExecutionResponse.Output = _ctx.StringValue("StopExecution.Output");
+			stopExecutionResponse.Status = _ctx.StringValue("StopExecution.Status");
+			stopExecutionResponse.StartedTime = _ctx.StringValue("StopExecution.StartedTime");
+			stopExecutionResponse.StoppedTime = _ctx.StringValue("StopExecution.StoppedTime");
+			stopExecutionResponse.ExternalInputUri = _ctx.StringValue("StopExecution.ExternalInputUri");
+			stopExecutionResponse.ExternalOutputUri = _ctx.StringValue("StopExecution.ExternalOutputUri");
         
 			return stopExecutionResponse;
         }

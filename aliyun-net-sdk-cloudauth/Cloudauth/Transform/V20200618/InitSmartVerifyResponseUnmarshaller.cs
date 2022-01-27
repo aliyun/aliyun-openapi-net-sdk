@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20200618
 {
     public class InitSmartVerifyResponseUnmarshaller
     {
-        public static InitSmartVerifyResponse Unmarshall(UnmarshallerContext context)
+        public static InitSmartVerifyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			InitSmartVerifyResponse initSmartVerifyResponse = new InitSmartVerifyResponse();
 
-			initSmartVerifyResponse.HttpResponse = context.HttpResponse;
-			initSmartVerifyResponse.RequestId = context.StringValue("InitSmartVerify.RequestId");
-			initSmartVerifyResponse.Message = context.StringValue("InitSmartVerify.Message");
-			initSmartVerifyResponse.Code = context.StringValue("InitSmartVerify.Code");
+			initSmartVerifyResponse.HttpResponse = _ctx.HttpResponse;
+			initSmartVerifyResponse.Code = _ctx.StringValue("InitSmartVerify.Code");
+			initSmartVerifyResponse.Message = _ctx.StringValue("InitSmartVerify.Message");
+			initSmartVerifyResponse.RequestId = _ctx.StringValue("InitSmartVerify.RequestId");
 
 			InitSmartVerifyResponse.InitSmartVerify_ResultObject resultObject = new InitSmartVerifyResponse.InitSmartVerify_ResultObject();
-			resultObject.CertifyId = context.StringValue("InitSmartVerify.ResultObject.CertifyId");
+			resultObject.CertifyId = _ctx.StringValue("InitSmartVerify.ResultObject.CertifyId");
 			initSmartVerifyResponse.ResultObject = resultObject;
         
 			return initSmartVerifyResponse;

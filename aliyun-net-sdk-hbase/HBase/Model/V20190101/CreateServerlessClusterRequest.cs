@@ -40,17 +40,23 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			Method = MethodType.POST;
         }
 
+		private string clientType;
+
 		private string clusterName;
 
 		private string clientToken;
 
 		private string engineVersion;
 
+		private string resourceGroupId;
+
 		private string engine;
 
 		private int? autoRenewPeriod;
 
 		private int? period;
+
+		private string diskType;
 
 		private string vSwitchId;
 
@@ -67,6 +73,19 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 		private string payType;
 
 		private string serverlessSpec;
+
+		public string ClientType
+		{
+			get
+			{
+				return clientType;
+			}
+			set	
+			{
+				clientType = value;
+				DictionaryUtil.Add(QueryParameters, "ClientType", value);
+			}
+		}
 
 		public string ClusterName
 		{
@@ -107,6 +126,19 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
 		public string Engine
 		{
 			get
@@ -143,6 +175,19 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			{
 				period = value;
 				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
+			}
+		}
+
+		public string DiskType
+		{
+			get
+			{
+				return diskType;
+			}
+			set	
+			{
+				diskType = value;
+				DictionaryUtil.Add(QueryParameters, "DiskType", value);
 			}
 		}
 

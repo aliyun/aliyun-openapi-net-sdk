@@ -34,9 +34,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -44,6 +45,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private string clientToken;
 
 		private string iSP;
+
+		private string description;
 
 		private string resourceGroupId;
 
@@ -66,6 +69,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private long? activityId;
 
 		private string internetChargeType;
+
+		private string name;
 
 		private string pricingCycle;
 
@@ -105,6 +110,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				iSP = value;
 				DictionaryUtil.Add(QueryParameters, "ISP", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -248,6 +266,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				internetChargeType = value;
 				DictionaryUtil.Add(QueryParameters, "InternetChargeType", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

@@ -27,6 +27,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
+		private string oldConnectionString;
+
+		private string newConnectionString;
+
 		public string RequestId
 		{
 			get
@@ -36,6 +40,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string OldConnectionString
+		{
+			get
+			{
+				return oldConnectionString;
+			}
+			set	
+			{
+				oldConnectionString = value;
+			}
+		}
+
+		public string NewConnectionString
+		{
+			get
+			{
+				return newConnectionString;
+			}
+			set	
+			{
+				newConnectionString = value;
 			}
 		}
 	}

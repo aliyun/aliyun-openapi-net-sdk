@@ -26,18 +26,18 @@ namespace Aliyun.Acs.codeup.Transform.V20200414
 {
     public class DeleteBranchResponseUnmarshaller
     {
-        public static DeleteBranchResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteBranchResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteBranchResponse deleteBranchResponse = new DeleteBranchResponse();
 
-			deleteBranchResponse.HttpResponse = context.HttpResponse;
-			deleteBranchResponse.RequestId = context.StringValue("DeleteBranch.RequestId");
-			deleteBranchResponse.ErrorCode = context.StringValue("DeleteBranch.ErrorCode");
-			deleteBranchResponse.Success = context.BooleanValue("DeleteBranch.Success");
-			deleteBranchResponse.ErrorMessage = context.StringValue("DeleteBranch.ErrorMessage");
+			deleteBranchResponse.HttpResponse = _ctx.HttpResponse;
+			deleteBranchResponse.RequestId = _ctx.StringValue("DeleteBranch.RequestId");
+			deleteBranchResponse.ErrorCode = _ctx.StringValue("DeleteBranch.ErrorCode");
+			deleteBranchResponse.Success = _ctx.BooleanValue("DeleteBranch.Success");
+			deleteBranchResponse.ErrorMessage = _ctx.StringValue("DeleteBranch.ErrorMessage");
 
 			DeleteBranchResponse.DeleteBranch_Result result = new DeleteBranchResponse.DeleteBranch_Result();
-			result.BranchName = context.StringValue("DeleteBranch.Result.BranchName");
+			result.BranchName = _ctx.StringValue("DeleteBranch.Result.BranchName");
 			deleteBranchResponse.Result = result;
         
 			return deleteBranchResponse;

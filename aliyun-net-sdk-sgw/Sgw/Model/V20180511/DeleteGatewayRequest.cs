@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -34,16 +35,35 @@ namespace Aliyun.Acs.sgw.Model.V20180511
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.sgw.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.sgw.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
+
+		private string reasonDetail;
 
 		private string securityToken;
 
 		private string gatewayId;
 
+		private string reasonType;
+
+		[JsonProperty(PropertyName = "ReasonDetail")]
+		public string ReasonDetail
+		{
+			get
+			{
+				return reasonDetail;
+			}
+			set	
+			{
+				reasonDetail = value;
+				DictionaryUtil.Add(QueryParameters, "ReasonDetail", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "SecurityToken")]
 		public string SecurityToken
 		{
 			get
@@ -57,6 +77,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "GatewayId")]
 		public string GatewayId
 		{
 			get
@@ -67,6 +88,20 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			{
 				gatewayId = value;
 				DictionaryUtil.Add(QueryParameters, "GatewayId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ReasonType")]
+		public string ReasonType
+		{
+			get
+			{
+				return reasonType;
+			}
+			set	
+			{
+				reasonType = value;
+				DictionaryUtil.Add(QueryParameters, "ReasonType", value);
 			}
 		}
 

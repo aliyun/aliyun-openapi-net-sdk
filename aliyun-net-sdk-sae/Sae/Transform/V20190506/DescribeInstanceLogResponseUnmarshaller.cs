@@ -26,18 +26,18 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class DescribeInstanceLogResponseUnmarshaller
     {
-        public static DescribeInstanceLogResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeInstanceLogResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeInstanceLogResponse describeInstanceLogResponse = new DescribeInstanceLogResponse();
 
-			describeInstanceLogResponse.HttpResponse = context.HttpResponse;
-			describeInstanceLogResponse.RequestId = context.StringValue("DescribeInstanceLog.RequestId");
-			describeInstanceLogResponse.Code = context.StringValue("DescribeInstanceLog.Code");
-			describeInstanceLogResponse.Message = context.StringValue("DescribeInstanceLog.Message");
-			describeInstanceLogResponse.Success = context.BooleanValue("DescribeInstanceLog.Success");
-			describeInstanceLogResponse.ErrorCode = context.StringValue("DescribeInstanceLog.ErrorCode");
-			describeInstanceLogResponse.TraceId = context.StringValue("DescribeInstanceLog.TraceId");
-			describeInstanceLogResponse.Data = context.StringValue("DescribeInstanceLog.Data");
+			describeInstanceLogResponse.HttpResponse = _ctx.HttpResponse;
+			describeInstanceLogResponse.RequestId = _ctx.StringValue("DescribeInstanceLog.RequestId");
+			describeInstanceLogResponse.Code = _ctx.StringValue("DescribeInstanceLog.Code");
+			describeInstanceLogResponse.Message = _ctx.StringValue("DescribeInstanceLog.Message");
+			describeInstanceLogResponse.Success = _ctx.BooleanValue("DescribeInstanceLog.Success");
+			describeInstanceLogResponse.ErrorCode = _ctx.StringValue("DescribeInstanceLog.ErrorCode");
+			describeInstanceLogResponse.TraceId = _ctx.StringValue("DescribeInstanceLog.TraceId");
+			describeInstanceLogResponse.Data = _ctx.StringValue("DescribeInstanceLog.Data");
         
 			return describeInstanceLogResponse;
         }

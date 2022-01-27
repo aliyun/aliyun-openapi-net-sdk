@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class GetThingModelTslResponseUnmarshaller
     {
-        public static GetThingModelTslResponse Unmarshall(UnmarshallerContext context)
+        public static GetThingModelTslResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetThingModelTslResponse getThingModelTslResponse = new GetThingModelTslResponse();
 
-			getThingModelTslResponse.HttpResponse = context.HttpResponse;
-			getThingModelTslResponse.RequestId = context.StringValue("GetThingModelTsl.RequestId");
-			getThingModelTslResponse.Success = context.BooleanValue("GetThingModelTsl.Success");
-			getThingModelTslResponse.Code = context.StringValue("GetThingModelTsl.Code");
-			getThingModelTslResponse.ErrorMessage = context.StringValue("GetThingModelTsl.ErrorMessage");
+			getThingModelTslResponse.HttpResponse = _ctx.HttpResponse;
+			getThingModelTslResponse.RequestId = _ctx.StringValue("GetThingModelTsl.RequestId");
+			getThingModelTslResponse.Success = _ctx.BooleanValue("GetThingModelTsl.Success");
+			getThingModelTslResponse.Code = _ctx.StringValue("GetThingModelTsl.Code");
+			getThingModelTslResponse.ErrorMessage = _ctx.StringValue("GetThingModelTsl.ErrorMessage");
 
 			GetThingModelTslResponse.GetThingModelTsl_Data data = new GetThingModelTslResponse.GetThingModelTsl_Data();
-			data.TslStr = context.StringValue("GetThingModelTsl.Data.TslStr");
-			data.TslUri = context.StringValue("GetThingModelTsl.Data.TslUri");
+			data.TslStr = _ctx.StringValue("GetThingModelTsl.Data.TslStr");
+			data.TslUri = _ctx.StringValue("GetThingModelTsl.Data.TslUri");
 			getThingModelTslResponse.Data = data;
         
 			return getThingModelTslResponse;

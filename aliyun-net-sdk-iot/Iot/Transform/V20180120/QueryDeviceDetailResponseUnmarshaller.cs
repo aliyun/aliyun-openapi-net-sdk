@@ -26,35 +26,35 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryDeviceDetailResponseUnmarshaller
     {
-        public static QueryDeviceDetailResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDeviceDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDeviceDetailResponse queryDeviceDetailResponse = new QueryDeviceDetailResponse();
 
-			queryDeviceDetailResponse.HttpResponse = context.HttpResponse;
-			queryDeviceDetailResponse.RequestId = context.StringValue("QueryDeviceDetail.RequestId");
-			queryDeviceDetailResponse.Success = context.BooleanValue("QueryDeviceDetail.Success");
-			queryDeviceDetailResponse.Code = context.StringValue("QueryDeviceDetail.Code");
-			queryDeviceDetailResponse.ErrorMessage = context.StringValue("QueryDeviceDetail.ErrorMessage");
+			queryDeviceDetailResponse.HttpResponse = _ctx.HttpResponse;
+			queryDeviceDetailResponse.RequestId = _ctx.StringValue("QueryDeviceDetail.RequestId");
+			queryDeviceDetailResponse.Success = _ctx.BooleanValue("QueryDeviceDetail.Success");
+			queryDeviceDetailResponse.Code = _ctx.StringValue("QueryDeviceDetail.Code");
+			queryDeviceDetailResponse.ErrorMessage = _ctx.StringValue("QueryDeviceDetail.ErrorMessage");
 
 			QueryDeviceDetailResponse.QueryDeviceDetail_Data data = new QueryDeviceDetailResponse.QueryDeviceDetail_Data();
-			data.IotId = context.StringValue("QueryDeviceDetail.Data.IotId");
-			data.ProductKey = context.StringValue("QueryDeviceDetail.Data.ProductKey");
-			data.ProductName = context.StringValue("QueryDeviceDetail.Data.ProductName");
-			data.DeviceName = context.StringValue("QueryDeviceDetail.Data.DeviceName");
-			data.DeviceSecret = context.StringValue("QueryDeviceDetail.Data.DeviceSecret");
-			data.FirmwareVersion = context.StringValue("QueryDeviceDetail.Data.FirmwareVersion");
-			data.GmtCreate = context.StringValue("QueryDeviceDetail.Data.GmtCreate");
-			data.UtcCreate = context.StringValue("QueryDeviceDetail.Data.UtcCreate");
-			data.GmtActive = context.StringValue("QueryDeviceDetail.Data.GmtActive");
-			data.UtcActive = context.StringValue("QueryDeviceDetail.Data.UtcActive");
-			data.GmtOnline = context.StringValue("QueryDeviceDetail.Data.GmtOnline");
-			data.UtcOnline = context.StringValue("QueryDeviceDetail.Data.UtcOnline");
-			data.Status = context.StringValue("QueryDeviceDetail.Data.Status");
-			data.IpAddress = context.StringValue("QueryDeviceDetail.Data.IpAddress");
-			data.NodeType = context.IntegerValue("QueryDeviceDetail.Data.NodeType");
-			data.Region = context.StringValue("QueryDeviceDetail.Data.Region");
-			data.Owner = context.BooleanValue("QueryDeviceDetail.Data.Owner");
-			data.Nickname = context.StringValue("QueryDeviceDetail.Data.Nickname");
+			data.IotId = _ctx.StringValue("QueryDeviceDetail.Data.IotId");
+			data.ProductKey = _ctx.StringValue("QueryDeviceDetail.Data.ProductKey");
+			data.ProductName = _ctx.StringValue("QueryDeviceDetail.Data.ProductName");
+			data.DeviceName = _ctx.StringValue("QueryDeviceDetail.Data.DeviceName");
+			data.DeviceSecret = _ctx.StringValue("QueryDeviceDetail.Data.DeviceSecret");
+			data.FirmwareVersion = _ctx.StringValue("QueryDeviceDetail.Data.FirmwareVersion");
+			data.GmtCreate = _ctx.StringValue("QueryDeviceDetail.Data.GmtCreate");
+			data.UtcCreate = _ctx.StringValue("QueryDeviceDetail.Data.UtcCreate");
+			data.GmtActive = _ctx.StringValue("QueryDeviceDetail.Data.GmtActive");
+			data.UtcActive = _ctx.StringValue("QueryDeviceDetail.Data.UtcActive");
+			data.GmtOnline = _ctx.StringValue("QueryDeviceDetail.Data.GmtOnline");
+			data.UtcOnline = _ctx.StringValue("QueryDeviceDetail.Data.UtcOnline");
+			data.Status = _ctx.StringValue("QueryDeviceDetail.Data.Status");
+			data.IpAddress = _ctx.StringValue("QueryDeviceDetail.Data.IpAddress");
+			data.NodeType = _ctx.IntegerValue("QueryDeviceDetail.Data.NodeType");
+			data.Region = _ctx.StringValue("QueryDeviceDetail.Data.Region");
+			data.Owner = _ctx.BooleanValue("QueryDeviceDetail.Data.Owner");
+			data.Nickname = _ctx.StringValue("QueryDeviceDetail.Data.Nickname");
 			queryDeviceDetailResponse.Data = data;
         
 			return queryDeviceDetailResponse;

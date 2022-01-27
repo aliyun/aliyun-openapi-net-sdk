@@ -26,16 +26,16 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class CalcPlanJsonResourceResponseUnmarshaller
     {
-        public static CalcPlanJsonResourceResponse Unmarshall(UnmarshallerContext context)
+        public static CalcPlanJsonResourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CalcPlanJsonResourceResponse calcPlanJsonResourceResponse = new CalcPlanJsonResourceResponse();
 
-			calcPlanJsonResourceResponse.HttpResponse = context.HttpResponse;
-			calcPlanJsonResourceResponse.RequestId = context.StringValue("CalcPlanJsonResource.RequestId");
+			calcPlanJsonResourceResponse.HttpResponse = _ctx.HttpResponse;
+			calcPlanJsonResourceResponse.RequestId = _ctx.StringValue("CalcPlanJsonResource.RequestId");
 
 			CalcPlanJsonResourceResponse.CalcPlanJsonResource_PlanJsonResource planJsonResource = new CalcPlanJsonResourceResponse.CalcPlanJsonResource_PlanJsonResource();
-			planJsonResource.Cores = context.FloatValue("CalcPlanJsonResource.PlanJsonResource.Cores");
-			planJsonResource.MemoryGB = context.FloatValue("CalcPlanJsonResource.PlanJsonResource.MemoryGB");
+			planJsonResource.Cores = _ctx.FloatValue("CalcPlanJsonResource.PlanJsonResource.Cores");
+			planJsonResource.MemoryGB = _ctx.FloatValue("CalcPlanJsonResource.PlanJsonResource.MemoryGB");
 			calcPlanJsonResourceResponse.PlanJsonResource = planJsonResource;
         
 			return calcPlanJsonResourceResponse;

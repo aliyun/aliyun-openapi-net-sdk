@@ -26,18 +26,19 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DescribeZonesResponseUnmarshaller
     {
-        public static DescribeZonesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeZonesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeZonesResponse describeZonesResponse = new DescribeZonesResponse();
 
-			describeZonesResponse.HttpResponse = context.HttpResponse;
-			describeZonesResponse.RequestId = context.StringValue("DescribeZones.RequestId");
+			describeZonesResponse.HttpResponse = _ctx.HttpResponse;
+			describeZonesResponse.RequestId = _ctx.StringValue("DescribeZones.RequestId");
 
 			List<DescribeZonesResponse.DescribeZones_Zone> describeZonesResponse_zones = new List<DescribeZonesResponse.DescribeZones_Zone>();
-			for (int i = 0; i < context.Length("DescribeZones.Zones.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeZones.Zones.Length"); i++) {
 				DescribeZonesResponse.DescribeZones_Zone zone = new DescribeZonesResponse.DescribeZones_Zone();
-				zone.ZoneId = context.StringValue("DescribeZones.Zones["+ i +"].ZoneId");
-				zone.LocalName = context.StringValue("DescribeZones.Zones["+ i +"].LocalName");
+				zone.ZoneId = _ctx.StringValue("DescribeZones.Zones["+ i +"].ZoneId");
+				zone.LocalName = _ctx.StringValue("DescribeZones.Zones["+ i +"].LocalName");
+				zone.ZoneType = _ctx.StringValue("DescribeZones.Zones["+ i +"].ZoneType");
 
 				describeZonesResponse_zones.Add(zone);
 			}

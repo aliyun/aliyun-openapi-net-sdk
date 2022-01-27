@@ -175,6 +175,10 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 				private bool? allowCustom;
 
+				private string scope;
+
+				private long? scopeId;
+
 				private List<DescribeClusterServiceConfig_ConfigItemValue> configItemValueList;
 
 				public string ConfigName
@@ -201,6 +205,30 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 					}
 				}
 
+				public string Scope
+				{
+					get
+					{
+						return scope;
+					}
+					set	
+					{
+						scope = value;
+					}
+				}
+
+				public long? ScopeId
+				{
+					get
+					{
+						return scopeId;
+					}
+					set	
+					{
+						scopeId = value;
+					}
+				}
+
 				public List<DescribeClusterServiceConfig_ConfigItemValue> ConfigItemValueList
 				{
 					get
@@ -223,6 +251,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 					private bool? isCustom;
 
 					private string description;
+
+					private string valueScope;
 
 					public string ItemName
 					{
@@ -269,6 +299,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 						set	
 						{
 							description = value;
+						}
+					}
+
+					public string ValueScope
+					{
+						get
+						{
+							return valueScope;
+						}
+						set	
+						{
+							valueScope = value;
 						}
 					}
 				}

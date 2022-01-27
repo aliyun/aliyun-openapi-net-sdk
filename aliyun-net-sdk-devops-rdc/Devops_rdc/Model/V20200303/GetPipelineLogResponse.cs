@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,15 +25,39 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class GetPipelineLogResponse : AcsResponse
 	{
 
+		private string requestId;
+
+		private string errorMessage;
+
 		private bool? success;
 
 		private string errorCode;
 
-		private string errorMessage;
-
-		private string requestId;
-
 		private List<GetPipelineLog_Job> _object;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
 
 		public bool? Success
 		{
@@ -59,30 +83,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
 		public List<GetPipelineLog_Job> _Object
 		{
 			get
@@ -98,25 +98,13 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 		public class GetPipelineLog_Job
 		{
 
-			private long? jobId;
-
 			private string actionName;
 
 			private string startTime;
 
-			private List<GetPipelineLog_BuildProcessNode> buildProcessNodes;
+			private long? jobId;
 
-			public long? JobId
-			{
-				get
-				{
-					return jobId;
-				}
-				set	
-				{
-					jobId = value;
-				}
-			}
+			private List<GetPipelineLog_BuildProcessNode> buildProcessNodes;
 
 			public string ActionName
 			{
@@ -142,6 +130,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
+			public long? JobId
+			{
+				get
+				{
+					return jobId;
+				}
+				set	
+				{
+					jobId = value;
+				}
+			}
+
 			public List<GetPipelineLog_BuildProcessNode> BuildProcessNodes
 			{
 				get
@@ -157,21 +157,21 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			public class GetPipelineLog_BuildProcessNode
 			{
 
-				private string nodeName;
+				private string status;
 
 				private int? nodeIndex;
 
-				private string status;
+				private string nodeName;
 
-				public string NodeName
+				public string Status
 				{
 					get
 					{
-						return nodeName;
+						return status;
 					}
 					set	
 					{
-						nodeName = value;
+						status = value;
 					}
 				}
 
@@ -187,15 +187,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					}
 				}
 
-				public string Status
+				public string NodeName
 				{
 					get
 					{
-						return status;
+						return nodeName;
 					}
 					set	
 					{
-						status = value;
+						nodeName = value;
 					}
 				}
 			}

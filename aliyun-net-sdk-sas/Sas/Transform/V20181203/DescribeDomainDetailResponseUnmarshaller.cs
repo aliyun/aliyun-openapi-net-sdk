@@ -26,25 +26,27 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeDomainDetailResponseUnmarshaller
     {
-        public static DescribeDomainDetailResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainDetailResponse describeDomainDetailResponse = new DescribeDomainDetailResponse();
 
-			describeDomainDetailResponse.HttpResponse = context.HttpResponse;
-			describeDomainDetailResponse.RequestId = context.StringValue("DescribeDomainDetail.RequestId");
-			describeDomainDetailResponse.Domain = context.StringValue("DescribeDomainDetail.Domain");
-			describeDomainDetailResponse.RootDomain = context.StringValue("DescribeDomainDetail.RootDomain");
+			describeDomainDetailResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainDetailResponse.RequestId = _ctx.StringValue("DescribeDomainDetail.RequestId");
+			describeDomainDetailResponse.Domain = _ctx.StringValue("DescribeDomainDetail.Domain");
+			describeDomainDetailResponse.RootDomain = _ctx.StringValue("DescribeDomainDetail.RootDomain");
+			describeDomainDetailResponse.VulCount = _ctx.IntegerValue("DescribeDomainDetail.VulCount");
+			describeDomainDetailResponse.AlarmCount = _ctx.IntegerValue("DescribeDomainDetail.AlarmCount");
 
 			List<DescribeDomainDetailResponse.DescribeDomainDetail_DomainDetailItem> describeDomainDetailResponse_domainDetailItems = new List<DescribeDomainDetailResponse.DescribeDomainDetail_DomainDetailItem>();
-			for (int i = 0; i < context.Length("DescribeDomainDetail.DomainDetailItems.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainDetail.DomainDetailItems.Length"); i++) {
 				DescribeDomainDetailResponse.DescribeDomainDetail_DomainDetailItem domainDetailItem = new DescribeDomainDetailResponse.DescribeDomainDetail_DomainDetailItem();
-				domainDetailItem.InternetIp = context.StringValue("DescribeDomainDetail.DomainDetailItems["+ i +"].InternetIp");
-				domainDetailItem.InstanceId = context.StringValue("DescribeDomainDetail.DomainDetailItems["+ i +"].InstanceId");
-				domainDetailItem.Uuid = context.StringValue("DescribeDomainDetail.DomainDetailItems["+ i +"].Uuid");
-				domainDetailItem.AssetType = context.StringValue("DescribeDomainDetail.DomainDetailItems["+ i +"].AssetType");
-				domainDetailItem.InstanceName = context.StringValue("DescribeDomainDetail.DomainDetailItems["+ i +"].InstanceName");
-				domainDetailItem.MachineIp = context.StringValue("DescribeDomainDetail.DomainDetailItems["+ i +"].MachineIp");
-				domainDetailItem.IntranetIp = context.StringValue("DescribeDomainDetail.DomainDetailItems["+ i +"].IntranetIp");
+				domainDetailItem.InternetIp = _ctx.StringValue("DescribeDomainDetail.DomainDetailItems["+ i +"].InternetIp");
+				domainDetailItem.InstanceId = _ctx.StringValue("DescribeDomainDetail.DomainDetailItems["+ i +"].InstanceId");
+				domainDetailItem.Uuid = _ctx.StringValue("DescribeDomainDetail.DomainDetailItems["+ i +"].Uuid");
+				domainDetailItem.AssetType = _ctx.StringValue("DescribeDomainDetail.DomainDetailItems["+ i +"].AssetType");
+				domainDetailItem.InstanceName = _ctx.StringValue("DescribeDomainDetail.DomainDetailItems["+ i +"].InstanceName");
+				domainDetailItem.MachineIp = _ctx.StringValue("DescribeDomainDetail.DomainDetailItems["+ i +"].MachineIp");
+				domainDetailItem.IntranetIp = _ctx.StringValue("DescribeDomainDetail.DomainDetailItems["+ i +"].IntranetIp");
 
 				describeDomainDetailResponse_domainDetailItems.Add(domainDetailItem);
 			}

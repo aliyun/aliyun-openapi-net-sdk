@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryDeviceEventDataResponseUnmarshaller
     {
-        public static QueryDeviceEventDataResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDeviceEventDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDeviceEventDataResponse queryDeviceEventDataResponse = new QueryDeviceEventDataResponse();
 
-			queryDeviceEventDataResponse.HttpResponse = context.HttpResponse;
-			queryDeviceEventDataResponse.RequestId = context.StringValue("QueryDeviceEventData.RequestId");
-			queryDeviceEventDataResponse.Success = context.BooleanValue("QueryDeviceEventData.Success");
-			queryDeviceEventDataResponse.Code = context.StringValue("QueryDeviceEventData.Code");
-			queryDeviceEventDataResponse.ErrorMessage = context.StringValue("QueryDeviceEventData.ErrorMessage");
+			queryDeviceEventDataResponse.HttpResponse = _ctx.HttpResponse;
+			queryDeviceEventDataResponse.RequestId = _ctx.StringValue("QueryDeviceEventData.RequestId");
+			queryDeviceEventDataResponse.Success = _ctx.BooleanValue("QueryDeviceEventData.Success");
+			queryDeviceEventDataResponse.Code = _ctx.StringValue("QueryDeviceEventData.Code");
+			queryDeviceEventDataResponse.ErrorMessage = _ctx.StringValue("QueryDeviceEventData.ErrorMessage");
 
 			QueryDeviceEventDataResponse.QueryDeviceEventData_Data data = new QueryDeviceEventDataResponse.QueryDeviceEventData_Data();
-			data.NextTime = context.LongValue("QueryDeviceEventData.Data.NextTime");
-			data.NextValid = context.BooleanValue("QueryDeviceEventData.Data.NextValid");
+			data.NextTime = _ctx.LongValue("QueryDeviceEventData.Data.NextTime");
+			data.NextValid = _ctx.BooleanValue("QueryDeviceEventData.Data.NextValid");
 
 			List<QueryDeviceEventDataResponse.QueryDeviceEventData_Data.QueryDeviceEventData_EventInfo> data_list = new List<QueryDeviceEventDataResponse.QueryDeviceEventData_Data.QueryDeviceEventData_EventInfo>();
-			for (int i = 0; i < context.Length("QueryDeviceEventData.Data.List.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryDeviceEventData.Data.List.Length"); i++) {
 				QueryDeviceEventDataResponse.QueryDeviceEventData_Data.QueryDeviceEventData_EventInfo eventInfo = new QueryDeviceEventDataResponse.QueryDeviceEventData_Data.QueryDeviceEventData_EventInfo();
-				eventInfo.Time = context.StringValue("QueryDeviceEventData.Data.List["+ i +"].Time");
-				eventInfo.Identifier = context.StringValue("QueryDeviceEventData.Data.List["+ i +"].Identifier");
-				eventInfo.Name = context.StringValue("QueryDeviceEventData.Data.List["+ i +"].Name");
-				eventInfo.EventType = context.StringValue("QueryDeviceEventData.Data.List["+ i +"].EventType");
-				eventInfo.OutputData = context.StringValue("QueryDeviceEventData.Data.List["+ i +"].OutputData");
+				eventInfo.Time = _ctx.StringValue("QueryDeviceEventData.Data.List["+ i +"].Time");
+				eventInfo.Identifier = _ctx.StringValue("QueryDeviceEventData.Data.List["+ i +"].Identifier");
+				eventInfo.Name = _ctx.StringValue("QueryDeviceEventData.Data.List["+ i +"].Name");
+				eventInfo.EventType = _ctx.StringValue("QueryDeviceEventData.Data.List["+ i +"].EventType");
+				eventInfo.OutputData = _ctx.StringValue("QueryDeviceEventData.Data.List["+ i +"].OutputData");
 
 				data_list.Add(eventInfo);
 			}

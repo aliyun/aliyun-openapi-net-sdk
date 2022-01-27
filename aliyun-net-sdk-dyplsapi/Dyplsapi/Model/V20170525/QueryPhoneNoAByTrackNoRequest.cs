@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Dyplsapi;
 using Aliyun.Acs.Dyplsapi.Transform;
 using Aliyun.Acs.Dyplsapi.Transform.V20170525;
 
@@ -30,25 +31,27 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
     public class QueryPhoneNoAByTrackNoRequest : RpcAcsRequest<QueryPhoneNoAByTrackNoResponse>
     {
         public QueryPhoneNoAByTrackNoRequest()
-            : base("Dyplsapi", "2017-05-25", "QueryPhoneNoAByTrackNo", "dypls", "openAPI")
+            : base("Dyplsapi", "2017-05-25", "QueryPhoneNoAByTrackNo")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dyplsapi.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dyplsapi.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
+		private string cabinetNo;
+
+		private string phoneNoX;
+
 		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
 		private string trackNo;
-
-		private string phoneNoX;
 
 		public long? ResourceOwnerId
 		{
@@ -60,6 +63,32 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string CabinetNo
+		{
+			get
+			{
+				return cabinetNo;
+			}
+			set	
+			{
+				cabinetNo = value;
+				DictionaryUtil.Add(QueryParameters, "CabinetNo", value);
+			}
+		}
+
+		public string PhoneNoX
+		{
+			get
+			{
+				return phoneNoX;
+			}
+			set	
+			{
+				phoneNoX = value;
+				DictionaryUtil.Add(QueryParameters, "PhoneNoX", value);
 			}
 		}
 
@@ -102,17 +131,9 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			}
 		}
 
-		public string PhoneNoX
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return phoneNoX;
-			}
-			set	
-			{
-				phoneNoX = value;
-				DictionaryUtil.Add(QueryParameters, "PhoneNoX", value);
-			}
+			return false;
 		}
 
         public override QueryPhoneNoAByTrackNoResponse GetResponse(UnmarshallerContext unmarshallerContext)

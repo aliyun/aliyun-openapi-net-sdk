@@ -35,30 +35,15 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dcdn.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dcdn.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
-		private string functionName;
-
 		private string domainName;
 
 		private long? ownerId;
-
-		public string FunctionName
-		{
-			get
-			{
-				return functionName;
-			}
-			set	
-			{
-				functionName = value;
-				DictionaryUtil.Add(QueryParameters, "FunctionName", value);
-			}
-		}
 
 		public string DomainName
 		{

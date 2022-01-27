@@ -26,42 +26,43 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListFlowProjectClusterSettingResponseUnmarshaller
     {
-        public static ListFlowProjectClusterSettingResponse Unmarshall(UnmarshallerContext context)
+        public static ListFlowProjectClusterSettingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListFlowProjectClusterSettingResponse listFlowProjectClusterSettingResponse = new ListFlowProjectClusterSettingResponse();
 
-			listFlowProjectClusterSettingResponse.HttpResponse = context.HttpResponse;
-			listFlowProjectClusterSettingResponse.RequestId = context.StringValue("ListFlowProjectClusterSetting.RequestId");
-			listFlowProjectClusterSettingResponse.PageNumber = context.IntegerValue("ListFlowProjectClusterSetting.PageNumber");
-			listFlowProjectClusterSettingResponse.PageSize = context.IntegerValue("ListFlowProjectClusterSetting.PageSize");
-			listFlowProjectClusterSettingResponse.Total = context.IntegerValue("ListFlowProjectClusterSetting.Total");
+			listFlowProjectClusterSettingResponse.HttpResponse = _ctx.HttpResponse;
+			listFlowProjectClusterSettingResponse.RequestId = _ctx.StringValue("ListFlowProjectClusterSetting.RequestId");
+			listFlowProjectClusterSettingResponse.PageNumber = _ctx.IntegerValue("ListFlowProjectClusterSetting.PageNumber");
+			listFlowProjectClusterSettingResponse.PageSize = _ctx.IntegerValue("ListFlowProjectClusterSetting.PageSize");
+			listFlowProjectClusterSettingResponse.Total = _ctx.IntegerValue("ListFlowProjectClusterSetting.Total");
 
 			List<ListFlowProjectClusterSettingResponse.ListFlowProjectClusterSetting_ClusterSetting> listFlowProjectClusterSettingResponse_clusterSettings = new List<ListFlowProjectClusterSettingResponse.ListFlowProjectClusterSetting_ClusterSetting>();
-			for (int i = 0; i < context.Length("ListFlowProjectClusterSetting.ClusterSettings.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListFlowProjectClusterSetting.ClusterSettings.Length"); i++) {
 				ListFlowProjectClusterSettingResponse.ListFlowProjectClusterSetting_ClusterSetting clusterSetting = new ListFlowProjectClusterSettingResponse.ListFlowProjectClusterSetting_ClusterSetting();
-				clusterSetting.GmtCreate = context.LongValue("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].GmtCreate");
-				clusterSetting.GmtModified = context.LongValue("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].GmtModified");
-				clusterSetting.ProjectId = context.StringValue("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].ProjectId");
-				clusterSetting.ClusterId = context.StringValue("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].ClusterId");
-				clusterSetting.ClusterName = context.StringValue("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].ClusterName");
-				clusterSetting.DefaultUser = context.StringValue("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].DefaultUser");
-				clusterSetting.DefaultQueue = context.StringValue("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].DefaultQueue");
+				clusterSetting.GmtCreate = _ctx.LongValue("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].GmtCreate");
+				clusterSetting.GmtModified = _ctx.LongValue("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].GmtModified");
+				clusterSetting.ProjectId = _ctx.StringValue("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].ProjectId");
+				clusterSetting.ClusterId = _ctx.StringValue("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].ClusterId");
+				clusterSetting.K8sClusterId = _ctx.StringValue("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].K8sClusterId");
+				clusterSetting.ClusterName = _ctx.StringValue("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].ClusterName");
+				clusterSetting.DefaultUser = _ctx.StringValue("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].DefaultUser");
+				clusterSetting.DefaultQueue = _ctx.StringValue("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].DefaultQueue");
 
 				List<string> clusterSetting_userList = new List<string>();
-				for (int j = 0; j < context.Length("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].UserList.Length"); j++) {
-					clusterSetting_userList.Add(context.StringValue("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].UserList["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].UserList.Length"); j++) {
+					clusterSetting_userList.Add(_ctx.StringValue("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].UserList["+ j +"]"));
 				}
 				clusterSetting.UserList = clusterSetting_userList;
 
 				List<string> clusterSetting_queueList = new List<string>();
-				for (int j = 0; j < context.Length("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].QueueList.Length"); j++) {
-					clusterSetting_queueList.Add(context.StringValue("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].QueueList["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].QueueList.Length"); j++) {
+					clusterSetting_queueList.Add(_ctx.StringValue("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].QueueList["+ j +"]"));
 				}
 				clusterSetting.QueueList = clusterSetting_queueList;
 
 				List<string> clusterSetting_hostList = new List<string>();
-				for (int j = 0; j < context.Length("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].HostList.Length"); j++) {
-					clusterSetting_hostList.Add(context.StringValue("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].HostList["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].HostList.Length"); j++) {
+					clusterSetting_hostList.Add(_ctx.StringValue("ListFlowProjectClusterSetting.ClusterSettings["+ i +"].HostList["+ j +"]"));
 				}
 				clusterSetting.HostList = clusterSetting_hostList;
 

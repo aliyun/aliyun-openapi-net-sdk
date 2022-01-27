@@ -26,19 +26,19 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DescribePlayUserAvgResponseUnmarshaller
     {
-        public static DescribePlayUserAvgResponse Unmarshall(UnmarshallerContext context)
+        public static DescribePlayUserAvgResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribePlayUserAvgResponse describePlayUserAvgResponse = new DescribePlayUserAvgResponse();
 
-			describePlayUserAvgResponse.HttpResponse = context.HttpResponse;
-			describePlayUserAvgResponse.RequestId = context.StringValue("DescribePlayUserAvg.RequestId");
+			describePlayUserAvgResponse.HttpResponse = _ctx.HttpResponse;
+			describePlayUserAvgResponse.RequestId = _ctx.StringValue("DescribePlayUserAvg.RequestId");
 
 			List<DescribePlayUserAvgResponse.DescribePlayUserAvg_UserPlayStatisAvg> describePlayUserAvgResponse_userPlayStatisAvgs = new List<DescribePlayUserAvgResponse.DescribePlayUserAvg_UserPlayStatisAvg>();
-			for (int i = 0; i < context.Length("DescribePlayUserAvg.UserPlayStatisAvgs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribePlayUserAvg.UserPlayStatisAvgs.Length"); i++) {
 				DescribePlayUserAvgResponse.DescribePlayUserAvg_UserPlayStatisAvg userPlayStatisAvg = new DescribePlayUserAvgResponse.DescribePlayUserAvg_UserPlayStatisAvg();
-				userPlayStatisAvg.Date = context.StringValue("DescribePlayUserAvg.UserPlayStatisAvgs["+ i +"].Date");
-				userPlayStatisAvg.AvgPlayDuration = context.StringValue("DescribePlayUserAvg.UserPlayStatisAvgs["+ i +"].AvgPlayDuration");
-				userPlayStatisAvg.AvgPlayCount = context.StringValue("DescribePlayUserAvg.UserPlayStatisAvgs["+ i +"].AvgPlayCount");
+				userPlayStatisAvg.Date = _ctx.StringValue("DescribePlayUserAvg.UserPlayStatisAvgs["+ i +"].Date");
+				userPlayStatisAvg.AvgPlayDuration = _ctx.StringValue("DescribePlayUserAvg.UserPlayStatisAvgs["+ i +"].AvgPlayDuration");
+				userPlayStatisAvg.AvgPlayCount = _ctx.StringValue("DescribePlayUserAvg.UserPlayStatisAvgs["+ i +"].AvgPlayCount");
 
 				describePlayUserAvgResponse_userPlayStatisAvgs.Add(userPlayStatisAvg);
 			}

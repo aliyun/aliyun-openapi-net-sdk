@@ -26,21 +26,21 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class CreateStreamSnapshotResponseUnmarshaller
     {
-        public static CreateStreamSnapshotResponse Unmarshall(UnmarshallerContext context)
+        public static CreateStreamSnapshotResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateStreamSnapshotResponse createStreamSnapshotResponse = new CreateStreamSnapshotResponse();
 
-			createStreamSnapshotResponse.HttpResponse = context.HttpResponse;
-			createStreamSnapshotResponse.RequestId = context.StringValue("CreateStreamSnapshot.RequestId");
-			createStreamSnapshotResponse.Id = context.StringValue("CreateStreamSnapshot.Id");
-			createStreamSnapshotResponse.Url = context.StringValue("CreateStreamSnapshot.Url");
-			createStreamSnapshotResponse.OssBucket = context.StringValue("CreateStreamSnapshot.OssBucket");
-			createStreamSnapshotResponse.OssObject = context.StringValue("CreateStreamSnapshot.OssObject");
-			createStreamSnapshotResponse.OssEndpoint = context.StringValue("CreateStreamSnapshot.OssEndpoint");
-			createStreamSnapshotResponse.Height = context.LongValue("CreateStreamSnapshot.Height");
-			createStreamSnapshotResponse.Width = context.LongValue("CreateStreamSnapshot.Width");
-			createStreamSnapshotResponse.Format = context.StringValue("CreateStreamSnapshot.Format");
-			createStreamSnapshotResponse.Timestamp = context.LongValue("CreateStreamSnapshot.Timestamp");
+			createStreamSnapshotResponse.HttpResponse = _ctx.HttpResponse;
+			createStreamSnapshotResponse.RequestId = _ctx.StringValue("CreateStreamSnapshot.RequestId");
+			createStreamSnapshotResponse.Id = _ctx.StringValue("CreateStreamSnapshot.Id");
+			createStreamSnapshotResponse.Url = _ctx.StringValue("CreateStreamSnapshot.Url");
+			createStreamSnapshotResponse.OssBucket = _ctx.StringValue("CreateStreamSnapshot.OssBucket");
+			createStreamSnapshotResponse.OssObject = _ctx.StringValue("CreateStreamSnapshot.OssObject");
+			createStreamSnapshotResponse.OssEndpoint = _ctx.StringValue("CreateStreamSnapshot.OssEndpoint");
+			createStreamSnapshotResponse.Height = _ctx.LongValue("CreateStreamSnapshot.Height");
+			createStreamSnapshotResponse.Width = _ctx.LongValue("CreateStreamSnapshot.Width");
+			createStreamSnapshotResponse.Format = _ctx.StringValue("CreateStreamSnapshot.Format");
+			createStreamSnapshotResponse.Timestamp = _ctx.LongValue("CreateStreamSnapshot.Timestamp");
         
 			return createStreamSnapshotResponse;
         }

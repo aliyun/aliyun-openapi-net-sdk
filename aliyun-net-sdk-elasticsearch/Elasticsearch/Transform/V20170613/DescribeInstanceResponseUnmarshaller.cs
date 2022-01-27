@@ -61,6 +61,9 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			result.HaveKibana = _ctx.BooleanValue("DescribeInstance.Result.haveKibana");
 			result.ResourceGroupId = _ctx.StringValue("DescribeInstance.Result.resourceGroupId");
 			result.EnableKibanaPrivateNetwork = _ctx.BooleanValue("DescribeInstance.Result.enableKibanaPrivateNetwork");
+			result.IsNewDeployment = _ctx.BooleanValue("DescribeInstance.Result.isNewDeployment");
+			result.PostpaidServiceStatus = _ctx.StringValue("DescribeInstance.Result.postpaidServiceStatus");
+			result.ServiceVpc = _ctx.BooleanValue("DescribeInstance.Result.serviceVpc");
 
 			List<string> result_esIPWhitelist = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.EsIPWhitelist.Length"); i++) {
@@ -98,6 +101,21 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			}
 			result.KibanaPrivateIPWhitelist = result_kibanaPrivateIPWhitelist;
 
+			List<Dictionary<string, string>> result_extendConfigs = new List<Dictionary<string, string>>();
+			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.ExtendConfigs.Length"); i++) {
+				Dictionary<string, string> tmp = new Dictionary<string, string>() { };
+				foreach (var _item in _ctx.ResponseDictionary){
+					string prefix = "DescribeInstance.Result.ExtendConfigs["+ i +"].";
+					if (_item.Key.IndexOf(prefix) == 0){
+						tmp.Add(_item.Key.Substring(prefix.Length), _item.Value);
+					}
+				}
+				if (tmp.Count > 0){
+					result_extendConfigs.Add(tmp);
+				}
+			}
+			result.ExtendConfigs = result_extendConfigs;
+
 			DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_NodeSpec nodeSpec = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_NodeSpec();
 			nodeSpec.Spec = _ctx.StringValue("DescribeInstance.Result.NodeSpec.spec");
 			nodeSpec.Disk = _ctx.IntegerValue("DescribeInstance.Result.NodeSpec.disk");
@@ -110,6 +128,22 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			networkConfig.VpcId = _ctx.StringValue("DescribeInstance.Result.NetworkConfig.vpcId");
 			networkConfig.VswitchId = _ctx.StringValue("DescribeInstance.Result.NetworkConfig.vswitchId");
 			networkConfig.VsArea = _ctx.StringValue("DescribeInstance.Result.NetworkConfig.vsArea");
+
+			List<DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_NetworkConfig.DescribeInstance_WhiteIpGroupListItem> networkConfig_whiteIpGroupList = new List<DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_NetworkConfig.DescribeInstance_WhiteIpGroupListItem>();
+			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.NetworkConfig.WhiteIpGroupList.Length"); i++) {
+				DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_NetworkConfig.DescribeInstance_WhiteIpGroupListItem whiteIpGroupListItem = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_NetworkConfig.DescribeInstance_WhiteIpGroupListItem();
+				whiteIpGroupListItem.GroupName = _ctx.StringValue("DescribeInstance.Result.NetworkConfig.WhiteIpGroupList["+ i +"].groupName");
+				whiteIpGroupListItem.WhiteIpType = _ctx.StringValue("DescribeInstance.Result.NetworkConfig.WhiteIpGroupList["+ i +"].whiteIpType");
+
+				List<string> whiteIpGroupListItem_ips = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeInstance.Result.NetworkConfig.WhiteIpGroupList["+ i +"].Ips.Length"); j++) {
+					whiteIpGroupListItem_ips.Add(_ctx.StringValue("DescribeInstance.Result.NetworkConfig.WhiteIpGroupList["+ i +"].Ips["+ j +"]"));
+				}
+				whiteIpGroupListItem.Ips = whiteIpGroupListItem_ips;
+
+				networkConfig_whiteIpGroupList.Add(whiteIpGroupListItem);
+			}
+			networkConfig.WhiteIpGroupList = networkConfig_whiteIpGroupList;
 			result.NetworkConfig = networkConfig;
 
 			DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_KibanaConfiguration kibanaConfiguration = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_KibanaConfiguration();

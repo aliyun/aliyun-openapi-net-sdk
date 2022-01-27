@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DeleteLoginBaseConfigResponseUnmarshaller
     {
-        public static DeleteLoginBaseConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteLoginBaseConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteLoginBaseConfigResponse deleteLoginBaseConfigResponse = new DeleteLoginBaseConfigResponse();
 
-			deleteLoginBaseConfigResponse.HttpResponse = context.HttpResponse;
-			deleteLoginBaseConfigResponse.RequestId = context.StringValue("DeleteLoginBaseConfig.RequestId");
+			deleteLoginBaseConfigResponse.HttpResponse = _ctx.HttpResponse;
+			deleteLoginBaseConfigResponse.RequestId = _ctx.StringValue("DeleteLoginBaseConfig.RequestId");
         
 			return deleteLoginBaseConfigResponse;
         }

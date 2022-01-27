@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class SaveBatchTaskForModifyingDomainDnsResponseUnmarshaller
     {
-        public static SaveBatchTaskForModifyingDomainDnsResponse Unmarshall(UnmarshallerContext context)
+        public static SaveBatchTaskForModifyingDomainDnsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SaveBatchTaskForModifyingDomainDnsResponse saveBatchTaskForModifyingDomainDnsResponse = new SaveBatchTaskForModifyingDomainDnsResponse();
 
-			saveBatchTaskForModifyingDomainDnsResponse.HttpResponse = context.HttpResponse;
-			saveBatchTaskForModifyingDomainDnsResponse.RequestId = context.StringValue("SaveBatchTaskForModifyingDomainDns.RequestId");
-			saveBatchTaskForModifyingDomainDnsResponse.TaskNo = context.StringValue("SaveBatchTaskForModifyingDomainDns.TaskNo");
+			saveBatchTaskForModifyingDomainDnsResponse.HttpResponse = _ctx.HttpResponse;
+			saveBatchTaskForModifyingDomainDnsResponse.RequestId = _ctx.StringValue("SaveBatchTaskForModifyingDomainDns.RequestId");
+			saveBatchTaskForModifyingDomainDnsResponse.TaskNo = _ctx.StringValue("SaveBatchTaskForModifyingDomainDns.TaskNo");
         
 			return saveBatchTaskForModifyingDomainDnsResponse;
         }

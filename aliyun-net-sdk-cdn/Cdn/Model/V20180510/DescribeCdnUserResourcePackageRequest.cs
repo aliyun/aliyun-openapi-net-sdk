@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string securityToken;
 
+		private string status;
+
 		public long? OwnerId
 		{
 			get
@@ -68,6 +70,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 

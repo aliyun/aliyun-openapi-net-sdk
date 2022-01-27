@@ -25,29 +25,29 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class BindSlbResponse : AcsResponse
 	{
 
-		private string code;
+		private string requestId;
 
 		private string message;
 
+		private string traceId;
+
 		private string errorCode;
 
-		private string requestId;
+		private string code;
 
 		private bool? success;
 
-		private string traceId;
-
 		private BindSlb_Data data;
 
-		public string Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
 			}
 		}
 
@@ -63,6 +63,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public string TraceId
+		{
+			get
+			{
+				return traceId;
+			}
+			set	
+			{
+				traceId = value;
+			}
+		}
+
 		public string ErrorCode
 		{
 			get
@@ -75,15 +87,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string RequestId
+		public string Code
 		{
 			get
 			{
-				return requestId;
+				return code;
 			}
 			set	
 			{
-				requestId = value;
+				code = value;
 			}
 		}
 
@@ -96,18 +108,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string TraceId
-		{
-			get
-			{
-				return traceId;
-			}
-			set	
-			{
-				traceId = value;
 			}
 		}
 

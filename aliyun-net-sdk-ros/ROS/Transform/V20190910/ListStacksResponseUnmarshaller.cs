@@ -26,31 +26,42 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class ListStacksResponseUnmarshaller
     {
-        public static ListStacksResponse Unmarshall(UnmarshallerContext context)
+        public static ListStacksResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListStacksResponse listStacksResponse = new ListStacksResponse();
 
-			listStacksResponse.HttpResponse = context.HttpResponse;
-			listStacksResponse.PageNumber = context.IntegerValue("ListStacks.PageNumber");
-			listStacksResponse.PageSize = context.IntegerValue("ListStacks.PageSize");
-			listStacksResponse.RequestId = context.StringValue("ListStacks.RequestId");
-			listStacksResponse.TotalCount = context.IntegerValue("ListStacks.TotalCount");
+			listStacksResponse.HttpResponse = _ctx.HttpResponse;
+			listStacksResponse.PageNumber = _ctx.IntegerValue("ListStacks.PageNumber");
+			listStacksResponse.PageSize = _ctx.IntegerValue("ListStacks.PageSize");
+			listStacksResponse.RequestId = _ctx.StringValue("ListStacks.RequestId");
+			listStacksResponse.TotalCount = _ctx.IntegerValue("ListStacks.TotalCount");
 
 			List<ListStacksResponse.ListStacks_Stack> listStacksResponse_stacks = new List<ListStacksResponse.ListStacks_Stack>();
-			for (int i = 0; i < context.Length("ListStacks.Stacks.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListStacks.Stacks.Length"); i++) {
 				ListStacksResponse.ListStacks_Stack stack = new ListStacksResponse.ListStacks_Stack();
-				stack.CreateTime = context.StringValue("ListStacks.Stacks["+ i +"].CreateTime");
-				stack.DisableRollback = context.BooleanValue("ListStacks.Stacks["+ i +"].DisableRollback");
-				stack.RegionId = context.StringValue("ListStacks.Stacks["+ i +"].RegionId");
-				stack.StackId = context.StringValue("ListStacks.Stacks["+ i +"].StackId");
-				stack.StackName = context.StringValue("ListStacks.Stacks["+ i +"].StackName");
-				stack.Status = context.StringValue("ListStacks.Stacks["+ i +"].Status");
-				stack.StatusReason = context.StringValue("ListStacks.Stacks["+ i +"].StatusReason");
-				stack.TimeoutInMinutes = context.IntegerValue("ListStacks.Stacks["+ i +"].TimeoutInMinutes");
-				stack.ParentStackId = context.StringValue("ListStacks.Stacks["+ i +"].ParentStackId");
-				stack.UpdateTime = context.StringValue("ListStacks.Stacks["+ i +"].UpdateTime");
-				stack.StackDriftStatus = context.StringValue("ListStacks.Stacks["+ i +"].StackDriftStatus");
-				stack.DriftDetectionTime = context.StringValue("ListStacks.Stacks["+ i +"].DriftDetectionTime");
+				stack.CreateTime = _ctx.StringValue("ListStacks.Stacks["+ i +"].CreateTime");
+				stack.DisableRollback = _ctx.BooleanValue("ListStacks.Stacks["+ i +"].DisableRollback");
+				stack.RegionId = _ctx.StringValue("ListStacks.Stacks["+ i +"].RegionId");
+				stack.StackId = _ctx.StringValue("ListStacks.Stacks["+ i +"].StackId");
+				stack.StackName = _ctx.StringValue("ListStacks.Stacks["+ i +"].StackName");
+				stack.Status = _ctx.StringValue("ListStacks.Stacks["+ i +"].Status");
+				stack.StatusReason = _ctx.StringValue("ListStacks.Stacks["+ i +"].StatusReason");
+				stack.TimeoutInMinutes = _ctx.IntegerValue("ListStacks.Stacks["+ i +"].TimeoutInMinutes");
+				stack.ParentStackId = _ctx.StringValue("ListStacks.Stacks["+ i +"].ParentStackId");
+				stack.UpdateTime = _ctx.StringValue("ListStacks.Stacks["+ i +"].UpdateTime");
+				stack.StackDriftStatus = _ctx.StringValue("ListStacks.Stacks["+ i +"].StackDriftStatus");
+				stack.DriftDetectionTime = _ctx.StringValue("ListStacks.Stacks["+ i +"].DriftDetectionTime");
+				stack.StackType = _ctx.StringValue("ListStacks.Stacks["+ i +"].StackType");
+
+				List<ListStacksResponse.ListStacks_Stack.ListStacks_Tag> stack_tags = new List<ListStacksResponse.ListStacks_Stack.ListStacks_Tag>();
+				for (int j = 0; j < _ctx.Length("ListStacks.Stacks["+ i +"].Tags.Length"); j++) {
+					ListStacksResponse.ListStacks_Stack.ListStacks_Tag tag = new ListStacksResponse.ListStacks_Stack.ListStacks_Tag();
+					tag.Key = _ctx.StringValue("ListStacks.Stacks["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("ListStacks.Stacks["+ i +"].Tags["+ j +"].Value");
+
+					stack_tags.Add(tag);
+				}
+				stack.Tags = stack_tags;
 
 				listStacksResponse_stacks.Add(stack);
 			}

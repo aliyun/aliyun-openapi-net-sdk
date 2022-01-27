@@ -26,12 +26,12 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class SetAutoScaleConfigResponseUnmarshaller
     {
-        public static SetAutoScaleConfigResponse Unmarshall(UnmarshallerContext context)
+        public static SetAutoScaleConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetAutoScaleConfigResponse setAutoScaleConfigResponse = new SetAutoScaleConfigResponse();
 
-			setAutoScaleConfigResponse.HttpResponse = context.HttpResponse;
-			setAutoScaleConfigResponse.RequestId = context.StringValue("SetAutoScaleConfig.RequestId");
+			setAutoScaleConfigResponse.HttpResponse = _ctx.HttpResponse;
+			setAutoScaleConfigResponse.RequestId = _ctx.StringValue("SetAutoScaleConfig.RequestId");
         
 			return setAutoScaleConfigResponse;
         }

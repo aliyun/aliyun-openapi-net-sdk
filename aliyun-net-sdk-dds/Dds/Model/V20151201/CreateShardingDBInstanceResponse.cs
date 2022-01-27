@@ -25,11 +25,23 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 	public class CreateShardingDBInstanceResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string dBInstanceId;
 
 		private string orderId;
 
-		private string requestId;
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string DBInstanceId
 		{
@@ -52,18 +64,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				orderId = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
 			}
 		}
 	}

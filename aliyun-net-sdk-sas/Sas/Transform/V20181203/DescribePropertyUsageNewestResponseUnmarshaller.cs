@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribePropertyUsageNewestResponseUnmarshaller
     {
-        public static DescribePropertyUsageNewestResponse Unmarshall(UnmarshallerContext context)
+        public static DescribePropertyUsageNewestResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribePropertyUsageNewestResponse describePropertyUsageNewestResponse = new DescribePropertyUsageNewestResponse();
 
-			describePropertyUsageNewestResponse.HttpResponse = context.HttpResponse;
-			describePropertyUsageNewestResponse.RequestId = context.StringValue("DescribePropertyUsageNewest.RequestId");
-			describePropertyUsageNewestResponse.ItemCount = context.IntegerValue("DescribePropertyUsageNewest.ItemCount");
-			describePropertyUsageNewestResponse.Type = context.StringValue("DescribePropertyUsageNewest.Type");
+			describePropertyUsageNewestResponse.HttpResponse = _ctx.HttpResponse;
+			describePropertyUsageNewestResponse.RequestId = _ctx.StringValue("DescribePropertyUsageNewest.RequestId");
+			describePropertyUsageNewestResponse.ItemCount = _ctx.IntegerValue("DescribePropertyUsageNewest.ItemCount");
+			describePropertyUsageNewestResponse.Type = _ctx.StringValue("DescribePropertyUsageNewest.Type");
 
 			List<DescribePropertyUsageNewestResponse.DescribePropertyUsageNewest_NewestStatisticItem> describePropertyUsageNewestResponse_newestStatisticItems = new List<DescribePropertyUsageNewestResponse.DescribePropertyUsageNewest_NewestStatisticItem>();
-			for (int i = 0; i < context.Length("DescribePropertyUsageNewest.NewestStatisticItems.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribePropertyUsageNewest.NewestStatisticItems.Length"); i++) {
 				DescribePropertyUsageNewestResponse.DescribePropertyUsageNewest_NewestStatisticItem newestStatisticItem = new DescribePropertyUsageNewestResponse.DescribePropertyUsageNewest_NewestStatisticItem();
-				newestStatisticItem.Name = context.StringValue("DescribePropertyUsageNewest.NewestStatisticItems["+ i +"].Name");
-				newestStatisticItem.Create = context.LongValue("DescribePropertyUsageNewest.NewestStatisticItems["+ i +"].Create");
+				newestStatisticItem.Name = _ctx.StringValue("DescribePropertyUsageNewest.NewestStatisticItems["+ i +"].Name");
+				newestStatisticItem.Create = _ctx.LongValue("DescribePropertyUsageNewest.NewestStatisticItems["+ i +"].Create");
 
 				describePropertyUsageNewestResponse_newestStatisticItems.Add(newestStatisticItem);
 			}

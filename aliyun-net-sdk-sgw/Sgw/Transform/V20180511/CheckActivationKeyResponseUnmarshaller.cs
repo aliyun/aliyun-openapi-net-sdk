@@ -26,15 +26,15 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class CheckActivationKeyResponseUnmarshaller
     {
-        public static CheckActivationKeyResponse Unmarshall(UnmarshallerContext context)
+        public static CheckActivationKeyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckActivationKeyResponse checkActivationKeyResponse = new CheckActivationKeyResponse();
 
-			checkActivationKeyResponse.HttpResponse = context.HttpResponse;
-			checkActivationKeyResponse.RequestId = context.StringValue("CheckActivationKey.RequestId");
-			checkActivationKeyResponse.Success = context.BooleanValue("CheckActivationKey.Success");
-			checkActivationKeyResponse.Code = context.StringValue("CheckActivationKey.Code");
-			checkActivationKeyResponse.Message = context.StringValue("CheckActivationKey.Message");
+			checkActivationKeyResponse.HttpResponse = _ctx.HttpResponse;
+			checkActivationKeyResponse.Message = _ctx.StringValue("CheckActivationKey.Message");
+			checkActivationKeyResponse.RequestId = _ctx.StringValue("CheckActivationKey.RequestId");
+			checkActivationKeyResponse.Code = _ctx.StringValue("CheckActivationKey.Code");
+			checkActivationKeyResponse.Success = _ctx.BooleanValue("CheckActivationKey.Success");
         
 			return checkActivationKeyResponse;
         }

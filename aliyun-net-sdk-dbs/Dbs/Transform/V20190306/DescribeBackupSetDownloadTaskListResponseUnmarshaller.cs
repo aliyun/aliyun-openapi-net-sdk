@@ -26,43 +26,43 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 {
     public class DescribeBackupSetDownloadTaskListResponseUnmarshaller
     {
-        public static DescribeBackupSetDownloadTaskListResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeBackupSetDownloadTaskListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeBackupSetDownloadTaskListResponse describeBackupSetDownloadTaskListResponse = new DescribeBackupSetDownloadTaskListResponse();
 
-			describeBackupSetDownloadTaskListResponse.HttpResponse = context.HttpResponse;
-			describeBackupSetDownloadTaskListResponse.Success = context.BooleanValue("DescribeBackupSetDownloadTaskList.Success");
-			describeBackupSetDownloadTaskListResponse.ErrCode = context.StringValue("DescribeBackupSetDownloadTaskList.ErrCode");
-			describeBackupSetDownloadTaskListResponse.ErrMessage = context.StringValue("DescribeBackupSetDownloadTaskList.ErrMessage");
-			describeBackupSetDownloadTaskListResponse.HttpStatusCode = context.IntegerValue("DescribeBackupSetDownloadTaskList.HttpStatusCode");
-			describeBackupSetDownloadTaskListResponse.RequestId = context.StringValue("DescribeBackupSetDownloadTaskList.RequestId");
-			describeBackupSetDownloadTaskListResponse.TotalPages = context.IntegerValue("DescribeBackupSetDownloadTaskList.TotalPages");
-			describeBackupSetDownloadTaskListResponse.PageSize = context.IntegerValue("DescribeBackupSetDownloadTaskList.PageSize");
-			describeBackupSetDownloadTaskListResponse.PageNum = context.IntegerValue("DescribeBackupSetDownloadTaskList.PageNum");
-			describeBackupSetDownloadTaskListResponse.TotalElements = context.IntegerValue("DescribeBackupSetDownloadTaskList.TotalElements");
+			describeBackupSetDownloadTaskListResponse.HttpResponse = _ctx.HttpResponse;
+			describeBackupSetDownloadTaskListResponse.Success = _ctx.BooleanValue("DescribeBackupSetDownloadTaskList.Success");
+			describeBackupSetDownloadTaskListResponse.ErrCode = _ctx.StringValue("DescribeBackupSetDownloadTaskList.ErrCode");
+			describeBackupSetDownloadTaskListResponse.ErrMessage = _ctx.StringValue("DescribeBackupSetDownloadTaskList.ErrMessage");
+			describeBackupSetDownloadTaskListResponse.HttpStatusCode = _ctx.IntegerValue("DescribeBackupSetDownloadTaskList.HttpStatusCode");
+			describeBackupSetDownloadTaskListResponse.RequestId = _ctx.StringValue("DescribeBackupSetDownloadTaskList.RequestId");
+			describeBackupSetDownloadTaskListResponse.TotalPages = _ctx.IntegerValue("DescribeBackupSetDownloadTaskList.TotalPages");
+			describeBackupSetDownloadTaskListResponse.PageSize = _ctx.IntegerValue("DescribeBackupSetDownloadTaskList.PageSize");
+			describeBackupSetDownloadTaskListResponse.PageNum = _ctx.IntegerValue("DescribeBackupSetDownloadTaskList.PageNum");
+			describeBackupSetDownloadTaskListResponse.TotalElements = _ctx.IntegerValue("DescribeBackupSetDownloadTaskList.TotalElements");
 
 			List<DescribeBackupSetDownloadTaskListResponse.DescribeBackupSetDownloadTaskList_BackupSetDownloadTaskDetail> describeBackupSetDownloadTaskListResponse_items = new List<DescribeBackupSetDownloadTaskListResponse.DescribeBackupSetDownloadTaskList_BackupSetDownloadTaskDetail>();
-			for (int i = 0; i < context.Length("DescribeBackupSetDownloadTaskList.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeBackupSetDownloadTaskList.Items.Length"); i++) {
 				DescribeBackupSetDownloadTaskListResponse.DescribeBackupSetDownloadTaskList_BackupSetDownloadTaskDetail backupSetDownloadTaskDetail = new DescribeBackupSetDownloadTaskListResponse.DescribeBackupSetDownloadTaskList_BackupSetDownloadTaskDetail();
-				backupSetDownloadTaskDetail.BackupPlanId = context.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupPlanId");
-				backupSetDownloadTaskDetail.BackupSetDownloadTaskId = context.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDownloadTaskId");
-				backupSetDownloadTaskDetail.BackupSetDownloadTaskName = context.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDownloadTaskName");
-				backupSetDownloadTaskDetail.BackupSetDownloadStatus = context.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDownloadStatus");
-				backupSetDownloadTaskDetail.BackupSetDownloadCreateTime = context.LongValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDownloadCreateTime");
-				backupSetDownloadTaskDetail.BackupSetDownloadFinishTime = context.LongValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDownloadFinishTime");
-				backupSetDownloadTaskDetail.BackupSetId = context.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetId");
-				backupSetDownloadTaskDetail.BackupSetCode = context.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetCode");
-				backupSetDownloadTaskDetail.BackupSetJobType = context.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetJobType");
-				backupSetDownloadTaskDetail.BackupSetDataSize = context.LongValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDataSize");
-				backupSetDownloadTaskDetail.BackupSetDataFormat = context.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDataFormat");
-				backupSetDownloadTaskDetail.BackupSetDbType = context.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDbType");
-				backupSetDownloadTaskDetail.BackupSetDownloadWay = context.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDownloadWay");
-				backupSetDownloadTaskDetail.BackupSetDownloadDir = context.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDownloadDir");
-				backupSetDownloadTaskDetail.BackupSetDownloadTargetType = context.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDownloadTargetType");
-				backupSetDownloadTaskDetail.BackupGatewayId = context.LongValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupGatewayId");
-				backupSetDownloadTaskDetail.BackupSetDownloadIntranetUrl = context.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDownloadIntranetUrl");
-				backupSetDownloadTaskDetail.BackupSetDownloadInternetUrl = context.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDownloadInternetUrl");
-				backupSetDownloadTaskDetail.ErrMessage = context.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].ErrMessage");
+				backupSetDownloadTaskDetail.BackupPlanId = _ctx.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupPlanId");
+				backupSetDownloadTaskDetail.BackupSetDownloadTaskId = _ctx.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDownloadTaskId");
+				backupSetDownloadTaskDetail.BackupSetDownloadTaskName = _ctx.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDownloadTaskName");
+				backupSetDownloadTaskDetail.BackupSetDownloadStatus = _ctx.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDownloadStatus");
+				backupSetDownloadTaskDetail.BackupSetDownloadCreateTime = _ctx.LongValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDownloadCreateTime");
+				backupSetDownloadTaskDetail.BackupSetDownloadFinishTime = _ctx.LongValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDownloadFinishTime");
+				backupSetDownloadTaskDetail.BackupSetId = _ctx.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetId");
+				backupSetDownloadTaskDetail.BackupSetCode = _ctx.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetCode");
+				backupSetDownloadTaskDetail.BackupSetJobType = _ctx.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetJobType");
+				backupSetDownloadTaskDetail.BackupSetDataSize = _ctx.LongValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDataSize");
+				backupSetDownloadTaskDetail.BackupSetDataFormat = _ctx.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDataFormat");
+				backupSetDownloadTaskDetail.BackupSetDbType = _ctx.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDbType");
+				backupSetDownloadTaskDetail.BackupSetDownloadWay = _ctx.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDownloadWay");
+				backupSetDownloadTaskDetail.BackupSetDownloadDir = _ctx.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDownloadDir");
+				backupSetDownloadTaskDetail.BackupSetDownloadTargetType = _ctx.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDownloadTargetType");
+				backupSetDownloadTaskDetail.BackupGatewayId = _ctx.LongValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupGatewayId");
+				backupSetDownloadTaskDetail.BackupSetDownloadIntranetUrl = _ctx.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDownloadIntranetUrl");
+				backupSetDownloadTaskDetail.BackupSetDownloadInternetUrl = _ctx.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].BackupSetDownloadInternetUrl");
+				backupSetDownloadTaskDetail.ErrMessage = _ctx.StringValue("DescribeBackupSetDownloadTaskList.Items["+ i +"].ErrMessage");
 
 				describeBackupSetDownloadTaskListResponse_items.Add(backupSetDownloadTaskDetail);
 			}

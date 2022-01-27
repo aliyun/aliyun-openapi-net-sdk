@@ -26,24 +26,24 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class DescribeAppEnvironmentDetailResponseUnmarshaller
     {
-        public static DescribeAppEnvironmentDetailResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAppEnvironmentDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAppEnvironmentDetailResponse describeAppEnvironmentDetailResponse = new DescribeAppEnvironmentDetailResponse();
 
-			describeAppEnvironmentDetailResponse.HttpResponse = context.HttpResponse;
-			describeAppEnvironmentDetailResponse.Code = context.IntegerValue("DescribeAppEnvironmentDetail.Code");
-			describeAppEnvironmentDetailResponse.RequestId = context.StringValue("DescribeAppEnvironmentDetail.RequestId");
-			describeAppEnvironmentDetailResponse.ErrMsg = context.StringValue("DescribeAppEnvironmentDetail.ErrMsg");
+			describeAppEnvironmentDetailResponse.HttpResponse = _ctx.HttpResponse;
+			describeAppEnvironmentDetailResponse.Code = _ctx.IntegerValue("DescribeAppEnvironmentDetail.Code");
+			describeAppEnvironmentDetailResponse.RequestId = _ctx.StringValue("DescribeAppEnvironmentDetail.RequestId");
+			describeAppEnvironmentDetailResponse.ErrMsg = _ctx.StringValue("DescribeAppEnvironmentDetail.ErrMsg");
 
 			DescribeAppEnvironmentDetailResponse.DescribeAppEnvironmentDetail_Result result = new DescribeAppEnvironmentDetailResponse.DescribeAppEnvironmentDetail_Result();
-			result.AppId = context.LongValue("DescribeAppEnvironmentDetail.Result.AppId");
-			result.EnvId = context.LongValue("DescribeAppEnvironmentDetail.Result.EnvId");
-			result.EnvName = context.StringValue("DescribeAppEnvironmentDetail.Result.EnvName");
-			result.EnvType = context.IntegerValue("DescribeAppEnvironmentDetail.Result.EnvType");
-			result.EnvTypeName = context.StringValue("DescribeAppEnvironmentDetail.Result.EnvTypeName");
-			result.AppSchemaId = context.LongValue("DescribeAppEnvironmentDetail.Result.AppSchemaId");
-			result.Region = context.StringValue("DescribeAppEnvironmentDetail.Result.Region");
-			result.Replicas = context.IntegerValue("DescribeAppEnvironmentDetail.Result.Replicas");
+			result.AppId = _ctx.LongValue("DescribeAppEnvironmentDetail.Result.AppId");
+			result.EnvId = _ctx.LongValue("DescribeAppEnvironmentDetail.Result.EnvId");
+			result.EnvName = _ctx.StringValue("DescribeAppEnvironmentDetail.Result.EnvName");
+			result.EnvType = _ctx.IntegerValue("DescribeAppEnvironmentDetail.Result.EnvType");
+			result.EnvTypeName = _ctx.StringValue("DescribeAppEnvironmentDetail.Result.EnvTypeName");
+			result.AppSchemaId = _ctx.LongValue("DescribeAppEnvironmentDetail.Result.AppSchemaId");
+			result.Region = _ctx.StringValue("DescribeAppEnvironmentDetail.Result.Region");
+			result.Replicas = _ctx.IntegerValue("DescribeAppEnvironmentDetail.Result.Replicas");
 			describeAppEnvironmentDetailResponse.Result = result;
         
 			return describeAppEnvironmentDetailResponse;

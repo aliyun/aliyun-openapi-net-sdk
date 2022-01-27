@@ -26,12 +26,12 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class CreateQueueResponseUnmarshaller
     {
-        public static CreateQueueResponse Unmarshall(UnmarshallerContext context)
+        public static CreateQueueResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateQueueResponse createQueueResponse = new CreateQueueResponse();
 
-			createQueueResponse.HttpResponse = context.HttpResponse;
-			createQueueResponse.RequestId = context.StringValue("CreateQueue.RequestId");
+			createQueueResponse.HttpResponse = _ctx.HttpResponse;
+			createQueueResponse.RequestId = _ctx.StringValue("CreateQueue.RequestId");
         
 			return createQueueResponse;
         }

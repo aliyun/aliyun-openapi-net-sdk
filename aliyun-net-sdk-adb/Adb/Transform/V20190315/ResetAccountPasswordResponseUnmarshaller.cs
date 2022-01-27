@@ -26,14 +26,14 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 {
     public class ResetAccountPasswordResponseUnmarshaller
     {
-        public static ResetAccountPasswordResponse Unmarshall(UnmarshallerContext context)
+        public static ResetAccountPasswordResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ResetAccountPasswordResponse resetAccountPasswordResponse = new ResetAccountPasswordResponse();
 
-			resetAccountPasswordResponse.HttpResponse = context.HttpResponse;
-			resetAccountPasswordResponse.RequestId = context.StringValue("ResetAccountPassword.RequestId");
-			resetAccountPasswordResponse.DBClusterId = context.StringValue("ResetAccountPassword.DBClusterId");
-			resetAccountPasswordResponse.TaskId = context.IntegerValue("ResetAccountPassword.TaskId");
+			resetAccountPasswordResponse.HttpResponse = _ctx.HttpResponse;
+			resetAccountPasswordResponse.RequestId = _ctx.StringValue("ResetAccountPassword.RequestId");
+			resetAccountPasswordResponse.DBClusterId = _ctx.StringValue("ResetAccountPassword.DBClusterId");
+			resetAccountPasswordResponse.TaskId = _ctx.IntegerValue("ResetAccountPassword.TaskId");
         
 			return resetAccountPasswordResponse;
         }

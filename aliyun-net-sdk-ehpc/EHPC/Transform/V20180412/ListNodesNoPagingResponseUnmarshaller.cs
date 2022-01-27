@@ -26,50 +26,47 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class ListNodesNoPagingResponseUnmarshaller
     {
-        public static ListNodesNoPagingResponse Unmarshall(UnmarshallerContext context)
+        public static ListNodesNoPagingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListNodesNoPagingResponse listNodesNoPagingResponse = new ListNodesNoPagingResponse();
 
-			listNodesNoPagingResponse.HttpResponse = context.HttpResponse;
-			listNodesNoPagingResponse.RequestId = context.StringValue("ListNodesNoPaging.RequestId");
-			listNodesNoPagingResponse.TotalCount = context.IntegerValue("ListNodesNoPaging.TotalCount");
-			listNodesNoPagingResponse.PageNumber = context.IntegerValue("ListNodesNoPaging.PageNumber");
-			listNodesNoPagingResponse.PageSize = context.IntegerValue("ListNodesNoPaging.PageSize");
+			listNodesNoPagingResponse.HttpResponse = _ctx.HttpResponse;
+			listNodesNoPagingResponse.RequestId = _ctx.StringValue("ListNodesNoPaging.RequestId");
 
 			List<ListNodesNoPagingResponse.ListNodesNoPaging_NodeInfo> listNodesNoPagingResponse_nodes = new List<ListNodesNoPagingResponse.ListNodesNoPaging_NodeInfo>();
-			for (int i = 0; i < context.Length("ListNodesNoPaging.Nodes.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListNodesNoPaging.Nodes.Length"); i++) {
 				ListNodesNoPagingResponse.ListNodesNoPaging_NodeInfo nodeInfo = new ListNodesNoPagingResponse.ListNodesNoPaging_NodeInfo();
-				nodeInfo.Id = context.StringValue("ListNodesNoPaging.Nodes["+ i +"].Id");
-				nodeInfo.HostName = context.StringValue("ListNodesNoPaging.Nodes["+ i +"].HostName");
-				nodeInfo.RegionId = context.StringValue("ListNodesNoPaging.Nodes["+ i +"].RegionId");
-				nodeInfo.Status = context.StringValue("ListNodesNoPaging.Nodes["+ i +"].Status");
-				nodeInfo.Version = context.StringValue("ListNodesNoPaging.Nodes["+ i +"].Version");
-				nodeInfo.CreatedByEhpc = context.BooleanValue("ListNodesNoPaging.Nodes["+ i +"].CreatedByEhpc");
-				nodeInfo.AddTime = context.StringValue("ListNodesNoPaging.Nodes["+ i +"].AddTime");
-				nodeInfo.Expired = context.BooleanValue("ListNodesNoPaging.Nodes["+ i +"].Expired");
-				nodeInfo.ExpiredTime = context.StringValue("ListNodesNoPaging.Nodes["+ i +"].ExpiredTime");
-				nodeInfo.SpotStrategy = context.StringValue("ListNodesNoPaging.Nodes["+ i +"].SpotStrategy");
-				nodeInfo.LockReason = context.StringValue("ListNodesNoPaging.Nodes["+ i +"].LockReason");
-				nodeInfo.ImageOwnerAlias = context.StringValue("ListNodesNoPaging.Nodes["+ i +"].ImageOwnerAlias");
-				nodeInfo.ImageId = context.StringValue("ListNodesNoPaging.Nodes["+ i +"].ImageId");
-				nodeInfo.HtEnabled = context.BooleanValue("ListNodesNoPaging.Nodes["+ i +"].HtEnabled");
+				nodeInfo.Id = _ctx.StringValue("ListNodesNoPaging.Nodes["+ i +"].Id");
+				nodeInfo.HostName = _ctx.StringValue("ListNodesNoPaging.Nodes["+ i +"].HostName");
+				nodeInfo.Status = _ctx.StringValue("ListNodesNoPaging.Nodes["+ i +"].Status");
+				nodeInfo.Version = _ctx.StringValue("ListNodesNoPaging.Nodes["+ i +"].Version");
+				nodeInfo.CreatedByEhpc = _ctx.BooleanValue("ListNodesNoPaging.Nodes["+ i +"].CreatedByEhpc");
+				nodeInfo.AddTime = _ctx.StringValue("ListNodesNoPaging.Nodes["+ i +"].AddTime");
+				nodeInfo.Expired = _ctx.BooleanValue("ListNodesNoPaging.Nodes["+ i +"].Expired");
+				nodeInfo.ExpiredTime = _ctx.StringValue("ListNodesNoPaging.Nodes["+ i +"].ExpiredTime");
+				nodeInfo.SpotStrategy = _ctx.StringValue("ListNodesNoPaging.Nodes["+ i +"].SpotStrategy");
+				nodeInfo.LockReason = _ctx.StringValue("ListNodesNoPaging.Nodes["+ i +"].LockReason");
+				nodeInfo.ImageOwnerAlias = _ctx.StringValue("ListNodesNoPaging.Nodes["+ i +"].ImageOwnerAlias");
+				nodeInfo.ImageId = _ctx.StringValue("ListNodesNoPaging.Nodes["+ i +"].ImageId");
+				nodeInfo.HtEnabled = _ctx.BooleanValue("ListNodesNoPaging.Nodes["+ i +"].HtEnabled");
+				nodeInfo.InstanceType = _ctx.StringValue("ListNodesNoPaging.Nodes["+ i +"].InstanceType");
 
 				List<string> nodeInfo_roles = new List<string>();
-				for (int j = 0; j < context.Length("ListNodesNoPaging.Nodes["+ i +"].Roles.Length"); j++) {
-					nodeInfo_roles.Add(context.StringValue("ListNodesNoPaging.Nodes["+ i +"].Roles["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("ListNodesNoPaging.Nodes["+ i +"].Roles.Length"); j++) {
+					nodeInfo_roles.Add(_ctx.StringValue("ListNodesNoPaging.Nodes["+ i +"].Roles["+ j +"]"));
 				}
 				nodeInfo.Roles = nodeInfo_roles;
 
 				ListNodesNoPagingResponse.ListNodesNoPaging_NodeInfo.ListNodesNoPaging_TotalResources totalResources = new ListNodesNoPagingResponse.ListNodesNoPaging_NodeInfo.ListNodesNoPaging_TotalResources();
-				totalResources.Cpu = context.IntegerValue("ListNodesNoPaging.Nodes["+ i +"].TotalResources.Cpu");
-				totalResources.Memory = context.IntegerValue("ListNodesNoPaging.Nodes["+ i +"].TotalResources.Memory");
-				totalResources.Gpu = context.IntegerValue("ListNodesNoPaging.Nodes["+ i +"].TotalResources.Gpu");
+				totalResources.Cpu = _ctx.IntegerValue("ListNodesNoPaging.Nodes["+ i +"].TotalResources.Cpu");
+				totalResources.Memory = _ctx.IntegerValue("ListNodesNoPaging.Nodes["+ i +"].TotalResources.Memory");
+				totalResources.Gpu = _ctx.IntegerValue("ListNodesNoPaging.Nodes["+ i +"].TotalResources.Gpu");
 				nodeInfo.TotalResources = totalResources;
 
 				ListNodesNoPagingResponse.ListNodesNoPaging_NodeInfo.ListNodesNoPaging_UsedResources usedResources = new ListNodesNoPagingResponse.ListNodesNoPaging_NodeInfo.ListNodesNoPaging_UsedResources();
-				usedResources.Cpu = context.IntegerValue("ListNodesNoPaging.Nodes["+ i +"].UsedResources.Cpu");
-				usedResources.Memory = context.IntegerValue("ListNodesNoPaging.Nodes["+ i +"].UsedResources.Memory");
-				usedResources.Gpu = context.IntegerValue("ListNodesNoPaging.Nodes["+ i +"].UsedResources.Gpu");
+				usedResources.Cpu = _ctx.IntegerValue("ListNodesNoPaging.Nodes["+ i +"].UsedResources.Cpu");
+				usedResources.Memory = _ctx.IntegerValue("ListNodesNoPaging.Nodes["+ i +"].UsedResources.Memory");
+				usedResources.Gpu = _ctx.IntegerValue("ListNodesNoPaging.Nodes["+ i +"].UsedResources.Gpu");
 				nodeInfo.UsedResources = usedResources;
 
 				listNodesNoPagingResponse_nodes.Add(nodeInfo);

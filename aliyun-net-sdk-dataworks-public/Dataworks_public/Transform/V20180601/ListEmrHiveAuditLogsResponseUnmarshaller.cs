@@ -26,32 +26,32 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20180601
 {
     public class ListEmrHiveAuditLogsResponseUnmarshaller
     {
-        public static ListEmrHiveAuditLogsResponse Unmarshall(UnmarshallerContext context)
+        public static ListEmrHiveAuditLogsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListEmrHiveAuditLogsResponse listEmrHiveAuditLogsResponse = new ListEmrHiveAuditLogsResponse();
 
-			listEmrHiveAuditLogsResponse.HttpResponse = context.HttpResponse;
-			listEmrHiveAuditLogsResponse.ErrorCode = context.StringValue("ListEmrHiveAuditLogs.ErrorCode");
-			listEmrHiveAuditLogsResponse.ErrorMessage = context.StringValue("ListEmrHiveAuditLogs.ErrorMessage");
-			listEmrHiveAuditLogsResponse.RequestId = context.StringValue("ListEmrHiveAuditLogs.RequestId");
+			listEmrHiveAuditLogsResponse.HttpResponse = _ctx.HttpResponse;
+			listEmrHiveAuditLogsResponse.ErrorCode = _ctx.StringValue("ListEmrHiveAuditLogs.ErrorCode");
+			listEmrHiveAuditLogsResponse.ErrorMessage = _ctx.StringValue("ListEmrHiveAuditLogs.ErrorMessage");
+			listEmrHiveAuditLogsResponse.RequestId = _ctx.StringValue("ListEmrHiveAuditLogs.RequestId");
 
 			ListEmrHiveAuditLogsResponse.ListEmrHiveAuditLogs_Data data = new ListEmrHiveAuditLogsResponse.ListEmrHiveAuditLogs_Data();
-			data.PageNumber = context.IntegerValue("ListEmrHiveAuditLogs.Data.PageNumber");
-			data.PageSize = context.IntegerValue("ListEmrHiveAuditLogs.Data.PageSize");
-			data.TotalCount = context.IntegerValue("ListEmrHiveAuditLogs.Data.TotalCount");
+			data.PageNumber = _ctx.IntegerValue("ListEmrHiveAuditLogs.Data.PageNumber");
+			data.PageSize = _ctx.IntegerValue("ListEmrHiveAuditLogs.Data.PageSize");
+			data.TotalCount = _ctx.IntegerValue("ListEmrHiveAuditLogs.Data.TotalCount");
 
 			List<ListEmrHiveAuditLogsResponse.ListEmrHiveAuditLogs_Data.ListEmrHiveAuditLogs_AuditLog> data_pagedData = new List<ListEmrHiveAuditLogsResponse.ListEmrHiveAuditLogs_Data.ListEmrHiveAuditLogs_AuditLog>();
-			for (int i = 0; i < context.Length("ListEmrHiveAuditLogs.Data.PagedData.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListEmrHiveAuditLogs.Data.PagedData.Length"); i++) {
 				ListEmrHiveAuditLogsResponse.ListEmrHiveAuditLogs_Data.ListEmrHiveAuditLogs_AuditLog auditLog = new ListEmrHiveAuditLogsResponse.ListEmrHiveAuditLogs_Data.ListEmrHiveAuditLogs_AuditLog();
-				auditLog.Table = context.StringValue("ListEmrHiveAuditLogs.Data.PagedData["+ i +"].Table");
-				auditLog.Database = context.StringValue("ListEmrHiveAuditLogs.Data.PagedData["+ i +"].Database");
-				auditLog.User = context.StringValue("ListEmrHiveAuditLogs.Data.PagedData["+ i +"].User");
-				auditLog.Operation = context.StringValue("ListEmrHiveAuditLogs.Data.PagedData["+ i +"].Operation");
-				auditLog.EventTime = context.LongValue("ListEmrHiveAuditLogs.Data.PagedData["+ i +"].EventTime");
+				auditLog.Table = _ctx.StringValue("ListEmrHiveAuditLogs.Data.PagedData["+ i +"].Table");
+				auditLog.Database = _ctx.StringValue("ListEmrHiveAuditLogs.Data.PagedData["+ i +"].Database");
+				auditLog.User = _ctx.StringValue("ListEmrHiveAuditLogs.Data.PagedData["+ i +"].User");
+				auditLog.Operation = _ctx.StringValue("ListEmrHiveAuditLogs.Data.PagedData["+ i +"].Operation");
+				auditLog.EventTime = _ctx.LongValue("ListEmrHiveAuditLogs.Data.PagedData["+ i +"].EventTime");
 
 				List<string> auditLog_groups = new List<string>();
-				for (int j = 0; j < context.Length("ListEmrHiveAuditLogs.Data.PagedData["+ i +"].Groups.Length"); j++) {
-					auditLog_groups.Add(context.StringValue("ListEmrHiveAuditLogs.Data.PagedData["+ i +"].Groups["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("ListEmrHiveAuditLogs.Data.PagedData["+ i +"].Groups.Length"); j++) {
+					auditLog_groups.Add(_ctx.StringValue("ListEmrHiveAuditLogs.Data.PagedData["+ i +"].Groups["+ j +"]"));
 				}
 				auditLog.Groups = auditLog_groups;
 

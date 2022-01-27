@@ -103,6 +103,12 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string description;
 
+		private string xForwardedFor_SLBPORT;
+
+		private string xForwardedFor_ClientSrcPort;
+
+		private int? forwardCode;
+
 		private List<DescribeLoadBalancerHTTPListenerAttribute_Rule> rules;
 
 		private List<string> aclIds;
@@ -572,6 +578,42 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				description = value;
+			}
+		}
+
+		public string XForwardedFor_SLBPORT
+		{
+			get
+			{
+				return xForwardedFor_SLBPORT;
+			}
+			set	
+			{
+				xForwardedFor_SLBPORT = value;
+			}
+		}
+
+		public string XForwardedFor_ClientSrcPort
+		{
+			get
+			{
+				return xForwardedFor_ClientSrcPort;
+			}
+			set	
+			{
+				xForwardedFor_ClientSrcPort = value;
+			}
+		}
+
+		public int? ForwardCode
+		{
+			get
+			{
+				return forwardCode;
+			}
+			set	
+			{
+				forwardCode = value;
 			}
 		}
 

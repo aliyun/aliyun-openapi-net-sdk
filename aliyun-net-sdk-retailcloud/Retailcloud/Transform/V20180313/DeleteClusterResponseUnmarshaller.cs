@@ -26,18 +26,18 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class DeleteClusterResponseUnmarshaller
     {
-        public static DeleteClusterResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteClusterResponse deleteClusterResponse = new DeleteClusterResponse();
 
-			deleteClusterResponse.HttpResponse = context.HttpResponse;
-			deleteClusterResponse.Code = context.IntegerValue("DeleteCluster.Code");
-			deleteClusterResponse.ErrMsg = context.StringValue("DeleteCluster.ErrMsg");
-			deleteClusterResponse.RequestId = context.StringValue("DeleteCluster.RequestId");
-			deleteClusterResponse.Success = context.BooleanValue("DeleteCluster.Success");
+			deleteClusterResponse.HttpResponse = _ctx.HttpResponse;
+			deleteClusterResponse.Code = _ctx.IntegerValue("DeleteCluster.Code");
+			deleteClusterResponse.ErrMsg = _ctx.StringValue("DeleteCluster.ErrMsg");
+			deleteClusterResponse.RequestId = _ctx.StringValue("DeleteCluster.RequestId");
+			deleteClusterResponse.Success = _ctx.BooleanValue("DeleteCluster.Success");
 
 			DeleteClusterResponse.DeleteCluster_Result result = new DeleteClusterResponse.DeleteCluster_Result();
-			result.Nonsense = context.IntegerValue("DeleteCluster.Result.Nonsense");
+			result.Nonsense = _ctx.IntegerValue("DeleteCluster.Result.Nonsense");
 			deleteClusterResponse.Result = result;
         
 			return deleteClusterResponse;

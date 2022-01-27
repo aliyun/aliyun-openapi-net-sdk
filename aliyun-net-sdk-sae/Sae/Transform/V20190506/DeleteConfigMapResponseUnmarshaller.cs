@@ -26,20 +26,20 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class DeleteConfigMapResponseUnmarshaller
     {
-        public static DeleteConfigMapResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteConfigMapResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteConfigMapResponse deleteConfigMapResponse = new DeleteConfigMapResponse();
 
-			deleteConfigMapResponse.HttpResponse = context.HttpResponse;
-			deleteConfigMapResponse.RequestId = context.StringValue("DeleteConfigMap.RequestId");
-			deleteConfigMapResponse.Message = context.StringValue("DeleteConfigMap.Message");
-			deleteConfigMapResponse.Code = context.StringValue("DeleteConfigMap.Code");
-			deleteConfigMapResponse.ErrorCode = context.StringValue("DeleteConfigMap.ErrorCode");
-			deleteConfigMapResponse.TraceId = context.StringValue("DeleteConfigMap.TraceId");
-			deleteConfigMapResponse.Success = context.BooleanValue("DeleteConfigMap.Success");
+			deleteConfigMapResponse.HttpResponse = _ctx.HttpResponse;
+			deleteConfigMapResponse.RequestId = _ctx.StringValue("DeleteConfigMap.RequestId");
+			deleteConfigMapResponse.Message = _ctx.StringValue("DeleteConfigMap.Message");
+			deleteConfigMapResponse.Code = _ctx.StringValue("DeleteConfigMap.Code");
+			deleteConfigMapResponse.ErrorCode = _ctx.StringValue("DeleteConfigMap.ErrorCode");
+			deleteConfigMapResponse.TraceId = _ctx.StringValue("DeleteConfigMap.TraceId");
+			deleteConfigMapResponse.Success = _ctx.BooleanValue("DeleteConfigMap.Success");
 
 			DeleteConfigMapResponse.DeleteConfigMap_Data data = new DeleteConfigMapResponse.DeleteConfigMap_Data();
-			data.ConfigMapId = context.LongValue("DeleteConfigMap.Data.ConfigMapId");
+			data.ConfigMapId = _ctx.LongValue("DeleteConfigMap.Data.ConfigMapId");
 			deleteConfigMapResponse.Data = data;
         
 			return deleteConfigMapResponse;

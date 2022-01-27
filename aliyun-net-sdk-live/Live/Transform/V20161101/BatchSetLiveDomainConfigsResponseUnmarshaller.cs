@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class BatchSetLiveDomainConfigsResponseUnmarshaller
     {
-        public static BatchSetLiveDomainConfigsResponse Unmarshall(UnmarshallerContext context)
+        public static BatchSetLiveDomainConfigsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchSetLiveDomainConfigsResponse batchSetLiveDomainConfigsResponse = new BatchSetLiveDomainConfigsResponse();
 
-			batchSetLiveDomainConfigsResponse.HttpResponse = context.HttpResponse;
-			batchSetLiveDomainConfigsResponse.RequestId = context.StringValue("BatchSetLiveDomainConfigs.RequestId");
+			batchSetLiveDomainConfigsResponse.HttpResponse = _ctx.HttpResponse;
+			batchSetLiveDomainConfigsResponse.RequestId = _ctx.StringValue("BatchSetLiveDomainConfigs.RequestId");
         
 			return batchSetLiveDomainConfigsResponse;
         }

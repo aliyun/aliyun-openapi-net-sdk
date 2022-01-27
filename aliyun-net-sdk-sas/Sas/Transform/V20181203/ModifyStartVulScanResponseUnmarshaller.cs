@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class ModifyStartVulScanResponseUnmarshaller
     {
-        public static ModifyStartVulScanResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyStartVulScanResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyStartVulScanResponse modifyStartVulScanResponse = new ModifyStartVulScanResponse();
 
-			modifyStartVulScanResponse.HttpResponse = context.HttpResponse;
-			modifyStartVulScanResponse.RequestId = context.StringValue("ModifyStartVulScan.RequestId");
+			modifyStartVulScanResponse.HttpResponse = _ctx.HttpResponse;
+			modifyStartVulScanResponse.RequestId = _ctx.StringValue("ModifyStartVulScan.RequestId");
         
 			return modifyStartVulScanResponse;
         }

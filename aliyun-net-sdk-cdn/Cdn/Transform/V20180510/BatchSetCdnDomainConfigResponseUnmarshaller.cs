@@ -32,6 +32,17 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 
 			batchSetCdnDomainConfigResponse.HttpResponse = _ctx.HttpResponse;
 			batchSetCdnDomainConfigResponse.RequestId = _ctx.StringValue("BatchSetCdnDomainConfig.RequestId");
+
+			List<BatchSetCdnDomainConfigResponse.BatchSetCdnDomainConfig_DomainConfigModel> batchSetCdnDomainConfigResponse_domainConfigList = new List<BatchSetCdnDomainConfigResponse.BatchSetCdnDomainConfig_DomainConfigModel>();
+			for (int i = 0; i < _ctx.Length("BatchSetCdnDomainConfig.DomainConfigList.Length"); i++) {
+				BatchSetCdnDomainConfigResponse.BatchSetCdnDomainConfig_DomainConfigModel domainConfigModel = new BatchSetCdnDomainConfigResponse.BatchSetCdnDomainConfig_DomainConfigModel();
+				domainConfigModel.DomainName = _ctx.StringValue("BatchSetCdnDomainConfig.DomainConfigList["+ i +"].DomainName");
+				domainConfigModel.ConfigId = _ctx.LongValue("BatchSetCdnDomainConfig.DomainConfigList["+ i +"].ConfigId");
+				domainConfigModel.FunctionName = _ctx.StringValue("BatchSetCdnDomainConfig.DomainConfigList["+ i +"].FunctionName");
+
+				batchSetCdnDomainConfigResponse_domainConfigList.Add(domainConfigModel);
+			}
+			batchSetCdnDomainConfigResponse.DomainConfigList = batchSetCdnDomainConfigResponse_domainConfigList;
         
 			return batchSetCdnDomainConfigResponse;
         }

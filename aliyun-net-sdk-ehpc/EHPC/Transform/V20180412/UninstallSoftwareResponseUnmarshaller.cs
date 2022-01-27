@@ -26,12 +26,12 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class UninstallSoftwareResponseUnmarshaller
     {
-        public static UninstallSoftwareResponse Unmarshall(UnmarshallerContext context)
+        public static UninstallSoftwareResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UninstallSoftwareResponse uninstallSoftwareResponse = new UninstallSoftwareResponse();
 
-			uninstallSoftwareResponse.HttpResponse = context.HttpResponse;
-			uninstallSoftwareResponse.RequestId = context.StringValue("UninstallSoftware.RequestId");
+			uninstallSoftwareResponse.HttpResponse = _ctx.HttpResponse;
+			uninstallSoftwareResponse.RequestId = _ctx.StringValue("UninstallSoftware.RequestId");
         
 			return uninstallSoftwareResponse;
         }

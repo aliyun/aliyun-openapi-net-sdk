@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -30,48 +31,31 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class DescribeCensRequest : RpcAcsRequest<DescribeCensResponse>
     {
         public DescribeCensRequest()
-            : base("Cbn", "2017-09-12", "DescribeCens", "cbn", "openAPI")
+            : base("Cbn", "2017-09-12", "DescribeCens")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
-		private List<Filter> filters;
-
 		private long? resourceOwnerId;
+
+		private int? pageNumber;
+
+		private int? pageSize;
+
+		private List<string> tags = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private int? pageSize;
-
-		private string action;
-
-		private List<Tag> tags;
-
 		private long? ownerId;
 
-		private int? pageNumber;
-
-		public List<Filter> Filters
-		{
-			get
-			{
-				return filters;
-			}
-
-			set
-			{
-				filters = value;
-				for (int i = 0; i < filters.Count; i++)
-				{
-					for (int j = 0; j < filters[i].Values.Count; j++)
-					{
-						DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Value." +(j + 1), filters[i].Values[j]);
-					}
-					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Key", filters[i].Key);
-				}
-			}
-		}
+		private List<Filter> filters = new List<Filter>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -83,6 +67,53 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
 			}
 		}
 
@@ -112,50 +143,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public List<Tag> Tags
-		{
-			get
-			{
-				return tags;
-			}
-
-			set
-			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -169,35 +156,42 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public int? PageNumber
+		public List<Filter> Filters
 		{
 			get
 			{
-				return pageNumber;
+				return filters;
 			}
-			set	
+
+			set
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				filters = value;
+				if(filters != null)
+				{
+					for (int depth1 = 0; depth1 < filters.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Filter." + (depth1 + 1), filters[depth1]);
+					}
+				}
 			}
 		}
 
-		public class Filter
+		public class Tag
 		{
 
-			private List<string> values;
+			private string value_;
 
 			private string key;
 
-			public List<string> Values
+			public string Value_
 			{
 				get
 				{
-					return values;
+					return value_;
 				}
 				set	
 				{
-					values = value;
+					value_ = value;
 				}
 			}
 
@@ -214,22 +208,22 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public class Tag
+		public class Filter
 		{
 
-			private string value_;
+			private List<string> values = new List<string>(){ };
 
 			private string key;
 
-			public string Value
+			public List<string> Values
 			{
 				get
 				{
-					return value_;
+					return values;
 				}
 				set	
 				{
-					value_ = value;
+					values = value;
 				}
 			}
 

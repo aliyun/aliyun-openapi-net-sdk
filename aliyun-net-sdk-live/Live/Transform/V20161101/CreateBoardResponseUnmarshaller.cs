@@ -26,13 +26,13 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class CreateBoardResponseUnmarshaller
     {
-        public static CreateBoardResponse Unmarshall(UnmarshallerContext context)
+        public static CreateBoardResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateBoardResponse createBoardResponse = new CreateBoardResponse();
 
-			createBoardResponse.HttpResponse = context.HttpResponse;
-			createBoardResponse.RequestId = context.StringValue("CreateBoard.RequestId");
-			createBoardResponse.BoardId = context.StringValue("CreateBoard.BoardId");
+			createBoardResponse.HttpResponse = _ctx.HttpResponse;
+			createBoardResponse.RequestId = _ctx.StringValue("CreateBoard.RequestId");
+			createBoardResponse.BoardId = _ctx.StringValue("CreateBoard.BoardId");
         
 			return createBoardResponse;
         }

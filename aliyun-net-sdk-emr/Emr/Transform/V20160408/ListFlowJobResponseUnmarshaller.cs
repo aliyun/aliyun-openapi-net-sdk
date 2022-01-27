@@ -26,45 +26,45 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListFlowJobResponseUnmarshaller
     {
-        public static ListFlowJobResponse Unmarshall(UnmarshallerContext context)
+        public static ListFlowJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListFlowJobResponse listFlowJobResponse = new ListFlowJobResponse();
 
-			listFlowJobResponse.HttpResponse = context.HttpResponse;
-			listFlowJobResponse.RequestId = context.StringValue("ListFlowJob.RequestId");
-			listFlowJobResponse.PageNumber = context.IntegerValue("ListFlowJob.PageNumber");
-			listFlowJobResponse.PageSize = context.IntegerValue("ListFlowJob.PageSize");
-			listFlowJobResponse.Total = context.IntegerValue("ListFlowJob.Total");
+			listFlowJobResponse.HttpResponse = _ctx.HttpResponse;
+			listFlowJobResponse.RequestId = _ctx.StringValue("ListFlowJob.RequestId");
+			listFlowJobResponse.PageNumber = _ctx.IntegerValue("ListFlowJob.PageNumber");
+			listFlowJobResponse.PageSize = _ctx.IntegerValue("ListFlowJob.PageSize");
+			listFlowJobResponse.Total = _ctx.IntegerValue("ListFlowJob.Total");
 
 			List<ListFlowJobResponse.ListFlowJob_Job> listFlowJobResponse_jobList = new List<ListFlowJobResponse.ListFlowJob_Job>();
-			for (int i = 0; i < context.Length("ListFlowJob.JobList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListFlowJob.JobList.Length"); i++) {
 				ListFlowJobResponse.ListFlowJob_Job job = new ListFlowJobResponse.ListFlowJob_Job();
-				job.Id = context.StringValue("ListFlowJob.JobList["+ i +"].Id");
-				job.GmtCreate = context.LongValue("ListFlowJob.JobList["+ i +"].GmtCreate");
-				job.GmtModified = context.LongValue("ListFlowJob.JobList["+ i +"].GmtModified");
-				job.Name = context.StringValue("ListFlowJob.JobList["+ i +"].Name");
-				job.Type = context.StringValue("ListFlowJob.JobList["+ i +"].Type");
-				job.Description = context.StringValue("ListFlowJob.JobList["+ i +"].Description");
-				job.FailAct = context.StringValue("ListFlowJob.JobList["+ i +"].FailAct");
-				job.MaxRetry = context.IntegerValue("ListFlowJob.JobList["+ i +"].MaxRetry");
-				job.RetryInterval = context.LongValue("ListFlowJob.JobList["+ i +"].RetryInterval");
-				job._Params = context.StringValue("ListFlowJob.JobList["+ i +"].Params");
-				job.ParamConf = context.StringValue("ListFlowJob.JobList["+ i +"].ParamConf");
-				job.CustomVariables = context.StringValue("ListFlowJob.JobList["+ i +"].CustomVariables");
-				job.EnvConf = context.StringValue("ListFlowJob.JobList["+ i +"].EnvConf");
-				job.RunConf = context.StringValue("ListFlowJob.JobList["+ i +"].RunConf");
-				job.MonitorConf = context.StringValue("ListFlowJob.JobList["+ i +"].MonitorConf");
-				job.CategoryId = context.StringValue("ListFlowJob.JobList["+ i +"].CategoryId");
-				job.Mode = context.StringValue("ListFlowJob.JobList["+ i +"].Mode");
-				job.Adhoc = context.StringValue("ListFlowJob.JobList["+ i +"].Adhoc");
-				job.AlertConf = context.StringValue("ListFlowJob.JobList["+ i +"].AlertConf");
-				job.LastInstanceDetail = context.StringValue("ListFlowJob.JobList["+ i +"].LastInstanceDetail");
+				job.Id = _ctx.StringValue("ListFlowJob.JobList["+ i +"].Id");
+				job.GmtCreate = _ctx.LongValue("ListFlowJob.JobList["+ i +"].GmtCreate");
+				job.GmtModified = _ctx.LongValue("ListFlowJob.JobList["+ i +"].GmtModified");
+				job.Name = _ctx.StringValue("ListFlowJob.JobList["+ i +"].Name");
+				job.Type = _ctx.StringValue("ListFlowJob.JobList["+ i +"].Type");
+				job.Description = _ctx.StringValue("ListFlowJob.JobList["+ i +"].Description");
+				job.FailAct = _ctx.StringValue("ListFlowJob.JobList["+ i +"].FailAct");
+				job.MaxRetry = _ctx.IntegerValue("ListFlowJob.JobList["+ i +"].MaxRetry");
+				job.RetryInterval = _ctx.LongValue("ListFlowJob.JobList["+ i +"].RetryInterval");
+				job._Params = _ctx.StringValue("ListFlowJob.JobList["+ i +"].Params");
+				job.ParamConf = _ctx.StringValue("ListFlowJob.JobList["+ i +"].ParamConf");
+				job.CustomVariables = _ctx.StringValue("ListFlowJob.JobList["+ i +"].CustomVariables");
+				job.EnvConf = _ctx.StringValue("ListFlowJob.JobList["+ i +"].EnvConf");
+				job.RunConf = _ctx.StringValue("ListFlowJob.JobList["+ i +"].RunConf");
+				job.MonitorConf = _ctx.StringValue("ListFlowJob.JobList["+ i +"].MonitorConf");
+				job.CategoryId = _ctx.StringValue("ListFlowJob.JobList["+ i +"].CategoryId");
+				job.Mode = _ctx.StringValue("ListFlowJob.JobList["+ i +"].mode");
+				job.Adhoc = _ctx.StringValue("ListFlowJob.JobList["+ i +"].Adhoc");
+				job.AlertConf = _ctx.StringValue("ListFlowJob.JobList["+ i +"].AlertConf");
+				job.LastInstanceDetail = _ctx.StringValue("ListFlowJob.JobList["+ i +"].LastInstanceDetail");
 
 				List<ListFlowJobResponse.ListFlowJob_Job.ListFlowJob_Resource> job_resourceList = new List<ListFlowJobResponse.ListFlowJob_Job.ListFlowJob_Resource>();
-				for (int j = 0; j < context.Length("ListFlowJob.JobList["+ i +"].ResourceList.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("ListFlowJob.JobList["+ i +"].ResourceList.Length"); j++) {
 					ListFlowJobResponse.ListFlowJob_Job.ListFlowJob_Resource resource = new ListFlowJobResponse.ListFlowJob_Job.ListFlowJob_Resource();
-					resource.Path = context.StringValue("ListFlowJob.JobList["+ i +"].ResourceList["+ j +"].Path");
-					resource.Alias = context.StringValue("ListFlowJob.JobList["+ i +"].ResourceList["+ j +"].Alias");
+					resource.Path = _ctx.StringValue("ListFlowJob.JobList["+ i +"].ResourceList["+ j +"].Path");
+					resource.Alias = _ctx.StringValue("ListFlowJob.JobList["+ i +"].ResourceList["+ j +"].Alias");
 
 					job_resourceList.Add(resource);
 				}

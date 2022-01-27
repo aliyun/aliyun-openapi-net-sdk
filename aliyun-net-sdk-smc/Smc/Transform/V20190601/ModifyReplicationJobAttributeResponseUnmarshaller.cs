@@ -26,12 +26,12 @@ namespace Aliyun.Acs.smc.Transform.V20190601
 {
     public class ModifyReplicationJobAttributeResponseUnmarshaller
     {
-        public static ModifyReplicationJobAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyReplicationJobAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyReplicationJobAttributeResponse modifyReplicationJobAttributeResponse = new ModifyReplicationJobAttributeResponse();
 
-			modifyReplicationJobAttributeResponse.HttpResponse = context.HttpResponse;
-			modifyReplicationJobAttributeResponse.RequestId = context.StringValue("ModifyReplicationJobAttribute.RequestId");
+			modifyReplicationJobAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			modifyReplicationJobAttributeResponse.RequestId = _ctx.StringValue("ModifyReplicationJobAttribute.RequestId");
         
 			return modifyReplicationJobAttributeResponse;
         }

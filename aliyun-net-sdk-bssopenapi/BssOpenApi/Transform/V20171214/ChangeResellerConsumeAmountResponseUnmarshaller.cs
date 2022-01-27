@@ -26,16 +26,16 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class ChangeResellerConsumeAmountResponseUnmarshaller
     {
-        public static ChangeResellerConsumeAmountResponse Unmarshall(UnmarshallerContext context)
+        public static ChangeResellerConsumeAmountResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ChangeResellerConsumeAmountResponse changeResellerConsumeAmountResponse = new ChangeResellerConsumeAmountResponse();
 
-			changeResellerConsumeAmountResponse.HttpResponse = context.HttpResponse;
-			changeResellerConsumeAmountResponse.RequestId = context.StringValue("ChangeResellerConsumeAmount.RequestId");
-			changeResellerConsumeAmountResponse.Code = context.StringValue("ChangeResellerConsumeAmount.Code");
-			changeResellerConsumeAmountResponse.Message = context.StringValue("ChangeResellerConsumeAmount.Message");
-			changeResellerConsumeAmountResponse.Success = context.BooleanValue("ChangeResellerConsumeAmount.Success");
-			changeResellerConsumeAmountResponse.Data = context.StringValue("ChangeResellerConsumeAmount.Data");
+			changeResellerConsumeAmountResponse.HttpResponse = _ctx.HttpResponse;
+			changeResellerConsumeAmountResponse.RequestId = _ctx.StringValue("ChangeResellerConsumeAmount.RequestId");
+			changeResellerConsumeAmountResponse.Code = _ctx.StringValue("ChangeResellerConsumeAmount.Code");
+			changeResellerConsumeAmountResponse.Message = _ctx.StringValue("ChangeResellerConsumeAmount.Message");
+			changeResellerConsumeAmountResponse.Success = _ctx.BooleanValue("ChangeResellerConsumeAmount.Success");
+			changeResellerConsumeAmountResponse.Data = _ctx.StringValue("ChangeResellerConsumeAmount.Data");
         
 			return changeResellerConsumeAmountResponse;
         }

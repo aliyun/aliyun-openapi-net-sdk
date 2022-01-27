@@ -26,35 +26,35 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 {
     public class DescribeDcdnDomainMultiUsageDataResponseUnmarshaller
     {
-        public static DescribeDcdnDomainMultiUsageDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDcdnDomainMultiUsageDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDcdnDomainMultiUsageDataResponse describeDcdnDomainMultiUsageDataResponse = new DescribeDcdnDomainMultiUsageDataResponse();
 
-			describeDcdnDomainMultiUsageDataResponse.HttpResponse = context.HttpResponse;
-			describeDcdnDomainMultiUsageDataResponse.RequestId = context.StringValue("DescribeDcdnDomainMultiUsageData.RequestId");
-			describeDcdnDomainMultiUsageDataResponse.StartTime = context.StringValue("DescribeDcdnDomainMultiUsageData.StartTime");
-			describeDcdnDomainMultiUsageDataResponse.EndTime = context.StringValue("DescribeDcdnDomainMultiUsageData.EndTime");
+			describeDcdnDomainMultiUsageDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDcdnDomainMultiUsageDataResponse.RequestId = _ctx.StringValue("DescribeDcdnDomainMultiUsageData.RequestId");
+			describeDcdnDomainMultiUsageDataResponse.StartTime = _ctx.StringValue("DescribeDcdnDomainMultiUsageData.StartTime");
+			describeDcdnDomainMultiUsageDataResponse.EndTime = _ctx.StringValue("DescribeDcdnDomainMultiUsageData.EndTime");
 
 			List<DescribeDcdnDomainMultiUsageDataResponse.DescribeDcdnDomainMultiUsageData_RequestDataModule> describeDcdnDomainMultiUsageDataResponse_requestPerInterval = new List<DescribeDcdnDomainMultiUsageDataResponse.DescribeDcdnDomainMultiUsageData_RequestDataModule>();
-			for (int i = 0; i < context.Length("DescribeDcdnDomainMultiUsageData.RequestPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDcdnDomainMultiUsageData.RequestPerInterval.Length"); i++) {
 				DescribeDcdnDomainMultiUsageDataResponse.DescribeDcdnDomainMultiUsageData_RequestDataModule requestDataModule = new DescribeDcdnDomainMultiUsageDataResponse.DescribeDcdnDomainMultiUsageData_RequestDataModule();
-				requestDataModule.TimeStamp = context.StringValue("DescribeDcdnDomainMultiUsageData.RequestPerInterval["+ i +"].TimeStamp");
-				requestDataModule.Domain = context.StringValue("DescribeDcdnDomainMultiUsageData.RequestPerInterval["+ i +"].Domain");
-				requestDataModule.Request = context.LongValue("DescribeDcdnDomainMultiUsageData.RequestPerInterval["+ i +"].Request");
-				requestDataModule.Type = context.StringValue("DescribeDcdnDomainMultiUsageData.RequestPerInterval["+ i +"].Type");
+				requestDataModule.TimeStamp = _ctx.StringValue("DescribeDcdnDomainMultiUsageData.RequestPerInterval["+ i +"].TimeStamp");
+				requestDataModule.Domain = _ctx.StringValue("DescribeDcdnDomainMultiUsageData.RequestPerInterval["+ i +"].Domain");
+				requestDataModule.Request = _ctx.LongValue("DescribeDcdnDomainMultiUsageData.RequestPerInterval["+ i +"].Request");
+				requestDataModule.Type = _ctx.StringValue("DescribeDcdnDomainMultiUsageData.RequestPerInterval["+ i +"].Type");
 
 				describeDcdnDomainMultiUsageDataResponse_requestPerInterval.Add(requestDataModule);
 			}
 			describeDcdnDomainMultiUsageDataResponse.RequestPerInterval = describeDcdnDomainMultiUsageDataResponse_requestPerInterval;
 
 			List<DescribeDcdnDomainMultiUsageDataResponse.DescribeDcdnDomainMultiUsageData_TrafficDataModule> describeDcdnDomainMultiUsageDataResponse_trafficPerInterval = new List<DescribeDcdnDomainMultiUsageDataResponse.DescribeDcdnDomainMultiUsageData_TrafficDataModule>();
-			for (int i = 0; i < context.Length("DescribeDcdnDomainMultiUsageData.TrafficPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDcdnDomainMultiUsageData.TrafficPerInterval.Length"); i++) {
 				DescribeDcdnDomainMultiUsageDataResponse.DescribeDcdnDomainMultiUsageData_TrafficDataModule trafficDataModule = new DescribeDcdnDomainMultiUsageDataResponse.DescribeDcdnDomainMultiUsageData_TrafficDataModule();
-				trafficDataModule.TimeStamp = context.StringValue("DescribeDcdnDomainMultiUsageData.TrafficPerInterval["+ i +"].TimeStamp");
-				trafficDataModule.Domain = context.StringValue("DescribeDcdnDomainMultiUsageData.TrafficPerInterval["+ i +"].Domain");
-				trafficDataModule.Bps = context.FloatValue("DescribeDcdnDomainMultiUsageData.TrafficPerInterval["+ i +"].Bps");
-				trafficDataModule.Type = context.StringValue("DescribeDcdnDomainMultiUsageData.TrafficPerInterval["+ i +"].Type");
-				trafficDataModule.Area = context.StringValue("DescribeDcdnDomainMultiUsageData.TrafficPerInterval["+ i +"].Area");
+				trafficDataModule.TimeStamp = _ctx.StringValue("DescribeDcdnDomainMultiUsageData.TrafficPerInterval["+ i +"].TimeStamp");
+				trafficDataModule.Domain = _ctx.StringValue("DescribeDcdnDomainMultiUsageData.TrafficPerInterval["+ i +"].Domain");
+				trafficDataModule.Bps = _ctx.FloatValue("DescribeDcdnDomainMultiUsageData.TrafficPerInterval["+ i +"].Bps");
+				trafficDataModule.Type = _ctx.StringValue("DescribeDcdnDomainMultiUsageData.TrafficPerInterval["+ i +"].Type");
+				trafficDataModule.Area = _ctx.StringValue("DescribeDcdnDomainMultiUsageData.TrafficPerInterval["+ i +"].Area");
 
 				describeDcdnDomainMultiUsageDataResponse_trafficPerInterval.Add(trafficDataModule);
 			}

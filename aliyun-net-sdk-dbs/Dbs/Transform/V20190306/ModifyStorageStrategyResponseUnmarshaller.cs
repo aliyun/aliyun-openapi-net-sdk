@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 {
     public class ModifyStorageStrategyResponseUnmarshaller
     {
-        public static ModifyStorageStrategyResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyStorageStrategyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyStorageStrategyResponse modifyStorageStrategyResponse = new ModifyStorageStrategyResponse();
 
-			modifyStorageStrategyResponse.HttpResponse = context.HttpResponse;
-			modifyStorageStrategyResponse.Success = context.BooleanValue("ModifyStorageStrategy.Success");
-			modifyStorageStrategyResponse.ErrCode = context.StringValue("ModifyStorageStrategy.ErrCode");
-			modifyStorageStrategyResponse.ErrMessage = context.StringValue("ModifyStorageStrategy.ErrMessage");
-			modifyStorageStrategyResponse.HttpStatusCode = context.IntegerValue("ModifyStorageStrategy.HttpStatusCode");
-			modifyStorageStrategyResponse.RequestId = context.StringValue("ModifyStorageStrategy.RequestId");
-			modifyStorageStrategyResponse.BackupPlanId = context.StringValue("ModifyStorageStrategy.BackupPlanId");
-			modifyStorageStrategyResponse.NeedPrecheck = context.BooleanValue("ModifyStorageStrategy.NeedPrecheck");
+			modifyStorageStrategyResponse.HttpResponse = _ctx.HttpResponse;
+			modifyStorageStrategyResponse.Success = _ctx.BooleanValue("ModifyStorageStrategy.Success");
+			modifyStorageStrategyResponse.ErrCode = _ctx.StringValue("ModifyStorageStrategy.ErrCode");
+			modifyStorageStrategyResponse.ErrMessage = _ctx.StringValue("ModifyStorageStrategy.ErrMessage");
+			modifyStorageStrategyResponse.HttpStatusCode = _ctx.IntegerValue("ModifyStorageStrategy.HttpStatusCode");
+			modifyStorageStrategyResponse.RequestId = _ctx.StringValue("ModifyStorageStrategy.RequestId");
+			modifyStorageStrategyResponse.BackupPlanId = _ctx.StringValue("ModifyStorageStrategy.BackupPlanId");
+			modifyStorageStrategyResponse.NeedPrecheck = _ctx.BooleanValue("ModifyStorageStrategy.NeedPrecheck");
         
 			return modifyStorageStrategyResponse;
         }

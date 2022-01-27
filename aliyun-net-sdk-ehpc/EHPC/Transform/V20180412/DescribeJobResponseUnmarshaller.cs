@@ -26,15 +26,15 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class DescribeJobResponseUnmarshaller
     {
-        public static DescribeJobResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeJobResponse describeJobResponse = new DescribeJobResponse();
 
-			describeJobResponse.HttpResponse = context.HttpResponse;
-			describeJobResponse.RequestId = context.StringValue("DescribeJob.RequestId");
+			describeJobResponse.HttpResponse = _ctx.HttpResponse;
+			describeJobResponse.RequestId = _ctx.StringValue("DescribeJob.RequestId");
 
 			DescribeJobResponse.DescribeJob_Message message = new DescribeJobResponse.DescribeJob_Message();
-			message.JobInfo = context.StringValue("DescribeJob.Message.JobInfo");
+			message.JobInfo = _ctx.StringValue("DescribeJob.Message.JobInfo");
 			describeJobResponse.Message = message;
         
 			return describeJobResponse;

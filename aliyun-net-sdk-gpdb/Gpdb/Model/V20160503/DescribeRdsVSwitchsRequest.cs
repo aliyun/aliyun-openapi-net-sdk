@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.gpdb;
 using Aliyun.Acs.gpdb.Transform;
 using Aliyun.Acs.gpdb.Transform.V20160503;
 
@@ -30,8 +31,14 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
     public class DescribeRdsVSwitchsRequest : RpcAcsRequest<DescribeRdsVSwitchsResponse>
     {
         public DescribeRdsVSwitchsRequest()
-            : base("gpdb", "2016-05-03", "DescribeRdsVSwitchs", "gpdb", "openAPI")
+            : base("gpdb", "2016-05-03", "DescribeRdsVSwitchs")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -42,15 +49,11 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 
 		private string ownerAccount;
 
-		private string vpcId;
-
-		private string action;
-
-		private string zoneId;
-
 		private long? ownerId;
 
-		private string accessKeyId;
+		private string vpcId;
+
+		private string zoneId;
 
 		public long? ResourceOwnerId
 		{
@@ -104,45 +107,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -156,16 +120,29 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public string AccessKeyId
+		public string VpcId
 		{
 			get
 			{
-				return accessKeyId;
+				return vpcId;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 

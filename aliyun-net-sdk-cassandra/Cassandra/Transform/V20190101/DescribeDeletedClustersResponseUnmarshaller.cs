@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 {
     public class DescribeDeletedClustersResponseUnmarshaller
     {
-        public static DescribeDeletedClustersResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDeletedClustersResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDeletedClustersResponse describeDeletedClustersResponse = new DescribeDeletedClustersResponse();
 
-			describeDeletedClustersResponse.HttpResponse = context.HttpResponse;
-			describeDeletedClustersResponse.RequestId = context.StringValue("DescribeDeletedClusters.RequestId");
-			describeDeletedClustersResponse.TotalCount = context.LongValue("DescribeDeletedClusters.TotalCount");
-			describeDeletedClustersResponse.PageNumber = context.IntegerValue("DescribeDeletedClusters.PageNumber");
-			describeDeletedClustersResponse.PageSize = context.IntegerValue("DescribeDeletedClusters.PageSize");
+			describeDeletedClustersResponse.HttpResponse = _ctx.HttpResponse;
+			describeDeletedClustersResponse.RequestId = _ctx.StringValue("DescribeDeletedClusters.RequestId");
+			describeDeletedClustersResponse.TotalCount = _ctx.LongValue("DescribeDeletedClusters.TotalCount");
+			describeDeletedClustersResponse.PageNumber = _ctx.IntegerValue("DescribeDeletedClusters.PageNumber");
+			describeDeletedClustersResponse.PageSize = _ctx.IntegerValue("DescribeDeletedClusters.PageSize");
 
 			List<DescribeDeletedClustersResponse.DescribeDeletedClusters_Cluster> describeDeletedClustersResponse_clusters = new List<DescribeDeletedClustersResponse.DescribeDeletedClusters_Cluster>();
-			for (int i = 0; i < context.Length("DescribeDeletedClusters.Clusters.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDeletedClusters.Clusters.Length"); i++) {
 				DescribeDeletedClustersResponse.DescribeDeletedClusters_Cluster cluster = new DescribeDeletedClustersResponse.DescribeDeletedClusters_Cluster();
-				cluster.ClusterId = context.StringValue("DescribeDeletedClusters.Clusters["+ i +"].ClusterId");
-				cluster.ClusterName = context.StringValue("DescribeDeletedClusters.Clusters["+ i +"].ClusterName");
-				cluster.Status = context.StringValue("DescribeDeletedClusters.Clusters["+ i +"].Status");
-				cluster.PayType = context.StringValue("DescribeDeletedClusters.Clusters["+ i +"].PayType");
-				cluster.CreatedTime = context.StringValue("DescribeDeletedClusters.Clusters["+ i +"].CreatedTime");
-				cluster.ExpireTime = context.StringValue("DescribeDeletedClusters.Clusters["+ i +"].ExpireTime");
-				cluster.MajorVersion = context.StringValue("DescribeDeletedClusters.Clusters["+ i +"].MajorVersion");
-				cluster.MinorVersion = context.StringValue("DescribeDeletedClusters.Clusters["+ i +"].MinorVersion");
-				cluster.DataCenterCount = context.IntegerValue("DescribeDeletedClusters.Clusters["+ i +"].DataCenterCount");
+				cluster.ClusterId = _ctx.StringValue("DescribeDeletedClusters.Clusters["+ i +"].ClusterId");
+				cluster.ClusterName = _ctx.StringValue("DescribeDeletedClusters.Clusters["+ i +"].ClusterName");
+				cluster.Status = _ctx.StringValue("DescribeDeletedClusters.Clusters["+ i +"].Status");
+				cluster.PayType = _ctx.StringValue("DescribeDeletedClusters.Clusters["+ i +"].PayType");
+				cluster.CreatedTime = _ctx.StringValue("DescribeDeletedClusters.Clusters["+ i +"].CreatedTime");
+				cluster.ExpireTime = _ctx.StringValue("DescribeDeletedClusters.Clusters["+ i +"].ExpireTime");
+				cluster.MajorVersion = _ctx.StringValue("DescribeDeletedClusters.Clusters["+ i +"].MajorVersion");
+				cluster.MinorVersion = _ctx.StringValue("DescribeDeletedClusters.Clusters["+ i +"].MinorVersion");
+				cluster.DataCenterCount = _ctx.IntegerValue("DescribeDeletedClusters.Clusters["+ i +"].DataCenterCount");
 
 				describeDeletedClustersResponse_clusters.Add(cluster);
 			}

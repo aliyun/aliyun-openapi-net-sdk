@@ -160,6 +160,12 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string segmentInstanceId;
 
+			private string netmode;
+
+			private int? serviceManaged;
+
+			private string businessStatus;
+
 			private List<DescribeEipAddresses_LockReason> operationLocks;
 
 			private List<DescribeEipAddresses_Tag> tags;
@@ -535,6 +541,42 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					segmentInstanceId = value;
+				}
+			}
+
+			public string Netmode
+			{
+				get
+				{
+					return netmode;
+				}
+				set	
+				{
+					netmode = value;
+				}
+			}
+
+			public int? ServiceManaged
+			{
+				get
+				{
+					return serviceManaged;
+				}
+				set	
+				{
+					serviceManaged = value;
+				}
+			}
+
+			public string BusinessStatus
+			{
+				get
+				{
+					return businessStatus;
+				}
+				set	
+				{
+					businessStatus = value;
 				}
 			}
 

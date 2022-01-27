@@ -70,21 +70,21 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 		public class OnsTopicStatus_Data
 		{
 
-			private long? totalCount;
+			private int? perm;
 
 			private long? lastTimeStamp;
 
-			private int? perm;
+			private long? totalCount;
 
-			public long? TotalCount
+			public int? Perm
 			{
 				get
 				{
-					return totalCount;
+					return perm;
 				}
 				set	
 				{
-					totalCount = value;
+					perm = value;
 				}
 			}
 
@@ -100,15 +100,15 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
-			public int? Perm
+			public long? TotalCount
 			{
 				get
 				{
-					return perm;
+					return totalCount;
 				}
 				set	
 				{
-					perm = value;
+					totalCount = value;
 				}
 			}
 		}

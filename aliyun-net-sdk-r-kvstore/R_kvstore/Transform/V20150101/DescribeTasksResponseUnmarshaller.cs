@@ -26,29 +26,29 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class DescribeTasksResponseUnmarshaller
     {
-        public static DescribeTasksResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeTasksResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeTasksResponse describeTasksResponse = new DescribeTasksResponse();
 
-			describeTasksResponse.HttpResponse = context.HttpResponse;
-			describeTasksResponse.RequestId = context.StringValue("DescribeTasks.RequestId");
-			describeTasksResponse.PageNumber = context.IntegerValue("DescribeTasks.PageNumber");
-			describeTasksResponse.PageSize = context.IntegerValue("DescribeTasks.PageSize");
-			describeTasksResponse.TotalRecordCount = context.IntegerValue("DescribeTasks.TotalRecordCount");
+			describeTasksResponse.HttpResponse = _ctx.HttpResponse;
+			describeTasksResponse.RequestId = _ctx.StringValue("DescribeTasks.RequestId");
+			describeTasksResponse.PageNumber = _ctx.IntegerValue("DescribeTasks.PageNumber");
+			describeTasksResponse.PageSize = _ctx.IntegerValue("DescribeTasks.PageSize");
+			describeTasksResponse.TotalRecordCount = _ctx.IntegerValue("DescribeTasks.TotalRecordCount");
 
 			List<DescribeTasksResponse.DescribeTasks_TaskProgressInfo> describeTasksResponse_items = new List<DescribeTasksResponse.DescribeTasks_TaskProgressInfo>();
-			for (int i = 0; i < context.Length("DescribeTasks.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeTasks.Items.Length"); i++) {
 				DescribeTasksResponse.DescribeTasks_TaskProgressInfo taskProgressInfo = new DescribeTasksResponse.DescribeTasks_TaskProgressInfo();
-				taskProgressInfo.TaskId = context.StringValue("DescribeTasks.Items["+ i +"].TaskId");
-				taskProgressInfo.TaskAction = context.StringValue("DescribeTasks.Items["+ i +"].TaskAction");
-				taskProgressInfo.Status = context.StringValue("DescribeTasks.Items["+ i +"].Status");
-				taskProgressInfo.Progress = context.FloatValue("DescribeTasks.Items["+ i +"].Progress");
-				taskProgressInfo.BeginTime = context.StringValue("DescribeTasks.Items["+ i +"].BeginTime");
-				taskProgressInfo.FinishTime = context.StringValue("DescribeTasks.Items["+ i +"].FinishTime");
-				taskProgressInfo.StepsInfo = context.StringValue("DescribeTasks.Items["+ i +"].StepsInfo");
-				taskProgressInfo.Remain = context.IntegerValue("DescribeTasks.Items["+ i +"].Remain");
-				taskProgressInfo.StepProgressInfo = context.StringValue("DescribeTasks.Items["+ i +"].StepProgressInfo");
-				taskProgressInfo.CurrentStepName = context.StringValue("DescribeTasks.Items["+ i +"].CurrentStepName");
+				taskProgressInfo.TaskId = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskId");
+				taskProgressInfo.TaskAction = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskAction");
+				taskProgressInfo.Status = _ctx.StringValue("DescribeTasks.Items["+ i +"].Status");
+				taskProgressInfo.Progress = _ctx.FloatValue("DescribeTasks.Items["+ i +"].Progress");
+				taskProgressInfo.BeginTime = _ctx.StringValue("DescribeTasks.Items["+ i +"].BeginTime");
+				taskProgressInfo.FinishTime = _ctx.StringValue("DescribeTasks.Items["+ i +"].FinishTime");
+				taskProgressInfo.StepsInfo = _ctx.StringValue("DescribeTasks.Items["+ i +"].StepsInfo");
+				taskProgressInfo.Remain = _ctx.IntegerValue("DescribeTasks.Items["+ i +"].Remain");
+				taskProgressInfo.StepProgressInfo = _ctx.StringValue("DescribeTasks.Items["+ i +"].StepProgressInfo");
+				taskProgressInfo.CurrentStepName = _ctx.StringValue("DescribeTasks.Items["+ i +"].CurrentStepName");
 
 				describeTasksResponse_items.Add(taskProgressInfo);
 			}

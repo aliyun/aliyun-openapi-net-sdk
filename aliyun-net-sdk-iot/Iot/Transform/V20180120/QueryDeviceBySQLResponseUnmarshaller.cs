@@ -26,47 +26,57 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryDeviceBySQLResponseUnmarshaller
     {
-        public static QueryDeviceBySQLResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDeviceBySQLResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDeviceBySQLResponse queryDeviceBySQLResponse = new QueryDeviceBySQLResponse();
 
-			queryDeviceBySQLResponse.HttpResponse = context.HttpResponse;
-			queryDeviceBySQLResponse.RequestId = context.StringValue("QueryDeviceBySQL.RequestId");
-			queryDeviceBySQLResponse.Success = context.BooleanValue("QueryDeviceBySQL.Success");
-			queryDeviceBySQLResponse.Code = context.StringValue("QueryDeviceBySQL.Code");
-			queryDeviceBySQLResponse.ErrorMessage = context.StringValue("QueryDeviceBySQL.ErrorMessage");
-			queryDeviceBySQLResponse.TotalCount = context.LongValue("QueryDeviceBySQL.TotalCount");
+			queryDeviceBySQLResponse.HttpResponse = _ctx.HttpResponse;
+			queryDeviceBySQLResponse.RequestId = _ctx.StringValue("QueryDeviceBySQL.RequestId");
+			queryDeviceBySQLResponse.Success = _ctx.BooleanValue("QueryDeviceBySQL.Success");
+			queryDeviceBySQLResponse.Code = _ctx.StringValue("QueryDeviceBySQL.Code");
+			queryDeviceBySQLResponse.ErrorMessage = _ctx.StringValue("QueryDeviceBySQL.ErrorMessage");
+			queryDeviceBySQLResponse.TotalCount = _ctx.LongValue("QueryDeviceBySQL.TotalCount");
 
 			List<QueryDeviceBySQLResponse.QueryDeviceBySQL_SimpleDeviceSearchInfo> queryDeviceBySQLResponse_data = new List<QueryDeviceBySQLResponse.QueryDeviceBySQL_SimpleDeviceSearchInfo>();
-			for (int i = 0; i < context.Length("QueryDeviceBySQL.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryDeviceBySQL.Data.Length"); i++) {
 				QueryDeviceBySQLResponse.QueryDeviceBySQL_SimpleDeviceSearchInfo simpleDeviceSearchInfo = new QueryDeviceBySQLResponse.QueryDeviceBySQL_SimpleDeviceSearchInfo();
-				simpleDeviceSearchInfo.ProductKey = context.StringValue("QueryDeviceBySQL.Data["+ i +"].ProductKey");
-				simpleDeviceSearchInfo.DeviceName = context.StringValue("QueryDeviceBySQL.Data["+ i +"].DeviceName");
-				simpleDeviceSearchInfo.Nickname = context.StringValue("QueryDeviceBySQL.Data["+ i +"].Nickname");
-				simpleDeviceSearchInfo.Status = context.StringValue("QueryDeviceBySQL.Data["+ i +"].Status");
-				simpleDeviceSearchInfo.ActiveTime = context.StringValue("QueryDeviceBySQL.Data["+ i +"].ActiveTime");
-				simpleDeviceSearchInfo.IotId = context.StringValue("QueryDeviceBySQL.Data["+ i +"].IotId");
-				simpleDeviceSearchInfo.GmtCreate = context.StringValue("QueryDeviceBySQL.Data["+ i +"].GmtCreate");
-				simpleDeviceSearchInfo.GmtModified = context.StringValue("QueryDeviceBySQL.Data["+ i +"].GmtModified");
+				simpleDeviceSearchInfo.ProductKey = _ctx.StringValue("QueryDeviceBySQL.Data["+ i +"].ProductKey");
+				simpleDeviceSearchInfo.DeviceName = _ctx.StringValue("QueryDeviceBySQL.Data["+ i +"].DeviceName");
+				simpleDeviceSearchInfo.Nickname = _ctx.StringValue("QueryDeviceBySQL.Data["+ i +"].Nickname");
+				simpleDeviceSearchInfo.Status = _ctx.StringValue("QueryDeviceBySQL.Data["+ i +"].Status");
+				simpleDeviceSearchInfo.ActiveTime = _ctx.StringValue("QueryDeviceBySQL.Data["+ i +"].ActiveTime");
+				simpleDeviceSearchInfo.IotId = _ctx.StringValue("QueryDeviceBySQL.Data["+ i +"].IotId");
+				simpleDeviceSearchInfo.GmtCreate = _ctx.StringValue("QueryDeviceBySQL.Data["+ i +"].GmtCreate");
+				simpleDeviceSearchInfo.GmtModified = _ctx.StringValue("QueryDeviceBySQL.Data["+ i +"].GmtModified");
 
 				List<QueryDeviceBySQLResponse.QueryDeviceBySQL_SimpleDeviceSearchInfo.QueryDeviceBySQL_SimpleDeviceGroupInfo> simpleDeviceSearchInfo_groups = new List<QueryDeviceBySQLResponse.QueryDeviceBySQL_SimpleDeviceSearchInfo.QueryDeviceBySQL_SimpleDeviceGroupInfo>();
-				for (int j = 0; j < context.Length("QueryDeviceBySQL.Data["+ i +"].Groups.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("QueryDeviceBySQL.Data["+ i +"].Groups.Length"); j++) {
 					QueryDeviceBySQLResponse.QueryDeviceBySQL_SimpleDeviceSearchInfo.QueryDeviceBySQL_SimpleDeviceGroupInfo simpleDeviceGroupInfo = new QueryDeviceBySQLResponse.QueryDeviceBySQL_SimpleDeviceSearchInfo.QueryDeviceBySQL_SimpleDeviceGroupInfo();
-					simpleDeviceGroupInfo.GroupId = context.StringValue("QueryDeviceBySQL.Data["+ i +"].Groups["+ j +"].GroupId");
+					simpleDeviceGroupInfo.GroupId = _ctx.StringValue("QueryDeviceBySQL.Data["+ i +"].Groups["+ j +"].GroupId");
 
 					simpleDeviceSearchInfo_groups.Add(simpleDeviceGroupInfo);
 				}
 				simpleDeviceSearchInfo.Groups = simpleDeviceSearchInfo_groups;
 
 				List<QueryDeviceBySQLResponse.QueryDeviceBySQL_SimpleDeviceSearchInfo.QueryDeviceBySQL_TagInfo> simpleDeviceSearchInfo_tags = new List<QueryDeviceBySQLResponse.QueryDeviceBySQL_SimpleDeviceSearchInfo.QueryDeviceBySQL_TagInfo>();
-				for (int j = 0; j < context.Length("QueryDeviceBySQL.Data["+ i +"].Tags.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("QueryDeviceBySQL.Data["+ i +"].Tags.Length"); j++) {
 					QueryDeviceBySQLResponse.QueryDeviceBySQL_SimpleDeviceSearchInfo.QueryDeviceBySQL_TagInfo tagInfo = new QueryDeviceBySQLResponse.QueryDeviceBySQL_SimpleDeviceSearchInfo.QueryDeviceBySQL_TagInfo();
-					tagInfo.TagName = context.StringValue("QueryDeviceBySQL.Data["+ i +"].Tags["+ j +"].TagName");
-					tagInfo.TagValue = context.StringValue("QueryDeviceBySQL.Data["+ i +"].Tags["+ j +"].TagValue");
+					tagInfo.TagName = _ctx.StringValue("QueryDeviceBySQL.Data["+ i +"].Tags["+ j +"].TagName");
+					tagInfo.TagValue = _ctx.StringValue("QueryDeviceBySQL.Data["+ i +"].Tags["+ j +"].TagValue");
 
 					simpleDeviceSearchInfo_tags.Add(tagInfo);
 				}
 				simpleDeviceSearchInfo.Tags = simpleDeviceSearchInfo_tags;
+
+				List<QueryDeviceBySQLResponse.QueryDeviceBySQL_SimpleDeviceSearchInfo.QueryDeviceBySQL_OTAModuleInfo> simpleDeviceSearchInfo_oTAModules = new List<QueryDeviceBySQLResponse.QueryDeviceBySQL_SimpleDeviceSearchInfo.QueryDeviceBySQL_OTAModuleInfo>();
+				for (int j = 0; j < _ctx.Length("QueryDeviceBySQL.Data["+ i +"].OTAModules.Length"); j++) {
+					QueryDeviceBySQLResponse.QueryDeviceBySQL_SimpleDeviceSearchInfo.QueryDeviceBySQL_OTAModuleInfo oTAModuleInfo = new QueryDeviceBySQLResponse.QueryDeviceBySQL_SimpleDeviceSearchInfo.QueryDeviceBySQL_OTAModuleInfo();
+					oTAModuleInfo.ModuleName = _ctx.StringValue("QueryDeviceBySQL.Data["+ i +"].OTAModules["+ j +"].ModuleName");
+					oTAModuleInfo.FirmwareVersion = _ctx.StringValue("QueryDeviceBySQL.Data["+ i +"].OTAModules["+ j +"].FirmwareVersion");
+
+					simpleDeviceSearchInfo_oTAModules.Add(oTAModuleInfo);
+				}
+				simpleDeviceSearchInfo.OTAModules = simpleDeviceSearchInfo_oTAModules;
 
 				queryDeviceBySQLResponse_data.Add(simpleDeviceSearchInfo);
 			}

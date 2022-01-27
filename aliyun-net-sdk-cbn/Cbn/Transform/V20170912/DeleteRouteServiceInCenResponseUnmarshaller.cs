@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 {
     public class DeleteRouteServiceInCenResponseUnmarshaller
     {
-        public static DeleteRouteServiceInCenResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteRouteServiceInCenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteRouteServiceInCenResponse deleteRouteServiceInCenResponse = new DeleteRouteServiceInCenResponse();
 
-			deleteRouteServiceInCenResponse.HttpResponse = context.HttpResponse;
-			deleteRouteServiceInCenResponse.RequestId = context.StringValue("DeleteRouteServiceInCen.RequestId");
+			deleteRouteServiceInCenResponse.HttpResponse = _ctx.HttpResponse;
+			deleteRouteServiceInCenResponse.RequestId = _ctx.StringValue("DeleteRouteServiceInCen.RequestId");
         
 			return deleteRouteServiceInCenResponse;
         }

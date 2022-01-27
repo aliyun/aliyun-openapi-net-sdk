@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 {
     public class UnbindTagResponseUnmarshaller
     {
-        public static UnbindTagResponse Unmarshall(UnmarshallerContext context)
+        public static UnbindTagResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UnbindTagResponse unbindTagResponse = new UnbindTagResponse();
 
-			unbindTagResponse.HttpResponse = context.HttpResponse;
-			unbindTagResponse.RequestId = context.StringValue("UnbindTag.RequestId");
+			unbindTagResponse.HttpResponse = _ctx.HttpResponse;
+			unbindTagResponse.RequestId = _ctx.StringValue("UnbindTag.RequestId");
         
 			return unbindTagResponse;
         }

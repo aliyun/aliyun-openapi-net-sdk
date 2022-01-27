@@ -26,15 +26,15 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class DeleteNodeLabelResponseUnmarshaller
     {
-        public static DeleteNodeLabelResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteNodeLabelResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteNodeLabelResponse deleteNodeLabelResponse = new DeleteNodeLabelResponse();
 
-			deleteNodeLabelResponse.HttpResponse = context.HttpResponse;
-			deleteNodeLabelResponse.Code = context.IntegerValue("DeleteNodeLabel.Code");
-			deleteNodeLabelResponse.ErrMsg = context.StringValue("DeleteNodeLabel.ErrMsg");
-			deleteNodeLabelResponse.RequestId = context.StringValue("DeleteNodeLabel.RequestId");
-			deleteNodeLabelResponse.Success = context.BooleanValue("DeleteNodeLabel.Success");
+			deleteNodeLabelResponse.HttpResponse = _ctx.HttpResponse;
+			deleteNodeLabelResponse.Code = _ctx.IntegerValue("DeleteNodeLabel.Code");
+			deleteNodeLabelResponse.ErrMsg = _ctx.StringValue("DeleteNodeLabel.ErrMsg");
+			deleteNodeLabelResponse.RequestId = _ctx.StringValue("DeleteNodeLabel.RequestId");
+			deleteNodeLabelResponse.Success = _ctx.BooleanValue("DeleteNodeLabel.Success");
         
 			return deleteNodeLabelResponse;
         }

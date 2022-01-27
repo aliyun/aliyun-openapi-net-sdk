@@ -26,13 +26,13 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 {
     public class PreloadScdnObjectCachesResponseUnmarshaller
     {
-        public static PreloadScdnObjectCachesResponse Unmarshall(UnmarshallerContext context)
+        public static PreloadScdnObjectCachesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PreloadScdnObjectCachesResponse preloadScdnObjectCachesResponse = new PreloadScdnObjectCachesResponse();
 
-			preloadScdnObjectCachesResponse.HttpResponse = context.HttpResponse;
-			preloadScdnObjectCachesResponse.RequestId = context.StringValue("PreloadScdnObjectCaches.RequestId");
-			preloadScdnObjectCachesResponse.PreloadTaskId = context.StringValue("PreloadScdnObjectCaches.PreloadTaskId");
+			preloadScdnObjectCachesResponse.HttpResponse = _ctx.HttpResponse;
+			preloadScdnObjectCachesResponse.RequestId = _ctx.StringValue("PreloadScdnObjectCaches.RequestId");
+			preloadScdnObjectCachesResponse.PreloadTaskId = _ctx.StringValue("PreloadScdnObjectCaches.PreloadTaskId");
         
 			return preloadScdnObjectCachesResponse;
         }

@@ -26,34 +26,34 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DescribeVodDomainDetailResponseUnmarshaller
     {
-        public static DescribeVodDomainDetailResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVodDomainDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVodDomainDetailResponse describeVodDomainDetailResponse = new DescribeVodDomainDetailResponse();
 
-			describeVodDomainDetailResponse.HttpResponse = context.HttpResponse;
-			describeVodDomainDetailResponse.RequestId = context.StringValue("DescribeVodDomainDetail.RequestId");
+			describeVodDomainDetailResponse.HttpResponse = _ctx.HttpResponse;
+			describeVodDomainDetailResponse.RequestId = _ctx.StringValue("DescribeVodDomainDetail.RequestId");
 
 			DescribeVodDomainDetailResponse.DescribeVodDomainDetail_DomainDetail domainDetail = new DescribeVodDomainDetailResponse.DescribeVodDomainDetail_DomainDetail();
-			domainDetail.GmtCreated = context.StringValue("DescribeVodDomainDetail.DomainDetail.GmtCreated");
-			domainDetail.GmtModified = context.StringValue("DescribeVodDomainDetail.DomainDetail.GmtModified");
-			domainDetail.DomainStatus = context.StringValue("DescribeVodDomainDetail.DomainDetail.DomainStatus");
-			domainDetail.Cname = context.StringValue("DescribeVodDomainDetail.DomainDetail.Cname");
-			domainDetail.DomainName = context.StringValue("DescribeVodDomainDetail.DomainDetail.DomainName");
-			domainDetail.Description = context.StringValue("DescribeVodDomainDetail.DomainDetail.Description");
-			domainDetail.SSLProtocol = context.StringValue("DescribeVodDomainDetail.DomainDetail.SSLProtocol");
-			domainDetail.SSLPub = context.StringValue("DescribeVodDomainDetail.DomainDetail.SSLPub");
-			domainDetail.Scope = context.StringValue("DescribeVodDomainDetail.DomainDetail.Scope");
-			domainDetail.CertName = context.StringValue("DescribeVodDomainDetail.DomainDetail.CertName");
-			domainDetail.Weight = context.StringValue("DescribeVodDomainDetail.DomainDetail.Weight");
+			domainDetail.GmtCreated = _ctx.StringValue("DescribeVodDomainDetail.DomainDetail.GmtCreated");
+			domainDetail.GmtModified = _ctx.StringValue("DescribeVodDomainDetail.DomainDetail.GmtModified");
+			domainDetail.DomainStatus = _ctx.StringValue("DescribeVodDomainDetail.DomainDetail.DomainStatus");
+			domainDetail.Cname = _ctx.StringValue("DescribeVodDomainDetail.DomainDetail.Cname");
+			domainDetail.DomainName = _ctx.StringValue("DescribeVodDomainDetail.DomainDetail.DomainName");
+			domainDetail.Description = _ctx.StringValue("DescribeVodDomainDetail.DomainDetail.Description");
+			domainDetail.SSLProtocol = _ctx.StringValue("DescribeVodDomainDetail.DomainDetail.SSLProtocol");
+			domainDetail.SSLPub = _ctx.StringValue("DescribeVodDomainDetail.DomainDetail.SSLPub");
+			domainDetail.Scope = _ctx.StringValue("DescribeVodDomainDetail.DomainDetail.Scope");
+			domainDetail.CertName = _ctx.StringValue("DescribeVodDomainDetail.DomainDetail.CertName");
+			domainDetail.Weight = _ctx.StringValue("DescribeVodDomainDetail.DomainDetail.Weight");
 
 			List<DescribeVodDomainDetailResponse.DescribeVodDomainDetail_DomainDetail.DescribeVodDomainDetail_Source> domainDetail_sources = new List<DescribeVodDomainDetailResponse.DescribeVodDomainDetail_DomainDetail.DescribeVodDomainDetail_Source>();
-			for (int i = 0; i < context.Length("DescribeVodDomainDetail.DomainDetail.Sources.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVodDomainDetail.DomainDetail.Sources.Length"); i++) {
 				DescribeVodDomainDetailResponse.DescribeVodDomainDetail_DomainDetail.DescribeVodDomainDetail_Source source = new DescribeVodDomainDetailResponse.DescribeVodDomainDetail_DomainDetail.DescribeVodDomainDetail_Source();
-				source.Content = context.StringValue("DescribeVodDomainDetail.DomainDetail.Sources["+ i +"].Content");
-				source.Type = context.StringValue("DescribeVodDomainDetail.DomainDetail.Sources["+ i +"].Type");
-				source.Port = context.IntegerValue("DescribeVodDomainDetail.DomainDetail.Sources["+ i +"].Port");
-				source.Enabled = context.StringValue("DescribeVodDomainDetail.DomainDetail.Sources["+ i +"].Enabled");
-				source.Priority = context.StringValue("DescribeVodDomainDetail.DomainDetail.Sources["+ i +"].Priority");
+				source.Content = _ctx.StringValue("DescribeVodDomainDetail.DomainDetail.Sources["+ i +"].Content");
+				source.Type = _ctx.StringValue("DescribeVodDomainDetail.DomainDetail.Sources["+ i +"].Type");
+				source.Port = _ctx.IntegerValue("DescribeVodDomainDetail.DomainDetail.Sources["+ i +"].Port");
+				source.Enabled = _ctx.StringValue("DescribeVodDomainDetail.DomainDetail.Sources["+ i +"].Enabled");
+				source.Priority = _ctx.StringValue("DescribeVodDomainDetail.DomainDetail.Sources["+ i +"].Priority");
 
 				domainDetail_sources.Add(source);
 			}

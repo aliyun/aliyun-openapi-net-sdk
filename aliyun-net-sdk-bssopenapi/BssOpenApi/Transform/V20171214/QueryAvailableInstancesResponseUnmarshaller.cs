@@ -26,42 +26,42 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class QueryAvailableInstancesResponseUnmarshaller
     {
-        public static QueryAvailableInstancesResponse Unmarshall(UnmarshallerContext context)
+        public static QueryAvailableInstancesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryAvailableInstancesResponse queryAvailableInstancesResponse = new QueryAvailableInstancesResponse();
 
-			queryAvailableInstancesResponse.HttpResponse = context.HttpResponse;
-			queryAvailableInstancesResponse.RequestId = context.StringValue("QueryAvailableInstances.RequestId");
-			queryAvailableInstancesResponse.Success = context.BooleanValue("QueryAvailableInstances.Success");
-			queryAvailableInstancesResponse.Code = context.StringValue("QueryAvailableInstances.Code");
-			queryAvailableInstancesResponse.Message = context.StringValue("QueryAvailableInstances.Message");
+			queryAvailableInstancesResponse.HttpResponse = _ctx.HttpResponse;
+			queryAvailableInstancesResponse.RequestId = _ctx.StringValue("QueryAvailableInstances.RequestId");
+			queryAvailableInstancesResponse.Success = _ctx.BooleanValue("QueryAvailableInstances.Success");
+			queryAvailableInstancesResponse.Code = _ctx.StringValue("QueryAvailableInstances.Code");
+			queryAvailableInstancesResponse.Message = _ctx.StringValue("QueryAvailableInstances.Message");
 
 			QueryAvailableInstancesResponse.QueryAvailableInstances_Data data = new QueryAvailableInstancesResponse.QueryAvailableInstances_Data();
-			data.PageNum = context.IntegerValue("QueryAvailableInstances.Data.PageNum");
-			data.PageSize = context.IntegerValue("QueryAvailableInstances.Data.PageSize");
-			data.TotalCount = context.IntegerValue("QueryAvailableInstances.Data.TotalCount");
+			data.PageNum = _ctx.IntegerValue("QueryAvailableInstances.Data.PageNum");
+			data.PageSize = _ctx.IntegerValue("QueryAvailableInstances.Data.PageSize");
+			data.TotalCount = _ctx.IntegerValue("QueryAvailableInstances.Data.TotalCount");
 
 			List<QueryAvailableInstancesResponse.QueryAvailableInstances_Data.QueryAvailableInstances_Instance> data_instanceList = new List<QueryAvailableInstancesResponse.QueryAvailableInstances_Data.QueryAvailableInstances_Instance>();
-			for (int i = 0; i < context.Length("QueryAvailableInstances.Data.InstanceList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryAvailableInstances.Data.InstanceList.Length"); i++) {
 				QueryAvailableInstancesResponse.QueryAvailableInstances_Data.QueryAvailableInstances_Instance instance = new QueryAvailableInstancesResponse.QueryAvailableInstances_Data.QueryAvailableInstances_Instance();
-				instance.OwnerId = context.LongValue("QueryAvailableInstances.Data.InstanceList["+ i +"].OwnerId");
-				instance.SellerId = context.LongValue("QueryAvailableInstances.Data.InstanceList["+ i +"].SellerId");
-				instance.ProductCode = context.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].ProductCode");
-				instance.ProductType = context.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].ProductType");
-				instance.SubscriptionType = context.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].SubscriptionType");
-				instance.InstanceID = context.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].InstanceID");
-				instance.Region = context.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].Region");
-				instance.CreateTime = context.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].CreateTime");
-				instance.EndTime = context.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].EndTime");
-				instance.StopTime = context.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].StopTime");
-				instance.ReleaseTime = context.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].ReleaseTime");
-				instance.ExpectedReleaseTime = context.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].ExpectedReleaseTime");
-				instance.Status = context.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].Status");
-				instance.SubStatus = context.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].SubStatus");
-				instance.RenewStatus = context.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].RenewStatus");
-				instance.RenewalDuration = context.IntegerValue("QueryAvailableInstances.Data.InstanceList["+ i +"].RenewalDuration");
-				instance.RenewalDurationUnit = context.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].RenewalDurationUnit");
-				instance.Seller = context.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].Seller");
+				instance.OwnerId = _ctx.LongValue("QueryAvailableInstances.Data.InstanceList["+ i +"].OwnerId");
+				instance.SellerId = _ctx.LongValue("QueryAvailableInstances.Data.InstanceList["+ i +"].SellerId");
+				instance.ProductCode = _ctx.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].ProductCode");
+				instance.ProductType = _ctx.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].ProductType");
+				instance.SubscriptionType = _ctx.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].SubscriptionType");
+				instance.InstanceID = _ctx.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].InstanceID");
+				instance.Region = _ctx.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].Region");
+				instance.CreateTime = _ctx.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].CreateTime");
+				instance.EndTime = _ctx.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].EndTime");
+				instance.StopTime = _ctx.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].StopTime");
+				instance.ReleaseTime = _ctx.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].ReleaseTime");
+				instance.ExpectedReleaseTime = _ctx.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].ExpectedReleaseTime");
+				instance.Status = _ctx.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].Status");
+				instance.SubStatus = _ctx.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].SubStatus");
+				instance.RenewStatus = _ctx.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].RenewStatus");
+				instance.RenewalDuration = _ctx.IntegerValue("QueryAvailableInstances.Data.InstanceList["+ i +"].RenewalDuration");
+				instance.RenewalDurationUnit = _ctx.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].RenewalDurationUnit");
+				instance.Seller = _ctx.StringValue("QueryAvailableInstances.Data.InstanceList["+ i +"].Seller");
 
 				data_instanceList.Add(instance);
 			}

@@ -26,19 +26,19 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 {
     public class DescribeTaskInfoResponseUnmarshaller
     {
-        public static DescribeTaskInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeTaskInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeTaskInfoResponse describeTaskInfoResponse = new DescribeTaskInfoResponse();
 
-			describeTaskInfoResponse.HttpResponse = context.HttpResponse;
-			describeTaskInfoResponse.RequestId = context.StringValue("DescribeTaskInfo.RequestId");
+			describeTaskInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeTaskInfoResponse.RequestId = _ctx.StringValue("DescribeTaskInfo.RequestId");
 
 			DescribeTaskInfoResponse.DescribeTaskInfo_TaskInfo taskInfo = new DescribeTaskInfoResponse.DescribeTaskInfo_TaskInfo();
-			taskInfo.TaskId = context.IntegerValue("DescribeTaskInfo.TaskInfo.TaskId");
-			taskInfo.BeginTime = context.StringValue("DescribeTaskInfo.TaskInfo.BeginTime");
-			taskInfo.FinishTime = context.StringValue("DescribeTaskInfo.TaskInfo.FinishTime");
-			taskInfo.Progress = context.StringValue("DescribeTaskInfo.TaskInfo.Progress");
-			taskInfo.Status = context.StringValue("DescribeTaskInfo.TaskInfo.Status");
+			taskInfo.TaskId = _ctx.IntegerValue("DescribeTaskInfo.TaskInfo.TaskId");
+			taskInfo.BeginTime = _ctx.StringValue("DescribeTaskInfo.TaskInfo.BeginTime");
+			taskInfo.FinishTime = _ctx.StringValue("DescribeTaskInfo.TaskInfo.FinishTime");
+			taskInfo.Progress = _ctx.StringValue("DescribeTaskInfo.TaskInfo.Progress");
+			taskInfo.Status = _ctx.StringValue("DescribeTaskInfo.TaskInfo.Status");
 			describeTaskInfoResponse.TaskInfo = taskInfo;
         
 			return describeTaskInfoResponse;

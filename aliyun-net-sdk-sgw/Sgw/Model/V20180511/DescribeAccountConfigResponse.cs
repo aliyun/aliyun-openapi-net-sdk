@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -27,20 +27,21 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 
 		private string requestId;
 
-		private bool? success;
-
-		private string code;
-
 		private string message;
 
 		private bool? isSupportServerSideEncryption;
 
 		private bool? isSupportClientSideEncryption;
 
+		private string code;
+
 		private bool? isSupportGatewayLogging;
+
+		private bool? success;
 
 		private bool? isSupportElasticGatewayBeta;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -53,30 +54,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -89,6 +67,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "IsSupportServerSideEncryption")]
 		public bool? IsSupportServerSideEncryption
 		{
 			get
@@ -101,6 +80,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "IsSupportClientSideEncryption")]
 		public bool? IsSupportClientSideEncryption
 		{
 			get
@@ -113,6 +93,20 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "IsSupportGatewayLogging")]
 		public bool? IsSupportGatewayLogging
 		{
 			get
@@ -125,6 +119,20 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "IsSupportElasticGatewayBeta")]
 		public bool? IsSupportElasticGatewayBeta
 		{
 			get

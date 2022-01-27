@@ -98,153 +98,53 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeDedicatedClusterInstanceList_InstancesItem
 		{
 
-			private int? characterType;
-
-			private string clusterId;
-
-			private string clusterName;
-
-			private string engineVersion;
-
-			private string instanceId;
-
-			private string instanceStatus;
-
-			private string maintainEndTime;
-
-			private string maintainStartTime;
-
-			private string regionId;
-
 			private string vpcId;
+
+			private string characterType;
 
 			private string vswitchId;
 
-			private string zoneId;
-
-			private string instanceName;
-
-			private string customId;
-
 			private string instanceClass;
 
-			private string engine;
-
-			private string storageType;
-
-			private string connectionDomain;
+			private string maintainStartTime;
 
 			private string createTime;
 
+			private string connectionDomain;
+
+			private string maintainEndTime;
+
+			private string storageType;
+
+			private string instanceId;
+
+			private long? bandWidth;
+
+			private long? currentBandWidth;
+
+			private string engineVersion;
+
+			private string regionId;
+
+			private string instanceName;
+
+			private string zoneId;
+
+			private string clusterName;
+
+			private string instanceStatus;
+
+			private string engine;
+
+			private int? shardCount;
+
+			private string customId;
+
+			private int? proxyCount;
+
+			private string clusterId;
+
 			private List<DescribeDedicatedClusterInstanceList_InstanceNodes> instanceNodeList;
-
-			public int? CharacterType
-			{
-				get
-				{
-					return characterType;
-				}
-				set	
-				{
-					characterType = value;
-				}
-			}
-
-			public string ClusterId
-			{
-				get
-				{
-					return clusterId;
-				}
-				set	
-				{
-					clusterId = value;
-				}
-			}
-
-			public string ClusterName
-			{
-				get
-				{
-					return clusterName;
-				}
-				set	
-				{
-					clusterName = value;
-				}
-			}
-
-			public string EngineVersion
-			{
-				get
-				{
-					return engineVersion;
-				}
-				set	
-				{
-					engineVersion = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public string InstanceStatus
-			{
-				get
-				{
-					return instanceStatus;
-				}
-				set	
-				{
-					instanceStatus = value;
-				}
-			}
-
-			public string MaintainEndTime
-			{
-				get
-				{
-					return maintainEndTime;
-				}
-				set	
-				{
-					maintainEndTime = value;
-				}
-			}
-
-			public string MaintainStartTime
-			{
-				get
-				{
-					return maintainStartTime;
-				}
-				set	
-				{
-					maintainStartTime = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
 
 			public string VpcId
 			{
@@ -255,6 +155,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					vpcId = value;
+				}
+			}
+
+			public string CharacterType
+			{
+				get
+				{
+					return characterType;
+				}
+				set	
+				{
+					characterType = value;
 				}
 			}
 
@@ -270,42 +182,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
-			public string InstanceName
-			{
-				get
-				{
-					return instanceName;
-				}
-				set	
-				{
-					instanceName = value;
-				}
-			}
-
-			public string CustomId
-			{
-				get
-				{
-					return customId;
-				}
-				set	
-				{
-					customId = value;
-				}
-			}
-
 			public string InstanceClass
 			{
 				get
@@ -318,27 +194,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string Engine
+			public string MaintainStartTime
 			{
 				get
 				{
-					return engine;
+					return maintainStartTime;
 				}
 				set	
 				{
-					engine = value;
+					maintainStartTime = value;
 				}
 			}
 
-			public string StorageType
+			public string CreateTime
 			{
 				get
 				{
-					return storageType;
+					return createTime;
 				}
 				set	
 				{
-					storageType = value;
+					createTime = value;
 				}
 			}
 
@@ -354,15 +230,195 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string CreateTime
+			public string MaintainEndTime
 			{
 				get
 				{
-					return createTime;
+					return maintainEndTime;
 				}
 				set	
 				{
-					createTime = value;
+					maintainEndTime = value;
+				}
+			}
+
+			public string StorageType
+			{
+				get
+				{
+					return storageType;
+				}
+				set	
+				{
+					storageType = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public long? BandWidth
+			{
+				get
+				{
+					return bandWidth;
+				}
+				set	
+				{
+					bandWidth = value;
+				}
+			}
+
+			public long? CurrentBandWidth
+			{
+				get
+				{
+					return currentBandWidth;
+				}
+				set	
+				{
+					currentBandWidth = value;
+				}
+			}
+
+			public string EngineVersion
+			{
+				get
+				{
+					return engineVersion;
+				}
+				set	
+				{
+					engineVersion = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public string ClusterName
+			{
+				get
+				{
+					return clusterName;
+				}
+				set	
+				{
+					clusterName = value;
+				}
+			}
+
+			public string InstanceStatus
+			{
+				get
+				{
+					return instanceStatus;
+				}
+				set	
+				{
+					instanceStatus = value;
+				}
+			}
+
+			public string Engine
+			{
+				get
+				{
+					return engine;
+				}
+				set	
+				{
+					engine = value;
+				}
+			}
+
+			public int? ShardCount
+			{
+				get
+				{
+					return shardCount;
+				}
+				set	
+				{
+					shardCount = value;
+				}
+			}
+
+			public string CustomId
+			{
+				get
+				{
+					return customId;
+				}
+				set	
+				{
+					customId = value;
+				}
+			}
+
+			public int? ProxyCount
+			{
+				get
+				{
+					return proxyCount;
+				}
+				set	
+				{
+					proxyCount = value;
+				}
+			}
+
+			public string ClusterId
+			{
+				get
+				{
+					return clusterId;
+				}
+				set	
+				{
+					clusterId = value;
 				}
 			}
 
@@ -381,33 +437,21 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			public class DescribeDedicatedClusterInstanceList_InstanceNodes
 			{
 
-				private int? nodeId;
-
 				private string nodeIp;
 
+				private string dedicatedHostName;
+
 				private string nodeType;
-
-				private int? port;
-
-				private string role;
 
 				private string zoneId;
 
 				private string instanceId;
 
-				private string dedicatedHostName;
+				private int? port;
 
-				public int? NodeId
-				{
-					get
-					{
-						return nodeId;
-					}
-					set	
-					{
-						nodeId = value;
-					}
-				}
+				private string role;
+
+				private int? nodeId;
 
 				public string NodeIp
 				{
@@ -421,6 +465,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 					}
 				}
 
+				public string DedicatedHostName
+				{
+					get
+					{
+						return dedicatedHostName;
+					}
+					set	
+					{
+						dedicatedHostName = value;
+					}
+				}
+
 				public string NodeType
 				{
 					get
@@ -430,30 +486,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 					set	
 					{
 						nodeType = value;
-					}
-				}
-
-				public int? Port
-				{
-					get
-					{
-						return port;
-					}
-					set	
-					{
-						port = value;
-					}
-				}
-
-				public string Role
-				{
-					get
-					{
-						return role;
-					}
-					set	
-					{
-						role = value;
 					}
 				}
 
@@ -481,15 +513,39 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 					}
 				}
 
-				public string DedicatedHostName
+				public int? Port
 				{
 					get
 					{
-						return dedicatedHostName;
+						return port;
 					}
 					set	
 					{
-						dedicatedHostName = value;
+						port = value;
+					}
+				}
+
+				public string Role
+				{
+					get
+					{
+						return role;
+					}
+					set	
+					{
+						role = value;
+					}
+				}
+
+				public int? NodeId
+				{
+					get
+					{
+						return nodeId;
+					}
+					set	
+					{
+						nodeId = value;
 					}
 				}
 			}

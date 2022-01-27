@@ -26,15 +26,15 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class CreateGroupFacesJobResponseUnmarshaller
     {
-        public static CreateGroupFacesJobResponse Unmarshall(UnmarshallerContext context)
+        public static CreateGroupFacesJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateGroupFacesJobResponse createGroupFacesJobResponse = new CreateGroupFacesJobResponse();
 
-			createGroupFacesJobResponse.HttpResponse = context.HttpResponse;
-			createGroupFacesJobResponse.RequestId = context.StringValue("CreateGroupFacesJob.RequestId");
-			createGroupFacesJobResponse.JobId = context.StringValue("CreateGroupFacesJob.JobId");
-			createGroupFacesJobResponse.SetId = context.StringValue("CreateGroupFacesJob.SetId");
-			createGroupFacesJobResponse.JobType = context.StringValue("CreateGroupFacesJob.JobType");
+			createGroupFacesJobResponse.HttpResponse = _ctx.HttpResponse;
+			createGroupFacesJobResponse.JobType = _ctx.StringValue("CreateGroupFacesJob.JobType");
+			createGroupFacesJobResponse.RequestId = _ctx.StringValue("CreateGroupFacesJob.RequestId");
+			createGroupFacesJobResponse.SetId = _ctx.StringValue("CreateGroupFacesJob.SetId");
+			createGroupFacesJobResponse.JobId = _ctx.StringValue("CreateGroupFacesJob.JobId");
         
 			return createGroupFacesJobResponse;
         }

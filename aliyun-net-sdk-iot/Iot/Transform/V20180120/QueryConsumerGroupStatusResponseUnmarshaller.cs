@@ -26,25 +26,29 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryConsumerGroupStatusResponseUnmarshaller
     {
-        public static QueryConsumerGroupStatusResponse Unmarshall(UnmarshallerContext context)
+        public static QueryConsumerGroupStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryConsumerGroupStatusResponse queryConsumerGroupStatusResponse = new QueryConsumerGroupStatusResponse();
 
-			queryConsumerGroupStatusResponse.HttpResponse = context.HttpResponse;
-			queryConsumerGroupStatusResponse.RequestId = context.StringValue("QueryConsumerGroupStatus.RequestId");
-			queryConsumerGroupStatusResponse.Success = context.BooleanValue("QueryConsumerGroupStatus.Success");
-			queryConsumerGroupStatusResponse.ErrorMessage = context.StringValue("QueryConsumerGroupStatus.ErrorMessage");
-			queryConsumerGroupStatusResponse.AccumulationCount = context.IntegerValue("QueryConsumerGroupStatus.AccumulationCount");
-			queryConsumerGroupStatusResponse.ConsumerSpeed = context.IntegerValue("QueryConsumerGroupStatus.ConsumerSpeed");
-			queryConsumerGroupStatusResponse.LastConsumerTime = context.StringValue("QueryConsumerGroupStatus.LastConsumerTime");
-			queryConsumerGroupStatusResponse.Code = context.StringValue("QueryConsumerGroupStatus.Code");
+			queryConsumerGroupStatusResponse.HttpResponse = _ctx.HttpResponse;
+			queryConsumerGroupStatusResponse.RequestId = _ctx.StringValue("QueryConsumerGroupStatus.RequestId");
+			queryConsumerGroupStatusResponse.Success = _ctx.BooleanValue("QueryConsumerGroupStatus.Success");
+			queryConsumerGroupStatusResponse.ErrorMessage = _ctx.StringValue("QueryConsumerGroupStatus.ErrorMessage");
+			queryConsumerGroupStatusResponse.AccumulationCount = _ctx.IntegerValue("QueryConsumerGroupStatus.AccumulationCount");
+			queryConsumerGroupStatusResponse.ConsumerSpeed = _ctx.IntegerValue("QueryConsumerGroupStatus.ConsumerSpeed");
+			queryConsumerGroupStatusResponse.LastConsumerTime = _ctx.StringValue("QueryConsumerGroupStatus.LastConsumerTime");
+			queryConsumerGroupStatusResponse.Code = _ctx.StringValue("QueryConsumerGroupStatus.Code");
+			queryConsumerGroupStatusResponse.AccumulatedConsumeCountPerMinute = _ctx.IntegerValue("QueryConsumerGroupStatus.AccumulatedConsumeCountPerMinute");
+			queryConsumerGroupStatusResponse.RealTimeConsumeCountPerMinute = _ctx.IntegerValue("QueryConsumerGroupStatus.RealTimeConsumeCountPerMinute");
 
 			List<QueryConsumerGroupStatusResponse.QueryConsumerGroupStatus_ConsumerGroupClientConnectionInfo> queryConsumerGroupStatusResponse_clientConnectionStatusList = new List<QueryConsumerGroupStatusResponse.QueryConsumerGroupStatus_ConsumerGroupClientConnectionInfo>();
-			for (int i = 0; i < context.Length("QueryConsumerGroupStatus.ClientConnectionStatusList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryConsumerGroupStatus.ClientConnectionStatusList.Length"); i++) {
 				QueryConsumerGroupStatusResponse.QueryConsumerGroupStatus_ConsumerGroupClientConnectionInfo consumerGroupClientConnectionInfo = new QueryConsumerGroupStatusResponse.QueryConsumerGroupStatus_ConsumerGroupClientConnectionInfo();
-				consumerGroupClientConnectionInfo.ClientId = context.StringValue("QueryConsumerGroupStatus.ClientConnectionStatusList["+ i +"].ClientId");
-				consumerGroupClientConnectionInfo.ClientIpPort = context.StringValue("QueryConsumerGroupStatus.ClientConnectionStatusList["+ i +"].ClientIpPort");
-				consumerGroupClientConnectionInfo.OnlineTime = context.LongValue("QueryConsumerGroupStatus.ClientConnectionStatusList["+ i +"].OnlineTime");
+				consumerGroupClientConnectionInfo.ClientId = _ctx.StringValue("QueryConsumerGroupStatus.ClientConnectionStatusList["+ i +"].ClientId");
+				consumerGroupClientConnectionInfo.ClientIpPort = _ctx.StringValue("QueryConsumerGroupStatus.ClientConnectionStatusList["+ i +"].ClientIpPort");
+				consumerGroupClientConnectionInfo.OnlineTime = _ctx.LongValue("QueryConsumerGroupStatus.ClientConnectionStatusList["+ i +"].OnlineTime");
+				consumerGroupClientConnectionInfo.RealTimeConsumeCountPerMinute = _ctx.IntegerValue("QueryConsumerGroupStatus.ClientConnectionStatusList["+ i +"].RealTimeConsumeCountPerMinute");
+				consumerGroupClientConnectionInfo.AccumulatedConsumeCountPerMinute = _ctx.IntegerValue("QueryConsumerGroupStatus.ClientConnectionStatusList["+ i +"].AccumulatedConsumeCountPerMinute");
 
 				queryConsumerGroupStatusResponse_clientConnectionStatusList.Add(consumerGroupClientConnectionInfo);
 			}

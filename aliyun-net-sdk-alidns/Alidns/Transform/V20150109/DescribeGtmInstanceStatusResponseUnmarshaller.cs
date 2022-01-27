@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeGtmInstanceStatusResponseUnmarshaller
     {
-        public static DescribeGtmInstanceStatusResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGtmInstanceStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGtmInstanceStatusResponse describeGtmInstanceStatusResponse = new DescribeGtmInstanceStatusResponse();
 
-			describeGtmInstanceStatusResponse.HttpResponse = context.HttpResponse;
-			describeGtmInstanceStatusResponse.RequestId = context.StringValue("DescribeGtmInstanceStatus.RequestId");
-			describeGtmInstanceStatusResponse.AddrNotAvailableNum = context.IntegerValue("DescribeGtmInstanceStatus.AddrNotAvailableNum");
-			describeGtmInstanceStatusResponse.AddrPoolNotAvailableNum = context.IntegerValue("DescribeGtmInstanceStatus.AddrPoolNotAvailableNum");
-			describeGtmInstanceStatusResponse.SwitchToFailoverStrategyNum = context.IntegerValue("DescribeGtmInstanceStatus.SwitchToFailoverStrategyNum");
-			describeGtmInstanceStatusResponse.StrategyNotAvailableNum = context.IntegerValue("DescribeGtmInstanceStatus.StrategyNotAvailableNum");
-			describeGtmInstanceStatusResponse.Status = context.StringValue("DescribeGtmInstanceStatus.Status");
-			describeGtmInstanceStatusResponse.StatusReason = context.StringValue("DescribeGtmInstanceStatus.StatusReason");
+			describeGtmInstanceStatusResponse.HttpResponse = _ctx.HttpResponse;
+			describeGtmInstanceStatusResponse.RequestId = _ctx.StringValue("DescribeGtmInstanceStatus.RequestId");
+			describeGtmInstanceStatusResponse.AddrNotAvailableNum = _ctx.IntegerValue("DescribeGtmInstanceStatus.AddrNotAvailableNum");
+			describeGtmInstanceStatusResponse.AddrPoolNotAvailableNum = _ctx.IntegerValue("DescribeGtmInstanceStatus.AddrPoolNotAvailableNum");
+			describeGtmInstanceStatusResponse.SwitchToFailoverStrategyNum = _ctx.IntegerValue("DescribeGtmInstanceStatus.SwitchToFailoverStrategyNum");
+			describeGtmInstanceStatusResponse.StrategyNotAvailableNum = _ctx.IntegerValue("DescribeGtmInstanceStatus.StrategyNotAvailableNum");
+			describeGtmInstanceStatusResponse.Status = _ctx.StringValue("DescribeGtmInstanceStatus.Status");
+			describeGtmInstanceStatusResponse.StatusReason = _ctx.StringValue("DescribeGtmInstanceStatus.StatusReason");
         
 			return describeGtmInstanceStatusResponse;
         }

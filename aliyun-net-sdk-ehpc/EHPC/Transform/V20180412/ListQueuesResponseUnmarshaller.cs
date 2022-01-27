@@ -26,20 +26,40 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class ListQueuesResponseUnmarshaller
     {
-        public static ListQueuesResponse Unmarshall(UnmarshallerContext context)
+        public static ListQueuesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListQueuesResponse listQueuesResponse = new ListQueuesResponse();
 
-			listQueuesResponse.HttpResponse = context.HttpResponse;
-			listQueuesResponse.RequestId = context.StringValue("ListQueues.RequestId");
+			listQueuesResponse.HttpResponse = _ctx.HttpResponse;
+			listQueuesResponse.RequestId = _ctx.StringValue("ListQueues.RequestId");
 
 			List<ListQueuesResponse.ListQueues_QueueInfo> listQueuesResponse_queues = new List<ListQueuesResponse.ListQueues_QueueInfo>();
-			for (int i = 0; i < context.Length("ListQueues.Queues.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListQueues.Queues.Length"); i++) {
 				ListQueuesResponse.ListQueues_QueueInfo queueInfo = new ListQueuesResponse.ListQueues_QueueInfo();
-				queueInfo.QueueName = context.StringValue("ListQueues.Queues["+ i +"].QueueName");
-				queueInfo.Type = context.StringValue("ListQueues.Queues["+ i +"].Type");
-				queueInfo.ResourceGroupId = context.StringValue("ListQueues.Queues["+ i +"].ResourceGroupId");
-				queueInfo.ComputeInstanceType = context.StringValue("ListQueues.Queues["+ i +"].ComputeInstanceType");
+				queueInfo.QueueName = _ctx.StringValue("ListQueues.Queues["+ i +"].QueueName");
+				queueInfo.Type = _ctx.StringValue("ListQueues.Queues["+ i +"].Type");
+				queueInfo.ResourceGroupId = _ctx.StringValue("ListQueues.Queues["+ i +"].ResourceGroupId");
+				queueInfo.HostNamePrefix = _ctx.StringValue("ListQueues.Queues["+ i +"].HostNamePrefix");
+				queueInfo.HostNameSuffix = _ctx.StringValue("ListQueues.Queues["+ i +"].HostNameSuffix");
+				queueInfo.SpotStrategy = _ctx.StringValue("ListQueues.Queues["+ i +"].SpotStrategy");
+				queueInfo.ImageId = _ctx.StringValue("ListQueues.Queues["+ i +"].ImageId");
+				queueInfo.EnableAutoGrow = _ctx.BooleanValue("ListQueues.Queues["+ i +"].EnableAutoGrow");
+
+				List<string> queueInfo_computeInstanceType = new List<string>();
+				for (int j = 0; j < _ctx.Length("ListQueues.Queues["+ i +"].ComputeInstanceType.Length"); j++) {
+					queueInfo_computeInstanceType.Add(_ctx.StringValue("ListQueues.Queues["+ i +"].ComputeInstanceType["+ j +"]"));
+				}
+				queueInfo.ComputeInstanceType = queueInfo_computeInstanceType;
+
+				List<ListQueuesResponse.ListQueues_QueueInfo.ListQueues_Instance> queueInfo_spotInstanceTypes = new List<ListQueuesResponse.ListQueues_QueueInfo.ListQueues_Instance>();
+				for (int j = 0; j < _ctx.Length("ListQueues.Queues["+ i +"].SpotInstanceTypes.Length"); j++) {
+					ListQueuesResponse.ListQueues_QueueInfo.ListQueues_Instance instance = new ListQueuesResponse.ListQueues_QueueInfo.ListQueues_Instance();
+					instance.InstanceType = _ctx.StringValue("ListQueues.Queues["+ i +"].SpotInstanceTypes["+ j +"].InstanceType");
+					instance.SpotPriceLimit = _ctx.FloatValue("ListQueues.Queues["+ i +"].SpotInstanceTypes["+ j +"].SpotPriceLimit");
+
+					queueInfo_spotInstanceTypes.Add(instance);
+				}
+				queueInfo.SpotInstanceTypes = queueInfo_spotInstanceTypes;
 
 				listQueuesResponse_queues.Add(queueInfo);
 			}

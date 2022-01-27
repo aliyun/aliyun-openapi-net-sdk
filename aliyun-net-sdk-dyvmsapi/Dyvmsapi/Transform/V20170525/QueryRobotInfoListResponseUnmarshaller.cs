@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
     public class QueryRobotInfoListResponseUnmarshaller
     {
-        public static QueryRobotInfoListResponse Unmarshall(UnmarshallerContext context)
+        public static QueryRobotInfoListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryRobotInfoListResponse queryRobotInfoListResponse = new QueryRobotInfoListResponse();
 
-			queryRobotInfoListResponse.HttpResponse = context.HttpResponse;
-			queryRobotInfoListResponse.RequestId = context.StringValue("QueryRobotInfoList.RequestId");
-			queryRobotInfoListResponse.Data = context.StringValue("QueryRobotInfoList.Data");
-			queryRobotInfoListResponse.Code = context.StringValue("QueryRobotInfoList.Code");
-			queryRobotInfoListResponse.Message = context.StringValue("QueryRobotInfoList.Message");
+			queryRobotInfoListResponse.HttpResponse = _ctx.HttpResponse;
+			queryRobotInfoListResponse.RequestId = _ctx.StringValue("QueryRobotInfoList.RequestId");
+			queryRobotInfoListResponse.Data = _ctx.StringValue("QueryRobotInfoList.Data");
+			queryRobotInfoListResponse.Code = _ctx.StringValue("QueryRobotInfoList.Code");
+			queryRobotInfoListResponse.Message = _ctx.StringValue("QueryRobotInfoList.Message");
         
 			return queryRobotInfoListResponse;
         }

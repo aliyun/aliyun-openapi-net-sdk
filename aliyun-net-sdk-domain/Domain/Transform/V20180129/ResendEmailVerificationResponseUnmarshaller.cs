@@ -26,30 +26,30 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class ResendEmailVerificationResponseUnmarshaller
     {
-        public static ResendEmailVerificationResponse Unmarshall(UnmarshallerContext context)
+        public static ResendEmailVerificationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ResendEmailVerificationResponse resendEmailVerificationResponse = new ResendEmailVerificationResponse();
 
-			resendEmailVerificationResponse.HttpResponse = context.HttpResponse;
-			resendEmailVerificationResponse.RequestId = context.StringValue("ResendEmailVerification.RequestId");
+			resendEmailVerificationResponse.HttpResponse = _ctx.HttpResponse;
+			resendEmailVerificationResponse.RequestId = _ctx.StringValue("ResendEmailVerification.RequestId");
 
 			List<ResendEmailVerificationResponse.ResendEmailVerification_SendResult> resendEmailVerificationResponse_successList = new List<ResendEmailVerificationResponse.ResendEmailVerification_SendResult>();
-			for (int i = 0; i < context.Length("ResendEmailVerification.SuccessList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ResendEmailVerification.SuccessList.Length"); i++) {
 				ResendEmailVerificationResponse.ResendEmailVerification_SendResult sendResult = new ResendEmailVerificationResponse.ResendEmailVerification_SendResult();
-				sendResult.Email = context.StringValue("ResendEmailVerification.SuccessList["+ i +"].Email");
-				sendResult.Code = context.StringValue("ResendEmailVerification.SuccessList["+ i +"].Code");
-				sendResult.Message = context.StringValue("ResendEmailVerification.SuccessList["+ i +"].Message");
+				sendResult.Email = _ctx.StringValue("ResendEmailVerification.SuccessList["+ i +"].Email");
+				sendResult.Code = _ctx.StringValue("ResendEmailVerification.SuccessList["+ i +"].Code");
+				sendResult.Message = _ctx.StringValue("ResendEmailVerification.SuccessList["+ i +"].Message");
 
 				resendEmailVerificationResponse_successList.Add(sendResult);
 			}
 			resendEmailVerificationResponse.SuccessList = resendEmailVerificationResponse_successList;
 
 			List<ResendEmailVerificationResponse.ResendEmailVerification_SendResult> resendEmailVerificationResponse_failList = new List<ResendEmailVerificationResponse.ResendEmailVerification_SendResult>();
-			for (int i = 0; i < context.Length("ResendEmailVerification.FailList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ResendEmailVerification.FailList.Length"); i++) {
 				ResendEmailVerificationResponse.ResendEmailVerification_SendResult sendResult = new ResendEmailVerificationResponse.ResendEmailVerification_SendResult();
-				sendResult.Email = context.StringValue("ResendEmailVerification.FailList["+ i +"].Email");
-				sendResult.Code = context.StringValue("ResendEmailVerification.FailList["+ i +"].Code");
-				sendResult.Message = context.StringValue("ResendEmailVerification.FailList["+ i +"].Message");
+				sendResult.Email = _ctx.StringValue("ResendEmailVerification.FailList["+ i +"].Email");
+				sendResult.Code = _ctx.StringValue("ResendEmailVerification.FailList["+ i +"].Code");
+				sendResult.Message = _ctx.StringValue("ResendEmailVerification.FailList["+ i +"].Message");
 
 				resendEmailVerificationResponse_failList.Add(sendResult);
 			}

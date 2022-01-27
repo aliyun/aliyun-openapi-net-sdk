@@ -139,6 +139,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 				private int? status;
 
+				private int? eventHitCount;
+
+				private string adaptedProduct;
+
+				private string configCode;
+
+				private int? configContentType;
+
+				private string configDescription;
+
+				private string configValue;
+
 				public long? Id
 				{
 					get
@@ -196,6 +208,78 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					set	
 					{
 						status = value;
+					}
+				}
+
+				public int? EventHitCount
+				{
+					get
+					{
+						return eventHitCount;
+					}
+					set	
+					{
+						eventHitCount = value;
+					}
+				}
+
+				public string AdaptedProduct
+				{
+					get
+					{
+						return adaptedProduct;
+					}
+					set	
+					{
+						adaptedProduct = value;
+					}
+				}
+
+				public string ConfigCode
+				{
+					get
+					{
+						return configCode;
+					}
+					set	
+					{
+						configCode = value;
+					}
+				}
+
+				public int? ConfigContentType
+				{
+					get
+					{
+						return configContentType;
+					}
+					set	
+					{
+						configContentType = value;
+					}
+				}
+
+				public string ConfigDescription
+				{
+					get
+					{
+						return configDescription;
+					}
+					set	
+					{
+						configDescription = value;
+					}
+				}
+
+				public string ConfigValue
+				{
+					get
+					{
+						return configValue;
+					}
+					set	
+					{
+						configValue = value;
 					}
 				}
 			}

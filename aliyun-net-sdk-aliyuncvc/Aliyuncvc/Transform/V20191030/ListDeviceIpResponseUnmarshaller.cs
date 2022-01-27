@@ -26,23 +26,23 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class ListDeviceIpResponseUnmarshaller
     {
-        public static ListDeviceIpResponse Unmarshall(UnmarshallerContext context)
+        public static ListDeviceIpResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListDeviceIpResponse listDeviceIpResponse = new ListDeviceIpResponse();
 
-			listDeviceIpResponse.HttpResponse = context.HttpResponse;
-			listDeviceIpResponse.ErrorCode = context.IntegerValue("ListDeviceIp.ErrorCode");
-			listDeviceIpResponse.Message = context.StringValue("ListDeviceIp.Message");
-			listDeviceIpResponse.Success = context.BooleanValue("ListDeviceIp.Success");
-			listDeviceIpResponse.RequestId = context.StringValue("ListDeviceIp.RequestId");
+			listDeviceIpResponse.HttpResponse = _ctx.HttpResponse;
+			listDeviceIpResponse.ErrorCode = _ctx.IntegerValue("ListDeviceIp.ErrorCode");
+			listDeviceIpResponse.Message = _ctx.StringValue("ListDeviceIp.Message");
+			listDeviceIpResponse.Success = _ctx.BooleanValue("ListDeviceIp.Success");
+			listDeviceIpResponse.RequestId = _ctx.StringValue("ListDeviceIp.RequestId");
 
 			List<ListDeviceIpResponse.ListDeviceIp_DevicesItem> listDeviceIpResponse_devices = new List<ListDeviceIpResponse.ListDeviceIp_DevicesItem>();
-			for (int i = 0; i < context.Length("ListDeviceIp.Devices.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListDeviceIp.Devices.Length"); i++) {
 				ListDeviceIpResponse.ListDeviceIp_DevicesItem devicesItem = new ListDeviceIpResponse.ListDeviceIp_DevicesItem();
-				devicesItem.ScreenCode = context.StringValue("ListDeviceIp.Devices["+ i +"].ScreenCode");
-				devicesItem.Ip = context.StringValue("ListDeviceIp.Devices["+ i +"].Ip");
-				devicesItem.Mac = context.StringValue("ListDeviceIp.Devices["+ i +"].Mac");
-				devicesItem.SsId = context.StringValue("ListDeviceIp.Devices["+ i +"].SsId");
+				devicesItem.ScreenCode = _ctx.StringValue("ListDeviceIp.Devices["+ i +"].ScreenCode");
+				devicesItem.Ip = _ctx.StringValue("ListDeviceIp.Devices["+ i +"].Ip");
+				devicesItem.Mac = _ctx.StringValue("ListDeviceIp.Devices["+ i +"].Mac");
+				devicesItem.SsId = _ctx.StringValue("ListDeviceIp.Devices["+ i +"].SsId");
 
 				listDeviceIpResponse_devices.Add(devicesItem);
 			}

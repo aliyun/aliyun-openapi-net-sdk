@@ -26,15 +26,15 @@ namespace Aliyun.Acs.imageenhan.Transform.V20190930
 {
     public class AssessSharpnessResponseUnmarshaller
     {
-        public static AssessSharpnessResponse Unmarshall(UnmarshallerContext context)
+        public static AssessSharpnessResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AssessSharpnessResponse assessSharpnessResponse = new AssessSharpnessResponse();
 
-			assessSharpnessResponse.HttpResponse = context.HttpResponse;
-			assessSharpnessResponse.RequestId = context.StringValue("AssessSharpness.RequestId");
+			assessSharpnessResponse.HttpResponse = _ctx.HttpResponse;
+			assessSharpnessResponse.RequestId = _ctx.StringValue("AssessSharpness.RequestId");
 
 			AssessSharpnessResponse.AssessSharpness_Data data = new AssessSharpnessResponse.AssessSharpness_Data();
-			data.Sharpness = context.FloatValue("AssessSharpness.Data.Sharpness");
+			data.Sharpness = _ctx.FloatValue("AssessSharpness.Data.Sharpness");
 			assessSharpnessResponse.Data = data;
         
 			return assessSharpnessResponse;

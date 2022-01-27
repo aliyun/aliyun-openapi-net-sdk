@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class StartBaselineSecurityCheckResponseUnmarshaller
     {
-        public static StartBaselineSecurityCheckResponse Unmarshall(UnmarshallerContext context)
+        public static StartBaselineSecurityCheckResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StartBaselineSecurityCheckResponse startBaselineSecurityCheckResponse = new StartBaselineSecurityCheckResponse();
 
-			startBaselineSecurityCheckResponse.HttpResponse = context.HttpResponse;
-			startBaselineSecurityCheckResponse.RequestId = context.StringValue("StartBaselineSecurityCheck.RequestId");
+			startBaselineSecurityCheckResponse.HttpResponse = _ctx.HttpResponse;
+			startBaselineSecurityCheckResponse.RequestId = _ctx.StringValue("StartBaselineSecurityCheck.RequestId");
         
 			return startBaselineSecurityCheckResponse;
         }

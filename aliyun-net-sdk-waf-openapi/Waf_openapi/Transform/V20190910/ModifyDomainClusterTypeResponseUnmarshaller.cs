@@ -26,12 +26,12 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 {
     public class ModifyDomainClusterTypeResponseUnmarshaller
     {
-        public static ModifyDomainClusterTypeResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDomainClusterTypeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyDomainClusterTypeResponse modifyDomainClusterTypeResponse = new ModifyDomainClusterTypeResponse();
 
-			modifyDomainClusterTypeResponse.HttpResponse = context.HttpResponse;
-			modifyDomainClusterTypeResponse.RequestId = context.StringValue("ModifyDomainClusterType.RequestId");
+			modifyDomainClusterTypeResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDomainClusterTypeResponse.RequestId = _ctx.StringValue("ModifyDomainClusterType.RequestId");
         
 			return modifyDomainClusterTypeResponse;
         }

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class ModifyDeviceCaptureResponseUnmarshaller
     {
-        public static ModifyDeviceCaptureResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDeviceCaptureResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyDeviceCaptureResponse modifyDeviceCaptureResponse = new ModifyDeviceCaptureResponse();
 
-			modifyDeviceCaptureResponse.HttpResponse = context.HttpResponse;
-			modifyDeviceCaptureResponse.RequestId = context.StringValue("ModifyDeviceCapture.RequestId");
+			modifyDeviceCaptureResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDeviceCaptureResponse.RequestId = _ctx.StringValue("ModifyDeviceCapture.RequestId");
         
 			return modifyDeviceCaptureResponse;
         }

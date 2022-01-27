@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class StopInstanceResponseUnmarshaller
     {
-        public static StopInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static StopInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StopInstanceResponse stopInstanceResponse = new StopInstanceResponse();
 
-			stopInstanceResponse.HttpResponse = context.HttpResponse;
-			stopInstanceResponse.ErrorCode = context.StringValue("StopInstance.ErrorCode");
-			stopInstanceResponse.ErrorMessage = context.StringValue("StopInstance.ErrorMessage");
-			stopInstanceResponse.HttpStatusCode = context.IntegerValue("StopInstance.HttpStatusCode");
-			stopInstanceResponse.RequestId = context.StringValue("StopInstance.RequestId");
-			stopInstanceResponse.Success = context.BooleanValue("StopInstance.Success");
-			stopInstanceResponse.Data = context.BooleanValue("StopInstance.Data");
+			stopInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			stopInstanceResponse.ErrorCode = _ctx.StringValue("StopInstance.ErrorCode");
+			stopInstanceResponse.ErrorMessage = _ctx.StringValue("StopInstance.ErrorMessage");
+			stopInstanceResponse.HttpStatusCode = _ctx.IntegerValue("StopInstance.HttpStatusCode");
+			stopInstanceResponse.RequestId = _ctx.StringValue("StopInstance.RequestId");
+			stopInstanceResponse.Success = _ctx.BooleanValue("StopInstance.Success");
+			stopInstanceResponse.Data = _ctx.BooleanValue("StopInstance.Data");
         
 			return stopInstanceResponse;
         }

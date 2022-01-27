@@ -26,15 +26,15 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 {
     public class GrantUserPermissionResponseUnmarshaller
     {
-        public static GrantUserPermissionResponse Unmarshall(UnmarshallerContext context)
+        public static GrantUserPermissionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GrantUserPermissionResponse grantUserPermissionResponse = new GrantUserPermissionResponse();
 
-			grantUserPermissionResponse.HttpResponse = context.HttpResponse;
-			grantUserPermissionResponse.RequestId = context.StringValue("GrantUserPermission.RequestId");
-			grantUserPermissionResponse.Success = context.BooleanValue("GrantUserPermission.Success");
-			grantUserPermissionResponse.ErrorMessage = context.StringValue("GrantUserPermission.ErrorMessage");
-			grantUserPermissionResponse.ErrorCode = context.StringValue("GrantUserPermission.ErrorCode");
+			grantUserPermissionResponse.HttpResponse = _ctx.HttpResponse;
+			grantUserPermissionResponse.RequestId = _ctx.StringValue("GrantUserPermission.RequestId");
+			grantUserPermissionResponse.ErrorCode = _ctx.StringValue("GrantUserPermission.ErrorCode");
+			grantUserPermissionResponse.ErrorMessage = _ctx.StringValue("GrantUserPermission.ErrorMessage");
+			grantUserPermissionResponse.Success = _ctx.BooleanValue("GrantUserPermission.Success");
         
 			return grantUserPermissionResponse;
         }

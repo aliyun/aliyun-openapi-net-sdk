@@ -26,21 +26,21 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeVsUpPeakPublishStreamDataResponseUnmarshaller
     {
-        public static DescribeVsUpPeakPublishStreamDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVsUpPeakPublishStreamDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVsUpPeakPublishStreamDataResponse describeVsUpPeakPublishStreamDataResponse = new DescribeVsUpPeakPublishStreamDataResponse();
 
-			describeVsUpPeakPublishStreamDataResponse.HttpResponse = context.HttpResponse;
-			describeVsUpPeakPublishStreamDataResponse.RequestId = context.StringValue("DescribeVsUpPeakPublishStreamData.RequestId");
+			describeVsUpPeakPublishStreamDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeVsUpPeakPublishStreamDataResponse.RequestId = _ctx.StringValue("DescribeVsUpPeakPublishStreamData.RequestId");
 
 			List<DescribeVsUpPeakPublishStreamDataResponse.DescribeVsUpPeakPublishStreamData_DescribeVsUpPeakPublishStreamData> describeVsUpPeakPublishStreamDataResponse_describeVsUpPeakPublishStreamDatas = new List<DescribeVsUpPeakPublishStreamDataResponse.DescribeVsUpPeakPublishStreamData_DescribeVsUpPeakPublishStreamData>();
-			for (int i = 0; i < context.Length("DescribeVsUpPeakPublishStreamData.DescribeVsUpPeakPublishStreamDatas.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVsUpPeakPublishStreamData.DescribeVsUpPeakPublishStreamDatas.Length"); i++) {
 				DescribeVsUpPeakPublishStreamDataResponse.DescribeVsUpPeakPublishStreamData_DescribeVsUpPeakPublishStreamData describeVsUpPeakPublishStreamData = new DescribeVsUpPeakPublishStreamDataResponse.DescribeVsUpPeakPublishStreamData_DescribeVsUpPeakPublishStreamData();
-				describeVsUpPeakPublishStreamData.PublishStreamNum = context.IntegerValue("DescribeVsUpPeakPublishStreamData.DescribeVsUpPeakPublishStreamDatas["+ i +"].PublishStreamNum");
-				describeVsUpPeakPublishStreamData.PeakTime = context.StringValue("DescribeVsUpPeakPublishStreamData.DescribeVsUpPeakPublishStreamDatas["+ i +"].PeakTime");
-				describeVsUpPeakPublishStreamData.QueryTime = context.StringValue("DescribeVsUpPeakPublishStreamData.DescribeVsUpPeakPublishStreamDatas["+ i +"].QueryTime");
-				describeVsUpPeakPublishStreamData.StatName = context.StringValue("DescribeVsUpPeakPublishStreamData.DescribeVsUpPeakPublishStreamDatas["+ i +"].StatName");
-				describeVsUpPeakPublishStreamData.BandWidth = context.StringValue("DescribeVsUpPeakPublishStreamData.DescribeVsUpPeakPublishStreamDatas["+ i +"].BandWidth");
+				describeVsUpPeakPublishStreamData.PublishStreamNum = _ctx.IntegerValue("DescribeVsUpPeakPublishStreamData.DescribeVsUpPeakPublishStreamDatas["+ i +"].PublishStreamNum");
+				describeVsUpPeakPublishStreamData.PeakTime = _ctx.StringValue("DescribeVsUpPeakPublishStreamData.DescribeVsUpPeakPublishStreamDatas["+ i +"].PeakTime");
+				describeVsUpPeakPublishStreamData.QueryTime = _ctx.StringValue("DescribeVsUpPeakPublishStreamData.DescribeVsUpPeakPublishStreamDatas["+ i +"].QueryTime");
+				describeVsUpPeakPublishStreamData.StatName = _ctx.StringValue("DescribeVsUpPeakPublishStreamData.DescribeVsUpPeakPublishStreamDatas["+ i +"].StatName");
+				describeVsUpPeakPublishStreamData.BandWidth = _ctx.StringValue("DescribeVsUpPeakPublishStreamData.DescribeVsUpPeakPublishStreamDatas["+ i +"].BandWidth");
 
 				describeVsUpPeakPublishStreamDataResponse_describeVsUpPeakPublishStreamDatas.Add(describeVsUpPeakPublishStreamData);
 			}

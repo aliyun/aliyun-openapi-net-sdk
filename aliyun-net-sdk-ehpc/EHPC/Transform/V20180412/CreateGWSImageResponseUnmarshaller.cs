@@ -26,13 +26,13 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class CreateGWSImageResponseUnmarshaller
     {
-        public static CreateGWSImageResponse Unmarshall(UnmarshallerContext context)
+        public static CreateGWSImageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateGWSImageResponse createGWSImageResponse = new CreateGWSImageResponse();
 
-			createGWSImageResponse.HttpResponse = context.HttpResponse;
-			createGWSImageResponse.RequestId = context.StringValue("CreateGWSImage.RequestId");
-			createGWSImageResponse.ImageId = context.StringValue("CreateGWSImage.ImageId");
+			createGWSImageResponse.HttpResponse = _ctx.HttpResponse;
+			createGWSImageResponse.RequestId = _ctx.StringValue("CreateGWSImage.RequestId");
+			createGWSImageResponse.ImageId = _ctx.StringValue("CreateGWSImage.ImageId");
         
 			return createGWSImageResponse;
         }

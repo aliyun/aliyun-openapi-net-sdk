@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DescribeServerRelatedGlobalAccelerationInstancesResponseUnmarshaller
     {
-        public static DescribeServerRelatedGlobalAccelerationInstancesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeServerRelatedGlobalAccelerationInstancesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeServerRelatedGlobalAccelerationInstancesResponse describeServerRelatedGlobalAccelerationInstancesResponse = new DescribeServerRelatedGlobalAccelerationInstancesResponse();
 
-			describeServerRelatedGlobalAccelerationInstancesResponse.HttpResponse = context.HttpResponse;
-			describeServerRelatedGlobalAccelerationInstancesResponse.RequestId = context.StringValue("DescribeServerRelatedGlobalAccelerationInstances.RequestId");
+			describeServerRelatedGlobalAccelerationInstancesResponse.HttpResponse = _ctx.HttpResponse;
+			describeServerRelatedGlobalAccelerationInstancesResponse.RequestId = _ctx.StringValue("DescribeServerRelatedGlobalAccelerationInstances.RequestId");
 
 			List<DescribeServerRelatedGlobalAccelerationInstancesResponse.DescribeServerRelatedGlobalAccelerationInstances_GlobalAccelerationInstance> describeServerRelatedGlobalAccelerationInstancesResponse_globalAccelerationInstances = new List<DescribeServerRelatedGlobalAccelerationInstancesResponse.DescribeServerRelatedGlobalAccelerationInstances_GlobalAccelerationInstance>();
-			for (int i = 0; i < context.Length("DescribeServerRelatedGlobalAccelerationInstances.GlobalAccelerationInstances.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeServerRelatedGlobalAccelerationInstances.GlobalAccelerationInstances.Length"); i++) {
 				DescribeServerRelatedGlobalAccelerationInstancesResponse.DescribeServerRelatedGlobalAccelerationInstances_GlobalAccelerationInstance globalAccelerationInstance = new DescribeServerRelatedGlobalAccelerationInstancesResponse.DescribeServerRelatedGlobalAccelerationInstances_GlobalAccelerationInstance();
-				globalAccelerationInstance.RegionId = context.StringValue("DescribeServerRelatedGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].RegionId");
-				globalAccelerationInstance.GlobalAccelerationInstanceId = context.StringValue("DescribeServerRelatedGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].GlobalAccelerationInstanceId");
-				globalAccelerationInstance.IpAddress = context.StringValue("DescribeServerRelatedGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].IpAddress");
-				globalAccelerationInstance.ServerIpAddress = context.StringValue("DescribeServerRelatedGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].ServerIpAddress");
+				globalAccelerationInstance.RegionId = _ctx.StringValue("DescribeServerRelatedGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].RegionId");
+				globalAccelerationInstance.GlobalAccelerationInstanceId = _ctx.StringValue("DescribeServerRelatedGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].GlobalAccelerationInstanceId");
+				globalAccelerationInstance.IpAddress = _ctx.StringValue("DescribeServerRelatedGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].IpAddress");
+				globalAccelerationInstance.ServerIpAddress = _ctx.StringValue("DescribeServerRelatedGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].ServerIpAddress");
 
 				describeServerRelatedGlobalAccelerationInstancesResponse_globalAccelerationInstances.Add(globalAccelerationInstance);
 			}

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 {
     public class GetPublicKeyResponseUnmarshaller
     {
-        public static GetPublicKeyResponse Unmarshall(UnmarshallerContext context)
+        public static GetPublicKeyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetPublicKeyResponse getPublicKeyResponse = new GetPublicKeyResponse();
 
-			getPublicKeyResponse.HttpResponse = context.HttpResponse;
-			getPublicKeyResponse.PublicKey = context.StringValue("GetPublicKey.PublicKey");
-			getPublicKeyResponse.KeyId = context.StringValue("GetPublicKey.KeyId");
-			getPublicKeyResponse.RequestId = context.StringValue("GetPublicKey.RequestId");
-			getPublicKeyResponse.KeyVersionId = context.StringValue("GetPublicKey.KeyVersionId");
+			getPublicKeyResponse.HttpResponse = _ctx.HttpResponse;
+			getPublicKeyResponse.PublicKey = _ctx.StringValue("GetPublicKey.PublicKey");
+			getPublicKeyResponse.KeyId = _ctx.StringValue("GetPublicKey.KeyId");
+			getPublicKeyResponse.RequestId = _ctx.StringValue("GetPublicKey.RequestId");
+			getPublicKeyResponse.KeyVersionId = _ctx.StringValue("GetPublicKey.KeyVersionId");
         
 			return getPublicKeyResponse;
         }

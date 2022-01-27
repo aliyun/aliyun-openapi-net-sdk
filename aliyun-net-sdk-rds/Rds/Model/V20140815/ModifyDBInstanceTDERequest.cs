@@ -34,13 +34,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Rds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Rds.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
+
+		private string certificate;
+
+		private string privateKey;
+
+		private string passWord;
 
 		private string dBInstanceId;
 
@@ -68,6 +74,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string Certificate
+		{
+			get
+			{
+				return certificate;
+			}
+			set	
+			{
+				certificate = value;
+				DictionaryUtil.Add(QueryParameters, "Certificate", value);
+			}
+		}
+
+		public string PrivateKey
+		{
+			get
+			{
+				return privateKey;
+			}
+			set	
+			{
+				privateKey = value;
+				DictionaryUtil.Add(QueryParameters, "PrivateKey", value);
+			}
+		}
+
+		public string PassWord
+		{
+			get
+			{
+				return passWord;
+			}
+			set	
+			{
+				passWord = value;
+				DictionaryUtil.Add(QueryParameters, "PassWord", value);
 			}
 		}
 

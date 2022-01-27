@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class CreateSslVpnServerResponseUnmarshaller
     {
-        public static CreateSslVpnServerResponse Unmarshall(UnmarshallerContext context)
+        public static CreateSslVpnServerResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateSslVpnServerResponse createSslVpnServerResponse = new CreateSslVpnServerResponse();
 
-			createSslVpnServerResponse.HttpResponse = context.HttpResponse;
-			createSslVpnServerResponse.RequestId = context.StringValue("CreateSslVpnServer.RequestId");
-			createSslVpnServerResponse.SslVpnServerId = context.StringValue("CreateSslVpnServer.SslVpnServerId");
-			createSslVpnServerResponse.Name = context.StringValue("CreateSslVpnServer.Name");
+			createSslVpnServerResponse.HttpResponse = _ctx.HttpResponse;
+			createSslVpnServerResponse.RequestId = _ctx.StringValue("CreateSslVpnServer.RequestId");
+			createSslVpnServerResponse.SslVpnServerId = _ctx.StringValue("CreateSslVpnServer.SslVpnServerId");
+			createSslVpnServerResponse.Name = _ctx.StringValue("CreateSslVpnServer.Name");
         
 			return createSslVpnServerResponse;
         }

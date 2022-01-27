@@ -26,12 +26,12 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class ModifyInstanceAutoRenewalAttributeResponseUnmarshaller
     {
-        public static ModifyInstanceAutoRenewalAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyInstanceAutoRenewalAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyInstanceAutoRenewalAttributeResponse modifyInstanceAutoRenewalAttributeResponse = new ModifyInstanceAutoRenewalAttributeResponse();
 
-			modifyInstanceAutoRenewalAttributeResponse.HttpResponse = context.HttpResponse;
-			modifyInstanceAutoRenewalAttributeResponse.RequestId = context.StringValue("ModifyInstanceAutoRenewalAttribute.RequestId");
+			modifyInstanceAutoRenewalAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			modifyInstanceAutoRenewalAttributeResponse.RequestId = _ctx.StringValue("ModifyInstanceAutoRenewalAttribute.RequestId");
         
 			return modifyInstanceAutoRenewalAttributeResponse;
         }

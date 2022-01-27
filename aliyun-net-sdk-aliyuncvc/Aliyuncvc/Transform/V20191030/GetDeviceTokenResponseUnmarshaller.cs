@@ -26,16 +26,16 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class GetDeviceTokenResponseUnmarshaller
     {
-        public static GetDeviceTokenResponse Unmarshall(UnmarshallerContext context)
+        public static GetDeviceTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetDeviceTokenResponse getDeviceTokenResponse = new GetDeviceTokenResponse();
 
-			getDeviceTokenResponse.HttpResponse = context.HttpResponse;
-			getDeviceTokenResponse.ErrorCode = context.IntegerValue("GetDeviceToken.ErrorCode");
-			getDeviceTokenResponse.Message = context.StringValue("GetDeviceToken.Message");
-			getDeviceTokenResponse.Success = context.BooleanValue("GetDeviceToken.Success");
-			getDeviceTokenResponse.RequestId = context.StringValue("GetDeviceToken.RequestId");
-			getDeviceTokenResponse.Token = context.StringValue("GetDeviceToken.Token");
+			getDeviceTokenResponse.HttpResponse = _ctx.HttpResponse;
+			getDeviceTokenResponse.ErrorCode = _ctx.IntegerValue("GetDeviceToken.ErrorCode");
+			getDeviceTokenResponse.Message = _ctx.StringValue("GetDeviceToken.Message");
+			getDeviceTokenResponse.Success = _ctx.BooleanValue("GetDeviceToken.Success");
+			getDeviceTokenResponse.RequestId = _ctx.StringValue("GetDeviceToken.RequestId");
+			getDeviceTokenResponse.Token = _ctx.StringValue("GetDeviceToken.Token");
         
 			return getDeviceTokenResponse;
         }

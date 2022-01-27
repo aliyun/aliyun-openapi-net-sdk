@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private bool? success;
+		private string errorCode;
 
 		private string errorMessage;
 
-		private string errorCode;
+		private bool? success;
 
 		private GetOrderBaseInfo_OrderBaseInfo orderBaseInfo;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,30 +48,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ErrorCode")]
 		public string ErrorCode
 		{
 			get
@@ -83,6 +61,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "OrderBaseInfo")]
 		public GetOrderBaseInfo_OrderBaseInfo OrderBaseInfo
 		{
 			get
@@ -100,30 +105,31 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string comment;
 
-			private string committer;
-
-			private long? committerId;
-
 			private string createTime;
 
-			private string lastModifyTime;
-
-			private long? orderId;
-
-			private string pluginType;
-
-			private string statusCode;
-
-			private string statusDesc;
+			private string committer;
 
 			private long? workflowInstanceId;
 
+			private long? committerId;
+
+			private string lastModifyTime;
+
+			private string statusCode;
+
 			private string workflowStatusDesc;
 
-			private List<string> relatedUserList;
+			private string statusDesc;
+
+			private string pluginType;
+
+			private long? orderId;
 
 			private List<string> relatedUserNickList;
 
+			private List<string> relatedUserList;
+
+			[JsonProperty(PropertyName = "Comment")]
 			public string Comment
 			{
 				get
@@ -136,30 +142,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public string Committer
-			{
-				get
-				{
-					return committer;
-				}
-				set	
-				{
-					committer = value;
-				}
-			}
-
-			public long? CommitterId
-			{
-				get
-				{
-					return committerId;
-				}
-				set	
-				{
-					committerId = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "CreateTime")]
 			public string CreateTime
 			{
 				get
@@ -172,66 +155,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public string LastModifyTime
+			[JsonProperty(PropertyName = "Committer")]
+			public string Committer
 			{
 				get
 				{
-					return lastModifyTime;
+					return committer;
 				}
 				set	
 				{
-					lastModifyTime = value;
+					committer = value;
 				}
 			}
 
-			public long? OrderId
-			{
-				get
-				{
-					return orderId;
-				}
-				set	
-				{
-					orderId = value;
-				}
-			}
-
-			public string PluginType
-			{
-				get
-				{
-					return pluginType;
-				}
-				set	
-				{
-					pluginType = value;
-				}
-			}
-
-			public string StatusCode
-			{
-				get
-				{
-					return statusCode;
-				}
-				set	
-				{
-					statusCode = value;
-				}
-			}
-
-			public string StatusDesc
-			{
-				get
-				{
-					return statusDesc;
-				}
-				set	
-				{
-					statusDesc = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "WorkflowInstanceId")]
 			public long? WorkflowInstanceId
 			{
 				get
@@ -244,6 +181,46 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "CommitterId")]
+			public long? CommitterId
+			{
+				get
+				{
+					return committerId;
+				}
+				set	
+				{
+					committerId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LastModifyTime")]
+			public string LastModifyTime
+			{
+				get
+				{
+					return lastModifyTime;
+				}
+				set	
+				{
+					lastModifyTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StatusCode")]
+			public string StatusCode
+			{
+				get
+				{
+					return statusCode;
+				}
+				set	
+				{
+					statusCode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "WorkflowStatusDesc")]
 			public string WorkflowStatusDesc
 			{
 				get
@@ -256,18 +233,46 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public List<string> RelatedUserList
+			[JsonProperty(PropertyName = "StatusDesc")]
+			public string StatusDesc
 			{
 				get
 				{
-					return relatedUserList;
+					return statusDesc;
 				}
 				set	
 				{
-					relatedUserList = value;
+					statusDesc = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "PluginType")]
+			public string PluginType
+			{
+				get
+				{
+					return pluginType;
+				}
+				set	
+				{
+					pluginType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OrderId")]
+			public long? OrderId
+			{
+				get
+				{
+					return orderId;
+				}
+				set	
+				{
+					orderId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RelatedUserNickList")]
 			public List<string> RelatedUserNickList
 			{
 				get
@@ -277,6 +282,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					relatedUserNickList = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RelatedUserList")]
+			public List<string> RelatedUserList
+			{
+				get
+				{
+					return relatedUserList;
+				}
+				set	
+				{
+					relatedUserList = value;
 				}
 			}
 		}

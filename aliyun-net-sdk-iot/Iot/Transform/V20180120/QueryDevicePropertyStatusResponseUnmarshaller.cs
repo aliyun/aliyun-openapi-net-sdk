@@ -26,27 +26,27 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryDevicePropertyStatusResponseUnmarshaller
     {
-        public static QueryDevicePropertyStatusResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDevicePropertyStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDevicePropertyStatusResponse queryDevicePropertyStatusResponse = new QueryDevicePropertyStatusResponse();
 
-			queryDevicePropertyStatusResponse.HttpResponse = context.HttpResponse;
-			queryDevicePropertyStatusResponse.RequestId = context.StringValue("QueryDevicePropertyStatus.RequestId");
-			queryDevicePropertyStatusResponse.Success = context.BooleanValue("QueryDevicePropertyStatus.Success");
-			queryDevicePropertyStatusResponse.Code = context.StringValue("QueryDevicePropertyStatus.Code");
-			queryDevicePropertyStatusResponse.ErrorMessage = context.StringValue("QueryDevicePropertyStatus.ErrorMessage");
+			queryDevicePropertyStatusResponse.HttpResponse = _ctx.HttpResponse;
+			queryDevicePropertyStatusResponse.RequestId = _ctx.StringValue("QueryDevicePropertyStatus.RequestId");
+			queryDevicePropertyStatusResponse.Success = _ctx.BooleanValue("QueryDevicePropertyStatus.Success");
+			queryDevicePropertyStatusResponse.Code = _ctx.StringValue("QueryDevicePropertyStatus.Code");
+			queryDevicePropertyStatusResponse.ErrorMessage = _ctx.StringValue("QueryDevicePropertyStatus.ErrorMessage");
 
 			QueryDevicePropertyStatusResponse.QueryDevicePropertyStatus_Data data = new QueryDevicePropertyStatusResponse.QueryDevicePropertyStatus_Data();
 
 			List<QueryDevicePropertyStatusResponse.QueryDevicePropertyStatus_Data.QueryDevicePropertyStatus_PropertyStatusInfo> data_list = new List<QueryDevicePropertyStatusResponse.QueryDevicePropertyStatus_Data.QueryDevicePropertyStatus_PropertyStatusInfo>();
-			for (int i = 0; i < context.Length("QueryDevicePropertyStatus.Data.List.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryDevicePropertyStatus.Data.List.Length"); i++) {
 				QueryDevicePropertyStatusResponse.QueryDevicePropertyStatus_Data.QueryDevicePropertyStatus_PropertyStatusInfo propertyStatusInfo = new QueryDevicePropertyStatusResponse.QueryDevicePropertyStatus_Data.QueryDevicePropertyStatus_PropertyStatusInfo();
-				propertyStatusInfo.Unit = context.StringValue("QueryDevicePropertyStatus.Data.List["+ i +"].Unit");
-				propertyStatusInfo.Identifier = context.StringValue("QueryDevicePropertyStatus.Data.List["+ i +"].Identifier");
-				propertyStatusInfo.DataType = context.StringValue("QueryDevicePropertyStatus.Data.List["+ i +"].DataType");
-				propertyStatusInfo.Time = context.StringValue("QueryDevicePropertyStatus.Data.List["+ i +"].Time");
-				propertyStatusInfo._Value = context.StringValue("QueryDevicePropertyStatus.Data.List["+ i +"].Value");
-				propertyStatusInfo.Name = context.StringValue("QueryDevicePropertyStatus.Data.List["+ i +"].Name");
+				propertyStatusInfo.Unit = _ctx.StringValue("QueryDevicePropertyStatus.Data.List["+ i +"].Unit");
+				propertyStatusInfo.Identifier = _ctx.StringValue("QueryDevicePropertyStatus.Data.List["+ i +"].Identifier");
+				propertyStatusInfo.DataType = _ctx.StringValue("QueryDevicePropertyStatus.Data.List["+ i +"].DataType");
+				propertyStatusInfo.Time = _ctx.StringValue("QueryDevicePropertyStatus.Data.List["+ i +"].Time");
+				propertyStatusInfo._Value = _ctx.StringValue("QueryDevicePropertyStatus.Data.List["+ i +"].Value");
+				propertyStatusInfo.Name = _ctx.StringValue("QueryDevicePropertyStatus.Data.List["+ i +"].Name");
 
 				data_list.Add(propertyStatusInfo);
 			}

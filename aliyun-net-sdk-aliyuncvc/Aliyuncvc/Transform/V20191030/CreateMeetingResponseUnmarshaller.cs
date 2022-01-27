@@ -26,19 +26,19 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class CreateMeetingResponseUnmarshaller
     {
-        public static CreateMeetingResponse Unmarshall(UnmarshallerContext context)
+        public static CreateMeetingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateMeetingResponse createMeetingResponse = new CreateMeetingResponse();
 
-			createMeetingResponse.HttpResponse = context.HttpResponse;
-			createMeetingResponse.ErrorCode = context.IntegerValue("CreateMeeting.ErrorCode");
-			createMeetingResponse.Message = context.StringValue("CreateMeeting.Message");
-			createMeetingResponse.Success = context.BooleanValue("CreateMeeting.Success");
-			createMeetingResponse.RequestId = context.StringValue("CreateMeeting.RequestId");
+			createMeetingResponse.HttpResponse = _ctx.HttpResponse;
+			createMeetingResponse.ErrorCode = _ctx.IntegerValue("CreateMeeting.ErrorCode");
+			createMeetingResponse.Message = _ctx.StringValue("CreateMeeting.Message");
+			createMeetingResponse.Success = _ctx.BooleanValue("CreateMeeting.Success");
+			createMeetingResponse.RequestId = _ctx.StringValue("CreateMeeting.RequestId");
 
 			CreateMeetingResponse.CreateMeeting_MeetingInfo meetingInfo = new CreateMeetingResponse.CreateMeeting_MeetingInfo();
-			meetingInfo.MeetingCode = context.StringValue("CreateMeeting.MeetingInfo.MeetingCode");
-			meetingInfo.MeetingUUID = context.StringValue("CreateMeeting.MeetingInfo.MeetingUUID");
+			meetingInfo.MeetingCode = _ctx.StringValue("CreateMeeting.MeetingInfo.MeetingCode");
+			meetingInfo.MeetingUUID = _ctx.StringValue("CreateMeeting.MeetingInfo.MeetingUUID");
 			createMeetingResponse.MeetingInfo = meetingInfo;
         
 			return createMeetingResponse;

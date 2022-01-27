@@ -26,19 +26,19 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
     public class DeleteStoreResponseUnmarshaller
     {
-        public static DeleteStoreResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteStoreResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteStoreResponse deleteStoreResponse = new DeleteStoreResponse();
 
-			deleteStoreResponse.HttpResponse = context.HttpResponse;
-			deleteStoreResponse.ErrorMessage = context.StringValue("DeleteStore.ErrorMessage");
-			deleteStoreResponse.ErrorCode = context.StringValue("DeleteStore.ErrorCode");
-			deleteStoreResponse.Message = context.StringValue("DeleteStore.Message");
-			deleteStoreResponse.DynamicCode = context.StringValue("DeleteStore.DynamicCode");
-			deleteStoreResponse.Code = context.StringValue("DeleteStore.Code");
-			deleteStoreResponse.DynamicMessage = context.StringValue("DeleteStore.DynamicMessage");
-			deleteStoreResponse.RequestId = context.StringValue("DeleteStore.RequestId");
-			deleteStoreResponse.Success = context.BooleanValue("DeleteStore.Success");
+			deleteStoreResponse.HttpResponse = _ctx.HttpResponse;
+			deleteStoreResponse.ErrorMessage = _ctx.StringValue("DeleteStore.ErrorMessage");
+			deleteStoreResponse.ErrorCode = _ctx.StringValue("DeleteStore.ErrorCode");
+			deleteStoreResponse.Message = _ctx.StringValue("DeleteStore.Message");
+			deleteStoreResponse.DynamicCode = _ctx.StringValue("DeleteStore.DynamicCode");
+			deleteStoreResponse.Code = _ctx.StringValue("DeleteStore.Code");
+			deleteStoreResponse.DynamicMessage = _ctx.StringValue("DeleteStore.DynamicMessage");
+			deleteStoreResponse.RequestId = _ctx.StringValue("DeleteStore.RequestId");
+			deleteStoreResponse.Success = _ctx.BooleanValue("DeleteStore.Success");
         
 			return deleteStoreResponse;
         }

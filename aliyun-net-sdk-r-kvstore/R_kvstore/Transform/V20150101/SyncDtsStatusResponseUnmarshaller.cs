@@ -26,12 +26,12 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class SyncDtsStatusResponseUnmarshaller
     {
-        public static SyncDtsStatusResponse Unmarshall(UnmarshallerContext context)
+        public static SyncDtsStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SyncDtsStatusResponse syncDtsStatusResponse = new SyncDtsStatusResponse();
 
-			syncDtsStatusResponse.HttpResponse = context.HttpResponse;
-			syncDtsStatusResponse.RequestId = context.StringValue("SyncDtsStatus.RequestId");
+			syncDtsStatusResponse.HttpResponse = _ctx.HttpResponse;
+			syncDtsStatusResponse.RequestId = _ctx.StringValue("SyncDtsStatus.RequestId");
         
 			return syncDtsStatusResponse;
         }

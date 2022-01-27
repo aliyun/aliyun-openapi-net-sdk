@@ -26,27 +26,27 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class ListProjectBindQueueResourceResponseUnmarshaller
     {
-        public static ListProjectBindQueueResourceResponse Unmarshall(UnmarshallerContext context)
+        public static ListProjectBindQueueResourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListProjectBindQueueResourceResponse listProjectBindQueueResourceResponse = new ListProjectBindQueueResourceResponse();
 
-			listProjectBindQueueResourceResponse.HttpResponse = context.HttpResponse;
-			listProjectBindQueueResourceResponse.RequestId = context.StringValue("ListProjectBindQueueResource.RequestId");
+			listProjectBindQueueResourceResponse.HttpResponse = _ctx.HttpResponse;
+			listProjectBindQueueResourceResponse.RequestId = _ctx.StringValue("ListProjectBindQueueResource.RequestId");
 
 			List<ListProjectBindQueueResourceResponse.ListProjectBindQueueResource_Queue> listProjectBindQueueResourceResponse_queues = new List<ListProjectBindQueueResourceResponse.ListProjectBindQueueResource_Queue>();
-			for (int i = 0; i < context.Length("ListProjectBindQueueResource.Queues.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListProjectBindQueueResource.Queues.Length"); i++) {
 				ListProjectBindQueueResourceResponse.ListProjectBindQueueResource_Queue queue = new ListProjectBindQueueResourceResponse.ListProjectBindQueueResource_Queue();
-				queue.ClusterId = context.StringValue("ListProjectBindQueueResource.Queues["+ i +"].ClusterId");
-				queue.QueueName = context.StringValue("ListProjectBindQueueResource.Queues["+ i +"].QueueName");
-				queue.MinGpu = context.IntegerValue("ListProjectBindQueueResource.Queues["+ i +"].MinGpu");
-				queue.MaxGpu = context.IntegerValue("ListProjectBindQueueResource.Queues["+ i +"].MaxGpu");
-				queue.MinMem = context.IntegerValue("ListProjectBindQueueResource.Queues["+ i +"].MinMem");
-				queue.MaxMem = context.IntegerValue("ListProjectBindQueueResource.Queues["+ i +"].MaxMem");
-				queue.MinVCore = context.IntegerValue("ListProjectBindQueueResource.Queues["+ i +"].MinVCore");
-				queue.MaxVCore = context.IntegerValue("ListProjectBindQueueResource.Queues["+ i +"].MaxVCore");
-				queue.UsedVCore = context.IntegerValue("ListProjectBindQueueResource.Queues["+ i +"].UsedVCore");
-				queue.UsedGpu = context.IntegerValue("ListProjectBindQueueResource.Queues["+ i +"].UsedGpu");
-				queue.UsedMem = context.IntegerValue("ListProjectBindQueueResource.Queues["+ i +"].UsedMem");
+				queue.ClusterId = _ctx.StringValue("ListProjectBindQueueResource.Queues["+ i +"].ClusterId");
+				queue.QueueName = _ctx.StringValue("ListProjectBindQueueResource.Queues["+ i +"].QueueName");
+				queue.MinGpu = _ctx.IntegerValue("ListProjectBindQueueResource.Queues["+ i +"].MinGpu");
+				queue.MaxGpu = _ctx.IntegerValue("ListProjectBindQueueResource.Queues["+ i +"].MaxGpu");
+				queue.MinMem = _ctx.IntegerValue("ListProjectBindQueueResource.Queues["+ i +"].MinMem");
+				queue.MaxMem = _ctx.IntegerValue("ListProjectBindQueueResource.Queues["+ i +"].MaxMem");
+				queue.MinVCore = _ctx.IntegerValue("ListProjectBindQueueResource.Queues["+ i +"].MinVCore");
+				queue.MaxVCore = _ctx.IntegerValue("ListProjectBindQueueResource.Queues["+ i +"].MaxVCore");
+				queue.UsedVCore = _ctx.IntegerValue("ListProjectBindQueueResource.Queues["+ i +"].UsedVCore");
+				queue.UsedGpu = _ctx.IntegerValue("ListProjectBindQueueResource.Queues["+ i +"].UsedGpu");
+				queue.UsedMem = _ctx.IntegerValue("ListProjectBindQueueResource.Queues["+ i +"].UsedMem");
 
 				listProjectBindQueueResourceResponse_queues.Add(queue);
 			}

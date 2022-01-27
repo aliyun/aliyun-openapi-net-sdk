@@ -26,28 +26,29 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class BatchGetEdgeDriverResponseUnmarshaller
     {
-        public static BatchGetEdgeDriverResponse Unmarshall(UnmarshallerContext context)
+        public static BatchGetEdgeDriverResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchGetEdgeDriverResponse batchGetEdgeDriverResponse = new BatchGetEdgeDriverResponse();
 
-			batchGetEdgeDriverResponse.HttpResponse = context.HttpResponse;
-			batchGetEdgeDriverResponse.RequestId = context.StringValue("BatchGetEdgeDriver.RequestId");
-			batchGetEdgeDriverResponse.Success = context.BooleanValue("BatchGetEdgeDriver.Success");
-			batchGetEdgeDriverResponse.Code = context.StringValue("BatchGetEdgeDriver.Code");
-			batchGetEdgeDriverResponse.ErrorMessage = context.StringValue("BatchGetEdgeDriver.ErrorMessage");
+			batchGetEdgeDriverResponse.HttpResponse = _ctx.HttpResponse;
+			batchGetEdgeDriverResponse.RequestId = _ctx.StringValue("BatchGetEdgeDriver.RequestId");
+			batchGetEdgeDriverResponse.Success = _ctx.BooleanValue("BatchGetEdgeDriver.Success");
+			batchGetEdgeDriverResponse.Code = _ctx.StringValue("BatchGetEdgeDriver.Code");
+			batchGetEdgeDriverResponse.ErrorMessage = _ctx.StringValue("BatchGetEdgeDriver.ErrorMessage");
 
 			List<BatchGetEdgeDriverResponse.BatchGetEdgeDriver_Driver> batchGetEdgeDriverResponse_driverList = new List<BatchGetEdgeDriverResponse.BatchGetEdgeDriver_Driver>();
-			for (int i = 0; i < context.Length("BatchGetEdgeDriver.DriverList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("BatchGetEdgeDriver.DriverList.Length"); i++) {
 				BatchGetEdgeDriverResponse.BatchGetEdgeDriver_Driver driver = new BatchGetEdgeDriverResponse.BatchGetEdgeDriver_Driver();
-				driver.DriverId = context.StringValue("BatchGetEdgeDriver.DriverList["+ i +"].DriverId");
-				driver.DriverName = context.StringValue("BatchGetEdgeDriver.DriverList["+ i +"].DriverName");
-				driver.DriverProtocol = context.StringValue("BatchGetEdgeDriver.DriverList["+ i +"].DriverProtocol");
-				driver.Runtime = context.StringValue("BatchGetEdgeDriver.DriverList["+ i +"].Runtime");
-				driver.CpuArch = context.StringValue("BatchGetEdgeDriver.DriverList["+ i +"].CpuArch");
-				driver.Type = context.IntegerValue("BatchGetEdgeDriver.DriverList["+ i +"].Type");
-				driver.IsBuiltIn = context.BooleanValue("BatchGetEdgeDriver.DriverList["+ i +"].IsBuiltIn");
-				driver.GmtCreateTimestamp = context.LongValue("BatchGetEdgeDriver.DriverList["+ i +"].GmtCreateTimestamp");
-				driver.GmtModifiedTimestamp = context.LongValue("BatchGetEdgeDriver.DriverList["+ i +"].GmtModifiedTimestamp");
+				driver.DriverId = _ctx.StringValue("BatchGetEdgeDriver.DriverList["+ i +"].DriverId");
+				driver.DriverName = _ctx.StringValue("BatchGetEdgeDriver.DriverList["+ i +"].DriverName");
+				driver.DriverProtocol = _ctx.StringValue("BatchGetEdgeDriver.DriverList["+ i +"].DriverProtocol");
+				driver.Runtime = _ctx.StringValue("BatchGetEdgeDriver.DriverList["+ i +"].Runtime");
+				driver.CpuArch = _ctx.StringValue("BatchGetEdgeDriver.DriverList["+ i +"].CpuArch");
+				driver.Type = _ctx.IntegerValue("BatchGetEdgeDriver.DriverList["+ i +"].Type");
+				driver.IsBuiltIn = _ctx.BooleanValue("BatchGetEdgeDriver.DriverList["+ i +"].IsBuiltIn");
+				driver.GmtCreateTimestamp = _ctx.LongValue("BatchGetEdgeDriver.DriverList["+ i +"].GmtCreateTimestamp");
+				driver.GmtModifiedTimestamp = _ctx.LongValue("BatchGetEdgeDriver.DriverList["+ i +"].GmtModifiedTimestamp");
+				driver.UseOfficialConfig = _ctx.IntegerValue("BatchGetEdgeDriver.DriverList["+ i +"].UseOfficialConfig");
 
 				batchGetEdgeDriverResponse_driverList.Add(driver);
 			}

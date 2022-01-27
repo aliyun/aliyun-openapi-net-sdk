@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class RebootInstancesResponseUnmarshaller
     {
-        public static RebootInstancesResponse Unmarshall(UnmarshallerContext context)
+        public static RebootInstancesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RebootInstancesResponse rebootInstancesResponse = new RebootInstancesResponse();
 
-			rebootInstancesResponse.HttpResponse = context.HttpResponse;
-			rebootInstancesResponse.RequestId = context.StringValue("RebootInstances.RequestId");
+			rebootInstancesResponse.HttpResponse = _ctx.HttpResponse;
+			rebootInstancesResponse.RequestId = _ctx.StringValue("RebootInstances.RequestId");
 
 			List<RebootInstancesResponse.RebootInstances_InstanceResponse> rebootInstancesResponse_instanceResponses = new List<RebootInstancesResponse.RebootInstances_InstanceResponse>();
-			for (int i = 0; i < context.Length("RebootInstances.InstanceResponses.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("RebootInstances.InstanceResponses.Length"); i++) {
 				RebootInstancesResponse.RebootInstances_InstanceResponse instanceResponse = new RebootInstancesResponse.RebootInstances_InstanceResponse();
-				instanceResponse.InstanceId = context.StringValue("RebootInstances.InstanceResponses["+ i +"].InstanceId");
-				instanceResponse.PreviousStatus = context.StringValue("RebootInstances.InstanceResponses["+ i +"].PreviousStatus");
-				instanceResponse.CurrentStatus = context.StringValue("RebootInstances.InstanceResponses["+ i +"].CurrentStatus");
-				instanceResponse.Code = context.StringValue("RebootInstances.InstanceResponses["+ i +"].Code");
-				instanceResponse.Message = context.StringValue("RebootInstances.InstanceResponses["+ i +"].Message");
+				instanceResponse.Code = _ctx.StringValue("RebootInstances.InstanceResponses["+ i +"].Code");
+				instanceResponse.Message = _ctx.StringValue("RebootInstances.InstanceResponses["+ i +"].Message");
+				instanceResponse.InstanceId = _ctx.StringValue("RebootInstances.InstanceResponses["+ i +"].InstanceId");
+				instanceResponse.CurrentStatus = _ctx.StringValue("RebootInstances.InstanceResponses["+ i +"].CurrentStatus");
+				instanceResponse.PreviousStatus = _ctx.StringValue("RebootInstances.InstanceResponses["+ i +"].PreviousStatus");
 
 				rebootInstancesResponse_instanceResponses.Add(instanceResponse);
 			}

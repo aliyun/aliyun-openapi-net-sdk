@@ -32,8 +32,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 
 			createNodeResponse.HttpResponse = _ctx.HttpResponse;
 			createNodeResponse.RequestId = _ctx.StringValue("CreateNode.RequestId");
-			createNodeResponse.OrderId = _ctx.StringValue("CreateNode.OrderId");
 			createNodeResponse.NodeId = _ctx.StringValue("CreateNode.NodeId");
+			createNodeResponse.OrderId = _ctx.StringValue("CreateNode.OrderId");
         
 			return createNodeResponse;
         }

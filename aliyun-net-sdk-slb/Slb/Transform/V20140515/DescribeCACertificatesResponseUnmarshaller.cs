@@ -26,32 +26,35 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 {
     public class DescribeCACertificatesResponseUnmarshaller
     {
-        public static DescribeCACertificatesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCACertificatesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCACertificatesResponse describeCACertificatesResponse = new DescribeCACertificatesResponse();
 
-			describeCACertificatesResponse.HttpResponse = context.HttpResponse;
-			describeCACertificatesResponse.RequestId = context.StringValue("DescribeCACertificates.RequestId");
+			describeCACertificatesResponse.HttpResponse = _ctx.HttpResponse;
+			describeCACertificatesResponse.RequestId = _ctx.StringValue("DescribeCACertificates.RequestId");
 
 			List<DescribeCACertificatesResponse.DescribeCACertificates_CACertificate> describeCACertificatesResponse_cACertificates = new List<DescribeCACertificatesResponse.DescribeCACertificates_CACertificate>();
-			for (int i = 0; i < context.Length("DescribeCACertificates.CACertificates.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCACertificates.CACertificates.Length"); i++) {
 				DescribeCACertificatesResponse.DescribeCACertificates_CACertificate cACertificate = new DescribeCACertificatesResponse.DescribeCACertificates_CACertificate();
-				cACertificate.RegionId = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].RegionId");
-				cACertificate.CACertificateId = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].CACertificateId");
-				cACertificate.CACertificateName = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].CACertificateName");
-				cACertificate.Fingerprint = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].Fingerprint");
-				cACertificate.ResourceGroupId = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].ResourceGroupId");
-				cACertificate.CreateTime = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].CreateTime");
-				cACertificate.CreateTimeStamp = context.LongValue("DescribeCACertificates.CACertificates["+ i +"].CreateTimeStamp");
-				cACertificate.ExpireTime = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].ExpireTime");
-				cACertificate.ExpireTimeStamp = context.LongValue("DescribeCACertificates.CACertificates["+ i +"].ExpireTimeStamp");
-				cACertificate.CommonName = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].CommonName");
+				cACertificate.RegionId = _ctx.StringValue("DescribeCACertificates.CACertificates["+ i +"].RegionId");
+				cACertificate.CACertificateId = _ctx.StringValue("DescribeCACertificates.CACertificates["+ i +"].CACertificateId");
+				cACertificate.CACertificateName = _ctx.StringValue("DescribeCACertificates.CACertificates["+ i +"].CACertificateName");
+				cACertificate.Fingerprint = _ctx.StringValue("DescribeCACertificates.CACertificates["+ i +"].Fingerprint");
+				cACertificate.ResourceGroupId = _ctx.StringValue("DescribeCACertificates.CACertificates["+ i +"].ResourceGroupId");
+				cACertificate.CreateTime = _ctx.StringValue("DescribeCACertificates.CACertificates["+ i +"].CreateTime");
+				cACertificate.CreateTimeStamp = _ctx.LongValue("DescribeCACertificates.CACertificates["+ i +"].CreateTimeStamp");
+				cACertificate.ExpireTime = _ctx.StringValue("DescribeCACertificates.CACertificates["+ i +"].ExpireTime");
+				cACertificate.ExpireTimeStamp = _ctx.LongValue("DescribeCACertificates.CACertificates["+ i +"].ExpireTimeStamp");
+				cACertificate.CommonName = _ctx.StringValue("DescribeCACertificates.CACertificates["+ i +"].CommonName");
+				cACertificate.EncryptionAlgorithm = _ctx.StringValue("DescribeCACertificates.CACertificates["+ i +"].EncryptionAlgorithm");
+				cACertificate.EncryptionKeyLength = _ctx.IntegerValue("DescribeCACertificates.CACertificates["+ i +"].EncryptionKeyLength");
+				cACertificate.StandardType = _ctx.StringValue("DescribeCACertificates.CACertificates["+ i +"].StandardType");
 
 				List<DescribeCACertificatesResponse.DescribeCACertificates_CACertificate.DescribeCACertificates_Tag> cACertificate_tags = new List<DescribeCACertificatesResponse.DescribeCACertificates_CACertificate.DescribeCACertificates_Tag>();
-				for (int j = 0; j < context.Length("DescribeCACertificates.CACertificates["+ i +"].Tags.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeCACertificates.CACertificates["+ i +"].Tags.Length"); j++) {
 					DescribeCACertificatesResponse.DescribeCACertificates_CACertificate.DescribeCACertificates_Tag tag = new DescribeCACertificatesResponse.DescribeCACertificates_CACertificate.DescribeCACertificates_Tag();
-					tag.TagKey = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].Tags["+ j +"].TagKey");
-					tag.TagValue = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].Tags["+ j +"].TagValue");
+					tag.TagKey = _ctx.StringValue("DescribeCACertificates.CACertificates["+ i +"].Tags["+ j +"].TagKey");
+					tag.TagValue = _ctx.StringValue("DescribeCACertificates.CACertificates["+ i +"].Tags["+ j +"].TagValue");
 
 					cACertificate_tags.Add(tag);
 				}

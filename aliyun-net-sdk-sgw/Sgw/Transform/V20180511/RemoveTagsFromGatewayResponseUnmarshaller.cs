@@ -26,15 +26,15 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class RemoveTagsFromGatewayResponseUnmarshaller
     {
-        public static RemoveTagsFromGatewayResponse Unmarshall(UnmarshallerContext context)
+        public static RemoveTagsFromGatewayResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RemoveTagsFromGatewayResponse removeTagsFromGatewayResponse = new RemoveTagsFromGatewayResponse();
 
-			removeTagsFromGatewayResponse.HttpResponse = context.HttpResponse;
-			removeTagsFromGatewayResponse.RequestId = context.StringValue("RemoveTagsFromGateway.RequestId");
-			removeTagsFromGatewayResponse.Success = context.BooleanValue("RemoveTagsFromGateway.Success");
-			removeTagsFromGatewayResponse.Code = context.StringValue("RemoveTagsFromGateway.Code");
-			removeTagsFromGatewayResponse.Message = context.StringValue("RemoveTagsFromGateway.Message");
+			removeTagsFromGatewayResponse.HttpResponse = _ctx.HttpResponse;
+			removeTagsFromGatewayResponse.Message = _ctx.StringValue("RemoveTagsFromGateway.Message");
+			removeTagsFromGatewayResponse.RequestId = _ctx.StringValue("RemoveTagsFromGateway.RequestId");
+			removeTagsFromGatewayResponse.Code = _ctx.StringValue("RemoveTagsFromGateway.Code");
+			removeTagsFromGatewayResponse.Success = _ctx.BooleanValue("RemoveTagsFromGateway.Success");
         
 			return removeTagsFromGatewayResponse;
         }

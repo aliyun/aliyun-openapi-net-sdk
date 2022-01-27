@@ -26,19 +26,19 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
     public class DeleteRoleActionsResponseUnmarshaller
     {
-        public static DeleteRoleActionsResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteRoleActionsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteRoleActionsResponse deleteRoleActionsResponse = new DeleteRoleActionsResponse();
 
-			deleteRoleActionsResponse.HttpResponse = context.HttpResponse;
-			deleteRoleActionsResponse.ErrorMessage = context.StringValue("DeleteRoleActions.ErrorMessage");
-			deleteRoleActionsResponse.ErrorCode = context.StringValue("DeleteRoleActions.ErrorCode");
-			deleteRoleActionsResponse.Message = context.StringValue("DeleteRoleActions.Message");
-			deleteRoleActionsResponse.DynamicCode = context.StringValue("DeleteRoleActions.DynamicCode");
-			deleteRoleActionsResponse.Code = context.StringValue("DeleteRoleActions.Code");
-			deleteRoleActionsResponse.DynamicMessage = context.StringValue("DeleteRoleActions.DynamicMessage");
-			deleteRoleActionsResponse.RequestId = context.StringValue("DeleteRoleActions.RequestId");
-			deleteRoleActionsResponse.Success = context.BooleanValue("DeleteRoleActions.Success");
+			deleteRoleActionsResponse.HttpResponse = _ctx.HttpResponse;
+			deleteRoleActionsResponse.ErrorMessage = _ctx.StringValue("DeleteRoleActions.ErrorMessage");
+			deleteRoleActionsResponse.ErrorCode = _ctx.StringValue("DeleteRoleActions.ErrorCode");
+			deleteRoleActionsResponse.Message = _ctx.StringValue("DeleteRoleActions.Message");
+			deleteRoleActionsResponse.DynamicCode = _ctx.StringValue("DeleteRoleActions.DynamicCode");
+			deleteRoleActionsResponse.Code = _ctx.StringValue("DeleteRoleActions.Code");
+			deleteRoleActionsResponse.DynamicMessage = _ctx.StringValue("DeleteRoleActions.DynamicMessage");
+			deleteRoleActionsResponse.RequestId = _ctx.StringValue("DeleteRoleActions.RequestId");
+			deleteRoleActionsResponse.Success = _ctx.BooleanValue("DeleteRoleActions.Success");
         
 			return deleteRoleActionsResponse;
         }

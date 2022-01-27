@@ -26,22 +26,22 @@ namespace Aliyun.Acs.codeup.Transform.V20200414
 {
     public class GetProjectMemberResponseUnmarshaller
     {
-        public static GetProjectMemberResponse Unmarshall(UnmarshallerContext context)
+        public static GetProjectMemberResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetProjectMemberResponse getProjectMemberResponse = new GetProjectMemberResponse();
 
-			getProjectMemberResponse.HttpResponse = context.HttpResponse;
-			getProjectMemberResponse.RequestId = context.StringValue("GetProjectMember.RequestId");
-			getProjectMemberResponse.ErrorCode = context.StringValue("GetProjectMember.ErrorCode");
-			getProjectMemberResponse.Success = context.BooleanValue("GetProjectMember.Success");
-			getProjectMemberResponse.ErrorMessage = context.StringValue("GetProjectMember.ErrorMessage");
+			getProjectMemberResponse.HttpResponse = _ctx.HttpResponse;
+			getProjectMemberResponse.RequestId = _ctx.StringValue("GetProjectMember.RequestId");
+			getProjectMemberResponse.ErrorCode = _ctx.StringValue("GetProjectMember.ErrorCode");
+			getProjectMemberResponse.Success = _ctx.BooleanValue("GetProjectMember.Success");
+			getProjectMemberResponse.ErrorMessage = _ctx.StringValue("GetProjectMember.ErrorMessage");
 
 			GetProjectMemberResponse.GetProjectMember_Result result = new GetProjectMemberResponse.GetProjectMember_Result();
-			result.Id = context.LongValue("GetProjectMember.Result.Id");
-			result.ExternUserId = context.StringValue("GetProjectMember.Result.ExternUserId");
-			result.AvatarUrl = context.StringValue("GetProjectMember.Result.AvatarUrl");
-			result.Name = context.StringValue("GetProjectMember.Result.Name");
-			result.AccessLevel = context.IntegerValue("GetProjectMember.Result.AccessLevel");
+			result.Id = _ctx.LongValue("GetProjectMember.Result.Id");
+			result.ExternUserId = _ctx.StringValue("GetProjectMember.Result.ExternUserId");
+			result.AvatarUrl = _ctx.StringValue("GetProjectMember.Result.AvatarUrl");
+			result.Name = _ctx.StringValue("GetProjectMember.Result.Name");
+			result.AccessLevel = _ctx.IntegerValue("GetProjectMember.Result.AccessLevel");
 			getProjectMemberResponse.Result = result;
         
 			return getProjectMemberResponse;

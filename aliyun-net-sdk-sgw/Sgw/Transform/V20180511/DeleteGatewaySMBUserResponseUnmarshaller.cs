@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DeleteGatewaySMBUserResponseUnmarshaller
     {
-        public static DeleteGatewaySMBUserResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteGatewaySMBUserResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteGatewaySMBUserResponse deleteGatewaySMBUserResponse = new DeleteGatewaySMBUserResponse();
 
-			deleteGatewaySMBUserResponse.HttpResponse = context.HttpResponse;
-			deleteGatewaySMBUserResponse.RequestId = context.StringValue("DeleteGatewaySMBUser.RequestId");
-			deleteGatewaySMBUserResponse.Success = context.BooleanValue("DeleteGatewaySMBUser.Success");
-			deleteGatewaySMBUserResponse.Code = context.StringValue("DeleteGatewaySMBUser.Code");
-			deleteGatewaySMBUserResponse.Message = context.StringValue("DeleteGatewaySMBUser.Message");
-			deleteGatewaySMBUserResponse.TaskId = context.StringValue("DeleteGatewaySMBUser.TaskId");
+			deleteGatewaySMBUserResponse.HttpResponse = _ctx.HttpResponse;
+			deleteGatewaySMBUserResponse.TaskId = _ctx.StringValue("DeleteGatewaySMBUser.TaskId");
+			deleteGatewaySMBUserResponse.Message = _ctx.StringValue("DeleteGatewaySMBUser.Message");
+			deleteGatewaySMBUserResponse.RequestId = _ctx.StringValue("DeleteGatewaySMBUser.RequestId");
+			deleteGatewaySMBUserResponse.Code = _ctx.StringValue("DeleteGatewaySMBUser.Code");
+			deleteGatewaySMBUserResponse.Success = _ctx.BooleanValue("DeleteGatewaySMBUser.Success");
         
 			return deleteGatewaySMBUserResponse;
         }

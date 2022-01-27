@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Dypnsapi.Transform.V20170525
 {
     public class DescribeVerifySchemeResponseUnmarshaller
     {
-        public static DescribeVerifySchemeResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVerifySchemeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVerifySchemeResponse describeVerifySchemeResponse = new DescribeVerifySchemeResponse();
 
-			describeVerifySchemeResponse.HttpResponse = context.HttpResponse;
-			describeVerifySchemeResponse.RequestId = context.StringValue("DescribeVerifyScheme.RequestId");
-			describeVerifySchemeResponse.Code = context.StringValue("DescribeVerifyScheme.Code");
-			describeVerifySchemeResponse.Message = context.StringValue("DescribeVerifyScheme.Message");
+			describeVerifySchemeResponse.HttpResponse = _ctx.HttpResponse;
+			describeVerifySchemeResponse.Code = _ctx.StringValue("DescribeVerifyScheme.Code");
+			describeVerifySchemeResponse.Message = _ctx.StringValue("DescribeVerifyScheme.Message");
+			describeVerifySchemeResponse.RequestId = _ctx.StringValue("DescribeVerifyScheme.RequestId");
 
 			DescribeVerifySchemeResponse.DescribeVerifyScheme_SchemeQueryResultDTO schemeQueryResultDTO = new DescribeVerifySchemeResponse.DescribeVerifyScheme_SchemeQueryResultDTO();
-			schemeQueryResultDTO.AppEncryptInfo = context.StringValue("DescribeVerifyScheme.SchemeQueryResultDTO.AppEncryptInfo");
+			schemeQueryResultDTO.AppEncryptInfo = _ctx.StringValue("DescribeVerifyScheme.SchemeQueryResultDTO.AppEncryptInfo");
 			describeVerifySchemeResponse.SchemeQueryResultDTO = schemeQueryResultDTO;
         
 			return describeVerifySchemeResponse;

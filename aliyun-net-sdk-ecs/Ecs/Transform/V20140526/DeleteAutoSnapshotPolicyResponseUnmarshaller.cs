@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DeleteAutoSnapshotPolicyResponseUnmarshaller
     {
-        public static DeleteAutoSnapshotPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteAutoSnapshotPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteAutoSnapshotPolicyResponse deleteAutoSnapshotPolicyResponse = new DeleteAutoSnapshotPolicyResponse();
 
-			deleteAutoSnapshotPolicyResponse.HttpResponse = context.HttpResponse;
-			deleteAutoSnapshotPolicyResponse.RequestId = context.StringValue("DeleteAutoSnapshotPolicy.RequestId");
+			deleteAutoSnapshotPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			deleteAutoSnapshotPolicyResponse.RequestId = _ctx.StringValue("DeleteAutoSnapshotPolicy.RequestId");
         
 			return deleteAutoSnapshotPolicyResponse;
         }

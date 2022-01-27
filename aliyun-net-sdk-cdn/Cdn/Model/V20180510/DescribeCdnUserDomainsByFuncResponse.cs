@@ -116,8 +116,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 			private string resourceGroupId;
 
-			private string sandbox;
-
 			private List<DescribeCdnUserDomainsByFunc_Source> sources;
 
 			public string DomainName
@@ -225,18 +223,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					resourceGroupId = value;
-				}
-			}
-
-			public string Sandbox
-			{
-				get
-				{
-					return sandbox;
-				}
-				set	
-				{
-					sandbox = value;
 				}
 			}
 

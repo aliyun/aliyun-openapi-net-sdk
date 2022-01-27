@@ -26,27 +26,27 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class ListFoldersResponseUnmarshaller
     {
-        public static ListFoldersResponse Unmarshall(UnmarshallerContext context)
+        public static ListFoldersResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListFoldersResponse listFoldersResponse = new ListFoldersResponse();
 
-			listFoldersResponse.HttpResponse = context.HttpResponse;
-			listFoldersResponse.RequestId = context.StringValue("ListFolders.RequestId");
-			listFoldersResponse.Success = context.BooleanValue("ListFolders.Success");
-			listFoldersResponse.ErrorCode = context.StringValue("ListFolders.ErrorCode");
-			listFoldersResponse.ErrorMessage = context.StringValue("ListFolders.ErrorMessage");
-			listFoldersResponse.HttpStatusCode = context.IntegerValue("ListFolders.HttpStatusCode");
+			listFoldersResponse.HttpResponse = _ctx.HttpResponse;
+			listFoldersResponse.RequestId = _ctx.StringValue("ListFolders.RequestId");
+			listFoldersResponse.Success = _ctx.BooleanValue("ListFolders.Success");
+			listFoldersResponse.ErrorCode = _ctx.StringValue("ListFolders.ErrorCode");
+			listFoldersResponse.ErrorMessage = _ctx.StringValue("ListFolders.ErrorMessage");
+			listFoldersResponse.HttpStatusCode = _ctx.IntegerValue("ListFolders.HttpStatusCode");
 
 			ListFoldersResponse.ListFolders_Data data = new ListFoldersResponse.ListFolders_Data();
-			data.PageNumber = context.IntegerValue("ListFolders.Data.PageNumber");
-			data.PageSize = context.IntegerValue("ListFolders.Data.PageSize");
-			data.TotalCount = context.IntegerValue("ListFolders.Data.TotalCount");
+			data.PageNumber = _ctx.IntegerValue("ListFolders.Data.PageNumber");
+			data.PageSize = _ctx.IntegerValue("ListFolders.Data.PageSize");
+			data.TotalCount = _ctx.IntegerValue("ListFolders.Data.TotalCount");
 
 			List<ListFoldersResponse.ListFolders_Data.ListFolders_FoldersItem> data_folders = new List<ListFoldersResponse.ListFolders_Data.ListFolders_FoldersItem>();
-			for (int i = 0; i < context.Length("ListFolders.Data.Folders.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListFolders.Data.Folders.Length"); i++) {
 				ListFoldersResponse.ListFolders_Data.ListFolders_FoldersItem foldersItem = new ListFoldersResponse.ListFolders_Data.ListFolders_FoldersItem();
-				foldersItem.FolderId = context.StringValue("ListFolders.Data.Folders["+ i +"].FolderId");
-				foldersItem.FolderPath = context.StringValue("ListFolders.Data.Folders["+ i +"].FolderPath");
+				foldersItem.FolderId = _ctx.StringValue("ListFolders.Data.Folders["+ i +"].FolderId");
+				foldersItem.FolderPath = _ctx.StringValue("ListFolders.Data.Folders["+ i +"].FolderPath");
 
 				data_folders.Add(foldersItem);
 			}

@@ -27,15 +27,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string requestId;
 
-		private string code;
-
 		private string message;
 
 		private string traceId;
 
-		private bool? success;
-
 		private string errorCode;
+
+		private string code;
+
+		private bool? success;
 
 		private DescribeApplicationStatus_Data data;
 
@@ -48,18 +48,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
 			}
 		}
 
@@ -87,18 +75,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
 		public string ErrorCode
 		{
 			get
@@ -108,6 +84,30 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				errorCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -126,33 +126,39 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class DescribeApplicationStatus_Data
 		{
 
-			private string appId;
+			private string armsAdvancedEnabled;
 
 			private string lastChangeOrderId;
 
-			private string lastChangeOrderStatus;
-
-			private bool? lastChangeOrderRunning;
-
-			private string currentStatus;
-
 			private string armsApmInfo;
-
-			private int? runningInstances;
-
-			private string armsAdvancedEnabled;
 
 			private string createTime;
 
-			public string AppId
+			private string currentStatus;
+
+			private string appId;
+
+			private bool? lastChangeOrderRunning;
+
+			private int? runningInstances;
+
+			private string lastChangeOrderStatus;
+
+			private string subStatus;
+
+			private bool? enableAgent;
+
+			private long? fileSizeLimit;
+
+			public string ArmsAdvancedEnabled
 			{
 				get
 				{
-					return appId;
+					return armsAdvancedEnabled;
 				}
 				set	
 				{
-					appId = value;
+					armsAdvancedEnabled = value;
 				}
 			}
 
@@ -168,27 +174,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string LastChangeOrderStatus
+			public string ArmsApmInfo
 			{
 				get
 				{
-					return lastChangeOrderStatus;
+					return armsApmInfo;
 				}
 				set	
 				{
-					lastChangeOrderStatus = value;
+					armsApmInfo = value;
 				}
 			}
 
-			public bool? LastChangeOrderRunning
+			public string CreateTime
 			{
 				get
 				{
-					return lastChangeOrderRunning;
+					return createTime;
 				}
 				set	
 				{
-					lastChangeOrderRunning = value;
+					createTime = value;
 				}
 			}
 
@@ -204,15 +210,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string ArmsApmInfo
+			public string AppId
 			{
 				get
 				{
-					return armsApmInfo;
+					return appId;
 				}
 				set	
 				{
-					armsApmInfo = value;
+					appId = value;
+				}
+			}
+
+			public bool? LastChangeOrderRunning
+			{
+				get
+				{
+					return lastChangeOrderRunning;
+				}
+				set	
+				{
+					lastChangeOrderRunning = value;
 				}
 			}
 
@@ -228,27 +246,51 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string ArmsAdvancedEnabled
+			public string LastChangeOrderStatus
 			{
 				get
 				{
-					return armsAdvancedEnabled;
+					return lastChangeOrderStatus;
 				}
 				set	
 				{
-					armsAdvancedEnabled = value;
+					lastChangeOrderStatus = value;
 				}
 			}
 
-			public string CreateTime
+			public string SubStatus
 			{
 				get
 				{
-					return createTime;
+					return subStatus;
 				}
 				set	
 				{
-					createTime = value;
+					subStatus = value;
+				}
+			}
+
+			public bool? EnableAgent
+			{
+				get
+				{
+					return enableAgent;
+				}
+				set	
+				{
+					enableAgent = value;
+				}
+			}
+
+			public long? FileSizeLimit
+			{
+				get
+				{
+					return fileSizeLimit;
+				}
+				set	
+				{
+					fileSizeLimit = value;
 				}
 			}
 		}

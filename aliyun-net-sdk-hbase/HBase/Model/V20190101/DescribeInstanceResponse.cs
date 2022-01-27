@@ -111,7 +111,17 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private int? coldStorageSize;
 
+		private string resourceGroupId;
+
+		private string encryptionType;
+
+		private string encryptionKey;
+
+		private bool? needUpgrade;
+
 		private List<DescribeInstance_Tag> tags;
+
+		private List<string> needUpgradeComps;
 
 		public string RequestId
 		{
@@ -629,6 +639,54 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+			}
+		}
+
+		public string EncryptionType
+		{
+			get
+			{
+				return encryptionType;
+			}
+			set	
+			{
+				encryptionType = value;
+			}
+		}
+
+		public string EncryptionKey
+		{
+			get
+			{
+				return encryptionKey;
+			}
+			set	
+			{
+				encryptionKey = value;
+			}
+		}
+
+		public bool? NeedUpgrade
+		{
+			get
+			{
+				return needUpgrade;
+			}
+			set	
+			{
+				needUpgrade = value;
+			}
+		}
+
 		public List<DescribeInstance_Tag> Tags
 		{
 			get
@@ -638,6 +696,18 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			set	
 			{
 				tags = value;
+			}
+		}
+
+		public List<string> NeedUpgradeComps
+		{
+			get
+			{
+				return needUpgradeComps;
+			}
+			set	
+			{
+				needUpgradeComps = value;
 			}
 		}
 

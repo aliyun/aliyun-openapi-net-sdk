@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class UpdateGtmAddressPoolResponseUnmarshaller
     {
-        public static UpdateGtmAddressPoolResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateGtmAddressPoolResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateGtmAddressPoolResponse updateGtmAddressPoolResponse = new UpdateGtmAddressPoolResponse();
 
-			updateGtmAddressPoolResponse.HttpResponse = context.HttpResponse;
-			updateGtmAddressPoolResponse.RequestId = context.StringValue("UpdateGtmAddressPool.RequestId");
+			updateGtmAddressPoolResponse.HttpResponse = _ctx.HttpResponse;
+			updateGtmAddressPoolResponse.RequestId = _ctx.StringValue("UpdateGtmAddressPool.RequestId");
         
 			return updateGtmAddressPoolResponse;
         }

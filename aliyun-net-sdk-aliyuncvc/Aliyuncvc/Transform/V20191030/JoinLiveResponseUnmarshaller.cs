@@ -26,29 +26,29 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class JoinLiveResponseUnmarshaller
     {
-        public static JoinLiveResponse Unmarshall(UnmarshallerContext context)
+        public static JoinLiveResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			JoinLiveResponse joinLiveResponse = new JoinLiveResponse();
 
-			joinLiveResponse.HttpResponse = context.HttpResponse;
-			joinLiveResponse.ErrorCode = context.IntegerValue("JoinLive.ErrorCode");
-			joinLiveResponse.Success = context.BooleanValue("JoinLive.Success");
-			joinLiveResponse.RequestId = context.StringValue("JoinLive.RequestId");
-			joinLiveResponse.Message = context.StringValue("JoinLive.Message");
+			joinLiveResponse.HttpResponse = _ctx.HttpResponse;
+			joinLiveResponse.ErrorCode = _ctx.IntegerValue("JoinLive.ErrorCode");
+			joinLiveResponse.Success = _ctx.BooleanValue("JoinLive.Success");
+			joinLiveResponse.RequestId = _ctx.StringValue("JoinLive.RequestId");
+			joinLiveResponse.Message = _ctx.StringValue("JoinLive.Message");
 
 			JoinLiveResponse.JoinLive_MeetingInfo meetingInfo = new JoinLiveResponse.JoinLive_MeetingInfo();
-			meetingInfo.MeetingDomain = context.StringValue("JoinLive.MeetingInfo.MeetingDomain");
-			meetingInfo.MeetingToken = context.StringValue("JoinLive.MeetingInfo.MeetingToken");
-			meetingInfo.MeetingCode = context.StringValue("JoinLive.MeetingInfo.MeetingCode");
-			meetingInfo.MemberUUID = context.StringValue("JoinLive.MeetingInfo.MemberUUID");
-			meetingInfo.ClientAppId = context.StringValue("JoinLive.MeetingInfo.ClientAppId");
-			meetingInfo.MeetingUUID = context.StringValue("JoinLive.MeetingInfo.MeetingUUID");
-			meetingInfo.MeetingAppId = context.StringValue("JoinLive.MeetingInfo.MeetingAppId");
+			meetingInfo.MeetingDomain = _ctx.StringValue("JoinLive.MeetingInfo.MeetingDomain");
+			meetingInfo.MeetingToken = _ctx.StringValue("JoinLive.MeetingInfo.MeetingToken");
+			meetingInfo.MeetingCode = _ctx.StringValue("JoinLive.MeetingInfo.MeetingCode");
+			meetingInfo.MemberUUID = _ctx.StringValue("JoinLive.MeetingInfo.MemberUUID");
+			meetingInfo.ClientAppId = _ctx.StringValue("JoinLive.MeetingInfo.ClientAppId");
+			meetingInfo.MeetingUUID = _ctx.StringValue("JoinLive.MeetingInfo.MeetingUUID");
+			meetingInfo.MeetingAppId = _ctx.StringValue("JoinLive.MeetingInfo.MeetingAppId");
 
 			JoinLiveResponse.JoinLive_MeetingInfo.JoinLive_SlsInfo slsInfo = new JoinLiveResponse.JoinLive_MeetingInfo.JoinLive_SlsInfo();
-			slsInfo.LogServiceEndpoint = context.StringValue("JoinLive.MeetingInfo.SlsInfo.LogServiceEndpoint");
-			slsInfo.Logstore = context.StringValue("JoinLive.MeetingInfo.SlsInfo.Logstore");
-			slsInfo.Project = context.StringValue("JoinLive.MeetingInfo.SlsInfo.Project");
+			slsInfo.LogServiceEndpoint = _ctx.StringValue("JoinLive.MeetingInfo.SlsInfo.LogServiceEndpoint");
+			slsInfo.Logstore = _ctx.StringValue("JoinLive.MeetingInfo.SlsInfo.Logstore");
+			slsInfo.Project = _ctx.StringValue("JoinLive.MeetingInfo.SlsInfo.Project");
 			meetingInfo.SlsInfo = slsInfo;
 			joinLiveResponse.MeetingInfo = meetingInfo;
         

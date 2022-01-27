@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -98,33 +98,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeAccessPoints_AccessPointType
 		{
 
-			private string accessPointId;
-
 			private string status;
 
 			private string type;
 
-			private string attachedRegionNo;
-
-			private string location;
-
 			private string hostOperator;
-
-			private string name;
 
 			private string description;
 
-			public string AccessPointId
-			{
-				get
-				{
-					return accessPointId;
-				}
-				set	
-				{
-					accessPointId = value;
-				}
-			}
+			private string attachedRegionNo;
+
+			private string name;
+
+			private string accessPointId;
+
+			private string location;
 
 			public string Status
 			{
@@ -150,30 +138,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string AttachedRegionNo
-			{
-				get
-				{
-					return attachedRegionNo;
-				}
-				set	
-				{
-					attachedRegionNo = value;
-				}
-			}
-
-			public string Location
-			{
-				get
-				{
-					return location;
-				}
-				set	
-				{
-					location = value;
-				}
-			}
-
 			public string HostOperator
 			{
 				get
@@ -183,6 +147,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					hostOperator = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string AttachedRegionNo
+			{
+				get
+				{
+					return attachedRegionNo;
+				}
+				set	
+				{
+					attachedRegionNo = value;
 				}
 			}
 
@@ -198,15 +186,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Description
+			public string AccessPointId
 			{
 				get
 				{
-					return description;
+					return accessPointId;
 				}
 				set	
 				{
-					description = value;
+					accessPointId = value;
+				}
+			}
+
+			public string Location
+			{
+				get
+				{
+					return location;
+				}
+				set	
+				{
+					location = value;
 				}
 			}
 		}

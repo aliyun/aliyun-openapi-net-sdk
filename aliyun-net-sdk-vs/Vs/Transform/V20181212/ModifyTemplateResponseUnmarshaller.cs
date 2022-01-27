@@ -26,13 +26,13 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class ModifyTemplateResponseUnmarshaller
     {
-        public static ModifyTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyTemplateResponse modifyTemplateResponse = new ModifyTemplateResponse();
 
-			modifyTemplateResponse.HttpResponse = context.HttpResponse;
-			modifyTemplateResponse.RequestId = context.StringValue("ModifyTemplate.RequestId");
-			modifyTemplateResponse.Id = context.StringValue("ModifyTemplate.Id");
+			modifyTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			modifyTemplateResponse.RequestId = _ctx.StringValue("ModifyTemplate.RequestId");
+			modifyTemplateResponse.Id = _ctx.StringValue("ModifyTemplate.Id");
         
 			return modifyTemplateResponse;
         }

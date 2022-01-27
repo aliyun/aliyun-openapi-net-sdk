@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class CreateNatGatewayResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string natGatewayId;
+
+		private string requestId;
 
 		private List<string> forwardTableIds;
 
 		private List<string> bandwidthPackageIds;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public string NatGatewayId
 		{
@@ -54,6 +42,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				natGatewayId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

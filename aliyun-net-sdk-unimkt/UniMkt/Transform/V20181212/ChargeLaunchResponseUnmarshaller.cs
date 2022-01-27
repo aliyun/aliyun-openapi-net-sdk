@@ -26,16 +26,16 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 {
     public class ChargeLaunchResponseUnmarshaller
     {
-        public static ChargeLaunchResponse Unmarshall(UnmarshallerContext context)
+        public static ChargeLaunchResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ChargeLaunchResponse chargeLaunchResponse = new ChargeLaunchResponse();
 
-			chargeLaunchResponse.HttpResponse = context.HttpResponse;
-			chargeLaunchResponse.Success = context.BooleanValue("ChargeLaunch.Success");
-			chargeLaunchResponse.ErrorCode = context.IntegerValue("ChargeLaunch.ErrorCode");
-			chargeLaunchResponse.ErrorMessage = context.StringValue("ChargeLaunch.ErrorMessage");
-			chargeLaunchResponse.Result = context.StringValue("ChargeLaunch.Result");
-			chargeLaunchResponse.RequestId = context.StringValue("ChargeLaunch.RequestId");
+			chargeLaunchResponse.HttpResponse = _ctx.HttpResponse;
+			chargeLaunchResponse.Success = _ctx.BooleanValue("ChargeLaunch.Success");
+			chargeLaunchResponse.ErrorCode = _ctx.IntegerValue("ChargeLaunch.ErrorCode");
+			chargeLaunchResponse.ErrorMessage = _ctx.StringValue("ChargeLaunch.ErrorMessage");
+			chargeLaunchResponse.Result = _ctx.StringValue("ChargeLaunch.Result");
+			chargeLaunchResponse.RequestId = _ctx.StringValue("ChargeLaunch.RequestId");
         
 			return chargeLaunchResponse;
         }

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class GenerateMqttTokenResponseUnmarshaller
     {
-        public static GenerateMqttTokenResponse Unmarshall(UnmarshallerContext context)
+        public static GenerateMqttTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GenerateMqttTokenResponse generateMqttTokenResponse = new GenerateMqttTokenResponse();
 
-			generateMqttTokenResponse.HttpResponse = context.HttpResponse;
-			generateMqttTokenResponse.RequestId = context.StringValue("GenerateMqttToken.RequestId");
-			generateMqttTokenResponse.Success = context.BooleanValue("GenerateMqttToken.Success");
-			generateMqttTokenResponse.Code = context.StringValue("GenerateMqttToken.Code");
-			generateMqttTokenResponse.Message = context.StringValue("GenerateMqttToken.Message");
-			generateMqttTokenResponse.MqttToken = context.StringValue("GenerateMqttToken.MqttToken");
+			generateMqttTokenResponse.HttpResponse = _ctx.HttpResponse;
+			generateMqttTokenResponse.Message = _ctx.StringValue("GenerateMqttToken.Message");
+			generateMqttTokenResponse.RequestId = _ctx.StringValue("GenerateMqttToken.RequestId");
+			generateMqttTokenResponse.MqttToken = _ctx.StringValue("GenerateMqttToken.MqttToken");
+			generateMqttTokenResponse.Code = _ctx.StringValue("GenerateMqttToken.Code");
+			generateMqttTokenResponse.Success = _ctx.BooleanValue("GenerateMqttToken.Success");
         
 			return generateMqttTokenResponse;
         }

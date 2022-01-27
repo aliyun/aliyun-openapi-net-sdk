@@ -70,23 +70,23 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 		public class OnsMessagePageQueryByTopic_MsgFoundDo
 		{
 
-			private string taskId;
+			private long? currentPage;
 
 			private long? maxPageCount;
 
-			private long? currentPage;
+			private string taskId;
 
 			private List<OnsMessagePageQueryByTopic_OnsRestMessageDo> msgFoundList;
 
-			public string TaskId
+			public long? CurrentPage
 			{
 				get
 				{
-					return taskId;
+					return currentPage;
 				}
 				set	
 				{
-					taskId = value;
+					currentPage = value;
 				}
 			}
 
@@ -102,15 +102,15 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
-			public long? CurrentPage
+			public string TaskId
 			{
 				get
 				{
-					return currentPage;
+					return taskId;
 				}
 				set	
 				{
-					currentPage = value;
+					taskId = value;
 				}
 			}
 
@@ -129,67 +129,43 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			public class OnsMessagePageQueryByTopic_OnsRestMessageDo
 			{
 
-				private string topic;
-
-				private int? flag;
-
-				private string body;
+				private string offsetId;
 
 				private int? storeSize;
 
-				private long? bornTimestamp;
-
-				private string bornHost;
+				private int? reconsumeTimes;
 
 				private long? storeTimestamp;
 
-				private string storeHost;
-
-				private string msgId;
-
-				private string offsetId;
-
-				private int? bodyCRC;
-
-				private int? reconsumeTimes;
+				private string body;
 
 				private string instanceId;
 
+				private string msgId;
+
+				private int? flag;
+
+				private string storeHost;
+
+				private string topic;
+
+				private long? bornTimestamp;
+
+				private int? bodyCRC;
+
+				private string bornHost;
+
 				private List<OnsMessagePageQueryByTopic_MessageProperty> propertyList;
 
-				public string Topic
+				public string OffsetId
 				{
 					get
 					{
-						return topic;
+						return offsetId;
 					}
 					set	
 					{
-						topic = value;
-					}
-				}
-
-				public int? Flag
-				{
-					get
-					{
-						return flag;
-					}
-					set	
-					{
-						flag = value;
-					}
-				}
-
-				public string Body
-				{
-					get
-					{
-						return body;
-					}
-					set	
-					{
-						body = value;
+						offsetId = value;
 					}
 				}
 
@@ -205,27 +181,15 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					}
 				}
 
-				public long? BornTimestamp
+				public int? ReconsumeTimes
 				{
 					get
 					{
-						return bornTimestamp;
+						return reconsumeTimes;
 					}
 					set	
 					{
-						bornTimestamp = value;
-					}
-				}
-
-				public string BornHost
-				{
-					get
-					{
-						return bornHost;
-					}
-					set	
-					{
-						bornHost = value;
+						reconsumeTimes = value;
 					}
 				}
 
@@ -241,15 +205,27 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					}
 				}
 
-				public string StoreHost
+				public string Body
 				{
 					get
 					{
-						return storeHost;
+						return body;
 					}
 					set	
 					{
-						storeHost = value;
+						body = value;
+					}
+				}
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
 					}
 				}
 
@@ -265,15 +241,51 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					}
 				}
 
-				public string OffsetId
+				public int? Flag
 				{
 					get
 					{
-						return offsetId;
+						return flag;
 					}
 					set	
 					{
-						offsetId = value;
+						flag = value;
+					}
+				}
+
+				public string StoreHost
+				{
+					get
+					{
+						return storeHost;
+					}
+					set	
+					{
+						storeHost = value;
+					}
+				}
+
+				public string Topic
+				{
+					get
+					{
+						return topic;
+					}
+					set	
+					{
+						topic = value;
+					}
+				}
+
+				public long? BornTimestamp
+				{
+					get
+					{
+						return bornTimestamp;
+					}
+					set	
+					{
+						bornTimestamp = value;
 					}
 				}
 
@@ -289,27 +301,15 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					}
 				}
 
-				public int? ReconsumeTimes
+				public string BornHost
 				{
 					get
 					{
-						return reconsumeTimes;
+						return bornHost;
 					}
 					set	
 					{
-						reconsumeTimes = value;
-					}
-				}
-
-				public string InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
+						bornHost = value;
 					}
 				}
 
@@ -328,21 +328,9 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				public class OnsMessagePageQueryByTopic_MessageProperty
 				{
 
-					private string name;
-
 					private string _value;
 
-					public string Name
-					{
-						get
-						{
-							return name;
-						}
-						set	
-						{
-							name = value;
-						}
-					}
+					private string name;
 
 					public string _Value
 					{
@@ -353,6 +341,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 						set	
 						{
 							_value = value;
+						}
+					}
+
+					public string Name
+					{
+						get
+						{
+							return name;
+						}
+						set	
+						{
+							name = value;
 						}
 					}
 				}

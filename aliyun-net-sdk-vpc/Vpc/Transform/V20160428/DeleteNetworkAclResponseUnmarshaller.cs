@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DeleteNetworkAclResponseUnmarshaller
     {
-        public static DeleteNetworkAclResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteNetworkAclResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteNetworkAclResponse deleteNetworkAclResponse = new DeleteNetworkAclResponse();
 
-			deleteNetworkAclResponse.HttpResponse = context.HttpResponse;
-			deleteNetworkAclResponse.RequestId = context.StringValue("DeleteNetworkAcl.RequestId");
+			deleteNetworkAclResponse.HttpResponse = _ctx.HttpResponse;
+			deleteNetworkAclResponse.RequestId = _ctx.StringValue("DeleteNetworkAcl.RequestId");
         
 			return deleteNetworkAclResponse;
         }

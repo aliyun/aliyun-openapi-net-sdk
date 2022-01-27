@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class BatchGetEdgeInstanceDeviceChannelResponseUnmarshaller
     {
-        public static BatchGetEdgeInstanceDeviceChannelResponse Unmarshall(UnmarshallerContext context)
+        public static BatchGetEdgeInstanceDeviceChannelResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchGetEdgeInstanceDeviceChannelResponse batchGetEdgeInstanceDeviceChannelResponse = new BatchGetEdgeInstanceDeviceChannelResponse();
 
-			batchGetEdgeInstanceDeviceChannelResponse.HttpResponse = context.HttpResponse;
-			batchGetEdgeInstanceDeviceChannelResponse.RequestId = context.StringValue("BatchGetEdgeInstanceDeviceChannel.RequestId");
-			batchGetEdgeInstanceDeviceChannelResponse.Success = context.BooleanValue("BatchGetEdgeInstanceDeviceChannel.Success");
-			batchGetEdgeInstanceDeviceChannelResponse.Code = context.StringValue("BatchGetEdgeInstanceDeviceChannel.Code");
-			batchGetEdgeInstanceDeviceChannelResponse.ErrorMessage = context.StringValue("BatchGetEdgeInstanceDeviceChannel.ErrorMessage");
+			batchGetEdgeInstanceDeviceChannelResponse.HttpResponse = _ctx.HttpResponse;
+			batchGetEdgeInstanceDeviceChannelResponse.RequestId = _ctx.StringValue("BatchGetEdgeInstanceDeviceChannel.RequestId");
+			batchGetEdgeInstanceDeviceChannelResponse.Success = _ctx.BooleanValue("BatchGetEdgeInstanceDeviceChannel.Success");
+			batchGetEdgeInstanceDeviceChannelResponse.Code = _ctx.StringValue("BatchGetEdgeInstanceDeviceChannel.Code");
+			batchGetEdgeInstanceDeviceChannelResponse.ErrorMessage = _ctx.StringValue("BatchGetEdgeInstanceDeviceChannel.ErrorMessage");
 
 			List<BatchGetEdgeInstanceDeviceChannelResponse.BatchGetEdgeInstanceDeviceChannel_DeviceChannel> batchGetEdgeInstanceDeviceChannelResponse_deviceChannelList = new List<BatchGetEdgeInstanceDeviceChannelResponse.BatchGetEdgeInstanceDeviceChannel_DeviceChannel>();
-			for (int i = 0; i < context.Length("BatchGetEdgeInstanceDeviceChannel.DeviceChannelList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("BatchGetEdgeInstanceDeviceChannel.DeviceChannelList.Length"); i++) {
 				BatchGetEdgeInstanceDeviceChannelResponse.BatchGetEdgeInstanceDeviceChannel_DeviceChannel deviceChannel = new BatchGetEdgeInstanceDeviceChannelResponse.BatchGetEdgeInstanceDeviceChannel_DeviceChannel();
-				deviceChannel.ChannelId = context.StringValue("BatchGetEdgeInstanceDeviceChannel.DeviceChannelList["+ i +"].ChannelId");
-				deviceChannel.ChannelName = context.StringValue("BatchGetEdgeInstanceDeviceChannel.DeviceChannelList["+ i +"].ChannelName");
-				deviceChannel.IotId = context.StringValue("BatchGetEdgeInstanceDeviceChannel.DeviceChannelList["+ i +"].IotId");
+				deviceChannel.ChannelId = _ctx.StringValue("BatchGetEdgeInstanceDeviceChannel.DeviceChannelList["+ i +"].ChannelId");
+				deviceChannel.ChannelName = _ctx.StringValue("BatchGetEdgeInstanceDeviceChannel.DeviceChannelList["+ i +"].ChannelName");
+				deviceChannel.IotId = _ctx.StringValue("BatchGetEdgeInstanceDeviceChannel.DeviceChannelList["+ i +"].IotId");
 
 				batchGetEdgeInstanceDeviceChannelResponse_deviceChannelList.Add(deviceChannel);
 			}

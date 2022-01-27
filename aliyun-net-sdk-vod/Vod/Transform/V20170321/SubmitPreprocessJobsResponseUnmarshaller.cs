@@ -26,17 +26,17 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class SubmitPreprocessJobsResponseUnmarshaller
     {
-        public static SubmitPreprocessJobsResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitPreprocessJobsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitPreprocessJobsResponse submitPreprocessJobsResponse = new SubmitPreprocessJobsResponse();
 
-			submitPreprocessJobsResponse.HttpResponse = context.HttpResponse;
-			submitPreprocessJobsResponse.RequestId = context.StringValue("SubmitPreprocessJobs.RequestId");
+			submitPreprocessJobsResponse.HttpResponse = _ctx.HttpResponse;
+			submitPreprocessJobsResponse.RequestId = _ctx.StringValue("SubmitPreprocessJobs.RequestId");
 
 			List<SubmitPreprocessJobsResponse.SubmitPreprocessJobs_PreprocessJob> submitPreprocessJobsResponse_preprocessJobs = new List<SubmitPreprocessJobsResponse.SubmitPreprocessJobs_PreprocessJob>();
-			for (int i = 0; i < context.Length("SubmitPreprocessJobs.PreprocessJobs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("SubmitPreprocessJobs.PreprocessJobs.Length"); i++) {
 				SubmitPreprocessJobsResponse.SubmitPreprocessJobs_PreprocessJob preprocessJob = new SubmitPreprocessJobsResponse.SubmitPreprocessJobs_PreprocessJob();
-				preprocessJob.JobId = context.StringValue("SubmitPreprocessJobs.PreprocessJobs["+ i +"].JobId");
+				preprocessJob.JobId = _ctx.StringValue("SubmitPreprocessJobs.PreprocessJobs["+ i +"].JobId");
 
 				submitPreprocessJobsResponse_preprocessJobs.Add(preprocessJob);
 			}

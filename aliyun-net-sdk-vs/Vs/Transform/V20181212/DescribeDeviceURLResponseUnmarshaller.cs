@@ -26,14 +26,14 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeDeviceURLResponseUnmarshaller
     {
-        public static DescribeDeviceURLResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDeviceURLResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDeviceURLResponse describeDeviceURLResponse = new DescribeDeviceURLResponse();
 
-			describeDeviceURLResponse.HttpResponse = context.HttpResponse;
-			describeDeviceURLResponse.RequestId = context.StringValue("DescribeDeviceURL.RequestId");
-			describeDeviceURLResponse.Url = context.StringValue("DescribeDeviceURL.Url");
-			describeDeviceURLResponse.ExpireTime = context.LongValue("DescribeDeviceURL.ExpireTime");
+			describeDeviceURLResponse.HttpResponse = _ctx.HttpResponse;
+			describeDeviceURLResponse.RequestId = _ctx.StringValue("DescribeDeviceURL.RequestId");
+			describeDeviceURLResponse.Url = _ctx.StringValue("DescribeDeviceURL.Url");
+			describeDeviceURLResponse.ExpireTime = _ctx.LongValue("DescribeDeviceURL.ExpireTime");
         
 			return describeDeviceURLResponse;
         }

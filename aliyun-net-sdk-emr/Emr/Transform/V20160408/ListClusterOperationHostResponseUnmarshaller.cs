@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListClusterOperationHostResponseUnmarshaller
     {
-        public static ListClusterOperationHostResponse Unmarshall(UnmarshallerContext context)
+        public static ListClusterOperationHostResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListClusterOperationHostResponse listClusterOperationHostResponse = new ListClusterOperationHostResponse();
 
-			listClusterOperationHostResponse.HttpResponse = context.HttpResponse;
-			listClusterOperationHostResponse.RequestId = context.StringValue("ListClusterOperationHost.RequestId");
-			listClusterOperationHostResponse.TotalCount = context.IntegerValue("ListClusterOperationHost.TotalCount");
-			listClusterOperationHostResponse.PageNumber = context.IntegerValue("ListClusterOperationHost.PageNumber");
-			listClusterOperationHostResponse.PageSize = context.IntegerValue("ListClusterOperationHost.PageSize");
+			listClusterOperationHostResponse.HttpResponse = _ctx.HttpResponse;
+			listClusterOperationHostResponse.RequestId = _ctx.StringValue("ListClusterOperationHost.RequestId");
+			listClusterOperationHostResponse.TotalCount = _ctx.IntegerValue("ListClusterOperationHost.TotalCount");
+			listClusterOperationHostResponse.PageNumber = _ctx.IntegerValue("ListClusterOperationHost.PageNumber");
+			listClusterOperationHostResponse.PageSize = _ctx.IntegerValue("ListClusterOperationHost.PageSize");
 
 			List<ListClusterOperationHostResponse.ListClusterOperationHost_ClusterOperationHost> listClusterOperationHostResponse_clusterOperationHostList = new List<ListClusterOperationHostResponse.ListClusterOperationHost_ClusterOperationHost>();
-			for (int i = 0; i < context.Length("ListClusterOperationHost.ClusterOperationHostList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListClusterOperationHost.ClusterOperationHostList.Length"); i++) {
 				ListClusterOperationHostResponse.ListClusterOperationHost_ClusterOperationHost clusterOperationHost = new ListClusterOperationHostResponse.ListClusterOperationHost_ClusterOperationHost();
-				clusterOperationHost.HostId = context.StringValue("ListClusterOperationHost.ClusterOperationHostList["+ i +"].HostId");
-				clusterOperationHost.HostName = context.StringValue("ListClusterOperationHost.ClusterOperationHostList["+ i +"].HostName");
-				clusterOperationHost.Status = context.StringValue("ListClusterOperationHost.ClusterOperationHostList["+ i +"].Status");
-				clusterOperationHost.Percentage = context.StringValue("ListClusterOperationHost.ClusterOperationHostList["+ i +"].Percentage");
+				clusterOperationHost.HostId = _ctx.StringValue("ListClusterOperationHost.ClusterOperationHostList["+ i +"].HostId");
+				clusterOperationHost.HostName = _ctx.StringValue("ListClusterOperationHost.ClusterOperationHostList["+ i +"].HostName");
+				clusterOperationHost.Status = _ctx.StringValue("ListClusterOperationHost.ClusterOperationHostList["+ i +"].Status");
+				clusterOperationHost.Percentage = _ctx.StringValue("ListClusterOperationHost.ClusterOperationHostList["+ i +"].Percentage");
 
 				listClusterOperationHostResponse_clusterOperationHostList.Add(clusterOperationHost);
 			}

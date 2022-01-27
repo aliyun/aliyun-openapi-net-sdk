@@ -26,18 +26,18 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 {
     public class TranslateResponseUnmarshaller
     {
-        public static TranslateResponse Unmarshall(UnmarshallerContext context)
+        public static TranslateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			TranslateResponse translateResponse = new TranslateResponse();
 
-			translateResponse.HttpResponse = context.HttpResponse;
-			translateResponse.RequestId = context.StringValue("Translate.RequestId");
-			translateResponse.Code = context.IntegerValue("Translate.Code");
-			translateResponse.Message = context.StringValue("Translate.Message");
+			translateResponse.HttpResponse = _ctx.HttpResponse;
+			translateResponse.Code = _ctx.IntegerValue("Translate.Code");
+			translateResponse.Message = _ctx.StringValue("Translate.Message");
+			translateResponse.RequestId = _ctx.StringValue("Translate.RequestId");
 
 			TranslateResponse.Translate_Data data = new TranslateResponse.Translate_Data();
-			data.Translated = context.StringValue("Translate.Data.Translated");
-			data.WordCount = context.StringValue("Translate.Data.WordCount");
+			data.Translated = _ctx.StringValue("Translate.Data.Translated");
+			data.WordCount = _ctx.StringValue("Translate.Data.WordCount");
 			translateResponse.Data = data;
         
 			return translateResponse;

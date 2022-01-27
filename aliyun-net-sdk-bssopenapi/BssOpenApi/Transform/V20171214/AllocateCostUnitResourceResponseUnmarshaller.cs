@@ -26,20 +26,20 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class AllocateCostUnitResourceResponseUnmarshaller
     {
-        public static AllocateCostUnitResourceResponse Unmarshall(UnmarshallerContext context)
+        public static AllocateCostUnitResourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AllocateCostUnitResourceResponse allocateCostUnitResourceResponse = new AllocateCostUnitResourceResponse();
 
-			allocateCostUnitResourceResponse.HttpResponse = context.HttpResponse;
-			allocateCostUnitResourceResponse.RequestId = context.StringValue("AllocateCostUnitResource.RequestId");
-			allocateCostUnitResourceResponse.Success = context.BooleanValue("AllocateCostUnitResource.Success");
-			allocateCostUnitResourceResponse.Code = context.StringValue("AllocateCostUnitResource.Code");
-			allocateCostUnitResourceResponse.Message = context.StringValue("AllocateCostUnitResource.Message");
+			allocateCostUnitResourceResponse.HttpResponse = _ctx.HttpResponse;
+			allocateCostUnitResourceResponse.RequestId = _ctx.StringValue("AllocateCostUnitResource.RequestId");
+			allocateCostUnitResourceResponse.Message = _ctx.StringValue("AllocateCostUnitResource.Message");
+			allocateCostUnitResourceResponse.Code = _ctx.StringValue("AllocateCostUnitResource.Code");
+			allocateCostUnitResourceResponse.Success = _ctx.BooleanValue("AllocateCostUnitResource.Success");
 
 			AllocateCostUnitResourceResponse.AllocateCostUnitResource_Data data = new AllocateCostUnitResourceResponse.AllocateCostUnitResource_Data();
-			data.ToUnitUserId = context.LongValue("AllocateCostUnitResource.Data.ToUnitUserId");
-			data.ToUnitId = context.LongValue("AllocateCostUnitResource.Data.ToUnitId");
-			data.IsSuccess = context.BooleanValue("AllocateCostUnitResource.Data.IsSuccess");
+			data.IsSuccess = _ctx.BooleanValue("AllocateCostUnitResource.Data.IsSuccess");
+			data.ToUnitUserId = _ctx.LongValue("AllocateCostUnitResource.Data.ToUnitUserId");
+			data.ToUnitId = _ctx.LongValue("AllocateCostUnitResource.Data.ToUnitId");
 			allocateCostUnitResourceResponse.Data = data;
         
 			return allocateCostUnitResourceResponse;

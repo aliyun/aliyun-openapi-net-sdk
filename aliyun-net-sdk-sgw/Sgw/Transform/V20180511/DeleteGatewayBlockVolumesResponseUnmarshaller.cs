@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DeleteGatewayBlockVolumesResponseUnmarshaller
     {
-        public static DeleteGatewayBlockVolumesResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteGatewayBlockVolumesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteGatewayBlockVolumesResponse deleteGatewayBlockVolumesResponse = new DeleteGatewayBlockVolumesResponse();
 
-			deleteGatewayBlockVolumesResponse.HttpResponse = context.HttpResponse;
-			deleteGatewayBlockVolumesResponse.RequestId = context.StringValue("DeleteGatewayBlockVolumes.RequestId");
-			deleteGatewayBlockVolumesResponse.Success = context.BooleanValue("DeleteGatewayBlockVolumes.Success");
-			deleteGatewayBlockVolumesResponse.Code = context.StringValue("DeleteGatewayBlockVolumes.Code");
-			deleteGatewayBlockVolumesResponse.Message = context.StringValue("DeleteGatewayBlockVolumes.Message");
-			deleteGatewayBlockVolumesResponse.TaskId = context.StringValue("DeleteGatewayBlockVolumes.TaskId");
+			deleteGatewayBlockVolumesResponse.HttpResponse = _ctx.HttpResponse;
+			deleteGatewayBlockVolumesResponse.TaskId = _ctx.StringValue("DeleteGatewayBlockVolumes.TaskId");
+			deleteGatewayBlockVolumesResponse.Message = _ctx.StringValue("DeleteGatewayBlockVolumes.Message");
+			deleteGatewayBlockVolumesResponse.RequestId = _ctx.StringValue("DeleteGatewayBlockVolumes.RequestId");
+			deleteGatewayBlockVolumesResponse.Code = _ctx.StringValue("DeleteGatewayBlockVolumes.Code");
+			deleteGatewayBlockVolumesResponse.Success = _ctx.BooleanValue("DeleteGatewayBlockVolumes.Success");
         
 			return deleteGatewayBlockVolumesResponse;
         }

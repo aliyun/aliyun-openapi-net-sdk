@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeInstanceDomainsResponseUnmarshaller
     {
-        public static DescribeInstanceDomainsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeInstanceDomainsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeInstanceDomainsResponse describeInstanceDomainsResponse = new DescribeInstanceDomainsResponse();
 
-			describeInstanceDomainsResponse.HttpResponse = context.HttpResponse;
-			describeInstanceDomainsResponse.RequestId = context.StringValue("DescribeInstanceDomains.RequestId");
-			describeInstanceDomainsResponse.TotalItems = context.IntegerValue("DescribeInstanceDomains.TotalItems");
-			describeInstanceDomainsResponse.PageNumber = context.IntegerValue("DescribeInstanceDomains.PageNumber");
-			describeInstanceDomainsResponse.PageSize = context.IntegerValue("DescribeInstanceDomains.PageSize");
-			describeInstanceDomainsResponse.TotalPages = context.IntegerValue("DescribeInstanceDomains.TotalPages");
+			describeInstanceDomainsResponse.HttpResponse = _ctx.HttpResponse;
+			describeInstanceDomainsResponse.RequestId = _ctx.StringValue("DescribeInstanceDomains.RequestId");
+			describeInstanceDomainsResponse.TotalItems = _ctx.IntegerValue("DescribeInstanceDomains.TotalItems");
+			describeInstanceDomainsResponse.PageNumber = _ctx.IntegerValue("DescribeInstanceDomains.PageNumber");
+			describeInstanceDomainsResponse.PageSize = _ctx.IntegerValue("DescribeInstanceDomains.PageSize");
+			describeInstanceDomainsResponse.TotalPages = _ctx.IntegerValue("DescribeInstanceDomains.TotalPages");
 
 			List<DescribeInstanceDomainsResponse.DescribeInstanceDomains_InstanceDomain> describeInstanceDomainsResponse_instanceDomains = new List<DescribeInstanceDomainsResponse.DescribeInstanceDomains_InstanceDomain>();
-			for (int i = 0; i < context.Length("DescribeInstanceDomains.InstanceDomains.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeInstanceDomains.InstanceDomains.Length"); i++) {
 				DescribeInstanceDomainsResponse.DescribeInstanceDomains_InstanceDomain instanceDomain = new DescribeInstanceDomainsResponse.DescribeInstanceDomains_InstanceDomain();
-				instanceDomain.DomainName = context.StringValue("DescribeInstanceDomains.InstanceDomains["+ i +"].DomainName");
-				instanceDomain.CreateTime = context.StringValue("DescribeInstanceDomains.InstanceDomains["+ i +"].CreateTime");
-				instanceDomain.CreateTimestamp = context.LongValue("DescribeInstanceDomains.InstanceDomains["+ i +"].CreateTimestamp");
+				instanceDomain.DomainName = _ctx.StringValue("DescribeInstanceDomains.InstanceDomains["+ i +"].DomainName");
+				instanceDomain.CreateTime = _ctx.StringValue("DescribeInstanceDomains.InstanceDomains["+ i +"].CreateTime");
+				instanceDomain.CreateTimestamp = _ctx.LongValue("DescribeInstanceDomains.InstanceDomains["+ i +"].CreateTimestamp");
 
 				describeInstanceDomainsResponse_instanceDomains.Add(instanceDomain);
 			}

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class CreateFolderResponseUnmarshaller
     {
-        public static CreateFolderResponse Unmarshall(UnmarshallerContext context)
+        public static CreateFolderResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateFolderResponse createFolderResponse = new CreateFolderResponse();
 
-			createFolderResponse.HttpResponse = context.HttpResponse;
-			createFolderResponse.RequestId = context.StringValue("CreateFolder.RequestId");
-			createFolderResponse.FolderId = context.LongValue("CreateFolder.FolderId");
+			createFolderResponse.HttpResponse = _ctx.HttpResponse;
+			createFolderResponse.RequestId = _ctx.StringValue("CreateFolder.RequestId");
+			createFolderResponse.FolderId = _ctx.LongValue("CreateFolder.FolderId");
         
 			return createFolderResponse;
         }

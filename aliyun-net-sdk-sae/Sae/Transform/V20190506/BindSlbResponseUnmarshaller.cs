@@ -26,20 +26,20 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class BindSlbResponseUnmarshaller
     {
-        public static BindSlbResponse Unmarshall(UnmarshallerContext context)
+        public static BindSlbResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BindSlbResponse bindSlbResponse = new BindSlbResponse();
 
-			bindSlbResponse.HttpResponse = context.HttpResponse;
-			bindSlbResponse.Code = context.StringValue("BindSlb.Code");
-			bindSlbResponse.Message = context.StringValue("BindSlb.Message");
-			bindSlbResponse.ErrorCode = context.StringValue("BindSlb.ErrorCode");
-			bindSlbResponse.RequestId = context.StringValue("BindSlb.RequestId");
-			bindSlbResponse.Success = context.BooleanValue("BindSlb.Success");
-			bindSlbResponse.TraceId = context.StringValue("BindSlb.TraceId");
+			bindSlbResponse.HttpResponse = _ctx.HttpResponse;
+			bindSlbResponse.RequestId = _ctx.StringValue("BindSlb.RequestId");
+			bindSlbResponse.Message = _ctx.StringValue("BindSlb.Message");
+			bindSlbResponse.TraceId = _ctx.StringValue("BindSlb.TraceId");
+			bindSlbResponse.ErrorCode = _ctx.StringValue("BindSlb.ErrorCode");
+			bindSlbResponse.Code = _ctx.StringValue("BindSlb.Code");
+			bindSlbResponse.Success = _ctx.BooleanValue("BindSlb.Success");
 
 			BindSlbResponse.BindSlb_Data data = new BindSlbResponse.BindSlb_Data();
-			data.ChangeOrderId = context.StringValue("BindSlb.Data.ChangeOrderId");
+			data.ChangeOrderId = _ctx.StringValue("BindSlb.Data.ChangeOrderId");
 			bindSlbResponse.Data = data;
         
 			return bindSlbResponse;

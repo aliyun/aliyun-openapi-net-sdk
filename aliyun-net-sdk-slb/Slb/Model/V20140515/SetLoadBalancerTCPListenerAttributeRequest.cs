@@ -34,9 +34,10 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Slb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Slb.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -69,6 +70,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private int? healthCheckInterval;
 
+		private string connectionDrain;
+
 		private int? healthCheckConnectTimeout;
 
 		private string description;
@@ -88,6 +91,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private int? bandwidth;
 
 		private string ownerAccount;
+
+		private int? connectionDrainTimeout;
 
 		private int? healthCheckConnectPort;
 
@@ -290,6 +295,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string ConnectionDrain
+		{
+			get
+			{
+				return connectionDrain;
+			}
+			set	
+			{
+				connectionDrain = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionDrain", value);
+			}
+		}
+
 		public int? HealthCheckConnectTimeout
 		{
 			get
@@ -417,6 +435,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public int? ConnectionDrainTimeout
+		{
+			get
+			{
+				return connectionDrainTimeout;
+			}
+			set	
+			{
+				connectionDrainTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionDrainTimeout", value.ToString());
 			}
 		}
 

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class ConvertBandwidthPackageResponseUnmarshaller
     {
-        public static ConvertBandwidthPackageResponse Unmarshall(UnmarshallerContext context)
+        public static ConvertBandwidthPackageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ConvertBandwidthPackageResponse convertBandwidthPackageResponse = new ConvertBandwidthPackageResponse();
 
-			convertBandwidthPackageResponse.HttpResponse = context.HttpResponse;
-			convertBandwidthPackageResponse.RequestId = context.StringValue("ConvertBandwidthPackage.RequestId");
-			convertBandwidthPackageResponse.ConvertInstanceId = context.StringValue("ConvertBandwidthPackage.ConvertInstanceId");
+			convertBandwidthPackageResponse.HttpResponse = _ctx.HttpResponse;
+			convertBandwidthPackageResponse.RequestId = _ctx.StringValue("ConvertBandwidthPackage.RequestId");
+			convertBandwidthPackageResponse.ConvertInstanceId = _ctx.StringValue("ConvertBandwidthPackage.ConvertInstanceId");
         
 			return convertBandwidthPackageResponse;
         }

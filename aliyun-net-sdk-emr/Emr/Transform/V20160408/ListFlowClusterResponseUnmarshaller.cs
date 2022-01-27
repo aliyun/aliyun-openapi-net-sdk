@@ -26,42 +26,43 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListFlowClusterResponseUnmarshaller
     {
-        public static ListFlowClusterResponse Unmarshall(UnmarshallerContext context)
+        public static ListFlowClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListFlowClusterResponse listFlowClusterResponse = new ListFlowClusterResponse();
 
-			listFlowClusterResponse.HttpResponse = context.HttpResponse;
-			listFlowClusterResponse.RequestId = context.StringValue("ListFlowCluster.RequestId");
-			listFlowClusterResponse.TotalCount = context.IntegerValue("ListFlowCluster.TotalCount");
-			listFlowClusterResponse.PageNumber = context.IntegerValue("ListFlowCluster.PageNumber");
-			listFlowClusterResponse.PageSize = context.IntegerValue("ListFlowCluster.PageSize");
+			listFlowClusterResponse.HttpResponse = _ctx.HttpResponse;
+			listFlowClusterResponse.RequestId = _ctx.StringValue("ListFlowCluster.RequestId");
+			listFlowClusterResponse.TotalCount = _ctx.IntegerValue("ListFlowCluster.TotalCount");
+			listFlowClusterResponse.PageNumber = _ctx.IntegerValue("ListFlowCluster.PageNumber");
+			listFlowClusterResponse.PageSize = _ctx.IntegerValue("ListFlowCluster.PageSize");
 
 			List<ListFlowClusterResponse.ListFlowCluster_ClusterInfo> listFlowClusterResponse_clusters = new List<ListFlowClusterResponse.ListFlowCluster_ClusterInfo>();
-			for (int i = 0; i < context.Length("ListFlowCluster.Clusters.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListFlowCluster.Clusters.Length"); i++) {
 				ListFlowClusterResponse.ListFlowCluster_ClusterInfo clusterInfo = new ListFlowClusterResponse.ListFlowCluster_ClusterInfo();
-				clusterInfo.Id = context.StringValue("ListFlowCluster.Clusters["+ i +"].Id");
-				clusterInfo.Name = context.StringValue("ListFlowCluster.Clusters["+ i +"].Name");
-				clusterInfo.Type = context.StringValue("ListFlowCluster.Clusters["+ i +"].Type");
-				clusterInfo.CreateTime = context.LongValue("ListFlowCluster.Clusters["+ i +"].CreateTime");
-				clusterInfo.RunningTime = context.IntegerValue("ListFlowCluster.Clusters["+ i +"].RunningTime");
-				clusterInfo.Status = context.StringValue("ListFlowCluster.Clusters["+ i +"].Status");
-				clusterInfo.ChargeType = context.StringValue("ListFlowCluster.Clusters["+ i +"].ChargeType");
-				clusterInfo.ExpiredTime = context.LongValue("ListFlowCluster.Clusters["+ i +"].ExpiredTime");
-				clusterInfo.Period = context.IntegerValue("ListFlowCluster.Clusters["+ i +"].Period");
-				clusterInfo.HasUncompletedOrder = context.BooleanValue("ListFlowCluster.Clusters["+ i +"].HasUncompletedOrder");
-				clusterInfo.OrderList = context.StringValue("ListFlowCluster.Clusters["+ i +"].OrderList");
-				clusterInfo.CreateResource = context.StringValue("ListFlowCluster.Clusters["+ i +"].CreateResource");
+				clusterInfo.Id = _ctx.StringValue("ListFlowCluster.Clusters["+ i +"].Id");
+				clusterInfo.Name = _ctx.StringValue("ListFlowCluster.Clusters["+ i +"].Name");
+				clusterInfo.Type = _ctx.StringValue("ListFlowCluster.Clusters["+ i +"].Type");
+				clusterInfo.CreateTime = _ctx.LongValue("ListFlowCluster.Clusters["+ i +"].CreateTime");
+				clusterInfo.RunningTime = _ctx.IntegerValue("ListFlowCluster.Clusters["+ i +"].RunningTime");
+				clusterInfo.Status = _ctx.StringValue("ListFlowCluster.Clusters["+ i +"].Status");
+				clusterInfo.ChargeType = _ctx.StringValue("ListFlowCluster.Clusters["+ i +"].ChargeType");
+				clusterInfo.ExpiredTime = _ctx.LongValue("ListFlowCluster.Clusters["+ i +"].ExpiredTime");
+				clusterInfo.Period = _ctx.IntegerValue("ListFlowCluster.Clusters["+ i +"].Period");
+				clusterInfo.HasUncompletedOrder = _ctx.BooleanValue("ListFlowCluster.Clusters["+ i +"].HasUncompletedOrder");
+				clusterInfo.OrderList = _ctx.StringValue("ListFlowCluster.Clusters["+ i +"].OrderList");
+				clusterInfo.CreateResource = _ctx.StringValue("ListFlowCluster.Clusters["+ i +"].CreateResource");
+				clusterInfo.K8sClusterId = _ctx.StringValue("ListFlowCluster.Clusters["+ i +"].K8sClusterId");
 
 				ListFlowClusterResponse.ListFlowCluster_ClusterInfo.ListFlowCluster_OrderTaskInfo orderTaskInfo = new ListFlowClusterResponse.ListFlowCluster_ClusterInfo.ListFlowCluster_OrderTaskInfo();
-				orderTaskInfo.TargetCount = context.IntegerValue("ListFlowCluster.Clusters["+ i +"].OrderTaskInfo.TargetCount");
-				orderTaskInfo.CurrentCount = context.IntegerValue("ListFlowCluster.Clusters["+ i +"].OrderTaskInfo.CurrentCount");
-				orderTaskInfo.OrderIdList = context.StringValue("ListFlowCluster.Clusters["+ i +"].OrderTaskInfo.OrderIdList");
+				orderTaskInfo.TargetCount = _ctx.IntegerValue("ListFlowCluster.Clusters["+ i +"].OrderTaskInfo.TargetCount");
+				orderTaskInfo.CurrentCount = _ctx.IntegerValue("ListFlowCluster.Clusters["+ i +"].OrderTaskInfo.CurrentCount");
+				orderTaskInfo.OrderIdList = _ctx.StringValue("ListFlowCluster.Clusters["+ i +"].OrderTaskInfo.OrderIdList");
 				clusterInfo.OrderTaskInfo = orderTaskInfo;
 
 				ListFlowClusterResponse.ListFlowCluster_ClusterInfo.ListFlowCluster_FailReason failReason = new ListFlowClusterResponse.ListFlowCluster_ClusterInfo.ListFlowCluster_FailReason();
-				failReason.ErrorCode = context.StringValue("ListFlowCluster.Clusters["+ i +"].FailReason.ErrorCode");
-				failReason.ErrorMsg = context.StringValue("ListFlowCluster.Clusters["+ i +"].FailReason.ErrorMsg");
-				failReason.RequestId = context.StringValue("ListFlowCluster.Clusters["+ i +"].FailReason.RequestId");
+				failReason.ErrorCode = _ctx.StringValue("ListFlowCluster.Clusters["+ i +"].FailReason.ErrorCode");
+				failReason.ErrorMsg = _ctx.StringValue("ListFlowCluster.Clusters["+ i +"].FailReason.ErrorMsg");
+				failReason.RequestId = _ctx.StringValue("ListFlowCluster.Clusters["+ i +"].FailReason.RequestId");
 				clusterInfo.FailReason = failReason;
 
 				listFlowClusterResponse_clusters.Add(clusterInfo);

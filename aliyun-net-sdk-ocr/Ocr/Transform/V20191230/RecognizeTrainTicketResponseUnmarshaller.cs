@@ -26,22 +26,22 @@ namespace Aliyun.Acs.ocr.Transform.V20191230
 {
     public class RecognizeTrainTicketResponseUnmarshaller
     {
-        public static RecognizeTrainTicketResponse Unmarshall(UnmarshallerContext context)
+        public static RecognizeTrainTicketResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RecognizeTrainTicketResponse recognizeTrainTicketResponse = new RecognizeTrainTicketResponse();
 
-			recognizeTrainTicketResponse.HttpResponse = context.HttpResponse;
-			recognizeTrainTicketResponse.RequestId = context.StringValue("RecognizeTrainTicket.RequestId");
+			recognizeTrainTicketResponse.HttpResponse = _ctx.HttpResponse;
+			recognizeTrainTicketResponse.RequestId = _ctx.StringValue("RecognizeTrainTicket.RequestId");
 
 			RecognizeTrainTicketResponse.RecognizeTrainTicket_Data data = new RecognizeTrainTicketResponse.RecognizeTrainTicket_Data();
-			data.Date = context.StringValue("RecognizeTrainTicket.Data.Date");
-			data.Destination = context.StringValue("RecognizeTrainTicket.Data.Destination");
-			data.Level = context.StringValue("RecognizeTrainTicket.Data.Level");
-			data.Number = context.StringValue("RecognizeTrainTicket.Data.Number");
-			data.Name = context.StringValue("RecognizeTrainTicket.Data.Name");
-			data.DepartureStation = context.StringValue("RecognizeTrainTicket.Data.DepartureStation");
-			data.Seat = context.StringValue("RecognizeTrainTicket.Data.Seat");
-			data.Price = context.FloatValue("RecognizeTrainTicket.Data.Price");
+			data.Date = _ctx.StringValue("RecognizeTrainTicket.Data.Date");
+			data.Destination = _ctx.StringValue("RecognizeTrainTicket.Data.Destination");
+			data.Level = _ctx.StringValue("RecognizeTrainTicket.Data.Level");
+			data.Number = _ctx.StringValue("RecognizeTrainTicket.Data.Number");
+			data.Name = _ctx.StringValue("RecognizeTrainTicket.Data.Name");
+			data.DepartureStation = _ctx.StringValue("RecognizeTrainTicket.Data.DepartureStation");
+			data.Seat = _ctx.StringValue("RecognizeTrainTicket.Data.Seat");
+			data.Price = _ctx.FloatValue("RecognizeTrainTicket.Data.Price");
 			recognizeTrainTicketResponse.Data = data;
         
 			return recognizeTrainTicketResponse;

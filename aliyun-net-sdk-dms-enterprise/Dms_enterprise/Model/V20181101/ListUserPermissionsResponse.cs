@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -25,66 +25,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 	public class ListUserPermissionsResponse : AcsResponse
 	{
 
+		private long? totalCount;
+
 		private string requestId;
-
-		private bool? success;
-
-		private string errorMessage;
 
 		private string errorCode;
 
-		private long? totalCount;
+		private string errorMessage;
+
+		private bool? success;
 
 		private List<ListUserPermissions_UserPermission> userPermissions;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TotalCount")]
 		public long? TotalCount
 		{
 			get
@@ -97,6 +50,59 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "UserPermissions")]
 		public List<ListUserPermissions_UserPermission> UserPermissions
 		{
 			get
@@ -112,72 +118,41 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class ListUserPermissions_UserPermission
 		{
 
-			private string userId;
-
-			private string userNickName;
-
-			private string dsType;
-
 			private string dbId;
 
-			private bool? logic;
+			private string tableName;
+
+			private string userId;
 
 			private string schemaName;
 
-			private string searchName;
+			private bool? logic;
+
+			private string userNickName;
 
 			private string instanceId;
 
 			private string envType;
 
-			private string alias;
+			private string columnName;
 
 			private string dbType;
 
-			private string tableName;
+			private string dsType;
 
 			private string tableId;
 
-			private string columnName;
+			private string searchName;
+
+			private string alias;
+
+			private string host;
+
+			private long? port;
 
 			private List<ListUserPermissions_PermDetail> permDetails;
 
-			public string UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
-
-			public string UserNickName
-			{
-				get
-				{
-					return userNickName;
-				}
-				set	
-				{
-					userNickName = value;
-				}
-			}
-
-			public string DsType
-			{
-				get
-				{
-					return dsType;
-				}
-				set	
-				{
-					dsType = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "DbId")]
 			public string DbId
 			{
 				get
@@ -190,90 +165,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public bool? Logic
-			{
-				get
-				{
-					return logic;
-				}
-				set	
-				{
-					logic = value;
-				}
-			}
-
-			public string SchemaName
-			{
-				get
-				{
-					return schemaName;
-				}
-				set	
-				{
-					schemaName = value;
-				}
-			}
-
-			public string SearchName
-			{
-				get
-				{
-					return searchName;
-				}
-				set	
-				{
-					searchName = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public string EnvType
-			{
-				get
-				{
-					return envType;
-				}
-				set	
-				{
-					envType = value;
-				}
-			}
-
-			public string Alias
-			{
-				get
-				{
-					return alias;
-				}
-				set	
-				{
-					alias = value;
-				}
-			}
-
-			public string DbType
-			{
-				get
-				{
-					return dbType;
-				}
-				set	
-				{
-					dbType = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "TableName")]
 			public string TableName
 			{
 				get
@@ -286,18 +178,85 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public string TableId
+			[JsonProperty(PropertyName = "UserId")]
+			public string UserId
 			{
 				get
 				{
-					return tableId;
+					return userId;
 				}
 				set	
 				{
-					tableId = value;
+					userId = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "SchemaName")]
+			public string SchemaName
+			{
+				get
+				{
+					return schemaName;
+				}
+				set	
+				{
+					schemaName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Logic")]
+			public bool? Logic
+			{
+				get
+				{
+					return logic;
+				}
+				set	
+				{
+					logic = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UserNickName")]
+			public string UserNickName
+			{
+				get
+				{
+					return userNickName;
+				}
+				set	
+				{
+					userNickName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceId")]
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EnvType")]
+			public string EnvType
+			{
+				get
+				{
+					return envType;
+				}
+				set	
+				{
+					envType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ColumnName")]
 			public string ColumnName
 			{
 				get
@@ -310,6 +269,98 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "DbType")]
+			public string DbType
+			{
+				get
+				{
+					return dbType;
+				}
+				set	
+				{
+					dbType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DsType")]
+			public string DsType
+			{
+				get
+				{
+					return dsType;
+				}
+				set	
+				{
+					dsType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TableId")]
+			public string TableId
+			{
+				get
+				{
+					return tableId;
+				}
+				set	
+				{
+					tableId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SearchName")]
+			public string SearchName
+			{
+				get
+				{
+					return searchName;
+				}
+				set	
+				{
+					searchName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Alias")]
+			public string Alias
+			{
+				get
+				{
+					return alias;
+				}
+				set	
+				{
+					alias = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Host")]
+			public string Host
+			{
+				get
+				{
+					return host;
+				}
+				set	
+				{
+					host = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Port")]
+			public long? Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PermDetails")]
 			public List<ListUserPermissions_PermDetail> PermDetails
 			{
 				get
@@ -325,54 +376,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			public class ListUserPermissions_PermDetail
 			{
 
+				private string originFrom;
+
 				private string permType;
 
 				private string expireDate;
 
 				private string createDate;
 
-				private string originFrom;
-
 				private string userAccessId;
 
 				private string extraData;
 
-				public string PermType
-				{
-					get
-					{
-						return permType;
-					}
-					set	
-					{
-						permType = value;
-					}
-				}
-
-				public string ExpireDate
-				{
-					get
-					{
-						return expireDate;
-					}
-					set	
-					{
-						expireDate = value;
-					}
-				}
-
-				public string CreateDate
-				{
-					get
-					{
-						return createDate;
-					}
-					set	
-					{
-						createDate = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "OriginFrom")]
 				public string OriginFrom
 				{
 					get
@@ -385,6 +401,46 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
+				[JsonProperty(PropertyName = "PermType")]
+				public string PermType
+				{
+					get
+					{
+						return permType;
+					}
+					set	
+					{
+						permType = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ExpireDate")]
+				public string ExpireDate
+				{
+					get
+					{
+						return expireDate;
+					}
+					set	
+					{
+						expireDate = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "CreateDate")]
+				public string CreateDate
+				{
+					get
+					{
+						return createDate;
+					}
+					set	
+					{
+						createDate = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "UserAccessId")]
 				public string UserAccessId
 				{
 					get
@@ -397,6 +453,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
+				[JsonProperty(PropertyName = "ExtraData")]
 				public string ExtraData
 				{
 					get

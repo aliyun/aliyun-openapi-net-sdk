@@ -124,6 +124,8 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 
 			private string description;
 
+			private string secretToken;
+
 			public long? Id
 			{
 				get
@@ -277,6 +279,18 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string SecretToken
+			{
+				get
+				{
+					return secretToken;
+				}
+				set	
+				{
+					secretToken = value;
 				}
 			}
 		}

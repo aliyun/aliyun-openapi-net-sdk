@@ -44,6 +44,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string engineVersion;
 
+		private string resourceGroupId;
+
 		private string securityToken;
 
 		private string engine;
@@ -53,6 +55,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string instanceId;
 
 		private string characterType;
 
@@ -79,6 +83,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				engineVersion = value;
 				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -144,6 +161,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

@@ -26,17 +26,17 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class CreateOfficeConversionTaskResponseUnmarshaller
     {
-        public static CreateOfficeConversionTaskResponse Unmarshall(UnmarshallerContext context)
+        public static CreateOfficeConversionTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateOfficeConversionTaskResponse createOfficeConversionTaskResponse = new CreateOfficeConversionTaskResponse();
 
-			createOfficeConversionTaskResponse.HttpResponse = context.HttpResponse;
-			createOfficeConversionTaskResponse.RequestId = context.StringValue("CreateOfficeConversionTask.RequestId");
-			createOfficeConversionTaskResponse.TaskId = context.StringValue("CreateOfficeConversionTask.TaskId");
-			createOfficeConversionTaskResponse.TgtLoc = context.StringValue("CreateOfficeConversionTask.TgtLoc");
-			createOfficeConversionTaskResponse.Status = context.StringValue("CreateOfficeConversionTask.Status");
-			createOfficeConversionTaskResponse.CreateTime = context.StringValue("CreateOfficeConversionTask.CreateTime");
-			createOfficeConversionTaskResponse.Percent = context.IntegerValue("CreateOfficeConversionTask.Percent");
+			createOfficeConversionTaskResponse.HttpResponse = _ctx.HttpResponse;
+			createOfficeConversionTaskResponse.Status = _ctx.StringValue("CreateOfficeConversionTask.Status");
+			createOfficeConversionTaskResponse.TaskId = _ctx.StringValue("CreateOfficeConversionTask.TaskId");
+			createOfficeConversionTaskResponse.RequestId = _ctx.StringValue("CreateOfficeConversionTask.RequestId");
+			createOfficeConversionTaskResponse.Percent = _ctx.IntegerValue("CreateOfficeConversionTask.Percent");
+			createOfficeConversionTaskResponse.TgtLoc = _ctx.StringValue("CreateOfficeConversionTask.TgtLoc");
+			createOfficeConversionTaskResponse.CreateTime = _ctx.StringValue("CreateOfficeConversionTask.CreateTime");
         
 			return createOfficeConversionTaskResponse;
         }

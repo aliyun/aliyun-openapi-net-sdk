@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class CreateDiagnosticReportResponseUnmarshaller
     {
-        public static CreateDiagnosticReportResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDiagnosticReportResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateDiagnosticReportResponse createDiagnosticReportResponse = new CreateDiagnosticReportResponse();
 
-			createDiagnosticReportResponse.HttpResponse = context.HttpResponse;
-			createDiagnosticReportResponse.RequestId = context.StringValue("CreateDiagnosticReport.RequestId");
-			createDiagnosticReportResponse.ReportId = context.StringValue("CreateDiagnosticReport.ReportId");
+			createDiagnosticReportResponse.HttpResponse = _ctx.HttpResponse;
+			createDiagnosticReportResponse.RequestId = _ctx.StringValue("CreateDiagnosticReport.RequestId");
+			createDiagnosticReportResponse.ReportId = _ctx.StringValue("CreateDiagnosticReport.ReportId");
         
 			return createDiagnosticReportResponse;
         }

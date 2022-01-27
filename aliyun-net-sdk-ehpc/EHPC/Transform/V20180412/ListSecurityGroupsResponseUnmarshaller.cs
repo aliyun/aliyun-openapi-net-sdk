@@ -26,17 +26,17 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class ListSecurityGroupsResponseUnmarshaller
     {
-        public static ListSecurityGroupsResponse Unmarshall(UnmarshallerContext context)
+        public static ListSecurityGroupsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListSecurityGroupsResponse listSecurityGroupsResponse = new ListSecurityGroupsResponse();
 
-			listSecurityGroupsResponse.HttpResponse = context.HttpResponse;
-			listSecurityGroupsResponse.RequestId = context.StringValue("ListSecurityGroups.RequestId");
-			listSecurityGroupsResponse.TotalCount = context.IntegerValue("ListSecurityGroups.TotalCount");
+			listSecurityGroupsResponse.HttpResponse = _ctx.HttpResponse;
+			listSecurityGroupsResponse.RequestId = _ctx.StringValue("ListSecurityGroups.RequestId");
+			listSecurityGroupsResponse.TotalCount = _ctx.IntegerValue("ListSecurityGroups.TotalCount");
 
 			List<string> listSecurityGroupsResponse_securityGroups = new List<string>();
-			for (int i = 0; i < context.Length("ListSecurityGroups.SecurityGroups.Length"); i++) {
-				listSecurityGroupsResponse_securityGroups.Add(context.StringValue("ListSecurityGroups.SecurityGroups["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("ListSecurityGroups.SecurityGroups.Length"); i++) {
+				listSecurityGroupsResponse_securityGroups.Add(_ctx.StringValue("ListSecurityGroups.SecurityGroups["+ i +"]"));
 			}
 			listSecurityGroupsResponse.SecurityGroups = listSecurityGroupsResponse_securityGroups;
         

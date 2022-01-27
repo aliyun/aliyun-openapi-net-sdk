@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.gpdb;
 using Aliyun.Acs.gpdb.Transform;
 using Aliyun.Acs.gpdb.Transform.V20160503;
 
@@ -30,44 +31,31 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
     public class UntagResourcesRequest : RpcAcsRequest<UntagResourcesResponse>
     {
         public UntagResourcesRequest()
-            : base("gpdb", "2016-05-03", "UntagResources", "gpdb", "openAPI")
+            : base("gpdb", "2016-05-03", "UntagResources")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private bool? all;
 
 		private long? resourceOwnerId;
 
-		private List<string> resourceIds;
+		private bool? all;
+
+		private List<string> resourceIds = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string ownerAccount;
-
-		private string action;
 
 		private long? ownerId;
 
-		private List<string> tagKeys;
-
 		private string resourceType;
 
-		private string accessKeyId;
-
-		public bool? All
-		{
-			get
-			{
-				return all;
-			}
-			set	
-			{
-				all = value;
-				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
-			}
-		}
+		private List<string> tagKeys = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -82,6 +70,19 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
+		public bool? All
+		{
+			get
+			{
+				return all;
+			}
+			set	
+			{
+				all = value;
+				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
+			}
+		}
+
 		public List<string> ResourceIds
 		{
 			get
@@ -92,10 +93,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			set
 			{
 				resourceIds = value;
-				for (int i = 0; i < resourceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
-				}
 			}
 		}
 
@@ -112,19 +109,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -135,19 +119,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -164,23 +135,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public List<string> TagKeys
-		{
-			get
-			{
-				return tagKeys;
-			}
-
-			set
-			{
-				tagKeys = value;
-				for (int i = 0; i < tagKeys.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TagKey." + (i + 1) , tagKeys[i]);
-				}
-			}
-		}
-
 		public string ResourceType
 		{
 			get
@@ -194,16 +148,16 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public string AccessKeyId
+		public List<string> TagKeys
 		{
 			get
 			{
-				return accessKeyId;
+				return tagKeys;
 			}
-			set	
+
+			set
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				tagKeys = value;
 			}
 		}
 

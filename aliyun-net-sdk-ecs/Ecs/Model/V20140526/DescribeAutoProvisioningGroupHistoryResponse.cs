@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeAutoProvisioningGroupHistoryResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeAutoProvisioningGroupHistory_AutoProvisioningGroupHistory> autoProvisioningGroupHistories;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,27 +98,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeAutoProvisioningGroupHistory_AutoProvisioningGroupHistory
 		{
 
-			private string taskId;
-
 			private string status;
-
-			private string lastEventTime;
 
 			private string startTime;
 
-			private List<DescribeAutoProvisioningGroupHistory_ActivityDetail> activityDetails;
+			private string taskId;
 
-			public string TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
+			private string lastEventTime;
+
+			private List<DescribeAutoProvisioningGroupHistory_ActivityDetail> activityDetails;
 
 			public string Status
 			{
@@ -132,18 +120,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string LastEventTime
-			{
-				get
-				{
-					return lastEventTime;
-				}
-				set	
-				{
-					lastEventTime = value;
-				}
-			}
-
 			public string StartTime
 			{
 				get
@@ -153,6 +129,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					startTime = value;
+				}
+			}
+
+			public string TaskId
+			{
+				get
+				{
+					return taskId;
+				}
+				set	
+				{
+					taskId = value;
+				}
+			}
+
+			public string LastEventTime
+			{
+				get
+				{
+					return lastEventTime;
+				}
+				set	
+				{
+					lastEventTime = value;
 				}
 			}
 
@@ -171,21 +171,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeAutoProvisioningGroupHistory_ActivityDetail
 			{
 
-				private string detail;
-
 				private string status;
 
-				public string Detail
-				{
-					get
-					{
-						return detail;
-					}
-					set	
-					{
-						detail = value;
-					}
-				}
+				private string detail;
 
 				public string Status
 				{
@@ -196,6 +184,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						status = value;
+					}
+				}
+
+				public string Detail
+				{
+					get
+					{
+						return detail;
+					}
+					set	
+					{
+						detail = value;
 					}
 				}
 			}

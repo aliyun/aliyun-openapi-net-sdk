@@ -32,27 +32,29 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ListClusterHostGroupRequest()
             : base("Emr", "2016-04-08", "ListClusterHostGroup", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private List<string> statusLists;
-
-		private string regionId;
-
-		private string hostGroupId;
-
-		private int? pageSize;
+		private List<string> statusLists = new List<string>(){ };
 
 		private string clusterId;
 
 		private string hostGroupName;
 
-		private string hostGroupType;
-
 		private int? pageNumber;
 
-		private string accessKeyId;
+		private string hostGroupId;
+
+		private int? pageSize;
+
+		private string hostGroupType;
 
 		public long? ResourceOwnerId
 		{
@@ -84,16 +86,42 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
+		public string ClusterId
 		{
 			get
 			{
-				return regionId;
+				return clusterId;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public string HostGroupName
+		{
+			get
+			{
+				return hostGroupName;
+			}
+			set	
+			{
+				hostGroupName = value;
+				DictionaryUtil.Add(QueryParameters, "HostGroupName", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -123,32 +151,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
-		public string HostGroupName
-		{
-			get
-			{
-				return hostGroupName;
-			}
-			set	
-			{
-				hostGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "HostGroupName", value);
-			}
-		}
-
 		public string HostGroupType
 		{
 			get
@@ -159,32 +161,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				hostGroupType = value;
 				DictionaryUtil.Add(QueryParameters, "HostGroupType", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

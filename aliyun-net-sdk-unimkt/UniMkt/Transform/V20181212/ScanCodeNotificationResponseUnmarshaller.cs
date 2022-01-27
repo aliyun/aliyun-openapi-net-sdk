@@ -26,15 +26,15 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 {
     public class ScanCodeNotificationResponseUnmarshaller
     {
-        public static ScanCodeNotificationResponse Unmarshall(UnmarshallerContext context)
+        public static ScanCodeNotificationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ScanCodeNotificationResponse scanCodeNotificationResponse = new ScanCodeNotificationResponse();
 
-			scanCodeNotificationResponse.HttpResponse = context.HttpResponse;
-			scanCodeNotificationResponse.Status = context.BooleanValue("ScanCodeNotification.Status");
-			scanCodeNotificationResponse.Msg = context.StringValue("ScanCodeNotification.Msg");
-			scanCodeNotificationResponse.ErrorCode = context.StringValue("ScanCodeNotification.ErrorCode");
-			scanCodeNotificationResponse.RequestId = context.StringValue("ScanCodeNotification.RequestId");
+			scanCodeNotificationResponse.HttpResponse = _ctx.HttpResponse;
+			scanCodeNotificationResponse.Status = _ctx.BooleanValue("ScanCodeNotification.Status");
+			scanCodeNotificationResponse.Msg = _ctx.StringValue("ScanCodeNotification.Msg");
+			scanCodeNotificationResponse.RequestId = _ctx.StringValue("ScanCodeNotification.RequestId");
+			scanCodeNotificationResponse.ErrorCode = _ctx.StringValue("ScanCodeNotification.ErrorCode");
         
 			return scanCodeNotificationResponse;
         }

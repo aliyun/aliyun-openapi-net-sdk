@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 {
     public class AssociateCenBandwidthPackageResponseUnmarshaller
     {
-        public static AssociateCenBandwidthPackageResponse Unmarshall(UnmarshallerContext context)
+        public static AssociateCenBandwidthPackageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AssociateCenBandwidthPackageResponse associateCenBandwidthPackageResponse = new AssociateCenBandwidthPackageResponse();
 
-			associateCenBandwidthPackageResponse.HttpResponse = context.HttpResponse;
-			associateCenBandwidthPackageResponse.RequestId = context.StringValue("AssociateCenBandwidthPackage.RequestId");
+			associateCenBandwidthPackageResponse.HttpResponse = _ctx.HttpResponse;
+			associateCenBandwidthPackageResponse.RequestId = _ctx.StringValue("AssociateCenBandwidthPackage.RequestId");
         
 			return associateCenBandwidthPackageResponse;
         }

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class CreateShardingDBInstanceRequest : RpcAcsRequest<CreateShardingDBInstanceResponse>
     {
         public CreateShardingDBInstanceRequest()
-            : base("Dds", "2015-12-01", "CreateShardingDBInstance", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "CreateShardingDBInstance", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string storageEngine;
 
+		private string resourceGroupId;
+
 		private string securityToken;
 
 		private string engine;
@@ -72,11 +74,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? ownerId;
 
-		private List<Mongos> mongoss = new List<Mongos>(){ };
-
 		private string securityIPList;
 
 		private string vSwitchId;
+
+		private List<Mongos> mongoss = new List<Mongos>(){ };
 
 		private string accountPassword;
 
@@ -154,6 +156,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				replicaSets = value;
 				for (int i = 0; i < replicaSets.Count; i++)
 				{
+					DictionaryUtil.Add(QueryParameters,"ReplicaSet." + (i + 1) + ".ReadonlyReplicas", replicaSets[i].ReadonlyReplicas);
 					DictionaryUtil.Add(QueryParameters,"ReplicaSet." + (i + 1) + ".Storage", replicaSets[i].Storage);
 					DictionaryUtil.Add(QueryParameters,"ReplicaSet." + (i + 1) + ".Class", replicaSets[i].Class);
 				}
@@ -170,6 +173,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				storageEngine = value;
 				DictionaryUtil.Add(QueryParameters, "StorageEngine", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -308,23 +324,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public List<Mongos> Mongoss
-		{
-			get
-			{
-				return mongoss;
-			}
-
-			set
-			{
-				mongoss = value;
-				for (int i = 0; i < mongoss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Mongos." + (i + 1) + ".Class", mongoss[i].Class);
-				}
-			}
-		}
-
 		public string SecurityIPList
 		{
 			get
@@ -348,6 +347,23 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				vSwitchId = value;
 				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public List<Mongos> Mongoss
+		{
+			get
+			{
+				return mongoss;
+			}
+
+			set
+			{
+				mongoss = value;
+				for (int i = 0; i < mongoss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Mongos." + (i + 1) + ".Class", mongoss[i].Class);
+				}
 			}
 		}
 
@@ -432,9 +448,23 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		public class ReplicaSet
 		{
 
+			private int? readonlyReplicas;
+
 			private int? storage;
 
 			private string class_;
+
+			public int? ReadonlyReplicas
+			{
+				get
+				{
+					return readonlyReplicas;
+				}
+				set	
+				{
+					readonlyReplicas = value;
+				}
+			}
 
 			public int? Storage
 			{

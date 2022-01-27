@@ -34,12 +34,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Sas.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Sas.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string criteria;
+
+		private int? importance;
 
 		private bool? noPage;
 
@@ -61,6 +64,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				criteria = value;
 				DictionaryUtil.Add(QueryParameters, "Criteria", value);
+			}
+		}
+
+		public int? Importance
+		{
+			get
+			{
+				return importance;
+			}
+			set	
+			{
+				importance = value;
+				DictionaryUtil.Add(QueryParameters, "Importance", value.ToString());
 			}
 		}
 

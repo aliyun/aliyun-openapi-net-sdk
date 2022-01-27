@@ -26,12 +26,12 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class StopGWSInstanceResponseUnmarshaller
     {
-        public static StopGWSInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static StopGWSInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StopGWSInstanceResponse stopGWSInstanceResponse = new StopGWSInstanceResponse();
 
-			stopGWSInstanceResponse.HttpResponse = context.HttpResponse;
-			stopGWSInstanceResponse.RequestId = context.StringValue("StopGWSInstance.RequestId");
+			stopGWSInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			stopGWSInstanceResponse.RequestId = _ctx.StringValue("StopGWSInstance.RequestId");
         
 			return stopGWSInstanceResponse;
         }

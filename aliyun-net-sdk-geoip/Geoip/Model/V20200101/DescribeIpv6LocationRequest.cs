@@ -32,6 +32,7 @@ namespace Aliyun.Acs.geoip.Model.V20200101
         public DescribeIpv6LocationRequest()
             : base("geoip", "2020-01-01", "DescribeIpv6Location", "geoip", "openAPI")
         {
+			Method = MethodType.POST;
         }
 
 		private string ip;

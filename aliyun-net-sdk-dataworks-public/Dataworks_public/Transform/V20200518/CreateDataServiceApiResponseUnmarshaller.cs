@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class CreateDataServiceApiResponseUnmarshaller
     {
-        public static CreateDataServiceApiResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDataServiceApiResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateDataServiceApiResponse createDataServiceApiResponse = new CreateDataServiceApiResponse();
 
-			createDataServiceApiResponse.HttpResponse = context.HttpResponse;
-			createDataServiceApiResponse.Data = context.LongValue("CreateDataServiceApi.Data");
-			createDataServiceApiResponse.ErrorCode = context.StringValue("CreateDataServiceApi.ErrorCode");
-			createDataServiceApiResponse.ErrorMessage = context.StringValue("CreateDataServiceApi.ErrorMessage");
-			createDataServiceApiResponse.HttpStatusCode = context.IntegerValue("CreateDataServiceApi.HttpStatusCode");
-			createDataServiceApiResponse.Success = context.BooleanValue("CreateDataServiceApi.Success");
-			createDataServiceApiResponse.RequestId = context.StringValue("CreateDataServiceApi.RequestId");
+			createDataServiceApiResponse.HttpResponse = _ctx.HttpResponse;
+			createDataServiceApiResponse.Data = _ctx.LongValue("CreateDataServiceApi.Data");
+			createDataServiceApiResponse.ErrorCode = _ctx.StringValue("CreateDataServiceApi.ErrorCode");
+			createDataServiceApiResponse.ErrorMessage = _ctx.StringValue("CreateDataServiceApi.ErrorMessage");
+			createDataServiceApiResponse.HttpStatusCode = _ctx.IntegerValue("CreateDataServiceApi.HttpStatusCode");
+			createDataServiceApiResponse.Success = _ctx.BooleanValue("CreateDataServiceApi.Success");
+			createDataServiceApiResponse.RequestId = _ctx.StringValue("CreateDataServiceApi.RequestId");
         
 			return createDataServiceApiResponse;
         }

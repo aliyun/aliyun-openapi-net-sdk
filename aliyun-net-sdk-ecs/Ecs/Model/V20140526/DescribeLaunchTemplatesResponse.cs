@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeLaunchTemplatesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeLaunchTemplates_LaunchTemplateSet> launchTemplateSets;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,33 +98,45 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeLaunchTemplates_LaunchTemplateSet
 		{
 
-			private string createTime;
+			private string launchTemplateName;
+
+			private long? defaultVersionNumber;
 
 			private string modifiedTime;
 
 			private string launchTemplateId;
 
-			private string launchTemplateName;
-
-			private long? defaultVersionNumber;
-
-			private long? latestVersionNumber;
-
-			private string createdBy;
+			private string createTime;
 
 			private string resourceGroupId;
 
+			private string createdBy;
+
+			private long? latestVersionNumber;
+
 			private List<DescribeLaunchTemplates_Tag> tags;
 
-			public string CreateTime
+			public string LaunchTemplateName
 			{
 				get
 				{
-					return createTime;
+					return launchTemplateName;
 				}
 				set	
 				{
-					createTime = value;
+					launchTemplateName = value;
+				}
+			}
+
+			public long? DefaultVersionNumber
+			{
+				get
+				{
+					return defaultVersionNumber;
+				}
+				set	
+				{
+					defaultVersionNumber = value;
 				}
 			}
 
@@ -152,39 +164,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string LaunchTemplateName
+			public string CreateTime
 			{
 				get
 				{
-					return launchTemplateName;
+					return createTime;
 				}
 				set	
 				{
-					launchTemplateName = value;
+					createTime = value;
 				}
 			}
 
-			public long? DefaultVersionNumber
+			public string ResourceGroupId
 			{
 				get
 				{
-					return defaultVersionNumber;
+					return resourceGroupId;
 				}
 				set	
 				{
-					defaultVersionNumber = value;
-				}
-			}
-
-			public long? LatestVersionNumber
-			{
-				get
-				{
-					return latestVersionNumber;
-				}
-				set	
-				{
-					latestVersionNumber = value;
+					resourceGroupId = value;
 				}
 			}
 
@@ -200,15 +200,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string ResourceGroupId
+			public long? LatestVersionNumber
 			{
 				get
 				{
-					return resourceGroupId;
+					return latestVersionNumber;
 				}
 				set	
 				{
-					resourceGroupId = value;
+					latestVersionNumber = value;
 				}
 			}
 
@@ -227,21 +227,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeLaunchTemplates_Tag
 			{
 
-				private string tagKey;
-
 				private string tagValue;
 
-				public string TagKey
-				{
-					get
-					{
-						return tagKey;
-					}
-					set	
-					{
-						tagKey = value;
-					}
-				}
+				private string tagKey;
 
 				public string TagValue
 				{
@@ -252,6 +240,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						tagValue = value;
+					}
+				}
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
 					}
 				}
 			}

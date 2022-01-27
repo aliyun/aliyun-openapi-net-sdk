@@ -130,6 +130,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private bool? deletionProtection;
 
+			private bool? ecsMetricEnabled;
+
 			private List<DescribeNatGateways_IpList> ipLists;
 
 			private List<string> forwardTableIds;
@@ -332,6 +334,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public bool? EcsMetricEnabled
+			{
+				get
+				{
+					return ecsMetricEnabled;
+				}
+				set	
+				{
+					ecsMetricEnabled = value;
+				}
+			}
+
 			public List<DescribeNatGateways_IpList> IpLists
 			{
 				get
@@ -405,6 +419,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 				private bool? snatEntryEnabled;
 
+				private string privateIpAddress;
+
 				public string AllocationId
 				{
 					get
@@ -464,12 +480,24 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 						snatEntryEnabled = value;
 					}
 				}
+
+				public string PrivateIpAddress
+				{
+					get
+					{
+						return privateIpAddress;
+					}
+					set	
+					{
+						privateIpAddress = value;
+					}
+				}
 			}
 
 			public class DescribeNatGateways_NatGatewayPrivateInfo
 			{
 
-				private int? eniInstanceId;
+				private string eniInstanceId;
 
 				private string privateIpAddress;
 
@@ -479,7 +507,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 				private int? maxBandwidth;
 
-				public int? EniInstanceId
+				private string eniType;
+
+				public string EniInstanceId
 				{
 					get
 					{
@@ -536,6 +566,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						maxBandwidth = value;
+					}
+				}
+
+				public string EniType
+				{
+					get
+					{
+						return eniType;
+					}
+					set	
+					{
+						eniType = value;
 					}
 				}
 			}

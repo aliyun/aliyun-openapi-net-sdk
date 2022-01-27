@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.alimt.Model.V20181012
@@ -25,11 +25,23 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 	public class CreateDocTranslateTaskResponse : AcsResponse
 	{
 
+		private string status;
+
 		private string requestId;
 
 		private string taskId;
 
-		private string status;
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -52,18 +64,6 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			set	
 			{
 				taskId = value;
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
 			}
 		}
 	}

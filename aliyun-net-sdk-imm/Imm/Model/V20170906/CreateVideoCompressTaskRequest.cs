@@ -32,6 +32,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
         public CreateVideoCompressTaskRequest()
             : base("imm", "2017-09-06", "CreateVideoCompressTask", "imm", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.imm.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.imm.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
@@ -48,6 +53,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private string targetList;
 
 		private string videoUri;
+
+		private string targetSegment;
 
 		public string Project
 		{
@@ -137,6 +144,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				videoUri = value;
 				DictionaryUtil.Add(QueryParameters, "VideoUri", value);
+			}
+		}
+
+		public string TargetSegment
+		{
+			get
+			{
+				return targetSegment;
+			}
+			set	
+			{
+				targetSegment = value;
+				DictionaryUtil.Add(QueryParameters, "TargetSegment", value);
 			}
 		}
 

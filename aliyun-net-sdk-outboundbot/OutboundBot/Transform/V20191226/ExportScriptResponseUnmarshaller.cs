@@ -26,19 +26,19 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class ExportScriptResponseUnmarshaller
     {
-        public static ExportScriptResponse Unmarshall(UnmarshallerContext context)
+        public static ExportScriptResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ExportScriptResponse exportScriptResponse = new ExportScriptResponse();
 
-			exportScriptResponse.HttpResponse = context.HttpResponse;
-			exportScriptResponse.RequestId = context.StringValue("ExportScript.RequestId");
-			exportScriptResponse.Success = context.BooleanValue("ExportScript.Success");
-			exportScriptResponse.Code = context.StringValue("ExportScript.Code");
-			exportScriptResponse.Message = context.StringValue("ExportScript.Message");
-			exportScriptResponse.HttpStatusCode = context.IntegerValue("ExportScript.HttpStatusCode");
+			exportScriptResponse.HttpResponse = _ctx.HttpResponse;
+			exportScriptResponse.Code = _ctx.StringValue("ExportScript.Code");
+			exportScriptResponse.HttpStatusCode = _ctx.IntegerValue("ExportScript.HttpStatusCode");
+			exportScriptResponse.Message = _ctx.StringValue("ExportScript.Message");
+			exportScriptResponse.RequestId = _ctx.StringValue("ExportScript.RequestId");
+			exportScriptResponse.Success = _ctx.BooleanValue("ExportScript.Success");
 
 			ExportScriptResponse.ExportScript_DownloadParams downloadParams = new ExportScriptResponse.ExportScript_DownloadParams();
-			downloadParams.SignatureUrl = context.StringValue("ExportScript.DownloadParams.SignatureUrl");
+			downloadParams.SignatureUrl = _ctx.StringValue("ExportScript.DownloadParams.SignatureUrl");
 			exportScriptResponse.DownloadParams = downloadParams;
         
 			return exportScriptResponse;

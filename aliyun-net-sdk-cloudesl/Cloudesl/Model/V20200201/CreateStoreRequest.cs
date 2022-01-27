@@ -34,8 +34,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.cloudesl.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.cloudesl.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -43,6 +43,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 		private string extraParams;
 
 		private string clientToken;
+
+		private string timeZone;
 
 		private string storeName;
 
@@ -75,6 +77,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				clientToken = value;
 				DictionaryUtil.Add(BodyParameters, "ClientToken", value);
+			}
+		}
+
+		public string TimeZone
+		{
+			get
+			{
+				return timeZone;
+			}
+			set	
+			{
+				timeZone = value;
+				DictionaryUtil.Add(BodyParameters, "TimeZone", value);
 			}
 		}
 

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sddp;
 using Aliyun.Acs.Sddp.Transform;
 using Aliyun.Acs.Sddp.Transform.V20190103;
 
@@ -30,14 +31,17 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
     public class CreateDataLimitRequest : RpcAcsRequest<CreateDataLimitResponse>
     {
         public CreateDataLimitRequest()
-            : base("Sddp", "2019-01-03", "CreateDataLimit", "sddp", "openAPI")
+            : base("Sddp", "2019-01-03", "CreateDataLimit")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Sddp.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Sddp.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
+
+		private int? ocrStatus;
 
 		private string parentId;
 
@@ -59,7 +63,22 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private int? port;
 
+		private int? eventStatus;
+
 		private string userName;
+
+		public int? OcrStatus
+		{
+			get
+			{
+				return ocrStatus;
+			}
+			set	
+			{
+				ocrStatus = value;
+				DictionaryUtil.Add(QueryParameters, "OcrStatus", value.ToString());
+			}
+		}
 
 		public string ParentId
 		{
@@ -188,6 +207,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				port = value;
 				DictionaryUtil.Add(QueryParameters, "Port", value.ToString());
+			}
+		}
+
+		public int? EventStatus
+		{
+			get
+			{
+				return eventStatus;
+			}
+			set	
+			{
+				eventStatus = value;
+				DictionaryUtil.Add(QueryParameters, "EventStatus", value.ToString());
 			}
 		}
 

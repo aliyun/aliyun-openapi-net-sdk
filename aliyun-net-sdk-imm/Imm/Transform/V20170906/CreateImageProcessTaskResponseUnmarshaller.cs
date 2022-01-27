@@ -26,14 +26,14 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class CreateImageProcessTaskResponseUnmarshaller
     {
-        public static CreateImageProcessTaskResponse Unmarshall(UnmarshallerContext context)
+        public static CreateImageProcessTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateImageProcessTaskResponse createImageProcessTaskResponse = new CreateImageProcessTaskResponse();
 
-			createImageProcessTaskResponse.HttpResponse = context.HttpResponse;
-			createImageProcessTaskResponse.RequestId = context.StringValue("CreateImageProcessTask.RequestId");
-			createImageProcessTaskResponse.TaskId = context.StringValue("CreateImageProcessTask.TaskId");
-			createImageProcessTaskResponse.TaskType = context.StringValue("CreateImageProcessTask.TaskType");
+			createImageProcessTaskResponse.HttpResponse = _ctx.HttpResponse;
+			createImageProcessTaskResponse.RequestId = _ctx.StringValue("CreateImageProcessTask.RequestId");
+			createImageProcessTaskResponse.TaskId = _ctx.StringValue("CreateImageProcessTask.TaskId");
+			createImageProcessTaskResponse.TaskType = _ctx.StringValue("CreateImageProcessTask.TaskType");
         
 			return createImageProcessTaskResponse;
         }

@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class GetQualificationUploadPolicyResponseUnmarshaller
     {
-        public static GetQualificationUploadPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static GetQualificationUploadPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetQualificationUploadPolicyResponse getQualificationUploadPolicyResponse = new GetQualificationUploadPolicyResponse();
 
-			getQualificationUploadPolicyResponse.HttpResponse = context.HttpResponse;
-			getQualificationUploadPolicyResponse.RequestId = context.StringValue("GetQualificationUploadPolicy.RequestId");
-			getQualificationUploadPolicyResponse.Accessid = context.StringValue("GetQualificationUploadPolicy.Accessid");
-			getQualificationUploadPolicyResponse.Policy = context.StringValue("GetQualificationUploadPolicy.Policy");
-			getQualificationUploadPolicyResponse.Signature = context.StringValue("GetQualificationUploadPolicy.Signature");
-			getQualificationUploadPolicyResponse.Dir = context.StringValue("GetQualificationUploadPolicy.Dir");
-			getQualificationUploadPolicyResponse.Prefix = context.StringValue("GetQualificationUploadPolicy.Prefix");
-			getQualificationUploadPolicyResponse.Host = context.StringValue("GetQualificationUploadPolicy.Host");
-			getQualificationUploadPolicyResponse.Expire = context.StringValue("GetQualificationUploadPolicy.Expire");
+			getQualificationUploadPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			getQualificationUploadPolicyResponse.RequestId = _ctx.StringValue("GetQualificationUploadPolicy.RequestId");
+			getQualificationUploadPolicyResponse.Accessid = _ctx.StringValue("GetQualificationUploadPolicy.Accessid");
+			getQualificationUploadPolicyResponse.Policy = _ctx.StringValue("GetQualificationUploadPolicy.Policy");
+			getQualificationUploadPolicyResponse.Signature = _ctx.StringValue("GetQualificationUploadPolicy.Signature");
+			getQualificationUploadPolicyResponse.Dir = _ctx.StringValue("GetQualificationUploadPolicy.Dir");
+			getQualificationUploadPolicyResponse.Prefix = _ctx.StringValue("GetQualificationUploadPolicy.Prefix");
+			getQualificationUploadPolicyResponse.Host = _ctx.StringValue("GetQualificationUploadPolicy.Host");
+			getQualificationUploadPolicyResponse.Expire = _ctx.StringValue("GetQualificationUploadPolicy.Expire");
         
 			return getQualificationUploadPolicyResponse;
         }

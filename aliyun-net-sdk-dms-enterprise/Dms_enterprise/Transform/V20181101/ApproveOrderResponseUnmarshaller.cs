@@ -26,15 +26,15 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 {
     public class ApproveOrderResponseUnmarshaller
     {
-        public static ApproveOrderResponse Unmarshall(UnmarshallerContext context)
+        public static ApproveOrderResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ApproveOrderResponse approveOrderResponse = new ApproveOrderResponse();
 
-			approveOrderResponse.HttpResponse = context.HttpResponse;
-			approveOrderResponse.RequestId = context.StringValue("ApproveOrder.RequestId");
-			approveOrderResponse.Success = context.BooleanValue("ApproveOrder.Success");
-			approveOrderResponse.ErrorMessage = context.StringValue("ApproveOrder.ErrorMessage");
-			approveOrderResponse.ErrorCode = context.StringValue("ApproveOrder.ErrorCode");
+			approveOrderResponse.HttpResponse = _ctx.HttpResponse;
+			approveOrderResponse.RequestId = _ctx.StringValue("ApproveOrder.RequestId");
+			approveOrderResponse.ErrorCode = _ctx.StringValue("ApproveOrder.ErrorCode");
+			approveOrderResponse.ErrorMessage = _ctx.StringValue("ApproveOrder.ErrorMessage");
+			approveOrderResponse.Success = _ctx.BooleanValue("ApproveOrder.Success");
         
 			return approveOrderResponse;
         }

@@ -31,6 +31,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private int? rootDomainsCount;
 
+		private int? subDomainsCount;
+
 		public string RequestId
 		{
 			get
@@ -64,6 +66,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				rootDomainsCount = value;
+			}
+		}
+
+		public int? SubDomainsCount
+		{
+			get
+			{
+				return subDomainsCount;
+			}
+			set	
+			{
+				subDomainsCount = value;
 			}
 		}
 	}

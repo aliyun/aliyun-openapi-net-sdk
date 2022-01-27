@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -25,66 +25,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 	public class ListTablesResponse : AcsResponse
 	{
 
+		private long? totalCount;
+
 		private string requestId;
-
-		private bool? success;
-
-		private string errorMessage;
 
 		private string errorCode;
 
-		private long? totalCount;
+		private string errorMessage;
+
+		private bool? success;
 
 		private List<ListTables_Table> tableList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TotalCount")]
 		public long? TotalCount
 		{
 			get
@@ -97,6 +50,59 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TableList")]
 		public List<ListTables_Table> TableList
 		{
 			get
@@ -112,44 +118,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class ListTables_Table
 		{
 
-			private string tableId;
-
 			private string databaseId;
 
 			private string tableName;
 
-			private string tableSchemaName;
+			private long? storeCapacity;
 
-			private string engine;
+			private string description;
 
 			private string encoding;
 
+			private string tableSchemaName;
+
 			private string tableType;
-
-			private long? numRows;
-
-			private long? storeCapacity;
 
 			private string tableGuid;
 
-			private string description;
+			private string engine;
+
+			private long? numRows;
+
+			private string tableId;
 
 			private List<string> ownerIdList;
 
 			private List<string> ownerNameList;
 
-			public string TableId
-			{
-				get
-				{
-					return tableId;
-				}
-				set	
-				{
-					tableId = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "DatabaseId")]
 			public string DatabaseId
 			{
 				get
@@ -162,6 +157,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "TableName")]
 			public string TableName
 			{
 				get
@@ -174,66 +170,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public string TableSchemaName
-			{
-				get
-				{
-					return tableSchemaName;
-				}
-				set	
-				{
-					tableSchemaName = value;
-				}
-			}
-
-			public string Engine
-			{
-				get
-				{
-					return engine;
-				}
-				set	
-				{
-					engine = value;
-				}
-			}
-
-			public string Encoding
-			{
-				get
-				{
-					return encoding;
-				}
-				set	
-				{
-					encoding = value;
-				}
-			}
-
-			public string TableType
-			{
-				get
-				{
-					return tableType;
-				}
-				set	
-				{
-					tableType = value;
-				}
-			}
-
-			public long? NumRows
-			{
-				get
-				{
-					return numRows;
-				}
-				set	
-				{
-					numRows = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "StoreCapacity")]
 			public long? StoreCapacity
 			{
 				get
@@ -246,18 +183,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public string TableGuid
-			{
-				get
-				{
-					return tableGuid;
-				}
-				set	
-				{
-					tableGuid = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Description")]
 			public string Description
 			{
 				get
@@ -270,6 +196,98 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Encoding")]
+			public string Encoding
+			{
+				get
+				{
+					return encoding;
+				}
+				set	
+				{
+					encoding = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TableSchemaName")]
+			public string TableSchemaName
+			{
+				get
+				{
+					return tableSchemaName;
+				}
+				set	
+				{
+					tableSchemaName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TableType")]
+			public string TableType
+			{
+				get
+				{
+					return tableType;
+				}
+				set	
+				{
+					tableType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TableGuid")]
+			public string TableGuid
+			{
+				get
+				{
+					return tableGuid;
+				}
+				set	
+				{
+					tableGuid = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Engine")]
+			public string Engine
+			{
+				get
+				{
+					return engine;
+				}
+				set	
+				{
+					engine = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "NumRows")]
+			public long? NumRows
+			{
+				get
+				{
+					return numRows;
+				}
+				set	
+				{
+					numRows = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TableId")]
+			public string TableId
+			{
+				get
+				{
+					return tableId;
+				}
+				set	
+				{
+					tableId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OwnerIdList")]
 			public List<string> OwnerIdList
 			{
 				get
@@ -282,6 +300,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "OwnerNameList")]
 			public List<string> OwnerNameList
 			{
 				get

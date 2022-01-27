@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class CreateOTAVerifyJobResponseUnmarshaller
     {
-        public static CreateOTAVerifyJobResponse Unmarshall(UnmarshallerContext context)
+        public static CreateOTAVerifyJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateOTAVerifyJobResponse createOTAVerifyJobResponse = new CreateOTAVerifyJobResponse();
 
-			createOTAVerifyJobResponse.HttpResponse = context.HttpResponse;
-			createOTAVerifyJobResponse.RequestId = context.StringValue("CreateOTAVerifyJob.RequestId");
-			createOTAVerifyJobResponse.Success = context.BooleanValue("CreateOTAVerifyJob.Success");
-			createOTAVerifyJobResponse.Code = context.StringValue("CreateOTAVerifyJob.Code");
-			createOTAVerifyJobResponse.ErrorMessage = context.StringValue("CreateOTAVerifyJob.ErrorMessage");
+			createOTAVerifyJobResponse.HttpResponse = _ctx.HttpResponse;
+			createOTAVerifyJobResponse.RequestId = _ctx.StringValue("CreateOTAVerifyJob.RequestId");
+			createOTAVerifyJobResponse.Success = _ctx.BooleanValue("CreateOTAVerifyJob.Success");
+			createOTAVerifyJobResponse.Code = _ctx.StringValue("CreateOTAVerifyJob.Code");
+			createOTAVerifyJobResponse.ErrorMessage = _ctx.StringValue("CreateOTAVerifyJob.ErrorMessage");
 
 			CreateOTAVerifyJobResponse.CreateOTAVerifyJob_Data data = new CreateOTAVerifyJobResponse.CreateOTAVerifyJob_Data();
-			data.JobId = context.StringValue("CreateOTAVerifyJob.Data.JobId");
-			data.UtcCreate = context.StringValue("CreateOTAVerifyJob.Data.UtcCreate");
+			data.JobId = _ctx.StringValue("CreateOTAVerifyJob.Data.JobId");
+			data.UtcCreate = _ctx.StringValue("CreateOTAVerifyJob.Data.UtcCreate");
 			createOTAVerifyJobResponse.Data = data;
         
 			return createOTAVerifyJobResponse;

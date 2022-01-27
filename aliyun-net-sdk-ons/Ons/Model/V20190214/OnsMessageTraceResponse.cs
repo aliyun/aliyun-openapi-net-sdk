@@ -70,23 +70,23 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 		public class OnsMessageTrace_MessageTrack
 		{
 
-			private string consumerGroup;
+			private string exceptionDesc;
 
 			private string trackType;
 
-			private string exceptionDesc;
+			private string consumerGroup;
 
 			private string instanceId;
 
-			public string ConsumerGroup
+			public string ExceptionDesc
 			{
 				get
 				{
-					return consumerGroup;
+					return exceptionDesc;
 				}
 				set	
 				{
-					consumerGroup = value;
+					exceptionDesc = value;
 				}
 			}
 
@@ -102,15 +102,15 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
-			public string ExceptionDesc
+			public string ConsumerGroup
 			{
 				get
 				{
-					return exceptionDesc;
+					return consumerGroup;
 				}
 				set	
 				{
-					exceptionDesc = value;
+					consumerGroup = value;
 				}
 			}
 

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 {
     public class DeleteDevopsProjectResponseUnmarshaller
     {
-        public static DeleteDevopsProjectResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDevopsProjectResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDevopsProjectResponse deleteDevopsProjectResponse = new DeleteDevopsProjectResponse();
 
-			deleteDevopsProjectResponse.HttpResponse = context.HttpResponse;
-			deleteDevopsProjectResponse.ErrorCode = context.StringValue("DeleteDevopsProject.ErrorCode");
-			deleteDevopsProjectResponse.ErrorMessage = context.StringValue("DeleteDevopsProject.ErrorMessage");
-			deleteDevopsProjectResponse._Object = context.StringValue("DeleteDevopsProject.Object");
-			deleteDevopsProjectResponse.RequestId = context.StringValue("DeleteDevopsProject.RequestId");
-			deleteDevopsProjectResponse.Success = context.BooleanValue("DeleteDevopsProject.Success");
+			deleteDevopsProjectResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDevopsProjectResponse.RequestId = _ctx.StringValue("DeleteDevopsProject.RequestId");
+			deleteDevopsProjectResponse.ErrorMessage = _ctx.StringValue("DeleteDevopsProject.ErrorMessage");
+			deleteDevopsProjectResponse._Object = _ctx.StringValue("DeleteDevopsProject.Object");
+			deleteDevopsProjectResponse.Success = _ctx.BooleanValue("DeleteDevopsProject.Success");
+			deleteDevopsProjectResponse.ErrorCode = _ctx.StringValue("DeleteDevopsProject.ErrorCode");
         
 			return deleteDevopsProjectResponse;
         }

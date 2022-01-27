@@ -26,19 +26,19 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
     public class DissociatePlanogramRailResponseUnmarshaller
     {
-        public static DissociatePlanogramRailResponse Unmarshall(UnmarshallerContext context)
+        public static DissociatePlanogramRailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DissociatePlanogramRailResponse dissociatePlanogramRailResponse = new DissociatePlanogramRailResponse();
 
-			dissociatePlanogramRailResponse.HttpResponse = context.HttpResponse;
-			dissociatePlanogramRailResponse.ErrorMessage = context.StringValue("DissociatePlanogramRail.ErrorMessage");
-			dissociatePlanogramRailResponse.ErrorCode = context.StringValue("DissociatePlanogramRail.ErrorCode");
-			dissociatePlanogramRailResponse.Message = context.StringValue("DissociatePlanogramRail.Message");
-			dissociatePlanogramRailResponse.DynamicCode = context.StringValue("DissociatePlanogramRail.DynamicCode");
-			dissociatePlanogramRailResponse.Code = context.StringValue("DissociatePlanogramRail.Code");
-			dissociatePlanogramRailResponse.DynamicMessage = context.StringValue("DissociatePlanogramRail.DynamicMessage");
-			dissociatePlanogramRailResponse.RequestId = context.StringValue("DissociatePlanogramRail.RequestId");
-			dissociatePlanogramRailResponse.Success = context.BooleanValue("DissociatePlanogramRail.Success");
+			dissociatePlanogramRailResponse.HttpResponse = _ctx.HttpResponse;
+			dissociatePlanogramRailResponse.ErrorMessage = _ctx.StringValue("DissociatePlanogramRail.ErrorMessage");
+			dissociatePlanogramRailResponse.ErrorCode = _ctx.StringValue("DissociatePlanogramRail.ErrorCode");
+			dissociatePlanogramRailResponse.Message = _ctx.StringValue("DissociatePlanogramRail.Message");
+			dissociatePlanogramRailResponse.DynamicCode = _ctx.StringValue("DissociatePlanogramRail.DynamicCode");
+			dissociatePlanogramRailResponse.Code = _ctx.StringValue("DissociatePlanogramRail.Code");
+			dissociatePlanogramRailResponse.DynamicMessage = _ctx.StringValue("DissociatePlanogramRail.DynamicMessage");
+			dissociatePlanogramRailResponse.RequestId = _ctx.StringValue("DissociatePlanogramRail.RequestId");
+			dissociatePlanogramRailResponse.Success = _ctx.BooleanValue("DissociatePlanogramRail.Success");
         
 			return dissociatePlanogramRailResponse;
         }

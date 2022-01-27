@@ -34,8 +34,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointRegionalType, null);
             }
 			UriPattern = "/pop/v1/sam/app/deployApplication";
 			Method = MethodType.POST;
@@ -51,7 +51,11 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string slsConfigs;
 
+		private string ossAkSecret;
+
 		private string commandArgs;
+
+		private string acrAssumeRoleArn;
 
 		private string readiness;
 
@@ -60,6 +64,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		private string mountHost;
 
 		private int? batchWaitTime;
+
+		private string ossAkId;
 
 		private string liveness;
 
@@ -85,9 +91,13 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string configMapMountDesc;
 
+		private string ossMountDescs;
+
 		private string phpConfig;
 
 		private string preStop;
+
+		private bool? enableGreyTagRoute;
 
 		private string command;
 
@@ -101,13 +111,21 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string changeOrderDesc;
 
+		private string acrInstanceId;
+
 		private string appId;
 
 		private string imageUrl;
 
+		private int? minReadyInstanceRatio;
+
+		private bool? autoEnableApplicationScalingRule;
+
 		private string phpConfigLocation;
 
 		private string postStart;
+
+		private bool? associateEip;
 
 		public string NasId
 		{
@@ -118,7 +136,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				nasId = value;
-				DictionaryUtil.Add(PathParameters, "NasId", value);
+				DictionaryUtil.Add(QueryParameters, "NasId", value);
 			}
 		}
 
@@ -174,6 +192,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public string OssAkSecret
+		{
+			get
+			{
+				return ossAkSecret;
+			}
+			set	
+			{
+				ossAkSecret = value;
+				DictionaryUtil.Add(BodyParameters, "OssAkSecret", value);
+			}
+		}
+
 		public string CommandArgs
 		{
 			get
@@ -184,6 +215,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				commandArgs = value;
 				DictionaryUtil.Add(QueryParameters, "CommandArgs", value);
+			}
+		}
+
+		public string AcrAssumeRoleArn
+		{
+			get
+			{
+				return acrAssumeRoleArn;
+			}
+			set	
+			{
+				acrAssumeRoleArn = value;
+				DictionaryUtil.Add(QueryParameters, "AcrAssumeRoleArn", value);
 			}
 		}
 
@@ -222,7 +266,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				mountHost = value;
-				DictionaryUtil.Add(PathParameters, "MountHost", value);
+				DictionaryUtil.Add(QueryParameters, "MountHost", value);
 			}
 		}
 
@@ -236,6 +280,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				batchWaitTime = value;
 				DictionaryUtil.Add(QueryParameters, "BatchWaitTime", value.ToString());
+			}
+		}
+
+		public string OssAkId
+		{
+			get
+			{
+				return ossAkId;
+			}
+			set	
+			{
+				ossAkId = value;
+				DictionaryUtil.Add(BodyParameters, "OssAkId", value);
 			}
 		}
 
@@ -395,6 +452,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public string OssMountDescs
+		{
+			get
+			{
+				return ossMountDescs;
+			}
+			set	
+			{
+				ossMountDescs = value;
+				DictionaryUtil.Add(BodyParameters, "OssMountDescs", value);
+			}
+		}
+
 		public string PhpConfig
 		{
 			get
@@ -418,6 +488,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				preStop = value;
 				DictionaryUtil.Add(QueryParameters, "PreStop", value);
+			}
+		}
+
+		public bool? EnableGreyTagRoute
+		{
+			get
+			{
+				return enableGreyTagRoute;
+			}
+			set	
+			{
+				enableGreyTagRoute = value;
+				DictionaryUtil.Add(QueryParameters, "EnableGreyTagRoute", value.ToString());
 			}
 		}
 
@@ -456,7 +539,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				mountDesc = value;
-				DictionaryUtil.Add(PathParameters, "MountDesc", value);
+				DictionaryUtil.Add(QueryParameters, "MountDesc", value);
 			}
 		}
 
@@ -499,6 +582,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public string AcrInstanceId
+		{
+			get
+			{
+				return acrInstanceId;
+			}
+			set	
+			{
+				acrInstanceId = value;
+				DictionaryUtil.Add(BodyParameters, "AcrInstanceId", value);
+			}
+		}
+
 		public string AppId
 		{
 			get
@@ -525,6 +621,32 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public int? MinReadyInstanceRatio
+		{
+			get
+			{
+				return minReadyInstanceRatio;
+			}
+			set	
+			{
+				minReadyInstanceRatio = value;
+				DictionaryUtil.Add(QueryParameters, "MinReadyInstanceRatio", value.ToString());
+			}
+		}
+
+		public bool? AutoEnableApplicationScalingRule
+		{
+			get
+			{
+				return autoEnableApplicationScalingRule;
+			}
+			set	
+			{
+				autoEnableApplicationScalingRule = value;
+				DictionaryUtil.Add(QueryParameters, "AutoEnableApplicationScalingRule", value.ToString());
+			}
+		}
+
 		public string PhpConfigLocation
 		{
 			get
@@ -548,6 +670,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				postStart = value;
 				DictionaryUtil.Add(QueryParameters, "PostStart", value);
+			}
+		}
+
+		public bool? AssociateEip
+		{
+			get
+			{
+				return associateEip;
+			}
+			set	
+			{
+				associateEip = value;
+				DictionaryUtil.Add(BodyParameters, "AssociateEip", value.ToString());
 			}
 		}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
@@ -25,57 +25,37 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 	public class DescribeCenAttachedChildInstanceAttributeResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string cenId;
-
-		private string childInstanceId;
+		private string status;
 
 		private string childInstanceType;
 
 		private string childInstanceRegionId;
 
+		private string requestId;
+
 		private long? childInstanceOwnerId;
 
-		private string status;
+		private string childInstanceId;
+
+		private string cenId;
 
 		private string childInstanceName;
 
+		private string ipv6StatusInCen;
+
 		private string childInstanceAttachTime;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeCenAttachedChildInstanceAttribute_ChildInstanceRouteTable> childInstanceRouteTables;
 
-		public string CenId
+		public string Status
 		{
 			get
 			{
-				return cenId;
+				return status;
 			}
 			set	
 			{
-				cenId = value;
-			}
-		}
-
-		public string ChildInstanceId
-		{
-			get
-			{
-				return childInstanceId;
-			}
-			set	
-			{
-				childInstanceId = value;
+				status = value;
 			}
 		}
 
@@ -103,6 +83,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public long? ChildInstanceOwnerId
 		{
 			get
@@ -115,15 +107,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string Status
+		public string ChildInstanceId
 		{
 			get
 			{
-				return status;
+				return childInstanceId;
 			}
 			set	
 			{
-				status = value;
+				childInstanceId = value;
+			}
+		}
+
+		public string CenId
+		{
+			get
+			{
+				return cenId;
+			}
+			set	
+			{
+				cenId = value;
 			}
 		}
 
@@ -139,6 +143,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
+		public string Ipv6StatusInCen
+		{
+			get
+			{
+				return ipv6StatusInCen;
+			}
+			set	
+			{
+				ipv6StatusInCen = value;
+			}
+		}
+
 		public string ChildInstanceAttachTime
 		{
 			get
@@ -148,6 +164,50 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set	
 			{
 				childInstanceAttachTime = value;
+			}
+		}
+
+		public List<DescribeCenAttachedChildInstanceAttribute_ChildInstanceRouteTable> ChildInstanceRouteTables
+		{
+			get
+			{
+				return childInstanceRouteTables;
+			}
+			set	
+			{
+				childInstanceRouteTables = value;
+			}
+		}
+
+		public class DescribeCenAttachedChildInstanceAttribute_ChildInstanceRouteTable
+		{
+
+			private string routeTableId;
+
+			private string routeTableType;
+
+			public string RouteTableId
+			{
+				get
+				{
+					return routeTableId;
+				}
+				set	
+				{
+					routeTableId = value;
+				}
+			}
+
+			public string RouteTableType
+			{
+				get
+				{
+					return routeTableType;
+				}
+				set	
+				{
+					routeTableType = value;
+				}
 			}
 		}
 	}

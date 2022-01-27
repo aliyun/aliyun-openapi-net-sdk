@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class CreateOTAFirmwareResponseUnmarshaller
     {
-        public static CreateOTAFirmwareResponse Unmarshall(UnmarshallerContext context)
+        public static CreateOTAFirmwareResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateOTAFirmwareResponse createOTAFirmwareResponse = new CreateOTAFirmwareResponse();
 
-			createOTAFirmwareResponse.HttpResponse = context.HttpResponse;
-			createOTAFirmwareResponse.RequestId = context.StringValue("CreateOTAFirmware.RequestId");
-			createOTAFirmwareResponse.Success = context.BooleanValue("CreateOTAFirmware.Success");
-			createOTAFirmwareResponse.Code = context.StringValue("CreateOTAFirmware.Code");
-			createOTAFirmwareResponse.ErrorMessage = context.StringValue("CreateOTAFirmware.ErrorMessage");
+			createOTAFirmwareResponse.HttpResponse = _ctx.HttpResponse;
+			createOTAFirmwareResponse.RequestId = _ctx.StringValue("CreateOTAFirmware.RequestId");
+			createOTAFirmwareResponse.Success = _ctx.BooleanValue("CreateOTAFirmware.Success");
+			createOTAFirmwareResponse.Code = _ctx.StringValue("CreateOTAFirmware.Code");
+			createOTAFirmwareResponse.ErrorMessage = _ctx.StringValue("CreateOTAFirmware.ErrorMessage");
 
 			CreateOTAFirmwareResponse.CreateOTAFirmware_Data data = new CreateOTAFirmwareResponse.CreateOTAFirmware_Data();
-			data.FirmwareId = context.StringValue("CreateOTAFirmware.Data.FirmwareId");
-			data.UtcCreate = context.StringValue("CreateOTAFirmware.Data.UtcCreate");
+			data.FirmwareId = _ctx.StringValue("CreateOTAFirmware.Data.FirmwareId");
+			data.UtcCreate = _ctx.StringValue("CreateOTAFirmware.Data.UtcCreate");
 			createOTAFirmwareResponse.Data = data;
         
 			return createOTAFirmwareResponse;

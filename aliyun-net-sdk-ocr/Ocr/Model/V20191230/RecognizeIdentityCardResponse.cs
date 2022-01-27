@@ -56,21 +56,9 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 		public class RecognizeIdentityCard_Data
 		{
 
-			private RecognizeIdentityCard_FrontResult frontResult;
-
 			private RecognizeIdentityCard_BackResult backResult;
 
-			public RecognizeIdentityCard_FrontResult FrontResult
-			{
-				get
-				{
-					return frontResult;
-				}
-				set	
-				{
-					frontResult = value;
-				}
-			}
+			private RecognizeIdentityCard_FrontResult frontResult;
 
 			public RecognizeIdentityCard_BackResult BackResult
 			{
@@ -84,330 +72,26 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 				}
 			}
 
-			public class RecognizeIdentityCard_FrontResult
+			public RecognizeIdentityCard_FrontResult FrontResult
 			{
-
-				private string address;
-
-				private string name;
-
-				private string nationality;
-
-				private string iDNumber;
-
-				private string gender;
-
-				private string birthDate;
-
-				private List<RecognizeIdentityCard_CardArea> cardAreas;
-
-				private List<RecognizeIdentityCard_FaceRectVertice> faceRectVertices;
-
-				private RecognizeIdentityCard_FaceRectangle faceRectangle;
-
-				public string Address
+				get
 				{
-					get
-					{
-						return address;
-					}
-					set	
-					{
-						address = value;
-					}
+					return frontResult;
 				}
-
-				public string Name
+				set	
 				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
-				public string Nationality
-				{
-					get
-					{
-						return nationality;
-					}
-					set	
-					{
-						nationality = value;
-					}
-				}
-
-				public string IDNumber
-				{
-					get
-					{
-						return iDNumber;
-					}
-					set	
-					{
-						iDNumber = value;
-					}
-				}
-
-				public string Gender
-				{
-					get
-					{
-						return gender;
-					}
-					set	
-					{
-						gender = value;
-					}
-				}
-
-				public string BirthDate
-				{
-					get
-					{
-						return birthDate;
-					}
-					set	
-					{
-						birthDate = value;
-					}
-				}
-
-				public List<RecognizeIdentityCard_CardArea> CardAreas
-				{
-					get
-					{
-						return cardAreas;
-					}
-					set	
-					{
-						cardAreas = value;
-					}
-				}
-
-				public List<RecognizeIdentityCard_FaceRectVertice> FaceRectVertices
-				{
-					get
-					{
-						return faceRectVertices;
-					}
-					set	
-					{
-						faceRectVertices = value;
-					}
-				}
-
-				public RecognizeIdentityCard_FaceRectangle FaceRectangle
-				{
-					get
-					{
-						return faceRectangle;
-					}
-					set	
-					{
-						faceRectangle = value;
-					}
-				}
-
-				public class RecognizeIdentityCard_CardArea
-				{
-
-					private float? x;
-
-					private float? y;
-
-					public float? X
-					{
-						get
-						{
-							return x;
-						}
-						set	
-						{
-							x = value;
-						}
-					}
-
-					public float? Y
-					{
-						get
-						{
-							return y;
-						}
-						set	
-						{
-							y = value;
-						}
-					}
-				}
-
-				public class RecognizeIdentityCard_FaceRectVertice
-				{
-
-					private float? x;
-
-					private float? y;
-
-					public float? X
-					{
-						get
-						{
-							return x;
-						}
-						set	
-						{
-							x = value;
-						}
-					}
-
-					public float? Y
-					{
-						get
-						{
-							return y;
-						}
-						set	
-						{
-							y = value;
-						}
-					}
-				}
-
-				public class RecognizeIdentityCard_FaceRectangle
-				{
-
-					private float? angle;
-
-					private RecognizeIdentityCard_Center center;
-
-					private RecognizeIdentityCard_Size size;
-
-					public float? Angle
-					{
-						get
-						{
-							return angle;
-						}
-						set	
-						{
-							angle = value;
-						}
-					}
-
-					public RecognizeIdentityCard_Center Center
-					{
-						get
-						{
-							return center;
-						}
-						set	
-						{
-							center = value;
-						}
-					}
-
-					public RecognizeIdentityCard_Size Size
-					{
-						get
-						{
-							return size;
-						}
-						set	
-						{
-							size = value;
-						}
-					}
-
-					public class RecognizeIdentityCard_Center
-					{
-
-						private float? x;
-
-						private float? y;
-
-						public float? X
-						{
-							get
-							{
-								return x;
-							}
-							set	
-							{
-								x = value;
-							}
-						}
-
-						public float? Y
-						{
-							get
-							{
-								return y;
-							}
-							set	
-							{
-								y = value;
-							}
-						}
-					}
-
-					public class RecognizeIdentityCard_Size
-					{
-
-						private float? height;
-
-						private float? width;
-
-						public float? Height
-						{
-							get
-							{
-								return height;
-							}
-							set	
-							{
-								height = value;
-							}
-						}
-
-						public float? Width
-						{
-							get
-							{
-								return width;
-							}
-							set	
-							{
-								width = value;
-							}
-						}
-					}
+					frontResult = value;
 				}
 			}
 
 			public class RecognizeIdentityCard_BackResult
 			{
 
-				private string startDate;
-
 				private string endDate;
 
 				private string issue;
 
-				public string StartDate
-				{
-					get
-					{
-						return startDate;
-					}
-					set	
-					{
-						startDate = value;
-					}
-				}
+				private string startDate;
 
 				public string EndDate
 				{
@@ -430,6 +114,322 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					set	
 					{
 						issue = value;
+					}
+				}
+
+				public string StartDate
+				{
+					get
+					{
+						return startDate;
+					}
+					set	
+					{
+						startDate = value;
+					}
+				}
+			}
+
+			public class RecognizeIdentityCard_FrontResult
+			{
+
+				private string birthDate;
+
+				private string gender;
+
+				private string address;
+
+				private string nationality;
+
+				private string name;
+
+				private string iDNumber;
+
+				private List<RecognizeIdentityCard_FaceRectVertice> faceRectVertices;
+
+				private List<RecognizeIdentityCard_CardArea> cardAreas;
+
+				private RecognizeIdentityCard_FaceRectangle faceRectangle;
+
+				public string BirthDate
+				{
+					get
+					{
+						return birthDate;
+					}
+					set	
+					{
+						birthDate = value;
+					}
+				}
+
+				public string Gender
+				{
+					get
+					{
+						return gender;
+					}
+					set	
+					{
+						gender = value;
+					}
+				}
+
+				public string Address
+				{
+					get
+					{
+						return address;
+					}
+					set	
+					{
+						address = value;
+					}
+				}
+
+				public string Nationality
+				{
+					get
+					{
+						return nationality;
+					}
+					set	
+					{
+						nationality = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public string IDNumber
+				{
+					get
+					{
+						return iDNumber;
+					}
+					set	
+					{
+						iDNumber = value;
+					}
+				}
+
+				public List<RecognizeIdentityCard_FaceRectVertice> FaceRectVertices
+				{
+					get
+					{
+						return faceRectVertices;
+					}
+					set	
+					{
+						faceRectVertices = value;
+					}
+				}
+
+				public List<RecognizeIdentityCard_CardArea> CardAreas
+				{
+					get
+					{
+						return cardAreas;
+					}
+					set	
+					{
+						cardAreas = value;
+					}
+				}
+
+				public RecognizeIdentityCard_FaceRectangle FaceRectangle
+				{
+					get
+					{
+						return faceRectangle;
+					}
+					set	
+					{
+						faceRectangle = value;
+					}
+				}
+
+				public class RecognizeIdentityCard_FaceRectVertice
+				{
+
+					private float? y;
+
+					private float? x;
+
+					public float? Y
+					{
+						get
+						{
+							return y;
+						}
+						set	
+						{
+							y = value;
+						}
+					}
+
+					public float? X
+					{
+						get
+						{
+							return x;
+						}
+						set	
+						{
+							x = value;
+						}
+					}
+				}
+
+				public class RecognizeIdentityCard_CardArea
+				{
+
+					private float? y;
+
+					private float? x;
+
+					public float? Y
+					{
+						get
+						{
+							return y;
+						}
+						set	
+						{
+							y = value;
+						}
+					}
+
+					public float? X
+					{
+						get
+						{
+							return x;
+						}
+						set	
+						{
+							x = value;
+						}
+					}
+				}
+
+				public class RecognizeIdentityCard_FaceRectangle
+				{
+
+					private float? angle;
+
+					private RecognizeIdentityCard_Size size;
+
+					private RecognizeIdentityCard_Center center;
+
+					public float? Angle
+					{
+						get
+						{
+							return angle;
+						}
+						set	
+						{
+							angle = value;
+						}
+					}
+
+					public RecognizeIdentityCard_Size Size
+					{
+						get
+						{
+							return size;
+						}
+						set	
+						{
+							size = value;
+						}
+					}
+
+					public RecognizeIdentityCard_Center Center
+					{
+						get
+						{
+							return center;
+						}
+						set	
+						{
+							center = value;
+						}
+					}
+
+					public class RecognizeIdentityCard_Size
+					{
+
+						private float? width;
+
+						private float? height;
+
+						public float? Width
+						{
+							get
+							{
+								return width;
+							}
+							set	
+							{
+								width = value;
+							}
+						}
+
+						public float? Height
+						{
+							get
+							{
+								return height;
+							}
+							set	
+							{
+								height = value;
+							}
+						}
+					}
+
+					public class RecognizeIdentityCard_Center
+					{
+
+						private float? y;
+
+						private float? x;
+
+						public float? Y
+						{
+							get
+							{
+								return y;
+							}
+							set	
+							{
+								y = value;
+							}
+						}
+
+						public float? X
+						{
+							get
+							{
+								return x;
+							}
+							set	
+							{
+								x = value;
+							}
+						}
 					}
 				}
 			}

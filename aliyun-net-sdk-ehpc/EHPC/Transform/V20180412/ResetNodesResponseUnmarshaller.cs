@@ -26,13 +26,13 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class ResetNodesResponseUnmarshaller
     {
-        public static ResetNodesResponse Unmarshall(UnmarshallerContext context)
+        public static ResetNodesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ResetNodesResponse resetNodesResponse = new ResetNodesResponse();
 
-			resetNodesResponse.HttpResponse = context.HttpResponse;
-			resetNodesResponse.RequestId = context.StringValue("ResetNodes.RequestId");
-			resetNodesResponse.TaskId = context.StringValue("ResetNodes.TaskId");
+			resetNodesResponse.HttpResponse = _ctx.HttpResponse;
+			resetNodesResponse.RequestId = _ctx.StringValue("ResetNodes.RequestId");
+			resetNodesResponse.TaskId = _ctx.StringValue("ResetNodes.TaskId");
         
 			return resetNodesResponse;
         }

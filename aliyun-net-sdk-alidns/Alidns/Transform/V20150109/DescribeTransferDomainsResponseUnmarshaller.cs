@@ -26,25 +26,25 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeTransferDomainsResponseUnmarshaller
     {
-        public static DescribeTransferDomainsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeTransferDomainsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeTransferDomainsResponse describeTransferDomainsResponse = new DescribeTransferDomainsResponse();
 
-			describeTransferDomainsResponse.HttpResponse = context.HttpResponse;
-			describeTransferDomainsResponse.RequestId = context.StringValue("DescribeTransferDomains.RequestId");
-			describeTransferDomainsResponse.TotalCount = context.LongValue("DescribeTransferDomains.TotalCount");
-			describeTransferDomainsResponse.PageNumber = context.LongValue("DescribeTransferDomains.PageNumber");
-			describeTransferDomainsResponse.PageSize = context.LongValue("DescribeTransferDomains.PageSize");
+			describeTransferDomainsResponse.HttpResponse = _ctx.HttpResponse;
+			describeTransferDomainsResponse.RequestId = _ctx.StringValue("DescribeTransferDomains.RequestId");
+			describeTransferDomainsResponse.TotalCount = _ctx.LongValue("DescribeTransferDomains.TotalCount");
+			describeTransferDomainsResponse.PageNumber = _ctx.LongValue("DescribeTransferDomains.PageNumber");
+			describeTransferDomainsResponse.PageSize = _ctx.LongValue("DescribeTransferDomains.PageSize");
 
 			List<DescribeTransferDomainsResponse.DescribeTransferDomains_DomainTransfer> describeTransferDomainsResponse_domainTransfers = new List<DescribeTransferDomainsResponse.DescribeTransferDomains_DomainTransfer>();
-			for (int i = 0; i < context.Length("DescribeTransferDomains.DomainTransfers.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeTransferDomains.DomainTransfers.Length"); i++) {
 				DescribeTransferDomainsResponse.DescribeTransferDomains_DomainTransfer domainTransfer = new DescribeTransferDomainsResponse.DescribeTransferDomains_DomainTransfer();
-				domainTransfer.DomainName = context.StringValue("DescribeTransferDomains.DomainTransfers["+ i +"].DomainName");
-				domainTransfer.CreateTime = context.StringValue("DescribeTransferDomains.DomainTransfers["+ i +"].CreateTime");
-				domainTransfer.CreateTimestamp = context.LongValue("DescribeTransferDomains.DomainTransfers["+ i +"].CreateTimestamp");
-				domainTransfer.FromUserId = context.LongValue("DescribeTransferDomains.DomainTransfers["+ i +"].FromUserId");
-				domainTransfer.TargetUserId = context.LongValue("DescribeTransferDomains.DomainTransfers["+ i +"].TargetUserId");
-				domainTransfer.Id = context.LongValue("DescribeTransferDomains.DomainTransfers["+ i +"].Id");
+				domainTransfer.DomainName = _ctx.StringValue("DescribeTransferDomains.DomainTransfers["+ i +"].DomainName");
+				domainTransfer.CreateTime = _ctx.StringValue("DescribeTransferDomains.DomainTransfers["+ i +"].CreateTime");
+				domainTransfer.CreateTimestamp = _ctx.LongValue("DescribeTransferDomains.DomainTransfers["+ i +"].CreateTimestamp");
+				domainTransfer.FromUserId = _ctx.LongValue("DescribeTransferDomains.DomainTransfers["+ i +"].FromUserId");
+				domainTransfer.TargetUserId = _ctx.LongValue("DescribeTransferDomains.DomainTransfers["+ i +"].TargetUserId");
+				domainTransfer.Id = _ctx.LongValue("DescribeTransferDomains.DomainTransfers["+ i +"].Id");
 
 				describeTransferDomainsResponse_domainTransfers.Add(domainTransfer);
 			}

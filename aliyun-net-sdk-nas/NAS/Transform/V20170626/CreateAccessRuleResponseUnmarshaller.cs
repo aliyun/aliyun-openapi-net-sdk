@@ -26,13 +26,13 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 {
     public class CreateAccessRuleResponseUnmarshaller
     {
-        public static CreateAccessRuleResponse Unmarshall(UnmarshallerContext context)
+        public static CreateAccessRuleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateAccessRuleResponse createAccessRuleResponse = new CreateAccessRuleResponse();
 
-			createAccessRuleResponse.HttpResponse = context.HttpResponse;
-			createAccessRuleResponse.RequestId = context.StringValue("CreateAccessRule.RequestId");
-			createAccessRuleResponse.AccessRuleId = context.StringValue("CreateAccessRule.AccessRuleId");
+			createAccessRuleResponse.HttpResponse = _ctx.HttpResponse;
+			createAccessRuleResponse.RequestId = _ctx.StringValue("CreateAccessRule.RequestId");
+			createAccessRuleResponse.AccessRuleId = _ctx.StringValue("CreateAccessRule.AccessRuleId");
         
 			return createAccessRuleResponse;
         }

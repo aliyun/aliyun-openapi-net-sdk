@@ -26,33 +26,35 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryEdgeDriverResponseUnmarshaller
     {
-        public static QueryEdgeDriverResponse Unmarshall(UnmarshallerContext context)
+        public static QueryEdgeDriverResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryEdgeDriverResponse queryEdgeDriverResponse = new QueryEdgeDriverResponse();
 
-			queryEdgeDriverResponse.HttpResponse = context.HttpResponse;
-			queryEdgeDriverResponse.RequestId = context.StringValue("QueryEdgeDriver.RequestId");
-			queryEdgeDriverResponse.Success = context.BooleanValue("QueryEdgeDriver.Success");
-			queryEdgeDriverResponse.Code = context.StringValue("QueryEdgeDriver.Code");
-			queryEdgeDriverResponse.ErrorMessage = context.StringValue("QueryEdgeDriver.ErrorMessage");
+			queryEdgeDriverResponse.HttpResponse = _ctx.HttpResponse;
+			queryEdgeDriverResponse.RequestId = _ctx.StringValue("QueryEdgeDriver.RequestId");
+			queryEdgeDriverResponse.Success = _ctx.BooleanValue("QueryEdgeDriver.Success");
+			queryEdgeDriverResponse.Code = _ctx.StringValue("QueryEdgeDriver.Code");
+			queryEdgeDriverResponse.ErrorMessage = _ctx.StringValue("QueryEdgeDriver.ErrorMessage");
 
 			QueryEdgeDriverResponse.QueryEdgeDriver_Data data = new QueryEdgeDriverResponse.QueryEdgeDriver_Data();
-			data.Total = context.IntegerValue("QueryEdgeDriver.Data.Total");
-			data.PageSize = context.IntegerValue("QueryEdgeDriver.Data.PageSize");
-			data.CurrentPage = context.IntegerValue("QueryEdgeDriver.Data.CurrentPage");
+			data.Total = _ctx.IntegerValue("QueryEdgeDriver.Data.Total");
+			data.PageSize = _ctx.IntegerValue("QueryEdgeDriver.Data.PageSize");
+			data.CurrentPage = _ctx.IntegerValue("QueryEdgeDriver.Data.CurrentPage");
 
 			List<QueryEdgeDriverResponse.QueryEdgeDriver_Data.QueryEdgeDriver_Driver> data_driverList = new List<QueryEdgeDriverResponse.QueryEdgeDriver_Data.QueryEdgeDriver_Driver>();
-			for (int i = 0; i < context.Length("QueryEdgeDriver.Data.DriverList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryEdgeDriver.Data.DriverList.Length"); i++) {
 				QueryEdgeDriverResponse.QueryEdgeDriver_Data.QueryEdgeDriver_Driver driver = new QueryEdgeDriverResponse.QueryEdgeDriver_Data.QueryEdgeDriver_Driver();
-				driver.DriverId = context.StringValue("QueryEdgeDriver.Data.DriverList["+ i +"].DriverId");
-				driver.DriverName = context.StringValue("QueryEdgeDriver.Data.DriverList["+ i +"].DriverName");
-				driver.DriverProtocol = context.StringValue("QueryEdgeDriver.Data.DriverList["+ i +"].DriverProtocol");
-				driver.Runtime = context.StringValue("QueryEdgeDriver.Data.DriverList["+ i +"].Runtime");
-				driver.CpuArch = context.StringValue("QueryEdgeDriver.Data.DriverList["+ i +"].CpuArch");
-				driver.Type = context.IntegerValue("QueryEdgeDriver.Data.DriverList["+ i +"].Type");
-				driver.IsBuiltIn = context.BooleanValue("QueryEdgeDriver.Data.DriverList["+ i +"].IsBuiltIn");
-				driver.GmtCreateTimestamp = context.LongValue("QueryEdgeDriver.Data.DriverList["+ i +"].GmtCreateTimestamp");
-				driver.GmtModifiedTimestamp = context.LongValue("QueryEdgeDriver.Data.DriverList["+ i +"].GmtModifiedTimestamp");
+				driver.DriverId = _ctx.StringValue("QueryEdgeDriver.Data.DriverList["+ i +"].DriverId");
+				driver.DriverName = _ctx.StringValue("QueryEdgeDriver.Data.DriverList["+ i +"].DriverName");
+				driver.DriverProtocol = _ctx.StringValue("QueryEdgeDriver.Data.DriverList["+ i +"].DriverProtocol");
+				driver.Runtime = _ctx.StringValue("QueryEdgeDriver.Data.DriverList["+ i +"].Runtime");
+				driver.CpuArch = _ctx.StringValue("QueryEdgeDriver.Data.DriverList["+ i +"].CpuArch");
+				driver.Type = _ctx.IntegerValue("QueryEdgeDriver.Data.DriverList["+ i +"].Type");
+				driver.IsBuiltIn = _ctx.BooleanValue("QueryEdgeDriver.Data.DriverList["+ i +"].IsBuiltIn");
+				driver.GmtCreateTimestamp = _ctx.LongValue("QueryEdgeDriver.Data.DriverList["+ i +"].GmtCreateTimestamp");
+				driver.GmtModifiedTimestamp = _ctx.LongValue("QueryEdgeDriver.Data.DriverList["+ i +"].GmtModifiedTimestamp");
+				driver.IsApply = _ctx.BooleanValue("QueryEdgeDriver.Data.DriverList["+ i +"].IsApply");
+				driver.UseOfficialConfig = _ctx.IntegerValue("QueryEdgeDriver.Data.DriverList["+ i +"].UseOfficialConfig");
 
 				data_driverList.Add(driver);
 			}

@@ -25,37 +25,13 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 	public class SmartCallResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string callId;
-
 		private string code;
 
 		private string message;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
-		public string CallId
-		{
-			get
-			{
-				return callId;
-			}
-			set	
-			{
-				callId = value;
-			}
-		}
+		private string callId;
 
 		public string Code
 		{
@@ -78,6 +54,30 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string CallId
+		{
+			get
+			{
+				return callId;
+			}
+			set	
+			{
+				callId = value;
 			}
 		}
 	}

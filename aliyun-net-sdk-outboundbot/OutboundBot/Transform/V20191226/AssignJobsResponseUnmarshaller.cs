@@ -26,17 +26,23 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class AssignJobsResponseUnmarshaller
     {
-        public static AssignJobsResponse Unmarshall(UnmarshallerContext context)
+        public static AssignJobsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AssignJobsResponse assignJobsResponse = new AssignJobsResponse();
 
-			assignJobsResponse.HttpResponse = context.HttpResponse;
-			assignJobsResponse.RequestId = context.StringValue("AssignJobs.RequestId");
-			assignJobsResponse.Success = context.BooleanValue("AssignJobs.Success");
-			assignJobsResponse.Code = context.StringValue("AssignJobs.Code");
-			assignJobsResponse.Message = context.StringValue("AssignJobs.Message");
-			assignJobsResponse.HttpStatusCode = context.IntegerValue("AssignJobs.HttpStatusCode");
-			assignJobsResponse.JobGroupId = context.StringValue("AssignJobs.JobGroupId");
+			assignJobsResponse.HttpResponse = _ctx.HttpResponse;
+			assignJobsResponse.HttpStatusCode = _ctx.IntegerValue("AssignJobs.HttpStatusCode");
+			assignJobsResponse.JobGroupId = _ctx.StringValue("AssignJobs.JobGroupId");
+			assignJobsResponse.RequestId = _ctx.StringValue("AssignJobs.RequestId");
+			assignJobsResponse.Success = _ctx.BooleanValue("AssignJobs.Success");
+			assignJobsResponse.Code = _ctx.StringValue("AssignJobs.Code");
+			assignJobsResponse.Message = _ctx.StringValue("AssignJobs.Message");
+
+			List<string> assignJobsResponse_jobsId = new List<string>();
+			for (int i = 0; i < _ctx.Length("AssignJobs.JobsId.Length"); i++) {
+				assignJobsResponse_jobsId.Add(_ctx.StringValue("AssignJobs.JobsId["+ i +"]"));
+			}
+			assignJobsResponse.JobsId = assignJobsResponse_jobsId;
         
 			return assignJobsResponse;
         }

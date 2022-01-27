@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,11 +25,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeSnapshotsUsageResponse : AcsResponse
 	{
 
+		private long? snapshotSize;
+
 		private string requestId;
 
 		private int? snapshotCount;
 
-		private long? snapshotSize;
+		public long? SnapshotSize
+		{
+			get
+			{
+				return snapshotSize;
+			}
+			set	
+			{
+				snapshotSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -52,18 +64,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				snapshotCount = value;
-			}
-		}
-
-		public long? SnapshotSize
-		{
-			get
-			{
-				return snapshotSize;
-			}
-			set	
-			{
-				snapshotSize = value;
 			}
 		}
 	}

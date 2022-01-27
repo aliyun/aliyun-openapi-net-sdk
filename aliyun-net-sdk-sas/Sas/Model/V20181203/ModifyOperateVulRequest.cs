@@ -34,18 +34,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Sas.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Sas.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string reason;
 
 		private string type;
 
-		private string operateType;
-
 		private string info;
+
+		private string operateType;
 
 		public string Reason
 		{
@@ -73,19 +74,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string OperateType
-		{
-			get
-			{
-				return operateType;
-			}
-			set	
-			{
-				operateType = value;
-				DictionaryUtil.Add(QueryParameters, "OperateType", value);
-			}
-		}
-
 		public string Info
 		{
 			get
@@ -96,6 +84,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				info = value;
 				DictionaryUtil.Add(QueryParameters, "Info", value);
+			}
+		}
+
+		public string OperateType
+		{
+			get
+			{
+				return operateType;
+			}
+			set	
+			{
+				operateType = value;
+				DictionaryUtil.Add(QueryParameters, "OperateType", value);
 			}
 		}
 

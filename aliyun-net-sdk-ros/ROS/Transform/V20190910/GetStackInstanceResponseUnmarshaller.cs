@@ -26,29 +26,29 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class GetStackInstanceResponseUnmarshaller
     {
-        public static GetStackInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static GetStackInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetStackInstanceResponse getStackInstanceResponse = new GetStackInstanceResponse();
 
-			getStackInstanceResponse.HttpResponse = context.HttpResponse;
-			getStackInstanceResponse.RequestId = context.StringValue("GetStackInstance.RequestId");
+			getStackInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			getStackInstanceResponse.RequestId = _ctx.StringValue("GetStackInstance.RequestId");
 
 			GetStackInstanceResponse.GetStackInstance_StackInstance stackInstance = new GetStackInstanceResponse.GetStackInstance_StackInstance();
-			stackInstance.StackGroupName = context.StringValue("GetStackInstance.StackInstance.StackGroupName");
-			stackInstance.StackGroupId = context.StringValue("GetStackInstance.StackInstance.StackGroupId");
-			stackInstance.StackId = context.StringValue("GetStackInstance.StackInstance.StackId");
-			stackInstance.AccountId = context.StringValue("GetStackInstance.StackInstance.AccountId");
-			stackInstance.RegionId = context.StringValue("GetStackInstance.StackInstance.RegionId");
-			stackInstance.Status = context.StringValue("GetStackInstance.StackInstance.Status");
-			stackInstance.StatusReason = context.StringValue("GetStackInstance.StackInstance.StatusReason");
-			stackInstance.StackDriftStatus = context.StringValue("GetStackInstance.StackInstance.StackDriftStatus");
-			stackInstance.DriftDetectionTime = context.StringValue("GetStackInstance.StackInstance.DriftDetectionTime");
+			stackInstance.StackGroupName = _ctx.StringValue("GetStackInstance.StackInstance.StackGroupName");
+			stackInstance.StackGroupId = _ctx.StringValue("GetStackInstance.StackInstance.StackGroupId");
+			stackInstance.StackId = _ctx.StringValue("GetStackInstance.StackInstance.StackId");
+			stackInstance.AccountId = _ctx.StringValue("GetStackInstance.StackInstance.AccountId");
+			stackInstance.RegionId = _ctx.StringValue("GetStackInstance.StackInstance.RegionId");
+			stackInstance.Status = _ctx.StringValue("GetStackInstance.StackInstance.Status");
+			stackInstance.StatusReason = _ctx.StringValue("GetStackInstance.StackInstance.StatusReason");
+			stackInstance.StackDriftStatus = _ctx.StringValue("GetStackInstance.StackInstance.StackDriftStatus");
+			stackInstance.DriftDetectionTime = _ctx.StringValue("GetStackInstance.StackInstance.DriftDetectionTime");
 
 			List<GetStackInstanceResponse.GetStackInstance_StackInstance.GetStackInstance_ParameterOverride> stackInstance_parameterOverrides = new List<GetStackInstanceResponse.GetStackInstance_StackInstance.GetStackInstance_ParameterOverride>();
-			for (int i = 0; i < context.Length("GetStackInstance.StackInstance.ParameterOverrides.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetStackInstance.StackInstance.ParameterOverrides.Length"); i++) {
 				GetStackInstanceResponse.GetStackInstance_StackInstance.GetStackInstance_ParameterOverride parameterOverride = new GetStackInstanceResponse.GetStackInstance_StackInstance.GetStackInstance_ParameterOverride();
-				parameterOverride.ParameterKey = context.StringValue("GetStackInstance.StackInstance.ParameterOverrides["+ i +"].ParameterKey");
-				parameterOverride.ParameterValue = context.StringValue("GetStackInstance.StackInstance.ParameterOverrides["+ i +"].ParameterValue");
+				parameterOverride.ParameterKey = _ctx.StringValue("GetStackInstance.StackInstance.ParameterOverrides["+ i +"].ParameterKey");
+				parameterOverride.ParameterValue = _ctx.StringValue("GetStackInstance.StackInstance.ParameterOverrides["+ i +"].ParameterValue");
 
 				stackInstance_parameterOverrides.Add(parameterOverride);
 			}

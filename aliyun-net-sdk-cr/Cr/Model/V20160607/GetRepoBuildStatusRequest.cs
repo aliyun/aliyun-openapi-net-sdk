@@ -30,17 +30,35 @@ namespace Aliyun.Acs.cr.Model.V20160607
     public class GetRepoBuildStatusRequest : RoaAcsRequest<GetRepoBuildStatusResponse>
     {
         public GetRepoBuildStatusRequest()
-            : base("cr", "2016-06-07", "GetRepoBuildStatus", "cr", "openAPI")
+            : base("cr", "2016-06-07", "GetRepoBuildStatus", "acr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/repos/[RepoNamespace]/[RepoName]/build/[BuildId]/status";
 			Method = MethodType.GET;
         }
+
+		private string buildId;
 
 		private string repoNamespace;
 
 		private string repoName;
 
-		private string buildId;
+		public string BuildId
+		{
+			get
+			{
+				return buildId;
+			}
+			set	
+			{
+				buildId = value;
+				DictionaryUtil.Add(PathParameters, "BuildId", value);
+			}
+		}
 
 		public string RepoNamespace
 		{
@@ -65,19 +83,6 @@ namespace Aliyun.Acs.cr.Model.V20160607
 			{
 				repoName = value;
 				DictionaryUtil.Add(PathParameters, "RepoName", value);
-			}
-		}
-
-		public string BuildId
-		{
-			get
-			{
-				return buildId;
-			}
-			set	
-			{
-				buildId = value;
-				DictionaryUtil.Add(PathParameters, "BuildId", value);
 			}
 		}
 

@@ -26,24 +26,24 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveAudioAuditConfigResponseUnmarshaller
     {
-        public static DescribeLiveAudioAuditConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveAudioAuditConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveAudioAuditConfigResponse describeLiveAudioAuditConfigResponse = new DescribeLiveAudioAuditConfigResponse();
 
-			describeLiveAudioAuditConfigResponse.HttpResponse = context.HttpResponse;
-			describeLiveAudioAuditConfigResponse.RequestId = context.StringValue("DescribeLiveAudioAuditConfig.RequestId");
+			describeLiveAudioAuditConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveAudioAuditConfigResponse.RequestId = _ctx.StringValue("DescribeLiveAudioAuditConfig.RequestId");
 
 			List<DescribeLiveAudioAuditConfigResponse.DescribeLiveAudioAuditConfig_LiveAudioAuditConfig> describeLiveAudioAuditConfigResponse_liveAudioAuditConfigList = new List<DescribeLiveAudioAuditConfigResponse.DescribeLiveAudioAuditConfig_LiveAudioAuditConfig>();
-			for (int i = 0; i < context.Length("DescribeLiveAudioAuditConfig.LiveAudioAuditConfigList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveAudioAuditConfig.LiveAudioAuditConfigList.Length"); i++) {
 				DescribeLiveAudioAuditConfigResponse.DescribeLiveAudioAuditConfig_LiveAudioAuditConfig liveAudioAuditConfig = new DescribeLiveAudioAuditConfigResponse.DescribeLiveAudioAuditConfig_LiveAudioAuditConfig();
-				liveAudioAuditConfig.DomainName = context.StringValue("DescribeLiveAudioAuditConfig.LiveAudioAuditConfigList["+ i +"].DomainName");
-				liveAudioAuditConfig.AppName = context.StringValue("DescribeLiveAudioAuditConfig.LiveAudioAuditConfigList["+ i +"].AppName");
-				liveAudioAuditConfig.StreamName = context.StringValue("DescribeLiveAudioAuditConfig.LiveAudioAuditConfigList["+ i +"].StreamName");
-				liveAudioAuditConfig.BizType = context.StringValue("DescribeLiveAudioAuditConfig.LiveAudioAuditConfigList["+ i +"].BizType");
+				liveAudioAuditConfig.DomainName = _ctx.StringValue("DescribeLiveAudioAuditConfig.LiveAudioAuditConfigList["+ i +"].DomainName");
+				liveAudioAuditConfig.AppName = _ctx.StringValue("DescribeLiveAudioAuditConfig.LiveAudioAuditConfigList["+ i +"].AppName");
+				liveAudioAuditConfig.StreamName = _ctx.StringValue("DescribeLiveAudioAuditConfig.LiveAudioAuditConfigList["+ i +"].StreamName");
+				liveAudioAuditConfig.BizType = _ctx.StringValue("DescribeLiveAudioAuditConfig.LiveAudioAuditConfigList["+ i +"].BizType");
 
 				List<string> liveAudioAuditConfig_scenes = new List<string>();
-				for (int j = 0; j < context.Length("DescribeLiveAudioAuditConfig.LiveAudioAuditConfigList["+ i +"].Scenes.Length"); j++) {
-					liveAudioAuditConfig_scenes.Add(context.StringValue("DescribeLiveAudioAuditConfig.LiveAudioAuditConfigList["+ i +"].Scenes["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeLiveAudioAuditConfig.LiveAudioAuditConfigList["+ i +"].Scenes.Length"); j++) {
+					liveAudioAuditConfig_scenes.Add(_ctx.StringValue("DescribeLiveAudioAuditConfig.LiveAudioAuditConfigList["+ i +"].Scenes["+ j +"]"));
 				}
 				liveAudioAuditConfig.Scenes = liveAudioAuditConfig_scenes;
 

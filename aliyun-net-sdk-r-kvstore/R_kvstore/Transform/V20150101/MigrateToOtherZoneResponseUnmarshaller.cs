@@ -26,12 +26,12 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class MigrateToOtherZoneResponseUnmarshaller
     {
-        public static MigrateToOtherZoneResponse Unmarshall(UnmarshallerContext context)
+        public static MigrateToOtherZoneResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			MigrateToOtherZoneResponse migrateToOtherZoneResponse = new MigrateToOtherZoneResponse();
 
-			migrateToOtherZoneResponse.HttpResponse = context.HttpResponse;
-			migrateToOtherZoneResponse.RequestId = context.StringValue("MigrateToOtherZone.RequestId");
+			migrateToOtherZoneResponse.HttpResponse = _ctx.HttpResponse;
+			migrateToOtherZoneResponse.RequestId = _ctx.StringValue("MigrateToOtherZone.RequestId");
         
 			return migrateToOtherZoneResponse;
         }

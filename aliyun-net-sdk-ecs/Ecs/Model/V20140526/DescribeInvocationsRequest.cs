@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private long? pageNumber;
 
 		private string contentEncoding;
+
+		private string repeatMode;
 
 		private long? pageSize;
 
@@ -145,6 +147,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				contentEncoding = value;
 				DictionaryUtil.Add(QueryParameters, "ContentEncoding", value);
+			}
+		}
+
+		public string RepeatMode
+		{
+			get
+			{
+				return repeatMode;
+			}
+			set	
+			{
+				repeatMode = value;
+				DictionaryUtil.Add(QueryParameters, "RepeatMode", value);
 			}
 		}
 

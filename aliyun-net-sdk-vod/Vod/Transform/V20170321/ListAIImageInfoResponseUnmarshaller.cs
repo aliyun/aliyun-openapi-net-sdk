@@ -26,25 +26,25 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class ListAIImageInfoResponseUnmarshaller
     {
-        public static ListAIImageInfoResponse Unmarshall(UnmarshallerContext context)
+        public static ListAIImageInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListAIImageInfoResponse listAIImageInfoResponse = new ListAIImageInfoResponse();
 
-			listAIImageInfoResponse.HttpResponse = context.HttpResponse;
-			listAIImageInfoResponse.RequestId = context.StringValue("ListAIImageInfo.RequestId");
+			listAIImageInfoResponse.HttpResponse = _ctx.HttpResponse;
+			listAIImageInfoResponse.RequestId = _ctx.StringValue("ListAIImageInfo.RequestId");
 
 			List<ListAIImageInfoResponse.ListAIImageInfo_AIImageInfo> listAIImageInfoResponse_aIImageInfoList = new List<ListAIImageInfoResponse.ListAIImageInfo_AIImageInfo>();
-			for (int i = 0; i < context.Length("ListAIImageInfo.AIImageInfoList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListAIImageInfo.AIImageInfoList.Length"); i++) {
 				ListAIImageInfoResponse.ListAIImageInfo_AIImageInfo aIImageInfo = new ListAIImageInfoResponse.ListAIImageInfo_AIImageInfo();
-				aIImageInfo.VideoId = context.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].VideoId");
-				aIImageInfo.AIImageInfoId = context.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].AIImageInfoId");
-				aIImageInfo.JobId = context.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].JobId");
-				aIImageInfo.FileURL = context.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].FileURL");
-				aIImageInfo.Score = context.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].Score");
-				aIImageInfo.Time = context.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].Time");
-				aIImageInfo.Format = context.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].Format");
-				aIImageInfo.CreationTime = context.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].CreationTime");
-				aIImageInfo.Version = context.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].Version");
+				aIImageInfo.VideoId = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].VideoId");
+				aIImageInfo.AIImageInfoId = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].AIImageInfoId");
+				aIImageInfo.JobId = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].JobId");
+				aIImageInfo.FileURL = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].FileURL");
+				aIImageInfo.Score = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].Score");
+				aIImageInfo.Time = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].Time");
+				aIImageInfo.Format = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].Format");
+				aIImageInfo.CreationTime = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].CreationTime");
+				aIImageInfo.Version = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].Version");
 
 				listAIImageInfoResponse_aIImageInfoList.Add(aIImageInfo);
 			}

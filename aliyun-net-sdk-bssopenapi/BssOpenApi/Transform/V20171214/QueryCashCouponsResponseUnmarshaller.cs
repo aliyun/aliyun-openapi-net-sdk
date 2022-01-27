@@ -26,29 +26,29 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class QueryCashCouponsResponseUnmarshaller
     {
-        public static QueryCashCouponsResponse Unmarshall(UnmarshallerContext context)
+        public static QueryCashCouponsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryCashCouponsResponse queryCashCouponsResponse = new QueryCashCouponsResponse();
 
-			queryCashCouponsResponse.HttpResponse = context.HttpResponse;
-			queryCashCouponsResponse.RequestId = context.StringValue("QueryCashCoupons.RequestId");
-			queryCashCouponsResponse.Success = context.BooleanValue("QueryCashCoupons.Success");
-			queryCashCouponsResponse.Code = context.StringValue("QueryCashCoupons.Code");
-			queryCashCouponsResponse.Message = context.StringValue("QueryCashCoupons.Message");
+			queryCashCouponsResponse.HttpResponse = _ctx.HttpResponse;
+			queryCashCouponsResponse.RequestId = _ctx.StringValue("QueryCashCoupons.RequestId");
+			queryCashCouponsResponse.Success = _ctx.BooleanValue("QueryCashCoupons.Success");
+			queryCashCouponsResponse.Code = _ctx.StringValue("QueryCashCoupons.Code");
+			queryCashCouponsResponse.Message = _ctx.StringValue("QueryCashCoupons.Message");
 
 			List<QueryCashCouponsResponse.QueryCashCoupons_CashCoupon> queryCashCouponsResponse_data = new List<QueryCashCouponsResponse.QueryCashCoupons_CashCoupon>();
-			for (int i = 0; i < context.Length("QueryCashCoupons.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryCashCoupons.Data.Length"); i++) {
 				QueryCashCouponsResponse.QueryCashCoupons_CashCoupon cashCoupon = new QueryCashCouponsResponse.QueryCashCoupons_CashCoupon();
-				cashCoupon.CashCouponId = context.LongValue("QueryCashCoupons.Data["+ i +"].CashCouponId");
-				cashCoupon.CashCouponNo = context.StringValue("QueryCashCoupons.Data["+ i +"].CashCouponNo");
-				cashCoupon.GrantedTime = context.StringValue("QueryCashCoupons.Data["+ i +"].GrantedTime");
-				cashCoupon.EffectiveTime = context.StringValue("QueryCashCoupons.Data["+ i +"].EffectiveTime");
-				cashCoupon.ExpiryTime = context.StringValue("QueryCashCoupons.Data["+ i +"].ExpiryTime");
-				cashCoupon.ApplicableProducts = context.StringValue("QueryCashCoupons.Data["+ i +"].ApplicableProducts");
-				cashCoupon.ApplicableScenarios = context.StringValue("QueryCashCoupons.Data["+ i +"].ApplicableScenarios");
-				cashCoupon.NominalValue = context.StringValue("QueryCashCoupons.Data["+ i +"].NominalValue");
-				cashCoupon.Balance = context.StringValue("QueryCashCoupons.Data["+ i +"].Balance");
-				cashCoupon.Status = context.StringValue("QueryCashCoupons.Data["+ i +"].Status");
+				cashCoupon.CashCouponId = _ctx.LongValue("QueryCashCoupons.Data["+ i +"].CashCouponId");
+				cashCoupon.CashCouponNo = _ctx.StringValue("QueryCashCoupons.Data["+ i +"].CashCouponNo");
+				cashCoupon.GrantedTime = _ctx.StringValue("QueryCashCoupons.Data["+ i +"].GrantedTime");
+				cashCoupon.EffectiveTime = _ctx.StringValue("QueryCashCoupons.Data["+ i +"].EffectiveTime");
+				cashCoupon.ExpiryTime = _ctx.StringValue("QueryCashCoupons.Data["+ i +"].ExpiryTime");
+				cashCoupon.ApplicableProducts = _ctx.StringValue("QueryCashCoupons.Data["+ i +"].ApplicableProducts");
+				cashCoupon.ApplicableScenarios = _ctx.StringValue("QueryCashCoupons.Data["+ i +"].ApplicableScenarios");
+				cashCoupon.NominalValue = _ctx.StringValue("QueryCashCoupons.Data["+ i +"].NominalValue");
+				cashCoupon.Balance = _ctx.StringValue("QueryCashCoupons.Data["+ i +"].Balance");
+				cashCoupon.Status = _ctx.StringValue("QueryCashCoupons.Data["+ i +"].Status");
 
 				queryCashCouponsResponse_data.Add(cashCoupon);
 			}

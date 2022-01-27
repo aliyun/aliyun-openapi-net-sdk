@@ -41,19 +41,19 @@ namespace Aliyun.Acs.Config.Transform.V20190108
 			List<GetResourceConfigurationTimelineResponse.GetResourceConfigurationTimeline_ResourceConfigurationTimeline.GetResourceConfigurationTimeline_ConfigurationListItem> resourceConfigurationTimeline_configurationList = new List<GetResourceConfigurationTimelineResponse.GetResourceConfigurationTimeline_ResourceConfigurationTimeline.GetResourceConfigurationTimeline_ConfigurationListItem>();
 			for (int i = 0; i < _ctx.Length("GetResourceConfigurationTimeline.ResourceConfigurationTimeline.ConfigurationList.Length"); i++) {
 				GetResourceConfigurationTimelineResponse.GetResourceConfigurationTimeline_ResourceConfigurationTimeline.GetResourceConfigurationTimeline_ConfigurationListItem configurationListItem = new GetResourceConfigurationTimelineResponse.GetResourceConfigurationTimeline_ResourceConfigurationTimeline.GetResourceConfigurationTimeline_ConfigurationListItem();
+				configurationListItem.Relationship = _ctx.StringValue("GetResourceConfigurationTimeline.ResourceConfigurationTimeline.ConfigurationList["+ i +"].Relationship");
+				configurationListItem.Tags = _ctx.StringValue("GetResourceConfigurationTimeline.ResourceConfigurationTimeline.ConfigurationList["+ i +"].Tags");
 				configurationListItem.AccountId = _ctx.LongValue("GetResourceConfigurationTimeline.ResourceConfigurationTimeline.ConfigurationList["+ i +"].AccountId");
+				configurationListItem.ResourceEventType = _ctx.StringValue("GetResourceConfigurationTimeline.ResourceConfigurationTimeline.ConfigurationList["+ i +"].ResourceEventType");
+				configurationListItem.RelationshipDiff = _ctx.StringValue("GetResourceConfigurationTimeline.ResourceConfigurationTimeline.ConfigurationList["+ i +"].RelationshipDiff");
 				configurationListItem.AvailabilityZone = _ctx.StringValue("GetResourceConfigurationTimeline.ResourceConfigurationTimeline.ConfigurationList["+ i +"].AvailabilityZone");
+				configurationListItem.ResourceType = _ctx.StringValue("GetResourceConfigurationTimeline.ResourceConfigurationTimeline.ConfigurationList["+ i +"].ResourceType");
+				configurationListItem.ResourceCreateTime = _ctx.StringValue("GetResourceConfigurationTimeline.ResourceConfigurationTimeline.ConfigurationList["+ i +"].ResourceCreateTime");
+				configurationListItem.Region = _ctx.StringValue("GetResourceConfigurationTimeline.ResourceConfigurationTimeline.ConfigurationList["+ i +"].Region");
 				configurationListItem.CaptureTime = _ctx.StringValue("GetResourceConfigurationTimeline.ResourceConfigurationTimeline.ConfigurationList["+ i +"].CaptureTime");
 				configurationListItem.ConfigurationDiff = _ctx.StringValue("GetResourceConfigurationTimeline.ResourceConfigurationTimeline.ConfigurationList["+ i +"].ConfigurationDiff");
-				configurationListItem.Region = _ctx.StringValue("GetResourceConfigurationTimeline.ResourceConfigurationTimeline.ConfigurationList["+ i +"].Region");
-				configurationListItem.Relationship = _ctx.StringValue("GetResourceConfigurationTimeline.ResourceConfigurationTimeline.ConfigurationList["+ i +"].Relationship");
-				configurationListItem.RelationshipDiff = _ctx.StringValue("GetResourceConfigurationTimeline.ResourceConfigurationTimeline.ConfigurationList["+ i +"].RelationshipDiff");
-				configurationListItem.ResourceCreateTime = _ctx.StringValue("GetResourceConfigurationTimeline.ResourceConfigurationTimeline.ConfigurationList["+ i +"].ResourceCreateTime");
 				configurationListItem.ResourceId = _ctx.StringValue("GetResourceConfigurationTimeline.ResourceConfigurationTimeline.ConfigurationList["+ i +"].ResourceId");
 				configurationListItem.ResourceName = _ctx.StringValue("GetResourceConfigurationTimeline.ResourceConfigurationTimeline.ConfigurationList["+ i +"].ResourceName");
-				configurationListItem.ResourceType = _ctx.StringValue("GetResourceConfigurationTimeline.ResourceConfigurationTimeline.ConfigurationList["+ i +"].ResourceType");
-				configurationListItem.Tags = _ctx.StringValue("GetResourceConfigurationTimeline.ResourceConfigurationTimeline.ConfigurationList["+ i +"].Tags");
-				configurationListItem.ResourceEventType = _ctx.StringValue("GetResourceConfigurationTimeline.ResourceConfigurationTimeline.ConfigurationList["+ i +"].ResourceEventType");
 
 				resourceConfigurationTimeline_configurationList.Add(configurationListItem);
 			}

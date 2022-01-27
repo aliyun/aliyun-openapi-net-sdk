@@ -25,29 +25,29 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class DescribeApplicationConfigResponse : AcsResponse
 	{
 
-		private string code;
+		private string requestId;
 
 		private string message;
 
 		private string traceId;
 
-		private string requestId;
+		private string errorCode;
+
+		private string code;
 
 		private bool? success;
 
-		private string errorCode;
-
 		private DescribeApplicationConfig_Data data;
 
-		public string Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
 			}
 		}
 
@@ -75,15 +75,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string RequestId
+		public string ErrorCode
 		{
 			get
 			{
-				return requestId;
+				return errorCode;
 			}
 			set	
 			{
-				requestId = value;
+				errorCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -96,18 +108,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
 			}
 		}
 
@@ -126,141 +126,119 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class DescribeApplicationConfig_Data
 		{
 
-			private string appId;
-
-			private string appName;
-
-			private string namespaceId;
-
-			private string appDescription;
-
 			private string vpcId;
-
-			private string vSwitchId;
-
-			private string packageType;
-
-			private string packageVersion;
-
-			private string packageUrl;
-
-			private string imageUrl;
-
-			private string jdk;
-
-			private string webContainer;
-
-			private int? cpu;
-
-			private int? memory;
-
-			private int? replicas;
-
-			private string command;
-
-			private string commandArgs;
-
-			private string envs;
-
-			private string customHostAlias;
-
-			private string jarStartOptions;
-
-			private string jarStartArgs;
-
-			private string liveness;
 
 			private string readiness;
 
-			private int? minReadyInstances;
+			private string securityGroupId;
 
 			private int? batchWaitTime;
 
-			private string edasContainerVersion;
+			private string jdk;
 
-			private string regionId;
+			private string imageUrl;
 
 			private string slsConfigs;
 
-			private string timezone;
+			private string liveness;
 
-			private string nasId;
+			private string packageUrl;
 
-			private string mountHost;
+			private string packageType;
 
 			private string preStop;
 
-			private string postStart;
+			private string packageVersion;
 
-			private string warStartOptions;
+			private string jarStartArgs;
 
-			private string securityGroupId;
+			private string appName;
 
-			private int? terminationGracePeriodSeconds;
+			private string appId;
 
-			private string enableAhas;
+			private string jarStartOptions;
 
-			private string phpArmsConfigLocation;
+			private int? replicas;
 
-			private string phpConfigLocation;
+			private string updateStrategy;
+
+			private int? minReadyInstances;
+
+			private int? minReadyInstanceRatio;
+
+			private int? memory;
+
+			private string php;
 
 			private string phpConfig;
 
+			private string phpConfigLocation;
+
+			private string phpExtensions;
+
+			private string phpPECLExtensions;
+
+			private string postStart;
+
+			private int? terminationGracePeriodSeconds;
+
+			private string commandArgs;
+
+			private string namespaceId;
+
+			private string mountHost;
+
 			private string tomcatConfig;
 
-			private List<DescribeApplicationConfig_MountDescItem> mountDesc;
+			private string regionId;
 
-			private List<DescribeApplicationConfig_Tag> tags;
+			private string vSwitchId;
+
+			private int? cpu;
+
+			private string envs;
+
+			private string enableAhas;
+
+			private string customHostAlias;
+
+			private string webContainer;
+
+			private string command;
+
+			private string warStartOptions;
+
+			private string phpArmsConfigLocation;
+
+			private string nasId;
+
+			private string ossAkId;
+
+			private string ossAkSecret;
+
+			private string edasContainerVersion;
+
+			private string timezone;
+
+			private string appDescription;
+
+			private bool? enableGreyTagRoute;
+
+			private string mseApplicationId;
+
+			private string acrInstanceId;
+
+			private string acrAssumeRoleArn;
+
+			private bool? associateEip;
 
 			private List<DescribeApplicationConfig_ConfigMapMountDescItem> configMapMountDesc;
 
-			public string AppId
-			{
-				get
-				{
-					return appId;
-				}
-				set	
-				{
-					appId = value;
-				}
-			}
+			private List<DescribeApplicationConfig_Tag> tags;
 
-			public string AppName
-			{
-				get
-				{
-					return appName;
-				}
-				set	
-				{
-					appName = value;
-				}
-			}
+			private List<DescribeApplicationConfig_MountDescItem> mountDesc;
 
-			public string NamespaceId
-			{
-				get
-				{
-					return namespaceId;
-				}
-				set	
-				{
-					namespaceId = value;
-				}
-			}
-
-			public string AppDescription
-			{
-				get
-				{
-					return appDescription;
-				}
-				set	
-				{
-					appDescription = value;
-				}
-			}
+			private List<DescribeApplicationConfig_OssMountDesc> ossMountDescs;
 
 			public string VpcId
 			{
@@ -271,210 +249,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					vpcId = value;
-				}
-			}
-
-			public string VSwitchId
-			{
-				get
-				{
-					return vSwitchId;
-				}
-				set	
-				{
-					vSwitchId = value;
-				}
-			}
-
-			public string PackageType
-			{
-				get
-				{
-					return packageType;
-				}
-				set	
-				{
-					packageType = value;
-				}
-			}
-
-			public string PackageVersion
-			{
-				get
-				{
-					return packageVersion;
-				}
-				set	
-				{
-					packageVersion = value;
-				}
-			}
-
-			public string PackageUrl
-			{
-				get
-				{
-					return packageUrl;
-				}
-				set	
-				{
-					packageUrl = value;
-				}
-			}
-
-			public string ImageUrl
-			{
-				get
-				{
-					return imageUrl;
-				}
-				set	
-				{
-					imageUrl = value;
-				}
-			}
-
-			public string Jdk
-			{
-				get
-				{
-					return jdk;
-				}
-				set	
-				{
-					jdk = value;
-				}
-			}
-
-			public string WebContainer
-			{
-				get
-				{
-					return webContainer;
-				}
-				set	
-				{
-					webContainer = value;
-				}
-			}
-
-			public int? Cpu
-			{
-				get
-				{
-					return cpu;
-				}
-				set	
-				{
-					cpu = value;
-				}
-			}
-
-			public int? Memory
-			{
-				get
-				{
-					return memory;
-				}
-				set	
-				{
-					memory = value;
-				}
-			}
-
-			public int? Replicas
-			{
-				get
-				{
-					return replicas;
-				}
-				set	
-				{
-					replicas = value;
-				}
-			}
-
-			public string Command
-			{
-				get
-				{
-					return command;
-				}
-				set	
-				{
-					command = value;
-				}
-			}
-
-			public string CommandArgs
-			{
-				get
-				{
-					return commandArgs;
-				}
-				set	
-				{
-					commandArgs = value;
-				}
-			}
-
-			public string Envs
-			{
-				get
-				{
-					return envs;
-				}
-				set	
-				{
-					envs = value;
-				}
-			}
-
-			public string CustomHostAlias
-			{
-				get
-				{
-					return customHostAlias;
-				}
-				set	
-				{
-					customHostAlias = value;
-				}
-			}
-
-			public string JarStartOptions
-			{
-				get
-				{
-					return jarStartOptions;
-				}
-				set	
-				{
-					jarStartOptions = value;
-				}
-			}
-
-			public string JarStartArgs
-			{
-				get
-				{
-					return jarStartArgs;
-				}
-				set	
-				{
-					jarStartArgs = value;
-				}
-			}
-
-			public string Liveness
-			{
-				get
-				{
-					return liveness;
-				}
-				set	
-				{
-					liveness = value;
 				}
 			}
 
@@ -490,15 +264,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public int? MinReadyInstances
+			public string SecurityGroupId
 			{
 				get
 				{
-					return minReadyInstances;
+					return securityGroupId;
 				}
 				set	
 				{
-					minReadyInstances = value;
+					securityGroupId = value;
 				}
 			}
 
@@ -514,27 +288,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string EdasContainerVersion
+			public string Jdk
 			{
 				get
 				{
-					return edasContainerVersion;
+					return jdk;
 				}
 				set	
 				{
-					edasContainerVersion = value;
+					jdk = value;
 				}
 			}
 
-			public string RegionId
+			public string ImageUrl
 			{
 				get
 				{
-					return regionId;
+					return imageUrl;
 				}
 				set	
 				{
-					regionId = value;
+					imageUrl = value;
 				}
 			}
 
@@ -550,39 +324,39 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string Timezone
+			public string Liveness
 			{
 				get
 				{
-					return timezone;
+					return liveness;
 				}
 				set	
 				{
-					timezone = value;
+					liveness = value;
 				}
 			}
 
-			public string NasId
+			public string PackageUrl
 			{
 				get
 				{
-					return nasId;
+					return packageUrl;
 				}
 				set	
 				{
-					nasId = value;
+					packageUrl = value;
 				}
 			}
 
-			public string MountHost
+			public string PackageType
 			{
 				get
 				{
-					return mountHost;
+					return packageType;
 				}
 				set	
 				{
-					mountHost = value;
+					packageType = value;
 				}
 			}
 
@@ -598,87 +372,135 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string PostStart
+			public string PackageVersion
 			{
 				get
 				{
-					return postStart;
+					return packageVersion;
 				}
 				set	
 				{
-					postStart = value;
+					packageVersion = value;
 				}
 			}
 
-			public string WarStartOptions
+			public string JarStartArgs
 			{
 				get
 				{
-					return warStartOptions;
+					return jarStartArgs;
 				}
 				set	
 				{
-					warStartOptions = value;
+					jarStartArgs = value;
 				}
 			}
 
-			public string SecurityGroupId
+			public string AppName
 			{
 				get
 				{
-					return securityGroupId;
+					return appName;
 				}
 				set	
 				{
-					securityGroupId = value;
+					appName = value;
 				}
 			}
 
-			public int? TerminationGracePeriodSeconds
+			public string AppId
 			{
 				get
 				{
-					return terminationGracePeriodSeconds;
+					return appId;
 				}
 				set	
 				{
-					terminationGracePeriodSeconds = value;
+					appId = value;
 				}
 			}
 
-			public string EnableAhas
+			public string JarStartOptions
 			{
 				get
 				{
-					return enableAhas;
+					return jarStartOptions;
 				}
 				set	
 				{
-					enableAhas = value;
+					jarStartOptions = value;
 				}
 			}
 
-			public string PhpArmsConfigLocation
+			public int? Replicas
 			{
 				get
 				{
-					return phpArmsConfigLocation;
+					return replicas;
 				}
 				set	
 				{
-					phpArmsConfigLocation = value;
+					replicas = value;
 				}
 			}
 
-			public string PhpConfigLocation
+			public string UpdateStrategy
 			{
 				get
 				{
-					return phpConfigLocation;
+					return updateStrategy;
 				}
 				set	
 				{
-					phpConfigLocation = value;
+					updateStrategy = value;
+				}
+			}
+
+			public int? MinReadyInstances
+			{
+				get
+				{
+					return minReadyInstances;
+				}
+				set	
+				{
+					minReadyInstances = value;
+				}
+			}
+
+			public int? MinReadyInstanceRatio
+			{
+				get
+				{
+					return minReadyInstanceRatio;
+				}
+				set	
+				{
+					minReadyInstanceRatio = value;
+				}
+			}
+
+			public int? Memory
+			{
+				get
+				{
+					return memory;
+				}
+				set	
+				{
+					memory = value;
+				}
+			}
+
+			public string Php
+			{
+				get
+				{
+					return php;
+				}
+				set	
+				{
+					php = value;
 				}
 			}
 
@@ -694,6 +516,102 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
+			public string PhpConfigLocation
+			{
+				get
+				{
+					return phpConfigLocation;
+				}
+				set	
+				{
+					phpConfigLocation = value;
+				}
+			}
+
+			public string PhpExtensions
+			{
+				get
+				{
+					return phpExtensions;
+				}
+				set	
+				{
+					phpExtensions = value;
+				}
+			}
+
+			public string PhpPECLExtensions
+			{
+				get
+				{
+					return phpPECLExtensions;
+				}
+				set	
+				{
+					phpPECLExtensions = value;
+				}
+			}
+
+			public string PostStart
+			{
+				get
+				{
+					return postStart;
+				}
+				set	
+				{
+					postStart = value;
+				}
+			}
+
+			public int? TerminationGracePeriodSeconds
+			{
+				get
+				{
+					return terminationGracePeriodSeconds;
+				}
+				set	
+				{
+					terminationGracePeriodSeconds = value;
+				}
+			}
+
+			public string CommandArgs
+			{
+				get
+				{
+					return commandArgs;
+				}
+				set	
+				{
+					commandArgs = value;
+				}
+			}
+
+			public string NamespaceId
+			{
+				get
+				{
+					return namespaceId;
+				}
+				set	
+				{
+					namespaceId = value;
+				}
+			}
+
+			public string MountHost
+			{
+				get
+				{
+					return mountHost;
+				}
+				set	
+				{
+					mountHost = value;
+				}
+			}
+
 			public string TomcatConfig
 			{
 				get
@@ -706,27 +624,255 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public List<DescribeApplicationConfig_MountDescItem> MountDesc
+			public string RegionId
 			{
 				get
 				{
-					return mountDesc;
+					return regionId;
 				}
 				set	
 				{
-					mountDesc = value;
+					regionId = value;
 				}
 			}
 
-			public List<DescribeApplicationConfig_Tag> Tags
+			public string VSwitchId
 			{
 				get
 				{
-					return tags;
+					return vSwitchId;
 				}
 				set	
 				{
-					tags = value;
+					vSwitchId = value;
+				}
+			}
+
+			public int? Cpu
+			{
+				get
+				{
+					return cpu;
+				}
+				set	
+				{
+					cpu = value;
+				}
+			}
+
+			public string Envs
+			{
+				get
+				{
+					return envs;
+				}
+				set	
+				{
+					envs = value;
+				}
+			}
+
+			public string EnableAhas
+			{
+				get
+				{
+					return enableAhas;
+				}
+				set	
+				{
+					enableAhas = value;
+				}
+			}
+
+			public string CustomHostAlias
+			{
+				get
+				{
+					return customHostAlias;
+				}
+				set	
+				{
+					customHostAlias = value;
+				}
+			}
+
+			public string WebContainer
+			{
+				get
+				{
+					return webContainer;
+				}
+				set	
+				{
+					webContainer = value;
+				}
+			}
+
+			public string Command
+			{
+				get
+				{
+					return command;
+				}
+				set	
+				{
+					command = value;
+				}
+			}
+
+			public string WarStartOptions
+			{
+				get
+				{
+					return warStartOptions;
+				}
+				set	
+				{
+					warStartOptions = value;
+				}
+			}
+
+			public string PhpArmsConfigLocation
+			{
+				get
+				{
+					return phpArmsConfigLocation;
+				}
+				set	
+				{
+					phpArmsConfigLocation = value;
+				}
+			}
+
+			public string NasId
+			{
+				get
+				{
+					return nasId;
+				}
+				set	
+				{
+					nasId = value;
+				}
+			}
+
+			public string OssAkId
+			{
+				get
+				{
+					return ossAkId;
+				}
+				set	
+				{
+					ossAkId = value;
+				}
+			}
+
+			public string OssAkSecret
+			{
+				get
+				{
+					return ossAkSecret;
+				}
+				set	
+				{
+					ossAkSecret = value;
+				}
+			}
+
+			public string EdasContainerVersion
+			{
+				get
+				{
+					return edasContainerVersion;
+				}
+				set	
+				{
+					edasContainerVersion = value;
+				}
+			}
+
+			public string Timezone
+			{
+				get
+				{
+					return timezone;
+				}
+				set	
+				{
+					timezone = value;
+				}
+			}
+
+			public string AppDescription
+			{
+				get
+				{
+					return appDescription;
+				}
+				set	
+				{
+					appDescription = value;
+				}
+			}
+
+			public bool? EnableGreyTagRoute
+			{
+				get
+				{
+					return enableGreyTagRoute;
+				}
+				set	
+				{
+					enableGreyTagRoute = value;
+				}
+			}
+
+			public string MseApplicationId
+			{
+				get
+				{
+					return mseApplicationId;
+				}
+				set	
+				{
+					mseApplicationId = value;
+				}
+			}
+
+			public string AcrInstanceId
+			{
+				get
+				{
+					return acrInstanceId;
+				}
+				set	
+				{
+					acrInstanceId = value;
+				}
+			}
+
+			public string AcrAssumeRoleArn
+			{
+				get
+				{
+					return acrAssumeRoleArn;
+				}
+				set	
+				{
+					acrAssumeRoleArn = value;
+				}
+			}
+
+			public bool? AssociateEip
+			{
+				get
+				{
+					return associateEip;
+				}
+				set	
+				{
+					associateEip = value;
 				}
 			}
 
@@ -742,22 +888,74 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public class DescribeApplicationConfig_MountDescItem
+			public List<DescribeApplicationConfig_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public List<DescribeApplicationConfig_MountDescItem> MountDesc
+			{
+				get
+				{
+					return mountDesc;
+				}
+				set	
+				{
+					mountDesc = value;
+				}
+			}
+
+			public List<DescribeApplicationConfig_OssMountDesc> OssMountDescs
+			{
+				get
+				{
+					return ossMountDescs;
+				}
+				set	
+				{
+					ossMountDescs = value;
+				}
+			}
+
+			public class DescribeApplicationConfig_ConfigMapMountDescItem
 			{
 
-				private string nasPath;
+				private string key;
+
+				private string configMapName;
 
 				private string mountPath;
 
-				public string NasPath
+				private long? configMapId;
+
+				public string Key
 				{
 					get
 					{
-						return nasPath;
+						return key;
 					}
 					set	
 					{
-						nasPath = value;
+						key = value;
+					}
+				}
+
+				public string ConfigMapName
+				{
+					get
+					{
+						return configMapName;
+					}
+					set	
+					{
+						configMapName = value;
 					}
 				}
 
@@ -770,6 +968,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						mountPath = value;
+					}
+				}
+
+				public long? ConfigMapId
+				{
+					get
+					{
+						return configMapId;
+					}
+					set	
+					{
+						configMapId = value;
 					}
 				}
 			}
@@ -806,50 +1016,70 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public class DescribeApplicationConfig_ConfigMapMountDescItem
+			public class DescribeApplicationConfig_MountDescItem
 			{
-
-				private long? configMapId;
-
-				private string configMapName;
-
-				private string key;
 
 				private string mountPath;
 
-				public long? ConfigMapId
+				private string nasPath;
+
+				public string MountPath
 				{
 					get
 					{
-						return configMapId;
+						return mountPath;
 					}
 					set	
 					{
-						configMapId = value;
+						mountPath = value;
 					}
 				}
 
-				public string ConfigMapName
+				public string NasPath
 				{
 					get
 					{
-						return configMapName;
+						return nasPath;
 					}
 					set	
 					{
-						configMapName = value;
+						nasPath = value;
+					}
+				}
+			}
+
+			public class DescribeApplicationConfig_OssMountDesc
+			{
+
+				private string bucketName;
+
+				private string bucketPath;
+
+				private string mountPath;
+
+				private bool? _readOnly;
+
+				public string BucketName
+				{
+					get
+					{
+						return bucketName;
+					}
+					set	
+					{
+						bucketName = value;
 					}
 				}
 
-				public string Key
+				public string BucketPath
 				{
 					get
 					{
-						return key;
+						return bucketPath;
 					}
 					set	
 					{
-						key = value;
+						bucketPath = value;
 					}
 				}
 
@@ -862,6 +1092,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						mountPath = value;
+					}
+				}
+
+				public bool? _ReadOnly
+				{
+					get
+					{
+						return _readOnly;
+					}
+					set	
+					{
+						_readOnly = value;
 					}
 				}
 			}

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DeleteExpressSyncResponseUnmarshaller
     {
-        public static DeleteExpressSyncResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteExpressSyncResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteExpressSyncResponse deleteExpressSyncResponse = new DeleteExpressSyncResponse();
 
-			deleteExpressSyncResponse.HttpResponse = context.HttpResponse;
-			deleteExpressSyncResponse.TaskId = context.StringValue("DeleteExpressSync.TaskId");
-			deleteExpressSyncResponse.RequestId = context.StringValue("DeleteExpressSync.RequestId");
-			deleteExpressSyncResponse.Success = context.BooleanValue("DeleteExpressSync.Success");
-			deleteExpressSyncResponse.Code = context.StringValue("DeleteExpressSync.Code");
-			deleteExpressSyncResponse.Message = context.StringValue("DeleteExpressSync.Message");
+			deleteExpressSyncResponse.HttpResponse = _ctx.HttpResponse;
+			deleteExpressSyncResponse.TaskId = _ctx.StringValue("DeleteExpressSync.TaskId");
+			deleteExpressSyncResponse.Message = _ctx.StringValue("DeleteExpressSync.Message");
+			deleteExpressSyncResponse.RequestId = _ctx.StringValue("DeleteExpressSync.RequestId");
+			deleteExpressSyncResponse.Code = _ctx.StringValue("DeleteExpressSync.Code");
+			deleteExpressSyncResponse.Success = _ctx.BooleanValue("DeleteExpressSync.Success");
         
 			return deleteExpressSyncResponse;
         }

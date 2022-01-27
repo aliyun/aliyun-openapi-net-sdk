@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.waf_openapi.Model.V20190910
@@ -25,9 +25,23 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 	public class DescribeDomainRuleGroupResponse : AcsResponse
 	{
 
+		private long? ruleGroupId;
+
 		private string requestId;
 
-		private long? ruleGroupId;
+		private int? wafAiStatus;
+
+		public long? RuleGroupId
+		{
+			get
+			{
+				return ruleGroupId;
+			}
+			set	
+			{
+				ruleGroupId = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -41,15 +55,15 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			}
 		}
 
-		public long? RuleGroupId
+		public int? WafAiStatus
 		{
 			get
 			{
-				return ruleGroupId;
+				return wafAiStatus;
 			}
 			set	
 			{
-				ruleGroupId = value;
+				wafAiStatus = value;
 			}
 		}
 	}

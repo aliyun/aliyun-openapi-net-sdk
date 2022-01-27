@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 {
     public class RoutePrivateZoneInCenToVpcResponseUnmarshaller
     {
-        public static RoutePrivateZoneInCenToVpcResponse Unmarshall(UnmarshallerContext context)
+        public static RoutePrivateZoneInCenToVpcResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RoutePrivateZoneInCenToVpcResponse routePrivateZoneInCenToVpcResponse = new RoutePrivateZoneInCenToVpcResponse();
 
-			routePrivateZoneInCenToVpcResponse.HttpResponse = context.HttpResponse;
-			routePrivateZoneInCenToVpcResponse.RequestId = context.StringValue("RoutePrivateZoneInCenToVpc.RequestId");
+			routePrivateZoneInCenToVpcResponse.HttpResponse = _ctx.HttpResponse;
+			routePrivateZoneInCenToVpcResponse.RequestId = _ctx.StringValue("RoutePrivateZoneInCenToVpc.RequestId");
         
 			return routePrivateZoneInCenToVpcResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,22 +25,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class ModifyDiskChargeTypeResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string orderId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
+		[JsonProperty(PropertyName = "OrderId")]
 		public string OrderId
 		{
 			get
@@ -50,6 +39,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				orderId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

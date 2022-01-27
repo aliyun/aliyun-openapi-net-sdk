@@ -26,18 +26,19 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class GetDeviceStatusResponseUnmarshaller
     {
-        public static GetDeviceStatusResponse Unmarshall(UnmarshallerContext context)
+        public static GetDeviceStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetDeviceStatusResponse getDeviceStatusResponse = new GetDeviceStatusResponse();
 
-			getDeviceStatusResponse.HttpResponse = context.HttpResponse;
-			getDeviceStatusResponse.RequestId = context.StringValue("GetDeviceStatus.RequestId");
-			getDeviceStatusResponse.Success = context.BooleanValue("GetDeviceStatus.Success");
-			getDeviceStatusResponse.Code = context.StringValue("GetDeviceStatus.Code");
-			getDeviceStatusResponse.ErrorMessage = context.StringValue("GetDeviceStatus.ErrorMessage");
+			getDeviceStatusResponse.HttpResponse = _ctx.HttpResponse;
+			getDeviceStatusResponse.RequestId = _ctx.StringValue("GetDeviceStatus.RequestId");
+			getDeviceStatusResponse.Success = _ctx.BooleanValue("GetDeviceStatus.Success");
+			getDeviceStatusResponse.Code = _ctx.StringValue("GetDeviceStatus.Code");
+			getDeviceStatusResponse.ErrorMessage = _ctx.StringValue("GetDeviceStatus.ErrorMessage");
 
 			GetDeviceStatusResponse.GetDeviceStatus_Data data = new GetDeviceStatusResponse.GetDeviceStatus_Data();
-			data.Status = context.StringValue("GetDeviceStatus.Data.Status");
+			data.Status = _ctx.StringValue("GetDeviceStatus.Data.Status");
+			data.Timestamp = _ctx.LongValue("GetDeviceStatus.Data.Timestamp");
 			getDeviceStatusResponse.Data = data;
         
 			return getDeviceStatusResponse;

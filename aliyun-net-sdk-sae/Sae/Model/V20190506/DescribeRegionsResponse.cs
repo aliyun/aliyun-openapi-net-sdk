@@ -25,13 +25,25 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class DescribeRegionsResponse : AcsResponse
 	{
 
+		private string message;
+
 		private string requestId;
 
 		private int? code;
 
-		private string message;
-
 		private List<DescribeRegions_Region> regions;
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -57,18 +69,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
 		public List<DescribeRegions_Region> Regions
 		{
 			get
@@ -84,21 +84,23 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class DescribeRegions_Region
 		{
 
-			private string regionId;
+			private string localName;
 
 			private string regionEndpoint;
 
-			private string localName;
+			private string regionId;
 
-			public string RegionId
+			private List<string> recommendZones;
+
+			public string LocalName
 			{
 				get
 				{
-					return regionId;
+					return localName;
 				}
 				set	
 				{
-					regionId = value;
+					localName = value;
 				}
 			}
 
@@ -114,15 +116,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string LocalName
+			public string RegionId
 			{
 				get
 				{
-					return localName;
+					return regionId;
 				}
 				set	
 				{
-					localName = value;
+					regionId = value;
+				}
+			}
+
+			public List<string> RecommendZones
+			{
+				get
+				{
+					return recommendZones;
+				}
+				set	
+				{
+					recommendZones = value;
 				}
 			}
 		}

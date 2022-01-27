@@ -26,13 +26,13 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 {
     public class ExportConversationDetailsResponseUnmarshaller
     {
-        public static ExportConversationDetailsResponse Unmarshall(UnmarshallerContext context)
+        public static ExportConversationDetailsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ExportConversationDetailsResponse exportConversationDetailsResponse = new ExportConversationDetailsResponse();
 
-			exportConversationDetailsResponse.HttpResponse = context.HttpResponse;
-			exportConversationDetailsResponse.RequestId = context.StringValue("ExportConversationDetails.RequestId");
-			exportConversationDetailsResponse.ExportTaskId = context.StringValue("ExportConversationDetails.ExportTaskId");
+			exportConversationDetailsResponse.HttpResponse = _ctx.HttpResponse;
+			exportConversationDetailsResponse.RequestId = _ctx.StringValue("ExportConversationDetails.RequestId");
+			exportConversationDetailsResponse.ExportTaskId = _ctx.StringValue("ExportConversationDetails.ExportTaskId");
         
 			return exportConversationDetailsResponse;
         }

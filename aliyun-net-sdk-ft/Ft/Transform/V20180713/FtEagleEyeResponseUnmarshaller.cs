@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 {
     public class FtEagleEyeResponseUnmarshaller
     {
-        public static FtEagleEyeResponse Unmarshall(UnmarshallerContext context)
+        public static FtEagleEyeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			FtEagleEyeResponse ftEagleEyeResponse = new FtEagleEyeResponse();
 
-			ftEagleEyeResponse.HttpResponse = context.HttpResponse;
-			ftEagleEyeResponse.RequestId = context.StringValue("FtEagleEye.RequestId");
-			ftEagleEyeResponse.Name = context.StringValue("FtEagleEye.Name");
-			ftEagleEyeResponse.EagleEyeTraceId = context.StringValue("FtEagleEye.eagleEyeTraceId");
+			ftEagleEyeResponse.HttpResponse = _ctx.HttpResponse;
+			ftEagleEyeResponse.RequestId = _ctx.StringValue("FtEagleEye.RequestId");
+			ftEagleEyeResponse.Name = _ctx.StringValue("FtEagleEye.Name");
+			ftEagleEyeResponse.EagleEyeTraceId = _ctx.StringValue("FtEagleEye.eagleEyeTraceId");
         
 			return ftEagleEyeResponse;
         }

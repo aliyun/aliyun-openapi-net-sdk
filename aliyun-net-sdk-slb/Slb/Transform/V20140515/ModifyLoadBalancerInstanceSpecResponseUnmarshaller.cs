@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 {
     public class ModifyLoadBalancerInstanceSpecResponseUnmarshaller
     {
-        public static ModifyLoadBalancerInstanceSpecResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyLoadBalancerInstanceSpecResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyLoadBalancerInstanceSpecResponse modifyLoadBalancerInstanceSpecResponse = new ModifyLoadBalancerInstanceSpecResponse();
 
-			modifyLoadBalancerInstanceSpecResponse.HttpResponse = context.HttpResponse;
-			modifyLoadBalancerInstanceSpecResponse.RequestId = context.StringValue("ModifyLoadBalancerInstanceSpec.RequestId");
-			modifyLoadBalancerInstanceSpecResponse.OrderId = context.LongValue("ModifyLoadBalancerInstanceSpec.OrderId");
+			modifyLoadBalancerInstanceSpecResponse.HttpResponse = _ctx.HttpResponse;
+			modifyLoadBalancerInstanceSpecResponse.RequestId = _ctx.StringValue("ModifyLoadBalancerInstanceSpec.RequestId");
+			modifyLoadBalancerInstanceSpecResponse.OrderId = _ctx.LongValue("ModifyLoadBalancerInstanceSpec.OrderId");
         
 			return modifyLoadBalancerInstanceSpecResponse;
         }

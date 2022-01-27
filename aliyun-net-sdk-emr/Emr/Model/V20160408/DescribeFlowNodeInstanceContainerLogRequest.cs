@@ -32,21 +32,25 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public DescribeFlowNodeInstanceContainerLogRequest()
             : base("Emr", "2016-04-08", "DescribeFlowNodeInstanceContainerLog", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private int? offset;
 
-		private string regionId;
-
 		private string logName;
-
-		private string appId;
 
 		private int? length;
 
-		private string containerId;
-
 		private string nodeInstanceId;
+
+		private string appId;
+
+		private string containerId;
 
 		private string projectId;
 
@@ -63,19 +67,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string LogName
 		{
 			get
@@ -86,19 +77,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				logName = value;
 				DictionaryUtil.Add(QueryParameters, "LogName", value);
-			}
-		}
-
-		public string AppId
-		{
-			get
-			{
-				return appId;
-			}
-			set	
-			{
-				appId = value;
-				DictionaryUtil.Add(QueryParameters, "AppId", value);
 			}
 		}
 
@@ -115,19 +93,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string ContainerId
-		{
-			get
-			{
-				return containerId;
-			}
-			set	
-			{
-				containerId = value;
-				DictionaryUtil.Add(QueryParameters, "ContainerId", value);
-			}
-		}
-
 		public string NodeInstanceId
 		{
 			get
@@ -138,6 +103,32 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				nodeInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "NodeInstanceId", value);
+			}
+		}
+
+		public string AppId
+		{
+			get
+			{
+				return appId;
+			}
+			set	
+			{
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value);
+			}
+		}
+
+		public string ContainerId
+		{
+			get
+			{
+				return containerId;
+			}
+			set	
+			{
+				containerId = value;
+				DictionaryUtil.Add(QueryParameters, "ContainerId", value);
 			}
 		}
 

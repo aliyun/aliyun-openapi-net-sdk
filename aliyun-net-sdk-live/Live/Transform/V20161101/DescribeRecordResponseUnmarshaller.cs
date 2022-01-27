@@ -26,22 +26,22 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeRecordResponseUnmarshaller
     {
-        public static DescribeRecordResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRecordResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRecordResponse describeRecordResponse = new DescribeRecordResponse();
 
-			describeRecordResponse.HttpResponse = context.HttpResponse;
-			describeRecordResponse.RequestId = context.StringValue("DescribeRecord.RequestId");
-			describeRecordResponse.RecordId = context.StringValue("DescribeRecord.RecordId");
-			describeRecordResponse.AppId = context.StringValue("DescribeRecord.AppId");
-			describeRecordResponse.BoardId = context.IntegerValue("DescribeRecord.BoardId");
-			describeRecordResponse.RecordStartTime = context.LongValue("DescribeRecord.RecordStartTime");
-			describeRecordResponse.StartTime = context.LongValue("DescribeRecord.StartTime");
-			describeRecordResponse.EndTime = context.LongValue("DescribeRecord.EndTime");
-			describeRecordResponse.State = context.IntegerValue("DescribeRecord.State");
-			describeRecordResponse.OssPath = context.StringValue("DescribeRecord.OssPath");
-			describeRecordResponse.OssBucket = context.StringValue("DescribeRecord.OssBucket");
-			describeRecordResponse.OssEndpoint = context.StringValue("DescribeRecord.OssEndpoint");
+			describeRecordResponse.HttpResponse = _ctx.HttpResponse;
+			describeRecordResponse.RequestId = _ctx.StringValue("DescribeRecord.RequestId");
+			describeRecordResponse.RecordId = _ctx.StringValue("DescribeRecord.RecordId");
+			describeRecordResponse.AppId = _ctx.StringValue("DescribeRecord.AppId");
+			describeRecordResponse.BoardId = _ctx.IntegerValue("DescribeRecord.BoardId");
+			describeRecordResponse.RecordStartTime = _ctx.LongValue("DescribeRecord.RecordStartTime");
+			describeRecordResponse.StartTime = _ctx.LongValue("DescribeRecord.StartTime");
+			describeRecordResponse.EndTime = _ctx.LongValue("DescribeRecord.EndTime");
+			describeRecordResponse.State = _ctx.IntegerValue("DescribeRecord.State");
+			describeRecordResponse.OssPath = _ctx.StringValue("DescribeRecord.OssPath");
+			describeRecordResponse.OssBucket = _ctx.StringValue("DescribeRecord.OssBucket");
+			describeRecordResponse.OssEndpoint = _ctx.StringValue("DescribeRecord.OssEndpoint");
         
 			return describeRecordResponse;
         }

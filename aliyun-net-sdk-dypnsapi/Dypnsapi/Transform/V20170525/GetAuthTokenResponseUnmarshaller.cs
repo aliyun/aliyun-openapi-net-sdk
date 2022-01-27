@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Dypnsapi.Transform.V20170525
 {
     public class GetAuthTokenResponseUnmarshaller
     {
-        public static GetAuthTokenResponse Unmarshall(UnmarshallerContext context)
+        public static GetAuthTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetAuthTokenResponse getAuthTokenResponse = new GetAuthTokenResponse();
 
-			getAuthTokenResponse.HttpResponse = context.HttpResponse;
-			getAuthTokenResponse.RequestId = context.StringValue("GetAuthToken.RequestId");
-			getAuthTokenResponse.Code = context.StringValue("GetAuthToken.Code");
-			getAuthTokenResponse.Message = context.StringValue("GetAuthToken.Message");
+			getAuthTokenResponse.HttpResponse = _ctx.HttpResponse;
+			getAuthTokenResponse.RequestId = _ctx.StringValue("GetAuthToken.RequestId");
+			getAuthTokenResponse.Code = _ctx.StringValue("GetAuthToken.Code");
+			getAuthTokenResponse.Message = _ctx.StringValue("GetAuthToken.Message");
 
 			GetAuthTokenResponse.GetAuthToken_TokenInfo tokenInfo = new GetAuthTokenResponse.GetAuthToken_TokenInfo();
-			tokenInfo.JwtToken = context.StringValue("GetAuthToken.TokenInfo.JwtToken");
-			tokenInfo.AccessToken = context.StringValue("GetAuthToken.TokenInfo.AccessToken");
+			tokenInfo.JwtToken = _ctx.StringValue("GetAuthToken.TokenInfo.JwtToken");
+			tokenInfo.AccessToken = _ctx.StringValue("GetAuthToken.TokenInfo.AccessToken");
 			getAuthTokenResponse.TokenInfo = tokenInfo;
         
 			return getAuthTokenResponse;

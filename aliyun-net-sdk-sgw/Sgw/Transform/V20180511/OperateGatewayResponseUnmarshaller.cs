@@ -26,17 +26,17 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class OperateGatewayResponseUnmarshaller
     {
-        public static OperateGatewayResponse Unmarshall(UnmarshallerContext context)
+        public static OperateGatewayResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			OperateGatewayResponse operateGatewayResponse = new OperateGatewayResponse();
 
-			operateGatewayResponse.HttpResponse = context.HttpResponse;
-			operateGatewayResponse.RequestId = context.StringValue("OperateGateway.RequestId");
-			operateGatewayResponse.Success = context.BooleanValue("OperateGateway.Success");
-			operateGatewayResponse.Code = context.StringValue("OperateGateway.Code");
-			operateGatewayResponse.Message = context.StringValue("OperateGateway.Message");
-			operateGatewayResponse.TaskId = context.StringValue("OperateGateway.TaskId");
-			operateGatewayResponse.BuyURL = context.StringValue("OperateGateway.BuyURL");
+			operateGatewayResponse.HttpResponse = _ctx.HttpResponse;
+			operateGatewayResponse.BuyURL = _ctx.StringValue("OperateGateway.BuyURL");
+			operateGatewayResponse.TaskId = _ctx.StringValue("OperateGateway.TaskId");
+			operateGatewayResponse.RequestId = _ctx.StringValue("OperateGateway.RequestId");
+			operateGatewayResponse.Message = _ctx.StringValue("OperateGateway.Message");
+			operateGatewayResponse.Code = _ctx.StringValue("OperateGateway.Code");
+			operateGatewayResponse.Success = _ctx.BooleanValue("OperateGateway.Success");
         
 			return operateGatewayResponse;
         }

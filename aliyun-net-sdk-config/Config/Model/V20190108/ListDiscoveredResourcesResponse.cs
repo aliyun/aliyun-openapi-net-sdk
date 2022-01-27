@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Config.Model.V20190108
@@ -115,33 +115,33 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			public class ListDiscoveredResources_DiscoveredResourceProfile
 			{
 
-				private long? accountId;
+				private string resourceType;
 
 				private string region;
 
 				private long? resourceCreationTime;
 
-				private int? resourceDeleted;
+				private string tags;
+
+				private long? accountId;
 
 				private string resourceId;
 
 				private string resourceName;
 
+				private int? resourceDeleted;
+
 				private string resourceStatus;
 
-				private string resourceType;
-
-				private string tags;
-
-				public long? AccountId
+				public string ResourceType
 				{
 					get
 					{
-						return accountId;
+						return resourceType;
 					}
 					set	
 					{
-						accountId = value;
+						resourceType = value;
 					}
 				}
 
@@ -169,15 +169,27 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					}
 				}
 
-				public int? ResourceDeleted
+				public string Tags
 				{
 					get
 					{
-						return resourceDeleted;
+						return tags;
 					}
 					set	
 					{
-						resourceDeleted = value;
+						tags = value;
+					}
+				}
+
+				public long? AccountId
+				{
+					get
+					{
+						return accountId;
+					}
+					set	
+					{
+						accountId = value;
 					}
 				}
 
@@ -205,6 +217,18 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					}
 				}
 
+				public int? ResourceDeleted
+				{
+					get
+					{
+						return resourceDeleted;
+					}
+					set	
+					{
+						resourceDeleted = value;
+					}
+				}
+
 				public string ResourceStatus
 				{
 					get
@@ -214,30 +238,6 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					set	
 					{
 						resourceStatus = value;
-					}
-				}
-
-				public string ResourceType
-				{
-					get
-					{
-						return resourceType;
-					}
-					set	
-					{
-						resourceType = value;
-					}
-				}
-
-				public string Tags
-				{
-					get
-					{
-						return tags;
-					}
-					set	
-					{
-						tags = value;
 					}
 				}
 			}

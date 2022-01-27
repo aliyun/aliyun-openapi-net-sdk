@@ -26,13 +26,13 @@ namespace Aliyun.Acs.OnsMqtt.Transform.V20200420
 {
     public class QuerySessionByClientIdResponseUnmarshaller
     {
-        public static QuerySessionByClientIdResponse Unmarshall(UnmarshallerContext context)
+        public static QuerySessionByClientIdResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QuerySessionByClientIdResponse querySessionByClientIdResponse = new QuerySessionByClientIdResponse();
 
-			querySessionByClientIdResponse.HttpResponse = context.HttpResponse;
-			querySessionByClientIdResponse.RequestId = context.StringValue("QuerySessionByClientId.RequestId");
-			querySessionByClientIdResponse.OnlineStatus = context.BooleanValue("QuerySessionByClientId.OnlineStatus");
+			querySessionByClientIdResponse.HttpResponse = _ctx.HttpResponse;
+			querySessionByClientIdResponse.RequestId = _ctx.StringValue("QuerySessionByClientId.RequestId");
+			querySessionByClientIdResponse.OnlineStatus = _ctx.BooleanValue("QuerySessionByClientId.OnlineStatus");
         
 			return querySessionByClientIdResponse;
         }

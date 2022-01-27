@@ -46,6 +46,8 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private string engineVersion;
 
+		private string resourceGroupId;
+
 		private string engine;
 
 		private int? autoRenewPeriod;
@@ -53,6 +55,8 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 		private int? period;
 
 		private int? diskSize;
+
+		private string encryptionKey;
 
 		private string masterInstanceType;
 
@@ -115,6 +119,19 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
 		public string Engine
 		{
 			get
@@ -164,6 +181,19 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			{
 				diskSize = value;
 				DictionaryUtil.Add(QueryParameters, "DiskSize", value.ToString());
+			}
+		}
+
+		public string EncryptionKey
+		{
+			get
+			{
+				return encryptionKey;
+			}
+			set	
+			{
+				encryptionKey = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionKey", value);
 			}
 		}
 

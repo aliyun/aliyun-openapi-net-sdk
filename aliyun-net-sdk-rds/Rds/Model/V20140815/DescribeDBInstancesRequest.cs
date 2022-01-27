@@ -34,13 +34,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Rds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Rds.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
+
+		private string connectionString;
 
 		private string engineVersion;
 
@@ -60,6 +62,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string zoneId;
 
+		private int? maxResults;
+
 		private string instanceNetworkType;
 
 		private string connectionMode;
@@ -75,6 +79,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string expired;
 
 		private string engine;
+
+		private string nextToken;
 
 		private int? pageSize;
 
@@ -104,6 +110,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ConnectionString
+		{
+			get
+			{
+				return connectionString;
+			}
+			set	
+			{
+				connectionString = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionString", value);
 			}
 		}
 
@@ -224,6 +243,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+			}
+		}
+
 		public string InstanceNetworkType
 		{
 			get
@@ -325,6 +357,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				engine = value;
 				DictionaryUtil.Add(QueryParameters, "Engine", value);
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 

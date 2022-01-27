@@ -34,11 +34,13 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.live.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.live.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
+
+		private string faceBeauty;
 
 		private int? seekOffset;
 
@@ -50,9 +52,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
-		private int? reloadFlag;
-
 		private string channelId;
+
+		public string FaceBeauty
+		{
+			get
+			{
+				return faceBeauty;
+			}
+			set	
+			{
+				faceBeauty = value;
+				DictionaryUtil.Add(QueryParameters, "FaceBeauty", value);
+			}
+		}
 
 		public int? SeekOffset
 		{
@@ -116,19 +129,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public int? ReloadFlag
-		{
-			get
-			{
-				return reloadFlag;
-			}
-			set	
-			{
-				reloadFlag = value;
-				DictionaryUtil.Add(QueryParameters, "ReloadFlag", value.ToString());
 			}
 		}
 

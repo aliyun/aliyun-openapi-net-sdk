@@ -25,23 +25,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
 	public class GetMediaMetaResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string mediaUri;
 
-		private GetMediaMeta_MediaMeta mediaMeta;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private GetMediaMeta_MediaMeta mediaMeta;
 
 		public string MediaUri
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				mediaUri = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -101,29 +101,41 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			public class GetMediaMeta_MediaFormat
 			{
 
+				private string size;
+
 				private int? numberStreams;
-
-				private int? numberPrograms;
-
-				private string formatName;
 
 				private string formatLongName;
 
-				private string size;
-
-				private string duration;
-
 				private string startTime;
-
-				private string bitrate;
 
 				private string creationTime;
 
+				private string formatName;
+
+				private string duration;
+
+				private string bitrate;
+
 				private string location;
+
+				private int? numberPrograms;
 
 				private GetMediaMeta_Address address;
 
 				private GetMediaMeta_Tag tag;
+
+				public string Size
+				{
+					get
+					{
+						return size;
+					}
+					set	
+					{
+						size = value;
+					}
+				}
 
 				public int? NumberStreams
 				{
@@ -134,30 +146,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					set	
 					{
 						numberStreams = value;
-					}
-				}
-
-				public int? NumberPrograms
-				{
-					get
-					{
-						return numberPrograms;
-					}
-					set	
-					{
-						numberPrograms = value;
-					}
-				}
-
-				public string FormatName
-				{
-					get
-					{
-						return formatName;
-					}
-					set	
-					{
-						formatName = value;
 					}
 				}
 
@@ -173,30 +161,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					}
 				}
 
-				public string Size
-				{
-					get
-					{
-						return size;
-					}
-					set	
-					{
-						size = value;
-					}
-				}
-
-				public string Duration
-				{
-					get
-					{
-						return duration;
-					}
-					set	
-					{
-						duration = value;
-					}
-				}
-
 				public string StartTime
 				{
 					get
@@ -206,18 +170,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					set	
 					{
 						startTime = value;
-					}
-				}
-
-				public string Bitrate
-				{
-					get
-					{
-						return bitrate;
-					}
-					set	
-					{
-						bitrate = value;
 					}
 				}
 
@@ -233,6 +185,42 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					}
 				}
 
+				public string FormatName
+				{
+					get
+					{
+						return formatName;
+					}
+					set	
+					{
+						formatName = value;
+					}
+				}
+
+				public string Duration
+				{
+					get
+					{
+						return duration;
+					}
+					set	
+					{
+						duration = value;
+					}
+				}
+
+				public string Bitrate
+				{
+					get
+					{
+						return bitrate;
+					}
+					set	
+					{
+						bitrate = value;
+					}
+				}
+
 				public string Location
 				{
 					get
@@ -242,6 +230,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					set	
 					{
 						location = value;
+					}
+				}
+
+				public int? NumberPrograms
+				{
+					get
+					{
+						return numberPrograms;
+					}
+					set	
+					{
+						numberPrograms = value;
 					}
 				}
 
@@ -272,17 +272,29 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				public class GetMediaMeta_Address
 				{
 
+					private string township;
+
 					private string addressLine;
 
 					private string country;
-
-					private string province;
 
 					private string city;
 
 					private string district;
 
-					private string township;
+					private string province;
+
+					public string Township
+					{
+						get
+						{
+							return township;
+						}
+						set	
+						{
+							township = value;
+						}
+					}
 
 					public string AddressLine
 					{
@@ -305,18 +317,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						set	
 						{
 							country = value;
-						}
-					}
-
-					public string Province
-					{
-						get
-						{
-							return province;
-						}
-						set	
-						{
-							province = value;
 						}
 					}
 
@@ -344,15 +344,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						}
 					}
 
-					public string Township
+					public string Province
 					{
 						get
 						{
-							return township;
+							return province;
 						}
 						set	
 						{
-							township = value;
+							province = value;
 						}
 					}
 				}
@@ -360,21 +360,57 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				public class GetMediaMeta_Tag
 				{
 
+					private string artist;
+
+					private string composer;
+
+					private string performer;
+
 					private string language;
 
 					private string creationTime;
+
+					private string title;
 
 					private string album;
 
 					private string albumArtist;
 
-					private string artist;
+					public string Artist
+					{
+						get
+						{
+							return artist;
+						}
+						set	
+						{
+							artist = value;
+						}
+					}
 
-					private string composer;
+					public string Composer
+					{
+						get
+						{
+							return composer;
+						}
+						set	
+						{
+							composer = value;
+						}
+					}
 
-					private string title;
-
-					private string performer;
+					public string Performer
+					{
+						get
+						{
+							return performer;
+						}
+						set	
+						{
+							performer = value;
+						}
+					}
 
 					public string Language
 					{
@@ -397,6 +433,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						set	
 						{
 							creationTime = value;
+						}
+					}
+
+					public string Title
+					{
+						get
+						{
+							return title;
+						}
+						set	
+						{
+							title = value;
 						}
 					}
 
@@ -423,54 +471,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 							albumArtist = value;
 						}
 					}
-
-					public string Artist
-					{
-						get
-						{
-							return artist;
-						}
-						set	
-						{
-							artist = value;
-						}
-					}
-
-					public string Composer
-					{
-						get
-						{
-							return composer;
-						}
-						set	
-						{
-							composer = value;
-						}
-					}
-
-					public string Title
-					{
-						get
-						{
-							return title;
-						}
-						set	
-						{
-							title = value;
-						}
-					}
-
-					public string Performer
-					{
-						get
-						{
-							return performer;
-						}
-						set	
-						{
-							performer = value;
-						}
-					}
 				}
 			}
 
@@ -479,9 +479,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 				private List<GetMediaMeta_VideoStream> videoStreams;
 
-				private List<GetMediaMeta_AudioStream> audioStreams;
-
 				private List<GetMediaMeta_SubtitleStream> subtitleStreams;
+
+				private List<GetMediaMeta_AudioStream> audioStreams;
 
 				public List<GetMediaMeta_VideoStream> VideoStreams
 				{
@@ -492,18 +492,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					set	
 					{
 						videoStreams = value;
-					}
-				}
-
-				public List<GetMediaMeta_AudioStream> AudioStreams
-				{
-					get
-					{
-						return audioStreams;
-					}
-					set	
-					{
-						audioStreams = value;
 					}
 				}
 
@@ -519,112 +507,88 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					}
 				}
 
+				public List<GetMediaMeta_AudioStream> AudioStreams
+				{
+					get
+					{
+						return audioStreams;
+					}
+					set	
+					{
+						audioStreams = value;
+					}
+				}
+
 				public class GetMediaMeta_VideoStream
 				{
 
-					private int? index;
+					private string codecTag;
 
-					private string language;
-
-					private string codecName;
-
-					private string codecLongName;
-
-					private string profile;
+					private string frames;
 
 					private string codecTimeBase;
 
-					private string codecTagString;
-
-					private string codecTag;
-
-					private int? width;
-
-					private int? height;
-
-					private int? hasBFrames;
+					private string rotate;
 
 					private string sampleAspectRatio;
-
-					private string displayAspectRatio;
-
-					private string pixelFormat;
-
-					private int? level;
-
-					private string frameRrate;
-
-					private string averageFrameRate;
-
-					private string timeBase;
 
 					private string startTime;
 
 					private string duration;
 
+					private int? index;
+
+					private string codecName;
+
 					private string bitrate;
 
-					private string frames;
+					private string profile;
 
-					private string rotate;
+					private string displayAspectRatio;
 
-					public int? Index
+					private int? hasBFrames;
+
+					private string codecTagString;
+
+					private string averageFrameRate;
+
+					private string language;
+
+					private string codecLongName;
+
+					private string pixelFormat;
+
+					private int? level;
+
+					private int? height;
+
+					private string frameRrate;
+
+					private int? width;
+
+					private string timeBase;
+
+					public string CodecTag
 					{
 						get
 						{
-							return index;
+							return codecTag;
 						}
 						set	
 						{
-							index = value;
+							codecTag = value;
 						}
 					}
 
-					public string Language
+					public string Frames
 					{
 						get
 						{
-							return language;
+							return frames;
 						}
 						set	
 						{
-							language = value;
-						}
-					}
-
-					public string CodecName
-					{
-						get
-						{
-							return codecName;
-						}
-						set	
-						{
-							codecName = value;
-						}
-					}
-
-					public string CodecLongName
-					{
-						get
-						{
-							return codecLongName;
-						}
-						set	
-						{
-							codecLongName = value;
-						}
-					}
-
-					public string Profile
-					{
-						get
-						{
-							return profile;
-						}
-						set	
-						{
-							profile = value;
+							frames = value;
 						}
 					}
 
@@ -640,63 +604,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						}
 					}
 
-					public string CodecTagString
+					public string Rotate
 					{
 						get
 						{
-							return codecTagString;
+							return rotate;
 						}
 						set	
 						{
-							codecTagString = value;
-						}
-					}
-
-					public string CodecTag
-					{
-						get
-						{
-							return codecTag;
-						}
-						set	
-						{
-							codecTag = value;
-						}
-					}
-
-					public int? Width
-					{
-						get
-						{
-							return width;
-						}
-						set	
-						{
-							width = value;
-						}
-					}
-
-					public int? Height
-					{
-						get
-						{
-							return height;
-						}
-						set	
-						{
-							height = value;
-						}
-					}
-
-					public int? HasBFrames
-					{
-						get
-						{
-							return hasBFrames;
-						}
-						set	
-						{
-							hasBFrames = value;
+							rotate = value;
 						}
 					}
 
@@ -712,6 +628,78 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						}
 					}
 
+					public string StartTime
+					{
+						get
+						{
+							return startTime;
+						}
+						set	
+						{
+							startTime = value;
+						}
+					}
+
+					public string Duration
+					{
+						get
+						{
+							return duration;
+						}
+						set	
+						{
+							duration = value;
+						}
+					}
+
+					public int? Index
+					{
+						get
+						{
+							return index;
+						}
+						set	
+						{
+							index = value;
+						}
+					}
+
+					public string CodecName
+					{
+						get
+						{
+							return codecName;
+						}
+						set	
+						{
+							codecName = value;
+						}
+					}
+
+					public string Bitrate
+					{
+						get
+						{
+							return bitrate;
+						}
+						set	
+						{
+							bitrate = value;
+						}
+					}
+
+					public string Profile
+					{
+						get
+						{
+							return profile;
+						}
+						set	
+						{
+							profile = value;
+						}
+					}
+
 					public string DisplayAspectRatio
 					{
 						get
@@ -721,6 +709,66 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						set	
 						{
 							displayAspectRatio = value;
+						}
+					}
+
+					public int? HasBFrames
+					{
+						get
+						{
+							return hasBFrames;
+						}
+						set	
+						{
+							hasBFrames = value;
+						}
+					}
+
+					public string CodecTagString
+					{
+						get
+						{
+							return codecTagString;
+						}
+						set	
+						{
+							codecTagString = value;
+						}
+					}
+
+					public string AverageFrameRate
+					{
+						get
+						{
+							return averageFrameRate;
+						}
+						set	
+						{
+							averageFrameRate = value;
+						}
+					}
+
+					public string Language
+					{
+						get
+						{
+							return language;
+						}
+						set	
+						{
+							language = value;
+						}
+					}
+
+					public string CodecLongName
+					{
+						get
+						{
+							return codecLongName;
+						}
+						set	
+						{
+							codecLongName = value;
 						}
 					}
 
@@ -748,6 +796,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						}
 					}
 
+					public int? Height
+					{
+						get
+						{
+							return height;
+						}
+						set	
+						{
+							height = value;
+						}
+					}
+
 					public string FrameRrate
 					{
 						get
@@ -760,15 +820,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						}
 					}
 
-					public string AverageFrameRate
+					public int? Width
 					{
 						get
 						{
-							return averageFrameRate;
+							return width;
 						}
 						set	
 						{
-							averageFrameRate = value;
+							width = value;
 						}
 					}
 
@@ -781,6 +841,122 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						set	
 						{
 							timeBase = value;
+						}
+					}
+				}
+
+				public class GetMediaMeta_SubtitleStream
+				{
+
+					private string language;
+
+					private int? index;
+
+					public string Language
+					{
+						get
+						{
+							return language;
+						}
+						set	
+						{
+							language = value;
+						}
+					}
+
+					public int? Index
+					{
+						get
+						{
+							return index;
+						}
+						set	
+						{
+							index = value;
+						}
+					}
+				}
+
+				public class GetMediaMeta_AudioStream
+				{
+
+					private string codecTag;
+
+					private string frames;
+
+					private string codecTimeBase;
+
+					private string channelLayout;
+
+					private string startTime;
+
+					private string duration;
+
+					private int? index;
+
+					private string codecName;
+
+					private string bitrate;
+
+					private string sampleFormat;
+
+					private int? channels;
+
+					private string codecTagString;
+
+					private string sampleRate;
+
+					private string language;
+
+					private string codecLongName;
+
+					private string timeBase;
+
+					public string CodecTag
+					{
+						get
+						{
+							return codecTag;
+						}
+						set	
+						{
+							codecTag = value;
+						}
+					}
+
+					public string Frames
+					{
+						get
+						{
+							return frames;
+						}
+						set	
+						{
+							frames = value;
+						}
+					}
+
+					public string CodecTimeBase
+					{
+						get
+						{
+							return codecTimeBase;
+						}
+						set	
+						{
+							codecTimeBase = value;
+						}
+					}
+
+					public string ChannelLayout
+					{
+						get
+						{
+							return channelLayout;
+						}
+						set	
+						{
+							channelLayout = value;
 						}
 					}
 
@@ -807,78 +983,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 							duration = value;
 						}
 					}
-
-					public string Bitrate
-					{
-						get
-						{
-							return bitrate;
-						}
-						set	
-						{
-							bitrate = value;
-						}
-					}
-
-					public string Frames
-					{
-						get
-						{
-							return frames;
-						}
-						set	
-						{
-							frames = value;
-						}
-					}
-
-					public string Rotate
-					{
-						get
-						{
-							return rotate;
-						}
-						set	
-						{
-							rotate = value;
-						}
-					}
-				}
-
-				public class GetMediaMeta_AudioStream
-				{
-
-					private int? index;
-
-					private string codecName;
-
-					private string codecLongName;
-
-					private string codecTimeBase;
-
-					private string codecTagString;
-
-					private string codecTag;
-
-					private string sampleFormat;
-
-					private string sampleRate;
-
-					private int? channels;
-
-					private string channelLayout;
-
-					private string timeBase;
-
-					private string startTime;
-
-					private string duration;
-
-					private string bitrate;
-
-					private string frames;
-
-					private string language;
 
 					public int? Index
 					{
@@ -904,51 +1008,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						}
 					}
 
-					public string CodecLongName
+					public string Bitrate
 					{
 						get
 						{
-							return codecLongName;
+							return bitrate;
 						}
 						set	
 						{
-							codecLongName = value;
-						}
-					}
-
-					public string CodecTimeBase
-					{
-						get
-						{
-							return codecTimeBase;
-						}
-						set	
-						{
-							codecTimeBase = value;
-						}
-					}
-
-					public string CodecTagString
-					{
-						get
-						{
-							return codecTagString;
-						}
-						set	
-						{
-							codecTagString = value;
-						}
-					}
-
-					public string CodecTag
-					{
-						get
-						{
-							return codecTag;
-						}
-						set	
-						{
-							codecTag = value;
+							bitrate = value;
 						}
 					}
 
@@ -964,18 +1032,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						}
 					}
 
-					public string SampleRate
-					{
-						get
-						{
-							return sampleRate;
-						}
-						set	
-						{
-							sampleRate = value;
-						}
-					}
-
 					public int? Channels
 					{
 						get
@@ -988,15 +1044,51 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						}
 					}
 
-					public string ChannelLayout
+					public string CodecTagString
 					{
 						get
 						{
-							return channelLayout;
+							return codecTagString;
 						}
 						set	
 						{
-							channelLayout = value;
+							codecTagString = value;
+						}
+					}
+
+					public string SampleRate
+					{
+						get
+						{
+							return sampleRate;
+						}
+						set	
+						{
+							sampleRate = value;
+						}
+					}
+
+					public string Language
+					{
+						get
+						{
+							return language;
+						}
+						set	
+						{
+							language = value;
+						}
+					}
+
+					public string CodecLongName
+					{
+						get
+						{
+							return codecLongName;
+						}
+						set	
+						{
+							codecLongName = value;
 						}
 					}
 
@@ -1009,98 +1101,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						set	
 						{
 							timeBase = value;
-						}
-					}
-
-					public string StartTime
-					{
-						get
-						{
-							return startTime;
-						}
-						set	
-						{
-							startTime = value;
-						}
-					}
-
-					public string Duration
-					{
-						get
-						{
-							return duration;
-						}
-						set	
-						{
-							duration = value;
-						}
-					}
-
-					public string Bitrate
-					{
-						get
-						{
-							return bitrate;
-						}
-						set	
-						{
-							bitrate = value;
-						}
-					}
-
-					public string Frames
-					{
-						get
-						{
-							return frames;
-						}
-						set	
-						{
-							frames = value;
-						}
-					}
-
-					public string Language
-					{
-						get
-						{
-							return language;
-						}
-						set	
-						{
-							language = value;
-						}
-					}
-				}
-
-				public class GetMediaMeta_SubtitleStream
-				{
-
-					private int? index;
-
-					private string language;
-
-					public int? Index
-					{
-						get
-						{
-							return index;
-						}
-						set	
-						{
-							index = value;
-						}
-					}
-
-					public string Language
-					{
-						get
-						{
-							return language;
-						}
-						set	
-						{
-							language = value;
 						}
 					}
 				}

@@ -26,26 +26,26 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeRecordsResponseUnmarshaller
     {
-        public static DescribeRecordsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRecordsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRecordsResponse describeRecordsResponse = new DescribeRecordsResponse();
 
-			describeRecordsResponse.HttpResponse = context.HttpResponse;
-			describeRecordsResponse.RequestId = context.StringValue("DescribeRecords.RequestId");
+			describeRecordsResponse.HttpResponse = _ctx.HttpResponse;
+			describeRecordsResponse.RequestId = _ctx.StringValue("DescribeRecords.RequestId");
 
 			List<DescribeRecordsResponse.DescribeRecords_Record> describeRecordsResponse_records = new List<DescribeRecordsResponse.DescribeRecords_Record>();
-			for (int i = 0; i < context.Length("DescribeRecords.Records.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRecords.Records.Length"); i++) {
 				DescribeRecordsResponse.DescribeRecords_Record record = new DescribeRecordsResponse.DescribeRecords_Record();
-				record.RecordId = context.StringValue("DescribeRecords.Records["+ i +"].RecordId");
-				record.AppId = context.StringValue("DescribeRecords.Records["+ i +"].AppId");
-				record.BoardId = context.IntegerValue("DescribeRecords.Records["+ i +"].BoardId");
-				record.RecordStartTime = context.LongValue("DescribeRecords.Records["+ i +"].RecordStartTime");
-				record.StartTime = context.LongValue("DescribeRecords.Records["+ i +"].StartTime");
-				record.EndTime = context.LongValue("DescribeRecords.Records["+ i +"].EndTime");
-				record.State = context.IntegerValue("DescribeRecords.Records["+ i +"].State");
-				record.OssPath = context.StringValue("DescribeRecords.Records["+ i +"].OssPath");
-				record.OssBucket = context.StringValue("DescribeRecords.Records["+ i +"].OssBucket");
-				record.OssEndpoint = context.StringValue("DescribeRecords.Records["+ i +"].OssEndpoint");
+				record.RecordId = _ctx.StringValue("DescribeRecords.Records["+ i +"].RecordId");
+				record.AppId = _ctx.StringValue("DescribeRecords.Records["+ i +"].AppId");
+				record.BoardId = _ctx.IntegerValue("DescribeRecords.Records["+ i +"].BoardId");
+				record.RecordStartTime = _ctx.LongValue("DescribeRecords.Records["+ i +"].RecordStartTime");
+				record.StartTime = _ctx.LongValue("DescribeRecords.Records["+ i +"].StartTime");
+				record.EndTime = _ctx.LongValue("DescribeRecords.Records["+ i +"].EndTime");
+				record.State = _ctx.IntegerValue("DescribeRecords.Records["+ i +"].State");
+				record.OssPath = _ctx.StringValue("DescribeRecords.Records["+ i +"].OssPath");
+				record.OssBucket = _ctx.StringValue("DescribeRecords.Records["+ i +"].OssBucket");
+				record.OssEndpoint = _ctx.StringValue("DescribeRecords.Records["+ i +"].OssEndpoint");
 
 				describeRecordsResponse_records.Add(record);
 			}

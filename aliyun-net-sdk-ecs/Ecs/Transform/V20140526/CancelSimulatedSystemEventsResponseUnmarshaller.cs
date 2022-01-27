@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class CancelSimulatedSystemEventsResponseUnmarshaller
     {
-        public static CancelSimulatedSystemEventsResponse Unmarshall(UnmarshallerContext context)
+        public static CancelSimulatedSystemEventsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CancelSimulatedSystemEventsResponse cancelSimulatedSystemEventsResponse = new CancelSimulatedSystemEventsResponse();
 
-			cancelSimulatedSystemEventsResponse.HttpResponse = context.HttpResponse;
-			cancelSimulatedSystemEventsResponse.RequestId = context.StringValue("CancelSimulatedSystemEvents.RequestId");
+			cancelSimulatedSystemEventsResponse.HttpResponse = _ctx.HttpResponse;
+			cancelSimulatedSystemEventsResponse.RequestId = _ctx.StringValue("CancelSimulatedSystemEvents.RequestId");
         
 			return cancelSimulatedSystemEventsResponse;
         }

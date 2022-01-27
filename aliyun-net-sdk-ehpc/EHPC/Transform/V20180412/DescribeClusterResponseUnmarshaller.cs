@@ -26,77 +26,77 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class DescribeClusterResponseUnmarshaller
     {
-        public static DescribeClusterResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeClusterResponse describeClusterResponse = new DescribeClusterResponse();
 
-			describeClusterResponse.HttpResponse = context.HttpResponse;
-			describeClusterResponse.RequestId = context.StringValue("DescribeCluster.RequestId");
+			describeClusterResponse.HttpResponse = _ctx.HttpResponse;
+			describeClusterResponse.RequestId = _ctx.StringValue("DescribeCluster.RequestId");
 
 			DescribeClusterResponse.DescribeCluster_ClusterInfo clusterInfo = new DescribeClusterResponse.DescribeCluster_ClusterInfo();
-			clusterInfo.Id = context.StringValue("DescribeCluster.ClusterInfo.Id");
-			clusterInfo.RegionId = context.StringValue("DescribeCluster.ClusterInfo.RegionId");
-			clusterInfo.Name = context.StringValue("DescribeCluster.ClusterInfo.Name");
-			clusterInfo.Description = context.StringValue("DescribeCluster.ClusterInfo.Description");
-			clusterInfo.Status = context.StringValue("DescribeCluster.ClusterInfo.Status");
-			clusterInfo.OsTag = context.StringValue("DescribeCluster.ClusterInfo.OsTag");
-			clusterInfo.AccountType = context.StringValue("DescribeCluster.ClusterInfo.AccountType");
-			clusterInfo.SchedulerType = context.StringValue("DescribeCluster.ClusterInfo.SchedulerType");
-			clusterInfo.CreateTime = context.StringValue("DescribeCluster.ClusterInfo.CreateTime");
-			clusterInfo.SecurityGroupId = context.StringValue("DescribeCluster.ClusterInfo.SecurityGroupId");
-			clusterInfo.VpcId = context.StringValue("DescribeCluster.ClusterInfo.VpcId");
-			clusterInfo.VSwitchId = context.StringValue("DescribeCluster.ClusterInfo.VSwitchId");
-			clusterInfo.VolumeType = context.StringValue("DescribeCluster.ClusterInfo.VolumeType");
-			clusterInfo.VolumeId = context.StringValue("DescribeCluster.ClusterInfo.VolumeId");
-			clusterInfo.VolumeProtocol = context.StringValue("DescribeCluster.ClusterInfo.VolumeProtocol");
-			clusterInfo.VolumeMountpoint = context.StringValue("DescribeCluster.ClusterInfo.VolumeMountpoint");
-			clusterInfo.RemoteDirectory = context.StringValue("DescribeCluster.ClusterInfo.RemoteDirectory");
-			clusterInfo.DeployMode = context.StringValue("DescribeCluster.ClusterInfo.DeployMode");
-			clusterInfo.HaEnable = context.BooleanValue("DescribeCluster.ClusterInfo.HaEnable");
-			clusterInfo.EcsChargeType = context.StringValue("DescribeCluster.ClusterInfo.EcsChargeType");
-			clusterInfo.KeyPairName = context.StringValue("DescribeCluster.ClusterInfo.KeyPairName");
-			clusterInfo.SccClusterId = context.StringValue("DescribeCluster.ClusterInfo.SccClusterId");
-			clusterInfo.ClientVersion = context.StringValue("DescribeCluster.ClusterInfo.ClientVersion");
-			clusterInfo.ImageOwnerAlias = context.StringValue("DescribeCluster.ClusterInfo.ImageOwnerAlias");
-			clusterInfo.ImageId = context.StringValue("DescribeCluster.ClusterInfo.ImageId");
-			clusterInfo.Location = context.StringValue("DescribeCluster.ClusterInfo.Location");
-			clusterInfo.BaseOsTag = context.StringValue("DescribeCluster.ClusterInfo.BaseOsTag");
-			clusterInfo.ImageName = context.StringValue("DescribeCluster.ClusterInfo.ImageName");
+			clusterInfo.Id = _ctx.StringValue("DescribeCluster.ClusterInfo.Id");
+			clusterInfo.RegionId = _ctx.StringValue("DescribeCluster.ClusterInfo.RegionId");
+			clusterInfo.Name = _ctx.StringValue("DescribeCluster.ClusterInfo.Name");
+			clusterInfo.Description = _ctx.StringValue("DescribeCluster.ClusterInfo.Description");
+			clusterInfo.Status = _ctx.StringValue("DescribeCluster.ClusterInfo.Status");
+			clusterInfo.OsTag = _ctx.StringValue("DescribeCluster.ClusterInfo.OsTag");
+			clusterInfo.AccountType = _ctx.StringValue("DescribeCluster.ClusterInfo.AccountType");
+			clusterInfo.SchedulerType = _ctx.StringValue("DescribeCluster.ClusterInfo.SchedulerType");
+			clusterInfo.CreateTime = _ctx.StringValue("DescribeCluster.ClusterInfo.CreateTime");
+			clusterInfo.SecurityGroupId = _ctx.StringValue("DescribeCluster.ClusterInfo.SecurityGroupId");
+			clusterInfo.VpcId = _ctx.StringValue("DescribeCluster.ClusterInfo.VpcId");
+			clusterInfo.VSwitchId = _ctx.StringValue("DescribeCluster.ClusterInfo.VSwitchId");
+			clusterInfo.VolumeType = _ctx.StringValue("DescribeCluster.ClusterInfo.VolumeType");
+			clusterInfo.VolumeId = _ctx.StringValue("DescribeCluster.ClusterInfo.VolumeId");
+			clusterInfo.VolumeProtocol = _ctx.StringValue("DescribeCluster.ClusterInfo.VolumeProtocol");
+			clusterInfo.VolumeMountpoint = _ctx.StringValue("DescribeCluster.ClusterInfo.VolumeMountpoint");
+			clusterInfo.RemoteDirectory = _ctx.StringValue("DescribeCluster.ClusterInfo.RemoteDirectory");
+			clusterInfo.DeployMode = _ctx.StringValue("DescribeCluster.ClusterInfo.DeployMode");
+			clusterInfo.HaEnable = _ctx.BooleanValue("DescribeCluster.ClusterInfo.HaEnable");
+			clusterInfo.EcsChargeType = _ctx.StringValue("DescribeCluster.ClusterInfo.EcsChargeType");
+			clusterInfo.KeyPairName = _ctx.StringValue("DescribeCluster.ClusterInfo.KeyPairName");
+			clusterInfo.SccClusterId = _ctx.StringValue("DescribeCluster.ClusterInfo.SccClusterId");
+			clusterInfo.ClientVersion = _ctx.StringValue("DescribeCluster.ClusterInfo.ClientVersion");
+			clusterInfo.ImageOwnerAlias = _ctx.StringValue("DescribeCluster.ClusterInfo.ImageOwnerAlias");
+			clusterInfo.ImageId = _ctx.StringValue("DescribeCluster.ClusterInfo.ImageId");
+			clusterInfo.Location = _ctx.StringValue("DescribeCluster.ClusterInfo.Location");
+			clusterInfo.BaseOsTag = _ctx.StringValue("DescribeCluster.ClusterInfo.BaseOsTag");
+			clusterInfo.ImageName = _ctx.StringValue("DescribeCluster.ClusterInfo.ImageName");
 
 			DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_EcsInfo ecsInfo = new DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_EcsInfo();
 
 			DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_EcsInfo.DescribeCluster_Manager manager = new DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_EcsInfo.DescribeCluster_Manager();
-			manager.Count = context.IntegerValue("DescribeCluster.ClusterInfo.EcsInfo.Manager.Count");
-			manager.InstanceType = context.StringValue("DescribeCluster.ClusterInfo.EcsInfo.Manager.InstanceType");
+			manager.Count = _ctx.IntegerValue("DescribeCluster.ClusterInfo.EcsInfo.Manager.Count");
+			manager.InstanceType = _ctx.StringValue("DescribeCluster.ClusterInfo.EcsInfo.Manager.InstanceType");
 			ecsInfo.Manager = manager;
 
 			DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_EcsInfo.DescribeCluster_Compute compute = new DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_EcsInfo.DescribeCluster_Compute();
-			compute.Count = context.IntegerValue("DescribeCluster.ClusterInfo.EcsInfo.Compute.Count");
-			compute.InstanceType = context.StringValue("DescribeCluster.ClusterInfo.EcsInfo.Compute.InstanceType");
+			compute.Count = _ctx.IntegerValue("DescribeCluster.ClusterInfo.EcsInfo.Compute.Count");
+			compute.InstanceType = _ctx.StringValue("DescribeCluster.ClusterInfo.EcsInfo.Compute.InstanceType");
 			ecsInfo.Compute = compute;
 
 			DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_EcsInfo.DescribeCluster_Login login = new DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_EcsInfo.DescribeCluster_Login();
-			login.Count = context.IntegerValue("DescribeCluster.ClusterInfo.EcsInfo.Login.Count");
-			login.InstanceType = context.StringValue("DescribeCluster.ClusterInfo.EcsInfo.Login.InstanceType");
+			login.Count = _ctx.IntegerValue("DescribeCluster.ClusterInfo.EcsInfo.Login.Count");
+			login.InstanceType = _ctx.StringValue("DescribeCluster.ClusterInfo.EcsInfo.Login.InstanceType");
 			ecsInfo.Login = login;
 			clusterInfo.EcsInfo = ecsInfo;
 
 			List<DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_ApplicationInfo> clusterInfo_applications = new List<DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_ApplicationInfo>();
-			for (int i = 0; i < context.Length("DescribeCluster.ClusterInfo.Applications.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCluster.ClusterInfo.Applications.Length"); i++) {
 				DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_ApplicationInfo applicationInfo = new DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_ApplicationInfo();
-				applicationInfo.Tag = context.StringValue("DescribeCluster.ClusterInfo.Applications["+ i +"].Tag");
-				applicationInfo.Name = context.StringValue("DescribeCluster.ClusterInfo.Applications["+ i +"].Name");
-				applicationInfo.Version = context.StringValue("DescribeCluster.ClusterInfo.Applications["+ i +"].Version");
+				applicationInfo.Tag = _ctx.StringValue("DescribeCluster.ClusterInfo.Applications["+ i +"].Tag");
+				applicationInfo.Name = _ctx.StringValue("DescribeCluster.ClusterInfo.Applications["+ i +"].Name");
+				applicationInfo.Version = _ctx.StringValue("DescribeCluster.ClusterInfo.Applications["+ i +"].Version");
 
 				clusterInfo_applications.Add(applicationInfo);
 			}
 			clusterInfo.Applications = clusterInfo_applications;
 
 			List<DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_PostInstallScriptInfo> clusterInfo_postInstallScripts = new List<DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_PostInstallScriptInfo>();
-			for (int i = 0; i < context.Length("DescribeCluster.ClusterInfo.PostInstallScripts.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCluster.ClusterInfo.PostInstallScripts.Length"); i++) {
 				DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_PostInstallScriptInfo postInstallScriptInfo = new DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_PostInstallScriptInfo();
-				postInstallScriptInfo.Url = context.StringValue("DescribeCluster.ClusterInfo.PostInstallScripts["+ i +"].Url");
-				postInstallScriptInfo.Args = context.StringValue("DescribeCluster.ClusterInfo.PostInstallScripts["+ i +"].Args");
+				postInstallScriptInfo.Url = _ctx.StringValue("DescribeCluster.ClusterInfo.PostInstallScripts["+ i +"].Url");
+				postInstallScriptInfo.Args = _ctx.StringValue("DescribeCluster.ClusterInfo.PostInstallScripts["+ i +"].Args");
 
 				clusterInfo_postInstallScripts.Add(postInstallScriptInfo);
 			}

@@ -26,24 +26,24 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DescribePlayTopVideosResponseUnmarshaller
     {
-        public static DescribePlayTopVideosResponse Unmarshall(UnmarshallerContext context)
+        public static DescribePlayTopVideosResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribePlayTopVideosResponse describePlayTopVideosResponse = new DescribePlayTopVideosResponse();
 
-			describePlayTopVideosResponse.HttpResponse = context.HttpResponse;
-			describePlayTopVideosResponse.RequestId = context.StringValue("DescribePlayTopVideos.RequestId");
-			describePlayTopVideosResponse.PageNo = context.LongValue("DescribePlayTopVideos.PageNo");
-			describePlayTopVideosResponse.PageSize = context.LongValue("DescribePlayTopVideos.PageSize");
-			describePlayTopVideosResponse.TotalNum = context.LongValue("DescribePlayTopVideos.TotalNum");
+			describePlayTopVideosResponse.HttpResponse = _ctx.HttpResponse;
+			describePlayTopVideosResponse.RequestId = _ctx.StringValue("DescribePlayTopVideos.RequestId");
+			describePlayTopVideosResponse.PageNo = _ctx.LongValue("DescribePlayTopVideos.PageNo");
+			describePlayTopVideosResponse.PageSize = _ctx.LongValue("DescribePlayTopVideos.PageSize");
+			describePlayTopVideosResponse.TotalNum = _ctx.LongValue("DescribePlayTopVideos.TotalNum");
 
 			List<DescribePlayTopVideosResponse.DescribePlayTopVideos_TopPlayVideoStatis> describePlayTopVideosResponse_topPlayVideos = new List<DescribePlayTopVideosResponse.DescribePlayTopVideos_TopPlayVideoStatis>();
-			for (int i = 0; i < context.Length("DescribePlayTopVideos.TopPlayVideos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribePlayTopVideos.TopPlayVideos.Length"); i++) {
 				DescribePlayTopVideosResponse.DescribePlayTopVideos_TopPlayVideoStatis topPlayVideoStatis = new DescribePlayTopVideosResponse.DescribePlayTopVideos_TopPlayVideoStatis();
-				topPlayVideoStatis.PlayDuration = context.StringValue("DescribePlayTopVideos.TopPlayVideos["+ i +"].PlayDuration");
-				topPlayVideoStatis.VV = context.StringValue("DescribePlayTopVideos.TopPlayVideos["+ i +"].VV");
-				topPlayVideoStatis.UV = context.StringValue("DescribePlayTopVideos.TopPlayVideos["+ i +"].UV");
-				topPlayVideoStatis.VideoId = context.StringValue("DescribePlayTopVideos.TopPlayVideos["+ i +"].VideoId");
-				topPlayVideoStatis.Title = context.StringValue("DescribePlayTopVideos.TopPlayVideos["+ i +"].Title");
+				topPlayVideoStatis.PlayDuration = _ctx.StringValue("DescribePlayTopVideos.TopPlayVideos["+ i +"].PlayDuration");
+				topPlayVideoStatis.VV = _ctx.StringValue("DescribePlayTopVideos.TopPlayVideos["+ i +"].VV");
+				topPlayVideoStatis.UV = _ctx.StringValue("DescribePlayTopVideos.TopPlayVideos["+ i +"].UV");
+				topPlayVideoStatis.VideoId = _ctx.StringValue("DescribePlayTopVideos.TopPlayVideos["+ i +"].VideoId");
+				topPlayVideoStatis.Title = _ctx.StringValue("DescribePlayTopVideos.TopPlayVideos["+ i +"].Title");
 
 				describePlayTopVideosResponse_topPlayVideos.Add(topPlayVideoStatis);
 			}

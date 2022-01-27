@@ -112,7 +112,11 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string stackVersion;
 
+			private string publishType;
+
 			private List<ListEmrMainVersion_ClusterTypeInfo> clusterTypeInfoList;
+
+			private List<ListEmrMainVersion_ClusterTypeWhiteUser> clusterTypeWhiteUserList;
 
 			private List<string> whiteUserList;
 
@@ -200,6 +204,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				}
 			}
 
+			public string PublishType
+			{
+				get
+				{
+					return publishType;
+				}
+				set	
+				{
+					publishType = value;
+				}
+			}
+
 			public List<ListEmrMainVersion_ClusterTypeInfo> ClusterTypeInfoList
 			{
 				get
@@ -209,6 +225,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					clusterTypeInfoList = value;
+				}
+			}
+
+			public List<ListEmrMainVersion_ClusterTypeWhiteUser> ClusterTypeWhiteUserList
+			{
+				get
+				{
+					return clusterTypeWhiteUserList;
+				}
+				set	
+				{
+					clusterTypeWhiteUserList = value;
 				}
 			}
 
@@ -340,6 +368,38 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 						{
 							display = value;
 						}
+					}
+				}
+			}
+
+			public class ListEmrMainVersion_ClusterTypeWhiteUser
+			{
+
+				private string clusterType;
+
+				private string userId;
+
+				public string ClusterType
+				{
+					get
+					{
+						return clusterType;
+					}
+					set	
+					{
+						clusterType = value;
+					}
+				}
+
+				public string UserId
+				{
+					get
+					{
+						return userId;
+					}
+					set	
+					{
+						userId = value;
 					}
 				}
 			}

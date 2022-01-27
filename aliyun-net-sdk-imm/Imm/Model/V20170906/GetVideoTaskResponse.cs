@@ -25,89 +25,29 @@ namespace Aliyun.Acs.imm.Model.V20170906
 	public class GetVideoTaskResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string taskId;
-
-		private string taskType;
-
-		private string parameters;
-
-		private string result;
-
 		private string status;
-
-		private string startTime;
-
-		private string endTime;
-
-		private string errorMessage;
 
 		private string notifyEndpoint;
 
-		private string notifyTopicName;
-
 		private int? progress;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string taskId;
 
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-			}
-		}
+		private string parameters;
 
-		public string TaskType
-		{
-			get
-			{
-				return taskType;
-			}
-			set	
-			{
-				taskType = value;
-			}
-		}
+		private string requestId;
 
-		public string Parameters
-		{
-			get
-			{
-				return parameters;
-			}
-			set	
-			{
-				parameters = value;
-			}
-		}
+		private string endTime;
 
-		public string Result
-		{
-			get
-			{
-				return result;
-			}
-			set	
-			{
-				result = value;
-			}
-		}
+		private string taskType;
+
+		private string startTime;
+
+		private string notifyTopicName;
+
+		private string errorMessage;
+
+		private string result;
 
 		public string Status
 		{
@@ -118,42 +58,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				status = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
 			}
 		}
 
@@ -169,6 +73,90 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public int? Progress
+		{
+			get
+			{
+				return progress;
+			}
+			set	
+			{
+				progress = value;
+			}
+		}
+
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+			}
+		}
+
+		public string Parameters
+		{
+			get
+			{
+				return parameters;
+			}
+			set	
+			{
+				parameters = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public string TaskType
+		{
+			get
+			{
+				return taskType;
+			}
+			set	
+			{
+				taskType = value;
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
+
 		public string NotifyTopicName
 		{
 			get
@@ -181,15 +169,27 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public int? Progress
+		public string ErrorMessage
 		{
 			get
 			{
-				return progress;
+				return errorMessage;
 			}
 			set	
 			{
-				progress = value;
+				errorMessage = value;
+			}
+		}
+
+		public string Result
+		{
+			get
+			{
+				return result;
+			}
+			set	
+			{
+				result = value;
 			}
 		}
 	}

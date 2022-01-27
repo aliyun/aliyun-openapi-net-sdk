@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DeleteEditingProjectResponseUnmarshaller
     {
-        public static DeleteEditingProjectResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteEditingProjectResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteEditingProjectResponse deleteEditingProjectResponse = new DeleteEditingProjectResponse();
 
-			deleteEditingProjectResponse.HttpResponse = context.HttpResponse;
-			deleteEditingProjectResponse.RequestId = context.StringValue("DeleteEditingProject.RequestId");
+			deleteEditingProjectResponse.HttpResponse = _ctx.HttpResponse;
+			deleteEditingProjectResponse.RequestId = _ctx.StringValue("DeleteEditingProject.RequestId");
         
 			return deleteEditingProjectResponse;
         }

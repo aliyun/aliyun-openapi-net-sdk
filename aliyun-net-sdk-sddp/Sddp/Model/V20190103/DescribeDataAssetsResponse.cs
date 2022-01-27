@@ -112,7 +112,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private bool? protection;
 
-			private int? labelsec;
+			private bool? labelsec;
 
 			private string odpsRiskLevelName;
 
@@ -222,7 +222,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public int? Labelsec
+			public bool? Labelsec
 			{
 				get
 				{

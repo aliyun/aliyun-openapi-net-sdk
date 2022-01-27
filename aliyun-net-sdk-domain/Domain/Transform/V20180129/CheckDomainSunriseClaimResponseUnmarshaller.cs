@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class CheckDomainSunriseClaimResponseUnmarshaller
     {
-        public static CheckDomainSunriseClaimResponse Unmarshall(UnmarshallerContext context)
+        public static CheckDomainSunriseClaimResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckDomainSunriseClaimResponse checkDomainSunriseClaimResponse = new CheckDomainSunriseClaimResponse();
 
-			checkDomainSunriseClaimResponse.HttpResponse = context.HttpResponse;
-			checkDomainSunriseClaimResponse.RequestId = context.StringValue("CheckDomainSunriseClaim.RequestId");
-			checkDomainSunriseClaimResponse.Result = context.IntegerValue("CheckDomainSunriseClaim.Result");
-			checkDomainSunriseClaimResponse.ClaimKey = context.StringValue("CheckDomainSunriseClaim.ClaimKey");
+			checkDomainSunriseClaimResponse.HttpResponse = _ctx.HttpResponse;
+			checkDomainSunriseClaimResponse.RequestId = _ctx.StringValue("CheckDomainSunriseClaim.RequestId");
+			checkDomainSunriseClaimResponse.Result = _ctx.IntegerValue("CheckDomainSunriseClaim.Result");
+			checkDomainSunriseClaimResponse.ClaimKey = _ctx.StringValue("CheckDomainSunriseClaim.ClaimKey");
         
 			return checkDomainSunriseClaimResponse;
         }

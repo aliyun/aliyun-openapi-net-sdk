@@ -26,29 +26,30 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class QueryResourceStaticsResponseUnmarshaller
     {
-        public static QueryResourceStaticsResponse Unmarshall(UnmarshallerContext context)
+        public static QueryResourceStaticsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryResourceStaticsResponse queryResourceStaticsResponse = new QueryResourceStaticsResponse();
 
-			queryResourceStaticsResponse.HttpResponse = context.HttpResponse;
-			queryResourceStaticsResponse.Code = context.StringValue("QueryResourceStatics.Code");
-			queryResourceStaticsResponse.ErrorCode = context.StringValue("QueryResourceStatics.ErrorCode");
-			queryResourceStaticsResponse.Message = context.StringValue("QueryResourceStatics.Message");
-			queryResourceStaticsResponse.Success = context.BooleanValue("QueryResourceStatics.Success");
-			queryResourceStaticsResponse.TraceId = context.StringValue("QueryResourceStatics.TraceId");
-			queryResourceStaticsResponse.RequestId = context.StringValue("QueryResourceStatics.RequestId");
+			queryResourceStaticsResponse.HttpResponse = _ctx.HttpResponse;
+			queryResourceStaticsResponse.RequestId = _ctx.StringValue("QueryResourceStatics.RequestId");
+			queryResourceStaticsResponse.Message = _ctx.StringValue("QueryResourceStatics.Message");
+			queryResourceStaticsResponse.TraceId = _ctx.StringValue("QueryResourceStatics.TraceId");
+			queryResourceStaticsResponse.ErrorCode = _ctx.StringValue("QueryResourceStatics.ErrorCode");
+			queryResourceStaticsResponse.Code = _ctx.StringValue("QueryResourceStatics.Code");
+			queryResourceStaticsResponse.Success = _ctx.BooleanValue("QueryResourceStatics.Success");
 
 			QueryResourceStaticsResponse.QueryResourceStatics_Data data = new QueryResourceStaticsResponse.QueryResourceStatics_Data();
-
-			QueryResourceStaticsResponse.QueryResourceStatics_Data.QueryResourceStatics_RealTimeRes realTimeRes = new QueryResourceStaticsResponse.QueryResourceStatics_Data.QueryResourceStatics_RealTimeRes();
-			realTimeRes.Cpu = context.FloatValue("QueryResourceStatics.Data.RealTimeRes.Cpu");
-			realTimeRes.Memory = context.FloatValue("QueryResourceStatics.Data.RealTimeRes.Memory");
-			data.RealTimeRes = realTimeRes;
+			data.Workload = _ctx.StringValue("QueryResourceStatics.Data.Workload");
 
 			QueryResourceStaticsResponse.QueryResourceStatics_Data.QueryResourceStatics_Summary summary = new QueryResourceStaticsResponse.QueryResourceStatics_Data.QueryResourceStatics_Summary();
-			summary.Cpu = context.FloatValue("QueryResourceStatics.Data.Summary.Cpu");
-			summary.Memory = context.FloatValue("QueryResourceStatics.Data.Summary.Memory");
+			summary.Cpu = _ctx.FloatValue("QueryResourceStatics.Data.Summary.Cpu");
+			summary.Memory = _ctx.FloatValue("QueryResourceStatics.Data.Summary.Memory");
 			data.Summary = summary;
+
+			QueryResourceStaticsResponse.QueryResourceStatics_Data.QueryResourceStatics_RealTimeRes realTimeRes = new QueryResourceStaticsResponse.QueryResourceStatics_Data.QueryResourceStatics_RealTimeRes();
+			realTimeRes.Cpu = _ctx.FloatValue("QueryResourceStatics.Data.RealTimeRes.Cpu");
+			realTimeRes.Memory = _ctx.FloatValue("QueryResourceStatics.Data.RealTimeRes.Memory");
+			data.RealTimeRes = realTimeRes;
 			queryResourceStaticsResponse.Data = data;
         
 			return queryResourceStaticsResponse;

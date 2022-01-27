@@ -32,15 +32,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public RerunFlowRequest()
             : base("Emr", "2016-04-08", "RerunFlow", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string flowInstanceId;
 
-		private string regionId;
+		private bool? reRunFail;
 
 		private string projectId;
-
-		private bool? reRunFail;
 
 		public string FlowInstanceId
 		{
@@ -55,16 +59,16 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
+		public bool? ReRunFail
 		{
 			get
 			{
-				return regionId;
+				return reRunFail;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				reRunFail = value;
+				DictionaryUtil.Add(QueryParameters, "ReRunFail", value.ToString());
 			}
 		}
 
@@ -78,19 +82,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				projectId = value;
 				DictionaryUtil.Add(QueryParameters, "ProjectId", value);
-			}
-		}
-
-		public bool? ReRunFail
-		{
-			get
-			{
-				return reRunFail;
-			}
-			set	
-			{
-				reRunFail = value;
-				DictionaryUtil.Add(QueryParameters, "ReRunFail", value.ToString());
 			}
 		}
 

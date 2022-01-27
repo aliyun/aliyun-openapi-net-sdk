@@ -26,19 +26,19 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeAccountConfigResponseUnmarshaller
     {
-        public static DescribeAccountConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAccountConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAccountConfigResponse describeAccountConfigResponse = new DescribeAccountConfigResponse();
 
-			describeAccountConfigResponse.HttpResponse = context.HttpResponse;
-			describeAccountConfigResponse.RequestId = context.StringValue("DescribeAccountConfig.RequestId");
-			describeAccountConfigResponse.Success = context.BooleanValue("DescribeAccountConfig.Success");
-			describeAccountConfigResponse.Code = context.StringValue("DescribeAccountConfig.Code");
-			describeAccountConfigResponse.Message = context.StringValue("DescribeAccountConfig.Message");
-			describeAccountConfigResponse.IsSupportServerSideEncryption = context.BooleanValue("DescribeAccountConfig.IsSupportServerSideEncryption");
-			describeAccountConfigResponse.IsSupportClientSideEncryption = context.BooleanValue("DescribeAccountConfig.IsSupportClientSideEncryption");
-			describeAccountConfigResponse.IsSupportGatewayLogging = context.BooleanValue("DescribeAccountConfig.IsSupportGatewayLogging");
-			describeAccountConfigResponse.IsSupportElasticGatewayBeta = context.BooleanValue("DescribeAccountConfig.IsSupportElasticGatewayBeta");
+			describeAccountConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeAccountConfigResponse.RequestId = _ctx.StringValue("DescribeAccountConfig.RequestId");
+			describeAccountConfigResponse.Message = _ctx.StringValue("DescribeAccountConfig.Message");
+			describeAccountConfigResponse.IsSupportServerSideEncryption = _ctx.BooleanValue("DescribeAccountConfig.IsSupportServerSideEncryption");
+			describeAccountConfigResponse.IsSupportClientSideEncryption = _ctx.BooleanValue("DescribeAccountConfig.IsSupportClientSideEncryption");
+			describeAccountConfigResponse.Code = _ctx.StringValue("DescribeAccountConfig.Code");
+			describeAccountConfigResponse.IsSupportGatewayLogging = _ctx.BooleanValue("DescribeAccountConfig.IsSupportGatewayLogging");
+			describeAccountConfigResponse.Success = _ctx.BooleanValue("DescribeAccountConfig.Success");
+			describeAccountConfigResponse.IsSupportElasticGatewayBeta = _ctx.BooleanValue("DescribeAccountConfig.IsSupportElasticGatewayBeta");
         
 			return describeAccountConfigResponse;
         }

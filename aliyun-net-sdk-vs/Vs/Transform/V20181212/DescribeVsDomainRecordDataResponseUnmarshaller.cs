@@ -26,21 +26,21 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeVsDomainRecordDataResponseUnmarshaller
     {
-        public static DescribeVsDomainRecordDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVsDomainRecordDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVsDomainRecordDataResponse describeVsDomainRecordDataResponse = new DescribeVsDomainRecordDataResponse();
 
-			describeVsDomainRecordDataResponse.HttpResponse = context.HttpResponse;
-			describeVsDomainRecordDataResponse.RequestId = context.StringValue("DescribeVsDomainRecordData.RequestId");
-			describeVsDomainRecordDataResponse.DomainName = context.StringValue("DescribeVsDomainRecordData.DomainName");
-			describeVsDomainRecordDataResponse.StartTime = context.StringValue("DescribeVsDomainRecordData.StartTime");
-			describeVsDomainRecordDataResponse.EndTime = context.StringValue("DescribeVsDomainRecordData.EndTime");
+			describeVsDomainRecordDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeVsDomainRecordDataResponse.RequestId = _ctx.StringValue("DescribeVsDomainRecordData.RequestId");
+			describeVsDomainRecordDataResponse.DomainName = _ctx.StringValue("DescribeVsDomainRecordData.DomainName");
+			describeVsDomainRecordDataResponse.StartTime = _ctx.StringValue("DescribeVsDomainRecordData.StartTime");
+			describeVsDomainRecordDataResponse.EndTime = _ctx.StringValue("DescribeVsDomainRecordData.EndTime");
 
 			List<DescribeVsDomainRecordDataResponse.DescribeVsDomainRecordData_DataModule> describeVsDomainRecordDataResponse_recordDataPerInterval = new List<DescribeVsDomainRecordDataResponse.DescribeVsDomainRecordData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeVsDomainRecordData.RecordDataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVsDomainRecordData.RecordDataPerInterval.Length"); i++) {
 				DescribeVsDomainRecordDataResponse.DescribeVsDomainRecordData_DataModule dataModule = new DescribeVsDomainRecordDataResponse.DescribeVsDomainRecordData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeVsDomainRecordData.RecordDataPerInterval["+ i +"].TimeStamp");
-				dataModule.RecordValue = context.StringValue("DescribeVsDomainRecordData.RecordDataPerInterval["+ i +"].RecordValue");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeVsDomainRecordData.RecordDataPerInterval["+ i +"].TimeStamp");
+				dataModule.RecordValue = _ctx.StringValue("DescribeVsDomainRecordData.RecordDataPerInterval["+ i +"].RecordValue");
 
 				describeVsDomainRecordDataResponse_recordDataPerInterval.Add(dataModule);
 			}

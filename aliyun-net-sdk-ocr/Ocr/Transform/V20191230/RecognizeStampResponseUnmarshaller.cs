@@ -26,36 +26,36 @@ namespace Aliyun.Acs.ocr.Transform.V20191230
 {
     public class RecognizeStampResponseUnmarshaller
     {
-        public static RecognizeStampResponse Unmarshall(UnmarshallerContext context)
+        public static RecognizeStampResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RecognizeStampResponse recognizeStampResponse = new RecognizeStampResponse();
 
-			recognizeStampResponse.HttpResponse = context.HttpResponse;
-			recognizeStampResponse.RequestId = context.StringValue("RecognizeStamp.RequestId");
+			recognizeStampResponse.HttpResponse = _ctx.HttpResponse;
+			recognizeStampResponse.RequestId = _ctx.StringValue("RecognizeStamp.RequestId");
 
 			RecognizeStampResponse.RecognizeStamp_Data data = new RecognizeStampResponse.RecognizeStamp_Data();
 
 			List<RecognizeStampResponse.RecognizeStamp_Data.RecognizeStamp_ResultsItem> data_results = new List<RecognizeStampResponse.RecognizeStamp_Data.RecognizeStamp_ResultsItem>();
-			for (int i = 0; i < context.Length("RecognizeStamp.Data.Results.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("RecognizeStamp.Data.Results.Length"); i++) {
 				RecognizeStampResponse.RecognizeStamp_Data.RecognizeStamp_ResultsItem resultsItem = new RecognizeStampResponse.RecognizeStamp_Data.RecognizeStamp_ResultsItem();
 
 				RecognizeStampResponse.RecognizeStamp_Data.RecognizeStamp_ResultsItem.RecognizeStamp_Roi roi = new RecognizeStampResponse.RecognizeStamp_Data.RecognizeStamp_ResultsItem.RecognizeStamp_Roi();
-				roi.Left = context.IntegerValue("RecognizeStamp.Data.Results["+ i +"].Roi.Left");
-				roi.Top = context.IntegerValue("RecognizeStamp.Data.Results["+ i +"].Roi.Top");
-				roi.Width = context.IntegerValue("RecognizeStamp.Data.Results["+ i +"].Roi.Width");
-				roi.Height = context.IntegerValue("RecognizeStamp.Data.Results["+ i +"].Roi.Height");
+				roi.Left = _ctx.IntegerValue("RecognizeStamp.Data.Results["+ i +"].Roi.Left");
+				roi.Top = _ctx.IntegerValue("RecognizeStamp.Data.Results["+ i +"].Roi.Top");
+				roi.Width = _ctx.IntegerValue("RecognizeStamp.Data.Results["+ i +"].Roi.Width");
+				roi.Height = _ctx.IntegerValue("RecognizeStamp.Data.Results["+ i +"].Roi.Height");
 				resultsItem.Roi = roi;
 
 				RecognizeStampResponse.RecognizeStamp_Data.RecognizeStamp_ResultsItem.RecognizeStamp_Text text = new RecognizeStampResponse.RecognizeStamp_Data.RecognizeStamp_ResultsItem.RecognizeStamp_Text();
-				text.Content = context.StringValue("RecognizeStamp.Data.Results["+ i +"].Text.Content");
-				text.Confidence = context.FloatValue("RecognizeStamp.Data.Results["+ i +"].Text.Confidence");
+				text.Content = _ctx.StringValue("RecognizeStamp.Data.Results["+ i +"].Text.Content");
+				text.Confidence = _ctx.FloatValue("RecognizeStamp.Data.Results["+ i +"].Text.Confidence");
 				resultsItem.Text = text;
 
 				List<RecognizeStampResponse.RecognizeStamp_Data.RecognizeStamp_ResultsItem.RecognizeStamp_GeneralTextItem> resultsItem_generalText = new List<RecognizeStampResponse.RecognizeStamp_Data.RecognizeStamp_ResultsItem.RecognizeStamp_GeneralTextItem>();
-				for (int j = 0; j < context.Length("RecognizeStamp.Data.Results["+ i +"].GeneralText.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("RecognizeStamp.Data.Results["+ i +"].GeneralText.Length"); j++) {
 					RecognizeStampResponse.RecognizeStamp_Data.RecognizeStamp_ResultsItem.RecognizeStamp_GeneralTextItem generalTextItem = new RecognizeStampResponse.RecognizeStamp_Data.RecognizeStamp_ResultsItem.RecognizeStamp_GeneralTextItem();
-					generalTextItem.Content = context.StringValue("RecognizeStamp.Data.Results["+ i +"].GeneralText["+ j +"].Content");
-					generalTextItem.Confidence = context.FloatValue("RecognizeStamp.Data.Results["+ i +"].GeneralText["+ j +"].Confidence");
+					generalTextItem.Content = _ctx.StringValue("RecognizeStamp.Data.Results["+ i +"].GeneralText["+ j +"].Content");
+					generalTextItem.Confidence = _ctx.FloatValue("RecognizeStamp.Data.Results["+ i +"].GeneralText["+ j +"].Confidence");
 
 					resultsItem_generalText.Add(generalTextItem);
 				}

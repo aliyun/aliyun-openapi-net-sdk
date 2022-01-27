@@ -26,33 +26,33 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class BatchQueryDeviceDetailResponseUnmarshaller
     {
-        public static BatchQueryDeviceDetailResponse Unmarshall(UnmarshallerContext context)
+        public static BatchQueryDeviceDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchQueryDeviceDetailResponse batchQueryDeviceDetailResponse = new BatchQueryDeviceDetailResponse();
 
-			batchQueryDeviceDetailResponse.HttpResponse = context.HttpResponse;
-			batchQueryDeviceDetailResponse.RequestId = context.StringValue("BatchQueryDeviceDetail.RequestId");
-			batchQueryDeviceDetailResponse.Success = context.BooleanValue("BatchQueryDeviceDetail.Success");
-			batchQueryDeviceDetailResponse.Code = context.StringValue("BatchQueryDeviceDetail.Code");
-			batchQueryDeviceDetailResponse.ErrorMessage = context.StringValue("BatchQueryDeviceDetail.ErrorMessage");
+			batchQueryDeviceDetailResponse.HttpResponse = _ctx.HttpResponse;
+			batchQueryDeviceDetailResponse.RequestId = _ctx.StringValue("BatchQueryDeviceDetail.RequestId");
+			batchQueryDeviceDetailResponse.Success = _ctx.BooleanValue("BatchQueryDeviceDetail.Success");
+			batchQueryDeviceDetailResponse.Code = _ctx.StringValue("BatchQueryDeviceDetail.Code");
+			batchQueryDeviceDetailResponse.ErrorMessage = _ctx.StringValue("BatchQueryDeviceDetail.ErrorMessage");
 
 			List<BatchQueryDeviceDetailResponse.BatchQueryDeviceDetail_DataItem> batchQueryDeviceDetailResponse_data = new List<BatchQueryDeviceDetailResponse.BatchQueryDeviceDetail_DataItem>();
-			for (int i = 0; i < context.Length("BatchQueryDeviceDetail.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("BatchQueryDeviceDetail.Data.Length"); i++) {
 				BatchQueryDeviceDetailResponse.BatchQueryDeviceDetail_DataItem dataItem = new BatchQueryDeviceDetailResponse.BatchQueryDeviceDetail_DataItem();
-				dataItem.ProductKey = context.StringValue("BatchQueryDeviceDetail.Data["+ i +"].ProductKey");
-				dataItem.ProductName = context.StringValue("BatchQueryDeviceDetail.Data["+ i +"].ProductName");
-				dataItem.DeviceName = context.StringValue("BatchQueryDeviceDetail.Data["+ i +"].DeviceName");
-				dataItem.Nickname = context.StringValue("BatchQueryDeviceDetail.Data["+ i +"].Nickname");
-				dataItem.DeviceSecret = context.StringValue("BatchQueryDeviceDetail.Data["+ i +"].DeviceSecret");
-				dataItem.IotId = context.StringValue("BatchQueryDeviceDetail.Data["+ i +"].IotId");
-				dataItem.UtcCreate = context.StringValue("BatchQueryDeviceDetail.Data["+ i +"].UtcCreate");
-				dataItem.GmtCreate = context.StringValue("BatchQueryDeviceDetail.Data["+ i +"].GmtCreate");
-				dataItem.UtcActive = context.StringValue("BatchQueryDeviceDetail.Data["+ i +"].UtcActive");
-				dataItem.GmtActive = context.StringValue("BatchQueryDeviceDetail.Data["+ i +"].GmtActive");
-				dataItem.Status = context.StringValue("BatchQueryDeviceDetail.Data["+ i +"].Status");
-				dataItem.FirmwareVersion = context.StringValue("BatchQueryDeviceDetail.Data["+ i +"].FirmwareVersion");
-				dataItem.NodeType = context.IntegerValue("BatchQueryDeviceDetail.Data["+ i +"].NodeType");
-				dataItem.Region = context.StringValue("BatchQueryDeviceDetail.Data["+ i +"].Region");
+				dataItem.ProductKey = _ctx.StringValue("BatchQueryDeviceDetail.Data["+ i +"].ProductKey");
+				dataItem.ProductName = _ctx.StringValue("BatchQueryDeviceDetail.Data["+ i +"].ProductName");
+				dataItem.DeviceName = _ctx.StringValue("BatchQueryDeviceDetail.Data["+ i +"].DeviceName");
+				dataItem.Nickname = _ctx.StringValue("BatchQueryDeviceDetail.Data["+ i +"].Nickname");
+				dataItem.DeviceSecret = _ctx.StringValue("BatchQueryDeviceDetail.Data["+ i +"].DeviceSecret");
+				dataItem.IotId = _ctx.StringValue("BatchQueryDeviceDetail.Data["+ i +"].IotId");
+				dataItem.UtcCreate = _ctx.StringValue("BatchQueryDeviceDetail.Data["+ i +"].UtcCreate");
+				dataItem.GmtCreate = _ctx.StringValue("BatchQueryDeviceDetail.Data["+ i +"].GmtCreate");
+				dataItem.UtcActive = _ctx.StringValue("BatchQueryDeviceDetail.Data["+ i +"].UtcActive");
+				dataItem.GmtActive = _ctx.StringValue("BatchQueryDeviceDetail.Data["+ i +"].GmtActive");
+				dataItem.Status = _ctx.StringValue("BatchQueryDeviceDetail.Data["+ i +"].Status");
+				dataItem.FirmwareVersion = _ctx.StringValue("BatchQueryDeviceDetail.Data["+ i +"].FirmwareVersion");
+				dataItem.NodeType = _ctx.IntegerValue("BatchQueryDeviceDetail.Data["+ i +"].NodeType");
+				dataItem.Region = _ctx.StringValue("BatchQueryDeviceDetail.Data["+ i +"].Region");
 
 				batchQueryDeviceDetailResponse_data.Add(dataItem);
 			}

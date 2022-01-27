@@ -26,64 +26,64 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeDevicesResponseUnmarshaller
     {
-        public static DescribeDevicesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDevicesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDevicesResponse describeDevicesResponse = new DescribeDevicesResponse();
 
-			describeDevicesResponse.HttpResponse = context.HttpResponse;
-			describeDevicesResponse.RequestId = context.StringValue("DescribeDevices.RequestId");
-			describeDevicesResponse.PageSize = context.LongValue("DescribeDevices.PageSize");
-			describeDevicesResponse.PageNum = context.LongValue("DescribeDevices.PageNum");
-			describeDevicesResponse.PageCount = context.LongValue("DescribeDevices.PageCount");
-			describeDevicesResponse.TotalCount = context.LongValue("DescribeDevices.TotalCount");
+			describeDevicesResponse.HttpResponse = _ctx.HttpResponse;
+			describeDevicesResponse.RequestId = _ctx.StringValue("DescribeDevices.RequestId");
+			describeDevicesResponse.PageSize = _ctx.LongValue("DescribeDevices.PageSize");
+			describeDevicesResponse.PageNum = _ctx.LongValue("DescribeDevices.PageNum");
+			describeDevicesResponse.PageCount = _ctx.LongValue("DescribeDevices.PageCount");
+			describeDevicesResponse.TotalCount = _ctx.LongValue("DescribeDevices.TotalCount");
 
 			List<DescribeDevicesResponse.DescribeDevices_Device> describeDevicesResponse_devices = new List<DescribeDevicesResponse.DescribeDevices_Device>();
-			for (int i = 0; i < context.Length("DescribeDevices.Devices.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDevices.Devices.Length"); i++) {
 				DescribeDevicesResponse.DescribeDevices_Device device = new DescribeDevicesResponse.DescribeDevices_Device();
-				device.Id = context.StringValue("DescribeDevices.Devices["+ i +"].Id");
-				device.Name = context.StringValue("DescribeDevices.Devices["+ i +"].Name");
-				device.Description = context.StringValue("DescribeDevices.Devices["+ i +"].Description");
-				device.GroupId = context.StringValue("DescribeDevices.Devices["+ i +"].GroupId");
-				device.ParentId = context.StringValue("DescribeDevices.Devices["+ i +"].ParentId");
-				device.DirectoryId = context.StringValue("DescribeDevices.Devices["+ i +"].DirectoryId");
-				device.Type = context.StringValue("DescribeDevices.Devices["+ i +"].Type");
-				device.AutoStart = context.BooleanValue("DescribeDevices.Devices["+ i +"].AutoStart");
-				device.Enabled = context.BooleanValue("DescribeDevices.Devices["+ i +"].Enabled");
-				device.Protocol = context.StringValue("DescribeDevices.Devices["+ i +"].Protocol");
-				device.Status = context.StringValue("DescribeDevices.Devices["+ i +"].Status");
-				device.GbId = context.StringValue("DescribeDevices.Devices["+ i +"].GbId");
-				device.Ip = context.StringValue("DescribeDevices.Devices["+ i +"].Ip");
-				device.Port = context.LongValue("DescribeDevices.Devices["+ i +"].Port");
-				device.Url = context.StringValue("DescribeDevices.Devices["+ i +"].Url");
-				device.Username = context.StringValue("DescribeDevices.Devices["+ i +"].Username");
-				device.Password = context.StringValue("DescribeDevices.Devices["+ i +"].Password");
-				device.Vendor = context.StringValue("DescribeDevices.Devices["+ i +"].Vendor");
-				device.Dsn = context.StringValue("DescribeDevices.Devices["+ i +"].Dsn");
-				device.Longitude = context.StringValue("DescribeDevices.Devices["+ i +"].Longitude");
-				device.Latitude = context.StringValue("DescribeDevices.Devices["+ i +"].Latitude");
-				device.AutoPos = context.BooleanValue("DescribeDevices.Devices["+ i +"].AutoPos");
-				device.AlarmMethod = context.StringValue("DescribeDevices.Devices["+ i +"].AlarmMethod");
-				device.PosInterval = context.LongValue("DescribeDevices.Devices["+ i +"].PosInterval");
-				device.CreatedTime = context.StringValue("DescribeDevices.Devices["+ i +"].CreatedTime");
-				device.RegisteredTime = context.StringValue("DescribeDevices.Devices["+ i +"].RegisteredTime");
-				device.ChannelSyncTime = context.StringValue("DescribeDevices.Devices["+ i +"].ChannelSyncTime");
-				device._Params = context.StringValue("DescribeDevices.Devices["+ i +"].Params");
+				device.Id = _ctx.StringValue("DescribeDevices.Devices["+ i +"].Id");
+				device.Name = _ctx.StringValue("DescribeDevices.Devices["+ i +"].Name");
+				device.Description = _ctx.StringValue("DescribeDevices.Devices["+ i +"].Description");
+				device.GroupId = _ctx.StringValue("DescribeDevices.Devices["+ i +"].GroupId");
+				device.ParentId = _ctx.StringValue("DescribeDevices.Devices["+ i +"].ParentId");
+				device.DirectoryId = _ctx.StringValue("DescribeDevices.Devices["+ i +"].DirectoryId");
+				device.Type = _ctx.StringValue("DescribeDevices.Devices["+ i +"].Type");
+				device.AutoStart = _ctx.BooleanValue("DescribeDevices.Devices["+ i +"].AutoStart");
+				device.Enabled = _ctx.BooleanValue("DescribeDevices.Devices["+ i +"].Enabled");
+				device.Protocol = _ctx.StringValue("DescribeDevices.Devices["+ i +"].Protocol");
+				device.Status = _ctx.StringValue("DescribeDevices.Devices["+ i +"].Status");
+				device.GbId = _ctx.StringValue("DescribeDevices.Devices["+ i +"].GbId");
+				device.Ip = _ctx.StringValue("DescribeDevices.Devices["+ i +"].Ip");
+				device.Port = _ctx.LongValue("DescribeDevices.Devices["+ i +"].Port");
+				device.Url = _ctx.StringValue("DescribeDevices.Devices["+ i +"].Url");
+				device.Username = _ctx.StringValue("DescribeDevices.Devices["+ i +"].Username");
+				device.Password = _ctx.StringValue("DescribeDevices.Devices["+ i +"].Password");
+				device.Vendor = _ctx.StringValue("DescribeDevices.Devices["+ i +"].Vendor");
+				device.Dsn = _ctx.StringValue("DescribeDevices.Devices["+ i +"].Dsn");
+				device.Longitude = _ctx.StringValue("DescribeDevices.Devices["+ i +"].Longitude");
+				device.Latitude = _ctx.StringValue("DescribeDevices.Devices["+ i +"].Latitude");
+				device.AutoPos = _ctx.BooleanValue("DescribeDevices.Devices["+ i +"].AutoPos");
+				device.AlarmMethod = _ctx.StringValue("DescribeDevices.Devices["+ i +"].AlarmMethod");
+				device.PosInterval = _ctx.LongValue("DescribeDevices.Devices["+ i +"].PosInterval");
+				device.CreatedTime = _ctx.StringValue("DescribeDevices.Devices["+ i +"].CreatedTime");
+				device.RegisteredTime = _ctx.StringValue("DescribeDevices.Devices["+ i +"].RegisteredTime");
+				device.ChannelSyncTime = _ctx.StringValue("DescribeDevices.Devices["+ i +"].ChannelSyncTime");
+				device._Params = _ctx.StringValue("DescribeDevices.Devices["+ i +"].Params");
 
 				DescribeDevicesResponse.DescribeDevices_Device.DescribeDevices_Stats stats = new DescribeDevicesResponse.DescribeDevices_Device.DescribeDevices_Stats();
-				stats.ChannelNum = context.LongValue("DescribeDevices.Devices["+ i +"].Stats.ChannelNum");
-				stats.StreamNum = context.LongValue("DescribeDevices.Devices["+ i +"].Stats.StreamNum");
-				stats.OnlineNum = context.LongValue("DescribeDevices.Devices["+ i +"].Stats.OnlineNum");
-				stats.OfflineNum = context.LongValue("DescribeDevices.Devices["+ i +"].Stats.OfflineNum");
-				stats.FailedNum = context.LongValue("DescribeDevices.Devices["+ i +"].Stats.FailedNum");
+				stats.ChannelNum = _ctx.LongValue("DescribeDevices.Devices["+ i +"].Stats.ChannelNum");
+				stats.StreamNum = _ctx.LongValue("DescribeDevices.Devices["+ i +"].Stats.StreamNum");
+				stats.OnlineNum = _ctx.LongValue("DescribeDevices.Devices["+ i +"].Stats.OnlineNum");
+				stats.OfflineNum = _ctx.LongValue("DescribeDevices.Devices["+ i +"].Stats.OfflineNum");
+				stats.FailedNum = _ctx.LongValue("DescribeDevices.Devices["+ i +"].Stats.FailedNum");
 				device.Stats = stats;
 
 				DescribeDevicesResponse.DescribeDevices_Device.DescribeDevices_Directory directory = new DescribeDevicesResponse.DescribeDevices_Device.DescribeDevices_Directory();
-				directory.Id = context.StringValue("DescribeDevices.Devices["+ i +"].Directory.Id");
-				directory.Name = context.StringValue("DescribeDevices.Devices["+ i +"].Directory.Name");
-				directory.Description = context.StringValue("DescribeDevices.Devices["+ i +"].Directory.Description");
-				directory.GroupId = context.StringValue("DescribeDevices.Devices["+ i +"].Directory.GroupId");
-				directory.ParentId = context.StringValue("DescribeDevices.Devices["+ i +"].Directory.ParentId");
-				directory.CreatedTime = context.StringValue("DescribeDevices.Devices["+ i +"].Directory.CreatedTime");
+				directory.Id = _ctx.StringValue("DescribeDevices.Devices["+ i +"].Directory.Id");
+				directory.Name = _ctx.StringValue("DescribeDevices.Devices["+ i +"].Directory.Name");
+				directory.Description = _ctx.StringValue("DescribeDevices.Devices["+ i +"].Directory.Description");
+				directory.GroupId = _ctx.StringValue("DescribeDevices.Devices["+ i +"].Directory.GroupId");
+				directory.ParentId = _ctx.StringValue("DescribeDevices.Devices["+ i +"].Directory.ParentId");
+				directory.CreatedTime = _ctx.StringValue("DescribeDevices.Devices["+ i +"].Directory.CreatedTime");
 				device.Directory = directory;
 
 				describeDevicesResponse_devices.Add(device);

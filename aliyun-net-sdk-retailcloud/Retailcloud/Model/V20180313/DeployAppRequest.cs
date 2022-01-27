@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.retailcloud;
 using Aliyun.Acs.retailcloud.Transform;
 using Aliyun.Acs.retailcloud.Transform.V20180313;
 
@@ -30,44 +31,39 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
     public class DeployAppRequest : RpcAcsRequest<DeployAppResponse>
     {
         public DeployAppRequest()
-            : base("retailcloud", "2018-03-13", "DeployApp", "retailcloud", "openAPI")
+            : base("retailcloud", "2018-03-13", "DeployApp")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.retailcloud.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.retailcloud.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
-
-		private long? deployPacketId;
 
 		private string deployPacketUrl;
 
 		private int? totalPartitions;
 
-		private string name;
-
 		private string description;
 
 		private long? envId;
 
+		private string updateStrategyType;
+
 		private string pauseType;
 
-		private bool? armsFlag;
+		private long? deployPacketId;
 
-		public long? DeployPacketId
-		{
-			get
-			{
-				return deployPacketId;
-			}
-			set	
-			{
-				deployPacketId = value;
-				DictionaryUtil.Add(QueryParameters, "DeployPacketId", value.ToString());
-			}
-		}
+		private List<string> containerImageLists = new List<string>(){ };
+
+		private string name;
+
+		private List<string> initContainerImageLists = new List<string>(){ };
+
+		private string defaultPacketOfAppGroup;
+
+		private bool? armsFlag;
 
 		public string DeployPacketUrl
 		{
@@ -92,19 +88,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			{
 				totalPartitions = value;
 				DictionaryUtil.Add(QueryParameters, "TotalPartitions", value.ToString());
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
@@ -134,6 +117,19 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			}
 		}
 
+		public string UpdateStrategyType
+		{
+			get
+			{
+				return updateStrategyType;
+			}
+			set	
+			{
+				updateStrategyType = value;
+				DictionaryUtil.Add(QueryParameters, "UpdateStrategyType", value);
+			}
+		}
+
 		public string PauseType
 		{
 			get
@@ -144,6 +140,79 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			{
 				pauseType = value;
 				DictionaryUtil.Add(QueryParameters, "PauseType", value);
+			}
+		}
+
+		public long? DeployPacketId
+		{
+			get
+			{
+				return deployPacketId;
+			}
+			set	
+			{
+				deployPacketId = value;
+				DictionaryUtil.Add(QueryParameters, "DeployPacketId", value.ToString());
+			}
+		}
+
+		public List<string> ContainerImageLists
+		{
+			get
+			{
+				return containerImageLists;
+			}
+
+			set
+			{
+				containerImageLists = value;
+				for (int i = 0; i < containerImageLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ContainerImageList." + (i + 1) , containerImageLists[i]);
+				}
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public List<string> InitContainerImageLists
+		{
+			get
+			{
+				return initContainerImageLists;
+			}
+
+			set
+			{
+				initContainerImageLists = value;
+				for (int i = 0; i < initContainerImageLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"InitContainerImageList." + (i + 1) , initContainerImageLists[i]);
+				}
+			}
+		}
+
+		public string DefaultPacketOfAppGroup
+		{
+			get
+			{
+				return defaultPacketOfAppGroup;
+			}
+			set	
+			{
+				defaultPacketOfAppGroup = value;
+				DictionaryUtil.Add(QueryParameters, "DefaultPacketOfAppGroup", value);
 			}
 		}
 

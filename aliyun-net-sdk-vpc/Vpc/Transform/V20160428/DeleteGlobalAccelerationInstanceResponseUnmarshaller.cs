@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DeleteGlobalAccelerationInstanceResponseUnmarshaller
     {
-        public static DeleteGlobalAccelerationInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteGlobalAccelerationInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteGlobalAccelerationInstanceResponse deleteGlobalAccelerationInstanceResponse = new DeleteGlobalAccelerationInstanceResponse();
 
-			deleteGlobalAccelerationInstanceResponse.HttpResponse = context.HttpResponse;
-			deleteGlobalAccelerationInstanceResponse.RequestId = context.StringValue("DeleteGlobalAccelerationInstance.RequestId");
+			deleteGlobalAccelerationInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			deleteGlobalAccelerationInstanceResponse.RequestId = _ctx.StringValue("DeleteGlobalAccelerationInstance.RequestId");
         
 			return deleteGlobalAccelerationInstanceResponse;
         }

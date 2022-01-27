@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,41 +25,45 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeNetworkInterfaceAttributeResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string networkInterfaceId;
-
-		private string status;
-
-		private string type;
+		private string creationTime;
 
 		private string vpcId;
 
+		private string type;
+
+		private string status;
+
+		private string networkInterfaceTrafficMode;
+
+		private string networkInterfaceName;
+
+		private string macAddress;
+
+		private int? queuePairNumber;
+
+		private string networkInterfaceId;
+
+		private long? serviceID;
+
+		private string instanceId;
+
+		private string ownerId;
+
+		private bool? serviceManaged;
+
 		private string vSwitchId;
+
+		private string requestId;
+
+		private string description;
+
+		private string resourceGroupId;
 
 		private string zoneId;
 
 		private string privateIpAddress;
 
-		private string macAddress;
-
-		private string networkInterfaceName;
-
-		private string description;
-
-		private string instanceId;
-
-		private string creationTime;
-
-		private string resourceGroupId;
-
-		private long? serviceID;
-
-		private bool? serviceManaged;
-
 		private int? queueNumber;
-
-		private string ownerId;
 
 		private List<DescribeNetworkInterfaceAttribute_PrivateIpSet> privateIpSets;
 
@@ -73,51 +77,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private DescribeNetworkInterfaceAttribute_Attachment attachment;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private DescribeNetworkInterfaceAttribute_BondInterfaceSpecification bondInterfaceSpecification;
 
-		public string NetworkInterfaceId
-		{
-			get
-			{
-				return networkInterfaceId;
-			}
-			set	
-			{
-				networkInterfaceId = value;
-			}
-		}
+		private DescribeNetworkInterfaceAttribute_SlaveInterfaceSpecification slaveInterfaceSpecification;
 
-		public string Status
+		public string CreationTime
 		{
 			get
 			{
-				return status;
+				return creationTime;
 			}
 			set	
 			{
-				status = value;
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
+				creationTime = value;
 			}
 		}
 
@@ -133,6 +105,138 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+			}
+		}
+
+		public string NetworkInterfaceTrafficMode
+		{
+			get
+			{
+				return networkInterfaceTrafficMode;
+			}
+			set	
+			{
+				networkInterfaceTrafficMode = value;
+			}
+		}
+
+		public string NetworkInterfaceName
+		{
+			get
+			{
+				return networkInterfaceName;
+			}
+			set	
+			{
+				networkInterfaceName = value;
+			}
+		}
+
+		public string MacAddress
+		{
+			get
+			{
+				return macAddress;
+			}
+			set	
+			{
+				macAddress = value;
+			}
+		}
+
+		public int? QueuePairNumber
+		{
+			get
+			{
+				return queuePairNumber;
+			}
+			set	
+			{
+				queuePairNumber = value;
+			}
+		}
+
+		public string NetworkInterfaceId
+		{
+			get
+			{
+				return networkInterfaceId;
+			}
+			set	
+			{
+				networkInterfaceId = value;
+			}
+		}
+
+		public long? ServiceID
+		{
+			get
+			{
+				return serviceID;
+			}
+			set	
+			{
+				serviceID = value;
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+			}
+		}
+
+		public string OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+			}
+		}
+
+		public bool? ServiceManaged
+		{
+			get
+			{
+				return serviceManaged;
+			}
+			set	
+			{
+				serviceManaged = value;
+			}
+		}
+
 		public string VSwitchId
 		{
 			get
@@ -142,6 +246,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				vSwitchId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
 			}
 		}
 
@@ -169,102 +309,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string MacAddress
-		{
-			get
-			{
-				return macAddress;
-			}
-			set	
-			{
-				macAddress = value;
-			}
-		}
-
-		public string NetworkInterfaceName
-		{
-			get
-			{
-				return networkInterfaceName;
-			}
-			set	
-			{
-				networkInterfaceName = value;
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
-
-		public string CreationTime
-		{
-			get
-			{
-				return creationTime;
-			}
-			set	
-			{
-				creationTime = value;
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-			}
-		}
-
-		public long? ServiceID
-		{
-			get
-			{
-				return serviceID;
-			}
-			set	
-			{
-				serviceID = value;
-			}
-		}
-
-		public bool? ServiceManaged
-		{
-			get
-			{
-				return serviceManaged;
-			}
-			set	
-			{
-				serviceManaged = value;
-			}
-		}
-
 		public int? QueueNumber
 		{
 			get
@@ -274,18 +318,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				queueNumber = value;
-			}
-		}
-
-		public string OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
 			}
 		}
 
@@ -358,6 +390,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				attachment = value;
+			}
+		}
+
+		public DescribeNetworkInterfaceAttribute_BondInterfaceSpecification BondInterfaceSpecification
+		{
+			get
+			{
+				return bondInterfaceSpecification;
+			}
+			set	
+			{
+				bondInterfaceSpecification = value;
+			}
+		}
+
+		public DescribeNetworkInterfaceAttribute_SlaveInterfaceSpecification SlaveInterfaceSpecification
+		{
+			get
+			{
+				return slaveInterfaceSpecification;
+			}
+			set	
+			{
+				slaveInterfaceSpecification = value;
 			}
 		}
 
@@ -460,21 +516,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeNetworkInterfaceAttribute_Tag
 		{
 
-			private string tagKey;
-
 			private string tagValue;
 
-			public string TagKey
-			{
-				get
-				{
-					return tagKey;
-				}
-				set	
-				{
-					tagKey = value;
-				}
-			}
+			private string tagKey;
 
 			public string TagValue
 			{
@@ -485,6 +529,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					tagValue = value;
+				}
+			}
+
+			public string TagKey
+			{
+				get
+				{
+					return tagKey;
+				}
+				set	
+				{
+					tagKey = value;
 				}
 			}
 		}
@@ -524,13 +580,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeNetworkInterfaceAttribute_Attachment
 		{
 
+			private int? deviceIndex;
+
 			private string instanceId;
 
 			private string trunkNetworkInterfaceId;
 
-			private int? deviceIndex;
-
 			private List<string> memberNetworkInterfaceIds;
+
+			public int? DeviceIndex
+			{
+				get
+				{
+					return deviceIndex;
+				}
+				set	
+				{
+					deviceIndex = value;
+				}
+			}
 
 			public string InstanceId
 			{
@@ -556,18 +624,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public int? DeviceIndex
-			{
-				get
-				{
-					return deviceIndex;
-				}
-				set	
-				{
-					deviceIndex = value;
-				}
-			}
-
 			public List<string> MemberNetworkInterfaceIds
 			{
 				get
@@ -577,6 +633,130 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					memberNetworkInterfaceIds = value;
+				}
+			}
+		}
+
+		public class DescribeNetworkInterfaceAttribute_BondInterfaceSpecification
+		{
+
+			private string bondMode;
+
+			private List<DescribeNetworkInterfaceAttribute_SlaveInterfaceSpecificationSet> slaveInterfaceSpecification2;
+
+			public string BondMode
+			{
+				get
+				{
+					return bondMode;
+				}
+				set	
+				{
+					bondMode = value;
+				}
+			}
+
+			public List<DescribeNetworkInterfaceAttribute_SlaveInterfaceSpecificationSet> SlaveInterfaceSpecification2
+			{
+				get
+				{
+					return slaveInterfaceSpecification2;
+				}
+				set	
+				{
+					slaveInterfaceSpecification2 = value;
+				}
+			}
+
+			public class DescribeNetworkInterfaceAttribute_SlaveInterfaceSpecificationSet
+			{
+
+				private string slaveNetworkInterfaceId;
+
+				private string workState;
+
+				private string bondNetworkInterfaceId;
+
+				public string SlaveNetworkInterfaceId
+				{
+					get
+					{
+						return slaveNetworkInterfaceId;
+					}
+					set	
+					{
+						slaveNetworkInterfaceId = value;
+					}
+				}
+
+				public string WorkState
+				{
+					get
+					{
+						return workState;
+					}
+					set	
+					{
+						workState = value;
+					}
+				}
+
+				public string BondNetworkInterfaceId
+				{
+					get
+					{
+						return bondNetworkInterfaceId;
+					}
+					set	
+					{
+						bondNetworkInterfaceId = value;
+					}
+				}
+			}
+		}
+
+		public class DescribeNetworkInterfaceAttribute_SlaveInterfaceSpecification
+		{
+
+			private string slaveNetworkInterfaceId;
+
+			private string workState;
+
+			private string bondNetworkInterfaceId;
+
+			public string SlaveNetworkInterfaceId
+			{
+				get
+				{
+					return slaveNetworkInterfaceId;
+				}
+				set	
+				{
+					slaveNetworkInterfaceId = value;
+				}
+			}
+
+			public string WorkState
+			{
+				get
+				{
+					return workState;
+				}
+				set	
+				{
+					workState = value;
+				}
+			}
+
+			public string BondNetworkInterfaceId
+			{
+				get
+				{
+					return bondNetworkInterfaceId;
+				}
+				set	
+				{
+					bondNetworkInterfaceId = value;
 				}
 			}
 		}

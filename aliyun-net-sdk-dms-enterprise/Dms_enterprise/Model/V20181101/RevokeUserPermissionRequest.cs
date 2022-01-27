@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class RevokeUserPermissionRequest : RpcAcsRequest<RevokeUserPermissionResponse>
     {
         public RevokeUserPermissionRequest()
-            : base("dms-enterprise", "2018-11-01", "RevokeUserPermission", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "RevokeUserPermission", "dms-enterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -51,6 +51,8 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private long? tid;
 
+		private long? instanceId;
+
 		private string dbId;
 
 		private string tableId;
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string tableName;
 
+		[JsonProperty(PropertyName = "PermTypes")]
 		public string PermTypes
 		{
 			get
@@ -72,6 +75,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserAccessId")]
 		public string UserAccessId
 		{
 			get
@@ -85,6 +89,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DsType")]
 		public string DsType
 		{
 			get
@@ -98,6 +103,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserId")]
 		public string UserId
 		{
 			get
@@ -111,6 +117,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -124,6 +131,21 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceId")]
+		public long? InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "DbId")]
 		public string DbId
 		{
 			get
@@ -137,6 +159,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "TableId")]
 		public string TableId
 		{
 			get
@@ -150,6 +173,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Logic")]
 		public bool? Logic
 		{
 			get
@@ -163,6 +187,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "TableName")]
 		public string TableName
 		{
 			get

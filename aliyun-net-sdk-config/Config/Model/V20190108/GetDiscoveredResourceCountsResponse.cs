@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Config.Model.V20190108
@@ -87,21 +87,9 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			public class GetDiscoveredResourceCounts_GroupedResourceCount
 			{
 
-				private string groupName;
-
 				private long? resourceCount;
 
-				public string GroupName
-				{
-					get
-					{
-						return groupName;
-					}
-					set	
-					{
-						groupName = value;
-					}
-				}
+				private string groupName;
 
 				public long? ResourceCount
 				{
@@ -112,6 +100,18 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					set	
 					{
 						resourceCount = value;
+					}
+				}
+
+				public string GroupName
+				{
+					get
+					{
+						return groupName;
+					}
+					set	
+					{
+						groupName = value;
 					}
 				}
 			}

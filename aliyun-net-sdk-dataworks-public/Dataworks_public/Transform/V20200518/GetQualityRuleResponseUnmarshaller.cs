@@ -26,40 +26,41 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetQualityRuleResponseUnmarshaller
     {
-        public static GetQualityRuleResponse Unmarshall(UnmarshallerContext context)
+        public static GetQualityRuleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetQualityRuleResponse getQualityRuleResponse = new GetQualityRuleResponse();
 
-			getQualityRuleResponse.HttpResponse = context.HttpResponse;
-			getQualityRuleResponse.Success = context.BooleanValue("GetQualityRule.Success");
-			getQualityRuleResponse.ErrorCode = context.StringValue("GetQualityRule.ErrorCode");
-			getQualityRuleResponse.ErrorMessage = context.StringValue("GetQualityRule.ErrorMessage");
-			getQualityRuleResponse.HttpStatusCode = context.IntegerValue("GetQualityRule.HttpStatusCode");
-			getQualityRuleResponse.RequestId = context.StringValue("GetQualityRule.RequestId");
+			getQualityRuleResponse.HttpResponse = _ctx.HttpResponse;
+			getQualityRuleResponse.HttpStatusCode = _ctx.IntegerValue("GetQualityRule.HttpStatusCode");
+			getQualityRuleResponse.RequestId = _ctx.StringValue("GetQualityRule.RequestId");
+			getQualityRuleResponse.ErrorMessage = _ctx.StringValue("GetQualityRule.ErrorMessage");
+			getQualityRuleResponse.ErrorCode = _ctx.StringValue("GetQualityRule.ErrorCode");
+			getQualityRuleResponse.Success = _ctx.BooleanValue("GetQualityRule.Success");
 
 			GetQualityRuleResponse.GetQualityRule_Data data = new GetQualityRuleResponse.GetQualityRule_Data();
-			data.Id = context.LongValue("GetQualityRule.Data.Id");
-			data.EntityId = context.LongValue("GetQualityRule.Data.EntityId");
-			data.Property = context.StringValue("GetQualityRule.Data.Property");
-			data.MethodId = context.IntegerValue("GetQualityRule.Data.MethodId");
-			data.MethodName = context.StringValue("GetQualityRule.Data.MethodName");
-			data.WhereCondition = context.StringValue("GetQualityRule.Data.WhereCondition");
-			data.OnDuty = context.StringValue("GetQualityRule.Data.OnDuty");
-			data.RuleType = context.IntegerValue("GetQualityRule.Data.RuleType");
-			data.BlockType = context.IntegerValue("GetQualityRule.Data.BlockType");
-			data.TemplateId = context.IntegerValue("GetQualityRule.Data.TemplateId");
-			data.TemplateName = context.StringValue("GetQualityRule.Data.TemplateName");
-			data.Comment = context.StringValue("GetQualityRule.Data.Comment");
-			data.RuleName = context.StringValue("GetQualityRule.Data.RuleName");
-			data.PredictType = context.IntegerValue("GetQualityRule.Data.PredictType");
-			data.WarningThreshold = context.StringValue("GetQualityRule.Data.WarningThreshold");
-			data.CriticalThreshold = context.StringValue("GetQualityRule.Data.CriticalThreshold");
-			data._Operator = context.StringValue("GetQualityRule.Data.Operator");
-			data.ExpectValue = context.StringValue("GetQualityRule.Data.ExpectValue");
-			data.Trend = context.StringValue("GetQualityRule.Data.Trend");
-			data.CheckerName = context.StringValue("GetQualityRule.Data.CheckerName");
-			data.Checker = context.IntegerValue("GetQualityRule.Data.Checker");
-			data.FixCheck = context.BooleanValue("GetQualityRule.Data.FixCheck");
+			data.BlockType = _ctx.IntegerValue("GetQualityRule.Data.BlockType");
+			data.OnDutyAccountName = _ctx.StringValue("GetQualityRule.Data.OnDutyAccountName");
+			data.WarningThreshold = _ctx.StringValue("GetQualityRule.Data.WarningThreshold");
+			data.Property = _ctx.StringValue("GetQualityRule.Data.Property");
+			data.RuleType = _ctx.IntegerValue("GetQualityRule.Data.RuleType");
+			data.Comment = _ctx.StringValue("GetQualityRule.Data.Comment");
+			data.OnDuty = _ctx.StringValue("GetQualityRule.Data.OnDuty");
+			data.Checker = _ctx.IntegerValue("GetQualityRule.Data.Checker");
+			data.FixCheck = _ctx.BooleanValue("GetQualityRule.Data.FixCheck");
+			data.MethodId = _ctx.IntegerValue("GetQualityRule.Data.MethodId");
+			data.CriticalThreshold = _ctx.StringValue("GetQualityRule.Data.CriticalThreshold");
+			data.PredictType = _ctx.IntegerValue("GetQualityRule.Data.PredictType");
+			data.TemplateName = _ctx.StringValue("GetQualityRule.Data.TemplateName");
+			data.CheckerName = _ctx.StringValue("GetQualityRule.Data.CheckerName");
+			data.RuleName = _ctx.StringValue("GetQualityRule.Data.RuleName");
+			data.MethodName = _ctx.StringValue("GetQualityRule.Data.MethodName");
+			data.EntityId = _ctx.LongValue("GetQualityRule.Data.EntityId");
+			data.WhereCondition = _ctx.StringValue("GetQualityRule.Data.WhereCondition");
+			data._Operator = _ctx.StringValue("GetQualityRule.Data.Operator");
+			data.ExpectValue = _ctx.StringValue("GetQualityRule.Data.ExpectValue");
+			data.Trend = _ctx.StringValue("GetQualityRule.Data.Trend");
+			data.TemplateId = _ctx.IntegerValue("GetQualityRule.Data.TemplateId");
+			data.Id = _ctx.LongValue("GetQualityRule.Data.Id");
 			getQualityRuleResponse.Data = data;
         
 			return getQualityRuleResponse;

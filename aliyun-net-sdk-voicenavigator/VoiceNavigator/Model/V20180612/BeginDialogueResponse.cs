@@ -25,37 +25,25 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 	public class BeginDialogueResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string textResponse;
+		private string action;
 
 		private bool? interruptible;
 
-		private string action;
+		private string requestId;
 
 		private string actionParams;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string textResponse;
 
-		public string TextResponse
+		public string Action
 		{
 			get
 			{
-				return textResponse;
+				return action;
 			}
 			set	
 			{
-				textResponse = value;
+				action = value;
 			}
 		}
 
@@ -71,15 +59,15 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
-		public string Action
+		public string RequestId
 		{
 			get
 			{
-				return action;
+				return requestId;
 			}
 			set	
 			{
-				action = value;
+				requestId = value;
 			}
 		}
 
@@ -92,6 +80,18 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			set	
 			{
 				actionParams = value;
+			}
+		}
+
+		public string TextResponse
+		{
+			get
+			{
+				return textResponse;
+			}
+			set	
+			{
+				textResponse = value;
 			}
 		}
 	}

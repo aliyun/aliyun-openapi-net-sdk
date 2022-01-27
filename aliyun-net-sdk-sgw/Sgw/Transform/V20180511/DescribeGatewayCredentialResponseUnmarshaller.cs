@@ -26,21 +26,21 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeGatewayCredentialResponseUnmarshaller
     {
-        public static DescribeGatewayCredentialResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGatewayCredentialResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGatewayCredentialResponse describeGatewayCredentialResponse = new DescribeGatewayCredentialResponse();
 
-			describeGatewayCredentialResponse.HttpResponse = context.HttpResponse;
-			describeGatewayCredentialResponse.RequestId = context.StringValue("DescribeGatewayCredential.RequestId");
-			describeGatewayCredentialResponse.Success = context.BooleanValue("DescribeGatewayCredential.Success");
-			describeGatewayCredentialResponse.Code = context.StringValue("DescribeGatewayCredential.Code");
-			describeGatewayCredentialResponse.Message = context.StringValue("DescribeGatewayCredential.Message");
-			describeGatewayCredentialResponse.EcsIp = context.StringValue("DescribeGatewayCredential.EcsIp");
-			describeGatewayCredentialResponse.EcsPassword = context.StringValue("DescribeGatewayCredential.EcsPassword");
-			describeGatewayCredentialResponse.ConsoleUsername = context.StringValue("DescribeGatewayCredential.ConsoleUsername");
-			describeGatewayCredentialResponse.ConsolePassword = context.StringValue("DescribeGatewayCredential.ConsolePassword");
-			describeGatewayCredentialResponse.VpcId = context.StringValue("DescribeGatewayCredential.VpcId");
-			describeGatewayCredentialResponse.VSwitchId = context.StringValue("DescribeGatewayCredential.VSwitchId");
+			describeGatewayCredentialResponse.HttpResponse = _ctx.HttpResponse;
+			describeGatewayCredentialResponse.VpcId = _ctx.StringValue("DescribeGatewayCredential.VpcId");
+			describeGatewayCredentialResponse.RequestId = _ctx.StringValue("DescribeGatewayCredential.RequestId");
+			describeGatewayCredentialResponse.Message = _ctx.StringValue("DescribeGatewayCredential.Message");
+			describeGatewayCredentialResponse.ConsoleUsername = _ctx.StringValue("DescribeGatewayCredential.ConsoleUsername");
+			describeGatewayCredentialResponse.VSwitchId = _ctx.StringValue("DescribeGatewayCredential.VSwitchId");
+			describeGatewayCredentialResponse.EcsIp = _ctx.StringValue("DescribeGatewayCredential.EcsIp");
+			describeGatewayCredentialResponse.ConsolePassword = _ctx.StringValue("DescribeGatewayCredential.ConsolePassword");
+			describeGatewayCredentialResponse.EcsPassword = _ctx.StringValue("DescribeGatewayCredential.EcsPassword");
+			describeGatewayCredentialResponse.Code = _ctx.StringValue("DescribeGatewayCredential.Code");
+			describeGatewayCredentialResponse.Success = _ctx.BooleanValue("DescribeGatewayCredential.Success");
         
 			return describeGatewayCredentialResponse;
         }

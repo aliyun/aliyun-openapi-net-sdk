@@ -40,6 +40,12 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				result_kibanaIPWhitelist.Add(_ctx.StringValue("UpdateKibanaWhiteIps.Result.KibanaIPWhitelist["+ i +"]"));
 			}
 			result.KibanaIPWhitelist = result_kibanaIPWhitelist;
+
+			List<string> result_kibanaPrivateIPWhitelist = new List<string>();
+			for (int i = 0; i < _ctx.Length("UpdateKibanaWhiteIps.Result.KibanaPrivateIPWhitelist.Length"); i++) {
+				result_kibanaPrivateIPWhitelist.Add(_ctx.StringValue("UpdateKibanaWhiteIps.Result.KibanaPrivateIPWhitelist["+ i +"]"));
+			}
+			result.KibanaPrivateIPWhitelist = result_kibanaPrivateIPWhitelist;
 			updateKibanaWhiteIpsResponse.Result = result;
         
 			return updateKibanaWhiteIpsResponse;

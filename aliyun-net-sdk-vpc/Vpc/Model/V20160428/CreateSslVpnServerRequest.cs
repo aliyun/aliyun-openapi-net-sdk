@@ -34,9 +34,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -44,6 +45,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private string clientToken;
 
 		private string localSubnet;
+
+		private string iDaaSRegionId;
 
 		private bool? enableMultiFactorAuth;
 
@@ -105,6 +108,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				localSubnet = value;
 				DictionaryUtil.Add(QueryParameters, "LocalSubnet", value);
+			}
+		}
+
+		public string IDaaSRegionId
+		{
+			get
+			{
+				return iDaaSRegionId;
+			}
+			set	
+			{
+				iDaaSRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "IDaaSRegionId", value);
 			}
 		}
 

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class DeleteConnectionResponseUnmarshaller
     {
-        public static DeleteConnectionResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteConnectionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteConnectionResponse deleteConnectionResponse = new DeleteConnectionResponse();
 
-			deleteConnectionResponse.HttpResponse = context.HttpResponse;
-			deleteConnectionResponse.Success = context.BooleanValue("DeleteConnection.Success");
-			deleteConnectionResponse.HttpStatusCode = context.StringValue("DeleteConnection.HttpStatusCode");
-			deleteConnectionResponse.Data = context.BooleanValue("DeleteConnection.Data");
-			deleteConnectionResponse.RequestId = context.StringValue("DeleteConnection.RequestId");
+			deleteConnectionResponse.HttpResponse = _ctx.HttpResponse;
+			deleteConnectionResponse.Success = _ctx.BooleanValue("DeleteConnection.Success");
+			deleteConnectionResponse.HttpStatusCode = _ctx.StringValue("DeleteConnection.HttpStatusCode");
+			deleteConnectionResponse.Data = _ctx.BooleanValue("DeleteConnection.Data");
+			deleteConnectionResponse.RequestId = _ctx.StringValue("DeleteConnection.RequestId");
         
 			return deleteConnectionResponse;
         }

@@ -26,16 +26,17 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class CheckBlockVolumeNameResponseUnmarshaller
     {
-        public static CheckBlockVolumeNameResponse Unmarshall(UnmarshallerContext context)
+        public static CheckBlockVolumeNameResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckBlockVolumeNameResponse checkBlockVolumeNameResponse = new CheckBlockVolumeNameResponse();
 
-			checkBlockVolumeNameResponse.HttpResponse = context.HttpResponse;
-			checkBlockVolumeNameResponse.RequestId = context.StringValue("CheckBlockVolumeName.RequestId");
-			checkBlockVolumeNameResponse.Success = context.BooleanValue("CheckBlockVolumeName.Success");
-			checkBlockVolumeNameResponse.Code = context.StringValue("CheckBlockVolumeName.Code");
-			checkBlockVolumeNameResponse.Message = context.StringValue("CheckBlockVolumeName.Message");
-			checkBlockVolumeNameResponse.IsRequireRecovery = context.StringValue("CheckBlockVolumeName.IsRequireRecovery");
+			checkBlockVolumeNameResponse.HttpResponse = _ctx.HttpResponse;
+			checkBlockVolumeNameResponse.IsRequireRecovery = _ctx.StringValue("CheckBlockVolumeName.IsRequireRecovery");
+			checkBlockVolumeNameResponse.Message = _ctx.StringValue("CheckBlockVolumeName.Message");
+			checkBlockVolumeNameResponse.RequestId = _ctx.StringValue("CheckBlockVolumeName.RequestId");
+			checkBlockVolumeNameResponse.Code = _ctx.StringValue("CheckBlockVolumeName.Code");
+			checkBlockVolumeNameResponse.Success = _ctx.BooleanValue("CheckBlockVolumeName.Success");
+			checkBlockVolumeNameResponse.IsAlreadyExist = _ctx.BooleanValue("CheckBlockVolumeName.IsAlreadyExist");
         
 			return checkBlockVolumeNameResponse;
         }

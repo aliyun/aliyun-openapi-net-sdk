@@ -26,24 +26,24 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class ListAppInfoResponseUnmarshaller
     {
-        public static ListAppInfoResponse Unmarshall(UnmarshallerContext context)
+        public static ListAppInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListAppInfoResponse listAppInfoResponse = new ListAppInfoResponse();
 
-			listAppInfoResponse.HttpResponse = context.HttpResponse;
-			listAppInfoResponse.RequestId = context.StringValue("ListAppInfo.RequestId");
-			listAppInfoResponse.Total = context.IntegerValue("ListAppInfo.Total");
+			listAppInfoResponse.HttpResponse = _ctx.HttpResponse;
+			listAppInfoResponse.RequestId = _ctx.StringValue("ListAppInfo.RequestId");
+			listAppInfoResponse.Total = _ctx.IntegerValue("ListAppInfo.Total");
 
 			List<ListAppInfoResponse.ListAppInfo_AppInfo> listAppInfoResponse_appInfoList = new List<ListAppInfoResponse.ListAppInfo_AppInfo>();
-			for (int i = 0; i < context.Length("ListAppInfo.AppInfoList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListAppInfo.AppInfoList.Length"); i++) {
 				ListAppInfoResponse.ListAppInfo_AppInfo appInfo = new ListAppInfoResponse.ListAppInfo_AppInfo();
-				appInfo.AppId = context.StringValue("ListAppInfo.AppInfoList["+ i +"].AppId");
-				appInfo.AppName = context.StringValue("ListAppInfo.AppInfoList["+ i +"].AppName");
-				appInfo.Type = context.StringValue("ListAppInfo.AppInfoList["+ i +"].Type");
-				appInfo.Description = context.StringValue("ListAppInfo.AppInfoList["+ i +"].Description");
-				appInfo.Status = context.StringValue("ListAppInfo.AppInfoList["+ i +"].Status");
-				appInfo.CreationTime = context.StringValue("ListAppInfo.AppInfoList["+ i +"].CreationTime");
-				appInfo.ModificationTime = context.StringValue("ListAppInfo.AppInfoList["+ i +"].ModificationTime");
+				appInfo.AppId = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].AppId");
+				appInfo.AppName = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].AppName");
+				appInfo.Type = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].Type");
+				appInfo.Description = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].Description");
+				appInfo.Status = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].Status");
+				appInfo.CreationTime = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].CreationTime");
+				appInfo.ModificationTime = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].ModificationTime");
 
 				listAppInfoResponse_appInfoList.Add(appInfo);
 			}

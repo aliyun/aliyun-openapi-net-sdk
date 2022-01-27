@@ -26,43 +26,43 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 {
     public class DescribeVerifyResultResponseUnmarshaller
     {
-        public static DescribeVerifyResultResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVerifyResultResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVerifyResultResponse describeVerifyResultResponse = new DescribeVerifyResultResponse();
 
-			describeVerifyResultResponse.HttpResponse = context.HttpResponse;
-			describeVerifyResultResponse.RequestId = context.StringValue("DescribeVerifyResult.RequestId");
-			describeVerifyResultResponse.VerifyStatus = context.IntegerValue("DescribeVerifyResult.VerifyStatus");
-			describeVerifyResultResponse.AuthorityComparisionScore = context.FloatValue("DescribeVerifyResult.AuthorityComparisionScore");
-			describeVerifyResultResponse.FaceComparisonScore = context.FloatValue("DescribeVerifyResult.FaceComparisonScore");
-			describeVerifyResultResponse.IdCardFaceComparisonScore = context.FloatValue("DescribeVerifyResult.IdCardFaceComparisonScore");
+			describeVerifyResultResponse.HttpResponse = _ctx.HttpResponse;
+			describeVerifyResultResponse.AuthorityComparisionScore = _ctx.FloatValue("DescribeVerifyResult.AuthorityComparisionScore");
+			describeVerifyResultResponse.VerifyStatus = _ctx.IntegerValue("DescribeVerifyResult.VerifyStatus");
+			describeVerifyResultResponse.RequestId = _ctx.StringValue("DescribeVerifyResult.RequestId");
+			describeVerifyResultResponse.FaceComparisonScore = _ctx.FloatValue("DescribeVerifyResult.FaceComparisonScore");
+			describeVerifyResultResponse.IdCardFaceComparisonScore = _ctx.FloatValue("DescribeVerifyResult.IdCardFaceComparisonScore");
 
 			DescribeVerifyResultResponse.DescribeVerifyResult_Material material = new DescribeVerifyResultResponse.DescribeVerifyResult_Material();
-			material.FaceImageUrl = context.StringValue("DescribeVerifyResult.Material.FaceImageUrl");
-			material.IdCardName = context.StringValue("DescribeVerifyResult.Material.IdCardName");
-			material.IdCardNumber = context.StringValue("DescribeVerifyResult.Material.IdCardNumber");
-			material.FaceQuality = context.StringValue("DescribeVerifyResult.Material.FaceQuality");
-			material.FaceGlobalUrl = context.StringValue("DescribeVerifyResult.Material.FaceGlobalUrl");
-			material.FaceMask = context.BooleanValue("DescribeVerifyResult.Material.FaceMask");
+			material.IdCardNumber = _ctx.StringValue("DescribeVerifyResult.Material.IdCardNumber");
+			material.FaceGlobalUrl = _ctx.StringValue("DescribeVerifyResult.Material.FaceGlobalUrl");
+			material.FaceImageUrl = _ctx.StringValue("DescribeVerifyResult.Material.FaceImageUrl");
+			material.FaceMask = _ctx.BooleanValue("DescribeVerifyResult.Material.FaceMask");
+			material.IdCardName = _ctx.StringValue("DescribeVerifyResult.Material.IdCardName");
+			material.FaceQuality = _ctx.StringValue("DescribeVerifyResult.Material.FaceQuality");
 
 			List<string> material_videoUrls = new List<string>();
-			for (int i = 0; i < context.Length("DescribeVerifyResult.Material.VideoUrls.Length"); i++) {
-				material_videoUrls.Add(context.StringValue("DescribeVerifyResult.Material.VideoUrls["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeVerifyResult.Material.VideoUrls.Length"); i++) {
+				material_videoUrls.Add(_ctx.StringValue("DescribeVerifyResult.Material.VideoUrls["+ i +"]"));
 			}
 			material.VideoUrls = material_videoUrls;
 
 			DescribeVerifyResultResponse.DescribeVerifyResult_Material.DescribeVerifyResult_IdCardInfo idCardInfo = new DescribeVerifyResultResponse.DescribeVerifyResult_Material.DescribeVerifyResult_IdCardInfo();
-			idCardInfo.Number = context.StringValue("DescribeVerifyResult.Material.IdCardInfo.Number");
-			idCardInfo.Address = context.StringValue("DescribeVerifyResult.Material.IdCardInfo.Address");
-			idCardInfo.Nationality = context.StringValue("DescribeVerifyResult.Material.IdCardInfo.Nationality");
-			idCardInfo.EndDate = context.StringValue("DescribeVerifyResult.Material.IdCardInfo.EndDate");
-			idCardInfo.FrontImageUrl = context.StringValue("DescribeVerifyResult.Material.IdCardInfo.FrontImageUrl");
-			idCardInfo.Authority = context.StringValue("DescribeVerifyResult.Material.IdCardInfo.Authority");
-			idCardInfo.Sex = context.StringValue("DescribeVerifyResult.Material.IdCardInfo.Sex");
-			idCardInfo.Name = context.StringValue("DescribeVerifyResult.Material.IdCardInfo.Name");
-			idCardInfo.Birth = context.StringValue("DescribeVerifyResult.Material.IdCardInfo.Birth");
-			idCardInfo.BackImageUrl = context.StringValue("DescribeVerifyResult.Material.IdCardInfo.BackImageUrl");
-			idCardInfo.StartDate = context.StringValue("DescribeVerifyResult.Material.IdCardInfo.StartDate");
+			idCardInfo.Sex = _ctx.StringValue("DescribeVerifyResult.Material.IdCardInfo.Sex");
+			idCardInfo.EndDate = _ctx.StringValue("DescribeVerifyResult.Material.IdCardInfo.EndDate");
+			idCardInfo.Authority = _ctx.StringValue("DescribeVerifyResult.Material.IdCardInfo.Authority");
+			idCardInfo.Address = _ctx.StringValue("DescribeVerifyResult.Material.IdCardInfo.Address");
+			idCardInfo.Number = _ctx.StringValue("DescribeVerifyResult.Material.IdCardInfo.Number");
+			idCardInfo.StartDate = _ctx.StringValue("DescribeVerifyResult.Material.IdCardInfo.StartDate");
+			idCardInfo.BackImageUrl = _ctx.StringValue("DescribeVerifyResult.Material.IdCardInfo.BackImageUrl");
+			idCardInfo.Nationality = _ctx.StringValue("DescribeVerifyResult.Material.IdCardInfo.Nationality");
+			idCardInfo.Birth = _ctx.StringValue("DescribeVerifyResult.Material.IdCardInfo.Birth");
+			idCardInfo.Name = _ctx.StringValue("DescribeVerifyResult.Material.IdCardInfo.Name");
+			idCardInfo.FrontImageUrl = _ctx.StringValue("DescribeVerifyResult.Material.IdCardInfo.FrontImageUrl");
 			material.IdCardInfo = idCardInfo;
 			describeVerifyResultResponse.Material = material;
         

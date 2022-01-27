@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryEdgeInstanceGatewayResponseUnmarshaller
     {
-        public static QueryEdgeInstanceGatewayResponse Unmarshall(UnmarshallerContext context)
+        public static QueryEdgeInstanceGatewayResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryEdgeInstanceGatewayResponse queryEdgeInstanceGatewayResponse = new QueryEdgeInstanceGatewayResponse();
 
-			queryEdgeInstanceGatewayResponse.HttpResponse = context.HttpResponse;
-			queryEdgeInstanceGatewayResponse.RequestId = context.StringValue("QueryEdgeInstanceGateway.RequestId");
-			queryEdgeInstanceGatewayResponse.Success = context.BooleanValue("QueryEdgeInstanceGateway.Success");
-			queryEdgeInstanceGatewayResponse.Code = context.StringValue("QueryEdgeInstanceGateway.Code");
-			queryEdgeInstanceGatewayResponse.ErrorMessage = context.StringValue("QueryEdgeInstanceGateway.ErrorMessage");
+			queryEdgeInstanceGatewayResponse.HttpResponse = _ctx.HttpResponse;
+			queryEdgeInstanceGatewayResponse.RequestId = _ctx.StringValue("QueryEdgeInstanceGateway.RequestId");
+			queryEdgeInstanceGatewayResponse.Success = _ctx.BooleanValue("QueryEdgeInstanceGateway.Success");
+			queryEdgeInstanceGatewayResponse.Code = _ctx.StringValue("QueryEdgeInstanceGateway.Code");
+			queryEdgeInstanceGatewayResponse.ErrorMessage = _ctx.StringValue("QueryEdgeInstanceGateway.ErrorMessage");
 
 			List<QueryEdgeInstanceGatewayResponse.QueryEdgeInstanceGateway_Gateway> queryEdgeInstanceGatewayResponse_gatewayList = new List<QueryEdgeInstanceGatewayResponse.QueryEdgeInstanceGateway_Gateway>();
-			for (int i = 0; i < context.Length("QueryEdgeInstanceGateway.GatewayList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryEdgeInstanceGateway.GatewayList.Length"); i++) {
 				QueryEdgeInstanceGatewayResponse.QueryEdgeInstanceGateway_Gateway gateway = new QueryEdgeInstanceGatewayResponse.QueryEdgeInstanceGateway_Gateway();
-				gateway.ProductKey = context.StringValue("QueryEdgeInstanceGateway.GatewayList["+ i +"].ProductKey");
-				gateway.DeviceName = context.StringValue("QueryEdgeInstanceGateway.GatewayList["+ i +"].DeviceName");
-				gateway.IotId = context.StringValue("QueryEdgeInstanceGateway.GatewayList["+ i +"].IotId");
-				gateway.EdgeVersion = context.StringValue("QueryEdgeInstanceGateway.GatewayList["+ i +"].EdgeVersion");
+				gateway.ProductKey = _ctx.StringValue("QueryEdgeInstanceGateway.GatewayList["+ i +"].ProductKey");
+				gateway.DeviceName = _ctx.StringValue("QueryEdgeInstanceGateway.GatewayList["+ i +"].DeviceName");
+				gateway.IotId = _ctx.StringValue("QueryEdgeInstanceGateway.GatewayList["+ i +"].IotId");
+				gateway.EdgeVersion = _ctx.StringValue("QueryEdgeInstanceGateway.GatewayList["+ i +"].EdgeVersion");
 
 				queryEdgeInstanceGatewayResponse_gatewayList.Add(gateway);
 			}

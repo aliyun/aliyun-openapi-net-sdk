@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 {
     public class BindTagResponseUnmarshaller
     {
-        public static BindTagResponse Unmarshall(UnmarshallerContext context)
+        public static BindTagResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BindTagResponse bindTagResponse = new BindTagResponse();
 
-			bindTagResponse.HttpResponse = context.HttpResponse;
-			bindTagResponse.RequestId = context.StringValue("BindTag.RequestId");
+			bindTagResponse.HttpResponse = _ctx.HttpResponse;
+			bindTagResponse.RequestId = _ctx.StringValue("BindTag.RequestId");
         
 			return bindTagResponse;
         }

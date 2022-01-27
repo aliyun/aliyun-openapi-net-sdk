@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 {
     public class OnsMqttGroupIdDeleteResponseUnmarshaller
     {
-        public static OnsMqttGroupIdDeleteResponse Unmarshall(UnmarshallerContext context)
+        public static OnsMqttGroupIdDeleteResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			OnsMqttGroupIdDeleteResponse onsMqttGroupIdDeleteResponse = new OnsMqttGroupIdDeleteResponse();
 
-			onsMqttGroupIdDeleteResponse.HttpResponse = context.HttpResponse;
-			onsMqttGroupIdDeleteResponse.RequestId = context.StringValue("OnsMqttGroupIdDelete.RequestId");
-			onsMqttGroupIdDeleteResponse.HelpUrl = context.StringValue("OnsMqttGroupIdDelete.HelpUrl");
+			onsMqttGroupIdDeleteResponse.HttpResponse = _ctx.HttpResponse;
+			onsMqttGroupIdDeleteResponse.RequestId = _ctx.StringValue("OnsMqttGroupIdDelete.RequestId");
+			onsMqttGroupIdDeleteResponse.HelpUrl = _ctx.StringValue("OnsMqttGroupIdDelete.HelpUrl");
         
 			return onsMqttGroupIdDeleteResponse;
         }

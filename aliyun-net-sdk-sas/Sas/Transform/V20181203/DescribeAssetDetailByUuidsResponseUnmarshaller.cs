@@ -26,29 +26,31 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeAssetDetailByUuidsResponseUnmarshaller
     {
-        public static DescribeAssetDetailByUuidsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAssetDetailByUuidsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAssetDetailByUuidsResponse describeAssetDetailByUuidsResponse = new DescribeAssetDetailByUuidsResponse();
 
-			describeAssetDetailByUuidsResponse.HttpResponse = context.HttpResponse;
-			describeAssetDetailByUuidsResponse.RequestId = context.StringValue("DescribeAssetDetailByUuids.RequestId");
+			describeAssetDetailByUuidsResponse.HttpResponse = _ctx.HttpResponse;
+			describeAssetDetailByUuidsResponse.RequestId = _ctx.StringValue("DescribeAssetDetailByUuids.RequestId");
 
 			List<DescribeAssetDetailByUuidsResponse.DescribeAssetDetailByUuids_Asset> describeAssetDetailByUuidsResponse_assetList = new List<DescribeAssetDetailByUuidsResponse.DescribeAssetDetailByUuids_Asset>();
-			for (int i = 0; i < context.Length("DescribeAssetDetailByUuids.AssetList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeAssetDetailByUuids.AssetList.Length"); i++) {
 				DescribeAssetDetailByUuidsResponse.DescribeAssetDetailByUuids_Asset asset = new DescribeAssetDetailByUuidsResponse.DescribeAssetDetailByUuids_Asset();
-				asset.InternetIp = context.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].InternetIp");
-				asset.IntranetIp = context.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].IntranetIp");
-				asset.InstanceName = context.IntegerValue("DescribeAssetDetailByUuids.AssetList["+ i +"].InstanceName");
-				asset.InstanceId = context.IntegerValue("DescribeAssetDetailByUuids.AssetList["+ i +"].InstanceId");
-				asset.Ip = context.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].Ip");
-				asset.Uuid = context.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].Uuid");
-				asset.AssetType = context.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].AssetType");
-				asset.Os = context.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].Os");
-				asset.ClientStatus = context.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].ClientStatus");
-				asset.Region = context.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].Region");
-				asset.RegionName = context.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].RegionName");
-				asset.VpcInstanceId = context.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].VpcInstanceId");
-				asset.OsName = context.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].OsName");
+				asset.InternetIp = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].InternetIp");
+				asset.IntranetIp = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].IntranetIp");
+				asset.InstanceName = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].InstanceName");
+				asset.InstanceId = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].InstanceId");
+				asset.Ip = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].Ip");
+				asset.Uuid = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].Uuid");
+				asset.AssetType = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].AssetType");
+				asset.Os = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].Os");
+				asset.ClientStatus = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].ClientStatus");
+				asset.RegionId = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].RegionId");
+				asset.Region = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].Region");
+				asset.RegionName = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].RegionName");
+				asset.VpcInstanceId = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].VpcInstanceId");
+				asset.OsName = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].OsName");
+				asset.Flag = _ctx.IntegerValue("DescribeAssetDetailByUuids.AssetList["+ i +"].Flag");
 
 				describeAssetDetailByUuidsResponse_assetList.Add(asset);
 			}

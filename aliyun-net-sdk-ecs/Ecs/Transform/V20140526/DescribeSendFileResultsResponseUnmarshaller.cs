@@ -26,44 +26,44 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DescribeSendFileResultsResponseUnmarshaller
     {
-        public static DescribeSendFileResultsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSendFileResultsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSendFileResultsResponse describeSendFileResultsResponse = new DescribeSendFileResultsResponse();
 
-			describeSendFileResultsResponse.HttpResponse = context.HttpResponse;
-			describeSendFileResultsResponse.RequestId = context.StringValue("DescribeSendFileResults.RequestId");
-			describeSendFileResultsResponse.TotalCount = context.LongValue("DescribeSendFileResults.TotalCount");
-			describeSendFileResultsResponse.PageNumber = context.LongValue("DescribeSendFileResults.PageNumber");
-			describeSendFileResultsResponse.PageSize = context.LongValue("DescribeSendFileResults.PageSize");
+			describeSendFileResultsResponse.HttpResponse = _ctx.HttpResponse;
+			describeSendFileResultsResponse.PageSize = _ctx.LongValue("DescribeSendFileResults.PageSize");
+			describeSendFileResultsResponse.RequestId = _ctx.StringValue("DescribeSendFileResults.RequestId");
+			describeSendFileResultsResponse.PageNumber = _ctx.LongValue("DescribeSendFileResults.PageNumber");
+			describeSendFileResultsResponse.TotalCount = _ctx.LongValue("DescribeSendFileResults.TotalCount");
 
 			List<DescribeSendFileResultsResponse.DescribeSendFileResults_Invocation> describeSendFileResultsResponse_invocations = new List<DescribeSendFileResultsResponse.DescribeSendFileResults_Invocation>();
-			for (int i = 0; i < context.Length("DescribeSendFileResults.Invocations.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeSendFileResults.Invocations.Length"); i++) {
 				DescribeSendFileResultsResponse.DescribeSendFileResults_Invocation invocation = new DescribeSendFileResultsResponse.DescribeSendFileResults_Invocation();
-				invocation.InvokeId = context.StringValue("DescribeSendFileResults.Invocations["+ i +"].InvokeId");
-				invocation.Name = context.StringValue("DescribeSendFileResults.Invocations["+ i +"].Name");
-				invocation.Description = context.StringValue("DescribeSendFileResults.Invocations["+ i +"].Description");
-				invocation.TargetDir = context.StringValue("DescribeSendFileResults.Invocations["+ i +"].TargetDir");
-				invocation.ContentType = context.StringValue("DescribeSendFileResults.Invocations["+ i +"].ContentType");
-				invocation.Content = context.StringValue("DescribeSendFileResults.Invocations["+ i +"].Content");
-				invocation.FileOwner = context.StringValue("DescribeSendFileResults.Invocations["+ i +"].FileOwner");
-				invocation.FileGroup = context.StringValue("DescribeSendFileResults.Invocations["+ i +"].FileGroup");
-				invocation.FileMode = context.StringValue("DescribeSendFileResults.Invocations["+ i +"].FileMode");
-				invocation.Overwrite = context.StringValue("DescribeSendFileResults.Invocations["+ i +"].Overwrite");
-				invocation.VmCount = context.IntegerValue("DescribeSendFileResults.Invocations["+ i +"].VmCount");
-				invocation.CreationTime = context.StringValue("DescribeSendFileResults.Invocations["+ i +"].CreationTime");
-				invocation.InvocationStatus = context.StringValue("DescribeSendFileResults.Invocations["+ i +"].InvocationStatus");
+				invocation.CreationTime = _ctx.StringValue("DescribeSendFileResults.Invocations["+ i +"].CreationTime");
+				invocation.InvocationStatus = _ctx.StringValue("DescribeSendFileResults.Invocations["+ i +"].InvocationStatus");
+				invocation.ContentType = _ctx.StringValue("DescribeSendFileResults.Invocations["+ i +"].ContentType");
+				invocation.TargetDir = _ctx.StringValue("DescribeSendFileResults.Invocations["+ i +"].TargetDir");
+				invocation.FileOwner = _ctx.StringValue("DescribeSendFileResults.Invocations["+ i +"].FileOwner");
+				invocation.Description = _ctx.StringValue("DescribeSendFileResults.Invocations["+ i +"].Description");
+				invocation.VmCount = _ctx.IntegerValue("DescribeSendFileResults.Invocations["+ i +"].VmCount");
+				invocation.FileMode = _ctx.StringValue("DescribeSendFileResults.Invocations["+ i +"].FileMode");
+				invocation.FileGroup = _ctx.StringValue("DescribeSendFileResults.Invocations["+ i +"].FileGroup");
+				invocation.InvokeId = _ctx.StringValue("DescribeSendFileResults.Invocations["+ i +"].InvokeId");
+				invocation.Name = _ctx.StringValue("DescribeSendFileResults.Invocations["+ i +"].Name");
+				invocation.Content = _ctx.StringValue("DescribeSendFileResults.Invocations["+ i +"].Content");
+				invocation.Overwrite = _ctx.StringValue("DescribeSendFileResults.Invocations["+ i +"].Overwrite");
 
 				List<DescribeSendFileResultsResponse.DescribeSendFileResults_Invocation.DescribeSendFileResults_InvokeInstance> invocation_invokeInstances = new List<DescribeSendFileResultsResponse.DescribeSendFileResults_Invocation.DescribeSendFileResults_InvokeInstance>();
-				for (int j = 0; j < context.Length("DescribeSendFileResults.Invocations["+ i +"].InvokeInstances.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeSendFileResults.Invocations["+ i +"].InvokeInstances.Length"); j++) {
 					DescribeSendFileResultsResponse.DescribeSendFileResults_Invocation.DescribeSendFileResults_InvokeInstance invokeInstance = new DescribeSendFileResultsResponse.DescribeSendFileResults_Invocation.DescribeSendFileResults_InvokeInstance();
-					invokeInstance.InstanceId = context.StringValue("DescribeSendFileResults.Invocations["+ i +"].InvokeInstances["+ j +"].InstanceId");
-					invokeInstance.InvocationStatus = context.StringValue("DescribeSendFileResults.Invocations["+ i +"].InvokeInstances["+ j +"].InvocationStatus");
-					invokeInstance.CreationTime = context.StringValue("DescribeSendFileResults.Invocations["+ i +"].InvokeInstances["+ j +"].CreationTime");
-					invokeInstance.StartTime = context.StringValue("DescribeSendFileResults.Invocations["+ i +"].InvokeInstances["+ j +"].StartTime");
-					invokeInstance.FinishTime = context.StringValue("DescribeSendFileResults.Invocations["+ i +"].InvokeInstances["+ j +"].FinishTime");
-					invokeInstance.UpdateTime = context.StringValue("DescribeSendFileResults.Invocations["+ i +"].InvokeInstances["+ j +"].UpdateTime");
-					invokeInstance.ErrorCode = context.StringValue("DescribeSendFileResults.Invocations["+ i +"].InvokeInstances["+ j +"].ErrorCode");
-					invokeInstance.ErrorInfo = context.StringValue("DescribeSendFileResults.Invocations["+ i +"].InvokeInstances["+ j +"].ErrorInfo");
+					invokeInstance.CreationTime = _ctx.StringValue("DescribeSendFileResults.Invocations["+ i +"].InvokeInstances["+ j +"].CreationTime");
+					invokeInstance.StartTime = _ctx.StringValue("DescribeSendFileResults.Invocations["+ i +"].InvokeInstances["+ j +"].StartTime");
+					invokeInstance.InvocationStatus = _ctx.StringValue("DescribeSendFileResults.Invocations["+ i +"].InvokeInstances["+ j +"].InvocationStatus");
+					invokeInstance.FinishTime = _ctx.StringValue("DescribeSendFileResults.Invocations["+ i +"].InvokeInstances["+ j +"].FinishTime");
+					invokeInstance.UpdateTime = _ctx.StringValue("DescribeSendFileResults.Invocations["+ i +"].InvokeInstances["+ j +"].UpdateTime");
+					invokeInstance.ErrorInfo = _ctx.StringValue("DescribeSendFileResults.Invocations["+ i +"].InvokeInstances["+ j +"].ErrorInfo");
+					invokeInstance.ErrorCode = _ctx.StringValue("DescribeSendFileResults.Invocations["+ i +"].InvokeInstances["+ j +"].ErrorCode");
+					invokeInstance.InstanceId = _ctx.StringValue("DescribeSendFileResults.Invocations["+ i +"].InvokeInstances["+ j +"].InstanceId");
 
 					invocation_invokeInstances.Add(invokeInstance);
 				}

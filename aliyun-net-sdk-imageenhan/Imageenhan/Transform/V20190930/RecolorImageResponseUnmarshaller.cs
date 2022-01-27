@@ -26,18 +26,18 @@ namespace Aliyun.Acs.imageenhan.Transform.V20190930
 {
     public class RecolorImageResponseUnmarshaller
     {
-        public static RecolorImageResponse Unmarshall(UnmarshallerContext context)
+        public static RecolorImageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RecolorImageResponse recolorImageResponse = new RecolorImageResponse();
 
-			recolorImageResponse.HttpResponse = context.HttpResponse;
-			recolorImageResponse.RequestId = context.StringValue("RecolorImage.RequestId");
+			recolorImageResponse.HttpResponse = _ctx.HttpResponse;
+			recolorImageResponse.RequestId = _ctx.StringValue("RecolorImage.RequestId");
 
 			RecolorImageResponse.RecolorImage_Data data = new RecolorImageResponse.RecolorImage_Data();
 
 			List<string> data_imageList = new List<string>();
-			for (int i = 0; i < context.Length("RecolorImage.Data.ImageList.Length"); i++) {
-				data_imageList.Add(context.StringValue("RecolorImage.Data.ImageList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("RecolorImage.Data.ImageList.Length"); i++) {
+				data_imageList.Add(_ctx.StringValue("RecolorImage.Data.ImageList["+ i +"]"));
 			}
 			data.ImageList = data_imageList;
 			recolorImageResponse.Data = data;

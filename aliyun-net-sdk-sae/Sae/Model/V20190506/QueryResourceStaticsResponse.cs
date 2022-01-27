@@ -25,41 +25,29 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class QueryResourceStaticsResponse : AcsResponse
 	{
 
-		private string code;
-
-		private string errorCode;
+		private string requestId;
 
 		private string message;
 
-		private bool? success;
-
 		private string traceId;
 
-		private string requestId;
+		private string errorCode;
+
+		private string code;
+
+		private bool? success;
 
 		private QueryResourceStatics_Data data;
 
-		public string Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				requestId = value;
 			}
 		}
 
@@ -75,18 +63,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
 		public string TraceId
 		{
 			get
@@ -99,15 +75,39 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string RequestId
+		public string ErrorCode
 		{
 			get
 			{
-				return requestId;
+				return errorCode;
 			}
 			set	
 			{
-				requestId = value;
+				errorCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -126,19 +126,21 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class QueryResourceStatics_Data
 		{
 
-			private QueryResourceStatics_RealTimeRes realTimeRes;
+			private string workload;
 
 			private QueryResourceStatics_Summary summary;
 
-			public QueryResourceStatics_RealTimeRes RealTimeRes
+			private QueryResourceStatics_RealTimeRes realTimeRes;
+
+			public string Workload
 			{
 				get
 				{
-					return realTimeRes;
+					return workload;
 				}
 				set	
 				{
-					realTimeRes = value;
+					workload = value;
 				}
 			}
 
@@ -154,7 +156,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public class QueryResourceStatics_RealTimeRes
+			public QueryResourceStatics_RealTimeRes RealTimeRes
+			{
+				get
+				{
+					return realTimeRes;
+				}
+				set	
+				{
+					realTimeRes = value;
+				}
+			}
+
+			public class QueryResourceStatics_Summary
 			{
 
 				private float? cpu;
@@ -186,7 +200,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public class QueryResourceStatics_Summary
+			public class QueryResourceStatics_RealTimeRes
 			{
 
 				private float? cpu;

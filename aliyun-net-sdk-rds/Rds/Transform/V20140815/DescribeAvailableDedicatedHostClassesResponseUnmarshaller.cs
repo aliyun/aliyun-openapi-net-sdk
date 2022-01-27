@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeAvailableDedicatedHostClassesResponseUnmarshaller
     {
-        public static DescribeAvailableDedicatedHostClassesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAvailableDedicatedHostClassesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAvailableDedicatedHostClassesResponse describeAvailableDedicatedHostClassesResponse = new DescribeAvailableDedicatedHostClassesResponse();
 
-			describeAvailableDedicatedHostClassesResponse.HttpResponse = context.HttpResponse;
-			describeAvailableDedicatedHostClassesResponse.RequestId = context.StringValue("DescribeAvailableDedicatedHostClasses.RequestId");
+			describeAvailableDedicatedHostClassesResponse.HttpResponse = _ctx.HttpResponse;
+			describeAvailableDedicatedHostClassesResponse.RequestId = _ctx.StringValue("DescribeAvailableDedicatedHostClasses.RequestId");
 
 			List<DescribeAvailableDedicatedHostClassesResponse.DescribeAvailableDedicatedHostClasses_HostClassesItem> describeAvailableDedicatedHostClassesResponse_hostClasses = new List<DescribeAvailableDedicatedHostClassesResponse.DescribeAvailableDedicatedHostClasses_HostClassesItem>();
-			for (int i = 0; i < context.Length("DescribeAvailableDedicatedHostClasses.HostClasses.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeAvailableDedicatedHostClasses.HostClasses.Length"); i++) {
 				DescribeAvailableDedicatedHostClassesResponse.DescribeAvailableDedicatedHostClasses_HostClassesItem hostClassesItem = new DescribeAvailableDedicatedHostClassesResponse.DescribeAvailableDedicatedHostClasses_HostClassesItem();
-				hostClassesItem.HostClassName = context.StringValue("DescribeAvailableDedicatedHostClasses.HostClasses["+ i +"].HostClassName");
-				hostClassesItem.Description = context.StringValue("DescribeAvailableDedicatedHostClasses.HostClasses["+ i +"].Description");
+				hostClassesItem.HostClassName = _ctx.StringValue("DescribeAvailableDedicatedHostClasses.HostClasses["+ i +"].HostClassName");
+				hostClassesItem.Description = _ctx.StringValue("DescribeAvailableDedicatedHostClasses.HostClasses["+ i +"].Description");
 
 				describeAvailableDedicatedHostClassesResponse_hostClasses.Add(hostClassesItem);
 			}

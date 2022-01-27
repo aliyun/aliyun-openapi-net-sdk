@@ -23,6 +23,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -31,12 +32,12 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class StartExecutionRequest : RpcAcsRequest<StartExecutionResponse>
     {
         public StartExecutionRequest()
-            : base("oos", "2019-06-01", "StartExecution", "oos", "openAPI")
+            : base("oos", "2019-06-01", "StartExecution")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.oos.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.oos.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -56,6 +57,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		private string safetyCheck;
 
 		private Dictionary<object,object> tags;
+
+		private string templateContent;
 
 		private string parentExecutionId;
 
@@ -162,6 +165,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				tags = value;
 				DictionaryUtil.Add(QueryParameters, "Tags", JsonConvert.SerializeObject(value));
+			}
+		}
+
+		public string TemplateContent
+		{
+			get
+			{
+				return templateContent;
+			}
+			set	
+			{
+				templateContent = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateContent", value);
 			}
 		}
 

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sddp;
 using Aliyun.Acs.Sddp.Transform;
 using Aliyun.Acs.Sddp.Transform.V20190103;
 
@@ -30,20 +31,27 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
     public class DescribeDataLimitsRequest : RpcAcsRequest<DescribeDataLimitsResponse>
     {
         public DescribeDataLimitsRequest()
-            : base("Sddp", "2019-01-03", "DescribeDataLimits", "sddp", "openAPI")
+            : base("Sddp", "2019-01-03", "DescribeDataLimits")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Sddp.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Sddp.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
+		private long? startTime;
+
 		private string parentId;
+
+		private int? enable;
 
 		private int? pageSize;
 
 		private int? checkStatus;
+
+		private int? datamaskStatus;
 
 		private string lang;
 
@@ -53,9 +61,24 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private int? auditStatus;
 
+		private long? endTime;
+
 		private int? currentPage;
 
 		private int? resourceType;
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+			}
+		}
 
 		public string ParentId
 		{
@@ -67,6 +90,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				parentId = value;
 				DictionaryUtil.Add(QueryParameters, "ParentId", value);
+			}
+		}
+
+		public int? Enable
+		{
+			get
+			{
+				return enable;
+			}
+			set	
+			{
+				enable = value;
+				DictionaryUtil.Add(QueryParameters, "Enable", value.ToString());
 			}
 		}
 
@@ -93,6 +129,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				checkStatus = value;
 				DictionaryUtil.Add(QueryParameters, "CheckStatus", value.ToString());
+			}
+		}
+
+		public int? DatamaskStatus
+		{
+			get
+			{
+				return datamaskStatus;
+			}
+			set	
+			{
+				datamaskStatus = value;
+				DictionaryUtil.Add(QueryParameters, "DatamaskStatus", value.ToString());
 			}
 		}
 
@@ -145,6 +194,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				auditStatus = value;
 				DictionaryUtil.Add(QueryParameters, "AuditStatus", value.ToString());
+			}
+		}
+
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
 			}
 		}
 

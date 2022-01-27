@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -98,99 +98,51 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribePhysicalConnections_PhysicalConnectionType
 		{
 
-			private string physicalConnectionId;
-
-			private string accessPointId;
-
-			private string type;
-
-			private string status;
-
-			private string businessStatus;
+			private string adLocation;
 
 			private string creationTime;
 
-			private string enabledTime;
+			private string status;
 
-			private string lineOperator;
-
-			private string spec;
-
-			private string peerLocation;
-
-			private string portType;
-
-			private string redundantPhysicalConnectionId;
-
-			private string name;
-
-			private string description;
-
-			private string adLocation;
+			private string type;
 
 			private string portNumber;
 
 			private string circuitCode;
 
+			private string spec;
+
 			private long? bandwidth;
 
-			public string PhysicalConnectionId
-			{
-				get
-				{
-					return physicalConnectionId;
-				}
-				set	
-				{
-					physicalConnectionId = value;
-				}
-			}
+			private string description;
 
-			public string AccessPointId
-			{
-				get
-				{
-					return accessPointId;
-				}
-				set	
-				{
-					accessPointId = value;
-				}
-			}
+			private string portType;
 
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
+			private string enabledTime;
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+			private string businessStatus;
 
-			public string BusinessStatus
+			private string lineOperator;
+
+			private string name;
+
+			private string redundantPhysicalConnectionId;
+
+			private string peerLocation;
+
+			private string accessPointId;
+
+			private string physicalConnectionId;
+
+			public string AdLocation
 			{
 				get
 				{
-					return businessStatus;
+					return adLocation;
 				}
 				set	
 				{
-					businessStatus = value;
+					adLocation = value;
 				}
 			}
 
@@ -206,111 +158,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string EnabledTime
+			public string Status
 			{
 				get
 				{
-					return enabledTime;
+					return status;
 				}
 				set	
 				{
-					enabledTime = value;
+					status = value;
 				}
 			}
 
-			public string LineOperator
+			public string Type
 			{
 				get
 				{
-					return lineOperator;
+					return type;
 				}
 				set	
 				{
-					lineOperator = value;
-				}
-			}
-
-			public string Spec
-			{
-				get
-				{
-					return spec;
-				}
-				set	
-				{
-					spec = value;
-				}
-			}
-
-			public string PeerLocation
-			{
-				get
-				{
-					return peerLocation;
-				}
-				set	
-				{
-					peerLocation = value;
-				}
-			}
-
-			public string PortType
-			{
-				get
-				{
-					return portType;
-				}
-				set	
-				{
-					portType = value;
-				}
-			}
-
-			public string RedundantPhysicalConnectionId
-			{
-				get
-				{
-					return redundantPhysicalConnectionId;
-				}
-				set	
-				{
-					redundantPhysicalConnectionId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string AdLocation
-			{
-				get
-				{
-					return adLocation;
-				}
-				set	
-				{
-					adLocation = value;
+					type = value;
 				}
 			}
 
@@ -338,6 +206,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string Spec
+			{
+				get
+				{
+					return spec;
+				}
+				set	
+				{
+					spec = value;
+				}
+			}
+
 			public long? Bandwidth
 			{
 				get
@@ -347,6 +227,126 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					bandwidth = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string PortType
+			{
+				get
+				{
+					return portType;
+				}
+				set	
+				{
+					portType = value;
+				}
+			}
+
+			public string EnabledTime
+			{
+				get
+				{
+					return enabledTime;
+				}
+				set	
+				{
+					enabledTime = value;
+				}
+			}
+
+			public string BusinessStatus
+			{
+				get
+				{
+					return businessStatus;
+				}
+				set	
+				{
+					businessStatus = value;
+				}
+			}
+
+			public string LineOperator
+			{
+				get
+				{
+					return lineOperator;
+				}
+				set	
+				{
+					lineOperator = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string RedundantPhysicalConnectionId
+			{
+				get
+				{
+					return redundantPhysicalConnectionId;
+				}
+				set	
+				{
+					redundantPhysicalConnectionId = value;
+				}
+			}
+
+			public string PeerLocation
+			{
+				get
+				{
+					return peerLocation;
+				}
+				set	
+				{
+					peerLocation = value;
+				}
+			}
+
+			public string AccessPointId
+			{
+				get
+				{
+					return accessPointId;
+				}
+				set	
+				{
+					accessPointId = value;
+				}
+			}
+
+			public string PhysicalConnectionId
+			{
+				get
+				{
+					return physicalConnectionId;
+				}
+				set	
+				{
+					physicalConnectionId = value;
 				}
 			}
 		}

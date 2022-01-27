@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.gpdb.Model.V20160503
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 	public class DescribeSQLLogFilesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalRecordCount;
-
-		private int? pageNumber;
 
 		private int? pageRecordCount;
 
-		private List<DescribeSQLLogFiles_LogFile> items;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private int? pageNumber;
+
+		private List<DescribeSQLLogFiles_LogFile> items;
 
 		public int? TotalRecordCount
 		{
@@ -59,18 +47,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
 		public int? PageRecordCount
 		{
 			get
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			set	
 			{
 				pageRecordCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
 			}
 		}
 
@@ -100,15 +100,15 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 
 			private string fileID;
 
-			private string logStatus;
-
-			private string logDownloadURL;
+			private string logStartTime;
 
 			private string logSize;
 
-			private string logStartTime;
+			private string logDownloadURL;
 
 			private string logEndTime;
+
+			private string logStatus;
 
 			public string FileID
 			{
@@ -119,42 +119,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 				set	
 				{
 					fileID = value;
-				}
-			}
-
-			public string LogStatus
-			{
-				get
-				{
-					return logStatus;
-				}
-				set	
-				{
-					logStatus = value;
-				}
-			}
-
-			public string LogDownloadURL
-			{
-				get
-				{
-					return logDownloadURL;
-				}
-				set	
-				{
-					logDownloadURL = value;
-				}
-			}
-
-			public string LogSize
-			{
-				get
-				{
-					return logSize;
-				}
-				set	
-				{
-					logSize = value;
 				}
 			}
 
@@ -170,6 +134,30 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 				}
 			}
 
+			public string LogSize
+			{
+				get
+				{
+					return logSize;
+				}
+				set	
+				{
+					logSize = value;
+				}
+			}
+
+			public string LogDownloadURL
+			{
+				get
+				{
+					return logDownloadURL;
+				}
+				set	
+				{
+					logDownloadURL = value;
+				}
+			}
+
 			public string LogEndTime
 			{
 				get
@@ -179,6 +167,18 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 				set	
 				{
 					logEndTime = value;
+				}
+			}
+
+			public string LogStatus
+			{
+				get
+				{
+					return logStatus;
+				}
+				set	
+				{
+					logStatus = value;
 				}
 			}
 		}

@@ -84,6 +84,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string spriteConfig;
 
+			private string materialType;
+
 			private List<string> snapshots;
 
 			private List<string> sprites;
@@ -253,6 +255,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					spriteConfig = value;
+				}
+			}
+
+			public string MaterialType
+			{
+				get
+				{
+					return materialType;
+				}
+				set	
+				{
+					materialType = value;
 				}
 			}
 

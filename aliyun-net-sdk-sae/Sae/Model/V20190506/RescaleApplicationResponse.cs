@@ -25,29 +25,17 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class RescaleApplicationResponse : AcsResponse
 	{
 
-		private string code;
-
 		private string message;
 
 		private string requestId;
 
-		private bool? success;
-
 		private string errorCode;
 
-		private RescaleApplication_Data data;
+		private string code;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private bool? success;
+
+		private RescaleApplication_Data data;
 
 		public string Message
 		{
@@ -73,18 +61,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
 		public string ErrorCode
 		{
 			get
@@ -94,6 +70,30 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				errorCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 

@@ -26,23 +26,33 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeDNSSLBSubDomainsResponseUnmarshaller
     {
-        public static DescribeDNSSLBSubDomainsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDNSSLBSubDomainsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDNSSLBSubDomainsResponse describeDNSSLBSubDomainsResponse = new DescribeDNSSLBSubDomainsResponse();
 
-			describeDNSSLBSubDomainsResponse.HttpResponse = context.HttpResponse;
-			describeDNSSLBSubDomainsResponse.RequestId = context.StringValue("DescribeDNSSLBSubDomains.RequestId");
-			describeDNSSLBSubDomainsResponse.TotalCount = context.LongValue("DescribeDNSSLBSubDomains.TotalCount");
-			describeDNSSLBSubDomainsResponse.PageNumber = context.LongValue("DescribeDNSSLBSubDomains.PageNumber");
-			describeDNSSLBSubDomainsResponse.PageSize = context.LongValue("DescribeDNSSLBSubDomains.PageSize");
+			describeDNSSLBSubDomainsResponse.HttpResponse = _ctx.HttpResponse;
+			describeDNSSLBSubDomainsResponse.RequestId = _ctx.StringValue("DescribeDNSSLBSubDomains.RequestId");
+			describeDNSSLBSubDomainsResponse.TotalCount = _ctx.LongValue("DescribeDNSSLBSubDomains.TotalCount");
+			describeDNSSLBSubDomainsResponse.PageNumber = _ctx.LongValue("DescribeDNSSLBSubDomains.PageNumber");
+			describeDNSSLBSubDomainsResponse.PageSize = _ctx.LongValue("DescribeDNSSLBSubDomains.PageSize");
 
 			List<DescribeDNSSLBSubDomainsResponse.DescribeDNSSLBSubDomains_SlbSubDomain> describeDNSSLBSubDomainsResponse_slbSubDomains = new List<DescribeDNSSLBSubDomainsResponse.DescribeDNSSLBSubDomains_SlbSubDomain>();
-			for (int i = 0; i < context.Length("DescribeDNSSLBSubDomains.SlbSubDomains.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDNSSLBSubDomains.SlbSubDomains.Length"); i++) {
 				DescribeDNSSLBSubDomainsResponse.DescribeDNSSLBSubDomains_SlbSubDomain slbSubDomain = new DescribeDNSSLBSubDomainsResponse.DescribeDNSSLBSubDomains_SlbSubDomain();
-				slbSubDomain.SubDomain = context.StringValue("DescribeDNSSLBSubDomains.SlbSubDomains["+ i +"].SubDomain");
-				slbSubDomain.RecordCount = context.LongValue("DescribeDNSSLBSubDomains.SlbSubDomains["+ i +"].RecordCount");
-				slbSubDomain.Open = context.BooleanValue("DescribeDNSSLBSubDomains.SlbSubDomains["+ i +"].Open");
-				slbSubDomain.Type = context.StringValue("DescribeDNSSLBSubDomains.SlbSubDomains["+ i +"].Type");
+				slbSubDomain.SubDomain = _ctx.StringValue("DescribeDNSSLBSubDomains.SlbSubDomains["+ i +"].SubDomain");
+				slbSubDomain.RecordCount = _ctx.LongValue("DescribeDNSSLBSubDomains.SlbSubDomains["+ i +"].RecordCount");
+				slbSubDomain.Open = _ctx.BooleanValue("DescribeDNSSLBSubDomains.SlbSubDomains["+ i +"].Open");
+				slbSubDomain.Type = _ctx.StringValue("DescribeDNSSLBSubDomains.SlbSubDomains["+ i +"].Type");
+
+				List<DescribeDNSSLBSubDomainsResponse.DescribeDNSSLBSubDomains_SlbSubDomain.DescribeDNSSLBSubDomains_LineAlgorithm> slbSubDomain_lineAlgorithms = new List<DescribeDNSSLBSubDomainsResponse.DescribeDNSSLBSubDomains_SlbSubDomain.DescribeDNSSLBSubDomains_LineAlgorithm>();
+				for (int j = 0; j < _ctx.Length("DescribeDNSSLBSubDomains.SlbSubDomains["+ i +"].LineAlgorithms.Length"); j++) {
+					DescribeDNSSLBSubDomainsResponse.DescribeDNSSLBSubDomains_SlbSubDomain.DescribeDNSSLBSubDomains_LineAlgorithm lineAlgorithm = new DescribeDNSSLBSubDomainsResponse.DescribeDNSSLBSubDomains_SlbSubDomain.DescribeDNSSLBSubDomains_LineAlgorithm();
+					lineAlgorithm.Line = _ctx.StringValue("DescribeDNSSLBSubDomains.SlbSubDomains["+ i +"].LineAlgorithms["+ j +"].Line");
+					lineAlgorithm.Open = _ctx.BooleanValue("DescribeDNSSLBSubDomains.SlbSubDomains["+ i +"].LineAlgorithms["+ j +"].Open");
+
+					slbSubDomain_lineAlgorithms.Add(lineAlgorithm);
+				}
+				slbSubDomain.LineAlgorithms = slbSubDomain_lineAlgorithms;
 
 				describeDNSSLBSubDomainsResponse_slbSubDomains.Add(slbSubDomain);
 			}

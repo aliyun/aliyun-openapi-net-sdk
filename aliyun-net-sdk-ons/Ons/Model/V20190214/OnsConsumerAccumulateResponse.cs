@@ -70,41 +70,17 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 		public class OnsConsumerAccumulate_Data
 		{
 
-			private bool? online;
-
-			private long? totalDiff;
-
 			private float? consumeTps;
-
-			private long? lastTimestamp;
 
 			private long? delayTime;
 
+			private long? lastTimestamp;
+
+			private long? totalDiff;
+
+			private bool? online;
+
 			private List<OnsConsumerAccumulate_DetailInTopicDo> detailInTopicList;
-
-			public bool? Online
-			{
-				get
-				{
-					return online;
-				}
-				set	
-				{
-					online = value;
-				}
-			}
-
-			public long? TotalDiff
-			{
-				get
-				{
-					return totalDiff;
-				}
-				set	
-				{
-					totalDiff = value;
-				}
-			}
 
 			public float? ConsumeTps
 			{
@@ -115,6 +91,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					consumeTps = value;
+				}
+			}
+
+			public long? DelayTime
+			{
+				get
+				{
+					return delayTime;
+				}
+				set	
+				{
+					delayTime = value;
 				}
 			}
 
@@ -130,15 +118,27 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
-			public long? DelayTime
+			public long? TotalDiff
 			{
 				get
 				{
-					return delayTime;
+					return totalDiff;
 				}
 				set	
 				{
-					delayTime = value;
+					totalDiff = value;
+				}
+			}
+
+			public bool? Online
+			{
+				get
+				{
+					return online;
+				}
+				set	
+				{
+					online = value;
 				}
 			}
 
@@ -157,23 +157,23 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			public class OnsConsumerAccumulate_DetailInTopicDo
 			{
 
-				private string topic;
+				private long? delayTime;
 
 				private long? totalDiff;
 
 				private long? lastTimestamp;
 
-				private long? delayTime;
+				private string topic;
 
-				public string Topic
+				public long? DelayTime
 				{
 					get
 					{
-						return topic;
+						return delayTime;
 					}
 					set	
 					{
-						topic = value;
+						delayTime = value;
 					}
 				}
 
@@ -201,15 +201,15 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					}
 				}
 
-				public long? DelayTime
+				public string Topic
 				{
 					get
 					{
-						return delayTime;
+						return topic;
 					}
 					set	
 					{
-						delayTime = value;
+						topic = value;
 					}
 				}
 			}

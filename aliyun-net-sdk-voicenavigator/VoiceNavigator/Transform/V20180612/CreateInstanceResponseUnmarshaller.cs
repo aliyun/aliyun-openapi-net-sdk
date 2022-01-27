@@ -26,13 +26,13 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 {
     public class CreateInstanceResponseUnmarshaller
     {
-        public static CreateInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static CreateInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateInstanceResponse createInstanceResponse = new CreateInstanceResponse();
 
-			createInstanceResponse.HttpResponse = context.HttpResponse;
-			createInstanceResponse.RequestId = context.StringValue("CreateInstance.RequestId");
-			createInstanceResponse.InstanceId = context.StringValue("CreateInstance.InstanceId");
+			createInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			createInstanceResponse.RequestId = _ctx.StringValue("CreateInstance.RequestId");
+			createInstanceResponse.InstanceId = _ctx.StringValue("CreateInstance.InstanceId");
         
 			return createInstanceResponse;
         }

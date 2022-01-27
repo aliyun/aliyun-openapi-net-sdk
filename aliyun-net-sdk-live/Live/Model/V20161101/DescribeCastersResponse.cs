@@ -92,6 +92,12 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private int? channelEnable;
 
+			private string lastModified;
+
+			private string duration;
+
+			private int? roomId;
+
 			public int? Status
 			{
 				get
@@ -221,6 +227,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					channelEnable = value;
+				}
+			}
+
+			public string LastModified
+			{
+				get
+				{
+					return lastModified;
+				}
+				set	
+				{
+					lastModified = value;
+				}
+			}
+
+			public string Duration
+			{
+				get
+				{
+					return duration;
+				}
+				set	
+				{
+					duration = value;
+				}
+			}
+
+			public int? RoomId
+			{
+				get
+				{
+					return roomId;
+				}
+				set	
+				{
+					roomId = value;
 				}
 			}
 		}

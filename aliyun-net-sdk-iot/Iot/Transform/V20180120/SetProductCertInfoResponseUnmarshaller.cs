@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class SetProductCertInfoResponseUnmarshaller
     {
-        public static SetProductCertInfoResponse Unmarshall(UnmarshallerContext context)
+        public static SetProductCertInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetProductCertInfoResponse setProductCertInfoResponse = new SetProductCertInfoResponse();
 
-			setProductCertInfoResponse.HttpResponse = context.HttpResponse;
-			setProductCertInfoResponse.RequestId = context.StringValue("SetProductCertInfo.RequestId");
-			setProductCertInfoResponse.Success = context.BooleanValue("SetProductCertInfo.Success");
-			setProductCertInfoResponse.Code = context.StringValue("SetProductCertInfo.Code");
-			setProductCertInfoResponse.ErrorMessage = context.StringValue("SetProductCertInfo.ErrorMessage");
+			setProductCertInfoResponse.HttpResponse = _ctx.HttpResponse;
+			setProductCertInfoResponse.RequestId = _ctx.StringValue("SetProductCertInfo.RequestId");
+			setProductCertInfoResponse.Success = _ctx.BooleanValue("SetProductCertInfo.Success");
+			setProductCertInfoResponse.Code = _ctx.StringValue("SetProductCertInfo.Code");
+			setProductCertInfoResponse.ErrorMessage = _ctx.StringValue("SetProductCertInfo.ErrorMessage");
         
 			return setProductCertInfoResponse;
         }

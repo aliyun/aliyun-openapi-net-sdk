@@ -26,18 +26,18 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 {
     public class TranslateECommerceResponseUnmarshaller
     {
-        public static TranslateECommerceResponse Unmarshall(UnmarshallerContext context)
+        public static TranslateECommerceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			TranslateECommerceResponse translateECommerceResponse = new TranslateECommerceResponse();
 
-			translateECommerceResponse.HttpResponse = context.HttpResponse;
-			translateECommerceResponse.RequestId = context.StringValue("TranslateECommerce.RequestId");
-			translateECommerceResponse.Code = context.IntegerValue("TranslateECommerce.Code");
-			translateECommerceResponse.Message = context.StringValue("TranslateECommerce.Message");
+			translateECommerceResponse.HttpResponse = _ctx.HttpResponse;
+			translateECommerceResponse.Code = _ctx.IntegerValue("TranslateECommerce.Code");
+			translateECommerceResponse.Message = _ctx.StringValue("TranslateECommerce.Message");
+			translateECommerceResponse.RequestId = _ctx.StringValue("TranslateECommerce.RequestId");
 
 			TranslateECommerceResponse.TranslateECommerce_Data data = new TranslateECommerceResponse.TranslateECommerce_Data();
-			data.Translated = context.StringValue("TranslateECommerce.Data.Translated");
-			data.WordCount = context.StringValue("TranslateECommerce.Data.WordCount");
+			data.Translated = _ctx.StringValue("TranslateECommerce.Data.Translated");
+			data.WordCount = _ctx.StringValue("TranslateECommerce.Data.WordCount");
 			translateECommerceResponse.Data = data;
         
 			return translateECommerceResponse;

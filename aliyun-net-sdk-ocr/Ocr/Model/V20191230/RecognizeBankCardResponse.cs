@@ -56,23 +56,11 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 		public class RecognizeBankCard_Data
 		{
 
-			private string bankName;
-
 			private string cardNumber;
 
 			private string validDate;
 
-			public string BankName
-			{
-				get
-				{
-					return bankName;
-				}
-				set	
-				{
-					bankName = value;
-				}
-			}
+			private string bankName;
 
 			public string CardNumber
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 				set	
 				{
 					validDate = value;
+				}
+			}
+
+			public string BankName
+			{
+				get
+				{
+					return bankName;
+				}
+				set	
+				{
+					bankName = value;
 				}
 			}
 		}

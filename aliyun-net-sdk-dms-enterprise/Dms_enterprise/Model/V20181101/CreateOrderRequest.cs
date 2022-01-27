@@ -31,52 +31,29 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class CreateOrderRequest : RpcAcsRequest<CreateOrderResponse>
     {
         public CreateOrderRequest()
-            : base("dms-enterprise", "2018-11-01", "CreateOrder", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "CreateOrder", "dms-enterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
+		private long? tid;
+
 		private string pluginType;
 
-		private string comment;
+		private string attachmentKey;
 
-		private long? tid;
+		private string comment;
 
 		private Dictionary<object,object> pluginParam;
 
 		private string relatedUserList;
 
-		public string PluginType
-		{
-			get
-			{
-				return pluginType;
-			}
-			set	
-			{
-				pluginType = value;
-				DictionaryUtil.Add(QueryParameters, "PluginType", value);
-			}
-		}
-
-		public string Comment
-		{
-			get
-			{
-				return comment;
-			}
-			set	
-			{
-				comment = value;
-				DictionaryUtil.Add(QueryParameters, "Comment", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -90,6 +67,49 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PluginType")]
+		public string PluginType
+		{
+			get
+			{
+				return pluginType;
+			}
+			set	
+			{
+				pluginType = value;
+				DictionaryUtil.Add(QueryParameters, "PluginType", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "AttachmentKey")]
+		public string AttachmentKey
+		{
+			get
+			{
+				return attachmentKey;
+			}
+			set	
+			{
+				attachmentKey = value;
+				DictionaryUtil.Add(QueryParameters, "AttachmentKey", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Comment")]
+		public string Comment
+		{
+			get
+			{
+				return comment;
+			}
+			set	
+			{
+				comment = value;
+				DictionaryUtil.Add(QueryParameters, "Comment", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "PluginParam")]
 		public Dictionary<object,object> PluginParam
 		{
 			get
@@ -103,6 +123,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RelatedUserList")]
 		public string RelatedUserList
 		{
 			get

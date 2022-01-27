@@ -26,15 +26,15 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class RefreshUploadVideoResponseUnmarshaller
     {
-        public static RefreshUploadVideoResponse Unmarshall(UnmarshallerContext context)
+        public static RefreshUploadVideoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RefreshUploadVideoResponse refreshUploadVideoResponse = new RefreshUploadVideoResponse();
 
-			refreshUploadVideoResponse.HttpResponse = context.HttpResponse;
-			refreshUploadVideoResponse.RequestId = context.StringValue("RefreshUploadVideo.RequestId");
-			refreshUploadVideoResponse.UploadAuth = context.StringValue("RefreshUploadVideo.UploadAuth");
-			refreshUploadVideoResponse.UploadAddress = context.StringValue("RefreshUploadVideo.UploadAddress");
-			refreshUploadVideoResponse.VideoId = context.StringValue("RefreshUploadVideo.VideoId");
+			refreshUploadVideoResponse.HttpResponse = _ctx.HttpResponse;
+			refreshUploadVideoResponse.RequestId = _ctx.StringValue("RefreshUploadVideo.RequestId");
+			refreshUploadVideoResponse.UploadAuth = _ctx.StringValue("RefreshUploadVideo.UploadAuth");
+			refreshUploadVideoResponse.UploadAddress = _ctx.StringValue("RefreshUploadVideo.UploadAddress");
+			refreshUploadVideoResponse.VideoId = _ctx.StringValue("RefreshUploadVideo.VideoId");
         
 			return refreshUploadVideoResponse;
         }

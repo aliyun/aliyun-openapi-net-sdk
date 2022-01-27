@@ -132,6 +132,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private List<string> remindList;
 
+			private List<string> timeArray;
+
 			public int? SeriousCount
 			{
 				get
@@ -251,6 +253,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					remindList = value;
 				}
 			}
+
+			public List<string> TimeArray
+			{
+				get
+				{
+					return timeArray;
+				}
+				set	
+				{
+					timeArray = value;
+				}
+			}
 		}
 
 		public class DescribeSecurityStatInfo_AttackEvent
@@ -321,6 +335,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			private List<string> mediumList;
 
 			private List<string> lowList;
+
+			private List<string> timeArray6;
 
 			public int? MediumCount
 			{
@@ -441,6 +457,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					lowList = value;
 				}
 			}
+
+			public List<string> TimeArray6
+			{
+				get
+				{
+					return timeArray6;
+				}
+				set	
+				{
+					timeArray6 = value;
+				}
+			}
 		}
 
 		public class DescribeSecurityStatInfo_Vulnerability
@@ -454,17 +482,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private int? totalCount;
 
-			private List<string> dateArray6;
+			private List<string> dateArray7;
 
-			private List<string> valueArray7;
+			private List<string> valueArray8;
 
-			private List<string> levelsOn8;
+			private List<string> levelsOn9;
 
 			private List<string> nntfList;
 
 			private List<string> asapList;
 
 			private List<string> laterList;
+
+			private List<string> timeArray10;
 
 			public int? NntfCount
 			{
@@ -514,39 +544,39 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public List<string> DateArray6
+			public List<string> DateArray7
 			{
 				get
 				{
-					return dateArray6;
+					return dateArray7;
 				}
 				set	
 				{
-					dateArray6 = value;
+					dateArray7 = value;
 				}
 			}
 
-			public List<string> ValueArray7
+			public List<string> ValueArray8
 			{
 				get
 				{
-					return valueArray7;
+					return valueArray8;
 				}
 				set	
 				{
-					valueArray7 = value;
+					valueArray8 = value;
 				}
 			}
 
-			public List<string> LevelsOn8
+			public List<string> LevelsOn9
 			{
 				get
 				{
-					return levelsOn8;
+					return levelsOn9;
 				}
 				set	
 				{
-					levelsOn8 = value;
+					levelsOn9 = value;
 				}
 			}
 
@@ -583,6 +613,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					laterList = value;
+				}
+			}
+
+			public List<string> TimeArray10
+			{
+				get
+				{
+					return timeArray10;
+				}
+				set	
+				{
+					timeArray10 = value;
 				}
 			}
 		}

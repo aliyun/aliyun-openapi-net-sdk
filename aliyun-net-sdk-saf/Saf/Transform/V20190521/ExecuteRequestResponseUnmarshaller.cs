@@ -26,15 +26,15 @@ namespace Aliyun.Acs.saf.Transform.V20190521
 {
     public class ExecuteRequestResponseUnmarshaller
     {
-        public static ExecuteRequestResponse Unmarshall(UnmarshallerContext context)
+        public static ExecuteRequestResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ExecuteRequestResponse executeRequestResponse = new ExecuteRequestResponse();
 
-			executeRequestResponse.HttpResponse = context.HttpResponse;
-			executeRequestResponse.RequestId = context.StringValue("ExecuteRequest.RequestId");
-			executeRequestResponse.Code = context.IntegerValue("ExecuteRequest.Code");
-			executeRequestResponse.Message = context.StringValue("ExecuteRequest.Message");
-			executeRequestResponse.Data = context.StringValue("ExecuteRequest.Data");
+			executeRequestResponse.HttpResponse = _ctx.HttpResponse;
+			executeRequestResponse.Code = _ctx.IntegerValue("ExecuteRequest.Code");
+			executeRequestResponse.Message = _ctx.StringValue("ExecuteRequest.Message");
+			executeRequestResponse.Data = _ctx.StringValue("ExecuteRequest.Data");
+			executeRequestResponse.RequestId = _ctx.StringValue("ExecuteRequest.RequestId");
         
 			return executeRequestResponse;
         }

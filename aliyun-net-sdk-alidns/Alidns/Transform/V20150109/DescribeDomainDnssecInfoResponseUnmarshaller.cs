@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeDomainDnssecInfoResponseUnmarshaller
     {
-        public static DescribeDomainDnssecInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainDnssecInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainDnssecInfoResponse describeDomainDnssecInfoResponse = new DescribeDomainDnssecInfoResponse();
 
-			describeDomainDnssecInfoResponse.HttpResponse = context.HttpResponse;
-			describeDomainDnssecInfoResponse.RequestId = context.StringValue("DescribeDomainDnssecInfo.RequestId");
-			describeDomainDnssecInfoResponse.DomainName = context.StringValue("DescribeDomainDnssecInfo.DomainName");
-			describeDomainDnssecInfoResponse.Status = context.StringValue("DescribeDomainDnssecInfo.Status");
-			describeDomainDnssecInfoResponse.DsRecord = context.StringValue("DescribeDomainDnssecInfo.DsRecord");
-			describeDomainDnssecInfoResponse.Digest = context.StringValue("DescribeDomainDnssecInfo.Digest");
-			describeDomainDnssecInfoResponse.DigestType = context.StringValue("DescribeDomainDnssecInfo.DigestType");
-			describeDomainDnssecInfoResponse.Algorithm = context.StringValue("DescribeDomainDnssecInfo.Algorithm");
-			describeDomainDnssecInfoResponse.PublicKey = context.StringValue("DescribeDomainDnssecInfo.PublicKey");
-			describeDomainDnssecInfoResponse.KeyTag = context.StringValue("DescribeDomainDnssecInfo.KeyTag");
-			describeDomainDnssecInfoResponse.Flags = context.StringValue("DescribeDomainDnssecInfo.Flags");
+			describeDomainDnssecInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainDnssecInfoResponse.RequestId = _ctx.StringValue("DescribeDomainDnssecInfo.RequestId");
+			describeDomainDnssecInfoResponse.DomainName = _ctx.StringValue("DescribeDomainDnssecInfo.DomainName");
+			describeDomainDnssecInfoResponse.Status = _ctx.StringValue("DescribeDomainDnssecInfo.Status");
+			describeDomainDnssecInfoResponse.DsRecord = _ctx.StringValue("DescribeDomainDnssecInfo.DsRecord");
+			describeDomainDnssecInfoResponse.Digest = _ctx.StringValue("DescribeDomainDnssecInfo.Digest");
+			describeDomainDnssecInfoResponse.DigestType = _ctx.StringValue("DescribeDomainDnssecInfo.DigestType");
+			describeDomainDnssecInfoResponse.Algorithm = _ctx.StringValue("DescribeDomainDnssecInfo.Algorithm");
+			describeDomainDnssecInfoResponse.PublicKey = _ctx.StringValue("DescribeDomainDnssecInfo.PublicKey");
+			describeDomainDnssecInfoResponse.KeyTag = _ctx.StringValue("DescribeDomainDnssecInfo.KeyTag");
+			describeDomainDnssecInfoResponse.Flags = _ctx.StringValue("DescribeDomainDnssecInfo.Flags");
         
 			return describeDomainDnssecInfoResponse;
         }

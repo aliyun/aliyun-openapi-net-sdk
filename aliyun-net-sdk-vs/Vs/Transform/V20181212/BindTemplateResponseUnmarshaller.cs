@@ -26,15 +26,15 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class BindTemplateResponseUnmarshaller
     {
-        public static BindTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static BindTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BindTemplateResponse bindTemplateResponse = new BindTemplateResponse();
 
-			bindTemplateResponse.HttpResponse = context.HttpResponse;
-			bindTemplateResponse.RequestId = context.StringValue("BindTemplate.RequestId");
-			bindTemplateResponse.TemplateId = context.StringValue("BindTemplate.TemplateId");
-			bindTemplateResponse.InstanceId = context.StringValue("BindTemplate.InstanceId");
-			bindTemplateResponse.InstanceType = context.StringValue("BindTemplate.InstanceType");
+			bindTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			bindTemplateResponse.RequestId = _ctx.StringValue("BindTemplate.RequestId");
+			bindTemplateResponse.TemplateId = _ctx.StringValue("BindTemplate.TemplateId");
+			bindTemplateResponse.InstanceId = _ctx.StringValue("BindTemplate.InstanceId");
+			bindTemplateResponse.InstanceType = _ctx.StringValue("BindTemplate.InstanceType");
         
 			return bindTemplateResponse;
         }

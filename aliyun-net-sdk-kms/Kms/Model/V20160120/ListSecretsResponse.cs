@@ -106,6 +106,8 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 			private string updateTime;
 
+			private string secretType;
+
 			private List<ListSecrets_Tag> tags;
 
 			public string CreateTime
@@ -153,6 +155,18 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				set	
 				{
 					updateTime = value;
+				}
+			}
+
+			public string SecretType
+			{
+				get
+				{
+					return secretType;
+				}
+				set	
+				{
+					secretType = value;
 				}
 			}
 

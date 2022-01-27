@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class SwitchToSubscriptionResponseUnmarshaller
     {
-        public static SwitchToSubscriptionResponse Unmarshall(UnmarshallerContext context)
+        public static SwitchToSubscriptionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SwitchToSubscriptionResponse switchToSubscriptionResponse = new SwitchToSubscriptionResponse();
 
-			switchToSubscriptionResponse.HttpResponse = context.HttpResponse;
-			switchToSubscriptionResponse.RequestId = context.StringValue("SwitchToSubscription.RequestId");
-			switchToSubscriptionResponse.Success = context.BooleanValue("SwitchToSubscription.Success");
-			switchToSubscriptionResponse.Code = context.StringValue("SwitchToSubscription.Code");
-			switchToSubscriptionResponse.Message = context.StringValue("SwitchToSubscription.Message");
-			switchToSubscriptionResponse.SubscriptionURL = context.StringValue("SwitchToSubscription.SubscriptionURL");
+			switchToSubscriptionResponse.HttpResponse = _ctx.HttpResponse;
+			switchToSubscriptionResponse.SubscriptionURL = _ctx.StringValue("SwitchToSubscription.SubscriptionURL");
+			switchToSubscriptionResponse.Message = _ctx.StringValue("SwitchToSubscription.Message");
+			switchToSubscriptionResponse.RequestId = _ctx.StringValue("SwitchToSubscription.RequestId");
+			switchToSubscriptionResponse.Code = _ctx.StringValue("SwitchToSubscription.Code");
+			switchToSubscriptionResponse.Success = _ctx.BooleanValue("SwitchToSubscription.Success");
         
 			return switchToSubscriptionResponse;
         }

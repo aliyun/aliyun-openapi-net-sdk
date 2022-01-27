@@ -26,16 +26,16 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class SubmitScriptReviewResponseUnmarshaller
     {
-        public static SubmitScriptReviewResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitScriptReviewResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitScriptReviewResponse submitScriptReviewResponse = new SubmitScriptReviewResponse();
 
-			submitScriptReviewResponse.HttpResponse = context.HttpResponse;
-			submitScriptReviewResponse.RequestId = context.StringValue("SubmitScriptReview.RequestId");
-			submitScriptReviewResponse.Success = context.BooleanValue("SubmitScriptReview.Success");
-			submitScriptReviewResponse.Code = context.StringValue("SubmitScriptReview.Code");
-			submitScriptReviewResponse.Message = context.StringValue("SubmitScriptReview.Message");
-			submitScriptReviewResponse.HttpStatusCode = context.IntegerValue("SubmitScriptReview.HttpStatusCode");
+			submitScriptReviewResponse.HttpResponse = _ctx.HttpResponse;
+			submitScriptReviewResponse.Code = _ctx.StringValue("SubmitScriptReview.Code");
+			submitScriptReviewResponse.HttpStatusCode = _ctx.IntegerValue("SubmitScriptReview.HttpStatusCode");
+			submitScriptReviewResponse.Message = _ctx.StringValue("SubmitScriptReview.Message");
+			submitScriptReviewResponse.RequestId = _ctx.StringValue("SubmitScriptReview.RequestId");
+			submitScriptReviewResponse.Success = _ctx.BooleanValue("SubmitScriptReview.Success");
         
 			return submitScriptReviewResponse;
         }

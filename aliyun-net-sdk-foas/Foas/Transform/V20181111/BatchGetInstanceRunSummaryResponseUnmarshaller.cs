@@ -26,24 +26,24 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class BatchGetInstanceRunSummaryResponseUnmarshaller
     {
-        public static BatchGetInstanceRunSummaryResponse Unmarshall(UnmarshallerContext context)
+        public static BatchGetInstanceRunSummaryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchGetInstanceRunSummaryResponse batchGetInstanceRunSummaryResponse = new BatchGetInstanceRunSummaryResponse();
 
-			batchGetInstanceRunSummaryResponse.HttpResponse = context.HttpResponse;
-			batchGetInstanceRunSummaryResponse.RequestId = context.StringValue("BatchGetInstanceRunSummary.RequestId");
+			batchGetInstanceRunSummaryResponse.HttpResponse = _ctx.HttpResponse;
+			batchGetInstanceRunSummaryResponse.RequestId = _ctx.StringValue("BatchGetInstanceRunSummary.RequestId");
 
 			List<BatchGetInstanceRunSummaryResponse.BatchGetInstanceRunSummary_RunSummary> batchGetInstanceRunSummaryResponse_runSummarys = new List<BatchGetInstanceRunSummaryResponse.BatchGetInstanceRunSummary_RunSummary>();
-			for (int i = 0; i < context.Length("BatchGetInstanceRunSummary.RunSummarys.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("BatchGetInstanceRunSummary.RunSummarys.Length"); i++) {
 				BatchGetInstanceRunSummaryResponse.BatchGetInstanceRunSummary_RunSummary runSummary = new BatchGetInstanceRunSummaryResponse.BatchGetInstanceRunSummary_RunSummary();
-				runSummary.Id = context.LongValue("BatchGetInstanceRunSummary.RunSummarys["+ i +"].Id");
-				runSummary.ActualState = context.StringValue("BatchGetInstanceRunSummary.RunSummarys["+ i +"].ActualState");
-				runSummary.ExpectState = context.StringValue("BatchGetInstanceRunSummary.RunSummarys["+ i +"].ExpectState");
-				runSummary.LastErrorTime = context.LongValue("BatchGetInstanceRunSummary.RunSummarys["+ i +"].LastErrorTime");
-				runSummary.LastErrorMessage = context.StringValue("BatchGetInstanceRunSummary.RunSummarys["+ i +"].LastErrorMessage");
-				runSummary.EngineJobHandler = context.StringValue("BatchGetInstanceRunSummary.RunSummarys["+ i +"].EngineJobHandler");
-				runSummary.InputDelay = context.LongValue("BatchGetInstanceRunSummary.RunSummarys["+ i +"].InputDelay");
-				runSummary.JobName = context.StringValue("BatchGetInstanceRunSummary.RunSummarys["+ i +"].JobName");
+				runSummary.Id = _ctx.LongValue("BatchGetInstanceRunSummary.RunSummarys["+ i +"].Id");
+				runSummary.ActualState = _ctx.StringValue("BatchGetInstanceRunSummary.RunSummarys["+ i +"].ActualState");
+				runSummary.ExpectState = _ctx.StringValue("BatchGetInstanceRunSummary.RunSummarys["+ i +"].ExpectState");
+				runSummary.LastErrorTime = _ctx.LongValue("BatchGetInstanceRunSummary.RunSummarys["+ i +"].LastErrorTime");
+				runSummary.LastErrorMessage = _ctx.StringValue("BatchGetInstanceRunSummary.RunSummarys["+ i +"].LastErrorMessage");
+				runSummary.EngineJobHandler = _ctx.StringValue("BatchGetInstanceRunSummary.RunSummarys["+ i +"].EngineJobHandler");
+				runSummary.InputDelay = _ctx.LongValue("BatchGetInstanceRunSummary.RunSummarys["+ i +"].InputDelay");
+				runSummary.JobName = _ctx.StringValue("BatchGetInstanceRunSummary.RunSummarys["+ i +"].JobName");
 
 				batchGetInstanceRunSummaryResponse_runSummarys.Add(runSummary);
 			}

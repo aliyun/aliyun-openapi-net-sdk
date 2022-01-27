@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class ModifyNetworkInterfaceAttributeResponseUnmarshaller
     {
-        public static ModifyNetworkInterfaceAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyNetworkInterfaceAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyNetworkInterfaceAttributeResponse modifyNetworkInterfaceAttributeResponse = new ModifyNetworkInterfaceAttributeResponse();
 
-			modifyNetworkInterfaceAttributeResponse.HttpResponse = context.HttpResponse;
-			modifyNetworkInterfaceAttributeResponse.RequestId = context.StringValue("ModifyNetworkInterfaceAttribute.RequestId");
+			modifyNetworkInterfaceAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			modifyNetworkInterfaceAttributeResponse.RequestId = _ctx.StringValue("ModifyNetworkInterfaceAttribute.RequestId");
         
 			return modifyNetworkInterfaceAttributeResponse;
         }

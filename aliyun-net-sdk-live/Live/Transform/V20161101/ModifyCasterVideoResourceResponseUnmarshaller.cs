@@ -26,14 +26,14 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class ModifyCasterVideoResourceResponseUnmarshaller
     {
-        public static ModifyCasterVideoResourceResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyCasterVideoResourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyCasterVideoResourceResponse modifyCasterVideoResourceResponse = new ModifyCasterVideoResourceResponse();
 
-			modifyCasterVideoResourceResponse.HttpResponse = context.HttpResponse;
-			modifyCasterVideoResourceResponse.RequestId = context.StringValue("ModifyCasterVideoResource.RequestId");
-			modifyCasterVideoResourceResponse.CasterId = context.StringValue("ModifyCasterVideoResource.CasterId");
-			modifyCasterVideoResourceResponse.ResourceId = context.StringValue("ModifyCasterVideoResource.ResourceId");
+			modifyCasterVideoResourceResponse.HttpResponse = _ctx.HttpResponse;
+			modifyCasterVideoResourceResponse.RequestId = _ctx.StringValue("ModifyCasterVideoResource.RequestId");
+			modifyCasterVideoResourceResponse.CasterId = _ctx.StringValue("ModifyCasterVideoResource.CasterId");
+			modifyCasterVideoResourceResponse.ResourceId = _ctx.StringValue("ModifyCasterVideoResource.ResourceId");
         
 			return modifyCasterVideoResourceResponse;
         }

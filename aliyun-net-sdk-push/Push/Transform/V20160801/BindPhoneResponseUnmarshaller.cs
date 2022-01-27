@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 {
     public class BindPhoneResponseUnmarshaller
     {
-        public static BindPhoneResponse Unmarshall(UnmarshallerContext context)
+        public static BindPhoneResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BindPhoneResponse bindPhoneResponse = new BindPhoneResponse();
 
-			bindPhoneResponse.HttpResponse = context.HttpResponse;
-			bindPhoneResponse.RequestId = context.StringValue("BindPhone.RequestId");
+			bindPhoneResponse.HttpResponse = _ctx.HttpResponse;
+			bindPhoneResponse.RequestId = _ctx.StringValue("BindPhone.RequestId");
         
 			return bindPhoneResponse;
         }

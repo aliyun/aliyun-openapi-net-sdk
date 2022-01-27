@@ -26,27 +26,27 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryDetailSceneRuleLogResponseUnmarshaller
     {
-        public static QueryDetailSceneRuleLogResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDetailSceneRuleLogResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDetailSceneRuleLogResponse queryDetailSceneRuleLogResponse = new QueryDetailSceneRuleLogResponse();
 
-			queryDetailSceneRuleLogResponse.HttpResponse = context.HttpResponse;
-			queryDetailSceneRuleLogResponse.RequestId = context.StringValue("QueryDetailSceneRuleLog.RequestId");
-			queryDetailSceneRuleLogResponse.Success = context.BooleanValue("QueryDetailSceneRuleLog.Success");
-			queryDetailSceneRuleLogResponse.ErrorMessage = context.StringValue("QueryDetailSceneRuleLog.ErrorMessage");
-			queryDetailSceneRuleLogResponse.Code = context.StringValue("QueryDetailSceneRuleLog.Code");
+			queryDetailSceneRuleLogResponse.HttpResponse = _ctx.HttpResponse;
+			queryDetailSceneRuleLogResponse.RequestId = _ctx.StringValue("QueryDetailSceneRuleLog.RequestId");
+			queryDetailSceneRuleLogResponse.Success = _ctx.BooleanValue("QueryDetailSceneRuleLog.Success");
+			queryDetailSceneRuleLogResponse.ErrorMessage = _ctx.StringValue("QueryDetailSceneRuleLog.ErrorMessage");
+			queryDetailSceneRuleLogResponse.Code = _ctx.StringValue("QueryDetailSceneRuleLog.Code");
 
 			QueryDetailSceneRuleLogResponse.QueryDetailSceneRuleLog_Data data = new QueryDetailSceneRuleLogResponse.QueryDetailSceneRuleLog_Data();
-			data.Total = context.IntegerValue("QueryDetailSceneRuleLog.Data.Total");
-			data.PageSize = context.IntegerValue("QueryDetailSceneRuleLog.Data.PageSize");
-			data.CurrentPage = context.IntegerValue("QueryDetailSceneRuleLog.Data.CurrentPage");
+			data.Total = _ctx.IntegerValue("QueryDetailSceneRuleLog.Data.Total");
+			data.PageSize = _ctx.IntegerValue("QueryDetailSceneRuleLog.Data.PageSize");
+			data.CurrentPage = _ctx.IntegerValue("QueryDetailSceneRuleLog.Data.CurrentPage");
 
 			List<QueryDetailSceneRuleLogResponse.QueryDetailSceneRuleLog_Data.QueryDetailSceneRuleLog_LogInfo> data_logList = new List<QueryDetailSceneRuleLogResponse.QueryDetailSceneRuleLog_Data.QueryDetailSceneRuleLog_LogInfo>();
-			for (int i = 0; i < context.Length("QueryDetailSceneRuleLog.Data.LogList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryDetailSceneRuleLog.Data.LogList.Length"); i++) {
 				QueryDetailSceneRuleLogResponse.QueryDetailSceneRuleLog_Data.QueryDetailSceneRuleLog_LogInfo logInfo = new QueryDetailSceneRuleLogResponse.QueryDetailSceneRuleLog_Data.QueryDetailSceneRuleLog_LogInfo();
-				logInfo.Code = context.StringValue("QueryDetailSceneRuleLog.Data.LogList["+ i +"].Code");
-				logInfo.Message = context.StringValue("QueryDetailSceneRuleLog.Data.LogList["+ i +"].Message");
-				logInfo.PkDn = context.StringValue("QueryDetailSceneRuleLog.Data.LogList["+ i +"].PkDn");
+				logInfo.Code = _ctx.StringValue("QueryDetailSceneRuleLog.Data.LogList["+ i +"].Code");
+				logInfo.Message = _ctx.StringValue("QueryDetailSceneRuleLog.Data.LogList["+ i +"].Message");
+				logInfo.PkDn = _ctx.StringValue("QueryDetailSceneRuleLog.Data.LogList["+ i +"].PkDn");
 
 				data_logList.Add(logInfo);
 			}

@@ -193,6 +193,22 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private string resGroupName;
 
+				private int? priority;
+
+				private long? baselineId;
+
+				private long? repeatInterval;
+
+				private string connection;
+
+				private int? dqcType;
+
+				private string dqcDescription;
+
+				private long? relatedFlowId;
+
+				private long? businessId;
+
 				public long? NodeId
 				{
 					get
@@ -322,6 +338,102 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						resGroupName = value;
+					}
+				}
+
+				public int? Priority
+				{
+					get
+					{
+						return priority;
+					}
+					set	
+					{
+						priority = value;
+					}
+				}
+
+				public long? BaselineId
+				{
+					get
+					{
+						return baselineId;
+					}
+					set	
+					{
+						baselineId = value;
+					}
+				}
+
+				public long? RepeatInterval
+				{
+					get
+					{
+						return repeatInterval;
+					}
+					set	
+					{
+						repeatInterval = value;
+					}
+				}
+
+				public string Connection
+				{
+					get
+					{
+						return connection;
+					}
+					set	
+					{
+						connection = value;
+					}
+				}
+
+				public int? DqcType
+				{
+					get
+					{
+						return dqcType;
+					}
+					set	
+					{
+						dqcType = value;
+					}
+				}
+
+				public string DqcDescription
+				{
+					get
+					{
+						return dqcDescription;
+					}
+					set	
+					{
+						dqcDescription = value;
+					}
+				}
+
+				public long? RelatedFlowId
+				{
+					get
+					{
+						return relatedFlowId;
+					}
+					set	
+					{
+						relatedFlowId = value;
+					}
+				}
+
+				public long? BusinessId
+				{
+					get
+					{
+						return businessId;
+					}
+					set	
+					{
+						businessId = value;
 					}
 				}
 			}

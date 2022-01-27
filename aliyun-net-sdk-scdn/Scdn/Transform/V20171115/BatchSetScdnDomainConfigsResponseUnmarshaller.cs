@@ -26,12 +26,23 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 {
     public class BatchSetScdnDomainConfigsResponseUnmarshaller
     {
-        public static BatchSetScdnDomainConfigsResponse Unmarshall(UnmarshallerContext context)
+        public static BatchSetScdnDomainConfigsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchSetScdnDomainConfigsResponse batchSetScdnDomainConfigsResponse = new BatchSetScdnDomainConfigsResponse();
 
-			batchSetScdnDomainConfigsResponse.HttpResponse = context.HttpResponse;
-			batchSetScdnDomainConfigsResponse.RequestId = context.StringValue("BatchSetScdnDomainConfigs.RequestId");
+			batchSetScdnDomainConfigsResponse.HttpResponse = _ctx.HttpResponse;
+			batchSetScdnDomainConfigsResponse.RequestId = _ctx.StringValue("BatchSetScdnDomainConfigs.RequestId");
+
+			List<BatchSetScdnDomainConfigsResponse.BatchSetScdnDomainConfigs_DomainConfigModel> batchSetScdnDomainConfigsResponse_domainConfigList = new List<BatchSetScdnDomainConfigsResponse.BatchSetScdnDomainConfigs_DomainConfigModel>();
+			for (int i = 0; i < _ctx.Length("BatchSetScdnDomainConfigs.DomainConfigList.Length"); i++) {
+				BatchSetScdnDomainConfigsResponse.BatchSetScdnDomainConfigs_DomainConfigModel domainConfigModel = new BatchSetScdnDomainConfigsResponse.BatchSetScdnDomainConfigs_DomainConfigModel();
+				domainConfigModel.DomainName = _ctx.StringValue("BatchSetScdnDomainConfigs.DomainConfigList["+ i +"].DomainName");
+				domainConfigModel.ConfigId = _ctx.LongValue("BatchSetScdnDomainConfigs.DomainConfigList["+ i +"].ConfigId");
+				domainConfigModel.FunctionName = _ctx.StringValue("BatchSetScdnDomainConfigs.DomainConfigList["+ i +"].FunctionName");
+
+				batchSetScdnDomainConfigsResponse_domainConfigList.Add(domainConfigModel);
+			}
+			batchSetScdnDomainConfigsResponse.DomainConfigList = batchSetScdnDomainConfigsResponse_domainConfigList;
         
 			return batchSetScdnDomainConfigsResponse;
         }

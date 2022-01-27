@@ -26,13 +26,13 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class SubmitAIImageJobResponseUnmarshaller
     {
-        public static SubmitAIImageJobResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitAIImageJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitAIImageJobResponse submitAIImageJobResponse = new SubmitAIImageJobResponse();
 
-			submitAIImageJobResponse.HttpResponse = context.HttpResponse;
-			submitAIImageJobResponse.RequestId = context.StringValue("SubmitAIImageJob.RequestId");
-			submitAIImageJobResponse.JobId = context.StringValue("SubmitAIImageJob.JobId");
+			submitAIImageJobResponse.HttpResponse = _ctx.HttpResponse;
+			submitAIImageJobResponse.RequestId = _ctx.StringValue("SubmitAIImageJob.RequestId");
+			submitAIImageJobResponse.JobId = _ctx.StringValue("SubmitAIImageJob.JobId");
         
 			return submitAIImageJobResponse;
         }

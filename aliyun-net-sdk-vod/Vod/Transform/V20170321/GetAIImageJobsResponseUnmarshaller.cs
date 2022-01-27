@@ -26,26 +26,26 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetAIImageJobsResponseUnmarshaller
     {
-        public static GetAIImageJobsResponse Unmarshall(UnmarshallerContext context)
+        public static GetAIImageJobsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetAIImageJobsResponse getAIImageJobsResponse = new GetAIImageJobsResponse();
 
-			getAIImageJobsResponse.HttpResponse = context.HttpResponse;
-			getAIImageJobsResponse.RequestId = context.StringValue("GetAIImageJobs.RequestId");
+			getAIImageJobsResponse.HttpResponse = _ctx.HttpResponse;
+			getAIImageJobsResponse.RequestId = _ctx.StringValue("GetAIImageJobs.RequestId");
 
 			List<GetAIImageJobsResponse.GetAIImageJobs_AIImageJob> getAIImageJobsResponse_aIImageJobList = new List<GetAIImageJobsResponse.GetAIImageJobs_AIImageJob>();
-			for (int i = 0; i < context.Length("GetAIImageJobs.AIImageJobList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetAIImageJobs.AIImageJobList.Length"); i++) {
 				GetAIImageJobsResponse.GetAIImageJobs_AIImageJob aIImageJob = new GetAIImageJobsResponse.GetAIImageJobs_AIImageJob();
-				aIImageJob.CreationTime = context.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].CreationTime");
-				aIImageJob.JobId = context.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].JobId");
-				aIImageJob.TemplateId = context.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].TemplateId");
-				aIImageJob.VideoId = context.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].VideoId");
-				aIImageJob.AIImageResult = context.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].AIImageResult");
-				aIImageJob.UserData = context.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].UserData");
-				aIImageJob.Code = context.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].Code");
-				aIImageJob.Message = context.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].Message");
-				aIImageJob.Status = context.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].Status");
-				aIImageJob.TemplateConfig = context.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].TemplateConfig");
+				aIImageJob.CreationTime = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].CreationTime");
+				aIImageJob.JobId = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].JobId");
+				aIImageJob.TemplateId = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].TemplateId");
+				aIImageJob.VideoId = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].VideoId");
+				aIImageJob.AIImageResult = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].AIImageResult");
+				aIImageJob.UserData = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].UserData");
+				aIImageJob.Code = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].Code");
+				aIImageJob.Message = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].Message");
+				aIImageJob.Status = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].Status");
+				aIImageJob.TemplateConfig = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].TemplateConfig");
 
 				getAIImageJobsResponse_aIImageJobList.Add(aIImageJob);
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.alimt.Model.V20181012
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 	public class GetDetectLanguageResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string detectedLanguage;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string DetectedLanguage
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			set	
 			{
 				detectedLanguage = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

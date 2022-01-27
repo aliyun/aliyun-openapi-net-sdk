@@ -39,6 +39,8 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 
 		private long? expireTime;
 
+		private string fileUrl;
+
 		public string RequestId
 		{
 			get
@@ -120,6 +122,18 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 			set	
 			{
 				expireTime = value;
+			}
+		}
+
+		public string FileUrl
+		{
+			get
+			{
+				return fileUrl;
+			}
+			set	
+			{
+				fileUrl = value;
 			}
 		}
 	}

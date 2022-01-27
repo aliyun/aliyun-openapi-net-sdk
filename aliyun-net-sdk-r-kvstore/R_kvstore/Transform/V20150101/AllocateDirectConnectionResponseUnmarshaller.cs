@@ -26,12 +26,12 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class AllocateDirectConnectionResponseUnmarshaller
     {
-        public static AllocateDirectConnectionResponse Unmarshall(UnmarshallerContext context)
+        public static AllocateDirectConnectionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AllocateDirectConnectionResponse allocateDirectConnectionResponse = new AllocateDirectConnectionResponse();
 
-			allocateDirectConnectionResponse.HttpResponse = context.HttpResponse;
-			allocateDirectConnectionResponse.RequestId = context.StringValue("AllocateDirectConnection.RequestId");
+			allocateDirectConnectionResponse.HttpResponse = _ctx.HttpResponse;
+			allocateDirectConnectionResponse.RequestId = _ctx.StringValue("AllocateDirectConnection.RequestId");
         
 			return allocateDirectConnectionResponse;
         }

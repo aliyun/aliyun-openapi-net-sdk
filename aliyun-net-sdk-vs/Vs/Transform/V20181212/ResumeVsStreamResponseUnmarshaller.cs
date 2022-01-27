@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class ResumeVsStreamResponseUnmarshaller
     {
-        public static ResumeVsStreamResponse Unmarshall(UnmarshallerContext context)
+        public static ResumeVsStreamResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ResumeVsStreamResponse resumeVsStreamResponse = new ResumeVsStreamResponse();
 
-			resumeVsStreamResponse.HttpResponse = context.HttpResponse;
-			resumeVsStreamResponse.RequestId = context.StringValue("ResumeVsStream.RequestId");
+			resumeVsStreamResponse.HttpResponse = _ctx.HttpResponse;
+			resumeVsStreamResponse.RequestId = _ctx.StringValue("ResumeVsStream.RequestId");
         
 			return resumeVsStreamResponse;
         }

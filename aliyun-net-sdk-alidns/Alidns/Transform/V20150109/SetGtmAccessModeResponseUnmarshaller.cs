@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class SetGtmAccessModeResponseUnmarshaller
     {
-        public static SetGtmAccessModeResponse Unmarshall(UnmarshallerContext context)
+        public static SetGtmAccessModeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetGtmAccessModeResponse setGtmAccessModeResponse = new SetGtmAccessModeResponse();
 
-			setGtmAccessModeResponse.HttpResponse = context.HttpResponse;
-			setGtmAccessModeResponse.RequestId = context.StringValue("SetGtmAccessMode.RequestId");
+			setGtmAccessModeResponse.HttpResponse = _ctx.HttpResponse;
+			setGtmAccessModeResponse.RequestId = _ctx.StringValue("SetGtmAccessMode.RequestId");
         
 			return setGtmAccessModeResponse;
         }

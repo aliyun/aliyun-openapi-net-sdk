@@ -30,30 +30,22 @@ namespace Aliyun.Acs.cr.Model.V20160607
     public class UpdateRepoWebhookRequest : RoaAcsRequest<UpdateRepoWebhookResponse>
     {
         public UpdateRepoWebhookRequest()
-            : base("cr", "2016-06-07", "UpdateRepoWebhook", "cr", "openAPI")
+            : base("cr", "2016-06-07", "UpdateRepoWebhook", "acr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/repos/[RepoNamespace]/[RepoName]/webhooks/[WebhookId]";
 			Method = MethodType.POST;
         }
 
-		private string repoNamespace;
-
 		private long? webhookId;
 
-		private string repoName;
+		private string repoNamespace;
 
-		public string RepoNamespace
-		{
-			get
-			{
-				return repoNamespace;
-			}
-			set	
-			{
-				repoNamespace = value;
-				DictionaryUtil.Add(PathParameters, "RepoNamespace", value);
-			}
-		}
+		private string repoName;
 
 		public long? WebhookId
 		{
@@ -65,6 +57,19 @@ namespace Aliyun.Acs.cr.Model.V20160607
 			{
 				webhookId = value;
 				DictionaryUtil.Add(PathParameters, "WebhookId", value.ToString());
+			}
+		}
+
+		public string RepoNamespace
+		{
+			get
+			{
+				return repoNamespace;
+			}
+			set	
+			{
+				repoNamespace = value;
+				DictionaryUtil.Add(PathParameters, "RepoNamespace", value);
 			}
 		}
 

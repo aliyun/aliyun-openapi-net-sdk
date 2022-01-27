@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeDohDomainStatisticsResponseUnmarshaller
     {
-        public static DescribeDohDomainStatisticsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDohDomainStatisticsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDohDomainStatisticsResponse describeDohDomainStatisticsResponse = new DescribeDohDomainStatisticsResponse();
 
-			describeDohDomainStatisticsResponse.HttpResponse = context.HttpResponse;
-			describeDohDomainStatisticsResponse.RequestId = context.StringValue("DescribeDohDomainStatistics.RequestId");
+			describeDohDomainStatisticsResponse.HttpResponse = _ctx.HttpResponse;
+			describeDohDomainStatisticsResponse.RequestId = _ctx.StringValue("DescribeDohDomainStatistics.RequestId");
 
 			List<DescribeDohDomainStatisticsResponse.DescribeDohDomainStatistics_Statistic> describeDohDomainStatisticsResponse_statistics = new List<DescribeDohDomainStatisticsResponse.DescribeDohDomainStatistics_Statistic>();
-			for (int i = 0; i < context.Length("DescribeDohDomainStatistics.Statistics.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDohDomainStatistics.Statistics.Length"); i++) {
 				DescribeDohDomainStatisticsResponse.DescribeDohDomainStatistics_Statistic statistic = new DescribeDohDomainStatisticsResponse.DescribeDohDomainStatistics_Statistic();
-				statistic.Timestamp = context.LongValue("DescribeDohDomainStatistics.Statistics["+ i +"].Timestamp");
-				statistic.V4HttpCount = context.LongValue("DescribeDohDomainStatistics.Statistics["+ i +"].V4HttpCount");
-				statistic.V6HttpCount = context.LongValue("DescribeDohDomainStatistics.Statistics["+ i +"].V6HttpCount");
-				statistic.V4HttpsCount = context.LongValue("DescribeDohDomainStatistics.Statistics["+ i +"].V4HttpsCount");
-				statistic.V6HttpsCount = context.LongValue("DescribeDohDomainStatistics.Statistics["+ i +"].V6HttpsCount");
-				statistic.TotalCount = context.LongValue("DescribeDohDomainStatistics.Statistics["+ i +"].TotalCount");
+				statistic.Timestamp = _ctx.LongValue("DescribeDohDomainStatistics.Statistics["+ i +"].Timestamp");
+				statistic.V4HttpCount = _ctx.LongValue("DescribeDohDomainStatistics.Statistics["+ i +"].V4HttpCount");
+				statistic.V6HttpCount = _ctx.LongValue("DescribeDohDomainStatistics.Statistics["+ i +"].V6HttpCount");
+				statistic.V4HttpsCount = _ctx.LongValue("DescribeDohDomainStatistics.Statistics["+ i +"].V4HttpsCount");
+				statistic.V6HttpsCount = _ctx.LongValue("DescribeDohDomainStatistics.Statistics["+ i +"].V6HttpsCount");
+				statistic.TotalCount = _ctx.LongValue("DescribeDohDomainStatistics.Statistics["+ i +"].TotalCount");
 
 				describeDohDomainStatisticsResponse_statistics.Add(statistic);
 			}

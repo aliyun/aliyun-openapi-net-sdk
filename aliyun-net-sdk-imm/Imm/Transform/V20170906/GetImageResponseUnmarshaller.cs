@@ -26,89 +26,86 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class GetImageResponseUnmarshaller
     {
-        public static GetImageResponse Unmarshall(UnmarshallerContext context)
+        public static GetImageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetImageResponse getImageResponse = new GetImageResponse();
 
-			getImageResponse.HttpResponse = context.HttpResponse;
-			getImageResponse.RequestId = context.StringValue("GetImage.RequestId");
-			getImageResponse.SetId = context.StringValue("GetImage.SetId");
-			getImageResponse.ImageUri = context.StringValue("GetImage.ImageUri");
-			getImageResponse.RemarksA = context.StringValue("GetImage.RemarksA");
-			getImageResponse.RemarksB = context.StringValue("GetImage.RemarksB");
-			getImageResponse.CreateTime = context.StringValue("GetImage.CreateTime");
-			getImageResponse.ModifyTime = context.StringValue("GetImage.ModifyTime");
-			getImageResponse.ImageWidth = context.IntegerValue("GetImage.ImageWidth");
-			getImageResponse.ImageHeight = context.IntegerValue("GetImage.ImageHeight");
-			getImageResponse.ImageFormat = context.StringValue("GetImage.ImageFormat");
-			getImageResponse.Exif = context.StringValue("GetImage.Exif");
-			getImageResponse.FileSize = context.IntegerValue("GetImage.FileSize");
-			getImageResponse.ImageTime = context.StringValue("GetImage.ImageTime");
-			getImageResponse.Orientation = context.StringValue("GetImage.Orientation");
-			getImageResponse.SourceType = context.StringValue("GetImage.SourceType");
-			getImageResponse.SourceUri = context.StringValue("GetImage.SourceUri");
-			getImageResponse.SourcePosition = context.StringValue("GetImage.SourcePosition");
-			getImageResponse.FacesStatus = context.StringValue("GetImage.FacesStatus");
-			getImageResponse.FacesModifyTime = context.StringValue("GetImage.FacesModifyTime");
-			getImageResponse.Location = context.StringValue("GetImage.Location");
-			getImageResponse.OCRStatus = context.StringValue("GetImage.OCRStatus");
-			getImageResponse.OCRModifyTime = context.StringValue("GetImage.OCRModifyTime");
-			getImageResponse.OCRFailReason = context.StringValue("GetImage.OCRFailReason");
-			getImageResponse.FacesFailReason = context.StringValue("GetImage.FacesFailReason");
-			getImageResponse.TagsFailReason = context.StringValue("GetImage.TagsFailReason");
-			getImageResponse.TagsModifyTime = context.StringValue("GetImage.TagsModifyTime");
-			getImageResponse.CelebrityStatus = context.StringValue("GetImage.CelebrityStatus");
-			getImageResponse.CelebrityModifyTime = context.StringValue("GetImage.CelebrityModifyTime");
-			getImageResponse.CelebrityFailReason = context.StringValue("GetImage.CelebrityFailReason");
-			getImageResponse.TagsStatus = context.StringValue("GetImage.TagsStatus");
-			getImageResponse.RemarksC = context.StringValue("GetImage.RemarksC");
-			getImageResponse.RemarksD = context.StringValue("GetImage.RemarksD");
-			getImageResponse.ExternalId = context.StringValue("GetImage.ExternalId");
-			getImageResponse.AddressModifyTime = context.StringValue("GetImage.AddressModifyTime");
-			getImageResponse.AddressStatus = context.StringValue("GetImage.AddressStatus");
-			getImageResponse.AddressFailReason = context.StringValue("GetImage.AddressFailReason");
-			getImageResponse.RemarksArrayA = context.StringValue("GetImage.RemarksArrayA");
-			getImageResponse.RemarksArrayB = context.StringValue("GetImage.RemarksArrayB");
-			getImageResponse.ImageQualityModifyTime = context.StringValue("GetImage.ImageQualityModifyTime");
-			getImageResponse.ImageQualityFailReason = context.StringValue("GetImage.ImageQualityFailReason");
-			getImageResponse.ImageQualityStatus = context.StringValue("GetImage.ImageQualityStatus");
-			getImageResponse.CroppingSuggestionStatus = context.StringValue("GetImage.CroppingSuggestionStatus");
-			getImageResponse.CroppingSuggestionFailReason = context.StringValue("GetImage.CroppingSuggestionFailReason");
-			getImageResponse.CroppingSuggestionModifyTime = context.StringValue("GetImage.CroppingSuggestionModifyTime");
+			getImageResponse.HttpResponse = _ctx.HttpResponse;
+			getImageResponse.ModifyTime = _ctx.StringValue("GetImage.ModifyTime");
+			getImageResponse.SourceUri = _ctx.StringValue("GetImage.SourceUri");
+			getImageResponse.SourceType = _ctx.StringValue("GetImage.SourceType");
+			getImageResponse.FacesFailReason = _ctx.StringValue("GetImage.FacesFailReason");
+			getImageResponse.CroppingSuggestionStatus = _ctx.StringValue("GetImage.CroppingSuggestionStatus");
+			getImageResponse.CroppingSuggestionFailReason = _ctx.StringValue("GetImage.CroppingSuggestionFailReason");
+			getImageResponse.RemarksA = _ctx.StringValue("GetImage.RemarksA");
+			getImageResponse.AddressFailReason = _ctx.StringValue("GetImage.AddressFailReason");
+			getImageResponse.RemarksB = _ctx.StringValue("GetImage.RemarksB");
+			getImageResponse.AddressModifyTime = _ctx.StringValue("GetImage.AddressModifyTime");
+			getImageResponse.ImageFormat = _ctx.StringValue("GetImage.ImageFormat");
+			getImageResponse.RemarksArrayB = _ctx.StringValue("GetImage.RemarksArrayB");
+			getImageResponse.TagsFailReason = _ctx.StringValue("GetImage.TagsFailReason");
+			getImageResponse.Exif = _ctx.StringValue("GetImage.Exif");
+			getImageResponse.FacesModifyTime = _ctx.StringValue("GetImage.FacesModifyTime");
+			getImageResponse.RemarksC = _ctx.StringValue("GetImage.RemarksC");
+			getImageResponse.RemarksD = _ctx.StringValue("GetImage.RemarksD");
+			getImageResponse.ImageWidth = _ctx.IntegerValue("GetImage.ImageWidth");
+			getImageResponse.SourcePosition = _ctx.StringValue("GetImage.SourcePosition");
+			getImageResponse.RemarksArrayA = _ctx.StringValue("GetImage.RemarksArrayA");
+			getImageResponse.AddressStatus = _ctx.StringValue("GetImage.AddressStatus");
+			getImageResponse.FacesStatus = _ctx.StringValue("GetImage.FacesStatus");
+			getImageResponse.ImageQualityModifyTime = _ctx.StringValue("GetImage.ImageQualityModifyTime");
+			getImageResponse.RequestId = _ctx.StringValue("GetImage.RequestId");
+			getImageResponse.TagsModifyTime = _ctx.StringValue("GetImage.TagsModifyTime");
+			getImageResponse.ExternalId = _ctx.StringValue("GetImage.ExternalId");
+			getImageResponse.CreateTime = _ctx.StringValue("GetImage.CreateTime");
+			getImageResponse.ImageQualityFailReason = _ctx.StringValue("GetImage.ImageQualityFailReason");
+			getImageResponse.ImageUri = _ctx.StringValue("GetImage.ImageUri");
+			getImageResponse.Orientation = _ctx.StringValue("GetImage.Orientation");
+			getImageResponse.OCRStatus = _ctx.StringValue("GetImage.OCRStatus");
+			getImageResponse.OCRModifyTime = _ctx.StringValue("GetImage.OCRModifyTime");
+			getImageResponse.CroppingSuggestionModifyTime = _ctx.StringValue("GetImage.CroppingSuggestionModifyTime");
+			getImageResponse.ImageTime = _ctx.StringValue("GetImage.ImageTime");
+			getImageResponse.TagsStatus = _ctx.StringValue("GetImage.TagsStatus");
+			getImageResponse.ImageQualityStatus = _ctx.StringValue("GetImage.ImageQualityStatus");
+			getImageResponse.ImageHeight = _ctx.IntegerValue("GetImage.ImageHeight");
+			getImageResponse.OCRFailReason = _ctx.StringValue("GetImage.OCRFailReason");
+			getImageResponse.SetId = _ctx.StringValue("GetImage.SetId");
+			getImageResponse.Location = _ctx.StringValue("GetImage.Location");
+			getImageResponse.FileSize = _ctx.IntegerValue("GetImage.FileSize");
 
 			GetImageResponse.GetImage_ImageQuality imageQuality = new GetImageResponse.GetImage_ImageQuality();
-			imageQuality.OverallScore = context.FloatValue("GetImage.ImageQuality.OverallScore");
-			imageQuality.ClarityScore = context.FloatValue("GetImage.ImageQuality.ClarityScore");
-			imageQuality.Clarity = context.FloatValue("GetImage.ImageQuality.Clarity");
-			imageQuality.ExposureScore = context.FloatValue("GetImage.ImageQuality.ExposureScore");
-			imageQuality.Exposure = context.FloatValue("GetImage.ImageQuality.Exposure");
-			imageQuality.ContrastScore = context.FloatValue("GetImage.ImageQuality.ContrastScore");
-			imageQuality.Contrast = context.FloatValue("GetImage.ImageQuality.Contrast");
-			imageQuality.ColorScore = context.FloatValue("GetImage.ImageQuality.ColorScore");
-			imageQuality.Color = context.FloatValue("GetImage.ImageQuality.Color");
-			imageQuality.CompositionScore = context.FloatValue("GetImage.ImageQuality.CompositionScore");
+			imageQuality.ClarityScore = _ctx.FloatValue("GetImage.ImageQuality.ClarityScore");
+			imageQuality.CompositionScore = _ctx.FloatValue("GetImage.ImageQuality.CompositionScore");
+			imageQuality.ContrastScore = _ctx.FloatValue("GetImage.ImageQuality.ContrastScore");
+			imageQuality.Color = _ctx.FloatValue("GetImage.ImageQuality.Color");
+			imageQuality.Exposure = _ctx.FloatValue("GetImage.ImageQuality.Exposure");
+			imageQuality.OverallScore = _ctx.FloatValue("GetImage.ImageQuality.OverallScore");
+			imageQuality.Clarity = _ctx.FloatValue("GetImage.ImageQuality.Clarity");
+			imageQuality.Contrast = _ctx.FloatValue("GetImage.ImageQuality.Contrast");
+			imageQuality.ExposureScore = _ctx.FloatValue("GetImage.ImageQuality.ExposureScore");
+			imageQuality.ColorScore = _ctx.FloatValue("GetImage.ImageQuality.ColorScore");
 			getImageResponse.ImageQuality = imageQuality;
 
 			GetImageResponse.GetImage_Address address = new GetImageResponse.GetImage_Address();
-			address.AddressLine = context.StringValue("GetImage.Address.AddressLine");
-			address.Country = context.StringValue("GetImage.Address.Country");
-			address.Province = context.StringValue("GetImage.Address.Province");
-			address.City = context.StringValue("GetImage.Address.City");
-			address.District = context.StringValue("GetImage.Address.District");
-			address.Township = context.StringValue("GetImage.Address.Township");
+			address.Township = _ctx.StringValue("GetImage.Address.Township");
+			address.AddressLine = _ctx.StringValue("GetImage.Address.AddressLine");
+			address.Country = _ctx.StringValue("GetImage.Address.Country");
+			address.City = _ctx.StringValue("GetImage.Address.City");
+			address.District = _ctx.StringValue("GetImage.Address.District");
+			address.Province = _ctx.StringValue("GetImage.Address.Province");
 			getImageResponse.Address = address;
 
 			List<GetImageResponse.GetImage_CroppingSuggestionItem> getImageResponse_croppingSuggestion = new List<GetImageResponse.GetImage_CroppingSuggestionItem>();
-			for (int i = 0; i < context.Length("GetImage.CroppingSuggestion.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetImage.CroppingSuggestion.Length"); i++) {
 				GetImageResponse.GetImage_CroppingSuggestionItem croppingSuggestionItem = new GetImageResponse.GetImage_CroppingSuggestionItem();
-				croppingSuggestionItem.AspectRatio = context.StringValue("GetImage.CroppingSuggestion["+ i +"].AspectRatio");
-				croppingSuggestionItem.Score = context.FloatValue("GetImage.CroppingSuggestion["+ i +"].Score");
+				croppingSuggestionItem.AspectRatio = _ctx.StringValue("GetImage.CroppingSuggestion["+ i +"].AspectRatio");
+				croppingSuggestionItem.Score = _ctx.FloatValue("GetImage.CroppingSuggestion["+ i +"].Score");
 
 				GetImageResponse.GetImage_CroppingSuggestionItem.GetImage_CroppingBoundary croppingBoundary = new GetImageResponse.GetImage_CroppingSuggestionItem.GetImage_CroppingBoundary();
-				croppingBoundary.Width = context.IntegerValue("GetImage.CroppingSuggestion["+ i +"].CroppingBoundary.Width");
-				croppingBoundary.Height = context.IntegerValue("GetImage.CroppingSuggestion["+ i +"].CroppingBoundary.Height");
-				croppingBoundary.Left = context.IntegerValue("GetImage.CroppingSuggestion["+ i +"].CroppingBoundary.Left");
-				croppingBoundary.Top = context.IntegerValue("GetImage.CroppingSuggestion["+ i +"].CroppingBoundary.Top");
+				croppingBoundary.Left = _ctx.IntegerValue("GetImage.CroppingSuggestion["+ i +"].CroppingBoundary.Left");
+				croppingBoundary.Top = _ctx.IntegerValue("GetImage.CroppingSuggestion["+ i +"].CroppingBoundary.Top");
+				croppingBoundary.Height = _ctx.IntegerValue("GetImage.CroppingSuggestion["+ i +"].CroppingBoundary.Height");
+				croppingBoundary.Width = _ctx.IntegerValue("GetImage.CroppingSuggestion["+ i +"].CroppingBoundary.Width");
 				croppingSuggestionItem.CroppingBoundary = croppingBoundary;
 
 				getImageResponse_croppingSuggestion.Add(croppingSuggestionItem);
@@ -116,104 +113,83 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			getImageResponse.CroppingSuggestion = getImageResponse_croppingSuggestion;
 
 			List<GetImageResponse.GetImage_FacesItem> getImageResponse_faces = new List<GetImageResponse.GetImage_FacesItem>();
-			for (int i = 0; i < context.Length("GetImage.Faces.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetImage.Faces.Length"); i++) {
 				GetImageResponse.GetImage_FacesItem facesItem = new GetImageResponse.GetImage_FacesItem();
-				facesItem.FaceId = context.StringValue("GetImage.Faces["+ i +"].FaceId");
-				facesItem.FaceConfidence = context.FloatValue("GetImage.Faces["+ i +"].FaceConfidence");
-				facesItem.Age = context.StringValue("GetImage.Faces["+ i +"].Age");
-				facesItem.Gender = context.StringValue("GetImage.Faces["+ i +"].Gender");
-				facesItem.Emotion = context.StringValue("GetImage.Faces["+ i +"].Emotion");
-				facesItem.Attractive = context.FloatValue("GetImage.Faces["+ i +"].Attractive");
-				facesItem.GenderConfidence = context.FloatValue("GetImage.Faces["+ i +"].GenderConfidence");
-				facesItem.GroupId = context.StringValue("GetImage.Faces["+ i +"].GroupId");
-				facesItem.FaceQuality = context.FloatValue("GetImage.Faces["+ i +"].FaceQuality");
-				facesItem.EmotionConfidence = context.FloatValue("GetImage.Faces["+ i +"].EmotionConfidence");
+				facesItem.FaceConfidence = _ctx.FloatValue("GetImage.Faces["+ i +"].FaceConfidence");
+				facesItem.FaceId = _ctx.StringValue("GetImage.Faces["+ i +"].FaceId");
+				facesItem.Attractive = _ctx.FloatValue("GetImage.Faces["+ i +"].Attractive");
+				facesItem.FaceQuality = _ctx.FloatValue("GetImage.Faces["+ i +"].FaceQuality");
+				facesItem.GenderConfidence = _ctx.FloatValue("GetImage.Faces["+ i +"].GenderConfidence");
+				facesItem.EmotionConfidence = _ctx.FloatValue("GetImage.Faces["+ i +"].EmotionConfidence");
+				facesItem.Emotion = _ctx.StringValue("GetImage.Faces["+ i +"].Emotion");
+				facesItem.Gender = _ctx.StringValue("GetImage.Faces["+ i +"].Gender");
+				facesItem.Age = _ctx.StringValue("GetImage.Faces["+ i +"].Age");
+				facesItem.GroupId = _ctx.StringValue("GetImage.Faces["+ i +"].GroupId");
+
+				GetImageResponse.GetImage_FacesItem.GetImage_EmotionDetails emotionDetails = new GetImageResponse.GetImage_FacesItem.GetImage_EmotionDetails();
+				emotionDetails.CALM = _ctx.FloatValue("GetImage.Faces["+ i +"].EmotionDetails.CALM");
+				emotionDetails.SCARED = _ctx.FloatValue("GetImage.Faces["+ i +"].EmotionDetails.SCARED");
+				emotionDetails.HAPPY = _ctx.FloatValue("GetImage.Faces["+ i +"].EmotionDetails.HAPPY");
+				emotionDetails.SAD = _ctx.FloatValue("GetImage.Faces["+ i +"].EmotionDetails.SAD");
+				emotionDetails.SURPRISED = _ctx.FloatValue("GetImage.Faces["+ i +"].EmotionDetails.SURPRISED");
+				emotionDetails.ANGRY = _ctx.FloatValue("GetImage.Faces["+ i +"].EmotionDetails.ANGRY");
+				emotionDetails.DISGUSTED = _ctx.FloatValue("GetImage.Faces["+ i +"].EmotionDetails.DISGUSTED");
+				facesItem.EmotionDetails = emotionDetails;
 
 				GetImageResponse.GetImage_FacesItem.GetImage_FaceAttributes faceAttributes = new GetImageResponse.GetImage_FacesItem.GetImage_FaceAttributes();
-				faceAttributes.Glasses = context.StringValue("GetImage.Faces["+ i +"].FaceAttributes.Glasses");
-				faceAttributes.Beard = context.StringValue("GetImage.Faces["+ i +"].FaceAttributes.Beard");
-				faceAttributes.Race = context.StringValue("GetImage.Faces["+ i +"].FaceAttributes.Race");
-				faceAttributes.Mask = context.StringValue("GetImage.Faces["+ i +"].FaceAttributes.Mask");
-				faceAttributes.GlassesConfidence = context.FloatValue("GetImage.Faces["+ i +"].FaceAttributes.GlassesConfidence");
-				faceAttributes.BeardConfidence = context.FloatValue("GetImage.Faces["+ i +"].FaceAttributes.BeardConfidence");
-				faceAttributes.RaceConfidence = context.FloatValue("GetImage.Faces["+ i +"].FaceAttributes.RaceConfidence");
-				faceAttributes.MaskConfidence = context.FloatValue("GetImage.Faces["+ i +"].FaceAttributes.MaskConfidence");
+				faceAttributes.Beard = _ctx.StringValue("GetImage.Faces["+ i +"].FaceAttributes.Beard");
+				faceAttributes.BeardConfidence = _ctx.FloatValue("GetImage.Faces["+ i +"].FaceAttributes.BeardConfidence");
+				faceAttributes.MaskConfidence = _ctx.FloatValue("GetImage.Faces["+ i +"].FaceAttributes.MaskConfidence");
+				faceAttributes.Mask = _ctx.StringValue("GetImage.Faces["+ i +"].FaceAttributes.Mask");
+				faceAttributes.Glasses = _ctx.StringValue("GetImage.Faces["+ i +"].FaceAttributes.Glasses");
+				faceAttributes.GlassesConfidence = _ctx.FloatValue("GetImage.Faces["+ i +"].FaceAttributes.GlassesConfidence");
 
 				GetImageResponse.GetImage_FacesItem.GetImage_FaceAttributes.GetImage_FaceBoundary faceBoundary = new GetImageResponse.GetImage_FacesItem.GetImage_FaceAttributes.GetImage_FaceBoundary();
-				faceBoundary.Left = context.IntegerValue("GetImage.Faces["+ i +"].FaceAttributes.FaceBoundary.Left");
-				faceBoundary.Top = context.IntegerValue("GetImage.Faces["+ i +"].FaceAttributes.FaceBoundary.Top");
-				faceBoundary.Width = context.IntegerValue("GetImage.Faces["+ i +"].FaceAttributes.FaceBoundary.Width");
-				faceBoundary.Height = context.IntegerValue("GetImage.Faces["+ i +"].FaceAttributes.FaceBoundary.Height");
+				faceBoundary.Left = _ctx.IntegerValue("GetImage.Faces["+ i +"].FaceAttributes.FaceBoundary.Left");
+				faceBoundary.Top = _ctx.IntegerValue("GetImage.Faces["+ i +"].FaceAttributes.FaceBoundary.Top");
+				faceBoundary.Height = _ctx.IntegerValue("GetImage.Faces["+ i +"].FaceAttributes.FaceBoundary.Height");
+				faceBoundary.Width = _ctx.IntegerValue("GetImage.Faces["+ i +"].FaceAttributes.FaceBoundary.Width");
 				faceAttributes.FaceBoundary = faceBoundary;
 
 				GetImageResponse.GetImage_FacesItem.GetImage_FaceAttributes.GetImage_HeadPose headPose = new GetImageResponse.GetImage_FacesItem.GetImage_FaceAttributes.GetImage_HeadPose();
-				headPose.Pitch = context.FloatValue("GetImage.Faces["+ i +"].FaceAttributes.HeadPose.Pitch");
-				headPose.Roll = context.FloatValue("GetImage.Faces["+ i +"].FaceAttributes.HeadPose.Roll");
-				headPose.Yaw = context.FloatValue("GetImage.Faces["+ i +"].FaceAttributes.HeadPose.Yaw");
+				headPose.Pitch = _ctx.FloatValue("GetImage.Faces["+ i +"].FaceAttributes.HeadPose.Pitch");
+				headPose.Roll = _ctx.FloatValue("GetImage.Faces["+ i +"].FaceAttributes.HeadPose.Roll");
+				headPose.Yaw = _ctx.FloatValue("GetImage.Faces["+ i +"].FaceAttributes.HeadPose.Yaw");
 				faceAttributes.HeadPose = headPose;
 				facesItem.FaceAttributes = faceAttributes;
-
-				GetImageResponse.GetImage_FacesItem.GetImage_EmotionDetails emotionDetails = new GetImageResponse.GetImage_FacesItem.GetImage_EmotionDetails();
-				emotionDetails.HAPPY = context.FloatValue("GetImage.Faces["+ i +"].EmotionDetails.HAPPY");
-				emotionDetails.SAD = context.FloatValue("GetImage.Faces["+ i +"].EmotionDetails.SAD");
-				emotionDetails.ANGRY = context.FloatValue("GetImage.Faces["+ i +"].EmotionDetails.ANGRY");
-				emotionDetails.SURPRISED = context.FloatValue("GetImage.Faces["+ i +"].EmotionDetails.SURPRISED");
-				emotionDetails.SCARED = context.FloatValue("GetImage.Faces["+ i +"].EmotionDetails.SCARED");
-				emotionDetails.DISGUSTED = context.FloatValue("GetImage.Faces["+ i +"].EmotionDetails.DISGUSTED");
-				emotionDetails.CALM = context.FloatValue("GetImage.Faces["+ i +"].EmotionDetails.CALM");
-				facesItem.EmotionDetails = emotionDetails;
 
 				getImageResponse_faces.Add(facesItem);
 			}
 			getImageResponse.Faces = getImageResponse_faces;
 
-			List<GetImageResponse.GetImage_OCRItem> getImageResponse_oCR = new List<GetImageResponse.GetImage_OCRItem>();
-			for (int i = 0; i < context.Length("GetImage.OCR.Length"); i++) {
-				GetImageResponse.GetImage_OCRItem oCRItem = new GetImageResponse.GetImage_OCRItem();
-				oCRItem.OCRContents = context.StringValue("GetImage.OCR["+ i +"].OCRContents");
-				oCRItem.OCRConfidence = context.FloatValue("GetImage.OCR["+ i +"].OCRConfidence");
-
-				GetImageResponse.GetImage_OCRItem.GetImage_OCRBoundary oCRBoundary = new GetImageResponse.GetImage_OCRItem.GetImage_OCRBoundary();
-				oCRBoundary.Left = context.IntegerValue("GetImage.OCR["+ i +"].OCRBoundary.Left");
-				oCRBoundary.Top = context.IntegerValue("GetImage.OCR["+ i +"].OCRBoundary.Top");
-				oCRBoundary.Width = context.IntegerValue("GetImage.OCR["+ i +"].OCRBoundary.Width");
-				oCRBoundary.Height = context.IntegerValue("GetImage.OCR["+ i +"].OCRBoundary.Height");
-				oCRItem.OCRBoundary = oCRBoundary;
-
-				getImageResponse_oCR.Add(oCRItem);
-			}
-			getImageResponse.OCR = getImageResponse_oCR;
-
 			List<GetImageResponse.GetImage_TagsItem> getImageResponse_tags = new List<GetImageResponse.GetImage_TagsItem>();
-			for (int i = 0; i < context.Length("GetImage.Tags.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetImage.Tags.Length"); i++) {
 				GetImageResponse.GetImage_TagsItem tagsItem = new GetImageResponse.GetImage_TagsItem();
-				tagsItem.TagName = context.StringValue("GetImage.Tags["+ i +"].TagName");
-				tagsItem.TagConfidence = context.FloatValue("GetImage.Tags["+ i +"].TagConfidence");
-				tagsItem.TagLevel = context.IntegerValue("GetImage.Tags["+ i +"].TagLevel");
-				tagsItem.ParentTagName = context.StringValue("GetImage.Tags["+ i +"].ParentTagName");
+				tagsItem.TagConfidence = _ctx.FloatValue("GetImage.Tags["+ i +"].TagConfidence");
+				tagsItem.TagName = _ctx.StringValue("GetImage.Tags["+ i +"].TagName");
+				tagsItem.TagLevel = _ctx.IntegerValue("GetImage.Tags["+ i +"].TagLevel");
+				tagsItem.ParentTagName = _ctx.StringValue("GetImage.Tags["+ i +"].ParentTagName");
 
 				getImageResponse_tags.Add(tagsItem);
 			}
 			getImageResponse.Tags = getImageResponse_tags;
 
-			List<GetImageResponse.GetImage_CelebrityItem> getImageResponse_celebrity = new List<GetImageResponse.GetImage_CelebrityItem>();
-			for (int i = 0; i < context.Length("GetImage.Celebrity.Length"); i++) {
-				GetImageResponse.GetImage_CelebrityItem celebrityItem = new GetImageResponse.GetImage_CelebrityItem();
-				celebrityItem.CelebrityName = context.StringValue("GetImage.Celebrity["+ i +"].CelebrityName");
-				celebrityItem.CelebrityGender = context.StringValue("GetImage.Celebrity["+ i +"].CelebrityGender");
-				celebrityItem.CelebrityConfidence = context.FloatValue("GetImage.Celebrity["+ i +"].CelebrityConfidence");
-				celebrityItem.CelebrityLibraryName = context.StringValue("GetImage.Celebrity["+ i +"].CelebrityLibraryName");
+			List<GetImageResponse.GetImage_OCRItem> getImageResponse_oCR = new List<GetImageResponse.GetImage_OCRItem>();
+			for (int i = 0; i < _ctx.Length("GetImage.OCR.Length"); i++) {
+				GetImageResponse.GetImage_OCRItem oCRItem = new GetImageResponse.GetImage_OCRItem();
+				oCRItem.OCRConfidence = _ctx.FloatValue("GetImage.OCR["+ i +"].OCRConfidence");
+				oCRItem.OCRContents = _ctx.StringValue("GetImage.OCR["+ i +"].OCRContents");
 
-				GetImageResponse.GetImage_CelebrityItem.GetImage_CelebrityBoundary celebrityBoundary = new GetImageResponse.GetImage_CelebrityItem.GetImage_CelebrityBoundary();
-				celebrityBoundary.Left = context.IntegerValue("GetImage.Celebrity["+ i +"].CelebrityBoundary.Left");
-				celebrityBoundary.Top = context.IntegerValue("GetImage.Celebrity["+ i +"].CelebrityBoundary.Top");
-				celebrityBoundary.Width = context.IntegerValue("GetImage.Celebrity["+ i +"].CelebrityBoundary.Width");
-				celebrityBoundary.Height = context.IntegerValue("GetImage.Celebrity["+ i +"].CelebrityBoundary.Height");
-				celebrityItem.CelebrityBoundary = celebrityBoundary;
+				GetImageResponse.GetImage_OCRItem.GetImage_OCRBoundary oCRBoundary = new GetImageResponse.GetImage_OCRItem.GetImage_OCRBoundary();
+				oCRBoundary.Left = _ctx.IntegerValue("GetImage.OCR["+ i +"].OCRBoundary.Left");
+				oCRBoundary.Top = _ctx.IntegerValue("GetImage.OCR["+ i +"].OCRBoundary.Top");
+				oCRBoundary.Height = _ctx.IntegerValue("GetImage.OCR["+ i +"].OCRBoundary.Height");
+				oCRBoundary.Width = _ctx.IntegerValue("GetImage.OCR["+ i +"].OCRBoundary.Width");
+				oCRItem.OCRBoundary = oCRBoundary;
 
-				getImageResponse_celebrity.Add(celebrityItem);
+				getImageResponse_oCR.Add(oCRItem);
 			}
-			getImageResponse.Celebrity = getImageResponse_celebrity;
+			getImageResponse.OCR = getImageResponse_oCR;
         
 			return getImageResponse;
         }

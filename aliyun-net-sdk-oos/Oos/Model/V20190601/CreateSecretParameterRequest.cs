@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -30,12 +31,12 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class CreateSecretParameterRequest : RpcAcsRequest<CreateSecretParameterResponse>
     {
         public CreateSecretParameterRequest()
-            : base("oos", "2019-06-01", "CreateSecretParameter", "oos", "openAPI")
+            : base("oos", "2019-06-01", "CreateSecretParameter")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.oos.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.oos.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -44,15 +45,17 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string description;
 
-		private string keyId;
-
 		private string type;
 
 		private string constraints;
 
-		private string name;
-
 		private string _value;
+
+		private string keyId;
+
+		private string tags;
+
+		private string name;
 
 		public string ClientToken
 		{
@@ -77,19 +80,6 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string KeyId
-		{
-			get
-			{
-				return keyId;
-			}
-			set	
-			{
-				keyId = value;
-				DictionaryUtil.Add(QueryParameters, "KeyId", value);
 			}
 		}
 
@@ -119,19 +109,6 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
 		public string _Value
 		{
 			get
@@ -142,6 +119,45 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				_value = value;
 				DictionaryUtil.Add(QueryParameters, "Value", value);
+			}
+		}
+
+		public string KeyId
+		{
+			get
+			{
+				return keyId;
+			}
+			set	
+			{
+				keyId = value;
+				DictionaryUtil.Add(QueryParameters, "KeyId", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

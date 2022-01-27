@@ -26,45 +26,45 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListFlowJobHistoryResponseUnmarshaller
     {
-        public static ListFlowJobHistoryResponse Unmarshall(UnmarshallerContext context)
+        public static ListFlowJobHistoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListFlowJobHistoryResponse listFlowJobHistoryResponse = new ListFlowJobHistoryResponse();
 
-			listFlowJobHistoryResponse.HttpResponse = context.HttpResponse;
-			listFlowJobHistoryResponse.RequestId = context.StringValue("ListFlowJobHistory.RequestId");
-			listFlowJobHistoryResponse.PageNumber = context.IntegerValue("ListFlowJobHistory.PageNumber");
-			listFlowJobHistoryResponse.PageSize = context.IntegerValue("ListFlowJobHistory.PageSize");
-			listFlowJobHistoryResponse.Total = context.IntegerValue("ListFlowJobHistory.Total");
+			listFlowJobHistoryResponse.HttpResponse = _ctx.HttpResponse;
+			listFlowJobHistoryResponse.RequestId = _ctx.StringValue("ListFlowJobHistory.RequestId");
+			listFlowJobHistoryResponse.PageNumber = _ctx.IntegerValue("ListFlowJobHistory.PageNumber");
+			listFlowJobHistoryResponse.PageSize = _ctx.IntegerValue("ListFlowJobHistory.PageSize");
+			listFlowJobHistoryResponse.Total = _ctx.IntegerValue("ListFlowJobHistory.Total");
 
 			List<ListFlowJobHistoryResponse.ListFlowJobHistory_NodeInstance> listFlowJobHistoryResponse_nodeInstances = new List<ListFlowJobHistoryResponse.ListFlowJobHistory_NodeInstance>();
-			for (int i = 0; i < context.Length("ListFlowJobHistory.NodeInstances.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListFlowJobHistory.NodeInstances.Length"); i++) {
 				ListFlowJobHistoryResponse.ListFlowJobHistory_NodeInstance nodeInstance = new ListFlowJobHistoryResponse.ListFlowJobHistory_NodeInstance();
-				nodeInstance.Id = context.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].Id");
-				nodeInstance.GmtCreate = context.LongValue("ListFlowJobHistory.NodeInstances["+ i +"].GmtCreate");
-				nodeInstance.GmtModified = context.LongValue("ListFlowJobHistory.NodeInstances["+ i +"].GmtModified");
-				nodeInstance.Type = context.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].Type");
-				nodeInstance.Status = context.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].Status");
-				nodeInstance.JobId = context.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].JobId");
-				nodeInstance.JobName = context.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].JobName");
-				nodeInstance.JobType = context.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].JobType");
-				nodeInstance.JobParams = context.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].JobParams");
-				nodeInstance.FailAct = context.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].FailAct");
-				nodeInstance.MaxRetry = context.IntegerValue("ListFlowJobHistory.NodeInstances["+ i +"].MaxRetry");
-				nodeInstance.RetryInterval = context.LongValue("ListFlowJobHistory.NodeInstances["+ i +"].RetryInterval");
-				nodeInstance.NodeName = context.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].NodeName");
-				nodeInstance.ClusterId = context.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].ClusterId");
-				nodeInstance.HostName = context.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].HostName");
-				nodeInstance.ProjectId = context.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].ProjectId");
-				nodeInstance.StartTime = context.LongValue("ListFlowJobHistory.NodeInstances["+ i +"].StartTime");
-				nodeInstance.EndTime = context.LongValue("ListFlowJobHistory.NodeInstances["+ i +"].EndTime");
-				nodeInstance.Pending = context.BooleanValue("ListFlowJobHistory.NodeInstances["+ i +"].Pending");
-				nodeInstance.Retries = context.IntegerValue("ListFlowJobHistory.NodeInstances["+ i +"].Retries");
-				nodeInstance.ExternalId = context.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].ExternalId");
-				nodeInstance.ExternalStatus = context.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].ExternalStatus");
-				nodeInstance.ExternalInfo = context.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].ExternalInfo");
-				nodeInstance.ParamConf = context.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].ParamConf");
-				nodeInstance.EnvConf = context.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].EnvConf");
-				nodeInstance.RunConf = context.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].RunConf");
+				nodeInstance.Id = _ctx.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].Id");
+				nodeInstance.GmtCreate = _ctx.LongValue("ListFlowJobHistory.NodeInstances["+ i +"].GmtCreate");
+				nodeInstance.GmtModified = _ctx.LongValue("ListFlowJobHistory.NodeInstances["+ i +"].GmtModified");
+				nodeInstance.Type = _ctx.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].Type");
+				nodeInstance.Status = _ctx.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].Status");
+				nodeInstance.JobId = _ctx.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].JobId");
+				nodeInstance.JobName = _ctx.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].JobName");
+				nodeInstance.JobType = _ctx.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].JobType");
+				nodeInstance.JobParams = _ctx.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].JobParams");
+				nodeInstance.FailAct = _ctx.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].FailAct");
+				nodeInstance.MaxRetry = _ctx.IntegerValue("ListFlowJobHistory.NodeInstances["+ i +"].MaxRetry");
+				nodeInstance.RetryInterval = _ctx.LongValue("ListFlowJobHistory.NodeInstances["+ i +"].RetryInterval");
+				nodeInstance.NodeName = _ctx.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].NodeName");
+				nodeInstance.ClusterId = _ctx.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].ClusterId");
+				nodeInstance.HostName = _ctx.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].HostName");
+				nodeInstance.ProjectId = _ctx.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].ProjectId");
+				nodeInstance.StartTime = _ctx.LongValue("ListFlowJobHistory.NodeInstances["+ i +"].StartTime");
+				nodeInstance.EndTime = _ctx.LongValue("ListFlowJobHistory.NodeInstances["+ i +"].EndTime");
+				nodeInstance.Pending = _ctx.BooleanValue("ListFlowJobHistory.NodeInstances["+ i +"].pending");
+				nodeInstance.Retries = _ctx.IntegerValue("ListFlowJobHistory.NodeInstances["+ i +"].Retries");
+				nodeInstance.ExternalId = _ctx.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].ExternalId");
+				nodeInstance.ExternalStatus = _ctx.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].ExternalStatus");
+				nodeInstance.ExternalInfo = _ctx.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].ExternalInfo");
+				nodeInstance.ParamConf = _ctx.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].ParamConf");
+				nodeInstance.EnvConf = _ctx.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].EnvConf");
+				nodeInstance.RunConf = _ctx.StringValue("ListFlowJobHistory.NodeInstances["+ i +"].RunConf");
 
 				listFlowJobHistoryResponse_nodeInstances.Add(nodeInstance);
 			}

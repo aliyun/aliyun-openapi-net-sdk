@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ivision.Model.V20190308
@@ -25,17 +25,41 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 	public class DescribeFaceGroupsResponse : AcsResponse
 	{
 
+		private long? totalNum;
+
+		private long? pageSize;
+
 		private string requestId;
 
 		private long? currentPage;
 
-		private long? pageSize;
-
 		private string nextPageToken;
 
-		private long? totalNum;
-
 		private List<DescribeFaceGroups_Group> groups;
+
+		public long? TotalNum
+		{
+			get
+			{
+				return totalNum;
+			}
+			set	
+			{
+				totalNum = value;
+			}
+		}
+
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -61,18 +85,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			}
 		}
 
-		public long? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
 		public string NextPageToken
 		{
 			get
@@ -82,18 +94,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			set	
 			{
 				nextPageToken = value;
-			}
-		}
-
-		public long? TotalNum
-		{
-			get
-			{
-				return totalNum;
-			}
-			set	
-			{
-				totalNum = value;
 			}
 		}
 
@@ -112,11 +112,23 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 		public class DescribeFaceGroups_Group
 		{
 
+			private string creationTime;
+
 			private string groupId;
 
 			private string name;
 
-			private string creationTime;
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
+				}
+			}
 
 			public string GroupId
 			{
@@ -139,18 +151,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				set	
 				{
 					name = value;
-				}
-			}
-
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
 				}
 			}
 		}

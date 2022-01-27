@@ -26,23 +26,23 @@ namespace Aliyun.Acs.imagerecog.Transform.V20190930
 {
     public class ClassifyingRubbishResponseUnmarshaller
     {
-        public static ClassifyingRubbishResponse Unmarshall(UnmarshallerContext context)
+        public static ClassifyingRubbishResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ClassifyingRubbishResponse classifyingRubbishResponse = new ClassifyingRubbishResponse();
 
-			classifyingRubbishResponse.HttpResponse = context.HttpResponse;
-			classifyingRubbishResponse.RequestId = context.StringValue("ClassifyingRubbish.RequestId");
+			classifyingRubbishResponse.HttpResponse = _ctx.HttpResponse;
+			classifyingRubbishResponse.RequestId = _ctx.StringValue("ClassifyingRubbish.RequestId");
 
 			ClassifyingRubbishResponse.ClassifyingRubbish_Data data = new ClassifyingRubbishResponse.ClassifyingRubbish_Data();
-			data.Sensitive = context.BooleanValue("ClassifyingRubbish.Data.Sensitive");
+			data.Sensitive = _ctx.BooleanValue("ClassifyingRubbish.Data.Sensitive");
 
 			List<ClassifyingRubbishResponse.ClassifyingRubbish_Data.ClassifyingRubbish_Element> data_elements = new List<ClassifyingRubbishResponse.ClassifyingRubbish_Data.ClassifyingRubbish_Element>();
-			for (int i = 0; i < context.Length("ClassifyingRubbish.Data.Elements.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ClassifyingRubbish.Data.Elements.Length"); i++) {
 				ClassifyingRubbishResponse.ClassifyingRubbish_Data.ClassifyingRubbish_Element element = new ClassifyingRubbishResponse.ClassifyingRubbish_Data.ClassifyingRubbish_Element();
-				element.Category = context.StringValue("ClassifyingRubbish.Data.Elements["+ i +"].Category");
-				element.CategoryScore = context.FloatValue("ClassifyingRubbish.Data.Elements["+ i +"].CategoryScore");
-				element.Rubbish = context.StringValue("ClassifyingRubbish.Data.Elements["+ i +"].Rubbish");
-				element.RubbishScore = context.FloatValue("ClassifyingRubbish.Data.Elements["+ i +"].RubbishScore");
+				element.Category = _ctx.StringValue("ClassifyingRubbish.Data.Elements["+ i +"].Category");
+				element.CategoryScore = _ctx.FloatValue("ClassifyingRubbish.Data.Elements["+ i +"].CategoryScore");
+				element.Rubbish = _ctx.StringValue("ClassifyingRubbish.Data.Elements["+ i +"].Rubbish");
+				element.RubbishScore = _ctx.FloatValue("ClassifyingRubbish.Data.Elements["+ i +"].RubbishScore");
 
 				data_elements.Add(element);
 			}

@@ -23,6 +23,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -31,12 +32,12 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class ListParametersRequest : RpcAcsRequest<ListParametersResponse>
     {
         public ListParametersRequest()
-            : base("oos", "2019-06-01", "ListParameters", "oos", "openAPI")
+            : base("oos", "2019-06-01", "ListParameters")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.oos.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.oos.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -49,11 +50,13 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string nextToken;
 
+		private string sortOrder;
+
+		private string tags;
+
 		private string name;
 
 		private int? maxResults;
-
-		private string sortOrder;
 
 		private string sortField;
 
@@ -109,6 +112,32 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		public string SortOrder
+		{
+			get
+			{
+				return sortOrder;
+			}
+			set	
+			{
+				sortOrder = value;
+				DictionaryUtil.Add(QueryParameters, "SortOrder", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
 		public string Name
 		{
 			get
@@ -132,19 +161,6 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				maxResults = value;
 				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
-			}
-		}
-
-		public string SortOrder
-		{
-			get
-			{
-				return sortOrder;
-			}
-			set	
-			{
-				sortOrder = value;
-				DictionaryUtil.Add(QueryParameters, "SortOrder", value);
 			}
 		}
 

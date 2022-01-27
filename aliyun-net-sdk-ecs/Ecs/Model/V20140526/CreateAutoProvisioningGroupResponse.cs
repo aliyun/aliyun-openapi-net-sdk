@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,9 +25,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class CreateAutoProvisioningGroupResponse : AcsResponse
 	{
 
+		private string autoProvisioningGroupId;
+
 		private string requestId;
 
-		private string autoProvisioningGroupId;
+		private List<CreateAutoProvisioningGroup_LaunchResult> launchResults;
+
+		public string AutoProvisioningGroupId
+		{
+			get
+			{
+				return autoProvisioningGroupId;
+			}
+			set	
+			{
+				autoProvisioningGroupId = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -41,15 +55,103 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string AutoProvisioningGroupId
+		public List<CreateAutoProvisioningGroup_LaunchResult> LaunchResults
 		{
 			get
 			{
-				return autoProvisioningGroupId;
+				return launchResults;
 			}
 			set	
 			{
-				autoProvisioningGroupId = value;
+				launchResults = value;
+			}
+		}
+
+		public class CreateAutoProvisioningGroup_LaunchResult
+		{
+
+			private string zoneId;
+
+			private string errorMsg;
+
+			private string instanceType;
+
+			private string errorCode;
+
+			private string spotStrategy;
+
+			private List<string> instanceIds;
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public string ErrorMsg
+			{
+				get
+				{
+					return errorMsg;
+				}
+				set	
+				{
+					errorMsg = value;
+				}
+			}
+
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
+				}
+			}
+
+			public string ErrorCode
+			{
+				get
+				{
+					return errorCode;
+				}
+				set	
+				{
+					errorCode = value;
+				}
+			}
+
+			public string SpotStrategy
+			{
+				get
+				{
+					return spotStrategy;
+				}
+				set	
+				{
+					spotStrategy = value;
+				}
+			}
+
+			public List<string> InstanceIds
+			{
+				get
+				{
+					return instanceIds;
+				}
+				set	
+				{
+					instanceIds = value;
+				}
 			}
 		}
 	}

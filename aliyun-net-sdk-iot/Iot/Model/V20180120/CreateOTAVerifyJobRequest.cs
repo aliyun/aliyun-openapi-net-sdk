@@ -34,15 +34,23 @@ namespace Aliyun.Acs.Iot.Model.V20180120
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Iot.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Iot.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private int? timeoutInMinutes;
 
+		private bool? needConfirm;
+
+		private bool? needPush;
+
 		private string iotInstanceId;
+
+		private string downloadProtocol;
+
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private string firmwareId;
 
@@ -63,6 +71,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public bool? NeedConfirm
+		{
+			get
+			{
+				return needConfirm;
+			}
+			set	
+			{
+				needConfirm = value;
+				DictionaryUtil.Add(QueryParameters, "NeedConfirm", value.ToString());
+			}
+		}
+
+		public bool? NeedPush
+		{
+			get
+			{
+				return needPush;
+			}
+			set	
+			{
+				needPush = value;
+				DictionaryUtil.Add(QueryParameters, "NeedPush", value.ToString());
+			}
+		}
+
 		public string IotInstanceId
 		{
 			get
@@ -73,6 +107,37 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public string DownloadProtocol
+		{
+			get
+			{
+				return downloadProtocol;
+			}
+			set	
+			{
+				downloadProtocol = value;
+				DictionaryUtil.Add(QueryParameters, "DownloadProtocol", value);
+			}
+		}
+
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
 			}
 		}
 
@@ -115,6 +180,38 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				for (int i = 0; i < targetDeviceNames.Count; i++)
 				{
 					DictionaryUtil.Add(QueryParameters,"TargetDeviceName." + (i + 1) , targetDeviceNames[i]);
+				}
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
 				}
 			}
 		}

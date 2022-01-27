@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeGatewayCategoriesResponseUnmarshaller
     {
-        public static DescribeGatewayCategoriesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGatewayCategoriesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGatewayCategoriesResponse describeGatewayCategoriesResponse = new DescribeGatewayCategoriesResponse();
 
-			describeGatewayCategoriesResponse.HttpResponse = context.HttpResponse;
-			describeGatewayCategoriesResponse.RequestId = context.StringValue("DescribeGatewayCategories.RequestId");
-			describeGatewayCategoriesResponse.Success = context.BooleanValue("DescribeGatewayCategories.Success");
-			describeGatewayCategoriesResponse.Code = context.StringValue("DescribeGatewayCategories.Code");
-			describeGatewayCategoriesResponse.Message = context.StringValue("DescribeGatewayCategories.Message");
-			describeGatewayCategoriesResponse.Categories = context.StringValue("DescribeGatewayCategories.Categories");
+			describeGatewayCategoriesResponse.HttpResponse = _ctx.HttpResponse;
+			describeGatewayCategoriesResponse.Message = _ctx.StringValue("DescribeGatewayCategories.Message");
+			describeGatewayCategoriesResponse.RequestId = _ctx.StringValue("DescribeGatewayCategories.RequestId");
+			describeGatewayCategoriesResponse.Categories = _ctx.StringValue("DescribeGatewayCategories.Categories");
+			describeGatewayCategoriesResponse.Code = _ctx.StringValue("DescribeGatewayCategories.Code");
+			describeGatewayCategoriesResponse.Success = _ctx.BooleanValue("DescribeGatewayCategories.Success");
         
 			return describeGatewayCategoriesResponse;
         }

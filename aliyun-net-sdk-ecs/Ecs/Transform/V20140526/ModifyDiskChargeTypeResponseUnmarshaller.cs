@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class ModifyDiskChargeTypeResponseUnmarshaller
     {
-        public static ModifyDiskChargeTypeResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDiskChargeTypeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyDiskChargeTypeResponse modifyDiskChargeTypeResponse = new ModifyDiskChargeTypeResponse();
 
-			modifyDiskChargeTypeResponse.HttpResponse = context.HttpResponse;
-			modifyDiskChargeTypeResponse.RequestId = context.StringValue("ModifyDiskChargeType.RequestId");
-			modifyDiskChargeTypeResponse.OrderId = context.StringValue("ModifyDiskChargeType.OrderId");
+			modifyDiskChargeTypeResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDiskChargeTypeResponse.OrderId = _ctx.StringValue("ModifyDiskChargeType.OrderId");
+			modifyDiskChargeTypeResponse.RequestId = _ctx.StringValue("ModifyDiskChargeType.RequestId");
         
 			return modifyDiskChargeTypeResponse;
         }

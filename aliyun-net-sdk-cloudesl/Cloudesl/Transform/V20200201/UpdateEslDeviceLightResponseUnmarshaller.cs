@@ -26,27 +26,27 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
     public class UpdateEslDeviceLightResponseUnmarshaller
     {
-        public static UpdateEslDeviceLightResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateEslDeviceLightResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateEslDeviceLightResponse updateEslDeviceLightResponse = new UpdateEslDeviceLightResponse();
 
-			updateEslDeviceLightResponse.HttpResponse = context.HttpResponse;
-			updateEslDeviceLightResponse.ErrorMessage = context.StringValue("UpdateEslDeviceLight.ErrorMessage");
-			updateEslDeviceLightResponse.ErrorCode = context.StringValue("UpdateEslDeviceLight.ErrorCode");
-			updateEslDeviceLightResponse.Message = context.StringValue("UpdateEslDeviceLight.Message");
-			updateEslDeviceLightResponse.SuccessCount = context.IntegerValue("UpdateEslDeviceLight.SuccessCount");
-			updateEslDeviceLightResponse.FailCount = context.IntegerValue("UpdateEslDeviceLight.FailCount");
-			updateEslDeviceLightResponse.DynamicCode = context.StringValue("UpdateEslDeviceLight.DynamicCode");
-			updateEslDeviceLightResponse.Code = context.StringValue("UpdateEslDeviceLight.Code");
-			updateEslDeviceLightResponse.DynamicMessage = context.StringValue("UpdateEslDeviceLight.DynamicMessage");
-			updateEslDeviceLightResponse.RequestId = context.StringValue("UpdateEslDeviceLight.RequestId");
-			updateEslDeviceLightResponse.Success = context.BooleanValue("UpdateEslDeviceLight.Success");
+			updateEslDeviceLightResponse.HttpResponse = _ctx.HttpResponse;
+			updateEslDeviceLightResponse.ErrorMessage = _ctx.StringValue("UpdateEslDeviceLight.ErrorMessage");
+			updateEslDeviceLightResponse.ErrorCode = _ctx.StringValue("UpdateEslDeviceLight.ErrorCode");
+			updateEslDeviceLightResponse.Message = _ctx.StringValue("UpdateEslDeviceLight.Message");
+			updateEslDeviceLightResponse.SuccessCount = _ctx.IntegerValue("UpdateEslDeviceLight.SuccessCount");
+			updateEslDeviceLightResponse.FailCount = _ctx.IntegerValue("UpdateEslDeviceLight.FailCount");
+			updateEslDeviceLightResponse.DynamicCode = _ctx.StringValue("UpdateEslDeviceLight.DynamicCode");
+			updateEslDeviceLightResponse.Code = _ctx.StringValue("UpdateEslDeviceLight.Code");
+			updateEslDeviceLightResponse.DynamicMessage = _ctx.StringValue("UpdateEslDeviceLight.DynamicMessage");
+			updateEslDeviceLightResponse.RequestId = _ctx.StringValue("UpdateEslDeviceLight.RequestId");
+			updateEslDeviceLightResponse.Success = _ctx.BooleanValue("UpdateEslDeviceLight.Success");
 
 			List<UpdateEslDeviceLightResponse.UpdateEslDeviceLight_LightFailEslInfo> updateEslDeviceLightResponse_lightFailEslInfos = new List<UpdateEslDeviceLightResponse.UpdateEslDeviceLight_LightFailEslInfo>();
-			for (int i = 0; i < context.Length("UpdateEslDeviceLight.LightFailEslInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("UpdateEslDeviceLight.LightFailEslInfos.Length"); i++) {
 				UpdateEslDeviceLightResponse.UpdateEslDeviceLight_LightFailEslInfo lightFailEslInfo = new UpdateEslDeviceLightResponse.UpdateEslDeviceLight_LightFailEslInfo();
-				lightFailEslInfo.ErrorMessage = context.StringValue("UpdateEslDeviceLight.LightFailEslInfos["+ i +"].ErrorMessage");
-				lightFailEslInfo.EslBarCode = context.StringValue("UpdateEslDeviceLight.LightFailEslInfos["+ i +"].EslBarCode");
+				lightFailEslInfo.ErrorMessage = _ctx.StringValue("UpdateEslDeviceLight.LightFailEslInfos["+ i +"].ErrorMessage");
+				lightFailEslInfo.EslBarCode = _ctx.StringValue("UpdateEslDeviceLight.LightFailEslInfos["+ i +"].EslBarCode");
 
 				updateEslDeviceLightResponse_lightFailEslInfos.Add(lightFailEslInfo);
 			}

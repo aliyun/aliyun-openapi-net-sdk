@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeSQLCollectorRetentionResponseUnmarshaller
     {
-        public static DescribeSQLCollectorRetentionResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSQLCollectorRetentionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSQLCollectorRetentionResponse describeSQLCollectorRetentionResponse = new DescribeSQLCollectorRetentionResponse();
 
-			describeSQLCollectorRetentionResponse.HttpResponse = context.HttpResponse;
-			describeSQLCollectorRetentionResponse.RequestId = context.StringValue("DescribeSQLCollectorRetention.RequestId");
-			describeSQLCollectorRetentionResponse.ConfigValue = context.StringValue("DescribeSQLCollectorRetention.ConfigValue");
+			describeSQLCollectorRetentionResponse.HttpResponse = _ctx.HttpResponse;
+			describeSQLCollectorRetentionResponse.RequestId = _ctx.StringValue("DescribeSQLCollectorRetention.RequestId");
+			describeSQLCollectorRetentionResponse.ConfigValue = _ctx.StringValue("DescribeSQLCollectorRetention.ConfigValue");
         
 			return describeSQLCollectorRetentionResponse;
         }

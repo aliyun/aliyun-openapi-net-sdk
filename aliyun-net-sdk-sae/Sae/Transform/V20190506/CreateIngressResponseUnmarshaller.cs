@@ -26,20 +26,20 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class CreateIngressResponseUnmarshaller
     {
-        public static CreateIngressResponse Unmarshall(UnmarshallerContext context)
+        public static CreateIngressResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateIngressResponse createIngressResponse = new CreateIngressResponse();
 
-			createIngressResponse.HttpResponse = context.HttpResponse;
-			createIngressResponse.RequestId = context.StringValue("CreateIngress.RequestId");
-			createIngressResponse.Code = context.StringValue("CreateIngress.Code");
-			createIngressResponse.Message = context.StringValue("CreateIngress.Message");
-			createIngressResponse.Success = context.BooleanValue("CreateIngress.Success");
-			createIngressResponse.ErrorCode = context.StringValue("CreateIngress.ErrorCode");
-			createIngressResponse.TraceId = context.StringValue("CreateIngress.TraceId");
+			createIngressResponse.HttpResponse = _ctx.HttpResponse;
+			createIngressResponse.RequestId = _ctx.StringValue("CreateIngress.RequestId");
+			createIngressResponse.Message = _ctx.StringValue("CreateIngress.Message");
+			createIngressResponse.TraceId = _ctx.StringValue("CreateIngress.TraceId");
+			createIngressResponse.ErrorCode = _ctx.StringValue("CreateIngress.ErrorCode");
+			createIngressResponse.Code = _ctx.StringValue("CreateIngress.Code");
+			createIngressResponse.Success = _ctx.BooleanValue("CreateIngress.Success");
 
 			CreateIngressResponse.CreateIngress_Data data = new CreateIngressResponse.CreateIngress_Data();
-			data.IngressId = context.LongValue("CreateIngress.Data.IngressId");
+			data.IngressId = _ctx.LongValue("CreateIngress.Data.IngressId");
 			createIngressResponse.Data = data;
         
 			return createIngressResponse;

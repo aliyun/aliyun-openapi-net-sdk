@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class UpdateDomainGroupResponseUnmarshaller
     {
-        public static UpdateDomainGroupResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateDomainGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateDomainGroupResponse updateDomainGroupResponse = new UpdateDomainGroupResponse();
 
-			updateDomainGroupResponse.HttpResponse = context.HttpResponse;
-			updateDomainGroupResponse.RequestId = context.StringValue("UpdateDomainGroup.RequestId");
-			updateDomainGroupResponse.GroupId = context.StringValue("UpdateDomainGroup.GroupId");
-			updateDomainGroupResponse.GroupName = context.StringValue("UpdateDomainGroup.GroupName");
+			updateDomainGroupResponse.HttpResponse = _ctx.HttpResponse;
+			updateDomainGroupResponse.RequestId = _ctx.StringValue("UpdateDomainGroup.RequestId");
+			updateDomainGroupResponse.GroupId = _ctx.StringValue("UpdateDomainGroup.GroupId");
+			updateDomainGroupResponse.GroupName = _ctx.StringValue("UpdateDomainGroup.GroupName");
         
 			return updateDomainGroupResponse;
         }

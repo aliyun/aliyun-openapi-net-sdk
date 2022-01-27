@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,52 +25,17 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class DescribeGatewayImagesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string message;
 
-		private bool? success;
+		private string requestId;
 
 		private string code;
 
-		private string message;
+		private bool? success;
 
 		private List<DescribeGatewayImages_Image> images;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -83,6 +48,46 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Images")]
 		public List<DescribeGatewayImages_Image> Images
 		{
 			get
@@ -98,96 +103,25 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 		public class DescribeGatewayImages_Image
 		{
 
-			private string name;
+			private string type;
 
 			private string description;
 
-			private long? size;
-
-			private string modifiedDate;
-
 			private string version;
 
-			private string title;
-
-			private string type;
-
-			private string mD5;
+			private long? size;
 
 			private string url;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private string title;
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+			private string mD5;
 
-			public long? Size
-			{
-				get
-				{
-					return size;
-				}
-				set	
-				{
-					size = value;
-				}
-			}
+			private string name;
 
-			public string ModifiedDate
-			{
-				get
-				{
-					return modifiedDate;
-				}
-				set	
-				{
-					modifiedDate = value;
-				}
-			}
+			private string modifiedDate;
 
-			public string Version
-			{
-				get
-				{
-					return version;
-				}
-				set	
-				{
-					version = value;
-				}
-			}
-
-			public string Title
-			{
-				get
-				{
-					return title;
-				}
-				set	
-				{
-					title = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Type")]
 			public string Type
 			{
 				get
@@ -200,6 +134,72 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "Description")]
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Version")]
+			public string Version
+			{
+				get
+				{
+					return version;
+				}
+				set	
+				{
+					version = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Size")]
+			public long? Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Url")]
+			public string Url
+			{
+				get
+				{
+					return url;
+				}
+				set	
+				{
+					url = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Title")]
+			public string Title
+			{
+				get
+				{
+					return title;
+				}
+				set	
+				{
+					title = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MD5")]
 			public string MD5
 			{
 				get
@@ -212,15 +212,29 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
-			public string Url
+			[JsonProperty(PropertyName = "Name")]
+			public string Name
 			{
 				get
 				{
-					return url;
+					return name;
 				}
 				set	
 				{
-					url = value;
+					name = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ModifiedDate")]
+			public string ModifiedDate
+			{
+				get
+				{
+					return modifiedDate;
+				}
+				set	
+				{
+					modifiedDate = value;
 				}
 			}
 		}

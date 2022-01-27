@@ -144,6 +144,40 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private int? port;
 
+			private string dbVersion;
+
+			private bool? supportDatamask;
+
+			private bool? supportScan;
+
+			private bool? supportAudit;
+
+			private int? datamaskStatus;
+
+			private int? samplingSize;
+
+			private long? nextStartTime;
+
+			private bool? supportOcr;
+
+			private int? ocrStatus;
+
+			private string agentId;
+
+			private int? agentState;
+
+			private bool? supportAgentInstall;
+
+			private int? eventStatus;
+
+			private bool? supportEvent;
+
+			private string instanceId;
+
+			private string instanceDescription;
+
+			private string tenantName;
+
 			public string RegionId
 			{
 				get
@@ -417,6 +451,210 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					port = value;
+				}
+			}
+
+			public string DbVersion
+			{
+				get
+				{
+					return dbVersion;
+				}
+				set	
+				{
+					dbVersion = value;
+				}
+			}
+
+			public bool? SupportDatamask
+			{
+				get
+				{
+					return supportDatamask;
+				}
+				set	
+				{
+					supportDatamask = value;
+				}
+			}
+
+			public bool? SupportScan
+			{
+				get
+				{
+					return supportScan;
+				}
+				set	
+				{
+					supportScan = value;
+				}
+			}
+
+			public bool? SupportAudit
+			{
+				get
+				{
+					return supportAudit;
+				}
+				set	
+				{
+					supportAudit = value;
+				}
+			}
+
+			public int? DatamaskStatus
+			{
+				get
+				{
+					return datamaskStatus;
+				}
+				set	
+				{
+					datamaskStatus = value;
+				}
+			}
+
+			public int? SamplingSize
+			{
+				get
+				{
+					return samplingSize;
+				}
+				set	
+				{
+					samplingSize = value;
+				}
+			}
+
+			public long? NextStartTime
+			{
+				get
+				{
+					return nextStartTime;
+				}
+				set	
+				{
+					nextStartTime = value;
+				}
+			}
+
+			public bool? SupportOcr
+			{
+				get
+				{
+					return supportOcr;
+				}
+				set	
+				{
+					supportOcr = value;
+				}
+			}
+
+			public int? OcrStatus
+			{
+				get
+				{
+					return ocrStatus;
+				}
+				set	
+				{
+					ocrStatus = value;
+				}
+			}
+
+			public string AgentId
+			{
+				get
+				{
+					return agentId;
+				}
+				set	
+				{
+					agentId = value;
+				}
+			}
+
+			public int? AgentState
+			{
+				get
+				{
+					return agentState;
+				}
+				set	
+				{
+					agentState = value;
+				}
+			}
+
+			public bool? SupportAgentInstall
+			{
+				get
+				{
+					return supportAgentInstall;
+				}
+				set	
+				{
+					supportAgentInstall = value;
+				}
+			}
+
+			public int? EventStatus
+			{
+				get
+				{
+					return eventStatus;
+				}
+				set	
+				{
+					eventStatus = value;
+				}
+			}
+
+			public bool? SupportEvent
+			{
+				get
+				{
+					return supportEvent;
+				}
+				set	
+				{
+					supportEvent = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string InstanceDescription
+			{
+				get
+				{
+					return instanceDescription;
+				}
+				set	
+				{
+					instanceDescription = value;
+				}
+			}
+
+			public string TenantName
+			{
+				get
+				{
+					return tenantName;
+				}
+				set	
+				{
+					tenantName = value;
 				}
 			}
 		}

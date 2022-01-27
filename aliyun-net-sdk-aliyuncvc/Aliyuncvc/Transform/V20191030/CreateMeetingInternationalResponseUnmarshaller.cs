@@ -26,19 +26,19 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class CreateMeetingInternationalResponseUnmarshaller
     {
-        public static CreateMeetingInternationalResponse Unmarshall(UnmarshallerContext context)
+        public static CreateMeetingInternationalResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateMeetingInternationalResponse createMeetingInternationalResponse = new CreateMeetingInternationalResponse();
 
-			createMeetingInternationalResponse.HttpResponse = context.HttpResponse;
-			createMeetingInternationalResponse.ErrorCode = context.IntegerValue("CreateMeetingInternational.ErrorCode");
-			createMeetingInternationalResponse.Message = context.StringValue("CreateMeetingInternational.Message");
-			createMeetingInternationalResponse.Success = context.BooleanValue("CreateMeetingInternational.Success");
-			createMeetingInternationalResponse.RequestId = context.StringValue("CreateMeetingInternational.RequestId");
+			createMeetingInternationalResponse.HttpResponse = _ctx.HttpResponse;
+			createMeetingInternationalResponse.ErrorCode = _ctx.IntegerValue("CreateMeetingInternational.ErrorCode");
+			createMeetingInternationalResponse.Message = _ctx.StringValue("CreateMeetingInternational.Message");
+			createMeetingInternationalResponse.Success = _ctx.BooleanValue("CreateMeetingInternational.Success");
+			createMeetingInternationalResponse.RequestId = _ctx.StringValue("CreateMeetingInternational.RequestId");
 
 			CreateMeetingInternationalResponse.CreateMeetingInternational_MeetingInfo meetingInfo = new CreateMeetingInternationalResponse.CreateMeetingInternational_MeetingInfo();
-			meetingInfo.MeetingCode = context.StringValue("CreateMeetingInternational.MeetingInfo.MeetingCode");
-			meetingInfo.MeetingUUID = context.StringValue("CreateMeetingInternational.MeetingInfo.MeetingUUID");
+			meetingInfo.MeetingCode = _ctx.StringValue("CreateMeetingInternational.MeetingInfo.MeetingCode");
+			meetingInfo.MeetingUUID = _ctx.StringValue("CreateMeetingInternational.MeetingInfo.MeetingUUID");
 			createMeetingInternationalResponse.MeetingInfo = meetingInfo;
         
 			return createMeetingInternationalResponse;

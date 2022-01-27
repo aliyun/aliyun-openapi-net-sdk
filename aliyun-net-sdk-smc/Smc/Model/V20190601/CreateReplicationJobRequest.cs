@@ -50,6 +50,8 @@ namespace Aliyun.Acs.smc.Model.V20190601
 
 		private int? netMode;
 
+		private string licenseType;
+
 		private string containerNamespace;
 
 		private string launchTemplateId;
@@ -165,6 +167,19 @@ namespace Aliyun.Acs.smc.Model.V20190601
 			{
 				netMode = value;
 				DictionaryUtil.Add(QueryParameters, "NetMode", value.ToString());
+			}
+		}
+
+		public string LicenseType
+		{
+			get
+			{
+				return licenseType;
+			}
+			set	
+			{
+				licenseType = value;
+				DictionaryUtil.Add(QueryParameters, "LicenseType", value);
 			}
 		}
 

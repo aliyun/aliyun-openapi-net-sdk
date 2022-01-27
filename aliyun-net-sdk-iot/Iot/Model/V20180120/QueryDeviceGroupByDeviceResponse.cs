@@ -106,6 +106,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string groupDesc;
 
+			private string groupType;
+
 			public string GroupId
 			{
 				get
@@ -151,6 +153,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					groupDesc = value;
+				}
+			}
+
+			public string GroupType
+			{
+				get
+				{
+					return groupType;
+				}
+				set	
+				{
+					groupType = value;
 				}
 			}
 		}

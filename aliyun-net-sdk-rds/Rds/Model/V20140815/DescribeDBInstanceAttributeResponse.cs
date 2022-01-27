@@ -204,6 +204,12 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string superPermissionMode;
 
+			private string generalGroupName;
+
+			private int? tipsLevel;
+
+			private string tips;
+
 			private List<DescribeDBInstanceAttribute_SlaveZone> slaveZones;
 
 			private List<DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
@@ -1095,6 +1101,42 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					superPermissionMode = value;
+				}
+			}
+
+			public string GeneralGroupName
+			{
+				get
+				{
+					return generalGroupName;
+				}
+				set	
+				{
+					generalGroupName = value;
+				}
+			}
+
+			public int? TipsLevel
+			{
+				get
+				{
+					return tipsLevel;
+				}
+				set	
+				{
+					tipsLevel = value;
+				}
+			}
+
+			public string Tips
+			{
+				get
+				{
+					return tips;
+				}
+				set	
+				{
+					tips = value;
 				}
 			}
 

@@ -70,23 +70,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribePrice_Rule
 		{
 
-			private long? ruleId;
-
 			private string name;
 
 			private string description;
 
-			public long? RuleId
-			{
-				get
-				{
-					return ruleId;
-				}
-				set	
-				{
-					ruleId = value;
-				}
-			}
+			private long? ruleId;
 
 			public string Name
 			{
@@ -111,36 +99,36 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					description = value;
 				}
 			}
+
+			public long? RuleId
+			{
+				get
+				{
+					return ruleId;
+				}
+				set	
+				{
+					ruleId = value;
+				}
+			}
 		}
 
 		public class DescribePrice_PriceInfo
 		{
 
-			private string currency;
-
 			private float? originalPrice;
 
-			private float? tradePrice;
-
 			private float? discountPrice;
+
+			private string currency;
+
+			private float? tradePrice;
 
 			private List<DescribePrice_Coupon> coupons;
 
 			private List<string> ruleIds;
 
 			private DescribePrice_ActivityInfo activityInfo;
-
-			public string Currency
-			{
-				get
-				{
-					return currency;
-				}
-				set	
-				{
-					currency = value;
-				}
-			}
 
 			public float? OriginalPrice
 			{
@@ -154,18 +142,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public float? TradePrice
-			{
-				get
-				{
-					return tradePrice;
-				}
-				set	
-				{
-					tradePrice = value;
-				}
-			}
-
 			public float? DiscountPrice
 			{
 				get
@@ -175,6 +151,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					discountPrice = value;
+				}
+			}
+
+			public string Currency
+			{
+				get
+				{
+					return currency;
+				}
+				set	
+				{
+					currency = value;
+				}
+			}
+
+			public float? TradePrice
+			{
+				get
+				{
+					return tradePrice;
+				}
+				set	
+				{
+					tradePrice = value;
 				}
 			}
 
@@ -217,13 +217,25 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			public class DescribePrice_Coupon
 			{
 
+				private string isSelected;
+
 				private string couponNo;
 
 				private string name;
 
 				private string description;
 
-				private string isSelected;
+				public string IsSelected
+				{
+					get
+					{
+						return isSelected;
+					}
+					set	
+					{
+						isSelected = value;
+					}
+				}
 
 				public string CouponNo
 				{
@@ -258,18 +270,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						description = value;
-					}
-				}
-
-				public string IsSelected
-				{
-					get
-					{
-						return isSelected;
-					}
-					set	
-					{
-						isSelected = value;
 					}
 				}
 			}

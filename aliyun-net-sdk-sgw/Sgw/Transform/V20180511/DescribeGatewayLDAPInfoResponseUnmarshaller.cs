@@ -26,20 +26,20 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeGatewayLDAPInfoResponseUnmarshaller
     {
-        public static DescribeGatewayLDAPInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGatewayLDAPInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGatewayLDAPInfoResponse describeGatewayLDAPInfoResponse = new DescribeGatewayLDAPInfoResponse();
 
-			describeGatewayLDAPInfoResponse.HttpResponse = context.HttpResponse;
-			describeGatewayLDAPInfoResponse.RequestId = context.StringValue("DescribeGatewayLDAPInfo.RequestId");
-			describeGatewayLDAPInfoResponse.Success = context.BooleanValue("DescribeGatewayLDAPInfo.Success");
-			describeGatewayLDAPInfoResponse.Code = context.StringValue("DescribeGatewayLDAPInfo.Code");
-			describeGatewayLDAPInfoResponse.Message = context.StringValue("DescribeGatewayLDAPInfo.Message");
-			describeGatewayLDAPInfoResponse.BaseDN = context.StringValue("DescribeGatewayLDAPInfo.BaseDN");
-			describeGatewayLDAPInfoResponse.RootDN = context.StringValue("DescribeGatewayLDAPInfo.RootDN");
-			describeGatewayLDAPInfoResponse.ServerIp = context.StringValue("DescribeGatewayLDAPInfo.ServerIp");
-			describeGatewayLDAPInfoResponse.IsTls = context.BooleanValue("DescribeGatewayLDAPInfo.IsTls");
-			describeGatewayLDAPInfoResponse.IsEnabled = context.BooleanValue("DescribeGatewayLDAPInfo.IsEnabled");
+			describeGatewayLDAPInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeGatewayLDAPInfoResponse.RootDN = _ctx.StringValue("DescribeGatewayLDAPInfo.RootDN");
+			describeGatewayLDAPInfoResponse.RequestId = _ctx.StringValue("DescribeGatewayLDAPInfo.RequestId");
+			describeGatewayLDAPInfoResponse.Message = _ctx.StringValue("DescribeGatewayLDAPInfo.Message");
+			describeGatewayLDAPInfoResponse.IsEnabled = _ctx.BooleanValue("DescribeGatewayLDAPInfo.IsEnabled");
+			describeGatewayLDAPInfoResponse.BaseDN = _ctx.StringValue("DescribeGatewayLDAPInfo.BaseDN");
+			describeGatewayLDAPInfoResponse.ServerIp = _ctx.StringValue("DescribeGatewayLDAPInfo.ServerIp");
+			describeGatewayLDAPInfoResponse.IsTls = _ctx.BooleanValue("DescribeGatewayLDAPInfo.IsTls");
+			describeGatewayLDAPInfoResponse.Code = _ctx.StringValue("DescribeGatewayLDAPInfo.Code");
+			describeGatewayLDAPInfoResponse.Success = _ctx.BooleanValue("DescribeGatewayLDAPInfo.Success");
         
 			return describeGatewayLDAPInfoResponse;
         }

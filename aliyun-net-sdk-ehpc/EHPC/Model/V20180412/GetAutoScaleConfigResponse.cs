@@ -300,6 +300,16 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string queueImageId;
 
+			private string hostNamePrefix;
+
+			private string hostNameSuffix;
+
+			private int? systemDiskSize;
+
+			private string systemDiskCategory;
+
+			private string systemDiskLevel;
+
 			private List<GetAutoScaleConfig_InstanceTypeInfo> instanceTypes;
 
 			public string QueueName
@@ -419,6 +429,66 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					queueImageId = value;
+				}
+			}
+
+			public string HostNamePrefix
+			{
+				get
+				{
+					return hostNamePrefix;
+				}
+				set	
+				{
+					hostNamePrefix = value;
+				}
+			}
+
+			public string HostNameSuffix
+			{
+				get
+				{
+					return hostNameSuffix;
+				}
+				set	
+				{
+					hostNameSuffix = value;
+				}
+			}
+
+			public int? SystemDiskSize
+			{
+				get
+				{
+					return systemDiskSize;
+				}
+				set	
+				{
+					systemDiskSize = value;
+				}
+			}
+
+			public string SystemDiskCategory
+			{
+				get
+				{
+					return systemDiskCategory;
+				}
+				set	
+				{
+					systemDiskCategory = value;
+				}
+			}
+
+			public string SystemDiskLevel
+			{
+				get
+				{
+					return systemDiskLevel;
+				}
+				set	
+				{
+					systemDiskLevel = value;
 				}
 			}
 

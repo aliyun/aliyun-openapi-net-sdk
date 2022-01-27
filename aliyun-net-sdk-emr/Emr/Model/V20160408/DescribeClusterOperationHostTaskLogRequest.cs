@@ -32,21 +32,23 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public DescribeClusterOperationHostTaskLogRequest()
             : base("Emr", "2016-04-08", "DescribeClusterOperationHostTaskLog", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
-
-		private string regionId;
-
-		private string operationId;
 
 		private string hostId;
 
 		private string clusterId;
 
-		private string taskId;
+		private string operationId;
 
-		private string accessKeyId;
+		private string taskId;
 
 		private string status;
 
@@ -60,32 +62,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string OperationId
-		{
-			get
-			{
-				return operationId;
-			}
-			set	
-			{
-				operationId = value;
-				DictionaryUtil.Add(QueryParameters, "OperationId", value);
 			}
 		}
 
@@ -115,6 +91,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
+		public string OperationId
+		{
+			get
+			{
+				return operationId;
+			}
+			set	
+			{
+				operationId = value;
+				DictionaryUtil.Add(QueryParameters, "OperationId", value);
+			}
+		}
+
 		public string TaskId
 		{
 			get
@@ -125,19 +114,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				taskId = value;
 				DictionaryUtil.Add(QueryParameters, "TaskId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

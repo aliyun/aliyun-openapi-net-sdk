@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private int? page;
 
+		private string nextToken;
+
 		private List<QueryDevice_DeviceInfo> data;
 
 		public string RequestId
@@ -136,6 +138,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				page = value;
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
 			}
 		}
 

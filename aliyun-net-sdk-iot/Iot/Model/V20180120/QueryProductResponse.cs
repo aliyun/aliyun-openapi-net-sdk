@@ -132,6 +132,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string authType;
 
+			private int? validateType;
+
 			public long? GmtCreate
 			{
 				get
@@ -333,6 +335,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					authType = value;
+				}
+			}
+
+			public int? ValidateType
+			{
+				get
+				{
+					return validateType;
+				}
+				set	
+				{
+					validateType = value;
 				}
 			}
 		}

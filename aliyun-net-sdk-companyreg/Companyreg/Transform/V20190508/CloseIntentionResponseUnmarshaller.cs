@@ -26,15 +26,15 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class CloseIntentionResponseUnmarshaller
     {
-        public static CloseIntentionResponse Unmarshall(UnmarshallerContext context)
+        public static CloseIntentionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CloseIntentionResponse closeIntentionResponse = new CloseIntentionResponse();
 
-			closeIntentionResponse.HttpResponse = context.HttpResponse;
-			closeIntentionResponse.RequestId = context.StringValue("CloseIntention.RequestId");
-			closeIntentionResponse.Success = context.BooleanValue("CloseIntention.Success");
-			closeIntentionResponse.ErrorMsg = context.StringValue("CloseIntention.ErrorMsg");
-			closeIntentionResponse.ErrorCode = context.StringValue("CloseIntention.ErrorCode");
+			closeIntentionResponse.HttpResponse = _ctx.HttpResponse;
+			closeIntentionResponse.RequestId = _ctx.StringValue("CloseIntention.RequestId");
+			closeIntentionResponse.Success = _ctx.BooleanValue("CloseIntention.Success");
+			closeIntentionResponse.ErrorMsg = _ctx.StringValue("CloseIntention.ErrorMsg");
+			closeIntentionResponse.ErrorCode = _ctx.StringValue("CloseIntention.ErrorCode");
         
 			return closeIntentionResponse;
         }

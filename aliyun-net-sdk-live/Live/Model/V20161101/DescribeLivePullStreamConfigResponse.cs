@@ -64,6 +64,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string sourceUrl;
 
+			private string sourceUsing;
+
 			private string startTime;
 
 			private string endTime;
@@ -113,6 +115,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					sourceUrl = value;
+				}
+			}
+
+			public string SourceUsing
+			{
+				get
+				{
+					return sourceUsing;
+				}
+				set	
+				{
+					sourceUsing = value;
 				}
 			}
 

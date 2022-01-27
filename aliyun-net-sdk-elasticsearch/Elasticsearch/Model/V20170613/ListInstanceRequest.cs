@@ -45,8 +45,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string instanceCategory;
 
-		private string ownerId;
-
 		private string tags;
 
 		private string resourceGroupId;
@@ -88,19 +86,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				instanceCategory = value;
 				DictionaryUtil.Add(QueryParameters, "instanceCategory", value);
-			}
-		}
-
-		public string OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "ownerId", value);
 			}
 		}
 

@@ -26,34 +26,34 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 {
     public class GetPipelineInstanceInfoResponseUnmarshaller
     {
-        public static GetPipelineInstanceInfoResponse Unmarshall(UnmarshallerContext context)
+        public static GetPipelineInstanceInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetPipelineInstanceInfoResponse getPipelineInstanceInfoResponse = new GetPipelineInstanceInfoResponse();
 
-			getPipelineInstanceInfoResponse.HttpResponse = context.HttpResponse;
-			getPipelineInstanceInfoResponse.ErrorCode = context.StringValue("GetPipelineInstanceInfo.ErrorCode");
-			getPipelineInstanceInfoResponse.ErrorMessage = context.StringValue("GetPipelineInstanceInfo.ErrorMessage");
-			getPipelineInstanceInfoResponse.RequestId = context.StringValue("GetPipelineInstanceInfo.RequestId");
-			getPipelineInstanceInfoResponse.Success = context.BooleanValue("GetPipelineInstanceInfo.Success");
+			getPipelineInstanceInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getPipelineInstanceInfoResponse.ErrorMessage = _ctx.StringValue("GetPipelineInstanceInfo.ErrorMessage");
+			getPipelineInstanceInfoResponse.RequestId = _ctx.StringValue("GetPipelineInstanceInfo.RequestId");
+			getPipelineInstanceInfoResponse.Success = _ctx.BooleanValue("GetPipelineInstanceInfo.Success");
+			getPipelineInstanceInfoResponse.ErrorCode = _ctx.StringValue("GetPipelineInstanceInfo.ErrorCode");
 
 			GetPipelineInstanceInfoResponse.GetPipelineInstanceInfo__Object _object = new GetPipelineInstanceInfoResponse.GetPipelineInstanceInfo__Object();
-			_object.Status = context.StringValue("GetPipelineInstanceInfo.Object.Status");
-			_object.StartTime = context.LongValue("GetPipelineInstanceInfo.Object.StartTime");
-			_object.EndTime = context.LongValue("GetPipelineInstanceInfo.Object.EndTime");
-			_object.Sources = context.StringValue("GetPipelineInstanceInfo.Object.Sources");
-			_object.EmployeeId = context.StringValue("GetPipelineInstanceInfo.Object.EmployeeId");
-
-			List<string> _object_packageDownloadUrls = new List<string>();
-			for (int i = 0; i < context.Length("GetPipelineInstanceInfo.Object.PackageDownloadUrls.Length"); i++) {
-				_object_packageDownloadUrls.Add(context.StringValue("GetPipelineInstanceInfo.Object.PackageDownloadUrls["+ i +"]"));
-			}
-			_object.PackageDownloadUrls = _object_packageDownloadUrls;
+			_object.EmployeeId = _ctx.StringValue("GetPipelineInstanceInfo.Object.EmployeeId");
+			_object.EndTime = _ctx.LongValue("GetPipelineInstanceInfo.Object.EndTime");
+			_object.Status = _ctx.StringValue("GetPipelineInstanceInfo.Object.Status");
+			_object.StartTime = _ctx.LongValue("GetPipelineInstanceInfo.Object.StartTime");
+			_object.Sources = _ctx.StringValue("GetPipelineInstanceInfo.Object.Sources");
 
 			List<string> _object_dockerImages = new List<string>();
-			for (int i = 0; i < context.Length("GetPipelineInstanceInfo.Object.DockerImages.Length"); i++) {
-				_object_dockerImages.Add(context.StringValue("GetPipelineInstanceInfo.Object.DockerImages["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetPipelineInstanceInfo.Object.DockerImages.Length"); i++) {
+				_object_dockerImages.Add(_ctx.StringValue("GetPipelineInstanceInfo.Object.DockerImages["+ i +"]"));
 			}
 			_object.DockerImages = _object_dockerImages;
+
+			List<string> _object_packageDownloadUrls = new List<string>();
+			for (int i = 0; i < _ctx.Length("GetPipelineInstanceInfo.Object.PackageDownloadUrls.Length"); i++) {
+				_object_packageDownloadUrls.Add(_ctx.StringValue("GetPipelineInstanceInfo.Object.PackageDownloadUrls["+ i +"]"));
+			}
+			_object.PackageDownloadUrls = _object_packageDownloadUrls;
 			getPipelineInstanceInfoResponse._Object = _object;
         
 			return getPipelineInstanceInfoResponse;

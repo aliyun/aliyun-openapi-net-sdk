@@ -26,17 +26,17 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class AddCasterEpisodeGroupResponseUnmarshaller
     {
-        public static AddCasterEpisodeGroupResponse Unmarshall(UnmarshallerContext context)
+        public static AddCasterEpisodeGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddCasterEpisodeGroupResponse addCasterEpisodeGroupResponse = new AddCasterEpisodeGroupResponse();
 
-			addCasterEpisodeGroupResponse.HttpResponse = context.HttpResponse;
-			addCasterEpisodeGroupResponse.RequestId = context.StringValue("AddCasterEpisodeGroup.RequestId");
-			addCasterEpisodeGroupResponse.ProgramId = context.StringValue("AddCasterEpisodeGroup.ProgramId");
+			addCasterEpisodeGroupResponse.HttpResponse = _ctx.HttpResponse;
+			addCasterEpisodeGroupResponse.RequestId = _ctx.StringValue("AddCasterEpisodeGroup.RequestId");
+			addCasterEpisodeGroupResponse.ProgramId = _ctx.StringValue("AddCasterEpisodeGroup.ProgramId");
 
 			List<string> addCasterEpisodeGroupResponse_itemIds = new List<string>();
-			for (int i = 0; i < context.Length("AddCasterEpisodeGroup.ItemIds.Length"); i++) {
-				addCasterEpisodeGroupResponse_itemIds.Add(context.StringValue("AddCasterEpisodeGroup.ItemIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("AddCasterEpisodeGroup.ItemIds.Length"); i++) {
+				addCasterEpisodeGroupResponse_itemIds.Add(_ctx.StringValue("AddCasterEpisodeGroup.ItemIds["+ i +"]"));
 			}
 			addCasterEpisodeGroupResponse.ItemIds = addCasterEpisodeGroupResponse_itemIds;
         

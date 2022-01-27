@@ -26,53 +26,53 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeGroupResponseUnmarshaller
     {
-        public static DescribeGroupResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGroupResponse describeGroupResponse = new DescribeGroupResponse();
 
-			describeGroupResponse.HttpResponse = context.HttpResponse;
-			describeGroupResponse.RequestId = context.StringValue("DescribeGroup.RequestId");
-			describeGroupResponse.Id = context.StringValue("DescribeGroup.Id");
-			describeGroupResponse.AliasId = context.StringValue("DescribeGroup.AliasId");
-			describeGroupResponse.Name = context.StringValue("DescribeGroup.Name");
-			describeGroupResponse.Description = context.StringValue("DescribeGroup.Description");
-			describeGroupResponse.App = context.StringValue("DescribeGroup.App");
-			describeGroupResponse.Region = context.StringValue("DescribeGroup.Region");
-			describeGroupResponse.InProtocol = context.StringValue("DescribeGroup.InProtocol");
-			describeGroupResponse.OutProtocol = context.StringValue("DescribeGroup.OutProtocol");
-			describeGroupResponse.Enabled = context.BooleanValue("DescribeGroup.Enabled");
-			describeGroupResponse.Status = context.StringValue("DescribeGroup.Status");
-			describeGroupResponse.CreatedTime = context.StringValue("DescribeGroup.CreatedTime");
-			describeGroupResponse.PushDomain = context.StringValue("DescribeGroup.PushDomain");
-			describeGroupResponse.PlayDomain = context.StringValue("DescribeGroup.PlayDomain");
-			describeGroupResponse.LazyPull = context.BooleanValue("DescribeGroup.LazyPull");
-			describeGroupResponse.Callback = context.StringValue("DescribeGroup.Callback");
-			describeGroupResponse.CaptureInterval = context.IntegerValue("DescribeGroup.CaptureInterval");
-			describeGroupResponse.CaptureImage = context.IntegerValue("DescribeGroup.CaptureImage");
-			describeGroupResponse.CaptureVideo = context.IntegerValue("DescribeGroup.CaptureVideo");
-			describeGroupResponse.CaptureOssBucket = context.StringValue("DescribeGroup.CaptureOssBucket");
-			describeGroupResponse.CaptureOssPath = context.StringValue("DescribeGroup.CaptureOssPath");
-			describeGroupResponse.GbId = context.StringValue("DescribeGroup.GbId");
-			describeGroupResponse.GbIp = context.StringValue("DescribeGroup.GbIp");
-			describeGroupResponse.GbPort = context.LongValue("DescribeGroup.GbPort");
+			describeGroupResponse.HttpResponse = _ctx.HttpResponse;
+			describeGroupResponse.RequestId = _ctx.StringValue("DescribeGroup.RequestId");
+			describeGroupResponse.Id = _ctx.StringValue("DescribeGroup.Id");
+			describeGroupResponse.AliasId = _ctx.StringValue("DescribeGroup.AliasId");
+			describeGroupResponse.Name = _ctx.StringValue("DescribeGroup.Name");
+			describeGroupResponse.Description = _ctx.StringValue("DescribeGroup.Description");
+			describeGroupResponse.App = _ctx.StringValue("DescribeGroup.App");
+			describeGroupResponse.Region = _ctx.StringValue("DescribeGroup.Region");
+			describeGroupResponse.InProtocol = _ctx.StringValue("DescribeGroup.InProtocol");
+			describeGroupResponse.OutProtocol = _ctx.StringValue("DescribeGroup.OutProtocol");
+			describeGroupResponse.Enabled = _ctx.BooleanValue("DescribeGroup.Enabled");
+			describeGroupResponse.Status = _ctx.StringValue("DescribeGroup.Status");
+			describeGroupResponse.CreatedTime = _ctx.StringValue("DescribeGroup.CreatedTime");
+			describeGroupResponse.PushDomain = _ctx.StringValue("DescribeGroup.PushDomain");
+			describeGroupResponse.PlayDomain = _ctx.StringValue("DescribeGroup.PlayDomain");
+			describeGroupResponse.LazyPull = _ctx.BooleanValue("DescribeGroup.LazyPull");
+			describeGroupResponse.Callback = _ctx.StringValue("DescribeGroup.Callback");
+			describeGroupResponse.CaptureInterval = _ctx.IntegerValue("DescribeGroup.CaptureInterval");
+			describeGroupResponse.CaptureImage = _ctx.IntegerValue("DescribeGroup.CaptureImage");
+			describeGroupResponse.CaptureVideo = _ctx.IntegerValue("DescribeGroup.CaptureVideo");
+			describeGroupResponse.CaptureOssBucket = _ctx.StringValue("DescribeGroup.CaptureOssBucket");
+			describeGroupResponse.CaptureOssPath = _ctx.StringValue("DescribeGroup.CaptureOssPath");
+			describeGroupResponse.GbId = _ctx.StringValue("DescribeGroup.GbId");
+			describeGroupResponse.GbIp = _ctx.StringValue("DescribeGroup.GbIp");
+			describeGroupResponse.GbPort = _ctx.LongValue("DescribeGroup.GbPort");
 
 			List<string> describeGroupResponse_gbUdpPorts = new List<string>();
-			for (int i = 0; i < context.Length("DescribeGroup.GbUdpPorts.Length"); i++) {
-				describeGroupResponse_gbUdpPorts.Add(context.StringValue("DescribeGroup.GbUdpPorts["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeGroup.GbUdpPorts.Length"); i++) {
+				describeGroupResponse_gbUdpPorts.Add(_ctx.StringValue("DescribeGroup.GbUdpPorts["+ i +"]"));
 			}
 			describeGroupResponse.GbUdpPorts = describeGroupResponse_gbUdpPorts;
 
 			List<string> describeGroupResponse_gbTcpPorts = new List<string>();
-			for (int i = 0; i < context.Length("DescribeGroup.GbTcpPorts.Length"); i++) {
-				describeGroupResponse_gbTcpPorts.Add(context.StringValue("DescribeGroup.GbTcpPorts["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeGroup.GbTcpPorts.Length"); i++) {
+				describeGroupResponse_gbTcpPorts.Add(_ctx.StringValue("DescribeGroup.GbTcpPorts["+ i +"]"));
 			}
 			describeGroupResponse.GbTcpPorts = describeGroupResponse_gbTcpPorts;
 
 			DescribeGroupResponse.DescribeGroup_Stats stats = new DescribeGroupResponse.DescribeGroup_Stats();
-			stats.DeviceNum = context.LongValue("DescribeGroup.Stats.DeviceNum");
-			stats.IedNum = context.LongValue("DescribeGroup.Stats.IedNum");
-			stats.IpcNum = context.LongValue("DescribeGroup.Stats.IpcNum");
-			stats.PlatformNum = context.LongValue("DescribeGroup.Stats.PlatformNum");
+			stats.DeviceNum = _ctx.LongValue("DescribeGroup.Stats.DeviceNum");
+			stats.IedNum = _ctx.LongValue("DescribeGroup.Stats.IedNum");
+			stats.IpcNum = _ctx.LongValue("DescribeGroup.Stats.IpcNum");
+			stats.PlatformNum = _ctx.LongValue("DescribeGroup.Stats.PlatformNum");
 			describeGroupResponse.Stats = stats;
         
 			return describeGroupResponse;

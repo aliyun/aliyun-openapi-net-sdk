@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dataworks_public;
 using Aliyun.Acs.dataworks_public.Transform;
 using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
@@ -30,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
     public class ListInstancesRequest : RpcAcsRequest<ListInstancesResponse>
     {
         public ListInstancesRequest()
-            : base("dataworks-public", "2020-05-18", "ListInstances", "dide", "openAPI")
+            : base("dataworks-public", "2020-05-18", "ListInstances")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dataworks_public.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dataworks_public.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -46,11 +47,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string bizName;
 
+		private string beginBizdate;
+
+		private string endBizdate;
+
+		private long? dagId;
+
 		private int? pageNumber;
 
 		private string nodeName;
 
 		private string programType;
+
+		private string bizdate;
 
 		private int? pageSize;
 
@@ -97,6 +106,45 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public string BeginBizdate
+		{
+			get
+			{
+				return beginBizdate;
+			}
+			set	
+			{
+				beginBizdate = value;
+				DictionaryUtil.Add(BodyParameters, "BeginBizdate", value);
+			}
+		}
+
+		public string EndBizdate
+		{
+			get
+			{
+				return endBizdate;
+			}
+			set	
+			{
+				endBizdate = value;
+				DictionaryUtil.Add(BodyParameters, "EndBizdate", value);
+			}
+		}
+
+		public long? DagId
+		{
+			get
+			{
+				return dagId;
+			}
+			set	
+			{
+				dagId = value;
+				DictionaryUtil.Add(BodyParameters, "DagId", value.ToString());
+			}
+		}
+
 		public int? PageNumber
 		{
 			get
@@ -133,6 +181,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				programType = value;
 				DictionaryUtil.Add(BodyParameters, "ProgramType", value);
+			}
+		}
+
+		public string Bizdate
+		{
+			get
+			{
+				return bizdate;
+			}
+			set	
+			{
+				bizdate = value;
+				DictionaryUtil.Add(BodyParameters, "Bizdate", value);
 			}
 		}
 

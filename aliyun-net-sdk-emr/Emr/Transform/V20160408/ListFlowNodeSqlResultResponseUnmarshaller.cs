@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListFlowNodeSqlResultResponseUnmarshaller
     {
-        public static ListFlowNodeSqlResultResponse Unmarshall(UnmarshallerContext context)
+        public static ListFlowNodeSqlResultResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListFlowNodeSqlResultResponse listFlowNodeSqlResultResponse = new ListFlowNodeSqlResultResponse();
 
-			listFlowNodeSqlResultResponse.HttpResponse = context.HttpResponse;
-			listFlowNodeSqlResultResponse.RequestId = context.StringValue("ListFlowNodeSqlResult.RequestId");
-			listFlowNodeSqlResultResponse.End = context.BooleanValue("ListFlowNodeSqlResult.End");
+			listFlowNodeSqlResultResponse.HttpResponse = _ctx.HttpResponse;
+			listFlowNodeSqlResultResponse.RequestId = _ctx.StringValue("ListFlowNodeSqlResult.RequestId");
+			listFlowNodeSqlResultResponse.End = _ctx.BooleanValue("ListFlowNodeSqlResult.End");
 
 			List<string> listFlowNodeSqlResultResponse_headerList = new List<string>();
-			for (int i = 0; i < context.Length("ListFlowNodeSqlResult.HeaderList.Length"); i++) {
-				listFlowNodeSqlResultResponse_headerList.Add(context.StringValue("ListFlowNodeSqlResult.HeaderList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("ListFlowNodeSqlResult.HeaderList.Length"); i++) {
+				listFlowNodeSqlResultResponse_headerList.Add(_ctx.StringValue("ListFlowNodeSqlResult.HeaderList["+ i +"]"));
 			}
 			listFlowNodeSqlResultResponse.HeaderList = listFlowNodeSqlResultResponse_headerList;
 
 			List<ListFlowNodeSqlResultResponse.ListFlowNodeSqlResult_Row> listFlowNodeSqlResultResponse_rowList = new List<ListFlowNodeSqlResultResponse.ListFlowNodeSqlResult_Row>();
-			for (int i = 0; i < context.Length("ListFlowNodeSqlResult.RowList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListFlowNodeSqlResult.RowList.Length"); i++) {
 				ListFlowNodeSqlResultResponse.ListFlowNodeSqlResult_Row row = new ListFlowNodeSqlResultResponse.ListFlowNodeSqlResult_Row();
-				row.RowIndex = context.IntegerValue("ListFlowNodeSqlResult.RowList["+ i +"].RowIndex");
+				row.RowIndex = _ctx.IntegerValue("ListFlowNodeSqlResult.RowList["+ i +"].RowIndex");
 
 				List<string> row_rowItemList = new List<string>();
-				for (int j = 0; j < context.Length("ListFlowNodeSqlResult.RowList["+ i +"].RowItemList.Length"); j++) {
-					row_rowItemList.Add(context.StringValue("ListFlowNodeSqlResult.RowList["+ i +"].RowItemList["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("ListFlowNodeSqlResult.RowList["+ i +"].RowItemList.Length"); j++) {
+					row_rowItemList.Add(_ctx.StringValue("ListFlowNodeSqlResult.RowList["+ i +"].RowItemList["+ j +"]"));
 				}
 				row.RowItemList = row_rowItemList;
 

@@ -62,6 +62,10 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 			private string serverCertificateId;
 
+			private List<DescribeDomainExtensions_Certificate> certificates;
+
+			private List<DescribeDomainExtensions_ServerCertificate> serverCertificates;
+
 			public string DomainExtensionId
 			{
 				get
@@ -95,6 +99,122 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					serverCertificateId = value;
+				}
+			}
+
+			public List<DescribeDomainExtensions_Certificate> Certificates
+			{
+				get
+				{
+					return certificates;
+				}
+				set	
+				{
+					certificates = value;
+				}
+			}
+
+			public List<DescribeDomainExtensions_ServerCertificate> ServerCertificates
+			{
+				get
+				{
+					return serverCertificates;
+				}
+				set	
+				{
+					serverCertificates = value;
+				}
+			}
+
+			public class DescribeDomainExtensions_Certificate
+			{
+
+				private string certificateId;
+
+				private string encryptionAlgorithm;
+
+				public string CertificateId
+				{
+					get
+					{
+						return certificateId;
+					}
+					set	
+					{
+						certificateId = value;
+					}
+				}
+
+				public string EncryptionAlgorithm
+				{
+					get
+					{
+						return encryptionAlgorithm;
+					}
+					set	
+					{
+						encryptionAlgorithm = value;
+					}
+				}
+			}
+
+			public class DescribeDomainExtensions_ServerCertificate
+			{
+
+				private string certificateId;
+
+				private string encryptionAlgorithm;
+
+				private string bindingType;
+
+				private string standardType;
+
+				public string CertificateId
+				{
+					get
+					{
+						return certificateId;
+					}
+					set	
+					{
+						certificateId = value;
+					}
+				}
+
+				public string EncryptionAlgorithm
+				{
+					get
+					{
+						return encryptionAlgorithm;
+					}
+					set	
+					{
+						encryptionAlgorithm = value;
+					}
+				}
+
+				public string BindingType
+				{
+					get
+					{
+						return bindingType;
+					}
+					set	
+					{
+						bindingType = value;
+					}
+				}
+
+				public string StandardType
+				{
+					get
+					{
+						return standardType;
+					}
+					set	
+					{
+						standardType = value;
+					}
 				}
 			}
 		}

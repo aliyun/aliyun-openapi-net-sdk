@@ -26,18 +26,18 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeDirectoryResponseUnmarshaller
     {
-        public static DescribeDirectoryResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDirectoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDirectoryResponse describeDirectoryResponse = new DescribeDirectoryResponse();
 
-			describeDirectoryResponse.HttpResponse = context.HttpResponse;
-			describeDirectoryResponse.RequestId = context.StringValue("DescribeDirectory.RequestId");
-			describeDirectoryResponse.Id = context.StringValue("DescribeDirectory.Id");
-			describeDirectoryResponse.Name = context.StringValue("DescribeDirectory.Name");
-			describeDirectoryResponse.Description = context.StringValue("DescribeDirectory.Description");
-			describeDirectoryResponse.GroupId = context.StringValue("DescribeDirectory.GroupId");
-			describeDirectoryResponse.ParentId = context.StringValue("DescribeDirectory.ParentId");
-			describeDirectoryResponse.CreatedTime = context.StringValue("DescribeDirectory.CreatedTime");
+			describeDirectoryResponse.HttpResponse = _ctx.HttpResponse;
+			describeDirectoryResponse.RequestId = _ctx.StringValue("DescribeDirectory.RequestId");
+			describeDirectoryResponse.Id = _ctx.StringValue("DescribeDirectory.Id");
+			describeDirectoryResponse.Name = _ctx.StringValue("DescribeDirectory.Name");
+			describeDirectoryResponse.Description = _ctx.StringValue("DescribeDirectory.Description");
+			describeDirectoryResponse.GroupId = _ctx.StringValue("DescribeDirectory.GroupId");
+			describeDirectoryResponse.ParentId = _ctx.StringValue("DescribeDirectory.ParentId");
+			describeDirectoryResponse.CreatedTime = _ctx.StringValue("DescribeDirectory.CreatedTime");
         
 			return describeDirectoryResponse;
         }

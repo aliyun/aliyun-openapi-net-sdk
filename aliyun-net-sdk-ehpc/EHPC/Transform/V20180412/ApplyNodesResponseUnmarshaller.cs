@@ -26,19 +26,19 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class ApplyNodesResponseUnmarshaller
     {
-        public static ApplyNodesResponse Unmarshall(UnmarshallerContext context)
+        public static ApplyNodesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ApplyNodesResponse applyNodesResponse = new ApplyNodesResponse();
 
-			applyNodesResponse.HttpResponse = context.HttpResponse;
-			applyNodesResponse.RequestId = context.StringValue("ApplyNodes.RequestId");
-			applyNodesResponse.Detail = context.StringValue("ApplyNodes.Detail");
-			applyNodesResponse.SatisfiedAmount = context.IntegerValue("ApplyNodes.SatisfiedAmount");
-			applyNodesResponse.TaskId = context.StringValue("ApplyNodes.TaskId");
+			applyNodesResponse.HttpResponse = _ctx.HttpResponse;
+			applyNodesResponse.RequestId = _ctx.StringValue("ApplyNodes.RequestId");
+			applyNodesResponse.Detail = _ctx.StringValue("ApplyNodes.Detail");
+			applyNodesResponse.SatisfiedAmount = _ctx.IntegerValue("ApplyNodes.SatisfiedAmount");
+			applyNodesResponse.TaskId = _ctx.StringValue("ApplyNodes.TaskId");
 
 			List<string> applyNodesResponse_instanceIds = new List<string>();
-			for (int i = 0; i < context.Length("ApplyNodes.InstanceIds.Length"); i++) {
-				applyNodesResponse_instanceIds.Add(context.StringValue("ApplyNodes.InstanceIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("ApplyNodes.InstanceIds.Length"); i++) {
+				applyNodesResponse_instanceIds.Add(_ctx.StringValue("ApplyNodes.InstanceIds["+ i +"]"));
 			}
 			applyNodesResponse.InstanceIds = applyNodesResponse_instanceIds;
         

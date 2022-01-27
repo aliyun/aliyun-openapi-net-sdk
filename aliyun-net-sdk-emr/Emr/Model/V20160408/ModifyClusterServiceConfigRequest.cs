@@ -32,29 +32,48 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ModifyClusterServiceConfigRequest()
             : base("Emr", "2016-04-08", "ModifyClusterServiceConfig", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
+
+		private bool? refreshHostConfig;
 
 		private long? resourceOwnerId;
 
-		private string customConfigParams;
-
-		private string configType;
-
 		private string hostInstanceId;
-
-		private string regionId;
-
-		private string groupId;
 
 		private string serviceName;
 
-		private string comment;
+		private List<string> gatewayClusterIdLists = new List<string>(){ };
+
+		private string configParams;
+
+		private string configType;
+
+		private string groupId;
 
 		private string clusterId;
 
-		private string accessKeyId;
+		private string customConfigParams;
 
-		private string configParams;
+		private string comment;
+
+		public bool? RefreshHostConfig
+		{
+			get
+			{
+				return refreshHostConfig;
+			}
+			set	
+			{
+				refreshHostConfig = value;
+				DictionaryUtil.Add(QueryParameters, "RefreshHostConfig", value.ToString());
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -66,32 +85,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string CustomConfigParams
-		{
-			get
-			{
-				return customConfigParams;
-			}
-			set	
-			{
-				customConfigParams = value;
-				DictionaryUtil.Add(QueryParameters, "CustomConfigParams", value);
-			}
-		}
-
-		public string ConfigType
-		{
-			get
-			{
-				return configType;
-			}
-			set	
-			{
-				configType = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigType", value);
 			}
 		}
 
@@ -108,16 +101,59 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
+		public string ServiceName
 		{
 			get
 			{
-				return regionId;
+				return serviceName;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				serviceName = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
+			}
+		}
+
+		public List<string> GatewayClusterIdLists
+		{
+			get
+			{
+				return gatewayClusterIdLists;
+			}
+
+			set
+			{
+				gatewayClusterIdLists = value;
+				for (int i = 0; i < gatewayClusterIdLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"GatewayClusterIdList." + (i + 1) , gatewayClusterIdLists[i]);
+				}
+			}
+		}
+
+		public string ConfigParams
+		{
+			get
+			{
+				return configParams;
+			}
+			set	
+			{
+				configParams = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigParams", value);
+			}
+		}
+
+		public string ConfigType
+		{
+			get
+			{
+				return configType;
+			}
+			set	
+			{
+				configType = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigType", value);
 			}
 		}
 
@@ -134,32 +170,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string ServiceName
-		{
-			get
-			{
-				return serviceName;
-			}
-			set	
-			{
-				serviceName = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
-			}
-		}
-
-		public string Comment
-		{
-			get
-			{
-				return comment;
-			}
-			set	
-			{
-				comment = value;
-				DictionaryUtil.Add(QueryParameters, "Comment", value);
-			}
-		}
-
 		public string ClusterId
 		{
 			get
@@ -173,29 +183,29 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string AccessKeyId
+		public string CustomConfigParams
 		{
 			get
 			{
-				return accessKeyId;
+				return customConfigParams;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				customConfigParams = value;
+				DictionaryUtil.Add(QueryParameters, "CustomConfigParams", value);
 			}
 		}
 
-		public string ConfigParams
+		public string Comment
 		{
 			get
 			{
-				return configParams;
+				return comment;
 			}
 			set	
 			{
-				configParams = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigParams", value);
+				comment = value;
+				DictionaryUtil.Add(QueryParameters, "Comment", value);
 			}
 		}
 

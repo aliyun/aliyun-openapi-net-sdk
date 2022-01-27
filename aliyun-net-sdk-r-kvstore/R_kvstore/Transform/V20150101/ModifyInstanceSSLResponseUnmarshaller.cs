@@ -26,14 +26,14 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class ModifyInstanceSSLResponseUnmarshaller
     {
-        public static ModifyInstanceSSLResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyInstanceSSLResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyInstanceSSLResponse modifyInstanceSSLResponse = new ModifyInstanceSSLResponse();
 
-			modifyInstanceSSLResponse.HttpResponse = context.HttpResponse;
-			modifyInstanceSSLResponse.RequestId = context.StringValue("ModifyInstanceSSL.RequestId");
-			modifyInstanceSSLResponse.InstanceId = context.StringValue("ModifyInstanceSSL.InstanceId");
-			modifyInstanceSSLResponse.TaskId = context.StringValue("ModifyInstanceSSL.TaskId");
+			modifyInstanceSSLResponse.HttpResponse = _ctx.HttpResponse;
+			modifyInstanceSSLResponse.RequestId = _ctx.StringValue("ModifyInstanceSSL.RequestId");
+			modifyInstanceSSLResponse.InstanceId = _ctx.StringValue("ModifyInstanceSSL.InstanceId");
+			modifyInstanceSSLResponse.TaskId = _ctx.StringValue("ModifyInstanceSSL.TaskId");
         
 			return modifyInstanceSSLResponse;
         }

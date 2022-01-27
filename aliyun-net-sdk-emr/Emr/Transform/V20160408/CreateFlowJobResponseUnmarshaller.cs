@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class CreateFlowJobResponseUnmarshaller
     {
-        public static CreateFlowJobResponse Unmarshall(UnmarshallerContext context)
+        public static CreateFlowJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateFlowJobResponse createFlowJobResponse = new CreateFlowJobResponse();
 
-			createFlowJobResponse.HttpResponse = context.HttpResponse;
-			createFlowJobResponse.RequestId = context.StringValue("CreateFlowJob.RequestId");
-			createFlowJobResponse.Id = context.StringValue("CreateFlowJob.Id");
+			createFlowJobResponse.HttpResponse = _ctx.HttpResponse;
+			createFlowJobResponse.RequestId = _ctx.StringValue("CreateFlowJob.RequestId");
+			createFlowJobResponse.Id = _ctx.StringValue("CreateFlowJob.Id");
         
 			return createFlowJobResponse;
         }

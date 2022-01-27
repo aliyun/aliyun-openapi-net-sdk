@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class RegistrantProfileRealNameVerificationResponseUnmarshaller
     {
-        public static RegistrantProfileRealNameVerificationResponse Unmarshall(UnmarshallerContext context)
+        public static RegistrantProfileRealNameVerificationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RegistrantProfileRealNameVerificationResponse registrantProfileRealNameVerificationResponse = new RegistrantProfileRealNameVerificationResponse();
 
-			registrantProfileRealNameVerificationResponse.HttpResponse = context.HttpResponse;
-			registrantProfileRealNameVerificationResponse.RequestId = context.StringValue("RegistrantProfileRealNameVerification.RequestId");
+			registrantProfileRealNameVerificationResponse.HttpResponse = _ctx.HttpResponse;
+			registrantProfileRealNameVerificationResponse.RequestId = _ctx.StringValue("RegistrantProfileRealNameVerification.RequestId");
         
 			return registrantProfileRealNameVerificationResponse;
         }

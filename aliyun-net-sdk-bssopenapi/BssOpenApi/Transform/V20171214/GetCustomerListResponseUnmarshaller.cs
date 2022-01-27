@@ -26,21 +26,21 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class GetCustomerListResponseUnmarshaller
     {
-        public static GetCustomerListResponse Unmarshall(UnmarshallerContext context)
+        public static GetCustomerListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetCustomerListResponse getCustomerListResponse = new GetCustomerListResponse();
 
-			getCustomerListResponse.HttpResponse = context.HttpResponse;
-			getCustomerListResponse.RequestId = context.StringValue("GetCustomerList.RequestId");
-			getCustomerListResponse.Success = context.BooleanValue("GetCustomerList.Success");
-			getCustomerListResponse.Code = context.StringValue("GetCustomerList.Code");
-			getCustomerListResponse.Message = context.StringValue("GetCustomerList.Message");
+			getCustomerListResponse.HttpResponse = _ctx.HttpResponse;
+			getCustomerListResponse.RequestId = _ctx.StringValue("GetCustomerList.RequestId");
+			getCustomerListResponse.Success = _ctx.BooleanValue("GetCustomerList.Success");
+			getCustomerListResponse.Code = _ctx.StringValue("GetCustomerList.Code");
+			getCustomerListResponse.Message = _ctx.StringValue("GetCustomerList.Message");
 
 			GetCustomerListResponse.GetCustomerList_Data data = new GetCustomerListResponse.GetCustomerList_Data();
 
 			List<string> data_uidList = new List<string>();
-			for (int i = 0; i < context.Length("GetCustomerList.Data.UidList.Length"); i++) {
-				data_uidList.Add(context.StringValue("GetCustomerList.Data.UidList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetCustomerList.Data.UidList.Length"); i++) {
+				data_uidList.Add(_ctx.StringValue("GetCustomerList.Data.UidList["+ i +"]"));
 			}
 			data.UidList = data_uidList;
 			getCustomerListResponse.Data = data;

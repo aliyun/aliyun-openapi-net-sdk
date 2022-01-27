@@ -26,20 +26,20 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class RestartApplicationResponseUnmarshaller
     {
-        public static RestartApplicationResponse Unmarshall(UnmarshallerContext context)
+        public static RestartApplicationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RestartApplicationResponse restartApplicationResponse = new RestartApplicationResponse();
 
-			restartApplicationResponse.HttpResponse = context.HttpResponse;
-			restartApplicationResponse.RequestId = context.StringValue("RestartApplication.RequestId");
-			restartApplicationResponse.Code = context.StringValue("RestartApplication.Code");
-			restartApplicationResponse.Success = context.BooleanValue("RestartApplication.Success");
-			restartApplicationResponse.ErrorCode = context.StringValue("RestartApplication.ErrorCode");
-			restartApplicationResponse.Message = context.StringValue("RestartApplication.Message");
-			restartApplicationResponse.TraceId = context.StringValue("RestartApplication.TraceId");
+			restartApplicationResponse.HttpResponse = _ctx.HttpResponse;
+			restartApplicationResponse.RequestId = _ctx.StringValue("RestartApplication.RequestId");
+			restartApplicationResponse.Message = _ctx.StringValue("RestartApplication.Message");
+			restartApplicationResponse.TraceId = _ctx.StringValue("RestartApplication.TraceId");
+			restartApplicationResponse.ErrorCode = _ctx.StringValue("RestartApplication.ErrorCode");
+			restartApplicationResponse.Code = _ctx.StringValue("RestartApplication.Code");
+			restartApplicationResponse.Success = _ctx.BooleanValue("RestartApplication.Success");
 
 			RestartApplicationResponse.RestartApplication_Data data = new RestartApplicationResponse.RestartApplication_Data();
-			data.ChangeOrderId = context.StringValue("RestartApplication.Data.ChangeOrderId");
+			data.ChangeOrderId = _ctx.StringValue("RestartApplication.Data.ChangeOrderId");
 			restartApplicationResponse.Data = data;
         
 			return restartApplicationResponse;

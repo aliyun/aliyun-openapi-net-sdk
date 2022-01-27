@@ -26,15 +26,15 @@ namespace Aliyun.Acs.imageenhan.Transform.V20190930
 {
     public class RemoveImageWatermarkResponseUnmarshaller
     {
-        public static RemoveImageWatermarkResponse Unmarshall(UnmarshallerContext context)
+        public static RemoveImageWatermarkResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RemoveImageWatermarkResponse removeImageWatermarkResponse = new RemoveImageWatermarkResponse();
 
-			removeImageWatermarkResponse.HttpResponse = context.HttpResponse;
-			removeImageWatermarkResponse.RequestId = context.StringValue("RemoveImageWatermark.RequestId");
+			removeImageWatermarkResponse.HttpResponse = _ctx.HttpResponse;
+			removeImageWatermarkResponse.RequestId = _ctx.StringValue("RemoveImageWatermark.RequestId");
 
 			RemoveImageWatermarkResponse.RemoveImageWatermark_Data data = new RemoveImageWatermarkResponse.RemoveImageWatermark_Data();
-			data.ImageURL = context.StringValue("RemoveImageWatermark.Data.ImageURL");
+			data.ImageURL = _ctx.StringValue("RemoveImageWatermark.Data.ImageURL");
 			removeImageWatermarkResponse.Data = data;
         
 			return removeImageWatermarkResponse;

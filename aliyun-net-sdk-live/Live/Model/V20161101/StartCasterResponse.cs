@@ -74,6 +74,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string streamUrl;
 
+			private string rtsUrl;
+
 			public string SceneId
 			{
 				get
@@ -97,6 +99,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					streamUrl = value;
 				}
 			}
+
+			public string RtsUrl
+			{
+				get
+				{
+					return rtsUrl;
+				}
+				set	
+				{
+					rtsUrl = value;
+				}
+			}
 		}
 
 		public class StartCaster_SceneInfo1
@@ -105,6 +119,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 			private string sceneId;
 
 			private string streamUrl;
+
+			private string rtsUrl;
 
 			private List<StartCaster_StreamInfo> streamInfos;
 
@@ -129,6 +145,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					streamUrl = value;
+				}
+			}
+
+			public string RtsUrl
+			{
+				get
+				{
+					return rtsUrl;
+				}
+				set	
+				{
+					rtsUrl = value;
 				}
 			}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,13 +25,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class GetInstanceConsoleOutputResponse : AcsResponse
 	{
 
+		private string lastUpdateTime;
+
 		private string requestId;
 
 		private string instanceId;
 
 		private string consoleOutput;
 
-		private string lastUpdateTime;
+		public string LastUpdateTime
+		{
+			get
+			{
+				return lastUpdateTime;
+			}
+			set	
+			{
+				lastUpdateTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -66,18 +78,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				consoleOutput = value;
-			}
-		}
-
-		public string LastUpdateTime
-		{
-			get
-			{
-				return lastUpdateTime;
-			}
-			set	
-			{
-				lastUpdateTime = value;
 			}
 		}
 	}

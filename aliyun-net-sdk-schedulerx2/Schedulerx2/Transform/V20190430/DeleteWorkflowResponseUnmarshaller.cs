@@ -26,15 +26,15 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 {
     public class DeleteWorkflowResponseUnmarshaller
     {
-        public static DeleteWorkflowResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteWorkflowResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteWorkflowResponse deleteWorkflowResponse = new DeleteWorkflowResponse();
 
-			deleteWorkflowResponse.HttpResponse = context.HttpResponse;
-			deleteWorkflowResponse.RequestId = context.StringValue("DeleteWorkflow.RequestId");
-			deleteWorkflowResponse.Code = context.IntegerValue("DeleteWorkflow.Code");
-			deleteWorkflowResponse.Success = context.BooleanValue("DeleteWorkflow.Success");
-			deleteWorkflowResponse.Message = context.StringValue("DeleteWorkflow.Message");
+			deleteWorkflowResponse.HttpResponse = _ctx.HttpResponse;
+			deleteWorkflowResponse.Code = _ctx.IntegerValue("DeleteWorkflow.Code");
+			deleteWorkflowResponse.Message = _ctx.StringValue("DeleteWorkflow.Message");
+			deleteWorkflowResponse.RequestId = _ctx.StringValue("DeleteWorkflow.RequestId");
+			deleteWorkflowResponse.Success = _ctx.BooleanValue("DeleteWorkflow.Success");
         
 			return deleteWorkflowResponse;
         }

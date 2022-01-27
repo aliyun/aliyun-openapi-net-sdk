@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
     public class VoipGetTokenResponseUnmarshaller
     {
-        public static VoipGetTokenResponse Unmarshall(UnmarshallerContext context)
+        public static VoipGetTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			VoipGetTokenResponse voipGetTokenResponse = new VoipGetTokenResponse();
 
-			voipGetTokenResponse.HttpResponse = context.HttpResponse;
-			voipGetTokenResponse.RequestId = context.StringValue("VoipGetToken.RequestId");
-			voipGetTokenResponse.Module = context.StringValue("VoipGetToken.Module");
-			voipGetTokenResponse.Code = context.StringValue("VoipGetToken.Code");
-			voipGetTokenResponse.Message = context.StringValue("VoipGetToken.Message");
+			voipGetTokenResponse.HttpResponse = _ctx.HttpResponse;
+			voipGetTokenResponse.RequestId = _ctx.StringValue("VoipGetToken.RequestId");
+			voipGetTokenResponse.Module = _ctx.StringValue("VoipGetToken.Module");
+			voipGetTokenResponse.Code = _ctx.StringValue("VoipGetToken.Code");
+			voipGetTokenResponse.Message = _ctx.StringValue("VoipGetToken.Message");
         
 			return voipGetTokenResponse;
         }

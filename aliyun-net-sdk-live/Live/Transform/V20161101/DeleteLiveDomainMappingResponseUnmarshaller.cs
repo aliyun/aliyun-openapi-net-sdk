@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DeleteLiveDomainMappingResponseUnmarshaller
     {
-        public static DeleteLiveDomainMappingResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteLiveDomainMappingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteLiveDomainMappingResponse deleteLiveDomainMappingResponse = new DeleteLiveDomainMappingResponse();
 
-			deleteLiveDomainMappingResponse.HttpResponse = context.HttpResponse;
-			deleteLiveDomainMappingResponse.RequestId = context.StringValue("DeleteLiveDomainMapping.RequestId");
+			deleteLiveDomainMappingResponse.HttpResponse = _ctx.HttpResponse;
+			deleteLiveDomainMappingResponse.RequestId = _ctx.StringValue("DeleteLiveDomainMapping.RequestId");
         
 			return deleteLiveDomainMappingResponse;
         }

@@ -31,27 +31,27 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			DescribeGlobalDatabaseNetworksResponse describeGlobalDatabaseNetworksResponse = new DescribeGlobalDatabaseNetworksResponse();
 
 			describeGlobalDatabaseNetworksResponse.HttpResponse = _ctx.HttpResponse;
-			describeGlobalDatabaseNetworksResponse.RequestId = _ctx.StringValue("DescribeGlobalDatabaseNetworks.RequestId");
-			describeGlobalDatabaseNetworksResponse.PageNumber = _ctx.IntegerValue("DescribeGlobalDatabaseNetworks.PageNumber");
 			describeGlobalDatabaseNetworksResponse.TotalRecordCount = _ctx.IntegerValue("DescribeGlobalDatabaseNetworks.TotalRecordCount");
 			describeGlobalDatabaseNetworksResponse.PageRecordCount = _ctx.IntegerValue("DescribeGlobalDatabaseNetworks.PageRecordCount");
+			describeGlobalDatabaseNetworksResponse.RequestId = _ctx.StringValue("DescribeGlobalDatabaseNetworks.RequestId");
+			describeGlobalDatabaseNetworksResponse.PageNumber = _ctx.IntegerValue("DescribeGlobalDatabaseNetworks.PageNumber");
 
 			List<DescribeGlobalDatabaseNetworksResponse.DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork> describeGlobalDatabaseNetworksResponse_items = new List<DescribeGlobalDatabaseNetworksResponse.DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork>();
 			for (int i = 0; i < _ctx.Length("DescribeGlobalDatabaseNetworks.Items.Length"); i++) {
 				DescribeGlobalDatabaseNetworksResponse.DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork globalDatabaseNetwork = new DescribeGlobalDatabaseNetworksResponse.DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork();
-				globalDatabaseNetwork.GDNId = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].GDNId");
-				globalDatabaseNetwork.GDNStatus = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].GDNStatus");
-				globalDatabaseNetwork.GDNDescription = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].GDNDescription");
-				globalDatabaseNetwork.DBType = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].DBType");
 				globalDatabaseNetwork.DBVersion = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].DBVersion");
+				globalDatabaseNetwork.GDNId = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].GDNId");
 				globalDatabaseNetwork.CreateTime = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].CreateTime");
+				globalDatabaseNetwork.GDNStatus = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].GDNStatus");
+				globalDatabaseNetwork.DBType = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].DBType");
+				globalDatabaseNetwork.GDNDescription = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].GDNDescription");
 
 				List<DescribeGlobalDatabaseNetworksResponse.DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork.DescribeGlobalDatabaseNetworks_DBCluster> globalDatabaseNetwork_dBClusters = new List<DescribeGlobalDatabaseNetworksResponse.DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork.DescribeGlobalDatabaseNetworks_DBCluster>();
 				for (int j = 0; j < _ctx.Length("DescribeGlobalDatabaseNetworks.Items["+ i +"].DBClusters.Length"); j++) {
 					DescribeGlobalDatabaseNetworksResponse.DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork.DescribeGlobalDatabaseNetworks_DBCluster dBCluster = new DescribeGlobalDatabaseNetworksResponse.DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork.DescribeGlobalDatabaseNetworks_DBCluster();
 					dBCluster.DBClusterId = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].DBClusters["+ j +"].DBClusterId");
-					dBCluster.RegionId = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].DBClusters["+ j +"].RegionId");
 					dBCluster.Role = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].DBClusters["+ j +"].Role");
+					dBCluster.RegionId = _ctx.StringValue("DescribeGlobalDatabaseNetworks.Items["+ i +"].DBClusters["+ j +"].RegionId");
 
 					globalDatabaseNetwork_dBClusters.Add(dBCluster);
 				}

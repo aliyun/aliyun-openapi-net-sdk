@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Domain.Transform.V20180208
 {
     public class ChangeAuctionResponseUnmarshaller
     {
-        public static ChangeAuctionResponse Unmarshall(UnmarshallerContext context)
+        public static ChangeAuctionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ChangeAuctionResponse changeAuctionResponse = new ChangeAuctionResponse();
 
-			changeAuctionResponse.HttpResponse = context.HttpResponse;
-			changeAuctionResponse.RequestId = context.StringValue("ChangeAuction.RequestId");
+			changeAuctionResponse.HttpResponse = _ctx.HttpResponse;
+			changeAuctionResponse.RequestId = _ctx.StringValue("ChangeAuction.RequestId");
         
 			return changeAuctionResponse;
         }

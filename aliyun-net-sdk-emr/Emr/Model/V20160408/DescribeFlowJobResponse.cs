@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private long? retryInterval;
 
+		private string retryPolicy;
+
 		private string _params;
 
 		private string paramConf;
@@ -66,6 +68,10 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 		private string adhoc;
 
 		private string alertConf;
+
+		private string editLockDetail;
+
+		private long? maxRunningTimeSec;
 
 		private List<DescribeFlowJob_Resource> resourceList;
 
@@ -186,6 +192,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			set	
 			{
 				retryInterval = value;
+			}
+		}
+
+		public string RetryPolicy
+		{
+			get
+			{
+				return retryPolicy;
+			}
+			set	
+			{
+				retryPolicy = value;
 			}
 		}
 
@@ -318,6 +336,30 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			set	
 			{
 				alertConf = value;
+			}
+		}
+
+		public string EditLockDetail
+		{
+			get
+			{
+				return editLockDetail;
+			}
+			set	
+			{
+				editLockDetail = value;
+			}
+		}
+
+		public long? MaxRunningTimeSec
+		{
+			get
+			{
+				return maxRunningTimeSec;
+			}
+			set	
+			{
+				maxRunningTimeSec = value;
 			}
 		}
 

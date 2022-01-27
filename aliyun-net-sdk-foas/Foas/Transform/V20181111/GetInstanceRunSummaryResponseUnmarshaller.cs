@@ -26,22 +26,22 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class GetInstanceRunSummaryResponseUnmarshaller
     {
-        public static GetInstanceRunSummaryResponse Unmarshall(UnmarshallerContext context)
+        public static GetInstanceRunSummaryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetInstanceRunSummaryResponse getInstanceRunSummaryResponse = new GetInstanceRunSummaryResponse();
 
-			getInstanceRunSummaryResponse.HttpResponse = context.HttpResponse;
-			getInstanceRunSummaryResponse.RequestId = context.StringValue("GetInstanceRunSummary.RequestId");
+			getInstanceRunSummaryResponse.HttpResponse = _ctx.HttpResponse;
+			getInstanceRunSummaryResponse.RequestId = _ctx.StringValue("GetInstanceRunSummary.RequestId");
 
 			GetInstanceRunSummaryResponse.GetInstanceRunSummary_RunSummary runSummary = new GetInstanceRunSummaryResponse.GetInstanceRunSummary_RunSummary();
-			runSummary.Id = context.LongValue("GetInstanceRunSummary.RunSummary.Id");
-			runSummary.ActualState = context.StringValue("GetInstanceRunSummary.RunSummary.ActualState");
-			runSummary.ExpectState = context.StringValue("GetInstanceRunSummary.RunSummary.ExpectState");
-			runSummary.LastErrorTime = context.LongValue("GetInstanceRunSummary.RunSummary.LastErrorTime");
-			runSummary.LastErrorMessage = context.StringValue("GetInstanceRunSummary.RunSummary.LastErrorMessage");
-			runSummary.EngineJobHandler = context.StringValue("GetInstanceRunSummary.RunSummary.EngineJobHandler");
-			runSummary.InputDelay = context.LongValue("GetInstanceRunSummary.RunSummary.InputDelay");
-			runSummary.JobName = context.StringValue("GetInstanceRunSummary.RunSummary.JobName");
+			runSummary.Id = _ctx.LongValue("GetInstanceRunSummary.RunSummary.Id");
+			runSummary.ActualState = _ctx.StringValue("GetInstanceRunSummary.RunSummary.ActualState");
+			runSummary.ExpectState = _ctx.StringValue("GetInstanceRunSummary.RunSummary.ExpectState");
+			runSummary.LastErrorTime = _ctx.LongValue("GetInstanceRunSummary.RunSummary.LastErrorTime");
+			runSummary.LastErrorMessage = _ctx.StringValue("GetInstanceRunSummary.RunSummary.LastErrorMessage");
+			runSummary.EngineJobHandler = _ctx.StringValue("GetInstanceRunSummary.RunSummary.EngineJobHandler");
+			runSummary.InputDelay = _ctx.LongValue("GetInstanceRunSummary.RunSummary.InputDelay");
+			runSummary.JobName = _ctx.StringValue("GetInstanceRunSummary.RunSummary.JobName");
 			getInstanceRunSummaryResponse.RunSummary = runSummary;
         
 			return getInstanceRunSummaryResponse;

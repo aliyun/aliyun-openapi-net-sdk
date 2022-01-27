@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DescribeVpnSslServerLogsResponseUnmarshaller
     {
-        public static DescribeVpnSslServerLogsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVpnSslServerLogsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVpnSslServerLogsResponse describeVpnSslServerLogsResponse = new DescribeVpnSslServerLogsResponse();
 
-			describeVpnSslServerLogsResponse.HttpResponse = context.HttpResponse;
-			describeVpnSslServerLogsResponse.RequestId = context.StringValue("DescribeVpnSslServerLogs.RequestId");
-			describeVpnSslServerLogsResponse.Count = context.IntegerValue("DescribeVpnSslServerLogs.Count");
-			describeVpnSslServerLogsResponse.IsCompleted = context.BooleanValue("DescribeVpnSslServerLogs.IsCompleted");
-			describeVpnSslServerLogsResponse.PageNumber = context.IntegerValue("DescribeVpnSslServerLogs.PageNumber");
-			describeVpnSslServerLogsResponse.PageSize = context.IntegerValue("DescribeVpnSslServerLogs.PageSize");
+			describeVpnSslServerLogsResponse.HttpResponse = _ctx.HttpResponse;
+			describeVpnSslServerLogsResponse.RequestId = _ctx.StringValue("DescribeVpnSslServerLogs.RequestId");
+			describeVpnSslServerLogsResponse.Count = _ctx.IntegerValue("DescribeVpnSslServerLogs.Count");
+			describeVpnSslServerLogsResponse.IsCompleted = _ctx.BooleanValue("DescribeVpnSslServerLogs.IsCompleted");
+			describeVpnSslServerLogsResponse.PageNumber = _ctx.IntegerValue("DescribeVpnSslServerLogs.PageNumber");
+			describeVpnSslServerLogsResponse.PageSize = _ctx.IntegerValue("DescribeVpnSslServerLogs.PageSize");
 
 			List<string> describeVpnSslServerLogsResponse_data = new List<string>();
-			for (int i = 0; i < context.Length("DescribeVpnSslServerLogs.Data.Length"); i++) {
-				describeVpnSslServerLogsResponse_data.Add(context.StringValue("DescribeVpnSslServerLogs.Data["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeVpnSslServerLogs.Data.Length"); i++) {
+				describeVpnSslServerLogsResponse_data.Add(_ctx.StringValue("DescribeVpnSslServerLogs.Data["+ i +"]"));
 			}
 			describeVpnSslServerLogsResponse.Data = describeVpnSslServerLogsResponse_data;
         

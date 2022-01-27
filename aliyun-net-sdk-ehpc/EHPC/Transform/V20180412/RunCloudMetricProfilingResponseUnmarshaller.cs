@@ -26,12 +26,12 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class RunCloudMetricProfilingResponseUnmarshaller
     {
-        public static RunCloudMetricProfilingResponse Unmarshall(UnmarshallerContext context)
+        public static RunCloudMetricProfilingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RunCloudMetricProfilingResponse runCloudMetricProfilingResponse = new RunCloudMetricProfilingResponse();
 
-			runCloudMetricProfilingResponse.HttpResponse = context.HttpResponse;
-			runCloudMetricProfilingResponse.RequestId = context.StringValue("RunCloudMetricProfiling.RequestId");
+			runCloudMetricProfilingResponse.HttpResponse = _ctx.HttpResponse;
+			runCloudMetricProfilingResponse.RequestId = _ctx.StringValue("RunCloudMetricProfiling.RequestId");
         
 			return runCloudMetricProfilingResponse;
         }

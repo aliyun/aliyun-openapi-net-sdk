@@ -26,45 +26,50 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListClusterHostResponseUnmarshaller
     {
-        public static ListClusterHostResponse Unmarshall(UnmarshallerContext context)
+        public static ListClusterHostResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListClusterHostResponse listClusterHostResponse = new ListClusterHostResponse();
 
-			listClusterHostResponse.HttpResponse = context.HttpResponse;
-			listClusterHostResponse.RequestId = context.StringValue("ListClusterHost.RequestId");
-			listClusterHostResponse.PageNumber = context.IntegerValue("ListClusterHost.PageNumber");
-			listClusterHostResponse.PageSize = context.IntegerValue("ListClusterHost.PageSize");
-			listClusterHostResponse.Total = context.IntegerValue("ListClusterHost.Total");
+			listClusterHostResponse.HttpResponse = _ctx.HttpResponse;
+			listClusterHostResponse.RequestId = _ctx.StringValue("ListClusterHost.RequestId");
+			listClusterHostResponse.PageNumber = _ctx.IntegerValue("ListClusterHost.PageNumber");
+			listClusterHostResponse.PageSize = _ctx.IntegerValue("ListClusterHost.PageSize");
+			listClusterHostResponse.Total = _ctx.IntegerValue("ListClusterHost.Total");
 
 			List<ListClusterHostResponse.ListClusterHost_Host> listClusterHostResponse_hostList = new List<ListClusterHostResponse.ListClusterHost_Host>();
-			for (int i = 0; i < context.Length("ListClusterHost.HostList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListClusterHost.HostList.Length"); i++) {
 				ListClusterHostResponse.ListClusterHost_Host host = new ListClusterHostResponse.ListClusterHost_Host();
-				host.HostName = context.StringValue("ListClusterHost.HostList["+ i +"].HostName");
-				host.PublicIp = context.StringValue("ListClusterHost.HostList["+ i +"].PublicIp");
-				host.PrivateIp = context.StringValue("ListClusterHost.HostList["+ i +"].PrivateIp");
-				host.Role = context.StringValue("ListClusterHost.HostList["+ i +"].Role");
-				host.InstanceType = context.StringValue("ListClusterHost.HostList["+ i +"].InstanceType");
-				host.Cpu = context.IntegerValue("ListClusterHost.HostList["+ i +"].Cpu");
-				host.Memory = context.IntegerValue("ListClusterHost.HostList["+ i +"].Memory");
-				host.Status = context.StringValue("ListClusterHost.HostList["+ i +"].Status");
-				host.InstanceStatus = context.StringValue("ListClusterHost.HostList["+ i +"].InstanceStatus");
-				host.Type = context.StringValue("ListClusterHost.HostList["+ i +"].Type");
-				host.HostInstanceId = context.StringValue("ListClusterHost.HostList["+ i +"].HostInstanceId");
-				host.SerialNumber = context.StringValue("ListClusterHost.HostList["+ i +"].SerialNumber");
-				host.ChargeType = context.StringValue("ListClusterHost.HostList["+ i +"].ChargeType");
-				host.ExpiredTime = context.LongValue("ListClusterHost.HostList["+ i +"].ExpiredTime");
-				host.HostGroupId = context.StringValue("ListClusterHost.HostList["+ i +"].HostGroupId");
-				host.CreateTime = context.StringValue("ListClusterHost.HostList["+ i +"].CreateTime");
-				host.EmrExpiredTime = context.StringValue("ListClusterHost.HostList["+ i +"].EmrExpiredTime");
-				host.SupportIpV6 = context.BooleanValue("ListClusterHost.HostList["+ i +"].SupportIpV6");
+				host.HostName = _ctx.StringValue("ListClusterHost.HostList["+ i +"].HostName");
+				host.PublicIp = _ctx.StringValue("ListClusterHost.HostList["+ i +"].PublicIp");
+				host.PrivateIp = _ctx.StringValue("ListClusterHost.HostList["+ i +"].PrivateIp");
+				host.Role = _ctx.StringValue("ListClusterHost.HostList["+ i +"].Role");
+				host.ZoneId = _ctx.StringValue("ListClusterHost.HostList["+ i +"].ZoneId");
+				host.InstanceType = _ctx.StringValue("ListClusterHost.HostList["+ i +"].InstanceType");
+				host.Cpu = _ctx.IntegerValue("ListClusterHost.HostList["+ i +"].Cpu");
+				host.Memory = _ctx.IntegerValue("ListClusterHost.HostList["+ i +"].Memory");
+				host.Status = _ctx.StringValue("ListClusterHost.HostList["+ i +"].Status");
+				host.InstanceStatus = _ctx.StringValue("ListClusterHost.HostList["+ i +"].InstanceStatus");
+				host.Type = _ctx.StringValue("ListClusterHost.HostList["+ i +"].Type");
+				host.HostInstanceId = _ctx.StringValue("ListClusterHost.HostList["+ i +"].HostInstanceId");
+				host.SerialNumber = _ctx.StringValue("ListClusterHost.HostList["+ i +"].SerialNumber");
+				host.ChargeType = _ctx.StringValue("ListClusterHost.HostList["+ i +"].ChargeType");
+				host.ExpiredTime = _ctx.LongValue("ListClusterHost.HostList["+ i +"].ExpiredTime");
+				host.HostGroupId = _ctx.StringValue("ListClusterHost.HostList["+ i +"].HostGroupId");
+				host.CreateTime = _ctx.StringValue("ListClusterHost.HostList["+ i +"].CreateTime");
+				host.EmrExpiredTime = _ctx.StringValue("ListClusterHost.HostList["+ i +"].EmrExpiredTime");
+				host.SupportIpV6 = _ctx.BooleanValue("ListClusterHost.HostList["+ i +"].SupportIpV6");
 
 				List<ListClusterHostResponse.ListClusterHost_Host.ListClusterHost_Disk> host_diskList = new List<ListClusterHostResponse.ListClusterHost_Host.ListClusterHost_Disk>();
-				for (int j = 0; j < context.Length("ListClusterHost.HostList["+ i +"].DiskList.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("ListClusterHost.HostList["+ i +"].DiskList.Length"); j++) {
 					ListClusterHostResponse.ListClusterHost_Host.ListClusterHost_Disk disk = new ListClusterHostResponse.ListClusterHost_Host.ListClusterHost_Disk();
-					disk.DiskId = context.StringValue("ListClusterHost.HostList["+ i +"].DiskList["+ j +"].DiskId");
-					disk.Type = context.StringValue("ListClusterHost.HostList["+ i +"].DiskList["+ j +"].Type");
-					disk.DiskType = context.StringValue("ListClusterHost.HostList["+ i +"].DiskList["+ j +"].DiskType");
-					disk.DiskSize = context.IntegerValue("ListClusterHost.HostList["+ i +"].DiskList["+ j +"].DiskSize");
+					disk.DiskId = _ctx.StringValue("ListClusterHost.HostList["+ i +"].DiskList["+ j +"].DiskId");
+					disk.Type = _ctx.StringValue("ListClusterHost.HostList["+ i +"].DiskList["+ j +"].Type");
+					disk.Device = _ctx.StringValue("ListClusterHost.HostList["+ i +"].DiskList["+ j +"].Device");
+					disk.DiskType = _ctx.StringValue("ListClusterHost.HostList["+ i +"].DiskList["+ j +"].DiskType");
+					disk.DiskSize = _ctx.IntegerValue("ListClusterHost.HostList["+ i +"].DiskList["+ j +"].DiskSize");
+					disk.BlockMountPoint = _ctx.StringValue("ListClusterHost.HostList["+ i +"].DiskList["+ j +"].BlockMountPoint");
+					disk.DiskMountPoint = _ctx.StringValue("ListClusterHost.HostList["+ i +"].DiskList["+ j +"].DiskMountPoint");
+					disk._Event = _ctx.StringValue("ListClusterHost.HostList["+ i +"].DiskList["+ j +"].Event");
 
 					host_diskList.Add(disk);
 				}

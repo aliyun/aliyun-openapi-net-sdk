@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeVolDingdingMessageResponseUnmarshaller
     {
-        public static DescribeVolDingdingMessageResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVolDingdingMessageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVolDingdingMessageResponse describeVolDingdingMessageResponse = new DescribeVolDingdingMessageResponse();
 
-			describeVolDingdingMessageResponse.HttpResponse = context.HttpResponse;
-			describeVolDingdingMessageResponse.RequestId = context.StringValue("DescribeVolDingdingMessage.RequestId");
-			describeVolDingdingMessageResponse.DingdingUrl = context.StringValue("DescribeVolDingdingMessage.DingdingUrl");
+			describeVolDingdingMessageResponse.HttpResponse = _ctx.HttpResponse;
+			describeVolDingdingMessageResponse.RequestId = _ctx.StringValue("DescribeVolDingdingMessage.RequestId");
+			describeVolDingdingMessageResponse.DingdingUrl = _ctx.StringValue("DescribeVolDingdingMessage.DingdingUrl");
         
 			return describeVolDingdingMessageResponse;
         }

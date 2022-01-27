@@ -35,15 +35,19 @@ namespace Aliyun.Acs.ROS.Model.V20190910
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.ROS.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.ROS.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
+		private string templateVersion;
+
 		private string stackGroupName;
 
 		private List<object> regionIds;
+
+		private string templateId;
 
 		private List<Parameters> parameterss = new List<Parameters>(){ };
 
@@ -64,6 +68,19 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 		private List<object> accountIds;
 
 		private string administrationRoleName;
+
+		public string TemplateVersion
+		{
+			get
+			{
+				return templateVersion;
+			}
+			set	
+			{
+				templateVersion = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateVersion", value);
+			}
+		}
 
 		public string StackGroupName
 		{
@@ -88,6 +105,19 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				regionIds = value;
 				DictionaryUtil.Add(QueryParameters, "RegionIds", JsonConvert.SerializeObject(value));
+			}
+		}
+
+		public string TemplateId
+		{
+			get
+			{
+				return templateId;
+			}
+			set	
+			{
+				templateId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateId", value);
 			}
 		}
 

@@ -134,6 +134,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string ipVersion;
 
+			private int? bfdMultiHop;
+
 			public string Name
 			{
 				get
@@ -347,6 +349,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					ipVersion = value;
+				}
+			}
+
+			public int? BfdMultiHop
+			{
+				get
+				{
+					return bfdMultiHop;
+				}
+				set	
+				{
+					bfdMultiHop = value;
 				}
 			}
 		}

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class UpdateImageInfosResponseUnmarshaller
     {
-        public static UpdateImageInfosResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateImageInfosResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateImageInfosResponse updateImageInfosResponse = new UpdateImageInfosResponse();
 
-			updateImageInfosResponse.HttpResponse = context.HttpResponse;
-			updateImageInfosResponse.RequestId = context.StringValue("UpdateImageInfos.RequestId");
+			updateImageInfosResponse.HttpResponse = _ctx.HttpResponse;
+			updateImageInfosResponse.RequestId = _ctx.StringValue("UpdateImageInfos.RequestId");
 
 			List<string> updateImageInfosResponse_nonExistImageIds = new List<string>();
-			for (int i = 0; i < context.Length("UpdateImageInfos.NonExistImageIds.Length"); i++) {
-				updateImageInfosResponse_nonExistImageIds.Add(context.StringValue("UpdateImageInfos.NonExistImageIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("UpdateImageInfos.NonExistImageIds.Length"); i++) {
+				updateImageInfosResponse_nonExistImageIds.Add(_ctx.StringValue("UpdateImageInfos.NonExistImageIds["+ i +"]"));
 			}
 			updateImageInfosResponse.NonExistImageIds = updateImageInfosResponse_nonExistImageIds;
         

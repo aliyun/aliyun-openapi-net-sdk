@@ -26,24 +26,24 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class DescribeGlobalQuestionResponseUnmarshaller
     {
-        public static DescribeGlobalQuestionResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGlobalQuestionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGlobalQuestionResponse describeGlobalQuestionResponse = new DescribeGlobalQuestionResponse();
 
-			describeGlobalQuestionResponse.HttpResponse = context.HttpResponse;
-			describeGlobalQuestionResponse.RequestId = context.StringValue("DescribeGlobalQuestion.RequestId");
-			describeGlobalQuestionResponse.Success = context.BooleanValue("DescribeGlobalQuestion.Success");
-			describeGlobalQuestionResponse.Code = context.StringValue("DescribeGlobalQuestion.Code");
-			describeGlobalQuestionResponse.Message = context.StringValue("DescribeGlobalQuestion.Message");
-			describeGlobalQuestionResponse.HttpStatusCode = context.IntegerValue("DescribeGlobalQuestion.HttpStatusCode");
+			describeGlobalQuestionResponse.HttpResponse = _ctx.HttpResponse;
+			describeGlobalQuestionResponse.Code = _ctx.StringValue("DescribeGlobalQuestion.Code");
+			describeGlobalQuestionResponse.HttpStatusCode = _ctx.IntegerValue("DescribeGlobalQuestion.HttpStatusCode");
+			describeGlobalQuestionResponse.Message = _ctx.StringValue("DescribeGlobalQuestion.Message");
+			describeGlobalQuestionResponse.RequestId = _ctx.StringValue("DescribeGlobalQuestion.RequestId");
+			describeGlobalQuestionResponse.Success = _ctx.BooleanValue("DescribeGlobalQuestion.Success");
 
 			DescribeGlobalQuestionResponse.DescribeGlobalQuestion_GlobalQuestion globalQuestion = new DescribeGlobalQuestionResponse.DescribeGlobalQuestion_GlobalQuestion();
-			globalQuestion.GlobalQuestionId = context.StringValue("DescribeGlobalQuestion.GlobalQuestion.GlobalQuestionId");
-			globalQuestion.ScriptId = context.StringValue("DescribeGlobalQuestion.GlobalQuestion.ScriptId");
-			globalQuestion.GlobalQuestionName = context.StringValue("DescribeGlobalQuestion.GlobalQuestion.GlobalQuestionName");
-			globalQuestion.GlobalQuestionType = context.StringValue("DescribeGlobalQuestion.GlobalQuestion.GlobalQuestionType");
-			globalQuestion.Questions = context.StringValue("DescribeGlobalQuestion.GlobalQuestion.Questions");
-			globalQuestion.Answers = context.StringValue("DescribeGlobalQuestion.GlobalQuestion.Answers");
+			globalQuestion.Answers = _ctx.StringValue("DescribeGlobalQuestion.GlobalQuestion.Answers");
+			globalQuestion.GlobalQuestionId = _ctx.StringValue("DescribeGlobalQuestion.GlobalQuestion.GlobalQuestionId");
+			globalQuestion.GlobalQuestionName = _ctx.StringValue("DescribeGlobalQuestion.GlobalQuestion.GlobalQuestionName");
+			globalQuestion.GlobalQuestionType = _ctx.StringValue("DescribeGlobalQuestion.GlobalQuestion.GlobalQuestionType");
+			globalQuestion.Questions = _ctx.StringValue("DescribeGlobalQuestion.GlobalQuestion.Questions");
+			globalQuestion.ScriptId = _ctx.StringValue("DescribeGlobalQuestion.GlobalQuestion.ScriptId");
 			describeGlobalQuestionResponse.GlobalQuestion = globalQuestion;
         
 			return describeGlobalQuestionResponse;

@@ -26,17 +26,17 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 {
     public class GetImageTranslateTaskResponseUnmarshaller
     {
-        public static GetImageTranslateTaskResponse Unmarshall(UnmarshallerContext context)
+        public static GetImageTranslateTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetImageTranslateTaskResponse getImageTranslateTaskResponse = new GetImageTranslateTaskResponse();
 
-			getImageTranslateTaskResponse.HttpResponse = context.HttpResponse;
-			getImageTranslateTaskResponse.RequestId = context.StringValue("GetImageTranslateTask.RequestId");
-			getImageTranslateTaskResponse.Code = context.IntegerValue("GetImageTranslateTask.Code");
-			getImageTranslateTaskResponse.Message = context.StringValue("GetImageTranslateTask.Message");
+			getImageTranslateTaskResponse.HttpResponse = _ctx.HttpResponse;
+			getImageTranslateTaskResponse.Code = _ctx.IntegerValue("GetImageTranslateTask.Code");
+			getImageTranslateTaskResponse.Message = _ctx.StringValue("GetImageTranslateTask.Message");
+			getImageTranslateTaskResponse.RequestId = _ctx.StringValue("GetImageTranslateTask.RequestId");
 
 			GetImageTranslateTaskResponse.GetImageTranslateTask_Data data = new GetImageTranslateTaskResponse.GetImageTranslateTask_Data();
-			data.ImageData = context.StringValue("GetImageTranslateTask.Data.ImageData");
+			data.ImageData = _ctx.StringValue("GetImageTranslateTask.Data.ImageData");
 			getImageTranslateTaskResponse.Data = data;
         
 			return getImageTranslateTaskResponse;

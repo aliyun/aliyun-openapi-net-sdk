@@ -34,31 +34,23 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private int? pageNumber;
 
-		private bool? checkDomainShow;
-
 		private string securityToken;
-
-		private string cdnType;
 
 		private int? pageSize;
 
 		private List<Tag> tags = new List<Tag>(){ };
 
-		private string funcFilter;
-
 		private string domainName;
 
 		private long? ownerId;
-
-		private string funcId;
 
 		private string domainStatus;
 
@@ -77,19 +69,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public bool? CheckDomainShow
-		{
-			get
-			{
-				return checkDomainShow;
-			}
-			set	
-			{
-				checkDomainShow = value;
-				DictionaryUtil.Add(QueryParameters, "CheckDomainShow", value.ToString());
-			}
-		}
-
 		public string SecurityToken
 		{
 			get
@@ -100,19 +79,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string CdnType
-		{
-			get
-			{
-				return cdnType;
-			}
-			set	
-			{
-				cdnType = value;
-				DictionaryUtil.Add(QueryParameters, "CdnType", value);
 			}
 		}
 
@@ -147,19 +113,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string FuncFilter
-		{
-			get
-			{
-				return funcFilter;
-			}
-			set	
-			{
-				funcFilter = value;
-				DictionaryUtil.Add(QueryParameters, "FuncFilter", value);
-			}
-		}
-
 		public string DomainName
 		{
 			get
@@ -183,19 +136,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string FuncId
-		{
-			get
-			{
-				return funcId;
-			}
-			set	
-			{
-				funcId = value;
-				DictionaryUtil.Add(QueryParameters, "FuncId", value);
 			}
 		}
 

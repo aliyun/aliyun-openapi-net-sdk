@@ -26,20 +26,20 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class StopApplicationResponseUnmarshaller
     {
-        public static StopApplicationResponse Unmarshall(UnmarshallerContext context)
+        public static StopApplicationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StopApplicationResponse stopApplicationResponse = new StopApplicationResponse();
 
-			stopApplicationResponse.HttpResponse = context.HttpResponse;
-			stopApplicationResponse.RequestId = context.StringValue("StopApplication.RequestId");
-			stopApplicationResponse.Code = context.StringValue("StopApplication.Code");
-			stopApplicationResponse.Success = context.BooleanValue("StopApplication.Success");
-			stopApplicationResponse.ErrorCode = context.StringValue("StopApplication.ErrorCode");
-			stopApplicationResponse.Message = context.StringValue("StopApplication.Message");
-			stopApplicationResponse.TraceId = context.StringValue("StopApplication.TraceId");
+			stopApplicationResponse.HttpResponse = _ctx.HttpResponse;
+			stopApplicationResponse.RequestId = _ctx.StringValue("StopApplication.RequestId");
+			stopApplicationResponse.Code = _ctx.StringValue("StopApplication.Code");
+			stopApplicationResponse.Success = _ctx.BooleanValue("StopApplication.Success");
+			stopApplicationResponse.ErrorCode = _ctx.StringValue("StopApplication.ErrorCode");
+			stopApplicationResponse.Message = _ctx.StringValue("StopApplication.Message");
+			stopApplicationResponse.TraceId = _ctx.StringValue("StopApplication.TraceId");
 
 			StopApplicationResponse.StopApplication_Data data = new StopApplicationResponse.StopApplication_Data();
-			data.ChangeOrderId = context.StringValue("StopApplication.Data.ChangeOrderId");
+			data.ChangeOrderId = _ctx.StringValue("StopApplication.Data.ChangeOrderId");
 			stopApplicationResponse.Data = data;
         
 			return stopApplicationResponse;

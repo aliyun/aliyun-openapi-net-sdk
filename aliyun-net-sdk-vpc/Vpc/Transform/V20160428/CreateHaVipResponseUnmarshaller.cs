@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class CreateHaVipResponseUnmarshaller
     {
-        public static CreateHaVipResponse Unmarshall(UnmarshallerContext context)
+        public static CreateHaVipResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateHaVipResponse createHaVipResponse = new CreateHaVipResponse();
 
-			createHaVipResponse.HttpResponse = context.HttpResponse;
-			createHaVipResponse.RequestId = context.StringValue("CreateHaVip.RequestId");
-			createHaVipResponse.HaVipId = context.StringValue("CreateHaVip.HaVipId");
-			createHaVipResponse.IpAddress = context.StringValue("CreateHaVip.IpAddress");
+			createHaVipResponse.HttpResponse = _ctx.HttpResponse;
+			createHaVipResponse.RequestId = _ctx.StringValue("CreateHaVip.RequestId");
+			createHaVipResponse.HaVipId = _ctx.StringValue("CreateHaVip.HaVipId");
+			createHaVipResponse.IpAddress = _ctx.StringValue("CreateHaVip.IpAddress");
         
 			return createHaVipResponse;
         }

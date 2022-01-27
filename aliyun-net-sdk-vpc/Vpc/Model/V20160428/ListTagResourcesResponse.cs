@@ -78,6 +78,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string resourceType;
 
+			private string resourceId;
+
 			public string TagKey
 			{
 				get
@@ -123,6 +125,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					resourceType = value;
+				}
+			}
+
+			public string ResourceId
+			{
+				get
+				{
+					return resourceId;
+				}
+				set	
+				{
+					resourceId = value;
 				}
 			}
 		}

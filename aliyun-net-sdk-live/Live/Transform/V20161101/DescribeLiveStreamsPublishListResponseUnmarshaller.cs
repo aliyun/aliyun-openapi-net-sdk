@@ -26,33 +26,33 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveStreamsPublishListResponseUnmarshaller
     {
-        public static DescribeLiveStreamsPublishListResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveStreamsPublishListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveStreamsPublishListResponse describeLiveStreamsPublishListResponse = new DescribeLiveStreamsPublishListResponse();
 
-			describeLiveStreamsPublishListResponse.HttpResponse = context.HttpResponse;
-			describeLiveStreamsPublishListResponse.RequestId = context.StringValue("DescribeLiveStreamsPublishList.RequestId");
-			describeLiveStreamsPublishListResponse.PageNum = context.IntegerValue("DescribeLiveStreamsPublishList.PageNum");
-			describeLiveStreamsPublishListResponse.PageSize = context.IntegerValue("DescribeLiveStreamsPublishList.PageSize");
-			describeLiveStreamsPublishListResponse.TotalNum = context.IntegerValue("DescribeLiveStreamsPublishList.TotalNum");
-			describeLiveStreamsPublishListResponse.TotalPage = context.IntegerValue("DescribeLiveStreamsPublishList.TotalPage");
+			describeLiveStreamsPublishListResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveStreamsPublishListResponse.RequestId = _ctx.StringValue("DescribeLiveStreamsPublishList.RequestId");
+			describeLiveStreamsPublishListResponse.PageNum = _ctx.IntegerValue("DescribeLiveStreamsPublishList.PageNum");
+			describeLiveStreamsPublishListResponse.PageSize = _ctx.IntegerValue("DescribeLiveStreamsPublishList.PageSize");
+			describeLiveStreamsPublishListResponse.TotalNum = _ctx.IntegerValue("DescribeLiveStreamsPublishList.TotalNum");
+			describeLiveStreamsPublishListResponse.TotalPage = _ctx.IntegerValue("DescribeLiveStreamsPublishList.TotalPage");
 
 			List<DescribeLiveStreamsPublishListResponse.DescribeLiveStreamsPublishList_LiveStreamPublishInfo> describeLiveStreamsPublishListResponse_publishInfo = new List<DescribeLiveStreamsPublishListResponse.DescribeLiveStreamsPublishList_LiveStreamPublishInfo>();
-			for (int i = 0; i < context.Length("DescribeLiveStreamsPublishList.PublishInfo.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveStreamsPublishList.PublishInfo.Length"); i++) {
 				DescribeLiveStreamsPublishListResponse.DescribeLiveStreamsPublishList_LiveStreamPublishInfo liveStreamPublishInfo = new DescribeLiveStreamsPublishListResponse.DescribeLiveStreamsPublishList_LiveStreamPublishInfo();
-				liveStreamPublishInfo.DomainName = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].DomainName");
-				liveStreamPublishInfo.AppName = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].AppName");
-				liveStreamPublishInfo.StreamName = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].StreamName");
-				liveStreamPublishInfo.StreamUrl = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].StreamUrl");
-				liveStreamPublishInfo.PublishTime = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].PublishTime");
-				liveStreamPublishInfo.StopTime = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].StopTime");
-				liveStreamPublishInfo.PublishUrl = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].PublishUrl");
-				liveStreamPublishInfo.ClientAddr = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].ClientAddr");
-				liveStreamPublishInfo.EdgeNodeAddr = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].EdgeNodeAddr");
-				liveStreamPublishInfo.PublishDomain = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].PublishDomain");
-				liveStreamPublishInfo.PublishType = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].PublishType");
-				liveStreamPublishInfo.Transcoded = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].Transcoded");
-				liveStreamPublishInfo.TranscodeId = context.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].TranscodeId");
+				liveStreamPublishInfo.DomainName = _ctx.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].DomainName");
+				liveStreamPublishInfo.AppName = _ctx.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].AppName");
+				liveStreamPublishInfo.StreamName = _ctx.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].StreamName");
+				liveStreamPublishInfo.StreamUrl = _ctx.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].StreamUrl");
+				liveStreamPublishInfo.PublishTime = _ctx.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].PublishTime");
+				liveStreamPublishInfo.StopTime = _ctx.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].StopTime");
+				liveStreamPublishInfo.PublishUrl = _ctx.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].PublishUrl");
+				liveStreamPublishInfo.ClientAddr = _ctx.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].ClientAddr");
+				liveStreamPublishInfo.EdgeNodeAddr = _ctx.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].EdgeNodeAddr");
+				liveStreamPublishInfo.PublishDomain = _ctx.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].PublishDomain");
+				liveStreamPublishInfo.PublishType = _ctx.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].PublishType");
+				liveStreamPublishInfo.Transcoded = _ctx.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].Transcoded");
+				liveStreamPublishInfo.TranscodeId = _ctx.StringValue("DescribeLiveStreamsPublishList.PublishInfo["+ i +"].TranscodeId");
 
 				describeLiveStreamsPublishListResponse_publishInfo.Add(liveStreamPublishInfo);
 			}

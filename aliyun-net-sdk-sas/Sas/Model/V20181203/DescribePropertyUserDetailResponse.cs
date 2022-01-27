@@ -72,6 +72,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string lastLoginTime;
 
+			private long? lastLoginTimestamp;
+
 			private string isRoot;
 
 			private string instanceName;
@@ -111,6 +113,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					lastLoginTime = value;
+				}
+			}
+
+			public long? LastLoginTimestamp
+			{
+				get
+				{
+					return lastLoginTimestamp;
+				}
+				set	
+				{
+					lastLoginTimestamp = value;
 				}
 			}
 

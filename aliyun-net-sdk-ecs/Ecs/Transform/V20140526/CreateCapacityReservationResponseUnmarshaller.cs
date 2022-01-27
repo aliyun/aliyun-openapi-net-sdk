@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class CreateCapacityReservationResponseUnmarshaller
     {
-        public static CreateCapacityReservationResponse Unmarshall(UnmarshallerContext context)
+        public static CreateCapacityReservationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateCapacityReservationResponse createCapacityReservationResponse = new CreateCapacityReservationResponse();
 
-			createCapacityReservationResponse.HttpResponse = context.HttpResponse;
-			createCapacityReservationResponse.RequestId = context.StringValue("CreateCapacityReservation.RequestId");
-			createCapacityReservationResponse.PrivatePoolOptionsId = context.StringValue("CreateCapacityReservation.PrivatePoolOptionsId");
+			createCapacityReservationResponse.HttpResponse = _ctx.HttpResponse;
+			createCapacityReservationResponse.PrivatePoolOptionsId = _ctx.StringValue("CreateCapacityReservation.PrivatePoolOptionsId");
+			createCapacityReservationResponse.RequestId = _ctx.StringValue("CreateCapacityReservation.RequestId");
         
 			return createCapacityReservationResponse;
         }

@@ -136,6 +136,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private int? shardCount;
 
+			private string storage;
+
+			private string storageType;
+
+			private string globalInstanceId;
+
+			private string secondaryZoneId;
+
+			private string zoneType;
+
+			private string backupLogStartTime;
+
 			private List<DescribeInstanceAttribute_Tag> tags;
 
 			public string InstanceId
@@ -615,6 +627,78 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					shardCount = value;
+				}
+			}
+
+			public string Storage
+			{
+				get
+				{
+					return storage;
+				}
+				set	
+				{
+					storage = value;
+				}
+			}
+
+			public string StorageType
+			{
+				get
+				{
+					return storageType;
+				}
+				set	
+				{
+					storageType = value;
+				}
+			}
+
+			public string GlobalInstanceId
+			{
+				get
+				{
+					return globalInstanceId;
+				}
+				set	
+				{
+					globalInstanceId = value;
+				}
+			}
+
+			public string SecondaryZoneId
+			{
+				get
+				{
+					return secondaryZoneId;
+				}
+				set	
+				{
+					secondaryZoneId = value;
+				}
+			}
+
+			public string ZoneType
+			{
+				get
+				{
+					return zoneType;
+				}
+				set	
+				{
+					zoneType = value;
+				}
+			}
+
+			public string BackupLogStartTime
+			{
+				get
+				{
+					return backupLogStartTime;
+				}
+				set	
+				{
+					backupLogStartTime = value;
 				}
 			}
 

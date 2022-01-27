@@ -25,23 +25,23 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 	public class DescribeSmartVerifyResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string code;
 
 		private string message;
 
-		private string code;
+		private string requestId;
 
 		private DescribeSmartVerify_ResultObject resultObject;
 
-		public string RequestId
+		public string Code
 		{
 			get
 			{
-				return requestId;
+				return code;
 			}
 			set	
 			{
-				requestId = value;
+				code = value;
 			}
 		}
 
@@ -57,15 +57,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 			}
 		}
 
-		public string Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
 			}
 		}
 
@@ -84,25 +84,13 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 		public class DescribeSmartVerify_ResultObject
 		{
 
-			private string passed;
-
 			private string subCode;
-
-			private string materialInfo;
 
 			private float? passedScore;
 
-			public string Passed
-			{
-				get
-				{
-					return passed;
-				}
-				set	
-				{
-					passed = value;
-				}
-			}
+			private string materialInfo;
+
+			private string passed;
 
 			public string SubCode
 			{
@@ -113,6 +101,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 				set	
 				{
 					subCode = value;
+				}
+			}
+
+			public float? PassedScore
+			{
+				get
+				{
+					return passedScore;
+				}
+				set	
+				{
+					passedScore = value;
 				}
 			}
 
@@ -128,15 +128,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 				}
 			}
 
-			public float? PassedScore
+			public string Passed
 			{
 				get
 				{
-					return passedScore;
+					return passed;
 				}
 				set	
 				{
-					passedScore = value;
+					passed = value;
 				}
 			}
 		}

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class ModifyUserBusinessBehaviorResponseUnmarshaller
     {
-        public static ModifyUserBusinessBehaviorResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyUserBusinessBehaviorResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyUserBusinessBehaviorResponse modifyUserBusinessBehaviorResponse = new ModifyUserBusinessBehaviorResponse();
 
-			modifyUserBusinessBehaviorResponse.HttpResponse = context.HttpResponse;
-			modifyUserBusinessBehaviorResponse.RequestId = context.StringValue("ModifyUserBusinessBehavior.RequestId");
+			modifyUserBusinessBehaviorResponse.HttpResponse = _ctx.HttpResponse;
+			modifyUserBusinessBehaviorResponse.RequestId = _ctx.StringValue("ModifyUserBusinessBehavior.RequestId");
         
 			return modifyUserBusinessBehaviorResponse;
         }

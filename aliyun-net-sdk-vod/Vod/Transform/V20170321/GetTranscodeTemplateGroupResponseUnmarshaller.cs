@@ -26,48 +26,48 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetTranscodeTemplateGroupResponseUnmarshaller
     {
-        public static GetTranscodeTemplateGroupResponse Unmarshall(UnmarshallerContext context)
+        public static GetTranscodeTemplateGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetTranscodeTemplateGroupResponse getTranscodeTemplateGroupResponse = new GetTranscodeTemplateGroupResponse();
 
-			getTranscodeTemplateGroupResponse.HttpResponse = context.HttpResponse;
-			getTranscodeTemplateGroupResponse.RequestId = context.StringValue("GetTranscodeTemplateGroup.RequestId");
+			getTranscodeTemplateGroupResponse.HttpResponse = _ctx.HttpResponse;
+			getTranscodeTemplateGroupResponse.RequestId = _ctx.StringValue("GetTranscodeTemplateGroup.RequestId");
 
 			GetTranscodeTemplateGroupResponse.GetTranscodeTemplateGroup_TranscodeTemplateGroup transcodeTemplateGroup = new GetTranscodeTemplateGroupResponse.GetTranscodeTemplateGroup_TranscodeTemplateGroup();
-			transcodeTemplateGroup.CreationTime = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.CreationTime");
-			transcodeTemplateGroup.ModifyTime = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.ModifyTime");
-			transcodeTemplateGroup.Name = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.Name");
-			transcodeTemplateGroup.IsDefault = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.IsDefault");
-			transcodeTemplateGroup.Locked = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.Locked");
-			transcodeTemplateGroup.TranscodeMode = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeMode");
-			transcodeTemplateGroup.AppId = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.AppId");
-			transcodeTemplateGroup.TranscodeTemplateGroupId = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateGroupId");
+			transcodeTemplateGroup.CreationTime = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.CreationTime");
+			transcodeTemplateGroup.ModifyTime = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.ModifyTime");
+			transcodeTemplateGroup.Name = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.Name");
+			transcodeTemplateGroup.IsDefault = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.IsDefault");
+			transcodeTemplateGroup.Locked = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.Locked");
+			transcodeTemplateGroup.TranscodeMode = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeMode");
+			transcodeTemplateGroup.AppId = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.AppId");
+			transcodeTemplateGroup.TranscodeTemplateGroupId = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateGroupId");
 
 			List<GetTranscodeTemplateGroupResponse.GetTranscodeTemplateGroup_TranscodeTemplateGroup.GetTranscodeTemplateGroup_TranscodeTemplate> transcodeTemplateGroup_transcodeTemplateList = new List<GetTranscodeTemplateGroupResponse.GetTranscodeTemplateGroup_TranscodeTemplateGroup.GetTranscodeTemplateGroup_TranscodeTemplate>();
-			for (int i = 0; i < context.Length("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList.Length"); i++) {
 				GetTranscodeTemplateGroupResponse.GetTranscodeTemplateGroup_TranscodeTemplateGroup.GetTranscodeTemplateGroup_TranscodeTemplate transcodeTemplate = new GetTranscodeTemplateGroupResponse.GetTranscodeTemplateGroup_TranscodeTemplateGroup.GetTranscodeTemplateGroup_TranscodeTemplate();
-				transcodeTemplate.TranscodeTemplateId = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TranscodeTemplateId");
-				transcodeTemplate.Video = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Video");
-				transcodeTemplate.Audio = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Audio");
-				transcodeTemplate.Container = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Container");
-				transcodeTemplate.MuxConfig = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].MuxConfig");
-				transcodeTemplate.TransConfig = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TransConfig");
-				transcodeTemplate.Definition = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Definition");
-				transcodeTemplate.EncryptSetting = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].EncryptSetting");
-				transcodeTemplate.PackageSetting = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].PackageSetting");
-				transcodeTemplate.SubtitleList = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].SubtitleList");
-				transcodeTemplate.OpeningList = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].OpeningList");
-				transcodeTemplate.TailSlateList = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TailSlateList");
-				transcodeTemplate.TemplateName = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TemplateName");
-				transcodeTemplate.TranscodeFileRegular = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TranscodeFileRegular");
-				transcodeTemplate.Clip = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Clip");
-				transcodeTemplate.Rotate = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Rotate");
-				transcodeTemplate.Type = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Type");
-				transcodeTemplate.UserData = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].UserData");
+				transcodeTemplate.TranscodeTemplateId = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TranscodeTemplateId");
+				transcodeTemplate.Video = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Video");
+				transcodeTemplate.Audio = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Audio");
+				transcodeTemplate.Container = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Container");
+				transcodeTemplate.MuxConfig = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].MuxConfig");
+				transcodeTemplate.TransConfig = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TransConfig");
+				transcodeTemplate.Definition = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Definition");
+				transcodeTemplate.EncryptSetting = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].EncryptSetting");
+				transcodeTemplate.PackageSetting = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].PackageSetting");
+				transcodeTemplate.SubtitleList = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].SubtitleList");
+				transcodeTemplate.OpeningList = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].OpeningList");
+				transcodeTemplate.TailSlateList = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TailSlateList");
+				transcodeTemplate.TemplateName = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TemplateName");
+				transcodeTemplate.TranscodeFileRegular = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].TranscodeFileRegular");
+				transcodeTemplate.Clip = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Clip");
+				transcodeTemplate.Rotate = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Rotate");
+				transcodeTemplate.Type = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Type");
+				transcodeTemplate.UserData = _ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].UserData");
 
 				List<string> transcodeTemplate_watermarkIds = new List<string>();
-				for (int j = 0; j < context.Length("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].WatermarkIds.Length"); j++) {
-					transcodeTemplate_watermarkIds.Add(context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].WatermarkIds["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].WatermarkIds.Length"); j++) {
+					transcodeTemplate_watermarkIds.Add(_ctx.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].WatermarkIds["+ j +"]"));
 				}
 				transcodeTemplate.WatermarkIds = transcodeTemplate_watermarkIds;
 

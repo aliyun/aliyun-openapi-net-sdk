@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,37 +25,25 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class ListPipelinesResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errorCode;
+		private string requestId;
 
 		private string errorMessage;
 
 		private string _object;
 
-		private string requestId;
+		private string errorCode;
 
-		public bool? Success
+		private bool? success;
+
+		public string RequestId
 		{
 			get
 			{
-				return success;
+				return requestId;
 			}
 			set	
 			{
-				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				requestId = value;
 			}
 		}
 
@@ -83,15 +71,27 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
-		public string RequestId
+		public string ErrorCode
 		{
 			get
 			{
-				return requestId;
+				return errorCode;
 			}
 			set	
 			{
-				requestId = value;
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

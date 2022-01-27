@@ -26,21 +26,21 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeRoomKickoutUserListResponseUnmarshaller
     {
-        public static DescribeRoomKickoutUserListResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRoomKickoutUserListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRoomKickoutUserListResponse describeRoomKickoutUserListResponse = new DescribeRoomKickoutUserListResponse();
 
-			describeRoomKickoutUserListResponse.HttpResponse = context.HttpResponse;
-			describeRoomKickoutUserListResponse.RequestId = context.StringValue("DescribeRoomKickoutUserList.RequestId");
-			describeRoomKickoutUserListResponse.TotalNum = context.IntegerValue("DescribeRoomKickoutUserList.TotalNum");
-			describeRoomKickoutUserListResponse.TotalPage = context.IntegerValue("DescribeRoomKickoutUserList.TotalPage");
+			describeRoomKickoutUserListResponse.HttpResponse = _ctx.HttpResponse;
+			describeRoomKickoutUserListResponse.RequestId = _ctx.StringValue("DescribeRoomKickoutUserList.RequestId");
+			describeRoomKickoutUserListResponse.TotalNum = _ctx.IntegerValue("DescribeRoomKickoutUserList.TotalNum");
+			describeRoomKickoutUserListResponse.TotalPage = _ctx.IntegerValue("DescribeRoomKickoutUserList.TotalPage");
 
 			List<DescribeRoomKickoutUserListResponse.DescribeRoomKickoutUserList_User> describeRoomKickoutUserListResponse_userList = new List<DescribeRoomKickoutUserListResponse.DescribeRoomKickoutUserList_User>();
-			for (int i = 0; i < context.Length("DescribeRoomKickoutUserList.UserList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRoomKickoutUserList.UserList.Length"); i++) {
 				DescribeRoomKickoutUserListResponse.DescribeRoomKickoutUserList_User user = new DescribeRoomKickoutUserListResponse.DescribeRoomKickoutUserList_User();
-				user.AppUid = context.StringValue("DescribeRoomKickoutUserList.UserList["+ i +"].AppUid");
-				user.OpStartTime = context.StringValue("DescribeRoomKickoutUserList.UserList["+ i +"].OpStartTime");
-				user.OpEndTime = context.StringValue("DescribeRoomKickoutUserList.UserList["+ i +"].OpEndTime");
+				user.AppUid = _ctx.StringValue("DescribeRoomKickoutUserList.UserList["+ i +"].AppUid");
+				user.OpStartTime = _ctx.StringValue("DescribeRoomKickoutUserList.UserList["+ i +"].OpStartTime");
+				user.OpEndTime = _ctx.StringValue("DescribeRoomKickoutUserList.UserList["+ i +"].OpEndTime");
 
 				describeRoomKickoutUserListResponse_userList.Add(user);
 			}

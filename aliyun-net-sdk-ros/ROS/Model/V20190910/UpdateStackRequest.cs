@@ -35,8 +35,8 @@ namespace Aliyun.Acs.ROS.Model.V20190910
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.ROS.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.ROS.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -45,7 +45,13 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 		private string stackPolicyDuringUpdateBody;
 
+		private string templateVersion;
+
 		private bool? disableRollback;
+
+		private string templateId;
+
+		private List<Tags> tagss = new List<Tags>(){ };
 
 		private List<Parameters> parameterss = new List<Parameters>(){ };
 
@@ -95,6 +101,19 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			}
 		}
 
+		public string TemplateVersion
+		{
+			get
+			{
+				return templateVersion;
+			}
+			set	
+			{
+				templateVersion = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateVersion", value);
+			}
+		}
+
 		public bool? DisableRollback
 		{
 			get
@@ -105,6 +124,37 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				disableRollback = value;
 				DictionaryUtil.Add(QueryParameters, "DisableRollback", value.ToString());
+			}
+		}
+
+		public string TemplateId
+		{
+			get
+			{
+				return templateId;
+			}
+			set	
+			{
+				templateId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateId", value);
+			}
+		}
+
+		public List<Tags> Tagss
+		{
+			get
+			{
+				return tagss;
+			}
+
+			set
+			{
+				tagss = value;
+				for (int i = 0; i < tagss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".Value", tagss[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".Key", tagss[i].Key);
+				}
 			}
 		}
 
@@ -253,6 +303,38 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				stackPolicyURL = value;
 				DictionaryUtil.Add(QueryParameters, "StackPolicyURL", value);
+			}
+		}
+
+		public class Tags
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

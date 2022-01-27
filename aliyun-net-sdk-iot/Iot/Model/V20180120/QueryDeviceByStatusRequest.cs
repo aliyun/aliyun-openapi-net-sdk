@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Iot.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Iot.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -49,8 +49,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private int? currentPage;
 
 		private string productKey;
-
-		private string bizTenantId;
 
 		private int? status;
 
@@ -116,19 +114,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
-
-		public string BizTenantId
-		{
-			get
-			{
-				return bizTenantId;
-			}
-			set	
-			{
-				bizTenantId = value;
-				DictionaryUtil.Add(QueryParameters, "BizTenantId", value);
 			}
 		}
 

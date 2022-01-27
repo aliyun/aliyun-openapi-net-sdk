@@ -26,29 +26,33 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListClusterServiceConfigHistoryResponseUnmarshaller
     {
-        public static ListClusterServiceConfigHistoryResponse Unmarshall(UnmarshallerContext context)
+        public static ListClusterServiceConfigHistoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListClusterServiceConfigHistoryResponse listClusterServiceConfigHistoryResponse = new ListClusterServiceConfigHistoryResponse();
 
-			listClusterServiceConfigHistoryResponse.HttpResponse = context.HttpResponse;
-			listClusterServiceConfigHistoryResponse.RequestId = context.StringValue("ListClusterServiceConfigHistory.RequestId");
-			listClusterServiceConfigHistoryResponse.TotalCount = context.IntegerValue("ListClusterServiceConfigHistory.TotalCount");
-			listClusterServiceConfigHistoryResponse.PageNumber = context.IntegerValue("ListClusterServiceConfigHistory.PageNumber");
-			listClusterServiceConfigHistoryResponse.PageSize = context.IntegerValue("ListClusterServiceConfigHistory.PageSize");
+			listClusterServiceConfigHistoryResponse.HttpResponse = _ctx.HttpResponse;
+			listClusterServiceConfigHistoryResponse.RequestId = _ctx.StringValue("ListClusterServiceConfigHistory.RequestId");
+			listClusterServiceConfigHistoryResponse.TotalCount = _ctx.IntegerValue("ListClusterServiceConfigHistory.TotalCount");
+			listClusterServiceConfigHistoryResponse.PageNumber = _ctx.IntegerValue("ListClusterServiceConfigHistory.PageNumber");
+			listClusterServiceConfigHistoryResponse.PageSize = _ctx.IntegerValue("ListClusterServiceConfigHistory.PageSize");
 
 			List<ListClusterServiceConfigHistoryResponse.ListClusterServiceConfigHistory_ConfigHistory> listClusterServiceConfigHistoryResponse_configHistoryList = new List<ListClusterServiceConfigHistoryResponse.ListClusterServiceConfigHistory_ConfigHistory>();
-			for (int i = 0; i < context.Length("ListClusterServiceConfigHistory.ConfigHistoryList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListClusterServiceConfigHistory.ConfigHistoryList.Length"); i++) {
 				ListClusterServiceConfigHistoryResponse.ListClusterServiceConfigHistory_ConfigHistory configHistory = new ListClusterServiceConfigHistoryResponse.ListClusterServiceConfigHistory_ConfigHistory();
-				configHistory.ServiceName = context.StringValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].ServiceName");
-				configHistory.ConfigVersion = context.StringValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].ConfigVersion");
-				configHistory.ConfigFileName = context.StringValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].ConfigFileName");
-				configHistory.ConfigItemName = context.StringValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].ConfigItemName");
-				configHistory.NewValue = context.StringValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].NewValue");
-				configHistory.OldValue = context.StringValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].OldValue");
-				configHistory.Applied = context.BooleanValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].Applied");
-				configHistory.CreateTime = context.LongValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].CreateTime");
-				configHistory.Author = context.StringValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].Author");
-				configHistory.Comment = context.StringValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].Comment");
+				configHistory.ServiceName = _ctx.StringValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].ServiceName");
+				configHistory.ConfigVersion = _ctx.StringValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].ConfigVersion");
+				configHistory.ConfigFileName = _ctx.StringValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].ConfigFileName");
+				configHistory.ConfigItemName = _ctx.StringValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].ConfigItemName");
+				configHistory.NewValue = _ctx.StringValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].NewValue");
+				configHistory.OldValue = _ctx.StringValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].OldValue");
+				configHistory.Applied = _ctx.BooleanValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].Applied");
+				configHistory.CreateTime = _ctx.LongValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].CreateTime");
+				configHistory.Author = _ctx.StringValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].Author");
+				configHistory.Comment = _ctx.StringValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].Comment");
+				configHistory.HostGroupId = _ctx.StringValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].HostGroupId");
+				configHistory.HostGroupName = _ctx.StringValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].HostGroupName");
+				configHistory.HostInstanceId = _ctx.StringValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].HostInstanceId");
+				configHistory.HostName = _ctx.StringValue("ListClusterServiceConfigHistory.ConfigHistoryList["+ i +"].HostName");
 
 				listClusterServiceConfigHistoryResponse_configHistoryList.Add(configHistory);
 			}

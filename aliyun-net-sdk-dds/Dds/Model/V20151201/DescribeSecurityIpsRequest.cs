@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DescribeSecurityIpsRequest : RpcAcsRequest<DescribeSecurityIpsResponse>
     {
         public DescribeSecurityIpsRequest()
-            : base("Dds", "2015-12-01", "DescribeSecurityIps", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "DescribeSecurityIps", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

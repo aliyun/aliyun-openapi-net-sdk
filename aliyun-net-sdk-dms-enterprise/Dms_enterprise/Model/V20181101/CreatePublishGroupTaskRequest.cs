@@ -31,17 +31,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class CreatePublishGroupTaskRequest : RpcAcsRequest<CreatePublishGroupTaskResponse>
     {
         public CreatePublishGroupTaskRequest()
-            : base("dms-enterprise", "2018-11-01", "CreatePublishGroupTask", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "CreatePublishGroupTask", "dms-enterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private long? orderId;
+
+		private long? tid;
 
 		private int? dbId;
 
@@ -49,10 +51,9 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private bool? logic;
 
-		private long? tid;
-
 		private string publishStrategy;
 
+		[JsonProperty(PropertyName = "OrderId")]
 		public long? OrderId
 		{
 			get
@@ -66,45 +67,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public int? DbId
-		{
-			get
-			{
-				return dbId;
-			}
-			set	
-			{
-				dbId = value;
-				DictionaryUtil.Add(QueryParameters, "DbId", value.ToString());
-			}
-		}
-
-		public string PlanTime
-		{
-			get
-			{
-				return planTime;
-			}
-			set	
-			{
-				planTime = value;
-				DictionaryUtil.Add(QueryParameters, "PlanTime", value);
-			}
-		}
-
-		public bool? Logic
-		{
-			get
-			{
-				return logic;
-			}
-			set	
-			{
-				logic = value;
-				DictionaryUtil.Add(QueryParameters, "Logic", value.ToString());
-			}
-		}
-
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -118,6 +81,49 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DbId")]
+		public int? DbId
+		{
+			get
+			{
+				return dbId;
+			}
+			set	
+			{
+				dbId = value;
+				DictionaryUtil.Add(QueryParameters, "DbId", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "PlanTime")]
+		public string PlanTime
+		{
+			get
+			{
+				return planTime;
+			}
+			set	
+			{
+				planTime = value;
+				DictionaryUtil.Add(QueryParameters, "PlanTime", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Logic")]
+		public bool? Logic
+		{
+			get
+			{
+				return logic;
+			}
+			set	
+			{
+				logic = value;
+				DictionaryUtil.Add(QueryParameters, "Logic", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "PublishStrategy")]
 		public string PublishStrategy
 		{
 			get

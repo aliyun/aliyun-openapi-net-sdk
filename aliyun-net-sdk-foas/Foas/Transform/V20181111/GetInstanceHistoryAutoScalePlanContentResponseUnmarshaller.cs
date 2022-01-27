@@ -26,13 +26,13 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class GetInstanceHistoryAutoScalePlanContentResponseUnmarshaller
     {
-        public static GetInstanceHistoryAutoScalePlanContentResponse Unmarshall(UnmarshallerContext context)
+        public static GetInstanceHistoryAutoScalePlanContentResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetInstanceHistoryAutoScalePlanContentResponse getInstanceHistoryAutoScalePlanContentResponse = new GetInstanceHistoryAutoScalePlanContentResponse();
 
-			getInstanceHistoryAutoScalePlanContentResponse.HttpResponse = context.HttpResponse;
-			getInstanceHistoryAutoScalePlanContentResponse.RequestId = context.StringValue("GetInstanceHistoryAutoScalePlanContent.RequestId");
-			getInstanceHistoryAutoScalePlanContentResponse.PlanContent = context.StringValue("GetInstanceHistoryAutoScalePlanContent.PlanContent");
+			getInstanceHistoryAutoScalePlanContentResponse.HttpResponse = _ctx.HttpResponse;
+			getInstanceHistoryAutoScalePlanContentResponse.RequestId = _ctx.StringValue("GetInstanceHistoryAutoScalePlanContent.RequestId");
+			getInstanceHistoryAutoScalePlanContentResponse.PlanContent = _ctx.StringValue("GetInstanceHistoryAutoScalePlanContent.PlanContent");
         
 			return getInstanceHistoryAutoScalePlanContentResponse;
         }

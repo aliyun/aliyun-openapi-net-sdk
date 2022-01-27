@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 {
     public class UnbindAliasResponseUnmarshaller
     {
-        public static UnbindAliasResponse Unmarshall(UnmarshallerContext context)
+        public static UnbindAliasResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UnbindAliasResponse unbindAliasResponse = new UnbindAliasResponse();
 
-			unbindAliasResponse.HttpResponse = context.HttpResponse;
-			unbindAliasResponse.RequestId = context.StringValue("UnbindAlias.RequestId");
+			unbindAliasResponse.HttpResponse = _ctx.HttpResponse;
+			unbindAliasResponse.RequestId = _ctx.StringValue("UnbindAlias.RequestId");
         
 			return unbindAliasResponse;
         }

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class SendFileResponseUnmarshaller
     {
-        public static SendFileResponse Unmarshall(UnmarshallerContext context)
+        public static SendFileResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SendFileResponse sendFileResponse = new SendFileResponse();
 
-			sendFileResponse.HttpResponse = context.HttpResponse;
-			sendFileResponse.RequestId = context.StringValue("SendFile.RequestId");
-			sendFileResponse.InvokeId = context.StringValue("SendFile.InvokeId");
+			sendFileResponse.HttpResponse = _ctx.HttpResponse;
+			sendFileResponse.InvokeId = _ctx.StringValue("SendFile.InvokeId");
+			sendFileResponse.RequestId = _ctx.StringValue("SendFile.RequestId");
         
 			return sendFileResponse;
         }

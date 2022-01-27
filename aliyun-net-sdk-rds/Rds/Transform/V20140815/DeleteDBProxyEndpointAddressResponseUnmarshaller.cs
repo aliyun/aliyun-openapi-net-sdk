@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DeleteDBProxyEndpointAddressResponseUnmarshaller
     {
-        public static DeleteDBProxyEndpointAddressResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDBProxyEndpointAddressResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDBProxyEndpointAddressResponse deleteDBProxyEndpointAddressResponse = new DeleteDBProxyEndpointAddressResponse();
 
-			deleteDBProxyEndpointAddressResponse.HttpResponse = context.HttpResponse;
-			deleteDBProxyEndpointAddressResponse.RequestId = context.StringValue("DeleteDBProxyEndpointAddress.RequestId");
+			deleteDBProxyEndpointAddressResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDBProxyEndpointAddressResponse.RequestId = _ctx.StringValue("DeleteDBProxyEndpointAddress.RequestId");
         
 			return deleteDBProxyEndpointAddressResponse;
         }

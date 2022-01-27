@@ -26,22 +26,22 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetMessageCallbackResponseUnmarshaller
     {
-        public static GetMessageCallbackResponse Unmarshall(UnmarshallerContext context)
+        public static GetMessageCallbackResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMessageCallbackResponse getMessageCallbackResponse = new GetMessageCallbackResponse();
 
-			getMessageCallbackResponse.HttpResponse = context.HttpResponse;
-			getMessageCallbackResponse.RequestId = context.StringValue("GetMessageCallback.RequestId");
+			getMessageCallbackResponse.HttpResponse = _ctx.HttpResponse;
+			getMessageCallbackResponse.RequestId = _ctx.StringValue("GetMessageCallback.RequestId");
 
 			GetMessageCallbackResponse.GetMessageCallback_MessageCallback messageCallback = new GetMessageCallbackResponse.GetMessageCallback_MessageCallback();
-			messageCallback.CallbackType = context.StringValue("GetMessageCallback.MessageCallback.CallbackType");
-			messageCallback.CallbackURL = context.StringValue("GetMessageCallback.MessageCallback.CallbackURL");
-			messageCallback.EventTypeList = context.StringValue("GetMessageCallback.MessageCallback.EventTypeList");
-			messageCallback.AuthSwitch = context.StringValue("GetMessageCallback.MessageCallback.AuthSwitch");
-			messageCallback.AuthKey = context.StringValue("GetMessageCallback.MessageCallback.AuthKey");
-			messageCallback.MnsEndpoint = context.StringValue("GetMessageCallback.MessageCallback.MnsEndpoint");
-			messageCallback.MnsQueueName = context.StringValue("GetMessageCallback.MessageCallback.MnsQueueName");
-			messageCallback.AppId = context.StringValue("GetMessageCallback.MessageCallback.AppId");
+			messageCallback.CallbackType = _ctx.StringValue("GetMessageCallback.MessageCallback.CallbackType");
+			messageCallback.CallbackURL = _ctx.StringValue("GetMessageCallback.MessageCallback.CallbackURL");
+			messageCallback.EventTypeList = _ctx.StringValue("GetMessageCallback.MessageCallback.EventTypeList");
+			messageCallback.AuthSwitch = _ctx.StringValue("GetMessageCallback.MessageCallback.AuthSwitch");
+			messageCallback.AuthKey = _ctx.StringValue("GetMessageCallback.MessageCallback.AuthKey");
+			messageCallback.MnsEndpoint = _ctx.StringValue("GetMessageCallback.MessageCallback.MnsEndpoint");
+			messageCallback.MnsQueueName = _ctx.StringValue("GetMessageCallback.MessageCallback.MnsQueueName");
+			messageCallback.AppId = _ctx.StringValue("GetMessageCallback.MessageCallback.AppId");
 			getMessageCallbackResponse.MessageCallback = messageCallback;
         
 			return getMessageCallbackResponse;

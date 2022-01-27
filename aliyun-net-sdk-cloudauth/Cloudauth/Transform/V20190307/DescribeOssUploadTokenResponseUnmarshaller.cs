@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 {
     public class DescribeOssUploadTokenResponseUnmarshaller
     {
-        public static DescribeOssUploadTokenResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeOssUploadTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeOssUploadTokenResponse describeOssUploadTokenResponse = new DescribeOssUploadTokenResponse();
 
-			describeOssUploadTokenResponse.HttpResponse = context.HttpResponse;
-			describeOssUploadTokenResponse.RequestId = context.StringValue("DescribeOssUploadToken.RequestId");
+			describeOssUploadTokenResponse.HttpResponse = _ctx.HttpResponse;
+			describeOssUploadTokenResponse.RequestId = _ctx.StringValue("DescribeOssUploadToken.RequestId");
 
 			DescribeOssUploadTokenResponse.DescribeOssUploadToken_OssUploadToken ossUploadToken = new DescribeOssUploadTokenResponse.DescribeOssUploadToken_OssUploadToken();
-			ossUploadToken.Bucket = context.StringValue("DescribeOssUploadToken.OssUploadToken.Bucket");
-			ossUploadToken.EndPoint = context.StringValue("DescribeOssUploadToken.OssUploadToken.EndPoint");
-			ossUploadToken.Path = context.StringValue("DescribeOssUploadToken.OssUploadToken.Path");
-			ossUploadToken.Expired = context.LongValue("DescribeOssUploadToken.OssUploadToken.Expired");
-			ossUploadToken.Secret = context.StringValue("DescribeOssUploadToken.OssUploadToken.Secret");
-			ossUploadToken.Key = context.StringValue("DescribeOssUploadToken.OssUploadToken.Key");
-			ossUploadToken.Token = context.StringValue("DescribeOssUploadToken.OssUploadToken.Token");
+			ossUploadToken.Bucket = _ctx.StringValue("DescribeOssUploadToken.OssUploadToken.Bucket");
+			ossUploadToken.EndPoint = _ctx.StringValue("DescribeOssUploadToken.OssUploadToken.EndPoint");
+			ossUploadToken.Path = _ctx.StringValue("DescribeOssUploadToken.OssUploadToken.Path");
+			ossUploadToken.Expired = _ctx.LongValue("DescribeOssUploadToken.OssUploadToken.Expired");
+			ossUploadToken.Secret = _ctx.StringValue("DescribeOssUploadToken.OssUploadToken.Secret");
+			ossUploadToken.Key = _ctx.StringValue("DescribeOssUploadToken.OssUploadToken.Key");
+			ossUploadToken.Token = _ctx.StringValue("DescribeOssUploadToken.OssUploadToken.Token");
 			describeOssUploadTokenResponse.OssUploadToken = ossUploadToken;
         
 			return describeOssUploadTokenResponse;

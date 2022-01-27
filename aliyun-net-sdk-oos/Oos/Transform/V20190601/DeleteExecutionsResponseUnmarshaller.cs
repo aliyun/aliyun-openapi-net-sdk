@@ -26,12 +26,12 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 {
     public class DeleteExecutionsResponseUnmarshaller
     {
-        public static DeleteExecutionsResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteExecutionsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteExecutionsResponse deleteExecutionsResponse = new DeleteExecutionsResponse();
 
-			deleteExecutionsResponse.HttpResponse = context.HttpResponse;
-			deleteExecutionsResponse.RequestId = context.StringValue("DeleteExecutions.RequestId");
+			deleteExecutionsResponse.HttpResponse = _ctx.HttpResponse;
+			deleteExecutionsResponse.RequestId = _ctx.StringValue("DeleteExecutions.RequestId");
         
 			return deleteExecutionsResponse;
         }

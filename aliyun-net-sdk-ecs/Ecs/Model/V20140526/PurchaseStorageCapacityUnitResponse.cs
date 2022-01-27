@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class PurchaseStorageCapacityUnitResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string orderId;
+
+		private string requestId;
 
 		private List<string> storageCapacityUnitIds;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "OrderId")]
 		public string OrderId
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "StorageCapacityUnitIds")]
 		public List<string> StorageCapacityUnitIds
 		{
 			get

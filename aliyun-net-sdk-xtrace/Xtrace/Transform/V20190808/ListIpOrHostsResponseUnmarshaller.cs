@@ -26,16 +26,16 @@ namespace Aliyun.Acs.xtrace.Transform.V20190808
 {
     public class ListIpOrHostsResponseUnmarshaller
     {
-        public static ListIpOrHostsResponse Unmarshall(UnmarshallerContext context)
+        public static ListIpOrHostsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListIpOrHostsResponse listIpOrHostsResponse = new ListIpOrHostsResponse();
 
-			listIpOrHostsResponse.HttpResponse = context.HttpResponse;
-			listIpOrHostsResponse.RequestId = context.StringValue("ListIpOrHosts.RequestId");
+			listIpOrHostsResponse.HttpResponse = _ctx.HttpResponse;
+			listIpOrHostsResponse.RequestId = _ctx.StringValue("ListIpOrHosts.RequestId");
 
 			List<string> listIpOrHostsResponse_ipNames = new List<string>();
-			for (int i = 0; i < context.Length("ListIpOrHosts.IpNames.Length"); i++) {
-				listIpOrHostsResponse_ipNames.Add(context.StringValue("ListIpOrHosts.IpNames["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("ListIpOrHosts.IpNames.Length"); i++) {
+				listIpOrHostsResponse_ipNames.Add(_ctx.StringValue("ListIpOrHosts.IpNames["+ i +"]"));
 			}
 			listIpOrHostsResponse.IpNames = listIpOrHostsResponse_ipNames;
         

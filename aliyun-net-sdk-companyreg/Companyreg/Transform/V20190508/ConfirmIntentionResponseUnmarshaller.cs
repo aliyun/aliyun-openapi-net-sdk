@@ -26,14 +26,14 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class ConfirmIntentionResponseUnmarshaller
     {
-        public static ConfirmIntentionResponse Unmarshall(UnmarshallerContext context)
+        public static ConfirmIntentionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ConfirmIntentionResponse confirmIntentionResponse = new ConfirmIntentionResponse();
 
-			confirmIntentionResponse.HttpResponse = context.HttpResponse;
-			confirmIntentionResponse.RequestId = context.StringValue("ConfirmIntention.RequestId");
-			confirmIntentionResponse.Success = context.BooleanValue("ConfirmIntention.Success");
-			confirmIntentionResponse.ConfirmUrl = context.StringValue("ConfirmIntention.ConfirmUrl");
+			confirmIntentionResponse.HttpResponse = _ctx.HttpResponse;
+			confirmIntentionResponse.RequestId = _ctx.StringValue("ConfirmIntention.RequestId");
+			confirmIntentionResponse.Success = _ctx.BooleanValue("ConfirmIntention.Success");
+			confirmIntentionResponse.ConfirmUrl = _ctx.StringValue("ConfirmIntention.ConfirmUrl");
         
 			return confirmIntentionResponse;
         }

@@ -26,27 +26,28 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class GetClusterQueueInfoResponseUnmarshaller
     {
-        public static GetClusterQueueInfoResponse Unmarshall(UnmarshallerContext context)
+        public static GetClusterQueueInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetClusterQueueInfoResponse getClusterQueueInfoResponse = new GetClusterQueueInfoResponse();
 
-			getClusterQueueInfoResponse.HttpResponse = context.HttpResponse;
-			getClusterQueueInfoResponse.RequestId = context.StringValue("GetClusterQueueInfo.RequestId");
+			getClusterQueueInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getClusterQueueInfoResponse.RequestId = _ctx.StringValue("GetClusterQueueInfo.RequestId");
 
 			List<GetClusterQueueInfoResponse.GetClusterQueueInfo_Queue> getClusterQueueInfoResponse_queues = new List<GetClusterQueueInfoResponse.GetClusterQueueInfo_Queue>();
-			for (int i = 0; i < context.Length("GetClusterQueueInfo.Queues.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetClusterQueueInfo.Queues.Length"); i++) {
 				GetClusterQueueInfoResponse.GetClusterQueueInfo_Queue queue = new GetClusterQueueInfoResponse.GetClusterQueueInfo_Queue();
-				queue.ClusterId = context.StringValue("GetClusterQueueInfo.Queues["+ i +"].ClusterId");
-				queue.QueueName = context.StringValue("GetClusterQueueInfo.Queues["+ i +"].QueueName");
-				queue.MinGpu = context.IntegerValue("GetClusterQueueInfo.Queues["+ i +"].MinGpu");
-				queue.MaxGpu = context.IntegerValue("GetClusterQueueInfo.Queues["+ i +"].MaxGpu");
-				queue.MinMem = context.IntegerValue("GetClusterQueueInfo.Queues["+ i +"].MinMem");
-				queue.UsedVCore = context.IntegerValue("GetClusterQueueInfo.Queues["+ i +"].UsedVCore");
-				queue.UsedGpu = context.IntegerValue("GetClusterQueueInfo.Queues["+ i +"].UsedGpu");
-				queue.UsedMem = context.IntegerValue("GetClusterQueueInfo.Queues["+ i +"].UsedMem");
-				queue.MinVCore = context.IntegerValue("GetClusterQueueInfo.Queues["+ i +"].MinVCore");
-				queue.MaxVCore = context.IntegerValue("GetClusterQueueInfo.Queues["+ i +"].MaxVCore");
-				queue.MaxMem = context.IntegerValue("GetClusterQueueInfo.Queues["+ i +"].MaxMem");
+				queue.ClusterId = _ctx.StringValue("GetClusterQueueInfo.Queues["+ i +"].ClusterId");
+				queue.QueueName = _ctx.StringValue("GetClusterQueueInfo.Queues["+ i +"].QueueName");
+				queue.MinGpu = _ctx.IntegerValue("GetClusterQueueInfo.Queues["+ i +"].MinGpu");
+				queue.MaxGpu = _ctx.IntegerValue("GetClusterQueueInfo.Queues["+ i +"].MaxGpu");
+				queue.MinMem = _ctx.IntegerValue("GetClusterQueueInfo.Queues["+ i +"].MinMem");
+				queue.UsedVCore = _ctx.IntegerValue("GetClusterQueueInfo.Queues["+ i +"].UsedVCore");
+				queue.UsedGpu = _ctx.IntegerValue("GetClusterQueueInfo.Queues["+ i +"].UsedGpu");
+				queue.UsedMem = _ctx.IntegerValue("GetClusterQueueInfo.Queues["+ i +"].UsedMem");
+				queue.MinVCore = _ctx.IntegerValue("GetClusterQueueInfo.Queues["+ i +"].MinVCore");
+				queue.MaxVCore = _ctx.IntegerValue("GetClusterQueueInfo.Queues["+ i +"].MaxVCore");
+				queue.MaxMem = _ctx.IntegerValue("GetClusterQueueInfo.Queues["+ i +"].MaxMem");
+				queue.ExternalInfo = _ctx.StringValue("GetClusterQueueInfo.Queues["+ i +"].ExternalInfo");
 
 				getClusterQueueInfoResponse_queues.Add(queue);
 			}

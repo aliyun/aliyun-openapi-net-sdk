@@ -25,53 +25,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetMetaDBInfoResponse : AcsResponse
 	{
 
-		private string errorCode;
-
-		private string errorMessage;
-
-		private int? httpStatusCode;
-
 		private string requestId;
 
-		private bool? success;
-
 		private GetMetaDBInfo_Data data;
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
 
 		public string RequestId
 		{
@@ -82,18 +38,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
 			}
 		}
 
@@ -133,6 +77,16 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			private string ownerId;
 
 			private string ownerName;
+
+			private string name;
+
+			private string type;
+
+			private string comment;
+
+			private string location;
+
+			private string clusterBizId;
 
 			public string AppGuid
 			{
@@ -263,6 +217,66 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					ownerName = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
+
+			public string Comment
+			{
+				get
+				{
+					return comment;
+				}
+				set	
+				{
+					comment = value;
+				}
+			}
+
+			public string Location
+			{
+				get
+				{
+					return location;
+				}
+				set	
+				{
+					location = value;
+				}
+			}
+
+			public string ClusterBizId
+			{
+				get
+				{
+					return clusterBizId;
+				}
+				set	
+				{
+					clusterBizId = value;
 				}
 			}
 		}

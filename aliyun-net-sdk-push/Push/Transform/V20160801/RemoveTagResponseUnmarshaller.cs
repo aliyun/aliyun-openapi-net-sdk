@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 {
     public class RemoveTagResponseUnmarshaller
     {
-        public static RemoveTagResponse Unmarshall(UnmarshallerContext context)
+        public static RemoveTagResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RemoveTagResponse removeTagResponse = new RemoveTagResponse();
 
-			removeTagResponse.HttpResponse = context.HttpResponse;
-			removeTagResponse.RequestId = context.StringValue("RemoveTag.RequestId");
+			removeTagResponse.HttpResponse = _ctx.HttpResponse;
+			removeTagResponse.RequestId = _ctx.StringValue("RemoveTag.RequestId");
         
 			return removeTagResponse;
         }

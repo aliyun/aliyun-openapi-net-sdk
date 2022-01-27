@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class SetEditingProjectMaterialsResponseUnmarshaller
     {
-        public static SetEditingProjectMaterialsResponse Unmarshall(UnmarshallerContext context)
+        public static SetEditingProjectMaterialsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetEditingProjectMaterialsResponse setEditingProjectMaterialsResponse = new SetEditingProjectMaterialsResponse();
 
-			setEditingProjectMaterialsResponse.HttpResponse = context.HttpResponse;
-			setEditingProjectMaterialsResponse.RequestId = context.StringValue("SetEditingProjectMaterials.RequestId");
+			setEditingProjectMaterialsResponse.HttpResponse = _ctx.HttpResponse;
+			setEditingProjectMaterialsResponse.RequestId = _ctx.StringValue("SetEditingProjectMaterials.RequestId");
         
 			return setEditingProjectMaterialsResponse;
         }

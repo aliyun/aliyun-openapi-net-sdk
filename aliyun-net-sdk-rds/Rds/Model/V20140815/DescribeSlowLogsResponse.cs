@@ -196,6 +196,56 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private long? avgExecutionTime;
 
+			private long? totalPhysicalReadCounts1;
+
+			private long? avgPhysicalReadCounts;
+
+			private long? maxPhysicalReadCounts;
+
+			private long? minPhysicalReadCounts;
+
+			private long? avgLogicalReadCounts;
+
+			private long? maxLogicalReadCounts;
+
+			private long? minLogicalReadCounts;
+
+			private long? totalIOWriteCounts;
+
+			private long? avgIOWriteCounts;
+
+			private long? maxIOWriteCounts;
+
+			private long? minIOWriteCounts;
+
+			private long? totalRowsAffectedCounts;
+
+			private long? avgRowsAffectedCounts;
+
+			private long? maxRowsAffectedCounts;
+
+			private long? minRowsAffectedCounts;
+
+			private long? totalLastRowsAffectedCounts;
+
+			private long? avgLastRowsAffectedCounts;
+
+			private long? maxLastRowsAffectedCounts;
+
+			private long? minLastRowsAffectedCounts;
+
+			private long? sQLServerMinExecutionTime;
+
+			private long? sQLServerAvgExecutionTime;
+
+			private long? sQLServerTotalCpuTime;
+
+			private long? sQLServerAvgCpuTime;
+
+			private long? sQLServerMaxCpuTime;
+
+			private long? sQLServerMinCpuTime;
+
 			public long? SlowLogId
 			{
 				get
@@ -445,6 +495,306 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					avgExecutionTime = value;
+				}
+			}
+
+			public long? TotalPhysicalReadCounts1
+			{
+				get
+				{
+					return totalPhysicalReadCounts1;
+				}
+				set	
+				{
+					totalPhysicalReadCounts1 = value;
+				}
+			}
+
+			public long? AvgPhysicalReadCounts
+			{
+				get
+				{
+					return avgPhysicalReadCounts;
+				}
+				set	
+				{
+					avgPhysicalReadCounts = value;
+				}
+			}
+
+			public long? MaxPhysicalReadCounts
+			{
+				get
+				{
+					return maxPhysicalReadCounts;
+				}
+				set	
+				{
+					maxPhysicalReadCounts = value;
+				}
+			}
+
+			public long? MinPhysicalReadCounts
+			{
+				get
+				{
+					return minPhysicalReadCounts;
+				}
+				set	
+				{
+					minPhysicalReadCounts = value;
+				}
+			}
+
+			public long? AvgLogicalReadCounts
+			{
+				get
+				{
+					return avgLogicalReadCounts;
+				}
+				set	
+				{
+					avgLogicalReadCounts = value;
+				}
+			}
+
+			public long? MaxLogicalReadCounts
+			{
+				get
+				{
+					return maxLogicalReadCounts;
+				}
+				set	
+				{
+					maxLogicalReadCounts = value;
+				}
+			}
+
+			public long? MinLogicalReadCounts
+			{
+				get
+				{
+					return minLogicalReadCounts;
+				}
+				set	
+				{
+					minLogicalReadCounts = value;
+				}
+			}
+
+			public long? TotalIOWriteCounts
+			{
+				get
+				{
+					return totalIOWriteCounts;
+				}
+				set	
+				{
+					totalIOWriteCounts = value;
+				}
+			}
+
+			public long? AvgIOWriteCounts
+			{
+				get
+				{
+					return avgIOWriteCounts;
+				}
+				set	
+				{
+					avgIOWriteCounts = value;
+				}
+			}
+
+			public long? MaxIOWriteCounts
+			{
+				get
+				{
+					return maxIOWriteCounts;
+				}
+				set	
+				{
+					maxIOWriteCounts = value;
+				}
+			}
+
+			public long? MinIOWriteCounts
+			{
+				get
+				{
+					return minIOWriteCounts;
+				}
+				set	
+				{
+					minIOWriteCounts = value;
+				}
+			}
+
+			public long? TotalRowsAffectedCounts
+			{
+				get
+				{
+					return totalRowsAffectedCounts;
+				}
+				set	
+				{
+					totalRowsAffectedCounts = value;
+				}
+			}
+
+			public long? AvgRowsAffectedCounts
+			{
+				get
+				{
+					return avgRowsAffectedCounts;
+				}
+				set	
+				{
+					avgRowsAffectedCounts = value;
+				}
+			}
+
+			public long? MaxRowsAffectedCounts
+			{
+				get
+				{
+					return maxRowsAffectedCounts;
+				}
+				set	
+				{
+					maxRowsAffectedCounts = value;
+				}
+			}
+
+			public long? MinRowsAffectedCounts
+			{
+				get
+				{
+					return minRowsAffectedCounts;
+				}
+				set	
+				{
+					minRowsAffectedCounts = value;
+				}
+			}
+
+			public long? TotalLastRowsAffectedCounts
+			{
+				get
+				{
+					return totalLastRowsAffectedCounts;
+				}
+				set	
+				{
+					totalLastRowsAffectedCounts = value;
+				}
+			}
+
+			public long? AvgLastRowsAffectedCounts
+			{
+				get
+				{
+					return avgLastRowsAffectedCounts;
+				}
+				set	
+				{
+					avgLastRowsAffectedCounts = value;
+				}
+			}
+
+			public long? MaxLastRowsAffectedCounts
+			{
+				get
+				{
+					return maxLastRowsAffectedCounts;
+				}
+				set	
+				{
+					maxLastRowsAffectedCounts = value;
+				}
+			}
+
+			public long? MinLastRowsAffectedCounts
+			{
+				get
+				{
+					return minLastRowsAffectedCounts;
+				}
+				set	
+				{
+					minLastRowsAffectedCounts = value;
+				}
+			}
+
+			public long? SQLServerMinExecutionTime
+			{
+				get
+				{
+					return sQLServerMinExecutionTime;
+				}
+				set	
+				{
+					sQLServerMinExecutionTime = value;
+				}
+			}
+
+			public long? SQLServerAvgExecutionTime
+			{
+				get
+				{
+					return sQLServerAvgExecutionTime;
+				}
+				set	
+				{
+					sQLServerAvgExecutionTime = value;
+				}
+			}
+
+			public long? SQLServerTotalCpuTime
+			{
+				get
+				{
+					return sQLServerTotalCpuTime;
+				}
+				set	
+				{
+					sQLServerTotalCpuTime = value;
+				}
+			}
+
+			public long? SQLServerAvgCpuTime
+			{
+				get
+				{
+					return sQLServerAvgCpuTime;
+				}
+				set	
+				{
+					sQLServerAvgCpuTime = value;
+				}
+			}
+
+			public long? SQLServerMaxCpuTime
+			{
+				get
+				{
+					return sQLServerMaxCpuTime;
+				}
+				set	
+				{
+					sQLServerMaxCpuTime = value;
+				}
+			}
+
+			public long? SQLServerMinCpuTime
+			{
+				get
+				{
+					return sQLServerMinCpuTime;
+				}
+				set	
+				{
+					sQLServerMinCpuTime = value;
 				}
 			}
 		}

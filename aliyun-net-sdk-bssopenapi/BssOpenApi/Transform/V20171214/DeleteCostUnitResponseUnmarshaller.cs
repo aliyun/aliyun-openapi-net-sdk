@@ -26,20 +26,20 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class DeleteCostUnitResponseUnmarshaller
     {
-        public static DeleteCostUnitResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteCostUnitResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteCostUnitResponse deleteCostUnitResponse = new DeleteCostUnitResponse();
 
-			deleteCostUnitResponse.HttpResponse = context.HttpResponse;
-			deleteCostUnitResponse.RequestId = context.StringValue("DeleteCostUnit.RequestId");
-			deleteCostUnitResponse.Success = context.BooleanValue("DeleteCostUnit.Success");
-			deleteCostUnitResponse.Code = context.StringValue("DeleteCostUnit.Code");
-			deleteCostUnitResponse.Message = context.StringValue("DeleteCostUnit.Message");
+			deleteCostUnitResponse.HttpResponse = _ctx.HttpResponse;
+			deleteCostUnitResponse.RequestId = _ctx.StringValue("DeleteCostUnit.RequestId");
+			deleteCostUnitResponse.Message = _ctx.StringValue("DeleteCostUnit.Message");
+			deleteCostUnitResponse.Code = _ctx.StringValue("DeleteCostUnit.Code");
+			deleteCostUnitResponse.Success = _ctx.BooleanValue("DeleteCostUnit.Success");
 
 			DeleteCostUnitResponse.DeleteCostUnit_Data data = new DeleteCostUnitResponse.DeleteCostUnit_Data();
-			data.OwnerUid = context.LongValue("DeleteCostUnit.Data.OwnerUid");
-			data.UnitId = context.LongValue("DeleteCostUnit.Data.UnitId");
-			data.IsSuccess = context.BooleanValue("DeleteCostUnit.Data.IsSuccess");
+			data.IsSuccess = _ctx.BooleanValue("DeleteCostUnit.Data.IsSuccess");
+			data.UnitId = _ctx.LongValue("DeleteCostUnit.Data.UnitId");
+			data.OwnerUid = _ctx.LongValue("DeleteCostUnit.Data.OwnerUid");
 			deleteCostUnitResponse.Data = data;
         
 			return deleteCostUnitResponse;

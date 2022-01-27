@@ -114,7 +114,11 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string uuid;
 
-			private string machineName;
+			private string instanceName;
+
+			private string instanceId;
+
+			private string regionId;
 
 			private string internetIp;
 
@@ -142,15 +146,39 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string MachineName
+			public string InstanceName
 			{
 				get
 				{
-					return machineName;
+					return instanceName;
 				}
 				set	
 				{
-					machineName = value;
+					instanceName = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 

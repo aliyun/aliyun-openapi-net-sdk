@@ -39,18 +39,38 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 				domainConfig.Domain = _ctx.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Domain");
 
 				DescribeDomainAdvanceConfigsResponse.DescribeDomainAdvanceConfigs_DomainConfig.DescribeDomainAdvanceConfigs_Profile profile = new DescribeDomainAdvanceConfigsResponse.DescribeDomainAdvanceConfigs_DomainConfig.DescribeDomainAdvanceConfigs_Profile();
-				profile.Cname = _ctx.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.Cname");
-				profile.ResolvedType = _ctx.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.ResolvedType");
-				profile.VipServiceStatus = _ctx.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.VipServiceStatus");
-				profile.CertStatus = _ctx.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.CertStatus");
-				profile.ExclusiveVipStatus = _ctx.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.ExclusiveVipStatus");
 				profile.Ipv6Status = _ctx.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.Ipv6Status");
-				profile.HttpPort = _ctx.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.HttpPort");
-				profile.HttpsPort = _ctx.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.HttpsPort");
-				profile.Http2Port = _ctx.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.Http2Port");
-				profile.Rs = _ctx.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.Rs");
-				profile.ClusterType = _ctx.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.ClusterType");
 				profile.GSLBStatus = _ctx.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.GSLBStatus");
+				profile.VipServiceStatus = _ctx.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.VipServiceStatus");
+				profile.ClusterType = _ctx.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.ClusterType");
+				profile.ExclusiveVipStatus = _ctx.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.ExclusiveVipStatus");
+				profile.Cname = _ctx.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.Cname");
+				profile.CertStatus = _ctx.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.CertStatus");
+				profile.ResolvedType = _ctx.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.ResolvedType");
+
+				List<string> profile_http2Port = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.Http2Port.Length"); j++) {
+					profile_http2Port.Add(_ctx.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.Http2Port["+ j +"]"));
+				}
+				profile.Http2Port = profile_http2Port;
+
+				List<string> profile_httpPort = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.HttpPort.Length"); j++) {
+					profile_httpPort.Add(_ctx.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.HttpPort["+ j +"]"));
+				}
+				profile.HttpPort = profile_httpPort;
+
+				List<string> profile_rs = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.Rs.Length"); j++) {
+					profile_rs.Add(_ctx.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.Rs["+ j +"]"));
+				}
+				profile.Rs = profile_rs;
+
+				List<string> profile_httpsPort = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.HttpsPort.Length"); j++) {
+					profile_httpsPort.Add(_ctx.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.HttpsPort["+ j +"]"));
+				}
+				profile.HttpsPort = profile_httpsPort;
 				domainConfig.Profile = profile;
 
 				describeDomainAdvanceConfigsResponse_domainConfigs.Add(domainConfig);

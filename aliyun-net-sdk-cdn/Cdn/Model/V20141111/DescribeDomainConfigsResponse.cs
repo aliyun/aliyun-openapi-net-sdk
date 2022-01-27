@@ -102,8 +102,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private DescribeDomainConfigs_MacServiceConfig macServiceConfig;
 
-			private DescribeDomainConfigs_GreenManagerConfig greenManagerConfig;
-
 			private DescribeDomainConfigs_HttpsOptionConfig httpsOptionConfig;
 
 			private DescribeDomainConfigs_AliBusinessConfig aliBusinessConfig;
@@ -383,18 +381,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					macServiceConfig = value;
-				}
-			}
-
-			public DescribeDomainConfigs_GreenManagerConfig GreenManagerConfig
-			{
-				get
-				{
-					return greenManagerConfig;
-				}
-				set	
-				{
-					greenManagerConfig = value;
 				}
 			}
 
@@ -1856,52 +1842,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 					set	
 					{
 						processResult = value;
-					}
-				}
-
-				public string ConfigId
-				{
-					get
-					{
-						return configId;
-					}
-					set	
-					{
-						configId = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-			}
-
-			public class DescribeDomainConfigs_GreenManagerConfig
-			{
-
-				private string enabled;
-
-				private string configId;
-
-				private string status;
-
-				public string Enabled
-				{
-					get
-					{
-						return enabled;
-					}
-					set	
-					{
-						enabled = value;
 					}
 				}
 

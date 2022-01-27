@@ -26,26 +26,26 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 {
     public class GetDevopsOrganizationMembersResponseUnmarshaller
     {
-        public static GetDevopsOrganizationMembersResponse Unmarshall(UnmarshallerContext context)
+        public static GetDevopsOrganizationMembersResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetDevopsOrganizationMembersResponse getDevopsOrganizationMembersResponse = new GetDevopsOrganizationMembersResponse();
 
-			getDevopsOrganizationMembersResponse.HttpResponse = context.HttpResponse;
-			getDevopsOrganizationMembersResponse.Successful = context.BooleanValue("GetDevopsOrganizationMembers.Successful");
-			getDevopsOrganizationMembersResponse.ErrorCode = context.StringValue("GetDevopsOrganizationMembers.ErrorCode");
-			getDevopsOrganizationMembersResponse.ErrorMsg = context.StringValue("GetDevopsOrganizationMembers.ErrorMsg");
-			getDevopsOrganizationMembersResponse.RequestId = context.StringValue("GetDevopsOrganizationMembers.RequestId");
+			getDevopsOrganizationMembersResponse.HttpResponse = _ctx.HttpResponse;
+			getDevopsOrganizationMembersResponse.ErrorMsg = _ctx.StringValue("GetDevopsOrganizationMembers.ErrorMsg");
+			getDevopsOrganizationMembersResponse.RequestId = _ctx.StringValue("GetDevopsOrganizationMembers.RequestId");
+			getDevopsOrganizationMembersResponse.Successful = _ctx.BooleanValue("GetDevopsOrganizationMembers.Successful");
+			getDevopsOrganizationMembersResponse.ErrorCode = _ctx.StringValue("GetDevopsOrganizationMembers.ErrorCode");
 
 			List<GetDevopsOrganizationMembersResponse.GetDevopsOrganizationMembers_Member> getDevopsOrganizationMembersResponse_object = new List<GetDevopsOrganizationMembersResponse.GetDevopsOrganizationMembers_Member>();
-			for (int i = 0; i < context.Length("GetDevopsOrganizationMembers.Object.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetDevopsOrganizationMembers.Object.Length"); i++) {
 				GetDevopsOrganizationMembersResponse.GetDevopsOrganizationMembers_Member member = new GetDevopsOrganizationMembersResponse.GetDevopsOrganizationMembers_Member();
-				member.MemberId = context.StringValue("GetDevopsOrganizationMembers.Object["+ i +"].MemberId");
-				member.UserId = context.StringValue("GetDevopsOrganizationMembers.Object["+ i +"].UserId");
-				member.Role = context.IntegerValue("GetDevopsOrganizationMembers.Object["+ i +"].Role");
-				member.Name = context.StringValue("GetDevopsOrganizationMembers.Object["+ i +"].Name");
-				member.AvatarUrl = context.StringValue("GetDevopsOrganizationMembers.Object["+ i +"].AvatarUrl");
-				member.Email = context.StringValue("GetDevopsOrganizationMembers.Object["+ i +"].Email");
-				member.Phone = context.StringValue("GetDevopsOrganizationMembers.Object["+ i +"].Phone");
+				member.Email = _ctx.StringValue("GetDevopsOrganizationMembers.Object["+ i +"].Email");
+				member.AvatarUrl = _ctx.StringValue("GetDevopsOrganizationMembers.Object["+ i +"].AvatarUrl");
+				member.UserId = _ctx.StringValue("GetDevopsOrganizationMembers.Object["+ i +"].UserId");
+				member.MemberId = _ctx.StringValue("GetDevopsOrganizationMembers.Object["+ i +"].MemberId");
+				member.Role = _ctx.IntegerValue("GetDevopsOrganizationMembers.Object["+ i +"].Role");
+				member.Name = _ctx.StringValue("GetDevopsOrganizationMembers.Object["+ i +"].Name");
+				member.Phone = _ctx.StringValue("GetDevopsOrganizationMembers.Object["+ i +"].Phone");
 
 				getDevopsOrganizationMembersResponse_object.Add(member);
 			}

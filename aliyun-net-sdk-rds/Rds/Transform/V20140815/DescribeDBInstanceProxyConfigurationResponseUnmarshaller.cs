@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeDBInstanceProxyConfigurationResponseUnmarshaller
     {
-        public static DescribeDBInstanceProxyConfigurationResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDBInstanceProxyConfigurationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDBInstanceProxyConfigurationResponse describeDBInstanceProxyConfigurationResponse = new DescribeDBInstanceProxyConfigurationResponse();
 
-			describeDBInstanceProxyConfigurationResponse.HttpResponse = context.HttpResponse;
-			describeDBInstanceProxyConfigurationResponse.RequestId = context.StringValue("DescribeDBInstanceProxyConfiguration.RequestId");
-			describeDBInstanceProxyConfigurationResponse.TransparentSwitchConfiguration = context.StringValue("DescribeDBInstanceProxyConfiguration.TransparentSwitchConfiguration");
-			describeDBInstanceProxyConfigurationResponse.PersistentConnectionsConfiguration = context.StringValue("DescribeDBInstanceProxyConfiguration.PersistentConnectionsConfiguration");
-			describeDBInstanceProxyConfigurationResponse.AttacksProtectionConfiguration = context.StringValue("DescribeDBInstanceProxyConfiguration.AttacksProtectionConfiguration");
+			describeDBInstanceProxyConfigurationResponse.HttpResponse = _ctx.HttpResponse;
+			describeDBInstanceProxyConfigurationResponse.RequestId = _ctx.StringValue("DescribeDBInstanceProxyConfiguration.RequestId");
+			describeDBInstanceProxyConfigurationResponse.TransparentSwitchConfiguration = _ctx.StringValue("DescribeDBInstanceProxyConfiguration.TransparentSwitchConfiguration");
+			describeDBInstanceProxyConfigurationResponse.PersistentConnectionsConfiguration = _ctx.StringValue("DescribeDBInstanceProxyConfiguration.PersistentConnectionsConfiguration");
+			describeDBInstanceProxyConfigurationResponse.AttacksProtectionConfiguration = _ctx.StringValue("DescribeDBInstanceProxyConfiguration.AttacksProtectionConfiguration");
         
 			return describeDBInstanceProxyConfigurationResponse;
         }

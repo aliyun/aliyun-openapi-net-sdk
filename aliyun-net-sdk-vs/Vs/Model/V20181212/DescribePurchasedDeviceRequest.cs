@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.vs;
 using Aliyun.Acs.vs.Transform;
 using Aliyun.Acs.vs.Transform.V20181212;
 
@@ -30,12 +31,12 @@ namespace Aliyun.Acs.vs.Model.V20181212
     public class DescribePurchasedDeviceRequest : RpcAcsRequest<DescribePurchasedDeviceResponse>
     {
         public DescribePurchasedDeviceRequest()
-            : base("vs", "2018-12-12", "DescribePurchasedDevice", "vs", "openAPI")
+            : base("vs", "2018-12-12", "DescribePurchasedDevice")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.vs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.vs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }

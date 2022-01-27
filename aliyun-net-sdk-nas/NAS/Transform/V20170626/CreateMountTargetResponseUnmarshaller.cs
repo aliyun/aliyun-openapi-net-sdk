@@ -26,13 +26,17 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 {
     public class CreateMountTargetResponseUnmarshaller
     {
-        public static CreateMountTargetResponse Unmarshall(UnmarshallerContext context)
+        public static CreateMountTargetResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateMountTargetResponse createMountTargetResponse = new CreateMountTargetResponse();
 
-			createMountTargetResponse.HttpResponse = context.HttpResponse;
-			createMountTargetResponse.RequestId = context.StringValue("CreateMountTarget.RequestId");
-			createMountTargetResponse.MountTargetDomain = context.StringValue("CreateMountTarget.MountTargetDomain");
+			createMountTargetResponse.HttpResponse = _ctx.HttpResponse;
+			createMountTargetResponse.RequestId = _ctx.StringValue("CreateMountTarget.RequestId");
+			createMountTargetResponse.MountTargetDomain = _ctx.StringValue("CreateMountTarget.MountTargetDomain");
+
+			CreateMountTargetResponse.CreateMountTarget_MountTargetExtra mountTargetExtra = new CreateMountTargetResponse.CreateMountTarget_MountTargetExtra();
+			mountTargetExtra.DualStackMountTargetDomain = _ctx.StringValue("CreateMountTarget.MountTargetExtra.DualStackMountTargetDomain");
+			createMountTargetResponse.MountTargetExtra = mountTargetExtra;
         
 			return createMountTargetResponse;
         }

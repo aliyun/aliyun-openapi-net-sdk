@@ -26,23 +26,23 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeGatewaySMBUsersResponseUnmarshaller
     {
-        public static DescribeGatewaySMBUsersResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGatewaySMBUsersResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGatewaySMBUsersResponse describeGatewaySMBUsersResponse = new DescribeGatewaySMBUsersResponse();
 
-			describeGatewaySMBUsersResponse.HttpResponse = context.HttpResponse;
-			describeGatewaySMBUsersResponse.RequestId = context.StringValue("DescribeGatewaySMBUsers.RequestId");
-			describeGatewaySMBUsersResponse.Success = context.BooleanValue("DescribeGatewaySMBUsers.Success");
-			describeGatewaySMBUsersResponse.Code = context.StringValue("DescribeGatewaySMBUsers.Code");
-			describeGatewaySMBUsersResponse.Message = context.StringValue("DescribeGatewaySMBUsers.Message");
-			describeGatewaySMBUsersResponse.TotalCount = context.IntegerValue("DescribeGatewaySMBUsers.TotalCount");
-			describeGatewaySMBUsersResponse.PageNumber = context.IntegerValue("DescribeGatewaySMBUsers.PageNumber");
-			describeGatewaySMBUsersResponse.PageSize = context.IntegerValue("DescribeGatewaySMBUsers.PageSize");
+			describeGatewaySMBUsersResponse.HttpResponse = _ctx.HttpResponse;
+			describeGatewaySMBUsersResponse.TotalCount = _ctx.IntegerValue("DescribeGatewaySMBUsers.TotalCount");
+			describeGatewaySMBUsersResponse.RequestId = _ctx.StringValue("DescribeGatewaySMBUsers.RequestId");
+			describeGatewaySMBUsersResponse.Message = _ctx.StringValue("DescribeGatewaySMBUsers.Message");
+			describeGatewaySMBUsersResponse.PageSize = _ctx.IntegerValue("DescribeGatewaySMBUsers.PageSize");
+			describeGatewaySMBUsersResponse.PageNumber = _ctx.IntegerValue("DescribeGatewaySMBUsers.PageNumber");
+			describeGatewaySMBUsersResponse.Code = _ctx.StringValue("DescribeGatewaySMBUsers.Code");
+			describeGatewaySMBUsersResponse.Success = _ctx.BooleanValue("DescribeGatewaySMBUsers.Success");
 
 			List<DescribeGatewaySMBUsersResponse.DescribeGatewaySMBUsers_User> describeGatewaySMBUsersResponse_users = new List<DescribeGatewaySMBUsersResponse.DescribeGatewaySMBUsers_User>();
-			for (int i = 0; i < context.Length("DescribeGatewaySMBUsers.Users.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeGatewaySMBUsers.Users.Length"); i++) {
 				DescribeGatewaySMBUsersResponse.DescribeGatewaySMBUsers_User user = new DescribeGatewaySMBUsersResponse.DescribeGatewaySMBUsers_User();
-				user.Username = context.StringValue("DescribeGatewaySMBUsers.Users["+ i +"].Username");
+				user.Username = _ctx.StringValue("DescribeGatewaySMBUsers.Users["+ i +"].Username");
 
 				describeGatewaySMBUsersResponse_users.Add(user);
 			}

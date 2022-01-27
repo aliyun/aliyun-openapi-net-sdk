@@ -26,14 +26,14 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 {
     public class DescribeExportProgressResponseUnmarshaller
     {
-        public static DescribeExportProgressResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeExportProgressResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeExportProgressResponse describeExportProgressResponse = new DescribeExportProgressResponse();
 
-			describeExportProgressResponse.HttpResponse = context.HttpResponse;
-			describeExportProgressResponse.RequestId = context.StringValue("DescribeExportProgress.RequestId");
-			describeExportProgressResponse.Status = context.StringValue("DescribeExportProgress.Status");
-			describeExportProgressResponse.FileHttpUrl = context.StringValue("DescribeExportProgress.FileHttpUrl");
+			describeExportProgressResponse.HttpResponse = _ctx.HttpResponse;
+			describeExportProgressResponse.RequestId = _ctx.StringValue("DescribeExportProgress.RequestId");
+			describeExportProgressResponse.Status = _ctx.StringValue("DescribeExportProgress.Status");
+			describeExportProgressResponse.FileHttpUrl = _ctx.StringValue("DescribeExportProgress.FileHttpUrl");
         
 			return describeExportProgressResponse;
         }

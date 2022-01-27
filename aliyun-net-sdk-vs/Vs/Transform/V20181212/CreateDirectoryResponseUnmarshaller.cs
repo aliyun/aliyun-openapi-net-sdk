@@ -26,13 +26,13 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class CreateDirectoryResponseUnmarshaller
     {
-        public static CreateDirectoryResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDirectoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateDirectoryResponse createDirectoryResponse = new CreateDirectoryResponse();
 
-			createDirectoryResponse.HttpResponse = context.HttpResponse;
-			createDirectoryResponse.RequestId = context.StringValue("CreateDirectory.RequestId");
-			createDirectoryResponse.Id = context.StringValue("CreateDirectory.Id");
+			createDirectoryResponse.HttpResponse = _ctx.HttpResponse;
+			createDirectoryResponse.RequestId = _ctx.StringValue("CreateDirectory.RequestId");
+			createDirectoryResponse.Id = _ctx.StringValue("CreateDirectory.Id");
         
 			return createDirectoryResponse;
         }

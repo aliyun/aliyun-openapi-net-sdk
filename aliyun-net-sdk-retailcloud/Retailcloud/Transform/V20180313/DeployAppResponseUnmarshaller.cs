@@ -26,20 +26,20 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class DeployAppResponseUnmarshaller
     {
-        public static DeployAppResponse Unmarshall(UnmarshallerContext context)
+        public static DeployAppResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeployAppResponse deployAppResponse = new DeployAppResponse();
 
-			deployAppResponse.HttpResponse = context.HttpResponse;
-			deployAppResponse.Code = context.IntegerValue("DeployApp.Code");
-			deployAppResponse.ErrMsg = context.StringValue("DeployApp.ErrMsg");
-			deployAppResponse.RequestId = context.StringValue("DeployApp.RequestId");
-			deployAppResponse.Success = context.BooleanValue("DeployApp.Success");
+			deployAppResponse.HttpResponse = _ctx.HttpResponse;
+			deployAppResponse.Code = _ctx.IntegerValue("DeployApp.Code");
+			deployAppResponse.ErrMsg = _ctx.StringValue("DeployApp.ErrMsg");
+			deployAppResponse.RequestId = _ctx.StringValue("DeployApp.RequestId");
+			deployAppResponse.Success = _ctx.BooleanValue("DeployApp.Success");
 
 			DeployAppResponse.DeployApp_Result result = new DeployAppResponse.DeployApp_Result();
-			result.Admitted = context.BooleanValue("DeployApp.Result.Admitted");
-			result.BusinessCode = context.StringValue("DeployApp.Result.BusinessCode");
-			result.DeployOrderId = context.LongValue("DeployApp.Result.DeployOrderId");
+			result.Admitted = _ctx.BooleanValue("DeployApp.Result.Admitted");
+			result.BusinessCode = _ctx.StringValue("DeployApp.Result.BusinessCode");
+			result.DeployOrderId = _ctx.LongValue("DeployApp.Result.DeployOrderId");
 			deployAppResponse.Result = result;
         
 			return deployAppResponse;

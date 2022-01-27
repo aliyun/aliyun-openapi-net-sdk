@@ -26,16 +26,30 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeDBInstanceSSLResponseUnmarshaller
     {
-        public static DescribeDBInstanceSSLResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDBInstanceSSLResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDBInstanceSSLResponse describeDBInstanceSSLResponse = new DescribeDBInstanceSSLResponse();
 
-			describeDBInstanceSSLResponse.HttpResponse = context.HttpResponse;
-			describeDBInstanceSSLResponse.RequestId = context.StringValue("DescribeDBInstanceSSL.RequestId");
-			describeDBInstanceSSLResponse.ConnectionString = context.StringValue("DescribeDBInstanceSSL.ConnectionString");
-			describeDBInstanceSSLResponse.SSLExpireTime = context.StringValue("DescribeDBInstanceSSL.SSLExpireTime");
-			describeDBInstanceSSLResponse.RequireUpdate = context.StringValue("DescribeDBInstanceSSL.RequireUpdate");
-			describeDBInstanceSSLResponse.RequireUpdateReason = context.StringValue("DescribeDBInstanceSSL.RequireUpdateReason");
+			describeDBInstanceSSLResponse.HttpResponse = _ctx.HttpResponse;
+			describeDBInstanceSSLResponse.RequestId = _ctx.StringValue("DescribeDBInstanceSSL.RequestId");
+			describeDBInstanceSSLResponse.ConnectionString = _ctx.StringValue("DescribeDBInstanceSSL.ConnectionString");
+			describeDBInstanceSSLResponse.SSLExpireTime = _ctx.StringValue("DescribeDBInstanceSSL.SSLExpireTime");
+			describeDBInstanceSSLResponse.SSLEnabled = _ctx.StringValue("DescribeDBInstanceSSL.SSLEnabled");
+			describeDBInstanceSSLResponse.RequireUpdateReason = _ctx.StringValue("DescribeDBInstanceSSL.RequireUpdateReason");
+			describeDBInstanceSSLResponse.CAType = _ctx.StringValue("DescribeDBInstanceSSL.CAType");
+			describeDBInstanceSSLResponse.ServerCert = _ctx.StringValue("DescribeDBInstanceSSL.ServerCert");
+			describeDBInstanceSSLResponse.ServerKey = _ctx.StringValue("DescribeDBInstanceSSL.ServerKey");
+			describeDBInstanceSSLResponse.SSLCreateTime = _ctx.StringValue("DescribeDBInstanceSSL.SSLCreateTime");
+			describeDBInstanceSSLResponse.ClientCACert = _ctx.StringValue("DescribeDBInstanceSSL.ClientCACert");
+			describeDBInstanceSSLResponse.ClientCACertExpireTime = _ctx.StringValue("DescribeDBInstanceSSL.ClientCACertExpireTime");
+			describeDBInstanceSSLResponse.ClientCertRevocationList = _ctx.StringValue("DescribeDBInstanceSSL.ClientCertRevocationList");
+			describeDBInstanceSSLResponse.ACL = _ctx.StringValue("DescribeDBInstanceSSL.ACL");
+			describeDBInstanceSSLResponse.ReplicationACL = _ctx.StringValue("DescribeDBInstanceSSL.ReplicationACL");
+			describeDBInstanceSSLResponse.ServerCAUrl = _ctx.StringValue("DescribeDBInstanceSSL.ServerCAUrl");
+			describeDBInstanceSSLResponse.RequireUpdate = _ctx.StringValue("DescribeDBInstanceSSL.RequireUpdate");
+			describeDBInstanceSSLResponse.RequireUpdateItem = _ctx.StringValue("DescribeDBInstanceSSL.RequireUpdateItem");
+			describeDBInstanceSSLResponse.LastModifyStatus = _ctx.StringValue("DescribeDBInstanceSSL.LastModifyStatus");
+			describeDBInstanceSSLResponse.ModifyStatusReason = _ctx.StringValue("DescribeDBInstanceSSL.ModifyStatusReason");
         
 			return describeDBInstanceSSLResponse;
         }

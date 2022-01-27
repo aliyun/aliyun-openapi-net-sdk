@@ -26,14 +26,14 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class UpdateStackTemplateByResourcesResponseUnmarshaller
     {
-        public static UpdateStackTemplateByResourcesResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateStackTemplateByResourcesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateStackTemplateByResourcesResponse updateStackTemplateByResourcesResponse = new UpdateStackTemplateByResourcesResponse();
 
-			updateStackTemplateByResourcesResponse.HttpResponse = context.HttpResponse;
-			updateStackTemplateByResourcesResponse.RequestId = context.StringValue("UpdateStackTemplateByResources.RequestId");
-			updateStackTemplateByResourcesResponse.OldTemplateBody = context.StringValue("UpdateStackTemplateByResources.OldTemplateBody");
-			updateStackTemplateByResourcesResponse.NewTemplateBody = context.StringValue("UpdateStackTemplateByResources.NewTemplateBody");
+			updateStackTemplateByResourcesResponse.HttpResponse = _ctx.HttpResponse;
+			updateStackTemplateByResourcesResponse.RequestId = _ctx.StringValue("UpdateStackTemplateByResources.RequestId");
+			updateStackTemplateByResourcesResponse.OldTemplateBody = _ctx.StringValue("UpdateStackTemplateByResources.OldTemplateBody");
+			updateStackTemplateByResourcesResponse.NewTemplateBody = _ctx.StringValue("UpdateStackTemplateByResources.NewTemplateBody");
         
 			return updateStackTemplateByResourcesResponse;
         }

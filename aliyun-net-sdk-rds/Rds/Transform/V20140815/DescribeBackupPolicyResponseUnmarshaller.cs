@@ -26,41 +26,43 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeBackupPolicyResponseUnmarshaller
     {
-        public static DescribeBackupPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeBackupPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeBackupPolicyResponse describeBackupPolicyResponse = new DescribeBackupPolicyResponse();
 
-			describeBackupPolicyResponse.HttpResponse = context.HttpResponse;
-			describeBackupPolicyResponse.RequestId = context.StringValue("DescribeBackupPolicy.RequestId");
-			describeBackupPolicyResponse.BackupRetentionPeriod = context.IntegerValue("DescribeBackupPolicy.BackupRetentionPeriod");
-			describeBackupPolicyResponse.PreferredNextBackupTime = context.StringValue("DescribeBackupPolicy.PreferredNextBackupTime");
-			describeBackupPolicyResponse.PreferredBackupTime = context.StringValue("DescribeBackupPolicy.PreferredBackupTime");
-			describeBackupPolicyResponse.PreferredBackupPeriod = context.StringValue("DescribeBackupPolicy.PreferredBackupPeriod");
-			describeBackupPolicyResponse.BackupLog = context.StringValue("DescribeBackupPolicy.BackupLog");
-			describeBackupPolicyResponse.LogBackupRetentionPeriod = context.IntegerValue("DescribeBackupPolicy.LogBackupRetentionPeriod");
-			describeBackupPolicyResponse.EnableBackupLog = context.StringValue("DescribeBackupPolicy.EnableBackupLog");
-			describeBackupPolicyResponse.LocalLogRetentionHours = context.IntegerValue("DescribeBackupPolicy.LocalLogRetentionHours");
-			describeBackupPolicyResponse.LocalLogRetentionSpace = context.StringValue("DescribeBackupPolicy.LocalLogRetentionSpace");
-			describeBackupPolicyResponse.Duplication = context.StringValue("DescribeBackupPolicy.Duplication");
-			describeBackupPolicyResponse.DuplicationContent = context.StringValue("DescribeBackupPolicy.DuplicationContent");
-			describeBackupPolicyResponse.HighSpaceUsageProtection = context.StringValue("DescribeBackupPolicy.HighSpaceUsageProtection");
-			describeBackupPolicyResponse.LogBackupFrequency = context.StringValue("DescribeBackupPolicy.LogBackupFrequency");
-			describeBackupPolicyResponse.CompressType = context.StringValue("DescribeBackupPolicy.CompressType");
-			describeBackupPolicyResponse.ArchiveBackupRetentionPeriod = context.StringValue("DescribeBackupPolicy.ArchiveBackupRetentionPeriod");
-			describeBackupPolicyResponse.ArchiveBackupKeepPolicy = context.StringValue("DescribeBackupPolicy.ArchiveBackupKeepPolicy");
-			describeBackupPolicyResponse.ArchiveBackupKeepCount = context.StringValue("DescribeBackupPolicy.ArchiveBackupKeepCount");
-			describeBackupPolicyResponse.ReleasedKeepPolicy = context.StringValue("DescribeBackupPolicy.ReleasedKeepPolicy");
-			describeBackupPolicyResponse.LogBackupLocalRetentionNumber = context.IntegerValue("DescribeBackupPolicy.LogBackupLocalRetentionNumber");
-			describeBackupPolicyResponse.Category = context.StringValue("DescribeBackupPolicy.Category");
-			describeBackupPolicyResponse.SupportReleasedKeep = context.IntegerValue("DescribeBackupPolicy.SupportReleasedKeep");
-			describeBackupPolicyResponse.BackupInterval = context.StringValue("DescribeBackupPolicy.BackupInterval");
+			describeBackupPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			describeBackupPolicyResponse.RequestId = _ctx.StringValue("DescribeBackupPolicy.RequestId");
+			describeBackupPolicyResponse.BackupRetentionPeriod = _ctx.IntegerValue("DescribeBackupPolicy.BackupRetentionPeriod");
+			describeBackupPolicyResponse.PreferredNextBackupTime = _ctx.StringValue("DescribeBackupPolicy.PreferredNextBackupTime");
+			describeBackupPolicyResponse.PreferredBackupTime = _ctx.StringValue("DescribeBackupPolicy.PreferredBackupTime");
+			describeBackupPolicyResponse.PreferredBackupPeriod = _ctx.StringValue("DescribeBackupPolicy.PreferredBackupPeriod");
+			describeBackupPolicyResponse.BackupLog = _ctx.StringValue("DescribeBackupPolicy.BackupLog");
+			describeBackupPolicyResponse.LogBackupRetentionPeriod = _ctx.IntegerValue("DescribeBackupPolicy.LogBackupRetentionPeriod");
+			describeBackupPolicyResponse.EnableBackupLog = _ctx.StringValue("DescribeBackupPolicy.EnableBackupLog");
+			describeBackupPolicyResponse.LocalLogRetentionHours = _ctx.IntegerValue("DescribeBackupPolicy.LocalLogRetentionHours");
+			describeBackupPolicyResponse.LocalLogRetentionSpace = _ctx.StringValue("DescribeBackupPolicy.LocalLogRetentionSpace");
+			describeBackupPolicyResponse.Duplication = _ctx.StringValue("DescribeBackupPolicy.Duplication");
+			describeBackupPolicyResponse.DuplicationContent = _ctx.StringValue("DescribeBackupPolicy.DuplicationContent");
+			describeBackupPolicyResponse.HighSpaceUsageProtection = _ctx.StringValue("DescribeBackupPolicy.HighSpaceUsageProtection");
+			describeBackupPolicyResponse.LogBackupFrequency = _ctx.StringValue("DescribeBackupPolicy.LogBackupFrequency");
+			describeBackupPolicyResponse.CompressType = _ctx.StringValue("DescribeBackupPolicy.CompressType");
+			describeBackupPolicyResponse.ArchiveBackupRetentionPeriod = _ctx.StringValue("DescribeBackupPolicy.ArchiveBackupRetentionPeriod");
+			describeBackupPolicyResponse.ArchiveBackupKeepPolicy = _ctx.StringValue("DescribeBackupPolicy.ArchiveBackupKeepPolicy");
+			describeBackupPolicyResponse.ArchiveBackupKeepCount = _ctx.StringValue("DescribeBackupPolicy.ArchiveBackupKeepCount");
+			describeBackupPolicyResponse.ReleasedKeepPolicy = _ctx.StringValue("DescribeBackupPolicy.ReleasedKeepPolicy");
+			describeBackupPolicyResponse.LogBackupLocalRetentionNumber = _ctx.IntegerValue("DescribeBackupPolicy.LogBackupLocalRetentionNumber");
+			describeBackupPolicyResponse.Category = _ctx.StringValue("DescribeBackupPolicy.Category");
+			describeBackupPolicyResponse.SupportReleasedKeep = _ctx.IntegerValue("DescribeBackupPolicy.SupportReleasedKeep");
+			describeBackupPolicyResponse.BackupInterval = _ctx.StringValue("DescribeBackupPolicy.BackupInterval");
+			describeBackupPolicyResponse.SupportVolumeShadowCopy = _ctx.IntegerValue("DescribeBackupPolicy.SupportVolumeShadowCopy");
+			describeBackupPolicyResponse.BackupMethod = _ctx.StringValue("DescribeBackupPolicy.BackupMethod");
 
 			DescribeBackupPolicyResponse.DescribeBackupPolicy_DuplicationLocation duplicationLocation = new DescribeBackupPolicyResponse.DescribeBackupPolicy_DuplicationLocation();
-			duplicationLocation.Sotrage = context.StringValue("DescribeBackupPolicy.DuplicationLocation.Sotrage");
+			duplicationLocation.Sotrage = _ctx.StringValue("DescribeBackupPolicy.DuplicationLocation.Sotrage");
 
 			DescribeBackupPolicyResponse.DescribeBackupPolicy_DuplicationLocation.DescribeBackupPolicy_Location location = new DescribeBackupPolicyResponse.DescribeBackupPolicy_DuplicationLocation.DescribeBackupPolicy_Location();
-			location.Endpoint = context.StringValue("DescribeBackupPolicy.DuplicationLocation.Location.Endpoint");
-			location.Bucket = context.StringValue("DescribeBackupPolicy.DuplicationLocation.Location.Bucket");
+			location.Endpoint = _ctx.StringValue("DescribeBackupPolicy.DuplicationLocation.Location.Endpoint");
+			location.Bucket = _ctx.StringValue("DescribeBackupPolicy.DuplicationLocation.Location.Bucket");
 			duplicationLocation.Location = location;
 			describeBackupPolicyResponse.DuplicationLocation = duplicationLocation;
         

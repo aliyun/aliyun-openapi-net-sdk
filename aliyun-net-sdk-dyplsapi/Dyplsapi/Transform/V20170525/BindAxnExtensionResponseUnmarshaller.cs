@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Dyplsapi.Transform.V20170525
 {
     public class BindAxnExtensionResponseUnmarshaller
     {
-        public static BindAxnExtensionResponse Unmarshall(UnmarshallerContext context)
+        public static BindAxnExtensionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BindAxnExtensionResponse bindAxnExtensionResponse = new BindAxnExtensionResponse();
 
-			bindAxnExtensionResponse.HttpResponse = context.HttpResponse;
-			bindAxnExtensionResponse.RequestId = context.StringValue("BindAxnExtension.RequestId");
-			bindAxnExtensionResponse.Code = context.StringValue("BindAxnExtension.Code");
-			bindAxnExtensionResponse.Message = context.StringValue("BindAxnExtension.Message");
+			bindAxnExtensionResponse.HttpResponse = _ctx.HttpResponse;
+			bindAxnExtensionResponse.Code = _ctx.StringValue("BindAxnExtension.Code");
+			bindAxnExtensionResponse.Message = _ctx.StringValue("BindAxnExtension.Message");
+			bindAxnExtensionResponse.RequestId = _ctx.StringValue("BindAxnExtension.RequestId");
 
 			BindAxnExtensionResponse.BindAxnExtension_SecretBindDTO secretBindDTO = new BindAxnExtensionResponse.BindAxnExtension_SecretBindDTO();
-			secretBindDTO.SubsId = context.StringValue("BindAxnExtension.SecretBindDTO.SubsId");
-			secretBindDTO.SecretNo = context.StringValue("BindAxnExtension.SecretBindDTO.SecretNo");
-			secretBindDTO.Extension = context.StringValue("BindAxnExtension.SecretBindDTO.Extension");
+			secretBindDTO.Extension = _ctx.StringValue("BindAxnExtension.SecretBindDTO.Extension");
+			secretBindDTO.SubsId = _ctx.StringValue("BindAxnExtension.SecretBindDTO.SubsId");
+			secretBindDTO.SecretNo = _ctx.StringValue("BindAxnExtension.SecretBindDTO.SecretNo");
 			bindAxnExtensionResponse.SecretBindDTO = secretBindDTO;
         
 			return bindAxnExtensionResponse;

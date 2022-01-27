@@ -60,6 +60,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string notifyUrl;
 
+			private string notifyReqAuth;
+
+			private string notifyAuthKey;
+
 			private string authType;
 
 			private string authKey;
@@ -85,6 +89,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					notifyUrl = value;
+				}
+			}
+
+			public string NotifyReqAuth
+			{
+				get
+				{
+					return notifyReqAuth;
+				}
+				set	
+				{
+					notifyReqAuth = value;
+				}
+			}
+
+			public string NotifyAuthKey
+			{
+				get
+				{
+					return notifyAuthKey;
+				}
+				set	
+				{
+					notifyAuthKey = value;
 				}
 			}
 

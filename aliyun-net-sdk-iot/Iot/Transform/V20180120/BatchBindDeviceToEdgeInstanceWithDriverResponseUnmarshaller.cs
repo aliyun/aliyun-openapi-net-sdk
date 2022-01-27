@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class BatchBindDeviceToEdgeInstanceWithDriverResponseUnmarshaller
     {
-        public static BatchBindDeviceToEdgeInstanceWithDriverResponse Unmarshall(UnmarshallerContext context)
+        public static BatchBindDeviceToEdgeInstanceWithDriverResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchBindDeviceToEdgeInstanceWithDriverResponse batchBindDeviceToEdgeInstanceWithDriverResponse = new BatchBindDeviceToEdgeInstanceWithDriverResponse();
 
-			batchBindDeviceToEdgeInstanceWithDriverResponse.HttpResponse = context.HttpResponse;
-			batchBindDeviceToEdgeInstanceWithDriverResponse.RequestId = context.StringValue("BatchBindDeviceToEdgeInstanceWithDriver.RequestId");
-			batchBindDeviceToEdgeInstanceWithDriverResponse.Success = context.BooleanValue("BatchBindDeviceToEdgeInstanceWithDriver.Success");
-			batchBindDeviceToEdgeInstanceWithDriverResponse.Code = context.StringValue("BatchBindDeviceToEdgeInstanceWithDriver.Code");
-			batchBindDeviceToEdgeInstanceWithDriverResponse.ErrorMessage = context.StringValue("BatchBindDeviceToEdgeInstanceWithDriver.ErrorMessage");
+			batchBindDeviceToEdgeInstanceWithDriverResponse.HttpResponse = _ctx.HttpResponse;
+			batchBindDeviceToEdgeInstanceWithDriverResponse.RequestId = _ctx.StringValue("BatchBindDeviceToEdgeInstanceWithDriver.RequestId");
+			batchBindDeviceToEdgeInstanceWithDriverResponse.Success = _ctx.BooleanValue("BatchBindDeviceToEdgeInstanceWithDriver.Success");
+			batchBindDeviceToEdgeInstanceWithDriverResponse.Code = _ctx.StringValue("BatchBindDeviceToEdgeInstanceWithDriver.Code");
+			batchBindDeviceToEdgeInstanceWithDriverResponse.ErrorMessage = _ctx.StringValue("BatchBindDeviceToEdgeInstanceWithDriver.ErrorMessage");
         
 			return batchBindDeviceToEdgeInstanceWithDriverResponse;
         }

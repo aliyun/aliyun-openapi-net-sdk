@@ -26,23 +26,23 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class ListStackGroupOperationResultsResponseUnmarshaller
     {
-        public static ListStackGroupOperationResultsResponse Unmarshall(UnmarshallerContext context)
+        public static ListStackGroupOperationResultsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListStackGroupOperationResultsResponse listStackGroupOperationResultsResponse = new ListStackGroupOperationResultsResponse();
 
-			listStackGroupOperationResultsResponse.HttpResponse = context.HttpResponse;
-			listStackGroupOperationResultsResponse.RequestId = context.StringValue("ListStackGroupOperationResults.RequestId");
-			listStackGroupOperationResultsResponse.PageNumber = context.IntegerValue("ListStackGroupOperationResults.PageNumber");
-			listStackGroupOperationResultsResponse.PageSize = context.IntegerValue("ListStackGroupOperationResults.PageSize");
-			listStackGroupOperationResultsResponse.TotalCount = context.IntegerValue("ListStackGroupOperationResults.TotalCount");
+			listStackGroupOperationResultsResponse.HttpResponse = _ctx.HttpResponse;
+			listStackGroupOperationResultsResponse.RequestId = _ctx.StringValue("ListStackGroupOperationResults.RequestId");
+			listStackGroupOperationResultsResponse.PageNumber = _ctx.IntegerValue("ListStackGroupOperationResults.PageNumber");
+			listStackGroupOperationResultsResponse.PageSize = _ctx.IntegerValue("ListStackGroupOperationResults.PageSize");
+			listStackGroupOperationResultsResponse.TotalCount = _ctx.IntegerValue("ListStackGroupOperationResults.TotalCount");
 
 			List<ListStackGroupOperationResultsResponse.ListStackGroupOperationResults_StackGroupOperationResult> listStackGroupOperationResultsResponse_stackGroupOperationResults = new List<ListStackGroupOperationResultsResponse.ListStackGroupOperationResults_StackGroupOperationResult>();
-			for (int i = 0; i < context.Length("ListStackGroupOperationResults.StackGroupOperationResults.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListStackGroupOperationResults.StackGroupOperationResults.Length"); i++) {
 				ListStackGroupOperationResultsResponse.ListStackGroupOperationResults_StackGroupOperationResult stackGroupOperationResult = new ListStackGroupOperationResultsResponse.ListStackGroupOperationResults_StackGroupOperationResult();
-				stackGroupOperationResult.AccountId = context.StringValue("ListStackGroupOperationResults.StackGroupOperationResults["+ i +"].AccountId");
-				stackGroupOperationResult.RegionId = context.StringValue("ListStackGroupOperationResults.StackGroupOperationResults["+ i +"].RegionId");
-				stackGroupOperationResult.Status = context.StringValue("ListStackGroupOperationResults.StackGroupOperationResults["+ i +"].Status");
-				stackGroupOperationResult.StatusReason = context.StringValue("ListStackGroupOperationResults.StackGroupOperationResults["+ i +"].StatusReason");
+				stackGroupOperationResult.AccountId = _ctx.StringValue("ListStackGroupOperationResults.StackGroupOperationResults["+ i +"].AccountId");
+				stackGroupOperationResult.RegionId = _ctx.StringValue("ListStackGroupOperationResults.StackGroupOperationResults["+ i +"].RegionId");
+				stackGroupOperationResult.Status = _ctx.StringValue("ListStackGroupOperationResults.StackGroupOperationResults["+ i +"].Status");
+				stackGroupOperationResult.StatusReason = _ctx.StringValue("ListStackGroupOperationResults.StackGroupOperationResults["+ i +"].StatusReason");
 
 				listStackGroupOperationResultsResponse_stackGroupOperationResults.Add(stackGroupOperationResult);
 			}

@@ -26,19 +26,19 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
     public class AssociatePlanogramRailResponseUnmarshaller
     {
-        public static AssociatePlanogramRailResponse Unmarshall(UnmarshallerContext context)
+        public static AssociatePlanogramRailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AssociatePlanogramRailResponse associatePlanogramRailResponse = new AssociatePlanogramRailResponse();
 
-			associatePlanogramRailResponse.HttpResponse = context.HttpResponse;
-			associatePlanogramRailResponse.ErrorMessage = context.StringValue("AssociatePlanogramRail.ErrorMessage");
-			associatePlanogramRailResponse.ErrorCode = context.StringValue("AssociatePlanogramRail.ErrorCode");
-			associatePlanogramRailResponse.Message = context.StringValue("AssociatePlanogramRail.Message");
-			associatePlanogramRailResponse.DynamicCode = context.StringValue("AssociatePlanogramRail.DynamicCode");
-			associatePlanogramRailResponse.Code = context.StringValue("AssociatePlanogramRail.Code");
-			associatePlanogramRailResponse.DynamicMessage = context.StringValue("AssociatePlanogramRail.DynamicMessage");
-			associatePlanogramRailResponse.RequestId = context.StringValue("AssociatePlanogramRail.RequestId");
-			associatePlanogramRailResponse.Success = context.BooleanValue("AssociatePlanogramRail.Success");
+			associatePlanogramRailResponse.HttpResponse = _ctx.HttpResponse;
+			associatePlanogramRailResponse.ErrorMessage = _ctx.StringValue("AssociatePlanogramRail.ErrorMessage");
+			associatePlanogramRailResponse.ErrorCode = _ctx.StringValue("AssociatePlanogramRail.ErrorCode");
+			associatePlanogramRailResponse.Message = _ctx.StringValue("AssociatePlanogramRail.Message");
+			associatePlanogramRailResponse.DynamicCode = _ctx.StringValue("AssociatePlanogramRail.DynamicCode");
+			associatePlanogramRailResponse.Code = _ctx.StringValue("AssociatePlanogramRail.Code");
+			associatePlanogramRailResponse.DynamicMessage = _ctx.StringValue("AssociatePlanogramRail.DynamicMessage");
+			associatePlanogramRailResponse.RequestId = _ctx.StringValue("AssociatePlanogramRail.RequestId");
+			associatePlanogramRailResponse.Success = _ctx.BooleanValue("AssociatePlanogramRail.Success");
         
 			return associatePlanogramRailResponse;
         }

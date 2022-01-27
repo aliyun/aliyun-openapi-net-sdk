@@ -26,18 +26,18 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 {
     public class GetSortScriptFileResponseUnmarshaller
     {
-        public static GetSortScriptFileResponse Unmarshall(UnmarshallerContext context)
+        public static GetSortScriptFileResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetSortScriptFileResponse getSortScriptFileResponse = new GetSortScriptFileResponse();
 
-			getSortScriptFileResponse.HttpResponse = context.HttpResponse;
-			getSortScriptFileResponse.RequestId = context.StringValue("GetSortScriptFile.requestId");
+			getSortScriptFileResponse.HttpResponse = _ctx.HttpResponse;
+			getSortScriptFileResponse.RequestId = _ctx.StringValue("GetSortScriptFile.requestId");
 
 			GetSortScriptFileResponse.GetSortScriptFile_Result result = new GetSortScriptFileResponse.GetSortScriptFile_Result();
-			result.Content = context.StringValue("GetSortScriptFile.Result.content");
-			result.Version = context.LongValue("GetSortScriptFile.Result.version");
-			result.CreateTime = context.StringValue("GetSortScriptFile.Result.createTime");
-			result.ModifyTime = context.StringValue("GetSortScriptFile.Result.modifyTime");
+			result.Content = _ctx.StringValue("GetSortScriptFile.Result.content");
+			result.Version = _ctx.LongValue("GetSortScriptFile.Result.version");
+			result.CreateTime = _ctx.StringValue("GetSortScriptFile.Result.createTime");
+			result.ModifyTime = _ctx.StringValue("GetSortScriptFile.Result.modifyTime");
 			getSortScriptFileResponse.Result = result;
         
 			return getSortScriptFileResponse;

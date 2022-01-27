@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 {
     public class PurgeClusterResponseUnmarshaller
     {
-        public static PurgeClusterResponse Unmarshall(UnmarshallerContext context)
+        public static PurgeClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PurgeClusterResponse purgeClusterResponse = new PurgeClusterResponse();
 
-			purgeClusterResponse.HttpResponse = context.HttpResponse;
-			purgeClusterResponse.RequestId = context.StringValue("PurgeCluster.RequestId");
+			purgeClusterResponse.HttpResponse = _ctx.HttpResponse;
+			purgeClusterResponse.RequestId = _ctx.StringValue("PurgeCluster.RequestId");
         
 			return purgeClusterResponse;
         }

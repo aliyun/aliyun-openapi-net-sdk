@@ -34,8 +34,8 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.live.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.live.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -91,6 +91,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 					{
 						DictionaryUtil.Add(QueryParameters,"SyncGroup." + (i + 1) + ".ResourceIds." +(j + 1), syncGroups[i].ResourceIdss[j]);
 					}
+					for (int j = 0; j < syncGroups[i].SyncOffsetss.Count; j++)
+					{
+						DictionaryUtil.Add(QueryParameters,"SyncGroup." + (i + 1) + ".SyncOffsets." +(j + 1), syncGroups[i].SyncOffsetss[j]);
+					}
 				}
 			}
 		}
@@ -105,6 +109,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 			private string hostResourceId;
 
 			private List<string> resourceIdss = new List<string>(){ };
+
+			private List<int?> syncOffsetss = new List<int?>(){ };
 
 			public int? Mode
 			{
@@ -151,6 +157,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					resourceIdss = value;
+				}
+			}
+
+			public List<int?> SyncOffsetss
+			{
+				get
+				{
+					return syncOffsetss;
+				}
+				set	
+				{
+					syncOffsetss = value;
 				}
 			}
 		}

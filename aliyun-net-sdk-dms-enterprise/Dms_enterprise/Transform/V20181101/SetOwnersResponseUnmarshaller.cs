@@ -26,15 +26,15 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 {
     public class SetOwnersResponseUnmarshaller
     {
-        public static SetOwnersResponse Unmarshall(UnmarshallerContext context)
+        public static SetOwnersResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetOwnersResponse setOwnersResponse = new SetOwnersResponse();
 
-			setOwnersResponse.HttpResponse = context.HttpResponse;
-			setOwnersResponse.RequestId = context.StringValue("SetOwners.RequestId");
-			setOwnersResponse.Success = context.BooleanValue("SetOwners.Success");
-			setOwnersResponse.ErrorMessage = context.StringValue("SetOwners.ErrorMessage");
-			setOwnersResponse.ErrorCode = context.StringValue("SetOwners.ErrorCode");
+			setOwnersResponse.HttpResponse = _ctx.HttpResponse;
+			setOwnersResponse.RequestId = _ctx.StringValue("SetOwners.RequestId");
+			setOwnersResponse.ErrorCode = _ctx.StringValue("SetOwners.ErrorCode");
+			setOwnersResponse.ErrorMessage = _ctx.StringValue("SetOwners.ErrorMessage");
+			setOwnersResponse.Success = _ctx.BooleanValue("SetOwners.Success");
         
 			return setOwnersResponse;
         }

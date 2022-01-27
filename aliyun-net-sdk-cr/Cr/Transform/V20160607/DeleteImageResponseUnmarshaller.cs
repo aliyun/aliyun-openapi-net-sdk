@@ -26,11 +26,11 @@ namespace Aliyun.Acs.cr.Transform.V20160607
 {
     public class DeleteImageResponseUnmarshaller
     {
-        public static DeleteImageResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteImageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteImageResponse deleteImageResponse = new DeleteImageResponse();
 
-			deleteImageResponse.HttpResponse = context.HttpResponse;
+			deleteImageResponse.HttpResponse = _ctx.HttpResponse;
         
 			return deleteImageResponse;
         }

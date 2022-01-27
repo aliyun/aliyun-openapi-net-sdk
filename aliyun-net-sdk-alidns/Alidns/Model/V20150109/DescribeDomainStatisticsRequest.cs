@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Alidns.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Alidns.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		private string startDate;
 
 		private string endDate;
+
+		private string domainType;
 
 		private string lang;
 
@@ -84,6 +86,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				endDate = value;
 				DictionaryUtil.Add(QueryParameters, "EndDate", value);
+			}
+		}
+
+		public string DomainType
+		{
+			get
+			{
+				return domainType;
+			}
+			set	
+			{
+				domainType = value;
+				DictionaryUtil.Add(QueryParameters, "DomainType", value);
 			}
 		}
 

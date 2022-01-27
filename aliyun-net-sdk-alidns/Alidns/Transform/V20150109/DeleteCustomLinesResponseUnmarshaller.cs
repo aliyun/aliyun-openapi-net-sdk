@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DeleteCustomLinesResponseUnmarshaller
     {
-        public static DeleteCustomLinesResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteCustomLinesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteCustomLinesResponse deleteCustomLinesResponse = new DeleteCustomLinesResponse();
 
-			deleteCustomLinesResponse.HttpResponse = context.HttpResponse;
-			deleteCustomLinesResponse.RequestId = context.StringValue("DeleteCustomLines.RequestId");
+			deleteCustomLinesResponse.HttpResponse = _ctx.HttpResponse;
+			deleteCustomLinesResponse.RequestId = _ctx.StringValue("DeleteCustomLines.RequestId");
         
 			return deleteCustomLinesResponse;
         }

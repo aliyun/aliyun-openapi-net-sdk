@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeUserLayoutAuthorizationResponseUnmarshaller
     {
-        public static DescribeUserLayoutAuthorizationResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUserLayoutAuthorizationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeUserLayoutAuthorizationResponse describeUserLayoutAuthorizationResponse = new DescribeUserLayoutAuthorizationResponse();
 
-			describeUserLayoutAuthorizationResponse.HttpResponse = context.HttpResponse;
-			describeUserLayoutAuthorizationResponse.RequestId = context.StringValue("DescribeUserLayoutAuthorization.RequestId");
-			describeUserLayoutAuthorizationResponse.Authorized = context.BooleanValue("DescribeUserLayoutAuthorization.Authorized");
+			describeUserLayoutAuthorizationResponse.HttpResponse = _ctx.HttpResponse;
+			describeUserLayoutAuthorizationResponse.RequestId = _ctx.StringValue("DescribeUserLayoutAuthorization.RequestId");
+			describeUserLayoutAuthorizationResponse.Authorized = _ctx.BooleanValue("DescribeUserLayoutAuthorization.Authorized");
         
 			return describeUserLayoutAuthorizationResponse;
         }

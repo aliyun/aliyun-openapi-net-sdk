@@ -25,179 +25,99 @@ namespace Aliyun.Acs.imm.Model.V20170906
 	public class GetImageResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string setId;
-
-		private string imageUri;
-
-		private string remarksA;
-
-		private string remarksB;
-
-		private string createTime;
-
 		private string modifyTime;
-
-		private int? imageWidth;
-
-		private int? imageHeight;
-
-		private string imageFormat;
-
-		private string exif;
-
-		private int? fileSize;
-
-		private string imageTime;
-
-		private string orientation;
-
-		private string sourceType;
 
 		private string sourceUri;
 
-		private string sourcePosition;
-
-		private string facesStatus;
-
-		private string facesModifyTime;
-
-		private string location;
-
-		private string oCRStatus;
-
-		private string oCRModifyTime;
-
-		private string oCRFailReason;
+		private string sourceType;
 
 		private string facesFailReason;
-
-		private string tagsFailReason;
-
-		private string tagsModifyTime;
-
-		private string celebrityStatus;
-
-		private string celebrityModifyTime;
-
-		private string celebrityFailReason;
-
-		private string tagsStatus;
-
-		private string remarksC;
-
-		private string remarksD;
-
-		private string externalId;
-
-		private string addressModifyTime;
-
-		private string addressStatus;
-
-		private string addressFailReason;
-
-		private string remarksArrayA;
-
-		private string remarksArrayB;
-
-		private string imageQualityModifyTime;
-
-		private string imageQualityFailReason;
-
-		private string imageQualityStatus;
 
 		private string croppingSuggestionStatus;
 
 		private string croppingSuggestionFailReason;
 
+		private string remarksA;
+
+		private string addressFailReason;
+
+		private string remarksB;
+
+		private string addressModifyTime;
+
+		private string imageFormat;
+
+		private string remarksArrayB;
+
+		private string tagsFailReason;
+
+		private string exif;
+
+		private string facesModifyTime;
+
+		private string remarksC;
+
+		private string remarksD;
+
+		private int? imageWidth;
+
+		private string sourcePosition;
+
+		private string remarksArrayA;
+
+		private string addressStatus;
+
+		private string facesStatus;
+
+		private string imageQualityModifyTime;
+
+		private string requestId;
+
+		private string tagsModifyTime;
+
+		private string externalId;
+
+		private string createTime;
+
+		private string imageQualityFailReason;
+
+		private string imageUri;
+
+		private string orientation;
+
+		private string oCRStatus;
+
+		private string oCRModifyTime;
+
 		private string croppingSuggestionModifyTime;
+
+		private string imageTime;
+
+		private string tagsStatus;
+
+		private string imageQualityStatus;
+
+		private int? imageHeight;
+
+		private string oCRFailReason;
+
+		private string setId;
+
+		private string location;
+
+		private int? fileSize;
 
 		private List<GetImage_CroppingSuggestionItem> croppingSuggestion;
 
 		private List<GetImage_FacesItem> faces;
 
-		private List<GetImage_OCRItem> oCR;
-
 		private List<GetImage_TagsItem> tags;
 
-		private List<GetImage_CelebrityItem> celebrity;
+		private List<GetImage_OCRItem> oCR;
 
 		private GetImage_ImageQuality imageQuality;
 
 		private GetImage_Address address;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string SetId
-		{
-			get
-			{
-				return setId;
-			}
-			set	
-			{
-				setId = value;
-			}
-		}
-
-		public string ImageUri
-		{
-			get
-			{
-				return imageUri;
-			}
-			set	
-			{
-				imageUri = value;
-			}
-		}
-
-		public string RemarksA
-		{
-			get
-			{
-				return remarksA;
-			}
-			set	
-			{
-				remarksA = value;
-			}
-		}
-
-		public string RemarksB
-		{
-			get
-			{
-				return remarksB;
-			}
-			set	
-			{
-				remarksB = value;
-			}
-		}
-
-		public string CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
-			}
-		}
 
 		public string ModifyTime
 		{
@@ -208,102 +128,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				modifyTime = value;
-			}
-		}
-
-		public int? ImageWidth
-		{
-			get
-			{
-				return imageWidth;
-			}
-			set	
-			{
-				imageWidth = value;
-			}
-		}
-
-		public int? ImageHeight
-		{
-			get
-			{
-				return imageHeight;
-			}
-			set	
-			{
-				imageHeight = value;
-			}
-		}
-
-		public string ImageFormat
-		{
-			get
-			{
-				return imageFormat;
-			}
-			set	
-			{
-				imageFormat = value;
-			}
-		}
-
-		public string Exif
-		{
-			get
-			{
-				return exif;
-			}
-			set	
-			{
-				exif = value;
-			}
-		}
-
-		public int? FileSize
-		{
-			get
-			{
-				return fileSize;
-			}
-			set	
-			{
-				fileSize = value;
-			}
-		}
-
-		public string ImageTime
-		{
-			get
-			{
-				return imageTime;
-			}
-			set	
-			{
-				imageTime = value;
-			}
-		}
-
-		public string Orientation
-		{
-			get
-			{
-				return orientation;
-			}
-			set	
-			{
-				orientation = value;
-			}
-		}
-
-		public string SourceType
-		{
-			get
-			{
-				return sourceType;
-			}
-			set	
-			{
-				sourceType = value;
 			}
 		}
 
@@ -319,87 +143,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string SourcePosition
+		public string SourceType
 		{
 			get
 			{
-				return sourcePosition;
+				return sourceType;
 			}
 			set	
 			{
-				sourcePosition = value;
-			}
-		}
-
-		public string FacesStatus
-		{
-			get
-			{
-				return facesStatus;
-			}
-			set	
-			{
-				facesStatus = value;
-			}
-		}
-
-		public string FacesModifyTime
-		{
-			get
-			{
-				return facesModifyTime;
-			}
-			set	
-			{
-				facesModifyTime = value;
-			}
-		}
-
-		public string Location
-		{
-			get
-			{
-				return location;
-			}
-			set	
-			{
-				location = value;
-			}
-		}
-
-		public string OCRStatus
-		{
-			get
-			{
-				return oCRStatus;
-			}
-			set	
-			{
-				oCRStatus = value;
-			}
-		}
-
-		public string OCRModifyTime
-		{
-			get
-			{
-				return oCRModifyTime;
-			}
-			set	
-			{
-				oCRModifyTime = value;
-			}
-		}
-
-		public string OCRFailReason
-		{
-			get
-			{
-				return oCRFailReason;
-			}
-			set	
-			{
-				oCRFailReason = value;
+				sourceType = value;
 			}
 		}
 
@@ -412,210 +164,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				facesFailReason = value;
-			}
-		}
-
-		public string TagsFailReason
-		{
-			get
-			{
-				return tagsFailReason;
-			}
-			set	
-			{
-				tagsFailReason = value;
-			}
-		}
-
-		public string TagsModifyTime
-		{
-			get
-			{
-				return tagsModifyTime;
-			}
-			set	
-			{
-				tagsModifyTime = value;
-			}
-		}
-
-		public string CelebrityStatus
-		{
-			get
-			{
-				return celebrityStatus;
-			}
-			set	
-			{
-				celebrityStatus = value;
-			}
-		}
-
-		public string CelebrityModifyTime
-		{
-			get
-			{
-				return celebrityModifyTime;
-			}
-			set	
-			{
-				celebrityModifyTime = value;
-			}
-		}
-
-		public string CelebrityFailReason
-		{
-			get
-			{
-				return celebrityFailReason;
-			}
-			set	
-			{
-				celebrityFailReason = value;
-			}
-		}
-
-		public string TagsStatus
-		{
-			get
-			{
-				return tagsStatus;
-			}
-			set	
-			{
-				tagsStatus = value;
-			}
-		}
-
-		public string RemarksC
-		{
-			get
-			{
-				return remarksC;
-			}
-			set	
-			{
-				remarksC = value;
-			}
-		}
-
-		public string RemarksD
-		{
-			get
-			{
-				return remarksD;
-			}
-			set	
-			{
-				remarksD = value;
-			}
-		}
-
-		public string ExternalId
-		{
-			get
-			{
-				return externalId;
-			}
-			set	
-			{
-				externalId = value;
-			}
-		}
-
-		public string AddressModifyTime
-		{
-			get
-			{
-				return addressModifyTime;
-			}
-			set	
-			{
-				addressModifyTime = value;
-			}
-		}
-
-		public string AddressStatus
-		{
-			get
-			{
-				return addressStatus;
-			}
-			set	
-			{
-				addressStatus = value;
-			}
-		}
-
-		public string AddressFailReason
-		{
-			get
-			{
-				return addressFailReason;
-			}
-			set	
-			{
-				addressFailReason = value;
-			}
-		}
-
-		public string RemarksArrayA
-		{
-			get
-			{
-				return remarksArrayA;
-			}
-			set	
-			{
-				remarksArrayA = value;
-			}
-		}
-
-		public string RemarksArrayB
-		{
-			get
-			{
-				return remarksArrayB;
-			}
-			set	
-			{
-				remarksArrayB = value;
-			}
-		}
-
-		public string ImageQualityModifyTime
-		{
-			get
-			{
-				return imageQualityModifyTime;
-			}
-			set	
-			{
-				imageQualityModifyTime = value;
-			}
-		}
-
-		public string ImageQualityFailReason
-		{
-			get
-			{
-				return imageQualityFailReason;
-			}
-			set	
-			{
-				imageQualityFailReason = value;
-			}
-		}
-
-		public string ImageQualityStatus
-		{
-			get
-			{
-				return imageQualityStatus;
-			}
-			set	
-			{
-				imageQualityStatus = value;
 			}
 		}
 
@@ -643,6 +191,318 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public string RemarksA
+		{
+			get
+			{
+				return remarksA;
+			}
+			set	
+			{
+				remarksA = value;
+			}
+		}
+
+		public string AddressFailReason
+		{
+			get
+			{
+				return addressFailReason;
+			}
+			set	
+			{
+				addressFailReason = value;
+			}
+		}
+
+		public string RemarksB
+		{
+			get
+			{
+				return remarksB;
+			}
+			set	
+			{
+				remarksB = value;
+			}
+		}
+
+		public string AddressModifyTime
+		{
+			get
+			{
+				return addressModifyTime;
+			}
+			set	
+			{
+				addressModifyTime = value;
+			}
+		}
+
+		public string ImageFormat
+		{
+			get
+			{
+				return imageFormat;
+			}
+			set	
+			{
+				imageFormat = value;
+			}
+		}
+
+		public string RemarksArrayB
+		{
+			get
+			{
+				return remarksArrayB;
+			}
+			set	
+			{
+				remarksArrayB = value;
+			}
+		}
+
+		public string TagsFailReason
+		{
+			get
+			{
+				return tagsFailReason;
+			}
+			set	
+			{
+				tagsFailReason = value;
+			}
+		}
+
+		public string Exif
+		{
+			get
+			{
+				return exif;
+			}
+			set	
+			{
+				exif = value;
+			}
+		}
+
+		public string FacesModifyTime
+		{
+			get
+			{
+				return facesModifyTime;
+			}
+			set	
+			{
+				facesModifyTime = value;
+			}
+		}
+
+		public string RemarksC
+		{
+			get
+			{
+				return remarksC;
+			}
+			set	
+			{
+				remarksC = value;
+			}
+		}
+
+		public string RemarksD
+		{
+			get
+			{
+				return remarksD;
+			}
+			set	
+			{
+				remarksD = value;
+			}
+		}
+
+		public int? ImageWidth
+		{
+			get
+			{
+				return imageWidth;
+			}
+			set	
+			{
+				imageWidth = value;
+			}
+		}
+
+		public string SourcePosition
+		{
+			get
+			{
+				return sourcePosition;
+			}
+			set	
+			{
+				sourcePosition = value;
+			}
+		}
+
+		public string RemarksArrayA
+		{
+			get
+			{
+				return remarksArrayA;
+			}
+			set	
+			{
+				remarksArrayA = value;
+			}
+		}
+
+		public string AddressStatus
+		{
+			get
+			{
+				return addressStatus;
+			}
+			set	
+			{
+				addressStatus = value;
+			}
+		}
+
+		public string FacesStatus
+		{
+			get
+			{
+				return facesStatus;
+			}
+			set	
+			{
+				facesStatus = value;
+			}
+		}
+
+		public string ImageQualityModifyTime
+		{
+			get
+			{
+				return imageQualityModifyTime;
+			}
+			set	
+			{
+				imageQualityModifyTime = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string TagsModifyTime
+		{
+			get
+			{
+				return tagsModifyTime;
+			}
+			set	
+			{
+				tagsModifyTime = value;
+			}
+		}
+
+		public string ExternalId
+		{
+			get
+			{
+				return externalId;
+			}
+			set	
+			{
+				externalId = value;
+			}
+		}
+
+		public string CreateTime
+		{
+			get
+			{
+				return createTime;
+			}
+			set	
+			{
+				createTime = value;
+			}
+		}
+
+		public string ImageQualityFailReason
+		{
+			get
+			{
+				return imageQualityFailReason;
+			}
+			set	
+			{
+				imageQualityFailReason = value;
+			}
+		}
+
+		public string ImageUri
+		{
+			get
+			{
+				return imageUri;
+			}
+			set	
+			{
+				imageUri = value;
+			}
+		}
+
+		public string Orientation
+		{
+			get
+			{
+				return orientation;
+			}
+			set	
+			{
+				orientation = value;
+			}
+		}
+
+		public string OCRStatus
+		{
+			get
+			{
+				return oCRStatus;
+			}
+			set	
+			{
+				oCRStatus = value;
+			}
+		}
+
+		public string OCRModifyTime
+		{
+			get
+			{
+				return oCRModifyTime;
+			}
+			set	
+			{
+				oCRModifyTime = value;
+			}
+		}
+
 		public string CroppingSuggestionModifyTime
 		{
 			get
@@ -652,6 +512,102 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				croppingSuggestionModifyTime = value;
+			}
+		}
+
+		public string ImageTime
+		{
+			get
+			{
+				return imageTime;
+			}
+			set	
+			{
+				imageTime = value;
+			}
+		}
+
+		public string TagsStatus
+		{
+			get
+			{
+				return tagsStatus;
+			}
+			set	
+			{
+				tagsStatus = value;
+			}
+		}
+
+		public string ImageQualityStatus
+		{
+			get
+			{
+				return imageQualityStatus;
+			}
+			set	
+			{
+				imageQualityStatus = value;
+			}
+		}
+
+		public int? ImageHeight
+		{
+			get
+			{
+				return imageHeight;
+			}
+			set	
+			{
+				imageHeight = value;
+			}
+		}
+
+		public string OCRFailReason
+		{
+			get
+			{
+				return oCRFailReason;
+			}
+			set	
+			{
+				oCRFailReason = value;
+			}
+		}
+
+		public string SetId
+		{
+			get
+			{
+				return setId;
+			}
+			set	
+			{
+				setId = value;
+			}
+		}
+
+		public string Location
+		{
+			get
+			{
+				return location;
+			}
+			set	
+			{
+				location = value;
+			}
+		}
+
+		public int? FileSize
+		{
+			get
+			{
+				return fileSize;
+			}
+			set	
+			{
+				fileSize = value;
 			}
 		}
 
@@ -679,18 +635,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public List<GetImage_OCRItem> OCR
-		{
-			get
-			{
-				return oCR;
-			}
-			set	
-			{
-				oCR = value;
-			}
-		}
-
 		public List<GetImage_TagsItem> Tags
 		{
 			get
@@ -703,15 +647,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public List<GetImage_CelebrityItem> Celebrity
+		public List<GetImage_OCRItem> OCR
 		{
 			get
 			{
-				return celebrity;
+				return oCR;
 			}
 			set	
 			{
-				celebrity = value;
+				oCR = value;
 			}
 		}
 
@@ -787,37 +731,13 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			public class GetImage_CroppingBoundary
 			{
 
-				private int? width;
-
-				private int? height;
-
 				private int? left;
 
 				private int? top;
 
-				public int? Width
-				{
-					get
-					{
-						return width;
-					}
-					set	
-					{
-						width = value;
-					}
-				}
+				private int? height;
 
-				public int? Height
-				{
-					get
-					{
-						return height;
-					}
-					set	
-					{
-						height = value;
-					}
-				}
+				private int? width;
 
 				public int? Left
 				{
@@ -842,47 +762,59 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						top = value;
 					}
 				}
+
+				public int? Height
+				{
+					get
+					{
+						return height;
+					}
+					set	
+					{
+						height = value;
+					}
+				}
+
+				public int? Width
+				{
+					get
+					{
+						return width;
+					}
+					set	
+					{
+						width = value;
+					}
+				}
 			}
 		}
 
 		public class GetImage_FacesItem
 		{
 
-			private string faceId;
-
 			private float? faceConfidence;
 
-			private string age;
-
-			private string gender;
-
-			private string emotion;
+			private string faceId;
 
 			private float? attractive;
 
-			private float? genderConfidence;
-
-			private string groupId;
-
 			private float? faceQuality;
+
+			private float? genderConfidence;
 
 			private float? emotionConfidence;
 
-			private GetImage_FaceAttributes faceAttributes;
+			private string emotion;
+
+			private string gender;
+
+			private string age;
+
+			private string groupId;
 
 			private GetImage_EmotionDetails emotionDetails;
 
-			public string FaceId
-			{
-				get
-				{
-					return faceId;
-				}
-				set	
-				{
-					faceId = value;
-				}
-			}
+			private GetImage_FaceAttributes faceAttributes;
 
 			public float? FaceConfidence
 			{
@@ -896,39 +828,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
-			public string Age
+			public string FaceId
 			{
 				get
 				{
-					return age;
+					return faceId;
 				}
 				set	
 				{
-					age = value;
-				}
-			}
-
-			public string Gender
-			{
-				get
-				{
-					return gender;
-				}
-				set	
-				{
-					gender = value;
-				}
-			}
-
-			public string Emotion
-			{
-				get
-				{
-					return emotion;
-				}
-				set	
-				{
-					emotion = value;
+					faceId = value;
 				}
 			}
 
@@ -944,30 +852,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
-			public float? GenderConfidence
-			{
-				get
-				{
-					return genderConfidence;
-				}
-				set	
-				{
-					genderConfidence = value;
-				}
-			}
-
-			public string GroupId
-			{
-				get
-				{
-					return groupId;
-				}
-				set	
-				{
-					groupId = value;
-				}
-			}
-
 			public float? FaceQuality
 			{
 				get
@@ -977,6 +861,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				set	
 				{
 					faceQuality = value;
+				}
+			}
+
+			public float? GenderConfidence
+			{
+				get
+				{
+					return genderConfidence;
+				}
+				set	
+				{
+					genderConfidence = value;
 				}
 			}
 
@@ -992,15 +888,51 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
-			public GetImage_FaceAttributes FaceAttributes
+			public string Emotion
 			{
 				get
 				{
-					return faceAttributes;
+					return emotion;
 				}
 				set	
 				{
-					faceAttributes = value;
+					emotion = value;
+				}
+			}
+
+			public string Gender
+			{
+				get
+				{
+					return gender;
+				}
+				set	
+				{
+					gender = value;
+				}
+			}
+
+			public string Age
+			{
+				get
+				{
+					return age;
+				}
+				set	
+				{
+					age = value;
+				}
+			}
+
+			public string GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
 				}
 			}
 
@@ -1016,40 +948,138 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
+			public GetImage_FaceAttributes FaceAttributes
+			{
+				get
+				{
+					return faceAttributes;
+				}
+				set	
+				{
+					faceAttributes = value;
+				}
+			}
+
+			public class GetImage_EmotionDetails
+			{
+
+				private float? cALM;
+
+				private float? sCARED;
+
+				private float? hAPPY;
+
+				private float? sAD;
+
+				private float? sURPRISED;
+
+				private float? aNGRY;
+
+				private float? dISGUSTED;
+
+				public float? CALM
+				{
+					get
+					{
+						return cALM;
+					}
+					set	
+					{
+						cALM = value;
+					}
+				}
+
+				public float? SCARED
+				{
+					get
+					{
+						return sCARED;
+					}
+					set	
+					{
+						sCARED = value;
+					}
+				}
+
+				public float? HAPPY
+				{
+					get
+					{
+						return hAPPY;
+					}
+					set	
+					{
+						hAPPY = value;
+					}
+				}
+
+				public float? SAD
+				{
+					get
+					{
+						return sAD;
+					}
+					set	
+					{
+						sAD = value;
+					}
+				}
+
+				public float? SURPRISED
+				{
+					get
+					{
+						return sURPRISED;
+					}
+					set	
+					{
+						sURPRISED = value;
+					}
+				}
+
+				public float? ANGRY
+				{
+					get
+					{
+						return aNGRY;
+					}
+					set	
+					{
+						aNGRY = value;
+					}
+				}
+
+				public float? DISGUSTED
+				{
+					get
+					{
+						return dISGUSTED;
+					}
+					set	
+					{
+						dISGUSTED = value;
+					}
+				}
+			}
+
 			public class GetImage_FaceAttributes
 			{
 
-				private string glasses;
-
 				private string beard;
-
-				private string race;
-
-				private string mask;
-
-				private float? glassesConfidence;
 
 				private float? beardConfidence;
 
-				private float? raceConfidence;
-
 				private float? maskConfidence;
+
+				private string mask;
+
+				private string glasses;
+
+				private float? glassesConfidence;
 
 				private GetImage_FaceBoundary faceBoundary;
 
 				private GetImage_HeadPose headPose;
-
-				public string Glasses
-				{
-					get
-					{
-						return glasses;
-					}
-					set	
-					{
-						glasses = value;
-					}
-				}
 
 				public string Beard
 				{
@@ -1060,42 +1090,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					set	
 					{
 						beard = value;
-					}
-				}
-
-				public string Race
-				{
-					get
-					{
-						return race;
-					}
-					set	
-					{
-						race = value;
-					}
-				}
-
-				public string Mask
-				{
-					get
-					{
-						return mask;
-					}
-					set	
-					{
-						mask = value;
-					}
-				}
-
-				public float? GlassesConfidence
-				{
-					get
-					{
-						return glassesConfidence;
-					}
-					set	
-					{
-						glassesConfidence = value;
 					}
 				}
 
@@ -1111,18 +1105,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					}
 				}
 
-				public float? RaceConfidence
-				{
-					get
-					{
-						return raceConfidence;
-					}
-					set	
-					{
-						raceConfidence = value;
-					}
-				}
-
 				public float? MaskConfidence
 				{
 					get
@@ -1132,6 +1114,42 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					set	
 					{
 						maskConfidence = value;
+					}
+				}
+
+				public string Mask
+				{
+					get
+					{
+						return mask;
+					}
+					set	
+					{
+						mask = value;
+					}
+				}
+
+				public string Glasses
+				{
+					get
+					{
+						return glasses;
+					}
+					set	
+					{
+						glasses = value;
+					}
+				}
+
+				public float? GlassesConfidence
+				{
+					get
+					{
+						return glassesConfidence;
+					}
+					set	
+					{
+						glassesConfidence = value;
 					}
 				}
 
@@ -1166,9 +1184,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 					private int? top;
 
-					private int? width;
-
 					private int? height;
+
+					private int? width;
 
 					public int? Left
 					{
@@ -1194,18 +1212,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						}
 					}
 
-					public int? Width
-					{
-						get
-						{
-							return width;
-						}
-						set	
-						{
-							width = value;
-						}
-					}
-
 					public int? Height
 					{
 						get
@@ -1215,6 +1221,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						set	
 						{
 							height = value;
+						}
+					}
+
+					public int? Width
+					{
+						get
+						{
+							return width;
+						}
+						set	
+						{
+							width = value;
 						}
 					}
 				}
@@ -1265,238 +1283,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					}
 				}
 			}
-
-			public class GetImage_EmotionDetails
-			{
-
-				private float? hAPPY;
-
-				private float? sAD;
-
-				private float? aNGRY;
-
-				private float? sURPRISED;
-
-				private float? sCARED;
-
-				private float? dISGUSTED;
-
-				private float? cALM;
-
-				public float? HAPPY
-				{
-					get
-					{
-						return hAPPY;
-					}
-					set	
-					{
-						hAPPY = value;
-					}
-				}
-
-				public float? SAD
-				{
-					get
-					{
-						return sAD;
-					}
-					set	
-					{
-						sAD = value;
-					}
-				}
-
-				public float? ANGRY
-				{
-					get
-					{
-						return aNGRY;
-					}
-					set	
-					{
-						aNGRY = value;
-					}
-				}
-
-				public float? SURPRISED
-				{
-					get
-					{
-						return sURPRISED;
-					}
-					set	
-					{
-						sURPRISED = value;
-					}
-				}
-
-				public float? SCARED
-				{
-					get
-					{
-						return sCARED;
-					}
-					set	
-					{
-						sCARED = value;
-					}
-				}
-
-				public float? DISGUSTED
-				{
-					get
-					{
-						return dISGUSTED;
-					}
-					set	
-					{
-						dISGUSTED = value;
-					}
-				}
-
-				public float? CALM
-				{
-					get
-					{
-						return cALM;
-					}
-					set	
-					{
-						cALM = value;
-					}
-				}
-			}
-		}
-
-		public class GetImage_OCRItem
-		{
-
-			private string oCRContents;
-
-			private float? oCRConfidence;
-
-			private GetImage_OCRBoundary oCRBoundary;
-
-			public string OCRContents
-			{
-				get
-				{
-					return oCRContents;
-				}
-				set	
-				{
-					oCRContents = value;
-				}
-			}
-
-			public float? OCRConfidence
-			{
-				get
-				{
-					return oCRConfidence;
-				}
-				set	
-				{
-					oCRConfidence = value;
-				}
-			}
-
-			public GetImage_OCRBoundary OCRBoundary
-			{
-				get
-				{
-					return oCRBoundary;
-				}
-				set	
-				{
-					oCRBoundary = value;
-				}
-			}
-
-			public class GetImage_OCRBoundary
-			{
-
-				private int? left;
-
-				private int? top;
-
-				private int? width;
-
-				private int? height;
-
-				public int? Left
-				{
-					get
-					{
-						return left;
-					}
-					set	
-					{
-						left = value;
-					}
-				}
-
-				public int? Top
-				{
-					get
-					{
-						return top;
-					}
-					set	
-					{
-						top = value;
-					}
-				}
-
-				public int? Width
-				{
-					get
-					{
-						return width;
-					}
-					set	
-					{
-						width = value;
-					}
-				}
-
-				public int? Height
-				{
-					get
-					{
-						return height;
-					}
-					set	
-					{
-						height = value;
-					}
-				}
-			}
 		}
 
 		public class GetImage_TagsItem
 		{
 
-			private string tagName;
-
 			private float? tagConfidence;
+
+			private string tagName;
 
 			private int? tagLevel;
 
 			private string parentTagName;
-
-			public string TagName
-			{
-				get
-				{
-					return tagName;
-				}
-				set	
-				{
-					tagName = value;
-				}
-			}
 
 			public float? TagConfidence
 			{
@@ -1507,6 +1305,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				set	
 				{
 					tagConfidence = value;
+				}
+			}
+
+			public string TagName
+			{
+				get
+				{
+					return tagName;
+				}
+				set	
+				{
+					tagName = value;
 				}
 			}
 
@@ -1535,89 +1345,61 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public class GetImage_CelebrityItem
+		public class GetImage_OCRItem
 		{
 
-			private string celebrityName;
+			private float? oCRConfidence;
 
-			private string celebrityGender;
+			private string oCRContents;
 
-			private float? celebrityConfidence;
+			private GetImage_OCRBoundary oCRBoundary;
 
-			private string celebrityLibraryName;
-
-			private GetImage_CelebrityBoundary celebrityBoundary;
-
-			public string CelebrityName
+			public float? OCRConfidence
 			{
 				get
 				{
-					return celebrityName;
+					return oCRConfidence;
 				}
 				set	
 				{
-					celebrityName = value;
+					oCRConfidence = value;
 				}
 			}
 
-			public string CelebrityGender
+			public string OCRContents
 			{
 				get
 				{
-					return celebrityGender;
+					return oCRContents;
 				}
 				set	
 				{
-					celebrityGender = value;
+					oCRContents = value;
 				}
 			}
 
-			public float? CelebrityConfidence
+			public GetImage_OCRBoundary OCRBoundary
 			{
 				get
 				{
-					return celebrityConfidence;
+					return oCRBoundary;
 				}
 				set	
 				{
-					celebrityConfidence = value;
+					oCRBoundary = value;
 				}
 			}
 
-			public string CelebrityLibraryName
-			{
-				get
-				{
-					return celebrityLibraryName;
-				}
-				set	
-				{
-					celebrityLibraryName = value;
-				}
-			}
-
-			public GetImage_CelebrityBoundary CelebrityBoundary
-			{
-				get
-				{
-					return celebrityBoundary;
-				}
-				set	
-				{
-					celebrityBoundary = value;
-				}
-			}
-
-			public class GetImage_CelebrityBoundary
+			public class GetImage_OCRBoundary
 			{
 
 				private int? left;
 
 				private int? top;
 
-				private int? width;
-
 				private int? height;
+
+				private int? width;
 
 				public int? Left
 				{
@@ -1643,18 +1425,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					}
 				}
 
-				public int? Width
-				{
-					get
-					{
-						return width;
-					}
-					set	
-					{
-						width = value;
-					}
-				}
-
 				public int? Height
 				{
 					get
@@ -1666,43 +1436,43 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						height = value;
 					}
 				}
+
+				public int? Width
+				{
+					get
+					{
+						return width;
+					}
+					set	
+					{
+						width = value;
+					}
+				}
 			}
 		}
 
 		public class GetImage_ImageQuality
 		{
 
-			private float? overallScore;
-
 			private float? clarityScore;
-
-			private float? clarity;
-
-			private float? exposureScore;
-
-			private float? exposure;
-
-			private float? contrastScore;
-
-			private float? contrast;
-
-			private float? colorScore;
-
-			private float? color;
 
 			private float? compositionScore;
 
-			public float? OverallScore
-			{
-				get
-				{
-					return overallScore;
-				}
-				set	
-				{
-					overallScore = value;
-				}
-			}
+			private float? contrastScore;
+
+			private float? color;
+
+			private float? exposure;
+
+			private float? overallScore;
+
+			private float? clarity;
+
+			private float? contrast;
+
+			private float? exposureScore;
+
+			private float? colorScore;
 
 			public float? ClarityScore
 			{
@@ -1716,39 +1486,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
-			public float? Clarity
+			public float? CompositionScore
 			{
 				get
 				{
-					return clarity;
+					return compositionScore;
 				}
 				set	
 				{
-					clarity = value;
-				}
-			}
-
-			public float? ExposureScore
-			{
-				get
-				{
-					return exposureScore;
-				}
-				set	
-				{
-					exposureScore = value;
-				}
-			}
-
-			public float? Exposure
-			{
-				get
-				{
-					return exposure;
-				}
-				set	
-				{
-					exposure = value;
+					compositionScore = value;
 				}
 			}
 
@@ -1764,6 +1510,54 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
+			public float? Color
+			{
+				get
+				{
+					return color;
+				}
+				set	
+				{
+					color = value;
+				}
+			}
+
+			public float? Exposure
+			{
+				get
+				{
+					return exposure;
+				}
+				set	
+				{
+					exposure = value;
+				}
+			}
+
+			public float? OverallScore
+			{
+				get
+				{
+					return overallScore;
+				}
+				set	
+				{
+					overallScore = value;
+				}
+			}
+
+			public float? Clarity
+			{
+				get
+				{
+					return clarity;
+				}
+				set	
+				{
+					clarity = value;
+				}
+			}
+
 			public float? Contrast
 			{
 				get
@@ -1773,6 +1567,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				set	
 				{
 					contrast = value;
+				}
+			}
+
+			public float? ExposureScore
+			{
+				get
+				{
+					return exposureScore;
+				}
+				set	
+				{
+					exposureScore = value;
 				}
 			}
 
@@ -1787,46 +1593,34 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					colorScore = value;
 				}
 			}
-
-			public float? Color
-			{
-				get
-				{
-					return color;
-				}
-				set	
-				{
-					color = value;
-				}
-			}
-
-			public float? CompositionScore
-			{
-				get
-				{
-					return compositionScore;
-				}
-				set	
-				{
-					compositionScore = value;
-				}
-			}
 		}
 
 		public class GetImage_Address
 		{
 
+			private string township;
+
 			private string addressLine;
 
 			private string country;
-
-			private string province;
 
 			private string city;
 
 			private string district;
 
-			private string township;
+			private string province;
+
+			public string Township
+			{
+				get
+				{
+					return township;
+				}
+				set	
+				{
+					township = value;
+				}
+			}
 
 			public string AddressLine
 			{
@@ -1849,18 +1643,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				set	
 				{
 					country = value;
-				}
-			}
-
-			public string Province
-			{
-				get
-				{
-					return province;
-				}
-				set	
-				{
-					province = value;
 				}
 			}
 
@@ -1888,15 +1670,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
-			public string Township
+			public string Province
 			{
 				get
 				{
-					return township;
+					return province;
 				}
 				set	
 				{
-					township = value;
+					province = value;
 				}
 			}
 		}

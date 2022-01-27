@@ -26,27 +26,27 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class IndexVideoResponseUnmarshaller
     {
-        public static IndexVideoResponse Unmarshall(UnmarshallerContext context)
+        public static IndexVideoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			IndexVideoResponse indexVideoResponse = new IndexVideoResponse();
 
-			indexVideoResponse.HttpResponse = context.HttpResponse;
-			indexVideoResponse.RequestId = context.StringValue("IndexVideo.RequestId");
-			indexVideoResponse.SetId = context.StringValue("IndexVideo.SetId");
-			indexVideoResponse.VideoUri = context.StringValue("IndexVideo.VideoUri");
-			indexVideoResponse.RemarksA = context.StringValue("IndexVideo.RemarksA");
-			indexVideoResponse.RemarksB = context.StringValue("IndexVideo.RemarksB");
-			indexVideoResponse.CreateTime = context.StringValue("IndexVideo.CreateTime");
-			indexVideoResponse.ModifyTime = context.StringValue("IndexVideo.ModifyTime");
-			indexVideoResponse.Interval = context.FloatValue("IndexVideo.Interval");
-			indexVideoResponse.GrabType = context.StringValue("IndexVideo.GrabType");
-			indexVideoResponse.StartTime = context.StringValue("IndexVideo.StartTime");
-			indexVideoResponse.EndTime = context.StringValue("IndexVideo.EndTime");
-			indexVideoResponse.SaveType = context.BooleanValue("IndexVideo.SaveType");
-			indexVideoResponse.TgtUri = context.StringValue("IndexVideo.TgtUri");
-			indexVideoResponse.RemarksC = context.StringValue("IndexVideo.RemarksC");
-			indexVideoResponse.RemarksD = context.StringValue("IndexVideo.RemarksD");
-			indexVideoResponse.ExternalId = context.StringValue("IndexVideo.ExternalId");
+			indexVideoResponse.HttpResponse = _ctx.HttpResponse;
+			indexVideoResponse.ModifyTime = _ctx.StringValue("IndexVideo.ModifyTime");
+			indexVideoResponse.RequestId = _ctx.StringValue("IndexVideo.RequestId");
+			indexVideoResponse.EndTime = _ctx.StringValue("IndexVideo.EndTime");
+			indexVideoResponse.SaveType = _ctx.BooleanValue("IndexVideo.SaveType");
+			indexVideoResponse.ExternalId = _ctx.StringValue("IndexVideo.ExternalId");
+			indexVideoResponse.CreateTime = _ctx.StringValue("IndexVideo.CreateTime");
+			indexVideoResponse.StartTime = _ctx.StringValue("IndexVideo.StartTime");
+			indexVideoResponse.VideoUri = _ctx.StringValue("IndexVideo.VideoUri");
+			indexVideoResponse.GrabType = _ctx.StringValue("IndexVideo.GrabType");
+			indexVideoResponse.RemarksA = _ctx.StringValue("IndexVideo.RemarksA");
+			indexVideoResponse.RemarksB = _ctx.StringValue("IndexVideo.RemarksB");
+			indexVideoResponse.RemarksC = _ctx.StringValue("IndexVideo.RemarksC");
+			indexVideoResponse.TgtUri = _ctx.StringValue("IndexVideo.TgtUri");
+			indexVideoResponse.RemarksD = _ctx.StringValue("IndexVideo.RemarksD");
+			indexVideoResponse.SetId = _ctx.StringValue("IndexVideo.SetId");
+			indexVideoResponse.Interval = _ctx.FloatValue("IndexVideo.Interval");
         
 			return indexVideoResponse;
         }

@@ -35,8 +35,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -57,6 +57,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string contentEncoding;
 
+		private string repeatMode;
+
+		private string windowsPasswordName;
+
 		private bool? keepCommand;
 
 		private bool? timed;
@@ -75,6 +79,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? enableParameter;
 
+		private string username;
+
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -88,6 +95,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "WorkingDir")]
 		public string WorkingDir
 		{
 			get
@@ -101,6 +109,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -114,6 +123,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Type")]
 		public string Type
 		{
 			get
@@ -127,6 +137,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "CommandContent")]
 		public string CommandContent
 		{
 			get
@@ -140,6 +151,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Timeout")]
 		public long? Timeout
 		{
 			get
@@ -153,6 +165,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Frequency")]
 		public string Frequency
 		{
 			get
@@ -166,6 +179,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ContentEncoding")]
 		public string ContentEncoding
 		{
 			get
@@ -179,6 +193,35 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "RepeatMode")]
+		public string RepeatMode
+		{
+			get
+			{
+				return repeatMode;
+			}
+			set	
+			{
+				repeatMode = value;
+				DictionaryUtil.Add(QueryParameters, "RepeatMode", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "WindowsPasswordName")]
+		public string WindowsPasswordName
+		{
+			get
+			{
+				return windowsPasswordName;
+			}
+			set	
+			{
+				windowsPasswordName = value;
+				DictionaryUtil.Add(QueryParameters, "WindowsPasswordName", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "KeepCommand")]
 		public bool? KeepCommand
 		{
 			get
@@ -192,6 +235,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Timed")]
 		public bool? Timed
 		{
 			get
@@ -205,6 +249,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -218,6 +263,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -231,6 +277,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -244,6 +291,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceId")]
 		public List<string> InstanceIds
 		{
 			get
@@ -254,13 +302,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				instanceIds = value;
-				for (int i = 0; i < instanceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
-				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "Name")]
 		public string Name
 		{
 			get
@@ -274,6 +319,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Parameters")]
 		public Dictionary<object,object> Parameters
 		{
 			get
@@ -287,6 +333,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "EnableParameter")]
 		public bool? EnableParameter
 		{
 			get
@@ -297,6 +344,20 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				enableParameter = value;
 				DictionaryUtil.Add(QueryParameters, "EnableParameter", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "Username")]
+		public string Username
+		{
+			get
+			{
+				return username;
+			}
+			set	
+			{
+				username = value;
+				DictionaryUtil.Add(QueryParameters, "Username", value);
 			}
 		}
 

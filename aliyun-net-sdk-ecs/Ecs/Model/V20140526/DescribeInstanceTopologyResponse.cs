@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeInstanceTopology_Topology
 		{
 
-			private string instanceId;
-
 			private string hostId;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private string instanceId;
 
 			public string HostId
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					hostId = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 		}

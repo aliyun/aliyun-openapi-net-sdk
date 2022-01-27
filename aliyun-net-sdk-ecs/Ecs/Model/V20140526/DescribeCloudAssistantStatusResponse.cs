@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,9 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeCloudAssistantStatusResponse : AcsResponse
 	{
 
+		private long? pageSize;
+
 		private string requestId;
 
+		private long? pageNumber;
+
+		private long? totalCount;
+
 		private List<DescribeCloudAssistantStatus_InstanceCloudAssistantStatus> instanceCloudAssistantStatusSet;
+
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -38,6 +56,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		public long? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
 			}
 		}
 
@@ -56,23 +98,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeCloudAssistantStatus_InstanceCloudAssistantStatus
 		{
 
-			private string instanceId;
-
 			private string cloudAssistantStatus;
+
+			private string lastInvokedTime;
 
 			private string cloudAssistantVersion;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private long? activeTaskCount;
+
+			private long? invocationCount;
+
+			private string instanceId;
+
+			private string lastHeartbeatTime;
+
+			private string oSType;
+
+			private bool? supportSessionManager;
 
 			public string CloudAssistantStatus
 			{
@@ -86,6 +128,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string LastInvokedTime
+			{
+				get
+				{
+					return lastInvokedTime;
+				}
+				set	
+				{
+					lastInvokedTime = value;
+				}
+			}
+
 			public string CloudAssistantVersion
 			{
 				get
@@ -95,6 +149,78 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					cloudAssistantVersion = value;
+				}
+			}
+
+			public long? ActiveTaskCount
+			{
+				get
+				{
+					return activeTaskCount;
+				}
+				set	
+				{
+					activeTaskCount = value;
+				}
+			}
+
+			public long? InvocationCount
+			{
+				get
+				{
+					return invocationCount;
+				}
+				set	
+				{
+					invocationCount = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string LastHeartbeatTime
+			{
+				get
+				{
+					return lastHeartbeatTime;
+				}
+				set	
+				{
+					lastHeartbeatTime = value;
+				}
+			}
+
+			public string OSType
+			{
+				get
+				{
+					return oSType;
+				}
+				set	
+				{
+					oSType = value;
+				}
+			}
+
+			public bool? SupportSessionManager
+			{
+				get
+				{
+					return supportSessionManager;
+				}
+				set	
+				{
+					supportSessionManager = value;
 				}
 			}
 		}

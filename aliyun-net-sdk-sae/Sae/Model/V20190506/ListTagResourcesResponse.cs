@@ -25,41 +25,29 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class ListTagResourcesResponse : AcsResponse
 	{
 
-		private string code;
-
-		private string errorCode;
+		private string requestId;
 
 		private string message;
 
-		private string requestId;
+		private string traceId;
+
+		private string errorCode;
+
+		private string code;
 
 		private bool? success;
 
-		private string traceId;
-
 		private ListTagResources_Data data;
 
-		public string Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				requestId = value;
 			}
 		}
 
@@ -75,15 +63,39 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string RequestId
+		public string TraceId
 		{
 			get
 			{
-				return requestId;
+				return traceId;
 			}
 			set	
 			{
-				requestId = value;
+				traceId = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -96,18 +108,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string TraceId
-		{
-			get
-			{
-				return traceId;
-			}
-			set	
-			{
-				traceId = value;
 			}
 		}
 
@@ -157,23 +157,23 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			public class ListTagResources_TagResource
 			{
 
-				private string tagKey;
+				private string resourceType;
 
 				private string tagValue;
 
 				private string resourceId;
 
-				private string resourceType;
+				private string tagKey;
 
-				public string TagKey
+				public string ResourceType
 				{
 					get
 					{
-						return tagKey;
+						return resourceType;
 					}
 					set	
 					{
-						tagKey = value;
+						resourceType = value;
 					}
 				}
 
@@ -201,15 +201,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public string ResourceType
+				public string TagKey
 				{
 					get
 					{
-						return resourceType;
+						return tagKey;
 					}
 					set	
 					{
-						resourceType = value;
+						tagKey = value;
 					}
 				}
 			}

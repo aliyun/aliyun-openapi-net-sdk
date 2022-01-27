@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Dypnsapi.Transform.V20170525
 {
     public class CreateVerifySchemeResponseUnmarshaller
     {
-        public static CreateVerifySchemeResponse Unmarshall(UnmarshallerContext context)
+        public static CreateVerifySchemeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateVerifySchemeResponse createVerifySchemeResponse = new CreateVerifySchemeResponse();
 
-			createVerifySchemeResponse.HttpResponse = context.HttpResponse;
-			createVerifySchemeResponse.RequestId = context.StringValue("CreateVerifyScheme.RequestId");
-			createVerifySchemeResponse.Code = context.StringValue("CreateVerifyScheme.Code");
-			createVerifySchemeResponse.Message = context.StringValue("CreateVerifyScheme.Message");
+			createVerifySchemeResponse.HttpResponse = _ctx.HttpResponse;
+			createVerifySchemeResponse.Code = _ctx.StringValue("CreateVerifyScheme.Code");
+			createVerifySchemeResponse.Message = _ctx.StringValue("CreateVerifyScheme.Message");
+			createVerifySchemeResponse.RequestId = _ctx.StringValue("CreateVerifyScheme.RequestId");
 
 			CreateVerifySchemeResponse.CreateVerifyScheme_GateVerifySchemeDTO gateVerifySchemeDTO = new CreateVerifySchemeResponse.CreateVerifyScheme_GateVerifySchemeDTO();
-			gateVerifySchemeDTO.SchemeCode = context.StringValue("CreateVerifyScheme.GateVerifySchemeDTO.SchemeCode");
+			gateVerifySchemeDTO.SchemeCode = _ctx.StringValue("CreateVerifyScheme.GateVerifySchemeDTO.SchemeCode");
 			createVerifySchemeResponse.GateVerifySchemeDTO = gateVerifySchemeDTO;
         
 			return createVerifySchemeResponse;

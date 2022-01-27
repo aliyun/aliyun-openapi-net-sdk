@@ -116,6 +116,8 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 			private long? count;
 
+			private string domainType;
+
 			public string DomainName
 			{
 				get
@@ -137,6 +139,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					count = value;
+				}
+			}
+
+			public string DomainType
+			{
+				get
+				{
+					return domainType;
+				}
+				set	
+				{
+					domainType = value;
 				}
 			}
 		}

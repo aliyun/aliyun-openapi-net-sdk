@@ -26,12 +26,12 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class ModifyMasterSpecResponseUnmarshaller
     {
-        public static ModifyMasterSpecResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyMasterSpecResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyMasterSpecResponse modifyMasterSpecResponse = new ModifyMasterSpecResponse();
 
-			modifyMasterSpecResponse.HttpResponse = context.HttpResponse;
-			modifyMasterSpecResponse.RequestId = context.StringValue("ModifyMasterSpec.RequestId");
+			modifyMasterSpecResponse.HttpResponse = _ctx.HttpResponse;
+			modifyMasterSpecResponse.RequestId = _ctx.StringValue("ModifyMasterSpec.RequestId");
         
 			return modifyMasterSpecResponse;
         }

@@ -26,26 +26,26 @@ namespace Aliyun.Acs.codeup.Transform.V20200414
 {
     public class DeleteRepositoryMemberResponseUnmarshaller
     {
-        public static DeleteRepositoryMemberResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteRepositoryMemberResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteRepositoryMemberResponse deleteRepositoryMemberResponse = new DeleteRepositoryMemberResponse();
 
-			deleteRepositoryMemberResponse.HttpResponse = context.HttpResponse;
-			deleteRepositoryMemberResponse.RequestId = context.StringValue("DeleteRepositoryMember.RequestId");
-			deleteRepositoryMemberResponse.ErrorCode = context.StringValue("DeleteRepositoryMember.ErrorCode");
-			deleteRepositoryMemberResponse.Success = context.BooleanValue("DeleteRepositoryMember.Success");
-			deleteRepositoryMemberResponse.ErrorMessage = context.StringValue("DeleteRepositoryMember.ErrorMessage");
+			deleteRepositoryMemberResponse.HttpResponse = _ctx.HttpResponse;
+			deleteRepositoryMemberResponse.RequestId = _ctx.StringValue("DeleteRepositoryMember.RequestId");
+			deleteRepositoryMemberResponse.ErrorCode = _ctx.StringValue("DeleteRepositoryMember.ErrorCode");
+			deleteRepositoryMemberResponse.Success = _ctx.BooleanValue("DeleteRepositoryMember.Success");
+			deleteRepositoryMemberResponse.ErrorMessage = _ctx.StringValue("DeleteRepositoryMember.ErrorMessage");
 
 			DeleteRepositoryMemberResponse.DeleteRepositoryMember_Result result = new DeleteRepositoryMemberResponse.DeleteRepositoryMember_Result();
-			result.AccessLevel = context.IntegerValue("DeleteRepositoryMember.Result.AccessLevel");
-			result.Id = context.LongValue("DeleteRepositoryMember.Result.Id");
-			result.CreatedAt = context.StringValue("DeleteRepositoryMember.Result.CreatedAt");
-			result.UpdatedAt = context.StringValue("DeleteRepositoryMember.Result.UpdatedAt");
-			result.SourceId = context.LongValue("DeleteRepositoryMember.Result.SourceId");
-			result.SourceType = context.StringValue("DeleteRepositoryMember.Result.SourceType");
-			result.UserId = context.LongValue("DeleteRepositoryMember.Result.UserId");
-			result.NotificationLevel = context.IntegerValue("DeleteRepositoryMember.Result.NotificationLevel");
-			result.Message = context.StringValue("DeleteRepositoryMember.Result.Message");
+			result.AccessLevel = _ctx.IntegerValue("DeleteRepositoryMember.Result.AccessLevel");
+			result.Id = _ctx.LongValue("DeleteRepositoryMember.Result.Id");
+			result.CreatedAt = _ctx.StringValue("DeleteRepositoryMember.Result.CreatedAt");
+			result.UpdatedAt = _ctx.StringValue("DeleteRepositoryMember.Result.UpdatedAt");
+			result.SourceId = _ctx.LongValue("DeleteRepositoryMember.Result.SourceId");
+			result.SourceType = _ctx.StringValue("DeleteRepositoryMember.Result.SourceType");
+			result.UserId = _ctx.LongValue("DeleteRepositoryMember.Result.UserId");
+			result.NotificationLevel = _ctx.IntegerValue("DeleteRepositoryMember.Result.NotificationLevel");
+			result.Message = _ctx.StringValue("DeleteRepositoryMember.Result.Message");
 			deleteRepositoryMemberResponse.Result = result;
         
 			return deleteRepositoryMemberResponse;

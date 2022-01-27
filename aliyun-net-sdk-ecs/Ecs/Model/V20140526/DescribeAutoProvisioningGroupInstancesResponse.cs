@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeAutoProvisioningGroupInstancesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeAutoProvisioningGroupInstances_Instance> instances;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,41 +98,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeAutoProvisioningGroupInstances_Instance
 		{
 
-			private string instanceId;
-
 			private string status;
-
-			private string regionId;
-
-			private string zoneId;
-
-			private int? cPU;
-
-			private int? memory;
-
-			private string instanceType;
-
-			private bool? isSpot;
-
-			private bool? ioOptimized;
-
-			private string networkType;
-
-			private string osType;
 
 			private string creationTime;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private bool? isSpot;
+
+			private int? cPU;
+
+			private string instanceId;
+
+			private string networkType;
+
+			private string instanceType;
+
+			private string regionId;
+
+			private bool? ioOptimized;
+
+			private string osType;
+
+			private string zoneId;
+
+			private int? memory;
 
 			public string Status
 			{
@@ -146,63 +134,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string RegionId
+			public string CreationTime
 			{
 				get
 				{
-					return regionId;
+					return creationTime;
 				}
 				set	
 				{
-					regionId = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
-			public int? CPU
-			{
-				get
-				{
-					return cPU;
-				}
-				set	
-				{
-					cPU = value;
-				}
-			}
-
-			public int? Memory
-			{
-				get
-				{
-					return memory;
-				}
-				set	
-				{
-					memory = value;
-				}
-			}
-
-			public string InstanceType
-			{
-				get
-				{
-					return instanceType;
-				}
-				set	
-				{
-					instanceType = value;
+					creationTime = value;
 				}
 			}
 
@@ -218,15 +158,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public bool? IoOptimized
+			public int? CPU
 			{
 				get
 				{
-					return ioOptimized;
+					return cPU;
 				}
 				set	
 				{
-					ioOptimized = value;
+					cPU = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 
@@ -242,6 +194,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public bool? IoOptimized
+			{
+				get
+				{
+					return ioOptimized;
+				}
+				set	
+				{
+					ioOptimized = value;
+				}
+			}
+
 			public string OsType
 			{
 				get
@@ -254,15 +242,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string CreationTime
+			public string ZoneId
 			{
 				get
 				{
-					return creationTime;
+					return zoneId;
 				}
 				set	
 				{
-					creationTime = value;
+					zoneId = value;
+				}
+			}
+
+			public int? Memory
+			{
+				get
+				{
+					return memory;
+				}
+				set	
+				{
+					memory = value;
 				}
 			}
 		}

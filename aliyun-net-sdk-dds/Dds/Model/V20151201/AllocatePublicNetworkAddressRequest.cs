@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class AllocatePublicNetworkAddressRequest : RpcAcsRequest<AllocatePublicNetworkAddressResponse>
     {
         public AllocatePublicNetworkAddressRequest()
-            : base("Dds", "2015-12-01", "AllocatePublicNetworkAddress", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "AllocatePublicNetworkAddress", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

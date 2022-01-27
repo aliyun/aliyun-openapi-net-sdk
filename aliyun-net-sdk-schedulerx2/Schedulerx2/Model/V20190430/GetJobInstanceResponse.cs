@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 	public class GetJobInstanceResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? code;
 
 		private string message;
 
+		private string requestId;
+
 		private bool? success;
 
 		private GetJobInstance_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public int? Code
 		{
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -115,31 +115,67 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			public class GetJobInstance_JobInstanceDetail
 			{
 
+				private int? status;
+
+				private string progress;
+
+				private string result;
+
 				private long? instanceId;
 
-				private long? jobId;
+				private int? timeType;
 
-				private int? status;
+				private int? triggerType;
+
+				private string endTime;
 
 				private string startTime;
 
-				private string endTime;
+				private string executor;
+
+				private long? jobId;
 
 				private string scheduleTime;
 
 				private string dataTime;
 
-				private string executor;
-
 				private string workAddr;
 
-				private string result;
+				public int? Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 
-				private string progress;
+				public string Progress
+				{
+					get
+					{
+						return progress;
+					}
+					set	
+					{
+						progress = value;
+					}
+				}
 
-				private int? timeType;
-
-				private int? triggerType;
+				public string Result
+				{
+					get
+					{
+						return result;
+					}
+					set	
+					{
+						result = value;
+					}
+				}
 
 				public long? InstanceId
 				{
@@ -153,27 +189,39 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
-				public long? JobId
+				public int? TimeType
 				{
 					get
 					{
-						return jobId;
+						return timeType;
 					}
 					set	
 					{
-						jobId = value;
+						timeType = value;
 					}
 				}
 
-				public int? Status
+				public int? TriggerType
 				{
 					get
 					{
-						return status;
+						return triggerType;
 					}
 					set	
 					{
-						status = value;
+						triggerType = value;
+					}
+				}
+
+				public string EndTime
+				{
+					get
+					{
+						return endTime;
+					}
+					set	
+					{
+						endTime = value;
 					}
 				}
 
@@ -189,15 +237,27 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
-				public string EndTime
+				public string Executor
 				{
 					get
 					{
-						return endTime;
+						return executor;
 					}
 					set	
 					{
-						endTime = value;
+						executor = value;
+					}
+				}
+
+				public long? JobId
+				{
+					get
+					{
+						return jobId;
+					}
+					set	
+					{
+						jobId = value;
 					}
 				}
 
@@ -225,18 +285,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
-				public string Executor
-				{
-					get
-					{
-						return executor;
-					}
-					set	
-					{
-						executor = value;
-					}
-				}
-
 				public string WorkAddr
 				{
 					get
@@ -246,54 +294,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						workAddr = value;
-					}
-				}
-
-				public string Result
-				{
-					get
-					{
-						return result;
-					}
-					set	
-					{
-						result = value;
-					}
-				}
-
-				public string Progress
-				{
-					get
-					{
-						return progress;
-					}
-					set	
-					{
-						progress = value;
-					}
-				}
-
-				public int? TimeType
-				{
-					get
-					{
-						return timeType;
-					}
-					set	
-					{
-						timeType = value;
-					}
-				}
-
-				public int? TriggerType
-				{
-					get
-					{
-						return triggerType;
-					}
-					set	
-					{
-						triggerType = value;
 					}
 				}
 			}

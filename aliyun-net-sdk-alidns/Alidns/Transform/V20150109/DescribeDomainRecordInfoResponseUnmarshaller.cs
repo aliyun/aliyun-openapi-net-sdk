@@ -26,26 +26,26 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeDomainRecordInfoResponseUnmarshaller
     {
-        public static DescribeDomainRecordInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainRecordInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainRecordInfoResponse describeDomainRecordInfoResponse = new DescribeDomainRecordInfoResponse();
 
-			describeDomainRecordInfoResponse.HttpResponse = context.HttpResponse;
-			describeDomainRecordInfoResponse.RequestId = context.StringValue("DescribeDomainRecordInfo.RequestId");
-			describeDomainRecordInfoResponse.DomainId = context.StringValue("DescribeDomainRecordInfo.DomainId");
-			describeDomainRecordInfoResponse.DomainName = context.StringValue("DescribeDomainRecordInfo.DomainName");
-			describeDomainRecordInfoResponse.PunyCode = context.StringValue("DescribeDomainRecordInfo.PunyCode");
-			describeDomainRecordInfoResponse.GroupId = context.StringValue("DescribeDomainRecordInfo.GroupId");
-			describeDomainRecordInfoResponse.GroupName = context.StringValue("DescribeDomainRecordInfo.GroupName");
-			describeDomainRecordInfoResponse.RecordId = context.StringValue("DescribeDomainRecordInfo.RecordId");
-			describeDomainRecordInfoResponse.RR = context.StringValue("DescribeDomainRecordInfo.RR");
-			describeDomainRecordInfoResponse.Type = context.StringValue("DescribeDomainRecordInfo.Type");
-			describeDomainRecordInfoResponse._Value = context.StringValue("DescribeDomainRecordInfo.Value");
-			describeDomainRecordInfoResponse.TTL = context.LongValue("DescribeDomainRecordInfo.TTL");
-			describeDomainRecordInfoResponse.Priority = context.LongValue("DescribeDomainRecordInfo.Priority");
-			describeDomainRecordInfoResponse.Line = context.StringValue("DescribeDomainRecordInfo.Line");
-			describeDomainRecordInfoResponse.Status = context.StringValue("DescribeDomainRecordInfo.Status");
-			describeDomainRecordInfoResponse.Locked = context.BooleanValue("DescribeDomainRecordInfo.Locked");
+			describeDomainRecordInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainRecordInfoResponse.RequestId = _ctx.StringValue("DescribeDomainRecordInfo.RequestId");
+			describeDomainRecordInfoResponse.DomainId = _ctx.StringValue("DescribeDomainRecordInfo.DomainId");
+			describeDomainRecordInfoResponse.DomainName = _ctx.StringValue("DescribeDomainRecordInfo.DomainName");
+			describeDomainRecordInfoResponse.PunyCode = _ctx.StringValue("DescribeDomainRecordInfo.PunyCode");
+			describeDomainRecordInfoResponse.GroupId = _ctx.StringValue("DescribeDomainRecordInfo.GroupId");
+			describeDomainRecordInfoResponse.GroupName = _ctx.StringValue("DescribeDomainRecordInfo.GroupName");
+			describeDomainRecordInfoResponse.RecordId = _ctx.StringValue("DescribeDomainRecordInfo.RecordId");
+			describeDomainRecordInfoResponse.RR = _ctx.StringValue("DescribeDomainRecordInfo.RR");
+			describeDomainRecordInfoResponse.Type = _ctx.StringValue("DescribeDomainRecordInfo.Type");
+			describeDomainRecordInfoResponse._Value = _ctx.StringValue("DescribeDomainRecordInfo.Value");
+			describeDomainRecordInfoResponse.TTL = _ctx.LongValue("DescribeDomainRecordInfo.TTL");
+			describeDomainRecordInfoResponse.Priority = _ctx.LongValue("DescribeDomainRecordInfo.Priority");
+			describeDomainRecordInfoResponse.Line = _ctx.StringValue("DescribeDomainRecordInfo.Line");
+			describeDomainRecordInfoResponse.Status = _ctx.StringValue("DescribeDomainRecordInfo.Status");
+			describeDomainRecordInfoResponse.Locked = _ctx.BooleanValue("DescribeDomainRecordInfo.Locked");
         
 			return describeDomainRecordInfoResponse;
         }

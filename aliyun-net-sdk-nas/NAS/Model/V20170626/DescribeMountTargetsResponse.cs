@@ -110,6 +110,10 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string status;
 
+			private string dualStackMountTargetDomain;
+
+			private List<DescribeMountTargets_ClientMasterNode> clientMasterNodes;
+
 			private List<DescribeMountTargets_Tag> tags;
 
 			public string MountTargetDomain
@@ -184,6 +188,30 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
+			public string DualStackMountTargetDomain
+			{
+				get
+				{
+					return dualStackMountTargetDomain;
+				}
+				set	
+				{
+					dualStackMountTargetDomain = value;
+				}
+			}
+
+			public List<DescribeMountTargets_ClientMasterNode> ClientMasterNodes
+			{
+				get
+				{
+					return clientMasterNodes;
+				}
+				set	
+				{
+					clientMasterNodes = value;
+				}
+			}
+
 			public List<DescribeMountTargets_Tag> Tags
 			{
 				get
@@ -193,6 +221,52 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					tags = value;
+				}
+			}
+
+			public class DescribeMountTargets_ClientMasterNode
+			{
+
+				private string ecsId;
+
+				private string ecsIp;
+
+				private string defaultPasswd;
+
+				public string EcsId
+				{
+					get
+					{
+						return ecsId;
+					}
+					set	
+					{
+						ecsId = value;
+					}
+				}
+
+				public string EcsIp
+				{
+					get
+					{
+						return ecsIp;
+					}
+					set	
+					{
+						ecsIp = value;
+					}
+				}
+
+				public string DefaultPasswd
+				{
+					get
+					{
+						return defaultPasswd;
+					}
+					set	
+					{
+						defaultPasswd = value;
+					}
 				}
 			}
 

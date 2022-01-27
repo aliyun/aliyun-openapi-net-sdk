@@ -25,13 +25,27 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeDBClusterTDEResponse : AcsResponse
 	{
 
+		private string tDEStatus;
+
 		private string requestId;
 
 		private string dBClusterId;
 
-		private string tDEStatus;
-
 		private string encryptionKey;
+
+		private string encryptNewTables;
+
+		public string TDEStatus
+		{
+			get
+			{
+				return tDEStatus;
+			}
+			set	
+			{
+				tDEStatus = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -57,18 +71,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string TDEStatus
-		{
-			get
-			{
-				return tDEStatus;
-			}
-			set	
-			{
-				tDEStatus = value;
-			}
-		}
-
 		public string EncryptionKey
 		{
 			get
@@ -78,6 +80,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				encryptionKey = value;
+			}
+		}
+
+		public string EncryptNewTables
+		{
+			get
+			{
+				return encryptNewTables;
+			}
+			set	
+			{
+				encryptNewTables = value;
 			}
 		}
 	}

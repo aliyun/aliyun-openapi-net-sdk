@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class ListInstancesRequest : RpcAcsRequest<ListInstancesResponse>
     {
         public ListInstancesRequest()
-            : base("dms-enterprise", "2018-11-01", "ListInstances", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "ListInstances", "dms-enterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -59,6 +59,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private int? pageSize;
 
+		[JsonProperty(PropertyName = "SearchKey")]
 		public string SearchKey
 		{
 			get
@@ -72,6 +73,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -85,6 +87,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceState")]
 		public string InstanceState
 		{
 			get
@@ -98,6 +101,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -111,6 +115,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "NetType")]
 		public string NetType
 		{
 			get
@@ -124,6 +129,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DbType")]
 		public string DbType
 		{
 			get
@@ -137,6 +143,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "EnvType")]
 		public string EnvType
 		{
 			get
@@ -150,6 +157,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceSource")]
 		public string InstanceSource
 		{
 			get
@@ -163,6 +171,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get

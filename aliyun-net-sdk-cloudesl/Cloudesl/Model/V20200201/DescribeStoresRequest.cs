@@ -34,8 +34,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.cloudesl.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.cloudesl.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -49,6 +49,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 		private int? pageNumber;
 
 		private string fromDate;
+
+		private string templateVersion;
 
 		private string toDate;
 
@@ -118,6 +120,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				fromDate = value;
 				DictionaryUtil.Add(BodyParameters, "FromDate", value);
+			}
+		}
+
+		public string TemplateVersion
+		{
+			get
+			{
+				return templateVersion;
+			}
+			set	
+			{
+				templateVersion = value;
+				DictionaryUtil.Add(BodyParameters, "TemplateVersion", value);
 			}
 		}
 

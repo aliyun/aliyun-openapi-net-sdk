@@ -26,12 +26,12 @@ namespace Aliyun.Acs.OnsMqtt.Transform.V20200420
 {
     public class RevokeTokenResponseUnmarshaller
     {
-        public static RevokeTokenResponse Unmarshall(UnmarshallerContext context)
+        public static RevokeTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RevokeTokenResponse revokeTokenResponse = new RevokeTokenResponse();
 
-			revokeTokenResponse.HttpResponse = context.HttpResponse;
-			revokeTokenResponse.RequestId = context.StringValue("RevokeToken.RequestId");
+			revokeTokenResponse.HttpResponse = _ctx.HttpResponse;
+			revokeTokenResponse.RequestId = _ctx.StringValue("RevokeToken.RequestId");
         
 			return revokeTokenResponse;
         }

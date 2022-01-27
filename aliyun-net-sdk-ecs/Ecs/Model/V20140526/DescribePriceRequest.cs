@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private long? resourceOwnerId;
 
 		private string dataDisk3Category;
+
+		private string isp;
 
 		private int? dataDisk4Size;
 
@@ -60,7 +62,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? instanceCpuCoreCount;
 
+		private string spotStrategy;
+
 		private string internetChargeType;
+
+		private string zoneId;
 
 		private string instanceNetworkType;
 
@@ -92,6 +98,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceType;
 
+		private string dedicatedHostType;
+
 		private string dataDisk2Category;
 
 		private int? dataDisk1Size;
@@ -103,6 +111,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string ownerAccount;
 
 		private int? dataDisk2Size;
+
+		private int? spotDuration;
 
 		private string resourceType;
 
@@ -150,6 +160,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				dataDisk3Category = value;
 				DictionaryUtil.Add(QueryParameters, "DataDisk.3.Category", value);
+			}
+		}
+
+		public string Isp
+		{
+			get
+			{
+				return isp;
+			}
+			set	
+			{
+				isp = value;
+				DictionaryUtil.Add(QueryParameters, "Isp", value);
 			}
 		}
 
@@ -244,6 +267,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string SpotStrategy
+		{
+			get
+			{
+				return spotStrategy;
+			}
+			set	
+			{
+				spotStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "SpotStrategy", value);
+			}
+		}
+
 		public string InternetChargeType
 		{
 			get
@@ -254,6 +290,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				internetChargeType = value;
 				DictionaryUtil.Add(QueryParameters, "InternetChargeType", value);
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 
@@ -293,10 +342,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				instanceTypeLists = value;
-				for (int i = 0; i < instanceTypeLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceTypeList." + (i + 1) , instanceTypeLists[i]);
-				}
 			}
 		}
 
@@ -456,6 +501,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string DedicatedHostType
+		{
+			get
+			{
+				return dedicatedHostType;
+			}
+			set	
+			{
+				dedicatedHostType = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostType", value);
+			}
+		}
+
 		public string DataDisk2Category
 		{
 			get
@@ -531,6 +589,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				dataDisk2Size = value;
 				DictionaryUtil.Add(QueryParameters, "DataDisk.2.Size", value.ToString());
+			}
+		}
+
+		public int? SpotDuration
+		{
+			get
+			{
+				return spotDuration;
+			}
+			set	
+			{
+				spotDuration = value;
+				DictionaryUtil.Add(QueryParameters, "SpotDuration", value.ToString());
 			}
 		}
 

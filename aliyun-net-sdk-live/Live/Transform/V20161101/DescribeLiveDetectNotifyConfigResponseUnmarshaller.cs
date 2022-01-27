@@ -26,16 +26,16 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveDetectNotifyConfigResponseUnmarshaller
     {
-        public static DescribeLiveDetectNotifyConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveDetectNotifyConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveDetectNotifyConfigResponse describeLiveDetectNotifyConfigResponse = new DescribeLiveDetectNotifyConfigResponse();
 
-			describeLiveDetectNotifyConfigResponse.HttpResponse = context.HttpResponse;
-			describeLiveDetectNotifyConfigResponse.RequestId = context.StringValue("DescribeLiveDetectNotifyConfig.RequestId");
+			describeLiveDetectNotifyConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveDetectNotifyConfigResponse.RequestId = _ctx.StringValue("DescribeLiveDetectNotifyConfig.RequestId");
 
 			DescribeLiveDetectNotifyConfigResponse.DescribeLiveDetectNotifyConfig_LiveDetectNotifyConfig liveDetectNotifyConfig = new DescribeLiveDetectNotifyConfigResponse.DescribeLiveDetectNotifyConfig_LiveDetectNotifyConfig();
-			liveDetectNotifyConfig.DomainName = context.StringValue("DescribeLiveDetectNotifyConfig.LiveDetectNotifyConfig.DomainName");
-			liveDetectNotifyConfig.NotifyUrl = context.StringValue("DescribeLiveDetectNotifyConfig.LiveDetectNotifyConfig.NotifyUrl");
+			liveDetectNotifyConfig.DomainName = _ctx.StringValue("DescribeLiveDetectNotifyConfig.LiveDetectNotifyConfig.DomainName");
+			liveDetectNotifyConfig.NotifyUrl = _ctx.StringValue("DescribeLiveDetectNotifyConfig.LiveDetectNotifyConfig.NotifyUrl");
 			describeLiveDetectNotifyConfigResponse.LiveDetectNotifyConfig = liveDetectNotifyConfig;
         
 			return describeLiveDetectNotifyConfigResponse;

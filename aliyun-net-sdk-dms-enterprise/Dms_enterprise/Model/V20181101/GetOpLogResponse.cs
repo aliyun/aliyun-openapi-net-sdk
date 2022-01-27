@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -25,66 +25,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 	public class GetOpLogResponse : AcsResponse
 	{
 
+		private long? totalCount;
+
 		private string requestId;
-
-		private bool? success;
-
-		private string errorMessage;
 
 		private string errorCode;
 
-		private long? totalCount;
+		private string errorMessage;
+
+		private bool? success;
 
 		private List<GetOpLog_OpLogDetail> opLogDetails;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TotalCount")]
 		public long? TotalCount
 		{
 			get
@@ -97,6 +50,59 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "OpLogDetails")]
 		public List<GetOpLog_OpLogDetail> OpLogDetails
 		{
 			get
@@ -112,44 +118,23 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class GetOpLog_OpLogDetail
 		{
 
-			private long? userId;
-
-			private string userNick;
-
 			private string module;
-
-			private string opContent;
-
-			private string opTime;
 
 			private string database;
 
+			private string userId;
+
+			private long? opUserId;
+
+			private string opContent;
+
+			private string userNick;
+
 			private long? orderId;
 
-			public long? UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
+			private string opTime;
 
-			public string UserNick
-			{
-				get
-				{
-					return userNick;
-				}
-				set	
-				{
-					userNick = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Module")]
 			public string Module
 			{
 				get
@@ -162,30 +147,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public string OpContent
-			{
-				get
-				{
-					return opContent;
-				}
-				set	
-				{
-					opContent = value;
-				}
-			}
-
-			public string OpTime
-			{
-				get
-				{
-					return opTime;
-				}
-				set	
-				{
-					opTime = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Database")]
 			public string Database
 			{
 				get
@@ -198,6 +160,59 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "UserId")]
+			public string UserId
+			{
+				get
+				{
+					return userId;
+				}
+				set	
+				{
+					userId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OpUserId")]
+			public long? OpUserId
+			{
+				get
+				{
+					return opUserId;
+				}
+				set	
+				{
+					opUserId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OpContent")]
+			public string OpContent
+			{
+				get
+				{
+					return opContent;
+				}
+				set	
+				{
+					opContent = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UserNick")]
+			public string UserNick
+			{
+				get
+				{
+					return userNick;
+				}
+				set	
+				{
+					userNick = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OrderId")]
 			public long? OrderId
 			{
 				get
@@ -207,6 +222,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					orderId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OpTime")]
+			public string OpTime
+			{
+				get
+				{
+					return opTime;
+				}
+				set	
+				{
+					opTime = value;
 				}
 			}
 		}

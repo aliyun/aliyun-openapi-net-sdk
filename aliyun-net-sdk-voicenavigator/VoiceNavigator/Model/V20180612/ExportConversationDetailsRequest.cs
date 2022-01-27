@@ -34,8 +34,8 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.VoiceNavigator.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.VoiceNavigator.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -47,6 +47,8 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 		private string instanceId;
 
 		private long? beginTimeRightRange;
+
+		private List<string> optionss = new List<string>(){ };
 
 		public long? BeginTimeLeftRange
 		{
@@ -97,6 +99,23 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			{
 				beginTimeRightRange = value;
 				DictionaryUtil.Add(QueryParameters, "BeginTimeRightRange", value.ToString());
+			}
+		}
+
+		public List<string> Optionss
+		{
+			get
+			{
+				return optionss;
+			}
+
+			set
+			{
+				optionss = value;
+				for (int i = 0; i < optionss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Options." + (i + 1) , optionss[i]);
+				}
 			}
 		}
 

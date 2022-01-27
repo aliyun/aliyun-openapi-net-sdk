@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class ValidateHcWarningsResponseUnmarshaller
     {
-        public static ValidateHcWarningsResponse Unmarshall(UnmarshallerContext context)
+        public static ValidateHcWarningsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ValidateHcWarningsResponse validateHcWarningsResponse = new ValidateHcWarningsResponse();
 
-			validateHcWarningsResponse.HttpResponse = context.HttpResponse;
-			validateHcWarningsResponse.RequestId = context.StringValue("ValidateHcWarnings.RequestId");
+			validateHcWarningsResponse.HttpResponse = _ctx.HttpResponse;
+			validateHcWarningsResponse.RequestId = _ctx.StringValue("ValidateHcWarnings.RequestId");
         
 			return validateHcWarningsResponse;
         }

@@ -35,19 +35,19 @@ namespace Aliyun.Acs.Config.Transform.V20190108
 
 			DescribeComplianceSummaryResponse.DescribeComplianceSummary_ComplianceSummary complianceSummary = new DescribeComplianceSummaryResponse.DescribeComplianceSummary_ComplianceSummary();
 
-			DescribeComplianceSummaryResponse.DescribeComplianceSummary_ComplianceSummary.DescribeComplianceSummary_ComplianceSummaryByConfigRule complianceSummaryByConfigRule = new DescribeComplianceSummaryResponse.DescribeComplianceSummary_ComplianceSummary.DescribeComplianceSummary_ComplianceSummaryByConfigRule();
-			complianceSummaryByConfigRule.ComplianceSummaryTimestamp = _ctx.LongValue("DescribeComplianceSummary.ComplianceSummary.ComplianceSummaryByConfigRule.ComplianceSummaryTimestamp");
-			complianceSummaryByConfigRule.CompliantCount = _ctx.IntegerValue("DescribeComplianceSummary.ComplianceSummary.ComplianceSummaryByConfigRule.CompliantCount");
-			complianceSummaryByConfigRule.NonCompliantCount = _ctx.IntegerValue("DescribeComplianceSummary.ComplianceSummary.ComplianceSummaryByConfigRule.NonCompliantCount");
-			complianceSummaryByConfigRule.TotalCount = _ctx.LongValue("DescribeComplianceSummary.ComplianceSummary.ComplianceSummaryByConfigRule.TotalCount");
-			complianceSummary.ComplianceSummaryByConfigRule = complianceSummaryByConfigRule;
-
 			DescribeComplianceSummaryResponse.DescribeComplianceSummary_ComplianceSummary.DescribeComplianceSummary_ComplianceSummaryByResource complianceSummaryByResource = new DescribeComplianceSummaryResponse.DescribeComplianceSummary_ComplianceSummary.DescribeComplianceSummary_ComplianceSummaryByResource();
-			complianceSummaryByResource.ComplianceSummaryTimestamp = _ctx.LongValue("DescribeComplianceSummary.ComplianceSummary.ComplianceSummaryByResource.ComplianceSummaryTimestamp");
 			complianceSummaryByResource.CompliantCount = _ctx.IntegerValue("DescribeComplianceSummary.ComplianceSummary.ComplianceSummaryByResource.CompliantCount");
 			complianceSummaryByResource.NonCompliantCount = _ctx.IntegerValue("DescribeComplianceSummary.ComplianceSummary.ComplianceSummaryByResource.NonCompliantCount");
+			complianceSummaryByResource.ComplianceSummaryTimestamp = _ctx.LongValue("DescribeComplianceSummary.ComplianceSummary.ComplianceSummaryByResource.ComplianceSummaryTimestamp");
 			complianceSummaryByResource.TotalCount = _ctx.LongValue("DescribeComplianceSummary.ComplianceSummary.ComplianceSummaryByResource.TotalCount");
 			complianceSummary.ComplianceSummaryByResource = complianceSummaryByResource;
+
+			DescribeComplianceSummaryResponse.DescribeComplianceSummary_ComplianceSummary.DescribeComplianceSummary_ComplianceSummaryByConfigRule complianceSummaryByConfigRule = new DescribeComplianceSummaryResponse.DescribeComplianceSummary_ComplianceSummary.DescribeComplianceSummary_ComplianceSummaryByConfigRule();
+			complianceSummaryByConfigRule.CompliantCount = _ctx.IntegerValue("DescribeComplianceSummary.ComplianceSummary.ComplianceSummaryByConfigRule.CompliantCount");
+			complianceSummaryByConfigRule.NonCompliantCount = _ctx.IntegerValue("DescribeComplianceSummary.ComplianceSummary.ComplianceSummaryByConfigRule.NonCompliantCount");
+			complianceSummaryByConfigRule.ComplianceSummaryTimestamp = _ctx.LongValue("DescribeComplianceSummary.ComplianceSummary.ComplianceSummaryByConfigRule.ComplianceSummaryTimestamp");
+			complianceSummaryByConfigRule.TotalCount = _ctx.LongValue("DescribeComplianceSummary.ComplianceSummary.ComplianceSummaryByConfigRule.TotalCount");
+			complianceSummary.ComplianceSummaryByConfigRule = complianceSummaryByConfigRule;
 			describeComplianceSummaryResponse.ComplianceSummary = complianceSummary;
         
 			return describeComplianceSummaryResponse;

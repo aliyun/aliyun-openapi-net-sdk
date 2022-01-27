@@ -26,22 +26,22 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class AttachAppPolicyToIdentityResponseUnmarshaller
     {
-        public static AttachAppPolicyToIdentityResponse Unmarshall(UnmarshallerContext context)
+        public static AttachAppPolicyToIdentityResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AttachAppPolicyToIdentityResponse attachAppPolicyToIdentityResponse = new AttachAppPolicyToIdentityResponse();
 
-			attachAppPolicyToIdentityResponse.HttpResponse = context.HttpResponse;
-			attachAppPolicyToIdentityResponse.RequestId = context.StringValue("AttachAppPolicyToIdentity.RequestId");
+			attachAppPolicyToIdentityResponse.HttpResponse = _ctx.HttpResponse;
+			attachAppPolicyToIdentityResponse.RequestId = _ctx.StringValue("AttachAppPolicyToIdentity.RequestId");
 
 			List<string> attachAppPolicyToIdentityResponse_nonExistPolicyNames = new List<string>();
-			for (int i = 0; i < context.Length("AttachAppPolicyToIdentity.NonExistPolicyNames.Length"); i++) {
-				attachAppPolicyToIdentityResponse_nonExistPolicyNames.Add(context.StringValue("AttachAppPolicyToIdentity.NonExistPolicyNames["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("AttachAppPolicyToIdentity.NonExistPolicyNames.Length"); i++) {
+				attachAppPolicyToIdentityResponse_nonExistPolicyNames.Add(_ctx.StringValue("AttachAppPolicyToIdentity.NonExistPolicyNames["+ i +"]"));
 			}
 			attachAppPolicyToIdentityResponse.NonExistPolicyNames = attachAppPolicyToIdentityResponse_nonExistPolicyNames;
 
 			List<string> attachAppPolicyToIdentityResponse_failedPolicyNames = new List<string>();
-			for (int i = 0; i < context.Length("AttachAppPolicyToIdentity.FailedPolicyNames.Length"); i++) {
-				attachAppPolicyToIdentityResponse_failedPolicyNames.Add(context.StringValue("AttachAppPolicyToIdentity.FailedPolicyNames["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("AttachAppPolicyToIdentity.FailedPolicyNames.Length"); i++) {
+				attachAppPolicyToIdentityResponse_failedPolicyNames.Add(_ctx.StringValue("AttachAppPolicyToIdentity.FailedPolicyNames["+ i +"]"));
 			}
 			attachAppPolicyToIdentityResponse.FailedPolicyNames = attachAppPolicyToIdentityResponse_failedPolicyNames;
         

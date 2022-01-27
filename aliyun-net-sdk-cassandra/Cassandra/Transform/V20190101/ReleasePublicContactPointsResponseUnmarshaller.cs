@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 {
     public class ReleasePublicContactPointsResponseUnmarshaller
     {
-        public static ReleasePublicContactPointsResponse Unmarshall(UnmarshallerContext context)
+        public static ReleasePublicContactPointsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ReleasePublicContactPointsResponse releasePublicContactPointsResponse = new ReleasePublicContactPointsResponse();
 
-			releasePublicContactPointsResponse.HttpResponse = context.HttpResponse;
-			releasePublicContactPointsResponse.RequestId = context.StringValue("ReleasePublicContactPoints.RequestId");
+			releasePublicContactPointsResponse.HttpResponse = _ctx.HttpResponse;
+			releasePublicContactPointsResponse.RequestId = _ctx.StringValue("ReleasePublicContactPoints.RequestId");
         
 			return releasePublicContactPointsResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -56,33 +56,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeRecommendInstanceType_RecommendInstanceType
 		{
 
-			private string regionId;
-
 			private string commodityCode;
+
+			private string zoneId;
+
+			private int? priority;
+
+			private string networkType;
 
 			private string scene;
 
-			private string instanceChargeType;
-
 			private string spotStrategy;
 
-			private int? priority;
+			private string regionId;
+
+			private string instanceChargeType;
 
 			private List<DescribeRecommendInstanceType_Zone> zones;
 
 			private DescribeRecommendInstanceType_InstanceType instanceType;
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
 
 			public string CommodityCode
 			{
@@ -93,6 +85,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					commodityCode = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public int? Priority
+			{
+				get
+				{
+					return priority;
+				}
+				set	
+				{
+					priority = value;
+				}
+			}
+
+			public string NetworkType
+			{
+				get
+				{
+					return networkType;
+				}
+				set	
+				{
+					networkType = value;
 				}
 			}
 
@@ -108,18 +136,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string InstanceChargeType
-			{
-				get
-				{
-					return instanceChargeType;
-				}
-				set	
-				{
-					instanceChargeType = value;
-				}
-			}
-
 			public string SpotStrategy
 			{
 				get
@@ -132,15 +148,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public int? Priority
+			public string RegionId
 			{
 				get
 				{
-					return priority;
+					return regionId;
 				}
 				set	
 				{
-					priority = value;
+					regionId = value;
+				}
+			}
+
+			public string InstanceChargeType
+			{
+				get
+				{
+					return instanceChargeType;
+				}
+				set	
+				{
+					instanceChargeType = value;
 				}
 			}
 
@@ -203,53 +231,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeRecommendInstanceType_InstanceType
 			{
 
-				private string generation;
-
-				private string instanceTypeFamily;
-
-				private string instanceType;
-
 				private string supportIoOptimized;
 
 				private int? cores;
 
 				private int? memory;
 
-				public string Generation
-				{
-					get
-					{
-						return generation;
-					}
-					set	
-					{
-						generation = value;
-					}
-				}
+				private string instanceType;
 
-				public string InstanceTypeFamily
-				{
-					get
-					{
-						return instanceTypeFamily;
-					}
-					set	
-					{
-						instanceTypeFamily = value;
-					}
-				}
+				private string instanceTypeFamily;
 
-				public string InstanceType
-				{
-					get
-					{
-						return instanceType;
-					}
-					set	
-					{
-						instanceType = value;
-					}
-				}
+				private string generation;
 
 				public string SupportIoOptimized
 				{
@@ -284,6 +276,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						memory = value;
+					}
+				}
+
+				public string InstanceType
+				{
+					get
+					{
+						return instanceType;
+					}
+					set	
+					{
+						instanceType = value;
+					}
+				}
+
+				public string InstanceTypeFamily
+				{
+					get
+					{
+						return instanceTypeFamily;
+					}
+					set	
+					{
+						instanceTypeFamily = value;
+					}
+				}
+
+				public string Generation
+				{
+					get
+					{
+						return generation;
+					}
+					set	
+					{
+						generation = value;
 					}
 				}
 			}

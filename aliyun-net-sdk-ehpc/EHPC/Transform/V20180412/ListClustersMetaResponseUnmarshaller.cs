@@ -26,24 +26,31 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class ListClustersMetaResponseUnmarshaller
     {
-        public static ListClustersMetaResponse Unmarshall(UnmarshallerContext context)
+        public static ListClustersMetaResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListClustersMetaResponse listClustersMetaResponse = new ListClustersMetaResponse();
 
-			listClustersMetaResponse.HttpResponse = context.HttpResponse;
-			listClustersMetaResponse.RequestId = context.StringValue("ListClustersMeta.RequestId");
-			listClustersMetaResponse.TotalCount = context.IntegerValue("ListClustersMeta.TotalCount");
-			listClustersMetaResponse.PageNumber = context.IntegerValue("ListClustersMeta.PageNumber");
-			listClustersMetaResponse.PageSize = context.IntegerValue("ListClustersMeta.PageSize");
+			listClustersMetaResponse.HttpResponse = _ctx.HttpResponse;
+			listClustersMetaResponse.RequestId = _ctx.StringValue("ListClustersMeta.RequestId");
+			listClustersMetaResponse.TotalCount = _ctx.IntegerValue("ListClustersMeta.TotalCount");
+			listClustersMetaResponse.PageNumber = _ctx.IntegerValue("ListClustersMeta.PageNumber");
+			listClustersMetaResponse.PageSize = _ctx.IntegerValue("ListClustersMeta.PageSize");
 
 			List<ListClustersMetaResponse.ListClustersMeta_ClusterInfoSimple> listClustersMetaResponse_clusters = new List<ListClustersMetaResponse.ListClustersMeta_ClusterInfoSimple>();
-			for (int i = 0; i < context.Length("ListClustersMeta.Clusters.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListClustersMeta.Clusters.Length"); i++) {
 				ListClustersMetaResponse.ListClustersMeta_ClusterInfoSimple clusterInfoSimple = new ListClustersMetaResponse.ListClustersMeta_ClusterInfoSimple();
-				clusterInfoSimple.Id = context.StringValue("ListClustersMeta.Clusters["+ i +"].Id");
-				clusterInfoSimple.Name = context.StringValue("ListClustersMeta.Clusters["+ i +"].Name");
-				clusterInfoSimple.Description = context.StringValue("ListClustersMeta.Clusters["+ i +"].Description");
-				clusterInfoSimple.Status = context.StringValue("ListClustersMeta.Clusters["+ i +"].Status");
-				clusterInfoSimple.Location = context.StringValue("ListClustersMeta.Clusters["+ i +"].Location");
+				clusterInfoSimple.Id = _ctx.StringValue("ListClustersMeta.Clusters["+ i +"].Id");
+				clusterInfoSimple.Name = _ctx.StringValue("ListClustersMeta.Clusters["+ i +"].Name");
+				clusterInfoSimple.Description = _ctx.StringValue("ListClustersMeta.Clusters["+ i +"].Description");
+				clusterInfoSimple.Status = _ctx.StringValue("ListClustersMeta.Clusters["+ i +"].Status");
+				clusterInfoSimple.Location = _ctx.StringValue("ListClustersMeta.Clusters["+ i +"].Location");
+				clusterInfoSimple.OsTag = _ctx.StringValue("ListClustersMeta.Clusters["+ i +"].OsTag");
+				clusterInfoSimple.ClientVersion = _ctx.StringValue("ListClustersMeta.Clusters["+ i +"].ClientVersion");
+				clusterInfoSimple.AccountType = _ctx.StringValue("ListClustersMeta.Clusters["+ i +"].AccountType");
+				clusterInfoSimple.SchedulerType = _ctx.StringValue("ListClustersMeta.Clusters["+ i +"].SchedulerType");
+				clusterInfoSimple.VpcId = _ctx.StringValue("ListClustersMeta.Clusters["+ i +"].VpcId");
+				clusterInfoSimple.DeployMode = _ctx.StringValue("ListClustersMeta.Clusters["+ i +"].DeployMode");
+				clusterInfoSimple.IsComputeEss = _ctx.BooleanValue("ListClustersMeta.Clusters["+ i +"].IsComputeEss");
 
 				listClustersMetaResponse_clusters.Add(clusterInfoSimple);
 			}

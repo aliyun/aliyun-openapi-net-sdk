@@ -26,27 +26,27 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class DescribePodLogResponseUnmarshaller
     {
-        public static DescribePodLogResponse Unmarshall(UnmarshallerContext context)
+        public static DescribePodLogResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribePodLogResponse describePodLogResponse = new DescribePodLogResponse();
 
-			describePodLogResponse.HttpResponse = context.HttpResponse;
-			describePodLogResponse.Code = context.IntegerValue("DescribePodLog.Code");
-			describePodLogResponse.ErrMsg = context.StringValue("DescribePodLog.ErrMsg");
-			describePodLogResponse.RequestId = context.StringValue("DescribePodLog.RequestId");
-			describePodLogResponse.Success = context.BooleanValue("DescribePodLog.Success");
+			describePodLogResponse.HttpResponse = _ctx.HttpResponse;
+			describePodLogResponse.Code = _ctx.IntegerValue("DescribePodLog.Code");
+			describePodLogResponse.ErrMsg = _ctx.StringValue("DescribePodLog.ErrMsg");
+			describePodLogResponse.RequestId = _ctx.StringValue("DescribePodLog.RequestId");
+			describePodLogResponse.Success = _ctx.BooleanValue("DescribePodLog.Success");
 
 			DescribePodLogResponse.DescribePodLog_Result result = new DescribePodLogResponse.DescribePodLog_Result();
-			result.DeployOrderName = context.StringValue("DescribePodLog.Result.DeployOrderName");
-			result.EnvTypeName = context.StringValue("DescribePodLog.Result.EnvTypeName");
+			result.DeployOrderName = _ctx.StringValue("DescribePodLog.Result.DeployOrderName");
+			result.EnvTypeName = _ctx.StringValue("DescribePodLog.Result.EnvTypeName");
 
 			List<DescribePodLogResponse.DescribePodLog_Result.DescribePodLog_DeployLogStepRC> result_deployStepList = new List<DescribePodLogResponse.DescribePodLog_Result.DescribePodLog_DeployLogStepRC>();
-			for (int i = 0; i < context.Length("DescribePodLog.Result.DeployStepList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribePodLog.Result.DeployStepList.Length"); i++) {
 				DescribePodLogResponse.DescribePodLog_Result.DescribePodLog_DeployLogStepRC deployLogStepRC = new DescribePodLogResponse.DescribePodLog_Result.DescribePodLog_DeployLogStepRC();
-				deployLogStepRC.StepName = context.StringValue("DescribePodLog.Result.DeployStepList["+ i +"].StepName");
-				deployLogStepRC.StepCode = context.StringValue("DescribePodLog.Result.DeployStepList["+ i +"].StepCode");
-				deployLogStepRC.StepLog = context.StringValue("DescribePodLog.Result.DeployStepList["+ i +"].StepLog");
-				deployLogStepRC.Status = context.StringValue("DescribePodLog.Result.DeployStepList["+ i +"].Status");
+				deployLogStepRC.StepName = _ctx.StringValue("DescribePodLog.Result.DeployStepList["+ i +"].StepName");
+				deployLogStepRC.StepCode = _ctx.StringValue("DescribePodLog.Result.DeployStepList["+ i +"].StepCode");
+				deployLogStepRC.StepLog = _ctx.StringValue("DescribePodLog.Result.DeployStepList["+ i +"].StepLog");
+				deployLogStepRC.Status = _ctx.StringValue("DescribePodLog.Result.DeployStepList["+ i +"].Status");
 
 				result_deployStepList.Add(deployLogStepRC);
 			}

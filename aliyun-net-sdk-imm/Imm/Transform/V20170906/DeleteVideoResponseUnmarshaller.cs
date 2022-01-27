@@ -26,14 +26,14 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class DeleteVideoResponseUnmarshaller
     {
-        public static DeleteVideoResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteVideoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteVideoResponse deleteVideoResponse = new DeleteVideoResponse();
 
-			deleteVideoResponse.HttpResponse = context.HttpResponse;
-			deleteVideoResponse.RequestId = context.StringValue("DeleteVideo.RequestId");
-			deleteVideoResponse.SetId = context.StringValue("DeleteVideo.SetId");
-			deleteVideoResponse.VideoUri = context.StringValue("DeleteVideo.VideoUri");
+			deleteVideoResponse.HttpResponse = _ctx.HttpResponse;
+			deleteVideoResponse.RequestId = _ctx.StringValue("DeleteVideo.RequestId");
+			deleteVideoResponse.SetId = _ctx.StringValue("DeleteVideo.SetId");
+			deleteVideoResponse.VideoUri = _ctx.StringValue("DeleteVideo.VideoUri");
         
 			return deleteVideoResponse;
         }

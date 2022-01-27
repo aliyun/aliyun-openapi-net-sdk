@@ -26,21 +26,21 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class DescribePriceResponseUnmarshaller
     {
-        public static DescribePriceResponse Unmarshall(UnmarshallerContext context)
+        public static DescribePriceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribePriceResponse describePriceResponse = new DescribePriceResponse();
 
-			describePriceResponse.HttpResponse = context.HttpResponse;
-			describePriceResponse.RequestId = context.StringValue("DescribePrice.RequestId");
-			describePriceResponse.TotalTradePrice = context.FloatValue("DescribePrice.TotalTradePrice");
+			describePriceResponse.HttpResponse = _ctx.HttpResponse;
+			describePriceResponse.RequestId = _ctx.StringValue("DescribePrice.RequestId");
+			describePriceResponse.TotalTradePrice = _ctx.FloatValue("DescribePrice.TotalTradePrice");
 
 			List<DescribePriceResponse.DescribePrice_PriceInfo> describePriceResponse_prices = new List<DescribePriceResponse.DescribePrice_PriceInfo>();
-			for (int i = 0; i < context.Length("DescribePrice.Prices.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribePrice.Prices.Length"); i++) {
 				DescribePriceResponse.DescribePrice_PriceInfo priceInfo = new DescribePriceResponse.DescribePrice_PriceInfo();
-				priceInfo.NodeType = context.StringValue("DescribePrice.Prices["+ i +"].NodeType");
-				priceInfo.OriginalPrice = context.FloatValue("DescribePrice.Prices["+ i +"].OriginalPrice");
-				priceInfo.TradePrice = context.FloatValue("DescribePrice.Prices["+ i +"].TradePrice");
-				priceInfo.Currency = context.StringValue("DescribePrice.Prices["+ i +"].Currency");
+				priceInfo.NodeType = _ctx.StringValue("DescribePrice.Prices["+ i +"].NodeType");
+				priceInfo.OriginalPrice = _ctx.FloatValue("DescribePrice.Prices["+ i +"].OriginalPrice");
+				priceInfo.TradePrice = _ctx.FloatValue("DescribePrice.Prices["+ i +"].TradePrice");
+				priceInfo.Currency = _ctx.StringValue("DescribePrice.Prices["+ i +"].Currency");
 
 				describePriceResponse_prices.Add(priceInfo);
 			}

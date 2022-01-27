@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class RestoreDBInstanceRequest : RpcAcsRequest<RestoreDBInstanceResponse>
     {
         public RestoreDBInstanceRequest()
-            : base("Dds", "2015-12-01", "RestoreDBInstance", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "RestoreDBInstance", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

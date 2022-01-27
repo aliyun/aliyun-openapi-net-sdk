@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Config.Model.V20190108
@@ -73,23 +73,11 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			public class DeleteConfigRules_OperateRuleItem
 			{
 
-				private string configRuleId;
-
 				private string errorCode;
 
 				private bool? success;
 
-				public string ConfigRuleId
-				{
-					get
-					{
-						return configRuleId;
-					}
-					set	
-					{
-						configRuleId = value;
-					}
-				}
+				private string configRuleId;
 
 				public string ErrorCode
 				{
@@ -112,6 +100,18 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					set	
 					{
 						success = value;
+					}
+				}
+
+				public string ConfigRuleId
+				{
+					get
+					{
+						return configRuleId;
+					}
+					set	
+					{
+						configRuleId = value;
 					}
 				}
 			}

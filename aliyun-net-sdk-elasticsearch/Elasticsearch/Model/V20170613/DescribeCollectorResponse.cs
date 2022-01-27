@@ -289,6 +289,14 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 				private string groupId;
 
+				private string host;
+
+				private string kibanaHost;
+
+				private string totalPodsCount;
+
+				private string successPodsCount;
+
 				private List<DescribeCollector_MachinesItem> machines;
 
 				private List<string> hosts;
@@ -386,6 +394,54 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						groupId = value;
+					}
+				}
+
+				public string Host
+				{
+					get
+					{
+						return host;
+					}
+					set	
+					{
+						host = value;
+					}
+				}
+
+				public string KibanaHost
+				{
+					get
+					{
+						return kibanaHost;
+					}
+					set	
+					{
+						kibanaHost = value;
+					}
+				}
+
+				public string TotalPodsCount
+				{
+					get
+					{
+						return totalPodsCount;
+					}
+					set	
+					{
+						totalPodsCount = value;
+					}
+				}
+
+				public string SuccessPodsCount
+				{
+					get
+					{
+						return successPodsCount;
+					}
+					set	
+					{
+						successPodsCount = value;
 					}
 				}
 

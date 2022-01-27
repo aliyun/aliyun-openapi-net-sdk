@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			EvaluateResourceResponse evaluateResourceResponse = new EvaluateResourceResponse();
 
 			evaluateResourceResponse.HttpResponse = _ctx.HttpResponse;
+			evaluateResourceResponse.DBInstanceAvailable = _ctx.StringValue("EvaluateResource.DBInstanceAvailable");
+			evaluateResourceResponse.EngineVersion = _ctx.StringValue("EvaluateResource.EngineVersion");
 			evaluateResourceResponse.RequestId = _ctx.StringValue("EvaluateResource.RequestId");
 			evaluateResourceResponse.Engine = _ctx.StringValue("EvaluateResource.Engine");
-			evaluateResourceResponse.EngineVersion = _ctx.StringValue("EvaluateResource.EngineVersion");
-			evaluateResourceResponse.DBInstanceAvailable = _ctx.StringValue("EvaluateResource.DBInstanceAvailable");
         
 			return evaluateResourceResponse;
         }

@@ -26,27 +26,27 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 {
     public class GetExecutionTemplateResponseUnmarshaller
     {
-        public static GetExecutionTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static GetExecutionTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetExecutionTemplateResponse getExecutionTemplateResponse = new GetExecutionTemplateResponse();
 
-			getExecutionTemplateResponse.HttpResponse = context.HttpResponse;
-			getExecutionTemplateResponse.RequestId = context.StringValue("GetExecutionTemplate.RequestId");
-			getExecutionTemplateResponse.Content = context.StringValue("GetExecutionTemplate.Content");
+			getExecutionTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			getExecutionTemplateResponse.RequestId = _ctx.StringValue("GetExecutionTemplate.RequestId");
+			getExecutionTemplateResponse.Content = _ctx.StringValue("GetExecutionTemplate.Content");
 
 			GetExecutionTemplateResponse.GetExecutionTemplate_Template template = new GetExecutionTemplateResponse.GetExecutionTemplate_Template();
-			template.TemplateName = context.StringValue("GetExecutionTemplate.Template.TemplateName");
-			template.TemplateId = context.StringValue("GetExecutionTemplate.Template.TemplateId");
-			template.CreatedDate = context.StringValue("GetExecutionTemplate.Template.CreatedDate");
-			template.CreatedBy = context.StringValue("GetExecutionTemplate.Template.CreatedBy");
-			template.UpdatedDate = context.StringValue("GetExecutionTemplate.Template.UpdatedDate");
-			template.UpdatedBy = context.StringValue("GetExecutionTemplate.Template.UpdatedBy");
-			template.Hash = context.StringValue("GetExecutionTemplate.Template.Hash");
-			template.Description = context.StringValue("GetExecutionTemplate.Template.Description");
-			template.ShareType = context.StringValue("GetExecutionTemplate.Template.ShareType");
-			template.TemplateFormat = context.StringValue("GetExecutionTemplate.Template.TemplateFormat");
-			template.TemplateVersion = context.StringValue("GetExecutionTemplate.Template.TemplateVersion");
-			template.Tags = context.StringValue("GetExecutionTemplate.Template.Tags");
+			template.TemplateName = _ctx.StringValue("GetExecutionTemplate.Template.TemplateName");
+			template.TemplateId = _ctx.StringValue("GetExecutionTemplate.Template.TemplateId");
+			template.CreatedDate = _ctx.StringValue("GetExecutionTemplate.Template.CreatedDate");
+			template.CreatedBy = _ctx.StringValue("GetExecutionTemplate.Template.CreatedBy");
+			template.UpdatedDate = _ctx.StringValue("GetExecutionTemplate.Template.UpdatedDate");
+			template.UpdatedBy = _ctx.StringValue("GetExecutionTemplate.Template.UpdatedBy");
+			template.Hash = _ctx.StringValue("GetExecutionTemplate.Template.Hash");
+			template.Description = _ctx.StringValue("GetExecutionTemplate.Template.Description");
+			template.ShareType = _ctx.StringValue("GetExecutionTemplate.Template.ShareType");
+			template.TemplateFormat = _ctx.StringValue("GetExecutionTemplate.Template.TemplateFormat");
+			template.TemplateVersion = _ctx.StringValue("GetExecutionTemplate.Template.TemplateVersion");
+			template.Tags = _ctx.StringValue("GetExecutionTemplate.Template.Tags");
 			getExecutionTemplateResponse.Template = template;
         
 			return getExecutionTemplateResponse;

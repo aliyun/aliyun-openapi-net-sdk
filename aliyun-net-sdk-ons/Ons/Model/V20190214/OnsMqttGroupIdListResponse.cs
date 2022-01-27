@@ -70,85 +70,25 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 		public class OnsMqttGroupIdList_MqttGroupIdDo
 		{
 
-			private long? id;
-
-			private int? channelId;
-
-			private string owner;
-
-			private string groupId;
-
-			private string topic;
-
 			private int? status;
-
-			private long? createTime;
 
 			private long? updateTime;
 
-			private string instanceId;
+			private string owner;
 
 			private bool? independentNaming;
 
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private string groupId;
 
-			public int? ChannelId
-			{
-				get
-				{
-					return channelId;
-				}
-				set	
-				{
-					channelId = value;
-				}
-			}
+			private long? createTime;
 
-			public string Owner
-			{
-				get
-				{
-					return owner;
-				}
-				set	
-				{
-					owner = value;
-				}
-			}
+			private string topic;
 
-			public string GroupId
-			{
-				get
-				{
-					return groupId;
-				}
-				set	
-				{
-					groupId = value;
-				}
-			}
+			private int? channelId;
 
-			public string Topic
-			{
-				get
-				{
-					return topic;
-				}
-				set	
-				{
-					topic = value;
-				}
-			}
+			private string instanceId;
+
+			private long? id;
 
 			public int? Status
 			{
@@ -159,18 +99,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					status = value;
-				}
-			}
-
-			public long? CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
 				}
 			}
 
@@ -186,15 +114,15 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
-			public string InstanceId
+			public string Owner
 			{
 				get
 				{
-					return instanceId;
+					return owner;
 				}
 				set	
 				{
-					instanceId = value;
+					owner = value;
 				}
 			}
 
@@ -207,6 +135,78 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					independentNaming = value;
+				}
+			}
+
+			public string GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
+				}
+			}
+
+			public long? CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string Topic
+			{
+				get
+				{
+					return topic;
+				}
+				set	
+				{
+					topic = value;
+				}
+			}
+
+			public int? ChannelId
+			{
+				get
+				{
+					return channelId;
+				}
+				set	
+				{
+					channelId = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 		}

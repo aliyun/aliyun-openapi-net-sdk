@@ -26,19 +26,54 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeSecurityEventOperationsResponseUnmarshaller
     {
-        public static DescribeSecurityEventOperationsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSecurityEventOperationsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSecurityEventOperationsResponse describeSecurityEventOperationsResponse = new DescribeSecurityEventOperationsResponse();
 
-			describeSecurityEventOperationsResponse.HttpResponse = context.HttpResponse;
-			describeSecurityEventOperationsResponse.RequestId = context.StringValue("DescribeSecurityEventOperations.RequestId");
+			describeSecurityEventOperationsResponse.HttpResponse = _ctx.HttpResponse;
+			describeSecurityEventOperationsResponse.RequestId = _ctx.StringValue("DescribeSecurityEventOperations.RequestId");
 
 			List<DescribeSecurityEventOperationsResponse.DescribeSecurityEventOperations_SecurityEventOperation> describeSecurityEventOperationsResponse_securityEventOperationsResponse = new List<DescribeSecurityEventOperationsResponse.DescribeSecurityEventOperations_SecurityEventOperation>();
-			for (int i = 0; i < context.Length("DescribeSecurityEventOperations.SecurityEventOperationsResponse.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeSecurityEventOperations.SecurityEventOperationsResponse.Length"); i++) {
 				DescribeSecurityEventOperationsResponse.DescribeSecurityEventOperations_SecurityEventOperation securityEventOperation = new DescribeSecurityEventOperationsResponse.DescribeSecurityEventOperations_SecurityEventOperation();
-				securityEventOperation.OperationCode = context.StringValue("DescribeSecurityEventOperations.SecurityEventOperationsResponse["+ i +"].OperationCode");
-				securityEventOperation.OperationParams = context.StringValue("DescribeSecurityEventOperations.SecurityEventOperationsResponse["+ i +"].OperationParams");
-				securityEventOperation.UserCanOperate = context.BooleanValue("DescribeSecurityEventOperations.SecurityEventOperationsResponse["+ i +"].UserCanOperate");
+				securityEventOperation.OperationCode = _ctx.StringValue("DescribeSecurityEventOperations.SecurityEventOperationsResponse["+ i +"].OperationCode");
+				securityEventOperation.OperationParams = _ctx.StringValue("DescribeSecurityEventOperations.SecurityEventOperationsResponse["+ i +"].OperationParams");
+				securityEventOperation.UserCanOperate = _ctx.BooleanValue("DescribeSecurityEventOperations.SecurityEventOperationsResponse["+ i +"].UserCanOperate");
+
+				List<DescribeSecurityEventOperationsResponse.DescribeSecurityEventOperations_SecurityEventOperation.DescribeSecurityEventOperations_MarkFieldItem> securityEventOperation_markField = new List<DescribeSecurityEventOperationsResponse.DescribeSecurityEventOperations_SecurityEventOperation.DescribeSecurityEventOperations_MarkFieldItem>();
+				for (int j = 0; j < _ctx.Length("DescribeSecurityEventOperations.SecurityEventOperationsResponse["+ i +"].MarkField.Length"); j++) {
+					DescribeSecurityEventOperationsResponse.DescribeSecurityEventOperations_SecurityEventOperation.DescribeSecurityEventOperations_MarkFieldItem markFieldItem = new DescribeSecurityEventOperationsResponse.DescribeSecurityEventOperations_SecurityEventOperation.DescribeSecurityEventOperations_MarkFieldItem();
+					markFieldItem.FiledName = _ctx.StringValue("DescribeSecurityEventOperations.SecurityEventOperationsResponse["+ i +"].MarkField["+ j +"].FiledName");
+					markFieldItem.FiledAliasName = _ctx.StringValue("DescribeSecurityEventOperations.SecurityEventOperationsResponse["+ i +"].MarkField["+ j +"].FiledAliasName");
+					markFieldItem.MarkMisType = _ctx.StringValue("DescribeSecurityEventOperations.SecurityEventOperationsResponse["+ i +"].MarkField["+ j +"].MarkMisType");
+					markFieldItem.MarkMisValue = _ctx.StringValue("DescribeSecurityEventOperations.SecurityEventOperationsResponse["+ i +"].MarkField["+ j +"].MarkMisValue");
+
+					List<string> markFieldItem_supportedMisType = new List<string>();
+					for (int k = 0; k < _ctx.Length("DescribeSecurityEventOperations.SecurityEventOperationsResponse["+ i +"].MarkField["+ j +"].SupportedMisType.Length"); k++) {
+						markFieldItem_supportedMisType.Add(_ctx.StringValue("DescribeSecurityEventOperations.SecurityEventOperationsResponse["+ i +"].MarkField["+ j +"].SupportedMisType["+ k +"]"));
+					}
+					markFieldItem.SupportedMisType = markFieldItem_supportedMisType;
+
+					securityEventOperation_markField.Add(markFieldItem);
+				}
+				securityEventOperation.MarkField = securityEventOperation_markField;
+
+				List<DescribeSecurityEventOperationsResponse.DescribeSecurityEventOperations_SecurityEventOperation.DescribeSecurityEventOperations_SecurityEventOperation1> securityEventOperation_markFieldsSource = new List<DescribeSecurityEventOperationsResponse.DescribeSecurityEventOperations_SecurityEventOperation.DescribeSecurityEventOperations_SecurityEventOperation1>();
+				for (int j = 0; j < _ctx.Length("DescribeSecurityEventOperations.SecurityEventOperationsResponse["+ i +"].MarkFieldsSource.Length"); j++) {
+					DescribeSecurityEventOperationsResponse.DescribeSecurityEventOperations_SecurityEventOperation.DescribeSecurityEventOperations_SecurityEventOperation1 securityEventOperation1 = new DescribeSecurityEventOperationsResponse.DescribeSecurityEventOperations_SecurityEventOperation.DescribeSecurityEventOperations_SecurityEventOperation1();
+					securityEventOperation1.FiledName = _ctx.StringValue("DescribeSecurityEventOperations.SecurityEventOperationsResponse["+ i +"].MarkFieldsSource["+ j +"].FiledName");
+					securityEventOperation1.FiledAliasName = _ctx.StringValue("DescribeSecurityEventOperations.SecurityEventOperationsResponse["+ i +"].MarkFieldsSource["+ j +"].FiledAliasName");
+					securityEventOperation1.MarkMisValue = _ctx.StringValue("DescribeSecurityEventOperations.SecurityEventOperationsResponse["+ i +"].MarkFieldsSource["+ j +"].MarkMisValue");
+
+					List<string> securityEventOperation1_supportedMisType2 = new List<string>();
+					for (int k = 0; k < _ctx.Length("DescribeSecurityEventOperations.SecurityEventOperationsResponse["+ i +"].MarkFieldsSource["+ j +"].SupportedMisType.Length"); k++) {
+						securityEventOperation1_supportedMisType2.Add(_ctx.StringValue("DescribeSecurityEventOperations.SecurityEventOperationsResponse["+ i +"].MarkFieldsSource["+ j +"].SupportedMisType["+ k +"]"));
+					}
+					securityEventOperation1.SupportedMisType2 = securityEventOperation1_supportedMisType2;
+
+					securityEventOperation_markFieldsSource.Add(securityEventOperation1);
+				}
+				securityEventOperation.MarkFieldsSource = securityEventOperation_markFieldsSource;
 
 				describeSecurityEventOperationsResponse_securityEventOperationsResponse.Add(securityEventOperation);
 			}

@@ -42,6 +42,8 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 		private long? wafVersion;
 
+		private int? wafAiStatus;
+
 		private long? ruleGroupId;
 
 		private string resourceGroupId;
@@ -60,6 +62,19 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			{
 				wafVersion = value;
 				DictionaryUtil.Add(QueryParameters, "WafVersion", value.ToString());
+			}
+		}
+
+		public int? WafAiStatus
+		{
+			get
+			{
+				return wafAiStatus;
+			}
+			set	
+			{
+				wafAiStatus = value;
+				DictionaryUtil.Add(QueryParameters, "WafAiStatus", value.ToString());
 			}
 		}
 

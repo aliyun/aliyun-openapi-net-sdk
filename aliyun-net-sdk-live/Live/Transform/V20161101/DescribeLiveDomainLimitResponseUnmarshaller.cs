@@ -26,19 +26,19 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveDomainLimitResponseUnmarshaller
     {
-        public static DescribeLiveDomainLimitResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveDomainLimitResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveDomainLimitResponse describeLiveDomainLimitResponse = new DescribeLiveDomainLimitResponse();
 
-			describeLiveDomainLimitResponse.HttpResponse = context.HttpResponse;
-			describeLiveDomainLimitResponse.RequestId = context.StringValue("DescribeLiveDomainLimit.RequestId");
+			describeLiveDomainLimitResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveDomainLimitResponse.RequestId = _ctx.StringValue("DescribeLiveDomainLimit.RequestId");
 
 			List<DescribeLiveDomainLimitResponse.DescribeLiveDomainLimit_LiveDomainLimit> describeLiveDomainLimitResponse_liveDomainLimitList = new List<DescribeLiveDomainLimitResponse.DescribeLiveDomainLimit_LiveDomainLimit>();
-			for (int i = 0; i < context.Length("DescribeLiveDomainLimit.LiveDomainLimitList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveDomainLimit.LiveDomainLimitList.Length"); i++) {
 				DescribeLiveDomainLimitResponse.DescribeLiveDomainLimit_LiveDomainLimit liveDomainLimit = new DescribeLiveDomainLimitResponse.DescribeLiveDomainLimit_LiveDomainLimit();
-				liveDomainLimit.DomainName = context.StringValue("DescribeLiveDomainLimit.LiveDomainLimitList["+ i +"].DomainName");
-				liveDomainLimit.LimitNum = context.IntegerValue("DescribeLiveDomainLimit.LiveDomainLimitList["+ i +"].LimitNum");
-				liveDomainLimit.LimitTranscodeNum = context.IntegerValue("DescribeLiveDomainLimit.LiveDomainLimitList["+ i +"].LimitTranscodeNum");
+				liveDomainLimit.DomainName = _ctx.StringValue("DescribeLiveDomainLimit.LiveDomainLimitList["+ i +"].DomainName");
+				liveDomainLimit.LimitNum = _ctx.IntegerValue("DescribeLiveDomainLimit.LiveDomainLimitList["+ i +"].LimitNum");
+				liveDomainLimit.LimitTranscodeNum = _ctx.IntegerValue("DescribeLiveDomainLimit.LiveDomainLimitList["+ i +"].LimitTranscodeNum");
 
 				describeLiveDomainLimitResponse_liveDomainLimitList.Add(liveDomainLimit);
 			}

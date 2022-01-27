@@ -26,19 +26,19 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class CreateMetaCategoryResponseUnmarshaller
     {
-        public static CreateMetaCategoryResponse Unmarshall(UnmarshallerContext context)
+        public static CreateMetaCategoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateMetaCategoryResponse createMetaCategoryResponse = new CreateMetaCategoryResponse();
 
-			createMetaCategoryResponse.HttpResponse = context.HttpResponse;
-			createMetaCategoryResponse.RequestId = context.StringValue("CreateMetaCategory.RequestId");
-			createMetaCategoryResponse.ErrorCode = context.StringValue("CreateMetaCategory.ErrorCode");
-			createMetaCategoryResponse.ErrorMessage = context.StringValue("CreateMetaCategory.ErrorMessage");
-			createMetaCategoryResponse.HttpStatusCode = context.IntegerValue("CreateMetaCategory.HttpStatusCode");
-			createMetaCategoryResponse.Success = context.BooleanValue("CreateMetaCategory.Success");
+			createMetaCategoryResponse.HttpResponse = _ctx.HttpResponse;
+			createMetaCategoryResponse.RequestId = _ctx.StringValue("CreateMetaCategory.RequestId");
+			createMetaCategoryResponse.ErrorCode = _ctx.StringValue("CreateMetaCategory.ErrorCode");
+			createMetaCategoryResponse.ErrorMessage = _ctx.StringValue("CreateMetaCategory.ErrorMessage");
+			createMetaCategoryResponse.HttpStatusCode = _ctx.IntegerValue("CreateMetaCategory.HttpStatusCode");
+			createMetaCategoryResponse.Success = _ctx.BooleanValue("CreateMetaCategory.Success");
 
 			CreateMetaCategoryResponse.CreateMetaCategory_Data data = new CreateMetaCategoryResponse.CreateMetaCategory_Data();
-			data.CategoryId = context.LongValue("CreateMetaCategory.Data.CategoryId");
+			data.CategoryId = _ctx.LongValue("CreateMetaCategory.Data.CategoryId");
 			createMetaCategoryResponse.Data = data;
         
 			return createMetaCategoryResponse;

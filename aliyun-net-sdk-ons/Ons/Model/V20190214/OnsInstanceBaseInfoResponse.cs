@@ -70,85 +70,25 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 		public class OnsInstanceBaseInfo_InstanceBaseInfo
 		{
 
-			private string instanceId;
-
-			private int? instanceStatus;
-
-			private long? releaseTime;
-
-			private int? instanceType;
-
-			private string instanceName;
-
 			private bool? independentNaming;
-
-			private string remark;
-
-			private int? topicCapacity;
 
 			private long? maxTps;
 
+			private string remark;
+
+			private string instanceName;
+
+			private long? releaseTime;
+
+			private int? topicCapacity;
+
+			private int? instanceStatus;
+
+			private string instanceId;
+
+			private int? instanceType;
+
 			private OnsInstanceBaseInfo_Endpoints endpoints;
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public int? InstanceStatus
-			{
-				get
-				{
-					return instanceStatus;
-				}
-				set	
-				{
-					instanceStatus = value;
-				}
-			}
-
-			public long? ReleaseTime
-			{
-				get
-				{
-					return releaseTime;
-				}
-				set	
-				{
-					releaseTime = value;
-				}
-			}
-
-			public int? InstanceType
-			{
-				get
-				{
-					return instanceType;
-				}
-				set	
-				{
-					instanceType = value;
-				}
-			}
-
-			public string InstanceName
-			{
-				get
-				{
-					return instanceName;
-				}
-				set	
-				{
-					instanceName = value;
-				}
-			}
 
 			public bool? IndependentNaming
 			{
@@ -159,6 +99,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					independentNaming = value;
+				}
+			}
+
+			public long? MaxTps
+			{
+				get
+				{
+					return maxTps;
+				}
+				set	
+				{
+					maxTps = value;
 				}
 			}
 
@@ -174,6 +126,30 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public long? ReleaseTime
+			{
+				get
+				{
+					return releaseTime;
+				}
+				set	
+				{
+					releaseTime = value;
+				}
+			}
+
 			public int? TopicCapacity
 			{
 				get
@@ -186,15 +162,39 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
-			public long? MaxTps
+			public int? InstanceStatus
 			{
 				get
 				{
-					return maxTps;
+					return instanceStatus;
 				}
 				set	
 				{
-					maxTps = value;
+					instanceStatus = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public int? InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
 				}
 			}
 
@@ -217,9 +217,9 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 				private string httpInternetEndpoint;
 
-				private string httpInternetSecureEndpoint;
-
 				private string httpInternalEndpoint;
+
+				private string httpInternetSecureEndpoint;
 
 				public string TcpEndpoint
 				{
@@ -245,18 +245,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					}
 				}
 
-				public string HttpInternetSecureEndpoint
-				{
-					get
-					{
-						return httpInternetSecureEndpoint;
-					}
-					set	
-					{
-						httpInternetSecureEndpoint = value;
-					}
-				}
-
 				public string HttpInternalEndpoint
 				{
 					get
@@ -266,6 +254,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					set	
 					{
 						httpInternalEndpoint = value;
+					}
+				}
+
+				public string HttpInternetSecureEndpoint
+				{
+					get
+					{
+						return httpInternetSecureEndpoint;
+					}
+					set	
+					{
+						httpInternetSecureEndpoint = value;
 					}
 				}
 			}

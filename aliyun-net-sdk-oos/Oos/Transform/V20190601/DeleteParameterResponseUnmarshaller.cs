@@ -26,12 +26,12 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 {
     public class DeleteParameterResponseUnmarshaller
     {
-        public static DeleteParameterResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteParameterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteParameterResponse deleteParameterResponse = new DeleteParameterResponse();
 
-			deleteParameterResponse.HttpResponse = context.HttpResponse;
-			deleteParameterResponse.RequestId = context.StringValue("DeleteParameter.RequestId");
+			deleteParameterResponse.HttpResponse = _ctx.HttpResponse;
+			deleteParameterResponse.RequestId = _ctx.StringValue("DeleteParameter.RequestId");
         
 			return deleteParameterResponse;
         }

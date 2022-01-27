@@ -32,6 +32,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
         public UpdateFaceGroupRequest()
             : base("imm", "2017-09-06", "UpdateFaceGroup", "imm", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.imm.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.imm.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
@@ -46,6 +51,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private string remarksA;
 
 		private string groupName;
+
+		private string resetItems;
 
 		private string remarksArrayA;
 
@@ -134,6 +141,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				groupName = value;
 				DictionaryUtil.Add(QueryParameters, "GroupName", value);
+			}
+		}
+
+		public string ResetItems
+		{
+			get
+			{
+				return resetItems;
+			}
+			set	
+			{
+				resetItems = value;
+				DictionaryUtil.Add(QueryParameters, "ResetItems", value);
 			}
 		}
 

@@ -34,14 +34,16 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.OpenSearch.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.OpenSearch.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/files/src/UserScorer.cava";
+			UriPattern = "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/files/src/[fileName]";
 			Method = MethodType.GET;
         }
 
 		private string appVersionId;
+
+		private string fileName;
 
 		private string scriptName;
 
@@ -57,6 +59,19 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 			{
 				appVersionId = value;
 				DictionaryUtil.Add(PathParameters, "appVersionId", value);
+			}
+		}
+
+		public string FileName
+		{
+			get
+			{
+				return fileName;
+			}
+			set	
+			{
+				fileName = value;
+				DictionaryUtil.Add(PathParameters, "fileName", value);
 			}
 		}
 

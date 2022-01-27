@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 {
     public class DeleteRuleResponseUnmarshaller
     {
-        public static DeleteRuleResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteRuleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteRuleResponse deleteRuleResponse = new DeleteRuleResponse();
 
-			deleteRuleResponse.HttpResponse = context.HttpResponse;
-			deleteRuleResponse.RequestId = context.StringValue("DeleteRule.RequestId");
+			deleteRuleResponse.HttpResponse = _ctx.HttpResponse;
+			deleteRuleResponse.RequestId = _ctx.StringValue("DeleteRule.RequestId");
         
 			return deleteRuleResponse;
         }

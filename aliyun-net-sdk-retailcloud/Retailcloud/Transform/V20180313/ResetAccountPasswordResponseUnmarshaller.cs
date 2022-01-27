@@ -26,14 +26,14 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class ResetAccountPasswordResponseUnmarshaller
     {
-        public static ResetAccountPasswordResponse Unmarshall(UnmarshallerContext context)
+        public static ResetAccountPasswordResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ResetAccountPasswordResponse resetAccountPasswordResponse = new ResetAccountPasswordResponse();
 
-			resetAccountPasswordResponse.HttpResponse = context.HttpResponse;
-			resetAccountPasswordResponse.RequestId = context.StringValue("ResetAccountPassword.RequestId");
-			resetAccountPasswordResponse.Code = context.IntegerValue("ResetAccountPassword.Code");
-			resetAccountPasswordResponse.ErrMsg = context.StringValue("ResetAccountPassword.ErrMsg");
+			resetAccountPasswordResponse.HttpResponse = _ctx.HttpResponse;
+			resetAccountPasswordResponse.RequestId = _ctx.StringValue("ResetAccountPassword.RequestId");
+			resetAccountPasswordResponse.Code = _ctx.IntegerValue("ResetAccountPassword.Code");
+			resetAccountPasswordResponse.ErrMsg = _ctx.StringValue("ResetAccountPassword.ErrMsg");
         
 			return resetAccountPasswordResponse;
         }

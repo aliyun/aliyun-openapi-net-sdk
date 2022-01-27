@@ -26,24 +26,24 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class DetectImageBodiesResponseUnmarshaller
     {
-        public static DetectImageBodiesResponse Unmarshall(UnmarshallerContext context)
+        public static DetectImageBodiesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DetectImageBodiesResponse detectImageBodiesResponse = new DetectImageBodiesResponse();
 
-			detectImageBodiesResponse.HttpResponse = context.HttpResponse;
-			detectImageBodiesResponse.RequestId = context.StringValue("DetectImageBodies.RequestId");
-			detectImageBodiesResponse.ImageUri = context.StringValue("DetectImageBodies.ImageUri");
+			detectImageBodiesResponse.HttpResponse = _ctx.HttpResponse;
+			detectImageBodiesResponse.RequestId = _ctx.StringValue("DetectImageBodies.RequestId");
+			detectImageBodiesResponse.ImageUri = _ctx.StringValue("DetectImageBodies.ImageUri");
 
 			List<DetectImageBodiesResponse.DetectImageBodies_BodiesItem> detectImageBodiesResponse_bodies = new List<DetectImageBodiesResponse.DetectImageBodies_BodiesItem>();
-			for (int i = 0; i < context.Length("DetectImageBodies.Bodies.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DetectImageBodies.Bodies.Length"); i++) {
 				DetectImageBodiesResponse.DetectImageBodies_BodiesItem bodiesItem = new DetectImageBodiesResponse.DetectImageBodies_BodiesItem();
-				bodiesItem.BodyConfidence = context.FloatValue("DetectImageBodies.Bodies["+ i +"].BodyConfidence");
+				bodiesItem.BodyConfidence = _ctx.FloatValue("DetectImageBodies.Bodies["+ i +"].BodyConfidence");
 
 				DetectImageBodiesResponse.DetectImageBodies_BodiesItem.DetectImageBodies_BodyBoundary bodyBoundary = new DetectImageBodiesResponse.DetectImageBodies_BodiesItem.DetectImageBodies_BodyBoundary();
-				bodyBoundary.Left = context.IntegerValue("DetectImageBodies.Bodies["+ i +"].BodyBoundary.Left");
-				bodyBoundary.Top = context.IntegerValue("DetectImageBodies.Bodies["+ i +"].BodyBoundary.Top");
-				bodyBoundary.Width = context.IntegerValue("DetectImageBodies.Bodies["+ i +"].BodyBoundary.Width");
-				bodyBoundary.Height = context.IntegerValue("DetectImageBodies.Bodies["+ i +"].BodyBoundary.Height");
+				bodyBoundary.Left = _ctx.IntegerValue("DetectImageBodies.Bodies["+ i +"].BodyBoundary.Left");
+				bodyBoundary.Top = _ctx.IntegerValue("DetectImageBodies.Bodies["+ i +"].BodyBoundary.Top");
+				bodyBoundary.Width = _ctx.IntegerValue("DetectImageBodies.Bodies["+ i +"].BodyBoundary.Width");
+				bodyBoundary.Height = _ctx.IntegerValue("DetectImageBodies.Bodies["+ i +"].BodyBoundary.Height");
 				bodiesItem.BodyBoundary = bodyBoundary;
 
 				detectImageBodiesResponse_bodies.Add(bodiesItem);

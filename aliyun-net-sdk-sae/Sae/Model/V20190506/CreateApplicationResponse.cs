@@ -25,29 +25,29 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class CreateApplicationResponse : AcsResponse
 	{
 
-		private string code;
+		private string requestId;
 
 		private string message;
 
-		private string requestId;
+		private string traceId;
 
 		private string errorCode;
 
-		private string traceId;
+		private string code;
 
 		private bool? success;
 
 		private CreateApplication_Data data;
 
-		public string Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
 			}
 		}
 
@@ -63,15 +63,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string RequestId
+		public string TraceId
 		{
 			get
 			{
-				return requestId;
+				return traceId;
 			}
 			set	
 			{
-				requestId = value;
+				traceId = value;
 			}
 		}
 
@@ -87,15 +87,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string TraceId
+		public string Code
 		{
 			get
 			{
-				return traceId;
+				return code;
 			}
 			set	
 			{
-				traceId = value;
+				code = value;
 			}
 		}
 
@@ -126,21 +126,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class CreateApplication_Data
 		{
 
-			private string appId;
-
 			private string changeOrderId;
 
-			public string AppId
-			{
-				get
-				{
-					return appId;
-				}
-				set	
-				{
-					appId = value;
-				}
-			}
+			private string appId;
 
 			public string ChangeOrderId
 			{
@@ -151,6 +139,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					changeOrderId = value;
+				}
+			}
+
+			public string AppId
+			{
+				get
+				{
+					return appId;
+				}
+				set	
+				{
+					appId = value;
 				}
 			}
 		}

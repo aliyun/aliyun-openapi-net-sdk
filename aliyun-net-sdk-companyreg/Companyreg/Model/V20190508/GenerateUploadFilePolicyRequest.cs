@@ -32,9 +32,17 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
         public GenerateUploadFilePolicyRequest()
             : base("companyreg", "2019-05-08", "GenerateUploadFilePolicy", "companyreg", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.companyreg.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.companyreg.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string fileType;
+
+		private string fileName;
 
 		public string FileType
 		{
@@ -46,6 +54,19 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 			{
 				fileType = value;
 				DictionaryUtil.Add(QueryParameters, "FileType", value);
+			}
+		}
+
+		public string FileName
+		{
+			get
+			{
+				return fileName;
+			}
+			set	
+			{
+				fileName = value;
+				DictionaryUtil.Add(QueryParameters, "FileName", value);
 			}
 		}
 

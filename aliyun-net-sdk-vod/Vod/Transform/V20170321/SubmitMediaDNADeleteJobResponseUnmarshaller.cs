@@ -26,14 +26,14 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class SubmitMediaDNADeleteJobResponseUnmarshaller
     {
-        public static SubmitMediaDNADeleteJobResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitMediaDNADeleteJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitMediaDNADeleteJobResponse submitMediaDNADeleteJobResponse = new SubmitMediaDNADeleteJobResponse();
 
-			submitMediaDNADeleteJobResponse.HttpResponse = context.HttpResponse;
-			submitMediaDNADeleteJobResponse.RequestId = context.StringValue("SubmitMediaDNADeleteJob.RequestId");
-			submitMediaDNADeleteJobResponse.MediaId = context.StringValue("SubmitMediaDNADeleteJob.MediaId");
-			submitMediaDNADeleteJobResponse.JobId = context.StringValue("SubmitMediaDNADeleteJob.JobId");
+			submitMediaDNADeleteJobResponse.HttpResponse = _ctx.HttpResponse;
+			submitMediaDNADeleteJobResponse.RequestId = _ctx.StringValue("SubmitMediaDNADeleteJob.RequestId");
+			submitMediaDNADeleteJobResponse.MediaId = _ctx.StringValue("SubmitMediaDNADeleteJob.MediaId");
+			submitMediaDNADeleteJobResponse.JobId = _ctx.StringValue("SubmitMediaDNADeleteJob.JobId");
         
 			return submitMediaDNADeleteJobResponse;
         }

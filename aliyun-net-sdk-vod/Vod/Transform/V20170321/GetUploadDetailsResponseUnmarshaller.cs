@@ -26,41 +26,41 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetUploadDetailsResponseUnmarshaller
     {
-        public static GetUploadDetailsResponse Unmarshall(UnmarshallerContext context)
+        public static GetUploadDetailsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetUploadDetailsResponse getUploadDetailsResponse = new GetUploadDetailsResponse();
 
-			getUploadDetailsResponse.HttpResponse = context.HttpResponse;
-			getUploadDetailsResponse.RequestId = context.StringValue("GetUploadDetails.RequestId");
+			getUploadDetailsResponse.HttpResponse = _ctx.HttpResponse;
+			getUploadDetailsResponse.RequestId = _ctx.StringValue("GetUploadDetails.RequestId");
 
 			List<string> getUploadDetailsResponse_nonExistMediaIds = new List<string>();
-			for (int i = 0; i < context.Length("GetUploadDetails.NonExistMediaIds.Length"); i++) {
-				getUploadDetailsResponse_nonExistMediaIds.Add(context.StringValue("GetUploadDetails.NonExistMediaIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetUploadDetails.NonExistMediaIds.Length"); i++) {
+				getUploadDetailsResponse_nonExistMediaIds.Add(_ctx.StringValue("GetUploadDetails.NonExistMediaIds["+ i +"]"));
 			}
 			getUploadDetailsResponse.NonExistMediaIds = getUploadDetailsResponse_nonExistMediaIds;
 
 			List<string> getUploadDetailsResponse_forbiddenMediaIds = new List<string>();
-			for (int i = 0; i < context.Length("GetUploadDetails.ForbiddenMediaIds.Length"); i++) {
-				getUploadDetailsResponse_forbiddenMediaIds.Add(context.StringValue("GetUploadDetails.ForbiddenMediaIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetUploadDetails.ForbiddenMediaIds.Length"); i++) {
+				getUploadDetailsResponse_forbiddenMediaIds.Add(_ctx.StringValue("GetUploadDetails.ForbiddenMediaIds["+ i +"]"));
 			}
 			getUploadDetailsResponse.ForbiddenMediaIds = getUploadDetailsResponse_forbiddenMediaIds;
 
 			List<GetUploadDetailsResponse.GetUploadDetails_UploadDetail> getUploadDetailsResponse_uploadDetails = new List<GetUploadDetailsResponse.GetUploadDetails_UploadDetail>();
-			for (int i = 0; i < context.Length("GetUploadDetails.UploadDetails.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetUploadDetails.UploadDetails.Length"); i++) {
 				GetUploadDetailsResponse.GetUploadDetails_UploadDetail uploadDetail = new GetUploadDetailsResponse.GetUploadDetails_UploadDetail();
-				uploadDetail.MediaId = context.StringValue("GetUploadDetails.UploadDetails["+ i +"].MediaId");
-				uploadDetail.Title = context.StringValue("GetUploadDetails.UploadDetails["+ i +"].Title");
-				uploadDetail.FileSize = context.LongValue("GetUploadDetails.UploadDetails["+ i +"].FileSize");
-				uploadDetail.Status = context.StringValue("GetUploadDetails.UploadDetails["+ i +"].Status");
-				uploadDetail.UploadStatus = context.StringValue("GetUploadDetails.UploadDetails["+ i +"].UploadStatus");
-				uploadDetail.CreationTime = context.StringValue("GetUploadDetails.UploadDetails["+ i +"].CreationTime");
-				uploadDetail.ModificationTime = context.StringValue("GetUploadDetails.UploadDetails["+ i +"].ModificationTime");
-				uploadDetail.CompletionTime = context.StringValue("GetUploadDetails.UploadDetails["+ i +"].CompletionTime");
-				uploadDetail.UploadSize = context.LongValue("GetUploadDetails.UploadDetails["+ i +"].UploadSize");
-				uploadDetail.UploadRatio = context.FloatValue("GetUploadDetails.UploadDetails["+ i +"].UploadRatio");
-				uploadDetail.UploadIP = context.StringValue("GetUploadDetails.UploadDetails["+ i +"].UploadIP");
-				uploadDetail.UploadSource = context.StringValue("GetUploadDetails.UploadDetails["+ i +"].UploadSource");
-				uploadDetail.DeviceModel = context.StringValue("GetUploadDetails.UploadDetails["+ i +"].DeviceModel");
+				uploadDetail.MediaId = _ctx.StringValue("GetUploadDetails.UploadDetails["+ i +"].MediaId");
+				uploadDetail.Title = _ctx.StringValue("GetUploadDetails.UploadDetails["+ i +"].Title");
+				uploadDetail.FileSize = _ctx.LongValue("GetUploadDetails.UploadDetails["+ i +"].FileSize");
+				uploadDetail.Status = _ctx.StringValue("GetUploadDetails.UploadDetails["+ i +"].Status");
+				uploadDetail.UploadStatus = _ctx.StringValue("GetUploadDetails.UploadDetails["+ i +"].UploadStatus");
+				uploadDetail.CreationTime = _ctx.StringValue("GetUploadDetails.UploadDetails["+ i +"].CreationTime");
+				uploadDetail.ModificationTime = _ctx.StringValue("GetUploadDetails.UploadDetails["+ i +"].ModificationTime");
+				uploadDetail.CompletionTime = _ctx.StringValue("GetUploadDetails.UploadDetails["+ i +"].CompletionTime");
+				uploadDetail.UploadSize = _ctx.LongValue("GetUploadDetails.UploadDetails["+ i +"].UploadSize");
+				uploadDetail.UploadRatio = _ctx.FloatValue("GetUploadDetails.UploadDetails["+ i +"].UploadRatio");
+				uploadDetail.UploadIP = _ctx.StringValue("GetUploadDetails.UploadDetails["+ i +"].UploadIP");
+				uploadDetail.UploadSource = _ctx.StringValue("GetUploadDetails.UploadDetails["+ i +"].UploadSource");
+				uploadDetail.DeviceModel = _ctx.StringValue("GetUploadDetails.UploadDetails["+ i +"].DeviceModel");
 
 				getUploadDetailsResponse_uploadDetails.Add(uploadDetail);
 			}

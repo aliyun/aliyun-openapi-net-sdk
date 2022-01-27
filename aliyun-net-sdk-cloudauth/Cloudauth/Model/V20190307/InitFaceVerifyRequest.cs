@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cloudauth.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cloudauth.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -77,6 +77,10 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 		private string returnUrl;
 
 		private string callbackUrl;
+
+		private string crop;
+
+		private string certifyUrlType;
 
 		public string ProductCode
 		{
@@ -322,6 +326,32 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				callbackUrl = value;
 				DictionaryUtil.Add(QueryParameters, "CallbackUrl", value);
+			}
+		}
+
+		public string Crop
+		{
+			get
+			{
+				return crop;
+			}
+			set	
+			{
+				crop = value;
+				DictionaryUtil.Add(BodyParameters, "Crop", value);
+			}
+		}
+
+		public string CertifyUrlType
+		{
+			get
+			{
+				return certifyUrlType;
+			}
+			set	
+			{
+				certifyUrlType = value;
+				DictionaryUtil.Add(QueryParameters, "CertifyUrlType", value);
 			}
 		}
 

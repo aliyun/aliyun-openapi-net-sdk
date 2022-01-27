@@ -25,15 +25,49 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class CreateDBInstanceResponse : AcsResponse
 	{
 
+		private bool? dryRunResult;
+
+		private bool? tagResult;
+
 		private string requestId;
-
-		private string dBInstanceId;
-
-		private string orderId;
 
 		private string connectionString;
 
+		private string message;
+
+		private string dBInstanceId;
+
 		private string port;
+
+		private string taskId;
+
+		private bool? dryRun;
+
+		private string orderId;
+
+		public bool? DryRunResult
+		{
+			get
+			{
+				return dryRunResult;
+			}
+			set	
+			{
+				dryRunResult = value;
+			}
+		}
+
+		public bool? TagResult
+		{
+			get
+			{
+				return tagResult;
+			}
+			set	
+			{
+				tagResult = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,30 +78,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-			}
-		}
-
-		public string OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
 			}
 		}
 
@@ -83,6 +93,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+			}
+		}
+
 		public string Port
 		{
 			get
@@ -92,6 +126,42 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				port = value;
+			}
+		}
+
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+			}
+		}
+
+		public string OrderId
+		{
+			get
+			{
+				return orderId;
+			}
+			set	
+			{
+				orderId = value;
 			}
 		}
 	}

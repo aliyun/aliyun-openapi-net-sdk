@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Config;
 using Aliyun.Acs.Config.Transform;
 using Aliyun.Acs.Config.Transform.V20190108;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Config.Model.V20190108
     public class StartConfigRuleEvaluationRequest : RpcAcsRequest<StartConfigRuleEvaluationResponse>
     {
         public StartConfigRuleEvaluationRequest()
-            : base("Config", "2019-01-08", "StartConfigRuleEvaluation", "Config", "openAPI")
+            : base("Config", "2019-01-08", "StartConfigRuleEvaluation")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,9 +43,9 @@ namespace Aliyun.Acs.Config.Model.V20190108
 
 		private string configRuleId;
 
-		private bool? multiAccount;
+		private string compliancePackId;
 
-		private long? memberId;
+		private bool? revertEvaluation;
 
 		public string ConfigRuleId
 		{
@@ -59,29 +60,29 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			}
 		}
 
-		public bool? MultiAccount
+		public string CompliancePackId
 		{
 			get
 			{
-				return multiAccount;
+				return compliancePackId;
 			}
 			set	
 			{
-				multiAccount = value;
-				DictionaryUtil.Add(QueryParameters, "MultiAccount", value.ToString());
+				compliancePackId = value;
+				DictionaryUtil.Add(QueryParameters, "CompliancePackId", value);
 			}
 		}
 
-		public long? MemberId
+		public bool? RevertEvaluation
 		{
 			get
 			{
-				return memberId;
+				return revertEvaluation;
 			}
 			set	
 			{
-				memberId = value;
-				DictionaryUtil.Add(QueryParameters, "MemberId", value.ToString());
+				revertEvaluation = value;
+				DictionaryUtil.Add(QueryParameters, "RevertEvaluation", value.ToString());
 			}
 		}
 

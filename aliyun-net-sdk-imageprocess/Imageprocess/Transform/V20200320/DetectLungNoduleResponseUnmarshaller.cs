@@ -26,47 +26,50 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 {
     public class DetectLungNoduleResponseUnmarshaller
     {
-        public static DetectLungNoduleResponse Unmarshall(UnmarshallerContext context)
+        public static DetectLungNoduleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DetectLungNoduleResponse detectLungNoduleResponse = new DetectLungNoduleResponse();
 
-			detectLungNoduleResponse.HttpResponse = context.HttpResponse;
-			detectLungNoduleResponse.RequestId = context.StringValue("DetectLungNodule.RequestId");
+			detectLungNoduleResponse.HttpResponse = _ctx.HttpResponse;
+			detectLungNoduleResponse.RequestId = _ctx.StringValue("DetectLungNodule.RequestId");
 
 			DetectLungNoduleResponse.DetectLungNodule_Data data = new DetectLungNoduleResponse.DetectLungNodule_Data();
 
 			List<DetectLungNoduleResponse.DetectLungNodule_Data.DetectLungNodule_Serie> data_series = new List<DetectLungNoduleResponse.DetectLungNodule_Data.DetectLungNodule_Serie>();
-			for (int i = 0; i < context.Length("DetectLungNodule.Data.Series.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DetectLungNodule.Data.Series.Length"); i++) {
 				DetectLungNoduleResponse.DetectLungNodule_Data.DetectLungNodule_Serie serie = new DetectLungNoduleResponse.DetectLungNodule_Data.DetectLungNodule_Serie();
-				serie.SeriesInstanceUid = context.StringValue("DetectLungNodule.Data.Series["+ i +"].SeriesInstanceUid");
+				serie.SeriesInstanceUid = _ctx.StringValue("DetectLungNodule.Data.Series["+ i +"].SeriesInstanceUid");
+				serie.Report = _ctx.StringValue("DetectLungNodule.Data.Series["+ i +"].Report");
 
 				List<string> serie_origin = new List<string>();
-				for (int j = 0; j < context.Length("DetectLungNodule.Data.Series["+ i +"].Origin.Length"); j++) {
-					serie_origin.Add(context.StringValue("DetectLungNodule.Data.Series["+ i +"].Origin["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DetectLungNodule.Data.Series["+ i +"].Origin.Length"); j++) {
+					serie_origin.Add(_ctx.StringValue("DetectLungNodule.Data.Series["+ i +"].Origin["+ j +"]"));
 				}
 				serie.Origin = serie_origin;
 
 				List<string> serie_spacing = new List<string>();
-				for (int j = 0; j < context.Length("DetectLungNodule.Data.Series["+ i +"].Spacing.Length"); j++) {
-					serie_spacing.Add(context.StringValue("DetectLungNodule.Data.Series["+ i +"].Spacing["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DetectLungNodule.Data.Series["+ i +"].Spacing.Length"); j++) {
+					serie_spacing.Add(_ctx.StringValue("DetectLungNodule.Data.Series["+ i +"].Spacing["+ j +"]"));
 				}
 				serie.Spacing = serie_spacing;
 
 				List<DetectLungNoduleResponse.DetectLungNodule_Data.DetectLungNodule_Serie.DetectLungNodule_Element> serie_elements = new List<DetectLungNoduleResponse.DetectLungNodule_Data.DetectLungNodule_Serie.DetectLungNodule_Element>();
-				for (int j = 0; j < context.Length("DetectLungNodule.Data.Series["+ i +"].Elements.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DetectLungNodule.Data.Series["+ i +"].Elements.Length"); j++) {
 					DetectLungNoduleResponse.DetectLungNodule_Data.DetectLungNodule_Serie.DetectLungNodule_Element element = new DetectLungNoduleResponse.DetectLungNodule_Data.DetectLungNodule_Serie.DetectLungNodule_Element();
-					element.Category = context.StringValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Category");
-					element.Confidence = context.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Confidence");
-					element.Diameter = context.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Diameter");
-					element.Lobe = context.StringValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Lobe");
-					element.Lung = context.StringValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Lung");
-					element.X = context.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].X");
-					element.Z = context.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Z");
-					element.Y = context.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Y");
-					element.ImageX = context.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].ImageX");
-					element.ImageY = context.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].ImageY");
-					element.ImageZ = context.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].ImageZ");
-					element.SOPInstanceUID = context.StringValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].SOPInstanceUID");
+					element.Z = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Z");
+					element.Lobe = _ctx.StringValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Lobe");
+					element.MeanValue = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].MeanValue");
+					element.ImageZ = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].ImageZ");
+					element.Lung = _ctx.StringValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Lung");
+					element.Confidence = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Confidence");
+					element.SOPInstanceUID = _ctx.StringValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].SOPInstanceUID");
+					element.ImageX = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].ImageX");
+					element.Y = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Y");
+					element.Category = _ctx.StringValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Category");
+					element.Volume = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Volume");
+					element.ImageY = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].ImageY");
+					element.Diameter = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Diameter");
+					element.X = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].X");
 
 					serie_elements.Add(element);
 				}

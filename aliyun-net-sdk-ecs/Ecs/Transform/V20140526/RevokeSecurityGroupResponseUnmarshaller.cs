@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class RevokeSecurityGroupResponseUnmarshaller
     {
-        public static RevokeSecurityGroupResponse Unmarshall(UnmarshallerContext context)
+        public static RevokeSecurityGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RevokeSecurityGroupResponse revokeSecurityGroupResponse = new RevokeSecurityGroupResponse();
 
-			revokeSecurityGroupResponse.HttpResponse = context.HttpResponse;
-			revokeSecurityGroupResponse.RequestId = context.StringValue("RevokeSecurityGroup.RequestId");
+			revokeSecurityGroupResponse.HttpResponse = _ctx.HttpResponse;
+			revokeSecurityGroupResponse.RequestId = _ctx.StringValue("RevokeSecurityGroup.RequestId");
         
 			return revokeSecurityGroupResponse;
         }

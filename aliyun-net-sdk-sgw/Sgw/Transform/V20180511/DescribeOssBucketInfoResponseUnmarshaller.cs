@@ -26,21 +26,22 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeOssBucketInfoResponseUnmarshaller
     {
-        public static DescribeOssBucketInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeOssBucketInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeOssBucketInfoResponse describeOssBucketInfoResponse = new DescribeOssBucketInfoResponse();
 
-			describeOssBucketInfoResponse.HttpResponse = context.HttpResponse;
-			describeOssBucketInfoResponse.RequestId = context.StringValue("DescribeOssBucketInfo.RequestId");
-			describeOssBucketInfoResponse.Success = context.BooleanValue("DescribeOssBucketInfo.Success");
-			describeOssBucketInfoResponse.Code = context.StringValue("DescribeOssBucketInfo.Code");
-			describeOssBucketInfoResponse.Message = context.StringValue("DescribeOssBucketInfo.Message");
-			describeOssBucketInfoResponse.IsArchive = context.BooleanValue("DescribeOssBucketInfo.IsArchive");
-			describeOssBucketInfoResponse.IsBackToResource = context.BooleanValue("DescribeOssBucketInfo.IsBackToResource");
-			describeOssBucketInfoResponse.PollingInterval = context.IntegerValue("DescribeOssBucketInfo.PollingInterval");
-			describeOssBucketInfoResponse.IsSupportServerSideEncryption = context.BooleanValue("DescribeOssBucketInfo.IsSupportServerSideEncryption");
-			describeOssBucketInfoResponse.IsFresh = context.BooleanValue("DescribeOssBucketInfo.IsFresh");
-			describeOssBucketInfoResponse.StorageSize = context.LongValue("DescribeOssBucketInfo.StorageSize");
+			describeOssBucketInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeOssBucketInfoResponse.RequestId = _ctx.StringValue("DescribeOssBucketInfo.RequestId");
+			describeOssBucketInfoResponse.Message = _ctx.StringValue("DescribeOssBucketInfo.Message");
+			describeOssBucketInfoResponse.IsArchive = _ctx.BooleanValue("DescribeOssBucketInfo.IsArchive");
+			describeOssBucketInfoResponse.IsFresh = _ctx.BooleanValue("DescribeOssBucketInfo.IsFresh");
+			describeOssBucketInfoResponse.IsSupportServerSideEncryption = _ctx.BooleanValue("DescribeOssBucketInfo.IsSupportServerSideEncryption");
+			describeOssBucketInfoResponse.StorageSize = _ctx.LongValue("DescribeOssBucketInfo.StorageSize");
+			describeOssBucketInfoResponse.IsVersioning = _ctx.BooleanValue("DescribeOssBucketInfo.IsVersioning");
+			describeOssBucketInfoResponse.IsBackToResource = _ctx.BooleanValue("DescribeOssBucketInfo.IsBackToResource");
+			describeOssBucketInfoResponse.PollingInterval = _ctx.IntegerValue("DescribeOssBucketInfo.PollingInterval");
+			describeOssBucketInfoResponse.Code = _ctx.StringValue("DescribeOssBucketInfo.Code");
+			describeOssBucketInfoResponse.Success = _ctx.BooleanValue("DescribeOssBucketInfo.Success");
         
 			return describeOssBucketInfoResponse;
         }

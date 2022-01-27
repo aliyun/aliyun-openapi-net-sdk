@@ -26,32 +26,32 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetTopicInfluenceResponseUnmarshaller
     {
-        public static GetTopicInfluenceResponse Unmarshall(UnmarshallerContext context)
+        public static GetTopicInfluenceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetTopicInfluenceResponse getTopicInfluenceResponse = new GetTopicInfluenceResponse();
 
-			getTopicInfluenceResponse.HttpResponse = context.HttpResponse;
-			getTopicInfluenceResponse.Success = context.BooleanValue("GetTopicInfluence.Success");
-			getTopicInfluenceResponse.ErrorCode = context.StringValue("GetTopicInfluence.ErrorCode");
-			getTopicInfluenceResponse.ErrorMessage = context.StringValue("GetTopicInfluence.ErrorMessage");
-			getTopicInfluenceResponse.HttpStatusCode = context.IntegerValue("GetTopicInfluence.HttpStatusCode");
-			getTopicInfluenceResponse.RequestId = context.StringValue("GetTopicInfluence.RequestId");
+			getTopicInfluenceResponse.HttpResponse = _ctx.HttpResponse;
+			getTopicInfluenceResponse.Success = _ctx.BooleanValue("GetTopicInfluence.Success");
+			getTopicInfluenceResponse.ErrorCode = _ctx.StringValue("GetTopicInfluence.ErrorCode");
+			getTopicInfluenceResponse.ErrorMessage = _ctx.StringValue("GetTopicInfluence.ErrorMessage");
+			getTopicInfluenceResponse.HttpStatusCode = _ctx.IntegerValue("GetTopicInfluence.HttpStatusCode");
+			getTopicInfluenceResponse.RequestId = _ctx.StringValue("GetTopicInfluence.RequestId");
 
 			GetTopicInfluenceResponse.GetTopicInfluence_Data data = new GetTopicInfluenceResponse.GetTopicInfluence_Data();
-			data.TopicId = context.LongValue("GetTopicInfluence.Data.TopicId");
+			data.TopicId = _ctx.LongValue("GetTopicInfluence.Data.TopicId");
 
 			List<GetTopicInfluenceResponse.GetTopicInfluence_Data.GetTopicInfluence_InfluencesItem> data_influences = new List<GetTopicInfluenceResponse.GetTopicInfluence_Data.GetTopicInfluence_InfluencesItem>();
-			for (int i = 0; i < context.Length("GetTopicInfluence.Data.Influences.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetTopicInfluence.Data.Influences.Length"); i++) {
 				GetTopicInfluenceResponse.GetTopicInfluence_Data.GetTopicInfluence_InfluencesItem influencesItem = new GetTopicInfluenceResponse.GetTopicInfluence_Data.GetTopicInfluence_InfluencesItem();
-				influencesItem.BaselineId = context.LongValue("GetTopicInfluence.Data.Influences["+ i +"].BaselineId");
-				influencesItem.Bizdate = context.LongValue("GetTopicInfluence.Data.Influences["+ i +"].Bizdate");
-				influencesItem.InGroupId = context.IntegerValue("GetTopicInfluence.Data.Influences["+ i +"].InGroupId");
-				influencesItem.BaselineName = context.StringValue("GetTopicInfluence.Data.Influences["+ i +"].BaselineName");
-				influencesItem.Owner = context.StringValue("GetTopicInfluence.Data.Influences["+ i +"].Owner");
-				influencesItem.Status = context.StringValue("GetTopicInfluence.Data.Influences["+ i +"].Status");
-				influencesItem.ProjectId = context.LongValue("GetTopicInfluence.Data.Influences["+ i +"].ProjectId");
-				influencesItem.Priority = context.IntegerValue("GetTopicInfluence.Data.Influences["+ i +"].Priority");
-				influencesItem.Buffer = context.LongValue("GetTopicInfluence.Data.Influences["+ i +"].Buffer");
+				influencesItem.BaselineId = _ctx.LongValue("GetTopicInfluence.Data.Influences["+ i +"].BaselineId");
+				influencesItem.Bizdate = _ctx.LongValue("GetTopicInfluence.Data.Influences["+ i +"].Bizdate");
+				influencesItem.InGroupId = _ctx.IntegerValue("GetTopicInfluence.Data.Influences["+ i +"].InGroupId");
+				influencesItem.BaselineName = _ctx.StringValue("GetTopicInfluence.Data.Influences["+ i +"].BaselineName");
+				influencesItem.Owner = _ctx.StringValue("GetTopicInfluence.Data.Influences["+ i +"].Owner");
+				influencesItem.Status = _ctx.StringValue("GetTopicInfluence.Data.Influences["+ i +"].Status");
+				influencesItem.ProjectId = _ctx.LongValue("GetTopicInfluence.Data.Influences["+ i +"].ProjectId");
+				influencesItem.Priority = _ctx.IntegerValue("GetTopicInfluence.Data.Influences["+ i +"].Priority");
+				influencesItem.Buffer = _ctx.LongValue("GetTopicInfluence.Data.Influences["+ i +"].Buffer");
 
 				data_influences.Add(influencesItem);
 			}

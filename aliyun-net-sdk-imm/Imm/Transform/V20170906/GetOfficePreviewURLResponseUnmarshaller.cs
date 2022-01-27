@@ -26,17 +26,17 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class GetOfficePreviewURLResponseUnmarshaller
     {
-        public static GetOfficePreviewURLResponse Unmarshall(UnmarshallerContext context)
+        public static GetOfficePreviewURLResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetOfficePreviewURLResponse getOfficePreviewURLResponse = new GetOfficePreviewURLResponse();
 
-			getOfficePreviewURLResponse.HttpResponse = context.HttpResponse;
-			getOfficePreviewURLResponse.RequestId = context.StringValue("GetOfficePreviewURL.RequestId");
-			getOfficePreviewURLResponse.PreviewURL = context.StringValue("GetOfficePreviewURL.PreviewURL");
-			getOfficePreviewURLResponse.AccessToken = context.StringValue("GetOfficePreviewURL.AccessToken");
-			getOfficePreviewURLResponse.RefreshToken = context.StringValue("GetOfficePreviewURL.RefreshToken");
-			getOfficePreviewURLResponse.AccessTokenExpiredTime = context.StringValue("GetOfficePreviewURL.AccessTokenExpiredTime");
-			getOfficePreviewURLResponse.RefreshTokenExpiredTime = context.StringValue("GetOfficePreviewURL.RefreshTokenExpiredTime");
+			getOfficePreviewURLResponse.HttpResponse = _ctx.HttpResponse;
+			getOfficePreviewURLResponse.RequestId = _ctx.StringValue("GetOfficePreviewURL.RequestId");
+			getOfficePreviewURLResponse.PreviewURL = _ctx.StringValue("GetOfficePreviewURL.PreviewURL");
+			getOfficePreviewURLResponse.AccessToken = _ctx.StringValue("GetOfficePreviewURL.AccessToken");
+			getOfficePreviewURLResponse.RefreshToken = _ctx.StringValue("GetOfficePreviewURL.RefreshToken");
+			getOfficePreviewURLResponse.AccessTokenExpiredTime = _ctx.StringValue("GetOfficePreviewURL.AccessTokenExpiredTime");
+			getOfficePreviewURLResponse.RefreshTokenExpiredTime = _ctx.StringValue("GetOfficePreviewURL.RefreshTokenExpiredTime");
         
 			return getOfficePreviewURLResponse;
         }

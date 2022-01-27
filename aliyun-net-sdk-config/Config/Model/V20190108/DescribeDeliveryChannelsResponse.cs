@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Config.Model.V20190108
@@ -56,31 +56,39 @@ namespace Aliyun.Acs.Config.Model.V20190108
 		public class DescribeDeliveryChannels_DeliveryChannel
 		{
 
-			private string deliveryChannelId;
+			private int? status;
 
 			private string deliveryChannelName;
 
-			private string deliveryChannelType;
+			private string deliveryChannelId;
 
-			private string deliveryChannelTargetArn;
+			private string deliveryChannelType;
 
 			private string deliveryChannelAssumeRoleArn;
 
-			private string deliveryChannelCondition;
-
 			private string description;
 
-			private int? status;
+			private string deliveryChannelCondition;
 
-			public string DeliveryChannelId
+			private string deliveryChannelTargetArn;
+
+			private bool? configurationSnapshot;
+
+			private bool? configurationItemChangeNotification;
+
+			private bool? nonCompliantNotification;
+
+			private string oversizedDataOSSTargetArn;
+
+			public int? Status
 			{
 				get
 				{
-					return deliveryChannelId;
+					return status;
 				}
 				set	
 				{
-					deliveryChannelId = value;
+					status = value;
 				}
 			}
 
@@ -96,6 +104,18 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				}
 			}
 
+			public string DeliveryChannelId
+			{
+				get
+				{
+					return deliveryChannelId;
+				}
+				set	
+				{
+					deliveryChannelId = value;
+				}
+			}
+
 			public string DeliveryChannelType
 			{
 				get
@@ -105,18 +125,6 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				set	
 				{
 					deliveryChannelType = value;
-				}
-			}
-
-			public string DeliveryChannelTargetArn
-			{
-				get
-				{
-					return deliveryChannelTargetArn;
-				}
-				set	
-				{
-					deliveryChannelTargetArn = value;
 				}
 			}
 
@@ -132,18 +140,6 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				}
 			}
 
-			public string DeliveryChannelCondition
-			{
-				get
-				{
-					return deliveryChannelCondition;
-				}
-				set	
-				{
-					deliveryChannelCondition = value;
-				}
-			}
-
 			public string Description
 			{
 				get
@@ -156,15 +152,75 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				}
 			}
 
-			public int? Status
+			public string DeliveryChannelCondition
 			{
 				get
 				{
-					return status;
+					return deliveryChannelCondition;
 				}
 				set	
 				{
-					status = value;
+					deliveryChannelCondition = value;
+				}
+			}
+
+			public string DeliveryChannelTargetArn
+			{
+				get
+				{
+					return deliveryChannelTargetArn;
+				}
+				set	
+				{
+					deliveryChannelTargetArn = value;
+				}
+			}
+
+			public bool? ConfigurationSnapshot
+			{
+				get
+				{
+					return configurationSnapshot;
+				}
+				set	
+				{
+					configurationSnapshot = value;
+				}
+			}
+
+			public bool? ConfigurationItemChangeNotification
+			{
+				get
+				{
+					return configurationItemChangeNotification;
+				}
+				set	
+				{
+					configurationItemChangeNotification = value;
+				}
+			}
+
+			public bool? NonCompliantNotification
+			{
+				get
+				{
+					return nonCompliantNotification;
+				}
+				set	
+				{
+					nonCompliantNotification = value;
+				}
+			}
+
+			public string OversizedDataOSSTargetArn
+			{
+				get
+				{
+					return oversizedDataOSSTargetArn;
+				}
+				set	
+				{
+					oversizedDataOSSTargetArn = value;
 				}
 			}
 		}

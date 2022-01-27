@@ -26,44 +26,47 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class ListFaceGroupsResponseUnmarshaller
     {
-        public static ListFaceGroupsResponse Unmarshall(UnmarshallerContext context)
+        public static ListFaceGroupsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListFaceGroupsResponse listFaceGroupsResponse = new ListFaceGroupsResponse();
 
-			listFaceGroupsResponse.HttpResponse = context.HttpResponse;
-			listFaceGroupsResponse.RequestId = context.StringValue("ListFaceGroups.RequestId");
-			listFaceGroupsResponse.NextMarker = context.StringValue("ListFaceGroups.NextMarker");
+			listFaceGroupsResponse.HttpResponse = _ctx.HttpResponse;
+			listFaceGroupsResponse.RequestId = _ctx.StringValue("ListFaceGroups.RequestId");
+			listFaceGroupsResponse.NextMarker = _ctx.StringValue("ListFaceGroups.NextMarker");
 
 			List<ListFaceGroupsResponse.ListFaceGroups_FaceGroupsItem> listFaceGroupsResponse_faceGroups = new List<ListFaceGroupsResponse.ListFaceGroups_FaceGroupsItem>();
-			for (int i = 0; i < context.Length("ListFaceGroups.FaceGroups.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListFaceGroups.FaceGroups.Length"); i++) {
 				ListFaceGroupsResponse.ListFaceGroups_FaceGroupsItem faceGroupsItem = new ListFaceGroupsResponse.ListFaceGroups_FaceGroupsItem();
-				faceGroupsItem.GroupId = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].GroupId");
-				faceGroupsItem.GroupName = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].GroupName");
-				faceGroupsItem.FaceCount = context.IntegerValue("ListFaceGroups.FaceGroups["+ i +"].FaceCount");
-				faceGroupsItem.CreateTime = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].CreateTime");
-				faceGroupsItem.ModifyTime = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].ModifyTime");
-				faceGroupsItem.RemarksA = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].RemarksA");
-				faceGroupsItem.RemarksB = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].RemarksB");
-				faceGroupsItem.RemarksC = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].RemarksC");
-				faceGroupsItem.RemarksD = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].RemarksD");
-				faceGroupsItem.RemarksArrayA = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].RemarksArrayA");
-				faceGroupsItem.RemarksArrayB = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].RemarksArrayB");
-				faceGroupsItem.ExternalId = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].ExternalId");
-				faceGroupsItem.ImageCount = context.IntegerValue("ListFaceGroups.FaceGroups["+ i +"].ImageCount");
-				faceGroupsItem.Gender = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].Gender");
-				faceGroupsItem.MaxAge = context.FloatValue("ListFaceGroups.FaceGroups["+ i +"].MaxAge");
-				faceGroupsItem.AverageAge = context.FloatValue("ListFaceGroups.FaceGroups["+ i +"].AverageAge");
-				faceGroupsItem.MinAge = context.FloatValue("ListFaceGroups.FaceGroups["+ i +"].MinAge");
+				faceGroupsItem.GroupName = _ctx.StringValue("ListFaceGroups.FaceGroups["+ i +"].GroupName");
+				faceGroupsItem.ModifyTime = _ctx.StringValue("ListFaceGroups.FaceGroups["+ i +"].ModifyTime");
+				faceGroupsItem.ExternalId = _ctx.StringValue("ListFaceGroups.FaceGroups["+ i +"].ExternalId");
+				faceGroupsItem.CreateTime = _ctx.StringValue("ListFaceGroups.FaceGroups["+ i +"].CreateTime");
+				faceGroupsItem.MaxAge = _ctx.FloatValue("ListFaceGroups.FaceGroups["+ i +"].MaxAge");
+				faceGroupsItem.Gender = _ctx.StringValue("ListFaceGroups.FaceGroups["+ i +"].Gender");
+				faceGroupsItem.AverageAge = _ctx.FloatValue("ListFaceGroups.FaceGroups["+ i +"].AverageAge");
+				faceGroupsItem.RemarksA = _ctx.StringValue("ListFaceGroups.FaceGroups["+ i +"].RemarksA");
+				faceGroupsItem.RemarksB = _ctx.StringValue("ListFaceGroups.FaceGroups["+ i +"].RemarksB");
+				faceGroupsItem.GroupId = _ctx.StringValue("ListFaceGroups.FaceGroups["+ i +"].GroupId");
+				faceGroupsItem.RemarksArrayB = _ctx.StringValue("ListFaceGroups.FaceGroups["+ i +"].RemarksArrayB");
+				faceGroupsItem.ImageCount = _ctx.IntegerValue("ListFaceGroups.FaceGroups["+ i +"].ImageCount");
+				faceGroupsItem.MinAge = _ctx.FloatValue("ListFaceGroups.FaceGroups["+ i +"].MinAge");
+				faceGroupsItem.RemarksC = _ctx.StringValue("ListFaceGroups.FaceGroups["+ i +"].RemarksC");
+				faceGroupsItem.RemarksD = _ctx.StringValue("ListFaceGroups.FaceGroups["+ i +"].RemarksD");
+				faceGroupsItem.RemarksArrayA = _ctx.StringValue("ListFaceGroups.FaceGroups["+ i +"].RemarksArrayA");
+				faceGroupsItem.FaceCount = _ctx.IntegerValue("ListFaceGroups.FaceGroups["+ i +"].FaceCount");
 
 				ListFaceGroupsResponse.ListFaceGroups_FaceGroupsItem.ListFaceGroups_GroupCoverFace groupCoverFace = new ListFaceGroupsResponse.ListFaceGroups_FaceGroupsItem.ListFaceGroups_GroupCoverFace();
-				groupCoverFace.FaceId = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].GroupCoverFace.FaceId");
-				groupCoverFace.ImageUri = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].GroupCoverFace.ImageUri");
+				groupCoverFace.FaceId = _ctx.StringValue("ListFaceGroups.FaceGroups["+ i +"].GroupCoverFace.FaceId");
+				groupCoverFace.ImageHeight = _ctx.LongValue("ListFaceGroups.FaceGroups["+ i +"].GroupCoverFace.ImageHeight");
+				groupCoverFace.ImageWidth = _ctx.LongValue("ListFaceGroups.FaceGroups["+ i +"].GroupCoverFace.ImageWidth");
+				groupCoverFace.ExternalId = _ctx.StringValue("ListFaceGroups.FaceGroups["+ i +"].GroupCoverFace.ExternalId");
+				groupCoverFace.ImageUri = _ctx.StringValue("ListFaceGroups.FaceGroups["+ i +"].GroupCoverFace.ImageUri");
 
 				ListFaceGroupsResponse.ListFaceGroups_FaceGroupsItem.ListFaceGroups_GroupCoverFace.ListFaceGroups_FaceBoundary faceBoundary = new ListFaceGroupsResponse.ListFaceGroups_FaceGroupsItem.ListFaceGroups_GroupCoverFace.ListFaceGroups_FaceBoundary();
-				faceBoundary.Left = context.IntegerValue("ListFaceGroups.FaceGroups["+ i +"].GroupCoverFace.FaceBoundary.Left");
-				faceBoundary.Top = context.IntegerValue("ListFaceGroups.FaceGroups["+ i +"].GroupCoverFace.FaceBoundary.Top");
-				faceBoundary.Width = context.IntegerValue("ListFaceGroups.FaceGroups["+ i +"].GroupCoverFace.FaceBoundary.Width");
-				faceBoundary.Height = context.IntegerValue("ListFaceGroups.FaceGroups["+ i +"].GroupCoverFace.FaceBoundary.Height");
+				faceBoundary.Left = _ctx.IntegerValue("ListFaceGroups.FaceGroups["+ i +"].GroupCoverFace.FaceBoundary.Left");
+				faceBoundary.Top = _ctx.IntegerValue("ListFaceGroups.FaceGroups["+ i +"].GroupCoverFace.FaceBoundary.Top");
+				faceBoundary.Height = _ctx.IntegerValue("ListFaceGroups.FaceGroups["+ i +"].GroupCoverFace.FaceBoundary.Height");
+				faceBoundary.Width = _ctx.IntegerValue("ListFaceGroups.FaceGroups["+ i +"].GroupCoverFace.FaceBoundary.Width");
 				groupCoverFace.FaceBoundary = faceBoundary;
 				faceGroupsItem.GroupCoverFace = groupCoverFace;
 

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class RejectIcpIntentionResponseUnmarshaller
     {
-        public static RejectIcpIntentionResponse Unmarshall(UnmarshallerContext context)
+        public static RejectIcpIntentionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RejectIcpIntentionResponse rejectIcpIntentionResponse = new RejectIcpIntentionResponse();
 
-			rejectIcpIntentionResponse.HttpResponse = context.HttpResponse;
-			rejectIcpIntentionResponse.RequestId = context.StringValue("RejectIcpIntention.RequestId");
-			rejectIcpIntentionResponse.Success = context.BooleanValue("RejectIcpIntention.Success");
-			rejectIcpIntentionResponse.ErrorMsg = context.StringValue("RejectIcpIntention.ErrorMsg");
-			rejectIcpIntentionResponse.ErrorCode = context.StringValue("RejectIcpIntention.ErrorCode");
+			rejectIcpIntentionResponse.HttpResponse = _ctx.HttpResponse;
+			rejectIcpIntentionResponse.RequestId = _ctx.StringValue("RejectIcpIntention.RequestId");
+			rejectIcpIntentionResponse.Success = _ctx.BooleanValue("RejectIcpIntention.Success");
+			rejectIcpIntentionResponse.ErrorMsg = _ctx.StringValue("RejectIcpIntention.ErrorMsg");
+			rejectIcpIntentionResponse.ErrorCode = _ctx.StringValue("RejectIcpIntention.ErrorCode");
         
 			return rejectIcpIntentionResponse;
         }

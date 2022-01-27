@@ -26,16 +26,16 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class UpdateSetResponseUnmarshaller
     {
-        public static UpdateSetResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateSetResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateSetResponse updateSetResponse = new UpdateSetResponse();
 
-			updateSetResponse.HttpResponse = context.HttpResponse;
-			updateSetResponse.RequestId = context.StringValue("UpdateSet.RequestId");
-			updateSetResponse.SetId = context.StringValue("UpdateSet.SetId");
-			updateSetResponse.SetName = context.StringValue("UpdateSet.SetName");
-			updateSetResponse.CreateTime = context.StringValue("UpdateSet.CreateTime");
-			updateSetResponse.ModifyTime = context.StringValue("UpdateSet.ModifyTime");
+			updateSetResponse.HttpResponse = _ctx.HttpResponse;
+			updateSetResponse.RequestId = _ctx.StringValue("UpdateSet.RequestId");
+			updateSetResponse.SetId = _ctx.StringValue("UpdateSet.SetId");
+			updateSetResponse.SetName = _ctx.StringValue("UpdateSet.SetName");
+			updateSetResponse.CreateTime = _ctx.StringValue("UpdateSet.CreateTime");
+			updateSetResponse.ModifyTime = _ctx.StringValue("UpdateSet.ModifyTime");
         
 			return updateSetResponse;
         }

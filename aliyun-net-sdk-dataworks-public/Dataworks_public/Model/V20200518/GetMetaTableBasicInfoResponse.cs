@@ -142,6 +142,28 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private string projectName;
 
+			private string databaseName;
+
+			private string partitionKeys;
+
+			private string location;
+
+			private string clusterId;
+
+			private string caption;
+
+			private bool? isPartitionTable;
+
+			private long? readCount;
+
+			private long? viewCount;
+
+			private long? favoriteCount;
+
+			private bool? isView;
+
+			private int? columnCount;
+
 			public string TableName
 			{
 				get
@@ -319,6 +341,138 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					projectName = value;
+				}
+			}
+
+			public string DatabaseName
+			{
+				get
+				{
+					return databaseName;
+				}
+				set	
+				{
+					databaseName = value;
+				}
+			}
+
+			public string PartitionKeys
+			{
+				get
+				{
+					return partitionKeys;
+				}
+				set	
+				{
+					partitionKeys = value;
+				}
+			}
+
+			public string Location
+			{
+				get
+				{
+					return location;
+				}
+				set	
+				{
+					location = value;
+				}
+			}
+
+			public string ClusterId
+			{
+				get
+				{
+					return clusterId;
+				}
+				set	
+				{
+					clusterId = value;
+				}
+			}
+
+			public string Caption
+			{
+				get
+				{
+					return caption;
+				}
+				set	
+				{
+					caption = value;
+				}
+			}
+
+			public bool? IsPartitionTable
+			{
+				get
+				{
+					return isPartitionTable;
+				}
+				set	
+				{
+					isPartitionTable = value;
+				}
+			}
+
+			public long? ReadCount
+			{
+				get
+				{
+					return readCount;
+				}
+				set	
+				{
+					readCount = value;
+				}
+			}
+
+			public long? ViewCount
+			{
+				get
+				{
+					return viewCount;
+				}
+				set	
+				{
+					viewCount = value;
+				}
+			}
+
+			public long? FavoriteCount
+			{
+				get
+				{
+					return favoriteCount;
+				}
+				set	
+				{
+					favoriteCount = value;
+				}
+			}
+
+			public bool? IsView
+			{
+				get
+				{
+					return isView;
+				}
+				set	
+				{
+					isView = value;
+				}
+			}
+
+			public int? ColumnCount
+			{
+				get
+				{
+					return columnCount;
+				}
+				set	
+				{
+					columnCount = value;
 				}
 			}
 		}

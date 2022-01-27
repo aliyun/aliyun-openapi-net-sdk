@@ -26,23 +26,23 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class DescribeNamespaceResponseUnmarshaller
     {
-        public static DescribeNamespaceResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeNamespaceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeNamespaceResponse describeNamespaceResponse = new DescribeNamespaceResponse();
 
-			describeNamespaceResponse.HttpResponse = context.HttpResponse;
-			describeNamespaceResponse.RequestId = context.StringValue("DescribeNamespace.RequestId");
-			describeNamespaceResponse.Code = context.StringValue("DescribeNamespace.Code");
-			describeNamespaceResponse.ErrorCode = context.StringValue("DescribeNamespace.ErrorCode");
-			describeNamespaceResponse.Message = context.StringValue("DescribeNamespace.Message");
-			describeNamespaceResponse.Success = context.BooleanValue("DescribeNamespace.Success");
-			describeNamespaceResponse.TraceId = context.StringValue("DescribeNamespace.TraceId");
+			describeNamespaceResponse.HttpResponse = _ctx.HttpResponse;
+			describeNamespaceResponse.RequestId = _ctx.StringValue("DescribeNamespace.RequestId");
+			describeNamespaceResponse.Code = _ctx.StringValue("DescribeNamespace.Code");
+			describeNamespaceResponse.ErrorCode = _ctx.StringValue("DescribeNamespace.ErrorCode");
+			describeNamespaceResponse.Message = _ctx.StringValue("DescribeNamespace.Message");
+			describeNamespaceResponse.Success = _ctx.BooleanValue("DescribeNamespace.Success");
+			describeNamespaceResponse.TraceId = _ctx.StringValue("DescribeNamespace.TraceId");
 
 			DescribeNamespaceResponse.DescribeNamespace_Data data = new DescribeNamespaceResponse.DescribeNamespace_Data();
-			data.RegionId = context.StringValue("DescribeNamespace.Data.RegionId");
-			data.NamespaceId = context.StringValue("DescribeNamespace.Data.NamespaceId");
-			data.NamespaceName = context.StringValue("DescribeNamespace.Data.NamespaceName");
-			data.NamespaceDescription = context.StringValue("DescribeNamespace.Data.NamespaceDescription");
+			data.RegionId = _ctx.StringValue("DescribeNamespace.Data.RegionId");
+			data.NamespaceId = _ctx.StringValue("DescribeNamespace.Data.NamespaceId");
+			data.NamespaceName = _ctx.StringValue("DescribeNamespace.Data.NamespaceName");
+			data.NamespaceDescription = _ctx.StringValue("DescribeNamespace.Data.NamespaceDescription");
 			describeNamespaceResponse.Data = data;
         
 			return describeNamespaceResponse;

@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryProductCertInfoResponseUnmarshaller
     {
-        public static QueryProductCertInfoResponse Unmarshall(UnmarshallerContext context)
+        public static QueryProductCertInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryProductCertInfoResponse queryProductCertInfoResponse = new QueryProductCertInfoResponse();
 
-			queryProductCertInfoResponse.HttpResponse = context.HttpResponse;
-			queryProductCertInfoResponse.RequestId = context.StringValue("QueryProductCertInfo.RequestId");
-			queryProductCertInfoResponse.Success = context.BooleanValue("QueryProductCertInfo.Success");
-			queryProductCertInfoResponse.Code = context.StringValue("QueryProductCertInfo.Code");
-			queryProductCertInfoResponse.ErrorMessage = context.StringValue("QueryProductCertInfo.ErrorMessage");
+			queryProductCertInfoResponse.HttpResponse = _ctx.HttpResponse;
+			queryProductCertInfoResponse.RequestId = _ctx.StringValue("QueryProductCertInfo.RequestId");
+			queryProductCertInfoResponse.Success = _ctx.BooleanValue("QueryProductCertInfo.Success");
+			queryProductCertInfoResponse.Code = _ctx.StringValue("QueryProductCertInfo.Code");
+			queryProductCertInfoResponse.ErrorMessage = _ctx.StringValue("QueryProductCertInfo.ErrorMessage");
 
 			QueryProductCertInfoResponse.QueryProductCertInfo_ProductCertInfo productCertInfo = new QueryProductCertInfoResponse.QueryProductCertInfo_ProductCertInfo();
-			productCertInfo.IssueModel = context.IntegerValue("QueryProductCertInfo.ProductCertInfo.IssueModel");
+			productCertInfo.IssueModel = _ctx.IntegerValue("QueryProductCertInfo.ProductCertInfo.IssueModel");
 			queryProductCertInfoResponse.ProductCertInfo = productCertInfo;
         
 			return queryProductCertInfoResponse;

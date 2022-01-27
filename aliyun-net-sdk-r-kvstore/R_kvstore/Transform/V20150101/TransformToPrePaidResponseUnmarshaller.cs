@@ -26,14 +26,14 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class TransformToPrePaidResponseUnmarshaller
     {
-        public static TransformToPrePaidResponse Unmarshall(UnmarshallerContext context)
+        public static TransformToPrePaidResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			TransformToPrePaidResponse transformToPrePaidResponse = new TransformToPrePaidResponse();
 
-			transformToPrePaidResponse.HttpResponse = context.HttpResponse;
-			transformToPrePaidResponse.RequestId = context.StringValue("TransformToPrePaid.RequestId");
-			transformToPrePaidResponse.OrderId = context.StringValue("TransformToPrePaid.OrderId");
-			transformToPrePaidResponse.EndTime = context.StringValue("TransformToPrePaid.EndTime");
+			transformToPrePaidResponse.HttpResponse = _ctx.HttpResponse;
+			transformToPrePaidResponse.RequestId = _ctx.StringValue("TransformToPrePaid.RequestId");
+			transformToPrePaidResponse.OrderId = _ctx.StringValue("TransformToPrePaid.OrderId");
+			transformToPrePaidResponse.EndTime = _ctx.StringValue("TransformToPrePaid.EndTime");
         
 			return transformToPrePaidResponse;
         }

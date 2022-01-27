@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class TransferDomainResponseUnmarshaller
     {
-        public static TransferDomainResponse Unmarshall(UnmarshallerContext context)
+        public static TransferDomainResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			TransferDomainResponse transferDomainResponse = new TransferDomainResponse();
 
-			transferDomainResponse.HttpResponse = context.HttpResponse;
-			transferDomainResponse.RequestId = context.StringValue("TransferDomain.RequestId");
-			transferDomainResponse.TaskId = context.LongValue("TransferDomain.TaskId");
+			transferDomainResponse.HttpResponse = _ctx.HttpResponse;
+			transferDomainResponse.RequestId = _ctx.StringValue("TransferDomain.RequestId");
+			transferDomainResponse.TaskId = _ctx.LongValue("TransferDomain.TaskId");
         
 			return transferDomainResponse;
         }

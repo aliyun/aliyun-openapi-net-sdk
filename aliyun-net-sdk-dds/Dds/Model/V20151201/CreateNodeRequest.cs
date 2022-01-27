@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class CreateNodeRequest : RpcAcsRequest<CreateNodeResponse>
     {
         public CreateNodeRequest()
-            : base("Dds", "2015-12-01", "CreateNode", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "CreateNode", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -46,15 +46,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string clientToken;
 
+		private int? readonlyReplicas;
+
+		private string couponNo;
+
 		private string nodeClass;
 
 		private string securityToken;
 
 		private string dBInstanceId;
 
-		private bool? autoPay;
+		private string businessInfo;
 
-		private string fromApp;
+		private bool? autoPay;
 
 		private string resourceOwnerAccount;
 
@@ -103,6 +107,32 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public int? ReadonlyReplicas
+		{
+			get
+			{
+				return readonlyReplicas;
+			}
+			set	
+			{
+				readonlyReplicas = value;
+				DictionaryUtil.Add(QueryParameters, "ReadonlyReplicas", value.ToString());
+			}
+		}
+
+		public string CouponNo
+		{
+			get
+			{
+				return couponNo;
+			}
+			set	
+			{
+				couponNo = value;
+				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
+			}
+		}
+
 		public string NodeClass
 		{
 			get
@@ -142,6 +172,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string BusinessInfo
+		{
+			get
+			{
+				return businessInfo;
+			}
+			set	
+			{
+				businessInfo = value;
+				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
+			}
+		}
+
 		public bool? AutoPay
 		{
 			get
@@ -152,19 +195,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				autoPay = value;
 				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
-			}
-		}
-
-		public string FromApp
-		{
-			get
-			{
-				return fromApp;
-			}
-			set	
-			{
-				fromApp = value;
-				DictionaryUtil.Add(QueryParameters, "FromApp", value);
 			}
 		}
 

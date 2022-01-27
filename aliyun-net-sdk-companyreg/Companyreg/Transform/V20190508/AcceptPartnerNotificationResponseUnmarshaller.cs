@@ -26,12 +26,15 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class AcceptPartnerNotificationResponseUnmarshaller
     {
-        public static AcceptPartnerNotificationResponse Unmarshall(UnmarshallerContext context)
+        public static AcceptPartnerNotificationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AcceptPartnerNotificationResponse acceptPartnerNotificationResponse = new AcceptPartnerNotificationResponse();
 
-			acceptPartnerNotificationResponse.HttpResponse = context.HttpResponse;
-			acceptPartnerNotificationResponse.RequestId = context.StringValue("AcceptPartnerNotification.RequestId");
+			acceptPartnerNotificationResponse.HttpResponse = _ctx.HttpResponse;
+			acceptPartnerNotificationResponse.RequestId = _ctx.StringValue("AcceptPartnerNotification.RequestId");
+			acceptPartnerNotificationResponse.Success = _ctx.BooleanValue("AcceptPartnerNotification.Success");
+			acceptPartnerNotificationResponse.ErrorMsg = _ctx.StringValue("AcceptPartnerNotification.ErrorMsg");
+			acceptPartnerNotificationResponse.ErrorCode = _ctx.StringValue("AcceptPartnerNotification.ErrorCode");
         
 			return acceptPartnerNotificationResponse;
         }

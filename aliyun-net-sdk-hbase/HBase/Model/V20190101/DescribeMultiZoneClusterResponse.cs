@@ -115,6 +115,12 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private string vpcId;
 
+		private string resourceGroupId;
+
+		private string encryptionType;
+
+		private string encryptionKey;
+
 		private List<DescribeMultiZoneCluster_MultiZoneInstanceModel> multiZoneInstanceModels;
 
 		private List<DescribeMultiZoneCluster_Tag> tags;
@@ -656,6 +662,42 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			set	
 			{
 				vpcId = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+			}
+		}
+
+		public string EncryptionType
+		{
+			get
+			{
+				return encryptionType;
+			}
+			set	
+			{
+				encryptionType = value;
+			}
+		}
+
+		public string EncryptionKey
+		{
+			get
+			{
+				return encryptionKey;
+			}
+			set	
+			{
+				encryptionKey = value;
 			}
 		}
 

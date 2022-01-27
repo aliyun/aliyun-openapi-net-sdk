@@ -26,16 +26,16 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 {
     public class CreateServiceConnectionResponseUnmarshaller
     {
-        public static CreateServiceConnectionResponse Unmarshall(UnmarshallerContext context)
+        public static CreateServiceConnectionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateServiceConnectionResponse createServiceConnectionResponse = new CreateServiceConnectionResponse();
 
-			createServiceConnectionResponse.HttpResponse = context.HttpResponse;
-			createServiceConnectionResponse.RequestId = context.StringValue("CreateServiceConnection.RequestId");
-			createServiceConnectionResponse.ErrorCode = context.StringValue("CreateServiceConnection.ErrorCode");
-			createServiceConnectionResponse.ErrorMessage = context.StringValue("CreateServiceConnection.ErrorMessage");
-			createServiceConnectionResponse.Success = context.BooleanValue("CreateServiceConnection.Success");
-			createServiceConnectionResponse._Object = context.LongValue("CreateServiceConnection.Object");
+			createServiceConnectionResponse.HttpResponse = _ctx.HttpResponse;
+			createServiceConnectionResponse.ErrorMessage = _ctx.StringValue("CreateServiceConnection.ErrorMessage");
+			createServiceConnectionResponse.RequestId = _ctx.StringValue("CreateServiceConnection.RequestId");
+			createServiceConnectionResponse._Object = _ctx.LongValue("CreateServiceConnection.Object");
+			createServiceConnectionResponse.Success = _ctx.BooleanValue("CreateServiceConnection.Success");
+			createServiceConnectionResponse.ErrorCode = _ctx.StringValue("CreateServiceConnection.ErrorCode");
         
 			return createServiceConnectionResponse;
         }

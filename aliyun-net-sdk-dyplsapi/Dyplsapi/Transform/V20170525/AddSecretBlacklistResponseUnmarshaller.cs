@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Dyplsapi.Transform.V20170525
 {
     public class AddSecretBlacklistResponseUnmarshaller
     {
-        public static AddSecretBlacklistResponse Unmarshall(UnmarshallerContext context)
+        public static AddSecretBlacklistResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddSecretBlacklistResponse addSecretBlacklistResponse = new AddSecretBlacklistResponse();
 
-			addSecretBlacklistResponse.HttpResponse = context.HttpResponse;
-			addSecretBlacklistResponse.RequestId = context.StringValue("AddSecretBlacklist.RequestId");
-			addSecretBlacklistResponse.Code = context.StringValue("AddSecretBlacklist.Code");
-			addSecretBlacklistResponse.Message = context.StringValue("AddSecretBlacklist.Message");
+			addSecretBlacklistResponse.HttpResponse = _ctx.HttpResponse;
+			addSecretBlacklistResponse.Code = _ctx.StringValue("AddSecretBlacklist.Code");
+			addSecretBlacklistResponse.Message = _ctx.StringValue("AddSecretBlacklist.Message");
+			addSecretBlacklistResponse.RequestId = _ctx.StringValue("AddSecretBlacklist.RequestId");
         
 			return addSecretBlacklistResponse;
         }

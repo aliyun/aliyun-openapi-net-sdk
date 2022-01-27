@@ -80,6 +80,8 @@ namespace Aliyun.Acs.foas.Model.V20181111
 
 			private string id;
 
+			private string globalJobConfig;
+
 			public string Name
 			{
 				get
@@ -221,6 +223,18 @@ namespace Aliyun.Acs.foas.Model.V20181111
 				set	
 				{
 					id = value;
+				}
+			}
+
+			public string GlobalJobConfig
+			{
+				get
+				{
+					return globalJobConfig;
+				}
+				set	
+				{
+					globalJobConfig = value;
 				}
 			}
 		}

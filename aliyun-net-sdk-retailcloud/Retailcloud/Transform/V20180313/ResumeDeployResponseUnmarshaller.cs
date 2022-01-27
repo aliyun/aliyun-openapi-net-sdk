@@ -26,15 +26,15 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class ResumeDeployResponseUnmarshaller
     {
-        public static ResumeDeployResponse Unmarshall(UnmarshallerContext context)
+        public static ResumeDeployResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ResumeDeployResponse resumeDeployResponse = new ResumeDeployResponse();
 
-			resumeDeployResponse.HttpResponse = context.HttpResponse;
-			resumeDeployResponse.Code = context.IntegerValue("ResumeDeploy.Code");
-			resumeDeployResponse.ErrMsg = context.StringValue("ResumeDeploy.ErrMsg");
-			resumeDeployResponse.RequestId = context.StringValue("ResumeDeploy.RequestId");
-			resumeDeployResponse.Success = context.BooleanValue("ResumeDeploy.Success");
+			resumeDeployResponse.HttpResponse = _ctx.HttpResponse;
+			resumeDeployResponse.Code = _ctx.IntegerValue("ResumeDeploy.Code");
+			resumeDeployResponse.ErrMsg = _ctx.StringValue("ResumeDeploy.ErrMsg");
+			resumeDeployResponse.RequestId = _ctx.StringValue("ResumeDeploy.RequestId");
+			resumeDeployResponse.Success = _ctx.BooleanValue("ResumeDeploy.Success");
         
 			return resumeDeployResponse;
         }

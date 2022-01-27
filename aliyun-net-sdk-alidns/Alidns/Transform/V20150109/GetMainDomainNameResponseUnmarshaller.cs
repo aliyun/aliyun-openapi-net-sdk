@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class GetMainDomainNameResponseUnmarshaller
     {
-        public static GetMainDomainNameResponse Unmarshall(UnmarshallerContext context)
+        public static GetMainDomainNameResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMainDomainNameResponse getMainDomainNameResponse = new GetMainDomainNameResponse();
 
-			getMainDomainNameResponse.HttpResponse = context.HttpResponse;
-			getMainDomainNameResponse.RequestId = context.StringValue("GetMainDomainName.RequestId");
-			getMainDomainNameResponse.DomainName = context.StringValue("GetMainDomainName.DomainName");
-			getMainDomainNameResponse.RR = context.StringValue("GetMainDomainName.RR");
-			getMainDomainNameResponse.DomainLevel = context.LongValue("GetMainDomainName.DomainLevel");
+			getMainDomainNameResponse.HttpResponse = _ctx.HttpResponse;
+			getMainDomainNameResponse.RequestId = _ctx.StringValue("GetMainDomainName.RequestId");
+			getMainDomainNameResponse.DomainName = _ctx.StringValue("GetMainDomainName.DomainName");
+			getMainDomainNameResponse.RR = _ctx.StringValue("GetMainDomainName.RR");
+			getMainDomainNameResponse.DomainLevel = _ctx.LongValue("GetMainDomainName.DomainLevel");
         
 			return getMainDomainNameResponse;
         }

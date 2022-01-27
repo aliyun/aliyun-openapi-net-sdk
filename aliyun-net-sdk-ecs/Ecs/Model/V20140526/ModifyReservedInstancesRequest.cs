@@ -35,15 +35,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private List<Configuration> configurations = new List<Configuration>(){ };
+		private List<string> configurations = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -53,6 +53,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<string> reservedInstanceIds = new List<string>(){ };
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -66,7 +67,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Configuration> Configurations
+		[JsonProperty(PropertyName = "Configuration")]
+		public List<string> Configurations
 		{
 			get
 			{
@@ -76,17 +78,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				configurations = value;
-				for (int i = 0; i < configurations.Count; i++)
+				if(configurations != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Configuration." + (i + 1) + ".ZoneId", configurations[i].ZoneId);
-					DictionaryUtil.Add(QueryParameters,"Configuration." + (i + 1) + ".ReservedInstanceName", configurations[i].ReservedInstanceName);
-					DictionaryUtil.Add(QueryParameters,"Configuration." + (i + 1) + ".InstanceType", configurations[i].InstanceType);
-					DictionaryUtil.Add(QueryParameters,"Configuration." + (i + 1) + ".Scope", configurations[i].Scope);
-					DictionaryUtil.Add(QueryParameters,"Configuration." + (i + 1) + ".InstanceAmount", configurations[i].InstanceAmount);
+					for (int depth1 = 0; depth1 < configurations.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Configuration." + (depth1 + 1), configurations[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Configuration." + (depth1 + 1), configurations[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Configuration." + (depth1 + 1), configurations[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Configuration." + (depth1 + 1), configurations[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Configuration." + (depth1 + 1), configurations[depth1]);
+					}
 				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -100,6 +106,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -113,6 +120,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -126,6 +134,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ReservedInstanceId")]
 		public List<string> ReservedInstanceIds
 		{
 			get
@@ -136,38 +145,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				reservedInstanceIds = value;
-				for (int i = 0; i < reservedInstanceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ReservedInstanceId." + (i + 1) , reservedInstanceIds[i]);
-				}
 			}
 		}
 
 		public class Configuration
 		{
 
-			private string zoneId;
-
 			private string reservedInstanceName;
 
-			private string instanceType;
+			private string zoneId;
 
 			private string scope;
 
+			private string instanceType;
+
 			private int? instanceAmount;
 
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "ReservedInstanceName")]
 			public string ReservedInstanceName
 			{
 				get
@@ -180,18 +174,20 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string InstanceType
+			[JsonProperty(PropertyName = "ZoneId")]
+			public string ZoneId
 			{
 				get
 				{
-					return instanceType;
+					return zoneId;
 				}
 				set	
 				{
-					instanceType = value;
+					zoneId = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "Scope")]
 			public string Scope
 			{
 				get
@@ -204,6 +200,20 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "InstanceType")]
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceAmount")]
 			public int? InstanceAmount
 			{
 				get

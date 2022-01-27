@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.ivision;
 using Aliyun.Acs.ivision.Transform;
 using Aliyun.Acs.ivision.Transform.V20190308;
 
@@ -30,12 +31,12 @@ namespace Aliyun.Acs.ivision.Model.V20190308
     public class DescribeFaceGroupsRequest : RpcAcsRequest<DescribeFaceGroupsResponse>
     {
         public DescribeFaceGroupsRequest()
-            : base("ivision", "2019-03-08", "DescribeFaceGroups", "ivision", "openAPI")
+            : base("ivision", "2019-03-08", "DescribeFaceGroups")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.ivision.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.ivision.Endpoint.endpointRegionalType, null);
             }
         }
 

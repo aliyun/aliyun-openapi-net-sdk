@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 {
     public class FtParamListResponseUnmarshaller
     {
-        public static FtParamListResponse Unmarshall(UnmarshallerContext context)
+        public static FtParamListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			FtParamListResponse ftParamListResponse = new FtParamListResponse();
 
-			ftParamListResponse.HttpResponse = context.HttpResponse;
-			ftParamListResponse.RequestId = context.StringValue("FtParamList.RequestId");
-			ftParamListResponse.Name = context.StringValue("FtParamList.Name");
+			ftParamListResponse.HttpResponse = _ctx.HttpResponse;
+			ftParamListResponse.RequestId = _ctx.StringValue("FtParamList.RequestId");
+			ftParamListResponse.Name = _ctx.StringValue("FtParamList.Name");
         
 			return ftParamListResponse;
         }

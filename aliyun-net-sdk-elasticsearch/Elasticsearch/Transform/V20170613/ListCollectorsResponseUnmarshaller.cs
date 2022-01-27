@@ -78,6 +78,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 					extendConfigsItem.EnableMonitoring = _ctx.BooleanValue("ListCollectors.Result["+ i +"].ExtendConfigs["+ j +"].enableMonitoring");
 					extendConfigsItem.Type = _ctx.StringValue("ListCollectors.Result["+ i +"].ExtendConfigs["+ j +"].type");
 					extendConfigsItem.GroupId = _ctx.StringValue("ListCollectors.Result["+ i +"].ExtendConfigs["+ j +"].groupId");
+					extendConfigsItem.Host = _ctx.StringValue("ListCollectors.Result["+ i +"].ExtendConfigs["+ j +"].host");
+					extendConfigsItem.KibanaHost = _ctx.StringValue("ListCollectors.Result["+ i +"].ExtendConfigs["+ j +"].kibanaHost");
+					extendConfigsItem.TotalPodsCount = _ctx.StringValue("ListCollectors.Result["+ i +"].ExtendConfigs["+ j +"].totalPodsCount");
+					extendConfigsItem.SuccessPodsCount = _ctx.StringValue("ListCollectors.Result["+ i +"].ExtendConfigs["+ j +"].successPodsCount");
 
 					List<string> extendConfigsItem_hosts = new List<string>();
 					for (int k = 0; k < _ctx.Length("ListCollectors.Result["+ i +"].ExtendConfigs["+ j +"].Hosts.Length"); k++) {

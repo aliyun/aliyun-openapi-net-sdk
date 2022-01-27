@@ -35,34 +35,28 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointRegionalType, null);
             }
-			Protocol = ProtocolType.HTTPS;
         }
-
-		private long? jobId;
 
 		private string namespaceSource;
 
+		private bool? checkJobStatus;
+
 		private string groupId;
+
+		private string label;
+
+		private int? designateType;
+
+		private long? jobId;
 
 		private string _namespace;
 
-		private string instanceParameters;
+		private string worker;
 
-		public long? JobId
-		{
-			get
-			{
-				return jobId;
-			}
-			set	
-			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value.ToString());
-			}
-		}
+		private string instanceParameters;
 
 		public string NamespaceSource
 		{
@@ -74,6 +68,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				namespaceSource = value;
 				DictionaryUtil.Add(QueryParameters, "NamespaceSource", value);
+			}
+		}
+
+		public bool? CheckJobStatus
+		{
+			get
+			{
+				return checkJobStatus;
+			}
+			set	
+			{
+				checkJobStatus = value;
+				DictionaryUtil.Add(QueryParameters, "CheckJobStatus", value.ToString());
 			}
 		}
 
@@ -90,6 +97,45 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
+		public string Label
+		{
+			get
+			{
+				return label;
+			}
+			set	
+			{
+				label = value;
+				DictionaryUtil.Add(QueryParameters, "Label", value);
+			}
+		}
+
+		public int? DesignateType
+		{
+			get
+			{
+				return designateType;
+			}
+			set	
+			{
+				designateType = value;
+				DictionaryUtil.Add(QueryParameters, "DesignateType", value.ToString());
+			}
+		}
+
+		public long? JobId
+		{
+			get
+			{
+				return jobId;
+			}
+			set	
+			{
+				jobId = value;
+				DictionaryUtil.Add(QueryParameters, "JobId", value.ToString());
+			}
+		}
+
 		public string _Namespace
 		{
 			get
@@ -100,6 +146,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				_namespace = value;
 				DictionaryUtil.Add(QueryParameters, "Namespace", value);
+			}
+		}
+
+		public string Worker
+		{
+			get
+			{
+				return worker;
+			}
+			set	
+			{
+				worker = value;
+				DictionaryUtil.Add(QueryParameters, "Worker", value);
 			}
 		}
 

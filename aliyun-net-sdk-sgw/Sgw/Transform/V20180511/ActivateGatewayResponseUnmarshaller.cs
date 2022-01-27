@@ -26,17 +26,17 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class ActivateGatewayResponseUnmarshaller
     {
-        public static ActivateGatewayResponse Unmarshall(UnmarshallerContext context)
+        public static ActivateGatewayResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ActivateGatewayResponse activateGatewayResponse = new ActivateGatewayResponse();
 
-			activateGatewayResponse.HttpResponse = context.HttpResponse;
-			activateGatewayResponse.RequestId = context.StringValue("ActivateGateway.RequestId");
-			activateGatewayResponse.Success = context.BooleanValue("ActivateGateway.Success");
-			activateGatewayResponse.Code = context.StringValue("ActivateGateway.Code");
-			activateGatewayResponse.Message = context.StringValue("ActivateGateway.Message");
-			activateGatewayResponse.GatewayId = context.StringValue("ActivateGateway.GatewayId");
-			activateGatewayResponse.RegionId = context.StringValue("ActivateGateway.RegionId");
+			activateGatewayResponse.HttpResponse = _ctx.HttpResponse;
+			activateGatewayResponse.RequestId = _ctx.StringValue("ActivateGateway.RequestId");
+			activateGatewayResponse.Message = _ctx.StringValue("ActivateGateway.Message");
+			activateGatewayResponse.RegionId = _ctx.StringValue("ActivateGateway.RegionId");
+			activateGatewayResponse.GatewayId = _ctx.StringValue("ActivateGateway.GatewayId");
+			activateGatewayResponse.Code = _ctx.StringValue("ActivateGateway.Code");
+			activateGatewayResponse.Success = _ctx.BooleanValue("ActivateGateway.Success");
         
 			return activateGatewayResponse;
         }

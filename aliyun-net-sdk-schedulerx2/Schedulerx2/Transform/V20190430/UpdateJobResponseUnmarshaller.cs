@@ -26,15 +26,15 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 {
     public class UpdateJobResponseUnmarshaller
     {
-        public static UpdateJobResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateJobResponse updateJobResponse = new UpdateJobResponse();
 
-			updateJobResponse.HttpResponse = context.HttpResponse;
-			updateJobResponse.RequestId = context.StringValue("UpdateJob.RequestId");
-			updateJobResponse.Code = context.IntegerValue("UpdateJob.Code");
-			updateJobResponse.Success = context.BooleanValue("UpdateJob.Success");
-			updateJobResponse.Message = context.StringValue("UpdateJob.Message");
+			updateJobResponse.HttpResponse = _ctx.HttpResponse;
+			updateJobResponse.Code = _ctx.IntegerValue("UpdateJob.Code");
+			updateJobResponse.Message = _ctx.StringValue("UpdateJob.Message");
+			updateJobResponse.RequestId = _ctx.StringValue("UpdateJob.RequestId");
+			updateJobResponse.Success = _ctx.BooleanValue("UpdateJob.Success");
         
 			return updateJobResponse;
         }

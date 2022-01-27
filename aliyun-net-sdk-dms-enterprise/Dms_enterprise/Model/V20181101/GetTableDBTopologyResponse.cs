@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private bool? success;
+		private string errorCode;
 
 		private string errorMessage;
 
-		private string errorCode;
+		private bool? success;
 
 		private GetTableDBTopology_DBTopology dBTopology;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,30 +48,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ErrorCode")]
 		public string ErrorCode
 		{
 			get
@@ -83,6 +61,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBTopology")]
 		public GetTableDBTopology_DBTopology DBTopology
 		{
 			get
@@ -104,6 +109,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private List<GetTableDBTopology_DataSource> dataSourceList;
 
+			[JsonProperty(PropertyName = "TableName")]
 			public string TableName
 			{
 				get
@@ -116,6 +122,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "TableGuid")]
 			public string TableGuid
 			{
 				get
@@ -128,6 +135,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "DataSourceList")]
 			public List<GetTableDBTopology_DataSource> DataSourceList
 			{
 				get
@@ -143,52 +151,17 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			public class GetTableDBTopology_DataSource
 			{
 
-				private string host;
+				private string sid;
 
-				private int? port;
+				private string host;
 
 				private string dbType;
 
-				private string sid;
+				private int? port;
 
 				private List<GetTableDBTopology_Database> databaseList;
 
-				public string Host
-				{
-					get
-					{
-						return host;
-					}
-					set	
-					{
-						host = value;
-					}
-				}
-
-				public int? Port
-				{
-					get
-					{
-						return port;
-					}
-					set	
-					{
-						port = value;
-					}
-				}
-
-				public string DbType
-				{
-					get
-					{
-						return dbType;
-					}
-					set	
-					{
-						dbType = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "Sid")]
 				public string Sid
 				{
 					get
@@ -201,6 +174,46 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
+				[JsonProperty(PropertyName = "Host")]
+				public string Host
+				{
+					get
+					{
+						return host;
+					}
+					set	
+					{
+						host = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "DbType")]
+				public string DbType
+				{
+					get
+					{
+						return dbType;
+					}
+					set	
+					{
+						dbType = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Port")]
+				public int? Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "DatabaseList")]
 				public List<GetTableDBTopology_Database> DatabaseList
 				{
 					get
@@ -216,28 +229,17 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				public class GetTableDBTopology_Database
 				{
 
-					private string dbName;
-
 					private string dbId;
 
-					private string envType;
+					private string dbName;
 
 					private string dbType;
 
+					private string envType;
+
 					private List<GetTableDBTopology_Table> tableList;
 
-					public string DbName
-					{
-						get
-						{
-							return dbName;
-						}
-						set	
-						{
-							dbName = value;
-						}
-					}
-
+					[JsonProperty(PropertyName = "DbId")]
 					public string DbId
 					{
 						get
@@ -250,18 +252,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 						}
 					}
 
-					public string EnvType
+					[JsonProperty(PropertyName = "DbName")]
+					public string DbName
 					{
 						get
 						{
-							return envType;
+							return dbName;
 						}
 						set	
 						{
-							envType = value;
+							dbName = value;
 						}
 					}
 
+					[JsonProperty(PropertyName = "DbType")]
 					public string DbType
 					{
 						get
@@ -274,6 +278,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 						}
 					}
 
+					[JsonProperty(PropertyName = "EnvType")]
+					public string EnvType
+					{
+						get
+						{
+							return envType;
+						}
+						set	
+						{
+							envType = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "TableList")]
 					public List<GetTableDBTopology_Table> TableList
 					{
 						get
@@ -291,10 +309,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 						private string tableName;
 
-						private string tableId;
-
 						private string tableType;
 
+						private string tableId;
+
+						[JsonProperty(PropertyName = "TableName")]
 						public string TableName
 						{
 							get
@@ -307,18 +326,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 							}
 						}
 
-						public string TableId
-						{
-							get
-							{
-								return tableId;
-							}
-							set	
-							{
-								tableId = value;
-							}
-						}
-
+						[JsonProperty(PropertyName = "TableType")]
 						public string TableType
 						{
 							get
@@ -328,6 +336,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 							set	
 							{
 								tableType = value;
+							}
+						}
+
+						[JsonProperty(PropertyName = "TableId")]
+						public string TableId
+						{
+							get
+							{
+								return tableId;
+							}
+							set	
+							{
+								tableId = value;
 							}
 						}
 					}

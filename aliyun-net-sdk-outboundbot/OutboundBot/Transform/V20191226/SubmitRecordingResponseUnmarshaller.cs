@@ -26,16 +26,16 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class SubmitRecordingResponseUnmarshaller
     {
-        public static SubmitRecordingResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitRecordingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitRecordingResponse submitRecordingResponse = new SubmitRecordingResponse();
 
-			submitRecordingResponse.HttpResponse = context.HttpResponse;
-			submitRecordingResponse.RequestId = context.StringValue("SubmitRecording.RequestId");
-			submitRecordingResponse.Success = context.BooleanValue("SubmitRecording.Success");
-			submitRecordingResponse.Code = context.StringValue("SubmitRecording.Code");
-			submitRecordingResponse.Message = context.StringValue("SubmitRecording.Message");
-			submitRecordingResponse.HttpStatusCode = context.IntegerValue("SubmitRecording.HttpStatusCode");
+			submitRecordingResponse.HttpResponse = _ctx.HttpResponse;
+			submitRecordingResponse.Code = _ctx.StringValue("SubmitRecording.Code");
+			submitRecordingResponse.HttpStatusCode = _ctx.IntegerValue("SubmitRecording.HttpStatusCode");
+			submitRecordingResponse.Message = _ctx.StringValue("SubmitRecording.Message");
+			submitRecordingResponse.RequestId = _ctx.StringValue("SubmitRecording.RequestId");
+			submitRecordingResponse.Success = _ctx.BooleanValue("SubmitRecording.Success");
         
 			return submitRecordingResponse;
         }

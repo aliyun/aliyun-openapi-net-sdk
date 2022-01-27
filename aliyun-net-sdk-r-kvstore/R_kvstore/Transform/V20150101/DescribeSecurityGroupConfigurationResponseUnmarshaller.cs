@@ -26,19 +26,19 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class DescribeSecurityGroupConfigurationResponseUnmarshaller
     {
-        public static DescribeSecurityGroupConfigurationResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSecurityGroupConfigurationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSecurityGroupConfigurationResponse describeSecurityGroupConfigurationResponse = new DescribeSecurityGroupConfigurationResponse();
 
-			describeSecurityGroupConfigurationResponse.HttpResponse = context.HttpResponse;
-			describeSecurityGroupConfigurationResponse.RequestId = context.StringValue("DescribeSecurityGroupConfiguration.RequestId");
+			describeSecurityGroupConfigurationResponse.HttpResponse = _ctx.HttpResponse;
+			describeSecurityGroupConfigurationResponse.RequestId = _ctx.StringValue("DescribeSecurityGroupConfiguration.RequestId");
 
 			List<DescribeSecurityGroupConfigurationResponse.DescribeSecurityGroupConfiguration_EcsSecurityGroupRelation> describeSecurityGroupConfigurationResponse_items = new List<DescribeSecurityGroupConfigurationResponse.DescribeSecurityGroupConfiguration_EcsSecurityGroupRelation>();
-			for (int i = 0; i < context.Length("DescribeSecurityGroupConfiguration.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeSecurityGroupConfiguration.Items.Length"); i++) {
 				DescribeSecurityGroupConfigurationResponse.DescribeSecurityGroupConfiguration_EcsSecurityGroupRelation ecsSecurityGroupRelation = new DescribeSecurityGroupConfigurationResponse.DescribeSecurityGroupConfiguration_EcsSecurityGroupRelation();
-				ecsSecurityGroupRelation.RegionId = context.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].RegionId");
-				ecsSecurityGroupRelation.SecurityGroupId = context.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].SecurityGroupId");
-				ecsSecurityGroupRelation.NetType = context.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].NetType");
+				ecsSecurityGroupRelation.RegionId = _ctx.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].RegionId");
+				ecsSecurityGroupRelation.SecurityGroupId = _ctx.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].SecurityGroupId");
+				ecsSecurityGroupRelation.NetType = _ctx.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].NetType");
 
 				describeSecurityGroupConfigurationResponse_items.Add(ecsSecurityGroupRelation);
 			}

@@ -26,50 +26,50 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20180601
 {
     public class DescribeEmrHiveTableResponseUnmarshaller
     {
-        public static DescribeEmrHiveTableResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeEmrHiveTableResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeEmrHiveTableResponse describeEmrHiveTableResponse = new DescribeEmrHiveTableResponse();
 
-			describeEmrHiveTableResponse.HttpResponse = context.HttpResponse;
-			describeEmrHiveTableResponse.ErrorCode = context.StringValue("DescribeEmrHiveTable.ErrorCode");
-			describeEmrHiveTableResponse.ErrorMessage = context.StringValue("DescribeEmrHiveTable.ErrorMessage");
-			describeEmrHiveTableResponse.RequestId = context.StringValue("DescribeEmrHiveTable.RequestId");
+			describeEmrHiveTableResponse.HttpResponse = _ctx.HttpResponse;
+			describeEmrHiveTableResponse.ErrorCode = _ctx.StringValue("DescribeEmrHiveTable.ErrorCode");
+			describeEmrHiveTableResponse.ErrorMessage = _ctx.StringValue("DescribeEmrHiveTable.ErrorMessage");
+			describeEmrHiveTableResponse.RequestId = _ctx.StringValue("DescribeEmrHiveTable.RequestId");
 
 			DescribeEmrHiveTableResponse.DescribeEmrHiveTable_Data data = new DescribeEmrHiveTableResponse.DescribeEmrHiveTable_Data();
-			data.ClusterBizId = context.StringValue("DescribeEmrHiveTable.Data.ClusterBizId");
-			data.TableName = context.StringValue("DescribeEmrHiveTable.Data.TableName");
-			data.TableType = context.StringValue("DescribeEmrHiveTable.Data.TableType");
-			data.Owner = context.StringValue("DescribeEmrHiveTable.Data.Owner");
-			data.OwnerType = context.StringValue("DescribeEmrHiveTable.Data.OwnerType");
-			data.IsTemporary = context.BooleanValue("DescribeEmrHiveTable.Data.IsTemporary");
-			data.SerializationLib = context.StringValue("DescribeEmrHiveTable.Data.SerializationLib");
-			data.InputFormat = context.StringValue("DescribeEmrHiveTable.Data.InputFormat");
-			data.OutputFormat = context.StringValue("DescribeEmrHiveTable.Data.OutputFormat");
-			data.Location = context.StringValue("DescribeEmrHiveTable.Data.Location");
-			data.LastAccessTime = context.StringValue("DescribeEmrHiveTable.Data.LastAccessTime");
-			data.GmtCreate = context.StringValue("DescribeEmrHiveTable.Data.GmtCreate");
-			data.GmtModified = context.StringValue("DescribeEmrHiveTable.Data.GmtModified");
-			data.TableComment = context.StringValue("DescribeEmrHiveTable.Data.TableComment");
-			data.TableParameters = context.StringValue("DescribeEmrHiveTable.Data.TableParameters");
-			data.PartitionKeys = context.StringValue("DescribeEmrHiveTable.Data.PartitionKeys");
-			data.IsCompressed = context.BooleanValue("DescribeEmrHiveTable.Data.IsCompressed");
-			data.ClusterBizName = context.StringValue("DescribeEmrHiveTable.Data.ClusterBizName");
-			data.DatabaseName = context.StringValue("DescribeEmrHiveTable.Data.DatabaseName");
-			data.OwnerId = context.StringValue("DescribeEmrHiveTable.Data.OwnerId");
-			data.TableDesc = context.StringValue("DescribeEmrHiveTable.Data.TableDesc");
-			data.LastModifyTime = context.StringValue("DescribeEmrHiveTable.Data.LastModifyTime");
-			data.TableSize = context.LongValue("DescribeEmrHiveTable.Data.TableSize");
+			data.ClusterBizId = _ctx.StringValue("DescribeEmrHiveTable.Data.ClusterBizId");
+			data.TableName = _ctx.StringValue("DescribeEmrHiveTable.Data.TableName");
+			data.TableType = _ctx.StringValue("DescribeEmrHiveTable.Data.TableType");
+			data.Owner = _ctx.StringValue("DescribeEmrHiveTable.Data.Owner");
+			data.OwnerType = _ctx.StringValue("DescribeEmrHiveTable.Data.OwnerType");
+			data.IsTemporary = _ctx.BooleanValue("DescribeEmrHiveTable.Data.IsTemporary");
+			data.SerializationLib = _ctx.StringValue("DescribeEmrHiveTable.Data.SerializationLib");
+			data.InputFormat = _ctx.StringValue("DescribeEmrHiveTable.Data.InputFormat");
+			data.OutputFormat = _ctx.StringValue("DescribeEmrHiveTable.Data.OutputFormat");
+			data.Location = _ctx.StringValue("DescribeEmrHiveTable.Data.Location");
+			data.LastAccessTime = _ctx.StringValue("DescribeEmrHiveTable.Data.LastAccessTime");
+			data.GmtCreate = _ctx.StringValue("DescribeEmrHiveTable.Data.GmtCreate");
+			data.GmtModified = _ctx.StringValue("DescribeEmrHiveTable.Data.GmtModified");
+			data.TableComment = _ctx.StringValue("DescribeEmrHiveTable.Data.TableComment");
+			data.TableParameters = _ctx.StringValue("DescribeEmrHiveTable.Data.TableParameters");
+			data.PartitionKeys = _ctx.StringValue("DescribeEmrHiveTable.Data.PartitionKeys");
+			data.IsCompressed = _ctx.BooleanValue("DescribeEmrHiveTable.Data.IsCompressed");
+			data.ClusterBizName = _ctx.StringValue("DescribeEmrHiveTable.Data.ClusterBizName");
+			data.DatabaseName = _ctx.StringValue("DescribeEmrHiveTable.Data.DatabaseName");
+			data.OwnerId = _ctx.StringValue("DescribeEmrHiveTable.Data.OwnerId");
+			data.TableDesc = _ctx.StringValue("DescribeEmrHiveTable.Data.TableDesc");
+			data.LastModifyTime = _ctx.StringValue("DescribeEmrHiveTable.Data.LastModifyTime");
+			data.TableSize = _ctx.LongValue("DescribeEmrHiveTable.Data.TableSize");
 
 			List<DescribeEmrHiveTableResponse.DescribeEmrHiveTable_Data.DescribeEmrHiveTable_TableColumn> data_columns = new List<DescribeEmrHiveTableResponse.DescribeEmrHiveTable_Data.DescribeEmrHiveTable_TableColumn>();
-			for (int i = 0; i < context.Length("DescribeEmrHiveTable.Data.Columns.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeEmrHiveTable.Data.Columns.Length"); i++) {
 				DescribeEmrHiveTableResponse.DescribeEmrHiveTable_Data.DescribeEmrHiveTable_TableColumn tableColumn = new DescribeEmrHiveTableResponse.DescribeEmrHiveTable_Data.DescribeEmrHiveTable_TableColumn();
-				tableColumn.ColumnPosition = context.IntegerValue("DescribeEmrHiveTable.Data.Columns["+ i +"].ColumnPosition");
-				tableColumn.ColumnName = context.StringValue("DescribeEmrHiveTable.Data.Columns["+ i +"].ColumnName");
-				tableColumn.ColumnType = context.StringValue("DescribeEmrHiveTable.Data.Columns["+ i +"].ColumnType");
-				tableColumn.ColumnComment = context.StringValue("DescribeEmrHiveTable.Data.Columns["+ i +"].ColumnComment");
-				tableColumn.GmtCreate = context.StringValue("DescribeEmrHiveTable.Data.Columns["+ i +"].GmtCreate");
-				tableColumn.GmtModified = context.StringValue("DescribeEmrHiveTable.Data.Columns["+ i +"].GmtModified");
-				tableColumn.Comment = context.StringValue("DescribeEmrHiveTable.Data.Columns["+ i +"].Comment");
+				tableColumn.ColumnPosition = _ctx.IntegerValue("DescribeEmrHiveTable.Data.Columns["+ i +"].ColumnPosition");
+				tableColumn.ColumnName = _ctx.StringValue("DescribeEmrHiveTable.Data.Columns["+ i +"].ColumnName");
+				tableColumn.ColumnType = _ctx.StringValue("DescribeEmrHiveTable.Data.Columns["+ i +"].ColumnType");
+				tableColumn.ColumnComment = _ctx.StringValue("DescribeEmrHiveTable.Data.Columns["+ i +"].ColumnComment");
+				tableColumn.GmtCreate = _ctx.StringValue("DescribeEmrHiveTable.Data.Columns["+ i +"].GmtCreate");
+				tableColumn.GmtModified = _ctx.StringValue("DescribeEmrHiveTable.Data.Columns["+ i +"].GmtModified");
+				tableColumn.Comment = _ctx.StringValue("DescribeEmrHiveTable.Data.Columns["+ i +"].Comment");
 
 				data_columns.Add(tableColumn);
 			}

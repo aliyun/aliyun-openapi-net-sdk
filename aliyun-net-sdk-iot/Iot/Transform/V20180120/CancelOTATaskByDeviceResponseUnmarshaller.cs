@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class CancelOTATaskByDeviceResponseUnmarshaller
     {
-        public static CancelOTATaskByDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static CancelOTATaskByDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CancelOTATaskByDeviceResponse cancelOTATaskByDeviceResponse = new CancelOTATaskByDeviceResponse();
 
-			cancelOTATaskByDeviceResponse.HttpResponse = context.HttpResponse;
-			cancelOTATaskByDeviceResponse.RequestId = context.StringValue("CancelOTATaskByDevice.RequestId");
-			cancelOTATaskByDeviceResponse.Success = context.BooleanValue("CancelOTATaskByDevice.Success");
-			cancelOTATaskByDeviceResponse.Code = context.StringValue("CancelOTATaskByDevice.Code");
-			cancelOTATaskByDeviceResponse.ErrorMessage = context.StringValue("CancelOTATaskByDevice.ErrorMessage");
+			cancelOTATaskByDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			cancelOTATaskByDeviceResponse.RequestId = _ctx.StringValue("CancelOTATaskByDevice.RequestId");
+			cancelOTATaskByDeviceResponse.Success = _ctx.BooleanValue("CancelOTATaskByDevice.Success");
+			cancelOTATaskByDeviceResponse.Code = _ctx.StringValue("CancelOTATaskByDevice.Code");
+			cancelOTATaskByDeviceResponse.ErrorMessage = _ctx.StringValue("CancelOTATaskByDevice.ErrorMessage");
         
 			return cancelOTATaskByDeviceResponse;
         }

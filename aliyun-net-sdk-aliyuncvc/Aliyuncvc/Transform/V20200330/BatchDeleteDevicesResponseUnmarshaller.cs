@@ -26,15 +26,15 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20200330
 {
     public class BatchDeleteDevicesResponseUnmarshaller
     {
-        public static BatchDeleteDevicesResponse Unmarshall(UnmarshallerContext context)
+        public static BatchDeleteDevicesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchDeleteDevicesResponse batchDeleteDevicesResponse = new BatchDeleteDevicesResponse();
 
-			batchDeleteDevicesResponse.HttpResponse = context.HttpResponse;
-			batchDeleteDevicesResponse.ErrorCode = context.IntegerValue("BatchDeleteDevices.ErrorCode");
-			batchDeleteDevicesResponse.Message = context.StringValue("BatchDeleteDevices.Message");
-			batchDeleteDevicesResponse.Success = context.BooleanValue("BatchDeleteDevices.Success");
-			batchDeleteDevicesResponse.RequestId = context.StringValue("BatchDeleteDevices.RequestId");
+			batchDeleteDevicesResponse.HttpResponse = _ctx.HttpResponse;
+			batchDeleteDevicesResponse.ErrorCode = _ctx.IntegerValue("BatchDeleteDevices.ErrorCode");
+			batchDeleteDevicesResponse.Message = _ctx.StringValue("BatchDeleteDevices.Message");
+			batchDeleteDevicesResponse.Success = _ctx.BooleanValue("BatchDeleteDevices.Success");
+			batchDeleteDevicesResponse.RequestId = _ctx.StringValue("BatchDeleteDevices.RequestId");
         
 			return batchDeleteDevicesResponse;
         }

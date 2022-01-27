@@ -26,21 +26,21 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class GenerateCompanyRegUploadPolicyResponseUnmarshaller
     {
-        public static GenerateCompanyRegUploadPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static GenerateCompanyRegUploadPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GenerateCompanyRegUploadPolicyResponse generateCompanyRegUploadPolicyResponse = new GenerateCompanyRegUploadPolicyResponse();
 
-			generateCompanyRegUploadPolicyResponse.HttpResponse = context.HttpResponse;
-			generateCompanyRegUploadPolicyResponse.RequestId = context.StringValue("GenerateCompanyRegUploadPolicy.RequestId");
-			generateCompanyRegUploadPolicyResponse.AccessId = context.StringValue("GenerateCompanyRegUploadPolicy.AccessId");
-			generateCompanyRegUploadPolicyResponse.Signature = context.StringValue("GenerateCompanyRegUploadPolicy.Signature");
-			generateCompanyRegUploadPolicyResponse.FileDir = context.StringValue("GenerateCompanyRegUploadPolicy.FileDir");
-			generateCompanyRegUploadPolicyResponse.Host = context.StringValue("GenerateCompanyRegUploadPolicy.Host");
-			generateCompanyRegUploadPolicyResponse.ExpireTime = context.LongValue("GenerateCompanyRegUploadPolicy.ExpireTime");
-			generateCompanyRegUploadPolicyResponse.EncodedPolicy = context.StringValue("GenerateCompanyRegUploadPolicy.EncodedPolicy");
-			generateCompanyRegUploadPolicyResponse.Min = context.LongValue("GenerateCompanyRegUploadPolicy.Min");
-			generateCompanyRegUploadPolicyResponse.Max = context.LongValue("GenerateCompanyRegUploadPolicy.Max");
-			generateCompanyRegUploadPolicyResponse.Encryption = context.StringValue("GenerateCompanyRegUploadPolicy.Encryption");
+			generateCompanyRegUploadPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			generateCompanyRegUploadPolicyResponse.RequestId = _ctx.StringValue("GenerateCompanyRegUploadPolicy.RequestId");
+			generateCompanyRegUploadPolicyResponse.AccessId = _ctx.StringValue("GenerateCompanyRegUploadPolicy.AccessId");
+			generateCompanyRegUploadPolicyResponse.Signature = _ctx.StringValue("GenerateCompanyRegUploadPolicy.Signature");
+			generateCompanyRegUploadPolicyResponse.FileDir = _ctx.StringValue("GenerateCompanyRegUploadPolicy.FileDir");
+			generateCompanyRegUploadPolicyResponse.Host = _ctx.StringValue("GenerateCompanyRegUploadPolicy.Host");
+			generateCompanyRegUploadPolicyResponse.ExpireTime = _ctx.LongValue("GenerateCompanyRegUploadPolicy.ExpireTime");
+			generateCompanyRegUploadPolicyResponse.EncodedPolicy = _ctx.StringValue("GenerateCompanyRegUploadPolicy.EncodedPolicy");
+			generateCompanyRegUploadPolicyResponse.Min = _ctx.LongValue("GenerateCompanyRegUploadPolicy.Min");
+			generateCompanyRegUploadPolicyResponse.Max = _ctx.LongValue("GenerateCompanyRegUploadPolicy.Max");
+			generateCompanyRegUploadPolicyResponse.Encryption = _ctx.StringValue("GenerateCompanyRegUploadPolicy.Encryption");
         
 			return generateCompanyRegUploadPolicyResponse;
         }

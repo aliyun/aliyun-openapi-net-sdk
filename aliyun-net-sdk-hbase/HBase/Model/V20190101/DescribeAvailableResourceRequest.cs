@@ -40,9 +40,69 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			Method = MethodType.POST;
         }
 
+		private string engineVersion;
+
+		private string engine;
+
+		private string diskType;
+
+		private string coreInstanceType;
+
 		private string zoneId;
 
 		private string chargeType;
+
+		public string EngineVersion
+		{
+			get
+			{
+				return engineVersion;
+			}
+			set	
+			{
+				engineVersion = value;
+				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+			}
+		}
+
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
+				DictionaryUtil.Add(QueryParameters, "Engine", value);
+			}
+		}
+
+		public string DiskType
+		{
+			get
+			{
+				return diskType;
+			}
+			set	
+			{
+				diskType = value;
+				DictionaryUtil.Add(QueryParameters, "DiskType", value);
+			}
+		}
+
+		public string CoreInstanceType
+		{
+			get
+			{
+				return coreInstanceType;
+			}
+			set	
+			{
+				coreInstanceType = value;
+				DictionaryUtil.Add(QueryParameters, "CoreInstanceType", value);
+			}
+		}
 
 		public string ZoneId
 		{

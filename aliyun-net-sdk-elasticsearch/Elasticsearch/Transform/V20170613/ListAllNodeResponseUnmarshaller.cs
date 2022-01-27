@@ -36,15 +36,16 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<ListAllNodeResponse.ListAllNode_ResultItem> listAllNodeResponse_result = new List<ListAllNodeResponse.ListAllNode_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListAllNode.Result.Length"); i++) {
 				ListAllNodeResponse.ListAllNode_ResultItem resultItem = new ListAllNodeResponse.ListAllNode_ResultItem();
-				resultItem.Host = _ctx.StringValue("ListAllNode.Result["+ i +"].host");
-				resultItem.Port = _ctx.IntegerValue("ListAllNode.Result["+ i +"].port");
-				resultItem.ZoneId = _ctx.StringValue("ListAllNode.Result["+ i +"].zoneId");
-				resultItem.NodeType = _ctx.StringValue("ListAllNode.Result["+ i +"].nodeType");
-				resultItem.CpuPercent = _ctx.StringValue("ListAllNode.Result["+ i +"].cpuPercent");
-				resultItem.LoadOneM = _ctx.StringValue("ListAllNode.Result["+ i +"].loadOneM");
 				resultItem.HeapPercent = _ctx.StringValue("ListAllNode.Result["+ i +"].heapPercent");
-				resultItem.Health = _ctx.StringValue("ListAllNode.Result["+ i +"].health");
+				resultItem.ZoneId = _ctx.StringValue("ListAllNode.Result["+ i +"].zoneId");
+				resultItem.HostName = _ctx.StringValue("ListAllNode.Result["+ i +"].hostName");
+				resultItem.CpuPercent = _ctx.StringValue("ListAllNode.Result["+ i +"].cpuPercent");
+				resultItem.Host = _ctx.StringValue("ListAllNode.Result["+ i +"].host");
+				resultItem.NodeType = _ctx.StringValue("ListAllNode.Result["+ i +"].nodeType");
 				resultItem.DiskUsedPercent = _ctx.StringValue("ListAllNode.Result["+ i +"].diskUsedPercent");
+				resultItem.Port = _ctx.IntegerValue("ListAllNode.Result["+ i +"].port");
+				resultItem.LoadOneM = _ctx.StringValue("ListAllNode.Result["+ i +"].loadOneM");
+				resultItem.Health = _ctx.StringValue("ListAllNode.Result["+ i +"].health");
 
 				listAllNodeResponse_result.Add(resultItem);
 			}

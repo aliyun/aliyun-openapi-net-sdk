@@ -35,10 +35,9 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointRegionalType, null);
             }
-			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
@@ -74,6 +73,8 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private int? maxAttempt;
 
+		private bool? missWorkerEnable;
+
 		private int? dispatcherSize;
 
 		private string jobType;
@@ -90,7 +91,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private bool? timeoutEnable;
 
-		private List<ContactInfo> contactInfos = new List<ContactInfo>(){ };
+		private List<string> contactInfos = new List<string>(){ };
 
 		private string name;
 
@@ -310,6 +311,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
+		public bool? MissWorkerEnable
+		{
+			get
+			{
+				return missWorkerEnable;
+			}
+			set	
+			{
+				missWorkerEnable = value;
+				DictionaryUtil.Add(BodyParameters, "MissWorkerEnable", value.ToString());
+			}
+		}
+
 		public int? DispatcherSize
 		{
 			get
@@ -414,7 +428,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public List<ContactInfo> ContactInfos
+		public List<string> ContactInfos
 		{
 			get
 			{
@@ -424,10 +438,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set
 			{
 				contactInfos = value;
-				for (int i = 0; i < contactInfos.Count; i++)
+				if(contactInfos != null)
 				{
-					DictionaryUtil.Add(BodyParameters,"ContactInfo." + (i + 1) + ".UserPhone", contactInfos[i].UserPhone);
-					DictionaryUtil.Add(BodyParameters,"ContactInfo." + (i + 1) + ".UserName", contactInfos[i].UserName);
+					for (int depth1 = 0; depth1 < contactInfos.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"ContactInfo." + (depth1 + 1), contactInfos[depth1]);
+						DictionaryUtil.Add(BodyParameters,"ContactInfo." + (depth1 + 1), contactInfos[depth1]);
+						DictionaryUtil.Add(BodyParameters,"ContactInfo." + (depth1 + 1), contactInfos[depth1]);
+						DictionaryUtil.Add(BodyParameters,"ContactInfo." + (depth1 + 1), contactInfos[depth1]);
+					}
 				}
 			}
 		}
@@ -500,9 +519,25 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 		public class ContactInfo
 		{
 
+			private string ding;
+
 			private string userPhone;
 
+			private string userMail;
+
 			private string userName;
+
+			public string Ding
+			{
+				get
+				{
+					return ding;
+				}
+				set	
+				{
+					ding = value;
+				}
+			}
 
 			public string UserPhone
 			{
@@ -513,6 +548,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 				set	
 				{
 					userPhone = value;
+				}
+			}
+
+			public string UserMail
+			{
+				get
+				{
+					return userMail;
+				}
+				set	
+				{
+					userMail = value;
 				}
 			}
 

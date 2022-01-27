@@ -26,55 +26,55 @@ namespace Aliyun.Acs.ocr.Transform.V20191230
 {
     public class RecognizeBusinessCardResponseUnmarshaller
     {
-        public static RecognizeBusinessCardResponse Unmarshall(UnmarshallerContext context)
+        public static RecognizeBusinessCardResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RecognizeBusinessCardResponse recognizeBusinessCardResponse = new RecognizeBusinessCardResponse();
 
-			recognizeBusinessCardResponse.HttpResponse = context.HttpResponse;
-			recognizeBusinessCardResponse.RequestId = context.StringValue("RecognizeBusinessCard.RequestId");
+			recognizeBusinessCardResponse.HttpResponse = _ctx.HttpResponse;
+			recognizeBusinessCardResponse.RequestId = _ctx.StringValue("RecognizeBusinessCard.RequestId");
 
 			RecognizeBusinessCardResponse.RecognizeBusinessCard_Data data = new RecognizeBusinessCardResponse.RecognizeBusinessCard_Data();
-			data.Name = context.StringValue("RecognizeBusinessCard.Data.Name");
+			data.Name = _ctx.StringValue("RecognizeBusinessCard.Data.Name");
 
 			List<string> data_companies = new List<string>();
-			for (int i = 0; i < context.Length("RecognizeBusinessCard.Data.Companies.Length"); i++) {
-				data_companies.Add(context.StringValue("RecognizeBusinessCard.Data.Companies["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("RecognizeBusinessCard.Data.Companies.Length"); i++) {
+				data_companies.Add(_ctx.StringValue("RecognizeBusinessCard.Data.Companies["+ i +"]"));
 			}
 			data.Companies = data_companies;
 
 			List<string> data_departments = new List<string>();
-			for (int i = 0; i < context.Length("RecognizeBusinessCard.Data.Departments.Length"); i++) {
-				data_departments.Add(context.StringValue("RecognizeBusinessCard.Data.Departments["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("RecognizeBusinessCard.Data.Departments.Length"); i++) {
+				data_departments.Add(_ctx.StringValue("RecognizeBusinessCard.Data.Departments["+ i +"]"));
 			}
 			data.Departments = data_departments;
 
 			List<string> data_titles = new List<string>();
-			for (int i = 0; i < context.Length("RecognizeBusinessCard.Data.Titles.Length"); i++) {
-				data_titles.Add(context.StringValue("RecognizeBusinessCard.Data.Titles["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("RecognizeBusinessCard.Data.Titles.Length"); i++) {
+				data_titles.Add(_ctx.StringValue("RecognizeBusinessCard.Data.Titles["+ i +"]"));
 			}
 			data.Titles = data_titles;
 
 			List<string> data_cellPhoneNumbers = new List<string>();
-			for (int i = 0; i < context.Length("RecognizeBusinessCard.Data.CellPhoneNumbers.Length"); i++) {
-				data_cellPhoneNumbers.Add(context.StringValue("RecognizeBusinessCard.Data.CellPhoneNumbers["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("RecognizeBusinessCard.Data.CellPhoneNumbers.Length"); i++) {
+				data_cellPhoneNumbers.Add(_ctx.StringValue("RecognizeBusinessCard.Data.CellPhoneNumbers["+ i +"]"));
 			}
 			data.CellPhoneNumbers = data_cellPhoneNumbers;
 
 			List<string> data_officePhoneNumbers = new List<string>();
-			for (int i = 0; i < context.Length("RecognizeBusinessCard.Data.OfficePhoneNumbers.Length"); i++) {
-				data_officePhoneNumbers.Add(context.StringValue("RecognizeBusinessCard.Data.OfficePhoneNumbers["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("RecognizeBusinessCard.Data.OfficePhoneNumbers.Length"); i++) {
+				data_officePhoneNumbers.Add(_ctx.StringValue("RecognizeBusinessCard.Data.OfficePhoneNumbers["+ i +"]"));
 			}
 			data.OfficePhoneNumbers = data_officePhoneNumbers;
 
 			List<string> data_addresses = new List<string>();
-			for (int i = 0; i < context.Length("RecognizeBusinessCard.Data.Addresses.Length"); i++) {
-				data_addresses.Add(context.StringValue("RecognizeBusinessCard.Data.Addresses["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("RecognizeBusinessCard.Data.Addresses.Length"); i++) {
+				data_addresses.Add(_ctx.StringValue("RecognizeBusinessCard.Data.Addresses["+ i +"]"));
 			}
 			data.Addresses = data_addresses;
 
 			List<string> data_emails = new List<string>();
-			for (int i = 0; i < context.Length("RecognizeBusinessCard.Data.Emails.Length"); i++) {
-				data_emails.Add(context.StringValue("RecognizeBusinessCard.Data.Emails["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("RecognizeBusinessCard.Data.Emails.Length"); i++) {
+				data_emails.Add(_ctx.StringValue("RecognizeBusinessCard.Data.Emails["+ i +"]"));
 			}
 			data.Emails = data_emails;
 			recognizeBusinessCardResponse.Data = data;

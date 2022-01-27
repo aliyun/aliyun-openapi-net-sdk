@@ -42,7 +42,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
+		private string filterKey;
+
 		private string securityToken;
+
+		private string restoreTime;
 
 		private string resourceOwnerAccount;
 
@@ -51,6 +55,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private string backupId;
 
 		private long? ownerId;
+
+		private string restoreType;
 
 		private string instanceId;
 
@@ -67,6 +73,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string FilterKey
+		{
+			get
+			{
+				return filterKey;
+			}
+			set	
+			{
+				filterKey = value;
+				DictionaryUtil.Add(QueryParameters, "FilterKey", value);
+			}
+		}
+
 		public string SecurityToken
 		{
 			get
@@ -77,6 +96,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string RestoreTime
+		{
+			get
+			{
+				return restoreTime;
+			}
+			set	
+			{
+				restoreTime = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreTime", value);
 			}
 		}
 
@@ -129,6 +161,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string RestoreType
+		{
+			get
+			{
+				return restoreType;
+			}
+			set	
+			{
+				restoreType = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreType", value);
 			}
 		}
 

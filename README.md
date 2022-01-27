@@ -26,7 +26,7 @@ The Alibaba Cloud SDK for .NET allows you to access Alibaba Cloud services such 
 
 
 ## Online Demo
-[OpenAPI Explorer](https://api.aliyun.com/#/?product=Ecs&api=DescribeAccessPoints&params={}&tab=DEMO&lang=CSHARP) provides the ability to call the cloud product OpenAPI online, generates SDK Example code dynamically and retrieves interface quickly, which can lessen the difficultly of using the Alibaba Cloud API significantly.
+[OpenAPI Workbench](https://next.api.aliyun.com) provides the ability to call the cloud product OpenAPI online, generates SDK Example code dynamically and retrieves interface quickly, which can lessen the difficultly of using the Alibaba Cloud API significantly.
 
 
 ## Requirements

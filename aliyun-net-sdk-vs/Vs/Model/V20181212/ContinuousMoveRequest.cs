@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.vs;
 using Aliyun.Acs.vs.Transform;
 using Aliyun.Acs.vs.Transform.V20181212;
 
@@ -30,17 +31,19 @@ namespace Aliyun.Acs.vs.Model.V20181212
     public class ContinuousMoveRequest : RpcAcsRequest<ContinuousMoveResponse>
     {
         public ContinuousMoveRequest()
-            : base("vs", "2018-12-12", "ContinuousMove", "vs", "openAPI")
+            : base("vs", "2018-12-12", "ContinuousMove")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.vs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.vs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private string tilt;
+
+		private string subProtocol;
 
 		private string id;
 
@@ -60,6 +63,19 @@ namespace Aliyun.Acs.vs.Model.V20181212
 			{
 				tilt = value;
 				DictionaryUtil.Add(QueryParameters, "Tilt", value);
+			}
+		}
+
+		public string SubProtocol
+		{
+			get
+			{
+				return subProtocol;
+			}
+			set	
+			{
+				subProtocol = value;
+				DictionaryUtil.Add(QueryParameters, "SubProtocol", value);
 			}
 		}
 

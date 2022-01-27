@@ -26,16 +26,16 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 {
     public class DebugDialogueResponseUnmarshaller
     {
-        public static DebugDialogueResponse Unmarshall(UnmarshallerContext context)
+        public static DebugDialogueResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DebugDialogueResponse debugDialogueResponse = new DebugDialogueResponse();
 
-			debugDialogueResponse.HttpResponse = context.HttpResponse;
-			debugDialogueResponse.RequestId = context.StringValue("DebugDialogue.RequestId");
-			debugDialogueResponse.TextResponse = context.StringValue("DebugDialogue.TextResponse");
-			debugDialogueResponse.Interruptible = context.BooleanValue("DebugDialogue.Interruptible");
-			debugDialogueResponse.Action = context.StringValue("DebugDialogue.Action");
-			debugDialogueResponse.ActionParams = context.StringValue("DebugDialogue.ActionParams");
+			debugDialogueResponse.HttpResponse = _ctx.HttpResponse;
+			debugDialogueResponse.RequestId = _ctx.StringValue("DebugDialogue.RequestId");
+			debugDialogueResponse.TextResponse = _ctx.StringValue("DebugDialogue.TextResponse");
+			debugDialogueResponse.Interruptible = _ctx.BooleanValue("DebugDialogue.Interruptible");
+			debugDialogueResponse.Action = _ctx.StringValue("DebugDialogue.Action");
+			debugDialogueResponse.ActionParams = _ctx.StringValue("DebugDialogue.ActionParams");
         
 			return debugDialogueResponse;
         }

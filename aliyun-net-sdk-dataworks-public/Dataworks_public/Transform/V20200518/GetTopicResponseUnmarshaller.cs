@@ -26,41 +26,41 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetTopicResponseUnmarshaller
     {
-        public static GetTopicResponse Unmarshall(UnmarshallerContext context)
+        public static GetTopicResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetTopicResponse getTopicResponse = new GetTopicResponse();
 
-			getTopicResponse.HttpResponse = context.HttpResponse;
-			getTopicResponse.Success = context.BooleanValue("GetTopic.Success");
-			getTopicResponse.ErrorCode = context.StringValue("GetTopic.ErrorCode");
-			getTopicResponse.ErrorMessage = context.StringValue("GetTopic.ErrorMessage");
-			getTopicResponse.HttpStatusCode = context.IntegerValue("GetTopic.HttpStatusCode");
-			getTopicResponse.RequestId = context.StringValue("GetTopic.RequestId");
+			getTopicResponse.HttpResponse = _ctx.HttpResponse;
+			getTopicResponse.Success = _ctx.BooleanValue("GetTopic.Success");
+			getTopicResponse.ErrorCode = _ctx.StringValue("GetTopic.ErrorCode");
+			getTopicResponse.ErrorMessage = _ctx.StringValue("GetTopic.ErrorMessage");
+			getTopicResponse.HttpStatusCode = _ctx.IntegerValue("GetTopic.HttpStatusCode");
+			getTopicResponse.RequestId = _ctx.StringValue("GetTopic.RequestId");
 
 			GetTopicResponse.GetTopic_Data data = new GetTopicResponse.GetTopic_Data();
-			data.TopicId = context.LongValue("GetTopic.Data.TopicId");
-			data.TopicName = context.StringValue("GetTopic.Data.TopicName");
-			data.TopicStatus = context.StringValue("GetTopic.Data.TopicStatus");
-			data.TopicType = context.StringValue("GetTopic.Data.TopicType");
-			data.AddTime = context.LongValue("GetTopic.Data.AddTime");
-			data.AlertTime = context.LongValue("GetTopic.Data.AlertTime");
-			data.Assigner = context.StringValue("GetTopic.Data.Assigner");
-			data.BaselineId = context.LongValue("GetTopic.Data.BaselineId");
-			data.BaselineName = context.StringValue("GetTopic.Data.BaselineName");
-			data.BaselineInGroupId = context.IntegerValue("GetTopic.Data.BaselineInGroupId");
-			data.BaselineStatus = context.StringValue("GetTopic.Data.BaselineStatus");
-			data.BaselineBuffer = context.LongValue("GetTopic.Data.BaselineBuffer");
-			data.Buffer = context.LongValue("GetTopic.Data.Buffer");
-			data.DealTime = context.LongValue("GetTopic.Data.DealTime");
-			data.DealUser = context.StringValue("GetTopic.Data.DealUser");
-			data.FixTime = context.LongValue("GetTopic.Data.FixTime");
-			data.HappenTime = context.LongValue("GetTopic.Data.HappenTime");
-			data.InstanceId = context.LongValue("GetTopic.Data.InstanceId");
-			data.NextAlertTime = context.LongValue("GetTopic.Data.NextAlertTime");
-			data.NodeId = context.LongValue("GetTopic.Data.NodeId");
-			data.NodeName = context.StringValue("GetTopic.Data.NodeName");
-			data.Owner = context.StringValue("GetTopic.Data.Owner");
-			data.ProjectId = context.LongValue("GetTopic.Data.ProjectId");
+			data.TopicId = _ctx.LongValue("GetTopic.Data.TopicId");
+			data.TopicName = _ctx.StringValue("GetTopic.Data.TopicName");
+			data.TopicStatus = _ctx.StringValue("GetTopic.Data.TopicStatus");
+			data.TopicType = _ctx.StringValue("GetTopic.Data.TopicType");
+			data.AddTime = _ctx.LongValue("GetTopic.Data.AddTime");
+			data.AlertTime = _ctx.LongValue("GetTopic.Data.AlertTime");
+			data.Assigner = _ctx.StringValue("GetTopic.Data.Assigner");
+			data.BaselineId = _ctx.LongValue("GetTopic.Data.BaselineId");
+			data.BaselineName = _ctx.StringValue("GetTopic.Data.BaselineName");
+			data.BaselineInGroupId = _ctx.IntegerValue("GetTopic.Data.BaselineInGroupId");
+			data.BaselineStatus = _ctx.StringValue("GetTopic.Data.BaselineStatus");
+			data.BaselineBuffer = _ctx.LongValue("GetTopic.Data.BaselineBuffer");
+			data.Buffer = _ctx.LongValue("GetTopic.Data.Buffer");
+			data.DealTime = _ctx.LongValue("GetTopic.Data.DealTime");
+			data.DealUser = _ctx.StringValue("GetTopic.Data.DealUser");
+			data.FixTime = _ctx.LongValue("GetTopic.Data.FixTime");
+			data.HappenTime = _ctx.LongValue("GetTopic.Data.HappenTime");
+			data.InstanceId = _ctx.LongValue("GetTopic.Data.InstanceId");
+			data.NextAlertTime = _ctx.LongValue("GetTopic.Data.NextAlertTime");
+			data.NodeId = _ctx.LongValue("GetTopic.Data.NodeId");
+			data.NodeName = _ctx.StringValue("GetTopic.Data.NodeName");
+			data.Owner = _ctx.StringValue("GetTopic.Data.Owner");
+			data.ProjectId = _ctx.LongValue("GetTopic.Data.ProjectId");
 			getTopicResponse.Data = data;
         
 			return getTopicResponse;

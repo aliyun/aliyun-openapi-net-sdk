@@ -122,6 +122,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private int? needRestartNum;
 
+			private string state;
+
 			private List<ListClusterService_ServiceAction> serviceActionList;
 
 			public string ServiceName
@@ -265,6 +267,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					needRestartNum = value;
+				}
+			}
+
+			public string State
+			{
+				get
+				{
+					return state;
+				}
+				set	
+				{
+					state = value;
 				}
 			}
 

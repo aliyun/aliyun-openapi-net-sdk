@@ -26,22 +26,23 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeDomainStatisticsSummaryResponseUnmarshaller
     {
-        public static DescribeDomainStatisticsSummaryResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainStatisticsSummaryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainStatisticsSummaryResponse describeDomainStatisticsSummaryResponse = new DescribeDomainStatisticsSummaryResponse();
 
-			describeDomainStatisticsSummaryResponse.HttpResponse = context.HttpResponse;
-			describeDomainStatisticsSummaryResponse.RequestId = context.StringValue("DescribeDomainStatisticsSummary.RequestId");
-			describeDomainStatisticsSummaryResponse.TotalItems = context.IntegerValue("DescribeDomainStatisticsSummary.TotalItems");
-			describeDomainStatisticsSummaryResponse.TotalPages = context.IntegerValue("DescribeDomainStatisticsSummary.TotalPages");
-			describeDomainStatisticsSummaryResponse.PageSize = context.IntegerValue("DescribeDomainStatisticsSummary.PageSize");
-			describeDomainStatisticsSummaryResponse.PageNumber = context.IntegerValue("DescribeDomainStatisticsSummary.PageNumber");
+			describeDomainStatisticsSummaryResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainStatisticsSummaryResponse.RequestId = _ctx.StringValue("DescribeDomainStatisticsSummary.RequestId");
+			describeDomainStatisticsSummaryResponse.TotalItems = _ctx.IntegerValue("DescribeDomainStatisticsSummary.TotalItems");
+			describeDomainStatisticsSummaryResponse.TotalPages = _ctx.IntegerValue("DescribeDomainStatisticsSummary.TotalPages");
+			describeDomainStatisticsSummaryResponse.PageSize = _ctx.IntegerValue("DescribeDomainStatisticsSummary.PageSize");
+			describeDomainStatisticsSummaryResponse.PageNumber = _ctx.IntegerValue("DescribeDomainStatisticsSummary.PageNumber");
 
 			List<DescribeDomainStatisticsSummaryResponse.DescribeDomainStatisticsSummary_Statistic> describeDomainStatisticsSummaryResponse_statistics = new List<DescribeDomainStatisticsSummaryResponse.DescribeDomainStatisticsSummary_Statistic>();
-			for (int i = 0; i < context.Length("DescribeDomainStatisticsSummary.Statistics.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainStatisticsSummary.Statistics.Length"); i++) {
 				DescribeDomainStatisticsSummaryResponse.DescribeDomainStatisticsSummary_Statistic statistic = new DescribeDomainStatisticsSummaryResponse.DescribeDomainStatisticsSummary_Statistic();
-				statistic.DomainName = context.StringValue("DescribeDomainStatisticsSummary.Statistics["+ i +"].DomainName");
-				statistic.Count = context.LongValue("DescribeDomainStatisticsSummary.Statistics["+ i +"].Count");
+				statistic.DomainName = _ctx.StringValue("DescribeDomainStatisticsSummary.Statistics["+ i +"].DomainName");
+				statistic.Count = _ctx.LongValue("DescribeDomainStatisticsSummary.Statistics["+ i +"].Count");
+				statistic.DomainType = _ctx.StringValue("DescribeDomainStatisticsSummary.Statistics["+ i +"].DomainType");
 
 				describeDomainStatisticsSummaryResponse_statistics.Add(statistic);
 			}

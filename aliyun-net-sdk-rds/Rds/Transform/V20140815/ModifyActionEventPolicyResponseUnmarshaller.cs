@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class ModifyActionEventPolicyResponseUnmarshaller
     {
-        public static ModifyActionEventPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyActionEventPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyActionEventPolicyResponse modifyActionEventPolicyResponse = new ModifyActionEventPolicyResponse();
 
-			modifyActionEventPolicyResponse.HttpResponse = context.HttpResponse;
-			modifyActionEventPolicyResponse.RequestId = context.StringValue("ModifyActionEventPolicy.RequestId");
-			modifyActionEventPolicyResponse.RegionId = context.StringValue("ModifyActionEventPolicy.RegionId");
-			modifyActionEventPolicyResponse.EnableEventLog = context.StringValue("ModifyActionEventPolicy.EnableEventLog");
+			modifyActionEventPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			modifyActionEventPolicyResponse.RequestId = _ctx.StringValue("ModifyActionEventPolicy.RequestId");
+			modifyActionEventPolicyResponse.RegionId = _ctx.StringValue("ModifyActionEventPolicy.RegionId");
+			modifyActionEventPolicyResponse.EnableEventLog = _ctx.StringValue("ModifyActionEventPolicy.EnableEventLog");
         
 			return modifyActionEventPolicyResponse;
         }

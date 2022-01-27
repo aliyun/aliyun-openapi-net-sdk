@@ -26,20 +26,20 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class BatchStopApplicationsResponseUnmarshaller
     {
-        public static BatchStopApplicationsResponse Unmarshall(UnmarshallerContext context)
+        public static BatchStopApplicationsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchStopApplicationsResponse batchStopApplicationsResponse = new BatchStopApplicationsResponse();
 
-			batchStopApplicationsResponse.HttpResponse = context.HttpResponse;
-			batchStopApplicationsResponse.RequestId = context.StringValue("BatchStopApplications.RequestId");
-			batchStopApplicationsResponse.Code = context.StringValue("BatchStopApplications.Code");
-			batchStopApplicationsResponse.Message = context.StringValue("BatchStopApplications.Message");
-			batchStopApplicationsResponse.ErrorCode = context.StringValue("BatchStopApplications.ErrorCode");
-			batchStopApplicationsResponse.TraceId = context.StringValue("BatchStopApplications.TraceId");
-			batchStopApplicationsResponse.Success = context.BooleanValue("BatchStopApplications.Success");
+			batchStopApplicationsResponse.HttpResponse = _ctx.HttpResponse;
+			batchStopApplicationsResponse.RequestId = _ctx.StringValue("BatchStopApplications.RequestId");
+			batchStopApplicationsResponse.Code = _ctx.StringValue("BatchStopApplications.Code");
+			batchStopApplicationsResponse.Message = _ctx.StringValue("BatchStopApplications.Message");
+			batchStopApplicationsResponse.ErrorCode = _ctx.StringValue("BatchStopApplications.ErrorCode");
+			batchStopApplicationsResponse.TraceId = _ctx.StringValue("BatchStopApplications.TraceId");
+			batchStopApplicationsResponse.Success = _ctx.BooleanValue("BatchStopApplications.Success");
 
 			BatchStopApplicationsResponse.BatchStopApplications_Data data = new BatchStopApplicationsResponse.BatchStopApplications_Data();
-			data.ChangeOrderId = context.StringValue("BatchStopApplications.Data.ChangeOrderId");
+			data.ChangeOrderId = _ctx.StringValue("BatchStopApplications.Data.ChangeOrderId");
 			batchStopApplicationsResponse.Data = data;
         
 			return batchStopApplicationsResponse;

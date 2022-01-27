@@ -26,12 +26,12 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 {
     public class ModifyLDAPConfigResponseUnmarshaller
     {
-        public static ModifyLDAPConfigResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyLDAPConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyLDAPConfigResponse modifyLDAPConfigResponse = new ModifyLDAPConfigResponse();
 
-			modifyLDAPConfigResponse.HttpResponse = context.HttpResponse;
-			modifyLDAPConfigResponse.RequestId = context.StringValue("ModifyLDAPConfig.RequestId");
+			modifyLDAPConfigResponse.HttpResponse = _ctx.HttpResponse;
+			modifyLDAPConfigResponse.RequestId = _ctx.StringValue("ModifyLDAPConfig.RequestId");
         
 			return modifyLDAPConfigResponse;
         }

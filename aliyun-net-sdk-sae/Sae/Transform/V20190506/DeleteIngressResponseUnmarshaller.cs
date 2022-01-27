@@ -26,20 +26,20 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class DeleteIngressResponseUnmarshaller
     {
-        public static DeleteIngressResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteIngressResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteIngressResponse deleteIngressResponse = new DeleteIngressResponse();
 
-			deleteIngressResponse.HttpResponse = context.HttpResponse;
-			deleteIngressResponse.RequestId = context.StringValue("DeleteIngress.RequestId");
-			deleteIngressResponse.Code = context.StringValue("DeleteIngress.Code");
-			deleteIngressResponse.Message = context.StringValue("DeleteIngress.Message");
-			deleteIngressResponse.Success = context.BooleanValue("DeleteIngress.Success");
-			deleteIngressResponse.ErrorCode = context.StringValue("DeleteIngress.ErrorCode");
-			deleteIngressResponse.TraceId = context.StringValue("DeleteIngress.TraceId");
+			deleteIngressResponse.HttpResponse = _ctx.HttpResponse;
+			deleteIngressResponse.RequestId = _ctx.StringValue("DeleteIngress.RequestId");
+			deleteIngressResponse.Message = _ctx.StringValue("DeleteIngress.Message");
+			deleteIngressResponse.TraceId = _ctx.StringValue("DeleteIngress.TraceId");
+			deleteIngressResponse.ErrorCode = _ctx.StringValue("DeleteIngress.ErrorCode");
+			deleteIngressResponse.Code = _ctx.StringValue("DeleteIngress.Code");
+			deleteIngressResponse.Success = _ctx.BooleanValue("DeleteIngress.Success");
 
 			DeleteIngressResponse.DeleteIngress_Data data = new DeleteIngressResponse.DeleteIngress_Data();
-			data.IngressId = context.LongValue("DeleteIngress.Data.IngressId");
+			data.IngressId = _ctx.LongValue("DeleteIngress.Data.IngressId");
 			deleteIngressResponse.Data = data;
         
 			return deleteIngressResponse;

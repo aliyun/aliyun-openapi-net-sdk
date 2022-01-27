@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeAutoSnapshotPolicyExResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy> autoSnapshotPolicies;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,69 +98,35 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy
 		{
 
-			private string autoSnapshotPolicyId;
-
-			private string regionId;
-
-			private string autoSnapshotPolicyName;
-
 			private string timePoints;
-
-			private string repeatWeekdays;
-
-			private int? retentionDays;
-
-			private int? diskNums;
-
-			private int? volumeNums;
 
 			private string creationTime;
 
 			private string status;
 
-			private bool? enableCrossRegionCopy;
+			private string autoSnapshotPolicyName;
 
 			private string targetCopyRegions;
 
 			private int? copiedSnapshotsRetentionDays;
 
+			private string autoSnapshotPolicyId;
+
+			private int? retentionDays;
+
+			private string regionId;
+
+			private int? diskNums;
+
+			private bool? enableCrossRegionCopy;
+
+			private string repeatWeekdays;
+
+			private int? volumeNums;
+
+			private string resourceGroupId;
+
 			private List<DescribeAutoSnapshotPolicyEx_Tag> tags;
-
-			public string AutoSnapshotPolicyId
-			{
-				get
-				{
-					return autoSnapshotPolicyId;
-				}
-				set	
-				{
-					autoSnapshotPolicyId = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string AutoSnapshotPolicyName
-			{
-				get
-				{
-					return autoSnapshotPolicyName;
-				}
-				set	
-				{
-					autoSnapshotPolicyName = value;
-				}
-			}
 
 			public string TimePoints
 			{
@@ -171,54 +137,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					timePoints = value;
-				}
-			}
-
-			public string RepeatWeekdays
-			{
-				get
-				{
-					return repeatWeekdays;
-				}
-				set	
-				{
-					repeatWeekdays = value;
-				}
-			}
-
-			public int? RetentionDays
-			{
-				get
-				{
-					return retentionDays;
-				}
-				set	
-				{
-					retentionDays = value;
-				}
-			}
-
-			public int? DiskNums
-			{
-				get
-				{
-					return diskNums;
-				}
-				set	
-				{
-					diskNums = value;
-				}
-			}
-
-			public int? VolumeNums
-			{
-				get
-				{
-					return volumeNums;
-				}
-				set	
-				{
-					volumeNums = value;
 				}
 			}
 
@@ -246,15 +164,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public bool? EnableCrossRegionCopy
+			public string AutoSnapshotPolicyName
 			{
 				get
 				{
-					return enableCrossRegionCopy;
+					return autoSnapshotPolicyName;
 				}
 				set	
 				{
-					enableCrossRegionCopy = value;
+					autoSnapshotPolicyName = value;
 				}
 			}
 
@@ -282,6 +200,102 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string AutoSnapshotPolicyId
+			{
+				get
+				{
+					return autoSnapshotPolicyId;
+				}
+				set	
+				{
+					autoSnapshotPolicyId = value;
+				}
+			}
+
+			public int? RetentionDays
+			{
+				get
+				{
+					return retentionDays;
+				}
+				set	
+				{
+					retentionDays = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public int? DiskNums
+			{
+				get
+				{
+					return diskNums;
+				}
+				set	
+				{
+					diskNums = value;
+				}
+			}
+
+			public bool? EnableCrossRegionCopy
+			{
+				get
+				{
+					return enableCrossRegionCopy;
+				}
+				set	
+				{
+					enableCrossRegionCopy = value;
+				}
+			}
+
+			public string RepeatWeekdays
+			{
+				get
+				{
+					return repeatWeekdays;
+				}
+				set	
+				{
+					repeatWeekdays = value;
+				}
+			}
+
+			public int? VolumeNums
+			{
+				get
+				{
+					return volumeNums;
+				}
+				set	
+				{
+					volumeNums = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
 			public List<DescribeAutoSnapshotPolicyEx_Tag> Tags
 			{
 				get
@@ -297,21 +311,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeAutoSnapshotPolicyEx_Tag
 			{
 
-				private string tagKey;
-
 				private string tagValue;
 
-				public string TagKey
-				{
-					get
-					{
-						return tagKey;
-					}
-					set	
-					{
-						tagKey = value;
-					}
-				}
+				private string tagKey;
 
 				public string TagValue
 				{
@@ -322,6 +324,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						tagValue = value;
+					}
+				}
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
 					}
 				}
 			}

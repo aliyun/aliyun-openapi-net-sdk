@@ -35,7 +35,7 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 
 		private string dataInterval;
 
-		private List<DescribeDcdnDomainWebsocketHttpCodeData_DataModule> dataPerInterval;
+		private List<DescribeDcdnDomainWebsocketHttpCodeData_DataModule> httpCodeDataPerInterval;
 
 		public string RequestId
 		{
@@ -97,15 +97,15 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public List<DescribeDcdnDomainWebsocketHttpCodeData_DataModule> DataPerInterval
+		public List<DescribeDcdnDomainWebsocketHttpCodeData_DataModule> HttpCodeDataPerInterval
 		{
 			get
 			{
-				return dataPerInterval;
+				return httpCodeDataPerInterval;
 			}
 			set	
 			{
-				dataPerInterval = value;
+				httpCodeDataPerInterval = value;
 			}
 		}
 
@@ -114,7 +114,7 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 
 			private string timeStamp;
 
-			private List<DescribeDcdnDomainWebsocketHttpCodeData_HttpCodeDataModule> websocketHttpCodeDataPerInterval;
+			private List<DescribeDcdnDomainWebsocketHttpCodeData_HttpCodeDataModule> websocketHttpCode;
 
 			public string TimeStamp
 			{
@@ -128,15 +128,15 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 				}
 			}
 
-			public List<DescribeDcdnDomainWebsocketHttpCodeData_HttpCodeDataModule> WebsocketHttpCodeDataPerInterval
+			public List<DescribeDcdnDomainWebsocketHttpCodeData_HttpCodeDataModule> WebsocketHttpCode
 			{
 				get
 				{
-					return websocketHttpCodeDataPerInterval;
+					return websocketHttpCode;
 				}
 				set	
 				{
-					websocketHttpCodeDataPerInterval = value;
+					websocketHttpCode = value;
 				}
 			}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Config.Model.V20190108
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.Config.Model.V20190108
 		public class DescribeComplianceSummary_ComplianceSummary
 		{
 
-			private DescribeComplianceSummary_ComplianceSummaryByConfigRule complianceSummaryByConfigRule;
-
 			private DescribeComplianceSummary_ComplianceSummaryByResource complianceSummaryByResource;
 
-			public DescribeComplianceSummary_ComplianceSummaryByConfigRule ComplianceSummaryByConfigRule
-			{
-				get
-				{
-					return complianceSummaryByConfigRule;
-				}
-				set	
-				{
-					complianceSummaryByConfigRule = value;
-				}
-			}
+			private DescribeComplianceSummary_ComplianceSummaryByConfigRule complianceSummaryByConfigRule;
 
 			public DescribeComplianceSummary_ComplianceSummaryByResource ComplianceSummaryByResource
 			{
@@ -84,28 +72,28 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				}
 			}
 
-			public class DescribeComplianceSummary_ComplianceSummaryByConfigRule
+			public DescribeComplianceSummary_ComplianceSummaryByConfigRule ComplianceSummaryByConfigRule
 			{
+				get
+				{
+					return complianceSummaryByConfigRule;
+				}
+				set	
+				{
+					complianceSummaryByConfigRule = value;
+				}
+			}
 
-				private long? complianceSummaryTimestamp;
+			public class DescribeComplianceSummary_ComplianceSummaryByResource
+			{
 
 				private int? compliantCount;
 
 				private int? nonCompliantCount;
 
-				private long? totalCount;
+				private long? complianceSummaryTimestamp;
 
-				public long? ComplianceSummaryTimestamp
-				{
-					get
-					{
-						return complianceSummaryTimestamp;
-					}
-					set	
-					{
-						complianceSummaryTimestamp = value;
-					}
-				}
+				private long? totalCount;
 
 				public int? CompliantCount
 				{
@@ -128,6 +116,18 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					set	
 					{
 						nonCompliantCount = value;
+					}
+				}
+
+				public long? ComplianceSummaryTimestamp
+				{
+					get
+					{
+						return complianceSummaryTimestamp;
+					}
+					set	
+					{
+						complianceSummaryTimestamp = value;
 					}
 				}
 
@@ -144,28 +144,16 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				}
 			}
 
-			public class DescribeComplianceSummary_ComplianceSummaryByResource
+			public class DescribeComplianceSummary_ComplianceSummaryByConfigRule
 			{
-
-				private long? complianceSummaryTimestamp;
 
 				private int? compliantCount;
 
 				private int? nonCompliantCount;
 
-				private long? totalCount;
+				private long? complianceSummaryTimestamp;
 
-				public long? ComplianceSummaryTimestamp
-				{
-					get
-					{
-						return complianceSummaryTimestamp;
-					}
-					set	
-					{
-						complianceSummaryTimestamp = value;
-					}
-				}
+				private long? totalCount;
 
 				public int? CompliantCount
 				{
@@ -188,6 +176,18 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					set	
 					{
 						nonCompliantCount = value;
+					}
+				}
+
+				public long? ComplianceSummaryTimestamp
+				{
+					get
+					{
+						return complianceSummaryTimestamp;
+					}
+					set	
+					{
+						complianceSummaryTimestamp = value;
 					}
 				}
 

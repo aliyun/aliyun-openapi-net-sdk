@@ -64,6 +64,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string securityIPList;
 
+		private string dBMinorVersion;
+
 		private bool? autoRenew;
 
 		private string zoneId;
@@ -77,6 +79,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string defaultTimeZone;
 
 		private string clusterNetworkType;
+
+		private string parameterGroupId;
 
 		private string gDNId;
 
@@ -252,6 +256,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string DBMinorVersion
+		{
+			get
+			{
+				return dBMinorVersion;
+			}
+			set	
+			{
+				dBMinorVersion = value;
+				DictionaryUtil.Add(QueryParameters, "DBMinorVersion", value);
+			}
+		}
+
 		public bool? AutoRenew
 		{
 			get
@@ -340,6 +357,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				clusterNetworkType = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterNetworkType", value);
+			}
+		}
+
+		public string ParameterGroupId
+		{
+			get
+			{
+				return parameterGroupId;
+			}
+			set	
+			{
+				parameterGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ParameterGroupId", value);
 			}
 		}
 

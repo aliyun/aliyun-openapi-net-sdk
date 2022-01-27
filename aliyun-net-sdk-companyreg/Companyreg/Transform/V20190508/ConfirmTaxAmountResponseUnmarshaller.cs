@@ -26,13 +26,13 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class ConfirmTaxAmountResponseUnmarshaller
     {
-        public static ConfirmTaxAmountResponse Unmarshall(UnmarshallerContext context)
+        public static ConfirmTaxAmountResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ConfirmTaxAmountResponse confirmTaxAmountResponse = new ConfirmTaxAmountResponse();
 
-			confirmTaxAmountResponse.HttpResponse = context.HttpResponse;
-			confirmTaxAmountResponse.RequestId = context.StringValue("ConfirmTaxAmount.RequestId");
-			confirmTaxAmountResponse.Success = context.BooleanValue("ConfirmTaxAmount.Success");
+			confirmTaxAmountResponse.HttpResponse = _ctx.HttpResponse;
+			confirmTaxAmountResponse.RequestId = _ctx.StringValue("ConfirmTaxAmount.RequestId");
+			confirmTaxAmountResponse.Success = _ctx.BooleanValue("ConfirmTaxAmount.Success");
         
 			return confirmTaxAmountResponse;
         }

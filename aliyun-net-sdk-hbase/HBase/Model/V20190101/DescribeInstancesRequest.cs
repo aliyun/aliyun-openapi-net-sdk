@@ -44,9 +44,13 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private int? pageNumber;
 
+		private string resourceGroupId;
+
 		private int? pageSize;
 
 		private List<Tag> tags = new List<Tag>(){ };
+
+		private string clusterId;
 
 		private string dbType;
 
@@ -73,6 +77,19 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -104,6 +121,19 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 				}
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
 			}
 		}
 

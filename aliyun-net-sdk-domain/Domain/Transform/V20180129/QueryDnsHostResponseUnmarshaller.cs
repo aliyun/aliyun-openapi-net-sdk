@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class QueryDnsHostResponseUnmarshaller
     {
-        public static QueryDnsHostResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDnsHostResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDnsHostResponse queryDnsHostResponse = new QueryDnsHostResponse();
 
-			queryDnsHostResponse.HttpResponse = context.HttpResponse;
-			queryDnsHostResponse.RequestId = context.StringValue("QueryDnsHost.RequestId");
+			queryDnsHostResponse.HttpResponse = _ctx.HttpResponse;
+			queryDnsHostResponse.RequestId = _ctx.StringValue("QueryDnsHost.RequestId");
 
 			List<QueryDnsHostResponse.QueryDnsHost_DnsHost> queryDnsHostResponse_dnsHostList = new List<QueryDnsHostResponse.QueryDnsHost_DnsHost>();
-			for (int i = 0; i < context.Length("QueryDnsHost.DnsHostList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryDnsHost.DnsHostList.Length"); i++) {
 				QueryDnsHostResponse.QueryDnsHost_DnsHost dnsHost = new QueryDnsHostResponse.QueryDnsHost_DnsHost();
-				dnsHost.DnsName = context.StringValue("QueryDnsHost.DnsHostList["+ i +"].DnsName");
+				dnsHost.DnsName = _ctx.StringValue("QueryDnsHost.DnsHostList["+ i +"].DnsName");
 
 				List<string> dnsHost_ipList = new List<string>();
-				for (int j = 0; j < context.Length("QueryDnsHost.DnsHostList["+ i +"].IpList.Length"); j++) {
-					dnsHost_ipList.Add(context.StringValue("QueryDnsHost.DnsHostList["+ i +"].IpList["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("QueryDnsHost.DnsHostList["+ i +"].IpList.Length"); j++) {
+					dnsHost_ipList.Add(_ctx.StringValue("QueryDnsHost.DnsHostList["+ i +"].IpList["+ j +"]"));
 				}
 				dnsHost.IpList = dnsHost_ipList;
 

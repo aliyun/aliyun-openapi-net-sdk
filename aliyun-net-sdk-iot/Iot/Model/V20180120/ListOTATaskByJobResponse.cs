@@ -182,6 +182,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string utcCreate;
 
+			private string timeout;
+
 			public string TaskId
 			{
 				get
@@ -347,6 +349,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					utcCreate = value;
+				}
+			}
+
+			public string Timeout
+			{
+				get
+				{
+					return timeout;
+				}
+				set	
+				{
+					timeout = value;
 				}
 			}
 		}

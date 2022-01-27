@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
     public class DeleteRobotTaskResponseUnmarshaller
     {
-        public static DeleteRobotTaskResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteRobotTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteRobotTaskResponse deleteRobotTaskResponse = new DeleteRobotTaskResponse();
 
-			deleteRobotTaskResponse.HttpResponse = context.HttpResponse;
-			deleteRobotTaskResponse.RequestId = context.StringValue("DeleteRobotTask.RequestId");
-			deleteRobotTaskResponse.Data = context.StringValue("DeleteRobotTask.Data");
-			deleteRobotTaskResponse.Code = context.StringValue("DeleteRobotTask.Code");
-			deleteRobotTaskResponse.Message = context.StringValue("DeleteRobotTask.Message");
+			deleteRobotTaskResponse.HttpResponse = _ctx.HttpResponse;
+			deleteRobotTaskResponse.RequestId = _ctx.StringValue("DeleteRobotTask.RequestId");
+			deleteRobotTaskResponse.Data = _ctx.StringValue("DeleteRobotTask.Data");
+			deleteRobotTaskResponse.Code = _ctx.StringValue("DeleteRobotTask.Code");
+			deleteRobotTaskResponse.Message = _ctx.StringValue("DeleteRobotTask.Message");
         
 			return deleteRobotTaskResponse;
         }

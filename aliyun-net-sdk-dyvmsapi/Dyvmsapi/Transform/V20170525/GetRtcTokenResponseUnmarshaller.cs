@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
     public class GetRtcTokenResponseUnmarshaller
     {
-        public static GetRtcTokenResponse Unmarshall(UnmarshallerContext context)
+        public static GetRtcTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetRtcTokenResponse getRtcTokenResponse = new GetRtcTokenResponse();
 
-			getRtcTokenResponse.HttpResponse = context.HttpResponse;
-			getRtcTokenResponse.RequestId = context.StringValue("GetRtcToken.RequestId");
-			getRtcTokenResponse.Module = context.StringValue("GetRtcToken.Module");
-			getRtcTokenResponse.Code = context.StringValue("GetRtcToken.Code");
-			getRtcTokenResponse.Message = context.StringValue("GetRtcToken.Message");
+			getRtcTokenResponse.HttpResponse = _ctx.HttpResponse;
+			getRtcTokenResponse.RequestId = _ctx.StringValue("GetRtcToken.RequestId");
+			getRtcTokenResponse.Module = _ctx.StringValue("GetRtcToken.Module");
+			getRtcTokenResponse.Code = _ctx.StringValue("GetRtcToken.Code");
+			getRtcTokenResponse.Message = _ctx.StringValue("GetRtcToken.Message");
         
 			return getRtcTokenResponse;
         }

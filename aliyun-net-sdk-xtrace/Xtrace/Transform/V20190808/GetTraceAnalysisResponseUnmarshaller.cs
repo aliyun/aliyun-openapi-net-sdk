@@ -26,13 +26,13 @@ namespace Aliyun.Acs.xtrace.Transform.V20190808
 {
     public class GetTraceAnalysisResponseUnmarshaller
     {
-        public static GetTraceAnalysisResponse Unmarshall(UnmarshallerContext context)
+        public static GetTraceAnalysisResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetTraceAnalysisResponse getTraceAnalysisResponse = new GetTraceAnalysisResponse();
 
-			getTraceAnalysisResponse.HttpResponse = context.HttpResponse;
-			getTraceAnalysisResponse.RequestId = context.StringValue("GetTraceAnalysis.RequestId");
-			getTraceAnalysisResponse.Data = context.StringValue("GetTraceAnalysis.Data");
+			getTraceAnalysisResponse.HttpResponse = _ctx.HttpResponse;
+			getTraceAnalysisResponse.RequestId = _ctx.StringValue("GetTraceAnalysis.RequestId");
+			getTraceAnalysisResponse.Data = _ctx.StringValue("GetTraceAnalysis.Data");
         
 			return getTraceAnalysisResponse;
         }

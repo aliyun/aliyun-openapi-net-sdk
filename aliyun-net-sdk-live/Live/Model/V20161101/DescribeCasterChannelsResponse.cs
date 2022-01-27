@@ -78,6 +78,12 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string rtmpUrl;
 
+			private string rtsUrl;
+
+			private int? inputType;
+
+			private string faceBeauty;
+
 			public string ChannelId
 			{
 				get
@@ -123,6 +129,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					rtmpUrl = value;
+				}
+			}
+
+			public string RtsUrl
+			{
+				get
+				{
+					return rtsUrl;
+				}
+				set	
+				{
+					rtsUrl = value;
+				}
+			}
+
+			public int? InputType
+			{
+				get
+				{
+					return inputType;
+				}
+				set	
+				{
+					inputType = value;
+				}
+			}
+
+			public string FaceBeauty
+			{
+				get
+				{
+					return faceBeauty;
+				}
+				set	
+				{
+					faceBeauty = value;
 				}
 			}
 		}

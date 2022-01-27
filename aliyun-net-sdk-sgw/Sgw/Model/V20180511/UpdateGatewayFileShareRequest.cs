@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -34,8 +35,8 @@ namespace Aliyun.Acs.sgw.Model.V20180511
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.sgw.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.sgw.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -51,6 +52,8 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 		private int? pollingInterval;
 
 		private string readWriteClientList;
+
+		private bool? bypassCacheRead;
 
 		private int? backendLimit;
 
@@ -102,6 +105,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 
 		private int? frontendLimit;
 
+		[JsonProperty(PropertyName = "ClientSideCmk")]
 		public string ClientSideCmk
 		{
 			get
@@ -115,6 +119,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "InPlace")]
 		public bool? InPlace
 		{
 			get
@@ -128,6 +133,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "Browsable")]
 		public bool? Browsable
 		{
 			get
@@ -141,6 +147,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "ReadWriteUserList")]
 		public string ReadWriteUserList
 		{
 			get
@@ -154,6 +161,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "PollingInterval")]
 		public int? PollingInterval
 		{
 			get
@@ -167,6 +175,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "ReadWriteClientList")]
 		public string ReadWriteClientList
 		{
 			get
@@ -180,6 +189,21 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "BypassCacheRead")]
+		public bool? BypassCacheRead
+		{
+			get
+			{
+				return bypassCacheRead;
+			}
+			set	
+			{
+				bypassCacheRead = value;
+				DictionaryUtil.Add(QueryParameters, "BypassCacheRead", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "BackendLimit")]
 		public int? BackendLimit
 		{
 			get
@@ -193,6 +217,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "Squash")]
 		public string Squash
 		{
 			get
@@ -206,6 +231,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "ReadOnlyClientList")]
 		public string ReadOnlyClientList
 		{
 			get
@@ -219,6 +245,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "ServerSideCmk")]
 		public string ServerSideCmk
 		{
 			get
@@ -232,6 +259,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecurityToken")]
 		public string SecurityToken
 		{
 			get
@@ -245,6 +273,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "KmsRotatePeriod")]
 		public long? KmsRotatePeriod
 		{
 			get
@@ -258,6 +287,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "RemoteSyncDownload")]
 		public bool? RemoteSyncDownload
 		{
 			get
@@ -271,6 +301,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "ServerSideEncryption")]
 		public bool? ServerSideEncryption
 		{
 			get
@@ -284,6 +315,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "NfsV4Optimization")]
 		public bool? NfsV4Optimization
 		{
 			get
@@ -297,6 +329,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "AccessBasedEnumeration")]
 		public bool? AccessBasedEnumeration
 		{
 			get
@@ -310,6 +343,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "GatewayId")]
 		public string GatewayId
 		{
 			get
@@ -323,6 +357,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "IgnoreDelete")]
 		public bool? IgnoreDelete
 		{
 			get
@@ -336,6 +371,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "LagPeriod")]
 		public long? LagPeriod
 		{
 			get
@@ -349,6 +385,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "DirectIO")]
 		public bool? DirectIO
 		{
 			get
@@ -362,6 +399,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "ClientSideEncryption")]
 		public bool? ClientSideEncryption
 		{
 			get
@@ -375,6 +413,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "CacheMode")]
 		public string CacheMode
 		{
 			get
@@ -388,6 +427,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "DownloadLimit")]
 		public int? DownloadLimit
 		{
 			get
@@ -401,6 +441,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "ReadOnlyUserList")]
 		public string ReadOnlyUserList
 		{
 			get
@@ -414,6 +455,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "FastReclaim")]
 		public bool? FastReclaim
 		{
 			get
@@ -427,6 +469,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "WindowsAcl")]
 		public bool? WindowsAcl
 		{
 			get
@@ -440,6 +483,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "Name")]
 		public string Name
 		{
 			get
@@ -453,6 +497,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "IndexId")]
 		public string IndexId
 		{
 			get
@@ -466,6 +511,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "TransferAcceleration")]
 		public bool? TransferAcceleration
 		{
 			get
@@ -479,6 +525,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "RemoteSync")]
 		public bool? RemoteSync
 		{
 			get
@@ -492,6 +539,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "FrontendLimit")]
 		public int? FrontendLimit
 		{
 			get

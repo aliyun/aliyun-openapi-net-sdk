@@ -26,17 +26,17 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class CreateEnvironmentResponseUnmarshaller
     {
-        public static CreateEnvironmentResponse Unmarshall(UnmarshallerContext context)
+        public static CreateEnvironmentResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateEnvironmentResponse createEnvironmentResponse = new CreateEnvironmentResponse();
 
-			createEnvironmentResponse.HttpResponse = context.HttpResponse;
-			createEnvironmentResponse.Code = context.IntegerValue("CreateEnvironment.Code");
-			createEnvironmentResponse.RequestId = context.StringValue("CreateEnvironment.RequestId");
-			createEnvironmentResponse.ErrMsg = context.StringValue("CreateEnvironment.ErrMsg");
+			createEnvironmentResponse.HttpResponse = _ctx.HttpResponse;
+			createEnvironmentResponse.Code = _ctx.IntegerValue("CreateEnvironment.Code");
+			createEnvironmentResponse.RequestId = _ctx.StringValue("CreateEnvironment.RequestId");
+			createEnvironmentResponse.ErrMsg = _ctx.StringValue("CreateEnvironment.ErrMsg");
 
 			CreateEnvironmentResponse.CreateEnvironment_Result result = new CreateEnvironmentResponse.CreateEnvironment_Result();
-			result.AppEnvId = context.LongValue("CreateEnvironment.Result.AppEnvId");
+			result.AppEnvId = _ctx.LongValue("CreateEnvironment.Result.AppEnvId");
 			createEnvironmentResponse.Result = result;
         
 			return createEnvironmentResponse;

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class ResetAccountPasswordRequest : RpcAcsRequest<ResetAccountPasswordResponse>
     {
         public ResetAccountPasswordRequest()
-            : base("Dds", "2015-12-01", "ResetAccountPassword", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "ResetAccountPassword", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

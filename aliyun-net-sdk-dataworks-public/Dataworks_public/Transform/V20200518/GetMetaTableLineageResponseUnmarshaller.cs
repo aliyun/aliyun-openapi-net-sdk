@@ -26,26 +26,27 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetMetaTableLineageResponseUnmarshaller
     {
-        public static GetMetaTableLineageResponse Unmarshall(UnmarshallerContext context)
+        public static GetMetaTableLineageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMetaTableLineageResponse getMetaTableLineageResponse = new GetMetaTableLineageResponse();
 
-			getMetaTableLineageResponse.HttpResponse = context.HttpResponse;
-			getMetaTableLineageResponse.RequestId = context.StringValue("GetMetaTableLineage.RequestId");
-			getMetaTableLineageResponse.ErrorCode = context.StringValue("GetMetaTableLineage.ErrorCode");
-			getMetaTableLineageResponse.ErrorMessage = context.StringValue("GetMetaTableLineage.ErrorMessage");
-			getMetaTableLineageResponse.HttpStatusCode = context.IntegerValue("GetMetaTableLineage.HttpStatusCode");
-			getMetaTableLineageResponse.Success = context.BooleanValue("GetMetaTableLineage.Success");
+			getMetaTableLineageResponse.HttpResponse = _ctx.HttpResponse;
+			getMetaTableLineageResponse.HttpStatusCode = _ctx.IntegerValue("GetMetaTableLineage.HttpStatusCode");
+			getMetaTableLineageResponse.ErrorMessage = _ctx.StringValue("GetMetaTableLineage.ErrorMessage");
+			getMetaTableLineageResponse.RequestId = _ctx.StringValue("GetMetaTableLineage.RequestId");
+			getMetaTableLineageResponse.Success = _ctx.BooleanValue("GetMetaTableLineage.Success");
+			getMetaTableLineageResponse.ErrorCode = _ctx.StringValue("GetMetaTableLineage.ErrorCode");
 
 			GetMetaTableLineageResponse.GetMetaTableLineage_Data data = new GetMetaTableLineageResponse.GetMetaTableLineage_Data();
-			data.HasNext = context.BooleanValue("GetMetaTableLineage.Data.HasNext");
-			data.NextPrimaryKey = context.StringValue("GetMetaTableLineage.Data.NextPrimaryKey");
+			data.NextPrimaryKey = _ctx.StringValue("GetMetaTableLineage.Data.NextPrimaryKey");
+			data.HasNext = _ctx.BooleanValue("GetMetaTableLineage.Data.HasNext");
 
 			List<GetMetaTableLineageResponse.GetMetaTableLineage_Data.GetMetaTableLineage_DataEntityListItem> data_dataEntityList = new List<GetMetaTableLineageResponse.GetMetaTableLineage_Data.GetMetaTableLineage_DataEntityListItem>();
-			for (int i = 0; i < context.Length("GetMetaTableLineage.Data.DataEntityList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetMetaTableLineage.Data.DataEntityList.Length"); i++) {
 				GetMetaTableLineageResponse.GetMetaTableLineage_Data.GetMetaTableLineage_DataEntityListItem dataEntityListItem = new GetMetaTableLineageResponse.GetMetaTableLineage_Data.GetMetaTableLineage_DataEntityListItem();
-				dataEntityListItem.TableName = context.StringValue("GetMetaTableLineage.Data.DataEntityList["+ i +"].TableName");
-				dataEntityListItem.TableGuid = context.StringValue("GetMetaTableLineage.Data.DataEntityList["+ i +"].TableGuid");
+				dataEntityListItem.TableName = _ctx.StringValue("GetMetaTableLineage.Data.DataEntityList["+ i +"].TableName");
+				dataEntityListItem.TableGuid = _ctx.StringValue("GetMetaTableLineage.Data.DataEntityList["+ i +"].TableGuid");
+				dataEntityListItem.CreateTimestamp = _ctx.LongValue("GetMetaTableLineage.Data.DataEntityList["+ i +"].CreateTimestamp");
 
 				data_dataEntityList.Add(dataEntityListItem);
 			}

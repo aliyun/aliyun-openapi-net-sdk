@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.gpdb.Model.V20160503
@@ -56,37 +56,13 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 		public class DescribeAccounts_DBInstanceAccount
 		{
 
-			private string dBInstanceId;
-
-			private string accountName;
-
 			private string accountStatus;
 
 			private string accountDescription;
 
-			public string DBInstanceId
-			{
-				get
-				{
-					return dBInstanceId;
-				}
-				set	
-				{
-					dBInstanceId = value;
-				}
-			}
+			private string dBInstanceId;
 
-			public string AccountName
-			{
-				get
-				{
-					return accountName;
-				}
-				set	
-				{
-					accountName = value;
-				}
-			}
+			private string accountName;
 
 			public string AccountStatus
 			{
@@ -109,6 +85,30 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 				set	
 				{
 					accountDescription = value;
+				}
+			}
+
+			public string DBInstanceId
+			{
+				get
+				{
+					return dBInstanceId;
+				}
+				set	
+				{
+					dBInstanceId = value;
+				}
+			}
+
+			public string AccountName
+			{
+				get
+				{
+					return accountName;
+				}
+				set	
+				{
+					accountName = value;
 				}
 			}
 		}

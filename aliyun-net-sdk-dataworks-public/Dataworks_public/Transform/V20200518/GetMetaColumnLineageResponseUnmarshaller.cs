@@ -26,27 +26,30 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetMetaColumnLineageResponseUnmarshaller
     {
-        public static GetMetaColumnLineageResponse Unmarshall(UnmarshallerContext context)
+        public static GetMetaColumnLineageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMetaColumnLineageResponse getMetaColumnLineageResponse = new GetMetaColumnLineageResponse();
 
-			getMetaColumnLineageResponse.HttpResponse = context.HttpResponse;
-			getMetaColumnLineageResponse.RequestId = context.StringValue("GetMetaColumnLineage.RequestId");
-			getMetaColumnLineageResponse.ErrorCode = context.StringValue("GetMetaColumnLineage.ErrorCode");
-			getMetaColumnLineageResponse.ErrorMessage = context.StringValue("GetMetaColumnLineage.ErrorMessage");
-			getMetaColumnLineageResponse.HttpStatusCode = context.IntegerValue("GetMetaColumnLineage.HttpStatusCode");
-			getMetaColumnLineageResponse.Success = context.BooleanValue("GetMetaColumnLineage.Success");
+			getMetaColumnLineageResponse.HttpResponse = _ctx.HttpResponse;
+			getMetaColumnLineageResponse.RequestId = _ctx.StringValue("GetMetaColumnLineage.RequestId");
+			getMetaColumnLineageResponse.ErrorCode = _ctx.StringValue("GetMetaColumnLineage.ErrorCode");
+			getMetaColumnLineageResponse.ErrorMessage = _ctx.StringValue("GetMetaColumnLineage.ErrorMessage");
+			getMetaColumnLineageResponse.HttpStatusCode = _ctx.IntegerValue("GetMetaColumnLineage.HttpStatusCode");
+			getMetaColumnLineageResponse.Success = _ctx.BooleanValue("GetMetaColumnLineage.Success");
 
 			GetMetaColumnLineageResponse.GetMetaColumnLineage_Data data = new GetMetaColumnLineageResponse.GetMetaColumnLineage_Data();
-			data.TotalCount = context.LongValue("GetMetaColumnLineage.Data.TotalCount");
-			data.PageNum = context.IntegerValue("GetMetaColumnLineage.Data.PageNum");
-			data.PageSize = context.IntegerValue("GetMetaColumnLineage.Data.PageSize");
+			data.TotalCount = _ctx.LongValue("GetMetaColumnLineage.Data.TotalCount");
+			data.PageNum = _ctx.IntegerValue("GetMetaColumnLineage.Data.PageNum");
+			data.PageSize = _ctx.IntegerValue("GetMetaColumnLineage.Data.PageSize");
 
 			List<GetMetaColumnLineageResponse.GetMetaColumnLineage_Data.GetMetaColumnLineage_DataEntityListItem> data_dataEntityList = new List<GetMetaColumnLineageResponse.GetMetaColumnLineage_Data.GetMetaColumnLineage_DataEntityListItem>();
-			for (int i = 0; i < context.Length("GetMetaColumnLineage.Data.DataEntityList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetMetaColumnLineage.Data.DataEntityList.Length"); i++) {
 				GetMetaColumnLineageResponse.GetMetaColumnLineage_Data.GetMetaColumnLineage_DataEntityListItem dataEntityListItem = new GetMetaColumnLineageResponse.GetMetaColumnLineage_Data.GetMetaColumnLineage_DataEntityListItem();
-				dataEntityListItem.ColumnName = context.StringValue("GetMetaColumnLineage.Data.DataEntityList["+ i +"].ColumnName");
-				dataEntityListItem.ColumnGuid = context.StringValue("GetMetaColumnLineage.Data.DataEntityList["+ i +"].ColumnGuid");
+				dataEntityListItem.ColumnName = _ctx.StringValue("GetMetaColumnLineage.Data.DataEntityList["+ i +"].ColumnName");
+				dataEntityListItem.ColumnGuid = _ctx.StringValue("GetMetaColumnLineage.Data.DataEntityList["+ i +"].ColumnGuid");
+				dataEntityListItem.ClusterId = _ctx.StringValue("GetMetaColumnLineage.Data.DataEntityList["+ i +"].ClusterId");
+				dataEntityListItem.DatabaseName = _ctx.StringValue("GetMetaColumnLineage.Data.DataEntityList["+ i +"].DatabaseName");
+				dataEntityListItem.TableName = _ctx.StringValue("GetMetaColumnLineage.Data.DataEntityList["+ i +"].TableName");
 
 				data_dataEntityList.Add(dataEntityListItem);
 			}

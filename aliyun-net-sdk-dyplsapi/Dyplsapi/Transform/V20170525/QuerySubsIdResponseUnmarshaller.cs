@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dyplsapi.Transform.V20170525
 {
     public class QuerySubsIdResponseUnmarshaller
     {
-        public static QuerySubsIdResponse Unmarshall(UnmarshallerContext context)
+        public static QuerySubsIdResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QuerySubsIdResponse querySubsIdResponse = new QuerySubsIdResponse();
 
-			querySubsIdResponse.HttpResponse = context.HttpResponse;
-			querySubsIdResponse.RequestId = context.StringValue("QuerySubsId.RequestId");
-			querySubsIdResponse.Code = context.StringValue("QuerySubsId.Code");
-			querySubsIdResponse.Message = context.StringValue("QuerySubsId.Message");
-			querySubsIdResponse.SubsId = context.StringValue("QuerySubsId.SubsId");
+			querySubsIdResponse.HttpResponse = _ctx.HttpResponse;
+			querySubsIdResponse.Code = _ctx.StringValue("QuerySubsId.Code");
+			querySubsIdResponse.Message = _ctx.StringValue("QuerySubsId.Message");
+			querySubsIdResponse.RequestId = _ctx.StringValue("QuerySubsId.RequestId");
+			querySubsIdResponse.SubsId = _ctx.StringValue("QuerySubsId.SubsId");
         
 			return querySubsIdResponse;
         }

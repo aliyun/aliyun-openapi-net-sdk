@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class CreateSnatEntryResponseUnmarshaller
     {
-        public static CreateSnatEntryResponse Unmarshall(UnmarshallerContext context)
+        public static CreateSnatEntryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateSnatEntryResponse createSnatEntryResponse = new CreateSnatEntryResponse();
 
-			createSnatEntryResponse.HttpResponse = context.HttpResponse;
-			createSnatEntryResponse.RequestId = context.StringValue("CreateSnatEntry.RequestId");
-			createSnatEntryResponse.SnatEntryId = context.StringValue("CreateSnatEntry.SnatEntryId");
+			createSnatEntryResponse.HttpResponse = _ctx.HttpResponse;
+			createSnatEntryResponse.RequestId = _ctx.StringValue("CreateSnatEntry.RequestId");
+			createSnatEntryResponse.SnatEntryId = _ctx.StringValue("CreateSnatEntry.SnatEntryId");
         
 			return createSnatEntryResponse;
         }

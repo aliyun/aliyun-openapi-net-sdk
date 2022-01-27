@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ModifyClusterTemplateResponseUnmarshaller
     {
-        public static ModifyClusterTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyClusterTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyClusterTemplateResponse modifyClusterTemplateResponse = new ModifyClusterTemplateResponse();
 
-			modifyClusterTemplateResponse.HttpResponse = context.HttpResponse;
-			modifyClusterTemplateResponse.RequestId = context.StringValue("ModifyClusterTemplate.RequestId");
-			modifyClusterTemplateResponse.ClusterTemplateId = context.StringValue("ModifyClusterTemplate.ClusterTemplateId");
+			modifyClusterTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			modifyClusterTemplateResponse.RequestId = _ctx.StringValue("ModifyClusterTemplate.RequestId");
+			modifyClusterTemplateResponse.ClusterTemplateId = _ctx.StringValue("ModifyClusterTemplate.ClusterTemplateId");
         
 			return modifyClusterTemplateResponse;
         }

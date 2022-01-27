@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -62,11 +62,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string password;
 
+		private SystemDisk systemDisk_;
+
 		private int? deploymentSetGroupNo;
 
 		private int? storageSetPartitionNumber;
 
-		private List<Tag> tags = new List<Tag>(){ };
+		private List<string> tags = new List<string>(){ };
 
 		private string privatePoolOptionsId;
 
@@ -116,6 +118,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? internetMaxBandwidthOut;
 
+		private bool? hibernationOptionsConfigured;
+
 		private string description;
 
 		private string systemDiskCategory;
@@ -130,7 +134,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceType;
 
-		private List<Arn> arns = new List<Arn>(){ };
+		private List<string> arns = new List<string>(){ };
 
 		private string instanceChargeType;
 
@@ -156,7 +160,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? spotDuration;
 
-		private List<DataDisk> dataDisks = new List<DataDisk>(){ };
+		private List<string> dataDisks = new List<string>(){ };
 
 		private string storageSetId;
 
@@ -311,6 +315,24 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public SystemDisk SystemDisk_
+		{
+			get
+			{
+				return systemDisk_;
+			}
+
+			set
+			{
+				systemDisk_ = value;
+				if(SystemDisk_ != null)
+				{
+
+					DictionaryUtil.Add(QueryParameters,"SystemDisk.StorageClusterId", SystemDisk_.StorageClusterId);
+				}
+			}
+		}
+
 		public int? DeploymentSetGroupNo
 		{
 			get
@@ -337,7 +359,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Tag> Tags
+		public List<string> Tags
 		{
 			get
 			{
@@ -347,10 +369,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				tags = value;
-				for (int i = 0; i < tags.Count; i++)
+				if(tags != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
 				}
 			}
 		}
@@ -667,6 +692,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public bool? HibernationOptionsConfigured
+		{
+			get
+			{
+				return hibernationOptionsConfigured;
+			}
+			set	
+			{
+				hibernationOptionsConfigured = value;
+				DictionaryUtil.Add(QueryParameters, "HibernationOptions.Configured", value.ToString());
+			}
+		}
+
 		public string Description
 		{
 			get
@@ -758,7 +796,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Arn> Arns
+		public List<string> Arns
 		{
 			get
 			{
@@ -768,11 +806,14 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				arns = value;
-				for (int i = 0; i < arns.Count; i++)
+				if(arns != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Arn." + (i + 1) + ".Rolearn", arns[i].Rolearn);
-					DictionaryUtil.Add(QueryParameters,"Arn." + (i + 1) + ".RoleType", arns[i].RoleType);
-					DictionaryUtil.Add(QueryParameters,"Arn." + (i + 1) + ".AssumeRoleFor", arns[i].AssumeRoleFor);
+					for (int depth1 = 0; depth1 < arns.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Arn." + (depth1 + 1), arns[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Arn." + (depth1 + 1), arns[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Arn." + (depth1 + 1), arns[depth1]);
+					}
 				}
 			}
 		}
@@ -933,7 +974,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<DataDisk> DataDisks
+		public List<string> DataDisks
 		{
 			get
 			{
@@ -943,19 +984,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				dataDisks = value;
-				for (int i = 0; i < dataDisks.Count; i++)
+				if(dataDisks != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DiskName", dataDisks[i].DiskName);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".SnapshotId", dataDisks[i].SnapshotId);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Size", dataDisks[i].Size);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Encrypted", dataDisks[i].Encrypted);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".PerformanceLevel", dataDisks[i].PerformanceLevel);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".EncryptAlgorithm", dataDisks[i].EncryptAlgorithm);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Description", dataDisks[i].Description);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Category", dataDisks[i].Category);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".KMSKeyId", dataDisks[i].KMSKeyId);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Device", dataDisks[i].Device);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DeleteWithInstance", dataDisks[i].DeleteWithInstance);
+					for (int depth1 = 0; depth1 < dataDisks.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+					}
 				}
 			}
 		}
@@ -1025,6 +1070,24 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public class SystemDisk
+		{
+
+			private string storageClusterId;
+
+			public string StorageClusterId
+			{
+				get
+				{
+					return storageClusterId;
+				}
+				set	
+				{
+					storageClusterId = value;
+				}
+			}
+		}
+
 		public class Tag
 		{
 
@@ -1032,7 +1095,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string key;
 
-			public string Value
+			public string Value_
 			{
 				get
 				{
@@ -1119,6 +1182,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			private string encryptAlgorithm;
 
 			private string description;
+
+			private string storageClusterId;
 
 			private string category;
 
@@ -1209,6 +1274,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string StorageClusterId
+			{
+				get
+				{
+					return storageClusterId;
+				}
+				set	
+				{
+					storageClusterId = value;
 				}
 			}
 

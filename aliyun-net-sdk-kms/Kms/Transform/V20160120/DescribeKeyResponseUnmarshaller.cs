@@ -26,31 +26,33 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 {
     public class DescribeKeyResponseUnmarshaller
     {
-        public static DescribeKeyResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeKeyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeKeyResponse describeKeyResponse = new DescribeKeyResponse();
 
-			describeKeyResponse.HttpResponse = context.HttpResponse;
-			describeKeyResponse.RequestId = context.StringValue("DescribeKey.RequestId");
+			describeKeyResponse.HttpResponse = _ctx.HttpResponse;
+			describeKeyResponse.RequestId = _ctx.StringValue("DescribeKey.RequestId");
 
 			DescribeKeyResponse.DescribeKey_KeyMetadata keyMetadata = new DescribeKeyResponse.DescribeKey_KeyMetadata();
-			keyMetadata.CreationDate = context.StringValue("DescribeKey.KeyMetadata.CreationDate");
-			keyMetadata.Description = context.StringValue("DescribeKey.KeyMetadata.Description");
-			keyMetadata.KeyId = context.StringValue("DescribeKey.KeyMetadata.KeyId");
-			keyMetadata.KeyState = context.StringValue("DescribeKey.KeyMetadata.KeyState");
-			keyMetadata.KeyUsage = context.StringValue("DescribeKey.KeyMetadata.KeyUsage");
-			keyMetadata.DeleteDate = context.StringValue("DescribeKey.KeyMetadata.DeleteDate");
-			keyMetadata.Creator = context.StringValue("DescribeKey.KeyMetadata.Creator");
-			keyMetadata.Arn = context.StringValue("DescribeKey.KeyMetadata.Arn");
-			keyMetadata.Origin = context.StringValue("DescribeKey.KeyMetadata.Origin");
-			keyMetadata.MaterialExpireTime = context.StringValue("DescribeKey.KeyMetadata.MaterialExpireTime");
-			keyMetadata.ProtectionLevel = context.StringValue("DescribeKey.KeyMetadata.ProtectionLevel");
-			keyMetadata.PrimaryKeyVersion = context.StringValue("DescribeKey.KeyMetadata.PrimaryKeyVersion");
-			keyMetadata.LastRotationDate = context.StringValue("DescribeKey.KeyMetadata.LastRotationDate");
-			keyMetadata.AutomaticRotation = context.StringValue("DescribeKey.KeyMetadata.AutomaticRotation");
-			keyMetadata.RotationInterval = context.StringValue("DescribeKey.KeyMetadata.RotationInterval");
-			keyMetadata.NextRotationDate = context.StringValue("DescribeKey.KeyMetadata.NextRotationDate");
-			keyMetadata.KeySpec = context.StringValue("DescribeKey.KeyMetadata.KeySpec");
+			keyMetadata.CreationDate = _ctx.StringValue("DescribeKey.KeyMetadata.CreationDate");
+			keyMetadata.Description = _ctx.StringValue("DescribeKey.KeyMetadata.Description");
+			keyMetadata.KeyId = _ctx.StringValue("DescribeKey.KeyMetadata.KeyId");
+			keyMetadata.KeyState = _ctx.StringValue("DescribeKey.KeyMetadata.KeyState");
+			keyMetadata.KeyUsage = _ctx.StringValue("DescribeKey.KeyMetadata.KeyUsage");
+			keyMetadata.DeleteDate = _ctx.StringValue("DescribeKey.KeyMetadata.DeleteDate");
+			keyMetadata.Creator = _ctx.StringValue("DescribeKey.KeyMetadata.Creator");
+			keyMetadata.Arn = _ctx.StringValue("DescribeKey.KeyMetadata.Arn");
+			keyMetadata.Origin = _ctx.StringValue("DescribeKey.KeyMetadata.Origin");
+			keyMetadata.MaterialExpireTime = _ctx.StringValue("DescribeKey.KeyMetadata.MaterialExpireTime");
+			keyMetadata.ProtectionLevel = _ctx.StringValue("DescribeKey.KeyMetadata.ProtectionLevel");
+			keyMetadata.PrimaryKeyVersion = _ctx.StringValue("DescribeKey.KeyMetadata.PrimaryKeyVersion");
+			keyMetadata.LastRotationDate = _ctx.StringValue("DescribeKey.KeyMetadata.LastRotationDate");
+			keyMetadata.AutomaticRotation = _ctx.StringValue("DescribeKey.KeyMetadata.AutomaticRotation");
+			keyMetadata.RotationInterval = _ctx.StringValue("DescribeKey.KeyMetadata.RotationInterval");
+			keyMetadata.NextRotationDate = _ctx.StringValue("DescribeKey.KeyMetadata.NextRotationDate");
+			keyMetadata.KeySpec = _ctx.StringValue("DescribeKey.KeyMetadata.KeySpec");
+			keyMetadata.DeletionProtection = _ctx.StringValue("DescribeKey.KeyMetadata.DeletionProtection");
+			keyMetadata.DeletionProtectionDescription = _ctx.StringValue("DescribeKey.KeyMetadata.DeletionProtectionDescription");
 			describeKeyResponse.KeyMetadata = keyMetadata;
         
 			return describeKeyResponse;

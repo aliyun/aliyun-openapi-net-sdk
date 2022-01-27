@@ -26,31 +26,31 @@ namespace Aliyun.Acs.ocr.Transform.V20191230
 {
     public class RecognizeQrCodeResponseUnmarshaller
     {
-        public static RecognizeQrCodeResponse Unmarshall(UnmarshallerContext context)
+        public static RecognizeQrCodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RecognizeQrCodeResponse recognizeQrCodeResponse = new RecognizeQrCodeResponse();
 
-			recognizeQrCodeResponse.HttpResponse = context.HttpResponse;
-			recognizeQrCodeResponse.RequestId = context.StringValue("RecognizeQrCode.RequestId");
+			recognizeQrCodeResponse.HttpResponse = _ctx.HttpResponse;
+			recognizeQrCodeResponse.RequestId = _ctx.StringValue("RecognizeQrCode.RequestId");
 
 			RecognizeQrCodeResponse.RecognizeQrCode_Data data = new RecognizeQrCodeResponse.RecognizeQrCode_Data();
 
 			List<RecognizeQrCodeResponse.RecognizeQrCode_Data.RecognizeQrCode_Element> data_elements = new List<RecognizeQrCodeResponse.RecognizeQrCode_Data.RecognizeQrCode_Element>();
-			for (int i = 0; i < context.Length("RecognizeQrCode.Data.Elements.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("RecognizeQrCode.Data.Elements.Length"); i++) {
 				RecognizeQrCodeResponse.RecognizeQrCode_Data.RecognizeQrCode_Element element = new RecognizeQrCodeResponse.RecognizeQrCode_Data.RecognizeQrCode_Element();
-				element.TaskId = context.StringValue("RecognizeQrCode.Data.Elements["+ i +"].TaskId");
-				element.ImageURL = context.StringValue("RecognizeQrCode.Data.Elements["+ i +"].ImageURL");
+				element.ImageURL = _ctx.StringValue("RecognizeQrCode.Data.Elements["+ i +"].ImageURL");
+				element.TaskId = _ctx.StringValue("RecognizeQrCode.Data.Elements["+ i +"].TaskId");
 
 				List<RecognizeQrCodeResponse.RecognizeQrCode_Data.RecognizeQrCode_Element.RecognizeQrCode_Result> element_results = new List<RecognizeQrCodeResponse.RecognizeQrCode_Data.RecognizeQrCode_Element.RecognizeQrCode_Result>();
-				for (int j = 0; j < context.Length("RecognizeQrCode.Data.Elements["+ i +"].Results.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("RecognizeQrCode.Data.Elements["+ i +"].Results.Length"); j++) {
 					RecognizeQrCodeResponse.RecognizeQrCode_Data.RecognizeQrCode_Element.RecognizeQrCode_Result result = new RecognizeQrCodeResponse.RecognizeQrCode_Data.RecognizeQrCode_Element.RecognizeQrCode_Result();
-					result.Label = context.StringValue("RecognizeQrCode.Data.Elements["+ i +"].Results["+ j +"].Label");
-					result.Suggestion = context.StringValue("RecognizeQrCode.Data.Elements["+ i +"].Results["+ j +"].Suggestion");
-					result.Rate = context.FloatValue("RecognizeQrCode.Data.Elements["+ i +"].Results["+ j +"].Rate");
+					result.Suggestion = _ctx.StringValue("RecognizeQrCode.Data.Elements["+ i +"].Results["+ j +"].Suggestion");
+					result.Label = _ctx.StringValue("RecognizeQrCode.Data.Elements["+ i +"].Results["+ j +"].Label");
+					result.Rate = _ctx.FloatValue("RecognizeQrCode.Data.Elements["+ i +"].Results["+ j +"].Rate");
 
 					List<string> result_qrCodesData = new List<string>();
-					for (int k = 0; k < context.Length("RecognizeQrCode.Data.Elements["+ i +"].Results["+ j +"].QrCodesData.Length"); k++) {
-						result_qrCodesData.Add(context.StringValue("RecognizeQrCode.Data.Elements["+ i +"].Results["+ j +"].QrCodesData["+ k +"]"));
+					for (int k = 0; k < _ctx.Length("RecognizeQrCode.Data.Elements["+ i +"].Results["+ j +"].QrCodesData.Length"); k++) {
+						result_qrCodesData.Add(_ctx.StringValue("RecognizeQrCode.Data.Elements["+ i +"].Results["+ j +"].QrCodesData["+ k +"]"));
 					}
 					result.QrCodesData = result_qrCodesData;
 

@@ -26,21 +26,21 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeGatewayModificationClassesResponseUnmarshaller
     {
-        public static DescribeGatewayModificationClassesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGatewayModificationClassesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGatewayModificationClassesResponse describeGatewayModificationClassesResponse = new DescribeGatewayModificationClassesResponse();
 
-			describeGatewayModificationClassesResponse.HttpResponse = context.HttpResponse;
-			describeGatewayModificationClassesResponse.RequestId = context.StringValue("DescribeGatewayModificationClasses.RequestId");
-			describeGatewayModificationClassesResponse.Success = context.BooleanValue("DescribeGatewayModificationClasses.Success");
-			describeGatewayModificationClassesResponse.Code = context.StringValue("DescribeGatewayModificationClasses.Code");
-			describeGatewayModificationClassesResponse.Message = context.StringValue("DescribeGatewayModificationClasses.Message");
+			describeGatewayModificationClassesResponse.HttpResponse = _ctx.HttpResponse;
+			describeGatewayModificationClassesResponse.Message = _ctx.StringValue("DescribeGatewayModificationClasses.Message");
+			describeGatewayModificationClassesResponse.RequestId = _ctx.StringValue("DescribeGatewayModificationClasses.RequestId");
+			describeGatewayModificationClassesResponse.Code = _ctx.StringValue("DescribeGatewayModificationClasses.Code");
+			describeGatewayModificationClassesResponse.Success = _ctx.BooleanValue("DescribeGatewayModificationClasses.Success");
 
 			List<DescribeGatewayModificationClassesResponse.DescribeGatewayModificationClasses_TargetGatewayClass> describeGatewayModificationClassesResponse_targetGatewayClasses = new List<DescribeGatewayModificationClassesResponse.DescribeGatewayModificationClasses_TargetGatewayClass>();
-			for (int i = 0; i < context.Length("DescribeGatewayModificationClasses.TargetGatewayClasses.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeGatewayModificationClasses.TargetGatewayClasses.Length"); i++) {
 				DescribeGatewayModificationClassesResponse.DescribeGatewayModificationClasses_TargetGatewayClass targetGatewayClass = new DescribeGatewayModificationClassesResponse.DescribeGatewayModificationClasses_TargetGatewayClass();
-				targetGatewayClass.GatewayClass = context.StringValue("DescribeGatewayModificationClasses.TargetGatewayClasses["+ i +"].GatewayClass");
-				targetGatewayClass.IsAvailable = context.BooleanValue("DescribeGatewayModificationClasses.TargetGatewayClasses["+ i +"].IsAvailable");
+				targetGatewayClass.GatewayClass = _ctx.StringValue("DescribeGatewayModificationClasses.TargetGatewayClasses["+ i +"].GatewayClass");
+				targetGatewayClass.IsAvailable = _ctx.BooleanValue("DescribeGatewayModificationClasses.TargetGatewayClasses["+ i +"].IsAvailable");
 
 				describeGatewayModificationClassesResponse_targetGatewayClasses.Add(targetGatewayClass);
 			}

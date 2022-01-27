@@ -87,23 +87,23 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			public class OnsConsumerGetConnection_ConnectionDo
 			{
 
-				private string clientId;
+				private string version;
 
 				private string clientAddr;
 
 				private string language;
 
-				private string version;
+				private string clientId;
 
-				public string ClientId
+				public string Version
 				{
 					get
 					{
-						return clientId;
+						return version;
 					}
 					set	
 					{
-						clientId = value;
+						version = value;
 					}
 				}
 
@@ -131,15 +131,15 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					}
 				}
 
-				public string Version
+				public string ClientId
 				{
 					get
 					{
-						return version;
+						return clientId;
 					}
 					set	
 					{
-						version = value;
+						clientId = value;
 					}
 				}
 			}

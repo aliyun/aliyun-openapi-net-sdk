@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 {
     public class QueryAliasesResponseUnmarshaller
     {
-        public static QueryAliasesResponse Unmarshall(UnmarshallerContext context)
+        public static QueryAliasesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryAliasesResponse queryAliasesResponse = new QueryAliasesResponse();
 
-			queryAliasesResponse.HttpResponse = context.HttpResponse;
-			queryAliasesResponse.RequestId = context.StringValue("QueryAliases.RequestId");
+			queryAliasesResponse.HttpResponse = _ctx.HttpResponse;
+			queryAliasesResponse.RequestId = _ctx.StringValue("QueryAliases.RequestId");
 
 			List<QueryAliasesResponse.QueryAliases_AliasInfo> queryAliasesResponse_aliasInfos = new List<QueryAliasesResponse.QueryAliases_AliasInfo>();
-			for (int i = 0; i < context.Length("QueryAliases.AliasInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryAliases.AliasInfos.Length"); i++) {
 				QueryAliasesResponse.QueryAliases_AliasInfo aliasInfo = new QueryAliasesResponse.QueryAliases_AliasInfo();
-				aliasInfo.AliasName = context.StringValue("QueryAliases.AliasInfos["+ i +"].AliasName");
+				aliasInfo.AliasName = _ctx.StringValue("QueryAliases.AliasInfos["+ i +"].AliasName");
 
 				queryAliasesResponse_aliasInfos.Add(aliasInfo);
 			}

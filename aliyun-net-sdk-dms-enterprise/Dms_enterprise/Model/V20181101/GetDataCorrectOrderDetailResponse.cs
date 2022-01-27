@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private bool? success;
+		private string errorCode;
 
 		private string errorMessage;
 
-		private string errorCode;
+		private bool? success;
 
 		private GetDataCorrectOrderDetail_DataCorrectOrderDetail dataCorrectOrderDetail;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,30 +48,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ErrorCode")]
 		public string ErrorCode
 		{
 			get
@@ -83,6 +61,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DataCorrectOrderDetail")]
 		public GetDataCorrectOrderDetail_DataCorrectOrderDetail DataCorrectOrderDetail
 		{
 			get
@@ -98,12 +103,28 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class GetDataCorrectOrderDetail_DataCorrectOrderDetail
 		{
 
+			private string status;
+
 			private List<GetDataCorrectOrderDetail_TaskCheckDO> preCheckDetail;
 
 			private List<GetDataCorrectOrderDetail_Database> databaseList;
 
 			private GetDataCorrectOrderDetail_OrderDetail orderDetail;
 
+			[JsonProperty(PropertyName = "Status")]
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PreCheckDetail")]
 			public List<GetDataCorrectOrderDetail_TaskCheckDO> PreCheckDetail
 			{
 				get
@@ -116,6 +137,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "DatabaseList")]
 			public List<GetDataCorrectOrderDetail_Database> DatabaseList
 			{
 				get
@@ -128,6 +150,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "OrderDetail")]
 			public GetDataCorrectOrderDetail_OrderDetail OrderDetail
 			{
 				get
@@ -143,12 +166,26 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			public class GetDataCorrectOrderDetail_TaskCheckDO
 			{
 
+				private string userTip;
+
 				private string checkStatus;
 
 				private string checkStep;
 
-				private string userTip;
+				[JsonProperty(PropertyName = "UserTip")]
+				public string UserTip
+				{
+					get
+					{
+						return userTip;
+					}
+					set	
+					{
+						userTip = value;
+					}
+				}
 
+				[JsonProperty(PropertyName = "CheckStatus")]
 				public string CheckStatus
 				{
 					get
@@ -161,6 +198,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
+				[JsonProperty(PropertyName = "CheckStep")]
 				public string CheckStep
 				{
 					get
@@ -172,69 +210,22 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 						checkStep = value;
 					}
 				}
-
-				public string UserTip
-				{
-					get
-					{
-						return userTip;
-					}
-					set	
-					{
-						userTip = value;
-					}
-				}
 			}
 
 			public class GetDataCorrectOrderDetail_Database
 			{
 
+				private int? dbId;
+
+				private string dbType;
+
+				private bool? logic;
+
 				private string searchName;
 
 				private string envType;
 
-				private string dbType;
-
-				private int? dbId;
-
-				private bool? logic;
-
-				public string SearchName
-				{
-					get
-					{
-						return searchName;
-					}
-					set	
-					{
-						searchName = value;
-					}
-				}
-
-				public string EnvType
-				{
-					get
-					{
-						return envType;
-					}
-					set	
-					{
-						envType = value;
-					}
-				}
-
-				public string DbType
-				{
-					get
-					{
-						return dbType;
-					}
-					set	
-					{
-						dbType = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "DbId")]
 				public int? DbId
 				{
 					get
@@ -247,6 +238,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
+				[JsonProperty(PropertyName = "DbType")]
+				public string DbType
+				{
+					get
+					{
+						return dbType;
+					}
+					set	
+					{
+						dbType = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Logic")]
 				public bool? Logic
 				{
 					get
@@ -258,141 +263,60 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 						logic = value;
 					}
 				}
+
+				[JsonProperty(PropertyName = "SearchName")]
+				public string SearchName
+				{
+					get
+					{
+						return searchName;
+					}
+					set	
+					{
+						searchName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "EnvType")]
+				public string EnvType
+				{
+					get
+					{
+						return envType;
+					}
+					set	
+					{
+						envType = value;
+					}
+				}
 			}
 
 			public class GetDataCorrectOrderDetail_OrderDetail
 			{
 
+				private string rbSQL;
+
+				private string rbAttachmentName;
+
 				private string classify;
 
+				private string exeSQL;
+
 				private long? estimateAffectRows;
+
+				private string rbSQLType;
 
 				private long? actualAffectRows;
 
 				private bool? ignoreAffectRows;
 
-				private string ignoreAffectRowsReason;
+				private string attachmentName;
 
 				private string sqlType;
 
-				private string exeSQL;
+				private string ignoreAffectRowsReason;
 
-				private string attachmentName;
-
-				private string rbSQLType;
-
-				private string rbSQL;
-
-				private string rbAttachmentName;
-
-				public string Classify
-				{
-					get
-					{
-						return classify;
-					}
-					set	
-					{
-						classify = value;
-					}
-				}
-
-				public long? EstimateAffectRows
-				{
-					get
-					{
-						return estimateAffectRows;
-					}
-					set	
-					{
-						estimateAffectRows = value;
-					}
-				}
-
-				public long? ActualAffectRows
-				{
-					get
-					{
-						return actualAffectRows;
-					}
-					set	
-					{
-						actualAffectRows = value;
-					}
-				}
-
-				public bool? IgnoreAffectRows
-				{
-					get
-					{
-						return ignoreAffectRows;
-					}
-					set	
-					{
-						ignoreAffectRows = value;
-					}
-				}
-
-				public string IgnoreAffectRowsReason
-				{
-					get
-					{
-						return ignoreAffectRowsReason;
-					}
-					set	
-					{
-						ignoreAffectRowsReason = value;
-					}
-				}
-
-				public string SqlType
-				{
-					get
-					{
-						return sqlType;
-					}
-					set	
-					{
-						sqlType = value;
-					}
-				}
-
-				public string ExeSQL
-				{
-					get
-					{
-						return exeSQL;
-					}
-					set	
-					{
-						exeSQL = value;
-					}
-				}
-
-				public string AttachmentName
-				{
-					get
-					{
-						return attachmentName;
-					}
-					set	
-					{
-						attachmentName = value;
-					}
-				}
-
-				public string RbSQLType
-				{
-					get
-					{
-						return rbSQLType;
-					}
-					set	
-					{
-						rbSQLType = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "RbSQL")]
 				public string RbSQL
 				{
 					get
@@ -405,6 +329,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
+				[JsonProperty(PropertyName = "RbAttachmentName")]
 				public string RbAttachmentName
 				{
 					get
@@ -414,6 +339,123 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					set	
 					{
 						rbAttachmentName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Classify")]
+				public string Classify
+				{
+					get
+					{
+						return classify;
+					}
+					set	
+					{
+						classify = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ExeSQL")]
+				public string ExeSQL
+				{
+					get
+					{
+						return exeSQL;
+					}
+					set	
+					{
+						exeSQL = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "EstimateAffectRows")]
+				public long? EstimateAffectRows
+				{
+					get
+					{
+						return estimateAffectRows;
+					}
+					set	
+					{
+						estimateAffectRows = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "RbSQLType")]
+				public string RbSQLType
+				{
+					get
+					{
+						return rbSQLType;
+					}
+					set	
+					{
+						rbSQLType = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ActualAffectRows")]
+				public long? ActualAffectRows
+				{
+					get
+					{
+						return actualAffectRows;
+					}
+					set	
+					{
+						actualAffectRows = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "IgnoreAffectRows")]
+				public bool? IgnoreAffectRows
+				{
+					get
+					{
+						return ignoreAffectRows;
+					}
+					set	
+					{
+						ignoreAffectRows = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "AttachmentName")]
+				public string AttachmentName
+				{
+					get
+					{
+						return attachmentName;
+					}
+					set	
+					{
+						attachmentName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "SqlType")]
+				public string SqlType
+				{
+					get
+					{
+						return sqlType;
+					}
+					set	
+					{
+						sqlType = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "IgnoreAffectRowsReason")]
+				public string IgnoreAffectRowsReason
+				{
+					get
+					{
+						return ignoreAffectRowsReason;
+					}
+					set	
+					{
+						ignoreAffectRowsReason = value;
 					}
 				}
 			}

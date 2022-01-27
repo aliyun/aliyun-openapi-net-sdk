@@ -32,6 +32,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
         public CreateOfficeConversionTaskRequest()
             : base("imm", "2017-09-06", "CreateOfficeConversionTask", "imm", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.imm.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.imm.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
@@ -42,6 +47,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private string idempotentToken;
 
 		private bool? pdfVector;
+
+		private string userData;
 
 		private string password;
 
@@ -132,6 +139,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				pdfVector = value;
 				DictionaryUtil.Add(QueryParameters, "PdfVector", value.ToString());
+			}
+		}
+
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
 			}
 		}
 

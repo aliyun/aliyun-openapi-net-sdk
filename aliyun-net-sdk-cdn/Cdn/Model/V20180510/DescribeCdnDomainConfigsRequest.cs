@@ -43,11 +43,13 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string functionNames;
 
+		private string securityToken;
+
 		private string domainName;
 
 		private long? ownerId;
 
-		private string securityToken;
+		private string configId;
 
 		public string FunctionNames
 		{
@@ -59,6 +61,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				functionNames = value;
 				DictionaryUtil.Add(QueryParameters, "FunctionNames", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -88,16 +103,16 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string SecurityToken
+		public string ConfigId
 		{
 			get
 			{
-				return securityToken;
+				return configId;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				configId = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigId", value);
 			}
 		}
 

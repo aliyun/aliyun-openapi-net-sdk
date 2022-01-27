@@ -26,38 +26,43 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 {
     public class GetUserResponseUnmarshaller
     {
-        public static GetUserResponse Unmarshall(UnmarshallerContext context)
+        public static GetUserResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetUserResponse getUserResponse = new GetUserResponse();
 
-			getUserResponse.HttpResponse = context.HttpResponse;
-			getUserResponse.RequestId = context.StringValue("GetUser.RequestId");
-			getUserResponse.Success = context.BooleanValue("GetUser.Success");
-			getUserResponse.ErrorMessage = context.StringValue("GetUser.ErrorMessage");
-			getUserResponse.ErrorCode = context.StringValue("GetUser.ErrorCode");
+			getUserResponse.HttpResponse = _ctx.HttpResponse;
+			getUserResponse.RequestId = _ctx.StringValue("GetUser.RequestId");
+			getUserResponse.ErrorCode = _ctx.StringValue("GetUser.ErrorCode");
+			getUserResponse.ErrorMessage = _ctx.StringValue("GetUser.ErrorMessage");
+			getUserResponse.Success = _ctx.BooleanValue("GetUser.Success");
 
 			GetUserResponse.GetUser_User user = new GetUserResponse.GetUser_User();
-			user.UserId = context.StringValue("GetUser.User.UserId");
-			user.Uid = context.LongValue("GetUser.User.Uid");
-			user.NickName = context.StringValue("GetUser.User.NickName");
-			user.Mobile = context.StringValue("GetUser.User.Mobile");
-			user.ParentUid = context.LongValue("GetUser.User.ParentUid");
-			user.State = context.StringValue("GetUser.User.State");
-			user.LastLoginTime = context.StringValue("GetUser.User.LastLoginTime");
-			user.CurExecuteCount = context.LongValue("GetUser.User.CurExecuteCount");
-			user.CurResultCount = context.LongValue("GetUser.User.CurResultCount");
-			user.MaxExecuteCount = context.LongValue("GetUser.User.MaxExecuteCount");
-			user.MaxResultCount = context.LongValue("GetUser.User.MaxResultCount");
+			user.State = _ctx.StringValue("GetUser.User.State");
+			user.CurResultCount = _ctx.LongValue("GetUser.User.CurResultCount");
+			user.UserId = _ctx.StringValue("GetUser.User.UserId");
+			user.LastLoginTime = _ctx.StringValue("GetUser.User.LastLoginTime");
+			user.MaxResultCount = _ctx.LongValue("GetUser.User.MaxResultCount");
+			user.ParentUid = _ctx.LongValue("GetUser.User.ParentUid");
+			user.NickName = _ctx.StringValue("GetUser.User.NickName");
+			user.MaxExecuteCount = _ctx.LongValue("GetUser.User.MaxExecuteCount");
+			user.CurExecuteCount = _ctx.LongValue("GetUser.User.CurExecuteCount");
+			user.Mobile = _ctx.StringValue("GetUser.User.Mobile");
+			user.Uid = _ctx.StringValue("GetUser.User.Uid");
+			user.Email = _ctx.StringValue("GetUser.User.Email");
+			user.DingRobot = _ctx.StringValue("GetUser.User.DingRobot");
+			user.Webhook = _ctx.StringValue("GetUser.User.Webhook");
+			user.SignatureMethod = _ctx.StringValue("GetUser.User.SignatureMethod");
+			user.NotificationMode = _ctx.StringValue("GetUser.User.NotificationMode");
 
 			List<string> user_roleIdList = new List<string>();
-			for (int i = 0; i < context.Length("GetUser.User.RoleIdList.Length"); i++) {
-				user_roleIdList.Add(context.StringValue("GetUser.User.RoleIdList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetUser.User.RoleIdList.Length"); i++) {
+				user_roleIdList.Add(_ctx.StringValue("GetUser.User.RoleIdList["+ i +"]"));
 			}
 			user.RoleIdList = user_roleIdList;
 
 			List<string> user_roleNameList = new List<string>();
-			for (int i = 0; i < context.Length("GetUser.User.RoleNameList.Length"); i++) {
-				user_roleNameList.Add(context.StringValue("GetUser.User.RoleNameList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetUser.User.RoleNameList.Length"); i++) {
+				user_roleNameList.Add(_ctx.StringValue("GetUser.User.RoleNameList["+ i +"]"));
 			}
 			user.RoleNameList = user_roleNameList;
 			getUserResponse.User = user;

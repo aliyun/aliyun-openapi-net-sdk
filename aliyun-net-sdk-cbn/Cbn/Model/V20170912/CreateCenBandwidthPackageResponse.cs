@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 	public class CreateCenBandwidthPackageResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string cenBandwidthPackageId;
 
 		private string cenBandwidthPackageOrderId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string CenBandwidthPackageId
 		{
@@ -64,6 +52,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set	
 			{
 				cenBandwidthPackageOrderId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

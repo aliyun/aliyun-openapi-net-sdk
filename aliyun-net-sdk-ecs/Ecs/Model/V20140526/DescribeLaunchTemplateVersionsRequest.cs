@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -62,7 +62,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private List<long?> launchTemplateVersions = new List<long?>(){ };
+		private List<string> launchTemplateVersions = new List<string>(){ };
 
 		private bool? detailFlag;
 
@@ -209,7 +209,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<long?> LaunchTemplateVersions
+		public List<string> LaunchTemplateVersions
 		{
 			get
 			{
@@ -219,10 +219,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				launchTemplateVersions = value;
-				for (int i = 0; i < launchTemplateVersions.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"LaunchTemplateVersion." + (i + 1) , launchTemplateVersions[i]);
-				}
 			}
 		}
 

@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -44,7 +44,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private List<long?> deleteVersions = new List<long?>(){ };
+		private List<string> deleteVersions = new List<string>(){ };
 
 		private string launchTemplateId;
 
@@ -80,7 +80,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<long?> DeleteVersions
+		public List<string> DeleteVersions
 		{
 			get
 			{
@@ -90,10 +90,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				deleteVersions = value;
-				for (int i = 0; i < deleteVersions.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DeleteVersion." + (i + 1) , deleteVersions[i]);
-				}
 			}
 		}
 

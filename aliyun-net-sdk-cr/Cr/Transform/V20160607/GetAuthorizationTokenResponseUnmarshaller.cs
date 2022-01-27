@@ -26,11 +26,11 @@ namespace Aliyun.Acs.cr.Transform.V20160607
 {
     public class GetAuthorizationTokenResponseUnmarshaller
     {
-        public static GetAuthorizationTokenResponse Unmarshall(UnmarshallerContext context)
+        public static GetAuthorizationTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetAuthorizationTokenResponse getAuthorizationTokenResponse = new GetAuthorizationTokenResponse();
 
-			getAuthorizationTokenResponse.HttpResponse = context.HttpResponse;
+			getAuthorizationTokenResponse.HttpResponse = _ctx.HttpResponse;
         
 			return getAuthorizationTokenResponse;
         }

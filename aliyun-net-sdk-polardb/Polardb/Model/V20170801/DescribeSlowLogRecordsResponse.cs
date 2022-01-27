@@ -25,19 +25,43 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeSlowLogRecordsResponse : AcsResponse
 	{
 
+		private int? totalRecordCount;
+
+		private int? pageRecordCount;
+
 		private string requestId;
+
+		private int? pageNumber;
 
 		private string dBClusterId;
 
 		private string engine;
 
-		private int? totalRecordCount;
-
-		private int? pageNumber;
-
-		private int? pageRecordCount;
-
 		private List<DescribeSlowLogRecords_SQLSlowRecord> items;
+
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
+			}
+		}
+
+		public int? PageRecordCount
+		{
+			get
+			{
+				return pageRecordCount;
+			}
+			set	
+			{
+				pageRecordCount = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -48,6 +72,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
 			}
 		}
 
@@ -75,42 +111,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public int? PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
-
 		public List<DescribeSlowLogRecords_SQLSlowRecord> Items
 		{
 			get
@@ -126,23 +126,37 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeSlowLogRecords_SQLSlowRecord
 		{
 
+			private string executionStartTime;
+
 			private string hostAddress;
-
-			private string dBName;
-
-			private string sQLText;
 
 			private long? queryTimes;
 
-			private long? lockTimes;
-
-			private long? parseRowCounts;
+			private string sQLText;
 
 			private long? returnRowCounts;
 
-			private string executionStartTime;
+			private long? parseRowCounts;
+
+			private string dBName;
+
+			private long? lockTimes;
 
 			private string dBNodeId;
+
+			private long? queryTimeMS;
+
+			public string ExecutionStartTime
+			{
+				get
+				{
+					return executionStartTime;
+				}
+				set	
+				{
+					executionStartTime = value;
+				}
+			}
 
 			public string HostAddress
 			{
@@ -153,30 +167,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					hostAddress = value;
-				}
-			}
-
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
-				}
-			}
-
-			public string SQLText
-			{
-				get
-				{
-					return sQLText;
-				}
-				set	
-				{
-					sQLText = value;
 				}
 			}
 
@@ -192,27 +182,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public long? LockTimes
+			public string SQLText
 			{
 				get
 				{
-					return lockTimes;
+					return sQLText;
 				}
 				set	
 				{
-					lockTimes = value;
-				}
-			}
-
-			public long? ParseRowCounts
-			{
-				get
-				{
-					return parseRowCounts;
-				}
-				set	
-				{
-					parseRowCounts = value;
+					sQLText = value;
 				}
 			}
 
@@ -228,15 +206,39 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string ExecutionStartTime
+			public long? ParseRowCounts
 			{
 				get
 				{
-					return executionStartTime;
+					return parseRowCounts;
 				}
 				set	
 				{
-					executionStartTime = value;
+					parseRowCounts = value;
+				}
+			}
+
+			public string DBName
+			{
+				get
+				{
+					return dBName;
+				}
+				set	
+				{
+					dBName = value;
+				}
+			}
+
+			public long? LockTimes
+			{
+				get
+				{
+					return lockTimes;
+				}
+				set	
+				{
+					lockTimes = value;
 				}
 			}
 
@@ -249,6 +251,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					dBNodeId = value;
+				}
+			}
+
+			public long? QueryTimeMS
+			{
+				get
+				{
+					return queryTimeMS;
+				}
+				set	
+				{
+					queryTimeMS = value;
 				}
 			}
 		}

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class UnbindDirectoryResponseUnmarshaller
     {
-        public static UnbindDirectoryResponse Unmarshall(UnmarshallerContext context)
+        public static UnbindDirectoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UnbindDirectoryResponse unbindDirectoryResponse = new UnbindDirectoryResponse();
 
-			unbindDirectoryResponse.HttpResponse = context.HttpResponse;
-			unbindDirectoryResponse.RequestId = context.StringValue("UnbindDirectory.RequestId");
+			unbindDirectoryResponse.HttpResponse = _ctx.HttpResponse;
+			unbindDirectoryResponse.RequestId = _ctx.StringValue("UnbindDirectory.RequestId");
         
 			return unbindDirectoryResponse;
         }

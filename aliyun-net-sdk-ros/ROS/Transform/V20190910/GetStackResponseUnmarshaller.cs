@@ -26,34 +26,35 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class GetStackResponseUnmarshaller
     {
-        public static GetStackResponse Unmarshall(UnmarshallerContext context)
+        public static GetStackResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetStackResponse getStackResponse = new GetStackResponse();
 
-			getStackResponse.HttpResponse = context.HttpResponse;
-			getStackResponse.CreateTime = context.StringValue("GetStack.CreateTime");
-			getStackResponse.Description = context.StringValue("GetStack.Description");
-			getStackResponse.DisableRollback = context.BooleanValue("GetStack.DisableRollback");
-			getStackResponse.RegionId = context.StringValue("GetStack.RegionId");
-			getStackResponse.RequestId = context.StringValue("GetStack.RequestId");
-			getStackResponse.StackId = context.StringValue("GetStack.StackId");
-			getStackResponse.StackName = context.StringValue("GetStack.StackName");
-			getStackResponse.Status = context.StringValue("GetStack.Status");
-			getStackResponse.StatusReason = context.StringValue("GetStack.StatusReason");
-			getStackResponse.TemplateDescription = context.StringValue("GetStack.TemplateDescription");
-			getStackResponse.TimeoutInMinutes = context.IntegerValue("GetStack.TimeoutInMinutes");
-			getStackResponse.UpdateTime = context.StringValue("GetStack.UpdateTime");
-			getStackResponse.ParentStackId = context.StringValue("GetStack.ParentStackId");
-			getStackResponse.StackDriftStatus = context.StringValue("GetStack.StackDriftStatus");
-			getStackResponse.DriftDetectionTime = context.StringValue("GetStack.DriftDetectionTime");
-			getStackResponse.RamRoleName = context.StringValue("GetStack.RamRoleName");
-			getStackResponse.DeletionProtection = context.StringValue("GetStack.DeletionProtection");
-			getStackResponse.RootStackId = context.StringValue("GetStack.RootStackId");
+			getStackResponse.HttpResponse = _ctx.HttpResponse;
+			getStackResponse.CreateTime = _ctx.StringValue("GetStack.CreateTime");
+			getStackResponse.Description = _ctx.StringValue("GetStack.Description");
+			getStackResponse.DisableRollback = _ctx.BooleanValue("GetStack.DisableRollback");
+			getStackResponse.RegionId = _ctx.StringValue("GetStack.RegionId");
+			getStackResponse.RequestId = _ctx.StringValue("GetStack.RequestId");
+			getStackResponse.StackId = _ctx.StringValue("GetStack.StackId");
+			getStackResponse.StackName = _ctx.StringValue("GetStack.StackName");
+			getStackResponse.Status = _ctx.StringValue("GetStack.Status");
+			getStackResponse.StatusReason = _ctx.StringValue("GetStack.StatusReason");
+			getStackResponse.TemplateDescription = _ctx.StringValue("GetStack.TemplateDescription");
+			getStackResponse.TimeoutInMinutes = _ctx.IntegerValue("GetStack.TimeoutInMinutes");
+			getStackResponse.UpdateTime = _ctx.StringValue("GetStack.UpdateTime");
+			getStackResponse.ParentStackId = _ctx.StringValue("GetStack.ParentStackId");
+			getStackResponse.StackDriftStatus = _ctx.StringValue("GetStack.StackDriftStatus");
+			getStackResponse.DriftDetectionTime = _ctx.StringValue("GetStack.DriftDetectionTime");
+			getStackResponse.RamRoleName = _ctx.StringValue("GetStack.RamRoleName");
+			getStackResponse.DeletionProtection = _ctx.StringValue("GetStack.DeletionProtection");
+			getStackResponse.RootStackId = _ctx.StringValue("GetStack.RootStackId");
+			getStackResponse.StackType = _ctx.StringValue("GetStack.StackType");
 
 			List<Dictionary<string, string>> getStackResponse_outputs = new List<Dictionary<string, string>>();
-			for (int i = 0; i < context.Length("GetStack.Outputs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetStack.Outputs.Length"); i++) {
 				Dictionary<string, string> tmp = new Dictionary<string, string>() { };
-				foreach (var _item in context.ResponseDictionary){
+				foreach (var _item in _ctx.ResponseDictionary){
 					string prefix = "GetStack.Outputs["+ i +"].";
 					if (_item.Key.IndexOf(prefix) == 0){
 						tmp.Add(_item.Key.Substring(prefix.Length), _item.Value);
@@ -66,20 +67,30 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 			getStackResponse.Outputs = getStackResponse_outputs;
 
 			List<string> getStackResponse_notificationURLs = new List<string>();
-			for (int i = 0; i < context.Length("GetStack.NotificationURLs.Length"); i++) {
-				getStackResponse_notificationURLs.Add(context.StringValue("GetStack.NotificationURLs["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetStack.NotificationURLs.Length"); i++) {
+				getStackResponse_notificationURLs.Add(_ctx.StringValue("GetStack.NotificationURLs["+ i +"]"));
 			}
 			getStackResponse.NotificationURLs = getStackResponse_notificationURLs;
 
 			List<GetStackResponse.GetStack_Parameter> getStackResponse_parameters = new List<GetStackResponse.GetStack_Parameter>();
-			for (int i = 0; i < context.Length("GetStack.Parameters.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetStack.Parameters.Length"); i++) {
 				GetStackResponse.GetStack_Parameter parameter = new GetStackResponse.GetStack_Parameter();
-				parameter.ParameterKey = context.StringValue("GetStack.Parameters["+ i +"].ParameterKey");
-				parameter.ParameterValue = context.StringValue("GetStack.Parameters["+ i +"].ParameterValue");
+				parameter.ParameterKey = _ctx.StringValue("GetStack.Parameters["+ i +"].ParameterKey");
+				parameter.ParameterValue = _ctx.StringValue("GetStack.Parameters["+ i +"].ParameterValue");
 
 				getStackResponse_parameters.Add(parameter);
 			}
 			getStackResponse.Parameters = getStackResponse_parameters;
+
+			List<GetStackResponse.GetStack_Tag> getStackResponse_tags = new List<GetStackResponse.GetStack_Tag>();
+			for (int i = 0; i < _ctx.Length("GetStack.Tags.Length"); i++) {
+				GetStackResponse.GetStack_Tag tag = new GetStackResponse.GetStack_Tag();
+				tag.Key = _ctx.StringValue("GetStack.Tags["+ i +"].Key");
+				tag._Value = _ctx.StringValue("GetStack.Tags["+ i +"].Value");
+
+				getStackResponse_tags.Add(tag);
+			}
+			getStackResponse.Tags = getStackResponse_tags;
         
 			return getStackResponse;
         }

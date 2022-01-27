@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Config.Model.V20190108
@@ -56,27 +56,99 @@ namespace Aliyun.Acs.Config.Model.V20190108
 		public class DescribeDiscoveredResource_DiscoveredResourceDetail
 		{
 
+			private string availabilityZone;
+
+			private string resourceType;
+
+			private string configuration;
+
+			private string region;
+
+			private long? resourceCreationTime;
+
+			private string tags;
+
 			private long? accountId;
 
 			private string resourceId;
 
-			private string resourceType;
+			private int? resourceDeleted;
 
 			private string resourceName;
 
-			private string region;
-
-			private string availabilityZone;
-
-			private long? resourceCreationTime;
-
 			private string resourceStatus;
 
-			private int? resourceDeleted;
+			public string AvailabilityZone
+			{
+				get
+				{
+					return availabilityZone;
+				}
+				set	
+				{
+					availabilityZone = value;
+				}
+			}
 
-			private string tags;
+			public string ResourceType
+			{
+				get
+				{
+					return resourceType;
+				}
+				set	
+				{
+					resourceType = value;
+				}
+			}
 
-			private string configuration;
+			public string Configuration
+			{
+				get
+				{
+					return configuration;
+				}
+				set	
+				{
+					configuration = value;
+				}
+			}
+
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
+				}
+			}
+
+			public long? ResourceCreationTime
+			{
+				get
+				{
+					return resourceCreationTime;
+				}
+				set	
+				{
+					resourceCreationTime = value;
+				}
+			}
+
+			public string Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
 
 			public long? AccountId
 			{
@@ -102,15 +174,15 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				}
 			}
 
-			public string ResourceType
+			public int? ResourceDeleted
 			{
 				get
 				{
-					return resourceType;
+					return resourceDeleted;
 				}
 				set	
 				{
-					resourceType = value;
+					resourceDeleted = value;
 				}
 			}
 
@@ -126,42 +198,6 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				}
 			}
 
-			public string Region
-			{
-				get
-				{
-					return region;
-				}
-				set	
-				{
-					region = value;
-				}
-			}
-
-			public string AvailabilityZone
-			{
-				get
-				{
-					return availabilityZone;
-				}
-				set	
-				{
-					availabilityZone = value;
-				}
-			}
-
-			public long? ResourceCreationTime
-			{
-				get
-				{
-					return resourceCreationTime;
-				}
-				set	
-				{
-					resourceCreationTime = value;
-				}
-			}
-
 			public string ResourceStatus
 			{
 				get
@@ -171,42 +207,6 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				set	
 				{
 					resourceStatus = value;
-				}
-			}
-
-			public int? ResourceDeleted
-			{
-				get
-				{
-					return resourceDeleted;
-				}
-				set	
-				{
-					resourceDeleted = value;
-				}
-			}
-
-			public string Tags
-			{
-				get
-				{
-					return tags;
-				}
-				set	
-				{
-					tags = value;
-				}
-			}
-
-			public string Configuration
-			{
-				get
-				{
-					return configuration;
-				}
-				set	
-				{
-					configuration = value;
 				}
 			}
 		}

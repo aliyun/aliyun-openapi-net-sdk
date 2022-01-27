@@ -26,16 +26,16 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 {
     public class DeleteDevopsProjectSprintResponseUnmarshaller
     {
-        public static DeleteDevopsProjectSprintResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDevopsProjectSprintResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDevopsProjectSprintResponse deleteDevopsProjectSprintResponse = new DeleteDevopsProjectSprintResponse();
 
-			deleteDevopsProjectSprintResponse.HttpResponse = context.HttpResponse;
-			deleteDevopsProjectSprintResponse.Successful = context.BooleanValue("DeleteDevopsProjectSprint.Successful");
-			deleteDevopsProjectSprintResponse.ErrorCode = context.StringValue("DeleteDevopsProjectSprint.ErrorCode");
-			deleteDevopsProjectSprintResponse.ErrorMsg = context.StringValue("DeleteDevopsProjectSprint.ErrorMsg");
-			deleteDevopsProjectSprintResponse.RequestId = context.StringValue("DeleteDevopsProjectSprint.RequestId");
-			deleteDevopsProjectSprintResponse._Object = context.BooleanValue("DeleteDevopsProjectSprint.Object");
+			deleteDevopsProjectSprintResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDevopsProjectSprintResponse.ErrorMsg = _ctx.StringValue("DeleteDevopsProjectSprint.ErrorMsg");
+			deleteDevopsProjectSprintResponse.RequestId = _ctx.StringValue("DeleteDevopsProjectSprint.RequestId");
+			deleteDevopsProjectSprintResponse._Object = _ctx.BooleanValue("DeleteDevopsProjectSprint.Object");
+			deleteDevopsProjectSprintResponse.Successful = _ctx.BooleanValue("DeleteDevopsProjectSprint.Successful");
+			deleteDevopsProjectSprintResponse.ErrorCode = _ctx.StringValue("DeleteDevopsProjectSprint.ErrorCode");
         
 			return deleteDevopsProjectSprintResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeNatGatewaysResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeNatGateways_NatGateway> natGateways;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,75 +98,51 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeNatGateways_NatGateway
 		{
 
-			private string natGatewayId;
+			private string status;
 
-			private string regionId;
-
-			private string name;
-
-			private string description;
+			private string creationTime;
 
 			private string vpcId;
 
 			private string spec;
 
-			private string instanceChargeType;
+			private string description;
+
+			private string natGatewayId;
 
 			private string businessStatus;
 
-			private string creationTime;
+			private string name;
 
-			private string status;
+			private string instanceChargeType;
+
+			private string regionId;
 
 			private List<string> forwardTableIds;
 
 			private List<string> bandwidthPackageIds;
 
-			public string NatGatewayId
+			public string Status
 			{
 				get
 				{
-					return natGatewayId;
+					return status;
 				}
 				set	
 				{
-					natGatewayId = value;
+					status = value;
 				}
 			}
 
-			public string RegionId
+			public string CreationTime
 			{
 				get
 				{
-					return regionId;
+					return creationTime;
 				}
 				set	
 				{
-					regionId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
+					creationTime = value;
 				}
 			}
 
@@ -194,15 +170,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string InstanceChargeType
+			public string Description
 			{
 				get
 				{
-					return instanceChargeType;
+					return description;
 				}
 				set	
 				{
-					instanceChargeType = value;
+					description = value;
+				}
+			}
+
+			public string NatGatewayId
+			{
+				get
+				{
+					return natGatewayId;
+				}
+				set	
+				{
+					natGatewayId = value;
 				}
 			}
 
@@ -218,27 +206,39 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string CreationTime
+			public string Name
 			{
 				get
 				{
-					return creationTime;
+					return name;
 				}
 				set	
 				{
-					creationTime = value;
+					name = value;
 				}
 			}
 
-			public string Status
+			public string InstanceChargeType
 			{
 				get
 				{
-					return status;
+					return instanceChargeType;
 				}
 				set	
 				{
-					status = value;
+					instanceChargeType = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 

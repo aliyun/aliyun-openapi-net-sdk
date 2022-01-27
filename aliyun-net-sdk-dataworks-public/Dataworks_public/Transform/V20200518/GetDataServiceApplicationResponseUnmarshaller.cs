@@ -26,24 +26,24 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetDataServiceApplicationResponseUnmarshaller
     {
-        public static GetDataServiceApplicationResponse Unmarshall(UnmarshallerContext context)
+        public static GetDataServiceApplicationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetDataServiceApplicationResponse getDataServiceApplicationResponse = new GetDataServiceApplicationResponse();
 
-			getDataServiceApplicationResponse.HttpResponse = context.HttpResponse;
-			getDataServiceApplicationResponse.ErrorCode = context.StringValue("GetDataServiceApplication.ErrorCode");
-			getDataServiceApplicationResponse.ErrorMessage = context.StringValue("GetDataServiceApplication.ErrorMessage");
-			getDataServiceApplicationResponse.HttpStatusCode = context.IntegerValue("GetDataServiceApplication.HttpStatusCode");
-			getDataServiceApplicationResponse.RequestId = context.StringValue("GetDataServiceApplication.RequestId");
-			getDataServiceApplicationResponse.Success = context.BooleanValue("GetDataServiceApplication.Success");
+			getDataServiceApplicationResponse.HttpResponse = _ctx.HttpResponse;
+			getDataServiceApplicationResponse.ErrorCode = _ctx.StringValue("GetDataServiceApplication.ErrorCode");
+			getDataServiceApplicationResponse.ErrorMessage = _ctx.StringValue("GetDataServiceApplication.ErrorMessage");
+			getDataServiceApplicationResponse.HttpStatusCode = _ctx.IntegerValue("GetDataServiceApplication.HttpStatusCode");
+			getDataServiceApplicationResponse.RequestId = _ctx.StringValue("GetDataServiceApplication.RequestId");
+			getDataServiceApplicationResponse.Success = _ctx.BooleanValue("GetDataServiceApplication.Success");
 
 			GetDataServiceApplicationResponse.GetDataServiceApplication_Data data = new GetDataServiceApplicationResponse.GetDataServiceApplication_Data();
-			data.ApplicationCode = context.StringValue("GetDataServiceApplication.Data.ApplicationCode");
-			data.ApplicationId = context.LongValue("GetDataServiceApplication.Data.ApplicationId");
-			data.ApplicationKey = context.StringValue("GetDataServiceApplication.Data.ApplicationKey");
-			data.ApplicationName = context.StringValue("GetDataServiceApplication.Data.ApplicationName");
-			data.ApplicationSecret = context.StringValue("GetDataServiceApplication.Data.ApplicationSecret");
-			data.ProjectId = context.LongValue("GetDataServiceApplication.Data.ProjectId");
+			data.ApplicationCode = _ctx.StringValue("GetDataServiceApplication.Data.ApplicationCode");
+			data.ApplicationId = _ctx.LongValue("GetDataServiceApplication.Data.ApplicationId");
+			data.ApplicationKey = _ctx.StringValue("GetDataServiceApplication.Data.ApplicationKey");
+			data.ApplicationName = _ctx.StringValue("GetDataServiceApplication.Data.ApplicationName");
+			data.ApplicationSecret = _ctx.StringValue("GetDataServiceApplication.Data.ApplicationSecret");
+			data.ProjectId = _ctx.LongValue("GetDataServiceApplication.Data.ProjectId");
 			getDataServiceApplicationResponse.Data = data;
         
 			return getDataServiceApplicationResponse;

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DeployCacheDiskResponseUnmarshaller
     {
-        public static DeployCacheDiskResponse Unmarshall(UnmarshallerContext context)
+        public static DeployCacheDiskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeployCacheDiskResponse deployCacheDiskResponse = new DeployCacheDiskResponse();
 
-			deployCacheDiskResponse.HttpResponse = context.HttpResponse;
-			deployCacheDiskResponse.RequestId = context.StringValue("DeployCacheDisk.RequestId");
-			deployCacheDiskResponse.Success = context.BooleanValue("DeployCacheDisk.Success");
-			deployCacheDiskResponse.Code = context.StringValue("DeployCacheDisk.Code");
-			deployCacheDiskResponse.Message = context.StringValue("DeployCacheDisk.Message");
-			deployCacheDiskResponse.TaskId = context.StringValue("DeployCacheDisk.TaskId");
+			deployCacheDiskResponse.HttpResponse = _ctx.HttpResponse;
+			deployCacheDiskResponse.TaskId = _ctx.StringValue("DeployCacheDisk.TaskId");
+			deployCacheDiskResponse.Message = _ctx.StringValue("DeployCacheDisk.Message");
+			deployCacheDiskResponse.RequestId = _ctx.StringValue("DeployCacheDisk.RequestId");
+			deployCacheDiskResponse.Code = _ctx.StringValue("DeployCacheDisk.Code");
+			deployCacheDiskResponse.Success = _ctx.BooleanValue("DeployCacheDisk.Success");
         
 			return deployCacheDiskResponse;
         }

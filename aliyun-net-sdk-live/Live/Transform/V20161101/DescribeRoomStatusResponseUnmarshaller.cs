@@ -26,13 +26,13 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeRoomStatusResponseUnmarshaller
     {
-        public static DescribeRoomStatusResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRoomStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRoomStatusResponse describeRoomStatusResponse = new DescribeRoomStatusResponse();
 
-			describeRoomStatusResponse.HttpResponse = context.HttpResponse;
-			describeRoomStatusResponse.RequestId = context.StringValue("DescribeRoomStatus.RequestId");
-			describeRoomStatusResponse.RoomStatus = context.IntegerValue("DescribeRoomStatus.RoomStatus");
+			describeRoomStatusResponse.HttpResponse = _ctx.HttpResponse;
+			describeRoomStatusResponse.RequestId = _ctx.StringValue("DescribeRoomStatus.RequestId");
+			describeRoomStatusResponse.RoomStatus = _ctx.IntegerValue("DescribeRoomStatus.RoomStatus");
         
 			return describeRoomStatusResponse;
         }

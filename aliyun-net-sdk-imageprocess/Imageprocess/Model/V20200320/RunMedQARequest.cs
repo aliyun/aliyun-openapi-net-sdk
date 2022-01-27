@@ -40,22 +40,122 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			Method = MethodType.POST;
         }
 
-		private string question;
-
-		private string orgId;
+		private string sessionId;
 
 		private string orgName;
 
-		public string Question
+		private List<AnswerImageDataList> answerImageDataLists = new List<AnswerImageDataList>(){ };
+
+		private List<AnswerTextList> answerTextLists = new List<AnswerTextList>(){ };
+
+		private string department;
+
+		private List<AnswerImageURLList> answerImageURLLists = new List<AnswerImageURLList>(){ };
+
+		private string questionType;
+
+		private string orgId;
+
+		public string SessionId
 		{
 			get
 			{
-				return question;
+				return sessionId;
 			}
 			set	
 			{
-				question = value;
-				DictionaryUtil.Add(BodyParameters, "Question", value);
+				sessionId = value;
+				DictionaryUtil.Add(BodyParameters, "SessionId", value);
+			}
+		}
+
+		public string OrgName
+		{
+			get
+			{
+				return orgName;
+			}
+			set	
+			{
+				orgName = value;
+				DictionaryUtil.Add(BodyParameters, "OrgName", value);
+			}
+		}
+
+		public List<AnswerImageDataList> AnswerImageDataLists
+		{
+			get
+			{
+				return answerImageDataLists;
+			}
+
+			set
+			{
+				answerImageDataLists = value;
+				for (int i = 0; i < answerImageDataLists.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"AnswerImageDataList." + (i + 1) + ".AnswerImageData", answerImageDataLists[i].AnswerImageData);
+				}
+			}
+		}
+
+		public List<AnswerTextList> AnswerTextLists
+		{
+			get
+			{
+				return answerTextLists;
+			}
+
+			set
+			{
+				answerTextLists = value;
+				for (int i = 0; i < answerTextLists.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"AnswerTextList." + (i + 1) + ".AnswerText", answerTextLists[i].AnswerText);
+				}
+			}
+		}
+
+		public string Department
+		{
+			get
+			{
+				return department;
+			}
+			set	
+			{
+				department = value;
+				DictionaryUtil.Add(BodyParameters, "Department", value);
+			}
+		}
+
+		public List<AnswerImageURLList> AnswerImageURLLists
+		{
+			get
+			{
+				return answerImageURLLists;
+			}
+
+			set
+			{
+				answerImageURLLists = value;
+				for (int i = 0; i < answerImageURLLists.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"AnswerImageURLList." + (i + 1) + ".AnswerImageURL", answerImageURLLists[i].AnswerImageURL);
+				}
+			}
+		}
+
+		public string QuestionType
+		{
+			get
+			{
+				return questionType;
+			}
+			set	
+			{
+				questionType = value;
+				DictionaryUtil.Add(BodyParameters, "QuestionType", value);
 			}
 		}
 
@@ -72,16 +172,57 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			}
 		}
 
-		public string OrgName
+		public class AnswerImageDataList
 		{
-			get
+
+			private string answerImageData;
+
+			public string AnswerImageData
 			{
-				return orgName;
+				get
+				{
+					return answerImageData;
+				}
+				set	
+				{
+					answerImageData = value;
+				}
 			}
-			set	
+		}
+
+		public class AnswerTextList
+		{
+
+			private string answerText;
+
+			public string AnswerText
 			{
-				orgName = value;
-				DictionaryUtil.Add(BodyParameters, "OrgName", value);
+				get
+				{
+					return answerText;
+				}
+				set	
+				{
+					answerText = value;
+				}
+			}
+		}
+
+		public class AnswerImageURLList
+		{
+
+			private string answerImageURL;
+
+			public string AnswerImageURL
+			{
+				get
+				{
+					return answerImageURL;
+				}
+				set	
+				{
+					answerImageURL = value;
+				}
 			}
 		}
 

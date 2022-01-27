@@ -26,14 +26,14 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class SubmitIcpSolutionResponseUnmarshaller
     {
-        public static SubmitIcpSolutionResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitIcpSolutionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitIcpSolutionResponse submitIcpSolutionResponse = new SubmitIcpSolutionResponse();
 
-			submitIcpSolutionResponse.HttpResponse = context.HttpResponse;
-			submitIcpSolutionResponse.RequestId = context.StringValue("SubmitIcpSolution.RequestId");
-			submitIcpSolutionResponse.Success = context.BooleanValue("SubmitIcpSolution.Success");
-			submitIcpSolutionResponse.BizId = context.StringValue("SubmitIcpSolution.BizId");
+			submitIcpSolutionResponse.HttpResponse = _ctx.HttpResponse;
+			submitIcpSolutionResponse.RequestId = _ctx.StringValue("SubmitIcpSolution.RequestId");
+			submitIcpSolutionResponse.Success = _ctx.BooleanValue("SubmitIcpSolution.Success");
+			submitIcpSolutionResponse.BizId = _ctx.StringValue("SubmitIcpSolution.BizId");
         
 			return submitIcpSolutionResponse;
         }

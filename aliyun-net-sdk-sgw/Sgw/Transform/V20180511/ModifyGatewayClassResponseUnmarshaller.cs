@@ -26,17 +26,17 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class ModifyGatewayClassResponseUnmarshaller
     {
-        public static ModifyGatewayClassResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyGatewayClassResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyGatewayClassResponse modifyGatewayClassResponse = new ModifyGatewayClassResponse();
 
-			modifyGatewayClassResponse.HttpResponse = context.HttpResponse;
-			modifyGatewayClassResponse.RequestId = context.StringValue("ModifyGatewayClass.RequestId");
-			modifyGatewayClassResponse.Success = context.BooleanValue("ModifyGatewayClass.Success");
-			modifyGatewayClassResponse.Code = context.StringValue("ModifyGatewayClass.Code");
-			modifyGatewayClassResponse.Message = context.StringValue("ModifyGatewayClass.Message");
-			modifyGatewayClassResponse.TaskId = context.StringValue("ModifyGatewayClass.TaskId");
-			modifyGatewayClassResponse.BuyURL = context.StringValue("ModifyGatewayClass.BuyURL");
+			modifyGatewayClassResponse.HttpResponse = _ctx.HttpResponse;
+			modifyGatewayClassResponse.BuyURL = _ctx.StringValue("ModifyGatewayClass.BuyURL");
+			modifyGatewayClassResponse.TaskId = _ctx.StringValue("ModifyGatewayClass.TaskId");
+			modifyGatewayClassResponse.RequestId = _ctx.StringValue("ModifyGatewayClass.RequestId");
+			modifyGatewayClassResponse.Message = _ctx.StringValue("ModifyGatewayClass.Message");
+			modifyGatewayClassResponse.Code = _ctx.StringValue("ModifyGatewayClass.Code");
+			modifyGatewayClassResponse.Success = _ctx.BooleanValue("ModifyGatewayClass.Success");
         
 			return modifyGatewayClassResponse;
         }

@@ -26,18 +26,18 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class BatchUnbindPurchasedDevicesResponseUnmarshaller
     {
-        public static BatchUnbindPurchasedDevicesResponse Unmarshall(UnmarshallerContext context)
+        public static BatchUnbindPurchasedDevicesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchUnbindPurchasedDevicesResponse batchUnbindPurchasedDevicesResponse = new BatchUnbindPurchasedDevicesResponse();
 
-			batchUnbindPurchasedDevicesResponse.HttpResponse = context.HttpResponse;
-			batchUnbindPurchasedDevicesResponse.RequestId = context.StringValue("BatchUnbindPurchasedDevices.RequestId");
+			batchUnbindPurchasedDevicesResponse.HttpResponse = _ctx.HttpResponse;
+			batchUnbindPurchasedDevicesResponse.RequestId = _ctx.StringValue("BatchUnbindPurchasedDevices.RequestId");
 
 			List<BatchUnbindPurchasedDevicesResponse.BatchUnbindPurchasedDevices_Result> batchUnbindPurchasedDevicesResponse_results = new List<BatchUnbindPurchasedDevicesResponse.BatchUnbindPurchasedDevices_Result>();
-			for (int i = 0; i < context.Length("BatchUnbindPurchasedDevices.Results.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("BatchUnbindPurchasedDevices.Results.Length"); i++) {
 				BatchUnbindPurchasedDevicesResponse.BatchUnbindPurchasedDevices_Result result = new BatchUnbindPurchasedDevicesResponse.BatchUnbindPurchasedDevices_Result();
-				result.DeviceId = context.StringValue("BatchUnbindPurchasedDevices.Results["+ i +"].DeviceId");
-				result.Error = context.StringValue("BatchUnbindPurchasedDevices.Results["+ i +"].Error");
+				result.DeviceId = _ctx.StringValue("BatchUnbindPurchasedDevices.Results["+ i +"].DeviceId");
+				result.Error = _ctx.StringValue("BatchUnbindPurchasedDevices.Results["+ i +"].Error");
 
 				batchUnbindPurchasedDevicesResponse_results.Add(result);
 			}

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class UpdateEdgeInstanceResponseUnmarshaller
     {
-        public static UpdateEdgeInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateEdgeInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateEdgeInstanceResponse updateEdgeInstanceResponse = new UpdateEdgeInstanceResponse();
 
-			updateEdgeInstanceResponse.HttpResponse = context.HttpResponse;
-			updateEdgeInstanceResponse.RequestId = context.StringValue("UpdateEdgeInstance.RequestId");
-			updateEdgeInstanceResponse.Success = context.BooleanValue("UpdateEdgeInstance.Success");
-			updateEdgeInstanceResponse.Code = context.StringValue("UpdateEdgeInstance.Code");
-			updateEdgeInstanceResponse.ErrorMessage = context.StringValue("UpdateEdgeInstance.ErrorMessage");
+			updateEdgeInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			updateEdgeInstanceResponse.RequestId = _ctx.StringValue("UpdateEdgeInstance.RequestId");
+			updateEdgeInstanceResponse.Success = _ctx.BooleanValue("UpdateEdgeInstance.Success");
+			updateEdgeInstanceResponse.Code = _ctx.StringValue("UpdateEdgeInstance.Code");
+			updateEdgeInstanceResponse.ErrorMessage = _ctx.StringValue("UpdateEdgeInstance.ErrorMessage");
         
 			return updateEdgeInstanceResponse;
         }

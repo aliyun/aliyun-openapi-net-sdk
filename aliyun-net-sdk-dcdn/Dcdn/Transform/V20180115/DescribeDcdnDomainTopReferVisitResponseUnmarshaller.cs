@@ -26,23 +26,23 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 {
     public class DescribeDcdnDomainTopReferVisitResponseUnmarshaller
     {
-        public static DescribeDcdnDomainTopReferVisitResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDcdnDomainTopReferVisitResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDcdnDomainTopReferVisitResponse describeDcdnDomainTopReferVisitResponse = new DescribeDcdnDomainTopReferVisitResponse();
 
-			describeDcdnDomainTopReferVisitResponse.HttpResponse = context.HttpResponse;
-			describeDcdnDomainTopReferVisitResponse.RequestId = context.StringValue("DescribeDcdnDomainTopReferVisit.RequestId");
-			describeDcdnDomainTopReferVisitResponse.DomainName = context.StringValue("DescribeDcdnDomainTopReferVisit.DomainName");
-			describeDcdnDomainTopReferVisitResponse.StartTime = context.StringValue("DescribeDcdnDomainTopReferVisit.StartTime");
+			describeDcdnDomainTopReferVisitResponse.HttpResponse = _ctx.HttpResponse;
+			describeDcdnDomainTopReferVisitResponse.RequestId = _ctx.StringValue("DescribeDcdnDomainTopReferVisit.RequestId");
+			describeDcdnDomainTopReferVisitResponse.DomainName = _ctx.StringValue("DescribeDcdnDomainTopReferVisit.DomainName");
+			describeDcdnDomainTopReferVisitResponse.StartTime = _ctx.StringValue("DescribeDcdnDomainTopReferVisit.StartTime");
 
 			List<DescribeDcdnDomainTopReferVisitResponse.DescribeDcdnDomainTopReferVisit_ReferList> describeDcdnDomainTopReferVisitResponse_topReferList = new List<DescribeDcdnDomainTopReferVisitResponse.DescribeDcdnDomainTopReferVisit_ReferList>();
-			for (int i = 0; i < context.Length("DescribeDcdnDomainTopReferVisit.TopReferList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDcdnDomainTopReferVisit.TopReferList.Length"); i++) {
 				DescribeDcdnDomainTopReferVisitResponse.DescribeDcdnDomainTopReferVisit_ReferList referList = new DescribeDcdnDomainTopReferVisitResponse.DescribeDcdnDomainTopReferVisit_ReferList();
-				referList.ReferDetail = context.StringValue("DescribeDcdnDomainTopReferVisit.TopReferList["+ i +"].ReferDetail");
-				referList.VisitData = context.StringValue("DescribeDcdnDomainTopReferVisit.TopReferList["+ i +"].VisitData");
-				referList.VisitProportion = context.FloatValue("DescribeDcdnDomainTopReferVisit.TopReferList["+ i +"].VisitProportion");
-				referList.Flow = context.StringValue("DescribeDcdnDomainTopReferVisit.TopReferList["+ i +"].Flow");
-				referList.FlowProportion = context.FloatValue("DescribeDcdnDomainTopReferVisit.TopReferList["+ i +"].FlowProportion");
+				referList.ReferDetail = _ctx.StringValue("DescribeDcdnDomainTopReferVisit.TopReferList["+ i +"].ReferDetail");
+				referList.VisitData = _ctx.StringValue("DescribeDcdnDomainTopReferVisit.TopReferList["+ i +"].VisitData");
+				referList.VisitProportion = _ctx.FloatValue("DescribeDcdnDomainTopReferVisit.TopReferList["+ i +"].VisitProportion");
+				referList.Flow = _ctx.StringValue("DescribeDcdnDomainTopReferVisit.TopReferList["+ i +"].Flow");
+				referList.FlowProportion = _ctx.FloatValue("DescribeDcdnDomainTopReferVisit.TopReferList["+ i +"].FlowProportion");
 
 				describeDcdnDomainTopReferVisitResponse_topReferList.Add(referList);
 			}

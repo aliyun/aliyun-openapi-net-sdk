@@ -26,17 +26,18 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 {
     public class CheckReceivingDetailResponseUnmarshaller
     {
-        public static CheckReceivingDetailResponse Unmarshall(UnmarshallerContext context)
+        public static CheckReceivingDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckReceivingDetailResponse checkReceivingDetailResponse = new CheckReceivingDetailResponse();
 
-			checkReceivingDetailResponse.HttpResponse = context.HttpResponse;
-			checkReceivingDetailResponse.RequestId = context.StringValue("CheckReceivingDetail.RequestId");
-			checkReceivingDetailResponse.Status = context.BooleanValue("CheckReceivingDetail.Status");
-			checkReceivingDetailResponse.Msg = context.StringValue("CheckReceivingDetail.Msg");
-			checkReceivingDetailResponse.ErrorCode = context.StringValue("CheckReceivingDetail.ErrorCode");
-			checkReceivingDetailResponse.HasPromotion = context.BooleanValue("CheckReceivingDetail.HasPromotion");
-			checkReceivingDetailResponse.TradeOrderId = context.StringValue("CheckReceivingDetail.TradeOrderId");
+			checkReceivingDetailResponse.HttpResponse = _ctx.HttpResponse;
+			checkReceivingDetailResponse.Status = _ctx.BooleanValue("CheckReceivingDetail.Status");
+			checkReceivingDetailResponse.Msg = _ctx.StringValue("CheckReceivingDetail.Msg");
+			checkReceivingDetailResponse.RequestId = _ctx.StringValue("CheckReceivingDetail.RequestId");
+			checkReceivingDetailResponse.ErrorCode = _ctx.StringValue("CheckReceivingDetail.ErrorCode");
+			checkReceivingDetailResponse.TradeOrderId = _ctx.StringValue("CheckReceivingDetail.TradeOrderId");
+			checkReceivingDetailResponse.HasPromotion = _ctx.BooleanValue("CheckReceivingDetail.HasPromotion");
+			checkReceivingDetailResponse.UnionAmount = _ctx.StringValue("CheckReceivingDetail.UnionAmount");
         
 			return checkReceivingDetailResponse;
         }

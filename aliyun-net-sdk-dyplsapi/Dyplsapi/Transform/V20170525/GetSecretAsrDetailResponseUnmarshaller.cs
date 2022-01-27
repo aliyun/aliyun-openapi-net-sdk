@@ -26,15 +26,39 @@ namespace Aliyun.Acs.Dyplsapi.Transform.V20170525
 {
     public class GetSecretAsrDetailResponseUnmarshaller
     {
-        public static GetSecretAsrDetailResponse Unmarshall(UnmarshallerContext context)
+        public static GetSecretAsrDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetSecretAsrDetailResponse getSecretAsrDetailResponse = new GetSecretAsrDetailResponse();
 
-			getSecretAsrDetailResponse.HttpResponse = context.HttpResponse;
-			getSecretAsrDetailResponse.RequestId = context.StringValue("GetSecretAsrDetail.RequestId");
-			getSecretAsrDetailResponse.Code = context.StringValue("GetSecretAsrDetail.Code");
-			getSecretAsrDetailResponse.Message = context.StringValue("GetSecretAsrDetail.Message");
-			getSecretAsrDetailResponse.Data = context.StringValue("GetSecretAsrDetail.Data");
+			getSecretAsrDetailResponse.HttpResponse = _ctx.HttpResponse;
+			getSecretAsrDetailResponse.Code = _ctx.StringValue("GetSecretAsrDetail.Code");
+			getSecretAsrDetailResponse.Message = _ctx.StringValue("GetSecretAsrDetail.Message");
+			getSecretAsrDetailResponse.RequestId = _ctx.StringValue("GetSecretAsrDetail.RequestId");
+
+			GetSecretAsrDetailResponse.GetSecretAsrDetail_Data data = new GetSecretAsrDetailResponse.GetSecretAsrDetail_Data();
+			data.RequestId = _ctx.StringValue("GetSecretAsrDetail.Data.RequestId");
+			data.BusinessId = _ctx.StringValue("GetSecretAsrDetail.Data.BusinessId");
+			data.BusinessKey = _ctx.StringValue("GetSecretAsrDetail.Data.BusinessKey");
+			data.Code = _ctx.StringValue("GetSecretAsrDetail.Data.Code");
+			data.Msg = _ctx.StringValue("GetSecretAsrDetail.Data.Msg");
+			data.BizDuration = _ctx.LongValue("GetSecretAsrDetail.Data.BizDuration");
+			data.Type = _ctx.StringValue("GetSecretAsrDetail.Data.Type");
+
+			List<GetSecretAsrDetailResponse.GetSecretAsrDetail_Data.GetSecretAsrDetail_SecretAsrSentenceDTO> data_sentences = new List<GetSecretAsrDetailResponse.GetSecretAsrDetail_Data.GetSecretAsrDetail_SecretAsrSentenceDTO>();
+			for (int i = 0; i < _ctx.Length("GetSecretAsrDetail.Data.Sentences.Length"); i++) {
+				GetSecretAsrDetailResponse.GetSecretAsrDetail_Data.GetSecretAsrDetail_SecretAsrSentenceDTO secretAsrSentenceDTO = new GetSecretAsrDetailResponse.GetSecretAsrDetail_Data.GetSecretAsrDetail_SecretAsrSentenceDTO();
+				secretAsrSentenceDTO.EndTime = _ctx.LongValue("GetSecretAsrDetail.Data.Sentences["+ i +"].EndTime");
+				secretAsrSentenceDTO.SilenceDuration = _ctx.LongValue("GetSecretAsrDetail.Data.Sentences["+ i +"].SilenceDuration");
+				secretAsrSentenceDTO.BeginTime = _ctx.LongValue("GetSecretAsrDetail.Data.Sentences["+ i +"].BeginTime");
+				secretAsrSentenceDTO.Text = _ctx.StringValue("GetSecretAsrDetail.Data.Sentences["+ i +"].Text");
+				secretAsrSentenceDTO.ChannelId = _ctx.IntegerValue("GetSecretAsrDetail.Data.Sentences["+ i +"].ChannelId");
+				secretAsrSentenceDTO.SpeechRate = _ctx.IntegerValue("GetSecretAsrDetail.Data.Sentences["+ i +"].SpeechRate");
+				secretAsrSentenceDTO.EmotionValue = _ctx.StringValue("GetSecretAsrDetail.Data.Sentences["+ i +"].EmotionValue");
+
+				data_sentences.Add(secretAsrSentenceDTO);
+			}
+			data.Sentences = data_sentences;
+			getSecretAsrDetailResponse.Data = data;
         
 			return getSecretAsrDetailResponse;
         }

@@ -26,21 +26,21 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeGatewayStockResponseUnmarshaller
     {
-        public static DescribeGatewayStockResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGatewayStockResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGatewayStockResponse describeGatewayStockResponse = new DescribeGatewayStockResponse();
 
-			describeGatewayStockResponse.HttpResponse = context.HttpResponse;
-			describeGatewayStockResponse.RequestId = context.StringValue("DescribeGatewayStock.RequestId");
-			describeGatewayStockResponse.Success = context.BooleanValue("DescribeGatewayStock.Success");
-			describeGatewayStockResponse.Code = context.StringValue("DescribeGatewayStock.Code");
-			describeGatewayStockResponse.Message = context.StringValue("DescribeGatewayStock.Message");
+			describeGatewayStockResponse.HttpResponse = _ctx.HttpResponse;
+			describeGatewayStockResponse.Message = _ctx.StringValue("DescribeGatewayStock.Message");
+			describeGatewayStockResponse.RequestId = _ctx.StringValue("DescribeGatewayStock.RequestId");
+			describeGatewayStockResponse.Code = _ctx.StringValue("DescribeGatewayStock.Code");
+			describeGatewayStockResponse.Success = _ctx.BooleanValue("DescribeGatewayStock.Success");
 
 			List<DescribeGatewayStockResponse.DescribeGatewayStock_Stock> describeGatewayStockResponse_stocks = new List<DescribeGatewayStockResponse.DescribeGatewayStock_Stock>();
-			for (int i = 0; i < context.Length("DescribeGatewayStock.Stocks.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeGatewayStock.Stocks.Length"); i++) {
 				DescribeGatewayStockResponse.DescribeGatewayStock_Stock stock = new DescribeGatewayStockResponse.DescribeGatewayStock_Stock();
-				stock.ZoneId = context.StringValue("DescribeGatewayStock.Stocks["+ i +"].ZoneId");
-				stock.StockInfo = context.StringValue("DescribeGatewayStock.Stocks["+ i +"].StockInfo");
+				stock.StockInfo = _ctx.StringValue("DescribeGatewayStock.Stocks["+ i +"].StockInfo");
+				stock.ZoneId = _ctx.StringValue("DescribeGatewayStock.Stocks["+ i +"].ZoneId");
 
 				describeGatewayStockResponse_stocks.Add(stock);
 			}

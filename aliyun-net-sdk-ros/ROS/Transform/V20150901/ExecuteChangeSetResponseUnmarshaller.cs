@@ -26,12 +26,12 @@ namespace Aliyun.Acs.ROS.Transform.V20150901
 {
     public class ExecuteChangeSetResponseUnmarshaller
     {
-        public static ExecuteChangeSetResponse Unmarshall(UnmarshallerContext context)
+        public static ExecuteChangeSetResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ExecuteChangeSetResponse executeChangeSetResponse = new ExecuteChangeSetResponse();
 
-			executeChangeSetResponse.HttpResponse = context.HttpResponse;
-			executeChangeSetResponse.Dummy = context.StringValue("ExecuteChangeSet.Dummy");
+			executeChangeSetResponse.HttpResponse = _ctx.HttpResponse;
+			executeChangeSetResponse.Dummy = _ctx.StringValue("ExecuteChangeSet.Dummy");
         
 			return executeChangeSetResponse;
         }

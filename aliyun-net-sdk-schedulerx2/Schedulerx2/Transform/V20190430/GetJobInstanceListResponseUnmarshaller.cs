@@ -26,34 +26,34 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 {
     public class GetJobInstanceListResponseUnmarshaller
     {
-        public static GetJobInstanceListResponse Unmarshall(UnmarshallerContext context)
+        public static GetJobInstanceListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetJobInstanceListResponse getJobInstanceListResponse = new GetJobInstanceListResponse();
 
-			getJobInstanceListResponse.HttpResponse = context.HttpResponse;
-			getJobInstanceListResponse.RequestId = context.StringValue("GetJobInstanceList.RequestId");
-			getJobInstanceListResponse.Code = context.IntegerValue("GetJobInstanceList.Code");
-			getJobInstanceListResponse.Message = context.StringValue("GetJobInstanceList.Message");
-			getJobInstanceListResponse.Success = context.BooleanValue("GetJobInstanceList.Success");
+			getJobInstanceListResponse.HttpResponse = _ctx.HttpResponse;
+			getJobInstanceListResponse.Code = _ctx.IntegerValue("GetJobInstanceList.Code");
+			getJobInstanceListResponse.Message = _ctx.StringValue("GetJobInstanceList.Message");
+			getJobInstanceListResponse.RequestId = _ctx.StringValue("GetJobInstanceList.RequestId");
+			getJobInstanceListResponse.Success = _ctx.BooleanValue("GetJobInstanceList.Success");
 
 			GetJobInstanceListResponse.GetJobInstanceList_Data data = new GetJobInstanceListResponse.GetJobInstanceList_Data();
 
 			List<GetJobInstanceListResponse.GetJobInstanceList_Data.GetJobInstanceList_JobInstanceDetailsItem> data_jobInstanceDetails = new List<GetJobInstanceListResponse.GetJobInstanceList_Data.GetJobInstanceList_JobInstanceDetailsItem>();
-			for (int i = 0; i < context.Length("GetJobInstanceList.Data.JobInstanceDetails.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetJobInstanceList.Data.JobInstanceDetails.Length"); i++) {
 				GetJobInstanceListResponse.GetJobInstanceList_Data.GetJobInstanceList_JobInstanceDetailsItem jobInstanceDetailsItem = new GetJobInstanceListResponse.GetJobInstanceList_Data.GetJobInstanceList_JobInstanceDetailsItem();
-				jobInstanceDetailsItem.InstanceId = context.LongValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].InstanceId");
-				jobInstanceDetailsItem.JobId = context.LongValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].JobId");
-				jobInstanceDetailsItem.Status = context.IntegerValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].Status");
-				jobInstanceDetailsItem.StartTime = context.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].StartTime");
-				jobInstanceDetailsItem.EndTime = context.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].EndTime");
-				jobInstanceDetailsItem.ScheduleTime = context.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].ScheduleTime");
-				jobInstanceDetailsItem.DataTime = context.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].DataTime");
-				jobInstanceDetailsItem.Executor = context.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].Executor");
-				jobInstanceDetailsItem.WorkAddr = context.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].WorkAddr");
-				jobInstanceDetailsItem.Result = context.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].Result");
-				jobInstanceDetailsItem.Progress = context.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].Progress");
-				jobInstanceDetailsItem.TimeType = context.IntegerValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].TimeType");
-				jobInstanceDetailsItem.TriggerType = context.IntegerValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].TriggerType");
+				jobInstanceDetailsItem.Status = _ctx.IntegerValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].Status");
+				jobInstanceDetailsItem.Progress = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].Progress");
+				jobInstanceDetailsItem.Result = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].Result");
+				jobInstanceDetailsItem.InstanceId = _ctx.LongValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].InstanceId");
+				jobInstanceDetailsItem.TimeType = _ctx.IntegerValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].TimeType");
+				jobInstanceDetailsItem.TriggerType = _ctx.IntegerValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].TriggerType");
+				jobInstanceDetailsItem.EndTime = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].EndTime");
+				jobInstanceDetailsItem.StartTime = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].StartTime");
+				jobInstanceDetailsItem.Executor = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].Executor");
+				jobInstanceDetailsItem.JobId = _ctx.LongValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].JobId");
+				jobInstanceDetailsItem.ScheduleTime = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].ScheduleTime");
+				jobInstanceDetailsItem.DataTime = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].DataTime");
+				jobInstanceDetailsItem.WorkAddr = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].WorkAddr");
 
 				data_jobInstanceDetails.Add(jobInstanceDetailsItem);
 			}

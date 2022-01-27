@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class TransformToPrePaidRequest : RpcAcsRequest<TransformToPrePaidResponse>
     {
         public TransformToPrePaidRequest()
-            : base("Dds", "2015-12-01", "TransformToPrePaid", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "TransformToPrePaid", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -51,8 +51,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private long? period;
 
 		private bool? autoPay;
-
-		private string fromApp;
 
 		private string resourceOwnerAccount;
 
@@ -139,19 +137,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				autoPay = value;
 				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
-			}
-		}
-
-		public string FromApp
-		{
-			get
-			{
-				return fromApp;
-			}
-			set	
-			{
-				fromApp = value;
-				DictionaryUtil.Add(QueryParameters, "FromApp", value);
 			}
 		}
 

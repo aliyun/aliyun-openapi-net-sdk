@@ -26,23 +26,31 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeFieldStatisticsResponseUnmarshaller
     {
-        public static DescribeFieldStatisticsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeFieldStatisticsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeFieldStatisticsResponse describeFieldStatisticsResponse = new DescribeFieldStatisticsResponse();
 
-			describeFieldStatisticsResponse.HttpResponse = context.HttpResponse;
-			describeFieldStatisticsResponse.RequestId = context.StringValue("DescribeFieldStatistics.RequestId");
+			describeFieldStatisticsResponse.HttpResponse = _ctx.HttpResponse;
+			describeFieldStatisticsResponse.RequestId = _ctx.StringValue("DescribeFieldStatistics.RequestId");
 
 			DescribeFieldStatisticsResponse.DescribeFieldStatistics_GroupedFields groupedFields = new DescribeFieldStatisticsResponse.DescribeFieldStatistics_GroupedFields();
-			groupedFields.RiskInstanceCount = context.IntegerValue("DescribeFieldStatistics.GroupedFields.RiskInstanceCount");
-			groupedFields.InstanceCount = context.IntegerValue("DescribeFieldStatistics.GroupedFields.InstanceCount");
-			groupedFields.NewInstanceCount = context.IntegerValue("DescribeFieldStatistics.GroupedFields.NewInstanceCount");
-			groupedFields.RegionCount = context.IntegerValue("DescribeFieldStatistics.GroupedFields.RegionCount");
-			groupedFields.UnprotectedInstanceCount = context.IntegerValue("DescribeFieldStatistics.GroupedFields.UnprotectedInstanceCount");
-			groupedFields.VpcCount = context.IntegerValue("DescribeFieldStatistics.GroupedFields.VpcCount");
-			groupedFields.GroupCount = context.IntegerValue("DescribeFieldStatistics.GroupedFields.GroupCount");
-			groupedFields.NotRunningStatusCount = context.IntegerValue("DescribeFieldStatistics.GroupedFields.NotRunningStatusCount");
-			groupedFields.OfflineInstanceCount = context.IntegerValue("DescribeFieldStatistics.GroupedFields.OfflineInstanceCount");
+			groupedFields.RiskInstanceCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.RiskInstanceCount");
+			groupedFields.InstanceCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.InstanceCount");
+			groupedFields.NewInstanceCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.NewInstanceCount");
+			groupedFields.RegionCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.RegionCount");
+			groupedFields.UnprotectedInstanceCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.UnprotectedInstanceCount");
+			groupedFields.VpcCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.VpcCount");
+			groupedFields.GroupCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.GroupCount");
+			groupedFields.NotRunningStatusCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.NotRunningStatusCount");
+			groupedFields.OfflineInstanceCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.OfflineInstanceCount");
+			groupedFields.ImportantAssetCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.ImportantAssetCount");
+			groupedFields.GeneralAssetCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.GeneralAssetCount");
+			groupedFields.TestAssetCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.TestAssetCount");
+			groupedFields.ExposedInstanceCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.ExposedInstanceCount");
+			groupedFields.AliYunInstanceCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.AliYunInstanceCount");
+			groupedFields.IdcInstanceCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.IdcInstanceCount");
+			groupedFields.TencentInstanceCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.TencentInstanceCount");
+			groupedFields.InstanceSyncTaskCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.InstanceSyncTaskCount");
 			describeFieldStatisticsResponse.GroupedFields = groupedFields;
         
 			return describeFieldStatisticsResponse;

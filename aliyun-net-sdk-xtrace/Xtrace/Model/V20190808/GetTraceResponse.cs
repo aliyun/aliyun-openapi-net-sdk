@@ -74,6 +74,10 @@ namespace Aliyun.Acs.xtrace.Model.V20190808
 
 			private bool? haveStack;
 
+			private string spanId;
+
+			private string parentSpanId;
+
 			private List<GetTrace_TagEntry> tagEntryList;
 
 			private List<GetTrace_LogEvent> logEventList;
@@ -183,6 +187,30 @@ namespace Aliyun.Acs.xtrace.Model.V20190808
 				set	
 				{
 					haveStack = value;
+				}
+			}
+
+			public string SpanId
+			{
+				get
+				{
+					return spanId;
+				}
+				set	
+				{
+					spanId = value;
+				}
+			}
+
+			public string ParentSpanId
+			{
+				get
+				{
+					return parentSpanId;
+				}
+				set	
+				{
+					parentSpanId = value;
 				}
 			}
 

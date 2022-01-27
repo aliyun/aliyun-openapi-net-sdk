@@ -34,13 +34,11 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.aliyuncvc.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.aliyuncvc.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
-
-		private string memo;
 
 		private string userId;
 
@@ -49,19 +47,6 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 		private string password;
 
 		private string liveName;
-
-		public string Memo
-		{
-			get
-			{
-				return memo;
-			}
-			set	
-			{
-				memo = value;
-				DictionaryUtil.Add(BodyParameters, "Memo", value);
-			}
-		}
 
 		public string UserId
 		{

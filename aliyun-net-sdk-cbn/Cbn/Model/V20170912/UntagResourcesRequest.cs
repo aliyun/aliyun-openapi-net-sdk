@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -30,29 +31,31 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class UntagResourcesRequest : RpcAcsRequest<UntagResourcesResponse>
     {
         public UntagResourcesRequest()
-            : base("Cbn", "2017-09-12", "UntagResources", "cbn", "openAPI")
+            : base("Cbn", "2017-09-12", "UntagResources")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private List<string> resourceIds;
+		private bool? all;
+
+		private List<string> resourceIds = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private long? tagOwnerUid;
-
-		private string action;
-
-		private string tagOwnerBid;
-
 		private long? ownerId;
 
-		private List<string> tagKeys;
-
 		private string resourceType;
+
+		private List<string> tagKeys = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -67,6 +70,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
+		public bool? All
+		{
+			get
+			{
+				return all;
+			}
+			set	
+			{
+				all = value;
+				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
+			}
+		}
+
 		public List<string> ResourceIds
 		{
 			get
@@ -77,10 +93,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				resourceIds = value;
-				for (int i = 0; i < resourceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
-				}
 			}
 		}
 
@@ -110,45 +122,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public long? TagOwnerUid
-		{
-			get
-			{
-				return tagOwnerUid;
-			}
-			set	
-			{
-				tagOwnerUid = value;
-				DictionaryUtil.Add(QueryParameters, "TagOwnerUid", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string TagOwnerBid
-		{
-			get
-			{
-				return tagOwnerBid;
-			}
-			set	
-			{
-				tagOwnerBid = value;
-				DictionaryUtil.Add(QueryParameters, "TagOwnerBid", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -162,23 +135,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public List<string> TagKeys
-		{
-			get
-			{
-				return tagKeys;
-			}
-
-			set
-			{
-				tagKeys = value;
-				for (int i = 0; i < tagKeys.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TagKey." + (i + 1) , tagKeys[i]);
-				}
-			}
-		}
-
 		public string ResourceType
 		{
 			get
@@ -189,6 +145,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				resourceType = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+			}
+		}
+
+		public List<string> TagKeys
+		{
+			get
+			{
+				return tagKeys;
+			}
+
+			set
+			{
+				tagKeys = value;
 			}
 		}
 

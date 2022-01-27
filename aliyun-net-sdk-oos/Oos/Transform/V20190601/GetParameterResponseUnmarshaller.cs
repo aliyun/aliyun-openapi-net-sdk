@@ -26,26 +26,27 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 {
     public class GetParameterResponseUnmarshaller
     {
-        public static GetParameterResponse Unmarshall(UnmarshallerContext context)
+        public static GetParameterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetParameterResponse getParameterResponse = new GetParameterResponse();
 
-			getParameterResponse.HttpResponse = context.HttpResponse;
-			getParameterResponse.RequestId = context.StringValue("GetParameter.RequestId");
+			getParameterResponse.HttpResponse = _ctx.HttpResponse;
+			getParameterResponse.RequestId = _ctx.StringValue("GetParameter.RequestId");
 
 			GetParameterResponse.GetParameter_Parameter parameter = new GetParameterResponse.GetParameter_Parameter();
-			parameter.Id = context.StringValue("GetParameter.Parameter.Id");
-			parameter.Name = context.StringValue("GetParameter.Parameter.Name");
-			parameter.CreatedDate = context.StringValue("GetParameter.Parameter.CreatedDate");
-			parameter.CreatedBy = context.StringValue("GetParameter.Parameter.CreatedBy");
-			parameter.UpdatedDate = context.StringValue("GetParameter.Parameter.UpdatedDate");
-			parameter.UpdatedBy = context.StringValue("GetParameter.Parameter.UpdatedBy");
-			parameter.Description = context.StringValue("GetParameter.Parameter.Description");
-			parameter.ShareType = context.StringValue("GetParameter.Parameter.ShareType");
-			parameter.ParameterVersion = context.IntegerValue("GetParameter.Parameter.ParameterVersion");
-			parameter.Type = context.StringValue("GetParameter.Parameter.Type");
-			parameter._Value = context.StringValue("GetParameter.Parameter.Value");
-			parameter.Constraints = context.StringValue("GetParameter.Parameter.Constraints");
+			parameter.Id = _ctx.StringValue("GetParameter.Parameter.Id");
+			parameter.Name = _ctx.StringValue("GetParameter.Parameter.Name");
+			parameter.CreatedDate = _ctx.StringValue("GetParameter.Parameter.CreatedDate");
+			parameter.CreatedBy = _ctx.StringValue("GetParameter.Parameter.CreatedBy");
+			parameter.UpdatedDate = _ctx.StringValue("GetParameter.Parameter.UpdatedDate");
+			parameter.UpdatedBy = _ctx.StringValue("GetParameter.Parameter.UpdatedBy");
+			parameter.Description = _ctx.StringValue("GetParameter.Parameter.Description");
+			parameter.ShareType = _ctx.StringValue("GetParameter.Parameter.ShareType");
+			parameter.ParameterVersion = _ctx.IntegerValue("GetParameter.Parameter.ParameterVersion");
+			parameter.Type = _ctx.StringValue("GetParameter.Parameter.Type");
+			parameter._Value = _ctx.StringValue("GetParameter.Parameter.Value");
+			parameter.Constraints = _ctx.StringValue("GetParameter.Parameter.Constraints");
+			parameter.Tags = _ctx.StringValue("GetParameter.Parameter.Tags");
 			getParameterResponse.Parameter = parameter;
         
 			return getParameterResponse;

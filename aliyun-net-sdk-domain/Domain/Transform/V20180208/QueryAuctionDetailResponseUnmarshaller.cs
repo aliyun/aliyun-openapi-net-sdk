@@ -26,34 +26,34 @@ namespace Aliyun.Acs.Domain.Transform.V20180208
 {
     public class QueryAuctionDetailResponseUnmarshaller
     {
-        public static QueryAuctionDetailResponse Unmarshall(UnmarshallerContext context)
+        public static QueryAuctionDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryAuctionDetailResponse queryAuctionDetailResponse = new QueryAuctionDetailResponse();
 
-			queryAuctionDetailResponse.HttpResponse = context.HttpResponse;
-			queryAuctionDetailResponse.RequestId = context.StringValue("QueryAuctionDetail.RequestId");
-			queryAuctionDetailResponse.DomainName = context.StringValue("QueryAuctionDetail.DomainName");
-			queryAuctionDetailResponse.AuctionId = context.StringValue("QueryAuctionDetail.AuctionId");
-			queryAuctionDetailResponse.DomainType = context.StringValue("QueryAuctionDetail.DomainType");
-			queryAuctionDetailResponse.BookedPartner = context.StringValue("QueryAuctionDetail.BookedPartner");
-			queryAuctionDetailResponse.PartnerType = context.StringValue("QueryAuctionDetail.PartnerType");
-			queryAuctionDetailResponse.Currency = context.StringValue("QueryAuctionDetail.Currency");
-			queryAuctionDetailResponse.YourCurrentBid = context.FloatValue("QueryAuctionDetail.YourCurrentBid");
-			queryAuctionDetailResponse.YourMaxBid = context.FloatValue("QueryAuctionDetail.YourMaxBid");
-			queryAuctionDetailResponse.HighBid = context.FloatValue("QueryAuctionDetail.HighBid");
-			queryAuctionDetailResponse.NextValidBid = context.FloatValue("QueryAuctionDetail.NextValidBid");
-			queryAuctionDetailResponse.ReserveMet = context.BooleanValue("QueryAuctionDetail.ReserveMet");
-			queryAuctionDetailResponse.TransferInPrice = context.FloatValue("QueryAuctionDetail.TransferInPrice");
-			queryAuctionDetailResponse.PayPrice = context.FloatValue("QueryAuctionDetail.PayPrice");
-			queryAuctionDetailResponse.HighBidder = context.StringValue("QueryAuctionDetail.HighBidder");
-			queryAuctionDetailResponse.Status = context.StringValue("QueryAuctionDetail.Status");
-			queryAuctionDetailResponse.PayStatus = context.StringValue("QueryAuctionDetail.PayStatus");
-			queryAuctionDetailResponse.ProduceStatus = context.StringValue("QueryAuctionDetail.ProduceStatus");
-			queryAuctionDetailResponse.AuctionEndTime = context.LongValue("QueryAuctionDetail.AuctionEndTime");
-			queryAuctionDetailResponse.BookEndTime = context.LongValue("QueryAuctionDetail.BookEndTime");
-			queryAuctionDetailResponse.PayEndTime = context.LongValue("QueryAuctionDetail.PayEndTime");
-			queryAuctionDetailResponse.DeliveryTime = context.LongValue("QueryAuctionDetail.DeliveryTime");
-			queryAuctionDetailResponse.FailCode = context.StringValue("QueryAuctionDetail.FailCode");
+			queryAuctionDetailResponse.HttpResponse = _ctx.HttpResponse;
+			queryAuctionDetailResponse.RequestId = _ctx.StringValue("QueryAuctionDetail.RequestId");
+			queryAuctionDetailResponse.DomainName = _ctx.StringValue("QueryAuctionDetail.DomainName");
+			queryAuctionDetailResponse.AuctionId = _ctx.StringValue("QueryAuctionDetail.AuctionId");
+			queryAuctionDetailResponse.DomainType = _ctx.StringValue("QueryAuctionDetail.DomainType");
+			queryAuctionDetailResponse.BookedPartner = _ctx.StringValue("QueryAuctionDetail.BookedPartner");
+			queryAuctionDetailResponse.PartnerType = _ctx.StringValue("QueryAuctionDetail.PartnerType");
+			queryAuctionDetailResponse.Currency = _ctx.StringValue("QueryAuctionDetail.Currency");
+			queryAuctionDetailResponse.YourCurrentBid = _ctx.FloatValue("QueryAuctionDetail.YourCurrentBid");
+			queryAuctionDetailResponse.YourMaxBid = _ctx.FloatValue("QueryAuctionDetail.YourMaxBid");
+			queryAuctionDetailResponse.HighBid = _ctx.FloatValue("QueryAuctionDetail.HighBid");
+			queryAuctionDetailResponse.NextValidBid = _ctx.FloatValue("QueryAuctionDetail.NextValidBid");
+			queryAuctionDetailResponse.ReserveMet = _ctx.BooleanValue("QueryAuctionDetail.ReserveMet");
+			queryAuctionDetailResponse.TransferInPrice = _ctx.FloatValue("QueryAuctionDetail.TransferInPrice");
+			queryAuctionDetailResponse.PayPrice = _ctx.FloatValue("QueryAuctionDetail.PayPrice");
+			queryAuctionDetailResponse.HighBidder = _ctx.StringValue("QueryAuctionDetail.HighBidder");
+			queryAuctionDetailResponse.Status = _ctx.StringValue("QueryAuctionDetail.Status");
+			queryAuctionDetailResponse.PayStatus = _ctx.StringValue("QueryAuctionDetail.PayStatus");
+			queryAuctionDetailResponse.ProduceStatus = _ctx.StringValue("QueryAuctionDetail.ProduceStatus");
+			queryAuctionDetailResponse.AuctionEndTime = _ctx.LongValue("QueryAuctionDetail.AuctionEndTime");
+			queryAuctionDetailResponse.BookEndTime = _ctx.LongValue("QueryAuctionDetail.BookEndTime");
+			queryAuctionDetailResponse.PayEndTime = _ctx.LongValue("QueryAuctionDetail.PayEndTime");
+			queryAuctionDetailResponse.DeliveryTime = _ctx.LongValue("QueryAuctionDetail.DeliveryTime");
+			queryAuctionDetailResponse.FailCode = _ctx.StringValue("QueryAuctionDetail.FailCode");
         
 			return queryAuctionDetailResponse;
         }

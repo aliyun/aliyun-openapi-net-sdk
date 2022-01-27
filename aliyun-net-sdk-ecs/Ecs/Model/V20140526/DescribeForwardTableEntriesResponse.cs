@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeForwardTableEntriesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeForwardTableEntries_ForwardTableEntry> forwardTableEntries;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,31 +98,31 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeForwardTableEntries_ForwardTableEntry
 		{
 
-			private string forwardTableId;
+			private string status;
 
 			private string forwardEntryId;
-
-			private string externalIp;
-
-			private string externalPort;
-
-			private string ipProtocol;
 
 			private string internalIp;
 
 			private string internalPort;
 
-			private string status;
+			private string forwardTableId;
 
-			public string ForwardTableId
+			private string externalPort;
+
+			private string ipProtocol;
+
+			private string externalIp;
+
+			public string Status
 			{
 				get
 				{
-					return forwardTableId;
+					return status;
 				}
 				set	
 				{
-					forwardTableId = value;
+					status = value;
 				}
 			}
 
@@ -135,42 +135,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					forwardEntryId = value;
-				}
-			}
-
-			public string ExternalIp
-			{
-				get
-				{
-					return externalIp;
-				}
-				set	
-				{
-					externalIp = value;
-				}
-			}
-
-			public string ExternalPort
-			{
-				get
-				{
-					return externalPort;
-				}
-				set	
-				{
-					externalPort = value;
-				}
-			}
-
-			public string IpProtocol
-			{
-				get
-				{
-					return ipProtocol;
-				}
-				set	
-				{
-					ipProtocol = value;
 				}
 			}
 
@@ -198,15 +162,51 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Status
+			public string ForwardTableId
 			{
 				get
 				{
-					return status;
+					return forwardTableId;
 				}
 				set	
 				{
-					status = value;
+					forwardTableId = value;
+				}
+			}
+
+			public string ExternalPort
+			{
+				get
+				{
+					return externalPort;
+				}
+				set	
+				{
+					externalPort = value;
+				}
+			}
+
+			public string IpProtocol
+			{
+				get
+				{
+					return ipProtocol;
+				}
+				set	
+				{
+					ipProtocol = value;
+				}
+			}
+
+			public string ExternalIp
+			{
+				get
+				{
+					return externalIp;
+				}
+				set	
+				{
+					externalIp = value;
 				}
 			}
 		}

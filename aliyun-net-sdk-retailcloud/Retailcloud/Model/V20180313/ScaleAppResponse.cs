@@ -98,23 +98,11 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 		public class ScaleApp_Result
 		{
 
-			private bool? admitted;
-
 			private string businessCode;
 
 			private long? deployOrderId;
 
-			public bool? Admitted
-			{
-				get
-				{
-					return admitted;
-				}
-				set	
-				{
-					admitted = value;
-				}
-			}
+			private bool? admitted;
 
 			public string BusinessCode
 			{
@@ -137,6 +125,18 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 				set	
 				{
 					deployOrderId = value;
+				}
+			}
+
+			public bool? Admitted
+			{
+				get
+				{
+					return admitted;
+				}
+				set	
+				{
+					admitted = value;
 				}
 			}
 		}

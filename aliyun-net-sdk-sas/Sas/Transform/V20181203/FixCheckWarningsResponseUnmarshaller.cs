@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class FixCheckWarningsResponseUnmarshaller
     {
-        public static FixCheckWarningsResponse Unmarshall(UnmarshallerContext context)
+        public static FixCheckWarningsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			FixCheckWarningsResponse fixCheckWarningsResponse = new FixCheckWarningsResponse();
 
-			fixCheckWarningsResponse.HttpResponse = context.HttpResponse;
-			fixCheckWarningsResponse.RequestId = context.StringValue("FixCheckWarnings.RequestId");
-			fixCheckWarningsResponse.BatchId = context.LongValue("FixCheckWarnings.BatchId");
+			fixCheckWarningsResponse.HttpResponse = _ctx.HttpResponse;
+			fixCheckWarningsResponse.RequestId = _ctx.StringValue("FixCheckWarnings.RequestId");
+			fixCheckWarningsResponse.BatchId = _ctx.LongValue("FixCheckWarnings.BatchId");
         
 			return fixCheckWarningsResponse;
         }

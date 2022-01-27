@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class ImportDatabaseBetweenInstancesResponseUnmarshaller
     {
-        public static ImportDatabaseBetweenInstancesResponse Unmarshall(UnmarshallerContext context)
+        public static ImportDatabaseBetweenInstancesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ImportDatabaseBetweenInstancesResponse importDatabaseBetweenInstancesResponse = new ImportDatabaseBetweenInstancesResponse();
 
-			importDatabaseBetweenInstancesResponse.HttpResponse = context.HttpResponse;
-			importDatabaseBetweenInstancesResponse.RequestId = context.StringValue("ImportDatabaseBetweenInstances.RequestId");
-			importDatabaseBetweenInstancesResponse.ImportId = context.StringValue("ImportDatabaseBetweenInstances.ImportId");
+			importDatabaseBetweenInstancesResponse.HttpResponse = _ctx.HttpResponse;
+			importDatabaseBetweenInstancesResponse.RequestId = _ctx.StringValue("ImportDatabaseBetweenInstances.RequestId");
+			importDatabaseBetweenInstancesResponse.ImportId = _ctx.StringValue("ImportDatabaseBetweenInstances.ImportId");
         
 			return importDatabaseBetweenInstancesResponse;
         }

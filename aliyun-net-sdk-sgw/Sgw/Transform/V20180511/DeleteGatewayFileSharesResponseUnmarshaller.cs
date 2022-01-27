@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DeleteGatewayFileSharesResponseUnmarshaller
     {
-        public static DeleteGatewayFileSharesResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteGatewayFileSharesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteGatewayFileSharesResponse deleteGatewayFileSharesResponse = new DeleteGatewayFileSharesResponse();
 
-			deleteGatewayFileSharesResponse.HttpResponse = context.HttpResponse;
-			deleteGatewayFileSharesResponse.RequestId = context.StringValue("DeleteGatewayFileShares.RequestId");
-			deleteGatewayFileSharesResponse.Success = context.BooleanValue("DeleteGatewayFileShares.Success");
-			deleteGatewayFileSharesResponse.Code = context.StringValue("DeleteGatewayFileShares.Code");
-			deleteGatewayFileSharesResponse.Message = context.StringValue("DeleteGatewayFileShares.Message");
-			deleteGatewayFileSharesResponse.TaskId = context.StringValue("DeleteGatewayFileShares.TaskId");
+			deleteGatewayFileSharesResponse.HttpResponse = _ctx.HttpResponse;
+			deleteGatewayFileSharesResponse.TaskId = _ctx.StringValue("DeleteGatewayFileShares.TaskId");
+			deleteGatewayFileSharesResponse.Message = _ctx.StringValue("DeleteGatewayFileShares.Message");
+			deleteGatewayFileSharesResponse.RequestId = _ctx.StringValue("DeleteGatewayFileShares.RequestId");
+			deleteGatewayFileSharesResponse.Code = _ctx.StringValue("DeleteGatewayFileShares.Code");
+			deleteGatewayFileSharesResponse.Success = _ctx.BooleanValue("DeleteGatewayFileShares.Success");
         
 			return deleteGatewayFileSharesResponse;
         }

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class UpdateMixStreamResponseUnmarshaller
     {
-        public static UpdateMixStreamResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateMixStreamResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateMixStreamResponse updateMixStreamResponse = new UpdateMixStreamResponse();
 
-			updateMixStreamResponse.HttpResponse = context.HttpResponse;
-			updateMixStreamResponse.RequestId = context.StringValue("UpdateMixStream.RequestId");
-			updateMixStreamResponse.MixStreamId = context.StringValue("UpdateMixStream.MixStreamId");
+			updateMixStreamResponse.HttpResponse = _ctx.HttpResponse;
+			updateMixStreamResponse.RequestId = _ctx.StringValue("UpdateMixStream.RequestId");
+			updateMixStreamResponse.MixStreamId = _ctx.StringValue("UpdateMixStream.MixStreamId");
         
 			return updateMixStreamResponse;
         }

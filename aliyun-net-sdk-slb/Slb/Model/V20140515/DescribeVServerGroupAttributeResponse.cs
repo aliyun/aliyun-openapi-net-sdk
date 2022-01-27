@@ -116,6 +116,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 			private string description;
 
+			private bool? proxyProtocolV2Enabled;
+
 			public string ServerId
 			{
 				get
@@ -221,6 +223,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public bool? ProxyProtocolV2Enabled
+			{
+				get
+				{
+					return proxyProtocolV2Enabled;
+				}
+				set	
+				{
+					proxyProtocolV2Enabled = value;
 				}
 			}
 		}

@@ -144,6 +144,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private int? dynamicMode;
 
+			private bool? needPush;
+
+			private bool? needConfirm;
+
+			private string groupId;
+
+			private string groupName;
+
+			private string downloadProtocol;
+
+			private bool? multiModuleMode;
+
 			private List<QueryOTAJob_OtaTagDTO> tags;
 
 			private List<string> srcVersions;
@@ -421,6 +433,78 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					dynamicMode = value;
+				}
+			}
+
+			public bool? NeedPush
+			{
+				get
+				{
+					return needPush;
+				}
+				set	
+				{
+					needPush = value;
+				}
+			}
+
+			public bool? NeedConfirm
+			{
+				get
+				{
+					return needConfirm;
+				}
+				set	
+				{
+					needConfirm = value;
+				}
+			}
+
+			public string GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
+				}
+			}
+
+			public string GroupName
+			{
+				get
+				{
+					return groupName;
+				}
+				set	
+				{
+					groupName = value;
+				}
+			}
+
+			public string DownloadProtocol
+			{
+				get
+				{
+					return downloadProtocol;
+				}
+				set	
+				{
+					downloadProtocol = value;
+				}
+			}
+
+			public bool? MultiModuleMode
+			{
+				get
+				{
+					return multiModuleMode;
+				}
+				set	
+				{
+					multiModuleMode = value;
 				}
 			}
 

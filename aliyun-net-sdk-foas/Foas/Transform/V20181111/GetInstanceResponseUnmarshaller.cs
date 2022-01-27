@@ -26,37 +26,39 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class GetInstanceResponseUnmarshaller
     {
-        public static GetInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static GetInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetInstanceResponse getInstanceResponse = new GetInstanceResponse();
 
-			getInstanceResponse.HttpResponse = context.HttpResponse;
-			getInstanceResponse.RequestId = context.StringValue("GetInstance.RequestId");
+			getInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			getInstanceResponse.RequestId = _ctx.StringValue("GetInstance.RequestId");
 
 			GetInstanceResponse.GetInstance_Instance instance = new GetInstanceResponse.GetInstance_Instance();
-			instance.Id = context.LongValue("GetInstance.Instance.Id");
-			instance.ProjectName = context.StringValue("GetInstance.Instance.ProjectName");
-			instance.JobName = context.StringValue("GetInstance.Instance.JobName");
-			instance.ActualState = context.StringValue("GetInstance.Instance.ActualState");
-			instance.ExpectState = context.StringValue("GetInstance.Instance.ExpectState");
-			instance.JobType = context.StringValue("GetInstance.Instance.JobType");
-			instance.ApiType = context.StringValue("GetInstance.Instance.ApiType");
-			instance.Code = context.StringValue("GetInstance.Instance.Code");
-			instance.Properties = context.StringValue("GetInstance.Instance.Properties");
-			instance.Packages = context.StringValue("GetInstance.Instance.Packages");
-			instance.Starter = context.StringValue("GetInstance.Instance.Starter");
-			instance.StartTime = context.LongValue("GetInstance.Instance.StartTime");
-			instance.LastErrorTime = context.LongValue("GetInstance.Instance.LastErrorTime");
-			instance.LastErrorMessage = context.StringValue("GetInstance.Instance.LastErrorMessage");
-			instance.LastOperator = context.StringValue("GetInstance.Instance.LastOperator");
-			instance.LastOperateTime = context.LongValue("GetInstance.Instance.LastOperateTime");
-			instance.PlanJson = context.StringValue("GetInstance.Instance.PlanJson");
-			instance.EngineVersion = context.StringValue("GetInstance.Instance.EngineVersion");
-			instance.EngineJobHandler = context.StringValue("GetInstance.Instance.EngineJobHandler");
-			instance.InputDelay = context.LongValue("GetInstance.Instance.InputDelay");
-			instance.ClusterId = context.StringValue("GetInstance.Instance.ClusterId");
-			instance.QueueName = context.StringValue("GetInstance.Instance.QueueName");
-			instance.EndTime = context.LongValue("GetInstance.Instance.EndTime");
+			instance.Id = _ctx.LongValue("GetInstance.Instance.Id");
+			instance.ProjectName = _ctx.StringValue("GetInstance.Instance.ProjectName");
+			instance.JobName = _ctx.StringValue("GetInstance.Instance.JobName");
+			instance.ActualState = _ctx.StringValue("GetInstance.Instance.ActualState");
+			instance.ExpectState = _ctx.StringValue("GetInstance.Instance.ExpectState");
+			instance.JobType = _ctx.StringValue("GetInstance.Instance.JobType");
+			instance.ApiType = _ctx.StringValue("GetInstance.Instance.ApiType");
+			instance.Code = _ctx.StringValue("GetInstance.Instance.Code");
+			instance.Properties = _ctx.StringValue("GetInstance.Instance.Properties");
+			instance.Packages = _ctx.StringValue("GetInstance.Instance.Packages");
+			instance.Starter = _ctx.StringValue("GetInstance.Instance.Starter");
+			instance.StartTime = _ctx.LongValue("GetInstance.Instance.StartTime");
+			instance.LastErrorTime = _ctx.LongValue("GetInstance.Instance.LastErrorTime");
+			instance.LastErrorMessage = _ctx.StringValue("GetInstance.Instance.LastErrorMessage");
+			instance.LastOperator = _ctx.StringValue("GetInstance.Instance.LastOperator");
+			instance.LastOperateTime = _ctx.LongValue("GetInstance.Instance.LastOperateTime");
+			instance.PlanJson = _ctx.StringValue("GetInstance.Instance.PlanJson");
+			instance.EngineVersion = _ctx.StringValue("GetInstance.Instance.EngineVersion");
+			instance.EngineJobHandler = _ctx.StringValue("GetInstance.Instance.EngineJobHandler");
+			instance.InputDelay = _ctx.LongValue("GetInstance.Instance.InputDelay");
+			instance.ClusterId = _ctx.StringValue("GetInstance.Instance.ClusterId");
+			instance.QueueName = _ctx.StringValue("GetInstance.Instance.QueueName");
+			instance.EndTime = _ctx.LongValue("GetInstance.Instance.EndTime");
+			instance.AutoScaleParams = _ctx.StringValue("GetInstance.Instance.AutoScaleParams");
+			instance.Priority = _ctx.IntegerValue("GetInstance.Instance.Priority");
 			getInstanceResponse.Instance = instance;
         
 			return getInstanceResponse;

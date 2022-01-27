@@ -34,45 +34,19 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.live.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.live.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
-
-		private long? ownerId;
-
-		private string pullDomain;
 
 		private string securityToken;
 
 		private string pushDomain;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private long? ownerId;
 
-		public string PullDomain
-		{
-			get
-			{
-				return pullDomain;
-			}
-			set	
-			{
-				pullDomain = value;
-				DictionaryUtil.Add(QueryParameters, "PullDomain", value);
-			}
-		}
+		private string pullDomain;
 
 		public string SecurityToken
 		{
@@ -97,6 +71,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				pushDomain = value;
 				DictionaryUtil.Add(QueryParameters, "PushDomain", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string PullDomain
+		{
+			get
+			{
+				return pullDomain;
+			}
+			set	
+			{
+				pullDomain = value;
+				DictionaryUtil.Add(QueryParameters, "PullDomain", value);
 			}
 		}
 

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class ResetThingResponseUnmarshaller
     {
-        public static ResetThingResponse Unmarshall(UnmarshallerContext context)
+        public static ResetThingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ResetThingResponse resetThingResponse = new ResetThingResponse();
 
-			resetThingResponse.HttpResponse = context.HttpResponse;
-			resetThingResponse.RequestId = context.StringValue("ResetThing.RequestId");
-			resetThingResponse.Success = context.BooleanValue("ResetThing.Success");
-			resetThingResponse.Code = context.StringValue("ResetThing.Code");
-			resetThingResponse.ErrorMessage = context.StringValue("ResetThing.ErrorMessage");
+			resetThingResponse.HttpResponse = _ctx.HttpResponse;
+			resetThingResponse.RequestId = _ctx.StringValue("ResetThing.RequestId");
+			resetThingResponse.Success = _ctx.BooleanValue("ResetThing.Success");
+			resetThingResponse.Code = _ctx.StringValue("ResetThing.Code");
+			resetThingResponse.ErrorMessage = _ctx.StringValue("ResetThing.ErrorMessage");
         
 			return resetThingResponse;
         }

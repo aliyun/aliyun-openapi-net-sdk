@@ -26,53 +26,53 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetBaselineStatusResponseUnmarshaller
     {
-        public static GetBaselineStatusResponse Unmarshall(UnmarshallerContext context)
+        public static GetBaselineStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetBaselineStatusResponse getBaselineStatusResponse = new GetBaselineStatusResponse();
 
-			getBaselineStatusResponse.HttpResponse = context.HttpResponse;
-			getBaselineStatusResponse.Success = context.BooleanValue("GetBaselineStatus.Success");
-			getBaselineStatusResponse.ErrorCode = context.StringValue("GetBaselineStatus.ErrorCode");
-			getBaselineStatusResponse.ErrorMessage = context.StringValue("GetBaselineStatus.ErrorMessage");
-			getBaselineStatusResponse.HttpStatusCode = context.IntegerValue("GetBaselineStatus.HttpStatusCode");
-			getBaselineStatusResponse.RequestId = context.StringValue("GetBaselineStatus.RequestId");
+			getBaselineStatusResponse.HttpResponse = _ctx.HttpResponse;
+			getBaselineStatusResponse.Success = _ctx.BooleanValue("GetBaselineStatus.Success");
+			getBaselineStatusResponse.ErrorCode = _ctx.StringValue("GetBaselineStatus.ErrorCode");
+			getBaselineStatusResponse.ErrorMessage = _ctx.StringValue("GetBaselineStatus.ErrorMessage");
+			getBaselineStatusResponse.HttpStatusCode = _ctx.IntegerValue("GetBaselineStatus.HttpStatusCode");
+			getBaselineStatusResponse.RequestId = _ctx.StringValue("GetBaselineStatus.RequestId");
 
 			GetBaselineStatusResponse.GetBaselineStatus_Data data = new GetBaselineStatusResponse.GetBaselineStatus_Data();
-			data.BaselineName = context.StringValue("GetBaselineStatus.Data.BaselineName");
-			data.BaselineId = context.LongValue("GetBaselineStatus.Data.BaselineId");
-			data.Bizdate = context.LongValue("GetBaselineStatus.Data.Bizdate");
-			data.Owner = context.StringValue("GetBaselineStatus.Data.Owner");
-			data.ExpTime = context.LongValue("GetBaselineStatus.Data.ExpTime");
-			data.FinishTime = context.LongValue("GetBaselineStatus.Data.FinishTime");
-			data.EndCast = context.LongValue("GetBaselineStatus.Data.EndCast");
-			data.SlaTime = context.LongValue("GetBaselineStatus.Data.SlaTime");
-			data.Priority = context.IntegerValue("GetBaselineStatus.Data.Priority");
-			data.ProjectId = context.LongValue("GetBaselineStatus.Data.ProjectId");
-			data.Buffer = context.FloatValue("GetBaselineStatus.Data.Buffer");
-			data.Status = context.StringValue("GetBaselineStatus.Data.Status");
-			data.FinishStatus = context.StringValue("GetBaselineStatus.Data.FinishStatus");
-			data.InGroupId = context.IntegerValue("GetBaselineStatus.Data.InGroupId");
+			data.BaselineName = _ctx.StringValue("GetBaselineStatus.Data.BaselineName");
+			data.BaselineId = _ctx.LongValue("GetBaselineStatus.Data.BaselineId");
+			data.Bizdate = _ctx.LongValue("GetBaselineStatus.Data.Bizdate");
+			data.Owner = _ctx.StringValue("GetBaselineStatus.Data.Owner");
+			data.ExpTime = _ctx.LongValue("GetBaselineStatus.Data.ExpTime");
+			data.FinishTime = _ctx.LongValue("GetBaselineStatus.Data.FinishTime");
+			data.EndCast = _ctx.LongValue("GetBaselineStatus.Data.EndCast");
+			data.SlaTime = _ctx.LongValue("GetBaselineStatus.Data.SlaTime");
+			data.Priority = _ctx.IntegerValue("GetBaselineStatus.Data.Priority");
+			data.ProjectId = _ctx.LongValue("GetBaselineStatus.Data.ProjectId");
+			data.Buffer = _ctx.FloatValue("GetBaselineStatus.Data.Buffer");
+			data.Status = _ctx.StringValue("GetBaselineStatus.Data.Status");
+			data.FinishStatus = _ctx.StringValue("GetBaselineStatus.Data.FinishStatus");
+			data.InGroupId = _ctx.IntegerValue("GetBaselineStatus.Data.InGroupId");
 
 			GetBaselineStatusResponse.GetBaselineStatus_Data.GetBaselineStatus_LastInstance lastInstance = new GetBaselineStatusResponse.GetBaselineStatus_Data.GetBaselineStatus_LastInstance();
-			lastInstance.InstanceId = context.LongValue("GetBaselineStatus.Data.LastInstance.InstanceId");
-			lastInstance.Status = context.StringValue("GetBaselineStatus.Data.LastInstance.Status");
-			lastInstance.ProjectId = context.LongValue("GetBaselineStatus.Data.LastInstance.ProjectId");
-			lastInstance.Owner = context.StringValue("GetBaselineStatus.Data.LastInstance.Owner");
-			lastInstance.NodeId = context.LongValue("GetBaselineStatus.Data.LastInstance.NodeId");
-			lastInstance.FinishTime = context.LongValue("GetBaselineStatus.Data.LastInstance.FinishTime");
-			lastInstance.EndCast = context.LongValue("GetBaselineStatus.Data.LastInstance.EndCast");
-			lastInstance.NodeName = context.StringValue("GetBaselineStatus.Data.LastInstance.NodeName");
+			lastInstance.InstanceId = _ctx.LongValue("GetBaselineStatus.Data.LastInstance.InstanceId");
+			lastInstance.Status = _ctx.StringValue("GetBaselineStatus.Data.LastInstance.Status");
+			lastInstance.ProjectId = _ctx.LongValue("GetBaselineStatus.Data.LastInstance.ProjectId");
+			lastInstance.Owner = _ctx.StringValue("GetBaselineStatus.Data.LastInstance.Owner");
+			lastInstance.NodeId = _ctx.LongValue("GetBaselineStatus.Data.LastInstance.NodeId");
+			lastInstance.FinishTime = _ctx.LongValue("GetBaselineStatus.Data.LastInstance.FinishTime");
+			lastInstance.EndCast = _ctx.LongValue("GetBaselineStatus.Data.LastInstance.EndCast");
+			lastInstance.NodeName = _ctx.StringValue("GetBaselineStatus.Data.LastInstance.NodeName");
 			data.LastInstance = lastInstance;
 
 			GetBaselineStatusResponse.GetBaselineStatus_Data.GetBaselineStatus_BlockInstance blockInstance = new GetBaselineStatusResponse.GetBaselineStatus_Data.GetBaselineStatus_BlockInstance();
-			blockInstance.InstanceId = context.LongValue("GetBaselineStatus.Data.BlockInstance.InstanceId");
-			blockInstance.Status = context.StringValue("GetBaselineStatus.Data.BlockInstance.Status");
-			blockInstance.ProjectId = context.LongValue("GetBaselineStatus.Data.BlockInstance.ProjectId");
-			blockInstance.Owner = context.StringValue("GetBaselineStatus.Data.BlockInstance.Owner");
-			blockInstance.NodeId = context.LongValue("GetBaselineStatus.Data.BlockInstance.NodeId");
-			blockInstance.FinishTime = context.LongValue("GetBaselineStatus.Data.BlockInstance.FinishTime");
-			blockInstance.EndCast = context.LongValue("GetBaselineStatus.Data.BlockInstance.EndCast");
-			blockInstance.NodeName = context.StringValue("GetBaselineStatus.Data.BlockInstance.NodeName");
+			blockInstance.InstanceId = _ctx.LongValue("GetBaselineStatus.Data.BlockInstance.InstanceId");
+			blockInstance.Status = _ctx.StringValue("GetBaselineStatus.Data.BlockInstance.Status");
+			blockInstance.ProjectId = _ctx.LongValue("GetBaselineStatus.Data.BlockInstance.ProjectId");
+			blockInstance.Owner = _ctx.StringValue("GetBaselineStatus.Data.BlockInstance.Owner");
+			blockInstance.NodeId = _ctx.LongValue("GetBaselineStatus.Data.BlockInstance.NodeId");
+			blockInstance.FinishTime = _ctx.LongValue("GetBaselineStatus.Data.BlockInstance.FinishTime");
+			blockInstance.EndCast = _ctx.LongValue("GetBaselineStatus.Data.BlockInstance.EndCast");
+			blockInstance.NodeName = _ctx.StringValue("GetBaselineStatus.Data.BlockInstance.NodeName");
 			data.BlockInstance = blockInstance;
 			getBaselineStatusResponse.Data = data;
         

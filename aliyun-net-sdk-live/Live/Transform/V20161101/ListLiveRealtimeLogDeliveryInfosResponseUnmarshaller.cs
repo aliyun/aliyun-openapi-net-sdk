@@ -26,19 +26,19 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class ListLiveRealtimeLogDeliveryInfosResponseUnmarshaller
     {
-        public static ListLiveRealtimeLogDeliveryInfosResponse Unmarshall(UnmarshallerContext context)
+        public static ListLiveRealtimeLogDeliveryInfosResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListLiveRealtimeLogDeliveryInfosResponse listLiveRealtimeLogDeliveryInfosResponse = new ListLiveRealtimeLogDeliveryInfosResponse();
 
-			listLiveRealtimeLogDeliveryInfosResponse.HttpResponse = context.HttpResponse;
-			listLiveRealtimeLogDeliveryInfosResponse.RequestId = context.StringValue("ListLiveRealtimeLogDeliveryInfos.RequestId");
+			listLiveRealtimeLogDeliveryInfosResponse.HttpResponse = _ctx.HttpResponse;
+			listLiveRealtimeLogDeliveryInfosResponse.RequestId = _ctx.StringValue("ListLiveRealtimeLogDeliveryInfos.RequestId");
 
 			List<ListLiveRealtimeLogDeliveryInfosResponse.ListLiveRealtimeLogDeliveryInfos_RealtimeLogDeliveryInfos> listLiveRealtimeLogDeliveryInfosResponse_content = new List<ListLiveRealtimeLogDeliveryInfosResponse.ListLiveRealtimeLogDeliveryInfos_RealtimeLogDeliveryInfos>();
-			for (int i = 0; i < context.Length("ListLiveRealtimeLogDeliveryInfos.Content.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListLiveRealtimeLogDeliveryInfos.Content.Length"); i++) {
 				ListLiveRealtimeLogDeliveryInfosResponse.ListLiveRealtimeLogDeliveryInfos_RealtimeLogDeliveryInfos realtimeLogDeliveryInfos = new ListLiveRealtimeLogDeliveryInfosResponse.ListLiveRealtimeLogDeliveryInfos_RealtimeLogDeliveryInfos();
-				realtimeLogDeliveryInfos.Project = context.StringValue("ListLiveRealtimeLogDeliveryInfos.Content["+ i +"].Project");
-				realtimeLogDeliveryInfos.Logstore = context.StringValue("ListLiveRealtimeLogDeliveryInfos.Content["+ i +"].Logstore");
-				realtimeLogDeliveryInfos.Region = context.StringValue("ListLiveRealtimeLogDeliveryInfos.Content["+ i +"].Region");
+				realtimeLogDeliveryInfos.Project = _ctx.StringValue("ListLiveRealtimeLogDeliveryInfos.Content["+ i +"].Project");
+				realtimeLogDeliveryInfos.Logstore = _ctx.StringValue("ListLiveRealtimeLogDeliveryInfos.Content["+ i +"].Logstore");
+				realtimeLogDeliveryInfos.Region = _ctx.StringValue("ListLiveRealtimeLogDeliveryInfos.Content["+ i +"].Region");
 
 				listLiveRealtimeLogDeliveryInfosResponse_content.Add(realtimeLogDeliveryInfos);
 			}

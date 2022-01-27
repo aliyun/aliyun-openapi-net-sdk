@@ -44,7 +44,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string securityToken;
 
+		private string nodeId;
+
 		private string resourceOwnerAccount;
+
+		private long? bandWidth;
 
 		private string ownerAccount;
 
@@ -78,6 +82,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string NodeId
+		{
+			get
+			{
+				return nodeId;
+			}
+			set	
+			{
+				nodeId = value;
+				DictionaryUtil.Add(QueryParameters, "NodeId", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -88,6 +105,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public long? BandWidth
+		{
+			get
+			{
+				return bandWidth;
+			}
+			set	
+			{
+				bandWidth = value;
+				DictionaryUtil.Add(QueryParameters, "BandWidth", value.ToString());
 			}
 		}
 

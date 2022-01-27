@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 {
     public class WithdrawPublishedRouteEntriesResponseUnmarshaller
     {
-        public static WithdrawPublishedRouteEntriesResponse Unmarshall(UnmarshallerContext context)
+        public static WithdrawPublishedRouteEntriesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			WithdrawPublishedRouteEntriesResponse withdrawPublishedRouteEntriesResponse = new WithdrawPublishedRouteEntriesResponse();
 
-			withdrawPublishedRouteEntriesResponse.HttpResponse = context.HttpResponse;
-			withdrawPublishedRouteEntriesResponse.RequestId = context.StringValue("WithdrawPublishedRouteEntries.RequestId");
+			withdrawPublishedRouteEntriesResponse.HttpResponse = _ctx.HttpResponse;
+			withdrawPublishedRouteEntriesResponse.RequestId = _ctx.StringValue("WithdrawPublishedRouteEntries.RequestId");
         
 			return withdrawPublishedRouteEntriesResponse;
         }

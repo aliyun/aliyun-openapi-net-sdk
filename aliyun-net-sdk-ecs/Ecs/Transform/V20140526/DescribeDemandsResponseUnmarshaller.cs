@@ -26,46 +26,46 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DescribeDemandsResponseUnmarshaller
     {
-        public static DescribeDemandsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDemandsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDemandsResponse describeDemandsResponse = new DescribeDemandsResponse();
 
-			describeDemandsResponse.HttpResponse = context.HttpResponse;
-			describeDemandsResponse.RequestId = context.StringValue("DescribeDemands.RequestId");
-			describeDemandsResponse.TotalCount = context.IntegerValue("DescribeDemands.TotalCount");
-			describeDemandsResponse.PageNumber = context.IntegerValue("DescribeDemands.PageNumber");
-			describeDemandsResponse.PageSize = context.IntegerValue("DescribeDemands.PageSize");
-			describeDemandsResponse.RegionId = context.StringValue("DescribeDemands.RegionId");
+			describeDemandsResponse.HttpResponse = _ctx.HttpResponse;
+			describeDemandsResponse.PageSize = _ctx.IntegerValue("DescribeDemands.PageSize");
+			describeDemandsResponse.PageNumber = _ctx.IntegerValue("DescribeDemands.PageNumber");
+			describeDemandsResponse.RequestId = _ctx.StringValue("DescribeDemands.RequestId");
+			describeDemandsResponse.TotalCount = _ctx.IntegerValue("DescribeDemands.TotalCount");
+			describeDemandsResponse.RegionId = _ctx.StringValue("DescribeDemands.RegionId");
 
 			List<DescribeDemandsResponse.DescribeDemands_Demand> describeDemandsResponse_demands = new List<DescribeDemandsResponse.DescribeDemands_Demand>();
-			for (int i = 0; i < context.Length("DescribeDemands.Demands.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDemands.Demands.Length"); i++) {
 				DescribeDemandsResponse.DescribeDemands_Demand demand = new DescribeDemandsResponse.DescribeDemands_Demand();
-				demand.ZoneId = context.StringValue("DescribeDemands.Demands["+ i +"].ZoneId");
-				demand.DemandTime = context.StringValue("DescribeDemands.Demands["+ i +"].DemandTime");
-				demand.InstanceTypeFamily = context.StringValue("DescribeDemands.Demands["+ i +"].InstanceTypeFamily");
-				demand.DemandId = context.StringValue("DescribeDemands.Demands["+ i +"].DemandId");
-				demand.DemandName = context.StringValue("DescribeDemands.Demands["+ i +"].DemandName");
-				demand.Comment = context.StringValue("DescribeDemands.Demands["+ i +"].Comment");
-				demand.DemandDescription = context.StringValue("DescribeDemands.Demands["+ i +"].DemandDescription");
-				demand.InstanceType = context.StringValue("DescribeDemands.Demands["+ i +"].InstanceType");
-				demand.InstanceChargeType = context.StringValue("DescribeDemands.Demands["+ i +"].InstanceChargeType");
-				demand.Period = context.IntegerValue("DescribeDemands.Demands["+ i +"].Period");
-				demand.PeriodUnit = context.StringValue("DescribeDemands.Demands["+ i +"].PeriodUnit");
-				demand.StartTime = context.StringValue("DescribeDemands.Demands["+ i +"].StartTime");
-				demand.EndTime = context.StringValue("DescribeDemands.Demands["+ i +"].EndTime");
-				demand.DemandStatus = context.StringValue("DescribeDemands.Demands["+ i +"].DemandStatus");
-				demand.TotalAmount = context.IntegerValue("DescribeDemands.Demands["+ i +"].TotalAmount");
-				demand.AvailableAmount = context.IntegerValue("DescribeDemands.Demands["+ i +"].AvailableAmount");
-				demand.UsedAmount = context.IntegerValue("DescribeDemands.Demands["+ i +"].UsedAmount");
-				demand.DeliveringAmount = context.IntegerValue("DescribeDemands.Demands["+ i +"].DeliveringAmount");
+				demand.Comment = _ctx.StringValue("DescribeDemands.Demands["+ i +"].Comment");
+				demand.DemandDescription = _ctx.StringValue("DescribeDemands.Demands["+ i +"].DemandDescription");
+				demand.DemandId = _ctx.StringValue("DescribeDemands.Demands["+ i +"].DemandId");
+				demand.DemandTime = _ctx.StringValue("DescribeDemands.Demands["+ i +"].DemandTime");
+				demand.InstanceType = _ctx.StringValue("DescribeDemands.Demands["+ i +"].InstanceType");
+				demand.DemandName = _ctx.StringValue("DescribeDemands.Demands["+ i +"].DemandName");
+				demand.Period = _ctx.IntegerValue("DescribeDemands.Demands["+ i +"].Period");
+				demand.InstanceChargeType = _ctx.StringValue("DescribeDemands.Demands["+ i +"].InstanceChargeType");
+				demand.AvailableAmount = _ctx.IntegerValue("DescribeDemands.Demands["+ i +"].AvailableAmount");
+				demand.EndTime = _ctx.StringValue("DescribeDemands.Demands["+ i +"].EndTime");
+				demand.StartTime = _ctx.StringValue("DescribeDemands.Demands["+ i +"].StartTime");
+				demand.PeriodUnit = _ctx.StringValue("DescribeDemands.Demands["+ i +"].PeriodUnit");
+				demand.ZoneId = _ctx.StringValue("DescribeDemands.Demands["+ i +"].ZoneId");
+				demand.UsedAmount = _ctx.IntegerValue("DescribeDemands.Demands["+ i +"].UsedAmount");
+				demand.TotalAmount = _ctx.IntegerValue("DescribeDemands.Demands["+ i +"].TotalAmount");
+				demand.DeliveringAmount = _ctx.IntegerValue("DescribeDemands.Demands["+ i +"].DeliveringAmount");
+				demand.InstanceTypeFamily = _ctx.StringValue("DescribeDemands.Demands["+ i +"].InstanceTypeFamily");
+				demand.DemandStatus = _ctx.StringValue("DescribeDemands.Demands["+ i +"].DemandStatus");
 
 				List<DescribeDemandsResponse.DescribeDemands_Demand.DescribeDemands_SupplyInfo> demand_supplyInfos = new List<DescribeDemandsResponse.DescribeDemands_Demand.DescribeDemands_SupplyInfo>();
-				for (int j = 0; j < context.Length("DescribeDemands.Demands["+ i +"].SupplyInfos.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeDemands.Demands["+ i +"].SupplyInfos.Length"); j++) {
 					DescribeDemandsResponse.DescribeDemands_Demand.DescribeDemands_SupplyInfo supplyInfo = new DescribeDemandsResponse.DescribeDemands_Demand.DescribeDemands_SupplyInfo();
-					supplyInfo.Amount = context.IntegerValue("DescribeDemands.Demands["+ i +"].SupplyInfos["+ j +"].Amount");
-					supplyInfo.SupplyStatus = context.StringValue("DescribeDemands.Demands["+ i +"].SupplyInfos["+ j +"].SupplyStatus");
-					supplyInfo.SupplyStartTime = context.StringValue("DescribeDemands.Demands["+ i +"].SupplyInfos["+ j +"].SupplyStartTime");
-					supplyInfo.SupplyEndTime = context.StringValue("DescribeDemands.Demands["+ i +"].SupplyInfos["+ j +"].SupplyEndTime");
+					supplyInfo.Amount = _ctx.IntegerValue("DescribeDemands.Demands["+ i +"].SupplyInfos["+ j +"].Amount");
+					supplyInfo.SupplyStatus = _ctx.StringValue("DescribeDemands.Demands["+ i +"].SupplyInfos["+ j +"].SupplyStatus");
+					supplyInfo.SupplyStartTime = _ctx.StringValue("DescribeDemands.Demands["+ i +"].SupplyInfos["+ j +"].SupplyStartTime");
+					supplyInfo.SupplyEndTime = _ctx.StringValue("DescribeDemands.Demands["+ i +"].SupplyInfos["+ j +"].SupplyEndTime");
 
 					demand_supplyInfos.Add(supplyInfo);
 				}

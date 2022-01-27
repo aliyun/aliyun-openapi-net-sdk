@@ -26,34 +26,34 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetMetaCategoryResponseUnmarshaller
     {
-        public static GetMetaCategoryResponse Unmarshall(UnmarshallerContext context)
+        public static GetMetaCategoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMetaCategoryResponse getMetaCategoryResponse = new GetMetaCategoryResponse();
 
-			getMetaCategoryResponse.HttpResponse = context.HttpResponse;
-			getMetaCategoryResponse.RequestId = context.StringValue("GetMetaCategory.RequestId");
-			getMetaCategoryResponse.ErrorCode = context.StringValue("GetMetaCategory.ErrorCode");
-			getMetaCategoryResponse.ErrorMessage = context.StringValue("GetMetaCategory.ErrorMessage");
-			getMetaCategoryResponse.HttpStatusCode = context.IntegerValue("GetMetaCategory.HttpStatusCode");
-			getMetaCategoryResponse.Success = context.BooleanValue("GetMetaCategory.Success");
+			getMetaCategoryResponse.HttpResponse = _ctx.HttpResponse;
+			getMetaCategoryResponse.RequestId = _ctx.StringValue("GetMetaCategory.RequestId");
+			getMetaCategoryResponse.ErrorCode = _ctx.StringValue("GetMetaCategory.ErrorCode");
+			getMetaCategoryResponse.ErrorMessage = _ctx.StringValue("GetMetaCategory.ErrorMessage");
+			getMetaCategoryResponse.HttpStatusCode = _ctx.IntegerValue("GetMetaCategory.HttpStatusCode");
+			getMetaCategoryResponse.Success = _ctx.BooleanValue("GetMetaCategory.Success");
 
 			GetMetaCategoryResponse.GetMetaCategory_Data data = new GetMetaCategoryResponse.GetMetaCategory_Data();
-			data.PageNum = context.IntegerValue("GetMetaCategory.Data.PageNum");
-			data.PageSize = context.IntegerValue("GetMetaCategory.Data.PageSize");
-			data.TotalCount = context.LongValue("GetMetaCategory.Data.TotalCount");
+			data.PageNum = _ctx.IntegerValue("GetMetaCategory.Data.PageNum");
+			data.PageSize = _ctx.IntegerValue("GetMetaCategory.Data.PageSize");
+			data.TotalCount = _ctx.LongValue("GetMetaCategory.Data.TotalCount");
 
 			List<GetMetaCategoryResponse.GetMetaCategory_Data.GetMetaCategory_DataEntityListItem> data_dataEntityList = new List<GetMetaCategoryResponse.GetMetaCategory_Data.GetMetaCategory_DataEntityListItem>();
-			for (int i = 0; i < context.Length("GetMetaCategory.Data.DataEntityList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetMetaCategory.Data.DataEntityList.Length"); i++) {
 				GetMetaCategoryResponse.GetMetaCategory_Data.GetMetaCategory_DataEntityListItem dataEntityListItem = new GetMetaCategoryResponse.GetMetaCategory_Data.GetMetaCategory_DataEntityListItem();
-				dataEntityListItem.CategoryId = context.LongValue("GetMetaCategory.Data.DataEntityList["+ i +"].CategoryId");
-				dataEntityListItem.Name = context.StringValue("GetMetaCategory.Data.DataEntityList["+ i +"].Name");
-				dataEntityListItem.CreateTime = context.LongValue("GetMetaCategory.Data.DataEntityList["+ i +"].CreateTime");
-				dataEntityListItem.ModifiedTime = context.LongValue("GetMetaCategory.Data.DataEntityList["+ i +"].ModifiedTime");
-				dataEntityListItem.Comment = context.StringValue("GetMetaCategory.Data.DataEntityList["+ i +"].Comment");
-				dataEntityListItem.OwnerId = context.StringValue("GetMetaCategory.Data.DataEntityList["+ i +"].OwnerId");
-				dataEntityListItem.LastOperatorId = context.StringValue("GetMetaCategory.Data.DataEntityList["+ i +"].LastOperatorId");
-				dataEntityListItem.ParentCategoryId = context.LongValue("GetMetaCategory.Data.DataEntityList["+ i +"].ParentCategoryId");
-				dataEntityListItem.Depth = context.IntegerValue("GetMetaCategory.Data.DataEntityList["+ i +"].Depth");
+				dataEntityListItem.CategoryId = _ctx.LongValue("GetMetaCategory.Data.DataEntityList["+ i +"].CategoryId");
+				dataEntityListItem.Name = _ctx.StringValue("GetMetaCategory.Data.DataEntityList["+ i +"].Name");
+				dataEntityListItem.CreateTime = _ctx.LongValue("GetMetaCategory.Data.DataEntityList["+ i +"].CreateTime");
+				dataEntityListItem.ModifiedTime = _ctx.LongValue("GetMetaCategory.Data.DataEntityList["+ i +"].ModifiedTime");
+				dataEntityListItem.Comment = _ctx.StringValue("GetMetaCategory.Data.DataEntityList["+ i +"].Comment");
+				dataEntityListItem.OwnerId = _ctx.StringValue("GetMetaCategory.Data.DataEntityList["+ i +"].OwnerId");
+				dataEntityListItem.LastOperatorId = _ctx.StringValue("GetMetaCategory.Data.DataEntityList["+ i +"].LastOperatorId");
+				dataEntityListItem.ParentCategoryId = _ctx.LongValue("GetMetaCategory.Data.DataEntityList["+ i +"].ParentCategoryId");
+				dataEntityListItem.Depth = _ctx.IntegerValue("GetMetaCategory.Data.DataEntityList["+ i +"].Depth");
 
 				data_dataEntityList.Add(dataEntityListItem);
 			}

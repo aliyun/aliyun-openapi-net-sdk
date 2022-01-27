@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,9 +25,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class CreateDiskResponse : AcsResponse
 	{
 
+		private string diskId;
+
 		private string requestId;
 
-		private string diskId;
+		private string orderId;
+
+		public string DiskId
+		{
+			get
+			{
+				return diskId;
+			}
+			set	
+			{
+				diskId = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -41,15 +55,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string DiskId
+		public string OrderId
 		{
 			get
 			{
-				return diskId;
+				return orderId;
 			}
 			set	
 			{
-				diskId = value;
+				orderId = value;
 			}
 		}
 	}

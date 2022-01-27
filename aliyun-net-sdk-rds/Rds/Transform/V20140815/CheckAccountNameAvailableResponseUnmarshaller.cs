@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class CheckAccountNameAvailableResponseUnmarshaller
     {
-        public static CheckAccountNameAvailableResponse Unmarshall(UnmarshallerContext context)
+        public static CheckAccountNameAvailableResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckAccountNameAvailableResponse checkAccountNameAvailableResponse = new CheckAccountNameAvailableResponse();
 
-			checkAccountNameAvailableResponse.HttpResponse = context.HttpResponse;
-			checkAccountNameAvailableResponse.RequestId = context.StringValue("CheckAccountNameAvailable.RequestId");
+			checkAccountNameAvailableResponse.HttpResponse = _ctx.HttpResponse;
+			checkAccountNameAvailableResponse.RequestId = _ctx.StringValue("CheckAccountNameAvailable.RequestId");
         
 			return checkAccountNameAvailableResponse;
         }

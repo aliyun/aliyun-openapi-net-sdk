@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DeleteDirectoryResponseUnmarshaller
     {
-        public static DeleteDirectoryResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDirectoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDirectoryResponse deleteDirectoryResponse = new DeleteDirectoryResponse();
 
-			deleteDirectoryResponse.HttpResponse = context.HttpResponse;
-			deleteDirectoryResponse.RequestId = context.StringValue("DeleteDirectory.RequestId");
+			deleteDirectoryResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDirectoryResponse.RequestId = _ctx.StringValue("DeleteDirectory.RequestId");
         
 			return deleteDirectoryResponse;
         }

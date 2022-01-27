@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,15 +25,51 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class DeleteDevopsProjectMembersResponse : AcsResponse
 	{
 
+		private string errorMsg;
+
+		private string requestId;
+
+		private bool? _object;
+
 		private bool? successful;
 
 		private string errorCode;
 
-		private string errorMsg;
+		public string ErrorMsg
+		{
+			get
+			{
+				return errorMsg;
+			}
+			set	
+			{
+				errorMsg = value;
+			}
+		}
 
-		private bool? _object;
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
-		private string requestId;
+		public bool? _Object
+		{
+			get
+			{
+				return _object;
+			}
+			set	
+			{
+				_object = value;
+			}
+		}
 
 		public bool? Successful
 		{
@@ -56,42 +92,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			set	
 			{
 				errorCode = value;
-			}
-		}
-
-		public string ErrorMsg
-		{
-			get
-			{
-				return errorMsg;
-			}
-			set	
-			{
-				errorMsg = value;
-			}
-		}
-
-		public bool? _Object
-		{
-			get
-			{
-				return _object;
-			}
-			set	
-			{
-				_object = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
 			}
 		}
 	}

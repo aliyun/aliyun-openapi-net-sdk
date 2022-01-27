@@ -29,6 +29,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string taskId;
 
+		private string connectionString;
+
 		public string RequestId
 		{
 			get
@@ -50,6 +52,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				taskId = value;
+			}
+		}
+
+		public string ConnectionString
+		{
+			get
+			{
+				return connectionString;
+			}
+			set	
+			{
+				connectionString = value;
 			}
 		}
 	}

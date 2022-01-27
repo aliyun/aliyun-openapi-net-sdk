@@ -26,12 +26,12 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 {
     public class DeleteFileSystemResponseUnmarshaller
     {
-        public static DeleteFileSystemResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteFileSystemResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteFileSystemResponse deleteFileSystemResponse = new DeleteFileSystemResponse();
 
-			deleteFileSystemResponse.HttpResponse = context.HttpResponse;
-			deleteFileSystemResponse.RequestId = context.StringValue("DeleteFileSystem.RequestId");
+			deleteFileSystemResponse.HttpResponse = _ctx.HttpResponse;
+			deleteFileSystemResponse.RequestId = _ctx.StringValue("DeleteFileSystem.RequestId");
         
 			return deleteFileSystemResponse;
         }

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class DeleteGWSInstanceResponseUnmarshaller
     {
-        public static DeleteGWSInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteGWSInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteGWSInstanceResponse deleteGWSInstanceResponse = new DeleteGWSInstanceResponse();
 
-			deleteGWSInstanceResponse.HttpResponse = context.HttpResponse;
-			deleteGWSInstanceResponse.RequestId = context.StringValue("DeleteGWSInstance.RequestId");
+			deleteGWSInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			deleteGWSInstanceResponse.RequestId = _ctx.StringValue("DeleteGWSInstance.RequestId");
         
 			return deleteGWSInstanceResponse;
         }

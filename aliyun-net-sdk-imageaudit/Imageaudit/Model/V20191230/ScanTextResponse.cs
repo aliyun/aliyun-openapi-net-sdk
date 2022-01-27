@@ -104,25 +104,13 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 				public class ScanText_Result
 				{
 
-					private string label;
-
 					private string suggestion;
 
 					private float? rate;
 
-					private List<ScanText_Detail> details;
+					private string label;
 
-					public string Label
-					{
-						get
-						{
-							return label;
-						}
-						set	
-						{
-							label = value;
-						}
-					}
+					private List<ScanText_Detail> details;
 
 					public string Suggestion
 					{
@@ -145,6 +133,18 @@ namespace Aliyun.Acs.imageaudit.Model.V20191230
 						set	
 						{
 							rate = value;
+						}
+					}
+
+					public string Label
+					{
+						get
+						{
+							return label;
+						}
+						set	
+						{
+							label = value;
 						}
 					}
 

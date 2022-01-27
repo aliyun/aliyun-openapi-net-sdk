@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -46,7 +46,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string description;
 
-		private List<BandwidthPackage> bandwidthPackages = new List<BandwidthPackage>(){ };
+		private List<int?> bandwidthPackages = new List<int?>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -97,7 +97,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<BandwidthPackage> BandwidthPackages
+		public List<int?> BandwidthPackages
 		{
 			get
 			{
@@ -107,11 +107,14 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				bandwidthPackages = value;
-				for (int i = 0; i < bandwidthPackages.Count; i++)
+				if(bandwidthPackages != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".Bandwidth", bandwidthPackages[i].Bandwidth);
-					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".Zone", bandwidthPackages[i].Zone);
-					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".IpCount", bandwidthPackages[i].IpCount);
+					for (int depth1 = 0; depth1 < bandwidthPackages.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (depth1 + 1), bandwidthPackages[depth1]);
+						DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (depth1 + 1), bandwidthPackages[depth1]);
+						DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (depth1 + 1), bandwidthPackages[depth1]);
+					}
 				}
 			}
 		}

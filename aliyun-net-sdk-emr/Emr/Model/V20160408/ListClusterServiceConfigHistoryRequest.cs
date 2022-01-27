@@ -32,23 +32,37 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ListClusterServiceConfigHistoryRequest()
             : base("Emr", "2016-04-08", "ListClusterServiceConfigHistory", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string regionId;
+		private string hostInstanceId;
+
+		private int? pageNumber;
+
+		private string configVersion;
 
 		private int? pageSize;
 
 		private string serviceName;
 
+		private string author;
+
 		private string clusterId;
 
-		private int? pageNumber;
+		private string configFileName;
 
-		private string accessKeyId;
+		private string configItemKey;
 
-		private string configVersion;
+		private string hostGroupId;
+
+		private string comment;
 
 		public long? ResourceOwnerId
 		{
@@ -63,16 +77,42 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
+		public string HostInstanceId
 		{
 			get
 			{
-				return regionId;
+				return hostInstanceId;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				hostInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "HostInstanceId", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ConfigVersion
+		{
+			get
+			{
+				return configVersion;
+			}
+			set	
+			{
+				configVersion = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigVersion", value);
 			}
 		}
 
@@ -102,6 +142,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
+		public string Author
+		{
+			get
+			{
+				return author;
+			}
+			set	
+			{
+				author = value;
+				DictionaryUtil.Add(QueryParameters, "Author", value);
+			}
+		}
+
 		public string ClusterId
 		{
 			get
@@ -115,42 +168,55 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public int? PageNumber
+		public string ConfigFileName
 		{
 			get
 			{
-				return pageNumber;
+				return configFileName;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				configFileName = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigFileName", value);
 			}
 		}
 
-		public string AccessKeyId
+		public string ConfigItemKey
 		{
 			get
 			{
-				return accessKeyId;
+				return configItemKey;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				configItemKey = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigItemKey", value);
 			}
 		}
 
-		public string ConfigVersion
+		public string HostGroupId
 		{
 			get
 			{
-				return configVersion;
+				return hostGroupId;
 			}
 			set	
 			{
-				configVersion = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigVersion", value);
+				hostGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "HostGroupId", value);
+			}
+		}
+
+		public string Comment
+		{
+			get
+			{
+				return comment;
+			}
+			set	
+			{
+				comment = value;
+				DictionaryUtil.Add(QueryParameters, "Comment", value);
 			}
 		}
 

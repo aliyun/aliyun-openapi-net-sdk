@@ -26,35 +26,36 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryDeviceResponseUnmarshaller
     {
-        public static QueryDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDeviceResponse queryDeviceResponse = new QueryDeviceResponse();
 
-			queryDeviceResponse.HttpResponse = context.HttpResponse;
-			queryDeviceResponse.RequestId = context.StringValue("QueryDevice.RequestId");
-			queryDeviceResponse.Success = context.BooleanValue("QueryDevice.Success");
-			queryDeviceResponse.Code = context.StringValue("QueryDevice.Code");
-			queryDeviceResponse.ErrorMessage = context.StringValue("QueryDevice.ErrorMessage");
-			queryDeviceResponse.Total = context.IntegerValue("QueryDevice.Total");
-			queryDeviceResponse.PageSize = context.IntegerValue("QueryDevice.PageSize");
-			queryDeviceResponse.PageCount = context.IntegerValue("QueryDevice.PageCount");
-			queryDeviceResponse.Page = context.IntegerValue("QueryDevice.Page");
+			queryDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			queryDeviceResponse.RequestId = _ctx.StringValue("QueryDevice.RequestId");
+			queryDeviceResponse.Success = _ctx.BooleanValue("QueryDevice.Success");
+			queryDeviceResponse.Code = _ctx.StringValue("QueryDevice.Code");
+			queryDeviceResponse.ErrorMessage = _ctx.StringValue("QueryDevice.ErrorMessage");
+			queryDeviceResponse.Total = _ctx.IntegerValue("QueryDevice.Total");
+			queryDeviceResponse.PageSize = _ctx.IntegerValue("QueryDevice.PageSize");
+			queryDeviceResponse.PageCount = _ctx.IntegerValue("QueryDevice.PageCount");
+			queryDeviceResponse.Page = _ctx.IntegerValue("QueryDevice.Page");
+			queryDeviceResponse.NextToken = _ctx.StringValue("QueryDevice.NextToken");
 
 			List<QueryDeviceResponse.QueryDevice_DeviceInfo> queryDeviceResponse_data = new List<QueryDeviceResponse.QueryDevice_DeviceInfo>();
-			for (int i = 0; i < context.Length("QueryDevice.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryDevice.Data.Length"); i++) {
 				QueryDeviceResponse.QueryDevice_DeviceInfo deviceInfo = new QueryDeviceResponse.QueryDevice_DeviceInfo();
-				deviceInfo.DeviceId = context.StringValue("QueryDevice.Data["+ i +"].DeviceId");
-				deviceInfo.DeviceSecret = context.StringValue("QueryDevice.Data["+ i +"].DeviceSecret");
-				deviceInfo.ProductKey = context.StringValue("QueryDevice.Data["+ i +"].ProductKey");
-				deviceInfo.DeviceStatus = context.StringValue("QueryDevice.Data["+ i +"].DeviceStatus");
-				deviceInfo.DeviceName = context.StringValue("QueryDevice.Data["+ i +"].DeviceName");
-				deviceInfo.DeviceType = context.StringValue("QueryDevice.Data["+ i +"].DeviceType");
-				deviceInfo.GmtCreate = context.StringValue("QueryDevice.Data["+ i +"].GmtCreate");
-				deviceInfo.GmtModified = context.StringValue("QueryDevice.Data["+ i +"].GmtModified");
-				deviceInfo.UtcCreate = context.StringValue("QueryDevice.Data["+ i +"].UtcCreate");
-				deviceInfo.UtcModified = context.StringValue("QueryDevice.Data["+ i +"].UtcModified");
-				deviceInfo.IotId = context.StringValue("QueryDevice.Data["+ i +"].IotId");
-				deviceInfo.Nickname = context.StringValue("QueryDevice.Data["+ i +"].Nickname");
+				deviceInfo.DeviceId = _ctx.StringValue("QueryDevice.Data["+ i +"].DeviceId");
+				deviceInfo.DeviceSecret = _ctx.StringValue("QueryDevice.Data["+ i +"].DeviceSecret");
+				deviceInfo.ProductKey = _ctx.StringValue("QueryDevice.Data["+ i +"].ProductKey");
+				deviceInfo.DeviceStatus = _ctx.StringValue("QueryDevice.Data["+ i +"].DeviceStatus");
+				deviceInfo.DeviceName = _ctx.StringValue("QueryDevice.Data["+ i +"].DeviceName");
+				deviceInfo.DeviceType = _ctx.StringValue("QueryDevice.Data["+ i +"].DeviceType");
+				deviceInfo.GmtCreate = _ctx.StringValue("QueryDevice.Data["+ i +"].GmtCreate");
+				deviceInfo.GmtModified = _ctx.StringValue("QueryDevice.Data["+ i +"].GmtModified");
+				deviceInfo.UtcCreate = _ctx.StringValue("QueryDevice.Data["+ i +"].UtcCreate");
+				deviceInfo.UtcModified = _ctx.StringValue("QueryDevice.Data["+ i +"].UtcModified");
+				deviceInfo.IotId = _ctx.StringValue("QueryDevice.Data["+ i +"].IotId");
+				deviceInfo.Nickname = _ctx.StringValue("QueryDevice.Data["+ i +"].Nickname");
 
 				queryDeviceResponse_data.Add(deviceInfo);
 			}

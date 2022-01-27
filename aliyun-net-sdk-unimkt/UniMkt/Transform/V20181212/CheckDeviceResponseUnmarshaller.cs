@@ -26,23 +26,23 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 {
     public class CheckDeviceResponseUnmarshaller
     {
-        public static CheckDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static CheckDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckDeviceResponse checkDeviceResponse = new CheckDeviceResponse();
 
-			checkDeviceResponse.HttpResponse = context.HttpResponse;
-			checkDeviceResponse.Status = context.BooleanValue("CheckDevice.Status");
-			checkDeviceResponse.Msg = context.StringValue("CheckDevice.Msg");
-			checkDeviceResponse.ErrorCode = context.StringValue("CheckDevice.ErrorCode");
-			checkDeviceResponse.RequestId = context.StringValue("CheckDevice.RequestId");
+			checkDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			checkDeviceResponse.Status = _ctx.BooleanValue("CheckDevice.Status");
+			checkDeviceResponse.Msg = _ctx.StringValue("CheckDevice.Msg");
+			checkDeviceResponse.ErrorCode = _ctx.StringValue("CheckDevice.ErrorCode");
+			checkDeviceResponse.RequestId = _ctx.StringValue("CheckDevice.RequestId");
 
 			List<CheckDeviceResponse.CheckDevice_PlanDto> checkDeviceResponse_plans = new List<CheckDeviceResponse.CheckDevice_PlanDto>();
-			for (int i = 0; i < context.Length("CheckDevice.Plans.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("CheckDevice.Plans.Length"); i++) {
 				CheckDeviceResponse.CheckDevice_PlanDto planDto = new CheckDeviceResponse.CheckDevice_PlanDto();
-				planDto.Id = context.LongValue("CheckDevice.Plans["+ i +"].Id");
-				planDto.Name = context.StringValue("CheckDevice.Plans["+ i +"].Name");
-				planDto.StartTime = context.StringValue("CheckDevice.Plans["+ i +"].StartTime");
-				planDto.EndTime = context.StringValue("CheckDevice.Plans["+ i +"].EndTime");
+				planDto.Id = _ctx.LongValue("CheckDevice.Plans["+ i +"].Id");
+				planDto.Name = _ctx.StringValue("CheckDevice.Plans["+ i +"].Name");
+				planDto.StartTime = _ctx.StringValue("CheckDevice.Plans["+ i +"].StartTime");
+				planDto.EndTime = _ctx.StringValue("CheckDevice.Plans["+ i +"].EndTime");
 
 				checkDeviceResponse_plans.Add(planDto);
 			}

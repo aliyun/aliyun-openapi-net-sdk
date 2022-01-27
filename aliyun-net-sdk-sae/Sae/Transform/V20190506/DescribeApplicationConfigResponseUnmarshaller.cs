@@ -26,92 +26,116 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class DescribeApplicationConfigResponseUnmarshaller
     {
-        public static DescribeApplicationConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeApplicationConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeApplicationConfigResponse describeApplicationConfigResponse = new DescribeApplicationConfigResponse();
 
-			describeApplicationConfigResponse.HttpResponse = context.HttpResponse;
-			describeApplicationConfigResponse.Code = context.StringValue("DescribeApplicationConfig.Code");
-			describeApplicationConfigResponse.Message = context.StringValue("DescribeApplicationConfig.Message");
-			describeApplicationConfigResponse.TraceId = context.StringValue("DescribeApplicationConfig.TraceId");
-			describeApplicationConfigResponse.RequestId = context.StringValue("DescribeApplicationConfig.RequestId");
-			describeApplicationConfigResponse.Success = context.BooleanValue("DescribeApplicationConfig.Success");
-			describeApplicationConfigResponse.ErrorCode = context.StringValue("DescribeApplicationConfig.ErrorCode");
+			describeApplicationConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeApplicationConfigResponse.RequestId = _ctx.StringValue("DescribeApplicationConfig.RequestId");
+			describeApplicationConfigResponse.Message = _ctx.StringValue("DescribeApplicationConfig.Message");
+			describeApplicationConfigResponse.TraceId = _ctx.StringValue("DescribeApplicationConfig.TraceId");
+			describeApplicationConfigResponse.ErrorCode = _ctx.StringValue("DescribeApplicationConfig.ErrorCode");
+			describeApplicationConfigResponse.Code = _ctx.StringValue("DescribeApplicationConfig.Code");
+			describeApplicationConfigResponse.Success = _ctx.BooleanValue("DescribeApplicationConfig.Success");
 
 			DescribeApplicationConfigResponse.DescribeApplicationConfig_Data data = new DescribeApplicationConfigResponse.DescribeApplicationConfig_Data();
-			data.AppId = context.StringValue("DescribeApplicationConfig.Data.AppId");
-			data.AppName = context.StringValue("DescribeApplicationConfig.Data.AppName");
-			data.NamespaceId = context.StringValue("DescribeApplicationConfig.Data.NamespaceId");
-			data.AppDescription = context.StringValue("DescribeApplicationConfig.Data.AppDescription");
-			data.VpcId = context.StringValue("DescribeApplicationConfig.Data.VpcId");
-			data.VSwitchId = context.StringValue("DescribeApplicationConfig.Data.VSwitchId");
-			data.PackageType = context.StringValue("DescribeApplicationConfig.Data.PackageType");
-			data.PackageVersion = context.StringValue("DescribeApplicationConfig.Data.PackageVersion");
-			data.PackageUrl = context.StringValue("DescribeApplicationConfig.Data.PackageUrl");
-			data.ImageUrl = context.StringValue("DescribeApplicationConfig.Data.ImageUrl");
-			data.Jdk = context.StringValue("DescribeApplicationConfig.Data.Jdk");
-			data.WebContainer = context.StringValue("DescribeApplicationConfig.Data.WebContainer");
-			data.Cpu = context.IntegerValue("DescribeApplicationConfig.Data.Cpu");
-			data.Memory = context.IntegerValue("DescribeApplicationConfig.Data.Memory");
-			data.Replicas = context.IntegerValue("DescribeApplicationConfig.Data.Replicas");
-			data.Command = context.StringValue("DescribeApplicationConfig.Data.Command");
-			data.CommandArgs = context.StringValue("DescribeApplicationConfig.Data.CommandArgs");
-			data.Envs = context.StringValue("DescribeApplicationConfig.Data.Envs");
-			data.CustomHostAlias = context.StringValue("DescribeApplicationConfig.Data.CustomHostAlias");
-			data.JarStartOptions = context.StringValue("DescribeApplicationConfig.Data.JarStartOptions");
-			data.JarStartArgs = context.StringValue("DescribeApplicationConfig.Data.JarStartArgs");
-			data.Liveness = context.StringValue("DescribeApplicationConfig.Data.Liveness");
-			data.Readiness = context.StringValue("DescribeApplicationConfig.Data.Readiness");
-			data.MinReadyInstances = context.IntegerValue("DescribeApplicationConfig.Data.MinReadyInstances");
-			data.BatchWaitTime = context.IntegerValue("DescribeApplicationConfig.Data.BatchWaitTime");
-			data.EdasContainerVersion = context.StringValue("DescribeApplicationConfig.Data.EdasContainerVersion");
-			data.RegionId = context.StringValue("DescribeApplicationConfig.Data.RegionId");
-			data.SlsConfigs = context.StringValue("DescribeApplicationConfig.Data.SlsConfigs");
-			data.Timezone = context.StringValue("DescribeApplicationConfig.Data.Timezone");
-			data.NasId = context.StringValue("DescribeApplicationConfig.Data.NasId");
-			data.MountHost = context.StringValue("DescribeApplicationConfig.Data.MountHost");
-			data.PreStop = context.StringValue("DescribeApplicationConfig.Data.PreStop");
-			data.PostStart = context.StringValue("DescribeApplicationConfig.Data.PostStart");
-			data.WarStartOptions = context.StringValue("DescribeApplicationConfig.Data.WarStartOptions");
-			data.SecurityGroupId = context.StringValue("DescribeApplicationConfig.Data.SecurityGroupId");
-			data.TerminationGracePeriodSeconds = context.IntegerValue("DescribeApplicationConfig.Data.TerminationGracePeriodSeconds");
-			data.EnableAhas = context.StringValue("DescribeApplicationConfig.Data.EnableAhas");
-			data.PhpArmsConfigLocation = context.StringValue("DescribeApplicationConfig.Data.PhpArmsConfigLocation");
-			data.PhpConfigLocation = context.StringValue("DescribeApplicationConfig.Data.PhpConfigLocation");
-			data.PhpConfig = context.StringValue("DescribeApplicationConfig.Data.PhpConfig");
-			data.TomcatConfig = context.StringValue("DescribeApplicationConfig.Data.TomcatConfig");
+			data.VpcId = _ctx.StringValue("DescribeApplicationConfig.Data.VpcId");
+			data.Readiness = _ctx.StringValue("DescribeApplicationConfig.Data.Readiness");
+			data.SecurityGroupId = _ctx.StringValue("DescribeApplicationConfig.Data.SecurityGroupId");
+			data.BatchWaitTime = _ctx.IntegerValue("DescribeApplicationConfig.Data.BatchWaitTime");
+			data.Jdk = _ctx.StringValue("DescribeApplicationConfig.Data.Jdk");
+			data.ImageUrl = _ctx.StringValue("DescribeApplicationConfig.Data.ImageUrl");
+			data.SlsConfigs = _ctx.StringValue("DescribeApplicationConfig.Data.SlsConfigs");
+			data.Liveness = _ctx.StringValue("DescribeApplicationConfig.Data.Liveness");
+			data.PackageUrl = _ctx.StringValue("DescribeApplicationConfig.Data.PackageUrl");
+			data.PackageType = _ctx.StringValue("DescribeApplicationConfig.Data.PackageType");
+			data.PreStop = _ctx.StringValue("DescribeApplicationConfig.Data.PreStop");
+			data.PackageVersion = _ctx.StringValue("DescribeApplicationConfig.Data.PackageVersion");
+			data.JarStartArgs = _ctx.StringValue("DescribeApplicationConfig.Data.JarStartArgs");
+			data.AppName = _ctx.StringValue("DescribeApplicationConfig.Data.AppName");
+			data.AppId = _ctx.StringValue("DescribeApplicationConfig.Data.AppId");
+			data.JarStartOptions = _ctx.StringValue("DescribeApplicationConfig.Data.JarStartOptions");
+			data.Replicas = _ctx.IntegerValue("DescribeApplicationConfig.Data.Replicas");
+			data.UpdateStrategy = _ctx.StringValue("DescribeApplicationConfig.Data.UpdateStrategy");
+			data.MinReadyInstances = _ctx.IntegerValue("DescribeApplicationConfig.Data.MinReadyInstances");
+			data.MinReadyInstanceRatio = _ctx.IntegerValue("DescribeApplicationConfig.Data.MinReadyInstanceRatio");
+			data.Memory = _ctx.IntegerValue("DescribeApplicationConfig.Data.Memory");
+			data.Php = _ctx.StringValue("DescribeApplicationConfig.Data.Php");
+			data.PhpConfig = _ctx.StringValue("DescribeApplicationConfig.Data.PhpConfig");
+			data.PhpConfigLocation = _ctx.StringValue("DescribeApplicationConfig.Data.PhpConfigLocation");
+			data.PhpExtensions = _ctx.StringValue("DescribeApplicationConfig.Data.PhpExtensions");
+			data.PhpPECLExtensions = _ctx.StringValue("DescribeApplicationConfig.Data.PhpPECLExtensions");
+			data.PostStart = _ctx.StringValue("DescribeApplicationConfig.Data.PostStart");
+			data.TerminationGracePeriodSeconds = _ctx.IntegerValue("DescribeApplicationConfig.Data.TerminationGracePeriodSeconds");
+			data.CommandArgs = _ctx.StringValue("DescribeApplicationConfig.Data.CommandArgs");
+			data.NamespaceId = _ctx.StringValue("DescribeApplicationConfig.Data.NamespaceId");
+			data.MountHost = _ctx.StringValue("DescribeApplicationConfig.Data.MountHost");
+			data.TomcatConfig = _ctx.StringValue("DescribeApplicationConfig.Data.TomcatConfig");
+			data.RegionId = _ctx.StringValue("DescribeApplicationConfig.Data.RegionId");
+			data.VSwitchId = _ctx.StringValue("DescribeApplicationConfig.Data.VSwitchId");
+			data.Cpu = _ctx.IntegerValue("DescribeApplicationConfig.Data.Cpu");
+			data.Envs = _ctx.StringValue("DescribeApplicationConfig.Data.Envs");
+			data.EnableAhas = _ctx.StringValue("DescribeApplicationConfig.Data.EnableAhas");
+			data.CustomHostAlias = _ctx.StringValue("DescribeApplicationConfig.Data.CustomHostAlias");
+			data.WebContainer = _ctx.StringValue("DescribeApplicationConfig.Data.WebContainer");
+			data.Command = _ctx.StringValue("DescribeApplicationConfig.Data.Command");
+			data.WarStartOptions = _ctx.StringValue("DescribeApplicationConfig.Data.WarStartOptions");
+			data.PhpArmsConfigLocation = _ctx.StringValue("DescribeApplicationConfig.Data.PhpArmsConfigLocation");
+			data.NasId = _ctx.StringValue("DescribeApplicationConfig.Data.NasId");
+			data.OssAkId = _ctx.StringValue("DescribeApplicationConfig.Data.OssAkId");
+			data.OssAkSecret = _ctx.StringValue("DescribeApplicationConfig.Data.OssAkSecret");
+			data.EdasContainerVersion = _ctx.StringValue("DescribeApplicationConfig.Data.EdasContainerVersion");
+			data.Timezone = _ctx.StringValue("DescribeApplicationConfig.Data.Timezone");
+			data.AppDescription = _ctx.StringValue("DescribeApplicationConfig.Data.AppDescription");
+			data.EnableGreyTagRoute = _ctx.BooleanValue("DescribeApplicationConfig.Data.EnableGreyTagRoute");
+			data.MseApplicationId = _ctx.StringValue("DescribeApplicationConfig.Data.MseApplicationId");
+			data.AcrInstanceId = _ctx.StringValue("DescribeApplicationConfig.Data.AcrInstanceId");
+			data.AcrAssumeRoleArn = _ctx.StringValue("DescribeApplicationConfig.Data.AcrAssumeRoleArn");
+			data.AssociateEip = _ctx.BooleanValue("DescribeApplicationConfig.Data.AssociateEip");
 
-			List<DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_MountDescItem> data_mountDesc = new List<DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_MountDescItem>();
-			for (int i = 0; i < context.Length("DescribeApplicationConfig.Data.MountDesc.Length"); i++) {
-				DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_MountDescItem mountDescItem = new DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_MountDescItem();
-				mountDescItem.NasPath = context.StringValue("DescribeApplicationConfig.Data.MountDesc["+ i +"].NasPath");
-				mountDescItem.MountPath = context.StringValue("DescribeApplicationConfig.Data.MountDesc["+ i +"].MountPath");
+			List<DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_ConfigMapMountDescItem> data_configMapMountDesc = new List<DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_ConfigMapMountDescItem>();
+			for (int i = 0; i < _ctx.Length("DescribeApplicationConfig.Data.ConfigMapMountDesc.Length"); i++) {
+				DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_ConfigMapMountDescItem configMapMountDescItem = new DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_ConfigMapMountDescItem();
+				configMapMountDescItem.Key = _ctx.StringValue("DescribeApplicationConfig.Data.ConfigMapMountDesc["+ i +"].Key");
+				configMapMountDescItem.ConfigMapName = _ctx.StringValue("DescribeApplicationConfig.Data.ConfigMapMountDesc["+ i +"].ConfigMapName");
+				configMapMountDescItem.MountPath = _ctx.StringValue("DescribeApplicationConfig.Data.ConfigMapMountDesc["+ i +"].MountPath");
+				configMapMountDescItem.ConfigMapId = _ctx.LongValue("DescribeApplicationConfig.Data.ConfigMapMountDesc["+ i +"].ConfigMapId");
 
-				data_mountDesc.Add(mountDescItem);
+				data_configMapMountDesc.Add(configMapMountDescItem);
 			}
-			data.MountDesc = data_mountDesc;
+			data.ConfigMapMountDesc = data_configMapMountDesc;
 
 			List<DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_Tag> data_tags = new List<DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_Tag>();
-			for (int i = 0; i < context.Length("DescribeApplicationConfig.Data.Tags.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeApplicationConfig.Data.Tags.Length"); i++) {
 				DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_Tag tag = new DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_Tag();
-				tag.Key = context.StringValue("DescribeApplicationConfig.Data.Tags["+ i +"].Key");
-				tag._Value = context.StringValue("DescribeApplicationConfig.Data.Tags["+ i +"].Value");
+				tag.Key = _ctx.StringValue("DescribeApplicationConfig.Data.Tags["+ i +"].Key");
+				tag._Value = _ctx.StringValue("DescribeApplicationConfig.Data.Tags["+ i +"].Value");
 
 				data_tags.Add(tag);
 			}
 			data.Tags = data_tags;
 
-			List<DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_ConfigMapMountDescItem> data_configMapMountDesc = new List<DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_ConfigMapMountDescItem>();
-			for (int i = 0; i < context.Length("DescribeApplicationConfig.Data.ConfigMapMountDesc.Length"); i++) {
-				DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_ConfigMapMountDescItem configMapMountDescItem = new DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_ConfigMapMountDescItem();
-				configMapMountDescItem.ConfigMapId = context.LongValue("DescribeApplicationConfig.Data.ConfigMapMountDesc["+ i +"].ConfigMapId");
-				configMapMountDescItem.ConfigMapName = context.StringValue("DescribeApplicationConfig.Data.ConfigMapMountDesc["+ i +"].ConfigMapName");
-				configMapMountDescItem.Key = context.StringValue("DescribeApplicationConfig.Data.ConfigMapMountDesc["+ i +"].Key");
-				configMapMountDescItem.MountPath = context.StringValue("DescribeApplicationConfig.Data.ConfigMapMountDesc["+ i +"].MountPath");
+			List<DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_MountDescItem> data_mountDesc = new List<DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_MountDescItem>();
+			for (int i = 0; i < _ctx.Length("DescribeApplicationConfig.Data.MountDesc.Length"); i++) {
+				DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_MountDescItem mountDescItem = new DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_MountDescItem();
+				mountDescItem.MountPath = _ctx.StringValue("DescribeApplicationConfig.Data.MountDesc["+ i +"].MountPath");
+				mountDescItem.NasPath = _ctx.StringValue("DescribeApplicationConfig.Data.MountDesc["+ i +"].NasPath");
 
-				data_configMapMountDesc.Add(configMapMountDescItem);
+				data_mountDesc.Add(mountDescItem);
 			}
-			data.ConfigMapMountDesc = data_configMapMountDesc;
+			data.MountDesc = data_mountDesc;
+
+			List<DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_OssMountDesc> data_ossMountDescs = new List<DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_OssMountDesc>();
+			for (int i = 0; i < _ctx.Length("DescribeApplicationConfig.Data.OssMountDescs.Length"); i++) {
+				DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_OssMountDesc ossMountDesc = new DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_OssMountDesc();
+				ossMountDesc.BucketName = _ctx.StringValue("DescribeApplicationConfig.Data.OssMountDescs["+ i +"].bucketName");
+				ossMountDesc.BucketPath = _ctx.StringValue("DescribeApplicationConfig.Data.OssMountDescs["+ i +"].bucketPath");
+				ossMountDesc.MountPath = _ctx.StringValue("DescribeApplicationConfig.Data.OssMountDescs["+ i +"].mountPath");
+				ossMountDesc._ReadOnly = _ctx.BooleanValue("DescribeApplicationConfig.Data.OssMountDescs["+ i +"].readOnly");
+
+				data_ossMountDescs.Add(ossMountDesc);
+			}
+			data.OssMountDescs = data_ossMountDescs;
 			describeApplicationConfigResponse.Data = data;
         
 			return describeApplicationConfigResponse;

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,100 +25,29 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class DescribeStorageBundleResponse : AcsResponse
 	{
 
+		private string description;
+
+		private long? createdTime;
+
 		private string requestId;
 
-		private bool? success;
-
-		private string code;
+		private string resourceGroupId;
 
 		private string message;
 
 		private string storageBundleId;
 
-		private string name;
-
-		private string description;
-
 		private string backendBucketRegionId;
+
+		private string code;
+
+		private bool? success;
+
+		private string name;
 
 		private string location;
 
-		private long? createdTime;
-
-		private string resourceGroupId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public string StorageBundleId
-		{
-			get
-			{
-				return storageBundleId;
-			}
-			set	
-			{
-				storageBundleId = value;
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -131,30 +60,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public string BackendBucketRegionId
-		{
-			get
-			{
-				return backendBucketRegionId;
-			}
-			set	
-			{
-				backendBucketRegionId = value;
-			}
-		}
-
-		public string Location
-		{
-			get
-			{
-				return location;
-			}
-			set	
-			{
-				location = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "CreatedTime")]
 		public long? CreatedTime
 		{
 			get
@@ -167,6 +73,20 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ResourceGroupId")]
 		public string ResourceGroupId
 		{
 			get
@@ -176,6 +96,97 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			set	
 			{
 				resourceGroupId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Message")]
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "StorageBundleId")]
+		public string StorageBundleId
+		{
+			get
+			{
+				return storageBundleId;
+			}
+			set	
+			{
+				storageBundleId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "BackendBucketRegionId")]
+		public string BackendBucketRegionId
+		{
+			get
+			{
+				return backendBucketRegionId;
+			}
+			set	
+			{
+				backendBucketRegionId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Name")]
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Location")]
+		public string Location
+		{
+			get
+			{
+				return location;
+			}
+			set	
+			{
+				location = value;
 			}
 		}
 	}

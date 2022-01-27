@@ -26,18 +26,18 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class GetInstanceResourceResponseUnmarshaller
     {
-        public static GetInstanceResourceResponse Unmarshall(UnmarshallerContext context)
+        public static GetInstanceResourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetInstanceResourceResponse getInstanceResourceResponse = new GetInstanceResourceResponse();
 
-			getInstanceResourceResponse.HttpResponse = context.HttpResponse;
-			getInstanceResourceResponse.RequestId = context.StringValue("GetInstanceResource.RequestId");
+			getInstanceResourceResponse.HttpResponse = _ctx.HttpResponse;
+			getInstanceResourceResponse.RequestId = _ctx.StringValue("GetInstanceResource.RequestId");
 
 			GetInstanceResourceResponse.GetInstanceResource_Resource resource = new GetInstanceResourceResponse.GetInstanceResource_Resource();
-			resource.TotalMB = context.LongValue("GetInstanceResource.Resource.TotalMB");
-			resource.AllocatedMB = context.LongValue("GetInstanceResource.Resource.AllocatedMB");
-			resource.TotalVirtualCores = context.LongValue("GetInstanceResource.Resource.TotalVirtualCores");
-			resource.AllocatedVirtualCores = context.LongValue("GetInstanceResource.Resource.AllocatedVirtualCores");
+			resource.TotalMB = _ctx.LongValue("GetInstanceResource.Resource.TotalMB");
+			resource.AllocatedMB = _ctx.LongValue("GetInstanceResource.Resource.AllocatedMB");
+			resource.TotalVirtualCores = _ctx.LongValue("GetInstanceResource.Resource.TotalVirtualCores");
+			resource.AllocatedVirtualCores = _ctx.LongValue("GetInstanceResource.Resource.AllocatedVirtualCores");
 			getInstanceResourceResponse.Resource = resource;
         
 			return getInstanceResourceResponse;

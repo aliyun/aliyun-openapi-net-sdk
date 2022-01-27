@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ResizeClusterV2ResponseUnmarshaller
     {
-        public static ResizeClusterV2Response Unmarshall(UnmarshallerContext context)
+        public static ResizeClusterV2Response Unmarshall(UnmarshallerContext _ctx)
         {
 			ResizeClusterV2Response resizeClusterV2Response = new ResizeClusterV2Response();
 
-			resizeClusterV2Response.HttpResponse = context.HttpResponse;
-			resizeClusterV2Response.RequestId = context.StringValue("ResizeClusterV2.RequestId");
-			resizeClusterV2Response.ClusterId = context.StringValue("ResizeClusterV2.ClusterId");
+			resizeClusterV2Response.HttpResponse = _ctx.HttpResponse;
+			resizeClusterV2Response.RequestId = _ctx.StringValue("ResizeClusterV2.RequestId");
+			resizeClusterV2Response.ClusterId = _ctx.StringValue("ResizeClusterV2.ClusterId");
         
 			return resizeClusterV2Response;
         }

@@ -26,24 +26,24 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20180916
 {
     public class SubmitVerificationResponseUnmarshaller
     {
-        public static SubmitVerificationResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitVerificationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitVerificationResponse submitVerificationResponse = new SubmitVerificationResponse();
 
-			submitVerificationResponse.HttpResponse = context.HttpResponse;
-			submitVerificationResponse.RequestId = context.StringValue("SubmitVerification.RequestId");
-			submitVerificationResponse.Success = context.BooleanValue("SubmitVerification.Success");
-			submitVerificationResponse.Code = context.StringValue("SubmitVerification.Code");
-			submitVerificationResponse.Message = context.StringValue("SubmitVerification.Message");
+			submitVerificationResponse.HttpResponse = _ctx.HttpResponse;
+			submitVerificationResponse.RequestId = _ctx.StringValue("SubmitVerification.RequestId");
+			submitVerificationResponse.Success = _ctx.BooleanValue("SubmitVerification.Success");
+			submitVerificationResponse.Code = _ctx.StringValue("SubmitVerification.Code");
+			submitVerificationResponse.Message = _ctx.StringValue("SubmitVerification.Message");
 
 			SubmitVerificationResponse.SubmitVerification_Data data = new SubmitVerificationResponse.SubmitVerification_Data();
 
 			SubmitVerificationResponse.SubmitVerification_Data.SubmitVerification_VerifyStatus verifyStatus = new SubmitVerificationResponse.SubmitVerification_Data.SubmitVerification_VerifyStatus();
-			verifyStatus.StatusCode = context.IntegerValue("SubmitVerification.Data.VerifyStatus.StatusCode");
-			verifyStatus.TrustedScore = context.FloatValue("SubmitVerification.Data.VerifyStatus.TrustedScore");
-			verifyStatus.SimilarityScore = context.FloatValue("SubmitVerification.Data.VerifyStatus.SimilarityScore");
-			verifyStatus.AuditConclusions = context.StringValue("SubmitVerification.Data.VerifyStatus.AuditConclusions");
-			verifyStatus.AuthorityComparisonScore = context.FloatValue("SubmitVerification.Data.VerifyStatus.AuthorityComparisonScore");
+			verifyStatus.StatusCode = _ctx.IntegerValue("SubmitVerification.Data.VerifyStatus.StatusCode");
+			verifyStatus.TrustedScore = _ctx.FloatValue("SubmitVerification.Data.VerifyStatus.TrustedScore");
+			verifyStatus.SimilarityScore = _ctx.FloatValue("SubmitVerification.Data.VerifyStatus.SimilarityScore");
+			verifyStatus.AuditConclusions = _ctx.StringValue("SubmitVerification.Data.VerifyStatus.AuditConclusions");
+			verifyStatus.AuthorityComparisonScore = _ctx.FloatValue("SubmitVerification.Data.VerifyStatus.AuthorityComparisonScore");
 			data.VerifyStatus = verifyStatus;
 			submitVerificationResponse.Data = data;
         

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DescribeUserEncryptionKeyListRequest : RpcAcsRequest<DescribeUserEncryptionKeyListResponse>
     {
         public DescribeUserEncryptionKeyListRequest()
-            : base("Dds", "2015-12-01", "DescribeUserEncryptionKeyList", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "DescribeUserEncryptionKeyList", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

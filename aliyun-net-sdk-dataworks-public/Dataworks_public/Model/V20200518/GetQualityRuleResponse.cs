@@ -25,53 +25,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetQualityRuleResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errorCode;
-
-		private string errorMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
+		private string errorMessage;
+
+		private string errorCode;
+
+		private bool? success;
+
 		private GetQualityRule_Data data;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -97,6 +61,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public GetQualityRule_Data Data
 		{
 			get
@@ -112,37 +112,41 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetQualityRule_Data
 		{
 
-			private long? id;
-
-			private long? entityId;
-
-			private string property;
-
-			private int? methodId;
-
-			private string methodName;
-
-			private string whereCondition;
-
-			private string onDuty;
-
-			private int? ruleType;
-
 			private int? blockType;
 
-			private int? templateId;
-
-			private string templateName;
-
-			private string comment;
-
-			private string ruleName;
-
-			private int? predictType;
+			private string onDutyAccountName;
 
 			private string warningThreshold;
 
+			private string property;
+
+			private int? ruleType;
+
+			private string comment;
+
+			private string onDuty;
+
+			private int? checker;
+
+			private bool? fixCheck;
+
+			private int? methodId;
+
 			private string criticalThreshold;
+
+			private int? predictType;
+
+			private string templateName;
+
+			private string checkerName;
+
+			private string ruleName;
+
+			private string methodName;
+
+			private long? entityId;
+
+			private string whereCondition;
 
 			private string _operator;
 
@@ -150,107 +154,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private string trend;
 
-			private string checkerName;
+			private int? templateId;
 
-			private int? checker;
-
-			private bool? fixCheck;
-
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
-
-			public long? EntityId
-			{
-				get
-				{
-					return entityId;
-				}
-				set	
-				{
-					entityId = value;
-				}
-			}
-
-			public string Property
-			{
-				get
-				{
-					return property;
-				}
-				set	
-				{
-					property = value;
-				}
-			}
-
-			public int? MethodId
-			{
-				get
-				{
-					return methodId;
-				}
-				set	
-				{
-					methodId = value;
-				}
-			}
-
-			public string MethodName
-			{
-				get
-				{
-					return methodName;
-				}
-				set	
-				{
-					methodName = value;
-				}
-			}
-
-			public string WhereCondition
-			{
-				get
-				{
-					return whereCondition;
-				}
-				set	
-				{
-					whereCondition = value;
-				}
-			}
-
-			public string OnDuty
-			{
-				get
-				{
-					return onDuty;
-				}
-				set	
-				{
-					onDuty = value;
-				}
-			}
-
-			public int? RuleType
-			{
-				get
-				{
-					return ruleType;
-				}
-				set	
-				{
-					ruleType = value;
-				}
-			}
+			private long? id;
 
 			public int? BlockType
 			{
@@ -264,63 +170,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public int? TemplateId
+			public string OnDutyAccountName
 			{
 				get
 				{
-					return templateId;
+					return onDutyAccountName;
 				}
 				set	
 				{
-					templateId = value;
-				}
-			}
-
-			public string TemplateName
-			{
-				get
-				{
-					return templateName;
-				}
-				set	
-				{
-					templateName = value;
-				}
-			}
-
-			public string Comment
-			{
-				get
-				{
-					return comment;
-				}
-				set	
-				{
-					comment = value;
-				}
-			}
-
-			public string RuleName
-			{
-				get
-				{
-					return ruleName;
-				}
-				set	
-				{
-					ruleName = value;
-				}
-			}
-
-			public int? PredictType
-			{
-				get
-				{
-					return predictType;
-				}
-				set	
-				{
-					predictType = value;
+					onDutyAccountName = value;
 				}
 			}
 
@@ -336,6 +194,90 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
+			public string Property
+			{
+				get
+				{
+					return property;
+				}
+				set	
+				{
+					property = value;
+				}
+			}
+
+			public int? RuleType
+			{
+				get
+				{
+					return ruleType;
+				}
+				set	
+				{
+					ruleType = value;
+				}
+			}
+
+			public string Comment
+			{
+				get
+				{
+					return comment;
+				}
+				set	
+				{
+					comment = value;
+				}
+			}
+
+			public string OnDuty
+			{
+				get
+				{
+					return onDuty;
+				}
+				set	
+				{
+					onDuty = value;
+				}
+			}
+
+			public int? Checker
+			{
+				get
+				{
+					return checker;
+				}
+				set	
+				{
+					checker = value;
+				}
+			}
+
+			public bool? FixCheck
+			{
+				get
+				{
+					return fixCheck;
+				}
+				set	
+				{
+					fixCheck = value;
+				}
+			}
+
+			public int? MethodId
+			{
+				get
+				{
+					return methodId;
+				}
+				set	
+				{
+					methodId = value;
+				}
+			}
+
 			public string CriticalThreshold
 			{
 				get
@@ -345,6 +287,90 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					criticalThreshold = value;
+				}
+			}
+
+			public int? PredictType
+			{
+				get
+				{
+					return predictType;
+				}
+				set	
+				{
+					predictType = value;
+				}
+			}
+
+			public string TemplateName
+			{
+				get
+				{
+					return templateName;
+				}
+				set	
+				{
+					templateName = value;
+				}
+			}
+
+			public string CheckerName
+			{
+				get
+				{
+					return checkerName;
+				}
+				set	
+				{
+					checkerName = value;
+				}
+			}
+
+			public string RuleName
+			{
+				get
+				{
+					return ruleName;
+				}
+				set	
+				{
+					ruleName = value;
+				}
+			}
+
+			public string MethodName
+			{
+				get
+				{
+					return methodName;
+				}
+				set	
+				{
+					methodName = value;
+				}
+			}
+
+			public long? EntityId
+			{
+				get
+				{
+					return entityId;
+				}
+				set	
+				{
+					entityId = value;
+				}
+			}
+
+			public string WhereCondition
+			{
+				get
+				{
+					return whereCondition;
+				}
+				set	
+				{
+					whereCondition = value;
 				}
 			}
 
@@ -384,39 +410,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string CheckerName
+			public int? TemplateId
 			{
 				get
 				{
-					return checkerName;
+					return templateId;
 				}
 				set	
 				{
-					checkerName = value;
+					templateId = value;
 				}
 			}
 
-			public int? Checker
+			public long? Id
 			{
 				get
 				{
-					return checker;
+					return id;
 				}
 				set	
 				{
-					checker = value;
-				}
-			}
-
-			public bool? FixCheck
-			{
-				get
-				{
-					return fixCheck;
-				}
-				set	
-				{
-					fixCheck = value;
+					id = value;
 				}
 			}
 		}

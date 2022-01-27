@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 {
     public class DescribeVerifyTokenResponseUnmarshaller
     {
-        public static DescribeVerifyTokenResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVerifyTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVerifyTokenResponse describeVerifyTokenResponse = new DescribeVerifyTokenResponse();
 
-			describeVerifyTokenResponse.HttpResponse = context.HttpResponse;
-			describeVerifyTokenResponse.RequestId = context.StringValue("DescribeVerifyToken.RequestId");
-			describeVerifyTokenResponse.VerifyPageUrl = context.StringValue("DescribeVerifyToken.VerifyPageUrl");
-			describeVerifyTokenResponse.VerifyToken = context.StringValue("DescribeVerifyToken.VerifyToken");
+			describeVerifyTokenResponse.HttpResponse = _ctx.HttpResponse;
+			describeVerifyTokenResponse.RequestId = _ctx.StringValue("DescribeVerifyToken.RequestId");
+			describeVerifyTokenResponse.VerifyPageUrl = _ctx.StringValue("DescribeVerifyToken.VerifyPageUrl");
+			describeVerifyTokenResponse.VerifyToken = _ctx.StringValue("DescribeVerifyToken.VerifyToken");
 
 			DescribeVerifyTokenResponse.DescribeVerifyToken_OssUploadToken ossUploadToken = new DescribeVerifyTokenResponse.DescribeVerifyToken_OssUploadToken();
-			ossUploadToken.Bucket = context.StringValue("DescribeVerifyToken.OssUploadToken.Bucket");
-			ossUploadToken.EndPoint = context.StringValue("DescribeVerifyToken.OssUploadToken.EndPoint");
-			ossUploadToken.Path = context.StringValue("DescribeVerifyToken.OssUploadToken.Path");
-			ossUploadToken.Expired = context.LongValue("DescribeVerifyToken.OssUploadToken.Expired");
-			ossUploadToken.Secret = context.StringValue("DescribeVerifyToken.OssUploadToken.Secret");
-			ossUploadToken.Key = context.StringValue("DescribeVerifyToken.OssUploadToken.Key");
-			ossUploadToken.Token = context.StringValue("DescribeVerifyToken.OssUploadToken.Token");
+			ossUploadToken.Bucket = _ctx.StringValue("DescribeVerifyToken.OssUploadToken.Bucket");
+			ossUploadToken.EndPoint = _ctx.StringValue("DescribeVerifyToken.OssUploadToken.EndPoint");
+			ossUploadToken.Path = _ctx.StringValue("DescribeVerifyToken.OssUploadToken.Path");
+			ossUploadToken.Expired = _ctx.LongValue("DescribeVerifyToken.OssUploadToken.Expired");
+			ossUploadToken.Secret = _ctx.StringValue("DescribeVerifyToken.OssUploadToken.Secret");
+			ossUploadToken.Key = _ctx.StringValue("DescribeVerifyToken.OssUploadToken.Key");
+			ossUploadToken.Token = _ctx.StringValue("DescribeVerifyToken.OssUploadToken.Token");
 			describeVerifyTokenResponse.OssUploadToken = ossUploadToken;
         
 			return describeVerifyTokenResponse;

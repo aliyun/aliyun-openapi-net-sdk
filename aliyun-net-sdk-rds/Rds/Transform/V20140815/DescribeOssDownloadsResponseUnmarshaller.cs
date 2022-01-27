@@ -26,26 +26,26 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeOssDownloadsResponseUnmarshaller
     {
-        public static DescribeOssDownloadsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeOssDownloadsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeOssDownloadsResponse describeOssDownloadsResponse = new DescribeOssDownloadsResponse();
 
-			describeOssDownloadsResponse.HttpResponse = context.HttpResponse;
-			describeOssDownloadsResponse.RequestId = context.StringValue("DescribeOssDownloads.RequestId");
-			describeOssDownloadsResponse.DBInstanceId = context.StringValue("DescribeOssDownloads.DBInstanceId");
-			describeOssDownloadsResponse.MigrateTaskId = context.StringValue("DescribeOssDownloads.MigrateTaskId");
+			describeOssDownloadsResponse.HttpResponse = _ctx.HttpResponse;
+			describeOssDownloadsResponse.RequestId = _ctx.StringValue("DescribeOssDownloads.RequestId");
+			describeOssDownloadsResponse.DBInstanceId = _ctx.StringValue("DescribeOssDownloads.DBInstanceId");
+			describeOssDownloadsResponse.MigrateTaskId = _ctx.StringValue("DescribeOssDownloads.MigrateTaskId");
 
 			List<DescribeOssDownloadsResponse.DescribeOssDownloads_OssDownload> describeOssDownloadsResponse_items = new List<DescribeOssDownloadsResponse.DescribeOssDownloads_OssDownload>();
-			for (int i = 0; i < context.Length("DescribeOssDownloads.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeOssDownloads.Items.Length"); i++) {
 				DescribeOssDownloadsResponse.DescribeOssDownloads_OssDownload ossDownload = new DescribeOssDownloadsResponse.DescribeOssDownloads_OssDownload();
-				ossDownload.FileName = context.StringValue("DescribeOssDownloads.Items["+ i +"].FileName");
-				ossDownload.CreateTime = context.StringValue("DescribeOssDownloads.Items["+ i +"].CreateTime");
-				ossDownload.EndTime = context.StringValue("DescribeOssDownloads.Items["+ i +"].EndTime");
-				ossDownload.BackupMode = context.StringValue("DescribeOssDownloads.Items["+ i +"].BackupMode");
-				ossDownload.FileSize = context.StringValue("DescribeOssDownloads.Items["+ i +"].FileSize");
-				ossDownload.Status = context.StringValue("DescribeOssDownloads.Items["+ i +"].Status");
-				ossDownload.IsAvailable = context.StringValue("DescribeOssDownloads.Items["+ i +"].IsAvailable");
-				ossDownload.Description = context.StringValue("DescribeOssDownloads.Items["+ i +"].Description");
+				ossDownload.FileName = _ctx.StringValue("DescribeOssDownloads.Items["+ i +"].FileName");
+				ossDownload.CreateTime = _ctx.StringValue("DescribeOssDownloads.Items["+ i +"].CreateTime");
+				ossDownload.EndTime = _ctx.StringValue("DescribeOssDownloads.Items["+ i +"].EndTime");
+				ossDownload.BackupMode = _ctx.StringValue("DescribeOssDownloads.Items["+ i +"].BackupMode");
+				ossDownload.FileSize = _ctx.StringValue("DescribeOssDownloads.Items["+ i +"].FileSize");
+				ossDownload.Status = _ctx.StringValue("DescribeOssDownloads.Items["+ i +"].Status");
+				ossDownload.IsAvailable = _ctx.StringValue("DescribeOssDownloads.Items["+ i +"].IsAvailable");
+				ossDownload.Description = _ctx.StringValue("DescribeOssDownloads.Items["+ i +"].Description");
 
 				describeOssDownloadsResponse_items.Add(ossDownload);
 			}

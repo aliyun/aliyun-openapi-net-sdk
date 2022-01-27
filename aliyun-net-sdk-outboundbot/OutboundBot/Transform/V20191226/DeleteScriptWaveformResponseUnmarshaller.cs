@@ -26,16 +26,16 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class DeleteScriptWaveformResponseUnmarshaller
     {
-        public static DeleteScriptWaveformResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteScriptWaveformResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteScriptWaveformResponse deleteScriptWaveformResponse = new DeleteScriptWaveformResponse();
 
-			deleteScriptWaveformResponse.HttpResponse = context.HttpResponse;
-			deleteScriptWaveformResponse.RequestId = context.StringValue("DeleteScriptWaveform.RequestId");
-			deleteScriptWaveformResponse.Success = context.BooleanValue("DeleteScriptWaveform.Success");
-			deleteScriptWaveformResponse.Code = context.StringValue("DeleteScriptWaveform.Code");
-			deleteScriptWaveformResponse.Message = context.StringValue("DeleteScriptWaveform.Message");
-			deleteScriptWaveformResponse.HttpStatusCode = context.IntegerValue("DeleteScriptWaveform.HttpStatusCode");
+			deleteScriptWaveformResponse.HttpResponse = _ctx.HttpResponse;
+			deleteScriptWaveformResponse.Code = _ctx.StringValue("DeleteScriptWaveform.Code");
+			deleteScriptWaveformResponse.HttpStatusCode = _ctx.IntegerValue("DeleteScriptWaveform.HttpStatusCode");
+			deleteScriptWaveformResponse.Message = _ctx.StringValue("DeleteScriptWaveform.Message");
+			deleteScriptWaveformResponse.RequestId = _ctx.StringValue("DeleteScriptWaveform.RequestId");
+			deleteScriptWaveformResponse.Success = _ctx.BooleanValue("DeleteScriptWaveform.Success");
         
 			return deleteScriptWaveformResponse;
         }

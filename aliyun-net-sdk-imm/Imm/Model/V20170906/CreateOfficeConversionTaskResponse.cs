@@ -25,27 +25,27 @@ namespace Aliyun.Acs.imm.Model.V20170906
 	public class CreateOfficeConversionTaskResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string status;
 
 		private string taskId;
 
-		private string tgtLoc;
-
-		private string status;
-
-		private string createTime;
+		private string requestId;
 
 		private int? percent;
 
-		public string RequestId
+		private string tgtLoc;
+
+		private string createTime;
+
+		public string Status
 		{
 			get
 			{
-				return requestId;
+				return status;
 			}
 			set	
 			{
-				requestId = value;
+				status = value;
 			}
 		}
 
@@ -61,39 +61,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string TgtLoc
+		public string RequestId
 		{
 			get
 			{
-				return tgtLoc;
+				return requestId;
 			}
 			set	
 			{
-				tgtLoc = value;
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-			}
-		}
-
-		public string CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
+				requestId = value;
 			}
 		}
 
@@ -106,6 +82,30 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				percent = value;
+			}
+		}
+
+		public string TgtLoc
+		{
+			get
+			{
+				return tgtLoc;
+			}
+			set	
+			{
+				tgtLoc = value;
+			}
+		}
+
+		public string CreateTime
+		{
+			get
+			{
+				return createTime;
+			}
+			set	
+			{
+				createTime = value;
 			}
 		}
 	}

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class PreloadVodObjectCachesResponseUnmarshaller
     {
-        public static PreloadVodObjectCachesResponse Unmarshall(UnmarshallerContext context)
+        public static PreloadVodObjectCachesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PreloadVodObjectCachesResponse preloadVodObjectCachesResponse = new PreloadVodObjectCachesResponse();
 
-			preloadVodObjectCachesResponse.HttpResponse = context.HttpResponse;
-			preloadVodObjectCachesResponse.RequestId = context.StringValue("PreloadVodObjectCaches.RequestId");
-			preloadVodObjectCachesResponse.PreloadTaskId = context.StringValue("PreloadVodObjectCaches.PreloadTaskId");
+			preloadVodObjectCachesResponse.HttpResponse = _ctx.HttpResponse;
+			preloadVodObjectCachesResponse.RequestId = _ctx.StringValue("PreloadVodObjectCaches.RequestId");
+			preloadVodObjectCachesResponse.PreloadTaskId = _ctx.StringValue("PreloadVodObjectCaches.PreloadTaskId");
         
 			return preloadVodObjectCachesResponse;
         }

@@ -26,18 +26,18 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeGatewayCapacityLimitResponseUnmarshaller
     {
-        public static DescribeGatewayCapacityLimitResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGatewayCapacityLimitResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGatewayCapacityLimitResponse describeGatewayCapacityLimitResponse = new DescribeGatewayCapacityLimitResponse();
 
-			describeGatewayCapacityLimitResponse.HttpResponse = context.HttpResponse;
-			describeGatewayCapacityLimitResponse.RequestId = context.StringValue("DescribeGatewayCapacityLimit.RequestId");
-			describeGatewayCapacityLimitResponse.Success = context.BooleanValue("DescribeGatewayCapacityLimit.Success");
-			describeGatewayCapacityLimitResponse.Code = context.StringValue("DescribeGatewayCapacityLimit.Code");
-			describeGatewayCapacityLimitResponse.Message = context.StringValue("DescribeGatewayCapacityLimit.Message");
-			describeGatewayCapacityLimitResponse.FileNumber = context.LongValue("DescribeGatewayCapacityLimit.FileNumber");
-			describeGatewayCapacityLimitResponse.FileSystemSizeInTB = context.LongValue("DescribeGatewayCapacityLimit.FileSystemSizeInTB");
-			describeGatewayCapacityLimitResponse.IsMetadataSeparate = context.BooleanValue("DescribeGatewayCapacityLimit.IsMetadataSeparate");
+			describeGatewayCapacityLimitResponse.HttpResponse = _ctx.HttpResponse;
+			describeGatewayCapacityLimitResponse.FileSystemSizeInTB = _ctx.LongValue("DescribeGatewayCapacityLimit.FileSystemSizeInTB");
+			describeGatewayCapacityLimitResponse.RequestId = _ctx.StringValue("DescribeGatewayCapacityLimit.RequestId");
+			describeGatewayCapacityLimitResponse.Message = _ctx.StringValue("DescribeGatewayCapacityLimit.Message");
+			describeGatewayCapacityLimitResponse.IsMetadataSeparate = _ctx.BooleanValue("DescribeGatewayCapacityLimit.IsMetadataSeparate");
+			describeGatewayCapacityLimitResponse.FileNumber = _ctx.LongValue("DescribeGatewayCapacityLimit.FileNumber");
+			describeGatewayCapacityLimitResponse.Code = _ctx.StringValue("DescribeGatewayCapacityLimit.Code");
+			describeGatewayCapacityLimitResponse.Success = _ctx.BooleanValue("DescribeGatewayCapacityLimit.Success");
         
 			return describeGatewayCapacityLimitResponse;
         }

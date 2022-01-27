@@ -26,15 +26,15 @@ namespace Aliyun.Acs.videoseg.Transform.V20200320
 {
     public class SegmentVideoBodyResponseUnmarshaller
     {
-        public static SegmentVideoBodyResponse Unmarshall(UnmarshallerContext context)
+        public static SegmentVideoBodyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SegmentVideoBodyResponse segmentVideoBodyResponse = new SegmentVideoBodyResponse();
 
-			segmentVideoBodyResponse.HttpResponse = context.HttpResponse;
-			segmentVideoBodyResponse.RequestId = context.StringValue("SegmentVideoBody.RequestId");
+			segmentVideoBodyResponse.HttpResponse = _ctx.HttpResponse;
+			segmentVideoBodyResponse.RequestId = _ctx.StringValue("SegmentVideoBody.RequestId");
 
 			SegmentVideoBodyResponse.SegmentVideoBody_Data data = new SegmentVideoBodyResponse.SegmentVideoBody_Data();
-			data.VideoUrl = context.StringValue("SegmentVideoBody.Data.VideoUrl");
+			data.VideoUrl = _ctx.StringValue("SegmentVideoBody.Data.VideoUrl");
 			segmentVideoBodyResponse.Data = data;
         
 			return segmentVideoBodyResponse;

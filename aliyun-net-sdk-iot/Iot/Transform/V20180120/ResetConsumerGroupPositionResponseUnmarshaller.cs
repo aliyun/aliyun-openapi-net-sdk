@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class ResetConsumerGroupPositionResponseUnmarshaller
     {
-        public static ResetConsumerGroupPositionResponse Unmarshall(UnmarshallerContext context)
+        public static ResetConsumerGroupPositionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ResetConsumerGroupPositionResponse resetConsumerGroupPositionResponse = new ResetConsumerGroupPositionResponse();
 
-			resetConsumerGroupPositionResponse.HttpResponse = context.HttpResponse;
-			resetConsumerGroupPositionResponse.RequestId = context.StringValue("ResetConsumerGroupPosition.RequestId");
-			resetConsumerGroupPositionResponse.Success = context.BooleanValue("ResetConsumerGroupPosition.Success");
-			resetConsumerGroupPositionResponse.ErrorMessage = context.StringValue("ResetConsumerGroupPosition.ErrorMessage");
-			resetConsumerGroupPositionResponse.Code = context.StringValue("ResetConsumerGroupPosition.Code");
+			resetConsumerGroupPositionResponse.HttpResponse = _ctx.HttpResponse;
+			resetConsumerGroupPositionResponse.RequestId = _ctx.StringValue("ResetConsumerGroupPosition.RequestId");
+			resetConsumerGroupPositionResponse.Success = _ctx.BooleanValue("ResetConsumerGroupPosition.Success");
+			resetConsumerGroupPositionResponse.ErrorMessage = _ctx.StringValue("ResetConsumerGroupPosition.ErrorMessage");
+			resetConsumerGroupPositionResponse.Code = _ctx.StringValue("ResetConsumerGroupPosition.Code");
         
 			return resetConsumerGroupPositionResponse;
         }

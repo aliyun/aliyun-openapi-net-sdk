@@ -26,22 +26,22 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class DescribeZonesResponseUnmarshaller
     {
-        public static DescribeZonesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeZonesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeZonesResponse describeZonesResponse = new DescribeZonesResponse();
 
-			describeZonesResponse.HttpResponse = context.HttpResponse;
-			describeZonesResponse.RequestId = context.StringValue("DescribeZones.RequestId");
+			describeZonesResponse.HttpResponse = _ctx.HttpResponse;
+			describeZonesResponse.RequestId = _ctx.StringValue("DescribeZones.RequestId");
 
 			List<DescribeZonesResponse.DescribeZones_KVStoreZone> describeZonesResponse_zones = new List<DescribeZonesResponse.DescribeZones_KVStoreZone>();
-			for (int i = 0; i < context.Length("DescribeZones.Zones.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeZones.Zones.Length"); i++) {
 				DescribeZonesResponse.DescribeZones_KVStoreZone kVStoreZone = new DescribeZonesResponse.DescribeZones_KVStoreZone();
-				kVStoreZone.RegionId = context.StringValue("DescribeZones.Zones["+ i +"].RegionId");
-				kVStoreZone.ZoneId = context.StringValue("DescribeZones.Zones["+ i +"].ZoneId");
-				kVStoreZone.ZoneName = context.StringValue("DescribeZones.Zones["+ i +"].ZoneName");
-				kVStoreZone.SwitchNetwork = context.BooleanValue("DescribeZones.Zones["+ i +"].SwitchNetwork");
-				kVStoreZone.IsRds = context.BooleanValue("DescribeZones.Zones["+ i +"].IsRds");
-				kVStoreZone.Disabled = context.BooleanValue("DescribeZones.Zones["+ i +"].Disabled");
+				kVStoreZone.RegionId = _ctx.StringValue("DescribeZones.Zones["+ i +"].RegionId");
+				kVStoreZone.ZoneId = _ctx.StringValue("DescribeZones.Zones["+ i +"].ZoneId");
+				kVStoreZone.ZoneName = _ctx.StringValue("DescribeZones.Zones["+ i +"].ZoneName");
+				kVStoreZone.SwitchNetwork = _ctx.BooleanValue("DescribeZones.Zones["+ i +"].SwitchNetwork");
+				kVStoreZone.IsRds = _ctx.BooleanValue("DescribeZones.Zones["+ i +"].IsRds");
+				kVStoreZone.Disabled = _ctx.BooleanValue("DescribeZones.Zones["+ i +"].Disabled");
 
 				describeZonesResponse_zones.Add(kVStoreZone);
 			}

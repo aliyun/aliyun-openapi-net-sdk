@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 	public class DescribeRegionsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? code;
 
 		private string message;
 
+		private string requestId;
+
 		private bool? success;
 
 		private List<DescribeRegions_Region> regions;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public int? Code
 		{
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -98,21 +98,21 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 		public class DescribeRegions_Region
 		{
 
-			private string regionId;
+			private string regionEndpoint;
 
 			private string localName;
 
-			private string regionEndpoint;
+			private string regionId;
 
-			public string RegionId
+			public string RegionEndpoint
 			{
 				get
 				{
-					return regionId;
+					return regionEndpoint;
 				}
 				set	
 				{
-					regionId = value;
+					regionEndpoint = value;
 				}
 			}
 
@@ -128,15 +128,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 				}
 			}
 
-			public string RegionEndpoint
+			public string RegionId
 			{
 				get
 				{
-					return regionEndpoint;
+					return regionId;
 				}
 				set	
 				{
-					regionEndpoint = value;
+					regionId = value;
 				}
 			}
 		}

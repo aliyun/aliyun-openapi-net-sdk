@@ -26,31 +26,31 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class ListIngressesResponseUnmarshaller
     {
-        public static ListIngressesResponse Unmarshall(UnmarshallerContext context)
+        public static ListIngressesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListIngressesResponse listIngressesResponse = new ListIngressesResponse();
 
-			listIngressesResponse.HttpResponse = context.HttpResponse;
-			listIngressesResponse.RequestId = context.StringValue("ListIngresses.RequestId");
-			listIngressesResponse.Code = context.StringValue("ListIngresses.Code");
-			listIngressesResponse.Message = context.StringValue("ListIngresses.Message");
-			listIngressesResponse.Success = context.BooleanValue("ListIngresses.Success");
-			listIngressesResponse.ErrorCode = context.StringValue("ListIngresses.ErrorCode");
-			listIngressesResponse.TraceId = context.StringValue("ListIngresses.TraceId");
+			listIngressesResponse.HttpResponse = _ctx.HttpResponse;
+			listIngressesResponse.RequestId = _ctx.StringValue("ListIngresses.RequestId");
+			listIngressesResponse.Code = _ctx.StringValue("ListIngresses.Code");
+			listIngressesResponse.Message = _ctx.StringValue("ListIngresses.Message");
+			listIngressesResponse.Success = _ctx.BooleanValue("ListIngresses.Success");
+			listIngressesResponse.ErrorCode = _ctx.StringValue("ListIngresses.ErrorCode");
+			listIngressesResponse.TraceId = _ctx.StringValue("ListIngresses.TraceId");
 
 			ListIngressesResponse.ListIngresses_Data data = new ListIngressesResponse.ListIngresses_Data();
 
 			List<ListIngressesResponse.ListIngresses_Data.ListIngresses_Ingress> data_ingressList = new List<ListIngressesResponse.ListIngresses_Data.ListIngresses_Ingress>();
-			for (int i = 0; i < context.Length("ListIngresses.Data.IngressList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListIngresses.Data.IngressList.Length"); i++) {
 				ListIngressesResponse.ListIngresses_Data.ListIngresses_Ingress ingress = new ListIngressesResponse.ListIngresses_Data.ListIngresses_Ingress();
-				ingress.Id = context.LongValue("ListIngresses.Data.IngressList["+ i +"].Id");
-				ingress.Name = context.StringValue("ListIngresses.Data.IngressList["+ i +"].Name");
-				ingress.NamespaceId = context.StringValue("ListIngresses.Data.IngressList["+ i +"].NamespaceId");
-				ingress.SlbId = context.StringValue("ListIngresses.Data.IngressList["+ i +"].SlbId");
-				ingress.ListenerPort = context.StringValue("ListIngresses.Data.IngressList["+ i +"].ListenerPort");
-				ingress.CertId = context.StringValue("ListIngresses.Data.IngressList["+ i +"].CertId");
-				ingress.Description = context.StringValue("ListIngresses.Data.IngressList["+ i +"].Description");
-				ingress.SlbType = context.StringValue("ListIngresses.Data.IngressList["+ i +"].SlbType");
+				ingress.Id = _ctx.LongValue("ListIngresses.Data.IngressList["+ i +"].Id");
+				ingress.Name = _ctx.StringValue("ListIngresses.Data.IngressList["+ i +"].Name");
+				ingress.NamespaceId = _ctx.StringValue("ListIngresses.Data.IngressList["+ i +"].NamespaceId");
+				ingress.SlbId = _ctx.StringValue("ListIngresses.Data.IngressList["+ i +"].SlbId");
+				ingress.ListenerPort = _ctx.StringValue("ListIngresses.Data.IngressList["+ i +"].ListenerPort");
+				ingress.CertId = _ctx.StringValue("ListIngresses.Data.IngressList["+ i +"].CertId");
+				ingress.Description = _ctx.StringValue("ListIngresses.Data.IngressList["+ i +"].Description");
+				ingress.SlbType = _ctx.StringValue("ListIngresses.Data.IngressList["+ i +"].SlbType");
 
 				data_ingressList.Add(ingress);
 			}

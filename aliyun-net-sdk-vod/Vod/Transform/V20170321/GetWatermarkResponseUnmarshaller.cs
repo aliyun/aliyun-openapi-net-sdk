@@ -26,22 +26,22 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetWatermarkResponseUnmarshaller
     {
-        public static GetWatermarkResponse Unmarshall(UnmarshallerContext context)
+        public static GetWatermarkResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetWatermarkResponse getWatermarkResponse = new GetWatermarkResponse();
 
-			getWatermarkResponse.HttpResponse = context.HttpResponse;
-			getWatermarkResponse.RequestId = context.StringValue("GetWatermark.RequestId");
+			getWatermarkResponse.HttpResponse = _ctx.HttpResponse;
+			getWatermarkResponse.RequestId = _ctx.StringValue("GetWatermark.RequestId");
 
 			GetWatermarkResponse.GetWatermark_WatermarkInfo watermarkInfo = new GetWatermarkResponse.GetWatermark_WatermarkInfo();
-			watermarkInfo.CreationTime = context.StringValue("GetWatermark.WatermarkInfo.CreationTime");
-			watermarkInfo.Type = context.StringValue("GetWatermark.WatermarkInfo.Type");
-			watermarkInfo.IsDefault = context.StringValue("GetWatermark.WatermarkInfo.IsDefault");
-			watermarkInfo.WatermarkId = context.StringValue("GetWatermark.WatermarkInfo.WatermarkId");
-			watermarkInfo.Name = context.StringValue("GetWatermark.WatermarkInfo.Name");
-			watermarkInfo.FileUrl = context.StringValue("GetWatermark.WatermarkInfo.FileUrl");
-			watermarkInfo.WatermarkConfig = context.StringValue("GetWatermark.WatermarkInfo.WatermarkConfig");
-			watermarkInfo.AppId = context.StringValue("GetWatermark.WatermarkInfo.AppId");
+			watermarkInfo.CreationTime = _ctx.StringValue("GetWatermark.WatermarkInfo.CreationTime");
+			watermarkInfo.Type = _ctx.StringValue("GetWatermark.WatermarkInfo.Type");
+			watermarkInfo.IsDefault = _ctx.StringValue("GetWatermark.WatermarkInfo.IsDefault");
+			watermarkInfo.WatermarkId = _ctx.StringValue("GetWatermark.WatermarkInfo.WatermarkId");
+			watermarkInfo.Name = _ctx.StringValue("GetWatermark.WatermarkInfo.Name");
+			watermarkInfo.FileUrl = _ctx.StringValue("GetWatermark.WatermarkInfo.FileUrl");
+			watermarkInfo.WatermarkConfig = _ctx.StringValue("GetWatermark.WatermarkInfo.WatermarkConfig");
+			watermarkInfo.AppId = _ctx.StringValue("GetWatermark.WatermarkInfo.AppId");
 			getWatermarkResponse.WatermarkInfo = watermarkInfo;
         
 			return getWatermarkResponse;

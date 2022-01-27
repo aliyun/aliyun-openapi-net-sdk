@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -48,7 +48,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? pageSize;
 
-		private List<TemplateTag> templateTags = new List<TemplateTag>(){ };
+		private List<string> templateTags = new List<string>(){ };
 
 		private List<string> launchTemplateIds = new List<string>(){ };
 
@@ -70,10 +70,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				launchTemplateNames = value;
-				for (int i = 0; i < launchTemplateNames.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"LaunchTemplateName." + (i + 1) , launchTemplateNames[i]);
-				}
 			}
 		}
 
@@ -116,7 +112,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<TemplateTag> TemplateTags
+		public List<string> TemplateTags
 		{
 			get
 			{
@@ -126,10 +122,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				templateTags = value;
-				for (int i = 0; i < templateTags.Count; i++)
+				if(templateTags != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"TemplateTag." + (i + 1) + ".Key", templateTags[i].Key);
-					DictionaryUtil.Add(QueryParameters,"TemplateTag." + (i + 1) + ".Value", templateTags[i].Value);
+					for (int depth1 = 0; depth1 < templateTags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"TemplateTag." + (depth1 + 1), templateTags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"TemplateTag." + (depth1 + 1), templateTags[depth1]);
+					}
 				}
 			}
 		}
@@ -144,10 +143,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				launchTemplateIds = value;
-				for (int i = 0; i < launchTemplateIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"LaunchTemplateId." + (i + 1) , launchTemplateIds[i]);
-				}
 			}
 		}
 
@@ -222,7 +217,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Value
+			public string Value_
 			{
 				get
 				{

@@ -26,37 +26,39 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 {
     public class DescribeCensResponseUnmarshaller
     {
-        public static DescribeCensResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCensResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCensResponse describeCensResponse = new DescribeCensResponse();
 
-			describeCensResponse.HttpResponse = context.HttpResponse;
-			describeCensResponse.RequestId = context.StringValue("DescribeCens.RequestId");
-			describeCensResponse.TotalCount = context.IntegerValue("DescribeCens.TotalCount");
-			describeCensResponse.PageNumber = context.IntegerValue("DescribeCens.PageNumber");
-			describeCensResponse.PageSize = context.IntegerValue("DescribeCens.PageSize");
+			describeCensResponse.HttpResponse = _ctx.HttpResponse;
+			describeCensResponse.PageSize = _ctx.IntegerValue("DescribeCens.PageSize");
+			describeCensResponse.RequestId = _ctx.StringValue("DescribeCens.RequestId");
+			describeCensResponse.PageNumber = _ctx.IntegerValue("DescribeCens.PageNumber");
+			describeCensResponse.TotalCount = _ctx.IntegerValue("DescribeCens.TotalCount");
 
 			List<DescribeCensResponse.DescribeCens_Cen> describeCensResponse_cens = new List<DescribeCensResponse.DescribeCens_Cen>();
-			for (int i = 0; i < context.Length("DescribeCens.Cens.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCens.Cens.Length"); i++) {
 				DescribeCensResponse.DescribeCens_Cen cen = new DescribeCensResponse.DescribeCens_Cen();
-				cen.CenId = context.StringValue("DescribeCens.Cens["+ i +"].CenId");
-				cen.Name = context.StringValue("DescribeCens.Cens["+ i +"].Name");
-				cen.Description = context.StringValue("DescribeCens.Cens["+ i +"].Description");
-				cen.ProtectionLevel = context.StringValue("DescribeCens.Cens["+ i +"].ProtectionLevel");
-				cen.Status = context.StringValue("DescribeCens.Cens["+ i +"].Status");
-				cen.CreationTime = context.StringValue("DescribeCens.Cens["+ i +"].CreationTime");
+				cen.Status = _ctx.StringValue("DescribeCens.Cens["+ i +"].Status");
+				cen.CreationTime = _ctx.StringValue("DescribeCens.Cens["+ i +"].CreationTime");
+				cen.Ipv6Level = _ctx.StringValue("DescribeCens.Cens["+ i +"].Ipv6Level");
+				cen.Description = _ctx.StringValue("DescribeCens.Cens["+ i +"].Description");
+				cen.ResourceGroupId = _ctx.StringValue("DescribeCens.Cens["+ i +"].ResourceGroupId");
+				cen.CenId = _ctx.StringValue("DescribeCens.Cens["+ i +"].CenId");
+				cen.ProtectionLevel = _ctx.StringValue("DescribeCens.Cens["+ i +"].ProtectionLevel");
+				cen.Name = _ctx.StringValue("DescribeCens.Cens["+ i +"].Name");
 
 				List<string> cen_cenBandwidthPackageIds = new List<string>();
-				for (int j = 0; j < context.Length("DescribeCens.Cens["+ i +"].CenBandwidthPackageIds.Length"); j++) {
-					cen_cenBandwidthPackageIds.Add(context.StringValue("DescribeCens.Cens["+ i +"].CenBandwidthPackageIds["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeCens.Cens["+ i +"].CenBandwidthPackageIds.Length"); j++) {
+					cen_cenBandwidthPackageIds.Add(_ctx.StringValue("DescribeCens.Cens["+ i +"].CenBandwidthPackageIds["+ j +"]"));
 				}
 				cen.CenBandwidthPackageIds = cen_cenBandwidthPackageIds;
 
 				List<DescribeCensResponse.DescribeCens_Cen.DescribeCens_Tag> cen_tags = new List<DescribeCensResponse.DescribeCens_Cen.DescribeCens_Tag>();
-				for (int j = 0; j < context.Length("DescribeCens.Cens["+ i +"].Tags.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeCens.Cens["+ i +"].Tags.Length"); j++) {
 					DescribeCensResponse.DescribeCens_Cen.DescribeCens_Tag tag = new DescribeCensResponse.DescribeCens_Cen.DescribeCens_Tag();
-					tag.Key = context.StringValue("DescribeCens.Cens["+ i +"].Tags["+ j +"].Key");
-					tag._Value = context.StringValue("DescribeCens.Cens["+ i +"].Tags["+ j +"].Value");
+					tag.Key = _ctx.StringValue("DescribeCens.Cens["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("DescribeCens.Cens["+ i +"].Tags["+ j +"].Value");
 
 					cen_tags.Add(tag);
 				}

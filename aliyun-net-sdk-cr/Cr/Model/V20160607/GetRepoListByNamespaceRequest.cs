@@ -30,8 +30,13 @@ namespace Aliyun.Acs.cr.Model.V20160607
     public class GetRepoListByNamespaceRequest : RoaAcsRequest<GetRepoListByNamespaceResponse>
     {
         public GetRepoListByNamespaceRequest()
-            : base("cr", "2016-06-07", "GetRepoListByNamespace", "cr", "openAPI")
+            : base("cr", "2016-06-07", "GetRepoListByNamespace", "acr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/repos/[RepoNamespace]";
 			Method = MethodType.GET;
         }

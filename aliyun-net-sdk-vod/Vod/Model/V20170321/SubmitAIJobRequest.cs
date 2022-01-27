@@ -34,8 +34,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -53,8 +53,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string ownerId;
 
 		private string mediaId;
-
-		private string input;
 
 		private string config;
 
@@ -146,19 +144,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				mediaId = value;
 				DictionaryUtil.Add(QueryParameters, "MediaId", value);
-			}
-		}
-
-		public string Input
-		{
-			get
-			{
-				return input;
-			}
-			set	
-			{
-				input = value;
-				DictionaryUtil.Add(QueryParameters, "Input", value);
 			}
 		}
 

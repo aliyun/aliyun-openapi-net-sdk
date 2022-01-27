@@ -26,25 +26,25 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class BatchGetDeviceStateResponseUnmarshaller
     {
-        public static BatchGetDeviceStateResponse Unmarshall(UnmarshallerContext context)
+        public static BatchGetDeviceStateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchGetDeviceStateResponse batchGetDeviceStateResponse = new BatchGetDeviceStateResponse();
 
-			batchGetDeviceStateResponse.HttpResponse = context.HttpResponse;
-			batchGetDeviceStateResponse.RequestId = context.StringValue("BatchGetDeviceState.RequestId");
-			batchGetDeviceStateResponse.Success = context.BooleanValue("BatchGetDeviceState.Success");
-			batchGetDeviceStateResponse.Code = context.StringValue("BatchGetDeviceState.Code");
-			batchGetDeviceStateResponse.ErrorMessage = context.StringValue("BatchGetDeviceState.ErrorMessage");
+			batchGetDeviceStateResponse.HttpResponse = _ctx.HttpResponse;
+			batchGetDeviceStateResponse.RequestId = _ctx.StringValue("BatchGetDeviceState.RequestId");
+			batchGetDeviceStateResponse.Success = _ctx.BooleanValue("BatchGetDeviceState.Success");
+			batchGetDeviceStateResponse.Code = _ctx.StringValue("BatchGetDeviceState.Code");
+			batchGetDeviceStateResponse.ErrorMessage = _ctx.StringValue("BatchGetDeviceState.ErrorMessage");
 
 			List<BatchGetDeviceStateResponse.BatchGetDeviceState_DeviceStatus> batchGetDeviceStateResponse_deviceStatusList = new List<BatchGetDeviceStateResponse.BatchGetDeviceState_DeviceStatus>();
-			for (int i = 0; i < context.Length("BatchGetDeviceState.DeviceStatusList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("BatchGetDeviceState.DeviceStatusList.Length"); i++) {
 				BatchGetDeviceStateResponse.BatchGetDeviceState_DeviceStatus deviceStatus = new BatchGetDeviceStateResponse.BatchGetDeviceState_DeviceStatus();
-				deviceStatus.DeviceId = context.StringValue("BatchGetDeviceState.DeviceStatusList["+ i +"].DeviceId");
-				deviceStatus.DeviceName = context.StringValue("BatchGetDeviceState.DeviceStatusList["+ i +"].DeviceName");
-				deviceStatus.Status = context.StringValue("BatchGetDeviceState.DeviceStatusList["+ i +"].Status");
-				deviceStatus.AsAddress = context.StringValue("BatchGetDeviceState.DeviceStatusList["+ i +"].AsAddress");
-				deviceStatus.LastOnlineTime = context.StringValue("BatchGetDeviceState.DeviceStatusList["+ i +"].LastOnlineTime");
-				deviceStatus.IotId = context.StringValue("BatchGetDeviceState.DeviceStatusList["+ i +"].IotId");
+				deviceStatus.DeviceId = _ctx.StringValue("BatchGetDeviceState.DeviceStatusList["+ i +"].DeviceId");
+				deviceStatus.DeviceName = _ctx.StringValue("BatchGetDeviceState.DeviceStatusList["+ i +"].DeviceName");
+				deviceStatus.Status = _ctx.StringValue("BatchGetDeviceState.DeviceStatusList["+ i +"].Status");
+				deviceStatus.AsAddress = _ctx.StringValue("BatchGetDeviceState.DeviceStatusList["+ i +"].AsAddress");
+				deviceStatus.LastOnlineTime = _ctx.StringValue("BatchGetDeviceState.DeviceStatusList["+ i +"].LastOnlineTime");
+				deviceStatus.IotId = _ctx.StringValue("BatchGetDeviceState.DeviceStatusList["+ i +"].IotId");
 
 				batchGetDeviceStateResponse_deviceStatusList.Add(deviceStatus);
 			}

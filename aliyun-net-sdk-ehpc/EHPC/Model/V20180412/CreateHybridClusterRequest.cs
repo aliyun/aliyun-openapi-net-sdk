@@ -35,12 +35,14 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.EHPC.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.EHPC.Endpoint.endpointRegionalType, null);
             }
         }
 
 		private string keyPairName;
+
+		private bool? multiOs;
 
 		private string securityGroupName;
 
@@ -120,6 +122,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				keyPairName = value;
 				DictionaryUtil.Add(QueryParameters, "KeyPairName", value);
+			}
+		}
+
+		public bool? MultiOs
+		{
+			get
+			{
+				return multiOs;
+			}
+			set	
+			{
+				multiOs = value;
+				DictionaryUtil.Add(QueryParameters, "MultiOs", value.ToString());
 			}
 		}
 

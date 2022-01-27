@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeAllRegionsStatisticsResponseUnmarshaller
     {
-        public static DescribeAllRegionsStatisticsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAllRegionsStatisticsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAllRegionsStatisticsResponse describeAllRegionsStatisticsResponse = new DescribeAllRegionsStatisticsResponse();
 
-			describeAllRegionsStatisticsResponse.HttpResponse = context.HttpResponse;
-			describeAllRegionsStatisticsResponse.RequestId = context.StringValue("DescribeAllRegionsStatistics.RequestId");
+			describeAllRegionsStatisticsResponse.HttpResponse = _ctx.HttpResponse;
+			describeAllRegionsStatisticsResponse.RequestId = _ctx.StringValue("DescribeAllRegionsStatistics.RequestId");
 
 			DescribeAllRegionsStatisticsResponse.DescribeAllRegionsStatistics_Data data = new DescribeAllRegionsStatisticsResponse.DescribeAllRegionsStatistics_Data();
-			data.Account = context.IntegerValue("DescribeAllRegionsStatistics.Data.Account");
-			data.Health = context.IntegerValue("DescribeAllRegionsStatistics.Data.Health");
-			data.Trojan = context.IntegerValue("DescribeAllRegionsStatistics.Data.Trojan");
-			data.Suspicious = context.IntegerValue("DescribeAllRegionsStatistics.Data.Suspicious");
-			data.Vul = context.IntegerValue("DescribeAllRegionsStatistics.Data.Vul");
-			data.NewSuspicious = context.IntegerValue("DescribeAllRegionsStatistics.Data.NewSuspicious");
+			data.Account = _ctx.IntegerValue("DescribeAllRegionsStatistics.Data.Account");
+			data.Health = _ctx.IntegerValue("DescribeAllRegionsStatistics.Data.Health");
+			data.Trojan = _ctx.IntegerValue("DescribeAllRegionsStatistics.Data.Trojan");
+			data.Suspicious = _ctx.IntegerValue("DescribeAllRegionsStatistics.Data.Suspicious");
+			data.Vul = _ctx.IntegerValue("DescribeAllRegionsStatistics.Data.Vul");
+			data.NewSuspicious = _ctx.IntegerValue("DescribeAllRegionsStatistics.Data.NewSuspicious");
 			describeAllRegionsStatisticsResponse.Data = data;
         
 			return describeAllRegionsStatisticsResponse;

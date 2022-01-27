@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeVpcsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeVpcs_Vpc> vpcs;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,61 +98,37 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeVpcs_Vpc
 		{
 
-			private string vpcId;
-
-			private string regionId;
-
-			private string status;
+			private string creationTime;
 
 			private string vpcName;
 
-			private string creationTime;
+			private string status;
 
-			private string cidrBlock;
+			private string vpcId;
 
 			private string vRouterId;
 
+			private bool? isDefault;
+
+			private string cidrBlock;
+
 			private string description;
 
-			private bool? isDefault;
+			private string regionId;
 
 			private List<string> vSwitchIds;
 
 			private List<string> userCidrs;
 
-			public string VpcId
+			public string CreationTime
 			{
 				get
 				{
-					return vpcId;
+					return creationTime;
 				}
 				set	
 				{
-					vpcId = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
+					creationTime = value;
 				}
 			}
 
@@ -168,27 +144,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string CreationTime
+			public string Status
 			{
 				get
 				{
-					return creationTime;
+					return status;
 				}
 				set	
 				{
-					creationTime = value;
+					status = value;
 				}
 			}
 
-			public string CidrBlock
+			public string VpcId
 			{
 				get
 				{
-					return cidrBlock;
+					return vpcId;
 				}
 				set	
 				{
-					cidrBlock = value;
+					vpcId = value;
 				}
 			}
 
@@ -204,6 +180,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public bool? IsDefault
+			{
+				get
+				{
+					return isDefault;
+				}
+				set	
+				{
+					isDefault = value;
+				}
+			}
+
+			public string CidrBlock
+			{
+				get
+				{
+					return cidrBlock;
+				}
+				set	
+				{
+					cidrBlock = value;
+				}
+			}
+
 			public string Description
 			{
 				get
@@ -216,15 +216,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public bool? IsDefault
+			public string RegionId
 			{
 				get
 				{
-					return isDefault;
+					return regionId;
 				}
 				set	
 				{
-					isDefault = value;
+					regionId = value;
 				}
 			}
 

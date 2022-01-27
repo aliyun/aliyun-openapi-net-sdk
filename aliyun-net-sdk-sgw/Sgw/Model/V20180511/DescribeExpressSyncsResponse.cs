@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,52 +25,17 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class DescribeExpressSyncsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string message;
 
-		private bool? success;
+		private string requestId;
 
 		private string code;
 
-		private string message;
+		private bool? success;
 
 		private List<DescribeExpressSyncs_ExpressSync> expressSyncs;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -83,6 +48,46 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ExpressSyncs")]
 		public List<DescribeExpressSyncs_ExpressSync> ExpressSyncs
 		{
 			get
@@ -100,18 +105,19 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 
 			private string expressSyncId;
 
-			private string name;
-
 			private string description;
 
-			private string bucketRegion;
-
 			private string bucketName;
+
+			private string name;
 
 			private string bucketPrefix;
 
 			private string mnsTopic;
 
+			private string bucketRegion;
+
+			[JsonProperty(PropertyName = "ExpressSyncId")]
 			public string ExpressSyncId
 			{
 				get
@@ -124,18 +130,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Description")]
 			public string Description
 			{
 				get
@@ -148,18 +143,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
-			public string BucketRegion
-			{
-				get
-				{
-					return bucketRegion;
-				}
-				set	
-				{
-					bucketRegion = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "BucketName")]
 			public string BucketName
 			{
 				get
@@ -172,6 +156,20 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "Name")]
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BucketPrefix")]
 			public string BucketPrefix
 			{
 				get
@@ -184,6 +182,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "MnsTopic")]
 			public string MnsTopic
 			{
 				get
@@ -193,6 +192,19 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				set	
 				{
 					mnsTopic = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BucketRegion")]
+			public string BucketRegion
+			{
+				get
+				{
+					return bucketRegion;
+				}
+				set	
+				{
+					bucketRegion = value;
 				}
 			}
 		}

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 {
     public class UpdateRotationPolicyResponseUnmarshaller
     {
-        public static UpdateRotationPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateRotationPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateRotationPolicyResponse updateRotationPolicyResponse = new UpdateRotationPolicyResponse();
 
-			updateRotationPolicyResponse.HttpResponse = context.HttpResponse;
-			updateRotationPolicyResponse.RequestId = context.StringValue("UpdateRotationPolicy.RequestId");
+			updateRotationPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			updateRotationPolicyResponse.RequestId = _ctx.StringValue("UpdateRotationPolicy.RequestId");
         
 			return updateRotationPolicyResponse;
         }

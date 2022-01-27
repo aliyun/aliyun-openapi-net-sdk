@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -30,13 +31,23 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class DescribeRouteConflictRequest : RpcAcsRequest<DescribeRouteConflictResponse>
     {
         public DescribeRouteConflictRequest()
-            : base("Cbn", "2017-09-12", "DescribeRouteConflict", "cbn", "openAPI")
+            : base("Cbn", "2017-09-12", "DescribeRouteConflict")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
-		private string childInstanceId;
-
 		private long? resourceOwnerId;
+
+		private int? pageNumber;
+
+		private int? pageSize;
+
+		private string childInstanceRegionId;
 
 		private string resourceOwnerAccount;
 
@@ -44,32 +55,13 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private string destinationCidrBlock;
 
-		private int? pageSize;
-
-		private string action;
-
 		private long? ownerId;
 
 		private string childInstanceType;
 
+		private string childInstanceId;
+
 		private string childInstanceRouteTableId;
-
-		private int? pageNumber;
-
-		private string childInstanceRegionId;
-
-		public string ChildInstanceId
-		{
-			get
-			{
-				return childInstanceId;
-			}
-			set	
-			{
-				childInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "ChildInstanceId", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -81,6 +73,45 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string ChildInstanceRegionId
+		{
+			get
+			{
+				return childInstanceRegionId;
+			}
+			set	
+			{
+				childInstanceRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "ChildInstanceRegionId", value);
 			}
 		}
 
@@ -123,32 +154,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -175,6 +180,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
+		public string ChildInstanceId
+		{
+			get
+			{
+				return childInstanceId;
+			}
+			set	
+			{
+				childInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "ChildInstanceId", value);
+			}
+		}
+
 		public string ChildInstanceRouteTableId
 		{
 			get
@@ -185,32 +203,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				childInstanceRouteTableId = value;
 				DictionaryUtil.Add(QueryParameters, "ChildInstanceRouteTableId", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string ChildInstanceRegionId
-		{
-			get
-			{
-				return childInstanceRegionId;
-			}
-			set	
-			{
-				childInstanceRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "ChildInstanceRegionId", value);
 			}
 		}
 

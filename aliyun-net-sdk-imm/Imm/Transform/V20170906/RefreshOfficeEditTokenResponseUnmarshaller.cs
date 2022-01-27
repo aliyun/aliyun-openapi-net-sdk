@@ -26,16 +26,16 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class RefreshOfficeEditTokenResponseUnmarshaller
     {
-        public static RefreshOfficeEditTokenResponse Unmarshall(UnmarshallerContext context)
+        public static RefreshOfficeEditTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RefreshOfficeEditTokenResponse refreshOfficeEditTokenResponse = new RefreshOfficeEditTokenResponse();
 
-			refreshOfficeEditTokenResponse.HttpResponse = context.HttpResponse;
-			refreshOfficeEditTokenResponse.AccessToken = context.StringValue("RefreshOfficeEditToken.AccessToken");
-			refreshOfficeEditTokenResponse.AccessTokenExpiredTime = context.StringValue("RefreshOfficeEditToken.AccessTokenExpiredTime");
-			refreshOfficeEditTokenResponse.RefreshToken = context.StringValue("RefreshOfficeEditToken.RefreshToken");
-			refreshOfficeEditTokenResponse.RefreshTokenExpiredTime = context.StringValue("RefreshOfficeEditToken.RefreshTokenExpiredTime");
-			refreshOfficeEditTokenResponse.RequestId = context.StringValue("RefreshOfficeEditToken.RequestId");
+			refreshOfficeEditTokenResponse.HttpResponse = _ctx.HttpResponse;
+			refreshOfficeEditTokenResponse.AccessToken = _ctx.StringValue("RefreshOfficeEditToken.AccessToken");
+			refreshOfficeEditTokenResponse.AccessTokenExpiredTime = _ctx.StringValue("RefreshOfficeEditToken.AccessTokenExpiredTime");
+			refreshOfficeEditTokenResponse.RefreshToken = _ctx.StringValue("RefreshOfficeEditToken.RefreshToken");
+			refreshOfficeEditTokenResponse.RefreshTokenExpiredTime = _ctx.StringValue("RefreshOfficeEditToken.RefreshTokenExpiredTime");
+			refreshOfficeEditTokenResponse.RequestId = _ctx.StringValue("RefreshOfficeEditToken.RequestId");
         
 			return refreshOfficeEditTokenResponse;
         }

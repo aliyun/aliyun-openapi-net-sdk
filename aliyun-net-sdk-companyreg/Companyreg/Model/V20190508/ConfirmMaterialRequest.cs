@@ -32,24 +32,17 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
         public ConfirmMaterialRequest()
             : base("companyreg", "2019-05-08", "ConfirmMaterial", "companyreg", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.companyreg.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.companyreg.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string bizId;
 
 		private string userOtherList;
 
-		public string BizId
-		{
-			get
-			{
-				return bizId;
-			}
-			set	
-			{
-				bizId = value;
-				DictionaryUtil.Add(QueryParameters, "BizId", value);
-			}
-		}
+		private string bizId;
 
 		public string UserOtherList
 		{
@@ -61,6 +54,19 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 			{
 				userOtherList = value;
 				DictionaryUtil.Add(QueryParameters, "UserOtherList", value);
+			}
+		}
+
+		public string BizId
+		{
+			get
+			{
+				return bizId;
+			}
+			set	
+			{
+				bizId = value;
+				DictionaryUtil.Add(QueryParameters, "BizId", value);
 			}
 		}
 

@@ -26,16 +26,25 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 {
     public class ListUserOrganizationResponseUnmarshaller
     {
-        public static ListUserOrganizationResponse Unmarshall(UnmarshallerContext context)
+        public static ListUserOrganizationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListUserOrganizationResponse listUserOrganizationResponse = new ListUserOrganizationResponse();
 
-			listUserOrganizationResponse.HttpResponse = context.HttpResponse;
-			listUserOrganizationResponse.RequestId = context.StringValue("ListUserOrganization.RequestId");
-			listUserOrganizationResponse.ErrorCode = context.StringValue("ListUserOrganization.ErrorCode");
-			listUserOrganizationResponse.ErrorMessage = context.StringValue("ListUserOrganization.ErrorMessage");
-			listUserOrganizationResponse.Success = context.BooleanValue("ListUserOrganization.Success");
-			listUserOrganizationResponse._Object = context.StringValue("ListUserOrganization.Object");
+			listUserOrganizationResponse.HttpResponse = _ctx.HttpResponse;
+			listUserOrganizationResponse.ErrorMessage = _ctx.StringValue("ListUserOrganization.ErrorMessage");
+			listUserOrganizationResponse.RequestId = _ctx.StringValue("ListUserOrganization.RequestId");
+			listUserOrganizationResponse.Success = _ctx.BooleanValue("ListUserOrganization.Success");
+			listUserOrganizationResponse.ErrorCode = _ctx.StringValue("ListUserOrganization.ErrorCode");
+
+			List<ListUserOrganizationResponse.ListUserOrganization_Organization> listUserOrganizationResponse_object = new List<ListUserOrganizationResponse.ListUserOrganization_Organization>();
+			for (int i = 0; i < _ctx.Length("ListUserOrganization.Object.Length"); i++) {
+				ListUserOrganizationResponse.ListUserOrganization_Organization organization = new ListUserOrganizationResponse.ListUserOrganization_Organization();
+				organization.Name = _ctx.StringValue("ListUserOrganization.Object["+ i +"].Name");
+				organization.Id = _ctx.StringValue("ListUserOrganization.Object["+ i +"].Id");
+
+				listUserOrganizationResponse_object.Add(organization);
+			}
+			listUserOrganizationResponse._Object = listUserOrganizationResponse_object;
         
 			return listUserOrganizationResponse;
         }

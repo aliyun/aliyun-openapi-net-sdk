@@ -26,12 +26,12 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class DeleteChangeSetResponseUnmarshaller
     {
-        public static DeleteChangeSetResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteChangeSetResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteChangeSetResponse deleteChangeSetResponse = new DeleteChangeSetResponse();
 
-			deleteChangeSetResponse.HttpResponse = context.HttpResponse;
-			deleteChangeSetResponse.RequestId = context.StringValue("DeleteChangeSet.RequestId");
+			deleteChangeSetResponse.HttpResponse = _ctx.HttpResponse;
+			deleteChangeSetResponse.RequestId = _ctx.StringValue("DeleteChangeSet.RequestId");
         
 			return deleteChangeSetResponse;
         }

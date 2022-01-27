@@ -34,32 +34,43 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Slb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Slb.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
-
-		private string clientToken;
 
 		private string addressIPVersion;
 
 		private string masterZoneId;
 
-		private int? duration;
-
 		private string resourceGroupId;
 
 		private string loadBalancerName;
 
-		private string addressType;
-
 		private string slaveZoneId;
 
-		private string deleteProtection;
-
 		private string loadBalancerSpec;
+
+		private long? ownerId;
+
+		private string vSwitchId;
+
+		private string internetChargeType;
+
+		private string pricingCycle;
+
+		private string modificationProtectionReason;
+
+		private string clientToken;
+
+		private int? duration;
+
+		private string addressType;
+
+		private string deleteProtection;
 
 		private bool? autoPay;
 
@@ -71,17 +82,11 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string ownerAccount;
 
-		private long? ownerId;
-
-		private string vSwitchId;
-
-		private string internetChargeType;
+		private string modificationProtectionStatus;
 
 		private string vpcId;
 
 		private string payType;
-
-		private string pricingCycle;
 
 		public long? ResourceOwnerId
 		{
@@ -93,19 +98,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -135,19 +127,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public int? Duration
-		{
-			get
-			{
-				return duration;
-			}
-			set	
-			{
-				duration = value;
-				DictionaryUtil.Add(QueryParameters, "Duration", value.ToString());
-			}
-		}
-
 		public string ResourceGroupId
 		{
 			get
@@ -174,19 +153,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string AddressType
-		{
-			get
-			{
-				return addressType;
-			}
-			set	
-			{
-				addressType = value;
-				DictionaryUtil.Add(QueryParameters, "AddressType", value);
-			}
-		}
-
 		public string SlaveZoneId
 		{
 			get
@@ -200,19 +166,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string DeleteProtection
-		{
-			get
-			{
-				return deleteProtection;
-			}
-			set	
-			{
-				deleteProtection = value;
-				DictionaryUtil.Add(QueryParameters, "DeleteProtection", value);
-			}
-		}
-
 		public string LoadBalancerSpec
 		{
 			get
@@ -223,6 +176,123 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				loadBalancerSpec = value;
 				DictionaryUtil.Add(QueryParameters, "LoadBalancerSpec", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public string InternetChargeType
+		{
+			get
+			{
+				return internetChargeType;
+			}
+			set	
+			{
+				internetChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "InternetChargeType", value);
+			}
+		}
+
+		public string PricingCycle
+		{
+			get
+			{
+				return pricingCycle;
+			}
+			set	
+			{
+				pricingCycle = value;
+				DictionaryUtil.Add(QueryParameters, "PricingCycle", value);
+			}
+		}
+
+		public string ModificationProtectionReason
+		{
+			get
+			{
+				return modificationProtectionReason;
+			}
+			set	
+			{
+				modificationProtectionReason = value;
+				DictionaryUtil.Add(QueryParameters, "ModificationProtectionReason", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public int? Duration
+		{
+			get
+			{
+				return duration;
+			}
+			set	
+			{
+				duration = value;
+				DictionaryUtil.Add(QueryParameters, "Duration", value.ToString());
+			}
+		}
+
+		public string AddressType
+		{
+			get
+			{
+				return addressType;
+			}
+			set	
+			{
+				addressType = value;
+				DictionaryUtil.Add(QueryParameters, "AddressType", value);
+			}
+		}
+
+		public string DeleteProtection
+		{
+			get
+			{
+				return deleteProtection;
+			}
+			set	
+			{
+				deleteProtection = value;
+				DictionaryUtil.Add(QueryParameters, "DeleteProtection", value);
 			}
 		}
 
@@ -291,42 +361,16 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public long? OwnerId
+		public string ModificationProtectionStatus
 		{
 			get
 			{
-				return ownerId;
+				return modificationProtectionStatus;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
-			}
-		}
-
-		public string InternetChargeType
-		{
-			get
-			{
-				return internetChargeType;
-			}
-			set	
-			{
-				internetChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InternetChargeType", value);
+				modificationProtectionStatus = value;
+				DictionaryUtil.Add(QueryParameters, "ModificationProtectionStatus", value);
 			}
 		}
 
@@ -353,19 +397,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				payType = value;
 				DictionaryUtil.Add(QueryParameters, "PayType", value);
-			}
-		}
-
-		public string PricingCycle
-		{
-			get
-			{
-				return pricingCycle;
-			}
-			set	
-			{
-				pricingCycle = value;
-				DictionaryUtil.Add(QueryParameters, "PricingCycle", value);
 			}
 		}
 

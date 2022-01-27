@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DeleteLiveLazyPullStreamInfoConfigResponseUnmarshaller
     {
-        public static DeleteLiveLazyPullStreamInfoConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteLiveLazyPullStreamInfoConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteLiveLazyPullStreamInfoConfigResponse deleteLiveLazyPullStreamInfoConfigResponse = new DeleteLiveLazyPullStreamInfoConfigResponse();
 
-			deleteLiveLazyPullStreamInfoConfigResponse.HttpResponse = context.HttpResponse;
-			deleteLiveLazyPullStreamInfoConfigResponse.RequestId = context.StringValue("DeleteLiveLazyPullStreamInfoConfig.RequestId");
+			deleteLiveLazyPullStreamInfoConfigResponse.HttpResponse = _ctx.HttpResponse;
+			deleteLiveLazyPullStreamInfoConfigResponse.RequestId = _ctx.StringValue("DeleteLiveLazyPullStreamInfoConfig.RequestId");
         
 			return deleteLiveLazyPullStreamInfoConfigResponse;
         }

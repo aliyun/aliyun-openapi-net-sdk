@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Config.Model.V20190108
@@ -115,31 +115,55 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			public class GetResourceConfigurationTimeline_ConfigurationListItem
 			{
 
+				private string relationship;
+
+				private string tags;
+
 				private long? accountId;
 
+				private string resourceEventType;
+
+				private string relationshipDiff;
+
 				private string availabilityZone;
+
+				private string resourceType;
+
+				private string resourceCreateTime;
+
+				private string region;
 
 				private string captureTime;
 
 				private string configurationDiff;
 
-				private string region;
-
-				private string relationship;
-
-				private string relationshipDiff;
-
-				private string resourceCreateTime;
-
 				private string resourceId;
 
 				private string resourceName;
 
-				private string resourceType;
+				public string Relationship
+				{
+					get
+					{
+						return relationship;
+					}
+					set	
+					{
+						relationship = value;
+					}
+				}
 
-				private string tags;
-
-				private string resourceEventType;
+				public string Tags
+				{
+					get
+					{
+						return tags;
+					}
+					set	
+					{
+						tags = value;
+					}
+				}
 
 				public long? AccountId
 				{
@@ -153,6 +177,30 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					}
 				}
 
+				public string ResourceEventType
+				{
+					get
+					{
+						return resourceEventType;
+					}
+					set	
+					{
+						resourceEventType = value;
+					}
+				}
+
+				public string RelationshipDiff
+				{
+					get
+					{
+						return relationshipDiff;
+					}
+					set	
+					{
+						relationshipDiff = value;
+					}
+				}
+
 				public string AvailabilityZone
 				{
 					get
@@ -162,6 +210,42 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					set	
 					{
 						availabilityZone = value;
+					}
+				}
+
+				public string ResourceType
+				{
+					get
+					{
+						return resourceType;
+					}
+					set	
+					{
+						resourceType = value;
+					}
+				}
+
+				public string ResourceCreateTime
+				{
+					get
+					{
+						return resourceCreateTime;
+					}
+					set	
+					{
+						resourceCreateTime = value;
+					}
+				}
+
+				public string Region
+				{
+					get
+					{
+						return region;
+					}
+					set	
+					{
+						region = value;
 					}
 				}
 
@@ -189,54 +273,6 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					}
 				}
 
-				public string Region
-				{
-					get
-					{
-						return region;
-					}
-					set	
-					{
-						region = value;
-					}
-				}
-
-				public string Relationship
-				{
-					get
-					{
-						return relationship;
-					}
-					set	
-					{
-						relationship = value;
-					}
-				}
-
-				public string RelationshipDiff
-				{
-					get
-					{
-						return relationshipDiff;
-					}
-					set	
-					{
-						relationshipDiff = value;
-					}
-				}
-
-				public string ResourceCreateTime
-				{
-					get
-					{
-						return resourceCreateTime;
-					}
-					set	
-					{
-						resourceCreateTime = value;
-					}
-				}
-
 				public string ResourceId
 				{
 					get
@@ -258,42 +294,6 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					set	
 					{
 						resourceName = value;
-					}
-				}
-
-				public string ResourceType
-				{
-					get
-					{
-						return resourceType;
-					}
-					set	
-					{
-						resourceType = value;
-					}
-				}
-
-				public string Tags
-				{
-					get
-					{
-						return tags;
-					}
-					set	
-					{
-						tags = value;
-					}
-				}
-
-				public string ResourceEventType
-				{
-					get
-					{
-						return resourceEventType;
-					}
-					set	
-					{
-						resourceEventType = value;
 					}
 				}
 			}

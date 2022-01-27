@@ -26,17 +26,17 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class CreateUploadAttachedMediaResponseUnmarshaller
     {
-        public static CreateUploadAttachedMediaResponse Unmarshall(UnmarshallerContext context)
+        public static CreateUploadAttachedMediaResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateUploadAttachedMediaResponse createUploadAttachedMediaResponse = new CreateUploadAttachedMediaResponse();
 
-			createUploadAttachedMediaResponse.HttpResponse = context.HttpResponse;
-			createUploadAttachedMediaResponse.RequestId = context.StringValue("CreateUploadAttachedMedia.RequestId");
-			createUploadAttachedMediaResponse.MediaId = context.StringValue("CreateUploadAttachedMedia.MediaId");
-			createUploadAttachedMediaResponse.MediaURL = context.StringValue("CreateUploadAttachedMedia.MediaURL");
-			createUploadAttachedMediaResponse.UploadAddress = context.StringValue("CreateUploadAttachedMedia.UploadAddress");
-			createUploadAttachedMediaResponse.UploadAuth = context.StringValue("CreateUploadAttachedMedia.UploadAuth");
-			createUploadAttachedMediaResponse.FileURL = context.StringValue("CreateUploadAttachedMedia.FileURL");
+			createUploadAttachedMediaResponse.HttpResponse = _ctx.HttpResponse;
+			createUploadAttachedMediaResponse.RequestId = _ctx.StringValue("CreateUploadAttachedMedia.RequestId");
+			createUploadAttachedMediaResponse.MediaId = _ctx.StringValue("CreateUploadAttachedMedia.MediaId");
+			createUploadAttachedMediaResponse.MediaURL = _ctx.StringValue("CreateUploadAttachedMedia.MediaURL");
+			createUploadAttachedMediaResponse.UploadAddress = _ctx.StringValue("CreateUploadAttachedMedia.UploadAddress");
+			createUploadAttachedMediaResponse.UploadAuth = _ctx.StringValue("CreateUploadAttachedMedia.UploadAuth");
+			createUploadAttachedMediaResponse.FileURL = _ctx.StringValue("CreateUploadAttachedMedia.FileURL");
         
 			return createUploadAttachedMediaResponse;
         }

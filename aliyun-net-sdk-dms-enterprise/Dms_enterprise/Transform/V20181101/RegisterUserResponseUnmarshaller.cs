@@ -26,15 +26,15 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 {
     public class RegisterUserResponseUnmarshaller
     {
-        public static RegisterUserResponse Unmarshall(UnmarshallerContext context)
+        public static RegisterUserResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RegisterUserResponse registerUserResponse = new RegisterUserResponse();
 
-			registerUserResponse.HttpResponse = context.HttpResponse;
-			registerUserResponse.RequestId = context.StringValue("RegisterUser.RequestId");
-			registerUserResponse.Success = context.BooleanValue("RegisterUser.Success");
-			registerUserResponse.ErrorMessage = context.StringValue("RegisterUser.ErrorMessage");
-			registerUserResponse.ErrorCode = context.StringValue("RegisterUser.ErrorCode");
+			registerUserResponse.HttpResponse = _ctx.HttpResponse;
+			registerUserResponse.RequestId = _ctx.StringValue("RegisterUser.RequestId");
+			registerUserResponse.ErrorCode = _ctx.StringValue("RegisterUser.ErrorCode");
+			registerUserResponse.ErrorMessage = _ctx.StringValue("RegisterUser.ErrorMessage");
+			registerUserResponse.Success = _ctx.BooleanValue("RegisterUser.Success");
         
 			return registerUserResponse;
         }

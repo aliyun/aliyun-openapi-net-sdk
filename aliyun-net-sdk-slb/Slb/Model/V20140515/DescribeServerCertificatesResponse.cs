@@ -84,6 +84,12 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 			private string commonName;
 
+			private string encryptionAlgorithm;
+
+			private int? encryptionKeyLength;
+
+			private string standardType;
+
 			private List<DescribeServerCertificates_Tag> tags;
 
 			private List<string> subjectAlternativeNames;
@@ -253,6 +259,42 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					commonName = value;
+				}
+			}
+
+			public string EncryptionAlgorithm
+			{
+				get
+				{
+					return encryptionAlgorithm;
+				}
+				set	
+				{
+					encryptionAlgorithm = value;
+				}
+			}
+
+			public int? EncryptionKeyLength
+			{
+				get
+				{
+					return encryptionKeyLength;
+				}
+				set	
+				{
+					encryptionKeyLength = value;
+				}
+			}
+
+			public string StandardType
+			{
+				get
+				{
+					return standardType;
+				}
+				set	
+				{
+					standardType = value;
 				}
 			}
 

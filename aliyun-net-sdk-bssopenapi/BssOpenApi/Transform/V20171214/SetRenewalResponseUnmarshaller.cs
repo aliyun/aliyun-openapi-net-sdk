@@ -26,15 +26,15 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class SetRenewalResponseUnmarshaller
     {
-        public static SetRenewalResponse Unmarshall(UnmarshallerContext context)
+        public static SetRenewalResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetRenewalResponse setRenewalResponse = new SetRenewalResponse();
 
-			setRenewalResponse.HttpResponse = context.HttpResponse;
-			setRenewalResponse.RequestId = context.StringValue("SetRenewal.RequestId");
-			setRenewalResponse.Success = context.BooleanValue("SetRenewal.Success");
-			setRenewalResponse.Code = context.StringValue("SetRenewal.Code");
-			setRenewalResponse.Message = context.StringValue("SetRenewal.Message");
+			setRenewalResponse.HttpResponse = _ctx.HttpResponse;
+			setRenewalResponse.RequestId = _ctx.StringValue("SetRenewal.RequestId");
+			setRenewalResponse.Success = _ctx.BooleanValue("SetRenewal.Success");
+			setRenewalResponse.Code = _ctx.StringValue("SetRenewal.Code");
+			setRenewalResponse.Message = _ctx.StringValue("SetRenewal.Message");
         
 			return setRenewalResponse;
         }

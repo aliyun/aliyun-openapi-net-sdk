@@ -26,23 +26,23 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeRoomListResponseUnmarshaller
     {
-        public static DescribeRoomListResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRoomListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRoomListResponse describeRoomListResponse = new DescribeRoomListResponse();
 
-			describeRoomListResponse.HttpResponse = context.HttpResponse;
-			describeRoomListResponse.RequestId = context.StringValue("DescribeRoomList.RequestId");
-			describeRoomListResponse.TotalNum = context.IntegerValue("DescribeRoomList.TotalNum");
-			describeRoomListResponse.TotalPage = context.IntegerValue("DescribeRoomList.TotalPage");
+			describeRoomListResponse.HttpResponse = _ctx.HttpResponse;
+			describeRoomListResponse.RequestId = _ctx.StringValue("DescribeRoomList.RequestId");
+			describeRoomListResponse.TotalNum = _ctx.IntegerValue("DescribeRoomList.TotalNum");
+			describeRoomListResponse.TotalPage = _ctx.IntegerValue("DescribeRoomList.TotalPage");
 
 			List<DescribeRoomListResponse.DescribeRoomList_Room> describeRoomListResponse_roomList = new List<DescribeRoomListResponse.DescribeRoomList_Room>();
-			for (int i = 0; i < context.Length("DescribeRoomList.RoomList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRoomList.RoomList.Length"); i++) {
 				DescribeRoomListResponse.DescribeRoomList_Room room = new DescribeRoomListResponse.DescribeRoomList_Room();
-				room.RoomId = context.StringValue("DescribeRoomList.RoomList["+ i +"].RoomId");
-				room.AnchorId = context.StringValue("DescribeRoomList.RoomList["+ i +"].AnchorId");
-				room.RoomStatus = context.IntegerValue("DescribeRoomList.RoomList["+ i +"].RoomStatus");
-				room.ForbidStream = context.StringValue("DescribeRoomList.RoomList["+ i +"].ForbidStream");
-				room.CreateTime = context.StringValue("DescribeRoomList.RoomList["+ i +"].CreateTime");
+				room.RoomId = _ctx.StringValue("DescribeRoomList.RoomList["+ i +"].RoomId");
+				room.AnchorId = _ctx.StringValue("DescribeRoomList.RoomList["+ i +"].AnchorId");
+				room.RoomStatus = _ctx.IntegerValue("DescribeRoomList.RoomList["+ i +"].RoomStatus");
+				room.ForbidStream = _ctx.StringValue("DescribeRoomList.RoomList["+ i +"].ForbidStream");
+				room.CreateTime = _ctx.StringValue("DescribeRoomList.RoomList["+ i +"].CreateTime");
 
 				describeRoomListResponse_roomList.Add(room);
 			}

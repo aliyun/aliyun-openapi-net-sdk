@@ -29,6 +29,12 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 
 		private string data;
 
+		private string pageSize;
+
+		private string pageNo;
+
+		private string totalCount;
+
 		private string code;
 
 		private string message;
@@ -54,6 +60,42 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			set	
 			{
 				data = value;
+			}
+		}
+
+		public string PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public string PageNo
+		{
+			get
+			{
+				return pageNo;
+			}
+			set	
+			{
+				pageNo = value;
+			}
+		}
+
+		public string TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
 			}
 		}
 

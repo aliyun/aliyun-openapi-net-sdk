@@ -26,26 +26,27 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 {
     public class UpdateSecretParameterResponseUnmarshaller
     {
-        public static UpdateSecretParameterResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateSecretParameterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateSecretParameterResponse updateSecretParameterResponse = new UpdateSecretParameterResponse();
 
-			updateSecretParameterResponse.HttpResponse = context.HttpResponse;
-			updateSecretParameterResponse.RequestId = context.StringValue("UpdateSecretParameter.RequestId");
+			updateSecretParameterResponse.HttpResponse = _ctx.HttpResponse;
+			updateSecretParameterResponse.RequestId = _ctx.StringValue("UpdateSecretParameter.RequestId");
 
 			UpdateSecretParameterResponse.UpdateSecretParameter_Parameter parameter = new UpdateSecretParameterResponse.UpdateSecretParameter_Parameter();
-			parameter.Id = context.StringValue("UpdateSecretParameter.Parameter.Id");
-			parameter.Name = context.StringValue("UpdateSecretParameter.Parameter.Name");
-			parameter.CreatedDate = context.StringValue("UpdateSecretParameter.Parameter.CreatedDate");
-			parameter.CreatedBy = context.StringValue("UpdateSecretParameter.Parameter.CreatedBy");
-			parameter.UpdatedDate = context.StringValue("UpdateSecretParameter.Parameter.UpdatedDate");
-			parameter.UpdatedBy = context.StringValue("UpdateSecretParameter.Parameter.UpdatedBy");
-			parameter.Description = context.StringValue("UpdateSecretParameter.Parameter.Description");
-			parameter.ShareType = context.StringValue("UpdateSecretParameter.Parameter.ShareType");
-			parameter.ParameterVersion = context.IntegerValue("UpdateSecretParameter.Parameter.ParameterVersion");
-			parameter.Type = context.StringValue("UpdateSecretParameter.Parameter.Type");
-			parameter.Constraints = context.StringValue("UpdateSecretParameter.Parameter.Constraints");
-			parameter.KeyId = context.StringValue("UpdateSecretParameter.Parameter.KeyId");
+			parameter.Id = _ctx.StringValue("UpdateSecretParameter.Parameter.Id");
+			parameter.Name = _ctx.StringValue("UpdateSecretParameter.Parameter.Name");
+			parameter.CreatedDate = _ctx.StringValue("UpdateSecretParameter.Parameter.CreatedDate");
+			parameter.CreatedBy = _ctx.StringValue("UpdateSecretParameter.Parameter.CreatedBy");
+			parameter.UpdatedDate = _ctx.StringValue("UpdateSecretParameter.Parameter.UpdatedDate");
+			parameter.UpdatedBy = _ctx.StringValue("UpdateSecretParameter.Parameter.UpdatedBy");
+			parameter.Description = _ctx.StringValue("UpdateSecretParameter.Parameter.Description");
+			parameter.ShareType = _ctx.StringValue("UpdateSecretParameter.Parameter.ShareType");
+			parameter.ParameterVersion = _ctx.IntegerValue("UpdateSecretParameter.Parameter.ParameterVersion");
+			parameter.Type = _ctx.StringValue("UpdateSecretParameter.Parameter.Type");
+			parameter.Constraints = _ctx.StringValue("UpdateSecretParameter.Parameter.Constraints");
+			parameter.KeyId = _ctx.StringValue("UpdateSecretParameter.Parameter.KeyId");
+			parameter.Tags = _ctx.StringValue("UpdateSecretParameter.Parameter.Tags");
 			updateSecretParameterResponse.Parameter = parameter;
         
 			return updateSecretParameterResponse;

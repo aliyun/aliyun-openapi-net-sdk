@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Dyplsapi.Transform.V20170525
 {
     public class UnlockSecretNoResponseUnmarshaller
     {
-        public static UnlockSecretNoResponse Unmarshall(UnmarshallerContext context)
+        public static UnlockSecretNoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UnlockSecretNoResponse unlockSecretNoResponse = new UnlockSecretNoResponse();
 
-			unlockSecretNoResponse.HttpResponse = context.HttpResponse;
-			unlockSecretNoResponse.RequestId = context.StringValue("UnlockSecretNo.RequestId");
-			unlockSecretNoResponse.Code = context.StringValue("UnlockSecretNo.Code");
-			unlockSecretNoResponse.Message = context.StringValue("UnlockSecretNo.Message");
+			unlockSecretNoResponse.HttpResponse = _ctx.HttpResponse;
+			unlockSecretNoResponse.Code = _ctx.StringValue("UnlockSecretNo.Code");
+			unlockSecretNoResponse.Message = _ctx.StringValue("UnlockSecretNo.Message");
+			unlockSecretNoResponse.RequestId = _ctx.StringValue("UnlockSecretNo.RequestId");
         
 			return unlockSecretNoResponse;
         }

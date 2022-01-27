@@ -26,11 +26,11 @@ namespace Aliyun.Acs.cr.Transform.V20160607
 {
     public class GetRepoResponseUnmarshaller
     {
-        public static GetRepoResponse Unmarshall(UnmarshallerContext context)
+        public static GetRepoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetRepoResponse getRepoResponse = new GetRepoResponse();
 
-			getRepoResponse.HttpResponse = context.HttpResponse;
+			getRepoResponse.HttpResponse = _ctx.HttpResponse;
         
 			return getRepoResponse;
         }

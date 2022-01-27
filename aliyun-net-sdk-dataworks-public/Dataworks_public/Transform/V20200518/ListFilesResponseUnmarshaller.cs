@@ -26,44 +26,46 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class ListFilesResponseUnmarshaller
     {
-        public static ListFilesResponse Unmarshall(UnmarshallerContext context)
+        public static ListFilesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListFilesResponse listFilesResponse = new ListFilesResponse();
 
-			listFilesResponse.HttpResponse = context.HttpResponse;
-			listFilesResponse.RequestId = context.StringValue("ListFiles.RequestId");
-			listFilesResponse.Success = context.BooleanValue("ListFiles.Success");
-			listFilesResponse.ErrorCode = context.StringValue("ListFiles.ErrorCode");
-			listFilesResponse.ErrorMessage = context.StringValue("ListFiles.ErrorMessage");
-			listFilesResponse.HttpStatusCode = context.IntegerValue("ListFiles.HttpStatusCode");
+			listFilesResponse.HttpResponse = _ctx.HttpResponse;
+			listFilesResponse.RequestId = _ctx.StringValue("ListFiles.RequestId");
+			listFilesResponse.Success = _ctx.BooleanValue("ListFiles.Success");
+			listFilesResponse.ErrorCode = _ctx.StringValue("ListFiles.ErrorCode");
+			listFilesResponse.ErrorMessage = _ctx.StringValue("ListFiles.ErrorMessage");
+			listFilesResponse.HttpStatusCode = _ctx.IntegerValue("ListFiles.HttpStatusCode");
 
 			ListFilesResponse.ListFiles_Data data = new ListFilesResponse.ListFiles_Data();
-			data.PageNumber = context.IntegerValue("ListFiles.Data.PageNumber");
-			data.PageSize = context.IntegerValue("ListFiles.Data.PageSize");
-			data.TotalCount = context.IntegerValue("ListFiles.Data.TotalCount");
+			data.PageNumber = _ctx.IntegerValue("ListFiles.Data.PageNumber");
+			data.PageSize = _ctx.IntegerValue("ListFiles.Data.PageSize");
+			data.TotalCount = _ctx.IntegerValue("ListFiles.Data.TotalCount");
 
 			List<ListFilesResponse.ListFiles_Data.ListFiles_File> data_files = new List<ListFilesResponse.ListFiles_Data.ListFiles_File>();
-			for (int i = 0; i < context.Length("ListFiles.Data.Files.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListFiles.Data.Files.Length"); i++) {
 				ListFilesResponse.ListFiles_Data.ListFiles_File file = new ListFilesResponse.ListFiles_Data.ListFiles_File();
-				file.ConnectionName = context.StringValue("ListFiles.Data.Files["+ i +"].ConnectionName");
-				file.ParentId = context.LongValue("ListFiles.Data.Files["+ i +"].ParentId");
-				file.IsMaxCompute = context.BooleanValue("ListFiles.Data.Files["+ i +"].IsMaxCompute");
-				file.CreateTime = context.LongValue("ListFiles.Data.Files["+ i +"].CreateTime");
-				file.CreateUser = context.StringValue("ListFiles.Data.Files["+ i +"].CreateUser");
-				file.BizId = context.LongValue("ListFiles.Data.Files["+ i +"].BizId");
-				file.FileFolderId = context.StringValue("ListFiles.Data.Files["+ i +"].FileFolderId");
-				file.FileName = context.StringValue("ListFiles.Data.Files["+ i +"].FileName");
-				file.FileType = context.IntegerValue("ListFiles.Data.Files["+ i +"].FileType");
-				file.UseType = context.StringValue("ListFiles.Data.Files["+ i +"].UseType");
-				file.FileDescription = context.StringValue("ListFiles.Data.Files["+ i +"].FileDescription");
-				file.Content = context.StringValue("ListFiles.Data.Files["+ i +"].Content");
-				file.NodeId = context.LongValue("ListFiles.Data.Files["+ i +"].NodeId");
-				file.CurrentVersion = context.IntegerValue("ListFiles.Data.Files["+ i +"].CurrentVersion");
-				file.Owner = context.StringValue("ListFiles.Data.Files["+ i +"].Owner");
-				file.LastEditUser = context.StringValue("ListFiles.Data.Files["+ i +"].LastEditUser");
-				file.LastEditTime = context.LongValue("ListFiles.Data.Files["+ i +"].LastEditTime");
-				file.CommitStatus = context.IntegerValue("ListFiles.Data.Files["+ i +"].CommitStatus");
-				file.FileId = context.LongValue("ListFiles.Data.Files["+ i +"].FileId");
+				file.ConnectionName = _ctx.StringValue("ListFiles.Data.Files["+ i +"].ConnectionName");
+				file.ParentId = _ctx.LongValue("ListFiles.Data.Files["+ i +"].ParentId");
+				file.IsMaxCompute = _ctx.BooleanValue("ListFiles.Data.Files["+ i +"].IsMaxCompute");
+				file.CreateTime = _ctx.LongValue("ListFiles.Data.Files["+ i +"].CreateTime");
+				file.CreateUser = _ctx.StringValue("ListFiles.Data.Files["+ i +"].CreateUser");
+				file.BizId = _ctx.LongValue("ListFiles.Data.Files["+ i +"].BizId");
+				file.FileFolderId = _ctx.StringValue("ListFiles.Data.Files["+ i +"].FileFolderId");
+				file.FileName = _ctx.StringValue("ListFiles.Data.Files["+ i +"].FileName");
+				file.FileType = _ctx.IntegerValue("ListFiles.Data.Files["+ i +"].FileType");
+				file.UseType = _ctx.StringValue("ListFiles.Data.Files["+ i +"].UseType");
+				file.FileDescription = _ctx.StringValue("ListFiles.Data.Files["+ i +"].FileDescription");
+				file.Content = _ctx.StringValue("ListFiles.Data.Files["+ i +"].Content");
+				file.NodeId = _ctx.LongValue("ListFiles.Data.Files["+ i +"].NodeId");
+				file.CurrentVersion = _ctx.IntegerValue("ListFiles.Data.Files["+ i +"].CurrentVersion");
+				file.Owner = _ctx.StringValue("ListFiles.Data.Files["+ i +"].Owner");
+				file.LastEditUser = _ctx.StringValue("ListFiles.Data.Files["+ i +"].LastEditUser");
+				file.LastEditTime = _ctx.LongValue("ListFiles.Data.Files["+ i +"].LastEditTime");
+				file.CommitStatus = _ctx.IntegerValue("ListFiles.Data.Files["+ i +"].CommitStatus");
+				file.FileId = _ctx.LongValue("ListFiles.Data.Files["+ i +"].FileId");
+				file.BusinessId = _ctx.LongValue("ListFiles.Data.Files["+ i +"].BusinessId");
+				file.AutoParsing = _ctx.BooleanValue("ListFiles.Data.Files["+ i +"].AutoParsing");
 
 				data_files.Add(file);
 			}

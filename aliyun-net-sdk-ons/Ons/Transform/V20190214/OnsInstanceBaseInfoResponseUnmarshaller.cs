@@ -26,30 +26,30 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 {
     public class OnsInstanceBaseInfoResponseUnmarshaller
     {
-        public static OnsInstanceBaseInfoResponse Unmarshall(UnmarshallerContext context)
+        public static OnsInstanceBaseInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			OnsInstanceBaseInfoResponse onsInstanceBaseInfoResponse = new OnsInstanceBaseInfoResponse();
 
-			onsInstanceBaseInfoResponse.HttpResponse = context.HttpResponse;
-			onsInstanceBaseInfoResponse.RequestId = context.StringValue("OnsInstanceBaseInfo.RequestId");
-			onsInstanceBaseInfoResponse.HelpUrl = context.StringValue("OnsInstanceBaseInfo.HelpUrl");
+			onsInstanceBaseInfoResponse.HttpResponse = _ctx.HttpResponse;
+			onsInstanceBaseInfoResponse.RequestId = _ctx.StringValue("OnsInstanceBaseInfo.RequestId");
+			onsInstanceBaseInfoResponse.HelpUrl = _ctx.StringValue("OnsInstanceBaseInfo.HelpUrl");
 
 			OnsInstanceBaseInfoResponse.OnsInstanceBaseInfo_InstanceBaseInfo instanceBaseInfo = new OnsInstanceBaseInfoResponse.OnsInstanceBaseInfo_InstanceBaseInfo();
-			instanceBaseInfo.InstanceId = context.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.InstanceId");
-			instanceBaseInfo.InstanceStatus = context.IntegerValue("OnsInstanceBaseInfo.InstanceBaseInfo.InstanceStatus");
-			instanceBaseInfo.ReleaseTime = context.LongValue("OnsInstanceBaseInfo.InstanceBaseInfo.ReleaseTime");
-			instanceBaseInfo.InstanceType = context.IntegerValue("OnsInstanceBaseInfo.InstanceBaseInfo.InstanceType");
-			instanceBaseInfo.InstanceName = context.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.InstanceName");
-			instanceBaseInfo.IndependentNaming = context.BooleanValue("OnsInstanceBaseInfo.InstanceBaseInfo.IndependentNaming");
-			instanceBaseInfo.Remark = context.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Remark");
-			instanceBaseInfo.TopicCapacity = context.IntegerValue("OnsInstanceBaseInfo.InstanceBaseInfo.TopicCapacity");
-			instanceBaseInfo.MaxTps = context.LongValue("OnsInstanceBaseInfo.InstanceBaseInfo.MaxTps");
+			instanceBaseInfo.IndependentNaming = _ctx.BooleanValue("OnsInstanceBaseInfo.InstanceBaseInfo.IndependentNaming");
+			instanceBaseInfo.MaxTps = _ctx.LongValue("OnsInstanceBaseInfo.InstanceBaseInfo.MaxTps");
+			instanceBaseInfo.Remark = _ctx.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Remark");
+			instanceBaseInfo.InstanceName = _ctx.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.InstanceName");
+			instanceBaseInfo.ReleaseTime = _ctx.LongValue("OnsInstanceBaseInfo.InstanceBaseInfo.ReleaseTime");
+			instanceBaseInfo.TopicCapacity = _ctx.IntegerValue("OnsInstanceBaseInfo.InstanceBaseInfo.TopicCapacity");
+			instanceBaseInfo.InstanceStatus = _ctx.IntegerValue("OnsInstanceBaseInfo.InstanceBaseInfo.InstanceStatus");
+			instanceBaseInfo.InstanceId = _ctx.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.InstanceId");
+			instanceBaseInfo.InstanceType = _ctx.IntegerValue("OnsInstanceBaseInfo.InstanceBaseInfo.InstanceType");
 
 			OnsInstanceBaseInfoResponse.OnsInstanceBaseInfo_InstanceBaseInfo.OnsInstanceBaseInfo_Endpoints endpoints = new OnsInstanceBaseInfoResponse.OnsInstanceBaseInfo_InstanceBaseInfo.OnsInstanceBaseInfo_Endpoints();
-			endpoints.TcpEndpoint = context.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Endpoints.TcpEndpoint");
-			endpoints.HttpInternetEndpoint = context.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Endpoints.HttpInternetEndpoint");
-			endpoints.HttpInternetSecureEndpoint = context.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Endpoints.HttpInternetSecureEndpoint");
-			endpoints.HttpInternalEndpoint = context.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Endpoints.HttpInternalEndpoint");
+			endpoints.TcpEndpoint = _ctx.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Endpoints.TcpEndpoint");
+			endpoints.HttpInternetEndpoint = _ctx.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Endpoints.HttpInternetEndpoint");
+			endpoints.HttpInternalEndpoint = _ctx.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Endpoints.HttpInternalEndpoint");
+			endpoints.HttpInternetSecureEndpoint = _ctx.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Endpoints.HttpInternetSecureEndpoint");
 			instanceBaseInfo.Endpoints = endpoints;
 			onsInstanceBaseInfoResponse.InstanceBaseInfo = instanceBaseInfo;
         

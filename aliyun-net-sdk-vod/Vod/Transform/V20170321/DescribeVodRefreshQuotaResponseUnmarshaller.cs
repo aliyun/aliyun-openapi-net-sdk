@@ -26,20 +26,20 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DescribeVodRefreshQuotaResponseUnmarshaller
     {
-        public static DescribeVodRefreshQuotaResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVodRefreshQuotaResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVodRefreshQuotaResponse describeVodRefreshQuotaResponse = new DescribeVodRefreshQuotaResponse();
 
-			describeVodRefreshQuotaResponse.HttpResponse = context.HttpResponse;
-			describeVodRefreshQuotaResponse.RequestId = context.StringValue("DescribeVodRefreshQuota.RequestId");
-			describeVodRefreshQuotaResponse.UrlQuota = context.StringValue("DescribeVodRefreshQuota.UrlQuota");
-			describeVodRefreshQuotaResponse.DirQuota = context.StringValue("DescribeVodRefreshQuota.DirQuota");
-			describeVodRefreshQuotaResponse.UrlRemain = context.StringValue("DescribeVodRefreshQuota.UrlRemain");
-			describeVodRefreshQuotaResponse.DirRemain = context.StringValue("DescribeVodRefreshQuota.DirRemain");
-			describeVodRefreshQuotaResponse.PreloadQuota = context.StringValue("DescribeVodRefreshQuota.PreloadQuota");
-			describeVodRefreshQuotaResponse.BlockQuota = context.StringValue("DescribeVodRefreshQuota.BlockQuota");
-			describeVodRefreshQuotaResponse.PreloadRemain = context.StringValue("DescribeVodRefreshQuota.PreloadRemain");
-			describeVodRefreshQuotaResponse.BlockRemain = context.StringValue("DescribeVodRefreshQuota.blockRemain");
+			describeVodRefreshQuotaResponse.HttpResponse = _ctx.HttpResponse;
+			describeVodRefreshQuotaResponse.RequestId = _ctx.StringValue("DescribeVodRefreshQuota.RequestId");
+			describeVodRefreshQuotaResponse.UrlQuota = _ctx.StringValue("DescribeVodRefreshQuota.UrlQuota");
+			describeVodRefreshQuotaResponse.DirQuota = _ctx.StringValue("DescribeVodRefreshQuota.DirQuota");
+			describeVodRefreshQuotaResponse.UrlRemain = _ctx.StringValue("DescribeVodRefreshQuota.UrlRemain");
+			describeVodRefreshQuotaResponse.DirRemain = _ctx.StringValue("DescribeVodRefreshQuota.DirRemain");
+			describeVodRefreshQuotaResponse.PreloadQuota = _ctx.StringValue("DescribeVodRefreshQuota.PreloadQuota");
+			describeVodRefreshQuotaResponse.BlockQuota = _ctx.StringValue("DescribeVodRefreshQuota.BlockQuota");
+			describeVodRefreshQuotaResponse.PreloadRemain = _ctx.StringValue("DescribeVodRefreshQuota.PreloadRemain");
+			describeVodRefreshQuotaResponse.BlockRemain = _ctx.StringValue("DescribeVodRefreshQuota.blockRemain");
         
 			return describeVodRefreshQuotaResponse;
         }

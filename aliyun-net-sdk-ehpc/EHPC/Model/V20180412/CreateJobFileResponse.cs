@@ -27,8 +27,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string requestId;
 
-		private string templateId;
-
 		public string RequestId
 		{
 			get
@@ -38,18 +36,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string TemplateId
-		{
-			get
-			{
-				return templateId;
-			}
-			set	
-			{
-				templateId = value;
 			}
 		}
 	}

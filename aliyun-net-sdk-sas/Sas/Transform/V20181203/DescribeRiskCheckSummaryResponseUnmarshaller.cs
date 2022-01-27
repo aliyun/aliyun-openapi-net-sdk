@@ -26,47 +26,47 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeRiskCheckSummaryResponseUnmarshaller
     {
-        public static DescribeRiskCheckSummaryResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRiskCheckSummaryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRiskCheckSummaryResponse describeRiskCheckSummaryResponse = new DescribeRiskCheckSummaryResponse();
 
-			describeRiskCheckSummaryResponse.HttpResponse = context.HttpResponse;
-			describeRiskCheckSummaryResponse.RequestId = context.StringValue("DescribeRiskCheckSummary.RequestId");
+			describeRiskCheckSummaryResponse.HttpResponse = _ctx.HttpResponse;
+			describeRiskCheckSummaryResponse.RequestId = _ctx.StringValue("DescribeRiskCheckSummary.RequestId");
 
 			DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary riskCheckSummary = new DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary();
-			riskCheckSummary.RiskCount = context.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.RiskCount");
-			riskCheckSummary.PreviousCount = context.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.PreviousCount");
-			riskCheckSummary.ItemCount = context.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.ItemCount");
-			riskCheckSummary.RiskRate = context.FloatValue("DescribeRiskCheckSummary.RiskCheckSummary.RiskRate");
-			riskCheckSummary.AffectedAssetCount = context.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.AffectedAssetCount");
-			riskCheckSummary.PreviousTime = context.LongValue("DescribeRiskCheckSummary.RiskCheckSummary.PreviousTime");
-			riskCheckSummary.EnabledRiskCount = context.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.EnabledRiskCount");
-			riskCheckSummary.DisabledRiskCount = context.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.DisabledRiskCount");
+			riskCheckSummary.RiskCount = _ctx.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.RiskCount");
+			riskCheckSummary.PreviousCount = _ctx.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.PreviousCount");
+			riskCheckSummary.ItemCount = _ctx.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.ItemCount");
+			riskCheckSummary.RiskRate = _ctx.FloatValue("DescribeRiskCheckSummary.RiskCheckSummary.RiskRate");
+			riskCheckSummary.AffectedAssetCount = _ctx.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.AffectedAssetCount");
+			riskCheckSummary.PreviousTime = _ctx.LongValue("DescribeRiskCheckSummary.RiskCheckSummary.PreviousTime");
+			riskCheckSummary.EnabledRiskCount = _ctx.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.EnabledRiskCount");
+			riskCheckSummary.DisabledRiskCount = _ctx.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.DisabledRiskCount");
 
 			List<DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_LevelCount> riskCheckSummary_riskLevelCount = new List<DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_LevelCount>();
-			for (int i = 0; i < context.Length("DescribeRiskCheckSummary.RiskCheckSummary.RiskLevelCount.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRiskCheckSummary.RiskCheckSummary.RiskLevelCount.Length"); i++) {
 				DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_LevelCount levelCount = new DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_LevelCount();
-				levelCount.Key = context.StringValue("DescribeRiskCheckSummary.RiskCheckSummary.RiskLevelCount["+ i +"].Key");
-				levelCount.Count = context.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.RiskLevelCount["+ i +"].Count");
+				levelCount.Key = _ctx.StringValue("DescribeRiskCheckSummary.RiskCheckSummary.RiskLevelCount["+ i +"].Key");
+				levelCount.Count = _ctx.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.RiskLevelCount["+ i +"].Count");
 
 				riskCheckSummary_riskLevelCount.Add(levelCount);
 			}
 			riskCheckSummary.RiskLevelCount = riskCheckSummary_riskLevelCount;
 
 			List<DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_Group> riskCheckSummary_groups = new List<DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_Group>();
-			for (int i = 0; i < context.Length("DescribeRiskCheckSummary.RiskCheckSummary.Groups.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRiskCheckSummary.RiskCheckSummary.Groups.Length"); i++) {
 				DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_Group group = new DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_Group();
-				group.Id = context.LongValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].Id");
-				group.Title = context.StringValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].Title");
-				group.Status = context.StringValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].Status");
-				group.RemainingTime = context.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].RemainingTime");
-				group.Sort = context.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].Sort");
+				group.Id = _ctx.LongValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].Id");
+				group.Title = _ctx.StringValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].Title");
+				group.Status = _ctx.StringValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].Status");
+				group.RemainingTime = _ctx.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].RemainingTime");
+				group.Sort = _ctx.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].Sort");
 
 				List<DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_Group.DescribeRiskCheckSummary_StatusCount> group_countByStatus = new List<DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_Group.DescribeRiskCheckSummary_StatusCount>();
-				for (int j = 0; j < context.Length("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].CountByStatus.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].CountByStatus.Length"); j++) {
 					DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_Group.DescribeRiskCheckSummary_StatusCount statusCount = new DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_Group.DescribeRiskCheckSummary_StatusCount();
-					statusCount.Status = context.StringValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].CountByStatus["+ j +"].Status");
-					statusCount.Count = context.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].CountByStatus["+ j +"].Count");
+					statusCount.Status = _ctx.StringValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].CountByStatus["+ j +"].Status");
+					statusCount.Count = _ctx.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].CountByStatus["+ j +"].Count");
 
 					group_countByStatus.Add(statusCount);
 				}

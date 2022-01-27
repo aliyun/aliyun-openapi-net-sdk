@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cloudauth.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cloudauth.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 		private string certifyData;
 
 		private string appVersion;
+
+		private string deviceToken;
 
 		private string certifyId;
 
@@ -84,6 +86,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				appVersion = value;
 				DictionaryUtil.Add(QueryParameters, "AppVersion", value);
+			}
+		}
+
+		public string DeviceToken
+		{
+			get
+			{
+				return deviceToken;
+			}
+			set	
+			{
+				deviceToken = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceToken", value);
 			}
 		}
 

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class SaveSingleTaskForQueryingTransferAuthorizationCodeResponseUnmarshaller
     {
-        public static SaveSingleTaskForQueryingTransferAuthorizationCodeResponse Unmarshall(UnmarshallerContext context)
+        public static SaveSingleTaskForQueryingTransferAuthorizationCodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SaveSingleTaskForQueryingTransferAuthorizationCodeResponse saveSingleTaskForQueryingTransferAuthorizationCodeResponse = new SaveSingleTaskForQueryingTransferAuthorizationCodeResponse();
 
-			saveSingleTaskForQueryingTransferAuthorizationCodeResponse.HttpResponse = context.HttpResponse;
-			saveSingleTaskForQueryingTransferAuthorizationCodeResponse.RequestId = context.StringValue("SaveSingleTaskForQueryingTransferAuthorizationCode.RequestId");
-			saveSingleTaskForQueryingTransferAuthorizationCodeResponse.TaskNo = context.StringValue("SaveSingleTaskForQueryingTransferAuthorizationCode.TaskNo");
+			saveSingleTaskForQueryingTransferAuthorizationCodeResponse.HttpResponse = _ctx.HttpResponse;
+			saveSingleTaskForQueryingTransferAuthorizationCodeResponse.RequestId = _ctx.StringValue("SaveSingleTaskForQueryingTransferAuthorizationCode.RequestId");
+			saveSingleTaskForQueryingTransferAuthorizationCodeResponse.TaskNo = _ctx.StringValue("SaveSingleTaskForQueryingTransferAuthorizationCode.TaskNo");
         
 			return saveSingleTaskForQueryingTransferAuthorizationCodeResponse;
         }

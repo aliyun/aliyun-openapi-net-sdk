@@ -25,19 +25,55 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class ListTagsResponse : AcsResponse
 	{
 
+		private string code;
+
+		private int? httpStatusCode;
+
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
-
-		private string message;
-
-		private int? httpStatusCode;
+		private List<ListTags_TagGroup> tagGroups;
 
 		private List<ListTags_Tag> tags;
 
-		private List<ListTags_TagGroup> tagGroups;
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -63,39 +99,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string Code
+		public List<ListTags_TagGroup> TagGroups
 		{
 			get
 			{
-				return code;
+				return tagGroups;
 			}
 			set	
 			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
+				tagGroups = value;
 			}
 		}
 
@@ -111,66 +123,16 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public List<ListTags_TagGroup> TagGroups
+		public class ListTags_TagGroup
 		{
-			get
-			{
-				return tagGroups;
-			}
-			set	
-			{
-				tagGroups = value;
-			}
-		}
-
-		public class ListTags_Tag
-		{
-
-			private string tagId;
-
-			private string tagName;
-
-			private int? tagIndex;
 
 			private string scriptId;
 
 			private string tagGroup;
 
-			public string TagId
-			{
-				get
-				{
-					return tagId;
-				}
-				set	
-				{
-					tagId = value;
-				}
-			}
+			private string tagGroupId;
 
-			public string TagName
-			{
-				get
-				{
-					return tagName;
-				}
-				set	
-				{
-					tagName = value;
-				}
-			}
-
-			public int? TagIndex
-			{
-				get
-				{
-					return tagIndex;
-				}
-				set	
-				{
-					tagIndex = value;
-				}
-			}
+			private int? tagGroupIndex;
 
 			public string ScriptId
 			{
@@ -195,18 +157,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					tagGroup = value;
 				}
 			}
-		}
-
-		public class ListTags_TagGroup
-		{
-
-			private string tagGroupId;
-
-			private int? tagGroupIndex;
-
-			private string scriptId;
-
-			private string tagGroup;
 
 			public string TagGroupId
 			{
@@ -231,6 +181,20 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					tagGroupIndex = value;
 				}
 			}
+		}
+
+		public class ListTags_Tag
+		{
+
+			private string scriptId;
+
+			private string tagGroup;
+
+			private string tagId;
+
+			private int? tagIndex;
+
+			private string tagName;
 
 			public string ScriptId
 			{
@@ -253,6 +217,42 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					tagGroup = value;
+				}
+			}
+
+			public string TagId
+			{
+				get
+				{
+					return tagId;
+				}
+				set	
+				{
+					tagId = value;
+				}
+			}
+
+			public int? TagIndex
+			{
+				get
+				{
+					return tagIndex;
+				}
+				set	
+				{
+					tagIndex = value;
+				}
+			}
+
+			public string TagName
+			{
+				get
+				{
+					return tagName;
+				}
+				set	
+				{
+					tagName = value;
 				}
 			}
 		}

@@ -72,17 +72,17 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 			private string owner;
 
-			private string groupId;
-
 			private long? updateTime;
-
-			private string remark;
-
-			private string instanceId;
 
 			private bool? independentNaming;
 
+			private string groupId;
+
+			private string remark;
+
 			private long? createTime;
+
+			private string instanceId;
 
 			private string groupType;
 
@@ -100,18 +100,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
-			public string GroupId
-			{
-				get
-				{
-					return groupId;
-				}
-				set	
-				{
-					groupId = value;
-				}
-			}
-
 			public long? UpdateTime
 			{
 				get
@@ -121,30 +109,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					updateTime = value;
-				}
-			}
-
-			public string Remark
-			{
-				get
-				{
-					return remark;
-				}
-				set	
-				{
-					remark = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
 				}
 			}
 
@@ -160,6 +124,30 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
+			public string GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
+				}
+			}
+
+			public string Remark
+			{
+				get
+				{
+					return remark;
+				}
+				set	
+				{
+					remark = value;
+				}
+			}
+
 			public long? CreateTime
 			{
 				get
@@ -169,6 +157,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					createTime = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 

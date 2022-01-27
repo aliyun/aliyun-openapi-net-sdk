@@ -26,20 +26,22 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeVsDomainPvDataResponseUnmarshaller
     {
-        public static DescribeVsDomainPvDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVsDomainPvDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVsDomainPvDataResponse describeVsDomainPvDataResponse = new DescribeVsDomainPvDataResponse();
 
-			describeVsDomainPvDataResponse.HttpResponse = context.HttpResponse;
-			describeVsDomainPvDataResponse.RequestId = context.StringValue("DescribeVsDomainPvData.RequestId");
-			describeVsDomainPvDataResponse.DomainName = context.StringValue("DescribeVsDomainPvData.DomainName");
-			describeVsDomainPvDataResponse.StartTime = context.StringValue("DescribeVsDomainPvData.StartTime");
+			describeVsDomainPvDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeVsDomainPvDataResponse.RequestId = _ctx.StringValue("DescribeVsDomainPvData.RequestId");
+			describeVsDomainPvDataResponse.DomainName = _ctx.StringValue("DescribeVsDomainPvData.DomainName");
+			describeVsDomainPvDataResponse.StartTime = _ctx.StringValue("DescribeVsDomainPvData.StartTime");
+			describeVsDomainPvDataResponse.EndTime = _ctx.StringValue("DescribeVsDomainPvData.EndTime");
+			describeVsDomainPvDataResponse.DataInterval = _ctx.StringValue("DescribeVsDomainPvData.DataInterval");
 
 			List<DescribeVsDomainPvDataResponse.DescribeVsDomainPvData_UsageData> describeVsDomainPvDataResponse_pvDataInterval = new List<DescribeVsDomainPvDataResponse.DescribeVsDomainPvData_UsageData>();
-			for (int i = 0; i < context.Length("DescribeVsDomainPvData.PvDataInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVsDomainPvData.PvDataInterval.Length"); i++) {
 				DescribeVsDomainPvDataResponse.DescribeVsDomainPvData_UsageData usageData = new DescribeVsDomainPvDataResponse.DescribeVsDomainPvData_UsageData();
-				usageData._Value = context.StringValue("DescribeVsDomainPvData.PvDataInterval["+ i +"].Value");
-				usageData.TimeStamp = context.StringValue("DescribeVsDomainPvData.PvDataInterval["+ i +"].TimeStamp");
+				usageData._Value = _ctx.StringValue("DescribeVsDomainPvData.PvDataInterval["+ i +"].Value");
+				usageData.TimeStamp = _ctx.StringValue("DescribeVsDomainPvData.PvDataInterval["+ i +"].TimeStamp");
 
 				describeVsDomainPvDataResponse_pvDataInterval.Add(usageData);
 			}

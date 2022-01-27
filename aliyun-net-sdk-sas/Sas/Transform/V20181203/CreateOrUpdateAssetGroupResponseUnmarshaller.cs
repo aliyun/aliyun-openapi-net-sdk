@@ -26,12 +26,13 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class CreateOrUpdateAssetGroupResponseUnmarshaller
     {
-        public static CreateOrUpdateAssetGroupResponse Unmarshall(UnmarshallerContext context)
+        public static CreateOrUpdateAssetGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateOrUpdateAssetGroupResponse createOrUpdateAssetGroupResponse = new CreateOrUpdateAssetGroupResponse();
 
-			createOrUpdateAssetGroupResponse.HttpResponse = context.HttpResponse;
-			createOrUpdateAssetGroupResponse.RequestId = context.StringValue("CreateOrUpdateAssetGroup.RequestId");
+			createOrUpdateAssetGroupResponse.HttpResponse = _ctx.HttpResponse;
+			createOrUpdateAssetGroupResponse.RequestId = _ctx.StringValue("CreateOrUpdateAssetGroup.RequestId");
+			createOrUpdateAssetGroupResponse.GroupId = _ctx.LongValue("CreateOrUpdateAssetGroup.GroupId");
         
 			return createOrUpdateAssetGroupResponse;
         }

@@ -26,18 +26,18 @@ namespace Aliyun.Acs.imagerecog.Transform.V20190930
 {
     public class RecognizeImageStyleResponseUnmarshaller
     {
-        public static RecognizeImageStyleResponse Unmarshall(UnmarshallerContext context)
+        public static RecognizeImageStyleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RecognizeImageStyleResponse recognizeImageStyleResponse = new RecognizeImageStyleResponse();
 
-			recognizeImageStyleResponse.HttpResponse = context.HttpResponse;
-			recognizeImageStyleResponse.RequestId = context.StringValue("RecognizeImageStyle.RequestId");
+			recognizeImageStyleResponse.HttpResponse = _ctx.HttpResponse;
+			recognizeImageStyleResponse.RequestId = _ctx.StringValue("RecognizeImageStyle.RequestId");
 
 			RecognizeImageStyleResponse.RecognizeImageStyle_Data data = new RecognizeImageStyleResponse.RecognizeImageStyle_Data();
 
 			List<string> data_styles = new List<string>();
-			for (int i = 0; i < context.Length("RecognizeImageStyle.Data.Styles.Length"); i++) {
-				data_styles.Add(context.StringValue("RecognizeImageStyle.Data.Styles["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("RecognizeImageStyle.Data.Styles.Length"); i++) {
+				data_styles.Add(_ctx.StringValue("RecognizeImageStyle.Data.Styles["+ i +"]"));
 			}
 			data.Styles = data_styles;
 			recognizeImageStyleResponse.Data = data;

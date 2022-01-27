@@ -26,31 +26,31 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class DescribeSlbAPDetailResponseUnmarshaller
     {
-        public static DescribeSlbAPDetailResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSlbAPDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSlbAPDetailResponse describeSlbAPDetailResponse = new DescribeSlbAPDetailResponse();
 
-			describeSlbAPDetailResponse.HttpResponse = context.HttpResponse;
-			describeSlbAPDetailResponse.Code = context.IntegerValue("DescribeSlbAPDetail.Code");
-			describeSlbAPDetailResponse.ErrMsg = context.StringValue("DescribeSlbAPDetail.ErrMsg");
-			describeSlbAPDetailResponse.RequestId = context.StringValue("DescribeSlbAPDetail.RequestId");
-			describeSlbAPDetailResponse.Success = context.BooleanValue("DescribeSlbAPDetail.Success");
+			describeSlbAPDetailResponse.HttpResponse = _ctx.HttpResponse;
+			describeSlbAPDetailResponse.Code = _ctx.IntegerValue("DescribeSlbAPDetail.Code");
+			describeSlbAPDetailResponse.ErrMsg = _ctx.StringValue("DescribeSlbAPDetail.ErrMsg");
+			describeSlbAPDetailResponse.RequestId = _ctx.StringValue("DescribeSlbAPDetail.RequestId");
+			describeSlbAPDetailResponse.Success = _ctx.BooleanValue("DescribeSlbAPDetail.Success");
 
 			DescribeSlbAPDetailResponse.DescribeSlbAPDetail_Result result = new DescribeSlbAPDetailResponse.DescribeSlbAPDetail_Result();
-			result.AppId = context.LongValue("DescribeSlbAPDetail.Result.AppId");
-			result.CookieTimeout = context.IntegerValue("DescribeSlbAPDetail.Result.CookieTimeout");
-			result.EnvId = context.LongValue("DescribeSlbAPDetail.Result.EnvId");
-			result.EstablishedTimeout = context.IntegerValue("DescribeSlbAPDetail.Result.EstablishedTimeout");
-			result.ListenerPort = context.IntegerValue("DescribeSlbAPDetail.Result.ListenerPort");
-			result.Name = context.StringValue("DescribeSlbAPDetail.Result.Name");
-			result.NetworkMode = context.StringValue("DescribeSlbAPDetail.Result.NetworkMode");
-			result.Protocol = context.StringValue("DescribeSlbAPDetail.Result.Protocol");
-			result.RealServerPort = context.IntegerValue("DescribeSlbAPDetail.Result.RealServerPort");
-			result.SlbAPId = context.LongValue("DescribeSlbAPDetail.Result.SlbAPId");
-			result.SlbId = context.StringValue("DescribeSlbAPDetail.Result.SlbId");
-			result.SlbIp = context.StringValue("DescribeSlbAPDetail.Result.SlbIp");
-			result.SslCertId = context.StringValue("DescribeSlbAPDetail.Result.SslCertId");
-			result.StickySession = context.IntegerValue("DescribeSlbAPDetail.Result.StickySession");
+			result.AppId = _ctx.LongValue("DescribeSlbAPDetail.Result.AppId");
+			result.CookieTimeout = _ctx.IntegerValue("DescribeSlbAPDetail.Result.CookieTimeout");
+			result.EnvId = _ctx.LongValue("DescribeSlbAPDetail.Result.EnvId");
+			result.EstablishedTimeout = _ctx.IntegerValue("DescribeSlbAPDetail.Result.EstablishedTimeout");
+			result.ListenerPort = _ctx.IntegerValue("DescribeSlbAPDetail.Result.ListenerPort");
+			result.Name = _ctx.StringValue("DescribeSlbAPDetail.Result.Name");
+			result.NetworkMode = _ctx.StringValue("DescribeSlbAPDetail.Result.NetworkMode");
+			result.Protocol = _ctx.StringValue("DescribeSlbAPDetail.Result.Protocol");
+			result.RealServerPort = _ctx.IntegerValue("DescribeSlbAPDetail.Result.RealServerPort");
+			result.SlbAPId = _ctx.LongValue("DescribeSlbAPDetail.Result.SlbAPId");
+			result.SlbId = _ctx.StringValue("DescribeSlbAPDetail.Result.SlbId");
+			result.SlbIp = _ctx.StringValue("DescribeSlbAPDetail.Result.SlbIp");
+			result.SslCertId = _ctx.StringValue("DescribeSlbAPDetail.Result.SslCertId");
+			result.StickySession = _ctx.IntegerValue("DescribeSlbAPDetail.Result.StickySession");
 			describeSlbAPDetailResponse.Result = result;
         
 			return describeSlbAPDetailResponse;

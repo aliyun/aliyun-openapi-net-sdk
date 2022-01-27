@@ -34,12 +34,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
+
+		private bool? enableIPv6;
 
 		private string description;
 
@@ -53,6 +56,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string vSwitchId;
 
+		private string vpcIpv6CidrBlock;
+
 		private string vSwitchName;
 
 		public long? ResourceOwnerId
@@ -65,6 +70,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? EnableIPv6
+		{
+			get
+			{
+				return enableIPv6;
+			}
+			set	
+			{
+				enableIPv6 = value;
+				DictionaryUtil.Add(QueryParameters, "EnableIPv6", value.ToString());
 			}
 		}
 
@@ -143,6 +161,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				vSwitchId = value;
 				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public string VpcIpv6CidrBlock
+		{
+			get
+			{
+				return vpcIpv6CidrBlock;
+			}
+			set	
+			{
+				vpcIpv6CidrBlock = value;
+				DictionaryUtil.Add(QueryParameters, "VpcIpv6CidrBlock", value);
 			}
 		}
 

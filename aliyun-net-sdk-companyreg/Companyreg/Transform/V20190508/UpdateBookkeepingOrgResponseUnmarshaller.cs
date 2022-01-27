@@ -26,12 +26,12 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class UpdateBookkeepingOrgResponseUnmarshaller
     {
-        public static UpdateBookkeepingOrgResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateBookkeepingOrgResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateBookkeepingOrgResponse updateBookkeepingOrgResponse = new UpdateBookkeepingOrgResponse();
 
-			updateBookkeepingOrgResponse.HttpResponse = context.HttpResponse;
-			updateBookkeepingOrgResponse.RequestId = context.StringValue("UpdateBookkeepingOrg.RequestId");
+			updateBookkeepingOrgResponse.HttpResponse = _ctx.HttpResponse;
+			updateBookkeepingOrgResponse.RequestId = _ctx.StringValue("UpdateBookkeepingOrg.RequestId");
         
 			return updateBookkeepingOrgResponse;
         }

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DeleteGtmAddressPoolResponseUnmarshaller
     {
-        public static DeleteGtmAddressPoolResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteGtmAddressPoolResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteGtmAddressPoolResponse deleteGtmAddressPoolResponse = new DeleteGtmAddressPoolResponse();
 
-			deleteGtmAddressPoolResponse.HttpResponse = context.HttpResponse;
-			deleteGtmAddressPoolResponse.RequestId = context.StringValue("DeleteGtmAddressPool.RequestId");
+			deleteGtmAddressPoolResponse.HttpResponse = _ctx.HttpResponse;
+			deleteGtmAddressPoolResponse.RequestId = _ctx.StringValue("DeleteGtmAddressPool.RequestId");
         
 			return deleteGtmAddressPoolResponse;
         }

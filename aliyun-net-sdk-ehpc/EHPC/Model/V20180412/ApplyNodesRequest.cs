@@ -35,8 +35,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.EHPC.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.EHPC.Endpoint.endpointRegionalType, null);
             }
         }
 
@@ -44,11 +44,15 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private int? memory;
 
+		private string systemDiskLevel;
+
 		private bool? allocatePublicAddress;
 
 		private int? internetMaxBandWidthOut;
 
 		private string resourceAmountType;
+
+		private bool? strictResourceProvision;
 
 		private string systemDiskType;
 
@@ -72,7 +76,11 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string instanceFamilyLevel;
 
+		private int? round;
+
 		private string internetChargeType;
+
+		private int? interval;
 
 		private List<InstanceTypeModel> instanceTypeModels = new List<InstanceTypeModel>(){ };
 
@@ -105,6 +113,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				memory = value;
 				DictionaryUtil.Add(QueryParameters, "Memory", value.ToString());
+			}
+		}
+
+		public string SystemDiskLevel
+		{
+			get
+			{
+				return systemDiskLevel;
+			}
+			set	
+			{
+				systemDiskLevel = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDiskLevel", value);
 			}
 		}
 
@@ -144,6 +165,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				resourceAmountType = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceAmountType", value);
+			}
+		}
+
+		public bool? StrictResourceProvision
+		{
+			get
+			{
+				return strictResourceProvision;
+			}
+			set	
+			{
+				strictResourceProvision = value;
+				DictionaryUtil.Add(QueryParameters, "StrictResourceProvision", value.ToString());
 			}
 		}
 
@@ -295,6 +329,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public int? Round
+		{
+			get
+			{
+				return round;
+			}
+			set	
+			{
+				round = value;
+				DictionaryUtil.Add(QueryParameters, "Round", value.ToString());
+			}
+		}
+
 		public string InternetChargeType
 		{
 			get
@@ -305,6 +352,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				internetChargeType = value;
 				DictionaryUtil.Add(QueryParameters, "InternetChargeType", value);
+			}
+		}
+
+		public int? Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value.ToString());
 			}
 		}
 

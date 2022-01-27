@@ -26,23 +26,23 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeCasterSyncGroupResponseUnmarshaller
     {
-        public static DescribeCasterSyncGroupResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCasterSyncGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCasterSyncGroupResponse describeCasterSyncGroupResponse = new DescribeCasterSyncGroupResponse();
 
-			describeCasterSyncGroupResponse.HttpResponse = context.HttpResponse;
-			describeCasterSyncGroupResponse.RequestId = context.StringValue("DescribeCasterSyncGroup.RequestId");
-			describeCasterSyncGroupResponse.CasterId = context.StringValue("DescribeCasterSyncGroup.CasterId");
+			describeCasterSyncGroupResponse.HttpResponse = _ctx.HttpResponse;
+			describeCasterSyncGroupResponse.RequestId = _ctx.StringValue("DescribeCasterSyncGroup.RequestId");
+			describeCasterSyncGroupResponse.CasterId = _ctx.StringValue("DescribeCasterSyncGroup.CasterId");
 
 			List<DescribeCasterSyncGroupResponse.DescribeCasterSyncGroup_SyncGroup> describeCasterSyncGroupResponse_syncGroups = new List<DescribeCasterSyncGroupResponse.DescribeCasterSyncGroup_SyncGroup>();
-			for (int i = 0; i < context.Length("DescribeCasterSyncGroup.SyncGroups.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCasterSyncGroup.SyncGroups.Length"); i++) {
 				DescribeCasterSyncGroupResponse.DescribeCasterSyncGroup_SyncGroup syncGroup = new DescribeCasterSyncGroupResponse.DescribeCasterSyncGroup_SyncGroup();
-				syncGroup.Mode = context.IntegerValue("DescribeCasterSyncGroup.SyncGroups["+ i +"].Mode");
-				syncGroup.HostResourceId = context.StringValue("DescribeCasterSyncGroup.SyncGroups["+ i +"].HostResourceId");
+				syncGroup.Mode = _ctx.IntegerValue("DescribeCasterSyncGroup.SyncGroups["+ i +"].Mode");
+				syncGroup.HostResourceId = _ctx.StringValue("DescribeCasterSyncGroup.SyncGroups["+ i +"].HostResourceId");
 
 				List<string> syncGroup_resourceIds = new List<string>();
-				for (int j = 0; j < context.Length("DescribeCasterSyncGroup.SyncGroups["+ i +"].ResourceIds.Length"); j++) {
-					syncGroup_resourceIds.Add(context.StringValue("DescribeCasterSyncGroup.SyncGroups["+ i +"].ResourceIds["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeCasterSyncGroup.SyncGroups["+ i +"].ResourceIds.Length"); j++) {
+					syncGroup_resourceIds.Add(_ctx.StringValue("DescribeCasterSyncGroup.SyncGroups["+ i +"].ResourceIds["+ j +"]"));
 				}
 				syncGroup.ResourceIds = syncGroup_resourceIds;
 

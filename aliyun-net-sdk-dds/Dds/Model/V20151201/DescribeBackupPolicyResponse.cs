@@ -25,15 +25,31 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 	public class DescribeBackupPolicyResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string preferredBackupPeriod;
 
-		private string backupRetentionPeriod;
+		private string requestId;
 
 		private string preferredBackupTime;
 
-		private string preferredBackupPeriod;
+		private string backupRetentionPeriod;
 
 		private string preferredNextBackupTime;
+
+		private int? enableBackupLog;
+
+		private int? logBackupRetentionPeriod;
+
+		public string PreferredBackupPeriod
+		{
+			get
+			{
+				return preferredBackupPeriod;
+			}
+			set	
+			{
+				preferredBackupPeriod = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +60,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string BackupRetentionPeriod
-		{
-			get
-			{
-				return backupRetentionPeriod;
-			}
-			set	
-			{
-				backupRetentionPeriod = value;
 			}
 		}
 
@@ -71,15 +75,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string PreferredBackupPeriod
+		public string BackupRetentionPeriod
 		{
 			get
 			{
-				return preferredBackupPeriod;
+				return backupRetentionPeriod;
 			}
 			set	
 			{
-				preferredBackupPeriod = value;
+				backupRetentionPeriod = value;
 			}
 		}
 
@@ -92,6 +96,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				preferredNextBackupTime = value;
+			}
+		}
+
+		public int? EnableBackupLog
+		{
+			get
+			{
+				return enableBackupLog;
+			}
+			set	
+			{
+				enableBackupLog = value;
+			}
+		}
+
+		public int? LogBackupRetentionPeriod
+		{
+			get
+			{
+				return logBackupRetentionPeriod;
+			}
+			set	
+			{
+				logBackupRetentionPeriod = value;
 			}
 		}
 	}

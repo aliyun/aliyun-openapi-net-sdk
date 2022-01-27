@@ -26,13 +26,13 @@ namespace Aliyun.Acs.OnsMqtt.Transform.V20200420
 {
     public class ApplyTokenResponseUnmarshaller
     {
-        public static ApplyTokenResponse Unmarshall(UnmarshallerContext context)
+        public static ApplyTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ApplyTokenResponse applyTokenResponse = new ApplyTokenResponse();
 
-			applyTokenResponse.HttpResponse = context.HttpResponse;
-			applyTokenResponse.RequestId = context.StringValue("ApplyToken.RequestId");
-			applyTokenResponse.Token = context.StringValue("ApplyToken.Token");
+			applyTokenResponse.HttpResponse = _ctx.HttpResponse;
+			applyTokenResponse.RequestId = _ctx.StringValue("ApplyToken.RequestId");
+			applyTokenResponse.Token = _ctx.StringValue("ApplyToken.Token");
         
 			return applyTokenResponse;
         }

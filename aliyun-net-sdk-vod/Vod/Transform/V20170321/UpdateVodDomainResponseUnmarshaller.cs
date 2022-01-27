@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class UpdateVodDomainResponseUnmarshaller
     {
-        public static UpdateVodDomainResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateVodDomainResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateVodDomainResponse updateVodDomainResponse = new UpdateVodDomainResponse();
 
-			updateVodDomainResponse.HttpResponse = context.HttpResponse;
-			updateVodDomainResponse.RequestId = context.StringValue("UpdateVodDomain.RequestId");
+			updateVodDomainResponse.HttpResponse = _ctx.HttpResponse;
+			updateVodDomainResponse.RequestId = _ctx.StringValue("UpdateVodDomain.RequestId");
         
 			return updateVodDomainResponse;
         }

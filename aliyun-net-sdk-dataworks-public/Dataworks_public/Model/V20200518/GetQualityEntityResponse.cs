@@ -25,53 +25,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetQualityEntityResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errorCode;
-
-		private string errorMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
+		private string errorMessage;
+
+		private string errorCode;
+
+		private bool? success;
+
 		private List<GetQualityEntity_EntityDto> data;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -97,6 +61,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public List<GetQualityEntity_EntityDto> Data
 		{
 			get
@@ -112,165 +112,59 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetQualityEntity_EntityDto
 		{
 
-			private long? id;
+			private string relativeNode;
 
-			private string projectName;
-
-			private string tableName;
-
-			private string envType;
-
-			private string matchExpression;
-
-			private int? entityLevel;
-
-			private string onDuty;
-
-			private string modifyUser;
-
-			private long? createTime;
-
-			private long? modifyTime;
-
-			private int? sql;
+			private string onDutyAccountName;
 
 			private int? task;
 
+			private string tableName;
+
 			private string followers;
+
+			private string onDuty;
+
+			private string matchExpression;
+
+			private long? createTime;
+
+			private string projectName;
 
 			private bool? hasRelativeNode;
 
-			private string relativeNode;
+			private string envType;
 
-			public long? Id
+			private int? entityLevel;
+
+			private string modifyUser;
+
+			private int? sql;
+
+			private long? id;
+
+			private long? modifyTime;
+
+			public string RelativeNode
 			{
 				get
 				{
-					return id;
+					return relativeNode;
 				}
 				set	
 				{
-					id = value;
+					relativeNode = value;
 				}
 			}
 
-			public string ProjectName
+			public string OnDutyAccountName
 			{
 				get
 				{
-					return projectName;
+					return onDutyAccountName;
 				}
 				set	
 				{
-					projectName = value;
-				}
-			}
-
-			public string TableName
-			{
-				get
-				{
-					return tableName;
-				}
-				set	
-				{
-					tableName = value;
-				}
-			}
-
-			public string EnvType
-			{
-				get
-				{
-					return envType;
-				}
-				set	
-				{
-					envType = value;
-				}
-			}
-
-			public string MatchExpression
-			{
-				get
-				{
-					return matchExpression;
-				}
-				set	
-				{
-					matchExpression = value;
-				}
-			}
-
-			public int? EntityLevel
-			{
-				get
-				{
-					return entityLevel;
-				}
-				set	
-				{
-					entityLevel = value;
-				}
-			}
-
-			public string OnDuty
-			{
-				get
-				{
-					return onDuty;
-				}
-				set	
-				{
-					onDuty = value;
-				}
-			}
-
-			public string ModifyUser
-			{
-				get
-				{
-					return modifyUser;
-				}
-				set	
-				{
-					modifyUser = value;
-				}
-			}
-
-			public long? CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public long? ModifyTime
-			{
-				get
-				{
-					return modifyTime;
-				}
-				set	
-				{
-					modifyTime = value;
-				}
-			}
-
-			public int? Sql
-			{
-				get
-				{
-					return sql;
-				}
-				set	
-				{
-					sql = value;
+					onDutyAccountName = value;
 				}
 			}
 
@@ -286,6 +180,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
+			public string TableName
+			{
+				get
+				{
+					return tableName;
+				}
+				set	
+				{
+					tableName = value;
+				}
+			}
+
 			public string Followers
 			{
 				get
@@ -295,6 +201,54 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					followers = value;
+				}
+			}
+
+			public string OnDuty
+			{
+				get
+				{
+					return onDuty;
+				}
+				set	
+				{
+					onDuty = value;
+				}
+			}
+
+			public string MatchExpression
+			{
+				get
+				{
+					return matchExpression;
+				}
+				set	
+				{
+					matchExpression = value;
+				}
+			}
+
+			public long? CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string ProjectName
+			{
+				get
+				{
+					return projectName;
+				}
+				set	
+				{
+					projectName = value;
 				}
 			}
 
@@ -310,15 +264,75 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string RelativeNode
+			public string EnvType
 			{
 				get
 				{
-					return relativeNode;
+					return envType;
 				}
 				set	
 				{
-					relativeNode = value;
+					envType = value;
+				}
+			}
+
+			public int? EntityLevel
+			{
+				get
+				{
+					return entityLevel;
+				}
+				set	
+				{
+					entityLevel = value;
+				}
+			}
+
+			public string ModifyUser
+			{
+				get
+				{
+					return modifyUser;
+				}
+				set	
+				{
+					modifyUser = value;
+				}
+			}
+
+			public int? Sql
+			{
+				get
+				{
+					return sql;
+				}
+				set	
+				{
+					sql = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public long? ModifyTime
+			{
+				get
+				{
+					return modifyTime;
+				}
+				set	
+				{
+					modifyTime = value;
 				}
 			}
 		}

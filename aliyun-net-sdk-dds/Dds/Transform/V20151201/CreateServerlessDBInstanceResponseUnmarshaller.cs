@@ -32,8 +32,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 
 			createServerlessDBInstanceResponse.HttpResponse = _ctx.HttpResponse;
 			createServerlessDBInstanceResponse.RequestId = _ctx.StringValue("CreateServerlessDBInstance.RequestId");
-			createServerlessDBInstanceResponse.OrderId = _ctx.StringValue("CreateServerlessDBInstance.OrderId");
 			createServerlessDBInstanceResponse.DBInstanceId = _ctx.StringValue("CreateServerlessDBInstance.DBInstanceId");
+			createServerlessDBInstanceResponse.OrderId = _ctx.StringValue("CreateServerlessDBInstance.OrderId");
         
 			return createServerlessDBInstanceResponse;
         }

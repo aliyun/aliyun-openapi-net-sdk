@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class CreateDevopsProjectSprintResponse : AcsResponse
 	{
 
-		private bool? successful;
-
-		private string errorCode;
-
 		private string errorMsg;
 
 		private string requestId;
 
+		private bool? successful;
+
+		private string errorCode;
+
 		private CreateDevopsProjectSprint__Object _object;
-
-		public bool? Successful
-		{
-			get
-			{
-				return successful;
-			}
-			set	
-			{
-				successful = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
 
 		public string ErrorMsg
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
+		public bool? Successful
+		{
+			get
+			{
+				return successful;
+			}
+			set	
+			{
+				successful = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
 		public CreateDevopsProjectSprint__Object _Object
 		{
 			get
@@ -98,9 +98,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 		public class CreateDevopsProjectSprint__Object
 		{
 
-			private string created;
+			private string status;
 
-			private string dueDate;
+			private string projectId;
+
+			private string startDate;
+
+			private string creatorId;
+
+			private string executor;
 
 			private string description;
 
@@ -108,45 +114,75 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 
 			private bool? isDeleted;
 
-			private string executor;
+			private string updated;
+
+			private string dueDate;
+
+			private string created;
 
 			private string name;
 
-			private string creatorId;
-
 			private string id;
-
-			private string updated;
-
-			private string startDate;
-
-			private string status;
-
-			private string projectId;
 
 			private CreateDevopsProjectSprint_PlanToDo planToDo;
 
-			public string Created
+			public string Status
 			{
 				get
 				{
-					return created;
+					return status;
 				}
 				set	
 				{
-					created = value;
+					status = value;
 				}
 			}
 
-			public string DueDate
+			public string ProjectId
 			{
 				get
 				{
-					return dueDate;
+					return projectId;
 				}
 				set	
 				{
-					dueDate = value;
+					projectId = value;
+				}
+			}
+
+			public string StartDate
+			{
+				get
+				{
+					return startDate;
+				}
+				set	
+				{
+					startDate = value;
+				}
+			}
+
+			public string CreatorId
+			{
+				get
+				{
+					return creatorId;
+				}
+				set	
+				{
+					creatorId = value;
+				}
+			}
+
+			public string Executor
+			{
+				get
+				{
+					return executor;
+				}
+				set	
+				{
+					executor = value;
 				}
 			}
 
@@ -186,15 +222,39 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public string Executor
+			public string Updated
 			{
 				get
 				{
-					return executor;
+					return updated;
 				}
 				set	
 				{
-					executor = value;
+					updated = value;
+				}
+			}
+
+			public string DueDate
+			{
+				get
+				{
+					return dueDate;
+				}
+				set	
+				{
+					dueDate = value;
+				}
+			}
+
+			public string Created
+			{
+				get
+				{
+					return created;
+				}
+				set	
+				{
+					created = value;
 				}
 			}
 
@@ -210,18 +270,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public string CreatorId
-			{
-				get
-				{
-					return creatorId;
-				}
-				set	
-				{
-					creatorId = value;
-				}
-			}
-
 			public string Id
 			{
 				get
@@ -231,54 +279,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				set	
 				{
 					id = value;
-				}
-			}
-
-			public string Updated
-			{
-				get
-				{
-					return updated;
-				}
-				set	
-				{
-					updated = value;
-				}
-			}
-
-			public string StartDate
-			{
-				get
-				{
-					return startDate;
-				}
-				set	
-				{
-					startDate = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string ProjectId
-			{
-				get
-				{
-					return projectId;
-				}
-				set	
-				{
-					projectId = value;
 				}
 			}
 
@@ -297,21 +297,21 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			public class CreateDevopsProjectSprint_PlanToDo
 			{
 
-				private int? storyPoints;
+				private int? tasks;
 
 				private int? workTimes;
 
-				private int? tasks;
+				private int? storyPoints;
 
-				public int? StoryPoints
+				public int? Tasks
 				{
 					get
 					{
-						return storyPoints;
+						return tasks;
 					}
 					set	
 					{
-						storyPoints = value;
+						tasks = value;
 					}
 				}
 
@@ -327,15 +327,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					}
 				}
 
-				public int? Tasks
+				public int? StoryPoints
 				{
 					get
 					{
-						return tasks;
+						return storyPoints;
 					}
 					set	
 					{
-						tasks = value;
+						storyPoints = value;
 					}
 				}
 			}

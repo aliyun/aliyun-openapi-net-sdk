@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20180916
 {
     public class CompareFacesResponseUnmarshaller
     {
-        public static CompareFacesResponse Unmarshall(UnmarshallerContext context)
+        public static CompareFacesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CompareFacesResponse compareFacesResponse = new CompareFacesResponse();
 
-			compareFacesResponse.HttpResponse = context.HttpResponse;
-			compareFacesResponse.RequestId = context.StringValue("CompareFaces.RequestId");
-			compareFacesResponse.Success = context.BooleanValue("CompareFaces.Success");
-			compareFacesResponse.Code = context.StringValue("CompareFaces.Code");
-			compareFacesResponse.Message = context.StringValue("CompareFaces.Message");
+			compareFacesResponse.HttpResponse = _ctx.HttpResponse;
+			compareFacesResponse.RequestId = _ctx.StringValue("CompareFaces.RequestId");
+			compareFacesResponse.Success = _ctx.BooleanValue("CompareFaces.Success");
+			compareFacesResponse.Code = _ctx.StringValue("CompareFaces.Code");
+			compareFacesResponse.Message = _ctx.StringValue("CompareFaces.Message");
 
 			CompareFacesResponse.CompareFaces_Data data = new CompareFacesResponse.CompareFaces_Data();
-			data.SimilarityScore = context.FloatValue("CompareFaces.Data.SimilarityScore");
-			data.ConfidenceThresholds = context.StringValue("CompareFaces.Data.ConfidenceThresholds");
+			data.SimilarityScore = _ctx.FloatValue("CompareFaces.Data.SimilarityScore");
+			data.ConfidenceThresholds = _ctx.StringValue("CompareFaces.Data.ConfidenceThresholds");
 			compareFacesResponse.Data = data;
         
 			return compareFacesResponse;

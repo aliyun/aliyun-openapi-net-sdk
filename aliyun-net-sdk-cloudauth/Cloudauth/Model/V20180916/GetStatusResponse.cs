@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 	public class GetStatusResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private GetStatus_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public GetStatus_Data Data
 		{
 			get
@@ -98,25 +98,37 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 		public class GetStatus_Data
 		{
 
-			private int? statusCode;
-
-			private float? trustedScore;
-
 			private float? similarityScore;
-
-			private string auditConclusions;
 
 			private float? authorityComparisonScore;
 
-			public int? StatusCode
+			private float? trustedScore;
+
+			private int? statusCode;
+
+			private string auditConclusions;
+
+			public float? SimilarityScore
 			{
 				get
 				{
-					return statusCode;
+					return similarityScore;
 				}
 				set	
 				{
-					statusCode = value;
+					similarityScore = value;
+				}
+			}
+
+			public float? AuthorityComparisonScore
+			{
+				get
+				{
+					return authorityComparisonScore;
+				}
+				set	
+				{
+					authorityComparisonScore = value;
 				}
 			}
 
@@ -132,15 +144,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 				}
 			}
 
-			public float? SimilarityScore
+			public int? StatusCode
 			{
 				get
 				{
-					return similarityScore;
+					return statusCode;
 				}
 				set	
 				{
-					similarityScore = value;
+					statusCode = value;
 				}
 			}
 
@@ -153,18 +165,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 				set	
 				{
 					auditConclusions = value;
-				}
-			}
-
-			public float? AuthorityComparisonScore
-			{
-				get
-				{
-					return authorityComparisonScore;
-				}
-				set	
-				{
-					authorityComparisonScore = value;
 				}
 			}
 		}

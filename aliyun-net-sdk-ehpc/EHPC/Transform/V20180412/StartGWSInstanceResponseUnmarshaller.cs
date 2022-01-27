@@ -26,12 +26,12 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class StartGWSInstanceResponseUnmarshaller
     {
-        public static StartGWSInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static StartGWSInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StartGWSInstanceResponse startGWSInstanceResponse = new StartGWSInstanceResponse();
 
-			startGWSInstanceResponse.HttpResponse = context.HttpResponse;
-			startGWSInstanceResponse.RequestId = context.StringValue("StartGWSInstance.RequestId");
+			startGWSInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			startGWSInstanceResponse.RequestId = _ctx.StringValue("StartGWSInstance.RequestId");
         
 			return startGWSInstanceResponse;
         }

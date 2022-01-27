@@ -78,6 +78,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private int? appNum;
 
+			private int? scaNum;
+
 			public string Uuid
 			{
 				get
@@ -207,6 +209,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					appNum = value;
+				}
+			}
+
+			public int? ScaNum
+			{
+				get
+				{
+					return scaNum;
+				}
+				set	
+				{
+					scaNum = value;
 				}
 			}
 		}

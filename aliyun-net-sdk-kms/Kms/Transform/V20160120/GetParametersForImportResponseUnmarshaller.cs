@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 {
     public class GetParametersForImportResponseUnmarshaller
     {
-        public static GetParametersForImportResponse Unmarshall(UnmarshallerContext context)
+        public static GetParametersForImportResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetParametersForImportResponse getParametersForImportResponse = new GetParametersForImportResponse();
 
-			getParametersForImportResponse.HttpResponse = context.HttpResponse;
-			getParametersForImportResponse.KeyId = context.StringValue("GetParametersForImport.KeyId");
-			getParametersForImportResponse.RequestId = context.StringValue("GetParametersForImport.RequestId");
-			getParametersForImportResponse.ImportToken = context.StringValue("GetParametersForImport.ImportToken");
-			getParametersForImportResponse.PublicKey = context.StringValue("GetParametersForImport.PublicKey");
-			getParametersForImportResponse.TokenExpireTime = context.StringValue("GetParametersForImport.TokenExpireTime");
+			getParametersForImportResponse.HttpResponse = _ctx.HttpResponse;
+			getParametersForImportResponse.KeyId = _ctx.StringValue("GetParametersForImport.KeyId");
+			getParametersForImportResponse.RequestId = _ctx.StringValue("GetParametersForImport.RequestId");
+			getParametersForImportResponse.ImportToken = _ctx.StringValue("GetParametersForImport.ImportToken");
+			getParametersForImportResponse.PublicKey = _ctx.StringValue("GetParametersForImport.PublicKey");
+			getParametersForImportResponse.TokenExpireTime = _ctx.StringValue("GetParametersForImport.TokenExpireTime");
         
 			return getParametersForImportResponse;
         }

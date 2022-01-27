@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -30,27 +31,31 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class DisableCenVbrHealthCheckRequest : RpcAcsRequest<DisableCenVbrHealthCheckResponse>
     {
         public DisableCenVbrHealthCheckRequest()
-            : base("Cbn", "2017-09-12", "DisableCenVbrHealthCheck", "cbn", "openAPI")
+            : base("Cbn", "2017-09-12", "DisableCenVbrHealthCheck")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
-
-		private string resourceOwnerAccount;
 
 		private string cenId;
 
 		private long? vbrInstanceOwnerId;
 
+		private string vbrInstanceRegionId;
+
+		private string resourceOwnerAccount;
+
 		private string ownerAccount;
-
-		private string vbrInstanceId;
-
-		private string action;
 
 		private long? ownerId;
 
-		private string vbrInstanceRegionId;
+		private string vbrInstanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -62,19 +67,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -104,6 +96,32 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
+		public string VbrInstanceRegionId
+		{
+			get
+			{
+				return vbrInstanceRegionId;
+			}
+			set	
+			{
+				vbrInstanceRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "VbrInstanceRegionId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -114,32 +132,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string VbrInstanceId
-		{
-			get
-			{
-				return vbrInstanceId;
-			}
-			set	
-			{
-				vbrInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "VbrInstanceId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -156,16 +148,16 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string VbrInstanceRegionId
+		public string VbrInstanceId
 		{
 			get
 			{
-				return vbrInstanceRegionId;
+				return vbrInstanceId;
 			}
 			set	
 			{
-				vbrInstanceRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "VbrInstanceRegionId", value);
+				vbrInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "VbrInstanceId", value);
 			}
 		}
 

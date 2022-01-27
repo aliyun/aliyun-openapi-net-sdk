@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.alimt.Model.V20181012
@@ -73,13 +73,25 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			public class TranslateCertificate_CertificateTranslateItemDTO
 			{
 
+				private string keyTranslation;
+
 				private string key;
 
 				private string _value;
 
 				private string valueTranslation;
 
-				private string keyTranslation;
+				public string KeyTranslation
+				{
+					get
+					{
+						return keyTranslation;
+					}
+					set	
+					{
+						keyTranslation = value;
+					}
+				}
 
 				public string Key
 				{
@@ -114,18 +126,6 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 					set	
 					{
 						valueTranslation = value;
-					}
-				}
-
-				public string KeyTranslation
-				{
-					get
-					{
-						return keyTranslation;
-					}
-					set	
-					{
-						keyTranslation = value;
 					}
 				}
 			}

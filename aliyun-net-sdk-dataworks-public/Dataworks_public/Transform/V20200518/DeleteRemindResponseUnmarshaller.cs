@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class DeleteRemindResponseUnmarshaller
     {
-        public static DeleteRemindResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteRemindResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteRemindResponse deleteRemindResponse = new DeleteRemindResponse();
 
-			deleteRemindResponse.HttpResponse = context.HttpResponse;
-			deleteRemindResponse.Success = context.BooleanValue("DeleteRemind.Success");
-			deleteRemindResponse.ErrorCode = context.StringValue("DeleteRemind.ErrorCode");
-			deleteRemindResponse.ErrorMessage = context.StringValue("DeleteRemind.ErrorMessage");
-			deleteRemindResponse.HttpStatusCode = context.IntegerValue("DeleteRemind.HttpStatusCode");
-			deleteRemindResponse.RequestId = context.StringValue("DeleteRemind.RequestId");
-			deleteRemindResponse.Data = context.BooleanValue("DeleteRemind.Data");
+			deleteRemindResponse.HttpResponse = _ctx.HttpResponse;
+			deleteRemindResponse.Success = _ctx.BooleanValue("DeleteRemind.Success");
+			deleteRemindResponse.ErrorCode = _ctx.StringValue("DeleteRemind.ErrorCode");
+			deleteRemindResponse.ErrorMessage = _ctx.StringValue("DeleteRemind.ErrorMessage");
+			deleteRemindResponse.HttpStatusCode = _ctx.IntegerValue("DeleteRemind.HttpStatusCode");
+			deleteRemindResponse.RequestId = _ctx.StringValue("DeleteRemind.RequestId");
+			deleteRemindResponse.Data = _ctx.BooleanValue("DeleteRemind.Data");
         
 			return deleteRemindResponse;
         }

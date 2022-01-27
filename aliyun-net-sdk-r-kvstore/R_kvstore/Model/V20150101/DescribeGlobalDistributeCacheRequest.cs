@@ -54,6 +54,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? ownerId;
 
+		private string subInstanceId;
+
 		private string globalInstanceId;
 
 		public long? ResourceOwnerId
@@ -144,6 +146,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string SubInstanceId
+		{
+			get
+			{
+				return subInstanceId;
+			}
+			set	
+			{
+				subInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "SubInstanceId", value);
 			}
 		}
 

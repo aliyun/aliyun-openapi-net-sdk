@@ -26,13 +26,13 @@ namespace Aliyun.Acs.fnf.Transform.V20190315
 {
     public class ReportTaskSucceededResponseUnmarshaller
     {
-        public static ReportTaskSucceededResponse Unmarshall(UnmarshallerContext context)
+        public static ReportTaskSucceededResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ReportTaskSucceededResponse reportTaskSucceededResponse = new ReportTaskSucceededResponse();
 
-			reportTaskSucceededResponse.HttpResponse = context.HttpResponse;
-			reportTaskSucceededResponse.RequestId = context.StringValue("ReportTaskSucceeded.RequestId");
-			reportTaskSucceededResponse.EventId = context.LongValue("ReportTaskSucceeded.EventId");
+			reportTaskSucceededResponse.HttpResponse = _ctx.HttpResponse;
+			reportTaskSucceededResponse.RequestId = _ctx.StringValue("ReportTaskSucceeded.RequestId");
+			reportTaskSucceededResponse.EventId = _ctx.LongValue("ReportTaskSucceeded.EventId");
         
 			return reportTaskSucceededResponse;
         }

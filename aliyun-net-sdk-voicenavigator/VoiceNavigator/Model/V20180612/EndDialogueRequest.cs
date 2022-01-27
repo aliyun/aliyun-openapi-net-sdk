@@ -34,14 +34,19 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.VoiceNavigator.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.VoiceNavigator.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string conversationId;
 
+		private string hangUpParams;
+
 		private string instanceId;
+
+		private long? instanceOwnerId;
 
 		public string ConversationId
 		{
@@ -56,6 +61,19 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
+		public string HangUpParams
+		{
+			get
+			{
+				return hangUpParams;
+			}
+			set	
+			{
+				hangUpParams = value;
+				DictionaryUtil.Add(QueryParameters, "HangUpParams", value);
+			}
+		}
+
 		public string InstanceId
 		{
 			get
@@ -66,6 +84,19 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public long? InstanceOwnerId
+		{
+			get
+			{
+				return instanceOwnerId;
+			}
+			set	
+			{
+				instanceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceOwnerId", value.ToString());
 			}
 		}
 

@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Httpdns.Transform.V20160201
 {
     public class GetResolveStatisticsResponseUnmarshaller
     {
-        public static GetResolveStatisticsResponse Unmarshall(UnmarshallerContext context)
+        public static GetResolveStatisticsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetResolveStatisticsResponse getResolveStatisticsResponse = new GetResolveStatisticsResponse();
 
-			getResolveStatisticsResponse.HttpResponse = context.HttpResponse;
-			getResolveStatisticsResponse.RequestId = context.StringValue("GetResolveStatistics.RequestId");
+			getResolveStatisticsResponse.HttpResponse = _ctx.HttpResponse;
+			getResolveStatisticsResponse.RequestId = _ctx.StringValue("GetResolveStatistics.RequestId");
 
 			List<GetResolveStatisticsResponse.GetResolveStatistics_DataPoint> getResolveStatisticsResponse_dataPoints = new List<GetResolveStatisticsResponse.GetResolveStatistics_DataPoint>();
-			for (int i = 0; i < context.Length("GetResolveStatistics.DataPoints.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetResolveStatistics.DataPoints.Length"); i++) {
 				GetResolveStatisticsResponse.GetResolveStatistics_DataPoint dataPoint = new GetResolveStatisticsResponse.GetResolveStatistics_DataPoint();
-				dataPoint.Time = context.IntegerValue("GetResolveStatistics.DataPoints["+ i +"].Time");
-				dataPoint.Count = context.IntegerValue("GetResolveStatistics.DataPoints["+ i +"].Count");
+				dataPoint.Time = _ctx.IntegerValue("GetResolveStatistics.DataPoints["+ i +"].Time");
+				dataPoint.Count = _ctx.IntegerValue("GetResolveStatistics.DataPoints["+ i +"].Count");
 
 				getResolveStatisticsResponse_dataPoints.Add(dataPoint);
 			}

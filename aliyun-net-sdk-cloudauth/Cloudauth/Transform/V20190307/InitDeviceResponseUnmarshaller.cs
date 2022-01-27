@@ -26,31 +26,31 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 {
     public class InitDeviceResponseUnmarshaller
     {
-        public static InitDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static InitDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			InitDeviceResponse initDeviceResponse = new InitDeviceResponse();
 
-			initDeviceResponse.HttpResponse = context.HttpResponse;
-			initDeviceResponse.RequestId = context.StringValue("InitDevice.RequestId");
-			initDeviceResponse.Message = context.StringValue("InitDevice.Message");
-			initDeviceResponse.Code = context.StringValue("InitDevice.Code");
+			initDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			initDeviceResponse.Code = _ctx.StringValue("InitDevice.Code");
+			initDeviceResponse.Message = _ctx.StringValue("InitDevice.Message");
+			initDeviceResponse.RequestId = _ctx.StringValue("InitDevice.RequestId");
 
 			InitDeviceResponse.InitDevice_ResultObject resultObject = new InitDeviceResponse.InitDevice_ResultObject();
-			resultObject.CertifyId = context.StringValue("InitDevice.ResultObject.CertifyId");
-			resultObject.Protocol = context.StringValue("InitDevice.ResultObject.Protocol");
-			resultObject.ExtParams = context.StringValue("InitDevice.ResultObject.ExtParams");
-			resultObject.RetCode = context.StringValue("InitDevice.ResultObject.RetCode");
-			resultObject.RetCodeSub = context.StringValue("InitDevice.ResultObject.RetCodeSub");
-			resultObject.RetMessageSub = context.StringValue("InitDevice.ResultObject.RetMessageSub");
-			resultObject.Message = context.StringValue("InitDevice.ResultObject.Message");
-			resultObject.OssEndPoint = context.StringValue("InitDevice.ResultObject.OssEndPoint");
-			resultObject.AccessKeyId = context.StringValue("InitDevice.ResultObject.AccessKeyId");
-			resultObject.AccessKeySecret = context.StringValue("InitDevice.ResultObject.AccessKeySecret");
-			resultObject.SecurityToken = context.StringValue("InitDevice.ResultObject.SecurityToken");
-			resultObject.BucketName = context.StringValue("InitDevice.ResultObject.BucketName");
-			resultObject.FileNamePrefix = context.StringValue("InitDevice.ResultObject.FileNamePrefix");
-			resultObject.FileName = context.StringValue("InitDevice.ResultObject.FileName");
-			resultObject.PresignedUrl = context.StringValue("InitDevice.ResultObject.PresignedUrl");
+			resultObject.OssEndPoint = _ctx.StringValue("InitDevice.ResultObject.OssEndPoint");
+			resultObject.RetCodeSub = _ctx.StringValue("InitDevice.ResultObject.RetCodeSub");
+			resultObject.Protocol = _ctx.StringValue("InitDevice.ResultObject.Protocol");
+			resultObject.CertifyId = _ctx.StringValue("InitDevice.ResultObject.CertifyId");
+			resultObject.ExtParams = _ctx.StringValue("InitDevice.ResultObject.ExtParams");
+			resultObject.Message = _ctx.StringValue("InitDevice.ResultObject.Message");
+			resultObject.FileName = _ctx.StringValue("InitDevice.ResultObject.FileName");
+			resultObject.AccessKeyId = _ctx.StringValue("InitDevice.ResultObject.AccessKeyId");
+			resultObject.PresignedUrl = _ctx.StringValue("InitDevice.ResultObject.PresignedUrl");
+			resultObject.SecurityToken = _ctx.StringValue("InitDevice.ResultObject.SecurityToken");
+			resultObject.FileNamePrefix = _ctx.StringValue("InitDevice.ResultObject.FileNamePrefix");
+			resultObject.BucketName = _ctx.StringValue("InitDevice.ResultObject.BucketName");
+			resultObject.AccessKeySecret = _ctx.StringValue("InitDevice.ResultObject.AccessKeySecret");
+			resultObject.RetMessageSub = _ctx.StringValue("InitDevice.ResultObject.RetMessageSub");
+			resultObject.RetCode = _ctx.StringValue("InitDevice.ResultObject.RetCode");
 			initDeviceResponse.ResultObject = resultObject;
         
 			return initDeviceResponse;

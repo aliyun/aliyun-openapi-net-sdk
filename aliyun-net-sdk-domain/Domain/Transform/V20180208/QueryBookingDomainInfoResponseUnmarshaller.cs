@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Domain.Transform.V20180208
 {
     public class QueryBookingDomainInfoResponseUnmarshaller
     {
-        public static QueryBookingDomainInfoResponse Unmarshall(UnmarshallerContext context)
+        public static QueryBookingDomainInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryBookingDomainInfoResponse queryBookingDomainInfoResponse = new QueryBookingDomainInfoResponse();
 
-			queryBookingDomainInfoResponse.HttpResponse = context.HttpResponse;
-			queryBookingDomainInfoResponse.RequestId = context.StringValue("QueryBookingDomainInfo.RequestId");
-			queryBookingDomainInfoResponse.AuctionId = context.IntegerValue("QueryBookingDomainInfo.AuctionId");
-			queryBookingDomainInfoResponse.PartnerType = context.StringValue("QueryBookingDomainInfo.PartnerType");
-			queryBookingDomainInfoResponse.MaxBid = context.FloatValue("QueryBookingDomainInfo.MaxBid");
-			queryBookingDomainInfoResponse.TransferInPrice = context.FloatValue("QueryBookingDomainInfo.TransferInPrice");
-			queryBookingDomainInfoResponse.Currency = context.StringValue("QueryBookingDomainInfo.Currency");
-			queryBookingDomainInfoResponse.BookEndTime = context.LongValue("QueryBookingDomainInfo.BookEndTime");
+			queryBookingDomainInfoResponse.HttpResponse = _ctx.HttpResponse;
+			queryBookingDomainInfoResponse.RequestId = _ctx.StringValue("QueryBookingDomainInfo.RequestId");
+			queryBookingDomainInfoResponse.AuctionId = _ctx.IntegerValue("QueryBookingDomainInfo.AuctionId");
+			queryBookingDomainInfoResponse.PartnerType = _ctx.StringValue("QueryBookingDomainInfo.PartnerType");
+			queryBookingDomainInfoResponse.MaxBid = _ctx.FloatValue("QueryBookingDomainInfo.MaxBid");
+			queryBookingDomainInfoResponse.TransferInPrice = _ctx.FloatValue("QueryBookingDomainInfo.TransferInPrice");
+			queryBookingDomainInfoResponse.Currency = _ctx.StringValue("QueryBookingDomainInfo.Currency");
+			queryBookingDomainInfoResponse.BookEndTime = _ctx.LongValue("QueryBookingDomainInfo.BookEndTime");
         
 			return queryBookingDomainInfoResponse;
         }

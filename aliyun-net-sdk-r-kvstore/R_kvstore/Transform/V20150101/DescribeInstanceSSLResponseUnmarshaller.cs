@@ -26,16 +26,16 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class DescribeInstanceSSLResponseUnmarshaller
     {
-        public static DescribeInstanceSSLResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeInstanceSSLResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeInstanceSSLResponse describeInstanceSSLResponse = new DescribeInstanceSSLResponse();
 
-			describeInstanceSSLResponse.HttpResponse = context.HttpResponse;
-			describeInstanceSSLResponse.RequestId = context.StringValue("DescribeInstanceSSL.RequestId");
-			describeInstanceSSLResponse.InstanceId = context.StringValue("DescribeInstanceSSL.InstanceId");
-			describeInstanceSSLResponse.SSLEnabled = context.StringValue("DescribeInstanceSSL.SSLEnabled");
-			describeInstanceSSLResponse.CertCommonName = context.StringValue("DescribeInstanceSSL.CertCommonName");
-			describeInstanceSSLResponse.SSLExpiredTime = context.StringValue("DescribeInstanceSSL.SSLExpiredTime");
+			describeInstanceSSLResponse.HttpResponse = _ctx.HttpResponse;
+			describeInstanceSSLResponse.RequestId = _ctx.StringValue("DescribeInstanceSSL.RequestId");
+			describeInstanceSSLResponse.InstanceId = _ctx.StringValue("DescribeInstanceSSL.InstanceId");
+			describeInstanceSSLResponse.SSLEnabled = _ctx.StringValue("DescribeInstanceSSL.SSLEnabled");
+			describeInstanceSSLResponse.CertCommonName = _ctx.StringValue("DescribeInstanceSSL.CertCommonName");
+			describeInstanceSSLResponse.SSLExpiredTime = _ctx.StringValue("DescribeInstanceSSL.SSLExpiredTime");
         
 			return describeInstanceSSLResponse;
         }

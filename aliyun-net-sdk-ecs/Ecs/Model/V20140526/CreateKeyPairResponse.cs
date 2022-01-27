@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,37 +25,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class CreateKeyPairResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string keyPairId;
+		private string privateKeyBody;
 
 		private string keyPairName;
 
+		private string keyPairId;
+
+		private string requestId;
+
 		private string keyPairFingerPrint;
 
-		private string privateKeyBody;
-
-		public string RequestId
+		public string PrivateKeyBody
 		{
 			get
 			{
-				return requestId;
+				return privateKeyBody;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string KeyPairId
-		{
-			get
-			{
-				return keyPairId;
-			}
-			set	
-			{
-				keyPairId = value;
+				privateKeyBody = value;
 			}
 		}
 
@@ -71,6 +59,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string KeyPairId
+		{
+			get
+			{
+				return keyPairId;
+			}
+			set	
+			{
+				keyPairId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public string KeyPairFingerPrint
 		{
 			get
@@ -80,18 +92,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				keyPairFingerPrint = value;
-			}
-		}
-
-		public string PrivateKeyBody
-		{
-			get
-			{
-				return privateKeyBody;
-			}
-			set	
-			{
-				privateKeyBody = value;
 			}
 		}
 	}

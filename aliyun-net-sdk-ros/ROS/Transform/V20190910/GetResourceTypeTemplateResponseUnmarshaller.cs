@@ -26,13 +26,13 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class GetResourceTypeTemplateResponseUnmarshaller
     {
-        public static GetResourceTypeTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static GetResourceTypeTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetResourceTypeTemplateResponse getResourceTypeTemplateResponse = new GetResourceTypeTemplateResponse();
 
-			getResourceTypeTemplateResponse.HttpResponse = context.HttpResponse;
-			getResourceTypeTemplateResponse.RequestId = context.StringValue("GetResourceTypeTemplate.RequestId");
-			getResourceTypeTemplateResponse.TemplateBody = context.StringValue("GetResourceTypeTemplate.TemplateBody");
+			getResourceTypeTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			getResourceTypeTemplateResponse.RequestId = _ctx.StringValue("GetResourceTypeTemplate.RequestId");
+			getResourceTypeTemplateResponse.TemplateBody = _ctx.StringValue("GetResourceTypeTemplate.TemplateBody");
         
 			return getResourceTypeTemplateResponse;
         }

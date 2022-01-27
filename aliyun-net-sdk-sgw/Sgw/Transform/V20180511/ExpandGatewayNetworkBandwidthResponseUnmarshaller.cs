@@ -26,17 +26,17 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class ExpandGatewayNetworkBandwidthResponseUnmarshaller
     {
-        public static ExpandGatewayNetworkBandwidthResponse Unmarshall(UnmarshallerContext context)
+        public static ExpandGatewayNetworkBandwidthResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ExpandGatewayNetworkBandwidthResponse expandGatewayNetworkBandwidthResponse = new ExpandGatewayNetworkBandwidthResponse();
 
-			expandGatewayNetworkBandwidthResponse.HttpResponse = context.HttpResponse;
-			expandGatewayNetworkBandwidthResponse.RequestId = context.StringValue("ExpandGatewayNetworkBandwidth.RequestId");
-			expandGatewayNetworkBandwidthResponse.Success = context.BooleanValue("ExpandGatewayNetworkBandwidth.Success");
-			expandGatewayNetworkBandwidthResponse.Code = context.StringValue("ExpandGatewayNetworkBandwidth.Code");
-			expandGatewayNetworkBandwidthResponse.Message = context.StringValue("ExpandGatewayNetworkBandwidth.Message");
-			expandGatewayNetworkBandwidthResponse.TaskId = context.StringValue("ExpandGatewayNetworkBandwidth.TaskId");
-			expandGatewayNetworkBandwidthResponse.BuyURL = context.StringValue("ExpandGatewayNetworkBandwidth.BuyURL");
+			expandGatewayNetworkBandwidthResponse.HttpResponse = _ctx.HttpResponse;
+			expandGatewayNetworkBandwidthResponse.BuyURL = _ctx.StringValue("ExpandGatewayNetworkBandwidth.BuyURL");
+			expandGatewayNetworkBandwidthResponse.TaskId = _ctx.StringValue("ExpandGatewayNetworkBandwidth.TaskId");
+			expandGatewayNetworkBandwidthResponse.RequestId = _ctx.StringValue("ExpandGatewayNetworkBandwidth.RequestId");
+			expandGatewayNetworkBandwidthResponse.Message = _ctx.StringValue("ExpandGatewayNetworkBandwidth.Message");
+			expandGatewayNetworkBandwidthResponse.Code = _ctx.StringValue("ExpandGatewayNetworkBandwidth.Code");
+			expandGatewayNetworkBandwidthResponse.Success = _ctx.BooleanValue("ExpandGatewayNetworkBandwidth.Success");
         
 			return expandGatewayNetworkBandwidthResponse;
         }

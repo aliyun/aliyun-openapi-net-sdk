@@ -34,11 +34,13 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cloudauth.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cloudauth.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
+
+		private string idName;
 
 		private string userId;
 
@@ -68,6 +70,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 
 		private string mobile;
 
+		private string idNo;
+
 		private long? sceneId;
 
 		private string callbackToken;
@@ -75,6 +79,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 		private string ossBucketName;
 
 		private string callbackUrl;
+
+		public string IdName
+		{
+			get
+			{
+				return idName;
+			}
+			set	
+			{
+				idName = value;
+				DictionaryUtil.Add(BodyParameters, "IdName", value);
+			}
+		}
 
 		public string UserId
 		{
@@ -255,6 +272,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 			{
 				mobile = value;
 				DictionaryUtil.Add(BodyParameters, "Mobile", value);
+			}
+		}
+
+		public string IdNo
+		{
+			get
+			{
+				return idNo;
+			}
+			set	
+			{
+				idNo = value;
+				DictionaryUtil.Add(BodyParameters, "IdNo", value);
 			}
 		}
 

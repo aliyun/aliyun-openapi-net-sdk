@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryThingModelResponseUnmarshaller
     {
-        public static QueryThingModelResponse Unmarshall(UnmarshallerContext context)
+        public static QueryThingModelResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryThingModelResponse queryThingModelResponse = new QueryThingModelResponse();
 
-			queryThingModelResponse.HttpResponse = context.HttpResponse;
-			queryThingModelResponse.RequestId = context.StringValue("QueryThingModel.RequestId");
-			queryThingModelResponse.Success = context.BooleanValue("QueryThingModel.Success");
-			queryThingModelResponse.Code = context.StringValue("QueryThingModel.Code");
-			queryThingModelResponse.ErrorMessage = context.StringValue("QueryThingModel.ErrorMessage");
-			queryThingModelResponse.ProductKey = context.StringValue("QueryThingModel.ProductKey");
+			queryThingModelResponse.HttpResponse = _ctx.HttpResponse;
+			queryThingModelResponse.RequestId = _ctx.StringValue("QueryThingModel.RequestId");
+			queryThingModelResponse.Success = _ctx.BooleanValue("QueryThingModel.Success");
+			queryThingModelResponse.Code = _ctx.StringValue("QueryThingModel.Code");
+			queryThingModelResponse.ErrorMessage = _ctx.StringValue("QueryThingModel.ErrorMessage");
+			queryThingModelResponse.ProductKey = _ctx.StringValue("QueryThingModel.ProductKey");
 
 			QueryThingModelResponse.QueryThingModel_Data data = new QueryThingModelResponse.QueryThingModel_Data();
-			data.ThingModelJson = context.StringValue("QueryThingModel.Data.ThingModelJson");
+			data.ThingModelJson = _ctx.StringValue("QueryThingModel.Data.ThingModelJson");
 			queryThingModelResponse.Data = data;
         
 			return queryThingModelResponse;

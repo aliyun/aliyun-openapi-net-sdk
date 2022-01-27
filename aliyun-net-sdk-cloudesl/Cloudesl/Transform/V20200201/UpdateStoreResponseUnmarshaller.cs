@@ -26,19 +26,19 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
     public class UpdateStoreResponseUnmarshaller
     {
-        public static UpdateStoreResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateStoreResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateStoreResponse updateStoreResponse = new UpdateStoreResponse();
 
-			updateStoreResponse.HttpResponse = context.HttpResponse;
-			updateStoreResponse.ErrorMessage = context.StringValue("UpdateStore.ErrorMessage");
-			updateStoreResponse.ErrorCode = context.StringValue("UpdateStore.ErrorCode");
-			updateStoreResponse.Message = context.StringValue("UpdateStore.Message");
-			updateStoreResponse.DynamicCode = context.StringValue("UpdateStore.DynamicCode");
-			updateStoreResponse.Code = context.StringValue("UpdateStore.Code");
-			updateStoreResponse.DynamicMessage = context.StringValue("UpdateStore.DynamicMessage");
-			updateStoreResponse.RequestId = context.StringValue("UpdateStore.RequestId");
-			updateStoreResponse.Success = context.BooleanValue("UpdateStore.Success");
+			updateStoreResponse.HttpResponse = _ctx.HttpResponse;
+			updateStoreResponse.ErrorMessage = _ctx.StringValue("UpdateStore.ErrorMessage");
+			updateStoreResponse.ErrorCode = _ctx.StringValue("UpdateStore.ErrorCode");
+			updateStoreResponse.Message = _ctx.StringValue("UpdateStore.Message");
+			updateStoreResponse.DynamicCode = _ctx.StringValue("UpdateStore.DynamicCode");
+			updateStoreResponse.Code = _ctx.StringValue("UpdateStore.Code");
+			updateStoreResponse.DynamicMessage = _ctx.StringValue("UpdateStore.DynamicMessage");
+			updateStoreResponse.RequestId = _ctx.StringValue("UpdateStore.RequestId");
+			updateStoreResponse.Success = _ctx.BooleanValue("UpdateStore.Success");
         
 			return updateStoreResponse;
         }

@@ -26,14 +26,14 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class CreateGrabFrameTaskResponseUnmarshaller
     {
-        public static CreateGrabFrameTaskResponse Unmarshall(UnmarshallerContext context)
+        public static CreateGrabFrameTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateGrabFrameTaskResponse createGrabFrameTaskResponse = new CreateGrabFrameTaskResponse();
 
-			createGrabFrameTaskResponse.HttpResponse = context.HttpResponse;
-			createGrabFrameTaskResponse.RequestId = context.StringValue("CreateGrabFrameTask.RequestId");
-			createGrabFrameTaskResponse.TaskId = context.StringValue("CreateGrabFrameTask.TaskId");
-			createGrabFrameTaskResponse.TaskType = context.StringValue("CreateGrabFrameTask.TaskType");
+			createGrabFrameTaskResponse.HttpResponse = _ctx.HttpResponse;
+			createGrabFrameTaskResponse.RequestId = _ctx.StringValue("CreateGrabFrameTask.RequestId");
+			createGrabFrameTaskResponse.TaskId = _ctx.StringValue("CreateGrabFrameTask.TaskId");
+			createGrabFrameTaskResponse.TaskType = _ctx.StringValue("CreateGrabFrameTask.TaskType");
         
 			return createGrabFrameTaskResponse;
         }

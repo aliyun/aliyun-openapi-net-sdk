@@ -26,22 +26,22 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeVsDomainTrafficDataResponseUnmarshaller
     {
-        public static DescribeVsDomainTrafficDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVsDomainTrafficDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVsDomainTrafficDataResponse describeVsDomainTrafficDataResponse = new DescribeVsDomainTrafficDataResponse();
 
-			describeVsDomainTrafficDataResponse.HttpResponse = context.HttpResponse;
-			describeVsDomainTrafficDataResponse.RequestId = context.StringValue("DescribeVsDomainTrafficData.RequestId");
-			describeVsDomainTrafficDataResponse.DomainName = context.StringValue("DescribeVsDomainTrafficData.DomainName");
-			describeVsDomainTrafficDataResponse.StartTime = context.StringValue("DescribeVsDomainTrafficData.StartTime");
-			describeVsDomainTrafficDataResponse.EndTime = context.StringValue("DescribeVsDomainTrafficData.EndTime");
-			describeVsDomainTrafficDataResponse.DataInterval = context.StringValue("DescribeVsDomainTrafficData.DataInterval");
+			describeVsDomainTrafficDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeVsDomainTrafficDataResponse.RequestId = _ctx.StringValue("DescribeVsDomainTrafficData.RequestId");
+			describeVsDomainTrafficDataResponse.DomainName = _ctx.StringValue("DescribeVsDomainTrafficData.DomainName");
+			describeVsDomainTrafficDataResponse.StartTime = _ctx.StringValue("DescribeVsDomainTrafficData.StartTime");
+			describeVsDomainTrafficDataResponse.EndTime = _ctx.StringValue("DescribeVsDomainTrafficData.EndTime");
+			describeVsDomainTrafficDataResponse.DataInterval = _ctx.StringValue("DescribeVsDomainTrafficData.DataInterval");
 
 			List<DescribeVsDomainTrafficDataResponse.DescribeVsDomainTrafficData_DataModule> describeVsDomainTrafficDataResponse_trafficDataPerInterval = new List<DescribeVsDomainTrafficDataResponse.DescribeVsDomainTrafficData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeVsDomainTrafficData.TrafficDataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVsDomainTrafficData.TrafficDataPerInterval.Length"); i++) {
 				DescribeVsDomainTrafficDataResponse.DescribeVsDomainTrafficData_DataModule dataModule = new DescribeVsDomainTrafficDataResponse.DescribeVsDomainTrafficData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeVsDomainTrafficData.TrafficDataPerInterval["+ i +"].TimeStamp");
-				dataModule.TrafficValue = context.StringValue("DescribeVsDomainTrafficData.TrafficDataPerInterval["+ i +"].TrafficValue");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeVsDomainTrafficData.TrafficDataPerInterval["+ i +"].TimeStamp");
+				dataModule.TrafficValue = _ctx.StringValue("DescribeVsDomainTrafficData.TrafficDataPerInterval["+ i +"].TrafficValue");
 
 				describeVsDomainTrafficDataResponse_trafficDataPerInterval.Add(dataModule);
 			}

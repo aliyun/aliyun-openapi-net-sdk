@@ -34,28 +34,17 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cloudauth.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cloudauth.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
-		private long? sceneId;
-
 		private string certifyId;
 
-		public long? SceneId
-		{
-			get
-			{
-				return sceneId;
-			}
-			set	
-			{
-				sceneId = value;
-				DictionaryUtil.Add(QueryParameters, "SceneId", value.ToString());
-			}
-		}
+		private string pictureReturnType;
+
+		private long? sceneId;
 
 		public string CertifyId
 		{
@@ -67,6 +56,32 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				certifyId = value;
 				DictionaryUtil.Add(QueryParameters, "CertifyId", value);
+			}
+		}
+
+		public string PictureReturnType
+		{
+			get
+			{
+				return pictureReturnType;
+			}
+			set	
+			{
+				pictureReturnType = value;
+				DictionaryUtil.Add(QueryParameters, "PictureReturnType", value);
+			}
+		}
+
+		public long? SceneId
+		{
+			get
+			{
+				return sceneId;
+			}
+			set	
+			{
+				sceneId = value;
+				DictionaryUtil.Add(QueryParameters, "SceneId", value.ToString());
 			}
 		}
 

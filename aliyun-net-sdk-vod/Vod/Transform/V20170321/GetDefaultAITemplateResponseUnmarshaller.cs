@@ -26,22 +26,22 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetDefaultAITemplateResponseUnmarshaller
     {
-        public static GetDefaultAITemplateResponse Unmarshall(UnmarshallerContext context)
+        public static GetDefaultAITemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetDefaultAITemplateResponse getDefaultAITemplateResponse = new GetDefaultAITemplateResponse();
 
-			getDefaultAITemplateResponse.HttpResponse = context.HttpResponse;
-			getDefaultAITemplateResponse.RequestId = context.StringValue("GetDefaultAITemplate.RequestId");
+			getDefaultAITemplateResponse.HttpResponse = _ctx.HttpResponse;
+			getDefaultAITemplateResponse.RequestId = _ctx.StringValue("GetDefaultAITemplate.RequestId");
 
 			GetDefaultAITemplateResponse.GetDefaultAITemplate_TemplateInfo templateInfo = new GetDefaultAITemplateResponse.GetDefaultAITemplate_TemplateInfo();
-			templateInfo.TemplateId = context.StringValue("GetDefaultAITemplate.TemplateInfo.TemplateId");
-			templateInfo.TemplateType = context.StringValue("GetDefaultAITemplate.TemplateInfo.TemplateType");
-			templateInfo.TemplateName = context.StringValue("GetDefaultAITemplate.TemplateInfo.TemplateName");
-			templateInfo.TemplateConfig = context.StringValue("GetDefaultAITemplate.TemplateInfo.TemplateConfig");
-			templateInfo.Source = context.StringValue("GetDefaultAITemplate.TemplateInfo.Source");
-			templateInfo.IsDefault = context.StringValue("GetDefaultAITemplate.TemplateInfo.IsDefault");
-			templateInfo.CreationTime = context.StringValue("GetDefaultAITemplate.TemplateInfo.CreationTime");
-			templateInfo.ModifyTime = context.StringValue("GetDefaultAITemplate.TemplateInfo.ModifyTime");
+			templateInfo.TemplateId = _ctx.StringValue("GetDefaultAITemplate.TemplateInfo.TemplateId");
+			templateInfo.TemplateType = _ctx.StringValue("GetDefaultAITemplate.TemplateInfo.TemplateType");
+			templateInfo.TemplateName = _ctx.StringValue("GetDefaultAITemplate.TemplateInfo.TemplateName");
+			templateInfo.TemplateConfig = _ctx.StringValue("GetDefaultAITemplate.TemplateInfo.TemplateConfig");
+			templateInfo.Source = _ctx.StringValue("GetDefaultAITemplate.TemplateInfo.Source");
+			templateInfo.IsDefault = _ctx.StringValue("GetDefaultAITemplate.TemplateInfo.IsDefault");
+			templateInfo.CreationTime = _ctx.StringValue("GetDefaultAITemplate.TemplateInfo.CreationTime");
+			templateInfo.ModifyTime = _ctx.StringValue("GetDefaultAITemplate.TemplateInfo.ModifyTime");
 			getDefaultAITemplateResponse.TemplateInfo = templateInfo;
         
 			return getDefaultAITemplateResponse;

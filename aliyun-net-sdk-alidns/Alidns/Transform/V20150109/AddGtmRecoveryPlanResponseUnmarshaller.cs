@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class AddGtmRecoveryPlanResponseUnmarshaller
     {
-        public static AddGtmRecoveryPlanResponse Unmarshall(UnmarshallerContext context)
+        public static AddGtmRecoveryPlanResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddGtmRecoveryPlanResponse addGtmRecoveryPlanResponse = new AddGtmRecoveryPlanResponse();
 
-			addGtmRecoveryPlanResponse.HttpResponse = context.HttpResponse;
-			addGtmRecoveryPlanResponse.RequestId = context.StringValue("AddGtmRecoveryPlan.RequestId");
-			addGtmRecoveryPlanResponse.RecoveryPlanId = context.StringValue("AddGtmRecoveryPlan.RecoveryPlanId");
+			addGtmRecoveryPlanResponse.HttpResponse = _ctx.HttpResponse;
+			addGtmRecoveryPlanResponse.RequestId = _ctx.StringValue("AddGtmRecoveryPlan.RequestId");
+			addGtmRecoveryPlanResponse.RecoveryPlanId = _ctx.StringValue("AddGtmRecoveryPlan.RecoveryPlanId");
         
 			return addGtmRecoveryPlanResponse;
         }

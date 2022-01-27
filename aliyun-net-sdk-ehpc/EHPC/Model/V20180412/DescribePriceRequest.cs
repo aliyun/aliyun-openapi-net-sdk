@@ -35,8 +35,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.EHPC.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.EHPC.Endpoint.endpointRegionalType, null);
             }
         }
 
@@ -65,6 +65,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 					DictionaryUtil.Add(QueryParameters,"Commodities." + (i + 1) + ".NodeType", commoditiess[i].NodeType);
 					DictionaryUtil.Add(QueryParameters,"Commodities." + (i + 1) + ".SystemDiskCategory", commoditiess[i].SystemDiskCategory);
 					DictionaryUtil.Add(QueryParameters,"Commodities." + (i + 1) + ".InternetChargeType", commoditiess[i].InternetChargeType);
+					DictionaryUtil.Add(QueryParameters,"Commodities." + (i + 1) + ".SystemDiskPerformanceLevel", commoditiess[i].SystemDiskPerformanceLevel);
 					DictionaryUtil.Add(QueryParameters,"Commodities." + (i + 1) + ".SystemDiskSize", commoditiess[i].SystemDiskSize);
 					DictionaryUtil.Add(QueryParameters,"Commodities." + (i + 1) + ".InternetMaxBandWidthOut", commoditiess[i].InternetMaxBandWidthOut);
 					DictionaryUtil.Add(QueryParameters,"Commodities." + (i + 1) + ".InstanceType", commoditiess[i].InstanceType);
@@ -124,6 +125,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			private string systemDiskCategory;
 
 			private string internetChargeType;
+
+			private string systemDiskPerformanceLevel;
 
 			private int? systemDiskSize;
 
@@ -190,6 +193,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					internetChargeType = value;
+				}
+			}
+
+			public string SystemDiskPerformanceLevel
+			{
+				get
+				{
+					return systemDiskPerformanceLevel;
+				}
+				set	
+				{
+					systemDiskPerformanceLevel = value;
 				}
 			}
 

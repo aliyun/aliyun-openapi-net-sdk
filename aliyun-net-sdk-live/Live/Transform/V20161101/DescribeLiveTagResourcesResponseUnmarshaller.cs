@@ -26,23 +26,23 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveTagResourcesResponseUnmarshaller
     {
-        public static DescribeLiveTagResourcesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveTagResourcesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveTagResourcesResponse describeLiveTagResourcesResponse = new DescribeLiveTagResourcesResponse();
 
-			describeLiveTagResourcesResponse.HttpResponse = context.HttpResponse;
-			describeLiveTagResourcesResponse.RequestId = context.StringValue("DescribeLiveTagResources.RequestId");
+			describeLiveTagResourcesResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveTagResourcesResponse.RequestId = _ctx.StringValue("DescribeLiveTagResources.RequestId");
 
 			List<DescribeLiveTagResourcesResponse.DescribeLiveTagResources_TagResource> describeLiveTagResourcesResponse_tagResources = new List<DescribeLiveTagResourcesResponse.DescribeLiveTagResources_TagResource>();
-			for (int i = 0; i < context.Length("DescribeLiveTagResources.TagResources.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveTagResources.TagResources.Length"); i++) {
 				DescribeLiveTagResourcesResponse.DescribeLiveTagResources_TagResource tagResource = new DescribeLiveTagResourcesResponse.DescribeLiveTagResources_TagResource();
-				tagResource.ResourceId = context.StringValue("DescribeLiveTagResources.TagResources["+ i +"].ResourceId");
+				tagResource.ResourceId = _ctx.StringValue("DescribeLiveTagResources.TagResources["+ i +"].ResourceId");
 
 				List<DescribeLiveTagResourcesResponse.DescribeLiveTagResources_TagResource.DescribeLiveTagResources_TagItem> tagResource_tag = new List<DescribeLiveTagResourcesResponse.DescribeLiveTagResources_TagResource.DescribeLiveTagResources_TagItem>();
-				for (int j = 0; j < context.Length("DescribeLiveTagResources.TagResources["+ i +"].Tag.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeLiveTagResources.TagResources["+ i +"].Tag.Length"); j++) {
 					DescribeLiveTagResourcesResponse.DescribeLiveTagResources_TagResource.DescribeLiveTagResources_TagItem tagItem = new DescribeLiveTagResourcesResponse.DescribeLiveTagResources_TagResource.DescribeLiveTagResources_TagItem();
-					tagItem.Key = context.StringValue("DescribeLiveTagResources.TagResources["+ i +"].Tag["+ j +"].Key");
-					tagItem._Value = context.StringValue("DescribeLiveTagResources.TagResources["+ i +"].Tag["+ j +"].Value");
+					tagItem.Key = _ctx.StringValue("DescribeLiveTagResources.TagResources["+ i +"].Tag["+ j +"].Key");
+					tagItem._Value = _ctx.StringValue("DescribeLiveTagResources.TagResources["+ i +"].Tag["+ j +"].Value");
 
 					tagResource_tag.Add(tagItem);
 				}

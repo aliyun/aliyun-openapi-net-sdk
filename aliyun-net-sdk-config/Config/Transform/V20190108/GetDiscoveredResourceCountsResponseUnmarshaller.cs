@@ -39,8 +39,8 @@ namespace Aliyun.Acs.Config.Transform.V20190108
 			List<GetDiscoveredResourceCountsResponse.GetDiscoveredResourceCounts_GroupedResourceCounts.GetDiscoveredResourceCounts_GroupedResourceCount> groupedResourceCounts_groupedResourceCountList = new List<GetDiscoveredResourceCountsResponse.GetDiscoveredResourceCounts_GroupedResourceCounts.GetDiscoveredResourceCounts_GroupedResourceCount>();
 			for (int i = 0; i < _ctx.Length("GetDiscoveredResourceCounts.GroupedResourceCounts.GroupedResourceCountList.Length"); i++) {
 				GetDiscoveredResourceCountsResponse.GetDiscoveredResourceCounts_GroupedResourceCounts.GetDiscoveredResourceCounts_GroupedResourceCount groupedResourceCount = new GetDiscoveredResourceCountsResponse.GetDiscoveredResourceCounts_GroupedResourceCounts.GetDiscoveredResourceCounts_GroupedResourceCount();
-				groupedResourceCount.GroupName = _ctx.StringValue("GetDiscoveredResourceCounts.GroupedResourceCounts.GroupedResourceCountList["+ i +"].GroupName");
 				groupedResourceCount.ResourceCount = _ctx.LongValue("GetDiscoveredResourceCounts.GroupedResourceCounts.GroupedResourceCountList["+ i +"].ResourceCount");
+				groupedResourceCount.GroupName = _ctx.StringValue("GetDiscoveredResourceCounts.GroupedResourceCounts.GroupedResourceCountList["+ i +"].GroupName");
 
 				groupedResourceCounts_groupedResourceCountList.Add(groupedResourceCount);
 			}

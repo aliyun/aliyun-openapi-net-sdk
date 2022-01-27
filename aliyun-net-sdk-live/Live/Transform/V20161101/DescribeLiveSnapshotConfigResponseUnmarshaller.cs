@@ -26,30 +26,30 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveSnapshotConfigResponseUnmarshaller
     {
-        public static DescribeLiveSnapshotConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveSnapshotConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveSnapshotConfigResponse describeLiveSnapshotConfigResponse = new DescribeLiveSnapshotConfigResponse();
 
-			describeLiveSnapshotConfigResponse.HttpResponse = context.HttpResponse;
-			describeLiveSnapshotConfigResponse.RequestId = context.StringValue("DescribeLiveSnapshotConfig.RequestId");
-			describeLiveSnapshotConfigResponse.PageNum = context.IntegerValue("DescribeLiveSnapshotConfig.PageNum");
-			describeLiveSnapshotConfigResponse.PageSize = context.IntegerValue("DescribeLiveSnapshotConfig.PageSize");
-			describeLiveSnapshotConfigResponse.Order = context.StringValue("DescribeLiveSnapshotConfig.Order");
-			describeLiveSnapshotConfigResponse.TotalNum = context.IntegerValue("DescribeLiveSnapshotConfig.TotalNum");
-			describeLiveSnapshotConfigResponse.TotalPage = context.IntegerValue("DescribeLiveSnapshotConfig.TotalPage");
+			describeLiveSnapshotConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveSnapshotConfigResponse.RequestId = _ctx.StringValue("DescribeLiveSnapshotConfig.RequestId");
+			describeLiveSnapshotConfigResponse.PageNum = _ctx.IntegerValue("DescribeLiveSnapshotConfig.PageNum");
+			describeLiveSnapshotConfigResponse.PageSize = _ctx.IntegerValue("DescribeLiveSnapshotConfig.PageSize");
+			describeLiveSnapshotConfigResponse.Order = _ctx.StringValue("DescribeLiveSnapshotConfig.Order");
+			describeLiveSnapshotConfigResponse.TotalNum = _ctx.IntegerValue("DescribeLiveSnapshotConfig.TotalNum");
+			describeLiveSnapshotConfigResponse.TotalPage = _ctx.IntegerValue("DescribeLiveSnapshotConfig.TotalPage");
 
 			List<DescribeLiveSnapshotConfigResponse.DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig> describeLiveSnapshotConfigResponse_liveStreamSnapshotConfigList = new List<DescribeLiveSnapshotConfigResponse.DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig>();
-			for (int i = 0; i < context.Length("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList.Length"); i++) {
 				DescribeLiveSnapshotConfigResponse.DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig liveStreamSnapshotConfig = new DescribeLiveSnapshotConfigResponse.DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig();
-				liveStreamSnapshotConfig.DomainName = context.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].DomainName");
-				liveStreamSnapshotConfig.AppName = context.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].AppName");
-				liveStreamSnapshotConfig.TimeInterval = context.IntegerValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].TimeInterval");
-				liveStreamSnapshotConfig.OssEndpoint = context.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].OssEndpoint");
-				liveStreamSnapshotConfig.OssBucket = context.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].OssBucket");
-				liveStreamSnapshotConfig.OverwriteOssObject = context.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].OverwriteOssObject");
-				liveStreamSnapshotConfig.SequenceOssObject = context.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].SequenceOssObject");
-				liveStreamSnapshotConfig.CreateTime = context.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].CreateTime");
-				liveStreamSnapshotConfig.Callback = context.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].Callback");
+				liveStreamSnapshotConfig.DomainName = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].DomainName");
+				liveStreamSnapshotConfig.AppName = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].AppName");
+				liveStreamSnapshotConfig.TimeInterval = _ctx.IntegerValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].TimeInterval");
+				liveStreamSnapshotConfig.OssEndpoint = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].OssEndpoint");
+				liveStreamSnapshotConfig.OssBucket = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].OssBucket");
+				liveStreamSnapshotConfig.OverwriteOssObject = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].OverwriteOssObject");
+				liveStreamSnapshotConfig.SequenceOssObject = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].SequenceOssObject");
+				liveStreamSnapshotConfig.CreateTime = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].CreateTime");
+				liveStreamSnapshotConfig.Callback = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].Callback");
 
 				describeLiveSnapshotConfigResponse_liveStreamSnapshotConfigList.Add(liveStreamSnapshotConfig);
 			}

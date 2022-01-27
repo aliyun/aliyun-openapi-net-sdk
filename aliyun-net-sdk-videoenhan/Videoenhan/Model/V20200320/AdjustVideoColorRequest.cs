@@ -44,7 +44,7 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 
 		private string videoUrl;
 
-		private string videoBitrate;
+		private long? videoBitrate;
 
 		private string videoCodec;
 
@@ -76,7 +76,7 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			}
 		}
 
-		public string VideoBitrate
+		public long? VideoBitrate
 		{
 			get
 			{
@@ -85,7 +85,7 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			set	
 			{
 				videoBitrate = value;
-				DictionaryUtil.Add(BodyParameters, "VideoBitrate", value);
+				DictionaryUtil.Add(BodyParameters, "VideoBitrate", value.ToString());
 			}
 		}
 

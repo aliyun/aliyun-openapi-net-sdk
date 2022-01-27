@@ -71,6 +71,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string backupInterval;
 
+		private int? supportVolumeShadowCopy;
+
+		private string backupMethod;
+
 		private DescribeBackupPolicy_DuplicationLocation duplicationLocation;
 
 		public string RequestId
@@ -346,6 +350,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				backupInterval = value;
+			}
+		}
+
+		public int? SupportVolumeShadowCopy
+		{
+			get
+			{
+				return supportVolumeShadowCopy;
+			}
+			set	
+			{
+				supportVolumeShadowCopy = value;
+			}
+		}
+
+		public string BackupMethod
+		{
+			get
+			{
+				return backupMethod;
+			}
+			set	
+			{
+				backupMethod = value;
 			}
 		}
 

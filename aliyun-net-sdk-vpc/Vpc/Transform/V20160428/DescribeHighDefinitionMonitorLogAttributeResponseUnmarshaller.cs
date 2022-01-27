@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DescribeHighDefinitionMonitorLogAttributeResponseUnmarshaller
     {
-        public static DescribeHighDefinitionMonitorLogAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeHighDefinitionMonitorLogAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeHighDefinitionMonitorLogAttributeResponse describeHighDefinitionMonitorLogAttributeResponse = new DescribeHighDefinitionMonitorLogAttributeResponse();
 
-			describeHighDefinitionMonitorLogAttributeResponse.HttpResponse = context.HttpResponse;
-			describeHighDefinitionMonitorLogAttributeResponse.RequestId = context.StringValue("DescribeHighDefinitionMonitorLogAttribute.RequestId");
-			describeHighDefinitionMonitorLogAttributeResponse.Success = context.StringValue("DescribeHighDefinitionMonitorLogAttribute.Success");
-			describeHighDefinitionMonitorLogAttributeResponse.InstanceId = context.StringValue("DescribeHighDefinitionMonitorLogAttribute.InstanceId");
-			describeHighDefinitionMonitorLogAttributeResponse.InstanceType = context.StringValue("DescribeHighDefinitionMonitorLogAttribute.InstanceType");
-			describeHighDefinitionMonitorLogAttributeResponse.LogProject = context.StringValue("DescribeHighDefinitionMonitorLogAttribute.LogProject");
-			describeHighDefinitionMonitorLogAttributeResponse.LogStore = context.StringValue("DescribeHighDefinitionMonitorLogAttribute.LogStore");
+			describeHighDefinitionMonitorLogAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			describeHighDefinitionMonitorLogAttributeResponse.RequestId = _ctx.StringValue("DescribeHighDefinitionMonitorLogAttribute.RequestId");
+			describeHighDefinitionMonitorLogAttributeResponse.Success = _ctx.StringValue("DescribeHighDefinitionMonitorLogAttribute.Success");
+			describeHighDefinitionMonitorLogAttributeResponse.InstanceId = _ctx.StringValue("DescribeHighDefinitionMonitorLogAttribute.InstanceId");
+			describeHighDefinitionMonitorLogAttributeResponse.InstanceType = _ctx.StringValue("DescribeHighDefinitionMonitorLogAttribute.InstanceType");
+			describeHighDefinitionMonitorLogAttributeResponse.LogProject = _ctx.StringValue("DescribeHighDefinitionMonitorLogAttribute.LogProject");
+			describeHighDefinitionMonitorLogAttributeResponse.LogStore = _ctx.StringValue("DescribeHighDefinitionMonitorLogAttribute.LogStore");
         
 			return describeHighDefinitionMonitorLogAttributeResponse;
         }

@@ -26,34 +26,34 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 {
     public class DescribeScdnDomainDetailResponseUnmarshaller
     {
-        public static DescribeScdnDomainDetailResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeScdnDomainDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeScdnDomainDetailResponse describeScdnDomainDetailResponse = new DescribeScdnDomainDetailResponse();
 
-			describeScdnDomainDetailResponse.HttpResponse = context.HttpResponse;
-			describeScdnDomainDetailResponse.RequestId = context.StringValue("DescribeScdnDomainDetail.RequestId");
+			describeScdnDomainDetailResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnDomainDetailResponse.RequestId = _ctx.StringValue("DescribeScdnDomainDetail.RequestId");
 
 			DescribeScdnDomainDetailResponse.DescribeScdnDomainDetail_DomainDetail domainDetail = new DescribeScdnDomainDetailResponse.DescribeScdnDomainDetail_DomainDetail();
-			domainDetail.GmtCreated = context.StringValue("DescribeScdnDomainDetail.DomainDetail.GmtCreated");
-			domainDetail.GmtModified = context.StringValue("DescribeScdnDomainDetail.DomainDetail.GmtModified");
-			domainDetail.DomainStatus = context.StringValue("DescribeScdnDomainDetail.DomainDetail.DomainStatus");
-			domainDetail.Cname = context.StringValue("DescribeScdnDomainDetail.DomainDetail.Cname");
-			domainDetail.DomainName = context.StringValue("DescribeScdnDomainDetail.DomainDetail.DomainName");
-			domainDetail.Description = context.StringValue("DescribeScdnDomainDetail.DomainDetail.Description");
-			domainDetail.SSLProtocol = context.StringValue("DescribeScdnDomainDetail.DomainDetail.SSLProtocol");
-			domainDetail.SSLPub = context.StringValue("DescribeScdnDomainDetail.DomainDetail.SSLPub");
-			domainDetail.Scope = context.StringValue("DescribeScdnDomainDetail.DomainDetail.Scope");
-			domainDetail.CertName = context.StringValue("DescribeScdnDomainDetail.DomainDetail.CertName");
-			domainDetail.ResourceGroupId = context.StringValue("DescribeScdnDomainDetail.DomainDetail.ResourceGroupId");
+			domainDetail.GmtCreated = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.GmtCreated");
+			domainDetail.GmtModified = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.GmtModified");
+			domainDetail.DomainStatus = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.DomainStatus");
+			domainDetail.Cname = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.Cname");
+			domainDetail.DomainName = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.DomainName");
+			domainDetail.Description = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.Description");
+			domainDetail.SSLProtocol = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.SSLProtocol");
+			domainDetail.SSLPub = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.SSLPub");
+			domainDetail.Scope = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.Scope");
+			domainDetail.CertName = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.CertName");
+			domainDetail.ResourceGroupId = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.ResourceGroupId");
 
 			List<DescribeScdnDomainDetailResponse.DescribeScdnDomainDetail_DomainDetail.DescribeScdnDomainDetail_Source> domainDetail_sources = new List<DescribeScdnDomainDetailResponse.DescribeScdnDomainDetail_DomainDetail.DescribeScdnDomainDetail_Source>();
-			for (int i = 0; i < context.Length("DescribeScdnDomainDetail.DomainDetail.Sources.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeScdnDomainDetail.DomainDetail.Sources.Length"); i++) {
 				DescribeScdnDomainDetailResponse.DescribeScdnDomainDetail_DomainDetail.DescribeScdnDomainDetail_Source source = new DescribeScdnDomainDetailResponse.DescribeScdnDomainDetail_DomainDetail.DescribeScdnDomainDetail_Source();
-				source.Content = context.StringValue("DescribeScdnDomainDetail.DomainDetail.Sources["+ i +"].Content");
-				source.Type = context.StringValue("DescribeScdnDomainDetail.DomainDetail.Sources["+ i +"].Type");
-				source.Port = context.IntegerValue("DescribeScdnDomainDetail.DomainDetail.Sources["+ i +"].Port");
-				source.Enabled = context.StringValue("DescribeScdnDomainDetail.DomainDetail.Sources["+ i +"].Enabled");
-				source.Priority = context.StringValue("DescribeScdnDomainDetail.DomainDetail.Sources["+ i +"].Priority");
+				source.Content = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.Sources["+ i +"].Content");
+				source.Type = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.Sources["+ i +"].Type");
+				source.Port = _ctx.IntegerValue("DescribeScdnDomainDetail.DomainDetail.Sources["+ i +"].Port");
+				source.Enabled = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.Sources["+ i +"].Enabled");
+				source.Priority = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.Sources["+ i +"].Priority");
 
 				domainDetail_sources.Add(source);
 			}

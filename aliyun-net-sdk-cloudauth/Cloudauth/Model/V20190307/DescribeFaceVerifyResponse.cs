@@ -25,23 +25,23 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 	public class DescribeFaceVerifyResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string code;
 
 		private string message;
 
-		private string code;
+		private string requestId;
 
 		private DescribeFaceVerify_ResultObject resultObject;
 
-		public string RequestId
+		public string Code
 		{
 			get
 			{
-				return requestId;
+				return code;
 			}
 			set	
 			{
-				requestId = value;
+				code = value;
 			}
 		}
 
@@ -57,15 +57,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public string Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
 			}
 		}
 
@@ -84,37 +84,25 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 		public class DescribeFaceVerify_ResultObject
 		{
 
-			private string passed;
-
-			private string identityInfo;
+			private string subCode;
 
 			private string materialInfo;
 
+			private string identityInfo;
+
 			private string deviceToken;
 
-			private string subCode;
+			private string passed;
 
-			public string Passed
+			public string SubCode
 			{
 				get
 				{
-					return passed;
+					return subCode;
 				}
 				set	
 				{
-					passed = value;
-				}
-			}
-
-			public string IdentityInfo
-			{
-				get
-				{
-					return identityInfo;
-				}
-				set	
-				{
-					identityInfo = value;
+					subCode = value;
 				}
 			}
 
@@ -130,6 +118,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				}
 			}
 
+			public string IdentityInfo
+			{
+				get
+				{
+					return identityInfo;
+				}
+				set	
+				{
+					identityInfo = value;
+				}
+			}
+
 			public string DeviceToken
 			{
 				get
@@ -142,15 +142,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				}
 			}
 
-			public string SubCode
+			public string Passed
 			{
 				get
 				{
-					return subCode;
+					return passed;
 				}
 				set	
 				{
-					subCode = value;
+					passed = value;
 				}
 			}
 		}

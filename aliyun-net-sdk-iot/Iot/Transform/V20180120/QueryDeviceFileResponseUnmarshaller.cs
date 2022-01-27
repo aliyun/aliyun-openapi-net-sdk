@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryDeviceFileResponseUnmarshaller
     {
-        public static QueryDeviceFileResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDeviceFileResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDeviceFileResponse queryDeviceFileResponse = new QueryDeviceFileResponse();
 
-			queryDeviceFileResponse.HttpResponse = context.HttpResponse;
-			queryDeviceFileResponse.RequestId = context.StringValue("QueryDeviceFile.RequestId");
-			queryDeviceFileResponse.Success = context.BooleanValue("QueryDeviceFile.Success");
-			queryDeviceFileResponse.Code = context.StringValue("QueryDeviceFile.Code");
-			queryDeviceFileResponse.ErrorMessage = context.StringValue("QueryDeviceFile.ErrorMessage");
+			queryDeviceFileResponse.HttpResponse = _ctx.HttpResponse;
+			queryDeviceFileResponse.RequestId = _ctx.StringValue("QueryDeviceFile.RequestId");
+			queryDeviceFileResponse.Success = _ctx.BooleanValue("QueryDeviceFile.Success");
+			queryDeviceFileResponse.Code = _ctx.StringValue("QueryDeviceFile.Code");
+			queryDeviceFileResponse.ErrorMessage = _ctx.StringValue("QueryDeviceFile.ErrorMessage");
 
 			QueryDeviceFileResponse.QueryDeviceFile_Data data = new QueryDeviceFileResponse.QueryDeviceFile_Data();
-			data.FileId = context.StringValue("QueryDeviceFile.Data.FileId");
-			data.Name = context.StringValue("QueryDeviceFile.Data.Name");
-			data.Size = context.StringValue("QueryDeviceFile.Data.Size");
-			data.UtcCreatedOn = context.StringValue("QueryDeviceFile.Data.UtcCreatedOn");
-			data.DownloadUrl = context.StringValue("QueryDeviceFile.Data.DownloadUrl");
+			data.FileId = _ctx.StringValue("QueryDeviceFile.Data.FileId");
+			data.Name = _ctx.StringValue("QueryDeviceFile.Data.Name");
+			data.Size = _ctx.StringValue("QueryDeviceFile.Data.Size");
+			data.UtcCreatedOn = _ctx.StringValue("QueryDeviceFile.Data.UtcCreatedOn");
+			data.DownloadUrl = _ctx.StringValue("QueryDeviceFile.Data.DownloadUrl");
 			queryDeviceFileResponse.Data = data;
         
 			return queryDeviceFileResponse;

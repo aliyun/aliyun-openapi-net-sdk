@@ -26,29 +26,39 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 {
     public class DescribeZonesResponseUnmarshaller
     {
-        public static DescribeZonesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeZonesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeZonesResponse describeZonesResponse = new DescribeZonesResponse();
 
-			describeZonesResponse.HttpResponse = context.HttpResponse;
-			describeZonesResponse.RequestId = context.StringValue("DescribeZones.RequestId");
+			describeZonesResponse.HttpResponse = _ctx.HttpResponse;
+			describeZonesResponse.RequestId = _ctx.StringValue("DescribeZones.RequestId");
 
 			List<DescribeZonesResponse.DescribeZones_Zone> describeZonesResponse_zones = new List<DescribeZonesResponse.DescribeZones_Zone>();
-			for (int i = 0; i < context.Length("DescribeZones.Zones.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeZones.Zones.Length"); i++) {
 				DescribeZonesResponse.DescribeZones_Zone zone = new DescribeZonesResponse.DescribeZones_Zone();
-				zone.ZoneId = context.StringValue("DescribeZones.Zones["+ i +"].ZoneId");
+				zone.ZoneId = _ctx.StringValue("DescribeZones.Zones["+ i +"].ZoneId");
+
+				List<string> zone_performance = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeZones.Zones["+ i +"].Performance.Length"); j++) {
+					zone_performance.Add(_ctx.StringValue("DescribeZones.Zones["+ i +"].Performance["+ j +"]"));
+				}
+				zone.Performance = zone_performance;
 
 				List<string> zone_capacity = new List<string>();
-				for (int j = 0; j < context.Length("DescribeZones.Zones["+ i +"].Capacity.Length"); j++) {
-					zone_capacity.Add(context.StringValue("DescribeZones.Zones["+ i +"].Capacity["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeZones.Zones["+ i +"].Capacity.Length"); j++) {
+					zone_capacity.Add(_ctx.StringValue("DescribeZones.Zones["+ i +"].Capacity["+ j +"]"));
 				}
 				zone.Capacity = zone_capacity;
 
-				List<string> zone_performance = new List<string>();
-				for (int j = 0; j < context.Length("DescribeZones.Zones["+ i +"].Performance.Length"); j++) {
-					zone_performance.Add(context.StringValue("DescribeZones.Zones["+ i +"].Performance["+ j +"]"));
+				List<DescribeZonesResponse.DescribeZones_Zone.DescribeZones_InstanceType> zone_instanceTypes = new List<DescribeZonesResponse.DescribeZones_Zone.DescribeZones_InstanceType>();
+				for (int j = 0; j < _ctx.Length("DescribeZones.Zones["+ i +"].InstanceTypes.Length"); j++) {
+					DescribeZonesResponse.DescribeZones_Zone.DescribeZones_InstanceType instanceType = new DescribeZonesResponse.DescribeZones_Zone.DescribeZones_InstanceType();
+					instanceType.StorageType = _ctx.StringValue("DescribeZones.Zones["+ i +"].InstanceTypes["+ j +"].StorageType");
+					instanceType.ProtocolType = _ctx.StringValue("DescribeZones.Zones["+ i +"].InstanceTypes["+ j +"].ProtocolType");
+
+					zone_instanceTypes.Add(instanceType);
 				}
-				zone.Performance = zone_performance;
+				zone.InstanceTypes = zone_instanceTypes;
 
 				describeZonesResponse_zones.Add(zone);
 			}

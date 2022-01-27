@@ -36,10 +36,10 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 			List<DescribeCertificatesResponse.DescribeCertificates_Certificate> describeCertificatesResponse_certificates = new List<DescribeCertificatesResponse.DescribeCertificates_Certificate>();
 			for (int i = 0; i < _ctx.Length("DescribeCertificates.Certificates.Length"); i++) {
 				DescribeCertificatesResponse.DescribeCertificates_Certificate certificate = new DescribeCertificatesResponse.DescribeCertificates_Certificate();
-				certificate.CommonName = _ctx.StringValue("DescribeCertificates.Certificates["+ i +"].CommonName");
 				certificate.IsUsing = _ctx.BooleanValue("DescribeCertificates.Certificates["+ i +"].IsUsing");
 				certificate.CertificateName = _ctx.StringValue("DescribeCertificates.Certificates["+ i +"].CertificateName");
 				certificate.CertificateId = _ctx.LongValue("DescribeCertificates.Certificates["+ i +"].CertificateId");
+				certificate.CommonName = _ctx.StringValue("DescribeCertificates.Certificates["+ i +"].CommonName");
 
 				List<string> certificate_sans = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeCertificates.Certificates["+ i +"].Sans.Length"); j++) {

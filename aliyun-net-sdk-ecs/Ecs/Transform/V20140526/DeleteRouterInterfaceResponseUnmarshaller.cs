@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DeleteRouterInterfaceResponseUnmarshaller
     {
-        public static DeleteRouterInterfaceResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteRouterInterfaceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteRouterInterfaceResponse deleteRouterInterfaceResponse = new DeleteRouterInterfaceResponse();
 
-			deleteRouterInterfaceResponse.HttpResponse = context.HttpResponse;
-			deleteRouterInterfaceResponse.RequestId = context.StringValue("DeleteRouterInterface.RequestId");
+			deleteRouterInterfaceResponse.HttpResponse = _ctx.HttpResponse;
+			deleteRouterInterfaceResponse.RequestId = _ctx.StringValue("DeleteRouterInterface.RequestId");
         
 			return deleteRouterInterfaceResponse;
         }

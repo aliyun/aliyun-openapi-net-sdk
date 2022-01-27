@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,51 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeTasksResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string regionId;
-
-		private int? totalCount;
+		private int? pageSize;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private string requestId;
+
+		private int? totalCount;
+
+		private string regionId;
 
 		private List<DescribeTasks_Task> taskSet;
 
-		public string RequestId
+		public int? PageSize
 		{
 			get
 			{
-				return requestId;
+				return pageSize;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
+				pageSize = value;
 			}
 		}
 
@@ -85,15 +61,39 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public string RequestId
 		{
 			get
 			{
-				return pageSize;
+				return requestId;
 			}
 			set	
 			{
-				pageSize = value;
+				requestId = value;
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
 			}
 		}
 
@@ -112,17 +112,65 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeTasks_Task
 		{
 
+			private string creationTime;
+
+			private string taskStatus;
+
+			private string finishedTime;
+
+			private string supportCancel;
+
 			private string taskId;
 
 			private string taskAction;
 
-			private string taskStatus;
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
+				}
+			}
 
-			private string supportCancel;
+			public string TaskStatus
+			{
+				get
+				{
+					return taskStatus;
+				}
+				set	
+				{
+					taskStatus = value;
+				}
+			}
 
-			private string creationTime;
+			public string FinishedTime
+			{
+				get
+				{
+					return finishedTime;
+				}
+				set	
+				{
+					finishedTime = value;
+				}
+			}
 
-			private string finishedTime;
+			public string SupportCancel
+			{
+				get
+				{
+					return supportCancel;
+				}
+				set	
+				{
+					supportCancel = value;
+				}
+			}
 
 			public string TaskId
 			{
@@ -145,54 +193,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					taskAction = value;
-				}
-			}
-
-			public string TaskStatus
-			{
-				get
-				{
-					return taskStatus;
-				}
-				set	
-				{
-					taskStatus = value;
-				}
-			}
-
-			public string SupportCancel
-			{
-				get
-				{
-					return supportCancel;
-				}
-				set	
-				{
-					supportCancel = value;
-				}
-			}
-
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
-
-			public string FinishedTime
-			{
-				get
-				{
-					return finishedTime;
-				}
-				set	
-				{
-					finishedTime = value;
 				}
 			}
 		}

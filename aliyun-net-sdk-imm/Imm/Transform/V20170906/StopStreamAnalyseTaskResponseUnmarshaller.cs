@@ -26,13 +26,13 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class StopStreamAnalyseTaskResponseUnmarshaller
     {
-        public static StopStreamAnalyseTaskResponse Unmarshall(UnmarshallerContext context)
+        public static StopStreamAnalyseTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StopStreamAnalyseTaskResponse stopStreamAnalyseTaskResponse = new StopStreamAnalyseTaskResponse();
 
-			stopStreamAnalyseTaskResponse.HttpResponse = context.HttpResponse;
-			stopStreamAnalyseTaskResponse.RequestId = context.StringValue("StopStreamAnalyseTask.RequestId");
-			stopStreamAnalyseTaskResponse.TaskId = context.StringValue("StopStreamAnalyseTask.TaskId");
+			stopStreamAnalyseTaskResponse.HttpResponse = _ctx.HttpResponse;
+			stopStreamAnalyseTaskResponse.RequestId = _ctx.StringValue("StopStreamAnalyseTask.RequestId");
+			stopStreamAnalyseTaskResponse.TaskId = _ctx.StringValue("StopStreamAnalyseTask.TaskId");
         
 			return stopStreamAnalyseTaskResponse;
         }

@@ -26,19 +26,19 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 {
     public class GetAsyncJobResultResponseUnmarshaller
     {
-        public static GetAsyncJobResultResponse Unmarshall(UnmarshallerContext context)
+        public static GetAsyncJobResultResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetAsyncJobResultResponse getAsyncJobResultResponse = new GetAsyncJobResultResponse();
 
-			getAsyncJobResultResponse.HttpResponse = context.HttpResponse;
-			getAsyncJobResultResponse.RequestId = context.StringValue("GetAsyncJobResult.RequestId");
+			getAsyncJobResultResponse.HttpResponse = _ctx.HttpResponse;
+			getAsyncJobResultResponse.RequestId = _ctx.StringValue("GetAsyncJobResult.RequestId");
 
 			GetAsyncJobResultResponse.GetAsyncJobResult_Data data = new GetAsyncJobResultResponse.GetAsyncJobResult_Data();
-			data.JobId = context.StringValue("GetAsyncJobResult.Data.JobId");
-			data.Status = context.StringValue("GetAsyncJobResult.Data.Status");
-			data.Result = context.StringValue("GetAsyncJobResult.Data.Result");
-			data.ErrorCode = context.StringValue("GetAsyncJobResult.Data.ErrorCode");
-			data.ErrorMessage = context.StringValue("GetAsyncJobResult.Data.ErrorMessage");
+			data.Status = _ctx.StringValue("GetAsyncJobResult.Data.Status");
+			data.ErrorCode = _ctx.StringValue("GetAsyncJobResult.Data.ErrorCode");
+			data.ErrorMessage = _ctx.StringValue("GetAsyncJobResult.Data.ErrorMessage");
+			data.JobId = _ctx.StringValue("GetAsyncJobResult.Data.JobId");
+			data.Result = _ctx.StringValue("GetAsyncJobResult.Data.Result");
 			getAsyncJobResultResponse.Data = data;
         
 			return getAsyncJobResultResponse;

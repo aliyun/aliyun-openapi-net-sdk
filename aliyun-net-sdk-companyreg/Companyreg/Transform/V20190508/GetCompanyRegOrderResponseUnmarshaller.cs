@@ -26,35 +26,35 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class GetCompanyRegOrderResponseUnmarshaller
     {
-        public static GetCompanyRegOrderResponse Unmarshall(UnmarshallerContext context)
+        public static GetCompanyRegOrderResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetCompanyRegOrderResponse getCompanyRegOrderResponse = new GetCompanyRegOrderResponse();
 
-			getCompanyRegOrderResponse.HttpResponse = context.HttpResponse;
-			getCompanyRegOrderResponse.RequestId = context.StringValue("GetCompanyRegOrder.RequestId");
-			getCompanyRegOrderResponse.BizId = context.StringValue("GetCompanyRegOrder.BizId");
-			getCompanyRegOrderResponse.CompanyName = context.StringValue("GetCompanyRegOrder.CompanyName");
-			getCompanyRegOrderResponse.BizStatus = context.StringValue("GetCompanyRegOrder.BizStatus");
-			getCompanyRegOrderResponse.BizInfo = context.StringValue("GetCompanyRegOrder.BizInfo");
-			getCompanyRegOrderResponse.SupplementBizInfo = context.StringValue("GetCompanyRegOrder.SupplementBizInfo");
-			getCompanyRegOrderResponse.AliyunOrderId = context.StringValue("GetCompanyRegOrder.AliyunOrderId");
-			getCompanyRegOrderResponse.GmtModified = context.LongValue("GetCompanyRegOrder.GmtModified");
-			getCompanyRegOrderResponse.OrderAmount = context.FloatValue("GetCompanyRegOrder.OrderAmount");
-			getCompanyRegOrderResponse.YunMarketOrderAmount = context.FloatValue("GetCompanyRegOrder.YunMarketOrderAmount");
-			getCompanyRegOrderResponse.GmtPaid = context.LongValue("GetCompanyRegOrder.GmtPaid");
-			getCompanyRegOrderResponse.Extend = context.StringValue("GetCompanyRegOrder.Extend");
-			getCompanyRegOrderResponse.BizStatusStage = context.StringValue("GetCompanyRegOrder.BizStatusStage");
-			getCompanyRegOrderResponse.PlatformName = context.StringValue("GetCompanyRegOrder.PlatformName");
-			getCompanyRegOrderResponse.InboundPhone = context.StringValue("GetCompanyRegOrder.InboundPhone");
-			getCompanyRegOrderResponse.OutboundPhone = context.StringValue("GetCompanyRegOrder.OutboundPhone");
-			getCompanyRegOrderResponse.BizSubCode = context.StringValue("GetCompanyRegOrder.BizSubCode");
+			getCompanyRegOrderResponse.HttpResponse = _ctx.HttpResponse;
+			getCompanyRegOrderResponse.RequestId = _ctx.StringValue("GetCompanyRegOrder.RequestId");
+			getCompanyRegOrderResponse.BizId = _ctx.StringValue("GetCompanyRegOrder.BizId");
+			getCompanyRegOrderResponse.CompanyName = _ctx.StringValue("GetCompanyRegOrder.CompanyName");
+			getCompanyRegOrderResponse.BizStatus = _ctx.StringValue("GetCompanyRegOrder.BizStatus");
+			getCompanyRegOrderResponse.BizInfo = _ctx.StringValue("GetCompanyRegOrder.BizInfo");
+			getCompanyRegOrderResponse.SupplementBizInfo = _ctx.StringValue("GetCompanyRegOrder.SupplementBizInfo");
+			getCompanyRegOrderResponse.AliyunOrderId = _ctx.StringValue("GetCompanyRegOrder.AliyunOrderId");
+			getCompanyRegOrderResponse.GmtModified = _ctx.LongValue("GetCompanyRegOrder.GmtModified");
+			getCompanyRegOrderResponse.OrderAmount = _ctx.FloatValue("GetCompanyRegOrder.OrderAmount");
+			getCompanyRegOrderResponse.YunMarketOrderAmount = _ctx.FloatValue("GetCompanyRegOrder.YunMarketOrderAmount");
+			getCompanyRegOrderResponse.GmtPaid = _ctx.LongValue("GetCompanyRegOrder.GmtPaid");
+			getCompanyRegOrderResponse.Extend = _ctx.StringValue("GetCompanyRegOrder.Extend");
+			getCompanyRegOrderResponse.BizStatusStage = _ctx.StringValue("GetCompanyRegOrder.BizStatusStage");
+			getCompanyRegOrderResponse.PlatformName = _ctx.StringValue("GetCompanyRegOrder.PlatformName");
+			getCompanyRegOrderResponse.InboundPhone = _ctx.StringValue("GetCompanyRegOrder.InboundPhone");
+			getCompanyRegOrderResponse.OutboundPhone = _ctx.StringValue("GetCompanyRegOrder.OutboundPhone");
+			getCompanyRegOrderResponse.BizSubCode = _ctx.StringValue("GetCompanyRegOrder.BizSubCode");
 
 			List<GetCompanyRegOrderResponse.GetCompanyRegOrder_BizOperation> getCompanyRegOrderResponse_operations = new List<GetCompanyRegOrderResponse.GetCompanyRegOrder_BizOperation>();
-			for (int i = 0; i < context.Length("GetCompanyRegOrder.Operations.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetCompanyRegOrder.Operations.Length"); i++) {
 				GetCompanyRegOrderResponse.GetCompanyRegOrder_BizOperation bizOperation = new GetCompanyRegOrderResponse.GetCompanyRegOrder_BizOperation();
-				bizOperation.GmtAction = context.LongValue("GetCompanyRegOrder.Operations["+ i +"].GmtAction");
-				bizOperation.ActionType = context.StringValue("GetCompanyRegOrder.Operations["+ i +"].ActionType");
-				bizOperation.ActionInfo = context.StringValue("GetCompanyRegOrder.Operations["+ i +"].ActionInfo");
+				bizOperation.GmtAction = _ctx.LongValue("GetCompanyRegOrder.Operations["+ i +"].GmtAction");
+				bizOperation.ActionType = _ctx.StringValue("GetCompanyRegOrder.Operations["+ i +"].ActionType");
+				bizOperation.ActionInfo = _ctx.StringValue("GetCompanyRegOrder.Operations["+ i +"].ActionInfo");
 
 				getCompanyRegOrderResponse_operations.Add(bizOperation);
 			}

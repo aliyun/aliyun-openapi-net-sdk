@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DescribeIpv6GatewayAttributeResponseUnmarshaller
     {
-        public static DescribeIpv6GatewayAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeIpv6GatewayAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeIpv6GatewayAttributeResponse describeIpv6GatewayAttributeResponse = new DescribeIpv6GatewayAttributeResponse();
 
-			describeIpv6GatewayAttributeResponse.HttpResponse = context.HttpResponse;
-			describeIpv6GatewayAttributeResponse.RequestId = context.StringValue("DescribeIpv6GatewayAttribute.RequestId");
-			describeIpv6GatewayAttributeResponse.RegionId = context.StringValue("DescribeIpv6GatewayAttribute.RegionId");
-			describeIpv6GatewayAttributeResponse.Ipv6GatewayId = context.StringValue("DescribeIpv6GatewayAttribute.Ipv6GatewayId");
-			describeIpv6GatewayAttributeResponse.VpcId = context.StringValue("DescribeIpv6GatewayAttribute.VpcId");
-			describeIpv6GatewayAttributeResponse.Status = context.StringValue("DescribeIpv6GatewayAttribute.Status");
-			describeIpv6GatewayAttributeResponse.BusinessStatus = context.StringValue("DescribeIpv6GatewayAttribute.BusinessStatus");
-			describeIpv6GatewayAttributeResponse.Name = context.StringValue("DescribeIpv6GatewayAttribute.Name");
-			describeIpv6GatewayAttributeResponse.Description = context.StringValue("DescribeIpv6GatewayAttribute.Description");
-			describeIpv6GatewayAttributeResponse.Spec = context.StringValue("DescribeIpv6GatewayAttribute.Spec");
-			describeIpv6GatewayAttributeResponse.InstanceChargeType = context.StringValue("DescribeIpv6GatewayAttribute.InstanceChargeType");
-			describeIpv6GatewayAttributeResponse.ExpiredTime = context.StringValue("DescribeIpv6GatewayAttribute.ExpiredTime");
-			describeIpv6GatewayAttributeResponse.CreationTime = context.StringValue("DescribeIpv6GatewayAttribute.CreationTime");
+			describeIpv6GatewayAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			describeIpv6GatewayAttributeResponse.RequestId = _ctx.StringValue("DescribeIpv6GatewayAttribute.RequestId");
+			describeIpv6GatewayAttributeResponse.RegionId = _ctx.StringValue("DescribeIpv6GatewayAttribute.RegionId");
+			describeIpv6GatewayAttributeResponse.Ipv6GatewayId = _ctx.StringValue("DescribeIpv6GatewayAttribute.Ipv6GatewayId");
+			describeIpv6GatewayAttributeResponse.VpcId = _ctx.StringValue("DescribeIpv6GatewayAttribute.VpcId");
+			describeIpv6GatewayAttributeResponse.Status = _ctx.StringValue("DescribeIpv6GatewayAttribute.Status");
+			describeIpv6GatewayAttributeResponse.BusinessStatus = _ctx.StringValue("DescribeIpv6GatewayAttribute.BusinessStatus");
+			describeIpv6GatewayAttributeResponse.Name = _ctx.StringValue("DescribeIpv6GatewayAttribute.Name");
+			describeIpv6GatewayAttributeResponse.Description = _ctx.StringValue("DescribeIpv6GatewayAttribute.Description");
+			describeIpv6GatewayAttributeResponse.Spec = _ctx.StringValue("DescribeIpv6GatewayAttribute.Spec");
+			describeIpv6GatewayAttributeResponse.InstanceChargeType = _ctx.StringValue("DescribeIpv6GatewayAttribute.InstanceChargeType");
+			describeIpv6GatewayAttributeResponse.ExpiredTime = _ctx.StringValue("DescribeIpv6GatewayAttribute.ExpiredTime");
+			describeIpv6GatewayAttributeResponse.CreationTime = _ctx.StringValue("DescribeIpv6GatewayAttribute.CreationTime");
         
 			return describeIpv6GatewayAttributeResponse;
         }

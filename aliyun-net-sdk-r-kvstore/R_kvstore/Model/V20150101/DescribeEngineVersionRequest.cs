@@ -52,8 +52,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string instanceId;
 
-		private string parameters;
-
 		public long? ResourceOwnerId
 		{
 			get
@@ -129,19 +127,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string Parameters
-		{
-			get
-			{
-				return parameters;
-			}
-			set	
-			{
-				parameters = value;
-				DictionaryUtil.Add(QueryParameters, "Parameters", value);
 			}
 		}
 

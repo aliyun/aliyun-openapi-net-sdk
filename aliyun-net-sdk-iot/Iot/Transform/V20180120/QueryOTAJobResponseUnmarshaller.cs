@@ -26,52 +26,58 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryOTAJobResponseUnmarshaller
     {
-        public static QueryOTAJobResponse Unmarshall(UnmarshallerContext context)
+        public static QueryOTAJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryOTAJobResponse queryOTAJobResponse = new QueryOTAJobResponse();
 
-			queryOTAJobResponse.HttpResponse = context.HttpResponse;
-			queryOTAJobResponse.RequestId = context.StringValue("QueryOTAJob.RequestId");
-			queryOTAJobResponse.Success = context.BooleanValue("QueryOTAJob.Success");
-			queryOTAJobResponse.Code = context.StringValue("QueryOTAJob.Code");
-			queryOTAJobResponse.ErrorMessage = context.StringValue("QueryOTAJob.ErrorMessage");
+			queryOTAJobResponse.HttpResponse = _ctx.HttpResponse;
+			queryOTAJobResponse.RequestId = _ctx.StringValue("QueryOTAJob.RequestId");
+			queryOTAJobResponse.Success = _ctx.BooleanValue("QueryOTAJob.Success");
+			queryOTAJobResponse.Code = _ctx.StringValue("QueryOTAJob.Code");
+			queryOTAJobResponse.ErrorMessage = _ctx.StringValue("QueryOTAJob.ErrorMessage");
 
 			QueryOTAJobResponse.QueryOTAJob_Data data = new QueryOTAJobResponse.QueryOTAJob_Data();
-			data.JobId = context.StringValue("QueryOTAJob.Data.JobId");
-			data.UtcCreate = context.StringValue("QueryOTAJob.Data.UtcCreate");
-			data.UtcModified = context.StringValue("QueryOTAJob.Data.UtcModified");
-			data.ProductKey = context.StringValue("QueryOTAJob.Data.ProductKey");
-			data.FirmwareId = context.StringValue("QueryOTAJob.Data.FirmwareId");
-			data.UtcStartTime = context.StringValue("QueryOTAJob.Data.UtcStartTime");
-			data.UtcEndTime = context.StringValue("QueryOTAJob.Data.UtcEndTime");
-			data.JobStatus = context.StringValue("QueryOTAJob.Data.JobStatus");
-			data.JobType = context.StringValue("QueryOTAJob.Data.JobType");
-			data.JobDesc = context.StringValue("QueryOTAJob.Data.JobDesc");
-			data.Name = context.StringValue("QueryOTAJob.Data.Name");
-			data.UtcScheduleTime = context.StringValue("QueryOTAJob.Data.UtcScheduleTime");
-			data.RetryInterval = context.IntegerValue("QueryOTAJob.Data.RetryInterval");
-			data.RetryCount = context.IntegerValue("QueryOTAJob.Data.RetryCount");
-			data.TimeoutInMinutes = context.IntegerValue("QueryOTAJob.Data.TimeoutInMinutes");
-			data.TargetSelection = context.StringValue("QueryOTAJob.Data.TargetSelection");
-			data.SelectionType = context.StringValue("QueryOTAJob.Data.SelectionType");
-			data.GrayPercent = context.StringValue("QueryOTAJob.Data.GrayPercent");
-			data.MaximumPerMinute = context.IntegerValue("QueryOTAJob.Data.MaximumPerMinute");
-			data.DestVersion = context.StringValue("QueryOTAJob.Data.DestVersion");
-			data.UtcScheduleFinishTime = context.StringValue("QueryOTAJob.Data.UtcScheduleFinishTime");
-			data.OverwriteMode = context.IntegerValue("QueryOTAJob.Data.OverwriteMode");
-			data.DynamicMode = context.IntegerValue("QueryOTAJob.Data.DynamicMode");
+			data.JobId = _ctx.StringValue("QueryOTAJob.Data.JobId");
+			data.UtcCreate = _ctx.StringValue("QueryOTAJob.Data.UtcCreate");
+			data.UtcModified = _ctx.StringValue("QueryOTAJob.Data.UtcModified");
+			data.ProductKey = _ctx.StringValue("QueryOTAJob.Data.ProductKey");
+			data.FirmwareId = _ctx.StringValue("QueryOTAJob.Data.FirmwareId");
+			data.UtcStartTime = _ctx.StringValue("QueryOTAJob.Data.UtcStartTime");
+			data.UtcEndTime = _ctx.StringValue("QueryOTAJob.Data.UtcEndTime");
+			data.JobStatus = _ctx.StringValue("QueryOTAJob.Data.JobStatus");
+			data.JobType = _ctx.StringValue("QueryOTAJob.Data.JobType");
+			data.JobDesc = _ctx.StringValue("QueryOTAJob.Data.JobDesc");
+			data.Name = _ctx.StringValue("QueryOTAJob.Data.Name");
+			data.UtcScheduleTime = _ctx.StringValue("QueryOTAJob.Data.UtcScheduleTime");
+			data.RetryInterval = _ctx.IntegerValue("QueryOTAJob.Data.RetryInterval");
+			data.RetryCount = _ctx.IntegerValue("QueryOTAJob.Data.RetryCount");
+			data.TimeoutInMinutes = _ctx.IntegerValue("QueryOTAJob.Data.TimeoutInMinutes");
+			data.TargetSelection = _ctx.StringValue("QueryOTAJob.Data.TargetSelection");
+			data.SelectionType = _ctx.StringValue("QueryOTAJob.Data.SelectionType");
+			data.GrayPercent = _ctx.StringValue("QueryOTAJob.Data.GrayPercent");
+			data.MaximumPerMinute = _ctx.IntegerValue("QueryOTAJob.Data.MaximumPerMinute");
+			data.DestVersion = _ctx.StringValue("QueryOTAJob.Data.DestVersion");
+			data.UtcScheduleFinishTime = _ctx.StringValue("QueryOTAJob.Data.UtcScheduleFinishTime");
+			data.OverwriteMode = _ctx.IntegerValue("QueryOTAJob.Data.OverwriteMode");
+			data.DynamicMode = _ctx.IntegerValue("QueryOTAJob.Data.DynamicMode");
+			data.NeedPush = _ctx.BooleanValue("QueryOTAJob.Data.NeedPush");
+			data.NeedConfirm = _ctx.BooleanValue("QueryOTAJob.Data.NeedConfirm");
+			data.GroupId = _ctx.StringValue("QueryOTAJob.Data.GroupId");
+			data.GroupName = _ctx.StringValue("QueryOTAJob.Data.GroupName");
+			data.DownloadProtocol = _ctx.StringValue("QueryOTAJob.Data.DownloadProtocol");
+			data.MultiModuleMode = _ctx.BooleanValue("QueryOTAJob.Data.MultiModuleMode");
 
 			List<string> data_srcVersions = new List<string>();
-			for (int i = 0; i < context.Length("QueryOTAJob.Data.SrcVersions.Length"); i++) {
-				data_srcVersions.Add(context.StringValue("QueryOTAJob.Data.SrcVersions["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("QueryOTAJob.Data.SrcVersions.Length"); i++) {
+				data_srcVersions.Add(_ctx.StringValue("QueryOTAJob.Data.SrcVersions["+ i +"]"));
 			}
 			data.SrcVersions = data_srcVersions;
 
 			List<QueryOTAJobResponse.QueryOTAJob_Data.QueryOTAJob_OtaTagDTO> data_tags = new List<QueryOTAJobResponse.QueryOTAJob_Data.QueryOTAJob_OtaTagDTO>();
-			for (int i = 0; i < context.Length("QueryOTAJob.Data.Tags.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryOTAJob.Data.Tags.Length"); i++) {
 				QueryOTAJobResponse.QueryOTAJob_Data.QueryOTAJob_OtaTagDTO otaTagDTO = new QueryOTAJobResponse.QueryOTAJob_Data.QueryOTAJob_OtaTagDTO();
-				otaTagDTO.Key = context.StringValue("QueryOTAJob.Data.Tags["+ i +"].Key");
-				otaTagDTO._Value = context.StringValue("QueryOTAJob.Data.Tags["+ i +"].Value");
+				otaTagDTO.Key = _ctx.StringValue("QueryOTAJob.Data.Tags["+ i +"].Key");
+				otaTagDTO._Value = _ctx.StringValue("QueryOTAJob.Data.Tags["+ i +"].Value");
 
 				data_tags.Add(otaTagDTO);
 			}

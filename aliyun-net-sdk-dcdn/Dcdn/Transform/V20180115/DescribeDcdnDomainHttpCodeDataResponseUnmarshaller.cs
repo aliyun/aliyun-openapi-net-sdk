@@ -26,28 +26,28 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 {
     public class DescribeDcdnDomainHttpCodeDataResponseUnmarshaller
     {
-        public static DescribeDcdnDomainHttpCodeDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDcdnDomainHttpCodeDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDcdnDomainHttpCodeDataResponse describeDcdnDomainHttpCodeDataResponse = new DescribeDcdnDomainHttpCodeDataResponse();
 
-			describeDcdnDomainHttpCodeDataResponse.HttpResponse = context.HttpResponse;
-			describeDcdnDomainHttpCodeDataResponse.RequestId = context.StringValue("DescribeDcdnDomainHttpCodeData.RequestId");
-			describeDcdnDomainHttpCodeDataResponse.DomainName = context.StringValue("DescribeDcdnDomainHttpCodeData.DomainName");
-			describeDcdnDomainHttpCodeDataResponse.StartTime = context.StringValue("DescribeDcdnDomainHttpCodeData.StartTime");
-			describeDcdnDomainHttpCodeDataResponse.EndTime = context.StringValue("DescribeDcdnDomainHttpCodeData.EndTime");
-			describeDcdnDomainHttpCodeDataResponse.DataInterval = context.StringValue("DescribeDcdnDomainHttpCodeData.DataInterval");
+			describeDcdnDomainHttpCodeDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDcdnDomainHttpCodeDataResponse.RequestId = _ctx.StringValue("DescribeDcdnDomainHttpCodeData.RequestId");
+			describeDcdnDomainHttpCodeDataResponse.DomainName = _ctx.StringValue("DescribeDcdnDomainHttpCodeData.DomainName");
+			describeDcdnDomainHttpCodeDataResponse.StartTime = _ctx.StringValue("DescribeDcdnDomainHttpCodeData.StartTime");
+			describeDcdnDomainHttpCodeDataResponse.EndTime = _ctx.StringValue("DescribeDcdnDomainHttpCodeData.EndTime");
+			describeDcdnDomainHttpCodeDataResponse.DataInterval = _ctx.StringValue("DescribeDcdnDomainHttpCodeData.DataInterval");
 
 			List<DescribeDcdnDomainHttpCodeDataResponse.DescribeDcdnDomainHttpCodeData_DataModule> describeDcdnDomainHttpCodeDataResponse_dataPerInterval = new List<DescribeDcdnDomainHttpCodeDataResponse.DescribeDcdnDomainHttpCodeData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeDcdnDomainHttpCodeData.DataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDcdnDomainHttpCodeData.DataPerInterval.Length"); i++) {
 				DescribeDcdnDomainHttpCodeDataResponse.DescribeDcdnDomainHttpCodeData_DataModule dataModule = new DescribeDcdnDomainHttpCodeDataResponse.DescribeDcdnDomainHttpCodeData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeDcdnDomainHttpCodeData.DataPerInterval["+ i +"].TimeStamp");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDcdnDomainHttpCodeData.DataPerInterval["+ i +"].TimeStamp");
 
 				List<DescribeDcdnDomainHttpCodeDataResponse.DescribeDcdnDomainHttpCodeData_DataModule.DescribeDcdnDomainHttpCodeData_HttpCodeDataModule> dataModule_httpCodeDataPerInterval = new List<DescribeDcdnDomainHttpCodeDataResponse.DescribeDcdnDomainHttpCodeData_DataModule.DescribeDcdnDomainHttpCodeData_HttpCodeDataModule>();
-				for (int j = 0; j < context.Length("DescribeDcdnDomainHttpCodeData.DataPerInterval["+ i +"].HttpCodeDataPerInterval.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeDcdnDomainHttpCodeData.DataPerInterval["+ i +"].HttpCodeDataPerInterval.Length"); j++) {
 					DescribeDcdnDomainHttpCodeDataResponse.DescribeDcdnDomainHttpCodeData_DataModule.DescribeDcdnDomainHttpCodeData_HttpCodeDataModule httpCodeDataModule = new DescribeDcdnDomainHttpCodeDataResponse.DescribeDcdnDomainHttpCodeData_DataModule.DescribeDcdnDomainHttpCodeData_HttpCodeDataModule();
-					httpCodeDataModule.Code = context.IntegerValue("DescribeDcdnDomainHttpCodeData.DataPerInterval["+ i +"].HttpCodeDataPerInterval["+ j +"].Code");
-					httpCodeDataModule.Proportion = context.FloatValue("DescribeDcdnDomainHttpCodeData.DataPerInterval["+ i +"].HttpCodeDataPerInterval["+ j +"].Proportion");
-					httpCodeDataModule.Count = context.FloatValue("DescribeDcdnDomainHttpCodeData.DataPerInterval["+ i +"].HttpCodeDataPerInterval["+ j +"].Count");
+					httpCodeDataModule.Code = _ctx.IntegerValue("DescribeDcdnDomainHttpCodeData.DataPerInterval["+ i +"].HttpCodeDataPerInterval["+ j +"].Code");
+					httpCodeDataModule.Proportion = _ctx.FloatValue("DescribeDcdnDomainHttpCodeData.DataPerInterval["+ i +"].HttpCodeDataPerInterval["+ j +"].Proportion");
+					httpCodeDataModule.Count = _ctx.FloatValue("DescribeDcdnDomainHttpCodeData.DataPerInterval["+ i +"].HttpCodeDataPerInterval["+ j +"].Count");
 
 					dataModule_httpCodeDataPerInterval.Add(httpCodeDataModule);
 				}

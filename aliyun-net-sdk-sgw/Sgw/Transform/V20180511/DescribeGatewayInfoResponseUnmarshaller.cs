@@ -26,21 +26,21 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeGatewayInfoResponseUnmarshaller
     {
-        public static DescribeGatewayInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGatewayInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGatewayInfoResponse describeGatewayInfoResponse = new DescribeGatewayInfoResponse();
 
-			describeGatewayInfoResponse.HttpResponse = context.HttpResponse;
-			describeGatewayInfoResponse.RequestId = context.StringValue("DescribeGatewayInfo.RequestId");
-			describeGatewayInfoResponse.Success = context.BooleanValue("DescribeGatewayInfo.Success");
-			describeGatewayInfoResponse.Code = context.StringValue("DescribeGatewayInfo.Code");
-			describeGatewayInfoResponse.Message = context.StringValue("DescribeGatewayInfo.Message");
+			describeGatewayInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeGatewayInfoResponse.Message = _ctx.StringValue("DescribeGatewayInfo.Message");
+			describeGatewayInfoResponse.RequestId = _ctx.StringValue("DescribeGatewayInfo.RequestId");
+			describeGatewayInfoResponse.Code = _ctx.StringValue("DescribeGatewayInfo.Code");
+			describeGatewayInfoResponse.Success = _ctx.BooleanValue("DescribeGatewayInfo.Success");
 
 			List<DescribeGatewayInfoResponse.DescribeGatewayInfo_GatewayInfo> describeGatewayInfoResponse_gatewayInfos = new List<DescribeGatewayInfoResponse.DescribeGatewayInfo_GatewayInfo>();
-			for (int i = 0; i < context.Length("DescribeGatewayInfo.GatewayInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeGatewayInfo.GatewayInfos.Length"); i++) {
 				DescribeGatewayInfoResponse.DescribeGatewayInfo_GatewayInfo gatewayInfo = new DescribeGatewayInfoResponse.DescribeGatewayInfo_GatewayInfo();
-				gatewayInfo.Time = context.LongValue("DescribeGatewayInfo.GatewayInfos["+ i +"].Time");
-				gatewayInfo.Info = context.StringValue("DescribeGatewayInfo.GatewayInfos["+ i +"].Info");
+				gatewayInfo.Time = _ctx.LongValue("DescribeGatewayInfo.GatewayInfos["+ i +"].Time");
+				gatewayInfo.Info = _ctx.StringValue("DescribeGatewayInfo.GatewayInfos["+ i +"].Info");
 
 				describeGatewayInfoResponse_gatewayInfos.Add(gatewayInfo);
 			}

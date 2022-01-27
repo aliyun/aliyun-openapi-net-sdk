@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class ReportInstancesStatusResponseUnmarshaller
     {
-        public static ReportInstancesStatusResponse Unmarshall(UnmarshallerContext context)
+        public static ReportInstancesStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ReportInstancesStatusResponse reportInstancesStatusResponse = new ReportInstancesStatusResponse();
 
-			reportInstancesStatusResponse.HttpResponse = context.HttpResponse;
-			reportInstancesStatusResponse.RequestId = context.StringValue("ReportInstancesStatus.RequestId");
+			reportInstancesStatusResponse.HttpResponse = _ctx.HttpResponse;
+			reportInstancesStatusResponse.RequestId = _ctx.StringValue("ReportInstancesStatus.RequestId");
         
 			return reportInstancesStatusResponse;
         }

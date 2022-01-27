@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class ConfirmTransferInEmailResponseUnmarshaller
     {
-        public static ConfirmTransferInEmailResponse Unmarshall(UnmarshallerContext context)
+        public static ConfirmTransferInEmailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ConfirmTransferInEmailResponse confirmTransferInEmailResponse = new ConfirmTransferInEmailResponse();
 
-			confirmTransferInEmailResponse.HttpResponse = context.HttpResponse;
-			confirmTransferInEmailResponse.RequestId = context.StringValue("ConfirmTransferInEmail.RequestId");
+			confirmTransferInEmailResponse.HttpResponse = _ctx.HttpResponse;
+			confirmTransferInEmailResponse.RequestId = _ctx.StringValue("ConfirmTransferInEmail.RequestId");
 
 			List<string> confirmTransferInEmailResponse_successList = new List<string>();
-			for (int i = 0; i < context.Length("ConfirmTransferInEmail.SuccessList.Length"); i++) {
-				confirmTransferInEmailResponse_successList.Add(context.StringValue("ConfirmTransferInEmail.SuccessList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("ConfirmTransferInEmail.SuccessList.Length"); i++) {
+				confirmTransferInEmailResponse_successList.Add(_ctx.StringValue("ConfirmTransferInEmail.SuccessList["+ i +"]"));
 			}
 			confirmTransferInEmailResponse.SuccessList = confirmTransferInEmailResponse_successList;
 
 			List<string> confirmTransferInEmailResponse_failList = new List<string>();
-			for (int i = 0; i < context.Length("ConfirmTransferInEmail.FailList.Length"); i++) {
-				confirmTransferInEmailResponse_failList.Add(context.StringValue("ConfirmTransferInEmail.FailList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("ConfirmTransferInEmail.FailList.Length"); i++) {
+				confirmTransferInEmailResponse_failList.Add(_ctx.StringValue("ConfirmTransferInEmail.FailList["+ i +"]"));
 			}
 			confirmTransferInEmailResponse.FailList = confirmTransferInEmailResponse_failList;
         

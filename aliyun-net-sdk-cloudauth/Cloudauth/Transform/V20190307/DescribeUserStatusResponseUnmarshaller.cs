@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 {
     public class DescribeUserStatusResponseUnmarshaller
     {
-        public static DescribeUserStatusResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUserStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeUserStatusResponse describeUserStatusResponse = new DescribeUserStatusResponse();
 
-			describeUserStatusResponse.HttpResponse = context.HttpResponse;
-			describeUserStatusResponse.RequestId = context.StringValue("DescribeUserStatus.RequestId");
-			describeUserStatusResponse.Enabled = context.BooleanValue("DescribeUserStatus.Enabled");
+			describeUserStatusResponse.HttpResponse = _ctx.HttpResponse;
+			describeUserStatusResponse.RequestId = _ctx.StringValue("DescribeUserStatus.RequestId");
+			describeUserStatusResponse.Enabled = _ctx.BooleanValue("DescribeUserStatus.Enabled");
         
 			return describeUserStatusResponse;
         }

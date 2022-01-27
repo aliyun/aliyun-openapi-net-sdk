@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class ModifyDBInstanceAutoUpgradeMinorVersionResponseUnmarshaller
     {
-        public static ModifyDBInstanceAutoUpgradeMinorVersionResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDBInstanceAutoUpgradeMinorVersionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyDBInstanceAutoUpgradeMinorVersionResponse modifyDBInstanceAutoUpgradeMinorVersionResponse = new ModifyDBInstanceAutoUpgradeMinorVersionResponse();
 
-			modifyDBInstanceAutoUpgradeMinorVersionResponse.HttpResponse = context.HttpResponse;
-			modifyDBInstanceAutoUpgradeMinorVersionResponse.RequestId = context.StringValue("ModifyDBInstanceAutoUpgradeMinorVersion.RequestId");
+			modifyDBInstanceAutoUpgradeMinorVersionResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDBInstanceAutoUpgradeMinorVersionResponse.RequestId = _ctx.StringValue("ModifyDBInstanceAutoUpgradeMinorVersion.RequestId");
         
 			return modifyDBInstanceAutoUpgradeMinorVersionResponse;
         }

@@ -25,17 +25,53 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class QueryScriptWaveformsResponse : AcsResponse
 	{
 
+		private string code;
+
+		private int? httpStatusCode;
+
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
-
-		private string message;
-
-		private int? httpStatusCode;
-
 		private List<QueryScriptWaveforms_ScriptWaveform> scriptWaveforms;
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -61,42 +97,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
 		public List<QueryScriptWaveforms_ScriptWaveform> ScriptWaveforms
 		{
 			get
@@ -112,51 +112,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class QueryScriptWaveforms_ScriptWaveform
 		{
 
-			private string scriptWaveformId;
-
-			private string scriptId;
-
-			private string scriptContent;
-
 			private string fileId;
 
 			private string fileName;
 
-			public string ScriptWaveformId
-			{
-				get
-				{
-					return scriptWaveformId;
-				}
-				set	
-				{
-					scriptWaveformId = value;
-				}
-			}
+			private string scriptContent;
 
-			public string ScriptId
-			{
-				get
-				{
-					return scriptId;
-				}
-				set	
-				{
-					scriptId = value;
-				}
-			}
+			private string scriptId;
 
-			public string ScriptContent
-			{
-				get
-				{
-					return scriptContent;
-				}
-				set	
-				{
-					scriptContent = value;
-				}
-			}
+			private string scriptWaveformId;
 
 			public string FileId
 			{
@@ -179,6 +143,42 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					fileName = value;
+				}
+			}
+
+			public string ScriptContent
+			{
+				get
+				{
+					return scriptContent;
+				}
+				set	
+				{
+					scriptContent = value;
+				}
+			}
+
+			public string ScriptId
+			{
+				get
+				{
+					return scriptId;
+				}
+				set	
+				{
+					scriptId = value;
+				}
+			}
+
+			public string ScriptWaveformId
+			{
+				get
+				{
+					return scriptWaveformId;
+				}
+				set	
+				{
+					scriptWaveformId = value;
 				}
 			}
 		}

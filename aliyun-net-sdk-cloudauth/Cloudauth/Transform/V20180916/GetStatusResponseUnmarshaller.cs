@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20180916
 {
     public class GetStatusResponseUnmarshaller
     {
-        public static GetStatusResponse Unmarshall(UnmarshallerContext context)
+        public static GetStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetStatusResponse getStatusResponse = new GetStatusResponse();
 
-			getStatusResponse.HttpResponse = context.HttpResponse;
-			getStatusResponse.RequestId = context.StringValue("GetStatus.RequestId");
-			getStatusResponse.Success = context.BooleanValue("GetStatus.Success");
-			getStatusResponse.Code = context.StringValue("GetStatus.Code");
-			getStatusResponse.Message = context.StringValue("GetStatus.Message");
+			getStatusResponse.HttpResponse = _ctx.HttpResponse;
+			getStatusResponse.Code = _ctx.StringValue("GetStatus.Code");
+			getStatusResponse.Message = _ctx.StringValue("GetStatus.Message");
+			getStatusResponse.RequestId = _ctx.StringValue("GetStatus.RequestId");
+			getStatusResponse.Success = _ctx.BooleanValue("GetStatus.Success");
 
 			GetStatusResponse.GetStatus_Data data = new GetStatusResponse.GetStatus_Data();
-			data.StatusCode = context.IntegerValue("GetStatus.Data.StatusCode");
-			data.TrustedScore = context.FloatValue("GetStatus.Data.TrustedScore");
-			data.SimilarityScore = context.FloatValue("GetStatus.Data.SimilarityScore");
-			data.AuditConclusions = context.StringValue("GetStatus.Data.AuditConclusions");
-			data.AuthorityComparisonScore = context.FloatValue("GetStatus.Data.AuthorityComparisonScore");
+			data.SimilarityScore = _ctx.FloatValue("GetStatus.Data.SimilarityScore");
+			data.AuthorityComparisonScore = _ctx.FloatValue("GetStatus.Data.AuthorityComparisonScore");
+			data.TrustedScore = _ctx.FloatValue("GetStatus.Data.TrustedScore");
+			data.StatusCode = _ctx.IntegerValue("GetStatus.Data.StatusCode");
+			data.AuditConclusions = _ctx.StringValue("GetStatus.Data.AuditConclusions");
 			getStatusResponse.Data = data;
         
 			return getStatusResponse;

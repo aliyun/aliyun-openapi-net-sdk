@@ -31,35 +31,23 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class ExecuteDataCorrectRequest : RpcAcsRequest<ExecuteDataCorrectResponse>
     {
         public ExecuteDataCorrectRequest()
-            : base("dms-enterprise", "2018-11-01", "ExecuteDataCorrect", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "ExecuteDataCorrect", "dms-enterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
-
-		private Dictionary<object,object> actionDetail;
 
 		private long? orderId;
 
 		private string tid;
 
-		public Dictionary<object,object> ActionDetail
-		{
-			get
-			{
-				return actionDetail;
-			}
-			set	
-			{
-				actionDetail = value;
-				DictionaryUtil.Add(QueryParameters, "ActionDetail", JsonConvert.SerializeObject(value));
-			}
-		}
+		private Dictionary<object,object> actionDetail;
 
+		[JsonProperty(PropertyName = "OrderId")]
 		public long? OrderId
 		{
 			get
@@ -73,6 +61,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tid")]
 		public string Tid
 		{
 			get
@@ -83,6 +72,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				tid = value;
 				DictionaryUtil.Add(QueryParameters, "Tid", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ActionDetail")]
+		public Dictionary<object,object> ActionDetail
+		{
+			get
+			{
+				return actionDetail;
+			}
+			set	
+			{
+				actionDetail = value;
+				DictionaryUtil.Add(QueryParameters, "ActionDetail", JsonConvert.SerializeObject(value));
 			}
 		}
 

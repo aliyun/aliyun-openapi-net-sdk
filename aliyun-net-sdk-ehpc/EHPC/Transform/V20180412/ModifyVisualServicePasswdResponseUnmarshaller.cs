@@ -26,13 +26,13 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class ModifyVisualServicePasswdResponseUnmarshaller
     {
-        public static ModifyVisualServicePasswdResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyVisualServicePasswdResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyVisualServicePasswdResponse modifyVisualServicePasswdResponse = new ModifyVisualServicePasswdResponse();
 
-			modifyVisualServicePasswdResponse.HttpResponse = context.HttpResponse;
-			modifyVisualServicePasswdResponse.RequestId = context.StringValue("ModifyVisualServicePasswd.RequestId");
-			modifyVisualServicePasswdResponse.Message = context.StringValue("ModifyVisualServicePasswd.Message");
+			modifyVisualServicePasswdResponse.HttpResponse = _ctx.HttpResponse;
+			modifyVisualServicePasswdResponse.RequestId = _ctx.StringValue("ModifyVisualServicePasswd.RequestId");
+			modifyVisualServicePasswdResponse.Message = _ctx.StringValue("ModifyVisualServicePasswd.Message");
         
 			return modifyVisualServicePasswdResponse;
         }

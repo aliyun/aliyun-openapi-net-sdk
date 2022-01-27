@@ -26,17 +26,17 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class CheckMnsServiceResponseUnmarshaller
     {
-        public static CheckMnsServiceResponse Unmarshall(UnmarshallerContext context)
+        public static CheckMnsServiceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckMnsServiceResponse checkMnsServiceResponse = new CheckMnsServiceResponse();
 
-			checkMnsServiceResponse.HttpResponse = context.HttpResponse;
-			checkMnsServiceResponse.RequestId = context.StringValue("CheckMnsService.RequestId");
-			checkMnsServiceResponse.Success = context.BooleanValue("CheckMnsService.Success");
-			checkMnsServiceResponse.Code = context.StringValue("CheckMnsService.Code");
-			checkMnsServiceResponse.Message = context.StringValue("CheckMnsService.Message");
-			checkMnsServiceResponse.IsEnabled = context.BooleanValue("CheckMnsService.IsEnabled");
-			checkMnsServiceResponse.CheckMessage = context.StringValue("CheckMnsService.CheckMessage");
+			checkMnsServiceResponse.HttpResponse = _ctx.HttpResponse;
+			checkMnsServiceResponse.RequestId = _ctx.StringValue("CheckMnsService.RequestId");
+			checkMnsServiceResponse.Message = _ctx.StringValue("CheckMnsService.Message");
+			checkMnsServiceResponse.IsEnabled = _ctx.BooleanValue("CheckMnsService.IsEnabled");
+			checkMnsServiceResponse.CheckMessage = _ctx.StringValue("CheckMnsService.CheckMessage");
+			checkMnsServiceResponse.Code = _ctx.StringValue("CheckMnsService.Code");
+			checkMnsServiceResponse.Success = _ctx.BooleanValue("CheckMnsService.Success");
         
 			return checkMnsServiceResponse;
         }

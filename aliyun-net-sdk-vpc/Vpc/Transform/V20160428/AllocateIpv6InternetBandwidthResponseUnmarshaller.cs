@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class AllocateIpv6InternetBandwidthResponseUnmarshaller
     {
-        public static AllocateIpv6InternetBandwidthResponse Unmarshall(UnmarshallerContext context)
+        public static AllocateIpv6InternetBandwidthResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AllocateIpv6InternetBandwidthResponse allocateIpv6InternetBandwidthResponse = new AllocateIpv6InternetBandwidthResponse();
 
-			allocateIpv6InternetBandwidthResponse.HttpResponse = context.HttpResponse;
-			allocateIpv6InternetBandwidthResponse.RequestId = context.StringValue("AllocateIpv6InternetBandwidth.RequestId");
-			allocateIpv6InternetBandwidthResponse.Ipv6AddressId = context.StringValue("AllocateIpv6InternetBandwidth.Ipv6AddressId");
-			allocateIpv6InternetBandwidthResponse.InternetBandwidthId = context.StringValue("AllocateIpv6InternetBandwidth.InternetBandwidthId");
+			allocateIpv6InternetBandwidthResponse.HttpResponse = _ctx.HttpResponse;
+			allocateIpv6InternetBandwidthResponse.RequestId = _ctx.StringValue("AllocateIpv6InternetBandwidth.RequestId");
+			allocateIpv6InternetBandwidthResponse.Ipv6AddressId = _ctx.StringValue("AllocateIpv6InternetBandwidth.Ipv6AddressId");
+			allocateIpv6InternetBandwidthResponse.InternetBandwidthId = _ctx.StringValue("AllocateIpv6InternetBandwidth.InternetBandwidthId");
         
 			return allocateIpv6InternetBandwidthResponse;
         }

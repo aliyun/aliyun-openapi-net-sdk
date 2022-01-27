@@ -26,17 +26,17 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class CheckGatewayEssdSupportResponseUnmarshaller
     {
-        public static CheckGatewayEssdSupportResponse Unmarshall(UnmarshallerContext context)
+        public static CheckGatewayEssdSupportResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckGatewayEssdSupportResponse checkGatewayEssdSupportResponse = new CheckGatewayEssdSupportResponse();
 
-			checkGatewayEssdSupportResponse.HttpResponse = context.HttpResponse;
-			checkGatewayEssdSupportResponse.RequestId = context.StringValue("CheckGatewayEssdSupport.RequestId");
-			checkGatewayEssdSupportResponse.Success = context.BooleanValue("CheckGatewayEssdSupport.Success");
-			checkGatewayEssdSupportResponse.Code = context.StringValue("CheckGatewayEssdSupport.Code");
-			checkGatewayEssdSupportResponse.Message = context.StringValue("CheckGatewayEssdSupport.Message");
-			checkGatewayEssdSupportResponse.IsSupportEssd = context.BooleanValue("CheckGatewayEssdSupport.IsSupportEssd");
-			checkGatewayEssdSupportResponse.IsServiceAffect = context.BooleanValue("CheckGatewayEssdSupport.IsServiceAffect");
+			checkGatewayEssdSupportResponse.HttpResponse = _ctx.HttpResponse;
+			checkGatewayEssdSupportResponse.IsSupportEssd = _ctx.BooleanValue("CheckGatewayEssdSupport.IsSupportEssd");
+			checkGatewayEssdSupportResponse.RequestId = _ctx.StringValue("CheckGatewayEssdSupport.RequestId");
+			checkGatewayEssdSupportResponse.Message = _ctx.StringValue("CheckGatewayEssdSupport.Message");
+			checkGatewayEssdSupportResponse.IsServiceAffect = _ctx.BooleanValue("CheckGatewayEssdSupport.IsServiceAffect");
+			checkGatewayEssdSupportResponse.Code = _ctx.StringValue("CheckGatewayEssdSupport.Code");
+			checkGatewayEssdSupportResponse.Success = _ctx.BooleanValue("CheckGatewayEssdSupport.Success");
         
 			return checkGatewayEssdSupportResponse;
         }

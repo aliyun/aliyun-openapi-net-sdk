@@ -35,8 +35,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.BssOpenApi.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.BssOpenApi.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -65,8 +65,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				{
 					DictionaryUtil.Add(QueryParameters,"ResourceInstanceList." + (i + 1) + ".ResourceId", resourceInstanceLists[i].ResourceId);
 					DictionaryUtil.Add(QueryParameters,"ResourceInstanceList." + (i + 1) + ".CommodityCode", resourceInstanceLists[i].CommodityCode);
-					DictionaryUtil.Add(QueryParameters,"ResourceInstanceList." + (i + 1) + ".ResourceUserId", resourceInstanceLists[i].ResourceUserId);
 					DictionaryUtil.Add(QueryParameters,"ResourceInstanceList." + (i + 1) + ".ApportionCode", resourceInstanceLists[i].ApportionCode);
+					DictionaryUtil.Add(QueryParameters,"ResourceInstanceList." + (i + 1) + ".ResourceUserId", resourceInstanceLists[i].ResourceUserId);
 				}
 			}
 		}
@@ -130,9 +130,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private string commodityCode;
 
-			private long? resourceUserId;
-
 			private string apportionCode;
+
+			private long? resourceUserId;
 
 			public string ResourceId
 			{
@@ -158,18 +158,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public long? ResourceUserId
-			{
-				get
-				{
-					return resourceUserId;
-				}
-				set	
-				{
-					resourceUserId = value;
-				}
-			}
-
 			public string ApportionCode
 			{
 				get
@@ -179,6 +167,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				set	
 				{
 					apportionCode = value;
+				}
+			}
+
+			public long? ResourceUserId
+			{
+				get
+				{
+					return resourceUserId;
+				}
+				set	
+				{
+					resourceUserId = value;
 				}
 			}
 		}

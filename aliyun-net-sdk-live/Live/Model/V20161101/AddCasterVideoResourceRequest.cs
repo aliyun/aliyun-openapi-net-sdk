@@ -34,8 +34,8 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.live.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.live.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -53,6 +53,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private long? ownerId;
 
 		private int? beginOffset;
+
+		private int? fixedDelayDuration;
 
 		private string liveStreamUrl;
 
@@ -152,6 +154,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				beginOffset = value;
 				DictionaryUtil.Add(QueryParameters, "BeginOffset", value.ToString());
+			}
+		}
+
+		public int? FixedDelayDuration
+		{
+			get
+			{
+				return fixedDelayDuration;
+			}
+			set	
+			{
+				fixedDelayDuration = value;
+				DictionaryUtil.Add(QueryParameters, "FixedDelayDuration", value.ToString());
 			}
 		}
 

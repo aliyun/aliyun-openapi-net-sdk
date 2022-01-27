@@ -26,12 +26,12 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class ModifyInstanceMinorVersionResponseUnmarshaller
     {
-        public static ModifyInstanceMinorVersionResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyInstanceMinorVersionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyInstanceMinorVersionResponse modifyInstanceMinorVersionResponse = new ModifyInstanceMinorVersionResponse();
 
-			modifyInstanceMinorVersionResponse.HttpResponse = context.HttpResponse;
-			modifyInstanceMinorVersionResponse.RequestId = context.StringValue("ModifyInstanceMinorVersion.RequestId");
+			modifyInstanceMinorVersionResponse.HttpResponse = _ctx.HttpResponse;
+			modifyInstanceMinorVersionResponse.RequestId = _ctx.StringValue("ModifyInstanceMinorVersion.RequestId");
         
 			return modifyInstanceMinorVersionResponse;
         }

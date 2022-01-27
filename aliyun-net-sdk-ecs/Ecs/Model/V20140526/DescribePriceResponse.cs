@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -87,21 +87,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribePrice_Rule
 			{
 
-				private long? ruleId;
-
 				private string description;
 
-				public long? RuleId
-				{
-					get
-					{
-						return ruleId;
-					}
-					set	
-					{
-						ruleId = value;
-					}
-				}
+				private long? ruleId;
 
 				public string Description
 				{
@@ -114,6 +102,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						description = value;
 					}
 				}
+
+				public long? RuleId
+				{
+					get
+					{
+						return ruleId;
+					}
+					set	
+					{
+						ruleId = value;
+					}
+				}
 			}
 
 			public class DescribePrice_Price
@@ -121,13 +121,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private float? originalPrice;
 
-				private float? discountPrice;
-
-				private float? tradePrice;
-
 				private float? reservedInstanceHourPrice;
 
+				private float? discountPrice;
+
 				private string currency;
+
+				private float? tradePrice;
 
 				private List<DescribePrice_ResourcePriceModel> detailInfos;
 
@@ -143,30 +143,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public float? DiscountPrice
-				{
-					get
-					{
-						return discountPrice;
-					}
-					set	
-					{
-						discountPrice = value;
-					}
-				}
-
-				public float? TradePrice
-				{
-					get
-					{
-						return tradePrice;
-					}
-					set	
-					{
-						tradePrice = value;
-					}
-				}
-
 				public float? ReservedInstanceHourPrice
 				{
 					get
@@ -179,6 +155,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
+				public float? DiscountPrice
+				{
+					get
+					{
+						return discountPrice;
+					}
+					set	
+					{
+						discountPrice = value;
+					}
+				}
+
 				public string Currency
 				{
 					get
@@ -188,6 +176,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						currency = value;
+					}
+				}
+
+				public float? TradePrice
+				{
+					get
+					{
+						return tradePrice;
+					}
+					set	
+					{
+						tradePrice = value;
 					}
 				}
 
@@ -279,21 +279,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					public class DescribePrice_Rule1
 					{
 
-						private long? ruleId;
-
 						private string description;
 
-						public long? RuleId
-						{
-							get
-							{
-								return ruleId;
-							}
-							set	
-							{
-								ruleId = value;
-							}
-						}
+						private long? ruleId;
 
 						public string Description
 						{
@@ -304,6 +292,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 							set	
 							{
 								description = value;
+							}
+						}
+
+						public long? RuleId
+						{
+							get
+							{
+								return ruleId;
+							}
+							set	
+							{
+								ruleId = value;
 							}
 						}
 					}

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 {
     public class DeleteMasterSlaveServerGroupResponseUnmarshaller
     {
-        public static DeleteMasterSlaveServerGroupResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteMasterSlaveServerGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteMasterSlaveServerGroupResponse deleteMasterSlaveServerGroupResponse = new DeleteMasterSlaveServerGroupResponse();
 
-			deleteMasterSlaveServerGroupResponse.HttpResponse = context.HttpResponse;
-			deleteMasterSlaveServerGroupResponse.RequestId = context.StringValue("DeleteMasterSlaveServerGroup.RequestId");
+			deleteMasterSlaveServerGroupResponse.HttpResponse = _ctx.HttpResponse;
+			deleteMasterSlaveServerGroupResponse.RequestId = _ctx.StringValue("DeleteMasterSlaveServerGroup.RequestId");
         
 			return deleteMasterSlaveServerGroupResponse;
         }

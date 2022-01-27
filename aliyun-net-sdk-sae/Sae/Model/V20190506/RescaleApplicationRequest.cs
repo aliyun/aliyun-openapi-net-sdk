@@ -34,8 +34,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointRegionalType, null);
             }
 			UriPattern = "/pop/v1/sam/app/rescaleApplication";
 			Method = MethodType.PUT;
@@ -46,6 +46,10 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		private int? replicas;
 
 		private string appId;
+
+		private int? minReadyInstanceRatio;
+
+		private bool? autoEnableApplicationScalingRule;
 
 		public int? MinReadyInstances
 		{
@@ -83,6 +87,32 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				appId = value;
 				DictionaryUtil.Add(QueryParameters, "AppId", value);
+			}
+		}
+
+		public int? MinReadyInstanceRatio
+		{
+			get
+			{
+				return minReadyInstanceRatio;
+			}
+			set	
+			{
+				minReadyInstanceRatio = value;
+				DictionaryUtil.Add(QueryParameters, "MinReadyInstanceRatio", value.ToString());
+			}
+		}
+
+		public bool? AutoEnableApplicationScalingRule
+		{
+			get
+			{
+				return autoEnableApplicationScalingRule;
+			}
+			set	
+			{
+				autoEnableApplicationScalingRule = value;
+				DictionaryUtil.Add(QueryParameters, "AutoEnableApplicationScalingRule", value.ToString());
 			}
 		}
 

@@ -26,20 +26,20 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetFolderResponseUnmarshaller
     {
-        public static GetFolderResponse Unmarshall(UnmarshallerContext context)
+        public static GetFolderResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetFolderResponse getFolderResponse = new GetFolderResponse();
 
-			getFolderResponse.HttpResponse = context.HttpResponse;
-			getFolderResponse.RequestId = context.StringValue("GetFolder.RequestId");
-			getFolderResponse.Success = context.BooleanValue("GetFolder.Success");
-			getFolderResponse.ErrorCode = context.StringValue("GetFolder.ErrorCode");
-			getFolderResponse.ErrorMessage = context.StringValue("GetFolder.ErrorMessage");
-			getFolderResponse.HttpStatusCode = context.IntegerValue("GetFolder.HttpStatusCode");
+			getFolderResponse.HttpResponse = _ctx.HttpResponse;
+			getFolderResponse.RequestId = _ctx.StringValue("GetFolder.RequestId");
+			getFolderResponse.Success = _ctx.BooleanValue("GetFolder.Success");
+			getFolderResponse.ErrorCode = _ctx.StringValue("GetFolder.ErrorCode");
+			getFolderResponse.ErrorMessage = _ctx.StringValue("GetFolder.ErrorMessage");
+			getFolderResponse.HttpStatusCode = _ctx.IntegerValue("GetFolder.HttpStatusCode");
 
 			GetFolderResponse.GetFolder_Data data = new GetFolderResponse.GetFolder_Data();
-			data.FolderId = context.StringValue("GetFolder.Data.FolderId");
-			data.FolderPath = context.StringValue("GetFolder.Data.FolderPath");
+			data.FolderId = _ctx.StringValue("GetFolder.Data.FolderId");
+			data.FolderPath = _ctx.StringValue("GetFolder.Data.FolderPath");
 			getFolderResponse.Data = data;
         
 			return getFolderResponse;

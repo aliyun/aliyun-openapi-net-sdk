@@ -25,15 +25,39 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 	public class DescribeInstanceAutoRenewalAttributeResponse : AcsResponse
 	{
 
+		private int? itemsNumbers;
+
+		private int? pageRecordCount;
+
 		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageRecordCount;
-
-		private int? itemsNumbers;
-
 		private List<DescribeInstanceAutoRenewalAttribute_Item> items;
+
+		public int? ItemsNumbers
+		{
+			get
+			{
+				return itemsNumbers;
+			}
+			set	
+			{
+				itemsNumbers = value;
+			}
+		}
+
+		public int? PageRecordCount
+		{
+			get
+			{
+				return pageRecordCount;
+			}
+			set	
+			{
+				pageRecordCount = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -59,30 +83,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public int? PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
-
-		public int? ItemsNumbers
-		{
-			get
-			{
-				return itemsNumbers;
-			}
-			set	
-			{
-				itemsNumbers = value;
-			}
-		}
-
 		public List<DescribeInstanceAutoRenewalAttribute_Item> Items
 		{
 			get
@@ -98,51 +98,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		public class DescribeInstanceAutoRenewalAttribute_Item
 		{
 
-			private string dbInstanceId;
-
-			private string regionId;
-
-			private string duration;
-
 			private string autoRenew;
 
 			private string dBInstanceType;
 
-			public string DbInstanceId
-			{
-				get
-				{
-					return dbInstanceId;
-				}
-				set	
-				{
-					dbInstanceId = value;
-				}
-			}
+			private string duration;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+			private string regionId;
 
-			public string Duration
-			{
-				get
-				{
-					return duration;
-				}
-				set	
-				{
-					duration = value;
-				}
-			}
+			private string dbInstanceId;
 
 			public string AutoRenew
 			{
@@ -165,6 +129,42 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					dBInstanceType = value;
+				}
+			}
+
+			public string Duration
+			{
+				get
+				{
+					return duration;
+				}
+				set	
+				{
+					duration = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string DbInstanceId
+			{
+				get
+				{
+					return dbInstanceId;
+				}
+				set	
+				{
+					dbInstanceId = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ivision.Model.V20190308
@@ -56,21 +56,45 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 		public class ImagePredict_ImagePredict
 		{
 
+			private string status;
+
+			private string predictResult;
+
 			private string predictId;
-
-			private string modelId;
-
-			private string dataUrl;
 
 			private string predictTime;
 
-			private string status;
+			private string dataUrl;
 
 			private string code;
 
 			private string message;
 
-			private string predictResult;
+			private string modelId;
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string PredictResult
+			{
+				get
+				{
+					return predictResult;
+				}
+				set	
+				{
+					predictResult = value;
+				}
+			}
 
 			public string PredictId
 			{
@@ -81,30 +105,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				set	
 				{
 					predictId = value;
-				}
-			}
-
-			public string ModelId
-			{
-				get
-				{
-					return modelId;
-				}
-				set	
-				{
-					modelId = value;
-				}
-			}
-
-			public string DataUrl
-			{
-				get
-				{
-					return dataUrl;
-				}
-				set	
-				{
-					dataUrl = value;
 				}
 			}
 
@@ -120,15 +120,15 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				}
 			}
 
-			public string Status
+			public string DataUrl
 			{
 				get
 				{
-					return status;
+					return dataUrl;
 				}
 				set	
 				{
-					status = value;
+					dataUrl = value;
 				}
 			}
 
@@ -156,15 +156,15 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				}
 			}
 
-			public string PredictResult
+			public string ModelId
 			{
 				get
 				{
-					return predictResult;
+					return modelId;
 				}
 				set	
 				{
-					predictResult = value;
+					modelId = value;
 				}
 			}
 		}

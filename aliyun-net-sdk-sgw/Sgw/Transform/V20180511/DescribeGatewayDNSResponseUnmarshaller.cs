@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeGatewayDNSResponseUnmarshaller
     {
-        public static DescribeGatewayDNSResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGatewayDNSResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGatewayDNSResponse describeGatewayDNSResponse = new DescribeGatewayDNSResponse();
 
-			describeGatewayDNSResponse.HttpResponse = context.HttpResponse;
-			describeGatewayDNSResponse.RequestId = context.StringValue("DescribeGatewayDNS.RequestId");
-			describeGatewayDNSResponse.Success = context.BooleanValue("DescribeGatewayDNS.Success");
-			describeGatewayDNSResponse.Code = context.StringValue("DescribeGatewayDNS.Code");
-			describeGatewayDNSResponse.Message = context.StringValue("DescribeGatewayDNS.Message");
-			describeGatewayDNSResponse.DnsServer = context.StringValue("DescribeGatewayDNS.DnsServer");
+			describeGatewayDNSResponse.HttpResponse = _ctx.HttpResponse;
+			describeGatewayDNSResponse.Message = _ctx.StringValue("DescribeGatewayDNS.Message");
+			describeGatewayDNSResponse.RequestId = _ctx.StringValue("DescribeGatewayDNS.RequestId");
+			describeGatewayDNSResponse.Code = _ctx.StringValue("DescribeGatewayDNS.Code");
+			describeGatewayDNSResponse.DnsServer = _ctx.StringValue("DescribeGatewayDNS.DnsServer");
+			describeGatewayDNSResponse.Success = _ctx.BooleanValue("DescribeGatewayDNS.Success");
         
 			return describeGatewayDNSResponse;
         }

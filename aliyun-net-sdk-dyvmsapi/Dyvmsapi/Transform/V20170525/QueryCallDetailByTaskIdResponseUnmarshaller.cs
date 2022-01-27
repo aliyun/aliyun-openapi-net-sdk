@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
     public class QueryCallDetailByTaskIdResponseUnmarshaller
     {
-        public static QueryCallDetailByTaskIdResponse Unmarshall(UnmarshallerContext context)
+        public static QueryCallDetailByTaskIdResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryCallDetailByTaskIdResponse queryCallDetailByTaskIdResponse = new QueryCallDetailByTaskIdResponse();
 
-			queryCallDetailByTaskIdResponse.HttpResponse = context.HttpResponse;
-			queryCallDetailByTaskIdResponse.RequestId = context.StringValue("QueryCallDetailByTaskId.RequestId");
-			queryCallDetailByTaskIdResponse.Data = context.StringValue("QueryCallDetailByTaskId.Data");
-			queryCallDetailByTaskIdResponse.Code = context.StringValue("QueryCallDetailByTaskId.Code");
-			queryCallDetailByTaskIdResponse.Message = context.StringValue("QueryCallDetailByTaskId.Message");
+			queryCallDetailByTaskIdResponse.HttpResponse = _ctx.HttpResponse;
+			queryCallDetailByTaskIdResponse.RequestId = _ctx.StringValue("QueryCallDetailByTaskId.RequestId");
+			queryCallDetailByTaskIdResponse.Data = _ctx.StringValue("QueryCallDetailByTaskId.Data");
+			queryCallDetailByTaskIdResponse.Code = _ctx.StringValue("QueryCallDetailByTaskId.Code");
+			queryCallDetailByTaskIdResponse.Message = _ctx.StringValue("QueryCallDetailByTaskId.Message");
         
 			return queryCallDetailByTaskIdResponse;
         }

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class RenewDedicatedHostsResponseUnmarshaller
     {
-        public static RenewDedicatedHostsResponse Unmarshall(UnmarshallerContext context)
+        public static RenewDedicatedHostsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RenewDedicatedHostsResponse renewDedicatedHostsResponse = new RenewDedicatedHostsResponse();
 
-			renewDedicatedHostsResponse.HttpResponse = context.HttpResponse;
-			renewDedicatedHostsResponse.RequestId = context.StringValue("RenewDedicatedHosts.RequestId");
+			renewDedicatedHostsResponse.HttpResponse = _ctx.HttpResponse;
+			renewDedicatedHostsResponse.RequestId = _ctx.StringValue("RenewDedicatedHosts.RequestId");
         
 			return renewDedicatedHostsResponse;
         }

@@ -26,23 +26,23 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveDomainRecordDataResponseUnmarshaller
     {
-        public static DescribeLiveDomainRecordDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveDomainRecordDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveDomainRecordDataResponse describeLiveDomainRecordDataResponse = new DescribeLiveDomainRecordDataResponse();
 
-			describeLiveDomainRecordDataResponse.HttpResponse = context.HttpResponse;
-			describeLiveDomainRecordDataResponse.RequestId = context.StringValue("DescribeLiveDomainRecordData.RequestId");
+			describeLiveDomainRecordDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveDomainRecordDataResponse.RequestId = _ctx.StringValue("DescribeLiveDomainRecordData.RequestId");
 
 			List<DescribeLiveDomainRecordDataResponse.DescribeLiveDomainRecordData_RecordDataInfo> describeLiveDomainRecordDataResponse_recordDataInfos = new List<DescribeLiveDomainRecordDataResponse.DescribeLiveDomainRecordData_RecordDataInfo>();
-			for (int i = 0; i < context.Length("DescribeLiveDomainRecordData.RecordDataInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveDomainRecordData.RecordDataInfos.Length"); i++) {
 				DescribeLiveDomainRecordDataResponse.DescribeLiveDomainRecordData_RecordDataInfo recordDataInfo = new DescribeLiveDomainRecordDataResponse.DescribeLiveDomainRecordData_RecordDataInfo();
-				recordDataInfo.Date = context.StringValue("DescribeLiveDomainRecordData.RecordDataInfos["+ i +"].Date");
-				recordDataInfo.Total = context.IntegerValue("DescribeLiveDomainRecordData.RecordDataInfos["+ i +"].Total");
+				recordDataInfo.Date = _ctx.StringValue("DescribeLiveDomainRecordData.RecordDataInfos["+ i +"].Date");
+				recordDataInfo.Total = _ctx.IntegerValue("DescribeLiveDomainRecordData.RecordDataInfos["+ i +"].Total");
 
 				DescribeLiveDomainRecordDataResponse.DescribeLiveDomainRecordData_RecordDataInfo.DescribeLiveDomainRecordData_Detail detail = new DescribeLiveDomainRecordDataResponse.DescribeLiveDomainRecordData_RecordDataInfo.DescribeLiveDomainRecordData_Detail();
-				detail.MP4 = context.IntegerValue("DescribeLiveDomainRecordData.RecordDataInfos["+ i +"].Detail.MP4");
-				detail.FLV = context.IntegerValue("DescribeLiveDomainRecordData.RecordDataInfos["+ i +"].Detail.FLV");
-				detail.TS = context.IntegerValue("DescribeLiveDomainRecordData.RecordDataInfos["+ i +"].Detail.TS");
+				detail.MP4 = _ctx.IntegerValue("DescribeLiveDomainRecordData.RecordDataInfos["+ i +"].Detail.MP4");
+				detail.FLV = _ctx.IntegerValue("DescribeLiveDomainRecordData.RecordDataInfos["+ i +"].Detail.FLV");
+				detail.TS = _ctx.IntegerValue("DescribeLiveDomainRecordData.RecordDataInfos["+ i +"].Detail.TS");
 				recordDataInfo.Detail = detail;
 
 				describeLiveDomainRecordDataResponse_recordDataInfos.Add(recordDataInfo);

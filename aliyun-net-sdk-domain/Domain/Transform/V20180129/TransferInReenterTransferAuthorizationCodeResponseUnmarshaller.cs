@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class TransferInReenterTransferAuthorizationCodeResponseUnmarshaller
     {
-        public static TransferInReenterTransferAuthorizationCodeResponse Unmarshall(UnmarshallerContext context)
+        public static TransferInReenterTransferAuthorizationCodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			TransferInReenterTransferAuthorizationCodeResponse transferInReenterTransferAuthorizationCodeResponse = new TransferInReenterTransferAuthorizationCodeResponse();
 
-			transferInReenterTransferAuthorizationCodeResponse.HttpResponse = context.HttpResponse;
-			transferInReenterTransferAuthorizationCodeResponse.RequestId = context.StringValue("TransferInReenterTransferAuthorizationCode.RequestId");
+			transferInReenterTransferAuthorizationCodeResponse.HttpResponse = _ctx.HttpResponse;
+			transferInReenterTransferAuthorizationCodeResponse.RequestId = _ctx.StringValue("TransferInReenterTransferAuthorizationCode.RequestId");
         
 			return transferInReenterTransferAuthorizationCodeResponse;
         }

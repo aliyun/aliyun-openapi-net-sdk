@@ -126,7 +126,17 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private long? ownerId;
 
+			private bool? supportAdvancedFeature;
+
+			private bool? advancedResource;
+
+			private string dhcpOptionsSetId;
+
+			private string dhcpOptionsSetStatus;
+
 			private List<DescribeVpcs_Tag> tags;
+
+			private List<DescribeVpcs_Ipv6CidrBlock> ipv6CidrBlocks;
 
 			private List<string> vSwitchIds;
 
@@ -306,6 +316,54 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public bool? SupportAdvancedFeature
+			{
+				get
+				{
+					return supportAdvancedFeature;
+				}
+				set	
+				{
+					supportAdvancedFeature = value;
+				}
+			}
+
+			public bool? AdvancedResource
+			{
+				get
+				{
+					return advancedResource;
+				}
+				set	
+				{
+					advancedResource = value;
+				}
+			}
+
+			public string DhcpOptionsSetId
+			{
+				get
+				{
+					return dhcpOptionsSetId;
+				}
+				set	
+				{
+					dhcpOptionsSetId = value;
+				}
+			}
+
+			public string DhcpOptionsSetStatus
+			{
+				get
+				{
+					return dhcpOptionsSetStatus;
+				}
+				set	
+				{
+					dhcpOptionsSetStatus = value;
+				}
+			}
+
 			public List<DescribeVpcs_Tag> Tags
 			{
 				get
@@ -315,6 +373,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					tags = value;
+				}
+			}
+
+			public List<DescribeVpcs_Ipv6CidrBlock> Ipv6CidrBlocks
+			{
+				get
+				{
+					return ipv6CidrBlocks;
+				}
+				set	
+				{
+					ipv6CidrBlocks = value;
 				}
 			}
 
@@ -406,6 +476,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						_value = value;
+					}
+				}
+			}
+
+			public class DescribeVpcs_Ipv6CidrBlock
+			{
+
+				private string ipv6CidrBlock;
+
+				private string ipv6Isp;
+
+				public string Ipv6CidrBlock
+				{
+					get
+					{
+						return ipv6CidrBlock;
+					}
+					set	
+					{
+						ipv6CidrBlock = value;
+					}
+				}
+
+				public string Ipv6Isp
+				{
+					get
+					{
+						return ipv6Isp;
+					}
+					set	
+					{
+						ipv6Isp = value;
 					}
 				}
 			}

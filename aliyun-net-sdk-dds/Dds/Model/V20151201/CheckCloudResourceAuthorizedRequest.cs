@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class CheckCloudResourceAuthorizedRequest : RpcAcsRequest<CheckCloudResourceAuthorizedResponse>
     {
         public CheckCloudResourceAuthorizedRequest()
-            : base("Dds", "2015-12-01", "CheckCloudResourceAuthorized", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "CheckCloudResourceAuthorized", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

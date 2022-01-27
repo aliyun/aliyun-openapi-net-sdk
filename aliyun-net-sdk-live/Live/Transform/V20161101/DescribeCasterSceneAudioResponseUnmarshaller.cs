@@ -26,27 +26,27 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeCasterSceneAudioResponseUnmarshaller
     {
-        public static DescribeCasterSceneAudioResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCasterSceneAudioResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCasterSceneAudioResponse describeCasterSceneAudioResponse = new DescribeCasterSceneAudioResponse();
 
-			describeCasterSceneAudioResponse.HttpResponse = context.HttpResponse;
-			describeCasterSceneAudioResponse.RequestId = context.StringValue("DescribeCasterSceneAudio.RequestId");
-			describeCasterSceneAudioResponse.CasterId = context.StringValue("DescribeCasterSceneAudio.CasterId");
-			describeCasterSceneAudioResponse.FollowEnable = context.IntegerValue("DescribeCasterSceneAudio.FollowEnable");
+			describeCasterSceneAudioResponse.HttpResponse = _ctx.HttpResponse;
+			describeCasterSceneAudioResponse.RequestId = _ctx.StringValue("DescribeCasterSceneAudio.RequestId");
+			describeCasterSceneAudioResponse.CasterId = _ctx.StringValue("DescribeCasterSceneAudio.CasterId");
+			describeCasterSceneAudioResponse.FollowEnable = _ctx.IntegerValue("DescribeCasterSceneAudio.FollowEnable");
 
 			List<string> describeCasterSceneAudioResponse_mixList = new List<string>();
-			for (int i = 0; i < context.Length("DescribeCasterSceneAudio.MixList.Length"); i++) {
-				describeCasterSceneAudioResponse_mixList.Add(context.StringValue("DescribeCasterSceneAudio.MixList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeCasterSceneAudio.MixList.Length"); i++) {
+				describeCasterSceneAudioResponse_mixList.Add(_ctx.StringValue("DescribeCasterSceneAudio.MixList["+ i +"]"));
 			}
 			describeCasterSceneAudioResponse.MixList = describeCasterSceneAudioResponse_mixList;
 
 			List<DescribeCasterSceneAudioResponse.DescribeCasterSceneAudio_AudioLayer> describeCasterSceneAudioResponse_audioLayers = new List<DescribeCasterSceneAudioResponse.DescribeCasterSceneAudio_AudioLayer>();
-			for (int i = 0; i < context.Length("DescribeCasterSceneAudio.AudioLayers.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCasterSceneAudio.AudioLayers.Length"); i++) {
 				DescribeCasterSceneAudioResponse.DescribeCasterSceneAudio_AudioLayer audioLayer = new DescribeCasterSceneAudioResponse.DescribeCasterSceneAudio_AudioLayer();
-				audioLayer.VolumeRate = context.FloatValue("DescribeCasterSceneAudio.AudioLayers["+ i +"].VolumeRate");
-				audioLayer.ValidChannel = context.StringValue("DescribeCasterSceneAudio.AudioLayers["+ i +"].ValidChannel");
-				audioLayer.FixedDelayDuration = context.IntegerValue("DescribeCasterSceneAudio.AudioLayers["+ i +"].FixedDelayDuration");
+				audioLayer.VolumeRate = _ctx.FloatValue("DescribeCasterSceneAudio.AudioLayers["+ i +"].VolumeRate");
+				audioLayer.ValidChannel = _ctx.StringValue("DescribeCasterSceneAudio.AudioLayers["+ i +"].ValidChannel");
+				audioLayer.FixedDelayDuration = _ctx.IntegerValue("DescribeCasterSceneAudio.AudioLayers["+ i +"].FixedDelayDuration");
 
 				describeCasterSceneAudioResponse_audioLayers.Add(audioLayer);
 			}

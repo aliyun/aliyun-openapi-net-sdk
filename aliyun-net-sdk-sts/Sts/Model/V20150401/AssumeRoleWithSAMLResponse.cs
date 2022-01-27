@@ -27,11 +27,11 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 
 		private string requestId;
 
-		private AssumeRoleWithSAML_Credentials credentials;
+		private AssumeRoleWithSAML_SAMLAssertionInfo sAMLAssertionInfo;
 
 		private AssumeRoleWithSAML_AssumedRoleUser assumedRoleUser;
 
-		private AssumeRoleWithSAML_SAMLAssertionInfo sAMLAssertionInfo;
+		private AssumeRoleWithSAML_Credentials credentials;
 
 		public string RequestId
 		{
@@ -42,30 +42,6 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public AssumeRoleWithSAML_Credentials Credentials
-		{
-			get
-			{
-				return credentials;
-			}
-			set	
-			{
-				credentials = value;
-			}
-		}
-
-		public AssumeRoleWithSAML_AssumedRoleUser AssumedRoleUser
-		{
-			get
-			{
-				return assumedRoleUser;
-			}
-			set	
-			{
-				assumedRoleUser = value;
 			}
 		}
 
@@ -81,62 +57,86 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			}
 		}
 
-		public class AssumeRoleWithSAML_Credentials
+		public AssumeRoleWithSAML_AssumedRoleUser AssumedRoleUser
+		{
+			get
+			{
+				return assumedRoleUser;
+			}
+			set	
+			{
+				assumedRoleUser = value;
+			}
+		}
+
+		public AssumeRoleWithSAML_Credentials Credentials
+		{
+			get
+			{
+				return credentials;
+			}
+			set	
+			{
+				credentials = value;
+			}
+		}
+
+		public class AssumeRoleWithSAML_SAMLAssertionInfo
 		{
 
-			private string securityToken;
+			private string subjectType;
 
-			private string accessKeySecret;
+			private string issuer;
 
-			private string accessKeyId;
+			private string recipient;
 
-			private string expiration;
+			private string subject;
 
-			public string SecurityToken
+			public string SubjectType
 			{
 				get
 				{
-					return securityToken;
+					return subjectType;
 				}
 				set	
 				{
-					securityToken = value;
+					subjectType = value;
 				}
 			}
 
-			public string AccessKeySecret
+			public string Issuer
 			{
 				get
 				{
-					return accessKeySecret;
+					return issuer;
 				}
 				set	
 				{
-					accessKeySecret = value;
+					issuer = value;
 				}
 			}
 
-			public string AccessKeyId
+			public string Recipient
 			{
 				get
 				{
-					return accessKeyId;
+					return recipient;
 				}
 				set	
 				{
-					accessKeyId = value;
+					recipient = value;
 				}
 			}
 
-			public string Expiration
+			public string Subject
 			{
 				get
 				{
-					return expiration;
+					return subject;
 				}
 				set	
 				{
-					expiration = value;
+					subject = value;
 				}
 			}
 		}
@@ -173,62 +173,62 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			}
 		}
 
-		public class AssumeRoleWithSAML_SAMLAssertionInfo
+		public class AssumeRoleWithSAML_Credentials
 		{
 
-			private string subjectType;
+			private string securityToken;
 
-			private string subject;
+			private string accessKeyId;
 
-			private string recipient;
+			private string accessKeySecret;
 
-			private string issuer;
+			private string expiration;
 
-			public string SubjectType
+			public string SecurityToken
 			{
 				get
 				{
-					return subjectType;
+					return securityToken;
 				}
 				set	
 				{
-					subjectType = value;
+					securityToken = value;
 				}
 			}
 
-			public string Subject
+			public string AccessKeyId
 			{
 				get
 				{
-					return subject;
+					return accessKeyId;
 				}
 				set	
 				{
-					subject = value;
+					accessKeyId = value;
 				}
 			}
 
-			public string Recipient
+			public string AccessKeySecret
 			{
 				get
 				{
-					return recipient;
+					return accessKeySecret;
 				}
 				set	
 				{
-					recipient = value;
+					accessKeySecret = value;
 				}
 			}
 
-			public string Issuer
+			public string Expiration
 			{
 				get
 				{
-					return issuer;
+					return expiration;
 				}
 				set	
 				{
-					issuer = value;
+					expiration = value;
 				}
 			}
 		}

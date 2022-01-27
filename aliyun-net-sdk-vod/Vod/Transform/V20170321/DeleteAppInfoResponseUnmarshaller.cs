@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DeleteAppInfoResponseUnmarshaller
     {
-        public static DeleteAppInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteAppInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteAppInfoResponse deleteAppInfoResponse = new DeleteAppInfoResponse();
 
-			deleteAppInfoResponse.HttpResponse = context.HttpResponse;
-			deleteAppInfoResponse.RequestId = context.StringValue("DeleteAppInfo.RequestId");
+			deleteAppInfoResponse.HttpResponse = _ctx.HttpResponse;
+			deleteAppInfoResponse.RequestId = _ctx.StringValue("DeleteAppInfo.RequestId");
         
 			return deleteAppInfoResponse;
         }

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class ModifyMeetingPasswordInternationalResponseUnmarshaller
     {
-        public static ModifyMeetingPasswordInternationalResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyMeetingPasswordInternationalResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyMeetingPasswordInternationalResponse modifyMeetingPasswordInternationalResponse = new ModifyMeetingPasswordInternationalResponse();
 
-			modifyMeetingPasswordInternationalResponse.HttpResponse = context.HttpResponse;
-			modifyMeetingPasswordInternationalResponse.ErrorCode = context.IntegerValue("ModifyMeetingPasswordInternational.ErrorCode");
-			modifyMeetingPasswordInternationalResponse.Message = context.StringValue("ModifyMeetingPasswordInternational.Message");
-			modifyMeetingPasswordInternationalResponse.Success = context.BooleanValue("ModifyMeetingPasswordInternational.Success");
-			modifyMeetingPasswordInternationalResponse.RequestId = context.StringValue("ModifyMeetingPasswordInternational.RequestId");
+			modifyMeetingPasswordInternationalResponse.HttpResponse = _ctx.HttpResponse;
+			modifyMeetingPasswordInternationalResponse.ErrorCode = _ctx.IntegerValue("ModifyMeetingPasswordInternational.ErrorCode");
+			modifyMeetingPasswordInternationalResponse.Message = _ctx.StringValue("ModifyMeetingPasswordInternational.Message");
+			modifyMeetingPasswordInternationalResponse.Success = _ctx.BooleanValue("ModifyMeetingPasswordInternational.Success");
+			modifyMeetingPasswordInternationalResponse.RequestId = _ctx.StringValue("ModifyMeetingPasswordInternational.RequestId");
         
 			return modifyMeetingPasswordInternationalResponse;
         }

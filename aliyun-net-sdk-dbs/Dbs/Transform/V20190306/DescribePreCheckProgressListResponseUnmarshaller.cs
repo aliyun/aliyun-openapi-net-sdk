@@ -26,30 +26,30 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 {
     public class DescribePreCheckProgressListResponseUnmarshaller
     {
-        public static DescribePreCheckProgressListResponse Unmarshall(UnmarshallerContext context)
+        public static DescribePreCheckProgressListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribePreCheckProgressListResponse describePreCheckProgressListResponse = new DescribePreCheckProgressListResponse();
 
-			describePreCheckProgressListResponse.HttpResponse = context.HttpResponse;
-			describePreCheckProgressListResponse.Status = context.StringValue("DescribePreCheckProgressList.Status");
-			describePreCheckProgressListResponse.Progress = context.IntegerValue("DescribePreCheckProgressList.Progress");
-			describePreCheckProgressListResponse.Success = context.BooleanValue("DescribePreCheckProgressList.Success");
-			describePreCheckProgressListResponse.ErrCode = context.StringValue("DescribePreCheckProgressList.ErrCode");
-			describePreCheckProgressListResponse.ErrMessage = context.StringValue("DescribePreCheckProgressList.ErrMessage");
-			describePreCheckProgressListResponse.HttpStatusCode = context.IntegerValue("DescribePreCheckProgressList.HttpStatusCode");
-			describePreCheckProgressListResponse.RequestId = context.StringValue("DescribePreCheckProgressList.RequestId");
+			describePreCheckProgressListResponse.HttpResponse = _ctx.HttpResponse;
+			describePreCheckProgressListResponse.Status = _ctx.StringValue("DescribePreCheckProgressList.Status");
+			describePreCheckProgressListResponse.Progress = _ctx.IntegerValue("DescribePreCheckProgressList.Progress");
+			describePreCheckProgressListResponse.Success = _ctx.BooleanValue("DescribePreCheckProgressList.Success");
+			describePreCheckProgressListResponse.ErrCode = _ctx.StringValue("DescribePreCheckProgressList.ErrCode");
+			describePreCheckProgressListResponse.ErrMessage = _ctx.StringValue("DescribePreCheckProgressList.ErrMessage");
+			describePreCheckProgressListResponse.HttpStatusCode = _ctx.IntegerValue("DescribePreCheckProgressList.HttpStatusCode");
+			describePreCheckProgressListResponse.RequestId = _ctx.StringValue("DescribePreCheckProgressList.RequestId");
 
 			List<DescribePreCheckProgressListResponse.DescribePreCheckProgressList_PreCheckProgressDetail> describePreCheckProgressListResponse_items = new List<DescribePreCheckProgressListResponse.DescribePreCheckProgressList_PreCheckProgressDetail>();
-			for (int i = 0; i < context.Length("DescribePreCheckProgressList.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribePreCheckProgressList.Items.Length"); i++) {
 				DescribePreCheckProgressListResponse.DescribePreCheckProgressList_PreCheckProgressDetail preCheckProgressDetail = new DescribePreCheckProgressListResponse.DescribePreCheckProgressList_PreCheckProgressDetail();
-				preCheckProgressDetail.JobId = context.StringValue("DescribePreCheckProgressList.Items["+ i +"].JobId");
-				preCheckProgressDetail.State = context.StringValue("DescribePreCheckProgressList.Items["+ i +"].State");
-				preCheckProgressDetail.OrderNum = context.StringValue("DescribePreCheckProgressList.Items["+ i +"].OrderNum");
-				preCheckProgressDetail.ErrMsg = context.StringValue("DescribePreCheckProgressList.Items["+ i +"].ErrMsg");
-				preCheckProgressDetail.Names = context.StringValue("DescribePreCheckProgressList.Items["+ i +"].Names");
-				preCheckProgressDetail.Item = context.StringValue("DescribePreCheckProgressList.Items["+ i +"].Item");
-				preCheckProgressDetail.BootTime = context.LongValue("DescribePreCheckProgressList.Items["+ i +"].BootTime");
-				preCheckProgressDetail.FinishTime = context.LongValue("DescribePreCheckProgressList.Items["+ i +"].FinishTime");
+				preCheckProgressDetail.JobId = _ctx.StringValue("DescribePreCheckProgressList.Items["+ i +"].JobId");
+				preCheckProgressDetail.State = _ctx.StringValue("DescribePreCheckProgressList.Items["+ i +"].State");
+				preCheckProgressDetail.OrderNum = _ctx.StringValue("DescribePreCheckProgressList.Items["+ i +"].OrderNum");
+				preCheckProgressDetail.ErrMsg = _ctx.StringValue("DescribePreCheckProgressList.Items["+ i +"].ErrMsg");
+				preCheckProgressDetail.Names = _ctx.StringValue("DescribePreCheckProgressList.Items["+ i +"].Names");
+				preCheckProgressDetail.Item = _ctx.StringValue("DescribePreCheckProgressList.Items["+ i +"].Item");
+				preCheckProgressDetail.BootTime = _ctx.LongValue("DescribePreCheckProgressList.Items["+ i +"].BootTime");
+				preCheckProgressDetail.FinishTime = _ctx.LongValue("DescribePreCheckProgressList.Items["+ i +"].FinishTime");
 
 				describePreCheckProgressListResponse_items.Add(preCheckProgressDetail);
 			}

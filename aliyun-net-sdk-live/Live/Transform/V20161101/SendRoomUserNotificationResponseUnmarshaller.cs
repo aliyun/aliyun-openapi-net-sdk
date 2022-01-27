@@ -26,13 +26,13 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class SendRoomUserNotificationResponseUnmarshaller
     {
-        public static SendRoomUserNotificationResponse Unmarshall(UnmarshallerContext context)
+        public static SendRoomUserNotificationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SendRoomUserNotificationResponse sendRoomUserNotificationResponse = new SendRoomUserNotificationResponse();
 
-			sendRoomUserNotificationResponse.HttpResponse = context.HttpResponse;
-			sendRoomUserNotificationResponse.RequestId = context.StringValue("SendRoomUserNotification.RequestId");
-			sendRoomUserNotificationResponse.MessageId = context.StringValue("SendRoomUserNotification.MessageId");
+			sendRoomUserNotificationResponse.HttpResponse = _ctx.HttpResponse;
+			sendRoomUserNotificationResponse.RequestId = _ctx.StringValue("SendRoomUserNotification.RequestId");
+			sendRoomUserNotificationResponse.MessageId = _ctx.StringValue("SendRoomUserNotification.MessageId");
         
 			return sendRoomUserNotificationResponse;
         }

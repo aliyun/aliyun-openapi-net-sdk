@@ -30,16 +30,18 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
     public class QueryPromotionRequest : RpcAcsRequest<QueryPromotionResponse>
     {
         public QueryPromotionRequest()
-            : base("UniMkt", "2018-12-12", "QueryPromotion", "uniMkt", "openAPI")
+            : base("UniMkt", "2018-12-12", "QueryPromotion", "1.0.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.UniMkt.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.UniMkt.Endpoint.endpointRegionalType, null);
             }
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
+
+		private string proxyChannelId;
 
 		private string extra;
 
@@ -48,6 +50,19 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 		private string userId;
 
 		private string channelId;
+
+		public string ProxyChannelId
+		{
+			get
+			{
+				return proxyChannelId;
+			}
+			set	
+			{
+				proxyChannelId = value;
+				DictionaryUtil.Add(BodyParameters, "ProxyChannelId", value);
+			}
+		}
 
 		public string Extra
 		{

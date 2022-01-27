@@ -26,26 +26,27 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class ListBookkeepingsResponseUnmarshaller
     {
-        public static ListBookkeepingsResponse Unmarshall(UnmarshallerContext context)
+        public static ListBookkeepingsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListBookkeepingsResponse listBookkeepingsResponse = new ListBookkeepingsResponse();
 
-			listBookkeepingsResponse.HttpResponse = context.HttpResponse;
-			listBookkeepingsResponse.RequestId = context.StringValue("ListBookkeepings.RequestId");
-			listBookkeepingsResponse.TotalItemNumber = context.IntegerValue("ListBookkeepings.TotalItemNumber");
-			listBookkeepingsResponse.CurrentPageNumber = context.IntegerValue("ListBookkeepings.CurrentPageNumber");
-			listBookkeepingsResponse.PageSize = context.IntegerValue("ListBookkeepings.PageSize");
-			listBookkeepingsResponse.TotalPageNumber = context.IntegerValue("ListBookkeepings.TotalPageNumber");
+			listBookkeepingsResponse.HttpResponse = _ctx.HttpResponse;
+			listBookkeepingsResponse.RequestId = _ctx.StringValue("ListBookkeepings.RequestId");
+			listBookkeepingsResponse.TotalItemNumber = _ctx.IntegerValue("ListBookkeepings.TotalItemNumber");
+			listBookkeepingsResponse.CurrentPageNumber = _ctx.IntegerValue("ListBookkeepings.CurrentPageNumber");
+			listBookkeepingsResponse.PageSize = _ctx.IntegerValue("ListBookkeepings.PageSize");
+			listBookkeepingsResponse.TotalPageNumber = _ctx.IntegerValue("ListBookkeepings.TotalPageNumber");
 
 			List<ListBookkeepingsResponse.ListBookkeepings_Bookkeeping> listBookkeepingsResponse_bookkeepings = new List<ListBookkeepingsResponse.ListBookkeepings_Bookkeeping>();
-			for (int i = 0; i < context.Length("ListBookkeepings.Bookkeepings.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListBookkeepings.Bookkeepings.Length"); i++) {
 				ListBookkeepingsResponse.ListBookkeepings_Bookkeeping bookkeeping = new ListBookkeepingsResponse.ListBookkeepings_Bookkeeping();
-				bookkeeping.BizId = context.StringValue("ListBookkeepings.Bookkeepings["+ i +"].BizId");
-				bookkeeping.CompanyName = context.StringValue("ListBookkeepings.Bookkeepings["+ i +"].CompanyName");
-				bookkeeping.OrderId = context.StringValue("ListBookkeepings.Bookkeepings["+ i +"].OrderId");
-				bookkeeping.Status = context.IntegerValue("ListBookkeepings.Bookkeepings["+ i +"].Status");
-				bookkeeping.Renew = context.BooleanValue("ListBookkeepings.Bookkeepings["+ i +"].Renew");
-				bookkeeping.Note = context.StringValue("ListBookkeepings.Bookkeepings["+ i +"].Note");
+				bookkeeping.BizId = _ctx.StringValue("ListBookkeepings.Bookkeepings["+ i +"].BizId");
+				bookkeeping.CompanyName = _ctx.StringValue("ListBookkeepings.Bookkeepings["+ i +"].CompanyName");
+				bookkeeping.OrderId = _ctx.StringValue("ListBookkeepings.Bookkeepings["+ i +"].OrderId");
+				bookkeeping.Status = _ctx.IntegerValue("ListBookkeepings.Bookkeepings["+ i +"].Status");
+				bookkeeping.Renew = _ctx.BooleanValue("ListBookkeepings.Bookkeepings["+ i +"].Renew");
+				bookkeeping.Note = _ctx.StringValue("ListBookkeepings.Bookkeepings["+ i +"].Note");
+				bookkeeping.CommodityType = _ctx.StringValue("ListBookkeepings.Bookkeepings["+ i +"].CommodityType");
 
 				listBookkeepingsResponse_bookkeepings.Add(bookkeeping);
 			}

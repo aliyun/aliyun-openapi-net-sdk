@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class ListUserOrganizationResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string errorCode;
-
 		private string errorMessage;
+
+		private string requestId;
 
 		private bool? success;
 
-		private string _object;
+		private string errorCode;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
+		private List<ListUserOrganization_Organization> _object;
 
 		public string ErrorMessage
 		{
@@ -68,6 +44,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			set	
 			{
 				errorMessage = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -83,7 +71,19 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
-		public string _Object
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public List<ListUserOrganization_Organization> _Object
 		{
 			get
 			{
@@ -92,6 +92,38 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			set	
 			{
 				_object = value;
+			}
+		}
+
+		public class ListUserOrganization_Organization
+		{
+
+			private string name;
+
+			private string id;
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
 			}
 		}
 	}

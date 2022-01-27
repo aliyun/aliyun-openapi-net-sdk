@@ -26,37 +26,56 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 {
     public class DescribeTablesResponseUnmarshaller
     {
-        public static DescribeTablesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeTablesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeTablesResponse describeTablesResponse = new DescribeTablesResponse();
 
-			describeTablesResponse.HttpResponse = context.HttpResponse;
-			describeTablesResponse.RequestId = context.StringValue("DescribeTables.RequestId");
-			describeTablesResponse.PageSize = context.IntegerValue("DescribeTables.PageSize");
-			describeTablesResponse.CurrentPage = context.IntegerValue("DescribeTables.CurrentPage");
-			describeTablesResponse.TotalCount = context.IntegerValue("DescribeTables.TotalCount");
+			describeTablesResponse.HttpResponse = _ctx.HttpResponse;
+			describeTablesResponse.RequestId = _ctx.StringValue("DescribeTables.RequestId");
+			describeTablesResponse.PageSize = _ctx.IntegerValue("DescribeTables.PageSize");
+			describeTablesResponse.CurrentPage = _ctx.IntegerValue("DescribeTables.CurrentPage");
+			describeTablesResponse.TotalCount = _ctx.IntegerValue("DescribeTables.TotalCount");
 
 			List<DescribeTablesResponse.DescribeTables_Table> describeTablesResponse_items = new List<DescribeTablesResponse.DescribeTables_Table>();
-			for (int i = 0; i < context.Length("DescribeTables.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeTables.Items.Length"); i++) {
 				DescribeTablesResponse.DescribeTables_Table table = new DescribeTablesResponse.DescribeTables_Table();
-				table.Id = context.LongValue("DescribeTables.Items["+ i +"].Id");
-				table.Name = context.StringValue("DescribeTables.Items["+ i +"].Name");
-				table.Owner = context.StringValue("DescribeTables.Items["+ i +"].Owner");
-				table.CreationTime = context.LongValue("DescribeTables.Items["+ i +"].CreationTime");
-				table.ProductId = context.StringValue("DescribeTables.Items["+ i +"].ProductId");
-				table.ProductCode = context.StringValue("DescribeTables.Items["+ i +"].ProductCode");
-				table.Sensitive = context.BooleanValue("DescribeTables.Items["+ i +"].Sensitive");
-				table.RiskLevelId = context.LongValue("DescribeTables.Items["+ i +"].RiskLevelId");
-				table.RiskLevelName = context.StringValue("DescribeTables.Items["+ i +"].RiskLevelName");
-				table.DepartName = context.StringValue("DescribeTables.Items["+ i +"].DepartName");
-				table.TotalCount = context.IntegerValue("DescribeTables.Items["+ i +"].TotalCount");
-				table.SensitiveCount = context.IntegerValue("DescribeTables.Items["+ i +"].SensitiveCount");
-				table.SensitiveRatio = context.StringValue("DescribeTables.Items["+ i +"].SensitiveRatio");
-				table.InstanceId = context.LongValue("DescribeTables.Items["+ i +"].InstanceId");
-				table.S2Count = context.IntegerValue("DescribeTables.Items["+ i +"].S2Count");
-				table.S3Count = context.IntegerValue("DescribeTables.Items["+ i +"].S3Count");
-				table.TotalRows = context.IntegerValue("DescribeTables.Items["+ i +"].TotalRows");
-				table.LastScanTime = context.LongValue("DescribeTables.Items["+ i +"].LastScanTime");
+				table.Id = _ctx.LongValue("DescribeTables.Items["+ i +"].Id");
+				table.Name = _ctx.StringValue("DescribeTables.Items["+ i +"].Name");
+				table.Owner = _ctx.StringValue("DescribeTables.Items["+ i +"].Owner");
+				table.CreationTime = _ctx.LongValue("DescribeTables.Items["+ i +"].CreationTime");
+				table.ProductId = _ctx.StringValue("DescribeTables.Items["+ i +"].ProductId");
+				table.ProductCode = _ctx.StringValue("DescribeTables.Items["+ i +"].ProductCode");
+				table.Sensitive = _ctx.BooleanValue("DescribeTables.Items["+ i +"].Sensitive");
+				table.RiskLevelId = _ctx.LongValue("DescribeTables.Items["+ i +"].RiskLevelId");
+				table.RiskLevelName = _ctx.StringValue("DescribeTables.Items["+ i +"].RiskLevelName");
+				table.DepartName = _ctx.StringValue("DescribeTables.Items["+ i +"].DepartName");
+				table.TotalCount = _ctx.IntegerValue("DescribeTables.Items["+ i +"].TotalCount");
+				table.SensitiveCount = _ctx.IntegerValue("DescribeTables.Items["+ i +"].SensitiveCount");
+				table.SensitiveRatio = _ctx.StringValue("DescribeTables.Items["+ i +"].SensitiveRatio");
+				table.InstanceId = _ctx.LongValue("DescribeTables.Items["+ i +"].InstanceId");
+				table.S2Count = _ctx.IntegerValue("DescribeTables.Items["+ i +"].S2Count");
+				table.S3Count = _ctx.IntegerValue("DescribeTables.Items["+ i +"].S3Count");
+				table.S1Count = _ctx.IntegerValue("DescribeTables.Items["+ i +"].S1Count");
+				table.CountDetails = _ctx.StringValue("DescribeTables.Items["+ i +"].CountDetails");
+				table.TotalRows = _ctx.IntegerValue("DescribeTables.Items["+ i +"].TotalRows");
+				table.LastScanTime = _ctx.LongValue("DescribeTables.Items["+ i +"].LastScanTime");
+				table.RegionName = _ctx.StringValue("DescribeTables.Items["+ i +"].RegionName");
+				table.InstanceName = _ctx.StringValue("DescribeTables.Items["+ i +"].InstanceName");
+				table.SensLevelName = _ctx.StringValue("DescribeTables.Items["+ i +"].SensLevelName");
+				table.InstanceDescription = _ctx.StringValue("DescribeTables.Items["+ i +"].InstanceDescription");
+				table.TenantName = _ctx.StringValue("DescribeTables.Items["+ i +"].TenantName");
+
+				List<DescribeTablesResponse.DescribeTables_Table.DescribeTables_Rule> table_ruleList = new List<DescribeTablesResponse.DescribeTables_Table.DescribeTables_Rule>();
+				for (int j = 0; j < _ctx.Length("DescribeTables.Items["+ i +"].RuleList.Length"); j++) {
+					DescribeTablesResponse.DescribeTables_Table.DescribeTables_Rule rule = new DescribeTablesResponse.DescribeTables_Table.DescribeTables_Rule();
+					rule.Name = _ctx.StringValue("DescribeTables.Items["+ i +"].RuleList["+ j +"].Name");
+					rule.DisplayName = _ctx.StringValue("DescribeTables.Items["+ i +"].RuleList["+ j +"].DisplayName");
+					rule.Count = _ctx.LongValue("DescribeTables.Items["+ i +"].RuleList["+ j +"].Count");
+					rule.RiskLevelId = _ctx.LongValue("DescribeTables.Items["+ i +"].RuleList["+ j +"].RiskLevelId");
+
+					table_ruleList.Add(rule);
+				}
+				table.RuleList = table_ruleList;
 
 				describeTablesResponse_items.Add(table);
 			}

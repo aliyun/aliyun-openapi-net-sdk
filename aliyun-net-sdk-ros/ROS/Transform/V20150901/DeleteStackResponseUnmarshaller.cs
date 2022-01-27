@@ -26,11 +26,11 @@ namespace Aliyun.Acs.ROS.Transform.V20150901
 {
     public class DeleteStackResponseUnmarshaller
     {
-        public static DeleteStackResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteStackResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteStackResponse deleteStackResponse = new DeleteStackResponse();
 
-			deleteStackResponse.HttpResponse = context.HttpResponse;
+			deleteStackResponse.HttpResponse = _ctx.HttpResponse;
         
 			return deleteStackResponse;
         }

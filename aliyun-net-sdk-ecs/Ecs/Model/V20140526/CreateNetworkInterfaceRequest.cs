@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -58,7 +58,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceType;
 
-		private List<Tag> tags = new List<Tag>(){ };
+		private List<string> tags = new List<string>(){ };
 
 		private string networkInterfaceName;
 
@@ -66,17 +66,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceOwnerAccount;
 
+		private int? ipv6AddressCount;
+
 		private string ownerAccount;
+
+		private int? queuePairNumber;
 
 		private long? ownerId;
 
 		private List<string> securityGroupIdss = new List<string>(){ };
+
+		private string networkInterfaceTrafficMode;
 
 		private string vSwitchId;
 
 		private List<string> privateIpAddresss = new List<string>(){ };
 
 		private string primaryIpAddress;
+
+		private List<string> ipv6Addresss = new List<string>(){ };
 
 		public int? QueueNumber
 		{
@@ -195,7 +203,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Tag> Tags
+		public List<string> Tags
 		{
 			get
 			{
@@ -205,10 +213,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				tags = value;
-				for (int i = 0; i < tags.Count; i++)
+				if(tags != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
 				}
 			}
 		}
@@ -252,6 +263,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public int? Ipv6AddressCount
+		{
+			get
+			{
+				return ipv6AddressCount;
+			}
+			set	
+			{
+				ipv6AddressCount = value;
+				DictionaryUtil.Add(QueryParameters, "Ipv6AddressCount", value.ToString());
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -262,6 +286,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public int? QueuePairNumber
+		{
+			get
+			{
+				return queuePairNumber;
+			}
+			set	
+			{
+				queuePairNumber = value;
+				DictionaryUtil.Add(QueryParameters, "QueuePairNumber", value.ToString());
 			}
 		}
 
@@ -288,10 +325,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				securityGroupIdss = value;
-				for (int i = 0; i < securityGroupIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SecurityGroupIds." + (i + 1) , securityGroupIdss[i]);
-				}
+			}
+		}
+
+		public string NetworkInterfaceTrafficMode
+		{
+			get
+			{
+				return networkInterfaceTrafficMode;
+			}
+			set	
+			{
+				networkInterfaceTrafficMode = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkInterfaceTrafficMode", value);
 			}
 		}
 
@@ -318,10 +364,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				privateIpAddresss = value;
-				for (int i = 0; i < privateIpAddresss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"PrivateIpAddress." + (i + 1) , privateIpAddresss[i]);
-				}
 			}
 		}
 
@@ -335,6 +377,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				primaryIpAddress = value;
 				DictionaryUtil.Add(QueryParameters, "PrimaryIpAddress", value);
+			}
+		}
+
+		public List<string> Ipv6Addresss
+		{
+			get
+			{
+				return ipv6Addresss;
+			}
+
+			set
+			{
+				ipv6Addresss = value;
 			}
 		}
 
@@ -357,7 +412,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Value
+			public string Value_
 			{
 				get
 				{

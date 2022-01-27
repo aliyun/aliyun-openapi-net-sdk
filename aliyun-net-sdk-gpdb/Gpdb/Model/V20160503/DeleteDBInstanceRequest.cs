@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.gpdb;
 using Aliyun.Acs.gpdb.Transform;
 using Aliyun.Acs.gpdb.Transform.V20160503;
 
@@ -30,8 +31,14 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
     public class DeleteDBInstanceRequest : RpcAcsRequest<DeleteDBInstanceResponse>
     {
         public DeleteDBInstanceRequest()
-            : base("gpdb", "2016-05-03", "DeleteDBInstance", "gpdb", "openAPI")
+            : base("gpdb", "2016-05-03", "DeleteDBInstance")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string clientToken;
@@ -39,8 +46,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 		private string dBInstanceId;
 
 		private long? ownerId;
-
-		private string accessKeyId;
 
 		public string ClientToken
 		{
@@ -78,19 +83,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

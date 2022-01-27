@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -30,8 +31,14 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class ModifyCenBandwidthPackageSpecRequest : RpcAcsRequest<ModifyCenBandwidthPackageSpecResponse>
     {
         public ModifyCenBandwidthPackageSpecRequest()
-            : base("Cbn", "2017-09-12", "ModifyCenBandwidthPackageSpec", "cbn", "openAPI")
+            : base("Cbn", "2017-09-12", "ModifyCenBandwidthPackageSpec")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -40,13 +47,11 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private int? bandwidth;
 
-		private string cenBandwidthPackageId;
-
 		private string ownerAccount;
 
-		private string action;
-
 		private long? ownerId;
+
+		private string cenBandwidthPackageId;
 
 		public long? ResourceOwnerId
 		{
@@ -87,19 +92,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string CenBandwidthPackageId
-		{
-			get
-			{
-				return cenBandwidthPackageId;
-			}
-			set	
-			{
-				cenBandwidthPackageId = value;
-				DictionaryUtil.Add(QueryParameters, "CenBandwidthPackageId", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -113,19 +105,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -136,6 +115,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string CenBandwidthPackageId
+		{
+			get
+			{
+				return cenBandwidthPackageId;
+			}
+			set	
+			{
+				cenBandwidthPackageId = value;
+				DictionaryUtil.Add(QueryParameters, "CenBandwidthPackageId", value);
 			}
 		}
 

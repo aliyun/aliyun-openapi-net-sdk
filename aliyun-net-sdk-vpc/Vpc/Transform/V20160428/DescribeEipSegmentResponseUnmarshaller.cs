@@ -26,27 +26,27 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DescribeEipSegmentResponseUnmarshaller
     {
-        public static DescribeEipSegmentResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeEipSegmentResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeEipSegmentResponse describeEipSegmentResponse = new DescribeEipSegmentResponse();
 
-			describeEipSegmentResponse.HttpResponse = context.HttpResponse;
-			describeEipSegmentResponse.RequestId = context.StringValue("DescribeEipSegment.RequestId");
-			describeEipSegmentResponse.TotalCount = context.IntegerValue("DescribeEipSegment.TotalCount");
-			describeEipSegmentResponse.PageNumber = context.IntegerValue("DescribeEipSegment.PageNumber");
-			describeEipSegmentResponse.PageSize = context.IntegerValue("DescribeEipSegment.PageSize");
+			describeEipSegmentResponse.HttpResponse = _ctx.HttpResponse;
+			describeEipSegmentResponse.RequestId = _ctx.StringValue("DescribeEipSegment.RequestId");
+			describeEipSegmentResponse.TotalCount = _ctx.IntegerValue("DescribeEipSegment.TotalCount");
+			describeEipSegmentResponse.PageNumber = _ctx.IntegerValue("DescribeEipSegment.PageNumber");
+			describeEipSegmentResponse.PageSize = _ctx.IntegerValue("DescribeEipSegment.PageSize");
 
 			List<DescribeEipSegmentResponse.DescribeEipSegment_EipSegment> describeEipSegmentResponse_eipSegments = new List<DescribeEipSegmentResponse.DescribeEipSegment_EipSegment>();
-			for (int i = 0; i < context.Length("DescribeEipSegment.EipSegments.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeEipSegment.EipSegments.Length"); i++) {
 				DescribeEipSegmentResponse.DescribeEipSegment_EipSegment eipSegment = new DescribeEipSegmentResponse.DescribeEipSegment_EipSegment();
-				eipSegment.InstanceId = context.StringValue("DescribeEipSegment.EipSegments["+ i +"].InstanceId");
-				eipSegment.Segment = context.StringValue("DescribeEipSegment.EipSegments["+ i +"].Segment");
-				eipSegment.Status = context.StringValue("DescribeEipSegment.EipSegments["+ i +"].Status");
-				eipSegment.RegionId = context.StringValue("DescribeEipSegment.EipSegments["+ i +"].RegionId");
-				eipSegment.IpCount = context.StringValue("DescribeEipSegment.EipSegments["+ i +"].IpCount");
-				eipSegment.Name = context.StringValue("DescribeEipSegment.EipSegments["+ i +"].Name");
-				eipSegment.Descritpion = context.StringValue("DescribeEipSegment.EipSegments["+ i +"].Descritpion");
-				eipSegment.CreationTime = context.StringValue("DescribeEipSegment.EipSegments["+ i +"].CreationTime");
+				eipSegment.InstanceId = _ctx.StringValue("DescribeEipSegment.EipSegments["+ i +"].InstanceId");
+				eipSegment.Segment = _ctx.StringValue("DescribeEipSegment.EipSegments["+ i +"].Segment");
+				eipSegment.Status = _ctx.StringValue("DescribeEipSegment.EipSegments["+ i +"].Status");
+				eipSegment.RegionId = _ctx.StringValue("DescribeEipSegment.EipSegments["+ i +"].RegionId");
+				eipSegment.IpCount = _ctx.StringValue("DescribeEipSegment.EipSegments["+ i +"].IpCount");
+				eipSegment.Name = _ctx.StringValue("DescribeEipSegment.EipSegments["+ i +"].Name");
+				eipSegment.Descritpion = _ctx.StringValue("DescribeEipSegment.EipSegments["+ i +"].Descritpion");
+				eipSegment.CreationTime = _ctx.StringValue("DescribeEipSegment.EipSegments["+ i +"].CreationTime");
 
 				describeEipSegmentResponse_eipSegments.Add(eipSegment);
 			}

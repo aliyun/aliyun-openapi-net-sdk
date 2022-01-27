@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 	public class DescribeCenInterRegionBandwidthLimitsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeCenInterRegionBandwidthLimits_CenInterRegionBandwidthLimit> cenInterRegionBandwidthLimits;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,39 +98,55 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		public class DescribeCenInterRegionBandwidthLimits_CenInterRegionBandwidthLimit
 		{
 
-			private string cenId;
+			private string transitRouterAttachmentId;
 
-			private string localRegionId;
+			private string status;
+
+			private string bandwidthPackageId;
 
 			private string oppositeRegionId;
 
 			private string geographicSpanId;
 
+			private string cenId;
+
+			private string localRegionId;
+
 			private long? bandwidthLimit;
 
-			private string status;
-
-			public string CenId
+			public string TransitRouterAttachmentId
 			{
 				get
 				{
-					return cenId;
+					return transitRouterAttachmentId;
 				}
 				set	
 				{
-					cenId = value;
+					transitRouterAttachmentId = value;
 				}
 			}
 
-			public string LocalRegionId
+			public string Status
 			{
 				get
 				{
-					return localRegionId;
+					return status;
 				}
 				set	
 				{
-					localRegionId = value;
+					status = value;
+				}
+			}
+
+			public string BandwidthPackageId
+			{
+				get
+				{
+					return bandwidthPackageId;
+				}
+				set	
+				{
+					bandwidthPackageId = value;
 				}
 			}
 
@@ -158,6 +174,30 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
+			public string CenId
+			{
+				get
+				{
+					return cenId;
+				}
+				set	
+				{
+					cenId = value;
+				}
+			}
+
+			public string LocalRegionId
+			{
+				get
+				{
+					return localRegionId;
+				}
+				set	
+				{
+					localRegionId = value;
+				}
+			}
+
 			public long? BandwidthLimit
 			{
 				get
@@ -167,18 +207,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					bandwidthLimit = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
 				}
 			}
 		}

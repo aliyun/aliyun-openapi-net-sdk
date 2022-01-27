@@ -26,16 +26,16 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 {
     public class PushExtraTradeDetailResponseUnmarshaller
     {
-        public static PushExtraTradeDetailResponse Unmarshall(UnmarshallerContext context)
+        public static PushExtraTradeDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PushExtraTradeDetailResponse pushExtraTradeDetailResponse = new PushExtraTradeDetailResponse();
 
-			pushExtraTradeDetailResponse.HttpResponse = context.HttpResponse;
-			pushExtraTradeDetailResponse.Status = context.BooleanValue("PushExtraTradeDetail.Status");
-			pushExtraTradeDetailResponse.Msg = context.StringValue("PushExtraTradeDetail.Msg");
-			pushExtraTradeDetailResponse.Data = context.StringValue("PushExtraTradeDetail.Data");
-			pushExtraTradeDetailResponse.ErrorCode = context.StringValue("PushExtraTradeDetail.ErrorCode");
-			pushExtraTradeDetailResponse.RequestId = context.StringValue("PushExtraTradeDetail.RequestId");
+			pushExtraTradeDetailResponse.HttpResponse = _ctx.HttpResponse;
+			pushExtraTradeDetailResponse.Status = _ctx.BooleanValue("PushExtraTradeDetail.Status");
+			pushExtraTradeDetailResponse.Msg = _ctx.StringValue("PushExtraTradeDetail.Msg");
+			pushExtraTradeDetailResponse.Data = _ctx.StringValue("PushExtraTradeDetail.Data");
+			pushExtraTradeDetailResponse.ErrorCode = _ctx.StringValue("PushExtraTradeDetail.ErrorCode");
+			pushExtraTradeDetailResponse.RequestId = _ctx.StringValue("PushExtraTradeDetail.RequestId");
         
 			return pushExtraTradeDetailResponse;
         }

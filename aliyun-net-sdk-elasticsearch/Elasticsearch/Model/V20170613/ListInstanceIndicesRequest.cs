@@ -37,13 +37,36 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/diagnosis/instances/[InstanceId]/indices";
+			UriPattern = "/openapi/instances/[InstanceId]/indices";
 			Method = MethodType.GET;
         }
 
+		private bool? all;
+
 		private string instanceId;
 
-		private string lang;
+		private bool? isManaged;
+
+		private int? size;
+
+		private string name;
+
+		private int? page;
+
+		private bool? isOpenstore;
+
+		public bool? All
+		{
+			get
+			{
+				return all;
+			}
+			set	
+			{
+				all = value;
+				DictionaryUtil.Add(QueryParameters, "all", value.ToString());
+			}
+		}
 
 		public string InstanceId
 		{
@@ -58,16 +81,68 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public string Lang
+		public bool? IsManaged
 		{
 			get
 			{
-				return lang;
+				return isManaged;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "lang", value);
+				isManaged = value;
+				DictionaryUtil.Add(QueryParameters, "isManaged", value.ToString());
+			}
+		}
+
+		public int? Size
+		{
+			get
+			{
+				return size;
+			}
+			set	
+			{
+				size = value;
+				DictionaryUtil.Add(QueryParameters, "size", value.ToString());
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "name", value);
+			}
+		}
+
+		public int? Page
+		{
+			get
+			{
+				return page;
+			}
+			set	
+			{
+				page = value;
+				DictionaryUtil.Add(QueryParameters, "page", value.ToString());
+			}
+		}
+
+		public bool? IsOpenstore
+		{
+			get
+			{
+				return isOpenstore;
+			}
+			set	
+			{
+				isOpenstore = value;
+				DictionaryUtil.Add(QueryParameters, "isOpenstore", value.ToString());
 			}
 		}
 

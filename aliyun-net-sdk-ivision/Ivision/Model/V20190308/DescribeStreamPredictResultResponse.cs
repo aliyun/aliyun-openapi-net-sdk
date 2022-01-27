@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ivision.Model.V20190308
@@ -25,29 +25,17 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 	public class DescribeStreamPredictResultResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? totalNum;
 
-		private long? currentPage;
-
 		private long? pageSize;
+
+		private string requestId;
+
+		private long? currentPage;
 
 		private string nextPageToken;
 
 		private List<DescribeStreamPredictResult_StreamPredictData> streamPredictDatas;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public long? TotalNum
 		{
@@ -61,18 +49,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			}
 		}
 
-		public long? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-			}
-		}
-
 		public long? PageSize
 		{
 			get
@@ -82,6 +58,30 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public long? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
 			}
 		}
 
@@ -112,19 +112,43 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 		public class DescribeStreamPredictResult_StreamPredictData
 		{
 
+			private string status;
+
+			private string predictResult;
+
 			private string predictId;
 
-			private string modelId;
+			private string predictTime;
 
 			private string dataUrl;
 
 			private long? timestamp;
 
-			private string predictTime;
+			private string modelId;
 
-			private string status;
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
 
-			private string predictResult;
+			public string PredictResult
+			{
+				get
+				{
+					return predictResult;
+				}
+				set	
+				{
+					predictResult = value;
+				}
+			}
 
 			public string PredictId
 			{
@@ -138,15 +162,15 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				}
 			}
 
-			public string ModelId
+			public string PredictTime
 			{
 				get
 				{
-					return modelId;
+					return predictTime;
 				}
 				set	
 				{
-					modelId = value;
+					predictTime = value;
 				}
 			}
 
@@ -174,39 +198,15 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				}
 			}
 
-			public string PredictTime
+			public string ModelId
 			{
 				get
 				{
-					return predictTime;
+					return modelId;
 				}
 				set	
 				{
-					predictTime = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string PredictResult
-			{
-				get
-				{
-					return predictResult;
-				}
-				set	
-				{
-					predictResult = value;
+					modelId = value;
 				}
 			}
 		}

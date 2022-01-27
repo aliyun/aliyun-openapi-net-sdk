@@ -26,19 +26,19 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
     public class DeletePlanogramShelfResponseUnmarshaller
     {
-        public static DeletePlanogramShelfResponse Unmarshall(UnmarshallerContext context)
+        public static DeletePlanogramShelfResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeletePlanogramShelfResponse deletePlanogramShelfResponse = new DeletePlanogramShelfResponse();
 
-			deletePlanogramShelfResponse.HttpResponse = context.HttpResponse;
-			deletePlanogramShelfResponse.ErrorMessage = context.StringValue("DeletePlanogramShelf.ErrorMessage");
-			deletePlanogramShelfResponse.ErrorCode = context.StringValue("DeletePlanogramShelf.ErrorCode");
-			deletePlanogramShelfResponse.Message = context.StringValue("DeletePlanogramShelf.Message");
-			deletePlanogramShelfResponse.DynamicCode = context.StringValue("DeletePlanogramShelf.DynamicCode");
-			deletePlanogramShelfResponse.Code = context.StringValue("DeletePlanogramShelf.Code");
-			deletePlanogramShelfResponse.DynamicMessage = context.StringValue("DeletePlanogramShelf.DynamicMessage");
-			deletePlanogramShelfResponse.RequestId = context.StringValue("DeletePlanogramShelf.RequestId");
-			deletePlanogramShelfResponse.Success = context.BooleanValue("DeletePlanogramShelf.Success");
+			deletePlanogramShelfResponse.HttpResponse = _ctx.HttpResponse;
+			deletePlanogramShelfResponse.ErrorMessage = _ctx.StringValue("DeletePlanogramShelf.ErrorMessage");
+			deletePlanogramShelfResponse.ErrorCode = _ctx.StringValue("DeletePlanogramShelf.ErrorCode");
+			deletePlanogramShelfResponse.Message = _ctx.StringValue("DeletePlanogramShelf.Message");
+			deletePlanogramShelfResponse.DynamicCode = _ctx.StringValue("DeletePlanogramShelf.DynamicCode");
+			deletePlanogramShelfResponse.Code = _ctx.StringValue("DeletePlanogramShelf.Code");
+			deletePlanogramShelfResponse.DynamicMessage = _ctx.StringValue("DeletePlanogramShelf.DynamicMessage");
+			deletePlanogramShelfResponse.RequestId = _ctx.StringValue("DeletePlanogramShelf.RequestId");
+			deletePlanogramShelfResponse.Success = _ctx.BooleanValue("DeletePlanogramShelf.Success");
         
 			return deletePlanogramShelfResponse;
         }

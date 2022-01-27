@@ -44,6 +44,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string clientToken;
 
+		private string endpointBindList;
+
+		private string plannedEndTime;
+
 		private string resourceOwnerAccount;
 
 		private string dBClusterId;
@@ -52,7 +56,11 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? ownerId;
 
+		private string plannedStartTime;
+
 		private List<DBNode> dBNodes = new List<DBNode>(){ };
+
+		private string imciSwitch;
 
 		public long? ResourceOwnerId
 		{
@@ -77,6 +85,32 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string EndpointBindList
+		{
+			get
+			{
+				return endpointBindList;
+			}
+			set	
+			{
+				endpointBindList = value;
+				DictionaryUtil.Add(QueryParameters, "EndpointBindList", value);
+			}
+		}
+
+		public string PlannedEndTime
+		{
+			get
+			{
+				return plannedEndTime;
+			}
+			set	
+			{
+				plannedEndTime = value;
+				DictionaryUtil.Add(QueryParameters, "PlannedEndTime", value);
 			}
 		}
 
@@ -132,6 +166,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string PlannedStartTime
+		{
+			get
+			{
+				return plannedStartTime;
+			}
+			set	
+			{
+				plannedStartTime = value;
+				DictionaryUtil.Add(QueryParameters, "PlannedStartTime", value);
+			}
+		}
+
 		public List<DBNode> DBNodes
 		{
 			get
@@ -147,6 +194,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					DictionaryUtil.Add(QueryParameters,"DBNode." + (i + 1) + ".TargetClass", dBNodes[i].TargetClass);
 					DictionaryUtil.Add(QueryParameters,"DBNode." + (i + 1) + ".ZoneId", dBNodes[i].ZoneId);
 				}
+			}
+		}
+
+		public string ImciSwitch
+		{
+			get
+			{
+				return imciSwitch;
+			}
+			set	
+			{
+				imciSwitch = value;
+				DictionaryUtil.Add(QueryParameters, "ImciSwitch", value);
 			}
 		}
 

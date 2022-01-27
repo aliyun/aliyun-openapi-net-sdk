@@ -26,12 +26,12 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class CommitJobResponseUnmarshaller
     {
-        public static CommitJobResponse Unmarshall(UnmarshallerContext context)
+        public static CommitJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CommitJobResponse commitJobResponse = new CommitJobResponse();
 
-			commitJobResponse.HttpResponse = context.HttpResponse;
-			commitJobResponse.RequestId = context.StringValue("CommitJob.RequestId");
+			commitJobResponse.HttpResponse = _ctx.HttpResponse;
+			commitJobResponse.RequestId = _ctx.StringValue("CommitJob.RequestId");
         
 			return commitJobResponse;
         }

@@ -32,6 +32,12 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public CreateClusterTemplateRequest()
             : base("Emr", "2016-04-08", "CreateClusterTemplate", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -42,33 +48,25 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private string configurations;
 
-		private bool? ioOptimized;
-
-		private string securityGroupId;
-
 		private bool? sshEnable;
 
-		private bool? easEnable;
+		private string keyPairName;
+
+		private string metaStoreType;
 
 		private string securityGroupName;
 
-		private string depositType;
-
-		private string accessKeyId;
-
 		private string machineType;
 
-		private List<BootstrapAction> bootstrapActions;
+		private string resourceGroupId;
 
-		private string regionId;
+		private List<BootstrapAction> bootstrapActions = new List<BootstrapAction>(){ };
 
-		private bool? useLocalMetaDb;
+		private string metaStoreConf;
 
 		private string emrVer;
 
-		private string templateName;
-
-		private string userDefinedEmrEcsRole;
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private bool? isOpenPublicIp;
 
@@ -82,23 +80,43 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private bool? autoRenew;
 
-		private List<string> optionSoftWareLists;
-
-		private string vpcId;
+		private List<string> optionSoftWareLists = new List<string>(){ };
 
 		private string netType;
-
-		private List<HostGroup> hostGroups;
 
 		private string zoneId;
 
 		private bool? useCustomHiveMetaDb;
 
-		private List<Config> configs;
+		private bool? initCustomHiveMetaDb;
+
+		private string clientToken;
+
+		private bool? ioOptimized;
+
+		private string securityGroupId;
+
+		private bool? easEnable;
+
+		private string depositType;
+
+		private string dataDiskKMSKeyId;
+
+		private bool? useLocalMetaDb;
+
+		private string templateName;
+
+		private string userDefinedEmrEcsRole;
+
+		private bool? dataDiskEncrypted;
+
+		private string vpcId;
+
+		private List<HostGroup> hostGroups = new List<HostGroup>(){ };
+
+		private List<Config> configs = new List<Config>(){ };
 
 		private bool? highAvailabilityEnable;
-
-		private bool? initCustomHiveMetaDb;
 
 		public long? ResourceOwnerId
 		{
@@ -152,32 +170,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public bool? IoOptimized
-		{
-			get
-			{
-				return ioOptimized;
-			}
-			set	
-			{
-				ioOptimized = value;
-				DictionaryUtil.Add(QueryParameters, "IoOptimized", value.ToString());
-			}
-		}
-
-		public string SecurityGroupId
-		{
-			get
-			{
-				return securityGroupId;
-			}
-			set	
-			{
-				securityGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
-			}
-		}
-
 		public bool? SshEnable
 		{
 			get
@@ -191,16 +183,29 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public bool? EasEnable
+		public string KeyPairName
 		{
 			get
 			{
-				return easEnable;
+				return keyPairName;
 			}
 			set	
 			{
-				easEnable = value;
-				DictionaryUtil.Add(QueryParameters, "EasEnable", value.ToString());
+				keyPairName = value;
+				DictionaryUtil.Add(QueryParameters, "KeyPairName", value);
+			}
+		}
+
+		public string MetaStoreType
+		{
+			get
+			{
+				return metaStoreType;
+			}
+			set	
+			{
+				metaStoreType = value;
+				DictionaryUtil.Add(QueryParameters, "MetaStoreType", value);
 			}
 		}
 
@@ -217,32 +222,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string DepositType
-		{
-			get
-			{
-				return depositType;
-			}
-			set	
-			{
-				depositType = value;
-				DictionaryUtil.Add(QueryParameters, "DepositType", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string MachineType
 		{
 			get
@@ -253,6 +232,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				machineType = value;
 				DictionaryUtil.Add(QueryParameters, "MachineType", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -269,35 +261,25 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				for (int i = 0; i < bootstrapActions.Count; i++)
 				{
 					DictionaryUtil.Add(QueryParameters,"BootstrapAction." + (i + 1) + ".Path", bootstrapActions[i].Path);
+					DictionaryUtil.Add(QueryParameters,"BootstrapAction." + (i + 1) + ".ExecutionTarget", bootstrapActions[i].ExecutionTarget);
+					DictionaryUtil.Add(QueryParameters,"BootstrapAction." + (i + 1) + ".ExecutionMoment", bootstrapActions[i].ExecutionMoment);
 					DictionaryUtil.Add(QueryParameters,"BootstrapAction." + (i + 1) + ".Arg", bootstrapActions[i].Arg);
 					DictionaryUtil.Add(QueryParameters,"BootstrapAction." + (i + 1) + ".Name", bootstrapActions[i].Name);
+					DictionaryUtil.Add(QueryParameters,"BootstrapAction." + (i + 1) + ".ExecutionFailStrategy", bootstrapActions[i].ExecutionFailStrategy);
 				}
 			}
 		}
 
-		public string RegionId
+		public string MetaStoreConf
 		{
 			get
 			{
-				return regionId;
+				return metaStoreConf;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public bool? UseLocalMetaDb
-		{
-			get
-			{
-				return useLocalMetaDb;
-			}
-			set	
-			{
-				useLocalMetaDb = value;
-				DictionaryUtil.Add(QueryParameters, "UseLocalMetaDb", value.ToString());
+				metaStoreConf = value;
+				DictionaryUtil.Add(QueryParameters, "MetaStoreConf", value);
 			}
 		}
 
@@ -314,29 +296,21 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string TemplateName
+		public List<Tag> Tags
 		{
 			get
 			{
-				return templateName;
+				return tags;
 			}
-			set	
-			{
-				templateName = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateName", value);
-			}
-		}
 
-		public string UserDefinedEmrEcsRole
-		{
-			get
+			set
 			{
-				return userDefinedEmrEcsRole;
-			}
-			set	
-			{
-				userDefinedEmrEcsRole = value;
-				DictionaryUtil.Add(QueryParameters, "UserDefinedEmrEcsRole", value);
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
 			}
 		}
 
@@ -435,19 +409,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
-			}
-		}
-
 		public string NetType
 		{
 			get
@@ -458,40 +419,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				netType = value;
 				DictionaryUtil.Add(QueryParameters, "NetType", value);
-			}
-		}
-
-		public List<HostGroup> HostGroups
-		{
-			get
-			{
-				return hostGroups;
-			}
-
-			set
-			{
-				hostGroups = value;
-				for (int i = 0; i < hostGroups.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".Period", hostGroups[i].Period);
-					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".SysDiskCapacity", hostGroups[i].SysDiskCapacity);
-					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".DiskCapacity", hostGroups[i].DiskCapacity);
-					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".SysDiskType", hostGroups[i].SysDiskType);
-					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".ClusterId", hostGroups[i].ClusterId);
-					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".DiskType", hostGroups[i].DiskType);
-					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".HostGroupName", hostGroups[i].HostGroupName);
-					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".VSwitchId", hostGroups[i].VSwitchId);
-					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".DiskCount", hostGroups[i].DiskCount);
-					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".AutoRenew", hostGroups[i].AutoRenew);
-					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".HostGroupId", hostGroups[i].HostGroupId);
-					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".NodeCount", hostGroups[i].NodeCount);
-					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".InstanceType", hostGroups[i].InstanceType);
-					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".Comment", hostGroups[i].Comment);
-					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".ChargeType", hostGroups[i].ChargeType);
-					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".MultiInstanceTypes", hostGroups[i].MultiInstanceTypes);
-					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".CreateType", hostGroups[i].CreateType);
-					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".HostGroupType", hostGroups[i].HostGroupType);
-				}
 			}
 		}
 
@@ -518,6 +445,198 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				useCustomHiveMetaDb = value;
 				DictionaryUtil.Add(QueryParameters, "UseCustomHiveMetaDb", value.ToString());
+			}
+		}
+
+		public bool? InitCustomHiveMetaDb
+		{
+			get
+			{
+				return initCustomHiveMetaDb;
+			}
+			set	
+			{
+				initCustomHiveMetaDb = value;
+				DictionaryUtil.Add(QueryParameters, "InitCustomHiveMetaDb", value.ToString());
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public bool? IoOptimized
+		{
+			get
+			{
+				return ioOptimized;
+			}
+			set	
+			{
+				ioOptimized = value;
+				DictionaryUtil.Add(QueryParameters, "IoOptimized", value.ToString());
+			}
+		}
+
+		public string SecurityGroupId
+		{
+			get
+			{
+				return securityGroupId;
+			}
+			set	
+			{
+				securityGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
+			}
+		}
+
+		public bool? EasEnable
+		{
+			get
+			{
+				return easEnable;
+			}
+			set	
+			{
+				easEnable = value;
+				DictionaryUtil.Add(QueryParameters, "EasEnable", value.ToString());
+			}
+		}
+
+		public string DepositType
+		{
+			get
+			{
+				return depositType;
+			}
+			set	
+			{
+				depositType = value;
+				DictionaryUtil.Add(QueryParameters, "DepositType", value);
+			}
+		}
+
+		public string DataDiskKMSKeyId
+		{
+			get
+			{
+				return dataDiskKMSKeyId;
+			}
+			set	
+			{
+				dataDiskKMSKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "DataDiskKMSKeyId", value);
+			}
+		}
+
+		public bool? UseLocalMetaDb
+		{
+			get
+			{
+				return useLocalMetaDb;
+			}
+			set	
+			{
+				useLocalMetaDb = value;
+				DictionaryUtil.Add(QueryParameters, "UseLocalMetaDb", value.ToString());
+			}
+		}
+
+		public string TemplateName
+		{
+			get
+			{
+				return templateName;
+			}
+			set	
+			{
+				templateName = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateName", value);
+			}
+		}
+
+		public string UserDefinedEmrEcsRole
+		{
+			get
+			{
+				return userDefinedEmrEcsRole;
+			}
+			set	
+			{
+				userDefinedEmrEcsRole = value;
+				DictionaryUtil.Add(QueryParameters, "UserDefinedEmrEcsRole", value);
+			}
+		}
+
+		public bool? DataDiskEncrypted
+		{
+			get
+			{
+				return dataDiskEncrypted;
+			}
+			set	
+			{
+				dataDiskEncrypted = value;
+				DictionaryUtil.Add(QueryParameters, "DataDiskEncrypted", value.ToString());
+			}
+		}
+
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+			}
+		}
+
+		public List<HostGroup> HostGroups
+		{
+			get
+			{
+				return hostGroups;
+			}
+
+			set
+			{
+				hostGroups = value;
+				for (int i = 0; i < hostGroups.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".Period", hostGroups[i].Period);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".SysDiskCapacity", hostGroups[i].SysDiskCapacity);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".PrivatePoolOptionsId", hostGroups[i].PrivatePoolOptionsId);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".DiskCapacity", hostGroups[i].DiskCapacity);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".SysDiskType", hostGroups[i].SysDiskType);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".ClusterId", hostGroups[i].ClusterId);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".DiskType", hostGroups[i].DiskType);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".HostGroupName", hostGroups[i].HostGroupName);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".VSwitchId", hostGroups[i].VSwitchId);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".DiskCount", hostGroups[i].DiskCount);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".AutoRenew", hostGroups[i].AutoRenew);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".HostGroupId", hostGroups[i].HostGroupId);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".NodeCount", hostGroups[i].NodeCount);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".InstanceType", hostGroups[i].InstanceType);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".Comment", hostGroups[i].Comment);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".ChargeType", hostGroups[i].ChargeType);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".MultiInstanceTypes", hostGroups[i].MultiInstanceTypes);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".CreateType", hostGroups[i].CreateType);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".HostGroupType", hostGroups[i].HostGroupType);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".PrivatePoolOptionsMatchCriteria", hostGroups[i].PrivatePoolOptionsMatchCriteria);
+				}
 			}
 		}
 
@@ -556,27 +675,20 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public bool? InitCustomHiveMetaDb
-		{
-			get
-			{
-				return initCustomHiveMetaDb;
-			}
-			set	
-			{
-				initCustomHiveMetaDb = value;
-				DictionaryUtil.Add(QueryParameters, "InitCustomHiveMetaDb", value.ToString());
-			}
-		}
-
 		public class BootstrapAction
 		{
 
 			private string path;
 
+			private string executionTarget;
+
+			private string executionMoment;
+
 			private string arg;
 
 			private string name;
+
+			private string executionFailStrategy;
 
 			public string Path
 			{
@@ -587,6 +699,30 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					path = value;
+				}
+			}
+
+			public string ExecutionTarget
+			{
+				get
+				{
+					return executionTarget;
+				}
+				set	
+				{
+					executionTarget = value;
+				}
+			}
+
+			public string ExecutionMoment
+			{
+				get
+				{
+					return executionMoment;
+				}
+				set	
+				{
+					executionMoment = value;
 				}
 			}
 
@@ -613,6 +749,50 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 					name = value;
 				}
 			}
+
+			public string ExecutionFailStrategy
+			{
+				get
+				{
+					return executionFailStrategy;
+				}
+				set	
+				{
+					executionFailStrategy = value;
+				}
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
 		}
 
 		public class HostGroup
@@ -621,6 +801,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			private int? period;
 
 			private int? sysDiskCapacity;
+
+			private string privatePoolOptionsId;
 
 			private int? diskCapacity;
 
@@ -654,6 +836,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string hostGroupType;
 
+			private string privatePoolOptionsMatchCriteria;
+
 			public int? Period
 			{
 				get
@@ -675,6 +859,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					sysDiskCapacity = value;
+				}
+			}
+
+			public string PrivatePoolOptionsId
+			{
+				get
+				{
+					return privatePoolOptionsId;
+				}
+				set	
+				{
+					privatePoolOptionsId = value;
 				}
 			}
 
@@ -867,6 +1063,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					hostGroupType = value;
+				}
+			}
+
+			public string PrivatePoolOptionsMatchCriteria
+			{
+				get
+				{
+					return privatePoolOptionsMatchCriteria;
+				}
+				set	
+				{
+					privatePoolOptionsMatchCriteria = value;
 				}
 			}
 		}

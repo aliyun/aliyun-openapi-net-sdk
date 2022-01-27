@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class EipFillParamsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string data;
-
 		private string code;
 
 		private bool? success;
 
 		private string message;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string data;
 
-		public string Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
-			}
-		}
+		private string requestId;
 
 		public string Code
 		{
@@ -92,6 +68,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

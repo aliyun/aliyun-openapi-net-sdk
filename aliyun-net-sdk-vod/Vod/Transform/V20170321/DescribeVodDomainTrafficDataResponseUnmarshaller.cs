@@ -26,27 +26,27 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DescribeVodDomainTrafficDataResponseUnmarshaller
     {
-        public static DescribeVodDomainTrafficDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVodDomainTrafficDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVodDomainTrafficDataResponse describeVodDomainTrafficDataResponse = new DescribeVodDomainTrafficDataResponse();
 
-			describeVodDomainTrafficDataResponse.HttpResponse = context.HttpResponse;
-			describeVodDomainTrafficDataResponse.RequestId = context.StringValue("DescribeVodDomainTrafficData.RequestId");
-			describeVodDomainTrafficDataResponse.DomainName = context.StringValue("DescribeVodDomainTrafficData.DomainName");
-			describeVodDomainTrafficDataResponse.StartTime = context.StringValue("DescribeVodDomainTrafficData.StartTime");
-			describeVodDomainTrafficDataResponse.EndTime = context.StringValue("DescribeVodDomainTrafficData.EndTime");
-			describeVodDomainTrafficDataResponse.DataInterval = context.StringValue("DescribeVodDomainTrafficData.DataInterval");
+			describeVodDomainTrafficDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeVodDomainTrafficDataResponse.RequestId = _ctx.StringValue("DescribeVodDomainTrafficData.RequestId");
+			describeVodDomainTrafficDataResponse.DomainName = _ctx.StringValue("DescribeVodDomainTrafficData.DomainName");
+			describeVodDomainTrafficDataResponse.StartTime = _ctx.StringValue("DescribeVodDomainTrafficData.StartTime");
+			describeVodDomainTrafficDataResponse.EndTime = _ctx.StringValue("DescribeVodDomainTrafficData.EndTime");
+			describeVodDomainTrafficDataResponse.DataInterval = _ctx.StringValue("DescribeVodDomainTrafficData.DataInterval");
 
 			List<DescribeVodDomainTrafficDataResponse.DescribeVodDomainTrafficData_DataModule> describeVodDomainTrafficDataResponse_trafficDataPerInterval = new List<DescribeVodDomainTrafficDataResponse.DescribeVodDomainTrafficData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeVodDomainTrafficData.TrafficDataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVodDomainTrafficData.TrafficDataPerInterval.Length"); i++) {
 				DescribeVodDomainTrafficDataResponse.DescribeVodDomainTrafficData_DataModule dataModule = new DescribeVodDomainTrafficDataResponse.DescribeVodDomainTrafficData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].Value");
-				dataModule.DomesticValue = context.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].DomesticValue");
-				dataModule.OverseasValue = context.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].OverseasValue");
-				dataModule.HttpsValue = context.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].HttpsValue");
-				dataModule.HttpsDomesticValue = context.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].HttpsDomesticValue");
-				dataModule.HttpsOverseasValue = context.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].HttpsOverseasValue");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].TimeStamp");
+				dataModule._Value = _ctx.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].Value");
+				dataModule.DomesticValue = _ctx.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].DomesticValue");
+				dataModule.OverseasValue = _ctx.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].OverseasValue");
+				dataModule.HttpsValue = _ctx.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].HttpsValue");
+				dataModule.HttpsDomesticValue = _ctx.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].HttpsDomesticValue");
+				dataModule.HttpsOverseasValue = _ctx.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].HttpsOverseasValue");
 
 				describeVodDomainTrafficDataResponse_trafficDataPerInterval.Add(dataModule);
 			}

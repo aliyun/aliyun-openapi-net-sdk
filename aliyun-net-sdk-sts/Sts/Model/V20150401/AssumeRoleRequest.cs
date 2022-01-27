@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sts;
 using Aliyun.Acs.Sts.Transform;
 using Aliyun.Acs.Sts.Transform.V20150401;
 
@@ -30,14 +31,15 @@ namespace Aliyun.Acs.Sts.Model.V20150401
     public class AssumeRoleRequest : RpcAcsRequest<AssumeRoleResponse>
     {
         public AssumeRoleRequest()
-            : base("Sts", "2015-04-01", "AssumeRole", "sts", "openAPI")
+            : base("Sts", "2015-04-01", "AssumeRole")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Sts.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Sts.Endpoint.endpointRegionalType, null);
             }
 			Protocol = ProtocolType.HTTPS;
+			Method = MethodType.POST;
         }
 
 		private string roleSessionName;

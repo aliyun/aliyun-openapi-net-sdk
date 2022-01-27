@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class ListOrdersRequest : RpcAcsRequest<ListOrdersResponse>
     {
         public ListOrdersRequest()
-            : base("dms-enterprise", "2018-11-01", "ListOrders", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "ListOrders", "dms-enterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -61,6 +61,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string orderResultType;
 
+		[JsonProperty(PropertyName = "OrderStatus")]
 		public string OrderStatus
 		{
 			get
@@ -74,6 +75,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "SearchContent")]
 		public string SearchContent
 		{
 			get
@@ -87,6 +89,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "SearchDateType")]
 		public string SearchDateType
 		{
 			get
@@ -100,6 +103,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
 		{
 			get
@@ -113,6 +117,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartTime")]
 		public string StartTime
 		{
 			get
@@ -126,6 +131,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -139,6 +145,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -152,6 +159,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PluginType")]
 		public string PluginType
 		{
 			get
@@ -165,6 +173,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -178,6 +187,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OrderResultType")]
 		public string OrderResultType
 		{
 			get

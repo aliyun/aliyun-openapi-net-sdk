@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class BatchRegisterDeviceWithApplyIdResponseUnmarshaller
     {
-        public static BatchRegisterDeviceWithApplyIdResponse Unmarshall(UnmarshallerContext context)
+        public static BatchRegisterDeviceWithApplyIdResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchRegisterDeviceWithApplyIdResponse batchRegisterDeviceWithApplyIdResponse = new BatchRegisterDeviceWithApplyIdResponse();
 
-			batchRegisterDeviceWithApplyIdResponse.HttpResponse = context.HttpResponse;
-			batchRegisterDeviceWithApplyIdResponse.RequestId = context.StringValue("BatchRegisterDeviceWithApplyId.RequestId");
-			batchRegisterDeviceWithApplyIdResponse.Success = context.BooleanValue("BatchRegisterDeviceWithApplyId.Success");
-			batchRegisterDeviceWithApplyIdResponse.Code = context.StringValue("BatchRegisterDeviceWithApplyId.Code");
-			batchRegisterDeviceWithApplyIdResponse.ErrorMessage = context.StringValue("BatchRegisterDeviceWithApplyId.ErrorMessage");
+			batchRegisterDeviceWithApplyIdResponse.HttpResponse = _ctx.HttpResponse;
+			batchRegisterDeviceWithApplyIdResponse.RequestId = _ctx.StringValue("BatchRegisterDeviceWithApplyId.RequestId");
+			batchRegisterDeviceWithApplyIdResponse.Success = _ctx.BooleanValue("BatchRegisterDeviceWithApplyId.Success");
+			batchRegisterDeviceWithApplyIdResponse.Code = _ctx.StringValue("BatchRegisterDeviceWithApplyId.Code");
+			batchRegisterDeviceWithApplyIdResponse.ErrorMessage = _ctx.StringValue("BatchRegisterDeviceWithApplyId.ErrorMessage");
 
 			BatchRegisterDeviceWithApplyIdResponse.BatchRegisterDeviceWithApplyId_Data data = new BatchRegisterDeviceWithApplyIdResponse.BatchRegisterDeviceWithApplyId_Data();
-			data.ApplyId = context.LongValue("BatchRegisterDeviceWithApplyId.Data.ApplyId");
+			data.ApplyId = _ctx.LongValue("BatchRegisterDeviceWithApplyId.Data.ApplyId");
 			batchRegisterDeviceWithApplyIdResponse.Data = data;
         
 			return batchRegisterDeviceWithApplyIdResponse;

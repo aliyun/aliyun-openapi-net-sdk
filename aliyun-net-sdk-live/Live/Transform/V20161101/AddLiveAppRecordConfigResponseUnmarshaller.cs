@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class AddLiveAppRecordConfigResponseUnmarshaller
     {
-        public static AddLiveAppRecordConfigResponse Unmarshall(UnmarshallerContext context)
+        public static AddLiveAppRecordConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddLiveAppRecordConfigResponse addLiveAppRecordConfigResponse = new AddLiveAppRecordConfigResponse();
 
-			addLiveAppRecordConfigResponse.HttpResponse = context.HttpResponse;
-			addLiveAppRecordConfigResponse.RequestId = context.StringValue("AddLiveAppRecordConfig.RequestId");
+			addLiveAppRecordConfigResponse.HttpResponse = _ctx.HttpResponse;
+			addLiveAppRecordConfigResponse.RequestId = _ctx.StringValue("AddLiveAppRecordConfig.RequestId");
         
 			return addLiveAppRecordConfigResponse;
         }

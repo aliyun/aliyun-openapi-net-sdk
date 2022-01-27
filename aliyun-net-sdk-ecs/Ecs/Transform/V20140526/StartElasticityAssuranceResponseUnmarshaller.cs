@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class StartElasticityAssuranceResponseUnmarshaller
     {
-        public static StartElasticityAssuranceResponse Unmarshall(UnmarshallerContext context)
+        public static StartElasticityAssuranceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StartElasticityAssuranceResponse startElasticityAssuranceResponse = new StartElasticityAssuranceResponse();
 
-			startElasticityAssuranceResponse.HttpResponse = context.HttpResponse;
-			startElasticityAssuranceResponse.RequestId = context.StringValue("StartElasticityAssurance.RequestId");
+			startElasticityAssuranceResponse.HttpResponse = _ctx.HttpResponse;
+			startElasticityAssuranceResponse.RequestId = _ctx.StringValue("StartElasticityAssurance.RequestId");
         
 			return startElasticityAssuranceResponse;
         }

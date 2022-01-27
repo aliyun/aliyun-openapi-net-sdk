@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeUserBaselineAuthorizationResponseUnmarshaller
     {
-        public static DescribeUserBaselineAuthorizationResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUserBaselineAuthorizationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeUserBaselineAuthorizationResponse describeUserBaselineAuthorizationResponse = new DescribeUserBaselineAuthorizationResponse();
 
-			describeUserBaselineAuthorizationResponse.HttpResponse = context.HttpResponse;
-			describeUserBaselineAuthorizationResponse.RequestId = context.StringValue("DescribeUserBaselineAuthorization.RequestId");
+			describeUserBaselineAuthorizationResponse.HttpResponse = _ctx.HttpResponse;
+			describeUserBaselineAuthorizationResponse.RequestId = _ctx.StringValue("DescribeUserBaselineAuthorization.RequestId");
 
 			DescribeUserBaselineAuthorizationResponse.DescribeUserBaselineAuthorization_UserBaselineAuthorization userBaselineAuthorization = new DescribeUserBaselineAuthorizationResponse.DescribeUserBaselineAuthorization_UserBaselineAuthorization();
-			userBaselineAuthorization.Status = context.IntegerValue("DescribeUserBaselineAuthorization.UserBaselineAuthorization.Status");
+			userBaselineAuthorization.Status = _ctx.IntegerValue("DescribeUserBaselineAuthorization.UserBaselineAuthorization.Status");
 			describeUserBaselineAuthorizationResponse.UserBaselineAuthorization = userBaselineAuthorization;
         
 			return describeUserBaselineAuthorizationResponse;

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class UpdateProductResponseUnmarshaller
     {
-        public static UpdateProductResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateProductResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateProductResponse updateProductResponse = new UpdateProductResponse();
 
-			updateProductResponse.HttpResponse = context.HttpResponse;
-			updateProductResponse.RequestId = context.StringValue("UpdateProduct.RequestId");
-			updateProductResponse.Success = context.BooleanValue("UpdateProduct.Success");
-			updateProductResponse.Code = context.StringValue("UpdateProduct.Code");
-			updateProductResponse.ErrorMessage = context.StringValue("UpdateProduct.ErrorMessage");
+			updateProductResponse.HttpResponse = _ctx.HttpResponse;
+			updateProductResponse.RequestId = _ctx.StringValue("UpdateProduct.RequestId");
+			updateProductResponse.Success = _ctx.BooleanValue("UpdateProduct.Success");
+			updateProductResponse.Code = _ctx.StringValue("UpdateProduct.Code");
+			updateProductResponse.ErrorMessage = _ctx.StringValue("UpdateProduct.ErrorMessage");
         
 			return updateProductResponse;
         }

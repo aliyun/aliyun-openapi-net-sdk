@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class DescribeFlowCategoryResponseUnmarshaller
     {
-        public static DescribeFlowCategoryResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeFlowCategoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeFlowCategoryResponse describeFlowCategoryResponse = new DescribeFlowCategoryResponse();
 
-			describeFlowCategoryResponse.HttpResponse = context.HttpResponse;
-			describeFlowCategoryResponse.RequestId = context.StringValue("DescribeFlowCategory.RequestId");
-			describeFlowCategoryResponse.Id = context.StringValue("DescribeFlowCategory.Id");
-			describeFlowCategoryResponse.GmtCreate = context.LongValue("DescribeFlowCategory.GmtCreate");
-			describeFlowCategoryResponse.GmtModified = context.LongValue("DescribeFlowCategory.GmtModified");
-			describeFlowCategoryResponse.Name = context.StringValue("DescribeFlowCategory.Name");
-			describeFlowCategoryResponse.ParentId = context.StringValue("DescribeFlowCategory.ParentId");
-			describeFlowCategoryResponse.Type = context.StringValue("DescribeFlowCategory.Type");
-			describeFlowCategoryResponse.CategoryType = context.StringValue("DescribeFlowCategory.CategoryType");
-			describeFlowCategoryResponse.ObjectType = context.StringValue("DescribeFlowCategory.ObjectType");
-			describeFlowCategoryResponse.ObjectId = context.StringValue("DescribeFlowCategory.ObjectId");
-			describeFlowCategoryResponse.ProjectId = context.StringValue("DescribeFlowCategory.ProjectId");
+			describeFlowCategoryResponse.HttpResponse = _ctx.HttpResponse;
+			describeFlowCategoryResponse.RequestId = _ctx.StringValue("DescribeFlowCategory.RequestId");
+			describeFlowCategoryResponse.Id = _ctx.StringValue("DescribeFlowCategory.Id");
+			describeFlowCategoryResponse.GmtCreate = _ctx.LongValue("DescribeFlowCategory.GmtCreate");
+			describeFlowCategoryResponse.GmtModified = _ctx.LongValue("DescribeFlowCategory.GmtModified");
+			describeFlowCategoryResponse.Name = _ctx.StringValue("DescribeFlowCategory.Name");
+			describeFlowCategoryResponse.ParentId = _ctx.StringValue("DescribeFlowCategory.ParentId");
+			describeFlowCategoryResponse.Type = _ctx.StringValue("DescribeFlowCategory.Type");
+			describeFlowCategoryResponse.CategoryType = _ctx.StringValue("DescribeFlowCategory.CategoryType");
+			describeFlowCategoryResponse.ObjectType = _ctx.StringValue("DescribeFlowCategory.ObjectType");
+			describeFlowCategoryResponse.ObjectId = _ctx.StringValue("DescribeFlowCategory.ObjectId");
+			describeFlowCategoryResponse.ProjectId = _ctx.StringValue("DescribeFlowCategory.ProjectId");
         
 			return describeFlowCategoryResponse;
         }

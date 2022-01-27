@@ -25,21 +25,45 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeDBNodePerformanceResponse : AcsResponse
 	{
 
+		private string dBVersion;
+
+		private string endTime;
+
 		private string requestId;
+
+		private string startTime;
+
+		private string dBType;
 
 		private string dBNodeId;
 
 		private string engine;
 
-		private string dBType;
-
-		private string dBVersion;
-
-		private string startTime;
-
-		private string endTime;
-
 		private List<DescribeDBNodePerformance_PerformanceItem> performanceKeys;
+
+		public string DBVersion
+		{
+			get
+			{
+				return dBVersion;
+			}
+			set	
+			{
+				dBVersion = value;
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -50,6 +74,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
+
+		public string DBType
+		{
+			get
+			{
+				return dBType;
+			}
+			set	
+			{
+				dBType = value;
 			}
 		}
 
@@ -74,54 +122,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				engine = value;
-			}
-		}
-
-		public string DBType
-		{
-			get
-			{
-				return dBType;
-			}
-			set	
-			{
-				dBType = value;
-			}
-		}
-
-		public string DBVersion
-		{
-			get
-			{
-				return dBVersion;
-			}
-			set	
-			{
-				dBVersion = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
 			}
 		}
 

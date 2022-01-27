@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeExportInfoResponseUnmarshaller
     {
-        public static DescribeExportInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeExportInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeExportInfoResponse describeExportInfoResponse = new DescribeExportInfoResponse();
 
-			describeExportInfoResponse.HttpResponse = context.HttpResponse;
-			describeExportInfoResponse.RequestId = context.StringValue("DescribeExportInfo.RequestId");
-			describeExportInfoResponse.Id = context.LongValue("DescribeExportInfo.Id");
-			describeExportInfoResponse.FileName = context.StringValue("DescribeExportInfo.FileName");
-			describeExportInfoResponse.CurrentCount = context.IntegerValue("DescribeExportInfo.CurrentCount");
-			describeExportInfoResponse.TotalCount = context.IntegerValue("DescribeExportInfo.TotalCount");
-			describeExportInfoResponse.Progress = context.IntegerValue("DescribeExportInfo.Progress");
-			describeExportInfoResponse.ExportStatus = context.StringValue("DescribeExportInfo.ExportStatus");
-			describeExportInfoResponse.Message = context.StringValue("DescribeExportInfo.Message");
-			describeExportInfoResponse.Link = context.StringValue("DescribeExportInfo.Link");
+			describeExportInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeExportInfoResponse.RequestId = _ctx.StringValue("DescribeExportInfo.RequestId");
+			describeExportInfoResponse.Id = _ctx.LongValue("DescribeExportInfo.Id");
+			describeExportInfoResponse.FileName = _ctx.StringValue("DescribeExportInfo.FileName");
+			describeExportInfoResponse.CurrentCount = _ctx.IntegerValue("DescribeExportInfo.CurrentCount");
+			describeExportInfoResponse.TotalCount = _ctx.IntegerValue("DescribeExportInfo.TotalCount");
+			describeExportInfoResponse.Progress = _ctx.IntegerValue("DescribeExportInfo.Progress");
+			describeExportInfoResponse.ExportStatus = _ctx.StringValue("DescribeExportInfo.ExportStatus");
+			describeExportInfoResponse.Message = _ctx.StringValue("DescribeExportInfo.Message");
+			describeExportInfoResponse.Link = _ctx.StringValue("DescribeExportInfo.Link");
         
 			return describeExportInfoResponse;
         }

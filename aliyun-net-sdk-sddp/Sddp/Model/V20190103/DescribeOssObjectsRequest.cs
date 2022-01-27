@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sddp;
 using Aliyun.Acs.Sddp.Transform;
 using Aliyun.Acs.Sddp.Transform.V20190103;
 
@@ -30,20 +31,27 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
     public class DescribeOssObjectsRequest : RpcAcsRequest<DescribeOssObjectsResponse>
     {
         public DescribeOssObjectsRequest()
-            : base("Sddp", "2019-01-03", "DescribeOssObjects", "sddp", "openAPI")
+            : base("Sddp", "2019-01-03", "DescribeOssObjects")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Sddp.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Sddp.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private int? riskLevelId;
 
+		private long? lastScanTimeEnd;
+
+		private long? lastScanTimeStart;
+
 		private int? pageSize;
 
 		private string lang;
+
+		private string serviceRegionId;
 
 		private int? currentPage;
 
@@ -63,6 +71,32 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				riskLevelId = value;
 				DictionaryUtil.Add(QueryParameters, "RiskLevelId", value.ToString());
+			}
+		}
+
+		public long? LastScanTimeEnd
+		{
+			get
+			{
+				return lastScanTimeEnd;
+			}
+			set	
+			{
+				lastScanTimeEnd = value;
+				DictionaryUtil.Add(QueryParameters, "LastScanTimeEnd", value.ToString());
+			}
+		}
+
+		public long? LastScanTimeStart
+		{
+			get
+			{
+				return lastScanTimeStart;
+			}
+			set	
+			{
+				lastScanTimeStart = value;
+				DictionaryUtil.Add(QueryParameters, "LastScanTimeStart", value.ToString());
 			}
 		}
 
@@ -89,6 +123,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string ServiceRegionId
+		{
+			get
+			{
+				return serviceRegionId;
+			}
+			set	
+			{
+				serviceRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceRegionId", value);
 			}
 		}
 

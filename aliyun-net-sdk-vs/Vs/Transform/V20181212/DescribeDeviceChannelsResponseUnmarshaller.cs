@@ -26,28 +26,28 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeDeviceChannelsResponseUnmarshaller
     {
-        public static DescribeDeviceChannelsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDeviceChannelsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDeviceChannelsResponse describeDeviceChannelsResponse = new DescribeDeviceChannelsResponse();
 
-			describeDeviceChannelsResponse.HttpResponse = context.HttpResponse;
-			describeDeviceChannelsResponse.RequestId = context.StringValue("DescribeDeviceChannels.RequestId");
-			describeDeviceChannelsResponse.PageSize = context.LongValue("DescribeDeviceChannels.PageSize");
-			describeDeviceChannelsResponse.PageNum = context.LongValue("DescribeDeviceChannels.PageNum");
-			describeDeviceChannelsResponse.PageCount = context.LongValue("DescribeDeviceChannels.PageCount");
-			describeDeviceChannelsResponse.TotalCount = context.LongValue("DescribeDeviceChannels.TotalCount");
+			describeDeviceChannelsResponse.HttpResponse = _ctx.HttpResponse;
+			describeDeviceChannelsResponse.RequestId = _ctx.StringValue("DescribeDeviceChannels.RequestId");
+			describeDeviceChannelsResponse.PageSize = _ctx.LongValue("DescribeDeviceChannels.PageSize");
+			describeDeviceChannelsResponse.PageNum = _ctx.LongValue("DescribeDeviceChannels.PageNum");
+			describeDeviceChannelsResponse.PageCount = _ctx.LongValue("DescribeDeviceChannels.PageCount");
+			describeDeviceChannelsResponse.TotalCount = _ctx.LongValue("DescribeDeviceChannels.TotalCount");
 
 			List<DescribeDeviceChannelsResponse.DescribeDeviceChannels_Channel> describeDeviceChannelsResponse_channels = new List<DescribeDeviceChannelsResponse.DescribeDeviceChannels_Channel>();
-			for (int i = 0; i < context.Length("DescribeDeviceChannels.Channels.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDeviceChannels.Channels.Length"); i++) {
 				DescribeDeviceChannelsResponse.DescribeDeviceChannels_Channel channel = new DescribeDeviceChannelsResponse.DescribeDeviceChannels_Channel();
-				channel.Name = context.StringValue("DescribeDeviceChannels.Channels["+ i +"].Name");
-				channel.GbId = context.StringValue("DescribeDeviceChannels.Channels["+ i +"].GbId");
-				channel.StreamId = context.StringValue("DescribeDeviceChannels.Channels["+ i +"].StreamId");
-				channel.StreamStatus = context.StringValue("DescribeDeviceChannels.Channels["+ i +"].StreamStatus");
-				channel.DeviceId = context.StringValue("DescribeDeviceChannels.Channels["+ i +"].DeviceId");
-				channel.DeviceStatus = context.StringValue("DescribeDeviceChannels.Channels["+ i +"].DeviceStatus");
-				channel.ChannelId = context.LongValue("DescribeDeviceChannels.Channels["+ i +"].ChannelId");
-				channel._Params = context.StringValue("DescribeDeviceChannels.Channels["+ i +"].Params");
+				channel.Name = _ctx.StringValue("DescribeDeviceChannels.Channels["+ i +"].Name");
+				channel.GbId = _ctx.StringValue("DescribeDeviceChannels.Channels["+ i +"].GbId");
+				channel.StreamId = _ctx.StringValue("DescribeDeviceChannels.Channels["+ i +"].StreamId");
+				channel.StreamStatus = _ctx.StringValue("DescribeDeviceChannels.Channels["+ i +"].StreamStatus");
+				channel.DeviceId = _ctx.StringValue("DescribeDeviceChannels.Channels["+ i +"].DeviceId");
+				channel.DeviceStatus = _ctx.StringValue("DescribeDeviceChannels.Channels["+ i +"].DeviceStatus");
+				channel.ChannelId = _ctx.LongValue("DescribeDeviceChannels.Channels["+ i +"].ChannelId");
+				channel._Params = _ctx.StringValue("DescribeDeviceChannels.Channels["+ i +"].Params");
 
 				describeDeviceChannelsResponse_channels.Add(channel);
 			}

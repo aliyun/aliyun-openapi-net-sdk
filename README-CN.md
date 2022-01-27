@@ -26,7 +26,7 @@
 
 
 ## 使用Demo及其示例
-您可以在 [OpenAPI Explorer](https://api.aliyun.com/#/?product=Ecs&api=DescribeAccessPoints&params={}&tab=DEMO&lang=CSHARP) 中查看您所使用的产品代码示例。
+您可以在 [阿里云 OpenAPI 开发者门户](https://next.api.aliyun.com) 中查看您所使用的产品代码示例。
 
 
 ## 环境要求

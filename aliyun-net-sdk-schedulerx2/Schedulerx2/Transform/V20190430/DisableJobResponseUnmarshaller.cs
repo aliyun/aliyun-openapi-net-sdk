@@ -26,15 +26,15 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 {
     public class DisableJobResponseUnmarshaller
     {
-        public static DisableJobResponse Unmarshall(UnmarshallerContext context)
+        public static DisableJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DisableJobResponse disableJobResponse = new DisableJobResponse();
 
-			disableJobResponse.HttpResponse = context.HttpResponse;
-			disableJobResponse.RequestId = context.StringValue("DisableJob.RequestId");
-			disableJobResponse.Code = context.IntegerValue("DisableJob.Code");
-			disableJobResponse.Success = context.BooleanValue("DisableJob.Success");
-			disableJobResponse.Message = context.StringValue("DisableJob.Message");
+			disableJobResponse.HttpResponse = _ctx.HttpResponse;
+			disableJobResponse.Code = _ctx.IntegerValue("DisableJob.Code");
+			disableJobResponse.Message = _ctx.StringValue("DisableJob.Message");
+			disableJobResponse.RequestId = _ctx.StringValue("DisableJob.RequestId");
+			disableJobResponse.Success = _ctx.BooleanValue("DisableJob.Success");
         
 			return disableJobResponse;
         }

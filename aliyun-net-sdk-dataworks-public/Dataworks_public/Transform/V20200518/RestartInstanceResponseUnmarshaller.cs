@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class RestartInstanceResponseUnmarshaller
     {
-        public static RestartInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static RestartInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RestartInstanceResponse restartInstanceResponse = new RestartInstanceResponse();
 
-			restartInstanceResponse.HttpResponse = context.HttpResponse;
-			restartInstanceResponse.ErrorCode = context.StringValue("RestartInstance.ErrorCode");
-			restartInstanceResponse.ErrorMessage = context.StringValue("RestartInstance.ErrorMessage");
-			restartInstanceResponse.HttpStatusCode = context.IntegerValue("RestartInstance.HttpStatusCode");
-			restartInstanceResponse.RequestId = context.StringValue("RestartInstance.RequestId");
-			restartInstanceResponse.Success = context.BooleanValue("RestartInstance.Success");
-			restartInstanceResponse.Data = context.BooleanValue("RestartInstance.Data");
+			restartInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			restartInstanceResponse.ErrorCode = _ctx.StringValue("RestartInstance.ErrorCode");
+			restartInstanceResponse.ErrorMessage = _ctx.StringValue("RestartInstance.ErrorMessage");
+			restartInstanceResponse.HttpStatusCode = _ctx.IntegerValue("RestartInstance.HttpStatusCode");
+			restartInstanceResponse.RequestId = _ctx.StringValue("RestartInstance.RequestId");
+			restartInstanceResponse.Success = _ctx.BooleanValue("RestartInstance.Success");
+			restartInstanceResponse.Data = _ctx.BooleanValue("RestartInstance.Data");
         
 			return restartInstanceResponse;
         }

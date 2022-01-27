@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class UploadGatewayLogResponseUnmarshaller
     {
-        public static UploadGatewayLogResponse Unmarshall(UnmarshallerContext context)
+        public static UploadGatewayLogResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UploadGatewayLogResponse uploadGatewayLogResponse = new UploadGatewayLogResponse();
 
-			uploadGatewayLogResponse.HttpResponse = context.HttpResponse;
-			uploadGatewayLogResponse.RequestId = context.StringValue("UploadGatewayLog.RequestId");
-			uploadGatewayLogResponse.Success = context.BooleanValue("UploadGatewayLog.Success");
-			uploadGatewayLogResponse.Code = context.StringValue("UploadGatewayLog.Code");
-			uploadGatewayLogResponse.Message = context.StringValue("UploadGatewayLog.Message");
-			uploadGatewayLogResponse.TaskId = context.StringValue("UploadGatewayLog.TaskId");
+			uploadGatewayLogResponse.HttpResponse = _ctx.HttpResponse;
+			uploadGatewayLogResponse.TaskId = _ctx.StringValue("UploadGatewayLog.TaskId");
+			uploadGatewayLogResponse.Message = _ctx.StringValue("UploadGatewayLog.Message");
+			uploadGatewayLogResponse.RequestId = _ctx.StringValue("UploadGatewayLog.RequestId");
+			uploadGatewayLogResponse.Code = _ctx.StringValue("UploadGatewayLog.Code");
+			uploadGatewayLogResponse.Success = _ctx.BooleanValue("UploadGatewayLog.Success");
         
 			return uploadGatewayLogResponse;
         }

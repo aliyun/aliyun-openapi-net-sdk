@@ -26,13 +26,13 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class ContinuousMoveResponseUnmarshaller
     {
-        public static ContinuousMoveResponse Unmarshall(UnmarshallerContext context)
+        public static ContinuousMoveResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ContinuousMoveResponse continuousMoveResponse = new ContinuousMoveResponse();
 
-			continuousMoveResponse.HttpResponse = context.HttpResponse;
-			continuousMoveResponse.RequestId = context.StringValue("ContinuousMove.RequestId");
-			continuousMoveResponse.Id = context.StringValue("ContinuousMove.Id");
+			continuousMoveResponse.HttpResponse = _ctx.HttpResponse;
+			continuousMoveResponse.RequestId = _ctx.StringValue("ContinuousMove.RequestId");
+			continuousMoveResponse.Id = _ctx.StringValue("ContinuousMove.Id");
         
 			return continuousMoveResponse;
         }

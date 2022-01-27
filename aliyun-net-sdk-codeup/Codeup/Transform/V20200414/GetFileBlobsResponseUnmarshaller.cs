@@ -26,19 +26,19 @@ namespace Aliyun.Acs.codeup.Transform.V20200414
 {
     public class GetFileBlobsResponseUnmarshaller
     {
-        public static GetFileBlobsResponse Unmarshall(UnmarshallerContext context)
+        public static GetFileBlobsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetFileBlobsResponse getFileBlobsResponse = new GetFileBlobsResponse();
 
-			getFileBlobsResponse.HttpResponse = context.HttpResponse;
-			getFileBlobsResponse.RequestId = context.StringValue("GetFileBlobs.RequestId");
-			getFileBlobsResponse.ErrorCode = context.StringValue("GetFileBlobs.ErrorCode");
-			getFileBlobsResponse.Success = context.BooleanValue("GetFileBlobs.Success");
-			getFileBlobsResponse.ErrorMessage = context.StringValue("GetFileBlobs.ErrorMessage");
+			getFileBlobsResponse.HttpResponse = _ctx.HttpResponse;
+			getFileBlobsResponse.RequestId = _ctx.StringValue("GetFileBlobs.RequestId");
+			getFileBlobsResponse.ErrorCode = _ctx.StringValue("GetFileBlobs.ErrorCode");
+			getFileBlobsResponse.Success = _ctx.BooleanValue("GetFileBlobs.Success");
+			getFileBlobsResponse.ErrorMessage = _ctx.StringValue("GetFileBlobs.ErrorMessage");
 
 			GetFileBlobsResponse.GetFileBlobs_Result result = new GetFileBlobsResponse.GetFileBlobs_Result();
-			result.Content = context.StringValue("GetFileBlobs.Result.Content");
-			result.TotalLines = context.IntegerValue("GetFileBlobs.Result.TotalLines");
+			result.Content = _ctx.StringValue("GetFileBlobs.Result.Content");
+			result.TotalLines = _ctx.IntegerValue("GetFileBlobs.Result.TotalLines");
 			getFileBlobsResponse.Result = result;
         
 			return getFileBlobsResponse;

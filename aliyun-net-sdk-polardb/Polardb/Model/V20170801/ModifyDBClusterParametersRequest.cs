@@ -42,7 +42,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private string effectiveTime;
+		private string parameterGroupId;
 
 		private string resourceOwnerAccount;
 
@@ -67,16 +67,16 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string EffectiveTime
+		public string ParameterGroupId
 		{
 			get
 			{
-				return effectiveTime;
+				return parameterGroupId;
 			}
 			set	
 			{
-				effectiveTime = value;
-				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
+				parameterGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ParameterGroupId", value);
 			}
 		}
 

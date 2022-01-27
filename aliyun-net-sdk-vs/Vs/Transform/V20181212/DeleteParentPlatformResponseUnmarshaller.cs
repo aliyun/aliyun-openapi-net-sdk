@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DeleteParentPlatformResponseUnmarshaller
     {
-        public static DeleteParentPlatformResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteParentPlatformResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteParentPlatformResponse deleteParentPlatformResponse = new DeleteParentPlatformResponse();
 
-			deleteParentPlatformResponse.HttpResponse = context.HttpResponse;
-			deleteParentPlatformResponse.RequestId = context.StringValue("DeleteParentPlatform.RequestId");
+			deleteParentPlatformResponse.HttpResponse = _ctx.HttpResponse;
+			deleteParentPlatformResponse.RequestId = _ctx.StringValue("DeleteParentPlatform.RequestId");
         
 			return deleteParentPlatformResponse;
         }

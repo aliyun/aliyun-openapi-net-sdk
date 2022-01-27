@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class ChangeDomainOfDnsProductResponseUnmarshaller
     {
-        public static ChangeDomainOfDnsProductResponse Unmarshall(UnmarshallerContext context)
+        public static ChangeDomainOfDnsProductResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ChangeDomainOfDnsProductResponse changeDomainOfDnsProductResponse = new ChangeDomainOfDnsProductResponse();
 
-			changeDomainOfDnsProductResponse.HttpResponse = context.HttpResponse;
-			changeDomainOfDnsProductResponse.RequestId = context.StringValue("ChangeDomainOfDnsProduct.RequestId");
-			changeDomainOfDnsProductResponse.OriginalDomain = context.StringValue("ChangeDomainOfDnsProduct.OriginalDomain");
+			changeDomainOfDnsProductResponse.HttpResponse = _ctx.HttpResponse;
+			changeDomainOfDnsProductResponse.RequestId = _ctx.StringValue("ChangeDomainOfDnsProduct.RequestId");
+			changeDomainOfDnsProductResponse.OriginalDomain = _ctx.StringValue("ChangeDomainOfDnsProduct.OriginalDomain");
         
 			return changeDomainOfDnsProductResponse;
         }

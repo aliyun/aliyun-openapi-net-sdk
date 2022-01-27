@@ -26,14 +26,14 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class GetDRMLicenseResponseUnmarshaller
     {
-        public static GetDRMLicenseResponse Unmarshall(UnmarshallerContext context)
+        public static GetDRMLicenseResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetDRMLicenseResponse getDRMLicenseResponse = new GetDRMLicenseResponse();
 
-			getDRMLicenseResponse.HttpResponse = context.HttpResponse;
-			getDRMLicenseResponse.RequestId = context.StringValue("GetDRMLicense.RequestId");
-			getDRMLicenseResponse.DRMData = context.StringValue("GetDRMLicense.DRMData");
-			getDRMLicenseResponse.DeviceInfo = context.StringValue("GetDRMLicense.DeviceInfo");
+			getDRMLicenseResponse.HttpResponse = _ctx.HttpResponse;
+			getDRMLicenseResponse.RequestId = _ctx.StringValue("GetDRMLicense.RequestId");
+			getDRMLicenseResponse.DeviceInfo = _ctx.StringValue("GetDRMLicense.DeviceInfo");
+			getDRMLicenseResponse.DRMData = _ctx.StringValue("GetDRMLicense.DRMData");
         
 			return getDRMLicenseResponse;
         }

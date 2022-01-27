@@ -26,13 +26,13 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class CreateGWSClusterResponseUnmarshaller
     {
-        public static CreateGWSClusterResponse Unmarshall(UnmarshallerContext context)
+        public static CreateGWSClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateGWSClusterResponse createGWSClusterResponse = new CreateGWSClusterResponse();
 
-			createGWSClusterResponse.HttpResponse = context.HttpResponse;
-			createGWSClusterResponse.RequestId = context.StringValue("CreateGWSCluster.RequestId");
-			createGWSClusterResponse.ClusterId = context.StringValue("CreateGWSCluster.ClusterId");
+			createGWSClusterResponse.HttpResponse = _ctx.HttpResponse;
+			createGWSClusterResponse.RequestId = _ctx.StringValue("CreateGWSCluster.RequestId");
+			createGWSClusterResponse.ClusterId = _ctx.StringValue("CreateGWSCluster.ClusterId");
         
 			return createGWSClusterResponse;
         }

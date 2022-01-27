@@ -26,46 +26,48 @@ namespace Aliyun.Acs.xtrace.Transform.V20190808
 {
     public class GetTraceResponseUnmarshaller
     {
-        public static GetTraceResponse Unmarshall(UnmarshallerContext context)
+        public static GetTraceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetTraceResponse getTraceResponse = new GetTraceResponse();
 
-			getTraceResponse.HttpResponse = context.HttpResponse;
-			getTraceResponse.RequestId = context.StringValue("GetTrace.RequestId");
+			getTraceResponse.HttpResponse = _ctx.HttpResponse;
+			getTraceResponse.RequestId = _ctx.StringValue("GetTrace.RequestId");
 
 			List<GetTraceResponse.GetTrace_Span> getTraceResponse_spans = new List<GetTraceResponse.GetTrace_Span>();
-			for (int i = 0; i < context.Length("GetTrace.Spans.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetTrace.Spans.Length"); i++) {
 				GetTraceResponse.GetTrace_Span span = new GetTraceResponse.GetTrace_Span();
-				span.TraceID = context.StringValue("GetTrace.Spans["+ i +"].TraceID");
-				span.OperationName = context.StringValue("GetTrace.Spans["+ i +"].OperationName");
-				span.Duration = context.LongValue("GetTrace.Spans["+ i +"].Duration");
-				span.ServiceName = context.StringValue("GetTrace.Spans["+ i +"].ServiceName");
-				span.ServiceIp = context.StringValue("GetTrace.Spans["+ i +"].ServiceIp");
-				span.Timestamp = context.LongValue("GetTrace.Spans["+ i +"].Timestamp");
-				span.RpcId = context.StringValue("GetTrace.Spans["+ i +"].RpcId");
-				span.ResultCode = context.StringValue("GetTrace.Spans["+ i +"].ResultCode");
-				span.HaveStack = context.BooleanValue("GetTrace.Spans["+ i +"].HaveStack");
+				span.TraceID = _ctx.StringValue("GetTrace.Spans["+ i +"].TraceID");
+				span.OperationName = _ctx.StringValue("GetTrace.Spans["+ i +"].OperationName");
+				span.Duration = _ctx.LongValue("GetTrace.Spans["+ i +"].Duration");
+				span.ServiceName = _ctx.StringValue("GetTrace.Spans["+ i +"].ServiceName");
+				span.ServiceIp = _ctx.StringValue("GetTrace.Spans["+ i +"].ServiceIp");
+				span.Timestamp = _ctx.LongValue("GetTrace.Spans["+ i +"].Timestamp");
+				span.RpcId = _ctx.StringValue("GetTrace.Spans["+ i +"].RpcId");
+				span.ResultCode = _ctx.StringValue("GetTrace.Spans["+ i +"].ResultCode");
+				span.HaveStack = _ctx.BooleanValue("GetTrace.Spans["+ i +"].HaveStack");
+				span.SpanId = _ctx.StringValue("GetTrace.Spans["+ i +"].SpanId");
+				span.ParentSpanId = _ctx.StringValue("GetTrace.Spans["+ i +"].ParentSpanId");
 
 				List<GetTraceResponse.GetTrace_Span.GetTrace_TagEntry> span_tagEntryList = new List<GetTraceResponse.GetTrace_Span.GetTrace_TagEntry>();
-				for (int j = 0; j < context.Length("GetTrace.Spans["+ i +"].TagEntryList.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("GetTrace.Spans["+ i +"].TagEntryList.Length"); j++) {
 					GetTraceResponse.GetTrace_Span.GetTrace_TagEntry tagEntry = new GetTraceResponse.GetTrace_Span.GetTrace_TagEntry();
-					tagEntry.Key = context.StringValue("GetTrace.Spans["+ i +"].TagEntryList["+ j +"].Key");
-					tagEntry._Value = context.StringValue("GetTrace.Spans["+ i +"].TagEntryList["+ j +"].Value");
+					tagEntry.Key = _ctx.StringValue("GetTrace.Spans["+ i +"].TagEntryList["+ j +"].Key");
+					tagEntry._Value = _ctx.StringValue("GetTrace.Spans["+ i +"].TagEntryList["+ j +"].Value");
 
 					span_tagEntryList.Add(tagEntry);
 				}
 				span.TagEntryList = span_tagEntryList;
 
 				List<GetTraceResponse.GetTrace_Span.GetTrace_LogEvent> span_logEventList = new List<GetTraceResponse.GetTrace_Span.GetTrace_LogEvent>();
-				for (int j = 0; j < context.Length("GetTrace.Spans["+ i +"].LogEventList.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("GetTrace.Spans["+ i +"].LogEventList.Length"); j++) {
 					GetTraceResponse.GetTrace_Span.GetTrace_LogEvent logEvent = new GetTraceResponse.GetTrace_Span.GetTrace_LogEvent();
-					logEvent.Timestamp = context.LongValue("GetTrace.Spans["+ i +"].LogEventList["+ j +"].Timestamp");
+					logEvent.Timestamp = _ctx.LongValue("GetTrace.Spans["+ i +"].LogEventList["+ j +"].Timestamp");
 
 					List<GetTraceResponse.GetTrace_Span.GetTrace_LogEvent.GetTrace_TagEntry2> logEvent_tagEntryList1 = new List<GetTraceResponse.GetTrace_Span.GetTrace_LogEvent.GetTrace_TagEntry2>();
-					for (int k = 0; k < context.Length("GetTrace.Spans["+ i +"].LogEventList["+ j +"].TagEntryList.Length"); k++) {
+					for (int k = 0; k < _ctx.Length("GetTrace.Spans["+ i +"].LogEventList["+ j +"].TagEntryList.Length"); k++) {
 						GetTraceResponse.GetTrace_Span.GetTrace_LogEvent.GetTrace_TagEntry2 tagEntry2 = new GetTraceResponse.GetTrace_Span.GetTrace_LogEvent.GetTrace_TagEntry2();
-						tagEntry2.Key = context.StringValue("GetTrace.Spans["+ i +"].LogEventList["+ j +"].TagEntryList["+ k +"].Key");
-						tagEntry2._Value = context.StringValue("GetTrace.Spans["+ i +"].LogEventList["+ j +"].TagEntryList["+ k +"].Value");
+						tagEntry2.Key = _ctx.StringValue("GetTrace.Spans["+ i +"].LogEventList["+ j +"].TagEntryList["+ k +"].Key");
+						tagEntry2._Value = _ctx.StringValue("GetTrace.Spans["+ i +"].LogEventList["+ j +"].TagEntryList["+ k +"].Value");
 
 						logEvent_tagEntryList1.Add(tagEntry2);
 					}

@@ -34,17 +34,34 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.live.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.live.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
+
+		private string notifyReqAuth;
 
 		private string notifyUrl;
 
 		private string domainName;
 
 		private long? ownerId;
+
+		private string notifyAuthKey;
+
+		public string NotifyReqAuth
+		{
+			get
+			{
+				return notifyReqAuth;
+			}
+			set	
+			{
+				notifyReqAuth = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyReqAuth", value);
+			}
+		}
 
 		public string NotifyUrl
 		{
@@ -82,6 +99,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string NotifyAuthKey
+		{
+			get
+			{
+				return notifyAuthKey;
+			}
+			set	
+			{
+				notifyAuthKey = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyAuthKey", value);
 			}
 		}
 

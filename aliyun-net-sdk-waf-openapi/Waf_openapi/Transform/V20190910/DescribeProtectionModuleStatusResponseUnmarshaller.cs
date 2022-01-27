@@ -31,8 +31,8 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 			DescribeProtectionModuleStatusResponse describeProtectionModuleStatusResponse = new DescribeProtectionModuleStatusResponse();
 
 			describeProtectionModuleStatusResponse.HttpResponse = _ctx.HttpResponse;
-			describeProtectionModuleStatusResponse.RequestId = _ctx.StringValue("DescribeProtectionModuleStatus.RequestId");
 			describeProtectionModuleStatusResponse.ModuleStatus = _ctx.IntegerValue("DescribeProtectionModuleStatus.ModuleStatus");
+			describeProtectionModuleStatusResponse.RequestId = _ctx.StringValue("DescribeProtectionModuleStatus.RequestId");
         
 			return describeProtectionModuleStatusResponse;
         }

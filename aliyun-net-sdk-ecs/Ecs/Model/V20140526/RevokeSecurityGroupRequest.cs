@@ -35,8 +35,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string nicType;
 
 		private long? resourceOwnerId;
+
+		private string sourcePrefixListId;
 
 		private string sourcePortRange;
 
@@ -81,6 +83,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string sourceGroupId;
 
+		[JsonProperty(PropertyName = "NicType")]
 		public string NicType
 		{
 			get
@@ -94,6 +97,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -107,6 +111,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SourcePrefixListId")]
+		public string SourcePrefixListId
+		{
+			get
+			{
+				return sourcePrefixListId;
+			}
+			set	
+			{
+				sourcePrefixListId = value;
+				DictionaryUtil.Add(QueryParameters, "SourcePrefixListId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "SourcePortRange")]
 		public string SourcePortRange
 		{
 			get
@@ -120,6 +139,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ClientToken")]
 		public string ClientToken
 		{
 			get
@@ -133,6 +153,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecurityGroupId")]
 		public string SecurityGroupId
 		{
 			get
@@ -146,6 +167,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -159,6 +181,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SourceGroupOwnerId")]
 		public long? SourceGroupOwnerId
 		{
 			get
@@ -172,6 +195,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SourceGroupOwnerAccount")]
 		public string SourceGroupOwnerAccount
 		{
 			get
@@ -185,6 +209,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Ipv6DestCidrIp")]
 		public string Ipv6DestCidrIp
 		{
 			get
@@ -198,6 +223,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Ipv6SourceCidrIp")]
 		public string Ipv6SourceCidrIp
 		{
 			get
@@ -211,6 +237,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Policy")]
 		public string Policy
 		{
 			get
@@ -224,6 +251,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "PortRange")]
 		public string PortRange
 		{
 			get
@@ -237,6 +265,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -250,6 +279,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "IpProtocol")]
 		public string IpProtocol
 		{
 			get
@@ -263,6 +293,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -276,6 +307,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SourceCidrIp")]
 		public string SourceCidrIp
 		{
 			get
@@ -289,6 +321,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -302,6 +335,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Priority")]
 		public string Priority
 		{
 			get
@@ -315,6 +349,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "DestCidrIp")]
 		public string DestCidrIp
 		{
 			get
@@ -328,6 +363,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SourceGroupId")]
 		public string SourceGroupId
 		{
 			get

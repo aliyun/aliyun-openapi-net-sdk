@@ -26,18 +26,18 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class UntagResourcesResponseUnmarshaller
     {
-        public static UntagResourcesResponse Unmarshall(UnmarshallerContext context)
+        public static UntagResourcesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UntagResourcesResponse untagResourcesResponse = new UntagResourcesResponse();
 
-			untagResourcesResponse.HttpResponse = context.HttpResponse;
-			untagResourcesResponse.Code = context.StringValue("UntagResources.Code");
-			untagResourcesResponse.Data = context.BooleanValue("UntagResources.Data");
-			untagResourcesResponse.ErrorCode = context.StringValue("UntagResources.ErrorCode");
-			untagResourcesResponse.Message = context.StringValue("UntagResources.Message");
-			untagResourcesResponse.RequestId = context.StringValue("UntagResources.RequestId");
-			untagResourcesResponse.Success = context.BooleanValue("UntagResources.Success");
-			untagResourcesResponse.TraceId = context.StringValue("UntagResources.TraceId");
+			untagResourcesResponse.HttpResponse = _ctx.HttpResponse;
+			untagResourcesResponse.RequestId = _ctx.StringValue("UntagResources.RequestId");
+			untagResourcesResponse.Message = _ctx.StringValue("UntagResources.Message");
+			untagResourcesResponse.TraceId = _ctx.StringValue("UntagResources.TraceId");
+			untagResourcesResponse.Data = _ctx.BooleanValue("UntagResources.Data");
+			untagResourcesResponse.ErrorCode = _ctx.StringValue("UntagResources.ErrorCode");
+			untagResourcesResponse.Code = _ctx.StringValue("UntagResources.Code");
+			untagResourcesResponse.Success = _ctx.BooleanValue("UntagResources.Success");
         
 			return untagResourcesResponse;
         }

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class DeleteDialogueFlowResponseUnmarshaller
     {
-        public static DeleteDialogueFlowResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDialogueFlowResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDialogueFlowResponse deleteDialogueFlowResponse = new DeleteDialogueFlowResponse();
 
-			deleteDialogueFlowResponse.HttpResponse = context.HttpResponse;
-			deleteDialogueFlowResponse.RequestId = context.StringValue("DeleteDialogueFlow.RequestId");
-			deleteDialogueFlowResponse.Success = context.BooleanValue("DeleteDialogueFlow.Success");
-			deleteDialogueFlowResponse.Code = context.StringValue("DeleteDialogueFlow.Code");
-			deleteDialogueFlowResponse.Message = context.StringValue("DeleteDialogueFlow.Message");
-			deleteDialogueFlowResponse.HttpStatusCode = context.IntegerValue("DeleteDialogueFlow.HttpStatusCode");
+			deleteDialogueFlowResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDialogueFlowResponse.Code = _ctx.StringValue("DeleteDialogueFlow.Code");
+			deleteDialogueFlowResponse.HttpStatusCode = _ctx.IntegerValue("DeleteDialogueFlow.HttpStatusCode");
+			deleteDialogueFlowResponse.Message = _ctx.StringValue("DeleteDialogueFlow.Message");
+			deleteDialogueFlowResponse.RequestId = _ctx.StringValue("DeleteDialogueFlow.RequestId");
+			deleteDialogueFlowResponse.Success = _ctx.BooleanValue("DeleteDialogueFlow.Success");
         
 			return deleteDialogueFlowResponse;
         }

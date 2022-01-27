@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -34,12 +35,14 @@ namespace Aliyun.Acs.Kms.Model.V20160120
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Kms.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Kms.Endpoint.endpointRegionalType, null);
             }
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
+
+		private string secretType;
 
 		private string versionId;
 
@@ -47,13 +50,32 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string description;
 
+		private string rotationInterval;
+
 		private string secretName;
+
+		private bool? enableAutomaticRotation;
 
 		private string encryptionKeyId;
 
 		private string secretDataType;
 
 		private string tags;
+
+		private string extendedConfig;
+
+		public string SecretType
+		{
+			get
+			{
+				return secretType;
+			}
+			set	
+			{
+				secretType = value;
+				DictionaryUtil.Add(QueryParameters, "SecretType", value);
+			}
+		}
 
 		public string VersionId
 		{
@@ -94,6 +116,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		public string RotationInterval
+		{
+			get
+			{
+				return rotationInterval;
+			}
+			set	
+			{
+				rotationInterval = value;
+				DictionaryUtil.Add(QueryParameters, "RotationInterval", value);
+			}
+		}
+
 		public string SecretName
 		{
 			get
@@ -104,6 +139,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				secretName = value;
 				DictionaryUtil.Add(QueryParameters, "SecretName", value);
+			}
+		}
+
+		public bool? EnableAutomaticRotation
+		{
+			get
+			{
+				return enableAutomaticRotation;
+			}
+			set	
+			{
+				enableAutomaticRotation = value;
+				DictionaryUtil.Add(QueryParameters, "EnableAutomaticRotation", value.ToString());
 			}
 		}
 
@@ -143,6 +191,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				tags = value;
 				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		public string ExtendedConfig
+		{
+			get
+			{
+				return extendedConfig;
+			}
+			set	
+			{
+				extendedConfig = value;
+				DictionaryUtil.Add(QueryParameters, "ExtendedConfig", value);
 			}
 		}
 

@@ -26,20 +26,20 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeUpBpsPeakDataResponseUnmarshaller
     {
-        public static DescribeUpBpsPeakDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUpBpsPeakDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeUpBpsPeakDataResponse describeUpBpsPeakDataResponse = new DescribeUpBpsPeakDataResponse();
 
-			describeUpBpsPeakDataResponse.HttpResponse = context.HttpResponse;
-			describeUpBpsPeakDataResponse.RequestId = context.StringValue("DescribeUpBpsPeakData.RequestId");
+			describeUpBpsPeakDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeUpBpsPeakDataResponse.RequestId = _ctx.StringValue("DescribeUpBpsPeakData.RequestId");
 
 			List<DescribeUpBpsPeakDataResponse.DescribeUpBpsPeakData_DescribeUpPeakTraffic> describeUpBpsPeakDataResponse_describeUpPeakTraffics = new List<DescribeUpBpsPeakDataResponse.DescribeUpBpsPeakData_DescribeUpPeakTraffic>();
-			for (int i = 0; i < context.Length("DescribeUpBpsPeakData.DescribeUpPeakTraffics.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeUpBpsPeakData.DescribeUpPeakTraffics.Length"); i++) {
 				DescribeUpBpsPeakDataResponse.DescribeUpBpsPeakData_DescribeUpPeakTraffic describeUpPeakTraffic = new DescribeUpBpsPeakDataResponse.DescribeUpBpsPeakData_DescribeUpPeakTraffic();
-				describeUpPeakTraffic.PeakTime = context.StringValue("DescribeUpBpsPeakData.DescribeUpPeakTraffics["+ i +"].PeakTime");
-				describeUpPeakTraffic.QueryTime = context.StringValue("DescribeUpBpsPeakData.DescribeUpPeakTraffics["+ i +"].QueryTime");
-				describeUpPeakTraffic.StatName = context.StringValue("DescribeUpBpsPeakData.DescribeUpPeakTraffics["+ i +"].StatName");
-				describeUpPeakTraffic.BandWidth = context.StringValue("DescribeUpBpsPeakData.DescribeUpPeakTraffics["+ i +"].BandWidth");
+				describeUpPeakTraffic.PeakTime = _ctx.StringValue("DescribeUpBpsPeakData.DescribeUpPeakTraffics["+ i +"].PeakTime");
+				describeUpPeakTraffic.QueryTime = _ctx.StringValue("DescribeUpBpsPeakData.DescribeUpPeakTraffics["+ i +"].QueryTime");
+				describeUpPeakTraffic.StatName = _ctx.StringValue("DescribeUpBpsPeakData.DescribeUpPeakTraffics["+ i +"].StatName");
+				describeUpPeakTraffic.BandWidth = _ctx.StringValue("DescribeUpBpsPeakData.DescribeUpPeakTraffics["+ i +"].BandWidth");
 
 				describeUpBpsPeakDataResponse_describeUpPeakTraffics.Add(describeUpPeakTraffic);
 			}

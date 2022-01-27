@@ -130,6 +130,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string iDaaSInstanceId;
 
+			private string iDaaSRegionId;
+
 			public string RegionId
 			{
 				get
@@ -319,6 +321,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					iDaaSInstanceId = value;
+				}
+			}
+
+			public string IDaaSRegionId
+			{
+				get
+				{
+					return iDaaSRegionId;
+				}
+				set	
+				{
+					iDaaSRegionId = value;
 				}
 			}
 		}

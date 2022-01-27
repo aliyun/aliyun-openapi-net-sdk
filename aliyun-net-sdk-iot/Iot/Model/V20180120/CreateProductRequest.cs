@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Iot.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Iot.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string resourceGroupId;
 
+		private int? validateType;
+
 		private string iotInstanceId;
 
 		private string productName;
@@ -59,8 +61,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string aliyunCommodityCode;
 
 		private bool? publishAuto;
-
-		private long? categoryId;
 
 		private int? dataFormat;
 
@@ -148,6 +148,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public int? ValidateType
+		{
+			get
+			{
+				return validateType;
+			}
+			set	
+			{
+				validateType = value;
+				DictionaryUtil.Add(QueryParameters, "ValidateType", value.ToString());
+			}
+		}
+
 		public string IotInstanceId
 		{
 			get
@@ -197,19 +210,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				publishAuto = value;
 				DictionaryUtil.Add(QueryParameters, "PublishAuto", value.ToString());
-			}
-		}
-
-		public long? CategoryId
-		{
-			get
-			{
-				return categoryId;
-			}
-			set	
-			{
-				categoryId = value;
-				DictionaryUtil.Add(QueryParameters, "CategoryId", value.ToString());
 			}
 		}
 

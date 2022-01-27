@@ -34,17 +34,21 @@ namespace Aliyun.Acs.Iot.Model.V20180120
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Iot.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Iot.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private string iotInstanceId;
 
+		private string functionBlockName;
+
 		private string productKey;
 
 		private string thingModelJson;
+
+		private string functionBlockId;
 
 		public string IotInstanceId
 		{
@@ -56,6 +60,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public string FunctionBlockName
+		{
+			get
+			{
+				return functionBlockName;
+			}
+			set	
+			{
+				functionBlockName = value;
+				DictionaryUtil.Add(QueryParameters, "FunctionBlockName", value);
 			}
 		}
 
@@ -82,6 +99,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				thingModelJson = value;
 				DictionaryUtil.Add(QueryParameters, "ThingModelJson", value);
+			}
+		}
+
+		public string FunctionBlockId
+		{
+			get
+			{
+				return functionBlockId;
+			}
+			set	
+			{
+				functionBlockId = value;
+				DictionaryUtil.Add(QueryParameters, "FunctionBlockId", value);
 			}
 		}
 

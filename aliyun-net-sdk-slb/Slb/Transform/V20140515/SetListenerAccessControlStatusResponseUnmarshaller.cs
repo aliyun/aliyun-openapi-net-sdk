@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 {
     public class SetListenerAccessControlStatusResponseUnmarshaller
     {
-        public static SetListenerAccessControlStatusResponse Unmarshall(UnmarshallerContext context)
+        public static SetListenerAccessControlStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetListenerAccessControlStatusResponse setListenerAccessControlStatusResponse = new SetListenerAccessControlStatusResponse();
 
-			setListenerAccessControlStatusResponse.HttpResponse = context.HttpResponse;
-			setListenerAccessControlStatusResponse.RequestId = context.StringValue("SetListenerAccessControlStatus.RequestId");
+			setListenerAccessControlStatusResponse.HttpResponse = _ctx.HttpResponse;
+			setListenerAccessControlStatusResponse.RequestId = _ctx.StringValue("SetListenerAccessControlStatus.RequestId");
         
 			return setListenerAccessControlStatusResponse;
         }

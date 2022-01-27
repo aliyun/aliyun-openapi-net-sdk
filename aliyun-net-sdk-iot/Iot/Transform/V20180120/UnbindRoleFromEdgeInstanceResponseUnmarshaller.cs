@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class UnbindRoleFromEdgeInstanceResponseUnmarshaller
     {
-        public static UnbindRoleFromEdgeInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static UnbindRoleFromEdgeInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UnbindRoleFromEdgeInstanceResponse unbindRoleFromEdgeInstanceResponse = new UnbindRoleFromEdgeInstanceResponse();
 
-			unbindRoleFromEdgeInstanceResponse.HttpResponse = context.HttpResponse;
-			unbindRoleFromEdgeInstanceResponse.RequestId = context.StringValue("UnbindRoleFromEdgeInstance.RequestId");
-			unbindRoleFromEdgeInstanceResponse.Success = context.BooleanValue("UnbindRoleFromEdgeInstance.Success");
-			unbindRoleFromEdgeInstanceResponse.Code = context.StringValue("UnbindRoleFromEdgeInstance.Code");
-			unbindRoleFromEdgeInstanceResponse.ErrorMessage = context.StringValue("UnbindRoleFromEdgeInstance.ErrorMessage");
+			unbindRoleFromEdgeInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			unbindRoleFromEdgeInstanceResponse.RequestId = _ctx.StringValue("UnbindRoleFromEdgeInstance.RequestId");
+			unbindRoleFromEdgeInstanceResponse.Success = _ctx.BooleanValue("UnbindRoleFromEdgeInstance.Success");
+			unbindRoleFromEdgeInstanceResponse.Code = _ctx.StringValue("UnbindRoleFromEdgeInstance.Code");
+			unbindRoleFromEdgeInstanceResponse.ErrorMessage = _ctx.StringValue("UnbindRoleFromEdgeInstance.ErrorMessage");
         
 			return unbindRoleFromEdgeInstanceResponse;
         }

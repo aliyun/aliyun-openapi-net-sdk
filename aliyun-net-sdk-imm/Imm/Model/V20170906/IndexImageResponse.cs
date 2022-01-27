@@ -25,7 +25,21 @@ namespace Aliyun.Acs.imm.Model.V20170906
 	public class IndexImageResponse : AcsResponse
 	{
 
+		private string remarksArrayB;
+
+		private string modifyTime;
+
+		private string remarksC;
+
+		private string remarksD;
+
 		private string requestId;
+
+		private string remarksArrayA;
+
+		private string externalId;
+
+		private string createTime;
 
 		private string setId;
 
@@ -35,19 +49,53 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string remarksB;
 
-		private string createTime;
+		public string RemarksArrayB
+		{
+			get
+			{
+				return remarksArrayB;
+			}
+			set	
+			{
+				remarksArrayB = value;
+			}
+		}
 
-		private string modifyTime;
+		public string ModifyTime
+		{
+			get
+			{
+				return modifyTime;
+			}
+			set	
+			{
+				modifyTime = value;
+			}
+		}
 
-		private string remarksC;
+		public string RemarksC
+		{
+			get
+			{
+				return remarksC;
+			}
+			set	
+			{
+				remarksC = value;
+			}
+		}
 
-		private string remarksD;
-
-		private string externalId;
-
-		private string remarksArrayA;
-
-		private string remarksArrayB;
+		public string RemarksD
+		{
+			get
+			{
+				return remarksD;
+			}
+			set	
+			{
+				remarksD = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -58,6 +106,42 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string RemarksArrayA
+		{
+			get
+			{
+				return remarksArrayA;
+			}
+			set	
+			{
+				remarksArrayA = value;
+			}
+		}
+
+		public string ExternalId
+		{
+			get
+			{
+				return externalId;
+			}
+			set	
+			{
+				externalId = value;
+			}
+		}
+
+		public string CreateTime
+		{
+			get
+			{
+				return createTime;
+			}
+			set	
+			{
+				createTime = value;
 			}
 		}
 
@@ -106,90 +190,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				remarksB = value;
-			}
-		}
-
-		public string CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
-			}
-		}
-
-		public string ModifyTime
-		{
-			get
-			{
-				return modifyTime;
-			}
-			set	
-			{
-				modifyTime = value;
-			}
-		}
-
-		public string RemarksC
-		{
-			get
-			{
-				return remarksC;
-			}
-			set	
-			{
-				remarksC = value;
-			}
-		}
-
-		public string RemarksD
-		{
-			get
-			{
-				return remarksD;
-			}
-			set	
-			{
-				remarksD = value;
-			}
-		}
-
-		public string ExternalId
-		{
-			get
-			{
-				return externalId;
-			}
-			set	
-			{
-				externalId = value;
-			}
-		}
-
-		public string RemarksArrayA
-		{
-			get
-			{
-				return remarksArrayA;
-			}
-			set	
-			{
-				remarksArrayA = value;
-			}
-		}
-
-		public string RemarksArrayB
-		{
-			get
-			{
-				return remarksArrayB;
-			}
-			set	
-			{
-				remarksArrayB = value;
 			}
 		}
 	}

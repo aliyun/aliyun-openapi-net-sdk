@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DeleteGatewayCacheDiskResponseUnmarshaller
     {
-        public static DeleteGatewayCacheDiskResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteGatewayCacheDiskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteGatewayCacheDiskResponse deleteGatewayCacheDiskResponse = new DeleteGatewayCacheDiskResponse();
 
-			deleteGatewayCacheDiskResponse.HttpResponse = context.HttpResponse;
-			deleteGatewayCacheDiskResponse.RequestId = context.StringValue("DeleteGatewayCacheDisk.RequestId");
-			deleteGatewayCacheDiskResponse.Success = context.BooleanValue("DeleteGatewayCacheDisk.Success");
-			deleteGatewayCacheDiskResponse.Code = context.StringValue("DeleteGatewayCacheDisk.Code");
-			deleteGatewayCacheDiskResponse.Message = context.StringValue("DeleteGatewayCacheDisk.Message");
-			deleteGatewayCacheDiskResponse.TaskId = context.StringValue("DeleteGatewayCacheDisk.TaskId");
+			deleteGatewayCacheDiskResponse.HttpResponse = _ctx.HttpResponse;
+			deleteGatewayCacheDiskResponse.TaskId = _ctx.StringValue("DeleteGatewayCacheDisk.TaskId");
+			deleteGatewayCacheDiskResponse.Message = _ctx.StringValue("DeleteGatewayCacheDisk.Message");
+			deleteGatewayCacheDiskResponse.RequestId = _ctx.StringValue("DeleteGatewayCacheDisk.RequestId");
+			deleteGatewayCacheDiskResponse.Code = _ctx.StringValue("DeleteGatewayCacheDisk.Code");
+			deleteGatewayCacheDiskResponse.Success = _ctx.BooleanValue("DeleteGatewayCacheDisk.Success");
         
 			return deleteGatewayCacheDiskResponse;
         }

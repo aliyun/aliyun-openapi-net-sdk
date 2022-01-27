@@ -26,37 +26,37 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
     public class DescribePlanogramShelvesResponseUnmarshaller
     {
-        public static DescribePlanogramShelvesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribePlanogramShelvesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribePlanogramShelvesResponse describePlanogramShelvesResponse = new DescribePlanogramShelvesResponse();
 
-			describePlanogramShelvesResponse.HttpResponse = context.HttpResponse;
-			describePlanogramShelvesResponse.Code = context.StringValue("DescribePlanogramShelves.Code");
-			describePlanogramShelvesResponse.DynamicCode = context.StringValue("DescribePlanogramShelves.DynamicCode");
-			describePlanogramShelvesResponse.DynamicMessage = context.StringValue("DescribePlanogramShelves.DynamicMessage");
-			describePlanogramShelvesResponse.ErrorCode = context.StringValue("DescribePlanogramShelves.ErrorCode");
-			describePlanogramShelvesResponse.ErrorMessage = context.StringValue("DescribePlanogramShelves.ErrorMessage");
-			describePlanogramShelvesResponse.Message = context.StringValue("DescribePlanogramShelves.Message");
-			describePlanogramShelvesResponse.RequestId = context.StringValue("DescribePlanogramShelves.RequestId");
-			describePlanogramShelvesResponse.StoreId = context.StringValue("DescribePlanogramShelves.StoreId");
-			describePlanogramShelvesResponse.Success = context.BooleanValue("DescribePlanogramShelves.Success");
-			describePlanogramShelvesResponse.PageNumber = context.IntegerValue("DescribePlanogramShelves.PageNumber");
-			describePlanogramShelvesResponse.PageSize = context.IntegerValue("DescribePlanogramShelves.PageSize");
-			describePlanogramShelvesResponse.TotalCount = context.IntegerValue("DescribePlanogramShelves.TotalCount");
+			describePlanogramShelvesResponse.HttpResponse = _ctx.HttpResponse;
+			describePlanogramShelvesResponse.Code = _ctx.StringValue("DescribePlanogramShelves.Code");
+			describePlanogramShelvesResponse.DynamicCode = _ctx.StringValue("DescribePlanogramShelves.DynamicCode");
+			describePlanogramShelvesResponse.DynamicMessage = _ctx.StringValue("DescribePlanogramShelves.DynamicMessage");
+			describePlanogramShelvesResponse.ErrorCode = _ctx.StringValue("DescribePlanogramShelves.ErrorCode");
+			describePlanogramShelvesResponse.ErrorMessage = _ctx.StringValue("DescribePlanogramShelves.ErrorMessage");
+			describePlanogramShelvesResponse.Message = _ctx.StringValue("DescribePlanogramShelves.Message");
+			describePlanogramShelvesResponse.RequestId = _ctx.StringValue("DescribePlanogramShelves.RequestId");
+			describePlanogramShelvesResponse.StoreId = _ctx.StringValue("DescribePlanogramShelves.StoreId");
+			describePlanogramShelvesResponse.Success = _ctx.BooleanValue("DescribePlanogramShelves.Success");
+			describePlanogramShelvesResponse.PageNumber = _ctx.IntegerValue("DescribePlanogramShelves.PageNumber");
+			describePlanogramShelvesResponse.PageSize = _ctx.IntegerValue("DescribePlanogramShelves.PageSize");
+			describePlanogramShelvesResponse.TotalCount = _ctx.IntegerValue("DescribePlanogramShelves.TotalCount");
 
 			List<DescribePlanogramShelvesResponse.DescribePlanogramShelves_ShelfInfo> describePlanogramShelvesResponse_shelfInfos = new List<DescribePlanogramShelvesResponse.DescribePlanogramShelves_ShelfInfo>();
-			for (int i = 0; i < context.Length("DescribePlanogramShelves.ShelfInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribePlanogramShelves.ShelfInfos.Length"); i++) {
 				DescribePlanogramShelvesResponse.DescribePlanogramShelves_ShelfInfo shelfInfo = new DescribePlanogramShelvesResponse.DescribePlanogramShelves_ShelfInfo();
-				shelfInfo.Shelf = context.StringValue("DescribePlanogramShelves.ShelfInfos["+ i +"].Shelf");
-				shelfInfo.BeMatch = context.BooleanValue("DescribePlanogramShelves.ShelfInfos["+ i +"].BeMatch");
-				shelfInfo.Zone = context.StringValue("DescribePlanogramShelves.ShelfInfos["+ i +"].Zone");
-				shelfInfo.Category = context.StringValue("DescribePlanogramShelves.ShelfInfos["+ i +"].Category");
-				shelfInfo.ShelfType = context.StringValue("DescribePlanogramShelves.ShelfInfos["+ i +"].ShelfType");
+				shelfInfo.Shelf = _ctx.StringValue("DescribePlanogramShelves.ShelfInfos["+ i +"].Shelf");
+				shelfInfo.BeMatch = _ctx.BooleanValue("DescribePlanogramShelves.ShelfInfos["+ i +"].BeMatch");
+				shelfInfo.Zone = _ctx.StringValue("DescribePlanogramShelves.ShelfInfos["+ i +"].Zone");
+				shelfInfo.Category = _ctx.StringValue("DescribePlanogramShelves.ShelfInfos["+ i +"].Category");
+				shelfInfo.ShelfType = _ctx.StringValue("DescribePlanogramShelves.ShelfInfos["+ i +"].ShelfType");
 
 				List<DescribePlanogramShelvesResponse.DescribePlanogramShelves_ShelfInfo.DescribePlanogramShelves_LayerInfo> shelfInfo_layerInfos = new List<DescribePlanogramShelvesResponse.DescribePlanogramShelves_ShelfInfo.DescribePlanogramShelves_LayerInfo>();
-				for (int j = 0; j < context.Length("DescribePlanogramShelves.ShelfInfos["+ i +"].LayerInfos.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribePlanogramShelves.ShelfInfos["+ i +"].LayerInfos.Length"); j++) {
 					DescribePlanogramShelvesResponse.DescribePlanogramShelves_ShelfInfo.DescribePlanogramShelves_LayerInfo layerInfo = new DescribePlanogramShelvesResponse.DescribePlanogramShelves_ShelfInfo.DescribePlanogramShelves_LayerInfo();
-					layerInfo.Layer = context.IntegerValue("DescribePlanogramShelves.ShelfInfos["+ i +"].LayerInfos["+ j +"].Layer");
+					layerInfo.Layer = _ctx.IntegerValue("DescribePlanogramShelves.ShelfInfos["+ i +"].LayerInfos["+ j +"].Layer");
 
 					shelfInfo_layerInfos.Add(layerInfo);
 				}

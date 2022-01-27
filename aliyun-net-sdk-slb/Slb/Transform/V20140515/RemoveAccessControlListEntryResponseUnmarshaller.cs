@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 {
     public class RemoveAccessControlListEntryResponseUnmarshaller
     {
-        public static RemoveAccessControlListEntryResponse Unmarshall(UnmarshallerContext context)
+        public static RemoveAccessControlListEntryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RemoveAccessControlListEntryResponse removeAccessControlListEntryResponse = new RemoveAccessControlListEntryResponse();
 
-			removeAccessControlListEntryResponse.HttpResponse = context.HttpResponse;
-			removeAccessControlListEntryResponse.RequestId = context.StringValue("RemoveAccessControlListEntry.RequestId");
+			removeAccessControlListEntryResponse.HttpResponse = _ctx.HttpResponse;
+			removeAccessControlListEntryResponse.RequestId = _ctx.StringValue("RemoveAccessControlListEntry.RequestId");
         
 			return removeAccessControlListEntryResponse;
         }

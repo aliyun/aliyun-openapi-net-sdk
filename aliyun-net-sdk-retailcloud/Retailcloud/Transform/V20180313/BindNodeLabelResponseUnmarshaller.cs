@@ -26,15 +26,15 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class BindNodeLabelResponseUnmarshaller
     {
-        public static BindNodeLabelResponse Unmarshall(UnmarshallerContext context)
+        public static BindNodeLabelResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BindNodeLabelResponse bindNodeLabelResponse = new BindNodeLabelResponse();
 
-			bindNodeLabelResponse.HttpResponse = context.HttpResponse;
-			bindNodeLabelResponse.Code = context.IntegerValue("BindNodeLabel.Code");
-			bindNodeLabelResponse.ErrMsg = context.StringValue("BindNodeLabel.ErrMsg");
-			bindNodeLabelResponse.RequestId = context.StringValue("BindNodeLabel.RequestId");
-			bindNodeLabelResponse.Success = context.BooleanValue("BindNodeLabel.Success");
+			bindNodeLabelResponse.HttpResponse = _ctx.HttpResponse;
+			bindNodeLabelResponse.Code = _ctx.IntegerValue("BindNodeLabel.Code");
+			bindNodeLabelResponse.ErrMsg = _ctx.StringValue("BindNodeLabel.ErrMsg");
+			bindNodeLabelResponse.RequestId = _ctx.StringValue("BindNodeLabel.RequestId");
+			bindNodeLabelResponse.Success = _ctx.BooleanValue("BindNodeLabel.Success");
         
 			return bindNodeLabelResponse;
         }

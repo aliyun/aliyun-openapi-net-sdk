@@ -26,15 +26,15 @@ namespace Aliyun.Acs.nlp_automl.Transform.V20191111
 {
     public class RunSmartCallServiceResponseUnmarshaller
     {
-        public static RunSmartCallServiceResponse Unmarshall(UnmarshallerContext context)
+        public static RunSmartCallServiceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RunSmartCallServiceResponse runSmartCallServiceResponse = new RunSmartCallServiceResponse();
 
-			runSmartCallServiceResponse.HttpResponse = context.HttpResponse;
-			runSmartCallServiceResponse.RequestId = context.StringValue("RunSmartCallService.RequestId");
-			runSmartCallServiceResponse.Code = context.IntegerValue("RunSmartCallService.Code");
-			runSmartCallServiceResponse.Message = context.StringValue("RunSmartCallService.Message");
-			runSmartCallServiceResponse.Data = context.StringValue("RunSmartCallService.Data");
+			runSmartCallServiceResponse.HttpResponse = _ctx.HttpResponse;
+			runSmartCallServiceResponse.RequestId = _ctx.StringValue("RunSmartCallService.RequestId");
+			runSmartCallServiceResponse.Code = _ctx.IntegerValue("RunSmartCallService.Code");
+			runSmartCallServiceResponse.Message = _ctx.StringValue("RunSmartCallService.Message");
+			runSmartCallServiceResponse.Data = _ctx.StringValue("RunSmartCallService.Data");
         
 			return runSmartCallServiceResponse;
         }

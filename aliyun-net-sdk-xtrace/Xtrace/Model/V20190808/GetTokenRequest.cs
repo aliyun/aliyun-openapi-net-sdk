@@ -35,8 +35,8 @@ namespace Aliyun.Acs.xtrace.Model.V20190808
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.xtrace.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.xtrace.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -44,6 +44,8 @@ namespace Aliyun.Acs.xtrace.Model.V20190808
 		private string appType;
 
 		private string proxyUserId;
+
+		private bool? isForce;
 
 		public string AppType
 		{
@@ -68,6 +70,19 @@ namespace Aliyun.Acs.xtrace.Model.V20190808
 			{
 				proxyUserId = value;
 				DictionaryUtil.Add(QueryParameters, "ProxyUserId", value);
+			}
+		}
+
+		public bool? IsForce
+		{
+			get
+			{
+				return isForce;
+			}
+			set	
+			{
+				isForce = value;
+				DictionaryUtil.Add(QueryParameters, "IsForce", value.ToString());
 			}
 		}
 

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
     public class ClickToDialResponseUnmarshaller
     {
-        public static ClickToDialResponse Unmarshall(UnmarshallerContext context)
+        public static ClickToDialResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ClickToDialResponse clickToDialResponse = new ClickToDialResponse();
 
-			clickToDialResponse.HttpResponse = context.HttpResponse;
-			clickToDialResponse.RequestId = context.StringValue("ClickToDial.RequestId");
-			clickToDialResponse.CallId = context.StringValue("ClickToDial.CallId");
-			clickToDialResponse.Code = context.StringValue("ClickToDial.Code");
-			clickToDialResponse.Message = context.StringValue("ClickToDial.Message");
+			clickToDialResponse.HttpResponse = _ctx.HttpResponse;
+			clickToDialResponse.RequestId = _ctx.StringValue("ClickToDial.RequestId");
+			clickToDialResponse.CallId = _ctx.StringValue("ClickToDial.CallId");
+			clickToDialResponse.Code = _ctx.StringValue("ClickToDial.Code");
+			clickToDialResponse.Message = _ctx.StringValue("ClickToDial.Message");
         
 			return clickToDialResponse;
         }

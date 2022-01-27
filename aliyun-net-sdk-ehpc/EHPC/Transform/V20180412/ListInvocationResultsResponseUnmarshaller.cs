@@ -26,26 +26,26 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class ListInvocationResultsResponseUnmarshaller
     {
-        public static ListInvocationResultsResponse Unmarshall(UnmarshallerContext context)
+        public static ListInvocationResultsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListInvocationResultsResponse listInvocationResultsResponse = new ListInvocationResultsResponse();
 
-			listInvocationResultsResponse.HttpResponse = context.HttpResponse;
-			listInvocationResultsResponse.RequestId = context.StringValue("ListInvocationResults.RequestId");
-			listInvocationResultsResponse.TotalCount = context.IntegerValue("ListInvocationResults.TotalCount");
-			listInvocationResultsResponse.PageNumber = context.IntegerValue("ListInvocationResults.PageNumber");
-			listInvocationResultsResponse.PageSize = context.IntegerValue("ListInvocationResults.PageSize");
+			listInvocationResultsResponse.HttpResponse = _ctx.HttpResponse;
+			listInvocationResultsResponse.RequestId = _ctx.StringValue("ListInvocationResults.RequestId");
+			listInvocationResultsResponse.TotalCount = _ctx.IntegerValue("ListInvocationResults.TotalCount");
+			listInvocationResultsResponse.PageNumber = _ctx.IntegerValue("ListInvocationResults.PageNumber");
+			listInvocationResultsResponse.PageSize = _ctx.IntegerValue("ListInvocationResults.PageSize");
 
 			List<ListInvocationResultsResponse.ListInvocationResults_InvocationResult> listInvocationResultsResponse_invocationResults = new List<ListInvocationResultsResponse.ListInvocationResults_InvocationResult>();
-			for (int i = 0; i < context.Length("ListInvocationResults.InvocationResults.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListInvocationResults.InvocationResults.Length"); i++) {
 				ListInvocationResultsResponse.ListInvocationResults_InvocationResult invocationResult = new ListInvocationResultsResponse.ListInvocationResults_InvocationResult();
-				invocationResult.Success = context.BooleanValue("ListInvocationResults.InvocationResults["+ i +"].Success");
-				invocationResult.CommandId = context.StringValue("ListInvocationResults.InvocationResults["+ i +"].CommandId");
-				invocationResult.InstanceId = context.StringValue("ListInvocationResults.InvocationResults["+ i +"].InstanceId");
-				invocationResult.InvokeRecordStatus = context.StringValue("ListInvocationResults.InvocationResults["+ i +"].InvokeRecordStatus");
-				invocationResult.FinishedTime = context.StringValue("ListInvocationResults.InvocationResults["+ i +"].FinishedTime");
-				invocationResult.ExitCode = context.IntegerValue("ListInvocationResults.InvocationResults["+ i +"].ExitCode");
-				invocationResult.Message = context.StringValue("ListInvocationResults.InvocationResults["+ i +"].Message");
+				invocationResult.Success = _ctx.BooleanValue("ListInvocationResults.InvocationResults["+ i +"].Success");
+				invocationResult.CommandId = _ctx.StringValue("ListInvocationResults.InvocationResults["+ i +"].CommandId");
+				invocationResult.InstanceId = _ctx.StringValue("ListInvocationResults.InvocationResults["+ i +"].InstanceId");
+				invocationResult.InvokeRecordStatus = _ctx.StringValue("ListInvocationResults.InvocationResults["+ i +"].InvokeRecordStatus");
+				invocationResult.FinishedTime = _ctx.StringValue("ListInvocationResults.InvocationResults["+ i +"].FinishedTime");
+				invocationResult.ExitCode = _ctx.IntegerValue("ListInvocationResults.InvocationResults["+ i +"].ExitCode");
+				invocationResult.Message = _ctx.StringValue("ListInvocationResults.InvocationResults["+ i +"].Message");
 
 				listInvocationResultsResponse_invocationResults.Add(invocationResult);
 			}

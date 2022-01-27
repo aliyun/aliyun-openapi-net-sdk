@@ -26,22 +26,22 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DescribePlayVideoStatisResponseUnmarshaller
     {
-        public static DescribePlayVideoStatisResponse Unmarshall(UnmarshallerContext context)
+        public static DescribePlayVideoStatisResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribePlayVideoStatisResponse describePlayVideoStatisResponse = new DescribePlayVideoStatisResponse();
 
-			describePlayVideoStatisResponse.HttpResponse = context.HttpResponse;
-			describePlayVideoStatisResponse.RequestId = context.StringValue("DescribePlayVideoStatis.RequestId");
+			describePlayVideoStatisResponse.HttpResponse = _ctx.HttpResponse;
+			describePlayVideoStatisResponse.RequestId = _ctx.StringValue("DescribePlayVideoStatis.RequestId");
 
 			List<DescribePlayVideoStatisResponse.DescribePlayVideoStatis_VideoPlayStatisDetail> describePlayVideoStatisResponse_videoPlayStatisDetails = new List<DescribePlayVideoStatisResponse.DescribePlayVideoStatis_VideoPlayStatisDetail>();
-			for (int i = 0; i < context.Length("DescribePlayVideoStatis.VideoPlayStatisDetails.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribePlayVideoStatis.VideoPlayStatisDetails.Length"); i++) {
 				DescribePlayVideoStatisResponse.DescribePlayVideoStatis_VideoPlayStatisDetail videoPlayStatisDetail = new DescribePlayVideoStatisResponse.DescribePlayVideoStatis_VideoPlayStatisDetail();
-				videoPlayStatisDetail.Date = context.StringValue("DescribePlayVideoStatis.VideoPlayStatisDetails["+ i +"].Date");
-				videoPlayStatisDetail.PlayDuration = context.StringValue("DescribePlayVideoStatis.VideoPlayStatisDetails["+ i +"].PlayDuration");
-				videoPlayStatisDetail.VV = context.StringValue("DescribePlayVideoStatis.VideoPlayStatisDetails["+ i +"].VV");
-				videoPlayStatisDetail.UV = context.StringValue("DescribePlayVideoStatis.VideoPlayStatisDetails["+ i +"].UV");
-				videoPlayStatisDetail.PlayRange = context.StringValue("DescribePlayVideoStatis.VideoPlayStatisDetails["+ i +"].PlayRange");
-				videoPlayStatisDetail.Title = context.StringValue("DescribePlayVideoStatis.VideoPlayStatisDetails["+ i +"].Title");
+				videoPlayStatisDetail.Date = _ctx.StringValue("DescribePlayVideoStatis.VideoPlayStatisDetails["+ i +"].Date");
+				videoPlayStatisDetail.PlayDuration = _ctx.StringValue("DescribePlayVideoStatis.VideoPlayStatisDetails["+ i +"].PlayDuration");
+				videoPlayStatisDetail.VV = _ctx.StringValue("DescribePlayVideoStatis.VideoPlayStatisDetails["+ i +"].VV");
+				videoPlayStatisDetail.UV = _ctx.StringValue("DescribePlayVideoStatis.VideoPlayStatisDetails["+ i +"].UV");
+				videoPlayStatisDetail.PlayRange = _ctx.StringValue("DescribePlayVideoStatis.VideoPlayStatisDetails["+ i +"].PlayRange");
+				videoPlayStatisDetail.Title = _ctx.StringValue("DescribePlayVideoStatis.VideoPlayStatisDetails["+ i +"].Title");
 
 				describePlayVideoStatisResponse_videoPlayStatisDetails.Add(videoPlayStatisDetail);
 			}

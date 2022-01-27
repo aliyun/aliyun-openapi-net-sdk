@@ -118,6 +118,10 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string status;
 
+			private int? encryptType;
+
+			private string sourceFileSystemVersion;
+
 			public string CreateTime
 			{
 				get
@@ -235,6 +239,30 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public int? EncryptType
+			{
+				get
+				{
+					return encryptType;
+				}
+				set	
+				{
+					encryptType = value;
+				}
+			}
+
+			public string SourceFileSystemVersion
+			{
+				get
+				{
+					return sourceFileSystemVersion;
+				}
+				set	
+				{
+					sourceFileSystemVersion = value;
 				}
 			}
 		}

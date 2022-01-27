@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Dyplsapi.Transform.V20170525
 {
     public class BuySecretNoResponseUnmarshaller
     {
-        public static BuySecretNoResponse Unmarshall(UnmarshallerContext context)
+        public static BuySecretNoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BuySecretNoResponse buySecretNoResponse = new BuySecretNoResponse();
 
-			buySecretNoResponse.HttpResponse = context.HttpResponse;
-			buySecretNoResponse.RequestId = context.StringValue("BuySecretNo.RequestId");
-			buySecretNoResponse.Code = context.StringValue("BuySecretNo.Code");
-			buySecretNoResponse.Message = context.StringValue("BuySecretNo.Message");
+			buySecretNoResponse.HttpResponse = _ctx.HttpResponse;
+			buySecretNoResponse.Code = _ctx.StringValue("BuySecretNo.Code");
+			buySecretNoResponse.Message = _ctx.StringValue("BuySecretNo.Message");
+			buySecretNoResponse.RequestId = _ctx.StringValue("BuySecretNo.RequestId");
 
 			BuySecretNoResponse.BuySecretNo_SecretBuyInfoDTO secretBuyInfoDTO = new BuySecretNoResponse.BuySecretNo_SecretBuyInfoDTO();
-			secretBuyInfoDTO.SecretNo = context.StringValue("BuySecretNo.SecretBuyInfoDTO.SecretNo");
+			secretBuyInfoDTO.SecretNo = _ctx.StringValue("BuySecretNo.SecretBuyInfoDTO.SecretNo");
 			buySecretNoResponse.SecretBuyInfoDTO = secretBuyInfoDTO;
         
 			return buySecretNoResponse;

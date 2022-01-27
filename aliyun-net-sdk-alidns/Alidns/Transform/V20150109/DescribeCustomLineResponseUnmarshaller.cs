@@ -26,26 +26,26 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeCustomLineResponseUnmarshaller
     {
-        public static DescribeCustomLineResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCustomLineResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCustomLineResponse describeCustomLineResponse = new DescribeCustomLineResponse();
 
-			describeCustomLineResponse.HttpResponse = context.HttpResponse;
-			describeCustomLineResponse.RequestId = context.StringValue("DescribeCustomLine.RequestId");
-			describeCustomLineResponse.Id = context.LongValue("DescribeCustomLine.Id");
-			describeCustomLineResponse.Name = context.StringValue("DescribeCustomLine.Name");
-			describeCustomLineResponse.DomainName = context.StringValue("DescribeCustomLine.DomainName");
-			describeCustomLineResponse.CreateTime = context.StringValue("DescribeCustomLine.CreateTime");
-			describeCustomLineResponse.CreateTimestamp = context.LongValue("DescribeCustomLine.CreateTimestamp");
-			describeCustomLineResponse.IpSegments = context.StringValue("DescribeCustomLine.IpSegments");
-			describeCustomLineResponse.Code = context.StringValue("DescribeCustomLine.Code");
+			describeCustomLineResponse.HttpResponse = _ctx.HttpResponse;
+			describeCustomLineResponse.RequestId = _ctx.StringValue("DescribeCustomLine.RequestId");
+			describeCustomLineResponse.Id = _ctx.LongValue("DescribeCustomLine.Id");
+			describeCustomLineResponse.Name = _ctx.StringValue("DescribeCustomLine.Name");
+			describeCustomLineResponse.DomainName = _ctx.StringValue("DescribeCustomLine.DomainName");
+			describeCustomLineResponse.CreateTime = _ctx.StringValue("DescribeCustomLine.CreateTime");
+			describeCustomLineResponse.CreateTimestamp = _ctx.LongValue("DescribeCustomLine.CreateTimestamp");
+			describeCustomLineResponse.IpSegments = _ctx.StringValue("DescribeCustomLine.IpSegments");
+			describeCustomLineResponse.Code = _ctx.StringValue("DescribeCustomLine.Code");
 
 			List<DescribeCustomLineResponse.DescribeCustomLine_IpSegment> describeCustomLineResponse_ipSegmentList = new List<DescribeCustomLineResponse.DescribeCustomLine_IpSegment>();
-			for (int i = 0; i < context.Length("DescribeCustomLine.IpSegmentList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCustomLine.IpSegmentList.Length"); i++) {
 				DescribeCustomLineResponse.DescribeCustomLine_IpSegment ipSegment = new DescribeCustomLineResponse.DescribeCustomLine_IpSegment();
-				ipSegment.Name = context.StringValue("DescribeCustomLine.IpSegmentList["+ i +"].Name");
-				ipSegment.StartIp = context.StringValue("DescribeCustomLine.IpSegmentList["+ i +"].StartIp");
-				ipSegment.EndIp = context.StringValue("DescribeCustomLine.IpSegmentList["+ i +"].EndIp");
+				ipSegment.Name = _ctx.StringValue("DescribeCustomLine.IpSegmentList["+ i +"].Name");
+				ipSegment.StartIp = _ctx.StringValue("DescribeCustomLine.IpSegmentList["+ i +"].StartIp");
+				ipSegment.EndIp = _ctx.StringValue("DescribeCustomLine.IpSegmentList["+ i +"].EndIp");
 
 				describeCustomLineResponse_ipSegmentList.Add(ipSegment);
 			}

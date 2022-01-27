@@ -41,6 +41,18 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string plannedDeleteTime;
 
+		private string automaticRotation;
+
+		private string lastRotationDate;
+
+		private string rotationInterval;
+
+		private string nextRotationDate;
+
+		private string extendedConfig;
+
+		private string secretType;
+
 		private List<DescribeSecret_Tag> tags;
 
 		public string RequestId
@@ -136,6 +148,78 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				plannedDeleteTime = value;
+			}
+		}
+
+		public string AutomaticRotation
+		{
+			get
+			{
+				return automaticRotation;
+			}
+			set	
+			{
+				automaticRotation = value;
+			}
+		}
+
+		public string LastRotationDate
+		{
+			get
+			{
+				return lastRotationDate;
+			}
+			set	
+			{
+				lastRotationDate = value;
+			}
+		}
+
+		public string RotationInterval
+		{
+			get
+			{
+				return rotationInterval;
+			}
+			set	
+			{
+				rotationInterval = value;
+			}
+		}
+
+		public string NextRotationDate
+		{
+			get
+			{
+				return nextRotationDate;
+			}
+			set	
+			{
+				nextRotationDate = value;
+			}
+		}
+
+		public string ExtendedConfig
+		{
+			get
+			{
+				return extendedConfig;
+			}
+			set	
+			{
+				extendedConfig = value;
+			}
+		}
+
+		public string SecretType
+		{
+			get
+			{
+				return secretType;
+			}
+			set	
+			{
+				secretType = value;
 			}
 		}
 

@@ -45,6 +45,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string clientToken;
 
+		private string deleteType;
+
 		public string InstanceId
 		{
 			get
@@ -68,6 +70,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "clientToken", value);
+			}
+		}
+
+		public string DeleteType
+		{
+			get
+			{
+				return deleteType;
+			}
+			set	
+			{
+				deleteType = value;
+				DictionaryUtil.Add(QueryParameters, "deleteType", value);
 			}
 		}
 

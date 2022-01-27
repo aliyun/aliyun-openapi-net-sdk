@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class RefreshClusterResourcePoolResponseUnmarshaller
     {
-        public static RefreshClusterResourcePoolResponse Unmarshall(UnmarshallerContext context)
+        public static RefreshClusterResourcePoolResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RefreshClusterResourcePoolResponse refreshClusterResourcePoolResponse = new RefreshClusterResourcePoolResponse();
 
-			refreshClusterResourcePoolResponse.HttpResponse = context.HttpResponse;
-			refreshClusterResourcePoolResponse.RequestId = context.StringValue("RefreshClusterResourcePool.RequestId");
-			refreshClusterResourcePoolResponse.WorkFlowInstanceId = context.StringValue("RefreshClusterResourcePool.WorkFlowInstanceId");
-			refreshClusterResourcePoolResponse.OperationId = context.StringValue("RefreshClusterResourcePool.OperationId");
+			refreshClusterResourcePoolResponse.HttpResponse = _ctx.HttpResponse;
+			refreshClusterResourcePoolResponse.RequestId = _ctx.StringValue("RefreshClusterResourcePool.RequestId");
+			refreshClusterResourcePoolResponse.WorkFlowInstanceId = _ctx.StringValue("RefreshClusterResourcePool.WorkFlowInstanceId");
+			refreshClusterResourcePoolResponse.OperationId = _ctx.StringValue("RefreshClusterResourcePool.OperationId");
         
 			return refreshClusterResourcePoolResponse;
         }

@@ -25,41 +25,17 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 	public class DescribeSlowLogRecordsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string engine;
-
 		private int? totalRecordCount;
-
-		private int? pageNumber;
 
 		private int? pageRecordCount;
 
+		private string requestId;
+
+		private int? pageNumber;
+
+		private string engine;
+
 		private List<DescribeSlowLogRecords_LogRecords> items;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-			}
-		}
 
 		public int? TotalRecordCount
 		{
@@ -70,6 +46,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				totalRecordCount = value;
+			}
+		}
+
+		public int? PageRecordCount
+		{
+			get
+			{
+				return pageRecordCount;
+			}
+			set	
+			{
+				pageRecordCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -85,15 +85,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public int? PageRecordCount
+		public string Engine
 		{
 			get
 			{
-				return pageRecordCount;
+				return engine;
 			}
 			set	
 			{
-				pageRecordCount = value;
+				engine = value;
 			}
 		}
 
@@ -112,59 +112,35 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		public class DescribeSlowLogRecords_LogRecords
 		{
 
-			private string hostAddress;
-
-			private string dBName;
-
-			private string sQLText;
+			private string tableName;
 
 			private string queryTimes;
 
-			private long? docsExamined;
-
-			private long? keysExamined;
+			private string executionStartTime;
 
 			private long? returnRowCounts;
 
-			private string executionStartTime;
+			private string dBName;
+
+			private long? keysExamined;
+
+			private long? docsExamined;
+
+			private string hostAddress;
 
 			private string accountName;
 
-			private string tableName;
+			private string sQLText;
 
-			public string HostAddress
+			public string TableName
 			{
 				get
 				{
-					return hostAddress;
+					return tableName;
 				}
 				set	
 				{
-					hostAddress = value;
-				}
-			}
-
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
-				}
-			}
-
-			public string SQLText
-			{
-				get
-				{
-					return sQLText;
-				}
-				set	
-				{
-					sQLText = value;
+					tableName = value;
 				}
 			}
 
@@ -180,27 +156,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public long? DocsExamined
+			public string ExecutionStartTime
 			{
 				get
 				{
-					return docsExamined;
+					return executionStartTime;
 				}
 				set	
 				{
-					docsExamined = value;
-				}
-			}
-
-			public long? KeysExamined
-			{
-				get
-				{
-					return keysExamined;
-				}
-				set	
-				{
-					keysExamined = value;
+					executionStartTime = value;
 				}
 			}
 
@@ -216,15 +180,51 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public string ExecutionStartTime
+			public string DBName
 			{
 				get
 				{
-					return executionStartTime;
+					return dBName;
 				}
 				set	
 				{
-					executionStartTime = value;
+					dBName = value;
+				}
+			}
+
+			public long? KeysExamined
+			{
+				get
+				{
+					return keysExamined;
+				}
+				set	
+				{
+					keysExamined = value;
+				}
+			}
+
+			public long? DocsExamined
+			{
+				get
+				{
+					return docsExamined;
+				}
+				set	
+				{
+					docsExamined = value;
+				}
+			}
+
+			public string HostAddress
+			{
+				get
+				{
+					return hostAddress;
+				}
+				set	
+				{
+					hostAddress = value;
 				}
 			}
 
@@ -240,15 +240,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public string TableName
+			public string SQLText
 			{
 				get
 				{
-					return tableName;
+					return sQLText;
 				}
 				set	
 				{
-					tableName = value;
+					sQLText = value;
 				}
 			}
 		}

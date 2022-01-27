@@ -26,35 +26,35 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetImageInfoResponseUnmarshaller
     {
-        public static GetImageInfoResponse Unmarshall(UnmarshallerContext context)
+        public static GetImageInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetImageInfoResponse getImageInfoResponse = new GetImageInfoResponse();
 
-			getImageInfoResponse.HttpResponse = context.HttpResponse;
-			getImageInfoResponse.RequestId = context.StringValue("GetImageInfo.RequestId");
+			getImageInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getImageInfoResponse.RequestId = _ctx.StringValue("GetImageInfo.RequestId");
 
 			GetImageInfoResponse.GetImageInfo_ImageInfo imageInfo = new GetImageInfoResponse.GetImageInfo_ImageInfo();
-			imageInfo.ImageId = context.StringValue("GetImageInfo.ImageInfo.ImageId");
-			imageInfo.Title = context.StringValue("GetImageInfo.ImageInfo.Title");
-			imageInfo.CreationTime = context.StringValue("GetImageInfo.ImageInfo.CreationTime");
-			imageInfo.ImageType = context.StringValue("GetImageInfo.ImageInfo.ImageType");
-			imageInfo.Tags = context.StringValue("GetImageInfo.ImageInfo.Tags");
-			imageInfo.URL = context.StringValue("GetImageInfo.ImageInfo.URL");
-			imageInfo.CateId = context.LongValue("GetImageInfo.ImageInfo.CateId");
-			imageInfo.CateName = context.StringValue("GetImageInfo.ImageInfo.CateName");
-			imageInfo.Description = context.StringValue("GetImageInfo.ImageInfo.Description");
-			imageInfo.StorageLocation = context.StringValue("GetImageInfo.ImageInfo.StorageLocation");
-			imageInfo.Status = context.StringValue("GetImageInfo.ImageInfo.Status");
-			imageInfo.AppId = context.StringValue("GetImageInfo.ImageInfo.AppId");
-			imageInfo.RegionId = context.StringValue("GetImageInfo.ImageInfo.RegionId");
-			imageInfo.AuditStatus = context.StringValue("GetImageInfo.ImageInfo.AuditStatus");
+			imageInfo.ImageId = _ctx.StringValue("GetImageInfo.ImageInfo.ImageId");
+			imageInfo.Title = _ctx.StringValue("GetImageInfo.ImageInfo.Title");
+			imageInfo.CreationTime = _ctx.StringValue("GetImageInfo.ImageInfo.CreationTime");
+			imageInfo.ImageType = _ctx.StringValue("GetImageInfo.ImageInfo.ImageType");
+			imageInfo.Tags = _ctx.StringValue("GetImageInfo.ImageInfo.Tags");
+			imageInfo.URL = _ctx.StringValue("GetImageInfo.ImageInfo.URL");
+			imageInfo.CateId = _ctx.LongValue("GetImageInfo.ImageInfo.CateId");
+			imageInfo.CateName = _ctx.StringValue("GetImageInfo.ImageInfo.CateName");
+			imageInfo.Description = _ctx.StringValue("GetImageInfo.ImageInfo.Description");
+			imageInfo.StorageLocation = _ctx.StringValue("GetImageInfo.ImageInfo.StorageLocation");
+			imageInfo.Status = _ctx.StringValue("GetImageInfo.ImageInfo.Status");
+			imageInfo.AppId = _ctx.StringValue("GetImageInfo.ImageInfo.AppId");
+			imageInfo.RegionId = _ctx.StringValue("GetImageInfo.ImageInfo.RegionId");
+			imageInfo.AuditStatus = _ctx.StringValue("GetImageInfo.ImageInfo.AuditStatus");
 
 			GetImageInfoResponse.GetImageInfo_ImageInfo.GetImageInfo_Mezzanine mezzanine = new GetImageInfoResponse.GetImageInfo_ImageInfo.GetImageInfo_Mezzanine();
-			mezzanine.OriginalFileName = context.StringValue("GetImageInfo.ImageInfo.Mezzanine.OriginalFileName");
-			mezzanine.FileSize = context.StringValue("GetImageInfo.ImageInfo.Mezzanine.FileSize");
-			mezzanine.Width = context.IntegerValue("GetImageInfo.ImageInfo.Mezzanine.Width");
-			mezzanine.Height = context.IntegerValue("GetImageInfo.ImageInfo.Mezzanine.Height");
-			mezzanine.FileURL = context.StringValue("GetImageInfo.ImageInfo.Mezzanine.FileURL");
+			mezzanine.OriginalFileName = _ctx.StringValue("GetImageInfo.ImageInfo.Mezzanine.OriginalFileName");
+			mezzanine.FileSize = _ctx.StringValue("GetImageInfo.ImageInfo.Mezzanine.FileSize");
+			mezzanine.Width = _ctx.IntegerValue("GetImageInfo.ImageInfo.Mezzanine.Width");
+			mezzanine.Height = _ctx.IntegerValue("GetImageInfo.ImageInfo.Mezzanine.Height");
+			mezzanine.FileURL = _ctx.StringValue("GetImageInfo.ImageInfo.Mezzanine.FileURL");
 			imageInfo.Mezzanine = mezzanine;
 			getImageInfoResponse.ImageInfo = imageInfo;
         

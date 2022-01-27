@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DeployGatewayResponseUnmarshaller
     {
-        public static DeployGatewayResponse Unmarshall(UnmarshallerContext context)
+        public static DeployGatewayResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeployGatewayResponse deployGatewayResponse = new DeployGatewayResponse();
 
-			deployGatewayResponse.HttpResponse = context.HttpResponse;
-			deployGatewayResponse.RequestId = context.StringValue("DeployGateway.RequestId");
-			deployGatewayResponse.Success = context.BooleanValue("DeployGateway.Success");
-			deployGatewayResponse.Code = context.StringValue("DeployGateway.Code");
-			deployGatewayResponse.Message = context.StringValue("DeployGateway.Message");
-			deployGatewayResponse.TaskId = context.StringValue("DeployGateway.TaskId");
+			deployGatewayResponse.HttpResponse = _ctx.HttpResponse;
+			deployGatewayResponse.TaskId = _ctx.StringValue("DeployGateway.TaskId");
+			deployGatewayResponse.Message = _ctx.StringValue("DeployGateway.Message");
+			deployGatewayResponse.RequestId = _ctx.StringValue("DeployGateway.RequestId");
+			deployGatewayResponse.Code = _ctx.StringValue("DeployGateway.Code");
+			deployGatewayResponse.Success = _ctx.BooleanValue("DeployGateway.Success");
         
 			return deployGatewayResponse;
         }

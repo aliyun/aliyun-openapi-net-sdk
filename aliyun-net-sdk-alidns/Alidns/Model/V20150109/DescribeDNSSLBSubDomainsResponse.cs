@@ -106,6 +106,8 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 			private string type;
 
+			private List<DescribeDNSSLBSubDomains_LineAlgorithm> lineAlgorithms;
+
 			public string SubDomain
 			{
 				get
@@ -151,6 +153,50 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					type = value;
+				}
+			}
+
+			public List<DescribeDNSSLBSubDomains_LineAlgorithm> LineAlgorithms
+			{
+				get
+				{
+					return lineAlgorithms;
+				}
+				set	
+				{
+					lineAlgorithms = value;
+				}
+			}
+
+			public class DescribeDNSSLBSubDomains_LineAlgorithm
+			{
+
+				private string line;
+
+				private bool? open;
+
+				public string Line
+				{
+					get
+					{
+						return line;
+					}
+					set	
+					{
+						line = value;
+					}
+				}
+
+				public bool? Open
+				{
+					get
+					{
+						return open;
+					}
+					set	
+					{
+						open = value;
+					}
 				}
 			}
 		}

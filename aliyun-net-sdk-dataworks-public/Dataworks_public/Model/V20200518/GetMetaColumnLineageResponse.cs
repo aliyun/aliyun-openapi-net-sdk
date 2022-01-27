@@ -175,6 +175,12 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private string columnGuid;
 
+				private string clusterId;
+
+				private string databaseName;
+
+				private string tableName;
+
 				public string ColumnName
 				{
 					get
@@ -196,6 +202,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						columnGuid = value;
+					}
+				}
+
+				public string ClusterId
+				{
+					get
+					{
+						return clusterId;
+					}
+					set	
+					{
+						clusterId = value;
+					}
+				}
+
+				public string DatabaseName
+				{
+					get
+					{
+						return databaseName;
+					}
+					set	
+					{
+						databaseName = value;
+					}
+				}
+
+				public string TableName
+				{
+					get
+					{
+						return tableName;
+					}
+					set	
+					{
+						tableName = value;
 					}
 				}
 			}

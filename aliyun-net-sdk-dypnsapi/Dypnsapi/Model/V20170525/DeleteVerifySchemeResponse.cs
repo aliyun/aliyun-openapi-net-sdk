@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 	public class DeleteVerifySchemeResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string code;
 
 		private string message;
 
-		private bool? result;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private bool? result;
 
 		public string Code
 		{
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

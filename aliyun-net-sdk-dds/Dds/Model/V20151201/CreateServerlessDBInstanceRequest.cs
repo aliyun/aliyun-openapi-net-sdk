@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class CreateServerlessDBInstanceRequest : RpcAcsRequest<CreateServerlessDBInstanceResponse>
     {
         public CreateServerlessDBInstanceRequest()
-            : base("Dds", "2015-12-01", "CreateServerlessDBInstance", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "CreateServerlessDBInstance", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
             }
 			Method = MethodType.POST;
         }
+
+		private string capacityUnit;
 
 		private long? resourceOwnerId;
 
@@ -49,8 +51,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string periodPriceType;
 
 		private string engineVersion;
-
-		private string networkType;
 
 		private string storageEngine;
 
@@ -82,7 +82,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string zoneId;
 
-		private string chargeType;
+		public string CapacityUnit
+		{
+			get
+			{
+				return capacityUnit;
+			}
+			set	
+			{
+				capacityUnit = value;
+				DictionaryUtil.Add(QueryParameters, "CapacityUnit", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -146,19 +157,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				engineVersion = value;
 				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
-			}
-		}
-
-		public string NetworkType
-		{
-			get
-			{
-				return networkType;
-			}
-			set	
-			{
-				networkType = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
 			}
 		}
 
@@ -354,19 +352,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-		public string ChargeType
-		{
-			get
-			{
-				return chargeType;
-			}
-			set	
-			{
-				chargeType = value;
-				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
 			}
 		}
 

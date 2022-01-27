@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class SaveTaskForUpdatingRegistrantInfoByIdentityCredentialResponseUnmarshaller
     {
-        public static SaveTaskForUpdatingRegistrantInfoByIdentityCredentialResponse Unmarshall(UnmarshallerContext context)
+        public static SaveTaskForUpdatingRegistrantInfoByIdentityCredentialResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SaveTaskForUpdatingRegistrantInfoByIdentityCredentialResponse saveTaskForUpdatingRegistrantInfoByIdentityCredentialResponse = new SaveTaskForUpdatingRegistrantInfoByIdentityCredentialResponse();
 
-			saveTaskForUpdatingRegistrantInfoByIdentityCredentialResponse.HttpResponse = context.HttpResponse;
-			saveTaskForUpdatingRegistrantInfoByIdentityCredentialResponse.RequestId = context.StringValue("SaveTaskForUpdatingRegistrantInfoByIdentityCredential.RequestId");
-			saveTaskForUpdatingRegistrantInfoByIdentityCredentialResponse.TaskNo = context.StringValue("SaveTaskForUpdatingRegistrantInfoByIdentityCredential.TaskNo");
+			saveTaskForUpdatingRegistrantInfoByIdentityCredentialResponse.HttpResponse = _ctx.HttpResponse;
+			saveTaskForUpdatingRegistrantInfoByIdentityCredentialResponse.RequestId = _ctx.StringValue("SaveTaskForUpdatingRegistrantInfoByIdentityCredential.RequestId");
+			saveTaskForUpdatingRegistrantInfoByIdentityCredentialResponse.TaskNo = _ctx.StringValue("SaveTaskForUpdatingRegistrantInfoByIdentityCredential.TaskNo");
         
 			return saveTaskForUpdatingRegistrantInfoByIdentityCredentialResponse;
         }

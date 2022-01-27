@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.saf;
 using Aliyun.Acs.saf.Transform;
 using Aliyun.Acs.saf.Transform.V20190521;
 
@@ -30,12 +31,12 @@ namespace Aliyun.Acs.saf.Model.V20190521
     public class ExecuteRequestSGRequest : RpcAcsRequest<ExecuteRequestSGResponse>
     {
         public ExecuteRequestSGRequest()
-            : base("saf", "2019-05-21", "ExecuteRequestSG", "saf", "openAPI")
+            : base("saf", "2019-05-21", "ExecuteRequestSG")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.saf.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.saf.Endpoint.endpointRegionalType, null);
             }
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
@@ -44,6 +45,8 @@ namespace Aliyun.Acs.saf.Model.V20190521
 		private string serviceParameters;
 
 		private string service;
+
+		private string lang;
 
 		public string ServiceParameters
 		{
@@ -68,6 +71,19 @@ namespace Aliyun.Acs.saf.Model.V20190521
 			{
 				service = value;
 				DictionaryUtil.Add(QueryParameters, "Service", value);
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 

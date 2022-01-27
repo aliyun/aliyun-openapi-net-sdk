@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20180916
 {
     public class ModifyDeviceInfoResponseUnmarshaller
     {
-        public static ModifyDeviceInfoResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDeviceInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyDeviceInfoResponse modifyDeviceInfoResponse = new ModifyDeviceInfoResponse();
 
-			modifyDeviceInfoResponse.HttpResponse = context.HttpResponse;
-			modifyDeviceInfoResponse.RequestId = context.StringValue("ModifyDeviceInfo.RequestId");
-			modifyDeviceInfoResponse.DeviceId = context.StringValue("ModifyDeviceInfo.DeviceId");
-			modifyDeviceInfoResponse.UserDeviceId = context.StringValue("ModifyDeviceInfo.UserDeviceId");
-			modifyDeviceInfoResponse.BizType = context.StringValue("ModifyDeviceInfo.BizType");
-			modifyDeviceInfoResponse.BeginDay = context.StringValue("ModifyDeviceInfo.BeginDay");
-			modifyDeviceInfoResponse.ExpiredDay = context.StringValue("ModifyDeviceInfo.ExpiredDay");
+			modifyDeviceInfoResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDeviceInfoResponse.RequestId = _ctx.StringValue("ModifyDeviceInfo.RequestId");
+			modifyDeviceInfoResponse.DeviceId = _ctx.StringValue("ModifyDeviceInfo.DeviceId");
+			modifyDeviceInfoResponse.UserDeviceId = _ctx.StringValue("ModifyDeviceInfo.UserDeviceId");
+			modifyDeviceInfoResponse.BizType = _ctx.StringValue("ModifyDeviceInfo.BizType");
+			modifyDeviceInfoResponse.BeginDay = _ctx.StringValue("ModifyDeviceInfo.BeginDay");
+			modifyDeviceInfoResponse.ExpiredDay = _ctx.StringValue("ModifyDeviceInfo.ExpiredDay");
         
 			return modifyDeviceInfoResponse;
         }

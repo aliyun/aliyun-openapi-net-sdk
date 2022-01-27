@@ -26,11 +26,11 @@ namespace Aliyun.Acs.cr.Transform.V20160607
 {
     public class CancelRepoBuildResponseUnmarshaller
     {
-        public static CancelRepoBuildResponse Unmarshall(UnmarshallerContext context)
+        public static CancelRepoBuildResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CancelRepoBuildResponse cancelRepoBuildResponse = new CancelRepoBuildResponse();
 
-			cancelRepoBuildResponse.HttpResponse = context.HttpResponse;
+			cancelRepoBuildResponse.HttpResponse = _ctx.HttpResponse;
         
 			return cancelRepoBuildResponse;
         }

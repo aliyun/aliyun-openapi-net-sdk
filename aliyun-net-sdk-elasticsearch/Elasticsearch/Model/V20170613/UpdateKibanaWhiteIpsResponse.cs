@@ -58,6 +58,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private List<string> kibanaIPWhitelist;
 
+			private List<string> kibanaPrivateIPWhitelist;
+
 			public List<string> KibanaIPWhitelist
 			{
 				get
@@ -67,6 +69,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					kibanaIPWhitelist = value;
+				}
+			}
+
+			public List<string> KibanaPrivateIPWhitelist
+			{
+				get
+				{
+					return kibanaPrivateIPWhitelist;
+				}
+				set	
+				{
+					kibanaPrivateIPWhitelist = value;
 				}
 			}
 		}

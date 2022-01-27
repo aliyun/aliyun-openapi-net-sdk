@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class BindDriverToEdgeInstanceResponseUnmarshaller
     {
-        public static BindDriverToEdgeInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static BindDriverToEdgeInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BindDriverToEdgeInstanceResponse bindDriverToEdgeInstanceResponse = new BindDriverToEdgeInstanceResponse();
 
-			bindDriverToEdgeInstanceResponse.HttpResponse = context.HttpResponse;
-			bindDriverToEdgeInstanceResponse.RequestId = context.StringValue("BindDriverToEdgeInstance.RequestId");
-			bindDriverToEdgeInstanceResponse.Success = context.BooleanValue("BindDriverToEdgeInstance.Success");
-			bindDriverToEdgeInstanceResponse.Code = context.StringValue("BindDriverToEdgeInstance.Code");
-			bindDriverToEdgeInstanceResponse.ErrorMessage = context.StringValue("BindDriverToEdgeInstance.ErrorMessage");
+			bindDriverToEdgeInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			bindDriverToEdgeInstanceResponse.RequestId = _ctx.StringValue("BindDriverToEdgeInstance.RequestId");
+			bindDriverToEdgeInstanceResponse.Success = _ctx.BooleanValue("BindDriverToEdgeInstance.Success");
+			bindDriverToEdgeInstanceResponse.Code = _ctx.StringValue("BindDriverToEdgeInstance.Code");
+			bindDriverToEdgeInstanceResponse.ErrorMessage = _ctx.StringValue("BindDriverToEdgeInstance.ErrorMessage");
         
 			return bindDriverToEdgeInstanceResponse;
         }

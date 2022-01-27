@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class DisableThingResponseUnmarshaller
     {
-        public static DisableThingResponse Unmarshall(UnmarshallerContext context)
+        public static DisableThingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DisableThingResponse disableThingResponse = new DisableThingResponse();
 
-			disableThingResponse.HttpResponse = context.HttpResponse;
-			disableThingResponse.RequestId = context.StringValue("DisableThing.RequestId");
-			disableThingResponse.Success = context.BooleanValue("DisableThing.Success");
-			disableThingResponse.Code = context.StringValue("DisableThing.Code");
-			disableThingResponse.ErrorMessage = context.StringValue("DisableThing.ErrorMessage");
+			disableThingResponse.HttpResponse = _ctx.HttpResponse;
+			disableThingResponse.RequestId = _ctx.StringValue("DisableThing.RequestId");
+			disableThingResponse.Success = _ctx.BooleanValue("DisableThing.Success");
+			disableThingResponse.Code = _ctx.StringValue("DisableThing.Code");
+			disableThingResponse.ErrorMessage = _ctx.StringValue("DisableThing.ErrorMessage");
         
 			return disableThingResponse;
         }

@@ -132,12 +132,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 			private string tagsModifyTime;
 
-			private string celebrityStatus;
-
-			private string celebrityModifyTime;
-
-			private string celebrityFailReason;
-
 			private string tagsStatus;
 
 			private string remarksC;
@@ -175,8 +169,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			private List<ListImages_TagsItem> tags;
 
 			private List<ListImages_OCRItem> oCR;
-
-			private List<ListImages_CelebrityItem> celebrity;
 
 			private ListImages_ImageQuality imageQuality;
 
@@ -470,42 +462,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
-			public string CelebrityStatus
-			{
-				get
-				{
-					return celebrityStatus;
-				}
-				set	
-				{
-					celebrityStatus = value;
-				}
-			}
-
-			public string CelebrityModifyTime
-			{
-				get
-				{
-					return celebrityModifyTime;
-				}
-				set	
-				{
-					celebrityModifyTime = value;
-				}
-			}
-
-			public string CelebrityFailReason
-			{
-				get
-				{
-					return celebrityFailReason;
-				}
-				set	
-				{
-					celebrityFailReason = value;
-				}
-			}
-
 			public string TagsStatus
 			{
 				get
@@ -731,18 +687,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				set	
 				{
 					oCR = value;
-				}
-			}
-
-			public List<ListImages_CelebrityItem> Celebrity
-			{
-				get
-				{
-					return celebrity;
-				}
-				set	
-				{
-					celebrity = value;
 				}
 			}
 
@@ -1156,13 +1100,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 					private string glasses;
 
-					private float? raceConfidence;
-
 					private string beard;
 
 					private float? maskConfidence;
-
-					private string race;
 
 					private float? beardConfidence;
 
@@ -1196,18 +1136,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						}
 					}
 
-					public float? RaceConfidence
-					{
-						get
-						{
-							return raceConfidence;
-						}
-						set	
-						{
-							raceConfidence = value;
-						}
-					}
-
 					public string Beard
 					{
 						get
@@ -1229,18 +1157,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						set	
 						{
 							maskConfidence = value;
-						}
-					}
-
-					public string Race
-					{
-						get
-						{
-							return race;
-						}
-						set	
-						{
-							race = value;
 						}
 					}
 
@@ -1506,140 +1422,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 
 				public class ListImages_OCRBoundary
-				{
-
-					private int? left;
-
-					private int? left1;
-
-					private int? width;
-
-					private int? height;
-
-					public int? Left
-					{
-						get
-						{
-							return left;
-						}
-						set	
-						{
-							left = value;
-						}
-					}
-
-					public int? Left1
-					{
-						get
-						{
-							return left1;
-						}
-						set	
-						{
-							left1 = value;
-						}
-					}
-
-					public int? Width
-					{
-						get
-						{
-							return width;
-						}
-						set	
-						{
-							width = value;
-						}
-					}
-
-					public int? Height
-					{
-						get
-						{
-							return height;
-						}
-						set	
-						{
-							height = value;
-						}
-					}
-				}
-			}
-
-			public class ListImages_CelebrityItem
-			{
-
-				private string celebrityName;
-
-				private string celebrityGender;
-
-				private float? celebrityConfidence;
-
-				private string celebrityLibraryName;
-
-				private ListImages_CelebrityBoundary celebrityBoundary;
-
-				public string CelebrityName
-				{
-					get
-					{
-						return celebrityName;
-					}
-					set	
-					{
-						celebrityName = value;
-					}
-				}
-
-				public string CelebrityGender
-				{
-					get
-					{
-						return celebrityGender;
-					}
-					set	
-					{
-						celebrityGender = value;
-					}
-				}
-
-				public float? CelebrityConfidence
-				{
-					get
-					{
-						return celebrityConfidence;
-					}
-					set	
-					{
-						celebrityConfidence = value;
-					}
-				}
-
-				public string CelebrityLibraryName
-				{
-					get
-					{
-						return celebrityLibraryName;
-					}
-					set	
-					{
-						celebrityLibraryName = value;
-					}
-				}
-
-				public ListImages_CelebrityBoundary CelebrityBoundary
-				{
-					get
-					{
-						return celebrityBoundary;
-					}
-					set	
-					{
-						celebrityBoundary = value;
-					}
-				}
-
-				public class ListImages_CelebrityBoundary
 				{
 
 					private int? left;

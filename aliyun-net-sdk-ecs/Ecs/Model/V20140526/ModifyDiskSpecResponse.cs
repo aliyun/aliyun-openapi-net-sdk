@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -29,6 +29,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string taskId;
 
+		private string orderId;
+
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +44,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "TaskId")]
 		public string TaskId
 		{
 			get
@@ -50,6 +54,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				taskId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "OrderId")]
+		public string OrderId
+		{
+			get
+			{
+				return orderId;
+			}
+			set	
+			{
+				orderId = value;
 			}
 		}
 	}

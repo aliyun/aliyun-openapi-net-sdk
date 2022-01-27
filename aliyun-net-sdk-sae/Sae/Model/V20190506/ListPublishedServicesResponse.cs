@@ -25,31 +25,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class ListPublishedServicesResponse : AcsResponse
 	{
 
-		private string code;
-
 		private string message;
 
 		private string requestId;
 
-		private bool? success;
+		private string traceId;
 
 		private string errorCode;
 
-		private string traceId;
+		private string code;
+
+		private bool? success;
 
 		private List<ListPublishedServices_DataItem> data;
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public string Message
 		{
@@ -75,15 +63,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public bool? Success
+		public string TraceId
 		{
 			get
 			{
-				return success;
+				return traceId;
 			}
 			set	
 			{
-				success = value;
+				traceId = value;
 			}
 		}
 
@@ -99,15 +87,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string TraceId
+		public string Code
 		{
 			get
 			{
-				return traceId;
+				return code;
 			}
 			set	
 			{
-				traceId = value;
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -126,31 +126,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class ListPublishedServices_DataItem
 		{
 
-			private string appId;
-
 			private string group2Ip;
-
-			private string name;
 
 			private string type;
 
+			private string appId;
+
 			private string version;
+
+			private string name;
 
 			private List<string> groups;
 
 			private List<string> ips;
-
-			public string AppId
-			{
-				get
-				{
-					return appId;
-				}
-				set	
-				{
-					appId = value;
-				}
-			}
 
 			public string Group2Ip
 			{
@@ -161,18 +149,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					group2Ip = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
 				}
 			}
 
@@ -188,6 +164,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
+			public string AppId
+			{
+				get
+				{
+					return appId;
+				}
+				set	
+				{
+					appId = value;
+				}
+			}
+
 			public string Version
 			{
 				get
@@ -197,6 +185,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					version = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 

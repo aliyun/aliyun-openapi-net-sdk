@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 {
     public class DescribeIpWhitelistGroupsResponseUnmarshaller
     {
-        public static DescribeIpWhitelistGroupsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeIpWhitelistGroupsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeIpWhitelistGroupsResponse describeIpWhitelistGroupsResponse = new DescribeIpWhitelistGroupsResponse();
 
-			describeIpWhitelistGroupsResponse.HttpResponse = context.HttpResponse;
-			describeIpWhitelistGroupsResponse.RequestId = context.StringValue("DescribeIpWhitelistGroups.RequestId");
+			describeIpWhitelistGroupsResponse.HttpResponse = _ctx.HttpResponse;
+			describeIpWhitelistGroupsResponse.RequestId = _ctx.StringValue("DescribeIpWhitelistGroups.RequestId");
 
 			List<DescribeIpWhitelistGroupsResponse.DescribeIpWhitelistGroups_Group> describeIpWhitelistGroupsResponse_groups = new List<DescribeIpWhitelistGroupsResponse.DescribeIpWhitelistGroups_Group>();
-			for (int i = 0; i < context.Length("DescribeIpWhitelistGroups.Groups.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeIpWhitelistGroups.Groups.Length"); i++) {
 				DescribeIpWhitelistGroupsResponse.DescribeIpWhitelistGroups_Group group = new DescribeIpWhitelistGroupsResponse.DescribeIpWhitelistGroups_Group();
-				group.GroupName = context.StringValue("DescribeIpWhitelistGroups.Groups["+ i +"].GroupName");
-				group.IpVersion = context.IntegerValue("DescribeIpWhitelistGroups.Groups["+ i +"].IpVersion");
+				group.GroupName = _ctx.StringValue("DescribeIpWhitelistGroups.Groups["+ i +"].GroupName");
+				group.IpVersion = _ctx.IntegerValue("DescribeIpWhitelistGroups.Groups["+ i +"].IpVersion");
 
 				List<string> group_ipList = new List<string>();
-				for (int j = 0; j < context.Length("DescribeIpWhitelistGroups.Groups["+ i +"].IpList.Length"); j++) {
-					group_ipList.Add(context.StringValue("DescribeIpWhitelistGroups.Groups["+ i +"].IpList["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeIpWhitelistGroups.Groups["+ i +"].IpList.Length"); j++) {
+					group_ipList.Add(_ctx.StringValue("DescribeIpWhitelistGroups.Groups["+ i +"].IpList["+ j +"]"));
 				}
 				group.IpList = group_ipList;
 

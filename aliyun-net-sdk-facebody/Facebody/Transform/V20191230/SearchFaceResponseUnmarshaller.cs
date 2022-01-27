@@ -42,17 +42,18 @@ namespace Aliyun.Acs.facebody.Transform.V20191230
 				SearchFaceResponse.SearchFace_Data.SearchFace_MatchListItem.SearchFace_Location location = new SearchFaceResponse.SearchFace_Data.SearchFace_MatchListItem.SearchFace_Location();
 				location.X = _ctx.IntegerValue("SearchFace.Data.MatchList["+ i +"].Location.X");
 				location.Y = _ctx.IntegerValue("SearchFace.Data.MatchList["+ i +"].Location.Y");
-				location.Width = _ctx.IntegerValue("SearchFace.Data.MatchList["+ i +"].Location.Width");
 				location.Height = _ctx.IntegerValue("SearchFace.Data.MatchList["+ i +"].Location.Height");
+				location.Width = _ctx.IntegerValue("SearchFace.Data.MatchList["+ i +"].Location.Width");
 				matchListItem.Location = location;
 
 				List<SearchFaceResponse.SearchFace_Data.SearchFace_MatchListItem.SearchFace_FaceItemsItem> matchListItem_faceItems = new List<SearchFaceResponse.SearchFace_Data.SearchFace_MatchListItem.SearchFace_FaceItemsItem>();
 				for (int j = 0; j < _ctx.Length("SearchFace.Data.MatchList["+ i +"].FaceItems.Length"); j++) {
 					SearchFaceResponse.SearchFace_Data.SearchFace_MatchListItem.SearchFace_FaceItemsItem faceItemsItem = new SearchFaceResponse.SearchFace_Data.SearchFace_MatchListItem.SearchFace_FaceItemsItem();
 					faceItemsItem.FaceId = _ctx.StringValue("SearchFace.Data.MatchList["+ i +"].FaceItems["+ j +"].FaceId");
-					faceItemsItem.Score = _ctx.FloatValue("SearchFace.Data.MatchList["+ i +"].FaceItems["+ j +"].Score");
-					faceItemsItem.ExtraData = _ctx.StringValue("SearchFace.Data.MatchList["+ i +"].FaceItems["+ j +"].ExtraData");
 					faceItemsItem.EntityId = _ctx.StringValue("SearchFace.Data.MatchList["+ i +"].FaceItems["+ j +"].EntityId");
+					faceItemsItem.Score = _ctx.FloatValue("SearchFace.Data.MatchList["+ i +"].FaceItems["+ j +"].Score");
+					faceItemsItem.DbName = _ctx.StringValue("SearchFace.Data.MatchList["+ i +"].FaceItems["+ j +"].DbName");
+					faceItemsItem.ExtraData = _ctx.StringValue("SearchFace.Data.MatchList["+ i +"].FaceItems["+ j +"].ExtraData");
 
 					matchListItem_faceItems.Add(faceItemsItem);
 				}

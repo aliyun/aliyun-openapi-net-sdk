@@ -25,41 +25,29 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class DescribeChangeOrderResponse : AcsResponse
 	{
 
-		private string code;
-
-		private string errorCode;
+		private string requestId;
 
 		private string message;
 
-		private bool? success;
-
 		private string traceId;
 
-		private string requestId;
+		private string errorCode;
+
+		private string code;
+
+		private bool? success;
 
 		private DescribeChangeOrder_Data data;
 
-		public string Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				requestId = value;
 			}
 		}
 
@@ -75,18 +63,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
 		public string TraceId
 		{
 			get
@@ -99,15 +75,39 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string RequestId
+		public string ErrorCode
 		{
 			get
 			{
-				return requestId;
+				return errorCode;
 			}
 			set	
 			{
-				requestId = value;
+				errorCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -126,85 +126,89 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class DescribeChangeOrder_Data
 		{
 
-			private string appName;
+			private int? status;
 
-			private bool? auto;
+			private int? subStatus;
 
-			private int? batchCount;
+			private string approvalId;
 
-			private string batchType;
+			private string errorMessage;
 
 			private int? batchWaitTime;
 
-			private string changeOrderId;
-
-			private string coType;
-
-			private string coTypeCode;
-
 			private string createTime;
 
-			private string currentPipelineId;
+			private int? batchCount;
 
-			private string description;
-
-			private int? status;
+			private string coTypeCode;
 
 			private bool? supportAbortFreeze;
 
 			private bool? supportRollback;
 
-			private string errorMessage;
+			private string changeOrderId;
+
+			private string appName;
+
+			private string batchType;
+
+			private string description;
+
+			private string coType;
+
+			private bool? auto;
+
+			private string currentPipelineId;
 
 			private List<DescribeChangeOrder_Pipeline> pipelines;
 
 			private List<string> coTargets;
 
-			public string AppName
+			public int? Status
 			{
 				get
 				{
-					return appName;
+					return status;
 				}
 				set	
 				{
-					appName = value;
+					status = value;
 				}
 			}
 
-			public bool? Auto
+			public int? SubStatus
 			{
 				get
 				{
-					return auto;
+					return subStatus;
 				}
 				set	
 				{
-					auto = value;
+					subStatus = value;
 				}
 			}
 
-			public int? BatchCount
+			public string ApprovalId
 			{
 				get
 				{
-					return batchCount;
+					return approvalId;
 				}
 				set	
 				{
-					batchCount = value;
+					approvalId = value;
 				}
 			}
 
-			public string BatchType
+			public string ErrorMessage
 			{
 				get
 				{
-					return batchType;
+					return errorMessage;
 				}
 				set	
 				{
-					batchType = value;
+					errorMessage = value;
 				}
 			}
 
@@ -220,42 +224,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string ChangeOrderId
-			{
-				get
-				{
-					return changeOrderId;
-				}
-				set	
-				{
-					changeOrderId = value;
-				}
-			}
-
-			public string CoType
-			{
-				get
-				{
-					return coType;
-				}
-				set	
-				{
-					coType = value;
-				}
-			}
-
-			public string CoTypeCode
-			{
-				get
-				{
-					return coTypeCode;
-				}
-				set	
-				{
-					coTypeCode = value;
-				}
-			}
-
 			public string CreateTime
 			{
 				get
@@ -268,39 +236,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string CurrentPipelineId
+			public int? BatchCount
 			{
 				get
 				{
-					return currentPipelineId;
+					return batchCount;
 				}
 				set	
 				{
-					currentPipelineId = value;
+					batchCount = value;
 				}
 			}
 
-			public string Description
+			public string CoTypeCode
 			{
 				get
 				{
-					return description;
+					return coTypeCode;
 				}
 				set	
 				{
-					description = value;
-				}
-			}
-
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
+					coTypeCode = value;
 				}
 			}
 
@@ -328,15 +284,87 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string ErrorMessage
+			public string ChangeOrderId
 			{
 				get
 				{
-					return errorMessage;
+					return changeOrderId;
 				}
 				set	
 				{
-					errorMessage = value;
+					changeOrderId = value;
+				}
+			}
+
+			public string AppName
+			{
+				get
+				{
+					return appName;
+				}
+				set	
+				{
+					appName = value;
+				}
+			}
+
+			public string BatchType
+			{
+				get
+				{
+					return batchType;
+				}
+				set	
+				{
+					batchType = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string CoType
+			{
+				get
+				{
+					return coType;
+				}
+				set	
+				{
+					coType = value;
+				}
+			}
+
+			public bool? Auto
+			{
+				get
+				{
+					return auto;
+				}
+				set	
+				{
+					auto = value;
+				}
+			}
+
+			public string CurrentPipelineId
+			{
+				get
+				{
+					return currentPipelineId;
+				}
+				set	
+				{
+					currentPipelineId = value;
 				}
 			}
 
@@ -367,19 +395,55 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			public class DescribeChangeOrder_Pipeline
 			{
 
+				private int? status;
+
+				private long? startTime;
+
+				private long? updateTime;
+
 				private int? batchType;
 
 				private int? parallelCount;
 
-				private string pipelineId;
-
 				private string pipelineName;
 
-				private long? startTime;
+				private string pipelineId;
 
-				private int? status;
+				public int? Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 
-				private long? updateTime;
+				public long? StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
+					}
+				}
+
+				public long? UpdateTime
+				{
+					get
+					{
+						return updateTime;
+					}
+					set	
+					{
+						updateTime = value;
+					}
+				}
 
 				public int? BatchType
 				{
@@ -405,18 +469,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public string PipelineId
-				{
-					get
-					{
-						return pipelineId;
-					}
-					set	
-					{
-						pipelineId = value;
-					}
-				}
-
 				public string PipelineName
 				{
 					get
@@ -429,39 +481,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public long? StartTime
+				public string PipelineId
 				{
 					get
 					{
-						return startTime;
+						return pipelineId;
 					}
 					set	
 					{
-						startTime = value;
-					}
-				}
-
-				public int? Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				public long? UpdateTime
-				{
-					get
-					{
-						return updateTime;
-					}
-					set	
-					{
-						updateTime = value;
+						pipelineId = value;
 					}
 				}
 			}

@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 {
     public class CreateIncrementBackupSetDownloadResponseUnmarshaller
     {
-        public static CreateIncrementBackupSetDownloadResponse Unmarshall(UnmarshallerContext context)
+        public static CreateIncrementBackupSetDownloadResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateIncrementBackupSetDownloadResponse createIncrementBackupSetDownloadResponse = new CreateIncrementBackupSetDownloadResponse();
 
-			createIncrementBackupSetDownloadResponse.HttpResponse = context.HttpResponse;
-			createIncrementBackupSetDownloadResponse.Success = context.BooleanValue("CreateIncrementBackupSetDownload.Success");
-			createIncrementBackupSetDownloadResponse.ErrCode = context.StringValue("CreateIncrementBackupSetDownload.ErrCode");
-			createIncrementBackupSetDownloadResponse.ErrMessage = context.StringValue("CreateIncrementBackupSetDownload.ErrMessage");
-			createIncrementBackupSetDownloadResponse.HttpStatusCode = context.IntegerValue("CreateIncrementBackupSetDownload.HttpStatusCode");
-			createIncrementBackupSetDownloadResponse.RequestId = context.StringValue("CreateIncrementBackupSetDownload.RequestId");
-			createIncrementBackupSetDownloadResponse.BackupSetDownloadTaskId = context.StringValue("CreateIncrementBackupSetDownload.BackupSetDownloadTaskId");
+			createIncrementBackupSetDownloadResponse.HttpResponse = _ctx.HttpResponse;
+			createIncrementBackupSetDownloadResponse.Success = _ctx.BooleanValue("CreateIncrementBackupSetDownload.Success");
+			createIncrementBackupSetDownloadResponse.ErrCode = _ctx.StringValue("CreateIncrementBackupSetDownload.ErrCode");
+			createIncrementBackupSetDownloadResponse.ErrMessage = _ctx.StringValue("CreateIncrementBackupSetDownload.ErrMessage");
+			createIncrementBackupSetDownloadResponse.HttpStatusCode = _ctx.IntegerValue("CreateIncrementBackupSetDownload.HttpStatusCode");
+			createIncrementBackupSetDownloadResponse.RequestId = _ctx.StringValue("CreateIncrementBackupSetDownload.RequestId");
+			createIncrementBackupSetDownloadResponse.BackupSetDownloadTaskId = _ctx.StringValue("CreateIncrementBackupSetDownload.BackupSetDownloadTaskId");
         
 			return createIncrementBackupSetDownloadResponse;
         }

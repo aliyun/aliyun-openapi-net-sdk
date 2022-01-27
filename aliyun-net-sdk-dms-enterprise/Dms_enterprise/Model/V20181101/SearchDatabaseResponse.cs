@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -25,66 +25,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 	public class SearchDatabaseResponse : AcsResponse
 	{
 
+		private long? totalCount;
+
 		private string requestId;
-
-		private bool? success;
-
-		private string errorMessage;
 
 		private string errorCode;
 
-		private long? totalCount;
+		private string errorMessage;
+
+		private bool? success;
 
 		private List<SearchDatabase_SearchDatabase> searchDatabaseList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TotalCount")]
 		public long? TotalCount
 		{
 			get
@@ -97,6 +50,59 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SearchDatabaseList")]
 		public List<SearchDatabase_SearchDatabase> SearchDatabaseList
 		{
 			get
@@ -114,34 +120,35 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string databaseId;
 
-			private bool? logic;
-
-			private string envType;
-
-			private string schemaName;
-
-			private string searchName;
-
-			private string dbType;
-
 			private string host;
-
-			private int? port;
-
-			private string sid;
 
 			private string dbaId;
 
-			private string encoding;
+			private string schemaName;
 
-			private string alias;
+			private bool? logic;
 
 			private string datalinkName;
+
+			private int? port;
+
+			private string envType;
+
+			private string sid;
+
+			private string encoding;
+
+			private string dbType;
+
+			private string searchName;
+
+			private string alias;
 
 			private List<string> ownerIdList;
 
 			private List<string> ownerNameList;
 
+			[JsonProperty(PropertyName = "DatabaseId")]
 			public string DatabaseId
 			{
 				get
@@ -154,66 +161,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public bool? Logic
-			{
-				get
-				{
-					return logic;
-				}
-				set	
-				{
-					logic = value;
-				}
-			}
-
-			public string EnvType
-			{
-				get
-				{
-					return envType;
-				}
-				set	
-				{
-					envType = value;
-				}
-			}
-
-			public string SchemaName
-			{
-				get
-				{
-					return schemaName;
-				}
-				set	
-				{
-					schemaName = value;
-				}
-			}
-
-			public string SearchName
-			{
-				get
-				{
-					return searchName;
-				}
-				set	
-				{
-					searchName = value;
-				}
-			}
-
-			public string DbType
-			{
-				get
-				{
-					return dbType;
-				}
-				set	
-				{
-					dbType = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Host")]
 			public string Host
 			{
 				get
@@ -226,30 +174,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public int? Port
-			{
-				get
-				{
-					return port;
-				}
-				set	
-				{
-					port = value;
-				}
-			}
-
-			public string Sid
-			{
-				get
-				{
-					return sid;
-				}
-				set	
-				{
-					sid = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "DbaId")]
 			public string DbaId
 			{
 				get
@@ -262,30 +187,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public string Encoding
+			[JsonProperty(PropertyName = "SchemaName")]
+			public string SchemaName
 			{
 				get
 				{
-					return encoding;
+					return schemaName;
 				}
 				set	
 				{
-					encoding = value;
+					schemaName = value;
 				}
 			}
 
-			public string Alias
+			[JsonProperty(PropertyName = "Logic")]
+			public bool? Logic
 			{
 				get
 				{
-					return alias;
+					return logic;
 				}
 				set	
 				{
-					alias = value;
+					logic = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "DatalinkName")]
 			public string DatalinkName
 			{
 				get
@@ -298,6 +226,98 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Port")]
+			public int? Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EnvType")]
+			public string EnvType
+			{
+				get
+				{
+					return envType;
+				}
+				set	
+				{
+					envType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Sid")]
+			public string Sid
+			{
+				get
+				{
+					return sid;
+				}
+				set	
+				{
+					sid = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Encoding")]
+			public string Encoding
+			{
+				get
+				{
+					return encoding;
+				}
+				set	
+				{
+					encoding = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DbType")]
+			public string DbType
+			{
+				get
+				{
+					return dbType;
+				}
+				set	
+				{
+					dbType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SearchName")]
+			public string SearchName
+			{
+				get
+				{
+					return searchName;
+				}
+				set	
+				{
+					searchName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Alias")]
+			public string Alias
+			{
+				get
+				{
+					return alias;
+				}
+				set	
+				{
+					alias = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OwnerIdList")]
 			public List<string> OwnerIdList
 			{
 				get
@@ -310,6 +330,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "OwnerNameList")]
 			public List<string> OwnerNameList
 			{
 				get

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 {
     public class DeleteLDAPConfigResponseUnmarshaller
     {
-        public static DeleteLDAPConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteLDAPConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteLDAPConfigResponse deleteLDAPConfigResponse = new DeleteLDAPConfigResponse();
 
-			deleteLDAPConfigResponse.HttpResponse = context.HttpResponse;
-			deleteLDAPConfigResponse.RequestId = context.StringValue("DeleteLDAPConfig.RequestId");
+			deleteLDAPConfigResponse.HttpResponse = _ctx.HttpResponse;
+			deleteLDAPConfigResponse.RequestId = _ctx.StringValue("DeleteLDAPConfig.RequestId");
         
 			return deleteLDAPConfigResponse;
         }

@@ -26,46 +26,51 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetMetaTableFullInfoResponseUnmarshaller
     {
-        public static GetMetaTableFullInfoResponse Unmarshall(UnmarshallerContext context)
+        public static GetMetaTableFullInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMetaTableFullInfoResponse getMetaTableFullInfoResponse = new GetMetaTableFullInfoResponse();
 
-			getMetaTableFullInfoResponse.HttpResponse = context.HttpResponse;
-			getMetaTableFullInfoResponse.RequestId = context.StringValue("GetMetaTableFullInfo.RequestId");
-			getMetaTableFullInfoResponse.ErrorCode = context.StringValue("GetMetaTableFullInfo.ErrorCode");
-			getMetaTableFullInfoResponse.ErrorMessage = context.StringValue("GetMetaTableFullInfo.ErrorMessage");
-			getMetaTableFullInfoResponse.HttpStatusCode = context.IntegerValue("GetMetaTableFullInfo.HttpStatusCode");
-			getMetaTableFullInfoResponse.Success = context.BooleanValue("GetMetaTableFullInfo.Success");
+			getMetaTableFullInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getMetaTableFullInfoResponse.RequestId = _ctx.StringValue("GetMetaTableFullInfo.RequestId");
+			getMetaTableFullInfoResponse.ErrorCode = _ctx.StringValue("GetMetaTableFullInfo.ErrorCode");
+			getMetaTableFullInfoResponse.ErrorMessage = _ctx.StringValue("GetMetaTableFullInfo.ErrorMessage");
+			getMetaTableFullInfoResponse.HttpStatusCode = _ctx.IntegerValue("GetMetaTableFullInfo.HttpStatusCode");
+			getMetaTableFullInfoResponse.Success = _ctx.BooleanValue("GetMetaTableFullInfo.Success");
 
 			GetMetaTableFullInfoResponse.GetMetaTableFullInfo_Data data = new GetMetaTableFullInfoResponse.GetMetaTableFullInfo_Data();
-			data.TableName = context.StringValue("GetMetaTableFullInfo.Data.TableName");
-			data.TableGuid = context.StringValue("GetMetaTableFullInfo.Data.TableGuid");
-			data.OwnerId = context.StringValue("GetMetaTableFullInfo.Data.OwnerId");
-			data.TenantId = context.LongValue("GetMetaTableFullInfo.Data.TenantId");
-			data.ProjectId = context.LongValue("GetMetaTableFullInfo.Data.ProjectId");
-			data.CreateTime = context.LongValue("GetMetaTableFullInfo.Data.CreateTime");
-			data.LastModifyTime = context.LongValue("GetMetaTableFullInfo.Data.LastModifyTime");
-			data.LifeCycle = context.IntegerValue("GetMetaTableFullInfo.Data.LifeCycle");
-			data.IsVisible = context.IntegerValue("GetMetaTableFullInfo.Data.IsVisible");
-			data.ProjectName = context.StringValue("GetMetaTableFullInfo.Data.ProjectName");
-			data.DataSize = context.LongValue("GetMetaTableFullInfo.Data.DataSize");
-			data.EnvType = context.IntegerValue("GetMetaTableFullInfo.Data.EnvType");
-			data.Comment = context.StringValue("GetMetaTableFullInfo.Data.Comment");
-			data.TotalColumnCount = context.LongValue("GetMetaTableFullInfo.Data.TotalColumnCount");
-			data.LastDdlTime = context.LongValue("GetMetaTableFullInfo.Data.LastDdlTime");
-			data.LastAccessTime = context.LongValue("GetMetaTableFullInfo.Data.LastAccessTime");
+			data.TableName = _ctx.StringValue("GetMetaTableFullInfo.Data.TableName");
+			data.TableGuid = _ctx.StringValue("GetMetaTableFullInfo.Data.TableGuid");
+			data.OwnerId = _ctx.StringValue("GetMetaTableFullInfo.Data.OwnerId");
+			data.TenantId = _ctx.LongValue("GetMetaTableFullInfo.Data.TenantId");
+			data.ProjectId = _ctx.LongValue("GetMetaTableFullInfo.Data.ProjectId");
+			data.CreateTime = _ctx.LongValue("GetMetaTableFullInfo.Data.CreateTime");
+			data.LastModifyTime = _ctx.LongValue("GetMetaTableFullInfo.Data.LastModifyTime");
+			data.LifeCycle = _ctx.IntegerValue("GetMetaTableFullInfo.Data.LifeCycle");
+			data.IsVisible = _ctx.IntegerValue("GetMetaTableFullInfo.Data.IsVisible");
+			data.ProjectName = _ctx.StringValue("GetMetaTableFullInfo.Data.ProjectName");
+			data.DataSize = _ctx.LongValue("GetMetaTableFullInfo.Data.DataSize");
+			data.EnvType = _ctx.IntegerValue("GetMetaTableFullInfo.Data.EnvType");
+			data.Comment = _ctx.StringValue("GetMetaTableFullInfo.Data.Comment");
+			data.TotalColumnCount = _ctx.LongValue("GetMetaTableFullInfo.Data.TotalColumnCount");
+			data.LastDdlTime = _ctx.LongValue("GetMetaTableFullInfo.Data.LastDdlTime");
+			data.LastAccessTime = _ctx.LongValue("GetMetaTableFullInfo.Data.LastAccessTime");
+			data.DatabaseName = _ctx.StringValue("GetMetaTableFullInfo.Data.DatabaseName");
+			data.PartitionKeys = _ctx.StringValue("GetMetaTableFullInfo.Data.PartitionKeys");
+			data.Location = _ctx.StringValue("GetMetaTableFullInfo.Data.Location");
+			data.ClusterId = _ctx.StringValue("GetMetaTableFullInfo.Data.ClusterId");
 
 			List<GetMetaTableFullInfoResponse.GetMetaTableFullInfo_Data.GetMetaTableFullInfo_ColumnListItem> data_columnList = new List<GetMetaTableFullInfoResponse.GetMetaTableFullInfo_Data.GetMetaTableFullInfo_ColumnListItem>();
-			for (int i = 0; i < context.Length("GetMetaTableFullInfo.Data.ColumnList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetMetaTableFullInfo.Data.ColumnList.Length"); i++) {
 				GetMetaTableFullInfoResponse.GetMetaTableFullInfo_Data.GetMetaTableFullInfo_ColumnListItem columnListItem = new GetMetaTableFullInfoResponse.GetMetaTableFullInfo_Data.GetMetaTableFullInfo_ColumnListItem();
-				columnListItem.ColumnGuid = context.StringValue("GetMetaTableFullInfo.Data.ColumnList["+ i +"].ColumnGuid");
-				columnListItem.ColumnName = context.StringValue("GetMetaTableFullInfo.Data.ColumnList["+ i +"].ColumnName");
-				columnListItem.ColumnType = context.StringValue("GetMetaTableFullInfo.Data.ColumnList["+ i +"].ColumnType");
-				columnListItem.IsPrimaryKey = context.BooleanValue("GetMetaTableFullInfo.Data.ColumnList["+ i +"].IsPrimaryKey");
-				columnListItem.Comment = context.StringValue("GetMetaTableFullInfo.Data.ColumnList["+ i +"].Comment");
-				columnListItem.IsPartitionColumn = context.BooleanValue("GetMetaTableFullInfo.Data.ColumnList["+ i +"].IsPartitionColumn");
-				columnListItem.IsForeignKey = context.BooleanValue("GetMetaTableFullInfo.Data.ColumnList["+ i +"].IsForeignKey");
-				columnListItem.Caption = context.StringValue("GetMetaTableFullInfo.Data.ColumnList["+ i +"].Caption");
+				columnListItem.ColumnGuid = _ctx.StringValue("GetMetaTableFullInfo.Data.ColumnList["+ i +"].ColumnGuid");
+				columnListItem.ColumnName = _ctx.StringValue("GetMetaTableFullInfo.Data.ColumnList["+ i +"].ColumnName");
+				columnListItem.ColumnType = _ctx.StringValue("GetMetaTableFullInfo.Data.ColumnList["+ i +"].ColumnType");
+				columnListItem.IsPrimaryKey = _ctx.BooleanValue("GetMetaTableFullInfo.Data.ColumnList["+ i +"].IsPrimaryKey");
+				columnListItem.Comment = _ctx.StringValue("GetMetaTableFullInfo.Data.ColumnList["+ i +"].Comment");
+				columnListItem.IsPartitionColumn = _ctx.BooleanValue("GetMetaTableFullInfo.Data.ColumnList["+ i +"].IsPartitionColumn");
+				columnListItem.IsForeignKey = _ctx.BooleanValue("GetMetaTableFullInfo.Data.ColumnList["+ i +"].IsForeignKey");
+				columnListItem.Caption = _ctx.StringValue("GetMetaTableFullInfo.Data.ColumnList["+ i +"].Caption");
+				columnListItem.Position = _ctx.IntegerValue("GetMetaTableFullInfo.Data.ColumnList["+ i +"].Position");
 
 				data_columnList.Add(columnListItem);
 			}

@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Rds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Rds.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string targetDedicatedHostIdForSlave;
 
+		private string zoneIdForFollower;
+
 		private string effectiveTime;
 
 		private string targetDedicatedHostIdForMaster;
@@ -55,6 +57,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string dedicatedHostGroupId;
 
 		private string resourceOwnerAccount;
+
+		private string zoneIdForLog;
 
 		private long? ownerId;
 
@@ -94,6 +98,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				targetDedicatedHostIdForSlave = value;
 				DictionaryUtil.Add(QueryParameters, "TargetDedicatedHostIdForSlave", value);
+			}
+		}
+
+		public string ZoneIdForFollower
+		{
+			get
+			{
+				return zoneIdForFollower;
+			}
+			set	
+			{
+				zoneIdForFollower = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneIdForFollower", value);
 			}
 		}
 
@@ -159,6 +176,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string ZoneIdForLog
+		{
+			get
+			{
+				return zoneIdForLog;
+			}
+			set	
+			{
+				zoneIdForLog = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneIdForLog", value);
 			}
 		}
 

@@ -26,17 +26,19 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribePropertyCountResponseUnmarshaller
     {
-        public static DescribePropertyCountResponse Unmarshall(UnmarshallerContext context)
+        public static DescribePropertyCountResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribePropertyCountResponse describePropertyCountResponse = new DescribePropertyCountResponse();
 
-			describePropertyCountResponse.HttpResponse = context.HttpResponse;
-			describePropertyCountResponse.RequestId = context.StringValue("DescribePropertyCount.RequestId");
-			describePropertyCountResponse.Port = context.IntegerValue("DescribePropertyCount.Port");
-			describePropertyCountResponse.Process = context.IntegerValue("DescribePropertyCount.Process");
-			describePropertyCountResponse.Software = context.IntegerValue("DescribePropertyCount.Software");
-			describePropertyCountResponse.User = context.IntegerValue("DescribePropertyCount.User");
-			describePropertyCountResponse.Cron = context.IntegerValue("DescribePropertyCount.Cron");
+			describePropertyCountResponse.HttpResponse = _ctx.HttpResponse;
+			describePropertyCountResponse.RequestId = _ctx.StringValue("DescribePropertyCount.RequestId");
+			describePropertyCountResponse.Port = _ctx.IntegerValue("DescribePropertyCount.Port");
+			describePropertyCountResponse.Process = _ctx.IntegerValue("DescribePropertyCount.Process");
+			describePropertyCountResponse.Software = _ctx.IntegerValue("DescribePropertyCount.Software");
+			describePropertyCountResponse.User = _ctx.IntegerValue("DescribePropertyCount.User");
+			describePropertyCountResponse.Cron = _ctx.IntegerValue("DescribePropertyCount.Cron");
+			describePropertyCountResponse.Sca = _ctx.IntegerValue("DescribePropertyCount.Sca");
+			describePropertyCountResponse.AutoRun = _ctx.IntegerValue("DescribePropertyCount.AutoRun");
         
 			return describePropertyCountResponse;
         }

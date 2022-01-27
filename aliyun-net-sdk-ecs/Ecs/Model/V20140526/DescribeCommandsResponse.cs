@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeCommandsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private long? pageSize;
 
-		private long? totalCount;
+		private string requestId;
 
 		private long? pageNumber;
 
-		private long? pageSize;
+		private long? totalCount;
 
 		private List<DescribeCommands_Command> commands;
+
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public long? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? PageSize
+		public long? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,49 +98,45 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeCommands_Command
 		{
 
-			private string commandId;
-
-			private string name;
+			private string creationTime;
 
 			private string type;
-
-			private string description;
-
-			private string commandContent;
-
-			private string workingDir;
 
 			private long? timeout;
 
 			private int? invokeTimes;
 
-			private string creationTime;
+			private string commandId;
+
+			private string workingDir;
+
+			private string description;
+
+			private int? version;
+
+			private string provider;
+
+			private string commandContent;
+
+			private string category;
+
+			private bool? latest;
+
+			private string name;
 
 			private bool? enableParameter;
 
 			private List<string> parameterNames;
 
-			public string CommandId
+			public string CreationTime
 			{
 				get
 				{
-					return commandId;
+					return creationTime;
 				}
 				set	
 				{
-					commandId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
+					creationTime = value;
 				}
 			}
 
@@ -153,42 +149,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					type = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string CommandContent
-			{
-				get
-				{
-					return commandContent;
-				}
-				set	
-				{
-					commandContent = value;
-				}
-			}
-
-			public string WorkingDir
-			{
-				get
-				{
-					return workingDir;
-				}
-				set	
-				{
-					workingDir = value;
 				}
 			}
 
@@ -216,15 +176,111 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string CreationTime
+			public string CommandId
 			{
 				get
 				{
-					return creationTime;
+					return commandId;
 				}
 				set	
 				{
-					creationTime = value;
+					commandId = value;
+				}
+			}
+
+			public string WorkingDir
+			{
+				get
+				{
+					return workingDir;
+				}
+				set	
+				{
+					workingDir = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public int? Version
+			{
+				get
+				{
+					return version;
+				}
+				set	
+				{
+					version = value;
+				}
+			}
+
+			public string Provider
+			{
+				get
+				{
+					return provider;
+				}
+				set	
+				{
+					provider = value;
+				}
+			}
+
+			public string CommandContent
+			{
+				get
+				{
+					return commandContent;
+				}
+				set	
+				{
+					commandContent = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			public bool? Latest
+			{
+				get
+				{
+					return latest;
+				}
+				set	
+				{
+					latest = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 

@@ -26,29 +26,29 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class DescribePricingModuleResponseUnmarshaller
     {
-        public static DescribePricingModuleResponse Unmarshall(UnmarshallerContext context)
+        public static DescribePricingModuleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribePricingModuleResponse describePricingModuleResponse = new DescribePricingModuleResponse();
 
-			describePricingModuleResponse.HttpResponse = context.HttpResponse;
-			describePricingModuleResponse.RequestId = context.StringValue("DescribePricingModule.RequestId");
-			describePricingModuleResponse.Success = context.BooleanValue("DescribePricingModule.Success");
-			describePricingModuleResponse.Code = context.StringValue("DescribePricingModule.Code");
-			describePricingModuleResponse.Message = context.StringValue("DescribePricingModule.Message");
+			describePricingModuleResponse.HttpResponse = _ctx.HttpResponse;
+			describePricingModuleResponse.RequestId = _ctx.StringValue("DescribePricingModule.RequestId");
+			describePricingModuleResponse.Success = _ctx.BooleanValue("DescribePricingModule.Success");
+			describePricingModuleResponse.Code = _ctx.StringValue("DescribePricingModule.Code");
+			describePricingModuleResponse.Message = _ctx.StringValue("DescribePricingModule.Message");
 
 			DescribePricingModuleResponse.DescribePricingModule_Data data = new DescribePricingModuleResponse.DescribePricingModule_Data();
 
 			List<DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Module> data_moduleList = new List<DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Module>();
-			for (int i = 0; i < context.Length("DescribePricingModule.Data.ModuleList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribePricingModule.Data.ModuleList.Length"); i++) {
 				DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Module module = new DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Module();
-				module.ModuleCode = context.StringValue("DescribePricingModule.Data.ModuleList["+ i +"].ModuleCode");
-				module.ModuleName = context.StringValue("DescribePricingModule.Data.ModuleList["+ i +"].ModuleName");
-				module.PriceType = context.StringValue("DescribePricingModule.Data.ModuleList["+ i +"].PriceType");
-				module.Currency = context.StringValue("DescribePricingModule.Data.ModuleList["+ i +"].Currency");
+				module.ModuleCode = _ctx.StringValue("DescribePricingModule.Data.ModuleList["+ i +"].ModuleCode");
+				module.ModuleName = _ctx.StringValue("DescribePricingModule.Data.ModuleList["+ i +"].ModuleName");
+				module.PriceType = _ctx.StringValue("DescribePricingModule.Data.ModuleList["+ i +"].PriceType");
+				module.Currency = _ctx.StringValue("DescribePricingModule.Data.ModuleList["+ i +"].Currency");
 
 				List<string> module_configList = new List<string>();
-				for (int j = 0; j < context.Length("DescribePricingModule.Data.ModuleList["+ i +"].ConfigList.Length"); j++) {
-					module_configList.Add(context.StringValue("DescribePricingModule.Data.ModuleList["+ i +"].ConfigList["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribePricingModule.Data.ModuleList["+ i +"].ConfigList.Length"); j++) {
+					module_configList.Add(_ctx.StringValue("DescribePricingModule.Data.ModuleList["+ i +"].ConfigList["+ j +"]"));
 				}
 				module.ConfigList = module_configList;
 
@@ -57,19 +57,19 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			data.ModuleList = data_moduleList;
 
 			List<DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Attribute> data_attributeList = new List<DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Attribute>();
-			for (int i = 0; i < context.Length("DescribePricingModule.Data.AttributeList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribePricingModule.Data.AttributeList.Length"); i++) {
 				DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Attribute attribute = new DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Attribute();
-				attribute.Code = context.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Code");
-				attribute.Name = context.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Name");
-				attribute.Unit = context.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Unit");
+				attribute.Code = _ctx.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Code");
+				attribute.Name = _ctx.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Name");
+				attribute.Unit = _ctx.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Unit");
 
 				List<DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Attribute.DescribePricingModule_AttributeValue> attribute_values = new List<DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Attribute.DescribePricingModule_AttributeValue>();
-				for (int j = 0; j < context.Length("DescribePricingModule.Data.AttributeList["+ i +"].Values.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribePricingModule.Data.AttributeList["+ i +"].Values.Length"); j++) {
 					DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Attribute.DescribePricingModule_AttributeValue attributeValue = new DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Attribute.DescribePricingModule_AttributeValue();
-					attributeValue.Type = context.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"].Type");
-					attributeValue.Name = context.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"].Name");
-					attributeValue._Value = context.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"].Value");
-					attributeValue.Remark = context.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"].Remark");
+					attributeValue.Type = _ctx.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"].Type");
+					attributeValue.Name = _ctx.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"].Name");
+					attributeValue._Value = _ctx.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"].Value");
+					attributeValue.Remark = _ctx.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"].Remark");
 
 					attribute_values.Add(attributeValue);
 				}

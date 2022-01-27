@@ -26,21 +26,21 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 {
     public class DescribeDcdnBgpTrafficDataResponseUnmarshaller
     {
-        public static DescribeDcdnBgpTrafficDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDcdnBgpTrafficDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDcdnBgpTrafficDataResponse describeDcdnBgpTrafficDataResponse = new DescribeDcdnBgpTrafficDataResponse();
 
-			describeDcdnBgpTrafficDataResponse.HttpResponse = context.HttpResponse;
-			describeDcdnBgpTrafficDataResponse.RequestId = context.StringValue("DescribeDcdnBgpTrafficData.RequestId");
-			describeDcdnBgpTrafficDataResponse.StartTime = context.StringValue("DescribeDcdnBgpTrafficData.StartTime");
-			describeDcdnBgpTrafficDataResponse.EndTime = context.StringValue("DescribeDcdnBgpTrafficData.EndTime");
+			describeDcdnBgpTrafficDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDcdnBgpTrafficDataResponse.RequestId = _ctx.StringValue("DescribeDcdnBgpTrafficData.RequestId");
+			describeDcdnBgpTrafficDataResponse.StartTime = _ctx.StringValue("DescribeDcdnBgpTrafficData.StartTime");
+			describeDcdnBgpTrafficDataResponse.EndTime = _ctx.StringValue("DescribeDcdnBgpTrafficData.EndTime");
 
 			List<DescribeDcdnBgpTrafficDataResponse.DescribeDcdnBgpTrafficData_BgpData> describeDcdnBgpTrafficDataResponse_bgpDataInterval = new List<DescribeDcdnBgpTrafficDataResponse.DescribeDcdnBgpTrafficData_BgpData>();
-			for (int i = 0; i < context.Length("DescribeDcdnBgpTrafficData.BgpDataInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDcdnBgpTrafficData.BgpDataInterval.Length"); i++) {
 				DescribeDcdnBgpTrafficDataResponse.DescribeDcdnBgpTrafficData_BgpData bgpData = new DescribeDcdnBgpTrafficDataResponse.DescribeDcdnBgpTrafficData_BgpData();
-				bgpData._In = context.LongValue("DescribeDcdnBgpTrafficData.BgpDataInterval["+ i +"].In");
-				bgpData._Out = context.LongValue("DescribeDcdnBgpTrafficData.BgpDataInterval["+ i +"].Out");
-				bgpData.TimeStamp = context.StringValue("DescribeDcdnBgpTrafficData.BgpDataInterval["+ i +"].TimeStamp");
+				bgpData._In = _ctx.LongValue("DescribeDcdnBgpTrafficData.BgpDataInterval["+ i +"].In");
+				bgpData._Out = _ctx.LongValue("DescribeDcdnBgpTrafficData.BgpDataInterval["+ i +"].Out");
+				bgpData.TimeStamp = _ctx.StringValue("DescribeDcdnBgpTrafficData.BgpDataInterval["+ i +"].TimeStamp");
 
 				describeDcdnBgpTrafficDataResponse_bgpDataInterval.Add(bgpData);
 			}

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class StopRuleResponseUnmarshaller
     {
-        public static StopRuleResponse Unmarshall(UnmarshallerContext context)
+        public static StopRuleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StopRuleResponse stopRuleResponse = new StopRuleResponse();
 
-			stopRuleResponse.HttpResponse = context.HttpResponse;
-			stopRuleResponse.RequestId = context.StringValue("StopRule.RequestId");
-			stopRuleResponse.Success = context.BooleanValue("StopRule.Success");
-			stopRuleResponse.Code = context.StringValue("StopRule.Code");
-			stopRuleResponse.ErrorMessage = context.StringValue("StopRule.ErrorMessage");
+			stopRuleResponse.HttpResponse = _ctx.HttpResponse;
+			stopRuleResponse.RequestId = _ctx.StringValue("StopRule.RequestId");
+			stopRuleResponse.Success = _ctx.BooleanValue("StopRule.Success");
+			stopRuleResponse.Code = _ctx.StringValue("StopRule.Code");
+			stopRuleResponse.ErrorMessage = _ctx.StringValue("StopRule.ErrorMessage");
         
 			return stopRuleResponse;
         }

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.smc.Transform.V20190601
 {
     public class DeleteReplicationJobResponseUnmarshaller
     {
-        public static DeleteReplicationJobResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteReplicationJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteReplicationJobResponse deleteReplicationJobResponse = new DeleteReplicationJobResponse();
 
-			deleteReplicationJobResponse.HttpResponse = context.HttpResponse;
-			deleteReplicationJobResponse.RequestId = context.StringValue("DeleteReplicationJob.RequestId");
+			deleteReplicationJobResponse.HttpResponse = _ctx.HttpResponse;
+			deleteReplicationJobResponse.RequestId = _ctx.StringValue("DeleteReplicationJob.RequestId");
         
 			return deleteReplicationJobResponse;
         }

@@ -26,22 +26,22 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 {
     public class DescribeDcdnDomainIpaBpsDataResponseUnmarshaller
     {
-        public static DescribeDcdnDomainIpaBpsDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDcdnDomainIpaBpsDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDcdnDomainIpaBpsDataResponse describeDcdnDomainIpaBpsDataResponse = new DescribeDcdnDomainIpaBpsDataResponse();
 
-			describeDcdnDomainIpaBpsDataResponse.HttpResponse = context.HttpResponse;
-			describeDcdnDomainIpaBpsDataResponse.RequestId = context.StringValue("DescribeDcdnDomainIpaBpsData.RequestId");
-			describeDcdnDomainIpaBpsDataResponse.DomainName = context.StringValue("DescribeDcdnDomainIpaBpsData.DomainName");
-			describeDcdnDomainIpaBpsDataResponse.StartTime = context.StringValue("DescribeDcdnDomainIpaBpsData.StartTime");
-			describeDcdnDomainIpaBpsDataResponse.EndTime = context.StringValue("DescribeDcdnDomainIpaBpsData.EndTime");
-			describeDcdnDomainIpaBpsDataResponse.DataInterval = context.StringValue("DescribeDcdnDomainIpaBpsData.DataInterval");
+			describeDcdnDomainIpaBpsDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDcdnDomainIpaBpsDataResponse.RequestId = _ctx.StringValue("DescribeDcdnDomainIpaBpsData.RequestId");
+			describeDcdnDomainIpaBpsDataResponse.DomainName = _ctx.StringValue("DescribeDcdnDomainIpaBpsData.DomainName");
+			describeDcdnDomainIpaBpsDataResponse.StartTime = _ctx.StringValue("DescribeDcdnDomainIpaBpsData.StartTime");
+			describeDcdnDomainIpaBpsDataResponse.EndTime = _ctx.StringValue("DescribeDcdnDomainIpaBpsData.EndTime");
+			describeDcdnDomainIpaBpsDataResponse.DataInterval = _ctx.StringValue("DescribeDcdnDomainIpaBpsData.DataInterval");
 
 			List<DescribeDcdnDomainIpaBpsDataResponse.DescribeDcdnDomainIpaBpsData_DataModule> describeDcdnDomainIpaBpsDataResponse_bpsDataPerInterval = new List<DescribeDcdnDomainIpaBpsDataResponse.DescribeDcdnDomainIpaBpsData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeDcdnDomainIpaBpsData.BpsDataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDcdnDomainIpaBpsData.BpsDataPerInterval.Length"); i++) {
 				DescribeDcdnDomainIpaBpsDataResponse.DescribeDcdnDomainIpaBpsData_DataModule dataModule = new DescribeDcdnDomainIpaBpsDataResponse.DescribeDcdnDomainIpaBpsData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeDcdnDomainIpaBpsData.BpsDataPerInterval["+ i +"].TimeStamp");
-				dataModule.IpaBps = context.FloatValue("DescribeDcdnDomainIpaBpsData.BpsDataPerInterval["+ i +"].IpaBps");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDcdnDomainIpaBpsData.BpsDataPerInterval["+ i +"].TimeStamp");
+				dataModule.IpaBps = _ctx.FloatValue("DescribeDcdnDomainIpaBpsData.BpsDataPerInterval["+ i +"].IpaBps");
 
 				describeDcdnDomainIpaBpsDataResponse_bpsDataPerInterval.Add(dataModule);
 			}

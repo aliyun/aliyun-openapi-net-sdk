@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class TagLiveResourcesResponseUnmarshaller
     {
-        public static TagLiveResourcesResponse Unmarshall(UnmarshallerContext context)
+        public static TagLiveResourcesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			TagLiveResourcesResponse tagLiveResourcesResponse = new TagLiveResourcesResponse();
 
-			tagLiveResourcesResponse.HttpResponse = context.HttpResponse;
-			tagLiveResourcesResponse.RequestId = context.StringValue("TagLiveResources.RequestId");
+			tagLiveResourcesResponse.HttpResponse = _ctx.HttpResponse;
+			tagLiveResourcesResponse.RequestId = _ctx.StringValue("TagLiveResources.RequestId");
         
 			return tagLiveResourcesResponse;
         }

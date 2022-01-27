@@ -26,23 +26,23 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class GetImageJobResponseUnmarshaller
     {
-        public static GetImageJobResponse Unmarshall(UnmarshallerContext context)
+        public static GetImageJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetImageJobResponse getImageJobResponse = new GetImageJobResponse();
 
-			getImageJobResponse.HttpResponse = context.HttpResponse;
-			getImageJobResponse.RequestId = context.StringValue("GetImageJob.RequestId");
-			getImageJobResponse.JobId = context.StringValue("GetImageJob.JobId");
-			getImageJobResponse.JobType = context.StringValue("GetImageJob.JobType");
-			getImageJobResponse.Parameters = context.StringValue("GetImageJob.Parameters");
-			getImageJobResponse.Result = context.StringValue("GetImageJob.Result");
-			getImageJobResponse.Status = context.StringValue("GetImageJob.Status");
-			getImageJobResponse.StartTime = context.StringValue("GetImageJob.StartTime");
-			getImageJobResponse.EndTime = context.StringValue("GetImageJob.EndTime");
-			getImageJobResponse.ErrorMessage = context.StringValue("GetImageJob.ErrorMessage");
-			getImageJobResponse.NotifyEndpoint = context.StringValue("GetImageJob.NotifyEndpoint");
-			getImageJobResponse.NotifyTopicName = context.StringValue("GetImageJob.NotifyTopicName");
-			getImageJobResponse.Progress = context.IntegerValue("GetImageJob.Progress");
+			getImageJobResponse.HttpResponse = _ctx.HttpResponse;
+			getImageJobResponse.RequestId = _ctx.StringValue("GetImageJob.RequestId");
+			getImageJobResponse.JobId = _ctx.StringValue("GetImageJob.JobId");
+			getImageJobResponse.JobType = _ctx.StringValue("GetImageJob.JobType");
+			getImageJobResponse.Parameters = _ctx.StringValue("GetImageJob.Parameters");
+			getImageJobResponse.Result = _ctx.StringValue("GetImageJob.Result");
+			getImageJobResponse.Status = _ctx.StringValue("GetImageJob.Status");
+			getImageJobResponse.StartTime = _ctx.StringValue("GetImageJob.StartTime");
+			getImageJobResponse.EndTime = _ctx.StringValue("GetImageJob.EndTime");
+			getImageJobResponse.ErrorMessage = _ctx.StringValue("GetImageJob.ErrorMessage");
+			getImageJobResponse.NotifyEndpoint = _ctx.StringValue("GetImageJob.NotifyEndpoint");
+			getImageJobResponse.NotifyTopicName = _ctx.StringValue("GetImageJob.NotifyTopicName");
+			getImageJobResponse.Progress = _ctx.IntegerValue("GetImageJob.Progress");
         
 			return getImageJobResponse;
         }

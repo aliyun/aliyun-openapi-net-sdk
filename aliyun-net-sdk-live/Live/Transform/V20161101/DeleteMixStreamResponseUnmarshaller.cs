@@ -26,13 +26,13 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DeleteMixStreamResponseUnmarshaller
     {
-        public static DeleteMixStreamResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteMixStreamResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteMixStreamResponse deleteMixStreamResponse = new DeleteMixStreamResponse();
 
-			deleteMixStreamResponse.HttpResponse = context.HttpResponse;
-			deleteMixStreamResponse.RequestId = context.StringValue("DeleteMixStream.RequestId");
-			deleteMixStreamResponse.MixStreamId = context.StringValue("DeleteMixStream.MixStreamId");
+			deleteMixStreamResponse.HttpResponse = _ctx.HttpResponse;
+			deleteMixStreamResponse.RequestId = _ctx.StringValue("DeleteMixStream.RequestId");
+			deleteMixStreamResponse.MixStreamId = _ctx.StringValue("DeleteMixStream.MixStreamId");
         
 			return deleteMixStreamResponse;
         }

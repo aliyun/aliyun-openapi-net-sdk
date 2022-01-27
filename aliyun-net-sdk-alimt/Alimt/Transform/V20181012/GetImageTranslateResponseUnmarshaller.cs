@@ -26,19 +26,19 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 {
     public class GetImageTranslateResponseUnmarshaller
     {
-        public static GetImageTranslateResponse Unmarshall(UnmarshallerContext context)
+        public static GetImageTranslateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetImageTranslateResponse getImageTranslateResponse = new GetImageTranslateResponse();
 
-			getImageTranslateResponse.HttpResponse = context.HttpResponse;
-			getImageTranslateResponse.RequestId = context.StringValue("GetImageTranslate.RequestId");
-			getImageTranslateResponse.Code = context.IntegerValue("GetImageTranslate.Code");
-			getImageTranslateResponse.Message = context.StringValue("GetImageTranslate.Message");
+			getImageTranslateResponse.HttpResponse = _ctx.HttpResponse;
+			getImageTranslateResponse.Code = _ctx.IntegerValue("GetImageTranslate.Code");
+			getImageTranslateResponse.Message = _ctx.StringValue("GetImageTranslate.Message");
+			getImageTranslateResponse.RequestId = _ctx.StringValue("GetImageTranslate.RequestId");
 
 			GetImageTranslateResponse.GetImageTranslate_Data data = new GetImageTranslateResponse.GetImageTranslate_Data();
-			data.Url = context.StringValue("GetImageTranslate.Data.Url");
-			data.Orc = context.StringValue("GetImageTranslate.Data.Orc");
-			data.PictureEditor = context.StringValue("GetImageTranslate.Data.PictureEditor");
+			data.Url = _ctx.StringValue("GetImageTranslate.Data.Url");
+			data.Orc = _ctx.StringValue("GetImageTranslate.Data.Orc");
+			data.PictureEditor = _ctx.StringValue("GetImageTranslate.Data.PictureEditor");
 			getImageTranslateResponse.Data = data;
         
 			return getImageTranslateResponse;

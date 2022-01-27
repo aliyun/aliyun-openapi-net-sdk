@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
     public class CancelCallResponseUnmarshaller
     {
-        public static CancelCallResponse Unmarshall(UnmarshallerContext context)
+        public static CancelCallResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CancelCallResponse cancelCallResponse = new CancelCallResponse();
 
-			cancelCallResponse.HttpResponse = context.HttpResponse;
-			cancelCallResponse.RequestId = context.StringValue("CancelCall.RequestId");
-			cancelCallResponse.Status = context.BooleanValue("CancelCall.Status");
-			cancelCallResponse.Code = context.StringValue("CancelCall.Code");
-			cancelCallResponse.Message = context.StringValue("CancelCall.Message");
+			cancelCallResponse.HttpResponse = _ctx.HttpResponse;
+			cancelCallResponse.RequestId = _ctx.StringValue("CancelCall.RequestId");
+			cancelCallResponse.Status = _ctx.BooleanValue("CancelCall.Status");
+			cancelCallResponse.Code = _ctx.StringValue("CancelCall.Code");
+			cancelCallResponse.Message = _ctx.StringValue("CancelCall.Message");
         
 			return cancelCallResponse;
         }

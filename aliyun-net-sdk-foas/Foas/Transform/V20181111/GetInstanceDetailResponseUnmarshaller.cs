@@ -26,13 +26,13 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class GetInstanceDetailResponseUnmarshaller
     {
-        public static GetInstanceDetailResponse Unmarshall(UnmarshallerContext context)
+        public static GetInstanceDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetInstanceDetailResponse getInstanceDetailResponse = new GetInstanceDetailResponse();
 
-			getInstanceDetailResponse.HttpResponse = context.HttpResponse;
-			getInstanceDetailResponse.RequestId = context.StringValue("GetInstanceDetail.RequestId");
-			getInstanceDetailResponse.Detail = context.StringValue("GetInstanceDetail.Detail");
+			getInstanceDetailResponse.HttpResponse = _ctx.HttpResponse;
+			getInstanceDetailResponse.RequestId = _ctx.StringValue("GetInstanceDetail.RequestId");
+			getInstanceDetailResponse.Detail = _ctx.StringValue("GetInstanceDetail.Detail");
         
 			return getInstanceDetailResponse;
         }

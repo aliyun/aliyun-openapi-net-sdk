@@ -26,15 +26,15 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 {
     public class RevokePermissionResponseUnmarshaller
     {
-        public static RevokePermissionResponse Unmarshall(UnmarshallerContext context)
+        public static RevokePermissionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RevokePermissionResponse revokePermissionResponse = new RevokePermissionResponse();
 
-			revokePermissionResponse.HttpResponse = context.HttpResponse;
-			revokePermissionResponse.RequestId = context.StringValue("RevokePermission.RequestId");
-			revokePermissionResponse.Code = context.IntegerValue("RevokePermission.Code");
-			revokePermissionResponse.Success = context.BooleanValue("RevokePermission.Success");
-			revokePermissionResponse.Message = context.StringValue("RevokePermission.Message");
+			revokePermissionResponse.HttpResponse = _ctx.HttpResponse;
+			revokePermissionResponse.Code = _ctx.IntegerValue("RevokePermission.Code");
+			revokePermissionResponse.Message = _ctx.StringValue("RevokePermission.Message");
+			revokePermissionResponse.RequestId = _ctx.StringValue("RevokePermission.RequestId");
+			revokePermissionResponse.Success = _ctx.BooleanValue("RevokePermission.Success");
         
 			return revokePermissionResponse;
         }

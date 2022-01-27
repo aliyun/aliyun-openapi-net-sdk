@@ -26,34 +26,48 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryOTAFirmwareResponseUnmarshaller
     {
-        public static QueryOTAFirmwareResponse Unmarshall(UnmarshallerContext context)
+        public static QueryOTAFirmwareResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryOTAFirmwareResponse queryOTAFirmwareResponse = new QueryOTAFirmwareResponse();
 
-			queryOTAFirmwareResponse.HttpResponse = context.HttpResponse;
-			queryOTAFirmwareResponse.RequestId = context.StringValue("QueryOTAFirmware.RequestId");
-			queryOTAFirmwareResponse.Success = context.BooleanValue("QueryOTAFirmware.Success");
-			queryOTAFirmwareResponse.Code = context.StringValue("QueryOTAFirmware.Code");
-			queryOTAFirmwareResponse.ErrorMessage = context.StringValue("QueryOTAFirmware.ErrorMessage");
+			queryOTAFirmwareResponse.HttpResponse = _ctx.HttpResponse;
+			queryOTAFirmwareResponse.RequestId = _ctx.StringValue("QueryOTAFirmware.RequestId");
+			queryOTAFirmwareResponse.Success = _ctx.BooleanValue("QueryOTAFirmware.Success");
+			queryOTAFirmwareResponse.Code = _ctx.StringValue("QueryOTAFirmware.Code");
+			queryOTAFirmwareResponse.ErrorMessage = _ctx.StringValue("QueryOTAFirmware.ErrorMessage");
 
 			QueryOTAFirmwareResponse.QueryOTAFirmware_FirmwareInfo firmwareInfo = new QueryOTAFirmwareResponse.QueryOTAFirmware_FirmwareInfo();
-			firmwareInfo.FirmwareName = context.StringValue("QueryOTAFirmware.FirmwareInfo.FirmwareName");
-			firmwareInfo.FirmwareId = context.StringValue("QueryOTAFirmware.FirmwareInfo.FirmwareId");
-			firmwareInfo.SrcVersion = context.StringValue("QueryOTAFirmware.FirmwareInfo.SrcVersion");
-			firmwareInfo.DestVersion = context.StringValue("QueryOTAFirmware.FirmwareInfo.DestVersion");
-			firmwareInfo.UtcCreate = context.StringValue("QueryOTAFirmware.FirmwareInfo.UtcCreate");
-			firmwareInfo.UtcModified = context.StringValue("QueryOTAFirmware.FirmwareInfo.UtcModified");
-			firmwareInfo.Status = context.IntegerValue("QueryOTAFirmware.FirmwareInfo.Status");
-			firmwareInfo.FirmwareDesc = context.StringValue("QueryOTAFirmware.FirmwareInfo.FirmwareDesc");
-			firmwareInfo.FirmwareSign = context.StringValue("QueryOTAFirmware.FirmwareInfo.FirmwareSign");
-			firmwareInfo.FirmwareSize = context.IntegerValue("QueryOTAFirmware.FirmwareInfo.FirmwareSize");
-			firmwareInfo.FirmwareUrl = context.StringValue("QueryOTAFirmware.FirmwareInfo.FirmwareUrl");
-			firmwareInfo.ProductKey = context.StringValue("QueryOTAFirmware.FirmwareInfo.ProductKey");
-			firmwareInfo.SignMethod = context.StringValue("QueryOTAFirmware.FirmwareInfo.SignMethod");
-			firmwareInfo.ProductName = context.StringValue("QueryOTAFirmware.FirmwareInfo.ProductName");
-			firmwareInfo.Type = context.IntegerValue("QueryOTAFirmware.FirmwareInfo.Type");
-			firmwareInfo.VerifyProgress = context.IntegerValue("QueryOTAFirmware.FirmwareInfo.VerifyProgress");
-			firmwareInfo.ModuleName = context.StringValue("QueryOTAFirmware.FirmwareInfo.ModuleName");
+			firmwareInfo.FirmwareName = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.FirmwareName");
+			firmwareInfo.FirmwareId = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.FirmwareId");
+			firmwareInfo.SrcVersion = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.SrcVersion");
+			firmwareInfo.DestVersion = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.DestVersion");
+			firmwareInfo.UtcCreate = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.UtcCreate");
+			firmwareInfo.UtcModified = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.UtcModified");
+			firmwareInfo.Status = _ctx.IntegerValue("QueryOTAFirmware.FirmwareInfo.Status");
+			firmwareInfo.FirmwareDesc = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.FirmwareDesc");
+			firmwareInfo.FirmwareSign = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.FirmwareSign");
+			firmwareInfo.FirmwareSize = _ctx.IntegerValue("QueryOTAFirmware.FirmwareInfo.FirmwareSize");
+			firmwareInfo.FirmwareUrl = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.FirmwareUrl");
+			firmwareInfo.ProductKey = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.ProductKey");
+			firmwareInfo.SignMethod = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.SignMethod");
+			firmwareInfo.ProductName = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.ProductName");
+			firmwareInfo.Type = _ctx.IntegerValue("QueryOTAFirmware.FirmwareInfo.Type");
+			firmwareInfo.VerifyProgress = _ctx.IntegerValue("QueryOTAFirmware.FirmwareInfo.VerifyProgress");
+			firmwareInfo.ModuleName = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.ModuleName");
+			firmwareInfo.Udi = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.Udi");
+
+			List<QueryOTAFirmwareResponse.QueryOTAFirmware_FirmwareInfo.QueryOTAFirmware_OtaPackageFileDTO> firmwareInfo_multiFiles = new List<QueryOTAFirmwareResponse.QueryOTAFirmware_FirmwareInfo.QueryOTAFirmware_OtaPackageFileDTO>();
+			for (int i = 0; i < _ctx.Length("QueryOTAFirmware.FirmwareInfo.MultiFiles.Length"); i++) {
+				QueryOTAFirmwareResponse.QueryOTAFirmware_FirmwareInfo.QueryOTAFirmware_OtaPackageFileDTO otaPackageFileDTO = new QueryOTAFirmwareResponse.QueryOTAFirmware_FirmwareInfo.QueryOTAFirmware_OtaPackageFileDTO();
+				otaPackageFileDTO.Name = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.MultiFiles["+ i +"].Name");
+				otaPackageFileDTO.Size = _ctx.IntegerValue("QueryOTAFirmware.FirmwareInfo.MultiFiles["+ i +"].Size");
+				otaPackageFileDTO.Url = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.MultiFiles["+ i +"].Url");
+				otaPackageFileDTO.SignValue = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.MultiFiles["+ i +"].SignValue");
+				otaPackageFileDTO.FileMd5 = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.MultiFiles["+ i +"].FileMd5");
+
+				firmwareInfo_multiFiles.Add(otaPackageFileDTO);
+			}
+			firmwareInfo.MultiFiles = firmwareInfo_multiFiles;
 			queryOTAFirmwareResponse.FirmwareInfo = firmwareInfo;
         
 			return queryOTAFirmwareResponse;

@@ -26,25 +26,25 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class DescribeComponentsResponseUnmarshaller
     {
-        public static DescribeComponentsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeComponentsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeComponentsResponse describeComponentsResponse = new DescribeComponentsResponse();
 
-			describeComponentsResponse.HttpResponse = context.HttpResponse;
-			describeComponentsResponse.RequestId = context.StringValue("DescribeComponents.RequestId");
-			describeComponentsResponse.Code = context.StringValue("DescribeComponents.Code");
-			describeComponentsResponse.ErrorCode = context.StringValue("DescribeComponents.ErrorCode");
-			describeComponentsResponse.Message = context.StringValue("DescribeComponents.Message");
-			describeComponentsResponse.Success = context.BooleanValue("DescribeComponents.Success");
-			describeComponentsResponse.TraceId = context.StringValue("DescribeComponents.TraceId");
+			describeComponentsResponse.HttpResponse = _ctx.HttpResponse;
+			describeComponentsResponse.RequestId = _ctx.StringValue("DescribeComponents.RequestId");
+			describeComponentsResponse.Code = _ctx.StringValue("DescribeComponents.Code");
+			describeComponentsResponse.ErrorCode = _ctx.StringValue("DescribeComponents.ErrorCode");
+			describeComponentsResponse.Message = _ctx.StringValue("DescribeComponents.Message");
+			describeComponentsResponse.Success = _ctx.BooleanValue("DescribeComponents.Success");
+			describeComponentsResponse.TraceId = _ctx.StringValue("DescribeComponents.TraceId");
 
 			List<DescribeComponentsResponse.DescribeComponents_DataItem> describeComponentsResponse_data = new List<DescribeComponentsResponse.DescribeComponents_DataItem>();
-			for (int i = 0; i < context.Length("DescribeComponents.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeComponents.Data.Length"); i++) {
 				DescribeComponentsResponse.DescribeComponents_DataItem dataItem = new DescribeComponentsResponse.DescribeComponents_DataItem();
-				dataItem.ComponentKey = context.StringValue("DescribeComponents.Data["+ i +"].ComponentKey");
-				dataItem.ComponentDescription = context.StringValue("DescribeComponents.Data["+ i +"].ComponentDescription");
-				dataItem.Expired = context.BooleanValue("DescribeComponents.Data["+ i +"].Expired");
-				dataItem.Type = context.StringValue("DescribeComponents.Data["+ i +"].Type");
+				dataItem.ComponentKey = _ctx.StringValue("DescribeComponents.Data["+ i +"].ComponentKey");
+				dataItem.ComponentDescription = _ctx.StringValue("DescribeComponents.Data["+ i +"].ComponentDescription");
+				dataItem.Expired = _ctx.BooleanValue("DescribeComponents.Data["+ i +"].Expired");
+				dataItem.Type = _ctx.StringValue("DescribeComponents.Data["+ i +"].Type");
 
 				describeComponentsResponse_data.Add(dataItem);
 			}

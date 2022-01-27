@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,80 +25,21 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class DescribeGatewayCapacityLimitResponse : AcsResponse
 	{
 
+		private long? fileSystemSizeInTB;
+
 		private string requestId;
-
-		private bool? success;
-
-		private string code;
 
 		private string message;
 
-		private long? fileNumber;
-
-		private long? fileSystemSizeInTB;
-
 		private bool? isMetadataSeparate;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private long? fileNumber;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private string code;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private bool? success;
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public long? FileNumber
-		{
-			get
-			{
-				return fileNumber;
-			}
-			set	
-			{
-				fileNumber = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "FileSystemSizeInTB")]
 		public long? FileSystemSizeInTB
 		{
 			get
@@ -111,6 +52,33 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Message")]
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "IsMetadataSeparate")]
 		public bool? IsMetadataSeparate
 		{
 			get
@@ -120,6 +88,45 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			set	
 			{
 				isMetadataSeparate = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "FileNumber")]
+		public long? FileNumber
+		{
+			get
+			{
+				return fileNumber;
+			}
+			set	
+			{
+				fileNumber = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

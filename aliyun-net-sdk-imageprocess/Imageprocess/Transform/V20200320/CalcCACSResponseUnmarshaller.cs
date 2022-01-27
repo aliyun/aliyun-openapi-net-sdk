@@ -26,16 +26,16 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 {
     public class CalcCACSResponseUnmarshaller
     {
-        public static CalcCACSResponse Unmarshall(UnmarshallerContext context)
+        public static CalcCACSResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CalcCACSResponse calcCACSResponse = new CalcCACSResponse();
 
-			calcCACSResponse.HttpResponse = context.HttpResponse;
-			calcCACSResponse.RequestId = context.StringValue("CalcCACS.RequestId");
+			calcCACSResponse.HttpResponse = _ctx.HttpResponse;
+			calcCACSResponse.RequestId = _ctx.StringValue("CalcCACS.RequestId");
 
 			CalcCACSResponse.CalcCACS_Data data = new CalcCACSResponse.CalcCACS_Data();
-			data.Score = context.StringValue("CalcCACS.Data.Score");
-			data.ResultUrl = context.StringValue("CalcCACS.Data.ResultUrl");
+			data.Score = _ctx.StringValue("CalcCACS.Data.Score");
+			data.ResultUrl = _ctx.StringValue("CalcCACS.Data.ResultUrl");
 			calcCACSResponse.Data = data;
         
 			return calcCACSResponse;

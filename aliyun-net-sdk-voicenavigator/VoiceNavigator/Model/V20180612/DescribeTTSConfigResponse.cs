@@ -27,11 +27,11 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 
 		private string requestId;
 
+		private int? volume;
+
 		private string voice;
 
 		private int? speechRate;
-
-		private int? volume;
 
 		public string RequestId
 		{
@@ -42,6 +42,18 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? Volume
+		{
+			get
+			{
+				return volume;
+			}
+			set	
+			{
+				volume = value;
 			}
 		}
 
@@ -66,18 +78,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			set	
 			{
 				speechRate = value;
-			}
-		}
-
-		public int? Volume
-		{
-			get
-			{
-				return volume;
-			}
-			set	
-			{
-				volume = value;
 			}
 		}
 	}

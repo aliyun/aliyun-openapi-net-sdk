@@ -26,13 +26,13 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class CreateParentPlatformResponseUnmarshaller
     {
-        public static CreateParentPlatformResponse Unmarshall(UnmarshallerContext context)
+        public static CreateParentPlatformResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateParentPlatformResponse createParentPlatformResponse = new CreateParentPlatformResponse();
 
-			createParentPlatformResponse.HttpResponse = context.HttpResponse;
-			createParentPlatformResponse.RequestId = context.StringValue("CreateParentPlatform.RequestId");
-			createParentPlatformResponse.Id = context.StringValue("CreateParentPlatform.Id");
+			createParentPlatformResponse.HttpResponse = _ctx.HttpResponse;
+			createParentPlatformResponse.RequestId = _ctx.StringValue("CreateParentPlatform.RequestId");
+			createParentPlatformResponse.Id = _ctx.StringValue("CreateParentPlatform.Id");
         
 			return createParentPlatformResponse;
         }

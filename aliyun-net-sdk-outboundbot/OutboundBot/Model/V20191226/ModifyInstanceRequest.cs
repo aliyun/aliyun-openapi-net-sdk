@@ -34,18 +34,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private int? maxConcurrentConversation;
 
+		private List<string> callingNumbers = new List<string>(){ };
+
 		private string instanceId;
 
 		private string instanceName;
-
-		private string callCenterInstanceId;
 
 		private string instanceDescription;
 
@@ -59,6 +60,23 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				maxConcurrentConversation = value;
 				DictionaryUtil.Add(QueryParameters, "MaxConcurrentConversation", value.ToString());
+			}
+		}
+
+		public List<string> CallingNumbers
+		{
+			get
+			{
+				return callingNumbers;
+			}
+
+			set
+			{
+				callingNumbers = value;
+				for (int i = 0; i < callingNumbers.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"CallingNumber." + (i + 1) , callingNumbers[i]);
+				}
 			}
 		}
 
@@ -85,19 +103,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				instanceName = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceName", value);
-			}
-		}
-
-		public string CallCenterInstanceId
-		{
-			get
-			{
-				return callCenterInstanceId;
-			}
-			set	
-			{
-				callCenterInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "CallCenterInstanceId", value);
 			}
 		}
 

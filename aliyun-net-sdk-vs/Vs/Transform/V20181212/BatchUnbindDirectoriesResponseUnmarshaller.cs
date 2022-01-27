@@ -26,19 +26,19 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class BatchUnbindDirectoriesResponseUnmarshaller
     {
-        public static BatchUnbindDirectoriesResponse Unmarshall(UnmarshallerContext context)
+        public static BatchUnbindDirectoriesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchUnbindDirectoriesResponse batchUnbindDirectoriesResponse = new BatchUnbindDirectoriesResponse();
 
-			batchUnbindDirectoriesResponse.HttpResponse = context.HttpResponse;
-			batchUnbindDirectoriesResponse.RequestId = context.StringValue("BatchUnbindDirectories.RequestId");
+			batchUnbindDirectoriesResponse.HttpResponse = _ctx.HttpResponse;
+			batchUnbindDirectoriesResponse.RequestId = _ctx.StringValue("BatchUnbindDirectories.RequestId");
 
 			List<BatchUnbindDirectoriesResponse.BatchUnbindDirectories_Result> batchUnbindDirectoriesResponse_results = new List<BatchUnbindDirectoriesResponse.BatchUnbindDirectories_Result>();
-			for (int i = 0; i < context.Length("BatchUnbindDirectories.Results.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("BatchUnbindDirectories.Results.Length"); i++) {
 				BatchUnbindDirectoriesResponse.BatchUnbindDirectories_Result result = new BatchUnbindDirectoriesResponse.BatchUnbindDirectories_Result();
-				result.DirectoryId = context.StringValue("BatchUnbindDirectories.Results["+ i +"].DirectoryId");
-				result.DeviceId = context.StringValue("BatchUnbindDirectories.Results["+ i +"].DeviceId");
-				result.Error = context.StringValue("BatchUnbindDirectories.Results["+ i +"].Error");
+				result.DirectoryId = _ctx.StringValue("BatchUnbindDirectories.Results["+ i +"].DirectoryId");
+				result.DeviceId = _ctx.StringValue("BatchUnbindDirectories.Results["+ i +"].DeviceId");
+				result.Error = _ctx.StringValue("BatchUnbindDirectories.Results["+ i +"].Error");
 
 				batchUnbindDirectoriesResponse_results.Add(result);
 			}

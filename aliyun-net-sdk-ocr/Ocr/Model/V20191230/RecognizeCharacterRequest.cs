@@ -40,11 +40,24 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 			Method = MethodType.POST;
         }
 
+		private int? minHeight;
+
 		private bool? outputProbability;
 
 		private string imageURL;
 
-		private int? minHeight;
+		public int? MinHeight
+		{
+			get
+			{
+				return minHeight;
+			}
+			set	
+			{
+				minHeight = value;
+				DictionaryUtil.Add(BodyParameters, "MinHeight", value.ToString());
+			}
+		}
 
 		public bool? OutputProbability
 		{
@@ -69,19 +82,6 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 			{
 				imageURL = value;
 				DictionaryUtil.Add(BodyParameters, "ImageURL", value);
-			}
-		}
-
-		public int? MinHeight
-		{
-			get
-			{
-				return minHeight;
-			}
-			set	
-			{
-				minHeight = value;
-				DictionaryUtil.Add(BodyParameters, "MinHeight", value.ToString());
 			}
 		}
 

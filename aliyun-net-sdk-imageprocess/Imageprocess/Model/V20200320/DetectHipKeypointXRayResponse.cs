@@ -56,25 +56,13 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 		public class DetectHipKeypointXRay_Data
 		{
 
-			private string imageUrl;
-
 			private string orgId;
+
+			private string imageUrl;
 
 			private string orgName;
 
 			private List<DetectHipKeypointXRay_KeyPointsItem> keyPoints;
-
-			public string ImageUrl
-			{
-				get
-				{
-					return imageUrl;
-				}
-				set	
-				{
-					imageUrl = value;
-				}
-			}
 
 			public string OrgId
 			{
@@ -85,6 +73,18 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 				set	
 				{
 					orgId = value;
+				}
+			}
+
+			public string ImageUrl
+			{
+				get
+				{
+					return imageUrl;
+				}
+				set	
+				{
+					imageUrl = value;
 				}
 			}
 
@@ -160,21 +160,9 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 				public class DetectHipKeypointXRay_Tag
 				{
 
-					private string direction;
-
 					private string label;
 
-					public string Direction
-					{
-						get
-						{
-							return direction;
-						}
-						set	
-						{
-							direction = value;
-						}
-					}
+					private string direction;
 
 					public string Label
 					{
@@ -185,6 +173,18 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 						set	
 						{
 							label = value;
+						}
+					}
+
+					public string Direction
+					{
+						get
+						{
+							return direction;
+						}
+						set	
+						{
+							direction = value;
 						}
 					}
 				}

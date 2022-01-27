@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 {
     public class DeleteNodeToolExecutionHistoryResponseUnmarshaller
     {
-        public static DeleteNodeToolExecutionHistoryResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteNodeToolExecutionHistoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteNodeToolExecutionHistoryResponse deleteNodeToolExecutionHistoryResponse = new DeleteNodeToolExecutionHistoryResponse();
 
-			deleteNodeToolExecutionHistoryResponse.HttpResponse = context.HttpResponse;
-			deleteNodeToolExecutionHistoryResponse.RequestId = context.StringValue("DeleteNodeToolExecutionHistory.RequestId");
+			deleteNodeToolExecutionHistoryResponse.HttpResponse = _ctx.HttpResponse;
+			deleteNodeToolExecutionHistoryResponse.RequestId = _ctx.StringValue("DeleteNodeToolExecutionHistory.RequestId");
         
 			return deleteNodeToolExecutionHistoryResponse;
         }

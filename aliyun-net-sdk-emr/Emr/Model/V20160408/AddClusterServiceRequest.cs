@@ -32,19 +32,21 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public AddClusterServiceRequest()
             : base("Emr", "2016-04-08", "AddClusterService", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string regionId;
-
-		private List<Service> services;
-
-		private string comment;
-
 		private string clusterId;
 
-		private string accessKeyId;
+		private List<Service> services = new List<Service>(){ };
+
+		private string comment;
 
 		public long? ResourceOwnerId
 		{
@@ -59,16 +61,16 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
+		public string ClusterId
 		{
 			get
 			{
-				return regionId;
+				return clusterId;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
 			}
 		}
 
@@ -84,6 +86,7 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				services = value;
 				for (int i = 0; i < services.Count; i++)
 				{
+					DictionaryUtil.Add(QueryParameters,"Service." + (i + 1) + ".ServiceVersion", services[i].ServiceVersion);
 					DictionaryUtil.Add(QueryParameters,"Service." + (i + 1) + ".ServiceName", services[i].ServiceName);
 				}
 			}
@@ -102,36 +105,24 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public class Service
 		{
 
+			private string serviceVersion;
+
 			private string serviceName;
+
+			public string ServiceVersion
+			{
+				get
+				{
+					return serviceVersion;
+				}
+				set	
+				{
+					serviceVersion = value;
+				}
+			}
 
 			public string ServiceName
 			{

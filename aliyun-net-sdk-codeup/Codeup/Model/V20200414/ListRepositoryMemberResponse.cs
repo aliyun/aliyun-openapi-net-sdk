@@ -124,6 +124,10 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 
 			private string email;
 
+			private string name;
+
+			private string username;
+
 			public int? AccessLevel
 			{
 				get
@@ -193,6 +197,30 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 				set	
 				{
 					email = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string Username
+			{
+				get
+				{
+					return username;
+				}
+				set	
+				{
+					username = value;
 				}
 			}
 		}

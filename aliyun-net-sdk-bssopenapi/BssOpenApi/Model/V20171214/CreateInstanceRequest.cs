@@ -35,8 +35,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.BssOpenApi.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.BssOpenApi.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -48,6 +48,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		private string clientToken;
 
 		private string subscriptionType;
+
+		private string logistics;
 
 		private long? ownerId;
 
@@ -108,6 +110,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				subscriptionType = value;
 				DictionaryUtil.Add(QueryParameters, "SubscriptionType", value);
+			}
+		}
+
+		public string Logistics
+		{
+			get
+			{
+				return logistics;
+			}
+			set	
+			{
+				logistics = value;
+				DictionaryUtil.Add(QueryParameters, "Logistics", value);
 			}
 		}
 

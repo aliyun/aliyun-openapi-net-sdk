@@ -26,14 +26,14 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class CreateStreamAnalyseTaskResponseUnmarshaller
     {
-        public static CreateStreamAnalyseTaskResponse Unmarshall(UnmarshallerContext context)
+        public static CreateStreamAnalyseTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateStreamAnalyseTaskResponse createStreamAnalyseTaskResponse = new CreateStreamAnalyseTaskResponse();
 
-			createStreamAnalyseTaskResponse.HttpResponse = context.HttpResponse;
-			createStreamAnalyseTaskResponse.RequestId = context.StringValue("CreateStreamAnalyseTask.RequestId");
-			createStreamAnalyseTaskResponse.TaskId = context.StringValue("CreateStreamAnalyseTask.TaskId");
-			createStreamAnalyseTaskResponse.TaskType = context.StringValue("CreateStreamAnalyseTask.TaskType");
+			createStreamAnalyseTaskResponse.HttpResponse = _ctx.HttpResponse;
+			createStreamAnalyseTaskResponse.RequestId = _ctx.StringValue("CreateStreamAnalyseTask.RequestId");
+			createStreamAnalyseTaskResponse.TaskId = _ctx.StringValue("CreateStreamAnalyseTask.TaskId");
+			createStreamAnalyseTaskResponse.TaskType = _ctx.StringValue("CreateStreamAnalyseTask.TaskType");
         
 			return createStreamAnalyseTaskResponse;
         }

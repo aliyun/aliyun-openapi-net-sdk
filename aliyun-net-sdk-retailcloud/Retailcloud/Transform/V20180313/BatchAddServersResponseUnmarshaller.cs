@@ -26,17 +26,17 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class BatchAddServersResponseUnmarshaller
     {
-        public static BatchAddServersResponse Unmarshall(UnmarshallerContext context)
+        public static BatchAddServersResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchAddServersResponse batchAddServersResponse = new BatchAddServersResponse();
 
-			batchAddServersResponse.HttpResponse = context.HttpResponse;
-			batchAddServersResponse.RequestId = context.StringValue("BatchAddServers.RequestId");
-			batchAddServersResponse.Code = context.IntegerValue("BatchAddServers.Code");
-			batchAddServersResponse.ErrMsg = context.StringValue("BatchAddServers.ErrMsg");
+			batchAddServersResponse.HttpResponse = _ctx.HttpResponse;
+			batchAddServersResponse.RequestId = _ctx.StringValue("BatchAddServers.RequestId");
+			batchAddServersResponse.Code = _ctx.IntegerValue("BatchAddServers.Code");
+			batchAddServersResponse.ErrMsg = _ctx.StringValue("BatchAddServers.ErrMsg");
 
 			BatchAddServersResponse.BatchAddServers_Result result = new BatchAddServersResponse.BatchAddServers_Result();
-			result.Success = context.BooleanValue("BatchAddServers.Result.Success");
+			result.Success = _ctx.BooleanValue("BatchAddServers.Result.Success");
 			batchAddServersResponse.Result = result;
         
 			return batchAddServersResponse;

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -58,9 +58,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string internetChargeType;
 
-			private int? min;
-
 			private int? max;
+
+			private int? min;
 
 			private string unit;
 
@@ -76,18 +76,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public int? Min
-			{
-				get
-				{
-					return min;
-				}
-				set	
-				{
-					min = value;
-				}
-			}
-
 			public int? Max
 			{
 				get
@@ -97,6 +85,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					max = value;
+				}
+			}
+
+			public int? Min
+			{
+				get
+				{
+					return min;
+				}
+				set	
+				{
+					min = value;
 				}
 			}
 

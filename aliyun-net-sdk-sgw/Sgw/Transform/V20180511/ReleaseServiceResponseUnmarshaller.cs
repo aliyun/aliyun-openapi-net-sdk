@@ -26,15 +26,15 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class ReleaseServiceResponseUnmarshaller
     {
-        public static ReleaseServiceResponse Unmarshall(UnmarshallerContext context)
+        public static ReleaseServiceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ReleaseServiceResponse releaseServiceResponse = new ReleaseServiceResponse();
 
-			releaseServiceResponse.HttpResponse = context.HttpResponse;
-			releaseServiceResponse.RequestId = context.StringValue("ReleaseService.RequestId");
-			releaseServiceResponse.Success = context.BooleanValue("ReleaseService.Success");
-			releaseServiceResponse.Code = context.StringValue("ReleaseService.Code");
-			releaseServiceResponse.Message = context.StringValue("ReleaseService.Message");
+			releaseServiceResponse.HttpResponse = _ctx.HttpResponse;
+			releaseServiceResponse.Message = _ctx.StringValue("ReleaseService.Message");
+			releaseServiceResponse.RequestId = _ctx.StringValue("ReleaseService.RequestId");
+			releaseServiceResponse.Code = _ctx.StringValue("ReleaseService.Code");
+			releaseServiceResponse.Success = _ctx.BooleanValue("ReleaseService.Success");
         
 			return releaseServiceResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 	public class DescribePublishedRouteEntriesResponse : AcsResponse
 	{
 
+		private int? pageSize;
+
 		private string requestId;
 
 		private int? pageNumber;
 
 		private int? totalCount;
 
-		private int? pageSize;
-
 		private List<DescribePublishedRouteEntries_PublishedRouteEntry> publishedRouteEntries;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -71,18 +83,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
 		public List<DescribePublishedRouteEntries_PublishedRouteEntry> PublishedRouteEntries
 		{
 			get
@@ -98,31 +98,43 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		public class DescribePublishedRouteEntries_PublishedRouteEntry
 		{
 
-			private string destinationCidrBlock;
+			private string nextHopId;
+
+			private string publishStatus;
 
 			private string childInstanceRouteTableId;
 
 			private string nextHopType;
 
-			private string routeType;
-
-			private string nextHopId;
-
 			private bool? operationalMode;
 
-			private string publishStatus;
+			private string destinationCidrBlock;
+
+			private string routeType;
 
 			private List<DescribePublishedRouteEntries_Conflict> conflicts;
 
-			public string DestinationCidrBlock
+			public string NextHopId
 			{
 				get
 				{
-					return destinationCidrBlock;
+					return nextHopId;
 				}
 				set	
 				{
-					destinationCidrBlock = value;
+					nextHopId = value;
+				}
+			}
+
+			public string PublishStatus
+			{
+				get
+				{
+					return publishStatus;
+				}
+				set	
+				{
+					publishStatus = value;
 				}
 			}
 
@@ -150,30 +162,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string RouteType
-			{
-				get
-				{
-					return routeType;
-				}
-				set	
-				{
-					routeType = value;
-				}
-			}
-
-			public string NextHopId
-			{
-				get
-				{
-					return nextHopId;
-				}
-				set	
-				{
-					nextHopId = value;
-				}
-			}
-
 			public bool? OperationalMode
 			{
 				get
@@ -186,15 +174,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string PublishStatus
+			public string DestinationCidrBlock
 			{
 				get
 				{
-					return publishStatus;
+					return destinationCidrBlock;
 				}
 				set	
 				{
-					publishStatus = value;
+					destinationCidrBlock = value;
+				}
+			}
+
+			public string RouteType
+			{
+				get
+				{
+					return routeType;
+				}
+				set	
+				{
+					routeType = value;
 				}
 			}
 
@@ -213,15 +213,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			public class DescribePublishedRouteEntries_Conflict
 			{
 
-				private string destinationCidrBlock;
+				private string status;
 
-				private string regionId;
+				private string destinationCidrBlock;
 
 				private string instanceId;
 
 				private string instanceType;
 
-				private string status;
+				private string regionId;
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 
 				public string DestinationCidrBlock
 				{
@@ -232,18 +244,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 					set	
 					{
 						destinationCidrBlock = value;
-					}
-				}
-
-				public string RegionId
-				{
-					get
-					{
-						return regionId;
-					}
-					set	
-					{
-						regionId = value;
 					}
 				}
 
@@ -271,15 +271,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 					}
 				}
 
-				public string Status
+				public string RegionId
 				{
 					get
 					{
-						return status;
+						return regionId;
 					}
 					set	
 					{
-						status = value;
+						regionId = value;
 					}
 				}
 			}

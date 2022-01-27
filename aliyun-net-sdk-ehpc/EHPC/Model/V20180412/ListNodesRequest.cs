@@ -35,22 +35,32 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.EHPC.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.EHPC.Endpoint.endpointRegionalType, null);
             }
         }
 
 		private string role;
 
-		private string clusterId;
-
 		private int? pageNumber;
-
-		private string sequence;
 
 		private string hostName;
 
 		private int? pageSize;
+
+		private string hostNamePrefix;
+
+		private string clusterId;
+
+		private string hostNameSuffix;
+
+		private string filter;
+
+		private string privateIpAddress;
+
+		private string sequence;
+
+		private string sortBy;
 
 		public string Role
 		{
@@ -65,19 +75,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
 		public int? PageNumber
 		{
 			get
@@ -88,19 +85,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string Sequence
-		{
-			get
-			{
-				return sequence;
-			}
-			set	
-			{
-				sequence = value;
-				DictionaryUtil.Add(QueryParameters, "Sequence", value);
 			}
 		}
 
@@ -127,6 +111,97 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string HostNamePrefix
+		{
+			get
+			{
+				return hostNamePrefix;
+			}
+			set	
+			{
+				hostNamePrefix = value;
+				DictionaryUtil.Add(QueryParameters, "HostNamePrefix", value);
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public string HostNameSuffix
+		{
+			get
+			{
+				return hostNameSuffix;
+			}
+			set	
+			{
+				hostNameSuffix = value;
+				DictionaryUtil.Add(QueryParameters, "HostNameSuffix", value);
+			}
+		}
+
+		public string Filter
+		{
+			get
+			{
+				return filter;
+			}
+			set	
+			{
+				filter = value;
+				DictionaryUtil.Add(QueryParameters, "Filter", value);
+			}
+		}
+
+		public string PrivateIpAddress
+		{
+			get
+			{
+				return privateIpAddress;
+			}
+			set	
+			{
+				privateIpAddress = value;
+				DictionaryUtil.Add(QueryParameters, "PrivateIpAddress", value);
+			}
+		}
+
+		public string Sequence
+		{
+			get
+			{
+				return sequence;
+			}
+			set	
+			{
+				sequence = value;
+				DictionaryUtil.Add(QueryParameters, "Sequence", value);
+			}
+		}
+
+		public string SortBy
+		{
+			get
+			{
+				return sortBy;
+			}
+			set	
+			{
+				sortBy = value;
+				DictionaryUtil.Add(QueryParameters, "SortBy", value);
 			}
 		}
 

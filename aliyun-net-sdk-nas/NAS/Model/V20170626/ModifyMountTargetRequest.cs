@@ -34,9 +34,10 @@ namespace Aliyun.Acs.NAS.Model.V20170626
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.NAS.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.NAS.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string fileSystemId;
@@ -44,6 +45,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 		private string mountTargetDomain;
 
 		private string accessGroupName;
+
+		private string dualStackMountTargetDomain;
 
 		private string status;
 
@@ -83,6 +86,19 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				accessGroupName = value;
 				DictionaryUtil.Add(QueryParameters, "AccessGroupName", value);
+			}
+		}
+
+		public string DualStackMountTargetDomain
+		{
+			get
+			{
+				return dualStackMountTargetDomain;
+			}
+			set	
+			{
+				dualStackMountTargetDomain = value;
+				DictionaryUtil.Add(QueryParameters, "DualStackMountTargetDomain", value);
 			}
 		}
 

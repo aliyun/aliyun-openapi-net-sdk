@@ -26,13 +26,13 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class CreateStackGroupResponseUnmarshaller
     {
-        public static CreateStackGroupResponse Unmarshall(UnmarshallerContext context)
+        public static CreateStackGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateStackGroupResponse createStackGroupResponse = new CreateStackGroupResponse();
 
-			createStackGroupResponse.HttpResponse = context.HttpResponse;
-			createStackGroupResponse.RequestId = context.StringValue("CreateStackGroup.RequestId");
-			createStackGroupResponse.StackGroupId = context.StringValue("CreateStackGroup.StackGroupId");
+			createStackGroupResponse.HttpResponse = _ctx.HttpResponse;
+			createStackGroupResponse.RequestId = _ctx.StringValue("CreateStackGroup.RequestId");
+			createStackGroupResponse.StackGroupId = _ctx.StringValue("CreateStackGroup.StackGroupId");
         
 			return createStackGroupResponse;
         }

@@ -34,21 +34,33 @@ namespace Aliyun.Acs.Iot.Model.V20180120
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Iot.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Iot.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private int? dynamicMode;
 
+		private bool? multiModuleMode;
+
 		private int? retryCount;
 
 		private int? timeoutInMinutes;
 
+		private bool? needConfirm;
+
+		private string groupType;
+
+		private bool? needPush;
+
 		private string iotInstanceId;
 
+		private string downloadProtocol;
+
 		private List<Tag> tags = new List<Tag>(){ };
+
+		private string groupId;
 
 		private string firmwareId;
 
@@ -72,6 +84,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				dynamicMode = value;
 				DictionaryUtil.Add(QueryParameters, "DynamicMode", value.ToString());
+			}
+		}
+
+		public bool? MultiModuleMode
+		{
+			get
+			{
+				return multiModuleMode;
+			}
+			set	
+			{
+				multiModuleMode = value;
+				DictionaryUtil.Add(QueryParameters, "MultiModuleMode", value.ToString());
 			}
 		}
 
@@ -101,6 +126,45 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public bool? NeedConfirm
+		{
+			get
+			{
+				return needConfirm;
+			}
+			set	
+			{
+				needConfirm = value;
+				DictionaryUtil.Add(QueryParameters, "NeedConfirm", value.ToString());
+			}
+		}
+
+		public string GroupType
+		{
+			get
+			{
+				return groupType;
+			}
+			set	
+			{
+				groupType = value;
+				DictionaryUtil.Add(QueryParameters, "GroupType", value);
+			}
+		}
+
+		public bool? NeedPush
+		{
+			get
+			{
+				return needPush;
+			}
+			set	
+			{
+				needPush = value;
+				DictionaryUtil.Add(QueryParameters, "NeedPush", value.ToString());
+			}
+		}
+
 		public string IotInstanceId
 		{
 			get
@@ -111,6 +175,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public string DownloadProtocol
+		{
+			get
+			{
+				return downloadProtocol;
+			}
+			set	
+			{
+				downloadProtocol = value;
+				DictionaryUtil.Add(QueryParameters, "DownloadProtocol", value);
 			}
 		}
 
@@ -129,6 +206,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 				}
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 

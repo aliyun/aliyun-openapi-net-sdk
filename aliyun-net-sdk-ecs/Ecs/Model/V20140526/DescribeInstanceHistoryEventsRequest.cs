@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -50,11 +50,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string impactLevel;
 
+		private string resourceGroupId;
+
 		private int? pageSize;
 
 		private List<string> instanceEventCycleStatuss = new List<string>(){ };
 
+		private List<string> tags = new List<string>(){ };
+
 		private string eventPublishTimeEnd;
+
+		private List<string> resourceIds = new List<string>(){ };
 
 		private List<string> instanceEventTypes = new List<string>(){ };
 
@@ -65,6 +71,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string notBeforeStart;
 
 		private long? ownerId;
+
+		private string resourceType;
 
 		private string eventPublishTimeStart;
 
@@ -84,10 +92,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				eventIds = value;
-				for (int i = 0; i < eventIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"EventId." + (i + 1) , eventIds[i]);
-				}
 			}
 		}
 
@@ -143,6 +147,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
 		public int? PageSize
 		{
 			get
@@ -166,9 +183,26 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				instanceEventCycleStatuss = value;
-				for (int i = 0; i < instanceEventCycleStatuss.Count; i++)
+			}
+		}
+
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"InstanceEventCycleStatus." + (i + 1) , instanceEventCycleStatuss[i]);
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
 				}
 			}
 		}
@@ -186,6 +220,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public List<string> ResourceIds
+		{
+			get
+			{
+				return resourceIds;
+			}
+
+			set
+			{
+				resourceIds = value;
+			}
+		}
+
 		public List<string> InstanceEventTypes
 		{
 			get
@@ -196,10 +243,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				instanceEventTypes = value;
-				for (int i = 0; i < instanceEventTypes.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceEventType." + (i + 1) , instanceEventTypes[i]);
-				}
 			}
 		}
 
@@ -255,6 +298,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+			}
+		}
+
 		public string EventPublishTimeStart
 		{
 			get
@@ -304,6 +360,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				eventType = value;
 				DictionaryUtil.Add(QueryParameters, "EventType", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string key;
+
+			private string value_;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
 		}
 

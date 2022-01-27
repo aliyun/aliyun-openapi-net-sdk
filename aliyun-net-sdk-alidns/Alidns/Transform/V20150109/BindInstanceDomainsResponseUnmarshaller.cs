@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class BindInstanceDomainsResponseUnmarshaller
     {
-        public static BindInstanceDomainsResponse Unmarshall(UnmarshallerContext context)
+        public static BindInstanceDomainsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BindInstanceDomainsResponse bindInstanceDomainsResponse = new BindInstanceDomainsResponse();
 
-			bindInstanceDomainsResponse.HttpResponse = context.HttpResponse;
-			bindInstanceDomainsResponse.RequestId = context.StringValue("BindInstanceDomains.RequestId");
-			bindInstanceDomainsResponse.SuccessCount = context.IntegerValue("BindInstanceDomains.SuccessCount");
-			bindInstanceDomainsResponse.FailedCount = context.IntegerValue("BindInstanceDomains.FailedCount");
+			bindInstanceDomainsResponse.HttpResponse = _ctx.HttpResponse;
+			bindInstanceDomainsResponse.RequestId = _ctx.StringValue("BindInstanceDomains.RequestId");
+			bindInstanceDomainsResponse.SuccessCount = _ctx.IntegerValue("BindInstanceDomains.SuccessCount");
+			bindInstanceDomainsResponse.FailedCount = _ctx.IntegerValue("BindInstanceDomains.FailedCount");
         
 			return bindInstanceDomainsResponse;
         }

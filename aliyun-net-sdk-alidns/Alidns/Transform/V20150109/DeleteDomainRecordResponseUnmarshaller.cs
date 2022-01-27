@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DeleteDomainRecordResponseUnmarshaller
     {
-        public static DeleteDomainRecordResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDomainRecordResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDomainRecordResponse deleteDomainRecordResponse = new DeleteDomainRecordResponse();
 
-			deleteDomainRecordResponse.HttpResponse = context.HttpResponse;
-			deleteDomainRecordResponse.RequestId = context.StringValue("DeleteDomainRecord.RequestId");
-			deleteDomainRecordResponse.RecordId = context.StringValue("DeleteDomainRecord.RecordId");
+			deleteDomainRecordResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDomainRecordResponse.RequestId = _ctx.StringValue("DeleteDomainRecord.RequestId");
+			deleteDomainRecordResponse.RecordId = _ctx.StringValue("DeleteDomainRecord.RecordId");
         
 			return deleteDomainRecordResponse;
         }

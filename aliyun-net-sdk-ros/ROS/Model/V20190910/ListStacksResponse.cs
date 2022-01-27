@@ -122,6 +122,10 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 			private string driftDetectionTime;
 
+			private string stackType;
+
+			private List<ListStacks_Tag> tags;
+
 			public string CreateTime
 			{
 				get
@@ -263,6 +267,62 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 				set	
 				{
 					driftDetectionTime = value;
+				}
+			}
+
+			public string StackType
+			{
+				get
+				{
+					return stackType;
+				}
+				set	
+				{
+					stackType = value;
+				}
+			}
+
+			public List<ListStacks_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class ListStacks_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

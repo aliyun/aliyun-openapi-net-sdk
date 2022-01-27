@@ -26,14 +26,14 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class UpdateFaceGroupResponseUnmarshaller
     {
-        public static UpdateFaceGroupResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateFaceGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateFaceGroupResponse updateFaceGroupResponse = new UpdateFaceGroupResponse();
 
-			updateFaceGroupResponse.HttpResponse = context.HttpResponse;
-			updateFaceGroupResponse.RequestId = context.StringValue("UpdateFaceGroup.RequestId");
-			updateFaceGroupResponse.SetId = context.StringValue("UpdateFaceGroup.SetId");
-			updateFaceGroupResponse.GroupId = context.StringValue("UpdateFaceGroup.GroupId");
+			updateFaceGroupResponse.HttpResponse = _ctx.HttpResponse;
+			updateFaceGroupResponse.RequestId = _ctx.StringValue("UpdateFaceGroup.RequestId");
+			updateFaceGroupResponse.SetId = _ctx.StringValue("UpdateFaceGroup.SetId");
+			updateFaceGroupResponse.GroupId = _ctx.StringValue("UpdateFaceGroup.GroupId");
         
 			return updateFaceGroupResponse;
         }

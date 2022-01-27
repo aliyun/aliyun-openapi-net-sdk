@@ -26,13 +26,13 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class DescribeInstanceConfigResponseUnmarshaller
     {
-        public static DescribeInstanceConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeInstanceConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeInstanceConfigResponse describeInstanceConfigResponse = new DescribeInstanceConfigResponse();
 
-			describeInstanceConfigResponse.HttpResponse = context.HttpResponse;
-			describeInstanceConfigResponse.RequestId = context.StringValue("DescribeInstanceConfig.RequestId");
-			describeInstanceConfigResponse.Config = context.StringValue("DescribeInstanceConfig.Config");
+			describeInstanceConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeInstanceConfigResponse.RequestId = _ctx.StringValue("DescribeInstanceConfig.RequestId");
+			describeInstanceConfigResponse.Config = _ctx.StringValue("DescribeInstanceConfig.Config");
         
 			return describeInstanceConfigResponse;
         }

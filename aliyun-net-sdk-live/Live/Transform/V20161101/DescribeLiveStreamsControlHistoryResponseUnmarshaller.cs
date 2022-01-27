@@ -26,20 +26,20 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveStreamsControlHistoryResponseUnmarshaller
     {
-        public static DescribeLiveStreamsControlHistoryResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveStreamsControlHistoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveStreamsControlHistoryResponse describeLiveStreamsControlHistoryResponse = new DescribeLiveStreamsControlHistoryResponse();
 
-			describeLiveStreamsControlHistoryResponse.HttpResponse = context.HttpResponse;
-			describeLiveStreamsControlHistoryResponse.RequestId = context.StringValue("DescribeLiveStreamsControlHistory.RequestId");
+			describeLiveStreamsControlHistoryResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveStreamsControlHistoryResponse.RequestId = _ctx.StringValue("DescribeLiveStreamsControlHistory.RequestId");
 
 			List<DescribeLiveStreamsControlHistoryResponse.DescribeLiveStreamsControlHistory_LiveStreamControlInfo> describeLiveStreamsControlHistoryResponse_controlInfo = new List<DescribeLiveStreamsControlHistoryResponse.DescribeLiveStreamsControlHistory_LiveStreamControlInfo>();
-			for (int i = 0; i < context.Length("DescribeLiveStreamsControlHistory.ControlInfo.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveStreamsControlHistory.ControlInfo.Length"); i++) {
 				DescribeLiveStreamsControlHistoryResponse.DescribeLiveStreamsControlHistory_LiveStreamControlInfo liveStreamControlInfo = new DescribeLiveStreamsControlHistoryResponse.DescribeLiveStreamsControlHistory_LiveStreamControlInfo();
-				liveStreamControlInfo.StreamName = context.StringValue("DescribeLiveStreamsControlHistory.ControlInfo["+ i +"].StreamName");
-				liveStreamControlInfo.ClientIP = context.StringValue("DescribeLiveStreamsControlHistory.ControlInfo["+ i +"].ClientIP");
-				liveStreamControlInfo.Action = context.StringValue("DescribeLiveStreamsControlHistory.ControlInfo["+ i +"].Action");
-				liveStreamControlInfo.TimeStamp = context.StringValue("DescribeLiveStreamsControlHistory.ControlInfo["+ i +"].TimeStamp");
+				liveStreamControlInfo.StreamName = _ctx.StringValue("DescribeLiveStreamsControlHistory.ControlInfo["+ i +"].StreamName");
+				liveStreamControlInfo.ClientIP = _ctx.StringValue("DescribeLiveStreamsControlHistory.ControlInfo["+ i +"].ClientIP");
+				liveStreamControlInfo.Action = _ctx.StringValue("DescribeLiveStreamsControlHistory.ControlInfo["+ i +"].Action");
+				liveStreamControlInfo.TimeStamp = _ctx.StringValue("DescribeLiveStreamsControlHistory.ControlInfo["+ i +"].TimeStamp");
 
 				describeLiveStreamsControlHistoryResponse_controlInfo.Add(liveStreamControlInfo);
 			}

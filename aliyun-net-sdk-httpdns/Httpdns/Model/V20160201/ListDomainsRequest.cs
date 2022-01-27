@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Httpdns;
 using Aliyun.Acs.Httpdns.Transform;
 using Aliyun.Acs.Httpdns.Transform.V20160201;
 
@@ -30,28 +31,14 @@ namespace Aliyun.Acs.Httpdns.Model.V20160201
     public class ListDomainsRequest : RpcAcsRequest<ListDomainsResponse>
     {
         public ListDomainsRequest()
-            : base("Httpdns", "2016-02-01", "ListDomains", "httpdns", "openAPI")
+            : base("Httpdns", "2016-02-01", "ListDomains")
         {
+			Method = MethodType.POST;
         }
-
-		private int? pageSize;
 
 		private int? pageNumber;
 
-		private string accessKeyId;
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
+		private int? pageSize;
 
 		public int? PageNumber
 		{
@@ -66,16 +53,16 @@ namespace Aliyun.Acs.Httpdns.Model.V20160201
 			}
 		}
 
-		public string AccessKeyId
+		public int? PageSize
 		{
 			get
 			{
-				return accessKeyId;
+				return pageSize;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

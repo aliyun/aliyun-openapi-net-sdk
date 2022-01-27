@@ -26,25 +26,25 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class GenerateOTAUploadURLResponseUnmarshaller
     {
-        public static GenerateOTAUploadURLResponse Unmarshall(UnmarshallerContext context)
+        public static GenerateOTAUploadURLResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GenerateOTAUploadURLResponse generateOTAUploadURLResponse = new GenerateOTAUploadURLResponse();
 
-			generateOTAUploadURLResponse.HttpResponse = context.HttpResponse;
-			generateOTAUploadURLResponse.RequestId = context.StringValue("GenerateOTAUploadURL.RequestId");
-			generateOTAUploadURLResponse.Success = context.BooleanValue("GenerateOTAUploadURL.Success");
-			generateOTAUploadURLResponse.Code = context.StringValue("GenerateOTAUploadURL.Code");
-			generateOTAUploadURLResponse.ErrorMessage = context.StringValue("GenerateOTAUploadURL.ErrorMessage");
+			generateOTAUploadURLResponse.HttpResponse = _ctx.HttpResponse;
+			generateOTAUploadURLResponse.RequestId = _ctx.StringValue("GenerateOTAUploadURL.RequestId");
+			generateOTAUploadURLResponse.Success = _ctx.BooleanValue("GenerateOTAUploadURL.Success");
+			generateOTAUploadURLResponse.Code = _ctx.StringValue("GenerateOTAUploadURL.Code");
+			generateOTAUploadURLResponse.ErrorMessage = _ctx.StringValue("GenerateOTAUploadURL.ErrorMessage");
 
 			GenerateOTAUploadURLResponse.GenerateOTAUploadURL_Data data = new GenerateOTAUploadURLResponse.GenerateOTAUploadURL_Data();
-			data.Key = context.StringValue("GenerateOTAUploadURL.Data.Key");
-			data.Host = context.StringValue("GenerateOTAUploadURL.Data.Host");
-			data.Policy = context.StringValue("GenerateOTAUploadURL.Data.Policy");
-			data.OSSAccessKeyId = context.StringValue("GenerateOTAUploadURL.Data.OSSAccessKeyId");
-			data.Signature = context.StringValue("GenerateOTAUploadURL.Data.Signature");
-			data.FirmwareUrl = context.StringValue("GenerateOTAUploadURL.Data.FirmwareUrl");
-			data.UtcCreate = context.StringValue("GenerateOTAUploadURL.Data.UtcCreate");
-			data.ObjectStorage = context.StringValue("GenerateOTAUploadURL.Data.ObjectStorage");
+			data.Key = _ctx.StringValue("GenerateOTAUploadURL.Data.Key");
+			data.Host = _ctx.StringValue("GenerateOTAUploadURL.Data.Host");
+			data.Policy = _ctx.StringValue("GenerateOTAUploadURL.Data.Policy");
+			data.OSSAccessKeyId = _ctx.StringValue("GenerateOTAUploadURL.Data.OSSAccessKeyId");
+			data.Signature = _ctx.StringValue("GenerateOTAUploadURL.Data.Signature");
+			data.FirmwareUrl = _ctx.StringValue("GenerateOTAUploadURL.Data.FirmwareUrl");
+			data.UtcCreate = _ctx.StringValue("GenerateOTAUploadURL.Data.UtcCreate");
+			data.ObjectStorage = _ctx.StringValue("GenerateOTAUploadURL.Data.ObjectStorage");
 			generateOTAUploadURLResponse.Data = data;
         
 			return generateOTAUploadURLResponse;

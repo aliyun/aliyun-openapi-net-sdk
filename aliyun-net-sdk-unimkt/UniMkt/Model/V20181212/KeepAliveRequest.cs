@@ -30,12 +30,12 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
     public class KeepAliveRequest : RpcAcsRequest<KeepAliveResponse>
     {
         public KeepAliveRequest()
-            : base("UniMkt", "2018-12-12", "KeepAlive", "uniMkt", "openAPI")
+            : base("UniMkt", "2018-12-12", "KeepAlive", "1.0.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.UniMkt.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.UniMkt.Endpoint.endpointRegionalType, null);
             }
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.gpdb;
 using Aliyun.Acs.gpdb.Transform;
 using Aliyun.Acs.gpdb.Transform.V20160503;
 
@@ -30,51 +31,88 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
     public class DescribeDBInstancesRequest : RpcAcsRequest<DescribeDBInstancesResponse>
     {
         public DescribeDBInstancesRequest()
-            : base("gpdb", "2016-05-03", "DescribeDBInstances", "gpdb", "openAPI")
+            : base("gpdb", "2016-05-03", "DescribeDBInstances")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
-		private string dBInstanceIds;
+		private List<string> dBInstanceModes = new List<string>(){ };
 
-		private string regionId;
+		private List<string> dBInstanceStatuses = new List<string>(){ };
+
+		private int? pageNumber;
 
 		private int? pageSize;
 
 		private string dBInstanceDescription;
 
-		private List<Tag> tags;
+		private List<string> tags = new List<string>(){ };
+
+		private string dBInstanceIds;
 
 		private long? ownerId;
 
+		private List<string> dBInstanceCategories = new List<string>(){ };
+
+		private List<string> instanceDeployTypes = new List<string>(){ };
+
 		private string instanceNetworkType;
 
-		private int? pageNumber;
-
-		private string accessKeyId;
-
-		public string DBInstanceIds
+		public List<string> DBInstanceModes
 		{
 			get
 			{
-				return dBInstanceIds;
+				return dBInstanceModes;
 			}
-			set	
+
+			set
 			{
-				dBInstanceIds = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceIds", value);
+				dBInstanceModes = value;
+				if(dBInstanceModes != null)
+				{
+					for (int depth1 = 0; depth1 < dBInstanceModes.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"DBInstanceModes." + (depth1 + 1), dBInstanceModes[depth1]);
+					}
+				}
 			}
 		}
 
-		public string RegionId
+		public List<string> DBInstanceStatuses
 		{
 			get
 			{
-				return regionId;
+				return dBInstanceStatuses;
+			}
+
+			set
+			{
+				dBInstanceStatuses = value;
+				if(dBInstanceStatuses != null)
+				{
+					for (int depth1 = 0; depth1 < dBInstanceStatuses.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"DBInstanceStatuses." + (depth1 + 1), dBInstanceStatuses[depth1]);
+					}
+				}
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -104,7 +142,7 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public List<Tag> Tags
+		public List<string> Tags
 		{
 			get
 			{
@@ -114,11 +152,27 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			set
 			{
 				tags = value;
-				for (int i = 0; i < tags.Count; i++)
+				if(tags != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
 				}
+			}
+		}
+
+		public string DBInstanceIds
+		{
+			get
+			{
+				return dBInstanceIds;
+			}
+			set	
+			{
+				dBInstanceIds = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceIds", value);
 			}
 		}
 
@@ -135,6 +189,46 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
+		public List<string> DBInstanceCategories
+		{
+			get
+			{
+				return dBInstanceCategories;
+			}
+
+			set
+			{
+				dBInstanceCategories = value;
+				if(dBInstanceCategories != null)
+				{
+					for (int depth1 = 0; depth1 < dBInstanceCategories.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"DBInstanceCategories." + (depth1 + 1), dBInstanceCategories[depth1]);
+					}
+				}
+			}
+		}
+
+		public List<string> InstanceDeployTypes
+		{
+			get
+			{
+				return instanceDeployTypes;
+			}
+
+			set
+			{
+				instanceDeployTypes = value;
+				if(instanceDeployTypes != null)
+				{
+					for (int depth1 = 0; depth1 < instanceDeployTypes.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"InstanceDeployTypes." + (depth1 + 1), instanceDeployTypes[depth1]);
+					}
+				}
+			}
+		}
+
 		public string InstanceNetworkType
 		{
 			get
@@ -148,32 +242,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public class Tag
 		{
 
@@ -181,7 +249,7 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 
 			private string key;
 
-			public string Value
+			public string Value_
 			{
 				get
 				{

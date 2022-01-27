@@ -26,27 +26,27 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class GetDocIndexResponseUnmarshaller
     {
-        public static GetDocIndexResponse Unmarshall(UnmarshallerContext context)
+        public static GetDocIndexResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetDocIndexResponse getDocIndexResponse = new GetDocIndexResponse();
 
-			getDocIndexResponse.HttpResponse = context.HttpResponse;
-			getDocIndexResponse.RequestId = context.StringValue("GetDocIndex.RequestId");
-			getDocIndexResponse.IndexCreatedTime = context.StringValue("GetDocIndex.IndexCreatedTime");
-			getDocIndexResponse.IndexModifiedTime = context.StringValue("GetDocIndex.IndexModifiedTime");
-			getDocIndexResponse.UniqueId = context.StringValue("GetDocIndex.UniqueId");
-			getDocIndexResponse.SrcUri = context.StringValue("GetDocIndex.SrcUri");
-			getDocIndexResponse.Name = context.StringValue("GetDocIndex.Name");
-			getDocIndexResponse.ContentType = context.StringValue("GetDocIndex.ContentType");
-			getDocIndexResponse.LastModified = context.StringValue("GetDocIndex.LastModified");
-			getDocIndexResponse.Size = context.LongValue("GetDocIndex.Size");
-			getDocIndexResponse.PageNum = context.LongValue("GetDocIndex.PageNum");
-			getDocIndexResponse.CustomKey1 = context.StringValue("GetDocIndex.CustomKey1");
-			getDocIndexResponse.CustomKey2 = context.StringValue("GetDocIndex.CustomKey2");
-			getDocIndexResponse.CustomKey3 = context.StringValue("GetDocIndex.CustomKey3");
-			getDocIndexResponse.CustomKey4 = context.StringValue("GetDocIndex.CustomKey4");
-			getDocIndexResponse.CustomKey5 = context.StringValue("GetDocIndex.CustomKey5");
-			getDocIndexResponse.CustomKey6 = context.StringValue("GetDocIndex.CustomKey6");
+			getDocIndexResponse.HttpResponse = _ctx.HttpResponse;
+			getDocIndexResponse.RequestId = _ctx.StringValue("GetDocIndex.RequestId");
+			getDocIndexResponse.IndexCreatedTime = _ctx.StringValue("GetDocIndex.IndexCreatedTime");
+			getDocIndexResponse.IndexModifiedTime = _ctx.StringValue("GetDocIndex.IndexModifiedTime");
+			getDocIndexResponse.UniqueId = _ctx.StringValue("GetDocIndex.UniqueId");
+			getDocIndexResponse.SrcUri = _ctx.StringValue("GetDocIndex.SrcUri");
+			getDocIndexResponse.Name = _ctx.StringValue("GetDocIndex.Name");
+			getDocIndexResponse.ContentType = _ctx.StringValue("GetDocIndex.ContentType");
+			getDocIndexResponse.LastModified = _ctx.StringValue("GetDocIndex.LastModified");
+			getDocIndexResponse.Size = _ctx.LongValue("GetDocIndex.Size");
+			getDocIndexResponse.PageNum = _ctx.LongValue("GetDocIndex.PageNum");
+			getDocIndexResponse.CustomKey1 = _ctx.StringValue("GetDocIndex.CustomKey1");
+			getDocIndexResponse.CustomKey2 = _ctx.StringValue("GetDocIndex.CustomKey2");
+			getDocIndexResponse.CustomKey3 = _ctx.StringValue("GetDocIndex.CustomKey3");
+			getDocIndexResponse.CustomKey4 = _ctx.StringValue("GetDocIndex.CustomKey4");
+			getDocIndexResponse.CustomKey5 = _ctx.StringValue("GetDocIndex.CustomKey5");
+			getDocIndexResponse.CustomKey6 = _ctx.StringValue("GetDocIndex.CustomKey6");
         
 			return getDocIndexResponse;
         }

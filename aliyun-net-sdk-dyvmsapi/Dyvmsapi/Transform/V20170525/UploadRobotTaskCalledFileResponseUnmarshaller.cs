@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
     public class UploadRobotTaskCalledFileResponseUnmarshaller
     {
-        public static UploadRobotTaskCalledFileResponse Unmarshall(UnmarshallerContext context)
+        public static UploadRobotTaskCalledFileResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UploadRobotTaskCalledFileResponse uploadRobotTaskCalledFileResponse = new UploadRobotTaskCalledFileResponse();
 
-			uploadRobotTaskCalledFileResponse.HttpResponse = context.HttpResponse;
-			uploadRobotTaskCalledFileResponse.RequestId = context.StringValue("UploadRobotTaskCalledFile.RequestId");
-			uploadRobotTaskCalledFileResponse.Data = context.StringValue("UploadRobotTaskCalledFile.Data");
-			uploadRobotTaskCalledFileResponse.Code = context.StringValue("UploadRobotTaskCalledFile.Code");
-			uploadRobotTaskCalledFileResponse.Message = context.StringValue("UploadRobotTaskCalledFile.Message");
+			uploadRobotTaskCalledFileResponse.HttpResponse = _ctx.HttpResponse;
+			uploadRobotTaskCalledFileResponse.RequestId = _ctx.StringValue("UploadRobotTaskCalledFile.RequestId");
+			uploadRobotTaskCalledFileResponse.Data = _ctx.StringValue("UploadRobotTaskCalledFile.Data");
+			uploadRobotTaskCalledFileResponse.Code = _ctx.StringValue("UploadRobotTaskCalledFile.Code");
+			uploadRobotTaskCalledFileResponse.Message = _ctx.StringValue("UploadRobotTaskCalledFile.Message");
         
 			return uploadRobotTaskCalledFileResponse;
         }

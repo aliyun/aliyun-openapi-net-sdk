@@ -26,31 +26,31 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class DescribeNamespaceListResponseUnmarshaller
     {
-        public static DescribeNamespaceListResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeNamespaceListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeNamespaceListResponse describeNamespaceListResponse = new DescribeNamespaceListResponse();
 
-			describeNamespaceListResponse.HttpResponse = context.HttpResponse;
-			describeNamespaceListResponse.RequestId = context.StringValue("DescribeNamespaceList.RequestId");
-			describeNamespaceListResponse.Code = context.StringValue("DescribeNamespaceList.Code");
-			describeNamespaceListResponse.Message = context.StringValue("DescribeNamespaceList.Message");
-			describeNamespaceListResponse.Success = context.BooleanValue("DescribeNamespaceList.Success");
-			describeNamespaceListResponse.ErrorCode = context.StringValue("DescribeNamespaceList.ErrorCode");
-			describeNamespaceListResponse.TraceId = context.StringValue("DescribeNamespaceList.TraceId");
+			describeNamespaceListResponse.HttpResponse = _ctx.HttpResponse;
+			describeNamespaceListResponse.RequestId = _ctx.StringValue("DescribeNamespaceList.RequestId");
+			describeNamespaceListResponse.Code = _ctx.StringValue("DescribeNamespaceList.Code");
+			describeNamespaceListResponse.Message = _ctx.StringValue("DescribeNamespaceList.Message");
+			describeNamespaceListResponse.Success = _ctx.BooleanValue("DescribeNamespaceList.Success");
+			describeNamespaceListResponse.ErrorCode = _ctx.StringValue("DescribeNamespaceList.ErrorCode");
+			describeNamespaceListResponse.TraceId = _ctx.StringValue("DescribeNamespaceList.TraceId");
 
 			List<DescribeNamespaceListResponse.DescribeNamespaceList_RegionList> describeNamespaceListResponse_data = new List<DescribeNamespaceListResponse.DescribeNamespaceList_RegionList>();
-			for (int i = 0; i < context.Length("DescribeNamespaceList.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeNamespaceList.Data.Length"); i++) {
 				DescribeNamespaceListResponse.DescribeNamespaceList_RegionList regionList = new DescribeNamespaceListResponse.DescribeNamespaceList_RegionList();
-				regionList.NamespaceName = context.StringValue("DescribeNamespaceList.Data["+ i +"].NamespaceName");
-				regionList.NamespaceId = context.StringValue("DescribeNamespaceList.Data["+ i +"].NamespaceId");
-				regionList.AgentInstall = context.StringValue("DescribeNamespaceList.Data["+ i +"].AgentInstall");
-				regionList.Current = context.BooleanValue("DescribeNamespaceList.Data["+ i +"].Current");
-				regionList.Custom = context.BooleanValue("DescribeNamespaceList.Data["+ i +"].Custom");
-				regionList.RegionId = context.StringValue("DescribeNamespaceList.Data["+ i +"].RegionId");
-				regionList.HybridCloudEnable = context.BooleanValue("DescribeNamespaceList.Data["+ i +"].HybridCloudEnable");
-				regionList.VpcId = context.StringValue("DescribeNamespaceList.Data["+ i +"].VpcId");
-				regionList.VSwitchId = context.StringValue("DescribeNamespaceList.Data["+ i +"].VSwitchId");
-				regionList.SecurityGroupId = context.StringValue("DescribeNamespaceList.Data["+ i +"].SecurityGroupId");
+				regionList.NamespaceName = _ctx.StringValue("DescribeNamespaceList.Data["+ i +"].NamespaceName");
+				regionList.NamespaceId = _ctx.StringValue("DescribeNamespaceList.Data["+ i +"].NamespaceId");
+				regionList.AgentInstall = _ctx.StringValue("DescribeNamespaceList.Data["+ i +"].AgentInstall");
+				regionList.Current = _ctx.BooleanValue("DescribeNamespaceList.Data["+ i +"].Current");
+				regionList.Custom = _ctx.BooleanValue("DescribeNamespaceList.Data["+ i +"].Custom");
+				regionList.RegionId = _ctx.StringValue("DescribeNamespaceList.Data["+ i +"].RegionId");
+				regionList.HybridCloudEnable = _ctx.BooleanValue("DescribeNamespaceList.Data["+ i +"].HybridCloudEnable");
+				regionList.VpcId = _ctx.StringValue("DescribeNamespaceList.Data["+ i +"].VpcId");
+				regionList.VSwitchId = _ctx.StringValue("DescribeNamespaceList.Data["+ i +"].VSwitchId");
+				regionList.SecurityGroupId = _ctx.StringValue("DescribeNamespaceList.Data["+ i +"].SecurityGroupId");
 
 				describeNamespaceListResponse_data.Add(regionList);
 			}

@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 {
     public class GetDBListFromAgentResponseUnmarshaller
     {
-        public static GetDBListFromAgentResponse Unmarshall(UnmarshallerContext context)
+        public static GetDBListFromAgentResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetDBListFromAgentResponse getDBListFromAgentResponse = new GetDBListFromAgentResponse();
 
-			getDBListFromAgentResponse.HttpResponse = context.HttpResponse;
-			getDBListFromAgentResponse.Success = context.BooleanValue("GetDBListFromAgent.Success");
-			getDBListFromAgentResponse.ErrCode = context.StringValue("GetDBListFromAgent.ErrCode");
-			getDBListFromAgentResponse.ErrMessage = context.StringValue("GetDBListFromAgent.ErrMessage");
-			getDBListFromAgentResponse.HttpStatusCode = context.IntegerValue("GetDBListFromAgent.HttpStatusCode");
-			getDBListFromAgentResponse.RequestId = context.StringValue("GetDBListFromAgent.RequestId");
+			getDBListFromAgentResponse.HttpResponse = _ctx.HttpResponse;
+			getDBListFromAgentResponse.Success = _ctx.BooleanValue("GetDBListFromAgent.Success");
+			getDBListFromAgentResponse.ErrCode = _ctx.StringValue("GetDBListFromAgent.ErrCode");
+			getDBListFromAgentResponse.ErrMessage = _ctx.StringValue("GetDBListFromAgent.ErrMessage");
+			getDBListFromAgentResponse.HttpStatusCode = _ctx.IntegerValue("GetDBListFromAgent.HttpStatusCode");
+			getDBListFromAgentResponse.RequestId = _ctx.StringValue("GetDBListFromAgent.RequestId");
 
 			List<string> getDBListFromAgentResponse_dbList = new List<string>();
-			for (int i = 0; i < context.Length("GetDBListFromAgent.DbList.Length"); i++) {
-				getDBListFromAgentResponse_dbList.Add(context.StringValue("GetDBListFromAgent.DbList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetDBListFromAgent.DbList.Length"); i++) {
+				getDBListFromAgentResponse_dbList.Add(_ctx.StringValue("GetDBListFromAgent.DbList["+ i +"]"));
 			}
 			getDBListFromAgentResponse.DbList = getDBListFromAgentResponse_dbList;
         

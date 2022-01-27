@@ -26,21 +26,21 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeUpPeakPublishStreamDataResponseUnmarshaller
     {
-        public static DescribeUpPeakPublishStreamDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUpPeakPublishStreamDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeUpPeakPublishStreamDataResponse describeUpPeakPublishStreamDataResponse = new DescribeUpPeakPublishStreamDataResponse();
 
-			describeUpPeakPublishStreamDataResponse.HttpResponse = context.HttpResponse;
-			describeUpPeakPublishStreamDataResponse.RequestId = context.StringValue("DescribeUpPeakPublishStreamData.RequestId");
+			describeUpPeakPublishStreamDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeUpPeakPublishStreamDataResponse.RequestId = _ctx.StringValue("DescribeUpPeakPublishStreamData.RequestId");
 
 			List<DescribeUpPeakPublishStreamDataResponse.DescribeUpPeakPublishStreamData_DescribeUpPeakPublishStreamData> describeUpPeakPublishStreamDataResponse_describeUpPeakPublishStreamDatas = new List<DescribeUpPeakPublishStreamDataResponse.DescribeUpPeakPublishStreamData_DescribeUpPeakPublishStreamData>();
-			for (int i = 0; i < context.Length("DescribeUpPeakPublishStreamData.DescribeUpPeakPublishStreamDatas.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeUpPeakPublishStreamData.DescribeUpPeakPublishStreamDatas.Length"); i++) {
 				DescribeUpPeakPublishStreamDataResponse.DescribeUpPeakPublishStreamData_DescribeUpPeakPublishStreamData describeUpPeakPublishStreamData = new DescribeUpPeakPublishStreamDataResponse.DescribeUpPeakPublishStreamData_DescribeUpPeakPublishStreamData();
-				describeUpPeakPublishStreamData.PublishStreamNum = context.IntegerValue("DescribeUpPeakPublishStreamData.DescribeUpPeakPublishStreamDatas["+ i +"].PublishStreamNum");
-				describeUpPeakPublishStreamData.PeakTime = context.StringValue("DescribeUpPeakPublishStreamData.DescribeUpPeakPublishStreamDatas["+ i +"].PeakTime");
-				describeUpPeakPublishStreamData.QueryTime = context.StringValue("DescribeUpPeakPublishStreamData.DescribeUpPeakPublishStreamDatas["+ i +"].QueryTime");
-				describeUpPeakPublishStreamData.StatName = context.StringValue("DescribeUpPeakPublishStreamData.DescribeUpPeakPublishStreamDatas["+ i +"].StatName");
-				describeUpPeakPublishStreamData.BandWidth = context.StringValue("DescribeUpPeakPublishStreamData.DescribeUpPeakPublishStreamDatas["+ i +"].BandWidth");
+				describeUpPeakPublishStreamData.PublishStreamNum = _ctx.IntegerValue("DescribeUpPeakPublishStreamData.DescribeUpPeakPublishStreamDatas["+ i +"].PublishStreamNum");
+				describeUpPeakPublishStreamData.PeakTime = _ctx.StringValue("DescribeUpPeakPublishStreamData.DescribeUpPeakPublishStreamDatas["+ i +"].PeakTime");
+				describeUpPeakPublishStreamData.QueryTime = _ctx.StringValue("DescribeUpPeakPublishStreamData.DescribeUpPeakPublishStreamDatas["+ i +"].QueryTime");
+				describeUpPeakPublishStreamData.StatName = _ctx.StringValue("DescribeUpPeakPublishStreamData.DescribeUpPeakPublishStreamDatas["+ i +"].StatName");
+				describeUpPeakPublishStreamData.BandWidth = _ctx.StringValue("DescribeUpPeakPublishStreamData.DescribeUpPeakPublishStreamDatas["+ i +"].BandWidth");
 
 				describeUpPeakPublishStreamDataResponse_describeUpPeakPublishStreamDatas.Add(describeUpPeakPublishStreamData);
 			}

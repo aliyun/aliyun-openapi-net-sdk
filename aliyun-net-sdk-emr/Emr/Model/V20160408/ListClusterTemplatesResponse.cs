@@ -158,6 +158,12 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private bool? initCustomHiveMetaDb;
 
+			private string keyPairName;
+
+			private string metaStoreType;
+
+			private string metaStoreConf;
+
 			private List<ListClusterTemplates_BootstrapAction> bootstrapActionList;
 
 			private List<ListClusterTemplates_HostGroup> hostGroupList;
@@ -523,6 +529,42 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					initCustomHiveMetaDb = value;
+				}
+			}
+
+			public string KeyPairName
+			{
+				get
+				{
+					return keyPairName;
+				}
+				set	
+				{
+					keyPairName = value;
+				}
+			}
+
+			public string MetaStoreType
+			{
+				get
+				{
+					return metaStoreType;
+				}
+				set	
+				{
+					metaStoreType = value;
+				}
+			}
+
+			public string MetaStoreConf
+			{
+				get
+				{
+					return metaStoreConf;
+				}
+				set	
+				{
+					metaStoreConf = value;
 				}
 			}
 

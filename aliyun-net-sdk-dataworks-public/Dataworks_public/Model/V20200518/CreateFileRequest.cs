@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dataworks_public;
 using Aliyun.Acs.dataworks_public.Transform;
 using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
@@ -30,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
     public class CreateFileRequest : RpcAcsRequest<CreateFileResponse>
     {
         public CreateFileRequest()
-            : base("dataworks-public", "2020-05-18", "CreateFile", "dide", "openAPI")
+            : base("dataworks-public", "2020-05-18", "CreateFile")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dataworks_public.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dataworks_public.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -47,6 +48,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		private string content;
 
 		private string projectIdentifier;
+
+		private long? resourceGroupId;
 
 		private long? projectId;
 
@@ -62,7 +65,11 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string rerunMode;
 
+		private string connectionName;
+
 		private string paraValue;
+
+		private string resourceGroupIdentifier;
 
 		private int? autoRerunTimes;
 
@@ -79,6 +86,10 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		private string fileFolderPath;
 
 		private string fileDescription;
+
+		private bool? autoParsing;
+
+		private string schedulerType;
 
 		public int? FileType
 		{
@@ -129,6 +140,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				projectIdentifier = value;
 				DictionaryUtil.Add(BodyParameters, "ProjectIdentifier", value);
+			}
+		}
+
+		public long? ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(BodyParameters, "ResourceGroupId", value.ToString());
 			}
 		}
 
@@ -223,6 +247,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public string ConnectionName
+		{
+			get
+			{
+				return connectionName;
+			}
+			set	
+			{
+				connectionName = value;
+				DictionaryUtil.Add(BodyParameters, "ConnectionName", value);
+			}
+		}
+
 		public string ParaValue
 		{
 			get
@@ -233,6 +270,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				paraValue = value;
 				DictionaryUtil.Add(BodyParameters, "ParaValue", value);
+			}
+		}
+
+		public string ResourceGroupIdentifier
+		{
+			get
+			{
+				return resourceGroupIdentifier;
+			}
+			set	
+			{
+				resourceGroupIdentifier = value;
+				DictionaryUtil.Add(BodyParameters, "ResourceGroupIdentifier", value);
 			}
 		}
 
@@ -337,6 +387,32 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				fileDescription = value;
 				DictionaryUtil.Add(BodyParameters, "FileDescription", value);
+			}
+		}
+
+		public bool? AutoParsing
+		{
+			get
+			{
+				return autoParsing;
+			}
+			set	
+			{
+				autoParsing = value;
+				DictionaryUtil.Add(BodyParameters, "AutoParsing", value.ToString());
+			}
+		}
+
+		public string SchedulerType
+		{
+			get
+			{
+				return schedulerType;
+			}
+			set	
+			{
+				schedulerType = value;
+				DictionaryUtil.Add(BodyParameters, "SchedulerType", value);
 			}
 		}
 

@@ -26,26 +26,26 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class ListNodeLabelBindingsResponseUnmarshaller
     {
-        public static ListNodeLabelBindingsResponse Unmarshall(UnmarshallerContext context)
+        public static ListNodeLabelBindingsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListNodeLabelBindingsResponse listNodeLabelBindingsResponse = new ListNodeLabelBindingsResponse();
 
-			listNodeLabelBindingsResponse.HttpResponse = context.HttpResponse;
-			listNodeLabelBindingsResponse.Code = context.IntegerValue("ListNodeLabelBindings.Code");
-			listNodeLabelBindingsResponse.ErrorMsg = context.StringValue("ListNodeLabelBindings.ErrorMsg");
-			listNodeLabelBindingsResponse.PageNumber = context.IntegerValue("ListNodeLabelBindings.PageNumber");
-			listNodeLabelBindingsResponse.PageSize = context.IntegerValue("ListNodeLabelBindings.PageSize");
-			listNodeLabelBindingsResponse.RequestId = context.StringValue("ListNodeLabelBindings.RequestId");
-			listNodeLabelBindingsResponse.TotalCount = context.LongValue("ListNodeLabelBindings.TotalCount");
+			listNodeLabelBindingsResponse.HttpResponse = _ctx.HttpResponse;
+			listNodeLabelBindingsResponse.Code = _ctx.IntegerValue("ListNodeLabelBindings.Code");
+			listNodeLabelBindingsResponse.ErrorMsg = _ctx.StringValue("ListNodeLabelBindings.ErrorMsg");
+			listNodeLabelBindingsResponse.PageNumber = _ctx.IntegerValue("ListNodeLabelBindings.PageNumber");
+			listNodeLabelBindingsResponse.PageSize = _ctx.IntegerValue("ListNodeLabelBindings.PageSize");
+			listNodeLabelBindingsResponse.RequestId = _ctx.StringValue("ListNodeLabelBindings.RequestId");
+			listNodeLabelBindingsResponse.TotalCount = _ctx.LongValue("ListNodeLabelBindings.TotalCount");
 
 			List<ListNodeLabelBindingsResponse.ListNodeLabelBindings_ListNodeLabelBindingResponse> listNodeLabelBindingsResponse_data = new List<ListNodeLabelBindingsResponse.ListNodeLabelBindings_ListNodeLabelBindingResponse>();
-			for (int i = 0; i < context.Length("ListNodeLabelBindings.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListNodeLabelBindings.Data.Length"); i++) {
 				ListNodeLabelBindingsResponse.ListNodeLabelBindings_ListNodeLabelBindingResponse listNodeLabelBindingResponse = new ListNodeLabelBindingsResponse.ListNodeLabelBindings_ListNodeLabelBindingResponse();
-				listNodeLabelBindingResponse.Id = context.LongValue("ListNodeLabelBindings.Data["+ i +"].Id");
-				listNodeLabelBindingResponse.InstanceId = context.StringValue("ListNodeLabelBindings.Data["+ i +"].InstanceId");
-				listNodeLabelBindingResponse.InstanceType = context.StringValue("ListNodeLabelBindings.Data["+ i +"].InstanceType");
-				listNodeLabelBindingResponse.LabelKey = context.StringValue("ListNodeLabelBindings.Data["+ i +"].LabelKey");
-				listNodeLabelBindingResponse.LabelValue = context.StringValue("ListNodeLabelBindings.Data["+ i +"].LabelValue");
+				listNodeLabelBindingResponse.Id = _ctx.LongValue("ListNodeLabelBindings.Data["+ i +"].Id");
+				listNodeLabelBindingResponse.InstanceId = _ctx.StringValue("ListNodeLabelBindings.Data["+ i +"].InstanceId");
+				listNodeLabelBindingResponse.InstanceType = _ctx.StringValue("ListNodeLabelBindings.Data["+ i +"].InstanceType");
+				listNodeLabelBindingResponse.LabelKey = _ctx.StringValue("ListNodeLabelBindings.Data["+ i +"].LabelKey");
+				listNodeLabelBindingResponse.LabelValue = _ctx.StringValue("ListNodeLabelBindings.Data["+ i +"].LabelValue");
 
 				listNodeLabelBindingsResponse_data.Add(listNodeLabelBindingResponse);
 			}

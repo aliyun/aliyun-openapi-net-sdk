@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private bool? success;
+		private string errorCode;
 
 		private string errorMessage;
 
-		private string errorCode;
+		private bool? success;
 
 		private List<ListIndexes_Index> indexList;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,30 +48,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ErrorCode")]
 		public string ErrorCode
 		{
 			get
@@ -83,6 +61,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "IndexList")]
 		public List<ListIndexes_Index> IndexList
 		{
 			get
@@ -98,40 +103,17 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class ListIndexes_Index
 		{
 
-			private string indexId;
-
-			private string tableId;
-
 			private string indexName;
 
 			private string indexType;
 
+			private string tableId;
+
+			private string indexId;
+
 			private string indexComment;
 
-			public string IndexId
-			{
-				get
-				{
-					return indexId;
-				}
-				set	
-				{
-					indexId = value;
-				}
-			}
-
-			public string TableId
-			{
-				get
-				{
-					return tableId;
-				}
-				set	
-				{
-					tableId = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "IndexName")]
 			public string IndexName
 			{
 				get
@@ -144,6 +126,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "IndexType")]
 			public string IndexType
 			{
 				get
@@ -156,6 +139,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "TableId")]
+			public string TableId
+			{
+				get
+				{
+					return tableId;
+				}
+				set	
+				{
+					tableId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IndexId")]
+			public string IndexId
+			{
+				get
+				{
+					return indexId;
+				}
+				set	
+				{
+					indexId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IndexComment")]
 			public string IndexComment
 			{
 				get

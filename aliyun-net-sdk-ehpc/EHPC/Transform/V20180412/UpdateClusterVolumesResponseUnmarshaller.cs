@@ -26,12 +26,12 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class UpdateClusterVolumesResponseUnmarshaller
     {
-        public static UpdateClusterVolumesResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateClusterVolumesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateClusterVolumesResponse updateClusterVolumesResponse = new UpdateClusterVolumesResponse();
 
-			updateClusterVolumesResponse.HttpResponse = context.HttpResponse;
-			updateClusterVolumesResponse.RequestId = context.StringValue("UpdateClusterVolumes.RequestId");
+			updateClusterVolumesResponse.HttpResponse = _ctx.HttpResponse;
+			updateClusterVolumesResponse.RequestId = _ctx.StringValue("UpdateClusterVolumes.RequestId");
         
 			return updateClusterVolumesResponse;
         }

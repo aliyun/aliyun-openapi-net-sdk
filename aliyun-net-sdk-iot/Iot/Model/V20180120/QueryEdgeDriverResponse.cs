@@ -175,6 +175,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 				private long? gmtModifiedTimestamp;
 
+				private bool? isApply;
+
+				private int? useOfficialConfig;
+
 				public string DriverId
 				{
 					get
@@ -280,6 +284,30 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					set	
 					{
 						gmtModifiedTimestamp = value;
+					}
+				}
+
+				public bool? IsApply
+				{
+					get
+					{
+						return isApply;
+					}
+					set	
+					{
+						isApply = value;
+					}
+				}
+
+				public int? UseOfficialConfig
+				{
+					get
+					{
+						return useOfficialConfig;
+					}
+					set	
+					{
+						useOfficialConfig = value;
 					}
 				}
 			}

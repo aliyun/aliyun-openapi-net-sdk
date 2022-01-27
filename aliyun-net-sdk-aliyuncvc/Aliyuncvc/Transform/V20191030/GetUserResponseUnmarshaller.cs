@@ -26,29 +26,29 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class GetUserResponseUnmarshaller
     {
-        public static GetUserResponse Unmarshall(UnmarshallerContext context)
+        public static GetUserResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetUserResponse getUserResponse = new GetUserResponse();
 
-			getUserResponse.HttpResponse = context.HttpResponse;
-			getUserResponse.ErrorCode = context.IntegerValue("GetUser.ErrorCode");
-			getUserResponse.Message = context.StringValue("GetUser.Message");
-			getUserResponse.Success = context.BooleanValue("GetUser.Success");
-			getUserResponse.RequestId = context.StringValue("GetUser.RequestId");
+			getUserResponse.HttpResponse = _ctx.HttpResponse;
+			getUserResponse.ErrorCode = _ctx.IntegerValue("GetUser.ErrorCode");
+			getUserResponse.Message = _ctx.StringValue("GetUser.Message");
+			getUserResponse.Success = _ctx.BooleanValue("GetUser.Success");
+			getUserResponse.RequestId = _ctx.StringValue("GetUser.RequestId");
 
 			GetUserResponse.GetUser_UserInfo userInfo = new GetUserResponse.GetUser_UserInfo();
-			userInfo.UserName = context.StringValue("GetUser.UserInfo.UserName");
-			userInfo.CreateTime = context.LongValue("GetUser.UserInfo.CreateTime");
-			userInfo.GroupId = context.StringValue("GetUser.UserInfo.GroupId");
-			userInfo.GroupName = context.StringValue("GetUser.UserInfo.GroupName");
-			userInfo.UserId = context.StringValue("GetUser.UserInfo.UserId");
-			userInfo.UserTel = context.StringValue("GetUser.UserInfo.UserTel");
-			userInfo.UserEmail = context.StringValue("GetUser.UserInfo.UserEmail");
-			userInfo.UserMobile = context.StringValue("GetUser.UserInfo.UserMobile");
-			userInfo.UserAvatarUrl = context.StringValue("GetUser.UserInfo.UserAvatarUrl");
-			userInfo.DepartId = context.StringValue("GetUser.UserInfo.DepartId");
-			userInfo.DepartName = context.StringValue("GetUser.UserInfo.DepartName");
-			userInfo.JobName = context.StringValue("GetUser.UserInfo.JobName");
+			userInfo.UserName = _ctx.StringValue("GetUser.UserInfo.UserName");
+			userInfo.CreateTime = _ctx.LongValue("GetUser.UserInfo.CreateTime");
+			userInfo.GroupId = _ctx.StringValue("GetUser.UserInfo.GroupId");
+			userInfo.GroupName = _ctx.StringValue("GetUser.UserInfo.GroupName");
+			userInfo.UserId = _ctx.StringValue("GetUser.UserInfo.UserId");
+			userInfo.UserTel = _ctx.StringValue("GetUser.UserInfo.UserTel");
+			userInfo.UserEmail = _ctx.StringValue("GetUser.UserInfo.UserEmail");
+			userInfo.UserMobile = _ctx.StringValue("GetUser.UserInfo.UserMobile");
+			userInfo.UserAvatarUrl = _ctx.StringValue("GetUser.UserInfo.UserAvatarUrl");
+			userInfo.DepartId = _ctx.StringValue("GetUser.UserInfo.DepartId");
+			userInfo.DepartName = _ctx.StringValue("GetUser.UserInfo.DepartName");
+			userInfo.JobName = _ctx.StringValue("GetUser.UserInfo.JobName");
 			getUserResponse.UserInfo = userInfo;
         
 			return getUserResponse;

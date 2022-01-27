@@ -26,33 +26,33 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetMediaDNAResultResponseUnmarshaller
     {
-        public static GetMediaDNAResultResponse Unmarshall(UnmarshallerContext context)
+        public static GetMediaDNAResultResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMediaDNAResultResponse getMediaDNAResultResponse = new GetMediaDNAResultResponse();
 
-			getMediaDNAResultResponse.HttpResponse = context.HttpResponse;
-			getMediaDNAResultResponse.RequestId = context.StringValue("GetMediaDNAResult.RequestId");
+			getMediaDNAResultResponse.HttpResponse = _ctx.HttpResponse;
+			getMediaDNAResultResponse.RequestId = _ctx.StringValue("GetMediaDNAResult.RequestId");
 
 			GetMediaDNAResultResponse.GetMediaDNAResult_DNAResult dNAResult = new GetMediaDNAResultResponse.GetMediaDNAResult_DNAResult();
 
 			List<GetMediaDNAResultResponse.GetMediaDNAResult_DNAResult.GetMediaDNAResult_VideoDNAItem> dNAResult_videoDNA = new List<GetMediaDNAResultResponse.GetMediaDNAResult_DNAResult.GetMediaDNAResult_VideoDNAItem>();
-			for (int i = 0; i < context.Length("GetMediaDNAResult.DNAResult.VideoDNA.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetMediaDNAResult.DNAResult.VideoDNA.Length"); i++) {
 				GetMediaDNAResultResponse.GetMediaDNAResult_DNAResult.GetMediaDNAResult_VideoDNAItem videoDNAItem = new GetMediaDNAResultResponse.GetMediaDNAResult_DNAResult.GetMediaDNAResult_VideoDNAItem();
-				videoDNAItem.PrimaryKey = context.StringValue("GetMediaDNAResult.DNAResult.VideoDNA["+ i +"].PrimaryKey");
-				videoDNAItem.Similarity = context.StringValue("GetMediaDNAResult.DNAResult.VideoDNA["+ i +"].Similarity");
+				videoDNAItem.PrimaryKey = _ctx.StringValue("GetMediaDNAResult.DNAResult.VideoDNA["+ i +"].PrimaryKey");
+				videoDNAItem.Similarity = _ctx.StringValue("GetMediaDNAResult.DNAResult.VideoDNA["+ i +"].Similarity");
 
 				List<GetMediaDNAResultResponse.GetMediaDNAResult_DNAResult.GetMediaDNAResult_VideoDNAItem.GetMediaDNAResult_DetailItem> videoDNAItem_detail = new List<GetMediaDNAResultResponse.GetMediaDNAResult_DNAResult.GetMediaDNAResult_VideoDNAItem.GetMediaDNAResult_DetailItem>();
-				for (int j = 0; j < context.Length("GetMediaDNAResult.DNAResult.VideoDNA["+ i +"].Detail.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("GetMediaDNAResult.DNAResult.VideoDNA["+ i +"].Detail.Length"); j++) {
 					GetMediaDNAResultResponse.GetMediaDNAResult_DNAResult.GetMediaDNAResult_VideoDNAItem.GetMediaDNAResult_DetailItem detailItem = new GetMediaDNAResultResponse.GetMediaDNAResult_DNAResult.GetMediaDNAResult_VideoDNAItem.GetMediaDNAResult_DetailItem();
 
 					GetMediaDNAResultResponse.GetMediaDNAResult_DNAResult.GetMediaDNAResult_VideoDNAItem.GetMediaDNAResult_DetailItem.GetMediaDNAResult_Input input = new GetMediaDNAResultResponse.GetMediaDNAResult_DNAResult.GetMediaDNAResult_VideoDNAItem.GetMediaDNAResult_DetailItem.GetMediaDNAResult_Input();
-					input.Start = context.StringValue("GetMediaDNAResult.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Input.Start");
-					input.Duration = context.StringValue("GetMediaDNAResult.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Input.Duration");
+					input.Start = _ctx.StringValue("GetMediaDNAResult.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Input.Start");
+					input.Duration = _ctx.StringValue("GetMediaDNAResult.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Input.Duration");
 					detailItem.Input = input;
 
 					GetMediaDNAResultResponse.GetMediaDNAResult_DNAResult.GetMediaDNAResult_VideoDNAItem.GetMediaDNAResult_DetailItem.GetMediaDNAResult_Duplication duplication = new GetMediaDNAResultResponse.GetMediaDNAResult_DNAResult.GetMediaDNAResult_VideoDNAItem.GetMediaDNAResult_DetailItem.GetMediaDNAResult_Duplication();
-					duplication.Start = context.StringValue("GetMediaDNAResult.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Duplication.Start");
-					duplication.Duration = context.StringValue("GetMediaDNAResult.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Duplication.Duration");
+					duplication.Start = _ctx.StringValue("GetMediaDNAResult.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Duplication.Start");
+					duplication.Duration = _ctx.StringValue("GetMediaDNAResult.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Duplication.Duration");
 					detailItem.Duplication = duplication;
 
 					videoDNAItem_detail.Add(detailItem);

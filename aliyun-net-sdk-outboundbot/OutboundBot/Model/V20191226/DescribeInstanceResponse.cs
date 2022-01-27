@@ -25,17 +25,53 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class DescribeInstanceResponse : AcsResponse
 	{
 
+		private string code;
+
+		private int? httpStatusCode;
+
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
-
-		private string message;
-
-		private int? httpStatusCode;
-
 		private DescribeInstance_Instance instance;
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -61,42 +97,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
 		public DescribeInstance_Instance Instance
 		{
 			get
@@ -112,19 +112,67 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class DescribeInstance_Instance
 		{
 
+			private string callCenterInstanceId;
+
+			private long? creationTime;
+
+			private string instanceDescription;
+
 			private string instanceId;
 
 			private string instanceName;
 
-			private string instanceDescription;
-
 			private int? maxConcurrentConversation;
+
+			private string nluServiceType;
 
 			private string owner;
 
-			private long? creationTime;
+			private long? creatorId;
 
-			private string callCenterInstanceId;
+			private string creatorName;
+
+			private string ownerName;
+
+			private string resourceGroupId;
+
+			private DescribeInstance_NluProfile nluProfile;
+
+			public string CallCenterInstanceId
+			{
+				get
+				{
+					return callCenterInstanceId;
+				}
+				set	
+				{
+					callCenterInstanceId = value;
+				}
+			}
+
+			public long? CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
+				}
+			}
+
+			public string InstanceDescription
+			{
+				get
+				{
+					return instanceDescription;
+				}
+				set	
+				{
+					instanceDescription = value;
+				}
+			}
 
 			public string InstanceId
 			{
@@ -150,18 +198,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string InstanceDescription
-			{
-				get
-				{
-					return instanceDescription;
-				}
-				set	
-				{
-					instanceDescription = value;
-				}
-			}
-
 			public int? MaxConcurrentConversation
 			{
 				get
@@ -171,6 +207,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					maxConcurrentConversation = value;
+				}
+			}
+
+			public string NluServiceType
+			{
+				get
+				{
+					return nluServiceType;
+				}
+				set	
+				{
+					nluServiceType = value;
 				}
 			}
 
@@ -186,27 +234,109 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public long? CreationTime
+			public long? CreatorId
 			{
 				get
 				{
-					return creationTime;
+					return creatorId;
 				}
 				set	
 				{
-					creationTime = value;
+					creatorId = value;
 				}
 			}
 
-			public string CallCenterInstanceId
+			public string CreatorName
 			{
 				get
 				{
-					return callCenterInstanceId;
+					return creatorName;
 				}
 				set	
 				{
-					callCenterInstanceId = value;
+					creatorName = value;
+				}
+			}
+
+			public string OwnerName
+			{
+				get
+				{
+					return ownerName;
+				}
+				set	
+				{
+					ownerName = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public DescribeInstance_NluProfile NluProfile
+			{
+				get
+				{
+					return nluProfile;
+				}
+				set	
+				{
+					nluProfile = value;
+				}
+			}
+
+			public class DescribeInstance_NluProfile
+			{
+
+				private string accessKey;
+
+				private string endpoint;
+
+				private string secretKey;
+
+				public string AccessKey
+				{
+					get
+					{
+						return accessKey;
+					}
+					set	
+					{
+						accessKey = value;
+					}
+				}
+
+				public string Endpoint
+				{
+					get
+					{
+						return endpoint;
+					}
+					set	
+					{
+						endpoint = value;
+					}
+				}
+
+				public string SecretKey
+				{
+					get
+					{
+						return secretKey;
+					}
+					set	
+					{
+						secretKey = value;
+					}
 				}
 			}
 		}

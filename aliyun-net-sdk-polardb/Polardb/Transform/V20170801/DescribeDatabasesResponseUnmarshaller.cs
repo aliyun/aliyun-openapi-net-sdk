@@ -32,6 +32,8 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 
 			describeDatabasesResponse.HttpResponse = _ctx.HttpResponse;
 			describeDatabasesResponse.RequestId = _ctx.StringValue("DescribeDatabases.RequestId");
+			describeDatabasesResponse.PageNumber = _ctx.IntegerValue("DescribeDatabases.PageNumber");
+			describeDatabasesResponse.PageRecordCount = _ctx.IntegerValue("DescribeDatabases.PageRecordCount");
 
 			List<DescribeDatabasesResponse.DescribeDatabases_Database> describeDatabasesResponse_databases = new List<DescribeDatabasesResponse.DescribeDatabases_Database>();
 			for (int i = 0; i < _ctx.Length("DescribeDatabases.Databases.Length"); i++) {

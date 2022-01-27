@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class AllowPushStreamResponseUnmarshaller
     {
-        public static AllowPushStreamResponse Unmarshall(UnmarshallerContext context)
+        public static AllowPushStreamResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AllowPushStreamResponse allowPushStreamResponse = new AllowPushStreamResponse();
 
-			allowPushStreamResponse.HttpResponse = context.HttpResponse;
-			allowPushStreamResponse.RequestId = context.StringValue("AllowPushStream.RequestId");
+			allowPushStreamResponse.HttpResponse = _ctx.HttpResponse;
+			allowPushStreamResponse.RequestId = _ctx.StringValue("AllowPushStream.RequestId");
         
 			return allowPushStreamResponse;
         }

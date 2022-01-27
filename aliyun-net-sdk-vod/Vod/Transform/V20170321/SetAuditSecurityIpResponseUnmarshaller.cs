@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class SetAuditSecurityIpResponseUnmarshaller
     {
-        public static SetAuditSecurityIpResponse Unmarshall(UnmarshallerContext context)
+        public static SetAuditSecurityIpResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetAuditSecurityIpResponse setAuditSecurityIpResponse = new SetAuditSecurityIpResponse();
 
-			setAuditSecurityIpResponse.HttpResponse = context.HttpResponse;
-			setAuditSecurityIpResponse.RequestId = context.StringValue("SetAuditSecurityIp.RequestId");
+			setAuditSecurityIpResponse.HttpResponse = _ctx.HttpResponse;
+			setAuditSecurityIpResponse.RequestId = _ctx.StringValue("SetAuditSecurityIp.RequestId");
         
 			return setAuditSecurityIpResponse;
         }

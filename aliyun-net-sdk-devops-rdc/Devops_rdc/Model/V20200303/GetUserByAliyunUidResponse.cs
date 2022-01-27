@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class GetUserByAliyunUidResponse : AcsResponse
 	{
 
-		private bool? successful;
-
-		private string errorCode;
-
 		private string errorMsg;
 
 		private string requestId;
 
+		private bool? successful;
+
+		private string errorCode;
+
 		private GetUserByAliyunUid__Object _object;
-
-		public bool? Successful
-		{
-			get
-			{
-				return successful;
-			}
-			set	
-			{
-				successful = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
 
 		public string ErrorMsg
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
+		public bool? Successful
+		{
+			get
+			{
+				return successful;
+			}
+			set	
+			{
+				successful = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
 		public GetUserByAliyunUid__Object _Object
 		{
 			get
@@ -98,17 +98,53 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 		public class GetUserByAliyunUid__Object
 		{
 
+			private string aliyunPk;
+
+			private string email;
+
+			private string avatarUrl;
+
 			private string name;
 
 			private string id;
 
-			private string aliyunPk;
-
-			private string avatarUrl;
-
-			private string email;
-
 			private string phone;
+
+			public string AliyunPk
+			{
+				get
+				{
+					return aliyunPk;
+				}
+				set	
+				{
+					aliyunPk = value;
+				}
+			}
+
+			public string Email
+			{
+				get
+				{
+					return email;
+				}
+				set	
+				{
+					email = value;
+				}
+			}
+
+			public string AvatarUrl
+			{
+				get
+				{
+					return avatarUrl;
+				}
+				set	
+				{
+					avatarUrl = value;
+				}
+			}
 
 			public string Name
 			{
@@ -131,42 +167,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				set	
 				{
 					id = value;
-				}
-			}
-
-			public string AliyunPk
-			{
-				get
-				{
-					return aliyunPk;
-				}
-				set	
-				{
-					aliyunPk = value;
-				}
-			}
-
-			public string AvatarUrl
-			{
-				get
-				{
-					return avatarUrl;
-				}
-				set	
-				{
-					avatarUrl = value;
-				}
-			}
-
-			public string Email
-			{
-				get
-				{
-					return email;
-				}
-				set	
-				{
-					email = value;
 				}
 			}
 

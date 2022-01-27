@@ -32,17 +32,21 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ListClusterServiceComponentHealthInfoRequest()
             : base("Emr", "2016-04-08", "ListClusterServiceComponentHealthInfo", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string regionId;
-
-		private string serviceName;
+		private string componentName;
 
 		private string clusterId;
 
-		private string accessKeyId;
+		private string serviceName;
 
 		public long? ResourceOwnerId
 		{
@@ -57,29 +61,16 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
+		public string ComponentName
 		{
 			get
 			{
-				return regionId;
+				return componentName;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string ServiceName
-		{
-			get
-			{
-				return serviceName;
-			}
-			set	
-			{
-				serviceName = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
+				componentName = value;
+				DictionaryUtil.Add(QueryParameters, "ComponentName", value);
 			}
 		}
 
@@ -96,16 +87,16 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string AccessKeyId
+		public string ServiceName
 		{
 			get
 			{
-				return accessKeyId;
+				return serviceName;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				serviceName = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
 			}
 		}
 

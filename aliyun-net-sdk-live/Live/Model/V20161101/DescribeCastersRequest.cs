@@ -34,8 +34,8 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.live.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.live.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -53,6 +53,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private string endTime;
 
 		private long? ownerId;
+
+		private string orderByModifyAsc;
+
+		private int? chargeType;
 
 		private int? status;
 
@@ -144,6 +148,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string OrderByModifyAsc
+		{
+			get
+			{
+				return orderByModifyAsc;
+			}
+			set	
+			{
+				orderByModifyAsc = value;
+				DictionaryUtil.Add(QueryParameters, "OrderByModifyAsc", value);
+			}
+		}
+
+		public int? ChargeType
+		{
+			get
+			{
+				return chargeType;
+			}
+			set	
+			{
+				chargeType = value;
+				DictionaryUtil.Add(QueryParameters, "ChargeType", value.ToString());
 			}
 		}
 

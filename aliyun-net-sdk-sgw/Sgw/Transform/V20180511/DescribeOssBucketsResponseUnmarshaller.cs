@@ -26,20 +26,20 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeOssBucketsResponseUnmarshaller
     {
-        public static DescribeOssBucketsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeOssBucketsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeOssBucketsResponse describeOssBucketsResponse = new DescribeOssBucketsResponse();
 
-			describeOssBucketsResponse.HttpResponse = context.HttpResponse;
-			describeOssBucketsResponse.RequestId = context.StringValue("DescribeOssBuckets.RequestId");
-			describeOssBucketsResponse.Success = context.BooleanValue("DescribeOssBuckets.Success");
-			describeOssBucketsResponse.Code = context.StringValue("DescribeOssBuckets.Code");
-			describeOssBucketsResponse.Message = context.StringValue("DescribeOssBuckets.Message");
+			describeOssBucketsResponse.HttpResponse = _ctx.HttpResponse;
+			describeOssBucketsResponse.Message = _ctx.StringValue("DescribeOssBuckets.Message");
+			describeOssBucketsResponse.RequestId = _ctx.StringValue("DescribeOssBuckets.RequestId");
+			describeOssBucketsResponse.Code = _ctx.StringValue("DescribeOssBuckets.Code");
+			describeOssBucketsResponse.Success = _ctx.BooleanValue("DescribeOssBuckets.Success");
 
 			List<DescribeOssBucketsResponse.DescribeOssBuckets_Bucket> describeOssBucketsResponse_buckets = new List<DescribeOssBucketsResponse.DescribeOssBuckets_Bucket>();
-			for (int i = 0; i < context.Length("DescribeOssBuckets.Buckets.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeOssBuckets.Buckets.Length"); i++) {
 				DescribeOssBucketsResponse.DescribeOssBuckets_Bucket bucket = new DescribeOssBucketsResponse.DescribeOssBuckets_Bucket();
-				bucket.Name = context.StringValue("DescribeOssBuckets.Buckets["+ i +"].Name");
+				bucket.Name = _ctx.StringValue("DescribeOssBuckets.Buckets["+ i +"].Name");
 
 				describeOssBucketsResponse_buckets.Add(bucket);
 			}

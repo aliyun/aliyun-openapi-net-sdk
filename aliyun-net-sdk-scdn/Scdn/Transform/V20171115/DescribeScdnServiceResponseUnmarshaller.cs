@@ -26,49 +26,49 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 {
     public class DescribeScdnServiceResponseUnmarshaller
     {
-        public static DescribeScdnServiceResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeScdnServiceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeScdnServiceResponse describeScdnServiceResponse = new DescribeScdnServiceResponse();
 
-			describeScdnServiceResponse.HttpResponse = context.HttpResponse;
-			describeScdnServiceResponse.RequestId = context.StringValue("DescribeScdnService.RequestId");
-			describeScdnServiceResponse.ChangingAffectTime = context.StringValue("DescribeScdnService.ChangingAffectTime");
-			describeScdnServiceResponse.InternetChargeType = context.StringValue("DescribeScdnService.InternetChargeType");
-			describeScdnServiceResponse.ChangingChargeType = context.StringValue("DescribeScdnService.ChangingChargeType");
-			describeScdnServiceResponse.InstanceId = context.StringValue("DescribeScdnService.InstanceId");
-			describeScdnServiceResponse.OpenTime = context.StringValue("DescribeScdnService.OpenTime");
-			describeScdnServiceResponse.EndTime = context.StringValue("DescribeScdnService.EndTime");
-			describeScdnServiceResponse.ProtectType = context.StringValue("DescribeScdnService.ProtectType");
-			describeScdnServiceResponse.ProtectTypeValue = context.StringValue("DescribeScdnService.ProtectTypeValue");
-			describeScdnServiceResponse.Bandwidth = context.StringValue("DescribeScdnService.Bandwidth");
-			describeScdnServiceResponse.CcProtection = context.StringValue("DescribeScdnService.CcProtection");
-			describeScdnServiceResponse.DDoSBasic = context.StringValue("DescribeScdnService.DDoSBasic");
-			describeScdnServiceResponse.DomainCount = context.StringValue("DescribeScdnService.DomainCount");
-			describeScdnServiceResponse.ElasticProtection = context.StringValue("DescribeScdnService.ElasticProtection");
-			describeScdnServiceResponse.BandwidthValue = context.StringValue("DescribeScdnService.BandwidthValue");
-			describeScdnServiceResponse.CcProtectionValue = context.StringValue("DescribeScdnService.CcProtectionValue");
-			describeScdnServiceResponse.DDoSBasicValue = context.StringValue("DescribeScdnService.DDoSBasicValue");
-			describeScdnServiceResponse.DomainCountValue = context.StringValue("DescribeScdnService.DomainCountValue");
-			describeScdnServiceResponse.ElasticProtectionValue = context.StringValue("DescribeScdnService.ElasticProtectionValue");
-			describeScdnServiceResponse.CurrentProtectType = context.StringValue("DescribeScdnService.CurrentProtectType");
-			describeScdnServiceResponse.CurrentProtectTypeValue = context.StringValue("DescribeScdnService.CurrentProtectTypeValue");
-			describeScdnServiceResponse.CurrentBandwidth = context.StringValue("DescribeScdnService.CurrentBandwidth");
-			describeScdnServiceResponse.CurrentCcProtection = context.StringValue("DescribeScdnService.CurrentCcProtection");
-			describeScdnServiceResponse.CurrentDDoSBasic = context.StringValue("DescribeScdnService.CurrentDDoSBasic");
-			describeScdnServiceResponse.CurrentDomainCount = context.StringValue("DescribeScdnService.CurrentDomainCount");
-			describeScdnServiceResponse.CurrentElasticProtection = context.StringValue("DescribeScdnService.CurrentElasticProtection");
-			describeScdnServiceResponse.CurrentBandwidthValue = context.StringValue("DescribeScdnService.CurrentBandwidthValue");
-			describeScdnServiceResponse.CurrentCcProtectionValue = context.StringValue("DescribeScdnService.CurrentCcProtectionValue");
-			describeScdnServiceResponse.CurrentDDoSBasicValue = context.StringValue("DescribeScdnService.CurrentDDoSBasicValue");
-			describeScdnServiceResponse.CurrentDomainCountValue = context.StringValue("DescribeScdnService.CurrentDomainCountValue");
-			describeScdnServiceResponse.CurrentElasticProtectionValue = context.StringValue("DescribeScdnService.CurrentElasticProtectionValue");
-			describeScdnServiceResponse.PriceType = context.StringValue("DescribeScdnService.PriceType");
-			describeScdnServiceResponse.PricingCycle = context.StringValue("DescribeScdnService.PricingCycle");
+			describeScdnServiceResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnServiceResponse.RequestId = _ctx.StringValue("DescribeScdnService.RequestId");
+			describeScdnServiceResponse.ChangingAffectTime = _ctx.StringValue("DescribeScdnService.ChangingAffectTime");
+			describeScdnServiceResponse.InternetChargeType = _ctx.StringValue("DescribeScdnService.InternetChargeType");
+			describeScdnServiceResponse.ChangingChargeType = _ctx.StringValue("DescribeScdnService.ChangingChargeType");
+			describeScdnServiceResponse.InstanceId = _ctx.StringValue("DescribeScdnService.InstanceId");
+			describeScdnServiceResponse.OpenTime = _ctx.StringValue("DescribeScdnService.OpenTime");
+			describeScdnServiceResponse.EndTime = _ctx.StringValue("DescribeScdnService.EndTime");
+			describeScdnServiceResponse.ProtectType = _ctx.StringValue("DescribeScdnService.ProtectType");
+			describeScdnServiceResponse.ProtectTypeValue = _ctx.StringValue("DescribeScdnService.ProtectTypeValue");
+			describeScdnServiceResponse.Bandwidth = _ctx.StringValue("DescribeScdnService.Bandwidth");
+			describeScdnServiceResponse.CcProtection = _ctx.StringValue("DescribeScdnService.CcProtection");
+			describeScdnServiceResponse.DDoSBasic = _ctx.StringValue("DescribeScdnService.DDoSBasic");
+			describeScdnServiceResponse.DomainCount = _ctx.StringValue("DescribeScdnService.DomainCount");
+			describeScdnServiceResponse.ElasticProtection = _ctx.StringValue("DescribeScdnService.ElasticProtection");
+			describeScdnServiceResponse.BandwidthValue = _ctx.StringValue("DescribeScdnService.BandwidthValue");
+			describeScdnServiceResponse.CcProtectionValue = _ctx.StringValue("DescribeScdnService.CcProtectionValue");
+			describeScdnServiceResponse.DDoSBasicValue = _ctx.StringValue("DescribeScdnService.DDoSBasicValue");
+			describeScdnServiceResponse.DomainCountValue = _ctx.StringValue("DescribeScdnService.DomainCountValue");
+			describeScdnServiceResponse.ElasticProtectionValue = _ctx.StringValue("DescribeScdnService.ElasticProtectionValue");
+			describeScdnServiceResponse.CurrentProtectType = _ctx.StringValue("DescribeScdnService.CurrentProtectType");
+			describeScdnServiceResponse.CurrentProtectTypeValue = _ctx.StringValue("DescribeScdnService.CurrentProtectTypeValue");
+			describeScdnServiceResponse.CurrentBandwidth = _ctx.StringValue("DescribeScdnService.CurrentBandwidth");
+			describeScdnServiceResponse.CurrentCcProtection = _ctx.StringValue("DescribeScdnService.CurrentCcProtection");
+			describeScdnServiceResponse.CurrentDDoSBasic = _ctx.StringValue("DescribeScdnService.CurrentDDoSBasic");
+			describeScdnServiceResponse.CurrentDomainCount = _ctx.StringValue("DescribeScdnService.CurrentDomainCount");
+			describeScdnServiceResponse.CurrentElasticProtection = _ctx.StringValue("DescribeScdnService.CurrentElasticProtection");
+			describeScdnServiceResponse.CurrentBandwidthValue = _ctx.StringValue("DescribeScdnService.CurrentBandwidthValue");
+			describeScdnServiceResponse.CurrentCcProtectionValue = _ctx.StringValue("DescribeScdnService.CurrentCcProtectionValue");
+			describeScdnServiceResponse.CurrentDDoSBasicValue = _ctx.StringValue("DescribeScdnService.CurrentDDoSBasicValue");
+			describeScdnServiceResponse.CurrentDomainCountValue = _ctx.StringValue("DescribeScdnService.CurrentDomainCountValue");
+			describeScdnServiceResponse.CurrentElasticProtectionValue = _ctx.StringValue("DescribeScdnService.CurrentElasticProtectionValue");
+			describeScdnServiceResponse.PriceType = _ctx.StringValue("DescribeScdnService.PriceType");
+			describeScdnServiceResponse.PricingCycle = _ctx.StringValue("DescribeScdnService.PricingCycle");
 
 			List<DescribeScdnServiceResponse.DescribeScdnService_LockReason> describeScdnServiceResponse_operationLocks = new List<DescribeScdnServiceResponse.DescribeScdnService_LockReason>();
-			for (int i = 0; i < context.Length("DescribeScdnService.OperationLocks.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeScdnService.OperationLocks.Length"); i++) {
 				DescribeScdnServiceResponse.DescribeScdnService_LockReason lockReason = new DescribeScdnServiceResponse.DescribeScdnService_LockReason();
-				lockReason.LockReason = context.StringValue("DescribeScdnService.OperationLocks["+ i +"].LockReason");
+				lockReason.LockReason = _ctx.StringValue("DescribeScdnService.OperationLocks["+ i +"].LockReason");
 
 				describeScdnServiceResponse_operationLocks.Add(lockReason);
 			}

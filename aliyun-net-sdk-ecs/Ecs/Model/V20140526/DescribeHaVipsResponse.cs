@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeHaVipsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeHaVips_HaVip> haVips;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,9 +98,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeHaVips_HaVip
 		{
 
-			private string haVipId;
-
-			private string regionId;
+			private string status;
 
 			private string vpcId;
 
@@ -108,39 +106,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string ipAddress;
 
-			private string status;
-
-			private string masterInstanceId;
-
 			private string description;
+
+			private string haVipId;
 
 			private string createTime;
 
-			private List<string> associatedInstances;
+			private string masterInstanceId;
+
+			private string regionId;
 
 			private List<string> associatedEipAddresses;
 
-			public string HaVipId
-			{
-				get
-				{
-					return haVipId;
-				}
-				set	
-				{
-					haVipId = value;
-				}
-			}
+			private List<string> associatedInstances;
 
-			public string RegionId
+			public string Status
 			{
 				get
 				{
-					return regionId;
+					return status;
 				}
 				set	
 				{
-					regionId = value;
+					status = value;
 				}
 			}
 
@@ -180,30 +168,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string MasterInstanceId
-			{
-				get
-				{
-					return masterInstanceId;
-				}
-				set	
-				{
-					masterInstanceId = value;
-				}
-			}
-
 			public string Description
 			{
 				get
@@ -213,6 +177,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string HaVipId
+			{
+				get
+				{
+					return haVipId;
+				}
+				set	
+				{
+					haVipId = value;
 				}
 			}
 
@@ -228,15 +204,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public List<string> AssociatedInstances
+			public string MasterInstanceId
 			{
 				get
 				{
-					return associatedInstances;
+					return masterInstanceId;
 				}
 				set	
 				{
-					associatedInstances = value;
+					masterInstanceId = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 
@@ -249,6 +237,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					associatedEipAddresses = value;
+				}
+			}
+
+			public List<string> AssociatedInstances
+			{
+				get
+				{
+					return associatedInstances;
+				}
+				set	
+				{
+					associatedInstances = value;
 				}
 			}
 		}

@@ -56,73 +56,81 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		public class DescribeDBInstanceAttribute_DBInstance
 		{
 
-			private string resourceGroupId;
-
-			private string dBInstanceId;
-
-			private string dBInstanceDescription;
-
-			private string regionId;
-
-			private string zoneId;
-
-			private string engine;
-
-			private string engineVersion;
-
-			private string storageEngine;
-
-			private string dBInstanceClass;
-
-			private int? dBInstanceStorage;
+			private string creationTime;
 
 			private string replacateId;
 
-			private string vPCId;
+			private string chargeType;
 
-			private string vSwitchId;
+			private string vpcAuthMode;
 
-			private string vPCCloudInstanceIds;
-
-			private string kindCode;
-
-			private string dBInstanceStatus;
+			private string networkType;
 
 			private string lockMode;
 
-			private string chargeType;
+			private string engineVersion;
 
-			private string creationTime;
+			private int? maxIOPS;
 
-			private string replicaSetName;
+			private string vPCCloudInstanceIds;
 
-			private string networkType;
+			private string protocolType;
+
+			private string dBInstanceDescription;
+
+			private string currentKernelVersion;
+
+			private bool? dBInstanceReleaseProtection;
 
 			private string expireTime;
 
 			private string maintainStartTime;
 
-			private string maintainEndTime;
-
 			private string dBInstanceType;
 
 			private string lastDowngradeTime;
 
-			private string replicationFactor;
+			private string maintainEndTime;
 
-			private string readonlyReplicas;
+			private string dBInstanceStatus;
 
-			private int? maxIOPS;
+			private string vPCId;
+
+			private string regionId;
+
+			private int? dBInstanceStorage;
+
+			private string replicaSetName;
+
+			private string vSwitchId;
+
+			private string storageEngine;
+
+			private string resourceGroupId;
+
+			private string zoneId;
 
 			private int? maxConnections;
 
-			private string currentKernelVersion;
+			private string dBInstanceId;
 
-			private string protocolType;
+			private string dBInstanceClass;
 
-			private string vpcAuthMode;
+			private string engine;
 
-			private bool? dBInstanceReleaseProtection;
+			private string readonlyReplicas;
+
+			private string replicationFactor;
+
+			private string kindCode;
+
+			private string capacityUnit;
+
+			private string cloudType;
+
+			private List<DescribeDBInstanceAttribute_ReplicaSet> replicaSets;
+
+			private List<DescribeDBInstanceAttribute_Tag> tags;
 
 			private List<DescribeDBInstanceAttribute_MongosAttribute> mongosList;
 
@@ -130,127 +138,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private List<DescribeDBInstanceAttribute_ConfigserverAttribute> configserverList;
 
-			private List<DescribeDBInstanceAttribute_ReplicaSet> replicaSets;
-
-			private List<DescribeDBInstanceAttribute_Tag> tags;
-
-			public string ResourceGroupId
+			public string CreationTime
 			{
 				get
 				{
-					return resourceGroupId;
+					return creationTime;
 				}
 				set	
 				{
-					resourceGroupId = value;
-				}
-			}
-
-			public string DBInstanceId
-			{
-				get
-				{
-					return dBInstanceId;
-				}
-				set	
-				{
-					dBInstanceId = value;
-				}
-			}
-
-			public string DBInstanceDescription
-			{
-				get
-				{
-					return dBInstanceDescription;
-				}
-				set	
-				{
-					dBInstanceDescription = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
-			public string Engine
-			{
-				get
-				{
-					return engine;
-				}
-				set	
-				{
-					engine = value;
-				}
-			}
-
-			public string EngineVersion
-			{
-				get
-				{
-					return engineVersion;
-				}
-				set	
-				{
-					engineVersion = value;
-				}
-			}
-
-			public string StorageEngine
-			{
-				get
-				{
-					return storageEngine;
-				}
-				set	
-				{
-					storageEngine = value;
-				}
-			}
-
-			public string DBInstanceClass
-			{
-				get
-				{
-					return dBInstanceClass;
-				}
-				set	
-				{
-					dBInstanceClass = value;
-				}
-			}
-
-			public int? DBInstanceStorage
-			{
-				get
-				{
-					return dBInstanceStorage;
-				}
-				set	
-				{
-					dBInstanceStorage = value;
+					creationTime = value;
 				}
 			}
 
@@ -266,63 +162,39 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public string VPCId
+			public string ChargeType
 			{
 				get
 				{
-					return vPCId;
+					return chargeType;
 				}
 				set	
 				{
-					vPCId = value;
+					chargeType = value;
 				}
 			}
 
-			public string VSwitchId
+			public string VpcAuthMode
 			{
 				get
 				{
-					return vSwitchId;
+					return vpcAuthMode;
 				}
 				set	
 				{
-					vSwitchId = value;
+					vpcAuthMode = value;
 				}
 			}
 
-			public string VPCCloudInstanceIds
+			public string NetworkType
 			{
 				get
 				{
-					return vPCCloudInstanceIds;
+					return networkType;
 				}
 				set	
 				{
-					vPCCloudInstanceIds = value;
-				}
-			}
-
-			public string KindCode
-			{
-				get
-				{
-					return kindCode;
-				}
-				set	
-				{
-					kindCode = value;
-				}
-			}
-
-			public string DBInstanceStatus
-			{
-				get
-				{
-					return dBInstanceStatus;
-				}
-				set	
-				{
-					dBInstanceStatus = value;
+					networkType = value;
 				}
 			}
 
@@ -338,51 +210,87 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public string ChargeType
+			public string EngineVersion
 			{
 				get
 				{
-					return chargeType;
+					return engineVersion;
 				}
 				set	
 				{
-					chargeType = value;
+					engineVersion = value;
 				}
 			}
 
-			public string CreationTime
+			public int? MaxIOPS
 			{
 				get
 				{
-					return creationTime;
+					return maxIOPS;
 				}
 				set	
 				{
-					creationTime = value;
+					maxIOPS = value;
 				}
 			}
 
-			public string ReplicaSetName
+			public string VPCCloudInstanceIds
 			{
 				get
 				{
-					return replicaSetName;
+					return vPCCloudInstanceIds;
 				}
 				set	
 				{
-					replicaSetName = value;
+					vPCCloudInstanceIds = value;
 				}
 			}
 
-			public string NetworkType
+			public string ProtocolType
 			{
 				get
 				{
-					return networkType;
+					return protocolType;
 				}
 				set	
 				{
-					networkType = value;
+					protocolType = value;
+				}
+			}
+
+			public string DBInstanceDescription
+			{
+				get
+				{
+					return dBInstanceDescription;
+				}
+				set	
+				{
+					dBInstanceDescription = value;
+				}
+			}
+
+			public string CurrentKernelVersion
+			{
+				get
+				{
+					return currentKernelVersion;
+				}
+				set	
+				{
+					currentKernelVersion = value;
+				}
+			}
+
+			public bool? DBInstanceReleaseProtection
+			{
+				get
+				{
+					return dBInstanceReleaseProtection;
+				}
+				set	
+				{
+					dBInstanceReleaseProtection = value;
 				}
 			}
 
@@ -410,18 +318,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public string MaintainEndTime
-			{
-				get
-				{
-					return maintainEndTime;
-				}
-				set	
-				{
-					maintainEndTime = value;
-				}
-			}
-
 			public string DBInstanceType
 			{
 				get
@@ -446,39 +342,123 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public string ReplicationFactor
+			public string MaintainEndTime
 			{
 				get
 				{
-					return replicationFactor;
+					return maintainEndTime;
 				}
 				set	
 				{
-					replicationFactor = value;
+					maintainEndTime = value;
 				}
 			}
 
-			public string ReadonlyReplicas
+			public string DBInstanceStatus
 			{
 				get
 				{
-					return readonlyReplicas;
+					return dBInstanceStatus;
 				}
 				set	
 				{
-					readonlyReplicas = value;
+					dBInstanceStatus = value;
 				}
 			}
 
-			public int? MaxIOPS
+			public string VPCId
 			{
 				get
 				{
-					return maxIOPS;
+					return vPCId;
 				}
 				set	
 				{
-					maxIOPS = value;
+					vPCId = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public int? DBInstanceStorage
+			{
+				get
+				{
+					return dBInstanceStorage;
+				}
+				set	
+				{
+					dBInstanceStorage = value;
+				}
+			}
+
+			public string ReplicaSetName
+			{
+				get
+				{
+					return replicaSetName;
+				}
+				set	
+				{
+					replicaSetName = value;
+				}
+			}
+
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
+
+			public string StorageEngine
+			{
+				get
+				{
+					return storageEngine;
+				}
+				set	
+				{
+					storageEngine = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
 				}
 			}
 
@@ -494,51 +474,123 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public string CurrentKernelVersion
+			public string DBInstanceId
 			{
 				get
 				{
-					return currentKernelVersion;
+					return dBInstanceId;
 				}
 				set	
 				{
-					currentKernelVersion = value;
+					dBInstanceId = value;
 				}
 			}
 
-			public string ProtocolType
+			public string DBInstanceClass
 			{
 				get
 				{
-					return protocolType;
+					return dBInstanceClass;
 				}
 				set	
 				{
-					protocolType = value;
+					dBInstanceClass = value;
 				}
 			}
 
-			public string VpcAuthMode
+			public string Engine
 			{
 				get
 				{
-					return vpcAuthMode;
+					return engine;
 				}
 				set	
 				{
-					vpcAuthMode = value;
+					engine = value;
 				}
 			}
 
-			public bool? DBInstanceReleaseProtection
+			public string ReadonlyReplicas
 			{
 				get
 				{
-					return dBInstanceReleaseProtection;
+					return readonlyReplicas;
 				}
 				set	
 				{
-					dBInstanceReleaseProtection = value;
+					readonlyReplicas = value;
+				}
+			}
+
+			public string ReplicationFactor
+			{
+				get
+				{
+					return replicationFactor;
+				}
+				set	
+				{
+					replicationFactor = value;
+				}
+			}
+
+			public string KindCode
+			{
+				get
+				{
+					return kindCode;
+				}
+				set	
+				{
+					kindCode = value;
+				}
+			}
+
+			public string CapacityUnit
+			{
+				get
+				{
+					return capacityUnit;
+				}
+				set	
+				{
+					capacityUnit = value;
+				}
+			}
+
+			public string CloudType
+			{
+				get
+				{
+					return cloudType;
+				}
+				set	
+				{
+					cloudType = value;
+				}
+			}
+
+			public List<DescribeDBInstanceAttribute_ReplicaSet> ReplicaSets
+			{
+				get
+				{
+					return replicaSets;
+				}
+				set	
+				{
+					replicaSets = value;
+				}
+			}
+
+			public List<DescribeDBInstanceAttribute_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
 				}
 			}
 
@@ -578,160 +630,22 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public List<DescribeDBInstanceAttribute_ReplicaSet> ReplicaSets
+			public class DescribeDBInstanceAttribute_ReplicaSet
 			{
-				get
-				{
-					return replicaSets;
-				}
-				set	
-				{
-					replicaSets = value;
-				}
-			}
-
-			public List<DescribeDBInstanceAttribute_Tag> Tags
-			{
-				get
-				{
-					return tags;
-				}
-				set	
-				{
-					tags = value;
-				}
-			}
-
-			public class DescribeDBInstanceAttribute_MongosAttribute
-			{
-
-				private string nodeId;
-
-				private string nodeDescription;
-
-				private string nodeClass;
-
-				private string connectSting;
-
-				private int? maxIOPS;
-
-				private int? maxConnections;
-
-				private int? port;
-
-				private string vpcCloudInstanceId;
-
-				private string vPCId;
 
 				private string vSwitchId;
 
-				public string NodeId
-				{
-					get
-					{
-						return nodeId;
-					}
-					set	
-					{
-						nodeId = value;
-					}
-				}
+				private string connectionPort;
 
-				public string NodeDescription
-				{
-					get
-					{
-						return nodeDescription;
-					}
-					set	
-					{
-						nodeDescription = value;
-					}
-				}
+				private string replicaSetRole;
 
-				public string NodeClass
-				{
-					get
-					{
-						return nodeClass;
-					}
-					set	
-					{
-						nodeClass = value;
-					}
-				}
+				private string connectionDomain;
 
-				public string ConnectSting
-				{
-					get
-					{
-						return connectSting;
-					}
-					set	
-					{
-						connectSting = value;
-					}
-				}
+				private string vPCCloudInstanceId;
 
-				public int? MaxIOPS
-				{
-					get
-					{
-						return maxIOPS;
-					}
-					set	
-					{
-						maxIOPS = value;
-					}
-				}
+				private string networkType;
 
-				public int? MaxConnections
-				{
-					get
-					{
-						return maxConnections;
-					}
-					set	
-					{
-						maxConnections = value;
-					}
-				}
-
-				public int? Port
-				{
-					get
-					{
-						return port;
-					}
-					set	
-					{
-						port = value;
-					}
-				}
-
-				public string VpcCloudInstanceId
-				{
-					get
-					{
-						return vpcCloudInstanceId;
-					}
-					set	
-					{
-						vpcCloudInstanceId = value;
-					}
-				}
-
-				public string VPCId
-				{
-					get
-					{
-						return vPCId;
-					}
-					set	
-					{
-						vPCId = value;
-					}
-				}
+				private string vPCId;
 
 				public string VSwitchId
 				{
@@ -744,256 +658,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 						vSwitchId = value;
 					}
 				}
-			}
 
-			public class DescribeDBInstanceAttribute_ShardAttribute
-			{
-
-				private string nodeId;
-
-				private string nodeDescription;
-
-				private string nodeClass;
-
-				private int? nodeStorage;
-
-				private int? maxIOPS;
-
-				private int? maxConnections;
-
-				private string connectString;
-
-				private int? port;
-
-				public string NodeId
+				public string ConnectionPort
 				{
 					get
 					{
-						return nodeId;
+						return connectionPort;
 					}
 					set	
 					{
-						nodeId = value;
+						connectionPort = value;
 					}
 				}
-
-				public string NodeDescription
-				{
-					get
-					{
-						return nodeDescription;
-					}
-					set	
-					{
-						nodeDescription = value;
-					}
-				}
-
-				public string NodeClass
-				{
-					get
-					{
-						return nodeClass;
-					}
-					set	
-					{
-						nodeClass = value;
-					}
-				}
-
-				public int? NodeStorage
-				{
-					get
-					{
-						return nodeStorage;
-					}
-					set	
-					{
-						nodeStorage = value;
-					}
-				}
-
-				public int? MaxIOPS
-				{
-					get
-					{
-						return maxIOPS;
-					}
-					set	
-					{
-						maxIOPS = value;
-					}
-				}
-
-				public int? MaxConnections
-				{
-					get
-					{
-						return maxConnections;
-					}
-					set	
-					{
-						maxConnections = value;
-					}
-				}
-
-				public string ConnectString
-				{
-					get
-					{
-						return connectString;
-					}
-					set	
-					{
-						connectString = value;
-					}
-				}
-
-				public int? Port
-				{
-					get
-					{
-						return port;
-					}
-					set	
-					{
-						port = value;
-					}
-				}
-			}
-
-			public class DescribeDBInstanceAttribute_ConfigserverAttribute
-			{
-
-				private string nodeId;
-
-				private string nodeDescription;
-
-				private string nodeClass;
-
-				private int? nodeStorage;
-
-				private int? maxIOPS;
-
-				private int? maxConnections;
-
-				private string connectString;
-
-				private int? port;
-
-				public string NodeId
-				{
-					get
-					{
-						return nodeId;
-					}
-					set	
-					{
-						nodeId = value;
-					}
-				}
-
-				public string NodeDescription
-				{
-					get
-					{
-						return nodeDescription;
-					}
-					set	
-					{
-						nodeDescription = value;
-					}
-				}
-
-				public string NodeClass
-				{
-					get
-					{
-						return nodeClass;
-					}
-					set	
-					{
-						nodeClass = value;
-					}
-				}
-
-				public int? NodeStorage
-				{
-					get
-					{
-						return nodeStorage;
-					}
-					set	
-					{
-						nodeStorage = value;
-					}
-				}
-
-				public int? MaxIOPS
-				{
-					get
-					{
-						return maxIOPS;
-					}
-					set	
-					{
-						maxIOPS = value;
-					}
-				}
-
-				public int? MaxConnections
-				{
-					get
-					{
-						return maxConnections;
-					}
-					set	
-					{
-						maxConnections = value;
-					}
-				}
-
-				public string ConnectString
-				{
-					get
-					{
-						return connectString;
-					}
-					set	
-					{
-						connectString = value;
-					}
-				}
-
-				public int? Port
-				{
-					get
-					{
-						return port;
-					}
-					set	
-					{
-						port = value;
-					}
-				}
-			}
-
-			public class DescribeDBInstanceAttribute_ReplicaSet
-			{
-
-				private string replicaSetRole;
-
-				private string connectionDomain;
-
-				private string connectionPort;
-
-				private string vPCCloudInstanceId;
-
-				private string vPCId;
-
-				private string vSwitchId;
-
-				private string networkType;
 
 				public string ReplicaSetRole
 				{
@@ -1019,18 +695,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					}
 				}
 
-				public string ConnectionPort
-				{
-					get
-					{
-						return connectionPort;
-					}
-					set	
-					{
-						connectionPort = value;
-					}
-				}
-
 				public string VPCCloudInstanceId
 				{
 					get
@@ -1043,30 +707,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					}
 				}
 
-				public string VPCId
-				{
-					get
-					{
-						return vPCId;
-					}
-					set	
-					{
-						vPCId = value;
-					}
-				}
-
-				public string VSwitchId
-				{
-					get
-					{
-						return vSwitchId;
-					}
-					set	
-					{
-						vSwitchId = value;
-					}
-				}
-
 				public string NetworkType
 				{
 					get
@@ -1076,6 +716,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						networkType = value;
+					}
+				}
+
+				public string VPCId
+				{
+					get
+					{
+						return vPCId;
+					}
+					set	
+					{
+						vPCId = value;
 					}
 				}
 			}
@@ -1108,6 +760,438 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						_value = value;
+					}
+				}
+			}
+
+			public class DescribeDBInstanceAttribute_MongosAttribute
+			{
+
+				private string vpcCloudInstanceId;
+
+				private int? maxIOPS;
+
+				private string vSwitchId;
+
+				private string nodeClass;
+
+				private int? maxConnections;
+
+				private int? port;
+
+				private string vPCId;
+
+				private string connectSting;
+
+				private string nodeDescription;
+
+				private string nodeId;
+
+				private string status;
+
+				public string VpcCloudInstanceId
+				{
+					get
+					{
+						return vpcCloudInstanceId;
+					}
+					set	
+					{
+						vpcCloudInstanceId = value;
+					}
+				}
+
+				public int? MaxIOPS
+				{
+					get
+					{
+						return maxIOPS;
+					}
+					set	
+					{
+						maxIOPS = value;
+					}
+				}
+
+				public string VSwitchId
+				{
+					get
+					{
+						return vSwitchId;
+					}
+					set	
+					{
+						vSwitchId = value;
+					}
+				}
+
+				public string NodeClass
+				{
+					get
+					{
+						return nodeClass;
+					}
+					set	
+					{
+						nodeClass = value;
+					}
+				}
+
+				public int? MaxConnections
+				{
+					get
+					{
+						return maxConnections;
+					}
+					set	
+					{
+						maxConnections = value;
+					}
+				}
+
+				public int? Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
+					}
+				}
+
+				public string VPCId
+				{
+					get
+					{
+						return vPCId;
+					}
+					set	
+					{
+						vPCId = value;
+					}
+				}
+
+				public string ConnectSting
+				{
+					get
+					{
+						return connectSting;
+					}
+					set	
+					{
+						connectSting = value;
+					}
+				}
+
+				public string NodeDescription
+				{
+					get
+					{
+						return nodeDescription;
+					}
+					set	
+					{
+						nodeDescription = value;
+					}
+				}
+
+				public string NodeId
+				{
+					get
+					{
+						return nodeId;
+					}
+					set	
+					{
+						nodeId = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+			}
+
+			public class DescribeDBInstanceAttribute_ShardAttribute
+			{
+
+				private int? maxIOPS;
+
+				private string connectString;
+
+				private string nodeClass;
+
+				private int? maxConnections;
+
+				private int? port;
+
+				private string nodeDescription;
+
+				private string nodeId;
+
+				private int? nodeStorage;
+
+				private int? readonlyReplicas;
+
+				private string status;
+
+				public int? MaxIOPS
+				{
+					get
+					{
+						return maxIOPS;
+					}
+					set	
+					{
+						maxIOPS = value;
+					}
+				}
+
+				public string ConnectString
+				{
+					get
+					{
+						return connectString;
+					}
+					set	
+					{
+						connectString = value;
+					}
+				}
+
+				public string NodeClass
+				{
+					get
+					{
+						return nodeClass;
+					}
+					set	
+					{
+						nodeClass = value;
+					}
+				}
+
+				public int? MaxConnections
+				{
+					get
+					{
+						return maxConnections;
+					}
+					set	
+					{
+						maxConnections = value;
+					}
+				}
+
+				public int? Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
+					}
+				}
+
+				public string NodeDescription
+				{
+					get
+					{
+						return nodeDescription;
+					}
+					set	
+					{
+						nodeDescription = value;
+					}
+				}
+
+				public string NodeId
+				{
+					get
+					{
+						return nodeId;
+					}
+					set	
+					{
+						nodeId = value;
+					}
+				}
+
+				public int? NodeStorage
+				{
+					get
+					{
+						return nodeStorage;
+					}
+					set	
+					{
+						nodeStorage = value;
+					}
+				}
+
+				public int? ReadonlyReplicas
+				{
+					get
+					{
+						return readonlyReplicas;
+					}
+					set	
+					{
+						readonlyReplicas = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+			}
+
+			public class DescribeDBInstanceAttribute_ConfigserverAttribute
+			{
+
+				private int? maxIOPS;
+
+				private string connectString;
+
+				private string nodeClass;
+
+				private int? maxConnections;
+
+				private int? port;
+
+				private string nodeDescription;
+
+				private string nodeId;
+
+				private int? nodeStorage;
+
+				private string status;
+
+				public int? MaxIOPS
+				{
+					get
+					{
+						return maxIOPS;
+					}
+					set	
+					{
+						maxIOPS = value;
+					}
+				}
+
+				public string ConnectString
+				{
+					get
+					{
+						return connectString;
+					}
+					set	
+					{
+						connectString = value;
+					}
+				}
+
+				public string NodeClass
+				{
+					get
+					{
+						return nodeClass;
+					}
+					set	
+					{
+						nodeClass = value;
+					}
+				}
+
+				public int? MaxConnections
+				{
+					get
+					{
+						return maxConnections;
+					}
+					set	
+					{
+						maxConnections = value;
+					}
+				}
+
+				public int? Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
+					}
+				}
+
+				public string NodeDescription
+				{
+					get
+					{
+						return nodeDescription;
+					}
+					set	
+					{
+						nodeDescription = value;
+					}
+				}
+
+				public string NodeId
+				{
+					get
+					{
+						return nodeId;
+					}
+					set	
+					{
+						nodeId = value;
+					}
+				}
+
+				public int? NodeStorage
+				{
+					get
+					{
+						return nodeStorage;
+					}
+					set	
+					{
+						nodeStorage = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
 					}
 				}
 			}

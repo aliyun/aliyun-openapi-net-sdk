@@ -25,17 +25,35 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class ListApplicationsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string code;
-
 		private string message;
 
-		private bool? success;
+		private string requestId;
 
 		private string errorCode;
 
+		private string code;
+
+		private bool? success;
+
+		private int? currentPage;
+
+		private int? totalSize;
+
+		private int? pageSize;
+
 		private ListApplications_Data data;
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -46,6 +64,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 
@@ -61,18 +91,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
 		public bool? Success
 		{
 			get
@@ -85,15 +103,39 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string ErrorCode
+		public int? CurrentPage
 		{
 			get
 			{
-				return errorCode;
+				return currentPage;
 			}
 			set	
 			{
-				errorCode = value;
+				currentPage = value;
+			}
+		}
+
+		public int? TotalSize
+		{
+			get
+			{
+				return totalSize;
+			}
+			set	
+			{
+				totalSize = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
 			}
 		}
 
@@ -114,9 +156,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private int? currentPage;
 
-			private int? pageSize;
-
 			private int? totalSize;
+
+			private int? pageSize;
 
 			private List<ListApplications_Application> applications;
 
@@ -132,18 +174,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public int? PageSize
-			{
-				get
-				{
-					return pageSize;
-				}
-				set	
-				{
-					pageSize = value;
-				}
-			}
-
 			public int? TotalSize
 			{
 				get
@@ -153,6 +183,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					totalSize = value;
+				}
+			}
+
+			public int? PageSize
+			{
+				get
+				{
+					return pageSize;
+				}
+				set	
+				{
+					pageSize = value;
 				}
 			}
 
@@ -171,25 +213,51 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			public class ListApplications_Application
 			{
 
+				private string appName;
+
+				private string namespaceId;
+
 				private bool? appDeletingStatus;
 
 				private string appId;
 
-				private string appName;
+				private bool? scaleRuleEnabled;
 
-				private string regionId;
+				private string scaleRuleType;
 
 				private int? runningInstances;
 
 				private int? instances;
 
-				private string namespaceId;
+				private string regionId;
 
-				private string scaleRuleType;
-
-				private bool? scaleRuleEnabled;
+				private string appDescription;
 
 				private List<ListApplications_TagsItem> tags;
+
+				public string AppName
+				{
+					get
+					{
+						return appName;
+					}
+					set	
+					{
+						appName = value;
+					}
+				}
+
+				public string NamespaceId
+				{
+					get
+					{
+						return namespaceId;
+					}
+					set	
+					{
+						namespaceId = value;
+					}
+				}
 
 				public bool? AppDeletingStatus
 				{
@@ -215,27 +283,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public string AppName
+				public bool? ScaleRuleEnabled
 				{
 					get
 					{
-						return appName;
+						return scaleRuleEnabled;
 					}
 					set	
 					{
-						appName = value;
+						scaleRuleEnabled = value;
 					}
 				}
 
-				public string RegionId
+				public string ScaleRuleType
 				{
 					get
 					{
-						return regionId;
+						return scaleRuleType;
 					}
 					set	
 					{
-						regionId = value;
+						scaleRuleType = value;
 					}
 				}
 
@@ -263,39 +331,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public string NamespaceId
+				public string RegionId
 				{
 					get
 					{
-						return namespaceId;
+						return regionId;
 					}
 					set	
 					{
-						namespaceId = value;
+						regionId = value;
 					}
 				}
 
-				public string ScaleRuleType
+				public string AppDescription
 				{
 					get
 					{
-						return scaleRuleType;
+						return appDescription;
 					}
 					set	
 					{
-						scaleRuleType = value;
-					}
-				}
-
-				public bool? ScaleRuleEnabled
-				{
-					get
-					{
-						return scaleRuleEnabled;
-					}
-					set	
-					{
-						scaleRuleEnabled = value;
+						appDescription = value;
 					}
 				}
 

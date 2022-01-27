@@ -32,19 +32,21 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ReleaseClusterHostGroupRequest()
             : base("Emr", "2016-04-08", "ReleaseClusterHostGroup", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string regionId;
+		private string clusterId;
 
 		private string hostGroupId;
 
 		private string instanceIdList;
-
-		private string clusterId;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -59,16 +61,16 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
+		public string ClusterId
 		{
 			get
 			{
-				return regionId;
+				return clusterId;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
 			}
 		}
 
@@ -95,32 +97,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				instanceIdList = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceIdList", value);
-			}
-		}
-
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

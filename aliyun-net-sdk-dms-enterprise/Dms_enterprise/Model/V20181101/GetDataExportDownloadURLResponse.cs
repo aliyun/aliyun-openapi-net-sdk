@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private bool? success;
+		private string errorCode;
 
 		private string errorMessage;
 
-		private string errorCode;
+		private bool? success;
 
 		private GetDataExportDownloadURL_DownloadURLResult downloadURLResult;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,30 +48,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ErrorCode")]
 		public string ErrorCode
 		{
 			get
@@ -83,6 +61,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DownloadURLResult")]
 		public GetDataExportDownloadURL_DownloadURLResult DownloadURLResult
 		{
 			get
@@ -100,10 +105,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private bool? hasResult;
 
-			private string uRL;
-
 			private string tipMessage;
 
+			private string uRL;
+
+			[JsonProperty(PropertyName = "HasResult")]
 			public bool? HasResult
 			{
 				get
@@ -116,18 +122,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public string URL
-			{
-				get
-				{
-					return uRL;
-				}
-				set	
-				{
-					uRL = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "TipMessage")]
 			public string TipMessage
 			{
 				get
@@ -137,6 +132,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					tipMessage = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "URL")]
+			public string URL
+			{
+				get
+				{
+					return uRL;
+				}
+				set	
+				{
+					uRL = value;
 				}
 			}
 		}

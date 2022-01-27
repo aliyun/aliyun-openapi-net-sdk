@@ -26,27 +26,27 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 {
     public class UpdateTemplateResponseUnmarshaller
     {
-        public static UpdateTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateTemplateResponse updateTemplateResponse = new UpdateTemplateResponse();
 
-			updateTemplateResponse.HttpResponse = context.HttpResponse;
-			updateTemplateResponse.RequestId = context.StringValue("UpdateTemplate.RequestId");
+			updateTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			updateTemplateResponse.RequestId = _ctx.StringValue("UpdateTemplate.RequestId");
 
 			UpdateTemplateResponse.UpdateTemplate_Template template = new UpdateTemplateResponse.UpdateTemplate_Template();
-			template.TemplateName = context.StringValue("UpdateTemplate.Template.TemplateName");
-			template.TemplateId = context.StringValue("UpdateTemplate.Template.TemplateId");
-			template.CreatedDate = context.StringValue("UpdateTemplate.Template.CreatedDate");
-			template.CreatedBy = context.StringValue("UpdateTemplate.Template.CreatedBy");
-			template.UpdatedDate = context.StringValue("UpdateTemplate.Template.UpdatedDate");
-			template.UpdatedBy = context.StringValue("UpdateTemplate.Template.UpdatedBy");
-			template.Hash = context.StringValue("UpdateTemplate.Template.Hash");
-			template.Description = context.StringValue("UpdateTemplate.Template.Description");
-			template.ShareType = context.StringValue("UpdateTemplate.Template.ShareType");
-			template.TemplateFormat = context.StringValue("UpdateTemplate.Template.TemplateFormat");
-			template.TemplateVersion = context.StringValue("UpdateTemplate.Template.TemplateVersion");
-			template.HasTrigger = context.BooleanValue("UpdateTemplate.Template.HasTrigger");
-			template.Tags = context.StringValue("UpdateTemplate.Template.Tags");
+			template.TemplateName = _ctx.StringValue("UpdateTemplate.Template.TemplateName");
+			template.TemplateId = _ctx.StringValue("UpdateTemplate.Template.TemplateId");
+			template.CreatedDate = _ctx.StringValue("UpdateTemplate.Template.CreatedDate");
+			template.CreatedBy = _ctx.StringValue("UpdateTemplate.Template.CreatedBy");
+			template.UpdatedDate = _ctx.StringValue("UpdateTemplate.Template.UpdatedDate");
+			template.UpdatedBy = _ctx.StringValue("UpdateTemplate.Template.UpdatedBy");
+			template.Hash = _ctx.StringValue("UpdateTemplate.Template.Hash");
+			template.Description = _ctx.StringValue("UpdateTemplate.Template.Description");
+			template.ShareType = _ctx.StringValue("UpdateTemplate.Template.ShareType");
+			template.TemplateFormat = _ctx.StringValue("UpdateTemplate.Template.TemplateFormat");
+			template.TemplateVersion = _ctx.StringValue("UpdateTemplate.Template.TemplateVersion");
+			template.HasTrigger = _ctx.BooleanValue("UpdateTemplate.Template.HasTrigger");
+			template.Tags = _ctx.StringValue("UpdateTemplate.Template.Tags");
 			updateTemplateResponse.Template = template;
         
 			return updateTemplateResponse;

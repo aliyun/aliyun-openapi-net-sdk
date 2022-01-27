@@ -26,18 +26,18 @@ namespace Aliyun.Acs.OnsMqtt.Transform.V20200420
 {
     public class BatchQuerySessionByClientIdsResponseUnmarshaller
     {
-        public static BatchQuerySessionByClientIdsResponse Unmarshall(UnmarshallerContext context)
+        public static BatchQuerySessionByClientIdsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchQuerySessionByClientIdsResponse batchQuerySessionByClientIdsResponse = new BatchQuerySessionByClientIdsResponse();
 
-			batchQuerySessionByClientIdsResponse.HttpResponse = context.HttpResponse;
-			batchQuerySessionByClientIdsResponse.RequestId = context.StringValue("BatchQuerySessionByClientIds.RequestId");
+			batchQuerySessionByClientIdsResponse.HttpResponse = _ctx.HttpResponse;
+			batchQuerySessionByClientIdsResponse.RequestId = _ctx.StringValue("BatchQuerySessionByClientIds.RequestId");
 
 			List<BatchQuerySessionByClientIdsResponse.BatchQuerySessionByClientIds_OnlineStatusListItem> batchQuerySessionByClientIdsResponse_onlineStatusList = new List<BatchQuerySessionByClientIdsResponse.BatchQuerySessionByClientIds_OnlineStatusListItem>();
-			for (int i = 0; i < context.Length("BatchQuerySessionByClientIds.OnlineStatusList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("BatchQuerySessionByClientIds.OnlineStatusList.Length"); i++) {
 				BatchQuerySessionByClientIdsResponse.BatchQuerySessionByClientIds_OnlineStatusListItem onlineStatusListItem = new BatchQuerySessionByClientIdsResponse.BatchQuerySessionByClientIds_OnlineStatusListItem();
-				onlineStatusListItem.ClientId = context.StringValue("BatchQuerySessionByClientIds.OnlineStatusList["+ i +"].ClientId");
-				onlineStatusListItem.OnlineStatus = context.BooleanValue("BatchQuerySessionByClientIds.OnlineStatusList["+ i +"].OnlineStatus");
+				onlineStatusListItem.ClientId = _ctx.StringValue("BatchQuerySessionByClientIds.OnlineStatusList["+ i +"].ClientId");
+				onlineStatusListItem.OnlineStatus = _ctx.BooleanValue("BatchQuerySessionByClientIds.OnlineStatusList["+ i +"].OnlineStatus");
 
 				batchQuerySessionByClientIdsResponse_onlineStatusList.Add(onlineStatusListItem);
 			}

@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class CreateOTAStaticUpgradeJobResponseUnmarshaller
     {
-        public static CreateOTAStaticUpgradeJobResponse Unmarshall(UnmarshallerContext context)
+        public static CreateOTAStaticUpgradeJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateOTAStaticUpgradeJobResponse createOTAStaticUpgradeJobResponse = new CreateOTAStaticUpgradeJobResponse();
 
-			createOTAStaticUpgradeJobResponse.HttpResponse = context.HttpResponse;
-			createOTAStaticUpgradeJobResponse.RequestId = context.StringValue("CreateOTAStaticUpgradeJob.RequestId");
-			createOTAStaticUpgradeJobResponse.Success = context.BooleanValue("CreateOTAStaticUpgradeJob.Success");
-			createOTAStaticUpgradeJobResponse.Code = context.StringValue("CreateOTAStaticUpgradeJob.Code");
-			createOTAStaticUpgradeJobResponse.ErrorMessage = context.StringValue("CreateOTAStaticUpgradeJob.ErrorMessage");
+			createOTAStaticUpgradeJobResponse.HttpResponse = _ctx.HttpResponse;
+			createOTAStaticUpgradeJobResponse.RequestId = _ctx.StringValue("CreateOTAStaticUpgradeJob.RequestId");
+			createOTAStaticUpgradeJobResponse.Success = _ctx.BooleanValue("CreateOTAStaticUpgradeJob.Success");
+			createOTAStaticUpgradeJobResponse.Code = _ctx.StringValue("CreateOTAStaticUpgradeJob.Code");
+			createOTAStaticUpgradeJobResponse.ErrorMessage = _ctx.StringValue("CreateOTAStaticUpgradeJob.ErrorMessage");
 
 			CreateOTAStaticUpgradeJobResponse.CreateOTAStaticUpgradeJob_Data data = new CreateOTAStaticUpgradeJobResponse.CreateOTAStaticUpgradeJob_Data();
-			data.JobId = context.StringValue("CreateOTAStaticUpgradeJob.Data.JobId");
-			data.UtcCreate = context.StringValue("CreateOTAStaticUpgradeJob.Data.UtcCreate");
+			data.JobId = _ctx.StringValue("CreateOTAStaticUpgradeJob.Data.JobId");
+			data.UtcCreate = _ctx.StringValue("CreateOTAStaticUpgradeJob.Data.UtcCreate");
 			createOTAStaticUpgradeJobResponse.Data = data;
         
 			return createOTAStaticUpgradeJobResponse;

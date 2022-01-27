@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class JoinResourceGroupResponseUnmarshaller
     {
-        public static JoinResourceGroupResponse Unmarshall(UnmarshallerContext context)
+        public static JoinResourceGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			JoinResourceGroupResponse joinResourceGroupResponse = new JoinResourceGroupResponse();
 
-			joinResourceGroupResponse.HttpResponse = context.HttpResponse;
-			joinResourceGroupResponse.RequestId = context.StringValue("JoinResourceGroup.RequestId");
+			joinResourceGroupResponse.HttpResponse = _ctx.HttpResponse;
+			joinResourceGroupResponse.RequestId = _ctx.StringValue("JoinResourceGroup.RequestId");
         
 			return joinResourceGroupResponse;
         }

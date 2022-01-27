@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string requestId;
 
-		private string regionId;
-
 		private string imageId;
+
+		private string regionId;
 
 		private List<DescribeImageSupportInstanceTypes_InstanceType> instanceTypes;
 
@@ -45,18 +45,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
-
 		public string ImageId
 		{
 			get
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				imageId = value;
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
 			}
 		}
 
@@ -86,11 +86,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string instanceTypeId;
 
+			private string instanceTypeFamily;
+
 			private int? cpuCoreCount;
 
 			private float? memorySize;
-
-			private string instanceTypeFamily;
 
 			public string InstanceTypeId
 			{
@@ -101,6 +101,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					instanceTypeId = value;
+				}
+			}
+
+			public string InstanceTypeFamily
+			{
+				get
+				{
+					return instanceTypeFamily;
+				}
+				set	
+				{
+					instanceTypeFamily = value;
 				}
 			}
 
@@ -125,18 +137,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					memorySize = value;
-				}
-			}
-
-			public string InstanceTypeFamily
-			{
-				get
-				{
-					return instanceTypeFamily;
-				}
-				set	
-				{
-					instanceTypeFamily = value;
 				}
 			}
 		}

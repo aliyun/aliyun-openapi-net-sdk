@@ -58,19 +58,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string dBEndpointId;
 
-			private string endpointType;
-
-			private string nodes;
-
-			private string readWriteMode;
+			private string nodeWithRoles;
 
 			private string autoAddNewNodes;
 
-			private string endpointConfig;
-
-			private string nodeWithRoles;
+			private string endpointType;
 
 			private string dBEndpointDescription;
+
+			private string endpointConfig;
+
+			private string readWriteMode;
+
+			private string nodes;
 
 			private List<DescribeDBClusterEndpoints_Address> addressItems;
 
@@ -86,39 +86,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string EndpointType
+			public string NodeWithRoles
 			{
 				get
 				{
-					return endpointType;
+					return nodeWithRoles;
 				}
 				set	
 				{
-					endpointType = value;
-				}
-			}
-
-			public string Nodes
-			{
-				get
-				{
-					return nodes;
-				}
-				set	
-				{
-					nodes = value;
-				}
-			}
-
-			public string ReadWriteMode
-			{
-				get
-				{
-					return readWriteMode;
-				}
-				set	
-				{
-					readWriteMode = value;
+					nodeWithRoles = value;
 				}
 			}
 
@@ -134,27 +110,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string EndpointConfig
+			public string EndpointType
 			{
 				get
 				{
-					return endpointConfig;
+					return endpointType;
 				}
 				set	
 				{
-					endpointConfig = value;
-				}
-			}
-
-			public string NodeWithRoles
-			{
-				get
-				{
-					return nodeWithRoles;
-				}
-				set	
-				{
-					nodeWithRoles = value;
+					endpointType = value;
 				}
 			}
 
@@ -167,6 +131,42 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					dBEndpointDescription = value;
+				}
+			}
+
+			public string EndpointConfig
+			{
+				get
+				{
+					return endpointConfig;
+				}
+				set	
+				{
+					endpointConfig = value;
+				}
+			}
+
+			public string ReadWriteMode
+			{
+				get
+				{
+					return readWriteMode;
+				}
+				set	
+				{
+					readWriteMode = value;
+				}
+			}
+
+			public string Nodes
+			{
+				get
+				{
+					return nodes;
+				}
+				set	
+				{
+					nodes = value;
 				}
 			}
 
@@ -185,67 +185,31 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			public class DescribeDBClusterEndpoints_Address
 			{
 
-				private string connectionString;
-
-				private string iPAddress;
-
-				private string netType;
-
-				private string port;
+				private string privateZoneConnectionString;
 
 				private string vPCId;
+
+				private string port;
 
 				private string vSwitchId;
 
 				private string vpcInstanceId;
 
-				private string privateZoneConnectionString;
+				private string iPAddress;
 
-				public string ConnectionString
+				private string connectionString;
+
+				private string netType;
+
+				public string PrivateZoneConnectionString
 				{
 					get
 					{
-						return connectionString;
+						return privateZoneConnectionString;
 					}
 					set	
 					{
-						connectionString = value;
-					}
-				}
-
-				public string IPAddress
-				{
-					get
-					{
-						return iPAddress;
-					}
-					set	
-					{
-						iPAddress = value;
-					}
-				}
-
-				public string NetType
-				{
-					get
-					{
-						return netType;
-					}
-					set	
-					{
-						netType = value;
-					}
-				}
-
-				public string Port
-				{
-					get
-					{
-						return port;
-					}
-					set	
-					{
-						port = value;
+						privateZoneConnectionString = value;
 					}
 				}
 
@@ -258,6 +222,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					set	
 					{
 						vPCId = value;
+					}
+				}
+
+				public string Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
 					}
 				}
 
@@ -285,15 +261,39 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					}
 				}
 
-				public string PrivateZoneConnectionString
+				public string IPAddress
 				{
 					get
 					{
-						return privateZoneConnectionString;
+						return iPAddress;
 					}
 					set	
 					{
-						privateZoneConnectionString = value;
+						iPAddress = value;
+					}
+				}
+
+				public string ConnectionString
+				{
+					get
+					{
+						return connectionString;
+					}
+					set	
+					{
+						connectionString = value;
+					}
+				}
+
+				public string NetType
+				{
+					get
+					{
+						return netType;
+					}
+					set	
+					{
+						netType = value;
 					}
 				}
 			}

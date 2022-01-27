@@ -26,24 +26,24 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 {
     public class DescribeInclinedTablesResponseUnmarshaller
     {
-        public static DescribeInclinedTablesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeInclinedTablesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeInclinedTablesResponse describeInclinedTablesResponse = new DescribeInclinedTablesResponse();
 
-			describeInclinedTablesResponse.HttpResponse = context.HttpResponse;
-			describeInclinedTablesResponse.RequestId = context.StringValue("DescribeInclinedTables.RequestId");
-			describeInclinedTablesResponse.TotalCount = context.StringValue("DescribeInclinedTables.TotalCount");
-			describeInclinedTablesResponse.PageNumber = context.StringValue("DescribeInclinedTables.PageNumber");
-			describeInclinedTablesResponse.PageSize = context.StringValue("DescribeInclinedTables.PageSize");
+			describeInclinedTablesResponse.HttpResponse = _ctx.HttpResponse;
+			describeInclinedTablesResponse.RequestId = _ctx.StringValue("DescribeInclinedTables.RequestId");
+			describeInclinedTablesResponse.TotalCount = _ctx.StringValue("DescribeInclinedTables.TotalCount");
+			describeInclinedTablesResponse.PageNumber = _ctx.StringValue("DescribeInclinedTables.PageNumber");
+			describeInclinedTablesResponse.PageSize = _ctx.StringValue("DescribeInclinedTables.PageSize");
 
 			List<DescribeInclinedTablesResponse.DescribeInclinedTables_Table> describeInclinedTablesResponse_items = new List<DescribeInclinedTablesResponse.DescribeInclinedTables_Table>();
-			for (int i = 0; i < context.Length("DescribeInclinedTables.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeInclinedTables.Items.Length"); i++) {
 				DescribeInclinedTablesResponse.DescribeInclinedTables_Table table = new DescribeInclinedTablesResponse.DescribeInclinedTables_Table();
-				table.Schema = context.StringValue("DescribeInclinedTables.Items["+ i +"].Schema");
-				table.Name = context.StringValue("DescribeInclinedTables.Items["+ i +"].Name");
-				table.Type = context.StringValue("DescribeInclinedTables.Items["+ i +"].Type");
-				table.Size = context.LongValue("DescribeInclinedTables.Items["+ i +"].Size");
-				table.IsIncline = context.BooleanValue("DescribeInclinedTables.Items["+ i +"].IsIncline");
+				table.Schema = _ctx.StringValue("DescribeInclinedTables.Items["+ i +"].Schema");
+				table.Name = _ctx.StringValue("DescribeInclinedTables.Items["+ i +"].Name");
+				table.Type = _ctx.StringValue("DescribeInclinedTables.Items["+ i +"].Type");
+				table.Size = _ctx.LongValue("DescribeInclinedTables.Items["+ i +"].Size");
+				table.IsIncline = _ctx.BooleanValue("DescribeInclinedTables.Items["+ i +"].IsIncline");
 
 				describeInclinedTablesResponse_items.Add(table);
 			}

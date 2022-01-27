@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeBandwidthPackagesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeBandwidthPackages_BandwidthPackage> bandwidthPackages;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,45 +98,69 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeBandwidthPackages_BandwidthPackage
 		{
 
-			private string bandwidthPackageId;
+			private string status;
+
+			private string creationTime;
+
+			private string ipCount;
 
 			private string regionId;
 
-			private string name;
+			private string instanceChargeType;
+
+			private string bandwidthPackageId;
 
 			private string description;
 
-			private string zoneId;
+			private string bandwidth;
 
 			private string natGatewayId;
 
-			private string bandwidth;
-
-			private string instanceChargeType;
+			private string zoneId;
 
 			private string internetChargeType;
 
 			private string businessStatus;
 
-			private string ipCount;
+			private string name;
 
 			private string iSP;
 
-			private string creationTime;
-
-			private string status;
-
 			private List<DescribeBandwidthPackages_PublicIpAddresse> publicIpAddresses;
 
-			public string BandwidthPackageId
+			public string Status
 			{
 				get
 				{
-					return bandwidthPackageId;
+					return status;
 				}
 				set	
 				{
-					bandwidthPackageId = value;
+					status = value;
+				}
+			}
+
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
+				}
+			}
+
+			public string IpCount
+			{
+				get
+				{
+					return ipCount;
+				}
+				set	
+				{
+					ipCount = value;
 				}
 			}
 
@@ -152,15 +176,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Name
+			public string InstanceChargeType
 			{
 				get
 				{
-					return name;
+					return instanceChargeType;
 				}
 				set	
 				{
-					name = value;
+					instanceChargeType = value;
+				}
+			}
+
+			public string BandwidthPackageId
+			{
+				get
+				{
+					return bandwidthPackageId;
+				}
+				set	
+				{
+					bandwidthPackageId = value;
 				}
 			}
 
@@ -176,15 +212,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string ZoneId
+			public string Bandwidth
 			{
 				get
 				{
-					return zoneId;
+					return bandwidth;
 				}
 				set	
 				{
-					zoneId = value;
+					bandwidth = value;
 				}
 			}
 
@@ -200,27 +236,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Bandwidth
+			public string ZoneId
 			{
 				get
 				{
-					return bandwidth;
+					return zoneId;
 				}
 				set	
 				{
-					bandwidth = value;
-				}
-			}
-
-			public string InstanceChargeType
-			{
-				get
-				{
-					return instanceChargeType;
-				}
-				set	
-				{
-					instanceChargeType = value;
+					zoneId = value;
 				}
 			}
 
@@ -248,15 +272,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string IpCount
+			public string Name
 			{
 				get
 				{
-					return ipCount;
+					return name;
 				}
 				set	
 				{
-					ipCount = value;
+					name = value;
 				}
 			}
 
@@ -269,30 +293,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					iSP = value;
-				}
-			}
-
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
 				}
 			}
 
@@ -311,21 +311,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeBandwidthPackages_PublicIpAddresse
 			{
 
-				private string allocationId;
-
 				private string ipAddress;
 
-				public string AllocationId
-				{
-					get
-					{
-						return allocationId;
-					}
-					set	
-					{
-						allocationId = value;
-					}
-				}
+				private string allocationId;
 
 				public string IpAddress
 				{
@@ -336,6 +324,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						ipAddress = value;
+					}
+				}
+
+				public string AllocationId
+				{
+					get
+					{
+						return allocationId;
+					}
+					set	
+					{
+						allocationId = value;
 					}
 				}
 			}

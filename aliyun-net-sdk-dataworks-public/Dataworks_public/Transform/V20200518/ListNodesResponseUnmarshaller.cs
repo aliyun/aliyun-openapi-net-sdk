@@ -26,36 +26,44 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class ListNodesResponseUnmarshaller
     {
-        public static ListNodesResponse Unmarshall(UnmarshallerContext context)
+        public static ListNodesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListNodesResponse listNodesResponse = new ListNodesResponse();
 
-			listNodesResponse.HttpResponse = context.HttpResponse;
-			listNodesResponse.Success = context.BooleanValue("ListNodes.Success");
-			listNodesResponse.HttpStatusCode = context.IntegerValue("ListNodes.HttpStatusCode");
-			listNodesResponse.ErrorCode = context.StringValue("ListNodes.ErrorCode");
-			listNodesResponse.ErrorMessage = context.StringValue("ListNodes.ErrorMessage");
-			listNodesResponse.RequestId = context.StringValue("ListNodes.RequestId");
+			listNodesResponse.HttpResponse = _ctx.HttpResponse;
+			listNodesResponse.Success = _ctx.BooleanValue("ListNodes.Success");
+			listNodesResponse.HttpStatusCode = _ctx.IntegerValue("ListNodes.HttpStatusCode");
+			listNodesResponse.ErrorCode = _ctx.StringValue("ListNodes.ErrorCode");
+			listNodesResponse.ErrorMessage = _ctx.StringValue("ListNodes.ErrorMessage");
+			listNodesResponse.RequestId = _ctx.StringValue("ListNodes.RequestId");
 
 			ListNodesResponse.ListNodes_Data data = new ListNodesResponse.ListNodes_Data();
-			data.PageNumber = context.IntegerValue("ListNodes.Data.PageNumber");
-			data.PageSize = context.IntegerValue("ListNodes.Data.PageSize");
-			data.TotalCount = context.IntegerValue("ListNodes.Data.TotalCount");
+			data.PageNumber = _ctx.IntegerValue("ListNodes.Data.PageNumber");
+			data.PageSize = _ctx.IntegerValue("ListNodes.Data.PageSize");
+			data.TotalCount = _ctx.IntegerValue("ListNodes.Data.TotalCount");
 
 			List<ListNodesResponse.ListNodes_Data.ListNodes_NodesItem> data_nodes = new List<ListNodesResponse.ListNodes_Data.ListNodes_NodesItem>();
-			for (int i = 0; i < context.Length("ListNodes.Data.Nodes.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListNodes.Data.Nodes.Length"); i++) {
 				ListNodesResponse.ListNodes_Data.ListNodes_NodesItem nodesItem = new ListNodesResponse.ListNodes_Data.ListNodes_NodesItem();
-				nodesItem.NodeId = context.LongValue("ListNodes.Data.Nodes["+ i +"].NodeId");
-				nodesItem.NodeName = context.StringValue("ListNodes.Data.Nodes["+ i +"].NodeName");
-				nodesItem.CronExpress = context.StringValue("ListNodes.Data.Nodes["+ i +"].CronExpress");
-				nodesItem.SchedulerType = context.StringValue("ListNodes.Data.Nodes["+ i +"].SchedulerType");
-				nodesItem.ProgramType = context.StringValue("ListNodes.Data.Nodes["+ i +"].ProgramType");
-				nodesItem.OwnerId = context.StringValue("ListNodes.Data.Nodes["+ i +"].OwnerId");
-				nodesItem.ProjectId = context.LongValue("ListNodes.Data.Nodes["+ i +"].ProjectId");
-				nodesItem.Repeatability = context.BooleanValue("ListNodes.Data.Nodes["+ i +"].Repeatability");
-				nodesItem.ParamValues = context.StringValue("ListNodes.Data.Nodes["+ i +"].ParamValues");
-				nodesItem.Description = context.StringValue("ListNodes.Data.Nodes["+ i +"].Description");
-				nodesItem.ResGroupName = context.StringValue("ListNodes.Data.Nodes["+ i +"].ResGroupName");
+				nodesItem.NodeId = _ctx.LongValue("ListNodes.Data.Nodes["+ i +"].NodeId");
+				nodesItem.NodeName = _ctx.StringValue("ListNodes.Data.Nodes["+ i +"].NodeName");
+				nodesItem.CronExpress = _ctx.StringValue("ListNodes.Data.Nodes["+ i +"].CronExpress");
+				nodesItem.SchedulerType = _ctx.StringValue("ListNodes.Data.Nodes["+ i +"].SchedulerType");
+				nodesItem.ProgramType = _ctx.StringValue("ListNodes.Data.Nodes["+ i +"].ProgramType");
+				nodesItem.OwnerId = _ctx.StringValue("ListNodes.Data.Nodes["+ i +"].OwnerId");
+				nodesItem.ProjectId = _ctx.LongValue("ListNodes.Data.Nodes["+ i +"].ProjectId");
+				nodesItem.Repeatability = _ctx.BooleanValue("ListNodes.Data.Nodes["+ i +"].Repeatability");
+				nodesItem.ParamValues = _ctx.StringValue("ListNodes.Data.Nodes["+ i +"].ParamValues");
+				nodesItem.Description = _ctx.StringValue("ListNodes.Data.Nodes["+ i +"].Description");
+				nodesItem.ResGroupName = _ctx.StringValue("ListNodes.Data.Nodes["+ i +"].ResGroupName");
+				nodesItem.Priority = _ctx.IntegerValue("ListNodes.Data.Nodes["+ i +"].Priority");
+				nodesItem.BaselineId = _ctx.LongValue("ListNodes.Data.Nodes["+ i +"].BaselineId");
+				nodesItem.RepeatInterval = _ctx.LongValue("ListNodes.Data.Nodes["+ i +"].RepeatInterval");
+				nodesItem.Connection = _ctx.StringValue("ListNodes.Data.Nodes["+ i +"].Connection");
+				nodesItem.DqcType = _ctx.IntegerValue("ListNodes.Data.Nodes["+ i +"].DqcType");
+				nodesItem.DqcDescription = _ctx.StringValue("ListNodes.Data.Nodes["+ i +"].DqcDescription");
+				nodesItem.RelatedFlowId = _ctx.LongValue("ListNodes.Data.Nodes["+ i +"].RelatedFlowId");
+				nodesItem.BusinessId = _ctx.LongValue("ListNodes.Data.Nodes["+ i +"].BusinessId");
 
 				data_nodes.Add(nodesItem);
 			}

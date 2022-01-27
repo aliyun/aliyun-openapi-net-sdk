@@ -26,53 +26,58 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeAssetDetailByUuidResponseUnmarshaller
     {
-        public static DescribeAssetDetailByUuidResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAssetDetailByUuidResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAssetDetailByUuidResponse describeAssetDetailByUuidResponse = new DescribeAssetDetailByUuidResponse();
 
-			describeAssetDetailByUuidResponse.HttpResponse = context.HttpResponse;
-			describeAssetDetailByUuidResponse.RequestId = context.StringValue("DescribeAssetDetailByUuid.RequestId");
+			describeAssetDetailByUuidResponse.HttpResponse = _ctx.HttpResponse;
+			describeAssetDetailByUuidResponse.RequestId = _ctx.StringValue("DescribeAssetDetailByUuid.RequestId");
 
 			DescribeAssetDetailByUuidResponse.DescribeAssetDetailByUuid_AssetDetail assetDetail = new DescribeAssetDetailByUuidResponse.DescribeAssetDetailByUuid_AssetDetail();
-			assetDetail.InternetIp = context.StringValue("DescribeAssetDetailByUuid.AssetDetail.InternetIp");
-			assetDetail.IntranetIp = context.StringValue("DescribeAssetDetailByUuid.AssetDetail.IntranetIp");
-			assetDetail.InstanceName = context.IntegerValue("DescribeAssetDetailByUuid.AssetDetail.InstanceName");
-			assetDetail.InstanceId = context.IntegerValue("DescribeAssetDetailByUuid.AssetDetail.InstanceId");
-			assetDetail.Ip = context.StringValue("DescribeAssetDetailByUuid.AssetDetail.Ip");
-			assetDetail.Uuid = context.StringValue("DescribeAssetDetailByUuid.AssetDetail.Uuid");
-			assetDetail.AssetType = context.StringValue("DescribeAssetDetailByUuid.AssetDetail.AssetType");
-			assetDetail.Os = context.StringValue("DescribeAssetDetailByUuid.AssetDetail.Os");
-			assetDetail.ClientStatus = context.StringValue("DescribeAssetDetailByUuid.AssetDetail.ClientStatus");
-			assetDetail.Region = context.StringValue("DescribeAssetDetailByUuid.AssetDetail.Region");
-			assetDetail.RegionName = context.StringValue("DescribeAssetDetailByUuid.AssetDetail.RegionName");
-			assetDetail.Tag = context.StringValue("DescribeAssetDetailByUuid.AssetDetail.Tag");
-			assetDetail.GroupTrace = context.StringValue("DescribeAssetDetailByUuid.AssetDetail.GroupTrace");
-			assetDetail.Cpu = context.IntegerValue("DescribeAssetDetailByUuid.AssetDetail.Cpu");
-			assetDetail.CpuInfo = context.StringValue("DescribeAssetDetailByUuid.AssetDetail.CpuInfo");
-			assetDetail.Kernel = context.StringValue("DescribeAssetDetailByUuid.AssetDetail.Kernel");
-			assetDetail.OsDetail = context.StringValue("DescribeAssetDetailByUuid.AssetDetail.OsDetail");
-			assetDetail.Mem = context.IntegerValue("DescribeAssetDetailByUuid.AssetDetail.Mem");
-			assetDetail.SysInfo = context.StringValue("DescribeAssetDetailByUuid.AssetDetail.SysInfo");
-			assetDetail.HostName = context.StringValue("DescribeAssetDetailByUuid.AssetDetail.HostName");
-			assetDetail.OsName = context.StringValue("DescribeAssetDetailByUuid.AssetDetail.OsName");
-			assetDetail.VpcInstanceId = context.StringValue("DescribeAssetDetailByUuid.AssetDetail.VpcInstanceId");
-			assetDetail.OsName1 = context.StringValue("DescribeAssetDetailByUuid.AssetDetail.OsName");
+			assetDetail.InternetIp = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.InternetIp");
+			assetDetail.IntranetIp = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.IntranetIp");
+			assetDetail.InstanceName = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.InstanceName");
+			assetDetail.InstanceId = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.InstanceId");
+			assetDetail.Ip = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.Ip");
+			assetDetail.Uuid = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.Uuid");
+			assetDetail.AssetType = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.AssetType");
+			assetDetail.Os = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.Os");
+			assetDetail.ClientStatus = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.ClientStatus");
+			assetDetail.Region = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.Region");
+			assetDetail.RegionId = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.RegionId");
+			assetDetail.RegionName = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.RegionName");
+			assetDetail.Tag = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.Tag");
+			assetDetail.GroupTrace = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.GroupTrace");
+			assetDetail.Cpu = _ctx.IntegerValue("DescribeAssetDetailByUuid.AssetDetail.Cpu");
+			assetDetail.CpuInfo = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.CpuInfo");
+			assetDetail.Kernel = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.Kernel");
+			assetDetail.OsDetail = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.OsDetail");
+			assetDetail.Mem = _ctx.IntegerValue("DescribeAssetDetailByUuid.AssetDetail.Mem");
+			assetDetail.SysInfo = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.SysInfo");
+			assetDetail.HostName = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.HostName");
+			assetDetail.OsName = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.OsName");
+			assetDetail.VpcInstanceId = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.VpcInstanceId");
+			assetDetail.InstanceStatus = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.InstanceStatus");
+			assetDetail.CreateTime = _ctx.LongValue("DescribeAssetDetailByUuid.AssetDetail.CreateTime");
+			assetDetail.AuthVersion = _ctx.IntegerValue("DescribeAssetDetailByUuid.AssetDetail.AuthVersion");
+			assetDetail.Bind = _ctx.BooleanValue("DescribeAssetDetailByUuid.AssetDetail.Bind");
+			assetDetail.AuthModifyTime = _ctx.LongValue("DescribeAssetDetailByUuid.AssetDetail.AuthModifyTime");
 
 			List<string> assetDetail_ipList = new List<string>();
-			for (int i = 0; i < context.Length("DescribeAssetDetailByUuid.AssetDetail.IpList.Length"); i++) {
-				assetDetail_ipList.Add(context.StringValue("DescribeAssetDetailByUuid.AssetDetail.IpList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeAssetDetailByUuid.AssetDetail.IpList.Length"); i++) {
+				assetDetail_ipList.Add(_ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.IpList["+ i +"]"));
 			}
 			assetDetail.IpList = assetDetail_ipList;
 
 			List<string> assetDetail_macList = new List<string>();
-			for (int i = 0; i < context.Length("DescribeAssetDetailByUuid.AssetDetail.MacList.Length"); i++) {
-				assetDetail_macList.Add(context.StringValue("DescribeAssetDetailByUuid.AssetDetail.MacList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeAssetDetailByUuid.AssetDetail.MacList.Length"); i++) {
+				assetDetail_macList.Add(_ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.MacList["+ i +"]"));
 			}
 			assetDetail.MacList = assetDetail_macList;
 
 			List<string> assetDetail_diskInfoList = new List<string>();
-			for (int i = 0; i < context.Length("DescribeAssetDetailByUuid.AssetDetail.DiskInfoList.Length"); i++) {
-				assetDetail_diskInfoList.Add(context.StringValue("DescribeAssetDetailByUuid.AssetDetail.DiskInfoList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeAssetDetailByUuid.AssetDetail.DiskInfoList.Length"); i++) {
+				assetDetail_diskInfoList.Add(_ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.DiskInfoList["+ i +"]"));
 			}
 			assetDetail.DiskInfoList = assetDetail_diskInfoList;
 			describeAssetDetailByUuidResponse.AssetDetail = assetDetail;

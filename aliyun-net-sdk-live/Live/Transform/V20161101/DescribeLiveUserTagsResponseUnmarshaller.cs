@@ -26,21 +26,21 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveUserTagsResponseUnmarshaller
     {
-        public static DescribeLiveUserTagsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveUserTagsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveUserTagsResponse describeLiveUserTagsResponse = new DescribeLiveUserTagsResponse();
 
-			describeLiveUserTagsResponse.HttpResponse = context.HttpResponse;
-			describeLiveUserTagsResponse.RequestId = context.StringValue("DescribeLiveUserTags.RequestId");
+			describeLiveUserTagsResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveUserTagsResponse.RequestId = _ctx.StringValue("DescribeLiveUserTags.RequestId");
 
 			List<DescribeLiveUserTagsResponse.DescribeLiveUserTags_Tag> describeLiveUserTagsResponse_tags = new List<DescribeLiveUserTagsResponse.DescribeLiveUserTags_Tag>();
-			for (int i = 0; i < context.Length("DescribeLiveUserTags.Tags.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveUserTags.Tags.Length"); i++) {
 				DescribeLiveUserTagsResponse.DescribeLiveUserTags_Tag tag = new DescribeLiveUserTagsResponse.DescribeLiveUserTags_Tag();
-				tag.Key = context.StringValue("DescribeLiveUserTags.Tags["+ i +"].Key");
+				tag.Key = _ctx.StringValue("DescribeLiveUserTags.Tags["+ i +"].Key");
 
 				List<string> tag_value = new List<string>();
-				for (int j = 0; j < context.Length("DescribeLiveUserTags.Tags["+ i +"].Value.Length"); j++) {
-					tag_value.Add(context.StringValue("DescribeLiveUserTags.Tags["+ i +"].Value["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeLiveUserTags.Tags["+ i +"].Value.Length"); j++) {
+					tag_value.Add(_ctx.StringValue("DescribeLiveUserTags.Tags["+ i +"].Value["+ j +"]"));
 				}
 				tag._Value = tag_value;
 

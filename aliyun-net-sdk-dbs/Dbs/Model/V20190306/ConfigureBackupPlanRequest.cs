@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dbs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dbs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -68,6 +68,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private int? duplicationArchivePeriod;
 
+		private int? backupLogIntervalSeconds;
+
 		private string crossAliyunId;
 
 		private bool? autoStartBackup;
@@ -75,6 +77,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		private string sourceEndpointPassword;
 
 		private string backupObjects;
+
+		private long? backupRateLimit;
 
 		private string ownerId;
 
@@ -278,6 +282,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
+		public int? BackupLogIntervalSeconds
+		{
+			get
+			{
+				return backupLogIntervalSeconds;
+			}
+			set	
+			{
+				backupLogIntervalSeconds = value;
+				DictionaryUtil.Add(QueryParameters, "BackupLogIntervalSeconds", value.ToString());
+			}
+		}
+
 		public string CrossAliyunId
 		{
 			get
@@ -327,6 +344,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				backupObjects = value;
 				DictionaryUtil.Add(QueryParameters, "BackupObjects", value);
+			}
+		}
+
+		public long? BackupRateLimit
+		{
+			get
+			{
+				return backupRateLimit;
+			}
+			set	
+			{
+				backupRateLimit = value;
+				DictionaryUtil.Add(QueryParameters, "BackupRateLimit", value.ToString());
 			}
 		}
 

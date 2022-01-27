@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class UpdateGtmMonitorResponseUnmarshaller
     {
-        public static UpdateGtmMonitorResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateGtmMonitorResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateGtmMonitorResponse updateGtmMonitorResponse = new UpdateGtmMonitorResponse();
 
-			updateGtmMonitorResponse.HttpResponse = context.HttpResponse;
-			updateGtmMonitorResponse.RequestId = context.StringValue("UpdateGtmMonitor.RequestId");
+			updateGtmMonitorResponse.HttpResponse = _ctx.HttpResponse;
+			updateGtmMonitorResponse.RequestId = _ctx.StringValue("UpdateGtmMonitor.RequestId");
         
 			return updateGtmMonitorResponse;
         }

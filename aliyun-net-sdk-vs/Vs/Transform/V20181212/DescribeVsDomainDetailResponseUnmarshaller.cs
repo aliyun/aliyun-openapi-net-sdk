@@ -26,24 +26,24 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeVsDomainDetailResponseUnmarshaller
     {
-        public static DescribeVsDomainDetailResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVsDomainDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVsDomainDetailResponse describeVsDomainDetailResponse = new DescribeVsDomainDetailResponse();
 
-			describeVsDomainDetailResponse.HttpResponse = context.HttpResponse;
-			describeVsDomainDetailResponse.RequestId = context.StringValue("DescribeVsDomainDetail.RequestId");
+			describeVsDomainDetailResponse.HttpResponse = _ctx.HttpResponse;
+			describeVsDomainDetailResponse.RequestId = _ctx.StringValue("DescribeVsDomainDetail.RequestId");
 
 			DescribeVsDomainDetailResponse.DescribeVsDomainDetail_DomainConfig domainConfig = new DescribeVsDomainDetailResponse.DescribeVsDomainDetail_DomainConfig();
-			domainConfig.GmtCreated = context.StringValue("DescribeVsDomainDetail.DomainConfig.GmtCreated");
-			domainConfig.GmtModified = context.StringValue("DescribeVsDomainDetail.DomainConfig.GmtModified");
-			domainConfig.DomainStatus = context.StringValue("DescribeVsDomainDetail.DomainConfig.DomainStatus");
-			domainConfig.Cname = context.StringValue("DescribeVsDomainDetail.DomainConfig.Cname");
-			domainConfig.DomainName = context.StringValue("DescribeVsDomainDetail.DomainConfig.DomainName");
-			domainConfig.DomainType = context.StringValue("DescribeVsDomainDetail.DomainConfig.DomainType");
-			domainConfig.Region = context.StringValue("DescribeVsDomainDetail.DomainConfig.Region");
-			domainConfig.Description = context.StringValue("DescribeVsDomainDetail.DomainConfig.Description");
-			domainConfig.SSLProtocol = context.StringValue("DescribeVsDomainDetail.DomainConfig.SSLProtocol");
-			domainConfig.Scope = context.StringValue("DescribeVsDomainDetail.DomainConfig.Scope");
+			domainConfig.GmtCreated = _ctx.StringValue("DescribeVsDomainDetail.DomainConfig.GmtCreated");
+			domainConfig.GmtModified = _ctx.StringValue("DescribeVsDomainDetail.DomainConfig.GmtModified");
+			domainConfig.DomainStatus = _ctx.StringValue("DescribeVsDomainDetail.DomainConfig.DomainStatus");
+			domainConfig.Cname = _ctx.StringValue("DescribeVsDomainDetail.DomainConfig.Cname");
+			domainConfig.DomainName = _ctx.StringValue("DescribeVsDomainDetail.DomainConfig.DomainName");
+			domainConfig.DomainType = _ctx.StringValue("DescribeVsDomainDetail.DomainConfig.DomainType");
+			domainConfig.Region = _ctx.StringValue("DescribeVsDomainDetail.DomainConfig.Region");
+			domainConfig.Description = _ctx.StringValue("DescribeVsDomainDetail.DomainConfig.Description");
+			domainConfig.SSLProtocol = _ctx.StringValue("DescribeVsDomainDetail.DomainConfig.SSLProtocol");
+			domainConfig.Scope = _ctx.StringValue("DescribeVsDomainDetail.DomainConfig.Scope");
 			describeVsDomainDetailResponse.DomainConfig = domainConfig;
         
 			return describeVsDomainDetailResponse;

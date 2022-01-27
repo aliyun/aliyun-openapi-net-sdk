@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -98,23 +98,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeResourceByTags_Resource
 		{
 
-			private string resourceId;
-
 			private string resourceType;
 
-			private string regionId;
+			private string resourceId;
 
-			public string ResourceId
-			{
-				get
-				{
-					return resourceId;
-				}
-				set	
-				{
-					resourceId = value;
-				}
-			}
+			private string regionId;
 
 			public string ResourceType
 			{
@@ -125,6 +113,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					resourceType = value;
+				}
+			}
+
+			public string ResourceId
+			{
+				get
+				{
+					return resourceId;
+				}
+				set	
+				{
+					resourceId = value;
 				}
 			}
 

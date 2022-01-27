@@ -26,24 +26,24 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveDetectPornDataResponseUnmarshaller
     {
-        public static DescribeLiveDetectPornDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveDetectPornDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveDetectPornDataResponse describeLiveDetectPornDataResponse = new DescribeLiveDetectPornDataResponse();
 
-			describeLiveDetectPornDataResponse.HttpResponse = context.HttpResponse;
-			describeLiveDetectPornDataResponse.RequestId = context.StringValue("DescribeLiveDetectPornData.RequestId");
+			describeLiveDetectPornDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveDetectPornDataResponse.RequestId = _ctx.StringValue("DescribeLiveDetectPornData.RequestId");
 
 			List<DescribeLiveDetectPornDataResponse.DescribeLiveDetectPornData_DataModule> describeLiveDetectPornDataResponse_detectPornData = new List<DescribeLiveDetectPornDataResponse.DescribeLiveDetectPornData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeLiveDetectPornData.DetectPornData.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveDetectPornData.DetectPornData.Length"); i++) {
 				DescribeLiveDetectPornDataResponse.DescribeLiveDetectPornData_DataModule dataModule = new DescribeLiveDetectPornDataResponse.DescribeLiveDetectPornData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].TimeStamp");
-				dataModule.App = context.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].App");
-				dataModule.Domain = context.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Domain");
-				dataModule.Stream = context.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Stream");
-				dataModule.Fee = context.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Fee");
-				dataModule.Scene = context.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Scene");
-				dataModule.Region = context.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Region");
-				dataModule.Count = context.LongValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Count");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].TimeStamp");
+				dataModule.App = _ctx.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].App");
+				dataModule.Domain = _ctx.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Domain");
+				dataModule.Stream = _ctx.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Stream");
+				dataModule.Fee = _ctx.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Fee");
+				dataModule.Scene = _ctx.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Scene");
+				dataModule.Region = _ctx.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Region");
+				dataModule.Count = _ctx.LongValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Count");
 
 				describeLiveDetectPornDataResponse_detectPornData.Add(dataModule);
 			}

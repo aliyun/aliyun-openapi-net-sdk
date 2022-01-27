@@ -26,33 +26,33 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
     public class GetUserResponseUnmarshaller
     {
-        public static GetUserResponse Unmarshall(UnmarshallerContext context)
+        public static GetUserResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetUserResponse getUserResponse = new GetUserResponse();
 
-			getUserResponse.HttpResponse = context.HttpResponse;
-			getUserResponse.ErrorMessage = context.StringValue("GetUser.ErrorMessage");
-			getUserResponse.ErrorCode = context.StringValue("GetUser.ErrorCode");
-			getUserResponse.Message = context.StringValue("GetUser.Message");
-			getUserResponse.DynamicCode = context.StringValue("GetUser.DynamicCode");
-			getUserResponse.Code = context.StringValue("GetUser.Code");
-			getUserResponse.DynamicMessage = context.StringValue("GetUser.DynamicMessage");
-			getUserResponse.RequestId = context.StringValue("GetUser.RequestId");
-			getUserResponse.Success = context.BooleanValue("GetUser.Success");
+			getUserResponse.HttpResponse = _ctx.HttpResponse;
+			getUserResponse.ErrorMessage = _ctx.StringValue("GetUser.ErrorMessage");
+			getUserResponse.ErrorCode = _ctx.StringValue("GetUser.ErrorCode");
+			getUserResponse.Message = _ctx.StringValue("GetUser.Message");
+			getUserResponse.DynamicCode = _ctx.StringValue("GetUser.DynamicCode");
+			getUserResponse.Code = _ctx.StringValue("GetUser.Code");
+			getUserResponse.DynamicMessage = _ctx.StringValue("GetUser.DynamicMessage");
+			getUserResponse.RequestId = _ctx.StringValue("GetUser.RequestId");
+			getUserResponse.Success = _ctx.BooleanValue("GetUser.Success");
 
 			GetUserResponse.GetUser_User user = new GetUserResponse.GetUser_User();
-			user.Stores = context.StringValue("GetUser.User.Stores");
-			user.UserName = context.StringValue("GetUser.User.UserName");
-			user.UserId = context.StringValue("GetUser.User.UserId");
-			user.UserType = context.StringValue("GetUser.User.UserType");
-			user.OwnerId = context.StringValue("GetUser.User.OwnerId");
-			user.Bid = context.StringValue("GetUser.User.Bid");
+			user.Stores = _ctx.StringValue("GetUser.User.Stores");
+			user.UserName = _ctx.StringValue("GetUser.User.UserName");
+			user.UserId = _ctx.StringValue("GetUser.User.UserId");
+			user.UserType = _ctx.StringValue("GetUser.User.UserType");
+			user.OwnerId = _ctx.StringValue("GetUser.User.OwnerId");
+			user.Bid = _ctx.StringValue("GetUser.User.Bid");
 
 			List<GetUserResponse.GetUser_User.GetUser_DingTalkInfo> user_dingTalkInfos = new List<GetUserResponse.GetUser_User.GetUser_DingTalkInfo>();
-			for (int i = 0; i < context.Length("GetUser.User.DingTalkInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetUser.User.DingTalkInfos.Length"); i++) {
 				GetUserResponse.GetUser_User.GetUser_DingTalkInfo dingTalkInfo = new GetUserResponse.GetUser_User.GetUser_DingTalkInfo();
-				dingTalkInfo.DingTalkCompanyId = context.StringValue("GetUser.User.DingTalkInfos["+ i +"].DingTalkCompanyId");
-				dingTalkInfo.DingTalkUserId = context.StringValue("GetUser.User.DingTalkInfos["+ i +"].DingTalkUserId");
+				dingTalkInfo.DingTalkCompanyId = _ctx.StringValue("GetUser.User.DingTalkInfos["+ i +"].DingTalkCompanyId");
+				dingTalkInfo.DingTalkUserId = _ctx.StringValue("GetUser.User.DingTalkInfos["+ i +"].DingTalkUserId");
 
 				user_dingTalkInfos.Add(dingTalkInfo);
 			}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 			DescribeCertMatchStatusResponse describeCertMatchStatusResponse = new DescribeCertMatchStatusResponse();
 
 			describeCertMatchStatusResponse.HttpResponse = _ctx.HttpResponse;
-			describeCertMatchStatusResponse.RequestId = _ctx.StringValue("DescribeCertMatchStatus.RequestId");
 			describeCertMatchStatusResponse.MatchStatus = _ctx.BooleanValue("DescribeCertMatchStatus.MatchStatus");
+			describeCertMatchStatusResponse.RequestId = _ctx.StringValue("DescribeCertMatchStatus.RequestId");
         
 			return describeCertMatchStatusResponse;
         }

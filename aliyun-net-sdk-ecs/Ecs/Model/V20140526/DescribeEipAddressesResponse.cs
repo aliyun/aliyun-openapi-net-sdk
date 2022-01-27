@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeEipAddressesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeEipAddresses_EipAddress> eipAddresses;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,31 +98,91 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeEipAddresses_EipAddress
 		{
 
+			private string status;
+
+			private string allocationTime;
+
+			private string chargeType;
+
+			private string instanceId;
+
+			private string instanceType;
+
 			private string regionId;
 
 			private string ipAddress;
 
-			private string allocationId;
-
-			private string status;
-
-			private string instanceId;
-
 			private string bandwidth;
-
-			private string eipBandwidth;
-
-			private string internetChargeType;
-
-			private string allocationTime;
-
-			private string instanceType;
-
-			private string chargeType;
 
 			private string expiredTime;
 
+			private string allocationId;
+
+			private string internetChargeType;
+
+			private string eipBandwidth;
+
 			private List<DescribeEipAddresses_LockReason> operationLocks;
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string AllocationTime
+			{
+				get
+				{
+					return allocationTime;
+				}
+				set	
+				{
+					allocationTime = value;
+				}
+			}
+
+			public string ChargeType
+			{
+				get
+				{
+					return chargeType;
+				}
+				set	
+				{
+					chargeType = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
+				}
+			}
 
 			public string RegionId
 			{
@@ -148,42 +208,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string AllocationId
-			{
-				get
-				{
-					return allocationId;
-				}
-				set	
-				{
-					allocationId = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
 			public string Bandwidth
 			{
 				get
@@ -196,15 +220,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string EipBandwidth
+			public string ExpiredTime
 			{
 				get
 				{
-					return eipBandwidth;
+					return expiredTime;
 				}
 				set	
 				{
-					eipBandwidth = value;
+					expiredTime = value;
+				}
+			}
+
+			public string AllocationId
+			{
+				get
+				{
+					return allocationId;
+				}
+				set	
+				{
+					allocationId = value;
 				}
 			}
 
@@ -220,51 +256,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string AllocationTime
+			public string EipBandwidth
 			{
 				get
 				{
-					return allocationTime;
+					return eipBandwidth;
 				}
 				set	
 				{
-					allocationTime = value;
-				}
-			}
-
-			public string InstanceType
-			{
-				get
-				{
-					return instanceType;
-				}
-				set	
-				{
-					instanceType = value;
-				}
-			}
-
-			public string ChargeType
-			{
-				get
-				{
-					return chargeType;
-				}
-				set	
-				{
-					chargeType = value;
-				}
-			}
-
-			public string ExpiredTime
-			{
-				get
-				{
-					return expiredTime;
-				}
-				set	
-				{
-					expiredTime = value;
+					eipBandwidth = value;
 				}
 			}
 

@@ -26,11 +26,11 @@ namespace Aliyun.Acs.cr.Transform.V20160607
 {
     public class DeleteRepoResponseUnmarshaller
     {
-        public static DeleteRepoResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteRepoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteRepoResponse deleteRepoResponse = new DeleteRepoResponse();
 
-			deleteRepoResponse.HttpResponse = context.HttpResponse;
+			deleteRepoResponse.HttpResponse = _ctx.HttpResponse;
         
 			return deleteRepoResponse;
         }

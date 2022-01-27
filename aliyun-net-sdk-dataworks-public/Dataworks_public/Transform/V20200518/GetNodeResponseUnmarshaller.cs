@@ -26,29 +26,37 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetNodeResponseUnmarshaller
     {
-        public static GetNodeResponse Unmarshall(UnmarshallerContext context)
+        public static GetNodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetNodeResponse getNodeResponse = new GetNodeResponse();
 
-			getNodeResponse.HttpResponse = context.HttpResponse;
-			getNodeResponse.Success = context.BooleanValue("GetNode.Success");
-			getNodeResponse.ErrorCode = context.StringValue("GetNode.ErrorCode");
-			getNodeResponse.ErrorMessage = context.StringValue("GetNode.ErrorMessage");
-			getNodeResponse.HttpStatusCode = context.IntegerValue("GetNode.HttpStatusCode");
-			getNodeResponse.RequestId = context.StringValue("GetNode.RequestId");
+			getNodeResponse.HttpResponse = _ctx.HttpResponse;
+			getNodeResponse.Success = _ctx.BooleanValue("GetNode.Success");
+			getNodeResponse.ErrorCode = _ctx.StringValue("GetNode.ErrorCode");
+			getNodeResponse.ErrorMessage = _ctx.StringValue("GetNode.ErrorMessage");
+			getNodeResponse.HttpStatusCode = _ctx.IntegerValue("GetNode.HttpStatusCode");
+			getNodeResponse.RequestId = _ctx.StringValue("GetNode.RequestId");
 
 			GetNodeResponse.GetNode_Data data = new GetNodeResponse.GetNode_Data();
-			data.NodeId = context.LongValue("GetNode.Data.NodeId");
-			data.OwnerId = context.StringValue("GetNode.Data.OwnerId");
-			data.Description = context.StringValue("GetNode.Data.Description");
-			data.ResGroupName = context.StringValue("GetNode.Data.ResGroupName");
-			data.NodeName = context.StringValue("GetNode.Data.NodeName");
-			data.CronExpress = context.StringValue("GetNode.Data.CronExpress");
-			data.Repeatability = context.StringValue("GetNode.Data.Repeatability");
-			data.ProgramType = context.StringValue("GetNode.Data.ProgramType");
-			data.ProjectId = context.LongValue("GetNode.Data.ProjectId");
-			data.SchedulerType = context.StringValue("GetNode.Data.SchedulerType");
-			data.ParamValues = context.StringValue("GetNode.Data.ParamValues");
+			data.NodeId = _ctx.LongValue("GetNode.Data.NodeId");
+			data.OwnerId = _ctx.StringValue("GetNode.Data.OwnerId");
+			data.Description = _ctx.StringValue("GetNode.Data.Description");
+			data.ResGroupName = _ctx.StringValue("GetNode.Data.ResGroupName");
+			data.NodeName = _ctx.StringValue("GetNode.Data.NodeName");
+			data.CronExpress = _ctx.StringValue("GetNode.Data.CronExpress");
+			data.Repeatability = _ctx.StringValue("GetNode.Data.Repeatability");
+			data.ProgramType = _ctx.StringValue("GetNode.Data.ProgramType");
+			data.ProjectId = _ctx.LongValue("GetNode.Data.ProjectId");
+			data.SchedulerType = _ctx.StringValue("GetNode.Data.SchedulerType");
+			data.ParamValues = _ctx.StringValue("GetNode.Data.ParamValues");
+			data.Priority = _ctx.IntegerValue("GetNode.Data.Priority");
+			data.BaselineId = _ctx.LongValue("GetNode.Data.BaselineId");
+			data.RepeatInterval = _ctx.LongValue("GetNode.Data.RepeatInterval");
+			data.Connection = _ctx.StringValue("GetNode.Data.Connection");
+			data.DqcType = _ctx.IntegerValue("GetNode.Data.DqcType");
+			data.DqcDescription = _ctx.StringValue("GetNode.Data.DqcDescription");
+			data.RelatedFlowId = _ctx.LongValue("GetNode.Data.RelatedFlowId");
+			data.BusinessId = _ctx.LongValue("GetNode.Data.BusinessId");
 			getNodeResponse.Data = data;
         
 			return getNodeResponse;

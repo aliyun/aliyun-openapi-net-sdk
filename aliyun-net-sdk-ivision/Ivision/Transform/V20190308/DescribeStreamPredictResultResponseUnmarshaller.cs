@@ -26,27 +26,27 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 {
     public class DescribeStreamPredictResultResponseUnmarshaller
     {
-        public static DescribeStreamPredictResultResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeStreamPredictResultResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeStreamPredictResultResponse describeStreamPredictResultResponse = new DescribeStreamPredictResultResponse();
 
-			describeStreamPredictResultResponse.HttpResponse = context.HttpResponse;
-			describeStreamPredictResultResponse.RequestId = context.StringValue("DescribeStreamPredictResult.RequestId");
-			describeStreamPredictResultResponse.TotalNum = context.LongValue("DescribeStreamPredictResult.TotalNum");
-			describeStreamPredictResultResponse.CurrentPage = context.LongValue("DescribeStreamPredictResult.CurrentPage");
-			describeStreamPredictResultResponse.PageSize = context.LongValue("DescribeStreamPredictResult.PageSize");
-			describeStreamPredictResultResponse.NextPageToken = context.StringValue("DescribeStreamPredictResult.NextPageToken");
+			describeStreamPredictResultResponse.HttpResponse = _ctx.HttpResponse;
+			describeStreamPredictResultResponse.TotalNum = _ctx.LongValue("DescribeStreamPredictResult.TotalNum");
+			describeStreamPredictResultResponse.PageSize = _ctx.LongValue("DescribeStreamPredictResult.PageSize");
+			describeStreamPredictResultResponse.RequestId = _ctx.StringValue("DescribeStreamPredictResult.RequestId");
+			describeStreamPredictResultResponse.CurrentPage = _ctx.LongValue("DescribeStreamPredictResult.CurrentPage");
+			describeStreamPredictResultResponse.NextPageToken = _ctx.StringValue("DescribeStreamPredictResult.NextPageToken");
 
 			List<DescribeStreamPredictResultResponse.DescribeStreamPredictResult_StreamPredictData> describeStreamPredictResultResponse_streamPredictDatas = new List<DescribeStreamPredictResultResponse.DescribeStreamPredictResult_StreamPredictData>();
-			for (int i = 0; i < context.Length("DescribeStreamPredictResult.StreamPredictDatas.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeStreamPredictResult.StreamPredictDatas.Length"); i++) {
 				DescribeStreamPredictResultResponse.DescribeStreamPredictResult_StreamPredictData streamPredictData = new DescribeStreamPredictResultResponse.DescribeStreamPredictResult_StreamPredictData();
-				streamPredictData.PredictId = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictId");
-				streamPredictData.ModelId = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].ModelId");
-				streamPredictData.DataUrl = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].DataUrl");
-				streamPredictData.Timestamp = context.LongValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].Timestamp");
-				streamPredictData.PredictTime = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictTime");
-				streamPredictData.Status = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].Status");
-				streamPredictData.PredictResult = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictResult");
+				streamPredictData.Status = _ctx.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].Status");
+				streamPredictData.PredictResult = _ctx.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictResult");
+				streamPredictData.PredictId = _ctx.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictId");
+				streamPredictData.PredictTime = _ctx.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictTime");
+				streamPredictData.DataUrl = _ctx.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].DataUrl");
+				streamPredictData.Timestamp = _ctx.LongValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].Timestamp");
+				streamPredictData.ModelId = _ctx.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].ModelId");
 
 				describeStreamPredictResultResponse_streamPredictDatas.Add(streamPredictData);
 			}

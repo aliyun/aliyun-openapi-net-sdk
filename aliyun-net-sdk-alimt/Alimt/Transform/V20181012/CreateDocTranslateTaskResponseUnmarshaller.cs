@@ -26,14 +26,14 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 {
     public class CreateDocTranslateTaskResponseUnmarshaller
     {
-        public static CreateDocTranslateTaskResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDocTranslateTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateDocTranslateTaskResponse createDocTranslateTaskResponse = new CreateDocTranslateTaskResponse();
 
-			createDocTranslateTaskResponse.HttpResponse = context.HttpResponse;
-			createDocTranslateTaskResponse.RequestId = context.StringValue("CreateDocTranslateTask.RequestId");
-			createDocTranslateTaskResponse.TaskId = context.StringValue("CreateDocTranslateTask.TaskId");
-			createDocTranslateTaskResponse.Status = context.StringValue("CreateDocTranslateTask.Status");
+			createDocTranslateTaskResponse.HttpResponse = _ctx.HttpResponse;
+			createDocTranslateTaskResponse.Status = _ctx.StringValue("CreateDocTranslateTask.Status");
+			createDocTranslateTaskResponse.RequestId = _ctx.StringValue("CreateDocTranslateTask.RequestId");
+			createDocTranslateTaskResponse.TaskId = _ctx.StringValue("CreateDocTranslateTask.TaskId");
         
 			return createDocTranslateTaskResponse;
         }

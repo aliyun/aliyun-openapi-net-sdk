@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -98,15 +98,51 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeInstanceAutoRenewAttribute_InstanceRenewAttribute
 		{
 
+			private string periodUnit;
+
+			private int? duration;
+
+			private string renewalStatus;
+
 			private string instanceId;
 
 			private bool? autoRenewEnabled;
 
-			private int? duration;
+			public string PeriodUnit
+			{
+				get
+				{
+					return periodUnit;
+				}
+				set	
+				{
+					periodUnit = value;
+				}
+			}
 
-			private string periodUnit;
+			public int? Duration
+			{
+				get
+				{
+					return duration;
+				}
+				set	
+				{
+					duration = value;
+				}
+			}
 
-			private string renewalStatus;
+			public string RenewalStatus
+			{
+				get
+				{
+					return renewalStatus;
+				}
+				set	
+				{
+					renewalStatus = value;
+				}
+			}
 
 			public string InstanceId
 			{
@@ -129,42 +165,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					autoRenewEnabled = value;
-				}
-			}
-
-			public int? Duration
-			{
-				get
-				{
-					return duration;
-				}
-				set	
-				{
-					duration = value;
-				}
-			}
-
-			public string PeriodUnit
-			{
-				get
-				{
-					return periodUnit;
-				}
-				set	
-				{
-					periodUnit = value;
-				}
-			}
-
-			public string RenewalStatus
-			{
-				get
-				{
-					return renewalStatus;
-				}
-				set	
-				{
-					renewalStatus = value;
 				}
 			}
 		}

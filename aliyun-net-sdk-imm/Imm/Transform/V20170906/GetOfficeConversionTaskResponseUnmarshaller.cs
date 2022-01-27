@@ -26,28 +26,28 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class GetOfficeConversionTaskResponseUnmarshaller
     {
-        public static GetOfficeConversionTaskResponse Unmarshall(UnmarshallerContext context)
+        public static GetOfficeConversionTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetOfficeConversionTaskResponse getOfficeConversionTaskResponse = new GetOfficeConversionTaskResponse();
 
-			getOfficeConversionTaskResponse.HttpResponse = context.HttpResponse;
-			getOfficeConversionTaskResponse.RequestId = context.StringValue("GetOfficeConversionTask.RequestId");
-			getOfficeConversionTaskResponse.TgtType = context.StringValue("GetOfficeConversionTask.TgtType");
-			getOfficeConversionTaskResponse.Status = context.StringValue("GetOfficeConversionTask.Status");
-			getOfficeConversionTaskResponse.Percent = context.IntegerValue("GetOfficeConversionTask.Percent");
-			getOfficeConversionTaskResponse.PageCount = context.IntegerValue("GetOfficeConversionTask.PageCount");
-			getOfficeConversionTaskResponse.TaskId = context.StringValue("GetOfficeConversionTask.TaskId");
-			getOfficeConversionTaskResponse.TgtUri = context.StringValue("GetOfficeConversionTask.TgtUri");
-			getOfficeConversionTaskResponse.ImageSpec = context.StringValue("GetOfficeConversionTask.ImageSpec");
-			getOfficeConversionTaskResponse.NotifyTopicName = context.StringValue("GetOfficeConversionTask.NotifyTopicName");
-			getOfficeConversionTaskResponse.NotifyEndpoint = context.StringValue("GetOfficeConversionTask.NotifyEndpoint");
-			getOfficeConversionTaskResponse.ExternalID = context.StringValue("GetOfficeConversionTask.ExternalID");
-			getOfficeConversionTaskResponse.CreateTime = context.StringValue("GetOfficeConversionTask.CreateTime");
-			getOfficeConversionTaskResponse.FinishTime = context.StringValue("GetOfficeConversionTask.FinishTime");
-			getOfficeConversionTaskResponse.SrcUri = context.StringValue("GetOfficeConversionTask.SrcUri");
+			getOfficeConversionTaskResponse.HttpResponse = _ctx.HttpResponse;
+			getOfficeConversionTaskResponse.RequestId = _ctx.StringValue("GetOfficeConversionTask.RequestId");
+			getOfficeConversionTaskResponse.TgtType = _ctx.StringValue("GetOfficeConversionTask.TgtType");
+			getOfficeConversionTaskResponse.Status = _ctx.StringValue("GetOfficeConversionTask.Status");
+			getOfficeConversionTaskResponse.Percent = _ctx.IntegerValue("GetOfficeConversionTask.Percent");
+			getOfficeConversionTaskResponse.PageCount = _ctx.IntegerValue("GetOfficeConversionTask.PageCount");
+			getOfficeConversionTaskResponse.TaskId = _ctx.StringValue("GetOfficeConversionTask.TaskId");
+			getOfficeConversionTaskResponse.TgtUri = _ctx.StringValue("GetOfficeConversionTask.TgtUri");
+			getOfficeConversionTaskResponse.ImageSpec = _ctx.StringValue("GetOfficeConversionTask.ImageSpec");
+			getOfficeConversionTaskResponse.NotifyTopicName = _ctx.StringValue("GetOfficeConversionTask.NotifyTopicName");
+			getOfficeConversionTaskResponse.NotifyEndpoint = _ctx.StringValue("GetOfficeConversionTask.NotifyEndpoint");
+			getOfficeConversionTaskResponse.ExternalID = _ctx.StringValue("GetOfficeConversionTask.ExternalID");
+			getOfficeConversionTaskResponse.CreateTime = _ctx.StringValue("GetOfficeConversionTask.CreateTime");
+			getOfficeConversionTaskResponse.FinishTime = _ctx.StringValue("GetOfficeConversionTask.FinishTime");
+			getOfficeConversionTaskResponse.SrcUri = _ctx.StringValue("GetOfficeConversionTask.SrcUri");
 
 			GetOfficeConversionTaskResponse.GetOfficeConversionTask_FailDetail failDetail = new GetOfficeConversionTaskResponse.GetOfficeConversionTask_FailDetail();
-			failDetail.Code = context.StringValue("GetOfficeConversionTask.FailDetail.Code");
+			failDetail.Code = _ctx.StringValue("GetOfficeConversionTask.FailDetail.Code");
 			getOfficeConversionTaskResponse.FailDetail = failDetail;
         
 			return getOfficeConversionTaskResponse;

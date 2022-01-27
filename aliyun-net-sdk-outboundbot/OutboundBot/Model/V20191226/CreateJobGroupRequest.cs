@@ -34,35 +34,44 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private string jobGroupDescription;
+		private string recallStrategyJson;
 
 		private string jobGroupName;
 
 		private string scriptId;
 
+		private string strategyJson;
+
+		private long? ringingDuration;
+
+		private string scenarioId;
+
+		private string priority;
+
+		private string jobGroupDescription;
+
 		private List<string> callingNumbers = new List<string>(){ };
 
 		private string instanceId;
 
-		private string strategyJson;
+		private long? minConcurrency;
 
-		private string scenarioId;
-
-		public string JobGroupDescription
+		public string RecallStrategyJson
 		{
 			get
 			{
-				return jobGroupDescription;
+				return recallStrategyJson;
 			}
 			set	
 			{
-				jobGroupDescription = value;
-				DictionaryUtil.Add(QueryParameters, "JobGroupDescription", value);
+				recallStrategyJson = value;
+				DictionaryUtil.Add(QueryParameters, "RecallStrategyJson", value);
 			}
 		}
 
@@ -89,6 +98,71 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				scriptId = value;
 				DictionaryUtil.Add(QueryParameters, "ScriptId", value);
+			}
+		}
+
+		public string StrategyJson
+		{
+			get
+			{
+				return strategyJson;
+			}
+			set	
+			{
+				strategyJson = value;
+				DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
+			}
+		}
+
+		public long? RingingDuration
+		{
+			get
+			{
+				return ringingDuration;
+			}
+			set	
+			{
+				ringingDuration = value;
+				DictionaryUtil.Add(QueryParameters, "RingingDuration", value.ToString());
+			}
+		}
+
+		public string ScenarioId
+		{
+			get
+			{
+				return scenarioId;
+			}
+			set	
+			{
+				scenarioId = value;
+				DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
+			}
+		}
+
+		public string Priority
+		{
+			get
+			{
+				return priority;
+			}
+			set	
+			{
+				priority = value;
+				DictionaryUtil.Add(QueryParameters, "Priority", value);
+			}
+		}
+
+		public string JobGroupDescription
+		{
+			get
+			{
+				return jobGroupDescription;
+			}
+			set	
+			{
+				jobGroupDescription = value;
+				DictionaryUtil.Add(QueryParameters, "JobGroupDescription", value);
 			}
 		}
 
@@ -122,29 +196,16 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string StrategyJson
+		public long? MinConcurrency
 		{
 			get
 			{
-				return strategyJson;
+				return minConcurrency;
 			}
 			set	
 			{
-				strategyJson = value;
-				DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
-			}
-		}
-
-		public string ScenarioId
-		{
-			get
-			{
-				return scenarioId;
-			}
-			set	
-			{
-				scenarioId = value;
-				DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
+				minConcurrency = value;
+				DictionaryUtil.Add(QueryParameters, "MinConcurrency", value.ToString());
 			}
 		}
 

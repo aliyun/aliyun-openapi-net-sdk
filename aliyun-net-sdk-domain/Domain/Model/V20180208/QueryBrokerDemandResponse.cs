@@ -25,17 +25,53 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 	public class QueryBrokerDemandResponse : AcsResponse
 	{
 
+		private int? currentPageNum;
+
+		private int? totalPageNum;
+
+		private int? pageSize;
+
 		private string requestId;
 
 		private int? totalItemNum;
 
-		private int? currentPageNum;
-
-		private int? pageSize;
-
-		private int? totalPageNum;
-
 		private List<QueryBrokerDemand_Demand> data;
+
+		public int? CurrentPageNum
+		{
+			get
+			{
+				return currentPageNum;
+			}
+			set	
+			{
+				currentPageNum = value;
+			}
+		}
+
+		public int? TotalPageNum
+		{
+			get
+			{
+				return totalPageNum;
+			}
+			set	
+			{
+				totalPageNum = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -61,42 +97,6 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 			}
 		}
 
-		public int? CurrentPageNum
-		{
-			get
-			{
-				return currentPageNum;
-			}
-			set	
-			{
-				currentPageNum = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public int? TotalPageNum
-		{
-			get
-			{
-				return totalPageNum;
-			}
-			set	
-			{
-				totalPageNum = value;
-			}
-		}
-
 		public List<QueryBrokerDemand_Demand> Data
 		{
 			get
@@ -112,45 +112,37 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 		public class QueryBrokerDemand_Demand
 		{
 
-			private string bizId;
-
 			private string status;
-
-			private string demandDomain;
 
 			private float? demandPrice;
 
-			private string mobile;
+			private string bizId;
 
-			private string description;
+			private string bargainSellerMobile;
 
 			private long? publishTime;
 
-			private string payDomain;
+			private int? produceType;
+
+			private string demandDomain;
+
+			private string description;
+
+			private string mobile;
+
+			private float? servicePayPrice;
 
 			private float? payPrice;
 
 			private long? payTime;
 
-			private int? produceType;
-
 			private float? bargainSellerPrice;
 
-			private string bargainSellerMobile;
+			private int? orderType;
 
-			private float? servicePayPrice;
+			private string payDomain;
 
-			public string BizId
-			{
-				get
-				{
-					return bizId;
-				}
-				set	
-				{
-					bizId = value;
-				}
-			}
+			private int? auditStatus;
 
 			public string Status
 			{
@@ -161,18 +153,6 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 				set	
 				{
 					status = value;
-				}
-			}
-
-			public string DemandDomain
-			{
-				get
-				{
-					return demandDomain;
-				}
-				set	
-				{
-					demandDomain = value;
 				}
 			}
 
@@ -188,27 +168,27 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 				}
 			}
 
-			public string Mobile
+			public string BizId
 			{
 				get
 				{
-					return mobile;
+					return bizId;
 				}
 				set	
 				{
-					mobile = value;
+					bizId = value;
 				}
 			}
 
-			public string Description
+			public string BargainSellerMobile
 			{
 				get
 				{
-					return description;
+					return bargainSellerMobile;
 				}
 				set	
 				{
-					description = value;
+					bargainSellerMobile = value;
 				}
 			}
 
@@ -224,15 +204,63 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 				}
 			}
 
-			public string PayDomain
+			public int? ProduceType
 			{
 				get
 				{
-					return payDomain;
+					return produceType;
 				}
 				set	
 				{
-					payDomain = value;
+					produceType = value;
+				}
+			}
+
+			public string DemandDomain
+			{
+				get
+				{
+					return demandDomain;
+				}
+				set	
+				{
+					demandDomain = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string Mobile
+			{
+				get
+				{
+					return mobile;
+				}
+				set	
+				{
+					mobile = value;
+				}
+			}
+
+			public float? ServicePayPrice
+			{
+				get
+				{
+					return servicePayPrice;
+				}
+				set	
+				{
+					servicePayPrice = value;
 				}
 			}
 
@@ -260,18 +288,6 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 				}
 			}
 
-			public int? ProduceType
-			{
-				get
-				{
-					return produceType;
-				}
-				set	
-				{
-					produceType = value;
-				}
-			}
-
 			public float? BargainSellerPrice
 			{
 				get
@@ -284,27 +300,39 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 				}
 			}
 
-			public string BargainSellerMobile
+			public int? OrderType
 			{
 				get
 				{
-					return bargainSellerMobile;
+					return orderType;
 				}
 				set	
 				{
-					bargainSellerMobile = value;
+					orderType = value;
 				}
 			}
 
-			public float? ServicePayPrice
+			public string PayDomain
 			{
 				get
 				{
-					return servicePayPrice;
+					return payDomain;
 				}
 				set	
 				{
-					servicePayPrice = value;
+					payDomain = value;
+				}
+			}
+
+			public int? AuditStatus
+			{
+				get
+				{
+					return auditStatus;
+				}
+				set	
+				{
+					auditStatus = value;
 				}
 			}
 		}

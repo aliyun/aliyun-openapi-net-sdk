@@ -26,14 +26,14 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class StartStreamResponseUnmarshaller
     {
-        public static StartStreamResponse Unmarshall(UnmarshallerContext context)
+        public static StartStreamResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StartStreamResponse startStreamResponse = new StartStreamResponse();
 
-			startStreamResponse.HttpResponse = context.HttpResponse;
-			startStreamResponse.RequestId = context.StringValue("StartStream.RequestId");
-			startStreamResponse.Id = context.StringValue("StartStream.Id");
-			startStreamResponse.Name = context.StringValue("StartStream.Name");
+			startStreamResponse.HttpResponse = _ctx.HttpResponse;
+			startStreamResponse.RequestId = _ctx.StringValue("StartStream.RequestId");
+			startStreamResponse.Id = _ctx.StringValue("StartStream.Id");
+			startStreamResponse.Name = _ctx.StringValue("StartStream.Name");
         
 			return startStreamResponse;
         }

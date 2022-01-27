@@ -26,29 +26,29 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class SearchDocIndexResponseUnmarshaller
     {
-        public static SearchDocIndexResponse Unmarshall(UnmarshallerContext context)
+        public static SearchDocIndexResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SearchDocIndexResponse searchDocIndexResponse = new SearchDocIndexResponse();
 
-			searchDocIndexResponse.HttpResponse = context.HttpResponse;
-			searchDocIndexResponse.RequestId = context.StringValue("SearchDocIndex.RequestId");
+			searchDocIndexResponse.HttpResponse = _ctx.HttpResponse;
+			searchDocIndexResponse.RequestId = _ctx.StringValue("SearchDocIndex.RequestId");
 
 			List<SearchDocIndexResponse.SearchDocIndex_DocInfosItem> searchDocIndexResponse_docInfos = new List<SearchDocIndexResponse.SearchDocIndex_DocInfosItem>();
-			for (int i = 0; i < context.Length("SearchDocIndex.DocInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("SearchDocIndex.DocInfos.Length"); i++) {
 				SearchDocIndexResponse.SearchDocIndex_DocInfosItem docInfosItem = new SearchDocIndexResponse.SearchDocIndex_DocInfosItem();
-				docInfosItem.UniqueId = context.StringValue("SearchDocIndex.DocInfos["+ i +"].UniqueId");
-				docInfosItem.SrcUri = context.StringValue("SearchDocIndex.DocInfos["+ i +"].SrcUri");
-				docInfosItem.Name = context.StringValue("SearchDocIndex.DocInfos["+ i +"].Name");
-				docInfosItem.ContentType = context.StringValue("SearchDocIndex.DocInfos["+ i +"].ContentType");
-				docInfosItem.LastModified = context.StringValue("SearchDocIndex.DocInfos["+ i +"].LastModified");
-				docInfosItem.Size = context.IntegerValue("SearchDocIndex.DocInfos["+ i +"].Size");
-				docInfosItem.PageNum = context.IntegerValue("SearchDocIndex.DocInfos["+ i +"].PageNum");
-				docInfosItem.CustomKey1 = context.StringValue("SearchDocIndex.DocInfos["+ i +"].CustomKey1");
-				docInfosItem.CustomKey2 = context.StringValue("SearchDocIndex.DocInfos["+ i +"].CustomKey2");
-				docInfosItem.CustomKey3 = context.StringValue("SearchDocIndex.DocInfos["+ i +"].CustomKey3");
-				docInfosItem.CustomKey4 = context.StringValue("SearchDocIndex.DocInfos["+ i +"].CustomKey4");
-				docInfosItem.CustomKey5 = context.StringValue("SearchDocIndex.DocInfos["+ i +"].CustomKey5");
-				docInfosItem.CustomKey6 = context.StringValue("SearchDocIndex.DocInfos["+ i +"].CustomKey6");
+				docInfosItem.UniqueId = _ctx.StringValue("SearchDocIndex.DocInfos["+ i +"].UniqueId");
+				docInfosItem.SrcUri = _ctx.StringValue("SearchDocIndex.DocInfos["+ i +"].SrcUri");
+				docInfosItem.Name = _ctx.StringValue("SearchDocIndex.DocInfos["+ i +"].Name");
+				docInfosItem.ContentType = _ctx.StringValue("SearchDocIndex.DocInfos["+ i +"].ContentType");
+				docInfosItem.LastModified = _ctx.StringValue("SearchDocIndex.DocInfos["+ i +"].LastModified");
+				docInfosItem.Size = _ctx.IntegerValue("SearchDocIndex.DocInfos["+ i +"].Size");
+				docInfosItem.PageNum = _ctx.IntegerValue("SearchDocIndex.DocInfos["+ i +"].PageNum");
+				docInfosItem.CustomKey1 = _ctx.StringValue("SearchDocIndex.DocInfos["+ i +"].CustomKey1");
+				docInfosItem.CustomKey2 = _ctx.StringValue("SearchDocIndex.DocInfos["+ i +"].CustomKey2");
+				docInfosItem.CustomKey3 = _ctx.StringValue("SearchDocIndex.DocInfos["+ i +"].CustomKey3");
+				docInfosItem.CustomKey4 = _ctx.StringValue("SearchDocIndex.DocInfos["+ i +"].CustomKey4");
+				docInfosItem.CustomKey5 = _ctx.StringValue("SearchDocIndex.DocInfos["+ i +"].CustomKey5");
+				docInfosItem.CustomKey6 = _ctx.StringValue("SearchDocIndex.DocInfos["+ i +"].CustomKey6");
 
 				searchDocIndexResponse_docInfos.Add(docInfosItem);
 			}

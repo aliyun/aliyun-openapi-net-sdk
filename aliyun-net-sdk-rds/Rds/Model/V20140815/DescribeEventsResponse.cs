@@ -120,6 +120,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string eventRecordTime;
 
+			private long? callerUid;
+
 			public int? EventId
 			{
 				get
@@ -249,6 +251,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					eventRecordTime = value;
+				}
+			}
+
+			public long? CallerUid
+			{
+				get
+				{
+					return callerUid;
+				}
+				set	
+				{
+					callerUid = value;
 				}
 			}
 		}

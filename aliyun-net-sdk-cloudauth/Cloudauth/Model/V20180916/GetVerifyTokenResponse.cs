@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 	public class GetVerifyTokenResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private GetVerifyToken_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -143,9 +143,51 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			public class GetVerifyToken_VerifyToken
 			{
 
+				private int? durationSeconds;
+
 				private string token;
 
-				private int? durationSeconds;
+				public int? DurationSeconds
+				{
+					get
+					{
+						return durationSeconds;
+					}
+					set	
+					{
+						durationSeconds = value;
+					}
+				}
+
+				public string Token
+				{
+					get
+					{
+						return token;
+					}
+					set	
+					{
+						token = value;
+					}
+				}
+			}
+
+			public class GetVerifyToken_StsToken
+			{
+
+				private string token;
+
+				private string bucketName;
+
+				private string accessKeySecret;
+
+				private string expiration;
+
+				private string path;
+
+				private string accessKeyId;
+
+				private string endPoint;
 
 				public string Token
 				{
@@ -159,45 +201,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 					}
 				}
 
-				public int? DurationSeconds
+				public string BucketName
 				{
 					get
 					{
-						return durationSeconds;
+						return bucketName;
 					}
 					set	
 					{
-						durationSeconds = value;
-					}
-				}
-			}
-
-			public class GetVerifyToken_StsToken
-			{
-
-				private string accessKeyId;
-
-				private string accessKeySecret;
-
-				private string expiration;
-
-				private string endPoint;
-
-				private string bucketName;
-
-				private string path;
-
-				private string token;
-
-				public string AccessKeyId
-				{
-					get
-					{
-						return accessKeyId;
-					}
-					set	
-					{
-						accessKeyId = value;
+						bucketName = value;
 					}
 				}
 
@@ -225,30 +237,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 					}
 				}
 
-				public string EndPoint
-				{
-					get
-					{
-						return endPoint;
-					}
-					set	
-					{
-						endPoint = value;
-					}
-				}
-
-				public string BucketName
-				{
-					get
-					{
-						return bucketName;
-					}
-					set	
-					{
-						bucketName = value;
-					}
-				}
-
 				public string Path
 				{
 					get
@@ -261,15 +249,27 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 					}
 				}
 
-				public string Token
+				public string AccessKeyId
 				{
 					get
 					{
-						return token;
+						return accessKeyId;
 					}
 					set	
 					{
-						token = value;
+						accessKeyId = value;
+					}
+				}
+
+				public string EndPoint
+				{
+					get
+					{
+						return endPoint;
+					}
+					set	
+					{
+						endPoint = value;
 					}
 				}
 			}

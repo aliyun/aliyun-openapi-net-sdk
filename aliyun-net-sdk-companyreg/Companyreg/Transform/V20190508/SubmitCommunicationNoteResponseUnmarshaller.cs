@@ -26,12 +26,12 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class SubmitCommunicationNoteResponseUnmarshaller
     {
-        public static SubmitCommunicationNoteResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitCommunicationNoteResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitCommunicationNoteResponse submitCommunicationNoteResponse = new SubmitCommunicationNoteResponse();
 
-			submitCommunicationNoteResponse.HttpResponse = context.HttpResponse;
-			submitCommunicationNoteResponse.RequestId = context.StringValue("SubmitCommunicationNote.RequestId");
+			submitCommunicationNoteResponse.HttpResponse = _ctx.HttpResponse;
+			submitCommunicationNoteResponse.RequestId = _ctx.StringValue("SubmitCommunicationNote.RequestId");
         
 			return submitCommunicationNoteResponse;
         }

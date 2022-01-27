@@ -26,17 +26,17 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class RebuildAppInstanceResponseUnmarshaller
     {
-        public static RebuildAppInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static RebuildAppInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RebuildAppInstanceResponse rebuildAppInstanceResponse = new RebuildAppInstanceResponse();
 
-			rebuildAppInstanceResponse.HttpResponse = context.HttpResponse;
-			rebuildAppInstanceResponse.Code = context.IntegerValue("RebuildAppInstance.Code");
-			rebuildAppInstanceResponse.RequestId = context.StringValue("RebuildAppInstance.RequestId");
-			rebuildAppInstanceResponse.ErrMsg = context.StringValue("RebuildAppInstance.ErrMsg");
+			rebuildAppInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			rebuildAppInstanceResponse.Code = _ctx.IntegerValue("RebuildAppInstance.Code");
+			rebuildAppInstanceResponse.RequestId = _ctx.StringValue("RebuildAppInstance.RequestId");
+			rebuildAppInstanceResponse.ErrMsg = _ctx.StringValue("RebuildAppInstance.ErrMsg");
 
 			RebuildAppInstanceResponse.RebuildAppInstance_Result result = new RebuildAppInstanceResponse.RebuildAppInstance_Result();
-			result.Success = context.BooleanValue("RebuildAppInstance.Result.Success");
+			result.Success = _ctx.BooleanValue("RebuildAppInstance.Result.Success");
 			rebuildAppInstanceResponse.Result = result;
         
 			return rebuildAppInstanceResponse;

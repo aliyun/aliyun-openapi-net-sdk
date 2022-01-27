@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetInstanceLogResponseUnmarshaller
     {
-        public static GetInstanceLogResponse Unmarshall(UnmarshallerContext context)
+        public static GetInstanceLogResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetInstanceLogResponse getInstanceLogResponse = new GetInstanceLogResponse();
 
-			getInstanceLogResponse.HttpResponse = context.HttpResponse;
-			getInstanceLogResponse.ErrorCode = context.StringValue("GetInstanceLog.ErrorCode");
-			getInstanceLogResponse.ErrorMessage = context.StringValue("GetInstanceLog.ErrorMessage");
-			getInstanceLogResponse.HttpStatusCode = context.IntegerValue("GetInstanceLog.HttpStatusCode");
-			getInstanceLogResponse.RequestId = context.StringValue("GetInstanceLog.RequestId");
-			getInstanceLogResponse.Success = context.BooleanValue("GetInstanceLog.Success");
-			getInstanceLogResponse.Data = context.StringValue("GetInstanceLog.Data");
+			getInstanceLogResponse.HttpResponse = _ctx.HttpResponse;
+			getInstanceLogResponse.ErrorCode = _ctx.StringValue("GetInstanceLog.ErrorCode");
+			getInstanceLogResponse.ErrorMessage = _ctx.StringValue("GetInstanceLog.ErrorMessage");
+			getInstanceLogResponse.HttpStatusCode = _ctx.IntegerValue("GetInstanceLog.HttpStatusCode");
+			getInstanceLogResponse.RequestId = _ctx.StringValue("GetInstanceLog.RequestId");
+			getInstanceLogResponse.Success = _ctx.BooleanValue("GetInstanceLog.Success");
+			getInstanceLogResponse.Data = _ctx.StringValue("GetInstanceLog.Data");
         
 			return getInstanceLogResponse;
         }

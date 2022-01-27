@@ -26,14 +26,14 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class CreateAccountResponseUnmarshaller
     {
-        public static CreateAccountResponse Unmarshall(UnmarshallerContext context)
+        public static CreateAccountResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateAccountResponse createAccountResponse = new CreateAccountResponse();
 
-			createAccountResponse.HttpResponse = context.HttpResponse;
-			createAccountResponse.RequestId = context.StringValue("CreateAccount.RequestId");
-			createAccountResponse.Code = context.IntegerValue("CreateAccount.Code");
-			createAccountResponse.ErrMsg = context.StringValue("CreateAccount.ErrMsg");
+			createAccountResponse.HttpResponse = _ctx.HttpResponse;
+			createAccountResponse.RequestId = _ctx.StringValue("CreateAccount.RequestId");
+			createAccountResponse.Code = _ctx.IntegerValue("CreateAccount.Code");
+			createAccountResponse.ErrMsg = _ctx.StringValue("CreateAccount.ErrMsg");
         
 			return createAccountResponse;
         }

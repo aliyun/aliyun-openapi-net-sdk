@@ -26,31 +26,31 @@ namespace Aliyun.Acs.Sts.Transform.V20150401
 {
     public class AssumeRoleWithSAMLResponseUnmarshaller
     {
-        public static AssumeRoleWithSAMLResponse Unmarshall(UnmarshallerContext context)
+        public static AssumeRoleWithSAMLResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AssumeRoleWithSAMLResponse assumeRoleWithSAMLResponse = new AssumeRoleWithSAMLResponse();
 
-			assumeRoleWithSAMLResponse.HttpResponse = context.HttpResponse;
-			assumeRoleWithSAMLResponse.RequestId = context.StringValue("AssumeRoleWithSAML.RequestId");
-
-			AssumeRoleWithSAMLResponse.AssumeRoleWithSAML_Credentials credentials = new AssumeRoleWithSAMLResponse.AssumeRoleWithSAML_Credentials();
-			credentials.SecurityToken = context.StringValue("AssumeRoleWithSAML.Credentials.SecurityToken");
-			credentials.AccessKeySecret = context.StringValue("AssumeRoleWithSAML.Credentials.AccessKeySecret");
-			credentials.AccessKeyId = context.StringValue("AssumeRoleWithSAML.Credentials.AccessKeyId");
-			credentials.Expiration = context.StringValue("AssumeRoleWithSAML.Credentials.Expiration");
-			assumeRoleWithSAMLResponse.Credentials = credentials;
-
-			AssumeRoleWithSAMLResponse.AssumeRoleWithSAML_AssumedRoleUser assumedRoleUser = new AssumeRoleWithSAMLResponse.AssumeRoleWithSAML_AssumedRoleUser();
-			assumedRoleUser.Arn = context.StringValue("AssumeRoleWithSAML.AssumedRoleUser.Arn");
-			assumedRoleUser.AssumedRoleId = context.StringValue("AssumeRoleWithSAML.AssumedRoleUser.AssumedRoleId");
-			assumeRoleWithSAMLResponse.AssumedRoleUser = assumedRoleUser;
+			assumeRoleWithSAMLResponse.HttpResponse = _ctx.HttpResponse;
+			assumeRoleWithSAMLResponse.RequestId = _ctx.StringValue("AssumeRoleWithSAML.RequestId");
 
 			AssumeRoleWithSAMLResponse.AssumeRoleWithSAML_SAMLAssertionInfo sAMLAssertionInfo = new AssumeRoleWithSAMLResponse.AssumeRoleWithSAML_SAMLAssertionInfo();
-			sAMLAssertionInfo.SubjectType = context.StringValue("AssumeRoleWithSAML.SAMLAssertionInfo.SubjectType");
-			sAMLAssertionInfo.Subject = context.StringValue("AssumeRoleWithSAML.SAMLAssertionInfo.Subject");
-			sAMLAssertionInfo.Recipient = context.StringValue("AssumeRoleWithSAML.SAMLAssertionInfo.Recipient");
-			sAMLAssertionInfo.Issuer = context.StringValue("AssumeRoleWithSAML.SAMLAssertionInfo.Issuer");
+			sAMLAssertionInfo.SubjectType = _ctx.StringValue("AssumeRoleWithSAML.SAMLAssertionInfo.SubjectType");
+			sAMLAssertionInfo.Issuer = _ctx.StringValue("AssumeRoleWithSAML.SAMLAssertionInfo.Issuer");
+			sAMLAssertionInfo.Recipient = _ctx.StringValue("AssumeRoleWithSAML.SAMLAssertionInfo.Recipient");
+			sAMLAssertionInfo.Subject = _ctx.StringValue("AssumeRoleWithSAML.SAMLAssertionInfo.Subject");
 			assumeRoleWithSAMLResponse.SAMLAssertionInfo = sAMLAssertionInfo;
+
+			AssumeRoleWithSAMLResponse.AssumeRoleWithSAML_AssumedRoleUser assumedRoleUser = new AssumeRoleWithSAMLResponse.AssumeRoleWithSAML_AssumedRoleUser();
+			assumedRoleUser.Arn = _ctx.StringValue("AssumeRoleWithSAML.AssumedRoleUser.Arn");
+			assumedRoleUser.AssumedRoleId = _ctx.StringValue("AssumeRoleWithSAML.AssumedRoleUser.AssumedRoleId");
+			assumeRoleWithSAMLResponse.AssumedRoleUser = assumedRoleUser;
+
+			AssumeRoleWithSAMLResponse.AssumeRoleWithSAML_Credentials credentials = new AssumeRoleWithSAMLResponse.AssumeRoleWithSAML_Credentials();
+			credentials.SecurityToken = _ctx.StringValue("AssumeRoleWithSAML.Credentials.SecurityToken");
+			credentials.AccessKeyId = _ctx.StringValue("AssumeRoleWithSAML.Credentials.AccessKeyId");
+			credentials.AccessKeySecret = _ctx.StringValue("AssumeRoleWithSAML.Credentials.AccessKeySecret");
+			credentials.Expiration = _ctx.StringValue("AssumeRoleWithSAML.Credentials.Expiration");
+			assumeRoleWithSAMLResponse.Credentials = credentials;
         
 			return assumeRoleWithSAMLResponse;
         }

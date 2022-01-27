@@ -26,13 +26,13 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class ListCurrentClientVersionResponseUnmarshaller
     {
-        public static ListCurrentClientVersionResponse Unmarshall(UnmarshallerContext context)
+        public static ListCurrentClientVersionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListCurrentClientVersionResponse listCurrentClientVersionResponse = new ListCurrentClientVersionResponse();
 
-			listCurrentClientVersionResponse.HttpResponse = context.HttpResponse;
-			listCurrentClientVersionResponse.RequestId = context.StringValue("ListCurrentClientVersion.RequestId");
-			listCurrentClientVersionResponse.ClientVersion = context.StringValue("ListCurrentClientVersion.ClientVersion");
+			listCurrentClientVersionResponse.HttpResponse = _ctx.HttpResponse;
+			listCurrentClientVersionResponse.RequestId = _ctx.StringValue("ListCurrentClientVersion.RequestId");
+			listCurrentClientVersionResponse.ClientVersion = _ctx.StringValue("ListCurrentClientVersion.ClientVersion");
         
 			return listCurrentClientVersionResponse;
         }

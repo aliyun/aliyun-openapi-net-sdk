@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class RemoveThingTopoResponseUnmarshaller
     {
-        public static RemoveThingTopoResponse Unmarshall(UnmarshallerContext context)
+        public static RemoveThingTopoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RemoveThingTopoResponse removeThingTopoResponse = new RemoveThingTopoResponse();
 
-			removeThingTopoResponse.HttpResponse = context.HttpResponse;
-			removeThingTopoResponse.RequestId = context.StringValue("RemoveThingTopo.RequestId");
-			removeThingTopoResponse.Success = context.BooleanValue("RemoveThingTopo.Success");
-			removeThingTopoResponse.Code = context.StringValue("RemoveThingTopo.Code");
-			removeThingTopoResponse.ErrorMessage = context.StringValue("RemoveThingTopo.ErrorMessage");
-			removeThingTopoResponse.Data = context.BooleanValue("RemoveThingTopo.Data");
+			removeThingTopoResponse.HttpResponse = _ctx.HttpResponse;
+			removeThingTopoResponse.RequestId = _ctx.StringValue("RemoveThingTopo.RequestId");
+			removeThingTopoResponse.Success = _ctx.BooleanValue("RemoveThingTopo.Success");
+			removeThingTopoResponse.Code = _ctx.StringValue("RemoveThingTopo.Code");
+			removeThingTopoResponse.ErrorMessage = _ctx.StringValue("RemoveThingTopo.ErrorMessage");
+			removeThingTopoResponse.Data = _ctx.BooleanValue("RemoveThingTopo.Data");
         
 			return removeThingTopoResponse;
         }

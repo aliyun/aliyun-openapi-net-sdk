@@ -26,28 +26,28 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class ListVideoTasksResponseUnmarshaller
     {
-        public static ListVideoTasksResponse Unmarshall(UnmarshallerContext context)
+        public static ListVideoTasksResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListVideoTasksResponse listVideoTasksResponse = new ListVideoTasksResponse();
 
-			listVideoTasksResponse.HttpResponse = context.HttpResponse;
-			listVideoTasksResponse.RequestId = context.StringValue("ListVideoTasks.RequestId");
-			listVideoTasksResponse.NextMarker = context.StringValue("ListVideoTasks.NextMarker");
+			listVideoTasksResponse.HttpResponse = _ctx.HttpResponse;
+			listVideoTasksResponse.RequestId = _ctx.StringValue("ListVideoTasks.RequestId");
+			listVideoTasksResponse.NextMarker = _ctx.StringValue("ListVideoTasks.NextMarker");
 
 			List<ListVideoTasksResponse.ListVideoTasks_TasksItem> listVideoTasksResponse_tasks = new List<ListVideoTasksResponse.ListVideoTasks_TasksItem>();
-			for (int i = 0; i < context.Length("ListVideoTasks.Tasks.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListVideoTasks.Tasks.Length"); i++) {
 				ListVideoTasksResponse.ListVideoTasks_TasksItem tasksItem = new ListVideoTasksResponse.ListVideoTasks_TasksItem();
-				tasksItem.Status = context.StringValue("ListVideoTasks.Tasks["+ i +"].Status");
-				tasksItem.TaskId = context.StringValue("ListVideoTasks.Tasks["+ i +"].TaskId");
-				tasksItem.TaskType = context.StringValue("ListVideoTasks.Tasks["+ i +"].TaskType");
-				tasksItem.Parameters = context.StringValue("ListVideoTasks.Tasks["+ i +"].Parameters");
-				tasksItem.Result = context.StringValue("ListVideoTasks.Tasks["+ i +"].Result");
-				tasksItem.StartTime = context.StringValue("ListVideoTasks.Tasks["+ i +"].StartTime");
-				tasksItem.EndTime = context.StringValue("ListVideoTasks.Tasks["+ i +"].EndTime");
-				tasksItem.ErrorMessage = context.StringValue("ListVideoTasks.Tasks["+ i +"].ErrorMessage");
-				tasksItem.NotifyEndpoint = context.StringValue("ListVideoTasks.Tasks["+ i +"].NotifyEndpoint");
-				tasksItem.NotifyTopicName = context.StringValue("ListVideoTasks.Tasks["+ i +"].NotifyTopicName");
-				tasksItem.Progress = context.IntegerValue("ListVideoTasks.Tasks["+ i +"].Progress");
+				tasksItem.Status = _ctx.StringValue("ListVideoTasks.Tasks["+ i +"].Status");
+				tasksItem.TaskId = _ctx.StringValue("ListVideoTasks.Tasks["+ i +"].TaskId");
+				tasksItem.TaskType = _ctx.StringValue("ListVideoTasks.Tasks["+ i +"].TaskType");
+				tasksItem.Parameters = _ctx.StringValue("ListVideoTasks.Tasks["+ i +"].Parameters");
+				tasksItem.Result = _ctx.StringValue("ListVideoTasks.Tasks["+ i +"].Result");
+				tasksItem.StartTime = _ctx.StringValue("ListVideoTasks.Tasks["+ i +"].StartTime");
+				tasksItem.EndTime = _ctx.StringValue("ListVideoTasks.Tasks["+ i +"].EndTime");
+				tasksItem.ErrorMessage = _ctx.StringValue("ListVideoTasks.Tasks["+ i +"].ErrorMessage");
+				tasksItem.NotifyEndpoint = _ctx.StringValue("ListVideoTasks.Tasks["+ i +"].NotifyEndpoint");
+				tasksItem.NotifyTopicName = _ctx.StringValue("ListVideoTasks.Tasks["+ i +"].NotifyTopicName");
+				tasksItem.Progress = _ctx.IntegerValue("ListVideoTasks.Tasks["+ i +"].Progress");
 
 				listVideoTasksResponse_tasks.Add(tasksItem);
 			}

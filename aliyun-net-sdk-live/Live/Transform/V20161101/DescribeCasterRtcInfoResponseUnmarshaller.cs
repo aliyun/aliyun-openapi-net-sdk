@@ -26,14 +26,14 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeCasterRtcInfoResponseUnmarshaller
     {
-        public static DescribeCasterRtcInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCasterRtcInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCasterRtcInfoResponse describeCasterRtcInfoResponse = new DescribeCasterRtcInfoResponse();
 
-			describeCasterRtcInfoResponse.HttpResponse = context.HttpResponse;
-			describeCasterRtcInfoResponse.RequestId = context.StringValue("DescribeCasterRtcInfo.RequestId");
-			describeCasterRtcInfoResponse.CasterId = context.StringValue("DescribeCasterRtcInfo.CasterId");
-			describeCasterRtcInfoResponse.AuthToken = context.StringValue("DescribeCasterRtcInfo.AuthToken");
+			describeCasterRtcInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeCasterRtcInfoResponse.RequestId = _ctx.StringValue("DescribeCasterRtcInfo.RequestId");
+			describeCasterRtcInfoResponse.CasterId = _ctx.StringValue("DescribeCasterRtcInfo.CasterId");
+			describeCasterRtcInfoResponse.AuthToken = _ctx.StringValue("DescribeCasterRtcInfo.AuthToken");
         
 			return describeCasterRtcInfoResponse;
         }

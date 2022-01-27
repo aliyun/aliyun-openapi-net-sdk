@@ -31,19 +31,17 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class RegisterUserRequest : RpcAcsRequest<RegisterUserResponse>
     {
         public RegisterUserRequest()
-            : base("dms-enterprise", "2018-11-01", "RegisterUser", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "RegisterUser", "dms-enterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private string roleNames;
-
-		private long? uid;
 
 		private string userNick;
 
@@ -51,6 +49,9 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private long? tid;
 
+		private string uid;
+
+		[JsonProperty(PropertyName = "RoleNames")]
 		public string RoleNames
 		{
 			get
@@ -64,19 +65,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public long? Uid
-		{
-			get
-			{
-				return uid;
-			}
-			set	
-			{
-				uid = value;
-				DictionaryUtil.Add(QueryParameters, "Uid", value.ToString());
-			}
-		}
-
+		[JsonProperty(PropertyName = "UserNick")]
 		public string UserNick
 		{
 			get
@@ -90,6 +79,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Mobile")]
 		public string Mobile
 		{
 			get
@@ -103,6 +93,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -113,6 +104,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				tid = value;
 				DictionaryUtil.Add(QueryParameters, "Tid", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "Uid")]
+		public string Uid
+		{
+			get
+			{
+				return uid;
+			}
+			set	
+			{
+				uid = value;
+				DictionaryUtil.Add(QueryParameters, "Uid", value);
 			}
 		}
 

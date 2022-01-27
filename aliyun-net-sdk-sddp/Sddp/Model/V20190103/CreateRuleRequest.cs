@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sddp;
 using Aliyun.Acs.Sddp.Transform;
 using Aliyun.Acs.Sddp.Transform.V20190103;
 
@@ -30,13 +31,14 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
     public class CreateRuleRequest : RpcAcsRequest<CreateRuleResponse>
     {
         public CreateRuleRequest()
-            : base("Sddp", "2019-01-03", "CreateRule", "sddp", "openAPI")
+            : base("Sddp", "2019-01-03", "CreateRule")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Sddp.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Sddp.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private int? warnLevel;
@@ -44,6 +46,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		private string productCode;
 
 		private long? productId;
+
+		private string description;
 
 		private long? riskLevelId;
 
@@ -55,9 +59,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private string statExpress;
 
+		private int? contentCategory;
+
+		private string target;
+
 		private string name;
 
 		private int? category;
+
+		private int? status;
 
 		public int? WarnLevel
 		{
@@ -95,6 +105,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				productId = value;
 				DictionaryUtil.Add(QueryParameters, "ProductId", value.ToString());
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -163,6 +186,32 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
+		public int? ContentCategory
+		{
+			get
+			{
+				return contentCategory;
+			}
+			set	
+			{
+				contentCategory = value;
+				DictionaryUtil.Add(QueryParameters, "ContentCategory", value.ToString());
+			}
+		}
+
+		public string Target
+		{
+			get
+			{
+				return target;
+			}
+			set	
+			{
+				target = value;
+				DictionaryUtil.Add(QueryParameters, "Target", value);
+			}
+		}
+
 		public string Name
 		{
 			get
@@ -186,6 +235,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				category = value;
 				DictionaryUtil.Add(QueryParameters, "Category", value.ToString());
+			}
+		}
+
+		public int? Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value.ToString());
 			}
 		}
 

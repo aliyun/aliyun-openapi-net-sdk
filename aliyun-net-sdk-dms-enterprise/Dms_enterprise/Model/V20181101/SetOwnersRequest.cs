@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class SetOwnersRequest : RpcAcsRequest<SetOwnersResponse>
     {
         public SetOwnersRequest()
-            : base("dms-enterprise", "2018-11-01", "SetOwners", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "SetOwners", "dms-enterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -45,10 +45,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string ownerIds;
 
-		private string ownerType;
-
 		private long? tid;
 
+		private string ownerType;
+
+		[JsonProperty(PropertyName = "ResourceId")]
 		public string ResourceId
 		{
 			get
@@ -62,6 +63,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerIds")]
 		public string OwnerIds
 		{
 			get
@@ -75,19 +77,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public string OwnerType
-		{
-			get
-			{
-				return ownerType;
-			}
-			set	
-			{
-				ownerType = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerType", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -98,6 +88,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				tid = value;
 				DictionaryUtil.Add(QueryParameters, "Tid", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "OwnerType")]
+		public string OwnerType
+		{
+			get
+			{
+				return ownerType;
+			}
+			set	
+			{
+				ownerType = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerType", value);
 			}
 		}
 

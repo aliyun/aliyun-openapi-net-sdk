@@ -26,12 +26,13 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class CreateParameterGroupResponseUnmarshaller
     {
-        public static CreateParameterGroupResponse Unmarshall(UnmarshallerContext context)
+        public static CreateParameterGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateParameterGroupResponse createParameterGroupResponse = new CreateParameterGroupResponse();
 
-			createParameterGroupResponse.HttpResponse = context.HttpResponse;
-			createParameterGroupResponse.RequestId = context.StringValue("CreateParameterGroup.RequestId");
+			createParameterGroupResponse.HttpResponse = _ctx.HttpResponse;
+			createParameterGroupResponse.RequestId = _ctx.StringValue("CreateParameterGroup.RequestId");
+			createParameterGroupResponse.ParameterGroupId = _ctx.StringValue("CreateParameterGroup.ParameterGroupId");
         
 			return createParameterGroupResponse;
         }

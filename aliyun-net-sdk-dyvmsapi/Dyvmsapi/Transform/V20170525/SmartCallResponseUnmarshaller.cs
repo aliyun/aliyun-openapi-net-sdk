@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
     public class SmartCallResponseUnmarshaller
     {
-        public static SmartCallResponse Unmarshall(UnmarshallerContext context)
+        public static SmartCallResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SmartCallResponse smartCallResponse = new SmartCallResponse();
 
-			smartCallResponse.HttpResponse = context.HttpResponse;
-			smartCallResponse.RequestId = context.StringValue("SmartCall.RequestId");
-			smartCallResponse.CallId = context.StringValue("SmartCall.CallId");
-			smartCallResponse.Code = context.StringValue("SmartCall.Code");
-			smartCallResponse.Message = context.StringValue("SmartCall.Message");
+			smartCallResponse.HttpResponse = _ctx.HttpResponse;
+			smartCallResponse.Code = _ctx.StringValue("SmartCall.Code");
+			smartCallResponse.Message = _ctx.StringValue("SmartCall.Message");
+			smartCallResponse.RequestId = _ctx.StringValue("SmartCall.RequestId");
+			smartCallResponse.CallId = _ctx.StringValue("SmartCall.CallId");
         
 			return smartCallResponse;
         }

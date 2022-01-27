@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Rds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Rds.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -44,9 +44,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string connectionString;
 
+		private string serverKey;
+
+		private int? clientCrlEnabled;
+
+		private string aCL;
+
+		private string clientCertRevocationList;
+
+		private string serverCert;
+
 		private string dBInstanceId;
 
+		private int? clientCAEnabled;
+
+		private string clientCACert;
+
+		private string replicationACL;
+
 		private string resourceOwnerAccount;
+
+		private string cAType;
 
 		private string ownerAccount;
 
@@ -80,6 +98,71 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string ServerKey
+		{
+			get
+			{
+				return serverKey;
+			}
+			set	
+			{
+				serverKey = value;
+				DictionaryUtil.Add(QueryParameters, "ServerKey", value);
+			}
+		}
+
+		public int? ClientCrlEnabled
+		{
+			get
+			{
+				return clientCrlEnabled;
+			}
+			set	
+			{
+				clientCrlEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "ClientCrlEnabled", value.ToString());
+			}
+		}
+
+		public string ACL
+		{
+			get
+			{
+				return aCL;
+			}
+			set	
+			{
+				aCL = value;
+				DictionaryUtil.Add(QueryParameters, "ACL", value);
+			}
+		}
+
+		public string ClientCertRevocationList
+		{
+			get
+			{
+				return clientCertRevocationList;
+			}
+			set	
+			{
+				clientCertRevocationList = value;
+				DictionaryUtil.Add(QueryParameters, "ClientCertRevocationList", value);
+			}
+		}
+
+		public string ServerCert
+		{
+			get
+			{
+				return serverCert;
+			}
+			set	
+			{
+				serverCert = value;
+				DictionaryUtil.Add(QueryParameters, "ServerCert", value);
+			}
+		}
+
 		public string DBInstanceId
 		{
 			get
@@ -93,6 +176,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public int? ClientCAEnabled
+		{
+			get
+			{
+				return clientCAEnabled;
+			}
+			set	
+			{
+				clientCAEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "ClientCAEnabled", value.ToString());
+			}
+		}
+
+		public string ClientCACert
+		{
+			get
+			{
+				return clientCACert;
+			}
+			set	
+			{
+				clientCACert = value;
+				DictionaryUtil.Add(QueryParameters, "ClientCACert", value);
+			}
+		}
+
+		public string ReplicationACL
+		{
+			get
+			{
+				return replicationACL;
+			}
+			set	
+			{
+				replicationACL = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicationACL", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -103,6 +225,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string CAType
+		{
+			get
+			{
+				return cAType;
+			}
+			set	
+			{
+				cAType = value;
+				DictionaryUtil.Add(QueryParameters, "CAType", value);
 			}
 		}
 

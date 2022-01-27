@@ -35,14 +35,16 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.EHPC.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.EHPC.Endpoint.endpointRegionalType, null);
             }
         }
 
 		private string stderrRedirectPath;
 
 		private string runasUserPassword;
+
+		private string clockTime;
 
 		private string commandLine;
 
@@ -53,6 +55,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		private string unzipCmd;
 
 		private string packagePath;
+
+		private string mem;
 
 		private string stdoutRedirectPath;
 
@@ -66,7 +70,15 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private bool? reRunable;
 
+		private int? thread;
+
 		private int? priority;
+
+		private int? gpu;
+
+		private int? node;
+
+		private int? task;
 
 		private string inputFileUrl;
 
@@ -97,6 +109,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				runasUserPassword = value;
 				DictionaryUtil.Add(QueryParameters, "RunasUserPassword", value);
+			}
+		}
+
+		public string ClockTime
+		{
+			get
+			{
+				return clockTime;
+			}
+			set	
+			{
+				clockTime = value;
+				DictionaryUtil.Add(QueryParameters, "ClockTime", value);
 			}
 		}
 
@@ -162,6 +187,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				packagePath = value;
 				DictionaryUtil.Add(QueryParameters, "PackagePath", value);
+			}
+		}
+
+		public string Mem
+		{
+			get
+			{
+				return mem;
+			}
+			set	
+			{
+				mem = value;
+				DictionaryUtil.Add(QueryParameters, "Mem", value);
 			}
 		}
 
@@ -243,6 +281,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public int? Thread
+		{
+			get
+			{
+				return thread;
+			}
+			set	
+			{
+				thread = value;
+				DictionaryUtil.Add(QueryParameters, "Thread", value.ToString());
+			}
+		}
+
 		public int? Priority
 		{
 			get
@@ -253,6 +304,45 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				priority = value;
 				DictionaryUtil.Add(QueryParameters, "Priority", value.ToString());
+			}
+		}
+
+		public int? Gpu
+		{
+			get
+			{
+				return gpu;
+			}
+			set	
+			{
+				gpu = value;
+				DictionaryUtil.Add(QueryParameters, "Gpu", value.ToString());
+			}
+		}
+
+		public int? Node
+		{
+			get
+			{
+				return node;
+			}
+			set	
+			{
+				node = value;
+				DictionaryUtil.Add(QueryParameters, "Node", value.ToString());
+			}
+		}
+
+		public int? Task
+		{
+			get
+			{
+				return task;
+			}
+			set	
+			{
+				task = value;
+				DictionaryUtil.Add(QueryParameters, "Task", value.ToString());
 			}
 		}
 

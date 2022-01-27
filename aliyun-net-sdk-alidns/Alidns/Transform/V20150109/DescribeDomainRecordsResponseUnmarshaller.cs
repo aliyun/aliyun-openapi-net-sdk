@@ -26,31 +26,31 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeDomainRecordsResponseUnmarshaller
     {
-        public static DescribeDomainRecordsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainRecordsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainRecordsResponse describeDomainRecordsResponse = new DescribeDomainRecordsResponse();
 
-			describeDomainRecordsResponse.HttpResponse = context.HttpResponse;
-			describeDomainRecordsResponse.RequestId = context.StringValue("DescribeDomainRecords.RequestId");
-			describeDomainRecordsResponse.TotalCount = context.LongValue("DescribeDomainRecords.TotalCount");
-			describeDomainRecordsResponse.PageNumber = context.LongValue("DescribeDomainRecords.PageNumber");
-			describeDomainRecordsResponse.PageSize = context.LongValue("DescribeDomainRecords.PageSize");
+			describeDomainRecordsResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainRecordsResponse.RequestId = _ctx.StringValue("DescribeDomainRecords.RequestId");
+			describeDomainRecordsResponse.TotalCount = _ctx.LongValue("DescribeDomainRecords.TotalCount");
+			describeDomainRecordsResponse.PageNumber = _ctx.LongValue("DescribeDomainRecords.PageNumber");
+			describeDomainRecordsResponse.PageSize = _ctx.LongValue("DescribeDomainRecords.PageSize");
 
 			List<DescribeDomainRecordsResponse.DescribeDomainRecords_Record> describeDomainRecordsResponse_domainRecords = new List<DescribeDomainRecordsResponse.DescribeDomainRecords_Record>();
-			for (int i = 0; i < context.Length("DescribeDomainRecords.DomainRecords.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainRecords.DomainRecords.Length"); i++) {
 				DescribeDomainRecordsResponse.DescribeDomainRecords_Record record = new DescribeDomainRecordsResponse.DescribeDomainRecords_Record();
-				record.DomainName = context.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].DomainName");
-				record.RecordId = context.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].RecordId");
-				record.RR = context.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].RR");
-				record.Type = context.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].Type");
-				record._Value = context.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].Value");
-				record.TTL = context.LongValue("DescribeDomainRecords.DomainRecords["+ i +"].TTL");
-				record.Priority = context.LongValue("DescribeDomainRecords.DomainRecords["+ i +"].Priority");
-				record.Line = context.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].Line");
-				record.Status = context.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].Status");
-				record.Locked = context.BooleanValue("DescribeDomainRecords.DomainRecords["+ i +"].Locked");
-				record.Weight = context.IntegerValue("DescribeDomainRecords.DomainRecords["+ i +"].Weight");
-				record.Remark = context.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].Remark");
+				record.DomainName = _ctx.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].DomainName");
+				record.RecordId = _ctx.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].RecordId");
+				record.RR = _ctx.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].RR");
+				record.Type = _ctx.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].Type");
+				record._Value = _ctx.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].Value");
+				record.TTL = _ctx.LongValue("DescribeDomainRecords.DomainRecords["+ i +"].TTL");
+				record.Priority = _ctx.LongValue("DescribeDomainRecords.DomainRecords["+ i +"].Priority");
+				record.Line = _ctx.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].Line");
+				record.Status = _ctx.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].Status");
+				record.Locked = _ctx.BooleanValue("DescribeDomainRecords.DomainRecords["+ i +"].Locked");
+				record.Weight = _ctx.IntegerValue("DescribeDomainRecords.DomainRecords["+ i +"].Weight");
+				record.Remark = _ctx.StringValue("DescribeDomainRecords.DomainRecords["+ i +"].Remark");
 
 				describeDomainRecordsResponse_domainRecords.Add(record);
 			}

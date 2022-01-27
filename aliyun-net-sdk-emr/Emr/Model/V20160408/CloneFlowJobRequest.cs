@@ -32,24 +32,30 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public CloneFlowJobRequest()
             : base("Emr", "2016-04-08", "CloneFlowJob", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
-		private string regionId;
+		private string name;
 
 		private string id;
 
 		private string projectId;
 
-		public string RegionId
+		public string Name
 		{
 			get
 			{
-				return regionId;
+				return name;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

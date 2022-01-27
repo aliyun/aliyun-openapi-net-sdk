@@ -26,50 +26,60 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class ModifyVpnConnectionAttributeResponseUnmarshaller
     {
-        public static ModifyVpnConnectionAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyVpnConnectionAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyVpnConnectionAttributeResponse modifyVpnConnectionAttributeResponse = new ModifyVpnConnectionAttributeResponse();
 
-			modifyVpnConnectionAttributeResponse.HttpResponse = context.HttpResponse;
-			modifyVpnConnectionAttributeResponse.RequestId = context.StringValue("ModifyVpnConnectionAttribute.RequestId");
-			modifyVpnConnectionAttributeResponse.VpnConnectionId = context.StringValue("ModifyVpnConnectionAttribute.VpnConnectionId");
-			modifyVpnConnectionAttributeResponse.CustomerGatewayId = context.StringValue("ModifyVpnConnectionAttribute.CustomerGatewayId");
-			modifyVpnConnectionAttributeResponse.VpnGatewayId = context.StringValue("ModifyVpnConnectionAttribute.VpnGatewayId");
-			modifyVpnConnectionAttributeResponse.Name = context.StringValue("ModifyVpnConnectionAttribute.Name");
-			modifyVpnConnectionAttributeResponse.Description = context.StringValue("ModifyVpnConnectionAttribute.Description");
-			modifyVpnConnectionAttributeResponse.LocalSubnet = context.StringValue("ModifyVpnConnectionAttribute.LocalSubnet");
-			modifyVpnConnectionAttributeResponse.RemoteSubnet = context.StringValue("ModifyVpnConnectionAttribute.RemoteSubnet");
-			modifyVpnConnectionAttributeResponse.CreateTime = context.LongValue("ModifyVpnConnectionAttribute.CreateTime");
-			modifyVpnConnectionAttributeResponse.EffectImmediately = context.BooleanValue("ModifyVpnConnectionAttribute.EffectImmediately");
-			modifyVpnConnectionAttributeResponse.EnableDpd = context.BooleanValue("ModifyVpnConnectionAttribute.EnableDpd");
-			modifyVpnConnectionAttributeResponse.EnableNatTraversal = context.BooleanValue("ModifyVpnConnectionAttribute.EnableNatTraversal");
+			modifyVpnConnectionAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			modifyVpnConnectionAttributeResponse.RequestId = _ctx.StringValue("ModifyVpnConnectionAttribute.RequestId");
+			modifyVpnConnectionAttributeResponse.VpnConnectionId = _ctx.StringValue("ModifyVpnConnectionAttribute.VpnConnectionId");
+			modifyVpnConnectionAttributeResponse.CustomerGatewayId = _ctx.StringValue("ModifyVpnConnectionAttribute.CustomerGatewayId");
+			modifyVpnConnectionAttributeResponse.VpnGatewayId = _ctx.StringValue("ModifyVpnConnectionAttribute.VpnGatewayId");
+			modifyVpnConnectionAttributeResponse.Name = _ctx.StringValue("ModifyVpnConnectionAttribute.Name");
+			modifyVpnConnectionAttributeResponse.Description = _ctx.StringValue("ModifyVpnConnectionAttribute.Description");
+			modifyVpnConnectionAttributeResponse.LocalSubnet = _ctx.StringValue("ModifyVpnConnectionAttribute.LocalSubnet");
+			modifyVpnConnectionAttributeResponse.RemoteSubnet = _ctx.StringValue("ModifyVpnConnectionAttribute.RemoteSubnet");
+			modifyVpnConnectionAttributeResponse.CreateTime = _ctx.LongValue("ModifyVpnConnectionAttribute.CreateTime");
+			modifyVpnConnectionAttributeResponse.EffectImmediately = _ctx.BooleanValue("ModifyVpnConnectionAttribute.EffectImmediately");
+			modifyVpnConnectionAttributeResponse.EnableDpd = _ctx.BooleanValue("ModifyVpnConnectionAttribute.EnableDpd");
+			modifyVpnConnectionAttributeResponse.EnableNatTraversal = _ctx.BooleanValue("ModifyVpnConnectionAttribute.EnableNatTraversal");
 
 			ModifyVpnConnectionAttributeResponse.ModifyVpnConnectionAttribute_IkeConfig ikeConfig = new ModifyVpnConnectionAttributeResponse.ModifyVpnConnectionAttribute_IkeConfig();
-			ikeConfig.Psk = context.StringValue("ModifyVpnConnectionAttribute.IkeConfig.Psk");
-			ikeConfig.IkeVersion = context.StringValue("ModifyVpnConnectionAttribute.IkeConfig.IkeVersion");
-			ikeConfig.IkeMode = context.StringValue("ModifyVpnConnectionAttribute.IkeConfig.IkeMode");
-			ikeConfig.IkeEncAlg = context.StringValue("ModifyVpnConnectionAttribute.IkeConfig.IkeEncAlg");
-			ikeConfig.IkeAuthAlg = context.StringValue("ModifyVpnConnectionAttribute.IkeConfig.IkeAuthAlg");
-			ikeConfig.IkePfs = context.StringValue("ModifyVpnConnectionAttribute.IkeConfig.IkePfs");
-			ikeConfig.IkeLifetime = context.LongValue("ModifyVpnConnectionAttribute.IkeConfig.IkeLifetime");
-			ikeConfig.LocalId = context.StringValue("ModifyVpnConnectionAttribute.IkeConfig.LocalId");
-			ikeConfig.RemoteId = context.StringValue("ModifyVpnConnectionAttribute.IkeConfig.RemoteId");
+			ikeConfig.Psk = _ctx.StringValue("ModifyVpnConnectionAttribute.IkeConfig.Psk");
+			ikeConfig.IkeVersion = _ctx.StringValue("ModifyVpnConnectionAttribute.IkeConfig.IkeVersion");
+			ikeConfig.IkeMode = _ctx.StringValue("ModifyVpnConnectionAttribute.IkeConfig.IkeMode");
+			ikeConfig.IkeEncAlg = _ctx.StringValue("ModifyVpnConnectionAttribute.IkeConfig.IkeEncAlg");
+			ikeConfig.IkeAuthAlg = _ctx.StringValue("ModifyVpnConnectionAttribute.IkeConfig.IkeAuthAlg");
+			ikeConfig.IkePfs = _ctx.StringValue("ModifyVpnConnectionAttribute.IkeConfig.IkePfs");
+			ikeConfig.IkeLifetime = _ctx.LongValue("ModifyVpnConnectionAttribute.IkeConfig.IkeLifetime");
+			ikeConfig.LocalId = _ctx.StringValue("ModifyVpnConnectionAttribute.IkeConfig.LocalId");
+			ikeConfig.RemoteId = _ctx.StringValue("ModifyVpnConnectionAttribute.IkeConfig.RemoteId");
 			modifyVpnConnectionAttributeResponse.IkeConfig = ikeConfig;
 
 			ModifyVpnConnectionAttributeResponse.ModifyVpnConnectionAttribute_IpsecConfig ipsecConfig = new ModifyVpnConnectionAttributeResponse.ModifyVpnConnectionAttribute_IpsecConfig();
-			ipsecConfig.IpsecEncAlg = context.StringValue("ModifyVpnConnectionAttribute.IpsecConfig.IpsecEncAlg");
-			ipsecConfig.IpsecAuthAlg = context.StringValue("ModifyVpnConnectionAttribute.IpsecConfig.IpsecAuthAlg");
-			ipsecConfig.IpsecPfs = context.StringValue("ModifyVpnConnectionAttribute.IpsecConfig.IpsecPfs");
-			ipsecConfig.IpsecLifetime = context.LongValue("ModifyVpnConnectionAttribute.IpsecConfig.IpsecLifetime");
+			ipsecConfig.IpsecEncAlg = _ctx.StringValue("ModifyVpnConnectionAttribute.IpsecConfig.IpsecEncAlg");
+			ipsecConfig.IpsecAuthAlg = _ctx.StringValue("ModifyVpnConnectionAttribute.IpsecConfig.IpsecAuthAlg");
+			ipsecConfig.IpsecPfs = _ctx.StringValue("ModifyVpnConnectionAttribute.IpsecConfig.IpsecPfs");
+			ipsecConfig.IpsecLifetime = _ctx.LongValue("ModifyVpnConnectionAttribute.IpsecConfig.IpsecLifetime");
 			modifyVpnConnectionAttributeResponse.IpsecConfig = ipsecConfig;
 
 			ModifyVpnConnectionAttributeResponse.ModifyVpnConnectionAttribute_VcoHealthCheck vcoHealthCheck = new ModifyVpnConnectionAttributeResponse.ModifyVpnConnectionAttribute_VcoHealthCheck();
-			vcoHealthCheck.Enable = context.StringValue("ModifyVpnConnectionAttribute.VcoHealthCheck.Enable");
-			vcoHealthCheck.Sip = context.StringValue("ModifyVpnConnectionAttribute.VcoHealthCheck.Sip");
-			vcoHealthCheck.Dip = context.StringValue("ModifyVpnConnectionAttribute.VcoHealthCheck.Dip");
-			vcoHealthCheck.Interval = context.IntegerValue("ModifyVpnConnectionAttribute.VcoHealthCheck.Interval");
-			vcoHealthCheck.Retry = context.IntegerValue("ModifyVpnConnectionAttribute.VcoHealthCheck.Retry");
+			vcoHealthCheck.Enable = _ctx.StringValue("ModifyVpnConnectionAttribute.VcoHealthCheck.Enable");
+			vcoHealthCheck.Sip = _ctx.StringValue("ModifyVpnConnectionAttribute.VcoHealthCheck.Sip");
+			vcoHealthCheck.Dip = _ctx.StringValue("ModifyVpnConnectionAttribute.VcoHealthCheck.Dip");
+			vcoHealthCheck.Interval = _ctx.IntegerValue("ModifyVpnConnectionAttribute.VcoHealthCheck.Interval");
+			vcoHealthCheck.Retry = _ctx.IntegerValue("ModifyVpnConnectionAttribute.VcoHealthCheck.Retry");
 			modifyVpnConnectionAttributeResponse.VcoHealthCheck = vcoHealthCheck;
+
+			ModifyVpnConnectionAttributeResponse.ModifyVpnConnectionAttribute_VpnBgpConfig vpnBgpConfig = new ModifyVpnConnectionAttributeResponse.ModifyVpnConnectionAttribute_VpnBgpConfig();
+			vpnBgpConfig.EnableBgp = _ctx.StringValue("ModifyVpnConnectionAttribute.VpnBgpConfig.EnableBgp");
+			vpnBgpConfig.TunnelCidr = _ctx.StringValue("ModifyVpnConnectionAttribute.VpnBgpConfig.TunnelCidr");
+			vpnBgpConfig.LocalBgpIp = _ctx.StringValue("ModifyVpnConnectionAttribute.VpnBgpConfig.LocalBgpIp");
+			vpnBgpConfig.PeerBgpIp = _ctx.StringValue("ModifyVpnConnectionAttribute.VpnBgpConfig.PeerBgpIp");
+			vpnBgpConfig.LocalAsn = _ctx.IntegerValue("ModifyVpnConnectionAttribute.VpnBgpConfig.LocalAsn");
+			vpnBgpConfig.PeerAsn = _ctx.IntegerValue("ModifyVpnConnectionAttribute.VpnBgpConfig.PeerAsn");
+			vpnBgpConfig.Status = _ctx.StringValue("ModifyVpnConnectionAttribute.VpnBgpConfig.Status");
+			modifyVpnConnectionAttributeResponse.VpnBgpConfig = vpnBgpConfig;
         
 			return modifyVpnConnectionAttributeResponse;
         }

@@ -26,29 +26,29 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20180916
 {
     public class GetMaterialsResponseUnmarshaller
     {
-        public static GetMaterialsResponse Unmarshall(UnmarshallerContext context)
+        public static GetMaterialsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMaterialsResponse getMaterialsResponse = new GetMaterialsResponse();
 
-			getMaterialsResponse.HttpResponse = context.HttpResponse;
-			getMaterialsResponse.RequestId = context.StringValue("GetMaterials.RequestId");
-			getMaterialsResponse.Success = context.BooleanValue("GetMaterials.Success");
-			getMaterialsResponse.Code = context.StringValue("GetMaterials.Code");
-			getMaterialsResponse.Message = context.StringValue("GetMaterials.Message");
+			getMaterialsResponse.HttpResponse = _ctx.HttpResponse;
+			getMaterialsResponse.RequestId = _ctx.StringValue("GetMaterials.RequestId");
+			getMaterialsResponse.Success = _ctx.BooleanValue("GetMaterials.Success");
+			getMaterialsResponse.Code = _ctx.StringValue("GetMaterials.Code");
+			getMaterialsResponse.Message = _ctx.StringValue("GetMaterials.Message");
 
 			GetMaterialsResponse.GetMaterials_Data data = new GetMaterialsResponse.GetMaterials_Data();
-			data.Name = context.StringValue("GetMaterials.Data.Name");
-			data.IdentificationNumber = context.StringValue("GetMaterials.Data.IdentificationNumber");
-			data.IdCardType = context.StringValue("GetMaterials.Data.IdCardType");
-			data.IdCardStartDate = context.StringValue("GetMaterials.Data.IdCardStartDate");
-			data.IdCardExpiry = context.StringValue("GetMaterials.Data.IdCardExpiry");
-			data.Address = context.StringValue("GetMaterials.Data.Address");
-			data.Sex = context.StringValue("GetMaterials.Data.Sex");
-			data.IdCardFrontPic = context.StringValue("GetMaterials.Data.IdCardFrontPic");
-			data.IdCardBackPic = context.StringValue("GetMaterials.Data.IdCardBackPic");
-			data.FacePic = context.StringValue("GetMaterials.Data.FacePic");
-			data.EthnicGroup = context.StringValue("GetMaterials.Data.EthnicGroup");
-			data.Authority = context.StringValue("GetMaterials.Data.Authority");
+			data.Name = _ctx.StringValue("GetMaterials.Data.Name");
+			data.IdentificationNumber = _ctx.StringValue("GetMaterials.Data.IdentificationNumber");
+			data.IdCardType = _ctx.StringValue("GetMaterials.Data.IdCardType");
+			data.IdCardStartDate = _ctx.StringValue("GetMaterials.Data.IdCardStartDate");
+			data.IdCardExpiry = _ctx.StringValue("GetMaterials.Data.IdCardExpiry");
+			data.Address = _ctx.StringValue("GetMaterials.Data.Address");
+			data.Sex = _ctx.StringValue("GetMaterials.Data.Sex");
+			data.IdCardFrontPic = _ctx.StringValue("GetMaterials.Data.IdCardFrontPic");
+			data.IdCardBackPic = _ctx.StringValue("GetMaterials.Data.IdCardBackPic");
+			data.FacePic = _ctx.StringValue("GetMaterials.Data.FacePic");
+			data.EthnicGroup = _ctx.StringValue("GetMaterials.Data.EthnicGroup");
+			data.Authority = _ctx.StringValue("GetMaterials.Data.Authority");
 			getMaterialsResponse.Data = data;
         
 			return getMaterialsResponse;

@@ -25,19 +25,31 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 	public class GetCallerIdentityResponse : AcsResponse
 	{
 
+		private string identityType;
+
 		private string accountId;
 
-		private string userId;
-
-		private string roleId;
-
-		private string arn;
-
-		private string identityType;
+		private string requestId;
 
 		private string principalId;
 
-		private string requestId;
+		private string userId;
+
+		private string arn;
+
+		private string roleId;
+
+		public string IdentityType
+		{
+			get
+			{
+				return identityType;
+			}
+			set	
+			{
+				identityType = value;
+			}
+		}
 
 		public string AccountId
 		{
@@ -51,51 +63,15 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			}
 		}
 
-		public string UserId
+		public string RequestId
 		{
 			get
 			{
-				return userId;
+				return requestId;
 			}
 			set	
 			{
-				userId = value;
-			}
-		}
-
-		public string RoleId
-		{
-			get
-			{
-				return roleId;
-			}
-			set	
-			{
-				roleId = value;
-			}
-		}
-
-		public string Arn
-		{
-			get
-			{
-				return arn;
-			}
-			set	
-			{
-				arn = value;
-			}
-		}
-
-		public string IdentityType
-		{
-			get
-			{
-				return identityType;
-			}
-			set	
-			{
-				identityType = value;
+				requestId = value;
 			}
 		}
 
@@ -111,15 +87,39 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			}
 		}
 
-		public string RequestId
+		public string UserId
 		{
 			get
 			{
-				return requestId;
+				return userId;
 			}
 			set	
 			{
-				requestId = value;
+				userId = value;
+			}
+		}
+
+		public string Arn
+		{
+			get
+			{
+				return arn;
+			}
+			set	
+			{
+				arn = value;
+			}
+		}
+
+		public string RoleId
+		{
+			get
+			{
+				return roleId;
+			}
+			set	
+			{
+				roleId = value;
 			}
 		}
 	}

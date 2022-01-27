@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Dypnsapi.Transform.V20170525
 {
     public class GetMobileResponseUnmarshaller
     {
-        public static GetMobileResponse Unmarshall(UnmarshallerContext context)
+        public static GetMobileResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMobileResponse getMobileResponse = new GetMobileResponse();
 
-			getMobileResponse.HttpResponse = context.HttpResponse;
-			getMobileResponse.RequestId = context.StringValue("GetMobile.RequestId");
-			getMobileResponse.Code = context.StringValue("GetMobile.Code");
-			getMobileResponse.Message = context.StringValue("GetMobile.Message");
+			getMobileResponse.HttpResponse = _ctx.HttpResponse;
+			getMobileResponse.RequestId = _ctx.StringValue("GetMobile.RequestId");
+			getMobileResponse.Code = _ctx.StringValue("GetMobile.Code");
+			getMobileResponse.Message = _ctx.StringValue("GetMobile.Message");
 
 			GetMobileResponse.GetMobile_GetMobileResultDTO getMobileResultDTO = new GetMobileResponse.GetMobile_GetMobileResultDTO();
-			getMobileResultDTO.Mobile = context.StringValue("GetMobile.GetMobileResultDTO.Mobile");
+			getMobileResultDTO.Mobile = _ctx.StringValue("GetMobile.GetMobileResultDTO.Mobile");
 			getMobileResponse.GetMobileResultDTO = getMobileResultDTO;
         
 			return getMobileResponse;

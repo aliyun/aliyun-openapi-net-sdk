@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class SasInstallCodeResponseUnmarshaller
     {
-        public static SasInstallCodeResponse Unmarshall(UnmarshallerContext context)
+        public static SasInstallCodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SasInstallCodeResponse sasInstallCodeResponse = new SasInstallCodeResponse();
 
-			sasInstallCodeResponse.HttpResponse = context.HttpResponse;
-			sasInstallCodeResponse.RequestId = context.StringValue("SasInstallCode.RequestId");
-			sasInstallCodeResponse.Data = context.StringValue("SasInstallCode.data");
+			sasInstallCodeResponse.HttpResponse = _ctx.HttpResponse;
+			sasInstallCodeResponse.RequestId = _ctx.StringValue("SasInstallCode.RequestId");
+			sasInstallCodeResponse.Data = _ctx.StringValue("SasInstallCode.data");
         
 			return sasInstallCodeResponse;
         }

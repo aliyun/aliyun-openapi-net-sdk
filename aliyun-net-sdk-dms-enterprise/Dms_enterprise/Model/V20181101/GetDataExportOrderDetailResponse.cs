@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private bool? success;
+		private string errorCode;
 
 		private string errorMessage;
 
-		private string errorCode;
+		private bool? success;
 
 		private GetDataExportOrderDetail_DataExportOrderDetail dataExportOrderDetail;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,30 +48,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ErrorCode")]
 		public string ErrorCode
 		{
 			get
@@ -83,6 +61,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DataExportOrderDetail")]
 		public GetDataExportOrderDetail_DataExportOrderDetail DataExportOrderDetail
 		{
 			get
@@ -98,22 +103,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class GetDataExportOrderDetail_DataExportOrderDetail
 		{
 
-			private GetDataExportOrderDetail_OrderDetail orderDetail;
-
 			private GetDataExportOrderDetail_KeyInfo keyInfo;
 
-			public GetDataExportOrderDetail_OrderDetail OrderDetail
-			{
-				get
-				{
-					return orderDetail;
-				}
-				set	
-				{
-					orderDetail = value;
-				}
-			}
+			private GetDataExportOrderDetail_OrderDetail orderDetail;
 
+			[JsonProperty(PropertyName = "KeyInfo")]
 			public GetDataExportOrderDetail_KeyInfo KeyInfo
 			{
 				get
@@ -126,63 +120,75 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "OrderDetail")]
+			public GetDataExportOrderDetail_OrderDetail OrderDetail
+			{
+				get
+				{
+					return orderDetail;
+				}
+				set	
+				{
+					orderDetail = value;
+				}
+			}
+
+			public class GetDataExportOrderDetail_KeyInfo
+			{
+
+				private long? preCheckId;
+
+				private string jobStatus;
+
+				[JsonProperty(PropertyName = "PreCheckId")]
+				public long? PreCheckId
+				{
+					get
+					{
+						return preCheckId;
+					}
+					set	
+					{
+						preCheckId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "JobStatus")]
+				public string JobStatus
+				{
+					get
+					{
+						return jobStatus;
+					}
+					set	
+					{
+						jobStatus = value;
+					}
+				}
+			}
+
 			public class GetDataExportOrderDetail_OrderDetail
 			{
 
-				private long? actualAffectRows;
-
-				private string classify;
+				private int? dbId;
 
 				private string database;
 
-				private int? dbId;
-
-				private string envType;
+				private string classify;
 
 				private string exeSQL;
+
+				private bool? logic;
+
+				private long? actualAffectRows;
 
 				private bool? ignoreAffectRows;
 
 				private string ignoreAffectRowsReason;
 
-				private bool? logic;
+				private string envType;
 
-				public long? ActualAffectRows
-				{
-					get
-					{
-						return actualAffectRows;
-					}
-					set	
-					{
-						actualAffectRows = value;
-					}
-				}
-
-				public string Classify
-				{
-					get
-					{
-						return classify;
-					}
-					set	
-					{
-						classify = value;
-					}
-				}
-
-				public string Database
-				{
-					get
-					{
-						return database;
-					}
-					set	
-					{
-						database = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "DbId")]
 				public int? DbId
 				{
 					get
@@ -195,18 +201,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
-				public string EnvType
+				[JsonProperty(PropertyName = "Database")]
+				public string Database
 				{
 					get
 					{
-						return envType;
+						return database;
 					}
 					set	
 					{
-						envType = value;
+						database = value;
 					}
 				}
 
+				[JsonProperty(PropertyName = "Classify")]
+				public string Classify
+				{
+					get
+					{
+						return classify;
+					}
+					set	
+					{
+						classify = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ExeSQL")]
 				public string ExeSQL
 				{
 					get
@@ -219,6 +240,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
+				[JsonProperty(PropertyName = "Logic")]
+				public bool? Logic
+				{
+					get
+					{
+						return logic;
+					}
+					set	
+					{
+						logic = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ActualAffectRows")]
+				public long? ActualAffectRows
+				{
+					get
+					{
+						return actualAffectRows;
+					}
+					set	
+					{
+						actualAffectRows = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "IgnoreAffectRows")]
 				public bool? IgnoreAffectRows
 				{
 					get
@@ -231,6 +279,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
+				[JsonProperty(PropertyName = "IgnoreAffectRowsReason")]
 				public string IgnoreAffectRowsReason
 				{
 					get
@@ -243,47 +292,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
-				public bool? Logic
+				[JsonProperty(PropertyName = "EnvType")]
+				public string EnvType
 				{
 					get
 					{
-						return logic;
+						return envType;
 					}
 					set	
 					{
-						logic = value;
-					}
-				}
-			}
-
-			public class GetDataExportOrderDetail_KeyInfo
-			{
-
-				private string jobStatus;
-
-				private long? preCheckId;
-
-				public string JobStatus
-				{
-					get
-					{
-						return jobStatus;
-					}
-					set	
-					{
-						jobStatus = value;
-					}
-				}
-
-				public long? PreCheckId
-				{
-					get
-					{
-						return preCheckId;
-					}
-					set	
-					{
-						preCheckId = value;
+						envType = value;
 					}
 				}
 			}

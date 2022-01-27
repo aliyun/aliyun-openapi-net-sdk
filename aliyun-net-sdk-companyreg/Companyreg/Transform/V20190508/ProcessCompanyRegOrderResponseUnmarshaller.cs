@@ -26,13 +26,13 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class ProcessCompanyRegOrderResponseUnmarshaller
     {
-        public static ProcessCompanyRegOrderResponse Unmarshall(UnmarshallerContext context)
+        public static ProcessCompanyRegOrderResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ProcessCompanyRegOrderResponse processCompanyRegOrderResponse = new ProcessCompanyRegOrderResponse();
 
-			processCompanyRegOrderResponse.HttpResponse = context.HttpResponse;
-			processCompanyRegOrderResponse.RequestId = context.StringValue("ProcessCompanyRegOrder.RequestId");
-			processCompanyRegOrderResponse.Data = context.StringValue("ProcessCompanyRegOrder.Data");
+			processCompanyRegOrderResponse.HttpResponse = _ctx.HttpResponse;
+			processCompanyRegOrderResponse.RequestId = _ctx.StringValue("ProcessCompanyRegOrder.RequestId");
+			processCompanyRegOrderResponse.Data = _ctx.StringValue("ProcessCompanyRegOrder.Data");
         
 			return processCompanyRegOrderResponse;
         }

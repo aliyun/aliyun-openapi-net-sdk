@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class GetTxtRecordForVerifyResponseUnmarshaller
     {
-        public static GetTxtRecordForVerifyResponse Unmarshall(UnmarshallerContext context)
+        public static GetTxtRecordForVerifyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetTxtRecordForVerifyResponse getTxtRecordForVerifyResponse = new GetTxtRecordForVerifyResponse();
 
-			getTxtRecordForVerifyResponse.HttpResponse = context.HttpResponse;
-			getTxtRecordForVerifyResponse.RequestId = context.StringValue("GetTxtRecordForVerify.RequestId");
-			getTxtRecordForVerifyResponse.DomainName = context.StringValue("GetTxtRecordForVerify.DomainName");
-			getTxtRecordForVerifyResponse.RR = context.StringValue("GetTxtRecordForVerify.RR");
-			getTxtRecordForVerifyResponse._Value = context.StringValue("GetTxtRecordForVerify.Value");
+			getTxtRecordForVerifyResponse.HttpResponse = _ctx.HttpResponse;
+			getTxtRecordForVerifyResponse.RequestId = _ctx.StringValue("GetTxtRecordForVerify.RequestId");
+			getTxtRecordForVerifyResponse.DomainName = _ctx.StringValue("GetTxtRecordForVerify.DomainName");
+			getTxtRecordForVerifyResponse.RR = _ctx.StringValue("GetTxtRecordForVerify.RR");
+			getTxtRecordForVerifyResponse._Value = _ctx.StringValue("GetTxtRecordForVerify.Value");
         
 			return getTxtRecordForVerifyResponse;
         }

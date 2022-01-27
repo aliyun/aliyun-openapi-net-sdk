@@ -26,20 +26,20 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class GetSetResponseUnmarshaller
     {
-        public static GetSetResponse Unmarshall(UnmarshallerContext context)
+        public static GetSetResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetSetResponse getSetResponse = new GetSetResponse();
 
-			getSetResponse.HttpResponse = context.HttpResponse;
-			getSetResponse.RequestId = context.StringValue("GetSet.RequestId");
-			getSetResponse.SetId = context.StringValue("GetSet.SetId");
-			getSetResponse.SetName = context.StringValue("GetSet.SetName");
-			getSetResponse.CreateTime = context.StringValue("GetSet.CreateTime");
-			getSetResponse.ModifyTime = context.StringValue("GetSet.ModifyTime");
-			getSetResponse.FaceCount = context.IntegerValue("GetSet.FaceCount");
-			getSetResponse.ImageCount = context.IntegerValue("GetSet.ImageCount");
-			getSetResponse.VideoCount = context.IntegerValue("GetSet.VideoCount");
-			getSetResponse.VideoLength = context.IntegerValue("GetSet.VideoLength");
+			getSetResponse.HttpResponse = _ctx.HttpResponse;
+			getSetResponse.RequestId = _ctx.StringValue("GetSet.RequestId");
+			getSetResponse.SetId = _ctx.StringValue("GetSet.SetId");
+			getSetResponse.SetName = _ctx.StringValue("GetSet.SetName");
+			getSetResponse.CreateTime = _ctx.StringValue("GetSet.CreateTime");
+			getSetResponse.ModifyTime = _ctx.StringValue("GetSet.ModifyTime");
+			getSetResponse.FaceCount = _ctx.IntegerValue("GetSet.FaceCount");
+			getSetResponse.ImageCount = _ctx.IntegerValue("GetSet.ImageCount");
+			getSetResponse.VideoCount = _ctx.IntegerValue("GetSet.VideoCount");
+			getSetResponse.VideoLength = _ctx.IntegerValue("GetSet.VideoLength");
         
 			return getSetResponse;
         }

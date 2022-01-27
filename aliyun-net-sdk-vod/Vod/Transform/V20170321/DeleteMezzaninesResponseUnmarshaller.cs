@@ -26,22 +26,22 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DeleteMezzaninesResponseUnmarshaller
     {
-        public static DeleteMezzaninesResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteMezzaninesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteMezzaninesResponse deleteMezzaninesResponse = new DeleteMezzaninesResponse();
 
-			deleteMezzaninesResponse.HttpResponse = context.HttpResponse;
-			deleteMezzaninesResponse.RequestId = context.StringValue("DeleteMezzanines.RequestId");
+			deleteMezzaninesResponse.HttpResponse = _ctx.HttpResponse;
+			deleteMezzaninesResponse.RequestId = _ctx.StringValue("DeleteMezzanines.RequestId");
 
 			List<string> deleteMezzaninesResponse_nonExistVideoIds = new List<string>();
-			for (int i = 0; i < context.Length("DeleteMezzanines.NonExistVideoIds.Length"); i++) {
-				deleteMezzaninesResponse_nonExistVideoIds.Add(context.StringValue("DeleteMezzanines.NonExistVideoIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DeleteMezzanines.NonExistVideoIds.Length"); i++) {
+				deleteMezzaninesResponse_nonExistVideoIds.Add(_ctx.StringValue("DeleteMezzanines.NonExistVideoIds["+ i +"]"));
 			}
 			deleteMezzaninesResponse.NonExistVideoIds = deleteMezzaninesResponse_nonExistVideoIds;
 
 			List<string> deleteMezzaninesResponse_unRemoveableVideoIds = new List<string>();
-			for (int i = 0; i < context.Length("DeleteMezzanines.UnRemoveableVideoIds.Length"); i++) {
-				deleteMezzaninesResponse_unRemoveableVideoIds.Add(context.StringValue("DeleteMezzanines.UnRemoveableVideoIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DeleteMezzanines.UnRemoveableVideoIds.Length"); i++) {
+				deleteMezzaninesResponse_unRemoveableVideoIds.Add(_ctx.StringValue("DeleteMezzanines.UnRemoveableVideoIds["+ i +"]"));
 			}
 			deleteMezzaninesResponse.UnRemoveableVideoIds = deleteMezzaninesResponse_unRemoveableVideoIds;
         

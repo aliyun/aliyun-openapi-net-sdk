@@ -26,21 +26,21 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class AddWatermarkResponseUnmarshaller
     {
-        public static AddWatermarkResponse Unmarshall(UnmarshallerContext context)
+        public static AddWatermarkResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddWatermarkResponse addWatermarkResponse = new AddWatermarkResponse();
 
-			addWatermarkResponse.HttpResponse = context.HttpResponse;
-			addWatermarkResponse.RequestId = context.StringValue("AddWatermark.RequestId");
+			addWatermarkResponse.HttpResponse = _ctx.HttpResponse;
+			addWatermarkResponse.RequestId = _ctx.StringValue("AddWatermark.RequestId");
 
 			AddWatermarkResponse.AddWatermark_WatermarkInfo watermarkInfo = new AddWatermarkResponse.AddWatermark_WatermarkInfo();
-			watermarkInfo.CreationTime = context.StringValue("AddWatermark.WatermarkInfo.CreationTime");
-			watermarkInfo.Type = context.StringValue("AddWatermark.WatermarkInfo.Type");
-			watermarkInfo.IsDefault = context.StringValue("AddWatermark.WatermarkInfo.IsDefault");
-			watermarkInfo.WatermarkId = context.StringValue("AddWatermark.WatermarkInfo.WatermarkId");
-			watermarkInfo.Name = context.StringValue("AddWatermark.WatermarkInfo.Name");
-			watermarkInfo.FileUrl = context.StringValue("AddWatermark.WatermarkInfo.FileUrl");
-			watermarkInfo.WatermarkConfig = context.StringValue("AddWatermark.WatermarkInfo.WatermarkConfig");
+			watermarkInfo.CreationTime = _ctx.StringValue("AddWatermark.WatermarkInfo.CreationTime");
+			watermarkInfo.Type = _ctx.StringValue("AddWatermark.WatermarkInfo.Type");
+			watermarkInfo.IsDefault = _ctx.StringValue("AddWatermark.WatermarkInfo.IsDefault");
+			watermarkInfo.WatermarkId = _ctx.StringValue("AddWatermark.WatermarkInfo.WatermarkId");
+			watermarkInfo.Name = _ctx.StringValue("AddWatermark.WatermarkInfo.Name");
+			watermarkInfo.FileUrl = _ctx.StringValue("AddWatermark.WatermarkInfo.FileUrl");
+			watermarkInfo.WatermarkConfig = _ctx.StringValue("AddWatermark.WatermarkInfo.WatermarkConfig");
 			addWatermarkResponse.WatermarkInfo = watermarkInfo;
         
 			return addWatermarkResponse;

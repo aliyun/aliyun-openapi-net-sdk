@@ -26,45 +26,45 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeDedicatedHostsResponseUnmarshaller
     {
-        public static DescribeDedicatedHostsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDedicatedHostsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDedicatedHostsResponse describeDedicatedHostsResponse = new DescribeDedicatedHostsResponse();
 
-			describeDedicatedHostsResponse.HttpResponse = context.HttpResponse;
-			describeDedicatedHostsResponse.RequestId = context.StringValue("DescribeDedicatedHosts.RequestId");
-			describeDedicatedHostsResponse.DedicatedHostGroupId = context.StringValue("DescribeDedicatedHosts.DedicatedHostGroupId");
+			describeDedicatedHostsResponse.HttpResponse = _ctx.HttpResponse;
+			describeDedicatedHostsResponse.RequestId = _ctx.StringValue("DescribeDedicatedHosts.RequestId");
+			describeDedicatedHostsResponse.DedicatedHostGroupId = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHostGroupId");
 
 			List<DescribeDedicatedHostsResponse.DescribeDedicatedHosts_DedicatedHostsItem> describeDedicatedHostsResponse_dedicatedHosts = new List<DescribeDedicatedHostsResponse.DescribeDedicatedHosts_DedicatedHostsItem>();
-			for (int i = 0; i < context.Length("DescribeDedicatedHosts.DedicatedHosts.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDedicatedHosts.DedicatedHosts.Length"); i++) {
 				DescribeDedicatedHostsResponse.DescribeDedicatedHosts_DedicatedHostsItem dedicatedHostsItem = new DescribeDedicatedHostsResponse.DescribeDedicatedHosts_DedicatedHostsItem();
-				dedicatedHostsItem.HostName = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].HostName");
-				dedicatedHostsItem.HostStatus = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].HostStatus");
-				dedicatedHostsItem.InstanceNumber = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].InstanceNumber");
-				dedicatedHostsItem.CPUAllocationRatio = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].CPUAllocationRatio");
-				dedicatedHostsItem.MemAllocationRatio = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].MemAllocationRatio");
-				dedicatedHostsItem.DiskAllocationRatio = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].DiskAllocationRatio");
-				dedicatedHostsItem.VPCId = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].VPCId");
-				dedicatedHostsItem.VSwitchId = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].VSwitchId");
-				dedicatedHostsItem.ZoneId = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].ZoneId");
-				dedicatedHostsItem.IPAddress = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].IPAddress");
-				dedicatedHostsItem.HostClass = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].HostClass");
-				dedicatedHostsItem.CreatedTime = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].CreatedTime");
-				dedicatedHostsItem.DedicatedHostId = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].DedicatedHostId");
-				dedicatedHostsItem.AllocationStatus = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].AllocationStatus");
-				dedicatedHostsItem.EndTime = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].EndTime");
-				dedicatedHostsItem.HostType = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].HostType");
-				dedicatedHostsItem.BastionInstanceId = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].BastionInstanceId");
-				dedicatedHostsItem.OpenPermission = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].OpenPermission");
-				dedicatedHostsItem.AccountName = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].AccountName");
-				dedicatedHostsItem.HostCPU = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].HostCPU");
-				dedicatedHostsItem.HostMem = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].HostMem");
-				dedicatedHostsItem.HostStorage = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].HostStorage");
-				dedicatedHostsItem.CpuUsed = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].CpuUsed");
-				dedicatedHostsItem.MemoryUsed = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].MemoryUsed");
-				dedicatedHostsItem.StorageUsed = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].StorageUsed");
-				dedicatedHostsItem.ImageCategory = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].ImageCategory");
-				dedicatedHostsItem.DedicatedHostGroupId = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].DedicatedHostGroupId");
-				dedicatedHostsItem.Engine = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].Engine");
+				dedicatedHostsItem.HostName = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].HostName");
+				dedicatedHostsItem.HostStatus = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].HostStatus");
+				dedicatedHostsItem.InstanceNumber = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].InstanceNumber");
+				dedicatedHostsItem.CPUAllocationRatio = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].CPUAllocationRatio");
+				dedicatedHostsItem.MemAllocationRatio = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].MemAllocationRatio");
+				dedicatedHostsItem.DiskAllocationRatio = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].DiskAllocationRatio");
+				dedicatedHostsItem.VPCId = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].VPCId");
+				dedicatedHostsItem.VSwitchId = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].VSwitchId");
+				dedicatedHostsItem.ZoneId = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].ZoneId");
+				dedicatedHostsItem.IPAddress = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].IPAddress");
+				dedicatedHostsItem.HostClass = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].HostClass");
+				dedicatedHostsItem.CreatedTime = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].CreatedTime");
+				dedicatedHostsItem.DedicatedHostId = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].DedicatedHostId");
+				dedicatedHostsItem.AllocationStatus = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].AllocationStatus");
+				dedicatedHostsItem.EndTime = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].EndTime");
+				dedicatedHostsItem.HostType = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].HostType");
+				dedicatedHostsItem.BastionInstanceId = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].BastionInstanceId");
+				dedicatedHostsItem.OpenPermission = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].OpenPermission");
+				dedicatedHostsItem.AccountName = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].AccountName");
+				dedicatedHostsItem.HostCPU = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].HostCPU");
+				dedicatedHostsItem.HostMem = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].HostMem");
+				dedicatedHostsItem.HostStorage = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].HostStorage");
+				dedicatedHostsItem.CpuUsed = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].CpuUsed");
+				dedicatedHostsItem.MemoryUsed = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].MemoryUsed");
+				dedicatedHostsItem.StorageUsed = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].StorageUsed");
+				dedicatedHostsItem.ImageCategory = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].ImageCategory");
+				dedicatedHostsItem.DedicatedHostGroupId = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].DedicatedHostGroupId");
+				dedicatedHostsItem.Engine = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].Engine");
 
 				describeDedicatedHostsResponse_dedicatedHosts.Add(dedicatedHostsItem);
 			}

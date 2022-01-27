@@ -1,3 +1,6 @@
+### 2021-12-07 Version 1.5.11
+* Add Endpoint for SLB.
+
 ### 2020-09-30 Version 1.5.10
 * Do not Send x-acs-action when it is null or empty
 

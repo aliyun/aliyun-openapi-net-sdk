@@ -26,16 +26,16 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class CreateDeviceAlarmResponseUnmarshaller
     {
-        public static CreateDeviceAlarmResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDeviceAlarmResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateDeviceAlarmResponse createDeviceAlarmResponse = new CreateDeviceAlarmResponse();
 
-			createDeviceAlarmResponse.HttpResponse = context.HttpResponse;
-			createDeviceAlarmResponse.RequestId = context.StringValue("CreateDeviceAlarm.RequestId");
-			createDeviceAlarmResponse.Url = context.StringValue("CreateDeviceAlarm.Url");
-			createDeviceAlarmResponse.Expire = context.LongValue("CreateDeviceAlarm.Expire");
-			createDeviceAlarmResponse.AlarmId = context.StringValue("CreateDeviceAlarm.AlarmId");
-			createDeviceAlarmResponse.AlarmDelay = context.LongValue("CreateDeviceAlarm.AlarmDelay");
+			createDeviceAlarmResponse.HttpResponse = _ctx.HttpResponse;
+			createDeviceAlarmResponse.RequestId = _ctx.StringValue("CreateDeviceAlarm.RequestId");
+			createDeviceAlarmResponse.Url = _ctx.StringValue("CreateDeviceAlarm.Url");
+			createDeviceAlarmResponse.Expire = _ctx.LongValue("CreateDeviceAlarm.Expire");
+			createDeviceAlarmResponse.AlarmId = _ctx.StringValue("CreateDeviceAlarm.AlarmId");
+			createDeviceAlarmResponse.AlarmDelay = _ctx.LongValue("CreateDeviceAlarm.AlarmDelay");
         
 			return createDeviceAlarmResponse;
         }

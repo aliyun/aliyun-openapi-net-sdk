@@ -26,17 +26,17 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class UpdateAppResponseUnmarshaller
     {
-        public static UpdateAppResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateAppResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateAppResponse updateAppResponse = new UpdateAppResponse();
 
-			updateAppResponse.HttpResponse = context.HttpResponse;
-			updateAppResponse.RequestId = context.StringValue("UpdateApp.RequestId");
-			updateAppResponse.Code = context.IntegerValue("UpdateApp.Code");
-			updateAppResponse.ErrMsg = context.StringValue("UpdateApp.ErrMsg");
+			updateAppResponse.HttpResponse = _ctx.HttpResponse;
+			updateAppResponse.RequestId = _ctx.StringValue("UpdateApp.RequestId");
+			updateAppResponse.Code = _ctx.IntegerValue("UpdateApp.Code");
+			updateAppResponse.ErrMsg = _ctx.StringValue("UpdateApp.ErrMsg");
 
 			UpdateAppResponse.UpdateApp_Result result = new UpdateAppResponse.UpdateApp_Result();
-			result.Success = context.BooleanValue("UpdateApp.Result.Success");
+			result.Success = _ctx.BooleanValue("UpdateApp.Result.Success");
 			updateAppResponse.Result = result;
         
 			return updateAppResponse;

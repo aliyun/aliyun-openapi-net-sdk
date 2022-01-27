@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class UpdateGtmInstanceGlobalConfigResponseUnmarshaller
     {
-        public static UpdateGtmInstanceGlobalConfigResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateGtmInstanceGlobalConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateGtmInstanceGlobalConfigResponse updateGtmInstanceGlobalConfigResponse = new UpdateGtmInstanceGlobalConfigResponse();
 
-			updateGtmInstanceGlobalConfigResponse.HttpResponse = context.HttpResponse;
-			updateGtmInstanceGlobalConfigResponse.RequestId = context.StringValue("UpdateGtmInstanceGlobalConfig.RequestId");
+			updateGtmInstanceGlobalConfigResponse.HttpResponse = _ctx.HttpResponse;
+			updateGtmInstanceGlobalConfigResponse.RequestId = _ctx.StringValue("UpdateGtmInstanceGlobalConfig.RequestId");
         
 			return updateGtmInstanceGlobalConfigResponse;
         }

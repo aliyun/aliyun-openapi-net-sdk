@@ -26,35 +26,35 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class ListBookkeepingSubjectBalancesResponseUnmarshaller
     {
-        public static ListBookkeepingSubjectBalancesResponse Unmarshall(UnmarshallerContext context)
+        public static ListBookkeepingSubjectBalancesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListBookkeepingSubjectBalancesResponse listBookkeepingSubjectBalancesResponse = new ListBookkeepingSubjectBalancesResponse();
 
-			listBookkeepingSubjectBalancesResponse.HttpResponse = context.HttpResponse;
-			listBookkeepingSubjectBalancesResponse.RequestId = context.StringValue("ListBookkeepingSubjectBalances.RequestId");
-			listBookkeepingSubjectBalancesResponse.TotalCount = context.IntegerValue("ListBookkeepingSubjectBalances.TotalCount");
-			listBookkeepingSubjectBalancesResponse.PageSize = context.IntegerValue("ListBookkeepingSubjectBalances.PageSize");
-			listBookkeepingSubjectBalancesResponse.PageNumber = context.IntegerValue("ListBookkeepingSubjectBalances.PageNumber");
-			listBookkeepingSubjectBalancesResponse.Success = context.BooleanValue("ListBookkeepingSubjectBalances.Success");
-			listBookkeepingSubjectBalancesResponse.ErrorMsg = context.StringValue("ListBookkeepingSubjectBalances.ErrorMsg");
+			listBookkeepingSubjectBalancesResponse.HttpResponse = _ctx.HttpResponse;
+			listBookkeepingSubjectBalancesResponse.RequestId = _ctx.StringValue("ListBookkeepingSubjectBalances.RequestId");
+			listBookkeepingSubjectBalancesResponse.TotalCount = _ctx.IntegerValue("ListBookkeepingSubjectBalances.TotalCount");
+			listBookkeepingSubjectBalancesResponse.PageSize = _ctx.IntegerValue("ListBookkeepingSubjectBalances.PageSize");
+			listBookkeepingSubjectBalancesResponse.PageNumber = _ctx.IntegerValue("ListBookkeepingSubjectBalances.PageNumber");
+			listBookkeepingSubjectBalancesResponse.Success = _ctx.BooleanValue("ListBookkeepingSubjectBalances.Success");
+			listBookkeepingSubjectBalancesResponse.ErrorMsg = _ctx.StringValue("ListBookkeepingSubjectBalances.ErrorMsg");
 
 			List<ListBookkeepingSubjectBalancesResponse.ListBookkeepingSubjectBalances_BookkeepingSubjectBalancesItem> listBookkeepingSubjectBalancesResponse_bookkeepingSubjectBalances = new List<ListBookkeepingSubjectBalancesResponse.ListBookkeepingSubjectBalances_BookkeepingSubjectBalancesItem>();
-			for (int i = 0; i < context.Length("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances.Length"); i++) {
 				ListBookkeepingSubjectBalancesResponse.ListBookkeepingSubjectBalances_BookkeepingSubjectBalancesItem bookkeepingSubjectBalancesItem = new ListBookkeepingSubjectBalancesResponse.ListBookkeepingSubjectBalances_BookkeepingSubjectBalancesItem();
-				bookkeepingSubjectBalancesItem.BizId = context.StringValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].BizId");
-				bookkeepingSubjectBalancesItem.ParentBizId = context.StringValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].ParentBizId");
-				bookkeepingSubjectBalancesItem.ParentSubjectCode = context.StringValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].ParentSubjectCode");
-				bookkeepingSubjectBalancesItem.SubjectCode = context.StringValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].SubjectCode");
-				bookkeepingSubjectBalancesItem.SubjectName = context.StringValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].SubjectName");
-				bookkeepingSubjectBalancesItem.StartDebitValue = context.FloatValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].StartDebitValue");
-				bookkeepingSubjectBalancesItem.StartCreditValue = context.FloatValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].StartCreditValue");
-				bookkeepingSubjectBalancesItem.CurrentDebitValue = context.FloatValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].CurrentDebitValue");
-				bookkeepingSubjectBalancesItem.CurrentCreditValue = context.FloatValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].CurrentCreditValue");
-				bookkeepingSubjectBalancesItem.EndDebitValue = context.FloatValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].EndDebitValue");
-				bookkeepingSubjectBalancesItem.EndCreditValue = context.FloatValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].EndCreditValue");
-				bookkeepingSubjectBalancesItem.YearDebitValue = context.FloatValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].YearDebitValue");
-				bookkeepingSubjectBalancesItem.YearCreditValue = context.FloatValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].YearCreditValue");
-				bookkeepingSubjectBalancesItem.SubjectLevel = context.StringValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].SubjectLevel");
+				bookkeepingSubjectBalancesItem.BizId = _ctx.StringValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].BizId");
+				bookkeepingSubjectBalancesItem.ParentBizId = _ctx.StringValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].ParentBizId");
+				bookkeepingSubjectBalancesItem.ParentSubjectCode = _ctx.StringValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].ParentSubjectCode");
+				bookkeepingSubjectBalancesItem.SubjectCode = _ctx.StringValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].SubjectCode");
+				bookkeepingSubjectBalancesItem.SubjectName = _ctx.StringValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].SubjectName");
+				bookkeepingSubjectBalancesItem.StartDebitValue = _ctx.FloatValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].StartDebitValue");
+				bookkeepingSubjectBalancesItem.StartCreditValue = _ctx.FloatValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].StartCreditValue");
+				bookkeepingSubjectBalancesItem.CurrentDebitValue = _ctx.FloatValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].CurrentDebitValue");
+				bookkeepingSubjectBalancesItem.CurrentCreditValue = _ctx.FloatValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].CurrentCreditValue");
+				bookkeepingSubjectBalancesItem.EndDebitValue = _ctx.FloatValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].EndDebitValue");
+				bookkeepingSubjectBalancesItem.EndCreditValue = _ctx.FloatValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].EndCreditValue");
+				bookkeepingSubjectBalancesItem.YearDebitValue = _ctx.FloatValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].YearDebitValue");
+				bookkeepingSubjectBalancesItem.YearCreditValue = _ctx.FloatValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].YearCreditValue");
+				bookkeepingSubjectBalancesItem.SubjectLevel = _ctx.StringValue("ListBookkeepingSubjectBalances.BookkeepingSubjectBalances["+ i +"].SubjectLevel");
 
 				listBookkeepingSubjectBalancesResponse_bookkeepingSubjectBalances.Add(bookkeepingSubjectBalancesItem);
 			}

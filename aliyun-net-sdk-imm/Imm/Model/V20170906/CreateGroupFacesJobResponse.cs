@@ -25,13 +25,25 @@ namespace Aliyun.Acs.imm.Model.V20170906
 	public class CreateGroupFacesJobResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string jobType;
 
-		private string jobId;
+		private string requestId;
 
 		private string setId;
 
-		private string jobType;
+		private string jobId;
+
+		public string JobType
+		{
+			get
+			{
+				return jobType;
+			}
+			set	
+			{
+				jobType = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -42,18 +54,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string JobId
-		{
-			get
-			{
-				return jobId;
-			}
-			set	
-			{
-				jobId = value;
 			}
 		}
 
@@ -69,15 +69,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string JobType
+		public string JobId
 		{
 			get
 			{
-				return jobType;
+				return jobId;
 			}
 			set	
 			{
-				jobType = value;
+				jobId = value;
 			}
 		}
 	}

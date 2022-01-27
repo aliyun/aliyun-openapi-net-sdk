@@ -59,6 +59,16 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string tag;
 
+		private bool? enableBgp;
+
+		private bool? autoPropagate;
+
+		private string vpnType;
+
+		private List<DescribeVpnGateway_Tag> tags;
+
+		private DescribeVpnGateway_ReservationData reservationData;
+
 		public string RequestId
 		{
 			get
@@ -260,6 +270,200 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				tag = value;
+			}
+		}
+
+		public bool? EnableBgp
+		{
+			get
+			{
+				return enableBgp;
+			}
+			set	
+			{
+				enableBgp = value;
+			}
+		}
+
+		public bool? AutoPropagate
+		{
+			get
+			{
+				return autoPropagate;
+			}
+			set	
+			{
+				autoPropagate = value;
+			}
+		}
+
+		public string VpnType
+		{
+			get
+			{
+				return vpnType;
+			}
+			set	
+			{
+				vpnType = value;
+			}
+		}
+
+		public List<DescribeVpnGateway_Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+			}
+		}
+
+		public DescribeVpnGateway_ReservationData ReservationData
+		{
+			get
+			{
+				return reservationData;
+			}
+			set	
+			{
+				reservationData = value;
+			}
+		}
+
+		public class DescribeVpnGateway_Tag
+		{
+
+			private string key;
+
+			private string _value;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string _Value
+			{
+				get
+				{
+					return _value;
+				}
+				set	
+				{
+					_value = value;
+				}
+			}
+		}
+
+		public class DescribeVpnGateway_ReservationData
+		{
+
+			private string status;
+
+			private string reservationEndTime;
+
+			private string reservationOrderType;
+
+			private string reservationSpec;
+
+			private string reservationIpsec;
+
+			private string reservationSsl;
+
+			private int? reservationMaxConnections;
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string ReservationEndTime
+			{
+				get
+				{
+					return reservationEndTime;
+				}
+				set	
+				{
+					reservationEndTime = value;
+				}
+			}
+
+			public string ReservationOrderType
+			{
+				get
+				{
+					return reservationOrderType;
+				}
+				set	
+				{
+					reservationOrderType = value;
+				}
+			}
+
+			public string ReservationSpec
+			{
+				get
+				{
+					return reservationSpec;
+				}
+				set	
+				{
+					reservationSpec = value;
+				}
+			}
+
+			public string ReservationIpsec
+			{
+				get
+				{
+					return reservationIpsec;
+				}
+				set	
+				{
+					reservationIpsec = value;
+				}
+			}
+
+			public string ReservationSsl
+			{
+				get
+				{
+					return reservationSsl;
+				}
+				set	
+				{
+					reservationSsl = value;
+				}
+			}
+
+			public int? ReservationMaxConnections
+			{
+				get
+				{
+					return reservationMaxConnections;
+				}
+				set	
+				{
+					reservationMaxConnections = value;
+				}
 			}
 		}
 	}

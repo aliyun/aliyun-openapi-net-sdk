@@ -26,14 +26,14 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class DecodeBlindWatermarkResponseUnmarshaller
     {
-        public static DecodeBlindWatermarkResponse Unmarshall(UnmarshallerContext context)
+        public static DecodeBlindWatermarkResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DecodeBlindWatermarkResponse decodeBlindWatermarkResponse = new DecodeBlindWatermarkResponse();
 
-			decodeBlindWatermarkResponse.HttpResponse = context.HttpResponse;
-			decodeBlindWatermarkResponse.RequestId = context.StringValue("DecodeBlindWatermark.RequestId");
-			decodeBlindWatermarkResponse.TargetUri = context.StringValue("DecodeBlindWatermark.TargetUri");
-			decodeBlindWatermarkResponse.Content = context.StringValue("DecodeBlindWatermark.Content");
+			decodeBlindWatermarkResponse.HttpResponse = _ctx.HttpResponse;
+			decodeBlindWatermarkResponse.RequestId = _ctx.StringValue("DecodeBlindWatermark.RequestId");
+			decodeBlindWatermarkResponse.TargetUri = _ctx.StringValue("DecodeBlindWatermark.TargetUri");
+			decodeBlindWatermarkResponse.Content = _ctx.StringValue("DecodeBlindWatermark.Content");
         
 			return decodeBlindWatermarkResponse;
         }

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class UnassociatePhysicalConnectionFromVirtualBorderRouterResponseUnmarshaller
     {
-        public static UnassociatePhysicalConnectionFromVirtualBorderRouterResponse Unmarshall(UnmarshallerContext context)
+        public static UnassociatePhysicalConnectionFromVirtualBorderRouterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UnassociatePhysicalConnectionFromVirtualBorderRouterResponse unassociatePhysicalConnectionFromVirtualBorderRouterResponse = new UnassociatePhysicalConnectionFromVirtualBorderRouterResponse();
 
-			unassociatePhysicalConnectionFromVirtualBorderRouterResponse.HttpResponse = context.HttpResponse;
-			unassociatePhysicalConnectionFromVirtualBorderRouterResponse.RequestId = context.StringValue("UnassociatePhysicalConnectionFromVirtualBorderRouter.RequestId");
+			unassociatePhysicalConnectionFromVirtualBorderRouterResponse.HttpResponse = _ctx.HttpResponse;
+			unassociatePhysicalConnectionFromVirtualBorderRouterResponse.RequestId = _ctx.StringValue("UnassociatePhysicalConnectionFromVirtualBorderRouter.RequestId");
         
 			return unassociatePhysicalConnectionFromVirtualBorderRouterResponse;
         }

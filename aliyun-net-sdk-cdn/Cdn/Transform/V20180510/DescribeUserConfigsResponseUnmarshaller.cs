@@ -41,11 +41,6 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			ossLogConfig.Prefix = _ctx.StringValue("DescribeUserConfigs.Configs.OssLogConfig.Prefix");
 			configs.OssLogConfig = ossLogConfig;
 
-			DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_GreenManagerConfig greenManagerConfig = new DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_GreenManagerConfig();
-			greenManagerConfig.Quota = _ctx.StringValue("DescribeUserConfigs.Configs.GreenManagerConfig.Quota");
-			greenManagerConfig.Ratio = _ctx.StringValue("DescribeUserConfigs.Configs.GreenManagerConfig.Ratio");
-			configs.GreenManagerConfig = greenManagerConfig;
-
 			DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_WafConfig wafConfig = new DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_WafConfig();
 			wafConfig.Enable = _ctx.StringValue("DescribeUserConfigs.Configs.WafConfig.Enable");
 			configs.WafConfig = wafConfig;

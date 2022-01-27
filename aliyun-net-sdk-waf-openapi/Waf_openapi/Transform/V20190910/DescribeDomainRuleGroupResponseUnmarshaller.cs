@@ -31,8 +31,9 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 			DescribeDomainRuleGroupResponse describeDomainRuleGroupResponse = new DescribeDomainRuleGroupResponse();
 
 			describeDomainRuleGroupResponse.HttpResponse = _ctx.HttpResponse;
-			describeDomainRuleGroupResponse.RequestId = _ctx.StringValue("DescribeDomainRuleGroup.RequestId");
 			describeDomainRuleGroupResponse.RuleGroupId = _ctx.LongValue("DescribeDomainRuleGroup.RuleGroupId");
+			describeDomainRuleGroupResponse.RequestId = _ctx.StringValue("DescribeDomainRuleGroup.RequestId");
+			describeDomainRuleGroupResponse.WafAiStatus = _ctx.IntegerValue("DescribeDomainRuleGroup.WafAiStatus");
         
 			return describeDomainRuleGroupResponse;
         }

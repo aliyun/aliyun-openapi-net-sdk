@@ -26,13 +26,13 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class GetJobLatestAutoScalePlanResponseUnmarshaller
     {
-        public static GetJobLatestAutoScalePlanResponse Unmarshall(UnmarshallerContext context)
+        public static GetJobLatestAutoScalePlanResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetJobLatestAutoScalePlanResponse getJobLatestAutoScalePlanResponse = new GetJobLatestAutoScalePlanResponse();
 
-			getJobLatestAutoScalePlanResponse.HttpResponse = context.HttpResponse;
-			getJobLatestAutoScalePlanResponse.RequestId = context.StringValue("GetJobLatestAutoScalePlan.RequestId");
-			getJobLatestAutoScalePlanResponse.PlanJson = context.StringValue("GetJobLatestAutoScalePlan.PlanJson");
+			getJobLatestAutoScalePlanResponse.HttpResponse = _ctx.HttpResponse;
+			getJobLatestAutoScalePlanResponse.RequestId = _ctx.StringValue("GetJobLatestAutoScalePlan.RequestId");
+			getJobLatestAutoScalePlanResponse.PlanJson = _ctx.StringValue("GetJobLatestAutoScalePlan.PlanJson");
         
 			return getJobLatestAutoScalePlanResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.alimt.Model.V20181012
@@ -25,43 +25,19 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 	public class GetDocTranslateTaskResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string taskId;
-
 		private string status;
+
+		private string requestId;
 
 		private string translateFileUrl;
 
 		private string translateErrorCode;
 
-		private string translateErrorMessage;
-
 		private int? pageCount;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string taskId;
 
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-			}
-		}
+		private string translateErrorMessage;
 
 		public string Status
 		{
@@ -72,6 +48,18 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			set	
 			{
 				status = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -99,18 +87,6 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			}
 		}
 
-		public string TranslateErrorMessage
-		{
-			get
-			{
-				return translateErrorMessage;
-			}
-			set	
-			{
-				translateErrorMessage = value;
-			}
-		}
-
 		public int? PageCount
 		{
 			get
@@ -120,6 +96,30 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			set	
 			{
 				pageCount = value;
+			}
+		}
+
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+			}
+		}
+
+		public string TranslateErrorMessage
+		{
+			get
+			{
+				return translateErrorMessage;
+			}
+			set	
+			{
+				translateErrorMessage = value;
 			}
 		}
 	}

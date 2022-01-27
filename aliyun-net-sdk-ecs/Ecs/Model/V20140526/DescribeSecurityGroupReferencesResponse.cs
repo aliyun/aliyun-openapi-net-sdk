@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -87,21 +87,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeSecurityGroupReferences_ReferencingSecurityGroup
 			{
 
-				private string aliUid;
-
 				private string securityGroupId;
 
-				public string AliUid
-				{
-					get
-					{
-						return aliUid;
-					}
-					set	
-					{
-						aliUid = value;
-					}
-				}
+				private string aliUid;
 
 				public string SecurityGroupId
 				{
@@ -112,6 +100,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						securityGroupId = value;
+					}
+				}
+
+				public string AliUid
+				{
+					get
+					{
+						return aliUid;
+					}
+					set	
+					{
+						aliUid = value;
 					}
 				}
 			}

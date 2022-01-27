@@ -30,12 +30,12 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class CloseOrderRequest : RpcAcsRequest<CloseOrderResponse>
     {
         public CloseOrderRequest()
-            : base("dms-enterprise", "2018-11-01", "CloseOrder", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "CloseOrder", "dms-enterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }

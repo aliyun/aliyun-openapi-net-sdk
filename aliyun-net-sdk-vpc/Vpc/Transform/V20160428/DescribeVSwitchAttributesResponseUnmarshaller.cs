@@ -26,38 +26,38 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DescribeVSwitchAttributesResponseUnmarshaller
     {
-        public static DescribeVSwitchAttributesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVSwitchAttributesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVSwitchAttributesResponse describeVSwitchAttributesResponse = new DescribeVSwitchAttributesResponse();
 
-			describeVSwitchAttributesResponse.HttpResponse = context.HttpResponse;
-			describeVSwitchAttributesResponse.RequestId = context.StringValue("DescribeVSwitchAttributes.RequestId");
-			describeVSwitchAttributesResponse.VSwitchId = context.StringValue("DescribeVSwitchAttributes.VSwitchId");
-			describeVSwitchAttributesResponse.VpcId = context.StringValue("DescribeVSwitchAttributes.VpcId");
-			describeVSwitchAttributesResponse.Status = context.StringValue("DescribeVSwitchAttributes.Status");
-			describeVSwitchAttributesResponse.CidrBlock = context.StringValue("DescribeVSwitchAttributes.CidrBlock");
-			describeVSwitchAttributesResponse.Ipv6CidrBlock = context.StringValue("DescribeVSwitchAttributes.Ipv6CidrBlock");
-			describeVSwitchAttributesResponse.ZoneId = context.StringValue("DescribeVSwitchAttributes.ZoneId");
-			describeVSwitchAttributesResponse.AvailableIpAddressCount = context.LongValue("DescribeVSwitchAttributes.AvailableIpAddressCount");
-			describeVSwitchAttributesResponse.Description = context.StringValue("DescribeVSwitchAttributes.Description");
-			describeVSwitchAttributesResponse.VSwitchName = context.StringValue("DescribeVSwitchAttributes.VSwitchName");
-			describeVSwitchAttributesResponse.CreationTime = context.StringValue("DescribeVSwitchAttributes.CreationTime");
-			describeVSwitchAttributesResponse.IsDefault = context.BooleanValue("DescribeVSwitchAttributes.IsDefault");
-			describeVSwitchAttributesResponse.ResourceGroupId = context.StringValue("DescribeVSwitchAttributes.ResourceGroupId");
-			describeVSwitchAttributesResponse.NetworkAclId = context.StringValue("DescribeVSwitchAttributes.NetworkAclId");
-			describeVSwitchAttributesResponse.OwnerId = context.LongValue("DescribeVSwitchAttributes.OwnerId");
-			describeVSwitchAttributesResponse.ShareType = context.StringValue("DescribeVSwitchAttributes.ShareType");
+			describeVSwitchAttributesResponse.HttpResponse = _ctx.HttpResponse;
+			describeVSwitchAttributesResponse.RequestId = _ctx.StringValue("DescribeVSwitchAttributes.RequestId");
+			describeVSwitchAttributesResponse.VSwitchId = _ctx.StringValue("DescribeVSwitchAttributes.VSwitchId");
+			describeVSwitchAttributesResponse.VpcId = _ctx.StringValue("DescribeVSwitchAttributes.VpcId");
+			describeVSwitchAttributesResponse.Status = _ctx.StringValue("DescribeVSwitchAttributes.Status");
+			describeVSwitchAttributesResponse.CidrBlock = _ctx.StringValue("DescribeVSwitchAttributes.CidrBlock");
+			describeVSwitchAttributesResponse.Ipv6CidrBlock = _ctx.StringValue("DescribeVSwitchAttributes.Ipv6CidrBlock");
+			describeVSwitchAttributesResponse.ZoneId = _ctx.StringValue("DescribeVSwitchAttributes.ZoneId");
+			describeVSwitchAttributesResponse.AvailableIpAddressCount = _ctx.LongValue("DescribeVSwitchAttributes.AvailableIpAddressCount");
+			describeVSwitchAttributesResponse.Description = _ctx.StringValue("DescribeVSwitchAttributes.Description");
+			describeVSwitchAttributesResponse.VSwitchName = _ctx.StringValue("DescribeVSwitchAttributes.VSwitchName");
+			describeVSwitchAttributesResponse.CreationTime = _ctx.StringValue("DescribeVSwitchAttributes.CreationTime");
+			describeVSwitchAttributesResponse.IsDefault = _ctx.BooleanValue("DescribeVSwitchAttributes.IsDefault");
+			describeVSwitchAttributesResponse.ResourceGroupId = _ctx.StringValue("DescribeVSwitchAttributes.ResourceGroupId");
+			describeVSwitchAttributesResponse.NetworkAclId = _ctx.StringValue("DescribeVSwitchAttributes.NetworkAclId");
+			describeVSwitchAttributesResponse.OwnerId = _ctx.LongValue("DescribeVSwitchAttributes.OwnerId");
+			describeVSwitchAttributesResponse.ShareType = _ctx.StringValue("DescribeVSwitchAttributes.ShareType");
 
 			DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_RouteTable routeTable = new DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_RouteTable();
-			routeTable.RouteTableId = context.StringValue("DescribeVSwitchAttributes.RouteTable.RouteTableId");
-			routeTable.RouteTableType = context.StringValue("DescribeVSwitchAttributes.RouteTable.RouteTableType");
+			routeTable.RouteTableId = _ctx.StringValue("DescribeVSwitchAttributes.RouteTable.RouteTableId");
+			routeTable.RouteTableType = _ctx.StringValue("DescribeVSwitchAttributes.RouteTable.RouteTableType");
 			describeVSwitchAttributesResponse.RouteTable = routeTable;
 
 			List<DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_CloudResourceSetType> describeVSwitchAttributesResponse_cloudResources = new List<DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_CloudResourceSetType>();
-			for (int i = 0; i < context.Length("DescribeVSwitchAttributes.CloudResources.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVSwitchAttributes.CloudResources.Length"); i++) {
 				DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_CloudResourceSetType cloudResourceSetType = new DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_CloudResourceSetType();
-				cloudResourceSetType.ResourceType = context.StringValue("DescribeVSwitchAttributes.CloudResources["+ i +"].ResourceType");
-				cloudResourceSetType.ResourceCount = context.IntegerValue("DescribeVSwitchAttributes.CloudResources["+ i +"].ResourceCount");
+				cloudResourceSetType.ResourceType = _ctx.StringValue("DescribeVSwitchAttributes.CloudResources["+ i +"].ResourceType");
+				cloudResourceSetType.ResourceCount = _ctx.IntegerValue("DescribeVSwitchAttributes.CloudResources["+ i +"].ResourceCount");
 
 				describeVSwitchAttributesResponse_cloudResources.Add(cloudResourceSetType);
 			}

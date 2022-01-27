@@ -26,15 +26,15 @@ namespace Aliyun.Acs.imageenhan.Transform.V20190930
 {
     public class ImitatePhotoStyleResponseUnmarshaller
     {
-        public static ImitatePhotoStyleResponse Unmarshall(UnmarshallerContext context)
+        public static ImitatePhotoStyleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ImitatePhotoStyleResponse imitatePhotoStyleResponse = new ImitatePhotoStyleResponse();
 
-			imitatePhotoStyleResponse.HttpResponse = context.HttpResponse;
-			imitatePhotoStyleResponse.RequestId = context.StringValue("ImitatePhotoStyle.RequestId");
+			imitatePhotoStyleResponse.HttpResponse = _ctx.HttpResponse;
+			imitatePhotoStyleResponse.RequestId = _ctx.StringValue("ImitatePhotoStyle.RequestId");
 
 			ImitatePhotoStyleResponse.ImitatePhotoStyle_Data data = new ImitatePhotoStyleResponse.ImitatePhotoStyle_Data();
-			data.ImageURL = context.StringValue("ImitatePhotoStyle.Data.ImageURL");
+			data.ImageURL = _ctx.StringValue("ImitatePhotoStyle.Data.ImageURL");
 			imitatePhotoStyleResponse.Data = data;
         
 			return imitatePhotoStyleResponse;

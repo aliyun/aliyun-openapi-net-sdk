@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dyplsapi.Model.V20170525
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 	public class QueryPhoneNoAByTrackNoResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string code;
 
 		private string message;
 
-		private List<QueryPhoneNoAByTrackNo_PhoneNoAInfo> module;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<QueryPhoneNoAByTrackNo_PhoneNoAInfo> module;
 
 		public string Code
 		{
@@ -69,6 +57,18 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public List<QueryPhoneNoAByTrackNo_PhoneNoAInfo> Module
 		{
 			get
@@ -84,19 +84,21 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 		public class QueryPhoneNoAByTrackNo_PhoneNoAInfo
 		{
 
-			private string phoneNoA;
+			private string extension;
 
 			private string phoneNoX;
 
-			public string PhoneNoA
+			private string phoneNoA;
+
+			public string Extension
 			{
 				get
 				{
-					return phoneNoA;
+					return extension;
 				}
 				set	
 				{
-					phoneNoA = value;
+					extension = value;
 				}
 			}
 
@@ -109,6 +111,18 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 				set	
 				{
 					phoneNoX = value;
+				}
+			}
+
+			public string PhoneNoA
+			{
+				get
+				{
+					return phoneNoA;
+				}
+				set	
+				{
+					phoneNoA = value;
 				}
 			}
 		}

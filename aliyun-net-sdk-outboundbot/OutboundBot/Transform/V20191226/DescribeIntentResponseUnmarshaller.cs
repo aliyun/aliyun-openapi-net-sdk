@@ -26,26 +26,26 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class DescribeIntentResponseUnmarshaller
     {
-        public static DescribeIntentResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeIntentResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeIntentResponse describeIntentResponse = new DescribeIntentResponse();
 
-			describeIntentResponse.HttpResponse = context.HttpResponse;
-			describeIntentResponse.RequestId = context.StringValue("DescribeIntent.RequestId");
-			describeIntentResponse.Success = context.BooleanValue("DescribeIntent.Success");
-			describeIntentResponse.Code = context.StringValue("DescribeIntent.Code");
-			describeIntentResponse.Message = context.StringValue("DescribeIntent.Message");
-			describeIntentResponse.HttpStatusCode = context.IntegerValue("DescribeIntent.HttpStatusCode");
+			describeIntentResponse.HttpResponse = _ctx.HttpResponse;
+			describeIntentResponse.Code = _ctx.StringValue("DescribeIntent.Code");
+			describeIntentResponse.HttpStatusCode = _ctx.IntegerValue("DescribeIntent.HttpStatusCode");
+			describeIntentResponse.Message = _ctx.StringValue("DescribeIntent.Message");
+			describeIntentResponse.RequestId = _ctx.StringValue("DescribeIntent.RequestId");
+			describeIntentResponse.Success = _ctx.BooleanValue("DescribeIntent.Success");
 
 			DescribeIntentResponse.DescribeIntent_Intent intent = new DescribeIntentResponse.DescribeIntent_Intent();
-			intent.IntentId = context.StringValue("DescribeIntent.Intent.IntentId");
-			intent.ScriptId = context.StringValue("DescribeIntent.Intent.ScriptId");
-			intent.IntentName = context.StringValue("DescribeIntent.Intent.IntentName");
-			intent.IntentDescription = context.StringValue("DescribeIntent.Intent.IntentDescription");
-			intent.Utterances = context.StringValue("DescribeIntent.Intent.Utterances");
-			intent.Keywords = context.StringValue("DescribeIntent.Intent.Keywords");
-			intent.CreateTime = context.LongValue("DescribeIntent.Intent.CreateTime");
-			intent.UpdateTime = context.LongValue("DescribeIntent.Intent.UpdateTime");
+			intent.CreateTime = _ctx.LongValue("DescribeIntent.Intent.CreateTime");
+			intent.IntentDescription = _ctx.StringValue("DescribeIntent.Intent.IntentDescription");
+			intent.IntentId = _ctx.StringValue("DescribeIntent.Intent.IntentId");
+			intent.IntentName = _ctx.StringValue("DescribeIntent.Intent.IntentName");
+			intent.Keywords = _ctx.StringValue("DescribeIntent.Intent.Keywords");
+			intent.ScriptId = _ctx.StringValue("DescribeIntent.Intent.ScriptId");
+			intent.UpdateTime = _ctx.LongValue("DescribeIntent.Intent.UpdateTime");
+			intent.Utterances = _ctx.StringValue("DescribeIntent.Intent.Utterances");
 			describeIntentResponse.Intent = intent;
         
 			return describeIntentResponse;

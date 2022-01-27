@@ -26,11 +26,11 @@ namespace Aliyun.Acs.cr.Transform.V20160607
 {
     public class StartImageScanResponseUnmarshaller
     {
-        public static StartImageScanResponse Unmarshall(UnmarshallerContext context)
+        public static StartImageScanResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StartImageScanResponse startImageScanResponse = new StartImageScanResponse();
 
-			startImageScanResponse.HttpResponse = context.HttpResponse;
+			startImageScanResponse.HttpResponse = _ctx.HttpResponse;
         
 			return startImageScanResponse;
         }

@@ -25,9 +25,25 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 	public class RunMedQAResponse : AcsResponse
 	{
 
+		private string message;
+
 		private string requestId;
 
+		private string code;
+
 		private RunMedQA_Data data;
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -38,6 +54,18 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -56,31 +84,87 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 		public class RunMedQA_Data
 		{
 
-			private string answer;
+			private string reports;
 
-			private List<string> similarQuestion;
+			private string questionType;
 
-			public string Answer
+			private string answerType;
+
+			private string question;
+
+			private string sessionId;
+
+			private List<string> options;
+
+			public string Reports
 			{
 				get
 				{
-					return answer;
+					return reports;
 				}
 				set	
 				{
-					answer = value;
+					reports = value;
 				}
 			}
 
-			public List<string> SimilarQuestion
+			public string QuestionType
 			{
 				get
 				{
-					return similarQuestion;
+					return questionType;
 				}
 				set	
 				{
-					similarQuestion = value;
+					questionType = value;
+				}
+			}
+
+			public string AnswerType
+			{
+				get
+				{
+					return answerType;
+				}
+				set	
+				{
+					answerType = value;
+				}
+			}
+
+			public string Question
+			{
+				get
+				{
+					return question;
+				}
+				set	
+				{
+					question = value;
+				}
+			}
+
+			public string SessionId
+			{
+				get
+				{
+					return sessionId;
+				}
+				set	
+				{
+					sessionId = value;
+				}
+			}
+
+			public List<string> Options
+			{
+				get
+				{
+					return options;
+				}
+				set	
+				{
+					options = value;
 				}
 			}
 		}

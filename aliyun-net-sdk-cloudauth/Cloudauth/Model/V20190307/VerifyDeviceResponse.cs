@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 	public class VerifyDeviceResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string code;
 
 		private string message;
 
-		private VerifyDevice_ResultObject resultObject;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private VerifyDevice_ResultObject resultObject;
 
 		public string Code
 		{
@@ -69,6 +57,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public VerifyDevice_ResultObject ResultObject
 		{
 			get
@@ -84,27 +84,27 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 		public class VerifyDevice_ResultObject
 		{
 
-			private string validationRetCode;
+			private string retCodeSub;
 
 			private string productRetCode;
 
-			private string retCodeSub;
+			private string hasNext;
 
 			private string retMessageSub;
 
-			private string hasNext;
-
 			private string extParams;
 
-			public string ValidationRetCode
+			private string validationRetCode;
+
+			public string RetCodeSub
 			{
 				get
 				{
-					return validationRetCode;
+					return retCodeSub;
 				}
 				set	
 				{
-					validationRetCode = value;
+					retCodeSub = value;
 				}
 			}
 
@@ -120,15 +120,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				}
 			}
 
-			public string RetCodeSub
+			public string HasNext
 			{
 				get
 				{
-					return retCodeSub;
+					return hasNext;
 				}
 				set	
 				{
-					retCodeSub = value;
+					hasNext = value;
 				}
 			}
 
@@ -144,18 +144,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				}
 			}
 
-			public string HasNext
-			{
-				get
-				{
-					return hasNext;
-				}
-				set	
-				{
-					hasNext = value;
-				}
-			}
-
 			public string ExtParams
 			{
 				get
@@ -165,6 +153,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				set	
 				{
 					extParams = value;
+				}
+			}
+
+			public string ValidationRetCode
+			{
+				get
+				{
+					return validationRetCode;
+				}
+				set	
+				{
+					validationRetCode = value;
 				}
 			}
 		}

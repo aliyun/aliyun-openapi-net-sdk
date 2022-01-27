@@ -61,7 +61,11 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 		private string rootStackId;
 
+		private string stackType;
+
 		private List<GetStack_Parameter> parameters;
+
+		private List<GetStack_Tag> tags;
 
 		private List<Dictionary<string, string>> outputs;
 
@@ -283,6 +287,18 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			}
 		}
 
+		public string StackType
+		{
+			get
+			{
+				return stackType;
+			}
+			set	
+			{
+				stackType = value;
+			}
+		}
+
 		public List<GetStack_Parameter> Parameters
 		{
 			get
@@ -292,6 +308,18 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			set	
 			{
 				parameters = value;
+			}
+		}
+
+		public List<GetStack_Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
 			}
 		}
 
@@ -347,6 +375,38 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 				set	
 				{
 					parameterValue = value;
+				}
+			}
+		}
+
+		public class GetStack_Tag
+		{
+
+			private string key;
+
+			private string _value;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string _Value
+			{
+				get
+				{
+					return _value;
+				}
+				set	
+				{
+					_value = value;
 				}
 			}
 		}

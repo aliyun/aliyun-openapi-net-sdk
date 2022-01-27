@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResponseUnmarshaller
     {
-        public static SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResponse Unmarshall(UnmarshallerContext context)
+        public static SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResponse saveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResponse = new SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResponse();
 
-			saveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResponse.HttpResponse = context.HttpResponse;
-			saveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResponse.RequestId = context.StringValue("SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID.RequestId");
-			saveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResponse.TaskNo = context.StringValue("SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID.TaskNo");
+			saveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResponse.HttpResponse = _ctx.HttpResponse;
+			saveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResponse.RequestId = _ctx.StringValue("SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID.RequestId");
+			saveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResponse.TaskNo = _ctx.StringValue("SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID.TaskNo");
         
 			return saveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResponse;
         }

@@ -26,33 +26,34 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class GetJobResponseUnmarshaller
     {
-        public static GetJobResponse Unmarshall(UnmarshallerContext context)
+        public static GetJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetJobResponse getJobResponse = new GetJobResponse();
 
-			getJobResponse.HttpResponse = context.HttpResponse;
-			getJobResponse.RequestId = context.StringValue("GetJob.RequestId");
+			getJobResponse.HttpResponse = _ctx.HttpResponse;
+			getJobResponse.RequestId = _ctx.StringValue("GetJob.RequestId");
 
 			GetJobResponse.GetJob_Job job = new GetJobResponse.GetJob_Job();
-			job.JobName = context.StringValue("GetJob.Job.JobName");
-			job.ProjectName = context.StringValue("GetJob.Job.ProjectName");
-			job.JobType = context.StringValue("GetJob.Job.JobType");
-			job.ApiType = context.StringValue("GetJob.Job.ApiType");
-			job.Code = context.StringValue("GetJob.Job.Code");
-			job.PlanJson = context.StringValue("GetJob.Job.PlanJson");
-			job.Properties = context.StringValue("GetJob.Job.Properties");
-			job.Packages = context.StringValue("GetJob.Job.Packages");
-			job.IsCommitted = context.BooleanValue("GetJob.Job.IsCommitted");
-			job.Creator = context.StringValue("GetJob.Job.Creator");
-			job.CreateTime = context.LongValue("GetJob.Job.CreateTime");
-			job.Modifier = context.StringValue("GetJob.Job.Modifier");
-			job.ModifyTime = context.LongValue("GetJob.Job.ModifyTime");
-			job.Description = context.StringValue("GetJob.Job.Description");
-			job.EngineVersion = context.StringValue("GetJob.Job.EngineVersion");
-			job.ClusterId = context.StringValue("GetJob.Job.ClusterId");
-			job.QueueName = context.StringValue("GetJob.Job.QueueName");
-			job.FolderId = context.LongValue("GetJob.Job.FolderId");
-			job.JobId = context.StringValue("GetJob.Job.JobId");
+			job.JobName = _ctx.StringValue("GetJob.Job.JobName");
+			job.ProjectName = _ctx.StringValue("GetJob.Job.ProjectName");
+			job.JobType = _ctx.StringValue("GetJob.Job.JobType");
+			job.ApiType = _ctx.StringValue("GetJob.Job.ApiType");
+			job.Code = _ctx.StringValue("GetJob.Job.Code");
+			job.PlanJson = _ctx.StringValue("GetJob.Job.PlanJson");
+			job.Properties = _ctx.StringValue("GetJob.Job.Properties");
+			job.Packages = _ctx.StringValue("GetJob.Job.Packages");
+			job.IsCommitted = _ctx.BooleanValue("GetJob.Job.IsCommitted");
+			job.Creator = _ctx.StringValue("GetJob.Job.Creator");
+			job.CreateTime = _ctx.LongValue("GetJob.Job.CreateTime");
+			job.Modifier = _ctx.StringValue("GetJob.Job.Modifier");
+			job.ModifyTime = _ctx.LongValue("GetJob.Job.ModifyTime");
+			job.Description = _ctx.StringValue("GetJob.Job.Description");
+			job.EngineVersion = _ctx.StringValue("GetJob.Job.EngineVersion");
+			job.ClusterId = _ctx.StringValue("GetJob.Job.ClusterId");
+			job.QueueName = _ctx.StringValue("GetJob.Job.QueueName");
+			job.FolderId = _ctx.LongValue("GetJob.Job.FolderId");
+			job.JobId = _ctx.StringValue("GetJob.Job.JobId");
+			job.FileId = _ctx.StringValue("GetJob.Job.FileId");
 			getJobResponse.Job = job;
         
 			return getJobResponse;

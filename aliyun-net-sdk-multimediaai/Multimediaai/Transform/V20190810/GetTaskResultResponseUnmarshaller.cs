@@ -26,24 +26,24 @@ namespace Aliyun.Acs.multimediaai.Transform.V20190810
 {
     public class GetTaskResultResponseUnmarshaller
     {
-        public static GetTaskResultResponse Unmarshall(UnmarshallerContext context)
+        public static GetTaskResultResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetTaskResultResponse getTaskResultResponse = new GetTaskResultResponse();
 
-			getTaskResultResponse.HttpResponse = context.HttpResponse;
-			getTaskResultResponse.RequestId = context.StringValue("GetTaskResult.RequestId");
-			getTaskResultResponse.Status = context.IntegerValue("GetTaskResult.Status");
+			getTaskResultResponse.HttpResponse = _ctx.HttpResponse;
+			getTaskResultResponse.RequestId = _ctx.StringValue("GetTaskResult.RequestId");
+			getTaskResultResponse.Status = _ctx.IntegerValue("GetTaskResult.Status");
 
 			GetTaskResultResponse.GetTaskResult_Result result = new GetTaskResultResponse.GetTaskResult_Result();
-			result.ApplicationId = context.StringValue("GetTaskResult.Result.ApplicationId");
-			result.VideoName = context.StringValue("GetTaskResult.Result.VideoName");
-			result.ProcessResultUrl = context.StringValue("GetTaskResult.Result.ProcessResultUrl");
-			result.AnalysisUseTime = context.LongValue("GetTaskResult.Result.AnalysisUseTime");
-			result.VideoUrl = context.StringValue("GetTaskResult.Result.VideoUrl");
-			result.ErrorName = context.StringValue("GetTaskResult.Result.ErrorName");
-			result.ErrorReason = context.StringValue("GetTaskResult.Result.ErrorReason");
-			result.ErrorCode = context.StringValue("GetTaskResult.Result.ErrorCode");
-			result.ErrorMessage = context.StringValue("GetTaskResult.Result.ErrorMessage");
+			result.ApplicationId = _ctx.StringValue("GetTaskResult.Result.ApplicationId");
+			result.VideoName = _ctx.StringValue("GetTaskResult.Result.VideoName");
+			result.ProcessResultUrl = _ctx.StringValue("GetTaskResult.Result.ProcessResultUrl");
+			result.AnalysisUseTime = _ctx.LongValue("GetTaskResult.Result.AnalysisUseTime");
+			result.VideoUrl = _ctx.StringValue("GetTaskResult.Result.VideoUrl");
+			result.ErrorName = _ctx.StringValue("GetTaskResult.Result.ErrorName");
+			result.ErrorReason = _ctx.StringValue("GetTaskResult.Result.ErrorReason");
+			result.ErrorCode = _ctx.StringValue("GetTaskResult.Result.ErrorCode");
+			result.ErrorMessage = _ctx.StringValue("GetTaskResult.Result.ErrorMessage");
 			getTaskResultResponse.Result = result;
         
 			return getTaskResultResponse;

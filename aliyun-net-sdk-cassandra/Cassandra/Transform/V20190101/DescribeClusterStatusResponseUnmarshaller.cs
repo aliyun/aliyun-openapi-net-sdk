@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 {
     public class DescribeClusterStatusResponseUnmarshaller
     {
-        public static DescribeClusterStatusResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeClusterStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeClusterStatusResponse describeClusterStatusResponse = new DescribeClusterStatusResponse();
 
-			describeClusterStatusResponse.HttpResponse = context.HttpResponse;
-			describeClusterStatusResponse.RequestId = context.StringValue("DescribeClusterStatus.RequestId");
-			describeClusterStatusResponse.Status = context.StringValue("DescribeClusterStatus.Status");
-			describeClusterStatusResponse.CreatedTime = context.StringValue("DescribeClusterStatus.CreatedTime");
+			describeClusterStatusResponse.HttpResponse = _ctx.HttpResponse;
+			describeClusterStatusResponse.RequestId = _ctx.StringValue("DescribeClusterStatus.RequestId");
+			describeClusterStatusResponse.Status = _ctx.StringValue("DescribeClusterStatus.Status");
+			describeClusterStatusResponse.CreatedTime = _ctx.StringValue("DescribeClusterStatus.CreatedTime");
         
 			return describeClusterStatusResponse;
         }

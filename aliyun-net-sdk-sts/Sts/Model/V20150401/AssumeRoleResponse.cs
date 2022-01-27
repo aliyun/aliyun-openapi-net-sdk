@@ -27,9 +27,9 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 
 		private string requestId;
 
-		private AssumeRole_Credentials credentials;
-
 		private AssumeRole_AssumedRoleUser assumedRoleUser;
+
+		private AssumeRole_Credentials credentials;
 
 		public string RequestId
 		{
@@ -40,18 +40,6 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public AssumeRole_Credentials Credentials
-		{
-			get
-			{
-				return credentials;
-			}
-			set	
-			{
-				credentials = value;
 			}
 		}
 
@@ -67,16 +55,60 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			}
 		}
 
+		public AssumeRole_Credentials Credentials
+		{
+			get
+			{
+				return credentials;
+			}
+			set	
+			{
+				credentials = value;
+			}
+		}
+
+		public class AssumeRole_AssumedRoleUser
+		{
+
+			private string assumedRoleId;
+
+			private string arn;
+
+			public string AssumedRoleId
+			{
+				get
+				{
+					return assumedRoleId;
+				}
+				set	
+				{
+					assumedRoleId = value;
+				}
+			}
+
+			public string Arn
+			{
+				get
+				{
+					return arn;
+				}
+				set	
+				{
+					arn = value;
+				}
+			}
+		}
+
 		public class AssumeRole_Credentials
 		{
 
 			private string securityToken;
 
+			private string expiration;
+
 			private string accessKeySecret;
 
 			private string accessKeyId;
-
-			private string expiration;
 
 			public string SecurityToken
 			{
@@ -87,6 +119,18 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 				set	
 				{
 					securityToken = value;
+				}
+			}
+
+			public string Expiration
+			{
+				get
+				{
+					return expiration;
+				}
+				set	
+				{
+					expiration = value;
 				}
 			}
 
@@ -111,50 +155,6 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 				set	
 				{
 					accessKeyId = value;
-				}
-			}
-
-			public string Expiration
-			{
-				get
-				{
-					return expiration;
-				}
-				set	
-				{
-					expiration = value;
-				}
-			}
-		}
-
-		public class AssumeRole_AssumedRoleUser
-		{
-
-			private string arn;
-
-			private string assumedRoleId;
-
-			public string Arn
-			{
-				get
-				{
-					return arn;
-				}
-				set	
-				{
-					arn = value;
-				}
-			}
-
-			public string AssumedRoleId
-			{
-				get
-				{
-					return assumedRoleId;
-				}
-				set	
-				{
-					assumedRoleId = value;
 				}
 			}
 		}

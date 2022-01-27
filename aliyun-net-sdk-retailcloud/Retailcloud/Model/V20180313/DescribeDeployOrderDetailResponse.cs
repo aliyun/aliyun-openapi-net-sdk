@@ -98,59 +98,71 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 		public class DescribeDeployOrderDetail_Result
 		{
 
+			private int? status;
+
 			private string appInstanceType;
-
-			private int? currentPartitionNum;
-
-			private long? deployOrderId;
-
-			private string deployPauseType;
-
-			private string deployPauseTypeName;
 
 			private string deployType;
 
-			private string deployTypeName;
-
-			private string description;
-
-			private int? elapsedTime;
-
-			private string endTime;
-
-			private long? envId;
-
-			private string envType;
-
-			private string failureRate;
-
-			private int? finishAppInstanceCt;
-
-			private string name;
-
-			private string partitionType;
+			private string userId;
 
 			private string partitionTypeName;
 
-			private int? result;
-
-			private string resultName;
-
-			private long? schemaId;
-
-			private string startTime;
-
-			private int? status;
-
 			private string statusName;
+
+			private string envType;
 
 			private int? totalAppInstanceCt;
 
+			private int? elapsedTime;
+
+			private string description;
+
+			private string name;
+
+			private string deployTypeName;
+
+			private int? finishAppInstanceCt;
+
+			private long? schemaId;
+
+			private string deployPauseType;
+
+			private int? result;
+
+			private string failureRate;
+
 			private int? totalPartitions;
 
-			private string userId;
-
 			private string userNick;
+
+			private string endTime;
+
+			private string startTime;
+
+			private long? deployOrderId;
+
+			private string deployPauseTypeName;
+
+			private string resultName;
+
+			private int? currentPartitionNum;
+
+			private string partitionType;
+
+			private long? envId;
+
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
 
 			public string AppInstanceType
 			{
@@ -161,54 +173,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 				set	
 				{
 					appInstanceType = value;
-				}
-			}
-
-			public int? CurrentPartitionNum
-			{
-				get
-				{
-					return currentPartitionNum;
-				}
-				set	
-				{
-					currentPartitionNum = value;
-				}
-			}
-
-			public long? DeployOrderId
-			{
-				get
-				{
-					return deployOrderId;
-				}
-				set	
-				{
-					deployOrderId = value;
-				}
-			}
-
-			public string DeployPauseType
-			{
-				get
-				{
-					return deployPauseType;
-				}
-				set	
-				{
-					deployPauseType = value;
-				}
-			}
-
-			public string DeployPauseTypeName
-			{
-				get
-				{
-					return deployPauseTypeName;
-				}
-				set	
-				{
-					deployPauseTypeName = value;
 				}
 			}
 
@@ -224,123 +188,15 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 				}
 			}
 
-			public string DeployTypeName
+			public string UserId
 			{
 				get
 				{
-					return deployTypeName;
+					return userId;
 				}
 				set	
 				{
-					deployTypeName = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public int? ElapsedTime
-			{
-				get
-				{
-					return elapsedTime;
-				}
-				set	
-				{
-					elapsedTime = value;
-				}
-			}
-
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
-
-			public long? EnvId
-			{
-				get
-				{
-					return envId;
-				}
-				set	
-				{
-					envId = value;
-				}
-			}
-
-			public string EnvType
-			{
-				get
-				{
-					return envType;
-				}
-				set	
-				{
-					envType = value;
-				}
-			}
-
-			public string FailureRate
-			{
-				get
-				{
-					return failureRate;
-				}
-				set	
-				{
-					failureRate = value;
-				}
-			}
-
-			public int? FinishAppInstanceCt
-			{
-				get
-				{
-					return finishAppInstanceCt;
-				}
-				set	
-				{
-					finishAppInstanceCt = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string PartitionType
-			{
-				get
-				{
-					return partitionType;
-				}
-				set	
-				{
-					partitionType = value;
+					userId = value;
 				}
 			}
 
@@ -356,66 +212,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 				}
 			}
 
-			public int? Result
-			{
-				get
-				{
-					return result;
-				}
-				set	
-				{
-					result = value;
-				}
-			}
-
-			public string ResultName
-			{
-				get
-				{
-					return resultName;
-				}
-				set	
-				{
-					resultName = value;
-				}
-			}
-
-			public long? SchemaId
-			{
-				get
-				{
-					return schemaId;
-				}
-				set	
-				{
-					schemaId = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
 			public string StatusName
 			{
 				get
@@ -425,6 +221,18 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 				set	
 				{
 					statusName = value;
+				}
+			}
+
+			public string EnvType
+			{
+				get
+				{
+					return envType;
+				}
+				set	
+				{
+					envType = value;
 				}
 			}
 
@@ -440,6 +248,114 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 				}
 			}
 
+			public int? ElapsedTime
+			{
+				get
+				{
+					return elapsedTime;
+				}
+				set	
+				{
+					elapsedTime = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string DeployTypeName
+			{
+				get
+				{
+					return deployTypeName;
+				}
+				set	
+				{
+					deployTypeName = value;
+				}
+			}
+
+			public int? FinishAppInstanceCt
+			{
+				get
+				{
+					return finishAppInstanceCt;
+				}
+				set	
+				{
+					finishAppInstanceCt = value;
+				}
+			}
+
+			public long? SchemaId
+			{
+				get
+				{
+					return schemaId;
+				}
+				set	
+				{
+					schemaId = value;
+				}
+			}
+
+			public string DeployPauseType
+			{
+				get
+				{
+					return deployPauseType;
+				}
+				set	
+				{
+					deployPauseType = value;
+				}
+			}
+
+			public int? Result
+			{
+				get
+				{
+					return result;
+				}
+				set	
+				{
+					result = value;
+				}
+			}
+
+			public string FailureRate
+			{
+				get
+				{
+					return failureRate;
+				}
+				set	
+				{
+					failureRate = value;
+				}
+			}
+
 			public int? TotalPartitions
 			{
 				get
@@ -452,18 +368,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 				}
 			}
 
-			public string UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
-
 			public string UserNick
 			{
 				get
@@ -473,6 +377,102 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 				set	
 				{
 					userNick = value;
+				}
+			}
+
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			public long? DeployOrderId
+			{
+				get
+				{
+					return deployOrderId;
+				}
+				set	
+				{
+					deployOrderId = value;
+				}
+			}
+
+			public string DeployPauseTypeName
+			{
+				get
+				{
+					return deployPauseTypeName;
+				}
+				set	
+				{
+					deployPauseTypeName = value;
+				}
+			}
+
+			public string ResultName
+			{
+				get
+				{
+					return resultName;
+				}
+				set	
+				{
+					resultName = value;
+				}
+			}
+
+			public int? CurrentPartitionNum
+			{
+				get
+				{
+					return currentPartitionNum;
+				}
+				set	
+				{
+					currentPartitionNum = value;
+				}
+			}
+
+			public string PartitionType
+			{
+				get
+				{
+					return partitionType;
+				}
+				set	
+				{
+					partitionType = value;
+				}
+			}
+
+			public long? EnvId
+			{
+				get
+				{
+					return envId;
+				}
+				set	
+				{
+					envId = value;
 				}
 			}
 		}

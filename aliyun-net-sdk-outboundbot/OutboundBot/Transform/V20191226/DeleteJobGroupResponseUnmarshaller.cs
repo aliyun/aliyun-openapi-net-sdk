@@ -26,16 +26,16 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class DeleteJobGroupResponseUnmarshaller
     {
-        public static DeleteJobGroupResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteJobGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteJobGroupResponse deleteJobGroupResponse = new DeleteJobGroupResponse();
 
-			deleteJobGroupResponse.HttpResponse = context.HttpResponse;
-			deleteJobGroupResponse.RequestId = context.StringValue("DeleteJobGroup.RequestId");
-			deleteJobGroupResponse.Success = context.BooleanValue("DeleteJobGroup.Success");
-			deleteJobGroupResponse.Code = context.StringValue("DeleteJobGroup.Code");
-			deleteJobGroupResponse.Message = context.StringValue("DeleteJobGroup.Message");
-			deleteJobGroupResponse.HttpStatusCode = context.IntegerValue("DeleteJobGroup.HttpStatusCode");
+			deleteJobGroupResponse.HttpResponse = _ctx.HttpResponse;
+			deleteJobGroupResponse.Code = _ctx.StringValue("DeleteJobGroup.Code");
+			deleteJobGroupResponse.HttpStatusCode = _ctx.IntegerValue("DeleteJobGroup.HttpStatusCode");
+			deleteJobGroupResponse.Message = _ctx.StringValue("DeleteJobGroup.Message");
+			deleteJobGroupResponse.RequestId = _ctx.StringValue("DeleteJobGroup.RequestId");
+			deleteJobGroupResponse.Success = _ctx.BooleanValue("DeleteJobGroup.Success");
         
 			return deleteJobGroupResponse;
         }

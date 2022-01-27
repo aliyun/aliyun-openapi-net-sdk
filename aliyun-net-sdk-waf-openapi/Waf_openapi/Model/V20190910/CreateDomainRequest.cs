@@ -42,6 +42,8 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 		private int? ipFollowStatus;
 
+		private string sniHost;
+
 		private string resourceGroupId;
 
 		private string httpPort;
@@ -50,9 +52,15 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 		private int? writeTime;
 
+		private int? sniStatus;
+
+		private int? accessHeaderMode;
+
 		private string accessType;
 
 		private string logHeaders;
+
+		private string accessHeaders;
 
 		private int? connectionTime;
 
@@ -88,6 +96,19 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			{
 				ipFollowStatus = value;
 				DictionaryUtil.Add(QueryParameters, "IpFollowStatus", value.ToString());
+			}
+		}
+
+		public string SniHost
+		{
+			get
+			{
+				return sniHost;
+			}
+			set	
+			{
+				sniHost = value;
+				DictionaryUtil.Add(QueryParameters, "SniHost", value);
 			}
 		}
 
@@ -143,6 +164,32 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			}
 		}
 
+		public int? SniStatus
+		{
+			get
+			{
+				return sniStatus;
+			}
+			set	
+			{
+				sniStatus = value;
+				DictionaryUtil.Add(QueryParameters, "SniStatus", value.ToString());
+			}
+		}
+
+		public int? AccessHeaderMode
+		{
+			get
+			{
+				return accessHeaderMode;
+			}
+			set	
+			{
+				accessHeaderMode = value;
+				DictionaryUtil.Add(QueryParameters, "AccessHeaderMode", value.ToString());
+			}
+		}
+
 		public string AccessType
 		{
 			get
@@ -166,6 +213,19 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			{
 				logHeaders = value;
 				DictionaryUtil.Add(QueryParameters, "LogHeaders", value);
+			}
+		}
+
+		public string AccessHeaders
+		{
+			get
+			{
+				return accessHeaders;
+			}
+			set	
+			{
+				accessHeaders = value;
+				DictionaryUtil.Add(QueryParameters, "AccessHeaders", value);
 			}
 		}
 

@@ -26,19 +26,19 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class AddCategoryResponseUnmarshaller
     {
-        public static AddCategoryResponse Unmarshall(UnmarshallerContext context)
+        public static AddCategoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddCategoryResponse addCategoryResponse = new AddCategoryResponse();
 
-			addCategoryResponse.HttpResponse = context.HttpResponse;
-			addCategoryResponse.RequestId = context.StringValue("AddCategory.RequestId");
+			addCategoryResponse.HttpResponse = _ctx.HttpResponse;
+			addCategoryResponse.RequestId = _ctx.StringValue("AddCategory.RequestId");
 
 			AddCategoryResponse.AddCategory_Category category = new AddCategoryResponse.AddCategory_Category();
-			category.CateId = context.LongValue("AddCategory.Category.CateId");
-			category.CateName = context.StringValue("AddCategory.Category.CateName");
-			category.ParentId = context.LongValue("AddCategory.Category.ParentId");
-			category.Level = context.LongValue("AddCategory.Category.Level");
-			category.Type = context.StringValue("AddCategory.Category.Type");
+			category.CateId = _ctx.LongValue("AddCategory.Category.CateId");
+			category.CateName = _ctx.StringValue("AddCategory.Category.CateName");
+			category.ParentId = _ctx.LongValue("AddCategory.Category.ParentId");
+			category.Level = _ctx.LongValue("AddCategory.Category.Level");
+			category.Type = _ctx.StringValue("AddCategory.Category.Type");
 			addCategoryResponse.Category = category;
         
 			return addCategoryResponse;

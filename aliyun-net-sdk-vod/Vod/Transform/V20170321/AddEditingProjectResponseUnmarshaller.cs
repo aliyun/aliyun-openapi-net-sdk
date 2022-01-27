@@ -26,20 +26,20 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class AddEditingProjectResponseUnmarshaller
     {
-        public static AddEditingProjectResponse Unmarshall(UnmarshallerContext context)
+        public static AddEditingProjectResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddEditingProjectResponse addEditingProjectResponse = new AddEditingProjectResponse();
 
-			addEditingProjectResponse.HttpResponse = context.HttpResponse;
-			addEditingProjectResponse.RequestId = context.StringValue("AddEditingProject.RequestId");
+			addEditingProjectResponse.HttpResponse = _ctx.HttpResponse;
+			addEditingProjectResponse.RequestId = _ctx.StringValue("AddEditingProject.RequestId");
 
 			AddEditingProjectResponse.AddEditingProject_Project project = new AddEditingProjectResponse.AddEditingProject_Project();
-			project.ProjectId = context.StringValue("AddEditingProject.Project.ProjectId");
-			project.CreationTime = context.StringValue("AddEditingProject.Project.CreationTime");
-			project.ModifiedTime = context.StringValue("AddEditingProject.Project.ModifiedTime");
-			project.Status = context.StringValue("AddEditingProject.Project.Status");
-			project.Description = context.StringValue("AddEditingProject.Project.Description");
-			project.Title = context.StringValue("AddEditingProject.Project.Title");
+			project.ProjectId = _ctx.StringValue("AddEditingProject.Project.ProjectId");
+			project.CreationTime = _ctx.StringValue("AddEditingProject.Project.CreationTime");
+			project.ModifiedTime = _ctx.StringValue("AddEditingProject.Project.ModifiedTime");
+			project.Status = _ctx.StringValue("AddEditingProject.Project.Status");
+			project.Description = _ctx.StringValue("AddEditingProject.Project.Description");
+			project.Title = _ctx.StringValue("AddEditingProject.Project.Title");
 			addEditingProjectResponse.Project = project;
         
 			return addEditingProjectResponse;

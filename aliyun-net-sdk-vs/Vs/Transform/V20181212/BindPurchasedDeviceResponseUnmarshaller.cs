@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class BindPurchasedDeviceResponseUnmarshaller
     {
-        public static BindPurchasedDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static BindPurchasedDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BindPurchasedDeviceResponse bindPurchasedDeviceResponse = new BindPurchasedDeviceResponse();
 
-			bindPurchasedDeviceResponse.HttpResponse = context.HttpResponse;
-			bindPurchasedDeviceResponse.RequestId = context.StringValue("BindPurchasedDevice.RequestId");
+			bindPurchasedDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			bindPurchasedDeviceResponse.RequestId = _ctx.StringValue("BindPurchasedDevice.RequestId");
         
 			return bindPurchasedDeviceResponse;
         }

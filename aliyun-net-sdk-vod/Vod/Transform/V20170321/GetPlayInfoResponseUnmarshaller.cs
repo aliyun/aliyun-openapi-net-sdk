@@ -26,28 +26,29 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetPlayInfoResponseUnmarshaller
     {
-        public static GetPlayInfoResponse Unmarshall(UnmarshallerContext context)
+        public static GetPlayInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetPlayInfoResponse getPlayInfoResponse = new GetPlayInfoResponse();
 
-			getPlayInfoResponse.HttpResponse = context.HttpResponse;
-			getPlayInfoResponse.RequestId = context.StringValue("GetPlayInfo.RequestId");
+			getPlayInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getPlayInfoResponse.RequestId = _ctx.StringValue("GetPlayInfo.RequestId");
 
 			GetPlayInfoResponse.GetPlayInfo_VideoBase videoBase = new GetPlayInfoResponse.GetPlayInfo_VideoBase();
-			videoBase.OutputType = context.StringValue("GetPlayInfo.VideoBase.OutputType");
-			videoBase.CoverURL = context.StringValue("GetPlayInfo.VideoBase.CoverURL");
-			videoBase.Duration = context.StringValue("GetPlayInfo.VideoBase.Duration");
-			videoBase.Status = context.StringValue("GetPlayInfo.VideoBase.Status");
-			videoBase.Title = context.StringValue("GetPlayInfo.VideoBase.Title");
-			videoBase.VideoId = context.StringValue("GetPlayInfo.VideoBase.VideoId");
-			videoBase.MediaType = context.StringValue("GetPlayInfo.VideoBase.MediaType");
-			videoBase.CreationTime = context.StringValue("GetPlayInfo.VideoBase.CreationTime");
-			videoBase.TranscodeMode = context.StringValue("GetPlayInfo.VideoBase.TranscodeMode");
+			videoBase.CreationTime = _ctx.StringValue("GetPlayInfo.VideoBase.CreationTime");
+			videoBase.Status = _ctx.StringValue("GetPlayInfo.VideoBase.Status");
+			videoBase.TranscodeMode = _ctx.StringValue("GetPlayInfo.VideoBase.TranscodeMode");
+			videoBase.OutputType = _ctx.StringValue("GetPlayInfo.VideoBase.OutputType");
+			videoBase.VideoId = _ctx.StringValue("GetPlayInfo.VideoBase.VideoId");
+			videoBase.CoverURL = _ctx.StringValue("GetPlayInfo.VideoBase.CoverURL");
+			videoBase.Duration = _ctx.StringValue("GetPlayInfo.VideoBase.Duration");
+			videoBase.Title = _ctx.StringValue("GetPlayInfo.VideoBase.Title");
+			videoBase.MediaType = _ctx.StringValue("GetPlayInfo.VideoBase.MediaType");
+			videoBase.DanMuURL = _ctx.StringValue("GetPlayInfo.VideoBase.DanMuURL");
 
 			List<GetPlayInfoResponse.GetPlayInfo_VideoBase.GetPlayInfo_Thumbnail> videoBase_thumbnailList = new List<GetPlayInfoResponse.GetPlayInfo_VideoBase.GetPlayInfo_Thumbnail>();
-			for (int i = 0; i < context.Length("GetPlayInfo.VideoBase.ThumbnailList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetPlayInfo.VideoBase.ThumbnailList.Length"); i++) {
 				GetPlayInfoResponse.GetPlayInfo_VideoBase.GetPlayInfo_Thumbnail thumbnail = new GetPlayInfoResponse.GetPlayInfo_VideoBase.GetPlayInfo_Thumbnail();
-				thumbnail.URL = context.StringValue("GetPlayInfo.VideoBase.ThumbnailList["+ i +"].URL");
+				thumbnail.URL = _ctx.StringValue("GetPlayInfo.VideoBase.ThumbnailList["+ i +"].URL");
 
 				videoBase_thumbnailList.Add(thumbnail);
 			}
@@ -55,31 +56,32 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			getPlayInfoResponse.VideoBase = videoBase;
 
 			List<GetPlayInfoResponse.GetPlayInfo_PlayInfo> getPlayInfoResponse_playInfoList = new List<GetPlayInfoResponse.GetPlayInfo_PlayInfo>();
-			for (int i = 0; i < context.Length("GetPlayInfo.PlayInfoList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetPlayInfo.PlayInfoList.Length"); i++) {
 				GetPlayInfoResponse.GetPlayInfo_PlayInfo playInfo = new GetPlayInfoResponse.GetPlayInfo_PlayInfo();
-				playInfo.Width = context.LongValue("GetPlayInfo.PlayInfoList["+ i +"].Width");
-				playInfo.Height = context.LongValue("GetPlayInfo.PlayInfoList["+ i +"].Height");
-				playInfo.Size = context.LongValue("GetPlayInfo.PlayInfoList["+ i +"].Size");
-				playInfo.PlayURL = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].PlayURL");
-				playInfo.Bitrate = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Bitrate");
-				playInfo.Definition = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Definition");
-				playInfo.Duration = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Duration");
-				playInfo.Format = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Format");
-				playInfo.Fps = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Fps");
-				playInfo.Encrypt = context.LongValue("GetPlayInfo.PlayInfoList["+ i +"].Encrypt");
-				playInfo.Plaintext = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Plaintext");
-				playInfo.Complexity = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Complexity");
-				playInfo.StreamType = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].StreamType");
-				playInfo.Rand = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Rand");
-				playInfo.JobId = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].JobId");
-				playInfo.PreprocessStatus = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].PreprocessStatus");
-				playInfo.WatermarkId = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].WatermarkId");
-				playInfo.Status = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Status");
-				playInfo.CreationTime = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].CreationTime");
-				playInfo.ModificationTime = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].ModificationTime");
-				playInfo.EncryptType = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].EncryptType");
-				playInfo.NarrowBandType = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].NarrowBandType");
-				playInfo.Specification = context.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Specification");
+				playInfo.CreationTime = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].CreationTime");
+				playInfo.Status = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Status");
+				playInfo.Specification = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Specification");
+				playInfo.Complexity = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Complexity");
+				playInfo.NarrowBandType = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].NarrowBandType");
+				playInfo.Height = _ctx.LongValue("GetPlayInfo.PlayInfoList["+ i +"].Height");
+				playInfo.Bitrate = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Bitrate");
+				playInfo.ModificationTime = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].ModificationTime");
+				playInfo.WatermarkId = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].WatermarkId");
+				playInfo.Encrypt = _ctx.LongValue("GetPlayInfo.PlayInfoList["+ i +"].Encrypt");
+				playInfo.Definition = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Definition");
+				playInfo.Rand = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Rand");
+				playInfo.EncryptType = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].EncryptType");
+				playInfo.PreprocessStatus = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].PreprocessStatus");
+				playInfo.StreamType = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].StreamType");
+				playInfo.JobId = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].JobId");
+				playInfo.Plaintext = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Plaintext");
+				playInfo.Size = _ctx.LongValue("GetPlayInfo.PlayInfoList["+ i +"].Size");
+				playInfo.Width = _ctx.LongValue("GetPlayInfo.PlayInfoList["+ i +"].Width");
+				playInfo.Fps = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Fps");
+				playInfo.Duration = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Duration");
+				playInfo.PlayURL = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].PlayURL");
+				playInfo.Format = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Format");
+				playInfo.HDRType = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].HDRType");
 
 				getPlayInfoResponse_playInfoList.Add(playInfo);
 			}

@@ -25,23 +25,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class GetVideoPlayAuthResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string playAuth;
 
-		private GetVideoPlayAuth_VideoMeta videoMeta;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private GetVideoPlayAuth_VideoMeta videoMeta;
 
 		public string PlayAuth
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				playAuth = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,25 +70,25 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class GetVideoPlayAuth_VideoMeta
 		{
 
-			private string coverURL;
+			private string status;
 
 			private float? duration;
-
-			private string status;
 
 			private string title;
 
 			private string videoId;
 
-			public string CoverURL
+			private string coverURL;
+
+			public string Status
 			{
 				get
 				{
-					return coverURL;
+					return status;
 				}
 				set	
 				{
-					coverURL = value;
+					status = value;
 				}
 			}
 
@@ -101,18 +101,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					duration = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
 				}
 			}
 
@@ -137,6 +125,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					videoId = value;
+				}
+			}
+
+			public string CoverURL
+			{
+				get
+				{
+					return coverURL;
+				}
+				set	
+				{
+					coverURL = value;
 				}
 			}
 		}

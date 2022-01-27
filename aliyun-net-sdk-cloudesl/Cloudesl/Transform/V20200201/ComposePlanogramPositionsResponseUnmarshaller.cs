@@ -26,19 +26,19 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
     public class ComposePlanogramPositionsResponseUnmarshaller
     {
-        public static ComposePlanogramPositionsResponse Unmarshall(UnmarshallerContext context)
+        public static ComposePlanogramPositionsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ComposePlanogramPositionsResponse composePlanogramPositionsResponse = new ComposePlanogramPositionsResponse();
 
-			composePlanogramPositionsResponse.HttpResponse = context.HttpResponse;
-			composePlanogramPositionsResponse.ErrorMessage = context.StringValue("ComposePlanogramPositions.ErrorMessage");
-			composePlanogramPositionsResponse.ErrorCode = context.StringValue("ComposePlanogramPositions.ErrorCode");
-			composePlanogramPositionsResponse.Message = context.StringValue("ComposePlanogramPositions.Message");
-			composePlanogramPositionsResponse.DynamicCode = context.StringValue("ComposePlanogramPositions.DynamicCode");
-			composePlanogramPositionsResponse.Code = context.StringValue("ComposePlanogramPositions.Code");
-			composePlanogramPositionsResponse.DynamicMessage = context.StringValue("ComposePlanogramPositions.DynamicMessage");
-			composePlanogramPositionsResponse.RequestId = context.StringValue("ComposePlanogramPositions.RequestId");
-			composePlanogramPositionsResponse.Success = context.BooleanValue("ComposePlanogramPositions.Success");
+			composePlanogramPositionsResponse.HttpResponse = _ctx.HttpResponse;
+			composePlanogramPositionsResponse.ErrorMessage = _ctx.StringValue("ComposePlanogramPositions.ErrorMessage");
+			composePlanogramPositionsResponse.ErrorCode = _ctx.StringValue("ComposePlanogramPositions.ErrorCode");
+			composePlanogramPositionsResponse.Message = _ctx.StringValue("ComposePlanogramPositions.Message");
+			composePlanogramPositionsResponse.DynamicCode = _ctx.StringValue("ComposePlanogramPositions.DynamicCode");
+			composePlanogramPositionsResponse.Code = _ctx.StringValue("ComposePlanogramPositions.Code");
+			composePlanogramPositionsResponse.DynamicMessage = _ctx.StringValue("ComposePlanogramPositions.DynamicMessage");
+			composePlanogramPositionsResponse.RequestId = _ctx.StringValue("ComposePlanogramPositions.RequestId");
+			composePlanogramPositionsResponse.Success = _ctx.BooleanValue("ComposePlanogramPositions.Success");
         
 			return composePlanogramPositionsResponse;
         }

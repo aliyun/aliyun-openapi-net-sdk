@@ -26,52 +26,52 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetVideoInfosResponseUnmarshaller
     {
-        public static GetVideoInfosResponse Unmarshall(UnmarshallerContext context)
+        public static GetVideoInfosResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetVideoInfosResponse getVideoInfosResponse = new GetVideoInfosResponse();
 
-			getVideoInfosResponse.HttpResponse = context.HttpResponse;
-			getVideoInfosResponse.RequestId = context.StringValue("GetVideoInfos.RequestId");
+			getVideoInfosResponse.HttpResponse = _ctx.HttpResponse;
+			getVideoInfosResponse.RequestId = _ctx.StringValue("GetVideoInfos.RequestId");
 
 			List<string> getVideoInfosResponse_nonExistVideoIds = new List<string>();
-			for (int i = 0; i < context.Length("GetVideoInfos.NonExistVideoIds.Length"); i++) {
-				getVideoInfosResponse_nonExistVideoIds.Add(context.StringValue("GetVideoInfos.NonExistVideoIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetVideoInfos.NonExistVideoIds.Length"); i++) {
+				getVideoInfosResponse_nonExistVideoIds.Add(_ctx.StringValue("GetVideoInfos.NonExistVideoIds["+ i +"]"));
 			}
 			getVideoInfosResponse.NonExistVideoIds = getVideoInfosResponse_nonExistVideoIds;
 
 			List<GetVideoInfosResponse.GetVideoInfos_Video> getVideoInfosResponse_videoList = new List<GetVideoInfosResponse.GetVideoInfos_Video>();
-			for (int i = 0; i < context.Length("GetVideoInfos.VideoList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetVideoInfos.VideoList.Length"); i++) {
 				GetVideoInfosResponse.GetVideoInfos_Video video = new GetVideoInfosResponse.GetVideoInfos_Video();
-				video.VideoId = context.StringValue("GetVideoInfos.VideoList["+ i +"].VideoId");
-				video.Title = context.StringValue("GetVideoInfos.VideoList["+ i +"].Title");
-				video.Tags = context.StringValue("GetVideoInfos.VideoList["+ i +"].Tags");
-				video.Status = context.StringValue("GetVideoInfos.VideoList["+ i +"].Status");
-				video.Size = context.LongValue("GetVideoInfos.VideoList["+ i +"].Size");
-				video.Duration = context.FloatValue("GetVideoInfos.VideoList["+ i +"].Duration");
-				video.Description = context.StringValue("GetVideoInfos.VideoList["+ i +"].Description");
-				video.ModificationTime = context.StringValue("GetVideoInfos.VideoList["+ i +"].ModificationTime");
-				video.CreationTime = context.StringValue("GetVideoInfos.VideoList["+ i +"].CreationTime");
-				video.CoverURL = context.StringValue("GetVideoInfos.VideoList["+ i +"].CoverURL");
-				video.CateId = context.LongValue("GetVideoInfos.VideoList["+ i +"].CateId");
-				video.CateName = context.StringValue("GetVideoInfos.VideoList["+ i +"].CateName");
-				video.DownloadSwitch = context.StringValue("GetVideoInfos.VideoList["+ i +"].DownloadSwitch");
-				video.TemplateGroupId = context.StringValue("GetVideoInfos.VideoList["+ i +"].TemplateGroupId");
-				video.PreprocessStatus = context.StringValue("GetVideoInfos.VideoList["+ i +"].PreprocessStatus");
-				video.StorageLocation = context.StringValue("GetVideoInfos.VideoList["+ i +"].StorageLocation");
-				video.RegionId = context.StringValue("GetVideoInfos.VideoList["+ i +"].RegionId");
-				video.CustomMediaInfo = context.StringValue("GetVideoInfos.VideoList["+ i +"].CustomMediaInfo");
-				video.AppId = context.StringValue("GetVideoInfos.VideoList["+ i +"].AppId");
+				video.VideoId = _ctx.StringValue("GetVideoInfos.VideoList["+ i +"].VideoId");
+				video.Title = _ctx.StringValue("GetVideoInfos.VideoList["+ i +"].Title");
+				video.Tags = _ctx.StringValue("GetVideoInfos.VideoList["+ i +"].Tags");
+				video.Status = _ctx.StringValue("GetVideoInfos.VideoList["+ i +"].Status");
+				video.Size = _ctx.LongValue("GetVideoInfos.VideoList["+ i +"].Size");
+				video.Duration = _ctx.FloatValue("GetVideoInfos.VideoList["+ i +"].Duration");
+				video.Description = _ctx.StringValue("GetVideoInfos.VideoList["+ i +"].Description");
+				video.ModificationTime = _ctx.StringValue("GetVideoInfos.VideoList["+ i +"].ModificationTime");
+				video.CreationTime = _ctx.StringValue("GetVideoInfos.VideoList["+ i +"].CreationTime");
+				video.CoverURL = _ctx.StringValue("GetVideoInfos.VideoList["+ i +"].CoverURL");
+				video.CateId = _ctx.LongValue("GetVideoInfos.VideoList["+ i +"].CateId");
+				video.CateName = _ctx.StringValue("GetVideoInfos.VideoList["+ i +"].CateName");
+				video.DownloadSwitch = _ctx.StringValue("GetVideoInfos.VideoList["+ i +"].DownloadSwitch");
+				video.TemplateGroupId = _ctx.StringValue("GetVideoInfos.VideoList["+ i +"].TemplateGroupId");
+				video.PreprocessStatus = _ctx.StringValue("GetVideoInfos.VideoList["+ i +"].PreprocessStatus");
+				video.StorageLocation = _ctx.StringValue("GetVideoInfos.VideoList["+ i +"].StorageLocation");
+				video.RegionId = _ctx.StringValue("GetVideoInfos.VideoList["+ i +"].RegionId");
+				video.CustomMediaInfo = _ctx.StringValue("GetVideoInfos.VideoList["+ i +"].CustomMediaInfo");
+				video.AppId = _ctx.StringValue("GetVideoInfos.VideoList["+ i +"].AppId");
 
 				List<string> video_snapshots = new List<string>();
-				for (int j = 0; j < context.Length("GetVideoInfos.VideoList["+ i +"].Snapshots.Length"); j++) {
-					video_snapshots.Add(context.StringValue("GetVideoInfos.VideoList["+ i +"].Snapshots["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("GetVideoInfos.VideoList["+ i +"].Snapshots.Length"); j++) {
+					video_snapshots.Add(_ctx.StringValue("GetVideoInfos.VideoList["+ i +"].Snapshots["+ j +"]"));
 				}
 				video.Snapshots = video_snapshots;
 
 				List<GetVideoInfosResponse.GetVideoInfos_Video.GetVideoInfos_Thumbnail> video_thumbnailList = new List<GetVideoInfosResponse.GetVideoInfos_Video.GetVideoInfos_Thumbnail>();
-				for (int j = 0; j < context.Length("GetVideoInfos.VideoList["+ i +"].ThumbnailList.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("GetVideoInfos.VideoList["+ i +"].ThumbnailList.Length"); j++) {
 					GetVideoInfosResponse.GetVideoInfos_Video.GetVideoInfos_Thumbnail thumbnail = new GetVideoInfosResponse.GetVideoInfos_Video.GetVideoInfos_Thumbnail();
-					thumbnail.URL = context.StringValue("GetVideoInfos.VideoList["+ i +"].ThumbnailList["+ j +"].URL");
+					thumbnail.URL = _ctx.StringValue("GetVideoInfos.VideoList["+ i +"].ThumbnailList["+ j +"].URL");
 
 					video_thumbnailList.Add(thumbnail);
 				}

@@ -34,14 +34,23 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Sas.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Sas.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
+
+		private string targetType;
 
 		private string remark;
 
+		private string source;
+
+		private string containerFieldName;
+
 		private string sourceIp;
+
+		private string containerFieldValue;
 
 		private string pageSize;
 
@@ -51,15 +60,40 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string alarmUniqueInfo;
 
+		private string uniqueInfo;
+
+		private long? groupId;
+
 		private string dealed;
 
 		private string currentPage;
+
+		private string clusterId;
+
+		private List<string> operateErrorCodeLists = new List<string>(){ };
 
 		private string name;
 
 		private string levels;
 
 		private string parentEventTypes;
+
+		private string status;
+
+		private string uuids;
+
+		public string TargetType
+		{
+			get
+			{
+				return targetType;
+			}
+			set	
+			{
+				targetType = value;
+				DictionaryUtil.Add(QueryParameters, "TargetType", value);
+			}
+		}
 
 		public string Remark
 		{
@@ -74,6 +108,32 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public string Source
+		{
+			get
+			{
+				return source;
+			}
+			set	
+			{
+				source = value;
+				DictionaryUtil.Add(QueryParameters, "Source", value);
+			}
+		}
+
+		public string ContainerFieldName
+		{
+			get
+			{
+				return containerFieldName;
+			}
+			set	
+			{
+				containerFieldName = value;
+				DictionaryUtil.Add(QueryParameters, "ContainerFieldName", value);
+			}
+		}
+
 		public string SourceIp
 		{
 			get
@@ -84,6 +144,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				sourceIp = value;
 				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
+			}
+		}
+
+		public string ContainerFieldValue
+		{
+			get
+			{
+				return containerFieldValue;
+			}
+			set	
+			{
+				containerFieldValue = value;
+				DictionaryUtil.Add(QueryParameters, "ContainerFieldValue", value);
 			}
 		}
 
@@ -139,6 +212,32 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public string UniqueInfo
+		{
+			get
+			{
+				return uniqueInfo;
+			}
+			set	
+			{
+				uniqueInfo = value;
+				DictionaryUtil.Add(QueryParameters, "UniqueInfo", value);
+			}
+		}
+
+		public long? GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value.ToString());
+			}
+		}
+
 		public string Dealed
 		{
 			get
@@ -162,6 +261,36 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				currentPage = value;
 				DictionaryUtil.Add(QueryParameters, "CurrentPage", value);
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public List<string> OperateErrorCodeLists
+		{
+			get
+			{
+				return operateErrorCodeLists;
+			}
+
+			set
+			{
+				operateErrorCodeLists = value;
+				for (int i = 0; i < operateErrorCodeLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"OperateErrorCodeList." + (i + 1) , operateErrorCodeLists[i]);
+				}
 			}
 		}
 
@@ -201,6 +330,32 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				parentEventTypes = value;
 				DictionaryUtil.Add(QueryParameters, "ParentEventTypes", value);
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+		public string Uuids
+		{
+			get
+			{
+				return uuids;
+			}
+			set	
+			{
+				uuids = value;
+				DictionaryUtil.Add(QueryParameters, "Uuids", value);
 			}
 		}
 

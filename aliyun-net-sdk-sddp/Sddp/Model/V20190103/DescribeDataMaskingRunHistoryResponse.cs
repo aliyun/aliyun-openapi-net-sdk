@@ -104,6 +104,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private long? startTime;
 
+			private long? endTime;
+
 			private int? runIndex;
 
 			private int? type;
@@ -125,6 +127,14 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			private string dstTypeCode;
 
 			private string srcTypeCode;
+
+			private int? hasSubProcess;
+
+			private int? hasDownloadFile;
+
+			private string srcTableName;
+
+			private string failMsg;
 
 			public long? Id
 			{
@@ -159,6 +169,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					startTime = value;
+				}
+			}
+
+			public long? EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
 				}
 			}
 
@@ -291,6 +313,54 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					srcTypeCode = value;
+				}
+			}
+
+			public int? HasSubProcess
+			{
+				get
+				{
+					return hasSubProcess;
+				}
+				set	
+				{
+					hasSubProcess = value;
+				}
+			}
+
+			public int? HasDownloadFile
+			{
+				get
+				{
+					return hasDownloadFile;
+				}
+				set	
+				{
+					hasDownloadFile = value;
+				}
+			}
+
+			public string SrcTableName
+			{
+				get
+				{
+					return srcTableName;
+				}
+				set	
+				{
+					srcTableName = value;
+				}
+			}
+
+			public string FailMsg
+			{
+				get
+				{
+					return failMsg;
+				}
+				set	
+				{
+					failMsg = value;
 				}
 			}
 		}

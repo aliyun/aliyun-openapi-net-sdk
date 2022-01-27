@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 {
     public class FTApiAliasApiResponseUnmarshaller
     {
-        public static FTApiAliasApiResponse Unmarshall(UnmarshallerContext context)
+        public static FTApiAliasApiResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			FTApiAliasApiResponse fTApiAliasApiResponse = new FTApiAliasApiResponse();
 
-			fTApiAliasApiResponse.HttpResponse = context.HttpResponse;
-			fTApiAliasApiResponse.RequestId = context.StringValue("FTApiAliasApi.RequestId");
-			fTApiAliasApiResponse.Name = context.StringValue("FTApiAliasApi.Name");
+			fTApiAliasApiResponse.HttpResponse = _ctx.HttpResponse;
+			fTApiAliasApiResponse.RequestId = _ctx.StringValue("FTApiAliasApi.RequestId");
+			fTApiAliasApiResponse.Name = _ctx.StringValue("FTApiAliasApi.Name");
         
 			return fTApiAliasApiResponse;
         }

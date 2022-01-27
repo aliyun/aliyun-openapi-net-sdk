@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Config.Model.V20190108
@@ -56,25 +56,25 @@ namespace Aliyun.Acs.Config.Model.V20190108
 		public class PutConfigurationRecorder_ConfigurationRecorder
 		{
 
-			private long? accountId;
+			private string organizationEnableStatus;
 
 			private string configurationRecorderStatus;
 
 			private long? organizationMasterId;
 
-			private string organizationEnableStatus;
+			private long? accountId;
 
 			private List<string> resourceTypes;
 
-			public long? AccountId
+			public string OrganizationEnableStatus
 			{
 				get
 				{
-					return accountId;
+					return organizationEnableStatus;
 				}
 				set	
 				{
-					accountId = value;
+					organizationEnableStatus = value;
 				}
 			}
 
@@ -102,15 +102,15 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				}
 			}
 
-			public string OrganizationEnableStatus
+			public long? AccountId
 			{
 				get
 				{
-					return organizationEnableStatus;
+					return accountId;
 				}
 				set	
 				{
-					organizationEnableStatus = value;
+					accountId = value;
 				}
 			}
 

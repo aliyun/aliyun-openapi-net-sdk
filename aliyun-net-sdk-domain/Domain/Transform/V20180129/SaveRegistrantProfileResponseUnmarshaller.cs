@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class SaveRegistrantProfileResponseUnmarshaller
     {
-        public static SaveRegistrantProfileResponse Unmarshall(UnmarshallerContext context)
+        public static SaveRegistrantProfileResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SaveRegistrantProfileResponse saveRegistrantProfileResponse = new SaveRegistrantProfileResponse();
 
-			saveRegistrantProfileResponse.HttpResponse = context.HttpResponse;
-			saveRegistrantProfileResponse.RequestId = context.StringValue("SaveRegistrantProfile.RequestId");
-			saveRegistrantProfileResponse.RegistrantProfileId = context.LongValue("SaveRegistrantProfile.RegistrantProfileId");
+			saveRegistrantProfileResponse.HttpResponse = _ctx.HttpResponse;
+			saveRegistrantProfileResponse.RequestId = _ctx.StringValue("SaveRegistrantProfile.RequestId");
+			saveRegistrantProfileResponse.RegistrantProfileId = _ctx.LongValue("SaveRegistrantProfile.RegistrantProfileId");
         
 			return saveRegistrantProfileResponse;
         }

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 {
     public class ScheduleKeyDeletionResponseUnmarshaller
     {
-        public static ScheduleKeyDeletionResponse Unmarshall(UnmarshallerContext context)
+        public static ScheduleKeyDeletionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ScheduleKeyDeletionResponse scheduleKeyDeletionResponse = new ScheduleKeyDeletionResponse();
 
-			scheduleKeyDeletionResponse.HttpResponse = context.HttpResponse;
-			scheduleKeyDeletionResponse.RequestId = context.StringValue("ScheduleKeyDeletion.RequestId");
+			scheduleKeyDeletionResponse.HttpResponse = _ctx.HttpResponse;
+			scheduleKeyDeletionResponse.RequestId = _ctx.StringValue("ScheduleKeyDeletion.RequestId");
         
 			return scheduleKeyDeletionResponse;
         }

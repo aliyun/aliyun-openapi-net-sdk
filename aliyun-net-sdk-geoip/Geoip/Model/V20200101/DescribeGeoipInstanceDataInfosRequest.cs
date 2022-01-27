@@ -32,11 +32,27 @@ namespace Aliyun.Acs.geoip.Model.V20200101
         public DescribeGeoipInstanceDataInfosRequest()
             : base("geoip", "2020-01-01", "DescribeGeoipInstanceDataInfos", "geoip", "openAPI")
         {
+			Method = MethodType.POST;
         }
+
+		private string locationDataType;
 
 		private string instanceId;
 
 		private string lang;
+
+		public string LocationDataType
+		{
+			get
+			{
+				return locationDataType;
+			}
+			set	
+			{
+				locationDataType = value;
+				DictionaryUtil.Add(QueryParameters, "LocationDataType", value);
+			}
+		}
 
 		public string InstanceId
 		{

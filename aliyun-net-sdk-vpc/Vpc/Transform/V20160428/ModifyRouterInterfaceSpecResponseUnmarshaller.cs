@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class ModifyRouterInterfaceSpecResponseUnmarshaller
     {
-        public static ModifyRouterInterfaceSpecResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyRouterInterfaceSpecResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyRouterInterfaceSpecResponse modifyRouterInterfaceSpecResponse = new ModifyRouterInterfaceSpecResponse();
 
-			modifyRouterInterfaceSpecResponse.HttpResponse = context.HttpResponse;
-			modifyRouterInterfaceSpecResponse.RequestId = context.StringValue("ModifyRouterInterfaceSpec.RequestId");
-			modifyRouterInterfaceSpecResponse.Spec = context.StringValue("ModifyRouterInterfaceSpec.Spec");
+			modifyRouterInterfaceSpecResponse.HttpResponse = _ctx.HttpResponse;
+			modifyRouterInterfaceSpecResponse.RequestId = _ctx.StringValue("ModifyRouterInterfaceSpec.RequestId");
+			modifyRouterInterfaceSpecResponse.Spec = _ctx.StringValue("ModifyRouterInterfaceSpec.Spec");
         
 			return modifyRouterInterfaceSpecResponse;
         }

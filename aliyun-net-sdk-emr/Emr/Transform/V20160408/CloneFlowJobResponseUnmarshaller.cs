@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class CloneFlowJobResponseUnmarshaller
     {
-        public static CloneFlowJobResponse Unmarshall(UnmarshallerContext context)
+        public static CloneFlowJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CloneFlowJobResponse cloneFlowJobResponse = new CloneFlowJobResponse();
 
-			cloneFlowJobResponse.HttpResponse = context.HttpResponse;
-			cloneFlowJobResponse.RequestId = context.StringValue("CloneFlowJob.RequestId");
-			cloneFlowJobResponse.Id = context.StringValue("CloneFlowJob.Id");
+			cloneFlowJobResponse.HttpResponse = _ctx.HttpResponse;
+			cloneFlowJobResponse.RequestId = _ctx.StringValue("CloneFlowJob.RequestId");
+			cloneFlowJobResponse.Id = _ctx.StringValue("CloneFlowJob.Id");
         
 			return cloneFlowJobResponse;
         }

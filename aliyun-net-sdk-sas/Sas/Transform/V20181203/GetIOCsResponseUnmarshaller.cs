@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class GetIOCsResponseUnmarshaller
     {
-        public static GetIOCsResponse Unmarshall(UnmarshallerContext context)
+        public static GetIOCsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetIOCsResponse getIOCsResponse = new GetIOCsResponse();
 
-			getIOCsResponse.HttpResponse = context.HttpResponse;
-			getIOCsResponse.RequestId = context.StringValue("GetIOCs.RequestId");
-			getIOCsResponse.Data = context.StringValue("GetIOCs.data");
+			getIOCsResponse.HttpResponse = _ctx.HttpResponse;
+			getIOCsResponse.RequestId = _ctx.StringValue("GetIOCs.RequestId");
+			getIOCsResponse.Data = _ctx.StringValue("GetIOCs.data");
         
 			return getIOCsResponse;
         }

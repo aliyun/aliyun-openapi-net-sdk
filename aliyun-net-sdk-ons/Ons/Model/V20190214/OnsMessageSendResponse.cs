@@ -27,9 +27,9 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 		private string requestId;
 
-		private string helpUrl;
-
 		private string data;
+
+		private string helpUrl;
 
 		public string RequestId
 		{
@@ -43,18 +43,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			}
 		}
 
-		public string HelpUrl
-		{
-			get
-			{
-				return helpUrl;
-			}
-			set	
-			{
-				helpUrl = value;
-			}
-		}
-
 		public string Data
 		{
 			get
@@ -64,6 +52,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			set	
 			{
 				data = value;
+			}
+		}
+
+		public string HelpUrl
+		{
+			get
+			{
+				return helpUrl;
+			}
+			set	
+			{
+				helpUrl = value;
 			}
 		}
 	}

@@ -60,9 +60,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string intranetIp;
 
-			private int? instanceName;
+			private string instanceName;
 
-			private int? instanceId;
+			private string instanceId;
 
 			private string ip;
 
@@ -75,6 +75,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			private string clientStatus;
 
 			private string region;
+
+			private string regionId;
 
 			private string regionName;
 
@@ -100,7 +102,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string vpcInstanceId;
 
-			private string osName1;
+			private string instanceStatus;
+
+			private long? createTime;
+
+			private int? authVersion;
+
+			private bool? bind;
+
+			private long? authModifyTime;
 
 			private List<string> ipList;
 
@@ -132,7 +142,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? InstanceName
+			public string InstanceName
 			{
 				get
 				{
@@ -144,7 +154,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? InstanceId
+			public string InstanceId
 			{
 				get
 				{
@@ -225,6 +235,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					region = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 
@@ -372,15 +394,63 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string OsName1
+			public string InstanceStatus
 			{
 				get
 				{
-					return osName1;
+					return instanceStatus;
 				}
 				set	
 				{
-					osName1 = value;
+					instanceStatus = value;
+				}
+			}
+
+			public long? CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public int? AuthVersion
+			{
+				get
+				{
+					return authVersion;
+				}
+				set	
+				{
+					authVersion = value;
+				}
+			}
+
+			public bool? Bind
+			{
+				get
+				{
+					return bind;
+				}
+				set	
+				{
+					bind = value;
+				}
+			}
+
+			public long? AuthModifyTime
+			{
+				get
+				{
+					return authModifyTime;
+				}
+				set	
+				{
+					authModifyTime = value;
 				}
 			}
 

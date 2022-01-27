@@ -26,16 +26,16 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class UpdateUdfFileResponseUnmarshaller
     {
-        public static UpdateUdfFileResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateUdfFileResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateUdfFileResponse updateUdfFileResponse = new UpdateUdfFileResponse();
 
-			updateUdfFileResponse.HttpResponse = context.HttpResponse;
-			updateUdfFileResponse.RequestId = context.StringValue("UpdateUdfFile.RequestId");
-			updateUdfFileResponse.Success = context.BooleanValue("UpdateUdfFile.Success");
-			updateUdfFileResponse.ErrorCode = context.StringValue("UpdateUdfFile.ErrorCode");
-			updateUdfFileResponse.ErrorMessage = context.StringValue("UpdateUdfFile.ErrorMessage");
-			updateUdfFileResponse.HttpStatusCode = context.IntegerValue("UpdateUdfFile.HttpStatusCode");
+			updateUdfFileResponse.HttpResponse = _ctx.HttpResponse;
+			updateUdfFileResponse.RequestId = _ctx.StringValue("UpdateUdfFile.RequestId");
+			updateUdfFileResponse.Success = _ctx.BooleanValue("UpdateUdfFile.Success");
+			updateUdfFileResponse.ErrorCode = _ctx.StringValue("UpdateUdfFile.ErrorCode");
+			updateUdfFileResponse.ErrorMessage = _ctx.StringValue("UpdateUdfFile.ErrorMessage");
+			updateUdfFileResponse.HttpStatusCode = _ctx.IntegerValue("UpdateUdfFile.HttpStatusCode");
         
 			return updateUdfFileResponse;
         }

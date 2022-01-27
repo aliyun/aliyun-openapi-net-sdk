@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,17 +25,53 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeDisksResponse : AcsResponse
 	{
 
+		private string nextToken;
+
+		private int? pageSize;
+
+		private int? pageNumber;
+
 		private string requestId;
 
 		private int? totalCount;
 
-		private int? pageNumber;
-
-		private int? pageSize;
-
-		private string nextToken;
-
 		private List<DescribeDisks_Disk> disks;
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -61,42 +97,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-			}
-		}
-
 		public List<DescribeDisks_Disk> Disks
 		{
 			get
@@ -112,79 +112,83 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeDisks_Disk
 		{
 
-			private string diskId;
-
-			private string regionId;
-
-			private string zoneId;
-
-			private string diskName;
-
-			private string description;
-
-			private string type;
-
-			private string category;
-
-			private int? size;
-
-			private string imageId;
-
-			private string sourceSnapshotId;
-
-			private string autoSnapshotPolicyId;
-
-			private string productCode;
-
-			private bool? portable;
-
-			private string status;
-
-			private string instanceId;
-
-			private string device;
-
-			private bool? deleteWithInstance;
-
-			private bool? deleteAutoSnapshot;
-
-			private bool? enableAutoSnapshot;
-
-			private bool? enableAutomatedSnapshotPolicy;
+			private string serialNumber;
 
 			private string creationTime;
 
-			private string attachedTime;
+			private string status;
 
-			private string detachedTime;
-
-			private string diskChargeType;
-
-			private string expiredTime;
-
-			private string resourceGroupId;
-
-			private bool? encrypted;
-
-			private string storageSetId;
-
-			private int? storageSetPartitionNumber;
-
-			private int? mountInstanceNum;
-
-			private int? iOPS;
-
-			private int? iOPSRead;
-
-			private int? iOPSWrite;
-
-			private string kMSKeyId;
+			private string type;
 
 			private string performanceLevel;
 
 			private string bdfId;
 
-			private string serialNumber;
+			private bool? enableAutoSnapshot;
+
+			private string storageSetId;
+
+			private int? storageSetPartitionNumber;
+
+			private string diskId;
+
+			private bool? deleteAutoSnapshot;
+
+			private string storageClusterId;
+
+			private bool? encrypted;
+
+			private int? iOPSRead;
+
+			private int? mountInstanceNum;
+
+			private string description;
+
+			private string device;
+
+			private string diskName;
+
+			private bool? portable;
+
+			private string imageId;
+
+			private string kMSKeyId;
+
+			private bool? deleteWithInstance;
+
+			private string detachedTime;
+
+			private string sourceSnapshotId;
+
+			private string autoSnapshotPolicyId;
+
+			private bool? enableAutomatedSnapshotPolicy;
+
+			private int? iOPSWrite;
+
+			private string instanceId;
+
+			private int? iOPS;
+
+			private string regionId;
+
+			private string expiredTime;
+
+			private int? size;
+
+			private string resourceGroupId;
+
+			private string diskChargeType;
+
+			private string zoneId;
+
+			private string attachedTime;
+
+			private string category;
+
+			private string productCode;
+
+			private string multiAttach;
 
 			private List<DescribeDisks_OperationLock> operationLocks;
 
@@ -192,243 +196,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private List<DescribeDisks_Tag> tags;
 
-			public string DiskId
-			{
-				get
-				{
-					return diskId;
-				}
-				set	
-				{
-					diskId = value;
-				}
-			}
+			private List<DescribeDisks_Attachment> attachments;
 
-			public string RegionId
+			public string SerialNumber
 			{
 				get
 				{
-					return regionId;
+					return serialNumber;
 				}
 				set	
 				{
-					regionId = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
-			public string DiskName
-			{
-				get
-				{
-					return diskName;
-				}
-				set	
-				{
-					diskName = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-
-			public string Category
-			{
-				get
-				{
-					return category;
-				}
-				set	
-				{
-					category = value;
-				}
-			}
-
-			public int? Size
-			{
-				get
-				{
-					return size;
-				}
-				set	
-				{
-					size = value;
-				}
-			}
-
-			public string ImageId
-			{
-				get
-				{
-					return imageId;
-				}
-				set	
-				{
-					imageId = value;
-				}
-			}
-
-			public string SourceSnapshotId
-			{
-				get
-				{
-					return sourceSnapshotId;
-				}
-				set	
-				{
-					sourceSnapshotId = value;
-				}
-			}
-
-			public string AutoSnapshotPolicyId
-			{
-				get
-				{
-					return autoSnapshotPolicyId;
-				}
-				set	
-				{
-					autoSnapshotPolicyId = value;
-				}
-			}
-
-			public string ProductCode
-			{
-				get
-				{
-					return productCode;
-				}
-				set	
-				{
-					productCode = value;
-				}
-			}
-
-			public bool? Portable
-			{
-				get
-				{
-					return portable;
-				}
-				set	
-				{
-					portable = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public string Device
-			{
-				get
-				{
-					return device;
-				}
-				set	
-				{
-					device = value;
-				}
-			}
-
-			public bool? DeleteWithInstance
-			{
-				get
-				{
-					return deleteWithInstance;
-				}
-				set	
-				{
-					deleteWithInstance = value;
-				}
-			}
-
-			public bool? DeleteAutoSnapshot
-			{
-				get
-				{
-					return deleteAutoSnapshot;
-				}
-				set	
-				{
-					deleteAutoSnapshot = value;
-				}
-			}
-
-			public bool? EnableAutoSnapshot
-			{
-				get
-				{
-					return enableAutoSnapshot;
-				}
-				set	
-				{
-					enableAutoSnapshot = value;
-				}
-			}
-
-			public bool? EnableAutomatedSnapshotPolicy
-			{
-				get
-				{
-					return enableAutomatedSnapshotPolicy;
-				}
-				set	
-				{
-					enableAutomatedSnapshotPolicy = value;
+					serialNumber = value;
 				}
 			}
 
@@ -444,159 +222,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string AttachedTime
+			public string Status
 			{
 				get
 				{
-					return attachedTime;
+					return status;
 				}
 				set	
 				{
-					attachedTime = value;
+					status = value;
 				}
 			}
 
-			public string DetachedTime
+			public string Type
 			{
 				get
 				{
-					return detachedTime;
+					return type;
 				}
 				set	
 				{
-					detachedTime = value;
-				}
-			}
-
-			public string DiskChargeType
-			{
-				get
-				{
-					return diskChargeType;
-				}
-				set	
-				{
-					diskChargeType = value;
-				}
-			}
-
-			public string ExpiredTime
-			{
-				get
-				{
-					return expiredTime;
-				}
-				set	
-				{
-					expiredTime = value;
-				}
-			}
-
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
-				}
-			}
-
-			public bool? Encrypted
-			{
-				get
-				{
-					return encrypted;
-				}
-				set	
-				{
-					encrypted = value;
-				}
-			}
-
-			public string StorageSetId
-			{
-				get
-				{
-					return storageSetId;
-				}
-				set	
-				{
-					storageSetId = value;
-				}
-			}
-
-			public int? StorageSetPartitionNumber
-			{
-				get
-				{
-					return storageSetPartitionNumber;
-				}
-				set	
-				{
-					storageSetPartitionNumber = value;
-				}
-			}
-
-			public int? MountInstanceNum
-			{
-				get
-				{
-					return mountInstanceNum;
-				}
-				set	
-				{
-					mountInstanceNum = value;
-				}
-			}
-
-			public int? IOPS
-			{
-				get
-				{
-					return iOPS;
-				}
-				set	
-				{
-					iOPS = value;
-				}
-			}
-
-			public int? IOPSRead
-			{
-				get
-				{
-					return iOPSRead;
-				}
-				set	
-				{
-					iOPSRead = value;
-				}
-			}
-
-			public int? IOPSWrite
-			{
-				get
-				{
-					return iOPSWrite;
-				}
-				set	
-				{
-					iOPSWrite = value;
-				}
-			}
-
-			public string KMSKeyId
-			{
-				get
-				{
-					return kMSKeyId;
-				}
-				set	
-				{
-					kMSKeyId = value;
+					type = value;
 				}
 			}
 
@@ -624,15 +270,399 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string SerialNumber
+			public bool? EnableAutoSnapshot
 			{
 				get
 				{
-					return serialNumber;
+					return enableAutoSnapshot;
 				}
 				set	
 				{
-					serialNumber = value;
+					enableAutoSnapshot = value;
+				}
+			}
+
+			public string StorageSetId
+			{
+				get
+				{
+					return storageSetId;
+				}
+				set	
+				{
+					storageSetId = value;
+				}
+			}
+
+			public int? StorageSetPartitionNumber
+			{
+				get
+				{
+					return storageSetPartitionNumber;
+				}
+				set	
+				{
+					storageSetPartitionNumber = value;
+				}
+			}
+
+			public string DiskId
+			{
+				get
+				{
+					return diskId;
+				}
+				set	
+				{
+					diskId = value;
+				}
+			}
+
+			public bool? DeleteAutoSnapshot
+			{
+				get
+				{
+					return deleteAutoSnapshot;
+				}
+				set	
+				{
+					deleteAutoSnapshot = value;
+				}
+			}
+
+			public string StorageClusterId
+			{
+				get
+				{
+					return storageClusterId;
+				}
+				set	
+				{
+					storageClusterId = value;
+				}
+			}
+
+			public bool? Encrypted
+			{
+				get
+				{
+					return encrypted;
+				}
+				set	
+				{
+					encrypted = value;
+				}
+			}
+
+			public int? IOPSRead
+			{
+				get
+				{
+					return iOPSRead;
+				}
+				set	
+				{
+					iOPSRead = value;
+				}
+			}
+
+			public int? MountInstanceNum
+			{
+				get
+				{
+					return mountInstanceNum;
+				}
+				set	
+				{
+					mountInstanceNum = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string Device
+			{
+				get
+				{
+					return device;
+				}
+				set	
+				{
+					device = value;
+				}
+			}
+
+			public string DiskName
+			{
+				get
+				{
+					return diskName;
+				}
+				set	
+				{
+					diskName = value;
+				}
+			}
+
+			public bool? Portable
+			{
+				get
+				{
+					return portable;
+				}
+				set	
+				{
+					portable = value;
+				}
+			}
+
+			public string ImageId
+			{
+				get
+				{
+					return imageId;
+				}
+				set	
+				{
+					imageId = value;
+				}
+			}
+
+			public string KMSKeyId
+			{
+				get
+				{
+					return kMSKeyId;
+				}
+				set	
+				{
+					kMSKeyId = value;
+				}
+			}
+
+			public bool? DeleteWithInstance
+			{
+				get
+				{
+					return deleteWithInstance;
+				}
+				set	
+				{
+					deleteWithInstance = value;
+				}
+			}
+
+			public string DetachedTime
+			{
+				get
+				{
+					return detachedTime;
+				}
+				set	
+				{
+					detachedTime = value;
+				}
+			}
+
+			public string SourceSnapshotId
+			{
+				get
+				{
+					return sourceSnapshotId;
+				}
+				set	
+				{
+					sourceSnapshotId = value;
+				}
+			}
+
+			public string AutoSnapshotPolicyId
+			{
+				get
+				{
+					return autoSnapshotPolicyId;
+				}
+				set	
+				{
+					autoSnapshotPolicyId = value;
+				}
+			}
+
+			public bool? EnableAutomatedSnapshotPolicy
+			{
+				get
+				{
+					return enableAutomatedSnapshotPolicy;
+				}
+				set	
+				{
+					enableAutomatedSnapshotPolicy = value;
+				}
+			}
+
+			public int? IOPSWrite
+			{
+				get
+				{
+					return iOPSWrite;
+				}
+				set	
+				{
+					iOPSWrite = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public int? IOPS
+			{
+				get
+				{
+					return iOPS;
+				}
+				set	
+				{
+					iOPS = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string ExpiredTime
+			{
+				get
+				{
+					return expiredTime;
+				}
+				set	
+				{
+					expiredTime = value;
+				}
+			}
+
+			public int? Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string DiskChargeType
+			{
+				get
+				{
+					return diskChargeType;
+				}
+				set	
+				{
+					diskChargeType = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public string AttachedTime
+			{
+				get
+				{
+					return attachedTime;
+				}
+				set	
+				{
+					attachedTime = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			public string ProductCode
+			{
+				get
+				{
+					return productCode;
+				}
+				set	
+				{
+					productCode = value;
+				}
+			}
+
+			public string MultiAttach
+			{
+				get
+				{
+					return multiAttach;
+				}
+				set	
+				{
+					multiAttach = value;
 				}
 			}
 
@@ -672,6 +702,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public List<DescribeDisks_Attachment> Attachments
+			{
+				get
+				{
+					return attachments;
+				}
+				set	
+				{
+					attachments = value;
+				}
+			}
+
 			public class DescribeDisks_OperationLock
 			{
 
@@ -691,6 +733,84 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 
 			public class DescribeDisks_MountInstance
+			{
+
+				private string attachedTime;
+
+				private string instanceId;
+
+				private string device;
+
+				public string AttachedTime
+				{
+					get
+					{
+						return attachedTime;
+					}
+					set	
+					{
+						attachedTime = value;
+					}
+				}
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
+					}
+				}
+
+				public string Device
+				{
+					get
+					{
+						return device;
+					}
+					set	
+					{
+						device = value;
+					}
+				}
+			}
+
+			public class DescribeDisks_Tag
+			{
+
+				private string tagValue;
+
+				private string tagKey;
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
+					}
+				}
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+			}
+
+			public class DescribeDisks_Attachment
 			{
 
 				private string instanceId;
@@ -732,38 +852,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						attachedTime = value;
-					}
-				}
-			}
-
-			public class DescribeDisks_Tag
-			{
-
-				private string tagKey;
-
-				private string tagValue;
-
-				public string TagKey
-				{
-					get
-					{
-						return tagKey;
-					}
-					set	
-					{
-						tagKey = value;
-					}
-				}
-
-				public string TagValue
-				{
-					get
-					{
-						return tagValue;
-					}
-					set	
-					{
-						tagValue = value;
 					}
 				}
 			}

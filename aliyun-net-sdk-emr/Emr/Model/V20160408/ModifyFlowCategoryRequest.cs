@@ -32,9 +32,15 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ModifyFlowCategoryRequest()
             : base("Emr", "2016-04-08", "ModifyFlowCategory", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
-		private string regionId;
+		private string parentId;
 
 		private string name;
 
@@ -42,18 +48,16 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private string projectId;
 
-		private string parentId;
-
-		public string RegionId
+		public string ParentId
 		{
 			get
 			{
-				return regionId;
+				return parentId;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				parentId = value;
+				DictionaryUtil.Add(QueryParameters, "ParentId", value);
 			}
 		}
 
@@ -93,19 +97,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				projectId = value;
 				DictionaryUtil.Add(QueryParameters, "ProjectId", value);
-			}
-		}
-
-		public string ParentId
-		{
-			get
-			{
-				return parentId;
-			}
-			set	
-			{
-				parentId = value;
-				DictionaryUtil.Add(QueryParameters, "ParentId", value);
 			}
 		}
 

@@ -26,19 +26,19 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 {
     public class DetectCovid19CadResponseUnmarshaller
     {
-        public static DetectCovid19CadResponse Unmarshall(UnmarshallerContext context)
+        public static DetectCovid19CadResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DetectCovid19CadResponse detectCovid19CadResponse = new DetectCovid19CadResponse();
 
-			detectCovid19CadResponse.HttpResponse = context.HttpResponse;
-			detectCovid19CadResponse.RequestId = context.StringValue("DetectCovid19Cad.RequestId");
+			detectCovid19CadResponse.HttpResponse = _ctx.HttpResponse;
+			detectCovid19CadResponse.RequestId = _ctx.StringValue("DetectCovid19Cad.RequestId");
 
 			DetectCovid19CadResponse.DetectCovid19Cad_Data data = new DetectCovid19CadResponse.DetectCovid19Cad_Data();
-			data.NewProbability = context.StringValue("DetectCovid19Cad.Data.NewProbability");
-			data.NormalProbability = context.StringValue("DetectCovid19Cad.Data.NormalProbability");
-			data.OtherProbability = context.StringValue("DetectCovid19Cad.Data.OtherProbability");
-			data.LesionRatio = context.StringValue("DetectCovid19Cad.Data.LesionRatio");
-			data.Mask = context.StringValue("DetectCovid19Cad.Data.Mask");
+			data.NewProbability = _ctx.StringValue("DetectCovid19Cad.Data.NewProbability");
+			data.NormalProbability = _ctx.StringValue("DetectCovid19Cad.Data.NormalProbability");
+			data.OtherProbability = _ctx.StringValue("DetectCovid19Cad.Data.OtherProbability");
+			data.LesionRatio = _ctx.StringValue("DetectCovid19Cad.Data.LesionRatio");
+			data.Mask = _ctx.StringValue("DetectCovid19Cad.Data.Mask");
 			detectCovid19CadResponse.Data = data;
         
 			return detectCovid19CadResponse;

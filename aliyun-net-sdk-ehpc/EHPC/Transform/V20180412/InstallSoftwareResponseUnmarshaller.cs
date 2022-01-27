@@ -26,12 +26,12 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class InstallSoftwareResponseUnmarshaller
     {
-        public static InstallSoftwareResponse Unmarshall(UnmarshallerContext context)
+        public static InstallSoftwareResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			InstallSoftwareResponse installSoftwareResponse = new InstallSoftwareResponse();
 
-			installSoftwareResponse.HttpResponse = context.HttpResponse;
-			installSoftwareResponse.RequestId = context.StringValue("InstallSoftware.RequestId");
+			installSoftwareResponse.HttpResponse = _ctx.HttpResponse;
+			installSoftwareResponse.RequestId = _ctx.StringValue("InstallSoftware.RequestId");
         
 			return installSoftwareResponse;
         }

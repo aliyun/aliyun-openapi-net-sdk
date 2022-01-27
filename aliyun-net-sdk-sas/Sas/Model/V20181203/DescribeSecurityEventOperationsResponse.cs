@@ -62,6 +62,10 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private bool? userCanOperate;
 
+			private List<DescribeSecurityEventOperations_MarkFieldItem> markField;
+
+			private List<DescribeSecurityEventOperations_SecurityEventOperation1> markFieldsSource;
+
 			public string OperationCode
 			{
 				get
@@ -95,6 +99,164 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					userCanOperate = value;
+				}
+			}
+
+			public List<DescribeSecurityEventOperations_MarkFieldItem> MarkField
+			{
+				get
+				{
+					return markField;
+				}
+				set	
+				{
+					markField = value;
+				}
+			}
+
+			public List<DescribeSecurityEventOperations_SecurityEventOperation1> MarkFieldsSource
+			{
+				get
+				{
+					return markFieldsSource;
+				}
+				set	
+				{
+					markFieldsSource = value;
+				}
+			}
+
+			public class DescribeSecurityEventOperations_MarkFieldItem
+			{
+
+				private string filedName;
+
+				private string filedAliasName;
+
+				private string markMisType;
+
+				private string markMisValue;
+
+				private List<string> supportedMisType;
+
+				public string FiledName
+				{
+					get
+					{
+						return filedName;
+					}
+					set	
+					{
+						filedName = value;
+					}
+				}
+
+				public string FiledAliasName
+				{
+					get
+					{
+						return filedAliasName;
+					}
+					set	
+					{
+						filedAliasName = value;
+					}
+				}
+
+				public string MarkMisType
+				{
+					get
+					{
+						return markMisType;
+					}
+					set	
+					{
+						markMisType = value;
+					}
+				}
+
+				public string MarkMisValue
+				{
+					get
+					{
+						return markMisValue;
+					}
+					set	
+					{
+						markMisValue = value;
+					}
+				}
+
+				public List<string> SupportedMisType
+				{
+					get
+					{
+						return supportedMisType;
+					}
+					set	
+					{
+						supportedMisType = value;
+					}
+				}
+			}
+
+			public class DescribeSecurityEventOperations_SecurityEventOperation1
+			{
+
+				private string filedName;
+
+				private string filedAliasName;
+
+				private string markMisValue;
+
+				private List<string> supportedMisType2;
+
+				public string FiledName
+				{
+					get
+					{
+						return filedName;
+					}
+					set	
+					{
+						filedName = value;
+					}
+				}
+
+				public string FiledAliasName
+				{
+					get
+					{
+						return filedAliasName;
+					}
+					set	
+					{
+						filedAliasName = value;
+					}
+				}
+
+				public string MarkMisValue
+				{
+					get
+					{
+						return markMisValue;
+					}
+					set	
+					{
+						markMisValue = value;
+					}
+				}
+
+				public List<string> SupportedMisType2
+				{
+					get
+					{
+						return supportedMisType2;
+					}
+					set	
+					{
+						supportedMisType2 = value;
+					}
 				}
 			}
 		}

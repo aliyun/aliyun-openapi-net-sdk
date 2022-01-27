@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.gpdb;
 using Aliyun.Acs.gpdb.Transform;
 using Aliyun.Acs.gpdb.Transform.V20160503;
 
@@ -30,13 +31,17 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
     public class DescribeResourceUsageRequest : RpcAcsRequest<DescribeResourceUsageResponse>
     {
         public DescribeResourceUsageRequest()
-            : base("gpdb", "2016-05-03", "DescribeResourceUsage", "gpdb", "openAPI")
+            : base("gpdb", "2016-05-03", "DescribeResourceUsage")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string dBInstanceId;
-
-		private string accessKeyId;
 
 		public string DBInstanceId
 		{
@@ -48,19 +53,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

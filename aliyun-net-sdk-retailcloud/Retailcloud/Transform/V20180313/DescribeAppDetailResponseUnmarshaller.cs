@@ -26,45 +26,45 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class DescribeAppDetailResponseUnmarshaller
     {
-        public static DescribeAppDetailResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAppDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAppDetailResponse describeAppDetailResponse = new DescribeAppDetailResponse();
 
-			describeAppDetailResponse.HttpResponse = context.HttpResponse;
-			describeAppDetailResponse.Code = context.LongValue("DescribeAppDetail.Code");
-			describeAppDetailResponse.RequestId = context.StringValue("DescribeAppDetail.RequestId");
-			describeAppDetailResponse.ErrMessage = context.StringValue("DescribeAppDetail.ErrMessage");
+			describeAppDetailResponse.HttpResponse = _ctx.HttpResponse;
+			describeAppDetailResponse.Code = _ctx.LongValue("DescribeAppDetail.Code");
+			describeAppDetailResponse.RequestId = _ctx.StringValue("DescribeAppDetail.RequestId");
+			describeAppDetailResponse.ErrMessage = _ctx.StringValue("DescribeAppDetail.ErrMessage");
 
 			DescribeAppDetailResponse.DescribeAppDetail_Result result = new DescribeAppDetailResponse.DescribeAppDetail_Result();
-			result.ServiceType = context.StringValue("DescribeAppDetail.Result.ServiceType");
-			result.BizTitle = context.StringValue("DescribeAppDetail.Result.BizTitle");
-			result.BizName = context.StringValue("DescribeAppDetail.Result.BizName");
-			result.AppId = context.LongValue("DescribeAppDetail.Result.AppId");
-			result.Language = context.StringValue("DescribeAppDetail.Result.Language");
-			result.Title = context.StringValue("DescribeAppDetail.Result.Title");
-			result.OperatingSystem = context.StringValue("DescribeAppDetail.Result.OperatingSystem");
-			result.DeployType = context.StringValue("DescribeAppDetail.Result.DeployType");
-			result.Description = context.StringValue("DescribeAppDetail.Result.Description");
-			result.AppStateType = context.StringValue("DescribeAppDetail.Result.AppStateType");
+			result.ServiceType = _ctx.StringValue("DescribeAppDetail.Result.ServiceType");
+			result.BizTitle = _ctx.StringValue("DescribeAppDetail.Result.BizTitle");
+			result.BizName = _ctx.StringValue("DescribeAppDetail.Result.BizName");
+			result.AppId = _ctx.LongValue("DescribeAppDetail.Result.AppId");
+			result.Language = _ctx.StringValue("DescribeAppDetail.Result.Language");
+			result.Title = _ctx.StringValue("DescribeAppDetail.Result.Title");
+			result.OperatingSystem = _ctx.StringValue("DescribeAppDetail.Result.OperatingSystem");
+			result.DeployType = _ctx.StringValue("DescribeAppDetail.Result.DeployType");
+			result.Description = _ctx.StringValue("DescribeAppDetail.Result.Description");
+			result.AppStateType = _ctx.StringValue("DescribeAppDetail.Result.AppStateType");
 
 			List<DescribeAppDetailResponse.DescribeAppDetail_Result.DescribeAppDetail_UserRole> result_userRoles = new List<DescribeAppDetailResponse.DescribeAppDetail_Result.DescribeAppDetail_UserRole>();
-			for (int i = 0; i < context.Length("DescribeAppDetail.Result.UserRoles.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeAppDetail.Result.UserRoles.Length"); i++) {
 				DescribeAppDetailResponse.DescribeAppDetail_Result.DescribeAppDetail_UserRole userRole = new DescribeAppDetailResponse.DescribeAppDetail_Result.DescribeAppDetail_UserRole();
-				userRole.UserId = context.StringValue("DescribeAppDetail.Result.UserRoles["+ i +"].UserId");
-				userRole.UserType = context.StringValue("DescribeAppDetail.Result.UserRoles["+ i +"].UserType");
-				userRole.RealName = context.StringValue("DescribeAppDetail.Result.UserRoles["+ i +"].RealName");
-				userRole.RoleName = context.StringValue("DescribeAppDetail.Result.UserRoles["+ i +"].RoleName");
+				userRole.UserId = _ctx.StringValue("DescribeAppDetail.Result.UserRoles["+ i +"].UserId");
+				userRole.UserType = _ctx.StringValue("DescribeAppDetail.Result.UserRoles["+ i +"].UserType");
+				userRole.RealName = _ctx.StringValue("DescribeAppDetail.Result.UserRoles["+ i +"].RealName");
+				userRole.RoleName = _ctx.StringValue("DescribeAppDetail.Result.UserRoles["+ i +"].RoleName");
 
 				result_userRoles.Add(userRole);
 			}
 			result.UserRoles = result_userRoles;
 
 			List<DescribeAppDetailResponse.DescribeAppDetail_Result.DescribeAppDetail_MiddleWareInfo> result_middleWareInfoList = new List<DescribeAppDetailResponse.DescribeAppDetail_Result.DescribeAppDetail_MiddleWareInfo>();
-			for (int i = 0; i < context.Length("DescribeAppDetail.Result.MiddleWareInfoList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeAppDetail.Result.MiddleWareInfoList.Length"); i++) {
 				DescribeAppDetailResponse.DescribeAppDetail_Result.DescribeAppDetail_MiddleWareInfo middleWareInfo = new DescribeAppDetailResponse.DescribeAppDetail_Result.DescribeAppDetail_MiddleWareInfo();
-				middleWareInfo.AppId = context.LongValue("DescribeAppDetail.Result.MiddleWareInfoList["+ i +"].AppId");
-				middleWareInfo.Code = context.IntegerValue("DescribeAppDetail.Result.MiddleWareInfoList["+ i +"].Code");
-				middleWareInfo.Name = context.StringValue("DescribeAppDetail.Result.MiddleWareInfoList["+ i +"].Name");
+				middleWareInfo.AppId = _ctx.LongValue("DescribeAppDetail.Result.MiddleWareInfoList["+ i +"].AppId");
+				middleWareInfo.Code = _ctx.IntegerValue("DescribeAppDetail.Result.MiddleWareInfoList["+ i +"].Code");
+				middleWareInfo.Name = _ctx.StringValue("DescribeAppDetail.Result.MiddleWareInfoList["+ i +"].Name");
 
 				result_middleWareInfoList.Add(middleWareInfo);
 			}

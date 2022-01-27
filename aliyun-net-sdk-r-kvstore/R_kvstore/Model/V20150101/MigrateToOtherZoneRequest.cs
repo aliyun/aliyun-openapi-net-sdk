@@ -42,6 +42,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
+		private string secondaryZoneId;
+
 		private string securityToken;
 
 		private string effectiveTime;
@@ -68,6 +70,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string SecondaryZoneId
+		{
+			get
+			{
+				return secondaryZoneId;
+			}
+			set	
+			{
+				secondaryZoneId = value;
+				DictionaryUtil.Add(QueryParameters, "SecondaryZoneId", value);
 			}
 		}
 

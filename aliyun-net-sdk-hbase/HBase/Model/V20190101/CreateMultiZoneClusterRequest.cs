@@ -48,6 +48,8 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private string logDiskType;
 
+		private string resourceGroupId;
+
 		private string primaryVSwitchId;
 
 		private string logInstanceType;
@@ -143,6 +145,19 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			{
 				logDiskType = value;
 				DictionaryUtil.Add(QueryParameters, "LogDiskType", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

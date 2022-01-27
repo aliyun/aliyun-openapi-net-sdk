@@ -32,19 +32,53 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public SubmitFlowJobRequest()
             : base("Emr", "2016-04-08", "SubmitFlowJob", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string jobId;
-
-		private string hostName;
-
-		private string regionId;
 
 		private string conf;
 
 		private string clusterId;
 
+		private string jobId;
+
+		private string hostName;
+
+		private string _namespace;
+
+		private string jobInstanceId;
+
 		private string projectId;
+
+		public string Conf
+		{
+			get
+			{
+				return conf;
+			}
+			set	
+			{
+				conf = value;
+				DictionaryUtil.Add(QueryParameters, "Conf", value);
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
 
 		public string JobId
 		{
@@ -72,42 +106,29 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
+		public string _Namespace
 		{
 			get
 			{
-				return regionId;
+				return _namespace;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				_namespace = value;
+				DictionaryUtil.Add(QueryParameters, "Namespace", value);
 			}
 		}
 
-		public string Conf
+		public string JobInstanceId
 		{
 			get
 			{
-				return conf;
+				return jobInstanceId;
 			}
 			set	
 			{
-				conf = value;
-				DictionaryUtil.Add(QueryParameters, "Conf", value);
-			}
-		}
-
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+				jobInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "JobInstanceId", value);
 			}
 		}
 

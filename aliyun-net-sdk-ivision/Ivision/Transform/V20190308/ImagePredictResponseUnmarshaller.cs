@@ -26,22 +26,22 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 {
     public class ImagePredictResponseUnmarshaller
     {
-        public static ImagePredictResponse Unmarshall(UnmarshallerContext context)
+        public static ImagePredictResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ImagePredictResponse imagePredictResponse = new ImagePredictResponse();
 
-			imagePredictResponse.HttpResponse = context.HttpResponse;
-			imagePredictResponse.RequestId = context.StringValue("ImagePredict.RequestId");
+			imagePredictResponse.HttpResponse = _ctx.HttpResponse;
+			imagePredictResponse.RequestId = _ctx.StringValue("ImagePredict.RequestId");
 
 			ImagePredictResponse.ImagePredict_ImagePredict imagePredict = new ImagePredictResponse.ImagePredict_ImagePredict();
-			imagePredict.PredictId = context.StringValue("ImagePredict.ImagePredict.PredictId");
-			imagePredict.ModelId = context.StringValue("ImagePredict.ImagePredict.ModelId");
-			imagePredict.DataUrl = context.StringValue("ImagePredict.ImagePredict.DataUrl");
-			imagePredict.PredictTime = context.StringValue("ImagePredict.ImagePredict.PredictTime");
-			imagePredict.Status = context.StringValue("ImagePredict.ImagePredict.Status");
-			imagePredict.Code = context.StringValue("ImagePredict.ImagePredict.Code");
-			imagePredict.Message = context.StringValue("ImagePredict.ImagePredict.Message");
-			imagePredict.PredictResult = context.StringValue("ImagePredict.ImagePredict.PredictResult");
+			imagePredict.Status = _ctx.StringValue("ImagePredict.ImagePredict.Status");
+			imagePredict.PredictResult = _ctx.StringValue("ImagePredict.ImagePredict.PredictResult");
+			imagePredict.PredictId = _ctx.StringValue("ImagePredict.ImagePredict.PredictId");
+			imagePredict.PredictTime = _ctx.StringValue("ImagePredict.ImagePredict.PredictTime");
+			imagePredict.DataUrl = _ctx.StringValue("ImagePredict.ImagePredict.DataUrl");
+			imagePredict.Code = _ctx.StringValue("ImagePredict.ImagePredict.Code");
+			imagePredict.Message = _ctx.StringValue("ImagePredict.ImagePredict.Message");
+			imagePredict.ModelId = _ctx.StringValue("ImagePredict.ImagePredict.ModelId");
 			imagePredictResponse.ImagePredict = imagePredict;
         
 			return imagePredictResponse;

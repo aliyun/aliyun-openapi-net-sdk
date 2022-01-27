@@ -34,19 +34,25 @@ namespace Aliyun.Acs.adb.Model.V20190315
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.adb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.adb.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
+		private string range;
+
 		private string startTime;
 
 		private int? pageNumber;
 
 		private int? pageSize;
+
+		private string state;
+
+		private string order;
 
 		private string resourceOwnerAccount;
 
@@ -60,6 +66,8 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string dBName;
 
+		private string processID;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -70,6 +78,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string Range
+		{
+			get
+			{
+				return range;
+			}
+			set	
+			{
+				range = value;
+				DictionaryUtil.Add(QueryParameters, "Range", value);
 			}
 		}
 
@@ -109,6 +130,32 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string State
+		{
+			get
+			{
+				return state;
+			}
+			set	
+			{
+				state = value;
+				DictionaryUtil.Add(QueryParameters, "State", value);
+			}
+		}
+
+		public string Order
+		{
+			get
+			{
+				return order;
+			}
+			set	
+			{
+				order = value;
+				DictionaryUtil.Add(QueryParameters, "Order", value);
 			}
 		}
 
@@ -187,6 +234,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				dBName = value;
 				DictionaryUtil.Add(QueryParameters, "DBName", value);
+			}
+		}
+
+		public string ProcessID
+		{
+			get
+			{
+				return processID;
+			}
+			set	
+			{
+				processID = value;
+				DictionaryUtil.Add(QueryParameters, "ProcessID", value);
 			}
 		}
 

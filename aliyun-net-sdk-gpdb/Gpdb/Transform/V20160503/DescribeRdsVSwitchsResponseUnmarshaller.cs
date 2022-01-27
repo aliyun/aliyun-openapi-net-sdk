@@ -26,29 +26,29 @@ namespace Aliyun.Acs.gpdb.Transform.V20160503
 {
     public class DescribeRdsVSwitchsResponseUnmarshaller
     {
-        public static DescribeRdsVSwitchsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRdsVSwitchsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRdsVSwitchsResponse describeRdsVSwitchsResponse = new DescribeRdsVSwitchsResponse();
 
-			describeRdsVSwitchsResponse.HttpResponse = context.HttpResponse;
-			describeRdsVSwitchsResponse.RequestId = context.StringValue("DescribeRdsVSwitchs.RequestId");
+			describeRdsVSwitchsResponse.HttpResponse = _ctx.HttpResponse;
+			describeRdsVSwitchsResponse.RequestId = _ctx.StringValue("DescribeRdsVSwitchs.RequestId");
 
 			DescribeRdsVSwitchsResponse.DescribeRdsVSwitchs_VSwitches vSwitches = new DescribeRdsVSwitchsResponse.DescribeRdsVSwitchs_VSwitches();
 
 			List<DescribeRdsVSwitchsResponse.DescribeRdsVSwitchs_VSwitches.DescribeRdsVSwitchs_VSwitchItem> vSwitches_vSwitch = new List<DescribeRdsVSwitchsResponse.DescribeRdsVSwitchs_VSwitches.DescribeRdsVSwitchs_VSwitchItem>();
-			for (int i = 0; i < context.Length("DescribeRdsVSwitchs.VSwitches.VSwitch.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRdsVSwitchs.VSwitches.VSwitch.Length"); i++) {
 				DescribeRdsVSwitchsResponse.DescribeRdsVSwitchs_VSwitches.DescribeRdsVSwitchs_VSwitchItem vSwitchItem = new DescribeRdsVSwitchsResponse.DescribeRdsVSwitchs_VSwitches.DescribeRdsVSwitchs_VSwitchItem();
-				vSwitchItem.VSwitchId = context.StringValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].VSwitchId");
-				vSwitchItem.VSwitchName = context.StringValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].VSwitchName");
-				vSwitchItem.IzNo = context.StringValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].IzNo");
-				vSwitchItem.Bid = context.StringValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].Bid");
-				vSwitchItem.AliUid = context.StringValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].AliUid");
-				vSwitchItem.RegionNo = context.StringValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].RegionNo");
-				vSwitchItem.CidrBlock = context.StringValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].CidrBlock");
-				vSwitchItem.IsDefault = context.BooleanValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].IsDefault");
-				vSwitchItem.Status = context.StringValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].Status");
-				vSwitchItem.GmtCreate = context.StringValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].GmtCreate");
-				vSwitchItem.GmtModified = context.StringValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].GmtModified");
+				vSwitchItem.Status = _ctx.StringValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].Status");
+				vSwitchItem.IsDefault = _ctx.BooleanValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].IsDefault");
+				vSwitchItem.VSwitchId = _ctx.StringValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].VSwitchId");
+				vSwitchItem.CidrBlock = _ctx.StringValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].CidrBlock");
+				vSwitchItem.RegionNo = _ctx.StringValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].RegionNo");
+				vSwitchItem.GmtCreate = _ctx.StringValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].GmtCreate");
+				vSwitchItem.AliUid = _ctx.StringValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].AliUid");
+				vSwitchItem.GmtModified = _ctx.StringValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].GmtModified");
+				vSwitchItem.Bid = _ctx.StringValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].Bid");
+				vSwitchItem.IzNo = _ctx.StringValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].IzNo");
+				vSwitchItem.VSwitchName = _ctx.StringValue("DescribeRdsVSwitchs.VSwitches.VSwitch["+ i +"].VSwitchName");
 
 				vSwitches_vSwitch.Add(vSwitchItem);
 			}

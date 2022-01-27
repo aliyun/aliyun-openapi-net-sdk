@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class QueryDSRecordResponseUnmarshaller
     {
-        public static QueryDSRecordResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDSRecordResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDSRecordResponse queryDSRecordResponse = new QueryDSRecordResponse();
 
-			queryDSRecordResponse.HttpResponse = context.HttpResponse;
-			queryDSRecordResponse.RequestId = context.StringValue("QueryDSRecord.RequestId");
+			queryDSRecordResponse.HttpResponse = _ctx.HttpResponse;
+			queryDSRecordResponse.RequestId = _ctx.StringValue("QueryDSRecord.RequestId");
 
 			List<QueryDSRecordResponse.QueryDSRecord_DSRecord> queryDSRecordResponse_dSRecordList = new List<QueryDSRecordResponse.QueryDSRecord_DSRecord>();
-			for (int i = 0; i < context.Length("QueryDSRecord.DSRecordList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryDSRecord.DSRecordList.Length"); i++) {
 				QueryDSRecordResponse.QueryDSRecord_DSRecord dSRecord = new QueryDSRecordResponse.QueryDSRecord_DSRecord();
-				dSRecord.KeyTag = context.IntegerValue("QueryDSRecord.DSRecordList["+ i +"].KeyTag");
-				dSRecord.Algorithm = context.IntegerValue("QueryDSRecord.DSRecordList["+ i +"].Algorithm");
-				dSRecord.DigestType = context.IntegerValue("QueryDSRecord.DSRecordList["+ i +"].DigestType");
-				dSRecord.Digest = context.StringValue("QueryDSRecord.DSRecordList["+ i +"].Digest");
+				dSRecord.KeyTag = _ctx.IntegerValue("QueryDSRecord.DSRecordList["+ i +"].KeyTag");
+				dSRecord.Algorithm = _ctx.IntegerValue("QueryDSRecord.DSRecordList["+ i +"].Algorithm");
+				dSRecord.DigestType = _ctx.IntegerValue("QueryDSRecord.DSRecordList["+ i +"].DigestType");
+				dSRecord.Digest = _ctx.StringValue("QueryDSRecord.DSRecordList["+ i +"].Digest");
 
 				queryDSRecordResponse_dSRecordList.Add(dSRecord);
 			}

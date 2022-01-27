@@ -26,14 +26,14 @@ namespace Aliyun.Acs.gpdb.Transform.V20160503
 {
     public class AddBuDBInstanceRelationResponseUnmarshaller
     {
-        public static AddBuDBInstanceRelationResponse Unmarshall(UnmarshallerContext context)
+        public static AddBuDBInstanceRelationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddBuDBInstanceRelationResponse addBuDBInstanceRelationResponse = new AddBuDBInstanceRelationResponse();
 
-			addBuDBInstanceRelationResponse.HttpResponse = context.HttpResponse;
-			addBuDBInstanceRelationResponse.RequestId = context.StringValue("AddBuDBInstanceRelation.RequestId");
-			addBuDBInstanceRelationResponse.BusinessUnit = context.StringValue("AddBuDBInstanceRelation.BusinessUnit");
-			addBuDBInstanceRelationResponse.DBInstanceName = context.StringValue("AddBuDBInstanceRelation.DBInstanceName");
+			addBuDBInstanceRelationResponse.HttpResponse = _ctx.HttpResponse;
+			addBuDBInstanceRelationResponse.RequestId = _ctx.StringValue("AddBuDBInstanceRelation.RequestId");
+			addBuDBInstanceRelationResponse.BusinessUnit = _ctx.StringValue("AddBuDBInstanceRelation.BusinessUnit");
+			addBuDBInstanceRelationResponse.DBInstanceName = _ctx.StringValue("AddBuDBInstanceRelation.DBInstanceName");
         
 			return addBuDBInstanceRelationResponse;
         }

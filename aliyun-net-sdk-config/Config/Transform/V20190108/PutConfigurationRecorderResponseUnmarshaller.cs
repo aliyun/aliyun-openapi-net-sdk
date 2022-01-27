@@ -34,10 +34,10 @@ namespace Aliyun.Acs.Config.Transform.V20190108
 			putConfigurationRecorderResponse.RequestId = _ctx.StringValue("PutConfigurationRecorder.RequestId");
 
 			PutConfigurationRecorderResponse.PutConfigurationRecorder_ConfigurationRecorder configurationRecorder = new PutConfigurationRecorderResponse.PutConfigurationRecorder_ConfigurationRecorder();
-			configurationRecorder.AccountId = _ctx.LongValue("PutConfigurationRecorder.ConfigurationRecorder.AccountId");
+			configurationRecorder.OrganizationEnableStatus = _ctx.StringValue("PutConfigurationRecorder.ConfigurationRecorder.OrganizationEnableStatus");
 			configurationRecorder.ConfigurationRecorderStatus = _ctx.StringValue("PutConfigurationRecorder.ConfigurationRecorder.ConfigurationRecorderStatus");
 			configurationRecorder.OrganizationMasterId = _ctx.LongValue("PutConfigurationRecorder.ConfigurationRecorder.OrganizationMasterId");
-			configurationRecorder.OrganizationEnableStatus = _ctx.StringValue("PutConfigurationRecorder.ConfigurationRecorder.OrganizationEnableStatus");
+			configurationRecorder.AccountId = _ctx.LongValue("PutConfigurationRecorder.ConfigurationRecorder.AccountId");
 
 			List<string> configurationRecorder_resourceTypes = new List<string>();
 			for (int i = 0; i < _ctx.Length("PutConfigurationRecorder.ConfigurationRecorder.ResourceTypes.Length"); i++) {

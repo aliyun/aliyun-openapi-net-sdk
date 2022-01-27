@@ -34,17 +34,21 @@ namespace Aliyun.Acs.adb.Model.V20190315
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.adb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.adb.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
+		private string mode;
+
 		private string storageResource;
 
 		private string dBNodeClass;
+
+		private string dBClusterCategory;
 
 		private string resourceOwnerAccount;
 
@@ -64,6 +68,8 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string computeResource;
 
+		private int? elasticIOResource;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -74,6 +80,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string Mode
+		{
+			get
+			{
+				return mode;
+			}
+			set	
+			{
+				mode = value;
+				DictionaryUtil.Add(QueryParameters, "Mode", value);
 			}
 		}
 
@@ -100,6 +119,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				dBNodeClass = value;
 				DictionaryUtil.Add(QueryParameters, "DBNodeClass", value);
+			}
+		}
+
+		public string DBClusterCategory
+		{
+			get
+			{
+				return dBClusterCategory;
+			}
+			set	
+			{
+				dBClusterCategory = value;
+				DictionaryUtil.Add(QueryParameters, "DBClusterCategory", value);
 			}
 		}
 
@@ -217,6 +249,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				computeResource = value;
 				DictionaryUtil.Add(QueryParameters, "ComputeResource", value);
+			}
+		}
+
+		public int? ElasticIOResource
+		{
+			get
+			{
+				return elasticIOResource;
+			}
+			set	
+			{
+				elasticIOResource = value;
+				DictionaryUtil.Add(QueryParameters, "ElasticIOResource", value.ToString());
 			}
 		}
 

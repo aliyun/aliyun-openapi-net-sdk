@@ -31,24 +31,29 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class ListSensitiveColumnsDetailRequest : RpcAcsRequest<ListSensitiveColumnsDetailResponse>
     {
         public ListSensitiveColumnsDetailRequest()
-            : base("dms-enterprise", "2018-11-01", "ListSensitiveColumnsDetail", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "ListSensitiveColumnsDetail", "dms-enterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private string schemaName;
 
-		private string tableName;
-
 		private string columnName;
 
 		private long? tid;
 
+		private long? dbId;
+
+		private bool? logic;
+
+		private string tableName;
+
+		[JsonProperty(PropertyName = "SchemaName")]
 		public string SchemaName
 		{
 			get
@@ -62,19 +67,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public string TableName
-		{
-			get
-			{
-				return tableName;
-			}
-			set	
-			{
-				tableName = value;
-				DictionaryUtil.Add(QueryParameters, "TableName", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "ColumnName")]
 		public string ColumnName
 		{
 			get
@@ -88,6 +81,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -98,6 +92,48 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				tid = value;
 				DictionaryUtil.Add(QueryParameters, "Tid", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "DbId")]
+		public long? DbId
+		{
+			get
+			{
+				return dbId;
+			}
+			set	
+			{
+				dbId = value;
+				DictionaryUtil.Add(QueryParameters, "DbId", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "Logic")]
+		public bool? Logic
+		{
+			get
+			{
+				return logic;
+			}
+			set	
+			{
+				logic = value;
+				DictionaryUtil.Add(QueryParameters, "Logic", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "TableName")]
+		public string TableName
+		{
+			get
+			{
+				return tableName;
+			}
+			set	
+			{
+				tableName = value;
+				DictionaryUtil.Add(QueryParameters, "TableName", value);
 			}
 		}
 

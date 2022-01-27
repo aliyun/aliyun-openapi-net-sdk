@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -98,23 +98,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeTags_Tag
 		{
 
-			private string tagKey;
-
 			private string tagValue;
 
-			private DescribeTags_ResourceTypeCount resourceTypeCount;
+			private string tagKey;
 
-			public string TagKey
-			{
-				get
-				{
-					return tagKey;
-				}
-				set	
-				{
-					tagKey = value;
-				}
-			}
+			private DescribeTags_ResourceTypeCount resourceTypeCount;
 
 			public string TagValue
 			{
@@ -125,6 +113,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					tagValue = value;
+				}
+			}
+
+			public string TagKey
+			{
+				get
+				{
+					return tagKey;
+				}
+				set	
+				{
+					tagKey = value;
 				}
 			}
 
@@ -145,27 +145,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private int? instance;
 
-				private int? disk;
-
-				private int? volume;
-
 				private int? image;
+
+				private int? ddh;
+
+				private int? snapshotPolicy;
+
+				private int? securitygroup;
 
 				private int? snapshot;
 
-				private int? securitygroup;
+				private int? reservedInstance;
 
 				private int? launchTemplate;
 
 				private int? eni;
 
-				private int? ddh;
+				private int? disk;
 
 				private int? keyPair;
 
-				private int? snapshotPolicy;
-
-				private int? reservedInstance;
+				private int? volume;
 
 				public int? Instance
 				{
@@ -176,30 +176,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						instance = value;
-					}
-				}
-
-				public int? Disk
-				{
-					get
-					{
-						return disk;
-					}
-					set	
-					{
-						disk = value;
-					}
-				}
-
-				public int? Volume
-				{
-					get
-					{
-						return volume;
-					}
-					set	
-					{
-						volume = value;
 					}
 				}
 
@@ -215,15 +191,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public int? Snapshot
+				public int? Ddh
 				{
 					get
 					{
-						return snapshot;
+						return ddh;
 					}
 					set	
 					{
-						snapshot = value;
+						ddh = value;
+					}
+				}
+
+				public int? SnapshotPolicy
+				{
+					get
+					{
+						return snapshotPolicy;
+					}
+					set	
+					{
+						snapshotPolicy = value;
 					}
 				}
 
@@ -236,6 +224,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						securitygroup = value;
+					}
+				}
+
+				public int? Snapshot
+				{
+					get
+					{
+						return snapshot;
+					}
+					set	
+					{
+						snapshot = value;
+					}
+				}
+
+				public int? ReservedInstance
+				{
+					get
+					{
+						return reservedInstance;
+					}
+					set	
+					{
+						reservedInstance = value;
 					}
 				}
 
@@ -263,15 +275,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public int? Ddh
+				public int? Disk
 				{
 					get
 					{
-						return ddh;
+						return disk;
 					}
 					set	
 					{
-						ddh = value;
+						disk = value;
 					}
 				}
 
@@ -287,27 +299,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public int? SnapshotPolicy
+				public int? Volume
 				{
 					get
 					{
-						return snapshotPolicy;
+						return volume;
 					}
 					set	
 					{
-						snapshotPolicy = value;
-					}
-				}
-
-				public int? ReservedInstance
-				{
-					get
-					{
-						return reservedInstance;
-					}
-					set	
-					{
-						reservedInstance = value;
+						volume = value;
 					}
 				}
 			}

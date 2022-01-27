@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 {
     public class DeleteClusterResponseUnmarshaller
     {
-        public static DeleteClusterResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteClusterResponse deleteClusterResponse = new DeleteClusterResponse();
 
-			deleteClusterResponse.HttpResponse = context.HttpResponse;
-			deleteClusterResponse.RequestId = context.StringValue("DeleteCluster.RequestId");
+			deleteClusterResponse.HttpResponse = _ctx.HttpResponse;
+			deleteClusterResponse.RequestId = _ctx.StringValue("DeleteCluster.RequestId");
         
 			return deleteClusterResponse;
         }

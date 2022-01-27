@@ -31,21 +31,22 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class EnableUserRequest : RpcAcsRequest<EnableUserResponse>
     {
         public EnableUserRequest()
-            : base("dms-enterprise", "2018-11-01", "EnableUser", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "EnableUser", "dms-enterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
-		private long? uid;
+		private string uid;
 
 		private long? tid;
 
-		public long? Uid
+		[JsonProperty(PropertyName = "Uid")]
+		public string Uid
 		{
 			get
 			{
@@ -54,10 +55,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			set	
 			{
 				uid = value;
-				DictionaryUtil.Add(QueryParameters, "Uid", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "Uid", value);
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get

@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class ListThingTemplatesResponseUnmarshaller
     {
-        public static ListThingTemplatesResponse Unmarshall(UnmarshallerContext context)
+        public static ListThingTemplatesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListThingTemplatesResponse listThingTemplatesResponse = new ListThingTemplatesResponse();
 
-			listThingTemplatesResponse.HttpResponse = context.HttpResponse;
-			listThingTemplatesResponse.RequestId = context.StringValue("ListThingTemplates.RequestId");
-			listThingTemplatesResponse.Success = context.BooleanValue("ListThingTemplates.Success");
-			listThingTemplatesResponse.Code = context.StringValue("ListThingTemplates.Code");
-			listThingTemplatesResponse.ErrorMessage = context.StringValue("ListThingTemplates.ErrorMessage");
+			listThingTemplatesResponse.HttpResponse = _ctx.HttpResponse;
+			listThingTemplatesResponse.RequestId = _ctx.StringValue("ListThingTemplates.RequestId");
+			listThingTemplatesResponse.Success = _ctx.BooleanValue("ListThingTemplates.Success");
+			listThingTemplatesResponse.Code = _ctx.StringValue("ListThingTemplates.Code");
+			listThingTemplatesResponse.ErrorMessage = _ctx.StringValue("ListThingTemplates.ErrorMessage");
 
 			List<ListThingTemplatesResponse.ListThingTemplates_CategoryInfo> listThingTemplatesResponse_data = new List<ListThingTemplatesResponse.ListThingTemplates_CategoryInfo>();
-			for (int i = 0; i < context.Length("ListThingTemplates.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListThingTemplates.Data.Length"); i++) {
 				ListThingTemplatesResponse.ListThingTemplates_CategoryInfo categoryInfo = new ListThingTemplatesResponse.ListThingTemplates_CategoryInfo();
-				categoryInfo.CategoryKey = context.StringValue("ListThingTemplates.Data["+ i +"].CategoryKey");
-				categoryInfo.CategoryName = context.StringValue("ListThingTemplates.Data["+ i +"].CategoryName");
+				categoryInfo.CategoryKey = _ctx.StringValue("ListThingTemplates.Data["+ i +"].CategoryKey");
+				categoryInfo.CategoryName = _ctx.StringValue("ListThingTemplates.Data["+ i +"].CategoryName");
 
 				listThingTemplatesResponse_data.Add(categoryInfo);
 			}

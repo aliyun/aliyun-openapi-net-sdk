@@ -70,21 +70,9 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 		public class OnsMqttQueryClientByGroupId_MqttClientSetDo
 		{
 
-			private long? onlineCount;
-
 			private long? persistCount;
 
-			public long? OnlineCount
-			{
-				get
-				{
-					return onlineCount;
-				}
-				set	
-				{
-					onlineCount = value;
-				}
-			}
+			private long? onlineCount;
 
 			public long? PersistCount
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					persistCount = value;
+				}
+			}
+
+			public long? OnlineCount
+			{
+				get
+				{
+					return onlineCount;
+				}
+				set	
+				{
+					onlineCount = value;
 				}
 			}
 		}

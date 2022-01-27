@@ -32,36 +32,29 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ResizeClusterV2Request()
             : base("Emr", "2016-04-08", "ResizeClusterV2", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string vswitchId;
 
 		private bool? isOpenPublicIp;
 
 		private bool? autoPayOrder;
 
-		private List<HostComponentInfo> hostComponentInfos;
-
-		private string regionId;
-
-		private List<HostGroup> hostGroups;
-
 		private string clusterId;
 
-		private string accessKeyId;
+		private string vswitchId;
 
-		public string VswitchId
-		{
-			get
-			{
-				return vswitchId;
-			}
-			set	
-			{
-				vswitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VswitchId", value);
-			}
-		}
+		private List<HostComponentInfo> hostComponentInfos = new List<HostComponentInfo>(){ };
+
+		private string clickhouseConf;
+
+		private List<HostGroup> hostGroups = new List<HostGroup>(){ };
+
+		private List<PromotionInfo> promotionInfos = new List<PromotionInfo>(){ };
 
 		public bool? IsOpenPublicIp
 		{
@@ -89,6 +82,32 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public string VswitchId
+		{
+			get
+			{
+				return vswitchId;
+			}
+			set	
+			{
+				vswitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VswitchId", value);
+			}
+		}
+
 		public List<HostComponentInfo> HostComponentInfos
 		{
 			get
@@ -111,16 +130,16 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
+		public string ClickhouseConf
 		{
 			get
 			{
-				return regionId;
+				return clickhouseConf;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				clickhouseConf = value;
+				DictionaryUtil.Add(QueryParameters, "ClickhouseConf", value);
 			}
 		}
 
@@ -139,6 +158,7 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".Period", hostGroups[i].Period);
 					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".SysDiskCapacity", hostGroups[i].SysDiskCapacity);
 					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".HostKeyPairName", hostGroups[i].HostKeyPairName);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".PrivatePoolOptionsId", hostGroups[i].PrivatePoolOptionsId);
 					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".DiskCapacity", hostGroups[i].DiskCapacity);
 					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".SysDiskType", hostGroups[i].SysDiskType);
 					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".ClusterId", hostGroups[i].ClusterId);
@@ -155,33 +175,27 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".CreateType", hostGroups[i].CreateType);
 					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".HostPassword", hostGroups[i].HostPassword);
 					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".HostGroupType", hostGroups[i].HostGroupType);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".PrivatePoolOptionsMatchCriteria", hostGroups[i].PrivatePoolOptionsMatchCriteria);
 				}
 			}
 		}
 
-		public string ClusterId
+		public List<PromotionInfo> PromotionInfos
 		{
 			get
 			{
-				return clusterId;
+				return promotionInfos;
 			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
 
-		public string AccessKeyId
-		{
-			get
+			set
 			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				promotionInfos = value;
+				for (int i = 0; i < promotionInfos.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"PromotionInfo." + (i + 1) + ".PromotionOptionCode", promotionInfos[i].PromotionOptionCode);
+					DictionaryUtil.Add(QueryParameters,"PromotionInfo." + (i + 1) + ".ProductCode", promotionInfos[i].ProductCode);
+					DictionaryUtil.Add(QueryParameters,"PromotionInfo." + (i + 1) + ".PromotionOptionNo", promotionInfos[i].PromotionOptionNo);
+				}
 			}
 		}
 
@@ -190,7 +204,7 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string hostName;
 
-			private List<string> componentNameLists;
+			private List<string> componentNameLists = new List<string>(){ };
 
 			private string serviceName;
 
@@ -240,6 +254,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string hostKeyPairName;
 
+			private string privatePoolOptionsId;
+
 			private int? diskCapacity;
 
 			private string sysDiskType;
@@ -271,6 +287,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			private string hostPassword;
 
 			private string hostGroupType;
+
+			private string privatePoolOptionsMatchCriteria;
 
 			public int? Period
 			{
@@ -305,6 +323,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					hostKeyPairName = value;
+				}
+			}
+
+			public string PrivatePoolOptionsId
+			{
+				get
+				{
+					return privatePoolOptionsId;
+				}
+				set	
+				{
+					privatePoolOptionsId = value;
 				}
 			}
 
@@ -497,6 +527,64 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					hostGroupType = value;
+				}
+			}
+
+			public string PrivatePoolOptionsMatchCriteria
+			{
+				get
+				{
+					return privatePoolOptionsMatchCriteria;
+				}
+				set	
+				{
+					privatePoolOptionsMatchCriteria = value;
+				}
+			}
+		}
+
+		public class PromotionInfo
+		{
+
+			private string promotionOptionCode;
+
+			private string productCode;
+
+			private string promotionOptionNo;
+
+			public string PromotionOptionCode
+			{
+				get
+				{
+					return promotionOptionCode;
+				}
+				set	
+				{
+					promotionOptionCode = value;
+				}
+			}
+
+			public string ProductCode
+			{
+				get
+				{
+					return productCode;
+				}
+				set	
+				{
+					productCode = value;
+				}
+			}
+
+			public string PromotionOptionNo
+			{
+				get
+				{
+					return promotionOptionNo;
+				}
+				set	
+				{
+					promotionOptionNo = value;
 				}
 			}
 		}

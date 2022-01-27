@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -58,11 +58,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? storageSetPartitionNumber;
 
-		private List<Tag> tags = new List<Tag>(){ };
+		private string multiAttach;
 
-		private List<Arn> arns = new List<Arn>(){ };
+		private List<string> tags = new List<string>(){ };
 
 		private string advancedFeatures;
+
+		private List<string> arns = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -81,6 +83,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private bool? encrypted;
 
 		private string zoneId;
+
+		private string storageClusterId;
 
 		private string kMSKeyId;
 
@@ -201,7 +205,20 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Tag> Tags
+		public string MultiAttach
+		{
+			get
+			{
+				return multiAttach;
+			}
+			set	
+			{
+				multiAttach = value;
+				DictionaryUtil.Add(QueryParameters, "MultiAttach", value);
+			}
+		}
+
+		public List<string> Tags
 		{
 			get
 			{
@@ -211,29 +228,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				tags = value;
-				for (int i = 0; i < tags.Count; i++)
+				if(tags != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
-			}
-		}
-
-		public List<Arn> Arns
-		{
-			get
-			{
-				return arns;
-			}
-
-			set
-			{
-				arns = value;
-				for (int i = 0; i < arns.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Arn." + (i + 1) + ".Rolearn", arns[i].Rolearn);
-					DictionaryUtil.Add(QueryParameters,"Arn." + (i + 1) + ".RoleType", arns[i].RoleType);
-					DictionaryUtil.Add(QueryParameters,"Arn." + (i + 1) + ".AssumeRoleFor", arns[i].AssumeRoleFor);
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
 				}
 			}
 		}
@@ -248,6 +249,28 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				advancedFeatures = value;
 				DictionaryUtil.Add(QueryParameters, "AdvancedFeatures", value);
+			}
+		}
+
+		public List<string> Arns
+		{
+			get
+			{
+				return arns;
+			}
+
+			set
+			{
+				arns = value;
+				if(arns != null)
+				{
+					for (int depth1 = 0; depth1 < arns.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Arn." + (depth1 + 1), arns[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Arn." + (depth1 + 1), arns[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Arn." + (depth1 + 1), arns[depth1]);
+					}
+				}
 			}
 		}
 
@@ -368,6 +391,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string StorageClusterId
+		{
+			get
+			{
+				return storageClusterId;
+			}
+			set	
+			{
+				storageClusterId = value;
+				DictionaryUtil.Add(QueryParameters, "StorageClusterId", value);
+			}
+		}
+
 		public string KMSKeyId
 		{
 			get
@@ -388,7 +424,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string key;
 
-			public string Value
+			public string Value_
 			{
 				get
 				{

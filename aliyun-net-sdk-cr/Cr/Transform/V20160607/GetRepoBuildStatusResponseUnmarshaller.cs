@@ -26,11 +26,11 @@ namespace Aliyun.Acs.cr.Transform.V20160607
 {
     public class GetRepoBuildStatusResponseUnmarshaller
     {
-        public static GetRepoBuildStatusResponse Unmarshall(UnmarshallerContext context)
+        public static GetRepoBuildStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetRepoBuildStatusResponse getRepoBuildStatusResponse = new GetRepoBuildStatusResponse();
 
-			getRepoBuildStatusResponse.HttpResponse = context.HttpResponse;
+			getRepoBuildStatusResponse.HttpResponse = _ctx.HttpResponse;
         
 			return getRepoBuildStatusResponse;
         }

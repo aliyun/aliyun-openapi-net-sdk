@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 {
     public class CheckDeviceResponseUnmarshaller
     {
-        public static CheckDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static CheckDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckDeviceResponse checkDeviceResponse = new CheckDeviceResponse();
 
-			checkDeviceResponse.HttpResponse = context.HttpResponse;
-			checkDeviceResponse.RequestId = context.StringValue("CheckDevice.RequestId");
-			checkDeviceResponse.Available = context.BooleanValue("CheckDevice.Available");
+			checkDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			checkDeviceResponse.RequestId = _ctx.StringValue("CheckDevice.RequestId");
+			checkDeviceResponse.Available = _ctx.BooleanValue("CheckDevice.Available");
         
 			return checkDeviceResponse;
         }

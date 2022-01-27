@@ -26,29 +26,29 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class JoinDeviceMeetingResponseUnmarshaller
     {
-        public static JoinDeviceMeetingResponse Unmarshall(UnmarshallerContext context)
+        public static JoinDeviceMeetingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			JoinDeviceMeetingResponse joinDeviceMeetingResponse = new JoinDeviceMeetingResponse();
 
-			joinDeviceMeetingResponse.HttpResponse = context.HttpResponse;
-			joinDeviceMeetingResponse.ErrorCode = context.IntegerValue("JoinDeviceMeeting.ErrorCode");
-			joinDeviceMeetingResponse.Message = context.StringValue("JoinDeviceMeeting.Message");
-			joinDeviceMeetingResponse.Success = context.BooleanValue("JoinDeviceMeeting.Success");
-			joinDeviceMeetingResponse.RequestId = context.StringValue("JoinDeviceMeeting.RequestId");
+			joinDeviceMeetingResponse.HttpResponse = _ctx.HttpResponse;
+			joinDeviceMeetingResponse.ErrorCode = _ctx.IntegerValue("JoinDeviceMeeting.ErrorCode");
+			joinDeviceMeetingResponse.Message = _ctx.StringValue("JoinDeviceMeeting.Message");
+			joinDeviceMeetingResponse.Success = _ctx.BooleanValue("JoinDeviceMeeting.Success");
+			joinDeviceMeetingResponse.RequestId = _ctx.StringValue("JoinDeviceMeeting.RequestId");
 
 			JoinDeviceMeetingResponse.JoinDeviceMeeting_Device device = new JoinDeviceMeetingResponse.JoinDeviceMeeting_Device();
-			device.MeetingDomain = context.StringValue("JoinDeviceMeeting.Device.MeetingDomain");
-			device.MeetingToken = context.StringValue("JoinDeviceMeeting.Device.MeetingToken");
-			device.MeetingCode = context.StringValue("JoinDeviceMeeting.Device.MeetingCode");
-			device.MemberUUID = context.StringValue("JoinDeviceMeeting.Device.MemberUUID");
-			device.ClientAppId = context.StringValue("JoinDeviceMeeting.Device.ClientAppId");
-			device.MeetingUUID = context.StringValue("JoinDeviceMeeting.Device.MeetingUUID");
-			device.MeetingAppId = context.StringValue("JoinDeviceMeeting.Device.MeetingAppId");
+			device.MeetingDomain = _ctx.StringValue("JoinDeviceMeeting.Device.MeetingDomain");
+			device.MeetingToken = _ctx.StringValue("JoinDeviceMeeting.Device.MeetingToken");
+			device.MeetingCode = _ctx.StringValue("JoinDeviceMeeting.Device.MeetingCode");
+			device.MemberUUID = _ctx.StringValue("JoinDeviceMeeting.Device.MemberUUID");
+			device.ClientAppId = _ctx.StringValue("JoinDeviceMeeting.Device.ClientAppId");
+			device.MeetingUUID = _ctx.StringValue("JoinDeviceMeeting.Device.MeetingUUID");
+			device.MeetingAppId = _ctx.StringValue("JoinDeviceMeeting.Device.MeetingAppId");
 
 			JoinDeviceMeetingResponse.JoinDeviceMeeting_Device.JoinDeviceMeeting_SlsInfo slsInfo = new JoinDeviceMeetingResponse.JoinDeviceMeeting_Device.JoinDeviceMeeting_SlsInfo();
-			slsInfo.LogServiceEndpoint = context.StringValue("JoinDeviceMeeting.Device.SlsInfo.LogServiceEndpoint");
-			slsInfo.Project = context.StringValue("JoinDeviceMeeting.Device.SlsInfo.Project");
-			slsInfo.Logstore = context.StringValue("JoinDeviceMeeting.Device.SlsInfo.Logstore");
+			slsInfo.LogServiceEndpoint = _ctx.StringValue("JoinDeviceMeeting.Device.SlsInfo.LogServiceEndpoint");
+			slsInfo.Project = _ctx.StringValue("JoinDeviceMeeting.Device.SlsInfo.Project");
+			slsInfo.Logstore = _ctx.StringValue("JoinDeviceMeeting.Device.SlsInfo.Logstore");
 			device.SlsInfo = slsInfo;
 			joinDeviceMeetingResponse.Device = device;
         

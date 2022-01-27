@@ -70,71 +70,35 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 		public class OnsTraceGetResult_TraceData
 		{
 
-			private string queryId;
-
-			private string userId;
-
-			private string topic;
-
-			private string msgId;
+			private string status;
 
 			private string msgKey;
 
-			private string status;
+			private long? updateTime;
 
 			private long? createTime;
 
-			private long? updateTime;
+			private string topic;
+
+			private string userId;
 
 			private string instanceId;
 
+			private string msgId;
+
+			private string queryId;
+
 			private List<OnsTraceGetResult_TraceMapDo> traceList;
 
-			public string QueryId
+			public string Status
 			{
 				get
 				{
-					return queryId;
+					return status;
 				}
 				set	
 				{
-					queryId = value;
-				}
-			}
-
-			public string UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
-
-			public string Topic
-			{
-				get
-				{
-					return topic;
-				}
-				set	
-				{
-					topic = value;
-				}
-			}
-
-			public string MsgId
-			{
-				get
-				{
-					return msgId;
-				}
-				set	
-				{
-					msgId = value;
+					status = value;
 				}
 			}
 
@@ -150,15 +114,15 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
-			public string Status
+			public long? UpdateTime
 			{
 				get
 				{
-					return status;
+					return updateTime;
 				}
 				set	
 				{
-					status = value;
+					updateTime = value;
 				}
 			}
 
@@ -174,15 +138,27 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
-			public long? UpdateTime
+			public string Topic
 			{
 				get
 				{
-					return updateTime;
+					return topic;
 				}
 				set	
 				{
-					updateTime = value;
+					topic = value;
+				}
+			}
+
+			public string UserId
+			{
+				get
+				{
+					return userId;
+				}
+				set	
+				{
+					userId = value;
 				}
 			}
 
@@ -195,6 +171,30 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					instanceId = value;
+				}
+			}
+
+			public string MsgId
+			{
+				get
+				{
+					return msgId;
+				}
+				set	
+				{
+					msgId = value;
+				}
+			}
+
+			public string QueryId
+			{
+				get
+				{
+					return queryId;
+				}
+				set	
+				{
+					queryId = value;
 				}
 			}
 
@@ -213,25 +213,49 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			public class OnsTraceGetResult_TraceMapDo
 			{
 
+				private string status;
+
+				private string msgKey;
+
 				private long? pubTime;
 
 				private string topic;
 
-				private string pubGroupName;
-
-				private string msgId;
+				private int? costTime;
 
 				private string tag;
 
-				private string msgKey;
+				private string msgId;
+
+				private string pubGroupName;
 
 				private string bornHost;
 
-				private int? costTime;
-
-				private string status;
-
 				private List<OnsTraceGetResult_SubMapDo> subList;
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string MsgKey
+				{
+					get
+					{
+						return msgKey;
+					}
+					set	
+					{
+						msgKey = value;
+					}
+				}
 
 				public long? PubTime
 				{
@@ -257,27 +281,15 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					}
 				}
 
-				public string PubGroupName
+				public int? CostTime
 				{
 					get
 					{
-						return pubGroupName;
+						return costTime;
 					}
 					set	
 					{
-						pubGroupName = value;
-					}
-				}
-
-				public string MsgId
-				{
-					get
-					{
-						return msgId;
-					}
-					set	
-					{
-						msgId = value;
+						costTime = value;
 					}
 				}
 
@@ -293,15 +305,27 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					}
 				}
 
-				public string MsgKey
+				public string MsgId
 				{
 					get
 					{
-						return msgKey;
+						return msgId;
 					}
 					set	
 					{
-						msgKey = value;
+						msgId = value;
+					}
+				}
+
+				public string PubGroupName
+				{
+					get
+					{
+						return pubGroupName;
+					}
+					set	
+					{
+						pubGroupName = value;
 					}
 				}
 
@@ -314,30 +338,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					set	
 					{
 						bornHost = value;
-					}
-				}
-
-				public int? CostTime
-				{
-					get
-					{
-						return costTime;
-					}
-					set	
-					{
-						costTime = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
 					}
 				}
 
@@ -356,13 +356,25 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				public class OnsTraceGetResult_SubMapDo
 				{
 
+					private int? failCount;
+
 					private string subGroupName;
 
 					private int? successCount;
 
-					private int? failCount;
-
 					private List<OnsTraceGetResult_SubClientInfoDo> clientList;
+
+					public int? FailCount
+					{
+						get
+						{
+							return failCount;
+						}
+						set	
+						{
+							failCount = value;
+						}
+					}
 
 					public string SubGroupName
 					{
@@ -388,18 +400,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 						}
 					}
 
-					public int? FailCount
-					{
-						get
-						{
-							return failCount;
-						}
-						set	
-						{
-							failCount = value;
-						}
-					}
-
 					public List<OnsTraceGetResult_SubClientInfoDo> ClientList
 					{
 						get
@@ -415,27 +415,27 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					public class OnsTraceGetResult_SubClientInfoDo
 					{
 
-						private string subGroupName;
+						private string status;
 
 						private long? subTime;
 
-						private string clientHost;
-
 						private int? reconsumeTimes;
+
+						private string subGroupName;
+
+						private string clientHost;
 
 						private int? costTime;
 
-						private string status;
-
-						public string SubGroupName
+						public string Status
 						{
 							get
 							{
-								return subGroupName;
+								return status;
 							}
 							set	
 							{
-								subGroupName = value;
+								status = value;
 							}
 						}
 
@@ -451,18 +451,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 							}
 						}
 
-						public string ClientHost
-						{
-							get
-							{
-								return clientHost;
-							}
-							set	
-							{
-								clientHost = value;
-							}
-						}
-
 						public int? ReconsumeTimes
 						{
 							get
@@ -475,6 +463,30 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 							}
 						}
 
+						public string SubGroupName
+						{
+							get
+							{
+								return subGroupName;
+							}
+							set	
+							{
+								subGroupName = value;
+							}
+						}
+
+						public string ClientHost
+						{
+							get
+							{
+								return clientHost;
+							}
+							set	
+							{
+								clientHost = value;
+							}
+						}
+
 						public int? CostTime
 						{
 							get
@@ -484,18 +496,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 							set	
 							{
 								costTime = value;
-							}
-						}
-
-						public string Status
-						{
-							get
-							{
-								return status;
-							}
-							set	
-							{
-								status = value;
 							}
 						}
 					}

@@ -101,25 +101,13 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			public class GetMediaAuditAudioResultDetail_ListItem
 			{
 
-				private long? startTime;
-
 				private long? endTime;
+
+				private long? startTime;
 
 				private string text;
 
 				private string label;
-
-				public long? StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
-					}
-				}
 
 				public long? EndTime
 				{
@@ -130,6 +118,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						endTime = value;
+					}
+				}
+
+				public long? StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
 					}
 				}
 

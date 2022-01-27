@@ -26,32 +26,32 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetURLUploadInfosResponseUnmarshaller
     {
-        public static GetURLUploadInfosResponse Unmarshall(UnmarshallerContext context)
+        public static GetURLUploadInfosResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetURLUploadInfosResponse getURLUploadInfosResponse = new GetURLUploadInfosResponse();
 
-			getURLUploadInfosResponse.HttpResponse = context.HttpResponse;
-			getURLUploadInfosResponse.RequestId = context.StringValue("GetURLUploadInfos.RequestId");
+			getURLUploadInfosResponse.HttpResponse = _ctx.HttpResponse;
+			getURLUploadInfosResponse.RequestId = _ctx.StringValue("GetURLUploadInfos.RequestId");
 
 			List<string> getURLUploadInfosResponse_nonExists = new List<string>();
-			for (int i = 0; i < context.Length("GetURLUploadInfos.NonExists.Length"); i++) {
-				getURLUploadInfosResponse_nonExists.Add(context.StringValue("GetURLUploadInfos.NonExists["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetURLUploadInfos.NonExists.Length"); i++) {
+				getURLUploadInfosResponse_nonExists.Add(_ctx.StringValue("GetURLUploadInfos.NonExists["+ i +"]"));
 			}
 			getURLUploadInfosResponse.NonExists = getURLUploadInfosResponse_nonExists;
 
 			List<GetURLUploadInfosResponse.GetURLUploadInfos_UrlUploadJobInfoDTO> getURLUploadInfosResponse_uRLUploadInfoList = new List<GetURLUploadInfosResponse.GetURLUploadInfos_UrlUploadJobInfoDTO>();
-			for (int i = 0; i < context.Length("GetURLUploadInfos.URLUploadInfoList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetURLUploadInfos.URLUploadInfoList.Length"); i++) {
 				GetURLUploadInfosResponse.GetURLUploadInfos_UrlUploadJobInfoDTO urlUploadJobInfoDTO = new GetURLUploadInfosResponse.GetURLUploadInfos_UrlUploadJobInfoDTO();
-				urlUploadJobInfoDTO.JobId = context.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].JobId");
-				urlUploadJobInfoDTO.UploadURL = context.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].UploadURL");
-				urlUploadJobInfoDTO.MediaId = context.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].MediaId");
-				urlUploadJobInfoDTO.FileSize = context.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].FileSize");
-				urlUploadJobInfoDTO.Status = context.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].Status");
-				urlUploadJobInfoDTO.UserData = context.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].UserData");
-				urlUploadJobInfoDTO.ErrorCode = context.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].ErrorCode");
-				urlUploadJobInfoDTO.ErrorMessage = context.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].ErrorMessage");
-				urlUploadJobInfoDTO.CreationTime = context.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].CreationTime");
-				urlUploadJobInfoDTO.CompleteTime = context.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].CompleteTime");
+				urlUploadJobInfoDTO.JobId = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].JobId");
+				urlUploadJobInfoDTO.UploadURL = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].UploadURL");
+				urlUploadJobInfoDTO.MediaId = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].MediaId");
+				urlUploadJobInfoDTO.FileSize = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].FileSize");
+				urlUploadJobInfoDTO.Status = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].Status");
+				urlUploadJobInfoDTO.UserData = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].UserData");
+				urlUploadJobInfoDTO.ErrorCode = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].ErrorCode");
+				urlUploadJobInfoDTO.ErrorMessage = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].ErrorMessage");
+				urlUploadJobInfoDTO.CreationTime = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].CreationTime");
+				urlUploadJobInfoDTO.CompleteTime = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].CompleteTime");
 
 				getURLUploadInfosResponse_uRLUploadInfoList.Add(urlUploadJobInfoDTO);
 			}

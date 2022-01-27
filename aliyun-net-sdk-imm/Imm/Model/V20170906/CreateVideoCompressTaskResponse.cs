@@ -25,23 +25,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
 	public class CreateVideoCompressTaskResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string taskId;
 
-		private string taskType;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string taskType;
 
 		public string TaskId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				taskId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.gpdb.Model.V20160503
@@ -25,19 +25,31 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 	public class DescribeResourceUsageResponse : AcsResponse
 	{
 
+		private long? logSize;
+
 		private string requestId;
 
 		private string dBInstanceId;
 
-		private string engine;
+		private long? dataSize;
+
+		private long? backupSize;
 
 		private long? diskUsed;
 
-		private long? dataSize;
+		private string engine;
 
-		private long? logSize;
-
-		private long? backupSize;
+		public long? LogSize
+		{
+			get
+			{
+				return logSize;
+			}
+			set	
+			{
+				logSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -63,15 +75,27 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public string Engine
+		public long? DataSize
 		{
 			get
 			{
-				return engine;
+				return dataSize;
 			}
 			set	
 			{
-				engine = value;
+				dataSize = value;
+			}
+		}
+
+		public long? BackupSize
+		{
+			get
+			{
+				return backupSize;
+			}
+			set	
+			{
+				backupSize = value;
 			}
 		}
 
@@ -87,39 +111,15 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public long? DataSize
+		public string Engine
 		{
 			get
 			{
-				return dataSize;
+				return engine;
 			}
 			set	
 			{
-				dataSize = value;
-			}
-		}
-
-		public long? LogSize
-		{
-			get
-			{
-				return logSize;
-			}
-			set	
-			{
-				logSize = value;
-			}
-		}
-
-		public long? BackupSize
-		{
-			get
-			{
-				return backupSize;
-			}
-			set	
-			{
-				backupSize = value;
+				engine = value;
 			}
 		}
 	}

@@ -26,17 +26,17 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 {
     public class GetTitleIntelligenceResponseUnmarshaller
     {
-        public static GetTitleIntelligenceResponse Unmarshall(UnmarshallerContext context)
+        public static GetTitleIntelligenceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetTitleIntelligenceResponse getTitleIntelligenceResponse = new GetTitleIntelligenceResponse();
 
-			getTitleIntelligenceResponse.HttpResponse = context.HttpResponse;
-			getTitleIntelligenceResponse.RequestId = context.StringValue("GetTitleIntelligence.RequestId");
-			getTitleIntelligenceResponse.Code = context.IntegerValue("GetTitleIntelligence.Code");
-			getTitleIntelligenceResponse.Message = context.StringValue("GetTitleIntelligence.Message");
+			getTitleIntelligenceResponse.HttpResponse = _ctx.HttpResponse;
+			getTitleIntelligenceResponse.Code = _ctx.IntegerValue("GetTitleIntelligence.Code");
+			getTitleIntelligenceResponse.Message = _ctx.StringValue("GetTitleIntelligence.Message");
+			getTitleIntelligenceResponse.RequestId = _ctx.StringValue("GetTitleIntelligence.RequestId");
 
 			GetTitleIntelligenceResponse.GetTitleIntelligence_Data data = new GetTitleIntelligenceResponse.GetTitleIntelligence_Data();
-			data.Titles = context.StringValue("GetTitleIntelligence.Data.Titles");
+			data.Titles = _ctx.StringValue("GetTitleIntelligence.Data.Titles");
 			getTitleIntelligenceResponse.Data = data;
         
 			return getTitleIntelligenceResponse;

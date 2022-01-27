@@ -34,9 +34,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -62,6 +63,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private long? ownerId;
 
 		private string internalPort;
+
+		private bool? portBreak;
 
 		private string externalPort;
 
@@ -218,6 +221,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				internalPort = value;
 				DictionaryUtil.Add(QueryParameters, "InternalPort", value);
+			}
+		}
+
+		public bool? PortBreak
+		{
+			get
+			{
+				return portBreak;
+			}
+			set	
+			{
+				portBreak = value;
+				DictionaryUtil.Add(QueryParameters, "PortBreak", value.ToString());
 			}
 		}
 

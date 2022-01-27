@@ -364,6 +364,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 											private string instanceClassRemark;
 
+											private long? capacity;
+
 											public string InstanceClass
 											{
 												get
@@ -385,6 +387,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 												set	
 												{
 													instanceClassRemark = value;
+												}
+											}
+
+											public long? Capacity
+											{
+												get
+												{
+													return capacity;
+												}
+												set	
+												{
+													capacity = value;
 												}
 											}
 										}

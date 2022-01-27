@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class SuspendInstanceResponseUnmarshaller
     {
-        public static SuspendInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static SuspendInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SuspendInstanceResponse suspendInstanceResponse = new SuspendInstanceResponse();
 
-			suspendInstanceResponse.HttpResponse = context.HttpResponse;
-			suspendInstanceResponse.ErrorCode = context.StringValue("SuspendInstance.ErrorCode");
-			suspendInstanceResponse.ErrorMessage = context.StringValue("SuspendInstance.ErrorMessage");
-			suspendInstanceResponse.HttpStatusCode = context.IntegerValue("SuspendInstance.HttpStatusCode");
-			suspendInstanceResponse.RequestId = context.StringValue("SuspendInstance.RequestId");
-			suspendInstanceResponse.Success = context.BooleanValue("SuspendInstance.Success");
-			suspendInstanceResponse.Data = context.BooleanValue("SuspendInstance.Data");
+			suspendInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			suspendInstanceResponse.ErrorCode = _ctx.StringValue("SuspendInstance.ErrorCode");
+			suspendInstanceResponse.ErrorMessage = _ctx.StringValue("SuspendInstance.ErrorMessage");
+			suspendInstanceResponse.HttpStatusCode = _ctx.IntegerValue("SuspendInstance.HttpStatusCode");
+			suspendInstanceResponse.RequestId = _ctx.StringValue("SuspendInstance.RequestId");
+			suspendInstanceResponse.Success = _ctx.BooleanValue("SuspendInstance.Success");
+			suspendInstanceResponse.Data = _ctx.BooleanValue("SuspendInstance.Data");
         
 			return suspendInstanceResponse;
         }

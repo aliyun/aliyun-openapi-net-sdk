@@ -26,27 +26,27 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveUserDomainsResponseUnmarshaller
     {
-        public static DescribeLiveUserDomainsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveUserDomainsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveUserDomainsResponse describeLiveUserDomainsResponse = new DescribeLiveUserDomainsResponse();
 
-			describeLiveUserDomainsResponse.HttpResponse = context.HttpResponse;
-			describeLiveUserDomainsResponse.RequestId = context.StringValue("DescribeLiveUserDomains.RequestId");
-			describeLiveUserDomainsResponse.PageNumber = context.LongValue("DescribeLiveUserDomains.PageNumber");
-			describeLiveUserDomainsResponse.PageSize = context.LongValue("DescribeLiveUserDomains.PageSize");
-			describeLiveUserDomainsResponse.TotalCount = context.LongValue("DescribeLiveUserDomains.TotalCount");
+			describeLiveUserDomainsResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveUserDomainsResponse.RequestId = _ctx.StringValue("DescribeLiveUserDomains.RequestId");
+			describeLiveUserDomainsResponse.PageNumber = _ctx.LongValue("DescribeLiveUserDomains.PageNumber");
+			describeLiveUserDomainsResponse.PageSize = _ctx.LongValue("DescribeLiveUserDomains.PageSize");
+			describeLiveUserDomainsResponse.TotalCount = _ctx.LongValue("DescribeLiveUserDomains.TotalCount");
 
 			List<DescribeLiveUserDomainsResponse.DescribeLiveUserDomains_PageData> describeLiveUserDomainsResponse_domains = new List<DescribeLiveUserDomainsResponse.DescribeLiveUserDomains_PageData>();
-			for (int i = 0; i < context.Length("DescribeLiveUserDomains.Domains.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveUserDomains.Domains.Length"); i++) {
 				DescribeLiveUserDomainsResponse.DescribeLiveUserDomains_PageData pageData = new DescribeLiveUserDomainsResponse.DescribeLiveUserDomains_PageData();
-				pageData.DomainName = context.StringValue("DescribeLiveUserDomains.Domains["+ i +"].DomainName");
-				pageData.Cname = context.StringValue("DescribeLiveUserDomains.Domains["+ i +"].Cname");
-				pageData.LiveDomainType = context.StringValue("DescribeLiveUserDomains.Domains["+ i +"].LiveDomainType");
-				pageData.GmtCreated = context.StringValue("DescribeLiveUserDomains.Domains["+ i +"].GmtCreated");
-				pageData.GmtModified = context.StringValue("DescribeLiveUserDomains.Domains["+ i +"].GmtModified");
-				pageData.Description = context.StringValue("DescribeLiveUserDomains.Domains["+ i +"].Description");
-				pageData.LiveDomainStatus = context.StringValue("DescribeLiveUserDomains.Domains["+ i +"].LiveDomainStatus");
-				pageData.RegionName = context.StringValue("DescribeLiveUserDomains.Domains["+ i +"].RegionName");
+				pageData.DomainName = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].DomainName");
+				pageData.Cname = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].Cname");
+				pageData.LiveDomainType = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].LiveDomainType");
+				pageData.GmtCreated = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].GmtCreated");
+				pageData.GmtModified = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].GmtModified");
+				pageData.Description = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].Description");
+				pageData.LiveDomainStatus = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].LiveDomainStatus");
+				pageData.RegionName = _ctx.StringValue("DescribeLiveUserDomains.Domains["+ i +"].RegionName");
 
 				describeLiveUserDomainsResponse_domains.Add(pageData);
 			}

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DeleteGatewayResponseUnmarshaller
     {
-        public static DeleteGatewayResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteGatewayResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteGatewayResponse deleteGatewayResponse = new DeleteGatewayResponse();
 
-			deleteGatewayResponse.HttpResponse = context.HttpResponse;
-			deleteGatewayResponse.RequestId = context.StringValue("DeleteGateway.RequestId");
-			deleteGatewayResponse.Success = context.BooleanValue("DeleteGateway.Success");
-			deleteGatewayResponse.Code = context.StringValue("DeleteGateway.Code");
-			deleteGatewayResponse.Message = context.StringValue("DeleteGateway.Message");
-			deleteGatewayResponse.TaskId = context.StringValue("DeleteGateway.TaskId");
+			deleteGatewayResponse.HttpResponse = _ctx.HttpResponse;
+			deleteGatewayResponse.TaskId = _ctx.StringValue("DeleteGateway.TaskId");
+			deleteGatewayResponse.Message = _ctx.StringValue("DeleteGateway.Message");
+			deleteGatewayResponse.RequestId = _ctx.StringValue("DeleteGateway.RequestId");
+			deleteGatewayResponse.Code = _ctx.StringValue("DeleteGateway.Code");
+			deleteGatewayResponse.Success = _ctx.BooleanValue("DeleteGateway.Success");
         
 			return deleteGatewayResponse;
         }

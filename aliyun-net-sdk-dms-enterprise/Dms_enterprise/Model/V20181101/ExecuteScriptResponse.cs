@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private bool? success;
+		private string errorCode;
 
 		private string errorMessage;
 
-		private string errorCode;
+		private bool? success;
 
 		private List<ExecuteScript_Result> results;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,30 +48,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ErrorCode")]
 		public string ErrorCode
 		{
 			get
@@ -83,6 +61,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Results")]
 		public List<ExecuteScript_Result> Results
 		{
 			get
@@ -98,28 +103,17 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class ExecuteScript_Result
 		{
 
-			private long? rowCount;
-
 			private bool? success;
 
 			private string message;
+
+			private long? rowCount;
 
 			private List<string> columnNames;
 
 			private List<Dictionary<string, string>> rows;
 
-			public long? RowCount
-			{
-				get
-				{
-					return rowCount;
-				}
-				set	
-				{
-					rowCount = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Success")]
 			public bool? Success
 			{
 				get
@@ -132,6 +126,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Message")]
 			public string Message
 			{
 				get
@@ -144,6 +139,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "RowCount")]
+			public long? RowCount
+			{
+				get
+				{
+					return rowCount;
+				}
+				set	
+				{
+					rowCount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ColumnNames")]
 			public List<string> ColumnNames
 			{
 				get
@@ -156,6 +165,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Rows")]
 			public List<Dictionary<string, string>> Rows
 			{
 				get

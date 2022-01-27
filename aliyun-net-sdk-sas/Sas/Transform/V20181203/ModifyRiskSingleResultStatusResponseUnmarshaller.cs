@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class ModifyRiskSingleResultStatusResponseUnmarshaller
     {
-        public static ModifyRiskSingleResultStatusResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyRiskSingleResultStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyRiskSingleResultStatusResponse modifyRiskSingleResultStatusResponse = new ModifyRiskSingleResultStatusResponse();
 
-			modifyRiskSingleResultStatusResponse.HttpResponse = context.HttpResponse;
-			modifyRiskSingleResultStatusResponse.RequestId = context.StringValue("ModifyRiskSingleResultStatus.RequestId");
+			modifyRiskSingleResultStatusResponse.HttpResponse = _ctx.HttpResponse;
+			modifyRiskSingleResultStatusResponse.RequestId = _ctx.StringValue("ModifyRiskSingleResultStatus.RequestId");
         
 			return modifyRiskSingleResultStatusResponse;
         }

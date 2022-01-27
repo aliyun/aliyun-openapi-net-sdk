@@ -36,14 +36,18 @@ namespace Aliyun.Acs.Config.Transform.V20190108
 			List<DescribeDeliveryChannelsResponse.DescribeDeliveryChannels_DeliveryChannel> describeDeliveryChannelsResponse_deliveryChannels = new List<DescribeDeliveryChannelsResponse.DescribeDeliveryChannels_DeliveryChannel>();
 			for (int i = 0; i < _ctx.Length("DescribeDeliveryChannels.DeliveryChannels.Length"); i++) {
 				DescribeDeliveryChannelsResponse.DescribeDeliveryChannels_DeliveryChannel deliveryChannel = new DescribeDeliveryChannelsResponse.DescribeDeliveryChannels_DeliveryChannel();
-				deliveryChannel.DeliveryChannelId = _ctx.StringValue("DescribeDeliveryChannels.DeliveryChannels["+ i +"].DeliveryChannelId");
-				deliveryChannel.DeliveryChannelName = _ctx.StringValue("DescribeDeliveryChannels.DeliveryChannels["+ i +"].DeliveryChannelName");
-				deliveryChannel.DeliveryChannelType = _ctx.StringValue("DescribeDeliveryChannels.DeliveryChannels["+ i +"].DeliveryChannelType");
-				deliveryChannel.DeliveryChannelTargetArn = _ctx.StringValue("DescribeDeliveryChannels.DeliveryChannels["+ i +"].DeliveryChannelTargetArn");
-				deliveryChannel.DeliveryChannelAssumeRoleArn = _ctx.StringValue("DescribeDeliveryChannels.DeliveryChannels["+ i +"].DeliveryChannelAssumeRoleArn");
-				deliveryChannel.DeliveryChannelCondition = _ctx.StringValue("DescribeDeliveryChannels.DeliveryChannels["+ i +"].DeliveryChannelCondition");
-				deliveryChannel.Description = _ctx.StringValue("DescribeDeliveryChannels.DeliveryChannels["+ i +"].Description");
 				deliveryChannel.Status = _ctx.IntegerValue("DescribeDeliveryChannels.DeliveryChannels["+ i +"].Status");
+				deliveryChannel.DeliveryChannelName = _ctx.StringValue("DescribeDeliveryChannels.DeliveryChannels["+ i +"].DeliveryChannelName");
+				deliveryChannel.DeliveryChannelId = _ctx.StringValue("DescribeDeliveryChannels.DeliveryChannels["+ i +"].DeliveryChannelId");
+				deliveryChannel.DeliveryChannelType = _ctx.StringValue("DescribeDeliveryChannels.DeliveryChannels["+ i +"].DeliveryChannelType");
+				deliveryChannel.DeliveryChannelAssumeRoleArn = _ctx.StringValue("DescribeDeliveryChannels.DeliveryChannels["+ i +"].DeliveryChannelAssumeRoleArn");
+				deliveryChannel.Description = _ctx.StringValue("DescribeDeliveryChannels.DeliveryChannels["+ i +"].Description");
+				deliveryChannel.DeliveryChannelCondition = _ctx.StringValue("DescribeDeliveryChannels.DeliveryChannels["+ i +"].DeliveryChannelCondition");
+				deliveryChannel.DeliveryChannelTargetArn = _ctx.StringValue("DescribeDeliveryChannels.DeliveryChannels["+ i +"].DeliveryChannelTargetArn");
+				deliveryChannel.ConfigurationSnapshot = _ctx.BooleanValue("DescribeDeliveryChannels.DeliveryChannels["+ i +"].ConfigurationSnapshot");
+				deliveryChannel.ConfigurationItemChangeNotification = _ctx.BooleanValue("DescribeDeliveryChannels.DeliveryChannels["+ i +"].ConfigurationItemChangeNotification");
+				deliveryChannel.NonCompliantNotification = _ctx.BooleanValue("DescribeDeliveryChannels.DeliveryChannels["+ i +"].NonCompliantNotification");
+				deliveryChannel.OversizedDataOSSTargetArn = _ctx.StringValue("DescribeDeliveryChannels.DeliveryChannels["+ i +"].OversizedDataOSSTargetArn");
 
 				describeDeliveryChannelsResponse_deliveryChannels.Add(deliveryChannel);
 			}

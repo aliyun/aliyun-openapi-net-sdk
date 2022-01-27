@@ -26,29 +26,29 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeVsStreamsOnlineListResponseUnmarshaller
     {
-        public static DescribeVsStreamsOnlineListResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVsStreamsOnlineListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVsStreamsOnlineListResponse describeVsStreamsOnlineListResponse = new DescribeVsStreamsOnlineListResponse();
 
-			describeVsStreamsOnlineListResponse.HttpResponse = context.HttpResponse;
-			describeVsStreamsOnlineListResponse.RequestId = context.StringValue("DescribeVsStreamsOnlineList.RequestId");
-			describeVsStreamsOnlineListResponse.PageNum = context.IntegerValue("DescribeVsStreamsOnlineList.PageNum");
-			describeVsStreamsOnlineListResponse.PageSize = context.IntegerValue("DescribeVsStreamsOnlineList.PageSize");
-			describeVsStreamsOnlineListResponse.TotalNum = context.IntegerValue("DescribeVsStreamsOnlineList.TotalNum");
-			describeVsStreamsOnlineListResponse.TotalPage = context.IntegerValue("DescribeVsStreamsOnlineList.TotalPage");
+			describeVsStreamsOnlineListResponse.HttpResponse = _ctx.HttpResponse;
+			describeVsStreamsOnlineListResponse.RequestId = _ctx.StringValue("DescribeVsStreamsOnlineList.RequestId");
+			describeVsStreamsOnlineListResponse.PageNum = _ctx.IntegerValue("DescribeVsStreamsOnlineList.PageNum");
+			describeVsStreamsOnlineListResponse.PageSize = _ctx.IntegerValue("DescribeVsStreamsOnlineList.PageSize");
+			describeVsStreamsOnlineListResponse.TotalNum = _ctx.IntegerValue("DescribeVsStreamsOnlineList.TotalNum");
+			describeVsStreamsOnlineListResponse.TotalPage = _ctx.IntegerValue("DescribeVsStreamsOnlineList.TotalPage");
 
 			List<DescribeVsStreamsOnlineListResponse.DescribeVsStreamsOnlineList_LiveStreamOnlineInfo> describeVsStreamsOnlineListResponse_onlineInfo = new List<DescribeVsStreamsOnlineListResponse.DescribeVsStreamsOnlineList_LiveStreamOnlineInfo>();
-			for (int i = 0; i < context.Length("DescribeVsStreamsOnlineList.OnlineInfo.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVsStreamsOnlineList.OnlineInfo.Length"); i++) {
 				DescribeVsStreamsOnlineListResponse.DescribeVsStreamsOnlineList_LiveStreamOnlineInfo liveStreamOnlineInfo = new DescribeVsStreamsOnlineListResponse.DescribeVsStreamsOnlineList_LiveStreamOnlineInfo();
-				liveStreamOnlineInfo.DomainName = context.StringValue("DescribeVsStreamsOnlineList.OnlineInfo["+ i +"].DomainName");
-				liveStreamOnlineInfo.AppName = context.StringValue("DescribeVsStreamsOnlineList.OnlineInfo["+ i +"].AppName");
-				liveStreamOnlineInfo.StreamName = context.StringValue("DescribeVsStreamsOnlineList.OnlineInfo["+ i +"].StreamName");
-				liveStreamOnlineInfo.PublishTime = context.StringValue("DescribeVsStreamsOnlineList.OnlineInfo["+ i +"].PublishTime");
-				liveStreamOnlineInfo.PublishUrl = context.StringValue("DescribeVsStreamsOnlineList.OnlineInfo["+ i +"].PublishUrl");
-				liveStreamOnlineInfo.PublishDomain = context.StringValue("DescribeVsStreamsOnlineList.OnlineInfo["+ i +"].PublishDomain");
-				liveStreamOnlineInfo.PublishType = context.StringValue("DescribeVsStreamsOnlineList.OnlineInfo["+ i +"].PublishType");
-				liveStreamOnlineInfo.Transcoded = context.StringValue("DescribeVsStreamsOnlineList.OnlineInfo["+ i +"].Transcoded");
-				liveStreamOnlineInfo.TranscodeId = context.StringValue("DescribeVsStreamsOnlineList.OnlineInfo["+ i +"].TranscodeId");
+				liveStreamOnlineInfo.DomainName = _ctx.StringValue("DescribeVsStreamsOnlineList.OnlineInfo["+ i +"].DomainName");
+				liveStreamOnlineInfo.AppName = _ctx.StringValue("DescribeVsStreamsOnlineList.OnlineInfo["+ i +"].AppName");
+				liveStreamOnlineInfo.StreamName = _ctx.StringValue("DescribeVsStreamsOnlineList.OnlineInfo["+ i +"].StreamName");
+				liveStreamOnlineInfo.PublishTime = _ctx.StringValue("DescribeVsStreamsOnlineList.OnlineInfo["+ i +"].PublishTime");
+				liveStreamOnlineInfo.PublishUrl = _ctx.StringValue("DescribeVsStreamsOnlineList.OnlineInfo["+ i +"].PublishUrl");
+				liveStreamOnlineInfo.PublishDomain = _ctx.StringValue("DescribeVsStreamsOnlineList.OnlineInfo["+ i +"].PublishDomain");
+				liveStreamOnlineInfo.PublishType = _ctx.StringValue("DescribeVsStreamsOnlineList.OnlineInfo["+ i +"].PublishType");
+				liveStreamOnlineInfo.Transcoded = _ctx.StringValue("DescribeVsStreamsOnlineList.OnlineInfo["+ i +"].Transcoded");
+				liveStreamOnlineInfo.TranscodeId = _ctx.StringValue("DescribeVsStreamsOnlineList.OnlineInfo["+ i +"].TranscodeId");
 
 				describeVsStreamsOnlineListResponse_onlineInfo.Add(liveStreamOnlineInfo);
 			}

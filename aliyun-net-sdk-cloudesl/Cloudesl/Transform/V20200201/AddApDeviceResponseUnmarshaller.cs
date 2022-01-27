@@ -26,19 +26,19 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
     public class AddApDeviceResponseUnmarshaller
     {
-        public static AddApDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static AddApDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddApDeviceResponse addApDeviceResponse = new AddApDeviceResponse();
 
-			addApDeviceResponse.HttpResponse = context.HttpResponse;
-			addApDeviceResponse.ErrorMessage = context.StringValue("AddApDevice.ErrorMessage");
-			addApDeviceResponse.ErrorCode = context.StringValue("AddApDevice.ErrorCode");
-			addApDeviceResponse.Message = context.StringValue("AddApDevice.Message");
-			addApDeviceResponse.DynamicCode = context.StringValue("AddApDevice.DynamicCode");
-			addApDeviceResponse.Code = context.StringValue("AddApDevice.Code");
-			addApDeviceResponse.DynamicMessage = context.StringValue("AddApDevice.DynamicMessage");
-			addApDeviceResponse.RequestId = context.StringValue("AddApDevice.RequestId");
-			addApDeviceResponse.Success = context.BooleanValue("AddApDevice.Success");
+			addApDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			addApDeviceResponse.ErrorMessage = _ctx.StringValue("AddApDevice.ErrorMessage");
+			addApDeviceResponse.ErrorCode = _ctx.StringValue("AddApDevice.ErrorCode");
+			addApDeviceResponse.Message = _ctx.StringValue("AddApDevice.Message");
+			addApDeviceResponse.DynamicCode = _ctx.StringValue("AddApDevice.DynamicCode");
+			addApDeviceResponse.Code = _ctx.StringValue("AddApDevice.Code");
+			addApDeviceResponse.DynamicMessage = _ctx.StringValue("AddApDevice.DynamicMessage");
+			addApDeviceResponse.RequestId = _ctx.StringValue("AddApDevice.RequestId");
+			addApDeviceResponse.Success = _ctx.BooleanValue("AddApDevice.Success");
         
 			return addApDeviceResponse;
         }

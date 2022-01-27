@@ -33,6 +33,8 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 
 		private int? pageNumber;
 
+		private string source;
+
 		private List<ListIcpApplications_Application> applications;
 
 		public string RequestId
@@ -83,6 +85,18 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 			}
 		}
 
+		public string Source
+		{
+			get
+			{
+				return source;
+			}
+			set	
+			{
+				source = value;
+			}
+		}
+
 		public List<ListIcpApplications_Application> Applications
 		{
 			get
@@ -129,6 +143,12 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 			private long? updateTime;
 
 			private int? type;
+
+			private string actionType;
+
+			private string version;
+
+			private string produceVersion;
 
 			public string OrderId
 			{
@@ -319,6 +339,42 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 				set	
 				{
 					type = value;
+				}
+			}
+
+			public string ActionType
+			{
+				get
+				{
+					return actionType;
+				}
+				set	
+				{
+					actionType = value;
+				}
+			}
+
+			public string Version
+			{
+				get
+				{
+					return version;
+				}
+				set	
+				{
+					version = value;
+				}
+			}
+
+			public string ProduceVersion
+			{
+				get
+				{
+					return produceVersion;
+				}
+				set	
+				{
+					produceVersion = value;
 				}
 			}
 		}

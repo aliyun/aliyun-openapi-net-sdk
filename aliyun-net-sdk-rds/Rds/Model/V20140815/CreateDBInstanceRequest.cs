@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Rds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Rds.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -56,9 +56,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBInstanceDescription;
 
+		private List<Tag> tags = new List<Tag>(){ };
+
 		private string businessInfo;
 
 		private string period;
+
+		private bool? dryRun;
 
 		private string encryptionKey;
 
@@ -102,11 +106,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dedicatedHostGroupId;
 
+		private string createStrategy;
+
 		private string dBInstanceNetType;
+
+		private int? amount;
 
 		private string usedTime;
 
 		private string targetMinorVersion;
+
+		private string userBackupId;
 
 		private int? storageUpperBound;
 
@@ -222,6 +232,24 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
 		public string BusinessInfo
 		{
 			get
@@ -245,6 +273,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				period = value;
 				DictionaryUtil.Add(QueryParameters, "Period", value);
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 
@@ -521,6 +562,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string CreateStrategy
+		{
+			get
+			{
+				return createStrategy;
+			}
+			set	
+			{
+				createStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "CreateStrategy", value);
+			}
+		}
+
 		public string DBInstanceNetType
 		{
 			get
@@ -531,6 +585,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceNetType = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceNetType", value);
+			}
+		}
+
+		public int? Amount
+		{
+			get
+			{
+				return amount;
+			}
+			set	
+			{
+				amount = value;
+				DictionaryUtil.Add(QueryParameters, "Amount", value.ToString());
 			}
 		}
 
@@ -557,6 +624,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				targetMinorVersion = value;
 				DictionaryUtil.Add(QueryParameters, "TargetMinorVersion", value);
+			}
+		}
+
+		public string UserBackupId
+		{
+			get
+			{
+				return userBackupId;
+			}
+			set	
+			{
+				userBackupId = value;
+				DictionaryUtil.Add(QueryParameters, "UserBackupId", value);
 			}
 		}
 
@@ -622,6 +702,38 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				payType = value;
 				DictionaryUtil.Add(QueryParameters, "PayType", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

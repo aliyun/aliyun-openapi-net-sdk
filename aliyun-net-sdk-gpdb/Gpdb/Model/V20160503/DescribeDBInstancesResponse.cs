@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.gpdb.Model.V20160503
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 	public class DescribeDBInstancesResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? pageNumber;
-
 		private int? totalRecordCount;
 
 		private int? pageRecordCount;
 
+		private string requestId;
+
+		private int? pageNumber;
+
 		private List<DescribeDBInstances_DBInstance> items;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
 
 		public int? TotalRecordCount
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
 		public List<DescribeDBInstances_DBInstance> Items
 		{
 			get
@@ -98,123 +98,65 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 		public class DescribeDBInstances_DBInstance
 		{
 
-			private string dBInstanceId;
-
-			private string dBInstanceDescription;
-
-			private string payType;
-
-			private string instanceNetworkType;
-
-			private string connectionMode;
-
-			private string regionId;
-
-			private string zoneId;
+			private string vpcId;
 
 			private string expireTime;
 
-			private string dBInstanceStatus;
-
-			private string engine;
-
-			private string engineVersion;
-
 			private string dBInstanceNetType;
 
-			private string lockMode;
+			private string instanceDeployType;
 
-			private string lockReason;
+			private string storageType;
 
 			private string createTime;
 
-			private string vpcId;
+			private string payType;
+
+			private string lockReason;
+
+			private string dBInstanceStatus;
+
+			private string connectionMode;
+
+			private string lockMode;
+
+			private string engineVersion;
+
+			private string regionId;
 
 			private string vSwitchId;
 
+			private string instanceNetworkType;
+
+			private string zoneId;
+
+			private string dBInstanceId;
+
+			private string engine;
+
+			private string dBInstanceDescription;
+
+			private string segNodeNum;
+
+			private string storageSize;
+
+			private int? masterNodeNum;
+
+			private string dBInstanceCategory;
+
+			private string dBInstanceMode;
+
 			private List<DescribeDBInstances_Tag> tags;
 
-			public string DBInstanceId
+			public string VpcId
 			{
 				get
 				{
-					return dBInstanceId;
+					return vpcId;
 				}
 				set	
 				{
-					dBInstanceId = value;
-				}
-			}
-
-			public string DBInstanceDescription
-			{
-				get
-				{
-					return dBInstanceDescription;
-				}
-				set	
-				{
-					dBInstanceDescription = value;
-				}
-			}
-
-			public string PayType
-			{
-				get
-				{
-					return payType;
-				}
-				set	
-				{
-					payType = value;
-				}
-			}
-
-			public string InstanceNetworkType
-			{
-				get
-				{
-					return instanceNetworkType;
-				}
-				set	
-				{
-					instanceNetworkType = value;
-				}
-			}
-
-			public string ConnectionMode
-			{
-				get
-				{
-					return connectionMode;
-				}
-				set	
-				{
-					connectionMode = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
+					vpcId = value;
 				}
 			}
 
@@ -230,42 +172,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 				}
 			}
 
-			public string DBInstanceStatus
-			{
-				get
-				{
-					return dBInstanceStatus;
-				}
-				set	
-				{
-					dBInstanceStatus = value;
-				}
-			}
-
-			public string Engine
-			{
-				get
-				{
-					return engine;
-				}
-				set	
-				{
-					engine = value;
-				}
-			}
-
-			public string EngineVersion
-			{
-				get
-				{
-					return engineVersion;
-				}
-				set	
-				{
-					engineVersion = value;
-				}
-			}
-
 			public string DBInstanceNetType
 			{
 				get
@@ -278,27 +184,27 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 				}
 			}
 
-			public string LockMode
+			public string InstanceDeployType
 			{
 				get
 				{
-					return lockMode;
+					return instanceDeployType;
 				}
 				set	
 				{
-					lockMode = value;
+					instanceDeployType = value;
 				}
 			}
 
-			public string LockReason
+			public string StorageType
 			{
 				get
 				{
-					return lockReason;
+					return storageType;
 				}
 				set	
 				{
-					lockReason = value;
+					storageType = value;
 				}
 			}
 
@@ -314,15 +220,87 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 				}
 			}
 
-			public string VpcId
+			public string PayType
 			{
 				get
 				{
-					return vpcId;
+					return payType;
 				}
 				set	
 				{
-					vpcId = value;
+					payType = value;
+				}
+			}
+
+			public string LockReason
+			{
+				get
+				{
+					return lockReason;
+				}
+				set	
+				{
+					lockReason = value;
+				}
+			}
+
+			public string DBInstanceStatus
+			{
+				get
+				{
+					return dBInstanceStatus;
+				}
+				set	
+				{
+					dBInstanceStatus = value;
+				}
+			}
+
+			public string ConnectionMode
+			{
+				get
+				{
+					return connectionMode;
+				}
+				set	
+				{
+					connectionMode = value;
+				}
+			}
+
+			public string LockMode
+			{
+				get
+				{
+					return lockMode;
+				}
+				set	
+				{
+					lockMode = value;
+				}
+			}
+
+			public string EngineVersion
+			{
+				get
+				{
+					return engineVersion;
+				}
+				set	
+				{
+					engineVersion = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 
@@ -335,6 +313,126 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 				set	
 				{
 					vSwitchId = value;
+				}
+			}
+
+			public string InstanceNetworkType
+			{
+				get
+				{
+					return instanceNetworkType;
+				}
+				set	
+				{
+					instanceNetworkType = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public string DBInstanceId
+			{
+				get
+				{
+					return dBInstanceId;
+				}
+				set	
+				{
+					dBInstanceId = value;
+				}
+			}
+
+			public string Engine
+			{
+				get
+				{
+					return engine;
+				}
+				set	
+				{
+					engine = value;
+				}
+			}
+
+			public string DBInstanceDescription
+			{
+				get
+				{
+					return dBInstanceDescription;
+				}
+				set	
+				{
+					dBInstanceDescription = value;
+				}
+			}
+
+			public string SegNodeNum
+			{
+				get
+				{
+					return segNodeNum;
+				}
+				set	
+				{
+					segNodeNum = value;
+				}
+			}
+
+			public string StorageSize
+			{
+				get
+				{
+					return storageSize;
+				}
+				set	
+				{
+					storageSize = value;
+				}
+			}
+
+			public int? MasterNodeNum
+			{
+				get
+				{
+					return masterNodeNum;
+				}
+				set	
+				{
+					masterNodeNum = value;
+				}
+			}
+
+			public string DBInstanceCategory
+			{
+				get
+				{
+					return dBInstanceCategory;
+				}
+				set	
+				{
+					dBInstanceCategory = value;
+				}
+			}
+
+			public string DBInstanceMode
+			{
+				get
+				{
+					return dBInstanceMode;
+				}
+				set	
+				{
+					dBInstanceMode = value;
 				}
 			}
 

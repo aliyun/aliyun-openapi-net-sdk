@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -56,83 +56,35 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeDedicatedHostTypes_DedicatedHostType
 		{
 
-			private string dedicatedHostType;
-
-			private int? sockets;
-
-			private int? totalVcpus;
-
-			private int? totalVgpus;
-
 			private int? cores;
-
-			private int? physicalGpus;
-
-			private float? memorySize;
-
-			private long? localStorageCapacity;
-
-			private int? localStorageAmount;
 
 			private string localStorageCategory;
 
 			private string gPUSpec;
 
-			private bool? supportCpuOverCommitRatio;
+			private int? totalVcpus;
 
 			private string cpuOverCommitRatioRange;
+
+			private int? physicalGpus;
+
+			private float? memorySize;
+
+			private bool? supportCpuOverCommitRatio;
+
+			private long? localStorageCapacity;
+
+			private string dedicatedHostType;
+
+			private int? localStorageAmount;
+
+			private int? totalVgpus;
+
+			private int? sockets;
 
 			private List<string> supportedInstanceTypeFamilies;
 
 			private List<string> supportedInstanceTypesList;
-
-			public string DedicatedHostType
-			{
-				get
-				{
-					return dedicatedHostType;
-				}
-				set	
-				{
-					dedicatedHostType = value;
-				}
-			}
-
-			public int? Sockets
-			{
-				get
-				{
-					return sockets;
-				}
-				set	
-				{
-					sockets = value;
-				}
-			}
-
-			public int? TotalVcpus
-			{
-				get
-				{
-					return totalVcpus;
-				}
-				set	
-				{
-					totalVcpus = value;
-				}
-			}
-
-			public int? TotalVgpus
-			{
-				get
-				{
-					return totalVgpus;
-				}
-				set	
-				{
-					totalVgpus = value;
-				}
-			}
 
 			public int? Cores
 			{
@@ -143,54 +95,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					cores = value;
-				}
-			}
-
-			public int? PhysicalGpus
-			{
-				get
-				{
-					return physicalGpus;
-				}
-				set	
-				{
-					physicalGpus = value;
-				}
-			}
-
-			public float? MemorySize
-			{
-				get
-				{
-					return memorySize;
-				}
-				set	
-				{
-					memorySize = value;
-				}
-			}
-
-			public long? LocalStorageCapacity
-			{
-				get
-				{
-					return localStorageCapacity;
-				}
-				set	
-				{
-					localStorageCapacity = value;
-				}
-			}
-
-			public int? LocalStorageAmount
-			{
-				get
-				{
-					return localStorageAmount;
-				}
-				set	
-				{
-					localStorageAmount = value;
 				}
 			}
 
@@ -218,15 +122,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public bool? SupportCpuOverCommitRatio
+			public int? TotalVcpus
 			{
 				get
 				{
-					return supportCpuOverCommitRatio;
+					return totalVcpus;
 				}
 				set	
 				{
-					supportCpuOverCommitRatio = value;
+					totalVcpus = value;
 				}
 			}
 
@@ -239,6 +143,102 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					cpuOverCommitRatioRange = value;
+				}
+			}
+
+			public int? PhysicalGpus
+			{
+				get
+				{
+					return physicalGpus;
+				}
+				set	
+				{
+					physicalGpus = value;
+				}
+			}
+
+			public float? MemorySize
+			{
+				get
+				{
+					return memorySize;
+				}
+				set	
+				{
+					memorySize = value;
+				}
+			}
+
+			public bool? SupportCpuOverCommitRatio
+			{
+				get
+				{
+					return supportCpuOverCommitRatio;
+				}
+				set	
+				{
+					supportCpuOverCommitRatio = value;
+				}
+			}
+
+			public long? LocalStorageCapacity
+			{
+				get
+				{
+					return localStorageCapacity;
+				}
+				set	
+				{
+					localStorageCapacity = value;
+				}
+			}
+
+			public string DedicatedHostType
+			{
+				get
+				{
+					return dedicatedHostType;
+				}
+				set	
+				{
+					dedicatedHostType = value;
+				}
+			}
+
+			public int? LocalStorageAmount
+			{
+				get
+				{
+					return localStorageAmount;
+				}
+				set	
+				{
+					localStorageAmount = value;
+				}
+			}
+
+			public int? TotalVgpus
+			{
+				get
+				{
+					return totalVgpus;
+				}
+				set	
+				{
+					totalVgpus = value;
+				}
+			}
+
+			public int? Sockets
+			{
+				get
+				{
+					return sockets;
+				}
+				set	
+				{
+					sockets = value;
 				}
 			}
 

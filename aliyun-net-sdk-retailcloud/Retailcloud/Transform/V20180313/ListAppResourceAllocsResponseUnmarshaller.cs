@@ -26,26 +26,26 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class ListAppResourceAllocsResponseUnmarshaller
     {
-        public static ListAppResourceAllocsResponse Unmarshall(UnmarshallerContext context)
+        public static ListAppResourceAllocsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListAppResourceAllocsResponse listAppResourceAllocsResponse = new ListAppResourceAllocsResponse();
 
-			listAppResourceAllocsResponse.HttpResponse = context.HttpResponse;
-			listAppResourceAllocsResponse.Code = context.IntegerValue("ListAppResourceAllocs.Code");
-			listAppResourceAllocsResponse.ErrorMsg = context.StringValue("ListAppResourceAllocs.ErrorMsg");
-			listAppResourceAllocsResponse.PageNumber = context.IntegerValue("ListAppResourceAllocs.PageNumber");
-			listAppResourceAllocsResponse.PageSize = context.IntegerValue("ListAppResourceAllocs.PageSize");
-			listAppResourceAllocsResponse.RequestId = context.StringValue("ListAppResourceAllocs.RequestId");
-			listAppResourceAllocsResponse.TotalCount = context.LongValue("ListAppResourceAllocs.TotalCount");
+			listAppResourceAllocsResponse.HttpResponse = _ctx.HttpResponse;
+			listAppResourceAllocsResponse.Code = _ctx.IntegerValue("ListAppResourceAllocs.Code");
+			listAppResourceAllocsResponse.ErrorMsg = _ctx.StringValue("ListAppResourceAllocs.ErrorMsg");
+			listAppResourceAllocsResponse.PageNumber = _ctx.IntegerValue("ListAppResourceAllocs.PageNumber");
+			listAppResourceAllocsResponse.PageSize = _ctx.IntegerValue("ListAppResourceAllocs.PageSize");
+			listAppResourceAllocsResponse.RequestId = _ctx.StringValue("ListAppResourceAllocs.RequestId");
+			listAppResourceAllocsResponse.TotalCount = _ctx.LongValue("ListAppResourceAllocs.TotalCount");
 
 			List<ListAppResourceAllocsResponse.ListAppResourceAllocs_ListAppResourceAllocResponse> listAppResourceAllocsResponse_data = new List<ListAppResourceAllocsResponse.ListAppResourceAllocs_ListAppResourceAllocResponse>();
-			for (int i = 0; i < context.Length("ListAppResourceAllocs.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListAppResourceAllocs.Data.Length"); i++) {
 				ListAppResourceAllocsResponse.ListAppResourceAllocs_ListAppResourceAllocResponse listAppResourceAllocResponse = new ListAppResourceAllocsResponse.ListAppResourceAllocs_ListAppResourceAllocResponse();
-				listAppResourceAllocResponse.AppEnvId = context.LongValue("ListAppResourceAllocs.Data["+ i +"].AppEnvId");
-				listAppResourceAllocResponse.AppId = context.LongValue("ListAppResourceAllocs.Data["+ i +"].AppId");
-				listAppResourceAllocResponse.ClusterId = context.StringValue("ListAppResourceAllocs.Data["+ i +"].ClusterId");
-				listAppResourceAllocResponse.Id = context.LongValue("ListAppResourceAllocs.Data["+ i +"].Id");
-				listAppResourceAllocResponse.ResourceDef = context.StringValue("ListAppResourceAllocs.Data["+ i +"].ResourceDef");
+				listAppResourceAllocResponse.AppEnvId = _ctx.LongValue("ListAppResourceAllocs.Data["+ i +"].AppEnvId");
+				listAppResourceAllocResponse.AppId = _ctx.LongValue("ListAppResourceAllocs.Data["+ i +"].AppId");
+				listAppResourceAllocResponse.ClusterId = _ctx.StringValue("ListAppResourceAllocs.Data["+ i +"].ClusterId");
+				listAppResourceAllocResponse.Id = _ctx.LongValue("ListAppResourceAllocs.Data["+ i +"].Id");
+				listAppResourceAllocResponse.ResourceDef = _ctx.StringValue("ListAppResourceAllocs.Data["+ i +"].ResourceDef");
 
 				listAppResourceAllocsResponse_data.Add(listAppResourceAllocResponse);
 			}

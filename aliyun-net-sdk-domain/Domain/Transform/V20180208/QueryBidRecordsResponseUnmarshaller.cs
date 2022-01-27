@@ -26,25 +26,25 @@ namespace Aliyun.Acs.Domain.Transform.V20180208
 {
     public class QueryBidRecordsResponseUnmarshaller
     {
-        public static QueryBidRecordsResponse Unmarshall(UnmarshallerContext context)
+        public static QueryBidRecordsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryBidRecordsResponse queryBidRecordsResponse = new QueryBidRecordsResponse();
 
-			queryBidRecordsResponse.HttpResponse = context.HttpResponse;
-			queryBidRecordsResponse.RequestId = context.StringValue("QueryBidRecords.RequestId");
-			queryBidRecordsResponse.TotalItemNum = context.IntegerValue("QueryBidRecords.TotalItemNum");
-			queryBidRecordsResponse.CurrentPageNum = context.IntegerValue("QueryBidRecords.CurrentPageNum");
-			queryBidRecordsResponse.PageSize = context.IntegerValue("QueryBidRecords.PageSize");
-			queryBidRecordsResponse.TotalPageNum = context.IntegerValue("QueryBidRecords.TotalPageNum");
+			queryBidRecordsResponse.HttpResponse = _ctx.HttpResponse;
+			queryBidRecordsResponse.RequestId = _ctx.StringValue("QueryBidRecords.RequestId");
+			queryBidRecordsResponse.TotalItemNum = _ctx.IntegerValue("QueryBidRecords.TotalItemNum");
+			queryBidRecordsResponse.CurrentPageNum = _ctx.IntegerValue("QueryBidRecords.CurrentPageNum");
+			queryBidRecordsResponse.PageSize = _ctx.IntegerValue("QueryBidRecords.PageSize");
+			queryBidRecordsResponse.TotalPageNum = _ctx.IntegerValue("QueryBidRecords.TotalPageNum");
 
 			List<QueryBidRecordsResponse.QueryBidRecords_BidRecord> queryBidRecordsResponse_data = new List<QueryBidRecordsResponse.QueryBidRecords_BidRecord>();
-			for (int i = 0; i < context.Length("QueryBidRecords.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryBidRecords.Data.Length"); i++) {
 				QueryBidRecordsResponse.QueryBidRecords_BidRecord bidRecord = new QueryBidRecordsResponse.QueryBidRecords_BidRecord();
-				bidRecord.DomainName = context.StringValue("QueryBidRecords.Data["+ i +"].DomainName");
-				bidRecord.Currency = context.StringValue("QueryBidRecords.Data["+ i +"].Currency");
-				bidRecord.Bid = context.FloatValue("QueryBidRecords.Data["+ i +"].Bid");
-				bidRecord.BidTime = context.LongValue("QueryBidRecords.Data["+ i +"].BidTime");
-				bidRecord.Bidder = context.StringValue("QueryBidRecords.Data["+ i +"].Bidder");
+				bidRecord.DomainName = _ctx.StringValue("QueryBidRecords.Data["+ i +"].DomainName");
+				bidRecord.Currency = _ctx.StringValue("QueryBidRecords.Data["+ i +"].Currency");
+				bidRecord.Bid = _ctx.FloatValue("QueryBidRecords.Data["+ i +"].Bid");
+				bidRecord.BidTime = _ctx.LongValue("QueryBidRecords.Data["+ i +"].BidTime");
+				bidRecord.Bidder = _ctx.StringValue("QueryBidRecords.Data["+ i +"].Bidder");
 
 				queryBidRecordsResponse_data.Add(bidRecord);
 			}

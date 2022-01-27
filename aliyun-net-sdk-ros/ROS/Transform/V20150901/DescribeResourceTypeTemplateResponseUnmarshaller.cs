@@ -26,11 +26,11 @@ namespace Aliyun.Acs.ROS.Transform.V20150901
 {
     public class DescribeResourceTypeTemplateResponseUnmarshaller
     {
-        public static DescribeResourceTypeTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeResourceTypeTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeResourceTypeTemplateResponse describeResourceTypeTemplateResponse = new DescribeResourceTypeTemplateResponse();
 
-			describeResourceTypeTemplateResponse.HttpResponse = context.HttpResponse;
+			describeResourceTypeTemplateResponse.HttpResponse = _ctx.HttpResponse;
         
 			return describeResourceTypeTemplateResponse;
         }

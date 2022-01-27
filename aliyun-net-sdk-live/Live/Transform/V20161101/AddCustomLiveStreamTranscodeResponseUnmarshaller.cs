@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class AddCustomLiveStreamTranscodeResponseUnmarshaller
     {
-        public static AddCustomLiveStreamTranscodeResponse Unmarshall(UnmarshallerContext context)
+        public static AddCustomLiveStreamTranscodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddCustomLiveStreamTranscodeResponse addCustomLiveStreamTranscodeResponse = new AddCustomLiveStreamTranscodeResponse();
 
-			addCustomLiveStreamTranscodeResponse.HttpResponse = context.HttpResponse;
-			addCustomLiveStreamTranscodeResponse.RequestId = context.StringValue("AddCustomLiveStreamTranscode.RequestId");
+			addCustomLiveStreamTranscodeResponse.HttpResponse = _ctx.HttpResponse;
+			addCustomLiveStreamTranscodeResponse.RequestId = _ctx.StringValue("AddCustomLiveStreamTranscode.RequestId");
         
 			return addCustomLiveStreamTranscodeResponse;
         }

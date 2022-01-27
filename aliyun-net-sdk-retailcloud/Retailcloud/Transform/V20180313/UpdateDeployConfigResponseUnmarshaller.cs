@@ -26,17 +26,17 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class UpdateDeployConfigResponseUnmarshaller
     {
-        public static UpdateDeployConfigResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateDeployConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateDeployConfigResponse updateDeployConfigResponse = new UpdateDeployConfigResponse();
 
-			updateDeployConfigResponse.HttpResponse = context.HttpResponse;
-			updateDeployConfigResponse.Code = context.IntegerValue("UpdateDeployConfig.Code");
-			updateDeployConfigResponse.RequestId = context.StringValue("UpdateDeployConfig.RequestId");
-			updateDeployConfigResponse.ErrMsg = context.StringValue("UpdateDeployConfig.ErrMsg");
+			updateDeployConfigResponse.HttpResponse = _ctx.HttpResponse;
+			updateDeployConfigResponse.Code = _ctx.IntegerValue("UpdateDeployConfig.Code");
+			updateDeployConfigResponse.RequestId = _ctx.StringValue("UpdateDeployConfig.RequestId");
+			updateDeployConfigResponse.ErrMsg = _ctx.StringValue("UpdateDeployConfig.ErrMsg");
 
 			UpdateDeployConfigResponse.UpdateDeployConfig_Result result = new UpdateDeployConfigResponse.UpdateDeployConfig_Result();
-			result.Success = context.BooleanValue("UpdateDeployConfig.Result.Success");
+			result.Success = _ctx.BooleanValue("UpdateDeployConfig.Result.Success");
 			updateDeployConfigResponse.Result = result;
         
 			return updateDeployConfigResponse;

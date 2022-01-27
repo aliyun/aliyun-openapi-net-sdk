@@ -40,24 +40,13 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			Method = MethodType.POST;
         }
 
-		private string clusterId;
-
 		private int? duration;
+
+		private string clusterId;
 
 		private string pricingCycle;
 
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
+		private string payType;
 
 		public int? Duration
 		{
@@ -72,6 +61,19 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
 		public string PricingCycle
 		{
 			get
@@ -82,6 +84,19 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			{
 				pricingCycle = value;
 				DictionaryUtil.Add(QueryParameters, "PricingCycle", value);
+			}
+		}
+
+		public string PayType
+		{
+			get
+			{
+				return payType;
+			}
+			set	
+			{
+				payType = value;
+				DictionaryUtil.Add(QueryParameters, "PayType", value);
 			}
 		}
 

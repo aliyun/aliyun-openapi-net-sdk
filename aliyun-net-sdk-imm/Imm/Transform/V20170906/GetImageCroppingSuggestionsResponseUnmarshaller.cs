@@ -26,25 +26,25 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class GetImageCroppingSuggestionsResponseUnmarshaller
     {
-        public static GetImageCroppingSuggestionsResponse Unmarshall(UnmarshallerContext context)
+        public static GetImageCroppingSuggestionsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetImageCroppingSuggestionsResponse getImageCroppingSuggestionsResponse = new GetImageCroppingSuggestionsResponse();
 
-			getImageCroppingSuggestionsResponse.HttpResponse = context.HttpResponse;
-			getImageCroppingSuggestionsResponse.RequestId = context.StringValue("GetImageCroppingSuggestions.RequestId");
-			getImageCroppingSuggestionsResponse.ImageUri = context.StringValue("GetImageCroppingSuggestions.ImageUri");
+			getImageCroppingSuggestionsResponse.HttpResponse = _ctx.HttpResponse;
+			getImageCroppingSuggestionsResponse.RequestId = _ctx.StringValue("GetImageCroppingSuggestions.RequestId");
+			getImageCroppingSuggestionsResponse.ImageUri = _ctx.StringValue("GetImageCroppingSuggestions.ImageUri");
 
 			List<GetImageCroppingSuggestionsResponse.GetImageCroppingSuggestions_CroppingSuggestionsItem> getImageCroppingSuggestionsResponse_croppingSuggestions = new List<GetImageCroppingSuggestionsResponse.GetImageCroppingSuggestions_CroppingSuggestionsItem>();
-			for (int i = 0; i < context.Length("GetImageCroppingSuggestions.CroppingSuggestions.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetImageCroppingSuggestions.CroppingSuggestions.Length"); i++) {
 				GetImageCroppingSuggestionsResponse.GetImageCroppingSuggestions_CroppingSuggestionsItem croppingSuggestionsItem = new GetImageCroppingSuggestionsResponse.GetImageCroppingSuggestions_CroppingSuggestionsItem();
-				croppingSuggestionsItem.Score = context.FloatValue("GetImageCroppingSuggestions.CroppingSuggestions["+ i +"].Score");
-				croppingSuggestionsItem.AspectRatio = context.StringValue("GetImageCroppingSuggestions.CroppingSuggestions["+ i +"].AspectRatio");
+				croppingSuggestionsItem.Score = _ctx.FloatValue("GetImageCroppingSuggestions.CroppingSuggestions["+ i +"].Score");
+				croppingSuggestionsItem.AspectRatio = _ctx.StringValue("GetImageCroppingSuggestions.CroppingSuggestions["+ i +"].AspectRatio");
 
 				GetImageCroppingSuggestionsResponse.GetImageCroppingSuggestions_CroppingSuggestionsItem.GetImageCroppingSuggestions_CroppingBoundary croppingBoundary = new GetImageCroppingSuggestionsResponse.GetImageCroppingSuggestions_CroppingSuggestionsItem.GetImageCroppingSuggestions_CroppingBoundary();
-				croppingBoundary.Left = context.IntegerValue("GetImageCroppingSuggestions.CroppingSuggestions["+ i +"].CroppingBoundary.Left");
-				croppingBoundary.Top = context.IntegerValue("GetImageCroppingSuggestions.CroppingSuggestions["+ i +"].CroppingBoundary.Top");
-				croppingBoundary.Width = context.IntegerValue("GetImageCroppingSuggestions.CroppingSuggestions["+ i +"].CroppingBoundary.Width");
-				croppingBoundary.Height = context.IntegerValue("GetImageCroppingSuggestions.CroppingSuggestions["+ i +"].CroppingBoundary.Height");
+				croppingBoundary.Left = _ctx.IntegerValue("GetImageCroppingSuggestions.CroppingSuggestions["+ i +"].CroppingBoundary.Left");
+				croppingBoundary.Top = _ctx.IntegerValue("GetImageCroppingSuggestions.CroppingSuggestions["+ i +"].CroppingBoundary.Top");
+				croppingBoundary.Width = _ctx.IntegerValue("GetImageCroppingSuggestions.CroppingSuggestions["+ i +"].CroppingBoundary.Width");
+				croppingBoundary.Height = _ctx.IntegerValue("GetImageCroppingSuggestions.CroppingSuggestions["+ i +"].CroppingBoundary.Height");
 				croppingSuggestionsItem.CroppingBoundary = croppingBoundary;
 
 				getImageCroppingSuggestionsResponse_croppingSuggestions.Add(croppingSuggestionsItem);

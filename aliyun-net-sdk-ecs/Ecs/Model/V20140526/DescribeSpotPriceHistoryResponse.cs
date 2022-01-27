@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string requestId;
 
-		private int? nextOffset;
-
 		private string currency;
+
+		private int? nextOffset;
 
 		private List<DescribeSpotPriceHistory_SpotPriceType> spotPrices;
 
@@ -45,18 +45,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? NextOffset
-		{
-			get
-			{
-				return nextOffset;
-			}
-			set	
-			{
-				nextOffset = value;
-			}
-		}
-
 		public string Currency
 		{
 			get
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				currency = value;
+			}
+		}
+
+		public int? NextOffset
+		{
+			get
+			{
+				return nextOffset;
+			}
+			set	
+			{
+				nextOffset = value;
 			}
 		}
 
@@ -84,19 +84,31 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeSpotPriceHistory_SpotPriceType
 		{
 
+			private string ioOptimized;
+
 			private string zoneId;
 
-			private string instanceType;
-
-			private string ioOptimized;
+			private float? spotPrice;
 
 			private string timestamp;
 
 			private string networkType;
 
-			private float? spotPrice;
+			private string instanceType;
 
 			private float? originPrice;
+
+			public string IoOptimized
+			{
+				get
+				{
+					return ioOptimized;
+				}
+				set	
+				{
+					ioOptimized = value;
+				}
+			}
 
 			public string ZoneId
 			{
@@ -110,27 +122,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string InstanceType
+			public float? SpotPrice
 			{
 				get
 				{
-					return instanceType;
+					return spotPrice;
 				}
 				set	
 				{
-					instanceType = value;
-				}
-			}
-
-			public string IoOptimized
-			{
-				get
-				{
-					return ioOptimized;
-				}
-				set	
-				{
-					ioOptimized = value;
+					spotPrice = value;
 				}
 			}
 
@@ -158,15 +158,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public float? SpotPrice
+			public string InstanceType
 			{
 				get
 				{
-					return spotPrice;
+					return instanceType;
 				}
 				set	
 				{
-					spotPrice = value;
+					instanceType = value;
 				}
 			}
 

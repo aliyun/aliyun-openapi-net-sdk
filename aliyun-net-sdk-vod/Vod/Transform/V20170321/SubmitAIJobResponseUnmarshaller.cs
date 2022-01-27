@@ -26,24 +26,24 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class SubmitAIJobResponseUnmarshaller
     {
-        public static SubmitAIJobResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitAIJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitAIJobResponse submitAIJobResponse = new SubmitAIJobResponse();
 
-			submitAIJobResponse.HttpResponse = context.HttpResponse;
-			submitAIJobResponse.RequestId = context.StringValue("SubmitAIJob.RequestId");
+			submitAIJobResponse.HttpResponse = _ctx.HttpResponse;
+			submitAIJobResponse.RequestId = _ctx.StringValue("SubmitAIJob.RequestId");
 
 			List<SubmitAIJobResponse.SubmitAIJob_AIJob> submitAIJobResponse_aIJobList = new List<SubmitAIJobResponse.SubmitAIJob_AIJob>();
-			for (int i = 0; i < context.Length("SubmitAIJob.AIJobList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("SubmitAIJob.AIJobList.Length"); i++) {
 				SubmitAIJobResponse.SubmitAIJob_AIJob aIJob = new SubmitAIJobResponse.SubmitAIJob_AIJob();
-				aIJob.JobId = context.StringValue("SubmitAIJob.AIJobList["+ i +"].JobId");
-				aIJob.Type = context.StringValue("SubmitAIJob.AIJobList["+ i +"].Type");
-				aIJob.MediaId = context.StringValue("SubmitAIJob.AIJobList["+ i +"].MediaId");
-				aIJob.Status = context.StringValue("SubmitAIJob.AIJobList["+ i +"].Status");
-				aIJob.Code = context.StringValue("SubmitAIJob.AIJobList["+ i +"].Code");
-				aIJob.Message = context.StringValue("SubmitAIJob.AIJobList["+ i +"].Message");
-				aIJob.CreationTime = context.StringValue("SubmitAIJob.AIJobList["+ i +"].CreationTime");
-				aIJob.Data = context.StringValue("SubmitAIJob.AIJobList["+ i +"].Data");
+				aIJob.JobId = _ctx.StringValue("SubmitAIJob.AIJobList["+ i +"].JobId");
+				aIJob.Type = _ctx.StringValue("SubmitAIJob.AIJobList["+ i +"].Type");
+				aIJob.MediaId = _ctx.StringValue("SubmitAIJob.AIJobList["+ i +"].MediaId");
+				aIJob.Status = _ctx.StringValue("SubmitAIJob.AIJobList["+ i +"].Status");
+				aIJob.Code = _ctx.StringValue("SubmitAIJob.AIJobList["+ i +"].Code");
+				aIJob.Message = _ctx.StringValue("SubmitAIJob.AIJobList["+ i +"].Message");
+				aIJob.CreationTime = _ctx.StringValue("SubmitAIJob.AIJobList["+ i +"].CreationTime");
+				aIJob.Data = _ctx.StringValue("SubmitAIJob.AIJobList["+ i +"].Data");
 
 				submitAIJobResponse_aIJobList.Add(aIJob);
 			}

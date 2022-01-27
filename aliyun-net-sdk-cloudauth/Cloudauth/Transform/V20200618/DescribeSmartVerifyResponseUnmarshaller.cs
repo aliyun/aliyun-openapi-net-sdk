@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20200618
 {
     public class DescribeSmartVerifyResponseUnmarshaller
     {
-        public static DescribeSmartVerifyResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSmartVerifyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSmartVerifyResponse describeSmartVerifyResponse = new DescribeSmartVerifyResponse();
 
-			describeSmartVerifyResponse.HttpResponse = context.HttpResponse;
-			describeSmartVerifyResponse.RequestId = context.StringValue("DescribeSmartVerify.RequestId");
-			describeSmartVerifyResponse.Message = context.StringValue("DescribeSmartVerify.Message");
-			describeSmartVerifyResponse.Code = context.StringValue("DescribeSmartVerify.Code");
+			describeSmartVerifyResponse.HttpResponse = _ctx.HttpResponse;
+			describeSmartVerifyResponse.Code = _ctx.StringValue("DescribeSmartVerify.Code");
+			describeSmartVerifyResponse.Message = _ctx.StringValue("DescribeSmartVerify.Message");
+			describeSmartVerifyResponse.RequestId = _ctx.StringValue("DescribeSmartVerify.RequestId");
 
 			DescribeSmartVerifyResponse.DescribeSmartVerify_ResultObject resultObject = new DescribeSmartVerifyResponse.DescribeSmartVerify_ResultObject();
-			resultObject.Passed = context.StringValue("DescribeSmartVerify.ResultObject.Passed");
-			resultObject.SubCode = context.StringValue("DescribeSmartVerify.ResultObject.SubCode");
-			resultObject.MaterialInfo = context.StringValue("DescribeSmartVerify.ResultObject.MaterialInfo");
-			resultObject.PassedScore = context.FloatValue("DescribeSmartVerify.ResultObject.PassedScore");
+			resultObject.SubCode = _ctx.StringValue("DescribeSmartVerify.ResultObject.SubCode");
+			resultObject.PassedScore = _ctx.FloatValue("DescribeSmartVerify.ResultObject.PassedScore");
+			resultObject.MaterialInfo = _ctx.StringValue("DescribeSmartVerify.ResultObject.MaterialInfo");
+			resultObject.Passed = _ctx.StringValue("DescribeSmartVerify.ResultObject.Passed");
 			describeSmartVerifyResponse.ResultObject = resultObject;
         
 			return describeSmartVerifyResponse;

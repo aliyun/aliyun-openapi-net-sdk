@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class QueryDomainSuffixResponseUnmarshaller
     {
-        public static QueryDomainSuffixResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDomainSuffixResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDomainSuffixResponse queryDomainSuffixResponse = new QueryDomainSuffixResponse();
 
-			queryDomainSuffixResponse.HttpResponse = context.HttpResponse;
-			queryDomainSuffixResponse.RequestId = context.StringValue("QueryDomainSuffix.RequestId");
+			queryDomainSuffixResponse.HttpResponse = _ctx.HttpResponse;
+			queryDomainSuffixResponse.RequestId = _ctx.StringValue("QueryDomainSuffix.RequestId");
 
 			List<string> queryDomainSuffixResponse_suffixList = new List<string>();
-			for (int i = 0; i < context.Length("QueryDomainSuffix.SuffixList.Length"); i++) {
-				queryDomainSuffixResponse_suffixList.Add(context.StringValue("QueryDomainSuffix.SuffixList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("QueryDomainSuffix.SuffixList.Length"); i++) {
+				queryDomainSuffixResponse_suffixList.Add(_ctx.StringValue("QueryDomainSuffix.SuffixList["+ i +"]"));
 			}
 			queryDomainSuffixResponse.SuffixList = queryDomainSuffixResponse_suffixList;
         

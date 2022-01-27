@@ -26,42 +26,42 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class GetSubscriptionPriceResponseUnmarshaller
     {
-        public static GetSubscriptionPriceResponse Unmarshall(UnmarshallerContext context)
+        public static GetSubscriptionPriceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetSubscriptionPriceResponse getSubscriptionPriceResponse = new GetSubscriptionPriceResponse();
 
-			getSubscriptionPriceResponse.HttpResponse = context.HttpResponse;
-			getSubscriptionPriceResponse.RequestId = context.StringValue("GetSubscriptionPrice.RequestId");
-			getSubscriptionPriceResponse.Success = context.BooleanValue("GetSubscriptionPrice.Success");
-			getSubscriptionPriceResponse.Code = context.StringValue("GetSubscriptionPrice.Code");
-			getSubscriptionPriceResponse.Message = context.StringValue("GetSubscriptionPrice.Message");
+			getSubscriptionPriceResponse.HttpResponse = _ctx.HttpResponse;
+			getSubscriptionPriceResponse.RequestId = _ctx.StringValue("GetSubscriptionPrice.RequestId");
+			getSubscriptionPriceResponse.Success = _ctx.BooleanValue("GetSubscriptionPrice.Success");
+			getSubscriptionPriceResponse.Code = _ctx.StringValue("GetSubscriptionPrice.Code");
+			getSubscriptionPriceResponse.Message = _ctx.StringValue("GetSubscriptionPrice.Message");
 
 			GetSubscriptionPriceResponse.GetSubscriptionPrice_Data data = new GetSubscriptionPriceResponse.GetSubscriptionPrice_Data();
-			data.OriginalPrice = context.FloatValue("GetSubscriptionPrice.Data.OriginalPrice");
-			data.DiscountPrice = context.FloatValue("GetSubscriptionPrice.Data.DiscountPrice");
-			data.TradePrice = context.FloatValue("GetSubscriptionPrice.Data.TradePrice");
-			data.Currency = context.StringValue("GetSubscriptionPrice.Data.Currency");
-			data.Quantity = context.IntegerValue("GetSubscriptionPrice.Data.Quantity");
+			data.OriginalPrice = _ctx.FloatValue("GetSubscriptionPrice.Data.OriginalPrice");
+			data.DiscountPrice = _ctx.FloatValue("GetSubscriptionPrice.Data.DiscountPrice");
+			data.TradePrice = _ctx.FloatValue("GetSubscriptionPrice.Data.TradePrice");
+			data.Currency = _ctx.StringValue("GetSubscriptionPrice.Data.Currency");
+			data.Quantity = _ctx.IntegerValue("GetSubscriptionPrice.Data.Quantity");
 
 			List<GetSubscriptionPriceResponse.GetSubscriptionPrice_Data.GetSubscriptionPrice_ModuleDetail> data_moduleDetails = new List<GetSubscriptionPriceResponse.GetSubscriptionPrice_Data.GetSubscriptionPrice_ModuleDetail>();
-			for (int i = 0; i < context.Length("GetSubscriptionPrice.Data.ModuleDetails.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetSubscriptionPrice.Data.ModuleDetails.Length"); i++) {
 				GetSubscriptionPriceResponse.GetSubscriptionPrice_Data.GetSubscriptionPrice_ModuleDetail moduleDetail = new GetSubscriptionPriceResponse.GetSubscriptionPrice_Data.GetSubscriptionPrice_ModuleDetail();
-				moduleDetail.ModuleCode = context.StringValue("GetSubscriptionPrice.Data.ModuleDetails["+ i +"].ModuleCode");
-				moduleDetail.OriginalCost = context.FloatValue("GetSubscriptionPrice.Data.ModuleDetails["+ i +"].OriginalCost");
-				moduleDetail.InvoiceDiscount = context.FloatValue("GetSubscriptionPrice.Data.ModuleDetails["+ i +"].InvoiceDiscount");
-				moduleDetail.CostAfterDiscount = context.FloatValue("GetSubscriptionPrice.Data.ModuleDetails["+ i +"].CostAfterDiscount");
-				moduleDetail.UnitPrice = context.FloatValue("GetSubscriptionPrice.Data.ModuleDetails["+ i +"].UnitPrice");
+				moduleDetail.ModuleCode = _ctx.StringValue("GetSubscriptionPrice.Data.ModuleDetails["+ i +"].ModuleCode");
+				moduleDetail.OriginalCost = _ctx.FloatValue("GetSubscriptionPrice.Data.ModuleDetails["+ i +"].OriginalCost");
+				moduleDetail.InvoiceDiscount = _ctx.FloatValue("GetSubscriptionPrice.Data.ModuleDetails["+ i +"].InvoiceDiscount");
+				moduleDetail.CostAfterDiscount = _ctx.FloatValue("GetSubscriptionPrice.Data.ModuleDetails["+ i +"].CostAfterDiscount");
+				moduleDetail.UnitPrice = _ctx.FloatValue("GetSubscriptionPrice.Data.ModuleDetails["+ i +"].UnitPrice");
 
 				data_moduleDetails.Add(moduleDetail);
 			}
 			data.ModuleDetails = data_moduleDetails;
 
 			List<GetSubscriptionPriceResponse.GetSubscriptionPrice_Data.GetSubscriptionPrice_PromotionDetail> data_promotionDetails = new List<GetSubscriptionPriceResponse.GetSubscriptionPrice_Data.GetSubscriptionPrice_PromotionDetail>();
-			for (int i = 0; i < context.Length("GetSubscriptionPrice.Data.PromotionDetails.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetSubscriptionPrice.Data.PromotionDetails.Length"); i++) {
 				GetSubscriptionPriceResponse.GetSubscriptionPrice_Data.GetSubscriptionPrice_PromotionDetail promotionDetail = new GetSubscriptionPriceResponse.GetSubscriptionPrice_Data.GetSubscriptionPrice_PromotionDetail();
-				promotionDetail.PromotionName = context.StringValue("GetSubscriptionPrice.Data.PromotionDetails["+ i +"].PromotionName");
-				promotionDetail.PromotionDesc = context.StringValue("GetSubscriptionPrice.Data.PromotionDetails["+ i +"].PromotionDesc");
-				promotionDetail.PromotionId = context.LongValue("GetSubscriptionPrice.Data.PromotionDetails["+ i +"].PromotionId");
+				promotionDetail.PromotionName = _ctx.StringValue("GetSubscriptionPrice.Data.PromotionDetails["+ i +"].PromotionName");
+				promotionDetail.PromotionDesc = _ctx.StringValue("GetSubscriptionPrice.Data.PromotionDetails["+ i +"].PromotionDesc");
+				promotionDetail.PromotionId = _ctx.LongValue("GetSubscriptionPrice.Data.PromotionDetails["+ i +"].PromotionId");
 
 				data_promotionDetails.Add(promotionDetail);
 			}

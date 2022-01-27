@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 {
     public class DisableBackupLogResponseUnmarshaller
     {
-        public static DisableBackupLogResponse Unmarshall(UnmarshallerContext context)
+        public static DisableBackupLogResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DisableBackupLogResponse disableBackupLogResponse = new DisableBackupLogResponse();
 
-			disableBackupLogResponse.HttpResponse = context.HttpResponse;
-			disableBackupLogResponse.Success = context.BooleanValue("DisableBackupLog.Success");
-			disableBackupLogResponse.ErrCode = context.StringValue("DisableBackupLog.ErrCode");
-			disableBackupLogResponse.ErrMessage = context.StringValue("DisableBackupLog.ErrMessage");
-			disableBackupLogResponse.HttpStatusCode = context.IntegerValue("DisableBackupLog.HttpStatusCode");
-			disableBackupLogResponse.RequestId = context.StringValue("DisableBackupLog.RequestId");
-			disableBackupLogResponse.BackupPlanId = context.StringValue("DisableBackupLog.BackupPlanId");
-			disableBackupLogResponse.NeedPrecheck = context.BooleanValue("DisableBackupLog.NeedPrecheck");
+			disableBackupLogResponse.HttpResponse = _ctx.HttpResponse;
+			disableBackupLogResponse.Success = _ctx.BooleanValue("DisableBackupLog.Success");
+			disableBackupLogResponse.ErrCode = _ctx.StringValue("DisableBackupLog.ErrCode");
+			disableBackupLogResponse.ErrMessage = _ctx.StringValue("DisableBackupLog.ErrMessage");
+			disableBackupLogResponse.HttpStatusCode = _ctx.IntegerValue("DisableBackupLog.HttpStatusCode");
+			disableBackupLogResponse.RequestId = _ctx.StringValue("DisableBackupLog.RequestId");
+			disableBackupLogResponse.BackupPlanId = _ctx.StringValue("DisableBackupLog.BackupPlanId");
+			disableBackupLogResponse.NeedPrecheck = _ctx.BooleanValue("DisableBackupLog.NeedPrecheck");
         
 			return disableBackupLogResponse;
         }

@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 {
     public class CreateFullBackupSetDownloadResponseUnmarshaller
     {
-        public static CreateFullBackupSetDownloadResponse Unmarshall(UnmarshallerContext context)
+        public static CreateFullBackupSetDownloadResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateFullBackupSetDownloadResponse createFullBackupSetDownloadResponse = new CreateFullBackupSetDownloadResponse();
 
-			createFullBackupSetDownloadResponse.HttpResponse = context.HttpResponse;
-			createFullBackupSetDownloadResponse.Success = context.BooleanValue("CreateFullBackupSetDownload.Success");
-			createFullBackupSetDownloadResponse.ErrCode = context.StringValue("CreateFullBackupSetDownload.ErrCode");
-			createFullBackupSetDownloadResponse.ErrMessage = context.StringValue("CreateFullBackupSetDownload.ErrMessage");
-			createFullBackupSetDownloadResponse.HttpStatusCode = context.IntegerValue("CreateFullBackupSetDownload.HttpStatusCode");
-			createFullBackupSetDownloadResponse.RequestId = context.StringValue("CreateFullBackupSetDownload.RequestId");
-			createFullBackupSetDownloadResponse.BackupSetDownloadTaskId = context.StringValue("CreateFullBackupSetDownload.BackupSetDownloadTaskId");
+			createFullBackupSetDownloadResponse.HttpResponse = _ctx.HttpResponse;
+			createFullBackupSetDownloadResponse.Success = _ctx.BooleanValue("CreateFullBackupSetDownload.Success");
+			createFullBackupSetDownloadResponse.ErrCode = _ctx.StringValue("CreateFullBackupSetDownload.ErrCode");
+			createFullBackupSetDownloadResponse.ErrMessage = _ctx.StringValue("CreateFullBackupSetDownload.ErrMessage");
+			createFullBackupSetDownloadResponse.HttpStatusCode = _ctx.IntegerValue("CreateFullBackupSetDownload.HttpStatusCode");
+			createFullBackupSetDownloadResponse.RequestId = _ctx.StringValue("CreateFullBackupSetDownload.RequestId");
+			createFullBackupSetDownloadResponse.BackupSetDownloadTaskId = _ctx.StringValue("CreateFullBackupSetDownload.BackupSetDownloadTaskId");
         
 			return createFullBackupSetDownloadResponse;
         }

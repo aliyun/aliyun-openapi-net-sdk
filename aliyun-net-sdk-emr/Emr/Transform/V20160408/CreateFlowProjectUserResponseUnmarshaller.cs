@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class CreateFlowProjectUserResponseUnmarshaller
     {
-        public static CreateFlowProjectUserResponse Unmarshall(UnmarshallerContext context)
+        public static CreateFlowProjectUserResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateFlowProjectUserResponse createFlowProjectUserResponse = new CreateFlowProjectUserResponse();
 
-			createFlowProjectUserResponse.HttpResponse = context.HttpResponse;
-			createFlowProjectUserResponse.RequestId = context.StringValue("CreateFlowProjectUser.RequestId");
-			createFlowProjectUserResponse.Data = context.BooleanValue("CreateFlowProjectUser.Data");
+			createFlowProjectUserResponse.HttpResponse = _ctx.HttpResponse;
+			createFlowProjectUserResponse.RequestId = _ctx.StringValue("CreateFlowProjectUser.RequestId");
+			createFlowProjectUserResponse.Data = _ctx.BooleanValue("CreateFlowProjectUser.Data");
         
 			return createFlowProjectUserResponse;
         }

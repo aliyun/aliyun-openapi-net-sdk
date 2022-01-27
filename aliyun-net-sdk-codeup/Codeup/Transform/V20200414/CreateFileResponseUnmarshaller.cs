@@ -26,19 +26,19 @@ namespace Aliyun.Acs.codeup.Transform.V20200414
 {
     public class CreateFileResponseUnmarshaller
     {
-        public static CreateFileResponse Unmarshall(UnmarshallerContext context)
+        public static CreateFileResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateFileResponse createFileResponse = new CreateFileResponse();
 
-			createFileResponse.HttpResponse = context.HttpResponse;
-			createFileResponse.RequestId = context.StringValue("CreateFile.RequestId");
-			createFileResponse.ErrorCode = context.StringValue("CreateFile.ErrorCode");
-			createFileResponse.Success = context.BooleanValue("CreateFile.Success");
-			createFileResponse.ErrorMessage = context.StringValue("CreateFile.ErrorMessage");
+			createFileResponse.HttpResponse = _ctx.HttpResponse;
+			createFileResponse.RequestId = _ctx.StringValue("CreateFile.RequestId");
+			createFileResponse.ErrorCode = _ctx.StringValue("CreateFile.ErrorCode");
+			createFileResponse.Success = _ctx.BooleanValue("CreateFile.Success");
+			createFileResponse.ErrorMessage = _ctx.StringValue("CreateFile.ErrorMessage");
 
 			CreateFileResponse.CreateFile_Result result = new CreateFileResponse.CreateFile_Result();
-			result.BranchName = context.StringValue("CreateFile.Result.BranchName");
-			result.FilePath = context.StringValue("CreateFile.Result.FilePath");
+			result.BranchName = _ctx.StringValue("CreateFile.Result.BranchName");
+			result.FilePath = _ctx.StringValue("CreateFile.Result.FilePath");
 			createFileResponse.Result = result;
         
 			return createFileResponse;

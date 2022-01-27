@@ -26,12 +26,12 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 {
     public class ResetFileSystemResponseUnmarshaller
     {
-        public static ResetFileSystemResponse Unmarshall(UnmarshallerContext context)
+        public static ResetFileSystemResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ResetFileSystemResponse resetFileSystemResponse = new ResetFileSystemResponse();
 
-			resetFileSystemResponse.HttpResponse = context.HttpResponse;
-			resetFileSystemResponse.RequestId = context.StringValue("ResetFileSystem.RequestId");
+			resetFileSystemResponse.HttpResponse = _ctx.HttpResponse;
+			resetFileSystemResponse.RequestId = _ctx.StringValue("ResetFileSystem.RequestId");
         
 			return resetFileSystemResponse;
         }

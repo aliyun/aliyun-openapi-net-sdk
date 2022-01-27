@@ -1,0 +1,260 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using Aliyun.Acs.Core;
+
+namespace Aliyun.Acs.Config.Model.V20190108
+{
+	public class ListAggregateDiscoveredResourcesResponse : AcsResponse
+	{
+
+		private string requestId;
+
+		private ListAggregateDiscoveredResources_DiscoveredResourceProfiles discoveredResourceProfiles;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public ListAggregateDiscoveredResources_DiscoveredResourceProfiles DiscoveredResourceProfiles
+		{
+			get
+			{
+				return discoveredResourceProfiles;
+			}
+			set	
+			{
+				discoveredResourceProfiles = value;
+			}
+		}
+
+		public class ListAggregateDiscoveredResources_DiscoveredResourceProfiles
+		{
+
+			private int? pageNumber;
+
+			private int? pageSize;
+
+			private int? totalCount;
+
+			private List<ListAggregateDiscoveredResources_DiscoveredResourceProfile> discoveredResourceProfileList;
+
+			public int? PageNumber
+			{
+				get
+				{
+					return pageNumber;
+				}
+				set	
+				{
+					pageNumber = value;
+				}
+			}
+
+			public int? PageSize
+			{
+				get
+				{
+					return pageSize;
+				}
+				set	
+				{
+					pageSize = value;
+				}
+			}
+
+			public int? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
+				}
+			}
+
+			public List<ListAggregateDiscoveredResources_DiscoveredResourceProfile> DiscoveredResourceProfileList
+			{
+				get
+				{
+					return discoveredResourceProfileList;
+				}
+				set	
+				{
+					discoveredResourceProfileList = value;
+				}
+			}
+
+			public class ListAggregateDiscoveredResources_DiscoveredResourceProfile
+			{
+
+				private string resourceType;
+
+				private string region;
+
+				private long? resourceCreationTime;
+
+				private string tags;
+
+				private long? accountId;
+
+				private string resourceId;
+
+				private string resourceName;
+
+				private int? resourceDeleted;
+
+				private string resourceStatus;
+
+				private long? resourceOwnerId;
+
+				public string ResourceType
+				{
+					get
+					{
+						return resourceType;
+					}
+					set	
+					{
+						resourceType = value;
+					}
+				}
+
+				public string Region
+				{
+					get
+					{
+						return region;
+					}
+					set	
+					{
+						region = value;
+					}
+				}
+
+				public long? ResourceCreationTime
+				{
+					get
+					{
+						return resourceCreationTime;
+					}
+					set	
+					{
+						resourceCreationTime = value;
+					}
+				}
+
+				public string Tags
+				{
+					get
+					{
+						return tags;
+					}
+					set	
+					{
+						tags = value;
+					}
+				}
+
+				public long? AccountId
+				{
+					get
+					{
+						return accountId;
+					}
+					set	
+					{
+						accountId = value;
+					}
+				}
+
+				public string ResourceId
+				{
+					get
+					{
+						return resourceId;
+					}
+					set	
+					{
+						resourceId = value;
+					}
+				}
+
+				public string ResourceName
+				{
+					get
+					{
+						return resourceName;
+					}
+					set	
+					{
+						resourceName = value;
+					}
+				}
+
+				public int? ResourceDeleted
+				{
+					get
+					{
+						return resourceDeleted;
+					}
+					set	
+					{
+						resourceDeleted = value;
+					}
+				}
+
+				public string ResourceStatus
+				{
+					get
+					{
+						return resourceStatus;
+					}
+					set	
+					{
+						resourceStatus = value;
+					}
+				}
+
+				public long? ResourceOwnerId
+				{
+					get
+					{
+						return resourceOwnerId;
+					}
+					set	
+					{
+						resourceOwnerId = value;
+					}
+				}
+			}
+		}
+	}
+}

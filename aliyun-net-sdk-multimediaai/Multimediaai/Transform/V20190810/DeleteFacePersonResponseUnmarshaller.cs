@@ -26,12 +26,12 @@ namespace Aliyun.Acs.multimediaai.Transform.V20190810
 {
     public class DeleteFacePersonResponseUnmarshaller
     {
-        public static DeleteFacePersonResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteFacePersonResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteFacePersonResponse deleteFacePersonResponse = new DeleteFacePersonResponse();
 
-			deleteFacePersonResponse.HttpResponse = context.HttpResponse;
-			deleteFacePersonResponse.RequestId = context.StringValue("DeleteFacePerson.RequestId");
+			deleteFacePersonResponse.HttpResponse = _ctx.HttpResponse;
+			deleteFacePersonResponse.RequestId = _ctx.StringValue("DeleteFacePerson.RequestId");
         
 			return deleteFacePersonResponse;
         }

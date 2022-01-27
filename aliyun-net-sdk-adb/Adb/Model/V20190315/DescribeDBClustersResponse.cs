@@ -164,6 +164,8 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 			private string resourceGroupId;
 
+			private int? elasticIOResource;
+
 			private List<DescribeDBClusters_Tag> tags;
 
 			public string DBClusterId
@@ -559,6 +561,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public int? ElasticIOResource
+			{
+				get
+				{
+					return elasticIOResource;
+				}
+				set	
+				{
+					elasticIOResource = value;
 				}
 			}
 

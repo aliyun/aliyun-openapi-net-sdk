@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class CopyDatabaseResponseUnmarshaller
     {
-        public static CopyDatabaseResponse Unmarshall(UnmarshallerContext context)
+        public static CopyDatabaseResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CopyDatabaseResponse copyDatabaseResponse = new CopyDatabaseResponse();
 
-			copyDatabaseResponse.HttpResponse = context.HttpResponse;
-			copyDatabaseResponse.DBName = context.StringValue("CopyDatabase.DBName");
-			copyDatabaseResponse.DBStatus = context.StringValue("CopyDatabase.DBStatus");
-			copyDatabaseResponse.TaskId = context.StringValue("CopyDatabase.TaskId");
+			copyDatabaseResponse.HttpResponse = _ctx.HttpResponse;
+			copyDatabaseResponse.DBName = _ctx.StringValue("CopyDatabase.DBName");
+			copyDatabaseResponse.DBStatus = _ctx.StringValue("CopyDatabase.DBStatus");
+			copyDatabaseResponse.TaskId = _ctx.StringValue("CopyDatabase.TaskId");
         
 			return copyDatabaseResponse;
         }

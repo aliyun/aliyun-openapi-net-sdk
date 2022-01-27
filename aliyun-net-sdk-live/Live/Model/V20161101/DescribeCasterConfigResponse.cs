@@ -47,6 +47,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? channelEnable;
 
+		private List<DescribeCasterConfig_SyncGroup> syncGroupsConfig;
+
 		private DescribeCasterConfig_TranscodeConfig transcodeConfig;
 
 		private DescribeCasterConfig_RecordConfig recordConfig;
@@ -183,6 +185,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public List<DescribeCasterConfig_SyncGroup> SyncGroupsConfig
+		{
+			get
+			{
+				return syncGroupsConfig;
+			}
+			set	
+			{
+				syncGroupsConfig = value;
+			}
+		}
+
 		public DescribeCasterConfig_TranscodeConfig TranscodeConfig
 		{
 			get
@@ -204,6 +218,52 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				recordConfig = value;
+			}
+		}
+
+		public class DescribeCasterConfig_SyncGroup
+		{
+
+			private int? mode;
+
+			private string hostResourceId;
+
+			private List<string> resourceIds;
+
+			public int? Mode
+			{
+				get
+				{
+					return mode;
+				}
+				set	
+				{
+					mode = value;
+				}
+			}
+
+			public string HostResourceId
+			{
+				get
+				{
+					return hostResourceId;
+				}
+				set	
+				{
+					hostResourceId = value;
+				}
+			}
+
+			public List<string> ResourceIds
+			{
+				get
+				{
+					return resourceIds;
+				}
+				set	
+				{
+					resourceIds = value;
+				}
 			}
 		}
 

@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Dyplsapi.Transform.V20170525
 {
     public class OperateAxgGroupResponseUnmarshaller
     {
-        public static OperateAxgGroupResponse Unmarshall(UnmarshallerContext context)
+        public static OperateAxgGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			OperateAxgGroupResponse operateAxgGroupResponse = new OperateAxgGroupResponse();
 
-			operateAxgGroupResponse.HttpResponse = context.HttpResponse;
-			operateAxgGroupResponse.RequestId = context.StringValue("OperateAxgGroup.RequestId");
-			operateAxgGroupResponse.Code = context.StringValue("OperateAxgGroup.Code");
-			operateAxgGroupResponse.Message = context.StringValue("OperateAxgGroup.Message");
+			operateAxgGroupResponse.HttpResponse = _ctx.HttpResponse;
+			operateAxgGroupResponse.Code = _ctx.StringValue("OperateAxgGroup.Code");
+			operateAxgGroupResponse.Message = _ctx.StringValue("OperateAxgGroup.Message");
+			operateAxgGroupResponse.RequestId = _ctx.StringValue("OperateAxgGroup.RequestId");
         
 			return operateAxgGroupResponse;
         }

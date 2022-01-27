@@ -25,76 +25,90 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 	public class DescribeRegionsResponse : AcsResponse
 	{
 
-		private string request_id;
+		private string requestId;
 
-		private string status;
+		private List<DescribeRegions_ResultItem> result;
 
-		private List<DescribeRegions_Error> errors;
-
-		public string Request_id
+		public string RequestId
 		{
 			get
 			{
-				return request_id;
+				return requestId;
 			}
 			set	
 			{
-				request_id = value;
+				requestId = value;
 			}
 		}
 
-		public string Status
+		public List<DescribeRegions_ResultItem> Result
 		{
 			get
 			{
-				return status;
+				return result;
 			}
 			set	
 			{
-				status = value;
+				result = value;
 			}
 		}
 
-		public List<DescribeRegions_Error> Errors
-		{
-			get
-			{
-				return errors;
-			}
-			set	
-			{
-				errors = value;
-			}
-		}
-
-		public class DescribeRegions_Error
+		public class DescribeRegions_ResultItem
 		{
 
-			private int? code;
+			private string regionId;
 
-			private string message;
+			private string localName;
 
-			public int? Code
+			private string endpoint;
+
+			private string consoleUrl;
+
+			public string RegionId
 			{
 				get
 				{
-					return code;
+					return regionId;
 				}
 				set	
 				{
-					code = value;
+					regionId = value;
 				}
 			}
 
-			public string Message
+			public string LocalName
 			{
 				get
 				{
-					return message;
+					return localName;
 				}
 				set	
 				{
-					message = value;
+					localName = value;
+				}
+			}
+
+			public string Endpoint
+			{
+				get
+				{
+					return endpoint;
+				}
+				set	
+				{
+					endpoint = value;
+				}
+			}
+
+			public string ConsoleUrl
+			{
+				get
+				{
+					return consoleUrl;
+				}
+				set	
+				{
+					consoleUrl = value;
 				}
 			}
 		}

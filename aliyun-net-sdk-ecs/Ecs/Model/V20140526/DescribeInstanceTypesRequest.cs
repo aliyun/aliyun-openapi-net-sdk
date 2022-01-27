@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<string> instanceTypess = new List<string>(){ };
 
+		private string nextToken;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -51,6 +53,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string instanceTypeFamily;
 
 		private long? ownerId;
+
+		private long? maxResults;
 
 		public long? ResourceOwnerId
 		{
@@ -75,10 +79,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				instanceTypess = value;
-				for (int i = 0; i < instanceTypess.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceTypes." + (i + 1) , instanceTypess[i]);
-				}
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
@@ -131,6 +144,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public long? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
 			}
 		}
 

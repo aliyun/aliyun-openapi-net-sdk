@@ -26,12 +26,12 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class DeleteOfficeConversionTaskResponseUnmarshaller
     {
-        public static DeleteOfficeConversionTaskResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteOfficeConversionTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteOfficeConversionTaskResponse deleteOfficeConversionTaskResponse = new DeleteOfficeConversionTaskResponse();
 
-			deleteOfficeConversionTaskResponse.HttpResponse = context.HttpResponse;
-			deleteOfficeConversionTaskResponse.RequestId = context.StringValue("DeleteOfficeConversionTask.RequestId");
+			deleteOfficeConversionTaskResponse.HttpResponse = _ctx.HttpResponse;
+			deleteOfficeConversionTaskResponse.RequestId = _ctx.StringValue("DeleteOfficeConversionTask.RequestId");
         
 			return deleteOfficeConversionTaskResponse;
         }

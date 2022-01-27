@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ecs.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
+
+		private int? expectedRenewDay;
 
 		private long? ownerId;
 
@@ -131,6 +133,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public int? ExpectedRenewDay
+		{
+			get
+			{
+				return expectedRenewDay;
+			}
+			set	
+			{
+				expectedRenewDay = value;
+				DictionaryUtil.Add(QueryParameters, "ExpectedRenewDay", value.ToString());
 			}
 		}
 

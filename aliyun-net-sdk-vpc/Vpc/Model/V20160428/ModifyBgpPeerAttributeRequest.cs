@@ -34,9 +34,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -46,6 +47,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private string bgpGroupId;
 
 		private string peerIpAddress;
+
+		private int? bfdMultiHop;
 
 		private bool? enableBfd;
 
@@ -106,6 +109,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				peerIpAddress = value;
 				DictionaryUtil.Add(QueryParameters, "PeerIpAddress", value);
+			}
+		}
+
+		public int? BfdMultiHop
+		{
+			get
+			{
+				return bfdMultiHop;
+			}
+			set	
+			{
+				bfdMultiHop = value;
+				DictionaryUtil.Add(QueryParameters, "BfdMultiHop", value.ToString());
 			}
 		}
 

@@ -26,22 +26,22 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeVsDomainReqTrafficDataResponseUnmarshaller
     {
-        public static DescribeVsDomainReqTrafficDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVsDomainReqTrafficDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVsDomainReqTrafficDataResponse describeVsDomainReqTrafficDataResponse = new DescribeVsDomainReqTrafficDataResponse();
 
-			describeVsDomainReqTrafficDataResponse.HttpResponse = context.HttpResponse;
-			describeVsDomainReqTrafficDataResponse.RequestId = context.StringValue("DescribeVsDomainReqTrafficData.RequestId");
-			describeVsDomainReqTrafficDataResponse.DomainName = context.StringValue("DescribeVsDomainReqTrafficData.DomainName");
-			describeVsDomainReqTrafficDataResponse.StartTime = context.StringValue("DescribeVsDomainReqTrafficData.StartTime");
-			describeVsDomainReqTrafficDataResponse.EndTime = context.StringValue("DescribeVsDomainReqTrafficData.EndTime");
-			describeVsDomainReqTrafficDataResponse.DataInterval = context.StringValue("DescribeVsDomainReqTrafficData.DataInterval");
+			describeVsDomainReqTrafficDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeVsDomainReqTrafficDataResponse.RequestId = _ctx.StringValue("DescribeVsDomainReqTrafficData.RequestId");
+			describeVsDomainReqTrafficDataResponse.DomainName = _ctx.StringValue("DescribeVsDomainReqTrafficData.DomainName");
+			describeVsDomainReqTrafficDataResponse.StartTime = _ctx.StringValue("DescribeVsDomainReqTrafficData.StartTime");
+			describeVsDomainReqTrafficDataResponse.EndTime = _ctx.StringValue("DescribeVsDomainReqTrafficData.EndTime");
+			describeVsDomainReqTrafficDataResponse.DataInterval = _ctx.StringValue("DescribeVsDomainReqTrafficData.DataInterval");
 
 			List<DescribeVsDomainReqTrafficDataResponse.DescribeVsDomainReqTrafficData_DataModule> describeVsDomainReqTrafficDataResponse_reqTrafficDataPerInterval = new List<DescribeVsDomainReqTrafficDataResponse.DescribeVsDomainReqTrafficData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeVsDomainReqTrafficData.ReqTrafficDataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVsDomainReqTrafficData.ReqTrafficDataPerInterval.Length"); i++) {
 				DescribeVsDomainReqTrafficDataResponse.DescribeVsDomainReqTrafficData_DataModule dataModule = new DescribeVsDomainReqTrafficDataResponse.DescribeVsDomainReqTrafficData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeVsDomainReqTrafficData.ReqTrafficDataPerInterval["+ i +"].TimeStamp");
-				dataModule.ReqTrafficValue = context.StringValue("DescribeVsDomainReqTrafficData.ReqTrafficDataPerInterval["+ i +"].ReqTrafficValue");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeVsDomainReqTrafficData.ReqTrafficDataPerInterval["+ i +"].TimeStamp");
+				dataModule.ReqTrafficValue = _ctx.StringValue("DescribeVsDomainReqTrafficData.ReqTrafficDataPerInterval["+ i +"].ReqTrafficValue");
 
 				describeVsDomainReqTrafficDataResponse_reqTrafficDataPerInterval.Add(dataModule);
 			}

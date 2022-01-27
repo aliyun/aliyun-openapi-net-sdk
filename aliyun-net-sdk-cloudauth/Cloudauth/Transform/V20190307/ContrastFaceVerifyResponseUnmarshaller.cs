@@ -26,20 +26,21 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 {
     public class ContrastFaceVerifyResponseUnmarshaller
     {
-        public static ContrastFaceVerifyResponse Unmarshall(UnmarshallerContext context)
+        public static ContrastFaceVerifyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ContrastFaceVerifyResponse contrastFaceVerifyResponse = new ContrastFaceVerifyResponse();
 
-			contrastFaceVerifyResponse.HttpResponse = context.HttpResponse;
-			contrastFaceVerifyResponse.RequestId = context.StringValue("ContrastFaceVerify.RequestId");
-			contrastFaceVerifyResponse.Message = context.StringValue("ContrastFaceVerify.Message");
-			contrastFaceVerifyResponse.Code = context.StringValue("ContrastFaceVerify.Code");
+			contrastFaceVerifyResponse.HttpResponse = _ctx.HttpResponse;
+			contrastFaceVerifyResponse.Code = _ctx.StringValue("ContrastFaceVerify.Code");
+			contrastFaceVerifyResponse.Message = _ctx.StringValue("ContrastFaceVerify.Message");
+			contrastFaceVerifyResponse.RequestId = _ctx.StringValue("ContrastFaceVerify.RequestId");
 
 			ContrastFaceVerifyResponse.ContrastFaceVerify_ResultObject resultObject = new ContrastFaceVerifyResponse.ContrastFaceVerify_ResultObject();
-			resultObject.Passed = context.StringValue("ContrastFaceVerify.ResultObject.Passed");
-			resultObject.IdentityInfo = context.StringValue("ContrastFaceVerify.ResultObject.IdentityInfo");
-			resultObject.MaterialInfo = context.StringValue("ContrastFaceVerify.ResultObject.MaterialInfo");
-			resultObject.SubCode = context.StringValue("ContrastFaceVerify.ResultObject.SubCode");
+			resultObject.CertifyId = _ctx.StringValue("ContrastFaceVerify.ResultObject.CertifyId");
+			resultObject.SubCode = _ctx.StringValue("ContrastFaceVerify.ResultObject.SubCode");
+			resultObject.MaterialInfo = _ctx.StringValue("ContrastFaceVerify.ResultObject.MaterialInfo");
+			resultObject.IdentityInfo = _ctx.StringValue("ContrastFaceVerify.ResultObject.IdentityInfo");
+			resultObject.Passed = _ctx.StringValue("ContrastFaceVerify.ResultObject.Passed");
 			contrastFaceVerifyResponse.ResultObject = resultObject;
         
 			return contrastFaceVerifyResponse;

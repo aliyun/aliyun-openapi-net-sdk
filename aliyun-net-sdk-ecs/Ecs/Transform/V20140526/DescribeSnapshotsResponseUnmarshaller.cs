@@ -26,46 +26,51 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DescribeSnapshotsResponseUnmarshaller
     {
-        public static DescribeSnapshotsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSnapshotsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSnapshotsResponse describeSnapshotsResponse = new DescribeSnapshotsResponse();
 
-			describeSnapshotsResponse.HttpResponse = context.HttpResponse;
-			describeSnapshotsResponse.RequestId = context.StringValue("DescribeSnapshots.RequestId");
-			describeSnapshotsResponse.TotalCount = context.IntegerValue("DescribeSnapshots.TotalCount");
-			describeSnapshotsResponse.PageNumber = context.IntegerValue("DescribeSnapshots.PageNumber");
-			describeSnapshotsResponse.PageSize = context.IntegerValue("DescribeSnapshots.PageSize");
+			describeSnapshotsResponse.HttpResponse = _ctx.HttpResponse;
+			describeSnapshotsResponse.NextToken = _ctx.StringValue("DescribeSnapshots.NextToken");
+			describeSnapshotsResponse.PageSize = _ctx.IntegerValue("DescribeSnapshots.PageSize");
+			describeSnapshotsResponse.PageNumber = _ctx.IntegerValue("DescribeSnapshots.PageNumber");
+			describeSnapshotsResponse.RequestId = _ctx.StringValue("DescribeSnapshots.RequestId");
+			describeSnapshotsResponse.TotalCount = _ctx.IntegerValue("DescribeSnapshots.TotalCount");
 
 			List<DescribeSnapshotsResponse.DescribeSnapshots_Snapshot> describeSnapshotsResponse_snapshots = new List<DescribeSnapshotsResponse.DescribeSnapshots_Snapshot>();
-			for (int i = 0; i < context.Length("DescribeSnapshots.Snapshots.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeSnapshots.Snapshots.Length"); i++) {
 				DescribeSnapshotsResponse.DescribeSnapshots_Snapshot snapshot = new DescribeSnapshotsResponse.DescribeSnapshots_Snapshot();
-				snapshot.SnapshotId = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].SnapshotId");
-				snapshot.SnapshotSN = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].SnapshotSN");
-				snapshot.SnapshotName = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].SnapshotName");
-				snapshot.Progress = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].Progress");
-				snapshot.ProductCode = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].ProductCode");
-				snapshot.SourceDiskId = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].SourceDiskId");
-				snapshot.SourceDiskType = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].SourceDiskType");
-				snapshot.RetentionDays = context.IntegerValue("DescribeSnapshots.Snapshots["+ i +"].RetentionDays");
-				snapshot.Encrypted = context.BooleanValue("DescribeSnapshots.Snapshots["+ i +"].Encrypted");
-				snapshot.SourceDiskSize = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].SourceDiskSize");
-				snapshot.Description = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].Description");
-				snapshot.CreationTime = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].CreationTime");
-				snapshot.LastModifiedTime = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].LastModifiedTime");
-				snapshot.Status = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].Status");
-				snapshot.Usage = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].Usage");
-				snapshot.SourceStorageType = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].SourceStorageType");
-				snapshot.RemainTime = context.IntegerValue("DescribeSnapshots.Snapshots["+ i +"].RemainTime");
-				snapshot.ResourceGroupId = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].ResourceGroupId");
-				snapshot.KMSKeyId = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].KMSKeyId");
-				snapshot.Category = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].Category");
-				snapshot.SnapshotType = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].SnapshotType");
+				snapshot.Status = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].Status");
+				snapshot.CreationTime = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].CreationTime");
+				snapshot.Progress = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].Progress");
+				snapshot.InstantAccess = _ctx.BooleanValue("DescribeSnapshots.Snapshots["+ i +"].InstantAccess");
+				snapshot.RemainTime = _ctx.IntegerValue("DescribeSnapshots.Snapshots["+ i +"].RemainTime");
+				snapshot.SourceDiskSize = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].SourceDiskSize");
+				snapshot.RetentionDays = _ctx.IntegerValue("DescribeSnapshots.Snapshots["+ i +"].RetentionDays");
+				snapshot.SourceDiskType = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].SourceDiskType");
+				snapshot.SourceStorageType = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].SourceStorageType");
+				snapshot.Usage = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].Usage");
+				snapshot.LastModifiedTime = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].LastModifiedTime");
+				snapshot.Encrypted = _ctx.BooleanValue("DescribeSnapshots.Snapshots["+ i +"].Encrypted");
+				snapshot.SnapshotType = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].SnapshotType");
+				snapshot.SourceDiskId = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].SourceDiskId");
+				snapshot.SnapshotName = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].SnapshotName");
+				snapshot.InstantAccessRetentionDays = _ctx.IntegerValue("DescribeSnapshots.Snapshots["+ i +"].InstantAccessRetentionDays");
+				snapshot.Description = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].Description");
+				snapshot.SnapshotId = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].SnapshotId");
+				snapshot.ResourceGroupId = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].ResourceGroupId");
+				snapshot.Category = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].Category");
+				snapshot.KMSKeyId = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].KMSKeyId");
+				snapshot.SnapshotSN = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].SnapshotSN");
+				snapshot.ProductCode = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].ProductCode");
+				snapshot.SourceSnapshotId = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].SourceSnapshotId");
+				snapshot.SourceRegionId = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].SourceRegionId");
 
 				List<DescribeSnapshotsResponse.DescribeSnapshots_Snapshot.DescribeSnapshots_Tag> snapshot_tags = new List<DescribeSnapshotsResponse.DescribeSnapshots_Snapshot.DescribeSnapshots_Tag>();
-				for (int j = 0; j < context.Length("DescribeSnapshots.Snapshots["+ i +"].Tags.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeSnapshots.Snapshots["+ i +"].Tags.Length"); j++) {
 					DescribeSnapshotsResponse.DescribeSnapshots_Snapshot.DescribeSnapshots_Tag tag = new DescribeSnapshotsResponse.DescribeSnapshots_Snapshot.DescribeSnapshots_Tag();
-					tag.TagKey = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].Tags["+ j +"].TagKey");
-					tag.TagValue = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].Tags["+ j +"].TagValue");
+					tag.TagValue = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].Tags["+ j +"].TagValue");
+					tag.TagKey = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].Tags["+ j +"].TagKey");
 
 					snapshot_tags.Add(tag);
 				}

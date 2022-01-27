@@ -26,14 +26,14 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class CreateVideoAbstractTaskResponseUnmarshaller
     {
-        public static CreateVideoAbstractTaskResponse Unmarshall(UnmarshallerContext context)
+        public static CreateVideoAbstractTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateVideoAbstractTaskResponse createVideoAbstractTaskResponse = new CreateVideoAbstractTaskResponse();
 
-			createVideoAbstractTaskResponse.HttpResponse = context.HttpResponse;
-			createVideoAbstractTaskResponse.RequestId = context.StringValue("CreateVideoAbstractTask.RequestId");
-			createVideoAbstractTaskResponse.TaskId = context.StringValue("CreateVideoAbstractTask.TaskId");
-			createVideoAbstractTaskResponse.TaskType = context.StringValue("CreateVideoAbstractTask.TaskType");
+			createVideoAbstractTaskResponse.HttpResponse = _ctx.HttpResponse;
+			createVideoAbstractTaskResponse.RequestId = _ctx.StringValue("CreateVideoAbstractTask.RequestId");
+			createVideoAbstractTaskResponse.TaskId = _ctx.StringValue("CreateVideoAbstractTask.TaskId");
+			createVideoAbstractTaskResponse.TaskType = _ctx.StringValue("CreateVideoAbstractTask.TaskType");
         
 			return createVideoAbstractTaskResponse;
         }

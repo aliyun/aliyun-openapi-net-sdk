@@ -26,16 +26,16 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 {
     public class GetPipelineInstanceStatusResponseUnmarshaller
     {
-        public static GetPipelineInstanceStatusResponse Unmarshall(UnmarshallerContext context)
+        public static GetPipelineInstanceStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetPipelineInstanceStatusResponse getPipelineInstanceStatusResponse = new GetPipelineInstanceStatusResponse();
 
-			getPipelineInstanceStatusResponse.HttpResponse = context.HttpResponse;
-			getPipelineInstanceStatusResponse.Success = context.BooleanValue("GetPipelineInstanceStatus.Success");
-			getPipelineInstanceStatusResponse.ErrorCode = context.StringValue("GetPipelineInstanceStatus.ErrorCode");
-			getPipelineInstanceStatusResponse.ErrorMessage = context.StringValue("GetPipelineInstanceStatus.ErrorMessage");
-			getPipelineInstanceStatusResponse._Object = context.StringValue("GetPipelineInstanceStatus.Object");
-			getPipelineInstanceStatusResponse.RequestId = context.StringValue("GetPipelineInstanceStatus.RequestId");
+			getPipelineInstanceStatusResponse.HttpResponse = _ctx.HttpResponse;
+			getPipelineInstanceStatusResponse.RequestId = _ctx.StringValue("GetPipelineInstanceStatus.RequestId");
+			getPipelineInstanceStatusResponse.ErrorMessage = _ctx.StringValue("GetPipelineInstanceStatus.ErrorMessage");
+			getPipelineInstanceStatusResponse._Object = _ctx.StringValue("GetPipelineInstanceStatus.Object");
+			getPipelineInstanceStatusResponse.ErrorCode = _ctx.StringValue("GetPipelineInstanceStatus.ErrorCode");
+			getPipelineInstanceStatusResponse.Success = _ctx.BooleanValue("GetPipelineInstanceStatus.Success");
         
 			return getPipelineInstanceStatusResponse;
         }

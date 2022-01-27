@@ -48,7 +48,6 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 				pageData.Description = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Description");
 				pageData.SslProtocol = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].SslProtocol");
 				pageData.ResourceGroupId = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].ResourceGroupId");
-				pageData.Sandbox = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sandbox");
 
 				List<DescribeCdnUserDomainsByFuncResponse.DescribeCdnUserDomainsByFunc_PageData.DescribeCdnUserDomainsByFunc_Source> pageData_sources = new List<DescribeCdnUserDomainsByFuncResponse.DescribeCdnUserDomainsByFunc_PageData.DescribeCdnUserDomainsByFunc_Source>();
 				for (int j = 0; j < _ctx.Length("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources.Length"); j++) {

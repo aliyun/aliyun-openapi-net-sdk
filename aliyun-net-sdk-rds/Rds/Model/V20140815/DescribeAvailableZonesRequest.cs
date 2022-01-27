@@ -34,11 +34,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Rds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Rds.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
+
+		private string dBInstanceName;
 
 		private long? resourceOwnerId;
 
@@ -46,9 +48,26 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string engine;
 
-		private string instanceChargeType;
+		private string dispenseMode;
+
+		private string commodityCode;
 
 		private string zoneId;
+
+		private string category;
+
+		public string DBInstanceName
+		{
+			get
+			{
+				return dBInstanceName;
+			}
+			set	
+			{
+				dBInstanceName = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceName", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -89,16 +108,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string InstanceChargeType
+		public string DispenseMode
 		{
 			get
 			{
-				return instanceChargeType;
+				return dispenseMode;
 			}
 			set	
 			{
-				instanceChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+				dispenseMode = value;
+				DictionaryUtil.Add(QueryParameters, "DispenseMode", value);
+			}
+		}
+
+		public string CommodityCode
+		{
+			get
+			{
+				return commodityCode;
+			}
+			set	
+			{
+				commodityCode = value;
+				DictionaryUtil.Add(QueryParameters, "CommodityCode", value);
 			}
 		}
 
@@ -112,6 +144,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public string Category
+		{
+			get
+			{
+				return category;
+			}
+			set	
+			{
+				category = value;
+				DictionaryUtil.Add(QueryParameters, "Category", value);
 			}
 		}
 

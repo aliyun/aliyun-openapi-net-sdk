@@ -26,26 +26,26 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 {
     public class DescribeDcdnDomainCertificateInfoResponseUnmarshaller
     {
-        public static DescribeDcdnDomainCertificateInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDcdnDomainCertificateInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDcdnDomainCertificateInfoResponse describeDcdnDomainCertificateInfoResponse = new DescribeDcdnDomainCertificateInfoResponse();
 
-			describeDcdnDomainCertificateInfoResponse.HttpResponse = context.HttpResponse;
-			describeDcdnDomainCertificateInfoResponse.RequestId = context.StringValue("DescribeDcdnDomainCertificateInfo.RequestId");
+			describeDcdnDomainCertificateInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeDcdnDomainCertificateInfoResponse.RequestId = _ctx.StringValue("DescribeDcdnDomainCertificateInfo.RequestId");
 
 			List<DescribeDcdnDomainCertificateInfoResponse.DescribeDcdnDomainCertificateInfo_CertInfo> describeDcdnDomainCertificateInfoResponse_certInfos = new List<DescribeDcdnDomainCertificateInfoResponse.DescribeDcdnDomainCertificateInfo_CertInfo>();
-			for (int i = 0; i < context.Length("DescribeDcdnDomainCertificateInfo.CertInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDcdnDomainCertificateInfo.CertInfos.Length"); i++) {
 				DescribeDcdnDomainCertificateInfoResponse.DescribeDcdnDomainCertificateInfo_CertInfo certInfo = new DescribeDcdnDomainCertificateInfoResponse.DescribeDcdnDomainCertificateInfo_CertInfo();
-				certInfo.DomainName = context.StringValue("DescribeDcdnDomainCertificateInfo.CertInfos["+ i +"].DomainName");
-				certInfo.CertName = context.StringValue("DescribeDcdnDomainCertificateInfo.CertInfos["+ i +"].CertName");
-				certInfo.CertDomainName = context.StringValue("DescribeDcdnDomainCertificateInfo.CertInfos["+ i +"].CertDomainName");
-				certInfo.CertExpireTime = context.StringValue("DescribeDcdnDomainCertificateInfo.CertInfos["+ i +"].CertExpireTime");
-				certInfo.CertLife = context.StringValue("DescribeDcdnDomainCertificateInfo.CertInfos["+ i +"].CertLife");
-				certInfo.CertOrg = context.StringValue("DescribeDcdnDomainCertificateInfo.CertInfos["+ i +"].CertOrg");
-				certInfo.CertType = context.StringValue("DescribeDcdnDomainCertificateInfo.CertInfos["+ i +"].CertType");
-				certInfo.SSLProtocol = context.StringValue("DescribeDcdnDomainCertificateInfo.CertInfos["+ i +"].SSLProtocol");
-				certInfo.Status = context.StringValue("DescribeDcdnDomainCertificateInfo.CertInfos["+ i +"].Status");
-				certInfo.SSLPub = context.StringValue("DescribeDcdnDomainCertificateInfo.CertInfos["+ i +"].SSLPub");
+				certInfo.DomainName = _ctx.StringValue("DescribeDcdnDomainCertificateInfo.CertInfos["+ i +"].DomainName");
+				certInfo.CertName = _ctx.StringValue("DescribeDcdnDomainCertificateInfo.CertInfos["+ i +"].CertName");
+				certInfo.CertDomainName = _ctx.StringValue("DescribeDcdnDomainCertificateInfo.CertInfos["+ i +"].CertDomainName");
+				certInfo.CertExpireTime = _ctx.StringValue("DescribeDcdnDomainCertificateInfo.CertInfos["+ i +"].CertExpireTime");
+				certInfo.CertLife = _ctx.StringValue("DescribeDcdnDomainCertificateInfo.CertInfos["+ i +"].CertLife");
+				certInfo.CertOrg = _ctx.StringValue("DescribeDcdnDomainCertificateInfo.CertInfos["+ i +"].CertOrg");
+				certInfo.CertType = _ctx.StringValue("DescribeDcdnDomainCertificateInfo.CertInfos["+ i +"].CertType");
+				certInfo.SSLProtocol = _ctx.StringValue("DescribeDcdnDomainCertificateInfo.CertInfos["+ i +"].SSLProtocol");
+				certInfo.Status = _ctx.StringValue("DescribeDcdnDomainCertificateInfo.CertInfos["+ i +"].Status");
+				certInfo.SSLPub = _ctx.StringValue("DescribeDcdnDomainCertificateInfo.CertInfos["+ i +"].SSLPub");
 
 				describeDcdnDomainCertificateInfoResponse_certInfos.Add(certInfo);
 			}

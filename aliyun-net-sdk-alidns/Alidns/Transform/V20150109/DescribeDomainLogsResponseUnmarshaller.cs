@@ -26,26 +26,26 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeDomainLogsResponseUnmarshaller
     {
-        public static DescribeDomainLogsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainLogsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainLogsResponse describeDomainLogsResponse = new DescribeDomainLogsResponse();
 
-			describeDomainLogsResponse.HttpResponse = context.HttpResponse;
-			describeDomainLogsResponse.RequestId = context.StringValue("DescribeDomainLogs.RequestId");
-			describeDomainLogsResponse.TotalCount = context.LongValue("DescribeDomainLogs.TotalCount");
-			describeDomainLogsResponse.PageNumber = context.LongValue("DescribeDomainLogs.PageNumber");
-			describeDomainLogsResponse.PageSize = context.LongValue("DescribeDomainLogs.PageSize");
+			describeDomainLogsResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainLogsResponse.RequestId = _ctx.StringValue("DescribeDomainLogs.RequestId");
+			describeDomainLogsResponse.TotalCount = _ctx.LongValue("DescribeDomainLogs.TotalCount");
+			describeDomainLogsResponse.PageNumber = _ctx.LongValue("DescribeDomainLogs.PageNumber");
+			describeDomainLogsResponse.PageSize = _ctx.LongValue("DescribeDomainLogs.PageSize");
 
 			List<DescribeDomainLogsResponse.DescribeDomainLogs_DomainLog> describeDomainLogsResponse_domainLogs = new List<DescribeDomainLogsResponse.DescribeDomainLogs_DomainLog>();
-			for (int i = 0; i < context.Length("DescribeDomainLogs.DomainLogs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainLogs.DomainLogs.Length"); i++) {
 				DescribeDomainLogsResponse.DescribeDomainLogs_DomainLog domainLog = new DescribeDomainLogsResponse.DescribeDomainLogs_DomainLog();
-				domainLog.ActionTime = context.StringValue("DescribeDomainLogs.DomainLogs["+ i +"].ActionTime");
-				domainLog.ActionTimestamp = context.LongValue("DescribeDomainLogs.DomainLogs["+ i +"].ActionTimestamp");
-				domainLog.DomainName = context.StringValue("DescribeDomainLogs.DomainLogs["+ i +"].DomainName");
-				domainLog.Action = context.StringValue("DescribeDomainLogs.DomainLogs["+ i +"].Action");
-				domainLog.Message = context.StringValue("DescribeDomainLogs.DomainLogs["+ i +"].Message");
-				domainLog.ClientIp = context.StringValue("DescribeDomainLogs.DomainLogs["+ i +"].ClientIp");
-				domainLog.ZoneId = context.StringValue("DescribeDomainLogs.DomainLogs["+ i +"].ZoneId");
+				domainLog.ActionTime = _ctx.StringValue("DescribeDomainLogs.DomainLogs["+ i +"].ActionTime");
+				domainLog.ActionTimestamp = _ctx.LongValue("DescribeDomainLogs.DomainLogs["+ i +"].ActionTimestamp");
+				domainLog.DomainName = _ctx.StringValue("DescribeDomainLogs.DomainLogs["+ i +"].DomainName");
+				domainLog.Action = _ctx.StringValue("DescribeDomainLogs.DomainLogs["+ i +"].Action");
+				domainLog.Message = _ctx.StringValue("DescribeDomainLogs.DomainLogs["+ i +"].Message");
+				domainLog.ClientIp = _ctx.StringValue("DescribeDomainLogs.DomainLogs["+ i +"].ClientIp");
+				domainLog.ZoneId = _ctx.StringValue("DescribeDomainLogs.DomainLogs["+ i +"].ZoneId");
 
 				describeDomainLogsResponse_domainLogs.Add(domainLog);
 			}

@@ -74,6 +74,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				extendConfigsItem.GroupId = _ctx.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].groupId");
 				extendConfigsItem.Host = _ctx.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].host");
 				extendConfigsItem.KibanaHost = _ctx.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].kibanaHost");
+				extendConfigsItem.TotalPodsCount = _ctx.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].totalPodsCount");
+				extendConfigsItem.SuccessPodsCount = _ctx.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].successPodsCount");
 
 				List<string> extendConfigsItem_hosts = new List<string>();
 				for (int j = 0; j < _ctx.Length("UpdateCollectorName.Result.ExtendConfigs["+ i +"].Hosts.Length"); j++) {

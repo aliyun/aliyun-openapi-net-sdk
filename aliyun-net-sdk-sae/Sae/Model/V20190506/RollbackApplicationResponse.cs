@@ -27,15 +27,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string requestId;
 
-		private string code;
-
-		private bool? success;
-
-		private string errorCode;
-
 		private string message;
 
 		private string traceId;
+
+		private string errorCode;
+
+		private string code;
+
+		private bool? success;
 
 		private RollbackApplication_Data data;
 
@@ -48,42 +48,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
 			}
 		}
 
@@ -111,6 +75,42 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public RollbackApplication_Data Data
 		{
 			get
@@ -128,6 +128,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private string changeOrderId;
 
+			private bool? isNeedApproval;
+
 			public string ChangeOrderId
 			{
 				get
@@ -137,6 +139,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					changeOrderId = value;
+				}
+			}
+
+			public bool? IsNeedApproval
+			{
+				get
+				{
+					return isNeedApproval;
+				}
+				set	
+				{
+					isNeedApproval = value;
 				}
 			}
 		}

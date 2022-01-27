@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 {
     public class InitFaceVerifyResponseUnmarshaller
     {
-        public static InitFaceVerifyResponse Unmarshall(UnmarshallerContext context)
+        public static InitFaceVerifyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			InitFaceVerifyResponse initFaceVerifyResponse = new InitFaceVerifyResponse();
 
-			initFaceVerifyResponse.HttpResponse = context.HttpResponse;
-			initFaceVerifyResponse.RequestId = context.StringValue("InitFaceVerify.RequestId");
-			initFaceVerifyResponse.Message = context.StringValue("InitFaceVerify.Message");
-			initFaceVerifyResponse.Code = context.StringValue("InitFaceVerify.Code");
+			initFaceVerifyResponse.HttpResponse = _ctx.HttpResponse;
+			initFaceVerifyResponse.Code = _ctx.StringValue("InitFaceVerify.Code");
+			initFaceVerifyResponse.Message = _ctx.StringValue("InitFaceVerify.Message");
+			initFaceVerifyResponse.RequestId = _ctx.StringValue("InitFaceVerify.RequestId");
 
 			InitFaceVerifyResponse.InitFaceVerify_ResultObject resultObject = new InitFaceVerifyResponse.InitFaceVerify_ResultObject();
-			resultObject.CertifyId = context.StringValue("InitFaceVerify.ResultObject.CertifyId");
-			resultObject.CertifyUrl = context.StringValue("InitFaceVerify.ResultObject.CertifyUrl");
+			resultObject.CertifyId = _ctx.StringValue("InitFaceVerify.ResultObject.CertifyId");
+			resultObject.CertifyUrl = _ctx.StringValue("InitFaceVerify.ResultObject.CertifyUrl");
 			initFaceVerifyResponse.ResultObject = resultObject;
         
 			return initFaceVerifyResponse;

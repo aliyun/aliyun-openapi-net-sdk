@@ -26,29 +26,29 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 {
     public class ListSensitiveColumnsDetailResponseUnmarshaller
     {
-        public static ListSensitiveColumnsDetailResponse Unmarshall(UnmarshallerContext context)
+        public static ListSensitiveColumnsDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListSensitiveColumnsDetailResponse listSensitiveColumnsDetailResponse = new ListSensitiveColumnsDetailResponse();
 
-			listSensitiveColumnsDetailResponse.HttpResponse = context.HttpResponse;
-			listSensitiveColumnsDetailResponse.RequestId = context.StringValue("ListSensitiveColumnsDetail.RequestId");
-			listSensitiveColumnsDetailResponse.Success = context.BooleanValue("ListSensitiveColumnsDetail.Success");
-			listSensitiveColumnsDetailResponse.ErrorMessage = context.StringValue("ListSensitiveColumnsDetail.ErrorMessage");
-			listSensitiveColumnsDetailResponse.ErrorCode = context.StringValue("ListSensitiveColumnsDetail.ErrorCode");
+			listSensitiveColumnsDetailResponse.HttpResponse = _ctx.HttpResponse;
+			listSensitiveColumnsDetailResponse.RequestId = _ctx.StringValue("ListSensitiveColumnsDetail.RequestId");
+			listSensitiveColumnsDetailResponse.ErrorCode = _ctx.StringValue("ListSensitiveColumnsDetail.ErrorCode");
+			listSensitiveColumnsDetailResponse.ErrorMessage = _ctx.StringValue("ListSensitiveColumnsDetail.ErrorMessage");
+			listSensitiveColumnsDetailResponse.Success = _ctx.BooleanValue("ListSensitiveColumnsDetail.Success");
 
 			List<ListSensitiveColumnsDetailResponse.ListSensitiveColumnsDetail_SensitiveColumnsDetail> listSensitiveColumnsDetailResponse_sensitiveColumnsDetailList = new List<ListSensitiveColumnsDetailResponse.ListSensitiveColumnsDetail_SensitiveColumnsDetail>();
-			for (int i = 0; i < context.Length("ListSensitiveColumnsDetail.SensitiveColumnsDetailList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListSensitiveColumnsDetail.SensitiveColumnsDetailList.Length"); i++) {
 				ListSensitiveColumnsDetailResponse.ListSensitiveColumnsDetail_SensitiveColumnsDetail sensitiveColumnsDetail = new ListSensitiveColumnsDetailResponse.ListSensitiveColumnsDetail_SensitiveColumnsDetail();
-				sensitiveColumnsDetail.SchemaName = context.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].SchemaName");
-				sensitiveColumnsDetail.TableName = context.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].TableName");
-				sensitiveColumnsDetail.ColumnName = context.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].ColumnName");
-				sensitiveColumnsDetail.SearchName = context.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].SearchName");
-				sensitiveColumnsDetail.DbId = context.LongValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].DbId");
-				sensitiveColumnsDetail.EnvType = context.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].EnvType");
-				sensitiveColumnsDetail.DbType = context.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].DbType");
-				sensitiveColumnsDetail.Logic = context.BooleanValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].Logic");
-				sensitiveColumnsDetail.ColumnType = context.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].ColumnType");
-				sensitiveColumnsDetail.ColumnDescription = context.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].ColumnDescription");
+				sensitiveColumnsDetail.DbId = _ctx.LongValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].DbId");
+				sensitiveColumnsDetail.ColumnName = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].ColumnName");
+				sensitiveColumnsDetail.ColumnDescription = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].ColumnDescription");
+				sensitiveColumnsDetail.TableName = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].TableName");
+				sensitiveColumnsDetail.DbType = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].DbType");
+				sensitiveColumnsDetail.ColumnType = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].ColumnType");
+				sensitiveColumnsDetail.Logic = _ctx.BooleanValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].Logic");
+				sensitiveColumnsDetail.SchemaName = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].SchemaName");
+				sensitiveColumnsDetail.SearchName = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].SearchName");
+				sensitiveColumnsDetail.EnvType = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].EnvType");
 
 				listSensitiveColumnsDetailResponse_sensitiveColumnsDetailList.Add(sensitiveColumnsDetail);
 			}

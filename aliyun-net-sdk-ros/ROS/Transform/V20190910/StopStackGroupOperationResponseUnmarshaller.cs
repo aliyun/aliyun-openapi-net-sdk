@@ -26,12 +26,12 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class StopStackGroupOperationResponseUnmarshaller
     {
-        public static StopStackGroupOperationResponse Unmarshall(UnmarshallerContext context)
+        public static StopStackGroupOperationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StopStackGroupOperationResponse stopStackGroupOperationResponse = new StopStackGroupOperationResponse();
 
-			stopStackGroupOperationResponse.HttpResponse = context.HttpResponse;
-			stopStackGroupOperationResponse.RequestId = context.StringValue("StopStackGroupOperation.RequestId");
+			stopStackGroupOperationResponse.HttpResponse = _ctx.HttpResponse;
+			stopStackGroupOperationResponse.RequestId = _ctx.StringValue("StopStackGroupOperation.RequestId");
         
 			return stopStackGroupOperationResponse;
         }

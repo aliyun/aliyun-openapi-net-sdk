@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class AcknowledgeTaskResultResponseUnmarshaller
     {
-        public static AcknowledgeTaskResultResponse Unmarshall(UnmarshallerContext context)
+        public static AcknowledgeTaskResultResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AcknowledgeTaskResultResponse acknowledgeTaskResultResponse = new AcknowledgeTaskResultResponse();
 
-			acknowledgeTaskResultResponse.HttpResponse = context.HttpResponse;
-			acknowledgeTaskResultResponse.RequestId = context.StringValue("AcknowledgeTaskResult.RequestId");
-			acknowledgeTaskResultResponse.Result = context.IntegerValue("AcknowledgeTaskResult.Result");
+			acknowledgeTaskResultResponse.HttpResponse = _ctx.HttpResponse;
+			acknowledgeTaskResultResponse.RequestId = _ctx.StringValue("AcknowledgeTaskResult.RequestId");
+			acknowledgeTaskResultResponse.Result = _ctx.IntegerValue("AcknowledgeTaskResult.Result");
         
 			return acknowledgeTaskResultResponse;
         }

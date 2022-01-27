@@ -34,8 +34,8 @@ namespace Aliyun.Acs.foas.Model.V20181111
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.foas.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.foas.Endpoint.endpointRegionalType, null);
             }
 			Protocol = ProtocolType.HTTPS;
 			UriPattern = "/api/v2/projects/[projectName]/jobs/[jobName]/instances/[instanceId]/expectstate";
@@ -47,6 +47,8 @@ namespace Aliyun.Acs.foas.Model.V20181111
 		private string projectName;
 
 		private long? instanceId;
+
+		private bool? triggerCheckpoint;
 
 		private string expectState;
 
@@ -88,6 +90,19 @@ namespace Aliyun.Acs.foas.Model.V20181111
 			{
 				instanceId = value;
 				DictionaryUtil.Add(PathParameters, "instanceId", value.ToString());
+			}
+		}
+
+		public bool? TriggerCheckpoint
+		{
+			get
+			{
+				return triggerCheckpoint;
+			}
+			set	
+			{
+				triggerCheckpoint = value;
+				DictionaryUtil.Add(BodyParameters, "triggerCheckpoint", value.ToString());
 			}
 		}
 

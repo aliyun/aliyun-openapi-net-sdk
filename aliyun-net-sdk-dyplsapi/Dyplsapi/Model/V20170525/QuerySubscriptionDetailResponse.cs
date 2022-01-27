@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dyplsapi.Model.V20170525
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 	public class QuerySubscriptionDetailResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string code;
 
 		private string message;
 
-		private QuerySubscriptionDetail_SecretBindDetailDTO secretBindDetailDTO;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private QuerySubscriptionDetail_SecretBindDetailDTO secretBindDetailDTO;
 
 		public string Code
 		{
@@ -69,6 +57,18 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public QuerySubscriptionDetail_SecretBindDetailDTO SecretBindDetailDTO
 		{
 			get
@@ -84,77 +84,41 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 		public class QuerySubscriptionDetail_SecretBindDetailDTO
 		{
 
-			private string subsId;
-
-			private string phoneNoA;
-
-			private string phoneNoX;
-
-			private string phoneNoB;
+			private long? status;
 
 			private string extension;
 
+			private string phoneNoB;
+
 			private long? groupId;
+
+			private bool? needRecord;
+
+			private bool? aSRStatus;
 
 			private string gmtCreate;
 
 			private string expireDate;
 
-			private bool? needRecord;
+			private string subsId;
+
+			private string phoneNoX;
 
 			private string callRestrict;
 
-			private long? status;
-
-			private bool? aSRStatus;
-
 			private string aSRModelId;
 
-			public string SubsId
-			{
-				get
-				{
-					return subsId;
-				}
-				set	
-				{
-					subsId = value;
-				}
-			}
+			private string phoneNoA;
 
-			public string PhoneNoA
+			public long? Status
 			{
 				get
 				{
-					return phoneNoA;
+					return status;
 				}
 				set	
 				{
-					phoneNoA = value;
-				}
-			}
-
-			public string PhoneNoX
-			{
-				get
-				{
-					return phoneNoX;
-				}
-				set	
-				{
-					phoneNoX = value;
-				}
-			}
-
-			public string PhoneNoB
-			{
-				get
-				{
-					return phoneNoB;
-				}
-				set	
-				{
-					phoneNoB = value;
+					status = value;
 				}
 			}
 
@@ -170,6 +134,18 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 				}
 			}
 
+			public string PhoneNoB
+			{
+				get
+				{
+					return phoneNoB;
+				}
+				set	
+				{
+					phoneNoB = value;
+				}
+			}
+
 			public long? GroupId
 			{
 				get
@@ -179,6 +155,30 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 				set	
 				{
 					groupId = value;
+				}
+			}
+
+			public bool? NeedRecord
+			{
+				get
+				{
+					return needRecord;
+				}
+				set	
+				{
+					needRecord = value;
+				}
+			}
+
+			public bool? ASRStatus
+			{
+				get
+				{
+					return aSRStatus;
+				}
+				set	
+				{
+					aSRStatus = value;
 				}
 			}
 
@@ -206,15 +206,27 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 				}
 			}
 
-			public bool? NeedRecord
+			public string SubsId
 			{
 				get
 				{
-					return needRecord;
+					return subsId;
 				}
 				set	
 				{
-					needRecord = value;
+					subsId = value;
+				}
+			}
+
+			public string PhoneNoX
+			{
+				get
+				{
+					return phoneNoX;
+				}
+				set	
+				{
+					phoneNoX = value;
 				}
 			}
 
@@ -230,30 +242,6 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 				}
 			}
 
-			public long? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public bool? ASRStatus
-			{
-				get
-				{
-					return aSRStatus;
-				}
-				set	
-				{
-					aSRStatus = value;
-				}
-			}
-
 			public string ASRModelId
 			{
 				get
@@ -263,6 +251,18 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 				set	
 				{
 					aSRModelId = value;
+				}
+			}
+
+			public string PhoneNoA
+			{
+				get
+				{
+					return phoneNoA;
+				}
+				set	
+				{
+					phoneNoA = value;
 				}
 			}
 		}

@@ -34,14 +34,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Sas.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Sas.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private string remark;
+		private string attachTypes;
 
 		private string type;
+
+		private string vpcInstanceIds;
+
+		private string groupId;
+
+		private string aliasName;
+
+		private string necessity;
+
+		private string uuids;
+
+		private string remark;
 
 		private int? pageSize;
 
@@ -51,22 +64,16 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private int? currentPage;
 
-		private string aliasName;
-
-		private string necessity;
-
-		private string uuids;
-
-		public string Remark
+		public string AttachTypes
 		{
 			get
 			{
-				return remark;
+				return attachTypes;
 			}
 			set	
 			{
-				remark = value;
-				DictionaryUtil.Add(QueryParameters, "Remark", value);
+				attachTypes = value;
+				DictionaryUtil.Add(QueryParameters, "AttachTypes", value);
 			}
 		}
 
@@ -80,6 +87,84 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				type = value;
 				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
+		public string VpcInstanceIds
+		{
+			get
+			{
+				return vpcInstanceIds;
+			}
+			set	
+			{
+				vpcInstanceIds = value;
+				DictionaryUtil.Add(QueryParameters, "VpcInstanceIds", value);
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public string AliasName
+		{
+			get
+			{
+				return aliasName;
+			}
+			set	
+			{
+				aliasName = value;
+				DictionaryUtil.Add(QueryParameters, "AliasName", value);
+			}
+		}
+
+		public string Necessity
+		{
+			get
+			{
+				return necessity;
+			}
+			set	
+			{
+				necessity = value;
+				DictionaryUtil.Add(QueryParameters, "Necessity", value);
+			}
+		}
+
+		public string Uuids
+		{
+			get
+			{
+				return uuids;
+			}
+			set	
+			{
+				uuids = value;
+				DictionaryUtil.Add(QueryParameters, "Uuids", value);
+			}
+		}
+
+		public string Remark
+		{
+			get
+			{
+				return remark;
+			}
+			set	
+			{
+				remark = value;
+				DictionaryUtil.Add(QueryParameters, "Remark", value);
 			}
 		}
 
@@ -132,45 +217,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				currentPage = value;
 				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
-
-		public string AliasName
-		{
-			get
-			{
-				return aliasName;
-			}
-			set	
-			{
-				aliasName = value;
-				DictionaryUtil.Add(QueryParameters, "AliasName", value);
-			}
-		}
-
-		public string Necessity
-		{
-			get
-			{
-				return necessity;
-			}
-			set	
-			{
-				necessity = value;
-				DictionaryUtil.Add(QueryParameters, "Necessity", value);
-			}
-		}
-
-		public string Uuids
-		{
-			get
-			{
-				return uuids;
-			}
-			set	
-			{
-				uuids = value;
-				DictionaryUtil.Add(QueryParameters, "Uuids", value);
 			}
 		}
 

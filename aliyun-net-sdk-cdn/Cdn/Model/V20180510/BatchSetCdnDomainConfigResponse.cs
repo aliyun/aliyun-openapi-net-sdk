@@ -27,6 +27,8 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string requestId;
 
+		private List<BatchSetCdnDomainConfig_DomainConfigModel> domainConfigList;
+
 		public string RequestId
 		{
 			get
@@ -36,6 +38,64 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public List<BatchSetCdnDomainConfig_DomainConfigModel> DomainConfigList
+		{
+			get
+			{
+				return domainConfigList;
+			}
+			set	
+			{
+				domainConfigList = value;
+			}
+		}
+
+		public class BatchSetCdnDomainConfig_DomainConfigModel
+		{
+
+			private string domainName;
+
+			private long? configId;
+
+			private string functionName;
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
+
+			public long? ConfigId
+			{
+				get
+				{
+					return configId;
+				}
+				set	
+				{
+					configId = value;
+				}
+			}
+
+			public string FunctionName
+			{
+				get
+				{
+					return functionName;
+				}
+				set	
+				{
+					functionName = value;
+				}
 			}
 		}
 	}

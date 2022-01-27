@@ -26,32 +26,32 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class DescribeSlowLogRecordsResponseUnmarshaller
     {
-        public static DescribeSlowLogRecordsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSlowLogRecordsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSlowLogRecordsResponse describeSlowLogRecordsResponse = new DescribeSlowLogRecordsResponse();
 
-			describeSlowLogRecordsResponse.HttpResponse = context.HttpResponse;
-			describeSlowLogRecordsResponse.RequestId = context.StringValue("DescribeSlowLogRecords.RequestId");
-			describeSlowLogRecordsResponse.InstanceId = context.StringValue("DescribeSlowLogRecords.InstanceId");
-			describeSlowLogRecordsResponse.StartTime = context.StringValue("DescribeSlowLogRecords.StartTime");
-			describeSlowLogRecordsResponse.Engine = context.StringValue("DescribeSlowLogRecords.Engine");
-			describeSlowLogRecordsResponse.TotalRecordCount = context.IntegerValue("DescribeSlowLogRecords.TotalRecordCount");
-			describeSlowLogRecordsResponse.PageNumber = context.IntegerValue("DescribeSlowLogRecords.PageNumber");
-			describeSlowLogRecordsResponse.PageSize = context.IntegerValue("DescribeSlowLogRecords.PageSize");
-			describeSlowLogRecordsResponse.PageRecordCount = context.IntegerValue("DescribeSlowLogRecords.PageRecordCount");
+			describeSlowLogRecordsResponse.HttpResponse = _ctx.HttpResponse;
+			describeSlowLogRecordsResponse.RequestId = _ctx.StringValue("DescribeSlowLogRecords.RequestId");
+			describeSlowLogRecordsResponse.InstanceId = _ctx.StringValue("DescribeSlowLogRecords.InstanceId");
+			describeSlowLogRecordsResponse.StartTime = _ctx.StringValue("DescribeSlowLogRecords.StartTime");
+			describeSlowLogRecordsResponse.Engine = _ctx.StringValue("DescribeSlowLogRecords.Engine");
+			describeSlowLogRecordsResponse.TotalRecordCount = _ctx.IntegerValue("DescribeSlowLogRecords.TotalRecordCount");
+			describeSlowLogRecordsResponse.PageNumber = _ctx.IntegerValue("DescribeSlowLogRecords.PageNumber");
+			describeSlowLogRecordsResponse.PageSize = _ctx.IntegerValue("DescribeSlowLogRecords.PageSize");
+			describeSlowLogRecordsResponse.PageRecordCount = _ctx.IntegerValue("DescribeSlowLogRecords.PageRecordCount");
 
 			List<DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_LogRecords> describeSlowLogRecordsResponse_items = new List<DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_LogRecords>();
-			for (int i = 0; i < context.Length("DescribeSlowLogRecords.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeSlowLogRecords.Items.Length"); i++) {
 				DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_LogRecords logRecords = new DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_LogRecords();
-				logRecords.NodeId = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].NodeId");
-				logRecords.IPAddress = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].IPAddress");
-				logRecords.DBName = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].DBName");
-				logRecords.DataBaseName = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].DataBaseName");
-				logRecords.Command = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].Command");
-				logRecords.ElapsedTime = context.LongValue("DescribeSlowLogRecords.Items["+ i +"].ElapsedTime");
-				logRecords.ExecuteTime = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].ExecuteTime");
-				logRecords.Account = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].Account");
-				logRecords.AccountName = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].AccountName");
+				logRecords.NodeId = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].NodeId");
+				logRecords.IPAddress = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].IPAddress");
+				logRecords.DBName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].DBName");
+				logRecords.DataBaseName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].DataBaseName");
+				logRecords.Command = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].Command");
+				logRecords.ElapsedTime = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].ElapsedTime");
+				logRecords.ExecuteTime = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].ExecuteTime");
+				logRecords.Account = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].Account");
+				logRecords.AccountName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].AccountName");
 
 				describeSlowLogRecordsResponse_items.Add(logRecords);
 			}

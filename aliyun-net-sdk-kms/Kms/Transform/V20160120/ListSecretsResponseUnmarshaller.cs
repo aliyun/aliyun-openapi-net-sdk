@@ -26,29 +26,30 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 {
     public class ListSecretsResponseUnmarshaller
     {
-        public static ListSecretsResponse Unmarshall(UnmarshallerContext context)
+        public static ListSecretsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListSecretsResponse listSecretsResponse = new ListSecretsResponse();
 
-			listSecretsResponse.HttpResponse = context.HttpResponse;
-			listSecretsResponse.PageNumber = context.IntegerValue("ListSecrets.PageNumber");
-			listSecretsResponse.PageSize = context.IntegerValue("ListSecrets.PageSize");
-			listSecretsResponse.RequestId = context.StringValue("ListSecrets.RequestId");
-			listSecretsResponse.TotalCount = context.IntegerValue("ListSecrets.TotalCount");
+			listSecretsResponse.HttpResponse = _ctx.HttpResponse;
+			listSecretsResponse.PageNumber = _ctx.IntegerValue("ListSecrets.PageNumber");
+			listSecretsResponse.PageSize = _ctx.IntegerValue("ListSecrets.PageSize");
+			listSecretsResponse.RequestId = _ctx.StringValue("ListSecrets.RequestId");
+			listSecretsResponse.TotalCount = _ctx.IntegerValue("ListSecrets.TotalCount");
 
 			List<ListSecretsResponse.ListSecrets_Secret> listSecretsResponse_secretList = new List<ListSecretsResponse.ListSecrets_Secret>();
-			for (int i = 0; i < context.Length("ListSecrets.SecretList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListSecrets.SecretList.Length"); i++) {
 				ListSecretsResponse.ListSecrets_Secret secret = new ListSecretsResponse.ListSecrets_Secret();
-				secret.CreateTime = context.StringValue("ListSecrets.SecretList["+ i +"].CreateTime");
-				secret.PlannedDeleteTime = context.StringValue("ListSecrets.SecretList["+ i +"].PlannedDeleteTime");
-				secret.SecretName = context.StringValue("ListSecrets.SecretList["+ i +"].SecretName");
-				secret.UpdateTime = context.StringValue("ListSecrets.SecretList["+ i +"].UpdateTime");
+				secret.CreateTime = _ctx.StringValue("ListSecrets.SecretList["+ i +"].CreateTime");
+				secret.PlannedDeleteTime = _ctx.StringValue("ListSecrets.SecretList["+ i +"].PlannedDeleteTime");
+				secret.SecretName = _ctx.StringValue("ListSecrets.SecretList["+ i +"].SecretName");
+				secret.UpdateTime = _ctx.StringValue("ListSecrets.SecretList["+ i +"].UpdateTime");
+				secret.SecretType = _ctx.StringValue("ListSecrets.SecretList["+ i +"].SecretType");
 
 				List<ListSecretsResponse.ListSecrets_Secret.ListSecrets_Tag> secret_tags = new List<ListSecretsResponse.ListSecrets_Secret.ListSecrets_Tag>();
-				for (int j = 0; j < context.Length("ListSecrets.SecretList["+ i +"].Tags.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("ListSecrets.SecretList["+ i +"].Tags.Length"); j++) {
 					ListSecretsResponse.ListSecrets_Secret.ListSecrets_Tag tag = new ListSecretsResponse.ListSecrets_Secret.ListSecrets_Tag();
-					tag.TagKey = context.StringValue("ListSecrets.SecretList["+ i +"].Tags["+ j +"].TagKey");
-					tag.TagValue = context.StringValue("ListSecrets.SecretList["+ i +"].Tags["+ j +"].TagValue");
+					tag.TagKey = _ctx.StringValue("ListSecrets.SecretList["+ i +"].Tags["+ j +"].TagKey");
+					tag.TagValue = _ctx.StringValue("ListSecrets.SecretList["+ i +"].Tags["+ j +"].TagValue");
 
 					secret_tags.Add(tag);
 				}

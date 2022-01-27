@@ -26,12 +26,12 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class SetGWSClusterPolicyResponseUnmarshaller
     {
-        public static SetGWSClusterPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static SetGWSClusterPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetGWSClusterPolicyResponse setGWSClusterPolicyResponse = new SetGWSClusterPolicyResponse();
 
-			setGWSClusterPolicyResponse.HttpResponse = context.HttpResponse;
-			setGWSClusterPolicyResponse.RequestId = context.StringValue("SetGWSClusterPolicy.RequestId");
+			setGWSClusterPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			setGWSClusterPolicyResponse.RequestId = _ctx.StringValue("SetGWSClusterPolicy.RequestId");
         
 			return setGWSClusterPolicyResponse;
         }

@@ -26,18 +26,18 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class ListProjectBindQueueResponseUnmarshaller
     {
-        public static ListProjectBindQueueResponse Unmarshall(UnmarshallerContext context)
+        public static ListProjectBindQueueResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListProjectBindQueueResponse listProjectBindQueueResponse = new ListProjectBindQueueResponse();
 
-			listProjectBindQueueResponse.HttpResponse = context.HttpResponse;
-			listProjectBindQueueResponse.RequestId = context.StringValue("ListProjectBindQueue.RequestId");
+			listProjectBindQueueResponse.HttpResponse = _ctx.HttpResponse;
+			listProjectBindQueueResponse.RequestId = _ctx.StringValue("ListProjectBindQueue.RequestId");
 
 			List<ListProjectBindQueueResponse.ListProjectBindQueue_Queue> listProjectBindQueueResponse_queues = new List<ListProjectBindQueueResponse.ListProjectBindQueue_Queue>();
-			for (int i = 0; i < context.Length("ListProjectBindQueue.Queues.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListProjectBindQueue.Queues.Length"); i++) {
 				ListProjectBindQueueResponse.ListProjectBindQueue_Queue queue = new ListProjectBindQueueResponse.ListProjectBindQueue_Queue();
-				queue.ClusterId = context.StringValue("ListProjectBindQueue.Queues["+ i +"].ClusterId");
-				queue.QueueName = context.StringValue("ListProjectBindQueue.Queues["+ i +"].QueueName");
+				queue.ClusterId = _ctx.StringValue("ListProjectBindQueue.Queues["+ i +"].ClusterId");
+				queue.QueueName = _ctx.StringValue("ListProjectBindQueue.Queues["+ i +"].QueueName");
 
 				listProjectBindQueueResponse_queues.Add(queue);
 			}
