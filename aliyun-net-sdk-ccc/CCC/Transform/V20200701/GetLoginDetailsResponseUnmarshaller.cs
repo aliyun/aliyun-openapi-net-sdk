@@ -52,6 +52,10 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			data.UserId = _ctx.StringValue("GetLoginDetails.Data.UserId");
 			data.UserKey = _ctx.StringValue("GetLoginDetails.Data.UserKey");
 			data.WorkMode = _ctx.StringValue("GetLoginDetails.Data.WorkMode");
+			data.UserKey2 = _ctx.StringValue("GetLoginDetails.Data.UserKey2");
+			data.Signature2 = _ctx.StringValue("GetLoginDetails.Data.Signature2");
+			data.DeviceExt = _ctx.StringValue("GetLoginDetails.Data.DeviceExt");
+			data.DeviceState = _ctx.StringValue("GetLoginDetails.Data.DeviceState");
 			getLoginDetailsResponse.Data = data;
         
 			return getLoginDetailsResponse;

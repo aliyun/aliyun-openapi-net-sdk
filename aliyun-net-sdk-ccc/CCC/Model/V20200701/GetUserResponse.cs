@@ -132,6 +132,12 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 			private string roleId;
 
+			private string deviceId;
+
+			private string deviceExt;
+
+			private string deviceState;
+
 			public string DisplayName
 			{
 				get
@@ -249,6 +255,42 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				set	
 				{
 					roleId = value;
+				}
+			}
+
+			public string DeviceId
+			{
+				get
+				{
+					return deviceId;
+				}
+				set	
+				{
+					deviceId = value;
+				}
+			}
+
+			public string DeviceExt
+			{
+				get
+				{
+					return deviceExt;
+				}
+				set	
+				{
+					deviceExt = value;
+				}
+			}
+
+			public string DeviceState
+			{
+				get
+				{
+					return deviceState;
+				}
+				set	
+				{
+					deviceState = value;
 				}
 			}
 		}

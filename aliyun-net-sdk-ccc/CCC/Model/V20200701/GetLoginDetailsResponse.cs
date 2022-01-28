@@ -130,6 +130,14 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 			private string workMode;
 
+			private string userKey2;
+
+			private string signature2;
+
+			private string deviceExt;
+
+			private string deviceState;
+
 			public string DisplayName
 			{
 				get
@@ -235,6 +243,54 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				set	
 				{
 					workMode = value;
+				}
+			}
+
+			public string UserKey2
+			{
+				get
+				{
+					return userKey2;
+				}
+				set	
+				{
+					userKey2 = value;
+				}
+			}
+
+			public string Signature2
+			{
+				get
+				{
+					return signature2;
+				}
+				set	
+				{
+					signature2 = value;
+				}
+			}
+
+			public string DeviceExt
+			{
+				get
+				{
+					return deviceExt;
+				}
+				set	
+				{
+					deviceExt = value;
+				}
+			}
+
+			public string DeviceState
+			{
+				get
+				{
+					return deviceState;
+				}
+				set	
+				{
+					deviceState = value;
 				}
 			}
 		}

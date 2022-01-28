@@ -112,9 +112,23 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 		public class ReleaseCall_Data
 		{
 
+			private long? contextId;
+
 			private ReleaseCall_CallContext callContext;
 
 			private ReleaseCall_UserContext userContext;
+
+			public long? ContextId
+			{
+				get
+				{
+					return contextId;
+				}
+				set	
+				{
+					contextId = value;
+				}
+			}
 
 			public ReleaseCall_CallContext CallContext
 			{

@@ -28,10 +28,10 @@ using Aliyun.Acs.CCC.Transform.V20200701;
 
 namespace Aliyun.Acs.CCC.Model.V20200701
 {
-    public class GetMonoRecordingRequest : RpcAcsRequest<GetMonoRecordingResponse>
+    public class GetCaseFileUploadUrlRequest : RpcAcsRequest<GetCaseFileUploadUrlResponse>
     {
-        public GetMonoRecordingRequest()
-            : base("CCC", "2020-07-01", "GetMonoRecording")
+        public GetCaseFileUploadUrlRequest()
+            : base("CCC", "2020-07-01", "GetCaseFileUploadUrl")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,22 +41,9 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			Method = MethodType.POST;
         }
 
-		private string contactId;
-
 		private string instanceId;
 
-		public string ContactId
-		{
-			get
-			{
-				return contactId;
-			}
-			set	
-			{
-				contactId = value;
-				DictionaryUtil.Add(QueryParameters, "ContactId", value);
-			}
-		}
+		private string fileName;
 
 		public string InstanceId
 		{
@@ -71,14 +58,27 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			}
 		}
 
+		public string FileName
+		{
+			get
+			{
+				return fileName;
+			}
+			set	
+			{
+				fileName = value;
+				DictionaryUtil.Add(QueryParameters, "FileName", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override GetMonoRecordingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetCaseFileUploadUrlResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetMonoRecordingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetCaseFileUploadUrlResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -28,10 +28,10 @@ using Aliyun.Acs.CCC.Transform.V20200701;
 
 namespace Aliyun.Acs.CCC.Model.V20200701
 {
-    public class GetMonoRecordingRequest : RpcAcsRequest<GetMonoRecordingResponse>
+    public class RegisterDevicesRequest : RpcAcsRequest<RegisterDevicesResponse>
     {
-        public GetMonoRecordingRequest()
-            : base("CCC", "2020-07-01", "GetMonoRecording")
+        public RegisterDevicesRequest()
+            : base("CCC", "2020-07-01", "RegisterDevices")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,20 +41,50 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			Method = MethodType.POST;
         }
 
-		private string contactId;
+		private string userIdListJson;
+
+		private string deviceId;
+
+		private string password;
 
 		private string instanceId;
 
-		public string ContactId
+		public string UserIdListJson
 		{
 			get
 			{
-				return contactId;
+				return userIdListJson;
 			}
 			set	
 			{
-				contactId = value;
-				DictionaryUtil.Add(QueryParameters, "ContactId", value);
+				userIdListJson = value;
+				DictionaryUtil.Add(QueryParameters, "UserIdListJson", value);
+			}
+		}
+
+		public string DeviceId
+		{
+			get
+			{
+				return deviceId;
+			}
+			set	
+			{
+				deviceId = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceId", value);
+			}
+		}
+
+		public string Password
+		{
+			get
+			{
+				return password;
+			}
+			set	
+			{
+				password = value;
+				DictionaryUtil.Add(QueryParameters, "Password", value);
 			}
 		}
 
@@ -76,9 +106,9 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			return false;
 		}
 
-        public override GetMonoRecordingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RegisterDevicesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetMonoRecordingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RegisterDevicesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

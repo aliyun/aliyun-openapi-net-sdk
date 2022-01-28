@@ -53,6 +53,9 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			data.RoleName = _ctx.StringValue("GetUser.Data.RoleName");
 			data.InstanceId = _ctx.StringValue("GetUser.Data.InstanceId");
 			data.RoleId = _ctx.StringValue("GetUser.Data.RoleId");
+			data.DeviceId = _ctx.StringValue("GetUser.Data.DeviceId");
+			data.DeviceExt = _ctx.StringValue("GetUser.Data.DeviceExt");
+			data.DeviceState = _ctx.StringValue("GetUser.Data.DeviceState");
 			getUserResponse.Data = data;
         
 			return getUserResponse;

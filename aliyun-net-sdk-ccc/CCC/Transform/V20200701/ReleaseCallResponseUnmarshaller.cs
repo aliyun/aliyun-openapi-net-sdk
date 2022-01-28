@@ -43,6 +43,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			releaseCallResponse._Params = releaseCallResponse_params;
 
 			ReleaseCallResponse.ReleaseCall_Data data = new ReleaseCallResponse.ReleaseCall_Data();
+			data.ContextId = _ctx.LongValue("ReleaseCall.Data.ContextId");
 
 			ReleaseCallResponse.ReleaseCall_Data.ReleaseCall_CallContext callContext = new ReleaseCallResponse.ReleaseCall_Data.ReleaseCall_CallContext();
 			callContext.JobId = _ctx.StringValue("ReleaseCall.Data.CallContext.JobId");

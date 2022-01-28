@@ -193,6 +193,14 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 				private long? ramId;
 
+				private string extension;
+
+				private string deviceId;
+
+				private string deviceExt;
+
+				private string deviceState;
+
 				private List<ListUsers_PhoneNumber> personalOutboundNumberList;
 
 				private List<ListUsers_UserSkillLevel> skillLevelList;
@@ -326,6 +334,54 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						ramId = value;
+					}
+				}
+
+				public string Extension
+				{
+					get
+					{
+						return extension;
+					}
+					set	
+					{
+						extension = value;
+					}
+				}
+
+				public string DeviceId
+				{
+					get
+					{
+						return deviceId;
+					}
+					set	
+					{
+						deviceId = value;
+					}
+				}
+
+				public string DeviceExt
+				{
+					get
+					{
+						return deviceExt;
+					}
+					set	
+					{
+						deviceExt = value;
+					}
+				}
+
+				public string DeviceState
+				{
+					get
+					{
+						return deviceState;
+					}
+					set	
+					{
+						deviceState = value;
 					}
 				}
 
