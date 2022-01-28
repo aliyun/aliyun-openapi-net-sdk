@@ -31,10 +31,18 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			DescribeMongoDBLogConfigResponse describeMongoDBLogConfigResponse = new DescribeMongoDBLogConfigResponse();
 
 			describeMongoDBLogConfigResponse.HttpResponse = _ctx.HttpResponse;
-			describeMongoDBLogConfigResponse.RequestId = _ctx.StringValue("DescribeMongoDBLogConfig.RequestId");
 			describeMongoDBLogConfigResponse.UserProjectName = _ctx.StringValue("DescribeMongoDBLogConfig.UserProjectName");
+			describeMongoDBLogConfigResponse.RequestId = _ctx.StringValue("DescribeMongoDBLogConfig.RequestId");
 			describeMongoDBLogConfigResponse.IsUserProjectLogstoreExist = _ctx.IntegerValue("DescribeMongoDBLogConfig.IsUserProjectLogstoreExist");
 			describeMongoDBLogConfigResponse.IsEtlMetaExist = _ctx.IntegerValue("DescribeMongoDBLogConfig.IsEtlMetaExist");
+			describeMongoDBLogConfigResponse.ServiceType = _ctx.StringValue("DescribeMongoDBLogConfig.ServiceType");
+			describeMongoDBLogConfigResponse.EnableAudit = _ctx.BooleanValue("DescribeMongoDBLogConfig.EnableAudit");
+			describeMongoDBLogConfigResponse.TtlForTrail = _ctx.LongValue("DescribeMongoDBLogConfig.TtlForTrail");
+			describeMongoDBLogConfigResponse.UsedStorageForTrail = _ctx.LongValue("DescribeMongoDBLogConfig.UsedStorageForTrail");
+			describeMongoDBLogConfigResponse.PreserveStorageForTrail = _ctx.LongValue("DescribeMongoDBLogConfig.PreserveStorageForTrail");
+			describeMongoDBLogConfigResponse.TtlForStandard = _ctx.LongValue("DescribeMongoDBLogConfig.TtlForStandard");
+			describeMongoDBLogConfigResponse.UsedStorageForStandard = _ctx.LongValue("DescribeMongoDBLogConfig.UsedStorageForStandard");
+			describeMongoDBLogConfigResponse.PreserveStorageForStandard = _ctx.LongValue("DescribeMongoDBLogConfig.PreserveStorageForStandard");
         
 			return describeMongoDBLogConfigResponse;
         }

@@ -27,9 +27,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string requestId;
 
-		private List<DescribeRenewalPrice_Rule> rules;
-
 		private List<DescribeRenewalPrice_SubOrder> subOrders;
+
+		private List<DescribeRenewalPrice_Rule> rules;
 
 		private DescribeRenewalPrice_Order order;
 
@@ -45,18 +45,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public List<DescribeRenewalPrice_Rule> Rules
-		{
-			get
-			{
-				return rules;
-			}
-			set	
-			{
-				rules = value;
-			}
-		}
-
 		public List<DescribeRenewalPrice_SubOrder> SubOrders
 		{
 			get
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				subOrders = value;
+			}
+		}
+
+		public List<DescribeRenewalPrice_Rule> Rules
+		{
+			get
+			{
+				return rules;
+			}
+			set	
+			{
+				rules = value;
 			}
 		}
 
@@ -81,60 +81,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public class DescribeRenewalPrice_Rule
-		{
-
-			private long? ruleDescId;
-
-			private string name;
-
-			private string title;
-
-			public long? RuleDescId
-			{
-				get
-				{
-					return ruleDescId;
-				}
-				set	
-				{
-					ruleDescId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Title
-			{
-				get
-				{
-					return title;
-				}
-				set	
-				{
-					title = value;
-				}
-			}
-		}
-
 		public class DescribeRenewalPrice_SubOrder
 		{
 
 			private float? originalAmount;
 
-			private float? tradeAmount;
-
 			private float? discountAmount;
+
+			private float? tradeAmount;
 
 			private string instanceId;
 
@@ -152,18 +106,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public float? TradeAmount
-			{
-				get
-				{
-					return tradeAmount;
-				}
-				set	
-				{
-					tradeAmount = value;
-				}
-			}
-
 			public float? DiscountAmount
 			{
 				get
@@ -173,6 +115,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					discountAmount = value;
+				}
+			}
+
+			public float? TradeAmount
+			{
+				get
+				{
+					return tradeAmount;
+				}
+				set	
+				{
+					tradeAmount = value;
 				}
 			}
 
@@ -201,14 +155,60 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public class DescribeRenewalPrice_Rule
+		{
+
+			private long? ruleDescId;
+
+			private string title;
+
+			private string name;
+
+			public long? RuleDescId
+			{
+				get
+				{
+					return ruleDescId;
+				}
+				set	
+				{
+					ruleDescId = value;
+				}
+			}
+
+			public string Title
+			{
+				get
+				{
+					return title;
+				}
+				set	
+				{
+					title = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+		}
+
 		public class DescribeRenewalPrice_Order
 		{
 
 			private float? originalAmount;
 
-			private float? tradeAmount;
-
 			private float? discountAmount;
+
+			private float? tradeAmount;
 
 			private string currency;
 
@@ -228,18 +228,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public float? TradeAmount
-			{
-				get
-				{
-					return tradeAmount;
-				}
-				set	
-				{
-					tradeAmount = value;
-				}
-			}
-
 			public float? DiscountAmount
 			{
 				get
@@ -249,6 +237,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					discountAmount = value;
+				}
+			}
+
+			public float? TradeAmount
+			{
+				get
+				{
+					return tradeAmount;
+				}
+				set	
+				{
+					tradeAmount = value;
 				}
 			}
 
@@ -291,37 +291,13 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			public class DescribeRenewalPrice_Coupon
 			{
 
-				private string couponNo;
-
-				private string name;
-
 				private string description;
 
 				private string isSelected;
 
-				public string CouponNo
-				{
-					get
-					{
-						return couponNo;
-					}
-					set	
-					{
-						couponNo = value;
-					}
-				}
+				private string couponNo;
 
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
+				private string name;
 
 				public string Description
 				{
@@ -344,6 +320,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						isSelected = value;
+					}
+				}
+
+				public string CouponNo
+				{
+					get
+					{
+						return couponNo;
+					}
+					set	
+					{
+						couponNo = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 			}

@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 	public class DescribeTagsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
 
-		private List<DescribeTags_Tag> tags;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeTags_Tag> tags;
 
 		public string NextToken
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

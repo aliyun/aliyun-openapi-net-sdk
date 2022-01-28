@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			DescribeTagsResponse describeTagsResponse = new DescribeTagsResponse();
 
 			describeTagsResponse.HttpResponse = _ctx.HttpResponse;
-			describeTagsResponse.RequestId = _ctx.StringValue("DescribeTags.RequestId");
 			describeTagsResponse.NextToken = _ctx.StringValue("DescribeTags.NextToken");
+			describeTagsResponse.RequestId = _ctx.StringValue("DescribeTags.RequestId");
 
 			List<DescribeTagsResponse.DescribeTags_Tag> describeTagsResponse_tags = new List<DescribeTagsResponse.DescribeTags_Tag>();
 			for (int i = 0; i < _ctx.Length("DescribeTags.Tags.Length"); i++) {

@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 	public class DescribeBackupsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? totalCount;
 
-		private int? pageNumber;
+		private string requestId;
 
 		private int? pageSize;
 
-		private int? totalCount;
+		private int? pageNumber;
 
 		private List<DescribeBackups_Backup> backups;
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public int? TotalCount
+		public int? PageNumber
 		{
 			get
 			{
-				return totalCount;
+				return pageNumber;
 			}
 			set	
 			{
-				totalCount = value;
+				pageNumber = value;
 			}
 		}
 
@@ -98,51 +98,27 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		public class DescribeBackups_Backup
 		{
 
-			private string backupDBNames;
-
-			private int? backupId;
-
 			private string backupStatus;
-
-			private string backupStartTime;
-
-			private string backupEndTime;
 
 			private string backupType;
 
-			private string backupMode;
-
-			private string backupMethod;
-
-			private string backupDownloadURL;
+			private string backupStartTime;
 
 			private string backupIntranetDownloadURL;
 
 			private long? backupSize;
 
-			public string BackupDBNames
-			{
-				get
-				{
-					return backupDBNames;
-				}
-				set	
-				{
-					backupDBNames = value;
-				}
-			}
+			private string backupDownloadURL;
 
-			public int? BackupId
-			{
-				get
-				{
-					return backupId;
-				}
-				set	
-				{
-					backupId = value;
-				}
-			}
+			private string backupMode;
+
+			private string backupEndTime;
+
+			private int? backupId;
+
+			private string backupDBNames;
+
+			private string backupMethod;
 
 			public string BackupStatus
 			{
@@ -153,30 +129,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					backupStatus = value;
-				}
-			}
-
-			public string BackupStartTime
-			{
-				get
-				{
-					return backupStartTime;
-				}
-				set	
-				{
-					backupStartTime = value;
-				}
-			}
-
-			public string BackupEndTime
-			{
-				get
-				{
-					return backupEndTime;
-				}
-				set	
-				{
-					backupEndTime = value;
 				}
 			}
 
@@ -192,39 +144,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public string BackupMode
+			public string BackupStartTime
 			{
 				get
 				{
-					return backupMode;
+					return backupStartTime;
 				}
 				set	
 				{
-					backupMode = value;
-				}
-			}
-
-			public string BackupMethod
-			{
-				get
-				{
-					return backupMethod;
-				}
-				set	
-				{
-					backupMethod = value;
-				}
-			}
-
-			public string BackupDownloadURL
-			{
-				get
-				{
-					return backupDownloadURL;
-				}
-				set	
-				{
-					backupDownloadURL = value;
+					backupStartTime = value;
 				}
 			}
 
@@ -249,6 +177,78 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					backupSize = value;
+				}
+			}
+
+			public string BackupDownloadURL
+			{
+				get
+				{
+					return backupDownloadURL;
+				}
+				set	
+				{
+					backupDownloadURL = value;
+				}
+			}
+
+			public string BackupMode
+			{
+				get
+				{
+					return backupMode;
+				}
+				set	
+				{
+					backupMode = value;
+				}
+			}
+
+			public string BackupEndTime
+			{
+				get
+				{
+					return backupEndTime;
+				}
+				set	
+				{
+					backupEndTime = value;
+				}
+			}
+
+			public int? BackupId
+			{
+				get
+				{
+					return backupId;
+				}
+				set	
+				{
+					backupId = value;
+				}
+			}
+
+			public string BackupDBNames
+			{
+				get
+				{
+					return backupDBNames;
+				}
+				set	
+				{
+					backupDBNames = value;
+				}
+			}
+
+			public string BackupMethod
+			{
+				get
+				{
+					return backupMethod;
+				}
+				set	
+				{
+					backupMethod = value;
 				}
 			}
 		}

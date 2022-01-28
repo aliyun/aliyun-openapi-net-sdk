@@ -25,25 +25,29 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 	public class DescribeMongoDBLogConfigResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string userProjectName;
+
+		private string requestId;
 
 		private int? isUserProjectLogstoreExist;
 
 		private int? isEtlMetaExist;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string serviceType;
+
+		private bool? enableAudit;
+
+		private long? ttlForTrail;
+
+		private long? usedStorageForTrail;
+
+		private long? preserveStorageForTrail;
+
+		private long? ttlForStandard;
+
+		private long? usedStorageForStandard;
+
+		private long? preserveStorageForStandard;
 
 		public string UserProjectName
 		{
@@ -54,6 +58,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				userProjectName = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -78,6 +94,102 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				isEtlMetaExist = value;
+			}
+		}
+
+		public string ServiceType
+		{
+			get
+			{
+				return serviceType;
+			}
+			set	
+			{
+				serviceType = value;
+			}
+		}
+
+		public bool? EnableAudit
+		{
+			get
+			{
+				return enableAudit;
+			}
+			set	
+			{
+				enableAudit = value;
+			}
+		}
+
+		public long? TtlForTrail
+		{
+			get
+			{
+				return ttlForTrail;
+			}
+			set	
+			{
+				ttlForTrail = value;
+			}
+		}
+
+		public long? UsedStorageForTrail
+		{
+			get
+			{
+				return usedStorageForTrail;
+			}
+			set	
+			{
+				usedStorageForTrail = value;
+			}
+		}
+
+		public long? PreserveStorageForTrail
+		{
+			get
+			{
+				return preserveStorageForTrail;
+			}
+			set	
+			{
+				preserveStorageForTrail = value;
+			}
+		}
+
+		public long? TtlForStandard
+		{
+			get
+			{
+				return ttlForStandard;
+			}
+			set	
+			{
+				ttlForStandard = value;
+			}
+		}
+
+		public long? UsedStorageForStandard
+		{
+			get
+			{
+				return usedStorageForStandard;
+			}
+			set	
+			{
+				usedStorageForStandard = value;
+			}
+		}
+
+		public long? PreserveStorageForStandard
+		{
+			get
+			{
+				return preserveStorageForStandard;
+			}
+			set	
+			{
+				preserveStorageForStandard = value;
 			}
 		}
 	}

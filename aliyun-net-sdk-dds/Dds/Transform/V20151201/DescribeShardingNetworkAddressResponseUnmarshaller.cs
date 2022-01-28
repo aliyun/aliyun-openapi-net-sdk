@@ -33,38 +33,38 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			describeShardingNetworkAddressResponse.HttpResponse = _ctx.HttpResponse;
 			describeShardingNetworkAddressResponse.RequestId = _ctx.StringValue("DescribeShardingNetworkAddress.RequestId");
 
-			List<DescribeShardingNetworkAddressResponse.DescribeShardingNetworkAddress_NetworkAddress> describeShardingNetworkAddressResponse_networkAddresses = new List<DescribeShardingNetworkAddressResponse.DescribeShardingNetworkAddress_NetworkAddress>();
-			for (int i = 0; i < _ctx.Length("DescribeShardingNetworkAddress.NetworkAddresses.Length"); i++) {
-				DescribeShardingNetworkAddressResponse.DescribeShardingNetworkAddress_NetworkAddress networkAddress = new DescribeShardingNetworkAddressResponse.DescribeShardingNetworkAddress_NetworkAddress();
-				networkAddress.NetworkAddress = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].NetworkAddress");
-				networkAddress.IPAddress = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].IPAddress");
-				networkAddress.NetworkType = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].NetworkType");
-				networkAddress.Port = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].Port");
-				networkAddress.VPCId = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].VPCId");
-				networkAddress.VswitchId = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].VswitchId");
-				networkAddress.NodeId = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].NodeId");
-				networkAddress.ExpiredTime = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].ExpiredTime");
-				networkAddress.NodeType = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].NodeType");
-				networkAddress.Role = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].Role");
-
-				describeShardingNetworkAddressResponse_networkAddresses.Add(networkAddress);
-			}
-			describeShardingNetworkAddressResponse.NetworkAddresses = describeShardingNetworkAddressResponse_networkAddresses;
-
 			List<DescribeShardingNetworkAddressResponse.DescribeShardingNetworkAddress_CompatibleConnection> describeShardingNetworkAddressResponse_compatibleConnections = new List<DescribeShardingNetworkAddressResponse.DescribeShardingNetworkAddress_CompatibleConnection>();
 			for (int i = 0; i < _ctx.Length("DescribeShardingNetworkAddress.CompatibleConnections.Length"); i++) {
 				DescribeShardingNetworkAddressResponse.DescribeShardingNetworkAddress_CompatibleConnection compatibleConnection = new DescribeShardingNetworkAddressResponse.DescribeShardingNetworkAddress_CompatibleConnection();
-				compatibleConnection.NetworkAddress = _ctx.StringValue("DescribeShardingNetworkAddress.CompatibleConnections["+ i +"].NetworkAddress");
-				compatibleConnection.IPAddress = _ctx.StringValue("DescribeShardingNetworkAddress.CompatibleConnections["+ i +"].IPAddress");
-				compatibleConnection.NetworkType = _ctx.StringValue("DescribeShardingNetworkAddress.CompatibleConnections["+ i +"].NetworkType");
-				compatibleConnection.Port = _ctx.StringValue("DescribeShardingNetworkAddress.CompatibleConnections["+ i +"].Port");
-				compatibleConnection.VPCId = _ctx.StringValue("DescribeShardingNetworkAddress.CompatibleConnections["+ i +"].VPCId");
 				compatibleConnection.VswitchId = _ctx.StringValue("DescribeShardingNetworkAddress.CompatibleConnections["+ i +"].VswitchId");
 				compatibleConnection.ExpiredTime = _ctx.StringValue("DescribeShardingNetworkAddress.CompatibleConnections["+ i +"].ExpiredTime");
+				compatibleConnection.NetworkType = _ctx.StringValue("DescribeShardingNetworkAddress.CompatibleConnections["+ i +"].NetworkType");
+				compatibleConnection.Port = _ctx.StringValue("DescribeShardingNetworkAddress.CompatibleConnections["+ i +"].Port");
+				compatibleConnection.NetworkAddress = _ctx.StringValue("DescribeShardingNetworkAddress.CompatibleConnections["+ i +"].NetworkAddress");
+				compatibleConnection.VPCId = _ctx.StringValue("DescribeShardingNetworkAddress.CompatibleConnections["+ i +"].VPCId");
+				compatibleConnection.IPAddress = _ctx.StringValue("DescribeShardingNetworkAddress.CompatibleConnections["+ i +"].IPAddress");
 
 				describeShardingNetworkAddressResponse_compatibleConnections.Add(compatibleConnection);
 			}
 			describeShardingNetworkAddressResponse.CompatibleConnections = describeShardingNetworkAddressResponse_compatibleConnections;
+
+			List<DescribeShardingNetworkAddressResponse.DescribeShardingNetworkAddress_NetworkAddress> describeShardingNetworkAddressResponse_networkAddresses = new List<DescribeShardingNetworkAddressResponse.DescribeShardingNetworkAddress_NetworkAddress>();
+			for (int i = 0; i < _ctx.Length("DescribeShardingNetworkAddress.NetworkAddresses.Length"); i++) {
+				DescribeShardingNetworkAddressResponse.DescribeShardingNetworkAddress_NetworkAddress networkAddress = new DescribeShardingNetworkAddressResponse.DescribeShardingNetworkAddress_NetworkAddress();
+				networkAddress.NodeType = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].NodeType");
+				networkAddress.VswitchId = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].VswitchId");
+				networkAddress.ExpiredTime = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].ExpiredTime");
+				networkAddress.NetworkType = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].NetworkType");
+				networkAddress.Role = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].Role");
+				networkAddress.Port = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].Port");
+				networkAddress.VPCId = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].VPCId");
+				networkAddress.NetworkAddress = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].NetworkAddress");
+				networkAddress.NodeId = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].NodeId");
+				networkAddress.IPAddress = _ctx.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].IPAddress");
+
+				describeShardingNetworkAddressResponse_networkAddresses.Add(networkAddress);
+			}
+			describeShardingNetworkAddressResponse.NetworkAddresses = describeShardingNetworkAddressResponse_networkAddresses;
         
 			return describeShardingNetworkAddressResponse;
         }

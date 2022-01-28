@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string securityToken;
 
+		private string auditLogSwitchSource;
+
 		private string dBInstanceId;
 
 		private string auditStatus;
@@ -55,6 +57,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string serviceType;
 
 		public long? ResourceOwnerId
 		{
@@ -92,6 +96,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string AuditLogSwitchSource
+		{
+			get
+			{
+				return auditLogSwitchSource;
+			}
+			set	
+			{
+				auditLogSwitchSource = value;
+				DictionaryUtil.Add(QueryParameters, "AuditLogSwitchSource", value);
 			}
 		}
 
@@ -157,6 +174,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string ServiceType
+		{
+			get
+			{
+				return serviceType;
+			}
+			set	
+			{
+				serviceType = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceType", value);
 			}
 		}
 

@@ -31,25 +31,25 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			DescribeBackupsResponse describeBackupsResponse = new DescribeBackupsResponse();
 
 			describeBackupsResponse.HttpResponse = _ctx.HttpResponse;
-			describeBackupsResponse.RequestId = _ctx.StringValue("DescribeBackups.RequestId");
-			describeBackupsResponse.PageNumber = _ctx.IntegerValue("DescribeBackups.PageNumber");
-			describeBackupsResponse.PageSize = _ctx.IntegerValue("DescribeBackups.PageSize");
 			describeBackupsResponse.TotalCount = _ctx.IntegerValue("DescribeBackups.TotalCount");
+			describeBackupsResponse.RequestId = _ctx.StringValue("DescribeBackups.RequestId");
+			describeBackupsResponse.PageSize = _ctx.IntegerValue("DescribeBackups.PageSize");
+			describeBackupsResponse.PageNumber = _ctx.IntegerValue("DescribeBackups.PageNumber");
 
 			List<DescribeBackupsResponse.DescribeBackups_Backup> describeBackupsResponse_backups = new List<DescribeBackupsResponse.DescribeBackups_Backup>();
 			for (int i = 0; i < _ctx.Length("DescribeBackups.Backups.Length"); i++) {
 				DescribeBackupsResponse.DescribeBackups_Backup backup = new DescribeBackupsResponse.DescribeBackups_Backup();
-				backup.BackupDBNames = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupDBNames");
-				backup.BackupId = _ctx.IntegerValue("DescribeBackups.Backups["+ i +"].BackupId");
 				backup.BackupStatus = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupStatus");
-				backup.BackupStartTime = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupStartTime");
-				backup.BackupEndTime = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupEndTime");
 				backup.BackupType = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupType");
-				backup.BackupMode = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupMode");
-				backup.BackupMethod = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupMethod");
-				backup.BackupDownloadURL = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupDownloadURL");
+				backup.BackupStartTime = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupStartTime");
 				backup.BackupIntranetDownloadURL = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupIntranetDownloadURL");
 				backup.BackupSize = _ctx.LongValue("DescribeBackups.Backups["+ i +"].BackupSize");
+				backup.BackupDownloadURL = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupDownloadURL");
+				backup.BackupMode = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupMode");
+				backup.BackupEndTime = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupEndTime");
+				backup.BackupId = _ctx.IntegerValue("DescribeBackups.Backups["+ i +"].BackupId");
+				backup.BackupDBNames = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupDBNames");
+				backup.BackupMethod = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupMethod");
 
 				describeBackupsResponse_backups.Add(backup);
 			}
