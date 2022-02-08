@@ -35,12 +35,6 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			subscribeTopicResponse.Success = _ctx.BooleanValue("SubscribeTopic.Success");
 			subscribeTopicResponse.Code = _ctx.StringValue("SubscribeTopic.Code");
 			subscribeTopicResponse.ErrorMessage = _ctx.StringValue("SubscribeTopic.ErrorMessage");
-
-			List<string> subscribeTopicResponse_failureTopics = new List<string>();
-			for (int i = 0; i < _ctx.Length("SubscribeTopic.FailureTopics.Length"); i++) {
-				subscribeTopicResponse_failureTopics.Add(_ctx.StringValue("SubscribeTopic.FailureTopics["+ i +"]"));
-			}
-			subscribeTopicResponse.FailureTopics = subscribeTopicResponse_failureTopics;
         
 			return subscribeTopicResponse;
         }

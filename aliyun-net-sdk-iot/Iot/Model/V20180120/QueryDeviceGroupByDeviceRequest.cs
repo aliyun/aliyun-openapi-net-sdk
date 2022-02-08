@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20180120;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class QueryDeviceGroupByDeviceRequest : RpcAcsRequest<QueryDeviceGroupByDeviceResponse>
     {
         public QueryDeviceGroupByDeviceRequest()
-            : base("Iot", "2018-01-20", "QueryDeviceGroupByDevice", "iot", "openAPI")
+            : base("Iot", "2018-01-20", "QueryDeviceGroupByDevice")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

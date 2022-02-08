@@ -40,6 +40,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.PageNo = _ctx.IntegerValue("InvokeDataAPIService.Data.PageNo");
 			data.PageSize = _ctx.IntegerValue("InvokeDataAPIService.Data.PageSize");
 			data.ApiSrn = _ctx.StringValue("InvokeDataAPIService.Data.ApiSrn");
+			data.TotalSize = _ctx.IntegerValue("InvokeDataAPIService.Data.TotalSize");
 
 			List<string> data_fieldNameList = new List<string>();
 			for (int i = 0; i < _ctx.Length("InvokeDataAPIService.Data.FieldNameList.Length"); i++) {

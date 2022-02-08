@@ -104,6 +104,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string apiSrn;
 
+			private int? totalSize;
+
 			private List<string> fieldNameList;
 
 			private List<Dictionary<string, string>> resultList;
@@ -141,6 +143,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					apiSrn = value;
+				}
+			}
+
+			public int? TotalSize
+			{
+				get
+				{
+					return totalSize;
+				}
+				set	
+				{
+					totalSize = value;
 				}
 			}
 
