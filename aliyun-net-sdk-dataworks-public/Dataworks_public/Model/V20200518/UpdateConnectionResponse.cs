@@ -25,25 +25,13 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class UpdateConnectionResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private string httpStatusCode;
 
 		private bool? data;
 
 		private string requestId;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private bool? success;
 
 		public string HttpStatusCode
 		{
@@ -78,6 +66,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

@@ -27,9 +27,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private int? httpStatusCode;
 
-		private bool? success;
-
 		private string requestId;
+
+		private bool? success;
 
 		private GetProjectDetail_Data data;
 
@@ -45,18 +45,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
 		public string RequestId
 		{
 			get
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -84,87 +84,51 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetProjectDetail_Data
 		{
 
-			private string gmtModified;
-
-			private string defaultDiResourceGroupIdentifier;
-
-			private int? isAllowDownload;
-
-			private int? schedulerRetryInterval;
+			private int? status;
 
 			private string residentArea;
 
-			private string projectOwnerBaseId;
+			private int? projectId;
+
+			private string projectIdentifier;
+
+			private string projectName;
+
+			private int? isAllowDownload;
 
 			private int? projectMode;
 
+			private string projectDescription;
+
+			private string gmtModified;
+
+			private string projectOwnerBaseId;
+
+			private int? developmentType;
+
+			private string defaultDiResourceGroupIdentifier;
+
 			private string gmtCreate;
+
+			private int? schedulerMaxRetryTimes;
 
 			private int? protectedMode;
 
 			private long? tenantId;
 
-			private string projectDescription;
-
-			private int? schedulerMaxRetryTimes;
-
-			private string projectName;
-
-			private string projectIdentifier;
-
-			private int? projectId;
-
-			private int? status;
-
-			private int? developmentType;
+			private int? schedulerRetryInterval;
 
 			private List<string> envTypes;
 
-			public string GmtModified
+			public int? Status
 			{
 				get
 				{
-					return gmtModified;
+					return status;
 				}
 				set	
 				{
-					gmtModified = value;
-				}
-			}
-
-			public string DefaultDiResourceGroupIdentifier
-			{
-				get
-				{
-					return defaultDiResourceGroupIdentifier;
-				}
-				set	
-				{
-					defaultDiResourceGroupIdentifier = value;
-				}
-			}
-
-			public int? IsAllowDownload
-			{
-				get
-				{
-					return isAllowDownload;
-				}
-				set	
-				{
-					isAllowDownload = value;
-				}
-			}
-
-			public int? SchedulerRetryInterval
-			{
-				get
-				{
-					return schedulerRetryInterval;
-				}
-				set	
-				{
-					schedulerRetryInterval = value;
+					status = value;
 				}
 			}
 
@@ -180,15 +144,51 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string ProjectOwnerBaseId
+			public int? ProjectId
 			{
 				get
 				{
-					return projectOwnerBaseId;
+					return projectId;
 				}
 				set	
 				{
-					projectOwnerBaseId = value;
+					projectId = value;
+				}
+			}
+
+			public string ProjectIdentifier
+			{
+				get
+				{
+					return projectIdentifier;
+				}
+				set	
+				{
+					projectIdentifier = value;
+				}
+			}
+
+			public string ProjectName
+			{
+				get
+				{
+					return projectName;
+				}
+				set	
+				{
+					projectName = value;
+				}
+			}
+
+			public int? IsAllowDownload
+			{
+				get
+				{
+					return isAllowDownload;
+				}
+				set	
+				{
+					isAllowDownload = value;
 				}
 			}
 
@@ -204,6 +204,66 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
+			public string ProjectDescription
+			{
+				get
+				{
+					return projectDescription;
+				}
+				set	
+				{
+					projectDescription = value;
+				}
+			}
+
+			public string GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
+				}
+			}
+
+			public string ProjectOwnerBaseId
+			{
+				get
+				{
+					return projectOwnerBaseId;
+				}
+				set	
+				{
+					projectOwnerBaseId = value;
+				}
+			}
+
+			public int? DevelopmentType
+			{
+				get
+				{
+					return developmentType;
+				}
+				set	
+				{
+					developmentType = value;
+				}
+			}
+
+			public string DefaultDiResourceGroupIdentifier
+			{
+				get
+				{
+					return defaultDiResourceGroupIdentifier;
+				}
+				set	
+				{
+					defaultDiResourceGroupIdentifier = value;
+				}
+			}
+
 			public string GmtCreate
 			{
 				get
@@ -213,6 +273,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					gmtCreate = value;
+				}
+			}
+
+			public int? SchedulerMaxRetryTimes
+			{
+				get
+				{
+					return schedulerMaxRetryTimes;
+				}
+				set	
+				{
+					schedulerMaxRetryTimes = value;
 				}
 			}
 
@@ -240,87 +312,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string ProjectDescription
+			public int? SchedulerRetryInterval
 			{
 				get
 				{
-					return projectDescription;
+					return schedulerRetryInterval;
 				}
 				set	
 				{
-					projectDescription = value;
-				}
-			}
-
-			public int? SchedulerMaxRetryTimes
-			{
-				get
-				{
-					return schedulerMaxRetryTimes;
-				}
-				set	
-				{
-					schedulerMaxRetryTimes = value;
-				}
-			}
-
-			public string ProjectName
-			{
-				get
-				{
-					return projectName;
-				}
-				set	
-				{
-					projectName = value;
-				}
-			}
-
-			public string ProjectIdentifier
-			{
-				get
-				{
-					return projectIdentifier;
-				}
-				set	
-				{
-					projectIdentifier = value;
-				}
-			}
-
-			public int? ProjectId
-			{
-				get
-				{
-					return projectId;
-				}
-				set	
-				{
-					projectId = value;
-				}
-			}
-
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public int? DevelopmentType
-			{
-				get
-				{
-					return developmentType;
-				}
-				set	
-				{
-					developmentType = value;
+					schedulerRetryInterval = value;
 				}
 			}
 

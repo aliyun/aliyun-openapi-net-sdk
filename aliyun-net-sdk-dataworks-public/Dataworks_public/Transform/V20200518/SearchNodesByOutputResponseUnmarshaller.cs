@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			SearchNodesByOutputResponse searchNodesByOutputResponse = new SearchNodesByOutputResponse();
 
 			searchNodesByOutputResponse.HttpResponse = _ctx.HttpResponse;
-			searchNodesByOutputResponse.Success = _ctx.BooleanValue("SearchNodesByOutput.Success");
 			searchNodesByOutputResponse.HttpStatusCode = _ctx.IntegerValue("SearchNodesByOutput.HttpStatusCode");
-			searchNodesByOutputResponse.ErrorCode = _ctx.StringValue("SearchNodesByOutput.ErrorCode");
+			searchNodesByOutputResponse.Data = _ctx.StringValue("SearchNodesByOutput.Data");
 			searchNodesByOutputResponse.ErrorMessage = _ctx.StringValue("SearchNodesByOutput.ErrorMessage");
 			searchNodesByOutputResponse.RequestId = _ctx.StringValue("SearchNodesByOutput.RequestId");
-			searchNodesByOutputResponse.Data = _ctx.StringValue("SearchNodesByOutput.Data");
+			searchNodesByOutputResponse.Success = _ctx.BooleanValue("SearchNodesByOutput.Success");
+			searchNodesByOutputResponse.ErrorCode = _ctx.StringValue("SearchNodesByOutput.ErrorCode");
         
 			return searchNodesByOutputResponse;
         }

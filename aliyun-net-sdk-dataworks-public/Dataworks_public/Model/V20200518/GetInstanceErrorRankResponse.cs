@@ -87,27 +87,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetInstanceErrorRank_ErrorRankItem
 			{
 
-				private long? nodeId;
+				private string owner;
 
 				private string nodeName;
 
-				private string owner;
+				private long? projectId;
+
+				private long? nodeId;
 
 				private int? count;
 
-				private long? projectId;
-
 				private int? prgType;
 
-				public long? NodeId
+				public string Owner
 				{
 					get
 					{
-						return nodeId;
+						return owner;
 					}
 					set	
 					{
-						nodeId = value;
+						owner = value;
 					}
 				}
 
@@ -123,15 +123,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string Owner
+				public long? ProjectId
 				{
 					get
 					{
-						return owner;
+						return projectId;
 					}
 					set	
 					{
-						owner = value;
+						projectId = value;
+					}
+				}
+
+				public long? NodeId
+				{
+					get
+					{
+						return nodeId;
+					}
+					set	
+					{
+						nodeId = value;
 					}
 				}
 
@@ -144,18 +156,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						count = value;
-					}
-				}
-
-				public long? ProjectId
-				{
-					get
-					{
-						return projectId;
-					}
-					set	
-					{
-						projectId = value;
 					}
 				}
 

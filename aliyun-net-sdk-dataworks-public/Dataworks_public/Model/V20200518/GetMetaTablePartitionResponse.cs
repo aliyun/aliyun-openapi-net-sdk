@@ -25,39 +25,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetMetaTablePartitionResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string errorCode;
+		private int? httpStatusCode;
 
 		private string errorMessage;
 
-		private int? httpStatusCode;
+		private string requestId;
 
 		private bool? success;
 
+		private string errorCode;
+
 		private GetMetaTablePartition_Data data;
 
-		public string RequestId
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return requestId;
+				return httpStatusCode;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				httpStatusCode = value;
 			}
 		}
 
@@ -73,15 +61,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? HttpStatusCode
+		public string RequestId
 		{
 			get
 			{
-				return httpStatusCode;
+				return requestId;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				requestId = value;
 			}
 		}
 
@@ -94,6 +82,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 
@@ -171,61 +171,37 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetMetaTablePartition_DataEntityListItem
 			{
 
-				private string partitionGuid;
-
-				private string partitionName;
-
-				private long? createTime;
+				private string partitionPath;
 
 				private long? dataSize;
 
-				private long? recordCount;
-
-				private long? modifiedTime;
-
-				private string tableGuid;
+				private string partitionName;
 
 				private string comment;
 
+				private long? modifiedTime;
+
+				private long? createTime;
+
+				private long? recordCount;
+
 				private string partitionType;
 
-				private string partitionPath;
+				private string partitionGuid;
 
 				private string partitionLocation;
 
-				public string PartitionGuid
-				{
-					get
-					{
-						return partitionGuid;
-					}
-					set	
-					{
-						partitionGuid = value;
-					}
-				}
+				private string tableGuid;
 
-				public string PartitionName
+				public string PartitionPath
 				{
 					get
 					{
-						return partitionName;
+						return partitionPath;
 					}
 					set	
 					{
-						partitionName = value;
-					}
-				}
-
-				public long? CreateTime
-				{
-					get
-					{
-						return createTime;
-					}
-					set	
-					{
-						createTime = value;
+						partitionPath = value;
 					}
 				}
 
@@ -241,39 +217,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public long? RecordCount
+				public string PartitionName
 				{
 					get
 					{
-						return recordCount;
+						return partitionName;
 					}
 					set	
 					{
-						recordCount = value;
-					}
-				}
-
-				public long? ModifiedTime
-				{
-					get
-					{
-						return modifiedTime;
-					}
-					set	
-					{
-						modifiedTime = value;
-					}
-				}
-
-				public string TableGuid
-				{
-					get
-					{
-						return tableGuid;
-					}
-					set	
-					{
-						tableGuid = value;
+						partitionName = value;
 					}
 				}
 
@@ -289,6 +241,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
+				public long? ModifiedTime
+				{
+					get
+					{
+						return modifiedTime;
+					}
+					set	
+					{
+						modifiedTime = value;
+					}
+				}
+
+				public long? CreateTime
+				{
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
+					}
+				}
+
+				public long? RecordCount
+				{
+					get
+					{
+						return recordCount;
+					}
+					set	
+					{
+						recordCount = value;
+					}
+				}
+
 				public string PartitionType
 				{
 					get
@@ -301,15 +289,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string PartitionPath
+				public string PartitionGuid
 				{
 					get
 					{
-						return partitionPath;
+						return partitionGuid;
 					}
 					set	
 					{
-						partitionPath = value;
+						partitionGuid = value;
 					}
 				}
 
@@ -322,6 +310,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						partitionLocation = value;
+					}
+				}
+
+				public string TableGuid
+				{
+					get
+					{
+						return tableGuid;
+					}
+					set	
+					{
+						tableGuid = value;
 					}
 				}
 			}

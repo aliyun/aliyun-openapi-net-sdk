@@ -115,21 +115,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetNodeTypeListInfo_NodeTypeInfoItem
 			{
 
-				private int? nodeType;
-
 				private string nodeTypeName;
 
-				public int? NodeType
-				{
-					get
-					{
-						return nodeType;
-					}
-					set	
-					{
-						nodeType = value;
-					}
-				}
+				private int? nodeType;
 
 				public string NodeTypeName
 				{
@@ -140,6 +128,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						nodeTypeName = value;
+					}
+				}
+
+				public int? NodeType
+				{
+					get
+					{
+						return nodeType;
+					}
+					set	
+					{
+						nodeType = value;
 					}
 				}
 			}

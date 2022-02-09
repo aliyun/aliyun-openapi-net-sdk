@@ -39,11 +39,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<GetInstanceErrorRankResponse.GetInstanceErrorRank_InstanceErrorRank.GetInstanceErrorRank_ErrorRankItem> instanceErrorRank_errorRank = new List<GetInstanceErrorRankResponse.GetInstanceErrorRank_InstanceErrorRank.GetInstanceErrorRank_ErrorRankItem>();
 			for (int i = 0; i < _ctx.Length("GetInstanceErrorRank.InstanceErrorRank.ErrorRank.Length"); i++) {
 				GetInstanceErrorRankResponse.GetInstanceErrorRank_InstanceErrorRank.GetInstanceErrorRank_ErrorRankItem errorRankItem = new GetInstanceErrorRankResponse.GetInstanceErrorRank_InstanceErrorRank.GetInstanceErrorRank_ErrorRankItem();
-				errorRankItem.NodeId = _ctx.LongValue("GetInstanceErrorRank.InstanceErrorRank.ErrorRank["+ i +"].NodeId");
-				errorRankItem.NodeName = _ctx.StringValue("GetInstanceErrorRank.InstanceErrorRank.ErrorRank["+ i +"].NodeName");
 				errorRankItem.Owner = _ctx.StringValue("GetInstanceErrorRank.InstanceErrorRank.ErrorRank["+ i +"].Owner");
-				errorRankItem.Count = _ctx.IntegerValue("GetInstanceErrorRank.InstanceErrorRank.ErrorRank["+ i +"].Count");
+				errorRankItem.NodeName = _ctx.StringValue("GetInstanceErrorRank.InstanceErrorRank.ErrorRank["+ i +"].NodeName");
 				errorRankItem.ProjectId = _ctx.LongValue("GetInstanceErrorRank.InstanceErrorRank.ErrorRank["+ i +"].ProjectId");
+				errorRankItem.NodeId = _ctx.LongValue("GetInstanceErrorRank.InstanceErrorRank.ErrorRank["+ i +"].NodeId");
+				errorRankItem.Count = _ctx.IntegerValue("GetInstanceErrorRank.InstanceErrorRank.ErrorRank["+ i +"].Count");
 				errorRankItem.PrgType = _ctx.IntegerValue("GetInstanceErrorRank.InstanceErrorRank.ErrorRank["+ i +"].PrgType");
 
 				instanceErrorRank_errorRank.Add(errorRankItem);

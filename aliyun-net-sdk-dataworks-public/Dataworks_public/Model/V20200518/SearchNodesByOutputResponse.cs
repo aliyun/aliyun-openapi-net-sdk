@@ -25,29 +25,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class SearchNodesByOutputResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private int? httpStatusCode;
 
-		private string errorCode;
+		private string data;
 
 		private string errorMessage;
 
 		private string requestId;
 
-		private string data;
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private string errorCode;
 
 		public int? HttpStatusCode
 		{
@@ -61,15 +49,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public string ErrorCode
+		public string Data
 		{
 			get
 			{
-				return errorCode;
+				return data;
 			}
 			set	
 			{
-				errorCode = value;
+				data = value;
 			}
 		}
 
@@ -97,15 +85,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public string Data
+		public bool? Success
 		{
 			get
 			{
-				return data;
+				return success;
 			}
 			set	
 			{
-				data = value;
+				success = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 	}

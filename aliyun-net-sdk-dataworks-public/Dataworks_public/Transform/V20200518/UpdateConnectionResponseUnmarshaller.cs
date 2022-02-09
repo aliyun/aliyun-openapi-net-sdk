@@ -31,10 +31,10 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			UpdateConnectionResponse updateConnectionResponse = new UpdateConnectionResponse();
 
 			updateConnectionResponse.HttpResponse = _ctx.HttpResponse;
-			updateConnectionResponse.Success = _ctx.BooleanValue("UpdateConnection.Success");
 			updateConnectionResponse.HttpStatusCode = _ctx.StringValue("UpdateConnection.HttpStatusCode");
 			updateConnectionResponse.Data = _ctx.BooleanValue("UpdateConnection.Data");
 			updateConnectionResponse.RequestId = _ctx.StringValue("UpdateConnection.RequestId");
+			updateConnectionResponse.Success = _ctx.BooleanValue("UpdateConnection.Success");
         
 			return updateConnectionResponse;
         }

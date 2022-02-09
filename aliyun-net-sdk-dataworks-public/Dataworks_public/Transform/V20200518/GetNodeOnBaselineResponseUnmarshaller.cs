@@ -31,18 +31,18 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetNodeOnBaselineResponse getNodeOnBaselineResponse = new GetNodeOnBaselineResponse();
 
 			getNodeOnBaselineResponse.HttpResponse = _ctx.HttpResponse;
-			getNodeOnBaselineResponse.Success = _ctx.StringValue("GetNodeOnBaseline.Success");
-			getNodeOnBaselineResponse.ErrorCode = _ctx.StringValue("GetNodeOnBaseline.ErrorCode");
-			getNodeOnBaselineResponse.ErrorMessage = _ctx.StringValue("GetNodeOnBaseline.ErrorMessage");
 			getNodeOnBaselineResponse.HttpStatusCode = _ctx.IntegerValue("GetNodeOnBaseline.HttpStatusCode");
 			getNodeOnBaselineResponse.RequestId = _ctx.StringValue("GetNodeOnBaseline.RequestId");
+			getNodeOnBaselineResponse.ErrorMessage = _ctx.StringValue("GetNodeOnBaseline.ErrorMessage");
+			getNodeOnBaselineResponse.ErrorCode = _ctx.StringValue("GetNodeOnBaseline.ErrorCode");
+			getNodeOnBaselineResponse.Success = _ctx.StringValue("GetNodeOnBaseline.Success");
 
 			List<GetNodeOnBaselineResponse.GetNodeOnBaseline_DataItem> getNodeOnBaselineResponse_data = new List<GetNodeOnBaselineResponse.GetNodeOnBaseline_DataItem>();
 			for (int i = 0; i < _ctx.Length("GetNodeOnBaseline.Data.Length"); i++) {
 				GetNodeOnBaselineResponse.GetNodeOnBaseline_DataItem dataItem = new GetNodeOnBaselineResponse.GetNodeOnBaseline_DataItem();
-				dataItem.NodeId = _ctx.LongValue("GetNodeOnBaseline.Data["+ i +"].NodeId");
-				dataItem.NodeName = _ctx.StringValue("GetNodeOnBaseline.Data["+ i +"].NodeName");
 				dataItem.Owner = _ctx.StringValue("GetNodeOnBaseline.Data["+ i +"].Owner");
+				dataItem.NodeName = _ctx.StringValue("GetNodeOnBaseline.Data["+ i +"].NodeName");
+				dataItem.NodeId = _ctx.LongValue("GetNodeOnBaseline.Data["+ i +"].NodeId");
 				dataItem.ProjectId = _ctx.LongValue("GetNodeOnBaseline.Data["+ i +"].ProjectId");
 
 				getNodeOnBaselineResponse_data.Add(dataItem);

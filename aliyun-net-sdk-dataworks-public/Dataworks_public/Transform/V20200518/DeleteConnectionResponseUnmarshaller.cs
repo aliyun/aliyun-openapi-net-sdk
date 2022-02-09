@@ -31,10 +31,10 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			DeleteConnectionResponse deleteConnectionResponse = new DeleteConnectionResponse();
 
 			deleteConnectionResponse.HttpResponse = _ctx.HttpResponse;
-			deleteConnectionResponse.Success = _ctx.BooleanValue("DeleteConnection.Success");
 			deleteConnectionResponse.HttpStatusCode = _ctx.StringValue("DeleteConnection.HttpStatusCode");
 			deleteConnectionResponse.Data = _ctx.BooleanValue("DeleteConnection.Data");
 			deleteConnectionResponse.RequestId = _ctx.StringValue("DeleteConnection.RequestId");
+			deleteConnectionResponse.Success = _ctx.BooleanValue("DeleteConnection.Success");
         
 			return deleteConnectionResponse;
         }

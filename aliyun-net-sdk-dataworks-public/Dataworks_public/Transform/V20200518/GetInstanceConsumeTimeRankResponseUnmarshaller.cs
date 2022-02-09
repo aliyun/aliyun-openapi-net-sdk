@@ -39,13 +39,13 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<GetInstanceConsumeTimeRankResponse.GetInstanceConsumeTimeRank_InstanceConsumeTimeRank.GetInstanceConsumeTimeRank_ConsumeTimeRankItem> instanceConsumeTimeRank_consumeTimeRank = new List<GetInstanceConsumeTimeRankResponse.GetInstanceConsumeTimeRank_InstanceConsumeTimeRank.GetInstanceConsumeTimeRank_ConsumeTimeRankItem>();
 			for (int i = 0; i < _ctx.Length("GetInstanceConsumeTimeRank.InstanceConsumeTimeRank.ConsumeTimeRank.Length"); i++) {
 				GetInstanceConsumeTimeRankResponse.GetInstanceConsumeTimeRank_InstanceConsumeTimeRank.GetInstanceConsumeTimeRank_ConsumeTimeRankItem consumeTimeRankItem = new GetInstanceConsumeTimeRankResponse.GetInstanceConsumeTimeRank_InstanceConsumeTimeRank.GetInstanceConsumeTimeRank_ConsumeTimeRankItem();
-				consumeTimeRankItem.NodeName = _ctx.StringValue("GetInstanceConsumeTimeRank.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].NodeName");
-				consumeTimeRankItem.NodeId = _ctx.LongValue("GetInstanceConsumeTimeRank.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].NodeId");
-				consumeTimeRankItem.Bizdate = _ctx.LongValue("GetInstanceConsumeTimeRank.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].Bizdate");
 				consumeTimeRankItem.Owner = _ctx.StringValue("GetInstanceConsumeTimeRank.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].Owner");
-				consumeTimeRankItem.Consumed = _ctx.LongValue("GetInstanceConsumeTimeRank.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].Consumed");
+				consumeTimeRankItem.NodeName = _ctx.StringValue("GetInstanceConsumeTimeRank.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].NodeName");
+				consumeTimeRankItem.Bizdate = _ctx.LongValue("GetInstanceConsumeTimeRank.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].Bizdate");
 				consumeTimeRankItem.InstanceId = _ctx.LongValue("GetInstanceConsumeTimeRank.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].InstanceId");
 				consumeTimeRankItem.PrgType = _ctx.IntegerValue("GetInstanceConsumeTimeRank.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].PrgType");
+				consumeTimeRankItem.NodeId = _ctx.LongValue("GetInstanceConsumeTimeRank.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].NodeId");
+				consumeTimeRankItem.Consumed = _ctx.LongValue("GetInstanceConsumeTimeRank.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].Consumed");
 
 				instanceConsumeTimeRank_consumeTimeRank.Add(consumeTimeRankItem);
 			}

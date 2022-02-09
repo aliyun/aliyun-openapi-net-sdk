@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			CreateDagComplementResponse createDagComplementResponse = new CreateDagComplementResponse();
 
 			createDagComplementResponse.HttpResponse = _ctx.HttpResponse;
-			createDagComplementResponse.ErrorCode = _ctx.StringValue("CreateDagComplement.ErrorCode");
-			createDagComplementResponse.ErrorMessage = _ctx.StringValue("CreateDagComplement.ErrorMessage");
 			createDagComplementResponse.HttpStatusCode = _ctx.IntegerValue("CreateDagComplement.HttpStatusCode");
 			createDagComplementResponse.RequestId = _ctx.StringValue("CreateDagComplement.RequestId");
+			createDagComplementResponse.ErrorMessage = _ctx.StringValue("CreateDagComplement.ErrorMessage");
 			createDagComplementResponse.Success = _ctx.BooleanValue("CreateDagComplement.Success");
+			createDagComplementResponse.ErrorCode = _ctx.StringValue("CreateDagComplement.ErrorCode");
 
 			List<string> createDagComplementResponse_data = new List<string>();
 			for (int i = 0; i < _ctx.Length("CreateDagComplement.Data.Length"); i++) {

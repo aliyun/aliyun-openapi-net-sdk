@@ -25,41 +25,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class CreateDagComplementResponse : AcsResponse
 	{
 
-		private string errorCode;
-
-		private string errorMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
+		private string errorMessage;
+
 		private bool? success;
 
+		private string errorCode;
+
 		private List<string> data;
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -85,6 +61,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
 		public bool? Success
 		{
 			get
@@ -94,6 +82,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 

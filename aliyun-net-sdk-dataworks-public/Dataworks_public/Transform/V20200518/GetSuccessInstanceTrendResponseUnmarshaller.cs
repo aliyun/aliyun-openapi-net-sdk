@@ -38,8 +38,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<GetSuccessInstanceTrendResponse.GetSuccessInstanceTrend_InstanceStatusTrend.GetSuccessInstanceTrend_TodayTrendItem> instanceStatusTrend_todayTrend = new List<GetSuccessInstanceTrendResponse.GetSuccessInstanceTrend_InstanceStatusTrend.GetSuccessInstanceTrend_TodayTrendItem>();
 			for (int i = 0; i < _ctx.Length("GetSuccessInstanceTrend.InstanceStatusTrend.TodayTrend.Length"); i++) {
 				GetSuccessInstanceTrendResponse.GetSuccessInstanceTrend_InstanceStatusTrend.GetSuccessInstanceTrend_TodayTrendItem todayTrendItem = new GetSuccessInstanceTrendResponse.GetSuccessInstanceTrend_InstanceStatusTrend.GetSuccessInstanceTrend_TodayTrendItem();
-				todayTrendItem.Count = _ctx.IntegerValue("GetSuccessInstanceTrend.InstanceStatusTrend.TodayTrend["+ i +"].Count");
 				todayTrendItem.TimePoint = _ctx.StringValue("GetSuccessInstanceTrend.InstanceStatusTrend.TodayTrend["+ i +"].TimePoint");
+				todayTrendItem.Count = _ctx.IntegerValue("GetSuccessInstanceTrend.InstanceStatusTrend.TodayTrend["+ i +"].Count");
 
 				instanceStatusTrend_todayTrend.Add(todayTrendItem);
 			}
@@ -48,8 +48,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<GetSuccessInstanceTrendResponse.GetSuccessInstanceTrend_InstanceStatusTrend.GetSuccessInstanceTrend_YesterdayTrendItem> instanceStatusTrend_yesterdayTrend = new List<GetSuccessInstanceTrendResponse.GetSuccessInstanceTrend_InstanceStatusTrend.GetSuccessInstanceTrend_YesterdayTrendItem>();
 			for (int i = 0; i < _ctx.Length("GetSuccessInstanceTrend.InstanceStatusTrend.YesterdayTrend.Length"); i++) {
 				GetSuccessInstanceTrendResponse.GetSuccessInstanceTrend_InstanceStatusTrend.GetSuccessInstanceTrend_YesterdayTrendItem yesterdayTrendItem = new GetSuccessInstanceTrendResponse.GetSuccessInstanceTrend_InstanceStatusTrend.GetSuccessInstanceTrend_YesterdayTrendItem();
-				yesterdayTrendItem.Count = _ctx.IntegerValue("GetSuccessInstanceTrend.InstanceStatusTrend.YesterdayTrend["+ i +"].Count");
 				yesterdayTrendItem.TimePoint = _ctx.StringValue("GetSuccessInstanceTrend.InstanceStatusTrend.YesterdayTrend["+ i +"].TimePoint");
+				yesterdayTrendItem.Count = _ctx.IntegerValue("GetSuccessInstanceTrend.InstanceStatusTrend.YesterdayTrend["+ i +"].Count");
 
 				instanceStatusTrend_yesterdayTrend.Add(yesterdayTrendItem);
 			}
@@ -58,8 +58,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<GetSuccessInstanceTrendResponse.GetSuccessInstanceTrend_InstanceStatusTrend.GetSuccessInstanceTrend_AvgTrendItem> instanceStatusTrend_avgTrend = new List<GetSuccessInstanceTrendResponse.GetSuccessInstanceTrend_InstanceStatusTrend.GetSuccessInstanceTrend_AvgTrendItem>();
 			for (int i = 0; i < _ctx.Length("GetSuccessInstanceTrend.InstanceStatusTrend.AvgTrend.Length"); i++) {
 				GetSuccessInstanceTrendResponse.GetSuccessInstanceTrend_InstanceStatusTrend.GetSuccessInstanceTrend_AvgTrendItem avgTrendItem = new GetSuccessInstanceTrendResponse.GetSuccessInstanceTrend_InstanceStatusTrend.GetSuccessInstanceTrend_AvgTrendItem();
-				avgTrendItem.Count = _ctx.IntegerValue("GetSuccessInstanceTrend.InstanceStatusTrend.AvgTrend["+ i +"].Count");
 				avgTrendItem.TimePoint = _ctx.StringValue("GetSuccessInstanceTrend.InstanceStatusTrend.AvgTrend["+ i +"].TimePoint");
+				avgTrendItem.Count = _ctx.IntegerValue("GetSuccessInstanceTrend.InstanceStatusTrend.AvgTrend["+ i +"].Count");
 
 				instanceStatusTrend_avgTrend.Add(avgTrendItem);
 			}

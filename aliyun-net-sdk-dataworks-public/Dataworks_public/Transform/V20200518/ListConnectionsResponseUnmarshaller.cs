@@ -32,8 +32,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 
 			listConnectionsResponse.HttpResponse = _ctx.HttpResponse;
 			listConnectionsResponse.HttpStatusCode = _ctx.IntegerValue("ListConnections.HttpStatusCode");
-			listConnectionsResponse.Success = _ctx.BooleanValue("ListConnections.Success");
 			listConnectionsResponse.RequestId = _ctx.StringValue("ListConnections.RequestId");
+			listConnectionsResponse.Success = _ctx.BooleanValue("ListConnections.Success");
 
 			ListConnectionsResponse.ListConnections_Data data = new ListConnectionsResponse.ListConnections_Data();
 			data.PageNumber = _ctx.IntegerValue("ListConnections.Data.PageNumber");
@@ -43,24 +43,24 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<ListConnectionsResponse.ListConnections_Data.ListConnections_ConnectionsItem> data_connections = new List<ListConnectionsResponse.ListConnections_Data.ListConnections_ConnectionsItem>();
 			for (int i = 0; i < _ctx.Length("ListConnections.Data.Connections.Length"); i++) {
 				ListConnectionsResponse.ListConnections_Data.ListConnections_ConnectionsItem connectionsItem = new ListConnectionsResponse.ListConnections_Data.ListConnections_ConnectionsItem();
-				connectionsItem.Shared = _ctx.BooleanValue("ListConnections.Data.Connections["+ i +"].Shared");
-				connectionsItem.GmtModified = _ctx.StringValue("ListConnections.Data.Connections["+ i +"].GmtModified");
-				connectionsItem.ConnectStatus = _ctx.IntegerValue("ListConnections.Data.Connections["+ i +"].ConnectStatus");
-				connectionsItem.BindingCalcEngineId = _ctx.IntegerValue("ListConnections.Data.Connections["+ i +"].BindingCalcEngineId");
-				connectionsItem.Description = _ctx.StringValue("ListConnections.Data.Connections["+ i +"].Description");
+				connectionsItem.Status = _ctx.IntegerValue("ListConnections.Data.Connections["+ i +"].Status");
 				connectionsItem.ConnectionType = _ctx.StringValue("ListConnections.Data.Connections["+ i +"].ConnectionType");
+				connectionsItem.ProjectId = _ctx.IntegerValue("ListConnections.Data.Connections["+ i +"].ProjectId");
+				connectionsItem.SubType = _ctx.StringValue("ListConnections.Data.Connections["+ i +"].SubType");
+				connectionsItem.GmtModified = _ctx.StringValue("ListConnections.Data.Connections["+ i +"].GmtModified");
+				connectionsItem.EnvType = _ctx.IntegerValue("ListConnections.Data.Connections["+ i +"].EnvType");
+				connectionsItem.ConnectStatus = _ctx.IntegerValue("ListConnections.Data.Connections["+ i +"].ConnectStatus");
+				connectionsItem.Sequence = _ctx.IntegerValue("ListConnections.Data.Connections["+ i +"].Sequence");
+				connectionsItem.Description = _ctx.StringValue("ListConnections.Data.Connections["+ i +"].Description");
 				connectionsItem.GmtCreate = _ctx.StringValue("ListConnections.Data.Connections["+ i +"].GmtCreate");
 				connectionsItem.DefaultEngine = _ctx.BooleanValue("ListConnections.Data.Connections["+ i +"].DefaultEngine");
+				connectionsItem.Shared = _ctx.BooleanValue("ListConnections.Data.Connections["+ i +"].Shared");
 				connectionsItem._Operator = _ctx.StringValue("ListConnections.Data.Connections["+ i +"].Operator");
-				connectionsItem.Sequence = _ctx.IntegerValue("ListConnections.Data.Connections["+ i +"].Sequence");
-				connectionsItem.EnvType = _ctx.IntegerValue("ListConnections.Data.Connections["+ i +"].EnvType");
-				connectionsItem.TenantId = _ctx.LongValue("ListConnections.Data.Connections["+ i +"].TenantId");
 				connectionsItem.Name = _ctx.StringValue("ListConnections.Data.Connections["+ i +"].Name");
-				connectionsItem.SubType = _ctx.StringValue("ListConnections.Data.Connections["+ i +"].SubType");
-				connectionsItem.Id = _ctx.IntegerValue("ListConnections.Data.Connections["+ i +"].Id");
-				connectionsItem.ProjectId = _ctx.IntegerValue("ListConnections.Data.Connections["+ i +"].ProjectId");
-				connectionsItem.Status = _ctx.IntegerValue("ListConnections.Data.Connections["+ i +"].Status");
 				connectionsItem.Content = _ctx.StringValue("ListConnections.Data.Connections["+ i +"].Content");
+				connectionsItem.Id = _ctx.IntegerValue("ListConnections.Data.Connections["+ i +"].Id");
+				connectionsItem.BindingCalcEngineId = _ctx.IntegerValue("ListConnections.Data.Connections["+ i +"].BindingCalcEngineId");
+				connectionsItem.TenantId = _ctx.LongValue("ListConnections.Data.Connections["+ i +"].TenantId");
 
 				data_connections.Add(connectionsItem);
 			}

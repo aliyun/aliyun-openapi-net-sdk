@@ -31,8 +31,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			CreateManualDagResponse createManualDagResponse = new CreateManualDagResponse();
 
 			createManualDagResponse.HttpResponse = _ctx.HttpResponse;
-			createManualDagResponse.RequestId = _ctx.StringValue("CreateManualDag.RequestId");
 			createManualDagResponse.DagId = _ctx.LongValue("CreateManualDag.DagId");
+			createManualDagResponse.RequestId = _ctx.StringValue("CreateManualDag.RequestId");
         
 			return createManualDagResponse;
         }

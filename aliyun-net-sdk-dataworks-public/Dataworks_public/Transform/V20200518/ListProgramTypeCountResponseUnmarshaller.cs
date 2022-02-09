@@ -36,8 +36,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<ListProgramTypeCountResponse.ListProgramTypeCount_ProgramTypeAndCount> listProgramTypeCountResponse_programTypeAndCounts = new List<ListProgramTypeCountResponse.ListProgramTypeCount_ProgramTypeAndCount>();
 			for (int i = 0; i < _ctx.Length("ListProgramTypeCount.ProgramTypeAndCounts.Length"); i++) {
 				ListProgramTypeCountResponse.ListProgramTypeCount_ProgramTypeAndCount programTypeAndCount = new ListProgramTypeCountResponse.ListProgramTypeCount_ProgramTypeAndCount();
-				programTypeAndCount.ProgramType = _ctx.StringValue("ListProgramTypeCount.ProgramTypeAndCounts["+ i +"].ProgramType");
 				programTypeAndCount.Count = _ctx.IntegerValue("ListProgramTypeCount.ProgramTypeAndCounts["+ i +"].Count");
+				programTypeAndCount.ProgramType = _ctx.StringValue("ListProgramTypeCount.ProgramTypeAndCounts["+ i +"].ProgramType");
 
 				listProgramTypeCountResponse_programTypeAndCounts.Add(programTypeAndCount);
 			}

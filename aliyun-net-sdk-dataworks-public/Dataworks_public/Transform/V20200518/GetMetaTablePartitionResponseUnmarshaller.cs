@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetMetaTablePartitionResponse getMetaTablePartitionResponse = new GetMetaTablePartitionResponse();
 
 			getMetaTablePartitionResponse.HttpResponse = _ctx.HttpResponse;
-			getMetaTablePartitionResponse.RequestId = _ctx.StringValue("GetMetaTablePartition.RequestId");
-			getMetaTablePartitionResponse.ErrorCode = _ctx.StringValue("GetMetaTablePartition.ErrorCode");
-			getMetaTablePartitionResponse.ErrorMessage = _ctx.StringValue("GetMetaTablePartition.ErrorMessage");
 			getMetaTablePartitionResponse.HttpStatusCode = _ctx.IntegerValue("GetMetaTablePartition.HttpStatusCode");
+			getMetaTablePartitionResponse.ErrorMessage = _ctx.StringValue("GetMetaTablePartition.ErrorMessage");
+			getMetaTablePartitionResponse.RequestId = _ctx.StringValue("GetMetaTablePartition.RequestId");
 			getMetaTablePartitionResponse.Success = _ctx.BooleanValue("GetMetaTablePartition.Success");
+			getMetaTablePartitionResponse.ErrorCode = _ctx.StringValue("GetMetaTablePartition.ErrorCode");
 
 			GetMetaTablePartitionResponse.GetMetaTablePartition_Data data = new GetMetaTablePartitionResponse.GetMetaTablePartition_Data();
 			data.PageNumber = _ctx.IntegerValue("GetMetaTablePartition.Data.PageNumber");
@@ -45,17 +45,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<GetMetaTablePartitionResponse.GetMetaTablePartition_Data.GetMetaTablePartition_DataEntityListItem> data_dataEntityList = new List<GetMetaTablePartitionResponse.GetMetaTablePartition_Data.GetMetaTablePartition_DataEntityListItem>();
 			for (int i = 0; i < _ctx.Length("GetMetaTablePartition.Data.DataEntityList.Length"); i++) {
 				GetMetaTablePartitionResponse.GetMetaTablePartition_Data.GetMetaTablePartition_DataEntityListItem dataEntityListItem = new GetMetaTablePartitionResponse.GetMetaTablePartition_Data.GetMetaTablePartition_DataEntityListItem();
-				dataEntityListItem.PartitionGuid = _ctx.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].PartitionGuid");
-				dataEntityListItem.PartitionName = _ctx.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].PartitionName");
-				dataEntityListItem.CreateTime = _ctx.LongValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].CreateTime");
-				dataEntityListItem.DataSize = _ctx.LongValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].DataSize");
-				dataEntityListItem.RecordCount = _ctx.LongValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].RecordCount");
-				dataEntityListItem.ModifiedTime = _ctx.LongValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].ModifiedTime");
-				dataEntityListItem.TableGuid = _ctx.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].TableGuid");
-				dataEntityListItem.Comment = _ctx.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].Comment");
-				dataEntityListItem.PartitionType = _ctx.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].PartitionType");
 				dataEntityListItem.PartitionPath = _ctx.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].PartitionPath");
+				dataEntityListItem.DataSize = _ctx.LongValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].DataSize");
+				dataEntityListItem.PartitionName = _ctx.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].PartitionName");
+				dataEntityListItem.Comment = _ctx.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].Comment");
+				dataEntityListItem.ModifiedTime = _ctx.LongValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].ModifiedTime");
+				dataEntityListItem.CreateTime = _ctx.LongValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].CreateTime");
+				dataEntityListItem.RecordCount = _ctx.LongValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].RecordCount");
+				dataEntityListItem.PartitionType = _ctx.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].PartitionType");
+				dataEntityListItem.PartitionGuid = _ctx.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].PartitionGuid");
 				dataEntityListItem.PartitionLocation = _ctx.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].PartitionLocation");
+				dataEntityListItem.TableGuid = _ctx.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].TableGuid");
 
 				data_dataEntityList.Add(dataEntityListItem);
 			}

@@ -32,27 +32,27 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 
 			getProjectDetailResponse.HttpResponse = _ctx.HttpResponse;
 			getProjectDetailResponse.HttpStatusCode = _ctx.IntegerValue("GetProjectDetail.HttpStatusCode");
-			getProjectDetailResponse.Success = _ctx.BooleanValue("GetProjectDetail.Success");
 			getProjectDetailResponse.RequestId = _ctx.StringValue("GetProjectDetail.RequestId");
+			getProjectDetailResponse.Success = _ctx.BooleanValue("GetProjectDetail.Success");
 
 			GetProjectDetailResponse.GetProjectDetail_Data data = new GetProjectDetailResponse.GetProjectDetail_Data();
-			data.GmtModified = _ctx.StringValue("GetProjectDetail.Data.GmtModified");
-			data.DefaultDiResourceGroupIdentifier = _ctx.StringValue("GetProjectDetail.Data.DefaultDiResourceGroupIdentifier");
-			data.IsAllowDownload = _ctx.IntegerValue("GetProjectDetail.Data.IsAllowDownload");
-			data.SchedulerRetryInterval = _ctx.IntegerValue("GetProjectDetail.Data.SchedulerRetryInterval");
+			data.Status = _ctx.IntegerValue("GetProjectDetail.Data.Status");
 			data.ResidentArea = _ctx.StringValue("GetProjectDetail.Data.ResidentArea");
-			data.ProjectOwnerBaseId = _ctx.StringValue("GetProjectDetail.Data.ProjectOwnerBaseId");
+			data.ProjectId = _ctx.IntegerValue("GetProjectDetail.Data.ProjectId");
+			data.ProjectIdentifier = _ctx.StringValue("GetProjectDetail.Data.ProjectIdentifier");
+			data.ProjectName = _ctx.StringValue("GetProjectDetail.Data.ProjectName");
+			data.IsAllowDownload = _ctx.IntegerValue("GetProjectDetail.Data.IsAllowDownload");
 			data.ProjectMode = _ctx.IntegerValue("GetProjectDetail.Data.ProjectMode");
+			data.ProjectDescription = _ctx.StringValue("GetProjectDetail.Data.ProjectDescription");
+			data.GmtModified = _ctx.StringValue("GetProjectDetail.Data.GmtModified");
+			data.ProjectOwnerBaseId = _ctx.StringValue("GetProjectDetail.Data.ProjectOwnerBaseId");
+			data.DevelopmentType = _ctx.IntegerValue("GetProjectDetail.Data.DevelopmentType");
+			data.DefaultDiResourceGroupIdentifier = _ctx.StringValue("GetProjectDetail.Data.DefaultDiResourceGroupIdentifier");
 			data.GmtCreate = _ctx.StringValue("GetProjectDetail.Data.GmtCreate");
+			data.SchedulerMaxRetryTimes = _ctx.IntegerValue("GetProjectDetail.Data.SchedulerMaxRetryTimes");
 			data.ProtectedMode = _ctx.IntegerValue("GetProjectDetail.Data.ProtectedMode");
 			data.TenantId = _ctx.LongValue("GetProjectDetail.Data.TenantId");
-			data.ProjectDescription = _ctx.StringValue("GetProjectDetail.Data.ProjectDescription");
-			data.SchedulerMaxRetryTimes = _ctx.IntegerValue("GetProjectDetail.Data.SchedulerMaxRetryTimes");
-			data.ProjectName = _ctx.StringValue("GetProjectDetail.Data.ProjectName");
-			data.ProjectIdentifier = _ctx.StringValue("GetProjectDetail.Data.ProjectIdentifier");
-			data.ProjectId = _ctx.IntegerValue("GetProjectDetail.Data.ProjectId");
-			data.Status = _ctx.IntegerValue("GetProjectDetail.Data.Status");
-			data.DevelopmentType = _ctx.IntegerValue("GetProjectDetail.Data.DevelopmentType");
+			data.SchedulerRetryInterval = _ctx.IntegerValue("GetProjectDetail.Data.SchedulerRetryInterval");
 
 			List<string> data_envTypes = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetProjectDetail.Data.EnvTypes.Length"); i++) {

@@ -34,22 +34,22 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			getMetaDBInfoResponse.RequestId = _ctx.StringValue("GetMetaDBInfo.RequestId");
 
 			GetMetaDBInfoResponse.GetMetaDBInfo_Data data = new GetMetaDBInfoResponse.GetMetaDBInfo_Data();
-			data.AppGuid = _ctx.StringValue("GetMetaDBInfo.Data.AppGuid");
-			data.TenantId = _ctx.LongValue("GetMetaDBInfo.Data.TenantId");
-			data.Endpoint = _ctx.StringValue("GetMetaDBInfo.Data.Endpoint");
-			data.ProjectId = _ctx.LongValue("GetMetaDBInfo.Data.ProjectId");
-			data.EnvType = _ctx.IntegerValue("GetMetaDBInfo.Data.EnvType");
-			data.ProjectName = _ctx.StringValue("GetMetaDBInfo.Data.ProjectName");
-			data.ProjectNameCn = _ctx.StringValue("GetMetaDBInfo.Data.ProjectNameCn");
-			data.CreateTime = _ctx.LongValue("GetMetaDBInfo.Data.CreateTime");
-			data.ModifyTime = _ctx.LongValue("GetMetaDBInfo.Data.ModifyTime");
-			data.OwnerId = _ctx.StringValue("GetMetaDBInfo.Data.OwnerId");
-			data.OwnerName = _ctx.StringValue("GetMetaDBInfo.Data.OwnerName");
-			data.Name = _ctx.StringValue("GetMetaDBInfo.Data.Name");
 			data.Type = _ctx.StringValue("GetMetaDBInfo.Data.Type");
 			data.Comment = _ctx.StringValue("GetMetaDBInfo.Data.Comment");
-			data.Location = _ctx.StringValue("GetMetaDBInfo.Data.Location");
+			data.CreateTime = _ctx.LongValue("GetMetaDBInfo.Data.CreateTime");
+			data.ProjectId = _ctx.LongValue("GetMetaDBInfo.Data.ProjectId");
+			data.ProjectName = _ctx.StringValue("GetMetaDBInfo.Data.ProjectName");
+			data.AppGuid = _ctx.StringValue("GetMetaDBInfo.Data.AppGuid");
+			data.OwnerName = _ctx.StringValue("GetMetaDBInfo.Data.OwnerName");
+			data.OwnerId = _ctx.StringValue("GetMetaDBInfo.Data.OwnerId");
+			data.EnvType = _ctx.IntegerValue("GetMetaDBInfo.Data.EnvType");
+			data.ProjectNameCn = _ctx.StringValue("GetMetaDBInfo.Data.ProjectNameCn");
+			data.Endpoint = _ctx.StringValue("GetMetaDBInfo.Data.Endpoint");
 			data.ClusterBizId = _ctx.StringValue("GetMetaDBInfo.Data.ClusterBizId");
+			data.Name = _ctx.StringValue("GetMetaDBInfo.Data.Name");
+			data.Location = _ctx.StringValue("GetMetaDBInfo.Data.Location");
+			data.TenantId = _ctx.LongValue("GetMetaDBInfo.Data.TenantId");
+			data.ModifyTime = _ctx.LongValue("GetMetaDBInfo.Data.ModifyTime");
 			getMetaDBInfoResponse.Data = data;
         
 			return getMetaDBInfoResponse;

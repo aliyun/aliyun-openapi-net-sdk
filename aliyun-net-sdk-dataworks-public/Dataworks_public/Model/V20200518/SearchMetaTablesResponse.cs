@@ -25,39 +25,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class SearchMetaTablesResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string errorCode;
+		private int? httpStatusCode;
 
 		private string errorMessage;
 
-		private int? httpStatusCode;
+		private string requestId;
 
 		private bool? success;
 
+		private string errorCode;
+
 		private SearchMetaTables_Data data;
 
-		public string RequestId
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return requestId;
+				return httpStatusCode;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				httpStatusCode = value;
 			}
 		}
 
@@ -73,15 +61,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? HttpStatusCode
+		public string RequestId
 		{
 			get
 			{
-				return httpStatusCode;
+				return requestId;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				requestId = value;
 			}
 		}
 
@@ -94,6 +82,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 
@@ -173,23 +173,23 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private string tableName;
 
+				private string databaseName;
+
+				private int? entityType;
+
+				private string projectName;
+
+				private long? projectId;
+
 				private string tableGuid;
 
 				private string ownerId;
 
-				private long? tenantId;
+				private string clusterId;
 
 				private int? envType;
 
-				private int? entityType;
-
-				private long? projectId;
-
-				private string projectName;
-
-				private string clusterId;
-
-				private string databaseName;
+				private long? tenantId;
 
 				public string TableName
 				{
@@ -200,6 +200,54 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						tableName = value;
+					}
+				}
+
+				public string DatabaseName
+				{
+					get
+					{
+						return databaseName;
+					}
+					set	
+					{
+						databaseName = value;
+					}
+				}
+
+				public int? EntityType
+				{
+					get
+					{
+						return entityType;
+					}
+					set	
+					{
+						entityType = value;
+					}
+				}
+
+				public string ProjectName
+				{
+					get
+					{
+						return projectName;
+					}
+					set	
+					{
+						projectName = value;
+					}
+				}
+
+				public long? ProjectId
+				{
+					get
+					{
+						return projectId;
+					}
+					set	
+					{
+						projectId = value;
 					}
 				}
 
@@ -227,15 +275,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public long? TenantId
+				public string ClusterId
 				{
 					get
 					{
-						return tenantId;
+						return clusterId;
 					}
 					set	
 					{
-						tenantId = value;
+						clusterId = value;
 					}
 				}
 
@@ -251,63 +299,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public int? EntityType
+				public long? TenantId
 				{
 					get
 					{
-						return entityType;
+						return tenantId;
 					}
 					set	
 					{
-						entityType = value;
-					}
-				}
-
-				public long? ProjectId
-				{
-					get
-					{
-						return projectId;
-					}
-					set	
-					{
-						projectId = value;
-					}
-				}
-
-				public string ProjectName
-				{
-					get
-					{
-						return projectName;
-					}
-					set	
-					{
-						projectName = value;
-					}
-				}
-
-				public string ClusterId
-				{
-					get
-					{
-						return clusterId;
-					}
-					set	
-					{
-						clusterId = value;
-					}
-				}
-
-				public string DatabaseName
-				{
-					get
-					{
-						return databaseName;
-					}
-					set	
-					{
-						databaseName = value;
+						tenantId = value;
 					}
 				}
 			}

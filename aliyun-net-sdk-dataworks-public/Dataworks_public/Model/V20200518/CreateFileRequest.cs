@@ -51,7 +51,11 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private long? resourceGroupId;
 
+		private bool? startImmediately;
+
 		private long? projectId;
+
+		private string advancedSettings;
 
 		private long? startEffectDate;
 
@@ -156,6 +160,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public bool? StartImmediately
+		{
+			get
+			{
+				return startImmediately;
+			}
+			set	
+			{
+				startImmediately = value;
+				DictionaryUtil.Add(BodyParameters, "StartImmediately", value.ToString());
+			}
+		}
+
 		public long? ProjectId
 		{
 			get
@@ -166,6 +183,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				projectId = value;
 				DictionaryUtil.Add(BodyParameters, "ProjectId", value.ToString());
+			}
+		}
+
+		public string AdvancedSettings
+		{
+			get
+			{
+				return advancedSettings;
+			}
+			set	
+			{
+				advancedSettings = value;
+				DictionaryUtil.Add(BodyParameters, "AdvancedSettings", value);
 			}
 		}
 

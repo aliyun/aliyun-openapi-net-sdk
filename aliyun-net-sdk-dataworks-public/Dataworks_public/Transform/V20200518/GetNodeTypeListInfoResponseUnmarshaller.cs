@@ -41,8 +41,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<GetNodeTypeListInfoResponse.GetNodeTypeListInfo_NodeTypeInfoList.GetNodeTypeListInfo_NodeTypeInfoItem> nodeTypeInfoList_nodeTypeInfo = new List<GetNodeTypeListInfoResponse.GetNodeTypeListInfo_NodeTypeInfoList.GetNodeTypeListInfo_NodeTypeInfoItem>();
 			for (int i = 0; i < _ctx.Length("GetNodeTypeListInfo.NodeTypeInfoList.NodeTypeInfo.Length"); i++) {
 				GetNodeTypeListInfoResponse.GetNodeTypeListInfo_NodeTypeInfoList.GetNodeTypeListInfo_NodeTypeInfoItem nodeTypeInfoItem = new GetNodeTypeListInfoResponse.GetNodeTypeListInfo_NodeTypeInfoList.GetNodeTypeListInfo_NodeTypeInfoItem();
-				nodeTypeInfoItem.NodeType = _ctx.IntegerValue("GetNodeTypeListInfo.NodeTypeInfoList.NodeTypeInfo["+ i +"].NodeType");
 				nodeTypeInfoItem.NodeTypeName = _ctx.StringValue("GetNodeTypeListInfo.NodeTypeInfoList.NodeTypeInfo["+ i +"].NodeTypeName");
+				nodeTypeInfoItem.NodeType = _ctx.IntegerValue("GetNodeTypeListInfo.NodeTypeInfoList.NodeTypeInfo["+ i +"].NodeType");
 
 				nodeTypeInfoList_nodeTypeInfo.Add(nodeTypeInfoItem);
 			}

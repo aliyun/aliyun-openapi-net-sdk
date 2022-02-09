@@ -25,17 +25,41 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class SubmitFileResponse : AcsResponse
 	{
 
+		private int? httpStatusCode;
+
+		private long? data;
+
 		private string requestId;
+
+		private string errorMessage;
 
 		private bool? success;
 
 		private string errorCode;
 
-		private string errorMessage;
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
 
-		private long? data;
-
-		private int? httpStatusCode;
+		public long? Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -46,6 +70,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
 			}
 		}
 
@@ -70,42 +106,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
-		public long? Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
 			}
 		}
 	}

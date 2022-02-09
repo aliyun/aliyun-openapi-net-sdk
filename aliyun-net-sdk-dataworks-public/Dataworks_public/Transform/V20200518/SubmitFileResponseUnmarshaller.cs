@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			SubmitFileResponse submitFileResponse = new SubmitFileResponse();
 
 			submitFileResponse.HttpResponse = _ctx.HttpResponse;
+			submitFileResponse.HttpStatusCode = _ctx.IntegerValue("SubmitFile.HttpStatusCode");
+			submitFileResponse.Data = _ctx.LongValue("SubmitFile.Data");
 			submitFileResponse.RequestId = _ctx.StringValue("SubmitFile.RequestId");
+			submitFileResponse.ErrorMessage = _ctx.StringValue("SubmitFile.ErrorMessage");
 			submitFileResponse.Success = _ctx.BooleanValue("SubmitFile.Success");
 			submitFileResponse.ErrorCode = _ctx.StringValue("SubmitFile.ErrorCode");
-			submitFileResponse.ErrorMessage = _ctx.StringValue("SubmitFile.ErrorMessage");
-			submitFileResponse.Data = _ctx.LongValue("SubmitFile.Data");
-			submitFileResponse.HttpStatusCode = _ctx.IntegerValue("SubmitFile.HttpStatusCode");
         
 			return submitFileResponse;
         }

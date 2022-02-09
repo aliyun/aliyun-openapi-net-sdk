@@ -25,53 +25,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class ListNodeIOResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errorCode;
-
-		private string errorMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
+		private string errorMessage;
+
+		private string errorCode;
+
+		private bool? success;
+
 		private List<ListNodeIO_DataItem> data;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -94,6 +58,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 

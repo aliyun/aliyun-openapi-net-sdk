@@ -25,39 +25,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetMetaTableBasicInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string errorCode;
+		private int? httpStatusCode;
 
 		private string errorMessage;
 
-		private int? httpStatusCode;
+		private string requestId;
 
 		private bool? success;
 
+		private string errorCode;
+
 		private GetMetaTableBasicInfo_Data data;
 
-		public string RequestId
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return requestId;
+				return httpStatusCode;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				httpStatusCode = value;
 			}
 		}
 
@@ -73,15 +61,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? HttpStatusCode
+		public string RequestId
 		{
 			get
 			{
-				return httpStatusCode;
+				return requestId;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				requestId = value;
 			}
 		}
 
@@ -94,6 +82,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 
@@ -114,55 +114,55 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private string tableName;
 
-			private string tableGuid;
-
-			private string ownerId;
-
-			private long? tenantId;
-
-			private long? projectId;
-
-			private long? createTime;
-
-			private long? lastModifyTime;
-
-			private int? lifeCycle;
-
-			private int? isVisible;
-
-			private long? lastDdlTime;
-
-			private long? lastAccessTime;
-
-			private int? envType;
-
-			private long? dataSize;
+			private long? favoriteCount;
 
 			private string comment;
 
-			private string projectName;
+			private int? columnCount;
+
+			private long? createTime;
+
+			private long? projectId;
+
+			private string ownerId;
+
+			private int? envType;
 
 			private string databaseName;
+
+			private int? isVisible;
+
+			private string tableGuid;
+
+			private long? readCount;
+
+			private string clusterId;
+
+			private bool? isPartitionTable;
+
+			private bool? isView;
+
+			private int? lifeCycle;
+
+			private string projectName;
+
+			private long? viewCount;
+
+			private long? lastAccessTime;
+
+			private long? dataSize;
+
+			private long? lastModifyTime;
+
+			private long? lastDdlTime;
 
 			private string partitionKeys;
 
 			private string location;
 
-			private string clusterId;
-
 			private string caption;
 
-			private bool? isPartitionTable;
-
-			private long? readCount;
-
-			private long? viewCount;
-
-			private long? favoriteCount;
-
-			private bool? isView;
-
-			private int? columnCount;
+			private long? tenantId;
 
 			public string TableName
 			{
@@ -176,147 +176,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string TableGuid
+			public long? FavoriteCount
 			{
 				get
 				{
-					return tableGuid;
+					return favoriteCount;
 				}
 				set	
 				{
-					tableGuid = value;
-				}
-			}
-
-			public string OwnerId
-			{
-				get
-				{
-					return ownerId;
-				}
-				set	
-				{
-					ownerId = value;
-				}
-			}
-
-			public long? TenantId
-			{
-				get
-				{
-					return tenantId;
-				}
-				set	
-				{
-					tenantId = value;
-				}
-			}
-
-			public long? ProjectId
-			{
-				get
-				{
-					return projectId;
-				}
-				set	
-				{
-					projectId = value;
-				}
-			}
-
-			public long? CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public long? LastModifyTime
-			{
-				get
-				{
-					return lastModifyTime;
-				}
-				set	
-				{
-					lastModifyTime = value;
-				}
-			}
-
-			public int? LifeCycle
-			{
-				get
-				{
-					return lifeCycle;
-				}
-				set	
-				{
-					lifeCycle = value;
-				}
-			}
-
-			public int? IsVisible
-			{
-				get
-				{
-					return isVisible;
-				}
-				set	
-				{
-					isVisible = value;
-				}
-			}
-
-			public long? LastDdlTime
-			{
-				get
-				{
-					return lastDdlTime;
-				}
-				set	
-				{
-					lastDdlTime = value;
-				}
-			}
-
-			public long? LastAccessTime
-			{
-				get
-				{
-					return lastAccessTime;
-				}
-				set	
-				{
-					lastAccessTime = value;
-				}
-			}
-
-			public int? EnvType
-			{
-				get
-				{
-					return envType;
-				}
-				set	
-				{
-					envType = value;
-				}
-			}
-
-			public long? DataSize
-			{
-				get
-				{
-					return dataSize;
-				}
-				set	
-				{
-					dataSize = value;
+					favoriteCount = value;
 				}
 			}
 
@@ -332,15 +200,63 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string ProjectName
+			public int? ColumnCount
 			{
 				get
 				{
-					return projectName;
+					return columnCount;
 				}
 				set	
 				{
-					projectName = value;
+					columnCount = value;
+				}
+			}
+
+			public long? CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public long? ProjectId
+			{
+				get
+				{
+					return projectId;
+				}
+				set	
+				{
+					projectId = value;
+				}
+			}
+
+			public string OwnerId
+			{
+				get
+				{
+					return ownerId;
+				}
+				set	
+				{
+					ownerId = value;
+				}
+			}
+
+			public int? EnvType
+			{
+				get
+				{
+					return envType;
+				}
+				set	
+				{
+					envType = value;
 				}
 			}
 
@@ -353,6 +269,162 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					databaseName = value;
+				}
+			}
+
+			public int? IsVisible
+			{
+				get
+				{
+					return isVisible;
+				}
+				set	
+				{
+					isVisible = value;
+				}
+			}
+
+			public string TableGuid
+			{
+				get
+				{
+					return tableGuid;
+				}
+				set	
+				{
+					tableGuid = value;
+				}
+			}
+
+			public long? ReadCount
+			{
+				get
+				{
+					return readCount;
+				}
+				set	
+				{
+					readCount = value;
+				}
+			}
+
+			public string ClusterId
+			{
+				get
+				{
+					return clusterId;
+				}
+				set	
+				{
+					clusterId = value;
+				}
+			}
+
+			public bool? IsPartitionTable
+			{
+				get
+				{
+					return isPartitionTable;
+				}
+				set	
+				{
+					isPartitionTable = value;
+				}
+			}
+
+			public bool? IsView
+			{
+				get
+				{
+					return isView;
+				}
+				set	
+				{
+					isView = value;
+				}
+			}
+
+			public int? LifeCycle
+			{
+				get
+				{
+					return lifeCycle;
+				}
+				set	
+				{
+					lifeCycle = value;
+				}
+			}
+
+			public string ProjectName
+			{
+				get
+				{
+					return projectName;
+				}
+				set	
+				{
+					projectName = value;
+				}
+			}
+
+			public long? ViewCount
+			{
+				get
+				{
+					return viewCount;
+				}
+				set	
+				{
+					viewCount = value;
+				}
+			}
+
+			public long? LastAccessTime
+			{
+				get
+				{
+					return lastAccessTime;
+				}
+				set	
+				{
+					lastAccessTime = value;
+				}
+			}
+
+			public long? DataSize
+			{
+				get
+				{
+					return dataSize;
+				}
+				set	
+				{
+					dataSize = value;
+				}
+			}
+
+			public long? LastModifyTime
+			{
+				get
+				{
+					return lastModifyTime;
+				}
+				set	
+				{
+					lastModifyTime = value;
+				}
+			}
+
+			public long? LastDdlTime
+			{
+				get
+				{
+					return lastDdlTime;
+				}
+				set	
+				{
+					lastDdlTime = value;
 				}
 			}
 
@@ -380,18 +452,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string ClusterId
-			{
-				get
-				{
-					return clusterId;
-				}
-				set	
-				{
-					clusterId = value;
-				}
-			}
-
 			public string Caption
 			{
 				get
@@ -404,75 +464,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public bool? IsPartitionTable
+			public long? TenantId
 			{
 				get
 				{
-					return isPartitionTable;
+					return tenantId;
 				}
 				set	
 				{
-					isPartitionTable = value;
-				}
-			}
-
-			public long? ReadCount
-			{
-				get
-				{
-					return readCount;
-				}
-				set	
-				{
-					readCount = value;
-				}
-			}
-
-			public long? ViewCount
-			{
-				get
-				{
-					return viewCount;
-				}
-				set	
-				{
-					viewCount = value;
-				}
-			}
-
-			public long? FavoriteCount
-			{
-				get
-				{
-					return favoriteCount;
-				}
-				set	
-				{
-					favoriteCount = value;
-				}
-			}
-
-			public bool? IsView
-			{
-				get
-				{
-					return isView;
-				}
-				set	
-				{
-					isView = value;
-				}
-			}
-
-			public int? ColumnCount
-			{
-				get
-				{
-					return columnCount;
-				}
-				set	
-				{
-					columnCount = value;
+					tenantId = value;
 				}
 			}
 		}

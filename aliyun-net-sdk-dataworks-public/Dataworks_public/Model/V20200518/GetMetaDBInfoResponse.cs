@@ -56,181 +56,37 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetMetaDBInfo_Data
 		{
 
-			private string appGuid;
-
-			private long? tenantId;
-
-			private string endpoint;
-
-			private long? projectId;
-
-			private int? envType;
-
-			private string projectName;
-
-			private string projectNameCn;
-
-			private long? createTime;
-
-			private long? modifyTime;
-
-			private string ownerId;
-
-			private string ownerName;
-
-			private string name;
-
 			private string type;
 
 			private string comment;
 
-			private string location;
+			private long? createTime;
+
+			private long? projectId;
+
+			private string projectName;
+
+			private string appGuid;
+
+			private string ownerName;
+
+			private string ownerId;
+
+			private int? envType;
+
+			private string projectNameCn;
+
+			private string endpoint;
 
 			private string clusterBizId;
 
-			public string AppGuid
-			{
-				get
-				{
-					return appGuid;
-				}
-				set	
-				{
-					appGuid = value;
-				}
-			}
+			private string name;
 
-			public long? TenantId
-			{
-				get
-				{
-					return tenantId;
-				}
-				set	
-				{
-					tenantId = value;
-				}
-			}
+			private string location;
 
-			public string Endpoint
-			{
-				get
-				{
-					return endpoint;
-				}
-				set	
-				{
-					endpoint = value;
-				}
-			}
+			private long? tenantId;
 
-			public long? ProjectId
-			{
-				get
-				{
-					return projectId;
-				}
-				set	
-				{
-					projectId = value;
-				}
-			}
-
-			public int? EnvType
-			{
-				get
-				{
-					return envType;
-				}
-				set	
-				{
-					envType = value;
-				}
-			}
-
-			public string ProjectName
-			{
-				get
-				{
-					return projectName;
-				}
-				set	
-				{
-					projectName = value;
-				}
-			}
-
-			public string ProjectNameCn
-			{
-				get
-				{
-					return projectNameCn;
-				}
-				set	
-				{
-					projectNameCn = value;
-				}
-			}
-
-			public long? CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public long? ModifyTime
-			{
-				get
-				{
-					return modifyTime;
-				}
-				set	
-				{
-					modifyTime = value;
-				}
-			}
-
-			public string OwnerId
-			{
-				get
-				{
-					return ownerId;
-				}
-				set	
-				{
-					ownerId = value;
-				}
-			}
-
-			public string OwnerName
-			{
-				get
-				{
-					return ownerName;
-				}
-				set	
-				{
-					ownerName = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private long? modifyTime;
 
 			public string Type
 			{
@@ -256,15 +112,111 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string Location
+			public long? CreateTime
 			{
 				get
 				{
-					return location;
+					return createTime;
 				}
 				set	
 				{
-					location = value;
+					createTime = value;
+				}
+			}
+
+			public long? ProjectId
+			{
+				get
+				{
+					return projectId;
+				}
+				set	
+				{
+					projectId = value;
+				}
+			}
+
+			public string ProjectName
+			{
+				get
+				{
+					return projectName;
+				}
+				set	
+				{
+					projectName = value;
+				}
+			}
+
+			public string AppGuid
+			{
+				get
+				{
+					return appGuid;
+				}
+				set	
+				{
+					appGuid = value;
+				}
+			}
+
+			public string OwnerName
+			{
+				get
+				{
+					return ownerName;
+				}
+				set	
+				{
+					ownerName = value;
+				}
+			}
+
+			public string OwnerId
+			{
+				get
+				{
+					return ownerId;
+				}
+				set	
+				{
+					ownerId = value;
+				}
+			}
+
+			public int? EnvType
+			{
+				get
+				{
+					return envType;
+				}
+				set	
+				{
+					envType = value;
+				}
+			}
+
+			public string ProjectNameCn
+			{
+				get
+				{
+					return projectNameCn;
+				}
+				set	
+				{
+					projectNameCn = value;
+				}
+			}
+
+			public string Endpoint
+			{
+				get
+				{
+					return endpoint;
+				}
+				set	
+				{
+					endpoint = value;
 				}
 			}
 
@@ -277,6 +229,54 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					clusterBizId = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string Location
+			{
+				get
+				{
+					return location;
+				}
+				set	
+				{
+					location = value;
+				}
+			}
+
+			public long? TenantId
+			{
+				get
+				{
+					return tenantId;
+				}
+				set	
+				{
+					tenantId = value;
+				}
+			}
+
+			public long? ModifyTime
+			{
+				get
+				{
+					return modifyTime;
+				}
+				set	
+				{
+					modifyTime = value;
 				}
 			}
 		}

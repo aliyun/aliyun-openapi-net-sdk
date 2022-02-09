@@ -25,39 +25,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetMetaTableFullInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string errorCode;
+		private int? httpStatusCode;
 
 		private string errorMessage;
 
-		private int? httpStatusCode;
+		private string requestId;
 
 		private bool? success;
 
+		private string errorCode;
+
 		private GetMetaTableFullInfo_Data data;
 
-		public string RequestId
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return requestId;
+				return httpStatusCode;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				httpStatusCode = value;
 			}
 		}
 
@@ -73,15 +61,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? HttpStatusCode
+		public string RequestId
 		{
 			get
 			{
-				return httpStatusCode;
+				return requestId;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				requestId = value;
 			}
 		}
 
@@ -94,6 +82,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 
@@ -114,43 +114,43 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private string tableName;
 
-			private string tableGuid;
-
-			private string ownerId;
-
-			private long? tenantId;
-
-			private long? projectId;
-
-			private long? createTime;
-
-			private long? lastModifyTime;
+			private string comment;
 
 			private int? lifeCycle;
 
-			private int? isVisible;
+			private long? createTime;
 
 			private string projectName;
 
-			private long? dataSize;
+			private long? projectId;
+
+			private string ownerId;
 
 			private int? envType;
 
-			private string comment;
-
-			private long? totalColumnCount;
-
-			private long? lastDdlTime;
-
 			private long? lastAccessTime;
+
+			private long? dataSize;
+
+			private long? lastModifyTime;
 
 			private string databaseName;
 
+			private int? isVisible;
+
+			private long? totalColumnCount;
+
+			private string tableGuid;
+
 			private string partitionKeys;
+
+			private long? lastDdlTime;
 
 			private string location;
 
 			private string clusterId;
+
+			private long? tenantId;
 
 			private List<GetMetaTableFullInfo_ColumnListItem> columnList;
 
@@ -166,75 +166,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string TableGuid
+			public string Comment
 			{
 				get
 				{
-					return tableGuid;
+					return comment;
 				}
 				set	
 				{
-					tableGuid = value;
-				}
-			}
-
-			public string OwnerId
-			{
-				get
-				{
-					return ownerId;
-				}
-				set	
-				{
-					ownerId = value;
-				}
-			}
-
-			public long? TenantId
-			{
-				get
-				{
-					return tenantId;
-				}
-				set	
-				{
-					tenantId = value;
-				}
-			}
-
-			public long? ProjectId
-			{
-				get
-				{
-					return projectId;
-				}
-				set	
-				{
-					projectId = value;
-				}
-			}
-
-			public long? CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public long? LastModifyTime
-			{
-				get
-				{
-					return lastModifyTime;
-				}
-				set	
-				{
-					lastModifyTime = value;
+					comment = value;
 				}
 			}
 
@@ -250,15 +190,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public int? IsVisible
+			public long? CreateTime
 			{
 				get
 				{
-					return isVisible;
+					return createTime;
 				}
 				set	
 				{
-					isVisible = value;
+					createTime = value;
 				}
 			}
 
@@ -274,15 +214,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public long? DataSize
+			public long? ProjectId
 			{
 				get
 				{
-					return dataSize;
+					return projectId;
 				}
 				set	
 				{
-					dataSize = value;
+					projectId = value;
+				}
+			}
+
+			public string OwnerId
+			{
+				get
+				{
+					return ownerId;
+				}
+				set	
+				{
+					ownerId = value;
 				}
 			}
 
@@ -298,42 +250,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string Comment
-			{
-				get
-				{
-					return comment;
-				}
-				set	
-				{
-					comment = value;
-				}
-			}
-
-			public long? TotalColumnCount
-			{
-				get
-				{
-					return totalColumnCount;
-				}
-				set	
-				{
-					totalColumnCount = value;
-				}
-			}
-
-			public long? LastDdlTime
-			{
-				get
-				{
-					return lastDdlTime;
-				}
-				set	
-				{
-					lastDdlTime = value;
-				}
-			}
-
 			public long? LastAccessTime
 			{
 				get
@@ -343,6 +259,30 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					lastAccessTime = value;
+				}
+			}
+
+			public long? DataSize
+			{
+				get
+				{
+					return dataSize;
+				}
+				set	
+				{
+					dataSize = value;
+				}
+			}
+
+			public long? LastModifyTime
+			{
+				get
+				{
+					return lastModifyTime;
+				}
+				set	
+				{
+					lastModifyTime = value;
 				}
 			}
 
@@ -358,6 +298,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
+			public int? IsVisible
+			{
+				get
+				{
+					return isVisible;
+				}
+				set	
+				{
+					isVisible = value;
+				}
+			}
+
+			public long? TotalColumnCount
+			{
+				get
+				{
+					return totalColumnCount;
+				}
+				set	
+				{
+					totalColumnCount = value;
+				}
+			}
+
+			public string TableGuid
+			{
+				get
+				{
+					return tableGuid;
+				}
+				set	
+				{
+					tableGuid = value;
+				}
+			}
+
 			public string PartitionKeys
 			{
 				get
@@ -367,6 +343,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					partitionKeys = value;
+				}
+			}
+
+			public long? LastDdlTime
+			{
+				get
+				{
+					return lastDdlTime;
+				}
+				set	
+				{
+					lastDdlTime = value;
 				}
 			}
 
@@ -394,6 +382,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
+			public long? TenantId
+			{
+				get
+				{
+					return tenantId;
+				}
+				set	
+				{
+					tenantId = value;
+				}
+			}
+
 			public List<GetMetaTableFullInfo_ColumnListItem> ColumnList
 			{
 				get
@@ -409,23 +409,35 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetMetaTableFullInfo_ColumnListItem
 			{
 
+				private string columnName;
+
 				private string columnGuid;
 
-				private string columnName;
+				private bool? isPartitionColumn;
+
+				private string comment;
 
 				private string columnType;
 
 				private bool? isPrimaryKey;
 
-				private string comment;
-
-				private bool? isPartitionColumn;
-
-				private bool? isForeignKey;
+				private int? position;
 
 				private string caption;
 
-				private int? position;
+				private bool? isForeignKey;
+
+				public string ColumnName
+				{
+					get
+					{
+						return columnName;
+					}
+					set	
+					{
+						columnName = value;
+					}
+				}
 
 				public string ColumnGuid
 				{
@@ -439,15 +451,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string ColumnName
+				public bool? IsPartitionColumn
 				{
 					get
 					{
-						return columnName;
+						return isPartitionColumn;
 					}
 					set	
 					{
-						columnName = value;
+						isPartitionColumn = value;
+					}
+				}
+
+				public string Comment
+				{
+					get
+					{
+						return comment;
+					}
+					set	
+					{
+						comment = value;
 					}
 				}
 
@@ -475,39 +499,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string Comment
+				public int? Position
 				{
 					get
 					{
-						return comment;
+						return position;
 					}
 					set	
 					{
-						comment = value;
-					}
-				}
-
-				public bool? IsPartitionColumn
-				{
-					get
-					{
-						return isPartitionColumn;
-					}
-					set	
-					{
-						isPartitionColumn = value;
-					}
-				}
-
-				public bool? IsForeignKey
-				{
-					get
-					{
-						return isForeignKey;
-					}
-					set	
-					{
-						isForeignKey = value;
+						position = value;
 					}
 				}
 
@@ -523,15 +523,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public int? Position
+				public bool? IsForeignKey
 				{
 					get
 					{
-						return position;
+						return isForeignKey;
 					}
 					set	
 					{
-						position = value;
+						isForeignKey = value;
 					}
 				}
 			}

@@ -25,21 +25,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class CreateManualDagResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? dagId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public long? DagId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				dagId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

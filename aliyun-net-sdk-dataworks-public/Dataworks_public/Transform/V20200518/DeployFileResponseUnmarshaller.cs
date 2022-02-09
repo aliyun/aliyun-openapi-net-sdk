@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			DeployFileResponse deployFileResponse = new DeployFileResponse();
 
 			deployFileResponse.HttpResponse = _ctx.HttpResponse;
+			deployFileResponse.HttpStatusCode = _ctx.IntegerValue("DeployFile.HttpStatusCode");
+			deployFileResponse.Data = _ctx.LongValue("DeployFile.Data");
 			deployFileResponse.RequestId = _ctx.StringValue("DeployFile.RequestId");
+			deployFileResponse.ErrorMessage = _ctx.StringValue("DeployFile.ErrorMessage");
 			deployFileResponse.Success = _ctx.BooleanValue("DeployFile.Success");
 			deployFileResponse.ErrorCode = _ctx.StringValue("DeployFile.ErrorCode");
-			deployFileResponse.ErrorMessage = _ctx.StringValue("DeployFile.ErrorMessage");
-			deployFileResponse.Data = _ctx.LongValue("DeployFile.Data");
-			deployFileResponse.HttpStatusCode = _ctx.IntegerValue("DeployFile.HttpStatusCode");
         
 			return deployFileResponse;
         }

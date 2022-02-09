@@ -185,6 +185,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private long? nodeId;
 
+				private string advancedSettings;
+
 				public int? CommitStatus
 				{
 					get
@@ -436,6 +438,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 						nodeId = value;
 					}
 				}
+
+				public string AdvancedSettings
+				{
+					get
+					{
+						return advancedSettings;
+					}
+					set	
+					{
+						advancedSettings = value;
+					}
+				}
 			}
 
 			public class GetFile_NodeConfiguration
@@ -466,6 +480,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				private int? autoRerunIntervalMillis;
 
 				private string cronExpress;
+
+				private bool? startImmediately;
 
 				private List<GetFile_NodeInputOutput> inputList;
 
@@ -624,6 +640,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						cronExpress = value;
+					}
+				}
+
+				public bool? StartImmediately
+				{
+					get
+					{
+						return startImmediately;
+					}
+					set	
+					{
+						startImmediately = value;
 					}
 				}
 

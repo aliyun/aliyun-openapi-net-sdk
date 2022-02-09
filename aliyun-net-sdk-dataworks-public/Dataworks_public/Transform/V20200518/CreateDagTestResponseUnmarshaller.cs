@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			CreateDagTestResponse createDagTestResponse = new CreateDagTestResponse();
 
 			createDagTestResponse.HttpResponse = _ctx.HttpResponse;
-			createDagTestResponse.ErrorCode = _ctx.StringValue("CreateDagTest.ErrorCode");
-			createDagTestResponse.ErrorMessage = _ctx.StringValue("CreateDagTest.ErrorMessage");
 			createDagTestResponse.HttpStatusCode = _ctx.IntegerValue("CreateDagTest.HttpStatusCode");
-			createDagTestResponse.RequestId = _ctx.StringValue("CreateDagTest.RequestId");
-			createDagTestResponse.Success = _ctx.BooleanValue("CreateDagTest.Success");
 			createDagTestResponse.Data = _ctx.LongValue("CreateDagTest.Data");
+			createDagTestResponse.ErrorMessage = _ctx.StringValue("CreateDagTest.ErrorMessage");
+			createDagTestResponse.RequestId = _ctx.StringValue("CreateDagTest.RequestId");
+			createDagTestResponse.ErrorCode = _ctx.StringValue("CreateDagTest.ErrorCode");
+			createDagTestResponse.Success = _ctx.BooleanValue("CreateDagTest.Success");
         
 			return createDagTestResponse;
         }

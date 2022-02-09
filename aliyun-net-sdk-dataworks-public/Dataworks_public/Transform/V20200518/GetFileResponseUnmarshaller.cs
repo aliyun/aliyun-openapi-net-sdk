@@ -61,6 +61,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			file.LastEditTime = _ctx.LongValue("GetFile.Data.File.LastEditTime");
 			file.Content = _ctx.StringValue("GetFile.Data.File.Content");
 			file.NodeId = _ctx.LongValue("GetFile.Data.File.NodeId");
+			file.AdvancedSettings = _ctx.StringValue("GetFile.Data.File.AdvancedSettings");
 			data.File = file;
 
 			GetFileResponse.GetFile_Data.GetFile_NodeConfiguration nodeConfiguration = new GetFileResponse.GetFile_Data.GetFile_NodeConfiguration();
@@ -77,6 +78,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			nodeConfiguration.AutoRerunTimes = _ctx.IntegerValue("GetFile.Data.NodeConfiguration.AutoRerunTimes");
 			nodeConfiguration.AutoRerunIntervalMillis = _ctx.IntegerValue("GetFile.Data.NodeConfiguration.AutoRerunIntervalMillis");
 			nodeConfiguration.CronExpress = _ctx.StringValue("GetFile.Data.NodeConfiguration.CronExpress");
+			nodeConfiguration.StartImmediately = _ctx.BooleanValue("GetFile.Data.NodeConfiguration.StartImmediately");
 
 			List<GetFileResponse.GetFile_Data.GetFile_NodeConfiguration.GetFile_NodeInputOutput> nodeConfiguration_inputList = new List<GetFileResponse.GetFile_Data.GetFile_NodeConfiguration.GetFile_NodeInputOutput>();
 			for (int i = 0; i < _ctx.Length("GetFile.Data.NodeConfiguration.InputList.Length"); i++) {

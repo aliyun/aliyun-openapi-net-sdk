@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			SearchMetaTablesResponse searchMetaTablesResponse = new SearchMetaTablesResponse();
 
 			searchMetaTablesResponse.HttpResponse = _ctx.HttpResponse;
-			searchMetaTablesResponse.RequestId = _ctx.StringValue("SearchMetaTables.RequestId");
-			searchMetaTablesResponse.ErrorCode = _ctx.StringValue("SearchMetaTables.ErrorCode");
-			searchMetaTablesResponse.ErrorMessage = _ctx.StringValue("SearchMetaTables.ErrorMessage");
 			searchMetaTablesResponse.HttpStatusCode = _ctx.IntegerValue("SearchMetaTables.HttpStatusCode");
+			searchMetaTablesResponse.ErrorMessage = _ctx.StringValue("SearchMetaTables.ErrorMessage");
+			searchMetaTablesResponse.RequestId = _ctx.StringValue("SearchMetaTables.RequestId");
 			searchMetaTablesResponse.Success = _ctx.BooleanValue("SearchMetaTables.Success");
+			searchMetaTablesResponse.ErrorCode = _ctx.StringValue("SearchMetaTables.ErrorCode");
 
 			SearchMetaTablesResponse.SearchMetaTables_Data data = new SearchMetaTablesResponse.SearchMetaTables_Data();
 			data.PageNumber = _ctx.IntegerValue("SearchMetaTables.Data.PageNumber");
@@ -46,15 +46,15 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			for (int i = 0; i < _ctx.Length("SearchMetaTables.Data.DataEntityList.Length"); i++) {
 				SearchMetaTablesResponse.SearchMetaTables_Data.SearchMetaTables_DataEntityListItem dataEntityListItem = new SearchMetaTablesResponse.SearchMetaTables_Data.SearchMetaTables_DataEntityListItem();
 				dataEntityListItem.TableName = _ctx.StringValue("SearchMetaTables.Data.DataEntityList["+ i +"].TableName");
+				dataEntityListItem.DatabaseName = _ctx.StringValue("SearchMetaTables.Data.DataEntityList["+ i +"].DatabaseName");
+				dataEntityListItem.EntityType = _ctx.IntegerValue("SearchMetaTables.Data.DataEntityList["+ i +"].EntityType");
+				dataEntityListItem.ProjectName = _ctx.StringValue("SearchMetaTables.Data.DataEntityList["+ i +"].ProjectName");
+				dataEntityListItem.ProjectId = _ctx.LongValue("SearchMetaTables.Data.DataEntityList["+ i +"].ProjectId");
 				dataEntityListItem.TableGuid = _ctx.StringValue("SearchMetaTables.Data.DataEntityList["+ i +"].TableGuid");
 				dataEntityListItem.OwnerId = _ctx.StringValue("SearchMetaTables.Data.DataEntityList["+ i +"].OwnerId");
-				dataEntityListItem.TenantId = _ctx.LongValue("SearchMetaTables.Data.DataEntityList["+ i +"].TenantId");
-				dataEntityListItem.EnvType = _ctx.IntegerValue("SearchMetaTables.Data.DataEntityList["+ i +"].EnvType");
-				dataEntityListItem.EntityType = _ctx.IntegerValue("SearchMetaTables.Data.DataEntityList["+ i +"].EntityType");
-				dataEntityListItem.ProjectId = _ctx.LongValue("SearchMetaTables.Data.DataEntityList["+ i +"].ProjectId");
-				dataEntityListItem.ProjectName = _ctx.StringValue("SearchMetaTables.Data.DataEntityList["+ i +"].ProjectName");
 				dataEntityListItem.ClusterId = _ctx.StringValue("SearchMetaTables.Data.DataEntityList["+ i +"].ClusterId");
-				dataEntityListItem.DatabaseName = _ctx.StringValue("SearchMetaTables.Data.DataEntityList["+ i +"].DatabaseName");
+				dataEntityListItem.EnvType = _ctx.IntegerValue("SearchMetaTables.Data.DataEntityList["+ i +"].EnvType");
+				dataEntityListItem.TenantId = _ctx.LongValue("SearchMetaTables.Data.DataEntityList["+ i +"].TenantId");
 
 				data_dataEntityList.Add(dataEntityListItem);
 			}

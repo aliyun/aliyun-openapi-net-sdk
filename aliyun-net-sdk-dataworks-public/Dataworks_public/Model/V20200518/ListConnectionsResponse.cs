@@ -27,9 +27,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private int? httpStatusCode;
 
-		private bool? success;
-
 		private string requestId;
+
+		private bool? success;
 
 		private ListConnections_Data data;
 
@@ -45,18 +45,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
 		public string RequestId
 		{
 			get
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -143,51 +143,87 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class ListConnections_ConnectionsItem
 			{
 
-				private bool? shared;
+				private int? status;
+
+				private string connectionType;
+
+				private int? projectId;
+
+				private string subType;
 
 				private string gmtModified;
 
+				private int? envType;
+
 				private int? connectStatus;
 
-				private int? bindingCalcEngineId;
+				private int? sequence;
 
 				private string description;
-
-				private string connectionType;
 
 				private string gmtCreate;
 
 				private bool? defaultEngine;
 
+				private bool? shared;
+
 				private string _operator;
-
-				private int? sequence;
-
-				private int? envType;
-
-				private long? tenantId;
 
 				private string name;
 
-				private string subType;
+				private string content;
 
 				private int? id;
 
-				private int? projectId;
+				private int? bindingCalcEngineId;
 
-				private int? status;
+				private long? tenantId;
 
-				private string content;
-
-				public bool? Shared
+				public int? Status
 				{
 					get
 					{
-						return shared;
+						return status;
 					}
 					set	
 					{
-						shared = value;
+						status = value;
+					}
+				}
+
+				public string ConnectionType
+				{
+					get
+					{
+						return connectionType;
+					}
+					set	
+					{
+						connectionType = value;
+					}
+				}
+
+				public int? ProjectId
+				{
+					get
+					{
+						return projectId;
+					}
+					set	
+					{
+						projectId = value;
+					}
+				}
+
+				public string SubType
+				{
+					get
+					{
+						return subType;
+					}
+					set	
+					{
+						subType = value;
 					}
 				}
 
@@ -203,6 +239,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
+				public int? EnvType
+				{
+					get
+					{
+						return envType;
+					}
+					set	
+					{
+						envType = value;
+					}
+				}
+
 				public int? ConnectStatus
 				{
 					get
@@ -215,15 +263,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public int? BindingCalcEngineId
+				public int? Sequence
 				{
 					get
 					{
-						return bindingCalcEngineId;
+						return sequence;
 					}
 					set	
 					{
-						bindingCalcEngineId = value;
+						sequence = value;
 					}
 				}
 
@@ -236,18 +284,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						description = value;
-					}
-				}
-
-				public string ConnectionType
-				{
-					get
-					{
-						return connectionType;
-					}
-					set	
-					{
-						connectionType = value;
 					}
 				}
 
@@ -275,6 +311,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
+				public bool? Shared
+				{
+					get
+					{
+						return shared;
+					}
+					set	
+					{
+						shared = value;
+					}
+				}
+
 				public string _Operator
 				{
 					get
@@ -284,42 +332,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						_operator = value;
-					}
-				}
-
-				public int? Sequence
-				{
-					get
-					{
-						return sequence;
-					}
-					set	
-					{
-						sequence = value;
-					}
-				}
-
-				public int? EnvType
-				{
-					get
-					{
-						return envType;
-					}
-					set	
-					{
-						envType = value;
-					}
-				}
-
-				public long? TenantId
-				{
-					get
-					{
-						return tenantId;
-					}
-					set	
-					{
-						tenantId = value;
 					}
 				}
 
@@ -335,15 +347,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string SubType
+				public string Content
 				{
 					get
 					{
-						return subType;
+						return content;
 					}
 					set	
 					{
-						subType = value;
+						content = value;
 					}
 				}
 
@@ -359,39 +371,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public int? ProjectId
+				public int? BindingCalcEngineId
 				{
 					get
 					{
-						return projectId;
+						return bindingCalcEngineId;
 					}
 					set	
 					{
-						projectId = value;
+						bindingCalcEngineId = value;
 					}
 				}
 
-				public int? Status
+				public long? TenantId
 				{
 					get
 					{
-						return status;
+						return tenantId;
 					}
 					set	
 					{
-						status = value;
-					}
-				}
-
-				public string Content
-				{
-					get
-					{
-						return content;
-					}
-					set	
-					{
-						content = value;
+						tenantId = value;
 					}
 				}
 			}

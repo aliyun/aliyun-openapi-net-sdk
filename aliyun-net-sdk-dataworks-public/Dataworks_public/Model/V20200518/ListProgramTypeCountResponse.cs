@@ -56,21 +56,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class ListProgramTypeCount_ProgramTypeAndCount
 		{
 
-			private string programType;
-
 			private int? count;
 
-			public string ProgramType
-			{
-				get
-				{
-					return programType;
-				}
-				set	
-				{
-					programType = value;
-				}
-			}
+			private string programType;
 
 			public int? Count
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					count = value;
+				}
+			}
+
+			public string ProgramType
+			{
+				get
+				{
+					return programType;
+				}
+				set	
+				{
+					programType = value;
 				}
 			}
 		}

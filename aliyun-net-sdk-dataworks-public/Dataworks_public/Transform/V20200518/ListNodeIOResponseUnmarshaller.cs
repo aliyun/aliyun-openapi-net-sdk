@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			ListNodeIOResponse listNodeIOResponse = new ListNodeIOResponse();
 
 			listNodeIOResponse.HttpResponse = _ctx.HttpResponse;
-			listNodeIOResponse.Success = _ctx.BooleanValue("ListNodeIO.Success");
-			listNodeIOResponse.ErrorCode = _ctx.StringValue("ListNodeIO.ErrorCode");
-			listNodeIOResponse.ErrorMessage = _ctx.StringValue("ListNodeIO.ErrorMessage");
 			listNodeIOResponse.HttpStatusCode = _ctx.IntegerValue("ListNodeIO.HttpStatusCode");
 			listNodeIOResponse.RequestId = _ctx.StringValue("ListNodeIO.RequestId");
+			listNodeIOResponse.ErrorMessage = _ctx.StringValue("ListNodeIO.ErrorMessage");
+			listNodeIOResponse.ErrorCode = _ctx.StringValue("ListNodeIO.ErrorCode");
+			listNodeIOResponse.Success = _ctx.BooleanValue("ListNodeIO.Success");
 
 			List<ListNodeIOResponse.ListNodeIO_DataItem> listNodeIOResponse_data = new List<ListNodeIOResponse.ListNodeIO_DataItem>();
 			for (int i = 0; i < _ctx.Length("ListNodeIO.Data.Length"); i++) {

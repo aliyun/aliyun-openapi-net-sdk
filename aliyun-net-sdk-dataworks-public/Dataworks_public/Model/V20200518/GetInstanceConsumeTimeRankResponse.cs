@@ -87,55 +87,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetInstanceConsumeTimeRank_ConsumeTimeRankItem
 			{
 
-				private string nodeName;
-
-				private long? nodeId;
-
-				private long? bizdate;
-
 				private string owner;
 
-				private long? consumed;
+				private string nodeName;
+
+				private long? bizdate;
 
 				private long? instanceId;
 
 				private int? prgType;
 
-				public string NodeName
-				{
-					get
-					{
-						return nodeName;
-					}
-					set	
-					{
-						nodeName = value;
-					}
-				}
+				private long? nodeId;
 
-				public long? NodeId
-				{
-					get
-					{
-						return nodeId;
-					}
-					set	
-					{
-						nodeId = value;
-					}
-				}
-
-				public long? Bizdate
-				{
-					get
-					{
-						return bizdate;
-					}
-					set	
-					{
-						bizdate = value;
-					}
-				}
+				private long? consumed;
 
 				public string Owner
 				{
@@ -149,15 +113,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public long? Consumed
+				public string NodeName
 				{
 					get
 					{
-						return consumed;
+						return nodeName;
 					}
 					set	
 					{
-						consumed = value;
+						nodeName = value;
+					}
+				}
+
+				public long? Bizdate
+				{
+					get
+					{
+						return bizdate;
+					}
+					set	
+					{
+						bizdate = value;
 					}
 				}
 
@@ -182,6 +158,30 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						prgType = value;
+					}
+				}
+
+				public long? NodeId
+				{
+					get
+					{
+						return nodeId;
+					}
+					set	
+					{
+						nodeId = value;
+					}
+				}
+
+				public long? Consumed
+				{
+					get
+					{
+						return consumed;
+					}
+					set	
+					{
+						consumed = value;
 					}
 				}
 			}
