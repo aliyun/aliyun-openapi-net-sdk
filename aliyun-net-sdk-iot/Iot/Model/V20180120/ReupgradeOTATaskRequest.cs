@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QueryDeviceListByDeviceGroupRequest : RpcAcsRequest<QueryDeviceListByDeviceGroupResponse>
+    public class ReupgradeOTATaskRequest : RpcAcsRequest<ReupgradeOTATaskResponse>
     {
-        public QueryDeviceListByDeviceGroupRequest()
-            : base("Iot", "2018-01-20", "QueryDeviceListByDeviceGroup", "iot", "openAPI")
+        public ReupgradeOTATaskRequest()
+            : base("Iot", "2018-01-20", "ReupgradeOTATask", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,13 +40,24 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private string jobId;
+
 		private string iotInstanceId;
 
-		private int? pageSize;
+		private List<string> taskIds = new List<string>(){ };
 
-		private string groupId;
-
-		private int? currentPage;
+		public string JobId
+		{
+			get
+			{
+				return jobId;
+			}
+			set	
+			{
+				jobId = value;
+				DictionaryUtil.Add(QueryParameters, "JobId", value);
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -61,48 +72,26 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public int? PageSize
+		public List<string> TaskIds
 		{
 			get
 			{
-				return pageSize;
+				return taskIds;
 			}
-			set	
+
+			set
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				taskIds = value;
+				for (int i = 0; i < taskIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"TaskId." + (i + 1) , taskIds[i]);
+				}
 			}
 		}
 
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
-
-        public override QueryDeviceListByDeviceGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ReupgradeOTATaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryDeviceListByDeviceGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ReupgradeOTATaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

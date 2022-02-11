@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20180120;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class StartAIBoxForceSyncRequest : RpcAcsRequest<StartAIBoxForceSyncResponse>
     {
         public StartAIBoxForceSyncRequest()
-            : base("Iot", "2018-01-20", "StartAIBoxForceSync")
+            : base("Iot", "2018-01-20", "StartAIBoxForceSync", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

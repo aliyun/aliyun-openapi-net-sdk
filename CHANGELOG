@@ -1,3 +1,6 @@
+2022-02-11 Version: 7.33.0
+- Add OTA API, including ReupgradeOTATask.
+
 2022-02-09 Version: 3.4.9
 - Generated 2020-05-18 for `dataworks-public`.
 
