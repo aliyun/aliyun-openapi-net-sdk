@@ -28,10 +28,10 @@ using Aliyun.Acs.Emr.Transform.V20160408;
 
 namespace Aliyun.Acs.Emr.Model.V20160408
 {
-    public class DeleteClusterTemplateRequest : RpcAcsRequest<DeleteClusterTemplateResponse>
+    public class DescribeFlowVariableCollectionRequest : RpcAcsRequest<DescribeFlowVariableCollectionResponse>
     {
-        public DeleteClusterTemplateRequest()
-            : base("Emr", "2016-04-08", "DeleteClusterTemplate")
+        public DescribeFlowVariableCollectionRequest()
+            : base("Emr", "2016-04-08", "DescribeFlowVariableCollection")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,22 +41,20 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			Method = MethodType.POST;
         }
 
-		private long? resourceOwnerId;
+		private string entityId;
 
 		private string resourceGroupId;
 
-		private string bizId;
-
-		public long? ResourceOwnerId
+		public string EntityId
 		{
 			get
 			{
-				return resourceOwnerId;
+				return entityId;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				entityId = value;
+				DictionaryUtil.Add(QueryParameters, "EntityId", value);
 			}
 		}
 
@@ -73,22 +71,9 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string BizId
-		{
-			get
-			{
-				return bizId;
-			}
-			set	
-			{
-				bizId = value;
-				DictionaryUtil.Add(QueryParameters, "BizId", value);
-			}
-		}
-
-        public override DeleteClusterTemplateResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeFlowVariableCollectionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteClusterTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeFlowVariableCollectionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
