@@ -88,6 +88,8 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 			private string instanceId;
 
+			private int? serviceStatus;
+
 			private List<OnsTopicList_Tag> tags;
 
 			public int? MessageType
@@ -195,6 +197,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					instanceId = value;
+				}
+			}
+
+			public int? ServiceStatus
+			{
+				get
+				{
+					return serviceStatus;
+				}
+				set	
+				{
+					serviceStatus = value;
 				}
 			}
 

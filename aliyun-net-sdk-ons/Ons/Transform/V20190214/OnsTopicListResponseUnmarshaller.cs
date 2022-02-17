@@ -46,6 +46,7 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 				publishInfoDo.CreateTime = _ctx.LongValue("OnsTopicList.Data["+ i +"].CreateTime");
 				publishInfoDo.Topic = _ctx.StringValue("OnsTopicList.Data["+ i +"].Topic");
 				publishInfoDo.InstanceId = _ctx.StringValue("OnsTopicList.Data["+ i +"].InstanceId");
+				publishInfoDo.ServiceStatus = _ctx.IntegerValue("OnsTopicList.Data["+ i +"].ServiceStatus");
 
 				List<OnsTopicListResponse.OnsTopicList_PublishInfoDo.OnsTopicList_Tag> publishInfoDo_tags = new List<OnsTopicListResponse.OnsTopicList_PublishInfoDo.OnsTopicList_Tag>();
 				for (int j = 0; j < _ctx.Length("OnsTopicList.Data["+ i +"].Tags.Length"); j++) {
