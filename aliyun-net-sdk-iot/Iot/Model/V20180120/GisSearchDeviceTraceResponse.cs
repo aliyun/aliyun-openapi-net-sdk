@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class CreateRulengDistributeJobResponse : AcsResponse
+	public class GisSearchDeviceTraceResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,6 +32,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string code;
 
 		private string errorMessage;
+
+		private GisSearchDeviceTrace_Data data;
 
 		public string RequestId
 		{
@@ -78,6 +80,96 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				errorMessage = value;
+			}
+		}
+
+		public GisSearchDeviceTrace_Data Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class GisSearchDeviceTrace_Data
+		{
+
+			private string productKey;
+
+			private string deviceName;
+
+			private List<GisSearchDeviceTrace_PointsItem> points;
+
+			public string ProductKey
+			{
+				get
+				{
+					return productKey;
+				}
+				set	
+				{
+					productKey = value;
+				}
+			}
+
+			public string DeviceName
+			{
+				get
+				{
+					return deviceName;
+				}
+				set	
+				{
+					deviceName = value;
+				}
+			}
+
+			public List<GisSearchDeviceTrace_PointsItem> Points
+			{
+				get
+				{
+					return points;
+				}
+				set	
+				{
+					points = value;
+				}
+			}
+
+			public class GisSearchDeviceTrace_PointsItem
+			{
+
+				private string location;
+
+				private long? locateTime;
+
+				public string Location
+				{
+					get
+					{
+						return location;
+					}
+					set	
+					{
+						location = value;
+					}
+				}
+
+				public long? LocateTime
+				{
+					get
+					{
+						return locateTime;
+					}
+					set	
+					{
+						locateTime = value;
+					}
+				}
 			}
 		}
 	}

@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CreateRulengDistributeJobRequest : RpcAcsRequest<CreateRulengDistributeJobResponse>
+    public class GisSearchDeviceTraceRequest : RpcAcsRequest<GisSearchDeviceTraceResponse>
     {
-        public CreateRulengDistributeJobRequest()
-            : base("Iot", "2018-01-20", "CreateRulengDistributeJob", "iot", "openAPI")
+        public GisSearchDeviceTraceRequest()
+            : base("Iot", "2018-01-20", "GisSearchDeviceTrace", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,22 +40,67 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string sourceInstanceId;
+		private int? mapMatch;
+
+		private long? startTime;
+
+		private string iotInstanceId;
+
+		private long? endTime;
 
 		private string productKey;
 
-		private string targetInstanceId;
+		private string deviceName;
 
-		public string SourceInstanceId
+		public int? MapMatch
 		{
 			get
 			{
-				return sourceInstanceId;
+				return mapMatch;
 			}
 			set	
 			{
-				sourceInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "SourceInstanceId", value);
+				mapMatch = value;
+				DictionaryUtil.Add(QueryParameters, "MapMatch", value.ToString());
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
 			}
 		}
 
@@ -72,22 +117,27 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string TargetInstanceId
+		public string DeviceName
 		{
 			get
 			{
-				return targetInstanceId;
+				return deviceName;
 			}
 			set	
 			{
-				targetInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "TargetInstanceId", value);
+				deviceName = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
 			}
 		}
 
-        public override CreateRulengDistributeJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override GisSearchDeviceTraceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateRulengDistributeJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GisSearchDeviceTraceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

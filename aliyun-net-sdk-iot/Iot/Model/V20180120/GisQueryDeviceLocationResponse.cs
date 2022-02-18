@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class ListTaskByPageResponse : AcsResponse
+	public class GisQueryDeviceLocationResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,15 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private int? total;
-
-		private int? pageSize;
-
-		private int? pageCount;
-
-		private int? page;
-
-		private List<ListTaskByPage_DataItem> data;
+		private List<GisQueryDeviceLocation_DataItem> data;
 
 		public string RequestId
 		{
@@ -91,55 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public int? PageCount
-		{
-			get
-			{
-				return pageCount;
-			}
-			set	
-			{
-				pageCount = value;
-			}
-		}
-
-		public int? Page
-		{
-			get
-			{
-				return page;
-			}
-			set	
-			{
-				page = value;
-			}
-		}
-
-		public List<ListTaskByPage_DataItem> Data
+		public List<GisQueryDeviceLocation_DataItem> Data
 		{
 			get
 			{
@@ -151,68 +95,28 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class ListTaskByPage_DataItem
+		public class GisQueryDeviceLocation_DataItem
 		{
-
-			private string jobId;
-
-			private string jobName;
-
-			private string taskId;
 
 			private string productKey;
 
 			private string deviceName;
 
-			private string iotId;
+			private string ip;
 
-			private int? progress;
+			private string country;
 
-			private string utcQueueTime;
+			private string province;
 
-			private string utcModified;
+			private string city;
 
-			private string statusDetail;
+			private float? longitude;
 
-			private string status;
+			private float? latitude;
 
-			private string productName;
+			private int? coordinateSystem;
 
-			public string JobId
-			{
-				get
-				{
-					return jobId;
-				}
-				set	
-				{
-					jobId = value;
-				}
-			}
-
-			public string JobName
-			{
-				get
-				{
-					return jobName;
-				}
-				set	
-				{
-					jobName = value;
-				}
-			}
-
-			public string TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
+			private long? adcode;
 
 			public string ProductKey
 			{
@@ -238,87 +142,99 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public string IotId
+			public string Ip
 			{
 				get
 				{
-					return iotId;
+					return ip;
 				}
 				set	
 				{
-					iotId = value;
+					ip = value;
 				}
 			}
 
-			public int? Progress
+			public string Country
 			{
 				get
 				{
-					return progress;
+					return country;
 				}
 				set	
 				{
-					progress = value;
+					country = value;
 				}
 			}
 
-			public string UtcQueueTime
+			public string Province
 			{
 				get
 				{
-					return utcQueueTime;
+					return province;
 				}
 				set	
 				{
-					utcQueueTime = value;
+					province = value;
 				}
 			}
 
-			public string UtcModified
+			public string City
 			{
 				get
 				{
-					return utcModified;
+					return city;
 				}
 				set	
 				{
-					utcModified = value;
+					city = value;
 				}
 			}
 
-			public string StatusDetail
+			public float? Longitude
 			{
 				get
 				{
-					return statusDetail;
+					return longitude;
 				}
 				set	
 				{
-					statusDetail = value;
+					longitude = value;
 				}
 			}
 
-			public string Status
+			public float? Latitude
 			{
 				get
 				{
-					return status;
+					return latitude;
 				}
 				set	
 				{
-					status = value;
+					latitude = value;
 				}
 			}
 
-			public string ProductName
+			public int? CoordinateSystem
 			{
 				get
 				{
-					return productName;
+					return coordinateSystem;
 				}
 				set	
 				{
-					productName = value;
+					coordinateSystem = value;
+				}
+			}
+
+			public long? Adcode
+			{
+				get
+				{
+					return adcode;
+				}
+				set	
+				{
+					adcode = value;
 				}
 			}
 		}

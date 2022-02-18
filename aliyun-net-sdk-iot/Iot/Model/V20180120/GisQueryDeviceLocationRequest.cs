@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class StartAIBoxForceSyncRequest : RpcAcsRequest<StartAIBoxForceSyncResponse>
+    public class GisQueryDeviceLocationRequest : RpcAcsRequest<GisQueryDeviceLocationResponse>
     {
-        public StartAIBoxForceSyncRequest()
-            : base("Iot", "2018-01-20", "StartAIBoxForceSync", "iot", "openAPI")
+        public GisQueryDeviceLocationRequest()
+            : base("Iot", "2018-01-20", "GisQueryDeviceLocation", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,18 +40,70 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string iotId;
+		private string iotInstanceId;
 
-		public string IotId
+		private List<ThingList> thingLists = new List<ThingList>(){ };
+
+		public string IotInstanceId
 		{
 			get
 			{
-				return iotId;
+				return iotInstanceId;
 			}
 			set	
 			{
-				iotId = value;
-				DictionaryUtil.Add(QueryParameters, "IotId", value);
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public List<ThingList> ThingLists
+		{
+			get
+			{
+				return thingLists;
+			}
+
+			set
+			{
+				thingLists = value;
+				for (int i = 0; i < thingLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ThingList." + (i + 1) + ".ProductKey", thingLists[i].ProductKey);
+					DictionaryUtil.Add(QueryParameters,"ThingList." + (i + 1) + ".DeviceName", thingLists[i].DeviceName);
+				}
+			}
+		}
+
+		public class ThingList
+		{
+
+			private string productKey;
+
+			private string deviceName;
+
+			public string ProductKey
+			{
+				get
+				{
+					return productKey;
+				}
+				set	
+				{
+					productKey = value;
+				}
+			}
+
+			public string DeviceName
+			{
+				get
+				{
+					return deviceName;
+				}
+				set	
+				{
+					deviceName = value;
+				}
 			}
 		}
 
@@ -60,9 +112,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			return false;
 		}
 
-        public override StartAIBoxForceSyncResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GisQueryDeviceLocationResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return StartAIBoxForceSyncResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GisQueryDeviceLocationResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
