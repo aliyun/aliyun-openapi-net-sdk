@@ -1,3 +1,7 @@
+2022-02-21 Version: 2.9.9
+- Add event tasks.
+- DescribeInstance taskProgress.
+
 2022-02-18 Version: 7.35.0
 - Iot_20180120 build sdk.
 
