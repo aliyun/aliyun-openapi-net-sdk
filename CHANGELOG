@@ -1,3 +1,6 @@
+2022-02-22 Version: 3.2.0
+- Deprecated the OnsTopicUpdate api, and will be offline soon.
+
 2022-02-22 Version: 1.8.16
 - Support RefreshProxyLevel.
 
