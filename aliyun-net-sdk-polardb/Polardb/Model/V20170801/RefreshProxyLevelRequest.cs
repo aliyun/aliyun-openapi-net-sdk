@@ -28,10 +28,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class ModifyDBClusterParametersRequest : RpcAcsRequest<ModifyDBClusterParametersResponse>
+    public class RefreshProxyLevelRequest : RpcAcsRequest<RefreshProxyLevelResponse>
     {
-        public ModifyDBClusterParametersRequest()
-            : base("polardb", "2017-08-01", "ModifyDBClusterParameters")
+        public RefreshProxyLevelRequest()
+            : base("polardb", "2017-08-01", "RefreshProxyLevel")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,7 +43,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private string parameterGroupId;
+		private string plannedEndTime;
+
+		private string proxyTargetClass;
 
 		private string resourceOwnerAccount;
 
@@ -53,7 +55,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? ownerId;
 
-		private string parameters;
+		private string plannedStartTime;
+
+		private bool? fromTimeService;
 
 		public long? ResourceOwnerId
 		{
@@ -68,16 +72,29 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string ParameterGroupId
+		public string PlannedEndTime
 		{
 			get
 			{
-				return parameterGroupId;
+				return plannedEndTime;
 			}
 			set	
 			{
-				parameterGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ParameterGroupId", value);
+				plannedEndTime = value;
+				DictionaryUtil.Add(QueryParameters, "PlannedEndTime", value);
+			}
+		}
+
+		public string ProxyTargetClass
+		{
+			get
+			{
+				return proxyTargetClass;
+			}
+			set	
+			{
+				proxyTargetClass = value;
+				DictionaryUtil.Add(QueryParameters, "ProxyTargetClass", value);
 			}
 		}
 
@@ -133,22 +150,35 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string Parameters
+		public string PlannedStartTime
 		{
 			get
 			{
-				return parameters;
+				return plannedStartTime;
 			}
 			set	
 			{
-				parameters = value;
-				DictionaryUtil.Add(QueryParameters, "Parameters", value);
+				plannedStartTime = value;
+				DictionaryUtil.Add(QueryParameters, "PlannedStartTime", value);
 			}
 		}
 
-        public override ModifyDBClusterParametersResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public bool? FromTimeService
+		{
+			get
+			{
+				return fromTimeService;
+			}
+			set	
+			{
+				fromTimeService = value;
+				DictionaryUtil.Add(QueryParameters, "FromTimeService", value.ToString());
+			}
+		}
+
+        public override RefreshProxyLevelResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyDBClusterParametersResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RefreshProxyLevelResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

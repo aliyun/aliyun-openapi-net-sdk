@@ -1,3 +1,6 @@
+2022-02-22 Version: 1.8.16
+- Support RefreshProxyLevel.
+
 2022-02-21 Version: 2.9.9
 - Add event tasks.
 - DescribeInstance taskProgress.
