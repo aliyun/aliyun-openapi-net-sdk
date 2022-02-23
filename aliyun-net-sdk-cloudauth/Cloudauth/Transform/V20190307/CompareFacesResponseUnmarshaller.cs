@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			CompareFacesResponse compareFacesResponse = new CompareFacesResponse();
 
 			compareFacesResponse.HttpResponse = _ctx.HttpResponse;
-			compareFacesResponse.RequestId = _ctx.StringValue("CompareFaces.RequestId");
-			compareFacesResponse.Success = _ctx.BooleanValue("CompareFaces.Success");
 			compareFacesResponse.Code = _ctx.StringValue("CompareFaces.Code");
 			compareFacesResponse.Message = _ctx.StringValue("CompareFaces.Message");
+			compareFacesResponse.RequestId = _ctx.StringValue("CompareFaces.RequestId");
+			compareFacesResponse.Success = _ctx.BooleanValue("CompareFaces.Success");
 
 			CompareFacesResponse.CompareFaces_Data data = new CompareFacesResponse.CompareFaces_Data();
 			data.SimilarityScore = _ctx.FloatValue("CompareFaces.Data.SimilarityScore");

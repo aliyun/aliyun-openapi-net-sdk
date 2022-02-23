@@ -40,46 +40,33 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			Method = MethodType.POST;
         }
 
-		private string targetFaceContrastPictureUrl;
-
 		private string productCode;
 
 		private string targetCertifyId;
-
-		private string sourceOssObjectName;
 
 		private string targetFaceContrastPicture;
 
 		private string targetOssBucketName;
 
-		private string sourceOssBucketName;
-
 		private string outerOrderNo;
 
-		private string targetOssObjectName;
-
 		private string sourceFaceContrastPicture;
+
+		private string sourceCertifyId;
+
+		private string targetFaceContrastPictureUrl;
+
+		private string sourceOssObjectName;
+
+		private string sourceOssBucketName;
+
+		private string targetOssObjectName;
 
 		private long? sceneId;
 
 		private string sourceFaceContrastPictureUrl;
 
-		private string sourceCertifyId;
-
 		private string crop;
-
-		public string TargetFaceContrastPictureUrl
-		{
-			get
-			{
-				return targetFaceContrastPictureUrl;
-			}
-			set	
-			{
-				targetFaceContrastPictureUrl = value;
-				DictionaryUtil.Add(BodyParameters, "TargetFaceContrastPictureUrl", value);
-			}
-		}
 
 		public string ProductCode
 		{
@@ -104,19 +91,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				targetCertifyId = value;
 				DictionaryUtil.Add(BodyParameters, "TargetCertifyId", value);
-			}
-		}
-
-		public string SourceOssObjectName
-		{
-			get
-			{
-				return sourceOssObjectName;
-			}
-			set	
-			{
-				sourceOssObjectName = value;
-				DictionaryUtil.Add(BodyParameters, "SourceOssObjectName", value);
 			}
 		}
 
@@ -146,19 +120,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public string SourceOssBucketName
-		{
-			get
-			{
-				return sourceOssBucketName;
-			}
-			set	
-			{
-				sourceOssBucketName = value;
-				DictionaryUtil.Add(BodyParameters, "SourceOssBucketName", value);
-			}
-		}
-
 		public string OuterOrderNo
 		{
 			get
@@ -172,19 +133,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public string TargetOssObjectName
-		{
-			get
-			{
-				return targetOssObjectName;
-			}
-			set	
-			{
-				targetOssObjectName = value;
-				DictionaryUtil.Add(BodyParameters, "TargetOssObjectName", value);
-			}
-		}
-
 		public string SourceFaceContrastPicture
 		{
 			get
@@ -195,6 +143,71 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				sourceFaceContrastPicture = value;
 				DictionaryUtil.Add(BodyParameters, "SourceFaceContrastPicture", value);
+			}
+		}
+
+		public string SourceCertifyId
+		{
+			get
+			{
+				return sourceCertifyId;
+			}
+			set	
+			{
+				sourceCertifyId = value;
+				DictionaryUtil.Add(BodyParameters, "SourceCertifyId", value);
+			}
+		}
+
+		public string TargetFaceContrastPictureUrl
+		{
+			get
+			{
+				return targetFaceContrastPictureUrl;
+			}
+			set	
+			{
+				targetFaceContrastPictureUrl = value;
+				DictionaryUtil.Add(BodyParameters, "TargetFaceContrastPictureUrl", value);
+			}
+		}
+
+		public string SourceOssObjectName
+		{
+			get
+			{
+				return sourceOssObjectName;
+			}
+			set	
+			{
+				sourceOssObjectName = value;
+				DictionaryUtil.Add(BodyParameters, "SourceOssObjectName", value);
+			}
+		}
+
+		public string SourceOssBucketName
+		{
+			get
+			{
+				return sourceOssBucketName;
+			}
+			set	
+			{
+				sourceOssBucketName = value;
+				DictionaryUtil.Add(BodyParameters, "SourceOssBucketName", value);
+			}
+		}
+
+		public string TargetOssObjectName
+		{
+			get
+			{
+				return targetOssObjectName;
+			}
+			set	
+			{
+				targetOssObjectName = value;
+				DictionaryUtil.Add(BodyParameters, "TargetOssObjectName", value);
 			}
 		}
 
@@ -221,19 +234,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				sourceFaceContrastPictureUrl = value;
 				DictionaryUtil.Add(BodyParameters, "SourceFaceContrastPictureUrl", value);
-			}
-		}
-
-		public string SourceCertifyId
-		{
-			get
-			{
-				return sourceCertifyId;
-			}
-			set	
-			{
-				sourceCertifyId = value;
-				DictionaryUtil.Add(BodyParameters, "SourceCertifyId", value);
 			}
 		}
 

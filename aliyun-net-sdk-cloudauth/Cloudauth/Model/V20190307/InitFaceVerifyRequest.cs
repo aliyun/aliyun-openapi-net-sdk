@@ -68,6 +68,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 		private string mobile;
 
+		private string authId;
+
 		private long? sceneId;
 
 		private string ossBucketName;
@@ -261,6 +263,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				mobile = value;
 				DictionaryUtil.Add(QueryParameters, "Mobile", value);
+			}
+		}
+
+		public string AuthId
+		{
+			get
+			{
+				return authId;
+			}
+			set	
+			{
+				authId = value;
+				DictionaryUtil.Add(BodyParameters, "AuthId", value);
 			}
 		}
 

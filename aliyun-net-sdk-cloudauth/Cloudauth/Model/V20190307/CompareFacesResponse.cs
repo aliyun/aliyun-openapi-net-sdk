@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 	public class CompareFacesResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private CompareFaces_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
