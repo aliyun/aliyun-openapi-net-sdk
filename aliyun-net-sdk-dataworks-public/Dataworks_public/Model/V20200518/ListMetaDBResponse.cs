@@ -87,31 +87,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class ListMetaDB_DbListItem
 			{
 
-				private string name;
-
 				private string type;
+
+				private long? createTimeStamp;
+
+				private string uUID;
+
+				private long? modifiedTimeStamp;
+
+				private string name;
 
 				private string ownerId;
 
 				private string location;
-
-				private long? createTimeStamp;
-
-				private long? modifiedTimeStamp;
-
-				private string uUID;
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
 
 				public string Type
 				{
@@ -122,6 +110,54 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						type = value;
+					}
+				}
+
+				public long? CreateTimeStamp
+				{
+					get
+					{
+						return createTimeStamp;
+					}
+					set	
+					{
+						createTimeStamp = value;
+					}
+				}
+
+				public string UUID
+				{
+					get
+					{
+						return uUID;
+					}
+					set	
+					{
+						uUID = value;
+					}
+				}
+
+				public long? ModifiedTimeStamp
+				{
+					get
+					{
+						return modifiedTimeStamp;
+					}
+					set	
+					{
+						modifiedTimeStamp = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 
@@ -146,42 +182,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						location = value;
-					}
-				}
-
-				public long? CreateTimeStamp
-				{
-					get
-					{
-						return createTimeStamp;
-					}
-					set	
-					{
-						createTimeStamp = value;
-					}
-				}
-
-				public long? ModifiedTimeStamp
-				{
-					get
-					{
-						return modifiedTimeStamp;
-					}
-					set	
-					{
-						modifiedTimeStamp = value;
-					}
-				}
-
-				public string UUID
-				{
-					get
-					{
-						return uUID;
-					}
-					set	
-					{
-						uUID = value;
 					}
 				}
 			}

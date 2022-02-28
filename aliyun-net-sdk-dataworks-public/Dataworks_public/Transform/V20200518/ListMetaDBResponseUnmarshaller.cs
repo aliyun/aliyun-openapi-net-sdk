@@ -39,13 +39,13 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<ListMetaDBResponse.ListMetaDB_DatabaseInfo.ListMetaDB_DbListItem> databaseInfo_dbList = new List<ListMetaDBResponse.ListMetaDB_DatabaseInfo.ListMetaDB_DbListItem>();
 			for (int i = 0; i < _ctx.Length("ListMetaDB.DatabaseInfo.DbList.Length"); i++) {
 				ListMetaDBResponse.ListMetaDB_DatabaseInfo.ListMetaDB_DbListItem dbListItem = new ListMetaDBResponse.ListMetaDB_DatabaseInfo.ListMetaDB_DbListItem();
-				dbListItem.Name = _ctx.StringValue("ListMetaDB.DatabaseInfo.DbList["+ i +"].Name");
 				dbListItem.Type = _ctx.StringValue("ListMetaDB.DatabaseInfo.DbList["+ i +"].Type");
+				dbListItem.CreateTimeStamp = _ctx.LongValue("ListMetaDB.DatabaseInfo.DbList["+ i +"].CreateTimeStamp");
+				dbListItem.UUID = _ctx.StringValue("ListMetaDB.DatabaseInfo.DbList["+ i +"].UUID");
+				dbListItem.ModifiedTimeStamp = _ctx.LongValue("ListMetaDB.DatabaseInfo.DbList["+ i +"].ModifiedTimeStamp");
+				dbListItem.Name = _ctx.StringValue("ListMetaDB.DatabaseInfo.DbList["+ i +"].Name");
 				dbListItem.OwnerId = _ctx.StringValue("ListMetaDB.DatabaseInfo.DbList["+ i +"].OwnerId");
 				dbListItem.Location = _ctx.StringValue("ListMetaDB.DatabaseInfo.DbList["+ i +"].Location");
-				dbListItem.CreateTimeStamp = _ctx.LongValue("ListMetaDB.DatabaseInfo.DbList["+ i +"].CreateTimeStamp");
-				dbListItem.ModifiedTimeStamp = _ctx.LongValue("ListMetaDB.DatabaseInfo.DbList["+ i +"].ModifiedTimeStamp");
-				dbListItem.UUID = _ctx.StringValue("ListMetaDB.DatabaseInfo.DbList["+ i +"].UUID");
 
 				databaseInfo_dbList.Add(dbListItem);
 			}

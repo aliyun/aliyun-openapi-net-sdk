@@ -44,6 +44,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private int? pageSize;
 
+		private string clusterId;
+
 		private int? pageNum;
 
 		private long? projectId;
@@ -71,6 +73,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
 			}
 		}
 
