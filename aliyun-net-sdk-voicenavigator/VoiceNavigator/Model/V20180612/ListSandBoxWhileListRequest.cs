@@ -27,59 +27,39 @@ using Aliyun.Acs.VoiceNavigator.Transform.V20180612;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 {
-    public class ListConversationsRequest : RpcAcsRequest<ListConversationsResponse>
+    public class ListSandBoxWhileListRequest : RpcAcsRequest<ListSandBoxWhileListResponse>
     {
-        public ListConversationsRequest()
-            : base("VoiceNavigator", "2018-06-12", "ListConversations", "voicebot", "openAPI")
+        public ListSandBoxWhileListRequest()
+            : base("VoiceNavigator", "2018-06-12", "ListSandBoxWhileList", "voicebot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.VoiceNavigator.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.VoiceNavigator.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private long? beginTimeLeftRange;
-
-		private string query;
+		private string phoneNumber;
 
 		private int? pageNumber;
 
-		private long? result;
-
-		private string callingNumber;
-
 		private string instanceId;
 
-		private long? beginTimeRightRange;
-
-		private string isSandBox;
+		private string name;
 
 		private int? pageSize;
 
-		public long? BeginTimeLeftRange
+		public string PhoneNumber
 		{
 			get
 			{
-				return beginTimeLeftRange;
+				return phoneNumber;
 			}
 			set	
 			{
-				beginTimeLeftRange = value;
-				DictionaryUtil.Add(QueryParameters, "BeginTimeLeftRange", value.ToString());
-			}
-		}
-
-		public string Query
-		{
-			get
-			{
-				return query;
-			}
-			set	
-			{
-				query = value;
-				DictionaryUtil.Add(QueryParameters, "Query", value);
+				phoneNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PhoneNumber", value);
 			}
 		}
 
@@ -96,32 +76,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
-		public long? Result
-		{
-			get
-			{
-				return result;
-			}
-			set	
-			{
-				result = value;
-				DictionaryUtil.Add(QueryParameters, "Result", value.ToString());
-			}
-		}
-
-		public string CallingNumber
-		{
-			get
-			{
-				return callingNumber;
-			}
-			set	
-			{
-				callingNumber = value;
-				DictionaryUtil.Add(QueryParameters, "CallingNumber", value);
-			}
-		}
-
 		public string InstanceId
 		{
 			get
@@ -135,29 +89,16 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
-		public long? BeginTimeRightRange
+		public string Name
 		{
 			get
 			{
-				return beginTimeRightRange;
+				return name;
 			}
 			set	
 			{
-				beginTimeRightRange = value;
-				DictionaryUtil.Add(QueryParameters, "BeginTimeRightRange", value.ToString());
-			}
-		}
-
-		public string IsSandBox
-		{
-			get
-			{
-				return isSandBox;
-			}
-			set	
-			{
-				isSandBox = value;
-				DictionaryUtil.Add(QueryParameters, "IsSandBox", value);
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
@@ -179,9 +120,9 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			return false;
 		}
 
-        public override ListConversationsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListSandBoxWhileListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListConversationsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListSandBoxWhileListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

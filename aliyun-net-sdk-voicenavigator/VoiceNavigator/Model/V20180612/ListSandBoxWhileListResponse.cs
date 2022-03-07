@@ -22,10 +22,8 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 {
-	public class ListConversationsResponse : AcsResponse
+	public class ListSandBoxWhileListResponse : AcsResponse
 	{
-
-		private long? totalCount;
 
 		private int? pageSize;
 
@@ -33,19 +31,9 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 
 		private int? pageNumber;
 
-		private List<ListConversations_Conversation> conversations;
+		private long? totalCount;
 
-		public long? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+		private List<ListSandBoxWhileList_WhiteListItem> whiteList;
 
 		public int? PageSize
 		{
@@ -83,158 +71,142 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
-		public List<ListConversations_Conversation> Conversations
+		public long? TotalCount
 		{
 			get
 			{
-				return conversations;
+				return totalCount;
 			}
 			set	
 			{
-				conversations = value;
+				totalCount = value;
 			}
 		}
 
-		public class ListConversations_Conversation
+		public List<ListSandBoxWhileList_WhiteListItem> WhiteList
+		{
+			get
+			{
+				return whiteList;
+			}
+			set	
+			{
+				whiteList = value;
+			}
+		}
+
+		public class ListSandBoxWhileList_WhiteListItem
 		{
 
-			private long? endTime;
+			private string uuid;
 
-			private bool? hasToAgent;
+			private string phoneNumber;
 
-			private long? startTime;
+			private string description;
 
-			private string skillGroup;
+			private int? isEnable;
 
-			private string conversationId;
+			private long? gmtCreate;
 
-			private string callingNumber;
+			private string instanceId;
 
-			private int? endReason;
+			private long? gmtModified;
 
-			private int? rounds;
+			private string name;
 
-			private bool? hasLastPlaybackCompleted;
-
-			private bool? sandBox;
-
-			public long? EndTime
+			public string Uuid
 			{
 				get
 				{
-					return endTime;
+					return uuid;
 				}
 				set	
 				{
-					endTime = value;
+					uuid = value;
 				}
 			}
 
-			public bool? HasToAgent
+			public string PhoneNumber
 			{
 				get
 				{
-					return hasToAgent;
+					return phoneNumber;
 				}
 				set	
 				{
-					hasToAgent = value;
+					phoneNumber = value;
 				}
 			}
 
-			public long? StartTime
+			public string Description
 			{
 				get
 				{
-					return startTime;
+					return description;
 				}
 				set	
 				{
-					startTime = value;
+					description = value;
 				}
 			}
 
-			public string SkillGroup
+			public int? IsEnable
 			{
 				get
 				{
-					return skillGroup;
+					return isEnable;
 				}
 				set	
 				{
-					skillGroup = value;
+					isEnable = value;
 				}
 			}
 
-			public string ConversationId
+			public long? GmtCreate
 			{
 				get
 				{
-					return conversationId;
+					return gmtCreate;
 				}
 				set	
 				{
-					conversationId = value;
+					gmtCreate = value;
 				}
 			}
 
-			public string CallingNumber
+			public string InstanceId
 			{
 				get
 				{
-					return callingNumber;
+					return instanceId;
 				}
 				set	
 				{
-					callingNumber = value;
+					instanceId = value;
 				}
 			}
 
-			public int? EndReason
+			public long? GmtModified
 			{
 				get
 				{
-					return endReason;
+					return gmtModified;
 				}
 				set	
 				{
-					endReason = value;
+					gmtModified = value;
 				}
 			}
 
-			public int? Rounds
+			public string Name
 			{
 				get
 				{
-					return rounds;
+					return name;
 				}
 				set	
 				{
-					rounds = value;
-				}
-			}
-
-			public bool? HasLastPlaybackCompleted
-			{
-				get
-				{
-					return hasLastPlaybackCompleted;
-				}
-				set	
-				{
-					hasLastPlaybackCompleted = value;
-				}
-			}
-
-			public bool? SandBox
-			{
-				get
-				{
-					return sandBox;
-				}
-				set	
-				{
-					sandBox = value;
+					name = value;
 				}
 			}
 		}

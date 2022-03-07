@@ -27,98 +27,65 @@ using Aliyun.Acs.VoiceNavigator.Transform.V20180612;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 {
-    public class ListConversationsRequest : RpcAcsRequest<ListConversationsResponse>
+    public class ModifySandBoxWhileListRequest : RpcAcsRequest<ModifySandBoxWhileListResponse>
     {
-        public ListConversationsRequest()
-            : base("VoiceNavigator", "2018-06-12", "ListConversations", "voicebot", "openAPI")
+        public ModifySandBoxWhileListRequest()
+            : base("VoiceNavigator", "2018-06-12", "ModifySandBoxWhileList", "voicebot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.VoiceNavigator.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.VoiceNavigator.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private long? beginTimeLeftRange;
+		private string phoneNumber;
 
-		private string query;
+		private string description;
 
-		private int? pageNumber;
-
-		private long? result;
-
-		private string callingNumber;
+		private string uuid;
 
 		private string instanceId;
 
-		private long? beginTimeRightRange;
+		private string name;
 
-		private string isSandBox;
-
-		private int? pageSize;
-
-		public long? BeginTimeLeftRange
+		public string PhoneNumber
 		{
 			get
 			{
-				return beginTimeLeftRange;
+				return phoneNumber;
 			}
 			set	
 			{
-				beginTimeLeftRange = value;
-				DictionaryUtil.Add(QueryParameters, "BeginTimeLeftRange", value.ToString());
+				phoneNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PhoneNumber", value);
 			}
 		}
 
-		public string Query
+		public string Description
 		{
 			get
 			{
-				return query;
+				return description;
 			}
 			set	
 			{
-				query = value;
-				DictionaryUtil.Add(QueryParameters, "Query", value);
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
-		public int? PageNumber
+		public string Uuid
 		{
 			get
 			{
-				return pageNumber;
+				return uuid;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public long? Result
-		{
-			get
-			{
-				return result;
-			}
-			set	
-			{
-				result = value;
-				DictionaryUtil.Add(QueryParameters, "Result", value.ToString());
-			}
-		}
-
-		public string CallingNumber
-		{
-			get
-			{
-				return callingNumber;
-			}
-			set	
-			{
-				callingNumber = value;
-				DictionaryUtil.Add(QueryParameters, "CallingNumber", value);
+				uuid = value;
+				DictionaryUtil.Add(QueryParameters, "Uuid", value);
 			}
 		}
 
@@ -135,42 +102,16 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
-		public long? BeginTimeRightRange
+		public string Name
 		{
 			get
 			{
-				return beginTimeRightRange;
+				return name;
 			}
 			set	
 			{
-				beginTimeRightRange = value;
-				DictionaryUtil.Add(QueryParameters, "BeginTimeRightRange", value.ToString());
-			}
-		}
-
-		public string IsSandBox
-		{
-			get
-			{
-				return isSandBox;
-			}
-			set	
-			{
-				isSandBox = value;
-				DictionaryUtil.Add(QueryParameters, "IsSandBox", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
@@ -179,9 +120,9 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			return false;
 		}
 
-        public override ListConversationsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifySandBoxWhileListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListConversationsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifySandBoxWhileListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

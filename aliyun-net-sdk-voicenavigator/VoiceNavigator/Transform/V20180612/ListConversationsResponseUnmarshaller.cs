@@ -48,6 +48,7 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 				conversation.EndReason = _ctx.IntegerValue("ListConversations.Conversations["+ i +"].EndReason");
 				conversation.Rounds = _ctx.IntegerValue("ListConversations.Conversations["+ i +"].Rounds");
 				conversation.HasLastPlaybackCompleted = _ctx.BooleanValue("ListConversations.Conversations["+ i +"].HasLastPlaybackCompleted");
+				conversation.SandBox = _ctx.BooleanValue("ListConversations.Conversations["+ i +"].SandBox");
 
 				listConversationsResponse_conversations.Add(conversation);
 			}
