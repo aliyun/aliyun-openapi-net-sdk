@@ -87,6 +87,8 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private bool? enableCdc;
 
+		private bool? enableStream;
+
 		private List<GetLindormInstance_Engine> engineList;
 
 		public string VpcId
@@ -458,6 +460,18 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			set	
 			{
 				enableCdc = value;
+			}
+		}
+
+		public bool? EnableStream
+		{
+			get
+			{
+				return enableStream;
+			}
+			set	
+			{
+				enableStream = value;
 			}
 		}
 

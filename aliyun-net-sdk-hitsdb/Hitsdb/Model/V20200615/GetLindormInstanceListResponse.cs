@@ -98,37 +98,123 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 		public class GetLindormInstanceList_LindormInstanceSummary
 		{
 
+			private string vpcId;
+
+			private string engineType;
+
+			private string expireTime;
+
+			private string createTime;
+
+			private string payType;
+
+			private long? aliUid;
+
+			private string instanceStorage;
+
 			private string instanceId;
 
-			private string instanceAlias;
+			private string networkType;
+
+			private string serviceType;
 
 			private string regionId;
+
+			private long? createMilliseconds;
+
+			private string instanceAlias;
 
 			private string zoneId;
 
 			private string instanceStatus;
 
-			private string payType;
-
-			private string networkType;
-
-			private string createTime;
-
-			private string expireTime;
-
-			private string instanceStorage;
-
-			private string serviceType;
-
-			private string engineType;
-
-			private long? aliUid;
-
-			private string vpcId;
-
-			private long? createMilliseconds;
-
 			private long? expiredMilliseconds;
+
+			private bool? enableStream;
+
+			public string VpcId
+			{
+				get
+				{
+					return vpcId;
+				}
+				set	
+				{
+					vpcId = value;
+				}
+			}
+
+			public string EngineType
+			{
+				get
+				{
+					return engineType;
+				}
+				set	
+				{
+					engineType = value;
+				}
+			}
+
+			public string ExpireTime
+			{
+				get
+				{
+					return expireTime;
+				}
+				set	
+				{
+					expireTime = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string PayType
+			{
+				get
+				{
+					return payType;
+				}
+				set	
+				{
+					payType = value;
+				}
+			}
+
+			public long? AliUid
+			{
+				get
+				{
+					return aliUid;
+				}
+				set	
+				{
+					aliUid = value;
+				}
+			}
+
+			public string InstanceStorage
+			{
+				get
+				{
+					return instanceStorage;
+				}
+				set	
+				{
+					instanceStorage = value;
+				}
+			}
 
 			public string InstanceId
 			{
@@ -142,15 +228,27 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 				}
 			}
 
-			public string InstanceAlias
+			public string NetworkType
 			{
 				get
 				{
-					return instanceAlias;
+					return networkType;
 				}
 				set	
 				{
-					instanceAlias = value;
+					networkType = value;
+				}
+			}
+
+			public string ServiceType
+			{
+				get
+				{
+					return serviceType;
+				}
+				set	
+				{
+					serviceType = value;
 				}
 			}
 
@@ -163,6 +261,30 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public long? CreateMilliseconds
+			{
+				get
+				{
+					return createMilliseconds;
+				}
+				set	
+				{
+					createMilliseconds = value;
+				}
+			}
+
+			public string InstanceAlias
+			{
+				get
+				{
+					return instanceAlias;
+				}
+				set	
+				{
+					instanceAlias = value;
 				}
 			}
 
@@ -190,126 +312,6 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 				}
 			}
 
-			public string PayType
-			{
-				get
-				{
-					return payType;
-				}
-				set	
-				{
-					payType = value;
-				}
-			}
-
-			public string NetworkType
-			{
-				get
-				{
-					return networkType;
-				}
-				set	
-				{
-					networkType = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string ExpireTime
-			{
-				get
-				{
-					return expireTime;
-				}
-				set	
-				{
-					expireTime = value;
-				}
-			}
-
-			public string InstanceStorage
-			{
-				get
-				{
-					return instanceStorage;
-				}
-				set	
-				{
-					instanceStorage = value;
-				}
-			}
-
-			public string ServiceType
-			{
-				get
-				{
-					return serviceType;
-				}
-				set	
-				{
-					serviceType = value;
-				}
-			}
-
-			public string EngineType
-			{
-				get
-				{
-					return engineType;
-				}
-				set	
-				{
-					engineType = value;
-				}
-			}
-
-			public long? AliUid
-			{
-				get
-				{
-					return aliUid;
-				}
-				set	
-				{
-					aliUid = value;
-				}
-			}
-
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
-				}
-			}
-
-			public long? CreateMilliseconds
-			{
-				get
-				{
-					return createMilliseconds;
-				}
-				set	
-				{
-					createMilliseconds = value;
-				}
-			}
-
 			public long? ExpiredMilliseconds
 			{
 				get
@@ -319,6 +321,18 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 				set	
 				{
 					expiredMilliseconds = value;
+				}
+			}
+
+			public bool? EnableStream
+			{
+				get
+				{
+					return enableStream;
+				}
+				set	
+				{
+					enableStream = value;
 				}
 			}
 		}
