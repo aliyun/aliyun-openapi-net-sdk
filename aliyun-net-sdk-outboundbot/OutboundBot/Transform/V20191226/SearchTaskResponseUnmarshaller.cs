@@ -69,6 +69,7 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 				searchTaskInfo.TaskId = _ctx.StringValue("SearchTask.SearchTaskInfoList["+ i +"].TaskId");
 				searchTaskInfo.DialExceptionOld = _ctx.StringValue("SearchTask.SearchTaskInfoList["+ i +"].DialExceptionOld");
 				searchTaskInfo.HasLastPlaybackCompleted = _ctx.BooleanValue("SearchTask.SearchTaskInfoList["+ i +"].HasLastPlaybackCompleted");
+				searchTaskInfo.ScriptName = _ctx.StringValue("SearchTask.SearchTaskInfoList["+ i +"].ScriptName");
 
 				List<string> searchTaskInfo_dialExceptionCodes = new List<string>();
 				for (int j = 0; j < _ctx.Length("SearchTask.SearchTaskInfoList["+ i +"].DialExceptionCodes.Length"); j++) {

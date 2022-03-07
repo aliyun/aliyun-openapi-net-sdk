@@ -25,11 +25,7 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class DescribeScriptResponse : AcsResponse
 	{
 
-		private string code;
-
 		private int? httpStatusCode;
-
-		private string message;
 
 		private string requestId;
 
@@ -37,23 +33,17 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string chatbotId;
 
-		private string asrConfig;
+		private string code;
+
+		private string message;
 
 		private string ttsConfig;
 
-		private DescribeScript_Script script;
+		private string asrConfig;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private string nlsConfig;
+
+		private DescribeScript_Script script;
 
 		public int? HttpStatusCode
 		{
@@ -64,18 +54,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				httpStatusCode = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 
@@ -115,15 +93,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string AsrConfig
+		public string Code
 		{
 			get
 			{
-				return asrConfig;
+				return code;
 			}
 			set	
 			{
-				asrConfig = value;
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -136,6 +126,30 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				ttsConfig = value;
+			}
+		}
+
+		public string AsrConfig
+		{
+			get
+			{
+				return asrConfig;
+			}
+			set	
+			{
+				asrConfig = value;
+			}
+		}
+
+		public string NlsConfig
+		{
+			get
+			{
+				return nlsConfig;
+			}
+			set	
+			{
+				nlsConfig = value;
 			}
 		}
 
@@ -154,129 +168,33 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class DescribeScript_Script
 		{
 
-			private string debugStatus;
-
-			private string industry;
-
-			private bool? isDebugDrafted;
-
-			private bool? isDrafted;
-
-			private string scene;
-
-			private string scriptDescription;
-
-			private string scriptId;
-
-			private string scriptName;
-
 			private string status;
 
 			private long? updateTime;
 
 			private string chatbotId;
 
-			private string asrConfig;
+			private string scriptId;
 
-			private string ttsConfig;
+			private bool? isDebugDrafted;
+
+			private string industry;
+
+			private string scriptDescription;
 
 			private bool? miniPlaybackConfigEnabled;
 
-			public string DebugStatus
-			{
-				get
-				{
-					return debugStatus;
-				}
-				set	
-				{
-					debugStatus = value;
-				}
-			}
+			private bool? isDrafted;
 
-			public string Industry
-			{
-				get
-				{
-					return industry;
-				}
-				set	
-				{
-					industry = value;
-				}
-			}
+			private string ttsConfig;
 
-			public bool? IsDebugDrafted
-			{
-				get
-				{
-					return isDebugDrafted;
-				}
-				set	
-				{
-					isDebugDrafted = value;
-				}
-			}
+			private string debugStatus;
 
-			public bool? IsDrafted
-			{
-				get
-				{
-					return isDrafted;
-				}
-				set	
-				{
-					isDrafted = value;
-				}
-			}
+			private string asrConfig;
 
-			public string Scene
-			{
-				get
-				{
-					return scene;
-				}
-				set	
-				{
-					scene = value;
-				}
-			}
+			private string scene;
 
-			public string ScriptDescription
-			{
-				get
-				{
-					return scriptDescription;
-				}
-				set	
-				{
-					scriptDescription = value;
-				}
-			}
-
-			public string ScriptId
-			{
-				get
-				{
-					return scriptId;
-				}
-				set	
-				{
-					scriptId = value;
-				}
-			}
-
-			public string ScriptName
-			{
-				get
-				{
-					return scriptName;
-				}
-				set	
-				{
-					scriptName = value;
-				}
-			}
+			private string scriptName;
 
 			public string Status
 			{
@@ -314,15 +232,75 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string AsrConfig
+			public string ScriptId
 			{
 				get
 				{
-					return asrConfig;
+					return scriptId;
 				}
 				set	
 				{
-					asrConfig = value;
+					scriptId = value;
+				}
+			}
+
+			public bool? IsDebugDrafted
+			{
+				get
+				{
+					return isDebugDrafted;
+				}
+				set	
+				{
+					isDebugDrafted = value;
+				}
+			}
+
+			public string Industry
+			{
+				get
+				{
+					return industry;
+				}
+				set	
+				{
+					industry = value;
+				}
+			}
+
+			public string ScriptDescription
+			{
+				get
+				{
+					return scriptDescription;
+				}
+				set	
+				{
+					scriptDescription = value;
+				}
+			}
+
+			public bool? MiniPlaybackConfigEnabled
+			{
+				get
+				{
+					return miniPlaybackConfigEnabled;
+				}
+				set	
+				{
+					miniPlaybackConfigEnabled = value;
+				}
+			}
+
+			public bool? IsDrafted
+			{
+				get
+				{
+					return isDrafted;
+				}
+				set	
+				{
+					isDrafted = value;
 				}
 			}
 
@@ -338,15 +316,51 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public bool? MiniPlaybackConfigEnabled
+			public string DebugStatus
 			{
 				get
 				{
-					return miniPlaybackConfigEnabled;
+					return debugStatus;
 				}
 				set	
 				{
-					miniPlaybackConfigEnabled = value;
+					debugStatus = value;
+				}
+			}
+
+			public string AsrConfig
+			{
+				get
+				{
+					return asrConfig;
+				}
+				set	
+				{
+					asrConfig = value;
+				}
+			}
+
+			public string Scene
+			{
+				get
+				{
+					return scene;
+				}
+				set	
+				{
+					scene = value;
+				}
+			}
+
+			public string ScriptName
+			{
+				get
+				{
+					return scriptName;
+				}
+				set	
+				{
+					scriptName = value;
 				}
 			}
 		}

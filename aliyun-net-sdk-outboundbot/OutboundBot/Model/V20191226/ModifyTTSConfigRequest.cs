@@ -42,11 +42,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string voice;
 
+		private string nlsServiceType;
+
 		private string volume;
 
 		private string scriptId;
 
 		private string instanceId;
+
+		private string appKey;
 
 		private string speechRate;
 
@@ -60,6 +64,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				voice = value;
 				DictionaryUtil.Add(QueryParameters, "Voice", value);
+			}
+		}
+
+		public string NlsServiceType
+		{
+			get
+			{
+				return nlsServiceType;
+			}
+			set	
+			{
+				nlsServiceType = value;
+				DictionaryUtil.Add(QueryParameters, "NlsServiceType", value);
 			}
 		}
 
@@ -99,6 +116,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string AppKey
+		{
+			get
+			{
+				return appKey;
+			}
+			set	
+			{
+				appKey = value;
+				DictionaryUtil.Add(QueryParameters, "AppKey", value);
 			}
 		}
 

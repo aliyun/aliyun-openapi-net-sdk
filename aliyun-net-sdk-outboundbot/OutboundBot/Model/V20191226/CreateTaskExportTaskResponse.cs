@@ -22,20 +22,20 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-	public class ModifyTTSConfigResponse : AcsResponse
+	public class CreateTaskExportTaskResponse : AcsResponse
 	{
 
 		private int? httpStatusCode;
-
-		private string code;
-
-		private string message;
 
 		private string requestId;
 
 		private bool? success;
 
-		private ModifyTTSConfig_TTSConfig tTSConfig;
+		private string code;
+
+		private string message;
+
+		private string taskId;
 
 		public int? HttpStatusCode
 		{
@@ -46,30 +46,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				httpStatusCode = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 
@@ -97,103 +73,39 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public ModifyTTSConfig_TTSConfig TTSConfig
+		public string Code
 		{
 			get
 			{
-				return tTSConfig;
+				return code;
 			}
 			set	
 			{
-				tTSConfig = value;
+				code = value;
 			}
 		}
 
-		public class ModifyTTSConfig_TTSConfig
+		public string Message
 		{
-
-			private string voice;
-
-			private string tTSConfigId;
-
-			private string speechRate;
-
-			private string volume;
-
-			private string instanceId;
-
-			private string scriptId;
-
-			public string Voice
+			get
 			{
-				get
-				{
-					return voice;
-				}
-				set	
-				{
-					voice = value;
-				}
+				return message;
 			}
-
-			public string TTSConfigId
+			set	
 			{
-				get
-				{
-					return tTSConfigId;
-				}
-				set	
-				{
-					tTSConfigId = value;
-				}
+				message = value;
 			}
+		}
 
-			public string SpeechRate
+		public string TaskId
+		{
+			get
 			{
-				get
-				{
-					return speechRate;
-				}
-				set	
-				{
-					speechRate = value;
-				}
+				return taskId;
 			}
-
-			public string Volume
+			set	
 			{
-				get
-				{
-					return volume;
-				}
-				set	
-				{
-					volume = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public string ScriptId
-			{
-				get
-				{
-					return scriptId;
-				}
-				set	
-				{
-					scriptId = value;
-				}
+				taskId = value;
 			}
 		}
 	}

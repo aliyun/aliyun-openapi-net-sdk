@@ -206,6 +206,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 			private bool? hasLastPlaybackCompleted;
 
+			private string scriptName;
+
 			private List<string> dialExceptionCodes;
 
 			public string JobGroupName
@@ -517,6 +519,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					hasLastPlaybackCompleted = value;
+				}
+			}
+
+			public string ScriptName
+			{
+				get
+				{
+					return scriptName;
+				}
+				set	
+				{
+					scriptName = value;
 				}
 			}
 

@@ -54,6 +54,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string asrConfig;
 
+		private string nlsConfig;
+
 		private bool? miniPlaybackEnabled;
 
 		private string chatbotId;
@@ -156,6 +158,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				asrConfig = value;
 				DictionaryUtil.Add(QueryParameters, "AsrConfig", value);
+			}
+		}
+
+		public string NlsConfig
+		{
+			get
+			{
+				return nlsConfig;
+			}
+			set	
+			{
+				nlsConfig = value;
+				DictionaryUtil.Add(QueryParameters, "NlsConfig", value);
 			}
 		}
 

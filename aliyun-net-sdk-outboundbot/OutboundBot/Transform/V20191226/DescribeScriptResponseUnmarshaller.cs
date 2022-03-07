@@ -31,30 +31,31 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DescribeScriptResponse describeScriptResponse = new DescribeScriptResponse();
 
 			describeScriptResponse.HttpResponse = _ctx.HttpResponse;
-			describeScriptResponse.Code = _ctx.StringValue("DescribeScript.Code");
 			describeScriptResponse.HttpStatusCode = _ctx.IntegerValue("DescribeScript.HttpStatusCode");
-			describeScriptResponse.Message = _ctx.StringValue("DescribeScript.Message");
 			describeScriptResponse.RequestId = _ctx.StringValue("DescribeScript.RequestId");
 			describeScriptResponse.Success = _ctx.BooleanValue("DescribeScript.Success");
 			describeScriptResponse.ChatbotId = _ctx.StringValue("DescribeScript.ChatbotId");
-			describeScriptResponse.AsrConfig = _ctx.StringValue("DescribeScript.AsrConfig");
+			describeScriptResponse.Code = _ctx.StringValue("DescribeScript.Code");
+			describeScriptResponse.Message = _ctx.StringValue("DescribeScript.Message");
 			describeScriptResponse.TtsConfig = _ctx.StringValue("DescribeScript.TtsConfig");
+			describeScriptResponse.AsrConfig = _ctx.StringValue("DescribeScript.AsrConfig");
+			describeScriptResponse.NlsConfig = _ctx.StringValue("DescribeScript.NlsConfig");
 
 			DescribeScriptResponse.DescribeScript_Script script = new DescribeScriptResponse.DescribeScript_Script();
-			script.DebugStatus = _ctx.StringValue("DescribeScript.Script.DebugStatus");
-			script.Industry = _ctx.StringValue("DescribeScript.Script.Industry");
-			script.IsDebugDrafted = _ctx.BooleanValue("DescribeScript.Script.IsDebugDrafted");
-			script.IsDrafted = _ctx.BooleanValue("DescribeScript.Script.IsDrafted");
-			script.Scene = _ctx.StringValue("DescribeScript.Script.Scene");
-			script.ScriptDescription = _ctx.StringValue("DescribeScript.Script.ScriptDescription");
-			script.ScriptId = _ctx.StringValue("DescribeScript.Script.ScriptId");
-			script.ScriptName = _ctx.StringValue("DescribeScript.Script.ScriptName");
 			script.Status = _ctx.StringValue("DescribeScript.Script.Status");
 			script.UpdateTime = _ctx.LongValue("DescribeScript.Script.UpdateTime");
 			script.ChatbotId = _ctx.StringValue("DescribeScript.Script.ChatbotId");
-			script.AsrConfig = _ctx.StringValue("DescribeScript.Script.AsrConfig");
-			script.TtsConfig = _ctx.StringValue("DescribeScript.Script.TtsConfig");
+			script.ScriptId = _ctx.StringValue("DescribeScript.Script.ScriptId");
+			script.IsDebugDrafted = _ctx.BooleanValue("DescribeScript.Script.IsDebugDrafted");
+			script.Industry = _ctx.StringValue("DescribeScript.Script.Industry");
+			script.ScriptDescription = _ctx.StringValue("DescribeScript.Script.ScriptDescription");
 			script.MiniPlaybackConfigEnabled = _ctx.BooleanValue("DescribeScript.Script.MiniPlaybackConfigEnabled");
+			script.IsDrafted = _ctx.BooleanValue("DescribeScript.Script.IsDrafted");
+			script.TtsConfig = _ctx.StringValue("DescribeScript.Script.TtsConfig");
+			script.DebugStatus = _ctx.StringValue("DescribeScript.Script.DebugStatus");
+			script.AsrConfig = _ctx.StringValue("DescribeScript.Script.AsrConfig");
+			script.Scene = _ctx.StringValue("DescribeScript.Script.Scene");
+			script.ScriptName = _ctx.StringValue("DescribeScript.Script.ScriptName");
 			describeScriptResponse.Script = script;
         
 			return describeScriptResponse;

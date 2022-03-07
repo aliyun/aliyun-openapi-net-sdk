@@ -31,19 +31,19 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ModifyTTSConfigResponse modifyTTSConfigResponse = new ModifyTTSConfigResponse();
 
 			modifyTTSConfigResponse.HttpResponse = _ctx.HttpResponse;
-			modifyTTSConfigResponse.Code = _ctx.StringValue("ModifyTTSConfig.Code");
 			modifyTTSConfigResponse.HttpStatusCode = _ctx.IntegerValue("ModifyTTSConfig.HttpStatusCode");
+			modifyTTSConfigResponse.Code = _ctx.StringValue("ModifyTTSConfig.Code");
 			modifyTTSConfigResponse.Message = _ctx.StringValue("ModifyTTSConfig.Message");
 			modifyTTSConfigResponse.RequestId = _ctx.StringValue("ModifyTTSConfig.RequestId");
 			modifyTTSConfigResponse.Success = _ctx.BooleanValue("ModifyTTSConfig.Success");
 
 			ModifyTTSConfigResponse.ModifyTTSConfig_TTSConfig tTSConfig = new ModifyTTSConfigResponse.ModifyTTSConfig_TTSConfig();
+			tTSConfig.Voice = _ctx.StringValue("ModifyTTSConfig.TTSConfig.Voice");
+			tTSConfig.TTSConfigId = _ctx.StringValue("ModifyTTSConfig.TTSConfig.TTSConfigId");
+			tTSConfig.SpeechRate = _ctx.StringValue("ModifyTTSConfig.TTSConfig.SpeechRate");
+			tTSConfig.Volume = _ctx.StringValue("ModifyTTSConfig.TTSConfig.Volume");
 			tTSConfig.InstanceId = _ctx.StringValue("ModifyTTSConfig.TTSConfig.InstanceId");
 			tTSConfig.ScriptId = _ctx.StringValue("ModifyTTSConfig.TTSConfig.ScriptId");
-			tTSConfig.SpeechRate = _ctx.StringValue("ModifyTTSConfig.TTSConfig.SpeechRate");
-			tTSConfig.TTSConfigId = _ctx.StringValue("ModifyTTSConfig.TTSConfig.TTSConfigId");
-			tTSConfig.Voice = _ctx.StringValue("ModifyTTSConfig.TTSConfig.Voice");
-			tTSConfig.Volume = _ctx.StringValue("ModifyTTSConfig.TTSConfig.Volume");
 			modifyTTSConfigResponse.TTSConfig = tTSConfig;
         
 			return modifyTTSConfigResponse;

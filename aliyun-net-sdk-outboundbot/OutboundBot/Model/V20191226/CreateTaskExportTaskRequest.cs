@@ -27,10 +27,10 @@ using Aliyun.Acs.OutboundBot.Transform.V20191226;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-    public class SearchTaskRequest : RpcAcsRequest<SearchTaskResponse>
+    public class CreateTaskExportTaskRequest : RpcAcsRequest<CreateTaskExportTaskResponse>
     {
-        public SearchTaskRequest()
-            : base("OutboundBot", "2019-12-26", "SearchTask", "outboundbot", "openAPI")
+        public CreateTaskExportTaskRequest()
+            : base("OutboundBot", "2019-12-26", "CreateTaskExportTask", "outboundbot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -38,6 +38,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointRegionalType, null);
             }
         }
+
+		private bool? hasAnswered;
 
 		private long? actualTimeLte;
 
@@ -67,6 +69,10 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string taskId;
 
+		private bool? hasHangUpByRejection;
+
+		private bool? hasReachedEndOfFlow;
+
 		private string instanceId;
 
 		private long? recordingDurationGte;
@@ -84,6 +90,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private long? callDurationGte;
 
 		private long? recordingDurationLte;
+
+		public bool? HasAnswered
+		{
+			get
+			{
+				return hasAnswered;
+			}
+			set	
+			{
+				hasAnswered = value;
+				DictionaryUtil.Add(QueryParameters, "HasAnswered", value.ToString());
+			}
+		}
 
 		public long? ActualTimeLte
 		{
@@ -267,6 +286,32 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
+		public bool? HasHangUpByRejection
+		{
+			get
+			{
+				return hasHangUpByRejection;
+			}
+			set	
+			{
+				hasHangUpByRejection = value;
+				DictionaryUtil.Add(QueryParameters, "HasHangUpByRejection", value.ToString());
+			}
+		}
+
+		public bool? HasReachedEndOfFlow
+		{
+			get
+			{
+				return hasReachedEndOfFlow;
+			}
+			set	
+			{
+				hasReachedEndOfFlow = value;
+				DictionaryUtil.Add(QueryParameters, "HasReachedEndOfFlow", value.ToString());
+			}
+		}
+
 		public string InstanceId
 		{
 			get
@@ -389,9 +434,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			return false;
 		}
 
-        public override SearchTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateTaskExportTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SearchTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateTaskExportTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

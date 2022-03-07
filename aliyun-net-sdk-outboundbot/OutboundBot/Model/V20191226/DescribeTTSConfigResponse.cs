@@ -25,9 +25,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class DescribeTTSConfigResponse : AcsResponse
 	{
 
-		private string code;
-
 		private int? httpStatusCode;
+
+		private string code;
 
 		private string message;
 
@@ -36,18 +36,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private bool? success;
 
 		private DescribeTTSConfig_TTSConfig tTSConfig;
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -58,6 +46,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				httpStatusCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -112,51 +112,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class DescribeTTSConfig_TTSConfig
 		{
 
-			private string id;
-
-			private string instanceId;
-
-			private string scriptId;
+			private string voice;
 
 			private string speechRate;
 
-			private string voice;
-
 			private string volume;
 
-			public string Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private string instanceId;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private string nlsServiceType;
 
-			public string ScriptId
+			private string appKey;
+
+			public string Voice
 			{
 				get
 				{
-					return scriptId;
+					return voice;
 				}
 				set	
 				{
-					scriptId = value;
+					voice = value;
 				}
 			}
 
@@ -172,18 +148,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string Voice
-			{
-				get
-				{
-					return voice;
-				}
-				set	
-				{
-					voice = value;
-				}
-			}
-
 			public string Volume
 			{
 				get
@@ -193,6 +157,42 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					volume = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string NlsServiceType
+			{
+				get
+				{
+					return nlsServiceType;
+				}
+				set	
+				{
+					nlsServiceType = value;
+				}
+			}
+
+			public string AppKey
+			{
+				get
+				{
+					return appKey;
+				}
+				set	
+				{
+					appKey = value;
 				}
 			}
 		}

@@ -22,30 +22,30 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-	public class ModifyTTSConfigResponse : AcsResponse
+	public class CreateInstanceBindNumberResponse : AcsResponse
 	{
 
-		private int? httpStatusCode;
+		private bool? success;
 
 		private string code;
 
 		private string message;
 
+		private int? httpStatusCode;
+
 		private string requestId;
 
-		private bool? success;
+		private CreateInstanceBindNumber_Data data;
 
-		private ModifyTTSConfig_TTSConfig tTSConfig;
-
-		public int? HttpStatusCode
+		public bool? Success
 		{
 			get
 			{
-				return httpStatusCode;
+				return success;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				success = value;
 			}
 		}
 
@@ -73,6 +73,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
 		public string RequestId
 		{
 			get
@@ -85,114 +97,64 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public bool? Success
+		public CreateInstanceBindNumber_Data Data
 		{
 			get
 			{
-				return success;
+				return data;
 			}
 			set	
 			{
-				success = value;
+				data = value;
 			}
 		}
 
-		public ModifyTTSConfig_TTSConfig TTSConfig
-		{
-			get
-			{
-				return tTSConfig;
-			}
-			set	
-			{
-				tTSConfig = value;
-			}
-		}
-
-		public class ModifyTTSConfig_TTSConfig
+		public class CreateInstanceBindNumber_Data
 		{
 
-			private string voice;
+			private List<CreateInstanceBindNumber_ListItem> list;
 
-			private string tTSConfigId;
-
-			private string speechRate;
-
-			private string volume;
-
-			private string instanceId;
-
-			private string scriptId;
-
-			public string Voice
+			public List<CreateInstanceBindNumber_ListItem> List
 			{
 				get
 				{
-					return voice;
+					return list;
 				}
 				set	
 				{
-					voice = value;
+					list = value;
 				}
 			}
 
-			public string TTSConfigId
+			public class CreateInstanceBindNumber_ListItem
 			{
-				get
-				{
-					return tTSConfigId;
-				}
-				set	
-				{
-					tTSConfigId = value;
-				}
-			}
 
-			public string SpeechRate
-			{
-				get
-				{
-					return speechRate;
-				}
-				set	
-				{
-					speechRate = value;
-				}
-			}
+				private string instanceId;
 
-			public string Volume
-			{
-				get
-				{
-					return volume;
-				}
-				set	
-				{
-					volume = value;
-				}
-			}
+				private bool? success;
 
-			public string InstanceId
-			{
-				get
+				public string InstanceId
 				{
-					return instanceId;
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
+					}
 				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
 
-			public string ScriptId
-			{
-				get
+				public bool? Success
 				{
-					return scriptId;
-				}
-				set	
-				{
-					scriptId = value;
+					get
+					{
+						return success;
+					}
+					set	
+					{
+						success = value;
+					}
 				}
 			}
 		}
