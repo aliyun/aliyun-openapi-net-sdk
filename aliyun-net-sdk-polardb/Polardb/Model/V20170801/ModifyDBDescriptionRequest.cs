@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.polardb;
 using Aliyun.Acs.polardb.Transform;
 using Aliyun.Acs.polardb.Transform.V20170801;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
     public class ModifyDBDescriptionRequest : RpcAcsRequest<ModifyDBDescriptionResponse>
     {
         public ModifyDBDescriptionRequest()
-            : base("polardb", "2017-08-01", "ModifyDBDescription")
+            : base("polardb", "2017-08-01", "ModifyDBDescription", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

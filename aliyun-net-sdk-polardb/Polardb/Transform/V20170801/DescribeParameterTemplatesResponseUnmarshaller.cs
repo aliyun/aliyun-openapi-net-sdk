@@ -40,12 +40,14 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			List<DescribeParameterTemplatesResponse.DescribeParameterTemplates_TemplateRecord> describeParameterTemplatesResponse_parameters = new List<DescribeParameterTemplatesResponse.DescribeParameterTemplates_TemplateRecord>();
 			for (int i = 0; i < _ctx.Length("DescribeParameterTemplates.Parameters.Length"); i++) {
 				DescribeParameterTemplatesResponse.DescribeParameterTemplates_TemplateRecord templateRecord = new DescribeParameterTemplatesResponse.DescribeParameterTemplates_TemplateRecord();
-				templateRecord.ForceModify = _ctx.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ForceModify");
 				templateRecord.CheckingCode = _ctx.StringValue("DescribeParameterTemplates.Parameters["+ i +"].CheckingCode");
-				templateRecord.ParameterValue = _ctx.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ParameterValue");
-				templateRecord.ForceRestart = _ctx.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ForceRestart");
 				templateRecord.ParameterName = _ctx.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ParameterName");
+				templateRecord.ParameterValue = _ctx.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ParameterValue");
+				templateRecord.ForceModify = _ctx.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ForceModify");
+				templateRecord.ForceRestart = _ctx.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ForceRestart");
 				templateRecord.ParameterDescription = _ctx.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ParameterDescription");
+				templateRecord.IsNodeAvailable = _ctx.StringValue("DescribeParameterTemplates.Parameters["+ i +"].IsNodeAvailable");
+				templateRecord.ParamRelyRule = _ctx.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ParamRelyRule");
 
 				describeParameterTemplatesResponse_parameters.Add(templateRecord);
 			}

@@ -25,15 +25,27 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeDBClusterParametersResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string dBVersion;
 
-		private string engine;
+		private string requestId;
 
 		private string dBType;
 
-		private string dBVersion;
+		private string engine;
 
 		private List<DescribeDBClusterParameters_Parameter> runningParameters;
+
+		public string DBVersion
+		{
+			get
+			{
+				return dBVersion;
+			}
+			set	
+			{
+				dBVersion = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string DBVersion
+		public string Engine
 		{
 			get
 			{
-				return dBVersion;
+				return engine;
 			}
 			set	
 			{
-				dBVersion = value;
+				engine = value;
 			}
 		}
 
@@ -98,33 +98,37 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeDBClusterParameters_Parameter
 		{
 
-			private string parameterName;
+			private string checkingCode;
 
 			private string dataType;
 
-			private string defaultParameterValue;
+			private string parameterName;
 
 			private string parameterValue;
 
-			private bool? isModifiable;
-
 			private bool? forceRestart;
-
-			private string parameterStatus;
-
-			private string checkingCode;
 
 			private string parameterDescription;
 
-			public string ParameterName
+			private string parameterStatus;
+
+			private string defaultParameterValue;
+
+			private bool? isModifiable;
+
+			private string isNodeAvailable;
+
+			private string paramRelyRule;
+
+			public string CheckingCode
 			{
 				get
 				{
-					return parameterName;
+					return checkingCode;
 				}
 				set	
 				{
-					parameterName = value;
+					checkingCode = value;
 				}
 			}
 
@@ -140,15 +144,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string DefaultParameterValue
+			public string ParameterName
 			{
 				get
 				{
-					return defaultParameterValue;
+					return parameterName;
 				}
 				set	
 				{
-					defaultParameterValue = value;
+					parameterName = value;
 				}
 			}
 
@@ -164,18 +168,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public bool? IsModifiable
-			{
-				get
-				{
-					return isModifiable;
-				}
-				set	
-				{
-					isModifiable = value;
-				}
-			}
-
 			public bool? ForceRestart
 			{
 				get
@@ -185,6 +177,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					forceRestart = value;
+				}
+			}
+
+			public string ParameterDescription
+			{
+				get
+				{
+					return parameterDescription;
+				}
+				set	
+				{
+					parameterDescription = value;
 				}
 			}
 
@@ -200,27 +204,51 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string CheckingCode
+			public string DefaultParameterValue
 			{
 				get
 				{
-					return checkingCode;
+					return defaultParameterValue;
 				}
 				set	
 				{
-					checkingCode = value;
+					defaultParameterValue = value;
 				}
 			}
 
-			public string ParameterDescription
+			public bool? IsModifiable
 			{
 				get
 				{
-					return parameterDescription;
+					return isModifiable;
 				}
 				set	
 				{
-					parameterDescription = value;
+					isModifiable = value;
+				}
+			}
+
+			public string IsNodeAvailable
+			{
+				get
+				{
+					return isNodeAvailable;
+				}
+				set	
+				{
+					isNodeAvailable = value;
+				}
+			}
+
+			public string ParamRelyRule
+			{
+				get
+				{
+					return paramRelyRule;
+				}
+				set	
+				{
+					paramRelyRule = value;
 				}
 			}
 		}

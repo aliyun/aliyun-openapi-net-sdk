@@ -62,6 +62,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeDBClusterAttributeResponse.IsProxyLatestVersion = _ctx.BooleanValue("DescribeDBClusterAttribute.IsProxyLatestVersion");
 			describeDBClusterAttributeResponse.StorageType = _ctx.StringValue("DescribeDBClusterAttribute.StorageType");
 			describeDBClusterAttributeResponse.ProxyCpuCores = _ctx.StringValue("DescribeDBClusterAttribute.ProxyCpuCores");
+			describeDBClusterAttributeResponse.ProxyStandardCpuCores = _ctx.StringValue("DescribeDBClusterAttribute.ProxyStandardCpuCores");
 			describeDBClusterAttributeResponse.ProxyType = _ctx.StringValue("DescribeDBClusterAttribute.ProxyType");
 			describeDBClusterAttributeResponse.ProxyStatus = _ctx.StringValue("DescribeDBClusterAttribute.ProxyStatus");
 

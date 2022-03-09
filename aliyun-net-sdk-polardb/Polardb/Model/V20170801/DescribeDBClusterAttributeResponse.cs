@@ -87,6 +87,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string proxyCpuCores;
 
+		private string proxyStandardCpuCores;
+
 		private string proxyType;
 
 		private string proxyStatus;
@@ -464,6 +466,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				proxyCpuCores = value;
+			}
+		}
+
+		public string ProxyStandardCpuCores
+		{
+			get
+			{
+				return proxyStandardCpuCores;
+			}
+			set	
+			{
+				proxyStandardCpuCores = value;
 			}
 		}
 

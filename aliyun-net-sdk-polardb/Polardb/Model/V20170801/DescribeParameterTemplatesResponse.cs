@@ -112,29 +112,21 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeParameterTemplates_TemplateRecord
 		{
 
-			private string forceModify;
-
 			private string checkingCode;
-
-			private string parameterValue;
-
-			private string forceRestart;
 
 			private string parameterName;
 
+			private string parameterValue;
+
+			private string forceModify;
+
+			private string forceRestart;
+
 			private string parameterDescription;
 
-			public string ForceModify
-			{
-				get
-				{
-					return forceModify;
-				}
-				set	
-				{
-					forceModify = value;
-				}
-			}
+			private string isNodeAvailable;
+
+			private string paramRelyRule;
 
 			public string CheckingCode
 			{
@@ -145,30 +137,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					checkingCode = value;
-				}
-			}
-
-			public string ParameterValue
-			{
-				get
-				{
-					return parameterValue;
-				}
-				set	
-				{
-					parameterValue = value;
-				}
-			}
-
-			public string ForceRestart
-			{
-				get
-				{
-					return forceRestart;
-				}
-				set	
-				{
-					forceRestart = value;
 				}
 			}
 
@@ -184,6 +152,42 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
+			public string ParameterValue
+			{
+				get
+				{
+					return parameterValue;
+				}
+				set	
+				{
+					parameterValue = value;
+				}
+			}
+
+			public string ForceModify
+			{
+				get
+				{
+					return forceModify;
+				}
+				set	
+				{
+					forceModify = value;
+				}
+			}
+
+			public string ForceRestart
+			{
+				get
+				{
+					return forceRestart;
+				}
+				set	
+				{
+					forceRestart = value;
+				}
+			}
+
 			public string ParameterDescription
 			{
 				get
@@ -193,6 +197,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					parameterDescription = value;
+				}
+			}
+
+			public string IsNodeAvailable
+			{
+				get
+				{
+					return isNodeAvailable;
+				}
+				set	
+				{
+					isNodeAvailable = value;
+				}
+			}
+
+			public string ParamRelyRule
+			{
+				get
+				{
+					return paramRelyRule;
+				}
+				set	
+				{
+					paramRelyRule = value;
 				}
 			}
 		}
