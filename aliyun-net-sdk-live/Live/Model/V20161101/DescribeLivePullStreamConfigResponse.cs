@@ -70,6 +70,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string endTime;
 
+			private string always;
+
 			public string DomainName
 			{
 				get
@@ -151,6 +153,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					endTime = value;
+				}
+			}
+
+			public string Always
+			{
+				get
+				{
+					return always;
+				}
+				set	
+				{
+					always = value;
 				}
 			}
 		}

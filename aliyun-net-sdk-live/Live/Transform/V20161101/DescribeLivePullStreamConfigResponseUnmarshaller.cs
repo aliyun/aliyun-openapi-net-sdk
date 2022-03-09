@@ -43,6 +43,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				liveAppRecord.SourceUsing = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].SourceUsing");
 				liveAppRecord.StartTime = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].StartTime");
 				liveAppRecord.EndTime = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].EndTime");
+				liveAppRecord.Always = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].Always");
 
 				describeLivePullStreamConfigResponse_liveAppRecordList.Add(liveAppRecord);
 			}
