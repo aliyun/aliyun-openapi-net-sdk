@@ -53,10 +53,8 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 					mscAgentServiceResponse.Version = _ctx.StringValue("ListAppServicesPage.Data["+ i +"].Result["+ j +"].Version");
 					mscAgentServiceResponse.InstanceNum = _ctx.LongValue("ListAppServicesPage.Data["+ i +"].Result["+ j +"].InstanceNum");
 					mscAgentServiceResponse.EdasAppId = _ctx.StringValue("ListAppServicesPage.Data["+ i +"].Result["+ j +"].EdasAppId");
-					mscAgentServiceResponse.GmtModifyTime = _ctx.StringValue("ListAppServicesPage.Data["+ i +"].Result["+ j +"].GmtModifyTime");
 					mscAgentServiceResponse.ServiceName = _ctx.StringValue("ListAppServicesPage.Data["+ i +"].Result["+ j +"].ServiceName");
 					mscAgentServiceResponse.Group = _ctx.StringValue("ListAppServicesPage.Data["+ i +"].Result["+ j +"].Group");
-					mscAgentServiceResponse.ClusterName = _ctx.StringValue("ListAppServicesPage.Data["+ i +"].Result["+ j +"].ClusterName");
 
 					dataItem_result.Add(mscAgentServiceResponse);
 				}

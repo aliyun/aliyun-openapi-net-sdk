@@ -232,6 +232,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private bool? associateEip;
 
+			private string kafkaConfigs;
+
 			private List<DescribeApplicationConfig_ConfigMapMountDescItem> configMapMountDesc;
 
 			private List<DescribeApplicationConfig_Tag> tags;
@@ -873,6 +875,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					associateEip = value;
+				}
+			}
+
+			public string KafkaConfigs
+			{
+				get
+				{
+					return kafkaConfigs;
+				}
+				set	
+				{
+					kafkaConfigs = value;
 				}
 			}
 

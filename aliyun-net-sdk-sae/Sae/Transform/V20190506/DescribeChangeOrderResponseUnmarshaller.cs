@@ -56,6 +56,7 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			data.CoType = _ctx.StringValue("DescribeChangeOrder.Data.CoType");
 			data.Auto = _ctx.BooleanValue("DescribeChangeOrder.Data.Auto");
 			data.CurrentPipelineId = _ctx.StringValue("DescribeChangeOrder.Data.CurrentPipelineId");
+			data.AppId = _ctx.StringValue("DescribeChangeOrder.Data.AppId");
 
 			List<string> data_coTargets = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeChangeOrder.Data.CoTargets.Length"); i++) {

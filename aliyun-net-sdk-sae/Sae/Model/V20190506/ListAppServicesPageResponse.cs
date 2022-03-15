@@ -207,13 +207,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 				private string edasAppId;
 
-				private string gmtModifyTime;
-
 				private string serviceName;
 
 				private string group;
-
-				private string clusterName;
 
 				public string EdasAppName
 				{
@@ -263,18 +259,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public string GmtModifyTime
-				{
-					get
-					{
-						return gmtModifyTime;
-					}
-					set	
-					{
-						gmtModifyTime = value;
-					}
-				}
-
 				public string ServiceName
 				{
 					get
@@ -296,18 +280,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						group = value;
-					}
-				}
-
-				public string ClusterName
-				{
-					get
-					{
-						return clusterName;
-					}
-					set	
-					{
-						clusterName = value;
 					}
 				}
 			}

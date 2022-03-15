@@ -27,15 +27,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string requestId;
 
-		private string code;
+		private string message;
+
+		private string traceId;
 
 		private string errorCode;
 
-		private string message;
+		private string code;
 
 		private bool? success;
-
-		private string traceId;
 
 		private DescribeNamespaces_Data data;
 
@@ -51,15 +51,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Code
+		public string Message
 		{
 			get
 			{
-				return code;
+				return message;
 			}
 			set	
 			{
-				code = value;
+				message = value;
+			}
+		}
+
+		public string TraceId
+		{
+			get
+			{
+				return traceId;
+			}
+			set	
+			{
+				traceId = value;
 			}
 		}
 
@@ -75,15 +87,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Message
+		public string Code
 		{
 			get
 			{
-				return message;
+				return code;
 			}
 			set	
 			{
-				message = value;
+				code = value;
 			}
 		}
 
@@ -96,18 +108,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string TraceId
-		{
-			get
-			{
-				return traceId;
-			}
-			set	
-			{
-				traceId = value;
 			}
 		}
 
@@ -128,9 +128,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private int? currentPage;
 
-			private int? pageSize;
-
 			private int? totalSize;
+
+			private int? pageSize;
 
 			private List<DescribeNamespaces__Namespace> namespaces;
 
@@ -146,18 +146,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public int? PageSize
-			{
-				get
-				{
-					return pageSize;
-				}
-				set	
-				{
-					pageSize = value;
-				}
-			}
-
 			public int? TotalSize
 			{
 				get
@@ -167,6 +155,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					totalSize = value;
+				}
+			}
+
+			public int? PageSize
+			{
+				get
+				{
+					return pageSize;
+				}
+				set	
+				{
+					pageSize = value;
 				}
 			}
 
@@ -185,21 +185,33 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			public class DescribeNamespaces__Namespace
 			{
 
+				private string namespaceDescription;
+
 				private string accessKey;
+
+				private string secretKey;
+
+				private string namespaceId;
 
 				private string addressServerHost;
 
-				private string secretKey;
+				private string namespaceName;
 
 				private string tenantId;
 
 				private string regionId;
 
-				private string namespaceId;
-
-				private string namespaceName;
-
-				private string namespaceDescription;
+				public string NamespaceDescription
+				{
+					get
+					{
+						return namespaceDescription;
+					}
+					set	
+					{
+						namespaceDescription = value;
+					}
+				}
 
 				public string AccessKey
 				{
@@ -210,6 +222,30 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						accessKey = value;
+					}
+				}
+
+				public string SecretKey
+				{
+					get
+					{
+						return secretKey;
+					}
+					set	
+					{
+						secretKey = value;
+					}
+				}
+
+				public string NamespaceId
+				{
+					get
+					{
+						return namespaceId;
+					}
+					set	
+					{
+						namespaceId = value;
 					}
 				}
 
@@ -225,15 +261,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public string SecretKey
+				public string NamespaceName
 				{
 					get
 					{
-						return secretKey;
+						return namespaceName;
 					}
 					set	
 					{
-						secretKey = value;
+						namespaceName = value;
 					}
 				}
 
@@ -258,42 +294,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						regionId = value;
-					}
-				}
-
-				public string NamespaceId
-				{
-					get
-					{
-						return namespaceId;
-					}
-					set	
-					{
-						namespaceId = value;
-					}
-				}
-
-				public string NamespaceName
-				{
-					get
-					{
-						return namespaceName;
-					}
-					set	
-					{
-						namespaceName = value;
-					}
-				}
-
-				public string NamespaceDescription
-				{
-					get
-					{
-						return namespaceDescription;
-					}
-					set	
-					{
-						namespaceDescription = value;
 					}
 				}
 			}

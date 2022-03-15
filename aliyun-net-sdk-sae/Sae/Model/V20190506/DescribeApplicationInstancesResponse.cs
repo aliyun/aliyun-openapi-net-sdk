@@ -207,6 +207,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 				private string eip;
 
+				private long? finishTimeStamp;
+
 				public long? CreateTimeStamp
 				{
 					get
@@ -336,6 +338,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						eip = value;
+					}
+				}
+
+				public long? FinishTimeStamp
+				{
+					get
+					{
+						return finishTimeStamp;
+					}
+					set	
+					{
+						finishTimeStamp = value;
 					}
 				}
 			}

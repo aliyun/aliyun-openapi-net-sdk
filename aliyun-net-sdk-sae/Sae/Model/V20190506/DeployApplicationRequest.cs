@@ -43,15 +43,51 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string nasId;
 
-		private string webContainer;
-
 		private string jarStartArgs;
+
+		private string ossAkSecret;
+
+		private string mountHost;
+
+		private int? batchWaitTime;
+
+		private string envs;
+
+		private string kafkaInstanceId;
+
+		private string phpArmsConfigLocation;
+
+		private string customHostAlias;
+
+		private string jarStartOptions;
+
+		private string configMapMountDesc;
+
+		private string ossMountDescs;
+
+		private string kafkaEndpoint;
+
+		private string preStop;
+
+		private string updateStrategy;
+
+		private string changeOrderDesc;
+
+		private int? minReadyInstanceRatio;
+
+		private bool? autoEnableApplicationScalingRule;
+
+		private string postStart;
+
+		private bool? associateEip;
+
+		private string webContainer;
 
 		private string enableAhas;
 
 		private string slsConfigs;
 
-		private string ossAkSecret;
+		private bool? openCollectToKafka;
 
 		private string commandArgs;
 
@@ -61,27 +97,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string timezone;
 
-		private string mountHost;
-
-		private int? batchWaitTime;
-
 		private string ossAkId;
 
 		private string liveness;
-
-		private string envs;
-
-		private string phpArmsConfigLocation;
 
 		private string packageVersion;
 
 		private string tomcatConfig;
 
-		private string customHostAlias;
-
 		private string warStartOptions;
-
-		private string jarStartOptions;
 
 		private string edasContainerVersion;
 
@@ -89,19 +113,11 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private int? terminationGracePeriodSeconds;
 
-		private string configMapMountDesc;
-
-		private string ossMountDescs;
-
 		private string phpConfig;
-
-		private string preStop;
 
 		private bool? enableGreyTagRoute;
 
 		private string command;
-
-		private string updateStrategy;
 
 		private string mountDesc;
 
@@ -109,7 +125,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private int? minReadyInstances;
 
-		private string changeOrderDesc;
+		private string kafkaLogfileConfig;
 
 		private string acrInstanceId;
 
@@ -117,15 +133,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string imageUrl;
 
-		private int? minReadyInstanceRatio;
-
-		private bool? autoEnableApplicationScalingRule;
-
 		private string phpConfigLocation;
-
-		private string postStart;
-
-		private bool? associateEip;
 
 		public string NasId
 		{
@@ -140,19 +148,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string WebContainer
-		{
-			get
-			{
-				return webContainer;
-			}
-			set	
-			{
-				webContainer = value;
-				DictionaryUtil.Add(QueryParameters, "WebContainer", value);
-			}
-		}
-
 		public string JarStartArgs
 		{
 			get
@@ -163,6 +158,253 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				jarStartArgs = value;
 				DictionaryUtil.Add(QueryParameters, "JarStartArgs", value);
+			}
+		}
+
+		public string OssAkSecret
+		{
+			get
+			{
+				return ossAkSecret;
+			}
+			set	
+			{
+				ossAkSecret = value;
+				DictionaryUtil.Add(BodyParameters, "OssAkSecret", value);
+			}
+		}
+
+		public string MountHost
+		{
+			get
+			{
+				return mountHost;
+			}
+			set	
+			{
+				mountHost = value;
+				DictionaryUtil.Add(QueryParameters, "MountHost", value);
+			}
+		}
+
+		public int? BatchWaitTime
+		{
+			get
+			{
+				return batchWaitTime;
+			}
+			set	
+			{
+				batchWaitTime = value;
+				DictionaryUtil.Add(QueryParameters, "BatchWaitTime", value.ToString());
+			}
+		}
+
+		public string Envs
+		{
+			get
+			{
+				return envs;
+			}
+			set	
+			{
+				envs = value;
+				DictionaryUtil.Add(QueryParameters, "Envs", value);
+			}
+		}
+
+		public string KafkaInstanceId
+		{
+			get
+			{
+				return kafkaInstanceId;
+			}
+			set	
+			{
+				kafkaInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "KafkaInstanceId", value);
+			}
+		}
+
+		public string PhpArmsConfigLocation
+		{
+			get
+			{
+				return phpArmsConfigLocation;
+			}
+			set	
+			{
+				phpArmsConfigLocation = value;
+				DictionaryUtil.Add(QueryParameters, "PhpArmsConfigLocation", value);
+			}
+		}
+
+		public string CustomHostAlias
+		{
+			get
+			{
+				return customHostAlias;
+			}
+			set	
+			{
+				customHostAlias = value;
+				DictionaryUtil.Add(QueryParameters, "CustomHostAlias", value);
+			}
+		}
+
+		public string JarStartOptions
+		{
+			get
+			{
+				return jarStartOptions;
+			}
+			set	
+			{
+				jarStartOptions = value;
+				DictionaryUtil.Add(QueryParameters, "JarStartOptions", value);
+			}
+		}
+
+		public string ConfigMapMountDesc
+		{
+			get
+			{
+				return configMapMountDesc;
+			}
+			set	
+			{
+				configMapMountDesc = value;
+				DictionaryUtil.Add(BodyParameters, "ConfigMapMountDesc", value);
+			}
+		}
+
+		public string OssMountDescs
+		{
+			get
+			{
+				return ossMountDescs;
+			}
+			set	
+			{
+				ossMountDescs = value;
+				DictionaryUtil.Add(BodyParameters, "OssMountDescs", value);
+			}
+		}
+
+		public string KafkaEndpoint
+		{
+			get
+			{
+				return kafkaEndpoint;
+			}
+			set	
+			{
+				kafkaEndpoint = value;
+				DictionaryUtil.Add(QueryParameters, "KafkaEndpoint", value);
+			}
+		}
+
+		public string PreStop
+		{
+			get
+			{
+				return preStop;
+			}
+			set	
+			{
+				preStop = value;
+				DictionaryUtil.Add(QueryParameters, "PreStop", value);
+			}
+		}
+
+		public string UpdateStrategy
+		{
+			get
+			{
+				return updateStrategy;
+			}
+			set	
+			{
+				updateStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "UpdateStrategy", value);
+			}
+		}
+
+		public string ChangeOrderDesc
+		{
+			get
+			{
+				return changeOrderDesc;
+			}
+			set	
+			{
+				changeOrderDesc = value;
+				DictionaryUtil.Add(QueryParameters, "ChangeOrderDesc", value);
+			}
+		}
+
+		public int? MinReadyInstanceRatio
+		{
+			get
+			{
+				return minReadyInstanceRatio;
+			}
+			set	
+			{
+				minReadyInstanceRatio = value;
+				DictionaryUtil.Add(QueryParameters, "MinReadyInstanceRatio", value.ToString());
+			}
+		}
+
+		public bool? AutoEnableApplicationScalingRule
+		{
+			get
+			{
+				return autoEnableApplicationScalingRule;
+			}
+			set	
+			{
+				autoEnableApplicationScalingRule = value;
+				DictionaryUtil.Add(QueryParameters, "AutoEnableApplicationScalingRule", value.ToString());
+			}
+		}
+
+		public string PostStart
+		{
+			get
+			{
+				return postStart;
+			}
+			set	
+			{
+				postStart = value;
+				DictionaryUtil.Add(QueryParameters, "PostStart", value);
+			}
+		}
+
+		public bool? AssociateEip
+		{
+			get
+			{
+				return associateEip;
+			}
+			set	
+			{
+				associateEip = value;
+				DictionaryUtil.Add(BodyParameters, "AssociateEip", value.ToString());
+			}
+		}
+
+		public string WebContainer
+		{
+			get
+			{
+				return webContainer;
+			}
+			set	
+			{
+				webContainer = value;
+				DictionaryUtil.Add(QueryParameters, "WebContainer", value);
 			}
 		}
 
@@ -192,16 +434,16 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string OssAkSecret
+		public bool? OpenCollectToKafka
 		{
 			get
 			{
-				return ossAkSecret;
+				return openCollectToKafka;
 			}
 			set	
 			{
-				ossAkSecret = value;
-				DictionaryUtil.Add(BodyParameters, "OssAkSecret", value);
+				openCollectToKafka = value;
+				DictionaryUtil.Add(QueryParameters, "OpenCollectToKafka", value.ToString());
 			}
 		}
 
@@ -257,32 +499,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string MountHost
-		{
-			get
-			{
-				return mountHost;
-			}
-			set	
-			{
-				mountHost = value;
-				DictionaryUtil.Add(QueryParameters, "MountHost", value);
-			}
-		}
-
-		public int? BatchWaitTime
-		{
-			get
-			{
-				return batchWaitTime;
-			}
-			set	
-			{
-				batchWaitTime = value;
-				DictionaryUtil.Add(QueryParameters, "BatchWaitTime", value.ToString());
-			}
-		}
-
 		public string OssAkId
 		{
 			get
@@ -306,32 +522,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				liveness = value;
 				DictionaryUtil.Add(QueryParameters, "Liveness", value);
-			}
-		}
-
-		public string Envs
-		{
-			get
-			{
-				return envs;
-			}
-			set	
-			{
-				envs = value;
-				DictionaryUtil.Add(QueryParameters, "Envs", value);
-			}
-		}
-
-		public string PhpArmsConfigLocation
-		{
-			get
-			{
-				return phpArmsConfigLocation;
-			}
-			set	
-			{
-				phpArmsConfigLocation = value;
-				DictionaryUtil.Add(QueryParameters, "PhpArmsConfigLocation", value);
 			}
 		}
 
@@ -361,19 +551,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string CustomHostAlias
-		{
-			get
-			{
-				return customHostAlias;
-			}
-			set	
-			{
-				customHostAlias = value;
-				DictionaryUtil.Add(QueryParameters, "CustomHostAlias", value);
-			}
-		}
-
 		public string WarStartOptions
 		{
 			get
@@ -384,19 +561,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				warStartOptions = value;
 				DictionaryUtil.Add(QueryParameters, "WarStartOptions", value);
-			}
-		}
-
-		public string JarStartOptions
-		{
-			get
-			{
-				return jarStartOptions;
-			}
-			set	
-			{
-				jarStartOptions = value;
-				DictionaryUtil.Add(QueryParameters, "JarStartOptions", value);
 			}
 		}
 
@@ -439,32 +603,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string ConfigMapMountDesc
-		{
-			get
-			{
-				return configMapMountDesc;
-			}
-			set	
-			{
-				configMapMountDesc = value;
-				DictionaryUtil.Add(BodyParameters, "ConfigMapMountDesc", value);
-			}
-		}
-
-		public string OssMountDescs
-		{
-			get
-			{
-				return ossMountDescs;
-			}
-			set	
-			{
-				ossMountDescs = value;
-				DictionaryUtil.Add(BodyParameters, "OssMountDescs", value);
-			}
-		}
-
 		public string PhpConfig
 		{
 			get
@@ -475,19 +613,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				phpConfig = value;
 				DictionaryUtil.Add(BodyParameters, "PhpConfig", value);
-			}
-		}
-
-		public string PreStop
-		{
-			get
-			{
-				return preStop;
-			}
-			set	
-			{
-				preStop = value;
-				DictionaryUtil.Add(QueryParameters, "PreStop", value);
 			}
 		}
 
@@ -514,19 +639,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				command = value;
 				DictionaryUtil.Add(QueryParameters, "Command", value);
-			}
-		}
-
-		public string UpdateStrategy
-		{
-			get
-			{
-				return updateStrategy;
-			}
-			set	
-			{
-				updateStrategy = value;
-				DictionaryUtil.Add(QueryParameters, "UpdateStrategy", value);
 			}
 		}
 
@@ -569,16 +681,16 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string ChangeOrderDesc
+		public string KafkaLogfileConfig
 		{
 			get
 			{
-				return changeOrderDesc;
+				return kafkaLogfileConfig;
 			}
 			set	
 			{
-				changeOrderDesc = value;
-				DictionaryUtil.Add(QueryParameters, "ChangeOrderDesc", value);
+				kafkaLogfileConfig = value;
+				DictionaryUtil.Add(QueryParameters, "KafkaLogfileConfig", value);
 			}
 		}
 
@@ -621,32 +733,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public int? MinReadyInstanceRatio
-		{
-			get
-			{
-				return minReadyInstanceRatio;
-			}
-			set	
-			{
-				minReadyInstanceRatio = value;
-				DictionaryUtil.Add(QueryParameters, "MinReadyInstanceRatio", value.ToString());
-			}
-		}
-
-		public bool? AutoEnableApplicationScalingRule
-		{
-			get
-			{
-				return autoEnableApplicationScalingRule;
-			}
-			set	
-			{
-				autoEnableApplicationScalingRule = value;
-				DictionaryUtil.Add(QueryParameters, "AutoEnableApplicationScalingRule", value.ToString());
-			}
-		}
-
 		public string PhpConfigLocation
 		{
 			get
@@ -657,32 +743,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				phpConfigLocation = value;
 				DictionaryUtil.Add(QueryParameters, "PhpConfigLocation", value);
-			}
-		}
-
-		public string PostStart
-		{
-			get
-			{
-				return postStart;
-			}
-			set	
-			{
-				postStart = value;
-				DictionaryUtil.Add(QueryParameters, "PostStart", value);
-			}
-		}
-
-		public bool? AssociateEip
-		{
-			get
-			{
-				return associateEip;
-			}
-			set	
-			{
-				associateEip = value;
-				DictionaryUtil.Add(BodyParameters, "AssociateEip", value.ToString());
 			}
 		}
 

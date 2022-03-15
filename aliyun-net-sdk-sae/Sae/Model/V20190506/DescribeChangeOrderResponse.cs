@@ -160,6 +160,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private string currentPipelineId;
 
+			private string appId;
+
 			private List<DescribeChangeOrder_Pipeline> pipelines;
 
 			private List<string> coTargets;
@@ -365,6 +367,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					currentPipelineId = value;
+				}
+			}
+
+			public string AppId
+			{
+				get
+				{
+					return appId;
+				}
+				set	
+				{
+					appId = value;
 				}
 			}
 

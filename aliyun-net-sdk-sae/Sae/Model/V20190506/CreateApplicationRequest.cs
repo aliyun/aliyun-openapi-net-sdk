@@ -53,6 +53,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string envs;
 
+		private string kafkaInstanceId;
+
 		private string phpArmsConfigLocation;
 
 		private string customHostAlias;
@@ -68,6 +70,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		private string configMapMountDesc;
 
 		private string ossMountDescs;
+
+		private string kafkaEndpoint;
 
 		private string preStop;
 
@@ -86,6 +90,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		private int? memory;
 
 		private string slsConfigs;
+
+		private bool? openCollectToKafka;
 
 		private string commandArgs;
 
@@ -124,6 +130,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		private string jdk;
 
 		private string appDescription;
+
+		private string kafkaLogfileConfig;
 
 		private string acrInstanceId;
 
@@ -208,6 +216,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				envs = value;
 				DictionaryUtil.Add(QueryParameters, "Envs", value);
+			}
+		}
+
+		public string KafkaInstanceId
+		{
+			get
+			{
+				return kafkaInstanceId;
+			}
+			set	
+			{
+				kafkaInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "KafkaInstanceId", value);
 			}
 		}
 
@@ -312,6 +333,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				ossMountDescs = value;
 				DictionaryUtil.Add(BodyParameters, "OssMountDescs", value);
+			}
+		}
+
+		public string KafkaEndpoint
+		{
+			get
+			{
+				return kafkaEndpoint;
+			}
+			set	
+			{
+				kafkaEndpoint = value;
+				DictionaryUtil.Add(QueryParameters, "KafkaEndpoint", value);
 			}
 		}
 
@@ -429,6 +463,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				slsConfigs = value;
 				DictionaryUtil.Add(QueryParameters, "SlsConfigs", value);
+			}
+		}
+
+		public bool? OpenCollectToKafka
+		{
+			get
+			{
+				return openCollectToKafka;
+			}
+			set	
+			{
+				openCollectToKafka = value;
+				DictionaryUtil.Add(QueryParameters, "OpenCollectToKafka", value.ToString());
 			}
 		}
 
@@ -676,6 +723,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				appDescription = value;
 				DictionaryUtil.Add(QueryParameters, "AppDescription", value);
+			}
+		}
+
+		public string KafkaLogfileConfig
+		{
+			get
+			{
+				return kafkaLogfileConfig;
+			}
+			set	
+			{
+				kafkaLogfileConfig = value;
+				DictionaryUtil.Add(QueryParameters, "KafkaLogfileConfig", value);
 			}
 		}
 
