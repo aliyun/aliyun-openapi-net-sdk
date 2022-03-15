@@ -46,6 +46,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string nodeId;
 
+		private string shardCount;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -90,6 +92,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				nodeId = value;
 				DictionaryUtil.Add(QueryParameters, "NodeId", value);
+			}
+		}
+
+		public string ShardCount
+		{
+			get
+			{
+				return shardCount;
+			}
+			set	
+			{
+				shardCount = value;
+				DictionaryUtil.Add(QueryParameters, "ShardCount", value);
 			}
 		}
 

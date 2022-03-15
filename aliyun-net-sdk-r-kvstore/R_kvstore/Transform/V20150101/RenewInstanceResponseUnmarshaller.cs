@@ -31,9 +31,9 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			RenewInstanceResponse renewInstanceResponse = new RenewInstanceResponse();
 
 			renewInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			renewInstanceResponse.EndTime = _ctx.StringValue("RenewInstance.EndTime");
 			renewInstanceResponse.RequestId = _ctx.StringValue("RenewInstance.RequestId");
 			renewInstanceResponse.OrderId = _ctx.StringValue("RenewInstance.OrderId");
-			renewInstanceResponse.EndTime = _ctx.StringValue("RenewInstance.EndTime");
         
 			return renewInstanceResponse;
         }

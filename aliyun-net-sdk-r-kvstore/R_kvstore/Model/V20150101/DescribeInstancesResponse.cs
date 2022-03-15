@@ -174,6 +174,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private int? proxyCount;
 
+			private string cloudType;
+
 			private List<DescribeInstances_Tag> tags;
 
 			public string VpcId
@@ -629,6 +631,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					proxyCount = value;
+				}
+			}
+
+			public string CloudType
+			{
+				get
+				{
+					return cloudType;
+				}
+				set	
+				{
+					cloudType = value;
 				}
 			}
 
