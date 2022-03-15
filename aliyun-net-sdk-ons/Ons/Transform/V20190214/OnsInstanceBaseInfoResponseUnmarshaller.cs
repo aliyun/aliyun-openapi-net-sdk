@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 			endpoints.HttpInternetEndpoint = _ctx.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Endpoints.HttpInternetEndpoint");
 			endpoints.HttpInternalEndpoint = _ctx.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Endpoints.HttpInternalEndpoint");
 			endpoints.HttpInternetSecureEndpoint = _ctx.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Endpoints.HttpInternetSecureEndpoint");
+			endpoints.TcpInternetEndpoint = _ctx.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Endpoints.TcpInternetEndpoint");
 			instanceBaseInfo.Endpoints = endpoints;
 			onsInstanceBaseInfoResponse.InstanceBaseInfo = instanceBaseInfo;
         

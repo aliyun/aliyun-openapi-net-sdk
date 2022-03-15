@@ -221,6 +221,8 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 				private string httpInternetSecureEndpoint;
 
+				private string tcpInternetEndpoint;
+
 				public string TcpEndpoint
 				{
 					get
@@ -266,6 +268,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					set	
 					{
 						httpInternetSecureEndpoint = value;
+					}
+				}
+
+				public string TcpInternetEndpoint
+				{
+					get
+					{
+						return tcpInternetEndpoint;
+					}
+					set	
+					{
+						tcpInternetEndpoint = value;
 					}
 				}
 			}
