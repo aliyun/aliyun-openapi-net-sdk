@@ -70,7 +70,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class GetURLUploadInfos_UrlUploadJobInfoDTO
 		{
 
+			private string creationTime;
+
+			private string status;
+
+			private string errorMessage;
+
+			private string errorCode;
+
+			private string completeTime;
+
 			private string jobId;
+
+			private string userData;
 
 			private string uploadURL;
 
@@ -78,17 +90,65 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string fileSize;
 
-			private string status;
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
+				}
+			}
 
-			private string userData;
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
 
-			private string errorCode;
+			public string ErrorMessage
+			{
+				get
+				{
+					return errorMessage;
+				}
+				set	
+				{
+					errorMessage = value;
+				}
+			}
 
-			private string errorMessage;
+			public string ErrorCode
+			{
+				get
+				{
+					return errorCode;
+				}
+				set	
+				{
+					errorCode = value;
+				}
+			}
 
-			private string creationTime;
-
-			private string completeTime;
+			public string CompleteTime
+			{
+				get
+				{
+					return completeTime;
+				}
+				set	
+				{
+					completeTime = value;
+				}
+			}
 
 			public string JobId
 			{
@@ -99,6 +159,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					jobId = value;
+				}
+			}
+
+			public string UserData
+			{
+				get
+				{
+					return userData;
+				}
+				set	
+				{
+					userData = value;
 				}
 			}
 
@@ -135,78 +207,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					fileSize = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string UserData
-			{
-				get
-				{
-					return userData;
-				}
-				set	
-				{
-					userData = value;
-				}
-			}
-
-			public string ErrorCode
-			{
-				get
-				{
-					return errorCode;
-				}
-				set	
-				{
-					errorCode = value;
-				}
-			}
-
-			public string ErrorMessage
-			{
-				get
-				{
-					return errorMessage;
-				}
-				set	
-				{
-					errorMessage = value;
-				}
-			}
-
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
-
-			public string CompleteTime
-			{
-				get
-				{
-					return completeTime;
-				}
-				set	
-				{
-					completeTime = value;
 				}
 			}
 		}

@@ -42,9 +42,9 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<RegisterMediaResponse.RegisterMedia_RegisteredMedia> registerMediaResponse_registeredMediaList = new List<RegisterMediaResponse.RegisterMedia_RegisteredMedia>();
 			for (int i = 0; i < _ctx.Length("RegisterMedia.RegisteredMediaList.Length"); i++) {
 				RegisterMediaResponse.RegisterMedia_RegisteredMedia registeredMedia = new RegisterMediaResponse.RegisterMedia_RegisteredMedia();
-				registeredMedia.MediaId = _ctx.StringValue("RegisterMedia.RegisteredMediaList["+ i +"].MediaId");
-				registeredMedia.FileURL = _ctx.StringValue("RegisterMedia.RegisteredMediaList["+ i +"].FileURL");
 				registeredMedia.NewRegister = _ctx.BooleanValue("RegisterMedia.RegisteredMediaList["+ i +"].NewRegister");
+				registeredMedia.FileURL = _ctx.StringValue("RegisterMedia.RegisteredMediaList["+ i +"].FileURL");
+				registeredMedia.MediaId = _ctx.StringValue("RegisterMedia.RegisteredMediaList["+ i +"].MediaId");
 
 				registerMediaResponse_registeredMediaList.Add(registeredMedia);
 			}

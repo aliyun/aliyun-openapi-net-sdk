@@ -118,6 +118,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string hDRType;
 
+			private int? bitDepth;
+
 			public string CreationTime
 			{
 				get
@@ -403,6 +405,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					hDRType = value;
+				}
+			}
+
+			public int? BitDepth
+			{
+				get
+				{
+					return bitDepth;
+				}
+				set	
+				{
+					bitDepth = value;
 				}
 			}
 		}

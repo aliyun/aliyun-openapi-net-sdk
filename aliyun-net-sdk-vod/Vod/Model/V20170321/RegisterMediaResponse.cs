@@ -70,21 +70,21 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class RegisterMedia_RegisteredMedia
 		{
 
-			private string mediaId;
+			private bool? newRegister;
 
 			private string fileURL;
 
-			private bool? newRegister;
+			private string mediaId;
 
-			public string MediaId
+			public bool? NewRegister
 			{
 				get
 				{
-					return mediaId;
+					return newRegister;
 				}
 				set	
 				{
-					mediaId = value;
+					newRegister = value;
 				}
 			}
 
@@ -100,15 +100,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public bool? NewRegister
+			public string MediaId
 			{
 				get
 				{
-					return newRegister;
+					return mediaId;
 				}
 				set	
 				{
-					newRegister = value;
+					mediaId = value;
 				}
 			}
 		}

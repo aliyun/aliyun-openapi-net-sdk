@@ -82,6 +82,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				playInfo.PlayURL = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].PlayURL");
 				playInfo.Format = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].Format");
 				playInfo.HDRType = _ctx.StringValue("GetPlayInfo.PlayInfoList["+ i +"].HDRType");
+				playInfo.BitDepth = _ctx.IntegerValue("GetPlayInfo.PlayInfoList["+ i +"].BitDepth");
 
 				getPlayInfoResponse_playInfoList.Add(playInfo);
 			}

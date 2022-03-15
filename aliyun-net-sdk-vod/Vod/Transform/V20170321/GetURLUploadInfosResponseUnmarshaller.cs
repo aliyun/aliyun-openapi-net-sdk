@@ -42,16 +42,16 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<GetURLUploadInfosResponse.GetURLUploadInfos_UrlUploadJobInfoDTO> getURLUploadInfosResponse_uRLUploadInfoList = new List<GetURLUploadInfosResponse.GetURLUploadInfos_UrlUploadJobInfoDTO>();
 			for (int i = 0; i < _ctx.Length("GetURLUploadInfos.URLUploadInfoList.Length"); i++) {
 				GetURLUploadInfosResponse.GetURLUploadInfos_UrlUploadJobInfoDTO urlUploadJobInfoDTO = new GetURLUploadInfosResponse.GetURLUploadInfos_UrlUploadJobInfoDTO();
+				urlUploadJobInfoDTO.CreationTime = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].CreationTime");
+				urlUploadJobInfoDTO.Status = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].Status");
+				urlUploadJobInfoDTO.ErrorMessage = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].ErrorMessage");
+				urlUploadJobInfoDTO.ErrorCode = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].ErrorCode");
+				urlUploadJobInfoDTO.CompleteTime = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].CompleteTime");
 				urlUploadJobInfoDTO.JobId = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].JobId");
+				urlUploadJobInfoDTO.UserData = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].UserData");
 				urlUploadJobInfoDTO.UploadURL = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].UploadURL");
 				urlUploadJobInfoDTO.MediaId = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].MediaId");
 				urlUploadJobInfoDTO.FileSize = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].FileSize");
-				urlUploadJobInfoDTO.Status = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].Status");
-				urlUploadJobInfoDTO.UserData = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].UserData");
-				urlUploadJobInfoDTO.ErrorCode = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].ErrorCode");
-				urlUploadJobInfoDTO.ErrorMessage = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].ErrorMessage");
-				urlUploadJobInfoDTO.CreationTime = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].CreationTime");
-				urlUploadJobInfoDTO.CompleteTime = _ctx.StringValue("GetURLUploadInfos.URLUploadInfoList["+ i +"].CompleteTime");
 
 				getURLUploadInfosResponse_uRLUploadInfoList.Add(urlUploadJobInfoDTO);
 			}
