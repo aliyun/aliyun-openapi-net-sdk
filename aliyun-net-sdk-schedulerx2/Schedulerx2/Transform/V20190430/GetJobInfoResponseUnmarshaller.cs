@@ -39,6 +39,7 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			GetJobInfoResponse.GetJobInfo_Data data = new GetJobInfoResponse.GetJobInfo_Data();
 
 			GetJobInfoResponse.GetJobInfo_Data.GetJobInfo_JobConfigInfo jobConfigInfo = new GetJobInfoResponse.GetJobInfo_Data.GetJobInfo_JobConfigInfo();
+			jobConfigInfo.JobId = _ctx.LongValue("GetJobInfo.Data.JobConfigInfo.JobId");
 			jobConfigInfo.Status = _ctx.IntegerValue("GetJobInfo.Data.JobConfigInfo.Status");
 			jobConfigInfo.Parameters = _ctx.StringValue("GetJobInfo.Data.JobConfigInfo.Parameters");
 			jobConfigInfo.Description = _ctx.StringValue("GetJobInfo.Data.JobConfigInfo.Description");

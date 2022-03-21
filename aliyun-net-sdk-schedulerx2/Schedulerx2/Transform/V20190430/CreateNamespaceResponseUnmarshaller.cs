@@ -24,24 +24,23 @@ using Aliyun.Acs.schedulerx2.Model.V20190430;
 
 namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 {
-    public class CreateAppGroupResponseUnmarshaller
+    public class CreateNamespaceResponseUnmarshaller
     {
-        public static CreateAppGroupResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateNamespaceResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CreateAppGroupResponse createAppGroupResponse = new CreateAppGroupResponse();
+			CreateNamespaceResponse createNamespaceResponse = new CreateNamespaceResponse();
 
-			createAppGroupResponse.HttpResponse = _ctx.HttpResponse;
-			createAppGroupResponse.Code = _ctx.IntegerValue("CreateAppGroup.Code");
-			createAppGroupResponse.Message = _ctx.StringValue("CreateAppGroup.Message");
-			createAppGroupResponse.RequestId = _ctx.StringValue("CreateAppGroup.RequestId");
-			createAppGroupResponse.Success = _ctx.BooleanValue("CreateAppGroup.Success");
+			createNamespaceResponse.HttpResponse = _ctx.HttpResponse;
+			createNamespaceResponse.RequestId = _ctx.StringValue("CreateNamespace.RequestId");
+			createNamespaceResponse.Code = _ctx.IntegerValue("CreateNamespace.Code");
+			createNamespaceResponse.Message = _ctx.StringValue("CreateNamespace.Message");
+			createNamespaceResponse.Success = _ctx.BooleanValue("CreateNamespace.Success");
 
-			CreateAppGroupResponse.CreateAppGroup_Data data = new CreateAppGroupResponse.CreateAppGroup_Data();
-			data.AppGroupId = _ctx.LongValue("CreateAppGroup.Data.AppGroupId");
-			data.AppKey = _ctx.StringValue("CreateAppGroup.Data.AppKey");
-			createAppGroupResponse.Data = data;
+			CreateNamespaceResponse.CreateNamespace_Data data = new CreateNamespaceResponse.CreateNamespace_Data();
+			data.NamespaceUid = _ctx.StringValue("CreateNamespace.Data.NamespaceUid");
+			createNamespaceResponse.Data = data;
         
-			return createAppGroupResponse;
+			return createNamespaceResponse;
         }
     }
 }

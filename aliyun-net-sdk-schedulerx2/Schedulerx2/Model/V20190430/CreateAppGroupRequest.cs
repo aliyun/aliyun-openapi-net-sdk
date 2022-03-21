@@ -51,11 +51,17 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string description;
 
+		private string monitorConfigJson;
+
 		private string appName;
 
 		private string _namespace;
 
 		private string alarmJson;
+
+		private string appKey;
+
+		private string monitorContactsJson;
 
 		public int? MaxJobs
 		{
@@ -122,6 +128,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
+		public string MonitorConfigJson
+		{
+			get
+			{
+				return monitorConfigJson;
+			}
+			set	
+			{
+				monitorConfigJson = value;
+				DictionaryUtil.Add(QueryParameters, "MonitorConfigJson", value);
+			}
+		}
+
 		public string AppName
 		{
 			get
@@ -158,6 +177,32 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				alarmJson = value;
 				DictionaryUtil.Add(QueryParameters, "AlarmJson", value);
+			}
+		}
+
+		public string AppKey
+		{
+			get
+			{
+				return appKey;
+			}
+			set	
+			{
+				appKey = value;
+				DictionaryUtil.Add(QueryParameters, "AppKey", value);
+			}
+		}
+
+		public string MonitorContactsJson
+		{
+			get
+			{
+				return monitorContactsJson;
+			}
+			set	
+			{
+				monitorContactsJson = value;
+				DictionaryUtil.Add(QueryParameters, "MonitorContactsJson", value);
 			}
 		}
 

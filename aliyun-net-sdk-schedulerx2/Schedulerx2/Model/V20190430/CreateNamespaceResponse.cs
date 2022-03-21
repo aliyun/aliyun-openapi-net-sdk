@@ -22,18 +22,30 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
 {
-	public class CreateAppGroupResponse : AcsResponse
+	public class CreateNamespaceResponse : AcsResponse
 	{
+
+		private string requestId;
 
 		private int? code;
 
 		private string message;
 
-		private string requestId;
-
 		private bool? success;
 
-		private CreateAppGroup_Data data;
+		private CreateNamespace_Data data;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? Code
 		{
@@ -59,18 +71,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
 		public bool? Success
 		{
 			get
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public CreateAppGroup_Data Data
+		public CreateNamespace_Data Data
 		{
 			get
 			{
@@ -95,34 +95,20 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public class CreateAppGroup_Data
+		public class CreateNamespace_Data
 		{
 
-			private long? appGroupId;
+			private string namespaceUid;
 
-			private string appKey;
-
-			public long? AppGroupId
+			public string NamespaceUid
 			{
 				get
 				{
-					return appGroupId;
+					return namespaceUid;
 				}
 				set	
 				{
-					appGroupId = value;
-				}
-			}
-
-			public string AppKey
-			{
-				get
-				{
-					return appKey;
-				}
-				set	
-				{
-					appKey = value;
+					namespaceUid = value;
 				}
 			}
 		}

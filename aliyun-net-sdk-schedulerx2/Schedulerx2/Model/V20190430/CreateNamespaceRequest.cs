@@ -28,90 +28,61 @@ using Aliyun.Acs.schedulerx2.Transform.V20190430;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
 {
-    public class GetJobInfoRequest : RpcAcsRequest<GetJobInfoResponse>
+    public class CreateNamespaceRequest : RpcAcsRequest<CreateNamespaceResponse>
     {
-        public GetJobInfoRequest()
-            : base("schedulerx2", "2019-04-30", "GetJobInfo")
+        public CreateNamespaceRequest()
+            : base("schedulerx2", "2019-04-30", "CreateNamespace")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private string namespaceSource;
+		private string uid;
 
-		private string groupId;
+		private string name;
 
-		private long? jobId;
+		private string description;
 
-		private string _namespace;
-
-		private string jobName;
-
-		public string NamespaceSource
+		public string Uid
 		{
 			get
 			{
-				return namespaceSource;
+				return uid;
 			}
 			set	
 			{
-				namespaceSource = value;
-				DictionaryUtil.Add(QueryParameters, "NamespaceSource", value);
+				uid = value;
+				DictionaryUtil.Add(QueryParameters, "Uid", value);
 			}
 		}
 
-		public string GroupId
+		public string Name
 		{
 			get
 			{
-				return groupId;
+				return name;
 			}
 			set	
 			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
-		public long? JobId
+		public string Description
 		{
 			get
 			{
-				return jobId;
+				return description;
 			}
 			set	
 			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value.ToString());
-			}
-		}
-
-		public string _Namespace
-		{
-			get
-			{
-				return _namespace;
-			}
-			set	
-			{
-				_namespace = value;
-				DictionaryUtil.Add(QueryParameters, "Namespace", value);
-			}
-		}
-
-		public string JobName
-		{
-			get
-			{
-				return jobName;
-			}
-			set	
-			{
-				jobName = value;
-				DictionaryUtil.Add(QueryParameters, "JobName", value);
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -120,9 +91,9 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			return false;
 		}
 
-        public override GetJobInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateNamespaceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetJobInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateNamespaceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

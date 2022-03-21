@@ -115,6 +115,8 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			public class GetJobInfo_JobConfigInfo
 			{
 
+				private long? jobId;
+
 				private int? status;
 
 				private string parameters;
@@ -142,6 +144,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 				private GetJobInfo_TimeConfig timeConfig;
 
 				private GetJobInfo_JobMonitorInfo jobMonitorInfo;
+
+				public long? JobId
+				{
+					get
+					{
+						return jobId;
+					}
+					set	
+					{
+						jobId = value;
+					}
+				}
 
 				public int? Status
 				{
