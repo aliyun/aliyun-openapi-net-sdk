@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			UpdateUdfFileResponse updateUdfFileResponse = new UpdateUdfFileResponse();
 
 			updateUdfFileResponse.HttpResponse = _ctx.HttpResponse;
-			updateUdfFileResponse.RequestId = _ctx.StringValue("UpdateUdfFile.RequestId");
-			updateUdfFileResponse.Success = _ctx.BooleanValue("UpdateUdfFile.Success");
-			updateUdfFileResponse.ErrorCode = _ctx.StringValue("UpdateUdfFile.ErrorCode");
-			updateUdfFileResponse.ErrorMessage = _ctx.StringValue("UpdateUdfFile.ErrorMessage");
 			updateUdfFileResponse.HttpStatusCode = _ctx.IntegerValue("UpdateUdfFile.HttpStatusCode");
+			updateUdfFileResponse.ErrorMessage = _ctx.StringValue("UpdateUdfFile.ErrorMessage");
+			updateUdfFileResponse.RequestId = _ctx.StringValue("UpdateUdfFile.RequestId");
+			updateUdfFileResponse.ErrorCode = _ctx.StringValue("UpdateUdfFile.ErrorCode");
+			updateUdfFileResponse.Success = _ctx.BooleanValue("UpdateUdfFile.Success");
         
 			return updateUdfFileResponse;
         }

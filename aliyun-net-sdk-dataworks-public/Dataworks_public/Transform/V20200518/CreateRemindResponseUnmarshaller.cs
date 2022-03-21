@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			CreateRemindResponse createRemindResponse = new CreateRemindResponse();
 
 			createRemindResponse.HttpResponse = _ctx.HttpResponse;
+			createRemindResponse.HttpStatusCode = _ctx.IntegerValue("CreateRemind.HttpStatusCode");
+			createRemindResponse.Data = _ctx.LongValue("CreateRemind.Data");
+			createRemindResponse.ErrorMessage = _ctx.StringValue("CreateRemind.ErrorMessage");
+			createRemindResponse.RequestId = _ctx.StringValue("CreateRemind.RequestId");
 			createRemindResponse.Success = _ctx.BooleanValue("CreateRemind.Success");
 			createRemindResponse.ErrorCode = _ctx.StringValue("CreateRemind.ErrorCode");
-			createRemindResponse.ErrorMessage = _ctx.StringValue("CreateRemind.ErrorMessage");
-			createRemindResponse.HttpStatusCode = _ctx.IntegerValue("CreateRemind.HttpStatusCode");
-			createRemindResponse.RequestId = _ctx.StringValue("CreateRemind.RequestId");
-			createRemindResponse.Data = _ctx.LongValue("CreateRemind.Data");
         
 			return createRemindResponse;
         }

@@ -41,13 +41,13 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<ListProjectsResponse.ListProjects_PageResult.ListProjects_Project> pageResult_projectList = new List<ListProjectsResponse.ListProjects_PageResult.ListProjects_Project>();
 			for (int i = 0; i < _ctx.Length("ListProjects.PageResult.ProjectList.Length"); i++) {
 				ListProjectsResponse.ListProjects_PageResult.ListProjects_Project project = new ListProjectsResponse.ListProjects_PageResult.ListProjects_Project();
+				project.ProjectStatusCode = _ctx.StringValue("ListProjects.PageResult.ProjectList["+ i +"].ProjectStatusCode");
+				project.ProjectStatus = _ctx.IntegerValue("ListProjects.PageResult.ProjectList["+ i +"].ProjectStatus");
 				project.ProjectName = _ctx.StringValue("ListProjects.PageResult.ProjectList["+ i +"].ProjectName");
 				project.ProjectIdentifier = _ctx.StringValue("ListProjects.PageResult.ProjectList["+ i +"].ProjectIdentifier");
-				project.ProjectDescription = _ctx.StringValue("ListProjects.PageResult.ProjectList["+ i +"].ProjectDescription");
-				project.ProjectStatus = _ctx.IntegerValue("ListProjects.PageResult.ProjectList["+ i +"].ProjectStatus");
 				project.ProjectId = _ctx.LongValue("ListProjects.PageResult.ProjectList["+ i +"].ProjectId");
+				project.ProjectDescription = _ctx.StringValue("ListProjects.PageResult.ProjectList["+ i +"].ProjectDescription");
 				project.ProjectOwnerBaseId = _ctx.StringValue("ListProjects.PageResult.ProjectList["+ i +"].ProjectOwnerBaseId");
-				project.ProjectStatusCode = _ctx.StringValue("ListProjects.PageResult.ProjectList["+ i +"].ProjectStatusCode");
 
 				pageResult_projectList.Add(project);
 			}

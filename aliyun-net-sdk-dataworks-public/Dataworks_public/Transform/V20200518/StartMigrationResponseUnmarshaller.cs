@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			StartMigrationResponse startMigrationResponse = new StartMigrationResponse();
 
 			startMigrationResponse.HttpResponse = _ctx.HttpResponse;
-			startMigrationResponse.ErrorCode = _ctx.StringValue("StartMigration.ErrorCode");
-			startMigrationResponse.ErrorMessage = _ctx.StringValue("StartMigration.ErrorMessage");
 			startMigrationResponse.HttpStatusCode = _ctx.IntegerValue("StartMigration.HttpStatusCode");
-			startMigrationResponse.RequestId = _ctx.StringValue("StartMigration.RequestId");
-			startMigrationResponse.Success = _ctx.BooleanValue("StartMigration.Success");
 			startMigrationResponse.Data = _ctx.BooleanValue("StartMigration.Data");
+			startMigrationResponse.ErrorMessage = _ctx.StringValue("StartMigration.ErrorMessage");
+			startMigrationResponse.RequestId = _ctx.StringValue("StartMigration.RequestId");
+			startMigrationResponse.ErrorCode = _ctx.StringValue("StartMigration.ErrorCode");
+			startMigrationResponse.Success = _ctx.BooleanValue("StartMigration.Success");
         
 			return startMigrationResponse;
         }

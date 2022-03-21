@@ -31,18 +31,18 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetBusinessResponse getBusinessResponse = new GetBusinessResponse();
 
 			getBusinessResponse.HttpResponse = _ctx.HttpResponse;
-			getBusinessResponse.RequestId = _ctx.StringValue("GetBusiness.RequestId");
-			getBusinessResponse.Success = _ctx.BooleanValue("GetBusiness.Success");
-			getBusinessResponse.ErrorCode = _ctx.StringValue("GetBusiness.ErrorCode");
-			getBusinessResponse.ErrorMessage = _ctx.StringValue("GetBusiness.ErrorMessage");
 			getBusinessResponse.HttpStatusCode = _ctx.IntegerValue("GetBusiness.HttpStatusCode");
+			getBusinessResponse.ErrorMessage = _ctx.StringValue("GetBusiness.ErrorMessage");
+			getBusinessResponse.RequestId = _ctx.StringValue("GetBusiness.RequestId");
+			getBusinessResponse.ErrorCode = _ctx.StringValue("GetBusiness.ErrorCode");
+			getBusinessResponse.Success = _ctx.BooleanValue("GetBusiness.Success");
 
 			GetBusinessResponse.GetBusiness_Data data = new GetBusinessResponse.GetBusiness_Data();
-			data.BusinessId = _ctx.LongValue("GetBusiness.Data.BusinessId");
-			data.BusinessName = _ctx.StringValue("GetBusiness.Data.BusinessName");
-			data.ProjectId = _ctx.StringValue("GetBusiness.Data.ProjectId");
 			data.Owner = _ctx.StringValue("GetBusiness.Data.Owner");
 			data.Description = _ctx.StringValue("GetBusiness.Data.Description");
+			data.ProjectId = _ctx.StringValue("GetBusiness.Data.ProjectId");
+			data.BusinessId = _ctx.LongValue("GetBusiness.Data.BusinessId");
+			data.BusinessName = _ctx.StringValue("GetBusiness.Data.BusinessName");
 			data.UseType = _ctx.StringValue("GetBusiness.Data.UseType");
 			getBusinessResponse.Data = data;
         

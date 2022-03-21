@@ -25,51 +25,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class ListFilesResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
-		private string errorCode;
+		private int? httpStatusCode;
 
 		private string errorMessage;
 
-		private int? httpStatusCode;
+		private string requestId;
+
+		private string errorCode;
+
+		private bool? success;
 
 		private ListFiles_Data data;
 
-		public string RequestId
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return requestId;
+				return httpStatusCode;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				httpStatusCode = value;
 			}
 		}
 
@@ -85,15 +61,39 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? HttpStatusCode
+		public string RequestId
 		{
 			get
 			{
-				return httpStatusCode;
+				return requestId;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				requestId = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -171,81 +171,81 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class ListFiles_File
 			{
 
-				private string connectionName;
+				private int? commitStatus;
 
-				private long? parentId;
+				private bool? autoParsing;
 
-				private bool? isMaxCompute;
+				private string owner;
 
 				private long? createTime;
 
-				private string createUser;
+				private int? fileType;
+
+				private int? currentVersion;
 
 				private long? bizId;
 
-				private string fileFolderId;
+				private string lastEditUser;
 
 				private string fileName;
 
-				private int? fileType;
+				private string connectionName;
 
 				private string useType;
 
+				private string fileFolderId;
+
+				private long? fileId;
+
+				private long? parentId;
+
+				private string createUser;
+
+				private bool? isMaxCompute;
+
+				private long? businessId;
+
 				private string fileDescription;
+
+				private long? lastEditTime;
 
 				private string content;
 
 				private long? nodeId;
 
-				private int? currentVersion;
-
-				private string owner;
-
-				private string lastEditUser;
-
-				private long? lastEditTime;
-
-				private int? commitStatus;
-
-				private long? fileId;
-
-				private long? businessId;
-
-				private bool? autoParsing;
-
-				public string ConnectionName
+				public int? CommitStatus
 				{
 					get
 					{
-						return connectionName;
+						return commitStatus;
 					}
 					set	
 					{
-						connectionName = value;
+						commitStatus = value;
 					}
 				}
 
-				public long? ParentId
+				public bool? AutoParsing
 				{
 					get
 					{
-						return parentId;
+						return autoParsing;
 					}
 					set	
 					{
-						parentId = value;
+						autoParsing = value;
 					}
 				}
 
-				public bool? IsMaxCompute
+				public string Owner
 				{
 					get
 					{
-						return isMaxCompute;
+						return owner;
 					}
 					set	
 					{
-						isMaxCompute = value;
+						owner = value;
 					}
 				}
 
@@ -261,15 +261,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string CreateUser
+				public int? FileType
 				{
 					get
 					{
-						return createUser;
+						return fileType;
 					}
 					set	
 					{
-						createUser = value;
+						fileType = value;
+					}
+				}
+
+				public int? CurrentVersion
+				{
+					get
+					{
+						return currentVersion;
+					}
+					set	
+					{
+						currentVersion = value;
 					}
 				}
 
@@ -285,15 +297,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string FileFolderId
+				public string LastEditUser
 				{
 					get
 					{
-						return fileFolderId;
+						return lastEditUser;
 					}
 					set	
 					{
-						fileFolderId = value;
+						lastEditUser = value;
 					}
 				}
 
@@ -309,15 +321,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public int? FileType
+				public string ConnectionName
 				{
 					get
 					{
-						return fileType;
+						return connectionName;
 					}
 					set	
 					{
-						fileType = value;
+						connectionName = value;
 					}
 				}
 
@@ -333,6 +345,78 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
+				public string FileFolderId
+				{
+					get
+					{
+						return fileFolderId;
+					}
+					set	
+					{
+						fileFolderId = value;
+					}
+				}
+
+				public long? FileId
+				{
+					get
+					{
+						return fileId;
+					}
+					set	
+					{
+						fileId = value;
+					}
+				}
+
+				public long? ParentId
+				{
+					get
+					{
+						return parentId;
+					}
+					set	
+					{
+						parentId = value;
+					}
+				}
+
+				public string CreateUser
+				{
+					get
+					{
+						return createUser;
+					}
+					set	
+					{
+						createUser = value;
+					}
+				}
+
+				public bool? IsMaxCompute
+				{
+					get
+					{
+						return isMaxCompute;
+					}
+					set	
+					{
+						isMaxCompute = value;
+					}
+				}
+
+				public long? BusinessId
+				{
+					get
+					{
+						return businessId;
+					}
+					set	
+					{
+						businessId = value;
+					}
+				}
+
 				public string FileDescription
 				{
 					get
@@ -342,6 +426,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						fileDescription = value;
+					}
+				}
+
+				public long? LastEditTime
+				{
+					get
+					{
+						return lastEditTime;
+					}
+					set	
+					{
+						lastEditTime = value;
 					}
 				}
 
@@ -366,102 +462,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						nodeId = value;
-					}
-				}
-
-				public int? CurrentVersion
-				{
-					get
-					{
-						return currentVersion;
-					}
-					set	
-					{
-						currentVersion = value;
-					}
-				}
-
-				public string Owner
-				{
-					get
-					{
-						return owner;
-					}
-					set	
-					{
-						owner = value;
-					}
-				}
-
-				public string LastEditUser
-				{
-					get
-					{
-						return lastEditUser;
-					}
-					set	
-					{
-						lastEditUser = value;
-					}
-				}
-
-				public long? LastEditTime
-				{
-					get
-					{
-						return lastEditTime;
-					}
-					set	
-					{
-						lastEditTime = value;
-					}
-				}
-
-				public int? CommitStatus
-				{
-					get
-					{
-						return commitStatus;
-					}
-					set	
-					{
-						commitStatus = value;
-					}
-				}
-
-				public long? FileId
-				{
-					get
-					{
-						return fileId;
-					}
-					set	
-					{
-						fileId = value;
-					}
-				}
-
-				public long? BusinessId
-				{
-					get
-					{
-						return businessId;
-					}
-					set	
-					{
-						businessId = value;
-					}
-				}
-
-				public bool? AutoParsing
-				{
-					get
-					{
-						return autoParsing;
-					}
-					set	
-					{
-						autoParsing = value;
 					}
 				}
 			}

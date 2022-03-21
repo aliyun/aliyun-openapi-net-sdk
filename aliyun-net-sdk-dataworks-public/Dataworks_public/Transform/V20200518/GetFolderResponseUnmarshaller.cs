@@ -31,15 +31,15 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetFolderResponse getFolderResponse = new GetFolderResponse();
 
 			getFolderResponse.HttpResponse = _ctx.HttpResponse;
-			getFolderResponse.RequestId = _ctx.StringValue("GetFolder.RequestId");
-			getFolderResponse.Success = _ctx.BooleanValue("GetFolder.Success");
-			getFolderResponse.ErrorCode = _ctx.StringValue("GetFolder.ErrorCode");
-			getFolderResponse.ErrorMessage = _ctx.StringValue("GetFolder.ErrorMessage");
 			getFolderResponse.HttpStatusCode = _ctx.IntegerValue("GetFolder.HttpStatusCode");
+			getFolderResponse.ErrorMessage = _ctx.StringValue("GetFolder.ErrorMessage");
+			getFolderResponse.RequestId = _ctx.StringValue("GetFolder.RequestId");
+			getFolderResponse.ErrorCode = _ctx.StringValue("GetFolder.ErrorCode");
+			getFolderResponse.Success = _ctx.BooleanValue("GetFolder.Success");
 
 			GetFolderResponse.GetFolder_Data data = new GetFolderResponse.GetFolder_Data();
-			data.FolderId = _ctx.StringValue("GetFolder.Data.FolderId");
 			data.FolderPath = _ctx.StringValue("GetFolder.Data.FolderPath");
+			data.FolderId = _ctx.StringValue("GetFolder.Data.FolderId");
 			getFolderResponse.Data = data;
         
 			return getFolderResponse;

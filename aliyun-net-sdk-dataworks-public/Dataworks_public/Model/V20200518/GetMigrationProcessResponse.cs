@@ -25,41 +25,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetMigrationProcessResponse : AcsResponse
 	{
 
-		private string errorCode;
-
-		private string errorMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
+		private string errorMessage;
+
 		private bool? success;
 
+		private string errorCode;
+
 		private List<GetMigrationProcess_ProgressTaskItem> data;
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -85,6 +61,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
 		public bool? Success
 		{
 			get
@@ -94,6 +82,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 
@@ -112,21 +112,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetMigrationProcess_ProgressTaskItem
 		{
 
-			private string taskName;
-
 			private string taskStatus;
 
-			public string TaskName
-			{
-				get
-				{
-					return taskName;
-				}
-				set	
-				{
-					taskName = value;
-				}
-			}
+			private string taskName;
 
 			public string TaskStatus
 			{
@@ -137,6 +125,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					taskStatus = value;
+				}
+			}
+
+			public string TaskName
+			{
+				get
+				{
+					return taskName;
+				}
+				set	
+				{
+					taskName = value;
 				}
 			}
 		}

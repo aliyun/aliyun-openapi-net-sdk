@@ -101,21 +101,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class ListSuccessInstanceAmount_TodayTrendItem
 			{
 
-				private int? count;
-
 				private string timePoint;
 
-				public int? Count
-				{
-					get
-					{
-						return count;
-					}
-					set	
-					{
-						count = value;
-					}
-				}
+				private int? count;
 
 				public string TimePoint
 				{
@@ -126,6 +114,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						timePoint = value;
+					}
+				}
+
+				public int? Count
+				{
+					get
+					{
+						return count;
+					}
+					set	
+					{
+						count = value;
 					}
 				}
 			}
@@ -133,21 +133,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class ListSuccessInstanceAmount_YesterdayTrendItem
 			{
 
-				private int? count;
-
 				private string timePoint;
 
-				public int? Count
-				{
-					get
-					{
-						return count;
-					}
-					set	
-					{
-						count = value;
-					}
-				}
+				private int? count;
 
 				public string TimePoint
 				{
@@ -158,6 +146,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						timePoint = value;
+					}
+				}
+
+				public int? Count
+				{
+					get
+					{
+						return count;
+					}
+					set	
+					{
+						count = value;
 					}
 				}
 			}
@@ -165,21 +165,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class ListSuccessInstanceAmount_AvgTrendItem
 			{
 
-				private int? count;
-
 				private string timePoint;
 
-				public int? Count
-				{
-					get
-					{
-						return count;
-					}
-					set	
-					{
-						count = value;
-					}
-				}
+				private int? count;
 
 				public string TimePoint
 				{
@@ -190,6 +178,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						timePoint = value;
+					}
+				}
+
+				public int? Count
+				{
+					get
+					{
+						return count;
+					}
+					set	
+					{
+						count = value;
 					}
 				}
 			}

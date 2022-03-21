@@ -25,53 +25,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class ListAlertMessagesResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errorCode;
-
-		private string errorMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
+		private string errorMessage;
+
+		private string errorCode;
+
+		private bool? success;
+
 		private ListAlertMessages_Data data;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -94,6 +58,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -171,23 +171,23 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class ListAlertMessages_AlertMessagesItem
 			{
 
-				private long? alertId;
-
-				private long? alertTime;
-
-				private string source;
-
 				private long? remindId;
-
-				private string remindName;
-
-				private string alertUser;
-
-				private string alertMethod;
 
 				private string alertMessageStatus;
 
+				private string alertUser;
+
+				private long? alertTime;
+
+				private string alertMethod;
+
+				private string source;
+
 				private string content;
+
+				private string remindName;
+
+				private long? alertId;
 
 				private List<ListAlertMessages_InstancesItem> instances;
 
@@ -196,42 +196,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				private List<ListAlertMessages_NodesItem> nodes;
 
 				private ListAlertMessages_SlaAlert slaAlert;
-
-				public long? AlertId
-				{
-					get
-					{
-						return alertId;
-					}
-					set	
-					{
-						alertId = value;
-					}
-				}
-
-				public long? AlertTime
-				{
-					get
-					{
-						return alertTime;
-					}
-					set	
-					{
-						alertTime = value;
-					}
-				}
-
-				public string Source
-				{
-					get
-					{
-						return source;
-					}
-					set	
-					{
-						source = value;
-					}
-				}
 
 				public long? RemindId
 				{
@@ -242,42 +206,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						remindId = value;
-					}
-				}
-
-				public string RemindName
-				{
-					get
-					{
-						return remindName;
-					}
-					set	
-					{
-						remindName = value;
-					}
-				}
-
-				public string AlertUser
-				{
-					get
-					{
-						return alertUser;
-					}
-					set	
-					{
-						alertUser = value;
-					}
-				}
-
-				public string AlertMethod
-				{
-					get
-					{
-						return alertMethod;
-					}
-					set	
-					{
-						alertMethod = value;
 					}
 				}
 
@@ -293,6 +221,54 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
+				public string AlertUser
+				{
+					get
+					{
+						return alertUser;
+					}
+					set	
+					{
+						alertUser = value;
+					}
+				}
+
+				public long? AlertTime
+				{
+					get
+					{
+						return alertTime;
+					}
+					set	
+					{
+						alertTime = value;
+					}
+				}
+
+				public string AlertMethod
+				{
+					get
+					{
+						return alertMethod;
+					}
+					set	
+					{
+						alertMethod = value;
+					}
+				}
+
+				public string Source
+				{
+					get
+					{
+						return source;
+					}
+					set	
+					{
+						source = value;
+					}
+				}
+
 				public string Content
 				{
 					get
@@ -302,6 +278,30 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						content = value;
+					}
+				}
+
+				public string RemindName
+				{
+					get
+					{
+						return remindName;
+					}
+					set	
+					{
+						remindName = value;
+					}
+				}
+
+				public long? AlertId
+				{
+					get
+					{
+						return alertId;
+					}
+					set	
+					{
+						alertId = value;
 					}
 				}
 
@@ -356,51 +356,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				public class ListAlertMessages_InstancesItem
 				{
 
-					private long? nodeId;
-
-					private string nodeName;
-
-					private long? projectId;
-
 					private string status;
 
 					private long? instanceId;
 
-					public long? NodeId
-					{
-						get
-						{
-							return nodeId;
-						}
-						set	
-						{
-							nodeId = value;
-						}
-					}
+					private string nodeName;
 
-					public string NodeName
-					{
-						get
-						{
-							return nodeName;
-						}
-						set	
-						{
-							nodeName = value;
-						}
-					}
+					private long? nodeId;
 
-					public long? ProjectId
-					{
-						get
-						{
-							return projectId;
-						}
-						set	
-						{
-							projectId = value;
-						}
-					}
+					private long? projectId;
 
 					public string Status
 					{
@@ -425,22 +389,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 							instanceId = value;
 						}
 					}
-				}
 
-				public class ListAlertMessages_TopicsItem
-				{
-
-					private long? nodeId;
-
-					private long? instanceId;
-
-					private long? topicId;
-
-					private string topicName;
-
-					private string topicOwner;
-
-					private string topicStatus;
+					public string NodeName
+					{
+						get
+						{
+							return nodeName;
+						}
+						set	
+						{
+							nodeName = value;
+						}
+					}
 
 					public long? NodeId
 					{
@@ -451,6 +411,46 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 						set	
 						{
 							nodeId = value;
+						}
+					}
+
+					public long? ProjectId
+					{
+						get
+						{
+							return projectId;
+						}
+						set	
+						{
+							projectId = value;
+						}
+					}
+				}
+
+				public class ListAlertMessages_TopicsItem
+				{
+
+					private string topicName;
+
+					private long? instanceId;
+
+					private long? topicId;
+
+					private string topicOwner;
+
+					private long? nodeId;
+
+					private string topicStatus;
+
+					public string TopicName
+					{
+						get
+						{
+							return topicName;
+						}
+						set	
+						{
+							topicName = value;
 						}
 					}
 
@@ -478,18 +478,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 						}
 					}
 
-					public string TopicName
-					{
-						get
-						{
-							return topicName;
-						}
-						set	
-						{
-							topicName = value;
-						}
-					}
-
 					public string TopicOwner
 					{
 						get
@@ -499,6 +487,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 						set	
 						{
 							topicOwner = value;
+						}
+					}
+
+					public long? NodeId
+					{
+						get
+						{
+							return nodeId;
+						}
+						set	
+						{
+							nodeId = value;
 						}
 					}
 
@@ -518,23 +518,23 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				public class ListAlertMessages_NodesItem
 				{
 
-					private long? nodeId;
+					private string owner;
 
 					private string nodeName;
 
-					private string owner;
+					private long? nodeId;
 
 					private long? projectId;
 
-					public long? NodeId
+					public string Owner
 					{
 						get
 						{
-							return nodeId;
+							return owner;
 						}
 						set	
 						{
-							nodeId = value;
+							owner = value;
 						}
 					}
 
@@ -550,15 +550,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 						}
 					}
 
-					public string Owner
+					public long? NodeId
 					{
 						get
 						{
-							return owner;
+							return nodeId;
 						}
 						set	
 						{
-							owner = value;
+							nodeId = value;
 						}
 					}
 
@@ -578,19 +578,43 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				public class ListAlertMessages_SlaAlert
 				{
 
+					private string status;
+
+					private string baselineOwner;
+
 					private long? baselineId;
 
 					private string baselineName;
 
-					private string baselineOwner;
-
 					private long? bizdate;
-
-					private int? inGroupId;
 
 					private long? projectId;
 
-					private string status;
+					private int? inGroupId;
+
+					public string Status
+					{
+						get
+						{
+							return status;
+						}
+						set	
+						{
+							status = value;
+						}
+					}
+
+					public string BaselineOwner
+					{
+						get
+						{
+							return baselineOwner;
+						}
+						set	
+						{
+							baselineOwner = value;
+						}
+					}
 
 					public long? BaselineId
 					{
@@ -616,18 +640,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 						}
 					}
 
-					public string BaselineOwner
-					{
-						get
-						{
-							return baselineOwner;
-						}
-						set	
-						{
-							baselineOwner = value;
-						}
-					}
-
 					public long? Bizdate
 					{
 						get
@@ -637,18 +649,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 						set	
 						{
 							bizdate = value;
-						}
-					}
-
-					public int? InGroupId
-					{
-						get
-						{
-							return inGroupId;
-						}
-						set	
-						{
-							inGroupId = value;
 						}
 					}
 
@@ -664,15 +664,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 						}
 					}
 
-					public string Status
+					public int? InGroupId
 					{
 						get
 						{
-							return status;
+							return inGroupId;
 						}
 						set	
 						{
-							status = value;
+							inGroupId = value;
 						}
 					}
 				}

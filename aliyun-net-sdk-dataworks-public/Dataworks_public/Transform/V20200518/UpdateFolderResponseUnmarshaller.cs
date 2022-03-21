@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			UpdateFolderResponse updateFolderResponse = new UpdateFolderResponse();
 
 			updateFolderResponse.HttpResponse = _ctx.HttpResponse;
-			updateFolderResponse.RequestId = _ctx.StringValue("UpdateFolder.RequestId");
-			updateFolderResponse.Success = _ctx.BooleanValue("UpdateFolder.Success");
-			updateFolderResponse.ErrorCode = _ctx.StringValue("UpdateFolder.ErrorCode");
-			updateFolderResponse.ErrorMessage = _ctx.StringValue("UpdateFolder.ErrorMessage");
 			updateFolderResponse.HttpStatusCode = _ctx.IntegerValue("UpdateFolder.HttpStatusCode");
+			updateFolderResponse.ErrorMessage = _ctx.StringValue("UpdateFolder.ErrorMessage");
+			updateFolderResponse.RequestId = _ctx.StringValue("UpdateFolder.RequestId");
+			updateFolderResponse.ErrorCode = _ctx.StringValue("UpdateFolder.ErrorCode");
+			updateFolderResponse.Success = _ctx.BooleanValue("UpdateFolder.Success");
         
 			return updateFolderResponse;
         }

@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			DeleteFileResponse deleteFileResponse = new DeleteFileResponse();
 
 			deleteFileResponse.HttpResponse = _ctx.HttpResponse;
-			deleteFileResponse.RequestId = _ctx.StringValue("DeleteFile.RequestId");
-			deleteFileResponse.Success = _ctx.BooleanValue("DeleteFile.Success");
-			deleteFileResponse.ErrorCode = _ctx.StringValue("DeleteFile.ErrorCode");
-			deleteFileResponse.ErrorMessage = _ctx.StringValue("DeleteFile.ErrorMessage");
 			deleteFileResponse.HttpStatusCode = _ctx.IntegerValue("DeleteFile.HttpStatusCode");
 			deleteFileResponse.DeploymentId = _ctx.LongValue("DeleteFile.DeploymentId");
+			deleteFileResponse.RequestId = _ctx.StringValue("DeleteFile.RequestId");
+			deleteFileResponse.ErrorMessage = _ctx.StringValue("DeleteFile.ErrorMessage");
+			deleteFileResponse.Success = _ctx.BooleanValue("DeleteFile.Success");
+			deleteFileResponse.ErrorCode = _ctx.StringValue("DeleteFile.ErrorCode");
         
 			return deleteFileResponse;
         }

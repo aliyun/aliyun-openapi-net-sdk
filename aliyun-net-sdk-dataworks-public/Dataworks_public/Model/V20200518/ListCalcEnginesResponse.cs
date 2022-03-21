@@ -27,9 +27,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private int? httpStatusCode;
 
-		private bool? success;
-
 		private string requestId;
+
+		private bool? success;
 
 		private ListCalcEngines_Data data;
 
@@ -45,18 +45,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
 		public string RequestId
 		{
 			get
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -143,65 +143,41 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class ListCalcEngines_CalcEnginesItem
 			{
 
-				private string calcEngineType;
-
-				private string gmtCreate;
-
-				private string dwRegion;
+				private string bindingProjectName;
 
 				private bool? isDefault;
 
-				private int? bindingProjectId;
-
-				private string envType;
-
-				private long? tenantId;
-
-				private string name;
-
-				private string bindingProjectName;
-
-				private string region;
-
 				private int? engineId;
 
-				private string engineInfo;
+				private string dwRegion;
 
 				private string taskAuthType;
 
-				public string CalcEngineType
-				{
-					get
-					{
-						return calcEngineType;
-					}
-					set	
-					{
-						calcEngineType = value;
-					}
-				}
+				private string calcEngineType;
 
-				public string GmtCreate
-				{
-					get
-					{
-						return gmtCreate;
-					}
-					set	
-					{
-						gmtCreate = value;
-					}
-				}
+				private string engineInfo;
 
-				public string DwRegion
+				private string envType;
+
+				private string region;
+
+				private string gmtCreate;
+
+				private int? bindingProjectId;
+
+				private string name;
+
+				private long? tenantId;
+
+				public string BindingProjectName
 				{
 					get
 					{
-						return dwRegion;
+						return bindingProjectName;
 					}
 					set	
 					{
-						dwRegion = value;
+						bindingProjectName = value;
 					}
 				}
 
@@ -217,78 +193,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public int? BindingProjectId
-				{
-					get
-					{
-						return bindingProjectId;
-					}
-					set	
-					{
-						bindingProjectId = value;
-					}
-				}
-
-				public string EnvType
-				{
-					get
-					{
-						return envType;
-					}
-					set	
-					{
-						envType = value;
-					}
-				}
-
-				public long? TenantId
-				{
-					get
-					{
-						return tenantId;
-					}
-					set	
-					{
-						tenantId = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
-				public string BindingProjectName
-				{
-					get
-					{
-						return bindingProjectName;
-					}
-					set	
-					{
-						bindingProjectName = value;
-					}
-				}
-
-				public string Region
-				{
-					get
-					{
-						return region;
-					}
-					set	
-					{
-						region = value;
-					}
-				}
-
 				public int? EngineId
 				{
 					get
@@ -298,6 +202,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						engineId = value;
+					}
+				}
+
+				public string DwRegion
+				{
+					get
+					{
+						return dwRegion;
+					}
+					set	
+					{
+						dwRegion = value;
+					}
+				}
+
+				public string TaskAuthType
+				{
+					get
+					{
+						return taskAuthType;
+					}
+					set	
+					{
+						taskAuthType = value;
+					}
+				}
+
+				public string CalcEngineType
+				{
+					get
+					{
+						return calcEngineType;
+					}
+					set	
+					{
+						calcEngineType = value;
 					}
 				}
 
@@ -313,15 +253,75 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string TaskAuthType
+				public string EnvType
 				{
 					get
 					{
-						return taskAuthType;
+						return envType;
 					}
 					set	
 					{
-						taskAuthType = value;
+						envType = value;
+					}
+				}
+
+				public string Region
+				{
+					get
+					{
+						return region;
+					}
+					set	
+					{
+						region = value;
+					}
+				}
+
+				public string GmtCreate
+				{
+					get
+					{
+						return gmtCreate;
+					}
+					set	
+					{
+						gmtCreate = value;
+					}
+				}
+
+				public int? BindingProjectId
+				{
+					get
+					{
+						return bindingProjectId;
+					}
+					set	
+					{
+						bindingProjectId = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public long? TenantId
+				{
+					get
+					{
+						return tenantId;
+					}
+					set	
+					{
+						tenantId = value;
 					}
 				}
 			}

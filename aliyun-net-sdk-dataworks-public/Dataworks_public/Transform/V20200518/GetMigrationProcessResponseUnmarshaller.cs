@@ -31,17 +31,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetMigrationProcessResponse getMigrationProcessResponse = new GetMigrationProcessResponse();
 
 			getMigrationProcessResponse.HttpResponse = _ctx.HttpResponse;
-			getMigrationProcessResponse.ErrorCode = _ctx.StringValue("GetMigrationProcess.ErrorCode");
-			getMigrationProcessResponse.ErrorMessage = _ctx.StringValue("GetMigrationProcess.ErrorMessage");
 			getMigrationProcessResponse.HttpStatusCode = _ctx.IntegerValue("GetMigrationProcess.HttpStatusCode");
 			getMigrationProcessResponse.RequestId = _ctx.StringValue("GetMigrationProcess.RequestId");
+			getMigrationProcessResponse.ErrorMessage = _ctx.StringValue("GetMigrationProcess.ErrorMessage");
 			getMigrationProcessResponse.Success = _ctx.BooleanValue("GetMigrationProcess.Success");
+			getMigrationProcessResponse.ErrorCode = _ctx.StringValue("GetMigrationProcess.ErrorCode");
 
 			List<GetMigrationProcessResponse.GetMigrationProcess_ProgressTaskItem> getMigrationProcessResponse_data = new List<GetMigrationProcessResponse.GetMigrationProcess_ProgressTaskItem>();
 			for (int i = 0; i < _ctx.Length("GetMigrationProcess.Data.Length"); i++) {
 				GetMigrationProcessResponse.GetMigrationProcess_ProgressTaskItem progressTaskItem = new GetMigrationProcessResponse.GetMigrationProcess_ProgressTaskItem();
-				progressTaskItem.TaskName = _ctx.StringValue("GetMigrationProcess.Data["+ i +"].TaskName");
 				progressTaskItem.TaskStatus = _ctx.StringValue("GetMigrationProcess.Data["+ i +"].TaskStatus");
+				progressTaskItem.TaskName = _ctx.StringValue("GetMigrationProcess.Data["+ i +"].TaskName");
 
 				getMigrationProcessResponse_data.Add(progressTaskItem);
 			}

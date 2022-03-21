@@ -31,26 +31,26 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetFileVersionResponse getFileVersionResponse = new GetFileVersionResponse();
 
 			getFileVersionResponse.HttpResponse = _ctx.HttpResponse;
-			getFileVersionResponse.RequestId = _ctx.StringValue("GetFileVersion.RequestId");
-			getFileVersionResponse.Success = _ctx.BooleanValue("GetFileVersion.Success");
-			getFileVersionResponse.ErrorCode = _ctx.StringValue("GetFileVersion.ErrorCode");
-			getFileVersionResponse.ErrorMessage = _ctx.StringValue("GetFileVersion.ErrorMessage");
 			getFileVersionResponse.HttpStatusCode = _ctx.IntegerValue("GetFileVersion.HttpStatusCode");
+			getFileVersionResponse.ErrorMessage = _ctx.StringValue("GetFileVersion.ErrorMessage");
+			getFileVersionResponse.RequestId = _ctx.StringValue("GetFileVersion.RequestId");
+			getFileVersionResponse.ErrorCode = _ctx.StringValue("GetFileVersion.ErrorCode");
+			getFileVersionResponse.Success = _ctx.BooleanValue("GetFileVersion.Success");
 
 			GetFileVersionResponse.GetFileVersion_Data data = new GetFileVersionResponse.GetFileVersion_Data();
-			data.FileVersion = _ctx.IntegerValue("GetFileVersion.Data.FileVersion");
 			data.FileContent = _ctx.StringValue("GetFileVersion.Data.FileContent");
-			data.FilePropertyContent = _ctx.StringValue("GetFileVersion.Data.FilePropertyContent");
-			data.NodeContent = _ctx.StringValue("GetFileVersion.Data.NodeContent");
-			data.Comment = _ctx.StringValue("GetFileVersion.Data.Comment");
-			data.NodeId = _ctx.LongValue("GetFileVersion.Data.NodeId");
 			data.IsCurrentProd = _ctx.BooleanValue("GetFileVersion.Data.IsCurrentProd");
-			data.ChangeType = _ctx.StringValue("GetFileVersion.Data.ChangeType");
 			data.Status = _ctx.StringValue("GetFileVersion.Data.Status");
-			data.FileName = _ctx.StringValue("GetFileVersion.Data.FileName");
+			data.NodeContent = _ctx.StringValue("GetFileVersion.Data.NodeContent");
 			data.CommitUser = _ctx.StringValue("GetFileVersion.Data.CommitUser");
-			data.CommitTime = _ctx.LongValue("GetFileVersion.Data.CommitTime");
+			data.Comment = _ctx.StringValue("GetFileVersion.Data.Comment");
+			data.FilePropertyContent = _ctx.StringValue("GetFileVersion.Data.FilePropertyContent");
+			data.FileName = _ctx.StringValue("GetFileVersion.Data.FileName");
 			data.UseType = _ctx.StringValue("GetFileVersion.Data.UseType");
+			data.ChangeType = _ctx.StringValue("GetFileVersion.Data.ChangeType");
+			data.FileVersion = _ctx.IntegerValue("GetFileVersion.Data.FileVersion");
+			data.CommitTime = _ctx.LongValue("GetFileVersion.Data.CommitTime");
+			data.NodeId = _ctx.LongValue("GetFileVersion.Data.NodeId");
 			getFileVersionResponse.Data = data;
         
 			return getFileVersionResponse;

@@ -25,53 +25,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetBaselineKeyPathResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errorCode;
-
-		private string errorMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
+		private string errorMessage;
+
+		private string errorCode;
+
+		private bool? success;
+
 		private List<GetBaselineKeyPath_DataItem> data;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -97,6 +61,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public List<GetBaselineKeyPath_DataItem> Data
 		{
 			get
@@ -112,59 +112,35 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetBaselineKeyPath_DataItem
 		{
 
-			private long? instanceId;
-
-			private long? projectId;
-
-			private long? nodeId;
+			private string owner;
 
 			private string nodeName;
 
 			private long? bizdate;
 
-			private int? inGroupId;
+			private long? projectId;
 
-			private string owner;
+			private long? instanceId;
 
 			private int? prgType;
+
+			private long? nodeId;
+
+			private int? inGroupId;
 
 			private List<GetBaselineKeyPath_RunsItem> runs;
 
 			private List<GetBaselineKeyPath_TopicsItem> topics;
 
-			public long? InstanceId
+			public string Owner
 			{
 				get
 				{
-					return instanceId;
+					return owner;
 				}
 				set	
 				{
-					instanceId = value;
-				}
-			}
-
-			public long? ProjectId
-			{
-				get
-				{
-					return projectId;
-				}
-				set	
-				{
-					projectId = value;
-				}
-			}
-
-			public long? NodeId
-			{
-				get
-				{
-					return nodeId;
-				}
-				set	
-				{
-					nodeId = value;
+					owner = value;
 				}
 			}
 
@@ -192,27 +168,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public int? InGroupId
+			public long? ProjectId
 			{
 				get
 				{
-					return inGroupId;
+					return projectId;
 				}
 				set	
 				{
-					inGroupId = value;
+					projectId = value;
 				}
 			}
 
-			public string Owner
+			public long? InstanceId
 			{
 				get
 				{
-					return owner;
+					return instanceId;
 				}
 				set	
 				{
-					owner = value;
+					instanceId = value;
 				}
 			}
 
@@ -225,6 +201,30 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					prgType = value;
+				}
+			}
+
+			public long? NodeId
+			{
+				get
+				{
+					return nodeId;
+				}
+				set	
+				{
+					nodeId = value;
+				}
+			}
+
+			public int? InGroupId
+			{
+				get
+				{
+					return inGroupId;
+				}
+				set	
+				{
+					inGroupId = value;
 				}
 			}
 
@@ -255,37 +255,49 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetBaselineKeyPath_RunsItem
 			{
 
-				private long? absTime;
+				private string status;
 
-				private long? beginCast;
+				private long? absTime;
 
 				private long? beginRunningTime;
 
-				private long? beginWaitResTime;
-
-				private long? beginWaitTimeTime;
-
-				private long? bizdate;
-
 				private long? cycTime;
-
-				private long? endCast;
-
-				private long? finishTime;
-
-				private int? inGroupId;
-
-				private long? instanceId;
-
-				private long? nodeId;
-
-				private string nodeName;
 
 				private string owner;
 
+				private long? finishTime;
+
 				private long? projectId;
 
-				private string status;
+				private long? beginCast;
+
+				private long? instanceId;
+
+				private long? endCast;
+
+				private long? beginWaitResTime;
+
+				private int? inGroupId;
+
+				private string nodeName;
+
+				private long? bizdate;
+
+				private long? beginWaitTimeTime;
+
+				private long? nodeId;
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 
 				public long? AbsTime
 				{
@@ -296,18 +308,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						absTime = value;
-					}
-				}
-
-				public long? BeginCast
-				{
-					get
-					{
-						return beginCast;
-					}
-					set	
-					{
-						beginCast = value;
 					}
 				}
 
@@ -323,42 +323,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public long? BeginWaitResTime
-				{
-					get
-					{
-						return beginWaitResTime;
-					}
-					set	
-					{
-						beginWaitResTime = value;
-					}
-				}
-
-				public long? BeginWaitTimeTime
-				{
-					get
-					{
-						return beginWaitTimeTime;
-					}
-					set	
-					{
-						beginWaitTimeTime = value;
-					}
-				}
-
-				public long? Bizdate
-				{
-					get
-					{
-						return bizdate;
-					}
-					set	
-					{
-						bizdate = value;
-					}
-				}
-
 				public long? CycTime
 				{
 					get
@@ -368,78 +332,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						cycTime = value;
-					}
-				}
-
-				public long? EndCast
-				{
-					get
-					{
-						return endCast;
-					}
-					set	
-					{
-						endCast = value;
-					}
-				}
-
-				public long? FinishTime
-				{
-					get
-					{
-						return finishTime;
-					}
-					set	
-					{
-						finishTime = value;
-					}
-				}
-
-				public int? InGroupId
-				{
-					get
-					{
-						return inGroupId;
-					}
-					set	
-					{
-						inGroupId = value;
-					}
-				}
-
-				public long? InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
-					}
-				}
-
-				public long? NodeId
-				{
-					get
-					{
-						return nodeId;
-					}
-					set	
-					{
-						nodeId = value;
-					}
-				}
-
-				public string NodeName
-				{
-					get
-					{
-						return nodeName;
-					}
-					set	
-					{
-						nodeName = value;
 					}
 				}
 
@@ -455,6 +347,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
+				public long? FinishTime
+				{
+					get
+					{
+						return finishTime;
+					}
+					set	
+					{
+						finishTime = value;
+					}
+				}
+
 				public long? ProjectId
 				{
 					get
@@ -467,15 +371,111 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string Status
+				public long? BeginCast
 				{
 					get
 					{
-						return status;
+						return beginCast;
 					}
 					set	
 					{
-						status = value;
+						beginCast = value;
+					}
+				}
+
+				public long? InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
+					}
+				}
+
+				public long? EndCast
+				{
+					get
+					{
+						return endCast;
+					}
+					set	
+					{
+						endCast = value;
+					}
+				}
+
+				public long? BeginWaitResTime
+				{
+					get
+					{
+						return beginWaitResTime;
+					}
+					set	
+					{
+						beginWaitResTime = value;
+					}
+				}
+
+				public int? InGroupId
+				{
+					get
+					{
+						return inGroupId;
+					}
+					set	
+					{
+						inGroupId = value;
+					}
+				}
+
+				public string NodeName
+				{
+					get
+					{
+						return nodeName;
+					}
+					set	
+					{
+						nodeName = value;
+					}
+				}
+
+				public long? Bizdate
+				{
+					get
+					{
+						return bizdate;
+					}
+					set	
+					{
+						bizdate = value;
+					}
+				}
+
+				public long? BeginWaitTimeTime
+				{
+					get
+					{
+						return beginWaitTimeTime;
+					}
+					set	
+					{
+						beginWaitTimeTime = value;
+					}
+				}
+
+				public long? NodeId
+				{
+					get
+					{
+						return nodeId;
+					}
+					set	
+					{
+						nodeId = value;
 					}
 				}
 			}
@@ -483,13 +483,25 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetBaselineKeyPath_TopicsItem
 			{
 
+				private long? topicName;
+
 				private long? instanceId;
 
 				private long? topicId;
 
-				private long? topicName;
-
 				private long? addTime;
+
+				public long? TopicName
+				{
+					get
+					{
+						return topicName;
+					}
+					set	
+					{
+						topicName = value;
+					}
+				}
 
 				public long? InstanceId
 				{
@@ -512,18 +524,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						topicId = value;
-					}
-				}
-
-				public long? TopicName
-				{
-					get
-					{
-						return topicName;
-					}
-					set	
-					{
-						topicName = value;
 					}
 				}
 

@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			ListFoldersResponse listFoldersResponse = new ListFoldersResponse();
 
 			listFoldersResponse.HttpResponse = _ctx.HttpResponse;
-			listFoldersResponse.RequestId = _ctx.StringValue("ListFolders.RequestId");
-			listFoldersResponse.Success = _ctx.BooleanValue("ListFolders.Success");
-			listFoldersResponse.ErrorCode = _ctx.StringValue("ListFolders.ErrorCode");
-			listFoldersResponse.ErrorMessage = _ctx.StringValue("ListFolders.ErrorMessage");
 			listFoldersResponse.HttpStatusCode = _ctx.IntegerValue("ListFolders.HttpStatusCode");
+			listFoldersResponse.ErrorMessage = _ctx.StringValue("ListFolders.ErrorMessage");
+			listFoldersResponse.RequestId = _ctx.StringValue("ListFolders.RequestId");
+			listFoldersResponse.ErrorCode = _ctx.StringValue("ListFolders.ErrorCode");
+			listFoldersResponse.Success = _ctx.BooleanValue("ListFolders.Success");
 
 			ListFoldersResponse.ListFolders_Data data = new ListFoldersResponse.ListFolders_Data();
 			data.PageNumber = _ctx.IntegerValue("ListFolders.Data.PageNumber");
@@ -45,8 +45,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<ListFoldersResponse.ListFolders_Data.ListFolders_FoldersItem> data_folders = new List<ListFoldersResponse.ListFolders_Data.ListFolders_FoldersItem>();
 			for (int i = 0; i < _ctx.Length("ListFolders.Data.Folders.Length"); i++) {
 				ListFoldersResponse.ListFolders_Data.ListFolders_FoldersItem foldersItem = new ListFoldersResponse.ListFolders_Data.ListFolders_FoldersItem();
-				foldersItem.FolderId = _ctx.StringValue("ListFolders.Data.Folders["+ i +"].FolderId");
 				foldersItem.FolderPath = _ctx.StringValue("ListFolders.Data.Folders["+ i +"].FolderPath");
+				foldersItem.FolderId = _ctx.StringValue("ListFolders.Data.Folders["+ i +"].FolderId");
 
 				data_folders.Add(foldersItem);
 			}

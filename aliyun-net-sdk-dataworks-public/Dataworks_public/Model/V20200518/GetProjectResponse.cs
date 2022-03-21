@@ -27,9 +27,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private int? httpStatusCode;
 
-		private bool? success;
-
 		private string requestId;
+
+		private bool? success;
 
 		private GetProject_Data data;
 
@@ -45,18 +45,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
 		public string RequestId
 		{
 			get
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -84,71 +84,71 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetProject_Data
 		{
 
-			private string gmtModified;
+			private int? status;
 
 			private int? maxFlowNode;
 
-			private string defaultDiResourceGroupIdentifier;
-
-			private int? destination;
+			private int? projectId;
 
 			private int? isAllowDownload;
 
-			private string prodStorageQuota;
-
-			private int? schedulerRetryInterval;
-
-			private string residentArea;
-
-			private int? tablePrivacyMode;
-
-			private string projectOwnerBaseId;
-
-			private bool? useProxyOdpsAccount;
-
-			private bool? disableDevelopment;
-
 			private int? projectMode;
 
-			private string gmtCreate;
+			private string gmtModified;
 
-			private string devStorageQuota;
-
-			private int? isDefault;
-
-			private int? protectedMode;
-
-			private bool? baseProject;
-
-			private long? tenantId;
+			private string prodStorageQuota;
 
 			private string projectDescription;
 
-			private string appkey;
+			private int? developmentType;
+
+			private int? tablePrivacyMode;
+
+			private string defaultDiResourceGroupIdentifier;
 
 			private int? schedulerMaxRetryTimes;
+
+			private int? protectedMode;
+
+			private int? schedulerRetryInterval;
+
+			private string appkey;
+
+			private string devStorageQuota;
+
+			private string residentArea;
+
+			private int? isDefault;
+
+			private int? destination;
 
 			private string projectName;
 
 			private string projectIdentifier;
 
-			private int? projectId;
+			private bool? disableDevelopment;
 
-			private int? status;
+			private string projectOwnerBaseId;
 
-			private int? developmentType;
+			private bool? baseProject;
+
+			private bool? useProxyOdpsAccount;
+
+			private string gmtCreate;
+
+			private long? tenantId;
 
 			private List<string> envTypes;
 
-			public string GmtModified
+			public int? Status
 			{
 				get
 				{
-					return gmtModified;
+					return status;
 				}
 				set	
 				{
-					gmtModified = value;
+					status = value;
 				}
 			}
 
@@ -164,27 +164,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string DefaultDiResourceGroupIdentifier
+			public int? ProjectId
 			{
 				get
 				{
-					return defaultDiResourceGroupIdentifier;
+					return projectId;
 				}
 				set	
 				{
-					defaultDiResourceGroupIdentifier = value;
-				}
-			}
-
-			public int? Destination
-			{
-				get
-				{
-					return destination;
-				}
-				set	
-				{
-					destination = value;
+					projectId = value;
 				}
 			}
 
@@ -200,90 +188,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string ProdStorageQuota
-			{
-				get
-				{
-					return prodStorageQuota;
-				}
-				set	
-				{
-					prodStorageQuota = value;
-				}
-			}
-
-			public int? SchedulerRetryInterval
-			{
-				get
-				{
-					return schedulerRetryInterval;
-				}
-				set	
-				{
-					schedulerRetryInterval = value;
-				}
-			}
-
-			public string ResidentArea
-			{
-				get
-				{
-					return residentArea;
-				}
-				set	
-				{
-					residentArea = value;
-				}
-			}
-
-			public int? TablePrivacyMode
-			{
-				get
-				{
-					return tablePrivacyMode;
-				}
-				set	
-				{
-					tablePrivacyMode = value;
-				}
-			}
-
-			public string ProjectOwnerBaseId
-			{
-				get
-				{
-					return projectOwnerBaseId;
-				}
-				set	
-				{
-					projectOwnerBaseId = value;
-				}
-			}
-
-			public bool? UseProxyOdpsAccount
-			{
-				get
-				{
-					return useProxyOdpsAccount;
-				}
-				set	
-				{
-					useProxyOdpsAccount = value;
-				}
-			}
-
-			public bool? DisableDevelopment
-			{
-				get
-				{
-					return disableDevelopment;
-				}
-				set	
-				{
-					disableDevelopment = value;
-				}
-			}
-
 			public int? ProjectMode
 			{
 				get
@@ -296,75 +200,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string GmtCreate
+			public string GmtModified
 			{
 				get
 				{
-					return gmtCreate;
+					return gmtModified;
 				}
 				set	
 				{
-					gmtCreate = value;
+					gmtModified = value;
 				}
 			}
 
-			public string DevStorageQuota
+			public string ProdStorageQuota
 			{
 				get
 				{
-					return devStorageQuota;
+					return prodStorageQuota;
 				}
 				set	
 				{
-					devStorageQuota = value;
-				}
-			}
-
-			public int? IsDefault
-			{
-				get
-				{
-					return isDefault;
-				}
-				set	
-				{
-					isDefault = value;
-				}
-			}
-
-			public int? ProtectedMode
-			{
-				get
-				{
-					return protectedMode;
-				}
-				set	
-				{
-					protectedMode = value;
-				}
-			}
-
-			public bool? BaseProject
-			{
-				get
-				{
-					return baseProject;
-				}
-				set	
-				{
-					baseProject = value;
-				}
-			}
-
-			public long? TenantId
-			{
-				get
-				{
-					return tenantId;
-				}
-				set	
-				{
-					tenantId = value;
+					prodStorageQuota = value;
 				}
 			}
 
@@ -380,15 +236,39 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string Appkey
+			public int? DevelopmentType
 			{
 				get
 				{
-					return appkey;
+					return developmentType;
 				}
 				set	
 				{
-					appkey = value;
+					developmentType = value;
+				}
+			}
+
+			public int? TablePrivacyMode
+			{
+				get
+				{
+					return tablePrivacyMode;
+				}
+				set	
+				{
+					tablePrivacyMode = value;
+				}
+			}
+
+			public string DefaultDiResourceGroupIdentifier
+			{
+				get
+				{
+					return defaultDiResourceGroupIdentifier;
+				}
+				set	
+				{
+					defaultDiResourceGroupIdentifier = value;
 				}
 			}
 
@@ -401,6 +281,90 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					schedulerMaxRetryTimes = value;
+				}
+			}
+
+			public int? ProtectedMode
+			{
+				get
+				{
+					return protectedMode;
+				}
+				set	
+				{
+					protectedMode = value;
+				}
+			}
+
+			public int? SchedulerRetryInterval
+			{
+				get
+				{
+					return schedulerRetryInterval;
+				}
+				set	
+				{
+					schedulerRetryInterval = value;
+				}
+			}
+
+			public string Appkey
+			{
+				get
+				{
+					return appkey;
+				}
+				set	
+				{
+					appkey = value;
+				}
+			}
+
+			public string DevStorageQuota
+			{
+				get
+				{
+					return devStorageQuota;
+				}
+				set	
+				{
+					devStorageQuota = value;
+				}
+			}
+
+			public string ResidentArea
+			{
+				get
+				{
+					return residentArea;
+				}
+				set	
+				{
+					residentArea = value;
+				}
+			}
+
+			public int? IsDefault
+			{
+				get
+				{
+					return isDefault;
+				}
+				set	
+				{
+					isDefault = value;
+				}
+			}
+
+			public int? Destination
+			{
+				get
+				{
+					return destination;
+				}
+				set	
+				{
+					destination = value;
 				}
 			}
 
@@ -428,39 +392,75 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public int? ProjectId
+			public bool? DisableDevelopment
 			{
 				get
 				{
-					return projectId;
+					return disableDevelopment;
 				}
 				set	
 				{
-					projectId = value;
+					disableDevelopment = value;
 				}
 			}
 
-			public int? Status
+			public string ProjectOwnerBaseId
 			{
 				get
 				{
-					return status;
+					return projectOwnerBaseId;
 				}
 				set	
 				{
-					status = value;
+					projectOwnerBaseId = value;
 				}
 			}
 
-			public int? DevelopmentType
+			public bool? BaseProject
 			{
 				get
 				{
-					return developmentType;
+					return baseProject;
 				}
 				set	
 				{
-					developmentType = value;
+					baseProject = value;
+				}
+			}
+
+			public bool? UseProxyOdpsAccount
+			{
+				get
+				{
+					return useProxyOdpsAccount;
+				}
+				set	
+				{
+					useProxyOdpsAccount = value;
+				}
+			}
+
+			public string GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
+				}
+			}
+
+			public long? TenantId
+			{
+				get
+				{
+					return tenantId;
+				}
+				set	
+				{
+					tenantId = value;
 				}
 			}
 

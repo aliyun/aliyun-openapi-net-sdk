@@ -25,51 +25,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetDeploymentResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
-		private string errorCode;
+		private int? httpStatusCode;
 
 		private string errorMessage;
 
-		private int? httpStatusCode;
+		private string requestId;
+
+		private string errorCode;
+
+		private bool? success;
 
 		private GetDeployment_Data data;
 
-		public string RequestId
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return requestId;
+				return httpStatusCode;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				httpStatusCode = value;
 			}
 		}
 
@@ -85,15 +61,39 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? HttpStatusCode
+		public string RequestId
 		{
 			get
 			{
-				return httpStatusCode;
+				return requestId;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				requestId = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -129,85 +129,25 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetDeployment_Deployment
 			{
 
-				private string name;
-
-				private string creatorId;
-
-				private string handlerId;
-
-				private long? createTime;
-
-				private long? executeTime;
-
 				private int? status;
+
+				private string errorMessage;
 
 				private int? fromEnvironment;
 
 				private int? toEnvironment;
 
-				private string errorMessage;
-
 				private int? checkingStatus;
 
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
+				private long? createTime;
 
-				public string CreatorId
-				{
-					get
-					{
-						return creatorId;
-					}
-					set	
-					{
-						creatorId = value;
-					}
-				}
+				private string handlerId;
 
-				public string HandlerId
-				{
-					get
-					{
-						return handlerId;
-					}
-					set	
-					{
-						handlerId = value;
-					}
-				}
+				private string creatorId;
 
-				public long? CreateTime
-				{
-					get
-					{
-						return createTime;
-					}
-					set	
-					{
-						createTime = value;
-					}
-				}
+				private long? executeTime;
 
-				public long? ExecuteTime
-				{
-					get
-					{
-						return executeTime;
-					}
-					set	
-					{
-						executeTime = value;
-					}
-				}
+				private string name;
 
 				public int? Status
 				{
@@ -218,6 +158,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						status = value;
+					}
+				}
+
+				public string ErrorMessage
+				{
+					get
+					{
+						return errorMessage;
+					}
+					set	
+					{
+						errorMessage = value;
 					}
 				}
 
@@ -245,18 +197,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string ErrorMessage
-				{
-					get
-					{
-						return errorMessage;
-					}
-					set	
-					{
-						errorMessage = value;
-					}
-				}
-
 				public int? CheckingStatus
 				{
 					get
@@ -266,6 +206,66 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						checkingStatus = value;
+					}
+				}
+
+				public long? CreateTime
+				{
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
+					}
+				}
+
+				public string HandlerId
+				{
+					get
+					{
+						return handlerId;
+					}
+					set	
+					{
+						handlerId = value;
+					}
+				}
+
+				public string CreatorId
+				{
+					get
+					{
+						return creatorId;
+					}
+					set	
+					{
+						creatorId = value;
+					}
+				}
+
+				public long? ExecuteTime
+				{
+					get
+					{
+						return executeTime;
+					}
+					set	
+					{
+						executeTime = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 			}

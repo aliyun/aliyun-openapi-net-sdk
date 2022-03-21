@@ -25,21 +25,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class CheckMetaTableResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? data;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public bool? Data
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				data = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

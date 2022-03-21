@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			ListBusinessResponse listBusinessResponse = new ListBusinessResponse();
 
 			listBusinessResponse.HttpResponse = _ctx.HttpResponse;
-			listBusinessResponse.RequestId = _ctx.StringValue("ListBusiness.RequestId");
-			listBusinessResponse.Success = _ctx.BooleanValue("ListBusiness.Success");
-			listBusinessResponse.ErrorCode = _ctx.StringValue("ListBusiness.ErrorCode");
-			listBusinessResponse.ErrorMessage = _ctx.StringValue("ListBusiness.ErrorMessage");
 			listBusinessResponse.HttpStatusCode = _ctx.IntegerValue("ListBusiness.HttpStatusCode");
+			listBusinessResponse.ErrorMessage = _ctx.StringValue("ListBusiness.ErrorMessage");
+			listBusinessResponse.RequestId = _ctx.StringValue("ListBusiness.RequestId");
+			listBusinessResponse.ErrorCode = _ctx.StringValue("ListBusiness.ErrorCode");
+			listBusinessResponse.Success = _ctx.BooleanValue("ListBusiness.Success");
 
 			ListBusinessResponse.ListBusiness_Data data = new ListBusinessResponse.ListBusiness_Data();
 			data.PageNumber = _ctx.IntegerValue("ListBusiness.Data.PageNumber");
@@ -45,11 +45,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<ListBusinessResponse.ListBusiness_Data.ListBusiness_BusinessItem> data_business = new List<ListBusinessResponse.ListBusiness_Data.ListBusiness_BusinessItem>();
 			for (int i = 0; i < _ctx.Length("ListBusiness.Data.Business.Length"); i++) {
 				ListBusinessResponse.ListBusiness_Data.ListBusiness_BusinessItem businessItem = new ListBusinessResponse.ListBusiness_Data.ListBusiness_BusinessItem();
-				businessItem.BusinessId = _ctx.LongValue("ListBusiness.Data.Business["+ i +"].BusinessId");
-				businessItem.BusinessName = _ctx.StringValue("ListBusiness.Data.Business["+ i +"].BusinessName");
-				businessItem.ProjectId = _ctx.LongValue("ListBusiness.Data.Business["+ i +"].ProjectId");
 				businessItem.Owner = _ctx.StringValue("ListBusiness.Data.Business["+ i +"].Owner");
 				businessItem.Description = _ctx.StringValue("ListBusiness.Data.Business["+ i +"].Description");
+				businessItem.ProjectId = _ctx.LongValue("ListBusiness.Data.Business["+ i +"].ProjectId");
+				businessItem.BusinessId = _ctx.LongValue("ListBusiness.Data.Business["+ i +"].BusinessId");
+				businessItem.BusinessName = _ctx.StringValue("ListBusiness.Data.Business["+ i +"].BusinessName");
 				businessItem.UseType = _ctx.StringValue("ListBusiness.Data.Business["+ i +"].UseType");
 
 				data_business.Add(businessItem);

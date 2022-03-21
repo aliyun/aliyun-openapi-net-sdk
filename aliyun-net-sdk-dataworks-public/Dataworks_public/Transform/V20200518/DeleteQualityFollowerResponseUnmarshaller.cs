@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			DeleteQualityFollowerResponse deleteQualityFollowerResponse = new DeleteQualityFollowerResponse();
 
 			deleteQualityFollowerResponse.HttpResponse = _ctx.HttpResponse;
-			deleteQualityFollowerResponse.ErrorCode = _ctx.StringValue("DeleteQualityFollower.ErrorCode");
-			deleteQualityFollowerResponse.Data = _ctx.BooleanValue("DeleteQualityFollower.Data");
-			deleteQualityFollowerResponse.Success = _ctx.BooleanValue("DeleteQualityFollower.Success");
-			deleteQualityFollowerResponse.ErrorMessage = _ctx.StringValue("DeleteQualityFollower.ErrorMessage");
 			deleteQualityFollowerResponse.HttpStatusCode = _ctx.IntegerValue("DeleteQualityFollower.HttpStatusCode");
+			deleteQualityFollowerResponse.Data = _ctx.BooleanValue("DeleteQualityFollower.Data");
+			deleteQualityFollowerResponse.ErrorMessage = _ctx.StringValue("DeleteQualityFollower.ErrorMessage");
 			deleteQualityFollowerResponse.RequestId = _ctx.StringValue("DeleteQualityFollower.RequestId");
+			deleteQualityFollowerResponse.ErrorCode = _ctx.StringValue("DeleteQualityFollower.ErrorCode");
+			deleteQualityFollowerResponse.Success = _ctx.BooleanValue("DeleteQualityFollower.Success");
         
 			return deleteQualityFollowerResponse;
         }

@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			CreateFolderResponse createFolderResponse = new CreateFolderResponse();
 
 			createFolderResponse.HttpResponse = _ctx.HttpResponse;
+			createFolderResponse.HttpStatusCode = _ctx.IntegerValue("CreateFolder.HttpStatusCode");
+			createFolderResponse.Data = _ctx.StringValue("CreateFolder.Data");
 			createFolderResponse.RequestId = _ctx.StringValue("CreateFolder.RequestId");
+			createFolderResponse.ErrorMessage = _ctx.StringValue("CreateFolder.ErrorMessage");
 			createFolderResponse.Success = _ctx.BooleanValue("CreateFolder.Success");
 			createFolderResponse.ErrorCode = _ctx.StringValue("CreateFolder.ErrorCode");
-			createFolderResponse.ErrorMessage = _ctx.StringValue("CreateFolder.ErrorMessage");
-			createFolderResponse.Data = _ctx.StringValue("CreateFolder.Data");
-			createFolderResponse.HttpStatusCode = _ctx.IntegerValue("CreateFolder.HttpStatusCode");
         
 			return createFolderResponse;
         }

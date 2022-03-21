@@ -25,53 +25,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetQualityFollowerResponse : AcsResponse
 	{
 
-		private string errorCode;
-
-		private bool? success;
-
-		private string errorMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
+		private string errorMessage;
+
+		private bool? success;
+
+		private string errorCode;
+
 		private List<GetQualityFollower_Follower> data;
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -97,6 +61,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
 		public List<GetQualityFollower_Follower> Data
 		{
 			get
@@ -112,29 +112,29 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetQualityFollower_Follower
 		{
 
-			private string projectName;
+			private string followerAccountName;
 
 			private string tableName;
 
-			private long? id;
+			private int? alarmMode;
 
 			private string entityId;
 
+			private string projectName;
+
+			private long? id;
+
 			private string follower;
 
-			private int? alarmMode;
-
-			private string followerAccountName;
-
-			public string ProjectName
+			public string FollowerAccountName
 			{
 				get
 				{
-					return projectName;
+					return followerAccountName;
 				}
 				set	
 				{
-					projectName = value;
+					followerAccountName = value;
 				}
 			}
 
@@ -150,15 +150,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public long? Id
+			public int? AlarmMode
 			{
 				get
 				{
-					return id;
+					return alarmMode;
 				}
 				set	
 				{
-					id = value;
+					alarmMode = value;
 				}
 			}
 
@@ -174,6 +174,30 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
+			public string ProjectName
+			{
+				get
+				{
+					return projectName;
+				}
+				set	
+				{
+					projectName = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
 			public string Follower
 			{
 				get
@@ -183,30 +207,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					follower = value;
-				}
-			}
-
-			public int? AlarmMode
-			{
-				get
-				{
-					return alarmMode;
-				}
-				set	
-				{
-					alarmMode = value;
-				}
-			}
-
-			public string FollowerAccountName
-			{
-				get
-				{
-					return followerAccountName;
-				}
-				set	
-				{
-					followerAccountName = value;
 				}
 			}
 		}

@@ -87,19 +87,31 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class TopTenElapsedTimeInstance_ConsumeTimeRankItem
 			{
 
-				private string nodeName;
+				private string owner;
 
-				private long? nodeId;
+				private string nodeName;
 
 				private long? businessDate;
 
-				private string owner;
-
-				private long? consumed;
+				private int? programType;
 
 				private long? instanceId;
 
-				private int? programType;
+				private long? nodeId;
+
+				private long? consumed;
+
+				public string Owner
+				{
+					get
+					{
+						return owner;
+					}
+					set	
+					{
+						owner = value;
+					}
+				}
 
 				public string NodeName
 				{
@@ -110,18 +122,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						nodeName = value;
-					}
-				}
-
-				public long? NodeId
-				{
-					get
-					{
-						return nodeId;
-					}
-					set	
-					{
-						nodeId = value;
 					}
 				}
 
@@ -137,27 +137,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string Owner
+				public int? ProgramType
 				{
 					get
 					{
-						return owner;
+						return programType;
 					}
 					set	
 					{
-						owner = value;
-					}
-				}
-
-				public long? Consumed
-				{
-					get
-					{
-						return consumed;
-					}
-					set	
-					{
-						consumed = value;
+						programType = value;
 					}
 				}
 
@@ -173,15 +161,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public int? ProgramType
+				public long? NodeId
 				{
 					get
 					{
-						return programType;
+						return nodeId;
 					}
 					set	
 					{
-						programType = value;
+						nodeId = value;
+					}
+				}
+
+				public long? Consumed
+				{
+					get
+					{
+						return consumed;
+					}
+					set	
+					{
+						consumed = value;
 					}
 				}
 			}

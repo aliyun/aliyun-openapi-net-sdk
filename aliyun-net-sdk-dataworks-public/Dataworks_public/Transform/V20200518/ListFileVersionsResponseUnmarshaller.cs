@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			ListFileVersionsResponse listFileVersionsResponse = new ListFileVersionsResponse();
 
 			listFileVersionsResponse.HttpResponse = _ctx.HttpResponse;
-			listFileVersionsResponse.RequestId = _ctx.StringValue("ListFileVersions.RequestId");
-			listFileVersionsResponse.Success = _ctx.BooleanValue("ListFileVersions.Success");
-			listFileVersionsResponse.ErrorCode = _ctx.StringValue("ListFileVersions.ErrorCode");
-			listFileVersionsResponse.ErrorMessage = _ctx.StringValue("ListFileVersions.ErrorMessage");
 			listFileVersionsResponse.HttpStatusCode = _ctx.IntegerValue("ListFileVersions.HttpStatusCode");
+			listFileVersionsResponse.ErrorMessage = _ctx.StringValue("ListFileVersions.ErrorMessage");
+			listFileVersionsResponse.RequestId = _ctx.StringValue("ListFileVersions.RequestId");
+			listFileVersionsResponse.ErrorCode = _ctx.StringValue("ListFileVersions.ErrorCode");
+			listFileVersionsResponse.Success = _ctx.BooleanValue("ListFileVersions.Success");
 
 			ListFileVersionsResponse.ListFileVersions_Data data = new ListFileVersionsResponse.ListFileVersions_Data();
 			data.PageNumber = _ctx.IntegerValue("ListFileVersions.Data.PageNumber");
@@ -45,19 +45,19 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<ListFileVersionsResponse.ListFileVersions_Data.ListFileVersions_FileVersion> data_fileVersions = new List<ListFileVersionsResponse.ListFileVersions_Data.ListFileVersions_FileVersion>();
 			for (int i = 0; i < _ctx.Length("ListFileVersions.Data.FileVersions.Length"); i++) {
 				ListFileVersionsResponse.ListFileVersions_Data.ListFileVersions_FileVersion fileVersion = new ListFileVersionsResponse.ListFileVersions_Data.ListFileVersions_FileVersion();
-				fileVersion.FileVersion = _ctx.IntegerValue("ListFileVersions.Data.FileVersions["+ i +"].FileVersion");
 				fileVersion.FileContent = _ctx.StringValue("ListFileVersions.Data.FileVersions["+ i +"].FileContent");
-				fileVersion.CommitTime = _ctx.LongValue("ListFileVersions.Data.FileVersions["+ i +"].CommitTime");
-				fileVersion.CommitUser = _ctx.StringValue("ListFileVersions.Data.FileVersions["+ i +"].CommitUser");
-				fileVersion.FileName = _ctx.StringValue("ListFileVersions.Data.FileVersions["+ i +"].FileName");
 				fileVersion.Status = _ctx.StringValue("ListFileVersions.Data.FileVersions["+ i +"].Status");
-				fileVersion.ChangeType = _ctx.StringValue("ListFileVersions.Data.FileVersions["+ i +"].ChangeType");
 				fileVersion.IsCurrentProd = _ctx.BooleanValue("ListFileVersions.Data.FileVersions["+ i +"].IsCurrentProd");
-				fileVersion.NodeId = _ctx.LongValue("ListFileVersions.Data.FileVersions["+ i +"].NodeId");
-				fileVersion.Comment = _ctx.StringValue("ListFileVersions.Data.FileVersions["+ i +"].Comment");
+				fileVersion.CommitUser = _ctx.StringValue("ListFileVersions.Data.FileVersions["+ i +"].CommitUser");
 				fileVersion.NodeContent = _ctx.StringValue("ListFileVersions.Data.FileVersions["+ i +"].NodeContent");
+				fileVersion.Comment = _ctx.StringValue("ListFileVersions.Data.FileVersions["+ i +"].Comment");
 				fileVersion.FilePropertyContent = _ctx.StringValue("ListFileVersions.Data.FileVersions["+ i +"].FilePropertyContent");
+				fileVersion.FileName = _ctx.StringValue("ListFileVersions.Data.FileVersions["+ i +"].FileName");
 				fileVersion.UseType = _ctx.StringValue("ListFileVersions.Data.FileVersions["+ i +"].UseType");
+				fileVersion.ChangeType = _ctx.StringValue("ListFileVersions.Data.FileVersions["+ i +"].ChangeType");
+				fileVersion.FileVersion = _ctx.IntegerValue("ListFileVersions.Data.FileVersions["+ i +"].FileVersion");
+				fileVersion.CommitTime = _ctx.LongValue("ListFileVersions.Data.FileVersions["+ i +"].CommitTime");
+				fileVersion.NodeId = _ctx.LongValue("ListFileVersions.Data.FileVersions["+ i +"].NodeId");
 
 				data_fileVersions.Add(fileVersion);
 			}

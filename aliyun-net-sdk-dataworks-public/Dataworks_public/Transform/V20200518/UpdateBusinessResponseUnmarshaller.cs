@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			UpdateBusinessResponse updateBusinessResponse = new UpdateBusinessResponse();
 
 			updateBusinessResponse.HttpResponse = _ctx.HttpResponse;
-			updateBusinessResponse.RequestId = _ctx.StringValue("UpdateBusiness.RequestId");
-			updateBusinessResponse.Success = _ctx.BooleanValue("UpdateBusiness.Success");
-			updateBusinessResponse.ErrorCode = _ctx.StringValue("UpdateBusiness.ErrorCode");
-			updateBusinessResponse.ErrorMessage = _ctx.StringValue("UpdateBusiness.ErrorMessage");
 			updateBusinessResponse.HttpStatusCode = _ctx.IntegerValue("UpdateBusiness.HttpStatusCode");
+			updateBusinessResponse.ErrorMessage = _ctx.StringValue("UpdateBusiness.ErrorMessage");
+			updateBusinessResponse.RequestId = _ctx.StringValue("UpdateBusiness.RequestId");
+			updateBusinessResponse.ErrorCode = _ctx.StringValue("UpdateBusiness.ErrorCode");
+			updateBusinessResponse.Success = _ctx.BooleanValue("UpdateBusiness.Success");
         
 			return updateBusinessResponse;
         }

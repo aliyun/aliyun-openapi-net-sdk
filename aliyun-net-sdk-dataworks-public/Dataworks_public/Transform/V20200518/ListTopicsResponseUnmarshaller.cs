@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			ListTopicsResponse listTopicsResponse = new ListTopicsResponse();
 
 			listTopicsResponse.HttpResponse = _ctx.HttpResponse;
-			listTopicsResponse.Success = _ctx.BooleanValue("ListTopics.Success");
-			listTopicsResponse.ErrorCode = _ctx.StringValue("ListTopics.ErrorCode");
-			listTopicsResponse.ErrorMessage = _ctx.StringValue("ListTopics.ErrorMessage");
 			listTopicsResponse.HttpStatusCode = _ctx.IntegerValue("ListTopics.HttpStatusCode");
 			listTopicsResponse.RequestId = _ctx.StringValue("ListTopics.RequestId");
+			listTopicsResponse.ErrorMessage = _ctx.StringValue("ListTopics.ErrorMessage");
+			listTopicsResponse.ErrorCode = _ctx.StringValue("ListTopics.ErrorCode");
+			listTopicsResponse.Success = _ctx.BooleanValue("ListTopics.Success");
 
 			ListTopicsResponse.ListTopics_Data data = new ListTopicsResponse.ListTopics_Data();
 			data.PageNumber = _ctx.IntegerValue("ListTopics.Data.PageNumber");
@@ -45,18 +45,18 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<ListTopicsResponse.ListTopics_Data.ListTopics_TopicsItem> data_topics = new List<ListTopicsResponse.ListTopics_Data.ListTopics_TopicsItem>();
 			for (int i = 0; i < _ctx.Length("ListTopics.Data.Topics.Length"); i++) {
 				ListTopicsResponse.ListTopics_Data.ListTopics_TopicsItem topicsItem = new ListTopicsResponse.ListTopics_Data.ListTopics_TopicsItem();
-				topicsItem.TopicId = _ctx.LongValue("ListTopics.Data.Topics["+ i +"].TopicId");
 				topicsItem.TopicName = _ctx.StringValue("ListTopics.Data.Topics["+ i +"].TopicName");
-				topicsItem.TopicStatus = _ctx.StringValue("ListTopics.Data.Topics["+ i +"].TopicStatus");
-				topicsItem.TopicType = _ctx.StringValue("ListTopics.Data.Topics["+ i +"].TopicType");
-				topicsItem.AddTime = _ctx.LongValue("ListTopics.Data.Topics["+ i +"].AddTime");
-				topicsItem.HappenTime = _ctx.LongValue("ListTopics.Data.Topics["+ i +"].HappenTime");
-				topicsItem.FixTime = _ctx.LongValue("ListTopics.Data.Topics["+ i +"].FixTime");
-				topicsItem.InstanceId = _ctx.LongValue("ListTopics.Data.Topics["+ i +"].InstanceId");
-				topicsItem.NodeId = _ctx.LongValue("ListTopics.Data.Topics["+ i +"].NodeId");
-				topicsItem.NodeName = _ctx.StringValue("ListTopics.Data.Topics["+ i +"].NodeName");
-				topicsItem.NodeOwner = _ctx.StringValue("ListTopics.Data.Topics["+ i +"].NodeOwner");
 				topicsItem.ProjectId = _ctx.LongValue("ListTopics.Data.Topics["+ i +"].ProjectId");
+				topicsItem.NodeOwner = _ctx.StringValue("ListTopics.Data.Topics["+ i +"].NodeOwner");
+				topicsItem.InstanceId = _ctx.LongValue("ListTopics.Data.Topics["+ i +"].InstanceId");
+				topicsItem.FixTime = _ctx.LongValue("ListTopics.Data.Topics["+ i +"].FixTime");
+				topicsItem.TopicType = _ctx.StringValue("ListTopics.Data.Topics["+ i +"].TopicType");
+				topicsItem.TopicStatus = _ctx.StringValue("ListTopics.Data.Topics["+ i +"].TopicStatus");
+				topicsItem.HappenTime = _ctx.LongValue("ListTopics.Data.Topics["+ i +"].HappenTime");
+				topicsItem.NodeName = _ctx.StringValue("ListTopics.Data.Topics["+ i +"].NodeName");
+				topicsItem.TopicId = _ctx.LongValue("ListTopics.Data.Topics["+ i +"].TopicId");
+				topicsItem.AddTime = _ctx.LongValue("ListTopics.Data.Topics["+ i +"].AddTime");
+				topicsItem.NodeId = _ctx.LongValue("ListTopics.Data.Topics["+ i +"].NodeId");
 
 				data_topics.Add(topicsItem);
 			}

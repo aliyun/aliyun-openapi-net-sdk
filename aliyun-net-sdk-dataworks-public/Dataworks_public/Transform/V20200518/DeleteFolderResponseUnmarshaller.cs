@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			DeleteFolderResponse deleteFolderResponse = new DeleteFolderResponse();
 
 			deleteFolderResponse.HttpResponse = _ctx.HttpResponse;
-			deleteFolderResponse.RequestId = _ctx.StringValue("DeleteFolder.RequestId");
-			deleteFolderResponse.Success = _ctx.BooleanValue("DeleteFolder.Success");
-			deleteFolderResponse.ErrorCode = _ctx.StringValue("DeleteFolder.ErrorCode");
-			deleteFolderResponse.ErrorMessage = _ctx.StringValue("DeleteFolder.ErrorMessage");
 			deleteFolderResponse.HttpStatusCode = _ctx.IntegerValue("DeleteFolder.HttpStatusCode");
+			deleteFolderResponse.ErrorMessage = _ctx.StringValue("DeleteFolder.ErrorMessage");
+			deleteFolderResponse.RequestId = _ctx.StringValue("DeleteFolder.RequestId");
+			deleteFolderResponse.ErrorCode = _ctx.StringValue("DeleteFolder.ErrorCode");
+			deleteFolderResponse.Success = _ctx.BooleanValue("DeleteFolder.Success");
         
 			return deleteFolderResponse;
         }

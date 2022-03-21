@@ -25,53 +25,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetBaselineStatusResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errorCode;
-
-		private string errorMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
+		private string errorMessage;
+
+		private string errorCode;
+
+		private bool? success;
+
 		private GetBaselineStatus_Data data;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -97,6 +61,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public GetBaselineStatus_Data Data
 		{
 			get
@@ -112,37 +112,121 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetBaselineStatus_Data
 		{
 
+			private string status;
+
+			private string owner;
+
+			private long? finishTime;
+
+			private long? projectId;
+
+			private int? priority;
+
+			private long? endCast;
+
+			private int? inGroupId;
+
 			private string baselineName;
 
 			private long? baselineId;
 
+			private string finishStatus;
+
 			private long? bizdate;
-
-			private string owner;
-
-			private long? expTime;
-
-			private long? finishTime;
-
-			private long? endCast;
-
-			private long? slaTime;
-
-			private int? priority;
-
-			private long? projectId;
 
 			private float? buffer;
 
-			private string status;
+			private long? slaTime;
 
-			private string finishStatus;
-
-			private int? inGroupId;
+			private long? expTime;
 
 			private GetBaselineStatus_LastInstance lastInstance;
 
 			private GetBaselineStatus_BlockInstance blockInstance;
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string Owner
+			{
+				get
+				{
+					return owner;
+				}
+				set	
+				{
+					owner = value;
+				}
+			}
+
+			public long? FinishTime
+			{
+				get
+				{
+					return finishTime;
+				}
+				set	
+				{
+					finishTime = value;
+				}
+			}
+
+			public long? ProjectId
+			{
+				get
+				{
+					return projectId;
+				}
+				set	
+				{
+					projectId = value;
+				}
+			}
+
+			public int? Priority
+			{
+				get
+				{
+					return priority;
+				}
+				set	
+				{
+					priority = value;
+				}
+			}
+
+			public long? EndCast
+			{
+				get
+				{
+					return endCast;
+				}
+				set	
+				{
+					endCast = value;
+				}
+			}
+
+			public int? InGroupId
+			{
+				get
+				{
+					return inGroupId;
+				}
+				set	
+				{
+					inGroupId = value;
+				}
+			}
 
 			public string BaselineName
 			{
@@ -168,6 +252,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
+			public string FinishStatus
+			{
+				get
+				{
+					return finishStatus;
+				}
+				set	
+				{
+					finishStatus = value;
+				}
+			}
+
 			public long? Bizdate
 			{
 				get
@@ -177,90 +273,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					bizdate = value;
-				}
-			}
-
-			public string Owner
-			{
-				get
-				{
-					return owner;
-				}
-				set	
-				{
-					owner = value;
-				}
-			}
-
-			public long? ExpTime
-			{
-				get
-				{
-					return expTime;
-				}
-				set	
-				{
-					expTime = value;
-				}
-			}
-
-			public long? FinishTime
-			{
-				get
-				{
-					return finishTime;
-				}
-				set	
-				{
-					finishTime = value;
-				}
-			}
-
-			public long? EndCast
-			{
-				get
-				{
-					return endCast;
-				}
-				set	
-				{
-					endCast = value;
-				}
-			}
-
-			public long? SlaTime
-			{
-				get
-				{
-					return slaTime;
-				}
-				set	
-				{
-					slaTime = value;
-				}
-			}
-
-			public int? Priority
-			{
-				get
-				{
-					return priority;
-				}
-				set	
-				{
-					priority = value;
-				}
-			}
-
-			public long? ProjectId
-			{
-				get
-				{
-					return projectId;
-				}
-				set	
-				{
-					projectId = value;
 				}
 			}
 
@@ -276,39 +288,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string Status
+			public long? SlaTime
 			{
 				get
 				{
-					return status;
+					return slaTime;
 				}
 				set	
 				{
-					status = value;
+					slaTime = value;
 				}
 			}
 
-			public string FinishStatus
+			public long? ExpTime
 			{
 				get
 				{
-					return finishStatus;
+					return expTime;
 				}
 				set	
 				{
-					finishStatus = value;
-				}
-			}
-
-			public int? InGroupId
-			{
-				get
-				{
-					return inGroupId;
-				}
-				set	
-				{
-					inGroupId = value;
+					expTime = value;
 				}
 			}
 
@@ -339,33 +339,21 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetBaselineStatus_LastInstance
 			{
 
-				private long? instanceId;
-
 				private string status;
-
-				private long? projectId;
 
 				private string owner;
 
-				private long? nodeId;
-
 				private long? finishTime;
-
-				private long? endCast;
 
 				private string nodeName;
 
-				public long? InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
-					}
-				}
+				private long? projectId;
+
+				private long? instanceId;
+
+				private long? endCast;
+
+				private long? nodeId;
 
 				public string Status
 				{
@@ -376,18 +364,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						status = value;
-					}
-				}
-
-				public long? ProjectId
-				{
-					get
-					{
-						return projectId;
-					}
-					set	
-					{
-						projectId = value;
 					}
 				}
 
@@ -403,18 +379,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public long? NodeId
-				{
-					get
-					{
-						return nodeId;
-					}
-					set	
-					{
-						nodeId = value;
-					}
-				}
-
 				public long? FinishTime
 				{
 					get
@@ -424,6 +388,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						finishTime = value;
+					}
+				}
+
+				public string NodeName
+				{
+					get
+					{
+						return nodeName;
+					}
+					set	
+					{
+						nodeName = value;
+					}
+				}
+
+				public long? ProjectId
+				{
+					get
+					{
+						return projectId;
+					}
+					set	
+					{
+						projectId = value;
+					}
+				}
+
+				public long? InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
 					}
 				}
 
@@ -439,15 +439,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string NodeName
+				public long? NodeId
 				{
 					get
 					{
-						return nodeName;
+						return nodeId;
 					}
 					set	
 					{
-						nodeName = value;
+						nodeId = value;
 					}
 				}
 			}
@@ -455,33 +455,21 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetBaselineStatus_BlockInstance
 			{
 
-				private long? instanceId;
-
 				private string status;
-
-				private long? projectId;
 
 				private string owner;
 
-				private long? nodeId;
-
 				private long? finishTime;
-
-				private long? endCast;
 
 				private string nodeName;
 
-				public long? InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
-					}
-				}
+				private long? projectId;
+
+				private long? instanceId;
+
+				private long? endCast;
+
+				private long? nodeId;
 
 				public string Status
 				{
@@ -492,18 +480,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						status = value;
-					}
-				}
-
-				public long? ProjectId
-				{
-					get
-					{
-						return projectId;
-					}
-					set	
-					{
-						projectId = value;
 					}
 				}
 
@@ -519,18 +495,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public long? NodeId
-				{
-					get
-					{
-						return nodeId;
-					}
-					set	
-					{
-						nodeId = value;
-					}
-				}
-
 				public long? FinishTime
 				{
 					get
@@ -540,6 +504,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						finishTime = value;
+					}
+				}
+
+				public string NodeName
+				{
+					get
+					{
+						return nodeName;
+					}
+					set	
+					{
+						nodeName = value;
+					}
+				}
+
+				public long? ProjectId
+				{
+					get
+					{
+						return projectId;
+					}
+					set	
+					{
+						projectId = value;
+					}
+				}
+
+				public long? InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
 					}
 				}
 
@@ -555,15 +555,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string NodeName
+				public long? NodeId
 				{
 					get
 					{
-						return nodeName;
+						return nodeId;
 					}
 					set	
 					{
-						nodeName = value;
+						nodeId = value;
 					}
 				}
 			}

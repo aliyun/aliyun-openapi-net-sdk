@@ -25,53 +25,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class ListTopicsResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errorCode;
-
-		private string errorMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
+		private string errorMessage;
+
+		private string errorCode;
+
+		private bool? success;
+
 		private ListTopics_Data data;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -94,6 +58,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -171,41 +171,29 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class ListTopics_TopicsItem
 			{
 
-				private long? topicId;
-
 				private string topicName;
-
-				private string topicStatus;
-
-				private string topicType;
-
-				private long? addTime;
-
-				private long? happenTime;
-
-				private long? fixTime;
-
-				private long? instanceId;
-
-				private long? nodeId;
-
-				private string nodeName;
-
-				private string nodeOwner;
 
 				private long? projectId;
 
-				public long? TopicId
-				{
-					get
-					{
-						return topicId;
-					}
-					set	
-					{
-						topicId = value;
-					}
-				}
+				private string nodeOwner;
+
+				private long? instanceId;
+
+				private long? fixTime;
+
+				private string topicType;
+
+				private string topicStatus;
+
+				private long? happenTime;
+
+				private string nodeName;
+
+				private long? topicId;
+
+				private long? addTime;
+
+				private long? nodeId;
 
 				public string TopicName
 				{
@@ -219,99 +207,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string TopicStatus
+				public long? ProjectId
 				{
 					get
 					{
-						return topicStatus;
+						return projectId;
 					}
 					set	
 					{
-						topicStatus = value;
-					}
-				}
-
-				public string TopicType
-				{
-					get
-					{
-						return topicType;
-					}
-					set	
-					{
-						topicType = value;
-					}
-				}
-
-				public long? AddTime
-				{
-					get
-					{
-						return addTime;
-					}
-					set	
-					{
-						addTime = value;
-					}
-				}
-
-				public long? HappenTime
-				{
-					get
-					{
-						return happenTime;
-					}
-					set	
-					{
-						happenTime = value;
-					}
-				}
-
-				public long? FixTime
-				{
-					get
-					{
-						return fixTime;
-					}
-					set	
-					{
-						fixTime = value;
-					}
-				}
-
-				public long? InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
-					}
-				}
-
-				public long? NodeId
-				{
-					get
-					{
-						return nodeId;
-					}
-					set	
-					{
-						nodeId = value;
-					}
-				}
-
-				public string NodeName
-				{
-					get
-					{
-						return nodeName;
-					}
-					set	
-					{
-						nodeName = value;
+						projectId = value;
 					}
 				}
 
@@ -327,15 +231,111 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public long? ProjectId
+				public long? InstanceId
 				{
 					get
 					{
-						return projectId;
+						return instanceId;
 					}
 					set	
 					{
-						projectId = value;
+						instanceId = value;
+					}
+				}
+
+				public long? FixTime
+				{
+					get
+					{
+						return fixTime;
+					}
+					set	
+					{
+						fixTime = value;
+					}
+				}
+
+				public string TopicType
+				{
+					get
+					{
+						return topicType;
+					}
+					set	
+					{
+						topicType = value;
+					}
+				}
+
+				public string TopicStatus
+				{
+					get
+					{
+						return topicStatus;
+					}
+					set	
+					{
+						topicStatus = value;
+					}
+				}
+
+				public long? HappenTime
+				{
+					get
+					{
+						return happenTime;
+					}
+					set	
+					{
+						happenTime = value;
+					}
+				}
+
+				public string NodeName
+				{
+					get
+					{
+						return nodeName;
+					}
+					set	
+					{
+						nodeName = value;
+					}
+				}
+
+				public long? TopicId
+				{
+					get
+					{
+						return topicId;
+					}
+					set	
+					{
+						topicId = value;
+					}
+				}
+
+				public long? AddTime
+				{
+					get
+					{
+						return addTime;
+					}
+					set	
+					{
+						addTime = value;
+					}
+				}
+
+				public long? NodeId
+				{
+					get
+					{
+						return nodeId;
+					}
+					set	
+					{
+						nodeId = value;
 					}
 				}
 			}

@@ -25,53 +25,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class ListRemindsResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errorCode;
-
-		private string errorMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
+		private string errorMessage;
+
+		private string errorCode;
+
+		private bool? success;
+
 		private ListReminds_Data data;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -94,6 +58,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -171,35 +171,47 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class ListReminds_RemindsItem
 			{
 
+				private string founder;
+
 				private long? remindId;
-
-				private string remindName;
-
-				private string dndStart;
-
-				private string dndEnd;
-
-				private string remindUnit;
-
-				private string remindType;
 
 				private string alertUnit;
 
+				private string remindType;
+
+				private string dndEnd;
+
+				private string dndStart;
+
+				private string remindUnit;
+
 				private bool? useflag;
 
-				private string founder;
+				private string remindName;
+
+				private List<string> alertTargets;
 
 				private List<string> nodeIds;
 
-				private List<string> baselineIds;
+				private List<string> bizProcessIds;
 
 				private List<string> projectIds;
 
-				private List<string> bizProcessIds;
+				private List<string> baselineIds;
 
 				private List<string> alertMethods;
 
-				private List<string> alertTargets;
+				public string Founder
+				{
+					get
+					{
+						return founder;
+					}
+					set	
+					{
+						founder = value;
+					}
+				}
 
 				public long? RemindId
 				{
@@ -210,66 +222,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						remindId = value;
-					}
-				}
-
-				public string RemindName
-				{
-					get
-					{
-						return remindName;
-					}
-					set	
-					{
-						remindName = value;
-					}
-				}
-
-				public string DndStart
-				{
-					get
-					{
-						return dndStart;
-					}
-					set	
-					{
-						dndStart = value;
-					}
-				}
-
-				public string DndEnd
-				{
-					get
-					{
-						return dndEnd;
-					}
-					set	
-					{
-						dndEnd = value;
-					}
-				}
-
-				public string RemindUnit
-				{
-					get
-					{
-						return remindUnit;
-					}
-					set	
-					{
-						remindUnit = value;
-					}
-				}
-
-				public string RemindType
-				{
-					get
-					{
-						return remindType;
-					}
-					set	
-					{
-						remindType = value;
 					}
 				}
 
@@ -285,6 +237,54 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
+				public string RemindType
+				{
+					get
+					{
+						return remindType;
+					}
+					set	
+					{
+						remindType = value;
+					}
+				}
+
+				public string DndEnd
+				{
+					get
+					{
+						return dndEnd;
+					}
+					set	
+					{
+						dndEnd = value;
+					}
+				}
+
+				public string DndStart
+				{
+					get
+					{
+						return dndStart;
+					}
+					set	
+					{
+						dndStart = value;
+					}
+				}
+
+				public string RemindUnit
+				{
+					get
+					{
+						return remindUnit;
+					}
+					set	
+					{
+						remindUnit = value;
+					}
+				}
+
 				public bool? Useflag
 				{
 					get
@@ -297,15 +297,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string Founder
+				public string RemindName
 				{
 					get
 					{
-						return founder;
+						return remindName;
 					}
 					set	
 					{
-						founder = value;
+						remindName = value;
+					}
+				}
+
+				public List<string> AlertTargets
+				{
+					get
+					{
+						return alertTargets;
+					}
+					set	
+					{
+						alertTargets = value;
 					}
 				}
 
@@ -321,15 +333,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public List<string> BaselineIds
+				public List<string> BizProcessIds
 				{
 					get
 					{
-						return baselineIds;
+						return bizProcessIds;
 					}
 					set	
 					{
-						baselineIds = value;
+						bizProcessIds = value;
 					}
 				}
 
@@ -345,15 +357,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public List<string> BizProcessIds
+				public List<string> BaselineIds
 				{
 					get
 					{
-						return bizProcessIds;
+						return baselineIds;
 					}
 					set	
 					{
-						bizProcessIds = value;
+						baselineIds = value;
 					}
 				}
 
@@ -366,18 +378,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						alertMethods = value;
-					}
-				}
-
-				public List<string> AlertTargets
-				{
-					get
-					{
-						return alertTargets;
-					}
-					set	
-					{
-						alertTargets = value;
 					}
 				}
 			}

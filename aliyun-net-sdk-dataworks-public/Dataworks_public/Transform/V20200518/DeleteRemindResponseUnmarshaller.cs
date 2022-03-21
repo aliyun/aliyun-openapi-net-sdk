@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			DeleteRemindResponse deleteRemindResponse = new DeleteRemindResponse();
 
 			deleteRemindResponse.HttpResponse = _ctx.HttpResponse;
+			deleteRemindResponse.HttpStatusCode = _ctx.IntegerValue("DeleteRemind.HttpStatusCode");
+			deleteRemindResponse.Data = _ctx.BooleanValue("DeleteRemind.Data");
+			deleteRemindResponse.ErrorMessage = _ctx.StringValue("DeleteRemind.ErrorMessage");
+			deleteRemindResponse.RequestId = _ctx.StringValue("DeleteRemind.RequestId");
 			deleteRemindResponse.Success = _ctx.BooleanValue("DeleteRemind.Success");
 			deleteRemindResponse.ErrorCode = _ctx.StringValue("DeleteRemind.ErrorCode");
-			deleteRemindResponse.ErrorMessage = _ctx.StringValue("DeleteRemind.ErrorMessage");
-			deleteRemindResponse.HttpStatusCode = _ctx.IntegerValue("DeleteRemind.HttpStatusCode");
-			deleteRemindResponse.RequestId = _ctx.StringValue("DeleteRemind.RequestId");
-			deleteRemindResponse.Data = _ctx.BooleanValue("DeleteRemind.Data");
         
 			return deleteRemindResponse;
         }

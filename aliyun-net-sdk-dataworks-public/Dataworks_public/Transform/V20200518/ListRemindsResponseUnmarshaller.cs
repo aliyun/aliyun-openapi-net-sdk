@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			ListRemindsResponse listRemindsResponse = new ListRemindsResponse();
 
 			listRemindsResponse.HttpResponse = _ctx.HttpResponse;
-			listRemindsResponse.Success = _ctx.BooleanValue("ListReminds.Success");
-			listRemindsResponse.ErrorCode = _ctx.StringValue("ListReminds.ErrorCode");
-			listRemindsResponse.ErrorMessage = _ctx.StringValue("ListReminds.ErrorMessage");
 			listRemindsResponse.HttpStatusCode = _ctx.IntegerValue("ListReminds.HttpStatusCode");
 			listRemindsResponse.RequestId = _ctx.StringValue("ListReminds.RequestId");
+			listRemindsResponse.ErrorMessage = _ctx.StringValue("ListReminds.ErrorMessage");
+			listRemindsResponse.ErrorCode = _ctx.StringValue("ListReminds.ErrorCode");
+			listRemindsResponse.Success = _ctx.BooleanValue("ListReminds.Success");
 
 			ListRemindsResponse.ListReminds_Data data = new ListRemindsResponse.ListReminds_Data();
 			data.PageNumber = _ctx.IntegerValue("ListReminds.Data.PageNumber");
@@ -45,15 +45,21 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<ListRemindsResponse.ListReminds_Data.ListReminds_RemindsItem> data_reminds = new List<ListRemindsResponse.ListReminds_Data.ListReminds_RemindsItem>();
 			for (int i = 0; i < _ctx.Length("ListReminds.Data.Reminds.Length"); i++) {
 				ListRemindsResponse.ListReminds_Data.ListReminds_RemindsItem remindsItem = new ListRemindsResponse.ListReminds_Data.ListReminds_RemindsItem();
-				remindsItem.RemindId = _ctx.LongValue("ListReminds.Data.Reminds["+ i +"].RemindId");
-				remindsItem.RemindName = _ctx.StringValue("ListReminds.Data.Reminds["+ i +"].RemindName");
-				remindsItem.DndStart = _ctx.StringValue("ListReminds.Data.Reminds["+ i +"].DndStart");
-				remindsItem.DndEnd = _ctx.StringValue("ListReminds.Data.Reminds["+ i +"].DndEnd");
-				remindsItem.RemindUnit = _ctx.StringValue("ListReminds.Data.Reminds["+ i +"].RemindUnit");
-				remindsItem.RemindType = _ctx.StringValue("ListReminds.Data.Reminds["+ i +"].RemindType");
-				remindsItem.AlertUnit = _ctx.StringValue("ListReminds.Data.Reminds["+ i +"].AlertUnit");
-				remindsItem.Useflag = _ctx.BooleanValue("ListReminds.Data.Reminds["+ i +"].Useflag");
 				remindsItem.Founder = _ctx.StringValue("ListReminds.Data.Reminds["+ i +"].Founder");
+				remindsItem.RemindId = _ctx.LongValue("ListReminds.Data.Reminds["+ i +"].RemindId");
+				remindsItem.AlertUnit = _ctx.StringValue("ListReminds.Data.Reminds["+ i +"].AlertUnit");
+				remindsItem.RemindType = _ctx.StringValue("ListReminds.Data.Reminds["+ i +"].RemindType");
+				remindsItem.DndEnd = _ctx.StringValue("ListReminds.Data.Reminds["+ i +"].DndEnd");
+				remindsItem.DndStart = _ctx.StringValue("ListReminds.Data.Reminds["+ i +"].DndStart");
+				remindsItem.RemindUnit = _ctx.StringValue("ListReminds.Data.Reminds["+ i +"].RemindUnit");
+				remindsItem.Useflag = _ctx.BooleanValue("ListReminds.Data.Reminds["+ i +"].Useflag");
+				remindsItem.RemindName = _ctx.StringValue("ListReminds.Data.Reminds["+ i +"].RemindName");
+
+				List<string> remindsItem_alertTargets = new List<string>();
+				for (int j = 0; j < _ctx.Length("ListReminds.Data.Reminds["+ i +"].AlertTargets.Length"); j++) {
+					remindsItem_alertTargets.Add(_ctx.StringValue("ListReminds.Data.Reminds["+ i +"].AlertTargets["+ j +"]"));
+				}
+				remindsItem.AlertTargets = remindsItem_alertTargets;
 
 				List<string> remindsItem_nodeIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListReminds.Data.Reminds["+ i +"].NodeIds.Length"); j++) {
@@ -61,11 +67,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 				}
 				remindsItem.NodeIds = remindsItem_nodeIds;
 
-				List<string> remindsItem_baselineIds = new List<string>();
-				for (int j = 0; j < _ctx.Length("ListReminds.Data.Reminds["+ i +"].BaselineIds.Length"); j++) {
-					remindsItem_baselineIds.Add(_ctx.StringValue("ListReminds.Data.Reminds["+ i +"].BaselineIds["+ j +"]"));
+				List<string> remindsItem_bizProcessIds = new List<string>();
+				for (int j = 0; j < _ctx.Length("ListReminds.Data.Reminds["+ i +"].BizProcessIds.Length"); j++) {
+					remindsItem_bizProcessIds.Add(_ctx.StringValue("ListReminds.Data.Reminds["+ i +"].BizProcessIds["+ j +"]"));
 				}
-				remindsItem.BaselineIds = remindsItem_baselineIds;
+				remindsItem.BizProcessIds = remindsItem_bizProcessIds;
 
 				List<string> remindsItem_projectIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListReminds.Data.Reminds["+ i +"].ProjectIds.Length"); j++) {
@@ -73,23 +79,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 				}
 				remindsItem.ProjectIds = remindsItem_projectIds;
 
-				List<string> remindsItem_bizProcessIds = new List<string>();
-				for (int j = 0; j < _ctx.Length("ListReminds.Data.Reminds["+ i +"].BizProcessIds.Length"); j++) {
-					remindsItem_bizProcessIds.Add(_ctx.StringValue("ListReminds.Data.Reminds["+ i +"].BizProcessIds["+ j +"]"));
+				List<string> remindsItem_baselineIds = new List<string>();
+				for (int j = 0; j < _ctx.Length("ListReminds.Data.Reminds["+ i +"].BaselineIds.Length"); j++) {
+					remindsItem_baselineIds.Add(_ctx.StringValue("ListReminds.Data.Reminds["+ i +"].BaselineIds["+ j +"]"));
 				}
-				remindsItem.BizProcessIds = remindsItem_bizProcessIds;
+				remindsItem.BaselineIds = remindsItem_baselineIds;
 
 				List<string> remindsItem_alertMethods = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListReminds.Data.Reminds["+ i +"].AlertMethods.Length"); j++) {
 					remindsItem_alertMethods.Add(_ctx.StringValue("ListReminds.Data.Reminds["+ i +"].AlertMethods["+ j +"]"));
 				}
 				remindsItem.AlertMethods = remindsItem_alertMethods;
-
-				List<string> remindsItem_alertTargets = new List<string>();
-				for (int j = 0; j < _ctx.Length("ListReminds.Data.Reminds["+ i +"].AlertTargets.Length"); j++) {
-					remindsItem_alertTargets.Add(_ctx.StringValue("ListReminds.Data.Reminds["+ i +"].AlertTargets["+ j +"]"));
-				}
-				remindsItem.AlertTargets = remindsItem_alertTargets;
 
 				data_reminds.Add(remindsItem);
 			}

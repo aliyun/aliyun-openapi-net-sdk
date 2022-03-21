@@ -87,41 +87,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class TopTenErrorTimesInstance_ErrorRankItem
 			{
 
-				private long? nodeId;
-
-				private string nodeName;
-
 				private string owner;
 
-				private int? count;
+				private string nodeName;
 
 				private long? projectId;
 
 				private int? programType;
 
-				public long? NodeId
-				{
-					get
-					{
-						return nodeId;
-					}
-					set	
-					{
-						nodeId = value;
-					}
-				}
+				private long? nodeId;
 
-				public string NodeName
-				{
-					get
-					{
-						return nodeName;
-					}
-					set	
-					{
-						nodeName = value;
-					}
-				}
+				private int? count;
 
 				public string Owner
 				{
@@ -135,15 +111,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public int? Count
+				public string NodeName
 				{
 					get
 					{
-						return count;
+						return nodeName;
 					}
 					set	
 					{
-						count = value;
+						nodeName = value;
 					}
 				}
 
@@ -168,6 +144,30 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						programType = value;
+					}
+				}
+
+				public long? NodeId
+				{
+					get
+					{
+						return nodeId;
+					}
+					set	
+					{
+						nodeId = value;
+					}
+				}
+
+				public int? Count
+				{
+					get
+					{
+						return count;
+					}
+					set	
+					{
+						count = value;
 					}
 				}
 			}

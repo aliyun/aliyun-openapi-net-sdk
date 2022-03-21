@@ -39,13 +39,13 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<TopTenElapsedTimeInstanceResponse.TopTenElapsedTimeInstance_InstanceConsumeTimeRank.TopTenElapsedTimeInstance_ConsumeTimeRankItem> instanceConsumeTimeRank_consumeTimeRank = new List<TopTenElapsedTimeInstanceResponse.TopTenElapsedTimeInstance_InstanceConsumeTimeRank.TopTenElapsedTimeInstance_ConsumeTimeRankItem>();
 			for (int i = 0; i < _ctx.Length("TopTenElapsedTimeInstance.InstanceConsumeTimeRank.ConsumeTimeRank.Length"); i++) {
 				TopTenElapsedTimeInstanceResponse.TopTenElapsedTimeInstance_InstanceConsumeTimeRank.TopTenElapsedTimeInstance_ConsumeTimeRankItem consumeTimeRankItem = new TopTenElapsedTimeInstanceResponse.TopTenElapsedTimeInstance_InstanceConsumeTimeRank.TopTenElapsedTimeInstance_ConsumeTimeRankItem();
-				consumeTimeRankItem.NodeName = _ctx.StringValue("TopTenElapsedTimeInstance.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].NodeName");
-				consumeTimeRankItem.NodeId = _ctx.LongValue("TopTenElapsedTimeInstance.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].NodeId");
-				consumeTimeRankItem.BusinessDate = _ctx.LongValue("TopTenElapsedTimeInstance.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].BusinessDate");
 				consumeTimeRankItem.Owner = _ctx.StringValue("TopTenElapsedTimeInstance.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].Owner");
-				consumeTimeRankItem.Consumed = _ctx.LongValue("TopTenElapsedTimeInstance.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].Consumed");
-				consumeTimeRankItem.InstanceId = _ctx.LongValue("TopTenElapsedTimeInstance.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].InstanceId");
+				consumeTimeRankItem.NodeName = _ctx.StringValue("TopTenElapsedTimeInstance.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].NodeName");
+				consumeTimeRankItem.BusinessDate = _ctx.LongValue("TopTenElapsedTimeInstance.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].BusinessDate");
 				consumeTimeRankItem.ProgramType = _ctx.IntegerValue("TopTenElapsedTimeInstance.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].ProgramType");
+				consumeTimeRankItem.InstanceId = _ctx.LongValue("TopTenElapsedTimeInstance.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].InstanceId");
+				consumeTimeRankItem.NodeId = _ctx.LongValue("TopTenElapsedTimeInstance.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].NodeId");
+				consumeTimeRankItem.Consumed = _ctx.LongValue("TopTenElapsedTimeInstance.InstanceConsumeTimeRank.ConsumeTimeRank["+ i +"].Consumed");
 
 				instanceConsumeTimeRank_consumeTimeRank.Add(consumeTimeRankItem);
 			}

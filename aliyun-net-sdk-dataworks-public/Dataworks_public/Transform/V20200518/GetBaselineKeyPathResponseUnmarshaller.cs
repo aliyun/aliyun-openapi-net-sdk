@@ -31,43 +31,43 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetBaselineKeyPathResponse getBaselineKeyPathResponse = new GetBaselineKeyPathResponse();
 
 			getBaselineKeyPathResponse.HttpResponse = _ctx.HttpResponse;
-			getBaselineKeyPathResponse.Success = _ctx.BooleanValue("GetBaselineKeyPath.Success");
-			getBaselineKeyPathResponse.ErrorCode = _ctx.StringValue("GetBaselineKeyPath.ErrorCode");
-			getBaselineKeyPathResponse.ErrorMessage = _ctx.StringValue("GetBaselineKeyPath.ErrorMessage");
 			getBaselineKeyPathResponse.HttpStatusCode = _ctx.IntegerValue("GetBaselineKeyPath.HttpStatusCode");
 			getBaselineKeyPathResponse.RequestId = _ctx.StringValue("GetBaselineKeyPath.RequestId");
+			getBaselineKeyPathResponse.ErrorMessage = _ctx.StringValue("GetBaselineKeyPath.ErrorMessage");
+			getBaselineKeyPathResponse.ErrorCode = _ctx.StringValue("GetBaselineKeyPath.ErrorCode");
+			getBaselineKeyPathResponse.Success = _ctx.BooleanValue("GetBaselineKeyPath.Success");
 
 			List<GetBaselineKeyPathResponse.GetBaselineKeyPath_DataItem> getBaselineKeyPathResponse_data = new List<GetBaselineKeyPathResponse.GetBaselineKeyPath_DataItem>();
 			for (int i = 0; i < _ctx.Length("GetBaselineKeyPath.Data.Length"); i++) {
 				GetBaselineKeyPathResponse.GetBaselineKeyPath_DataItem dataItem = new GetBaselineKeyPathResponse.GetBaselineKeyPath_DataItem();
-				dataItem.InstanceId = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].InstanceId");
-				dataItem.ProjectId = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].ProjectId");
-				dataItem.NodeId = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].NodeId");
+				dataItem.Owner = _ctx.StringValue("GetBaselineKeyPath.Data["+ i +"].Owner");
 				dataItem.NodeName = _ctx.StringValue("GetBaselineKeyPath.Data["+ i +"].NodeName");
 				dataItem.Bizdate = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Bizdate");
-				dataItem.InGroupId = _ctx.IntegerValue("GetBaselineKeyPath.Data["+ i +"].InGroupId");
-				dataItem.Owner = _ctx.StringValue("GetBaselineKeyPath.Data["+ i +"].Owner");
+				dataItem.ProjectId = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].ProjectId");
+				dataItem.InstanceId = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].InstanceId");
 				dataItem.PrgType = _ctx.IntegerValue("GetBaselineKeyPath.Data["+ i +"].PrgType");
+				dataItem.NodeId = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].NodeId");
+				dataItem.InGroupId = _ctx.IntegerValue("GetBaselineKeyPath.Data["+ i +"].InGroupId");
 
 				List<GetBaselineKeyPathResponse.GetBaselineKeyPath_DataItem.GetBaselineKeyPath_RunsItem> dataItem_runs = new List<GetBaselineKeyPathResponse.GetBaselineKeyPath_DataItem.GetBaselineKeyPath_RunsItem>();
 				for (int j = 0; j < _ctx.Length("GetBaselineKeyPath.Data["+ i +"].Runs.Length"); j++) {
 					GetBaselineKeyPathResponse.GetBaselineKeyPath_DataItem.GetBaselineKeyPath_RunsItem runsItem = new GetBaselineKeyPathResponse.GetBaselineKeyPath_DataItem.GetBaselineKeyPath_RunsItem();
-					runsItem.AbsTime = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].AbsTime");
-					runsItem.BeginCast = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].BeginCast");
-					runsItem.BeginRunningTime = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].BeginRunningTime");
-					runsItem.BeginWaitResTime = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].BeginWaitResTime");
-					runsItem.BeginWaitTimeTime = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].BeginWaitTimeTime");
-					runsItem.Bizdate = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].Bizdate");
-					runsItem.CycTime = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].CycTime");
-					runsItem.EndCast = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].EndCast");
-					runsItem.FinishTime = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].FinishTime");
-					runsItem.InGroupId = _ctx.IntegerValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].InGroupId");
-					runsItem.InstanceId = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].InstanceId");
-					runsItem.NodeId = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].NodeId");
-					runsItem.NodeName = _ctx.StringValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].NodeName");
-					runsItem.Owner = _ctx.StringValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].Owner");
-					runsItem.ProjectId = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].ProjectId");
 					runsItem.Status = _ctx.StringValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].Status");
+					runsItem.AbsTime = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].AbsTime");
+					runsItem.BeginRunningTime = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].BeginRunningTime");
+					runsItem.CycTime = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].CycTime");
+					runsItem.Owner = _ctx.StringValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].Owner");
+					runsItem.FinishTime = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].FinishTime");
+					runsItem.ProjectId = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].ProjectId");
+					runsItem.BeginCast = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].BeginCast");
+					runsItem.InstanceId = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].InstanceId");
+					runsItem.EndCast = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].EndCast");
+					runsItem.BeginWaitResTime = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].BeginWaitResTime");
+					runsItem.InGroupId = _ctx.IntegerValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].InGroupId");
+					runsItem.NodeName = _ctx.StringValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].NodeName");
+					runsItem.Bizdate = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].Bizdate");
+					runsItem.BeginWaitTimeTime = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].BeginWaitTimeTime");
+					runsItem.NodeId = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Runs["+ j +"].NodeId");
 
 					dataItem_runs.Add(runsItem);
 				}
@@ -76,9 +76,9 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 				List<GetBaselineKeyPathResponse.GetBaselineKeyPath_DataItem.GetBaselineKeyPath_TopicsItem> dataItem_topics = new List<GetBaselineKeyPathResponse.GetBaselineKeyPath_DataItem.GetBaselineKeyPath_TopicsItem>();
 				for (int j = 0; j < _ctx.Length("GetBaselineKeyPath.Data["+ i +"].Topics.Length"); j++) {
 					GetBaselineKeyPathResponse.GetBaselineKeyPath_DataItem.GetBaselineKeyPath_TopicsItem topicsItem = new GetBaselineKeyPathResponse.GetBaselineKeyPath_DataItem.GetBaselineKeyPath_TopicsItem();
+					topicsItem.TopicName = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Topics["+ j +"].TopicName");
 					topicsItem.InstanceId = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Topics["+ j +"].InstanceId");
 					topicsItem.TopicId = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Topics["+ j +"].TopicId");
-					topicsItem.TopicName = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Topics["+ j +"].TopicName");
 					topicsItem.AddTime = _ctx.LongValue("GetBaselineKeyPath.Data["+ i +"].Topics["+ j +"].AddTime");
 
 					dataItem_topics.Add(topicsItem);

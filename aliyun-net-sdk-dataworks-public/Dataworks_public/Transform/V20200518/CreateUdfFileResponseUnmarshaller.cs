@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			CreateUdfFileResponse createUdfFileResponse = new CreateUdfFileResponse();
 
 			createUdfFileResponse.HttpResponse = _ctx.HttpResponse;
+			createUdfFileResponse.HttpStatusCode = _ctx.IntegerValue("CreateUdfFile.HttpStatusCode");
+			createUdfFileResponse.Data = _ctx.LongValue("CreateUdfFile.Data");
 			createUdfFileResponse.RequestId = _ctx.StringValue("CreateUdfFile.RequestId");
+			createUdfFileResponse.ErrorMessage = _ctx.StringValue("CreateUdfFile.ErrorMessage");
 			createUdfFileResponse.Success = _ctx.BooleanValue("CreateUdfFile.Success");
 			createUdfFileResponse.ErrorCode = _ctx.StringValue("CreateUdfFile.ErrorCode");
-			createUdfFileResponse.ErrorMessage = _ctx.StringValue("CreateUdfFile.ErrorMessage");
-			createUdfFileResponse.Data = _ctx.LongValue("CreateUdfFile.Data");
-			createUdfFileResponse.HttpStatusCode = _ctx.IntegerValue("CreateUdfFile.HttpStatusCode");
         
 			return createUdfFileResponse;
         }

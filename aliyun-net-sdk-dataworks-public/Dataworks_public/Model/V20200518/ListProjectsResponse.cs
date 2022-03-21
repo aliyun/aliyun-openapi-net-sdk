@@ -115,19 +115,43 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class ListProjects_Project
 			{
 
+				private string projectStatusCode;
+
+				private int? projectStatus;
+
 				private string projectName;
 
 				private string projectIdentifier;
 
-				private string projectDescription;
-
-				private int? projectStatus;
-
 				private long? projectId;
+
+				private string projectDescription;
 
 				private string projectOwnerBaseId;
 
-				private string projectStatusCode;
+				public string ProjectStatusCode
+				{
+					get
+					{
+						return projectStatusCode;
+					}
+					set	
+					{
+						projectStatusCode = value;
+					}
+				}
+
+				public int? ProjectStatus
+				{
+					get
+					{
+						return projectStatus;
+					}
+					set	
+					{
+						projectStatus = value;
+					}
+				}
 
 				public string ProjectName
 				{
@@ -153,30 +177,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string ProjectDescription
-				{
-					get
-					{
-						return projectDescription;
-					}
-					set	
-					{
-						projectDescription = value;
-					}
-				}
-
-				public int? ProjectStatus
-				{
-					get
-					{
-						return projectStatus;
-					}
-					set	
-					{
-						projectStatus = value;
-					}
-				}
-
 				public long? ProjectId
 				{
 					get
@@ -189,6 +189,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
+				public string ProjectDescription
+				{
+					get
+					{
+						return projectDescription;
+					}
+					set	
+					{
+						projectDescription = value;
+					}
+				}
+
 				public string ProjectOwnerBaseId
 				{
 					get
@@ -198,18 +210,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						projectOwnerBaseId = value;
-					}
-				}
-
-				public string ProjectStatusCode
-				{
-					get
-					{
-						return projectStatusCode;
-					}
-					set	
-					{
-						projectStatusCode = value;
 					}
 				}
 			}

@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			DeleteQualityRuleResponse deleteQualityRuleResponse = new DeleteQualityRuleResponse();
 
 			deleteQualityRuleResponse.HttpResponse = _ctx.HttpResponse;
-			deleteQualityRuleResponse.ErrorCode = _ctx.StringValue("DeleteQualityRule.ErrorCode");
+			deleteQualityRuleResponse.HttpStatusCode = _ctx.IntegerValue("DeleteQualityRule.HttpStatusCode");
 			deleteQualityRuleResponse.Data = _ctx.BooleanValue("DeleteQualityRule.Data");
 			deleteQualityRuleResponse.ErrorMessage = _ctx.StringValue("DeleteQualityRule.ErrorMessage");
-			deleteQualityRuleResponse.Success = _ctx.BooleanValue("DeleteQualityRule.Success");
-			deleteQualityRuleResponse.HttpStatusCode = _ctx.IntegerValue("DeleteQualityRule.HttpStatusCode");
 			deleteQualityRuleResponse.RequestId = _ctx.StringValue("DeleteQualityRule.RequestId");
+			deleteQualityRuleResponse.ErrorCode = _ctx.StringValue("DeleteQualityRule.ErrorCode");
+			deleteQualityRuleResponse.Success = _ctx.BooleanValue("DeleteQualityRule.Success");
         
 			return deleteQualityRuleResponse;
         }

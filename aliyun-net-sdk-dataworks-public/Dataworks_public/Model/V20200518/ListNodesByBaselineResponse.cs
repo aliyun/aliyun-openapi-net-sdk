@@ -25,53 +25,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class ListNodesByBaselineResponse : AcsResponse
 	{
 
-		private string success;
-
-		private string errorCode;
-
-		private string errorMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
+		private string errorMessage;
+
+		private string errorCode;
+
+		private string success;
+
 		private List<ListNodesByBaseline_DataItem> data;
-
-		public string Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -97,6 +61,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public string Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public List<ListNodesByBaseline_DataItem> Data
 		{
 			get
@@ -112,23 +112,23 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class ListNodesByBaseline_DataItem
 		{
 
-			private long? nodeId;
+			private string owner;
 
 			private string nodeName;
 
-			private string owner;
+			private long? nodeId;
 
 			private long? projectId;
 
-			public long? NodeId
+			public string Owner
 			{
 				get
 				{
-					return nodeId;
+					return owner;
 				}
 				set	
 				{
-					nodeId = value;
+					owner = value;
 				}
 			}
 
@@ -144,15 +144,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string Owner
+			public long? NodeId
 			{
 				get
 				{
-					return owner;
+					return nodeId;
 				}
 				set	
 				{
-					owner = value;
+					nodeId = value;
 				}
 			}
 

@@ -25,53 +25,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetTopicResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errorCode;
-
-		private string errorMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
+		private string errorMessage;
+
+		private string errorCode;
+
+		private bool? success;
+
 		private GetTopic_Data data;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -97,6 +61,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public GetTopic_Data Data
 		{
 			get
@@ -112,61 +112,61 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetTopic_Data
 		{
 
-			private long? topicId;
+			private string owner;
 
 			private string topicName;
 
-			private string topicStatus;
+			private string baselineStatus;
 
-			private string topicType;
+			private long? projectId;
 
-			private long? addTime;
+			private long? nextAlertTime;
 
-			private long? alertTime;
+			private long? instanceId;
 
-			private string assigner;
-
-			private long? baselineId;
-
-			private string baselineName;
+			private long? fixTime;
 
 			private int? baselineInGroupId;
 
-			private string baselineStatus;
-
 			private long? baselineBuffer;
 
-			private long? buffer;
+			private string topicType;
+
+			private string topicStatus;
+
+			private long? happenTime;
 
 			private long? dealTime;
 
 			private string dealUser;
 
-			private long? fixTime;
+			private string baselineName;
 
-			private long? happenTime;
-
-			private long? instanceId;
-
-			private long? nextAlertTime;
-
-			private long? nodeId;
+			private long? baselineId;
 
 			private string nodeName;
 
-			private string owner;
+			private long? alertTime;
 
-			private long? projectId;
+			private long? buffer;
 
-			public long? TopicId
+			private string assigner;
+
+			private long? topicId;
+
+			private long? addTime;
+
+			private long? nodeId;
+
+			public string Owner
 			{
 				get
 				{
-					return topicId;
+					return owner;
 				}
 				set	
 				{
-					topicId = value;
+					owner = value;
 				}
 			}
 
@@ -182,87 +182,63 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string TopicStatus
+			public string BaselineStatus
 			{
 				get
 				{
-					return topicStatus;
+					return baselineStatus;
 				}
 				set	
 				{
-					topicStatus = value;
+					baselineStatus = value;
 				}
 			}
 
-			public string TopicType
+			public long? ProjectId
 			{
 				get
 				{
-					return topicType;
+					return projectId;
 				}
 				set	
 				{
-					topicType = value;
+					projectId = value;
 				}
 			}
 
-			public long? AddTime
+			public long? NextAlertTime
 			{
 				get
 				{
-					return addTime;
+					return nextAlertTime;
 				}
 				set	
 				{
-					addTime = value;
+					nextAlertTime = value;
 				}
 			}
 
-			public long? AlertTime
+			public long? InstanceId
 			{
 				get
 				{
-					return alertTime;
+					return instanceId;
 				}
 				set	
 				{
-					alertTime = value;
+					instanceId = value;
 				}
 			}
 
-			public string Assigner
+			public long? FixTime
 			{
 				get
 				{
-					return assigner;
+					return fixTime;
 				}
 				set	
 				{
-					assigner = value;
-				}
-			}
-
-			public long? BaselineId
-			{
-				get
-				{
-					return baselineId;
-				}
-				set	
-				{
-					baselineId = value;
-				}
-			}
-
-			public string BaselineName
-			{
-				get
-				{
-					return baselineName;
-				}
-				set	
-				{
-					baselineName = value;
+					fixTime = value;
 				}
 			}
 
@@ -278,18 +254,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string BaselineStatus
-			{
-				get
-				{
-					return baselineStatus;
-				}
-				set	
-				{
-					baselineStatus = value;
-				}
-			}
-
 			public long? BaselineBuffer
 			{
 				get
@@ -302,15 +266,39 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public long? Buffer
+			public string TopicType
 			{
 				get
 				{
-					return buffer;
+					return topicType;
 				}
 				set	
 				{
-					buffer = value;
+					topicType = value;
+				}
+			}
+
+			public string TopicStatus
+			{
+				get
+				{
+					return topicStatus;
+				}
+				set	
+				{
+					topicStatus = value;
+				}
+			}
+
+			public long? HappenTime
+			{
+				get
+				{
+					return happenTime;
+				}
+				set	
+				{
+					happenTime = value;
 				}
 			}
 
@@ -338,63 +326,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public long? FixTime
+			public string BaselineName
 			{
 				get
 				{
-					return fixTime;
+					return baselineName;
 				}
 				set	
 				{
-					fixTime = value;
+					baselineName = value;
 				}
 			}
 
-			public long? HappenTime
+			public long? BaselineId
 			{
 				get
 				{
-					return happenTime;
+					return baselineId;
 				}
 				set	
 				{
-					happenTime = value;
-				}
-			}
-
-			public long? InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public long? NextAlertTime
-			{
-				get
-				{
-					return nextAlertTime;
-				}
-				set	
-				{
-					nextAlertTime = value;
-				}
-			}
-
-			public long? NodeId
-			{
-				get
-				{
-					return nodeId;
-				}
-				set	
-				{
-					nodeId = value;
+					baselineId = value;
 				}
 			}
 
@@ -410,27 +362,75 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string Owner
+			public long? AlertTime
 			{
 				get
 				{
-					return owner;
+					return alertTime;
 				}
 				set	
 				{
-					owner = value;
+					alertTime = value;
 				}
 			}
 
-			public long? ProjectId
+			public long? Buffer
 			{
 				get
 				{
-					return projectId;
+					return buffer;
 				}
 				set	
 				{
-					projectId = value;
+					buffer = value;
+				}
+			}
+
+			public string Assigner
+			{
+				get
+				{
+					return assigner;
+				}
+				set	
+				{
+					assigner = value;
+				}
+			}
+
+			public long? TopicId
+			{
+				get
+				{
+					return topicId;
+				}
+				set	
+				{
+					topicId = value;
+				}
+			}
+
+			public long? AddTime
+			{
+				get
+				{
+					return addTime;
+				}
+				set	
+				{
+					addTime = value;
+				}
+			}
+
+			public long? NodeId
+			{
+				get
+				{
+					return nodeId;
+				}
+				set	
+				{
+					nodeId = value;
 				}
 			}
 		}

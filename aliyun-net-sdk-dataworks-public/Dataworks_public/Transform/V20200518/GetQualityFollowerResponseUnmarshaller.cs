@@ -31,22 +31,22 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetQualityFollowerResponse getQualityFollowerResponse = new GetQualityFollowerResponse();
 
 			getQualityFollowerResponse.HttpResponse = _ctx.HttpResponse;
-			getQualityFollowerResponse.ErrorCode = _ctx.StringValue("GetQualityFollower.ErrorCode");
-			getQualityFollowerResponse.Success = _ctx.BooleanValue("GetQualityFollower.Success");
-			getQualityFollowerResponse.ErrorMessage = _ctx.StringValue("GetQualityFollower.ErrorMessage");
 			getQualityFollowerResponse.HttpStatusCode = _ctx.IntegerValue("GetQualityFollower.HttpStatusCode");
 			getQualityFollowerResponse.RequestId = _ctx.StringValue("GetQualityFollower.RequestId");
+			getQualityFollowerResponse.ErrorMessage = _ctx.StringValue("GetQualityFollower.ErrorMessage");
+			getQualityFollowerResponse.Success = _ctx.BooleanValue("GetQualityFollower.Success");
+			getQualityFollowerResponse.ErrorCode = _ctx.StringValue("GetQualityFollower.ErrorCode");
 
 			List<GetQualityFollowerResponse.GetQualityFollower_Follower> getQualityFollowerResponse_data = new List<GetQualityFollowerResponse.GetQualityFollower_Follower>();
 			for (int i = 0; i < _ctx.Length("GetQualityFollower.Data.Length"); i++) {
 				GetQualityFollowerResponse.GetQualityFollower_Follower follower = new GetQualityFollowerResponse.GetQualityFollower_Follower();
-				follower.ProjectName = _ctx.StringValue("GetQualityFollower.Data["+ i +"].ProjectName");
-				follower.TableName = _ctx.StringValue("GetQualityFollower.Data["+ i +"].TableName");
-				follower.Id = _ctx.LongValue("GetQualityFollower.Data["+ i +"].Id");
-				follower.EntityId = _ctx.StringValue("GetQualityFollower.Data["+ i +"].EntityId");
-				follower.Follower = _ctx.StringValue("GetQualityFollower.Data["+ i +"].Follower");
-				follower.AlarmMode = _ctx.IntegerValue("GetQualityFollower.Data["+ i +"].AlarmMode");
 				follower.FollowerAccountName = _ctx.StringValue("GetQualityFollower.Data["+ i +"].FollowerAccountName");
+				follower.TableName = _ctx.StringValue("GetQualityFollower.Data["+ i +"].TableName");
+				follower.AlarmMode = _ctx.IntegerValue("GetQualityFollower.Data["+ i +"].AlarmMode");
+				follower.EntityId = _ctx.StringValue("GetQualityFollower.Data["+ i +"].EntityId");
+				follower.ProjectName = _ctx.StringValue("GetQualityFollower.Data["+ i +"].ProjectName");
+				follower.Id = _ctx.LongValue("GetQualityFollower.Data["+ i +"].Id");
+				follower.Follower = _ctx.StringValue("GetQualityFollower.Data["+ i +"].Follower");
 
 				getQualityFollowerResponse_data.Add(follower);
 			}

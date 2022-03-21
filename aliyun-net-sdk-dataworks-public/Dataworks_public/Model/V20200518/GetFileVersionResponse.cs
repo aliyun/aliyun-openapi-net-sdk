@@ -25,51 +25,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetFileVersionResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
-		private string errorCode;
+		private int? httpStatusCode;
 
 		private string errorMessage;
 
-		private int? httpStatusCode;
+		private string requestId;
+
+		private string errorCode;
+
+		private bool? success;
 
 		private GetFileVersion_Data data;
 
-		public string RequestId
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return requestId;
+				return httpStatusCode;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				httpStatusCode = value;
 			}
 		}
 
@@ -85,15 +61,39 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? HttpStatusCode
+		public string RequestId
 		{
 			get
 			{
-				return httpStatusCode;
+				return requestId;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				requestId = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -112,43 +112,31 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetFileVersion_Data
 		{
 
-			private int? fileVersion;
-
 			private string fileContent;
-
-			private string filePropertyContent;
-
-			private string nodeContent;
-
-			private string comment;
-
-			private long? nodeId;
 
 			private bool? isCurrentProd;
 
-			private string changeType;
-
 			private string status;
 
-			private string fileName;
+			private string nodeContent;
 
 			private string commitUser;
 
-			private long? commitTime;
+			private string comment;
+
+			private string filePropertyContent;
+
+			private string fileName;
 
 			private string useType;
 
-			public int? FileVersion
-			{
-				get
-				{
-					return fileVersion;
-				}
-				set	
-				{
-					fileVersion = value;
-				}
-			}
+			private string changeType;
+
+			private int? fileVersion;
+
+			private long? commitTime;
+
+			private long? nodeId;
 
 			public string FileContent
 			{
@@ -159,54 +147,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					fileContent = value;
-				}
-			}
-
-			public string FilePropertyContent
-			{
-				get
-				{
-					return filePropertyContent;
-				}
-				set	
-				{
-					filePropertyContent = value;
-				}
-			}
-
-			public string NodeContent
-			{
-				get
-				{
-					return nodeContent;
-				}
-				set	
-				{
-					nodeContent = value;
-				}
-			}
-
-			public string Comment
-			{
-				get
-				{
-					return comment;
-				}
-				set	
-				{
-					comment = value;
-				}
-			}
-
-			public long? NodeId
-			{
-				get
-				{
-					return nodeId;
-				}
-				set	
-				{
-					nodeId = value;
 				}
 			}
 
@@ -222,18 +162,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string ChangeType
-			{
-				get
-				{
-					return changeType;
-				}
-				set	
-				{
-					changeType = value;
-				}
-			}
-
 			public string Status
 			{
 				get
@@ -246,15 +174,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string FileName
+			public string NodeContent
 			{
 				get
 				{
-					return fileName;
+					return nodeContent;
 				}
 				set	
 				{
-					fileName = value;
+					nodeContent = value;
 				}
 			}
 
@@ -270,15 +198,39 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public long? CommitTime
+			public string Comment
 			{
 				get
 				{
-					return commitTime;
+					return comment;
 				}
 				set	
 				{
-					commitTime = value;
+					comment = value;
+				}
+			}
+
+			public string FilePropertyContent
+			{
+				get
+				{
+					return filePropertyContent;
+				}
+				set	
+				{
+					filePropertyContent = value;
+				}
+			}
+
+			public string FileName
+			{
+				get
+				{
+					return fileName;
+				}
+				set	
+				{
+					fileName = value;
 				}
 			}
 
@@ -291,6 +243,54 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					useType = value;
+				}
+			}
+
+			public string ChangeType
+			{
+				get
+				{
+					return changeType;
+				}
+				set	
+				{
+					changeType = value;
+				}
+			}
+
+			public int? FileVersion
+			{
+				get
+				{
+					return fileVersion;
+				}
+				set	
+				{
+					fileVersion = value;
+				}
+			}
+
+			public long? CommitTime
+			{
+				get
+				{
+					return commitTime;
+				}
+				set	
+				{
+					commitTime = value;
+				}
+			}
+
+			public long? NodeId
+			{
+				get
+				{
+					return nodeId;
+				}
+				set	
+				{
+					nodeId = value;
 				}
 			}
 		}

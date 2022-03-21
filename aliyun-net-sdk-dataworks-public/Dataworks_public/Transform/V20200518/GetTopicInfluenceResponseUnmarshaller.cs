@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetTopicInfluenceResponse getTopicInfluenceResponse = new GetTopicInfluenceResponse();
 
 			getTopicInfluenceResponse.HttpResponse = _ctx.HttpResponse;
-			getTopicInfluenceResponse.Success = _ctx.BooleanValue("GetTopicInfluence.Success");
-			getTopicInfluenceResponse.ErrorCode = _ctx.StringValue("GetTopicInfluence.ErrorCode");
-			getTopicInfluenceResponse.ErrorMessage = _ctx.StringValue("GetTopicInfluence.ErrorMessage");
 			getTopicInfluenceResponse.HttpStatusCode = _ctx.IntegerValue("GetTopicInfluence.HttpStatusCode");
 			getTopicInfluenceResponse.RequestId = _ctx.StringValue("GetTopicInfluence.RequestId");
+			getTopicInfluenceResponse.ErrorMessage = _ctx.StringValue("GetTopicInfluence.ErrorMessage");
+			getTopicInfluenceResponse.ErrorCode = _ctx.StringValue("GetTopicInfluence.ErrorCode");
+			getTopicInfluenceResponse.Success = _ctx.BooleanValue("GetTopicInfluence.Success");
 
 			GetTopicInfluenceResponse.GetTopicInfluence_Data data = new GetTopicInfluenceResponse.GetTopicInfluence_Data();
 			data.TopicId = _ctx.LongValue("GetTopicInfluence.Data.TopicId");
@@ -43,15 +43,15 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<GetTopicInfluenceResponse.GetTopicInfluence_Data.GetTopicInfluence_InfluencesItem> data_influences = new List<GetTopicInfluenceResponse.GetTopicInfluence_Data.GetTopicInfluence_InfluencesItem>();
 			for (int i = 0; i < _ctx.Length("GetTopicInfluence.Data.Influences.Length"); i++) {
 				GetTopicInfluenceResponse.GetTopicInfluence_Data.GetTopicInfluence_InfluencesItem influencesItem = new GetTopicInfluenceResponse.GetTopicInfluence_Data.GetTopicInfluence_InfluencesItem();
+				influencesItem.Status = _ctx.StringValue("GetTopicInfluence.Data.Influences["+ i +"].Status");
+				influencesItem.Owner = _ctx.StringValue("GetTopicInfluence.Data.Influences["+ i +"].Owner");
+				influencesItem.BaselineName = _ctx.StringValue("GetTopicInfluence.Data.Influences["+ i +"].BaselineName");
 				influencesItem.BaselineId = _ctx.LongValue("GetTopicInfluence.Data.Influences["+ i +"].BaselineId");
 				influencesItem.Bizdate = _ctx.LongValue("GetTopicInfluence.Data.Influences["+ i +"].Bizdate");
-				influencesItem.InGroupId = _ctx.IntegerValue("GetTopicInfluence.Data.Influences["+ i +"].InGroupId");
-				influencesItem.BaselineName = _ctx.StringValue("GetTopicInfluence.Data.Influences["+ i +"].BaselineName");
-				influencesItem.Owner = _ctx.StringValue("GetTopicInfluence.Data.Influences["+ i +"].Owner");
-				influencesItem.Status = _ctx.StringValue("GetTopicInfluence.Data.Influences["+ i +"].Status");
+				influencesItem.Buffer = _ctx.LongValue("GetTopicInfluence.Data.Influences["+ i +"].Buffer");
 				influencesItem.ProjectId = _ctx.LongValue("GetTopicInfluence.Data.Influences["+ i +"].ProjectId");
 				influencesItem.Priority = _ctx.IntegerValue("GetTopicInfluence.Data.Influences["+ i +"].Priority");
-				influencesItem.Buffer = _ctx.LongValue("GetTopicInfluence.Data.Influences["+ i +"].Buffer");
+				influencesItem.InGroupId = _ctx.IntegerValue("GetTopicInfluence.Data.Influences["+ i +"].InGroupId");
 
 				data_influences.Add(influencesItem);
 			}

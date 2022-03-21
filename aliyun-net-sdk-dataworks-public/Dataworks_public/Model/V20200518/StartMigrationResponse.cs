@@ -25,27 +25,39 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class StartMigrationResponse : AcsResponse
 	{
 
-		private string errorCode;
-
-		private string errorMessage;
-
 		private int? httpStatusCode;
-
-		private string requestId;
-
-		private bool? success;
 
 		private bool? data;
 
-		public string ErrorCode
+		private string errorMessage;
+
+		private string requestId;
+
+		private string errorCode;
+
+		private bool? success;
+
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return errorCode;
+				return httpStatusCode;
 			}
 			set	
 			{
-				errorCode = value;
+				httpStatusCode = value;
+			}
+		}
+
+		public bool? Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
 			}
 		}
 
@@ -61,18 +73,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
 		public string RequestId
 		{
 			get
@@ -85,6 +85,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
 		public bool? Success
 		{
 			get
@@ -94,18 +106,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public bool? Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
 			}
 		}
 	}

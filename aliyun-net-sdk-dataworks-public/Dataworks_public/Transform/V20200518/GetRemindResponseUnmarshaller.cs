@@ -31,37 +31,37 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetRemindResponse getRemindResponse = new GetRemindResponse();
 
 			getRemindResponse.HttpResponse = _ctx.HttpResponse;
-			getRemindResponse.Success = _ctx.BooleanValue("GetRemind.Success");
-			getRemindResponse.ErrorCode = _ctx.StringValue("GetRemind.ErrorCode");
-			getRemindResponse.ErrorMessage = _ctx.StringValue("GetRemind.ErrorMessage");
 			getRemindResponse.HttpStatusCode = _ctx.IntegerValue("GetRemind.HttpStatusCode");
 			getRemindResponse.RequestId = _ctx.StringValue("GetRemind.RequestId");
+			getRemindResponse.ErrorMessage = _ctx.StringValue("GetRemind.ErrorMessage");
+			getRemindResponse.ErrorCode = _ctx.StringValue("GetRemind.ErrorCode");
+			getRemindResponse.Success = _ctx.BooleanValue("GetRemind.Success");
 
 			GetRemindResponse.GetRemind_Data data = new GetRemindResponse.GetRemind_Data();
-			data.RemindId = _ctx.LongValue("GetRemind.Data.RemindId");
-			data.RemindName = _ctx.StringValue("GetRemind.Data.RemindName");
-			data.DndStart = _ctx.StringValue("GetRemind.Data.DndStart");
-			data.DndEnd = _ctx.StringValue("GetRemind.Data.DndEnd");
+			data.MaxAlertTimes = _ctx.IntegerValue("GetRemind.Data.MaxAlertTimes");
 			data.RemindUnit = _ctx.StringValue("GetRemind.Data.RemindUnit");
-			data.RemindType = _ctx.StringValue("GetRemind.Data.RemindType");
-			data.AlertUnit = _ctx.StringValue("GetRemind.Data.AlertUnit");
+			data.AlertInterval = _ctx.IntegerValue("GetRemind.Data.AlertInterval");
 			data.Useflag = _ctx.BooleanValue("GetRemind.Data.Useflag");
 			data.Founder = _ctx.StringValue("GetRemind.Data.Founder");
-			data.AlertInterval = _ctx.IntegerValue("GetRemind.Data.AlertInterval");
+			data.RemindId = _ctx.LongValue("GetRemind.Data.RemindId");
+			data.DndEnd = _ctx.StringValue("GetRemind.Data.DndEnd");
+			data.RemindType = _ctx.StringValue("GetRemind.Data.RemindType");
+			data.AlertUnit = _ctx.StringValue("GetRemind.Data.AlertUnit");
+			data.DndStart = _ctx.StringValue("GetRemind.Data.DndStart");
+			data.RemindName = _ctx.StringValue("GetRemind.Data.RemindName");
 			data.Detail = _ctx.StringValue("GetRemind.Data.Detail");
-			data.MaxAlertTimes = _ctx.IntegerValue("GetRemind.Data.MaxAlertTimes");
-
-			List<string> data_alertMethods = new List<string>();
-			for (int i = 0; i < _ctx.Length("GetRemind.Data.AlertMethods.Length"); i++) {
-				data_alertMethods.Add(_ctx.StringValue("GetRemind.Data.AlertMethods["+ i +"]"));
-			}
-			data.AlertMethods = data_alertMethods;
 
 			List<string> data_alertTargets = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetRemind.Data.AlertTargets.Length"); i++) {
 				data_alertTargets.Add(_ctx.StringValue("GetRemind.Data.AlertTargets["+ i +"]"));
 			}
 			data.AlertTargets = data_alertTargets;
+
+			List<string> data_alertMethods = new List<string>();
+			for (int i = 0; i < _ctx.Length("GetRemind.Data.AlertMethods.Length"); i++) {
+				data_alertMethods.Add(_ctx.StringValue("GetRemind.Data.AlertMethods["+ i +"]"));
+			}
+			data.AlertMethods = data_alertMethods;
 
 			List<GetRemindResponse.GetRemind_Data.GetRemind_RobotsItem> data_robots = new List<GetRemindResponse.GetRemind_Data.GetRemind_RobotsItem>();
 			for (int i = 0; i < _ctx.Length("GetRemind.Data.Robots.Length"); i++) {
@@ -76,9 +76,9 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<GetRemindResponse.GetRemind_Data.GetRemind_NodesItem> data_nodes = new List<GetRemindResponse.GetRemind_Data.GetRemind_NodesItem>();
 			for (int i = 0; i < _ctx.Length("GetRemind.Data.Nodes.Length"); i++) {
 				GetRemindResponse.GetRemind_Data.GetRemind_NodesItem nodesItem = new GetRemindResponse.GetRemind_Data.GetRemind_NodesItem();
-				nodesItem.NodeId = _ctx.LongValue("GetRemind.Data.Nodes["+ i +"].NodeId");
-				nodesItem.NodeName = _ctx.StringValue("GetRemind.Data.Nodes["+ i +"].NodeName");
 				nodesItem.Owner = _ctx.StringValue("GetRemind.Data.Nodes["+ i +"].Owner");
+				nodesItem.NodeName = _ctx.StringValue("GetRemind.Data.Nodes["+ i +"].NodeName");
+				nodesItem.NodeId = _ctx.LongValue("GetRemind.Data.Nodes["+ i +"].NodeId");
 				nodesItem.ProjectId = _ctx.LongValue("GetRemind.Data.Nodes["+ i +"].ProjectId");
 
 				data_nodes.Add(nodesItem);
@@ -88,8 +88,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<GetRemindResponse.GetRemind_Data.GetRemind_BaselinesItem> data_baselines = new List<GetRemindResponse.GetRemind_Data.GetRemind_BaselinesItem>();
 			for (int i = 0; i < _ctx.Length("GetRemind.Data.Baselines.Length"); i++) {
 				GetRemindResponse.GetRemind_Data.GetRemind_BaselinesItem baselinesItem = new GetRemindResponse.GetRemind_Data.GetRemind_BaselinesItem();
-				baselinesItem.BaselineId = _ctx.LongValue("GetRemind.Data.Baselines["+ i +"].BaselineId");
 				baselinesItem.BaselineName = _ctx.StringValue("GetRemind.Data.Baselines["+ i +"].BaselineName");
+				baselinesItem.BaselineId = _ctx.LongValue("GetRemind.Data.Baselines["+ i +"].BaselineId");
 
 				data_baselines.Add(baselinesItem);
 			}
@@ -107,8 +107,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<GetRemindResponse.GetRemind_Data.GetRemind_BizProcessesItem> data_bizProcesses = new List<GetRemindResponse.GetRemind_Data.GetRemind_BizProcessesItem>();
 			for (int i = 0; i < _ctx.Length("GetRemind.Data.BizProcesses.Length"); i++) {
 				GetRemindResponse.GetRemind_Data.GetRemind_BizProcessesItem bizProcessesItem = new GetRemindResponse.GetRemind_Data.GetRemind_BizProcessesItem();
-				bizProcessesItem.BizId = _ctx.LongValue("GetRemind.Data.BizProcesses["+ i +"].BizId");
 				bizProcessesItem.BizProcessName = _ctx.StringValue("GetRemind.Data.BizProcesses["+ i +"].BizProcessName");
+				bizProcessesItem.BizId = _ctx.LongValue("GetRemind.Data.BizProcesses["+ i +"].BizId");
 
 				data_bizProcesses.Add(bizProcessesItem);
 			}

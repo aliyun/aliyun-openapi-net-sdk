@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			CheckMetaPartitionResponse checkMetaPartitionResponse = new CheckMetaPartitionResponse();
 
 			checkMetaPartitionResponse.HttpResponse = _ctx.HttpResponse;
-			checkMetaPartitionResponse.RequestId = _ctx.StringValue("CheckMetaPartition.RequestId");
-			checkMetaPartitionResponse.ErrorCode = _ctx.StringValue("CheckMetaPartition.ErrorCode");
-			checkMetaPartitionResponse.ErrorMessage = _ctx.StringValue("CheckMetaPartition.ErrorMessage");
 			checkMetaPartitionResponse.HttpStatusCode = _ctx.IntegerValue("CheckMetaPartition.HttpStatusCode");
-			checkMetaPartitionResponse.Success = _ctx.BooleanValue("CheckMetaPartition.Success");
 			checkMetaPartitionResponse.Data = _ctx.BooleanValue("CheckMetaPartition.Data");
+			checkMetaPartitionResponse.RequestId = _ctx.StringValue("CheckMetaPartition.RequestId");
+			checkMetaPartitionResponse.ErrorMessage = _ctx.StringValue("CheckMetaPartition.ErrorMessage");
+			checkMetaPartitionResponse.ErrorCode = _ctx.StringValue("CheckMetaPartition.ErrorCode");
+			checkMetaPartitionResponse.Success = _ctx.BooleanValue("CheckMetaPartition.Success");
         
 			return checkMetaPartitionResponse;
         }

@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			EstablishRelationTableToBusinessResponse establishRelationTableToBusinessResponse = new EstablishRelationTableToBusinessResponse();
 
 			establishRelationTableToBusinessResponse.HttpResponse = _ctx.HttpResponse;
-			establishRelationTableToBusinessResponse.RequestId = _ctx.StringValue("EstablishRelationTableToBusiness.RequestId");
-			establishRelationTableToBusinessResponse.Success = _ctx.BooleanValue("EstablishRelationTableToBusiness.Success");
-			establishRelationTableToBusinessResponse.ErrorCode = _ctx.StringValue("EstablishRelationTableToBusiness.ErrorCode");
-			establishRelationTableToBusinessResponse.ErrorMessage = _ctx.StringValue("EstablishRelationTableToBusiness.ErrorMessage");
 			establishRelationTableToBusinessResponse.HttpStatusCode = _ctx.IntegerValue("EstablishRelationTableToBusiness.HttpStatusCode");
+			establishRelationTableToBusinessResponse.ErrorMessage = _ctx.StringValue("EstablishRelationTableToBusiness.ErrorMessage");
+			establishRelationTableToBusinessResponse.RequestId = _ctx.StringValue("EstablishRelationTableToBusiness.RequestId");
+			establishRelationTableToBusinessResponse.ErrorCode = _ctx.StringValue("EstablishRelationTableToBusiness.ErrorCode");
+			establishRelationTableToBusinessResponse.Success = _ctx.BooleanValue("EstablishRelationTableToBusiness.Success");
         
 			return establishRelationTableToBusinessResponse;
         }

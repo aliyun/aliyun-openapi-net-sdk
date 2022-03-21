@@ -75,6 +75,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string criticalThreshold;
 
+		private bool? openSwitch;
+
 		private string comment;
 
 		private int? predictType;
@@ -297,6 +299,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				criticalThreshold = value;
 				DictionaryUtil.Add(BodyParameters, "CriticalThreshold", value);
+			}
+		}
+
+		public bool? OpenSwitch
+		{
+			get
+			{
+				return openSwitch;
+			}
+			set	
+			{
+				openSwitch = value;
+				DictionaryUtil.Add(BodyParameters, "OpenSwitch", value.ToString());
 			}
 		}
 

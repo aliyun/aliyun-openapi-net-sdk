@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			DeleteBusinessResponse deleteBusinessResponse = new DeleteBusinessResponse();
 
 			deleteBusinessResponse.HttpResponse = _ctx.HttpResponse;
-			deleteBusinessResponse.RequestId = _ctx.StringValue("DeleteBusiness.RequestId");
-			deleteBusinessResponse.Success = _ctx.BooleanValue("DeleteBusiness.Success");
-			deleteBusinessResponse.ErrorCode = _ctx.StringValue("DeleteBusiness.ErrorCode");
-			deleteBusinessResponse.ErrorMessage = _ctx.StringValue("DeleteBusiness.ErrorMessage");
 			deleteBusinessResponse.HttpStatusCode = _ctx.IntegerValue("DeleteBusiness.HttpStatusCode");
+			deleteBusinessResponse.ErrorMessage = _ctx.StringValue("DeleteBusiness.ErrorMessage");
+			deleteBusinessResponse.RequestId = _ctx.StringValue("DeleteBusiness.RequestId");
+			deleteBusinessResponse.ErrorCode = _ctx.StringValue("DeleteBusiness.ErrorCode");
+			deleteBusinessResponse.Success = _ctx.BooleanValue("DeleteBusiness.Success");
         
 			return deleteBusinessResponse;
         }

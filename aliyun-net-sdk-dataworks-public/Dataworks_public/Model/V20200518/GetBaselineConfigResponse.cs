@@ -25,53 +25,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetBaselineConfigResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errorCode;
-
-		private string errorMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
+		private string errorMessage;
+
+		private string errorCode;
+
+		private bool? success;
+
 		private GetBaselineConfig_Data data;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -97,6 +61,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public GetBaselineConfig_Data Data
 		{
 			get
@@ -112,67 +112,55 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetBaselineConfig_Data
 		{
 
-			private long? baselineId;
+			private string hourSlaDetail;
 
-			private int? priority;
-
-			private string baselineName;
+			private bool? isDefault;
 
 			private string owner;
 
 			private long? projectId;
 
-			private bool? useFlag;
-
-			private string baselineType;
-
-			private int? expHour;
-
-			private int? expMinu;
-
-			private int? slaHour;
+			private int? priority;
 
 			private int? slaMinu;
 
+			private int? slaHour;
+
+			private long? baselineId;
+
+			private string baselineName;
+
 			private string hourExpDetail;
 
-			private string hourSlaDetail;
+			private bool? useFlag;
 
-			private bool? isDefault;
+			private int? expHour;
 
-			public long? BaselineId
+			private string baselineType;
+
+			private int? expMinu;
+
+			public string HourSlaDetail
 			{
 				get
 				{
-					return baselineId;
+					return hourSlaDetail;
 				}
 				set	
 				{
-					baselineId = value;
+					hourSlaDetail = value;
 				}
 			}
 
-			public int? Priority
+			public bool? IsDefault
 			{
 				get
 				{
-					return priority;
+					return isDefault;
 				}
 				set	
 				{
-					priority = value;
-				}
-			}
-
-			public string BaselineName
-			{
-				get
-				{
-					return baselineName;
-				}
-				set	
-				{
-					baselineName = value;
+					isDefault = value;
 				}
 			}
 
@@ -200,63 +188,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public bool? UseFlag
+			public int? Priority
 			{
 				get
 				{
-					return useFlag;
+					return priority;
 				}
 				set	
 				{
-					useFlag = value;
-				}
-			}
-
-			public string BaselineType
-			{
-				get
-				{
-					return baselineType;
-				}
-				set	
-				{
-					baselineType = value;
-				}
-			}
-
-			public int? ExpHour
-			{
-				get
-				{
-					return expHour;
-				}
-				set	
-				{
-					expHour = value;
-				}
-			}
-
-			public int? ExpMinu
-			{
-				get
-				{
-					return expMinu;
-				}
-				set	
-				{
-					expMinu = value;
-				}
-			}
-
-			public int? SlaHour
-			{
-				get
-				{
-					return slaHour;
-				}
-				set	
-				{
-					slaHour = value;
+					priority = value;
 				}
 			}
 
@@ -272,6 +212,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
+			public int? SlaHour
+			{
+				get
+				{
+					return slaHour;
+				}
+				set	
+				{
+					slaHour = value;
+				}
+			}
+
+			public long? BaselineId
+			{
+				get
+				{
+					return baselineId;
+				}
+				set	
+				{
+					baselineId = value;
+				}
+			}
+
+			public string BaselineName
+			{
+				get
+				{
+					return baselineName;
+				}
+				set	
+				{
+					baselineName = value;
+				}
+			}
+
 			public string HourExpDetail
 			{
 				get
@@ -284,27 +260,51 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string HourSlaDetail
+			public bool? UseFlag
 			{
 				get
 				{
-					return hourSlaDetail;
+					return useFlag;
 				}
 				set	
 				{
-					hourSlaDetail = value;
+					useFlag = value;
 				}
 			}
 
-			public bool? IsDefault
+			public int? ExpHour
 			{
 				get
 				{
-					return isDefault;
+					return expHour;
 				}
 				set	
 				{
-					isDefault = value;
+					expHour = value;
+				}
+			}
+
+			public string BaselineType
+			{
+				get
+				{
+					return baselineType;
+				}
+				set	
+				{
+					baselineType = value;
+				}
+			}
+
+			public int? ExpMinu
+			{
+				get
+				{
+					return expMinu;
+				}
+				set	
+				{
+					expMinu = value;
 				}
 			}
 		}

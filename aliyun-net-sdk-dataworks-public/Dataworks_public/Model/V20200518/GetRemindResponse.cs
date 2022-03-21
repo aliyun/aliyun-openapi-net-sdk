@@ -25,53 +25,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetRemindResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errorCode;
-
-		private string errorMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
+		private string errorMessage;
+
+		private string errorCode;
+
+		private bool? success;
+
 		private GetRemind_Data data;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -97,6 +61,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public GetRemind_Data Data
 		{
 			get
@@ -112,29 +112,29 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetRemind_Data
 		{
 
-			private long? remindId;
-
-			private string remindName;
-
-			private string dndStart;
-
-			private string dndEnd;
+			private int? maxAlertTimes;
 
 			private string remindUnit;
 
-			private string remindType;
-
-			private string alertUnit;
+			private int? alertInterval;
 
 			private bool? useflag;
 
 			private string founder;
 
-			private int? alertInterval;
+			private long? remindId;
+
+			private string dndEnd;
+
+			private string remindType;
+
+			private string alertUnit;
+
+			private string dndStart;
+
+			private string remindName;
 
 			private string detail;
-
-			private int? maxAlertTimes;
 
 			private List<GetRemind_RobotsItem> robots;
 
@@ -146,55 +146,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private List<GetRemind_BizProcessesItem> bizProcesses;
 
-			private List<string> alertMethods;
-
 			private List<string> alertTargets;
 
-			public long? RemindId
-			{
-				get
-				{
-					return remindId;
-				}
-				set	
-				{
-					remindId = value;
-				}
-			}
+			private List<string> alertMethods;
 
-			public string RemindName
+			public int? MaxAlertTimes
 			{
 				get
 				{
-					return remindName;
+					return maxAlertTimes;
 				}
 				set	
 				{
-					remindName = value;
-				}
-			}
-
-			public string DndStart
-			{
-				get
-				{
-					return dndStart;
-				}
-				set	
-				{
-					dndStart = value;
-				}
-			}
-
-			public string DndEnd
-			{
-				get
-				{
-					return dndEnd;
-				}
-				set	
-				{
-					dndEnd = value;
+					maxAlertTimes = value;
 				}
 			}
 
@@ -210,27 +174,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string RemindType
+			public int? AlertInterval
 			{
 				get
 				{
-					return remindType;
+					return alertInterval;
 				}
 				set	
 				{
-					remindType = value;
-				}
-			}
-
-			public string AlertUnit
-			{
-				get
-				{
-					return alertUnit;
-				}
-				set	
-				{
-					alertUnit = value;
+					alertInterval = value;
 				}
 			}
 
@@ -258,15 +210,75 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public int? AlertInterval
+			public long? RemindId
 			{
 				get
 				{
-					return alertInterval;
+					return remindId;
 				}
 				set	
 				{
-					alertInterval = value;
+					remindId = value;
+				}
+			}
+
+			public string DndEnd
+			{
+				get
+				{
+					return dndEnd;
+				}
+				set	
+				{
+					dndEnd = value;
+				}
+			}
+
+			public string RemindType
+			{
+				get
+				{
+					return remindType;
+				}
+				set	
+				{
+					remindType = value;
+				}
+			}
+
+			public string AlertUnit
+			{
+				get
+				{
+					return alertUnit;
+				}
+				set	
+				{
+					alertUnit = value;
+				}
+			}
+
+			public string DndStart
+			{
+				get
+				{
+					return dndStart;
+				}
+				set	
+				{
+					dndStart = value;
+				}
+			}
+
+			public string RemindName
+			{
+				get
+				{
+					return remindName;
+				}
+				set	
+				{
+					remindName = value;
 				}
 			}
 
@@ -279,18 +291,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					detail = value;
-				}
-			}
-
-			public int? MaxAlertTimes
-			{
-				get
-				{
-					return maxAlertTimes;
-				}
-				set	
-				{
-					maxAlertTimes = value;
 				}
 			}
 
@@ -354,18 +354,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public List<string> AlertMethods
-			{
-				get
-				{
-					return alertMethods;
-				}
-				set	
-				{
-					alertMethods = value;
-				}
-			}
-
 			public List<string> AlertTargets
 			{
 				get
@@ -375,6 +363,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					alertTargets = value;
+				}
+			}
+
+			public List<string> AlertMethods
+			{
+				get
+				{
+					return alertMethods;
+				}
+				set	
+				{
+					alertMethods = value;
 				}
 			}
 
@@ -413,23 +413,23 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetRemind_NodesItem
 			{
 
-				private long? nodeId;
+				private string owner;
 
 				private string nodeName;
 
-				private string owner;
+				private long? nodeId;
 
 				private long? projectId;
 
-				public long? NodeId
+				public string Owner
 				{
 					get
 					{
-						return nodeId;
+						return owner;
 					}
 					set	
 					{
-						nodeId = value;
+						owner = value;
 					}
 				}
 
@@ -445,15 +445,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string Owner
+				public long? NodeId
 				{
 					get
 					{
-						return owner;
+						return nodeId;
 					}
 					set	
 					{
-						owner = value;
+						nodeId = value;
 					}
 				}
 
@@ -473,21 +473,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetRemind_BaselinesItem
 			{
 
-				private long? baselineId;
-
 				private string baselineName;
 
-				public long? BaselineId
-				{
-					get
-					{
-						return baselineId;
-					}
-					set	
-					{
-						baselineId = value;
-					}
-				}
+				private long? baselineId;
 
 				public string BaselineName
 				{
@@ -498,6 +486,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						baselineName = value;
+					}
+				}
+
+				public long? BaselineId
+				{
+					get
+					{
+						return baselineId;
+					}
+					set	
+					{
+						baselineId = value;
 					}
 				}
 			}
@@ -523,21 +523,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetRemind_BizProcessesItem
 			{
 
-				private long? bizId;
-
 				private string bizProcessName;
 
-				public long? BizId
-				{
-					get
-					{
-						return bizId;
-					}
-					set	
-					{
-						bizId = value;
-					}
-				}
+				private long? bizId;
 
 				public string BizProcessName
 				{
@@ -548,6 +536,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						bizProcessName = value;
+					}
+				}
+
+				public long? BizId
+				{
+					get
+					{
+						return bizId;
+					}
+					set	
+					{
+						bizId = value;
 					}
 				}
 			}

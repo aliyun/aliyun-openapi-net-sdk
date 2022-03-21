@@ -25,53 +25,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetTopicInfluenceResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errorCode;
-
-		private string errorMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
+		private string errorMessage;
+
+		private string errorCode;
+
+		private bool? success;
+
 		private GetTopicInfluence_Data data;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -94,6 +58,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -143,23 +143,59 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetTopicInfluence_InfluencesItem
 			{
 
+				private string status;
+
+				private string owner;
+
+				private string baselineName;
+
 				private long? baselineId;
 
 				private long? bizdate;
 
-				private int? inGroupId;
-
-				private string baselineName;
-
-				private string owner;
-
-				private string status;
+				private long? buffer;
 
 				private long? projectId;
 
 				private int? priority;
 
-				private long? buffer;
+				private int? inGroupId;
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string Owner
+				{
+					get
+					{
+						return owner;
+					}
+					set	
+					{
+						owner = value;
+					}
+				}
+
+				public string BaselineName
+				{
+					get
+					{
+						return baselineName;
+					}
+					set	
+					{
+						baselineName = value;
+					}
+				}
 
 				public long? BaselineId
 				{
@@ -185,51 +221,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public int? InGroupId
+				public long? Buffer
 				{
 					get
 					{
-						return inGroupId;
+						return buffer;
 					}
 					set	
 					{
-						inGroupId = value;
-					}
-				}
-
-				public string BaselineName
-				{
-					get
-					{
-						return baselineName;
-					}
-					set	
-					{
-						baselineName = value;
-					}
-				}
-
-				public string Owner
-				{
-					get
-					{
-						return owner;
-					}
-					set	
-					{
-						owner = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
+						buffer = value;
 					}
 				}
 
@@ -257,15 +257,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public long? Buffer
+				public int? InGroupId
 				{
 					get
 					{
-						return buffer;
+						return inGroupId;
 					}
 					set	
 					{
-						buffer = value;
+						inGroupId = value;
 					}
 				}
 			}

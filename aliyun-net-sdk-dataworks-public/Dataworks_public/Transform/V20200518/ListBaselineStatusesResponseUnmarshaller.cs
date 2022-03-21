@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			ListBaselineStatusesResponse listBaselineStatusesResponse = new ListBaselineStatusesResponse();
 
 			listBaselineStatusesResponse.HttpResponse = _ctx.HttpResponse;
-			listBaselineStatusesResponse.Success = _ctx.BooleanValue("ListBaselineStatuses.Success");
-			listBaselineStatusesResponse.ErrorCode = _ctx.StringValue("ListBaselineStatuses.ErrorCode");
-			listBaselineStatusesResponse.ErrorMessage = _ctx.StringValue("ListBaselineStatuses.ErrorMessage");
 			listBaselineStatusesResponse.HttpStatusCode = _ctx.IntegerValue("ListBaselineStatuses.HttpStatusCode");
 			listBaselineStatusesResponse.RequestId = _ctx.StringValue("ListBaselineStatuses.RequestId");
+			listBaselineStatusesResponse.ErrorMessage = _ctx.StringValue("ListBaselineStatuses.ErrorMessage");
+			listBaselineStatusesResponse.ErrorCode = _ctx.StringValue("ListBaselineStatuses.ErrorCode");
+			listBaselineStatusesResponse.Success = _ctx.BooleanValue("ListBaselineStatuses.Success");
 
 			ListBaselineStatusesResponse.ListBaselineStatuses_Data data = new ListBaselineStatusesResponse.ListBaselineStatuses_Data();
 			data.PageNumber = _ctx.IntegerValue("ListBaselineStatuses.Data.PageNumber");
@@ -45,20 +45,20 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<ListBaselineStatusesResponse.ListBaselineStatuses_Data.ListBaselineStatuses_BaselineStatusesItem> data_baselineStatuses = new List<ListBaselineStatusesResponse.ListBaselineStatuses_Data.ListBaselineStatuses_BaselineStatusesItem>();
 			for (int i = 0; i < _ctx.Length("ListBaselineStatuses.Data.BaselineStatuses.Length"); i++) {
 				ListBaselineStatusesResponse.ListBaselineStatuses_Data.ListBaselineStatuses_BaselineStatusesItem baselineStatusesItem = new ListBaselineStatusesResponse.ListBaselineStatuses_Data.ListBaselineStatuses_BaselineStatusesItem();
+				baselineStatusesItem.Status = _ctx.StringValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].Status");
+				baselineStatusesItem.Owner = _ctx.StringValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].Owner");
+				baselineStatusesItem.FinishTime = _ctx.LongValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].FinishTime");
+				baselineStatusesItem.ProjectId = _ctx.LongValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].ProjectId");
+				baselineStatusesItem.Priority = _ctx.IntegerValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].Priority");
+				baselineStatusesItem.EndCast = _ctx.LongValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].EndCast");
+				baselineStatusesItem.InGroupId = _ctx.IntegerValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].InGroupId");
 				baselineStatusesItem.BaselineName = _ctx.StringValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].BaselineName");
 				baselineStatusesItem.BaselineId = _ctx.LongValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].BaselineId");
-				baselineStatusesItem.Bizdate = _ctx.LongValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].Bizdate");
-				baselineStatusesItem.Owner = _ctx.StringValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].Owner");
-				baselineStatusesItem.ExpTime = _ctx.LongValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].ExpTime");
-				baselineStatusesItem.FinishTime = _ctx.LongValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].FinishTime");
-				baselineStatusesItem.EndCast = _ctx.LongValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].EndCast");
-				baselineStatusesItem.SlaTime = _ctx.LongValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].SlaTime");
-				baselineStatusesItem.Priority = _ctx.IntegerValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].Priority");
-				baselineStatusesItem.ProjectId = _ctx.LongValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].ProjectId");
-				baselineStatusesItem.Buffer = _ctx.LongValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].Buffer");
-				baselineStatusesItem.Status = _ctx.StringValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].Status");
 				baselineStatusesItem.FinishStatus = _ctx.StringValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].FinishStatus");
-				baselineStatusesItem.InGroupId = _ctx.IntegerValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].InGroupId");
+				baselineStatusesItem.Bizdate = _ctx.LongValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].Bizdate");
+				baselineStatusesItem.Buffer = _ctx.LongValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].Buffer");
+				baselineStatusesItem.SlaTime = _ctx.LongValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].SlaTime");
+				baselineStatusesItem.ExpTime = _ctx.LongValue("ListBaselineStatuses.Data.BaselineStatuses["+ i +"].ExpTime");
 
 				data_baselineStatuses.Add(baselineStatusesItem);
 			}
