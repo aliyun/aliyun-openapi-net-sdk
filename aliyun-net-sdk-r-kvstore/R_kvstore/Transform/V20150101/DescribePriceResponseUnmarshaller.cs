@@ -31,15 +31,15 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			DescribePriceResponse describePriceResponse = new DescribePriceResponse();
 
 			describePriceResponse.HttpResponse = _ctx.HttpResponse;
-			describePriceResponse.RequestId = _ctx.StringValue("DescribePrice.RequestId");
 			describePriceResponse.OrderParams = _ctx.StringValue("DescribePrice.OrderParams");
+			describePriceResponse.RequestId = _ctx.StringValue("DescribePrice.RequestId");
 
 			DescribePriceResponse.DescribePrice_Order order = new DescribePriceResponse.DescribePrice_Order();
 			order.OriginalAmount = _ctx.StringValue("DescribePrice.Order.OriginalAmount");
-			order.TradeAmount = _ctx.StringValue("DescribePrice.Order.TradeAmount");
-			order.DiscountAmount = _ctx.StringValue("DescribePrice.Order.DiscountAmount");
-			order.Currency = _ctx.StringValue("DescribePrice.Order.Currency");
 			order.HandlingFeeAmount = _ctx.StringValue("DescribePrice.Order.HandlingFeeAmount");
+			order.Currency = _ctx.StringValue("DescribePrice.Order.Currency");
+			order.DiscountAmount = _ctx.StringValue("DescribePrice.Order.DiscountAmount");
+			order.TradeAmount = _ctx.StringValue("DescribePrice.Order.TradeAmount");
 
 			List<string> order_ruleIds1 = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribePrice.Order.RuleIds.Length"); i++) {
@@ -50,10 +50,10 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			List<DescribePriceResponse.DescribePrice_Order.DescribePrice_Coupon> order_coupons = new List<DescribePriceResponse.DescribePrice_Order.DescribePrice_Coupon>();
 			for (int i = 0; i < _ctx.Length("DescribePrice.Order.Coupons.Length"); i++) {
 				DescribePriceResponse.DescribePrice_Order.DescribePrice_Coupon coupon = new DescribePriceResponse.DescribePrice_Order.DescribePrice_Coupon();
+				coupon.IsSelected = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].IsSelected");
 				coupon.CouponNo = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].CouponNo");
 				coupon.Name = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].Name");
 				coupon.Description = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].Description");
-				coupon.IsSelected = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].IsSelected");
 
 				order_coupons.Add(coupon);
 			}
@@ -64,8 +64,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			for (int i = 0; i < _ctx.Length("DescribePrice.Rules.Length"); i++) {
 				DescribePriceResponse.DescribePrice_Rule rule = new DescribePriceResponse.DescribePrice_Rule();
 				rule.RuleDescId = _ctx.LongValue("DescribePrice.Rules["+ i +"].RuleDescId");
-				rule.Name = _ctx.StringValue("DescribePrice.Rules["+ i +"].Name");
 				rule.Title = _ctx.StringValue("DescribePrice.Rules["+ i +"].Title");
+				rule.Name = _ctx.StringValue("DescribePrice.Rules["+ i +"].Name");
 
 				describePriceResponse_rules.Add(rule);
 			}
@@ -75,9 +75,9 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			for (int i = 0; i < _ctx.Length("DescribePrice.SubOrders.Length"); i++) {
 				DescribePriceResponse.DescribePrice_SubOrder subOrder = new DescribePriceResponse.DescribePrice_SubOrder();
 				subOrder.OriginalAmount = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].OriginalAmount");
-				subOrder.TradeAmount = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].TradeAmount");
-				subOrder.DiscountAmount = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].DiscountAmount");
 				subOrder.InstanceId = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].InstanceId");
+				subOrder.DiscountAmount = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].DiscountAmount");
+				subOrder.TradeAmount = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].TradeAmount");
 
 				List<string> subOrder_ruleIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribePrice.SubOrders["+ i +"].RuleIds.Length"); j++) {

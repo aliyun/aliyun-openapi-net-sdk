@@ -39,19 +39,19 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			List<DescribeBackupsResponse.DescribeBackups_Backup> describeBackupsResponse_backups = new List<DescribeBackupsResponse.DescribeBackups_Backup>();
 			for (int i = 0; i < _ctx.Length("DescribeBackups.Backups.Length"); i++) {
 				DescribeBackupsResponse.DescribeBackups_Backup backup = new DescribeBackupsResponse.DescribeBackups_Backup();
-				backup.BackupId = _ctx.IntegerValue("DescribeBackups.Backups["+ i +"].BackupId");
-				backup.BackupDBNames = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupDBNames");
 				backup.BackupStatus = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupStatus");
 				backup.BackupStartTime = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupStartTime");
-				backup.BackupEndTime = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupEndTime");
 				backup.BackupType = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupType");
+				backup.BackupDownloadURL = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupDownloadURL");
+				backup.NodeInstanceId = _ctx.StringValue("DescribeBackups.Backups["+ i +"].NodeInstanceId");
+				backup.BackupEndTime = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupEndTime");
+				backup.BackupId = _ctx.IntegerValue("DescribeBackups.Backups["+ i +"].BackupId");
+				backup.BackupDBNames = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupDBNames");
+				backup.EngineVersion = _ctx.StringValue("DescribeBackups.Backups["+ i +"].EngineVersion");
+				backup.BackupIntranetDownloadURL = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupIntranetDownloadURL");
+				backup.BackupSize = _ctx.LongValue("DescribeBackups.Backups["+ i +"].BackupSize");
 				backup.BackupMode = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupMode");
 				backup.BackupMethod = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupMethod");
-				backup.BackupDownloadURL = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupDownloadURL");
-				backup.BackupSize = _ctx.LongValue("DescribeBackups.Backups["+ i +"].BackupSize");
-				backup.EngineVersion = _ctx.StringValue("DescribeBackups.Backups["+ i +"].EngineVersion");
-				backup.NodeInstanceId = _ctx.StringValue("DescribeBackups.Backups["+ i +"].NodeInstanceId");
-				backup.BackupIntranetDownloadURL = _ctx.StringValue("DescribeBackups.Backups["+ i +"].BackupIntranetDownloadURL");
 
 				describeBackupsResponse_backups.Add(backup);
 			}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			DescribeInstanceConfigResponse describeInstanceConfigResponse = new DescribeInstanceConfigResponse();
 
 			describeInstanceConfigResponse.HttpResponse = _ctx.HttpResponse;
-			describeInstanceConfigResponse.RequestId = _ctx.StringValue("DescribeInstanceConfig.RequestId");
 			describeInstanceConfigResponse.Config = _ctx.StringValue("DescribeInstanceConfig.Config");
+			describeInstanceConfigResponse.RequestId = _ctx.StringValue("DescribeInstanceConfig.RequestId");
         
 			return describeInstanceConfigResponse;
         }

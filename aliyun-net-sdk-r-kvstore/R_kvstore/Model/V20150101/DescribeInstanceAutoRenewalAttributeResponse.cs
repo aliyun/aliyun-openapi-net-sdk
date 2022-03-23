@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -29,9 +29,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private int? pageNumber;
 
-		private int? totalRecordCount;
-
 		private int? pageRecordCount;
+
+		private int? totalRecordCount;
 
 		private List<DescribeInstanceAutoRenewalAttribute_Item> items;
 
@@ -59,18 +59,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
-
 		public int? PageRecordCount
 		{
 			get
@@ -80,6 +68,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				pageRecordCount = value;
+			}
+		}
+
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
 			}
 		}
 
@@ -98,37 +98,25 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeInstanceAutoRenewalAttribute_Item
 		{
 
-			private string dBInstanceId;
-
-			private string regionId;
+			private string status;
 
 			private int? duration;
 
-			private string status;
+			private string dBInstanceId;
 
 			private string autoRenew;
 
-			public string DBInstanceId
-			{
-				get
-				{
-					return dBInstanceId;
-				}
-				set	
-				{
-					dBInstanceId = value;
-				}
-			}
+			private string regionId;
 
-			public string RegionId
+			public string Status
 			{
 				get
 				{
-					return regionId;
+					return status;
 				}
 				set	
 				{
-					regionId = value;
+					status = value;
 				}
 			}
 
@@ -144,15 +132,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string Status
+			public string DBInstanceId
 			{
 				get
 				{
-					return status;
+					return dBInstanceId;
 				}
 				set	
 				{
-					status = value;
+					dBInstanceId = value;
 				}
 			}
 
@@ -165,6 +153,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					autoRenew = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 		}

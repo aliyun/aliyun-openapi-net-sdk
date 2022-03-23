@@ -31,9 +31,9 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			TransformInstanceChargeTypeResponse transformInstanceChargeTypeResponse = new TransformInstanceChargeTypeResponse();
 
 			transformInstanceChargeTypeResponse.HttpResponse = _ctx.HttpResponse;
+			transformInstanceChargeTypeResponse.EndTime = _ctx.StringValue("TransformInstanceChargeType.EndTime");
 			transformInstanceChargeTypeResponse.RequestId = _ctx.StringValue("TransformInstanceChargeType.RequestId");
 			transformInstanceChargeTypeResponse.OrderId = _ctx.StringValue("TransformInstanceChargeType.OrderId");
-			transformInstanceChargeTypeResponse.EndTime = _ctx.StringValue("TransformInstanceChargeType.EndTime");
         
 			return transformInstanceChargeTypeResponse;
         }

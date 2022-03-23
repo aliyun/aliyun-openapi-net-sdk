@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeSecurityIps_SecurityIpGroup
 		{
 
-			private string securityIpGroupName;
-
 			private string securityIpGroupAttribute;
 
 			private string securityIpList;
 
-			public string SecurityIpGroupName
-			{
-				get
-				{
-					return securityIpGroupName;
-				}
-				set	
-				{
-					securityIpGroupName = value;
-				}
-			}
+			private string securityIpGroupName;
 
 			public string SecurityIpGroupAttribute
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					securityIpList = value;
+				}
+			}
+
+			public string SecurityIpGroupName
+			{
+				get
+				{
+					return securityIpGroupName;
+				}
+				set	
+				{
+					securityIpGroupName = value;
 				}
 			}
 		}

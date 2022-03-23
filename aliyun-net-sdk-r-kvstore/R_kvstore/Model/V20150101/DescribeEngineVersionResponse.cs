@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -25,19 +25,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class DescribeEngineVersionResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string engine;
-
 		private bool? isLatestVersion;
 
-		private string minorVersion;
-
-		private bool? enableUpgradeMinorVersion;
-
-		private string majorVersion;
-
-		private bool? enableUpgradeMajorVersion;
+		private string requestId;
 
 		private string proxyMinorVersion;
 
@@ -45,29 +35,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string proxyVersionRelease;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private bool? enableUpgradeMajorVersion;
 
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-			}
-		}
+		private bool? enableUpgradeMinorVersion;
+
+		private string majorVersion;
+
+		private string engine;
+
+		private string minorVersion;
 
 		public bool? IsLatestVersion
 		{
@@ -81,51 +57,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string MinorVersion
+		public string RequestId
 		{
 			get
 			{
-				return minorVersion;
+				return requestId;
 			}
 			set	
 			{
-				minorVersion = value;
-			}
-		}
-
-		public bool? EnableUpgradeMinorVersion
-		{
-			get
-			{
-				return enableUpgradeMinorVersion;
-			}
-			set	
-			{
-				enableUpgradeMinorVersion = value;
-			}
-		}
-
-		public string MajorVersion
-		{
-			get
-			{
-				return majorVersion;
-			}
-			set	
-			{
-				majorVersion = value;
-			}
-		}
-
-		public bool? EnableUpgradeMajorVersion
-		{
-			get
-			{
-				return enableUpgradeMajorVersion;
-			}
-			set	
-			{
-				enableUpgradeMajorVersion = value;
+				requestId = value;
 			}
 		}
 
@@ -162,6 +102,66 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				proxyVersionRelease = value;
+			}
+		}
+
+		public bool? EnableUpgradeMajorVersion
+		{
+			get
+			{
+				return enableUpgradeMajorVersion;
+			}
+			set	
+			{
+				enableUpgradeMajorVersion = value;
+			}
+		}
+
+		public bool? EnableUpgradeMinorVersion
+		{
+			get
+			{
+				return enableUpgradeMinorVersion;
+			}
+			set	
+			{
+				enableUpgradeMinorVersion = value;
+			}
+		}
+
+		public string MajorVersion
+		{
+			get
+			{
+				return majorVersion;
+			}
+			set	
+			{
+				majorVersion = value;
+			}
+		}
+
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
+			}
+		}
+
+		public string MinorVersion
+		{
+			get
+			{
+				return minorVersion;
+			}
+			set	
+			{
+				minorVersion = value;
 			}
 		}
 	}

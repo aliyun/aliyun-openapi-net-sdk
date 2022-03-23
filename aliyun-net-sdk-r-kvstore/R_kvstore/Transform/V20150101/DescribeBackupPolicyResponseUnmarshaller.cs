@@ -31,11 +31,11 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			DescribeBackupPolicyResponse describeBackupPolicyResponse = new DescribeBackupPolicyResponse();
 
 			describeBackupPolicyResponse.HttpResponse = _ctx.HttpResponse;
-			describeBackupPolicyResponse.RequestId = _ctx.StringValue("DescribeBackupPolicy.RequestId");
 			describeBackupPolicyResponse.BackupRetentionPeriod = _ctx.StringValue("DescribeBackupPolicy.BackupRetentionPeriod");
-			describeBackupPolicyResponse.PreferredBackupTime = _ctx.StringValue("DescribeBackupPolicy.PreferredBackupTime");
+			describeBackupPolicyResponse.RequestId = _ctx.StringValue("DescribeBackupPolicy.RequestId");
 			describeBackupPolicyResponse.PreferredBackupPeriod = _ctx.StringValue("DescribeBackupPolicy.PreferredBackupPeriod");
 			describeBackupPolicyResponse.PreferredNextBackupTime = _ctx.StringValue("DescribeBackupPolicy.PreferredNextBackupTime");
+			describeBackupPolicyResponse.PreferredBackupTime = _ctx.StringValue("DescribeBackupPolicy.PreferredBackupTime");
 			describeBackupPolicyResponse.EnableBackupLog = _ctx.IntegerValue("DescribeBackupPolicy.EnableBackupLog");
         
 			return describeBackupPolicyResponse;

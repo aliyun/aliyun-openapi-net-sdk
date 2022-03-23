@@ -31,11 +31,11 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			DescribeIntranetAttributeResponse describeIntranetAttributeResponse = new DescribeIntranetAttributeResponse();
 
 			describeIntranetAttributeResponse.HttpResponse = _ctx.HttpResponse;
-			describeIntranetAttributeResponse.RequestId = _ctx.StringValue("DescribeIntranetAttribute.RequestId");
-			describeIntranetAttributeResponse.IntranetBandwidth = _ctx.IntegerValue("DescribeIntranetAttribute.IntranetBandwidth");
-			describeIntranetAttributeResponse.ExpireTime = _ctx.StringValue("DescribeIntranetAttribute.ExpireTime");
 			describeIntranetAttributeResponse.BandwidthExpireTime = _ctx.StringValue("DescribeIntranetAttribute.BandwidthExpireTime");
 			describeIntranetAttributeResponse.AutoRenewal = _ctx.BooleanValue("DescribeIntranetAttribute.AutoRenewal");
+			describeIntranetAttributeResponse.RequestId = _ctx.StringValue("DescribeIntranetAttribute.RequestId");
+			describeIntranetAttributeResponse.ExpireTime = _ctx.StringValue("DescribeIntranetAttribute.ExpireTime");
+			describeIntranetAttributeResponse.IntranetBandwidth = _ctx.IntegerValue("DescribeIntranetAttribute.IntranetBandwidth");
         
 			return describeIntranetAttributeResponse;
         }

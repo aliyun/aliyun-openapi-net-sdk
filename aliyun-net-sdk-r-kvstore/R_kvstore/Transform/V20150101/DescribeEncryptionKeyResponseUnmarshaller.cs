@@ -31,15 +31,15 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			DescribeEncryptionKeyResponse describeEncryptionKeyResponse = new DescribeEncryptionKeyResponse();
 
 			describeEncryptionKeyResponse.HttpResponse = _ctx.HttpResponse;
-			describeEncryptionKeyResponse.RequestId = _ctx.StringValue("DescribeEncryptionKey.RequestId");
-			describeEncryptionKeyResponse.EncryptionKey = _ctx.StringValue("DescribeEncryptionKey.EncryptionKey");
-			describeEncryptionKeyResponse.Description = _ctx.StringValue("DescribeEncryptionKey.Description");
-			describeEncryptionKeyResponse.KeyUsage = _ctx.StringValue("DescribeEncryptionKey.KeyUsage");
 			describeEncryptionKeyResponse.DeleteDate = _ctx.StringValue("DescribeEncryptionKey.DeleteDate");
-			describeEncryptionKeyResponse.Creator = _ctx.StringValue("DescribeEncryptionKey.Creator");
-			describeEncryptionKeyResponse.EncryptionKeyStatus = _ctx.StringValue("DescribeEncryptionKey.EncryptionKeyStatus");
+			describeEncryptionKeyResponse.RequestId = _ctx.StringValue("DescribeEncryptionKey.RequestId");
+			describeEncryptionKeyResponse.Description = _ctx.StringValue("DescribeEncryptionKey.Description");
 			describeEncryptionKeyResponse.Origin = _ctx.StringValue("DescribeEncryptionKey.Origin");
 			describeEncryptionKeyResponse.MaterialExpireTime = _ctx.StringValue("DescribeEncryptionKey.MaterialExpireTime");
+			describeEncryptionKeyResponse.EncryptionKeyStatus = _ctx.StringValue("DescribeEncryptionKey.EncryptionKeyStatus");
+			describeEncryptionKeyResponse.KeyUsage = _ctx.StringValue("DescribeEncryptionKey.KeyUsage");
+			describeEncryptionKeyResponse.EncryptionKey = _ctx.StringValue("DescribeEncryptionKey.EncryptionKey");
+			describeEncryptionKeyResponse.Creator = _ctx.StringValue("DescribeEncryptionKey.Creator");
         
 			return describeEncryptionKeyResponse;
         }

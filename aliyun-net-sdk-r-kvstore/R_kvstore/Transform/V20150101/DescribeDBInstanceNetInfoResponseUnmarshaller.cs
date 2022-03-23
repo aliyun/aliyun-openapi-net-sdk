@@ -31,23 +31,23 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			DescribeDBInstanceNetInfoResponse describeDBInstanceNetInfoResponse = new DescribeDBInstanceNetInfoResponse();
 
 			describeDBInstanceNetInfoResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBInstanceNetInfoResponse.RequestId = _ctx.StringValue("DescribeDBInstanceNetInfo.RequestId");
 			describeDBInstanceNetInfoResponse.InstanceNetworkType = _ctx.StringValue("DescribeDBInstanceNetInfo.InstanceNetworkType");
+			describeDBInstanceNetInfoResponse.RequestId = _ctx.StringValue("DescribeDBInstanceNetInfo.RequestId");
 
 			List<DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_InstanceNetInfo> describeDBInstanceNetInfoResponse_netInfoItems = new List<DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_InstanceNetInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeDBInstanceNetInfo.NetInfoItems.Length"); i++) {
 				DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_InstanceNetInfo instanceNetInfo = new DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_InstanceNetInfo();
-				instanceNetInfo.ConnectionString = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].ConnectionString");
-				instanceNetInfo.IPAddress = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].IPAddress");
-				instanceNetInfo.Port = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].Port");
-				instanceNetInfo.VPCId = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].VPCId");
+				instanceNetInfo.DirectConnection = _ctx.IntegerValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].DirectConnection");
 				instanceNetInfo.VSwitchId = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].VSwitchId");
 				instanceNetInfo.DBInstanceNetType = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].DBInstanceNetType");
-				instanceNetInfo.VPCInstanceId = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].VPCInstanceId");
-				instanceNetInfo.IPType = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].IPType");
-				instanceNetInfo.ExpiredTime = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].ExpiredTime");
 				instanceNetInfo.Upgradeable = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].Upgradeable");
-				instanceNetInfo.DirectConnection = _ctx.IntegerValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].DirectConnection");
+				instanceNetInfo.ExpiredTime = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].ExpiredTime");
+				instanceNetInfo.ConnectionString = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].ConnectionString");
+				instanceNetInfo.IPType = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].IPType");
+				instanceNetInfo.VPCInstanceId = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].VPCInstanceId");
+				instanceNetInfo.Port = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].Port");
+				instanceNetInfo.VPCId = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].VPCId");
+				instanceNetInfo.IPAddress = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].IPAddress");
 
 				describeDBInstanceNetInfoResponse_netInfoItems.Add(instanceNetInfo);
 			}

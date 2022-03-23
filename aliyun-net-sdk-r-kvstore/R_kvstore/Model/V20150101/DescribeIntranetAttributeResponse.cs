@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -25,51 +25,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class DescribeIntranetAttributeResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? intranetBandwidth;
-
-		private string expireTime;
-
 		private string bandwidthExpireTime;
 
 		private bool? autoRenewal;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
-		public int? IntranetBandwidth
-		{
-			get
-			{
-				return intranetBandwidth;
-			}
-			set	
-			{
-				intranetBandwidth = value;
-			}
-		}
+		private string expireTime;
 
-		public string ExpireTime
-		{
-			get
-			{
-				return expireTime;
-			}
-			set	
-			{
-				expireTime = value;
-			}
-		}
+		private int? intranetBandwidth;
 
 		public string BandwidthExpireTime
 		{
@@ -92,6 +56,42 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				autoRenewal = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string ExpireTime
+		{
+			get
+			{
+				return expireTime;
+			}
+			set	
+			{
+				expireTime = value;
+			}
+		}
+
+		public int? IntranetBandwidth
+		{
+			get
+			{
+				return intranetBandwidth;
+			}
+			set	
+			{
+				intranetBandwidth = value;
 			}
 		}
 	}

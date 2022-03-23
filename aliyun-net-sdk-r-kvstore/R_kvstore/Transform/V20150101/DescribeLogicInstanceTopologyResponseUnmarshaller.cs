@@ -31,17 +31,17 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			DescribeLogicInstanceTopologyResponse describeLogicInstanceTopologyResponse = new DescribeLogicInstanceTopologyResponse();
 
 			describeLogicInstanceTopologyResponse.HttpResponse = _ctx.HttpResponse;
-			describeLogicInstanceTopologyResponse.RequestId = _ctx.StringValue("DescribeLogicInstanceTopology.RequestId");
 			describeLogicInstanceTopologyResponse.InstanceId = _ctx.StringValue("DescribeLogicInstanceTopology.InstanceId");
+			describeLogicInstanceTopologyResponse.RequestId = _ctx.StringValue("DescribeLogicInstanceTopology.RequestId");
 
 			List<DescribeLogicInstanceTopologyResponse.DescribeLogicInstanceTopology_NodeInfo> describeLogicInstanceTopologyResponse_redisProxyList = new List<DescribeLogicInstanceTopologyResponse.DescribeLogicInstanceTopology_NodeInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeLogicInstanceTopology.RedisProxyList.Length"); i++) {
 				DescribeLogicInstanceTopologyResponse.DescribeLogicInstanceTopology_NodeInfo nodeInfo = new DescribeLogicInstanceTopologyResponse.DescribeLogicInstanceTopology_NodeInfo();
-				nodeInfo.NodeId = _ctx.StringValue("DescribeLogicInstanceTopology.RedisProxyList["+ i +"].NodeId");
-				nodeInfo.Connection = _ctx.StringValue("DescribeLogicInstanceTopology.RedisProxyList["+ i +"].Connection");
-				nodeInfo.Bandwidth = _ctx.StringValue("DescribeLogicInstanceTopology.RedisProxyList["+ i +"].Bandwidth");
 				nodeInfo.Capacity = _ctx.StringValue("DescribeLogicInstanceTopology.RedisProxyList["+ i +"].Capacity");
+				nodeInfo.Connection = _ctx.StringValue("DescribeLogicInstanceTopology.RedisProxyList["+ i +"].Connection");
 				nodeInfo.NodeType = _ctx.StringValue("DescribeLogicInstanceTopology.RedisProxyList["+ i +"].NodeType");
+				nodeInfo.Bandwidth = _ctx.StringValue("DescribeLogicInstanceTopology.RedisProxyList["+ i +"].Bandwidth");
+				nodeInfo.NodeId = _ctx.StringValue("DescribeLogicInstanceTopology.RedisProxyList["+ i +"].NodeId");
 
 				describeLogicInstanceTopologyResponse_redisProxyList.Add(nodeInfo);
 			}
@@ -50,11 +50,11 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			List<DescribeLogicInstanceTopologyResponse.DescribeLogicInstanceTopology_NodeInfo> describeLogicInstanceTopologyResponse_redisShardList = new List<DescribeLogicInstanceTopologyResponse.DescribeLogicInstanceTopology_NodeInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeLogicInstanceTopology.RedisShardList.Length"); i++) {
 				DescribeLogicInstanceTopologyResponse.DescribeLogicInstanceTopology_NodeInfo nodeInfo = new DescribeLogicInstanceTopologyResponse.DescribeLogicInstanceTopology_NodeInfo();
-				nodeInfo.NodeId = _ctx.StringValue("DescribeLogicInstanceTopology.RedisShardList["+ i +"].NodeId");
-				nodeInfo.Connection = _ctx.StringValue("DescribeLogicInstanceTopology.RedisShardList["+ i +"].Connection");
-				nodeInfo.Bandwidth = _ctx.StringValue("DescribeLogicInstanceTopology.RedisShardList["+ i +"].Bandwidth");
 				nodeInfo.Capacity = _ctx.StringValue("DescribeLogicInstanceTopology.RedisShardList["+ i +"].Capacity");
+				nodeInfo.Connection = _ctx.StringValue("DescribeLogicInstanceTopology.RedisShardList["+ i +"].Connection");
 				nodeInfo.NodeType = _ctx.StringValue("DescribeLogicInstanceTopology.RedisShardList["+ i +"].NodeType");
+				nodeInfo.Bandwidth = _ctx.StringValue("DescribeLogicInstanceTopology.RedisShardList["+ i +"].Bandwidth");
+				nodeInfo.NodeId = _ctx.StringValue("DescribeLogicInstanceTopology.RedisShardList["+ i +"].NodeId");
 
 				describeLogicInstanceTopologyResponse_redisShardList.Add(nodeInfo);
 			}

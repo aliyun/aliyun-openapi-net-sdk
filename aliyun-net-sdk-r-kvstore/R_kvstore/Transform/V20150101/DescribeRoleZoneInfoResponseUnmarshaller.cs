@@ -39,23 +39,23 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			List<DescribeRoleZoneInfoResponse.DescribeRoleZoneInfo_NodeInfo> describeRoleZoneInfoResponse_node = new List<DescribeRoleZoneInfoResponse.DescribeRoleZoneInfo_NodeInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeRoleZoneInfo.Node.Length"); i++) {
 				DescribeRoleZoneInfoResponse.DescribeRoleZoneInfo_NodeInfo nodeInfo = new DescribeRoleZoneInfoResponse.DescribeRoleZoneInfo_NodeInfo();
-				nodeInfo.NodeId = _ctx.StringValue("DescribeRoleZoneInfo.Node["+ i +"].NodeId");
-				nodeInfo.NodeType = _ctx.StringValue("DescribeRoleZoneInfo.Node["+ i +"].NodeType");
-				nodeInfo.Role = _ctx.StringValue("DescribeRoleZoneInfo.Node["+ i +"].Role");
-				nodeInfo.ZoneId = _ctx.StringValue("DescribeRoleZoneInfo.Node["+ i +"].ZoneId");
 				nodeInfo.CPUUsage = _ctx.StringValue("DescribeRoleZoneInfo.Node["+ i +"].CPUUsage");
-				nodeInfo.Connection = _ctx.FloatValue("DescribeRoleZoneInfo.Node["+ i +"].Connection");
-				nodeInfo.AvgRt = _ctx.FloatValue("DescribeRoleZoneInfo.Node["+ i +"].AvgRt");
-				nodeInfo.IntranetIn = _ctx.FloatValue("DescribeRoleZoneInfo.Node["+ i +"].IntranetIn");
-				nodeInfo.IntranetOut = _ctx.FloatValue("DescribeRoleZoneInfo.Node["+ i +"].IntranetOut");
-				nodeInfo.CustinsId = _ctx.StringValue("DescribeRoleZoneInfo.Node["+ i +"].CustinsId");
-				nodeInfo.InsType = _ctx.IntegerValue("DescribeRoleZoneInfo.Node["+ i +"].InsType");
-				nodeInfo.InsName = _ctx.StringValue("DescribeRoleZoneInfo.Node["+ i +"].InsName");
-				nodeInfo.IsLatestVersion = _ctx.IntegerValue("DescribeRoleZoneInfo.Node["+ i +"].IsLatestVersion");
+				nodeInfo.DefaultBandWidth = _ctx.LongValue("DescribeRoleZoneInfo.Node["+ i +"].DefaultBandWidth");
 				nodeInfo.CurrentMinorVersion = _ctx.StringValue("DescribeRoleZoneInfo.Node["+ i +"].CurrentMinorVersion");
 				nodeInfo.CurrentBandWidth = _ctx.LongValue("DescribeRoleZoneInfo.Node["+ i +"].CurrentBandWidth");
-				nodeInfo.DefaultBandWidth = _ctx.LongValue("DescribeRoleZoneInfo.Node["+ i +"].DefaultBandWidth");
+				nodeInfo.InsType = _ctx.IntegerValue("DescribeRoleZoneInfo.Node["+ i +"].InsType");
+				nodeInfo.IntranetOut = _ctx.FloatValue("DescribeRoleZoneInfo.Node["+ i +"].IntranetOut");
+				nodeInfo.IsLatestVersion = _ctx.IntegerValue("DescribeRoleZoneInfo.Node["+ i +"].IsLatestVersion");
+				nodeInfo.Connection = _ctx.FloatValue("DescribeRoleZoneInfo.Node["+ i +"].Connection");
+				nodeInfo.InsName = _ctx.StringValue("DescribeRoleZoneInfo.Node["+ i +"].InsName");
+				nodeInfo.NodeType = _ctx.StringValue("DescribeRoleZoneInfo.Node["+ i +"].NodeType");
+				nodeInfo.IntranetIn = _ctx.FloatValue("DescribeRoleZoneInfo.Node["+ i +"].IntranetIn");
+				nodeInfo.AvgRt = _ctx.FloatValue("DescribeRoleZoneInfo.Node["+ i +"].AvgRt");
+				nodeInfo.ZoneId = _ctx.StringValue("DescribeRoleZoneInfo.Node["+ i +"].ZoneId");
 				nodeInfo.IsOpenBandWidthService = _ctx.BooleanValue("DescribeRoleZoneInfo.Node["+ i +"].IsOpenBandWidthService");
+				nodeInfo.CustinsId = _ctx.StringValue("DescribeRoleZoneInfo.Node["+ i +"].CustinsId");
+				nodeInfo.Role = _ctx.StringValue("DescribeRoleZoneInfo.Node["+ i +"].Role");
+				nodeInfo.NodeId = _ctx.StringValue("DescribeRoleZoneInfo.Node["+ i +"].NodeId");
 
 				describeRoleZoneInfoResponse_node.Add(nodeInfo);
 			}

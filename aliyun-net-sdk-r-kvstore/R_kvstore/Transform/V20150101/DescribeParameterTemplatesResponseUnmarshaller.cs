@@ -31,20 +31,20 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			DescribeParameterTemplatesResponse describeParameterTemplatesResponse = new DescribeParameterTemplatesResponse();
 
 			describeParameterTemplatesResponse.HttpResponse = _ctx.HttpResponse;
+			describeParameterTemplatesResponse.RequestId = _ctx.StringValue("DescribeParameterTemplates.RequestId");
 			describeParameterTemplatesResponse.Engine = _ctx.StringValue("DescribeParameterTemplates.Engine");
 			describeParameterTemplatesResponse.EngineVersion = _ctx.StringValue("DescribeParameterTemplates.EngineVersion");
 			describeParameterTemplatesResponse.ParameterCount = _ctx.StringValue("DescribeParameterTemplates.ParameterCount");
-			describeParameterTemplatesResponse.RequestId = _ctx.StringValue("DescribeParameterTemplates.RequestId");
 
 			List<DescribeParameterTemplatesResponse.DescribeParameterTemplates_TemplateRecord> describeParameterTemplatesResponse_parameters = new List<DescribeParameterTemplatesResponse.DescribeParameterTemplates_TemplateRecord>();
 			for (int i = 0; i < _ctx.Length("DescribeParameterTemplates.Parameters.Length"); i++) {
 				DescribeParameterTemplatesResponse.DescribeParameterTemplates_TemplateRecord templateRecord = new DescribeParameterTemplatesResponse.DescribeParameterTemplates_TemplateRecord();
 				templateRecord.CheckingCode = _ctx.StringValue("DescribeParameterTemplates.Parameters["+ i +"].CheckingCode");
+				templateRecord.ParameterName = _ctx.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ParameterName");
+				templateRecord.ParameterValue = _ctx.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ParameterValue");
 				templateRecord.ForceModify = _ctx.BooleanValue("DescribeParameterTemplates.Parameters["+ i +"].ForceModify");
 				templateRecord.ForceRestart = _ctx.BooleanValue("DescribeParameterTemplates.Parameters["+ i +"].ForceRestart");
 				templateRecord.ParameterDescription = _ctx.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ParameterDescription");
-				templateRecord.ParameterName = _ctx.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ParameterName");
-				templateRecord.ParameterValue = _ctx.StringValue("DescribeParameterTemplates.Parameters["+ i +"].ParameterValue");
 
 				describeParameterTemplatesResponse_parameters.Add(templateRecord);
 			}

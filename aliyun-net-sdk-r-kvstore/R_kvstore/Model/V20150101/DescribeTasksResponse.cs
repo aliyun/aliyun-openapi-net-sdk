@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -98,49 +98,25 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeTasks_TaskProgressInfo
 		{
 
-			private string taskId;
-
-			private string taskAction;
-
 			private string status;
-
-			private float? progress;
-
-			private string beginTime;
 
 			private string finishTime;
 
 			private string stepsInfo;
 
-			private int? remain;
+			private float? progress;
 
-			private string stepProgressInfo;
+			private string beginTime;
+
+			private int? remain;
 
 			private string currentStepName;
 
-			public string TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
+			private string stepProgressInfo;
 
-			public string TaskAction
-			{
-				get
-				{
-					return taskAction;
-				}
-				set	
-				{
-					taskAction = value;
-				}
-			}
+			private string taskId;
+
+			private string taskAction;
 
 			public string Status
 			{
@@ -151,30 +127,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					status = value;
-				}
-			}
-
-			public float? Progress
-			{
-				get
-				{
-					return progress;
-				}
-				set	
-				{
-					progress = value;
-				}
-			}
-
-			public string BeginTime
-			{
-				get
-				{
-					return beginTime;
-				}
-				set	
-				{
-					beginTime = value;
 				}
 			}
 
@@ -202,6 +154,30 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
+			public float? Progress
+			{
+				get
+				{
+					return progress;
+				}
+				set	
+				{
+					progress = value;
+				}
+			}
+
+			public string BeginTime
+			{
+				get
+				{
+					return beginTime;
+				}
+				set	
+				{
+					beginTime = value;
+				}
+			}
+
 			public int? Remain
 			{
 				get
@@ -211,6 +187,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					remain = value;
+				}
+			}
+
+			public string CurrentStepName
+			{
+				get
+				{
+					return currentStepName;
+				}
+				set	
+				{
+					currentStepName = value;
 				}
 			}
 
@@ -226,15 +214,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string CurrentStepName
+			public string TaskId
 			{
 				get
 				{
-					return currentStepName;
+					return taskId;
 				}
 				set	
 				{
-					currentStepName = value;
+					taskId = value;
+				}
+			}
+
+			public string TaskAction
+			{
+				get
+				{
+					return taskAction;
+				}
+				set	
+				{
+					taskAction = value;
 				}
 			}
 		}

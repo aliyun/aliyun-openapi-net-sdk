@@ -31,9 +31,9 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			DescribeAuditLogConfigResponse describeAuditLogConfigResponse = new DescribeAuditLogConfigResponse();
 
 			describeAuditLogConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeAuditLogConfigResponse.Retention = _ctx.StringValue("DescribeAuditLogConfig.Retention");
 			describeAuditLogConfigResponse.RequestId = _ctx.StringValue("DescribeAuditLogConfig.RequestId");
 			describeAuditLogConfigResponse.DbAudit = _ctx.StringValue("DescribeAuditLogConfig.DbAudit");
-			describeAuditLogConfigResponse.Retention = _ctx.StringValue("DescribeAuditLogConfig.Retention");
         
 			return describeAuditLogConfigResponse;
         }

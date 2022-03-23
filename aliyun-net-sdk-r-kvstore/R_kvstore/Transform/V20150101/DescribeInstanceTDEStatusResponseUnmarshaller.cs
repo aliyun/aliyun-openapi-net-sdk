@@ -31,8 +31,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			DescribeInstanceTDEStatusResponse describeInstanceTDEStatusResponse = new DescribeInstanceTDEStatusResponse();
 
 			describeInstanceTDEStatusResponse.HttpResponse = _ctx.HttpResponse;
-			describeInstanceTDEStatusResponse.RequestId = _ctx.StringValue("DescribeInstanceTDEStatus.RequestId");
 			describeInstanceTDEStatusResponse.TDEStatus = _ctx.StringValue("DescribeInstanceTDEStatus.TDEStatus");
+			describeInstanceTDEStatusResponse.RequestId = _ctx.StringValue("DescribeInstanceTDEStatus.RequestId");
         
 			return describeInstanceTDEStatusResponse;
         }

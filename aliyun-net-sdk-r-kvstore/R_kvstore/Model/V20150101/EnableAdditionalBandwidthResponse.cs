@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class EnableAdditionalBandwidthResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string orderId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string OrderId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				orderId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

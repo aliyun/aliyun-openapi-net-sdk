@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -25,29 +25,17 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class DescribeCacheAnalysisReportListResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string instanceId;
 
-		private int? totalRecordCount;
-
-		private int? pageNumbers;
+		private string requestId;
 
 		private int? pageRecordCount;
 
-		private List<DescribeCacheAnalysisReportList_DailyTask> dailyTasks;
+		private int? pageNumbers;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private int? totalRecordCount;
+
+		private List<DescribeCacheAnalysisReportList_DailyTask> dailyTasks;
 
 		public string InstanceId
 		{
@@ -61,15 +49,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? TotalRecordCount
+		public string RequestId
 		{
 			get
 			{
-				return totalRecordCount;
+				return requestId;
 			}
 			set	
 			{
-				totalRecordCount = value;
+				requestId = value;
+			}
+		}
+
+		public int? PageRecordCount
+		{
+			get
+			{
+				return pageRecordCount;
+			}
+			set	
+			{
+				pageRecordCount = value;
 			}
 		}
 
@@ -85,15 +85,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? PageRecordCount
+		public int? TotalRecordCount
 		{
 			get
 			{
-				return pageRecordCount;
+				return totalRecordCount;
 			}
 			set	
 			{
-				pageRecordCount = value;
+				totalRecordCount = value;
 			}
 		}
 
@@ -143,13 +143,37 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			public class DescribeCacheAnalysisReportList_Task
 			{
 
+				private string status;
+
+				private string startTime;
+
 				private string taskId;
 
 				private string nodeId;
 
-				private string startTime;
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 
-				private string status;
+				public string StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
+					}
+				}
 
 				public string TaskId
 				{
@@ -172,30 +196,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 					set	
 					{
 						nodeId = value;
-					}
-				}
-
-				public string StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
 					}
 				}
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class DescribeInstanceConfigResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string config;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string Config
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				config = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

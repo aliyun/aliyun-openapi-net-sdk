@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class DescribeLogicInstanceTopologyResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string instanceId;
+
+		private string requestId;
 
 		private List<DescribeLogicInstanceTopology_NodeInfo> redisProxyList;
 
 		private List<DescribeLogicInstanceTopology_NodeInfo> redisShardList;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public string InstanceId
 		{
@@ -54,6 +42,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				instanceId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -84,25 +84,25 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeLogicInstanceTopology_NodeInfo
 		{
 
-			private string nodeId;
+			private string capacity;
 
 			private string connection;
 
-			private string bandwidth;
-
-			private string capacity;
-
 			private string nodeType;
 
-			public string NodeId
+			private string bandwidth;
+
+			private string nodeId;
+
+			public string Capacity
 			{
 				get
 				{
-					return nodeId;
+					return capacity;
 				}
 				set	
 				{
-					nodeId = value;
+					capacity = value;
 				}
 			}
 
@@ -118,6 +118,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
+			public string NodeType
+			{
+				get
+				{
+					return nodeType;
+				}
+				set	
+				{
+					nodeType = value;
+				}
+			}
+
 			public string Bandwidth
 			{
 				get
@@ -130,27 +142,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string Capacity
+			public string NodeId
 			{
 				get
 				{
-					return capacity;
+					return nodeId;
 				}
 				set	
 				{
-					capacity = value;
-				}
-			}
-
-			public string NodeType
-			{
-				get
-				{
-					return nodeType;
-				}
-				set	
-				{
-					nodeType = value;
+					nodeId = value;
 				}
 			}
 		}

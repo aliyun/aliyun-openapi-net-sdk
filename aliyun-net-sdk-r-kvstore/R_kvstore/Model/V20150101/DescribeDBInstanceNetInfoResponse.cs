@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class DescribeDBInstanceNetInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string instanceNetworkType;
 
-		private List<DescribeDBInstanceNetInfo_InstanceNetInfo> netInfoItems;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeDBInstanceNetInfo_InstanceNetInfo> netInfoItems;
 
 		public string InstanceNetworkType
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				instanceNetworkType = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,73 +70,37 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeDBInstanceNetInfo_InstanceNetInfo
 		{
 
-			private string connectionString;
-
-			private string iPAddress;
-
-			private string port;
-
-			private string vPCId;
+			private int? directConnection;
 
 			private string vSwitchId;
 
 			private string dBInstanceNetType;
 
-			private string vPCInstanceId;
-
-			private string iPType;
+			private string upgradeable;
 
 			private string expiredTime;
 
-			private string upgradeable;
+			private string connectionString;
 
-			private int? directConnection;
+			private string iPType;
 
-			public string ConnectionString
+			private string vPCInstanceId;
+
+			private string port;
+
+			private string vPCId;
+
+			private string iPAddress;
+
+			public int? DirectConnection
 			{
 				get
 				{
-					return connectionString;
+					return directConnection;
 				}
 				set	
 				{
-					connectionString = value;
-				}
-			}
-
-			public string IPAddress
-			{
-				get
-				{
-					return iPAddress;
-				}
-				set	
-				{
-					iPAddress = value;
-				}
-			}
-
-			public string Port
-			{
-				get
-				{
-					return port;
-				}
-				set	
-				{
-					port = value;
-				}
-			}
-
-			public string VPCId
-			{
-				get
-				{
-					return vPCId;
-				}
-				set	
-				{
-					vPCId = value;
+					directConnection = value;
 				}
 			}
 
@@ -164,27 +128,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string VPCInstanceId
+			public string Upgradeable
 			{
 				get
 				{
-					return vPCInstanceId;
+					return upgradeable;
 				}
 				set	
 				{
-					vPCInstanceId = value;
-				}
-			}
-
-			public string IPType
-			{
-				get
-				{
-					return iPType;
-				}
-				set	
-				{
-					iPType = value;
+					upgradeable = value;
 				}
 			}
 
@@ -200,27 +152,75 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string Upgradeable
+			public string ConnectionString
 			{
 				get
 				{
-					return upgradeable;
+					return connectionString;
 				}
 				set	
 				{
-					upgradeable = value;
+					connectionString = value;
 				}
 			}
 
-			public int? DirectConnection
+			public string IPType
 			{
 				get
 				{
-					return directConnection;
+					return iPType;
 				}
 				set	
 				{
-					directConnection = value;
+					iPType = value;
+				}
+			}
+
+			public string VPCInstanceId
+			{
+				get
+				{
+					return vPCInstanceId;
+				}
+				set	
+				{
+					vPCInstanceId = value;
+				}
+			}
+
+			public string Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
+				}
+			}
+
+			public string VPCId
+			{
+				get
+				{
+					return vPCId;
+				}
+				set	
+				{
+					vPCId = value;
+				}
+			}
+
+			public string IPAddress
+			{
+				get
+				{
+					return iPAddress;
+				}
+				set	
+				{
+					iPAddress = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -25,21 +25,45 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class DescribeAuditRecordsResponse : AcsResponse
 	{
 
+		private string endTime;
+
+		private string startTime;
+
 		private string requestId;
+
+		private string instanceName;
+
+		private int? totalRecordCount;
 
 		private int? pageNumber;
 
 		private int? pageSize;
 
-		private int? totalRecordCount;
-
-		private string instanceName;
-
-		private string startTime;
-
-		private string endTime;
-
 		private List<DescribeAuditRecords_SQL> items;
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -50,6 +74,30 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string InstanceName
+		{
+			get
+			{
+				return instanceName;
+			}
+			set	
+			{
+				instanceName = value;
+			}
+		}
+
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
 			}
 		}
 
@@ -77,54 +125,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
-
-		public string InstanceName
-		{
-			get
-			{
-				return instanceName;
-			}
-			set	
-			{
-				instanceName = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
-
 		public List<DescribeAuditRecords_SQL> Items
 		{
 			get
@@ -142,21 +142,21 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string hostAddress;
 
-			private string databaseName;
-
-			private string iPAddress;
-
 			private string sQLText;
+
+			private string databaseName;
 
 			private string sQLType;
 
+			private string executeTime;
+
 			private string totalExecutionTimes;
 
-			private string executeTime;
+			private string nodeId;
 
 			private string accountName;
 
-			private string nodeId;
+			private string iPAddress;
 
 			public string HostAddress
 			{
@@ -167,30 +167,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					hostAddress = value;
-				}
-			}
-
-			public string DatabaseName
-			{
-				get
-				{
-					return databaseName;
-				}
-				set	
-				{
-					databaseName = value;
-				}
-			}
-
-			public string IPAddress
-			{
-				get
-				{
-					return iPAddress;
-				}
-				set	
-				{
-					iPAddress = value;
 				}
 			}
 
@@ -206,6 +182,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
+			public string DatabaseName
+			{
+				get
+				{
+					return databaseName;
+				}
+				set	
+				{
+					databaseName = value;
+				}
+			}
+
 			public string SQLType
 			{
 				get
@@ -215,18 +203,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					sQLType = value;
-				}
-			}
-
-			public string TotalExecutionTimes
-			{
-				get
-				{
-					return totalExecutionTimes;
-				}
-				set	
-				{
-					totalExecutionTimes = value;
 				}
 			}
 
@@ -242,15 +218,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string AccountName
+			public string TotalExecutionTimes
 			{
 				get
 				{
-					return accountName;
+					return totalExecutionTimes;
 				}
 				set	
 				{
-					accountName = value;
+					totalExecutionTimes = value;
 				}
 			}
 
@@ -263,6 +239,30 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					nodeId = value;
+				}
+			}
+
+			public string AccountName
+			{
+				get
+				{
+					return accountName;
+				}
+				set	
+				{
+					accountName = value;
+				}
+			}
+
+			public string IPAddress
+			{
+				get
+				{
+					return iPAddress;
+				}
+				set	
+				{
+					iPAddress = value;
 				}
 			}
 		}

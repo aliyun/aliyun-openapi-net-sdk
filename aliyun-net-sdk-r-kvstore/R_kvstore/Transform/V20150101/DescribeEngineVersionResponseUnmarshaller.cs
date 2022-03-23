@@ -31,16 +31,16 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			DescribeEngineVersionResponse describeEngineVersionResponse = new DescribeEngineVersionResponse();
 
 			describeEngineVersionResponse.HttpResponse = _ctx.HttpResponse;
-			describeEngineVersionResponse.RequestId = _ctx.StringValue("DescribeEngineVersion.RequestId");
-			describeEngineVersionResponse.Engine = _ctx.StringValue("DescribeEngineVersion.Engine");
 			describeEngineVersionResponse.IsLatestVersion = _ctx.BooleanValue("DescribeEngineVersion.IsLatestVersion");
-			describeEngineVersionResponse.MinorVersion = _ctx.StringValue("DescribeEngineVersion.MinorVersion");
-			describeEngineVersionResponse.EnableUpgradeMinorVersion = _ctx.BooleanValue("DescribeEngineVersion.EnableUpgradeMinorVersion");
-			describeEngineVersionResponse.MajorVersion = _ctx.StringValue("DescribeEngineVersion.MajorVersion");
-			describeEngineVersionResponse.EnableUpgradeMajorVersion = _ctx.BooleanValue("DescribeEngineVersion.EnableUpgradeMajorVersion");
+			describeEngineVersionResponse.RequestId = _ctx.StringValue("DescribeEngineVersion.RequestId");
 			describeEngineVersionResponse.ProxyMinorVersion = _ctx.StringValue("DescribeEngineVersion.ProxyMinorVersion");
 			describeEngineVersionResponse.DBVersionRelease = _ctx.StringValue("DescribeEngineVersion.DBVersionRelease");
 			describeEngineVersionResponse.ProxyVersionRelease = _ctx.StringValue("DescribeEngineVersion.ProxyVersionRelease");
+			describeEngineVersionResponse.EnableUpgradeMajorVersion = _ctx.BooleanValue("DescribeEngineVersion.EnableUpgradeMajorVersion");
+			describeEngineVersionResponse.EnableUpgradeMinorVersion = _ctx.BooleanValue("DescribeEngineVersion.EnableUpgradeMinorVersion");
+			describeEngineVersionResponse.MajorVersion = _ctx.StringValue("DescribeEngineVersion.MajorVersion");
+			describeEngineVersionResponse.Engine = _ctx.StringValue("DescribeEngineVersion.Engine");
+			describeEngineVersionResponse.MinorVersion = _ctx.StringValue("DescribeEngineVersion.MinorVersion");
         
 			return describeEngineVersionResponse;
         }

@@ -31,26 +31,26 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			DescribeAuditRecordsResponse describeAuditRecordsResponse = new DescribeAuditRecordsResponse();
 
 			describeAuditRecordsResponse.HttpResponse = _ctx.HttpResponse;
+			describeAuditRecordsResponse.EndTime = _ctx.StringValue("DescribeAuditRecords.EndTime");
+			describeAuditRecordsResponse.StartTime = _ctx.StringValue("DescribeAuditRecords.StartTime");
 			describeAuditRecordsResponse.RequestId = _ctx.StringValue("DescribeAuditRecords.RequestId");
+			describeAuditRecordsResponse.InstanceName = _ctx.StringValue("DescribeAuditRecords.InstanceName");
+			describeAuditRecordsResponse.TotalRecordCount = _ctx.IntegerValue("DescribeAuditRecords.TotalRecordCount");
 			describeAuditRecordsResponse.PageNumber = _ctx.IntegerValue("DescribeAuditRecords.PageNumber");
 			describeAuditRecordsResponse.PageSize = _ctx.IntegerValue("DescribeAuditRecords.PageSize");
-			describeAuditRecordsResponse.TotalRecordCount = _ctx.IntegerValue("DescribeAuditRecords.TotalRecordCount");
-			describeAuditRecordsResponse.InstanceName = _ctx.StringValue("DescribeAuditRecords.InstanceName");
-			describeAuditRecordsResponse.StartTime = _ctx.StringValue("DescribeAuditRecords.StartTime");
-			describeAuditRecordsResponse.EndTime = _ctx.StringValue("DescribeAuditRecords.EndTime");
 
 			List<DescribeAuditRecordsResponse.DescribeAuditRecords_SQL> describeAuditRecordsResponse_items = new List<DescribeAuditRecordsResponse.DescribeAuditRecords_SQL>();
 			for (int i = 0; i < _ctx.Length("DescribeAuditRecords.Items.Length"); i++) {
 				DescribeAuditRecordsResponse.DescribeAuditRecords_SQL sQL = new DescribeAuditRecordsResponse.DescribeAuditRecords_SQL();
 				sQL.HostAddress = _ctx.StringValue("DescribeAuditRecords.Items["+ i +"].HostAddress");
-				sQL.DatabaseName = _ctx.StringValue("DescribeAuditRecords.Items["+ i +"].DatabaseName");
-				sQL.IPAddress = _ctx.StringValue("DescribeAuditRecords.Items["+ i +"].IPAddress");
 				sQL.SQLText = _ctx.StringValue("DescribeAuditRecords.Items["+ i +"].SQLText");
+				sQL.DatabaseName = _ctx.StringValue("DescribeAuditRecords.Items["+ i +"].DatabaseName");
 				sQL.SQLType = _ctx.StringValue("DescribeAuditRecords.Items["+ i +"].SQLType");
-				sQL.TotalExecutionTimes = _ctx.StringValue("DescribeAuditRecords.Items["+ i +"].TotalExecutionTimes");
 				sQL.ExecuteTime = _ctx.StringValue("DescribeAuditRecords.Items["+ i +"].ExecuteTime");
-				sQL.AccountName = _ctx.StringValue("DescribeAuditRecords.Items["+ i +"].AccountName");
+				sQL.TotalExecutionTimes = _ctx.StringValue("DescribeAuditRecords.Items["+ i +"].TotalExecutionTimes");
 				sQL.NodeId = _ctx.StringValue("DescribeAuditRecords.Items["+ i +"].NodeId");
+				sQL.AccountName = _ctx.StringValue("DescribeAuditRecords.Items["+ i +"].AccountName");
+				sQL.IPAddress = _ctx.StringValue("DescribeAuditRecords.Items["+ i +"].IPAddress");
 
 				describeAuditRecordsResponse_items.Add(sQL);
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeMonitorItems_KVStoreMonitorItem
 		{
 
-			private string monitorKey;
-
 			private string unit;
 
-			public string MonitorKey
-			{
-				get
-				{
-					return monitorKey;
-				}
-				set	
-				{
-					monitorKey = value;
-				}
-			}
+			private string monitorKey;
 
 			public string Unit
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					unit = value;
+				}
+			}
+
+			public string MonitorKey
+			{
+				get
+				{
+					return monitorKey;
+				}
+				set	
+				{
+					monitorKey = value;
 				}
 			}
 		}

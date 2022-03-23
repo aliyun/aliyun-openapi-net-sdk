@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -98,87 +98,39 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeRoleZoneInfo_NodeInfo
 		{
 
-			private string nodeId;
-
-			private string nodeType;
-
-			private string role;
-
-			private string zoneId;
-
 			private string cPUUsage;
 
-			private float? connection;
-
-			private float? avgRt;
-
-			private float? intranetIn;
-
-			private float? intranetOut;
-
-			private string custinsId;
-
-			private int? insType;
-
-			private string insName;
-
-			private int? isLatestVersion;
+			private long? defaultBandWidth;
 
 			private string currentMinorVersion;
 
 			private long? currentBandWidth;
 
-			private long? defaultBandWidth;
+			private int? insType;
+
+			private float? intranetOut;
+
+			private int? isLatestVersion;
+
+			private float? connection;
+
+			private string insName;
+
+			private string nodeType;
+
+			private float? intranetIn;
+
+			private float? avgRt;
+
+			private string zoneId;
 
 			private bool? isOpenBandWidthService;
 
-			public string NodeId
-			{
-				get
-				{
-					return nodeId;
-				}
-				set	
-				{
-					nodeId = value;
-				}
-			}
+			private string custinsId;
 
-			public string NodeType
-			{
-				get
-				{
-					return nodeType;
-				}
-				set	
-				{
-					nodeType = value;
-				}
-			}
+			private string role;
 
-			public string Role
-			{
-				get
-				{
-					return role;
-				}
-				set	
-				{
-					role = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
+			private string nodeId;
 
 			public string CPUUsage
 			{
@@ -192,99 +144,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public float? Connection
+			public long? DefaultBandWidth
 			{
 				get
 				{
-					return connection;
+					return defaultBandWidth;
 				}
 				set	
 				{
-					connection = value;
-				}
-			}
-
-			public float? AvgRt
-			{
-				get
-				{
-					return avgRt;
-				}
-				set	
-				{
-					avgRt = value;
-				}
-			}
-
-			public float? IntranetIn
-			{
-				get
-				{
-					return intranetIn;
-				}
-				set	
-				{
-					intranetIn = value;
-				}
-			}
-
-			public float? IntranetOut
-			{
-				get
-				{
-					return intranetOut;
-				}
-				set	
-				{
-					intranetOut = value;
-				}
-			}
-
-			public string CustinsId
-			{
-				get
-				{
-					return custinsId;
-				}
-				set	
-				{
-					custinsId = value;
-				}
-			}
-
-			public int? InsType
-			{
-				get
-				{
-					return insType;
-				}
-				set	
-				{
-					insType = value;
-				}
-			}
-
-			public string InsName
-			{
-				get
-				{
-					return insName;
-				}
-				set	
-				{
-					insName = value;
-				}
-			}
-
-			public int? IsLatestVersion
-			{
-				get
-				{
-					return isLatestVersion;
-				}
-				set	
-				{
-					isLatestVersion = value;
+					defaultBandWidth = value;
 				}
 			}
 
@@ -312,15 +180,111 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public long? DefaultBandWidth
+			public int? InsType
 			{
 				get
 				{
-					return defaultBandWidth;
+					return insType;
 				}
 				set	
 				{
-					defaultBandWidth = value;
+					insType = value;
+				}
+			}
+
+			public float? IntranetOut
+			{
+				get
+				{
+					return intranetOut;
+				}
+				set	
+				{
+					intranetOut = value;
+				}
+			}
+
+			public int? IsLatestVersion
+			{
+				get
+				{
+					return isLatestVersion;
+				}
+				set	
+				{
+					isLatestVersion = value;
+				}
+			}
+
+			public float? Connection
+			{
+				get
+				{
+					return connection;
+				}
+				set	
+				{
+					connection = value;
+				}
+			}
+
+			public string InsName
+			{
+				get
+				{
+					return insName;
+				}
+				set	
+				{
+					insName = value;
+				}
+			}
+
+			public string NodeType
+			{
+				get
+				{
+					return nodeType;
+				}
+				set	
+				{
+					nodeType = value;
+				}
+			}
+
+			public float? IntranetIn
+			{
+				get
+				{
+					return intranetIn;
+				}
+				set	
+				{
+					intranetIn = value;
+				}
+			}
+
+			public float? AvgRt
+			{
+				get
+				{
+					return avgRt;
+				}
+				set	
+				{
+					avgRt = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
 				}
 			}
 
@@ -333,6 +297,42 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					isOpenBandWidthService = value;
+				}
+			}
+
+			public string CustinsId
+			{
+				get
+				{
+					return custinsId;
+				}
+				set	
+				{
+					custinsId = value;
+				}
+			}
+
+			public string Role
+			{
+				get
+				{
+					return role;
+				}
+				set	
+				{
+					role = value;
+				}
+			}
+
+			public string NodeId
+			{
+				get
+				{
+					return nodeId;
+				}
+				set	
+				{
+					nodeId = value;
 				}
 			}
 		}

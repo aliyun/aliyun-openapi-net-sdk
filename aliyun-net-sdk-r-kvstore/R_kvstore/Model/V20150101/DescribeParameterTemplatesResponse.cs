@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class DescribeParameterTemplatesResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string engine;
 
 		private string engineVersion;
 
 		private string parameterCount;
 
-		private string requestId;
-
 		private List<DescribeParameterTemplates_TemplateRecord> parameters;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string Engine
 		{
@@ -71,18 +83,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
 		public List<DescribeParameterTemplates_TemplateRecord> Parameters
 		{
 			get
@@ -100,15 +100,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string checkingCode;
 
+			private string parameterName;
+
+			private string parameterValue;
+
 			private bool? forceModify;
 
 			private bool? forceRestart;
 
 			private string parameterDescription;
-
-			private string parameterName;
-
-			private string parameterValue;
 
 			public string CheckingCode
 			{
@@ -119,6 +119,30 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					checkingCode = value;
+				}
+			}
+
+			public string ParameterName
+			{
+				get
+				{
+					return parameterName;
+				}
+				set	
+				{
+					parameterName = value;
+				}
+			}
+
+			public string ParameterValue
+			{
+				get
+				{
+					return parameterValue;
+				}
+				set	
+				{
+					parameterValue = value;
 				}
 			}
 
@@ -155,30 +179,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					parameterDescription = value;
-				}
-			}
-
-			public string ParameterName
-			{
-				get
-				{
-					return parameterName;
-				}
-				set	
-				{
-					parameterName = value;
-				}
-			}
-
-			public string ParameterValue
-			{
-				get
-				{
-					return parameterValue;
-				}
-				set	
-				{
-					parameterValue = value;
 				}
 			}
 		}

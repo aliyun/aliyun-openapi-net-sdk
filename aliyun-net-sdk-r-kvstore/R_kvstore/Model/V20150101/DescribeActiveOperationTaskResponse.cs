@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class DescribeActiveOperationTaskResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageNumber;
 
-		private int? totalRecordCount;
+		private string requestId;
 
 		private int? pageSize;
 
-		private int? pageNumber;
+		private int? totalRecordCount;
 
 		private List<DescribeActiveOperationTask_ItemsItem> items;
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? PageNumber
+		public int? TotalRecordCount
 		{
 			get
 			{
-				return pageNumber;
+				return totalRecordCount;
 			}
 			set	
 			{
-				pageNumber = value;
+				totalRecordCount = value;
 			}
 		}
 
@@ -98,25 +98,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeActiveOperationTask_ItemsItem
 		{
 
-			private int? id;
-
-			private string insName;
-
-			private string dbType;
-
-			private string startTime;
-
-			private string switchTime;
-
-			private string deadline;
-
 			private int? status;
 
-			private string createdTime;
-
-			private string modifiedTime;
-
-			private string resultInfo;
+			private string deadline;
 
 			private string prepareInterval;
 
@@ -124,79 +108,23 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string taskType;
 
+			private string startTime;
+
+			private string modifiedTime;
+
+			private string insName;
+
+			private string dbType;
+
 			private string region;
 
-			public int? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private string resultInfo;
 
-			public string InsName
-			{
-				get
-				{
-					return insName;
-				}
-				set	
-				{
-					insName = value;
-				}
-			}
+			private string createdTime;
 
-			public string DbType
-			{
-				get
-				{
-					return dbType;
-				}
-				set	
-				{
-					dbType = value;
-				}
-			}
+			private int? id;
 
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
-			public string SwitchTime
-			{
-				get
-				{
-					return switchTime;
-				}
-				set	
-				{
-					switchTime = value;
-				}
-			}
-
-			public string Deadline
-			{
-				get
-				{
-					return deadline;
-				}
-				set	
-				{
-					deadline = value;
-				}
-			}
+			private string switchTime;
 
 			public int? Status
 			{
@@ -210,39 +138,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string CreatedTime
+			public string Deadline
 			{
 				get
 				{
-					return createdTime;
+					return deadline;
 				}
 				set	
 				{
-					createdTime = value;
-				}
-			}
-
-			public string ModifiedTime
-			{
-				get
-				{
-					return modifiedTime;
-				}
-				set	
-				{
-					modifiedTime = value;
-				}
-			}
-
-			public string ResultInfo
-			{
-				get
-				{
-					return resultInfo;
-				}
-				set	
-				{
-					resultInfo = value;
+					deadline = value;
 				}
 			}
 
@@ -282,6 +186,54 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			public string ModifiedTime
+			{
+				get
+				{
+					return modifiedTime;
+				}
+				set	
+				{
+					modifiedTime = value;
+				}
+			}
+
+			public string InsName
+			{
+				get
+				{
+					return insName;
+				}
+				set	
+				{
+					insName = value;
+				}
+			}
+
+			public string DbType
+			{
+				get
+				{
+					return dbType;
+				}
+				set	
+				{
+					dbType = value;
+				}
+			}
+
 			public string Region
 			{
 				get
@@ -291,6 +243,54 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					region = value;
+				}
+			}
+
+			public string ResultInfo
+			{
+				get
+				{
+					return resultInfo;
+				}
+				set	
+				{
+					resultInfo = value;
+				}
+			}
+
+			public string CreatedTime
+			{
+				get
+				{
+					return createdTime;
+				}
+				set	
+				{
+					createdTime = value;
+				}
+			}
+
+			public int? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string SwitchTime
+			{
+				get
+				{
+					return switchTime;
+				}
+				set	
+				{
+					switchTime = value;
 				}
 			}
 		}

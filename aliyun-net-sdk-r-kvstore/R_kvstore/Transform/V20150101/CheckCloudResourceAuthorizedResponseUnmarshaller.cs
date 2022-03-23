@@ -31,8 +31,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			CheckCloudResourceAuthorizedResponse checkCloudResourceAuthorizedResponse = new CheckCloudResourceAuthorizedResponse();
 
 			checkCloudResourceAuthorizedResponse.HttpResponse = _ctx.HttpResponse;
-			checkCloudResourceAuthorizedResponse.RequestId = _ctx.StringValue("CheckCloudResourceAuthorized.RequestId");
 			checkCloudResourceAuthorizedResponse.AuthorizationState = _ctx.IntegerValue("CheckCloudResourceAuthorized.AuthorizationState");
+			checkCloudResourceAuthorizedResponse.RequestId = _ctx.StringValue("CheckCloudResourceAuthorized.RequestId");
         
 			return checkCloudResourceAuthorizedResponse;
         }

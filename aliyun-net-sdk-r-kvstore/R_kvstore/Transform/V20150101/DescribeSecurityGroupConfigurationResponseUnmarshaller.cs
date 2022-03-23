@@ -36,8 +36,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			List<DescribeSecurityGroupConfigurationResponse.DescribeSecurityGroupConfiguration_EcsSecurityGroupRelation> describeSecurityGroupConfigurationResponse_items = new List<DescribeSecurityGroupConfigurationResponse.DescribeSecurityGroupConfiguration_EcsSecurityGroupRelation>();
 			for (int i = 0; i < _ctx.Length("DescribeSecurityGroupConfiguration.Items.Length"); i++) {
 				DescribeSecurityGroupConfigurationResponse.DescribeSecurityGroupConfiguration_EcsSecurityGroupRelation ecsSecurityGroupRelation = new DescribeSecurityGroupConfigurationResponse.DescribeSecurityGroupConfiguration_EcsSecurityGroupRelation();
-				ecsSecurityGroupRelation.RegionId = _ctx.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].RegionId");
 				ecsSecurityGroupRelation.SecurityGroupId = _ctx.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].SecurityGroupId");
+				ecsSecurityGroupRelation.RegionId = _ctx.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].RegionId");
 				ecsSecurityGroupRelation.NetType = _ctx.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].NetType");
 
 				describeSecurityGroupConfigurationResponse_items.Add(ecsSecurityGroupRelation);

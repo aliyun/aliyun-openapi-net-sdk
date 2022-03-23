@@ -31,16 +31,16 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			ModifyInstanceNetExpireTimeResponse modifyInstanceNetExpireTimeResponse = new ModifyInstanceNetExpireTimeResponse();
 
 			modifyInstanceNetExpireTimeResponse.HttpResponse = _ctx.HttpResponse;
-			modifyInstanceNetExpireTimeResponse.RequestId = _ctx.StringValue("ModifyInstanceNetExpireTime.RequestId");
 			modifyInstanceNetExpireTimeResponse.InstanceId = _ctx.StringValue("ModifyInstanceNetExpireTime.InstanceId");
+			modifyInstanceNetExpireTimeResponse.RequestId = _ctx.StringValue("ModifyInstanceNetExpireTime.RequestId");
 
 			List<ModifyInstanceNetExpireTimeResponse.ModifyInstanceNetExpireTime_NetInfoItem> modifyInstanceNetExpireTimeResponse_netInfoItems = new List<ModifyInstanceNetExpireTimeResponse.ModifyInstanceNetExpireTime_NetInfoItem>();
 			for (int i = 0; i < _ctx.Length("ModifyInstanceNetExpireTime.NetInfoItems.Length"); i++) {
 				ModifyInstanceNetExpireTimeResponse.ModifyInstanceNetExpireTime_NetInfoItem netInfoItem = new ModifyInstanceNetExpireTimeResponse.ModifyInstanceNetExpireTime_NetInfoItem();
-				netInfoItem.DBInstanceNetType = _ctx.StringValue("ModifyInstanceNetExpireTime.NetInfoItems["+ i +"].DBInstanceNetType");
 				netInfoItem.Port = _ctx.StringValue("ModifyInstanceNetExpireTime.NetInfoItems["+ i +"].Port");
-				netInfoItem.ExpiredTime = _ctx.StringValue("ModifyInstanceNetExpireTime.NetInfoItems["+ i +"].ExpiredTime");
+				netInfoItem.DBInstanceNetType = _ctx.StringValue("ModifyInstanceNetExpireTime.NetInfoItems["+ i +"].DBInstanceNetType");
 				netInfoItem.ConnectionString = _ctx.StringValue("ModifyInstanceNetExpireTime.NetInfoItems["+ i +"].ConnectionString");
+				netInfoItem.ExpiredTime = _ctx.StringValue("ModifyInstanceNetExpireTime.NetInfoItems["+ i +"].ExpiredTime");
 				netInfoItem.IPAddress = _ctx.StringValue("ModifyInstanceNetExpireTime.NetInfoItems["+ i +"].IPAddress");
 
 				modifyInstanceNetExpireTimeResponse_netInfoItems.Add(netInfoItem);

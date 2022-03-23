@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class ModifyInstanceNetExpireTimeResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string instanceId;
 
-		private List<ModifyInstanceNetExpireTime_NetInfoItem> netInfoItems;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<ModifyInstanceNetExpireTime_NetInfoItem> netInfoItems;
 
 		public string InstanceId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				instanceId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,27 +70,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class ModifyInstanceNetExpireTime_NetInfoItem
 		{
 
-			private string dBInstanceNetType;
-
 			private string port;
 
-			private string expiredTime;
+			private string dBInstanceNetType;
 
 			private string connectionString;
 
-			private string iPAddress;
+			private string expiredTime;
 
-			public string DBInstanceNetType
-			{
-				get
-				{
-					return dBInstanceNetType;
-				}
-				set	
-				{
-					dBInstanceNetType = value;
-				}
-			}
+			private string iPAddress;
 
 			public string Port
 			{
@@ -104,15 +92,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string ExpiredTime
+			public string DBInstanceNetType
 			{
 				get
 				{
-					return expiredTime;
+					return dBInstanceNetType;
 				}
 				set	
 				{
-					expiredTime = value;
+					dBInstanceNetType = value;
 				}
 			}
 
@@ -125,6 +113,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					connectionString = value;
+				}
+			}
+
+			public string ExpiredTime
+			{
+				get
+				{
+					return expiredTime;
+				}
+				set	
+				{
+					expiredTime = value;
 				}
 			}
 

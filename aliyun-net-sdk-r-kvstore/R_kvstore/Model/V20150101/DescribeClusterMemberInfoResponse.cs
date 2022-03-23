@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -98,215 +98,59 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeClusterMemberInfo_Children
 		{
 
-			private long? id;
-
-			private string name;
-
-			private string bizType;
-
-			private int? replicaSize;
-
-			private int? modifier;
-
-			private string serviceVersion;
-
-			private int? diskSizeMB;
-
-			private string nickname;
-
-			private string primaryInsName;
-
-			private string classCode;
-
-			private int? creator;
-
-			private string resourceGroupName;
-
-			private string health;
-
-			private int? binlogRetentionDays;
+			private long? capacity;
 
 			private string userId;
 
 			private string lockReason;
 
-			private string service;
-
-			private long? capacity;
+			private int? diskSizeMB;
 
 			private long? bandWidth;
 
+			private long? currentBandWidth;
+
+			private string classCode;
+
+			private int? creator;
+
+			private string bizType;
+
+			private string service;
+
+			private int? binlogRetentionDays;
+
+			private string primaryInsName;
+
+			private int? modifier;
+
 			private long? connections;
 
-			private long? currentBandWidth;
+			private string health;
+
+			private string resourceGroupName;
+
+			private string nickname;
+
+			private string serviceVersion;
+
+			private int? replicaSize;
+
+			private string name;
+
+			private long? id;
 
 			private List<DescribeClusterMemberInfo_Item> items;
 
-			public long? Id
+			public long? Capacity
 			{
 				get
 				{
-					return id;
+					return capacity;
 				}
 				set	
 				{
-					id = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string BizType
-			{
-				get
-				{
-					return bizType;
-				}
-				set	
-				{
-					bizType = value;
-				}
-			}
-
-			public int? ReplicaSize
-			{
-				get
-				{
-					return replicaSize;
-				}
-				set	
-				{
-					replicaSize = value;
-				}
-			}
-
-			public int? Modifier
-			{
-				get
-				{
-					return modifier;
-				}
-				set	
-				{
-					modifier = value;
-				}
-			}
-
-			public string ServiceVersion
-			{
-				get
-				{
-					return serviceVersion;
-				}
-				set	
-				{
-					serviceVersion = value;
-				}
-			}
-
-			public int? DiskSizeMB
-			{
-				get
-				{
-					return diskSizeMB;
-				}
-				set	
-				{
-					diskSizeMB = value;
-				}
-			}
-
-			public string Nickname
-			{
-				get
-				{
-					return nickname;
-				}
-				set	
-				{
-					nickname = value;
-				}
-			}
-
-			public string PrimaryInsName
-			{
-				get
-				{
-					return primaryInsName;
-				}
-				set	
-				{
-					primaryInsName = value;
-				}
-			}
-
-			public string ClassCode
-			{
-				get
-				{
-					return classCode;
-				}
-				set	
-				{
-					classCode = value;
-				}
-			}
-
-			public int? Creator
-			{
-				get
-				{
-					return creator;
-				}
-				set	
-				{
-					creator = value;
-				}
-			}
-
-			public string ResourceGroupName
-			{
-				get
-				{
-					return resourceGroupName;
-				}
-				set	
-				{
-					resourceGroupName = value;
-				}
-			}
-
-			public string Health
-			{
-				get
-				{
-					return health;
-				}
-				set	
-				{
-					health = value;
-				}
-			}
-
-			public int? BinlogRetentionDays
-			{
-				get
-				{
-					return binlogRetentionDays;
-				}
-				set	
-				{
-					binlogRetentionDays = value;
+					capacity = value;
 				}
 			}
 
@@ -334,27 +178,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string Service
+			public int? DiskSizeMB
 			{
 				get
 				{
-					return service;
+					return diskSizeMB;
 				}
 				set	
 				{
-					service = value;
-				}
-			}
-
-			public long? Capacity
-			{
-				get
-				{
-					return capacity;
-				}
-				set	
-				{
-					capacity = value;
+					diskSizeMB = value;
 				}
 			}
 
@@ -370,6 +202,102 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
+			public long? CurrentBandWidth
+			{
+				get
+				{
+					return currentBandWidth;
+				}
+				set	
+				{
+					currentBandWidth = value;
+				}
+			}
+
+			public string ClassCode
+			{
+				get
+				{
+					return classCode;
+				}
+				set	
+				{
+					classCode = value;
+				}
+			}
+
+			public int? Creator
+			{
+				get
+				{
+					return creator;
+				}
+				set	
+				{
+					creator = value;
+				}
+			}
+
+			public string BizType
+			{
+				get
+				{
+					return bizType;
+				}
+				set	
+				{
+					bizType = value;
+				}
+			}
+
+			public string Service
+			{
+				get
+				{
+					return service;
+				}
+				set	
+				{
+					service = value;
+				}
+			}
+
+			public int? BinlogRetentionDays
+			{
+				get
+				{
+					return binlogRetentionDays;
+				}
+				set	
+				{
+					binlogRetentionDays = value;
+				}
+			}
+
+			public string PrimaryInsName
+			{
+				get
+				{
+					return primaryInsName;
+				}
+				set	
+				{
+					primaryInsName = value;
+				}
+			}
+
+			public int? Modifier
+			{
+				get
+				{
+					return modifier;
+				}
+				set	
+				{
+					modifier = value;
+				}
+			}
+
 			public long? Connections
 			{
 				get
@@ -382,15 +310,87 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public long? CurrentBandWidth
+			public string Health
 			{
 				get
 				{
-					return currentBandWidth;
+					return health;
 				}
 				set	
 				{
-					currentBandWidth = value;
+					health = value;
+				}
+			}
+
+			public string ResourceGroupName
+			{
+				get
+				{
+					return resourceGroupName;
+				}
+				set	
+				{
+					resourceGroupName = value;
+				}
+			}
+
+			public string Nickname
+			{
+				get
+				{
+					return nickname;
+				}
+				set	
+				{
+					nickname = value;
+				}
+			}
+
+			public string ServiceVersion
+			{
+				get
+				{
+					return serviceVersion;
+				}
+				set	
+				{
+					serviceVersion = value;
+				}
+			}
+
+			public int? ReplicaSize
+			{
+				get
+				{
+					return replicaSize;
+				}
+				set	
+				{
+					replicaSize = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 
@@ -409,55 +409,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			public class DescribeClusterMemberInfo_Item
 			{
 
-				private int? id;
-
-				private string hostName;
-
-				private string role;
-
 				private string status;
 
 				private string zoneId;
 
+				private string hostName;
+
 				private string ip;
 
+				private string role;
+
+				private int? id;
+
 				private List<string> ports;
-
-				public int? Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
-
-				public string HostName
-				{
-					get
-					{
-						return hostName;
-					}
-					set	
-					{
-						hostName = value;
-					}
-				}
-
-				public string Role
-				{
-					get
-					{
-						return role;
-					}
-					set	
-					{
-						role = value;
-					}
-				}
 
 				public string Status
 				{
@@ -483,6 +447,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 					}
 				}
 
+				public string HostName
+				{
+					get
+					{
+						return hostName;
+					}
+					set	
+					{
+						hostName = value;
+					}
+				}
+
 				public string Ip
 				{
 					get
@@ -492,6 +468,30 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 					set	
 					{
 						ip = value;
+					}
+				}
+
+				public string Role
+				{
+					get
+					{
+						return role;
+					}
+					set	
+					{
+						role = value;
+					}
+				}
+
+				public int? Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
 					}
 				}
 

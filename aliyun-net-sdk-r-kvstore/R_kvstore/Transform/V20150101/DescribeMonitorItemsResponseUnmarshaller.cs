@@ -36,8 +36,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			List<DescribeMonitorItemsResponse.DescribeMonitorItems_KVStoreMonitorItem> describeMonitorItemsResponse_monitorItems = new List<DescribeMonitorItemsResponse.DescribeMonitorItems_KVStoreMonitorItem>();
 			for (int i = 0; i < _ctx.Length("DescribeMonitorItems.MonitorItems.Length"); i++) {
 				DescribeMonitorItemsResponse.DescribeMonitorItems_KVStoreMonitorItem kVStoreMonitorItem = new DescribeMonitorItemsResponse.DescribeMonitorItems_KVStoreMonitorItem();
-				kVStoreMonitorItem.MonitorKey = _ctx.StringValue("DescribeMonitorItems.MonitorItems["+ i +"].MonitorKey");
 				kVStoreMonitorItem.Unit = _ctx.StringValue("DescribeMonitorItems.MonitorItems["+ i +"].Unit");
+				kVStoreMonitorItem.MonitorKey = _ctx.StringValue("DescribeMonitorItems.MonitorItems["+ i +"].MonitorKey");
 
 				describeMonitorItemsResponse_monitorItems.Add(kVStoreMonitorItem);
 			}

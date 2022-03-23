@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeSecurityGroupConfiguration_EcsSecurityGroupRelation
 		{
 
-			private string regionId;
-
 			private string securityGroupId;
 
-			private string netType;
+			private string regionId;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+			private string netType;
 
 			public string SecurityGroupId
 			{
@@ -83,6 +71,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					securityGroupId = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 

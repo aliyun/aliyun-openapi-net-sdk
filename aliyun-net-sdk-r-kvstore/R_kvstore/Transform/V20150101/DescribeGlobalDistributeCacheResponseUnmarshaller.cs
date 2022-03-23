@@ -31,26 +31,26 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			DescribeGlobalDistributeCacheResponse describeGlobalDistributeCacheResponse = new DescribeGlobalDistributeCacheResponse();
 
 			describeGlobalDistributeCacheResponse.HttpResponse = _ctx.HttpResponse;
-			describeGlobalDistributeCacheResponse.RequestId = _ctx.StringValue("DescribeGlobalDistributeCache.RequestId");
-			describeGlobalDistributeCacheResponse.TotalRecordCount = _ctx.IntegerValue("DescribeGlobalDistributeCache.TotalRecordCount");
-			describeGlobalDistributeCacheResponse.PageNumber = _ctx.IntegerValue("DescribeGlobalDistributeCache.PageNumber");
 			describeGlobalDistributeCacheResponse.PageSize = _ctx.IntegerValue("DescribeGlobalDistributeCache.PageSize");
+			describeGlobalDistributeCacheResponse.RequestId = _ctx.StringValue("DescribeGlobalDistributeCache.RequestId");
+			describeGlobalDistributeCacheResponse.PageNumber = _ctx.IntegerValue("DescribeGlobalDistributeCache.PageNumber");
+			describeGlobalDistributeCacheResponse.TotalRecordCount = _ctx.IntegerValue("DescribeGlobalDistributeCache.TotalRecordCount");
 
 			List<DescribeGlobalDistributeCacheResponse.DescribeGlobalDistributeCache_GlobalDistributeCache> describeGlobalDistributeCacheResponse_globalDistributeCaches = new List<DescribeGlobalDistributeCacheResponse.DescribeGlobalDistributeCache_GlobalDistributeCache>();
 			for (int i = 0; i < _ctx.Length("DescribeGlobalDistributeCache.GlobalDistributeCaches.Length"); i++) {
 				DescribeGlobalDistributeCacheResponse.DescribeGlobalDistributeCache_GlobalDistributeCache globalDistributeCache = new DescribeGlobalDistributeCacheResponse.DescribeGlobalDistributeCache_GlobalDistributeCache();
-				globalDistributeCache.GlobalInstanceId = _ctx.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].GlobalInstanceId");
-				globalDistributeCache.GlobalInstanceName = _ctx.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].GlobalInstanceName");
 				globalDistributeCache.Status = _ctx.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].Status");
+				globalDistributeCache.GlobalInstanceName = _ctx.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].GlobalInstanceName");
+				globalDistributeCache.GlobalInstanceId = _ctx.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].GlobalInstanceId");
 
 				List<DescribeGlobalDistributeCacheResponse.DescribeGlobalDistributeCache_GlobalDistributeCache.DescribeGlobalDistributeCache_SubInstance> globalDistributeCache_subInstances = new List<DescribeGlobalDistributeCacheResponse.DescribeGlobalDistributeCache_GlobalDistributeCache.DescribeGlobalDistributeCache_SubInstance>();
 				for (int j = 0; j < _ctx.Length("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].SubInstances.Length"); j++) {
 					DescribeGlobalDistributeCacheResponse.DescribeGlobalDistributeCache_GlobalDistributeCache.DescribeGlobalDistributeCache_SubInstance subInstance = new DescribeGlobalDistributeCacheResponse.DescribeGlobalDistributeCache_GlobalDistributeCache.DescribeGlobalDistributeCache_SubInstance();
-					subInstance.GlobalInstanceId = _ctx.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].GlobalInstanceId");
-					subInstance.InstanceID = _ctx.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].InstanceID");
-					subInstance.RegionId = _ctx.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].RegionId");
 					subInstance.InstanceStatus = _ctx.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].InstanceStatus");
+					subInstance.InstanceID = _ctx.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].InstanceID");
 					subInstance.InstanceClass = _ctx.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].InstanceClass");
+					subInstance.GlobalInstanceId = _ctx.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].GlobalInstanceId");
+					subInstance.RegionId = _ctx.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].RegionId");
 
 					globalDistributeCache_subInstances.Add(subInstance);
 				}

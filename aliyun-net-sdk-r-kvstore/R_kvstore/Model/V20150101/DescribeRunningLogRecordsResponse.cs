@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -25,47 +25,23 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class DescribeRunningLogRecordsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string instanceId;
-
 		private string startTime;
 
-		private string engine;
-
-		private int? totalRecordCount;
-
-		private int? pageNumber;
-
-		private int? pageSize;
+		private string requestId;
 
 		private int? pageRecordCount;
 
+		private int? totalRecordCount;
+
+		private int? pageSize;
+
+		private string instanceId;
+
+		private string engine;
+
+		private int? pageNumber;
+
 		private List<DescribeRunningLogRecords_LogRecords> items;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
 
 		public string StartTime
 		{
@@ -79,15 +55,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string Engine
+		public string RequestId
 		{
 			get
 			{
-				return engine;
+				return requestId;
 			}
 			set	
 			{
-				engine = value;
+				requestId = value;
+			}
+		}
+
+		public int? PageRecordCount
+		{
+			get
+			{
+				return pageRecordCount;
+			}
+			set	
+			{
+				pageRecordCount = value;
 			}
 		}
 
@@ -103,18 +91,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -127,15 +103,39 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? PageRecordCount
+		public string InstanceId
 		{
 			get
 			{
-				return pageRecordCount;
+				return instanceId;
 			}
 			set	
 			{
-				pageRecordCount = value;
+				instanceId = value;
+			}
+		}
+
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
 			}
 		}
 
@@ -154,43 +154,31 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeRunningLogRecords_LogRecords
 		{
 
-			private string level;
-
-			private int? id;
+			private string connInfo;
 
 			private string createTime;
 
 			private string category;
 
-			private string connInfo;
+			private string instanceId;
 
 			private string content;
 
-			private string instanceId;
-
 			private string nodeId;
 
-			public string Level
-			{
-				get
-				{
-					return level;
-				}
-				set	
-				{
-					level = value;
-				}
-			}
+			private string level;
 
-			public int? Id
+			private int? id;
+
+			public string ConnInfo
 			{
 				get
 				{
-					return id;
+					return connInfo;
 				}
 				set	
 				{
-					id = value;
+					connInfo = value;
 				}
 			}
 
@@ -218,15 +206,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string ConnInfo
+			public string InstanceId
 			{
 				get
 				{
-					return connInfo;
+					return instanceId;
 				}
 				set	
 				{
-					connInfo = value;
+					instanceId = value;
 				}
 			}
 
@@ -242,18 +230,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
 			public string NodeId
 			{
 				get
@@ -263,6 +239,30 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					nodeId = value;
+				}
+			}
+
+			public string Level
+			{
+				get
+				{
+					return level;
+				}
+				set	
+				{
+					level = value;
+				}
+			}
+
+			public int? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 		}

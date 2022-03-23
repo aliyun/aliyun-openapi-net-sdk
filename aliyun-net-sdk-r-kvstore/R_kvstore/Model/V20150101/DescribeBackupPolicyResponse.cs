@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -25,29 +25,17 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class DescribeBackupPolicyResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string backupRetentionPeriod;
 
-		private string preferredBackupTime;
+		private string requestId;
 
 		private string preferredBackupPeriod;
 
 		private string preferredNextBackupTime;
 
-		private int? enableBackupLog;
+		private string preferredBackupTime;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private int? enableBackupLog;
 
 		public string BackupRetentionPeriod
 		{
@@ -61,15 +49,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string PreferredBackupTime
+		public string RequestId
 		{
 			get
 			{
-				return preferredBackupTime;
+				return requestId;
 			}
 			set	
 			{
-				preferredBackupTime = value;
+				requestId = value;
 			}
 		}
 
@@ -94,6 +82,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				preferredNextBackupTime = value;
+			}
+		}
+
+		public string PreferredBackupTime
+		{
+			get
+			{
+				return preferredBackupTime;
+			}
+			set	
+			{
+				preferredBackupTime = value;
 			}
 		}
 

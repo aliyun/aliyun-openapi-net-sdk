@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -56,27 +56,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeZones_KVStoreZone
 		{
 
-			private string regionId;
+			private bool? isRds;
 
 			private string zoneId;
 
-			private string zoneName;
+			private bool? disabled;
 
 			private bool? switchNetwork;
 
-			private bool? isRds;
+			private string zoneName;
 
-			private bool? disabled;
+			private string regionId;
 
-			public string RegionId
+			public bool? IsRds
 			{
 				get
 				{
-					return regionId;
+					return isRds;
 				}
 				set	
 				{
-					regionId = value;
+					isRds = value;
 				}
 			}
 
@@ -92,15 +92,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string ZoneName
+			public bool? Disabled
 			{
 				get
 				{
-					return zoneName;
+					return disabled;
 				}
 				set	
 				{
-					zoneName = value;
+					disabled = value;
 				}
 			}
 
@@ -116,27 +116,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public bool? IsRds
+			public string ZoneName
 			{
 				get
 				{
-					return isRds;
+					return zoneName;
 				}
 				set	
 				{
-					isRds = value;
+					zoneName = value;
 				}
 			}
 
-			public bool? Disabled
+			public string RegionId
 			{
 				get
 				{
-					return disabled;
+					return regionId;
 				}
 				set	
 				{
-					disabled = value;
+					regionId = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -56,17 +56,29 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeAccounts_Account
 		{
 
+			private string accountDescription;
+
 			private string instanceId;
-
-			private string accountName;
-
-			private string accountStatus;
 
 			private string accountType;
 
-			private string accountDescription;
+			private string accountStatus;
+
+			private string accountName;
 
 			private List<DescribeAccounts_DatabasePrivilege> databasePrivileges;
+
+			public string AccountDescription
+			{
+				get
+				{
+					return accountDescription;
+				}
+				set	
+				{
+					accountDescription = value;
+				}
+			}
 
 			public string InstanceId
 			{
@@ -77,30 +89,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					instanceId = value;
-				}
-			}
-
-			public string AccountName
-			{
-				get
-				{
-					return accountName;
-				}
-				set	
-				{
-					accountName = value;
-				}
-			}
-
-			public string AccountStatus
-			{
-				get
-				{
-					return accountStatus;
-				}
-				set	
-				{
-					accountStatus = value;
 				}
 			}
 
@@ -116,15 +104,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string AccountDescription
+			public string AccountStatus
 			{
 				get
 				{
-					return accountDescription;
+					return accountStatus;
 				}
 				set	
 				{
-					accountDescription = value;
+					accountStatus = value;
+				}
+			}
+
+			public string AccountName
+			{
+				get
+				{
+					return accountName;
+				}
+				set	
+				{
+					accountName = value;
 				}
 			}
 
@@ -143,21 +143,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			public class DescribeAccounts_DatabasePrivilege
 			{
 
-				private string accountPrivilege;
-
 				private string accountPrivilegeDetail;
 
-				public string AccountPrivilege
-				{
-					get
-					{
-						return accountPrivilege;
-					}
-					set	
-					{
-						accountPrivilege = value;
-					}
-				}
+				private string accountPrivilege;
 
 				public string AccountPrivilegeDetail
 				{
@@ -168,6 +156,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 					set	
 					{
 						accountPrivilegeDetail = value;
+					}
+				}
+
+				public string AccountPrivilege
+				{
+					get
+					{
+						return accountPrivilege;
+					}
+					set	
+					{
+						accountPrivilege = value;
 					}
 				}
 			}

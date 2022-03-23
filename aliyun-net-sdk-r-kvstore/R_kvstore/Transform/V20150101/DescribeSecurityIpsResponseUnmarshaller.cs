@@ -36,9 +36,9 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			List<DescribeSecurityIpsResponse.DescribeSecurityIps_SecurityIpGroup> describeSecurityIpsResponse_securityIpGroups = new List<DescribeSecurityIpsResponse.DescribeSecurityIps_SecurityIpGroup>();
 			for (int i = 0; i < _ctx.Length("DescribeSecurityIps.SecurityIpGroups.Length"); i++) {
 				DescribeSecurityIpsResponse.DescribeSecurityIps_SecurityIpGroup securityIpGroup = new DescribeSecurityIpsResponse.DescribeSecurityIps_SecurityIpGroup();
-				securityIpGroup.SecurityIpGroupName = _ctx.StringValue("DescribeSecurityIps.SecurityIpGroups["+ i +"].SecurityIpGroupName");
 				securityIpGroup.SecurityIpGroupAttribute = _ctx.StringValue("DescribeSecurityIps.SecurityIpGroups["+ i +"].SecurityIpGroupAttribute");
 				securityIpGroup.SecurityIpList = _ctx.StringValue("DescribeSecurityIps.SecurityIpGroups["+ i +"].SecurityIpList");
+				securityIpGroup.SecurityIpGroupName = _ctx.StringValue("DescribeSecurityIps.SecurityIpGroups["+ i +"].SecurityIpGroupName");
 
 				describeSecurityIpsResponse_securityIpGroups.Add(securityIpGroup);
 			}

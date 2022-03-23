@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -25,47 +25,23 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class DescribeSlowLogRecordsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string instanceId;
-
 		private string startTime;
 
-		private string engine;
-
-		private int? totalRecordCount;
-
-		private int? pageNumber;
-
-		private int? pageSize;
+		private string requestId;
 
 		private int? pageRecordCount;
 
+		private int? totalRecordCount;
+
+		private int? pageSize;
+
+		private string instanceId;
+
+		private string engine;
+
+		private int? pageNumber;
+
 		private List<DescribeSlowLogRecords_LogRecords> items;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
 
 		public string StartTime
 		{
@@ -79,15 +55,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string Engine
+		public string RequestId
 		{
 			get
 			{
-				return engine;
+				return requestId;
 			}
 			set	
 			{
-				engine = value;
+				requestId = value;
+			}
+		}
+
+		public int? PageRecordCount
+		{
+			get
+			{
+				return pageRecordCount;
+			}
+			set	
+			{
+				pageRecordCount = value;
 			}
 		}
 
@@ -103,18 +91,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -127,15 +103,39 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? PageRecordCount
+		public string InstanceId
 		{
 			get
 			{
-				return pageRecordCount;
+				return instanceId;
 			}
 			set	
 			{
-				pageRecordCount = value;
+				instanceId = value;
+			}
+		}
+
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
 			}
 		}
 
@@ -154,81 +154,33 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeSlowLogRecords_LogRecords
 		{
 
-			private string nodeId;
-
-			private string iPAddress;
-
-			private string dBName;
-
-			private string dataBaseName;
-
-			private string command;
+			private string account;
 
 			private long? elapsedTime;
 
+			private string command;
+
+			private string dBName;
+
 			private string executeTime;
 
-			private string account;
+			private string dataBaseName;
+
+			private string nodeId;
 
 			private string accountName;
 
-			public string NodeId
-			{
-				get
-				{
-					return nodeId;
-				}
-				set	
-				{
-					nodeId = value;
-				}
-			}
+			private string iPAddress;
 
-			public string IPAddress
+			public string Account
 			{
 				get
 				{
-					return iPAddress;
+					return account;
 				}
 				set	
 				{
-					iPAddress = value;
-				}
-			}
-
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
-				}
-			}
-
-			public string DataBaseName
-			{
-				get
-				{
-					return dataBaseName;
-				}
-				set	
-				{
-					dataBaseName = value;
-				}
-			}
-
-			public string Command
-			{
-				get
-				{
-					return command;
-				}
-				set	
-				{
-					command = value;
+					account = value;
 				}
 			}
 
@@ -244,6 +196,30 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
+			public string Command
+			{
+				get
+				{
+					return command;
+				}
+				set	
+				{
+					command = value;
+				}
+			}
+
+			public string DBName
+			{
+				get
+				{
+					return dBName;
+				}
+				set	
+				{
+					dBName = value;
+				}
+			}
+
 			public string ExecuteTime
 			{
 				get
@@ -256,15 +232,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string Account
+			public string DataBaseName
 			{
 				get
 				{
-					return account;
+					return dataBaseName;
 				}
 				set	
 				{
-					account = value;
+					dataBaseName = value;
+				}
+			}
+
+			public string NodeId
+			{
+				get
+				{
+					return nodeId;
+				}
+				set	
+				{
+					nodeId = value;
 				}
 			}
 
@@ -277,6 +265,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					accountName = value;
+				}
+			}
+
+			public string IPAddress
+			{
+				get
+				{
+					return iPAddress;
+				}
+				set	
+				{
+					iPAddress = value;
 				}
 			}
 		}

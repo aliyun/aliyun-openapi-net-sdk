@@ -31,11 +31,11 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			DescribeCacheAnalysisReportListResponse describeCacheAnalysisReportListResponse = new DescribeCacheAnalysisReportListResponse();
 
 			describeCacheAnalysisReportListResponse.HttpResponse = _ctx.HttpResponse;
-			describeCacheAnalysisReportListResponse.RequestId = _ctx.StringValue("DescribeCacheAnalysisReportList.RequestId");
 			describeCacheAnalysisReportListResponse.InstanceId = _ctx.StringValue("DescribeCacheAnalysisReportList.InstanceId");
-			describeCacheAnalysisReportListResponse.TotalRecordCount = _ctx.IntegerValue("DescribeCacheAnalysisReportList.TotalRecordCount");
-			describeCacheAnalysisReportListResponse.PageNumbers = _ctx.IntegerValue("DescribeCacheAnalysisReportList.PageNumbers");
+			describeCacheAnalysisReportListResponse.RequestId = _ctx.StringValue("DescribeCacheAnalysisReportList.RequestId");
 			describeCacheAnalysisReportListResponse.PageRecordCount = _ctx.IntegerValue("DescribeCacheAnalysisReportList.PageRecordCount");
+			describeCacheAnalysisReportListResponse.PageNumbers = _ctx.IntegerValue("DescribeCacheAnalysisReportList.PageNumbers");
+			describeCacheAnalysisReportListResponse.TotalRecordCount = _ctx.IntegerValue("DescribeCacheAnalysisReportList.TotalRecordCount");
 
 			List<DescribeCacheAnalysisReportListResponse.DescribeCacheAnalysisReportList_DailyTask> describeCacheAnalysisReportListResponse_dailyTasks = new List<DescribeCacheAnalysisReportListResponse.DescribeCacheAnalysisReportList_DailyTask>();
 			for (int i = 0; i < _ctx.Length("DescribeCacheAnalysisReportList.DailyTasks.Length"); i++) {
@@ -45,10 +45,10 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				List<DescribeCacheAnalysisReportListResponse.DescribeCacheAnalysisReportList_DailyTask.DescribeCacheAnalysisReportList_Task> dailyTask_tasks = new List<DescribeCacheAnalysisReportListResponse.DescribeCacheAnalysisReportList_DailyTask.DescribeCacheAnalysisReportList_Task>();
 				for (int j = 0; j < _ctx.Length("DescribeCacheAnalysisReportList.DailyTasks["+ i +"].Tasks.Length"); j++) {
 					DescribeCacheAnalysisReportListResponse.DescribeCacheAnalysisReportList_DailyTask.DescribeCacheAnalysisReportList_Task task = new DescribeCacheAnalysisReportListResponse.DescribeCacheAnalysisReportList_DailyTask.DescribeCacheAnalysisReportList_Task();
+					task.Status = _ctx.StringValue("DescribeCacheAnalysisReportList.DailyTasks["+ i +"].Tasks["+ j +"].Status");
+					task.StartTime = _ctx.StringValue("DescribeCacheAnalysisReportList.DailyTasks["+ i +"].Tasks["+ j +"].StartTime");
 					task.TaskId = _ctx.StringValue("DescribeCacheAnalysisReportList.DailyTasks["+ i +"].Tasks["+ j +"].TaskId");
 					task.NodeId = _ctx.StringValue("DescribeCacheAnalysisReportList.DailyTasks["+ i +"].Tasks["+ j +"].NodeId");
-					task.StartTime = _ctx.StringValue("DescribeCacheAnalysisReportList.DailyTasks["+ i +"].Tasks["+ j +"].StartTime");
-					task.Status = _ctx.StringValue("DescribeCacheAnalysisReportList.DailyTasks["+ i +"].Tasks["+ j +"].Status");
 
 					dailyTask_tasks.Add(task);
 				}

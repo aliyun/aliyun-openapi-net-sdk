@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -56,27 +56,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeAvailableResource_AvailableZone
 		{
 
-			private string regionId;
+			private string status;
 
 			private string zoneId;
 
-			private string status;
+			private string zoneName;
 
 			private string networkTypes;
 
-			private string zoneName;
+			private string regionId;
 
 			private List<DescribeAvailableResource_SupportedEngine> supportedEngines;
 
-			public string RegionId
+			public string Status
 			{
 				get
 				{
-					return regionId;
+					return status;
 				}
 				set	
 				{
-					regionId = value;
+					status = value;
 				}
 			}
 
@@ -92,15 +92,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string Status
+			public string ZoneName
 			{
 				get
 				{
-					return status;
+					return zoneName;
 				}
 				set	
 				{
-					status = value;
+					zoneName = value;
 				}
 			}
 
@@ -116,15 +116,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string ZoneName
+			public string RegionId
 			{
 				get
 				{
-					return zoneName;
+					return regionId;
 				}
 				set	
 				{
-					zoneName = value;
+					regionId = value;
 				}
 			}
 
@@ -360,23 +360,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 										public class DescribeAvailableResource_AvailableResource
 										{
 
-											private string instanceClass;
-
 											private string instanceClassRemark;
 
 											private long? capacity;
 
-											public string InstanceClass
-											{
-												get
-												{
-													return instanceClass;
-												}
-												set	
-												{
-													instanceClass = value;
-												}
-											}
+											private string instanceClass;
 
 											public string InstanceClassRemark
 											{
@@ -399,6 +387,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 												set	
 												{
 													capacity = value;
+												}
+											}
+
+											public string InstanceClass
+											{
+												get
+												{
+													return instanceClass;
+												}
+												set	
+												{
+													instanceClass = value;
 												}
 											}
 										}

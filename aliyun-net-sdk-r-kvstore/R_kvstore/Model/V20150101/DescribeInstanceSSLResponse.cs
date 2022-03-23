@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class DescribeInstanceSSLResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string instanceId;
+
+		private string requestId;
 
 		private string sSLEnabled;
 
-		private string certCommonName;
-
 		private string sSLExpiredTime;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string certCommonName;
 
 		public string InstanceId
 		{
@@ -56,6 +44,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				instanceId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -71,18 +71,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string CertCommonName
-		{
-			get
-			{
-				return certCommonName;
-			}
-			set	
-			{
-				certCommonName = value;
-			}
-		}
-
 		public string SSLExpiredTime
 		{
 			get
@@ -92,6 +80,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				sSLExpiredTime = value;
+			}
+		}
+
+		public string CertCommonName
+		{
+			get
+			{
+				return certCommonName;
+			}
+			set	
+			{
+				certCommonName = value;
 			}
 		}
 	}

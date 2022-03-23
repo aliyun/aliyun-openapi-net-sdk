@@ -31,8 +31,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			DescribeHistoryMonitorValuesResponse describeHistoryMonitorValuesResponse = new DescribeHistoryMonitorValuesResponse();
 
 			describeHistoryMonitorValuesResponse.HttpResponse = _ctx.HttpResponse;
-			describeHistoryMonitorValuesResponse.RequestId = _ctx.StringValue("DescribeHistoryMonitorValues.RequestId");
 			describeHistoryMonitorValuesResponse.MonitorHistory = _ctx.StringValue("DescribeHistoryMonitorValues.MonitorHistory");
+			describeHistoryMonitorValuesResponse.RequestId = _ctx.StringValue("DescribeHistoryMonitorValues.RequestId");
         
 			return describeHistoryMonitorValuesResponse;
         }

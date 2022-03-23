@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -98,55 +98,31 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeBackups_Backup
 		{
 
-			private int? backupId;
-
-			private string backupDBNames;
-
 			private string backupStatus;
 
 			private string backupStartTime;
 
+			private string backupType;
+
+			private string backupDownloadURL;
+
+			private string nodeInstanceId;
+
 			private string backupEndTime;
 
-			private string backupType;
+			private int? backupId;
+
+			private string backupDBNames;
+
+			private string engineVersion;
+
+			private string backupIntranetDownloadURL;
+
+			private long? backupSize;
 
 			private string backupMode;
 
 			private string backupMethod;
-
-			private string backupDownloadURL;
-
-			private long? backupSize;
-
-			private string engineVersion;
-
-			private string nodeInstanceId;
-
-			private string backupIntranetDownloadURL;
-
-			public int? BackupId
-			{
-				get
-				{
-					return backupId;
-				}
-				set	
-				{
-					backupId = value;
-				}
-			}
-
-			public string BackupDBNames
-			{
-				get
-				{
-					return backupDBNames;
-				}
-				set	
-				{
-					backupDBNames = value;
-				}
-			}
 
 			public string BackupStatus
 			{
@@ -172,6 +148,42 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
+			public string BackupType
+			{
+				get
+				{
+					return backupType;
+				}
+				set	
+				{
+					backupType = value;
+				}
+			}
+
+			public string BackupDownloadURL
+			{
+				get
+				{
+					return backupDownloadURL;
+				}
+				set	
+				{
+					backupDownloadURL = value;
+				}
+			}
+
+			public string NodeInstanceId
+			{
+				get
+				{
+					return nodeInstanceId;
+				}
+				set	
+				{
+					nodeInstanceId = value;
+				}
+			}
+
 			public string BackupEndTime
 			{
 				get
@@ -184,15 +196,63 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string BackupType
+			public int? BackupId
 			{
 				get
 				{
-					return backupType;
+					return backupId;
 				}
 				set	
 				{
-					backupType = value;
+					backupId = value;
+				}
+			}
+
+			public string BackupDBNames
+			{
+				get
+				{
+					return backupDBNames;
+				}
+				set	
+				{
+					backupDBNames = value;
+				}
+			}
+
+			public string EngineVersion
+			{
+				get
+				{
+					return engineVersion;
+				}
+				set	
+				{
+					engineVersion = value;
+				}
+			}
+
+			public string BackupIntranetDownloadURL
+			{
+				get
+				{
+					return backupIntranetDownloadURL;
+				}
+				set	
+				{
+					backupIntranetDownloadURL = value;
+				}
+			}
+
+			public long? BackupSize
+			{
+				get
+				{
+					return backupSize;
+				}
+				set	
+				{
+					backupSize = value;
 				}
 			}
 
@@ -217,66 +277,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					backupMethod = value;
-				}
-			}
-
-			public string BackupDownloadURL
-			{
-				get
-				{
-					return backupDownloadURL;
-				}
-				set	
-				{
-					backupDownloadURL = value;
-				}
-			}
-
-			public long? BackupSize
-			{
-				get
-				{
-					return backupSize;
-				}
-				set	
-				{
-					backupSize = value;
-				}
-			}
-
-			public string EngineVersion
-			{
-				get
-				{
-					return engineVersion;
-				}
-				set	
-				{
-					engineVersion = value;
-				}
-			}
-
-			public string NodeInstanceId
-			{
-				get
-				{
-					return nodeInstanceId;
-				}
-				set	
-				{
-					nodeInstanceId = value;
-				}
-			}
-
-			public string BackupIntranetDownloadURL
-			{
-				get
-				{
-					return backupIntranetDownloadURL;
-				}
-				set	
-				{
-					backupIntranetDownloadURL = value;
 				}
 			}
 		}

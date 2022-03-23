@@ -39,16 +39,16 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			List<DescribeTasksResponse.DescribeTasks_TaskProgressInfo> describeTasksResponse_items = new List<DescribeTasksResponse.DescribeTasks_TaskProgressInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeTasks.Items.Length"); i++) {
 				DescribeTasksResponse.DescribeTasks_TaskProgressInfo taskProgressInfo = new DescribeTasksResponse.DescribeTasks_TaskProgressInfo();
-				taskProgressInfo.TaskId = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskId");
-				taskProgressInfo.TaskAction = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskAction");
 				taskProgressInfo.Status = _ctx.StringValue("DescribeTasks.Items["+ i +"].Status");
-				taskProgressInfo.Progress = _ctx.FloatValue("DescribeTasks.Items["+ i +"].Progress");
-				taskProgressInfo.BeginTime = _ctx.StringValue("DescribeTasks.Items["+ i +"].BeginTime");
 				taskProgressInfo.FinishTime = _ctx.StringValue("DescribeTasks.Items["+ i +"].FinishTime");
 				taskProgressInfo.StepsInfo = _ctx.StringValue("DescribeTasks.Items["+ i +"].StepsInfo");
+				taskProgressInfo.Progress = _ctx.FloatValue("DescribeTasks.Items["+ i +"].Progress");
+				taskProgressInfo.BeginTime = _ctx.StringValue("DescribeTasks.Items["+ i +"].BeginTime");
 				taskProgressInfo.Remain = _ctx.IntegerValue("DescribeTasks.Items["+ i +"].Remain");
-				taskProgressInfo.StepProgressInfo = _ctx.StringValue("DescribeTasks.Items["+ i +"].StepProgressInfo");
 				taskProgressInfo.CurrentStepName = _ctx.StringValue("DescribeTasks.Items["+ i +"].CurrentStepName");
+				taskProgressInfo.StepProgressInfo = _ctx.StringValue("DescribeTasks.Items["+ i +"].StepProgressInfo");
+				taskProgressInfo.TaskId = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskId");
+				taskProgressInfo.TaskAction = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskAction");
 
 				describeTasksResponse_items.Add(taskProgressInfo);
 			}

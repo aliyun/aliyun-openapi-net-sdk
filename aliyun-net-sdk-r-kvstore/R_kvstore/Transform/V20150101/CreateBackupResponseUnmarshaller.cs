@@ -31,8 +31,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			CreateBackupResponse createBackupResponse = new CreateBackupResponse();
 
 			createBackupResponse.HttpResponse = _ctx.HttpResponse;
-			createBackupResponse.RequestId = _ctx.StringValue("CreateBackup.RequestId");
 			createBackupResponse.BackupJobID = _ctx.StringValue("CreateBackup.BackupJobID");
+			createBackupResponse.RequestId = _ctx.StringValue("CreateBackup.RequestId");
         
 			return createBackupResponse;
         }

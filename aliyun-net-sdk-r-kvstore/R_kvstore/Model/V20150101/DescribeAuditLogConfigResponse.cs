@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -25,11 +25,23 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class DescribeAuditLogConfigResponse : AcsResponse
 	{
 
+		private string retention;
+
 		private string requestId;
 
 		private string dbAudit;
 
-		private string retention;
+		public string Retention
+		{
+			get
+			{
+				return retention;
+			}
+			set	
+			{
+				retention = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -52,18 +64,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				dbAudit = value;
-			}
-		}
-
-		public string Retention
-		{
-			get
-			{
-				return retention;
-			}
-			set	
-			{
-				retention = value;
 			}
 		}
 	}

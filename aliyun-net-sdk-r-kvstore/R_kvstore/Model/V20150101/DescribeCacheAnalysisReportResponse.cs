@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -25,41 +25,29 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class DescribeCacheAnalysisReportResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? totalRecordCount;
+		private int? pageNumber;
 
 		private int? pageSize;
 
-		private int? pageNumber;
+		private string requestId;
 
 		private int? pageRecordCount;
 
-		private List<Dictionary<string, string>> hotKeys;
+		private int? totalRecordCount;
 
 		private List<Dictionary<string, string>> bigKeys;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<Dictionary<string, string>> hotKeys;
 
-		public int? TotalRecordCount
+		public int? PageNumber
 		{
 			get
 			{
-				return totalRecordCount;
+				return pageNumber;
 			}
 			set	
 			{
-				totalRecordCount = value;
+				pageNumber = value;
 			}
 		}
 
@@ -75,15 +63,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? PageNumber
+		public string RequestId
 		{
 			get
 			{
-				return pageNumber;
+				return requestId;
 			}
 			set	
 			{
-				pageNumber = value;
+				requestId = value;
 			}
 		}
 
@@ -99,15 +87,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public List<Dictionary<string, string>> HotKeys
+		public int? TotalRecordCount
 		{
 			get
 			{
-				return hotKeys;
+				return totalRecordCount;
 			}
 			set	
 			{
-				hotKeys = value;
+				totalRecordCount = value;
 			}
 		}
 
@@ -120,6 +108,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				bigKeys = value;
+			}
+		}
+
+		public List<Dictionary<string, string>> HotKeys
+		{
+			get
+			{
+				return hotKeys;
+			}
+			set	
+			{
+				hotKeys = value;
 			}
 		}
 	}

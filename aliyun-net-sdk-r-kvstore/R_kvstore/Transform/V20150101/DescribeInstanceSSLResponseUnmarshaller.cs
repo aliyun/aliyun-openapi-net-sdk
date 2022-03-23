@@ -31,11 +31,11 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			DescribeInstanceSSLResponse describeInstanceSSLResponse = new DescribeInstanceSSLResponse();
 
 			describeInstanceSSLResponse.HttpResponse = _ctx.HttpResponse;
-			describeInstanceSSLResponse.RequestId = _ctx.StringValue("DescribeInstanceSSL.RequestId");
 			describeInstanceSSLResponse.InstanceId = _ctx.StringValue("DescribeInstanceSSL.InstanceId");
+			describeInstanceSSLResponse.RequestId = _ctx.StringValue("DescribeInstanceSSL.RequestId");
 			describeInstanceSSLResponse.SSLEnabled = _ctx.StringValue("DescribeInstanceSSL.SSLEnabled");
-			describeInstanceSSLResponse.CertCommonName = _ctx.StringValue("DescribeInstanceSSL.CertCommonName");
 			describeInstanceSSLResponse.SSLExpiredTime = _ctx.StringValue("DescribeInstanceSSL.SSLExpiredTime");
+			describeInstanceSSLResponse.CertCommonName = _ctx.StringValue("DescribeInstanceSSL.CertCommonName");
         
 			return describeInstanceSSLResponse;
         }

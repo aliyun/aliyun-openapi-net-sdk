@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -25,11 +25,23 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class TransformInstanceChargeTypeResponse : AcsResponse
 	{
 
+		private string endTime;
+
 		private string requestId;
 
 		private string orderId;
 
-		private string endTime;
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -52,18 +64,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				orderId = value;
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
 			}
 		}
 	}

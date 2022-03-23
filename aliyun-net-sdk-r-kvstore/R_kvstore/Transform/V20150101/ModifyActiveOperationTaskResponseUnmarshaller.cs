@@ -31,8 +31,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			ModifyActiveOperationTaskResponse modifyActiveOperationTaskResponse = new ModifyActiveOperationTaskResponse();
 
 			modifyActiveOperationTaskResponse.HttpResponse = _ctx.HttpResponse;
-			modifyActiveOperationTaskResponse.RequestId = _ctx.StringValue("ModifyActiveOperationTask.RequestId");
 			modifyActiveOperationTaskResponse.Ids = _ctx.StringValue("ModifyActiveOperationTask.Ids");
+			modifyActiveOperationTaskResponse.RequestId = _ctx.StringValue("ModifyActiveOperationTask.RequestId");
         
 			return modifyActiveOperationTaskResponse;
         }

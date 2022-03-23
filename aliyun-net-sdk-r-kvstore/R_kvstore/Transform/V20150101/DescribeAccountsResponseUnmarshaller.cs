@@ -36,17 +36,17 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			List<DescribeAccountsResponse.DescribeAccounts_Account> describeAccountsResponse_accounts = new List<DescribeAccountsResponse.DescribeAccounts_Account>();
 			for (int i = 0; i < _ctx.Length("DescribeAccounts.Accounts.Length"); i++) {
 				DescribeAccountsResponse.DescribeAccounts_Account account = new DescribeAccountsResponse.DescribeAccounts_Account();
-				account.InstanceId = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].InstanceId");
-				account.AccountName = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].AccountName");
-				account.AccountStatus = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].AccountStatus");
-				account.AccountType = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].AccountType");
 				account.AccountDescription = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].AccountDescription");
+				account.InstanceId = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].InstanceId");
+				account.AccountType = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].AccountType");
+				account.AccountStatus = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].AccountStatus");
+				account.AccountName = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].AccountName");
 
 				List<DescribeAccountsResponse.DescribeAccounts_Account.DescribeAccounts_DatabasePrivilege> account_databasePrivileges = new List<DescribeAccountsResponse.DescribeAccounts_Account.DescribeAccounts_DatabasePrivilege>();
 				for (int j = 0; j < _ctx.Length("DescribeAccounts.Accounts["+ i +"].DatabasePrivileges.Length"); j++) {
 					DescribeAccountsResponse.DescribeAccounts_Account.DescribeAccounts_DatabasePrivilege databasePrivilege = new DescribeAccountsResponse.DescribeAccounts_Account.DescribeAccounts_DatabasePrivilege();
-					databasePrivilege.AccountPrivilege = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].DatabasePrivileges["+ j +"].AccountPrivilege");
 					databasePrivilege.AccountPrivilegeDetail = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].DatabasePrivileges["+ j +"].AccountPrivilegeDetail");
+					databasePrivilege.AccountPrivilege = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].DatabasePrivileges["+ j +"].AccountPrivilege");
 
 					account_databasePrivileges.Add(databasePrivilege);
 				}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			RenewAdditionalBandwidthResponse renewAdditionalBandwidthResponse = new RenewAdditionalBandwidthResponse();
 
 			renewAdditionalBandwidthResponse.HttpResponse = _ctx.HttpResponse;
-			renewAdditionalBandwidthResponse.RequestId = _ctx.StringValue("RenewAdditionalBandwidth.RequestId");
 			renewAdditionalBandwidthResponse.OrderId = _ctx.StringValue("RenewAdditionalBandwidth.OrderId");
+			renewAdditionalBandwidthResponse.RequestId = _ctx.StringValue("RenewAdditionalBandwidth.RequestId");
         
 			return renewAdditionalBandwidthResponse;
         }

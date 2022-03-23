@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class DescribePriceResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string orderParams;
+
+		private string requestId;
 
 		private List<DescribePrice_Rule> rules;
 
 		private List<DescribePrice_SubOrder> subOrders;
 
 		private DescribePrice_Order order;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public string OrderParams
 		{
@@ -56,6 +44,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				orderParams = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -100,9 +100,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private long? ruleDescId;
 
-			private string name;
-
 			private string title;
+
+			private string name;
 
 			public long? RuleDescId
 			{
@@ -113,18 +113,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					ruleDescId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
 				}
 			}
 
@@ -139,6 +127,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 					title = value;
 				}
 			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
 		}
 
 		public class DescribePrice_SubOrder
@@ -146,11 +146,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string originalAmount;
 
-			private string tradeAmount;
+			private string instanceId;
 
 			private string discountAmount;
 
-			private string instanceId;
+			private string tradeAmount;
 
 			private List<string> ruleIds;
 
@@ -166,15 +166,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string TradeAmount
+			public string InstanceId
 			{
 				get
 				{
-					return tradeAmount;
+					return instanceId;
 				}
 				set	
 				{
-					tradeAmount = value;
+					instanceId = value;
 				}
 			}
 
@@ -190,15 +190,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string InstanceId
+			public string TradeAmount
 			{
 				get
 				{
-					return instanceId;
+					return tradeAmount;
 				}
 				set	
 				{
-					instanceId = value;
+					tradeAmount = value;
 				}
 			}
 
@@ -220,13 +220,13 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string originalAmount;
 
-			private string tradeAmount;
-
-			private string discountAmount;
+			private string handlingFeeAmount;
 
 			private string currency;
 
-			private string handlingFeeAmount;
+			private string discountAmount;
+
+			private string tradeAmount;
 
 			private List<DescribePrice_Coupon> coupons;
 
@@ -244,27 +244,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string TradeAmount
+			public string HandlingFeeAmount
 			{
 				get
 				{
-					return tradeAmount;
+					return handlingFeeAmount;
 				}
 				set	
 				{
-					tradeAmount = value;
-				}
-			}
-
-			public string DiscountAmount
-			{
-				get
-				{
-					return discountAmount;
-				}
-				set	
-				{
-					discountAmount = value;
+					handlingFeeAmount = value;
 				}
 			}
 
@@ -280,15 +268,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string HandlingFeeAmount
+			public string DiscountAmount
 			{
 				get
 				{
-					return handlingFeeAmount;
+					return discountAmount;
 				}
 				set	
 				{
-					handlingFeeAmount = value;
+					discountAmount = value;
+				}
+			}
+
+			public string TradeAmount
+			{
+				get
+				{
+					return tradeAmount;
+				}
+				set	
+				{
+					tradeAmount = value;
 				}
 			}
 
@@ -319,13 +319,25 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			public class DescribePrice_Coupon
 			{
 
+				private string isSelected;
+
 				private string couponNo;
 
 				private string name;
 
 				private string description;
 
-				private string isSelected;
+				public string IsSelected
+				{
+					get
+					{
+						return isSelected;
+					}
+					set	
+					{
+						isSelected = value;
+					}
+				}
 
 				public string CouponNo
 				{
@@ -360,18 +372,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 					set	
 					{
 						description = value;
-					}
-				}
-
-				public string IsSelected
-				{
-					get
-					{
-						return isSelected;
-					}
-					set	
-					{
-						isSelected = value;
 					}
 				}
 			}

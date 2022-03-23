@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class DescribeGlobalDistributeCacheResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalRecordCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalRecordCount;
 
 		private List<DescribeGlobalDistributeCache_GlobalDistributeCache> globalDistributeCaches;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? PageSize
+		public int? TotalRecordCount
 		{
 			get
 			{
-				return pageSize;
+				return totalRecordCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalRecordCount = value;
 			}
 		}
 
@@ -98,23 +98,23 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeGlobalDistributeCache_GlobalDistributeCache
 		{
 
-			private string globalInstanceId;
+			private string status;
 
 			private string globalInstanceName;
 
-			private string status;
+			private string globalInstanceId;
 
 			private List<DescribeGlobalDistributeCache_SubInstance> subInstances;
 
-			public string GlobalInstanceId
+			public string Status
 			{
 				get
 				{
-					return globalInstanceId;
+					return status;
 				}
 				set	
 				{
-					globalInstanceId = value;
+					status = value;
 				}
 			}
 
@@ -130,15 +130,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string Status
+			public string GlobalInstanceId
 			{
 				get
 				{
-					return status;
+					return globalInstanceId;
 				}
 				set	
 				{
-					status = value;
+					globalInstanceId = value;
 				}
 			}
 
@@ -157,25 +157,25 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			public class DescribeGlobalDistributeCache_SubInstance
 			{
 
-				private string globalInstanceId;
+				private string instanceStatus;
 
 				private string instanceID;
 
-				private string regionId;
-
-				private string instanceStatus;
-
 				private string instanceClass;
 
-				public string GlobalInstanceId
+				private string globalInstanceId;
+
+				private string regionId;
+
+				public string InstanceStatus
 				{
 					get
 					{
-						return globalInstanceId;
+						return instanceStatus;
 					}
 					set	
 					{
-						globalInstanceId = value;
+						instanceStatus = value;
 					}
 				}
 
@@ -191,30 +191,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 					}
 				}
 
-				public string RegionId
-				{
-					get
-					{
-						return regionId;
-					}
-					set	
-					{
-						regionId = value;
-					}
-				}
-
-				public string InstanceStatus
-				{
-					get
-					{
-						return instanceStatus;
-					}
-					set	
-					{
-						instanceStatus = value;
-					}
-				}
-
 				public string InstanceClass
 				{
 					get
@@ -224,6 +200,30 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 					set	
 					{
 						instanceClass = value;
+					}
+				}
+
+				public string GlobalInstanceId
+				{
+					get
+					{
+						return globalInstanceId;
+					}
+					set	
+					{
+						globalInstanceId = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
 					}
 				}
 			}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			EnableAdditionalBandwidthResponse enableAdditionalBandwidthResponse = new EnableAdditionalBandwidthResponse();
 
 			enableAdditionalBandwidthResponse.HttpResponse = _ctx.HttpResponse;
-			enableAdditionalBandwidthResponse.RequestId = _ctx.StringValue("EnableAdditionalBandwidth.RequestId");
 			enableAdditionalBandwidthResponse.OrderId = _ctx.StringValue("EnableAdditionalBandwidth.OrderId");
+			enableAdditionalBandwidthResponse.RequestId = _ctx.StringValue("EnableAdditionalBandwidth.RequestId");
         
 			return enableAdditionalBandwidthResponse;
         }
