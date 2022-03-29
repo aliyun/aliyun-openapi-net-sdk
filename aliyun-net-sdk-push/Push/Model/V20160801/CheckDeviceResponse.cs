@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Push.Model.V20160801
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 	public class CheckDeviceResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? available;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public bool? Available
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			set	
 			{
 				available = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

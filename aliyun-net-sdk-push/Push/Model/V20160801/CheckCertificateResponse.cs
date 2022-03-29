@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Push.Model.V20160801
@@ -98,21 +98,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		public class CheckCertificate_ProductionCertInfo
 		{
 
-			private long? exipreTime;
-
 			private string status;
 
-			public long? ExipreTime
-			{
-				get
-				{
-					return exipreTime;
-				}
-				set	
-				{
-					exipreTime = value;
-				}
-			}
+			private long? exipreTime;
 
 			public string Status
 			{
@@ -123,6 +111,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public long? ExipreTime
+			{
+				get
+				{
+					return exipreTime;
+				}
+				set	
+				{
+					exipreTime = value;
 				}
 			}
 		}
@@ -130,21 +130,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		public class CheckCertificate_DevelopmentCertInfo
 		{
 
-			private long? exipreTime;
-
 			private string status;
 
-			public long? ExipreTime
-			{
-				get
-				{
-					return exipreTime;
-				}
-				set	
-				{
-					exipreTime = value;
-				}
-			}
+			private long? exipreTime;
 
 			public string Status
 			{
@@ -155,6 +143,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public long? ExipreTime
+			{
+				get
+				{
+					return exipreTime;
+				}
+				set	
+				{
+					exipreTime = value;
 				}
 			}
 		}

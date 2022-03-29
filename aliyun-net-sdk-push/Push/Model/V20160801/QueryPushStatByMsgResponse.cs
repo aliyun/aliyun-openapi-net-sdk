@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Push.Model.V20160801
@@ -58,25 +58,25 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string messageId;
 
-			private long? acceptCount;
-
-			private long? sentCount;
-
-			private long? receivedCount;
+			private long? deletedCount;
 
 			private long? openedCount;
 
-			private long? deletedCount;
-
-			private long? smsSentCount;
+			private long? smsReceiveSuccessCount;
 
 			private long? smsSkipCount;
 
+			private long? smsReceiveFailedCount;
+
 			private long? smsFailedCount;
 
-			private long? smsReceiveSuccessCount;
+			private long? receivedCount;
 
-			private long? smsReceiveFailedCount;
+			private long? sentCount;
+
+			private long? smsSentCount;
+
+			private long? acceptCount;
 
 			public string MessageId
 			{
@@ -87,54 +87,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					messageId = value;
-				}
-			}
-
-			public long? AcceptCount
-			{
-				get
-				{
-					return acceptCount;
-				}
-				set	
-				{
-					acceptCount = value;
-				}
-			}
-
-			public long? SentCount
-			{
-				get
-				{
-					return sentCount;
-				}
-				set	
-				{
-					sentCount = value;
-				}
-			}
-
-			public long? ReceivedCount
-			{
-				get
-				{
-					return receivedCount;
-				}
-				set	
-				{
-					receivedCount = value;
-				}
-			}
-
-			public long? OpenedCount
-			{
-				get
-				{
-					return openedCount;
-				}
-				set	
-				{
-					openedCount = value;
 				}
 			}
 
@@ -150,39 +102,15 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public long? SmsSentCount
+			public long? OpenedCount
 			{
 				get
 				{
-					return smsSentCount;
+					return openedCount;
 				}
 				set	
 				{
-					smsSentCount = value;
-				}
-			}
-
-			public long? SmsSkipCount
-			{
-				get
-				{
-					return smsSkipCount;
-				}
-				set	
-				{
-					smsSkipCount = value;
-				}
-			}
-
-			public long? SmsFailedCount
-			{
-				get
-				{
-					return smsFailedCount;
-				}
-				set	
-				{
-					smsFailedCount = value;
+					openedCount = value;
 				}
 			}
 
@@ -198,6 +126,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public long? SmsSkipCount
+			{
+				get
+				{
+					return smsSkipCount;
+				}
+				set	
+				{
+					smsSkipCount = value;
+				}
+			}
+
 			public long? SmsReceiveFailedCount
 			{
 				get
@@ -207,6 +147,66 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					smsReceiveFailedCount = value;
+				}
+			}
+
+			public long? SmsFailedCount
+			{
+				get
+				{
+					return smsFailedCount;
+				}
+				set	
+				{
+					smsFailedCount = value;
+				}
+			}
+
+			public long? ReceivedCount
+			{
+				get
+				{
+					return receivedCount;
+				}
+				set	
+				{
+					receivedCount = value;
+				}
+			}
+
+			public long? SentCount
+			{
+				get
+				{
+					return sentCount;
+				}
+				set	
+				{
+					sentCount = value;
+				}
+			}
+
+			public long? SmsSentCount
+			{
+				get
+				{
+					return smsSentCount;
+				}
+				set	
+				{
+					smsSentCount = value;
+				}
+			}
+
+			public long? AcceptCount
+			{
+				get
+				{
+					return acceptCount;
+				}
+				set	
+				{
+					acceptCount = value;
 				}
 			}
 		}

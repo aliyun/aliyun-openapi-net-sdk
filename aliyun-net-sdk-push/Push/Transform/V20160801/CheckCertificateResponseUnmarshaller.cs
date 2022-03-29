@@ -36,13 +36,13 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 			checkCertificateResponse.IOS = _ctx.BooleanValue("CheckCertificate.IOS");
 
 			CheckCertificateResponse.CheckCertificate_ProductionCertInfo productionCertInfo = new CheckCertificateResponse.CheckCertificate_ProductionCertInfo();
-			productionCertInfo.ExipreTime = _ctx.LongValue("CheckCertificate.ProductionCertInfo.ExipreTime");
 			productionCertInfo.Status = _ctx.StringValue("CheckCertificate.ProductionCertInfo.Status");
+			productionCertInfo.ExipreTime = _ctx.LongValue("CheckCertificate.ProductionCertInfo.ExipreTime");
 			checkCertificateResponse.ProductionCertInfo = productionCertInfo;
 
 			CheckCertificateResponse.CheckCertificate_DevelopmentCertInfo developmentCertInfo = new CheckCertificateResponse.CheckCertificate_DevelopmentCertInfo();
-			developmentCertInfo.ExipreTime = _ctx.LongValue("CheckCertificate.DevelopmentCertInfo.ExipreTime");
 			developmentCertInfo.Status = _ctx.StringValue("CheckCertificate.DevelopmentCertInfo.Status");
+			developmentCertInfo.ExipreTime = _ctx.LongValue("CheckCertificate.DevelopmentCertInfo.ExipreTime");
 			checkCertificateResponse.DevelopmentCertInfo = developmentCertInfo;
         
 			return checkCertificateResponse;

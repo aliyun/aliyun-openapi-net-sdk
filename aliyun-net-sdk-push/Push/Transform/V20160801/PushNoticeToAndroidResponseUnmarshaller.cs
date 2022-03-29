@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 			PushNoticeToAndroidResponse pushNoticeToAndroidResponse = new PushNoticeToAndroidResponse();
 
 			pushNoticeToAndroidResponse.HttpResponse = _ctx.HttpResponse;
-			pushNoticeToAndroidResponse.RequestId = _ctx.StringValue("PushNoticeToAndroid.RequestId");
 			pushNoticeToAndroidResponse.MessageId = _ctx.StringValue("PushNoticeToAndroid.MessageId");
+			pushNoticeToAndroidResponse.RequestId = _ctx.StringValue("PushNoticeToAndroid.RequestId");
         
 			return pushNoticeToAndroidResponse;
         }

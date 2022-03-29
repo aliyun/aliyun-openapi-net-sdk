@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 			ContinuouslyPushResponse continuouslyPushResponse = new ContinuouslyPushResponse();
 
 			continuouslyPushResponse.HttpResponse = _ctx.HttpResponse;
-			continuouslyPushResponse.RequestId = _ctx.StringValue("ContinuouslyPush.RequestId");
 			continuouslyPushResponse.MessageId = _ctx.StringValue("ContinuouslyPush.MessageId");
+			continuouslyPushResponse.RequestId = _ctx.StringValue("ContinuouslyPush.RequestId");
         
 			return continuouslyPushResponse;
         }

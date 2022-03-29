@@ -41,11 +41,11 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			Method = MethodType.POST;
         }
 
-		private List<PushTask> pushTasks = new List<PushTask>(){ };
+		private List<int?> pushTasks = new List<int?>(){ };
 
 		private long? appKey;
 
-		public List<PushTask> PushTasks
+		public List<int?> PushTasks
 		{
 			get
 			{
@@ -55,63 +55,70 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			set
 			{
 				pushTasks = value;
-				for (int i = 0; i < pushTasks.Count; i++)
+				if(pushTasks != null)
 				{
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotificationBarType", pushTasks[i].AndroidNotificationBarType);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".Body", pushTasks[i].Body);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".DeviceType", pushTasks[i].DeviceType);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".PushTime", pushTasks[i].PushTime);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".SendSpeed", pushTasks[i].SendSpeed);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotificationHuaweiChannel", pushTasks[i].AndroidNotificationHuaweiChannel);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidPopupActivity", pushTasks[i].AndroidPopupActivity);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSRemindBody", pushTasks[i].IOSRemindBody);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotifyType", pushTasks[i].AndroidNotifyType);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidPopupTitle", pushTasks[i].AndroidPopupTitle);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidMessageHuaweiCategory", pushTasks[i].AndroidMessageHuaweiCategory);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSMusic", pushTasks[i].IOSMusic);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSApnsEnv", pushTasks[i].IOSApnsEnv);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSMutableContent", pushTasks[i].IOSMutableContent);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotificationBarPriority", pushTasks[i].AndroidNotificationBarPriority);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".ExpireTime", pushTasks[i].ExpireTime);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidImageUrl", pushTasks[i].AndroidImageUrl);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotificationVivoChannel", pushTasks[i].AndroidNotificationVivoChannel);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSNotificationCategory", pushTasks[i].IOSNotificationCategory);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotificationXiaomiChannel", pushTasks[i].AndroidNotificationXiaomiChannel);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".StoreOffline", pushTasks[i].StoreOffline);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidInboxBody", pushTasks[i].AndroidInboxBody);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".JobKey", pushTasks[i].JobKey);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidOpenUrl", pushTasks[i].AndroidOpenUrl);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidXiaoMiNotifyBody", pushTasks[i].AndroidXiaoMiNotifyBody);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSSubtitle", pushTasks[i].IOSSubtitle);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidXiaomiBigPictureUrl", pushTasks[i].AndroidXiaomiBigPictureUrl);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSRemind", pushTasks[i].IOSRemind);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSNotificationThreadId", pushTasks[i].IOSNotificationThreadId);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidMusic", pushTasks[i].AndroidMusic);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSNotificationCollapseId", pushTasks[i].IOSNotificationCollapseId);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidMessageHuaweiUrgency", pushTasks[i].AndroidMessageHuaweiUrgency);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".PushType", pushTasks[i].PushType);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidExtParameters", pushTasks[i].AndroidExtParameters);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSBadge", pushTasks[i].IOSBadge);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidBigBody", pushTasks[i].AndroidBigBody);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSBadgeAutoIncrement", pushTasks[i].IOSBadgeAutoIncrement);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidOpenType", pushTasks[i].AndroidOpenType);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".Title", pushTasks[i].Title);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidRenderStyle", pushTasks[i].AndroidRenderStyle);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSExtParameters", pushTasks[i].IOSExtParameters);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidXiaomiImageUrl", pushTasks[i].AndroidXiaomiImageUrl);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidPopupBody", pushTasks[i].AndroidPopupBody);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidBigPictureUrl", pushTasks[i].AndroidBigPictureUrl);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSSilentNotification", pushTasks[i].IOSSilentNotification);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".SendChannels", pushTasks[i].SendChannels);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".Target", pushTasks[i].Target);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidBigTitle", pushTasks[i].AndroidBigTitle);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotificationChannel", pushTasks[i].AndroidNotificationChannel);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidRemind", pushTasks[i].AndroidRemind);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidActivity", pushTasks[i].AndroidActivity);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotificationNotifyId", pushTasks[i].AndroidNotificationNotifyId);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".TargetValue", pushTasks[i].TargetValue);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidXiaoMiNotifyTitle", pushTasks[i].AndroidXiaoMiNotifyTitle);
-					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidXiaoMiActivity", pushTasks[i].AndroidXiaoMiActivity);
+					for (int depth1 = 0; depth1 < pushTasks.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+						DictionaryUtil.Add(BodyParameters,"PushTask." + (depth1 + 1), pushTasks[depth1]);
+					}
 				}
 			}
 		}
@@ -148,6 +155,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string iOSRemindBody;
 
+			private bool? trim;
+
 			private string androidNotifyType;
 
 			private string androidPopupTitle;
@@ -174,6 +183,10 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private bool? storeOffline;
 
+			private double? iOSRelevanceScore;
+
+			private int? androidVivoPushMode;
+
 			private string androidInboxBody;
 
 			private string jobKey;
@@ -197,6 +210,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			private string androidMessageHuaweiUrgency;
 
 			private string pushType;
+
+			private string iOSInterruptionLevel;
 
 			private string androidExtParameters;
 
@@ -335,6 +350,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					iOSRemindBody = value;
+				}
+			}
+
+			public bool? Trim
+			{
+				get
+				{
+					return trim;
+				}
+				set	
+				{
+					trim = value;
 				}
 			}
 
@@ -494,6 +521,30 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public double? IOSRelevanceScore
+			{
+				get
+				{
+					return iOSRelevanceScore;
+				}
+				set	
+				{
+					iOSRelevanceScore = value;
+				}
+			}
+
+			public int? AndroidVivoPushMode
+			{
+				get
+				{
+					return androidVivoPushMode;
+				}
+				set	
+				{
+					androidVivoPushMode = value;
+				}
+			}
+
 			public string AndroidInboxBody
 			{
 				get
@@ -635,6 +686,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					pushType = value;
+				}
+			}
+
+			public string IOSInterruptionLevel
+			{
+				get
+				{
+					return iOSInterruptionLevel;
+				}
+				set	
+				{
+					iOSInterruptionLevel = value;
 				}
 			}
 

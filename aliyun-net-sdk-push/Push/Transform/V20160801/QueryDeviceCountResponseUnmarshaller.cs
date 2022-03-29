@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 			QueryDeviceCountResponse queryDeviceCountResponse = new QueryDeviceCountResponse();
 
 			queryDeviceCountResponse.HttpResponse = _ctx.HttpResponse;
-			queryDeviceCountResponse.RequestId = _ctx.StringValue("QueryDeviceCount.RequestId");
 			queryDeviceCountResponse.DeviceCount = _ctx.LongValue("QueryDeviceCount.DeviceCount");
+			queryDeviceCountResponse.RequestId = _ctx.StringValue("QueryDeviceCount.RequestId");
         
 			return queryDeviceCountResponse;
         }

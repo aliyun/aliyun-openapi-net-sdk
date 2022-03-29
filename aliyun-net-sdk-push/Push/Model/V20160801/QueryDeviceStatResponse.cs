@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Push.Model.V20160801
@@ -58,9 +58,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string time;
 
-			private long? count;
-
 			private string deviceType;
+
+			private long? count;
 
 			public string Time
 			{
@@ -74,18 +74,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public long? Count
-			{
-				get
-				{
-					return count;
-				}
-				set	
-				{
-					count = value;
-				}
-			}
-
 			public string DeviceType
 			{
 				get
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					deviceType = value;
+				}
+			}
+
+			public long? Count
+			{
+				get
+				{
+					return count;
+				}
+				set	
+				{
+					count = value;
 				}
 			}
 		}

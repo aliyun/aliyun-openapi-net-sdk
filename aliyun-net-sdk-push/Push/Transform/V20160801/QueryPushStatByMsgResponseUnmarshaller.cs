@@ -37,16 +37,16 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 			for (int i = 0; i < _ctx.Length("QueryPushStatByMsg.PushStats.Length"); i++) {
 				QueryPushStatByMsgResponse.QueryPushStatByMsg_PushStat pushStat = new QueryPushStatByMsgResponse.QueryPushStatByMsg_PushStat();
 				pushStat.MessageId = _ctx.StringValue("QueryPushStatByMsg.PushStats["+ i +"].MessageId");
-				pushStat.AcceptCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].AcceptCount");
-				pushStat.SentCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SentCount");
-				pushStat.ReceivedCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].ReceivedCount");
-				pushStat.OpenedCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].OpenedCount");
 				pushStat.DeletedCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].DeletedCount");
-				pushStat.SmsSentCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SmsSentCount");
-				pushStat.SmsSkipCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SmsSkipCount");
-				pushStat.SmsFailedCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SmsFailedCount");
+				pushStat.OpenedCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].OpenedCount");
 				pushStat.SmsReceiveSuccessCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SmsReceiveSuccessCount");
+				pushStat.SmsSkipCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SmsSkipCount");
 				pushStat.SmsReceiveFailedCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SmsReceiveFailedCount");
+				pushStat.SmsFailedCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SmsFailedCount");
+				pushStat.ReceivedCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].ReceivedCount");
+				pushStat.SentCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SentCount");
+				pushStat.SmsSentCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].SmsSentCount");
+				pushStat.AcceptCount = _ctx.LongValue("QueryPushStatByMsg.PushStats["+ i +"].AcceptCount");
 
 				queryPushStatByMsgResponse_pushStats.Add(pushStat);
 			}

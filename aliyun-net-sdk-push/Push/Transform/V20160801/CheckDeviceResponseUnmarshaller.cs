@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 			CheckDeviceResponse checkDeviceResponse = new CheckDeviceResponse();
 
 			checkDeviceResponse.HttpResponse = _ctx.HttpResponse;
-			checkDeviceResponse.RequestId = _ctx.StringValue("CheckDevice.RequestId");
 			checkDeviceResponse.Available = _ctx.BooleanValue("CheckDevice.Available");
+			checkDeviceResponse.RequestId = _ctx.StringValue("CheckDevice.RequestId");
         
 			return checkDeviceResponse;
         }

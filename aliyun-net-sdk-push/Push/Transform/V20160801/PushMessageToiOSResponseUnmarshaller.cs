@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 			PushMessageToiOSResponse pushMessageToiOSResponse = new PushMessageToiOSResponse();
 
 			pushMessageToiOSResponse.HttpResponse = _ctx.HttpResponse;
-			pushMessageToiOSResponse.RequestId = _ctx.StringValue("PushMessageToiOS.RequestId");
 			pushMessageToiOSResponse.MessageId = _ctx.StringValue("PushMessageToiOS.MessageId");
+			pushMessageToiOSResponse.RequestId = _ctx.StringValue("PushMessageToiOS.RequestId");
         
 			return pushMessageToiOSResponse;
         }

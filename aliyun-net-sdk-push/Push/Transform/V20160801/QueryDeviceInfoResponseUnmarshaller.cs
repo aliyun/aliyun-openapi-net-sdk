@@ -34,16 +34,16 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 			queryDeviceInfoResponse.RequestId = _ctx.StringValue("QueryDeviceInfo.RequestId");
 
 			QueryDeviceInfoResponse.QueryDeviceInfo_DeviceInfo deviceInfo = new QueryDeviceInfoResponse.QueryDeviceInfo_DeviceInfo();
-			deviceInfo.DeviceId = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.DeviceId");
-			deviceInfo.DeviceType = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.DeviceType");
 			deviceInfo.Account = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.Account");
-			deviceInfo.DeviceToken = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.DeviceToken");
-			deviceInfo.Tags = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.Tags");
-			deviceInfo.Alias = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.Alias");
 			deviceInfo.LastOnlineTime = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.LastOnlineTime");
-			deviceInfo.Online = _ctx.BooleanValue("QueryDeviceInfo.DeviceInfo.Online");
 			deviceInfo.PhoneNumber = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.PhoneNumber");
 			deviceInfo.PushEnabled = _ctx.BooleanValue("QueryDeviceInfo.DeviceInfo.PushEnabled");
+			deviceInfo.DeviceType = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.DeviceType");
+			deviceInfo.DeviceId = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.DeviceId");
+			deviceInfo.Online = _ctx.BooleanValue("QueryDeviceInfo.DeviceInfo.Online");
+			deviceInfo.Tags = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.Tags");
+			deviceInfo.DeviceToken = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.DeviceToken");
+			deviceInfo.Alias = _ctx.StringValue("QueryDeviceInfo.DeviceInfo.Alias");
 			queryDeviceInfoResponse.DeviceInfo = deviceInfo;
         
 			return queryDeviceInfoResponse;

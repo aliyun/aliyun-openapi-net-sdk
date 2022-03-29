@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Push.Model.V20160801
@@ -56,49 +56,25 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		public class QueryDeviceInfo_DeviceInfo
 		{
 
-			private string deviceId;
-
-			private string deviceType;
-
 			private string account;
 
-			private string deviceToken;
-
-			private string tags;
-
-			private string alias;
-
 			private string lastOnlineTime;
-
-			private bool? online;
 
 			private string phoneNumber;
 
 			private bool? pushEnabled;
 
-			public string DeviceId
-			{
-				get
-				{
-					return deviceId;
-				}
-				set	
-				{
-					deviceId = value;
-				}
-			}
+			private string deviceType;
 
-			public string DeviceType
-			{
-				get
-				{
-					return deviceType;
-				}
-				set	
-				{
-					deviceType = value;
-				}
-			}
+			private string deviceId;
+
+			private bool? online;
+
+			private string tags;
+
+			private string deviceToken;
+
+			private string alias;
 
 			public string Account
 			{
@@ -112,42 +88,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public string DeviceToken
-			{
-				get
-				{
-					return deviceToken;
-				}
-				set	
-				{
-					deviceToken = value;
-				}
-			}
-
-			public string Tags
-			{
-				get
-				{
-					return tags;
-				}
-				set	
-				{
-					tags = value;
-				}
-			}
-
-			public string Alias
-			{
-				get
-				{
-					return alias;
-				}
-				set	
-				{
-					alias = value;
-				}
-			}
-
 			public string LastOnlineTime
 			{
 				get
@@ -157,18 +97,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					lastOnlineTime = value;
-				}
-			}
-
-			public bool? Online
-			{
-				get
-				{
-					return online;
-				}
-				set	
-				{
-					online = value;
 				}
 			}
 
@@ -193,6 +121,78 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					pushEnabled = value;
+				}
+			}
+
+			public string DeviceType
+			{
+				get
+				{
+					return deviceType;
+				}
+				set	
+				{
+					deviceType = value;
+				}
+			}
+
+			public string DeviceId
+			{
+				get
+				{
+					return deviceId;
+				}
+				set	
+				{
+					deviceId = value;
+				}
+			}
+
+			public bool? Online
+			{
+				get
+				{
+					return online;
+				}
+				set	
+				{
+					online = value;
+				}
+			}
+
+			public string Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public string DeviceToken
+			{
+				get
+				{
+					return deviceToken;
+				}
+				set	
+				{
+					deviceToken = value;
+				}
+			}
+
+			public string Alias
+			{
+				get
+				{
+					return alias;
+				}
+				set	
+				{
+					alias = value;
 				}
 			}
 		}

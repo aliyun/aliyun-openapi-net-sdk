@@ -59,6 +59,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string iOSRemindBody;
 
+		private bool? trim;
+
 		private string androidNotifyType;
 
 		private string androidPopupTitle;
@@ -87,6 +89,10 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string smsParams;
 
+		private double? iOSRelevanceScore;
+
+		private int? androidVivoPushMode;
+
 		private string androidInboxBody;
 
 		private string jobKey;
@@ -110,6 +116,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		private string androidMessageHuaweiUrgency;
 
 		private string pushType;
+
+		private string iOSInterruptionLevel;
 
 		private string androidExtParameters;
 
@@ -277,6 +285,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				iOSRemindBody = value;
 				DictionaryUtil.Add(QueryParameters, "iOSRemindBody", value);
+			}
+		}
+
+		public bool? Trim
+		{
+			get
+			{
+				return trim;
+			}
+			set	
+			{
+				trim = value;
+				DictionaryUtil.Add(QueryParameters, "Trim", value.ToString());
 			}
 		}
 
@@ -462,6 +483,32 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
+		public double? IOSRelevanceScore
+		{
+			get
+			{
+				return iOSRelevanceScore;
+			}
+			set	
+			{
+				iOSRelevanceScore = value;
+				DictionaryUtil.Add(QueryParameters, "iOSRelevanceScore", value.ToString());
+			}
+		}
+
+		public int? AndroidVivoPushMode
+		{
+			get
+			{
+				return androidVivoPushMode;
+			}
+			set	
+			{
+				androidVivoPushMode = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidVivoPushMode", value.ToString());
+			}
+		}
+
 		public string AndroidInboxBody
 		{
 			get
@@ -615,6 +662,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				pushType = value;
 				DictionaryUtil.Add(QueryParameters, "PushType", value);
+			}
+		}
+
+		public string IOSInterruptionLevel
+		{
+			get
+			{
+				return iOSInterruptionLevel;
+			}
+			set	
+			{
+				iOSInterruptionLevel = value;
+				DictionaryUtil.Add(QueryParameters, "iOSInterruptionLevel", value);
 			}
 		}
 

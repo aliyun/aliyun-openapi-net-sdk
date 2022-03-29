@@ -37,16 +37,16 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 			for (int i = 0; i < _ctx.Length("QueryPushStatByApp.AppPushStats.Length"); i++) {
 				QueryPushStatByAppResponse.QueryPushStatByApp_AppPushStat appPushStat = new QueryPushStatByAppResponse.QueryPushStatByApp_AppPushStat();
 				appPushStat.Time = _ctx.StringValue("QueryPushStatByApp.AppPushStats["+ i +"].Time");
-				appPushStat.AcceptCount = _ctx.LongValue("QueryPushStatByApp.AppPushStats["+ i +"].AcceptCount");
-				appPushStat.SentCount = _ctx.LongValue("QueryPushStatByApp.AppPushStats["+ i +"].SentCount");
-				appPushStat.ReceivedCount = _ctx.LongValue("QueryPushStatByApp.AppPushStats["+ i +"].ReceivedCount");
-				appPushStat.OpenedCount = _ctx.LongValue("QueryPushStatByApp.AppPushStats["+ i +"].OpenedCount");
 				appPushStat.DeletedCount = _ctx.LongValue("QueryPushStatByApp.AppPushStats["+ i +"].DeletedCount");
-				appPushStat.SmsSentCount = _ctx.LongValue("QueryPushStatByApp.AppPushStats["+ i +"].SmsSentCount");
-				appPushStat.SmsSkipCount = _ctx.LongValue("QueryPushStatByApp.AppPushStats["+ i +"].SmsSkipCount");
-				appPushStat.SmsFailedCount = _ctx.LongValue("QueryPushStatByApp.AppPushStats["+ i +"].SmsFailedCount");
+				appPushStat.OpenedCount = _ctx.LongValue("QueryPushStatByApp.AppPushStats["+ i +"].OpenedCount");
 				appPushStat.SmsReceiveSuccessCount = _ctx.LongValue("QueryPushStatByApp.AppPushStats["+ i +"].SmsReceiveSuccessCount");
+				appPushStat.SmsSkipCount = _ctx.LongValue("QueryPushStatByApp.AppPushStats["+ i +"].SmsSkipCount");
 				appPushStat.SmsReceiveFailedCount = _ctx.LongValue("QueryPushStatByApp.AppPushStats["+ i +"].SmsReceiveFailedCount");
+				appPushStat.SmsFailedCount = _ctx.LongValue("QueryPushStatByApp.AppPushStats["+ i +"].SmsFailedCount");
+				appPushStat.ReceivedCount = _ctx.LongValue("QueryPushStatByApp.AppPushStats["+ i +"].ReceivedCount");
+				appPushStat.SentCount = _ctx.LongValue("QueryPushStatByApp.AppPushStats["+ i +"].SentCount");
+				appPushStat.SmsSentCount = _ctx.LongValue("QueryPushStatByApp.AppPushStats["+ i +"].SmsSentCount");
+				appPushStat.AcceptCount = _ctx.LongValue("QueryPushStatByApp.AppPushStats["+ i +"].AcceptCount");
 
 				queryPushStatByAppResponse_appPushStats.Add(appPushStat);
 			}

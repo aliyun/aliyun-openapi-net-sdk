@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Push.Model.V20160801
@@ -25,29 +25,17 @@ namespace Aliyun.Acs.Push.Model.V20160801
 	public class QueryPushRecordsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
 
 		private int? pageSize;
 
-		private int? page;
+		private string requestId;
 
 		private int? total;
 
-		private List<QueryPushRecords_PushInfo> pushInfos;
+		private int? page;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<QueryPushRecords_PushInfo> pushInfos;
 
 		public string NextToken
 		{
@@ -73,15 +61,15 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public int? Page
+		public string RequestId
 		{
 			get
 			{
-				return page;
+				return requestId;
 			}
 			set	
 			{
-				page = value;
+				requestId = value;
 			}
 		}
 
@@ -94,6 +82,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			set	
 			{
 				total = value;
+			}
+		}
+
+		public int? Page
+		{
+			get
+			{
+				return page;
+			}
+			set	
+			{
+				page = value;
 			}
 		}
 
@@ -112,35 +112,35 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		public class QueryPushRecords_PushInfo
 		{
 
-			private long? appKey;
+			private string status;
 
 			private string messageId;
 
-			private string pushType;
+			private long? appKey;
 
 			private string deviceType;
 
-			private string target;
+			private string pushType;
+
+			private string body;
+
+			private string title;
 
 			private string source;
 
 			private string pushTime;
 
-			private string title;
+			private string target;
 
-			private string body;
-
-			private string status;
-
-			public long? AppKey
+			public string Status
 			{
 				get
 				{
-					return appKey;
+					return status;
 				}
 				set	
 				{
-					appKey = value;
+					status = value;
 				}
 			}
 
@@ -156,15 +156,15 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public string PushType
+			public long? AppKey
 			{
 				get
 				{
-					return pushType;
+					return appKey;
 				}
 				set	
 				{
-					pushType = value;
+					appKey = value;
 				}
 			}
 
@@ -180,15 +180,39 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public string Target
+			public string PushType
 			{
 				get
 				{
-					return target;
+					return pushType;
 				}
 				set	
 				{
-					target = value;
+					pushType = value;
+				}
+			}
+
+			public string Body
+			{
+				get
+				{
+					return body;
+				}
+				set	
+				{
+					body = value;
+				}
+			}
+
+			public string Title
+			{
+				get
+				{
+					return title;
+				}
+				set	
+				{
+					title = value;
 				}
 			}
 
@@ -216,39 +240,15 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
-			public string Title
+			public string Target
 			{
 				get
 				{
-					return title;
+					return target;
 				}
 				set	
 				{
-					title = value;
-				}
-			}
-
-			public string Body
-			{
-				get
-				{
-					return body;
-				}
-				set	
-				{
-					body = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
+					target = value;
 				}
 			}
 		}

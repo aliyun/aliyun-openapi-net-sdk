@@ -31,25 +31,25 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 			QueryPushRecordsResponse queryPushRecordsResponse = new QueryPushRecordsResponse();
 
 			queryPushRecordsResponse.HttpResponse = _ctx.HttpResponse;
-			queryPushRecordsResponse.RequestId = _ctx.StringValue("QueryPushRecords.RequestId");
 			queryPushRecordsResponse.NextToken = _ctx.StringValue("QueryPushRecords.NextToken");
 			queryPushRecordsResponse.PageSize = _ctx.IntegerValue("QueryPushRecords.PageSize");
-			queryPushRecordsResponse.Page = _ctx.IntegerValue("QueryPushRecords.Page");
+			queryPushRecordsResponse.RequestId = _ctx.StringValue("QueryPushRecords.RequestId");
 			queryPushRecordsResponse.Total = _ctx.IntegerValue("QueryPushRecords.Total");
+			queryPushRecordsResponse.Page = _ctx.IntegerValue("QueryPushRecords.Page");
 
 			List<QueryPushRecordsResponse.QueryPushRecords_PushInfo> queryPushRecordsResponse_pushInfos = new List<QueryPushRecordsResponse.QueryPushRecords_PushInfo>();
 			for (int i = 0; i < _ctx.Length("QueryPushRecords.PushInfos.Length"); i++) {
 				QueryPushRecordsResponse.QueryPushRecords_PushInfo pushInfo = new QueryPushRecordsResponse.QueryPushRecords_PushInfo();
-				pushInfo.AppKey = _ctx.LongValue("QueryPushRecords.PushInfos["+ i +"].AppKey");
+				pushInfo.Status = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].Status");
 				pushInfo.MessageId = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].MessageId");
-				pushInfo.PushType = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].PushType");
+				pushInfo.AppKey = _ctx.LongValue("QueryPushRecords.PushInfos["+ i +"].AppKey");
 				pushInfo.DeviceType = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].DeviceType");
-				pushInfo.Target = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].Target");
+				pushInfo.PushType = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].PushType");
+				pushInfo.Body = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].Body");
+				pushInfo.Title = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].Title");
 				pushInfo.Source = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].Source");
 				pushInfo.PushTime = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].PushTime");
-				pushInfo.Title = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].Title");
-				pushInfo.Body = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].Body");
-				pushInfo.Status = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].Status");
+				pushInfo.Target = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].Target");
 
 				queryPushRecordsResponse_pushInfos.Add(pushInfo);
 			}

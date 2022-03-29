@@ -37,8 +37,8 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 			for (int i = 0; i < _ctx.Length("QueryDeviceStat.AppDeviceStats.Length"); i++) {
 				QueryDeviceStatResponse.QueryDeviceStat_AppDeviceStat appDeviceStat = new QueryDeviceStatResponse.QueryDeviceStat_AppDeviceStat();
 				appDeviceStat.Time = _ctx.StringValue("QueryDeviceStat.AppDeviceStats["+ i +"].Time");
-				appDeviceStat.Count = _ctx.LongValue("QueryDeviceStat.AppDeviceStats["+ i +"].Count");
 				appDeviceStat.DeviceType = _ctx.StringValue("QueryDeviceStat.AppDeviceStats["+ i +"].DeviceType");
+				appDeviceStat.Count = _ctx.LongValue("QueryDeviceStat.AppDeviceStats["+ i +"].Count");
 
 				queryDeviceStatResponse_appDeviceStats.Add(appDeviceStat);
 			}
