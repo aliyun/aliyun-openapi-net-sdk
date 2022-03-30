@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class ListPlaylistItemsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? total;
 
-		private List<ListPlaylistItems_ProgramItem> programItems;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<ListPlaylistItems_ProgramItem> programItems;
 
 		public int? Total
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				total = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,51 +70,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class ListPlaylistItems_ProgramItem
 		{
 
-			private string programId;
-
-			private string programItemId;
-
-			private string programItemName;
+			private int? index;
 
 			private string resourceType;
 
+			private string programItemId;
+
+			private string programId;
+
+			private string programItemName;
+
 			private string resourceValue;
 
-			private int? index;
-
-			public string ProgramId
+			public int? Index
 			{
 				get
 				{
-					return programId;
+					return index;
 				}
 				set	
 				{
-					programId = value;
-				}
-			}
-
-			public string ProgramItemId
-			{
-				get
-				{
-					return programItemId;
-				}
-				set	
-				{
-					programItemId = value;
-				}
-			}
-
-			public string ProgramItemName
-			{
-				get
-				{
-					return programItemName;
-				}
-				set	
-				{
-					programItemName = value;
+					index = value;
 				}
 			}
 
@@ -130,6 +106,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			public string ProgramItemId
+			{
+				get
+				{
+					return programItemId;
+				}
+				set	
+				{
+					programItemId = value;
+				}
+			}
+
+			public string ProgramId
+			{
+				get
+				{
+					return programId;
+				}
+				set	
+				{
+					programId = value;
+				}
+			}
+
+			public string ProgramItemName
+			{
+				get
+				{
+					return programItemName;
+				}
+				set	
+				{
+					programItemName = value;
+				}
+			}
+
 			public string ResourceValue
 			{
 				get
@@ -139,18 +151,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					resourceValue = value;
-				}
-			}
-
-			public int? Index
-			{
-				get
-				{
-					return index;
-				}
-				set	
-				{
-					index = value;
 				}
 			}
 		}

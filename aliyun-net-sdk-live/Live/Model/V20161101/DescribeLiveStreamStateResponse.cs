@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,11 +25,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamStateResponse : AcsResponse
 	{
 
+		private string type;
+
 		private string requestId;
 
 		private string streamState;
 
-		private string type;
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -52,18 +64,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				streamState = value;
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
 			}
 		}
 	}

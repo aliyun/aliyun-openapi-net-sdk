@@ -36,11 +36,11 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeUpPeakPublishStreamDataResponse.DescribeUpPeakPublishStreamData_DescribeUpPeakPublishStreamData> describeUpPeakPublishStreamDataResponse_describeUpPeakPublishStreamDatas = new List<DescribeUpPeakPublishStreamDataResponse.DescribeUpPeakPublishStreamData_DescribeUpPeakPublishStreamData>();
 			for (int i = 0; i < _ctx.Length("DescribeUpPeakPublishStreamData.DescribeUpPeakPublishStreamDatas.Length"); i++) {
 				DescribeUpPeakPublishStreamDataResponse.DescribeUpPeakPublishStreamData_DescribeUpPeakPublishStreamData describeUpPeakPublishStreamData = new DescribeUpPeakPublishStreamDataResponse.DescribeUpPeakPublishStreamData_DescribeUpPeakPublishStreamData();
-				describeUpPeakPublishStreamData.PublishStreamNum = _ctx.IntegerValue("DescribeUpPeakPublishStreamData.DescribeUpPeakPublishStreamDatas["+ i +"].PublishStreamNum");
-				describeUpPeakPublishStreamData.PeakTime = _ctx.StringValue("DescribeUpPeakPublishStreamData.DescribeUpPeakPublishStreamDatas["+ i +"].PeakTime");
 				describeUpPeakPublishStreamData.QueryTime = _ctx.StringValue("DescribeUpPeakPublishStreamData.DescribeUpPeakPublishStreamDatas["+ i +"].QueryTime");
-				describeUpPeakPublishStreamData.StatName = _ctx.StringValue("DescribeUpPeakPublishStreamData.DescribeUpPeakPublishStreamDatas["+ i +"].StatName");
 				describeUpPeakPublishStreamData.BandWidth = _ctx.StringValue("DescribeUpPeakPublishStreamData.DescribeUpPeakPublishStreamDatas["+ i +"].BandWidth");
+				describeUpPeakPublishStreamData.StatName = _ctx.StringValue("DescribeUpPeakPublishStreamData.DescribeUpPeakPublishStreamDatas["+ i +"].StatName");
+				describeUpPeakPublishStreamData.PeakTime = _ctx.StringValue("DescribeUpPeakPublishStreamData.DescribeUpPeakPublishStreamDatas["+ i +"].PeakTime");
+				describeUpPeakPublishStreamData.PublishStreamNum = _ctx.IntegerValue("DescribeUpPeakPublishStreamData.DescribeUpPeakPublishStreamDatas["+ i +"].PublishStreamNum");
 
 				describeUpPeakPublishStreamDataResponse_describeUpPeakPublishStreamDatas.Add(describeUpPeakPublishStreamData);
 			}

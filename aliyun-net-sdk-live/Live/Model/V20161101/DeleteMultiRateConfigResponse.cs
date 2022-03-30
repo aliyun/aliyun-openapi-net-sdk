@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,21 +25,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DeleteMultiRateConfigResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? code;
 
 		private string message;
 
-		private int? code;
+		private string requestId;
 
-		public string RequestId
+		public int? Code
 		{
 			get
 			{
-				return requestId;
+				return code;
 			}
 			set	
 			{
-				requestId = value;
+				code = value;
 			}
 		}
 
@@ -55,15 +55,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
 			}
 		}
 	}

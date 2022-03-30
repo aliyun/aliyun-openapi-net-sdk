@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeCasterScenesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? total;
 
-		private List<DescribeCasterScenes_Scene> sceneList;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeCasterScenes_Scene> sceneList;
 
 		public int? Total
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				total = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,23 +70,71 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeCasterScenes_Scene
 		{
 
+			private int? status;
+
+			private string layoutId;
+
+			private string outputType;
+
+			private string rtsUrl;
+
 			private string sceneId;
 
 			private string sceneName;
 
-			private string outputType;
-
-			private string layoutId;
-
 			private string streamUrl;
-
-			private string rtsUrl;
-
-			private int? status;
 
 			private List<DescribeCasterScenes_StreamInfo> streamInfos;
 
 			private List<string> componentIds;
+
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string LayoutId
+			{
+				get
+				{
+					return layoutId;
+				}
+				set	
+				{
+					layoutId = value;
+				}
+			}
+
+			public string OutputType
+			{
+				get
+				{
+					return outputType;
+				}
+				set	
+				{
+					outputType = value;
+				}
+			}
+
+			public string RtsUrl
+			{
+				get
+				{
+					return rtsUrl;
+				}
+				set	
+				{
+					rtsUrl = value;
+				}
+			}
 
 			public string SceneId
 			{
@@ -112,30 +160,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string OutputType
-			{
-				get
-				{
-					return outputType;
-				}
-				set	
-				{
-					outputType = value;
-				}
-			}
-
-			public string LayoutId
-			{
-				get
-				{
-					return layoutId;
-				}
-				set	
-				{
-					layoutId = value;
-				}
-			}
-
 			public string StreamUrl
 			{
 				get
@@ -145,30 +169,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					streamUrl = value;
-				}
-			}
-
-			public string RtsUrl
-			{
-				get
-				{
-					return rtsUrl;
-				}
-				set	
-				{
-					rtsUrl = value;
-				}
-			}
-
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
 				}
 			}
 
@@ -199,23 +199,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeCasterScenes_StreamInfo
 			{
 
-				private string transcodeConfig;
-
 				private string videoFormat;
 
 				private string outputStreamUrl;
 
-				public string TranscodeConfig
-				{
-					get
-					{
-						return transcodeConfig;
-					}
-					set	
-					{
-						transcodeConfig = value;
-					}
-				}
+				private string transcodeConfig;
 
 				public string VideoFormat
 				{
@@ -238,6 +226,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						outputStreamUrl = value;
+					}
+				}
+
+				public string TranscodeConfig
+				{
+					get
+					{
+						return transcodeConfig;
+					}
+					set	
+					{
+						transcodeConfig = value;
 					}
 				}
 			}

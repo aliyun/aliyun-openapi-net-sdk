@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,41 +25,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeCasterProgramResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string casterId;
-
 		private string programName;
 
+		private string requestId;
+
 		private int? programEffect;
+
+		private string casterId;
 
 		private int? total;
 
 		private List<DescribeCasterProgram_Episode> episodes;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string CasterId
-		{
-			get
-			{
-				return casterId;
-			}
-			set	
-			{
-				casterId = value;
-			}
-		}
 
 		public string ProgramName
 		{
@@ -73,6 +49,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public int? ProgramEffect
 		{
 			get
@@ -82,6 +70,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				programEffect = value;
+			}
+		}
+
+		public string CasterId
+		{
+			get
+			{
+				return casterId;
+			}
+			set	
+			{
+				casterId = value;
 			}
 		}
 
@@ -112,81 +112,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeCasterProgram_Episode
 		{
 
-			private string episodeId;
-
-			private string episodeType;
-
-			private string episodeName;
-
-			private string resourceId;
-
-			private string startTime;
+			private int? status;
 
 			private string endTime;
 
-			private string switchType;
+			private string startTime;
 
-			private int? status;
+			private string episodeName;
+
+			private string episodeType;
+
+			private string episodeId;
+
+			private string resourceId;
+
+			private string switchType;
 
 			private List<string> componentIds;
 
-			public string EpisodeId
+			public int? Status
 			{
 				get
 				{
-					return episodeId;
+					return status;
 				}
 				set	
 				{
-					episodeId = value;
-				}
-			}
-
-			public string EpisodeType
-			{
-				get
-				{
-					return episodeType;
-				}
-				set	
-				{
-					episodeType = value;
-				}
-			}
-
-			public string EpisodeName
-			{
-				get
-				{
-					return episodeName;
-				}
-				set	
-				{
-					episodeName = value;
-				}
-			}
-
-			public string ResourceId
-			{
-				get
-				{
-					return resourceId;
-				}
-				set	
-				{
-					resourceId = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
+					status = value;
 				}
 			}
 
@@ -202,6 +154,66 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			public string EpisodeName
+			{
+				get
+				{
+					return episodeName;
+				}
+				set	
+				{
+					episodeName = value;
+				}
+			}
+
+			public string EpisodeType
+			{
+				get
+				{
+					return episodeType;
+				}
+				set	
+				{
+					episodeType = value;
+				}
+			}
+
+			public string EpisodeId
+			{
+				get
+				{
+					return episodeId;
+				}
+				set	
+				{
+					episodeId = value;
+				}
+			}
+
+			public string ResourceId
+			{
+				get
+				{
+					return resourceId;
+				}
+				set	
+				{
+					resourceId = value;
+				}
+			}
+
 			public string SwitchType
 			{
 				get
@@ -211,18 +223,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					switchType = value;
-				}
-			}
-
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
 				}
 			}
 

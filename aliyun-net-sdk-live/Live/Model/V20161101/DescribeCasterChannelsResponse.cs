@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeCasterChannelsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? total;
 
-		private List<DescribeCasterChannels_Channel> channels;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeCasterChannels_Channel> channels;
 
 		public int? Total
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				total = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,19 +70,43 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeCasterChannels_Channel
 		{
 
+			private int? inputType;
+
+			private string rtmpUrl;
+
 			private string channelId;
+
+			private string rtsUrl;
+
+			private string faceBeauty;
 
 			private string resourceId;
 
 			private string streamUrl;
 
-			private string rtmpUrl;
+			public int? InputType
+			{
+				get
+				{
+					return inputType;
+				}
+				set	
+				{
+					inputType = value;
+				}
+			}
 
-			private string rtsUrl;
-
-			private int? inputType;
-
-			private string faceBeauty;
+			public string RtmpUrl
+			{
+				get
+				{
+					return rtmpUrl;
+				}
+				set	
+				{
+					rtmpUrl = value;
+				}
+			}
 
 			public string ChannelId
 			{
@@ -93,6 +117,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					channelId = value;
+				}
+			}
+
+			public string RtsUrl
+			{
+				get
+				{
+					return rtsUrl;
+				}
+				set	
+				{
+					rtsUrl = value;
+				}
+			}
+
+			public string FaceBeauty
+			{
+				get
+				{
+					return faceBeauty;
+				}
+				set	
+				{
+					faceBeauty = value;
 				}
 			}
 
@@ -117,54 +165,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					streamUrl = value;
-				}
-			}
-
-			public string RtmpUrl
-			{
-				get
-				{
-					return rtmpUrl;
-				}
-				set	
-				{
-					rtmpUrl = value;
-				}
-			}
-
-			public string RtsUrl
-			{
-				get
-				{
-					return rtsUrl;
-				}
-				set	
-				{
-					rtsUrl = value;
-				}
-			}
-
-			public int? InputType
-			{
-				get
-				{
-					return inputType;
-				}
-				set	
-				{
-					inputType = value;
-				}
-			}
-
-			public string FaceBeauty
-			{
-				get
-				{
-					return faceBeauty;
-				}
-				set	
-				{
-					faceBeauty = value;
 				}
 			}
 		}

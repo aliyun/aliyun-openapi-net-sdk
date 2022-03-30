@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,31 +25,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveRecordConfigResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? pageNum;
 
-		private int? pageSize;
+		private string requestId;
 
 		private string order;
 
-		private int? totalNum;
-
 		private int? totalPage;
 
-		private List<DescribeLiveRecordConfig_LiveAppRecord> liveAppRecordList;
+		private int? pageSize;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private int? totalNum;
+
+		private List<DescribeLiveRecordConfig_LiveAppRecord> liveAppRecordList;
 
 		public int? PageNum
 		{
@@ -63,15 +51,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? PageSize
+		public string RequestId
 		{
 			get
 			{
-				return pageSize;
+				return requestId;
 			}
 			set	
 			{
-				pageSize = value;
+				requestId = value;
 			}
 		}
 
@@ -87,18 +75,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? TotalNum
-		{
-			get
-			{
-				return totalNum;
-			}
-			set	
-			{
-				totalNum = value;
-			}
-		}
-
 		public int? TotalPage
 		{
 			get
@@ -108,6 +84,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				totalPage = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? TotalNum
+		{
+			get
+			{
+				return totalNum;
+			}
+			set	
+			{
+				totalNum = value;
 			}
 		}
 
@@ -126,23 +126,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveRecordConfig_LiveAppRecord
 		{
 
-			private string domainName;
+			private string endTime;
+
+			private string startTime;
 
 			private string appName;
 
 			private string streamName;
 
-			private string ossEndpoint;
+			private string createTime;
+
+			private int? onDemond;
 
 			private string ossBucket;
 
-			private string createTime;
+			private string domainName;
 
-			private string startTime;
-
-			private string endTime;
-
-			private int? onDemond;
+			private string ossEndpoint;
 
 			private List<DescribeLiveRecordConfig_RecordFormat> recordFormatList;
 
@@ -150,15 +150,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private List<string> transcodeTemplates;
 
-			public string DomainName
+			public string EndTime
 			{
 				get
 				{
-					return domainName;
+					return endTime;
 				}
 				set	
 				{
-					domainName = value;
+					endTime = value;
+				}
+			}
+
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
 				}
 			}
 
@@ -186,15 +198,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string OssEndpoint
+			public string CreateTime
 			{
 				get
 				{
-					return ossEndpoint;
+					return createTime;
 				}
 				set	
 				{
-					ossEndpoint = value;
+					createTime = value;
+				}
+			}
+
+			public int? OnDemond
+			{
+				get
+				{
+					return onDemond;
+				}
+				set	
+				{
+					onDemond = value;
 				}
 			}
 
@@ -210,51 +234,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string CreateTime
+			public string DomainName
 			{
 				get
 				{
-					return createTime;
+					return domainName;
 				}
 				set	
 				{
-					createTime = value;
+					domainName = value;
 				}
 			}
 
-			public string StartTime
+			public string OssEndpoint
 			{
 				get
 				{
-					return startTime;
+					return ossEndpoint;
 				}
 				set	
 				{
-					startTime = value;
-				}
-			}
-
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
-
-			public int? OnDemond
-			{
-				get
-				{
-					return onDemond;
-				}
-				set	
-				{
-					onDemond = value;
+					ossEndpoint = value;
 				}
 			}
 
@@ -297,49 +297,25 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeLiveRecordConfig_RecordFormat
 			{
 
-				private string format;
-
-				private string ossObjectPrefix;
-
-				private string sliceOssObjectPrefix;
+				private int? sliceDuration;
 
 				private int? cycleDuration;
 
-				private int? sliceDuration;
+				private string sliceOssObjectPrefix;
 
-				public string Format
+				private string ossObjectPrefix;
+
+				private string format;
+
+				public int? SliceDuration
 				{
 					get
 					{
-						return format;
+						return sliceDuration;
 					}
 					set	
 					{
-						format = value;
-					}
-				}
-
-				public string OssObjectPrefix
-				{
-					get
-					{
-						return ossObjectPrefix;
-					}
-					set	
-					{
-						ossObjectPrefix = value;
-					}
-				}
-
-				public string SliceOssObjectPrefix
-				{
-					get
-					{
-						return sliceOssObjectPrefix;
-					}
-					set	
-					{
-						sliceOssObjectPrefix = value;
+						sliceDuration = value;
 					}
 				}
 
@@ -355,15 +331,39 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public int? SliceDuration
+				public string SliceOssObjectPrefix
 				{
 					get
 					{
-						return sliceDuration;
+						return sliceOssObjectPrefix;
 					}
 					set	
 					{
-						sliceDuration = value;
+						sliceOssObjectPrefix = value;
+					}
+				}
+
+				public string OssObjectPrefix
+				{
+					get
+					{
+						return ossObjectPrefix;
+					}
+					set	
+					{
+						ossObjectPrefix = value;
+					}
+				}
+
+				public string Format
+				{
+					get
+					{
+						return format;
+					}
+					set	
+					{
+						format = value;
 					}
 				}
 			}

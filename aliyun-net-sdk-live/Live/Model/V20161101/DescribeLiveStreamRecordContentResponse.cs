@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,27 +56,51 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamRecordContent_RecordContentInfo
 		{
 
-			private string ossEndpoint;
+			private string endTime;
+
+			private string startTime;
+
+			private float? duration;
 
 			private string ossBucket;
 
 			private string ossObjectPrefix;
 
-			private string startTime;
+			private string ossEndpoint;
 
-			private string endTime;
-
-			private float? duration;
-
-			public string OssEndpoint
+			public string EndTime
 			{
 				get
 				{
-					return ossEndpoint;
+					return endTime;
 				}
 				set	
 				{
-					ossEndpoint = value;
+					endTime = value;
+				}
+			}
+
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			public float? Duration
+			{
+				get
+				{
+					return duration;
+				}
+				set	
+				{
+					duration = value;
 				}
 			}
 
@@ -104,39 +128,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string StartTime
+			public string OssEndpoint
 			{
 				get
 				{
-					return startTime;
+					return ossEndpoint;
 				}
 				set	
 				{
-					startTime = value;
-				}
-			}
-
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
-
-			public float? Duration
-			{
-				get
-				{
-					return duration;
-				}
-				set	
-				{
-					duration = value;
+					ossEndpoint = value;
 				}
 			}
 		}

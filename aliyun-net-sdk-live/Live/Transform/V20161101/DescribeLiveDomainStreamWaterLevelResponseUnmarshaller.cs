@@ -34,20 +34,20 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			describeLiveDomainStreamWaterLevelResponse.RequestId = _ctx.StringValue("DescribeLiveDomainStreamWaterLevel.RequestId");
 
 			DescribeLiveDomainStreamWaterLevelResponse.DescribeLiveDomainStreamWaterLevel_LiveUidWaterLevel liveUidWaterLevel = new DescribeLiveDomainStreamWaterLevelResponse.DescribeLiveDomainStreamWaterLevel_LiveUidWaterLevel();
+			liveUidWaterLevel.UidTranscodeLimit = _ctx.IntegerValue("DescribeLiveDomainStreamWaterLevel.LiveUidWaterLevel.UidTranscodeLimit");
 			liveUidWaterLevel.AliUid = _ctx.StringValue("DescribeLiveDomainStreamWaterLevel.LiveUidWaterLevel.AliUid");
-			liveUidWaterLevel.UidRawCount = _ctx.IntegerValue("DescribeLiveDomainStreamWaterLevel.LiveUidWaterLevel.UidRawCount");
 			liveUidWaterLevel.UidTranscodeCount = _ctx.IntegerValue("DescribeLiveDomainStreamWaterLevel.LiveUidWaterLevel.UidTranscodeCount");
 			liveUidWaterLevel.UidRawLimit = _ctx.IntegerValue("DescribeLiveDomainStreamWaterLevel.LiveUidWaterLevel.UidRawLimit");
-			liveUidWaterLevel.UidTranscodeLimit = _ctx.IntegerValue("DescribeLiveDomainStreamWaterLevel.LiveUidWaterLevel.UidTranscodeLimit");
+			liveUidWaterLevel.UidRawCount = _ctx.IntegerValue("DescribeLiveDomainStreamWaterLevel.LiveUidWaterLevel.UidRawCount");
 			describeLiveDomainStreamWaterLevelResponse.LiveUidWaterLevel = liveUidWaterLevel;
 
 			List<DescribeLiveDomainStreamWaterLevelResponse.DescribeLiveDomainStreamWaterLevel_LiveDomainWaterLevel> describeLiveDomainStreamWaterLevelResponse_liveDomainWaterLevelList = new List<DescribeLiveDomainStreamWaterLevelResponse.DescribeLiveDomainStreamWaterLevel_LiveDomainWaterLevel>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDomainStreamWaterLevel.LiveDomainWaterLevelList.Length"); i++) {
 				DescribeLiveDomainStreamWaterLevelResponse.DescribeLiveDomainStreamWaterLevel_LiveDomainWaterLevel liveDomainWaterLevel = new DescribeLiveDomainStreamWaterLevelResponse.DescribeLiveDomainStreamWaterLevel_LiveDomainWaterLevel();
-				liveDomainWaterLevel.DomainName = _ctx.StringValue("DescribeLiveDomainStreamWaterLevel.LiveDomainWaterLevelList["+ i +"].DomainName");
+				liveDomainWaterLevel.DomainRawLimit = _ctx.IntegerValue("DescribeLiveDomainStreamWaterLevel.LiveDomainWaterLevelList["+ i +"].DomainRawLimit");
 				liveDomainWaterLevel.DomainRawCount = _ctx.IntegerValue("DescribeLiveDomainStreamWaterLevel.LiveDomainWaterLevelList["+ i +"].DomainRawCount");
 				liveDomainWaterLevel.DomainTranscodeCount = _ctx.IntegerValue("DescribeLiveDomainStreamWaterLevel.LiveDomainWaterLevelList["+ i +"].DomainTranscodeCount");
-				liveDomainWaterLevel.DomainRawLimit = _ctx.IntegerValue("DescribeLiveDomainStreamWaterLevel.LiveDomainWaterLevelList["+ i +"].DomainRawLimit");
+				liveDomainWaterLevel.DomainName = _ctx.StringValue("DescribeLiveDomainStreamWaterLevel.LiveDomainWaterLevelList["+ i +"].DomainName");
 				liveDomainWaterLevel.DomainTranscodeLimit = _ctx.IntegerValue("DescribeLiveDomainStreamWaterLevel.LiveDomainWaterLevelList["+ i +"].DomainTranscodeLimit");
 
 				describeLiveDomainStreamWaterLevelResponse_liveDomainWaterLevelList.Add(liveDomainWaterLevel);

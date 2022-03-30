@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -27,11 +27,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string requestId;
 
+		private string callbackAuthKey;
+
 		private string domainName;
 
 		private string callbackReqAuth;
-
-		private string callbackAuthKey;
 
 		public string RequestId
 		{
@@ -42,6 +42,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string CallbackAuthKey
+		{
+			get
+			{
+				return callbackAuthKey;
+			}
+			set	
+			{
+				callbackAuthKey = value;
 			}
 		}
 
@@ -66,18 +78,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				callbackReqAuth = value;
-			}
-		}
-
-		public string CallbackAuthKey
-		{
-			get
-			{
-				return callbackAuthKey;
-			}
-			set	
-			{
-				callbackAuthKey = value;
 			}
 		}
 	}

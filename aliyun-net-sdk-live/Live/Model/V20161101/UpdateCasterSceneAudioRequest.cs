@@ -44,7 +44,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
-		private List<AudioLayer> audioLayers = new List<AudioLayer>(){ };
+		private List<float?> audioLayers = new List<float?>(){ };
 
 		private string sceneId;
 
@@ -78,7 +78,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<AudioLayer> AudioLayers
+		public List<float?> AudioLayers
 		{
 			get
 			{
@@ -88,11 +88,14 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				audioLayers = value;
-				for (int i = 0; i < audioLayers.Count; i++)
+				if(audioLayers != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"AudioLayer." + (i + 1) + ".VolumeRate", audioLayers[i].VolumeRate);
-					DictionaryUtil.Add(QueryParameters,"AudioLayer." + (i + 1) + ".ValidChannel", audioLayers[i].ValidChannel);
-					DictionaryUtil.Add(QueryParameters,"AudioLayer." + (i + 1) + ".FixedDelayDuration", audioLayers[i].FixedDelayDuration);
+					for (int depth1 = 0; depth1 < audioLayers.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"AudioLayer." + (depth1 + 1), audioLayers[depth1]);
+						DictionaryUtil.Add(QueryParameters,"AudioLayer." + (depth1 + 1), audioLayers[depth1]);
+						DictionaryUtil.Add(QueryParameters,"AudioLayer." + (depth1 + 1), audioLayers[depth1]);
+					}
 				}
 			}
 		}
@@ -120,10 +123,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				mixLists = value;
-				for (int i = 0; i < mixLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"MixList." + (i + 1) , mixLists[i]);
-				}
 			}
 		}
 
@@ -145,9 +144,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private float? volumeRate;
 
-			private string validChannel;
-
 			private int? fixedDelayDuration;
+
+			private string validChannel;
 
 			public float? VolumeRate
 			{
@@ -161,18 +160,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string ValidChannel
-			{
-				get
-				{
-					return validChannel;
-				}
-				set	
-				{
-					validChannel = value;
-				}
-			}
-
 			public int? FixedDelayDuration
 			{
 				get
@@ -182,6 +169,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					fixedDelayDuration = value;
+				}
+			}
+
+			public string ValidChannel
+			{
+				get
+				{
+					return validChannel;
+				}
+				set	
+				{
+					validChannel = value;
 				}
 			}
 		}

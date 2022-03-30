@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -87,39 +87,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeLiveCertificateList_Cert
 			{
 
-				private string certName;
-
-				private long? certId;
+				private long? lastTime;
 
 				private string fingerprint;
 
-				private string common;
+				private string certName;
 
 				private string issuer;
 
-				private long? lastTime;
+				private long? certId;
 
-				public string CertName
+				private string common;
+
+				public long? LastTime
 				{
 					get
 					{
-						return certName;
+						return lastTime;
 					}
 					set	
 					{
-						certName = value;
-					}
-				}
-
-				public long? CertId
-				{
-					get
-					{
-						return certId;
-					}
-					set	
-					{
-						certId = value;
+						lastTime = value;
 					}
 				}
 
@@ -135,15 +123,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public string Common
+				public string CertName
 				{
 					get
 					{
-						return common;
+						return certName;
 					}
 					set	
 					{
-						common = value;
+						certName = value;
 					}
 				}
 
@@ -159,15 +147,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public long? LastTime
+				public long? CertId
 				{
 					get
 					{
-						return lastTime;
+						return certId;
 					}
 					set	
 					{
-						lastTime = value;
+						certId = value;
+					}
+				}
+
+				public string Common
+				{
+					get
+					{
+						return common;
+					}
+					set	
+					{
+						common = value;
 					}
 				}
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainMapping_LiveDomainModel
 		{
 
-			private string domainName;
-
 			private string type;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+			private string domainName;
 
 			public string Type
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					type = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 		}

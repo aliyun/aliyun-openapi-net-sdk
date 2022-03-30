@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveRecordVodConfigsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? pageNum;
+
+		private string requestId;
 
 		private int? pageSize;
 
 		private string total;
 
 		private List<DescribeLiveRecordVodConfigs_LiveRecordVodConfig> liveRecordVodConfigs;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public int? PageNum
 		{
@@ -56,6 +44,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				pageNum = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -98,45 +98,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveRecordVodConfigs_LiveRecordVodConfig
 		{
 
-			private string createTime;
-
-			private string domainName;
-
 			private string appName;
 
+			private string autoCompose;
+
 			private string streamName;
+
+			private string createTime;
 
 			private string vodTranscodeGroupId;
 
 			private int? cycleDuration;
 
-			private string autoCompose;
+			private string domainName;
 
 			private string composeVodTranscodeGroupId;
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
 
 			public string AppName
 			{
@@ -150,6 +126,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			public string AutoCompose
+			{
+				get
+				{
+					return autoCompose;
+				}
+				set	
+				{
+					autoCompose = value;
+				}
+			}
+
 			public string StreamName
 			{
 				get
@@ -159,6 +147,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					streamName = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
 				}
 			}
 
@@ -186,15 +186,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string AutoCompose
+			public string DomainName
 			{
 				get
 				{
-					return autoCompose;
+					return domainName;
 				}
 				set	
 				{
-					autoCompose = value;
+					domainName = value;
 				}
 			}
 

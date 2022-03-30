@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,13 +25,25 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeRoomListResponse : AcsResponse
 	{
 
+		private int? totalPage;
+
 		private string requestId;
 
 		private int? totalNum;
 
-		private int? totalPage;
-
 		private List<DescribeRoomList_Room> roomList;
+
+		public int? TotalPage
+		{
+			get
+			{
+				return totalPage;
+			}
+			set	
+			{
+				totalPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -57,18 +69,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? TotalPage
-		{
-			get
-			{
-				return totalPage;
-			}
-			set	
-			{
-				totalPage = value;
-			}
-		}
-
 		public List<DescribeRoomList_Room> RoomList
 		{
 			get
@@ -84,25 +84,25 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeRoomList_Room
 		{
 
-			private string roomId;
+			private string forbidStream;
 
 			private string anchorId;
 
-			private int? roomStatus;
-
-			private string forbidStream;
+			private string roomId;
 
 			private string createTime;
 
-			public string RoomId
+			private int? roomStatus;
+
+			public string ForbidStream
 			{
 				get
 				{
-					return roomId;
+					return forbidStream;
 				}
 				set	
 				{
-					roomId = value;
+					forbidStream = value;
 				}
 			}
 
@@ -118,27 +118,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? RoomStatus
+			public string RoomId
 			{
 				get
 				{
-					return roomStatus;
+					return roomId;
 				}
 				set	
 				{
-					roomStatus = value;
-				}
-			}
-
-			public string ForbidStream
-			{
-				get
-				{
-					return forbidStream;
-				}
-				set	
-				{
-					forbidStream = value;
+					roomId = value;
 				}
 			}
 
@@ -151,6 +139,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					createTime = value;
+				}
+			}
+
+			public int? RoomStatus
+			{
+				get
+				{
+					return roomStatus;
+				}
+				set	
+				{
+					roomStatus = value;
 				}
 			}
 		}

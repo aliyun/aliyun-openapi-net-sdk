@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeCastersResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? total;
 
-		private List<DescribeCasters_Caster> casterList;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeCasters_Caster> casterList;
 
 		public int? Total
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				total = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -72,31 +72,31 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private int? status;
 
-			private int? normType;
-
-			private string casterId;
-
-			private string casterName;
-
-			private string createTime;
-
-			private string startTime;
-
 			private string purchaseTime;
 
 			private string expireTime;
+
+			private string createTime;
+
+			private string casterName;
 
 			private string chargeType;
 
 			private string casterTemplate;
 
+			private int? roomId;
+
+			private string casterId;
+
 			private int? channelEnable;
 
 			private string lastModified;
 
-			private string duration;
+			private string startTime;
 
-			private int? roomId;
+			private int? normType;
+
+			private string duration;
 
 			public int? Status
 			{
@@ -107,66 +107,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					status = value;
-				}
-			}
-
-			public int? NormType
-			{
-				get
-				{
-					return normType;
-				}
-				set	
-				{
-					normType = value;
-				}
-			}
-
-			public string CasterId
-			{
-				get
-				{
-					return casterId;
-				}
-				set	
-				{
-					casterId = value;
-				}
-			}
-
-			public string CasterName
-			{
-				get
-				{
-					return casterName;
-				}
-				set	
-				{
-					casterName = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
 				}
 			}
 
@@ -194,6 +134,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string CasterName
+			{
+				get
+				{
+					return casterName;
+				}
+				set	
+				{
+					casterName = value;
+				}
+			}
+
 			public string ChargeType
 			{
 				get
@@ -215,6 +179,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					casterTemplate = value;
+				}
+			}
+
+			public int? RoomId
+			{
+				get
+				{
+					return roomId;
+				}
+				set	
+				{
+					roomId = value;
+				}
+			}
+
+			public string CasterId
+			{
+				get
+				{
+					return casterId;
+				}
+				set	
+				{
+					casterId = value;
 				}
 			}
 
@@ -242,6 +230,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			public int? NormType
+			{
+				get
+				{
+					return normType;
+				}
+				set	
+				{
+					normType = value;
+				}
+			}
+
 			public string Duration
 			{
 				get
@@ -251,18 +263,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					duration = value;
-				}
-			}
-
-			public int? RoomId
-			{
-				get
-				{
-					return roomId;
-				}
-				set	
-				{
-					roomId = value;
 				}
 			}
 		}

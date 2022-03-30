@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DeleteCasterResponse deleteCasterResponse = new DeleteCasterResponse();
 
 			deleteCasterResponse.HttpResponse = _ctx.HttpResponse;
-			deleteCasterResponse.RequestId = _ctx.StringValue("DeleteCaster.RequestId");
 			deleteCasterResponse.CasterId = _ctx.StringValue("DeleteCaster.CasterId");
+			deleteCasterResponse.RequestId = _ctx.StringValue("DeleteCaster.RequestId");
         
 			return deleteCasterResponse;
         }

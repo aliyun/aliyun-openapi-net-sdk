@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,31 +25,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveSnapshotDetectPornConfigResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? pageNum;
 
-		private int? pageSize;
+		private string requestId;
 
 		private string order;
 
-		private int? totalNum;
-
 		private int? totalPage;
 
-		private List<DescribeLiveSnapshotDetectPornConfig_LiveSnapshotDetectPornConfig> liveSnapshotDetectPornConfigList;
+		private int? pageSize;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private int? totalNum;
+
+		private List<DescribeLiveSnapshotDetectPornConfig_LiveSnapshotDetectPornConfig> liveSnapshotDetectPornConfigList;
 
 		public int? PageNum
 		{
@@ -63,15 +51,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? PageSize
+		public string RequestId
 		{
 			get
 			{
-				return pageSize;
+				return requestId;
 			}
 			set	
 			{
-				pageSize = value;
+				requestId = value;
 			}
 		}
 
@@ -87,18 +75,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? TotalNum
-		{
-			get
-			{
-				return totalNum;
-			}
-			set	
-			{
-				totalNum = value;
-			}
-		}
-
 		public int? TotalPage
 		{
 			get
@@ -108,6 +84,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				totalPage = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? TotalNum
+		{
+			get
+			{
+				return totalNum;
+			}
+			set	
+			{
+				totalNum = value;
 			}
 		}
 
@@ -126,29 +126,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveSnapshotDetectPornConfig_LiveSnapshotDetectPornConfig
 		{
 
-			private string domainName;
+			private string ossObject;
 
 			private string appName;
 
-			private string ossEndpoint;
+			private int? interval;
 
 			private string ossBucket;
 
-			private string ossObject;
+			private string domainName;
 
-			private int? interval;
+			private string ossEndpoint;
 
 			private List<string> scenes;
 
-			public string DomainName
+			public string OssObject
 			{
 				get
 				{
-					return domainName;
+					return ossObject;
 				}
 				set	
 				{
-					domainName = value;
+					ossObject = value;
 				}
 			}
 
@@ -164,15 +164,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string OssEndpoint
+			public int? Interval
 			{
 				get
 				{
-					return ossEndpoint;
+					return interval;
 				}
 				set	
 				{
-					ossEndpoint = value;
+					interval = value;
 				}
 			}
 
@@ -188,27 +188,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string OssObject
+			public string DomainName
 			{
 				get
 				{
-					return ossObject;
+					return domainName;
 				}
 				set	
 				{
-					ossObject = value;
+					domainName = value;
 				}
 			}
 
-			public int? Interval
+			public string OssEndpoint
 			{
 				get
 				{
-					return interval;
+					return ossEndpoint;
 				}
 				set	
 				{
-					interval = value;
+					ossEndpoint = value;
 				}
 			}
 

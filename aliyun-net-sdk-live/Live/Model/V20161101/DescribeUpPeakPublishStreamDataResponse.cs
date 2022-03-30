@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,39 +56,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeUpPeakPublishStreamData_DescribeUpPeakPublishStreamData
 		{
 
-			private int? publishStreamNum;
-
-			private string peakTime;
-
 			private string queryTime;
-
-			private string statName;
 
 			private string bandWidth;
 
-			public int? PublishStreamNum
-			{
-				get
-				{
-					return publishStreamNum;
-				}
-				set	
-				{
-					publishStreamNum = value;
-				}
-			}
+			private string statName;
 
-			public string PeakTime
-			{
-				get
-				{
-					return peakTime;
-				}
-				set	
-				{
-					peakTime = value;
-				}
-			}
+			private string peakTime;
+
+			private int? publishStreamNum;
 
 			public string QueryTime
 			{
@@ -99,6 +75,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					queryTime = value;
+				}
+			}
+
+			public string BandWidth
+			{
+				get
+				{
+					return bandWidth;
+				}
+				set	
+				{
+					bandWidth = value;
 				}
 			}
 
@@ -114,15 +102,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string BandWidth
+			public string PeakTime
 			{
 				get
 				{
-					return bandWidth;
+					return peakTime;
 				}
 				set	
 				{
-					bandWidth = value;
+					peakTime = value;
+				}
+			}
+
+			public int? PublishStreamNum
+			{
+				get
+				{
+					return publishStreamNum;
+				}
+				set	
+				{
+					publishStreamNum = value;
 				}
 			}
 		}

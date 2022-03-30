@@ -58,6 +58,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string syncGroupsConfig;
 
+		private string sideOutputUrlList;
+
 		private string casterId;
 
 		private string domainName;
@@ -182,6 +184,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				syncGroupsConfig = value;
 				DictionaryUtil.Add(QueryParameters, "SyncGroupsConfig", value);
+			}
+		}
+
+		public string SideOutputUrlList
+		{
+			get
+			{
+				return sideOutputUrlList;
+			}
+			set	
+			{
+				sideOutputUrlList = value;
+				DictionaryUtil.Add(QueryParameters, "SideOutputUrlList", value);
 			}
 		}
 

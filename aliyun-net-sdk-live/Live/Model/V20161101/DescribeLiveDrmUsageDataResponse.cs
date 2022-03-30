@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,27 +56,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDrmUsageData_DataModule
 		{
 
-			private string timeStamp;
-
 			private string domain;
 
-			private string region;
-
-			private string drmType;
+			private string timeStamp;
 
 			private long? count;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private string drmType;
+
+			private string region;
 
 			public string Domain
 			{
@@ -90,15 +78,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string Region
+			public string TimeStamp
 			{
 				get
 				{
-					return region;
+					return timeStamp;
 				}
 				set	
 				{
-					region = value;
+					timeStamp = value;
+				}
+			}
+
+			public long? Count
+			{
+				get
+				{
+					return count;
+				}
+				set	
+				{
+					count = value;
 				}
 			}
 
@@ -114,15 +114,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public long? Count
+			public string Region
 			{
 				get
 				{
-					return count;
+					return region;
 				}
 				set	
 				{
-					count = value;
+					region = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,25 +56,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamOptimizedFeatureConfig_LiveStreamOptimizedFeatureConfig
 		{
 
-			private string domainName;
-
 			private string configName;
 
 			private string configStatus;
 
-			private string configValue;
+			private string domainName;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+			private string configValue;
 
 			public string ConfigName
 			{
@@ -97,6 +85,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					configStatus = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 

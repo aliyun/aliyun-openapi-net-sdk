@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,19 +25,43 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveEdgeTransferResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string domainName;
+		private string httpDns;
 
 		private string appName;
+
+		private string requestId;
+
+		private string transferArgs;
 
 		private string streamName;
 
 		private string targetDomainList;
 
-		private string transferArgs;
+		private string domainName;
 
-		private string httpDns;
+		public string HttpDns
+		{
+			get
+			{
+				return httpDns;
+			}
+			set	
+			{
+				httpDns = value;
+			}
+		}
+
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -51,27 +75,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string DomainName
+		public string TransferArgs
 		{
 			get
 			{
-				return domainName;
+				return transferArgs;
 			}
 			set	
 			{
-				domainName = value;
-			}
-		}
-
-		public string AppName
-		{
-			get
-			{
-				return appName;
-			}
-			set	
-			{
-				appName = value;
+				transferArgs = value;
 			}
 		}
 
@@ -99,27 +111,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string TransferArgs
+		public string DomainName
 		{
 			get
 			{
-				return transferArgs;
+				return domainName;
 			}
 			set	
 			{
-				transferArgs = value;
-			}
-		}
-
-		public string HttpDns
-		{
-			get
-			{
-				return httpDns;
-			}
-			set	
-			{
-				httpDns = value;
+				domainName = value;
 			}
 		}
 	}

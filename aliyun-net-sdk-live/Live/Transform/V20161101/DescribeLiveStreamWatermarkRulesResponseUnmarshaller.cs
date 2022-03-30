@@ -36,13 +36,13 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveStreamWatermarkRulesResponse.DescribeLiveStreamWatermarkRules_RuleInfo> describeLiveStreamWatermarkRulesResponse_ruleInfoList = new List<DescribeLiveStreamWatermarkRulesResponse.DescribeLiveStreamWatermarkRules_RuleInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveStreamWatermarkRules.RuleInfoList.Length"); i++) {
 				DescribeLiveStreamWatermarkRulesResponse.DescribeLiveStreamWatermarkRules_RuleInfo ruleInfo = new DescribeLiveStreamWatermarkRulesResponse.DescribeLiveStreamWatermarkRules_RuleInfo();
-				ruleInfo.RuleId = _ctx.StringValue("DescribeLiveStreamWatermarkRules.RuleInfoList["+ i +"].RuleId");
-				ruleInfo.Name = _ctx.StringValue("DescribeLiveStreamWatermarkRules.RuleInfoList["+ i +"].Name");
 				ruleInfo.Domain = _ctx.StringValue("DescribeLiveStreamWatermarkRules.RuleInfoList["+ i +"].Domain");
+				ruleInfo.Description = _ctx.StringValue("DescribeLiveStreamWatermarkRules.RuleInfoList["+ i +"].Description");
 				ruleInfo.App = _ctx.StringValue("DescribeLiveStreamWatermarkRules.RuleInfoList["+ i +"].App");
 				ruleInfo.Stream = _ctx.StringValue("DescribeLiveStreamWatermarkRules.RuleInfoList["+ i +"].Stream");
+				ruleInfo.Name = _ctx.StringValue("DescribeLiveStreamWatermarkRules.RuleInfoList["+ i +"].Name");
 				ruleInfo.TemplateId = _ctx.StringValue("DescribeLiveStreamWatermarkRules.RuleInfoList["+ i +"].TemplateId");
-				ruleInfo.Description = _ctx.StringValue("DescribeLiveStreamWatermarkRules.RuleInfoList["+ i +"].Description");
+				ruleInfo.RuleId = _ctx.StringValue("DescribeLiveStreamWatermarkRules.RuleInfoList["+ i +"].RuleId");
 
 				describeLiveStreamWatermarkRulesResponse_ruleInfoList.Add(ruleInfo);
 			}

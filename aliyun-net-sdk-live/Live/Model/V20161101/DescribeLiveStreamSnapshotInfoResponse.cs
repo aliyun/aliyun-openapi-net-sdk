@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamSnapshotInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextStartTime;
 
-		private List<DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo> liveStreamSnapshotInfoList;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo> liveStreamSnapshotInfoList;
 
 		public string NextStartTime
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				nextStartTime = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,23 +70,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo
 		{
 
-			private string ossEndpoint;
+			private string ossObject;
 
 			private string ossBucket;
 
-			private string ossObject;
-
 			private string createTime;
 
-			public string OssEndpoint
+			private string ossEndpoint;
+
+			public string OssObject
 			{
 				get
 				{
-					return ossEndpoint;
+					return ossObject;
 				}
 				set	
 				{
-					ossEndpoint = value;
+					ossObject = value;
 				}
 			}
 
@@ -102,18 +102,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string OssObject
-			{
-				get
-				{
-					return ossObject;
-				}
-				set	
-				{
-					ossObject = value;
-				}
-			}
-
 			public string CreateTime
 			{
 				get
@@ -123,6 +111,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					createTime = value;
+				}
+			}
+
+			public string OssEndpoint
+			{
+				get
+				{
+					return ossEndpoint;
+				}
+				set	
+				{
+					ossEndpoint = value;
 				}
 			}
 		}

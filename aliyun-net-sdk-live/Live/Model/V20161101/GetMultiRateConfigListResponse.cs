@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class GetMultiRateConfigListResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? code;
 
 		private string message;
 
-		private int? code;
+		private string requestId;
 
 		private List<GetMultiRateConfigList_Info> groupInfo;
 
-		public string RequestId
+		public int? Code
 		{
 			get
 			{
-				return requestId;
+				return code;
 			}
 			set	
 			{
-				requestId = value;
+				code = value;
 			}
 		}
 
@@ -57,15 +57,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
 			}
 		}
 
@@ -84,37 +84,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class GetMultiRateConfigList_Info
 		{
 
-			private string app;
-
-			private string avFormat;
-
 			private string groupId;
 
 			private int? count;
 
-			public string App
-			{
-				get
-				{
-					return app;
-				}
-				set	
-				{
-					app = value;
-				}
-			}
+			private string app;
 
-			public string AvFormat
-			{
-				get
-				{
-					return avFormat;
-				}
-				set	
-				{
-					avFormat = value;
-				}
-			}
+			private string avFormat;
 
 			public string GroupId
 			{
@@ -137,6 +113,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					count = value;
+				}
+			}
+
+			public string App
+			{
+				get
+				{
+					return app;
+				}
+				set	
+				{
+					app = value;
+				}
+			}
+
+			public string AvFormat
+			{
+				get
+				{
+					return avFormat;
+				}
+				set	
+				{
+					avFormat = value;
 				}
 			}
 		}

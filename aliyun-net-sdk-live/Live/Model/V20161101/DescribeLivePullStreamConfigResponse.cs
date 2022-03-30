@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,31 +56,31 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLivePullStreamConfig_LiveAppRecord
 		{
 
-			private string domainName;
+			private string endTime;
 
 			private string appName;
 
-			private string streamName;
-
 			private string sourceUrl;
-
-			private string sourceUsing;
 
 			private string startTime;
 
-			private string endTime;
-
 			private string always;
 
-			public string DomainName
+			private string streamName;
+
+			private string sourceUsing;
+
+			private string domainName;
+
+			public string EndTime
 			{
 				get
 				{
-					return domainName;
+					return endTime;
 				}
 				set	
 				{
-					domainName = value;
+					endTime = value;
 				}
 			}
 
@@ -96,18 +96,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
-				}
-			}
-
 			public string SourceUrl
 			{
 				get
@@ -117,18 +105,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					sourceUrl = value;
-				}
-			}
-
-			public string SourceUsing
-			{
-				get
-				{
-					return sourceUsing;
-				}
-				set	
-				{
-					sourceUsing = value;
 				}
 			}
 
@@ -144,18 +120,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
-
 			public string Always
 			{
 				get
@@ -165,6 +129,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					always = value;
+				}
+			}
+
+			public string StreamName
+			{
+				get
+				{
+					return streamName;
+				}
+				set	
+				{
+					streamName = value;
+				}
+			}
+
+			public string SourceUsing
+			{
+				get
+				{
+					return sourceUsing;
+				}
+				set	
+				{
+					sourceUsing = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 		}

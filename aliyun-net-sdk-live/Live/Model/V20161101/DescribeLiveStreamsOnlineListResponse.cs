@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,27 +25,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamsOnlineListResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? totalPage;
 
 		private int? pageNum;
 
 		private int? pageSize;
 
-		private int? totalNum;
+		private string requestId;
 
-		private int? totalPage;
+		private int? totalNum;
 
 		private List<DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo> onlineInfo;
 
-		public string RequestId
+		public int? TotalPage
 		{
 			get
 			{
-				return requestId;
+				return totalPage;
 			}
 			set	
 			{
-				requestId = value;
+				totalPage = value;
 			}
 		}
 
@@ -73,6 +73,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public int? TotalNum
 		{
 			get
@@ -82,18 +94,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				totalNum = value;
-			}
-		}
-
-		public int? TotalPage
-		{
-			get
-			{
-				return totalPage;
-			}
-			set	
-			{
-				totalPage = value;
 			}
 		}
 
@@ -112,91 +112,67 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo
 		{
 
-			private string domainName;
+			private int? audioDataRate;
 
-			private string appName;
-
-			private string streamName;
-
-			private string publishTime;
+			private int? frameRate;
 
 			private string publishUrl;
 
-			private string publishDomain;
+			private string streamName;
 
-			private string streamUrlArgs;
+			private int? audioCodecId;
 
-			private string publishType;
+			private int? height;
 
-			private string transcoded;
+			private int? videoDataRate;
+
+			private string domainName;
 
 			private string transcodeId;
 
 			private string transcodeDrm;
 
-			private string serverIp;
+			private string publishDomain;
 
-			private string clientIp;
+			private string publishTime;
+
+			private string appName;
+
+			private string publishType;
 
 			private int? videoCodecId;
 
-			private int? videoDataRate;
-
-			private int? frameRate;
+			private string transcoded;
 
 			private int? width;
 
-			private int? height;
+			private string clientIp;
 
-			private int? audioCodecId;
+			private string serverIp;
 
-			private int? audioDataRate;
+			private string streamUrlArgs;
 
-			public string DomainName
+			public int? AudioDataRate
 			{
 				get
 				{
-					return domainName;
+					return audioDataRate;
 				}
 				set	
 				{
-					domainName = value;
+					audioDataRate = value;
 				}
 			}
 
-			public string AppName
+			public int? FrameRate
 			{
 				get
 				{
-					return appName;
+					return frameRate;
 				}
 				set	
 				{
-					appName = value;
-				}
-			}
-
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
-				}
-			}
-
-			public string PublishTime
-			{
-				get
-				{
-					return publishTime;
-				}
-				set	
-				{
-					publishTime = value;
+					frameRate = value;
 				}
 			}
 
@@ -212,51 +188,63 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string PublishDomain
+			public string StreamName
 			{
 				get
 				{
-					return publishDomain;
+					return streamName;
 				}
 				set	
 				{
-					publishDomain = value;
+					streamName = value;
 				}
 			}
 
-			public string StreamUrlArgs
+			public int? AudioCodecId
 			{
 				get
 				{
-					return streamUrlArgs;
+					return audioCodecId;
 				}
 				set	
 				{
-					streamUrlArgs = value;
+					audioCodecId = value;
 				}
 			}
 
-			public string PublishType
+			public int? Height
 			{
 				get
 				{
-					return publishType;
+					return height;
 				}
 				set	
 				{
-					publishType = value;
+					height = value;
 				}
 			}
 
-			public string Transcoded
+			public int? VideoDataRate
 			{
 				get
 				{
-					return transcoded;
+					return videoDataRate;
 				}
 				set	
 				{
-					transcoded = value;
+					videoDataRate = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 
@@ -284,27 +272,51 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string ServerIp
+			public string PublishDomain
 			{
 				get
 				{
-					return serverIp;
+					return publishDomain;
 				}
 				set	
 				{
-					serverIp = value;
+					publishDomain = value;
 				}
 			}
 
-			public string ClientIp
+			public string PublishTime
 			{
 				get
 				{
-					return clientIp;
+					return publishTime;
 				}
 				set	
 				{
-					clientIp = value;
+					publishTime = value;
+				}
+			}
+
+			public string AppName
+			{
+				get
+				{
+					return appName;
+				}
+				set	
+				{
+					appName = value;
+				}
+			}
+
+			public string PublishType
+			{
+				get
+				{
+					return publishType;
+				}
+				set	
+				{
+					publishType = value;
 				}
 			}
 
@@ -320,27 +332,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? VideoDataRate
+			public string Transcoded
 			{
 				get
 				{
-					return videoDataRate;
+					return transcoded;
 				}
 				set	
 				{
-					videoDataRate = value;
-				}
-			}
-
-			public int? FrameRate
-			{
-				get
-				{
-					return frameRate;
-				}
-				set	
-				{
-					frameRate = value;
+					transcoded = value;
 				}
 			}
 
@@ -356,39 +356,39 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? Height
+			public string ClientIp
 			{
 				get
 				{
-					return height;
+					return clientIp;
 				}
 				set	
 				{
-					height = value;
+					clientIp = value;
 				}
 			}
 
-			public int? AudioCodecId
+			public string ServerIp
 			{
 				get
 				{
-					return audioCodecId;
+					return serverIp;
 				}
 				set	
 				{
-					audioCodecId = value;
+					serverIp = value;
 				}
 			}
 
-			public int? AudioDataRate
+			public string StreamUrlArgs
 			{
 				get
 				{
-					return audioDataRate;
+					return streamUrlArgs;
 				}
 				set	
 				{
-					audioDataRate = value;
+					streamUrlArgs = value;
 				}
 			}
 		}

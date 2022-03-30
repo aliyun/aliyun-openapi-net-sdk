@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,29 +56,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainStreamTranscodeData_TranscodeData
 		{
 
-			private string timeStamp;
+			private string tanscodeType;
 
 			private string domain;
 
 			private string region;
 
-			private string tanscodeType;
+			private int? duration;
 
-			private string resolution;
+			private string timeStamp;
 
 			private string fps;
 
-			private int? duration;
+			private string resolution;
 
-			public string TimeStamp
+			public string TanscodeType
 			{
 				get
 				{
-					return timeStamp;
+					return tanscodeType;
 				}
 				set	
 				{
-					timeStamp = value;
+					tanscodeType = value;
 				}
 			}
 
@@ -106,27 +106,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string TanscodeType
+			public int? Duration
 			{
 				get
 				{
-					return tanscodeType;
+					return duration;
 				}
 				set	
 				{
-					tanscodeType = value;
+					duration = value;
 				}
 			}
 
-			public string Resolution
+			public string TimeStamp
 			{
 				get
 				{
-					return resolution;
+					return timeStamp;
 				}
 				set	
 				{
-					resolution = value;
+					timeStamp = value;
 				}
 			}
 
@@ -142,15 +142,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? Duration
+			public string Resolution
 			{
 				get
 				{
-					return duration;
+					return resolution;
 				}
 				set	
 				{
-					duration = value;
+					resolution = value;
 				}
 			}
 		}

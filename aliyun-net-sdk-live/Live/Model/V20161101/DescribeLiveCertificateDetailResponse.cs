@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveCertificateDetailResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string certName;
 
 		private string cert;
 
+		private string requestId;
+
 		private long? certId;
 
-		private string certName;
-
-		public string RequestId
+		public string CertName
 		{
 			get
 			{
-				return requestId;
+				return certName;
 			}
 			set	
 			{
-				requestId = value;
+				certName = value;
 			}
 		}
 
@@ -57,6 +57,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public long? CertId
 		{
 			get
@@ -66,18 +78,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				certId = value;
-			}
-		}
-
-		public string CertName
-		{
-			get
-			{
-				return certName;
-			}
-			set	
-			{
-				certName = value;
 			}
 		}
 	}

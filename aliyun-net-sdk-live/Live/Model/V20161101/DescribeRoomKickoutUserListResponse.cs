@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,13 +25,25 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeRoomKickoutUserListResponse : AcsResponse
 	{
 
+		private int? totalPage;
+
 		private string requestId;
 
 		private int? totalNum;
 
-		private int? totalPage;
-
 		private List<DescribeRoomKickoutUserList_User> userList;
+
+		public int? TotalPage
+		{
+			get
+			{
+				return totalPage;
+			}
+			set	
+			{
+				totalPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -57,18 +69,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? TotalPage
-		{
-			get
-			{
-				return totalPage;
-			}
-			set	
-			{
-				totalPage = value;
-			}
-		}
-
 		public List<DescribeRoomKickoutUserList_User> UserList
 		{
 			get
@@ -84,23 +84,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeRoomKickoutUserList_User
 		{
 
-			private string appUid;
-
 			private string opStartTime;
 
 			private string opEndTime;
 
-			public string AppUid
-			{
-				get
-				{
-					return appUid;
-				}
-				set	
-				{
-					appUid = value;
-				}
-			}
+			private string appUid;
 
 			public string OpStartTime
 			{
@@ -123,6 +111,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					opEndTime = value;
+				}
+			}
+
+			public string AppUid
+			{
+				get
+				{
+					return appUid;
+				}
+				set	
+				{
+					appUid = value;
 				}
 			}
 		}

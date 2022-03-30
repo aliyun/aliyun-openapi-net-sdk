@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeShowListResponse describeShowListResponse = new DescribeShowListResponse();
 
 			describeShowListResponse.HttpResponse = _ctx.HttpResponse;
-			describeShowListResponse.RequestId = _ctx.StringValue("DescribeShowList.RequestId");
 			describeShowListResponse.ShowList = _ctx.StringValue("DescribeShowList.ShowList");
+			describeShowListResponse.RequestId = _ctx.StringValue("DescribeShowList.RequestId");
         
 			return describeShowListResponse;
         }

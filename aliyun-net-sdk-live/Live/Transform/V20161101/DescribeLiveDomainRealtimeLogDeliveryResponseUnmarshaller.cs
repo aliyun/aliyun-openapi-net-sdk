@@ -31,11 +31,11 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveDomainRealtimeLogDeliveryResponse describeLiveDomainRealtimeLogDeliveryResponse = new DescribeLiveDomainRealtimeLogDeliveryResponse();
 
 			describeLiveDomainRealtimeLogDeliveryResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveDomainRealtimeLogDeliveryResponse.RequestId = _ctx.StringValue("DescribeLiveDomainRealtimeLogDelivery.RequestId");
-			describeLiveDomainRealtimeLogDeliveryResponse.Project = _ctx.StringValue("DescribeLiveDomainRealtimeLogDelivery.Project");
-			describeLiveDomainRealtimeLogDeliveryResponse.Region = _ctx.StringValue("DescribeLiveDomainRealtimeLogDelivery.Region");
-			describeLiveDomainRealtimeLogDeliveryResponse.Logstore = _ctx.StringValue("DescribeLiveDomainRealtimeLogDelivery.Logstore");
 			describeLiveDomainRealtimeLogDeliveryResponse.Status = _ctx.StringValue("DescribeLiveDomainRealtimeLogDelivery.Status");
+			describeLiveDomainRealtimeLogDeliveryResponse.Logstore = _ctx.StringValue("DescribeLiveDomainRealtimeLogDelivery.Logstore");
+			describeLiveDomainRealtimeLogDeliveryResponse.Project = _ctx.StringValue("DescribeLiveDomainRealtimeLogDelivery.Project");
+			describeLiveDomainRealtimeLogDeliveryResponse.RequestId = _ctx.StringValue("DescribeLiveDomainRealtimeLogDelivery.RequestId");
+			describeLiveDomainRealtimeLogDeliveryResponse.Region = _ctx.StringValue("DescribeLiveDomainRealtimeLogDelivery.Region");
         
 			return describeLiveDomainRealtimeLogDeliveryResponse;
         }

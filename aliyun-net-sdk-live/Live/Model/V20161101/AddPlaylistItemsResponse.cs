@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class AddPlaylistItemsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string programId;
 
-		private AddPlaylistItems_Items items;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private AddPlaylistItems_Items items;
 
 		public string ProgramId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				programId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -101,21 +101,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class AddPlaylistItems_SuccessItem
 			{
 
-				private string itemId;
-
 				private string itemName;
 
-				public string ItemId
-				{
-					get
-					{
-						return itemId;
-					}
-					set	
-					{
-						itemId = value;
-					}
-				}
+				private string itemId;
 
 				public string ItemName
 				{
@@ -126,6 +114,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						itemName = value;
+					}
+				}
+
+				public string ItemId
+				{
+					get
+					{
+						return itemId;
+					}
+					set	
+					{
+						itemId = value;
 					}
 				}
 			}
@@ -133,21 +133,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class AddPlaylistItems_FailedItem
 			{
 
-				private string itemId;
-
 				private string itemName;
 
-				public string ItemId
-				{
-					get
-					{
-						return itemId;
-					}
-					set	
-					{
-						itemId = value;
-					}
-				}
+				private string itemId;
 
 				public string ItemName
 				{
@@ -158,6 +146,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						itemName = value;
+					}
+				}
+
+				public string ItemId
+				{
+					get
+					{
+						return itemId;
+					}
+					set	
+					{
+						itemId = value;
 					}
 				}
 			}

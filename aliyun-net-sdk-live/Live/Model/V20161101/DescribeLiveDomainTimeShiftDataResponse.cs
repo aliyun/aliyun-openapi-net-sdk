@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,11 +56,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainTimeShiftData_DataModule
 		{
 
+			private string type;
+
 			private string timeStamp;
 
 			private string size;
 
-			private string type;
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
 
 			public string TimeStamp
 			{
@@ -83,18 +95,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					size = value;
-				}
-			}
-
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
 				}
 			}
 		}

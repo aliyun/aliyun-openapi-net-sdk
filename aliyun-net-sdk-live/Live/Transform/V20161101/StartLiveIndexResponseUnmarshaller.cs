@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			StartLiveIndexResponse startLiveIndexResponse = new StartLiveIndexResponse();
 
 			startLiveIndexResponse.HttpResponse = _ctx.HttpResponse;
-			startLiveIndexResponse.RequestId = _ctx.StringValue("StartLiveIndex.RequestId");
 			startLiveIndexResponse.TaskId = _ctx.StringValue("StartLiveIndex.TaskId");
+			startLiveIndexResponse.RequestId = _ctx.StringValue("StartLiveIndex.RequestId");
         
 			return startLiveIndexResponse;
         }

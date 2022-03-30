@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,13 +25,25 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeForbidPushStreamRoomListResponse : AcsResponse
 	{
 
+		private int? totalPage;
+
 		private string requestId;
 
 		private int? totalNum;
 
-		private int? totalPage;
-
 		private List<DescribeForbidPushStreamRoomList_Room> roomList;
+
+		public int? TotalPage
+		{
+			get
+			{
+				return totalPage;
+			}
+			set	
+			{
+				totalPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -57,18 +69,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? TotalPage
-		{
-			get
-			{
-				return totalPage;
-			}
-			set	
-			{
-				totalPage = value;
-			}
-		}
-
 		public List<DescribeForbidPushStreamRoomList_Room> RoomList
 		{
 			get
@@ -84,23 +84,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeForbidPushStreamRoomList_Room
 		{
 
-			private string roomId;
+			private string opEndTime;
 
 			private string anchorId;
 
 			private string opStartTime;
 
-			private string opEndTime;
+			private string roomId;
 
-			public string RoomId
+			public string OpEndTime
 			{
 				get
 				{
-					return roomId;
+					return opEndTime;
 				}
 				set	
 				{
-					roomId = value;
+					opEndTime = value;
 				}
 			}
 
@@ -128,15 +128,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string OpEndTime
+			public string RoomId
 			{
 				get
 				{
-					return opEndTime;
+					return roomId;
 				}
 				set	
 				{
-					opEndTime = value;
+					roomId = value;
 				}
 			}
 		}

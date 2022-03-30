@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			EditShowAndReplaceResponse editShowAndReplaceResponse = new EditShowAndReplaceResponse();
 
 			editShowAndReplaceResponse.HttpResponse = _ctx.HttpResponse;
-			editShowAndReplaceResponse.RequestId = _ctx.StringValue("EditShowAndReplace.RequestId");
 			editShowAndReplaceResponse.JobInfo = _ctx.StringValue("EditShowAndReplace.JobInfo");
+			editShowAndReplaceResponse.RequestId = _ctx.StringValue("EditShowAndReplace.RequestId");
         
 			return editShowAndReplaceResponse;
         }

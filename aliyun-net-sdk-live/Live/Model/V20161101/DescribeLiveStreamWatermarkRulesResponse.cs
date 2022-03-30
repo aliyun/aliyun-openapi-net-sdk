@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,43 +56,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamWatermarkRules_RuleInfo
 		{
 
-			private string ruleId;
-
-			private string name;
-
 			private string domain;
+
+			private string description;
 
 			private string app;
 
 			private string stream;
 
+			private string name;
+
 			private string templateId;
 
-			private string description;
-
-			public string RuleId
-			{
-				get
-				{
-					return ruleId;
-				}
-				set	
-				{
-					ruleId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private string ruleId;
 
 			public string Domain
 			{
@@ -103,6 +79,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					domain = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 
@@ -130,6 +118,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
 			public string TemplateId
 			{
 				get
@@ -142,15 +142,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string Description
+			public string RuleId
 			{
 				get
 				{
-					return description;
+					return ruleId;
 				}
 				set	
 				{
-					description = value;
+					ruleId = value;
 				}
 			}
 		}

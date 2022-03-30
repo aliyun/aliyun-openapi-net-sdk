@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,41 +56,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamsNotifyUrlConfig_LiveStreamsNotifyConfig
 		{
 
-			private string domainName;
-
-			private string notifyUrl;
-
 			private string notifyReqAuth;
-
-			private string notifyAuthKey;
 
 			private string authType;
 
+			private string notifyUrl;
+
+			private string notifyAuthKey;
+
 			private string authKey;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
-			public string NotifyUrl
-			{
-				get
-				{
-					return notifyUrl;
-				}
-				set	
-				{
-					notifyUrl = value;
-				}
-			}
+			private string domainName;
 
 			public string NotifyReqAuth
 			{
@@ -101,18 +77,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					notifyReqAuth = value;
-				}
-			}
-
-			public string NotifyAuthKey
-			{
-				get
-				{
-					return notifyAuthKey;
-				}
-				set	
-				{
-					notifyAuthKey = value;
 				}
 			}
 
@@ -128,6 +92,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			public string NotifyUrl
+			{
+				get
+				{
+					return notifyUrl;
+				}
+				set	
+				{
+					notifyUrl = value;
+				}
+			}
+
+			public string NotifyAuthKey
+			{
+				get
+				{
+					return notifyAuthKey;
+				}
+				set	
+				{
+					notifyAuthKey = value;
+				}
+			}
+
 			public string AuthKey
 			{
 				get
@@ -137,6 +125,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					authKey = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 		}

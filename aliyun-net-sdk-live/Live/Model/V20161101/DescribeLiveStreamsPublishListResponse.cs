@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,27 +25,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamsPublishListResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? totalPage;
 
 		private int? pageNum;
 
 		private int? pageSize;
 
-		private int? totalNum;
+		private string requestId;
 
-		private int? totalPage;
+		private int? totalNum;
 
 		private List<DescribeLiveStreamsPublishList_LiveStreamPublishInfo> publishInfo;
 
-		public string RequestId
+		public int? TotalPage
 		{
 			get
 			{
-				return requestId;
+				return totalPage;
 			}
 			set	
 			{
-				requestId = value;
+				totalPage = value;
 			}
 		}
 
@@ -73,6 +73,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public int? TotalNum
 		{
 			get
@@ -82,18 +94,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				totalNum = value;
-			}
-		}
-
-		public int? TotalPage
-		{
-			get
-			{
-				return totalPage;
-			}
-			set	
-			{
-				totalPage = value;
 			}
 		}
 
@@ -112,101 +112,41 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamsPublishList_LiveStreamPublishInfo
 		{
 
-			private string domainName;
-
-			private string appName;
-
-			private string streamName;
-
-			private string streamUrl;
-
-			private string publishTime;
-
-			private string stopTime;
+			private string edgeNodeAddr;
 
 			private string publishUrl;
 
-			private string clientAddr;
+			private string streamName;
 
-			private string edgeNodeAddr;
+			private string domainName;
+
+			private string stopTime;
+
+			private string transcodeId;
 
 			private string publishDomain;
+
+			private string appName;
+
+			private string publishTime;
 
 			private string publishType;
 
 			private string transcoded;
 
-			private string transcodeId;
+			private string clientAddr;
 
-			public string DomainName
+			private string streamUrl;
+
+			public string EdgeNodeAddr
 			{
 				get
 				{
-					return domainName;
+					return edgeNodeAddr;
 				}
 				set	
 				{
-					domainName = value;
-				}
-			}
-
-			public string AppName
-			{
-				get
-				{
-					return appName;
-				}
-				set	
-				{
-					appName = value;
-				}
-			}
-
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
-				}
-			}
-
-			public string StreamUrl
-			{
-				get
-				{
-					return streamUrl;
-				}
-				set	
-				{
-					streamUrl = value;
-				}
-			}
-
-			public string PublishTime
-			{
-				get
-				{
-					return publishTime;
-				}
-				set	
-				{
-					publishTime = value;
-				}
-			}
-
-			public string StopTime
-			{
-				get
-				{
-					return stopTime;
-				}
-				set	
-				{
-					stopTime = value;
+					edgeNodeAddr = value;
 				}
 			}
 
@@ -222,27 +162,51 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string ClientAddr
+			public string StreamName
 			{
 				get
 				{
-					return clientAddr;
+					return streamName;
 				}
 				set	
 				{
-					clientAddr = value;
+					streamName = value;
 				}
 			}
 
-			public string EdgeNodeAddr
+			public string DomainName
 			{
 				get
 				{
-					return edgeNodeAddr;
+					return domainName;
 				}
 				set	
 				{
-					edgeNodeAddr = value;
+					domainName = value;
+				}
+			}
+
+			public string StopTime
+			{
+				get
+				{
+					return stopTime;
+				}
+				set	
+				{
+					stopTime = value;
+				}
+			}
+
+			public string TranscodeId
+			{
+				get
+				{
+					return transcodeId;
+				}
+				set	
+				{
+					transcodeId = value;
 				}
 			}
 
@@ -255,6 +219,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					publishDomain = value;
+				}
+			}
+
+			public string AppName
+			{
+				get
+				{
+					return appName;
+				}
+				set	
+				{
+					appName = value;
+				}
+			}
+
+			public string PublishTime
+			{
+				get
+				{
+					return publishTime;
+				}
+				set	
+				{
+					publishTime = value;
 				}
 			}
 
@@ -282,15 +270,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string TranscodeId
+			public string ClientAddr
 			{
 				get
 				{
-					return transcodeId;
+					return clientAddr;
 				}
 				set	
 				{
-					transcodeId = value;
+					clientAddr = value;
+				}
+			}
+
+			public string StreamUrl
+			{
+				get
+				{
+					return streamUrl;
+				}
+				set	
+				{
+					streamUrl = value;
 				}
 			}
 		}

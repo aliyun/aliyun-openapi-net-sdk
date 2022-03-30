@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamMonitorListResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? total;
 
-		private List<DescribeLiveStreamMonitorList_LiveStreamMonitorInfo> liveStreamMonitorList;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeLiveStreamMonitorList_LiveStreamMonitorInfo> liveStreamMonitorList;
 
 		public int? Total
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				total = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,27 +70,51 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamMonitorList_LiveStreamMonitorInfo
 		{
 
-			private string monitorId;
+			private int? status;
 
-			private string monitorName;
+			private string startTime;
+
+			private string monitorId;
 
 			private string domain;
 
 			private string outputTemplate;
 
-			private int? status;
-
 			private string region;
 
 			private int? audioFrom;
 
-			private string startTime;
+			private string monitorName;
 
 			private string stopTime;
 
 			private List<DescribeLiveStreamMonitorList_InputConfig> inputList;
 
 			private DescribeLiveStreamMonitorList_OutputUrls outputUrls;
+
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
 
 			public string MonitorId
 			{
@@ -101,18 +125,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					monitorId = value;
-				}
-			}
-
-			public string MonitorName
-			{
-				get
-				{
-					return monitorName;
-				}
-				set	
-				{
-					monitorName = value;
 				}
 			}
 
@@ -140,18 +152,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
 			public string Region
 			{
 				get
@@ -176,15 +176,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string StartTime
+			public string MonitorName
 			{
 				get
 				{
-					return startTime;
+					return monitorName;
 				}
 				set	
 				{
-					startTime = value;
+					monitorName = value;
 				}
 			}
 
@@ -229,11 +229,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private int? index;
 
+				private string inputUrl;
+
 				private int? layoutId;
 
 				private string streamName;
-
-				private string inputUrl;
 
 				private DescribeLiveStreamMonitorList_LayoutConfig layoutConfig;
 
@@ -248,6 +248,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						index = value;
+					}
+				}
+
+				public string InputUrl
+				{
+					get
+					{
+						return inputUrl;
+					}
+					set	
+					{
+						inputUrl = value;
 					}
 				}
 
@@ -272,18 +284,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						streamName = value;
-					}
-				}
-
-				public string InputUrl
-				{
-					get
-					{
-						return inputUrl;
-					}
-					set	
-					{
-						inputUrl = value;
 					}
 				}
 
@@ -393,21 +393,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeLiveStreamMonitorList_OutputUrls
 			{
 
-				private string rtmpUrl;
-
 				private string flvUrl;
 
-				public string RtmpUrl
-				{
-					get
-					{
-						return rtmpUrl;
-					}
-					set	
-					{
-						rtmpUrl = value;
-					}
-				}
+				private string rtmpUrl;
 
 				public string FlvUrl
 				{
@@ -418,6 +406,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						flvUrl = value;
+					}
+				}
+
+				public string RtmpUrl
+				{
+					get
+					{
+						return rtmpUrl;
+					}
+					set	
+					{
+						rtmpUrl = value;
 					}
 				}
 			}

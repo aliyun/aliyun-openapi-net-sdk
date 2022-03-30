@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			AddShowIntoShowListResponse addShowIntoShowListResponse = new AddShowIntoShowListResponse();
 
 			addShowIntoShowListResponse.HttpResponse = _ctx.HttpResponse;
-			addShowIntoShowListResponse.RequestId = _ctx.StringValue("AddShowIntoShowList.RequestId");
 			addShowIntoShowListResponse.ShowId = _ctx.StringValue("AddShowIntoShowList.ShowId");
+			addShowIntoShowListResponse.RequestId = _ctx.StringValue("AddShowIntoShowList.RequestId");
         
 			return addShowIntoShowListResponse;
         }

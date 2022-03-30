@@ -36,12 +36,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveStreamRecordContentResponse.DescribeLiveStreamRecordContent_RecordContentInfo> describeLiveStreamRecordContentResponse_recordContentInfoList = new List<DescribeLiveStreamRecordContentResponse.DescribeLiveStreamRecordContent_RecordContentInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveStreamRecordContent.RecordContentInfoList.Length"); i++) {
 				DescribeLiveStreamRecordContentResponse.DescribeLiveStreamRecordContent_RecordContentInfo recordContentInfo = new DescribeLiveStreamRecordContentResponse.DescribeLiveStreamRecordContent_RecordContentInfo();
-				recordContentInfo.OssEndpoint = _ctx.StringValue("DescribeLiveStreamRecordContent.RecordContentInfoList["+ i +"].OssEndpoint");
+				recordContentInfo.EndTime = _ctx.StringValue("DescribeLiveStreamRecordContent.RecordContentInfoList["+ i +"].EndTime");
+				recordContentInfo.StartTime = _ctx.StringValue("DescribeLiveStreamRecordContent.RecordContentInfoList["+ i +"].StartTime");
+				recordContentInfo.Duration = _ctx.FloatValue("DescribeLiveStreamRecordContent.RecordContentInfoList["+ i +"].Duration");
 				recordContentInfo.OssBucket = _ctx.StringValue("DescribeLiveStreamRecordContent.RecordContentInfoList["+ i +"].OssBucket");
 				recordContentInfo.OssObjectPrefix = _ctx.StringValue("DescribeLiveStreamRecordContent.RecordContentInfoList["+ i +"].OssObjectPrefix");
-				recordContentInfo.StartTime = _ctx.StringValue("DescribeLiveStreamRecordContent.RecordContentInfoList["+ i +"].StartTime");
-				recordContentInfo.EndTime = _ctx.StringValue("DescribeLiveStreamRecordContent.RecordContentInfoList["+ i +"].EndTime");
-				recordContentInfo.Duration = _ctx.FloatValue("DescribeLiveStreamRecordContent.RecordContentInfoList["+ i +"].Duration");
+				recordContentInfo.OssEndpoint = _ctx.StringValue("DescribeLiveStreamRecordContent.RecordContentInfoList["+ i +"].OssEndpoint");
 
 				describeLiveStreamRecordContentResponse_recordContentInfoList.Add(recordContentInfo);
 			}

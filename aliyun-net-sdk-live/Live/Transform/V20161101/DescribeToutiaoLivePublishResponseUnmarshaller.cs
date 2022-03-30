@@ -31,21 +31,21 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeToutiaoLivePublishResponse describeToutiaoLivePublishResponse = new DescribeToutiaoLivePublishResponse();
 
 			describeToutiaoLivePublishResponse.HttpResponse = _ctx.HttpResponse;
-			describeToutiaoLivePublishResponse.RequestId = _ctx.StringValue("DescribeToutiaoLivePublish.RequestId");
 			describeToutiaoLivePublishResponse.Description = _ctx.StringValue("DescribeToutiaoLivePublish.Description");
+			describeToutiaoLivePublishResponse.RequestId = _ctx.StringValue("DescribeToutiaoLivePublish.RequestId");
 
 			List<DescribeToutiaoLivePublishResponse.DescribeToutiaoLivePublish_ContentItem> describeToutiaoLivePublishResponse_content = new List<DescribeToutiaoLivePublishResponse.DescribeToutiaoLivePublish_ContentItem>();
 			for (int i = 0; i < _ctx.Length("DescribeToutiaoLivePublish.Content.Length"); i++) {
 				DescribeToutiaoLivePublishResponse.DescribeToutiaoLivePublish_ContentItem contentItem = new DescribeToutiaoLivePublishResponse.DescribeToutiaoLivePublish_ContentItem();
+				contentItem.Domain = _ctx.StringValue("DescribeToutiaoLivePublish.Content["+ i +"].Domain");
+				contentItem.StreamName = _ctx.StringValue("DescribeToutiaoLivePublish.Content["+ i +"].StreamName");
 				contentItem.App = _ctx.StringValue("DescribeToutiaoLivePublish.Content["+ i +"].App");
+				contentItem.Fps = _ctx.FloatValue("DescribeToutiaoLivePublish.Content["+ i +"].Fps");
+				contentItem.Flr = _ctx.FloatValue("DescribeToutiaoLivePublish.Content["+ i +"].Flr");
+				contentItem.Timestamp = _ctx.LongValue("DescribeToutiaoLivePublish.Content["+ i +"].Timestamp");
 				contentItem.Bitrate = _ctx.FloatValue("DescribeToutiaoLivePublish.Content["+ i +"].Bitrate");
 				contentItem.BwDiff = _ctx.FloatValue("DescribeToutiaoLivePublish.Content["+ i +"].BwDiff");
 				contentItem.CdnName = _ctx.StringValue("DescribeToutiaoLivePublish.Content["+ i +"].CdnName");
-				contentItem.Domain = _ctx.StringValue("DescribeToutiaoLivePublish.Content["+ i +"].Domain");
-				contentItem.Flr = _ctx.FloatValue("DescribeToutiaoLivePublish.Content["+ i +"].Flr");
-				contentItem.Fps = _ctx.FloatValue("DescribeToutiaoLivePublish.Content["+ i +"].Fps");
-				contentItem.StreamName = _ctx.StringValue("DescribeToutiaoLivePublish.Content["+ i +"].StreamName");
-				contentItem.Timestamp = _ctx.LongValue("DescribeToutiaoLivePublish.Content["+ i +"].Timestamp");
 
 				describeToutiaoLivePublishResponse_content.Add(contentItem);
 			}

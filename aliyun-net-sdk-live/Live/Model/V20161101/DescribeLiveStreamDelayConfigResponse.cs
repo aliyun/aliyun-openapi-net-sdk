@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -84,21 +84,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamDelayConfig_LiveStreamHlsDelayConfig
 		{
 
-			private string level;
-
 			private int? delay;
 
-			public string Level
-			{
-				get
-				{
-					return level;
-				}
-				set	
-				{
-					level = value;
-				}
-			}
+			private string level;
 
 			public int? Delay
 			{
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					delay = value;
+				}
+			}
+
+			public string Level
+			{
+				get
+				{
+					return level;
+				}
+				set	
+				{
+					level = value;
 				}
 			}
 		}
@@ -116,21 +116,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamDelayConfig_LiveStreamFlvDelayConfig
 		{
 
-			private string level;
-
 			private int? delay;
 
-			public string Level
-			{
-				get
-				{
-					return level;
-				}
-				set	
-				{
-					level = value;
-				}
-			}
+			private string level;
 
 			public int? Delay
 			{
@@ -141,6 +129,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					delay = value;
+				}
+			}
+
+			public string Level
+			{
+				get
+				{
+					return level;
+				}
+				set	
+				{
+					level = value;
 				}
 			}
 		}
@@ -148,21 +148,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamDelayConfig_LiveStreamRtmpDelayConfig
 		{
 
-			private string level;
-
 			private int? delay;
 
-			public string Level
-			{
-				get
-				{
-					return level;
-				}
-				set	
-				{
-					level = value;
-				}
-			}
+			private string level;
 
 			public int? Delay
 			{
@@ -173,6 +161,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					delay = value;
+				}
+			}
+
+			public string Level
+			{
+				get
+				{
+					return level;
+				}
+				set	
+				{
+					level = value;
 				}
 			}
 		}

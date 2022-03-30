@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,45 +56,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDetectPornData_DataModule
 		{
 
-			private string timeStamp;
-
-			private string app;
-
 			private string domain;
-
-			private string stream;
-
-			private string fee;
-
-			private string scene;
 
 			private string region;
 
+			private string app;
+
+			private string stream;
+
+			private string timeStamp;
+
 			private long? count;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private string scene;
 
-			public string App
-			{
-				get
-				{
-					return app;
-				}
-				set	
-				{
-					app = value;
-				}
-			}
+			private string fee;
 
 			public string Domain
 			{
@@ -105,42 +81,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					domain = value;
-				}
-			}
-
-			public string Stream
-			{
-				get
-				{
-					return stream;
-				}
-				set	
-				{
-					stream = value;
-				}
-			}
-
-			public string Fee
-			{
-				get
-				{
-					return fee;
-				}
-				set	
-				{
-					fee = value;
-				}
-			}
-
-			public string Scene
-			{
-				get
-				{
-					return scene;
-				}
-				set	
-				{
-					scene = value;
 				}
 			}
 
@@ -156,6 +96,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			public string App
+			{
+				get
+				{
+					return app;
+				}
+				set	
+				{
+					app = value;
+				}
+			}
+
+			public string Stream
+			{
+				get
+				{
+					return stream;
+				}
+				set	
+				{
+					stream = value;
+				}
+			}
+
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
+				}
+			}
+
 			public long? Count
 			{
 				get
@@ -165,6 +141,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					count = value;
+				}
+			}
+
+			public string Scene
+			{
+				get
+				{
+					return scene;
+				}
+				set	
+				{
+					scene = value;
+				}
+			}
+
+			public string Fee
+			{
+				get
+				{
+					return fee;
+				}
+				set	
+				{
+					fee = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeCasterComponentsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? total;
 
-		private List<DescribeCasterComponents_Component> components;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeCasterComponents_Component> components;
 
 		public int? Total
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				total = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,15 +70,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeCasterComponents_Component
 		{
 
-			private string componentId;
+			private string effect;
 
 			private string componentName;
 
-			private string locationId;
+			private string componentId;
 
 			private string componentType;
 
-			private string effect;
+			private string locationId;
 
 			private DescribeCasterComponents_ComponentLayer componentLayer;
 
@@ -88,15 +88,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private DescribeCasterComponents_CaptionLayerContent captionLayerContent;
 
-			public string ComponentId
+			public string Effect
 			{
 				get
 				{
-					return componentId;
+					return effect;
 				}
 				set	
 				{
-					componentId = value;
+					effect = value;
 				}
 			}
 
@@ -112,15 +112,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string LocationId
+			public string ComponentId
 			{
 				get
 				{
-					return locationId;
+					return componentId;
 				}
 				set	
 				{
-					locationId = value;
+					componentId = value;
 				}
 			}
 
@@ -136,15 +136,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string Effect
+			public string LocationId
 			{
 				get
 				{
-					return effect;
+					return locationId;
 				}
 				set	
 				{
-					effect = value;
+					locationId = value;
 				}
 			}
 
@@ -199,25 +199,25 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeCasterComponents_ComponentLayer
 			{
 
-				private float? heightNormalized;
+				private int? transparency;
 
 				private float? widthNormalized;
 
-				private string positionRefer;
+				private float? heightNormalized;
 
-				private int? transparency;
+				private string positionRefer;
 
 				private List<string> positionNormalizeds;
 
-				public float? HeightNormalized
+				public int? Transparency
 				{
 					get
 					{
-						return heightNormalized;
+						return transparency;
 					}
 					set	
 					{
-						heightNormalized = value;
+						transparency = value;
 					}
 				}
 
@@ -233,6 +233,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				public float? HeightNormalized
+				{
+					get
+					{
+						return heightNormalized;
+					}
+					set	
+					{
+						heightNormalized = value;
+					}
+				}
+
 				public string PositionRefer
 				{
 					get
@@ -242,18 +254,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						positionRefer = value;
-					}
-				}
-
-				public int? Transparency
-				{
-					get
-					{
-						return transparency;
-					}
-					set	
-					{
-						transparency = value;
 					}
 				}
 
@@ -273,29 +273,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeCasterComponents_TextLayerContent
 			{
 
-				private string text;
-
 				private string color;
-
-				private string fontName;
-
-				private float? sizeNormalized;
-
-				private float? borderWidthNormalized;
 
 				private string borderColor;
 
-				public string Text
-				{
-					get
-					{
-						return text;
-					}
-					set	
-					{
-						text = value;
-					}
-				}
+				private float? borderWidthNormalized;
+
+				private string text;
+
+				private float? sizeNormalized;
+
+				private string fontName;
 
 				public string Color
 				{
@@ -309,27 +297,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public string FontName
+				public string BorderColor
 				{
 					get
 					{
-						return fontName;
+						return borderColor;
 					}
 					set	
 					{
-						fontName = value;
-					}
-				}
-
-				public float? SizeNormalized
-				{
-					get
-					{
-						return sizeNormalized;
-					}
-					set	
-					{
-						sizeNormalized = value;
+						borderColor = value;
 					}
 				}
 
@@ -345,15 +321,39 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public string BorderColor
+				public string Text
 				{
 					get
 					{
-						return borderColor;
+						return text;
 					}
 					set	
 					{
-						borderColor = value;
+						text = value;
+					}
+				}
+
+				public float? SizeNormalized
+				{
+					get
+					{
+						return sizeNormalized;
+					}
+					set	
+					{
+						sizeNormalized = value;
+					}
+				}
+
+				public string FontName
+				{
+					get
+					{
+						return fontName;
+					}
+					set	
+					{
+						fontName = value;
 					}
 				}
 			}
@@ -379,69 +379,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeCasterComponents_CaptionLayerContent
 			{
 
-				private string locationId;
-
-				private int? ptsOffset;
-
-				private int? wordsCount;
-
 				private string color;
 
-				private string fontName;
+				private float? wordSpaceNormalized;
+
+				private float? borderWidthNormalized;
 
 				private string sourceLan;
 
+				private int? wordCountPerLine;
+
 				private string targetLan;
+
+				private string borderColor;
+
+				private string locationId;
+
+				private float? lineSpaceNormalized;
 
 				private bool? showSourceLan;
 
 				private float? sizeNormalized;
 
-				private float? borderWidthNormalized;
+				private int? wordsCount;
 
-				private string borderColor;
+				private string fontName;
 
-				private int? wordCountPerLine;
-
-				private float? wordSpaceNormalized;
-
-				private float? lineSpaceNormalized;
-
-				public string LocationId
-				{
-					get
-					{
-						return locationId;
-					}
-					set	
-					{
-						locationId = value;
-					}
-				}
-
-				public int? PtsOffset
-				{
-					get
-					{
-						return ptsOffset;
-					}
-					set	
-					{
-						ptsOffset = value;
-					}
-				}
-
-				public int? WordsCount
-				{
-					get
-					{
-						return wordsCount;
-					}
-					set	
-					{
-						wordsCount = value;
-					}
-				}
+				private int? ptsOffset;
 
 				public string Color
 				{
@@ -455,15 +419,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public string FontName
+				public float? WordSpaceNormalized
 				{
 					get
 					{
-						return fontName;
+						return wordSpaceNormalized;
 					}
 					set	
 					{
-						fontName = value;
+						wordSpaceNormalized = value;
+					}
+				}
+
+				public float? BorderWidthNormalized
+				{
+					get
+					{
+						return borderWidthNormalized;
+					}
+					set	
+					{
+						borderWidthNormalized = value;
 					}
 				}
 
@@ -479,6 +455,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				public int? WordCountPerLine
+				{
+					get
+					{
+						return wordCountPerLine;
+					}
+					set	
+					{
+						wordCountPerLine = value;
+					}
+				}
+
 				public string TargetLan
 				{
 					get
@@ -488,6 +476,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						targetLan = value;
+					}
+				}
+
+				public string BorderColor
+				{
+					get
+					{
+						return borderColor;
+					}
+					set	
+					{
+						borderColor = value;
+					}
+				}
+
+				public string LocationId
+				{
+					get
+					{
+						return locationId;
+					}
+					set	
+					{
+						locationId = value;
+					}
+				}
+
+				public float? LineSpaceNormalized
+				{
+					get
+					{
+						return lineSpaceNormalized;
+					}
+					set	
+					{
+						lineSpaceNormalized = value;
 					}
 				}
 
@@ -515,63 +539,39 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public float? BorderWidthNormalized
+				public int? WordsCount
 				{
 					get
 					{
-						return borderWidthNormalized;
+						return wordsCount;
 					}
 					set	
 					{
-						borderWidthNormalized = value;
+						wordsCount = value;
 					}
 				}
 
-				public string BorderColor
+				public string FontName
 				{
 					get
 					{
-						return borderColor;
+						return fontName;
 					}
 					set	
 					{
-						borderColor = value;
+						fontName = value;
 					}
 				}
 
-				public int? WordCountPerLine
+				public int? PtsOffset
 				{
 					get
 					{
-						return wordCountPerLine;
+						return ptsOffset;
 					}
 					set	
 					{
-						wordCountPerLine = value;
-					}
-				}
-
-				public float? WordSpaceNormalized
-				{
-					get
-					{
-						return wordSpaceNormalized;
-					}
-					set	
-					{
-						wordSpaceNormalized = value;
-					}
-				}
-
-				public float? LineSpaceNormalized
-				{
-					get
-					{
-						return lineSpaceNormalized;
-					}
-					set	
-					{
-						lineSpaceNormalized = value;
+						ptsOffset = value;
 					}
 				}
 			}

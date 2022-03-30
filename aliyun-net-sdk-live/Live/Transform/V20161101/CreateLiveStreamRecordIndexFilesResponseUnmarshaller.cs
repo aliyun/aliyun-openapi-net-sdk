@@ -34,20 +34,20 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			createLiveStreamRecordIndexFilesResponse.RequestId = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RequestId");
 
 			CreateLiveStreamRecordIndexFilesResponse.CreateLiveStreamRecordIndexFiles_RecordInfo recordInfo = new CreateLiveStreamRecordIndexFilesResponse.CreateLiveStreamRecordIndexFiles_RecordInfo();
-			recordInfo.RecordId = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.RecordId");
 			recordInfo.RecordUrl = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.RecordUrl");
-			recordInfo.DomainName = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.DomainName");
-			recordInfo.AppName = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.AppName");
 			recordInfo.StreamName = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.StreamName");
-			recordInfo.OssBucket = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.OssBucket");
-			recordInfo.OssEndpoint = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.OssEndpoint");
-			recordInfo.OssObject = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.OssObject");
-			recordInfo.StartTime = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.StartTime");
-			recordInfo.EndTime = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.EndTime");
-			recordInfo.Duration = _ctx.FloatValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Duration");
-			recordInfo.Height = _ctx.IntegerValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Height");
-			recordInfo.Width = _ctx.IntegerValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Width");
 			recordInfo.CreateTime = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.CreateTime");
+			recordInfo.RecordId = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.RecordId");
+			recordInfo.Height = _ctx.IntegerValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Height");
+			recordInfo.OssBucket = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.OssBucket");
+			recordInfo.DomainName = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.DomainName");
+			recordInfo.OssObject = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.OssObject");
+			recordInfo.EndTime = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.EndTime");
+			recordInfo.AppName = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.AppName");
+			recordInfo.StartTime = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.StartTime");
+			recordInfo.Width = _ctx.IntegerValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Width");
+			recordInfo.Duration = _ctx.FloatValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Duration");
+			recordInfo.OssEndpoint = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.OssEndpoint");
 			createLiveStreamRecordIndexFilesResponse.RecordInfo = recordInfo;
         
 			return createLiveStreamRecordIndexFilesResponse;

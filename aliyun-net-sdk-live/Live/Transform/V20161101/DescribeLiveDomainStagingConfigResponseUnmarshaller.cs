@@ -36,9 +36,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveDomainStagingConfigResponse.DescribeLiveDomainStagingConfig_DomainConfig> describeLiveDomainStagingConfigResponse_domainConfigs = new List<DescribeLiveDomainStagingConfigResponse.DescribeLiveDomainStagingConfig_DomainConfig>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDomainStagingConfig.DomainConfigs.Length"); i++) {
 				DescribeLiveDomainStagingConfigResponse.DescribeLiveDomainStagingConfig_DomainConfig domainConfig = new DescribeLiveDomainStagingConfigResponse.DescribeLiveDomainStagingConfig_DomainConfig();
-				domainConfig.FunctionName = _ctx.StringValue("DescribeLiveDomainStagingConfig.DomainConfigs["+ i +"].FunctionName");
-				domainConfig.ConfigId = _ctx.StringValue("DescribeLiveDomainStagingConfig.DomainConfigs["+ i +"].ConfigId");
 				domainConfig.Status = _ctx.StringValue("DescribeLiveDomainStagingConfig.DomainConfigs["+ i +"].Status");
+				domainConfig.ConfigId = _ctx.StringValue("DescribeLiveDomainStagingConfig.DomainConfigs["+ i +"].ConfigId");
+				domainConfig.FunctionName = _ctx.StringValue("DescribeLiveDomainStagingConfig.DomainConfigs["+ i +"].FunctionName");
 
 				List<DescribeLiveDomainStagingConfigResponse.DescribeLiveDomainStagingConfig_DomainConfig.DescribeLiveDomainStagingConfig_FunctionArg> domainConfig_functionArgs = new List<DescribeLiveDomainStagingConfigResponse.DescribeLiveDomainStagingConfig_DomainConfig.DescribeLiveDomainStagingConfig_FunctionArg>();
 				for (int j = 0; j < _ctx.Length("DescribeLiveDomainStagingConfig.DomainConfigs["+ i +"].FunctionArgs.Length"); j++) {

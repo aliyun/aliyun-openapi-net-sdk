@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeAutoShowListTasksResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string autoShowListTasks;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string AutoShowListTasks
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				autoShowListTasks = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

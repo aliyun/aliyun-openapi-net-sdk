@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,23 +56,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainStagingConfig_DomainConfig
 		{
 
-			private string functionName;
+			private string status;
 
 			private string configId;
 
-			private string status;
+			private string functionName;
 
 			private List<DescribeLiveDomainStagingConfig_FunctionArg> functionArgs;
 
-			public string FunctionName
+			public string Status
 			{
 				get
 				{
-					return functionName;
+					return status;
 				}
 				set	
 				{
-					functionName = value;
+					status = value;
 				}
 			}
 
@@ -88,15 +88,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string Status
+			public string FunctionName
 			{
 				get
 				{
-					return status;
+					return functionName;
 				}
 				set	
 				{
-					status = value;
+					functionName = value;
 				}
 			}
 

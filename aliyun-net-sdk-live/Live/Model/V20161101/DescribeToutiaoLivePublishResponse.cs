@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeToutiaoLivePublishResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string description;
 
-		private List<DescribeToutiaoLivePublish_ContentItem> content;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeToutiaoLivePublish_ContentItem> content;
 
 		public string Description
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				description = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,7 +70,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeToutiaoLivePublish_ContentItem
 		{
 
+			private string domain;
+
+			private string streamName;
+
 			private string app;
+
+			private float? fps;
+
+			private float? flr;
+
+			private long? timestamp;
 
 			private float? bitrate;
 
@@ -78,15 +88,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string cdnName;
 
-			private string domain;
+			public string Domain
+			{
+				get
+				{
+					return domain;
+				}
+				set	
+				{
+					domain = value;
+				}
+			}
 
-			private float? flr;
-
-			private float? fps;
-
-			private string streamName;
-
-			private long? timestamp;
+			public string StreamName
+			{
+				get
+				{
+					return streamName;
+				}
+				set	
+				{
+					streamName = value;
+				}
+			}
 
 			public string App
 			{
@@ -97,6 +121,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					app = value;
+				}
+			}
+
+			public float? Fps
+			{
+				get
+				{
+					return fps;
+				}
+				set	
+				{
+					fps = value;
+				}
+			}
+
+			public float? Flr
+			{
+				get
+				{
+					return flr;
+				}
+				set	
+				{
+					flr = value;
+				}
+			}
+
+			public long? Timestamp
+			{
+				get
+				{
+					return timestamp;
+				}
+				set	
+				{
+					timestamp = value;
 				}
 			}
 
@@ -133,66 +193,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					cdnName = value;
-				}
-			}
-
-			public string Domain
-			{
-				get
-				{
-					return domain;
-				}
-				set	
-				{
-					domain = value;
-				}
-			}
-
-			public float? Flr
-			{
-				get
-				{
-					return flr;
-				}
-				set	
-				{
-					flr = value;
-				}
-			}
-
-			public float? Fps
-			{
-				get
-				{
-					return fps;
-				}
-				set	
-				{
-					fps = value;
-				}
-			}
-
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
-				}
-			}
-
-			public long? Timestamp
-			{
-				get
-				{
-					return timestamp;
-				}
-				set	
-				{
-					timestamp = value;
 				}
 			}
 		}

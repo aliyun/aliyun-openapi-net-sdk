@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -58,9 +58,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string transcodeApp;
 
-			private string transcodeName;
-
 			private string transcodeTemplate;
+
+			private string transcodeName;
 
 			private DescribeLiveStreamTranscodeInfo_CustomTranscodeParameters customTranscodeParameters;
 
@@ -78,18 +78,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string TranscodeName
-			{
-				get
-				{
-					return transcodeName;
-				}
-				set	
-				{
-					transcodeName = value;
-				}
-			}
-
 			public string TranscodeTemplate
 			{
 				get
@@ -99,6 +87,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					transcodeTemplate = value;
+				}
+			}
+
+			public string TranscodeName
+			{
+				get
+				{
+					return transcodeName;
+				}
+				set	
+				{
+					transcodeName = value;
 				}
 			}
 
@@ -129,117 +129,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeLiveStreamTranscodeInfo_CustomTranscodeParameters
 			{
 
-				private string rtsFlag;
-
-				private string bframes;
-
-				private int? videoBitrate;
-
-				private int? fPS;
-
-				private int? height;
-
-				private int? width;
-
-				private string templateType;
-
 				private string videoProfile;
-
-				private string gop;
 
 				private int? audioBitrate;
 
-				private string audioProfile;
+				private string rtsFlag;
 
-				private string audioCodec;
+				private int? height;
+
+				private string templateType;
+
+				private string bframes;
 
 				private int? audioRate;
 
+				private int? fPS;
+
+				private string audioCodec;
+
+				private string gop;
+
+				private int? videoBitrate;
+
+				private int? width;
+
 				private int? audioChannelNum;
 
-				public string RtsFlag
-				{
-					get
-					{
-						return rtsFlag;
-					}
-					set	
-					{
-						rtsFlag = value;
-					}
-				}
-
-				public string Bframes
-				{
-					get
-					{
-						return bframes;
-					}
-					set	
-					{
-						bframes = value;
-					}
-				}
-
-				public int? VideoBitrate
-				{
-					get
-					{
-						return videoBitrate;
-					}
-					set	
-					{
-						videoBitrate = value;
-					}
-				}
-
-				public int? FPS
-				{
-					get
-					{
-						return fPS;
-					}
-					set	
-					{
-						fPS = value;
-					}
-				}
-
-				public int? Height
-				{
-					get
-					{
-						return height;
-					}
-					set	
-					{
-						height = value;
-					}
-				}
-
-				public int? Width
-				{
-					get
-					{
-						return width;
-					}
-					set	
-					{
-						width = value;
-					}
-				}
-
-				public string TemplateType
-				{
-					get
-					{
-						return templateType;
-					}
-					set	
-					{
-						templateType = value;
-					}
-				}
+				private string audioProfile;
 
 				public string VideoProfile
 				{
@@ -250,18 +166,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						videoProfile = value;
-					}
-				}
-
-				public string Gop
-				{
-					get
-					{
-						return gop;
-					}
-					set	
-					{
-						gop = value;
 					}
 				}
 
@@ -277,27 +181,51 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public string AudioProfile
+				public string RtsFlag
 				{
 					get
 					{
-						return audioProfile;
+						return rtsFlag;
 					}
 					set	
 					{
-						audioProfile = value;
+						rtsFlag = value;
 					}
 				}
 
-				public string AudioCodec
+				public int? Height
 				{
 					get
 					{
-						return audioCodec;
+						return height;
 					}
 					set	
 					{
-						audioCodec = value;
+						height = value;
+					}
+				}
+
+				public string TemplateType
+				{
+					get
+					{
+						return templateType;
+					}
+					set	
+					{
+						templateType = value;
+					}
+				}
+
+				public string Bframes
+				{
+					get
+					{
+						return bframes;
+					}
+					set	
+					{
+						bframes = value;
 					}
 				}
 
@@ -313,6 +241,66 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				public int? FPS
+				{
+					get
+					{
+						return fPS;
+					}
+					set	
+					{
+						fPS = value;
+					}
+				}
+
+				public string AudioCodec
+				{
+					get
+					{
+						return audioCodec;
+					}
+					set	
+					{
+						audioCodec = value;
+					}
+				}
+
+				public string Gop
+				{
+					get
+					{
+						return gop;
+					}
+					set	
+					{
+						gop = value;
+					}
+				}
+
+				public int? VideoBitrate
+				{
+					get
+					{
+						return videoBitrate;
+					}
+					set	
+					{
+						videoBitrate = value;
+					}
+				}
+
+				public int? Width
+				{
+					get
+					{
+						return width;
+					}
+					set	
+					{
+						width = value;
+					}
+				}
+
 				public int? AudioChannelNum
 				{
 					get
@@ -324,6 +312,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 						audioChannelNum = value;
 					}
 				}
+
+				public string AudioProfile
+				{
+					get
+					{
+						return audioProfile;
+					}
+					set	
+					{
+						audioProfile = value;
+					}
+				}
 			}
 
 			public class DescribeLiveStreamTranscodeInfo_EncryptParameters
@@ -331,9 +331,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string encryptType;
 
-				private string kmsKeyExpireInterval;
-
 				private string kmsKeyID;
+
+				private string kmsKeyExpireInterval;
 
 				public string EncryptType
 				{
@@ -347,18 +347,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public string KmsKeyExpireInterval
-				{
-					get
-					{
-						return kmsKeyExpireInterval;
-					}
-					set	
-					{
-						kmsKeyExpireInterval = value;
-					}
-				}
-
 				public string KmsKeyID
 				{
 					get
@@ -368,6 +356,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						kmsKeyID = value;
+					}
+				}
+
+				public string KmsKeyExpireInterval
+				{
+					get
+					{
+						return kmsKeyExpireInterval;
+					}
+					set	
+					{
+						kmsKeyExpireInterval = value;
 					}
 				}
 			}

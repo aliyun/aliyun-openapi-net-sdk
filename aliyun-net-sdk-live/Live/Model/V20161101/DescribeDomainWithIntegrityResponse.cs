@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -58,9 +58,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string name;
 
-			private List<string> columns;
-
 			private List<string> points;
+
+			private List<string> columns;
 
 			public string Name
 			{
@@ -74,18 +74,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public List<string> Columns
-			{
-				get
-				{
-					return columns;
-				}
-				set	
-				{
-					columns = value;
-				}
-			}
-
 			public List<string> Points
 			{
 				get
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					points = value;
+				}
+			}
+
+			public List<string> Columns
+			{
+				get
+				{
+					return columns;
+				}
+				set	
+				{
+					columns = value;
 				}
 			}
 		}

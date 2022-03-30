@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			CheckServiceForRoleResponse checkServiceForRoleResponse = new CheckServiceForRoleResponse();
 
 			checkServiceForRoleResponse.HttpResponse = _ctx.HttpResponse;
-			checkServiceForRoleResponse.RequestId = _ctx.StringValue("CheckServiceForRole.RequestId");
 			checkServiceForRoleResponse.Deletable = _ctx.BooleanValue("CheckServiceForRole.Deletable");
+			checkServiceForRoleResponse.RequestId = _ctx.StringValue("CheckServiceForRole.RequestId");
         
 			return checkServiceForRoleResponse;
         }

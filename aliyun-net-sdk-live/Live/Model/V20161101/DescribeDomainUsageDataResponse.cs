@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,43 +25,31 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeDomainUsageDataResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string domainName;
+		private string endTime;
 
 		private string startTime;
 
-		private string endTime;
+		private string requestId;
+
+		private string area;
 
 		private string field;
 
-		private string area;
+		private string domainName;
 
 		private string dataInterval;
 
 		private List<DescribeDomainUsageData_DataModule> usageDataPerInterval;
 
-		public string RequestId
+		public string EndTime
 		{
 			get
 			{
-				return requestId;
+				return endTime;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
+				endTime = value;
 			}
 		}
 
@@ -77,15 +65,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string EndTime
+		public string RequestId
 		{
 			get
 			{
-				return endTime;
+				return requestId;
 			}
 			set	
 			{
-				endTime = value;
+				requestId = value;
+			}
+		}
+
+		public string Area
+		{
+			get
+			{
+				return area;
+			}
+			set	
+			{
+				area = value;
 			}
 		}
 
@@ -101,15 +101,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Area
+		public string DomainName
 		{
 			get
 			{
-				return area;
+				return domainName;
 			}
 			set	
 			{
-				area = value;
+				domainName = value;
 			}
 		}
 
@@ -140,21 +140,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeDomainUsageData_DataModule
 		{
 
-			private string timeStamp;
-
 			private string _value;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private string timeStamp;
 
 			public string _Value
 			{
@@ -165,6 +153,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					_value = value;
+				}
+			}
+
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
 				}
 			}
 		}

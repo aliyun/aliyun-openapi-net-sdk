@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,31 +25,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveSnapshotConfigResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? pageNum;
 
-		private int? pageSize;
+		private string requestId;
 
 		private string order;
 
-		private int? totalNum;
-
 		private int? totalPage;
 
-		private List<DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig> liveStreamSnapshotConfigList;
+		private int? pageSize;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private int? totalNum;
+
+		private List<DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig> liveStreamSnapshotConfigList;
 
 		public int? PageNum
 		{
@@ -63,15 +51,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? PageSize
+		public string RequestId
 		{
 			get
 			{
-				return pageSize;
+				return requestId;
 			}
 			set	
 			{
-				pageSize = value;
+				requestId = value;
 			}
 		}
 
@@ -87,18 +75,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? TotalNum
-		{
-			get
-			{
-				return totalNum;
-			}
-			set	
-			{
-				totalNum = value;
-			}
-		}
-
 		public int? TotalPage
 		{
 			get
@@ -108,6 +84,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				totalPage = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? TotalNum
+		{
+			get
+			{
+				return totalNum;
+			}
+			set	
+			{
+				totalNum = value;
 			}
 		}
 
@@ -126,45 +126,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig
 		{
 
-			private string domainName;
-
-			private string appName;
+			private string overwriteOssObject;
 
 			private int? timeInterval;
 
-			private string ossEndpoint;
-
-			private string ossBucket;
-
-			private string overwriteOssObject;
-
-			private string sequenceOssObject;
+			private string appName;
 
 			private string createTime;
 
+			private string ossBucket;
+
+			private string domainName;
+
 			private string callback;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+			private string sequenceOssObject;
 
-			public string AppName
+			private string ossEndpoint;
+
+			public string OverwriteOssObject
 			{
 				get
 				{
-					return appName;
+					return overwriteOssObject;
 				}
 				set	
 				{
-					appName = value;
+					overwriteOssObject = value;
 				}
 			}
 
@@ -180,51 +168,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string OssEndpoint
+			public string AppName
 			{
 				get
 				{
-					return ossEndpoint;
+					return appName;
 				}
 				set	
 				{
-					ossEndpoint = value;
-				}
-			}
-
-			public string OssBucket
-			{
-				get
-				{
-					return ossBucket;
-				}
-				set	
-				{
-					ossBucket = value;
-				}
-			}
-
-			public string OverwriteOssObject
-			{
-				get
-				{
-					return overwriteOssObject;
-				}
-				set	
-				{
-					overwriteOssObject = value;
-				}
-			}
-
-			public string SequenceOssObject
-			{
-				get
-				{
-					return sequenceOssObject;
-				}
-				set	
-				{
-					sequenceOssObject = value;
+					appName = value;
 				}
 			}
 
@@ -240,6 +192,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			public string OssBucket
+			{
+				get
+				{
+					return ossBucket;
+				}
+				set	
+				{
+					ossBucket = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
+
 			public string Callback
 			{
 				get
@@ -249,6 +225,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					callback = value;
+				}
+			}
+
+			public string SequenceOssObject
+			{
+				get
+				{
+					return sequenceOssObject;
+				}
+				set	
+				{
+					sequenceOssObject = value;
+				}
+			}
+
+			public string OssEndpoint
+			{
+				get
+				{
+					return ossEndpoint;
+				}
+				set	
+				{
+					ossEndpoint = value;
 				}
 			}
 		}

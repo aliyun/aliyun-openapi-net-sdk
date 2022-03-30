@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class CheckServiceForRoleResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? deletable;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public bool? Deletable
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				deletable = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

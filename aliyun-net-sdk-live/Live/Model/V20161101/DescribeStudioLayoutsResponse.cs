@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeStudioLayoutsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? total;
 
-		private List<DescribeStudioLayouts_StudioLayout> studioLayouts;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeStudioLayouts_StudioLayout> studioLayouts;
 
 		public int? Total
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				total = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,11 +70,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeStudioLayouts_StudioLayout
 		{
 
+			private string layoutType;
+
 			private string layoutId;
 
 			private string layoutName;
-
-			private string layoutType;
 
 			private List<DescribeStudioLayouts_ScreenInputConfig> screenInputConfigList;
 
@@ -85,6 +85,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			private DescribeStudioLayouts_CommonConfig commonConfig;
 
 			private DescribeStudioLayouts_BgImageConfig bgImageConfig;
+
+			public string LayoutType
+			{
+				get
+				{
+					return layoutType;
+				}
+				set	
+				{
+					layoutType = value;
+				}
+			}
 
 			public string LayoutId
 			{
@@ -107,18 +119,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					layoutName = value;
-				}
-			}
-
-			public string LayoutType
-			{
-				get
-				{
-					return layoutType;
-				}
-				set	
-				{
-					layoutType = value;
 				}
 			}
 
@@ -185,37 +185,37 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeStudioLayouts_ScreenInputConfig
 			{
 
-				private string id;
+				private int? portraitType;
 
 				private int? index;
+
+				private string positionX;
+
+				private string color;
+
+				private bool? onlyAudio;
+
+				private float? heightNormalized;
+
+				private string positionY;
 
 				private string channelId;
 
 				private string videoResourceId;
 
-				private string color;
-
-				private string positionX;
-
-				private string positionY;
-
-				private float? heightNormalized;
-
-				private int? portraitType;
-
-				private bool? onlyAudio;
+				private string id;
 
 				private DescribeStudioLayouts_AudioConfig audioConfig;
 
-				public string Id
+				public int? PortraitType
 				{
 					get
 					{
-						return id;
+						return portraitType;
 					}
 					set	
 					{
-						id = value;
+						portraitType = value;
 					}
 				}
 
@@ -228,6 +228,66 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						index = value;
+					}
+				}
+
+				public string PositionX
+				{
+					get
+					{
+						return positionX;
+					}
+					set	
+					{
+						positionX = value;
+					}
+				}
+
+				public string Color
+				{
+					get
+					{
+						return color;
+					}
+					set	
+					{
+						color = value;
+					}
+				}
+
+				public bool? OnlyAudio
+				{
+					get
+					{
+						return onlyAudio;
+					}
+					set	
+					{
+						onlyAudio = value;
+					}
+				}
+
+				public float? HeightNormalized
+				{
+					get
+					{
+						return heightNormalized;
+					}
+					set	
+					{
+						heightNormalized = value;
+					}
+				}
+
+				public string PositionY
+				{
+					get
+					{
+						return positionY;
+					}
+					set	
+					{
+						positionY = value;
 					}
 				}
 
@@ -255,75 +315,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public string Color
+				public string Id
 				{
 					get
 					{
-						return color;
+						return id;
 					}
 					set	
 					{
-						color = value;
-					}
-				}
-
-				public string PositionX
-				{
-					get
-					{
-						return positionX;
-					}
-					set	
-					{
-						positionX = value;
-					}
-				}
-
-				public string PositionY
-				{
-					get
-					{
-						return positionY;
-					}
-					set	
-					{
-						positionY = value;
-					}
-				}
-
-				public float? HeightNormalized
-				{
-					get
-					{
-						return heightNormalized;
-					}
-					set	
-					{
-						heightNormalized = value;
-					}
-				}
-
-				public int? PortraitType
-				{
-					get
-					{
-						return portraitType;
-					}
-					set	
-					{
-						portraitType = value;
-					}
-				}
-
-				public bool? OnlyAudio
-				{
-					get
-					{
-						return onlyAudio;
-					}
-					set	
-					{
-						onlyAudio = value;
+						id = value;
 					}
 				}
 
@@ -375,37 +375,25 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeStudioLayouts_MediaInputConfig
 			{
 
-				private string id;
-
 				private int? index;
 
-				private string channelId;
-
-				private string videoResourceId;
-
-				private string imageMaterialId;
+				private float? heightNormalized;
 
 				private string fillMode;
 
 				private string positionRefer;
 
+				private string channelId;
+
+				private string videoResourceId;
+
 				private float? widthNormalized;
 
-				private float? heightNormalized;
+				private string imageMaterialId;
+
+				private string id;
 
 				private List<string> positionNormalized;
-
-				public string Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
 
 				public int? Index
 				{
@@ -419,39 +407,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public string ChannelId
+				public float? HeightNormalized
 				{
 					get
 					{
-						return channelId;
+						return heightNormalized;
 					}
 					set	
 					{
-						channelId = value;
-					}
-				}
-
-				public string VideoResourceId
-				{
-					get
-					{
-						return videoResourceId;
-					}
-					set	
-					{
-						videoResourceId = value;
-					}
-				}
-
-				public string ImageMaterialId
-				{
-					get
-					{
-						return imageMaterialId;
-					}
-					set	
-					{
-						imageMaterialId = value;
+						heightNormalized = value;
 					}
 				}
 
@@ -479,6 +443,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
+				public string ChannelId
+				{
+					get
+					{
+						return channelId;
+					}
+					set	
+					{
+						channelId = value;
+					}
+				}
+
+				public string VideoResourceId
+				{
+					get
+					{
+						return videoResourceId;
+					}
+					set	
+					{
+						videoResourceId = value;
+					}
+				}
+
 				public float? WidthNormalized
 				{
 					get
@@ -491,15 +479,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public float? HeightNormalized
+				public string ImageMaterialId
 				{
 					get
 					{
-						return heightNormalized;
+						return imageMaterialId;
 					}
 					set	
 					{
-						heightNormalized = value;
+						imageMaterialId = value;
+					}
+				}
+
+				public string Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
 					}
 				}
 
@@ -519,21 +519,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeStudioLayouts_LayerOrderConfig
 			{
 
-				private string id;
-
 				private string type;
 
-				public string Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
+				private string id;
 
 				public string Type
 				{
@@ -546,50 +534,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 						type = value;
 					}
 				}
-			}
-
-			public class DescribeStudioLayouts_CommonConfig
-			{
-
-				private string videoResourceId;
-
-				private string channelId;
-
-				public string VideoResourceId
-				{
-					get
-					{
-						return videoResourceId;
-					}
-					set	
-					{
-						videoResourceId = value;
-					}
-				}
-
-				public string ChannelId
-				{
-					get
-					{
-						return channelId;
-					}
-					set	
-					{
-						channelId = value;
-					}
-				}
-			}
-
-			public class DescribeStudioLayouts_BgImageConfig
-			{
-
-				private string id;
-
-				private string materialId;
-
-				private string imageUrl;
-
-				private string locationId;
 
 				public string Id
 				{
@@ -602,6 +546,50 @@ namespace Aliyun.Acs.live.Model.V20161101
 						id = value;
 					}
 				}
+			}
+
+			public class DescribeStudioLayouts_CommonConfig
+			{
+
+				private string channelId;
+
+				private string videoResourceId;
+
+				public string ChannelId
+				{
+					get
+					{
+						return channelId;
+					}
+					set	
+					{
+						channelId = value;
+					}
+				}
+
+				public string VideoResourceId
+				{
+					get
+					{
+						return videoResourceId;
+					}
+					set	
+					{
+						videoResourceId = value;
+					}
+				}
+			}
+
+			public class DescribeStudioLayouts_BgImageConfig
+			{
+
+				private string materialId;
+
+				private string imageUrl;
+
+				private string id;
+
+				private string locationId;
 
 				public string MaterialId
 				{
@@ -624,6 +612,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						imageUrl = value;
+					}
+				}
+
+				public string Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
 					}
 				}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,31 +25,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamRecordIndexFilesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? pageNum;
 
-		private int? pageSize;
+		private string requestId;
 
 		private string order;
 
-		private int? totalNum;
-
 		private int? totalPage;
 
-		private List<DescribeLiveStreamRecordIndexFiles_RecordIndexInfo> recordIndexInfoList;
+		private int? pageSize;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private int? totalNum;
+
+		private List<DescribeLiveStreamRecordIndexFiles_RecordIndexInfo> recordIndexInfoList;
 
 		public int? PageNum
 		{
@@ -63,15 +51,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? PageSize
+		public string RequestId
 		{
 			get
 			{
-				return pageSize;
+				return requestId;
 			}
 			set	
 			{
-				pageSize = value;
+				requestId = value;
 			}
 		}
 
@@ -87,18 +75,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? TotalNum
-		{
-			get
-			{
-				return totalNum;
-			}
-			set	
-			{
-				totalNum = value;
-			}
-		}
-
 		public int? TotalPage
 		{
 			get
@@ -108,6 +84,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				totalPage = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? TotalNum
+		{
+			get
+			{
+				return totalNum;
+			}
+			set	
+			{
+				totalNum = value;
 			}
 		}
 
@@ -126,45 +126,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamRecordIndexFiles_RecordIndexInfo
 		{
 
-			private string recordId;
-
 			private string recordUrl;
-
-			private string domainName;
-
-			private string appName;
 
 			private string streamName;
 
-			private string ossBucket;
+			private string createTime;
 
-			private string ossEndpoint;
-
-			private string ossObject;
-
-			private string startTime;
-
-			private string endTime;
-
-			private float? duration;
+			private string recordId;
 
 			private int? height;
 
+			private string ossBucket;
+
+			private string domainName;
+
+			private string ossObject;
+
+			private string endTime;
+
+			private string appName;
+
+			private string startTime;
+
 			private int? width;
 
-			private string createTime;
+			private float? duration;
 
-			public string RecordId
-			{
-				get
-				{
-					return recordId;
-				}
-				set	
-				{
-					recordId = value;
-				}
-			}
+			private string ossEndpoint;
 
 			public string RecordUrl
 			{
@@ -175,30 +163,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					recordUrl = value;
-				}
-			}
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
-			public string AppName
-			{
-				get
-				{
-					return appName;
-				}
-				set	
-				{
-					appName = value;
 				}
 			}
 
@@ -214,75 +178,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string OssBucket
+			public string CreateTime
 			{
 				get
 				{
-					return ossBucket;
+					return createTime;
 				}
 				set	
 				{
-					ossBucket = value;
+					createTime = value;
 				}
 			}
 
-			public string OssEndpoint
+			public string RecordId
 			{
 				get
 				{
-					return ossEndpoint;
+					return recordId;
 				}
 				set	
 				{
-					ossEndpoint = value;
-				}
-			}
-
-			public string OssObject
-			{
-				get
-				{
-					return ossObject;
-				}
-				set	
-				{
-					ossObject = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
-
-			public float? Duration
-			{
-				get
-				{
-					return duration;
-				}
-				set	
-				{
-					duration = value;
+					recordId = value;
 				}
 			}
 
@@ -298,6 +214,78 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			public string OssBucket
+			{
+				get
+				{
+					return ossBucket;
+				}
+				set	
+				{
+					ossBucket = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
+
+			public string OssObject
+			{
+				get
+				{
+					return ossObject;
+				}
+				set	
+				{
+					ossObject = value;
+				}
+			}
+
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			public string AppName
+			{
+				get
+				{
+					return appName;
+				}
+				set	
+				{
+					appName = value;
+				}
+			}
+
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
 			public int? Width
 			{
 				get
@@ -310,15 +298,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string CreateTime
+			public float? Duration
 			{
 				get
 				{
-					return createTime;
+					return duration;
 				}
 				set	
 				{
-					createTime = value;
+					duration = value;
+				}
+			}
+
+			public string OssEndpoint
+			{
+				get
+				{
+					return ossEndpoint;
+				}
+				set	
+				{
+					ossEndpoint = value;
 				}
 			}
 		}

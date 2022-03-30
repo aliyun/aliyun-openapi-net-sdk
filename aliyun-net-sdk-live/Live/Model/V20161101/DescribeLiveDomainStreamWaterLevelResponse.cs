@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -70,25 +70,25 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainStreamWaterLevel_LiveDomainWaterLevel
 		{
 
-			private string domainName;
+			private int? domainRawLimit;
 
 			private int? domainRawCount;
 
 			private int? domainTranscodeCount;
 
-			private int? domainRawLimit;
+			private string domainName;
 
 			private int? domainTranscodeLimit;
 
-			public string DomainName
+			public int? DomainRawLimit
 			{
 				get
 				{
-					return domainName;
+					return domainRawLimit;
 				}
 				set	
 				{
-					domainName = value;
+					domainRawLimit = value;
 				}
 			}
 
@@ -116,15 +116,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? DomainRawLimit
+			public string DomainName
 			{
 				get
 				{
-					return domainRawLimit;
+					return domainName;
 				}
 				set	
 				{
-					domainRawLimit = value;
+					domainName = value;
 				}
 			}
 
@@ -144,15 +144,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainStreamWaterLevel_LiveUidWaterLevel
 		{
 
-			private string aliUid;
+			private int? uidTranscodeLimit;
 
-			private int? uidRawCount;
+			private string aliUid;
 
 			private int? uidTranscodeCount;
 
 			private int? uidRawLimit;
 
-			private int? uidTranscodeLimit;
+			private int? uidRawCount;
+
+			public int? UidTranscodeLimit
+			{
+				get
+				{
+					return uidTranscodeLimit;
+				}
+				set	
+				{
+					uidTranscodeLimit = value;
+				}
+			}
 
 			public string AliUid
 			{
@@ -163,18 +175,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					aliUid = value;
-				}
-			}
-
-			public int? UidRawCount
-			{
-				get
-				{
-					return uidRawCount;
-				}
-				set	
-				{
-					uidRawCount = value;
 				}
 			}
 
@@ -202,15 +202,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? UidTranscodeLimit
+			public int? UidRawCount
 			{
 				get
 				{
-					return uidTranscodeLimit;
+					return uidRawCount;
 				}
 				set	
 				{
-					uidTranscodeLimit = value;
+					uidRawCount = value;
 				}
 			}
 		}

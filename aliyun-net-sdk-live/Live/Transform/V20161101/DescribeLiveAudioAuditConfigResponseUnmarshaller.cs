@@ -36,8 +36,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveAudioAuditConfigResponse.DescribeLiveAudioAuditConfig_LiveAudioAuditConfig> describeLiveAudioAuditConfigResponse_liveAudioAuditConfigList = new List<DescribeLiveAudioAuditConfigResponse.DescribeLiveAudioAuditConfig_LiveAudioAuditConfig>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveAudioAuditConfig.LiveAudioAuditConfigList.Length"); i++) {
 				DescribeLiveAudioAuditConfigResponse.DescribeLiveAudioAuditConfig_LiveAudioAuditConfig liveAudioAuditConfig = new DescribeLiveAudioAuditConfigResponse.DescribeLiveAudioAuditConfig_LiveAudioAuditConfig();
-				liveAudioAuditConfig.DomainName = _ctx.StringValue("DescribeLiveAudioAuditConfig.LiveAudioAuditConfigList["+ i +"].DomainName");
 				liveAudioAuditConfig.AppName = _ctx.StringValue("DescribeLiveAudioAuditConfig.LiveAudioAuditConfigList["+ i +"].AppName");
+				liveAudioAuditConfig.DomainName = _ctx.StringValue("DescribeLiveAudioAuditConfig.LiveAudioAuditConfigList["+ i +"].DomainName");
 				liveAudioAuditConfig.StreamName = _ctx.StringValue("DescribeLiveAudioAuditConfig.LiveAudioAuditConfigList["+ i +"].StreamName");
 				liveAudioAuditConfig.BizType = _ctx.StringValue("DescribeLiveAudioAuditConfig.LiveAudioAuditConfigList["+ i +"].BizType");
 
