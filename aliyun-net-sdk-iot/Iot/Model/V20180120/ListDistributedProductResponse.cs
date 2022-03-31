@@ -139,7 +139,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 				private string targetInstanceId;
 
-				private int? gmtCreate;
+				private long? gmtCreate;
 
 				private string targetAliyunId;
 
@@ -211,7 +211,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					}
 				}
 
-				public int? GmtCreate
+				public long? GmtCreate
 				{
 					get
 					{

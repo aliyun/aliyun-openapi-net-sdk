@@ -47,7 +47,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				items.ProductKey = _ctx.StringValue("ListDistributedProduct.Data.Info["+ i +"].ProductKey");
 				items.SourceInstanceId = _ctx.StringValue("ListDistributedProduct.Data.Info["+ i +"].SourceInstanceId");
 				items.TargetInstanceId = _ctx.StringValue("ListDistributedProduct.Data.Info["+ i +"].TargetInstanceId");
-				items.GmtCreate = _ctx.IntegerValue("ListDistributedProduct.Data.Info["+ i +"].GmtCreate");
+				items.GmtCreate = _ctx.LongValue("ListDistributedProduct.Data.Info["+ i +"].GmtCreate");
 				items.TargetAliyunId = _ctx.StringValue("ListDistributedProduct.Data.Info["+ i +"].TargetAliyunId");
 				items.SourceRegion = _ctx.StringValue("ListDistributedProduct.Data.Info["+ i +"].SourceRegion");
 				items.TargetRegion = _ctx.StringValue("ListDistributedProduct.Data.Info["+ i +"].TargetRegion");
