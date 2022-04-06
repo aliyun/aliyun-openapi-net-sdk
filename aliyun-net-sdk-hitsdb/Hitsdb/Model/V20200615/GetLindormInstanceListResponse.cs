@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.hitsdb.Model.V20200615
@@ -131,6 +131,8 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			private long? expiredMilliseconds;
 
 			private bool? enableStream;
+
+			private List<GetLindormInstanceList_Tag> tags;
 
 			public string VpcId
 			{
@@ -333,6 +335,50 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 				set	
 				{
 					enableStream = value;
+				}
+			}
+
+			public List<GetLindormInstanceList_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class GetLindormInstanceList_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

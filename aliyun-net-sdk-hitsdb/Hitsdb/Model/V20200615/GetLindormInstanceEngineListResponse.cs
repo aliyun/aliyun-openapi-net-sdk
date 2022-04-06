@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.hitsdb.Model.V20200615
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 	public class GetLindormInstanceEngineListResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string instanceId;
 
-		private List<GetLindormInstanceEngineList_EngineInfo> engineList;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<GetLindormInstanceEngineList_EngineInfo> engineList;
 
 		public string InstanceId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			set	
 			{
 				instanceId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -101,35 +101,23 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			public class GetLindormInstanceEngineList_NetInfo
 			{
 
-				private string netType;
-
-				private string connectionString;
+				private int? accessType;
 
 				private int? port;
 
-				private int? accessType;
+				private string connectionString;
 
-				public string NetType
+				private string netType;
+
+				public int? AccessType
 				{
 					get
 					{
-						return netType;
+						return accessType;
 					}
 					set	
 					{
-						netType = value;
-					}
-				}
-
-				public string ConnectionString
-				{
-					get
-					{
-						return connectionString;
-					}
-					set	
-					{
-						connectionString = value;
+						accessType = value;
 					}
 				}
 
@@ -145,15 +133,27 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 					}
 				}
 
-				public int? AccessType
+				public string ConnectionString
 				{
 					get
 					{
-						return accessType;
+						return connectionString;
 					}
 					set	
 					{
-						accessType = value;
+						connectionString = value;
+					}
+				}
+
+				public string NetType
+				{
+					get
+					{
+						return netType;
+					}
+					set	
+					{
+						netType = value;
 					}
 				}
 			}

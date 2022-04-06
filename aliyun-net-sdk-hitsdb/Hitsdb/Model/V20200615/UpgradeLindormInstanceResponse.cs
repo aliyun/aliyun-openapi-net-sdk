@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.hitsdb.Model.V20200615
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 	public class UpgradeLindormInstanceResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? orderId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public long? OrderId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			set	
 			{
 				orderId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

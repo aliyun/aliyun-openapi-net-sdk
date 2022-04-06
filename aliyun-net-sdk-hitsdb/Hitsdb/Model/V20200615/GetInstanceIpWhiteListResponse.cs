@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.hitsdb.Model.V20200615
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 	public class GetInstanceIpWhiteListResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string instanceId;
 
-		private List<string> ipList;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<string> ipList;
 
 		public string InstanceId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			set	
 			{
 				instanceId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

@@ -27,10 +27,10 @@ using Aliyun.Acs.hitsdb.Transform.V20200615;
 
 namespace Aliyun.Acs.hitsdb.Model.V20200615
 {
-    public class GetLindormInstanceListRequest : RpcAcsRequest<GetLindormInstanceListResponse>
+    public class ListTagResourcesRequest : RpcAcsRequest<ListTagResourcesResponse>
     {
-        public GetLindormInstanceListRequest()
-            : base("hitsdb", "2020-06-15", "GetLindormInstanceList", "hitsdb", "openAPI")
+        public ListTagResourcesRequest()
+            : base("hitsdb", "2020-06-15", "ListTagResources", "hitsdb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,17 +42,13 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private long? resourceOwnerId;
 
-		private int? supportEngine;
-
-		private int? pageNumber;
-
 		private string securityToken;
 
-		private int? pageSize;
+		private string nextToken;
 
 		private List<string> tags = new List<string>(){ };
 
-		private string queryStr;
+		private List<string> resourceIds = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -60,7 +56,7 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private long? ownerId;
 
-		private string serviceType;
+		private string resourceType;
 
 		public long? ResourceOwnerId
 		{
@@ -72,32 +68,6 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public int? SupportEngine
-		{
-			get
-			{
-				return supportEngine;
-			}
-			set	
-			{
-				supportEngine = value;
-				DictionaryUtil.Add(QueryParameters, "SupportEngine", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -114,16 +84,16 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			}
 		}
 
-		public int? PageSize
+		public string NextToken
 		{
 			get
 			{
-				return pageSize;
+				return nextToken;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
@@ -148,16 +118,16 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			}
 		}
 
-		public string QueryStr
+		public List<string> ResourceIds
 		{
 			get
 			{
-				return queryStr;
+				return resourceIds;
 			}
-			set	
+
+			set
 			{
-				queryStr = value;
-				DictionaryUtil.Add(QueryParameters, "QueryStr", value);
+				resourceIds = value;
 			}
 		}
 
@@ -200,16 +170,16 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			}
 		}
 
-		public string ServiceType
+		public string ResourceType
 		{
 			get
 			{
-				return serviceType;
+				return resourceType;
 			}
 			set	
 			{
-				serviceType = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceType", value);
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
@@ -250,9 +220,9 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			return false;
 		}
 
-        public override GetLindormInstanceListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListTagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetLindormInstanceListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListTagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

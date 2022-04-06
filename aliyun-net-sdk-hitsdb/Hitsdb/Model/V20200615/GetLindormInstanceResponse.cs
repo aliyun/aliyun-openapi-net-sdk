@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.hitsdb.Model.V20200615
@@ -88,6 +88,8 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 		private bool? enableCdc;
 
 		private bool? enableStream;
+
+		private bool? enableShs;
 
 		private List<GetLindormInstance_Engine> engineList;
 
@@ -472,6 +474,18 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			set	
 			{
 				enableStream = value;
+			}
+		}
+
+		public bool? EnableShs
+		{
+			get
+			{
+				return enableShs;
+			}
+			set	
+			{
+				enableShs = value;
 			}
 		}
 

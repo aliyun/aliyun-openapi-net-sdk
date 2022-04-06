@@ -31,8 +31,8 @@ namespace Aliyun.Acs.hitsdb.Transform.V20200615
 			GetInstanceIpWhiteListResponse getInstanceIpWhiteListResponse = new GetInstanceIpWhiteListResponse();
 
 			getInstanceIpWhiteListResponse.HttpResponse = _ctx.HttpResponse;
-			getInstanceIpWhiteListResponse.RequestId = _ctx.StringValue("GetInstanceIpWhiteList.RequestId");
 			getInstanceIpWhiteListResponse.InstanceId = _ctx.StringValue("GetInstanceIpWhiteList.InstanceId");
+			getInstanceIpWhiteListResponse.RequestId = _ctx.StringValue("GetInstanceIpWhiteList.RequestId");
 
 			List<string> getInstanceIpWhiteListResponse_ipList = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetInstanceIpWhiteList.IpList.Length"); i++) {

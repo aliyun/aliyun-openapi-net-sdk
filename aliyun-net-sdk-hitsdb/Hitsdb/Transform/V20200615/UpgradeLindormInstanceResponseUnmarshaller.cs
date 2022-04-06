@@ -31,8 +31,8 @@ namespace Aliyun.Acs.hitsdb.Transform.V20200615
 			UpgradeLindormInstanceResponse upgradeLindormInstanceResponse = new UpgradeLindormInstanceResponse();
 
 			upgradeLindormInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			upgradeLindormInstanceResponse.RequestId = _ctx.StringValue("UpgradeLindormInstance.RequestId");
 			upgradeLindormInstanceResponse.OrderId = _ctx.LongValue("UpgradeLindormInstance.OrderId");
+			upgradeLindormInstanceResponse.RequestId = _ctx.StringValue("UpgradeLindormInstance.RequestId");
         
 			return upgradeLindormInstanceResponse;
         }

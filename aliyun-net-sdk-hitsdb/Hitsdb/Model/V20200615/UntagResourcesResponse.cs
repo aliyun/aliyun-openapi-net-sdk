@@ -22,14 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.hitsdb.Model.V20200615
 {
-	public class CreateLindormInstanceResponse : AcsResponse
+	public class UntagResourcesResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private string instanceId;
-
-		private long? orderId;
 
 		public string RequestId
 		{
@@ -40,30 +36,6 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
-
-		public long? OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
 			}
 		}
 	}

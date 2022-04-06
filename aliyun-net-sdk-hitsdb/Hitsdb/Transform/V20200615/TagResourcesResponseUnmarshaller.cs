@@ -16,55 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.hitsdb.Model.V20200615
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.hitsdb.Model.V20200615;
+
+namespace Aliyun.Acs.hitsdb.Transform.V20200615
 {
-	public class CreateLindormInstanceResponse : AcsResponse
-	{
+    public class TagResourcesResponseUnmarshaller
+    {
+        public static TagResourcesResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			TagResourcesResponse tagResourcesResponse = new TagResourcesResponse();
 
-		private string requestId;
-
-		private string instanceId;
-
-		private long? orderId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
-
-		public long? OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
-	}
+			tagResourcesResponse.HttpResponse = _ctx.HttpResponse;
+			tagResourcesResponse.RequestId = _ctx.StringValue("TagResources.RequestId");
+        
+			return tagResourcesResponse;
+        }
+    }
 }

@@ -27,10 +27,10 @@ using Aliyun.Acs.hitsdb.Transform.V20200615;
 
 namespace Aliyun.Acs.hitsdb.Model.V20200615
 {
-    public class GetLindormInstanceListRequest : RpcAcsRequest<GetLindormInstanceListResponse>
+    public class UntagResourcesRequest : RpcAcsRequest<UntagResourcesResponse>
     {
-        public GetLindormInstanceListRequest()
-            : base("hitsdb", "2020-06-15", "GetLindormInstanceList", "hitsdb", "openAPI")
+        public UntagResourcesRequest()
+            : base("hitsdb", "2020-06-15", "UntagResources", "hitsdb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,17 +42,11 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private long? resourceOwnerId;
 
-		private int? supportEngine;
-
-		private int? pageNumber;
-
 		private string securityToken;
 
-		private int? pageSize;
+		private bool? all;
 
-		private List<string> tags = new List<string>(){ };
-
-		private string queryStr;
+		private List<string> resourceIds = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -60,7 +54,9 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private long? ownerId;
 
-		private string serviceType;
+		private string resourceType;
+
+		private List<string> tagKeys = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -72,32 +68,6 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public int? SupportEngine
-		{
-			get
-			{
-				return supportEngine;
-			}
-			set	
-			{
-				supportEngine = value;
-				DictionaryUtil.Add(QueryParameters, "SupportEngine", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -114,50 +84,29 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			}
 		}
 
-		public int? PageSize
+		public bool? All
 		{
 			get
 			{
-				return pageSize;
+				return all;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				all = value;
+				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
 			}
 		}
 
-		public List<string> Tags
+		public List<string> ResourceIds
 		{
 			get
 			{
-				return tags;
+				return resourceIds;
 			}
 
 			set
 			{
-				tags = value;
-				if(tags != null)
-				{
-					for (int depth1 = 0; depth1 < tags.Count; depth1++)
-					{
-						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
-						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
-					}
-				}
-			}
-		}
-
-		public string QueryStr
-		{
-			get
-			{
-				return queryStr;
-			}
-			set	
-			{
-				queryStr = value;
-				DictionaryUtil.Add(QueryParameters, "QueryStr", value);
+				resourceIds = value;
 			}
 		}
 
@@ -200,48 +149,29 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			}
 		}
 
-		public string ServiceType
+		public string ResourceType
 		{
 			get
 			{
-				return serviceType;
+				return resourceType;
 			}
 			set	
 			{
-				serviceType = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceType", value);
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
-		public class Tag
+		public List<string> TagKeys
 		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value_
+			get
 			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
+				return tagKeys;
 			}
 
-			public string Key
+			set
 			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
+				tagKeys = value;
 			}
 		}
 
@@ -250,9 +180,9 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			return false;
 		}
 
-        public override GetLindormInstanceListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UntagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetLindormInstanceListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UntagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

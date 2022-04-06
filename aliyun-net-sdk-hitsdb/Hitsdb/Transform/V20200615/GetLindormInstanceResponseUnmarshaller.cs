@@ -63,6 +63,7 @@ namespace Aliyun.Acs.hitsdb.Transform.V20200615
 			getLindormInstanceResponse.EnableSSL = _ctx.BooleanValue("GetLindormInstance.EnableSSL");
 			getLindormInstanceResponse.EnableCdc = _ctx.BooleanValue("GetLindormInstance.EnableCdc");
 			getLindormInstanceResponse.EnableStream = _ctx.BooleanValue("GetLindormInstance.EnableStream");
+			getLindormInstanceResponse.EnableShs = _ctx.BooleanValue("GetLindormInstance.EnableShs");
 
 			List<GetLindormInstanceResponse.GetLindormInstance_Engine> getLindormInstanceResponse_engineList = new List<GetLindormInstanceResponse.GetLindormInstance_Engine>();
 			for (int i = 0; i < _ctx.Length("GetLindormInstance.EngineList.Length"); i++) {

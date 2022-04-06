@@ -57,6 +57,16 @@ namespace Aliyun.Acs.hitsdb.Transform.V20200615
 				lindormInstanceSummary.ExpiredMilliseconds = _ctx.LongValue("GetLindormInstanceList.InstanceList["+ i +"].ExpiredMilliseconds");
 				lindormInstanceSummary.EnableStream = _ctx.BooleanValue("GetLindormInstanceList.InstanceList["+ i +"].EnableStream");
 
+				List<GetLindormInstanceListResponse.GetLindormInstanceList_LindormInstanceSummary.GetLindormInstanceList_Tag> lindormInstanceSummary_tags = new List<GetLindormInstanceListResponse.GetLindormInstanceList_LindormInstanceSummary.GetLindormInstanceList_Tag>();
+				for (int j = 0; j < _ctx.Length("GetLindormInstanceList.InstanceList["+ i +"].Tags.Length"); j++) {
+					GetLindormInstanceListResponse.GetLindormInstanceList_LindormInstanceSummary.GetLindormInstanceList_Tag tag = new GetLindormInstanceListResponse.GetLindormInstanceList_LindormInstanceSummary.GetLindormInstanceList_Tag();
+					tag.Key = _ctx.StringValue("GetLindormInstanceList.InstanceList["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("GetLindormInstanceList.InstanceList["+ i +"].Tags["+ j +"].Value");
+
+					lindormInstanceSummary_tags.Add(tag);
+				}
+				lindormInstanceSummary.Tags = lindormInstanceSummary_tags;
+
 				getLindormInstanceListResponse_instanceList.Add(lindormInstanceSummary);
 			}
 			getLindormInstanceListResponse.InstanceList = getLindormInstanceListResponse_instanceList;
