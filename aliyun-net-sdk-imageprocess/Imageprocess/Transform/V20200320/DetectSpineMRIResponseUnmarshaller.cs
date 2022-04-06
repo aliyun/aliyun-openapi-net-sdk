@@ -38,8 +38,8 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 			List<DetectSpineMRIResponse.DetectSpineMRI_Data.DetectSpineMRI_Disc> data_discs = new List<DetectSpineMRIResponse.DetectSpineMRI_Data.DetectSpineMRI_Disc>();
 			for (int i = 0; i < _ctx.Length("DetectSpineMRI.Data.Discs.Length"); i++) {
 				DetectSpineMRIResponse.DetectSpineMRI_Data.DetectSpineMRI_Disc disc = new DetectSpineMRIResponse.DetectSpineMRI_Data.DetectSpineMRI_Disc();
-				disc.Disease = _ctx.StringValue("DetectSpineMRI.Data.Discs["+ i +"].Disease");
 				disc.Identification = _ctx.StringValue("DetectSpineMRI.Data.Discs["+ i +"].Identification");
+				disc.Disease = _ctx.StringValue("DetectSpineMRI.Data.Discs["+ i +"].Disease");
 
 				List<string> disc_location = new List<string>();
 				for (int j = 0; j < _ctx.Length("DetectSpineMRI.Data.Discs["+ i +"].Location.Length"); j++) {
@@ -54,8 +54,8 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 			List<DetectSpineMRIResponse.DetectSpineMRI_Data.DetectSpineMRI_Vertebra> data_vertebras = new List<DetectSpineMRIResponse.DetectSpineMRI_Data.DetectSpineMRI_Vertebra>();
 			for (int i = 0; i < _ctx.Length("DetectSpineMRI.Data.Vertebras.Length"); i++) {
 				DetectSpineMRIResponse.DetectSpineMRI_Data.DetectSpineMRI_Vertebra vertebra = new DetectSpineMRIResponse.DetectSpineMRI_Data.DetectSpineMRI_Vertebra();
-				vertebra.Disease = _ctx.StringValue("DetectSpineMRI.Data.Vertebras["+ i +"].Disease");
 				vertebra.Identification = _ctx.StringValue("DetectSpineMRI.Data.Vertebras["+ i +"].Identification");
+				vertebra.Disease = _ctx.StringValue("DetectSpineMRI.Data.Vertebras["+ i +"].Disease");
 
 				List<string> vertebra_location1 = new List<string>();
 				for (int j = 0; j < _ctx.Length("DetectSpineMRI.Data.Vertebras["+ i +"].Location.Length"); j++) {

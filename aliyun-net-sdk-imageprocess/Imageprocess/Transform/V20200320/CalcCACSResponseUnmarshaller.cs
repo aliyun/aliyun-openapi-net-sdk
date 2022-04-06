@@ -34,8 +34,8 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 			calcCACSResponse.RequestId = _ctx.StringValue("CalcCACS.RequestId");
 
 			CalcCACSResponse.CalcCACS_Data data = new CalcCACSResponse.CalcCACS_Data();
-			data.Score = _ctx.StringValue("CalcCACS.Data.Score");
 			data.ResultUrl = _ctx.StringValue("CalcCACS.Data.ResultUrl");
+			data.Score = _ctx.StringValue("CalcCACS.Data.Score");
 			calcCACSResponse.Data = data;
         
 			return calcCACSResponse;

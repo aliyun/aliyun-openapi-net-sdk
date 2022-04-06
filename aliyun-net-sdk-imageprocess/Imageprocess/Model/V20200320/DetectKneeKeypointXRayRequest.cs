@@ -40,15 +40,41 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			Method = MethodType.POST;
         }
 
+		private string orgName;
+
+		private string tracerId;
+
 		private string dataFormat;
 
 		private string orgId;
 
-		private string orgName;
-
 		private string imageUrl;
 
-		private string tracerId;
+		public string OrgName
+		{
+			get
+			{
+				return orgName;
+			}
+			set	
+			{
+				orgName = value;
+				DictionaryUtil.Add(BodyParameters, "OrgName", value);
+			}
+		}
+
+		public string TracerId
+		{
+			get
+			{
+				return tracerId;
+			}
+			set	
+			{
+				tracerId = value;
+				DictionaryUtil.Add(BodyParameters, "TracerId", value);
+			}
+		}
 
 		public string DataFormat
 		{
@@ -76,19 +102,6 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			}
 		}
 
-		public string OrgName
-		{
-			get
-			{
-				return orgName;
-			}
-			set	
-			{
-				orgName = value;
-				DictionaryUtil.Add(BodyParameters, "OrgName", value);
-			}
-		}
-
 		public string ImageUrl
 		{
 			get
@@ -99,19 +112,6 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			{
 				imageUrl = value;
 				DictionaryUtil.Add(BodyParameters, "ImageUrl", value);
-			}
-		}
-
-		public string TracerId
-		{
-			get
-			{
-				return tracerId;
-			}
-			set	
-			{
-				tracerId = value;
-				DictionaryUtil.Add(BodyParameters, "TracerId", value);
 			}
 		}
 

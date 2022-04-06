@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imageprocess.Model.V20200320
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 	public class RunMedQAResponse : AcsResponse
 	{
 
-		private string message;
-
 		private string requestId;
 
 		private string code;
 
-		private RunMedQA_Data data;
+		private string message;
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+		private RunMedQA_Data data;
 
 		public string RequestId
 		{
@@ -69,6 +57,18 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			}
 		}
 
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
 		public RunMedQA_Data Data
 		{
 			get
@@ -84,27 +84,27 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 		public class RunMedQA_Data
 		{
 
-			private string reports;
+			private string sessionId;
 
 			private string questionType;
 
-			private string answerType;
-
 			private string question;
 
-			private string sessionId;
+			private string answerType;
+
+			private string reports;
 
 			private List<string> options;
 
-			public string Reports
+			public string SessionId
 			{
 				get
 				{
-					return reports;
+					return sessionId;
 				}
 				set	
 				{
-					reports = value;
+					sessionId = value;
 				}
 			}
 
@@ -120,18 +120,6 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 				}
 			}
 
-			public string AnswerType
-			{
-				get
-				{
-					return answerType;
-				}
-				set	
-				{
-					answerType = value;
-				}
-			}
-
 			public string Question
 			{
 				get
@@ -144,15 +132,27 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 				}
 			}
 
-			public string SessionId
+			public string AnswerType
 			{
 				get
 				{
-					return sessionId;
+					return answerType;
 				}
 				set	
 				{
-					sessionId = value;
+					answerType = value;
+				}
+			}
+
+			public string Reports
+			{
+				get
+				{
+					return reports;
+				}
+				set	
+				{
+					reports = value;
 				}
 			}
 

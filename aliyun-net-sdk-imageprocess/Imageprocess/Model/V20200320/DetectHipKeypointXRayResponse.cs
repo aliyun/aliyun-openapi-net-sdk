@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imageprocess.Model.V20200320
@@ -56,25 +56,13 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 		public class DetectHipKeypointXRay_Data
 		{
 
-			private string orgId;
-
 			private string imageUrl;
+
+			private string orgId;
 
 			private string orgName;
 
 			private List<DetectHipKeypointXRay_KeyPointsItem> keyPoints;
-
-			public string OrgId
-			{
-				get
-				{
-					return orgId;
-				}
-				set	
-				{
-					orgId = value;
-				}
-			}
 
 			public string ImageUrl
 			{
@@ -85,6 +73,18 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 				set	
 				{
 					imageUrl = value;
+				}
+			}
+
+			public string OrgId
+			{
+				get
+				{
+					return orgId;
+				}
+				set	
+				{
+					orgId = value;
 				}
 			}
 
@@ -160,21 +160,9 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 				public class DetectHipKeypointXRay_Tag
 				{
 
-					private string label;
-
 					private string direction;
 
-					public string Label
-					{
-						get
-						{
-							return label;
-						}
-						set	
-						{
-							label = value;
-						}
-					}
+					private string label;
 
 					public string Direction
 					{
@@ -185,6 +173,18 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 						set	
 						{
 							direction = value;
+						}
+					}
+
+					public string Label
+					{
+						get
+						{
+							return label;
+						}
+						set	
+						{
+							label = value;
 						}
 					}
 				}

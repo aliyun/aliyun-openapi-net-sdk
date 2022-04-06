@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imageprocess.Model.V20200320
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 		public class CalcCACS_Data
 		{
 
-			private string score;
-
 			private string resultUrl;
 
-			public string Score
-			{
-				get
-				{
-					return score;
-				}
-				set	
-				{
-					score = value;
-				}
-			}
+			private string score;
 
 			public string ResultUrl
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 				set	
 				{
 					resultUrl = value;
+				}
+			}
+
+			public string Score
+			{
+				get
+				{
+					return score;
+				}
+				set	
+				{
+					score = value;
 				}
 			}
 		}

@@ -31,16 +31,16 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 			RunMedQAResponse runMedQAResponse = new RunMedQAResponse();
 
 			runMedQAResponse.HttpResponse = _ctx.HttpResponse;
-			runMedQAResponse.Message = _ctx.StringValue("RunMedQA.Message");
 			runMedQAResponse.RequestId = _ctx.StringValue("RunMedQA.RequestId");
 			runMedQAResponse.Code = _ctx.StringValue("RunMedQA.Code");
+			runMedQAResponse.Message = _ctx.StringValue("RunMedQA.Message");
 
 			RunMedQAResponse.RunMedQA_Data data = new RunMedQAResponse.RunMedQA_Data();
-			data.Reports = _ctx.StringValue("RunMedQA.Data.Reports");
-			data.QuestionType = _ctx.StringValue("RunMedQA.Data.QuestionType");
-			data.AnswerType = _ctx.StringValue("RunMedQA.Data.AnswerType");
-			data.Question = _ctx.StringValue("RunMedQA.Data.Question");
 			data.SessionId = _ctx.StringValue("RunMedQA.Data.SessionId");
+			data.QuestionType = _ctx.StringValue("RunMedQA.Data.QuestionType");
+			data.Question = _ctx.StringValue("RunMedQA.Data.Question");
+			data.AnswerType = _ctx.StringValue("RunMedQA.Data.AnswerType");
+			data.Reports = _ctx.StringValue("RunMedQA.Data.Reports");
 
 			List<string> data_options = new List<string>();
 			for (int i = 0; i < _ctx.Length("RunMedQA.Data.Options.Length"); i++) {

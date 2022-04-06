@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imageprocess.Model.V20200320
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 		public class TranslateMed_Data
 		{
 
-			private string text;
-
 			private long? words;
 
-			public string Text
-			{
-				get
-				{
-					return text;
-				}
-				set	
-				{
-					text = value;
-				}
-			}
+			private string text;
 
 			public long? Words
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 				set	
 				{
 					words = value;
+				}
+			}
+
+			public string Text
+			{
+				get
+				{
+					return text;
+				}
+				set	
+				{
+					text = value;
 				}
 			}
 		}

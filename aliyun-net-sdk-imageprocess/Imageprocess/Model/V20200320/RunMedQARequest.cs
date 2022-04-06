@@ -44,13 +44,13 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 
 		private string orgName;
 
-		private List<AnswerImageDataList> answerImageDataLists = new List<AnswerImageDataList>(){ };
+		private List<string> answerImageDataLists = new List<string>(){ };
 
-		private List<AnswerTextList> answerTextLists = new List<AnswerTextList>(){ };
+		private List<string> answerTextLists = new List<string>(){ };
 
 		private string department;
 
-		private List<AnswerImageURLList> answerImageURLLists = new List<AnswerImageURLList>(){ };
+		private List<string> answerImageURLLists = new List<string>(){ };
 
 		private string questionType;
 
@@ -82,7 +82,7 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			}
 		}
 
-		public List<AnswerImageDataList> AnswerImageDataLists
+		public List<string> AnswerImageDataLists
 		{
 			get
 			{
@@ -92,14 +92,17 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			set
 			{
 				answerImageDataLists = value;
-				for (int i = 0; i < answerImageDataLists.Count; i++)
+				if(answerImageDataLists != null)
 				{
-					DictionaryUtil.Add(BodyParameters,"AnswerImageDataList." + (i + 1) + ".AnswerImageData", answerImageDataLists[i].AnswerImageData);
+					for (int depth1 = 0; depth1 < answerImageDataLists.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"AnswerImageDataList." + (depth1 + 1), answerImageDataLists[depth1]);
+					}
 				}
 			}
 		}
 
-		public List<AnswerTextList> AnswerTextLists
+		public List<string> AnswerTextLists
 		{
 			get
 			{
@@ -109,9 +112,12 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			set
 			{
 				answerTextLists = value;
-				for (int i = 0; i < answerTextLists.Count; i++)
+				if(answerTextLists != null)
 				{
-					DictionaryUtil.Add(BodyParameters,"AnswerTextList." + (i + 1) + ".AnswerText", answerTextLists[i].AnswerText);
+					for (int depth1 = 0; depth1 < answerTextLists.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"AnswerTextList." + (depth1 + 1), answerTextLists[depth1]);
+					}
 				}
 			}
 		}
@@ -129,7 +135,7 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			}
 		}
 
-		public List<AnswerImageURLList> AnswerImageURLLists
+		public List<string> AnswerImageURLLists
 		{
 			get
 			{
@@ -139,9 +145,12 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			set
 			{
 				answerImageURLLists = value;
-				for (int i = 0; i < answerImageURLLists.Count; i++)
+				if(answerImageURLLists != null)
 				{
-					DictionaryUtil.Add(BodyParameters,"AnswerImageURLList." + (i + 1) + ".AnswerImageURL", answerImageURLLists[i].AnswerImageURL);
+					for (int depth1 = 0; depth1 < answerImageURLLists.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"AnswerImageURLList." + (depth1 + 1), answerImageURLLists[depth1]);
+					}
 				}
 			}
 		}

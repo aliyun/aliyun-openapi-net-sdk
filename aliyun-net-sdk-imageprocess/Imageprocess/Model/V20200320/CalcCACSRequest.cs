@@ -42,13 +42,13 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 
 		private string dataSourceType;
 
+		private string orgName;
+
 		private string dataFormat;
 
-		private List<URLList> uRLLists = new List<URLList>(){ };
+		private List<string> uRLLists = new List<string>(){ };
 
 		private string orgId;
-
-		private string orgName;
 
 		public string DataSourceType
 		{
@@ -60,6 +60,19 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			{
 				dataSourceType = value;
 				DictionaryUtil.Add(BodyParameters, "DataSourceType", value);
+			}
+		}
+
+		public string OrgName
+		{
+			get
+			{
+				return orgName;
+			}
+			set	
+			{
+				orgName = value;
+				DictionaryUtil.Add(BodyParameters, "OrgName", value);
 			}
 		}
 
@@ -76,7 +89,7 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			}
 		}
 
-		public List<URLList> URLLists
+		public List<string> URLLists
 		{
 			get
 			{
@@ -86,9 +99,12 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			set
 			{
 				uRLLists = value;
-				for (int i = 0; i < uRLLists.Count; i++)
+				if(uRLLists != null)
 				{
-					DictionaryUtil.Add(BodyParameters,"URLList." + (i + 1) + ".URL", uRLLists[i].URL);
+					for (int depth1 = 0; depth1 < uRLLists.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"URLList." + (depth1 + 1), uRLLists[depth1]);
+					}
 				}
 			}
 		}
@@ -103,19 +119,6 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			{
 				orgId = value;
 				DictionaryUtil.Add(BodyParameters, "OrgId", value);
-			}
-		}
-
-		public string OrgName
-		{
-			get
-			{
-				return orgName;
-			}
-			set	
-			{
-				orgName = value;
-				DictionaryUtil.Add(BodyParameters, "OrgName", value);
 			}
 		}
 

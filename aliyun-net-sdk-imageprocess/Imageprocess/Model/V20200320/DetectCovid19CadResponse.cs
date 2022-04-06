@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imageprocess.Model.V20200320
@@ -56,27 +56,15 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 		public class DetectCovid19Cad_Data
 		{
 
-			private string newProbability;
-
 			private string normalProbability;
 
-			private string otherProbability;
+			private string newProbability;
 
 			private string lesionRatio;
 
-			private string mask;
+			private string otherProbability;
 
-			public string NewProbability
-			{
-				get
-				{
-					return newProbability;
-				}
-				set	
-				{
-					newProbability = value;
-				}
-			}
+			private string mask;
 
 			public string NormalProbability
 			{
@@ -90,15 +78,15 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 				}
 			}
 
-			public string OtherProbability
+			public string NewProbability
 			{
 				get
 				{
-					return otherProbability;
+					return newProbability;
 				}
 				set	
 				{
-					otherProbability = value;
+					newProbability = value;
 				}
 			}
 
@@ -111,6 +99,18 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 				set	
 				{
 					lesionRatio = value;
+				}
+			}
+
+			public string OtherProbability
+			{
+				get
+				{
+					return otherProbability;
+				}
+				set	
+				{
+					otherProbability = value;
 				}
 			}
 

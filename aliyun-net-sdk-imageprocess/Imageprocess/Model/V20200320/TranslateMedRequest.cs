@@ -40,24 +40,11 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			Method = MethodType.POST;
         }
 
-		private string fromLanguage;
-
 		private string toLanguage;
 
 		private string text;
 
-		public string FromLanguage
-		{
-			get
-			{
-				return fromLanguage;
-			}
-			set	
-			{
-				fromLanguage = value;
-				DictionaryUtil.Add(BodyParameters, "FromLanguage", value);
-			}
-		}
+		private string fromLanguage;
 
 		public string ToLanguage
 		{
@@ -82,6 +69,19 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			{
 				text = value;
 				DictionaryUtil.Add(BodyParameters, "Text", value);
+			}
+		}
+
+		public string FromLanguage
+		{
+			get
+			{
+				return fromLanguage;
+			}
+			set	
+			{
+				fromLanguage = value;
+				DictionaryUtil.Add(BodyParameters, "FromLanguage", value);
 			}
 		}
 

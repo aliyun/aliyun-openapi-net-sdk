@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imageprocess.Model.V20200320
@@ -87,23 +87,11 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			public class DetectSpineMRI_Disc
 			{
 
-				private string disease;
-
 				private string identification;
 
-				private List<string> location;
+				private string disease;
 
-				public string Disease
-				{
-					get
-					{
-						return disease;
-					}
-					set	
-					{
-						disease = value;
-					}
-				}
+				private List<string> location;
 
 				public string Identification
 				{
@@ -114,6 +102,18 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 					set	
 					{
 						identification = value;
+					}
+				}
+
+				public string Disease
+				{
+					get
+					{
+						return disease;
+					}
+					set	
+					{
+						disease = value;
 					}
 				}
 
@@ -133,23 +133,11 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			public class DetectSpineMRI_Vertebra
 			{
 
-				private string disease;
-
 				private string identification;
 
-				private List<string> location1;
+				private string disease;
 
-				public string Disease
-				{
-					get
-					{
-						return disease;
-					}
-					set	
-					{
-						disease = value;
-					}
-				}
+				private List<string> location1;
 
 				public string Identification
 				{
@@ -160,6 +148,18 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 					set	
 					{
 						identification = value;
+					}
+				}
+
+				public string Disease
+				{
+					get
+					{
+						return disease;
+					}
+					set	
+					{
+						disease = value;
 					}
 				}
 

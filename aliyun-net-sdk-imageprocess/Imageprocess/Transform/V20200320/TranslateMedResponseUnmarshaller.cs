@@ -34,8 +34,8 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 			translateMedResponse.RequestId = _ctx.StringValue("TranslateMed.RequestId");
 
 			TranslateMedResponse.TranslateMed_Data data = new TranslateMedResponse.TranslateMed_Data();
-			data.Text = _ctx.StringValue("TranslateMed.Data.Text");
 			data.Words = _ctx.LongValue("TranslateMed.Data.Words");
+			data.Text = _ctx.StringValue("TranslateMed.Data.Text");
 			translateMedResponse.Data = data;
         
 			return translateMedResponse;

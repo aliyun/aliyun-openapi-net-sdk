@@ -44,13 +44,13 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 
 		private string orgName;
 
-		private List<ReferenceList> referenceLists = new List<ReferenceList>(){ };
+		private List<string> referenceLists = new List<string>(){ };
 
 		private string dataFormat;
 
 		private string orgId;
 
-		private List<FloatingList> floatingLists = new List<FloatingList>(){ };
+		private List<string> floatingLists = new List<string>(){ };
 
 		public string DataSourceType
 		{
@@ -78,7 +78,7 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			}
 		}
 
-		public List<ReferenceList> ReferenceLists
+		public List<string> ReferenceLists
 		{
 			get
 			{
@@ -88,9 +88,12 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			set
 			{
 				referenceLists = value;
-				for (int i = 0; i < referenceLists.Count; i++)
+				if(referenceLists != null)
 				{
-					DictionaryUtil.Add(BodyParameters,"ReferenceList." + (i + 1) + ".ReferenceURL", referenceLists[i].ReferenceURL);
+					for (int depth1 = 0; depth1 < referenceLists.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"ReferenceList." + (depth1 + 1), referenceLists[depth1]);
+					}
 				}
 			}
 		}
@@ -121,7 +124,7 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			}
 		}
 
-		public List<FloatingList> FloatingLists
+		public List<string> FloatingLists
 		{
 			get
 			{
@@ -131,9 +134,12 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			set
 			{
 				floatingLists = value;
-				for (int i = 0; i < floatingLists.Count; i++)
+				if(floatingLists != null)
 				{
-					DictionaryUtil.Add(BodyParameters,"FloatingList." + (i + 1) + ".FloatingURL", floatingLists[i].FloatingURL);
+					for (int depth1 = 0; depth1 < floatingLists.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"FloatingList." + (depth1 + 1), floatingLists[depth1]);
+					}
 				}
 			}
 		}
