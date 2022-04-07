@@ -78,6 +78,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				kVStoreInstance.InstanceStatus = _ctx.StringValue("DescribeInstances.Instances["+ i +"].InstanceStatus");
 				kVStoreInstance.ProxyCount = _ctx.IntegerValue("DescribeInstances.Instances["+ i +"].ProxyCount");
 				kVStoreInstance.CloudType = _ctx.StringValue("DescribeInstances.Instances["+ i +"].CloudType");
+				kVStoreInstance.EditionType = _ctx.StringValue("DescribeInstances.Instances["+ i +"].EditionType");
 
 				List<DescribeInstancesResponse.DescribeInstances_KVStoreInstance.DescribeInstances_Tag> kVStoreInstance_tags = new List<DescribeInstancesResponse.DescribeInstances_KVStoreInstance.DescribeInstances_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeInstances.Instances["+ i +"].Tags.Length"); j++) {

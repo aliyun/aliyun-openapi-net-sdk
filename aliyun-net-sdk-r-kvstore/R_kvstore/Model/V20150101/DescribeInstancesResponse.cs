@@ -176,6 +176,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string cloudType;
 
+			private string editionType;
+
 			private List<DescribeInstances_Tag> tags;
 
 			public string VpcId
@@ -643,6 +645,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					cloudType = value;
+				}
+			}
+
+			public string EditionType
+			{
+				get
+				{
+					return editionType;
+				}
+				set	
+				{
+					editionType = value;
 				}
 			}
 
