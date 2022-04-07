@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
@@ -70,53 +70,17 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		public class DescribeReplicaSetRole_ReplicaSet
 		{
 
-			private string replicaSetRole;
-
-			private string roleId;
-
-			private string connectionDomain;
-
 			private string connectionPort;
+
+			private string replicaSetRole;
 
 			private string expiredTime;
 
+			private string connectionDomain;
+
 			private string networkType;
 
-			public string ReplicaSetRole
-			{
-				get
-				{
-					return replicaSetRole;
-				}
-				set	
-				{
-					replicaSetRole = value;
-				}
-			}
-
-			public string RoleId
-			{
-				get
-				{
-					return roleId;
-				}
-				set	
-				{
-					roleId = value;
-				}
-			}
-
-			public string ConnectionDomain
-			{
-				get
-				{
-					return connectionDomain;
-				}
-				set	
-				{
-					connectionDomain = value;
-				}
-			}
+			private string roleId;
 
 			public string ConnectionPort
 			{
@@ -127,6 +91,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					connectionPort = value;
+				}
+			}
+
+			public string ReplicaSetRole
+			{
+				get
+				{
+					return replicaSetRole;
+				}
+				set	
+				{
+					replicaSetRole = value;
 				}
 			}
 
@@ -142,6 +118,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
+			public string ConnectionDomain
+			{
+				get
+				{
+					return connectionDomain;
+				}
+				set	
+				{
+					connectionDomain = value;
+				}
+			}
+
 			public string NetworkType
 			{
 				get
@@ -151,6 +139,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					networkType = value;
+				}
+			}
+
+			public string RoleId
+			{
+				get
+				{
+					return roleId;
+				}
+				set	
+				{
+					roleId = value;
 				}
 			}
 		}

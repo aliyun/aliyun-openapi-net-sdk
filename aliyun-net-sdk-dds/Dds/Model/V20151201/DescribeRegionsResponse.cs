@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		public class DescribeRegions_DdsRegion
 		{
 
-			private string regionId;
-
 			private string zoneIds;
 
-			private List<DescribeRegions_Zone> zones;
+			private string regionId;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+			private List<DescribeRegions_Zone> zones;
 
 			public string ZoneIds
 			{
@@ -83,6 +71,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					zoneIds = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 

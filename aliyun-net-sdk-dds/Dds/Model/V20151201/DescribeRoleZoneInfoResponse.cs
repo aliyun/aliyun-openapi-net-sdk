@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
@@ -56,6 +56,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		public class DescribeRoleZoneInfo_ZoneInfo
 		{
 
+			private string insName;
+
 			private string nodeType;
 
 			private string roleType;
@@ -64,7 +66,17 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string roleId;
 
-			private string insName;
+			public string InsName
+			{
+				get
+				{
+					return insName;
+				}
+				set	
+				{
+					insName = value;
+				}
+			}
 
 			public string NodeType
 			{
@@ -111,18 +123,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					roleId = value;
-				}
-			}
-
-			public string InsName
-			{
-				get
-				{
-					return insName;
-				}
-				set	
-				{
-					insName = value;
 				}
 			}
 		}

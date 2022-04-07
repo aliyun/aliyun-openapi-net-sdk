@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			CheckCloudResourceAuthorizedResponse checkCloudResourceAuthorizedResponse = new CheckCloudResourceAuthorizedResponse();
 
 			checkCloudResourceAuthorizedResponse.HttpResponse = _ctx.HttpResponse;
-			checkCloudResourceAuthorizedResponse.RequestId = _ctx.StringValue("CheckCloudResourceAuthorized.RequestId");
 			checkCloudResourceAuthorizedResponse.AuthorizationState = _ctx.IntegerValue("CheckCloudResourceAuthorized.AuthorizationState");
+			checkCloudResourceAuthorizedResponse.RequestId = _ctx.StringValue("CheckCloudResourceAuthorized.RequestId");
 			checkCloudResourceAuthorizedResponse.RoleArn = _ctx.StringValue("CheckCloudResourceAuthorized.RoleArn");
         
 			return checkCloudResourceAuthorizedResponse;

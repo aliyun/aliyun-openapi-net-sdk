@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			DescribeDBInstanceSSLResponse describeDBInstanceSSLResponse = new DescribeDBInstanceSSLResponse();
 
 			describeDBInstanceSSLResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBInstanceSSLResponse.RequestId = _ctx.StringValue("DescribeDBInstanceSSL.RequestId");
 			describeDBInstanceSSLResponse.SSLExpiredTime = _ctx.StringValue("DescribeDBInstanceSSL.SSLExpiredTime");
-			describeDBInstanceSSLResponse.CertCommonName = _ctx.StringValue("DescribeDBInstanceSSL.CertCommonName");
 			describeDBInstanceSSLResponse.SSLStatus = _ctx.StringValue("DescribeDBInstanceSSL.SSLStatus");
+			describeDBInstanceSSLResponse.RequestId = _ctx.StringValue("DescribeDBInstanceSSL.RequestId");
+			describeDBInstanceSSLResponse.CertCommonName = _ctx.StringValue("DescribeDBInstanceSSL.CertCommonName");
         
 			return describeDBInstanceSSLResponse;
         }

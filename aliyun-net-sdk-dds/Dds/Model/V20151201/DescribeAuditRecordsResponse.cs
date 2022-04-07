@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 	public class DescribeAuditRecordsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalRecordCount;
-
-		private int? pageNumber;
 
 		private int? pageRecordCount;
 
-		private List<DescribeAuditRecords_SQLRecord> items;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private int? pageNumber;
+
+		private List<DescribeAuditRecords_SQLRecord> items;
 
 		public int? TotalRecordCount
 		{
@@ -59,18 +47,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
 		public int? PageRecordCount
 		{
 			get
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				pageRecordCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
 			}
 		}
 
@@ -98,47 +98,23 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		public class DescribeAuditRecords_SQLRecord
 		{
 
-			private string dBName;
-
-			private string accountName;
-
 			private string hostAddress;
 
-			private string syntax;
-
-			private long? totalExecutionTimes;
+			private string tableName;
 
 			private long? returnRowCounts;
+
+			private string dBName;
 
 			private string executeTime;
 
 			private string threadID;
 
-			private string tableName;
+			private long? totalExecutionTimes;
 
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
-				}
-			}
+			private string syntax;
 
-			public string AccountName
-			{
-				get
-				{
-					return accountName;
-				}
-				set	
-				{
-					accountName = value;
-				}
-			}
+			private string accountName;
 
 			public string HostAddress
 			{
@@ -152,27 +128,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public string Syntax
+			public string TableName
 			{
 				get
 				{
-					return syntax;
+					return tableName;
 				}
 				set	
 				{
-					syntax = value;
-				}
-			}
-
-			public long? TotalExecutionTimes
-			{
-				get
-				{
-					return totalExecutionTimes;
-				}
-				set	
-				{
-					totalExecutionTimes = value;
+					tableName = value;
 				}
 			}
 
@@ -185,6 +149,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					returnRowCounts = value;
+				}
+			}
+
+			public string DBName
+			{
+				get
+				{
+					return dBName;
+				}
+				set	
+				{
+					dBName = value;
 				}
 			}
 
@@ -212,15 +188,39 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public string TableName
+			public long? TotalExecutionTimes
 			{
 				get
 				{
-					return tableName;
+					return totalExecutionTimes;
 				}
 				set	
 				{
-					tableName = value;
+					totalExecutionTimes = value;
+				}
+			}
+
+			public string Syntax
+			{
+				get
+				{
+					return syntax;
+				}
+				set	
+				{
+					syntax = value;
+				}
+			}
+
+			public string AccountName
+			{
+				get
+				{
+					return accountName;
+				}
+				set	
+				{
+					accountName = value;
 				}
 			}
 		}

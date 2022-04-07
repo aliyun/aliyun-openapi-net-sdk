@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 	public class CheckCloudResourceAuthorizedResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? authorizationState;
 
-		private string roleArn;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string roleArn;
 
 		public int? AuthorizationState
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				authorizationState = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

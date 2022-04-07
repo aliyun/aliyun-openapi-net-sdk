@@ -41,9 +41,9 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			for (int i = 0; i < _ctx.Length("DescribeErrorLogRecords.Items.Length"); i++) {
 				DescribeErrorLogRecordsResponse.DescribeErrorLogRecords_LogRecords logRecords = new DescribeErrorLogRecordsResponse.DescribeErrorLogRecords_LogRecords();
 				logRecords.ConnInfo = _ctx.StringValue("DescribeErrorLogRecords.Items["+ i +"].ConnInfo");
+				logRecords.CreateTime = _ctx.StringValue("DescribeErrorLogRecords.Items["+ i +"].CreateTime");
 				logRecords.Category = _ctx.StringValue("DescribeErrorLogRecords.Items["+ i +"].Category");
 				logRecords.Content = _ctx.StringValue("DescribeErrorLogRecords.Items["+ i +"].Content");
-				logRecords.CreateTime = _ctx.StringValue("DescribeErrorLogRecords.Items["+ i +"].CreateTime");
 				logRecords.Id = _ctx.IntegerValue("DescribeErrorLogRecords.Items["+ i +"].Id");
 
 				describeErrorLogRecordsResponse_items.Add(logRecords);

@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			List<DescribeSecurityGroupConfigurationResponse.DescribeSecurityGroupConfiguration_RdsEcsSecurityGroupRel> describeSecurityGroupConfigurationResponse_items = new List<DescribeSecurityGroupConfigurationResponse.DescribeSecurityGroupConfiguration_RdsEcsSecurityGroupRel>();
 			for (int i = 0; i < _ctx.Length("DescribeSecurityGroupConfiguration.Items.Length"); i++) {
 				DescribeSecurityGroupConfigurationResponse.DescribeSecurityGroupConfiguration_RdsEcsSecurityGroupRel rdsEcsSecurityGroupRel = new DescribeSecurityGroupConfigurationResponse.DescribeSecurityGroupConfiguration_RdsEcsSecurityGroupRel();
-				rdsEcsSecurityGroupRel.RegionId = _ctx.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].RegionId");
 				rdsEcsSecurityGroupRel.SecurityGroupId = _ctx.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].SecurityGroupId");
 				rdsEcsSecurityGroupRel.NetType = _ctx.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].NetType");
+				rdsEcsSecurityGroupRel.RegionId = _ctx.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].RegionId");
 
 				describeSecurityGroupConfigurationResponse_items.Add(rdsEcsSecurityGroupRel);
 			}

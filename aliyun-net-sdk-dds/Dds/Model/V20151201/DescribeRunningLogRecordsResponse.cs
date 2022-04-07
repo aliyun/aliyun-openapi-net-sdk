@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
@@ -114,11 +114,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string connInfo;
 
+			private string createTime;
+
 			private string category;
 
 			private string content;
-
-			private string createTime;
 
 			private int? id;
 
@@ -131,6 +131,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					connInfo = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
 				}
 			}
 
@@ -155,18 +167,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					content = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
 				}
 			}
 

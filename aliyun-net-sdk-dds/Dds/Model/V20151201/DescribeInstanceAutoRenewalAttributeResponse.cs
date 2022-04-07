@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
@@ -98,27 +98,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		public class DescribeInstanceAutoRenewalAttribute_Item
 		{
 
-			private string autoRenew;
-
 			private string dBInstanceType;
+
+			private string autoRenew;
 
 			private string duration;
 
-			private string regionId;
-
 			private string dbInstanceId;
 
-			public string AutoRenew
-			{
-				get
-				{
-					return autoRenew;
-				}
-				set	
-				{
-					autoRenew = value;
-				}
-			}
+			private string regionId;
 
 			public string DBInstanceType
 			{
@@ -129,6 +117,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					dBInstanceType = value;
+				}
+			}
+
+			public string AutoRenew
+			{
+				get
+				{
+					return autoRenew;
+				}
+				set	
+				{
+					autoRenew = value;
 				}
 			}
 
@@ -144,18 +144,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
 			public string DbInstanceId
 			{
 				get
@@ -165,6 +153,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					dbInstanceId = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 		}

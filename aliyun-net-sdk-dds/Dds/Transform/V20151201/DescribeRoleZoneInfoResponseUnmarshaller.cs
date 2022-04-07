@@ -36,11 +36,11 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			List<DescribeRoleZoneInfoResponse.DescribeRoleZoneInfo_ZoneInfo> describeRoleZoneInfoResponse_zoneInfos = new List<DescribeRoleZoneInfoResponse.DescribeRoleZoneInfo_ZoneInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeRoleZoneInfo.ZoneInfos.Length"); i++) {
 				DescribeRoleZoneInfoResponse.DescribeRoleZoneInfo_ZoneInfo zoneInfo = new DescribeRoleZoneInfoResponse.DescribeRoleZoneInfo_ZoneInfo();
+				zoneInfo.InsName = _ctx.StringValue("DescribeRoleZoneInfo.ZoneInfos["+ i +"].InsName");
 				zoneInfo.NodeType = _ctx.StringValue("DescribeRoleZoneInfo.ZoneInfos["+ i +"].NodeType");
 				zoneInfo.RoleType = _ctx.StringValue("DescribeRoleZoneInfo.ZoneInfos["+ i +"].RoleType");
 				zoneInfo.ZoneId = _ctx.StringValue("DescribeRoleZoneInfo.ZoneInfos["+ i +"].ZoneId");
 				zoneInfo.RoleId = _ctx.StringValue("DescribeRoleZoneInfo.ZoneInfos["+ i +"].RoleId");
-				zoneInfo.InsName = _ctx.StringValue("DescribeRoleZoneInfo.ZoneInfos["+ i +"].InsName");
 
 				describeRoleZoneInfoResponse_zoneInfos.Add(zoneInfo);
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		public class DescribeKernelReleaseNotes_ReleaseNote
 		{
 
-			private string kernelVersion;
-
 			private string releaseNote;
 
-			public string KernelVersion
-			{
-				get
-				{
-					return kernelVersion;
-				}
-				set	
-				{
-					kernelVersion = value;
-				}
-			}
+			private string kernelVersion;
 
 			public string ReleaseNote
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					releaseNote = value;
+				}
+			}
+
+			public string KernelVersion
+			{
+				get
+				{
+					return kernelVersion;
+				}
+				set	
+				{
+					kernelVersion = value;
 				}
 			}
 		}

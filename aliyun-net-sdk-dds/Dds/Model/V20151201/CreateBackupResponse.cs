@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 	public class CreateBackupResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string backupId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string BackupId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				backupId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

@@ -36,8 +36,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			List<DescribeKernelReleaseNotesResponse.DescribeKernelReleaseNotes_ReleaseNote> describeKernelReleaseNotesResponse_releaseNotes = new List<DescribeKernelReleaseNotesResponse.DescribeKernelReleaseNotes_ReleaseNote>();
 			for (int i = 0; i < _ctx.Length("DescribeKernelReleaseNotes.ReleaseNotes.Length"); i++) {
 				DescribeKernelReleaseNotesResponse.DescribeKernelReleaseNotes_ReleaseNote releaseNote = new DescribeKernelReleaseNotesResponse.DescribeKernelReleaseNotes_ReleaseNote();
-				releaseNote.KernelVersion = _ctx.StringValue("DescribeKernelReleaseNotes.ReleaseNotes["+ i +"].KernelVersion");
 				releaseNote.ReleaseNote = _ctx.StringValue("DescribeKernelReleaseNotes.ReleaseNotes["+ i +"].ReleaseNote");
+				releaseNote.KernelVersion = _ctx.StringValue("DescribeKernelReleaseNotes.ReleaseNotes["+ i +"].KernelVersion");
 
 				describeKernelReleaseNotesResponse_releaseNotes.Add(releaseNote);
 			}

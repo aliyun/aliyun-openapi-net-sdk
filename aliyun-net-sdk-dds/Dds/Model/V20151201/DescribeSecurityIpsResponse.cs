@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 	public class DescribeSecurityIpsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string securityIps;
 
-		private List<DescribeSecurityIps_SecurityIpGroup> securityIpGroups;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeSecurityIps_SecurityIpGroup> securityIpGroups;
 
 		public string SecurityIps
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				securityIps = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

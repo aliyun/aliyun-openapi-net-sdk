@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 	public class DeleteNodeResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? taskId;
 
-		private string orderId;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string orderId;
 
 		public int? TaskId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				taskId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

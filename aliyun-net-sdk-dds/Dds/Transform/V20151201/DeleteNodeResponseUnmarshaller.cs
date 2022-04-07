@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			DeleteNodeResponse deleteNodeResponse = new DeleteNodeResponse();
 
 			deleteNodeResponse.HttpResponse = _ctx.HttpResponse;
-			deleteNodeResponse.RequestId = _ctx.StringValue("DeleteNode.RequestId");
 			deleteNodeResponse.TaskId = _ctx.IntegerValue("DeleteNode.TaskId");
+			deleteNodeResponse.RequestId = _ctx.StringValue("DeleteNode.RequestId");
 			deleteNodeResponse.OrderId = _ctx.StringValue("DeleteNode.OrderId");
         
 			return deleteNodeResponse;

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string requestId;
 
-		private int? taskCount;
-
 		private int? needPop;
+
+		private int? taskCount;
 
 		public string RequestId
 		{
@@ -43,18 +43,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public int? TaskCount
-		{
-			get
-			{
-				return taskCount;
-			}
-			set	
-			{
-				taskCount = value;
-			}
-		}
-
 		public int? NeedPop
 		{
 			get
@@ -64,6 +52,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				needPop = value;
+			}
+		}
+
+		public int? TaskCount
+		{
+			get
+			{
+				return taskCount;
+			}
+			set	
+			{
+				taskCount = value;
 			}
 		}
 	}

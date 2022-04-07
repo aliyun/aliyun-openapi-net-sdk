@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 	public class DescribeDBInstanceSSLResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string sSLExpiredTime;
-
-		private string certCommonName;
 
 		private string sSLStatus;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
+
+		private string certCommonName;
 
 		public string SSLExpiredTime
 		{
@@ -57,18 +45,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string CertCommonName
-		{
-			get
-			{
-				return certCommonName;
-			}
-			set	
-			{
-				certCommonName = value;
-			}
-		}
-
 		public string SSLStatus
 		{
 			get
@@ -78,6 +54,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				sSLStatus = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string CertCommonName
+		{
+			get
+			{
+				return certCommonName;
+			}
+			set	
+			{
+				certCommonName = value;
 			}
 		}
 	}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			DescribeDBInstanceTDEInfoResponse describeDBInstanceTDEInfoResponse = new DescribeDBInstanceTDEInfoResponse();
 
 			describeDBInstanceTDEInfoResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBInstanceTDEInfoResponse.RequestId = _ctx.StringValue("DescribeDBInstanceTDEInfo.RequestId");
 			describeDBInstanceTDEInfoResponse.TDEStatus = _ctx.StringValue("DescribeDBInstanceTDEInfo.TDEStatus");
+			describeDBInstanceTDEInfoResponse.RequestId = _ctx.StringValue("DescribeDBInstanceTDEInfo.RequestId");
         
 			return describeDBInstanceTDEInfoResponse;
         }

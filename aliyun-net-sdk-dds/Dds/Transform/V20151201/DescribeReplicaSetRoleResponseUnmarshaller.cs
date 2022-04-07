@@ -37,12 +37,12 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			List<DescribeReplicaSetRoleResponse.DescribeReplicaSetRole_ReplicaSet> describeReplicaSetRoleResponse_replicaSets = new List<DescribeReplicaSetRoleResponse.DescribeReplicaSetRole_ReplicaSet>();
 			for (int i = 0; i < _ctx.Length("DescribeReplicaSetRole.ReplicaSets.Length"); i++) {
 				DescribeReplicaSetRoleResponse.DescribeReplicaSetRole_ReplicaSet replicaSet = new DescribeReplicaSetRoleResponse.DescribeReplicaSetRole_ReplicaSet();
-				replicaSet.ReplicaSetRole = _ctx.StringValue("DescribeReplicaSetRole.ReplicaSets["+ i +"].ReplicaSetRole");
-				replicaSet.RoleId = _ctx.StringValue("DescribeReplicaSetRole.ReplicaSets["+ i +"].RoleId");
-				replicaSet.ConnectionDomain = _ctx.StringValue("DescribeReplicaSetRole.ReplicaSets["+ i +"].ConnectionDomain");
 				replicaSet.ConnectionPort = _ctx.StringValue("DescribeReplicaSetRole.ReplicaSets["+ i +"].ConnectionPort");
+				replicaSet.ReplicaSetRole = _ctx.StringValue("DescribeReplicaSetRole.ReplicaSets["+ i +"].ReplicaSetRole");
 				replicaSet.ExpiredTime = _ctx.StringValue("DescribeReplicaSetRole.ReplicaSets["+ i +"].ExpiredTime");
+				replicaSet.ConnectionDomain = _ctx.StringValue("DescribeReplicaSetRole.ReplicaSets["+ i +"].ConnectionDomain");
 				replicaSet.NetworkType = _ctx.StringValue("DescribeReplicaSetRole.ReplicaSets["+ i +"].NetworkType");
+				replicaSet.RoleId = _ctx.StringValue("DescribeReplicaSetRole.ReplicaSets["+ i +"].RoleId");
 
 				describeReplicaSetRoleResponse_replicaSets.Add(replicaSet);
 			}

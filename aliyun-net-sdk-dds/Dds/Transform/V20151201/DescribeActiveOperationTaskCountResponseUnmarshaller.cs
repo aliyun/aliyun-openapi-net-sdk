@@ -32,8 +32,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 
 			describeActiveOperationTaskCountResponse.HttpResponse = _ctx.HttpResponse;
 			describeActiveOperationTaskCountResponse.RequestId = _ctx.StringValue("DescribeActiveOperationTaskCount.RequestId");
-			describeActiveOperationTaskCountResponse.TaskCount = _ctx.IntegerValue("DescribeActiveOperationTaskCount.TaskCount");
 			describeActiveOperationTaskCountResponse.NeedPop = _ctx.IntegerValue("DescribeActiveOperationTaskCount.NeedPop");
+			describeActiveOperationTaskCountResponse.TaskCount = _ctx.IntegerValue("DescribeActiveOperationTaskCount.TaskCount");
         
 			return describeActiveOperationTaskCountResponse;
         }

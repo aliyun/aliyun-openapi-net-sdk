@@ -37,9 +37,9 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			for (int i = 0; i < _ctx.Length("DescribeParameterModificationHistory.HistoricalParameters.Length"); i++) {
 				DescribeParameterModificationHistoryResponse.DescribeParameterModificationHistory_HistoricalParameter historicalParameter = new DescribeParameterModificationHistoryResponse.DescribeParameterModificationHistory_HistoricalParameter();
 				historicalParameter.ParameterName = _ctx.StringValue("DescribeParameterModificationHistory.HistoricalParameters["+ i +"].ParameterName");
-				historicalParameter.ModifyTime = _ctx.StringValue("DescribeParameterModificationHistory.HistoricalParameters["+ i +"].ModifyTime");
 				historicalParameter.OldParameterValue = _ctx.StringValue("DescribeParameterModificationHistory.HistoricalParameters["+ i +"].OldParameterValue");
 				historicalParameter.NewParameterValue = _ctx.StringValue("DescribeParameterModificationHistory.HistoricalParameters["+ i +"].NewParameterValue");
+				historicalParameter.ModifyTime = _ctx.StringValue("DescribeParameterModificationHistory.HistoricalParameters["+ i +"].ModifyTime");
 
 				describeParameterModificationHistoryResponse_historicalParameters.Add(historicalParameter);
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 	public class DescribeBackupDBsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? totalCount;
 
-		private int? pageNumber;
+		private string requestId;
 
 		private int? pageSize;
 
-		private int? totalCount;
+		private int? pageNumber;
 
 		private List<DescribeBackupDBs_Database> databases;
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public int? TotalCount
+		public int? PageNumber
 		{
 			get
 			{
-				return totalCount;
+				return pageNumber;
 			}
 			set	
 			{
-				totalCount = value;
+				pageNumber = value;
 			}
 		}
 

@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			DescribeBackupDBsResponse describeBackupDBsResponse = new DescribeBackupDBsResponse();
 
 			describeBackupDBsResponse.HttpResponse = _ctx.HttpResponse;
-			describeBackupDBsResponse.RequestId = _ctx.StringValue("DescribeBackupDBs.RequestId");
-			describeBackupDBsResponse.PageNumber = _ctx.IntegerValue("DescribeBackupDBs.PageNumber");
-			describeBackupDBsResponse.PageSize = _ctx.IntegerValue("DescribeBackupDBs.PageSize");
 			describeBackupDBsResponse.TotalCount = _ctx.IntegerValue("DescribeBackupDBs.TotalCount");
+			describeBackupDBsResponse.RequestId = _ctx.StringValue("DescribeBackupDBs.RequestId");
+			describeBackupDBsResponse.PageSize = _ctx.IntegerValue("DescribeBackupDBs.PageSize");
+			describeBackupDBsResponse.PageNumber = _ctx.IntegerValue("DescribeBackupDBs.PageNumber");
 
 			List<DescribeBackupDBsResponse.DescribeBackupDBs_Database> describeBackupDBsResponse_databases = new List<DescribeBackupDBsResponse.DescribeBackupDBs_Database>();
 			for (int i = 0; i < _ctx.Length("DescribeBackupDBs.Databases.Length"); i++) {

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
@@ -25,45 +25,33 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 	public class DescribeDBInstanceEncryptionKeyResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string encryptionKey;
+		private string origin;
 
 		private string description;
 
-		private string keyUsage;
-
-		private string deleteDate;
-
-		private string creator;
+		private string requestId;
 
 		private string encryptionKeyStatus;
 
-		private string origin;
-
 		private string materialExpireTime;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string keyUsage;
 
-		public string EncryptionKey
+		private string encryptionKey;
+
+		private string creator;
+
+		private string deleteDate;
+
+		public string Origin
 		{
 			get
 			{
-				return encryptionKey;
+				return origin;
 			}
 			set	
 			{
-				encryptionKey = value;
+				origin = value;
 			}
 		}
 
@@ -79,39 +67,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string KeyUsage
+		public string RequestId
 		{
 			get
 			{
-				return keyUsage;
+				return requestId;
 			}
 			set	
 			{
-				keyUsage = value;
-			}
-		}
-
-		public string DeleteDate
-		{
-			get
-			{
-				return deleteDate;
-			}
-			set	
-			{
-				deleteDate = value;
-			}
-		}
-
-		public string Creator
-		{
-			get
-			{
-				return creator;
-			}
-			set	
-			{
-				creator = value;
+				requestId = value;
 			}
 		}
 
@@ -127,18 +91,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string Origin
-		{
-			get
-			{
-				return origin;
-			}
-			set	
-			{
-				origin = value;
-			}
-		}
-
 		public string MaterialExpireTime
 		{
 			get
@@ -148,6 +100,54 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				materialExpireTime = value;
+			}
+		}
+
+		public string KeyUsage
+		{
+			get
+			{
+				return keyUsage;
+			}
+			set	
+			{
+				keyUsage = value;
+			}
+		}
+
+		public string EncryptionKey
+		{
+			get
+			{
+				return encryptionKey;
+			}
+			set	
+			{
+				encryptionKey = value;
+			}
+		}
+
+		public string Creator
+		{
+			get
+			{
+				return creator;
+			}
+			set	
+			{
+				creator = value;
+			}
+		}
+
+		public string DeleteDate
+		{
+			get
+			{
+				return deleteDate;
+			}
+			set	
+			{
+				deleteDate = value;
 			}
 		}
 	}

@@ -36,11 +36,11 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			List<DescribeAccountsResponse.DescribeAccounts_Account> describeAccountsResponse_accounts = new List<DescribeAccountsResponse.DescribeAccounts_Account>();
 			for (int i = 0; i < _ctx.Length("DescribeAccounts.Accounts.Length"); i++) {
 				DescribeAccountsResponse.DescribeAccounts_Account account = new DescribeAccountsResponse.DescribeAccounts_Account();
-				account.DBInstanceId = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].DBInstanceId");
-				account.AccountName = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].AccountName");
+				account.CharacterType = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].CharacterType");
 				account.AccountStatus = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].AccountStatus");
 				account.AccountDescription = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].AccountDescription");
-				account.CharacterType = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].CharacterType");
+				account.DBInstanceId = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].DBInstanceId");
+				account.AccountName = _ctx.StringValue("DescribeAccounts.Accounts["+ i +"].AccountName");
 
 				describeAccountsResponse_accounts.Add(account);
 			}

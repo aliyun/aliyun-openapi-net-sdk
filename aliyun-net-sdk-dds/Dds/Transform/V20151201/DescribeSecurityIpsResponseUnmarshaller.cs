@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			DescribeSecurityIpsResponse describeSecurityIpsResponse = new DescribeSecurityIpsResponse();
 
 			describeSecurityIpsResponse.HttpResponse = _ctx.HttpResponse;
-			describeSecurityIpsResponse.RequestId = _ctx.StringValue("DescribeSecurityIps.RequestId");
 			describeSecurityIpsResponse.SecurityIps = _ctx.StringValue("DescribeSecurityIps.SecurityIps");
+			describeSecurityIpsResponse.RequestId = _ctx.StringValue("DescribeSecurityIps.RequestId");
 
 			List<DescribeSecurityIpsResponse.DescribeSecurityIps_SecurityIpGroup> describeSecurityIpsResponse_securityIpGroups = new List<DescribeSecurityIpsResponse.DescribeSecurityIps_SecurityIpGroup>();
 			for (int i = 0; i < _ctx.Length("DescribeSecurityIps.SecurityIpGroups.Length"); i++) {

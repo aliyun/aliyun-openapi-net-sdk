@@ -31,15 +31,15 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			DescribeDBInstanceEncryptionKeyResponse describeDBInstanceEncryptionKeyResponse = new DescribeDBInstanceEncryptionKeyResponse();
 
 			describeDBInstanceEncryptionKeyResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBInstanceEncryptionKeyResponse.RequestId = _ctx.StringValue("DescribeDBInstanceEncryptionKey.RequestId");
-			describeDBInstanceEncryptionKeyResponse.EncryptionKey = _ctx.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKey");
-			describeDBInstanceEncryptionKeyResponse.Description = _ctx.StringValue("DescribeDBInstanceEncryptionKey.Description");
-			describeDBInstanceEncryptionKeyResponse.KeyUsage = _ctx.StringValue("DescribeDBInstanceEncryptionKey.KeyUsage");
-			describeDBInstanceEncryptionKeyResponse.DeleteDate = _ctx.StringValue("DescribeDBInstanceEncryptionKey.DeleteDate");
-			describeDBInstanceEncryptionKeyResponse.Creator = _ctx.StringValue("DescribeDBInstanceEncryptionKey.Creator");
-			describeDBInstanceEncryptionKeyResponse.EncryptionKeyStatus = _ctx.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKeyStatus");
 			describeDBInstanceEncryptionKeyResponse.Origin = _ctx.StringValue("DescribeDBInstanceEncryptionKey.Origin");
+			describeDBInstanceEncryptionKeyResponse.Description = _ctx.StringValue("DescribeDBInstanceEncryptionKey.Description");
+			describeDBInstanceEncryptionKeyResponse.RequestId = _ctx.StringValue("DescribeDBInstanceEncryptionKey.RequestId");
+			describeDBInstanceEncryptionKeyResponse.EncryptionKeyStatus = _ctx.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKeyStatus");
 			describeDBInstanceEncryptionKeyResponse.MaterialExpireTime = _ctx.StringValue("DescribeDBInstanceEncryptionKey.MaterialExpireTime");
+			describeDBInstanceEncryptionKeyResponse.KeyUsage = _ctx.StringValue("DescribeDBInstanceEncryptionKey.KeyUsage");
+			describeDBInstanceEncryptionKeyResponse.EncryptionKey = _ctx.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKey");
+			describeDBInstanceEncryptionKeyResponse.Creator = _ctx.StringValue("DescribeDBInstanceEncryptionKey.Creator");
+			describeDBInstanceEncryptionKeyResponse.DeleteDate = _ctx.StringValue("DescribeDBInstanceEncryptionKey.DeleteDate");
         
 			return describeDBInstanceEncryptionKeyResponse;
         }

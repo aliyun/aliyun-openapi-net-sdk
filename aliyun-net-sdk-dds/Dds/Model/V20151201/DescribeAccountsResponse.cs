@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
@@ -56,37 +56,25 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		public class DescribeAccounts_Account
 		{
 
-			private string dBInstanceId;
-
-			private string accountName;
+			private string characterType;
 
 			private string accountStatus;
 
 			private string accountDescription;
 
-			private string characterType;
+			private string dBInstanceId;
 
-			public string DBInstanceId
+			private string accountName;
+
+			public string CharacterType
 			{
 				get
 				{
-					return dBInstanceId;
+					return characterType;
 				}
 				set	
 				{
-					dBInstanceId = value;
-				}
-			}
-
-			public string AccountName
-			{
-				get
-				{
-					return accountName;
-				}
-				set	
-				{
-					accountName = value;
+					characterType = value;
 				}
 			}
 
@@ -114,15 +102,27 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public string CharacterType
+			public string DBInstanceId
 			{
 				get
 				{
-					return characterType;
+					return dBInstanceId;
 				}
 				set	
 				{
-					characterType = value;
+					dBInstanceId = value;
+				}
+			}
+
+			public string AccountName
+			{
+				get
+				{
+					return accountName;
+				}
+				set	
+				{
+					accountName = value;
 				}
 			}
 		}

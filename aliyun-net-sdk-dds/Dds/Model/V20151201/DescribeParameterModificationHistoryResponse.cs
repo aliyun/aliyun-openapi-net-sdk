@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
@@ -58,11 +58,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string parameterName;
 
-			private string modifyTime;
-
 			private string oldParameterValue;
 
 			private string newParameterValue;
+
+			private string modifyTime;
 
 			public string ParameterName
 			{
@@ -73,18 +73,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					parameterName = value;
-				}
-			}
-
-			public string ModifyTime
-			{
-				get
-				{
-					return modifyTime;
-				}
-				set	
-				{
-					modifyTime = value;
 				}
 			}
 
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					newParameterValue = value;
+				}
+			}
+
+			public string ModifyTime
+			{
+				get
+				{
+					return modifyTime;
+				}
+				set	
+				{
+					modifyTime = value;
 				}
 			}
 		}

@@ -48,7 +48,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string networkType;
 
-		private List<ReplicaSet> replicaSets = new List<ReplicaSet>(){ };
+		private List<int?> replicaSets = new List<int?>(){ };
 
 		private string storageEngine;
 
@@ -70,7 +70,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string ownerAccount;
 
-		private List<ConfigServer> configServers = new List<ConfigServer>(){ };
+		private List<int?> configServers = new List<int?>(){ };
 
 		private long? ownerId;
 
@@ -78,7 +78,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string vSwitchId;
 
-		private List<Mongos> mongoss = new List<Mongos>(){ };
+		private List<string> mongoss = new List<string>(){ };
 
 		private string accountPassword;
 
@@ -144,7 +144,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public List<ReplicaSet> ReplicaSets
+		public List<int?> ReplicaSets
 		{
 			get
 			{
@@ -154,11 +154,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set
 			{
 				replicaSets = value;
-				for (int i = 0; i < replicaSets.Count; i++)
+				if(replicaSets != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"ReplicaSet." + (i + 1) + ".ReadonlyReplicas", replicaSets[i].ReadonlyReplicas);
-					DictionaryUtil.Add(QueryParameters,"ReplicaSet." + (i + 1) + ".Storage", replicaSets[i].Storage);
-					DictionaryUtil.Add(QueryParameters,"ReplicaSet." + (i + 1) + ".Class", replicaSets[i].Class);
+					for (int depth1 = 0; depth1 < replicaSets.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"ReplicaSet." + (depth1 + 1), replicaSets[depth1]);
+						DictionaryUtil.Add(QueryParameters,"ReplicaSet." + (depth1 + 1), replicaSets[depth1]);
+						DictionaryUtil.Add(QueryParameters,"ReplicaSet." + (depth1 + 1), replicaSets[depth1]);
+					}
 				}
 			}
 		}
@@ -293,7 +296,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public List<ConfigServer> ConfigServers
+		public List<int?> ConfigServers
 		{
 			get
 			{
@@ -303,10 +306,13 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set
 			{
 				configServers = value;
-				for (int i = 0; i < configServers.Count; i++)
+				if(configServers != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"ConfigServer." + (i + 1) + ".Storage", configServers[i].Storage);
-					DictionaryUtil.Add(QueryParameters,"ConfigServer." + (i + 1) + ".Class", configServers[i].Class);
+					for (int depth1 = 0; depth1 < configServers.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"ConfigServer." + (depth1 + 1), configServers[depth1]);
+						DictionaryUtil.Add(QueryParameters,"ConfigServer." + (depth1 + 1), configServers[depth1]);
+					}
 				}
 			}
 		}
@@ -350,7 +356,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public List<Mongos> Mongoss
+		public List<string> Mongoss
 		{
 			get
 			{
@@ -360,9 +366,12 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set
 			{
 				mongoss = value;
-				for (int i = 0; i < mongoss.Count; i++)
+				if(mongoss != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Mongos." + (i + 1) + ".Class", mongoss[i].Class);
+					for (int depth1 = 0; depth1 < mongoss.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Mongos." + (depth1 + 1), mongoss[depth1]);
+					}
 				}
 			}
 		}
@@ -478,7 +487,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public string Class
+			public string Class_
 			{
 				get
 				{
@@ -510,7 +519,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public string Class
+			public string Class_
 			{
 				get
 				{
@@ -528,7 +537,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string class_;
 
-			public string Class
+			public string Class_
 			{
 				get
 				{

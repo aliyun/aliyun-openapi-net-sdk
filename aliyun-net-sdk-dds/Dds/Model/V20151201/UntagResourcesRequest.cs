@@ -107,10 +107,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set
 			{
 				resourceIds = value;
-				for (int i = 0; i < resourceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
-				}
 			}
 		}
 
@@ -176,10 +172,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set
 			{
 				tagKeys = value;
-				for (int i = 0; i < tagKeys.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TagKey." + (i + 1) , tagKeys[i]);
-				}
 			}
 		}
 

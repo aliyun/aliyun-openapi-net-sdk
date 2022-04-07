@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			DescribeDBInstancePerformanceResponse describeDBInstancePerformanceResponse = new DescribeDBInstancePerformanceResponse();
 
 			describeDBInstancePerformanceResponse.HttpResponse = _ctx.HttpResponse;
+			describeDBInstancePerformanceResponse.EndTime = _ctx.StringValue("DescribeDBInstancePerformance.EndTime");
 			describeDBInstancePerformanceResponse.RequestId = _ctx.StringValue("DescribeDBInstancePerformance.RequestId");
 			describeDBInstancePerformanceResponse.DBInstanceId = _ctx.StringValue("DescribeDBInstancePerformance.DBInstanceId");
-			describeDBInstancePerformanceResponse.Engine = _ctx.StringValue("DescribeDBInstancePerformance.Engine");
 			describeDBInstancePerformanceResponse.StartTime = _ctx.StringValue("DescribeDBInstancePerformance.StartTime");
-			describeDBInstancePerformanceResponse.EndTime = _ctx.StringValue("DescribeDBInstancePerformance.EndTime");
+			describeDBInstancePerformanceResponse.Engine = _ctx.StringValue("DescribeDBInstancePerformance.Engine");
 
 			List<DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey> describeDBInstancePerformanceResponse_performanceKeys = new List<DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey>();
 			for (int i = 0; i < _ctx.Length("DescribeDBInstancePerformance.PerformanceKeys.Length"); i++) {

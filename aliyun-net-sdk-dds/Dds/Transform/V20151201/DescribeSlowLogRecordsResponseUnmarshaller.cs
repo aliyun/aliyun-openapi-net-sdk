@@ -40,16 +40,16 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			List<DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_LogRecords> describeSlowLogRecordsResponse_items = new List<DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_LogRecords>();
 			for (int i = 0; i < _ctx.Length("DescribeSlowLogRecords.Items.Length"); i++) {
 				DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_LogRecords logRecords = new DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_LogRecords();
-				logRecords.TableName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].TableName");
-				logRecords.QueryTimes = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].QueryTimes");
 				logRecords.ExecutionStartTime = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].ExecutionStartTime");
-				logRecords.ReturnRowCounts = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].ReturnRowCounts");
-				logRecords.DBName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].DBName");
-				logRecords.KeysExamined = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].KeysExamined");
-				logRecords.DocsExamined = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].DocsExamined");
 				logRecords.HostAddress = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].HostAddress");
-				logRecords.AccountName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].AccountName");
+				logRecords.QueryTimes = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].QueryTimes");
+				logRecords.TableName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].TableName");
 				logRecords.SQLText = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].SQLText");
+				logRecords.ReturnRowCounts = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].ReturnRowCounts");
+				logRecords.KeysExamined = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].KeysExamined");
+				logRecords.DBName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].DBName");
+				logRecords.DocsExamined = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].DocsExamined");
+				logRecords.AccountName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].AccountName");
 
 				describeSlowLogRecordsResponse_items.Add(logRecords);
 			}

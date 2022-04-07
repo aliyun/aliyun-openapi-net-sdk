@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 	public class DescribeParametersResponse : AcsResponse
 	{
 
+		private string engineVersion;
+
 		private string requestId;
 
 		private string engine;
 
-		private string engineVersion;
+		private List<DescribeParameters_Parameter> runningParameters;
 
 		private List<DescribeParameters_Parameter> configParameters;
 
-		private List<DescribeParameters_Parameter> runningParameters;
+		public string EngineVersion
+		{
+			get
+			{
+				return engineVersion;
+			}
+			set	
+			{
+				engineVersion = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -59,15 +71,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string EngineVersion
+		public List<DescribeParameters_Parameter> RunningParameters
 		{
 			get
 			{
-				return engineVersion;
+				return runningParameters;
 			}
 			set	
 			{
-				engineVersion = value;
+				runningParameters = value;
 			}
 		}
 
@@ -83,32 +95,32 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public List<DescribeParameters_Parameter> RunningParameters
-		{
-			get
-			{
-				return runningParameters;
-			}
-			set	
-			{
-				runningParameters = value;
-			}
-		}
-
 		public class DescribeParameters_Parameter
 		{
+
+			private string checkingCode;
 
 			private string parameterName;
 
 			private string parameterValue;
 
-			private bool? modifiableStatus;
-
-			private bool? forceRestart;
-
-			private string checkingCode;
+			private string forceRestart;
 
 			private string parameterDescription;
+
+			private string modifiableStatus;
+
+			public string CheckingCode
+			{
+				get
+				{
+					return checkingCode;
+				}
+				set	
+				{
+					checkingCode = value;
+				}
+			}
 
 			public string ParameterName
 			{
@@ -134,19 +146,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public bool? ModifiableStatus
-			{
-				get
-				{
-					return modifiableStatus;
-				}
-				set	
-				{
-					modifiableStatus = value;
-				}
-			}
-
-			public bool? ForceRestart
+			public string ForceRestart
 			{
 				get
 				{
@@ -155,18 +155,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					forceRestart = value;
-				}
-			}
-
-			public string CheckingCode
-			{
-				get
-				{
-					return checkingCode;
-				}
-				set	
-				{
-					checkingCode = value;
 				}
 			}
 
@@ -179,6 +167,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					parameterDescription = value;
+				}
+			}
+
+			public string ModifiableStatus
+			{
+				get
+				{
+					return modifiableStatus;
+				}
+				set	
+				{
+					modifiableStatus = value;
 				}
 			}
 		}

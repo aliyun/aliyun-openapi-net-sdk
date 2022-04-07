@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
@@ -112,49 +112,25 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		public class DescribeSlowLogRecords_LogRecords
 		{
 
-			private string tableName;
-
-			private string queryTimes;
-
 			private string executionStartTime;
-
-			private long? returnRowCounts;
-
-			private string dBName;
-
-			private long? keysExamined;
-
-			private long? docsExamined;
 
 			private string hostAddress;
 
-			private string accountName;
+			private string queryTimes;
+
+			private string tableName;
 
 			private string sQLText;
 
-			public string TableName
-			{
-				get
-				{
-					return tableName;
-				}
-				set	
-				{
-					tableName = value;
-				}
-			}
+			private long? returnRowCounts;
 
-			public string QueryTimes
-			{
-				get
-				{
-					return queryTimes;
-				}
-				set	
-				{
-					queryTimes = value;
-				}
-			}
+			private long? keysExamined;
+
+			private string dBName;
+
+			private long? docsExamined;
+
+			private string accountName;
 
 			public string ExecutionStartTime
 			{
@@ -165,54 +141,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					executionStartTime = value;
-				}
-			}
-
-			public long? ReturnRowCounts
-			{
-				get
-				{
-					return returnRowCounts;
-				}
-				set	
-				{
-					returnRowCounts = value;
-				}
-			}
-
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
-				}
-			}
-
-			public long? KeysExamined
-			{
-				get
-				{
-					return keysExamined;
-				}
-				set	
-				{
-					keysExamined = value;
-				}
-			}
-
-			public long? DocsExamined
-			{
-				get
-				{
-					return docsExamined;
-				}
-				set	
-				{
-					docsExamined = value;
 				}
 			}
 
@@ -228,15 +156,27 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public string AccountName
+			public string QueryTimes
 			{
 				get
 				{
-					return accountName;
+					return queryTimes;
 				}
 				set	
 				{
-					accountName = value;
+					queryTimes = value;
+				}
+			}
+
+			public string TableName
+			{
+				get
+				{
+					return tableName;
+				}
+				set	
+				{
+					tableName = value;
 				}
 			}
 
@@ -249,6 +189,66 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					sQLText = value;
+				}
+			}
+
+			public long? ReturnRowCounts
+			{
+				get
+				{
+					return returnRowCounts;
+				}
+				set	
+				{
+					returnRowCounts = value;
+				}
+			}
+
+			public long? KeysExamined
+			{
+				get
+				{
+					return keysExamined;
+				}
+				set	
+				{
+					keysExamined = value;
+				}
+			}
+
+			public string DBName
+			{
+				get
+				{
+					return dBName;
+				}
+				set	
+				{
+					dBName = value;
+				}
+			}
+
+			public long? DocsExamined
+			{
+				get
+				{
+					return docsExamined;
+				}
+				set	
+				{
+					docsExamined = value;
+				}
+			}
+
+			public string AccountName
+			{
+				get
+				{
+					return accountName;
+				}
+				set	
+				{
+					accountName = value;
 				}
 			}
 		}
