@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -25,43 +25,31 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class DescribeVodDomainBpsDataResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string domainName;
+		private string endTime;
 
 		private string startTime;
 
-		private string endTime;
+		private string requestId;
+
+		private string ispNameEn;
 
 		private string locationNameEn;
 
-		private string ispNameEn;
+		private string domainName;
 
 		private string dataInterval;
 
 		private List<DescribeVodDomainBpsData_DataModule> bpsDataPerInterval;
 
-		public string RequestId
+		public string EndTime
 		{
 			get
 			{
-				return requestId;
+				return endTime;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
+				endTime = value;
 			}
 		}
 
@@ -77,15 +65,27 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string EndTime
+		public string RequestId
 		{
 			get
 			{
-				return endTime;
+				return requestId;
 			}
 			set	
 			{
-				endTime = value;
+				requestId = value;
+			}
+		}
+
+		public string IspNameEn
+		{
+			get
+			{
+				return ispNameEn;
+			}
+			set	
+			{
+				ispNameEn = value;
 			}
 		}
 
@@ -101,15 +101,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string IspNameEn
+		public string DomainName
 		{
 			get
 			{
-				return ispNameEn;
+				return domainName;
 			}
 			set	
 			{
-				ispNameEn = value;
+				domainName = value;
 			}
 		}
 
@@ -140,29 +140,29 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class DescribeVodDomainBpsData_DataModule
 		{
 
-			private string timeStamp;
+			private string httpsDomesticValue;
 
 			private string _value;
-
-			private string domesticValue;
 
 			private string overseasValue;
 
 			private string httpsValue;
 
-			private string httpsDomesticValue;
-
 			private string httpsOverseasValue;
 
-			public string TimeStamp
+			private string timeStamp;
+
+			private string domesticValue;
+
+			public string HttpsDomesticValue
 			{
 				get
 				{
-					return timeStamp;
+					return httpsDomesticValue;
 				}
 				set	
 				{
-					timeStamp = value;
+					httpsDomesticValue = value;
 				}
 			}
 
@@ -175,18 +175,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					_value = value;
-				}
-			}
-
-			public string DomesticValue
-			{
-				get
-				{
-					return domesticValue;
-				}
-				set	
-				{
-					domesticValue = value;
 				}
 			}
 
@@ -214,18 +202,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string HttpsDomesticValue
-			{
-				get
-				{
-					return httpsDomesticValue;
-				}
-				set	
-				{
-					httpsDomesticValue = value;
-				}
-			}
-
 			public string HttpsOverseasValue
 			{
 				get
@@ -235,6 +211,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					httpsOverseasValue = value;
+				}
+			}
+
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
+				}
+			}
+
+			public string DomesticValue
+			{
+				get
+				{
+					return domesticValue;
+				}
+				set	
+				{
+					domesticValue = value;
 				}
 			}
 		}

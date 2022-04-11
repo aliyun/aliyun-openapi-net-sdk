@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -58,19 +58,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string creationTime;
 
-			private string modifyTime;
-
-			private string name;
+			private string transcodeMode;
 
 			private string isDefault;
-
-			private string locked;
-
-			private string transcodeMode;
 
 			private string appId;
 
 			private string transcodeTemplateGroupId;
+
+			private string name;
+
+			private string modifyTime;
+
+			private string locked;
 
 			private List<GetTranscodeTemplateGroup_TranscodeTemplate> transcodeTemplateList;
 
@@ -86,27 +86,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string ModifyTime
+			public string TranscodeMode
 			{
 				get
 				{
-					return modifyTime;
+					return transcodeMode;
 				}
 				set	
 				{
-					modifyTime = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
+					transcodeMode = value;
 				}
 			}
 
@@ -119,30 +107,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					isDefault = value;
-				}
-			}
-
-			public string Locked
-			{
-				get
-				{
-					return locked;
-				}
-				set	
-				{
-					locked = value;
-				}
-			}
-
-			public string TranscodeMode
-			{
-				get
-				{
-					return transcodeMode;
-				}
-				set	
-				{
-					transcodeMode = value;
 				}
 			}
 
@@ -170,6 +134,42 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string ModifyTime
+			{
+				get
+				{
+					return modifyTime;
+				}
+				set	
+				{
+					modifyTime = value;
+				}
+			}
+
+			public string Locked
+			{
+				get
+				{
+					return locked;
+				}
+				set	
+				{
+					locked = value;
+				}
+			}
+
 			public List<GetTranscodeTemplateGroup_TranscodeTemplate> TranscodeTemplateList
 			{
 				get
@@ -185,53 +185,53 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			public class GetTranscodeTemplateGroup_TranscodeTemplate
 			{
 
-				private string transcodeTemplateId;
+				private string type;
 
 				private string video;
 
-				private string audio;
-
-				private string container;
-
-				private string muxConfig;
-
 				private string transConfig;
-
-				private string definition;
-
-				private string encryptSetting;
-
-				private string packageSetting;
-
-				private string subtitleList;
-
-				private string openingList;
-
-				private string tailSlateList;
-
-				private string templateName;
-
-				private string transcodeFileRegular;
-
-				private string clip;
 
 				private string rotate;
 
-				private string type;
+				private string transcodeTemplateId;
+
+				private string templateName;
+
+				private string encryptSetting;
+
+				private string audio;
+
+				private string transcodeFileRegular;
+
+				private string container;
+
+				private string clip;
+
+				private string definition;
+
+				private string packageSetting;
+
+				private string openingList;
 
 				private string userData;
 
+				private string subtitleList;
+
+				private string muxConfig;
+
+				private string tailSlateList;
+
 				private List<string> watermarkIds;
 
-				public string TranscodeTemplateId
+				public string Type
 				{
 					get
 					{
-						return transcodeTemplateId;
+						return type;
 					}
 					set	
 					{
-						transcodeTemplateId = value;
+						type = value;
 					}
 				}
 
@@ -247,42 +247,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string Audio
-				{
-					get
-					{
-						return audio;
-					}
-					set	
-					{
-						audio = value;
-					}
-				}
-
-				public string Container
-				{
-					get
-					{
-						return container;
-					}
-					set	
-					{
-						container = value;
-					}
-				}
-
-				public string MuxConfig
-				{
-					get
-					{
-						return muxConfig;
-					}
-					set	
-					{
-						muxConfig = value;
-					}
-				}
-
 				public string TransConfig
 				{
 					get
@@ -292,114 +256,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						transConfig = value;
-					}
-				}
-
-				public string Definition
-				{
-					get
-					{
-						return definition;
-					}
-					set	
-					{
-						definition = value;
-					}
-				}
-
-				public string EncryptSetting
-				{
-					get
-					{
-						return encryptSetting;
-					}
-					set	
-					{
-						encryptSetting = value;
-					}
-				}
-
-				public string PackageSetting
-				{
-					get
-					{
-						return packageSetting;
-					}
-					set	
-					{
-						packageSetting = value;
-					}
-				}
-
-				public string SubtitleList
-				{
-					get
-					{
-						return subtitleList;
-					}
-					set	
-					{
-						subtitleList = value;
-					}
-				}
-
-				public string OpeningList
-				{
-					get
-					{
-						return openingList;
-					}
-					set	
-					{
-						openingList = value;
-					}
-				}
-
-				public string TailSlateList
-				{
-					get
-					{
-						return tailSlateList;
-					}
-					set	
-					{
-						tailSlateList = value;
-					}
-				}
-
-				public string TemplateName
-				{
-					get
-					{
-						return templateName;
-					}
-					set	
-					{
-						templateName = value;
-					}
-				}
-
-				public string TranscodeFileRegular
-				{
-					get
-					{
-						return transcodeFileRegular;
-					}
-					set	
-					{
-						transcodeFileRegular = value;
-					}
-				}
-
-				public string Clip
-				{
-					get
-					{
-						return clip;
-					}
-					set	
-					{
-						clip = value;
 					}
 				}
 
@@ -415,15 +271,123 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string Type
+				public string TranscodeTemplateId
 				{
 					get
 					{
-						return type;
+						return transcodeTemplateId;
 					}
 					set	
 					{
-						type = value;
+						transcodeTemplateId = value;
+					}
+				}
+
+				public string TemplateName
+				{
+					get
+					{
+						return templateName;
+					}
+					set	
+					{
+						templateName = value;
+					}
+				}
+
+				public string EncryptSetting
+				{
+					get
+					{
+						return encryptSetting;
+					}
+					set	
+					{
+						encryptSetting = value;
+					}
+				}
+
+				public string Audio
+				{
+					get
+					{
+						return audio;
+					}
+					set	
+					{
+						audio = value;
+					}
+				}
+
+				public string TranscodeFileRegular
+				{
+					get
+					{
+						return transcodeFileRegular;
+					}
+					set	
+					{
+						transcodeFileRegular = value;
+					}
+				}
+
+				public string Container
+				{
+					get
+					{
+						return container;
+					}
+					set	
+					{
+						container = value;
+					}
+				}
+
+				public string Clip
+				{
+					get
+					{
+						return clip;
+					}
+					set	
+					{
+						clip = value;
+					}
+				}
+
+				public string Definition
+				{
+					get
+					{
+						return definition;
+					}
+					set	
+					{
+						definition = value;
+					}
+				}
+
+				public string PackageSetting
+				{
+					get
+					{
+						return packageSetting;
+					}
+					set	
+					{
+						packageSetting = value;
+					}
+				}
+
+				public string OpeningList
+				{
+					get
+					{
+						return openingList;
+					}
+					set	
+					{
+						openingList = value;
 					}
 				}
 
@@ -436,6 +400,42 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						userData = value;
+					}
+				}
+
+				public string SubtitleList
+				{
+					get
+					{
+						return subtitleList;
+					}
+					set	
+					{
+						subtitleList = value;
+					}
+				}
+
+				public string MuxConfig
+				{
+					get
+					{
+						return muxConfig;
+					}
+					set	
+					{
+						muxConfig = value;
+					}
+				}
+
+				public string TailSlateList
+				{
+					get
+					{
+						return tailSlateList;
+					}
+					set	
+					{
+						tailSlateList = value;
 					}
 				}
 

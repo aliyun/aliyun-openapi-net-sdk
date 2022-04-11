@@ -34,11 +34,11 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			addEditingProjectResponse.RequestId = _ctx.StringValue("AddEditingProject.RequestId");
 
 			AddEditingProjectResponse.AddEditingProject_Project project = new AddEditingProjectResponse.AddEditingProject_Project();
-			project.ProjectId = _ctx.StringValue("AddEditingProject.Project.ProjectId");
 			project.CreationTime = _ctx.StringValue("AddEditingProject.Project.CreationTime");
-			project.ModifiedTime = _ctx.StringValue("AddEditingProject.Project.ModifiedTime");
 			project.Status = _ctx.StringValue("AddEditingProject.Project.Status");
+			project.ModifiedTime = _ctx.StringValue("AddEditingProject.Project.ModifiedTime");
 			project.Description = _ctx.StringValue("AddEditingProject.Project.Description");
+			project.ProjectId = _ctx.StringValue("AddEditingProject.Project.ProjectId");
 			project.Title = _ctx.StringValue("AddEditingProject.Project.Title");
 			addEditingProjectResponse.Project = project;
         

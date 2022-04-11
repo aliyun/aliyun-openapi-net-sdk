@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class SearchEditingProjectResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? total;
 
-		private List<SearchEditingProject_Project> projectList;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<SearchEditingProject_Project> projectList;
 
 		public int? Total
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				total = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,35 +70,47 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class SearchEditingProject_Project
 		{
 
-			private string projectId;
+			private string storageLocation;
+
+			private string status;
 
 			private string creationTime;
 
 			private string modifiedTime;
 
-			private string status;
-
 			private string description;
-
-			private string title;
 
 			private string coverURL;
 
-			private string storageLocation;
-
-			private string regionId;
+			private string projectId;
 
 			private float? duration;
 
-			public string ProjectId
+			private string title;
+
+			private string regionId;
+
+			public string StorageLocation
 			{
 				get
 				{
-					return projectId;
+					return storageLocation;
 				}
 				set	
 				{
-					projectId = value;
+					storageLocation = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 
@@ -126,18 +138,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
 			public string Description
 			{
 				get
@@ -147,18 +147,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					description = value;
-				}
-			}
-
-			public string Title
-			{
-				get
-				{
-					return title;
-				}
-				set	
-				{
-					title = value;
 				}
 			}
 
@@ -174,27 +162,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string StorageLocation
+			public string ProjectId
 			{
 				get
 				{
-					return storageLocation;
+					return projectId;
 				}
 				set	
 				{
-					storageLocation = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
+					projectId = value;
 				}
 			}
 
@@ -207,6 +183,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					duration = value;
+				}
+			}
+
+			public string Title
+			{
+				get
+				{
+					return title;
+				}
+				set	
+				{
+					title = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 		}

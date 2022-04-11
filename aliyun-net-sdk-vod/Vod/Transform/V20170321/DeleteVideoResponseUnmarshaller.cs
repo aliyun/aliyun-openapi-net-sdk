@@ -33,17 +33,17 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			deleteVideoResponse.HttpResponse = _ctx.HttpResponse;
 			deleteVideoResponse.RequestId = _ctx.StringValue("DeleteVideo.RequestId");
 
-			List<string> deleteVideoResponse_nonExistVideoIds = new List<string>();
-			for (int i = 0; i < _ctx.Length("DeleteVideo.NonExistVideoIds.Length"); i++) {
-				deleteVideoResponse_nonExistVideoIds.Add(_ctx.StringValue("DeleteVideo.NonExistVideoIds["+ i +"]"));
-			}
-			deleteVideoResponse.NonExistVideoIds = deleteVideoResponse_nonExistVideoIds;
-
 			List<string> deleteVideoResponse_forbiddenVideoIds = new List<string>();
 			for (int i = 0; i < _ctx.Length("DeleteVideo.ForbiddenVideoIds.Length"); i++) {
 				deleteVideoResponse_forbiddenVideoIds.Add(_ctx.StringValue("DeleteVideo.ForbiddenVideoIds["+ i +"]"));
 			}
 			deleteVideoResponse.ForbiddenVideoIds = deleteVideoResponse_forbiddenVideoIds;
+
+			List<string> deleteVideoResponse_nonExistVideoIds = new List<string>();
+			for (int i = 0; i < _ctx.Length("DeleteVideo.NonExistVideoIds.Length"); i++) {
+				deleteVideoResponse_nonExistVideoIds.Add(_ctx.StringValue("DeleteVideo.NonExistVideoIds["+ i +"]"));
+			}
+			deleteVideoResponse.NonExistVideoIds = deleteVideoResponse_nonExistVideoIds;
         
 			return deleteVideoResponse;
         }

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			VerifyVodDomainOwnerResponse verifyVodDomainOwnerResponse = new VerifyVodDomainOwnerResponse();
 
 			verifyVodDomainOwnerResponse.HttpResponse = _ctx.HttpResponse;
-			verifyVodDomainOwnerResponse.RequestId = _ctx.StringValue("VerifyVodDomainOwner.RequestId");
 			verifyVodDomainOwnerResponse.Content = _ctx.StringValue("VerifyVodDomainOwner.Content");
+			verifyVodDomainOwnerResponse.RequestId = _ctx.StringValue("VerifyVodDomainOwner.RequestId");
         
 			return verifyVodDomainOwnerResponse;
         }

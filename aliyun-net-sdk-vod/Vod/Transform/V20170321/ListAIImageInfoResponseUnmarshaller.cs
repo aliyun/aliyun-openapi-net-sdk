@@ -36,15 +36,15 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<ListAIImageInfoResponse.ListAIImageInfo_AIImageInfo> listAIImageInfoResponse_aIImageInfoList = new List<ListAIImageInfoResponse.ListAIImageInfo_AIImageInfo>();
 			for (int i = 0; i < _ctx.Length("ListAIImageInfo.AIImageInfoList.Length"); i++) {
 				ListAIImageInfoResponse.ListAIImageInfo_AIImageInfo aIImageInfo = new ListAIImageInfoResponse.ListAIImageInfo_AIImageInfo();
-				aIImageInfo.VideoId = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].VideoId");
-				aIImageInfo.AIImageInfoId = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].AIImageInfoId");
-				aIImageInfo.JobId = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].JobId");
-				aIImageInfo.FileURL = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].FileURL");
-				aIImageInfo.Score = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].Score");
-				aIImageInfo.Time = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].Time");
-				aIImageInfo.Format = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].Format");
 				aIImageInfo.CreationTime = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].CreationTime");
+				aIImageInfo.AIImageInfoId = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].AIImageInfoId");
+				aIImageInfo.Time = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].Time");
+				aIImageInfo.FileURL = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].FileURL");
 				aIImageInfo.Version = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].Version");
+				aIImageInfo.VideoId = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].VideoId");
+				aIImageInfo.JobId = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].JobId");
+				aIImageInfo.Score = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].Score");
+				aIImageInfo.Format = _ctx.StringValue("ListAIImageInfo.AIImageInfoList["+ i +"].Format");
 
 				listAIImageInfoResponse_aIImageInfoList.Add(aIImageInfo);
 			}

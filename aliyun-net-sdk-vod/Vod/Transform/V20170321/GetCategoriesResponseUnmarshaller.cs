@@ -31,26 +31,26 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			GetCategoriesResponse getCategoriesResponse = new GetCategoriesResponse();
 
 			getCategoriesResponse.HttpResponse = _ctx.HttpResponse;
-			getCategoriesResponse.RequestId = _ctx.StringValue("GetCategories.RequestId");
 			getCategoriesResponse.SubTotal = _ctx.LongValue("GetCategories.SubTotal");
+			getCategoriesResponse.RequestId = _ctx.StringValue("GetCategories.RequestId");
 
 			GetCategoriesResponse.GetCategories_Category1 category1 = new GetCategoriesResponse.GetCategories_Category1();
-			category1.CateId = _ctx.LongValue("GetCategories.Category.CateId");
-			category1.CateName = _ctx.StringValue("GetCategories.Category.CateName");
-			category1.Level = _ctx.LongValue("GetCategories.Category.Level");
-			category1.ParentId = _ctx.LongValue("GetCategories.Category.ParentId");
 			category1.Type = _ctx.StringValue("GetCategories.Category.Type");
+			category1.ParentId = _ctx.LongValue("GetCategories.Category.ParentId");
+			category1.CateName = _ctx.StringValue("GetCategories.Category.CateName");
+			category1.CateId = _ctx.LongValue("GetCategories.Category.CateId");
+			category1.Level = _ctx.LongValue("GetCategories.Category.Level");
 			getCategoriesResponse.Category1 = category1;
 
 			List<GetCategoriesResponse.GetCategories_Category> getCategoriesResponse_subCategories = new List<GetCategoriesResponse.GetCategories_Category>();
 			for (int i = 0; i < _ctx.Length("GetCategories.SubCategories.Length"); i++) {
 				GetCategoriesResponse.GetCategories_Category category = new GetCategoriesResponse.GetCategories_Category();
-				category.CateId = _ctx.LongValue("GetCategories.SubCategories["+ i +"].CateId");
-				category.CateName = _ctx.StringValue("GetCategories.SubCategories["+ i +"].CateName");
-				category.Level = _ctx.LongValue("GetCategories.SubCategories["+ i +"].Level");
-				category.ParentId = _ctx.LongValue("GetCategories.SubCategories["+ i +"].ParentId");
-				category.SubTotal = _ctx.LongValue("GetCategories.SubCategories["+ i +"].SubTotal");
 				category.Type = _ctx.StringValue("GetCategories.SubCategories["+ i +"].Type");
+				category.CateName = _ctx.StringValue("GetCategories.SubCategories["+ i +"].CateName");
+				category.ParentId = _ctx.LongValue("GetCategories.SubCategories["+ i +"].ParentId");
+				category.CateId = _ctx.LongValue("GetCategories.SubCategories["+ i +"].CateId");
+				category.SubTotal = _ctx.LongValue("GetCategories.SubCategories["+ i +"].SubTotal");
+				category.Level = _ctx.LongValue("GetCategories.SubCategories["+ i +"].Level");
 
 				getCategoriesResponse_subCategories.Add(category);
 			}

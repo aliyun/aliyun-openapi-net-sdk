@@ -31,22 +31,23 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			DescribeVodDomainTrafficDataResponse describeVodDomainTrafficDataResponse = new DescribeVodDomainTrafficDataResponse();
 
 			describeVodDomainTrafficDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeVodDomainTrafficDataResponse.EndTime = _ctx.StringValue("DescribeVodDomainTrafficData.EndTime");
+			describeVodDomainTrafficDataResponse.StartTime = _ctx.StringValue("DescribeVodDomainTrafficData.StartTime");
 			describeVodDomainTrafficDataResponse.RequestId = _ctx.StringValue("DescribeVodDomainTrafficData.RequestId");
 			describeVodDomainTrafficDataResponse.DomainName = _ctx.StringValue("DescribeVodDomainTrafficData.DomainName");
-			describeVodDomainTrafficDataResponse.StartTime = _ctx.StringValue("DescribeVodDomainTrafficData.StartTime");
-			describeVodDomainTrafficDataResponse.EndTime = _ctx.StringValue("DescribeVodDomainTrafficData.EndTime");
+			describeVodDomainTrafficDataResponse.TotalTraffic = _ctx.StringValue("DescribeVodDomainTrafficData.TotalTraffic");
 			describeVodDomainTrafficDataResponse.DataInterval = _ctx.StringValue("DescribeVodDomainTrafficData.DataInterval");
 
 			List<DescribeVodDomainTrafficDataResponse.DescribeVodDomainTrafficData_DataModule> describeVodDomainTrafficDataResponse_trafficDataPerInterval = new List<DescribeVodDomainTrafficDataResponse.DescribeVodDomainTrafficData_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeVodDomainTrafficData.TrafficDataPerInterval.Length"); i++) {
 				DescribeVodDomainTrafficDataResponse.DescribeVodDomainTrafficData_DataModule dataModule = new DescribeVodDomainTrafficDataResponse.DescribeVodDomainTrafficData_DataModule();
-				dataModule.TimeStamp = _ctx.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].TimeStamp");
+				dataModule.HttpsDomesticValue = _ctx.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].HttpsDomesticValue");
 				dataModule._Value = _ctx.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].Value");
-				dataModule.DomesticValue = _ctx.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].DomesticValue");
 				dataModule.OverseasValue = _ctx.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].OverseasValue");
 				dataModule.HttpsValue = _ctx.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].HttpsValue");
-				dataModule.HttpsDomesticValue = _ctx.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].HttpsDomesticValue");
 				dataModule.HttpsOverseasValue = _ctx.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].HttpsOverseasValue");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].TimeStamp");
+				dataModule.DomesticValue = _ctx.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].DomesticValue");
 
 				describeVodDomainTrafficDataResponse_trafficDataPerInterval.Add(dataModule);
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -25,57 +25,21 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class DescribeVodDomainUsageDataResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string domainName;
-
-		private string startTime;
-
 		private string endTime;
 
 		private string type;
 
+		private string startTime;
+
+		private string requestId;
+
 		private string area;
+
+		private string domainName;
 
 		private string dataInterval;
 
 		private List<DescribeVodDomainUsageData_DataModule> usageDataPerInterval;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
 
 		public string EndTime
 		{
@@ -101,6 +65,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public string Area
 		{
 			get
@@ -110,6 +98,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				area = value;
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
 			}
 		}
 
@@ -140,21 +140,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class DescribeVodDomainUsageData_DataModule
 		{
 
-			private string timeStamp;
-
 			private string _value;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private string timeStamp;
 
 			public string _Value
 			{
@@ -165,6 +153,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					_value = value;
+				}
+			}
+
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
 				}
 			}
 		}

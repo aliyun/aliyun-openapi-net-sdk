@@ -31,28 +31,28 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			GetVideoListResponse getVideoListResponse = new GetVideoListResponse();
 
 			getVideoListResponse.HttpResponse = _ctx.HttpResponse;
-			getVideoListResponse.RequestId = _ctx.StringValue("GetVideoList.RequestId");
 			getVideoListResponse.Total = _ctx.IntegerValue("GetVideoList.Total");
+			getVideoListResponse.RequestId = _ctx.StringValue("GetVideoList.RequestId");
 
 			List<GetVideoListResponse.GetVideoList_Video> getVideoListResponse_videoList = new List<GetVideoListResponse.GetVideoList_Video>();
 			for (int i = 0; i < _ctx.Length("GetVideoList.VideoList.Length"); i++) {
 				GetVideoListResponse.GetVideoList_Video video = new GetVideoListResponse.GetVideoList_Video();
-				video.VideoId = _ctx.StringValue("GetVideoList.VideoList["+ i +"].VideoId");
-				video.Title = _ctx.StringValue("GetVideoList.VideoList["+ i +"].Title");
-				video.Tags = _ctx.StringValue("GetVideoList.VideoList["+ i +"].Tags");
-				video.Status = _ctx.StringValue("GetVideoList.VideoList["+ i +"].Status");
-				video.Size = _ctx.LongValue("GetVideoList.VideoList["+ i +"].Size");
-				video.Duration = _ctx.FloatValue("GetVideoList.VideoList["+ i +"].Duration");
-				video.Description = _ctx.StringValue("GetVideoList.VideoList["+ i +"].Description");
-				video.CreateTime = _ctx.StringValue("GetVideoList.VideoList["+ i +"].CreateTime");
-				video.ModifyTime = _ctx.StringValue("GetVideoList.VideoList["+ i +"].ModifyTime");
-				video.ModificationTime = _ctx.StringValue("GetVideoList.VideoList["+ i +"].ModificationTime");
-				video.CreationTime = _ctx.StringValue("GetVideoList.VideoList["+ i +"].CreationTime");
-				video.CoverURL = _ctx.StringValue("GetVideoList.VideoList["+ i +"].CoverURL");
-				video.CateId = _ctx.LongValue("GetVideoList.VideoList["+ i +"].CateId");
-				video.CateName = _ctx.StringValue("GetVideoList.VideoList["+ i +"].CateName");
 				video.StorageLocation = _ctx.StringValue("GetVideoList.VideoList["+ i +"].StorageLocation");
+				video.Status = _ctx.StringValue("GetVideoList.VideoList["+ i +"].Status");
+				video.CreationTime = _ctx.StringValue("GetVideoList.VideoList["+ i +"].CreationTime");
+				video.CateId = _ctx.LongValue("GetVideoList.VideoList["+ i +"].CateId");
+				video.VideoId = _ctx.StringValue("GetVideoList.VideoList["+ i +"].VideoId");
+				video.CreateTime = _ctx.StringValue("GetVideoList.VideoList["+ i +"].CreateTime");
+				video.Tags = _ctx.StringValue("GetVideoList.VideoList["+ i +"].Tags");
+				video.ModificationTime = _ctx.StringValue("GetVideoList.VideoList["+ i +"].ModificationTime");
+				video.CateName = _ctx.StringValue("GetVideoList.VideoList["+ i +"].CateName");
+				video.Description = _ctx.StringValue("GetVideoList.VideoList["+ i +"].Description");
 				video.AppId = _ctx.StringValue("GetVideoList.VideoList["+ i +"].AppId");
+				video.Size = _ctx.LongValue("GetVideoList.VideoList["+ i +"].Size");
+				video.CoverURL = _ctx.StringValue("GetVideoList.VideoList["+ i +"].CoverURL");
+				video.Duration = _ctx.FloatValue("GetVideoList.VideoList["+ i +"].Duration");
+				video.Title = _ctx.StringValue("GetVideoList.VideoList["+ i +"].Title");
+				video.ModifyTime = _ctx.StringValue("GetVideoList.VideoList["+ i +"].ModifyTime");
 
 				List<string> video_snapshots = new List<string>();
 				for (int j = 0; j < _ctx.Length("GetVideoList.VideoList["+ i +"].Snapshots.Length"); j++) {

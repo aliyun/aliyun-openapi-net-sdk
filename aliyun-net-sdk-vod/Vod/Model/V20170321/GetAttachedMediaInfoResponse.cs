@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -70,61 +70,37 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class GetAttachedMediaInfo_AttachedMedia
 		{
 
-			private string mediaId;
-
-			private string title;
-
 			private string type;
-
-			private string tags;
-
-			private string uRL;
-
-			private string description;
-
-			private long? fileSize;
 
 			private string storageLocation;
 
 			private string creationTime;
 
-			private string modificationTime;
-
-			private string appId;
-
 			private string status;
-
-			private string onlineStatus;
 
 			private string icon;
 
+			private string tags;
+
+			private string modificationTime;
+
+			private string mediaId;
+
 			private string regionId;
 
+			private string description;
+
+			private string appId;
+
+			private string uRL;
+
+			private string title;
+
+			private string onlineStatus;
+
+			private long? fileSize;
+
 			private List<GetAttachedMediaInfo_Category> categories;
-
-			public string MediaId
-			{
-				get
-				{
-					return mediaId;
-				}
-				set	
-				{
-					mediaId = value;
-				}
-			}
-
-			public string Title
-			{
-				get
-				{
-					return title;
-				}
-				set	
-				{
-					title = value;
-				}
-			}
 
 			public string Type
 			{
@@ -135,54 +111,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					type = value;
-				}
-			}
-
-			public string Tags
-			{
-				get
-				{
-					return tags;
-				}
-				set	
-				{
-					tags = value;
-				}
-			}
-
-			public string URL
-			{
-				get
-				{
-					return uRL;
-				}
-				set	
-				{
-					uRL = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public long? FileSize
-			{
-				get
-				{
-					return fileSize;
-				}
-				set	
-				{
-					fileSize = value;
 				}
 			}
 
@@ -210,30 +138,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string ModificationTime
-			{
-				get
-				{
-					return modificationTime;
-				}
-				set	
-				{
-					modificationTime = value;
-				}
-			}
-
-			public string AppId
-			{
-				get
-				{
-					return appId;
-				}
-				set	
-				{
-					appId = value;
-				}
-			}
-
 			public string Status
 			{
 				get
@@ -243,18 +147,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					status = value;
-				}
-			}
-
-			public string OnlineStatus
-			{
-				get
-				{
-					return onlineStatus;
-				}
-				set	
-				{
-					onlineStatus = value;
 				}
 			}
 
@@ -270,6 +162,42 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public string ModificationTime
+			{
+				get
+				{
+					return modificationTime;
+				}
+				set	
+				{
+					modificationTime = value;
+				}
+			}
+
+			public string MediaId
+			{
+				get
+				{
+					return mediaId;
+				}
+				set	
+				{
+					mediaId = value;
+				}
+			}
+
 			public string RegionId
 			{
 				get
@@ -279,6 +207,78 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string AppId
+			{
+				get
+				{
+					return appId;
+				}
+				set	
+				{
+					appId = value;
+				}
+			}
+
+			public string URL
+			{
+				get
+				{
+					return uRL;
+				}
+				set	
+				{
+					uRL = value;
+				}
+			}
+
+			public string Title
+			{
+				get
+				{
+					return title;
+				}
+				set	
+				{
+					title = value;
+				}
+			}
+
+			public string OnlineStatus
+			{
+				get
+				{
+					return onlineStatus;
+				}
+				set	
+				{
+					onlineStatus = value;
+				}
+			}
+
+			public long? FileSize
+			{
+				get
+				{
+					return fileSize;
+				}
+				set	
+				{
+					fileSize = value;
 				}
 			}
 
@@ -297,23 +297,23 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			public class GetAttachedMediaInfo_Category
 			{
 
-				private long? cateId;
+				private long? parentId;
 
 				private string cateName;
 
+				private long? cateId;
+
 				private long? level;
 
-				private long? parentId;
-
-				public long? CateId
+				public long? ParentId
 				{
 					get
 					{
-						return cateId;
+						return parentId;
 					}
 					set	
 					{
-						cateId = value;
+						parentId = value;
 					}
 				}
 
@@ -329,6 +329,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
+				public long? CateId
+				{
+					get
+					{
+						return cateId;
+					}
+					set	
+					{
+						cateId = value;
+					}
+				}
+
 				public long? Level
 				{
 					get
@@ -338,18 +350,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						level = value;
-					}
-				}
-
-				public long? ParentId
-				{
-					get
-					{
-						return parentId;
-					}
-					set	
-					{
-						parentId = value;
 					}
 				}
 			}

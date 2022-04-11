@@ -31,18 +31,18 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			ListAppInfoResponse listAppInfoResponse = new ListAppInfoResponse();
 
 			listAppInfoResponse.HttpResponse = _ctx.HttpResponse;
-			listAppInfoResponse.RequestId = _ctx.StringValue("ListAppInfo.RequestId");
 			listAppInfoResponse.Total = _ctx.IntegerValue("ListAppInfo.Total");
+			listAppInfoResponse.RequestId = _ctx.StringValue("ListAppInfo.RequestId");
 
 			List<ListAppInfoResponse.ListAppInfo_AppInfo> listAppInfoResponse_appInfoList = new List<ListAppInfoResponse.ListAppInfo_AppInfo>();
 			for (int i = 0; i < _ctx.Length("ListAppInfo.AppInfoList.Length"); i++) {
 				ListAppInfoResponse.ListAppInfo_AppInfo appInfo = new ListAppInfoResponse.ListAppInfo_AppInfo();
-				appInfo.AppId = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].AppId");
-				appInfo.AppName = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].AppName");
 				appInfo.Type = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].Type");
-				appInfo.Description = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].Description");
 				appInfo.Status = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].Status");
 				appInfo.CreationTime = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].CreationTime");
+				appInfo.AppName = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].AppName");
+				appInfo.Description = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].Description");
+				appInfo.AppId = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].AppId");
 				appInfo.ModificationTime = _ctx.StringValue("ListAppInfo.AppInfoList["+ i +"].ModificationTime");
 
 				listAppInfoResponse_appInfoList.Add(appInfo);

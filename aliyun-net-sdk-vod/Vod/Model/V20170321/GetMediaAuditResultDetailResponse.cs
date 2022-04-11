@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -87,29 +87,53 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			public class GetMediaAuditResultDetail_ListItem
 			{
 
+				private string terrorismScore;
+
+				private string adLabel;
+
 				private string pornLabel;
 
 				private string pornScore;
 
-				private string terrorismLabel;
-
-				private string terrorismScore;
-
-				private string timestamp;
+				private string liveLabel;
 
 				private string url;
 
-				private string adLabel;
+				private string timestamp;
 
 				private string adScore;
 
-				private string liveLabel;
-
 				private string liveScore;
+
+				private string logoScore;
 
 				private string logoLabel;
 
-				private string logoScore;
+				private string terrorismLabel;
+
+				public string TerrorismScore
+				{
+					get
+					{
+						return terrorismScore;
+					}
+					set	
+					{
+						terrorismScore = value;
+					}
+				}
+
+				public string AdLabel
+				{
+					get
+					{
+						return adLabel;
+					}
+					set	
+					{
+						adLabel = value;
+					}
+				}
 
 				public string PornLabel
 				{
@@ -135,39 +159,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string TerrorismLabel
+				public string LiveLabel
 				{
 					get
 					{
-						return terrorismLabel;
+						return liveLabel;
 					}
 					set	
 					{
-						terrorismLabel = value;
-					}
-				}
-
-				public string TerrorismScore
-				{
-					get
-					{
-						return terrorismScore;
-					}
-					set	
-					{
-						terrorismScore = value;
-					}
-				}
-
-				public string Timestamp
-				{
-					get
-					{
-						return timestamp;
-					}
-					set	
-					{
-						timestamp = value;
+						liveLabel = value;
 					}
 				}
 
@@ -183,15 +183,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string AdLabel
+				public string Timestamp
 				{
 					get
 					{
-						return adLabel;
+						return timestamp;
 					}
 					set	
 					{
-						adLabel = value;
+						timestamp = value;
 					}
 				}
 
@@ -207,18 +207,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string LiveLabel
-				{
-					get
-					{
-						return liveLabel;
-					}
-					set	
-					{
-						liveLabel = value;
-					}
-				}
-
 				public string LiveScore
 				{
 					get
@@ -228,6 +216,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						liveScore = value;
+					}
+				}
+
+				public string LogoScore
+				{
+					get
+					{
+						return logoScore;
+					}
+					set	
+					{
+						logoScore = value;
 					}
 				}
 
@@ -243,15 +243,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string LogoScore
+				public string TerrorismLabel
 				{
 					get
 					{
-						return logoScore;
+						return terrorismLabel;
 					}
 					set	
 					{
-						logoScore = value;
+						terrorismLabel = value;
 					}
 				}
 			}

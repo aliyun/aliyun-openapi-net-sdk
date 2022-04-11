@@ -36,13 +36,13 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<ListAppPoliciesForIdentityResponse.ListAppPoliciesForIdentity_AppPolicy> listAppPoliciesForIdentityResponse_appPolicyList = new List<ListAppPoliciesForIdentityResponse.ListAppPoliciesForIdentity_AppPolicy>();
 			for (int i = 0; i < _ctx.Length("ListAppPoliciesForIdentity.AppPolicyList.Length"); i++) {
 				ListAppPoliciesForIdentityResponse.ListAppPoliciesForIdentity_AppPolicy appPolicy = new ListAppPoliciesForIdentityResponse.ListAppPoliciesForIdentity_AppPolicy();
-				appPolicy.AppId = _ctx.StringValue("ListAppPoliciesForIdentity.AppPolicyList["+ i +"].AppId");
 				appPolicy.CreationTime = _ctx.StringValue("ListAppPoliciesForIdentity.AppPolicyList["+ i +"].CreationTime");
-				appPolicy.PolicyName = _ctx.StringValue("ListAppPoliciesForIdentity.AppPolicyList["+ i +"].PolicyName");
-				appPolicy.PolicyType = _ctx.StringValue("ListAppPoliciesForIdentity.AppPolicyList["+ i +"].PolicyType");
-				appPolicy.PolicyValue = _ctx.StringValue("ListAppPoliciesForIdentity.AppPolicyList["+ i +"].PolicyValue");
 				appPolicy.Description = _ctx.StringValue("ListAppPoliciesForIdentity.AppPolicyList["+ i +"].Description");
+				appPolicy.AppId = _ctx.StringValue("ListAppPoliciesForIdentity.AppPolicyList["+ i +"].AppId");
+				appPolicy.PolicyValue = _ctx.StringValue("ListAppPoliciesForIdentity.AppPolicyList["+ i +"].PolicyValue");
+				appPolicy.PolicyName = _ctx.StringValue("ListAppPoliciesForIdentity.AppPolicyList["+ i +"].PolicyName");
 				appPolicy.ModificationTime = _ctx.StringValue("ListAppPoliciesForIdentity.AppPolicyList["+ i +"].ModificationTime");
+				appPolicy.PolicyType = _ctx.StringValue("ListAppPoliciesForIdentity.AppPolicyList["+ i +"].PolicyType");
 
 				listAppPoliciesForIdentityResponse_appPolicyList.Add(appPolicy);
 			}

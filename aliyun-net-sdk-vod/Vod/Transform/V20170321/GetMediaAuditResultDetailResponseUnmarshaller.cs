@@ -39,18 +39,18 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<GetMediaAuditResultDetailResponse.GetMediaAuditResultDetail_MediaAuditResultDetail.GetMediaAuditResultDetail_ListItem> mediaAuditResultDetail_list = new List<GetMediaAuditResultDetailResponse.GetMediaAuditResultDetail_MediaAuditResultDetail.GetMediaAuditResultDetail_ListItem>();
 			for (int i = 0; i < _ctx.Length("GetMediaAuditResultDetail.MediaAuditResultDetail.List.Length"); i++) {
 				GetMediaAuditResultDetailResponse.GetMediaAuditResultDetail_MediaAuditResultDetail.GetMediaAuditResultDetail_ListItem listItem = new GetMediaAuditResultDetailResponse.GetMediaAuditResultDetail_MediaAuditResultDetail.GetMediaAuditResultDetail_ListItem();
+				listItem.TerrorismScore = _ctx.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].TerrorismScore");
+				listItem.AdLabel = _ctx.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].AdLabel");
 				listItem.PornLabel = _ctx.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].PornLabel");
 				listItem.PornScore = _ctx.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].PornScore");
-				listItem.TerrorismLabel = _ctx.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].TerrorismLabel");
-				listItem.TerrorismScore = _ctx.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].TerrorismScore");
-				listItem.Timestamp = _ctx.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].Timestamp");
-				listItem.Url = _ctx.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].Url");
-				listItem.AdLabel = _ctx.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].AdLabel");
-				listItem.AdScore = _ctx.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].AdScore");
 				listItem.LiveLabel = _ctx.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].LiveLabel");
+				listItem.Url = _ctx.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].Url");
+				listItem.Timestamp = _ctx.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].Timestamp");
+				listItem.AdScore = _ctx.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].AdScore");
 				listItem.LiveScore = _ctx.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].LiveScore");
-				listItem.LogoLabel = _ctx.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].LogoLabel");
 				listItem.LogoScore = _ctx.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].LogoScore");
+				listItem.LogoLabel = _ctx.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].LogoLabel");
+				listItem.TerrorismLabel = _ctx.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].TerrorismLabel");
 
 				mediaAuditResultDetail_list.Add(listItem);
 			}

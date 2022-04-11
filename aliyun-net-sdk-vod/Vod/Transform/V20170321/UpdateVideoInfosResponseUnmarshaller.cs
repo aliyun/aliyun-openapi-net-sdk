@@ -33,17 +33,17 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			updateVideoInfosResponse.HttpResponse = _ctx.HttpResponse;
 			updateVideoInfosResponse.RequestId = _ctx.StringValue("UpdateVideoInfos.RequestId");
 
-			List<string> updateVideoInfosResponse_nonExistVideoIds = new List<string>();
-			for (int i = 0; i < _ctx.Length("UpdateVideoInfos.NonExistVideoIds.Length"); i++) {
-				updateVideoInfosResponse_nonExistVideoIds.Add(_ctx.StringValue("UpdateVideoInfos.NonExistVideoIds["+ i +"]"));
-			}
-			updateVideoInfosResponse.NonExistVideoIds = updateVideoInfosResponse_nonExistVideoIds;
-
 			List<string> updateVideoInfosResponse_forbiddenVideoIds = new List<string>();
 			for (int i = 0; i < _ctx.Length("UpdateVideoInfos.ForbiddenVideoIds.Length"); i++) {
 				updateVideoInfosResponse_forbiddenVideoIds.Add(_ctx.StringValue("UpdateVideoInfos.ForbiddenVideoIds["+ i +"]"));
 			}
 			updateVideoInfosResponse.ForbiddenVideoIds = updateVideoInfosResponse_forbiddenVideoIds;
+
+			List<string> updateVideoInfosResponse_nonExistVideoIds = new List<string>();
+			for (int i = 0; i < _ctx.Length("UpdateVideoInfos.NonExistVideoIds.Length"); i++) {
+				updateVideoInfosResponse_nonExistVideoIds.Add(_ctx.StringValue("UpdateVideoInfos.NonExistVideoIds["+ i +"]"));
+			}
+			updateVideoInfosResponse.NonExistVideoIds = updateVideoInfosResponse_nonExistVideoIds;
         
 			return updateVideoInfosResponse;
         }

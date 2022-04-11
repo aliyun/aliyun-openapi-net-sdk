@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -56,25 +56,25 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class ListSnapshots_MediaSnapshot
 		{
 
-			private long? total;
+			private string creationTime;
 
 			private string regular;
 
-			private string creationTime;
+			private long? total;
 
 			private string jobId;
 
 			private List<ListSnapshots_Snapshot> snapshots;
 
-			public long? Total
+			public string CreationTime
 			{
 				get
 				{
-					return total;
+					return creationTime;
 				}
 				set	
 				{
-					total = value;
+					creationTime = value;
 				}
 			}
 
@@ -90,15 +90,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string CreationTime
+			public long? Total
 			{
 				get
 				{
-					return creationTime;
+					return total;
 				}
 				set	
 				{
-					creationTime = value;
+					total = value;
 				}
 			}
 

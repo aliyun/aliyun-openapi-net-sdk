@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -25,17 +25,29 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class CreateUploadAttachedMediaResponse : AcsResponse
 	{
 
+		private string fileURL;
+
 		private string requestId;
+
+		private string uploadAddress;
 
 		private string mediaId;
 
 		private string mediaURL;
 
-		private string uploadAddress;
-
 		private string uploadAuth;
 
-		private string fileURL;
+		public string FileURL
+		{
+			get
+			{
+				return fileURL;
+			}
+			set	
+			{
+				fileURL = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -46,6 +58,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string UploadAddress
+		{
+			get
+			{
+				return uploadAddress;
+			}
+			set	
+			{
+				uploadAddress = value;
 			}
 		}
 
@@ -73,18 +97,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string UploadAddress
-		{
-			get
-			{
-				return uploadAddress;
-			}
-			set	
-			{
-				uploadAddress = value;
-			}
-		}
-
 		public string UploadAuth
 		{
 			get
@@ -94,18 +106,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				uploadAuth = value;
-			}
-		}
-
-		public string FileURL
-		{
-			get
-			{
-				return fileURL;
-			}
-			set	
-			{
-				fileURL = value;
 			}
 		}
 	}

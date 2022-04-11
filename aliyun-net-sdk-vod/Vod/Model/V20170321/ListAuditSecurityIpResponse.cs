@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -56,23 +56,23 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class ListAuditSecurityIp_SecurityIp
 		{
 
-			private string securityGroupName;
+			private string creationTime;
 
 			private string ips;
 
-			private string creationTime;
-
 			private string modificationTime;
 
-			public string SecurityGroupName
+			private string securityGroupName;
+
+			public string CreationTime
 			{
 				get
 				{
-					return securityGroupName;
+					return creationTime;
 				}
 				set	
 				{
-					securityGroupName = value;
+					creationTime = value;
 				}
 			}
 
@@ -88,18 +88,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
-
 			public string ModificationTime
 			{
 				get
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					modificationTime = value;
+				}
+			}
+
+			public string SecurityGroupName
+			{
+				get
+				{
+					return securityGroupName;
+				}
+				set	
+				{
+					securityGroupName = value;
 				}
 			}
 		}

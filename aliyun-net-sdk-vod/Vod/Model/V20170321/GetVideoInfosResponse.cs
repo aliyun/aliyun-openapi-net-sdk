@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -70,141 +70,57 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class GetVideoInfos_Video
 		{
 
-			private string videoId;
-
-			private string title;
-
-			private string tags;
-
-			private string status;
-
-			private long? size;
-
-			private float? duration;
-
-			private string description;
-
-			private string modificationTime;
+			private string storageLocation;
 
 			private string creationTime;
 
-			private string coverURL;
+			private string status;
 
 			private long? cateId;
 
-			private string cateName;
+			private string videoId;
 
 			private string downloadSwitch;
 
-			private string templateGroupId;
+			private string tags;
 
-			private string preprocessStatus;
-
-			private string storageLocation;
+			private string modificationTime;
 
 			private string regionId;
 
 			private string customMediaInfo;
 
+			private string cateName;
+
+			private string description;
+
+			private string preprocessStatus;
+
 			private string appId;
+
+			private long? size;
+
+			private string coverURL;
+
+			private string templateGroupId;
+
+			private float? duration;
+
+			private string title;
 
 			private List<GetVideoInfos_Thumbnail> thumbnailList;
 
 			private List<string> snapshots;
 
-			public string VideoId
+			public string StorageLocation
 			{
 				get
 				{
-					return videoId;
+					return storageLocation;
 				}
 				set	
 				{
-					videoId = value;
-				}
-			}
-
-			public string Title
-			{
-				get
-				{
-					return title;
-				}
-				set	
-				{
-					title = value;
-				}
-			}
-
-			public string Tags
-			{
-				get
-				{
-					return tags;
-				}
-				set	
-				{
-					tags = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public long? Size
-			{
-				get
-				{
-					return size;
-				}
-				set	
-				{
-					size = value;
-				}
-			}
-
-			public float? Duration
-			{
-				get
-				{
-					return duration;
-				}
-				set	
-				{
-					duration = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string ModificationTime
-			{
-				get
-				{
-					return modificationTime;
-				}
-				set	
-				{
-					modificationTime = value;
+					storageLocation = value;
 				}
 			}
 
@@ -220,15 +136,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string CoverURL
+			public string Status
 			{
 				get
 				{
-					return coverURL;
+					return status;
 				}
 				set	
 				{
-					coverURL = value;
+					status = value;
 				}
 			}
 
@@ -244,15 +160,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string CateName
+			public string VideoId
 			{
 				get
 				{
-					return cateName;
+					return videoId;
 				}
 				set	
 				{
-					cateName = value;
+					videoId = value;
 				}
 			}
 
@@ -268,39 +184,27 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string TemplateGroupId
+			public string Tags
 			{
 				get
 				{
-					return templateGroupId;
+					return tags;
 				}
 				set	
 				{
-					templateGroupId = value;
+					tags = value;
 				}
 			}
 
-			public string PreprocessStatus
+			public string ModificationTime
 			{
 				get
 				{
-					return preprocessStatus;
+					return modificationTime;
 				}
 				set	
 				{
-					preprocessStatus = value;
-				}
-			}
-
-			public string StorageLocation
-			{
-				get
-				{
-					return storageLocation;
-				}
-				set	
-				{
-					storageLocation = value;
+					modificationTime = value;
 				}
 			}
 
@@ -328,6 +232,42 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string CateName
+			{
+				get
+				{
+					return cateName;
+				}
+				set	
+				{
+					cateName = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string PreprocessStatus
+			{
+				get
+				{
+					return preprocessStatus;
+				}
+				set	
+				{
+					preprocessStatus = value;
+				}
+			}
+
 			public string AppId
 			{
 				get
@@ -337,6 +277,66 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					appId = value;
+				}
+			}
+
+			public long? Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
+				}
+			}
+
+			public string CoverURL
+			{
+				get
+				{
+					return coverURL;
+				}
+				set	
+				{
+					coverURL = value;
+				}
+			}
+
+			public string TemplateGroupId
+			{
+				get
+				{
+					return templateGroupId;
+				}
+				set	
+				{
+					templateGroupId = value;
+				}
+			}
+
+			public float? Duration
+			{
+				get
+				{
+					return duration;
+				}
+				set	
+				{
+					duration = value;
+				}
+			}
+
+			public string Title
+			{
+				get
+				{
+					return title;
+				}
+				set	
+				{
+					title = value;
 				}
 			}
 

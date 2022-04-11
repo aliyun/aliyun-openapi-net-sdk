@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class SubmitTranscodeJobsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string transcodeTaskId;
 
-		private List<SubmitTranscodeJobs_TranscodeJob> transcodeJobs;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<SubmitTranscodeJobs_TranscodeJob> transcodeJobs;
 
 		public string TranscodeTaskId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				transcodeTaskId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

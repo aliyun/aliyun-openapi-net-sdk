@@ -31,8 +31,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			DescribeVodVerifyContentResponse describeVodVerifyContentResponse = new DescribeVodVerifyContentResponse();
 
 			describeVodVerifyContentResponse.HttpResponse = _ctx.HttpResponse;
-			describeVodVerifyContentResponse.RequestId = _ctx.StringValue("DescribeVodVerifyContent.RequestId");
 			describeVodVerifyContentResponse.Content = _ctx.StringValue("DescribeVodVerifyContent.Content");
+			describeVodVerifyContentResponse.RequestId = _ctx.StringValue("DescribeVodVerifyContent.RequestId");
         
 			return describeVodVerifyContentResponse;
         }

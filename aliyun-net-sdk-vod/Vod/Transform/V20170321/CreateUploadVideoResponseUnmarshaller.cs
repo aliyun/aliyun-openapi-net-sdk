@@ -32,8 +32,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 
 			createUploadVideoResponse.HttpResponse = _ctx.HttpResponse;
 			createUploadVideoResponse.RequestId = _ctx.StringValue("CreateUploadVideo.RequestId");
-			createUploadVideoResponse.VideoId = _ctx.StringValue("CreateUploadVideo.VideoId");
 			createUploadVideoResponse.UploadAddress = _ctx.StringValue("CreateUploadVideo.UploadAddress");
+			createUploadVideoResponse.VideoId = _ctx.StringValue("CreateUploadVideo.VideoId");
 			createUploadVideoResponse.UploadAuth = _ctx.StringValue("CreateUploadVideo.UploadAuth");
         
 			return createUploadVideoResponse;

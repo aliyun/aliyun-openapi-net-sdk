@@ -31,8 +31,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			RefreshVodObjectCachesResponse refreshVodObjectCachesResponse = new RefreshVodObjectCachesResponse();
 
 			refreshVodObjectCachesResponse.HttpResponse = _ctx.HttpResponse;
-			refreshVodObjectCachesResponse.RequestId = _ctx.StringValue("RefreshVodObjectCaches.RequestId");
 			refreshVodObjectCachesResponse.RefreshTaskId = _ctx.StringValue("RefreshVodObjectCaches.RefreshTaskId");
+			refreshVodObjectCachesResponse.RequestId = _ctx.StringValue("RefreshVodObjectCaches.RequestId");
         
 			return refreshVodObjectCachesResponse;
         }

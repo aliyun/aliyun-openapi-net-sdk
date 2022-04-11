@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -56,45 +56,33 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class GetAIMediaAuditJob_MediaAuditJob
 		{
 
-			private string jobId;
-
-			private string mediaId;
+			private string creationTime;
 
 			private string type;
 
 			private string status;
 
+			private string completeTime;
+
+			private string jobId;
+
 			private string code;
 
 			private string message;
 
-			private string creationTime;
-
-			private string completeTime;
+			private string mediaId;
 
 			private GetAIMediaAuditJob_Data data;
 
-			public string JobId
+			public string CreationTime
 			{
 				get
 				{
-					return jobId;
+					return creationTime;
 				}
 				set	
 				{
-					jobId = value;
-				}
-			}
-
-			public string MediaId
-			{
-				get
-				{
-					return mediaId;
-				}
-				set	
-				{
-					mediaId = value;
+					creationTime = value;
 				}
 			}
 
@@ -122,6 +110,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string CompleteTime
+			{
+				get
+				{
+					return completeTime;
+				}
+				set	
+				{
+					completeTime = value;
+				}
+			}
+
+			public string JobId
+			{
+				get
+				{
+					return jobId;
+				}
+				set	
+				{
+					jobId = value;
+				}
+			}
+
 			public string Code
 			{
 				get
@@ -146,27 +158,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string CreationTime
+			public string MediaId
 			{
 				get
 				{
-					return creationTime;
+					return mediaId;
 				}
 				set	
 				{
-					creationTime = value;
-				}
-			}
-
-			public string CompleteTime
-			{
-				get
-				{
-					return completeTime;
-				}
-				set	
-				{
-					completeTime = value;
+					mediaId = value;
 				}
 			}
 
@@ -286,39 +286,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				public class GetAIMediaAuditJob_ImageResultItem
 				{
 
-					private string suggestion;
-
-					private string label;
-
 					private string type;
 
 					private string url;
 
+					private string suggestion;
+
+					private string label;
+
 					private List<GetAIMediaAuditJob_ResultItem> result;
-
-					public string Suggestion
-					{
-						get
-						{
-							return suggestion;
-						}
-						set	
-						{
-							suggestion = value;
-						}
-					}
-
-					public string Label
-					{
-						get
-						{
-							return label;
-						}
-						set	
-						{
-							label = value;
-						}
-					}
 
 					public string Type
 					{
@@ -344,6 +320,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 						}
 					}
 
+					public string Suggestion
+					{
+						get
+						{
+							return suggestion;
+						}
+						set	
+						{
+							suggestion = value;
+						}
+					}
+
+					public string Label
+					{
+						get
+						{
+							return label;
+						}
+						set	
+						{
+							label = value;
+						}
+					}
+
 					public List<GetAIMediaAuditJob_ResultItem> Result
 					{
 						get
@@ -359,13 +359,25 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					public class GetAIMediaAuditJob_ResultItem
 					{
 
+						private string score;
+
 						private string suggestion;
 
 						private string label;
 
-						private string score;
-
 						private string scene;
+
+						public string Score
+						{
+							get
+							{
+								return score;
+							}
+							set	
+							{
+								score = value;
+							}
+						}
 
 						public string Suggestion
 						{
@@ -391,18 +403,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 							}
 						}
 
-						public string Score
-						{
-							get
-							{
-								return score;
-							}
-							set	
-							{
-								score = value;
-							}
-						}
-
 						public string Scene
 						{
 							get
@@ -420,17 +420,29 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				public class GetAIMediaAuditJob_TextResultItem
 				{
 
-					private string suggestion;
+					private string type;
 
-					private string label;
+					private string suggestion;
 
 					private string score;
 
-					private string scene;
-
-					private string type;
+					private string label;
 
 					private string content;
+
+					private string scene;
+
+					public string Type
+					{
+						get
+						{
+							return type;
+						}
+						set	
+						{
+							type = value;
+						}
+					}
 
 					public string Suggestion
 					{
@@ -441,18 +453,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 						set	
 						{
 							suggestion = value;
-						}
-					}
-
-					public string Label
-					{
-						get
-						{
-							return label;
-						}
-						set	
-						{
-							label = value;
 						}
 					}
 
@@ -468,27 +468,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 						}
 					}
 
-					public string Scene
+					public string Label
 					{
 						get
 						{
-							return scene;
+							return label;
 						}
 						set	
 						{
-							scene = value;
-						}
-					}
-
-					public string Type
-					{
-						get
-						{
-							return type;
-						}
-						set	
-						{
-							type = value;
+							label = value;
 						}
 					}
 
@@ -503,10 +491,24 @@ namespace Aliyun.Acs.vod.Model.V20170321
 							content = value;
 						}
 					}
+
+					public string Scene
+					{
+						get
+						{
+							return scene;
+						}
+						set	
+						{
+							scene = value;
+						}
+					}
 				}
 
 				public class GetAIMediaAuditJob_AudioResultItem
 				{
+
+					private string score;
 
 					private string suggestion;
 
@@ -514,7 +516,17 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 					private string scene;
 
-					private string score;
+					public string Score
+					{
+						get
+						{
+							return score;
+						}
+						set	
+						{
+							score = value;
+						}
+					}
 
 					public string Suggestion
 					{
@@ -551,26 +563,14 @@ namespace Aliyun.Acs.vod.Model.V20170321
 							scene = value;
 						}
 					}
-
-					public string Score
-					{
-						get
-						{
-							return score;
-						}
-						set	
-						{
-							score = value;
-						}
-					}
 				}
 
 				public class GetAIMediaAuditJob_VideoResult
 				{
 
-					private string suggestion;
-
 					private string label;
+
+					private string suggestion;
 
 					private GetAIMediaAuditJob_TerrorismResult terrorismResult;
 
@@ -582,18 +582,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 					private GetAIMediaAuditJob_LogoResult logoResult;
 
-					public string Suggestion
-					{
-						get
-						{
-							return suggestion;
-						}
-						set	
-						{
-							suggestion = value;
-						}
-					}
-
 					public string Label
 					{
 						get
@@ -603,6 +591,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 						set	
 						{
 							label = value;
+						}
+					}
+
+					public string Suggestion
+					{
+						get
+						{
+							return suggestion;
+						}
+						set	
+						{
+							suggestion = value;
 						}
 					}
 
@@ -671,11 +671,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 						private string suggestion;
 
+						private string averageScore;
+
 						private string label;
 
 						private string maxScore;
-
-						private string averageScore;
 
 						private List<GetAIMediaAuditJob_CounterListItem> counterList;
 
@@ -690,6 +690,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 							set	
 							{
 								suggestion = value;
+							}
+						}
+
+						public string AverageScore
+						{
+							get
+							{
+								return averageScore;
+							}
+							set	
+							{
+								averageScore = value;
 							}
 						}
 
@@ -714,18 +726,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 							set	
 							{
 								maxScore = value;
-							}
-						}
-
-						public string AverageScore
-						{
-							get
-							{
-								return averageScore;
-							}
-							set	
-							{
-								averageScore = value;
 							}
 						}
 
@@ -788,23 +788,23 @@ namespace Aliyun.Acs.vod.Model.V20170321
 						public class GetAIMediaAuditJob_TopListItem
 						{
 
-							private string label;
+							private string url;
 
 							private string score;
 
 							private string timestamp;
 
-							private string url;
+							private string label;
 
-							public string Label
+							public string Url
 							{
 								get
 								{
-									return label;
+									return url;
 								}
 								set	
 								{
-									label = value;
+									url = value;
 								}
 							}
 
@@ -832,15 +832,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 								}
 							}
 
-							public string Url
+							public string Label
 							{
 								get
 								{
-									return url;
+									return label;
 								}
 								set	
 								{
-									url = value;
+									label = value;
 								}
 							}
 						}
@@ -851,11 +851,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 						private string suggestion;
 
+						private string averageScore;
+
 						private string label;
 
 						private string maxScore;
-
-						private string averageScore;
 
 						private List<GetAIMediaAuditJob_CounterListItem3> counterList1;
 
@@ -870,6 +870,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 							set	
 							{
 								suggestion = value;
+							}
+						}
+
+						public string AverageScore
+						{
+							get
+							{
+								return averageScore;
+							}
+							set	
+							{
+								averageScore = value;
 							}
 						}
 
@@ -894,18 +906,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 							set	
 							{
 								maxScore = value;
-							}
-						}
-
-						public string AverageScore
-						{
-							get
-							{
-								return averageScore;
-							}
-							set	
-							{
-								averageScore = value;
 							}
 						}
 
@@ -968,23 +968,23 @@ namespace Aliyun.Acs.vod.Model.V20170321
 						public class GetAIMediaAuditJob_TopListItem4
 						{
 
-							private string label;
+							private string url;
 
 							private string score;
 
 							private string timestamp;
 
-							private string url;
+							private string label;
 
-							public string Label
+							public string Url
 							{
 								get
 								{
-									return label;
+									return url;
 								}
 								set	
 								{
-									label = value;
+									url = value;
 								}
 							}
 
@@ -1012,15 +1012,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 								}
 							}
 
-							public string Url
+							public string Label
 							{
 								get
 								{
-									return url;
+									return label;
 								}
 								set	
 								{
-									url = value;
+									label = value;
 								}
 							}
 						}
@@ -1031,11 +1031,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 						private string suggestion;
 
+						private string averageScore;
+
 						private string label;
 
 						private string maxScore;
-
-						private string averageScore;
 
 						private List<GetAIMediaAuditJob_CounterListItem7> counterList5;
 
@@ -1050,6 +1050,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 							set	
 							{
 								suggestion = value;
+							}
+						}
+
+						public string AverageScore
+						{
+							get
+							{
+								return averageScore;
+							}
+							set	
+							{
+								averageScore = value;
 							}
 						}
 
@@ -1074,18 +1086,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 							set	
 							{
 								maxScore = value;
-							}
-						}
-
-						public string AverageScore
-						{
-							get
-							{
-								return averageScore;
-							}
-							set	
-							{
-								averageScore = value;
 							}
 						}
 
@@ -1148,23 +1148,23 @@ namespace Aliyun.Acs.vod.Model.V20170321
 						public class GetAIMediaAuditJob_TopListItem8
 						{
 
-							private string label;
+							private string url;
 
 							private string score;
 
 							private string timestamp;
 
-							private string url;
+							private string label;
 
-							public string Label
+							public string Url
 							{
 								get
 								{
-									return label;
+									return url;
 								}
 								set	
 								{
-									label = value;
+									url = value;
 								}
 							}
 
@@ -1192,15 +1192,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 								}
 							}
 
-							public string Url
+							public string Label
 							{
 								get
 								{
-									return url;
+									return label;
 								}
 								set	
 								{
-									url = value;
+									label = value;
 								}
 							}
 						}
@@ -1211,11 +1211,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 						private string suggestion;
 
+						private string averageScore;
+
 						private string label;
 
 						private string maxScore;
-
-						private string averageScore;
 
 						private List<GetAIMediaAuditJob_CounterListItem11> counterList9;
 
@@ -1230,6 +1230,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 							set	
 							{
 								suggestion = value;
+							}
+						}
+
+						public string AverageScore
+						{
+							get
+							{
+								return averageScore;
+							}
+							set	
+							{
+								averageScore = value;
 							}
 						}
 
@@ -1254,18 +1266,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 							set	
 							{
 								maxScore = value;
-							}
-						}
-
-						public string AverageScore
-						{
-							get
-							{
-								return averageScore;
-							}
-							set	
-							{
-								averageScore = value;
 							}
 						}
 
@@ -1328,23 +1328,23 @@ namespace Aliyun.Acs.vod.Model.V20170321
 						public class GetAIMediaAuditJob_TopListItem12
 						{
 
-							private string label;
+							private string url;
 
 							private string score;
 
 							private string timestamp;
 
-							private string url;
+							private string label;
 
-							public string Label
+							public string Url
 							{
 								get
 								{
-									return label;
+									return url;
 								}
 								set	
 								{
-									label = value;
+									url = value;
 								}
 							}
 
@@ -1372,15 +1372,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 								}
 							}
 
-							public string Url
+							public string Label
 							{
 								get
 								{
-									return url;
+									return label;
 								}
 								set	
 								{
-									url = value;
+									label = value;
 								}
 							}
 						}
@@ -1391,11 +1391,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 						private string suggestion;
 
+						private string averageScore;
+
 						private string label;
 
 						private string maxScore;
-
-						private string averageScore;
 
 						private List<GetAIMediaAuditJob_CounterListItem15> counterList13;
 
@@ -1410,6 +1410,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 							set	
 							{
 								suggestion = value;
+							}
+						}
+
+						public string AverageScore
+						{
+							get
+							{
+								return averageScore;
+							}
+							set	
+							{
+								averageScore = value;
 							}
 						}
 
@@ -1434,18 +1446,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 							set	
 							{
 								maxScore = value;
-							}
-						}
-
-						public string AverageScore
-						{
-							get
-							{
-								return averageScore;
-							}
-							set	
-							{
-								averageScore = value;
 							}
 						}
 
@@ -1508,23 +1508,23 @@ namespace Aliyun.Acs.vod.Model.V20170321
 						public class GetAIMediaAuditJob_TopListItem16
 						{
 
-							private string label;
+							private string url;
 
 							private string score;
 
 							private string timestamp;
 
-							private string url;
+							private string label;
 
-							public string Label
+							public string Url
 							{
 								get
 								{
-									return label;
+									return url;
 								}
 								set	
 								{
-									label = value;
+									url = value;
 								}
 							}
 
@@ -1552,15 +1552,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 								}
 							}
 
-							public string Url
+							public string Label
 							{
 								get
 								{
-									return url;
+									return label;
 								}
 								set	
 								{
-									url = value;
+									label = value;
 								}
 							}
 						}

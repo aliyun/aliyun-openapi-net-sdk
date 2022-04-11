@@ -37,11 +37,11 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			messageCallback.CallbackType = _ctx.StringValue("GetMessageCallback.MessageCallback.CallbackType");
 			messageCallback.CallbackURL = _ctx.StringValue("GetMessageCallback.MessageCallback.CallbackURL");
 			messageCallback.EventTypeList = _ctx.StringValue("GetMessageCallback.MessageCallback.EventTypeList");
-			messageCallback.AuthSwitch = _ctx.StringValue("GetMessageCallback.MessageCallback.AuthSwitch");
-			messageCallback.AuthKey = _ctx.StringValue("GetMessageCallback.MessageCallback.AuthKey");
-			messageCallback.MnsEndpoint = _ctx.StringValue("GetMessageCallback.MessageCallback.MnsEndpoint");
-			messageCallback.MnsQueueName = _ctx.StringValue("GetMessageCallback.MessageCallback.MnsQueueName");
 			messageCallback.AppId = _ctx.StringValue("GetMessageCallback.MessageCallback.AppId");
+			messageCallback.MnsQueueName = _ctx.StringValue("GetMessageCallback.MessageCallback.MnsQueueName");
+			messageCallback.AuthKey = _ctx.StringValue("GetMessageCallback.MessageCallback.AuthKey");
+			messageCallback.AuthSwitch = _ctx.StringValue("GetMessageCallback.MessageCallback.AuthSwitch");
+			messageCallback.MnsEndpoint = _ctx.StringValue("GetMessageCallback.MessageCallback.MnsEndpoint");
 			getMessageCallbackResponse.MessageCallback = messageCallback;
         
 			return getMessageCallbackResponse;

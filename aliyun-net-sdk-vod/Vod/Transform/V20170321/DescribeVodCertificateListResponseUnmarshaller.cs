@@ -39,12 +39,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<DescribeVodCertificateListResponse.DescribeVodCertificateList_CertificateListModel.DescribeVodCertificateList_Cert> certificateListModel_certList = new List<DescribeVodCertificateListResponse.DescribeVodCertificateList_CertificateListModel.DescribeVodCertificateList_Cert>();
 			for (int i = 0; i < _ctx.Length("DescribeVodCertificateList.CertificateListModel.CertList.Length"); i++) {
 				DescribeVodCertificateListResponse.DescribeVodCertificateList_CertificateListModel.DescribeVodCertificateList_Cert cert = new DescribeVodCertificateListResponse.DescribeVodCertificateList_CertificateListModel.DescribeVodCertificateList_Cert();
-				cert.CertName = _ctx.StringValue("DescribeVodCertificateList.CertificateListModel.CertList["+ i +"].CertName");
-				cert.CertId = _ctx.LongValue("DescribeVodCertificateList.CertificateListModel.CertList["+ i +"].CertId");
-				cert.Fingerprint = _ctx.StringValue("DescribeVodCertificateList.CertificateListModel.CertList["+ i +"].Fingerprint");
-				cert.Common = _ctx.StringValue("DescribeVodCertificateList.CertificateListModel.CertList["+ i +"].Common");
-				cert.Issuer = _ctx.StringValue("DescribeVodCertificateList.CertificateListModel.CertList["+ i +"].Issuer");
 				cert.LastTime = _ctx.LongValue("DescribeVodCertificateList.CertificateListModel.CertList["+ i +"].LastTime");
+				cert.Fingerprint = _ctx.StringValue("DescribeVodCertificateList.CertificateListModel.CertList["+ i +"].Fingerprint");
+				cert.CertName = _ctx.StringValue("DescribeVodCertificateList.CertificateListModel.CertList["+ i +"].CertName");
+				cert.Issuer = _ctx.StringValue("DescribeVodCertificateList.CertificateListModel.CertList["+ i +"].Issuer");
+				cert.CertId = _ctx.LongValue("DescribeVodCertificateList.CertificateListModel.CertList["+ i +"].CertId");
+				cert.Common = _ctx.StringValue("DescribeVodCertificateList.CertificateListModel.CertList["+ i +"].Common");
 
 				certificateListModel_certList.Add(cert);
 			}

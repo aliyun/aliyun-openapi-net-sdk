@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -56,33 +56,33 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class ListAIImageInfo_AIImageInfo
 		{
 
-			private string videoId;
+			private string creationTime;
 
 			private string aIImageInfoId;
 
-			private string jobId;
+			private string time;
 
 			private string fileURL;
 
-			private string score;
+			private string version;
 
-			private string time;
+			private string videoId;
+
+			private string jobId;
+
+			private string score;
 
 			private string format;
 
-			private string creationTime;
-
-			private string version;
-
-			public string VideoId
+			public string CreationTime
 			{
 				get
 				{
-					return videoId;
+					return creationTime;
 				}
 				set	
 				{
-					videoId = value;
+					creationTime = value;
 				}
 			}
 
@@ -98,15 +98,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string JobId
+			public string Time
 			{
 				get
 				{
-					return jobId;
+					return time;
 				}
 				set	
 				{
-					jobId = value;
+					time = value;
 				}
 			}
 
@@ -122,6 +122,42 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string Version
+			{
+				get
+				{
+					return version;
+				}
+				set	
+				{
+					version = value;
+				}
+			}
+
+			public string VideoId
+			{
+				get
+				{
+					return videoId;
+				}
+				set	
+				{
+					videoId = value;
+				}
+			}
+
+			public string JobId
+			{
+				get
+				{
+					return jobId;
+				}
+				set	
+				{
+					jobId = value;
+				}
+			}
+
 			public string Score
 			{
 				get
@@ -134,18 +170,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string Time
-			{
-				get
-				{
-					return time;
-				}
-				set	
-				{
-					time = value;
-				}
-			}
-
 			public string Format
 			{
 				get
@@ -155,30 +179,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					format = value;
-				}
-			}
-
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
-
-			public string Version
-			{
-				get
-				{
-					return version;
-				}
-				set	
-				{
-					version = value;
 				}
 			}
 		}

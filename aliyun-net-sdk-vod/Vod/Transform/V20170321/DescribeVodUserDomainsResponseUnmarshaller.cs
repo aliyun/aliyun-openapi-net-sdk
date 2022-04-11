@@ -39,22 +39,22 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<DescribeVodUserDomainsResponse.DescribeVodUserDomains_PageData> describeVodUserDomainsResponse_domains = new List<DescribeVodUserDomainsResponse.DescribeVodUserDomains_PageData>();
 			for (int i = 0; i < _ctx.Length("DescribeVodUserDomains.Domains.Length"); i++) {
 				DescribeVodUserDomainsResponse.DescribeVodUserDomains_PageData pageData = new DescribeVodUserDomainsResponse.DescribeVodUserDomains_PageData();
-				pageData.DomainName = _ctx.StringValue("DescribeVodUserDomains.Domains["+ i +"].DomainName");
+				pageData.GmtCreated = _ctx.StringValue("DescribeVodUserDomains.Domains["+ i +"].GmtCreated");
+				pageData.SslProtocol = _ctx.StringValue("DescribeVodUserDomains.Domains["+ i +"].SslProtocol");
+				pageData.Description = _ctx.StringValue("DescribeVodUserDomains.Domains["+ i +"].Description");
+				pageData.Sandbox = _ctx.StringValue("DescribeVodUserDomains.Domains["+ i +"].Sandbox");
 				pageData.Cname = _ctx.StringValue("DescribeVodUserDomains.Domains["+ i +"].Cname");
 				pageData.DomainStatus = _ctx.StringValue("DescribeVodUserDomains.Domains["+ i +"].DomainStatus");
-				pageData.GmtCreated = _ctx.StringValue("DescribeVodUserDomains.Domains["+ i +"].GmtCreated");
 				pageData.GmtModified = _ctx.StringValue("DescribeVodUserDomains.Domains["+ i +"].GmtModified");
-				pageData.Description = _ctx.StringValue("DescribeVodUserDomains.Domains["+ i +"].Description");
-				pageData.SslProtocol = _ctx.StringValue("DescribeVodUserDomains.Domains["+ i +"].SslProtocol");
-				pageData.Sandbox = _ctx.StringValue("DescribeVodUserDomains.Domains["+ i +"].Sandbox");
+				pageData.DomainName = _ctx.StringValue("DescribeVodUserDomains.Domains["+ i +"].DomainName");
 
 				List<DescribeVodUserDomainsResponse.DescribeVodUserDomains_PageData.DescribeVodUserDomains_Source> pageData_sources = new List<DescribeVodUserDomainsResponse.DescribeVodUserDomains_PageData.DescribeVodUserDomains_Source>();
 				for (int j = 0; j < _ctx.Length("DescribeVodUserDomains.Domains["+ i +"].Sources.Length"); j++) {
 					DescribeVodUserDomainsResponse.DescribeVodUserDomains_PageData.DescribeVodUserDomains_Source source = new DescribeVodUserDomainsResponse.DescribeVodUserDomains_PageData.DescribeVodUserDomains_Source();
 					source.Type = _ctx.StringValue("DescribeVodUserDomains.Domains["+ i +"].Sources["+ j +"].Type");
-					source.Content = _ctx.StringValue("DescribeVodUserDomains.Domains["+ i +"].Sources["+ j +"].Content");
-					source.Port = _ctx.IntegerValue("DescribeVodUserDomains.Domains["+ i +"].Sources["+ j +"].Port");
 					source.Priority = _ctx.StringValue("DescribeVodUserDomains.Domains["+ i +"].Sources["+ j +"].Priority");
+					source.Port = _ctx.IntegerValue("DescribeVodUserDomains.Domains["+ i +"].Sources["+ j +"].Port");
+					source.Content = _ctx.StringValue("DescribeVodUserDomains.Domains["+ i +"].Sources["+ j +"].Content");
 
 					pageData_sources.Add(source);
 				}

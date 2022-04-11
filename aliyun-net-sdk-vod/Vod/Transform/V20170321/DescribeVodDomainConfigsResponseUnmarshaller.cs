@@ -36,9 +36,9 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<DescribeVodDomainConfigsResponse.DescribeVodDomainConfigs_DomainConfig> describeVodDomainConfigsResponse_domainConfigs = new List<DescribeVodDomainConfigsResponse.DescribeVodDomainConfigs_DomainConfig>();
 			for (int i = 0; i < _ctx.Length("DescribeVodDomainConfigs.DomainConfigs.Length"); i++) {
 				DescribeVodDomainConfigsResponse.DescribeVodDomainConfigs_DomainConfig domainConfig = new DescribeVodDomainConfigsResponse.DescribeVodDomainConfigs_DomainConfig();
-				domainConfig.FunctionName = _ctx.StringValue("DescribeVodDomainConfigs.DomainConfigs["+ i +"].FunctionName");
-				domainConfig.ConfigId = _ctx.StringValue("DescribeVodDomainConfigs.DomainConfigs["+ i +"].ConfigId");
 				domainConfig.Status = _ctx.StringValue("DescribeVodDomainConfigs.DomainConfigs["+ i +"].Status");
+				domainConfig.ConfigId = _ctx.StringValue("DescribeVodDomainConfigs.DomainConfigs["+ i +"].ConfigId");
+				domainConfig.FunctionName = _ctx.StringValue("DescribeVodDomainConfigs.DomainConfigs["+ i +"].FunctionName");
 
 				List<DescribeVodDomainConfigsResponse.DescribeVodDomainConfigs_DomainConfig.DescribeVodDomainConfigs_FunctionArg> domainConfig_functionArgs = new List<DescribeVodDomainConfigsResponse.DescribeVodDomainConfigs_DomainConfig.DescribeVodDomainConfigs_FunctionArg>();
 				for (int j = 0; j < _ctx.Length("DescribeVodDomainConfigs.DomainConfigs["+ i +"].FunctionArgs.Length"); j++) {

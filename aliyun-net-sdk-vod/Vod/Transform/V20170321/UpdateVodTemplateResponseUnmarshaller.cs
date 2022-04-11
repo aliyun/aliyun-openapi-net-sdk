@@ -31,8 +31,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			UpdateVodTemplateResponse updateVodTemplateResponse = new UpdateVodTemplateResponse();
 
 			updateVodTemplateResponse.HttpResponse = _ctx.HttpResponse;
-			updateVodTemplateResponse.RequestId = _ctx.StringValue("UpdateVodTemplate.RequestId");
 			updateVodTemplateResponse.VodTemplateId = _ctx.StringValue("UpdateVodTemplate.VodTemplateId");
+			updateVodTemplateResponse.RequestId = _ctx.StringValue("UpdateVodTemplate.RequestId");
         
 			return updateVodTemplateResponse;
         }

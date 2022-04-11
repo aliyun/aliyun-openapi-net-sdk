@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -56,31 +56,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class ListAppPoliciesForIdentity_AppPolicy
 		{
 
-			private string appId;
-
 			private string creationTime;
-
-			private string policyName;
-
-			private string policyType;
-
-			private string policyValue;
 
 			private string description;
 
+			private string appId;
+
+			private string policyValue;
+
+			private string policyName;
+
 			private string modificationTime;
 
-			public string AppId
-			{
-				get
-				{
-					return appId;
-				}
-				set	
-				{
-					appId = value;
-				}
-			}
+			private string policyType;
 
 			public string CreationTime
 			{
@@ -91,42 +79,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					creationTime = value;
-				}
-			}
-
-			public string PolicyName
-			{
-				get
-				{
-					return policyName;
-				}
-				set	
-				{
-					policyName = value;
-				}
-			}
-
-			public string PolicyType
-			{
-				get
-				{
-					return policyType;
-				}
-				set	
-				{
-					policyType = value;
-				}
-			}
-
-			public string PolicyValue
-			{
-				get
-				{
-					return policyValue;
-				}
-				set	
-				{
-					policyValue = value;
 				}
 			}
 
@@ -142,6 +94,42 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string AppId
+			{
+				get
+				{
+					return appId;
+				}
+				set	
+				{
+					appId = value;
+				}
+			}
+
+			public string PolicyValue
+			{
+				get
+				{
+					return policyValue;
+				}
+				set	
+				{
+					policyValue = value;
+				}
+			}
+
+			public string PolicyName
+			{
+				get
+				{
+					return policyName;
+				}
+				set	
+				{
+					policyName = value;
+				}
+			}
+
 			public string ModificationTime
 			{
 				get
@@ -151,6 +139,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					modificationTime = value;
+				}
+			}
+
+			public string PolicyType
+			{
+				get
+				{
+					return policyType;
+				}
+				set	
+				{
+					policyType = value;
 				}
 			}
 		}

@@ -31,12 +31,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			CreateUploadAttachedMediaResponse createUploadAttachedMediaResponse = new CreateUploadAttachedMediaResponse();
 
 			createUploadAttachedMediaResponse.HttpResponse = _ctx.HttpResponse;
+			createUploadAttachedMediaResponse.FileURL = _ctx.StringValue("CreateUploadAttachedMedia.FileURL");
 			createUploadAttachedMediaResponse.RequestId = _ctx.StringValue("CreateUploadAttachedMedia.RequestId");
+			createUploadAttachedMediaResponse.UploadAddress = _ctx.StringValue("CreateUploadAttachedMedia.UploadAddress");
 			createUploadAttachedMediaResponse.MediaId = _ctx.StringValue("CreateUploadAttachedMedia.MediaId");
 			createUploadAttachedMediaResponse.MediaURL = _ctx.StringValue("CreateUploadAttachedMedia.MediaURL");
-			createUploadAttachedMediaResponse.UploadAddress = _ctx.StringValue("CreateUploadAttachedMedia.UploadAddress");
 			createUploadAttachedMediaResponse.UploadAuth = _ctx.StringValue("CreateUploadAttachedMedia.UploadAuth");
-			createUploadAttachedMediaResponse.FileURL = _ctx.StringValue("CreateUploadAttachedMedia.FileURL");
         
 			return createUploadAttachedMediaResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -56,61 +56,37 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class ListDynamicImage_DynamicImage
 		{
 
-			private string videoId;
-
-			private string dynamicImageId;
-
-			private string jobId;
+			private string creationTime;
 
 			private string fileURL;
 
+			private string videoId;
+
 			private string width;
 
+			private string jobId;
+
 			private string height;
+
+			private string fps;
 
 			private string duration;
 
 			private string format;
 
+			private string dynamicImageId;
+
 			private string fileSize;
 
-			private string fps;
-
-			private string creationTime;
-
-			public string VideoId
+			public string CreationTime
 			{
 				get
 				{
-					return videoId;
+					return creationTime;
 				}
 				set	
 				{
-					videoId = value;
-				}
-			}
-
-			public string DynamicImageId
-			{
-				get
-				{
-					return dynamicImageId;
-				}
-				set	
-				{
-					dynamicImageId = value;
-				}
-			}
-
-			public string JobId
-			{
-				get
-				{
-					return jobId;
-				}
-				set	
-				{
-					jobId = value;
+					creationTime = value;
 				}
 			}
 
@@ -126,6 +102,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string VideoId
+			{
+				get
+				{
+					return videoId;
+				}
+				set	
+				{
+					videoId = value;
+				}
+			}
+
 			public string Width
 			{
 				get
@@ -138,6 +126,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string JobId
+			{
+				get
+				{
+					return jobId;
+				}
+				set	
+				{
+					jobId = value;
+				}
+			}
+
 			public string Height
 			{
 				get
@@ -147,6 +147,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					height = value;
+				}
+			}
+
+			public string Fps
+			{
+				get
+				{
+					return fps;
+				}
+				set	
+				{
+					fps = value;
 				}
 			}
 
@@ -174,6 +186,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string DynamicImageId
+			{
+				get
+				{
+					return dynamicImageId;
+				}
+				set	
+				{
+					dynamicImageId = value;
+				}
+			}
+
 			public string FileSize
 			{
 				get
@@ -183,30 +207,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					fileSize = value;
-				}
-			}
-
-			public string Fps
-			{
-				get
-				{
-					return fps;
-				}
-				set	
-				{
-					fps = value;
-				}
-			}
-
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -56,83 +56,35 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class ListVodTemplate_VodTemplateInfo
 		{
 
-			private string name;
-
-			private string vodTemplateId;
-
-			private string templateType;
-
-			private string subTemplateType;
-
-			private string source;
+			private string creationTime;
 
 			private string isDefault;
 
+			private string appId;
+
+			private string templateType;
+
+			private string vodTemplateId;
+
 			private string templateConfig;
 
-			private string creationTime;
+			private string source;
+
+			private string name;
 
 			private string modifyTime;
 
-			private string appId;
+			private string subTemplateType;
 
-			public string Name
+			public string CreationTime
 			{
 				get
 				{
-					return name;
+					return creationTime;
 				}
 				set	
 				{
-					name = value;
-				}
-			}
-
-			public string VodTemplateId
-			{
-				get
-				{
-					return vodTemplateId;
-				}
-				set	
-				{
-					vodTemplateId = value;
-				}
-			}
-
-			public string TemplateType
-			{
-				get
-				{
-					return templateType;
-				}
-				set	
-				{
-					templateType = value;
-				}
-			}
-
-			public string SubTemplateType
-			{
-				get
-				{
-					return subTemplateType;
-				}
-				set	
-				{
-					subTemplateType = value;
-				}
-			}
-
-			public string Source
-			{
-				get
-				{
-					return source;
-				}
-				set	
-				{
-					source = value;
+					creationTime = value;
 				}
 			}
 
@@ -148,6 +100,42 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string AppId
+			{
+				get
+				{
+					return appId;
+				}
+				set	
+				{
+					appId = value;
+				}
+			}
+
+			public string TemplateType
+			{
+				get
+				{
+					return templateType;
+				}
+				set	
+				{
+					templateType = value;
+				}
+			}
+
+			public string VodTemplateId
+			{
+				get
+				{
+					return vodTemplateId;
+				}
+				set	
+				{
+					vodTemplateId = value;
+				}
+			}
+
 			public string TemplateConfig
 			{
 				get
@@ -160,15 +148,27 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string CreationTime
+			public string Source
 			{
 				get
 				{
-					return creationTime;
+					return source;
 				}
 				set	
 				{
-					creationTime = value;
+					source = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 
@@ -184,15 +184,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string AppId
+			public string SubTemplateType
 			{
 				get
 				{
-					return appId;
+					return subTemplateType;
 				}
 				set	
 				{
-					appId = value;
+					subTemplateType = value;
 				}
 			}
 		}

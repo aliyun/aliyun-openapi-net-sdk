@@ -33,17 +33,17 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			deleteMezzaninesResponse.HttpResponse = _ctx.HttpResponse;
 			deleteMezzaninesResponse.RequestId = _ctx.StringValue("DeleteMezzanines.RequestId");
 
-			List<string> deleteMezzaninesResponse_nonExistVideoIds = new List<string>();
-			for (int i = 0; i < _ctx.Length("DeleteMezzanines.NonExistVideoIds.Length"); i++) {
-				deleteMezzaninesResponse_nonExistVideoIds.Add(_ctx.StringValue("DeleteMezzanines.NonExistVideoIds["+ i +"]"));
-			}
-			deleteMezzaninesResponse.NonExistVideoIds = deleteMezzaninesResponse_nonExistVideoIds;
-
 			List<string> deleteMezzaninesResponse_unRemoveableVideoIds = new List<string>();
 			for (int i = 0; i < _ctx.Length("DeleteMezzanines.UnRemoveableVideoIds.Length"); i++) {
 				deleteMezzaninesResponse_unRemoveableVideoIds.Add(_ctx.StringValue("DeleteMezzanines.UnRemoveableVideoIds["+ i +"]"));
 			}
 			deleteMezzaninesResponse.UnRemoveableVideoIds = deleteMezzaninesResponse_unRemoveableVideoIds;
+
+			List<string> deleteMezzaninesResponse_nonExistVideoIds = new List<string>();
+			for (int i = 0; i < _ctx.Length("DeleteMezzanines.NonExistVideoIds.Length"); i++) {
+				deleteMezzaninesResponse_nonExistVideoIds.Add(_ctx.StringValue("DeleteMezzanines.NonExistVideoIds["+ i +"]"));
+			}
+			deleteMezzaninesResponse.NonExistVideoIds = deleteMezzaninesResponse_nonExistVideoIds;
         
 			return deleteMezzaninesResponse;
         }

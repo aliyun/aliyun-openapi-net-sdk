@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string requestId;
 
-		private string scrollToken;
-
 		private long? total;
+
+		private string scrollToken;
 
 		private List<SearchMedia_Media> mediaList;
 
@@ -45,18 +45,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string ScrollToken
-		{
-			get
-			{
-				return scrollToken;
-			}
-			set	
-			{
-				scrollToken = value;
-			}
-		}
-
 		public long? Total
 		{
 			get
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				total = value;
+			}
+		}
+
+		public string ScrollToken
+		{
+			get
+			{
+				return scrollToken;
+			}
+			set	
+			{
+				scrollToken = value;
 			}
 		}
 
@@ -84,9 +84,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class SearchMedia_Media
 		{
 
-			private string mediaType;
-
 			private string creationTime;
+
+			private string mediaType;
 
 			private string mediaId;
 
@@ -98,18 +98,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private SearchMedia_AttachedMedia attachedMedia;
 
-			public string MediaType
-			{
-				get
-				{
-					return mediaType;
-				}
-				set	
-				{
-					mediaType = value;
-				}
-			}
-
 			public string CreationTime
 			{
 				get
@@ -119,6 +107,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string MediaType
+			{
+				get
+				{
+					return mediaType;
+				}
+				set	
+				{
+					mediaType = value;
 				}
 			}
 
@@ -185,89 +185,161 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			public class SearchMedia_Video
 			{
 
-				private string videoId;
-
-				private string mediaSource;
-
-				private string mediaType;
-
-				private string title;
-
-				private string tags;
-
 				private string status;
-
-				private long? size;
-
-				private float? duration;
-
-				private string description;
-
-				private string modificationTime;
 
 				private string creationTime;
 
-				private string coverURL;
+				private string storageLocation;
 
 				private long? cateId;
 
-				private string cateName;
+				private string auditTemplateId;
 
-				private string downloadSwitch;
+				private string tags;
 
-				private string preprocessStatus;
+				private string modificationTime;
 
-				private string storageLocation;
+				private string auditManualStatus;
 
-				private string regionId;
+				private string mediaType;
 
-				private string transcodeMode;
+				private string mediaSource;
+
+				private string description;
+
+				private string appId;
+
+				private string coverURL;
 
 				private string auditStatus;
 
 				private string auditAIStatus;
 
-				private string auditManualStatus;
-
-				private string auditAIResult;
-
-				private string auditTemplateId;
-
-				private string customMediaInfo;
-
-				private string appId;
-
-				private string auditAbnormalModules;
+				private string videoId;
 
 				private string auditLabel;
 
-				private List<SearchMedia_PlayInfo> playInfoList;
+				private string downloadSwitch;
 
-				private List<string> snapshots;
+				private string regionId;
+
+				private string auditAbnormalModules;
+
+				private string customMediaInfo;
+
+				private string cateName;
+
+				private string transcodeMode;
+
+				private string auditAIResult;
+
+				private string preprocessStatus;
+
+				private long? size;
+
+				private float? duration;
+
+				private string title;
+
+				private List<SearchMedia_PlayInfo> playInfoList;
 
 				private List<string> spriteSnapshots;
 
-				public string VideoId
+				private List<string> snapshots;
+
+				public string Status
 				{
 					get
 					{
-						return videoId;
+						return status;
 					}
 					set	
 					{
-						videoId = value;
+						status = value;
 					}
 				}
 
-				public string MediaSource
+				public string CreationTime
 				{
 					get
 					{
-						return mediaSource;
+						return creationTime;
 					}
 					set	
 					{
-						mediaSource = value;
+						creationTime = value;
+					}
+				}
+
+				public string StorageLocation
+				{
+					get
+					{
+						return storageLocation;
+					}
+					set	
+					{
+						storageLocation = value;
+					}
+				}
+
+				public long? CateId
+				{
+					get
+					{
+						return cateId;
+					}
+					set	
+					{
+						cateId = value;
+					}
+				}
+
+				public string AuditTemplateId
+				{
+					get
+					{
+						return auditTemplateId;
+					}
+					set	
+					{
+						auditTemplateId = value;
+					}
+				}
+
+				public string Tags
+				{
+					get
+					{
+						return tags;
+					}
+					set	
+					{
+						tags = value;
+					}
+				}
+
+				public string ModificationTime
+				{
+					get
+					{
+						return modificationTime;
+					}
+					set	
+					{
+						modificationTime = value;
+					}
+				}
+
+				public string AuditManualStatus
+				{
+					get
+					{
+						return auditManualStatus;
+					}
+					set	
+					{
+						auditManualStatus = value;
 					}
 				}
 
@@ -283,63 +355,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string Title
+				public string MediaSource
 				{
 					get
 					{
-						return title;
+						return mediaSource;
 					}
 					set	
 					{
-						title = value;
-					}
-				}
-
-				public string Tags
-				{
-					get
-					{
-						return tags;
-					}
-					set	
-					{
-						tags = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				public long? Size
-				{
-					get
-					{
-						return size;
-					}
-					set	
-					{
-						size = value;
-					}
-				}
-
-				public float? Duration
-				{
-					get
-					{
-						return duration;
-					}
-					set	
-					{
-						duration = value;
+						mediaSource = value;
 					}
 				}
 
@@ -355,27 +379,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string ModificationTime
+				public string AppId
 				{
 					get
 					{
-						return modificationTime;
+						return appId;
 					}
 					set	
 					{
-						modificationTime = value;
-					}
-				}
-
-				public string CreationTime
-				{
-					get
-					{
-						return creationTime;
-					}
-					set	
-					{
-						creationTime = value;
+						appId = value;
 					}
 				}
 
@@ -388,90 +400,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						coverURL = value;
-					}
-				}
-
-				public long? CateId
-				{
-					get
-					{
-						return cateId;
-					}
-					set	
-					{
-						cateId = value;
-					}
-				}
-
-				public string CateName
-				{
-					get
-					{
-						return cateName;
-					}
-					set	
-					{
-						cateName = value;
-					}
-				}
-
-				public string DownloadSwitch
-				{
-					get
-					{
-						return downloadSwitch;
-					}
-					set	
-					{
-						downloadSwitch = value;
-					}
-				}
-
-				public string PreprocessStatus
-				{
-					get
-					{
-						return preprocessStatus;
-					}
-					set	
-					{
-						preprocessStatus = value;
-					}
-				}
-
-				public string StorageLocation
-				{
-					get
-					{
-						return storageLocation;
-					}
-					set	
-					{
-						storageLocation = value;
-					}
-				}
-
-				public string RegionId
-				{
-					get
-					{
-						return regionId;
-					}
-					set	
-					{
-						regionId = value;
-					}
-				}
-
-				public string TranscodeMode
-				{
-					get
-					{
-						return transcodeMode;
-					}
-					set	
-					{
-						transcodeMode = value;
 					}
 				}
 
@@ -499,75 +427,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string AuditManualStatus
+				public string VideoId
 				{
 					get
 					{
-						return auditManualStatus;
+						return videoId;
 					}
 					set	
 					{
-						auditManualStatus = value;
-					}
-				}
-
-				public string AuditAIResult
-				{
-					get
-					{
-						return auditAIResult;
-					}
-					set	
-					{
-						auditAIResult = value;
-					}
-				}
-
-				public string AuditTemplateId
-				{
-					get
-					{
-						return auditTemplateId;
-					}
-					set	
-					{
-						auditTemplateId = value;
-					}
-				}
-
-				public string CustomMediaInfo
-				{
-					get
-					{
-						return customMediaInfo;
-					}
-					set	
-					{
-						customMediaInfo = value;
-					}
-				}
-
-				public string AppId
-				{
-					get
-					{
-						return appId;
-					}
-					set	
-					{
-						appId = value;
-					}
-				}
-
-				public string AuditAbnormalModules
-				{
-					get
-					{
-						return auditAbnormalModules;
-					}
-					set	
-					{
-						auditAbnormalModules = value;
+						videoId = value;
 					}
 				}
 
@@ -583,373 +451,99 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public List<SearchMedia_PlayInfo> PlayInfoList
+				public string DownloadSwitch
 				{
 					get
 					{
-						return playInfoList;
+						return downloadSwitch;
 					}
 					set	
 					{
-						playInfoList = value;
+						downloadSwitch = value;
 					}
 				}
 
-				public List<string> Snapshots
+				public string RegionId
 				{
 					get
 					{
-						return snapshots;
+						return regionId;
 					}
 					set	
 					{
-						snapshots = value;
+						regionId = value;
 					}
 				}
 
-				public List<string> SpriteSnapshots
+				public string AuditAbnormalModules
 				{
 					get
 					{
-						return spriteSnapshots;
+						return auditAbnormalModules;
 					}
 					set	
 					{
-						spriteSnapshots = value;
+						auditAbnormalModules = value;
 					}
 				}
 
-				public class SearchMedia_PlayInfo
-				{
-
-					private string width;
-
-					private string height;
-
-					private string size;
-
-					private string playURL;
-
-					private string bitrate;
-
-					private string definition;
-
-					private string duration;
-
-					private string format;
-
-					private string fps;
-
-					private long? encrypt;
-
-					private string plaintext;
-
-					private string complexity;
-
-					private string streamType;
-
-					private string rand;
-
-					private string jobId;
-
-					public string Width
-					{
-						get
-						{
-							return width;
-						}
-						set	
-						{
-							width = value;
-						}
-					}
-
-					public string Height
-					{
-						get
-						{
-							return height;
-						}
-						set	
-						{
-							height = value;
-						}
-					}
-
-					public string Size
-					{
-						get
-						{
-							return size;
-						}
-						set	
-						{
-							size = value;
-						}
-					}
-
-					public string PlayURL
-					{
-						get
-						{
-							return playURL;
-						}
-						set	
-						{
-							playURL = value;
-						}
-					}
-
-					public string Bitrate
-					{
-						get
-						{
-							return bitrate;
-						}
-						set	
-						{
-							bitrate = value;
-						}
-					}
-
-					public string Definition
-					{
-						get
-						{
-							return definition;
-						}
-						set	
-						{
-							definition = value;
-						}
-					}
-
-					public string Duration
-					{
-						get
-						{
-							return duration;
-						}
-						set	
-						{
-							duration = value;
-						}
-					}
-
-					public string Format
-					{
-						get
-						{
-							return format;
-						}
-						set	
-						{
-							format = value;
-						}
-					}
-
-					public string Fps
-					{
-						get
-						{
-							return fps;
-						}
-						set	
-						{
-							fps = value;
-						}
-					}
-
-					public long? Encrypt
-					{
-						get
-						{
-							return encrypt;
-						}
-						set	
-						{
-							encrypt = value;
-						}
-					}
-
-					public string Plaintext
-					{
-						get
-						{
-							return plaintext;
-						}
-						set	
-						{
-							plaintext = value;
-						}
-					}
-
-					public string Complexity
-					{
-						get
-						{
-							return complexity;
-						}
-						set	
-						{
-							complexity = value;
-						}
-					}
-
-					public string StreamType
-					{
-						get
-						{
-							return streamType;
-						}
-						set	
-						{
-							streamType = value;
-						}
-					}
-
-					public string Rand
-					{
-						get
-						{
-							return rand;
-						}
-						set	
-						{
-							rand = value;
-						}
-					}
-
-					public string JobId
-					{
-						get
-						{
-							return jobId;
-						}
-						set	
-						{
-							jobId = value;
-						}
-					}
-				}
-			}
-
-			public class SearchMedia_Audio
-			{
-
-				private string audioId;
-
-				private string mediaSource;
-
-				private string title;
-
-				private string tags;
-
-				private string status;
-
-				private long? size;
-
-				private float? duration;
-
-				private string description;
-
-				private string modificationTime;
-
-				private string creationTime;
-
-				private string coverURL;
-
-				private long? cateId;
-
-				private string cateName;
-
-				private string downloadSwitch;
-
-				private string preprocessStatus;
-
-				private string storageLocation;
-
-				private string regionId;
-
-				private string transcodeMode;
-
-				private string auditStatus;
-
-				private string auditAIStatus;
-
-				private string auditManualStatus;
-
-				private string auditAIResult;
-
-				private string auditTemplateId;
-
-				private string customMediaInfo;
-
-				private string appId;
-
-				private List<SearchMedia_PlayInfo4> playInfoList3;
-
-				private List<string> snapshots1;
-
-				private List<string> spriteSnapshots2;
-
-				public string AudioId
+				public string CustomMediaInfo
 				{
 					get
 					{
-						return audioId;
+						return customMediaInfo;
 					}
 					set	
 					{
-						audioId = value;
+						customMediaInfo = value;
 					}
 				}
 
-				public string MediaSource
+				public string CateName
 				{
 					get
 					{
-						return mediaSource;
+						return cateName;
 					}
 					set	
 					{
-						mediaSource = value;
+						cateName = value;
 					}
 				}
 
-				public string Title
+				public string TranscodeMode
 				{
 					get
 					{
-						return title;
+						return transcodeMode;
 					}
 					set	
 					{
-						title = value;
+						transcodeMode = value;
 					}
 				}
 
-				public string Tags
+				public string AuditAIResult
 				{
 					get
 					{
-						return tags;
+						return auditAIResult;
 					}
 					set	
 					{
-						tags = value;
+						auditAIResult = value;
 					}
 				}
 
-				public string Status
+				public string PreprocessStatus
 				{
 					get
 					{
-						return status;
+						return preprocessStatus;
 					}
 					set	
 					{
-						status = value;
+						preprocessStatus = value;
 					}
 				}
 
@@ -977,27 +571,337 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string Description
+				public string Title
 				{
 					get
 					{
-						return description;
+						return title;
 					}
 					set	
 					{
-						description = value;
+						title = value;
 					}
 				}
 
-				public string ModificationTime
+				public List<SearchMedia_PlayInfo> PlayInfoList
 				{
 					get
 					{
-						return modificationTime;
+						return playInfoList;
 					}
 					set	
 					{
-						modificationTime = value;
+						playInfoList = value;
+					}
+				}
+
+				public List<string> SpriteSnapshots
+				{
+					get
+					{
+						return spriteSnapshots;
+					}
+					set	
+					{
+						spriteSnapshots = value;
+					}
+				}
+
+				public List<string> Snapshots
+				{
+					get
+					{
+						return snapshots;
+					}
+					set	
+					{
+						snapshots = value;
+					}
+				}
+
+				public class SearchMedia_PlayInfo
+				{
+
+					private string complexity;
+
+					private string height;
+
+					private string bitrate;
+
+					private long? encrypt;
+
+					private string definition;
+
+					private string rand;
+
+					private string streamType;
+
+					private string jobId;
+
+					private string width;
+
+					private string size;
+
+					private string plaintext;
+
+					private string playURL;
+
+					private string duration;
+
+					private string fps;
+
+					private string format;
+
+					public string Complexity
+					{
+						get
+						{
+							return complexity;
+						}
+						set	
+						{
+							complexity = value;
+						}
+					}
+
+					public string Height
+					{
+						get
+						{
+							return height;
+						}
+						set	
+						{
+							height = value;
+						}
+					}
+
+					public string Bitrate
+					{
+						get
+						{
+							return bitrate;
+						}
+						set	
+						{
+							bitrate = value;
+						}
+					}
+
+					public long? Encrypt
+					{
+						get
+						{
+							return encrypt;
+						}
+						set	
+						{
+							encrypt = value;
+						}
+					}
+
+					public string Definition
+					{
+						get
+						{
+							return definition;
+						}
+						set	
+						{
+							definition = value;
+						}
+					}
+
+					public string Rand
+					{
+						get
+						{
+							return rand;
+						}
+						set	
+						{
+							rand = value;
+						}
+					}
+
+					public string StreamType
+					{
+						get
+						{
+							return streamType;
+						}
+						set	
+						{
+							streamType = value;
+						}
+					}
+
+					public string JobId
+					{
+						get
+						{
+							return jobId;
+						}
+						set	
+						{
+							jobId = value;
+						}
+					}
+
+					public string Width
+					{
+						get
+						{
+							return width;
+						}
+						set	
+						{
+							width = value;
+						}
+					}
+
+					public string Size
+					{
+						get
+						{
+							return size;
+						}
+						set	
+						{
+							size = value;
+						}
+					}
+
+					public string Plaintext
+					{
+						get
+						{
+							return plaintext;
+						}
+						set	
+						{
+							plaintext = value;
+						}
+					}
+
+					public string PlayURL
+					{
+						get
+						{
+							return playURL;
+						}
+						set	
+						{
+							playURL = value;
+						}
+					}
+
+					public string Duration
+					{
+						get
+						{
+							return duration;
+						}
+						set	
+						{
+							duration = value;
+						}
+					}
+
+					public string Fps
+					{
+						get
+						{
+							return fps;
+						}
+						set	
+						{
+							fps = value;
+						}
+					}
+
+					public string Format
+					{
+						get
+						{
+							return format;
+						}
+						set	
+						{
+							format = value;
+						}
+					}
+				}
+			}
+
+			public class SearchMedia_Audio
+			{
+
+				private string status;
+
+				private string creationTime;
+
+				private string storageLocation;
+
+				private long? cateId;
+
+				private string auditTemplateId;
+
+				private string tags;
+
+				private string modificationTime;
+
+				private string auditManualStatus;
+
+				private string mediaSource;
+
+				private string description;
+
+				private string appId;
+
+				private string coverURL;
+
+				private string audioId;
+
+				private string auditStatus;
+
+				private string auditAIStatus;
+
+				private string downloadSwitch;
+
+				private string regionId;
+
+				private string cateName;
+
+				private string transcodeMode;
+
+				private string customMediaInfo;
+
+				private string auditAIResult;
+
+				private string preprocessStatus;
+
+				private long? size;
+
+				private float? duration;
+
+				private string title;
+
+				private List<SearchMedia_PlayInfo4> playInfoList3;
+
+				private List<string> spriteSnapshots1;
+
+				private List<string> snapshots2;
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
 					}
 				}
 
@@ -1013,15 +917,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string CoverURL
+				public string StorageLocation
 				{
 					get
 					{
-						return coverURL;
+						return storageLocation;
 					}
 					set	
 					{
-						coverURL = value;
+						storageLocation = value;
 					}
 				}
 
@@ -1037,75 +941,111 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string CateName
+				public string AuditTemplateId
 				{
 					get
 					{
-						return cateName;
+						return auditTemplateId;
 					}
 					set	
 					{
-						cateName = value;
+						auditTemplateId = value;
 					}
 				}
 
-				public string DownloadSwitch
+				public string Tags
 				{
 					get
 					{
-						return downloadSwitch;
+						return tags;
 					}
 					set	
 					{
-						downloadSwitch = value;
+						tags = value;
 					}
 				}
 
-				public string PreprocessStatus
+				public string ModificationTime
 				{
 					get
 					{
-						return preprocessStatus;
+						return modificationTime;
 					}
 					set	
 					{
-						preprocessStatus = value;
+						modificationTime = value;
 					}
 				}
 
-				public string StorageLocation
+				public string AuditManualStatus
 				{
 					get
 					{
-						return storageLocation;
+						return auditManualStatus;
 					}
 					set	
 					{
-						storageLocation = value;
+						auditManualStatus = value;
 					}
 				}
 
-				public string RegionId
+				public string MediaSource
 				{
 					get
 					{
-						return regionId;
+						return mediaSource;
 					}
 					set	
 					{
-						regionId = value;
+						mediaSource = value;
 					}
 				}
 
-				public string TranscodeMode
+				public string Description
 				{
 					get
 					{
-						return transcodeMode;
+						return description;
 					}
 					set	
 					{
-						transcodeMode = value;
+						description = value;
+					}
+				}
+
+				public string AppId
+				{
+					get
+					{
+						return appId;
+					}
+					set	
+					{
+						appId = value;
+					}
+				}
+
+				public string CoverURL
+				{
+					get
+					{
+						return coverURL;
+					}
+					set	
+					{
+						coverURL = value;
+					}
+				}
+
+				public string AudioId
+				{
+					get
+					{
+						return audioId;
+					}
+					set	
+					{
+						audioId = value;
 					}
 				}
 
@@ -1133,383 +1073,27 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string AuditManualStatus
+				public string DownloadSwitch
 				{
 					get
 					{
-						return auditManualStatus;
+						return downloadSwitch;
 					}
 					set	
 					{
-						auditManualStatus = value;
+						downloadSwitch = value;
 					}
 				}
 
-				public string AuditAIResult
+				public string RegionId
 				{
 					get
 					{
-						return auditAIResult;
+						return regionId;
 					}
 					set	
 					{
-						auditAIResult = value;
-					}
-				}
-
-				public string AuditTemplateId
-				{
-					get
-					{
-						return auditTemplateId;
-					}
-					set	
-					{
-						auditTemplateId = value;
-					}
-				}
-
-				public string CustomMediaInfo
-				{
-					get
-					{
-						return customMediaInfo;
-					}
-					set	
-					{
-						customMediaInfo = value;
-					}
-				}
-
-				public string AppId
-				{
-					get
-					{
-						return appId;
-					}
-					set	
-					{
-						appId = value;
-					}
-				}
-
-				public List<SearchMedia_PlayInfo4> PlayInfoList3
-				{
-					get
-					{
-						return playInfoList3;
-					}
-					set	
-					{
-						playInfoList3 = value;
-					}
-				}
-
-				public List<string> Snapshots1
-				{
-					get
-					{
-						return snapshots1;
-					}
-					set	
-					{
-						snapshots1 = value;
-					}
-				}
-
-				public List<string> SpriteSnapshots2
-				{
-					get
-					{
-						return spriteSnapshots2;
-					}
-					set	
-					{
-						spriteSnapshots2 = value;
-					}
-				}
-
-				public class SearchMedia_PlayInfo4
-				{
-
-					private string width;
-
-					private string height;
-
-					private string size;
-
-					private string playURL;
-
-					private string bitrate;
-
-					private string definition;
-
-					private string duration;
-
-					private string format;
-
-					private string fps;
-
-					private long? encrypt;
-
-					private string plaintext;
-
-					private string complexity;
-
-					private string streamType;
-
-					private string rand;
-
-					private string jobId;
-
-					public string Width
-					{
-						get
-						{
-							return width;
-						}
-						set	
-						{
-							width = value;
-						}
-					}
-
-					public string Height
-					{
-						get
-						{
-							return height;
-						}
-						set	
-						{
-							height = value;
-						}
-					}
-
-					public string Size
-					{
-						get
-						{
-							return size;
-						}
-						set	
-						{
-							size = value;
-						}
-					}
-
-					public string PlayURL
-					{
-						get
-						{
-							return playURL;
-						}
-						set	
-						{
-							playURL = value;
-						}
-					}
-
-					public string Bitrate
-					{
-						get
-						{
-							return bitrate;
-						}
-						set	
-						{
-							bitrate = value;
-						}
-					}
-
-					public string Definition
-					{
-						get
-						{
-							return definition;
-						}
-						set	
-						{
-							definition = value;
-						}
-					}
-
-					public string Duration
-					{
-						get
-						{
-							return duration;
-						}
-						set	
-						{
-							duration = value;
-						}
-					}
-
-					public string Format
-					{
-						get
-						{
-							return format;
-						}
-						set	
-						{
-							format = value;
-						}
-					}
-
-					public string Fps
-					{
-						get
-						{
-							return fps;
-						}
-						set	
-						{
-							fps = value;
-						}
-					}
-
-					public long? Encrypt
-					{
-						get
-						{
-							return encrypt;
-						}
-						set	
-						{
-							encrypt = value;
-						}
-					}
-
-					public string Plaintext
-					{
-						get
-						{
-							return plaintext;
-						}
-						set	
-						{
-							plaintext = value;
-						}
-					}
-
-					public string Complexity
-					{
-						get
-						{
-							return complexity;
-						}
-						set	
-						{
-							complexity = value;
-						}
-					}
-
-					public string StreamType
-					{
-						get
-						{
-							return streamType;
-						}
-						set	
-						{
-							streamType = value;
-						}
-					}
-
-					public string Rand
-					{
-						get
-						{
-							return rand;
-						}
-						set	
-						{
-							rand = value;
-						}
-					}
-
-					public string JobId
-					{
-						get
-						{
-							return jobId;
-						}
-						set	
-						{
-							jobId = value;
-						}
-					}
-				}
-			}
-
-			public class SearchMedia_Image
-			{
-
-				private string title;
-
-				private string imageId;
-
-				private long? cateId;
-
-				private string cateName;
-
-				private string ext;
-
-				private string creationTime;
-
-				private string modificationTime;
-
-				private string tags;
-
-				private string type;
-
-				private string uRL;
-
-				private string status;
-
-				private string description;
-
-				private string storageLocation;
-
-				private string regionId;
-
-				private string appId;
-
-				public string Title
-				{
-					get
-					{
-						return title;
-					}
-					set	
-					{
-						title = value;
-					}
-				}
-
-				public string ImageId
-				{
-					get
-					{
-						return imageId;
-					}
-					set	
-					{
-						imageId = value;
-					}
-				}
-
-				public long? CateId
-				{
-					get
-					{
-						return cateId;
-					}
-					set	
-					{
-						cateId = value;
+						regionId = value;
 					}
 				}
 
@@ -1525,15 +1109,383 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string Ext
+				public string TranscodeMode
 				{
 					get
 					{
-						return ext;
+						return transcodeMode;
 					}
 					set	
 					{
-						ext = value;
+						transcodeMode = value;
+					}
+				}
+
+				public string CustomMediaInfo
+				{
+					get
+					{
+						return customMediaInfo;
+					}
+					set	
+					{
+						customMediaInfo = value;
+					}
+				}
+
+				public string AuditAIResult
+				{
+					get
+					{
+						return auditAIResult;
+					}
+					set	
+					{
+						auditAIResult = value;
+					}
+				}
+
+				public string PreprocessStatus
+				{
+					get
+					{
+						return preprocessStatus;
+					}
+					set	
+					{
+						preprocessStatus = value;
+					}
+				}
+
+				public long? Size
+				{
+					get
+					{
+						return size;
+					}
+					set	
+					{
+						size = value;
+					}
+				}
+
+				public float? Duration
+				{
+					get
+					{
+						return duration;
+					}
+					set	
+					{
+						duration = value;
+					}
+				}
+
+				public string Title
+				{
+					get
+					{
+						return title;
+					}
+					set	
+					{
+						title = value;
+					}
+				}
+
+				public List<SearchMedia_PlayInfo4> PlayInfoList3
+				{
+					get
+					{
+						return playInfoList3;
+					}
+					set	
+					{
+						playInfoList3 = value;
+					}
+				}
+
+				public List<string> SpriteSnapshots1
+				{
+					get
+					{
+						return spriteSnapshots1;
+					}
+					set	
+					{
+						spriteSnapshots1 = value;
+					}
+				}
+
+				public List<string> Snapshots2
+				{
+					get
+					{
+						return snapshots2;
+					}
+					set	
+					{
+						snapshots2 = value;
+					}
+				}
+
+				public class SearchMedia_PlayInfo4
+				{
+
+					private string complexity;
+
+					private string height;
+
+					private string bitrate;
+
+					private long? encrypt;
+
+					private string definition;
+
+					private string rand;
+
+					private string streamType;
+
+					private string jobId;
+
+					private string width;
+
+					private string size;
+
+					private string plaintext;
+
+					private string playURL;
+
+					private string duration;
+
+					private string fps;
+
+					private string format;
+
+					public string Complexity
+					{
+						get
+						{
+							return complexity;
+						}
+						set	
+						{
+							complexity = value;
+						}
+					}
+
+					public string Height
+					{
+						get
+						{
+							return height;
+						}
+						set	
+						{
+							height = value;
+						}
+					}
+
+					public string Bitrate
+					{
+						get
+						{
+							return bitrate;
+						}
+						set	
+						{
+							bitrate = value;
+						}
+					}
+
+					public long? Encrypt
+					{
+						get
+						{
+							return encrypt;
+						}
+						set	
+						{
+							encrypt = value;
+						}
+					}
+
+					public string Definition
+					{
+						get
+						{
+							return definition;
+						}
+						set	
+						{
+							definition = value;
+						}
+					}
+
+					public string Rand
+					{
+						get
+						{
+							return rand;
+						}
+						set	
+						{
+							rand = value;
+						}
+					}
+
+					public string StreamType
+					{
+						get
+						{
+							return streamType;
+						}
+						set	
+						{
+							streamType = value;
+						}
+					}
+
+					public string JobId
+					{
+						get
+						{
+							return jobId;
+						}
+						set	
+						{
+							jobId = value;
+						}
+					}
+
+					public string Width
+					{
+						get
+						{
+							return width;
+						}
+						set	
+						{
+							width = value;
+						}
+					}
+
+					public string Size
+					{
+						get
+						{
+							return size;
+						}
+						set	
+						{
+							size = value;
+						}
+					}
+
+					public string Plaintext
+					{
+						get
+						{
+							return plaintext;
+						}
+						set	
+						{
+							plaintext = value;
+						}
+					}
+
+					public string PlayURL
+					{
+						get
+						{
+							return playURL;
+						}
+						set	
+						{
+							playURL = value;
+						}
+					}
+
+					public string Duration
+					{
+						get
+						{
+							return duration;
+						}
+						set	
+						{
+							duration = value;
+						}
+					}
+
+					public string Fps
+					{
+						get
+						{
+							return fps;
+						}
+						set	
+						{
+							fps = value;
+						}
+					}
+
+					public string Format
+					{
+						get
+						{
+							return format;
+						}
+						set	
+						{
+							format = value;
+						}
+					}
+				}
+			}
+
+			public class SearchMedia_Image
+			{
+
+				private string storageLocation;
+
+				private string creationTime;
+
+				private string type;
+
+				private string status;
+
+				private long? cateId;
+
+				private string tags;
+
+				private string modificationTime;
+
+				private string regionId;
+
+				private string cateName;
+
+				private string description;
+
+				private string appId;
+
+				private string uRL;
+
+				private string title;
+
+				private string ext;
+
+				private string imageId;
+
+				public string StorageLocation
+				{
+					get
+					{
+						return storageLocation;
+					}
+					set	
+					{
+						storageLocation = value;
 					}
 				}
 
@@ -1546,30 +1498,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						creationTime = value;
-					}
-				}
-
-				public string ModificationTime
-				{
-					get
-					{
-						return modificationTime;
-					}
-					set	
-					{
-						modificationTime = value;
-					}
-				}
-
-				public string Tags
-				{
-					get
-					{
-						return tags;
-					}
-					set	
-					{
-						tags = value;
 					}
 				}
 
@@ -1585,18 +1513,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string URL
-				{
-					get
-					{
-						return uRL;
-					}
-					set	
-					{
-						uRL = value;
-					}
-				}
-
 				public string Status
 				{
 					get
@@ -1609,147 +1525,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string Description
+				public long? CateId
 				{
 					get
 					{
-						return description;
+						return cateId;
 					}
 					set	
 					{
-						description = value;
-					}
-				}
-
-				public string StorageLocation
-				{
-					get
-					{
-						return storageLocation;
-					}
-					set	
-					{
-						storageLocation = value;
-					}
-				}
-
-				public string RegionId
-				{
-					get
-					{
-						return regionId;
-					}
-					set	
-					{
-						regionId = value;
-					}
-				}
-
-				public string AppId
-				{
-					get
-					{
-						return appId;
-					}
-					set	
-					{
-						appId = value;
-					}
-				}
-			}
-
-			public class SearchMedia_AttachedMedia
-			{
-
-				private string title;
-
-				private string mediaId;
-
-				private string ext;
-
-				private string creationTime;
-
-				private string modificationTime;
-
-				private string tags;
-
-				private string businessType;
-
-				private string uRL;
-
-				private string status;
-
-				private string description;
-
-				private string storageLocation;
-
-				private string regionId;
-
-				private string appId;
-
-				private string icon;
-
-				private string onlineStatus;
-
-				private List<SearchMedia_Category> categories;
-
-				public string Title
-				{
-					get
-					{
-						return title;
-					}
-					set	
-					{
-						title = value;
-					}
-				}
-
-				public string MediaId
-				{
-					get
-					{
-						return mediaId;
-					}
-					set	
-					{
-						mediaId = value;
-					}
-				}
-
-				public string Ext
-				{
-					get
-					{
-						return ext;
-					}
-					set	
-					{
-						ext = value;
-					}
-				}
-
-				public string CreationTime
-				{
-					get
-					{
-						return creationTime;
-					}
-					set	
-					{
-						creationTime = value;
-					}
-				}
-
-				public string ModificationTime
-				{
-					get
-					{
-						return modificationTime;
-					}
-					set	
-					{
-						modificationTime = value;
+						cateId = value;
 					}
 				}
 
@@ -1765,63 +1549,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string BusinessType
+				public string ModificationTime
 				{
 					get
 					{
-						return businessType;
+						return modificationTime;
 					}
 					set	
 					{
-						businessType = value;
-					}
-				}
-
-				public string URL
-				{
-					get
-					{
-						return uRL;
-					}
-					set	
-					{
-						uRL = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				public string Description
-				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
-					}
-				}
-
-				public string StorageLocation
-				{
-					get
-					{
-						return storageLocation;
-					}
-					set	
-					{
-						storageLocation = value;
+						modificationTime = value;
 					}
 				}
 
@@ -1837,6 +1573,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
+				public string CateName
+				{
+					get
+					{
+						return cateName;
+					}
+					set	
+					{
+						cateName = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
 				public string AppId
 				{
 					get
@@ -1849,6 +1609,126 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
+				public string URL
+				{
+					get
+					{
+						return uRL;
+					}
+					set	
+					{
+						uRL = value;
+					}
+				}
+
+				public string Title
+				{
+					get
+					{
+						return title;
+					}
+					set	
+					{
+						title = value;
+					}
+				}
+
+				public string Ext
+				{
+					get
+					{
+						return ext;
+					}
+					set	
+					{
+						ext = value;
+					}
+				}
+
+				public string ImageId
+				{
+					get
+					{
+						return imageId;
+					}
+					set	
+					{
+						imageId = value;
+					}
+				}
+			}
+
+			public class SearchMedia_AttachedMedia
+			{
+
+				private string creationTime;
+
+				private string status;
+
+				private string storageLocation;
+
+				private string icon;
+
+				private string tags;
+
+				private string modificationTime;
+
+				private string mediaId;
+
+				private string businessType;
+
+				private string regionId;
+
+				private string description;
+
+				private string appId;
+
+				private string uRL;
+
+				private string title;
+
+				private string ext;
+
+				private string onlineStatus;
+
+				private List<SearchMedia_Category> categories;
+
+				public string CreationTime
+				{
+					get
+					{
+						return creationTime;
+					}
+					set	
+					{
+						creationTime = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string StorageLocation
+				{
+					get
+					{
+						return storageLocation;
+					}
+					set	
+					{
+						storageLocation = value;
+					}
+				}
+
 				public string Icon
 				{
 					get
@@ -1858,6 +1738,126 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						icon = value;
+					}
+				}
+
+				public string Tags
+				{
+					get
+					{
+						return tags;
+					}
+					set	
+					{
+						tags = value;
+					}
+				}
+
+				public string ModificationTime
+				{
+					get
+					{
+						return modificationTime;
+					}
+					set	
+					{
+						modificationTime = value;
+					}
+				}
+
+				public string MediaId
+				{
+					get
+					{
+						return mediaId;
+					}
+					set	
+					{
+						mediaId = value;
+					}
+				}
+
+				public string BusinessType
+				{
+					get
+					{
+						return businessType;
+					}
+					set	
+					{
+						businessType = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
+				public string AppId
+				{
+					get
+					{
+						return appId;
+					}
+					set	
+					{
+						appId = value;
+					}
+				}
+
+				public string URL
+				{
+					get
+					{
+						return uRL;
+					}
+					set	
+					{
+						uRL = value;
+					}
+				}
+
+				public string Title
+				{
+					get
+					{
+						return title;
+					}
+					set	
+					{
+						title = value;
+					}
+				}
+
+				public string Ext
+				{
+					get
+					{
+						return ext;
+					}
+					set	
+					{
+						ext = value;
 					}
 				}
 
@@ -1888,23 +1888,23 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				public class SearchMedia_Category
 				{
 
-					private long? cateId;
+					private long? parentId;
 
 					private string cateName;
 
+					private long? cateId;
+
 					private long? level;
 
-					private long? parentId;
-
-					public long? CateId
+					public long? ParentId
 					{
 						get
 						{
-							return cateId;
+							return parentId;
 						}
 						set	
 						{
-							cateId = value;
+							parentId = value;
 						}
 					}
 
@@ -1920,6 +1920,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 						}
 					}
 
+					public long? CateId
+					{
+						get
+						{
+							return cateId;
+						}
+						set	
+						{
+							cateId = value;
+						}
+					}
+
 					public long? Level
 					{
 						get
@@ -1929,18 +1941,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 						set	
 						{
 							level = value;
-						}
-					}
-
-					public long? ParentId
-					{
-						get
-						{
-							return parentId;
-						}
-						set	
-						{
-							parentId = value;
 						}
 					}
 				}

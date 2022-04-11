@@ -36,16 +36,16 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<GetAIImageJobsResponse.GetAIImageJobs_AIImageJob> getAIImageJobsResponse_aIImageJobList = new List<GetAIImageJobsResponse.GetAIImageJobs_AIImageJob>();
 			for (int i = 0; i < _ctx.Length("GetAIImageJobs.AIImageJobList.Length"); i++) {
 				GetAIImageJobsResponse.GetAIImageJobs_AIImageJob aIImageJob = new GetAIImageJobsResponse.GetAIImageJobs_AIImageJob();
+				aIImageJob.Status = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].Status");
 				aIImageJob.CreationTime = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].CreationTime");
-				aIImageJob.JobId = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].JobId");
-				aIImageJob.TemplateId = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].TemplateId");
-				aIImageJob.VideoId = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].VideoId");
 				aIImageJob.AIImageResult = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].AIImageResult");
+				aIImageJob.VideoId = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].VideoId");
+				aIImageJob.JobId = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].JobId");
 				aIImageJob.UserData = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].UserData");
 				aIImageJob.Code = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].Code");
 				aIImageJob.Message = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].Message");
-				aIImageJob.Status = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].Status");
 				aIImageJob.TemplateConfig = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].TemplateConfig");
+				aIImageJob.TemplateId = _ctx.StringValue("GetAIImageJobs.AIImageJobList["+ i +"].TemplateId");
 
 				getAIImageJobsResponse_aIImageJobList.Add(aIImageJob);
 			}

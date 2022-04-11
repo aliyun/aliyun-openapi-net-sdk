@@ -34,17 +34,17 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			getEditingProjectResponse.RequestId = _ctx.StringValue("GetEditingProject.RequestId");
 
 			GetEditingProjectResponse.GetEditingProject_Project project = new GetEditingProjectResponse.GetEditingProject_Project();
-			project.ProjectId = _ctx.StringValue("GetEditingProject.Project.ProjectId");
+			project.StorageLocation = _ctx.StringValue("GetEditingProject.Project.StorageLocation");
+			project.Status = _ctx.StringValue("GetEditingProject.Project.Status");
 			project.CreationTime = _ctx.StringValue("GetEditingProject.Project.CreationTime");
 			project.ModifiedTime = _ctx.StringValue("GetEditingProject.Project.ModifiedTime");
-			project.Status = _ctx.StringValue("GetEditingProject.Project.Status");
-			project.Description = _ctx.StringValue("GetEditingProject.Project.Description");
-			project.Title = _ctx.StringValue("GetEditingProject.Project.Title");
-			project.Timeline = _ctx.StringValue("GetEditingProject.Project.Timeline");
-			project.CoverURL = _ctx.StringValue("GetEditingProject.Project.CoverURL");
-			project.StorageLocation = _ctx.StringValue("GetEditingProject.Project.StorageLocation");
-			project.RegionId = _ctx.StringValue("GetEditingProject.Project.RegionId");
 			project.FEExtend = _ctx.StringValue("GetEditingProject.Project.FEExtend");
+			project.Description = _ctx.StringValue("GetEditingProject.Project.Description");
+			project.CoverURL = _ctx.StringValue("GetEditingProject.Project.CoverURL");
+			project.ProjectId = _ctx.StringValue("GetEditingProject.Project.ProjectId");
+			project.Timeline = _ctx.StringValue("GetEditingProject.Project.Timeline");
+			project.Title = _ctx.StringValue("GetEditingProject.Project.Title");
+			project.RegionId = _ctx.StringValue("GetEditingProject.Project.RegionId");
 			getEditingProjectResponse.Project = project;
         
 			return getEditingProjectResponse;

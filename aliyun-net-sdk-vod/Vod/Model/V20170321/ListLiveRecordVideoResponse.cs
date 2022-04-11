@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class ListLiveRecordVideoResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? total;
 
-		private List<ListLiveRecordVideo_LiveRecordVideo> liveRecordVideoList;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<ListLiveRecordVideo_LiveRecordVideo> liveRecordVideoList;
 
 		public int? Total
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				total = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,45 +70,21 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class ListLiveRecordVideo_LiveRecordVideo
 		{
 
-			private string streamName;
-
-			private string domainName;
-
 			private string appName;
 
 			private string playlistId;
 
-			private string recordStartTime;
+			private string streamName;
 
 			private string recordEndTime;
+
+			private string recordStartTime;
+
+			private string domainName;
 
 			private List<ListLiveRecordVideo_PlayInfo> playInfoList;
 
 			private ListLiveRecordVideo_Video video;
-
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
-				}
-			}
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
 
 			public string AppName
 			{
@@ -134,15 +110,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string RecordStartTime
+			public string StreamName
 			{
 				get
 				{
-					return recordStartTime;
+					return streamName;
 				}
 				set	
 				{
-					recordStartTime = value;
+					streamName = value;
 				}
 			}
 
@@ -155,6 +131,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					recordEndTime = value;
+				}
+			}
+
+			public string RecordStartTime
+			{
+				get
+				{
+					return recordStartTime;
+				}
+				set	
+				{
+					recordStartTime = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 
@@ -185,45 +185,45 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			public class ListLiveRecordVideo_PlayInfo
 			{
 
-				private long? width;
+				private string complexity;
 
 				private long? height;
 
-				private long? size;
-
-				private string playURL;
-
 				private string bitrate;
-
-				private string definition;
-
-				private string duration;
-
-				private string format;
-
-				private string fps;
 
 				private long? encrypt;
 
-				private string plaintext;
-
-				private string complexity;
-
-				private string streamType;
+				private string definition;
 
 				private string rand;
 
+				private string streamType;
+
 				private string jobId;
 
-				public long? Width
+				private long? width;
+
+				private long? size;
+
+				private string plaintext;
+
+				private string playURL;
+
+				private string duration;
+
+				private string fps;
+
+				private string format;
+
+				public string Complexity
 				{
 					get
 					{
-						return width;
+						return complexity;
 					}
 					set	
 					{
-						width = value;
+						complexity = value;
 					}
 				}
 
@@ -239,30 +239,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public long? Size
-				{
-					get
-					{
-						return size;
-					}
-					set	
-					{
-						size = value;
-					}
-				}
-
-				public string PlayURL
-				{
-					get
-					{
-						return playURL;
-					}
-					set	
-					{
-						playURL = value;
-					}
-				}
-
 				public string Bitrate
 				{
 					get
@@ -272,54 +248,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						bitrate = value;
-					}
-				}
-
-				public string Definition
-				{
-					get
-					{
-						return definition;
-					}
-					set	
-					{
-						definition = value;
-					}
-				}
-
-				public string Duration
-				{
-					get
-					{
-						return duration;
-					}
-					set	
-					{
-						duration = value;
-					}
-				}
-
-				public string Format
-				{
-					get
-					{
-						return format;
-					}
-					set	
-					{
-						format = value;
-					}
-				}
-
-				public string Fps
-				{
-					get
-					{
-						return fps;
-					}
-					set	
-					{
-						fps = value;
 					}
 				}
 
@@ -335,39 +263,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string Plaintext
+				public string Definition
 				{
 					get
 					{
-						return plaintext;
+						return definition;
 					}
 					set	
 					{
-						plaintext = value;
-					}
-				}
-
-				public string Complexity
-				{
-					get
-					{
-						return complexity;
-					}
-					set	
-					{
-						complexity = value;
-					}
-				}
-
-				public string StreamType
-				{
-					get
-					{
-						return streamType;
-					}
-					set	
-					{
-						streamType = value;
+						definition = value;
 					}
 				}
 
@@ -383,6 +287,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
+				public string StreamType
+				{
+					get
+					{
+						return streamType;
+					}
+					set	
+					{
+						streamType = value;
+					}
+				}
+
 				public string JobId
 				{
 					get
@@ -394,92 +310,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 						jobId = value;
 					}
 				}
-			}
 
-			public class ListLiveRecordVideo_Video
-			{
-
-				private string videoId;
-
-				private string title;
-
-				private string tags;
-
-				private string status;
-
-				private long? size;
-
-				private int? privilege;
-
-				private float? duration;
-
-				private string description;
-
-				private long? customerId;
-
-				private string createTime;
-
-				private string creationTime;
-
-				private string modifyTime;
-
-				private string coverURL;
-
-				private int? cateId;
-
-				private string cateName;
-
-				private string downloadSwitch;
-
-				private string templateGroupId;
-
-				private List<string> snapshots;
-
-				public string VideoId
+				public long? Width
 				{
 					get
 					{
-						return videoId;
+						return width;
 					}
 					set	
 					{
-						videoId = value;
-					}
-				}
-
-				public string Title
-				{
-					get
-					{
-						return title;
-					}
-					set	
-					{
-						title = value;
-					}
-				}
-
-				public string Tags
-				{
-					get
-					{
-						return tags;
-					}
-					set	
-					{
-						tags = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
+						width = value;
 					}
 				}
 
@@ -495,19 +335,31 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public int? Privilege
+				public string Plaintext
 				{
 					get
 					{
-						return privilege;
+						return plaintext;
 					}
 					set	
 					{
-						privilege = value;
+						plaintext = value;
 					}
 				}
 
-				public float? Duration
+				public string PlayURL
+				{
+					get
+					{
+						return playURL;
+					}
+					set	
+					{
+						playURL = value;
+					}
+				}
+
+				public string Duration
 				{
 					get
 					{
@@ -519,41 +371,69 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string Description
+				public string Fps
 				{
 					get
 					{
-						return description;
+						return fps;
 					}
 					set	
 					{
-						description = value;
+						fps = value;
 					}
 				}
 
-				public long? CustomerId
+				public string Format
 				{
 					get
 					{
-						return customerId;
+						return format;
 					}
 					set	
 					{
-						customerId = value;
+						format = value;
 					}
 				}
+			}
 
-				public string CreateTime
-				{
-					get
-					{
-						return createTime;
-					}
-					set	
-					{
-						createTime = value;
-					}
-				}
+			public class ListLiveRecordVideo_Video
+			{
+
+				private string creationTime;
+
+				private string status;
+
+				private int? cateId;
+
+				private int? privilege;
+
+				private string videoId;
+
+				private string createTime;
+
+				private string downloadSwitch;
+
+				private string tags;
+
+				private string cateName;
+
+				private string description;
+
+				private long? size;
+
+				private string coverURL;
+
+				private string templateGroupId;
+
+				private long? customerId;
+
+				private float? duration;
+
+				private string title;
+
+				private string modifyTime;
+
+				private List<string> snapshots;
 
 				public string CreationTime
 				{
@@ -567,27 +447,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string ModifyTime
+				public string Status
 				{
 					get
 					{
-						return modifyTime;
+						return status;
 					}
 					set	
 					{
-						modifyTime = value;
-					}
-				}
-
-				public string CoverURL
-				{
-					get
-					{
-						return coverURL;
-					}
-					set	
-					{
-						coverURL = value;
+						status = value;
 					}
 				}
 
@@ -603,15 +471,39 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string CateName
+				public int? Privilege
 				{
 					get
 					{
-						return cateName;
+						return privilege;
 					}
 					set	
 					{
-						cateName = value;
+						privilege = value;
+					}
+				}
+
+				public string VideoId
+				{
+					get
+					{
+						return videoId;
+					}
+					set	
+					{
+						videoId = value;
+					}
+				}
+
+				public string CreateTime
+				{
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
 					}
 				}
 
@@ -627,6 +519,66 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
+				public string Tags
+				{
+					get
+					{
+						return tags;
+					}
+					set	
+					{
+						tags = value;
+					}
+				}
+
+				public string CateName
+				{
+					get
+					{
+						return cateName;
+					}
+					set	
+					{
+						cateName = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
+				public long? Size
+				{
+					get
+					{
+						return size;
+					}
+					set	
+					{
+						size = value;
+					}
+				}
+
+				public string CoverURL
+				{
+					get
+					{
+						return coverURL;
+					}
+					set	
+					{
+						coverURL = value;
+					}
+				}
+
 				public string TemplateGroupId
 				{
 					get
@@ -636,6 +588,54 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						templateGroupId = value;
+					}
+				}
+
+				public long? CustomerId
+				{
+					get
+					{
+						return customerId;
+					}
+					set	
+					{
+						customerId = value;
+					}
+				}
+
+				public float? Duration
+				{
+					get
+					{
+						return duration;
+					}
+					set	
+					{
+						duration = value;
+					}
+				}
+
+				public string Title
+				{
+					get
+					{
+						return title;
+					}
+					set	
+					{
+						title = value;
+					}
+				}
+
+				public string ModifyTime
+				{
+					get
+					{
+						return modifyTime;
+					}
+					set	
+					{
+						modifyTime = value;
 					}
 				}
 

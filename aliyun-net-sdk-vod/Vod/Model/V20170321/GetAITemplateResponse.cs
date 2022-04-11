@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -56,79 +56,31 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class GetAITemplate_TemplateInfo
 		{
 
-			private string templateId;
-
-			private string templateType;
-
-			private string templateName;
-
-			private string templateConfig;
-
-			private string source;
+			private string creationTime;
 
 			private string isDefault;
 
-			private string creationTime;
+			private string templateType;
+
+			private string templateConfig;
+
+			private string templateName;
+
+			private string source;
+
+			private string templateId;
 
 			private string modifyTime;
 
-			public string TemplateId
+			public string CreationTime
 			{
 				get
 				{
-					return templateId;
+					return creationTime;
 				}
 				set	
 				{
-					templateId = value;
-				}
-			}
-
-			public string TemplateType
-			{
-				get
-				{
-					return templateType;
-				}
-				set	
-				{
-					templateType = value;
-				}
-			}
-
-			public string TemplateName
-			{
-				get
-				{
-					return templateName;
-				}
-				set	
-				{
-					templateName = value;
-				}
-			}
-
-			public string TemplateConfig
-			{
-				get
-				{
-					return templateConfig;
-				}
-				set	
-				{
-					templateConfig = value;
-				}
-			}
-
-			public string Source
-			{
-				get
-				{
-					return source;
-				}
-				set	
-				{
-					source = value;
+					creationTime = value;
 				}
 			}
 
@@ -144,15 +96,63 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string CreationTime
+			public string TemplateType
 			{
 				get
 				{
-					return creationTime;
+					return templateType;
 				}
 				set	
 				{
-					creationTime = value;
+					templateType = value;
+				}
+			}
+
+			public string TemplateConfig
+			{
+				get
+				{
+					return templateConfig;
+				}
+				set	
+				{
+					templateConfig = value;
+				}
+			}
+
+			public string TemplateName
+			{
+				get
+				{
+					return templateName;
+				}
+				set	
+				{
+					templateName = value;
+				}
+			}
+
+			public string Source
+			{
+				get
+				{
+					return source;
+				}
+				set	
+				{
+					source = value;
+				}
+			}
+
+			public string TemplateId
+			{
+				get
+				{
+					return templateId;
+				}
+				set	
+				{
+					templateId = value;
 				}
 			}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -70,43 +70,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class GetAppInfos_AppInfo
 		{
 
-			private string appId;
-
-			private string appName;
-
 			private string type;
-
-			private string description;
 
 			private string status;
 
 			private string creationTime;
 
+			private string appName;
+
+			private string description;
+
+			private string appId;
+
 			private string modificationTime;
-
-			public string AppId
-			{
-				get
-				{
-					return appId;
-				}
-				set	
-				{
-					appId = value;
-				}
-			}
-
-			public string AppName
-			{
-				get
-				{
-					return appName;
-				}
-				set	
-				{
-					appName = value;
-				}
-			}
 
 			public string Type
 			{
@@ -117,18 +93,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					type = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
 				}
 			}
 
@@ -153,6 +117,42 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string AppName
+			{
+				get
+				{
+					return appName;
+				}
+				set	
+				{
+					appName = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string AppId
+			{
+				get
+				{
+					return appId;
+				}
+				set	
+				{
+					appId = value;
 				}
 			}
 

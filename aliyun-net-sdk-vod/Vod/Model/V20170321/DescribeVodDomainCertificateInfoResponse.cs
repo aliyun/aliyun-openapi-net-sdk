@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -56,69 +56,33 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class DescribeVodDomainCertificateInfo_CertInfo
 		{
 
-			private string domainName;
-
-			private string certName;
-
-			private string certDomainName;
-
-			private string certExpireTime;
+			private string status;
 
 			private string certLife;
 
-			private string certOrg;
+			private string certExpireTime;
 
 			private string certType;
 
 			private string serverCertificateStatus;
 
-			private string status;
+			private string certDomainName;
 
-			public string DomainName
+			private string certName;
+
+			private string certOrg;
+
+			private string domainName;
+
+			public string Status
 			{
 				get
 				{
-					return domainName;
+					return status;
 				}
 				set	
 				{
-					domainName = value;
-				}
-			}
-
-			public string CertName
-			{
-				get
-				{
-					return certName;
-				}
-				set	
-				{
-					certName = value;
-				}
-			}
-
-			public string CertDomainName
-			{
-				get
-				{
-					return certDomainName;
-				}
-				set	
-				{
-					certDomainName = value;
-				}
-			}
-
-			public string CertExpireTime
-			{
-				get
-				{
-					return certExpireTime;
-				}
-				set	
-				{
-					certExpireTime = value;
+					status = value;
 				}
 			}
 
@@ -134,15 +98,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string CertOrg
+			public string CertExpireTime
 			{
 				get
 				{
-					return certOrg;
+					return certExpireTime;
 				}
 				set	
 				{
-					certOrg = value;
+					certExpireTime = value;
 				}
 			}
 
@@ -170,15 +134,51 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string Status
+			public string CertDomainName
 			{
 				get
 				{
-					return status;
+					return certDomainName;
 				}
 				set	
 				{
-					status = value;
+					certDomainName = value;
+				}
+			}
+
+			public string CertName
+			{
+				get
+				{
+					return certName;
+				}
+				set	
+				{
+					certName = value;
+				}
+			}
+
+			public string CertOrg
+			{
+				get
+				{
+					return certOrg;
+				}
+				set	
+				{
+					certOrg = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 		}

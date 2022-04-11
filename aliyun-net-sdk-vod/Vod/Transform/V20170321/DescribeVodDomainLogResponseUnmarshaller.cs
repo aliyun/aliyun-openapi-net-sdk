@@ -36,8 +36,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<DescribeVodDomainLogResponse.DescribeVodDomainLog_DomainLogDetail> describeVodDomainLogResponse_domainLogDetails = new List<DescribeVodDomainLogResponse.DescribeVodDomainLog_DomainLogDetail>();
 			for (int i = 0; i < _ctx.Length("DescribeVodDomainLog.DomainLogDetails.Length"); i++) {
 				DescribeVodDomainLogResponse.DescribeVodDomainLog_DomainLogDetail domainLogDetail = new DescribeVodDomainLogResponse.DescribeVodDomainLog_DomainLogDetail();
-				domainLogDetail.DomainName = _ctx.StringValue("DescribeVodDomainLog.DomainLogDetails["+ i +"].DomainName");
 				domainLogDetail.LogCount = _ctx.LongValue("DescribeVodDomainLog.DomainLogDetails["+ i +"].LogCount");
+				domainLogDetail.DomainName = _ctx.StringValue("DescribeVodDomainLog.DomainLogDetails["+ i +"].DomainName");
 
 				DescribeVodDomainLogResponse.DescribeVodDomainLog_DomainLogDetail.DescribeVodDomainLog_PageInfos pageInfos = new DescribeVodDomainLogResponse.DescribeVodDomainLog_DomainLogDetail.DescribeVodDomainLog_PageInfos();
 				pageInfos.PageNumber = _ctx.LongValue("DescribeVodDomainLog.DomainLogDetails["+ i +"].PageInfos.PageNumber");
@@ -48,11 +48,11 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				List<DescribeVodDomainLogResponse.DescribeVodDomainLog_DomainLogDetail.DescribeVodDomainLog_LogInfoDetail> domainLogDetail_logInfos = new List<DescribeVodDomainLogResponse.DescribeVodDomainLog_DomainLogDetail.DescribeVodDomainLog_LogInfoDetail>();
 				for (int j = 0; j < _ctx.Length("DescribeVodDomainLog.DomainLogDetails["+ i +"].LogInfos.Length"); j++) {
 					DescribeVodDomainLogResponse.DescribeVodDomainLog_DomainLogDetail.DescribeVodDomainLog_LogInfoDetail logInfoDetail = new DescribeVodDomainLogResponse.DescribeVodDomainLog_DomainLogDetail.DescribeVodDomainLog_LogInfoDetail();
-					logInfoDetail.LogName = _ctx.StringValue("DescribeVodDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogName");
-					logInfoDetail.LogPath = _ctx.StringValue("DescribeVodDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogPath");
+					logInfoDetail.EndTime = _ctx.StringValue("DescribeVodDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].EndTime");
 					logInfoDetail.LogSize = _ctx.LongValue("DescribeVodDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogSize");
 					logInfoDetail.StartTime = _ctx.StringValue("DescribeVodDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].StartTime");
-					logInfoDetail.EndTime = _ctx.StringValue("DescribeVodDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].EndTime");
+					logInfoDetail.LogName = _ctx.StringValue("DescribeVodDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogName");
+					logInfoDetail.LogPath = _ctx.StringValue("DescribeVodDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogPath");
 
 					domainLogDetail_logInfos.Add(logInfoDetail);
 				}

@@ -36,16 +36,16 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<ListVodTemplateResponse.ListVodTemplate_VodTemplateInfo> listVodTemplateResponse_vodTemplateInfoList = new List<ListVodTemplateResponse.ListVodTemplate_VodTemplateInfo>();
 			for (int i = 0; i < _ctx.Length("ListVodTemplate.VodTemplateInfoList.Length"); i++) {
 				ListVodTemplateResponse.ListVodTemplate_VodTemplateInfo vodTemplateInfo = new ListVodTemplateResponse.ListVodTemplate_VodTemplateInfo();
-				vodTemplateInfo.Name = _ctx.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].Name");
-				vodTemplateInfo.VodTemplateId = _ctx.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].VodTemplateId");
-				vodTemplateInfo.TemplateType = _ctx.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].TemplateType");
-				vodTemplateInfo.SubTemplateType = _ctx.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].SubTemplateType");
-				vodTemplateInfo.Source = _ctx.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].Source");
-				vodTemplateInfo.IsDefault = _ctx.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].IsDefault");
-				vodTemplateInfo.TemplateConfig = _ctx.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].TemplateConfig");
 				vodTemplateInfo.CreationTime = _ctx.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].CreationTime");
-				vodTemplateInfo.ModifyTime = _ctx.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].ModifyTime");
+				vodTemplateInfo.IsDefault = _ctx.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].IsDefault");
 				vodTemplateInfo.AppId = _ctx.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].AppId");
+				vodTemplateInfo.TemplateType = _ctx.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].TemplateType");
+				vodTemplateInfo.VodTemplateId = _ctx.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].VodTemplateId");
+				vodTemplateInfo.TemplateConfig = _ctx.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].TemplateConfig");
+				vodTemplateInfo.Source = _ctx.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].Source");
+				vodTemplateInfo.Name = _ctx.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].Name");
+				vodTemplateInfo.ModifyTime = _ctx.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].ModifyTime");
+				vodTemplateInfo.SubTemplateType = _ctx.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].SubTemplateType");
 
 				listVodTemplateResponse_vodTemplateInfoList.Add(vodTemplateInfo);
 			}

@@ -34,27 +34,27 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			getImageInfoResponse.RequestId = _ctx.StringValue("GetImageInfo.RequestId");
 
 			GetImageInfoResponse.GetImageInfo_ImageInfo imageInfo = new GetImageInfoResponse.GetImageInfo_ImageInfo();
-			imageInfo.ImageId = _ctx.StringValue("GetImageInfo.ImageInfo.ImageId");
-			imageInfo.Title = _ctx.StringValue("GetImageInfo.ImageInfo.Title");
 			imageInfo.CreationTime = _ctx.StringValue("GetImageInfo.ImageInfo.CreationTime");
-			imageInfo.ImageType = _ctx.StringValue("GetImageInfo.ImageInfo.ImageType");
-			imageInfo.Tags = _ctx.StringValue("GetImageInfo.ImageInfo.Tags");
-			imageInfo.URL = _ctx.StringValue("GetImageInfo.ImageInfo.URL");
-			imageInfo.CateId = _ctx.LongValue("GetImageInfo.ImageInfo.CateId");
-			imageInfo.CateName = _ctx.StringValue("GetImageInfo.ImageInfo.CateName");
-			imageInfo.Description = _ctx.StringValue("GetImageInfo.ImageInfo.Description");
 			imageInfo.StorageLocation = _ctx.StringValue("GetImageInfo.ImageInfo.StorageLocation");
 			imageInfo.Status = _ctx.StringValue("GetImageInfo.ImageInfo.Status");
-			imageInfo.AppId = _ctx.StringValue("GetImageInfo.ImageInfo.AppId");
+			imageInfo.CateId = _ctx.LongValue("GetImageInfo.ImageInfo.CateId");
+			imageInfo.Tags = _ctx.StringValue("GetImageInfo.ImageInfo.Tags");
 			imageInfo.RegionId = _ctx.StringValue("GetImageInfo.ImageInfo.RegionId");
+			imageInfo.ImageType = _ctx.StringValue("GetImageInfo.ImageInfo.ImageType");
+			imageInfo.CateName = _ctx.StringValue("GetImageInfo.ImageInfo.CateName");
+			imageInfo.Description = _ctx.StringValue("GetImageInfo.ImageInfo.Description");
+			imageInfo.AppId = _ctx.StringValue("GetImageInfo.ImageInfo.AppId");
+			imageInfo.URL = _ctx.StringValue("GetImageInfo.ImageInfo.URL");
+			imageInfo.Title = _ctx.StringValue("GetImageInfo.ImageInfo.Title");
+			imageInfo.ImageId = _ctx.StringValue("GetImageInfo.ImageInfo.ImageId");
 			imageInfo.AuditStatus = _ctx.StringValue("GetImageInfo.ImageInfo.AuditStatus");
 
 			GetImageInfoResponse.GetImageInfo_ImageInfo.GetImageInfo_Mezzanine mezzanine = new GetImageInfoResponse.GetImageInfo_ImageInfo.GetImageInfo_Mezzanine();
+			mezzanine.FileURL = _ctx.StringValue("GetImageInfo.ImageInfo.Mezzanine.FileURL");
 			mezzanine.OriginalFileName = _ctx.StringValue("GetImageInfo.ImageInfo.Mezzanine.OriginalFileName");
-			mezzanine.FileSize = _ctx.StringValue("GetImageInfo.ImageInfo.Mezzanine.FileSize");
 			mezzanine.Width = _ctx.IntegerValue("GetImageInfo.ImageInfo.Mezzanine.Width");
 			mezzanine.Height = _ctx.IntegerValue("GetImageInfo.ImageInfo.Mezzanine.Height");
-			mezzanine.FileURL = _ctx.StringValue("GetImageInfo.ImageInfo.Mezzanine.FileURL");
+			mezzanine.FileSize = _ctx.StringValue("GetImageInfo.ImageInfo.Mezzanine.FileSize");
 			imageInfo.Mezzanine = mezzanine;
 			getImageInfoResponse.ImageInfo = imageInfo;
         

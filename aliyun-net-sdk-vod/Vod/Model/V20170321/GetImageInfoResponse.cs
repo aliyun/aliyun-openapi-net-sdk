@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -56,59 +56,35 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class GetImageInfo_ImageInfo
 		{
 
-			private string imageId;
-
-			private string title;
-
 			private string creationTime;
-
-			private string imageType;
-
-			private string tags;
-
-			private string uRL;
-
-			private long? cateId;
-
-			private string cateName;
-
-			private string description;
 
 			private string storageLocation;
 
 			private string status;
 
-			private string appId;
+			private long? cateId;
+
+			private string tags;
 
 			private string regionId;
+
+			private string imageType;
+
+			private string cateName;
+
+			private string description;
+
+			private string appId;
+
+			private string uRL;
+
+			private string title;
+
+			private string imageId;
 
 			private string auditStatus;
 
 			private GetImageInfo_Mezzanine mezzanine;
-
-			public string ImageId
-			{
-				get
-				{
-					return imageId;
-				}
-				set	
-				{
-					imageId = value;
-				}
-			}
-
-			public string Title
-			{
-				get
-				{
-					return title;
-				}
-				set	
-				{
-					title = value;
-				}
-			}
 
 			public string CreationTime
 			{
@@ -119,78 +95,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					creationTime = value;
-				}
-			}
-
-			public string ImageType
-			{
-				get
-				{
-					return imageType;
-				}
-				set	
-				{
-					imageType = value;
-				}
-			}
-
-			public string Tags
-			{
-				get
-				{
-					return tags;
-				}
-				set	
-				{
-					tags = value;
-				}
-			}
-
-			public string URL
-			{
-				get
-				{
-					return uRL;
-				}
-				set	
-				{
-					uRL = value;
-				}
-			}
-
-			public long? CateId
-			{
-				get
-				{
-					return cateId;
-				}
-				set	
-				{
-					cateId = value;
-				}
-			}
-
-			public string CateName
-			{
-				get
-				{
-					return cateName;
-				}
-				set	
-				{
-					cateName = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
 				}
 			}
 
@@ -218,15 +122,27 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string AppId
+			public long? CateId
 			{
 				get
 				{
-					return appId;
+					return cateId;
 				}
 				set	
 				{
-					appId = value;
+					cateId = value;
+				}
+			}
+
+			public string Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
 				}
 			}
 
@@ -239,6 +155,90 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public string ImageType
+			{
+				get
+				{
+					return imageType;
+				}
+				set	
+				{
+					imageType = value;
+				}
+			}
+
+			public string CateName
+			{
+				get
+				{
+					return cateName;
+				}
+				set	
+				{
+					cateName = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string AppId
+			{
+				get
+				{
+					return appId;
+				}
+				set	
+				{
+					appId = value;
+				}
+			}
+
+			public string URL
+			{
+				get
+				{
+					return uRL;
+				}
+				set	
+				{
+					uRL = value;
+				}
+			}
+
+			public string Title
+			{
+				get
+				{
+					return title;
+				}
+				set	
+				{
+					title = value;
+				}
+			}
+
+			public string ImageId
+			{
+				get
+				{
+					return imageId;
+				}
+				set	
+				{
+					imageId = value;
 				}
 			}
 
@@ -269,15 +269,27 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			public class GetImageInfo_Mezzanine
 			{
 
-				private string originalFileName;
+				private string fileURL;
 
-				private string fileSize;
+				private string originalFileName;
 
 				private int? width;
 
 				private int? height;
 
-				private string fileURL;
+				private string fileSize;
+
+				public string FileURL
+				{
+					get
+					{
+						return fileURL;
+					}
+					set	
+					{
+						fileURL = value;
+					}
+				}
 
 				public string OriginalFileName
 				{
@@ -288,18 +300,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						originalFileName = value;
-					}
-				}
-
-				public string FileSize
-				{
-					get
-					{
-						return fileSize;
-					}
-					set	
-					{
-						fileSize = value;
 					}
 				}
 
@@ -327,15 +327,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string FileURL
+				public string FileSize
 				{
 					get
 					{
-						return fileURL;
+						return fileSize;
 					}
 					set	
 					{
-						fileURL = value;
+						fileSize = value;
 					}
 				}
 			}

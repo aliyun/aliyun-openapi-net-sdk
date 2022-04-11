@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -58,19 +58,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string creationTime;
 
-			private string modifyTime;
-
-			private string name;
+			private string transcodeMode;
 
 			private string isDefault;
 
-			private string locked;
+			private string appId;
 
 			private string transcodeTemplateGroupId;
 
-			private string transcodeMode;
+			private string name;
 
-			private string appId;
+			private string modifyTime;
+
+			private string locked;
 
 			public string CreationTime
 			{
@@ -81,66 +81,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					creationTime = value;
-				}
-			}
-
-			public string ModifyTime
-			{
-				get
-				{
-					return modifyTime;
-				}
-				set	
-				{
-					modifyTime = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string IsDefault
-			{
-				get
-				{
-					return isDefault;
-				}
-				set	
-				{
-					isDefault = value;
-				}
-			}
-
-			public string Locked
-			{
-				get
-				{
-					return locked;
-				}
-				set	
-				{
-					locked = value;
-				}
-			}
-
-			public string TranscodeTemplateGroupId
-			{
-				get
-				{
-					return transcodeTemplateGroupId;
-				}
-				set	
-				{
-					transcodeTemplateGroupId = value;
 				}
 			}
 
@@ -156,6 +96,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string IsDefault
+			{
+				get
+				{
+					return isDefault;
+				}
+				set	
+				{
+					isDefault = value;
+				}
+			}
+
 			public string AppId
 			{
 				get
@@ -165,6 +117,54 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					appId = value;
+				}
+			}
+
+			public string TranscodeTemplateGroupId
+			{
+				get
+				{
+					return transcodeTemplateGroupId;
+				}
+				set	
+				{
+					transcodeTemplateGroupId = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string ModifyTime
+			{
+				get
+				{
+					return modifyTime;
+				}
+				set	
+				{
+					modifyTime = value;
+				}
+			}
+
+			public string Locked
+			{
+				get
+				{
+					return locked;
+				}
+				set	
+				{
+					locked = value;
 				}
 			}
 		}

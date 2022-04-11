@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -56,29 +56,17 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class DescribePlayVideoStatis_VideoPlayStatisDetail
 		{
 
-			private string date;
-
 			private string playDuration;
 
+			private string date;
+
 			private string vV;
+
+			private string title;
 
 			private string uV;
 
 			private string playRange;
-
-			private string title;
-
-			public string Date
-			{
-				get
-				{
-					return date;
-				}
-				set	
-				{
-					date = value;
-				}
-			}
 
 			public string PlayDuration
 			{
@@ -92,6 +80,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string Date
+			{
+				get
+				{
+					return date;
+				}
+				set	
+				{
+					date = value;
+				}
+			}
+
 			public string VV
 			{
 				get
@@ -101,6 +101,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					vV = value;
+				}
+			}
+
+			public string Title
+			{
+				get
+				{
+					return title;
+				}
+				set	
+				{
+					title = value;
 				}
 			}
 
@@ -125,18 +137,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					playRange = value;
-				}
-			}
-
-			public string Title
-			{
-				get
-				{
-					return title;
-				}
-				set	
-				{
-					title = value;
 				}
 			}
 		}

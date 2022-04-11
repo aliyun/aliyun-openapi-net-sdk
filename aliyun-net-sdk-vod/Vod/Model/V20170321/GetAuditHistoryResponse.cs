@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class GetAuditHistoryResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string status;
+
+		private string requestId;
 
 		private long? total;
 
 		private List<GetAuditHistory_History> histories;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public string Status
 		{
@@ -54,6 +42,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				status = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -84,27 +84,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class GetAuditHistory_History
 		{
 
-			private string creationTime;
-
 			private string status;
 
-			private string reason;
+			private string creationTime;
 
 			private string comment;
 
-			private string auditor;
+			private string reason;
 
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
+			private string auditor;
 
 			public string Status
 			{
@@ -118,15 +106,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string Reason
+			public string CreationTime
 			{
 				get
 				{
-					return reason;
+					return creationTime;
 				}
 				set	
 				{
-					reason = value;
+					creationTime = value;
 				}
 			}
 
@@ -139,6 +127,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					comment = value;
+				}
+			}
+
+			public string Reason
+			{
+				get
+				{
+					return reason;
+				}
+				set	
+				{
+					reason = value;
 				}
 			}
 

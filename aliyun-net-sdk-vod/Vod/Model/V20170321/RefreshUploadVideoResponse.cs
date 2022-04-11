@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -27,11 +27,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string requestId;
 
-		private string uploadAuth;
-
 		private string uploadAddress;
 
 		private string videoId;
+
+		private string uploadAuth;
 
 		public string RequestId
 		{
@@ -42,18 +42,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string UploadAuth
-		{
-			get
-			{
-				return uploadAuth;
-			}
-			set	
-			{
-				uploadAuth = value;
 			}
 		}
 
@@ -78,6 +66,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				videoId = value;
+			}
+		}
+
+		public string UploadAuth
+		{
+			get
+			{
+				return uploadAuth;
+			}
+			set	
+			{
+				uploadAuth = value;
 			}
 		}
 	}

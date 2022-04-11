@@ -31,37 +31,37 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			ListLiveRecordVideoResponse listLiveRecordVideoResponse = new ListLiveRecordVideoResponse();
 
 			listLiveRecordVideoResponse.HttpResponse = _ctx.HttpResponse;
-			listLiveRecordVideoResponse.RequestId = _ctx.StringValue("ListLiveRecordVideo.RequestId");
 			listLiveRecordVideoResponse.Total = _ctx.IntegerValue("ListLiveRecordVideo.Total");
+			listLiveRecordVideoResponse.RequestId = _ctx.StringValue("ListLiveRecordVideo.RequestId");
 
 			List<ListLiveRecordVideoResponse.ListLiveRecordVideo_LiveRecordVideo> listLiveRecordVideoResponse_liveRecordVideoList = new List<ListLiveRecordVideoResponse.ListLiveRecordVideo_LiveRecordVideo>();
 			for (int i = 0; i < _ctx.Length("ListLiveRecordVideo.LiveRecordVideoList.Length"); i++) {
 				ListLiveRecordVideoResponse.ListLiveRecordVideo_LiveRecordVideo liveRecordVideo = new ListLiveRecordVideoResponse.ListLiveRecordVideo_LiveRecordVideo();
-				liveRecordVideo.StreamName = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].StreamName");
-				liveRecordVideo.DomainName = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].DomainName");
 				liveRecordVideo.AppName = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].AppName");
 				liveRecordVideo.PlaylistId = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlaylistId");
-				liveRecordVideo.RecordStartTime = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].RecordStartTime");
+				liveRecordVideo.StreamName = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].StreamName");
 				liveRecordVideo.RecordEndTime = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].RecordEndTime");
+				liveRecordVideo.RecordStartTime = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].RecordStartTime");
+				liveRecordVideo.DomainName = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].DomainName");
 
 				ListLiveRecordVideoResponse.ListLiveRecordVideo_LiveRecordVideo.ListLiveRecordVideo_Video video = new ListLiveRecordVideoResponse.ListLiveRecordVideo_LiveRecordVideo.ListLiveRecordVideo_Video();
-				video.VideoId = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.VideoId");
-				video.Title = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.Title");
-				video.Tags = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.Tags");
-				video.Status = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.Status");
-				video.Size = _ctx.LongValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.Size");
-				video.Privilege = _ctx.IntegerValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.Privilege");
-				video.Duration = _ctx.FloatValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.Duration");
-				video.Description = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.Description");
-				video.CustomerId = _ctx.LongValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.CustomerId");
-				video.CreateTime = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.CreateTime");
 				video.CreationTime = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.CreationTime");
-				video.ModifyTime = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.ModifyTime");
-				video.CoverURL = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.CoverURL");
+				video.Status = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.Status");
 				video.CateId = _ctx.IntegerValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.CateId");
-				video.CateName = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.CateName");
+				video.Privilege = _ctx.IntegerValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.Privilege");
+				video.VideoId = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.VideoId");
+				video.CreateTime = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.CreateTime");
 				video.DownloadSwitch = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.DownloadSwitch");
+				video.Tags = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.Tags");
+				video.CateName = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.CateName");
+				video.Description = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.Description");
+				video.Size = _ctx.LongValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.Size");
+				video.CoverURL = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.CoverURL");
 				video.TemplateGroupId = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.TemplateGroupId");
+				video.CustomerId = _ctx.LongValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.CustomerId");
+				video.Duration = _ctx.FloatValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.Duration");
+				video.Title = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.Title");
+				video.ModifyTime = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.ModifyTime");
 
 				List<string> video_snapshots = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].Video.Snapshots.Length"); j++) {
@@ -73,21 +73,21 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				List<ListLiveRecordVideoResponse.ListLiveRecordVideo_LiveRecordVideo.ListLiveRecordVideo_PlayInfo> liveRecordVideo_playInfoList = new List<ListLiveRecordVideoResponse.ListLiveRecordVideo_LiveRecordVideo.ListLiveRecordVideo_PlayInfo>();
 				for (int j = 0; j < _ctx.Length("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList.Length"); j++) {
 					ListLiveRecordVideoResponse.ListLiveRecordVideo_LiveRecordVideo.ListLiveRecordVideo_PlayInfo playInfo = new ListLiveRecordVideoResponse.ListLiveRecordVideo_LiveRecordVideo.ListLiveRecordVideo_PlayInfo();
-					playInfo.Width = _ctx.LongValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Width");
-					playInfo.Height = _ctx.LongValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Height");
-					playInfo.Size = _ctx.LongValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Size");
-					playInfo.PlayURL = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].PlayURL");
-					playInfo.Bitrate = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Bitrate");
-					playInfo.Definition = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Definition");
-					playInfo.Duration = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Duration");
-					playInfo.Format = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Format");
-					playInfo.Fps = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Fps");
-					playInfo.Encrypt = _ctx.LongValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Encrypt");
-					playInfo.Plaintext = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Plaintext");
 					playInfo.Complexity = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Complexity");
-					playInfo.StreamType = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].StreamType");
+					playInfo.Height = _ctx.LongValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Height");
+					playInfo.Bitrate = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Bitrate");
+					playInfo.Encrypt = _ctx.LongValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Encrypt");
+					playInfo.Definition = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Definition");
 					playInfo.Rand = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Rand");
+					playInfo.StreamType = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].StreamType");
 					playInfo.JobId = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].JobId");
+					playInfo.Width = _ctx.LongValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Width");
+					playInfo.Size = _ctx.LongValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Size");
+					playInfo.Plaintext = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Plaintext");
+					playInfo.PlayURL = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].PlayURL");
+					playInfo.Duration = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Duration");
+					playInfo.Fps = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Fps");
+					playInfo.Format = _ctx.StringValue("ListLiveRecordVideo.LiveRecordVideoList["+ i +"].PlayInfoList["+ j +"].Format");
 
 					liveRecordVideo_playInfoList.Add(playInfo);
 				}

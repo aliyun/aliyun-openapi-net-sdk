@@ -31,19 +31,19 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			DescribeVodDomainUsageDataResponse describeVodDomainUsageDataResponse = new DescribeVodDomainUsageDataResponse();
 
 			describeVodDomainUsageDataResponse.HttpResponse = _ctx.HttpResponse;
-			describeVodDomainUsageDataResponse.RequestId = _ctx.StringValue("DescribeVodDomainUsageData.RequestId");
-			describeVodDomainUsageDataResponse.DomainName = _ctx.StringValue("DescribeVodDomainUsageData.DomainName");
-			describeVodDomainUsageDataResponse.StartTime = _ctx.StringValue("DescribeVodDomainUsageData.StartTime");
 			describeVodDomainUsageDataResponse.EndTime = _ctx.StringValue("DescribeVodDomainUsageData.EndTime");
 			describeVodDomainUsageDataResponse.Type = _ctx.StringValue("DescribeVodDomainUsageData.Type");
+			describeVodDomainUsageDataResponse.StartTime = _ctx.StringValue("DescribeVodDomainUsageData.StartTime");
+			describeVodDomainUsageDataResponse.RequestId = _ctx.StringValue("DescribeVodDomainUsageData.RequestId");
 			describeVodDomainUsageDataResponse.Area = _ctx.StringValue("DescribeVodDomainUsageData.Area");
+			describeVodDomainUsageDataResponse.DomainName = _ctx.StringValue("DescribeVodDomainUsageData.DomainName");
 			describeVodDomainUsageDataResponse.DataInterval = _ctx.StringValue("DescribeVodDomainUsageData.DataInterval");
 
 			List<DescribeVodDomainUsageDataResponse.DescribeVodDomainUsageData_DataModule> describeVodDomainUsageDataResponse_usageDataPerInterval = new List<DescribeVodDomainUsageDataResponse.DescribeVodDomainUsageData_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeVodDomainUsageData.UsageDataPerInterval.Length"); i++) {
 				DescribeVodDomainUsageDataResponse.DescribeVodDomainUsageData_DataModule dataModule = new DescribeVodDomainUsageDataResponse.DescribeVodDomainUsageData_DataModule();
-				dataModule.TimeStamp = _ctx.StringValue("DescribeVodDomainUsageData.UsageDataPerInterval["+ i +"].TimeStamp");
 				dataModule._Value = _ctx.StringValue("DescribeVodDomainUsageData.UsageDataPerInterval["+ i +"].Value");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeVodDomainUsageData.UsageDataPerInterval["+ i +"].TimeStamp");
 
 				describeVodDomainUsageDataResponse_usageDataPerInterval.Add(dataModule);
 			}

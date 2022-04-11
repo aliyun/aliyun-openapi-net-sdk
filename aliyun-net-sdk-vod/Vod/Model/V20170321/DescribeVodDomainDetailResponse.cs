@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -58,25 +58,25 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string gmtCreated;
 
-			private string gmtModified;
+			private string weight;
 
-			private string domainStatus;
-
-			private string cname;
-
-			private string domainName;
+			private string sSLPub;
 
 			private string description;
 
 			private string sSLProtocol;
 
-			private string sSLPub;
+			private string certName;
 
 			private string scope;
 
-			private string certName;
+			private string cname;
 
-			private string weight;
+			private string domainStatus;
+
+			private string gmtModified;
+
+			private string domainName;
 
 			private List<DescribeVodDomainDetail_Source> sources;
 
@@ -92,51 +92,27 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string GmtModified
+			public string Weight
 			{
 				get
 				{
-					return gmtModified;
+					return weight;
 				}
 				set	
 				{
-					gmtModified = value;
+					weight = value;
 				}
 			}
 
-			public string DomainStatus
+			public string SSLPub
 			{
 				get
 				{
-					return domainStatus;
+					return sSLPub;
 				}
 				set	
 				{
-					domainStatus = value;
-				}
-			}
-
-			public string Cname
-			{
-				get
-				{
-					return cname;
-				}
-				set	
-				{
-					cname = value;
-				}
-			}
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
+					sSLPub = value;
 				}
 			}
 
@@ -164,15 +140,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string SSLPub
+			public string CertName
 			{
 				get
 				{
-					return sSLPub;
+					return certName;
 				}
 				set	
 				{
-					sSLPub = value;
+					certName = value;
 				}
 			}
 
@@ -188,27 +164,51 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string CertName
+			public string Cname
 			{
 				get
 				{
-					return certName;
+					return cname;
 				}
 				set	
 				{
-					certName = value;
+					cname = value;
 				}
 			}
 
-			public string Weight
+			public string DomainStatus
 			{
 				get
 				{
-					return weight;
+					return domainStatus;
 				}
 				set	
 				{
-					weight = value;
+					domainStatus = value;
+				}
+			}
+
+			public string GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 
@@ -227,27 +227,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			public class DescribeVodDomainDetail_Source
 			{
 
-				private string content;
-
 				private string type;
-
-				private int? port;
-
-				private string enabled;
 
 				private string priority;
 
-				public string Content
-				{
-					get
-					{
-						return content;
-					}
-					set	
-					{
-						content = value;
-					}
-				}
+				private int? port;
+
+				private string content;
+
+				private string enabled;
 
 				public string Type
 				{
@@ -258,6 +246,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						type = value;
+					}
+				}
+
+				public string Priority
+				{
+					get
+					{
+						return priority;
+					}
+					set	
+					{
+						priority = value;
 					}
 				}
 
@@ -273,6 +273,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
+				public string Content
+				{
+					get
+					{
+						return content;
+					}
+					set	
+					{
+						content = value;
+					}
+				}
+
 				public string Enabled
 				{
 					get
@@ -282,18 +294,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						enabled = value;
-					}
-				}
-
-				public string Priority
-				{
-					get
-					{
-						return priority;
-					}
-					set	
-					{
-						priority = value;
 					}
 				}
 			}

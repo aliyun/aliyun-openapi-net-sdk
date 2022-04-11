@@ -34,9 +34,9 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			listSnapshotsResponse.RequestId = _ctx.StringValue("ListSnapshots.RequestId");
 
 			ListSnapshotsResponse.ListSnapshots_MediaSnapshot mediaSnapshot = new ListSnapshotsResponse.ListSnapshots_MediaSnapshot();
-			mediaSnapshot.Total = _ctx.LongValue("ListSnapshots.MediaSnapshot.Total");
-			mediaSnapshot.Regular = _ctx.StringValue("ListSnapshots.MediaSnapshot.Regular");
 			mediaSnapshot.CreationTime = _ctx.StringValue("ListSnapshots.MediaSnapshot.CreationTime");
+			mediaSnapshot.Regular = _ctx.StringValue("ListSnapshots.MediaSnapshot.Regular");
+			mediaSnapshot.Total = _ctx.LongValue("ListSnapshots.MediaSnapshot.Total");
 			mediaSnapshot.JobId = _ctx.StringValue("ListSnapshots.MediaSnapshot.JobId");
 
 			List<ListSnapshotsResponse.ListSnapshots_MediaSnapshot.ListSnapshots_Snapshot> mediaSnapshot_snapshots = new List<ListSnapshotsResponse.ListSnapshots_MediaSnapshot.ListSnapshots_Snapshot>();

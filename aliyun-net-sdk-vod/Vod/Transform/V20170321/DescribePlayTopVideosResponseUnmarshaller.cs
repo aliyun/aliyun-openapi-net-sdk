@@ -31,19 +31,19 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			DescribePlayTopVideosResponse describePlayTopVideosResponse = new DescribePlayTopVideosResponse();
 
 			describePlayTopVideosResponse.HttpResponse = _ctx.HttpResponse;
-			describePlayTopVideosResponse.RequestId = _ctx.StringValue("DescribePlayTopVideos.RequestId");
 			describePlayTopVideosResponse.PageNo = _ctx.LongValue("DescribePlayTopVideos.PageNo");
+			describePlayTopVideosResponse.RequestId = _ctx.StringValue("DescribePlayTopVideos.RequestId");
 			describePlayTopVideosResponse.PageSize = _ctx.LongValue("DescribePlayTopVideos.PageSize");
 			describePlayTopVideosResponse.TotalNum = _ctx.LongValue("DescribePlayTopVideos.TotalNum");
 
 			List<DescribePlayTopVideosResponse.DescribePlayTopVideos_TopPlayVideoStatis> describePlayTopVideosResponse_topPlayVideos = new List<DescribePlayTopVideosResponse.DescribePlayTopVideos_TopPlayVideoStatis>();
 			for (int i = 0; i < _ctx.Length("DescribePlayTopVideos.TopPlayVideos.Length"); i++) {
 				DescribePlayTopVideosResponse.DescribePlayTopVideos_TopPlayVideoStatis topPlayVideoStatis = new DescribePlayTopVideosResponse.DescribePlayTopVideos_TopPlayVideoStatis();
-				topPlayVideoStatis.PlayDuration = _ctx.StringValue("DescribePlayTopVideos.TopPlayVideos["+ i +"].PlayDuration");
-				topPlayVideoStatis.VV = _ctx.StringValue("DescribePlayTopVideos.TopPlayVideos["+ i +"].VV");
-				topPlayVideoStatis.UV = _ctx.StringValue("DescribePlayTopVideos.TopPlayVideos["+ i +"].UV");
-				topPlayVideoStatis.VideoId = _ctx.StringValue("DescribePlayTopVideos.TopPlayVideos["+ i +"].VideoId");
 				topPlayVideoStatis.Title = _ctx.StringValue("DescribePlayTopVideos.TopPlayVideos["+ i +"].Title");
+				topPlayVideoStatis.VV = _ctx.StringValue("DescribePlayTopVideos.TopPlayVideos["+ i +"].VV");
+				topPlayVideoStatis.PlayDuration = _ctx.StringValue("DescribePlayTopVideos.TopPlayVideos["+ i +"].PlayDuration");
+				topPlayVideoStatis.VideoId = _ctx.StringValue("DescribePlayTopVideos.TopPlayVideos["+ i +"].VideoId");
+				topPlayVideoStatis.UV = _ctx.StringValue("DescribePlayTopVideos.TopPlayVideos["+ i +"].UV");
 
 				describePlayTopVideosResponse_topPlayVideos.Add(topPlayVideoStatis);
 			}

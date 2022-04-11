@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -56,37 +56,49 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class GetEditingProject_Project
 		{
 
-			private string projectId;
+			private string storageLocation;
+
+			private string status;
 
 			private string creationTime;
 
 			private string modifiedTime;
 
-			private string status;
+			private string fEExtend;
 
 			private string description;
 
-			private string title;
+			private string coverURL;
+
+			private string projectId;
 
 			private string timeline;
 
-			private string coverURL;
-
-			private string storageLocation;
+			private string title;
 
 			private string regionId;
 
-			private string fEExtend;
-
-			public string ProjectId
+			public string StorageLocation
 			{
 				get
 				{
-					return projectId;
+					return storageLocation;
 				}
 				set	
 				{
-					projectId = value;
+					storageLocation = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 
@@ -114,15 +126,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string Status
+			public string FEExtend
 			{
 				get
 				{
-					return status;
+					return fEExtend;
 				}
 				set	
 				{
-					status = value;
+					fEExtend = value;
 				}
 			}
 
@@ -138,15 +150,27 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string Title
+			public string CoverURL
 			{
 				get
 				{
-					return title;
+					return coverURL;
 				}
 				set	
 				{
-					title = value;
+					coverURL = value;
+				}
+			}
+
+			public string ProjectId
+			{
+				get
+				{
+					return projectId;
+				}
+				set	
+				{
+					projectId = value;
 				}
 			}
 
@@ -162,27 +186,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string CoverURL
+			public string Title
 			{
 				get
 				{
-					return coverURL;
+					return title;
 				}
 				set	
 				{
-					coverURL = value;
-				}
-			}
-
-			public string StorageLocation
-			{
-				get
-				{
-					return storageLocation;
-				}
-				set	
-				{
-					storageLocation = value;
+					title = value;
 				}
 			}
 
@@ -195,18 +207,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					regionId = value;
-				}
-			}
-
-			public string FEExtend
-			{
-				get
-				{
-					return fEExtend;
-				}
-				set	
-				{
-					fEExtend = value;
 				}
 			}
 		}

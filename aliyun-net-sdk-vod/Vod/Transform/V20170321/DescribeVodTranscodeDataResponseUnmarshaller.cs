@@ -31,8 +31,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			DescribeVodTranscodeDataResponse describeVodTranscodeDataResponse = new DescribeVodTranscodeDataResponse();
 
 			describeVodTranscodeDataResponse.HttpResponse = _ctx.HttpResponse;
-			describeVodTranscodeDataResponse.RequestId = _ctx.StringValue("DescribeVodTranscodeData.RequestId");
 			describeVodTranscodeDataResponse.DataInterval = _ctx.StringValue("DescribeVodTranscodeData.DataInterval");
+			describeVodTranscodeDataResponse.RequestId = _ctx.StringValue("DescribeVodTranscodeData.RequestId");
 
 			List<DescribeVodTranscodeDataResponse.DescribeVodTranscodeData_TranscodeDataItem> describeVodTranscodeDataResponse_transcodeData = new List<DescribeVodTranscodeDataResponse.DescribeVodTranscodeData_TranscodeDataItem>();
 			for (int i = 0; i < _ctx.Length("DescribeVodTranscodeData.TranscodeData.Length"); i++) {

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -129,23 +129,23 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			public class DescribePlayUserTotal_VV
 			{
 
-				private string android;
+				private string flash;
 
 				private string iOS;
 
-				private string flash;
-
 				private string hTML5;
 
-				public string Android
+				private string android;
+
+				public string Flash
 				{
 					get
 					{
-						return android;
+						return flash;
 					}
 					set	
 					{
-						android = value;
+						flash = value;
 					}
 				}
 
@@ -161,18 +161,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string Flash
-				{
-					get
-					{
-						return flash;
-					}
-					set	
-					{
-						flash = value;
-					}
-				}
-
 				public string HTML5
 				{
 					get
@@ -182,6 +170,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						hTML5 = value;
+					}
+				}
+
+				public string Android
+				{
+					get
+					{
+						return android;
+					}
+					set	
+					{
+						android = value;
 					}
 				}
 			}
@@ -189,23 +189,23 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			public class DescribePlayUserTotal_UV
 			{
 
-				private string android;
+				private string flash;
 
 				private string iOS;
 
-				private string flash;
-
 				private string hTML5;
 
-				public string Android
+				private string android;
+
+				public string Flash
 				{
 					get
 					{
-						return android;
+						return flash;
 					}
 					set	
 					{
-						android = value;
+						flash = value;
 					}
 				}
 
@@ -221,18 +221,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string Flash
-				{
-					get
-					{
-						return flash;
-					}
-					set	
-					{
-						flash = value;
-					}
-				}
-
 				public string HTML5
 				{
 					get
@@ -242,6 +230,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						hTML5 = value;
+					}
+				}
+
+				public string Android
+				{
+					get
+					{
+						return android;
+					}
+					set	
+					{
+						android = value;
 					}
 				}
 			}

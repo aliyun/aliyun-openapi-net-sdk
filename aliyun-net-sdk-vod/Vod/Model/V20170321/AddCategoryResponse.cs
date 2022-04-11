@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -56,37 +56,25 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class AddCategory_Category
 		{
 
-			private long? cateId;
-
-			private string cateName;
+			private string type;
 
 			private long? parentId;
 
+			private string cateName;
+
+			private long? cateId;
+
 			private long? level;
 
-			private string type;
-
-			public long? CateId
+			public string Type
 			{
 				get
 				{
-					return cateId;
+					return type;
 				}
 				set	
 				{
-					cateId = value;
-				}
-			}
-
-			public string CateName
-			{
-				get
-				{
-					return cateName;
-				}
-				set	
-				{
-					cateName = value;
+					type = value;
 				}
 			}
 
@@ -102,6 +90,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string CateName
+			{
+				get
+				{
+					return cateName;
+				}
+				set	
+				{
+					cateName = value;
+				}
+			}
+
+			public long? CateId
+			{
+				get
+				{
+					return cateId;
+				}
+				set	
+				{
+					cateId = value;
+				}
+			}
+
 			public long? Level
 			{
 				get
@@ -111,18 +123,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					level = value;
-				}
-			}
-
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
 				}
 			}
 		}

@@ -31,17 +31,17 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			GetAuditHistoryResponse getAuditHistoryResponse = new GetAuditHistoryResponse();
 
 			getAuditHistoryResponse.HttpResponse = _ctx.HttpResponse;
-			getAuditHistoryResponse.RequestId = _ctx.StringValue("GetAuditHistory.RequestId");
 			getAuditHistoryResponse.Status = _ctx.StringValue("GetAuditHistory.Status");
+			getAuditHistoryResponse.RequestId = _ctx.StringValue("GetAuditHistory.RequestId");
 			getAuditHistoryResponse.Total = _ctx.LongValue("GetAuditHistory.Total");
 
 			List<GetAuditHistoryResponse.GetAuditHistory_History> getAuditHistoryResponse_histories = new List<GetAuditHistoryResponse.GetAuditHistory_History>();
 			for (int i = 0; i < _ctx.Length("GetAuditHistory.Histories.Length"); i++) {
 				GetAuditHistoryResponse.GetAuditHistory_History history = new GetAuditHistoryResponse.GetAuditHistory_History();
-				history.CreationTime = _ctx.StringValue("GetAuditHistory.Histories["+ i +"].CreationTime");
 				history.Status = _ctx.StringValue("GetAuditHistory.Histories["+ i +"].Status");
-				history.Reason = _ctx.StringValue("GetAuditHistory.Histories["+ i +"].Reason");
+				history.CreationTime = _ctx.StringValue("GetAuditHistory.Histories["+ i +"].CreationTime");
 				history.Comment = _ctx.StringValue("GetAuditHistory.Histories["+ i +"].Comment");
+				history.Reason = _ctx.StringValue("GetAuditHistory.Histories["+ i +"].Reason");
 				history.Auditor = _ctx.StringValue("GetAuditHistory.Histories["+ i +"].Auditor");
 
 				getAuditHistoryResponse_histories.Add(history);

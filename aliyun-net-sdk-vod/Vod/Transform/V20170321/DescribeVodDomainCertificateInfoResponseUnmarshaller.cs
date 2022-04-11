@@ -36,15 +36,15 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<DescribeVodDomainCertificateInfoResponse.DescribeVodDomainCertificateInfo_CertInfo> describeVodDomainCertificateInfoResponse_certInfos = new List<DescribeVodDomainCertificateInfoResponse.DescribeVodDomainCertificateInfo_CertInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeVodDomainCertificateInfo.CertInfos.Length"); i++) {
 				DescribeVodDomainCertificateInfoResponse.DescribeVodDomainCertificateInfo_CertInfo certInfo = new DescribeVodDomainCertificateInfoResponse.DescribeVodDomainCertificateInfo_CertInfo();
-				certInfo.DomainName = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].DomainName");
-				certInfo.CertName = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertName");
-				certInfo.CertDomainName = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertDomainName");
-				certInfo.CertExpireTime = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertExpireTime");
+				certInfo.Status = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].Status");
 				certInfo.CertLife = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertLife");
-				certInfo.CertOrg = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertOrg");
+				certInfo.CertExpireTime = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertExpireTime");
 				certInfo.CertType = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertType");
 				certInfo.ServerCertificateStatus = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].ServerCertificateStatus");
-				certInfo.Status = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].Status");
+				certInfo.CertDomainName = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertDomainName");
+				certInfo.CertName = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertName");
+				certInfo.CertOrg = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].CertOrg");
+				certInfo.DomainName = _ctx.StringValue("DescribeVodDomainCertificateInfo.CertInfos["+ i +"].DomainName");
 
 				describeVodDomainCertificateInfoResponse_certInfos.Add(certInfo);
 			}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			DeleteAITemplateResponse deleteAITemplateResponse = new DeleteAITemplateResponse();
 
 			deleteAITemplateResponse.HttpResponse = _ctx.HttpResponse;
-			deleteAITemplateResponse.RequestId = _ctx.StringValue("DeleteAITemplate.RequestId");
 			deleteAITemplateResponse.TemplateId = _ctx.StringValue("DeleteAITemplate.TemplateId");
+			deleteAITemplateResponse.RequestId = _ctx.StringValue("DeleteAITemplate.RequestId");
         
 			return deleteAITemplateResponse;
         }

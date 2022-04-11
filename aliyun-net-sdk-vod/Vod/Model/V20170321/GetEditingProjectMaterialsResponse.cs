@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -56,75 +56,39 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class GetEditingProjectMaterials_Material
 		{
 
-			private string materialId;
-
-			private string title;
-
-			private string tags;
-
 			private string status;
-
-			private long? size;
-
-			private float? duration;
-
-			private string description;
 
 			private string creationTime;
 
-			private string modifiedTime;
-
-			private string coverURL;
-
 			private int? cateId;
-
-			private string cateName;
-
-			private string source;
-
-			private string spriteConfig;
 
 			private string materialType;
 
-			private List<string> snapshots;
+			private string tags;
+
+			private string spriteConfig;
+
+			private string source;
+
+			private string cateName;
+
+			private string modifiedTime;
+
+			private string description;
+
+			private string materialId;
+
+			private long? size;
+
+			private string coverURL;
+
+			private float? duration;
+
+			private string title;
 
 			private List<string> sprites;
 
-			public string MaterialId
-			{
-				get
-				{
-					return materialId;
-				}
-				set	
-				{
-					materialId = value;
-				}
-			}
-
-			public string Title
-			{
-				get
-				{
-					return title;
-				}
-				set	
-				{
-					title = value;
-				}
-			}
-
-			public string Tags
-			{
-				get
-				{
-					return tags;
-				}
-				set	
-				{
-					tags = value;
-				}
-			}
+			private List<string> snapshots;
 
 			public string Status
 			{
@@ -135,42 +99,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					status = value;
-				}
-			}
-
-			public long? Size
-			{
-				get
-				{
-					return size;
-				}
-				set	
-				{
-					size = value;
-				}
-			}
-
-			public float? Duration
-			{
-				get
-				{
-					return duration;
-				}
-				set	
-				{
-					duration = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
 				}
 			}
 
@@ -186,30 +114,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string ModifiedTime
-			{
-				get
-				{
-					return modifiedTime;
-				}
-				set	
-				{
-					modifiedTime = value;
-				}
-			}
-
-			public string CoverURL
-			{
-				get
-				{
-					return coverURL;
-				}
-				set	
-				{
-					coverURL = value;
-				}
-			}
-
 			public int? CateId
 			{
 				get
@@ -219,42 +123,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					cateId = value;
-				}
-			}
-
-			public string CateName
-			{
-				get
-				{
-					return cateName;
-				}
-				set	
-				{
-					cateName = value;
-				}
-			}
-
-			public string Source
-			{
-				get
-				{
-					return source;
-				}
-				set	
-				{
-					source = value;
-				}
-			}
-
-			public string SpriteConfig
-			{
-				get
-				{
-					return spriteConfig;
-				}
-				set	
-				{
-					spriteConfig = value;
 				}
 			}
 
@@ -270,15 +138,135 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public List<string> Snapshots
+			public string Tags
 			{
 				get
 				{
-					return snapshots;
+					return tags;
 				}
 				set	
 				{
-					snapshots = value;
+					tags = value;
+				}
+			}
+
+			public string SpriteConfig
+			{
+				get
+				{
+					return spriteConfig;
+				}
+				set	
+				{
+					spriteConfig = value;
+				}
+			}
+
+			public string Source
+			{
+				get
+				{
+					return source;
+				}
+				set	
+				{
+					source = value;
+				}
+			}
+
+			public string CateName
+			{
+				get
+				{
+					return cateName;
+				}
+				set	
+				{
+					cateName = value;
+				}
+			}
+
+			public string ModifiedTime
+			{
+				get
+				{
+					return modifiedTime;
+				}
+				set	
+				{
+					modifiedTime = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string MaterialId
+			{
+				get
+				{
+					return materialId;
+				}
+				set	
+				{
+					materialId = value;
+				}
+			}
+
+			public long? Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
+				}
+			}
+
+			public string CoverURL
+			{
+				get
+				{
+					return coverURL;
+				}
+				set	
+				{
+					coverURL = value;
+				}
+			}
+
+			public float? Duration
+			{
+				get
+				{
+					return duration;
+				}
+				set	
+				{
+					duration = value;
+				}
+			}
+
+			public string Title
+			{
+				get
+				{
+					return title;
+				}
+				set	
+				{
+					title = value;
 				}
 			}
 
@@ -291,6 +279,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					sprites = value;
+				}
+			}
+
+			public List<string> Snapshots
+			{
+				get
+				{
+					return snapshots;
+				}
+				set	
+				{
+					snapshots = value;
 				}
 			}
 		}

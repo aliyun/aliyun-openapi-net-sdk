@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -25,95 +25,23 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class DescribeVodRefreshQuotaResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string urlQuota;
-
-		private string dirQuota;
-
-		private string urlRemain;
-
-		private string dirRemain;
-
-		private string preloadQuota;
-
 		private string blockQuota;
 
 		private string preloadRemain;
 
+		private string requestId;
+
 		private string blockRemain;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string dirRemain;
 
-		public string UrlQuota
-		{
-			get
-			{
-				return urlQuota;
-			}
-			set	
-			{
-				urlQuota = value;
-			}
-		}
+		private string urlRemain;
 
-		public string DirQuota
-		{
-			get
-			{
-				return dirQuota;
-			}
-			set	
-			{
-				dirQuota = value;
-			}
-		}
+		private string dirQuota;
 
-		public string UrlRemain
-		{
-			get
-			{
-				return urlRemain;
-			}
-			set	
-			{
-				urlRemain = value;
-			}
-		}
+		private string urlQuota;
 
-		public string DirRemain
-		{
-			get
-			{
-				return dirRemain;
-			}
-			set	
-			{
-				dirRemain = value;
-			}
-		}
-
-		public string PreloadQuota
-		{
-			get
-			{
-				return preloadQuota;
-			}
-			set	
-			{
-				preloadQuota = value;
-			}
-		}
+		private string preloadQuota;
 
 		public string BlockQuota
 		{
@@ -139,6 +67,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public string BlockRemain
 		{
 			get
@@ -148,6 +88,66 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				blockRemain = value;
+			}
+		}
+
+		public string DirRemain
+		{
+			get
+			{
+				return dirRemain;
+			}
+			set	
+			{
+				dirRemain = value;
+			}
+		}
+
+		public string UrlRemain
+		{
+			get
+			{
+				return urlRemain;
+			}
+			set	
+			{
+				urlRemain = value;
+			}
+		}
+
+		public string DirQuota
+		{
+			get
+			{
+				return dirQuota;
+			}
+			set	
+			{
+				dirQuota = value;
+			}
+		}
+
+		public string UrlQuota
+		{
+			get
+			{
+				return urlQuota;
+			}
+			set	
+			{
+				urlQuota = value;
+			}
+		}
+
+		public string PreloadQuota
+		{
+			get
+			{
+				return preloadQuota;
+			}
+			set	
+			{
+				preloadQuota = value;
 			}
 		}
 	}

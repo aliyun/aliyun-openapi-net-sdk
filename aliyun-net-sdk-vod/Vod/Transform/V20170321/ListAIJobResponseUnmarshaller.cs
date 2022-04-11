@@ -42,15 +42,15 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<ListAIJobResponse.ListAIJob_AIJob> listAIJobResponse_aIJobList = new List<ListAIJobResponse.ListAIJob_AIJob>();
 			for (int i = 0; i < _ctx.Length("ListAIJob.AIJobList.Length"); i++) {
 				ListAIJobResponse.ListAIJob_AIJob aIJob = new ListAIJobResponse.ListAIJob_AIJob();
-				aIJob.JobId = _ctx.StringValue("ListAIJob.AIJobList["+ i +"].JobId");
-				aIJob.MediaId = _ctx.StringValue("ListAIJob.AIJobList["+ i +"].MediaId");
-				aIJob.Type = _ctx.StringValue("ListAIJob.AIJobList["+ i +"].Type");
+				aIJob.CreationTime = _ctx.StringValue("ListAIJob.AIJobList["+ i +"].CreationTime");
 				aIJob.Status = _ctx.StringValue("ListAIJob.AIJobList["+ i +"].Status");
+				aIJob.Type = _ctx.StringValue("ListAIJob.AIJobList["+ i +"].Type");
+				aIJob.Data = _ctx.StringValue("ListAIJob.AIJobList["+ i +"].Data");
+				aIJob.CompleteTime = _ctx.StringValue("ListAIJob.AIJobList["+ i +"].CompleteTime");
+				aIJob.JobId = _ctx.StringValue("ListAIJob.AIJobList["+ i +"].JobId");
 				aIJob.Code = _ctx.StringValue("ListAIJob.AIJobList["+ i +"].Code");
 				aIJob.Message = _ctx.StringValue("ListAIJob.AIJobList["+ i +"].Message");
-				aIJob.CreationTime = _ctx.StringValue("ListAIJob.AIJobList["+ i +"].CreationTime");
-				aIJob.CompleteTime = _ctx.StringValue("ListAIJob.AIJobList["+ i +"].CompleteTime");
-				aIJob.Data = _ctx.StringValue("ListAIJob.AIJobList["+ i +"].Data");
+				aIJob.MediaId = _ctx.StringValue("ListAIJob.AIJobList["+ i +"].MediaId");
 
 				listAIJobResponse_aIJobList.Add(aIJob);
 			}

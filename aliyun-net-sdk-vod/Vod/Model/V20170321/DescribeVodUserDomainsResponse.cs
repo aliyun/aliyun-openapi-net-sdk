@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -98,33 +98,69 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class DescribeVodUserDomains_PageData
 		{
 
-			private string domainName;
+			private string gmtCreated;
+
+			private string sslProtocol;
+
+			private string description;
+
+			private string sandbox;
 
 			private string cname;
 
 			private string domainStatus;
 
-			private string gmtCreated;
-
 			private string gmtModified;
 
-			private string description;
-
-			private string sslProtocol;
-
-			private string sandbox;
+			private string domainName;
 
 			private List<DescribeVodUserDomains_Source> sources;
 
-			public string DomainName
+			public string GmtCreated
 			{
 				get
 				{
-					return domainName;
+					return gmtCreated;
 				}
 				set	
 				{
-					domainName = value;
+					gmtCreated = value;
+				}
+			}
+
+			public string SslProtocol
+			{
+				get
+				{
+					return sslProtocol;
+				}
+				set	
+				{
+					sslProtocol = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string Sandbox
+			{
+				get
+				{
+					return sandbox;
+				}
+				set	
+				{
+					sandbox = value;
 				}
 			}
 
@@ -152,18 +188,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string GmtCreated
-			{
-				get
-				{
-					return gmtCreated;
-				}
-				set	
-				{
-					gmtCreated = value;
-				}
-			}
-
 			public string GmtModified
 			{
 				get
@@ -176,39 +200,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string Description
+			public string DomainName
 			{
 				get
 				{
-					return description;
+					return domainName;
 				}
 				set	
 				{
-					description = value;
-				}
-			}
-
-			public string SslProtocol
-			{
-				get
-				{
-					return sslProtocol;
-				}
-				set	
-				{
-					sslProtocol = value;
-				}
-			}
-
-			public string Sandbox
-			{
-				get
-				{
-					return sandbox;
-				}
-				set	
-				{
-					sandbox = value;
+					domainName = value;
 				}
 			}
 
@@ -229,11 +229,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private string type;
 
-				private string content;
+				private string priority;
 
 				private int? port;
 
-				private string priority;
+				private string content;
 
 				public string Type
 				{
@@ -247,15 +247,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string Content
+				public string Priority
 				{
 					get
 					{
-						return content;
+						return priority;
 					}
 					set	
 					{
-						content = value;
+						priority = value;
 					}
 				}
 
@@ -271,15 +271,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string Priority
+				public string Content
 				{
 					get
 					{
-						return priority;
+						return content;
 					}
 					set	
 					{
-						priority = value;
+						content = value;
 					}
 				}
 			}

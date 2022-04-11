@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -149,21 +149,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					public class GetMediaDNAResult_Input
 					{
 
-						private string start;
-
 						private string duration;
 
-						public string Start
-						{
-							get
-							{
-								return start;
-							}
-							set	
-							{
-								start = value;
-							}
-						}
+						private string start;
 
 						public string Duration
 						{
@@ -174,6 +162,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 							set	
 							{
 								duration = value;
+							}
+						}
+
+						public string Start
+						{
+							get
+							{
+								return start;
+							}
+							set	
+							{
+								start = value;
 							}
 						}
 					}
@@ -181,21 +181,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					public class GetMediaDNAResult_Duplication
 					{
 
-						private string start;
-
 						private string duration;
 
-						public string Start
-						{
-							get
-							{
-								return start;
-							}
-							set	
-							{
-								start = value;
-							}
-						}
+						private string start;
 
 						public string Duration
 						{
@@ -206,6 +194,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 							set	
 							{
 								duration = value;
+							}
+						}
+
+						public string Start
+						{
+							get
+							{
+								return start;
+							}
+							set	
+							{
+								start = value;
 							}
 						}
 					}

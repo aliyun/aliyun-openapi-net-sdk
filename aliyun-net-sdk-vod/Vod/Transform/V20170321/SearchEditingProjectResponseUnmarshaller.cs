@@ -31,22 +31,22 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			SearchEditingProjectResponse searchEditingProjectResponse = new SearchEditingProjectResponse();
 
 			searchEditingProjectResponse.HttpResponse = _ctx.HttpResponse;
-			searchEditingProjectResponse.RequestId = _ctx.StringValue("SearchEditingProject.RequestId");
 			searchEditingProjectResponse.Total = _ctx.IntegerValue("SearchEditingProject.Total");
+			searchEditingProjectResponse.RequestId = _ctx.StringValue("SearchEditingProject.RequestId");
 
 			List<SearchEditingProjectResponse.SearchEditingProject_Project> searchEditingProjectResponse_projectList = new List<SearchEditingProjectResponse.SearchEditingProject_Project>();
 			for (int i = 0; i < _ctx.Length("SearchEditingProject.ProjectList.Length"); i++) {
 				SearchEditingProjectResponse.SearchEditingProject_Project project = new SearchEditingProjectResponse.SearchEditingProject_Project();
-				project.ProjectId = _ctx.StringValue("SearchEditingProject.ProjectList["+ i +"].ProjectId");
+				project.StorageLocation = _ctx.StringValue("SearchEditingProject.ProjectList["+ i +"].StorageLocation");
+				project.Status = _ctx.StringValue("SearchEditingProject.ProjectList["+ i +"].Status");
 				project.CreationTime = _ctx.StringValue("SearchEditingProject.ProjectList["+ i +"].CreationTime");
 				project.ModifiedTime = _ctx.StringValue("SearchEditingProject.ProjectList["+ i +"].ModifiedTime");
-				project.Status = _ctx.StringValue("SearchEditingProject.ProjectList["+ i +"].Status");
 				project.Description = _ctx.StringValue("SearchEditingProject.ProjectList["+ i +"].Description");
-				project.Title = _ctx.StringValue("SearchEditingProject.ProjectList["+ i +"].Title");
 				project.CoverURL = _ctx.StringValue("SearchEditingProject.ProjectList["+ i +"].CoverURL");
-				project.StorageLocation = _ctx.StringValue("SearchEditingProject.ProjectList["+ i +"].StorageLocation");
-				project.RegionId = _ctx.StringValue("SearchEditingProject.ProjectList["+ i +"].RegionId");
+				project.ProjectId = _ctx.StringValue("SearchEditingProject.ProjectList["+ i +"].ProjectId");
 				project.Duration = _ctx.FloatValue("SearchEditingProject.ProjectList["+ i +"].Duration");
+				project.Title = _ctx.StringValue("SearchEditingProject.ProjectList["+ i +"].Title");
+				project.RegionId = _ctx.StringValue("SearchEditingProject.ProjectList["+ i +"].RegionId");
 
 				searchEditingProjectResponse_projectList.Add(project);
 			}

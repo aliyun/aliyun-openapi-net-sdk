@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -56,15 +56,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class GetAIImageJobs_AIImageJob
 		{
 
+			private string status;
+
 			private string creationTime;
 
-			private string jobId;
-
-			private string templateId;
+			private string aIImageResult;
 
 			private string videoId;
 
-			private string aIImageResult;
+			private string jobId;
 
 			private string userData;
 
@@ -72,9 +72,21 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string message;
 
-			private string status;
-
 			private string templateConfig;
+
+			private string templateId;
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
 
 			public string CreationTime
 			{
@@ -88,27 +100,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string JobId
+			public string AIImageResult
 			{
 				get
 				{
-					return jobId;
+					return aIImageResult;
 				}
 				set	
 				{
-					jobId = value;
-				}
-			}
-
-			public string TemplateId
-			{
-				get
-				{
-					return templateId;
-				}
-				set	
-				{
-					templateId = value;
+					aIImageResult = value;
 				}
 			}
 
@@ -124,15 +124,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string AIImageResult
+			public string JobId
 			{
 				get
 				{
-					return aIImageResult;
+					return jobId;
 				}
 				set	
 				{
-					aIImageResult = value;
+					jobId = value;
 				}
 			}
 
@@ -172,18 +172,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
 			public string TemplateConfig
 			{
 				get
@@ -193,6 +181,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					templateConfig = value;
+				}
+			}
+
+			public string TemplateId
+			{
+				get
+				{
+					return templateId;
+				}
+				set	
+				{
+					templateId = value;
 				}
 			}
 		}

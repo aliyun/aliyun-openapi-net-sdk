@@ -46,13 +46,13 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 					GetMediaDNAResultResponse.GetMediaDNAResult_DNAResult.GetMediaDNAResult_VideoDNAItem.GetMediaDNAResult_DetailItem detailItem = new GetMediaDNAResultResponse.GetMediaDNAResult_DNAResult.GetMediaDNAResult_VideoDNAItem.GetMediaDNAResult_DetailItem();
 
 					GetMediaDNAResultResponse.GetMediaDNAResult_DNAResult.GetMediaDNAResult_VideoDNAItem.GetMediaDNAResult_DetailItem.GetMediaDNAResult_Input input = new GetMediaDNAResultResponse.GetMediaDNAResult_DNAResult.GetMediaDNAResult_VideoDNAItem.GetMediaDNAResult_DetailItem.GetMediaDNAResult_Input();
-					input.Start = _ctx.StringValue("GetMediaDNAResult.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Input.Start");
 					input.Duration = _ctx.StringValue("GetMediaDNAResult.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Input.Duration");
+					input.Start = _ctx.StringValue("GetMediaDNAResult.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Input.Start");
 					detailItem.Input = input;
 
 					GetMediaDNAResultResponse.GetMediaDNAResult_DNAResult.GetMediaDNAResult_VideoDNAItem.GetMediaDNAResult_DetailItem.GetMediaDNAResult_Duplication duplication = new GetMediaDNAResultResponse.GetMediaDNAResult_DNAResult.GetMediaDNAResult_VideoDNAItem.GetMediaDNAResult_DetailItem.GetMediaDNAResult_Duplication();
-					duplication.Start = _ctx.StringValue("GetMediaDNAResult.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Duplication.Start");
 					duplication.Duration = _ctx.StringValue("GetMediaDNAResult.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Duplication.Duration");
+					duplication.Start = _ctx.StringValue("GetMediaDNAResult.DNAResult.VideoDNA["+ i +"].Detail["+ j +"].Duplication.Start");
 					detailItem.Duplication = duplication;
 
 					videoDNAItem_detail.Add(detailItem);

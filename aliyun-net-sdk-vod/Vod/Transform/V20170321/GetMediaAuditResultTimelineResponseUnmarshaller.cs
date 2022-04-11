@@ -38,9 +38,9 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_PornItem> mediaAuditResultTimeline_porn = new List<GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_PornItem>();
 			for (int i = 0; i < _ctx.Length("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Porn.Length"); i++) {
 				GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_PornItem pornItem = new GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_PornItem();
-				pornItem.Label = _ctx.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Porn["+ i +"].Label");
 				pornItem.Score = _ctx.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Porn["+ i +"].Score");
 				pornItem.Timestamp = _ctx.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Porn["+ i +"].Timestamp");
+				pornItem.Label = _ctx.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Porn["+ i +"].Label");
 
 				mediaAuditResultTimeline_porn.Add(pornItem);
 			}
@@ -49,9 +49,9 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_TerrorismItem> mediaAuditResultTimeline_terrorism = new List<GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_TerrorismItem>();
 			for (int i = 0; i < _ctx.Length("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Terrorism.Length"); i++) {
 				GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_TerrorismItem terrorismItem = new GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_TerrorismItem();
-				terrorismItem.Label = _ctx.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Terrorism["+ i +"].Label");
 				terrorismItem.Score = _ctx.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Terrorism["+ i +"].Score");
 				terrorismItem.Timestamp = _ctx.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Terrorism["+ i +"].Timestamp");
+				terrorismItem.Label = _ctx.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Terrorism["+ i +"].Label");
 
 				mediaAuditResultTimeline_terrorism.Add(terrorismItem);
 			}
@@ -60,9 +60,9 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_LogoItem> mediaAuditResultTimeline_logo = new List<GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_LogoItem>();
 			for (int i = 0; i < _ctx.Length("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Logo.Length"); i++) {
 				GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_LogoItem logoItem = new GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_LogoItem();
-				logoItem.Label = _ctx.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Logo["+ i +"].Label");
 				logoItem.Score = _ctx.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Logo["+ i +"].Score");
 				logoItem.Timestamp = _ctx.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Logo["+ i +"].Timestamp");
+				logoItem.Label = _ctx.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Logo["+ i +"].Label");
 
 				mediaAuditResultTimeline_logo.Add(logoItem);
 			}
@@ -71,9 +71,9 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_LiveItem> mediaAuditResultTimeline_live = new List<GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_LiveItem>();
 			for (int i = 0; i < _ctx.Length("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Live.Length"); i++) {
 				GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_LiveItem liveItem = new GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_LiveItem();
-				liveItem.Label = _ctx.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Live["+ i +"].Label");
 				liveItem.Score = _ctx.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Live["+ i +"].Score");
 				liveItem.Timestamp = _ctx.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Live["+ i +"].Timestamp");
+				liveItem.Label = _ctx.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Live["+ i +"].Label");
 
 				mediaAuditResultTimeline_live.Add(liveItem);
 			}
@@ -82,9 +82,9 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_AdItem> mediaAuditResultTimeline_ad = new List<GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_AdItem>();
 			for (int i = 0; i < _ctx.Length("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Ad.Length"); i++) {
 				GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_AdItem adItem = new GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_AdItem();
-				adItem.Label = _ctx.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Ad["+ i +"].Label");
 				adItem.Score = _ctx.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Ad["+ i +"].Score");
 				adItem.Timestamp = _ctx.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Ad["+ i +"].Timestamp");
+				adItem.Label = _ctx.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Ad["+ i +"].Label");
 
 				mediaAuditResultTimeline_ad.Add(adItem);
 			}

@@ -31,15 +31,15 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			DescribeVodRefreshQuotaResponse describeVodRefreshQuotaResponse = new DescribeVodRefreshQuotaResponse();
 
 			describeVodRefreshQuotaResponse.HttpResponse = _ctx.HttpResponse;
-			describeVodRefreshQuotaResponse.RequestId = _ctx.StringValue("DescribeVodRefreshQuota.RequestId");
-			describeVodRefreshQuotaResponse.UrlQuota = _ctx.StringValue("DescribeVodRefreshQuota.UrlQuota");
-			describeVodRefreshQuotaResponse.DirQuota = _ctx.StringValue("DescribeVodRefreshQuota.DirQuota");
-			describeVodRefreshQuotaResponse.UrlRemain = _ctx.StringValue("DescribeVodRefreshQuota.UrlRemain");
-			describeVodRefreshQuotaResponse.DirRemain = _ctx.StringValue("DescribeVodRefreshQuota.DirRemain");
-			describeVodRefreshQuotaResponse.PreloadQuota = _ctx.StringValue("DescribeVodRefreshQuota.PreloadQuota");
 			describeVodRefreshQuotaResponse.BlockQuota = _ctx.StringValue("DescribeVodRefreshQuota.BlockQuota");
 			describeVodRefreshQuotaResponse.PreloadRemain = _ctx.StringValue("DescribeVodRefreshQuota.PreloadRemain");
+			describeVodRefreshQuotaResponse.RequestId = _ctx.StringValue("DescribeVodRefreshQuota.RequestId");
 			describeVodRefreshQuotaResponse.BlockRemain = _ctx.StringValue("DescribeVodRefreshQuota.blockRemain");
+			describeVodRefreshQuotaResponse.DirRemain = _ctx.StringValue("DescribeVodRefreshQuota.DirRemain");
+			describeVodRefreshQuotaResponse.UrlRemain = _ctx.StringValue("DescribeVodRefreshQuota.UrlRemain");
+			describeVodRefreshQuotaResponse.DirQuota = _ctx.StringValue("DescribeVodRefreshQuota.DirQuota");
+			describeVodRefreshQuotaResponse.UrlQuota = _ctx.StringValue("DescribeVodRefreshQuota.UrlQuota");
+			describeVodRefreshQuotaResponse.PreloadQuota = _ctx.StringValue("DescribeVodRefreshQuota.PreloadQuota");
         
 			return describeVodRefreshQuotaResponse;
         }

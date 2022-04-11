@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -56,29 +56,17 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class AddEditingProject_Project
 		{
 
-			private string projectId;
-
 			private string creationTime;
-
-			private string modifiedTime;
 
 			private string status;
 
+			private string modifiedTime;
+
 			private string description;
 
-			private string title;
+			private string projectId;
 
-			public string ProjectId
-			{
-				get
-				{
-					return projectId;
-				}
-				set	
-				{
-					projectId = value;
-				}
-			}
+			private string title;
 
 			public string CreationTime
 			{
@@ -89,18 +77,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					creationTime = value;
-				}
-			}
-
-			public string ModifiedTime
-			{
-				get
-				{
-					return modifiedTime;
-				}
-				set	
-				{
-					modifiedTime = value;
 				}
 			}
 
@@ -116,6 +92,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string ModifiedTime
+			{
+				get
+				{
+					return modifiedTime;
+				}
+				set	
+				{
+					modifiedTime = value;
+				}
+			}
+
 			public string Description
 			{
 				get
@@ -125,6 +113,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string ProjectId
+			{
+				get
+				{
+					return projectId;
+				}
+				set	
+				{
+					projectId = value;
 				}
 			}
 

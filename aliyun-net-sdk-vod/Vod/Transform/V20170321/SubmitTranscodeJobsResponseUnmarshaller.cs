@@ -31,8 +31,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			SubmitTranscodeJobsResponse submitTranscodeJobsResponse = new SubmitTranscodeJobsResponse();
 
 			submitTranscodeJobsResponse.HttpResponse = _ctx.HttpResponse;
-			submitTranscodeJobsResponse.RequestId = _ctx.StringValue("SubmitTranscodeJobs.RequestId");
 			submitTranscodeJobsResponse.TranscodeTaskId = _ctx.StringValue("SubmitTranscodeJobs.TranscodeTaskId");
+			submitTranscodeJobsResponse.RequestId = _ctx.StringValue("SubmitTranscodeJobs.RequestId");
 
 			List<SubmitTranscodeJobsResponse.SubmitTranscodeJobs_TranscodeJob> submitTranscodeJobsResponse_transcodeJobs = new List<SubmitTranscodeJobsResponse.SubmitTranscodeJobs_TranscodeJob>();
 			for (int i = 0; i < _ctx.Length("SubmitTranscodeJobs.TranscodeJobs.Length"); i++) {

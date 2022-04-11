@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -70,43 +70,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class GetTranscodeSummary_TranscodeSummary
 		{
 
-			private string videoId;
-
-			private string transcodeStatus;
-
 			private string creationTime;
+
+			private string trigger;
+
+			private string videoId;
 
 			private string completeTime;
 
-			private string trigger;
+			private string transcodeStatus;
 
 			private string transcodeTemplateGroupId;
 
 			private List<GetTranscodeSummary_TranscodeJobInfoSummary> transcodeJobInfoSummaryList;
-
-			public string VideoId
-			{
-				get
-				{
-					return videoId;
-				}
-				set	
-				{
-					videoId = value;
-				}
-			}
-
-			public string TranscodeStatus
-			{
-				get
-				{
-					return transcodeStatus;
-				}
-				set	
-				{
-					transcodeStatus = value;
-				}
-			}
 
 			public string CreationTime
 			{
@@ -117,6 +93,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string Trigger
+			{
+				get
+				{
+					return trigger;
+				}
+				set	
+				{
+					trigger = value;
+				}
+			}
+
+			public string VideoId
+			{
+				get
+				{
+					return videoId;
+				}
+				set	
+				{
+					videoId = value;
 				}
 			}
 
@@ -132,15 +132,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string Trigger
+			public string TranscodeStatus
 			{
 				get
 				{
-					return trigger;
+					return transcodeStatus;
 				}
 				set	
 				{
-					trigger = value;
+					transcodeStatus = value;
 				}
 			}
 
@@ -171,63 +171,39 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			public class GetTranscodeSummary_TranscodeJobInfoSummary
 			{
 
-				private string transcodeTemplateId;
-
-				private string transcodeJobStatus;
-
 				private string creationTime;
-
-				private string completeTime;
-
-				private long? transcodeProgress;
-
-				private string errorCode;
 
 				private string errorMessage;
 
-				private string definition;
-
 				private string encryption;
-
-				private string width;
 
 				private string height;
 
+				private long? transcodeProgress;
+
+				private string transcodeTemplateId;
+
 				private string bitrate;
 
-				private string fps;
+				private string definition;
 
-				private string format;
+				private string errorCode;
+
+				private string completeTime;
+
+				private string width;
 
 				private string duration;
 
+				private string fps;
+
+				private string transcodeJobStatus;
+
 				private long? filesize;
 
+				private string format;
+
 				private List<string> watermarkIdList;
-
-				public string TranscodeTemplateId
-				{
-					get
-					{
-						return transcodeTemplateId;
-					}
-					set	
-					{
-						transcodeTemplateId = value;
-					}
-				}
-
-				public string TranscodeJobStatus
-				{
-					get
-					{
-						return transcodeJobStatus;
-					}
-					set	
-					{
-						transcodeJobStatus = value;
-					}
-				}
 
 				public string CreationTime
 				{
@@ -238,42 +214,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						creationTime = value;
-					}
-				}
-
-				public string CompleteTime
-				{
-					get
-					{
-						return completeTime;
-					}
-					set	
-					{
-						completeTime = value;
-					}
-				}
-
-				public long? TranscodeProgress
-				{
-					get
-					{
-						return transcodeProgress;
-					}
-					set	
-					{
-						transcodeProgress = value;
-					}
-				}
-
-				public string ErrorCode
-				{
-					get
-					{
-						return errorCode;
-					}
-					set	
-					{
-						errorCode = value;
 					}
 				}
 
@@ -289,18 +229,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string Definition
-				{
-					get
-					{
-						return definition;
-					}
-					set	
-					{
-						definition = value;
-					}
-				}
-
 				public string Encryption
 				{
 					get
@@ -310,18 +238,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						encryption = value;
-					}
-				}
-
-				public string Width
-				{
-					get
-					{
-						return width;
-					}
-					set	
-					{
-						width = value;
 					}
 				}
 
@@ -337,6 +253,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
+				public long? TranscodeProgress
+				{
+					get
+					{
+						return transcodeProgress;
+					}
+					set	
+					{
+						transcodeProgress = value;
+					}
+				}
+
+				public string TranscodeTemplateId
+				{
+					get
+					{
+						return transcodeTemplateId;
+					}
+					set	
+					{
+						transcodeTemplateId = value;
+					}
+				}
+
 				public string Bitrate
 				{
 					get
@@ -349,27 +289,51 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string Fps
+				public string Definition
 				{
 					get
 					{
-						return fps;
+						return definition;
 					}
 					set	
 					{
-						fps = value;
+						definition = value;
 					}
 				}
 
-				public string Format
+				public string ErrorCode
 				{
 					get
 					{
-						return format;
+						return errorCode;
 					}
 					set	
 					{
-						format = value;
+						errorCode = value;
+					}
+				}
+
+				public string CompleteTime
+				{
+					get
+					{
+						return completeTime;
+					}
+					set	
+					{
+						completeTime = value;
+					}
+				}
+
+				public string Width
+				{
+					get
+					{
+						return width;
+					}
+					set	
+					{
+						width = value;
 					}
 				}
 
@@ -385,6 +349,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
+				public string Fps
+				{
+					get
+					{
+						return fps;
+					}
+					set	
+					{
+						fps = value;
+					}
+				}
+
+				public string TranscodeJobStatus
+				{
+					get
+					{
+						return transcodeJobStatus;
+					}
+					set	
+					{
+						transcodeJobStatus = value;
+					}
+				}
+
 				public long? Filesize
 				{
 					get
@@ -394,6 +382,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						filesize = value;
+					}
+				}
+
+				public string Format
+				{
+					get
+					{
+						return format;
+					}
+					set	
+					{
+						format = value;
 					}
 				}
 

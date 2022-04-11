@@ -31,8 +31,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			SubmitAIImageJobResponse submitAIImageJobResponse = new SubmitAIImageJobResponse();
 
 			submitAIImageJobResponse.HttpResponse = _ctx.HttpResponse;
-			submitAIImageJobResponse.RequestId = _ctx.StringValue("SubmitAIImageJob.RequestId");
 			submitAIImageJobResponse.JobId = _ctx.StringValue("SubmitAIImageJob.JobId");
+			submitAIImageJobResponse.RequestId = _ctx.StringValue("SubmitAIImageJob.RequestId");
         
 			return submitAIImageJobResponse;
         }

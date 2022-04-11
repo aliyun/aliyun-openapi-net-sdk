@@ -37,13 +37,13 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			for (int i = 0; i < _ctx.Length("ListTranscodeTemplateGroup.TranscodeTemplateGroupList.Length"); i++) {
 				ListTranscodeTemplateGroupResponse.ListTranscodeTemplateGroup_TranscodeTemplateGroup transcodeTemplateGroup = new ListTranscodeTemplateGroupResponse.ListTranscodeTemplateGroup_TranscodeTemplateGroup();
 				transcodeTemplateGroup.CreationTime = _ctx.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].CreationTime");
-				transcodeTemplateGroup.ModifyTime = _ctx.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].ModifyTime");
-				transcodeTemplateGroup.Name = _ctx.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].Name");
-				transcodeTemplateGroup.IsDefault = _ctx.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].IsDefault");
-				transcodeTemplateGroup.Locked = _ctx.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].Locked");
-				transcodeTemplateGroup.TranscodeTemplateGroupId = _ctx.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].TranscodeTemplateGroupId");
 				transcodeTemplateGroup.TranscodeMode = _ctx.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].TranscodeMode");
+				transcodeTemplateGroup.IsDefault = _ctx.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].IsDefault");
 				transcodeTemplateGroup.AppId = _ctx.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].AppId");
+				transcodeTemplateGroup.TranscodeTemplateGroupId = _ctx.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].TranscodeTemplateGroupId");
+				transcodeTemplateGroup.Name = _ctx.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].Name");
+				transcodeTemplateGroup.ModifyTime = _ctx.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].ModifyTime");
+				transcodeTemplateGroup.Locked = _ctx.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].Locked");
 
 				listTranscodeTemplateGroupResponse_transcodeTemplateGroupList.Add(transcodeTemplateGroup);
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -25,17 +25,29 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class CreateUploadImageResponse : AcsResponse
 	{
 
+		private string fileURL;
+
 		private string requestId;
-
-		private string imageId;
-
-		private string imageURL;
 
 		private string uploadAddress;
 
+		private string imageURL;
+
+		private string imageId;
+
 		private string uploadAuth;
 
-		private string fileURL;
+		public string FileURL
+		{
+			get
+			{
+				return fileURL;
+			}
+			set	
+			{
+				fileURL = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -46,30 +58,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string ImageId
-		{
-			get
-			{
-				return imageId;
-			}
-			set	
-			{
-				imageId = value;
-			}
-		}
-
-		public string ImageURL
-		{
-			get
-			{
-				return imageURL;
-			}
-			set	
-			{
-				imageURL = value;
 			}
 		}
 
@@ -85,6 +73,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string ImageURL
+		{
+			get
+			{
+				return imageURL;
+			}
+			set	
+			{
+				imageURL = value;
+			}
+		}
+
+		public string ImageId
+		{
+			get
+			{
+				return imageId;
+			}
+			set	
+			{
+				imageId = value;
+			}
+		}
+
 		public string UploadAuth
 		{
 			get
@@ -94,18 +106,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				uploadAuth = value;
-			}
-		}
-
-		public string FileURL
-		{
-			get
-			{
-				return fileURL;
-			}
-			set	
-			{
-				fileURL = value;
 			}
 		}
 	}

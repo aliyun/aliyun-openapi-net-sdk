@@ -37,10 +37,10 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			watermarkInfo.CreationTime = _ctx.StringValue("UpdateWatermark.WatermarkInfo.CreationTime");
 			watermarkInfo.Type = _ctx.StringValue("UpdateWatermark.WatermarkInfo.Type");
 			watermarkInfo.IsDefault = _ctx.StringValue("UpdateWatermark.WatermarkInfo.IsDefault");
-			watermarkInfo.WatermarkId = _ctx.StringValue("UpdateWatermark.WatermarkInfo.WatermarkId");
-			watermarkInfo.Name = _ctx.StringValue("UpdateWatermark.WatermarkInfo.Name");
 			watermarkInfo.FileUrl = _ctx.StringValue("UpdateWatermark.WatermarkInfo.FileUrl");
 			watermarkInfo.WatermarkConfig = _ctx.StringValue("UpdateWatermark.WatermarkInfo.WatermarkConfig");
+			watermarkInfo.Name = _ctx.StringValue("UpdateWatermark.WatermarkInfo.Name");
+			watermarkInfo.WatermarkId = _ctx.StringValue("UpdateWatermark.WatermarkInfo.WatermarkId");
 			updateWatermarkResponse.WatermarkInfo = watermarkInfo;
         
 			return updateWatermarkResponse;

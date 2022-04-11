@@ -36,12 +36,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<DescribePlayVideoStatisResponse.DescribePlayVideoStatis_VideoPlayStatisDetail> describePlayVideoStatisResponse_videoPlayStatisDetails = new List<DescribePlayVideoStatisResponse.DescribePlayVideoStatis_VideoPlayStatisDetail>();
 			for (int i = 0; i < _ctx.Length("DescribePlayVideoStatis.VideoPlayStatisDetails.Length"); i++) {
 				DescribePlayVideoStatisResponse.DescribePlayVideoStatis_VideoPlayStatisDetail videoPlayStatisDetail = new DescribePlayVideoStatisResponse.DescribePlayVideoStatis_VideoPlayStatisDetail();
-				videoPlayStatisDetail.Date = _ctx.StringValue("DescribePlayVideoStatis.VideoPlayStatisDetails["+ i +"].Date");
 				videoPlayStatisDetail.PlayDuration = _ctx.StringValue("DescribePlayVideoStatis.VideoPlayStatisDetails["+ i +"].PlayDuration");
+				videoPlayStatisDetail.Date = _ctx.StringValue("DescribePlayVideoStatis.VideoPlayStatisDetails["+ i +"].Date");
 				videoPlayStatisDetail.VV = _ctx.StringValue("DescribePlayVideoStatis.VideoPlayStatisDetails["+ i +"].VV");
+				videoPlayStatisDetail.Title = _ctx.StringValue("DescribePlayVideoStatis.VideoPlayStatisDetails["+ i +"].Title");
 				videoPlayStatisDetail.UV = _ctx.StringValue("DescribePlayVideoStatis.VideoPlayStatisDetails["+ i +"].UV");
 				videoPlayStatisDetail.PlayRange = _ctx.StringValue("DescribePlayVideoStatis.VideoPlayStatisDetails["+ i +"].PlayRange");
-				videoPlayStatisDetail.Title = _ctx.StringValue("DescribePlayVideoStatis.VideoPlayStatisDetails["+ i +"].Title");
 
 				describePlayVideoStatisResponse_videoPlayStatisDetails.Add(videoPlayStatisDetail);
 			}

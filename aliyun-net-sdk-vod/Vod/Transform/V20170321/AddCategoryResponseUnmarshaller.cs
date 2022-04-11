@@ -34,11 +34,11 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			addCategoryResponse.RequestId = _ctx.StringValue("AddCategory.RequestId");
 
 			AddCategoryResponse.AddCategory_Category category = new AddCategoryResponse.AddCategory_Category();
-			category.CateId = _ctx.LongValue("AddCategory.Category.CateId");
-			category.CateName = _ctx.StringValue("AddCategory.Category.CateName");
-			category.ParentId = _ctx.LongValue("AddCategory.Category.ParentId");
-			category.Level = _ctx.LongValue("AddCategory.Category.Level");
 			category.Type = _ctx.StringValue("AddCategory.Category.Type");
+			category.ParentId = _ctx.LongValue("AddCategory.Category.ParentId");
+			category.CateName = _ctx.StringValue("AddCategory.Category.CateName");
+			category.CateId = _ctx.LongValue("AddCategory.Category.CateId");
+			category.Level = _ctx.LongValue("AddCategory.Category.Level");
 			addCategoryResponse.Category = category;
         
 			return addCategoryResponse;

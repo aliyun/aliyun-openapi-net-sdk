@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -29,9 +29,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private List<GetUploadDetails_UploadDetail> uploadDetails;
 
-		private List<string> nonExistMediaIds;
-
 		private List<string> forbiddenMediaIds;
+
+		private List<string> nonExistMediaIds;
 
 		public string RequestId
 		{
@@ -57,18 +57,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public List<string> NonExistMediaIds
-		{
-			get
-			{
-				return nonExistMediaIds;
-			}
-			set	
-			{
-				nonExistMediaIds = value;
-			}
-		}
-
 		public List<string> ForbiddenMediaIds
 		{
 			get
@@ -81,70 +69,46 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public List<string> NonExistMediaIds
+		{
+			get
+			{
+				return nonExistMediaIds;
+			}
+			set	
+			{
+				nonExistMediaIds = value;
+			}
+		}
+
 		public class GetUploadDetails_UploadDetail
 		{
 
-			private string mediaId;
-
-			private string title;
-
-			private long? fileSize;
-
 			private string status;
 
-			private string uploadStatus;
-
 			private string creationTime;
+
+			private string uploadSource;
+
+			private string uploadIP;
+
+			private string deviceModel;
 
 			private string modificationTime;
 
 			private string completionTime;
 
+			private string mediaId;
+
 			private long? uploadSize;
 
 			private float? uploadRatio;
 
-			private string uploadIP;
+			private string uploadStatus;
 
-			private string uploadSource;
+			private string title;
 
-			private string deviceModel;
-
-			public string MediaId
-			{
-				get
-				{
-					return mediaId;
-				}
-				set	
-				{
-					mediaId = value;
-				}
-			}
-
-			public string Title
-			{
-				get
-				{
-					return title;
-				}
-				set	
-				{
-					title = value;
-				}
-			}
-
-			public long? FileSize
-			{
-				get
-				{
-					return fileSize;
-				}
-				set	
-				{
-					fileSize = value;
-				}
-			}
+			private long? fileSize;
 
 			public string Status
 			{
@@ -158,18 +122,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string UploadStatus
-			{
-				get
-				{
-					return uploadStatus;
-				}
-				set	
-				{
-					uploadStatus = value;
-				}
-			}
-
 			public string CreationTime
 			{
 				get
@@ -179,6 +131,42 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string UploadSource
+			{
+				get
+				{
+					return uploadSource;
+				}
+				set	
+				{
+					uploadSource = value;
+				}
+			}
+
+			public string UploadIP
+			{
+				get
+				{
+					return uploadIP;
+				}
+				set	
+				{
+					uploadIP = value;
+				}
+			}
+
+			public string DeviceModel
+			{
+				get
+				{
+					return deviceModel;
+				}
+				set	
+				{
+					deviceModel = value;
 				}
 			}
 
@@ -206,6 +194,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string MediaId
+			{
+				get
+				{
+					return mediaId;
+				}
+				set	
+				{
+					mediaId = value;
+				}
+			}
+
 			public long? UploadSize
 			{
 				get
@@ -230,39 +230,39 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string UploadIP
+			public string UploadStatus
 			{
 				get
 				{
-					return uploadIP;
+					return uploadStatus;
 				}
 				set	
 				{
-					uploadIP = value;
+					uploadStatus = value;
 				}
 			}
 
-			public string UploadSource
+			public string Title
 			{
 				get
 				{
-					return uploadSource;
+					return title;
 				}
 				set	
 				{
-					uploadSource = value;
+					title = value;
 				}
 			}
 
-			public string DeviceModel
+			public long? FileSize
 			{
 				get
 				{
-					return deviceModel;
+					return fileSize;
 				}
 				set	
 				{
-					deviceModel = value;
+					fileSize = value;
 				}
 			}
 		}

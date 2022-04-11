@@ -36,17 +36,17 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<ListDynamicImageResponse.ListDynamicImage_DynamicImage> listDynamicImageResponse_dynamicImageList = new List<ListDynamicImageResponse.ListDynamicImage_DynamicImage>();
 			for (int i = 0; i < _ctx.Length("ListDynamicImage.DynamicImageList.Length"); i++) {
 				ListDynamicImageResponse.ListDynamicImage_DynamicImage dynamicImage = new ListDynamicImageResponse.ListDynamicImage_DynamicImage();
-				dynamicImage.VideoId = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].VideoId");
-				dynamicImage.DynamicImageId = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].DynamicImageId");
-				dynamicImage.JobId = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].JobId");
+				dynamicImage.CreationTime = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].CreationTime");
 				dynamicImage.FileURL = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].FileURL");
+				dynamicImage.VideoId = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].VideoId");
 				dynamicImage.Width = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].Width");
+				dynamicImage.JobId = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].JobId");
 				dynamicImage.Height = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].Height");
+				dynamicImage.Fps = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].Fps");
 				dynamicImage.Duration = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].Duration");
 				dynamicImage.Format = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].Format");
+				dynamicImage.DynamicImageId = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].DynamicImageId");
 				dynamicImage.FileSize = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].FileSize");
-				dynamicImage.Fps = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].Fps");
-				dynamicImage.CreationTime = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].CreationTime");
 
 				listDynamicImageResponse_dynamicImageList.Add(dynamicImage);
 			}

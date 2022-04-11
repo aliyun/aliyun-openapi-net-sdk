@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class RefreshVodObjectCachesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string refreshTaskId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string RefreshTaskId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				refreshTaskId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

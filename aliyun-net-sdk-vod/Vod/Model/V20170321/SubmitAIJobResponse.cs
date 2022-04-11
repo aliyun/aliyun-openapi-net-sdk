@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -56,31 +56,31 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class SubmitAIJob_AIJob
 		{
 
-			private string jobId;
+			private string creationTime;
 
 			private string type;
 
-			private string mediaId;
-
 			private string status;
+
+			private string data;
+
+			private string jobId;
 
 			private string code;
 
 			private string message;
 
-			private string creationTime;
+			private string mediaId;
 
-			private string data;
-
-			public string JobId
+			public string CreationTime
 			{
 				get
 				{
-					return jobId;
+					return creationTime;
 				}
 				set	
 				{
-					jobId = value;
+					creationTime = value;
 				}
 			}
 
@@ -96,18 +96,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string MediaId
-			{
-				get
-				{
-					return mediaId;
-				}
-				set	
-				{
-					mediaId = value;
-				}
-			}
-
 			public string Status
 			{
 				get
@@ -117,6 +105,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string Data
+			{
+				get
+				{
+					return data;
+				}
+				set	
+				{
+					data = value;
+				}
+			}
+
+			public string JobId
+			{
+				get
+				{
+					return jobId;
+				}
+				set	
+				{
+					jobId = value;
 				}
 			}
 
@@ -144,27 +156,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string CreationTime
+			public string MediaId
 			{
 				get
 				{
-					return creationTime;
+					return mediaId;
 				}
 				set	
 				{
-					creationTime = value;
-				}
-			}
-
-			public string Data
-			{
-				get
-				{
-					return data;
-				}
-				set	
-				{
-					data = value;
+					mediaId = value;
 				}
 			}
 		}

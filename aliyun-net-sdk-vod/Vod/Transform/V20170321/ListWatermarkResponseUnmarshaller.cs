@@ -39,11 +39,11 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				watermarkInfo.CreationTime = _ctx.StringValue("ListWatermark.WatermarkInfos["+ i +"].CreationTime");
 				watermarkInfo.Type = _ctx.StringValue("ListWatermark.WatermarkInfos["+ i +"].Type");
 				watermarkInfo.IsDefault = _ctx.StringValue("ListWatermark.WatermarkInfos["+ i +"].IsDefault");
-				watermarkInfo.WatermarkId = _ctx.StringValue("ListWatermark.WatermarkInfos["+ i +"].WatermarkId");
-				watermarkInfo.Name = _ctx.StringValue("ListWatermark.WatermarkInfos["+ i +"].Name");
 				watermarkInfo.FileUrl = _ctx.StringValue("ListWatermark.WatermarkInfos["+ i +"].FileUrl");
-				watermarkInfo.WatermarkConfig = _ctx.StringValue("ListWatermark.WatermarkInfos["+ i +"].WatermarkConfig");
 				watermarkInfo.AppId = _ctx.StringValue("ListWatermark.WatermarkInfos["+ i +"].AppId");
+				watermarkInfo.WatermarkConfig = _ctx.StringValue("ListWatermark.WatermarkInfos["+ i +"].WatermarkConfig");
+				watermarkInfo.Name = _ctx.StringValue("ListWatermark.WatermarkInfos["+ i +"].Name");
+				watermarkInfo.WatermarkId = _ctx.StringValue("ListWatermark.WatermarkInfos["+ i +"].WatermarkId");
 
 				listWatermarkResponse_watermarkInfos.Add(watermarkInfo);
 			}

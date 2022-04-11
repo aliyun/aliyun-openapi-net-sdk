@@ -34,13 +34,13 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			getAITemplateResponse.RequestId = _ctx.StringValue("GetAITemplate.RequestId");
 
 			GetAITemplateResponse.GetAITemplate_TemplateInfo templateInfo = new GetAITemplateResponse.GetAITemplate_TemplateInfo();
-			templateInfo.TemplateId = _ctx.StringValue("GetAITemplate.TemplateInfo.TemplateId");
-			templateInfo.TemplateType = _ctx.StringValue("GetAITemplate.TemplateInfo.TemplateType");
-			templateInfo.TemplateName = _ctx.StringValue("GetAITemplate.TemplateInfo.TemplateName");
-			templateInfo.TemplateConfig = _ctx.StringValue("GetAITemplate.TemplateInfo.TemplateConfig");
-			templateInfo.Source = _ctx.StringValue("GetAITemplate.TemplateInfo.Source");
-			templateInfo.IsDefault = _ctx.StringValue("GetAITemplate.TemplateInfo.IsDefault");
 			templateInfo.CreationTime = _ctx.StringValue("GetAITemplate.TemplateInfo.CreationTime");
+			templateInfo.IsDefault = _ctx.StringValue("GetAITemplate.TemplateInfo.IsDefault");
+			templateInfo.TemplateType = _ctx.StringValue("GetAITemplate.TemplateInfo.TemplateType");
+			templateInfo.TemplateConfig = _ctx.StringValue("GetAITemplate.TemplateInfo.TemplateConfig");
+			templateInfo.TemplateName = _ctx.StringValue("GetAITemplate.TemplateInfo.TemplateName");
+			templateInfo.Source = _ctx.StringValue("GetAITemplate.TemplateInfo.Source");
+			templateInfo.TemplateId = _ctx.StringValue("GetAITemplate.TemplateInfo.TemplateId");
 			templateInfo.ModifyTime = _ctx.StringValue("GetAITemplate.TemplateInfo.ModifyTime");
 			getAITemplateResponse.TemplateInfo = templateInfo;
         

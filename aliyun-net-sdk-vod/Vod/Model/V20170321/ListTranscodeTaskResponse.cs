@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -56,41 +56,41 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class ListTranscodeTask_TranscodeTask
 		{
 
-			private string transcodeTaskId;
-
-			private string videoId;
-
-			private string taskStatus;
-
-			private string transcodeTemplateGroupId;
-
 			private string creationTime;
-
-			private string completeTime;
 
 			private string trigger;
 
-			public string TranscodeTaskId
+			private string taskStatus;
+
+			private string videoId;
+
+			private string completeTime;
+
+			private string transcodeTemplateGroupId;
+
+			private string transcodeTaskId;
+
+			public string CreationTime
 			{
 				get
 				{
-					return transcodeTaskId;
+					return creationTime;
 				}
 				set	
 				{
-					transcodeTaskId = value;
+					creationTime = value;
 				}
 			}
 
-			public string VideoId
+			public string Trigger
 			{
 				get
 				{
-					return videoId;
+					return trigger;
 				}
 				set	
 				{
-					videoId = value;
+					trigger = value;
 				}
 			}
 
@@ -106,27 +106,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string TranscodeTemplateGroupId
+			public string VideoId
 			{
 				get
 				{
-					return transcodeTemplateGroupId;
+					return videoId;
 				}
 				set	
 				{
-					transcodeTemplateGroupId = value;
-				}
-			}
-
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
+					videoId = value;
 				}
 			}
 
@@ -142,15 +130,27 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string Trigger
+			public string TranscodeTemplateGroupId
 			{
 				get
 				{
-					return trigger;
+					return transcodeTemplateGroupId;
 				}
 				set	
 				{
-					trigger = value;
+					transcodeTemplateGroupId = value;
+				}
+			}
+
+			public string TranscodeTaskId
+			{
+				get
+				{
+					return transcodeTaskId;
+				}
+				set	
+				{
+					transcodeTaskId = value;
 				}
 			}
 		}

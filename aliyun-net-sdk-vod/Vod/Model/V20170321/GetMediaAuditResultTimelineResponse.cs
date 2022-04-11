@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -129,23 +129,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			public class GetMediaAuditResultTimeline_PornItem
 			{
 
-				private string label;
-
 				private string score;
 
 				private string timestamp;
 
-				public string Label
-				{
-					get
-					{
-						return label;
-					}
-					set	
-					{
-						label = value;
-					}
-				}
+				private string label;
 
 				public string Score
 				{
@@ -168,6 +156,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						timestamp = value;
+					}
+				}
+
+				public string Label
+				{
+					get
+					{
+						return label;
+					}
+					set	
+					{
+						label = value;
 					}
 				}
 			}
@@ -175,23 +175,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			public class GetMediaAuditResultTimeline_TerrorismItem
 			{
 
-				private string label;
-
 				private string score;
 
 				private string timestamp;
 
-				public string Label
-				{
-					get
-					{
-						return label;
-					}
-					set	
-					{
-						label = value;
-					}
-				}
+				private string label;
 
 				public string Score
 				{
@@ -214,6 +202,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						timestamp = value;
+					}
+				}
+
+				public string Label
+				{
+					get
+					{
+						return label;
+					}
+					set	
+					{
+						label = value;
 					}
 				}
 			}
@@ -221,23 +221,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			public class GetMediaAuditResultTimeline_LogoItem
 			{
 
-				private string label;
-
 				private string score;
 
 				private string timestamp;
 
-				public string Label
-				{
-					get
-					{
-						return label;
-					}
-					set	
-					{
-						label = value;
-					}
-				}
+				private string label;
 
 				public string Score
 				{
@@ -260,6 +248,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						timestamp = value;
+					}
+				}
+
+				public string Label
+				{
+					get
+					{
+						return label;
+					}
+					set	
+					{
+						label = value;
 					}
 				}
 			}
@@ -267,23 +267,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			public class GetMediaAuditResultTimeline_LiveItem
 			{
 
-				private string label;
-
 				private string score;
 
 				private string timestamp;
 
-				public string Label
-				{
-					get
-					{
-						return label;
-					}
-					set	
-					{
-						label = value;
-					}
-				}
+				private string label;
 
 				public string Score
 				{
@@ -306,6 +294,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						timestamp = value;
+					}
+				}
+
+				public string Label
+				{
+					get
+					{
+						return label;
+					}
+					set	
+					{
+						label = value;
 					}
 				}
 			}
@@ -313,23 +313,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			public class GetMediaAuditResultTimeline_AdItem
 			{
 
-				private string label;
-
 				private string score;
 
 				private string timestamp;
 
-				public string Label
-				{
-					get
-					{
-						return label;
-					}
-					set	
-					{
-						label = value;
-					}
-				}
+				private string label;
 
 				public string Score
 				{
@@ -352,6 +340,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						timestamp = value;
+					}
+				}
+
+				public string Label
+				{
+					get
+					{
+						return label;
+					}
+					set	
+					{
+						label = value;
 					}
 				}
 			}

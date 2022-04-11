@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -62,15 +62,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string eventTypeList;
 
-			private string authSwitch;
-
-			private string authKey;
-
-			private string mnsEndpoint;
+			private string appId;
 
 			private string mnsQueueName;
 
-			private string appId;
+			private string authKey;
+
+			private string authSwitch;
+
+			private string mnsEndpoint;
 
 			public string CallbackType
 			{
@@ -108,39 +108,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string AuthSwitch
+			public string AppId
 			{
 				get
 				{
-					return authSwitch;
+					return appId;
 				}
 				set	
 				{
-					authSwitch = value;
-				}
-			}
-
-			public string AuthKey
-			{
-				get
-				{
-					return authKey;
-				}
-				set	
-				{
-					authKey = value;
-				}
-			}
-
-			public string MnsEndpoint
-			{
-				get
-				{
-					return mnsEndpoint;
-				}
-				set	
-				{
-					mnsEndpoint = value;
+					appId = value;
 				}
 			}
 
@@ -156,15 +132,39 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string AppId
+			public string AuthKey
 			{
 				get
 				{
-					return appId;
+					return authKey;
 				}
 				set	
 				{
-					appId = value;
+					authKey = value;
+				}
+			}
+
+			public string AuthSwitch
+			{
+				get
+				{
+					return authSwitch;
+				}
+				set	
+				{
+					authSwitch = value;
+				}
+			}
+
+			public string MnsEndpoint
+			{
+				get
+				{
+					return mnsEndpoint;
+				}
+				set	
+				{
+					mnsEndpoint = value;
 				}
 			}
 		}

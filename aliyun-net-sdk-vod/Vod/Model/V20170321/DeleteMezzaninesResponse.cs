@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string requestId;
 
-		private List<string> nonExistVideoIds;
-
 		private List<string> unRemoveableVideoIds;
+
+		private List<string> nonExistVideoIds;
 
 		public string RequestId
 		{
@@ -43,18 +43,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public List<string> NonExistVideoIds
-		{
-			get
-			{
-				return nonExistVideoIds;
-			}
-			set	
-			{
-				nonExistVideoIds = value;
-			}
-		}
-
 		public List<string> UnRemoveableVideoIds
 		{
 			get
@@ -64,6 +52,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				unRemoveableVideoIds = value;
+			}
+		}
+
+		public List<string> NonExistVideoIds
+		{
+			get
+			{
+				return nonExistVideoIds;
+			}
+			set	
+			{
+				nonExistVideoIds = value;
 			}
 		}
 	}

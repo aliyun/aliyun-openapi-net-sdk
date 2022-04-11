@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class GetCategoriesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? subTotal;
+
+		private string requestId;
 
 		private List<GetCategories_Category> subCategories;
 
 		private GetCategories_Category1 category1;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public long? SubTotal
 		{
@@ -54,6 +42,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				subTotal = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -84,27 +84,27 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class GetCategories_Category
 		{
 
-			private long? cateId;
+			private string type;
 
 			private string cateName;
 
-			private long? level;
-
 			private long? parentId;
+
+			private long? cateId;
 
 			private long? subTotal;
 
-			private string type;
+			private long? level;
 
-			public long? CateId
+			public string Type
 			{
 				get
 				{
-					return cateId;
+					return type;
 				}
 				set	
 				{
-					cateId = value;
+					type = value;
 				}
 			}
 
@@ -120,18 +120,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public long? Level
-			{
-				get
-				{
-					return level;
-				}
-				set	
-				{
-					level = value;
-				}
-			}
-
 			public long? ParentId
 			{
 				get
@@ -141,6 +129,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					parentId = value;
+				}
+			}
+
+			public long? CateId
+			{
+				get
+				{
+					return cateId;
+				}
+				set	
+				{
+					cateId = value;
 				}
 			}
 
@@ -156,56 +156,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-		}
-
-		public class GetCategories_Category1
-		{
-
-			private long? cateId;
-
-			private string cateName;
-
-			private long? level;
-
-			private long? parentId;
-
-			private string type;
-
-			public long? CateId
-			{
-				get
-				{
-					return cateId;
-				}
-				set	
-				{
-					cateId = value;
-				}
-			}
-
-			public string CateName
-			{
-				get
-				{
-					return cateName;
-				}
-				set	
-				{
-					cateName = value;
-				}
-			}
-
 			public long? Level
 			{
 				get
@@ -215,6 +165,32 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					level = value;
+				}
+			}
+		}
+
+		public class GetCategories_Category1
+		{
+
+			private string type;
+
+			private long? parentId;
+
+			private string cateName;
+
+			private long? cateId;
+
+			private long? level;
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
 				}
 			}
 
@@ -230,15 +206,39 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string Type
+			public string CateName
 			{
 				get
 				{
-					return type;
+					return cateName;
 				}
 				set	
 				{
-					type = value;
+					cateName = value;
+				}
+			}
+
+			public long? CateId
+			{
+				get
+				{
+					return cateId;
+				}
+				set	
+				{
+					cateId = value;
+				}
+			}
+
+			public long? Level
+			{
+				get
+				{
+					return level;
+				}
+				set	
+				{
+					level = value;
 				}
 			}
 		}

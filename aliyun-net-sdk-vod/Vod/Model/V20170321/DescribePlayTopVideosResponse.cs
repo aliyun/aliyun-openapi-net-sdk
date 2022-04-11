@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class DescribePlayTopVideosResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? pageNo;
+
+		private string requestId;
 
 		private long? pageSize;
 
 		private long? totalNum;
 
 		private List<DescribePlayTopVideos_TopPlayVideoStatis> topPlayVideos;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public long? PageNo
 		{
@@ -56,6 +44,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				pageNo = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -98,25 +98,25 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class DescribePlayTopVideos_TopPlayVideoStatis
 		{
 
-			private string playDuration;
+			private string title;
 
 			private string vV;
 
-			private string uV;
+			private string playDuration;
 
 			private string videoId;
 
-			private string title;
+			private string uV;
 
-			public string PlayDuration
+			public string Title
 			{
 				get
 				{
-					return playDuration;
+					return title;
 				}
 				set	
 				{
-					playDuration = value;
+					title = value;
 				}
 			}
 
@@ -132,15 +132,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string UV
+			public string PlayDuration
 			{
 				get
 				{
-					return uV;
+					return playDuration;
 				}
 				set	
 				{
-					uV = value;
+					playDuration = value;
 				}
 			}
 
@@ -156,15 +156,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string Title
+			public string UV
 			{
 				get
 				{
-					return title;
+					return uV;
 				}
 				set	
 				{
-					title = value;
+					uV = value;
 				}
 			}
 		}

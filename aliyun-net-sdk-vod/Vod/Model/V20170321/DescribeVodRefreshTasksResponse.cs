@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -98,55 +98,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class DescribeVodRefreshTasks_Task
 		{
 
-			private string taskId;
-
-			private string objectPath;
-
-			private string process;
-
 			private string status;
 
 			private string creationTime;
 
-			private string description;
-
 			private string objectType;
 
-			public string TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
+			private string process;
 
-			public string ObjectPath
-			{
-				get
-				{
-					return objectPath;
-				}
-				set	
-				{
-					objectPath = value;
-				}
-			}
+			private string description;
 
-			public string Process
-			{
-				get
-				{
-					return process;
-				}
-				set	
-				{
-					process = value;
-				}
-			}
+			private string objectPath;
+
+			private string taskId;
 
 			public string Status
 			{
@@ -172,6 +136,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string ObjectType
+			{
+				get
+				{
+					return objectType;
+				}
+				set	
+				{
+					objectType = value;
+				}
+			}
+
+			public string Process
+			{
+				get
+				{
+					return process;
+				}
+				set	
+				{
+					process = value;
+				}
+			}
+
 			public string Description
 			{
 				get
@@ -184,15 +172,27 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string ObjectType
+			public string ObjectPath
 			{
 				get
 				{
-					return objectType;
+					return objectPath;
 				}
 				set	
 				{
-					objectType = value;
+					objectPath = value;
+				}
+			}
+
+			public string TaskId
+			{
+				get
+				{
+					return taskId;
+				}
+				set	
+				{
+					taskId = value;
 				}
 			}
 		}

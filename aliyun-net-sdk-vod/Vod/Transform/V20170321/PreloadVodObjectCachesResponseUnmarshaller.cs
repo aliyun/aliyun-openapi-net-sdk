@@ -31,8 +31,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			PreloadVodObjectCachesResponse preloadVodObjectCachesResponse = new PreloadVodObjectCachesResponse();
 
 			preloadVodObjectCachesResponse.HttpResponse = _ctx.HttpResponse;
-			preloadVodObjectCachesResponse.RequestId = _ctx.StringValue("PreloadVodObjectCaches.RequestId");
 			preloadVodObjectCachesResponse.PreloadTaskId = _ctx.StringValue("PreloadVodObjectCaches.PreloadTaskId");
+			preloadVodObjectCachesResponse.RequestId = _ctx.StringValue("PreloadVodObjectCaches.RequestId");
         
 			return preloadVodObjectCachesResponse;
         }

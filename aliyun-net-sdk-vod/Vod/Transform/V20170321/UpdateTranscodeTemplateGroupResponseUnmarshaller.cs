@@ -31,8 +31,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			UpdateTranscodeTemplateGroupResponse updateTranscodeTemplateGroupResponse = new UpdateTranscodeTemplateGroupResponse();
 
 			updateTranscodeTemplateGroupResponse.HttpResponse = _ctx.HttpResponse;
-			updateTranscodeTemplateGroupResponse.RequestId = _ctx.StringValue("UpdateTranscodeTemplateGroup.RequestId");
 			updateTranscodeTemplateGroupResponse.TranscodeTemplateGroupId = _ctx.StringValue("UpdateTranscodeTemplateGroup.TranscodeTemplateGroupId");
+			updateTranscodeTemplateGroupResponse.RequestId = _ctx.StringValue("UpdateTranscodeTemplateGroup.RequestId");
         
 			return updateTranscodeTemplateGroupResponse;
         }

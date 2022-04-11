@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
@@ -62,13 +62,13 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string isDefault;
 
-			private string watermarkId;
-
-			private string name;
-
 			private string fileUrl;
 
 			private string watermarkConfig;
+
+			private string name;
+
+			private string watermarkId;
 
 			public string CreationTime
 			{
@@ -106,30 +106,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string WatermarkId
-			{
-				get
-				{
-					return watermarkId;
-				}
-				set	
-				{
-					watermarkId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
 			public string FileUrl
 			{
 				get
@@ -151,6 +127,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					watermarkConfig = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string WatermarkId
+			{
+				get
+				{
+					return watermarkId;
+				}
+				set	
+				{
+					watermarkId = value;
 				}
 			}
 		}

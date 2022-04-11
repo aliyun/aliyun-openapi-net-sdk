@@ -42,29 +42,29 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<GetAttachedMediaInfoResponse.GetAttachedMediaInfo_AttachedMedia> getAttachedMediaInfoResponse_attachedMediaList = new List<GetAttachedMediaInfoResponse.GetAttachedMediaInfo_AttachedMedia>();
 			for (int i = 0; i < _ctx.Length("GetAttachedMediaInfo.AttachedMediaList.Length"); i++) {
 				GetAttachedMediaInfoResponse.GetAttachedMediaInfo_AttachedMedia attachedMedia = new GetAttachedMediaInfoResponse.GetAttachedMediaInfo_AttachedMedia();
-				attachedMedia.MediaId = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].MediaId");
-				attachedMedia.Title = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].Title");
 				attachedMedia.Type = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].Type");
-				attachedMedia.Tags = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].Tags");
-				attachedMedia.URL = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].URL");
-				attachedMedia.Description = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].Description");
-				attachedMedia.FileSize = _ctx.LongValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].FileSize");
 				attachedMedia.StorageLocation = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].StorageLocation");
 				attachedMedia.CreationTime = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].CreationTime");
-				attachedMedia.ModificationTime = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].ModificationTime");
-				attachedMedia.AppId = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].AppId");
 				attachedMedia.Status = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].Status");
-				attachedMedia.OnlineStatus = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].OnlineStatus");
 				attachedMedia.Icon = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].Icon");
+				attachedMedia.Tags = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].Tags");
+				attachedMedia.ModificationTime = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].ModificationTime");
+				attachedMedia.MediaId = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].MediaId");
 				attachedMedia.RegionId = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].RegionId");
+				attachedMedia.Description = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].Description");
+				attachedMedia.AppId = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].AppId");
+				attachedMedia.URL = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].URL");
+				attachedMedia.Title = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].Title");
+				attachedMedia.OnlineStatus = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].OnlineStatus");
+				attachedMedia.FileSize = _ctx.LongValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].FileSize");
 
 				List<GetAttachedMediaInfoResponse.GetAttachedMediaInfo_AttachedMedia.GetAttachedMediaInfo_Category> attachedMedia_categories = new List<GetAttachedMediaInfoResponse.GetAttachedMediaInfo_AttachedMedia.GetAttachedMediaInfo_Category>();
 				for (int j = 0; j < _ctx.Length("GetAttachedMediaInfo.AttachedMediaList["+ i +"].Categories.Length"); j++) {
 					GetAttachedMediaInfoResponse.GetAttachedMediaInfo_AttachedMedia.GetAttachedMediaInfo_Category category = new GetAttachedMediaInfoResponse.GetAttachedMediaInfo_AttachedMedia.GetAttachedMediaInfo_Category();
-					category.CateId = _ctx.LongValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].Categories["+ j +"].CateId");
-					category.CateName = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].Categories["+ j +"].CateName");
-					category.Level = _ctx.LongValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].Categories["+ j +"].Level");
 					category.ParentId = _ctx.LongValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].Categories["+ j +"].ParentId");
+					category.CateName = _ctx.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].Categories["+ j +"].CateName");
+					category.CateId = _ctx.LongValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].Categories["+ j +"].CateId");
+					category.Level = _ctx.LongValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].Categories["+ j +"].Level");
 
 					attachedMedia_categories.Add(category);
 				}
