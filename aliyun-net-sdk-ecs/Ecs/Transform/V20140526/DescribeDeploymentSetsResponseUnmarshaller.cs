@@ -57,6 +57,17 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				}
 				deploymentSet.InstanceIds = deploymentSet_instanceIds;
 
+				List<DescribeDeploymentSetsResponse.DescribeDeploymentSets_DeploymentSet.DescribeDeploymentSets_Capacity> deploymentSet_capacities = new List<DescribeDeploymentSetsResponse.DescribeDeploymentSets_DeploymentSet.DescribeDeploymentSets_Capacity>();
+				for (int j = 0; j < _ctx.Length("DescribeDeploymentSets.DeploymentSets["+ i +"].Capacities.Length"); j++) {
+					DescribeDeploymentSetsResponse.DescribeDeploymentSets_DeploymentSet.DescribeDeploymentSets_Capacity capacity = new DescribeDeploymentSetsResponse.DescribeDeploymentSets_DeploymentSet.DescribeDeploymentSets_Capacity();
+					capacity.ZoneId = _ctx.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].Capacities["+ j +"].ZoneId");
+					capacity.UsedAmount = _ctx.IntegerValue("DescribeDeploymentSets.DeploymentSets["+ i +"].Capacities["+ j +"].UsedAmount");
+					capacity.AvailableAmount = _ctx.IntegerValue("DescribeDeploymentSets.DeploymentSets["+ i +"].Capacities["+ j +"].AvailableAmount");
+
+					deploymentSet_capacities.Add(capacity);
+				}
+				deploymentSet.Capacities = deploymentSet_capacities;
+
 				describeDeploymentSetsResponse_deploymentSets.Add(deploymentSet);
 			}
 			describeDeploymentSetsResponse.DeploymentSets = describeDeploymentSetsResponse_deploymentSets;

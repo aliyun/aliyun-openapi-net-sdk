@@ -327,6 +327,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string hostId;
 
+				private string onlineRepairPolicy;
+
 				private List<DescribeInstanceHistoryEvents_InactiveDisk> inactiveDisks;
 
 				private List<string> migrationOptions;
@@ -376,6 +378,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						hostId = value;
+					}
+				}
+
+				public string OnlineRepairPolicy
+				{
+					get
+					{
+						return onlineRepairPolicy;
+					}
+					set	
+					{
+						onlineRepairPolicy = value;
 					}
 				}
 

@@ -100,6 +100,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string creationTime;
 
+			private string schedulerOptionsManagedPrivateSpaceId;
+
 			private string status;
 
 			private int? cores;
@@ -169,6 +171,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string SchedulerOptionsManagedPrivateSpaceId
+			{
+				get
+				{
+					return schedulerOptionsManagedPrivateSpaceId;
+				}
+				set	
+				{
+					schedulerOptionsManagedPrivateSpaceId = value;
 				}
 			}
 

@@ -74,6 +74,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
+		private bool? burstingEnabled;
+
+		private long? provisionedIops;
+
 		private string instanceId;
 
 		private string storageSetId;
@@ -323,6 +327,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public bool? BurstingEnabled
+		{
+			get
+			{
+				return burstingEnabled;
+			}
+			set	
+			{
+				burstingEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "BurstingEnabled", value.ToString());
+			}
+		}
+
+		public long? ProvisionedIops
+		{
+			get
+			{
+				return provisionedIops;
+			}
+			set	
+			{
+				provisionedIops = value;
+				DictionaryUtil.Add(QueryParameters, "ProvisionedIops", value.ToString());
 			}
 		}
 

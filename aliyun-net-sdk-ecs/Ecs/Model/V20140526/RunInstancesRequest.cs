@@ -332,6 +332,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				{
 
 					DictionaryUtil.Add(QueryParameters,"SystemDisk.StorageClusterId", SystemDisk_.StorageClusterId);
+					DictionaryUtil.Add(QueryParameters,"SystemDisk.ProvisionedIops", SystemDisk_.ProvisionedIops);
+					DictionaryUtil.Add(QueryParameters,"SystemDisk.BurstingEnabled", SystemDisk_.BurstingEnabled);
+					DictionaryUtil.Add(QueryParameters,"SystemDisk.Encrypted", SystemDisk_.Encrypted);
+					DictionaryUtil.Add(QueryParameters,"SystemDisk.KMSKeyId", SystemDisk_.KMSKeyId);
+					DictionaryUtil.Add(QueryParameters,"SystemDisk.EncryptAlgorithm", SystemDisk_.EncryptAlgorithm);
 				}
 			}
 		}
@@ -1363,6 +1368,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
 						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
 						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
 					}
 				}
 			}
@@ -1415,6 +1422,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string storageClusterId;
 
+			private long? provisionedIops;
+
+			private bool? burstingEnabled;
+
+			private string encrypted;
+
+			private string kMSKeyId;
+
+			private string encryptAlgorithm;
+
 			[JsonProperty(PropertyName = "StorageClusterId")]
 			public string StorageClusterId
 			{
@@ -1425,6 +1442,71 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					storageClusterId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ProvisionedIops")]
+			public long? ProvisionedIops
+			{
+				get
+				{
+					return provisionedIops;
+				}
+				set	
+				{
+					provisionedIops = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BurstingEnabled")]
+			public bool? BurstingEnabled
+			{
+				get
+				{
+					return burstingEnabled;
+				}
+				set	
+				{
+					burstingEnabled = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Encrypted")]
+			public string Encrypted
+			{
+				get
+				{
+					return encrypted;
+				}
+				set	
+				{
+					encrypted = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "KMSKeyId")]
+			public string KMSKeyId
+			{
+				get
+				{
+					return kMSKeyId;
+				}
+				set	
+				{
+					kMSKeyId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EncryptAlgorithm")]
+			public string EncryptAlgorithm
+			{
+				get
+				{
+					return encryptAlgorithm;
+				}
+				set	
+				{
+					encryptAlgorithm = value;
 				}
 			}
 		}
@@ -1725,6 +1807,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string storageClusterId;
 
+			private long? provisionedIops;
+
+			private bool? burstingEnabled;
+
 			[JsonProperty(PropertyName = "PerformanceLevel")]
 			public string PerformanceLevel
 			{
@@ -1891,6 +1977,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					storageClusterId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ProvisionedIops")]
+			public long? ProvisionedIops
+			{
+				get
+				{
+					return provisionedIops;
+				}
+				set	
+				{
+					provisionedIops = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BurstingEnabled")]
+			public bool? BurstingEnabled
+			{
+				get
+				{
+					return burstingEnabled;
+				}
+				set	
+				{
+					burstingEnabled = value;
 				}
 			}
 		}

@@ -71,6 +71,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceName;
 
+		private RemoteConnectionOptions remoteConnectionOptions_;
+
 		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
@@ -278,6 +280,60 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				instanceName = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceName", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "RemoteConnectionOptions")]
+		public RemoteConnectionOptions RemoteConnectionOptions_
+		{
+			get
+			{
+				return remoteConnectionOptions_;
+			}
+
+			set
+			{
+				remoteConnectionOptions_ = value;
+				if(RemoteConnectionOptions_ != null)
+				{
+
+					DictionaryUtil.Add(QueryParameters,"RemoteConnectionOptions.Password", RemoteConnectionOptions_.Password);
+					DictionaryUtil.Add(QueryParameters,"RemoteConnectionOptions.Type", RemoteConnectionOptions_.Type);
+				}
+			}
+		}
+
+		public class RemoteConnectionOptions
+		{
+
+			private string password;
+
+			private string type;
+
+			[JsonProperty(PropertyName = "Password")]
+			public string Password
+			{
+				get
+				{
+					return password;
+				}
+				set	
+				{
+					password = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Type")]
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
 			}
 		}
 

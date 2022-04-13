@@ -40,6 +40,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			for (int i = 0; i < _ctx.Length("DescribeDedicatedHosts.DedicatedHosts.Length"); i++) {
 				DescribeDedicatedHostsResponse.DescribeDedicatedHosts_DedicatedHost dedicatedHost = new DescribeDedicatedHostsResponse.DescribeDedicatedHosts_DedicatedHost();
 				dedicatedHost.CreationTime = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].CreationTime");
+				dedicatedHost.SchedulerOptionsManagedPrivateSpaceId = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].SchedulerOptions.ManagedPrivateSpaceId");
 				dedicatedHost.Status = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].Status");
 				dedicatedHost.Cores = _ctx.IntegerValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].Cores");
 				dedicatedHost.AutoPlacement = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].AutoPlacement");

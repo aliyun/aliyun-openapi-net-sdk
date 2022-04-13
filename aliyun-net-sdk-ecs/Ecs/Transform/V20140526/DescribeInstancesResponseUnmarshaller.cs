@@ -164,6 +164,10 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				metadataOptions.HttpTokens = _ctx.StringValue("DescribeInstances.Instances["+ i +"].MetadataOptions.HttpTokens");
 				instance.MetadataOptions = metadataOptions;
 
+				DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_ImageOptions imageOptions = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_ImageOptions();
+				imageOptions.LoginAsNonRoot = _ctx.BooleanValue("DescribeInstances.Instances["+ i +"].ImageOptions.LoginAsNonRoot");
+				instance.ImageOptions = imageOptions;
+
 				List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface> instance_networkInterfaces = new List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface>();
 				for (int j = 0; j < _ctx.Length("DescribeInstances.Instances["+ i +"].NetworkInterfaces.Length"); j++) {
 					DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface networkInterface = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface();

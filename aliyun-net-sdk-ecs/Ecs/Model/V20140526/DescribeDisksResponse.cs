@@ -190,6 +190,12 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string multiAttach;
 
+			private long? provisionedIops;
+
+			private bool? burstingEnabled;
+
+			private int? throughput;
+
 			private List<DescribeDisks_OperationLock> operationLocks;
 
 			private List<DescribeDisks_MountInstance> mountInstances;
@@ -663,6 +669,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					multiAttach = value;
+				}
+			}
+
+			public long? ProvisionedIops
+			{
+				get
+				{
+					return provisionedIops;
+				}
+				set	
+				{
+					provisionedIops = value;
+				}
+			}
+
+			public bool? BurstingEnabled
+			{
+				get
+				{
+					return burstingEnabled;
+				}
+				set	
+				{
+					burstingEnabled = value;
+				}
+			}
+
+			public int? Throughput
+			{
+				get
+				{
+					return throughput;
+				}
+				set	
+				{
+					throughput = value;
 				}
 			}
 

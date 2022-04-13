@@ -236,6 +236,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private DescribeInstances_MetadataOptions metadataOptions;
 
+			private DescribeInstances_ImageOptions imageOptions;
+
 			public string CreationTime
 			{
 				get
@@ -980,6 +982,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public DescribeInstances_ImageOptions ImageOptions
+			{
+				get
+				{
+					return imageOptions;
+				}
+				set	
+				{
+					imageOptions = value;
+				}
+			}
+
 			public class DescribeInstances_NetworkInterface
 			{
 
@@ -1532,6 +1546,24 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						httpTokens = value;
+					}
+				}
+			}
+
+			public class DescribeInstances_ImageOptions
+			{
+
+				private bool? loginAsNonRoot;
+
+				public bool? LoginAsNonRoot
+				{
+					get
+					{
+						return loginAsNonRoot;
+					}
+					set	
+					{
+						loginAsNonRoot = value;
 					}
 				}
 			}

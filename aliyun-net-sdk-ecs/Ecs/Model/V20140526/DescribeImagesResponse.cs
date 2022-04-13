@@ -162,6 +162,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private long? imageOwnerId;
 
+			private bool? loginAsNonRootSupported;
+
+			private string supplierName;
+
 			private List<DescribeImages_DiskDeviceMapping> diskDeviceMappings;
 
 			private List<DescribeImages_Tag> tags;
@@ -463,6 +467,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					imageOwnerId = value;
+				}
+			}
+
+			public bool? LoginAsNonRootSupported
+			{
+				get
+				{
+					return loginAsNonRootSupported;
+				}
+				set	
+				{
+					loginAsNonRootSupported = value;
+				}
+			}
+
+			public string SupplierName
+			{
+				get
+				{
+					return supplierName;
+				}
+				set	
+				{
+					supplierName = value;
 				}
 			}
 

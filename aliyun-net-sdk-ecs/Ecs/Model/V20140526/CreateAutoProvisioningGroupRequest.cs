@@ -52,11 +52,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<string> launchConfigurationHostNamess = new List<string>(){ };
 
+		private List<string> launchConfigurationSecurityGroupIdss = new List<string>(){ };
+
 		private string resourceGroupId;
 
 		private string launchConfigurationImageId;
 
 		private string launchConfigurationResourceGroupId;
+
+		private string launchConfigurationPassword;
 
 		private string payAsYouGoAllocationStrategy;
 
@@ -242,6 +246,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public List<string> LaunchConfigurationSecurityGroupIdss
+		{
+			get
+			{
+				return launchConfigurationSecurityGroupIdss;
+			}
+
+			set
+			{
+				launchConfigurationSecurityGroupIdss = value;
+			}
+		}
+
 		public string ResourceGroupId
 		{
 			get
@@ -278,6 +295,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				launchConfigurationResourceGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "LaunchConfiguration.ResourceGroupId", value);
+			}
+		}
+
+		public string LaunchConfigurationPassword
+		{
+			get
+			{
+				return launchConfigurationPassword;
+			}
+			set	
+			{
+				launchConfigurationPassword = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchConfiguration.Password", value);
 			}
 		}
 

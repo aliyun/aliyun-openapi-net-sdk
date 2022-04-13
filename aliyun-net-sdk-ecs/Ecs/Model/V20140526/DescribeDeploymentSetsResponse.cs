@@ -132,6 +132,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private int? instanceAmount;
 
+			private List<DescribeDeploymentSets_Capacity> capacities;
+
 			private List<string> instanceIds;
 
 			public string CreationTime
@@ -254,6 +256,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public List<DescribeDeploymentSets_Capacity> Capacities
+			{
+				get
+				{
+					return capacities;
+				}
+				set	
+				{
+					capacities = value;
+				}
+			}
+
 			public List<string> InstanceIds
 			{
 				get
@@ -263,6 +277,52 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					instanceIds = value;
+				}
+			}
+
+			public class DescribeDeploymentSets_Capacity
+			{
+
+				private string zoneId;
+
+				private int? usedAmount;
+
+				private int? availableAmount;
+
+				public string ZoneId
+				{
+					get
+					{
+						return zoneId;
+					}
+					set	
+					{
+						zoneId = value;
+					}
+				}
+
+				public int? UsedAmount
+				{
+					get
+					{
+						return usedAmount;
+					}
+					set	
+					{
+						usedAmount = value;
+					}
+				}
+
+				public int? AvailableAmount
+				{
+					get
+					{
+						return availableAmount;
+					}
+					set	
+					{
+						availableAmount = value;
+					}
 				}
 			}
 		}

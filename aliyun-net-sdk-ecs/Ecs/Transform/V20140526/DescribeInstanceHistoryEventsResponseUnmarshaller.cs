@@ -63,6 +63,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				extendedAttribute.DiskId = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.DiskId");
 				extendedAttribute.HostType = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.HostType");
 				extendedAttribute.HostId = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.HostId");
+				extendedAttribute.OnlineRepairPolicy = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.OnlineRepairPolicy");
 
 				List<string> extendedAttribute_migrationOptions = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.MigrationOptions.Length"); j++) {

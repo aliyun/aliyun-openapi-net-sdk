@@ -79,6 +79,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				disk.Category = _ctx.StringValue("DescribeDisks.Disks["+ i +"].Category");
 				disk.ProductCode = _ctx.StringValue("DescribeDisks.Disks["+ i +"].ProductCode");
 				disk.MultiAttach = _ctx.StringValue("DescribeDisks.Disks["+ i +"].MultiAttach");
+				disk.ProvisionedIops = _ctx.LongValue("DescribeDisks.Disks["+ i +"].ProvisionedIops");
+				disk.BurstingEnabled = _ctx.BooleanValue("DescribeDisks.Disks["+ i +"].BurstingEnabled");
+				disk.Throughput = _ctx.IntegerValue("DescribeDisks.Disks["+ i +"].Throughput");
 
 				List<DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_OperationLock> disk_operationLocks = new List<DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_OperationLock>();
 				for (int j = 0; j < _ctx.Length("DescribeDisks.Disks["+ i +"].OperationLocks.Length"); j++) {
