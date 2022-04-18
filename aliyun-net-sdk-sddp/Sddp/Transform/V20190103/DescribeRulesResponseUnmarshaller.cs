@@ -31,39 +31,39 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			DescribeRulesResponse describeRulesResponse = new DescribeRulesResponse();
 
 			describeRulesResponse.HttpResponse = _ctx.HttpResponse;
+			describeRulesResponse.CurrentPage = _ctx.IntegerValue("DescribeRules.CurrentPage");
 			describeRulesResponse.RequestId = _ctx.StringValue("DescribeRules.RequestId");
 			describeRulesResponse.PageSize = _ctx.IntegerValue("DescribeRules.PageSize");
-			describeRulesResponse.CurrentPage = _ctx.IntegerValue("DescribeRules.CurrentPage");
 			describeRulesResponse.TotalCount = _ctx.IntegerValue("DescribeRules.TotalCount");
 
 			List<DescribeRulesResponse.DescribeRules_Rule> describeRulesResponse_items = new List<DescribeRulesResponse.DescribeRules_Rule>();
 			for (int i = 0; i < _ctx.Length("DescribeRules.Items.Length"); i++) {
 				DescribeRulesResponse.DescribeRules_Rule rule = new DescribeRulesResponse.DescribeRules_Rule();
-				rule.Id = _ctx.LongValue("DescribeRules.Items["+ i +"].Id");
-				rule.GmtCreate = _ctx.LongValue("DescribeRules.Items["+ i +"].GmtCreate");
-				rule.GmtModified = _ctx.LongValue("DescribeRules.Items["+ i +"].GmtModified");
-				rule.CustomType = _ctx.IntegerValue("DescribeRules.Items["+ i +"].CustomType");
-				rule.Name = _ctx.StringValue("DescribeRules.Items["+ i +"].Name");
-				rule.Description = _ctx.StringValue("DescribeRules.Items["+ i +"].Description");
-				rule.UserId = _ctx.LongValue("DescribeRules.Items["+ i +"].UserId");
-				rule.LoginName = _ctx.StringValue("DescribeRules.Items["+ i +"].LoginName");
 				rule.DisplayName = _ctx.StringValue("DescribeRules.Items["+ i +"].DisplayName");
-				rule.Category = _ctx.IntegerValue("DescribeRules.Items["+ i +"].Category");
-				rule.CategoryName = _ctx.StringValue("DescribeRules.Items["+ i +"].CategoryName");
 				rule.Status = _ctx.IntegerValue("DescribeRules.Items["+ i +"].Status");
-				rule.RiskLevelName = _ctx.StringValue("DescribeRules.Items["+ i +"].RiskLevelName");
-				rule.RiskLevelId = _ctx.LongValue("DescribeRules.Items["+ i +"].RiskLevelId");
-				rule.Content = _ctx.StringValue("DescribeRules.Items["+ i +"].Content");
+				rule.WarnLevel = _ctx.IntegerValue("DescribeRules.Items["+ i +"].WarnLevel");
+				rule.UserId = _ctx.LongValue("DescribeRules.Items["+ i +"].UserId");
 				rule.DepartName = _ctx.StringValue("DescribeRules.Items["+ i +"].DepartName");
 				rule.StatExpress = _ctx.StringValue("DescribeRules.Items["+ i +"].StatExpress");
+				rule.GmtModified = _ctx.LongValue("DescribeRules.Items["+ i +"].GmtModified");
+				rule.RiskLevelId = _ctx.LongValue("DescribeRules.Items["+ i +"].RiskLevelId");
+				rule.Description = _ctx.StringValue("DescribeRules.Items["+ i +"].Description");
 				rule.ProductId = _ctx.LongValue("DescribeRules.Items["+ i +"].ProductId");
-				rule.HitTotalCount = _ctx.IntegerValue("DescribeRules.Items["+ i +"].HitTotalCount");
-				rule.ProductCode = _ctx.StringValue("DescribeRules.Items["+ i +"].ProductCode");
-				rule.WarnLevel = _ctx.IntegerValue("DescribeRules.Items["+ i +"].WarnLevel");
-				rule.MajorKey = _ctx.StringValue("DescribeRules.Items["+ i +"].MajorKey");
-				rule.ContentCategory = _ctx.StringValue("DescribeRules.Items["+ i +"].ContentCategory");
+				rule.Name = _ctx.StringValue("DescribeRules.Items["+ i +"].Name");
+				rule.Content = _ctx.StringValue("DescribeRules.Items["+ i +"].Content");
 				rule.Target = _ctx.StringValue("DescribeRules.Items["+ i +"].Target");
+				rule.LoginName = _ctx.StringValue("DescribeRules.Items["+ i +"].LoginName");
+				rule.CategoryName = _ctx.StringValue("DescribeRules.Items["+ i +"].CategoryName");
+				rule.ContentCategory = _ctx.StringValue("DescribeRules.Items["+ i +"].ContentCategory");
+				rule.HitTotalCount = _ctx.IntegerValue("DescribeRules.Items["+ i +"].HitTotalCount");
 				rule.GroupId = _ctx.StringValue("DescribeRules.Items["+ i +"].GroupId");
+				rule.CustomType = _ctx.IntegerValue("DescribeRules.Items["+ i +"].CustomType");
+				rule.RiskLevelName = _ctx.StringValue("DescribeRules.Items["+ i +"].RiskLevelName");
+				rule.GmtCreate = _ctx.LongValue("DescribeRules.Items["+ i +"].GmtCreate");
+				rule.Category = _ctx.IntegerValue("DescribeRules.Items["+ i +"].Category");
+				rule.MajorKey = _ctx.StringValue("DescribeRules.Items["+ i +"].MajorKey");
+				rule.Id = _ctx.LongValue("DescribeRules.Items["+ i +"].Id");
+				rule.ProductCode = _ctx.StringValue("DescribeRules.Items["+ i +"].ProductCode");
 
 				describeRulesResponse_items.Add(rule);
 			}

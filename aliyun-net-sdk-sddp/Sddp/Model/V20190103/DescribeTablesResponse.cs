@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 	public class DescribeTablesResponse : AcsResponse
 	{
 
+		private int? currentPage;
+
 		private string requestId;
 
 		private int? pageSize;
 
-		private int? currentPage;
-
 		private int? totalCount;
 
 		private List<DescribeTables_Table> items;
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -56,18 +68,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			set	
 			{
 				pageSize = value;
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
 			}
 		}
 
@@ -98,79 +98,71 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		public class DescribeTables_Table
 		{
 
-			private long? id;
-
-			private string name;
+			private long? creationTime;
 
 			private string owner;
 
-			private long? creationTime;
-
-			private string productId;
-
-			private string productCode;
-
-			private bool? sensitive;
-
-			private long? riskLevelId;
-
-			private string riskLevelName;
-
-			private string departName;
-
-			private int? totalCount;
-
-			private int? sensitiveCount;
+			private string countDetails;
 
 			private string sensitiveRatio;
 
-			private long? instanceId;
+			private string tenantName;
 
-			private int? s2Count;
+			private string departName;
+
+			private long? riskLevelId;
+
+			private string instanceName;
 
 			private int? s3Count;
 
 			private int? s1Count;
 
-			private string countDetails;
+			private string productId;
 
-			private int? totalRows;
+			private string name;
+
+			private int? s2Count;
+
+			private long? instanceId;
+
+			private int? totalCount;
+
+			private string instanceDescription;
+
+			private bool? sensitive;
+
+			private string sensLevelName;
 
 			private long? lastScanTime;
 
 			private string regionName;
 
-			private string instanceName;
+			private string riskLevelName;
 
-			private string sensLevelName;
+			private int? totalRows;
 
-			private string instanceDescription;
+			private int? sensitiveCount;
 
-			private string tenantName;
+			private long? id;
+
+			private string productCode;
+
+			private string objectHex;
+
+			private int? dataType;
 
 			private List<DescribeTables_Rule> ruleList;
 
-			public long? Id
+			public long? CreationTime
 			{
 				get
 				{
-					return id;
+					return creationTime;
 				}
 				set	
 				{
-					id = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
+					creationTime = value;
 				}
 			}
 
@@ -186,111 +178,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public long? CreationTime
+			public string CountDetails
 			{
 				get
 				{
-					return creationTime;
+					return countDetails;
 				}
 				set	
 				{
-					creationTime = value;
-				}
-			}
-
-			public string ProductId
-			{
-				get
-				{
-					return productId;
-				}
-				set	
-				{
-					productId = value;
-				}
-			}
-
-			public string ProductCode
-			{
-				get
-				{
-					return productCode;
-				}
-				set	
-				{
-					productCode = value;
-				}
-			}
-
-			public bool? Sensitive
-			{
-				get
-				{
-					return sensitive;
-				}
-				set	
-				{
-					sensitive = value;
-				}
-			}
-
-			public long? RiskLevelId
-			{
-				get
-				{
-					return riskLevelId;
-				}
-				set	
-				{
-					riskLevelId = value;
-				}
-			}
-
-			public string RiskLevelName
-			{
-				get
-				{
-					return riskLevelName;
-				}
-				set	
-				{
-					riskLevelName = value;
-				}
-			}
-
-			public string DepartName
-			{
-				get
-				{
-					return departName;
-				}
-				set	
-				{
-					departName = value;
-				}
-			}
-
-			public int? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
-
-			public int? SensitiveCount
-			{
-				get
-				{
-					return sensitiveCount;
-				}
-				set	
-				{
-					sensitiveCount = value;
+					countDetails = value;
 				}
 			}
 
@@ -306,27 +202,51 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public long? InstanceId
+			public string TenantName
 			{
 				get
 				{
-					return instanceId;
+					return tenantName;
 				}
 				set	
 				{
-					instanceId = value;
+					tenantName = value;
 				}
 			}
 
-			public int? S2Count
+			public string DepartName
 			{
 				get
 				{
-					return s2Count;
+					return departName;
 				}
 				set	
 				{
-					s2Count = value;
+					departName = value;
+				}
+			}
+
+			public long? RiskLevelId
+			{
+				get
+				{
+					return riskLevelId;
+				}
+				set	
+				{
+					riskLevelId = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
 				}
 			}
 
@@ -354,27 +274,99 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public string CountDetails
+			public string ProductId
 			{
 				get
 				{
-					return countDetails;
+					return productId;
 				}
 				set	
 				{
-					countDetails = value;
+					productId = value;
 				}
 			}
 
-			public int? TotalRows
+			public string Name
 			{
 				get
 				{
-					return totalRows;
+					return name;
 				}
 				set	
 				{
-					totalRows = value;
+					name = value;
+				}
+			}
+
+			public int? S2Count
+			{
+				get
+				{
+					return s2Count;
+				}
+				set	
+				{
+					s2Count = value;
+				}
+			}
+
+			public long? InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public int? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
+				}
+			}
+
+			public string InstanceDescription
+			{
+				get
+				{
+					return instanceDescription;
+				}
+				set	
+				{
+					instanceDescription = value;
+				}
+			}
+
+			public bool? Sensitive
+			{
+				get
+				{
+					return sensitive;
+				}
+				set	
+				{
+					sensitive = value;
+				}
+			}
+
+			public string SensLevelName
+			{
+				get
+				{
+					return sensLevelName;
+				}
+				set	
+				{
+					sensLevelName = value;
 				}
 			}
 
@@ -402,51 +394,87 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public string InstanceName
+			public string RiskLevelName
 			{
 				get
 				{
-					return instanceName;
+					return riskLevelName;
 				}
 				set	
 				{
-					instanceName = value;
+					riskLevelName = value;
 				}
 			}
 
-			public string SensLevelName
+			public int? TotalRows
 			{
 				get
 				{
-					return sensLevelName;
+					return totalRows;
 				}
 				set	
 				{
-					sensLevelName = value;
+					totalRows = value;
 				}
 			}
 
-			public string InstanceDescription
+			public int? SensitiveCount
 			{
 				get
 				{
-					return instanceDescription;
+					return sensitiveCount;
 				}
 				set	
 				{
-					instanceDescription = value;
+					sensitiveCount = value;
 				}
 			}
 
-			public string TenantName
+			public long? Id
 			{
 				get
 				{
-					return tenantName;
+					return id;
 				}
 				set	
 				{
-					tenantName = value;
+					id = value;
+				}
+			}
+
+			public string ProductCode
+			{
+				get
+				{
+					return productCode;
+				}
+				set	
+				{
+					productCode = value;
+				}
+			}
+
+			public string ObjectHex
+			{
+				get
+				{
+					return objectHex;
+				}
+				set	
+				{
+					objectHex = value;
+				}
+			}
+
+			public int? DataType
+			{
+				get
+				{
+					return dataType;
+				}
+				set	
+				{
+					dataType = value;
 				}
 			}
 
@@ -465,25 +493,13 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			public class DescribeTables_Rule
 			{
 
-				private string name;
-
 				private string displayName;
 
-				private long? count;
+				private string name;
 
 				private long? riskLevelId;
 
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
+				private long? count;
 
 				public string DisplayName
 				{
@@ -497,15 +513,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					}
 				}
 
-				public long? Count
+				public string Name
 				{
 					get
 					{
-						return count;
+						return name;
 					}
 					set	
 					{
-						count = value;
+						name = value;
 					}
 				}
 
@@ -518,6 +534,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					set	
 					{
 						riskLevelId = value;
+					}
+				}
+
+				public long? Count
+				{
+					get
+					{
+						return count;
+					}
+					set	
+					{
+						count = value;
 					}
 				}
 			}

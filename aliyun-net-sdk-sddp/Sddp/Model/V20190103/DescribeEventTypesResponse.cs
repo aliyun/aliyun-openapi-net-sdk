@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
@@ -56,39 +56,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		public class DescribeEventTypes_EventType
 		{
 
-			private long? id;
-
-			private string name;
-
 			private string code;
 
 			private string description;
 
+			private string name;
+
+			private long? id;
+
 			private List<DescribeEventTypes_SubType> subTypeList;
-
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
 
 			public string Code
 			{
@@ -114,6 +90,30 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
 			public List<DescribeEventTypes_SubType> SubTypeList
 			{
 				get
@@ -129,61 +129,37 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			public class DescribeEventTypes_SubType
 			{
 
-				private long? id;
-
-				private string name;
-
-				private string code;
+				private int? status;
 
 				private string description;
 
-				private int? status;
+				private int? configContentType;
 
 				private int? eventHitCount;
 
-				private string adaptedProduct;
+				private string configValue;
 
 				private string configCode;
 
-				private int? configContentType;
+				private string code;
 
 				private string configDescription;
 
-				private string configValue;
+				private string name;
 
-				public long? Id
+				private string adaptedProduct;
+
+				private long? id;
+
+				public int? Status
 				{
 					get
 					{
-						return id;
+						return status;
 					}
 					set	
 					{
-						id = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
-				public string Code
-				{
-					get
-					{
-						return code;
-					}
-					set	
-					{
-						code = value;
+						status = value;
 					}
 				}
 
@@ -199,15 +175,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					}
 				}
 
-				public int? Status
+				public int? ConfigContentType
 				{
 					get
 					{
-						return status;
+						return configContentType;
 					}
 					set	
 					{
-						status = value;
+						configContentType = value;
 					}
 				}
 
@@ -223,15 +199,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					}
 				}
 
-				public string AdaptedProduct
+				public string ConfigValue
 				{
 					get
 					{
-						return adaptedProduct;
+						return configValue;
 					}
 					set	
 					{
-						adaptedProduct = value;
+						configValue = value;
 					}
 				}
 
@@ -247,15 +223,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					}
 				}
 
-				public int? ConfigContentType
+				public string Code
 				{
 					get
 					{
-						return configContentType;
+						return code;
 					}
 					set	
 					{
-						configContentType = value;
+						code = value;
 					}
 				}
 
@@ -271,15 +247,39 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					}
 				}
 
-				public string ConfigValue
+				public string Name
 				{
 					get
 					{
-						return configValue;
+						return name;
 					}
 					set	
 					{
-						configValue = value;
+						name = value;
+					}
+				}
+
+				public string AdaptedProduct
+				{
+					get
+					{
+						return adaptedProduct;
+					}
+					set	
+					{
+						adaptedProduct = value;
+					}
+				}
+
+				public long? Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
 					}
 				}
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
@@ -56,29 +56,17 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		public class DescribeConfigs_Config
 		{
 
-			private long? id;
+			private string code;
 
-			private int? code;
-
-			private string description;
-
-			private long? _value;
+			private string _value;
 
 			private string defaultValue;
 
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private string description;
 
-			public int? Code
+			private long? id;
+
+			public string Code
 			{
 				get
 				{
@@ -90,19 +78,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public long? _Value
+			public string _Value
 			{
 				get
 				{
@@ -123,6 +99,30 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					defaultValue = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 		}

@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Sddp;
 using Aliyun.Acs.Sddp.Transform;
 using Aliyun.Acs.Sddp.Transform.V20190103;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
     public class DescribeInstancesRequest : RpcAcsRequest<DescribeInstancesResponse>
     {
         public DescribeInstancesRequest()
-            : base("Sddp", "2019-01-03", "DescribeInstances")
+            : base("Sddp", "2019-01-03", "DescribeInstances", "sddp", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -47,21 +46,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private long? riskLevelId;
 
-		private string source;
-
-		private long? startTime;
-
-		private long? userId;
-
-		private string nameAccurate;
-
-		private string sensLevelName;
-
-		private long? lastFinishTimeStart;
-
 		private int? pageSize;
-
-		private int? checkStatus;
 
 		private string lang;
 
@@ -69,17 +54,11 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private int? featureType;
 
-		private int? userType;
-
-		private long? endTime;
-
 		private int? currentPage;
 
 		private string name;
 
 		private long? ruleId;
-
-		private long? lastFinishTimeEnd;
 
 		public string ProductCode
 		{
@@ -120,84 +99,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public string Source
-		{
-			get
-			{
-				return source;
-			}
-			set	
-			{
-				source = value;
-				DictionaryUtil.Add(QueryParameters, "Source", value);
-			}
-		}
-
-		public long? StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
-			}
-		}
-
-		public long? UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value.ToString());
-			}
-		}
-
-		public string NameAccurate
-		{
-			get
-			{
-				return nameAccurate;
-			}
-			set	
-			{
-				nameAccurate = value;
-				DictionaryUtil.Add(QueryParameters, "NameAccurate", value);
-			}
-		}
-
-		public string SensLevelName
-		{
-			get
-			{
-				return sensLevelName;
-			}
-			set	
-			{
-				sensLevelName = value;
-				DictionaryUtil.Add(QueryParameters, "SensLevelName", value);
-			}
-		}
-
-		public long? LastFinishTimeStart
-		{
-			get
-			{
-				return lastFinishTimeStart;
-			}
-			set	
-			{
-				lastFinishTimeStart = value;
-				DictionaryUtil.Add(QueryParameters, "LastFinishTimeStart", value.ToString());
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -208,19 +109,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public int? CheckStatus
-		{
-			get
-			{
-				return checkStatus;
-			}
-			set	
-			{
-				checkStatus = value;
-				DictionaryUtil.Add(QueryParameters, "CheckStatus", value.ToString());
 			}
 		}
 
@@ -263,32 +151,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public int? UserType
-		{
-			get
-			{
-				return userType;
-			}
-			set	
-			{
-				userType = value;
-				DictionaryUtil.Add(QueryParameters, "UserType", value.ToString());
-			}
-		}
-
-		public long? EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
-			}
-		}
-
 		public int? CurrentPage
 		{
 			get
@@ -325,19 +187,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				ruleId = value;
 				DictionaryUtil.Add(QueryParameters, "RuleId", value.ToString());
-			}
-		}
-
-		public long? LastFinishTimeEnd
-		{
-			get
-			{
-				return lastFinishTimeEnd;
-			}
-			set	
-			{
-				lastFinishTimeEnd = value;
-				DictionaryUtil.Add(QueryParameters, "LastFinishTimeEnd", value.ToString());
 			}
 		}
 

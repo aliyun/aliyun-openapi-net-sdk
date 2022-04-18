@@ -24,16 +24,17 @@ using Aliyun.Acs.Sddp.Model.V20190103;
 
 namespace Aliyun.Acs.Sddp.Transform.V20190103
 {
-    public class BatchDeleteDataLimitResponseUnmarshaller
+    public class CreateSlrRoleResponseUnmarshaller
     {
-        public static BatchDeleteDataLimitResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateSlrRoleResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			BatchDeleteDataLimitResponse batchDeleteDataLimitResponse = new BatchDeleteDataLimitResponse();
+			CreateSlrRoleResponse createSlrRoleResponse = new CreateSlrRoleResponse();
 
-			batchDeleteDataLimitResponse.HttpResponse = _ctx.HttpResponse;
-			batchDeleteDataLimitResponse.RequestId = _ctx.StringValue("BatchDeleteDataLimit.RequestId");
+			createSlrRoleResponse.HttpResponse = _ctx.HttpResponse;
+			createSlrRoleResponse.HasPermission = _ctx.BooleanValue("CreateSlrRole.HasPermission");
+			createSlrRoleResponse.RequestId = _ctx.StringValue("CreateSlrRole.RequestId");
         
-			return batchDeleteDataLimitResponse;
+			return createSlrRoleResponse;
         }
     }
 }

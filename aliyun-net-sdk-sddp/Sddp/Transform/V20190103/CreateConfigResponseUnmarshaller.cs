@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			CreateConfigResponse createConfigResponse = new CreateConfigResponse();
 
 			createConfigResponse.HttpResponse = _ctx.HttpResponse;
-			createConfigResponse.RequestId = _ctx.StringValue("CreateConfig.RequestId");
 			createConfigResponse.Id = _ctx.LongValue("CreateConfig.Id");
+			createConfigResponse.RequestId = _ctx.StringValue("CreateConfig.RequestId");
         
 			return createConfigResponse;
         }

@@ -36,11 +36,11 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			List<DescribeConfigsResponse.DescribeConfigs_Config> describeConfigsResponse_configList = new List<DescribeConfigsResponse.DescribeConfigs_Config>();
 			for (int i = 0; i < _ctx.Length("DescribeConfigs.ConfigList.Length"); i++) {
 				DescribeConfigsResponse.DescribeConfigs_Config config = new DescribeConfigsResponse.DescribeConfigs_Config();
-				config.Id = _ctx.LongValue("DescribeConfigs.ConfigList["+ i +"].Id");
-				config.Code = _ctx.IntegerValue("DescribeConfigs.ConfigList["+ i +"].Code");
-				config.Description = _ctx.StringValue("DescribeConfigs.ConfigList["+ i +"].Description");
-				config._Value = _ctx.LongValue("DescribeConfigs.ConfigList["+ i +"].Value");
+				config.Code = _ctx.StringValue("DescribeConfigs.ConfigList["+ i +"].Code");
+				config._Value = _ctx.StringValue("DescribeConfigs.ConfigList["+ i +"].Value");
 				config.DefaultValue = _ctx.StringValue("DescribeConfigs.ConfigList["+ i +"].DefaultValue");
+				config.Description = _ctx.StringValue("DescribeConfigs.ConfigList["+ i +"].Description");
+				config.Id = _ctx.LongValue("DescribeConfigs.ConfigList["+ i +"].Id");
 
 				describeConfigsResponse_configList.Add(config);
 			}

@@ -17,17 +17,15 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
 {
-	public class DescribeInstancePortraitResponse : AcsResponse
+	public class ModifyReportTaskStatusResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private List<DescribeInstancePortrait_InstancePortrait> content;
 
 		public string RequestId
 		{
@@ -38,50 +36,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public List<DescribeInstancePortrait_InstancePortrait> Content
-		{
-			get
-			{
-				return content;
-			}
-			set	
-			{
-				content = value;
-			}
-		}
-
-		public class DescribeInstancePortrait_InstancePortrait
-		{
-
-			private string itemKey;
-
-			private string content;
-
-			public string ItemKey
-			{
-				get
-				{
-					return itemKey;
-				}
-				set	
-				{
-					itemKey = value;
-				}
-			}
-
-			public string Content
-			{
-				get
-				{
-					return content;
-				}
-				set	
-				{
-					content = value;
-				}
 			}
 		}
 	}

@@ -22,16 +22,15 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Sddp;
 using Aliyun.Acs.Sddp.Transform;
 using Aliyun.Acs.Sddp.Transform.V20190103;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
 {
-    public class DescribeAccountDetailRequest : RpcAcsRequest<DescribeAccountDetailResponse>
+    public class CreateSlrRoleRequest : RpcAcsRequest<CreateSlrRoleResponse>
     {
-        public DescribeAccountDetailRequest()
-            : base("Sddp", "2019-01-03", "DescribeAccountDetail")
+        public CreateSlrRoleRequest()
+            : base("Sddp", "2019-01-03", "CreateSlrRole", "sddp", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,37 +40,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			Method = MethodType.POST;
         }
 
-		private long? userId;
-
-		private long? accountTypeId;
-
 		private string lang;
-
-		public long? UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value.ToString());
-			}
-		}
-
-		public long? AccountTypeId
-		{
-			get
-			{
-				return accountTypeId;
-			}
-			set	
-			{
-				accountTypeId = value;
-				DictionaryUtil.Add(QueryParameters, "AccountTypeId", value.ToString());
-			}
-		}
 
 		public string Lang
 		{
@@ -91,9 +60,9 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			return false;
 		}
 
-        public override DescribeAccountDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateSlrRoleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAccountDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateSlrRoleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

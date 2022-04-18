@@ -31,37 +31,40 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			DescribeInstanceSourcesResponse describeInstanceSourcesResponse = new DescribeInstanceSourcesResponse();
 
 			describeInstanceSourcesResponse.HttpResponse = _ctx.HttpResponse;
+			describeInstanceSourcesResponse.CurrentPage = _ctx.IntegerValue("DescribeInstanceSources.CurrentPage");
 			describeInstanceSourcesResponse.RequestId = _ctx.StringValue("DescribeInstanceSources.RequestId");
 			describeInstanceSourcesResponse.PageSize = _ctx.IntegerValue("DescribeInstanceSources.PageSize");
-			describeInstanceSourcesResponse.CurrentPage = _ctx.IntegerValue("DescribeInstanceSources.CurrentPage");
 			describeInstanceSourcesResponse.TotalCount = _ctx.IntegerValue("DescribeInstanceSources.TotalCount");
 
 			List<DescribeInstanceSourcesResponse.DescribeInstanceSources_InstanceSource> describeInstanceSourcesResponse_items = new List<DescribeInstanceSourcesResponse.DescribeInstanceSources_InstanceSource>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceSources.Items.Length"); i++) {
 				DescribeInstanceSourcesResponse.DescribeInstanceSources_InstanceSource instanceSource = new DescribeInstanceSourcesResponse.DescribeInstanceSources_InstanceSource();
-				instanceSource.RegionId = _ctx.StringValue("DescribeInstanceSources.Items["+ i +"].RegionId");
-				instanceSource.RegionName = _ctx.StringValue("DescribeInstanceSources.Items["+ i +"].RegionName");
-				instanceSource.InstanceId = _ctx.StringValue("DescribeInstanceSources.Items["+ i +"].InstanceId");
-				instanceSource.Id = _ctx.LongValue("DescribeInstanceSources.Items["+ i +"].Id");
-				instanceSource.UserName = _ctx.StringValue("DescribeInstanceSources.Items["+ i +"].UserName");
-				instanceSource.DbName = _ctx.StringValue("DescribeInstanceSources.Items["+ i +"].DbName");
-				instanceSource.DataLimitId = _ctx.LongValue("DescribeInstanceSources.Items["+ i +"].DataLimitId");
-				instanceSource.GmtCreate = _ctx.LongValue("DescribeInstanceSources.Items["+ i +"].GmtCreate");
-				instanceSource.ProductId = _ctx.LongValue("DescribeInstanceSources.Items["+ i +"].ProductId");
-				instanceSource.AuditStatus = _ctx.IntegerValue("DescribeInstanceSources.Items["+ i +"].AuditStatus");
-				instanceSource.LogStoreDay = _ctx.IntegerValue("DescribeInstanceSources.Items["+ i +"].LogStoreDay");
-				instanceSource.Enable = _ctx.IntegerValue("DescribeInstanceSources.Items["+ i +"].Enable");
-				instanceSource.AutoScan = _ctx.IntegerValue("DescribeInstanceSources.Items["+ i +"].AutoScan");
-				instanceSource.EngineType = _ctx.StringValue("DescribeInstanceSources.Items["+ i +"].EngineType");
-				instanceSource.InstanceSize = _ctx.LongValue("DescribeInstanceSources.Items["+ i +"].InstanceSize");
-				instanceSource.PasswordStatus = _ctx.IntegerValue("DescribeInstanceSources.Items["+ i +"].PasswordStatus");
 				instanceSource.LastModifyUserId = _ctx.StringValue("DescribeInstanceSources.Items["+ i +"].LastModifyUserId");
-				instanceSource.LastModifyTime = _ctx.LongValue("DescribeInstanceSources.Items["+ i +"].LastModifyTime");
-				instanceSource.TenantId = _ctx.StringValue("DescribeInstanceSources.Items["+ i +"].TenantId");
+				instanceSource.PasswordStatus = _ctx.IntegerValue("DescribeInstanceSources.Items["+ i +"].PasswordStatus");
+				instanceSource.EngineType = _ctx.StringValue("DescribeInstanceSources.Items["+ i +"].EngineType");
 				instanceSource.TenantName = _ctx.StringValue("DescribeInstanceSources.Items["+ i +"].TenantName");
+				instanceSource.InstanceId = _ctx.StringValue("DescribeInstanceSources.Items["+ i +"].InstanceId");
 				instanceSource.InstanceDescription = _ctx.StringValue("DescribeInstanceSources.Items["+ i +"].InstanceDescription");
+				instanceSource.DataLimitId = _ctx.LongValue("DescribeInstanceSources.Items["+ i +"].DataLimitId");
+				instanceSource.RegionId = _ctx.StringValue("DescribeInstanceSources.Items["+ i +"].RegionId");
+				instanceSource.DbName = _ctx.StringValue("DescribeInstanceSources.Items["+ i +"].DbName");
+				instanceSource.LastModifyTime = _ctx.LongValue("DescribeInstanceSources.Items["+ i +"].LastModifyTime");
+				instanceSource.RegionName = _ctx.StringValue("DescribeInstanceSources.Items["+ i +"].RegionName");
 				instanceSource.CanModifyUserName = _ctx.BooleanValue("DescribeInstanceSources.Items["+ i +"].CanModifyUserName");
-				instanceSource.InstanceDescription1 = _ctx.StringValue("DescribeInstanceSources.Items["+ i +"].InstanceDescription");
+				instanceSource.LogStoreDay = _ctx.IntegerValue("DescribeInstanceSources.Items["+ i +"].LogStoreDay");
+				instanceSource.GmtCreate = _ctx.LongValue("DescribeInstanceSources.Items["+ i +"].GmtCreate");
+				instanceSource.AutoScan = _ctx.IntegerValue("DescribeInstanceSources.Items["+ i +"].AutoScan");
+				instanceSource.ProductId = _ctx.LongValue("DescribeInstanceSources.Items["+ i +"].ProductId");
+				instanceSource.InstanceSize = _ctx.LongValue("DescribeInstanceSources.Items["+ i +"].InstanceSize");
+				instanceSource.UserName = _ctx.StringValue("DescribeInstanceSources.Items["+ i +"].UserName");
+				instanceSource.AuditStatus = _ctx.IntegerValue("DescribeInstanceSources.Items["+ i +"].AuditStatus");
+				instanceSource.Id = _ctx.LongValue("DescribeInstanceSources.Items["+ i +"].Id");
+				instanceSource.TenantId = _ctx.StringValue("DescribeInstanceSources.Items["+ i +"].TenantId");
+				instanceSource.Enable = _ctx.IntegerValue("DescribeInstanceSources.Items["+ i +"].Enable");
+				instanceSource.CheckStatus = _ctx.IntegerValue("DescribeInstanceSources.Items["+ i +"].CheckStatus");
+				instanceSource.DatamaskStatus = _ctx.IntegerValue("DescribeInstanceSources.Items["+ i +"].DatamaskStatus");
+				instanceSource.ErrorMessage = _ctx.StringValue("DescribeInstanceSources.Items["+ i +"].ErrorMessage");
+				instanceSource.SamplingSize = _ctx.IntegerValue("DescribeInstanceSources.Items["+ i +"].SamplingSize");
 
 				describeInstanceSourcesResponse_items.Add(instanceSource);
 			}

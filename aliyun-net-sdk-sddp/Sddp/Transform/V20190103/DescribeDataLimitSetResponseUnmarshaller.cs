@@ -34,29 +34,29 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			describeDataLimitSetResponse.RequestId = _ctx.StringValue("DescribeDataLimitSet.RequestId");
 
 			DescribeDataLimitSetResponse.DescribeDataLimitSet_DataLimitSet dataLimitSet = new DescribeDataLimitSetResponse.DescribeDataLimitSet_DataLimitSet();
-			dataLimitSet.ResourceType = _ctx.LongValue("DescribeDataLimitSet.DataLimitSet.ResourceType");
 			dataLimitSet.ResourceTypeCode = _ctx.StringValue("DescribeDataLimitSet.DataLimitSet.ResourceTypeCode");
+			dataLimitSet.ResourceType = _ctx.LongValue("DescribeDataLimitSet.DataLimitSet.ResourceType");
 			dataLimitSet.TotalCount = _ctx.IntegerValue("DescribeDataLimitSet.DataLimitSet.TotalCount");
 
 			List<DescribeDataLimitSetResponse.DescribeDataLimitSet_DataLimitSet.DescribeDataLimitSet_DataLimit> dataLimitSet_dataLimitList = new List<DescribeDataLimitSetResponse.DescribeDataLimitSet_DataLimitSet.DescribeDataLimitSet_DataLimit>();
 			for (int i = 0; i < _ctx.Length("DescribeDataLimitSet.DataLimitSet.DataLimitList.Length"); i++) {
 				DescribeDataLimitSetResponse.DescribeDataLimitSet_DataLimitSet.DescribeDataLimitSet_DataLimit dataLimit = new DescribeDataLimitSetResponse.DescribeDataLimitSet_DataLimitSet.DescribeDataLimitSet_DataLimit();
-				dataLimit.RegionId = _ctx.StringValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].RegionId");
-				dataLimit.LocalName = _ctx.StringValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].LocalName");
-				dataLimit.ParentId = _ctx.StringValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].ParentId");
-				dataLimit.Id = _ctx.LongValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].Id");
-				dataLimit.UserName = _ctx.StringValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].UserName");
-				dataLimit.GmtCreate = _ctx.LongValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].GmtCreate");
-				dataLimit.Connector = _ctx.StringValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].Connector");
-				dataLimit.CheckStatus = _ctx.IntegerValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].CheckStatus");
-				dataLimit.CheckStatusName = _ctx.StringValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].CheckStatusName");
-				dataLimit.ResourceType = _ctx.LongValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].ResourceType");
-				dataLimit.ResourceTypeCode = _ctx.StringValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].ResourceTypeCode");
-				dataLimit.AuditStatus = _ctx.IntegerValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].AuditStatus");
-				dataLimit.LogStoreDay = _ctx.IntegerValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].LogStoreDay");
-				dataLimit.Port = _ctx.IntegerValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].Port");
-				dataLimit.EventStatus = _ctx.IntegerValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].EventStatus");
 				dataLimit.SupportEvent = _ctx.BooleanValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].SupportEvent");
+				dataLimit.LocalName = _ctx.StringValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].LocalName");
+				dataLimit.CheckStatus = _ctx.IntegerValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].CheckStatus");
+				dataLimit.Connector = _ctx.StringValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].Connector");
+				dataLimit.Port = _ctx.IntegerValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].Port");
+				dataLimit.CheckStatusName = _ctx.StringValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].CheckStatusName");
+				dataLimit.RegionId = _ctx.StringValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].RegionId");
+				dataLimit.ParentId = _ctx.StringValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].ParentId");
+				dataLimit.ResourceType = _ctx.LongValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].ResourceType");
+				dataLimit.LogStoreDay = _ctx.IntegerValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].LogStoreDay");
+				dataLimit.EventStatus = _ctx.IntegerValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].EventStatus");
+				dataLimit.GmtCreate = _ctx.LongValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].GmtCreate");
+				dataLimit.ResourceTypeCode = _ctx.StringValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].ResourceTypeCode");
+				dataLimit.UserName = _ctx.StringValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].UserName");
+				dataLimit.Id = _ctx.LongValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].Id");
+				dataLimit.AuditStatus = _ctx.IntegerValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].AuditStatus");
 
 				dataLimitSet_dataLimitList.Add(dataLimit);
 			}
@@ -65,8 +65,8 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			List<DescribeDataLimitSetResponse.DescribeDataLimitSet_DataLimitSet.DescribeDataLimitSet_OssBucket> dataLimitSet_ossBucketList = new List<DescribeDataLimitSetResponse.DescribeDataLimitSet_DataLimitSet.DescribeDataLimitSet_OssBucket>();
 			for (int i = 0; i < _ctx.Length("DescribeDataLimitSet.DataLimitSet.OssBucketList.Length"); i++) {
 				DescribeDataLimitSetResponse.DescribeDataLimitSet_DataLimitSet.DescribeDataLimitSet_OssBucket ossBucket = new DescribeDataLimitSetResponse.DescribeDataLimitSet_DataLimitSet.DescribeDataLimitSet_OssBucket();
-				ossBucket.BucketName = _ctx.StringValue("DescribeDataLimitSet.DataLimitSet.OssBucketList["+ i +"].BucketName");
 				ossBucket.RegionId = _ctx.StringValue("DescribeDataLimitSet.DataLimitSet.OssBucketList["+ i +"].RegionId");
+				ossBucket.BucketName = _ctx.StringValue("DescribeDataLimitSet.DataLimitSet.OssBucketList["+ i +"].BucketName");
 
 				dataLimitSet_ossBucketList.Add(ossBucket);
 			}
@@ -75,8 +75,8 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			List<DescribeDataLimitSetResponse.DescribeDataLimitSet_DataLimitSet.DescribeDataLimitSet_Region> dataLimitSet_regionList = new List<DescribeDataLimitSetResponse.DescribeDataLimitSet_DataLimitSet.DescribeDataLimitSet_Region>();
 			for (int i = 0; i < _ctx.Length("DescribeDataLimitSet.DataLimitSet.RegionList.Length"); i++) {
 				DescribeDataLimitSetResponse.DescribeDataLimitSet_DataLimitSet.DescribeDataLimitSet_Region region = new DescribeDataLimitSetResponse.DescribeDataLimitSet_DataLimitSet.DescribeDataLimitSet_Region();
-				region.LocalName = _ctx.StringValue("DescribeDataLimitSet.DataLimitSet.RegionList["+ i +"].LocalName");
 				region.RegionId = _ctx.StringValue("DescribeDataLimitSet.DataLimitSet.RegionList["+ i +"].RegionId");
+				region.LocalName = _ctx.StringValue("DescribeDataLimitSet.DataLimitSet.RegionList["+ i +"].LocalName");
 
 				dataLimitSet_regionList.Add(region);
 			}

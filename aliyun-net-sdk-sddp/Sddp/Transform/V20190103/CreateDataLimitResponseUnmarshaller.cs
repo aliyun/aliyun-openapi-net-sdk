@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			CreateDataLimitResponse createDataLimitResponse = new CreateDataLimitResponse();
 
 			createDataLimitResponse.HttpResponse = _ctx.HttpResponse;
-			createDataLimitResponse.RequestId = _ctx.StringValue("CreateDataLimit.RequestId");
 			createDataLimitResponse.Id = _ctx.IntegerValue("CreateDataLimit.Id");
+			createDataLimitResponse.RequestId = _ctx.StringValue("CreateDataLimit.RequestId");
         
 			return createDataLimitResponse;
         }

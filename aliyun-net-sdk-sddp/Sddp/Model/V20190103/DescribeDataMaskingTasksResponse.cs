@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 	public class DescribeDataMaskingTasksResponse : AcsResponse
 	{
 
+		private int? currentPage;
+
 		private string requestId;
 
 		private int? pageSize;
 
-		private int? currentPage;
-
 		private int? totalCount;
 
 		private List<DescribeDataMaskingTasks_Task> items;
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -56,18 +68,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			set	
 			{
 				pageSize = value;
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
 			}
 		}
 
@@ -98,71 +98,47 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		public class DescribeDataMaskingTasks_Task
 		{
 
-			private long? id;
-
-			private string taskId;
-
-			private string taskName;
+			private int? status;
 
 			private string owner;
 
-			private long? gmtCreate;
-
-			private int? dstType;
-
-			private string dstPath;
+			private string taskName;
 
 			private int? srcType;
 
-			private string srcPath;
-
-			private int? runCount;
-
-			private int? status;
+			private int? dstType;
 
 			private bool? hasUnfinishProcess;
 
-			private string dstTypeCode;
-
-			private string srcTypeCode;
+			private bool? originalTable;
 
 			private int? triggerType;
 
-			private bool? originalTable;
+			private string dstTypeCode;
 
-			public long? Id
+			private int? runCount;
+
+			private long? gmtCreate;
+
+			private string taskId;
+
+			private string dstPath;
+
+			private string srcTypeCode;
+
+			private long? id;
+
+			private string srcPath;
+
+			public int? Status
 			{
 				get
 				{
-					return id;
+					return status;
 				}
 				set	
 				{
-					id = value;
-				}
-			}
-
-			public string TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
-
-			public string TaskName
-			{
-				get
-				{
-					return taskName;
-				}
-				set	
-				{
-					taskName = value;
+					status = value;
 				}
 			}
 
@@ -178,39 +154,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public long? GmtCreate
+			public string TaskName
 			{
 				get
 				{
-					return gmtCreate;
+					return taskName;
 				}
 				set	
 				{
-					gmtCreate = value;
-				}
-			}
-
-			public int? DstType
-			{
-				get
-				{
-					return dstType;
-				}
-				set	
-				{
-					dstType = value;
-				}
-			}
-
-			public string DstPath
-			{
-				get
-				{
-					return dstPath;
-				}
-				set	
-				{
-					dstPath = value;
+					taskName = value;
 				}
 			}
 
@@ -226,39 +178,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public string SrcPath
+			public int? DstType
 			{
 				get
 				{
-					return srcPath;
+					return dstType;
 				}
 				set	
 				{
-					srcPath = value;
-				}
-			}
-
-			public int? RunCount
-			{
-				get
-				{
-					return runCount;
-				}
-				set	
-				{
-					runCount = value;
-				}
-			}
-
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
+					dstType = value;
 				}
 			}
 
@@ -274,27 +202,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public string DstTypeCode
+			public bool? OriginalTable
 			{
 				get
 				{
-					return dstTypeCode;
+					return originalTable;
 				}
 				set	
 				{
-					dstTypeCode = value;
-				}
-			}
-
-			public string SrcTypeCode
-			{
-				get
-				{
-					return srcTypeCode;
-				}
-				set	
-				{
-					srcTypeCode = value;
+					originalTable = value;
 				}
 			}
 
@@ -310,15 +226,99 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public bool? OriginalTable
+			public string DstTypeCode
 			{
 				get
 				{
-					return originalTable;
+					return dstTypeCode;
 				}
 				set	
 				{
-					originalTable = value;
+					dstTypeCode = value;
+				}
+			}
+
+			public int? RunCount
+			{
+				get
+				{
+					return runCount;
+				}
+				set	
+				{
+					runCount = value;
+				}
+			}
+
+			public long? GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
+				}
+			}
+
+			public string TaskId
+			{
+				get
+				{
+					return taskId;
+				}
+				set	
+				{
+					taskId = value;
+				}
+			}
+
+			public string DstPath
+			{
+				get
+				{
+					return dstPath;
+				}
+				set	
+				{
+					dstPath = value;
+				}
+			}
+
+			public string SrcTypeCode
+			{
+				get
+				{
+					return srcTypeCode;
+				}
+				set	
+				{
+					srcTypeCode = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string SrcPath
+			{
+				get
+				{
+					return srcPath;
+				}
+				set	
+				{
+					srcPath = value;
 				}
 			}
 		}

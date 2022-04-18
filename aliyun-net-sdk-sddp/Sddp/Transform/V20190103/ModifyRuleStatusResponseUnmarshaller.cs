@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			ModifyRuleStatusResponse modifyRuleStatusResponse = new ModifyRuleStatusResponse();
 
 			modifyRuleStatusResponse.HttpResponse = _ctx.HttpResponse;
-			modifyRuleStatusResponse.RequestId = _ctx.StringValue("ModifyRuleStatus.RequestId");
 			modifyRuleStatusResponse.FailedIds = _ctx.StringValue("ModifyRuleStatus.FailedIds");
+			modifyRuleStatusResponse.RequestId = _ctx.StringValue("ModifyRuleStatus.RequestId");
         
 			return modifyRuleStatusResponse;
         }

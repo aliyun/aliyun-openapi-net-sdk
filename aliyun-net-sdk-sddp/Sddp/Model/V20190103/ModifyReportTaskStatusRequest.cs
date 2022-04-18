@@ -22,16 +22,15 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Sddp;
 using Aliyun.Acs.Sddp.Transform;
 using Aliyun.Acs.Sddp.Transform.V20190103;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
 {
-    public class DescribeEventTypesDetailRequest : RpcAcsRequest<DescribeEventTypesDetailResponse>
+    public class ModifyReportTaskStatusRequest : RpcAcsRequest<ModifyReportTaskStatusResponse>
     {
-        public DescribeEventTypesDetailRequest()
-            : base("Sddp", "2019-01-03", "DescribeEventTypesDetail")
+        public ModifyReportTaskStatusRequest()
+            : base("Sddp", "2019-01-03", "ModifyReportTaskStatus", "sddp", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,20 +40,20 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			Method = MethodType.POST;
         }
 
-		private string code;
+		private int? reportTaskStatus;
 
 		private string lang;
 
-		public string Code
+		public int? ReportTaskStatus
 		{
 			get
 			{
-				return code;
+				return reportTaskStatus;
 			}
 			set	
 			{
-				code = value;
-				DictionaryUtil.Add(QueryParameters, "Code", value);
+				reportTaskStatus = value;
+				DictionaryUtil.Add(QueryParameters, "ReportTaskStatus", value.ToString());
 			}
 		}
 
@@ -76,9 +75,9 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			return false;
 		}
 
-        public override DescribeEventTypesDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyReportTaskStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeEventTypesDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyReportTaskStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

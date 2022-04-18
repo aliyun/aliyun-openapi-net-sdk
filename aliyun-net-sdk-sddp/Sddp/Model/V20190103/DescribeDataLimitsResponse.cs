@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 	public class DescribeDataLimitsResponse : AcsResponse
 	{
 
+		private int? currentPage;
+
 		private string requestId;
 
 		private int? pageSize;
 
-		private int? currentPage;
-
 		private int? totalCount;
 
 		private List<DescribeDataLimits_DataLimit> items;
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -56,18 +68,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			set	
 			{
 				pageSize = value;
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
 			}
 		}
 
@@ -98,335 +98,95 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		public class DescribeDataLimits_DataLimit
 		{
 
-			private string regionId;
-
-			private string localName;
-
-			private string parentId;
-
-			private long? id;
-
-			private string userName;
-
-			private long? gmtCreate;
-
-			private string connector;
-
-			private int? checkStatus;
-
-			private string checkStatusName;
-
-			private long? resourceType;
-
-			private string resourceTypeCode;
-
-			private int? auditStatus;
-
-			private int? logStoreDay;
-
-			private int? enable;
-
-			private int? autoScan;
-
-			private string engineType;
-
-			private int? processStatus;
-
-			private int? processTotalCount;
-
-			private int? totalCount;
-
-			private long? lastFinishedTime;
-
-			private string errorCode;
+			private bool? supportEvent;
 
 			private string errorMessage;
 
-			private int? port;
+			private int? checkStatus;
 
-			private string dbVersion;
-
-			private bool? supportDatamask;
-
-			private bool? supportScan;
-
-			private bool? supportAudit;
-
-			private int? datamaskStatus;
-
-			private int? samplingSize;
-
-			private long? nextStartTime;
-
-			private bool? supportOcr;
-
-			private int? ocrStatus;
-
-			private string agentId;
-
-			private int? agentState;
-
-			private bool? supportAgentInstall;
-
-			private int? eventStatus;
-
-			private bool? supportEvent;
-
-			private string instanceId;
-
-			private string instanceDescription;
+			private string localName;
 
 			private string tenantName;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+			private string agentId;
 
-			public string LocalName
-			{
-				get
-				{
-					return localName;
-				}
-				set	
-				{
-					localName = value;
-				}
-			}
+			private long? nextStartTime;
 
-			public string ParentId
-			{
-				get
-				{
-					return parentId;
-				}
-				set	
-				{
-					parentId = value;
-				}
-			}
+			private string connector;
 
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private int? port;
 
-			public string UserName
-			{
-				get
-				{
-					return userName;
-				}
-				set	
-				{
-					userName = value;
-				}
-			}
+			private string checkStatusName;
 
-			public long? GmtCreate
-			{
-				get
-				{
-					return gmtCreate;
-				}
-				set	
-				{
-					gmtCreate = value;
-				}
-			}
+			private int? agentState;
 
-			public string Connector
-			{
-				get
-				{
-					return connector;
-				}
-				set	
-				{
-					connector = value;
-				}
-			}
+			private int? samplingSize;
 
-			public int? CheckStatus
-			{
-				get
-				{
-					return checkStatus;
-				}
-				set	
-				{
-					checkStatus = value;
-				}
-			}
+			private string parentId;
 
-			public string CheckStatusName
-			{
-				get
-				{
-					return checkStatusName;
-				}
-				set	
-				{
-					checkStatusName = value;
-				}
-			}
+			private int? datamaskStatus;
 
-			public long? ResourceType
-			{
-				get
-				{
-					return resourceType;
-				}
-				set	
-				{
-					resourceType = value;
-				}
-			}
+			private int? processTotalCount;
 
-			public string ResourceTypeCode
-			{
-				get
-				{
-					return resourceTypeCode;
-				}
-				set	
-				{
-					resourceTypeCode = value;
-				}
-			}
+			private long? resourceType;
 
-			public int? AuditStatus
-			{
-				get
-				{
-					return auditStatus;
-				}
-				set	
-				{
-					auditStatus = value;
-				}
-			}
+			private string errorCode;
 
-			public int? LogStoreDay
-			{
-				get
-				{
-					return logStoreDay;
-				}
-				set	
-				{
-					logStoreDay = value;
-				}
-			}
+			private int? ocrStatus;
 
-			public int? Enable
-			{
-				get
-				{
-					return enable;
-				}
-				set	
-				{
-					enable = value;
-				}
-			}
+			private int? logStoreDay;
 
-			public int? AutoScan
-			{
-				get
-				{
-					return autoScan;
-				}
-				set	
-				{
-					autoScan = value;
-				}
-			}
+			private int? eventStatus;
 
-			public string EngineType
-			{
-				get
-				{
-					return engineType;
-				}
-				set	
-				{
-					engineType = value;
-				}
-			}
+			private bool? supportScan;
 
-			public int? ProcessStatus
-			{
-				get
-				{
-					return processStatus;
-				}
-				set	
-				{
-					processStatus = value;
-				}
-			}
+			private long? lastFinishedTime;
 
-			public int? ProcessTotalCount
-			{
-				get
-				{
-					return processTotalCount;
-				}
-				set	
-				{
-					processTotalCount = value;
-				}
-			}
+			private string userName;
 
-			public int? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
+			private int? auditStatus;
 
-			public long? LastFinishedTime
-			{
-				get
-				{
-					return lastFinishedTime;
-				}
-				set	
-				{
-					lastFinishedTime = value;
-				}
-			}
+			private bool? supportOcr;
 
-			public string ErrorCode
+			private bool? supportAgentInstall;
+
+			private string engineType;
+
+			private string instanceId;
+
+			private int? totalCount;
+
+			private string instanceDescription;
+
+			private string dbVersion;
+
+			private string regionId;
+
+			private long? gmtCreate;
+
+			private bool? supportAudit;
+
+			private int? autoScan;
+
+			private string resourceTypeCode;
+
+			private bool? supportDatamask;
+
+			private int? processStatus;
+
+			private long? id;
+
+			private int? enable;
+
+			public bool? SupportEvent
 			{
 				get
 				{
-					return errorCode;
+					return supportEvent;
 				}
 				set	
 				{
-					errorCode = value;
+					supportEvent = value;
 				}
 			}
 
@@ -442,123 +202,39 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public int? Port
+			public int? CheckStatus
 			{
 				get
 				{
-					return port;
+					return checkStatus;
 				}
 				set	
 				{
-					port = value;
+					checkStatus = value;
 				}
 			}
 
-			public string DbVersion
+			public string LocalName
 			{
 				get
 				{
-					return dbVersion;
+					return localName;
 				}
 				set	
 				{
-					dbVersion = value;
+					localName = value;
 				}
 			}
 
-			public bool? SupportDatamask
+			public string TenantName
 			{
 				get
 				{
-					return supportDatamask;
+					return tenantName;
 				}
 				set	
 				{
-					supportDatamask = value;
-				}
-			}
-
-			public bool? SupportScan
-			{
-				get
-				{
-					return supportScan;
-				}
-				set	
-				{
-					supportScan = value;
-				}
-			}
-
-			public bool? SupportAudit
-			{
-				get
-				{
-					return supportAudit;
-				}
-				set	
-				{
-					supportAudit = value;
-				}
-			}
-
-			public int? DatamaskStatus
-			{
-				get
-				{
-					return datamaskStatus;
-				}
-				set	
-				{
-					datamaskStatus = value;
-				}
-			}
-
-			public int? SamplingSize
-			{
-				get
-				{
-					return samplingSize;
-				}
-				set	
-				{
-					samplingSize = value;
-				}
-			}
-
-			public long? NextStartTime
-			{
-				get
-				{
-					return nextStartTime;
-				}
-				set	
-				{
-					nextStartTime = value;
-				}
-			}
-
-			public bool? SupportOcr
-			{
-				get
-				{
-					return supportOcr;
-				}
-				set	
-				{
-					supportOcr = value;
-				}
-			}
-
-			public int? OcrStatus
-			{
-				get
-				{
-					return ocrStatus;
-				}
-				set	
-				{
-					ocrStatus = value;
+					tenantName = value;
 				}
 			}
 
@@ -574,6 +250,54 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
+			public long? NextStartTime
+			{
+				get
+				{
+					return nextStartTime;
+				}
+				set	
+				{
+					nextStartTime = value;
+				}
+			}
+
+			public string Connector
+			{
+				get
+				{
+					return connector;
+				}
+				set	
+				{
+					connector = value;
+				}
+			}
+
+			public int? Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
+				}
+			}
+
+			public string CheckStatusName
+			{
+				get
+				{
+					return checkStatusName;
+				}
+				set	
+				{
+					checkStatusName = value;
+				}
+			}
+
 			public int? AgentState
 			{
 				get
@@ -586,15 +310,99 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public bool? SupportAgentInstall
+			public int? SamplingSize
 			{
 				get
 				{
-					return supportAgentInstall;
+					return samplingSize;
 				}
 				set	
 				{
-					supportAgentInstall = value;
+					samplingSize = value;
+				}
+			}
+
+			public string ParentId
+			{
+				get
+				{
+					return parentId;
+				}
+				set	
+				{
+					parentId = value;
+				}
+			}
+
+			public int? DatamaskStatus
+			{
+				get
+				{
+					return datamaskStatus;
+				}
+				set	
+				{
+					datamaskStatus = value;
+				}
+			}
+
+			public int? ProcessTotalCount
+			{
+				get
+				{
+					return processTotalCount;
+				}
+				set	
+				{
+					processTotalCount = value;
+				}
+			}
+
+			public long? ResourceType
+			{
+				get
+				{
+					return resourceType;
+				}
+				set	
+				{
+					resourceType = value;
+				}
+			}
+
+			public string ErrorCode
+			{
+				get
+				{
+					return errorCode;
+				}
+				set	
+				{
+					errorCode = value;
+				}
+			}
+
+			public int? OcrStatus
+			{
+				get
+				{
+					return ocrStatus;
+				}
+				set	
+				{
+					ocrStatus = value;
+				}
+			}
+
+			public int? LogStoreDay
+			{
+				get
+				{
+					return logStoreDay;
+				}
+				set	
+				{
+					logStoreDay = value;
 				}
 			}
 
@@ -610,15 +418,87 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public bool? SupportEvent
+			public bool? SupportScan
 			{
 				get
 				{
-					return supportEvent;
+					return supportScan;
 				}
 				set	
 				{
-					supportEvent = value;
+					supportScan = value;
+				}
+			}
+
+			public long? LastFinishedTime
+			{
+				get
+				{
+					return lastFinishedTime;
+				}
+				set	
+				{
+					lastFinishedTime = value;
+				}
+			}
+
+			public string UserName
+			{
+				get
+				{
+					return userName;
+				}
+				set	
+				{
+					userName = value;
+				}
+			}
+
+			public int? AuditStatus
+			{
+				get
+				{
+					return auditStatus;
+				}
+				set	
+				{
+					auditStatus = value;
+				}
+			}
+
+			public bool? SupportOcr
+			{
+				get
+				{
+					return supportOcr;
+				}
+				set	
+				{
+					supportOcr = value;
+				}
+			}
+
+			public bool? SupportAgentInstall
+			{
+				get
+				{
+					return supportAgentInstall;
+				}
+				set	
+				{
+					supportAgentInstall = value;
+				}
+			}
+
+			public string EngineType
+			{
+				get
+				{
+					return engineType;
+				}
+				set	
+				{
+					engineType = value;
 				}
 			}
 
@@ -634,6 +514,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
+			public int? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
+				}
+			}
+
 			public string InstanceDescription
 			{
 				get
@@ -646,15 +538,123 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public string TenantName
+			public string DbVersion
 			{
 				get
 				{
-					return tenantName;
+					return dbVersion;
 				}
 				set	
 				{
-					tenantName = value;
+					dbVersion = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public long? GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
+				}
+			}
+
+			public bool? SupportAudit
+			{
+				get
+				{
+					return supportAudit;
+				}
+				set	
+				{
+					supportAudit = value;
+				}
+			}
+
+			public int? AutoScan
+			{
+				get
+				{
+					return autoScan;
+				}
+				set	
+				{
+					autoScan = value;
+				}
+			}
+
+			public string ResourceTypeCode
+			{
+				get
+				{
+					return resourceTypeCode;
+				}
+				set	
+				{
+					resourceTypeCode = value;
+				}
+			}
+
+			public bool? SupportDatamask
+			{
+				get
+				{
+					return supportDatamask;
+				}
+				set	
+				{
+					supportDatamask = value;
+				}
+			}
+
+			public int? ProcessStatus
+			{
+				get
+				{
+					return processStatus;
+				}
+				set	
+				{
+					processStatus = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public int? Enable
+			{
+				get
+				{
+					return enable;
+				}
+				set	
+				{
+					enable = value;
 				}
 			}
 		}

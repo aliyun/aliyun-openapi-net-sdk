@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
 {
-	public class DescribeOssObjectsResponse : AcsResponse
+	public class DescribeCategoryTemplateRuleListResponse : AcsResponse
 	{
 
 		private int? currentPage;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private int? totalCount;
 
-		private List<DescribeOssObjects_Column> items;
+		private List<DescribeCategoryTemplateRuleList_DataLimit> items;
 
 		public int? CurrentPage
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public List<DescribeOssObjects_Column> Items
+		public List<DescribeCategoryTemplateRuleList_DataLimit> Items
 		{
 			get
 			{
@@ -95,62 +95,54 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public class DescribeOssObjects_Column
+		public class DescribeCategoryTemplateRuleList_DataLimit
 		{
 
-			private long? instanceId;
+			private int? status;
 
-			private string categoryName;
+			private string identificationScope;
 
 			private long? riskLevelId;
 
-			private string regionId;
+			private long? parentCategoryId;
 
-			private string fileId;
+			private string description;
 
-			private long? lastScanTime;
+			private int? customType;
 
-			private string regionName;
-
-			private long? size;
-
-			private string bucketName;
-
-			private string riskLevelName;
-
-			private long? category;
+			private string identificationRuleIds;
 
 			private string name;
 
-			private int? ruleCount;
+			private int? orderNum;
 
-			private int? sensitiveCount;
+			private long? templateId;
 
-			private string id;
+			private long? id;
 
-			private List<DescribeOssObjects_Rule> ruleList;
+			private int? categoryLevel;
 
-			public long? InstanceId
+			public int? Status
 			{
 				get
 				{
-					return instanceId;
+					return status;
 				}
 				set	
 				{
-					instanceId = value;
+					status = value;
 				}
 			}
 
-			public string CategoryName
+			public string IdentificationScope
 			{
 				get
 				{
-					return categoryName;
+					return identificationScope;
 				}
 				set	
 				{
-					categoryName = value;
+					identificationScope = value;
 				}
 			}
 
@@ -166,99 +158,51 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public string RegionId
+			public long? ParentCategoryId
 			{
 				get
 				{
-					return regionId;
+					return parentCategoryId;
 				}
 				set	
 				{
-					regionId = value;
+					parentCategoryId = value;
 				}
 			}
 
-			public string FileId
+			public string Description
 			{
 				get
 				{
-					return fileId;
+					return description;
 				}
 				set	
 				{
-					fileId = value;
+					description = value;
 				}
 			}
 
-			public long? LastScanTime
+			public int? CustomType
 			{
 				get
 				{
-					return lastScanTime;
+					return customType;
 				}
 				set	
 				{
-					lastScanTime = value;
+					customType = value;
 				}
 			}
 
-			public string RegionName
+			public string IdentificationRuleIds
 			{
 				get
 				{
-					return regionName;
+					return identificationRuleIds;
 				}
 				set	
 				{
-					regionName = value;
-				}
-			}
-
-			public long? Size
-			{
-				get
-				{
-					return size;
-				}
-				set	
-				{
-					size = value;
-				}
-			}
-
-			public string BucketName
-			{
-				get
-				{
-					return bucketName;
-				}
-				set	
-				{
-					bucketName = value;
-				}
-			}
-
-			public string RiskLevelName
-			{
-				get
-				{
-					return riskLevelName;
-				}
-				set	
-				{
-					riskLevelName = value;
-				}
-			}
-
-			public long? Category
-			{
-				get
-				{
-					return category;
-				}
-				set	
-				{
-					category = value;
+					identificationRuleIds = value;
 				}
 			}
 
@@ -274,31 +218,31 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public int? RuleCount
+			public int? OrderNum
 			{
 				get
 				{
-					return ruleCount;
+					return orderNum;
 				}
 				set	
 				{
-					ruleCount = value;
+					orderNum = value;
 				}
 			}
 
-			public int? SensitiveCount
+			public long? TemplateId
 			{
 				get
 				{
-					return sensitiveCount;
+					return templateId;
 				}
 				set	
 				{
-					sensitiveCount = value;
+					templateId = value;
 				}
 			}
 
-			public string Id
+			public long? Id
 			{
 				get
 				{
@@ -310,61 +254,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public List<DescribeOssObjects_Rule> RuleList
+			public int? CategoryLevel
 			{
 				get
 				{
-					return ruleList;
+					return categoryLevel;
 				}
 				set	
 				{
-					ruleList = value;
-				}
-			}
-
-			public class DescribeOssObjects_Rule
-			{
-
-				private string name;
-
-				private long? riskLevelId;
-
-				private long? count;
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
-				public long? RiskLevelId
-				{
-					get
-					{
-						return riskLevelId;
-					}
-					set	
-					{
-						riskLevelId = value;
-					}
-				}
-
-				public long? Count
-				{
-					get
-					{
-						return count;
-					}
-					set	
-					{
-						count = value;
-					}
+					categoryLevel = value;
 				}
 			}
 		}

@@ -16,41 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Sddp.Model.V20190103
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Sddp.Model.V20190103;
+
+namespace Aliyun.Acs.Sddp.Transform.V20190103
 {
-	public class CreateScanTaskResponse : AcsResponse
-	{
+    public class ModifyReportTaskStatusResponseUnmarshaller
+    {
+        public static ModifyReportTaskStatusResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			ModifyReportTaskStatusResponse modifyReportTaskStatusResponse = new ModifyReportTaskStatusResponse();
 
-		private int? id;
-
-		private string requestId;
-
-		public int? Id
-		{
-			get
-			{
-				return id;
-			}
-			set	
-			{
-				id = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			modifyReportTaskStatusResponse.HttpResponse = _ctx.HttpResponse;
+			modifyReportTaskStatusResponse.RequestId = _ctx.StringValue("ModifyReportTaskStatus.RequestId");
+        
+			return modifyReportTaskStatusResponse;
+        }
+    }
 }

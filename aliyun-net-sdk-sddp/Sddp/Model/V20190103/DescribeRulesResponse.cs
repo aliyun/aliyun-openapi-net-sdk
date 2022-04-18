@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 	public class DescribeRulesResponse : AcsResponse
 	{
 
+		private int? currentPage;
+
 		private string requestId;
 
 		private int? pageSize;
 
-		private int? currentPage;
-
 		private int? totalCount;
 
 		private List<DescribeRules_Rule> items;
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -56,18 +68,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			set	
 			{
 				pageSize = value;
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
 			}
 		}
 
@@ -98,151 +98,55 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		public class DescribeRules_Rule
 		{
 
-			private long? id;
-
-			private long? gmtCreate;
-
-			private long? gmtModified;
-
-			private int? customType;
-
-			private string name;
-
-			private string description;
-
-			private long? userId;
-
-			private string loginName;
-
 			private string displayName;
-
-			private int? category;
-
-			private string categoryName;
 
 			private int? status;
 
-			private string riskLevelName;
+			private int? warnLevel;
 
-			private long? riskLevelId;
-
-			private string content;
+			private long? userId;
 
 			private string departName;
 
 			private string statExpress;
 
+			private long? gmtModified;
+
+			private long? riskLevelId;
+
+			private string description;
+
 			private long? productId;
 
-			private int? hitTotalCount;
+			private string name;
 
-			private string productCode;
-
-			private int? warnLevel;
-
-			private string majorKey;
-
-			private string contentCategory;
+			private string content;
 
 			private string target;
 
+			private string loginName;
+
+			private string categoryName;
+
+			private string contentCategory;
+
+			private int? hitTotalCount;
+
 			private string groupId;
 
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private int? customType;
 
-			public long? GmtCreate
-			{
-				get
-				{
-					return gmtCreate;
-				}
-				set	
-				{
-					gmtCreate = value;
-				}
-			}
+			private string riskLevelName;
 
-			public long? GmtModified
-			{
-				get
-				{
-					return gmtModified;
-				}
-				set	
-				{
-					gmtModified = value;
-				}
-			}
+			private long? gmtCreate;
 
-			public int? CustomType
-			{
-				get
-				{
-					return customType;
-				}
-				set	
-				{
-					customType = value;
-				}
-			}
+			private int? category;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private string majorKey;
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+			private long? id;
 
-			public long? UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
-
-			public string LoginName
-			{
-				get
-				{
-					return loginName;
-				}
-				set	
-				{
-					loginName = value;
-				}
-			}
+			private string productCode;
 
 			public string DisplayName
 			{
@@ -253,30 +157,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					displayName = value;
-				}
-			}
-
-			public int? Category
-			{
-				get
-				{
-					return category;
-				}
-				set	
-				{
-					category = value;
-				}
-			}
-
-			public string CategoryName
-			{
-				get
-				{
-					return categoryName;
-				}
-				set	
-				{
-					categoryName = value;
 				}
 			}
 
@@ -292,39 +172,27 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public string RiskLevelName
+			public int? WarnLevel
 			{
 				get
 				{
-					return riskLevelName;
+					return warnLevel;
 				}
 				set	
 				{
-					riskLevelName = value;
+					warnLevel = value;
 				}
 			}
 
-			public long? RiskLevelId
+			public long? UserId
 			{
 				get
 				{
-					return riskLevelId;
+					return userId;
 				}
 				set	
 				{
-					riskLevelId = value;
-				}
-			}
-
-			public string Content
-			{
-				get
-				{
-					return content;
-				}
-				set	
-				{
-					content = value;
+					userId = value;
 				}
 			}
 
@@ -352,6 +220,42 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
+			public long? GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
+				}
+			}
+
+			public long? RiskLevelId
+			{
+				get
+				{
+					return riskLevelId;
+				}
+				set	
+				{
+					riskLevelId = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
 			public long? ProductId
 			{
 				get
@@ -364,63 +268,27 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public int? HitTotalCount
+			public string Name
 			{
 				get
 				{
-					return hitTotalCount;
+					return name;
 				}
 				set	
 				{
-					hitTotalCount = value;
+					name = value;
 				}
 			}
 
-			public string ProductCode
+			public string Content
 			{
 				get
 				{
-					return productCode;
+					return content;
 				}
 				set	
 				{
-					productCode = value;
-				}
-			}
-
-			public int? WarnLevel
-			{
-				get
-				{
-					return warnLevel;
-				}
-				set	
-				{
-					warnLevel = value;
-				}
-			}
-
-			public string MajorKey
-			{
-				get
-				{
-					return majorKey;
-				}
-				set	
-				{
-					majorKey = value;
-				}
-			}
-
-			public string ContentCategory
-			{
-				get
-				{
-					return contentCategory;
-				}
-				set	
-				{
-					contentCategory = value;
+					content = value;
 				}
 			}
 
@@ -436,6 +304,54 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
+			public string LoginName
+			{
+				get
+				{
+					return loginName;
+				}
+				set	
+				{
+					loginName = value;
+				}
+			}
+
+			public string CategoryName
+			{
+				get
+				{
+					return categoryName;
+				}
+				set	
+				{
+					categoryName = value;
+				}
+			}
+
+			public string ContentCategory
+			{
+				get
+				{
+					return contentCategory;
+				}
+				set	
+				{
+					contentCategory = value;
+				}
+			}
+
+			public int? HitTotalCount
+			{
+				get
+				{
+					return hitTotalCount;
+				}
+				set	
+				{
+					hitTotalCount = value;
+				}
+			}
+
 			public string GroupId
 			{
 				get
@@ -445,6 +361,90 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					groupId = value;
+				}
+			}
+
+			public int? CustomType
+			{
+				get
+				{
+					return customType;
+				}
+				set	
+				{
+					customType = value;
+				}
+			}
+
+			public string RiskLevelName
+			{
+				get
+				{
+					return riskLevelName;
+				}
+				set	
+				{
+					riskLevelName = value;
+				}
+			}
+
+			public long? GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
+				}
+			}
+
+			public int? Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			public string MajorKey
+			{
+				get
+				{
+					return majorKey;
+				}
+				set	
+				{
+					majorKey = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string ProductCode
+			{
+				get
+				{
+					return productCode;
+				}
+				set	
+				{
+					productCode = value;
 				}
 			}
 		}

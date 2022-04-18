@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 	public class DescribePackagesResponse : AcsResponse
 	{
 
+		private int? currentPage;
+
 		private string requestId;
 
 		private int? pageSize;
 
-		private int? currentPage;
-
 		private int? totalCount;
 
 		private List<DescribePackages_Package> items;
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -56,18 +68,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			set	
 			{
 				pageSize = value;
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
 			}
 		}
 
@@ -98,63 +98,27 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		public class DescribePackages_Package
 		{
 
-			private long? id;
-
-			private string name;
-
-			private string owner;
-
 			private long? creationTime;
 
 			private bool? sensitive;
 
-			private long? riskLevelId;
+			private string owner;
 
 			private string riskLevelName;
 
 			private string departName;
 
+			private long? instanceId;
+
 			private int? totalCount;
+
+			private string name;
 
 			private int? sensitiveCount;
 
-			private long? instanceId;
+			private long? riskLevelId;
 
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Owner
-			{
-				get
-				{
-					return owner;
-				}
-				set	
-				{
-					owner = value;
-				}
-			}
+			private long? id;
 
 			public long? CreationTime
 			{
@@ -180,15 +144,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public long? RiskLevelId
+			public string Owner
 			{
 				get
 				{
-					return riskLevelId;
+					return owner;
 				}
 				set	
 				{
-					riskLevelId = value;
+					owner = value;
 				}
 			}
 
@@ -216,6 +180,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
+			public long? InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
 			public int? TotalCount
 			{
 				get
@@ -225,6 +201,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					totalCount = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 
@@ -240,15 +228,27 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public long? InstanceId
+			public long? RiskLevelId
 			{
 				get
 				{
-					return instanceId;
+					return riskLevelId;
 				}
 				set	
 				{
-					instanceId = value;
+					riskLevelId = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 		}

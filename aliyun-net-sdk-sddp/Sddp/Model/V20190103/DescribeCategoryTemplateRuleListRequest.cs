@@ -22,16 +22,15 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Sddp;
 using Aliyun.Acs.Sddp.Transform;
 using Aliyun.Acs.Sddp.Transform.V20190103;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
 {
-    public class DescribeInstancePortraitRequest : RpcAcsRequest<DescribeInstancePortraitResponse>
+    public class DescribeCategoryTemplateRuleListRequest : RpcAcsRequest<DescribeCategoryTemplateRuleListResponse>
     {
-        public DescribeInstancePortraitRequest()
-            : base("Sddp", "2019-01-03", "DescribeInstancePortrait")
+        public DescribeCategoryTemplateRuleListRequest()
+            : base("Sddp", "2019-01-03", "DescribeCategoryTemplateRuleList", "sddp", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,48 +40,78 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			Method = MethodType.POST;
         }
 
-		private long? productId;
+		private long? riskLevelId;
 
-		private long? instanceId;
+		private int? pageSize;
 
-		private string itemKeys;
+		private string lang;
 
-		public long? ProductId
+		private int? currentPage;
+
+		private int? status;
+
+		public long? RiskLevelId
 		{
 			get
 			{
-				return productId;
+				return riskLevelId;
 			}
 			set	
 			{
-				productId = value;
-				DictionaryUtil.Add(QueryParameters, "ProductId", value.ToString());
+				riskLevelId = value;
+				DictionaryUtil.Add(QueryParameters, "RiskLevelId", value.ToString());
 			}
 		}
 
-		public long? InstanceId
+		public int? PageSize
 		{
 			get
 			{
-				return instanceId;
+				return pageSize;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value.ToString());
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string ItemKeys
+		public string Lang
 		{
 			get
 			{
-				return itemKeys;
+				return lang;
 			}
 			set	
 			{
-				itemKeys = value;
-				DictionaryUtil.Add(QueryParameters, "ItemKeys", value);
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public int? Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value.ToString());
 			}
 		}
 
@@ -91,9 +120,9 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			return false;
 		}
 
-        public override DescribeInstancePortraitResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeCategoryTemplateRuleListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeInstancePortraitResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeCategoryTemplateRuleListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

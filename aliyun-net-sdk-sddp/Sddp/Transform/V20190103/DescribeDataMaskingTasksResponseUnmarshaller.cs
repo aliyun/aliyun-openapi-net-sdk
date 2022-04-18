@@ -31,30 +31,30 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			DescribeDataMaskingTasksResponse describeDataMaskingTasksResponse = new DescribeDataMaskingTasksResponse();
 
 			describeDataMaskingTasksResponse.HttpResponse = _ctx.HttpResponse;
+			describeDataMaskingTasksResponse.CurrentPage = _ctx.IntegerValue("DescribeDataMaskingTasks.CurrentPage");
 			describeDataMaskingTasksResponse.RequestId = _ctx.StringValue("DescribeDataMaskingTasks.RequestId");
 			describeDataMaskingTasksResponse.PageSize = _ctx.IntegerValue("DescribeDataMaskingTasks.PageSize");
-			describeDataMaskingTasksResponse.CurrentPage = _ctx.IntegerValue("DescribeDataMaskingTasks.CurrentPage");
 			describeDataMaskingTasksResponse.TotalCount = _ctx.IntegerValue("DescribeDataMaskingTasks.TotalCount");
 
 			List<DescribeDataMaskingTasksResponse.DescribeDataMaskingTasks_Task> describeDataMaskingTasksResponse_items = new List<DescribeDataMaskingTasksResponse.DescribeDataMaskingTasks_Task>();
 			for (int i = 0; i < _ctx.Length("DescribeDataMaskingTasks.Items.Length"); i++) {
 				DescribeDataMaskingTasksResponse.DescribeDataMaskingTasks_Task task = new DescribeDataMaskingTasksResponse.DescribeDataMaskingTasks_Task();
-				task.Id = _ctx.LongValue("DescribeDataMaskingTasks.Items["+ i +"].Id");
-				task.TaskId = _ctx.StringValue("DescribeDataMaskingTasks.Items["+ i +"].TaskId");
-				task.TaskName = _ctx.StringValue("DescribeDataMaskingTasks.Items["+ i +"].TaskName");
-				task.Owner = _ctx.StringValue("DescribeDataMaskingTasks.Items["+ i +"].Owner");
-				task.GmtCreate = _ctx.LongValue("DescribeDataMaskingTasks.Items["+ i +"].GmtCreate");
-				task.DstType = _ctx.IntegerValue("DescribeDataMaskingTasks.Items["+ i +"].DstType");
-				task.DstPath = _ctx.StringValue("DescribeDataMaskingTasks.Items["+ i +"].DstPath");
-				task.SrcType = _ctx.IntegerValue("DescribeDataMaskingTasks.Items["+ i +"].SrcType");
-				task.SrcPath = _ctx.StringValue("DescribeDataMaskingTasks.Items["+ i +"].SrcPath");
-				task.RunCount = _ctx.IntegerValue("DescribeDataMaskingTasks.Items["+ i +"].RunCount");
 				task.Status = _ctx.IntegerValue("DescribeDataMaskingTasks.Items["+ i +"].Status");
+				task.Owner = _ctx.StringValue("DescribeDataMaskingTasks.Items["+ i +"].Owner");
+				task.TaskName = _ctx.StringValue("DescribeDataMaskingTasks.Items["+ i +"].TaskName");
+				task.SrcType = _ctx.IntegerValue("DescribeDataMaskingTasks.Items["+ i +"].SrcType");
+				task.DstType = _ctx.IntegerValue("DescribeDataMaskingTasks.Items["+ i +"].DstType");
 				task.HasUnfinishProcess = _ctx.BooleanValue("DescribeDataMaskingTasks.Items["+ i +"].HasUnfinishProcess");
-				task.DstTypeCode = _ctx.StringValue("DescribeDataMaskingTasks.Items["+ i +"].DstTypeCode");
-				task.SrcTypeCode = _ctx.StringValue("DescribeDataMaskingTasks.Items["+ i +"].SrcTypeCode");
-				task.TriggerType = _ctx.IntegerValue("DescribeDataMaskingTasks.Items["+ i +"].TriggerType");
 				task.OriginalTable = _ctx.BooleanValue("DescribeDataMaskingTasks.Items["+ i +"].OriginalTable");
+				task.TriggerType = _ctx.IntegerValue("DescribeDataMaskingTasks.Items["+ i +"].TriggerType");
+				task.DstTypeCode = _ctx.StringValue("DescribeDataMaskingTasks.Items["+ i +"].DstTypeCode");
+				task.RunCount = _ctx.IntegerValue("DescribeDataMaskingTasks.Items["+ i +"].RunCount");
+				task.GmtCreate = _ctx.LongValue("DescribeDataMaskingTasks.Items["+ i +"].GmtCreate");
+				task.TaskId = _ctx.StringValue("DescribeDataMaskingTasks.Items["+ i +"].TaskId");
+				task.DstPath = _ctx.StringValue("DescribeDataMaskingTasks.Items["+ i +"].DstPath");
+				task.SrcTypeCode = _ctx.StringValue("DescribeDataMaskingTasks.Items["+ i +"].SrcTypeCode");
+				task.Id = _ctx.LongValue("DescribeDataMaskingTasks.Items["+ i +"].Id");
+				task.SrcPath = _ctx.StringValue("DescribeDataMaskingTasks.Items["+ i +"].SrcPath");
 
 				describeDataMaskingTasksResponse_items.Add(task);
 			}

@@ -17,15 +17,29 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
 {
-	public class BatchDeleteDataLimitResponse : AcsResponse
+	public class CreateSlrRoleResponse : AcsResponse
 	{
 
+		private bool? hasPermission;
+
 		private string requestId;
+
+		public bool? HasPermission
+		{
+			get
+			{
+				return hasPermission;
+			}
+			set	
+			{
+				hasPermission = value;
+			}
+		}
 
 		public string RequestId
 		{

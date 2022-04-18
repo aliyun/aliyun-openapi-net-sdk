@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
@@ -56,67 +56,91 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		public class DescribeEventDetail__Event
 		{
 
-			private long? id;
+			private string displayName;
+
+			private int? status;
+
+			private string dealReason;
 
 			private long? userId;
 
-			private string loginName;
+			private string statusName;
 
-			private string displayName;
+			private string departName;
 
-			private string productCode;
+			private long? dealTime;
 
-			private string typeCode;
-
-			private string typeName;
-
-			private string subTypeCode;
+			private string dealLoginName;
 
 			private string subTypeName;
 
-			private long? alertTime;
+			private bool? backed;
 
 			private string dataInstance;
 
 			private long? eventTime;
 
-			private int? status;
-
-			private string statusName;
-
-			private long? dealUserId;
-
-			private string dealLoginName;
-
-			private string dealDisplayName;
-
-			private long? dealTime;
-
-			private string departName;
-
-			private bool? backed;
-
-			private string dealReason;
+			private string loginName;
 
 			private string userIdValue;
 
-			private string dealUserIdValue;
+			private string subTypeCode;
 
 			private string logDetail;
+
+			private string typeCode;
+
+			private string dealUserIdValue;
+
+			private long? alertTime;
+
+			private long? dealUserId;
+
+			private string typeName;
+
+			private string dealDisplayName;
+
+			private long? id;
+
+			private string productCode;
 
 			private List<DescribeEventDetail_HandleInfo> handleInfoList;
 
 			private DescribeEventDetail_Detail detail;
 
-			public long? Id
+			public string DisplayName
 			{
 				get
 				{
-					return id;
+					return displayName;
 				}
 				set	
 				{
-					id = value;
+					displayName = value;
+				}
+			}
+
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string DealReason
+			{
+				get
+				{
+					return dealReason;
+				}
+				set	
+				{
+					dealReason = value;
 				}
 			}
 
@@ -132,75 +156,51 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public string LoginName
+			public string StatusName
 			{
 				get
 				{
-					return loginName;
+					return statusName;
 				}
 				set	
 				{
-					loginName = value;
+					statusName = value;
 				}
 			}
 
-			public string DisplayName
+			public string DepartName
 			{
 				get
 				{
-					return displayName;
+					return departName;
 				}
 				set	
 				{
-					displayName = value;
+					departName = value;
 				}
 			}
 
-			public string ProductCode
+			public long? DealTime
 			{
 				get
 				{
-					return productCode;
+					return dealTime;
 				}
 				set	
 				{
-					productCode = value;
+					dealTime = value;
 				}
 			}
 
-			public string TypeCode
+			public string DealLoginName
 			{
 				get
 				{
-					return typeCode;
+					return dealLoginName;
 				}
 				set	
 				{
-					typeCode = value;
-				}
-			}
-
-			public string TypeName
-			{
-				get
-				{
-					return typeName;
-				}
-				set	
-				{
-					typeName = value;
-				}
-			}
-
-			public string SubTypeCode
-			{
-				get
-				{
-					return subTypeCode;
-				}
-				set	
-				{
-					subTypeCode = value;
+					dealLoginName = value;
 				}
 			}
 
@@ -216,15 +216,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public long? AlertTime
+			public bool? Backed
 			{
 				get
 				{
-					return alertTime;
+					return backed;
 				}
 				set	
 				{
-					alertTime = value;
+					backed = value;
 				}
 			}
 
@@ -252,111 +252,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public int? Status
+			public string LoginName
 			{
 				get
 				{
-					return status;
+					return loginName;
 				}
 				set	
 				{
-					status = value;
-				}
-			}
-
-			public string StatusName
-			{
-				get
-				{
-					return statusName;
-				}
-				set	
-				{
-					statusName = value;
-				}
-			}
-
-			public long? DealUserId
-			{
-				get
-				{
-					return dealUserId;
-				}
-				set	
-				{
-					dealUserId = value;
-				}
-			}
-
-			public string DealLoginName
-			{
-				get
-				{
-					return dealLoginName;
-				}
-				set	
-				{
-					dealLoginName = value;
-				}
-			}
-
-			public string DealDisplayName
-			{
-				get
-				{
-					return dealDisplayName;
-				}
-				set	
-				{
-					dealDisplayName = value;
-				}
-			}
-
-			public long? DealTime
-			{
-				get
-				{
-					return dealTime;
-				}
-				set	
-				{
-					dealTime = value;
-				}
-			}
-
-			public string DepartName
-			{
-				get
-				{
-					return departName;
-				}
-				set	
-				{
-					departName = value;
-				}
-			}
-
-			public bool? Backed
-			{
-				get
-				{
-					return backed;
-				}
-				set	
-				{
-					backed = value;
-				}
-			}
-
-			public string DealReason
-			{
-				get
-				{
-					return dealReason;
-				}
-				set	
-				{
-					dealReason = value;
+					loginName = value;
 				}
 			}
 
@@ -372,15 +276,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public string DealUserIdValue
+			public string SubTypeCode
 			{
 				get
 				{
-					return dealUserIdValue;
+					return subTypeCode;
 				}
 				set	
 				{
-					dealUserIdValue = value;
+					subTypeCode = value;
 				}
 			}
 
@@ -393,6 +297,102 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					logDetail = value;
+				}
+			}
+
+			public string TypeCode
+			{
+				get
+				{
+					return typeCode;
+				}
+				set	
+				{
+					typeCode = value;
+				}
+			}
+
+			public string DealUserIdValue
+			{
+				get
+				{
+					return dealUserIdValue;
+				}
+				set	
+				{
+					dealUserIdValue = value;
+				}
+			}
+
+			public long? AlertTime
+			{
+				get
+				{
+					return alertTime;
+				}
+				set	
+				{
+					alertTime = value;
+				}
+			}
+
+			public long? DealUserId
+			{
+				get
+				{
+					return dealUserId;
+				}
+				set	
+				{
+					dealUserId = value;
+				}
+			}
+
+			public string TypeName
+			{
+				get
+				{
+					return typeName;
+				}
+				set	
+				{
+					typeName = value;
+				}
+			}
+
+			public string DealDisplayName
+			{
+				get
+				{
+					return dealDisplayName;
+				}
+				set	
+				{
+					dealDisplayName = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string ProductCode
+			{
+				get
+				{
+					return productCode;
+				}
+				set	
+				{
+					productCode = value;
 				}
 			}
 
@@ -423,79 +423,31 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			public class DescribeEventDetail_HandleInfo
 			{
 
-				private string handlerType;
-
-				private string handlerName;
-
-				private int? handlerValue;
-
-				private string currentValue;
-
-				private long? disableTime;
+				private int? status;
 
 				private long? enableTime;
 
-				private int? status;
+				private int? handlerValue;
+
+				private long? disableTime;
+
+				private string handlerName;
+
+				private string handlerType;
+
+				private string currentValue;
 
 				private long? id;
 
-				public string HandlerType
+				public int? Status
 				{
 					get
 					{
-						return handlerType;
+						return status;
 					}
 					set	
 					{
-						handlerType = value;
-					}
-				}
-
-				public string HandlerName
-				{
-					get
-					{
-						return handlerName;
-					}
-					set	
-					{
-						handlerName = value;
-					}
-				}
-
-				public int? HandlerValue
-				{
-					get
-					{
-						return handlerValue;
-					}
-					set	
-					{
-						handlerValue = value;
-					}
-				}
-
-				public string CurrentValue
-				{
-					get
-					{
-						return currentValue;
-					}
-					set	
-					{
-						currentValue = value;
-					}
-				}
-
-				public long? DisableTime
-				{
-					get
-					{
-						return disableTime;
-					}
-					set	
-					{
-						disableTime = value;
+						status = value;
 					}
 				}
 
@@ -511,15 +463,63 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					}
 				}
 
-				public int? Status
+				public int? HandlerValue
 				{
 					get
 					{
-						return status;
+						return handlerValue;
 					}
 					set	
 					{
-						status = value;
+						handlerValue = value;
+					}
+				}
+
+				public long? DisableTime
+				{
+					get
+					{
+						return disableTime;
+					}
+					set	
+					{
+						disableTime = value;
+					}
+				}
+
+				public string HandlerName
+				{
+					get
+					{
+						return handlerName;
+					}
+					set	
+					{
+						handlerName = value;
+					}
+				}
+
+				public string HandlerType
+				{
+					get
+					{
+						return handlerType;
+					}
+					set	
+					{
+						handlerType = value;
+					}
+				}
+
+				public string CurrentValue
+				{
+					get
+					{
+						return currentValue;
+					}
+					set	
+					{
+						currentValue = value;
 					}
 				}
 
@@ -616,15 +616,27 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				public class DescribeEventDetail_ChartItem
 				{
 
+					private string type;
+
 					private string label;
 
 					private string xLabel;
 
 					private string yLabel;
 
-					private string type;
-
 					private DescribeEventDetail_Data data;
+
+					public string Type
+					{
+						get
+						{
+							return type;
+						}
+						set	
+						{
+							type = value;
+						}
+					}
 
 					public string Label
 					{
@@ -662,18 +674,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 						}
 					}
 
-					public string Type
-					{
-						get
-						{
-							return type;
-						}
-						set	
-						{
-							type = value;
-						}
-					}
-
 					public DescribeEventDetail_Data Data
 					{
 						get
@@ -689,23 +689,11 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					public class DescribeEventDetail_Data
 					{
 
-						private string x;
+						private List<string> y;
 
-						private string y;
+						private List<string> x;
 
-						public string X
-						{
-							get
-							{
-								return x;
-							}
-							set	
-							{
-								x = value;
-							}
-						}
-
-						public string Y
+						public List<string> Y
 						{
 							get
 							{
@@ -714,6 +702,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 							set	
 							{
 								y = value;
+							}
+						}
+
+						public List<string> X
+						{
+							get
+							{
+								return x;
+							}
+							set	
+							{
+								x = value;
 							}
 						}
 					}

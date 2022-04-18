@@ -34,20 +34,20 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			describeDataLimitDetailResponse.RequestId = _ctx.StringValue("DescribeDataLimitDetail.RequestId");
 
 			DescribeDataLimitDetailResponse.DescribeDataLimitDetail_DataLimit dataLimit = new DescribeDataLimitDetailResponse.DescribeDataLimitDetail_DataLimit();
-			dataLimit.RegionId = _ctx.StringValue("DescribeDataLimitDetail.DataLimit.RegionId");
 			dataLimit.LocalName = _ctx.StringValue("DescribeDataLimitDetail.DataLimit.LocalName");
-			dataLimit.ParentId = _ctx.StringValue("DescribeDataLimitDetail.DataLimit.ParentId");
-			dataLimit.Id = _ctx.LongValue("DescribeDataLimitDetail.DataLimit.Id");
-			dataLimit.UserName = _ctx.StringValue("DescribeDataLimitDetail.DataLimit.UserName");
-			dataLimit.GmtCreate = _ctx.LongValue("DescribeDataLimitDetail.DataLimit.GmtCreate");
-			dataLimit.Connector = _ctx.StringValue("DescribeDataLimitDetail.DataLimit.Connector");
 			dataLimit.CheckStatus = _ctx.IntegerValue("DescribeDataLimitDetail.DataLimit.CheckStatus");
-			dataLimit.CheckStatusName = _ctx.StringValue("DescribeDataLimitDetail.DataLimit.CheckStatusName");
-			dataLimit.ResourceType = _ctx.LongValue("DescribeDataLimitDetail.DataLimit.ResourceType");
-			dataLimit.ResourceTypeCode = _ctx.StringValue("DescribeDataLimitDetail.DataLimit.ResourceTypeCode");
-			dataLimit.AuditStatus = _ctx.IntegerValue("DescribeDataLimitDetail.DataLimit.AuditStatus");
-			dataLimit.LogStoreDay = _ctx.IntegerValue("DescribeDataLimitDetail.DataLimit.LogStoreDay");
+			dataLimit.Connector = _ctx.StringValue("DescribeDataLimitDetail.DataLimit.Connector");
 			dataLimit.Port = _ctx.IntegerValue("DescribeDataLimitDetail.DataLimit.Port");
+			dataLimit.CheckStatusName = _ctx.StringValue("DescribeDataLimitDetail.DataLimit.CheckStatusName");
+			dataLimit.RegionId = _ctx.StringValue("DescribeDataLimitDetail.DataLimit.RegionId");
+			dataLimit.ParentId = _ctx.StringValue("DescribeDataLimitDetail.DataLimit.ParentId");
+			dataLimit.ResourceType = _ctx.LongValue("DescribeDataLimitDetail.DataLimit.ResourceType");
+			dataLimit.LogStoreDay = _ctx.IntegerValue("DescribeDataLimitDetail.DataLimit.LogStoreDay");
+			dataLimit.GmtCreate = _ctx.LongValue("DescribeDataLimitDetail.DataLimit.GmtCreate");
+			dataLimit.ResourceTypeCode = _ctx.StringValue("DescribeDataLimitDetail.DataLimit.ResourceTypeCode");
+			dataLimit.UserName = _ctx.StringValue("DescribeDataLimitDetail.DataLimit.UserName");
+			dataLimit.Id = _ctx.LongValue("DescribeDataLimitDetail.DataLimit.Id");
+			dataLimit.AuditStatus = _ctx.IntegerValue("DescribeDataLimitDetail.DataLimit.AuditStatus");
 			describeDataLimitDetailResponse.DataLimit = dataLimit;
         
 			return describeDataLimitDetailResponse;

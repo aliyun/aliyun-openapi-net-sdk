@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Sddp;
 using Aliyun.Acs.Sddp.Transform;
 using Aliyun.Acs.Sddp.Transform.V20190103;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
     public class StopMaskingProcessRequest : RpcAcsRequest<StopMaskingProcessResponse>
     {
         public StopMaskingProcessRequest()
-            : base("Sddp", "2019-01-03", "StopMaskingProcess")
+            : base("Sddp", "2019-01-03", "StopMaskingProcess", "sddp", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,8 +43,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		private long? id;
 
 		private string lang;
-
-		private int? featureType;
 
 		public long? Id
 		{
@@ -70,19 +67,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public int? FeatureType
-		{
-			get
-			{
-				return featureType;
-			}
-			set	
-			{
-				featureType = value;
-				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
 			}
 		}
 

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			CreateScanTaskResponse createScanTaskResponse = new CreateScanTaskResponse();
 
 			createScanTaskResponse.HttpResponse = _ctx.HttpResponse;
-			createScanTaskResponse.RequestId = _ctx.StringValue("CreateScanTask.RequestId");
 			createScanTaskResponse.Id = _ctx.IntegerValue("CreateScanTask.Id");
+			createScanTaskResponse.RequestId = _ctx.StringValue("CreateScanTask.RequestId");
         
 			return createScanTaskResponse;
         }

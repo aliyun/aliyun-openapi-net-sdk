@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 	public class ModifyRuleStatusResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string failedIds;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string FailedIds
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			set	
 			{
 				failedIds = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

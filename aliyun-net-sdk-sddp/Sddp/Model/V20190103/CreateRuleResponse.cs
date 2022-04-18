@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 	public class CreateRuleResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? id;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public int? Id
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			set	
 			{
 				id = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

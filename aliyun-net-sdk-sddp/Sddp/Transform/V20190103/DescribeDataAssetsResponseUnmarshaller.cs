@@ -31,34 +31,34 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			DescribeDataAssetsResponse describeDataAssetsResponse = new DescribeDataAssetsResponse();
 
 			describeDataAssetsResponse.HttpResponse = _ctx.HttpResponse;
+			describeDataAssetsResponse.CurrentPage = _ctx.IntegerValue("DescribeDataAssets.CurrentPage");
 			describeDataAssetsResponse.RequestId = _ctx.StringValue("DescribeDataAssets.RequestId");
 			describeDataAssetsResponse.PageSize = _ctx.IntegerValue("DescribeDataAssets.PageSize");
-			describeDataAssetsResponse.CurrentPage = _ctx.IntegerValue("DescribeDataAssets.CurrentPage");
 			describeDataAssetsResponse.TotalCount = _ctx.IntegerValue("DescribeDataAssets.TotalCount");
 
 			List<DescribeDataAssetsResponse.DescribeDataAssets_Asset> describeDataAssetsResponse_items = new List<DescribeDataAssetsResponse.DescribeDataAssets_Asset>();
 			for (int i = 0; i < _ctx.Length("DescribeDataAssets.Items.Length"); i++) {
 				DescribeDataAssetsResponse.DescribeDataAssets_Asset asset = new DescribeDataAssetsResponse.DescribeDataAssets_Asset();
-				asset.Id = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].Id");
-				asset.Name = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].Name");
-				asset.Owner = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].Owner");
-				asset.CreationTime = _ctx.LongValue("DescribeDataAssets.Items["+ i +"].CreationTime");
-				asset.ProductId = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].ProductId");
-				asset.ProductCode = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].ProductCode");
-				asset.Protection = _ctx.BooleanValue("DescribeDataAssets.Items["+ i +"].Protection");
-				asset.Labelsec = _ctx.BooleanValue("DescribeDataAssets.Items["+ i +"].Labelsec");
-				asset.OdpsRiskLevelName = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].OdpsRiskLevelName");
-				asset.Sensitive = _ctx.BooleanValue("DescribeDataAssets.Items["+ i +"].Sensitive");
-				asset.RiskLevelId = _ctx.LongValue("DescribeDataAssets.Items["+ i +"].RiskLevelId");
-				asset.RiskLevelName = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].RiskLevelName");
-				asset.RuleName = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].RuleName");
-				asset.DepartName = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].DepartName");
-				asset.TotalCount = _ctx.IntegerValue("DescribeDataAssets.Items["+ i +"].TotalCount");
-				asset.SensitiveCount = _ctx.IntegerValue("DescribeDataAssets.Items["+ i +"].SensitiveCount");
 				asset.Acl = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].Acl");
-				asset.SensitiveRatio = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].SensitiveRatio");
+				asset.CreationTime = _ctx.LongValue("DescribeDataAssets.Items["+ i +"].CreationTime");
 				asset.DataType = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].DataType");
+				asset.Owner = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].Owner");
+				asset.SensitiveRatio = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].SensitiveRatio");
+				asset.Protection = _ctx.BooleanValue("DescribeDataAssets.Items["+ i +"].Protection");
+				asset.DepartName = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].DepartName");
+				asset.Labelsec = _ctx.BooleanValue("DescribeDataAssets.Items["+ i +"].Labelsec");
+				asset.TotalCount = _ctx.IntegerValue("DescribeDataAssets.Items["+ i +"].TotalCount");
+				asset.RiskLevelId = _ctx.LongValue("DescribeDataAssets.Items["+ i +"].RiskLevelId");
+				asset.RuleName = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].RuleName");
+				asset.Sensitive = _ctx.BooleanValue("DescribeDataAssets.Items["+ i +"].Sensitive");
 				asset.ObjectKey = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].ObjectKey");
+				asset.RiskLevelName = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].RiskLevelName");
+				asset.OdpsRiskLevelName = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].OdpsRiskLevelName");
+				asset.ProductId = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].ProductId");
+				asset.Name = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].Name");
+				asset.SensitiveCount = _ctx.IntegerValue("DescribeDataAssets.Items["+ i +"].SensitiveCount");
+				asset.Id = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].Id");
+				asset.ProductCode = _ctx.StringValue("DescribeDataAssets.Items["+ i +"].ProductCode");
 
 				describeDataAssetsResponse_items.Add(asset);
 			}

@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Sddp;
 using Aliyun.Acs.Sddp.Transform;
 using Aliyun.Acs.Sddp.Transform.V20190103;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
     public class ModifyRuleRequest : RpcAcsRequest<ModifyRuleResponse>
     {
         public ModifyRuleRequest()
-            : base("Sddp", "2019-01-03", "ModifyRule")
+            : base("Sddp", "2019-01-03", "ModifyRule", "sddp", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -47,8 +46,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private long? productId;
 
-		private string description;
-
 		private long? riskLevelId;
 
 		private string content;
@@ -58,14 +55,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		private string lang;
 
 		private int? ruleType;
-
-		private string statExpress;
-
-		private int? contentCategory;
-
-		private int? customType;
-
-		private string target;
 
 		private string name;
 
@@ -107,19 +96,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				productId = value;
 				DictionaryUtil.Add(QueryParameters, "ProductId", value.ToString());
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -185,58 +161,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				ruleType = value;
 				DictionaryUtil.Add(QueryParameters, "RuleType", value.ToString());
-			}
-		}
-
-		public string StatExpress
-		{
-			get
-			{
-				return statExpress;
-			}
-			set	
-			{
-				statExpress = value;
-				DictionaryUtil.Add(QueryParameters, "StatExpress", value);
-			}
-		}
-
-		public int? ContentCategory
-		{
-			get
-			{
-				return contentCategory;
-			}
-			set	
-			{
-				contentCategory = value;
-				DictionaryUtil.Add(QueryParameters, "ContentCategory", value.ToString());
-			}
-		}
-
-		public int? CustomType
-		{
-			get
-			{
-				return customType;
-			}
-			set	
-			{
-				customType = value;
-				DictionaryUtil.Add(QueryParameters, "CustomType", value.ToString());
-			}
-		}
-
-		public string Target
-		{
-			get
-			{
-				return target;
-			}
-			set	
-			{
-				target = value;
-				DictionaryUtil.Add(QueryParameters, "Target", value);
 			}
 		}
 

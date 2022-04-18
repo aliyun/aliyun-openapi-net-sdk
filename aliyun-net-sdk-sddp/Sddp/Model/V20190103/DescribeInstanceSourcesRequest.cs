@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Sddp;
 using Aliyun.Acs.Sddp.Transform;
 using Aliyun.Acs.Sddp.Transform.V20190103;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
     public class DescribeInstanceSourcesRequest : RpcAcsRequest<DescribeInstanceSourcesResponse>
     {
         public DescribeInstanceSourcesRequest()
-            : base("Sddp", "2019-01-03", "DescribeInstanceSources")
+            : base("Sddp", "2019-01-03", "DescribeInstanceSources", "sddp", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,7 +40,13 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			Method = MethodType.POST;
         }
 
+		private string productCode;
+
 		private long? productId;
+
+		private string searchKey;
+
+		private string searchType;
 
 		private int? pageSize;
 
@@ -51,13 +56,26 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private string engineType;
 
-		private int? currentPage;
+		private int? auditStatus;
 
-		private bool? authed;
+		private int? authStatus;
+
+		private int? currentPage;
 
 		private string instanceId;
 
-		private string dbName;
+		public string ProductCode
+		{
+			get
+			{
+				return productCode;
+			}
+			set	
+			{
+				productCode = value;
+				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
+			}
+		}
 
 		public long? ProductId
 		{
@@ -69,6 +87,32 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				productId = value;
 				DictionaryUtil.Add(QueryParameters, "ProductId", value.ToString());
+			}
+		}
+
+		public string SearchKey
+		{
+			get
+			{
+				return searchKey;
+			}
+			set	
+			{
+				searchKey = value;
+				DictionaryUtil.Add(QueryParameters, "SearchKey", value);
+			}
+		}
+
+		public string SearchType
+		{
+			get
+			{
+				return searchType;
+			}
+			set	
+			{
+				searchType = value;
+				DictionaryUtil.Add(QueryParameters, "SearchType", value);
 			}
 		}
 
@@ -124,6 +168,32 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
+		public int? AuditStatus
+		{
+			get
+			{
+				return auditStatus;
+			}
+			set	
+			{
+				auditStatus = value;
+				DictionaryUtil.Add(QueryParameters, "AuditStatus", value.ToString());
+			}
+		}
+
+		public int? AuthStatus
+		{
+			get
+			{
+				return authStatus;
+			}
+			set	
+			{
+				authStatus = value;
+				DictionaryUtil.Add(QueryParameters, "AuthStatus", value.ToString());
+			}
+		}
+
 		public int? CurrentPage
 		{
 			get
@@ -137,19 +207,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public bool? Authed
-		{
-			get
-			{
-				return authed;
-			}
-			set	
-			{
-				authed = value;
-				DictionaryUtil.Add(QueryParameters, "Authed", value.ToString());
-			}
-		}
-
 		public string InstanceId
 		{
 			get
@@ -160,19 +217,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string DbName
-		{
-			get
-			{
-				return dbName;
-			}
-			set	
-			{
-				dbName = value;
-				DictionaryUtil.Add(QueryParameters, "DbName", value);
 			}
 		}
 

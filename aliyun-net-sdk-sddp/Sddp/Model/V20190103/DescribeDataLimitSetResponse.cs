@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
@@ -56,9 +56,9 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		public class DescribeDataLimitSet_DataLimitSet
 		{
 
-			private long? resourceType;
-
 			private string resourceTypeCode;
+
+			private long? resourceType;
 
 			private int? totalCount;
 
@@ -67,18 +67,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			private List<DescribeDataLimitSet_OssBucket> ossBucketList;
 
 			private List<DescribeDataLimitSet_Region> regionList;
-
-			public long? ResourceType
-			{
-				get
-				{
-					return resourceType;
-				}
-				set	
-				{
-					resourceType = value;
-				}
-			}
 
 			public string ResourceTypeCode
 			{
@@ -89,6 +77,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					resourceTypeCode = value;
+				}
+			}
+
+			public long? ResourceType
+			{
+				get
+				{
+					return resourceType;
+				}
+				set	
+				{
+					resourceType = value;
 				}
 			}
 
@@ -143,47 +143,47 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			public class DescribeDataLimitSet_DataLimit
 			{
 
-				private string regionId;
+				private bool? supportEvent;
 
 				private string localName;
 
-				private string parentId;
-
-				private long? id;
-
-				private string userName;
-
-				private long? gmtCreate;
+				private int? checkStatus;
 
 				private string connector;
 
-				private int? checkStatus;
+				private int? port;
 
 				private string checkStatusName;
 
+				private string regionId;
+
+				private string parentId;
+
 				private long? resourceType;
-
-				private string resourceTypeCode;
-
-				private int? auditStatus;
 
 				private int? logStoreDay;
 
-				private int? port;
-
 				private int? eventStatus;
 
-				private bool? supportEvent;
+				private long? gmtCreate;
 
-				public string RegionId
+				private string resourceTypeCode;
+
+				private string userName;
+
+				private long? id;
+
+				private int? auditStatus;
+
+				public bool? SupportEvent
 				{
 					get
 					{
-						return regionId;
+						return supportEvent;
 					}
 					set	
 					{
-						regionId = value;
+						supportEvent = value;
 					}
 				}
 
@@ -196,66 +196,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					set	
 					{
 						localName = value;
-					}
-				}
-
-				public string ParentId
-				{
-					get
-					{
-						return parentId;
-					}
-					set	
-					{
-						parentId = value;
-					}
-				}
-
-				public long? Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
-
-				public string UserName
-				{
-					get
-					{
-						return userName;
-					}
-					set	
-					{
-						userName = value;
-					}
-				}
-
-				public long? GmtCreate
-				{
-					get
-					{
-						return gmtCreate;
-					}
-					set	
-					{
-						gmtCreate = value;
-					}
-				}
-
-				public string Connector
-				{
-					get
-					{
-						return connector;
-					}
-					set	
-					{
-						connector = value;
 					}
 				}
 
@@ -271,63 +211,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					}
 				}
 
-				public string CheckStatusName
+				public string Connector
 				{
 					get
 					{
-						return checkStatusName;
+						return connector;
 					}
 					set	
 					{
-						checkStatusName = value;
-					}
-				}
-
-				public long? ResourceType
-				{
-					get
-					{
-						return resourceType;
-					}
-					set	
-					{
-						resourceType = value;
-					}
-				}
-
-				public string ResourceTypeCode
-				{
-					get
-					{
-						return resourceTypeCode;
-					}
-					set	
-					{
-						resourceTypeCode = value;
-					}
-				}
-
-				public int? AuditStatus
-				{
-					get
-					{
-						return auditStatus;
-					}
-					set	
-					{
-						auditStatus = value;
-					}
-				}
-
-				public int? LogStoreDay
-				{
-					get
-					{
-						return logStoreDay;
-					}
-					set	
-					{
-						logStoreDay = value;
+						connector = value;
 					}
 				}
 
@@ -343,6 +235,66 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					}
 				}
 
+				public string CheckStatusName
+				{
+					get
+					{
+						return checkStatusName;
+					}
+					set	
+					{
+						checkStatusName = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
+				}
+
+				public string ParentId
+				{
+					get
+					{
+						return parentId;
+					}
+					set	
+					{
+						parentId = value;
+					}
+				}
+
+				public long? ResourceType
+				{
+					get
+					{
+						return resourceType;
+					}
+					set	
+					{
+						resourceType = value;
+					}
+				}
+
+				public int? LogStoreDay
+				{
+					get
+					{
+						return logStoreDay;
+					}
+					set	
+					{
+						logStoreDay = value;
+					}
+				}
+
 				public int? EventStatus
 				{
 					get
@@ -355,15 +307,63 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					}
 				}
 
-				public bool? SupportEvent
+				public long? GmtCreate
 				{
 					get
 					{
-						return supportEvent;
+						return gmtCreate;
 					}
 					set	
 					{
-						supportEvent = value;
+						gmtCreate = value;
+					}
+				}
+
+				public string ResourceTypeCode
+				{
+					get
+					{
+						return resourceTypeCode;
+					}
+					set	
+					{
+						resourceTypeCode = value;
+					}
+				}
+
+				public string UserName
+				{
+					get
+					{
+						return userName;
+					}
+					set	
+					{
+						userName = value;
+					}
+				}
+
+				public long? Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
+
+				public int? AuditStatus
+				{
+					get
+					{
+						return auditStatus;
+					}
+					set	
+					{
+						auditStatus = value;
 					}
 				}
 			}
@@ -371,9 +371,21 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			public class DescribeDataLimitSet_OssBucket
 			{
 
+				private string regionId;
+
 				private string bucketName;
 
-				private string regionId;
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
+				}
 
 				public string BucketName
 				{
@@ -386,6 +398,14 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 						bucketName = value;
 					}
 				}
+			}
+
+			public class DescribeDataLimitSet_Region
+			{
+
+				private string regionId;
+
+				private string localName;
 
 				public string RegionId
 				{
@@ -398,14 +418,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 						regionId = value;
 					}
 				}
-			}
-
-			public class DescribeDataLimitSet_Region
-			{
-
-				private string localName;
-
-				private string regionId;
 
 				public string LocalName
 				{
@@ -416,18 +428,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					set	
 					{
 						localName = value;
-					}
-				}
-
-				public string RegionId
-				{
-					get
-					{
-						return regionId;
-					}
-					set	
-					{
-						regionId = value;
 					}
 				}
 			}

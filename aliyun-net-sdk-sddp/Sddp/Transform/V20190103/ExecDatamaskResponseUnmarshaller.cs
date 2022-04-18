@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			ExecDatamaskResponse execDatamaskResponse = new ExecDatamaskResponse();
 
 			execDatamaskResponse.HttpResponse = _ctx.HttpResponse;
-			execDatamaskResponse.RequestId = _ctx.StringValue("ExecDatamask.RequestId");
 			execDatamaskResponse.Data = _ctx.StringValue("ExecDatamask.Data");
+			execDatamaskResponse.RequestId = _ctx.StringValue("ExecDatamask.RequestId");
         
 			return execDatamaskResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
@@ -56,25 +56,25 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		public class DescribeRiskLevels_RiskLevel
 		{
 
-			private long? id;
+			private string name;
 
 			private string description;
 
-			private string name;
-
 			private string alias;
+
+			private long? id;
 
 			private int? referenceNum;
 
-			public long? Id
+			public string Name
 			{
 				get
 				{
-					return id;
+					return name;
 				}
 				set	
 				{
-					id = value;
+					name = value;
 				}
 			}
 
@@ -90,18 +90,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
 			public string Alias
 			{
 				get
@@ -111,6 +99,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					alias = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 

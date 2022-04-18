@@ -36,25 +36,25 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			List<DescribeEventTypesResponse.DescribeEventTypes_EventType> describeEventTypesResponse_eventTypeList = new List<DescribeEventTypesResponse.DescribeEventTypes_EventType>();
 			for (int i = 0; i < _ctx.Length("DescribeEventTypes.EventTypeList.Length"); i++) {
 				DescribeEventTypesResponse.DescribeEventTypes_EventType eventType = new DescribeEventTypesResponse.DescribeEventTypes_EventType();
-				eventType.Id = _ctx.LongValue("DescribeEventTypes.EventTypeList["+ i +"].Id");
-				eventType.Name = _ctx.StringValue("DescribeEventTypes.EventTypeList["+ i +"].Name");
 				eventType.Code = _ctx.StringValue("DescribeEventTypes.EventTypeList["+ i +"].Code");
 				eventType.Description = _ctx.StringValue("DescribeEventTypes.EventTypeList["+ i +"].Description");
+				eventType.Name = _ctx.StringValue("DescribeEventTypes.EventTypeList["+ i +"].Name");
+				eventType.Id = _ctx.LongValue("DescribeEventTypes.EventTypeList["+ i +"].Id");
 
 				List<DescribeEventTypesResponse.DescribeEventTypes_EventType.DescribeEventTypes_SubType> eventType_subTypeList = new List<DescribeEventTypesResponse.DescribeEventTypes_EventType.DescribeEventTypes_SubType>();
 				for (int j = 0; j < _ctx.Length("DescribeEventTypes.EventTypeList["+ i +"].SubTypeList.Length"); j++) {
 					DescribeEventTypesResponse.DescribeEventTypes_EventType.DescribeEventTypes_SubType subType = new DescribeEventTypesResponse.DescribeEventTypes_EventType.DescribeEventTypes_SubType();
-					subType.Id = _ctx.LongValue("DescribeEventTypes.EventTypeList["+ i +"].SubTypeList["+ j +"].Id");
-					subType.Name = _ctx.StringValue("DescribeEventTypes.EventTypeList["+ i +"].SubTypeList["+ j +"].Name");
-					subType.Code = _ctx.StringValue("DescribeEventTypes.EventTypeList["+ i +"].SubTypeList["+ j +"].Code");
-					subType.Description = _ctx.StringValue("DescribeEventTypes.EventTypeList["+ i +"].SubTypeList["+ j +"].Description");
 					subType.Status = _ctx.IntegerValue("DescribeEventTypes.EventTypeList["+ i +"].SubTypeList["+ j +"].Status");
-					subType.EventHitCount = _ctx.IntegerValue("DescribeEventTypes.EventTypeList["+ i +"].SubTypeList["+ j +"].EventHitCount");
-					subType.AdaptedProduct = _ctx.StringValue("DescribeEventTypes.EventTypeList["+ i +"].SubTypeList["+ j +"].AdaptedProduct");
-					subType.ConfigCode = _ctx.StringValue("DescribeEventTypes.EventTypeList["+ i +"].SubTypeList["+ j +"].ConfigCode");
+					subType.Description = _ctx.StringValue("DescribeEventTypes.EventTypeList["+ i +"].SubTypeList["+ j +"].Description");
 					subType.ConfigContentType = _ctx.IntegerValue("DescribeEventTypes.EventTypeList["+ i +"].SubTypeList["+ j +"].ConfigContentType");
-					subType.ConfigDescription = _ctx.StringValue("DescribeEventTypes.EventTypeList["+ i +"].SubTypeList["+ j +"].ConfigDescription");
+					subType.EventHitCount = _ctx.IntegerValue("DescribeEventTypes.EventTypeList["+ i +"].SubTypeList["+ j +"].EventHitCount");
 					subType.ConfigValue = _ctx.StringValue("DescribeEventTypes.EventTypeList["+ i +"].SubTypeList["+ j +"].ConfigValue");
+					subType.ConfigCode = _ctx.StringValue("DescribeEventTypes.EventTypeList["+ i +"].SubTypeList["+ j +"].ConfigCode");
+					subType.Code = _ctx.StringValue("DescribeEventTypes.EventTypeList["+ i +"].SubTypeList["+ j +"].Code");
+					subType.ConfigDescription = _ctx.StringValue("DescribeEventTypes.EventTypeList["+ i +"].SubTypeList["+ j +"].ConfigDescription");
+					subType.Name = _ctx.StringValue("DescribeEventTypes.EventTypeList["+ i +"].SubTypeList["+ j +"].Name");
+					subType.AdaptedProduct = _ctx.StringValue("DescribeEventTypes.EventTypeList["+ i +"].SubTypeList["+ j +"].AdaptedProduct");
+					subType.Id = _ctx.LongValue("DescribeEventTypes.EventTypeList["+ i +"].SubTypeList["+ j +"].Id");
 
 					eventType_subTypeList.Add(subType);
 				}

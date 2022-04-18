@@ -31,33 +31,33 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			DescribeDataMaskingRunHistoryResponse describeDataMaskingRunHistoryResponse = new DescribeDataMaskingRunHistoryResponse();
 
 			describeDataMaskingRunHistoryResponse.HttpResponse = _ctx.HttpResponse;
+			describeDataMaskingRunHistoryResponse.CurrentPage = _ctx.IntegerValue("DescribeDataMaskingRunHistory.CurrentPage");
 			describeDataMaskingRunHistoryResponse.RequestId = _ctx.StringValue("DescribeDataMaskingRunHistory.RequestId");
 			describeDataMaskingRunHistoryResponse.PageSize = _ctx.IntegerValue("DescribeDataMaskingRunHistory.PageSize");
-			describeDataMaskingRunHistoryResponse.CurrentPage = _ctx.IntegerValue("DescribeDataMaskingRunHistory.CurrentPage");
 			describeDataMaskingRunHistoryResponse.TotalCount = _ctx.IntegerValue("DescribeDataMaskingRunHistory.TotalCount");
 
 			List<DescribeDataMaskingRunHistoryResponse.DescribeDataMaskingRunHistory_Task> describeDataMaskingRunHistoryResponse_items = new List<DescribeDataMaskingRunHistoryResponse.DescribeDataMaskingRunHistory_Task>();
 			for (int i = 0; i < _ctx.Length("DescribeDataMaskingRunHistory.Items.Length"); i++) {
 				DescribeDataMaskingRunHistoryResponse.DescribeDataMaskingRunHistory_Task task = new DescribeDataMaskingRunHistoryResponse.DescribeDataMaskingRunHistory_Task();
-				task.Id = _ctx.LongValue("DescribeDataMaskingRunHistory.Items["+ i +"].Id");
-				task.TaskId = _ctx.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].TaskId");
-				task.StartTime = _ctx.LongValue("DescribeDataMaskingRunHistory.Items["+ i +"].StartTime");
+				task.Status = _ctx.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].Status");
+				task.Type = _ctx.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].Type");
+				task.SrcType = _ctx.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].SrcType");
+				task.SrcTableName = _ctx.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].SrcTableName");
+				task.MaskingCount = _ctx.LongValue("DescribeDataMaskingRunHistory.Items["+ i +"].MaskingCount");
+				task.Percentage = _ctx.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].Percentage");
+				task.DstType = _ctx.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].DstType");
+				task.FailMsg = _ctx.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].FailMsg");
+				task.FailCode = _ctx.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].FailCode");
+				task.ConflictCount = _ctx.LongValue("DescribeDataMaskingRunHistory.Items["+ i +"].ConflictCount");
+				task.DstTypeCode = _ctx.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].DstTypeCode");
 				task.EndTime = _ctx.LongValue("DescribeDataMaskingRunHistory.Items["+ i +"].EndTime");
 				task.RunIndex = _ctx.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].RunIndex");
-				task.Type = _ctx.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].Type");
-				task.DstType = _ctx.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].DstType");
-				task.Percentage = _ctx.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].Percentage");
-				task.SrcType = _ctx.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].SrcType");
-				task.MaskingCount = _ctx.LongValue("DescribeDataMaskingRunHistory.Items["+ i +"].MaskingCount");
-				task.ConflictCount = _ctx.LongValue("DescribeDataMaskingRunHistory.Items["+ i +"].ConflictCount");
-				task.Status = _ctx.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].Status");
-				task.FailCode = _ctx.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].FailCode");
-				task.DstTypeCode = _ctx.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].DstTypeCode");
-				task.SrcTypeCode = _ctx.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].SrcTypeCode");
+				task.StartTime = _ctx.LongValue("DescribeDataMaskingRunHistory.Items["+ i +"].StartTime");
 				task.HasSubProcess = _ctx.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].HasSubProcess");
 				task.HasDownloadFile = _ctx.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].HasDownloadFile");
-				task.SrcTableName = _ctx.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].SrcTableName");
-				task.FailMsg = _ctx.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].FailMsg");
+				task.TaskId = _ctx.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].TaskId");
+				task.SrcTypeCode = _ctx.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].SrcTypeCode");
+				task.Id = _ctx.LongValue("DescribeDataMaskingRunHistory.Items["+ i +"].Id");
 
 				describeDataMaskingRunHistoryResponse_items.Add(task);
 			}

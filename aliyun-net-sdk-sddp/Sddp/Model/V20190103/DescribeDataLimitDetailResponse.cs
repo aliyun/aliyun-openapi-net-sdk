@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
@@ -56,45 +56,33 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		public class DescribeDataLimitDetail_DataLimit
 		{
 
-			private string regionId;
-
 			private string localName;
-
-			private string parentId;
-
-			private long? id;
-
-			private string userName;
-
-			private long? gmtCreate;
-
-			private string connector;
 
 			private int? checkStatus;
 
-			private string checkStatusName;
-
-			private long? resourceType;
-
-			private string resourceTypeCode;
-
-			private int? auditStatus;
-
-			private int? logStoreDay;
+			private string connector;
 
 			private int? port;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+			private string checkStatusName;
+
+			private string regionId;
+
+			private string parentId;
+
+			private long? resourceType;
+
+			private int? logStoreDay;
+
+			private long? gmtCreate;
+
+			private string resourceTypeCode;
+
+			private string userName;
+
+			private long? id;
+
+			private int? auditStatus;
 
 			public string LocalName
 			{
@@ -105,66 +93,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					localName = value;
-				}
-			}
-
-			public string ParentId
-			{
-				get
-				{
-					return parentId;
-				}
-				set	
-				{
-					parentId = value;
-				}
-			}
-
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
-
-			public string UserName
-			{
-				get
-				{
-					return userName;
-				}
-				set	
-				{
-					userName = value;
-				}
-			}
-
-			public long? GmtCreate
-			{
-				get
-				{
-					return gmtCreate;
-				}
-				set	
-				{
-					gmtCreate = value;
-				}
-			}
-
-			public string Connector
-			{
-				get
-				{
-					return connector;
-				}
-				set	
-				{
-					connector = value;
 				}
 			}
 
@@ -180,6 +108,30 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
+			public string Connector
+			{
+				get
+				{
+					return connector;
+				}
+				set	
+				{
+					connector = value;
+				}
+			}
+
+			public int? Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
+				}
+			}
+
 			public string CheckStatusName
 			{
 				get
@@ -189,6 +141,30 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					checkStatusName = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string ParentId
+			{
+				get
+				{
+					return parentId;
+				}
+				set	
+				{
+					parentId = value;
 				}
 			}
 
@@ -204,30 +180,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public string ResourceTypeCode
-			{
-				get
-				{
-					return resourceTypeCode;
-				}
-				set	
-				{
-					resourceTypeCode = value;
-				}
-			}
-
-			public int? AuditStatus
-			{
-				get
-				{
-					return auditStatus;
-				}
-				set	
-				{
-					auditStatus = value;
-				}
-			}
-
 			public int? LogStoreDay
 			{
 				get
@@ -240,15 +192,63 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public int? Port
+			public long? GmtCreate
 			{
 				get
 				{
-					return port;
+					return gmtCreate;
 				}
 				set	
 				{
-					port = value;
+					gmtCreate = value;
+				}
+			}
+
+			public string ResourceTypeCode
+			{
+				get
+				{
+					return resourceTypeCode;
+				}
+				set	
+				{
+					resourceTypeCode = value;
+				}
+			}
+
+			public string UserName
+			{
+				get
+				{
+					return userName;
+				}
+				set	
+				{
+					userName = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public int? AuditStatus
+			{
+				get
+				{
+					return auditStatus;
+				}
+				set	
+				{
+					auditStatus = value;
 				}
 			}
 		}

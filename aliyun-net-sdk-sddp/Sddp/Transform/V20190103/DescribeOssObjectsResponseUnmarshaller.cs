@@ -31,36 +31,36 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			DescribeOssObjectsResponse describeOssObjectsResponse = new DescribeOssObjectsResponse();
 
 			describeOssObjectsResponse.HttpResponse = _ctx.HttpResponse;
+			describeOssObjectsResponse.CurrentPage = _ctx.IntegerValue("DescribeOssObjects.CurrentPage");
 			describeOssObjectsResponse.RequestId = _ctx.StringValue("DescribeOssObjects.RequestId");
 			describeOssObjectsResponse.PageSize = _ctx.IntegerValue("DescribeOssObjects.PageSize");
-			describeOssObjectsResponse.CurrentPage = _ctx.IntegerValue("DescribeOssObjects.CurrentPage");
 			describeOssObjectsResponse.TotalCount = _ctx.IntegerValue("DescribeOssObjects.TotalCount");
 
 			List<DescribeOssObjectsResponse.DescribeOssObjects_Column> describeOssObjectsResponse_items = new List<DescribeOssObjectsResponse.DescribeOssObjects_Column>();
 			for (int i = 0; i < _ctx.Length("DescribeOssObjects.Items.Length"); i++) {
 				DescribeOssObjectsResponse.DescribeOssObjects_Column column = new DescribeOssObjectsResponse.DescribeOssObjects_Column();
-				column.Id = _ctx.StringValue("DescribeOssObjects.Items["+ i +"].Id");
-				column.Name = _ctx.StringValue("DescribeOssObjects.Items["+ i +"].Name");
-				column.RegionId = _ctx.StringValue("DescribeOssObjects.Items["+ i +"].RegionId");
-				column.RiskLevelId = _ctx.LongValue("DescribeOssObjects.Items["+ i +"].RiskLevelId");
-				column.Category = _ctx.LongValue("DescribeOssObjects.Items["+ i +"].Category");
 				column.InstanceId = _ctx.LongValue("DescribeOssObjects.Items["+ i +"].InstanceId");
-				column.FileId = _ctx.StringValue("DescribeOssObjects.Items["+ i +"].FileId");
-				column.RiskLevelName = _ctx.StringValue("DescribeOssObjects.Items["+ i +"].RiskLevelName");
-				column.Size = _ctx.LongValue("DescribeOssObjects.Items["+ i +"].Size");
-				column.SensitiveCount = _ctx.IntegerValue("DescribeOssObjects.Items["+ i +"].SensitiveCount");
-				column.RuleCount = _ctx.IntegerValue("DescribeOssObjects.Items["+ i +"].RuleCount");
 				column.CategoryName = _ctx.StringValue("DescribeOssObjects.Items["+ i +"].CategoryName");
-				column.BucketName = _ctx.StringValue("DescribeOssObjects.Items["+ i +"].BucketName");
-				column.RegionName = _ctx.StringValue("DescribeOssObjects.Items["+ i +"].RegionName");
+				column.RiskLevelId = _ctx.LongValue("DescribeOssObjects.Items["+ i +"].RiskLevelId");
+				column.RegionId = _ctx.StringValue("DescribeOssObjects.Items["+ i +"].RegionId");
+				column.FileId = _ctx.StringValue("DescribeOssObjects.Items["+ i +"].FileId");
 				column.LastScanTime = _ctx.LongValue("DescribeOssObjects.Items["+ i +"].LastScanTime");
+				column.RegionName = _ctx.StringValue("DescribeOssObjects.Items["+ i +"].RegionName");
+				column.Size = _ctx.LongValue("DescribeOssObjects.Items["+ i +"].Size");
+				column.BucketName = _ctx.StringValue("DescribeOssObjects.Items["+ i +"].BucketName");
+				column.RiskLevelName = _ctx.StringValue("DescribeOssObjects.Items["+ i +"].RiskLevelName");
+				column.Category = _ctx.LongValue("DescribeOssObjects.Items["+ i +"].Category");
+				column.Name = _ctx.StringValue("DescribeOssObjects.Items["+ i +"].Name");
+				column.RuleCount = _ctx.IntegerValue("DescribeOssObjects.Items["+ i +"].RuleCount");
+				column.SensitiveCount = _ctx.IntegerValue("DescribeOssObjects.Items["+ i +"].SensitiveCount");
+				column.Id = _ctx.StringValue("DescribeOssObjects.Items["+ i +"].Id");
 
 				List<DescribeOssObjectsResponse.DescribeOssObjects_Column.DescribeOssObjects_Rule> column_ruleList = new List<DescribeOssObjectsResponse.DescribeOssObjects_Column.DescribeOssObjects_Rule>();
 				for (int j = 0; j < _ctx.Length("DescribeOssObjects.Items["+ i +"].RuleList.Length"); j++) {
 					DescribeOssObjectsResponse.DescribeOssObjects_Column.DescribeOssObjects_Rule rule = new DescribeOssObjectsResponse.DescribeOssObjects_Column.DescribeOssObjects_Rule();
 					rule.Name = _ctx.StringValue("DescribeOssObjects.Items["+ i +"].RuleList["+ j +"].Name");
-					rule.Count = _ctx.LongValue("DescribeOssObjects.Items["+ i +"].RuleList["+ j +"].Count");
 					rule.RiskLevelId = _ctx.LongValue("DescribeOssObjects.Items["+ i +"].RuleList["+ j +"].RiskLevelId");
+					rule.Count = _ctx.LongValue("DescribeOssObjects.Items["+ i +"].RuleList["+ j +"].Count");
 
 					column_ruleList.Add(rule);
 				}

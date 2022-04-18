@@ -36,10 +36,10 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			List<DescribeRiskLevelsResponse.DescribeRiskLevels_RiskLevel> describeRiskLevelsResponse_riskLevelList = new List<DescribeRiskLevelsResponse.DescribeRiskLevels_RiskLevel>();
 			for (int i = 0; i < _ctx.Length("DescribeRiskLevels.RiskLevelList.Length"); i++) {
 				DescribeRiskLevelsResponse.DescribeRiskLevels_RiskLevel riskLevel = new DescribeRiskLevelsResponse.DescribeRiskLevels_RiskLevel();
-				riskLevel.Id = _ctx.LongValue("DescribeRiskLevels.RiskLevelList["+ i +"].Id");
-				riskLevel.Description = _ctx.StringValue("DescribeRiskLevels.RiskLevelList["+ i +"].Description");
 				riskLevel.Name = _ctx.StringValue("DescribeRiskLevels.RiskLevelList["+ i +"].Name");
+				riskLevel.Description = _ctx.StringValue("DescribeRiskLevels.RiskLevelList["+ i +"].Description");
 				riskLevel.Alias = _ctx.StringValue("DescribeRiskLevels.RiskLevelList["+ i +"].Alias");
+				riskLevel.Id = _ctx.LongValue("DescribeRiskLevels.RiskLevelList["+ i +"].Id");
 				riskLevel.ReferenceNum = _ctx.IntegerValue("DescribeRiskLevels.RiskLevelList["+ i +"].ReferenceNum");
 
 				describeRiskLevelsResponse_riskLevelList.Add(riskLevel);

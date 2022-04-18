@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Sddp;
 using Aliyun.Acs.Sddp.Transform;
 using Aliyun.Acs.Sddp.Transform.V20190103;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
     public class ExecDatamaskRequest : RpcAcsRequest<ExecDatamaskResponse>
     {
         public ExecDatamaskRequest()
-            : base("Sddp", "2019-01-03", "ExecDatamask")
+            : base("Sddp", "2019-01-03", "ExecDatamask", "sddp", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,6 +43,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		private string data;
 
 		private long? templateId;
+
+		private string lang;
 
 		public string Data
 		{
@@ -68,6 +69,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				templateId = value;
 				DictionaryUtil.Add(QueryParameters, "TemplateId", value.ToString());
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 

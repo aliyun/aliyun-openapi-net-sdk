@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 	public class DescribeDataMaskingRunHistoryResponse : AcsResponse
 	{
 
+		private int? currentPage;
+
 		private string requestId;
 
 		private int? pageSize;
 
-		private int? currentPage;
-
 		private int? totalCount;
 
 		private List<DescribeDataMaskingRunHistory_Task> items;
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -56,18 +68,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			set	
 			{
 				pageSize = value;
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
 			}
 		}
 
@@ -98,77 +98,173 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		public class DescribeDataMaskingRunHistory_Task
 		{
 
-			private long? id;
+			private int? status;
 
-			private string taskId;
+			private int? type;
 
-			private long? startTime;
+			private int? srcType;
+
+			private string srcTableName;
+
+			private long? maskingCount;
+
+			private int? percentage;
+
+			private int? dstType;
+
+			private string failMsg;
+
+			private string failCode;
+
+			private long? conflictCount;
+
+			private string dstTypeCode;
 
 			private long? endTime;
 
 			private int? runIndex;
 
-			private int? type;
-
-			private int? dstType;
-
-			private int? percentage;
-
-			private int? srcType;
-
-			private long? maskingCount;
-
-			private long? conflictCount;
-
-			private int? status;
-
-			private string failCode;
-
-			private string dstTypeCode;
-
-			private string srcTypeCode;
+			private long? startTime;
 
 			private int? hasSubProcess;
 
 			private int? hasDownloadFile;
 
-			private string srcTableName;
+			private string taskId;
 
-			private string failMsg;
+			private string srcTypeCode;
 
-			public long? Id
+			private long? id;
+
+			public int? Status
 			{
 				get
 				{
-					return id;
+					return status;
 				}
 				set	
 				{
-					id = value;
+					status = value;
 				}
 			}
 
-			public string TaskId
+			public int? Type
 			{
 				get
 				{
-					return taskId;
+					return type;
 				}
 				set	
 				{
-					taskId = value;
+					type = value;
 				}
 			}
 
-			public long? StartTime
+			public int? SrcType
 			{
 				get
 				{
-					return startTime;
+					return srcType;
 				}
 				set	
 				{
-					startTime = value;
+					srcType = value;
+				}
+			}
+
+			public string SrcTableName
+			{
+				get
+				{
+					return srcTableName;
+				}
+				set	
+				{
+					srcTableName = value;
+				}
+			}
+
+			public long? MaskingCount
+			{
+				get
+				{
+					return maskingCount;
+				}
+				set	
+				{
+					maskingCount = value;
+				}
+			}
+
+			public int? Percentage
+			{
+				get
+				{
+					return percentage;
+				}
+				set	
+				{
+					percentage = value;
+				}
+			}
+
+			public int? DstType
+			{
+				get
+				{
+					return dstType;
+				}
+				set	
+				{
+					dstType = value;
+				}
+			}
+
+			public string FailMsg
+			{
+				get
+				{
+					return failMsg;
+				}
+				set	
+				{
+					failMsg = value;
+				}
+			}
+
+			public string FailCode
+			{
+				get
+				{
+					return failCode;
+				}
+				set	
+				{
+					failCode = value;
+				}
+			}
+
+			public long? ConflictCount
+			{
+				get
+				{
+					return conflictCount;
+				}
+				set	
+				{
+					conflictCount = value;
+				}
+			}
+
+			public string DstTypeCode
+			{
+				get
+				{
+					return dstTypeCode;
+				}
+				set	
+				{
+					dstTypeCode = value;
 				}
 			}
 
@@ -196,123 +292,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public int? Type
+			public long? StartTime
 			{
 				get
 				{
-					return type;
+					return startTime;
 				}
 				set	
 				{
-					type = value;
-				}
-			}
-
-			public int? DstType
-			{
-				get
-				{
-					return dstType;
-				}
-				set	
-				{
-					dstType = value;
-				}
-			}
-
-			public int? Percentage
-			{
-				get
-				{
-					return percentage;
-				}
-				set	
-				{
-					percentage = value;
-				}
-			}
-
-			public int? SrcType
-			{
-				get
-				{
-					return srcType;
-				}
-				set	
-				{
-					srcType = value;
-				}
-			}
-
-			public long? MaskingCount
-			{
-				get
-				{
-					return maskingCount;
-				}
-				set	
-				{
-					maskingCount = value;
-				}
-			}
-
-			public long? ConflictCount
-			{
-				get
-				{
-					return conflictCount;
-				}
-				set	
-				{
-					conflictCount = value;
-				}
-			}
-
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string FailCode
-			{
-				get
-				{
-					return failCode;
-				}
-				set	
-				{
-					failCode = value;
-				}
-			}
-
-			public string DstTypeCode
-			{
-				get
-				{
-					return dstTypeCode;
-				}
-				set	
-				{
-					dstTypeCode = value;
-				}
-			}
-
-			public string SrcTypeCode
-			{
-				get
-				{
-					return srcTypeCode;
-				}
-				set	
-				{
-					srcTypeCode = value;
+					startTime = value;
 				}
 			}
 
@@ -340,27 +328,39 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public string SrcTableName
+			public string TaskId
 			{
 				get
 				{
-					return srcTableName;
+					return taskId;
 				}
 				set	
 				{
-					srcTableName = value;
+					taskId = value;
 				}
 			}
 
-			public string FailMsg
+			public string SrcTypeCode
 			{
 				get
 				{
-					return failMsg;
+					return srcTypeCode;
 				}
 				set	
 				{
-					failMsg = value;
+					srcTypeCode = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 		}

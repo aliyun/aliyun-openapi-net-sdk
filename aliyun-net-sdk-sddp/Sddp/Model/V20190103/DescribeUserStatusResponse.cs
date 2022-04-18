@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
@@ -56,237 +56,95 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		public class DescribeUserStatus_UserStatus
 		{
 
-			private bool? authed;
-
-			private bool? buyed;
-
-			private bool? ossBucketSet;
-
-			private bool? odpsSet;
-
-			private bool? rdsSet;
-
-			private string authProductList;
-
-			private string accessKeyId;
-
-			private bool? trail;
-
-			private int? instanceStatus;
-
-			private string instanceId;
-
-			private int? remainDays;
-
-			private bool? renewStatus;
-
-			private int? instanceNum;
+			private long? useOssSize;
 
 			private int? useInstanceNum;
 
-			private long? ossSize;
-
-			private long? useOssSize;
+			private int? instanceNum;
 
 			private string chargeType;
+
+			private long? incSensitiveTables;
+
+			private bool? auditUpgradeStatus;
+
+			private long? dataMaskTasks;
+
+			private bool? authed;
 
 			private int? labStatus;
 
 			private string version;
 
-			private int? dbAuditStatus;
+			private bool? odpsSet;
 
-			private bool? assetScanned;
-
-			private bool? auditUpgradeStatus;
+			private bool? ossBucketSet;
 
 			private long? sensitiveTable;
 
-			private long? sensitiveObject;
-
-			private long? datamaskColumns;
-
-			private long? alarmCount;
-
-			private long? divulgeCount;
-
-			private string displayTime;
+			private int? remainDays;
 
 			private long? totalDataMaskColumns;
 
-			private long? dataMaskTasks;
+			private long? datamaskColumns;
 
-			private long? dataMaskColumns;
+			private string authProductList;
 
-			private long? sensitiveTables;
+			private bool? trail;
+
+			private long? divulgeCount;
+
+			private bool? rdsSet;
+
+			private int? dbAuditStatus;
+
+			private bool? renewStatus;
 
 			private long? sensitiveObjects;
 
-			private long? incSensitiveTables;
-
-			private long? incSensitiveObjects;
-
-			private string sensitiveTop;
+			private long? dataMaskColumns;
 
 			private long? dlpTotalCount;
 
+			private long? sensitiveObject;
+
 			private long? dlpCount;
+
+			private string instanceId;
+
+			private string accessKeyId;
+
+			private long? ossSize;
 
 			private string sensitiveTotalTop;
 
-			public bool? Authed
-			{
-				get
-				{
-					return authed;
-				}
-				set	
-				{
-					authed = value;
-				}
-			}
+			private long? sensitiveTables;
 
-			public bool? Buyed
-			{
-				get
-				{
-					return buyed;
-				}
-				set	
-				{
-					buyed = value;
-				}
-			}
+			private string sensitiveTop;
 
-			public bool? OssBucketSet
-			{
-				get
-				{
-					return ossBucketSet;
-				}
-				set	
-				{
-					ossBucketSet = value;
-				}
-			}
+			private bool? purchased;
 
-			public bool? OdpsSet
-			{
-				get
-				{
-					return odpsSet;
-				}
-				set	
-				{
-					odpsSet = value;
-				}
-			}
+			private bool? buyed;
 
-			public bool? RdsSet
-			{
-				get
-				{
-					return rdsSet;
-				}
-				set	
-				{
-					rdsSet = value;
-				}
-			}
+			private long? incSensitiveObjects;
 
-			public string AuthProductList
-			{
-				get
-				{
-					return authProductList;
-				}
-				set	
-				{
-					authProductList = value;
-				}
-			}
+			private int? instanceStatus;
 
-			public string AccessKeyId
-			{
-				get
-				{
-					return accessKeyId;
-				}
-				set	
-				{
-					accessKeyId = value;
-				}
-			}
+			private bool? assetScanned;
 
-			public bool? Trail
-			{
-				get
-				{
-					return trail;
-				}
-				set	
-				{
-					trail = value;
-				}
-			}
+			private long? alarmCount;
 
-			public int? InstanceStatus
-			{
-				get
-				{
-					return instanceStatus;
-				}
-				set	
-				{
-					instanceStatus = value;
-				}
-			}
+			private string displayTime;
 
-			public string InstanceId
+			public long? UseOssSize
 			{
 				get
 				{
-					return instanceId;
+					return useOssSize;
 				}
 				set	
 				{
-					instanceId = value;
-				}
-			}
-
-			public int? RemainDays
-			{
-				get
-				{
-					return remainDays;
-				}
-				set	
-				{
-					remainDays = value;
-				}
-			}
-
-			public bool? RenewStatus
-			{
-				get
-				{
-					return renewStatus;
-				}
-				set	
-				{
-					renewStatus = value;
-				}
-			}
-
-			public int? InstanceNum
-			{
-				get
-				{
-					return instanceNum;
-				}
-				set	
-				{
-					instanceNum = value;
+					useOssSize = value;
 				}
 			}
 
@@ -302,27 +160,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public long? OssSize
+			public int? InstanceNum
 			{
 				get
 				{
-					return ossSize;
+					return instanceNum;
 				}
 				set	
 				{
-					ossSize = value;
-				}
-			}
-
-			public long? UseOssSize
-			{
-				get
-				{
-					return useOssSize;
-				}
-				set	
-				{
-					useOssSize = value;
+					instanceNum = value;
 				}
 			}
 
@@ -335,6 +181,54 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					chargeType = value;
+				}
+			}
+
+			public long? IncSensitiveTables
+			{
+				get
+				{
+					return incSensitiveTables;
+				}
+				set	
+				{
+					incSensitiveTables = value;
+				}
+			}
+
+			public bool? AuditUpgradeStatus
+			{
+				get
+				{
+					return auditUpgradeStatus;
+				}
+				set	
+				{
+					auditUpgradeStatus = value;
+				}
+			}
+
+			public long? DataMaskTasks
+			{
+				get
+				{
+					return dataMaskTasks;
+				}
+				set	
+				{
+					dataMaskTasks = value;
+				}
+			}
+
+			public bool? Authed
+			{
+				get
+				{
+					return authed;
+				}
+				set	
+				{
+					authed = value;
 				}
 			}
 
@@ -362,39 +256,27 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public int? DbAuditStatus
+			public bool? OdpsSet
 			{
 				get
 				{
-					return dbAuditStatus;
+					return odpsSet;
 				}
 				set	
 				{
-					dbAuditStatus = value;
+					odpsSet = value;
 				}
 			}
 
-			public bool? AssetScanned
+			public bool? OssBucketSet
 			{
 				get
 				{
-					return assetScanned;
+					return ossBucketSet;
 				}
 				set	
 				{
-					assetScanned = value;
-				}
-			}
-
-			public bool? AuditUpgradeStatus
-			{
-				get
-				{
-					return auditUpgradeStatus;
-				}
-				set	
-				{
-					auditUpgradeStatus = value;
+					ossBucketSet = value;
 				}
 			}
 
@@ -410,63 +292,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public long? SensitiveObject
+			public int? RemainDays
 			{
 				get
 				{
-					return sensitiveObject;
+					return remainDays;
 				}
 				set	
 				{
-					sensitiveObject = value;
-				}
-			}
-
-			public long? DatamaskColumns
-			{
-				get
-				{
-					return datamaskColumns;
-				}
-				set	
-				{
-					datamaskColumns = value;
-				}
-			}
-
-			public long? AlarmCount
-			{
-				get
-				{
-					return alarmCount;
-				}
-				set	
-				{
-					alarmCount = value;
-				}
-			}
-
-			public long? DivulgeCount
-			{
-				get
-				{
-					return divulgeCount;
-				}
-				set	
-				{
-					divulgeCount = value;
-				}
-			}
-
-			public string DisplayTime
-			{
-				get
-				{
-					return displayTime;
-				}
-				set	
-				{
-					displayTime = value;
+					remainDays = value;
 				}
 			}
 
@@ -482,39 +316,87 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public long? DataMaskTasks
+			public long? DatamaskColumns
 			{
 				get
 				{
-					return dataMaskTasks;
+					return datamaskColumns;
 				}
 				set	
 				{
-					dataMaskTasks = value;
+					datamaskColumns = value;
 				}
 			}
 
-			public long? DataMaskColumns
+			public string AuthProductList
 			{
 				get
 				{
-					return dataMaskColumns;
+					return authProductList;
 				}
 				set	
 				{
-					dataMaskColumns = value;
+					authProductList = value;
 				}
 			}
 
-			public long? SensitiveTables
+			public bool? Trail
 			{
 				get
 				{
-					return sensitiveTables;
+					return trail;
 				}
 				set	
 				{
-					sensitiveTables = value;
+					trail = value;
+				}
+			}
+
+			public long? DivulgeCount
+			{
+				get
+				{
+					return divulgeCount;
+				}
+				set	
+				{
+					divulgeCount = value;
+				}
+			}
+
+			public bool? RdsSet
+			{
+				get
+				{
+					return rdsSet;
+				}
+				set	
+				{
+					rdsSet = value;
+				}
+			}
+
+			public int? DbAuditStatus
+			{
+				get
+				{
+					return dbAuditStatus;
+				}
+				set	
+				{
+					dbAuditStatus = value;
+				}
+			}
+
+			public bool? RenewStatus
+			{
+				get
+				{
+					return renewStatus;
+				}
+				set	
+				{
+					renewStatus = value;
 				}
 			}
 
@@ -530,39 +412,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public long? IncSensitiveTables
+			public long? DataMaskColumns
 			{
 				get
 				{
-					return incSensitiveTables;
+					return dataMaskColumns;
 				}
 				set	
 				{
-					incSensitiveTables = value;
-				}
-			}
-
-			public long? IncSensitiveObjects
-			{
-				get
-				{
-					return incSensitiveObjects;
-				}
-				set	
-				{
-					incSensitiveObjects = value;
-				}
-			}
-
-			public string SensitiveTop
-			{
-				get
-				{
-					return sensitiveTop;
-				}
-				set	
-				{
-					sensitiveTop = value;
+					dataMaskColumns = value;
 				}
 			}
 
@@ -578,6 +436,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
+			public long? SensitiveObject
+			{
+				get
+				{
+					return sensitiveObject;
+				}
+				set	
+				{
+					sensitiveObject = value;
+				}
+			}
+
 			public long? DlpCount
 			{
 				get
@@ -590,6 +460,42 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string AccessKeyId
+			{
+				get
+				{
+					return accessKeyId;
+				}
+				set	
+				{
+					accessKeyId = value;
+				}
+			}
+
+			public long? OssSize
+			{
+				get
+				{
+					return ossSize;
+				}
+				set	
+				{
+					ossSize = value;
+				}
+			}
+
 			public string SensitiveTotalTop
 			{
 				get
@@ -599,6 +505,114 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					sensitiveTotalTop = value;
+				}
+			}
+
+			public long? SensitiveTables
+			{
+				get
+				{
+					return sensitiveTables;
+				}
+				set	
+				{
+					sensitiveTables = value;
+				}
+			}
+
+			public string SensitiveTop
+			{
+				get
+				{
+					return sensitiveTop;
+				}
+				set	
+				{
+					sensitiveTop = value;
+				}
+			}
+
+			public bool? Purchased
+			{
+				get
+				{
+					return purchased;
+				}
+				set	
+				{
+					purchased = value;
+				}
+			}
+
+			public bool? Buyed
+			{
+				get
+				{
+					return buyed;
+				}
+				set	
+				{
+					buyed = value;
+				}
+			}
+
+			public long? IncSensitiveObjects
+			{
+				get
+				{
+					return incSensitiveObjects;
+				}
+				set	
+				{
+					incSensitiveObjects = value;
+				}
+			}
+
+			public int? InstanceStatus
+			{
+				get
+				{
+					return instanceStatus;
+				}
+				set	
+				{
+					instanceStatus = value;
+				}
+			}
+
+			public bool? AssetScanned
+			{
+				get
+				{
+					return assetScanned;
+				}
+				set	
+				{
+					assetScanned = value;
+				}
+			}
+
+			public long? AlarmCount
+			{
+				get
+				{
+					return alarmCount;
+				}
+				set	
+				{
+					alarmCount = value;
+				}
+			}
+
+			public string DisplayTime
+			{
+				get
+				{
+					return displayTime;
+				}
+				set	
+				{
+					displayTime = value;
 				}
 			}
 		}

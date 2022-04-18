@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 	public class DescribeInstanceSourcesResponse : AcsResponse
 	{
 
+		private int? currentPage;
+
 		private string requestId;
 
 		private int? pageSize;
 
-		private int? currentPage;
-
 		private int? totalCount;
 
 		private List<DescribeInstanceSources_InstanceSource> items;
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -56,18 +68,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			set	
 			{
 				pageSize = value;
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
 			}
 		}
 
@@ -98,229 +98,67 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		public class DescribeInstanceSources_InstanceSource
 		{
 
-			private string regionId;
-
-			private string regionName;
-
-			private string instanceId;
-
-			private long? id;
-
-			private string userName;
-
-			private string dbName;
-
-			private long? dataLimitId;
-
-			private long? gmtCreate;
-
-			private long? productId;
-
-			private int? auditStatus;
-
-			private int? logStoreDay;
-
-			private int? enable;
-
-			private int? autoScan;
-
-			private string engineType;
-
-			private long? instanceSize;
+			private string lastModifyUserId;
 
 			private int? passwordStatus;
 
-			private string lastModifyUserId;
-
-			private long? lastModifyTime;
-
-			private string tenantId;
+			private string engineType;
 
 			private string tenantName;
 
+			private string instanceId;
+
 			private string instanceDescription;
+
+			private long? dataLimitId;
+
+			private string regionId;
+
+			private string dbName;
+
+			private long? lastModifyTime;
+
+			private string regionName;
 
 			private bool? canModifyUserName;
 
-			private string instanceDescription1;
+			private int? logStoreDay;
 
-			public string RegionId
+			private long? gmtCreate;
+
+			private int? autoScan;
+
+			private long? productId;
+
+			private long? instanceSize;
+
+			private string userName;
+
+			private int? auditStatus;
+
+			private long? id;
+
+			private string tenantId;
+
+			private int? enable;
+
+			private int? checkStatus;
+
+			private int? datamaskStatus;
+
+			private string errorMessage;
+
+			private int? samplingSize;
+
+			public string LastModifyUserId
 			{
 				get
 				{
-					return regionId;
+					return lastModifyUserId;
 				}
 				set	
 				{
-					regionId = value;
-				}
-			}
-
-			public string RegionName
-			{
-				get
-				{
-					return regionName;
-				}
-				set	
-				{
-					regionName = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
-
-			public string UserName
-			{
-				get
-				{
-					return userName;
-				}
-				set	
-				{
-					userName = value;
-				}
-			}
-
-			public string DbName
-			{
-				get
-				{
-					return dbName;
-				}
-				set	
-				{
-					dbName = value;
-				}
-			}
-
-			public long? DataLimitId
-			{
-				get
-				{
-					return dataLimitId;
-				}
-				set	
-				{
-					dataLimitId = value;
-				}
-			}
-
-			public long? GmtCreate
-			{
-				get
-				{
-					return gmtCreate;
-				}
-				set	
-				{
-					gmtCreate = value;
-				}
-			}
-
-			public long? ProductId
-			{
-				get
-				{
-					return productId;
-				}
-				set	
-				{
-					productId = value;
-				}
-			}
-
-			public int? AuditStatus
-			{
-				get
-				{
-					return auditStatus;
-				}
-				set	
-				{
-					auditStatus = value;
-				}
-			}
-
-			public int? LogStoreDay
-			{
-				get
-				{
-					return logStoreDay;
-				}
-				set	
-				{
-					logStoreDay = value;
-				}
-			}
-
-			public int? Enable
-			{
-				get
-				{
-					return enable;
-				}
-				set	
-				{
-					enable = value;
-				}
-			}
-
-			public int? AutoScan
-			{
-				get
-				{
-					return autoScan;
-				}
-				set	
-				{
-					autoScan = value;
-				}
-			}
-
-			public string EngineType
-			{
-				get
-				{
-					return engineType;
-				}
-				set	
-				{
-					engineType = value;
-				}
-			}
-
-			public long? InstanceSize
-			{
-				get
-				{
-					return instanceSize;
-				}
-				set	
-				{
-					instanceSize = value;
+					lastModifyUserId = value;
 				}
 			}
 
@@ -336,39 +174,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public string LastModifyUserId
+			public string EngineType
 			{
 				get
 				{
-					return lastModifyUserId;
+					return engineType;
 				}
 				set	
 				{
-					lastModifyUserId = value;
-				}
-			}
-
-			public long? LastModifyTime
-			{
-				get
-				{
-					return lastModifyTime;
-				}
-				set	
-				{
-					lastModifyTime = value;
-				}
-			}
-
-			public string TenantId
-			{
-				get
-				{
-					return tenantId;
-				}
-				set	
-				{
-					tenantId = value;
+					engineType = value;
 				}
 			}
 
@@ -384,6 +198,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
 			public string InstanceDescription
 			{
 				get
@@ -393,6 +219,66 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					instanceDescription = value;
+				}
+			}
+
+			public long? DataLimitId
+			{
+				get
+				{
+					return dataLimitId;
+				}
+				set	
+				{
+					dataLimitId = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string DbName
+			{
+				get
+				{
+					return dbName;
+				}
+				set	
+				{
+					dbName = value;
+				}
+			}
+
+			public long? LastModifyTime
+			{
+				get
+				{
+					return lastModifyTime;
+				}
+				set	
+				{
+					lastModifyTime = value;
+				}
+			}
+
+			public string RegionName
+			{
+				get
+				{
+					return regionName;
+				}
+				set	
+				{
+					regionName = value;
 				}
 			}
 
@@ -408,15 +294,171 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public string InstanceDescription1
+			public int? LogStoreDay
 			{
 				get
 				{
-					return instanceDescription1;
+					return logStoreDay;
 				}
 				set	
 				{
-					instanceDescription1 = value;
+					logStoreDay = value;
+				}
+			}
+
+			public long? GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
+				}
+			}
+
+			public int? AutoScan
+			{
+				get
+				{
+					return autoScan;
+				}
+				set	
+				{
+					autoScan = value;
+				}
+			}
+
+			public long? ProductId
+			{
+				get
+				{
+					return productId;
+				}
+				set	
+				{
+					productId = value;
+				}
+			}
+
+			public long? InstanceSize
+			{
+				get
+				{
+					return instanceSize;
+				}
+				set	
+				{
+					instanceSize = value;
+				}
+			}
+
+			public string UserName
+			{
+				get
+				{
+					return userName;
+				}
+				set	
+				{
+					userName = value;
+				}
+			}
+
+			public int? AuditStatus
+			{
+				get
+				{
+					return auditStatus;
+				}
+				set	
+				{
+					auditStatus = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string TenantId
+			{
+				get
+				{
+					return tenantId;
+				}
+				set	
+				{
+					tenantId = value;
+				}
+			}
+
+			public int? Enable
+			{
+				get
+				{
+					return enable;
+				}
+				set	
+				{
+					enable = value;
+				}
+			}
+
+			public int? CheckStatus
+			{
+				get
+				{
+					return checkStatus;
+				}
+				set	
+				{
+					checkStatus = value;
+				}
+			}
+
+			public int? DatamaskStatus
+			{
+				get
+				{
+					return datamaskStatus;
+				}
+				set	
+				{
+					datamaskStatus = value;
+				}
+			}
+
+			public string ErrorMessage
+			{
+				get
+				{
+					return errorMessage;
+				}
+				set	
+				{
+					errorMessage = value;
+				}
+			}
+
+			public int? SamplingSize
+			{
+				get
+				{
+					return samplingSize;
+				}
+				set	
+				{
+					samplingSize = value;
 				}
 			}
 		}

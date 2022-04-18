@@ -34,21 +34,21 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			describeOssObjectDetailResponse.RequestId = _ctx.StringValue("DescribeOssObjectDetail.RequestId");
 
 			DescribeOssObjectDetailResponse.DescribeOssObjectDetail_OssObjectDetail ossObjectDetail = new DescribeOssObjectDetailResponse.DescribeOssObjectDetail_OssObjectDetail();
-			ossObjectDetail.Name = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.Name");
-			ossObjectDetail.RegionId = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.RegionId");
-			ossObjectDetail.RiskLevelName = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.RiskLevelName");
-			ossObjectDetail.BucketName = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.BucketName");
 			ossObjectDetail.CategoryName = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.CategoryName");
+			ossObjectDetail.Name = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.Name");
+			ossObjectDetail.BucketName = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.BucketName");
+			ossObjectDetail.RiskLevelName = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.RiskLevelName");
+			ossObjectDetail.RegionId = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.RegionId");
 
 			List<DescribeOssObjectDetailResponse.DescribeOssObjectDetail_OssObjectDetail.DescribeOssObjectDetail_Rule> ossObjectDetail_ruleList = new List<DescribeOssObjectDetailResponse.DescribeOssObjectDetail_OssObjectDetail.DescribeOssObjectDetail_Rule>();
 			for (int i = 0; i < _ctx.Length("DescribeOssObjectDetail.OssObjectDetail.RuleList.Length"); i++) {
 				DescribeOssObjectDetailResponse.DescribeOssObjectDetail_OssObjectDetail.DescribeOssObjectDetail_Rule rule = new DescribeOssObjectDetailResponse.DescribeOssObjectDetail_OssObjectDetail.DescribeOssObjectDetail_Rule();
-				rule.RuleName = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].RuleName");
-				rule.Count = _ctx.LongValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].Count");
+				rule.RiskLevelName = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].RiskLevelName");
 				rule.Category = _ctx.IntegerValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].Category");
 				rule.CategoryName = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].CategoryName");
-				rule.RiskLevelName = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].RiskLevelName");
 				rule.RiskLevelId = _ctx.LongValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].RiskLevelId");
+				rule.Count = _ctx.LongValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].Count");
+				rule.RuleName = _ctx.StringValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].RuleName");
 
 				List<string> rule_sampleList = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].SampleList.Length"); j++) {

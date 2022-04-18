@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sddp.Model.V20190103
@@ -56,17 +56,29 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		public class DescribeOssObjectDetail_OssObjectDetail
 		{
 
+			private string categoryName;
+
 			private string name;
-
-			private string regionId;
-
-			private string riskLevelName;
 
 			private string bucketName;
 
-			private string categoryName;
+			private string riskLevelName;
+
+			private string regionId;
 
 			private List<DescribeOssObjectDetail_Rule> ruleList;
+
+			public string CategoryName
+			{
+				get
+				{
+					return categoryName;
+				}
+				set	
+				{
+					categoryName = value;
+				}
+			}
 
 			public string Name
 			{
@@ -77,30 +89,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					name = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string RiskLevelName
-			{
-				get
-				{
-					return riskLevelName;
-				}
-				set	
-				{
-					riskLevelName = value;
 				}
 			}
 
@@ -116,15 +104,27 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public string CategoryName
+			public string RiskLevelName
 			{
 				get
 				{
-					return categoryName;
+					return riskLevelName;
 				}
 				set	
 				{
-					categoryName = value;
+					riskLevelName = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 
@@ -143,41 +143,29 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			public class DescribeOssObjectDetail_Rule
 			{
 
-				private string ruleName;
-
-				private long? count;
+				private string riskLevelName;
 
 				private int? category;
 
 				private string categoryName;
 
-				private string riskLevelName;
-
 				private long? riskLevelId;
+
+				private long? count;
+
+				private string ruleName;
 
 				private List<string> sampleList;
 
-				public string RuleName
+				public string RiskLevelName
 				{
 					get
 					{
-						return ruleName;
+						return riskLevelName;
 					}
 					set	
 					{
-						ruleName = value;
-					}
-				}
-
-				public long? Count
-				{
-					get
-					{
-						return count;
-					}
-					set	
-					{
-						count = value;
+						riskLevelName = value;
 					}
 				}
 
@@ -205,18 +193,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					}
 				}
 
-				public string RiskLevelName
-				{
-					get
-					{
-						return riskLevelName;
-					}
-					set	
-					{
-						riskLevelName = value;
-					}
-				}
-
 				public long? RiskLevelId
 				{
 					get
@@ -226,6 +202,30 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					set	
 					{
 						riskLevelId = value;
+					}
+				}
+
+				public long? Count
+				{
+					get
+					{
+						return count;
+					}
+					set	
+					{
+						count = value;
+					}
+				}
+
+				public string RuleName
+				{
+					get
+					{
+						return ruleName;
+					}
+					set	
+					{
+						ruleName = value;
 					}
 				}
 
