@@ -25,21 +25,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class DeleteTableLevelResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? deleteResult;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public bool? DeleteResult
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				deleteResult = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

@@ -25,23 +25,11 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class TestNetworkConnectionResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private TestNetworkConnection_TaskList taskList;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private TestNetworkConnection_TaskList taskList;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,21 +70,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class TestNetworkConnection_TaskList
 		{
 
-			private bool? connectStatus;
-
 			private string connectMessage;
 
-			public bool? ConnectStatus
-			{
-				get
-				{
-					return connectStatus;
-				}
-				set	
-				{
-					connectStatus = value;
-				}
-			}
+			private bool? connectStatus;
 
 			public string ConnectMessage
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					connectMessage = value;
+				}
+			}
+
+			public bool? ConnectStatus
+			{
+				get
+				{
+					return connectStatus;
+				}
+				set	
+				{
+					connectStatus = value;
 				}
 			}
 		}

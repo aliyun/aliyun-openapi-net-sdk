@@ -25,23 +25,11 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class ListRefDISyncTasksResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private ListRefDISyncTasks_Data data;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private ListRefDISyncTasks_Data data;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -87,37 +87,25 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class ListRefDISyncTasks_DISyncTasksItem
 			{
 
-				private string nodeName;
-
-				private long? nodeId;
+				private string diSourceDatasource;
 
 				private string taskType;
 
 				private string diDestinationDatasource;
 
-				private string diSourceDatasource;
+				private string nodeName;
 
-				public string NodeName
+				private long? nodeId;
+
+				public string DiSourceDatasource
 				{
 					get
 					{
-						return nodeName;
+						return diSourceDatasource;
 					}
 					set	
 					{
-						nodeName = value;
-					}
-				}
-
-				public long? NodeId
-				{
-					get
-					{
-						return nodeId;
-					}
-					set	
-					{
-						nodeId = value;
+						diSourceDatasource = value;
 					}
 				}
 
@@ -145,15 +133,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string DiSourceDatasource
+				public string NodeName
 				{
 					get
 					{
-						return diSourceDatasource;
+						return nodeName;
 					}
 					set	
 					{
-						diSourceDatasource = value;
+						nodeName = value;
+					}
+				}
+
+				public long? NodeId
+				{
+					get
+					{
+						return nodeId;
+					}
+					set	
+					{
+						nodeId = value;
 					}
 				}
 			}

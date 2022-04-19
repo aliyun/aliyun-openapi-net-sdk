@@ -31,13 +31,13 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetDataSourceMetaResponse getDataSourceMetaResponse = new GetDataSourceMetaResponse();
 
 			getDataSourceMetaResponse.HttpResponse = _ctx.HttpResponse;
-			getDataSourceMetaResponse.RequestId = _ctx.StringValue("GetDataSourceMeta.RequestId");
 			getDataSourceMetaResponse.Success = _ctx.BooleanValue("GetDataSourceMeta.Success");
+			getDataSourceMetaResponse.RequestId = _ctx.StringValue("GetDataSourceMeta.RequestId");
 
 			GetDataSourceMetaResponse.GetDataSourceMeta_Data data = new GetDataSourceMetaResponse.GetDataSourceMeta_Data();
-			data.Meta = _ctx.StringValue("GetDataSourceMeta.Data.Meta");
 			data.Status = _ctx.StringValue("GetDataSourceMeta.Data.Status");
 			data.Message = _ctx.StringValue("GetDataSourceMeta.Data.Message");
+			data.Meta = _ctx.StringValue("GetDataSourceMeta.Data.Meta");
 			getDataSourceMetaResponse.Data = data;
         
 			return getDataSourceMetaResponse;

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			UpdateTableModelInfoResponse updateTableModelInfoResponse = new UpdateTableModelInfoResponse();
 
 			updateTableModelInfoResponse.HttpResponse = _ctx.HttpResponse;
-			updateTableModelInfoResponse.RequestId = _ctx.StringValue("UpdateTableModelInfo.RequestId");
 			updateTableModelInfoResponse.UpdateResult = _ctx.BooleanValue("UpdateTableModelInfo.UpdateResult");
+			updateTableModelInfoResponse.RequestId = _ctx.StringValue("UpdateTableModelInfo.RequestId");
         
 			return updateTableModelInfoResponse;
         }

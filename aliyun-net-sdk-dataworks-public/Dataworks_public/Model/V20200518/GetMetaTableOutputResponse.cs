@@ -25,39 +25,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetMetaTableOutputResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string errorCode;
+		private int? httpStatusCode;
 
 		private string errorMessage;
 
-		private int? httpStatusCode;
+		private string requestId;
 
 		private bool? success;
 
+		private string errorCode;
+
 		private GetMetaTableOutput_Data data;
 
-		public string RequestId
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return requestId;
+				return httpStatusCode;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				httpStatusCode = value;
 			}
 		}
 
@@ -73,15 +61,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? HttpStatusCode
+		public string RequestId
 		{
 			get
 			{
-				return httpStatusCode;
+				return requestId;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				requestId = value;
 			}
 		}
 
@@ -94,6 +82,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 
@@ -171,19 +171,79 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetMetaTableOutput_DataEntityListItem
 			{
 
+				private string endTime;
+
+				private long? taskInstanceId;
+
+				private string startTime;
+
+				private long? projectId;
+
+				private string waitTime;
+
 				private string tableGuid;
 
 				private string taskId;
 
-				private string startTime;
+				public string EndTime
+				{
+					get
+					{
+						return endTime;
+					}
+					set	
+					{
+						endTime = value;
+					}
+				}
 
-				private string endTime;
+				public long? TaskInstanceId
+				{
+					get
+					{
+						return taskInstanceId;
+					}
+					set	
+					{
+						taskInstanceId = value;
+					}
+				}
 
-				private string waitTime;
+				public string StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
+					}
+				}
 
-				private long? projectId;
+				public long? ProjectId
+				{
+					get
+					{
+						return projectId;
+					}
+					set	
+					{
+						projectId = value;
+					}
+				}
 
-				private long? taskInstanceId;
+				public string WaitTime
+				{
+					get
+					{
+						return waitTime;
+					}
+					set	
+					{
+						waitTime = value;
+					}
+				}
 
 				public string TableGuid
 				{
@@ -206,66 +266,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						taskId = value;
-					}
-				}
-
-				public string StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
-					}
-				}
-
-				public string EndTime
-				{
-					get
-					{
-						return endTime;
-					}
-					set	
-					{
-						endTime = value;
-					}
-				}
-
-				public string WaitTime
-				{
-					get
-					{
-						return waitTime;
-					}
-					set	
-					{
-						waitTime = value;
-					}
-				}
-
-				public long? ProjectId
-				{
-					get
-					{
-						return projectId;
-					}
-					set	
-					{
-						projectId = value;
-					}
-				}
-
-				public long? TaskInstanceId
-				{
-					get
-					{
-						return taskInstanceId;
-					}
-					set	
-					{
-						taskInstanceId = value;
 					}
 				}
 			}

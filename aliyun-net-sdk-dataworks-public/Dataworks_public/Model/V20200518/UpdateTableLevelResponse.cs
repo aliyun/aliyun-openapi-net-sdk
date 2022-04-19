@@ -25,17 +25,29 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class UpdateTableLevelResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? httpStatusCode;
 
-		private string errorCode;
+		private string requestId;
 
 		private string errorMessage;
 
-		private int? httpStatusCode;
+		private bool? updateResult;
+
+		private string errorCode;
 
 		private bool? success;
 
-		private bool? updateResult;
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -46,18 +58,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
 			}
 		}
 
@@ -73,15 +73,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? HttpStatusCode
+		public bool? UpdateResult
 		{
 			get
 			{
-				return httpStatusCode;
+				return updateResult;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				updateResult = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 
@@ -94,18 +106,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public bool? UpdateResult
-		{
-			get
-			{
-				return updateResult;
-			}
-			set	
-			{
-				updateResult = value;
 			}
 		}
 	}

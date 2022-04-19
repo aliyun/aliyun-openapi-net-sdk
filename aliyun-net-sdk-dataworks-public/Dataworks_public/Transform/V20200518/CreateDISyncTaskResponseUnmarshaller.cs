@@ -31,13 +31,13 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			CreateDISyncTaskResponse createDISyncTaskResponse = new CreateDISyncTaskResponse();
 
 			createDISyncTaskResponse.HttpResponse = _ctx.HttpResponse;
-			createDISyncTaskResponse.RequestId = _ctx.StringValue("CreateDISyncTask.RequestId");
 			createDISyncTaskResponse.Success = _ctx.BooleanValue("CreateDISyncTask.Success");
+			createDISyncTaskResponse.RequestId = _ctx.StringValue("CreateDISyncTask.RequestId");
 
 			CreateDISyncTaskResponse.CreateDISyncTask_Data data = new CreateDISyncTaskResponse.CreateDISyncTask_Data();
-			data.FileId = _ctx.LongValue("CreateDISyncTask.Data.FileId");
 			data.Status = _ctx.StringValue("CreateDISyncTask.Data.Status");
 			data.Message = _ctx.StringValue("CreateDISyncTask.Data.Message");
+			data.FileId = _ctx.LongValue("CreateDISyncTask.Data.FileId");
 			createDISyncTaskResponse.Data = data;
         
 			return createDISyncTaskResponse;

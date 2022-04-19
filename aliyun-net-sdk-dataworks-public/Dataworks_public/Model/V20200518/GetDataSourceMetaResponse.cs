@@ -25,23 +25,11 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetDataSourceMetaResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private GetDataSourceMeta_Data data;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private GetDataSourceMeta_Data data;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,23 +70,11 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetDataSourceMeta_Data
 		{
 
-			private string meta;
-
 			private string status;
 
 			private string message;
 
-			public string Meta
-			{
-				get
-				{
-					return meta;
-				}
-				set	
-				{
-					meta = value;
-				}
-			}
+			private string meta;
 
 			public string Status
 			{
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					message = value;
+				}
+			}
+
+			public string Meta
+			{
+				get
+				{
+					return meta;
+				}
+				set	
+				{
+					meta = value;
 				}
 			}
 		}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			TerminateDISyncInstanceResponse terminateDISyncInstanceResponse = new TerminateDISyncInstanceResponse();
 
 			terminateDISyncInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			terminateDISyncInstanceResponse.RequestId = _ctx.StringValue("TerminateDISyncInstance.RequestId");
 			terminateDISyncInstanceResponse.Success = _ctx.BooleanValue("TerminateDISyncInstance.Success");
+			terminateDISyncInstanceResponse.RequestId = _ctx.StringValue("TerminateDISyncInstance.RequestId");
 
 			TerminateDISyncInstanceResponse.TerminateDISyncInstance_Data data = new TerminateDISyncInstanceResponse.TerminateDISyncInstance_Data();
 			data.Status = _ctx.StringValue("TerminateDISyncInstance.Data.Status");

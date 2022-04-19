@@ -31,25 +31,25 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetMetaColumnLineageResponse getMetaColumnLineageResponse = new GetMetaColumnLineageResponse();
 
 			getMetaColumnLineageResponse.HttpResponse = _ctx.HttpResponse;
-			getMetaColumnLineageResponse.RequestId = _ctx.StringValue("GetMetaColumnLineage.RequestId");
-			getMetaColumnLineageResponse.ErrorCode = _ctx.StringValue("GetMetaColumnLineage.ErrorCode");
-			getMetaColumnLineageResponse.ErrorMessage = _ctx.StringValue("GetMetaColumnLineage.ErrorMessage");
 			getMetaColumnLineageResponse.HttpStatusCode = _ctx.IntegerValue("GetMetaColumnLineage.HttpStatusCode");
+			getMetaColumnLineageResponse.ErrorMessage = _ctx.StringValue("GetMetaColumnLineage.ErrorMessage");
+			getMetaColumnLineageResponse.RequestId = _ctx.StringValue("GetMetaColumnLineage.RequestId");
 			getMetaColumnLineageResponse.Success = _ctx.BooleanValue("GetMetaColumnLineage.Success");
+			getMetaColumnLineageResponse.ErrorCode = _ctx.StringValue("GetMetaColumnLineage.ErrorCode");
 
 			GetMetaColumnLineageResponse.GetMetaColumnLineage_Data data = new GetMetaColumnLineageResponse.GetMetaColumnLineage_Data();
-			data.TotalCount = _ctx.LongValue("GetMetaColumnLineage.Data.TotalCount");
 			data.PageNum = _ctx.IntegerValue("GetMetaColumnLineage.Data.PageNum");
 			data.PageSize = _ctx.IntegerValue("GetMetaColumnLineage.Data.PageSize");
+			data.TotalCount = _ctx.LongValue("GetMetaColumnLineage.Data.TotalCount");
 
 			List<GetMetaColumnLineageResponse.GetMetaColumnLineage_Data.GetMetaColumnLineage_DataEntityListItem> data_dataEntityList = new List<GetMetaColumnLineageResponse.GetMetaColumnLineage_Data.GetMetaColumnLineage_DataEntityListItem>();
 			for (int i = 0; i < _ctx.Length("GetMetaColumnLineage.Data.DataEntityList.Length"); i++) {
 				GetMetaColumnLineageResponse.GetMetaColumnLineage_Data.GetMetaColumnLineage_DataEntityListItem dataEntityListItem = new GetMetaColumnLineageResponse.GetMetaColumnLineage_Data.GetMetaColumnLineage_DataEntityListItem();
-				dataEntityListItem.ColumnName = _ctx.StringValue("GetMetaColumnLineage.Data.DataEntityList["+ i +"].ColumnName");
 				dataEntityListItem.ColumnGuid = _ctx.StringValue("GetMetaColumnLineage.Data.DataEntityList["+ i +"].ColumnGuid");
-				dataEntityListItem.ClusterId = _ctx.StringValue("GetMetaColumnLineage.Data.DataEntityList["+ i +"].ClusterId");
-				dataEntityListItem.DatabaseName = _ctx.StringValue("GetMetaColumnLineage.Data.DataEntityList["+ i +"].DatabaseName");
+				dataEntityListItem.ColumnName = _ctx.StringValue("GetMetaColumnLineage.Data.DataEntityList["+ i +"].ColumnName");
 				dataEntityListItem.TableName = _ctx.StringValue("GetMetaColumnLineage.Data.DataEntityList["+ i +"].TableName");
+				dataEntityListItem.DatabaseName = _ctx.StringValue("GetMetaColumnLineage.Data.DataEntityList["+ i +"].DatabaseName");
+				dataEntityListItem.ClusterId = _ctx.StringValue("GetMetaColumnLineage.Data.DataEntityList["+ i +"].ClusterId");
 
 				data_dataEntityList.Add(dataEntityListItem);
 			}

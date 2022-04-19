@@ -34,10 +34,10 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			deleteTableResponse.RequestId = _ctx.StringValue("DeleteTable.RequestId");
 
 			DeleteTableResponse.DeleteTable_TaskInfo taskInfo = new DeleteTableResponse.DeleteTable_TaskInfo();
-			taskInfo.TaskId = _ctx.StringValue("DeleteTable.TaskInfo.TaskId");
-			taskInfo.Content = _ctx.StringValue("DeleteTable.TaskInfo.Content");
 			taskInfo.Status = _ctx.StringValue("DeleteTable.TaskInfo.Status");
 			taskInfo.NextTaskId = _ctx.StringValue("DeleteTable.TaskInfo.NextTaskId");
+			taskInfo.TaskId = _ctx.StringValue("DeleteTable.TaskInfo.TaskId");
+			taskInfo.Content = _ctx.StringValue("DeleteTable.TaskInfo.Content");
 			deleteTableResponse.TaskInfo = taskInfo;
         
 			return deleteTableResponse;

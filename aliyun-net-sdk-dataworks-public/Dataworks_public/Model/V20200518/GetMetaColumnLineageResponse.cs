@@ -25,39 +25,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetMetaColumnLineageResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string errorCode;
+		private int? httpStatusCode;
 
 		private string errorMessage;
 
-		private int? httpStatusCode;
+		private string requestId;
 
 		private bool? success;
 
+		private string errorCode;
+
 		private GetMetaColumnLineage_Data data;
 
-		public string RequestId
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return requestId;
+				return httpStatusCode;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				httpStatusCode = value;
 			}
 		}
 
@@ -73,15 +61,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? HttpStatusCode
+		public string RequestId
 		{
 			get
 			{
-				return httpStatusCode;
+				return requestId;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				requestId = value;
 			}
 		}
 
@@ -94,6 +82,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 
@@ -112,25 +112,13 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetMetaColumnLineage_Data
 		{
 
-			private long? totalCount;
-
 			private int? pageNum;
 
 			private int? pageSize;
 
-			private List<GetMetaColumnLineage_DataEntityListItem> dataEntityList;
+			private long? totalCount;
 
-			public long? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
+			private List<GetMetaColumnLineage_DataEntityListItem> dataEntityList;
 
 			public int? PageNum
 			{
@@ -156,6 +144,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
+			public long? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
+				}
+			}
+
 			public List<GetMetaColumnLineage_DataEntityListItem> DataEntityList
 			{
 				get
@@ -171,27 +171,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetMetaColumnLineage_DataEntityListItem
 			{
 
-				private string columnName;
-
 				private string columnGuid;
 
-				private string clusterId;
-
-				private string databaseName;
+				private string columnName;
 
 				private string tableName;
 
-				public string ColumnName
-				{
-					get
-					{
-						return columnName;
-					}
-					set	
-					{
-						columnName = value;
-					}
-				}
+				private string databaseName;
+
+				private string clusterId;
 
 				public string ColumnGuid
 				{
@@ -205,15 +193,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string ClusterId
+				public string ColumnName
 				{
 					get
 					{
-						return clusterId;
+						return columnName;
 					}
 					set	
 					{
-						clusterId = value;
+						columnName = value;
+					}
+				}
+
+				public string TableName
+				{
+					get
+					{
+						return tableName;
+					}
+					set	
+					{
+						tableName = value;
 					}
 				}
 
@@ -229,15 +229,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string TableName
+				public string ClusterId
 				{
 					get
 					{
-						return tableName;
+						return clusterId;
 					}
 					set	
 					{
-						tableName = value;
+						clusterId = value;
 					}
 				}
 			}

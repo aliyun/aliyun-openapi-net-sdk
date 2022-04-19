@@ -34,10 +34,10 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			updateTableResponse.RequestId = _ctx.StringValue("UpdateTable.RequestId");
 
 			UpdateTableResponse.UpdateTable_TaskInfo taskInfo = new UpdateTableResponse.UpdateTable_TaskInfo();
-			taskInfo.TaskId = _ctx.StringValue("UpdateTable.TaskInfo.TaskId");
-			taskInfo.Content = _ctx.StringValue("UpdateTable.TaskInfo.Content");
 			taskInfo.Status = _ctx.StringValue("UpdateTable.TaskInfo.Status");
 			taskInfo.NextTaskId = _ctx.StringValue("UpdateTable.TaskInfo.NextTaskId");
+			taskInfo.TaskId = _ctx.StringValue("UpdateTable.TaskInfo.TaskId");
+			taskInfo.Content = _ctx.StringValue("UpdateTable.TaskInfo.Content");
 			updateTableResponse.TaskInfo = taskInfo;
         
 			return updateTableResponse;

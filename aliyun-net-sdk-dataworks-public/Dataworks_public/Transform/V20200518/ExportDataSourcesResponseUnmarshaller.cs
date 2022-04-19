@@ -32,8 +32,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 
 			exportDataSourcesResponse.HttpResponse = _ctx.HttpResponse;
 			exportDataSourcesResponse.HttpStatusCode = _ctx.IntegerValue("ExportDataSources.HttpStatusCode");
-			exportDataSourcesResponse.Success = _ctx.BooleanValue("ExportDataSources.Success");
 			exportDataSourcesResponse.RequestId = _ctx.StringValue("ExportDataSources.RequestId");
+			exportDataSourcesResponse.Success = _ctx.BooleanValue("ExportDataSources.Success");
 
 			ExportDataSourcesResponse.ExportDataSources_Data data = new ExportDataSourcesResponse.ExportDataSources_Data();
 			data.PageNumber = _ctx.IntegerValue("ExportDataSources.Data.PageNumber");
@@ -43,24 +43,24 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<ExportDataSourcesResponse.ExportDataSources_Data.ExportDataSources_DataSourcesItem> data_dataSources = new List<ExportDataSourcesResponse.ExportDataSources_Data.ExportDataSources_DataSourcesItem>();
 			for (int i = 0; i < _ctx.Length("ExportDataSources.Data.DataSources.Length"); i++) {
 				ExportDataSourcesResponse.ExportDataSources_Data.ExportDataSources_DataSourcesItem dataSourcesItem = new ExportDataSourcesResponse.ExportDataSources_Data.ExportDataSources_DataSourcesItem();
-				dataSourcesItem.Shared = _ctx.BooleanValue("ExportDataSources.Data.DataSources["+ i +"].Shared");
+				dataSourcesItem.Status = _ctx.IntegerValue("ExportDataSources.Data.DataSources["+ i +"].Status");
+				dataSourcesItem.ProjectId = _ctx.IntegerValue("ExportDataSources.Data.DataSources["+ i +"].ProjectId");
+				dataSourcesItem.SubType = _ctx.StringValue("ExportDataSources.Data.DataSources["+ i +"].SubType");
 				dataSourcesItem.GmtModified = _ctx.StringValue("ExportDataSources.Data.DataSources["+ i +"].GmtModified");
+				dataSourcesItem.EnvType = _ctx.IntegerValue("ExportDataSources.Data.DataSources["+ i +"].EnvType");
 				dataSourcesItem.ConnectStatus = _ctx.IntegerValue("ExportDataSources.Data.DataSources["+ i +"].ConnectStatus");
-				dataSourcesItem.BindingCalcEngineId = _ctx.IntegerValue("ExportDataSources.Data.DataSources["+ i +"].BindingCalcEngineId");
+				dataSourcesItem.Sequence = _ctx.IntegerValue("ExportDataSources.Data.DataSources["+ i +"].Sequence");
 				dataSourcesItem.Description = _ctx.StringValue("ExportDataSources.Data.DataSources["+ i +"].Description");
 				dataSourcesItem.DataSourceType = _ctx.StringValue("ExportDataSources.Data.DataSources["+ i +"].DataSourceType");
 				dataSourcesItem.GmtCreate = _ctx.StringValue("ExportDataSources.Data.DataSources["+ i +"].GmtCreate");
 				dataSourcesItem.DefaultEngine = _ctx.BooleanValue("ExportDataSources.Data.DataSources["+ i +"].DefaultEngine");
+				dataSourcesItem.Shared = _ctx.BooleanValue("ExportDataSources.Data.DataSources["+ i +"].Shared");
 				dataSourcesItem._Operator = _ctx.StringValue("ExportDataSources.Data.DataSources["+ i +"].Operator");
-				dataSourcesItem.Sequence = _ctx.IntegerValue("ExportDataSources.Data.DataSources["+ i +"].Sequence");
-				dataSourcesItem.EnvType = _ctx.IntegerValue("ExportDataSources.Data.DataSources["+ i +"].EnvType");
-				dataSourcesItem.TenantId = _ctx.LongValue("ExportDataSources.Data.DataSources["+ i +"].TenantId");
 				dataSourcesItem.Name = _ctx.StringValue("ExportDataSources.Data.DataSources["+ i +"].Name");
-				dataSourcesItem.SubType = _ctx.StringValue("ExportDataSources.Data.DataSources["+ i +"].SubType");
-				dataSourcesItem.Id = _ctx.IntegerValue("ExportDataSources.Data.DataSources["+ i +"].Id");
-				dataSourcesItem.ProjectId = _ctx.IntegerValue("ExportDataSources.Data.DataSources["+ i +"].ProjectId");
-				dataSourcesItem.Status = _ctx.IntegerValue("ExportDataSources.Data.DataSources["+ i +"].Status");
 				dataSourcesItem.Content = _ctx.StringValue("ExportDataSources.Data.DataSources["+ i +"].Content");
+				dataSourcesItem.Id = _ctx.IntegerValue("ExportDataSources.Data.DataSources["+ i +"].Id");
+				dataSourcesItem.BindingCalcEngineId = _ctx.IntegerValue("ExportDataSources.Data.DataSources["+ i +"].BindingCalcEngineId");
+				dataSourcesItem.TenantId = _ctx.LongValue("ExportDataSources.Data.DataSources["+ i +"].TenantId");
 
 				data_dataSources.Add(dataSourcesItem);
 			}

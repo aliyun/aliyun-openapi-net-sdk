@@ -31,10 +31,10 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			CreateTableThemeResponse createTableThemeResponse = new CreateTableThemeResponse();
 
 			createTableThemeResponse.HttpResponse = _ctx.HttpResponse;
-			createTableThemeResponse.RequestId = _ctx.StringValue("CreateTableTheme.RequestId");
-			createTableThemeResponse.ErrorCode = _ctx.StringValue("CreateTableTheme.ErrorCode");
-			createTableThemeResponse.ErrorMessage = _ctx.StringValue("CreateTableTheme.ErrorMessage");
 			createTableThemeResponse.HttpStatusCode = _ctx.IntegerValue("CreateTableTheme.HttpStatusCode");
+			createTableThemeResponse.RequestId = _ctx.StringValue("CreateTableTheme.RequestId");
+			createTableThemeResponse.ErrorMessage = _ctx.StringValue("CreateTableTheme.ErrorMessage");
+			createTableThemeResponse.ErrorCode = _ctx.StringValue("CreateTableTheme.ErrorCode");
 			createTableThemeResponse.Success = _ctx.BooleanValue("CreateTableTheme.Success");
 			createTableThemeResponse.ThemeId = _ctx.LongValue("CreateTableTheme.ThemeId");
         

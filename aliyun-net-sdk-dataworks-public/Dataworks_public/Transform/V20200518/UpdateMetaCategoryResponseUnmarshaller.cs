@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			UpdateMetaCategoryResponse updateMetaCategoryResponse = new UpdateMetaCategoryResponse();
 
 			updateMetaCategoryResponse.HttpResponse = _ctx.HttpResponse;
-			updateMetaCategoryResponse.RequestId = _ctx.StringValue("UpdateMetaCategory.RequestId");
-			updateMetaCategoryResponse.ErrorCode = _ctx.StringValue("UpdateMetaCategory.ErrorCode");
-			updateMetaCategoryResponse.ErrorMessage = _ctx.StringValue("UpdateMetaCategory.ErrorMessage");
 			updateMetaCategoryResponse.HttpStatusCode = _ctx.IntegerValue("UpdateMetaCategory.HttpStatusCode");
-			updateMetaCategoryResponse.Success = _ctx.BooleanValue("UpdateMetaCategory.Success");
 			updateMetaCategoryResponse.Data = _ctx.BooleanValue("UpdateMetaCategory.Data");
+			updateMetaCategoryResponse.RequestId = _ctx.StringValue("UpdateMetaCategory.RequestId");
+			updateMetaCategoryResponse.ErrorMessage = _ctx.StringValue("UpdateMetaCategory.ErrorMessage");
+			updateMetaCategoryResponse.ErrorCode = _ctx.StringValue("UpdateMetaCategory.ErrorCode");
+			updateMetaCategoryResponse.Success = _ctx.BooleanValue("UpdateMetaCategory.Success");
         
 			return updateMetaCategoryResponse;
         }

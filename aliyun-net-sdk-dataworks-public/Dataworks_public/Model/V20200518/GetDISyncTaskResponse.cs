@@ -25,23 +25,11 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetDISyncTaskResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private GetDISyncTask_Data data;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private GetDISyncTask_Data data;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -129,37 +129,37 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetDISyncTask_SolutionDetail
 			{
 
-				private long? id;
+				private string status;
 
 				private string type;
 
-				private long? projectId;
-
-				private string status;
-
-				private string processContent;
-
 				private string startTime;
-
-				private string name;
 
 				private string creatorName;
 
+				private long? projectId;
+
 				private string sourceType;
 
-				private string submitTime;
+				private string processContent;
+
+				private string name;
 
 				private string processExtra;
 
-				public long? Id
+				private string submitTime;
+
+				private long? id;
+
+				public string Status
 				{
 					get
 					{
-						return id;
+						return status;
 					}
 					set	
 					{
-						id = value;
+						status = value;
 					}
 				}
 
@@ -175,42 +175,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public long? ProjectId
-				{
-					get
-					{
-						return projectId;
-					}
-					set	
-					{
-						projectId = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				public string ProcessContent
-				{
-					get
-					{
-						return processContent;
-					}
-					set	
-					{
-						processContent = value;
-					}
-				}
-
 				public string StartTime
 				{
 					get
@@ -220,18 +184,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						startTime = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
 					}
 				}
 
@@ -247,6 +199,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
+				public long? ProjectId
+				{
+					get
+					{
+						return projectId;
+					}
+					set	
+					{
+						projectId = value;
+					}
+				}
+
 				public string SourceType
 				{
 					get
@@ -256,6 +220,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						sourceType = value;
+					}
+				}
+
+				public string ProcessContent
+				{
+					get
+					{
+						return processContent;
+					}
+					set	
+					{
+						processContent = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public string ProcessExtra
+				{
+					get
+					{
+						return processExtra;
+					}
+					set	
+					{
+						processExtra = value;
 					}
 				}
 
@@ -271,15 +271,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string ProcessExtra
+				public long? Id
 				{
 					get
 					{
-						return processExtra;
+						return id;
 					}
 					set	
 					{
-						processExtra = value;
+						id = value;
 					}
 				}
 			}

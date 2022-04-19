@@ -25,21 +25,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class UpdateMetaTableIntroWikiResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? updateResult;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public bool? UpdateResult
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				updateResult = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

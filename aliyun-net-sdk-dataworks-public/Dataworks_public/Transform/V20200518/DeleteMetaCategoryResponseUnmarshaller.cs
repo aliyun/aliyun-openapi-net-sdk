@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			DeleteMetaCategoryResponse deleteMetaCategoryResponse = new DeleteMetaCategoryResponse();
 
 			deleteMetaCategoryResponse.HttpResponse = _ctx.HttpResponse;
-			deleteMetaCategoryResponse.RequestId = _ctx.StringValue("DeleteMetaCategory.RequestId");
-			deleteMetaCategoryResponse.ErrorCode = _ctx.StringValue("DeleteMetaCategory.ErrorCode");
-			deleteMetaCategoryResponse.ErrorMessage = _ctx.StringValue("DeleteMetaCategory.ErrorMessage");
 			deleteMetaCategoryResponse.HttpStatusCode = _ctx.IntegerValue("DeleteMetaCategory.HttpStatusCode");
-			deleteMetaCategoryResponse.Success = _ctx.BooleanValue("DeleteMetaCategory.Success");
 			deleteMetaCategoryResponse.Data = _ctx.BooleanValue("DeleteMetaCategory.Data");
+			deleteMetaCategoryResponse.RequestId = _ctx.StringValue("DeleteMetaCategory.RequestId");
+			deleteMetaCategoryResponse.ErrorMessage = _ctx.StringValue("DeleteMetaCategory.ErrorMessage");
+			deleteMetaCategoryResponse.ErrorCode = _ctx.StringValue("DeleteMetaCategory.ErrorCode");
+			deleteMetaCategoryResponse.Success = _ctx.BooleanValue("DeleteMetaCategory.Success");
         
 			return deleteMetaCategoryResponse;
         }

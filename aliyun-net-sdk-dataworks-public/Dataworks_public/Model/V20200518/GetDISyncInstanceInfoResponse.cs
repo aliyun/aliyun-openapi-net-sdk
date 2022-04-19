@@ -25,23 +25,11 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetDISyncInstanceInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private GetDISyncInstanceInfo_Data data;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private GetDISyncInstanceInfo_Data data;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -72,9 +72,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private string status;
 
-			private string name;
-
 			private string message;
+
+			private string name;
 
 			private GetDISyncInstanceInfo_SolutionInfo solutionInfo;
 
@@ -90,18 +90,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
 			public string Message
 			{
 				get
@@ -111,6 +99,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					message = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 
@@ -129,25 +129,13 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetDISyncInstanceInfo_SolutionInfo
 			{
 
-				private long? id;
-
 				private string status;
+
+				private long? id;
 
 				private string creatorName;
 
 				private List<GetDISyncInstanceInfo_StepDetailItem> stepDetail;
-
-				public long? Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
 
 				public string Status
 				{
@@ -158,6 +146,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						status = value;
+					}
+				}
+
+				public long? Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
 					}
 				}
 
@@ -188,21 +188,21 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				public class GetDISyncInstanceInfo_StepDetailItem
 				{
 
-					private string stepName;
+					private string status;
 
 					private long? stepId;
 
-					private string status;
+					private string stepName;
 
-					public string StepName
+					public string Status
 					{
 						get
 						{
-							return stepName;
+							return status;
 						}
 						set	
 						{
-							stepName = value;
+							status = value;
 						}
 					}
 
@@ -218,15 +218,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 						}
 					}
 
-					public string Status
+					public string StepName
 					{
 						get
 						{
-							return status;
+							return stepName;
 						}
 						set	
 						{
-							status = value;
+							stepName = value;
 						}
 					}
 				}

@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetMetaTableListByCategoryResponse getMetaTableListByCategoryResponse = new GetMetaTableListByCategoryResponse();
 
 			getMetaTableListByCategoryResponse.HttpResponse = _ctx.HttpResponse;
-			getMetaTableListByCategoryResponse.RequestId = _ctx.StringValue("GetMetaTableListByCategory.RequestId");
-			getMetaTableListByCategoryResponse.ErrorCode = _ctx.StringValue("GetMetaTableListByCategory.ErrorCode");
-			getMetaTableListByCategoryResponse.ErrorMessage = _ctx.StringValue("GetMetaTableListByCategory.ErrorMessage");
 			getMetaTableListByCategoryResponse.HttpStatusCode = _ctx.IntegerValue("GetMetaTableListByCategory.HttpStatusCode");
+			getMetaTableListByCategoryResponse.ErrorMessage = _ctx.StringValue("GetMetaTableListByCategory.ErrorMessage");
+			getMetaTableListByCategoryResponse.RequestId = _ctx.StringValue("GetMetaTableListByCategory.RequestId");
 			getMetaTableListByCategoryResponse.Success = _ctx.BooleanValue("GetMetaTableListByCategory.Success");
+			getMetaTableListByCategoryResponse.ErrorCode = _ctx.StringValue("GetMetaTableListByCategory.ErrorCode");
 
 			GetMetaTableListByCategoryResponse.GetMetaTableListByCategory_Data data = new GetMetaTableListByCategoryResponse.GetMetaTableListByCategory_Data();
 			data.PageNumber = _ctx.IntegerValue("GetMetaTableListByCategory.Data.PageNumber");

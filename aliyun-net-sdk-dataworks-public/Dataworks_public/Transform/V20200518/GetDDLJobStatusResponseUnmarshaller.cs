@@ -34,10 +34,10 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			getDDLJobStatusResponse.RequestId = _ctx.StringValue("GetDDLJobStatus.RequestId");
 
 			GetDDLJobStatusResponse.GetDDLJobStatus_Data data = new GetDDLJobStatusResponse.GetDDLJobStatus_Data();
-			data.NextTaskId = _ctx.StringValue("GetDDLJobStatus.Data.NextTaskId");
-			data.Content = _ctx.StringValue("GetDDLJobStatus.Data.Content");
 			data.Status = _ctx.StringValue("GetDDLJobStatus.Data.Status");
+			data.NextTaskId = _ctx.StringValue("GetDDLJobStatus.Data.NextTaskId");
 			data.TaskId = _ctx.StringValue("GetDDLJobStatus.Data.TaskId");
+			data.Content = _ctx.StringValue("GetDDLJobStatus.Data.Content");
 			getDDLJobStatusResponse.Data = data;
         
 			return getDDLJobStatusResponse;

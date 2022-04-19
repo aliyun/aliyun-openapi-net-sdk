@@ -31,8 +31,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			DeleteDISyncTaskResponse deleteDISyncTaskResponse = new DeleteDISyncTaskResponse();
 
 			deleteDISyncTaskResponse.HttpResponse = _ctx.HttpResponse;
-			deleteDISyncTaskResponse.RequestId = _ctx.StringValue("DeleteDISyncTask.RequestId");
 			deleteDISyncTaskResponse.Success = _ctx.BooleanValue("DeleteDISyncTask.Success");
+			deleteDISyncTaskResponse.RequestId = _ctx.StringValue("DeleteDISyncTask.RequestId");
 
 			DeleteDISyncTaskResponse.DeleteDISyncTask_Data data = new DeleteDISyncTaskResponse.DeleteDISyncTask_Data();
 			data.Status = _ctx.StringValue("DeleteDISyncTask.Data.Status");

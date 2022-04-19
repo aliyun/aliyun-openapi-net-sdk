@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			TestNetworkConnectionResponse testNetworkConnectionResponse = new TestNetworkConnectionResponse();
 
 			testNetworkConnectionResponse.HttpResponse = _ctx.HttpResponse;
-			testNetworkConnectionResponse.RequestId = _ctx.StringValue("TestNetworkConnection.RequestId");
 			testNetworkConnectionResponse.Success = _ctx.BooleanValue("TestNetworkConnection.Success");
+			testNetworkConnectionResponse.RequestId = _ctx.StringValue("TestNetworkConnection.RequestId");
 
 			TestNetworkConnectionResponse.TestNetworkConnection_TaskList taskList = new TestNetworkConnectionResponse.TestNetworkConnection_TaskList();
-			taskList.ConnectStatus = _ctx.BooleanValue("TestNetworkConnection.TaskList.ConnectStatus");
 			taskList.ConnectMessage = _ctx.StringValue("TestNetworkConnection.TaskList.ConnectMessage");
+			taskList.ConnectStatus = _ctx.BooleanValue("TestNetworkConnection.TaskList.ConnectStatus");
 			testNetworkConnectionResponse.TaskList = taskList;
         
 			return testNetworkConnectionResponse;

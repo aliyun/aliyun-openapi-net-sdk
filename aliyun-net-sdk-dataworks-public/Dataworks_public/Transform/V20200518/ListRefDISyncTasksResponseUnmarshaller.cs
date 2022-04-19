@@ -31,19 +31,19 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			ListRefDISyncTasksResponse listRefDISyncTasksResponse = new ListRefDISyncTasksResponse();
 
 			listRefDISyncTasksResponse.HttpResponse = _ctx.HttpResponse;
-			listRefDISyncTasksResponse.RequestId = _ctx.StringValue("ListRefDISyncTasks.RequestId");
 			listRefDISyncTasksResponse.Success = _ctx.BooleanValue("ListRefDISyncTasks.Success");
+			listRefDISyncTasksResponse.RequestId = _ctx.StringValue("ListRefDISyncTasks.RequestId");
 
 			ListRefDISyncTasksResponse.ListRefDISyncTasks_Data data = new ListRefDISyncTasksResponse.ListRefDISyncTasks_Data();
 
 			List<ListRefDISyncTasksResponse.ListRefDISyncTasks_Data.ListRefDISyncTasks_DISyncTasksItem> data_dISyncTasks = new List<ListRefDISyncTasksResponse.ListRefDISyncTasks_Data.ListRefDISyncTasks_DISyncTasksItem>();
 			for (int i = 0; i < _ctx.Length("ListRefDISyncTasks.Data.DISyncTasks.Length"); i++) {
 				ListRefDISyncTasksResponse.ListRefDISyncTasks_Data.ListRefDISyncTasks_DISyncTasksItem dISyncTasksItem = new ListRefDISyncTasksResponse.ListRefDISyncTasks_Data.ListRefDISyncTasks_DISyncTasksItem();
-				dISyncTasksItem.NodeName = _ctx.StringValue("ListRefDISyncTasks.Data.DISyncTasks["+ i +"].NodeName");
-				dISyncTasksItem.NodeId = _ctx.LongValue("ListRefDISyncTasks.Data.DISyncTasks["+ i +"].NodeId");
+				dISyncTasksItem.DiSourceDatasource = _ctx.StringValue("ListRefDISyncTasks.Data.DISyncTasks["+ i +"].DiSourceDatasource");
 				dISyncTasksItem.TaskType = _ctx.StringValue("ListRefDISyncTasks.Data.DISyncTasks["+ i +"].TaskType");
 				dISyncTasksItem.DiDestinationDatasource = _ctx.StringValue("ListRefDISyncTasks.Data.DISyncTasks["+ i +"].DiDestinationDatasource");
-				dISyncTasksItem.DiSourceDatasource = _ctx.StringValue("ListRefDISyncTasks.Data.DISyncTasks["+ i +"].DiSourceDatasource");
+				dISyncTasksItem.NodeName = _ctx.StringValue("ListRefDISyncTasks.Data.DISyncTasks["+ i +"].NodeName");
+				dISyncTasksItem.NodeId = _ctx.LongValue("ListRefDISyncTasks.Data.DISyncTasks["+ i +"].NodeId");
 
 				data_dISyncTasks.Add(dISyncTasksItem);
 			}

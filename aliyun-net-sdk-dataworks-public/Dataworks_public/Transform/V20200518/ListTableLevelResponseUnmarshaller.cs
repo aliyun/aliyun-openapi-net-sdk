@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			ListTableLevelResponse listTableLevelResponse = new ListTableLevelResponse();
 
 			listTableLevelResponse.HttpResponse = _ctx.HttpResponse;
-			listTableLevelResponse.RequestId = _ctx.StringValue("ListTableLevel.RequestId");
-			listTableLevelResponse.ErrorCode = _ctx.StringValue("ListTableLevel.ErrorCode");
-			listTableLevelResponse.ErrorMessage = _ctx.StringValue("ListTableLevel.ErrorMessage");
 			listTableLevelResponse.HttpStatusCode = _ctx.IntegerValue("ListTableLevel.HttpStatusCode");
+			listTableLevelResponse.ErrorMessage = _ctx.StringValue("ListTableLevel.ErrorMessage");
+			listTableLevelResponse.RequestId = _ctx.StringValue("ListTableLevel.RequestId");
 			listTableLevelResponse.Success = _ctx.BooleanValue("ListTableLevel.Success");
+			listTableLevelResponse.ErrorCode = _ctx.StringValue("ListTableLevel.ErrorCode");
 
 			ListTableLevelResponse.ListTableLevel_TableLevelInfo tableLevelInfo = new ListTableLevelResponse.ListTableLevel_TableLevelInfo();
 			tableLevelInfo.TotalCount = _ctx.LongValue("ListTableLevel.TableLevelInfo.TotalCount");
@@ -43,11 +43,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<ListTableLevelResponse.ListTableLevel_TableLevelInfo.ListTableLevel_LevelListItem> tableLevelInfo_levelList = new List<ListTableLevelResponse.ListTableLevel_TableLevelInfo.ListTableLevel_LevelListItem>();
 			for (int i = 0; i < _ctx.Length("ListTableLevel.TableLevelInfo.LevelList.Length"); i++) {
 				ListTableLevelResponse.ListTableLevel_TableLevelInfo.ListTableLevel_LevelListItem levelListItem = new ListTableLevelResponse.ListTableLevel_TableLevelInfo.ListTableLevel_LevelListItem();
-				levelListItem.LevelId = _ctx.LongValue("ListTableLevel.TableLevelInfo.LevelList["+ i +"].LevelId");
-				levelListItem.Name = _ctx.StringValue("ListTableLevel.TableLevelInfo.LevelList["+ i +"].Name");
-				levelListItem.ProjectId = _ctx.LongValue("ListTableLevel.TableLevelInfo.LevelList["+ i +"].ProjectId");
 				levelListItem.LevelType = _ctx.IntegerValue("ListTableLevel.TableLevelInfo.LevelList["+ i +"].LevelType");
 				levelListItem.Description = _ctx.StringValue("ListTableLevel.TableLevelInfo.LevelList["+ i +"].Description");
+				levelListItem.Name = _ctx.StringValue("ListTableLevel.TableLevelInfo.LevelList["+ i +"].Name");
+				levelListItem.ProjectId = _ctx.LongValue("ListTableLevel.TableLevelInfo.LevelList["+ i +"].ProjectId");
+				levelListItem.LevelId = _ctx.LongValue("ListTableLevel.TableLevelInfo.LevelList["+ i +"].LevelId");
 
 				tableLevelInfo_levelList.Add(levelListItem);
 			}

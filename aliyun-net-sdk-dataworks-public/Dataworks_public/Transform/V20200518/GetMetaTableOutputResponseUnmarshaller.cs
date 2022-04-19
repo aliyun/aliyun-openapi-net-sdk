@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetMetaTableOutputResponse getMetaTableOutputResponse = new GetMetaTableOutputResponse();
 
 			getMetaTableOutputResponse.HttpResponse = _ctx.HttpResponse;
-			getMetaTableOutputResponse.RequestId = _ctx.StringValue("GetMetaTableOutput.RequestId");
-			getMetaTableOutputResponse.ErrorCode = _ctx.StringValue("GetMetaTableOutput.ErrorCode");
-			getMetaTableOutputResponse.ErrorMessage = _ctx.StringValue("GetMetaTableOutput.ErrorMessage");
 			getMetaTableOutputResponse.HttpStatusCode = _ctx.IntegerValue("GetMetaTableOutput.HttpStatusCode");
+			getMetaTableOutputResponse.ErrorMessage = _ctx.StringValue("GetMetaTableOutput.ErrorMessage");
+			getMetaTableOutputResponse.RequestId = _ctx.StringValue("GetMetaTableOutput.RequestId");
 			getMetaTableOutputResponse.Success = _ctx.BooleanValue("GetMetaTableOutput.Success");
+			getMetaTableOutputResponse.ErrorCode = _ctx.StringValue("GetMetaTableOutput.ErrorCode");
 
 			GetMetaTableOutputResponse.GetMetaTableOutput_Data data = new GetMetaTableOutputResponse.GetMetaTableOutput_Data();
 			data.PageNumber = _ctx.IntegerValue("GetMetaTableOutput.Data.PageNumber");
@@ -45,13 +45,13 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<GetMetaTableOutputResponse.GetMetaTableOutput_Data.GetMetaTableOutput_DataEntityListItem> data_dataEntityList = new List<GetMetaTableOutputResponse.GetMetaTableOutput_Data.GetMetaTableOutput_DataEntityListItem>();
 			for (int i = 0; i < _ctx.Length("GetMetaTableOutput.Data.DataEntityList.Length"); i++) {
 				GetMetaTableOutputResponse.GetMetaTableOutput_Data.GetMetaTableOutput_DataEntityListItem dataEntityListItem = new GetMetaTableOutputResponse.GetMetaTableOutput_Data.GetMetaTableOutput_DataEntityListItem();
+				dataEntityListItem.EndTime = _ctx.StringValue("GetMetaTableOutput.Data.DataEntityList["+ i +"].EndTime");
+				dataEntityListItem.TaskInstanceId = _ctx.LongValue("GetMetaTableOutput.Data.DataEntityList["+ i +"].TaskInstanceId");
+				dataEntityListItem.StartTime = _ctx.StringValue("GetMetaTableOutput.Data.DataEntityList["+ i +"].StartTime");
+				dataEntityListItem.ProjectId = _ctx.LongValue("GetMetaTableOutput.Data.DataEntityList["+ i +"].ProjectId");
+				dataEntityListItem.WaitTime = _ctx.StringValue("GetMetaTableOutput.Data.DataEntityList["+ i +"].WaitTime");
 				dataEntityListItem.TableGuid = _ctx.StringValue("GetMetaTableOutput.Data.DataEntityList["+ i +"].TableGuid");
 				dataEntityListItem.TaskId = _ctx.StringValue("GetMetaTableOutput.Data.DataEntityList["+ i +"].TaskId");
-				dataEntityListItem.StartTime = _ctx.StringValue("GetMetaTableOutput.Data.DataEntityList["+ i +"].StartTime");
-				dataEntityListItem.EndTime = _ctx.StringValue("GetMetaTableOutput.Data.DataEntityList["+ i +"].EndTime");
-				dataEntityListItem.WaitTime = _ctx.StringValue("GetMetaTableOutput.Data.DataEntityList["+ i +"].WaitTime");
-				dataEntityListItem.ProjectId = _ctx.LongValue("GetMetaTableOutput.Data.DataEntityList["+ i +"].ProjectId");
-				dataEntityListItem.TaskInstanceId = _ctx.LongValue("GetMetaTableOutput.Data.DataEntityList["+ i +"].TaskInstanceId");
 
 				data_dataEntityList.Add(dataEntityListItem);
 			}

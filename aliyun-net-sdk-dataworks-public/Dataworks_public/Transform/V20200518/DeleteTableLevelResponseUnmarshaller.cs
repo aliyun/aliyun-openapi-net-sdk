@@ -31,8 +31,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			DeleteTableLevelResponse deleteTableLevelResponse = new DeleteTableLevelResponse();
 
 			deleteTableLevelResponse.HttpResponse = _ctx.HttpResponse;
-			deleteTableLevelResponse.RequestId = _ctx.StringValue("DeleteTableLevel.RequestId");
 			deleteTableLevelResponse.DeleteResult = _ctx.BooleanValue("DeleteTableLevel.DeleteResult");
+			deleteTableLevelResponse.RequestId = _ctx.StringValue("DeleteTableLevel.RequestId");
         
 			return deleteTableLevelResponse;
         }

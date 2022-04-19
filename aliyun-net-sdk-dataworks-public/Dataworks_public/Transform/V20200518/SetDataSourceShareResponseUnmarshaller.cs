@@ -31,8 +31,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			SetDataSourceShareResponse setDataSourceShareResponse = new SetDataSourceShareResponse();
 
 			setDataSourceShareResponse.HttpResponse = _ctx.HttpResponse;
-			setDataSourceShareResponse.RequestId = _ctx.StringValue("SetDataSourceShare.RequestId");
 			setDataSourceShareResponse.Success = _ctx.BooleanValue("SetDataSourceShare.Success");
+			setDataSourceShareResponse.RequestId = _ctx.StringValue("SetDataSourceShare.RequestId");
 
 			SetDataSourceShareResponse.SetDataSourceShare_Data data = new SetDataSourceShareResponse.SetDataSourceShare_Data();
 			data.Status = _ctx.StringValue("SetDataSourceShare.Data.Status");

@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			CreateMetaCategoryResponse createMetaCategoryResponse = new CreateMetaCategoryResponse();
 
 			createMetaCategoryResponse.HttpResponse = _ctx.HttpResponse;
-			createMetaCategoryResponse.RequestId = _ctx.StringValue("CreateMetaCategory.RequestId");
-			createMetaCategoryResponse.ErrorCode = _ctx.StringValue("CreateMetaCategory.ErrorCode");
-			createMetaCategoryResponse.ErrorMessage = _ctx.StringValue("CreateMetaCategory.ErrorMessage");
 			createMetaCategoryResponse.HttpStatusCode = _ctx.IntegerValue("CreateMetaCategory.HttpStatusCode");
+			createMetaCategoryResponse.ErrorMessage = _ctx.StringValue("CreateMetaCategory.ErrorMessage");
+			createMetaCategoryResponse.RequestId = _ctx.StringValue("CreateMetaCategory.RequestId");
 			createMetaCategoryResponse.Success = _ctx.BooleanValue("CreateMetaCategory.Success");
+			createMetaCategoryResponse.ErrorCode = _ctx.StringValue("CreateMetaCategory.ErrorCode");
 
 			CreateMetaCategoryResponse.CreateMetaCategory_Data data = new CreateMetaCategoryResponse.CreateMetaCategory_Data();
 			data.CategoryId = _ctx.LongValue("CreateMetaCategory.Data.CategoryId");

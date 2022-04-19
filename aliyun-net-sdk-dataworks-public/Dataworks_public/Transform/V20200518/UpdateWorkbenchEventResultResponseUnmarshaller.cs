@@ -24,21 +24,17 @@ using Aliyun.Acs.dataworks_public.Model.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
-    public class DeleteTableThemeResponseUnmarshaller
+    public class UpdateWorkbenchEventResultResponseUnmarshaller
     {
-        public static DeleteTableThemeResponse Unmarshall(UnmarshallerContext _ctx)
+        public static UpdateWorkbenchEventResultResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DeleteTableThemeResponse deleteTableThemeResponse = new DeleteTableThemeResponse();
+			UpdateWorkbenchEventResultResponse updateWorkbenchEventResultResponse = new UpdateWorkbenchEventResultResponse();
 
-			deleteTableThemeResponse.HttpResponse = _ctx.HttpResponse;
-			deleteTableThemeResponse.HttpStatusCode = _ctx.IntegerValue("DeleteTableTheme.HttpStatusCode");
-			deleteTableThemeResponse.RequestId = _ctx.StringValue("DeleteTableTheme.RequestId");
-			deleteTableThemeResponse.ErrorMessage = _ctx.StringValue("DeleteTableTheme.ErrorMessage");
-			deleteTableThemeResponse.ErrorCode = _ctx.StringValue("DeleteTableTheme.ErrorCode");
-			deleteTableThemeResponse.Success = _ctx.BooleanValue("DeleteTableTheme.Success");
-			deleteTableThemeResponse.DeleteResult = _ctx.BooleanValue("DeleteTableTheme.DeleteResult");
+			updateWorkbenchEventResultResponse.HttpResponse = _ctx.HttpResponse;
+			updateWorkbenchEventResultResponse.RequestId = _ctx.StringValue("UpdateWorkbenchEventResult.RequestId");
+			updateWorkbenchEventResultResponse.Success = _ctx.BooleanValue("UpdateWorkbenchEventResult.Success");
         
-			return deleteTableThemeResponse;
+			return updateWorkbenchEventResultResponse;
         }
     }
 }

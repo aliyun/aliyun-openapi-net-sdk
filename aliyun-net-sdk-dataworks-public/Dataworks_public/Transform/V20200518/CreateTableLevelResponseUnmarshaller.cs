@@ -31,10 +31,10 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			CreateTableLevelResponse createTableLevelResponse = new CreateTableLevelResponse();
 
 			createTableLevelResponse.HttpResponse = _ctx.HttpResponse;
-			createTableLevelResponse.RequestId = _ctx.StringValue("CreateTableLevel.RequestId");
-			createTableLevelResponse.ErrorCode = _ctx.StringValue("CreateTableLevel.ErrorCode");
-			createTableLevelResponse.ErrorMessage = _ctx.StringValue("CreateTableLevel.ErrorMessage");
 			createTableLevelResponse.HttpStatusCode = _ctx.IntegerValue("CreateTableLevel.HttpStatusCode");
+			createTableLevelResponse.RequestId = _ctx.StringValue("CreateTableLevel.RequestId");
+			createTableLevelResponse.ErrorMessage = _ctx.StringValue("CreateTableLevel.ErrorMessage");
+			createTableLevelResponse.ErrorCode = _ctx.StringValue("CreateTableLevel.ErrorCode");
 			createTableLevelResponse.Success = _ctx.BooleanValue("CreateTableLevel.Success");
 			createTableLevelResponse.LevelId = _ctx.LongValue("CreateTableLevel.LevelId");
         

@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			UpdateTableThemeResponse updateTableThemeResponse = new UpdateTableThemeResponse();
 
 			updateTableThemeResponse.HttpResponse = _ctx.HttpResponse;
-			updateTableThemeResponse.RequestId = _ctx.StringValue("UpdateTableTheme.RequestId");
-			updateTableThemeResponse.ErrorCode = _ctx.StringValue("UpdateTableTheme.ErrorCode");
-			updateTableThemeResponse.ErrorMessage = _ctx.StringValue("UpdateTableTheme.ErrorMessage");
 			updateTableThemeResponse.HttpStatusCode = _ctx.IntegerValue("UpdateTableTheme.HttpStatusCode");
-			updateTableThemeResponse.Success = _ctx.BooleanValue("UpdateTableTheme.Success");
+			updateTableThemeResponse.RequestId = _ctx.StringValue("UpdateTableTheme.RequestId");
+			updateTableThemeResponse.ErrorMessage = _ctx.StringValue("UpdateTableTheme.ErrorMessage");
 			updateTableThemeResponse.UpdateResult = _ctx.BooleanValue("UpdateTableTheme.UpdateResult");
+			updateTableThemeResponse.ErrorCode = _ctx.StringValue("UpdateTableTheme.ErrorCode");
+			updateTableThemeResponse.Success = _ctx.BooleanValue("UpdateTableTheme.Success");
         
 			return updateTableThemeResponse;
         }

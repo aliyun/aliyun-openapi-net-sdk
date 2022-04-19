@@ -25,23 +25,11 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class CreateDISyncTaskResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private CreateDISyncTask_Data data;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private CreateDISyncTask_Data data;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,23 +70,11 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class CreateDISyncTask_Data
 		{
 
-			private long? fileId;
-
 			private string status;
 
 			private string message;
 
-			public long? FileId
-			{
-				get
-				{
-					return fileId;
-				}
-				set	
-				{
-					fileId = value;
-				}
-			}
+			private long? fileId;
 
 			public string Status
 			{
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					message = value;
+				}
+			}
+
+			public long? FileId
+			{
+				get
+				{
+					return fileId;
+				}
+				set	
+				{
+					fileId = value;
 				}
 			}
 		}

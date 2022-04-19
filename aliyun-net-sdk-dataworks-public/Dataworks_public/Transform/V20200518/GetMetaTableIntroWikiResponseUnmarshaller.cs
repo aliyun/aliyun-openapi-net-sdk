@@ -31,19 +31,19 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetMetaTableIntroWikiResponse getMetaTableIntroWikiResponse = new GetMetaTableIntroWikiResponse();
 
 			getMetaTableIntroWikiResponse.HttpResponse = _ctx.HttpResponse;
-			getMetaTableIntroWikiResponse.RequestId = _ctx.StringValue("GetMetaTableIntroWiki.RequestId");
-			getMetaTableIntroWikiResponse.ErrorCode = _ctx.StringValue("GetMetaTableIntroWiki.ErrorCode");
-			getMetaTableIntroWikiResponse.ErrorMessage = _ctx.StringValue("GetMetaTableIntroWiki.ErrorMessage");
 			getMetaTableIntroWikiResponse.HttpStatusCode = _ctx.IntegerValue("GetMetaTableIntroWiki.HttpStatusCode");
+			getMetaTableIntroWikiResponse.ErrorMessage = _ctx.StringValue("GetMetaTableIntroWiki.ErrorMessage");
+			getMetaTableIntroWikiResponse.RequestId = _ctx.StringValue("GetMetaTableIntroWiki.RequestId");
 			getMetaTableIntroWikiResponse.Success = _ctx.BooleanValue("GetMetaTableIntroWiki.Success");
+			getMetaTableIntroWikiResponse.ErrorCode = _ctx.StringValue("GetMetaTableIntroWiki.ErrorCode");
 
 			GetMetaTableIntroWikiResponse.GetMetaTableIntroWiki_Data data = new GetMetaTableIntroWikiResponse.GetMetaTableIntroWiki_Data();
-			data.CreateTime = _ctx.LongValue("GetMetaTableIntroWiki.Data.CreateTime");
 			data.ModifiedTime = _ctx.LongValue("GetMetaTableIntroWiki.Data.ModifiedTime");
-			data.Creator = _ctx.StringValue("GetMetaTableIntroWiki.Data.Creator");
 			data.Version = _ctx.LongValue("GetMetaTableIntroWiki.Data.Version");
+			data.CreateTime = _ctx.LongValue("GetMetaTableIntroWiki.Data.CreateTime");
 			data.CreatorName = _ctx.StringValue("GetMetaTableIntroWiki.Data.CreatorName");
 			data.Content = _ctx.StringValue("GetMetaTableIntroWiki.Data.Content");
+			data.Creator = _ctx.StringValue("GetMetaTableIntroWiki.Data.Creator");
 			getMetaTableIntroWikiResponse.Data = data;
         
 			return getMetaTableIntroWikiResponse;

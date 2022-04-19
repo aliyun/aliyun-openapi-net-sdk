@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			ListTableThemeResponse listTableThemeResponse = new ListTableThemeResponse();
 
 			listTableThemeResponse.HttpResponse = _ctx.HttpResponse;
-			listTableThemeResponse.RequestId = _ctx.StringValue("ListTableTheme.RequestId");
-			listTableThemeResponse.ErrorCode = _ctx.StringValue("ListTableTheme.ErrorCode");
-			listTableThemeResponse.ErrorMessage = _ctx.StringValue("ListTableTheme.ErrorMessage");
 			listTableThemeResponse.HttpStatusCode = _ctx.IntegerValue("ListTableTheme.HttpStatusCode");
+			listTableThemeResponse.ErrorMessage = _ctx.StringValue("ListTableTheme.ErrorMessage");
+			listTableThemeResponse.RequestId = _ctx.StringValue("ListTableTheme.RequestId");
 			listTableThemeResponse.Success = _ctx.BooleanValue("ListTableTheme.Success");
+			listTableThemeResponse.ErrorCode = _ctx.StringValue("ListTableTheme.ErrorCode");
 
 			ListTableThemeResponse.ListTableTheme_Data data = new ListTableThemeResponse.ListTableTheme_Data();
 			data.TotalCount = _ctx.LongValue("ListTableTheme.Data.TotalCount");
@@ -43,13 +43,13 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<ListTableThemeResponse.ListTableTheme_Data.ListTableTheme_ThemeListItem> data_themeList = new List<ListTableThemeResponse.ListTableTheme_Data.ListTableTheme_ThemeListItem>();
 			for (int i = 0; i < _ctx.Length("ListTableTheme.Data.ThemeList.Length"); i++) {
 				ListTableThemeResponse.ListTableTheme_Data.ListTableTheme_ThemeListItem themeListItem = new ListTableThemeResponse.ListTableTheme_Data.ListTableTheme_ThemeListItem();
+				themeListItem.CreateTimeStamp = _ctx.LongValue("ListTableTheme.Data.ThemeList["+ i +"].CreateTimeStamp");
+				themeListItem.ParentId = _ctx.LongValue("ListTableTheme.Data.ThemeList["+ i +"].ParentId");
 				themeListItem.ThemeId = _ctx.LongValue("ListTableTheme.Data.ThemeList["+ i +"].ThemeId");
+				themeListItem.ProjectId = _ctx.LongValue("ListTableTheme.Data.ThemeList["+ i +"].ProjectId");
 				themeListItem.Name = _ctx.StringValue("ListTableTheme.Data.ThemeList["+ i +"].Name");
 				themeListItem.Level = _ctx.IntegerValue("ListTableTheme.Data.ThemeList["+ i +"].Level");
-				themeListItem.ParentId = _ctx.LongValue("ListTableTheme.Data.ThemeList["+ i +"].ParentId");
-				themeListItem.ProjectId = _ctx.LongValue("ListTableTheme.Data.ThemeList["+ i +"].ProjectId");
 				themeListItem.Creator = _ctx.StringValue("ListTableTheme.Data.ThemeList["+ i +"].Creator");
-				themeListItem.CreateTimeStamp = _ctx.LongValue("ListTableTheme.Data.ThemeList["+ i +"].CreateTimeStamp");
 
 				data_themeList.Add(themeListItem);
 			}

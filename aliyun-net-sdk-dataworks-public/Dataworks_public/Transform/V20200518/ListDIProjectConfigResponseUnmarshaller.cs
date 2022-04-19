@@ -31,8 +31,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			ListDIProjectConfigResponse listDIProjectConfigResponse = new ListDIProjectConfigResponse();
 
 			listDIProjectConfigResponse.HttpResponse = _ctx.HttpResponse;
-			listDIProjectConfigResponse.RequestId = _ctx.StringValue("ListDIProjectConfig.RequestId");
 			listDIProjectConfigResponse.Success = _ctx.BooleanValue("ListDIProjectConfig.Success");
+			listDIProjectConfigResponse.RequestId = _ctx.StringValue("ListDIProjectConfig.RequestId");
 
 			ListDIProjectConfigResponse.ListDIProjectConfig_Data data = new ListDIProjectConfigResponse.ListDIProjectConfig_Data();
 			data.Config = _ctx.StringValue("ListDIProjectConfig.Data.Config");

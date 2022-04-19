@@ -31,21 +31,21 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetMetaTableThemeLevelResponse getMetaTableThemeLevelResponse = new GetMetaTableThemeLevelResponse();
 
 			getMetaTableThemeLevelResponse.HttpResponse = _ctx.HttpResponse;
-			getMetaTableThemeLevelResponse.RequestId = _ctx.StringValue("GetMetaTableThemeLevel.RequestId");
-			getMetaTableThemeLevelResponse.ErrorCode = _ctx.StringValue("GetMetaTableThemeLevel.ErrorCode");
-			getMetaTableThemeLevelResponse.ErrorMessage = _ctx.StringValue("GetMetaTableThemeLevel.ErrorMessage");
 			getMetaTableThemeLevelResponse.HttpStatusCode = _ctx.IntegerValue("GetMetaTableThemeLevel.HttpStatusCode");
+			getMetaTableThemeLevelResponse.ErrorMessage = _ctx.StringValue("GetMetaTableThemeLevel.ErrorMessage");
+			getMetaTableThemeLevelResponse.RequestId = _ctx.StringValue("GetMetaTableThemeLevel.RequestId");
 			getMetaTableThemeLevelResponse.Success = _ctx.BooleanValue("GetMetaTableThemeLevel.Success");
+			getMetaTableThemeLevelResponse.ErrorCode = _ctx.StringValue("GetMetaTableThemeLevel.ErrorCode");
 
 			GetMetaTableThemeLevelResponse.GetMetaTableThemeLevel_Entity entity = new GetMetaTableThemeLevelResponse.GetMetaTableThemeLevel_Entity();
 
 			List<GetMetaTableThemeLevelResponse.GetMetaTableThemeLevel_Entity.GetMetaTableThemeLevel_ThemeItem> entity_theme = new List<GetMetaTableThemeLevelResponse.GetMetaTableThemeLevel_Entity.GetMetaTableThemeLevel_ThemeItem>();
 			for (int i = 0; i < _ctx.Length("GetMetaTableThemeLevel.Entity.Theme.Length"); i++) {
 				GetMetaTableThemeLevelResponse.GetMetaTableThemeLevel_Entity.GetMetaTableThemeLevel_ThemeItem themeItem = new GetMetaTableThemeLevelResponse.GetMetaTableThemeLevel_Entity.GetMetaTableThemeLevel_ThemeItem();
-				themeItem.ThemeId = _ctx.LongValue("GetMetaTableThemeLevel.Entity.Theme["+ i +"].ThemeId");
-				themeItem.Name = _ctx.StringValue("GetMetaTableThemeLevel.Entity.Theme["+ i +"].Name");
-				themeItem.Level = _ctx.IntegerValue("GetMetaTableThemeLevel.Entity.Theme["+ i +"].Level");
 				themeItem.ParentId = _ctx.LongValue("GetMetaTableThemeLevel.Entity.Theme["+ i +"].ParentId");
+				themeItem.Name = _ctx.StringValue("GetMetaTableThemeLevel.Entity.Theme["+ i +"].Name");
+				themeItem.ThemeId = _ctx.LongValue("GetMetaTableThemeLevel.Entity.Theme["+ i +"].ThemeId");
+				themeItem.Level = _ctx.IntegerValue("GetMetaTableThemeLevel.Entity.Theme["+ i +"].Level");
 
 				entity_theme.Add(themeItem);
 			}
@@ -54,10 +54,10 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<GetMetaTableThemeLevelResponse.GetMetaTableThemeLevel_Entity.GetMetaTableThemeLevel_LevelItem> entity_level = new List<GetMetaTableThemeLevelResponse.GetMetaTableThemeLevel_Entity.GetMetaTableThemeLevel_LevelItem>();
 			for (int i = 0; i < _ctx.Length("GetMetaTableThemeLevel.Entity.Level.Length"); i++) {
 				GetMetaTableThemeLevelResponse.GetMetaTableThemeLevel_Entity.GetMetaTableThemeLevel_LevelItem levelItem = new GetMetaTableThemeLevelResponse.GetMetaTableThemeLevel_Entity.GetMetaTableThemeLevel_LevelItem();
-				levelItem.LevelId = _ctx.LongValue("GetMetaTableThemeLevel.Entity.Level["+ i +"].LevelId");
-				levelItem.Name = _ctx.StringValue("GetMetaTableThemeLevel.Entity.Level["+ i +"].Name");
 				levelItem.Type = _ctx.IntegerValue("GetMetaTableThemeLevel.Entity.Level["+ i +"].Type");
 				levelItem.Description = _ctx.StringValue("GetMetaTableThemeLevel.Entity.Level["+ i +"].Description");
+				levelItem.Name = _ctx.StringValue("GetMetaTableThemeLevel.Entity.Level["+ i +"].Name");
+				levelItem.LevelId = _ctx.LongValue("GetMetaTableThemeLevel.Entity.Level["+ i +"].LevelId");
 
 				entity_level.Add(levelItem);
 			}

@@ -31,25 +31,25 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetDISyncInstanceInfoResponse getDISyncInstanceInfoResponse = new GetDISyncInstanceInfoResponse();
 
 			getDISyncInstanceInfoResponse.HttpResponse = _ctx.HttpResponse;
-			getDISyncInstanceInfoResponse.RequestId = _ctx.StringValue("GetDISyncInstanceInfo.RequestId");
 			getDISyncInstanceInfoResponse.Success = _ctx.BooleanValue("GetDISyncInstanceInfo.Success");
+			getDISyncInstanceInfoResponse.RequestId = _ctx.StringValue("GetDISyncInstanceInfo.RequestId");
 
 			GetDISyncInstanceInfoResponse.GetDISyncInstanceInfo_Data data = new GetDISyncInstanceInfoResponse.GetDISyncInstanceInfo_Data();
 			data.Status = _ctx.StringValue("GetDISyncInstanceInfo.Data.Status");
-			data.Name = _ctx.StringValue("GetDISyncInstanceInfo.Data.Name");
 			data.Message = _ctx.StringValue("GetDISyncInstanceInfo.Data.Message");
+			data.Name = _ctx.StringValue("GetDISyncInstanceInfo.Data.Name");
 
 			GetDISyncInstanceInfoResponse.GetDISyncInstanceInfo_Data.GetDISyncInstanceInfo_SolutionInfo solutionInfo = new GetDISyncInstanceInfoResponse.GetDISyncInstanceInfo_Data.GetDISyncInstanceInfo_SolutionInfo();
-			solutionInfo.Id = _ctx.LongValue("GetDISyncInstanceInfo.Data.SolutionInfo.Id");
 			solutionInfo.Status = _ctx.StringValue("GetDISyncInstanceInfo.Data.SolutionInfo.Status");
+			solutionInfo.Id = _ctx.LongValue("GetDISyncInstanceInfo.Data.SolutionInfo.Id");
 			solutionInfo.CreatorName = _ctx.StringValue("GetDISyncInstanceInfo.Data.SolutionInfo.CreatorName");
 
 			List<GetDISyncInstanceInfoResponse.GetDISyncInstanceInfo_Data.GetDISyncInstanceInfo_SolutionInfo.GetDISyncInstanceInfo_StepDetailItem> solutionInfo_stepDetail = new List<GetDISyncInstanceInfoResponse.GetDISyncInstanceInfo_Data.GetDISyncInstanceInfo_SolutionInfo.GetDISyncInstanceInfo_StepDetailItem>();
 			for (int i = 0; i < _ctx.Length("GetDISyncInstanceInfo.Data.SolutionInfo.StepDetail.Length"); i++) {
 				GetDISyncInstanceInfoResponse.GetDISyncInstanceInfo_Data.GetDISyncInstanceInfo_SolutionInfo.GetDISyncInstanceInfo_StepDetailItem stepDetailItem = new GetDISyncInstanceInfoResponse.GetDISyncInstanceInfo_Data.GetDISyncInstanceInfo_SolutionInfo.GetDISyncInstanceInfo_StepDetailItem();
-				stepDetailItem.StepName = _ctx.StringValue("GetDISyncInstanceInfo.Data.SolutionInfo.StepDetail["+ i +"].StepName");
-				stepDetailItem.StepId = _ctx.LongValue("GetDISyncInstanceInfo.Data.SolutionInfo.StepDetail["+ i +"].StepId");
 				stepDetailItem.Status = _ctx.StringValue("GetDISyncInstanceInfo.Data.SolutionInfo.StepDetail["+ i +"].Status");
+				stepDetailItem.StepId = _ctx.LongValue("GetDISyncInstanceInfo.Data.SolutionInfo.StepDetail["+ i +"].StepId");
+				stepDetailItem.StepName = _ctx.StringValue("GetDISyncInstanceInfo.Data.SolutionInfo.StepDetail["+ i +"].StepName");
 
 				solutionInfo_stepDetail.Add(stepDetailItem);
 			}

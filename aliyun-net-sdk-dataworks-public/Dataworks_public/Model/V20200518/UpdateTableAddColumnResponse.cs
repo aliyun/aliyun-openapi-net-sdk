@@ -56,37 +56,13 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class UpdateTableAddColumn_TaskInfo
 		{
 
-			private string taskId;
-
-			private string content;
-
 			private string status;
 
 			private string nextTaskId;
 
-			public string TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
+			private string taskId;
 
-			public string Content
-			{
-				get
-				{
-					return content;
-				}
-				set	
-				{
-					content = value;
-				}
-			}
+			private string content;
 
 			public string Status
 			{
@@ -109,6 +85,30 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					nextTaskId = value;
+				}
+			}
+
+			public string TaskId
+			{
+				get
+				{
+					return taskId;
+				}
+				set	
+				{
+					taskId = value;
+				}
+			}
+
+			public string Content
+			{
+				get
+				{
+					return content;
+				}
+				set	
+				{
+					content = value;
 				}
 			}
 		}

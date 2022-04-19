@@ -31,8 +31,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			UpdateMetaTableResponse updateMetaTableResponse = new UpdateMetaTableResponse();
 
 			updateMetaTableResponse.HttpResponse = _ctx.HttpResponse;
-			updateMetaTableResponse.RequestId = _ctx.StringValue("UpdateMetaTable.RequestId");
 			updateMetaTableResponse.UpdateResult = _ctx.BooleanValue("UpdateMetaTable.UpdateResult");
+			updateMetaTableResponse.RequestId = _ctx.StringValue("UpdateMetaTable.RequestId");
         
 			return updateMetaTableResponse;
         }

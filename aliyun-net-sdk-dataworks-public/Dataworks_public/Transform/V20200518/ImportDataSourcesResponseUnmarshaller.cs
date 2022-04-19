@@ -31,8 +31,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			ImportDataSourcesResponse importDataSourcesResponse = new ImportDataSourcesResponse();
 
 			importDataSourcesResponse.HttpResponse = _ctx.HttpResponse;
-			importDataSourcesResponse.RequestId = _ctx.StringValue("ImportDataSources.RequestId");
 			importDataSourcesResponse.Success = _ctx.BooleanValue("ImportDataSources.Success");
+			importDataSourcesResponse.RequestId = _ctx.StringValue("ImportDataSources.RequestId");
 
 			ImportDataSourcesResponse.ImportDataSources_Data data = new ImportDataSourcesResponse.ImportDataSources_Data();
 			data.Status = _ctx.BooleanValue("ImportDataSources.Data.Status");

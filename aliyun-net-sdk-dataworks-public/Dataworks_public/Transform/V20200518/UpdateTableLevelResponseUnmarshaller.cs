@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			UpdateTableLevelResponse updateTableLevelResponse = new UpdateTableLevelResponse();
 
 			updateTableLevelResponse.HttpResponse = _ctx.HttpResponse;
-			updateTableLevelResponse.RequestId = _ctx.StringValue("UpdateTableLevel.RequestId");
-			updateTableLevelResponse.ErrorCode = _ctx.StringValue("UpdateTableLevel.ErrorCode");
-			updateTableLevelResponse.ErrorMessage = _ctx.StringValue("UpdateTableLevel.ErrorMessage");
 			updateTableLevelResponse.HttpStatusCode = _ctx.IntegerValue("UpdateTableLevel.HttpStatusCode");
-			updateTableLevelResponse.Success = _ctx.BooleanValue("UpdateTableLevel.Success");
+			updateTableLevelResponse.RequestId = _ctx.StringValue("UpdateTableLevel.RequestId");
+			updateTableLevelResponse.ErrorMessage = _ctx.StringValue("UpdateTableLevel.ErrorMessage");
 			updateTableLevelResponse.UpdateResult = _ctx.BooleanValue("UpdateTableLevel.UpdateResult");
+			updateTableLevelResponse.ErrorCode = _ctx.StringValue("UpdateTableLevel.ErrorCode");
+			updateTableLevelResponse.Success = _ctx.BooleanValue("UpdateTableLevel.Success");
         
 			return updateTableLevelResponse;
         }

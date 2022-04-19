@@ -56,37 +56,13 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetDDLJobStatus_Data
 		{
 
-			private string nextTaskId;
-
-			private string content;
-
 			private string status;
+
+			private string nextTaskId;
 
 			private string taskId;
 
-			public string NextTaskId
-			{
-				get
-				{
-					return nextTaskId;
-				}
-				set	
-				{
-					nextTaskId = value;
-				}
-			}
-
-			public string Content
-			{
-				get
-				{
-					return content;
-				}
-				set	
-				{
-					content = value;
-				}
-			}
+			private string content;
 
 			public string Status
 			{
@@ -100,6 +76,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
+			public string NextTaskId
+			{
+				get
+				{
+					return nextTaskId;
+				}
+				set	
+				{
+					nextTaskId = value;
+				}
+			}
+
 			public string TaskId
 			{
 				get
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					taskId = value;
+				}
+			}
+
+			public string Content
+			{
+				get
+				{
+					return content;
+				}
+				set	
+				{
+					content = value;
 				}
 			}
 		}

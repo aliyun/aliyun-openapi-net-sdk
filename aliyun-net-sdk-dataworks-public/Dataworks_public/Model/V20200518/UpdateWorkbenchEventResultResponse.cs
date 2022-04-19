@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-	public class UpdateTableResponse : AcsResponse
+	public class UpdateWorkbenchEventResultResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private UpdateTable_TaskInfo taskInfo;
+		private bool? success;
 
 		public string RequestId
 		{
@@ -41,75 +41,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public UpdateTable_TaskInfo TaskInfo
+		public bool? Success
 		{
 			get
 			{
-				return taskInfo;
+				return success;
 			}
 			set	
 			{
-				taskInfo = value;
-			}
-		}
-
-		public class UpdateTable_TaskInfo
-		{
-
-			private string status;
-
-			private string nextTaskId;
-
-			private string taskId;
-
-			private string content;
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string NextTaskId
-			{
-				get
-				{
-					return nextTaskId;
-				}
-				set	
-				{
-					nextTaskId = value;
-				}
-			}
-
-			public string TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
-
-			public string Content
-			{
-				get
-				{
-					return content;
-				}
-				set	
-				{
-					content = value;
-				}
+				success = value;
 			}
 		}
 	}
