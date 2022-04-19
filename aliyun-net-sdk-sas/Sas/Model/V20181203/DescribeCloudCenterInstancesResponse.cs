@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeCloudCenterInstancesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
+
+		private string requestId;
 
 		private List<DescribeCloudCenterInstances_Instance> instances;
 
 		private DescribeCloudCenterInstances_PageInfo pageInfo;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public bool? Success
 		{
@@ -54,6 +42,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -84,219 +84,99 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeCloudCenterInstances_Instance
 		{
 
-			private string internetIp;
-
-			private string os;
-
-			private string instanceId;
-
-			private string instanceName;
-
-			private string regionName;
-
-			private string ip;
-
-			private string clientStatus;
-
-			private string region;
-
-			private string uuid;
-
-			private string intranetIp;
-
-			private string assetType;
-
 			private string status;
 
-			private string tag;
+			private string cpuInfo;
 
-			private string vpcInstanceId;
+			private string internetIp;
+
+			private string kernel;
+
+			private bool? bind;
 
 			private string osName;
 
+			private string tag;
+
+			private string clientStatus;
+
+			private int? mem;
+
+			private string vpcInstanceId;
+
+			private string tagId;
+
 			private int? flag;
 
+			private long? lastLoginTimestamp;
+
+			private int? authVersion;
+
+			private string region;
+
+			private string instanceName;
+
+			private int? podCount;
+
+			private int? vulCount;
+
 			private string hcStatus;
+
+			private long? createdTime;
+
+			private string groupTrace;
+
+			private string clusterId;
+
+			private string riskStatus;
+
+			private int? cores;
 
 			private string vulStatus;
 
 			private string alarmStatus;
 
-			private string riskStatus;
-
-			private int? healthCheckCount;
-
-			private int? vulCount;
-
-			private int? safeEventCount;
-
-			private string regionId;
-
-			private string groupId;
+			private string macListString;
 
 			private int? importance;
 
-			private string clientVersion;
+			private int? healthCheckCount;
 
-			private string riskCount;
+			private string ip;
 
-			private string clusterId;
-
-			private string clusterName;
-
-			private long? createdTime;
-
-			private int? podCount;
-
-			private int? exposedStatus;
-
-			private int? autoSnapshotsLevel;
-
-			private int? exposedCount;
-
-			private int? vendor;
-
-			private string vendorName;
-
-			private int? cores;
-
-			private int? authVersion;
-
-			private bool? bind;
+			private string os;
 
 			private long? authModifyTime;
 
-			public string InternetIp
-			{
-				get
-				{
-					return internetIp;
-				}
-				set	
-				{
-					internetIp = value;
-				}
-			}
+			private int? safeEventCount;
 
-			public string Os
-			{
-				get
-				{
-					return os;
-				}
-				set	
-				{
-					os = value;
-				}
-			}
+			private string instanceId;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private string assetType;
 
-			public string InstanceName
-			{
-				get
-				{
-					return instanceName;
-				}
-				set	
-				{
-					instanceName = value;
-				}
-			}
+			private string intranetIp;
 
-			public string RegionName
-			{
-				get
-				{
-					return regionName;
-				}
-				set	
-				{
-					regionName = value;
-				}
-			}
+			private int? vendor;
 
-			public string Ip
-			{
-				get
-				{
-					return ip;
-				}
-				set	
-				{
-					ip = value;
-				}
-			}
+			private string regionId;
 
-			public string ClientStatus
-			{
-				get
-				{
-					return clientStatus;
-				}
-				set	
-				{
-					clientStatus = value;
-				}
-			}
+			private string uuid;
 
-			public string Region
-			{
-				get
-				{
-					return region;
-				}
-				set	
-				{
-					region = value;
-				}
-			}
+			private long? groupId;
 
-			public string Uuid
-			{
-				get
-				{
-					return uuid;
-				}
-				set	
-				{
-					uuid = value;
-				}
-			}
+			private string regionName;
 
-			public string IntranetIp
-			{
-				get
-				{
-					return intranetIp;
-				}
-				set	
-				{
-					intranetIp = value;
-				}
-			}
+			private string vendorName;
 
-			public string AssetType
-			{
-				get
-				{
-					return assetType;
-				}
-				set	
-				{
-					assetType = value;
-				}
-			}
+			private string authVersionName;
+
+			private string clusterName;
+
+			private int? exposedStatus;
+
+			private string riskCount;
+
+			private string ipListString;
 
 			public string Status
 			{
@@ -310,27 +190,51 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Tag
+			public string CpuInfo
 			{
 				get
 				{
-					return tag;
+					return cpuInfo;
 				}
 				set	
 				{
-					tag = value;
+					cpuInfo = value;
 				}
 			}
 
-			public string VpcInstanceId
+			public string InternetIp
 			{
 				get
 				{
-					return vpcInstanceId;
+					return internetIp;
 				}
 				set	
 				{
-					vpcInstanceId = value;
+					internetIp = value;
+				}
+			}
+
+			public string Kernel
+			{
+				get
+				{
+					return kernel;
+				}
+				set	
+				{
+					kernel = value;
+				}
+			}
+
+			public bool? Bind
+			{
+				get
+				{
+					return bind;
+				}
+				set	
+				{
+					bind = value;
 				}
 			}
 
@@ -346,6 +250,66 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string Tag
+			{
+				get
+				{
+					return tag;
+				}
+				set	
+				{
+					tag = value;
+				}
+			}
+
+			public string ClientStatus
+			{
+				get
+				{
+					return clientStatus;
+				}
+				set	
+				{
+					clientStatus = value;
+				}
+			}
+
+			public int? Mem
+			{
+				get
+				{
+					return mem;
+				}
+				set	
+				{
+					mem = value;
+				}
+			}
+
+			public string VpcInstanceId
+			{
+				get
+				{
+					return vpcInstanceId;
+				}
+				set	
+				{
+					vpcInstanceId = value;
+				}
+			}
+
+			public string TagId
+			{
+				get
+				{
+					return tagId;
+				}
+				set	
+				{
+					tagId = value;
+				}
+			}
+
 			public int? Flag
 			{
 				get
@@ -358,6 +322,78 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public long? LastLoginTimestamp
+			{
+				get
+				{
+					return lastLoginTimestamp;
+				}
+				set	
+				{
+					lastLoginTimestamp = value;
+				}
+			}
+
+			public int? AuthVersion
+			{
+				get
+				{
+					return authVersion;
+				}
+				set	
+				{
+					authVersion = value;
+				}
+			}
+
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public int? PodCount
+			{
+				get
+				{
+					return podCount;
+				}
+				set	
+				{
+					podCount = value;
+				}
+			}
+
+			public int? VulCount
+			{
+				get
+				{
+					return vulCount;
+				}
+				set	
+				{
+					vulCount = value;
+				}
+			}
+
 			public string HcStatus
 			{
 				get
@@ -367,6 +403,66 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					hcStatus = value;
+				}
+			}
+
+			public long? CreatedTime
+			{
+				get
+				{
+					return createdTime;
+				}
+				set	
+				{
+					createdTime = value;
+				}
+			}
+
+			public string GroupTrace
+			{
+				get
+				{
+					return groupTrace;
+				}
+				set	
+				{
+					groupTrace = value;
+				}
+			}
+
+			public string ClusterId
+			{
+				get
+				{
+					return clusterId;
+				}
+				set	
+				{
+					clusterId = value;
+				}
+			}
+
+			public string RiskStatus
+			{
+				get
+				{
+					return riskStatus;
+				}
+				set	
+				{
+					riskStatus = value;
+				}
+			}
+
+			public int? Cores
+			{
+				get
+				{
+					return cores;
+				}
+				set	
+				{
+					cores = value;
 				}
 			}
 
@@ -394,75 +490,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string RiskStatus
+			public string MacListString
 			{
 				get
 				{
-					return riskStatus;
+					return macListString;
 				}
 				set	
 				{
-					riskStatus = value;
-				}
-			}
-
-			public int? HealthCheckCount
-			{
-				get
-				{
-					return healthCheckCount;
-				}
-				set	
-				{
-					healthCheckCount = value;
-				}
-			}
-
-			public int? VulCount
-			{
-				get
-				{
-					return vulCount;
-				}
-				set	
-				{
-					vulCount = value;
-				}
-			}
-
-			public int? SafeEventCount
-			{
-				get
-				{
-					return safeEventCount;
-				}
-				set	
-				{
-					safeEventCount = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string GroupId
-			{
-				get
-				{
-					return groupId;
-				}
-				set	
-				{
-					groupId = value;
+					macListString = value;
 				}
 			}
 
@@ -478,111 +514,99 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string ClientVersion
+			public int? HealthCheckCount
 			{
 				get
 				{
-					return clientVersion;
+					return healthCheckCount;
 				}
 				set	
 				{
-					clientVersion = value;
+					healthCheckCount = value;
 				}
 			}
 
-			public string RiskCount
+			public string Ip
 			{
 				get
 				{
-					return riskCount;
+					return ip;
 				}
 				set	
 				{
-					riskCount = value;
+					ip = value;
 				}
 			}
 
-			public string ClusterId
+			public string Os
 			{
 				get
 				{
-					return clusterId;
+					return os;
 				}
 				set	
 				{
-					clusterId = value;
+					os = value;
 				}
 			}
 
-			public string ClusterName
+			public long? AuthModifyTime
 			{
 				get
 				{
-					return clusterName;
+					return authModifyTime;
 				}
 				set	
 				{
-					clusterName = value;
+					authModifyTime = value;
 				}
 			}
 
-			public long? CreatedTime
+			public int? SafeEventCount
 			{
 				get
 				{
-					return createdTime;
+					return safeEventCount;
 				}
 				set	
 				{
-					createdTime = value;
+					safeEventCount = value;
 				}
 			}
 
-			public int? PodCount
+			public string InstanceId
 			{
 				get
 				{
-					return podCount;
+					return instanceId;
 				}
 				set	
 				{
-					podCount = value;
+					instanceId = value;
 				}
 			}
 
-			public int? ExposedStatus
+			public string AssetType
 			{
 				get
 				{
-					return exposedStatus;
+					return assetType;
 				}
 				set	
 				{
-					exposedStatus = value;
+					assetType = value;
 				}
 			}
 
-			public int? AutoSnapshotsLevel
+			public string IntranetIp
 			{
 				get
 				{
-					return autoSnapshotsLevel;
+					return intranetIp;
 				}
 				set	
 				{
-					autoSnapshotsLevel = value;
-				}
-			}
-
-			public int? ExposedCount
-			{
-				get
-				{
-					return exposedCount;
-				}
-				set	
-				{
-					exposedCount = value;
+					intranetIp = value;
 				}
 			}
 
@@ -598,6 +622,54 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string Uuid
+			{
+				get
+				{
+					return uuid;
+				}
+				set	
+				{
+					uuid = value;
+				}
+			}
+
+			public long? GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
+				}
+			}
+
+			public string RegionName
+			{
+				get
+				{
+					return regionName;
+				}
+				set	
+				{
+					regionName = value;
+				}
+			}
+
 			public string VendorName
 			{
 				get
@@ -610,51 +682,63 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? Cores
+			public string AuthVersionName
 			{
 				get
 				{
-					return cores;
+					return authVersionName;
 				}
 				set	
 				{
-					cores = value;
+					authVersionName = value;
 				}
 			}
 
-			public int? AuthVersion
+			public string ClusterName
 			{
 				get
 				{
-					return authVersion;
+					return clusterName;
 				}
 				set	
 				{
-					authVersion = value;
+					clusterName = value;
 				}
 			}
 
-			public bool? Bind
+			public int? ExposedStatus
 			{
 				get
 				{
-					return bind;
+					return exposedStatus;
 				}
 				set	
 				{
-					bind = value;
+					exposedStatus = value;
 				}
 			}
 
-			public long? AuthModifyTime
+			public string RiskCount
 			{
 				get
 				{
-					return authModifyTime;
+					return riskCount;
 				}
 				set	
 				{
-					authModifyTime = value;
+					riskCount = value;
+				}
+			}
+
+			public string IpListString
+			{
+				get
+				{
+					return ipListString;
+				}
+				set	
+				{
+					ipListString = value;
 				}
 			}
 		}
@@ -662,23 +746,23 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeCloudCenterInstances_PageInfo
 		{
 
-			private int? count;
+			private int? currentPage;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? currentPage;
+			private int? count;
 
-			public int? Count
+			public int? CurrentPage
 			{
 				get
 				{
-					return count;
+					return currentPage;
 				}
 				set	
 				{
-					count = value;
+					currentPage = value;
 				}
 			}
 
@@ -706,15 +790,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? CurrentPage
+			public int? Count
 			{
 				get
 				{
-					return currentPage;
+					return count;
 				}
 				set	
 				{
-					currentPage = value;
+					count = value;
 				}
 			}
 		}

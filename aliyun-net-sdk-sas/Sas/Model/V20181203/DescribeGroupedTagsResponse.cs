@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeGroupedTagsResponse : AcsResponse
 	{
 
+		private int? httpStatusCode;
+
 		private string requestId;
 
 		private bool? success;
 
 		private int? count;
 
-		private int? httpStatusCode;
-
 		private List<DescribeGroupedTags_GroupedFiled> groupedFileds;
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -71,18 +83,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
 		public List<DescribeGroupedTags_GroupedFiled> GroupedFileds
 		{
 			get
@@ -100,9 +100,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string name;
 
-			private int? tagId;
-
 			private string count;
+
+			private int? tagId;
 
 			public string Name
 			{
@@ -116,18 +116,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? TagId
-			{
-				get
-				{
-					return tagId;
-				}
-				set	
-				{
-					tagId = value;
-				}
-			}
-
 			public string Count
 			{
 				get
@@ -137,6 +125,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					count = value;
+				}
+			}
+
+			public int? TagId
+			{
+				get
+				{
+					return tagId;
+				}
+				set	
+				{
+					tagId = value;
 				}
 			}
 		}

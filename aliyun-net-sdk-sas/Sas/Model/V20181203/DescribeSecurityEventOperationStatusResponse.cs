@@ -87,23 +87,11 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			public class DescribeSecurityEventOperationStatus_SecurityEventOperationStatus
 			{
 
-				private string securityEventId;
-
 				private string status;
 
-				private string errorCode;
+				private string securityEventId;
 
-				public string SecurityEventId
-				{
-					get
-					{
-						return securityEventId;
-					}
-					set	
-					{
-						securityEventId = value;
-					}
-				}
+				private string errorCode;
 
 				public string Status
 				{
@@ -114,6 +102,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					set	
 					{
 						status = value;
+					}
+				}
+
+				public string SecurityEventId
+				{
+					get
+					{
+						return securityEventId;
+					}
+					set	
+					{
+						securityEventId = value;
 					}
 				}
 

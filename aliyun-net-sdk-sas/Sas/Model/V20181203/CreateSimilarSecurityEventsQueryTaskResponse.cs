@@ -56,21 +56,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class CreateSimilarSecurityEventsQueryTask_CreateSimilarSecurityEventsQueryTaskResponse1
 		{
 
-			private long? taskId;
-
 			private string status;
 
-			public long? TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
+			private long? taskId;
 
 			public string Status
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public long? TaskId
+			{
+				get
+				{
+					return taskId;
+				}
+				set	
+				{
+					taskId = value;
 				}
 			}
 		}

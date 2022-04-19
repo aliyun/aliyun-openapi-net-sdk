@@ -70,29 +70,53 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribePropertyPortDetail_PropertyPort
 		{
 
+			private string internetIp;
+
+			private string pid;
+
 			private string bindIp;
 
+			private string ip;
+
+			private string procName;
+
+			private string instanceId;
+
 			private string port;
+
+			private string intranetIp;
+
+			private string uuid;
 
 			private string instanceName;
 
 			private string proto;
 
-			private string ip;
-
-			private string create;
-
 			private long? createTimestamp;
 
-			private string procName;
+			public string InternetIp
+			{
+				get
+				{
+					return internetIp;
+				}
+				set	
+				{
+					internetIp = value;
+				}
+			}
 
-			private string uuid;
-
-			private string instanceId;
-
-			private string intranetIp;
-
-			private string internetIp;
+			public string Pid
+			{
+				get
+				{
+					return pid;
+				}
+				set	
+				{
+					pid = value;
+				}
+			}
 
 			public string BindIp
 			{
@@ -106,6 +130,42 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string Ip
+			{
+				get
+				{
+					return ip;
+				}
+				set	
+				{
+					ip = value;
+				}
+			}
+
+			public string ProcName
+			{
+				get
+				{
+					return procName;
+				}
+				set	
+				{
+					procName = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
 			public string Port
 			{
 				get
@@ -115,6 +175,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					port = value;
+				}
+			}
+
+			public string IntranetIp
+			{
+				get
+				{
+					return intranetIp;
+				}
+				set	
+				{
+					intranetIp = value;
+				}
+			}
+
+			public string Uuid
+			{
+				get
+				{
+					return uuid;
+				}
+				set	
+				{
+					uuid = value;
 				}
 			}
 
@@ -142,30 +226,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Ip
-			{
-				get
-				{
-					return ip;
-				}
-				set	
-				{
-					ip = value;
-				}
-			}
-
-			public string Create
-			{
-				get
-				{
-					return create;
-				}
-				set	
-				{
-					create = value;
-				}
-			}
-
 			public long? CreateTimestamp
 			{
 				get
@@ -177,88 +237,28 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					createTimestamp = value;
 				}
 			}
-
-			public string ProcName
-			{
-				get
-				{
-					return procName;
-				}
-				set	
-				{
-					procName = value;
-				}
-			}
-
-			public string Uuid
-			{
-				get
-				{
-					return uuid;
-				}
-				set	
-				{
-					uuid = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public string IntranetIp
-			{
-				get
-				{
-					return intranetIp;
-				}
-				set	
-				{
-					intranetIp = value;
-				}
-			}
-
-			public string InternetIp
-			{
-				get
-				{
-					return internetIp;
-				}
-				set	
-				{
-					internetIp = value;
-				}
-			}
 		}
 
 		public class DescribePropertyPortDetail_PageInfo
 		{
 
-			private int? count;
+			private int? currentPage;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? currentPage;
+			private int? count;
 
-			public int? Count
+			public int? CurrentPage
 			{
 				get
 				{
-					return count;
+					return currentPage;
 				}
 				set	
 				{
-					count = value;
+					currentPage = value;
 				}
 			}
 
@@ -286,15 +286,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? CurrentPage
+			public int? Count
 			{
 				get
 				{
-					return currentPage;
+					return count;
 				}
 				set	
 				{
-					currentPage = value;
+					count = value;
 				}
 			}
 		}

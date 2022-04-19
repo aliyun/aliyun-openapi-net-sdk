@@ -56,27 +56,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeSecurityEventOperations_SecurityEventOperation
 		{
 
-			private string operationCode;
-
 			private string operationParams;
+
+			private string operationCode;
 
 			private bool? userCanOperate;
 
 			private List<DescribeSecurityEventOperations_MarkFieldItem> markField;
 
 			private List<DescribeSecurityEventOperations_SecurityEventOperation1> markFieldsSource;
-
-			public string OperationCode
-			{
-				get
-				{
-					return operationCode;
-				}
-				set	
-				{
-					operationCode = value;
-				}
-			}
 
 			public string OperationParams
 			{
@@ -87,6 +75,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					operationParams = value;
+				}
+			}
+
+			public string OperationCode
+			{
+				get
+				{
+					return operationCode;
+				}
+				set	
+				{
+					operationCode = value;
 				}
 			}
 
@@ -129,15 +129,29 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			public class DescribeSecurityEventOperations_MarkFieldItem
 			{
 
+				private string markMisType;
+
 				private string filedName;
 
 				private string filedAliasName;
 
-				private string markMisType;
-
 				private string markMisValue;
 
+				private string uuid;
+
 				private List<string> supportedMisType;
+
+				public string MarkMisType
+				{
+					get
+					{
+						return markMisType;
+					}
+					set	
+					{
+						markMisType = value;
+					}
+				}
 
 				public string FiledName
 				{
@@ -163,18 +177,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					}
 				}
 
-				public string MarkMisType
-				{
-					get
-					{
-						return markMisType;
-					}
-					set	
-					{
-						markMisType = value;
-					}
-				}
-
 				public string MarkMisValue
 				{
 					get
@@ -184,6 +186,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					set	
 					{
 						markMisValue = value;
+					}
+				}
+
+				public string Uuid
+				{
+					get
+					{
+						return uuid;
+					}
+					set	
+					{
+						uuid = value;
 					}
 				}
 

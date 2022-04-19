@@ -31,26 +31,26 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeModuleConfigResponse describeModuleConfigResponse = new DescribeModuleConfigResponse();
 
 			describeModuleConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeModuleConfigResponse.HttpStatusCode = _ctx.IntegerValue("DescribeModuleConfig.HttpStatusCode");
 			describeModuleConfigResponse.RequestId = _ctx.StringValue("DescribeModuleConfig.RequestId");
 			describeModuleConfigResponse.Success = _ctx.BooleanValue("DescribeModuleConfig.Success");
 			describeModuleConfigResponse.Count = _ctx.IntegerValue("DescribeModuleConfig.Count");
-			describeModuleConfigResponse.HttpStatusCode = _ctx.IntegerValue("DescribeModuleConfig.HttpStatusCode");
 
 			List<DescribeModuleConfigResponse.DescribeModuleConfig_ModuleConfig> describeModuleConfigResponse_moduleConfigList = new List<DescribeModuleConfigResponse.DescribeModuleConfig_ModuleConfig>();
 			for (int i = 0; i < _ctx.Length("DescribeModuleConfig.ModuleConfigList.Length"); i++) {
 				DescribeModuleConfigResponse.DescribeModuleConfig_ModuleConfig moduleConfig = new DescribeModuleConfigResponse.DescribeModuleConfig_ModuleConfig();
-				moduleConfig.ConfigName = _ctx.StringValue("DescribeModuleConfig.ModuleConfigList["+ i +"].ConfigName");
 				moduleConfig.ModuleName = _ctx.StringValue("DescribeModuleConfig.ModuleConfigList["+ i +"].ModuleName");
+				moduleConfig.ConfigName = _ctx.StringValue("DescribeModuleConfig.ModuleConfigList["+ i +"].ConfigName");
 
 				List<DescribeModuleConfigResponse.DescribeModuleConfig_ModuleConfig.DescribeModuleConfig_Item> moduleConfig_items = new List<DescribeModuleConfigResponse.DescribeModuleConfig_ModuleConfig.DescribeModuleConfig_Item>();
 				for (int j = 0; j < _ctx.Length("DescribeModuleConfig.ModuleConfigList["+ i +"].Items.Length"); j++) {
 					DescribeModuleConfigResponse.DescribeModuleConfig_ModuleConfig.DescribeModuleConfig_Item item = new DescribeModuleConfigResponse.DescribeModuleConfig_ModuleConfig.DescribeModuleConfig_Item();
-					item.InstanceId = _ctx.StringValue("DescribeModuleConfig.ModuleConfigList["+ i +"].Items["+ j +"].InstanceId");
-					item.InstanceName = _ctx.StringValue("DescribeModuleConfig.ModuleConfigList["+ i +"].Items["+ j +"].InstanceName");
-					item.GroupId = _ctx.IntegerValue("DescribeModuleConfig.ModuleConfigList["+ i +"].Items["+ j +"].GroupId");
-					item.Ip = _ctx.StringValue("DescribeModuleConfig.ModuleConfigList["+ i +"].Items["+ j +"].Ip");
-					item.Region = _ctx.StringValue("DescribeModuleConfig.ModuleConfigList["+ i +"].Items["+ j +"].Region");
 					item.Uuid = _ctx.StringValue("DescribeModuleConfig.ModuleConfigList["+ i +"].Items["+ j +"].Uuid");
+					item.GroupId = _ctx.IntegerValue("DescribeModuleConfig.ModuleConfigList["+ i +"].Items["+ j +"].GroupId");
+					item.InstanceName = _ctx.StringValue("DescribeModuleConfig.ModuleConfigList["+ i +"].Items["+ j +"].InstanceName");
+					item.Region = _ctx.StringValue("DescribeModuleConfig.ModuleConfigList["+ i +"].Items["+ j +"].Region");
+					item.Ip = _ctx.StringValue("DescribeModuleConfig.ModuleConfigList["+ i +"].Items["+ j +"].Ip");
+					item.InstanceId = _ctx.StringValue("DescribeModuleConfig.ModuleConfigList["+ i +"].Items["+ j +"].InstanceId");
 
 					moduleConfig_items.Add(item);
 				}

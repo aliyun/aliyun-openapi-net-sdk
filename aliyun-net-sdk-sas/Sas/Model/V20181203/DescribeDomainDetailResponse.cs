@@ -25,29 +25,17 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeDomainDetailResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string domain;
 
-		private string rootDomain;
+		private string requestId;
 
 		private int? vulCount;
 
 		private int? alarmCount;
 
-		private List<DescribeDomainDetail_DomainDetailItem> domainDetailItems;
+		private string rootDomain;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeDomainDetail_DomainDetailItem> domainDetailItems;
 
 		public string Domain
 		{
@@ -61,15 +49,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string RootDomain
+		public string RequestId
 		{
 			get
 			{
-				return rootDomain;
+				return requestId;
 			}
 			set	
 			{
-				rootDomain = value;
+				requestId = value;
 			}
 		}
 
@@ -97,6 +85,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public string RootDomain
+		{
+			get
+			{
+				return rootDomain;
+			}
+			set	
+			{
+				rootDomain = value;
+			}
+		}
+
 		public List<DescribeDomainDetail_DomainDetailItem> DomainDetailItems
 		{
 			get
@@ -112,43 +112,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeDomainDetail_DomainDetailItem
 		{
 
-			private string internetIp;
-
-			private string instanceId;
-
 			private string uuid;
 
-			private string assetType;
-
-			private string instanceName;
+			private string internetIp;
 
 			private string machineIp;
 
+			private string instanceName;
+
+			private string instanceId;
+
 			private string intranetIp;
 
-			public string InternetIp
-			{
-				get
-				{
-					return internetIp;
-				}
-				set	
-				{
-					internetIp = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private string assetType;
 
 			public string Uuid
 			{
@@ -162,27 +138,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string AssetType
+			public string InternetIp
 			{
 				get
 				{
-					return assetType;
+					return internetIp;
 				}
 				set	
 				{
-					assetType = value;
-				}
-			}
-
-			public string InstanceName
-			{
-				get
-				{
-					return instanceName;
-				}
-				set	
-				{
-					instanceName = value;
+					internetIp = value;
 				}
 			}
 
@@ -198,6 +162,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
 			public string IntranetIp
 			{
 				get
@@ -207,6 +195,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					intranetIp = value;
+				}
+			}
+
+			public string AssetType
+			{
+				get
+				{
+					return assetType;
+				}
+				set	
+				{
+					assetType = value;
 				}
 			}
 		}

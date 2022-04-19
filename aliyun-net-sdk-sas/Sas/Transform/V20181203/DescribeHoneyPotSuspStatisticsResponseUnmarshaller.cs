@@ -36,12 +36,12 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			List<DescribeHoneyPotSuspStatisticsResponse.DescribeHoneyPotSuspStatistics_SuspHoneyPotStatisticsResponseItem> describeHoneyPotSuspStatisticsResponse_suspHoneyPotStatisticsResponse = new List<DescribeHoneyPotSuspStatisticsResponse.DescribeHoneyPotSuspStatistics_SuspHoneyPotStatisticsResponseItem>();
 			for (int i = 0; i < _ctx.Length("DescribeHoneyPotSuspStatistics.SuspHoneyPotStatisticsResponse.Length"); i++) {
 				DescribeHoneyPotSuspStatisticsResponse.DescribeHoneyPotSuspStatistics_SuspHoneyPotStatisticsResponseItem suspHoneyPotStatisticsResponseItem = new DescribeHoneyPotSuspStatisticsResponse.DescribeHoneyPotSuspStatistics_SuspHoneyPotStatisticsResponseItem();
-				suspHoneyPotStatisticsResponseItem.Count = _ctx.IntegerValue("DescribeHoneyPotSuspStatistics.SuspHoneyPotStatisticsResponse["+ i +"].Count");
 				suspHoneyPotStatisticsResponseItem.Type = _ctx.StringValue("DescribeHoneyPotSuspStatistics.SuspHoneyPotStatisticsResponse["+ i +"].Type");
-				suspHoneyPotStatisticsResponseItem.InstanceId = _ctx.StringValue("DescribeHoneyPotSuspStatistics.SuspHoneyPotStatisticsResponse["+ i +"].InstanceId");
-				suspHoneyPotStatisticsResponseItem.InstanceName = _ctx.StringValue("DescribeHoneyPotSuspStatistics.SuspHoneyPotStatisticsResponse["+ i +"].InstanceName");
 				suspHoneyPotStatisticsResponseItem.VpcId = _ctx.StringValue("DescribeHoneyPotSuspStatistics.SuspHoneyPotStatisticsResponse["+ i +"].VpcId");
 				suspHoneyPotStatisticsResponseItem.VpcName = _ctx.StringValue("DescribeHoneyPotSuspStatistics.SuspHoneyPotStatisticsResponse["+ i +"].VpcName");
+				suspHoneyPotStatisticsResponseItem.InstanceName = _ctx.StringValue("DescribeHoneyPotSuspStatistics.SuspHoneyPotStatisticsResponse["+ i +"].InstanceName");
+				suspHoneyPotStatisticsResponseItem.InstanceId = _ctx.StringValue("DescribeHoneyPotSuspStatistics.SuspHoneyPotStatisticsResponse["+ i +"].InstanceId");
+				suspHoneyPotStatisticsResponseItem.Count = _ctx.IntegerValue("DescribeHoneyPotSuspStatistics.SuspHoneyPotStatisticsResponse["+ i +"].Count");
 
 				describeHoneyPotSuspStatisticsResponse_suspHoneyPotStatisticsResponse.Add(suspHoneyPotStatisticsResponseItem);
 			}

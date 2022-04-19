@@ -25,39 +25,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeCheckWarningsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? count;
+		private int? currentPage;
 
 		private int? pageSize;
 
+		private string requestId;
+
 		private int? totalCount;
 
-		private int? currentPage;
+		private int? count;
 
 		private List<DescribeCheckWarnings_CheckWarning> checkWarnings;
 
-		public string RequestId
+		public int? CurrentPage
 		{
 			get
 			{
-				return requestId;
+				return currentPage;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public int? Count
-		{
-			get
-			{
-				return count;
-			}
-			set	
-			{
-				count = value;
+				currentPage = value;
 			}
 		}
 
@@ -73,6 +61,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public int? TotalCount
 		{
 			get
@@ -85,15 +85,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public int? CurrentPage
+		public int? Count
 		{
 			get
 			{
-				return currentPage;
+				return count;
 			}
 			set	
 			{
-				currentPage = value;
+				count = value;
 			}
 		}
 
@@ -112,41 +112,29 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeCheckWarnings_CheckWarning
 		{
 
-			private string uuid;
-
-			private long? checkId;
+			private int? status;
 
 			private long? checkWarningId;
 
-			private string level;
+			private string type;
+
+			private string uuid;
 
 			private string item;
 
-			private string type;
+			private long? checkId;
 
-			private int? status;
+			private string level;
 
-			public string Uuid
+			public int? Status
 			{
 				get
 				{
-					return uuid;
+					return status;
 				}
 				set	
 				{
-					uuid = value;
-				}
-			}
-
-			public long? CheckId
-			{
-				get
-				{
-					return checkId;
-				}
-				set	
-				{
-					checkId = value;
+					status = value;
 				}
 			}
 
@@ -162,15 +150,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Level
+			public string Type
 			{
 				get
 				{
-					return level;
+					return type;
 				}
 				set	
 				{
-					level = value;
+					type = value;
+				}
+			}
+
+			public string Uuid
+			{
+				get
+				{
+					return uuid;
+				}
+				set	
+				{
+					uuid = value;
 				}
 			}
 
@@ -186,27 +186,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Type
+			public long? CheckId
 			{
 				get
 				{
-					return type;
+					return checkId;
 				}
 				set	
 				{
-					type = value;
+					checkId = value;
 				}
 			}
 
-			public int? Status
+			public string Level
 			{
 				get
 				{
-					return status;
+					return level;
 				}
 				set	
 				{
-					status = value;
+					level = value;
 				}
 			}
 		}

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class ModifyCreateVulWhitelistRequest : RpcAcsRequest<ModifyCreateVulWhitelistResponse>
     {
         public ModifyCreateVulWhitelistRequest()
-            : base("Sas", "2018-12-03", "ModifyCreateVulWhitelist", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "ModifyCreateVulWhitelist")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,6 +44,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		private string reason;
 
 		private string whitelist;
+
+		private string targetInfo;
 
 		public string Reason
 		{
@@ -67,6 +70,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				whitelist = value;
 				DictionaryUtil.Add(QueryParameters, "Whitelist", value);
+			}
+		}
+
+		public string TargetInfo
+		{
+			get
+			{
+				return targetInfo;
+			}
+			set	
+			{
+				targetInfo = value;
+				DictionaryUtil.Add(QueryParameters, "TargetInfo", value);
 			}
 		}
 

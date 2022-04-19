@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class DescribePropertySoftwareDetailRequest : RpcAcsRequest<DescribePropertySoftwareDetailResponse>
     {
         public DescribePropertySoftwareDetailRequest()
-            : base("Sas", "2018-12-03", "DescribePropertySoftwareDetail", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "DescribePropertySoftwareDetail")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -48,9 +49,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string path;
 
+		private long? installTimeStart;
+
 		private int? pageSize;
 
+		private long? installTimeEnd;
+
 		private int? currentPage;
+
+		private string extend;
 
 		private string name;
 
@@ -106,6 +113,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public long? InstallTimeStart
+		{
+			get
+			{
+				return installTimeStart;
+			}
+			set	
+			{
+				installTimeStart = value;
+				DictionaryUtil.Add(QueryParameters, "InstallTimeStart", value.ToString());
+			}
+		}
+
 		public int? PageSize
 		{
 			get
@@ -119,6 +139,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public long? InstallTimeEnd
+		{
+			get
+			{
+				return installTimeEnd;
+			}
+			set	
+			{
+				installTimeEnd = value;
+				DictionaryUtil.Add(QueryParameters, "InstallTimeEnd", value.ToString());
+			}
+		}
+
 		public int? CurrentPage
 		{
 			get
@@ -129,6 +162,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				currentPage = value;
 				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string Extend
+		{
+			get
+			{
+				return extend;
+			}
+			set	
+			{
+				extend = value;
+				DictionaryUtil.Add(QueryParameters, "Extend", value);
 			}
 		}
 

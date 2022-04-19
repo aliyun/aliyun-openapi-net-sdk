@@ -31,24 +31,24 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeImageGroupedVulListResponse describeImageGroupedVulListResponse = new DescribeImageGroupedVulListResponse();
 
 			describeImageGroupedVulListResponse.HttpResponse = _ctx.HttpResponse;
+			describeImageGroupedVulListResponse.CurrentPage = _ctx.IntegerValue("DescribeImageGroupedVulList.CurrentPage");
 			describeImageGroupedVulListResponse.RequestId = _ctx.StringValue("DescribeImageGroupedVulList.RequestId");
 			describeImageGroupedVulListResponse.PageSize = _ctx.IntegerValue("DescribeImageGroupedVulList.PageSize");
-			describeImageGroupedVulListResponse.CurrentPage = _ctx.IntegerValue("DescribeImageGroupedVulList.CurrentPage");
 			describeImageGroupedVulListResponse.TotalCount = _ctx.IntegerValue("DescribeImageGroupedVulList.TotalCount");
 
 			List<DescribeImageGroupedVulListResponse.DescribeImageGroupedVulList_GroupedVulItem> describeImageGroupedVulListResponse_groupedVulItems = new List<DescribeImageGroupedVulListResponse.DescribeImageGroupedVulList_GroupedVulItem>();
 			for (int i = 0; i < _ctx.Length("DescribeImageGroupedVulList.GroupedVulItems.Length"); i++) {
 				DescribeImageGroupedVulListResponse.DescribeImageGroupedVulList_GroupedVulItem groupedVulItem = new DescribeImageGroupedVulListResponse.DescribeImageGroupedVulList_GroupedVulItem();
-				groupedVulItem.Name = _ctx.StringValue("DescribeImageGroupedVulList.GroupedVulItems["+ i +"].Name");
-				groupedVulItem.AliasName = _ctx.StringValue("DescribeImageGroupedVulList.GroupedVulItems["+ i +"].AliasName");
-				groupedVulItem.Type = _ctx.StringValue("DescribeImageGroupedVulList.GroupedVulItems["+ i +"].Type");
 				groupedVulItem.Status = _ctx.IntegerValue("DescribeImageGroupedVulList.GroupedVulItems["+ i +"].Status");
-				groupedVulItem.LastScanTime = _ctx.LongValue("DescribeImageGroupedVulList.GroupedVulItems["+ i +"].LastScanTime");
-				groupedVulItem.GmtLast = _ctx.LongValue("DescribeImageGroupedVulList.GroupedVulItems["+ i +"].GmtLast");
-				groupedVulItem.AsapCount = _ctx.IntegerValue("DescribeImageGroupedVulList.GroupedVulItems["+ i +"].AsapCount");
-				groupedVulItem.LaterCount = _ctx.IntegerValue("DescribeImageGroupedVulList.GroupedVulItems["+ i +"].LaterCount");
+				groupedVulItem.Type = _ctx.StringValue("DescribeImageGroupedVulList.GroupedVulItems["+ i +"].Type");
 				groupedVulItem.NntfCount = _ctx.IntegerValue("DescribeImageGroupedVulList.GroupedVulItems["+ i +"].NntfCount");
+				groupedVulItem.GmtLast = _ctx.LongValue("DescribeImageGroupedVulList.GroupedVulItems["+ i +"].GmtLast");
+				groupedVulItem.LastScanTime = _ctx.LongValue("DescribeImageGroupedVulList.GroupedVulItems["+ i +"].LastScanTime");
 				groupedVulItem.Tags = _ctx.StringValue("DescribeImageGroupedVulList.GroupedVulItems["+ i +"].Tags");
+				groupedVulItem.LaterCount = _ctx.IntegerValue("DescribeImageGroupedVulList.GroupedVulItems["+ i +"].LaterCount");
+				groupedVulItem.AliasName = _ctx.StringValue("DescribeImageGroupedVulList.GroupedVulItems["+ i +"].AliasName");
+				groupedVulItem.Name = _ctx.StringValue("DescribeImageGroupedVulList.GroupedVulItems["+ i +"].Name");
+				groupedVulItem.AsapCount = _ctx.IntegerValue("DescribeImageGroupedVulList.GroupedVulItems["+ i +"].AsapCount");
 
 				describeImageGroupedVulListResponse_groupedVulItems.Add(groupedVulItem);
 			}

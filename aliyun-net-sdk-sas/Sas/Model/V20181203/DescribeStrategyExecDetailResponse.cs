@@ -25,45 +25,33 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeStrategyExecDetailResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string startTime;
+		private int? inProcessCount;
 
 		private string endTime;
 
-		private string source;
+		private string startTime;
 
 		private string percent;
 
-		private int? successCount;
+		private string requestId;
 
 		private int? failCount;
 
-		private int? inProcessCount;
+		private string source;
+
+		private int? successCount;
 
 		private List<DescribeStrategyExecDetail_FailedEcs> failedEcsList;
 
-		public string RequestId
+		public int? InProcessCount
 		{
 			get
 			{
-				return requestId;
+				return inProcessCount;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
+				inProcessCount = value;
 			}
 		}
 
@@ -79,15 +67,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string Source
+		public string StartTime
 		{
 			get
 			{
-				return source;
+				return startTime;
 			}
 			set	
 			{
-				source = value;
+				startTime = value;
 			}
 		}
 
@@ -103,15 +91,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public int? SuccessCount
+		public string RequestId
 		{
 			get
 			{
-				return successCount;
+				return requestId;
 			}
 			set	
 			{
-				successCount = value;
+				requestId = value;
 			}
 		}
 
@@ -127,15 +115,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public int? InProcessCount
+		public string Source
 		{
 			get
 			{
-				return inProcessCount;
+				return source;
 			}
 			set	
 			{
-				inProcessCount = value;
+				source = value;
+			}
+		}
+
+		public int? SuccessCount
+		{
+			get
+			{
+				return successCount;
+			}
+			set	
+			{
+				successCount = value;
 			}
 		}
 
@@ -154,13 +154,51 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeStrategyExecDetail_FailedEcs
 		{
 
+			private string iP;
+
+			private string internetIp;
+
+			private string intranetIp;
+
 			private string reason;
 
 			private string instanceName;
 
-			private string iP;
+			public string IP
+			{
+				get
+				{
+					return iP;
+				}
+				set	
+				{
+					iP = value;
+				}
+			}
 
-			private string intranetIp;
+			public string InternetIp
+			{
+				get
+				{
+					return internetIp;
+				}
+				set	
+				{
+					internetIp = value;
+				}
+			}
+
+			public string IntranetIp
+			{
+				get
+				{
+					return intranetIp;
+				}
+				set	
+				{
+					intranetIp = value;
+				}
+			}
 
 			public string Reason
 			{
@@ -183,30 +221,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					instanceName = value;
-				}
-			}
-
-			public string IP
-			{
-				get
-				{
-					return iP;
-				}
-				set	
-				{
-					iP = value;
-				}
-			}
-
-			public string IntranetIp
-			{
-				get
-				{
-					return intranetIp;
-				}
-				set	
-				{
-					intranetIp = value;
 				}
 			}
 		}

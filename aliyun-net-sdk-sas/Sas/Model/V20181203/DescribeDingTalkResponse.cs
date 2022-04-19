@@ -70,111 +70,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeDingTalk_ActionListArr
 		{
 
-			private long? gmtModified;
-
-			private int? id;
-
-			private long? aliUid;
-
-			private long? gmtCreate;
-
-			private string url;
-
-			private int? intervalTime;
-
-			private string actionName;
-
 			private int? status;
 
 			private string configList;
 
-			private string groupIdList;
+			private long? gmtCreate;
+
+			private string actionName;
+
+			private string url;
+
+			private long? aliUid;
 
 			private string dingTalkLang;
 
-			public long? GmtModified
-			{
-				get
-				{
-					return gmtModified;
-				}
-				set	
-				{
-					gmtModified = value;
-				}
-			}
+			private int? intervalTime;
 
-			public int? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private long? gmtModified;
 
-			public long? AliUid
-			{
-				get
-				{
-					return aliUid;
-				}
-				set	
-				{
-					aliUid = value;
-				}
-			}
+			private string groupIdList;
 
-			public long? GmtCreate
-			{
-				get
-				{
-					return gmtCreate;
-				}
-				set	
-				{
-					gmtCreate = value;
-				}
-			}
-
-			public string Url
-			{
-				get
-				{
-					return url;
-				}
-				set	
-				{
-					url = value;
-				}
-			}
-
-			public int? IntervalTime
-			{
-				get
-				{
-					return intervalTime;
-				}
-				set	
-				{
-					intervalTime = value;
-				}
-			}
-
-			public string ActionName
-			{
-				get
-				{
-					return actionName;
-				}
-				set	
-				{
-					actionName = value;
-				}
-			}
+			private int? id;
 
 			public int? Status
 			{
@@ -200,15 +116,51 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string GroupIdList
+			public long? GmtCreate
 			{
 				get
 				{
-					return groupIdList;
+					return gmtCreate;
 				}
 				set	
 				{
-					groupIdList = value;
+					gmtCreate = value;
+				}
+			}
+
+			public string ActionName
+			{
+				get
+				{
+					return actionName;
+				}
+				set	
+				{
+					actionName = value;
+				}
+			}
+
+			public string Url
+			{
+				get
+				{
+					return url;
+				}
+				set	
+				{
+					url = value;
+				}
+			}
+
+			public long? AliUid
+			{
+				get
+				{
+					return aliUid;
+				}
+				set	
+				{
+					aliUid = value;
 				}
 			}
 
@@ -223,16 +175,76 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					dingTalkLang = value;
 				}
 			}
+
+			public int? IntervalTime
+			{
+				get
+				{
+					return intervalTime;
+				}
+				set	
+				{
+					intervalTime = value;
+				}
+			}
+
+			public long? GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
+				}
+			}
+
+			public string GroupIdList
+			{
+				get
+				{
+					return groupIdList;
+				}
+				set	
+				{
+					groupIdList = value;
+				}
+			}
+
+			public int? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
 		}
 
 		public class DescribeDingTalk_PageInfo
 		{
 
+			private int? currentPage;
+
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? currentPage;
+			public int? CurrentPage
+			{
+				get
+				{
+					return currentPage;
+				}
+				set	
+				{
+					currentPage = value;
+				}
+			}
 
 			public int? PageSize
 			{
@@ -255,18 +267,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					totalCount = value;
-				}
-			}
-
-			public int? CurrentPage
-			{
-				get
-				{
-					return currentPage;
-				}
-				set	
-				{
-					currentPage = value;
 				}
 			}
 		}

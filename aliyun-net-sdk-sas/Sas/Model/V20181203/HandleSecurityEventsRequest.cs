@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class HandleSecurityEventsRequest : RpcAcsRequest<HandleSecurityEventsResponse>
     {
         public HandleSecurityEventsRequest()
-            : base("Sas", "2018-12-03", "HandleSecurityEvents", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "HandleSecurityEvents")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,8 +42,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         }
 
 		private string markMissParam;
-
-		private long? resourceOwnerId;
 
 		private List<string> securityEventIdss = new List<string>(){ };
 
@@ -64,19 +63,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				markMissParam = value;
 				DictionaryUtil.Add(QueryParameters, "MarkMissParam", value);
-			}
-		}
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 

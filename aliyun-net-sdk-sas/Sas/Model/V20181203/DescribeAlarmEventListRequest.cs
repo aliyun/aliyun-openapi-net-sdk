@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class DescribeAlarmEventListRequest : RpcAcsRequest<DescribeAlarmEventListResponse>
     {
         public DescribeAlarmEventListRequest()
-            : base("Sas", "2018-12-03", "DescribeAlarmEventList", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "DescribeAlarmEventList")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,23 +41,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			Method = MethodType.POST;
         }
 
-		private string targetType;
-
 		private string alarmEventType;
 
 		private string remark;
-
-		private string containerFieldName;
 
 		private string alarmEventName;
 
 		private string sourceIp;
 
-		private string containerFieldValue;
-
 		private string pageSize;
 
 		private string from;
+
+		private string tacticId;
 
 		private string lang;
 
@@ -66,24 +63,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private int? currentPage;
 
-		private string clusterId;
-
 		private List<string> operateErrorCodeLists = new List<string>(){ };
 
 		private string levels;
-
-		public string TargetType
-		{
-			get
-			{
-				return targetType;
-			}
-			set	
-			{
-				targetType = value;
-				DictionaryUtil.Add(QueryParameters, "TargetType", value);
-			}
-		}
 
 		public string AlarmEventType
 		{
@@ -108,19 +90,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				remark = value;
 				DictionaryUtil.Add(QueryParameters, "Remark", value);
-			}
-		}
-
-		public string ContainerFieldName
-		{
-			get
-			{
-				return containerFieldName;
-			}
-			set	
-			{
-				containerFieldName = value;
-				DictionaryUtil.Add(QueryParameters, "ContainerFieldName", value);
 			}
 		}
 
@@ -150,19 +119,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string ContainerFieldValue
-		{
-			get
-			{
-				return containerFieldValue;
-			}
-			set	
-			{
-				containerFieldValue = value;
-				DictionaryUtil.Add(QueryParameters, "ContainerFieldValue", value);
-			}
-		}
-
 		public string PageSize
 		{
 			get
@@ -186,6 +142,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				from = value;
 				DictionaryUtil.Add(QueryParameters, "From", value);
+			}
+		}
+
+		public string TacticId
+		{
+			get
+			{
+				return tacticId;
+			}
+			set	
+			{
+				tacticId = value;
+				DictionaryUtil.Add(QueryParameters, "TacticId", value);
 			}
 		}
 
@@ -238,19 +207,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				currentPage = value;
 				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
-
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
 			}
 		}
 

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class DescribeStrategyExecDetailRequest : RpcAcsRequest<DescribeStrategyExecDetailResponse>
     {
         public DescribeStrategyExecDetailRequest()
-            : base("Sas", "2018-12-03", "DescribeStrategyExecDetail", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "DescribeStrategyExecDetail")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,6 +42,10 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         }
 
 		private string sourceIp;
+
+		private int? pageSize;
+
+		private int? currentPage;
 
 		private int? strategyId;
 
@@ -54,6 +59,32 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				sourceIp = value;
 				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 

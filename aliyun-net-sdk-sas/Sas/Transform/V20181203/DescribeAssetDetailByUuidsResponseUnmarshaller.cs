@@ -37,20 +37,20 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			for (int i = 0; i < _ctx.Length("DescribeAssetDetailByUuids.AssetList.Length"); i++) {
 				DescribeAssetDetailByUuidsResponse.DescribeAssetDetailByUuids_Asset asset = new DescribeAssetDetailByUuidsResponse.DescribeAssetDetailByUuids_Asset();
 				asset.InternetIp = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].InternetIp");
-				asset.IntranetIp = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].IntranetIp");
-				asset.InstanceName = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].InstanceName");
-				asset.InstanceId = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].InstanceId");
-				asset.Ip = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].Ip");
-				asset.Uuid = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].Uuid");
-				asset.AssetType = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].AssetType");
-				asset.Os = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].Os");
-				asset.ClientStatus = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].ClientStatus");
-				asset.RegionId = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].RegionId");
-				asset.Region = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].Region");
-				asset.RegionName = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].RegionName");
-				asset.VpcInstanceId = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].VpcInstanceId");
 				asset.OsName = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].OsName");
+				asset.Ip = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].Ip");
+				asset.Os = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].Os");
+				asset.InstanceId = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].InstanceId");
+				asset.ClientStatus = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].ClientStatus");
+				asset.VpcInstanceId = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].VpcInstanceId");
+				asset.IntranetIp = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].IntranetIp");
+				asset.AssetType = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].AssetType");
+				asset.RegionId = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].RegionId");
+				asset.Uuid = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].Uuid");
 				asset.Flag = _ctx.IntegerValue("DescribeAssetDetailByUuids.AssetList["+ i +"].Flag");
+				asset.RegionName = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].RegionName");
+				asset.InstanceName = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].InstanceName");
+				asset.Region = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].Region");
 
 				describeAssetDetailByUuidsResponse_assetList.Add(asset);
 			}

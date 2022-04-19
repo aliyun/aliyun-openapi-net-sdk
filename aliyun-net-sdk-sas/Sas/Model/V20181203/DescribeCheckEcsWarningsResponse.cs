@@ -25,23 +25,23 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeCheckEcsWarningsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string sasVersion;
 
 		private string canTry;
 
-		private string sasVersion;
-
 		private string weakPasswordCount;
 
-		public string RequestId
+		private string requestId;
+
+		public string SasVersion
 		{
 			get
 			{
-				return requestId;
+				return sasVersion;
 			}
 			set	
 			{
-				requestId = value;
+				sasVersion = value;
 			}
 		}
 
@@ -57,18 +57,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string SasVersion
-		{
-			get
-			{
-				return sasVersion;
-			}
-			set	
-			{
-				sasVersion = value;
-			}
-		}
-
 		public string WeakPasswordCount
 		{
 			get
@@ -78,6 +66,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				weakPasswordCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

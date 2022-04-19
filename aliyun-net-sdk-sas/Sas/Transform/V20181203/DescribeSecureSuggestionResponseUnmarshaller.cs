@@ -31,21 +31,21 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeSecureSuggestionResponse describeSecureSuggestionResponse = new DescribeSecureSuggestionResponse();
 
 			describeSecureSuggestionResponse.HttpResponse = _ctx.HttpResponse;
-			describeSecureSuggestionResponse.RequestId = _ctx.StringValue("DescribeSecureSuggestion.RequestId");
 			describeSecureSuggestionResponse.TotalCount = _ctx.IntegerValue("DescribeSecureSuggestion.TotalCount");
+			describeSecureSuggestionResponse.RequestId = _ctx.StringValue("DescribeSecureSuggestion.RequestId");
 
 			List<DescribeSecureSuggestionResponse.DescribeSecureSuggestion_Suggestion> describeSecureSuggestionResponse_suggestions = new List<DescribeSecureSuggestionResponse.DescribeSecureSuggestion_Suggestion>();
 			for (int i = 0; i < _ctx.Length("DescribeSecureSuggestion.Suggestions.Length"); i++) {
 				DescribeSecureSuggestionResponse.DescribeSecureSuggestion_Suggestion suggestion = new DescribeSecureSuggestionResponse.DescribeSecureSuggestion_Suggestion();
-				suggestion.SuggestType = _ctx.StringValue("DescribeSecureSuggestion.Suggestions["+ i +"].SuggestType");
 				suggestion.Points = _ctx.IntegerValue("DescribeSecureSuggestion.Suggestions["+ i +"].Points");
+				suggestion.SuggestType = _ctx.StringValue("DescribeSecureSuggestion.Suggestions["+ i +"].SuggestType");
 
 				List<DescribeSecureSuggestionResponse.DescribeSecureSuggestion_Suggestion.DescribeSecureSuggestion_DetailItem> suggestion_detail = new List<DescribeSecureSuggestionResponse.DescribeSecureSuggestion_Suggestion.DescribeSecureSuggestion_DetailItem>();
 				for (int j = 0; j < _ctx.Length("DescribeSecureSuggestion.Suggestions["+ i +"].Detail.Length"); j++) {
 					DescribeSecureSuggestionResponse.DescribeSecureSuggestion_Suggestion.DescribeSecureSuggestion_DetailItem detailItem = new DescribeSecureSuggestionResponse.DescribeSecureSuggestion_Suggestion.DescribeSecureSuggestion_DetailItem();
+					detailItem.Title = _ctx.StringValue("DescribeSecureSuggestion.Suggestions["+ i +"].Detail["+ j +"].Title");
 					detailItem.Description = _ctx.StringValue("DescribeSecureSuggestion.Suggestions["+ i +"].Detail["+ j +"].Description");
 					detailItem.SubType = _ctx.StringValue("DescribeSecureSuggestion.Suggestions["+ i +"].Detail["+ j +"].SubType");
-					detailItem.Title = _ctx.StringValue("DescribeSecureSuggestion.Suggestions["+ i +"].Detail["+ j +"].Title");
 
 					suggestion_detail.Add(detailItem);
 				}

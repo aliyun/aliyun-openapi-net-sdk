@@ -60,6 +60,10 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private long? usageStorageByte;
 
+			private long? ecsUsageStorageByte;
+
+			private long? uniUsageStorageByte;
+
 			private int? overflow;
 
 			public long? BuyStorageByte
@@ -83,6 +87,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					usageStorageByte = value;
+				}
+			}
+
+			public long? EcsUsageStorageByte
+			{
+				get
+				{
+					return ecsUsageStorageByte;
+				}
+				set	
+				{
+					ecsUsageStorageByte = value;
+				}
+			}
+
+			public long? UniUsageStorageByte
+			{
+				get
+				{
+					return uniUsageStorageByte;
+				}
+				set	
+				{
+					uniUsageStorageByte = value;
 				}
 			}
 

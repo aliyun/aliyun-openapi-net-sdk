@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class ModifyBackupPolicyRequest : RpcAcsRequest<ModifyBackupPolicyResponse>
     {
         public ModifyBackupPolicyRequest()
-            : base("Sas", "2018-12-03", "ModifyBackupPolicy", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "ModifyBackupPolicy")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,10 +40,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
             }
 			Method = MethodType.POST;
         }
-
-		private long? resourceOwnerId;
-
-		private string sourceIp;
 
 		private List<string> uuidLists = new List<string>(){ };
 
@@ -55,32 +52,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		private string policyRegionId;
 
 		private string name;
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string SourceIp
-		{
-			get
-			{
-				return sourceIp;
-			}
-			set	
-			{
-				sourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
-			}
-		}
 
 		public List<string> UuidLists
 		{

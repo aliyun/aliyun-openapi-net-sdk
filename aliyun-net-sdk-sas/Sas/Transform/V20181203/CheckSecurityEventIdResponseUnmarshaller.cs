@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			CheckSecurityEventIdResponse checkSecurityEventIdResponse = new CheckSecurityEventIdResponse();
 
 			checkSecurityEventIdResponse.HttpResponse = _ctx.HttpResponse;
-			checkSecurityEventIdResponse.RequestId = _ctx.StringValue("CheckSecurityEventId.RequestId");
 			checkSecurityEventIdResponse.Data = _ctx.BooleanValue("CheckSecurityEventId.Data");
+			checkSecurityEventIdResponse.RequestId = _ctx.StringValue("CheckSecurityEventId.RequestId");
         
 			return checkSecurityEventIdResponse;
         }

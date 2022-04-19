@@ -36,24 +36,25 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			List<DescribeStrategyResponse.DescribeStrategy_Strategy> describeStrategyResponse_strategies = new List<DescribeStrategyResponse.DescribeStrategy_Strategy>();
 			for (int i = 0; i < _ctx.Length("DescribeStrategy.Strategies.Length"); i++) {
 				DescribeStrategyResponse.DescribeStrategy_Strategy strategy = new DescribeStrategyResponse.DescribeStrategy_Strategy();
-				strategy.CycleDays = _ctx.IntegerValue("DescribeStrategy.Strategies["+ i +"].CycleDays");
-				strategy.Id = _ctx.IntegerValue("DescribeStrategy.Strategies["+ i +"].Id");
-				strategy.CycleStartTime = _ctx.IntegerValue("DescribeStrategy.Strategies["+ i +"].CycleStartTime");
 				strategy.Type = _ctx.IntegerValue("DescribeStrategy.Strategies["+ i +"].Type");
-				strategy.Name = _ctx.StringValue("DescribeStrategy.Strategies["+ i +"].Name");
-				strategy.RiskCount = _ctx.IntegerValue("DescribeStrategy.Strategies["+ i +"].RiskCount");
-				strategy.EcsCount = _ctx.IntegerValue("DescribeStrategy.Strategies["+ i +"].EcsCount");
 				strategy.ExecStatus = _ctx.IntegerValue("DescribeStrategy.Strategies["+ i +"].ExecStatus");
-				strategy.ProcessRate = _ctx.IntegerValue("DescribeStrategy.Strategies["+ i +"].ProcessRate");
 				strategy.PassRate = _ctx.IntegerValue("DescribeStrategy.Strategies["+ i +"].PassRate");
 				strategy.AuthVersionList = _ctx.StringValue("DescribeStrategy.Strategies["+ i +"].AuthVersionList");
+				strategy.CycleStartTime = _ctx.IntegerValue("DescribeStrategy.Strategies["+ i +"].CycleStartTime");
+				strategy.CustomType = _ctx.StringValue("DescribeStrategy.Strategies["+ i +"].CustomType");
+				strategy.EcsCount = _ctx.IntegerValue("DescribeStrategy.Strategies["+ i +"].EcsCount");
+				strategy.ProcessRate = _ctx.IntegerValue("DescribeStrategy.Strategies["+ i +"].ProcessRate");
+				strategy.CycleDays = _ctx.IntegerValue("DescribeStrategy.Strategies["+ i +"].CycleDays");
+				strategy.RiskCount = _ctx.IntegerValue("DescribeStrategy.Strategies["+ i +"].RiskCount");
+				strategy.Name = _ctx.StringValue("DescribeStrategy.Strategies["+ i +"].Name");
+				strategy.Id = _ctx.IntegerValue("DescribeStrategy.Strategies["+ i +"].Id");
 
 				List<DescribeStrategyResponse.DescribeStrategy_Strategy.DescribeStrategy_ConfigTarget> strategy_configTargets = new List<DescribeStrategyResponse.DescribeStrategy_Strategy.DescribeStrategy_ConfigTarget>();
 				for (int j = 0; j < _ctx.Length("DescribeStrategy.Strategies["+ i +"].ConfigTargets.Length"); j++) {
 					DescribeStrategyResponse.DescribeStrategy_Strategy.DescribeStrategy_ConfigTarget configTarget = new DescribeStrategyResponse.DescribeStrategy_Strategy.DescribeStrategy_ConfigTarget();
 					configTarget.Flag = _ctx.StringValue("DescribeStrategy.Strategies["+ i +"].ConfigTargets["+ j +"].Flag");
-					configTarget.TargetType = _ctx.StringValue("DescribeStrategy.Strategies["+ i +"].ConfigTargets["+ j +"].TargetType");
 					configTarget.Target = _ctx.StringValue("DescribeStrategy.Strategies["+ i +"].ConfigTargets["+ j +"].Target");
+					configTarget.TargetType = _ctx.StringValue("DescribeStrategy.Strategies["+ i +"].ConfigTargets["+ j +"].TargetType");
 
 					strategy_configTargets.Add(configTarget);
 				}

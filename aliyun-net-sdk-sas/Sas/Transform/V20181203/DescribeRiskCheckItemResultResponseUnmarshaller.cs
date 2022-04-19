@@ -34,12 +34,12 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describeRiskCheckItemResultResponse.RequestId = _ctx.StringValue("DescribeRiskCheckItemResult.RequestId");
 
 			DescribeRiskCheckItemResultResponse.DescribeRiskCheckItemResult_PageContentResource pageContentResource = new DescribeRiskCheckItemResultResponse.DescribeRiskCheckItemResult_PageContentResource();
-			pageContentResource.ContentResource = _ctx.StringValue("DescribeRiskCheckItemResult.PageContentResource.ContentResource");
 			pageContentResource.CurrentPage = _ctx.IntegerValue("DescribeRiskCheckItemResult.PageContentResource.CurrentPage");
+			pageContentResource.ContentResource = _ctx.StringValue("DescribeRiskCheckItemResult.PageContentResource.ContentResource");
 			pageContentResource.PageSize = _ctx.IntegerValue("DescribeRiskCheckItemResult.PageContentResource.PageSize");
 			pageContentResource.TotalCount = _ctx.IntegerValue("DescribeRiskCheckItemResult.PageContentResource.TotalCount");
-			pageContentResource.Count = _ctx.IntegerValue("DescribeRiskCheckItemResult.PageContentResource.Count");
 			pageContentResource.PageCount = _ctx.IntegerValue("DescribeRiskCheckItemResult.PageContentResource.PageCount");
+			pageContentResource.Count = _ctx.IntegerValue("DescribeRiskCheckItemResult.PageContentResource.Count");
 			describeRiskCheckItemResultResponse.PageContentResource = pageContentResource;
         
 			return describeRiskCheckItemResultResponse;

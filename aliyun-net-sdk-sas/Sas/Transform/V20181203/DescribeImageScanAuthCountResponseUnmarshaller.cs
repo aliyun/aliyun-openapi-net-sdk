@@ -34,9 +34,9 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describeImageScanAuthCountResponse.RequestId = _ctx.StringValue("DescribeImageScanAuthCount.RequestId");
 
 			DescribeImageScanAuthCountResponse.DescribeImageScanAuthCount_ImageScan imageScan = new DescribeImageScanAuthCountResponse.DescribeImageScanAuthCount_ImageScan();
-			imageScan.InstanceId = _ctx.StringValue("DescribeImageScanAuthCount.ImageScan.InstanceId");
-			imageScan.ImageScanCapacity = _ctx.LongValue("DescribeImageScanAuthCount.ImageScan.ImageScanCapacity");
 			imageScan.ScanCount = _ctx.LongValue("DescribeImageScanAuthCount.ImageScan.ScanCount");
+			imageScan.ImageScanCapacity = _ctx.LongValue("DescribeImageScanAuthCount.ImageScan.ImageScanCapacity");
+			imageScan.InstanceId = _ctx.StringValue("DescribeImageScanAuthCount.ImageScan.InstanceId");
 			describeImageScanAuthCountResponse.ImageScan = imageScan;
         
 			return describeImageScanAuthCountResponse;

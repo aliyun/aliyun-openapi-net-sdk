@@ -90,6 +90,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private int? healthClientCount;
 
+			private string upgradeStatus;
+
 			private List<string> uuidList;
 
 			private List<string> remarkedUuidList;
@@ -217,6 +219,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					healthClientCount = value;
+				}
+			}
+
+			public string UpgradeStatus
+			{
+				get
+				{
+					return upgradeStatus;
+				}
+				set	
+				{
+					upgradeStatus = value;
 				}
 			}
 

@@ -36,10 +36,10 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			List<DescribeSearchConditionResponse.DescribeSearchCondition_Condition> describeSearchConditionResponse_conditionList = new List<DescribeSearchConditionResponse.DescribeSearchCondition_Condition>();
 			for (int i = 0; i < _ctx.Length("DescribeSearchCondition.ConditionList.Length"); i++) {
 				DescribeSearchConditionResponse.DescribeSearchCondition_Condition condition = new DescribeSearchConditionResponse.DescribeSearchCondition_Condition();
+				condition.ConditionType = _ctx.StringValue("DescribeSearchCondition.ConditionList["+ i +"].ConditionType");
+				condition.NameKey = _ctx.StringValue("DescribeSearchCondition.ConditionList["+ i +"].NameKey");
 				condition.Name = _ctx.StringValue("DescribeSearchCondition.ConditionList["+ i +"].Name");
 				condition.FilterConditions = _ctx.StringValue("DescribeSearchCondition.ConditionList["+ i +"].FilterConditions");
-				condition.NameKey = _ctx.StringValue("DescribeSearchCondition.ConditionList["+ i +"].NameKey");
-				condition.ConditionType = _ctx.StringValue("DescribeSearchCondition.ConditionList["+ i +"].ConditionType");
 
 				describeSearchConditionResponse_conditionList.Add(condition);
 			}

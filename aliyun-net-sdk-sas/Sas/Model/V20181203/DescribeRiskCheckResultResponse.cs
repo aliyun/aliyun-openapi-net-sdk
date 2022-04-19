@@ -25,19 +25,31 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeRiskCheckResultResponse : AcsResponse
 	{
 
+		private int? currentPage;
+
 		private string requestId;
-
-		private int? pageCount;
-
-		private int? count;
 
 		private int? pageSize;
 
 		private int? totalCount;
 
-		private int? currentPage;
+		private int? pageCount;
+
+		private int? count;
 
 		private List<DescribeRiskCheckResult_RiskCheckResultForDisplay> list;
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -48,30 +60,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? PageCount
-		{
-			get
-			{
-				return pageCount;
-			}
-			set	
-			{
-				pageCount = value;
-			}
-		}
-
-		public int? Count
-		{
-			get
-			{
-				return count;
-			}
-			set	
-			{
-				count = value;
 			}
 		}
 
@@ -99,15 +87,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public int? CurrentPage
+		public int? PageCount
 		{
 			get
 			{
-				return currentPage;
+				return pageCount;
 			}
 			set	
 			{
-				currentPage = value;
+				pageCount = value;
+			}
+		}
+
+		public int? Count
+		{
+			get
+			{
+				return count;
+			}
+			set	
+			{
+				count = value;
 			}
 		}
 
@@ -126,69 +126,33 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeRiskCheckResult_RiskCheckResultForDisplay
 		{
 
-			private long? itemId;
-
-			private long? taskId;
-
-			private string title;
-
 			private string riskLevel;
 
 			private string status;
 
-			private int? affectedCount;
-
-			private long? checkTime;
-
-			private int? remainingTime;
+			private string type;
 
 			private int? sort;
 
-			private string type;
+			private string repairStatus;
+
+			private int? remainingTime;
+
+			private long? itemId;
 
 			private string startStatus;
 
-			private string repairStatus;
+			private int? affectedCount;
 
 			private string riskAssertType;
 
+			private string title;
+
+			private long? taskId;
+
+			private long? checkTime;
+
 			private List<DescribeRiskCheckResult_RiskItemResource> riskItemResources;
-
-			public long? ItemId
-			{
-				get
-				{
-					return itemId;
-				}
-				set	
-				{
-					itemId = value;
-				}
-			}
-
-			public long? TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
-
-			public string Title
-			{
-				get
-				{
-					return title;
-				}
-				set	
-				{
-					title = value;
-				}
-			}
 
 			public string RiskLevel
 			{
@@ -214,39 +178,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? AffectedCount
+			public string Type
 			{
 				get
 				{
-					return affectedCount;
+					return type;
 				}
 				set	
 				{
-					affectedCount = value;
-				}
-			}
-
-			public long? CheckTime
-			{
-				get
-				{
-					return checkTime;
-				}
-				set	
-				{
-					checkTime = value;
-				}
-			}
-
-			public int? RemainingTime
-			{
-				get
-				{
-					return remainingTime;
-				}
-				set	
-				{
-					remainingTime = value;
+					type = value;
 				}
 			}
 
@@ -262,15 +202,39 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Type
+			public string RepairStatus
 			{
 				get
 				{
-					return type;
+					return repairStatus;
 				}
 				set	
 				{
-					type = value;
+					repairStatus = value;
+				}
+			}
+
+			public int? RemainingTime
+			{
+				get
+				{
+					return remainingTime;
+				}
+				set	
+				{
+					remainingTime = value;
+				}
+			}
+
+			public long? ItemId
+			{
+				get
+				{
+					return itemId;
+				}
+				set	
+				{
+					itemId = value;
 				}
 			}
 
@@ -286,15 +250,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string RepairStatus
+			public int? AffectedCount
 			{
 				get
 				{
-					return repairStatus;
+					return affectedCount;
 				}
 				set	
 				{
-					repairStatus = value;
+					affectedCount = value;
 				}
 			}
 
@@ -307,6 +271,42 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					riskAssertType = value;
+				}
+			}
+
+			public string Title
+			{
+				get
+				{
+					return title;
+				}
+				set	
+				{
+					title = value;
+				}
+			}
+
+			public long? TaskId
+			{
+				get
+				{
+					return taskId;
+				}
+				set	
+				{
+					taskId = value;
+				}
+			}
+
+			public long? CheckTime
+			{
+				get
+				{
+					return checkTime;
+				}
+				set	
+				{
+					checkTime = value;
 				}
 			}
 
@@ -325,21 +325,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			public class DescribeRiskCheckResult_RiskItemResource
 			{
 
-				private string resourceName;
-
 				private string contentResource;
 
-				public string ResourceName
-				{
-					get
-					{
-						return resourceName;
-					}
-					set	
-					{
-						resourceName = value;
-					}
-				}
+				private string resourceName;
 
 				public string ContentResource
 				{
@@ -350,6 +338,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					set	
 					{
 						contentResource = value;
+					}
+				}
+
+				public string ResourceName
+				{
+					get
+					{
+						return resourceName;
+					}
+					set	
+					{
+						resourceName = value;
 					}
 				}
 			}

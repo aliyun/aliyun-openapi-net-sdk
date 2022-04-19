@@ -34,31 +34,33 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describePropertyProcDetailResponse.RequestId = _ctx.StringValue("DescribePropertyProcDetail.RequestId");
 
 			DescribePropertyProcDetailResponse.DescribePropertyProcDetail_PageInfo pageInfo = new DescribePropertyProcDetailResponse.DescribePropertyProcDetail_PageInfo();
-			pageInfo.Count = _ctx.IntegerValue("DescribePropertyProcDetail.PageInfo.Count");
+			pageInfo.CurrentPage = _ctx.IntegerValue("DescribePropertyProcDetail.PageInfo.CurrentPage");
 			pageInfo.PageSize = _ctx.IntegerValue("DescribePropertyProcDetail.PageInfo.PageSize");
 			pageInfo.TotalCount = _ctx.IntegerValue("DescribePropertyProcDetail.PageInfo.TotalCount");
-			pageInfo.CurrentPage = _ctx.IntegerValue("DescribePropertyProcDetail.PageInfo.CurrentPage");
+			pageInfo.Count = _ctx.IntegerValue("DescribePropertyProcDetail.PageInfo.Count");
 			describePropertyProcDetailResponse.PageInfo = pageInfo;
 
 			List<DescribePropertyProcDetailResponse.DescribePropertyProcDetail_PropertyProc> describePropertyProcDetailResponse_propertys = new List<DescribePropertyProcDetailResponse.DescribePropertyProcDetail_PropertyProc>();
 			for (int i = 0; i < _ctx.Length("DescribePropertyProcDetail.Propertys.Length"); i++) {
 				DescribePropertyProcDetailResponse.DescribePropertyProcDetail_PropertyProc propertyProc = new DescribePropertyProcDetailResponse.DescribePropertyProcDetail_PropertyProc();
-				propertyProc.Pname = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].Pname");
-				propertyProc.EuidName = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].EuidName");
-				propertyProc.InstanceName = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].InstanceName");
-				propertyProc.Pid = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].Pid");
-				propertyProc.Path = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].Path");
-				propertyProc.Cmdline = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].Cmdline");
-				propertyProc.Name = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].Name");
-				propertyProc.User = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].User");
-				propertyProc.Md5 = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].Md5");
-				propertyProc.Create = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].Create");
-				propertyProc.CreateTimestamp = _ctx.LongValue("DescribePropertyProcDetail.Propertys["+ i +"].CreateTimestamp");
-				propertyProc.StartTime = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].StartTime");
-				propertyProc.Uuid = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].Uuid");
-				propertyProc.InstanceId = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].InstanceId");
-				propertyProc.IntranetIp = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].IntranetIp");
 				propertyProc.InternetIp = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].InternetIp");
+				propertyProc.Pid = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].Pid");
+				propertyProc.User = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].User");
+				propertyProc.InstanceId = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].InstanceId");
+				propertyProc.Cmdline = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].Cmdline");
+				propertyProc.IntranetIp = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].IntranetIp");
+				propertyProc.EuidName = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].EuidName");
+				propertyProc.Uuid = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].Uuid");
+				propertyProc.StartTime = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].StartTime");
+				propertyProc.Pname = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].Pname");
+				propertyProc.InstanceName = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].InstanceName");
+				propertyProc.Path = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].Path");
+				propertyProc.Md5 = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].Md5");
+				propertyProc.Name = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].Name");
+				propertyProc.CreateTimestamp = _ctx.LongValue("DescribePropertyProcDetail.Propertys["+ i +"].CreateTimestamp");
+				propertyProc.StartTimeDt = _ctx.LongValue("DescribePropertyProcDetail.Propertys["+ i +"].StartTimeDt");
+				propertyProc.IsPackage = _ctx.IntegerValue("DescribePropertyProcDetail.Propertys["+ i +"].IsPackage");
+				propertyProc.State = _ctx.StringValue("DescribePropertyProcDetail.Propertys["+ i +"].State");
 
 				describePropertyProcDetailResponse_propertys.Add(propertyProc);
 			}

@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribePropertyUsageNewestResponse describePropertyUsageNewestResponse = new DescribePropertyUsageNewestResponse();
 
 			describePropertyUsageNewestResponse.HttpResponse = _ctx.HttpResponse;
-			describePropertyUsageNewestResponse.RequestId = _ctx.StringValue("DescribePropertyUsageNewest.RequestId");
-			describePropertyUsageNewestResponse.ItemCount = _ctx.IntegerValue("DescribePropertyUsageNewest.ItemCount");
 			describePropertyUsageNewestResponse.Type = _ctx.StringValue("DescribePropertyUsageNewest.Type");
+			describePropertyUsageNewestResponse.ItemCount = _ctx.IntegerValue("DescribePropertyUsageNewest.ItemCount");
+			describePropertyUsageNewestResponse.RequestId = _ctx.StringValue("DescribePropertyUsageNewest.RequestId");
 
 			List<DescribePropertyUsageNewestResponse.DescribePropertyUsageNewest_NewestStatisticItem> describePropertyUsageNewestResponse_newestStatisticItems = new List<DescribePropertyUsageNewestResponse.DescribePropertyUsageNewest_NewestStatisticItem>();
 			for (int i = 0; i < _ctx.Length("DescribePropertyUsageNewest.NewestStatisticItems.Length"); i++) {

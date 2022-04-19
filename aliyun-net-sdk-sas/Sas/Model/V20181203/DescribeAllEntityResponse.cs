@@ -56,19 +56,31 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeAllEntity_Entity
 		{
 
+			private string uuid;
+
 			private int? groupId;
+
+			private string internetIp;
 
 			private string instanceName;
 
 			private string ip;
 
-			private string uuid;
-
 			private string os;
 
-			private string internetIp;
-
 			private string intranetIp;
+
+			public string Uuid
+			{
+				get
+				{
+					return uuid;
+				}
+				set	
+				{
+					uuid = value;
+				}
+			}
 
 			public int? GroupId
 			{
@@ -79,6 +91,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					groupId = value;
+				}
+			}
+
+			public string InternetIp
+			{
+				get
+				{
+					return internetIp;
+				}
+				set	
+				{
+					internetIp = value;
 				}
 			}
 
@@ -106,18 +130,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Uuid
-			{
-				get
-				{
-					return uuid;
-				}
-				set	
-				{
-					uuid = value;
-				}
-			}
-
 			public string Os
 			{
 				get
@@ -127,18 +139,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					os = value;
-				}
-			}
-
-			public string InternetIp
-			{
-				get
-				{
-					return internetIp;
-				}
-				set	
-				{
-					internetIp = value;
 				}
 			}
 

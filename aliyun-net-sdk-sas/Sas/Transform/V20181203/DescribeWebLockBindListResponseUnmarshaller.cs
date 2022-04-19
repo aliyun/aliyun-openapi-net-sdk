@@ -31,26 +31,26 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeWebLockBindListResponse describeWebLockBindListResponse = new DescribeWebLockBindListResponse();
 
 			describeWebLockBindListResponse.HttpResponse = _ctx.HttpResponse;
+			describeWebLockBindListResponse.CurrentPage = _ctx.IntegerValue("DescribeWebLockBindList.CurrentPage");
 			describeWebLockBindListResponse.RequestId = _ctx.StringValue("DescribeWebLockBindList.RequestId");
 			describeWebLockBindListResponse.PageSize = _ctx.IntegerValue("DescribeWebLockBindList.PageSize");
-			describeWebLockBindListResponse.CurrentPage = _ctx.IntegerValue("DescribeWebLockBindList.CurrentPage");
 			describeWebLockBindListResponse.TotalCount = _ctx.IntegerValue("DescribeWebLockBindList.TotalCount");
 
 			List<DescribeWebLockBindListResponse.DescribeWebLockBindList_Bind> describeWebLockBindListResponse_bindList = new List<DescribeWebLockBindListResponse.DescribeWebLockBindList_Bind>();
 			for (int i = 0; i < _ctx.Length("DescribeWebLockBindList.BindList.Length"); i++) {
 				DescribeWebLockBindListResponse.DescribeWebLockBindList_Bind bind = new DescribeWebLockBindListResponse.DescribeWebLockBindList_Bind();
-				bind.Uuid = _ctx.StringValue("DescribeWebLockBindList.BindList["+ i +"].Uuid");
-				bind.InstanceName = _ctx.StringValue("DescribeWebLockBindList.BindList["+ i +"].InstanceName");
-				bind.InternetIp = _ctx.StringValue("DescribeWebLockBindList.BindList["+ i +"].InternetIp");
-				bind.IntranetIp = _ctx.StringValue("DescribeWebLockBindList.BindList["+ i +"].IntranetIp");
-				bind.Os = _ctx.StringValue("DescribeWebLockBindList.BindList["+ i +"].Os");
-				bind.DirCount = _ctx.StringValue("DescribeWebLockBindList.BindList["+ i +"].DirCount");
-				bind.ServiceStatus = _ctx.StringValue("DescribeWebLockBindList.BindList["+ i +"].ServiceStatus");
-				bind.ServiceCode = _ctx.StringValue("DescribeWebLockBindList.BindList["+ i +"].ServiceCode");
-				bind.ServiceDetail = _ctx.StringValue("DescribeWebLockBindList.BindList["+ i +"].ServiceDetail");
 				bind.Status = _ctx.StringValue("DescribeWebLockBindList.BindList["+ i +"].Status");
 				bind.Percent = _ctx.IntegerValue("DescribeWebLockBindList.BindList["+ i +"].Percent");
+				bind.InternetIp = _ctx.StringValue("DescribeWebLockBindList.BindList["+ i +"].InternetIp");
+				bind.ServiceDetail = _ctx.StringValue("DescribeWebLockBindList.BindList["+ i +"].ServiceDetail");
+				bind.Os = _ctx.StringValue("DescribeWebLockBindList.BindList["+ i +"].Os");
+				bind.ServiceStatus = _ctx.StringValue("DescribeWebLockBindList.BindList["+ i +"].ServiceStatus");
+				bind.IntranetIp = _ctx.StringValue("DescribeWebLockBindList.BindList["+ i +"].IntranetIp");
 				bind.AuditCount = _ctx.StringValue("DescribeWebLockBindList.BindList["+ i +"].AuditCount");
+				bind.Uuid = _ctx.StringValue("DescribeWebLockBindList.BindList["+ i +"].Uuid");
+				bind.ServiceCode = _ctx.StringValue("DescribeWebLockBindList.BindList["+ i +"].ServiceCode");
+				bind.InstanceName = _ctx.StringValue("DescribeWebLockBindList.BindList["+ i +"].InstanceName");
+				bind.DirCount = _ctx.StringValue("DescribeWebLockBindList.BindList["+ i +"].DirCount");
 				bind.BlockCount = _ctx.StringValue("DescribeWebLockBindList.BindList["+ i +"].BlockCount");
 
 				describeWebLockBindListResponse_bindList.Add(bind);

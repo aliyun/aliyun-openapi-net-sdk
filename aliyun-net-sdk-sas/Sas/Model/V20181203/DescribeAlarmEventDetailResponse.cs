@@ -56,107 +56,59 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeAlarmEventDetail_Data
 		{
 
-			private string internetIp;
-
-			private string level;
-
-			private string instanceName;
-
-			private string alarmEventAliasName;
-
 			private string type;
 
-			private string uuid;
-
-			private string solution;
-
-			private long? startTime;
-
-			private long? endTime;
-
-			private string alarmEventDesc;
-
-			private string intranetIp;
-
-			private bool? canBeDealOnLine;
-
-			private string alarmUniqueInfo;
-
-			private string dataSource;
-
-			private bool? canCancelFault;
-
-			private bool? containHwMode;
-
-			private string containerImageId;
-
-			private string containerImageName;
-
-			private string containerId;
-
-			private string k8sNamespace;
-
-			private string k8sClusterId;
+			private string internetIp;
 
 			private string k8sClusterName;
 
-			private string k8sNodeId;
+			private string containerImageId;
 
-			private string k8sPodName;
+			private string alarmEventDesc;
 
-			private string k8sNodeName;
+			private string alarmUniqueInfo;
+
+			private bool? canCancelFault;
 
 			private string appName;
 
+			private bool? canBeDealOnLine;
+
+			private string containerImageName;
+
+			private string k8sClusterId;
+
+			private bool? containHwMode;
+
+			private string instanceName;
+
+			private string k8sNodeId;
+
+			private string solution;
+
+			private string dataSource;
+
+			private string intranetIp;
+
+			private string alarmEventAliasName;
+
+			private long? endTime;
+
+			private string uuid;
+
+			private long? startTime;
+
+			private string containerId;
+
+			private string k8sPodName;
+
+			private string k8sNamespace;
+
+			private string k8sNodeName;
+
+			private string level;
+
 			private List<DescribeAlarmEventDetail_CauseDetail> causeDetails;
-
-			public string InternetIp
-			{
-				get
-				{
-					return internetIp;
-				}
-				set	
-				{
-					internetIp = value;
-				}
-			}
-
-			public string Level
-			{
-				get
-				{
-					return level;
-				}
-				set	
-				{
-					level = value;
-				}
-			}
-
-			public string InstanceName
-			{
-				get
-				{
-					return instanceName;
-				}
-				set	
-				{
-					instanceName = value;
-				}
-			}
-
-			public string AlarmEventAliasName
-			{
-				get
-				{
-					return alarmEventAliasName;
-				}
-				set	
-				{
-					alarmEventAliasName = value;
-				}
-			}
 
 			public string Type
 			{
@@ -170,195 +122,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Uuid
+			public string InternetIp
 			{
 				get
 				{
-					return uuid;
+					return internetIp;
 				}
 				set	
 				{
-					uuid = value;
-				}
-			}
-
-			public string Solution
-			{
-				get
-				{
-					return solution;
-				}
-				set	
-				{
-					solution = value;
-				}
-			}
-
-			public long? StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
-			public long? EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
-
-			public string AlarmEventDesc
-			{
-				get
-				{
-					return alarmEventDesc;
-				}
-				set	
-				{
-					alarmEventDesc = value;
-				}
-			}
-
-			public string IntranetIp
-			{
-				get
-				{
-					return intranetIp;
-				}
-				set	
-				{
-					intranetIp = value;
-				}
-			}
-
-			public bool? CanBeDealOnLine
-			{
-				get
-				{
-					return canBeDealOnLine;
-				}
-				set	
-				{
-					canBeDealOnLine = value;
-				}
-			}
-
-			public string AlarmUniqueInfo
-			{
-				get
-				{
-					return alarmUniqueInfo;
-				}
-				set	
-				{
-					alarmUniqueInfo = value;
-				}
-			}
-
-			public string DataSource
-			{
-				get
-				{
-					return dataSource;
-				}
-				set	
-				{
-					dataSource = value;
-				}
-			}
-
-			public bool? CanCancelFault
-			{
-				get
-				{
-					return canCancelFault;
-				}
-				set	
-				{
-					canCancelFault = value;
-				}
-			}
-
-			public bool? ContainHwMode
-			{
-				get
-				{
-					return containHwMode;
-				}
-				set	
-				{
-					containHwMode = value;
-				}
-			}
-
-			public string ContainerImageId
-			{
-				get
-				{
-					return containerImageId;
-				}
-				set	
-				{
-					containerImageId = value;
-				}
-			}
-
-			public string ContainerImageName
-			{
-				get
-				{
-					return containerImageName;
-				}
-				set	
-				{
-					containerImageName = value;
-				}
-			}
-
-			public string ContainerId
-			{
-				get
-				{
-					return containerId;
-				}
-				set	
-				{
-					containerId = value;
-				}
-			}
-
-			public string K8sNamespace
-			{
-				get
-				{
-					return k8sNamespace;
-				}
-				set	
-				{
-					k8sNamespace = value;
-				}
-			}
-
-			public string K8sClusterId
-			{
-				get
-				{
-					return k8sClusterId;
-				}
-				set	
-				{
-					k8sClusterId = value;
+					internetIp = value;
 				}
 			}
 
@@ -374,6 +146,126 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string ContainerImageId
+			{
+				get
+				{
+					return containerImageId;
+				}
+				set	
+				{
+					containerImageId = value;
+				}
+			}
+
+			public string AlarmEventDesc
+			{
+				get
+				{
+					return alarmEventDesc;
+				}
+				set	
+				{
+					alarmEventDesc = value;
+				}
+			}
+
+			public string AlarmUniqueInfo
+			{
+				get
+				{
+					return alarmUniqueInfo;
+				}
+				set	
+				{
+					alarmUniqueInfo = value;
+				}
+			}
+
+			public bool? CanCancelFault
+			{
+				get
+				{
+					return canCancelFault;
+				}
+				set	
+				{
+					canCancelFault = value;
+				}
+			}
+
+			public string AppName
+			{
+				get
+				{
+					return appName;
+				}
+				set	
+				{
+					appName = value;
+				}
+			}
+
+			public bool? CanBeDealOnLine
+			{
+				get
+				{
+					return canBeDealOnLine;
+				}
+				set	
+				{
+					canBeDealOnLine = value;
+				}
+			}
+
+			public string ContainerImageName
+			{
+				get
+				{
+					return containerImageName;
+				}
+				set	
+				{
+					containerImageName = value;
+				}
+			}
+
+			public string K8sClusterId
+			{
+				get
+				{
+					return k8sClusterId;
+				}
+				set	
+				{
+					k8sClusterId = value;
+				}
+			}
+
+			public bool? ContainHwMode
+			{
+				get
+				{
+					return containHwMode;
+				}
+				set	
+				{
+					containHwMode = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
 			public string K8sNodeId
 			{
 				get
@@ -383,6 +275,102 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					k8sNodeId = value;
+				}
+			}
+
+			public string Solution
+			{
+				get
+				{
+					return solution;
+				}
+				set	
+				{
+					solution = value;
+				}
+			}
+
+			public string DataSource
+			{
+				get
+				{
+					return dataSource;
+				}
+				set	
+				{
+					dataSource = value;
+				}
+			}
+
+			public string IntranetIp
+			{
+				get
+				{
+					return intranetIp;
+				}
+				set	
+				{
+					intranetIp = value;
+				}
+			}
+
+			public string AlarmEventAliasName
+			{
+				get
+				{
+					return alarmEventAliasName;
+				}
+				set	
+				{
+					alarmEventAliasName = value;
+				}
+			}
+
+			public long? EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			public string Uuid
+			{
+				get
+				{
+					return uuid;
+				}
+				set	
+				{
+					uuid = value;
+				}
+			}
+
+			public long? StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			public string ContainerId
+			{
+				get
+				{
+					return containerId;
+				}
+				set	
+				{
+					containerId = value;
 				}
 			}
 
@@ -398,6 +386,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string K8sNamespace
+			{
+				get
+				{
+					return k8sNamespace;
+				}
+				set	
+				{
+					k8sNamespace = value;
+				}
+			}
+
 			public string K8sNodeName
 			{
 				get
@@ -410,15 +410,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string AppName
+			public string Level
 			{
 				get
 				{
-					return appName;
+					return level;
 				}
 				set	
 				{
-					appName = value;
+					level = value;
 				}
 			}
 
@@ -468,23 +468,11 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				public class DescribeAlarmEventDetail_ValueItem
 				{
 
-					private string name;
-
 					private string type;
 
 					private string _value;
 
-					public string Name
-					{
-						get
-						{
-							return name;
-						}
-						set	
-						{
-							name = value;
-						}
-					}
+					private string name;
 
 					public string Type
 					{
@@ -507,6 +495,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 						set	
 						{
 							_value = value;
+						}
+					}
+
+					public string Name
+					{
+						get
+						{
+							return name;
+						}
+						set	
+						{
+							name = value;
 						}
 					}
 				}

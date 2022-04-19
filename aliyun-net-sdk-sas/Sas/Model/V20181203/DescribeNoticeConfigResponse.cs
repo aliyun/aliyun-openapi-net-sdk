@@ -58,13 +58,13 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private int? timeLimit;
 
-			private int? route;
-
-			private string project;
-
 			private long? aliUid;
 
 			private int? currentPage;
+
+			private string project;
+
+			private int? route;
 
 			public int? TimeLimit
 			{
@@ -75,30 +75,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					timeLimit = value;
-				}
-			}
-
-			public int? Route
-			{
-				get
-				{
-					return route;
-				}
-				set	
-				{
-					route = value;
-				}
-			}
-
-			public string Project
-			{
-				get
-				{
-					return project;
-				}
-				set	
-				{
-					project = value;
 				}
 			}
 
@@ -123,6 +99,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					currentPage = value;
+				}
+			}
+
+			public string Project
+			{
+				get
+				{
+					return project;
+				}
+				set	
+				{
+					project = value;
+				}
+			}
+
+			public int? Route
+			{
+				get
+				{
+					return route;
+				}
+				set	
+				{
+					route = value;
 				}
 			}
 		}

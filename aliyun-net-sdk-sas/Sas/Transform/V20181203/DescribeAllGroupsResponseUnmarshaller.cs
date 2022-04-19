@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeAllGroupsResponse describeAllGroupsResponse = new DescribeAllGroupsResponse();
 
 			describeAllGroupsResponse.HttpResponse = _ctx.HttpResponse;
-			describeAllGroupsResponse.RequestId = _ctx.StringValue("DescribeAllGroups.RequestId");
 			describeAllGroupsResponse.Count = _ctx.IntegerValue("DescribeAllGroups.Count");
+			describeAllGroupsResponse.RequestId = _ctx.StringValue("DescribeAllGroups.RequestId");
 
 			List<DescribeAllGroupsResponse.DescribeAllGroups_Group> describeAllGroupsResponse_groups = new List<DescribeAllGroupsResponse.DescribeAllGroups_Group>();
 			for (int i = 0; i < _ctx.Length("DescribeAllGroups.Groups.Length"); i++) {

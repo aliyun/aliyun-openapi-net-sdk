@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeWebLockBindListResponse : AcsResponse
 	{
 
+		private int? currentPage;
+
 		private string requestId;
 
 		private int? pageSize;
 
-		private int? currentPage;
-
 		private int? totalCount;
 
 		private List<DescribeWebLockBindList_Bind> bindList;
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -56,18 +68,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				pageSize = value;
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
 			}
 		}
 
@@ -98,139 +98,31 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeWebLockBindList_Bind
 		{
 
-			private string uuid;
-
-			private string instanceName;
-
-			private string internetIp;
-
-			private string intranetIp;
-
-			private string os;
-
-			private string dirCount;
-
-			private string serviceStatus;
-
-			private string serviceCode;
-
-			private string serviceDetail;
-
 			private string status;
 
 			private int? percent;
 
+			private string internetIp;
+
+			private string serviceDetail;
+
+			private string os;
+
+			private string serviceStatus;
+
+			private string intranetIp;
+
 			private string auditCount;
 
+			private string uuid;
+
+			private string serviceCode;
+
+			private string instanceName;
+
+			private string dirCount;
+
 			private string blockCount;
-
-			public string Uuid
-			{
-				get
-				{
-					return uuid;
-				}
-				set	
-				{
-					uuid = value;
-				}
-			}
-
-			public string InstanceName
-			{
-				get
-				{
-					return instanceName;
-				}
-				set	
-				{
-					instanceName = value;
-				}
-			}
-
-			public string InternetIp
-			{
-				get
-				{
-					return internetIp;
-				}
-				set	
-				{
-					internetIp = value;
-				}
-			}
-
-			public string IntranetIp
-			{
-				get
-				{
-					return intranetIp;
-				}
-				set	
-				{
-					intranetIp = value;
-				}
-			}
-
-			public string Os
-			{
-				get
-				{
-					return os;
-				}
-				set	
-				{
-					os = value;
-				}
-			}
-
-			public string DirCount
-			{
-				get
-				{
-					return dirCount;
-				}
-				set	
-				{
-					dirCount = value;
-				}
-			}
-
-			public string ServiceStatus
-			{
-				get
-				{
-					return serviceStatus;
-				}
-				set	
-				{
-					serviceStatus = value;
-				}
-			}
-
-			public string ServiceCode
-			{
-				get
-				{
-					return serviceCode;
-				}
-				set	
-				{
-					serviceCode = value;
-				}
-			}
-
-			public string ServiceDetail
-			{
-				get
-				{
-					return serviceDetail;
-				}
-				set	
-				{
-					serviceDetail = value;
-				}
-			}
 
 			public string Status
 			{
@@ -256,6 +148,66 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string InternetIp
+			{
+				get
+				{
+					return internetIp;
+				}
+				set	
+				{
+					internetIp = value;
+				}
+			}
+
+			public string ServiceDetail
+			{
+				get
+				{
+					return serviceDetail;
+				}
+				set	
+				{
+					serviceDetail = value;
+				}
+			}
+
+			public string Os
+			{
+				get
+				{
+					return os;
+				}
+				set	
+				{
+					os = value;
+				}
+			}
+
+			public string ServiceStatus
+			{
+				get
+				{
+					return serviceStatus;
+				}
+				set	
+				{
+					serviceStatus = value;
+				}
+			}
+
+			public string IntranetIp
+			{
+				get
+				{
+					return intranetIp;
+				}
+				set	
+				{
+					intranetIp = value;
+				}
+			}
+
 			public string AuditCount
 			{
 				get
@@ -265,6 +217,54 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					auditCount = value;
+				}
+			}
+
+			public string Uuid
+			{
+				get
+				{
+					return uuid;
+				}
+				set	
+				{
+					uuid = value;
+				}
+			}
+
+			public string ServiceCode
+			{
+				get
+				{
+					return serviceCode;
+				}
+				set	
+				{
+					serviceCode = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public string DirCount
+			{
+				get
+				{
+					return dirCount;
+				}
+				set	
+				{
+					dirCount = value;
 				}
 			}
 

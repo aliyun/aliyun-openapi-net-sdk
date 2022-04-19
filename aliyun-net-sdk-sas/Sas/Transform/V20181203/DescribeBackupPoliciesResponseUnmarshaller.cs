@@ -53,6 +53,7 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				backupPolicy.ClientErrorCount = _ctx.IntegerValue("DescribeBackupPolicies.Policies["+ i +"].ClientErrorCount");
 				backupPolicy.ServiceErrorCount = _ctx.IntegerValue("DescribeBackupPolicies.Policies["+ i +"].ServiceErrorCount");
 				backupPolicy.HealthClientCount = _ctx.IntegerValue("DescribeBackupPolicies.Policies["+ i +"].HealthClientCount");
+				backupPolicy.UpgradeStatus = _ctx.StringValue("DescribeBackupPolicies.Policies["+ i +"].UpgradeStatus");
 
 				List<string> backupPolicy_uuidList = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeBackupPolicies.Policies["+ i +"].UuidList.Length"); j++) {

@@ -34,14 +34,14 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describeRiskCheckSummaryResponse.RequestId = _ctx.StringValue("DescribeRiskCheckSummary.RequestId");
 
 			DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary riskCheckSummary = new DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary();
-			riskCheckSummary.RiskCount = _ctx.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.RiskCount");
-			riskCheckSummary.PreviousCount = _ctx.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.PreviousCount");
 			riskCheckSummary.ItemCount = _ctx.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.ItemCount");
-			riskCheckSummary.RiskRate = _ctx.FloatValue("DescribeRiskCheckSummary.RiskCheckSummary.RiskRate");
 			riskCheckSummary.AffectedAssetCount = _ctx.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.AffectedAssetCount");
+			riskCheckSummary.DisabledRiskCount = _ctx.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.DisabledRiskCount");
+			riskCheckSummary.RiskCount = _ctx.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.RiskCount");
+			riskCheckSummary.RiskRate = _ctx.FloatValue("DescribeRiskCheckSummary.RiskCheckSummary.RiskRate");
+			riskCheckSummary.PreviousCount = _ctx.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.PreviousCount");
 			riskCheckSummary.PreviousTime = _ctx.LongValue("DescribeRiskCheckSummary.RiskCheckSummary.PreviousTime");
 			riskCheckSummary.EnabledRiskCount = _ctx.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.EnabledRiskCount");
-			riskCheckSummary.DisabledRiskCount = _ctx.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.DisabledRiskCount");
 
 			List<DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_LevelCount> riskCheckSummary_riskLevelCount = new List<DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_LevelCount>();
 			for (int i = 0; i < _ctx.Length("DescribeRiskCheckSummary.RiskCheckSummary.RiskLevelCount.Length"); i++) {
@@ -56,11 +56,11 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			List<DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_Group> riskCheckSummary_groups = new List<DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_Group>();
 			for (int i = 0; i < _ctx.Length("DescribeRiskCheckSummary.RiskCheckSummary.Groups.Length"); i++) {
 				DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_Group group = new DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_Group();
-				group.Id = _ctx.LongValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].Id");
-				group.Title = _ctx.StringValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].Title");
-				group.Status = _ctx.StringValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].Status");
 				group.RemainingTime = _ctx.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].RemainingTime");
+				group.Status = _ctx.StringValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].Status");
 				group.Sort = _ctx.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].Sort");
+				group.Title = _ctx.StringValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].Title");
+				group.Id = _ctx.LongValue("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].Id");
 
 				List<DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_Group.DescribeRiskCheckSummary_StatusCount> group_countByStatus = new List<DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_Group.DescribeRiskCheckSummary_StatusCount>();
 				for (int j = 0; j < _ctx.Length("DescribeRiskCheckSummary.RiskCheckSummary.Groups["+ i +"].CountByStatus.Length"); j++) {

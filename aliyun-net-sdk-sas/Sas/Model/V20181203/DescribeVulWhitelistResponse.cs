@@ -106,6 +106,10 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string reason;
 
+			private string targetInfo;
+
+			private string id;
+
 			public string Name
 			{
 				get
@@ -151,6 +155,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					reason = value;
+				}
+			}
+
+			public string TargetInfo
+			{
+				get
+				{
+					return targetInfo;
+				}
+				set	
+				{
+					targetInfo = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 		}

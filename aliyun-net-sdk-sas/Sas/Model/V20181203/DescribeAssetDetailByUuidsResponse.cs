@@ -58,33 +58,33 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string internetIp;
 
-			private string intranetIp;
-
-			private string instanceName;
-
-			private string instanceId;
+			private string osName;
 
 			private string ip;
 
-			private string uuid;
-
-			private string assetType;
-
 			private string os;
+
+			private string instanceId;
 
 			private string clientStatus;
 
+			private string vpcInstanceId;
+
+			private string intranetIp;
+
+			private string assetType;
+
 			private string regionId;
 
-			private string region;
+			private string uuid;
+
+			private int? flag;
 
 			private string regionName;
 
-			private string vpcInstanceId;
+			private string instanceName;
 
-			private string osName;
-
-			private int? flag;
+			private string region;
 
 			public string InternetIp
 			{
@@ -95,150 +95,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					internetIp = value;
-				}
-			}
-
-			public string IntranetIp
-			{
-				get
-				{
-					return intranetIp;
-				}
-				set	
-				{
-					intranetIp = value;
-				}
-			}
-
-			public string InstanceName
-			{
-				get
-				{
-					return instanceName;
-				}
-				set	
-				{
-					instanceName = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public string Ip
-			{
-				get
-				{
-					return ip;
-				}
-				set	
-				{
-					ip = value;
-				}
-			}
-
-			public string Uuid
-			{
-				get
-				{
-					return uuid;
-				}
-				set	
-				{
-					uuid = value;
-				}
-			}
-
-			public string AssetType
-			{
-				get
-				{
-					return assetType;
-				}
-				set	
-				{
-					assetType = value;
-				}
-			}
-
-			public string Os
-			{
-				get
-				{
-					return os;
-				}
-				set	
-				{
-					os = value;
-				}
-			}
-
-			public string ClientStatus
-			{
-				get
-				{
-					return clientStatus;
-				}
-				set	
-				{
-					clientStatus = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string Region
-			{
-				get
-				{
-					return region;
-				}
-				set	
-				{
-					region = value;
-				}
-			}
-
-			public string RegionName
-			{
-				get
-				{
-					return regionName;
-				}
-				set	
-				{
-					regionName = value;
-				}
-			}
-
-			public string VpcInstanceId
-			{
-				get
-				{
-					return vpcInstanceId;
-				}
-				set	
-				{
-					vpcInstanceId = value;
 				}
 			}
 
@@ -254,6 +110,114 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string Ip
+			{
+				get
+				{
+					return ip;
+				}
+				set	
+				{
+					ip = value;
+				}
+			}
+
+			public string Os
+			{
+				get
+				{
+					return os;
+				}
+				set	
+				{
+					os = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string ClientStatus
+			{
+				get
+				{
+					return clientStatus;
+				}
+				set	
+				{
+					clientStatus = value;
+				}
+			}
+
+			public string VpcInstanceId
+			{
+				get
+				{
+					return vpcInstanceId;
+				}
+				set	
+				{
+					vpcInstanceId = value;
+				}
+			}
+
+			public string IntranetIp
+			{
+				get
+				{
+					return intranetIp;
+				}
+				set	
+				{
+					intranetIp = value;
+				}
+			}
+
+			public string AssetType
+			{
+				get
+				{
+					return assetType;
+				}
+				set	
+				{
+					assetType = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string Uuid
+			{
+				get
+				{
+					return uuid;
+				}
+				set	
+				{
+					uuid = value;
+				}
+			}
+
 			public int? Flag
 			{
 				get
@@ -263,6 +227,42 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					flag = value;
+				}
+			}
+
+			public string RegionName
+			{
+				get
+				{
+					return regionName;
+				}
+				set	
+				{
+					regionName = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
 				}
 			}
 		}

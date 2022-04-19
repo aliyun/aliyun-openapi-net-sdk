@@ -70,19 +70,55 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeGroupedMaliciousFiles_GroupedMaliciousFile
 		{
 
+			private int? status;
+
+			private long? imageCount;
+
+			private long? latestScanTimestamp;
+
 			private string maliciousName;
 
 			private string maliciousMd5;
 
 			private long? firstScanTimestamp;
 
-			private long? latestScanTimestamp;
-
-			private int? status;
-
 			private string level;
 
-			private long? imageCount;
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public long? ImageCount
+			{
+				get
+				{
+					return imageCount;
+				}
+				set	
+				{
+					imageCount = value;
+				}
+			}
+
+			public long? LatestScanTimestamp
+			{
+				get
+				{
+					return latestScanTimestamp;
+				}
+				set	
+				{
+					latestScanTimestamp = value;
+				}
+			}
 
 			public string MaliciousName
 			{
@@ -120,30 +156,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public long? LatestScanTimestamp
-			{
-				get
-				{
-					return latestScanTimestamp;
-				}
-				set	
-				{
-					latestScanTimestamp = value;
-				}
-			}
-
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
 			public string Level
 			{
 				get
@@ -155,40 +167,28 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					level = value;
 				}
 			}
-
-			public long? ImageCount
-			{
-				get
-				{
-					return imageCount;
-				}
-				set	
-				{
-					imageCount = value;
-				}
-			}
 		}
 
 		public class DescribeGroupedMaliciousFiles_PageInfo
 		{
 
-			private int? count;
+			private int? currentPage;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? currentPage;
+			private int? count;
 
-			public int? Count
+			public int? CurrentPage
 			{
 				get
 				{
-					return count;
+					return currentPage;
 				}
 				set	
 				{
-					count = value;
+					currentPage = value;
 				}
 			}
 
@@ -216,15 +216,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? CurrentPage
+			public int? Count
 			{
 				get
 				{
-					return currentPage;
+					return count;
 				}
 				set	
 				{
-					currentPage = value;
+					count = value;
 				}
 			}
 		}

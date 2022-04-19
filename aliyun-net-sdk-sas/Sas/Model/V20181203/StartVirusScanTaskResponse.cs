@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class StartVirusScanTaskResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? scanTaskId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public long? ScanTaskId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				scanTaskId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

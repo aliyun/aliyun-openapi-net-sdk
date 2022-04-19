@@ -25,37 +25,25 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeLogstoreStorageResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string logstore;
+		private long? used;
 
 		private int? ttl;
 
+		private string logstore;
+
+		private string requestId;
+
 		private long? preserve;
 
-		private long? used;
-
-		public string RequestId
+		public long? Used
 		{
 			get
 			{
-				return requestId;
+				return used;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string Logstore
-		{
-			get
-			{
-				return logstore;
-			}
-			set	
-			{
-				logstore = value;
+				used = value;
 			}
 		}
 
@@ -71,6 +59,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public string Logstore
+		{
+			get
+			{
+				return logstore;
+			}
+			set	
+			{
+				logstore = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public long? Preserve
 		{
 			get
@@ -80,18 +92,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				preserve = value;
-			}
-		}
-
-		public long? Used
-		{
-			get
-			{
-				return used;
-			}
-			set	
-			{
-				used = value;
 			}
 		}
 	}

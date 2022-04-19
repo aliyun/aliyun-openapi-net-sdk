@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class DescribeGroupedInstancesRequest : RpcAcsRequest<DescribeGroupedInstancesResponse>
     {
         public DescribeGroupedInstancesRequest()
-            : base("Sas", "2018-12-03", "DescribeGroupedInstances", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "DescribeGroupedInstances")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,8 +40,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
             }
 			Method = MethodType.POST;
         }
-
-		private string criteria;
 
 		private string groupField;
 
@@ -55,19 +54,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		private int? currentPage;
 
 		private string machineTypes;
-
-		public string Criteria
-		{
-			get
-			{
-				return criteria;
-			}
-			set	
-			{
-				criteria = value;
-				DictionaryUtil.Add(QueryParameters, "Criteria", value);
-			}
-		}
 
 		public string GroupField
 		{

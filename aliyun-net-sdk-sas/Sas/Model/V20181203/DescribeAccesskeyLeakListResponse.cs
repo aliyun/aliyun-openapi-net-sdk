@@ -25,6 +25,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeAccesskeyLeakListResponse : AcsResponse
 	{
 
+		private int? currentPage;
+
 		private string requestId;
 
 		private long? gmtLast;
@@ -33,11 +35,21 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private int? pageSize;
 
-		private int? currentPage;
-
 		private int? totalCount;
 
 		private List<DescribeAccesskeyLeakList_AccessKeyLeak> accessKeyLeakList;
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -87,18 +99,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-			}
-		}
-
 		public int? TotalCount
 		{
 			get
@@ -126,61 +126,49 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeAccesskeyLeakList_AccessKeyLeak
 		{
 
-			private long? id;
+			private string dealTime;
 
-			private long? gmtModified;
-
-			private string asset;
+			private string status;
 
 			private string type;
 
-			private string accesskeyId;
+			private string userType;
 
-			private string status;
+			private string accesskeyId;
 
 			private string aliUserName;
 
 			private string dealType;
 
-			private string dealTime;
-
-			private string userType;
-
 			private string url;
 
-			public long? Id
+			private long? gmtModified;
+
+			private string asset;
+
+			private long? id;
+
+			public string DealTime
 			{
 				get
 				{
-					return id;
+					return dealTime;
 				}
 				set	
 				{
-					id = value;
+					dealTime = value;
 				}
 			}
 
-			public long? GmtModified
+			public string Status
 			{
 				get
 				{
-					return gmtModified;
+					return status;
 				}
 				set	
 				{
-					gmtModified = value;
-				}
-			}
-
-			public string Asset
-			{
-				get
-				{
-					return asset;
-				}
-				set	
-				{
-					asset = value;
+					status = value;
 				}
 			}
 
@@ -196,6 +184,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string UserType
+			{
+				get
+				{
+					return userType;
+				}
+				set	
+				{
+					userType = value;
+				}
+			}
+
 			public string AccesskeyId
 			{
 				get
@@ -205,18 +205,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					accesskeyId = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
 				}
 			}
 
@@ -244,30 +232,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string DealTime
-			{
-				get
-				{
-					return dealTime;
-				}
-				set	
-				{
-					dealTime = value;
-				}
-			}
-
-			public string UserType
-			{
-				get
-				{
-					return userType;
-				}
-				set	
-				{
-					userType = value;
-				}
-			}
-
 			public string Url
 			{
 				get
@@ -277,6 +241,42 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					url = value;
+				}
+			}
+
+			public long? GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
+				}
+			}
+
+			public string Asset
+			{
+				get
+				{
+					return asset;
+				}
+				set	
+				{
+					asset = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 		}

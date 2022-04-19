@@ -32,8 +32,8 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 
 			exportRecordResponse.HttpResponse = _ctx.HttpResponse;
 			exportRecordResponse.RequestId = _ctx.StringValue("ExportRecord.RequestId");
-			exportRecordResponse.Id = _ctx.LongValue("ExportRecord.Id");
 			exportRecordResponse.FileName = _ctx.StringValue("ExportRecord.FileName");
+			exportRecordResponse.Id = _ctx.LongValue("ExportRecord.Id");
         
 			return exportRecordResponse;
         }

@@ -70,21 +70,33 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeGroupedInstances_Instance
 		{
 
+			private long? asapVulInstanceCount;
+
 			private string unProtectedInstanceCount;
 
 			private string fieldAliasName;
 
-			private int? groupFlag;
+			private string instanceCount;
 
 			private long? fieldId;
 
 			private string riskInstanceCount;
 
-			private string instanceCount;
-
-			private long? asapVulInstanceCount;
+			private int? groupFlag;
 
 			private List<string> groupPath;
+
+			public long? AsapVulInstanceCount
+			{
+				get
+				{
+					return asapVulInstanceCount;
+				}
+				set	
+				{
+					asapVulInstanceCount = value;
+				}
+			}
 
 			public string UnProtectedInstanceCount
 			{
@@ -110,15 +122,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? GroupFlag
+			public string InstanceCount
 			{
 				get
 				{
-					return groupFlag;
+					return instanceCount;
 				}
 				set	
 				{
-					groupFlag = value;
+					instanceCount = value;
 				}
 			}
 
@@ -146,27 +158,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string InstanceCount
+			public int? GroupFlag
 			{
 				get
 				{
-					return instanceCount;
+					return groupFlag;
 				}
 				set	
 				{
-					instanceCount = value;
-				}
-			}
-
-			public long? AsapVulInstanceCount
-			{
-				get
-				{
-					return asapVulInstanceCount;
-				}
-				set	
-				{
-					asapVulInstanceCount = value;
+					groupFlag = value;
 				}
 			}
 
@@ -186,23 +186,23 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeGroupedInstances_PageInfo
 		{
 
-			private int? count;
+			private int? currentPage;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? currentPage;
+			private int? count;
 
-			public int? Count
+			public int? CurrentPage
 			{
 				get
 				{
-					return count;
+					return currentPage;
 				}
 				set	
 				{
-					count = value;
+					currentPage = value;
 				}
 			}
 
@@ -230,15 +230,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? CurrentPage
+			public int? Count
 			{
 				get
 				{
-					return currentPage;
+					return count;
 				}
 				set	
 				{
-					currentPage = value;
+					count = value;
 				}
 			}
 		}

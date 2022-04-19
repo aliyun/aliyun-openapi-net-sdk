@@ -36,10 +36,10 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			List<DescribeStrategyTargetResponse.DescribeStrategyTarget_StrategyTarget> describeStrategyTargetResponse_strategyTargets = new List<DescribeStrategyTargetResponse.DescribeStrategyTarget_StrategyTarget>();
 			for (int i = 0; i < _ctx.Length("DescribeStrategyTarget.StrategyTargets.Length"); i++) {
 				DescribeStrategyTargetResponse.DescribeStrategyTarget_StrategyTarget strategyTarget = new DescribeStrategyTargetResponse.DescribeStrategyTarget_StrategyTarget();
+				strategyTarget.BindUuidCount = _ctx.IntegerValue("DescribeStrategyTarget.StrategyTargets["+ i +"].BindUuidCount");
 				strategyTarget.Flag = _ctx.StringValue("DescribeStrategyTarget.StrategyTargets["+ i +"].Flag");
 				strategyTarget.Target = _ctx.StringValue("DescribeStrategyTarget.StrategyTargets["+ i +"].Target");
 				strategyTarget.TargetType = _ctx.StringValue("DescribeStrategyTarget.StrategyTargets["+ i +"].TargetType");
-				strategyTarget.BindUuidCount = _ctx.IntegerValue("DescribeStrategyTarget.StrategyTargets["+ i +"].BindUuidCount");
 
 				describeStrategyTargetResponse_strategyTargets.Add(strategyTarget);
 			}

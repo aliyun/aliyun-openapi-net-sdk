@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeAutoDelConfigResponse describeAutoDelConfigResponse = new DescribeAutoDelConfigResponse();
 
 			describeAutoDelConfigResponse.HttpResponse = _ctx.HttpResponse;
-			describeAutoDelConfigResponse.RequestId = _ctx.StringValue("DescribeAutoDelConfig.RequestId");
 			describeAutoDelConfigResponse.Days = _ctx.IntegerValue("DescribeAutoDelConfig.Days");
+			describeAutoDelConfigResponse.RequestId = _ctx.StringValue("DescribeAutoDelConfig.RequestId");
         
 			return describeAutoDelConfigResponse;
         }

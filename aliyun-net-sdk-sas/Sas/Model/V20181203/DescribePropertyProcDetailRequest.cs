@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class DescribePropertyProcDetailRequest : RpcAcsRequest<DescribePropertyProcDetailResponse>
     {
         public DescribePropertyProcDetailRequest()
-            : base("Sas", "2018-12-03", "DescribePropertyProcDetail", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "DescribePropertyProcDetail")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -48,7 +49,13 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private int? pageSize;
 
+		private long? procTimeStart;
+
 		private int? currentPage;
+
+		private long? procTimeEnd;
+
+		private string extend;
 
 		private string name;
 
@@ -106,6 +113,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public long? ProcTimeStart
+		{
+			get
+			{
+				return procTimeStart;
+			}
+			set	
+			{
+				procTimeStart = value;
+				DictionaryUtil.Add(QueryParameters, "ProcTimeStart", value.ToString());
+			}
+		}
+
 		public int? CurrentPage
 		{
 			get
@@ -116,6 +136,32 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				currentPage = value;
 				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public long? ProcTimeEnd
+		{
+			get
+			{
+				return procTimeEnd;
+			}
+			set	
+			{
+				procTimeEnd = value;
+				DictionaryUtil.Add(QueryParameters, "ProcTimeEnd", value.ToString());
+			}
+		}
+
+		public string Extend
+		{
+			get
+			{
+				return extend;
+			}
+			set	
+			{
+				extend = value;
+				DictionaryUtil.Add(QueryParameters, "Extend", value);
 			}
 		}
 

@@ -34,9 +34,9 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describeCloudProductFieldStatisticsResponse.RequestId = _ctx.StringValue("DescribeCloudProductFieldStatistics.RequestId");
 
 			DescribeCloudProductFieldStatisticsResponse.DescribeCloudProductFieldStatistics_GroupedFields groupedFields = new DescribeCloudProductFieldStatisticsResponse.DescribeCloudProductFieldStatistics_GroupedFields();
-			groupedFields.RiskInstanceCount = _ctx.IntegerValue("DescribeCloudProductFieldStatistics.GroupedFields.RiskInstanceCount");
-			groupedFields.InstanceCount = _ctx.IntegerValue("DescribeCloudProductFieldStatistics.GroupedFields.InstanceCount");
 			groupedFields.CategoryCount = _ctx.StringValue("DescribeCloudProductFieldStatistics.GroupedFields.CategoryCount");
+			groupedFields.InstanceCount = _ctx.IntegerValue("DescribeCloudProductFieldStatistics.GroupedFields.InstanceCount");
+			groupedFields.RiskInstanceCount = _ctx.IntegerValue("DescribeCloudProductFieldStatistics.GroupedFields.RiskInstanceCount");
 			describeCloudProductFieldStatisticsResponse.GroupedFields = groupedFields;
         
 			return describeCloudProductFieldStatisticsResponse;

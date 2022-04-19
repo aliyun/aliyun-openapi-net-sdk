@@ -27,13 +27,13 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string requestId;
 
-		private int? aegisClientOfflineCount;
+		private bool? success;
 
-		private int? securityScore;
+		private int? aegisClientOfflineCount;
 
 		private int? aegisClientOnlineCount;
 
-		private bool? success;
+		private int? securityScore;
 
 		public string RequestId
 		{
@@ -44,6 +44,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -59,18 +71,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public int? SecurityScore
-		{
-			get
-			{
-				return securityScore;
-			}
-			set	
-			{
-				securityScore = value;
-			}
-		}
-
 		public int? AegisClientOnlineCount
 		{
 			get
@@ -83,15 +83,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public bool? Success
+		public int? SecurityScore
 		{
 			get
 			{
-				return success;
+				return securityScore;
 			}
 			set	
 			{
-				success = value;
+				securityScore = value;
 			}
 		}
 	}

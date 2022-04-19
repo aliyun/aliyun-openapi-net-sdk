@@ -56,247 +56,73 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeAssetDetailByUuid_AssetDetail
 		{
 
-			private string internetIp;
-
-			private string intranetIp;
-
-			private string instanceName;
-
-			private string instanceId;
-
-			private string ip;
-
-			private string uuid;
-
-			private string assetType;
-
-			private string os;
-
-			private string clientStatus;
-
-			private string region;
-
-			private string regionId;
-
-			private string regionName;
-
-			private string tag;
-
-			private string groupTrace;
-
-			private int? cpu;
-
 			private string cpuInfo;
 
-			private string kernel;
+			private string internetIp;
 
 			private string osDetail;
 
-			private int? mem;
-
-			private string sysInfo;
-
-			private string hostName;
-
-			private string osName;
-
-			private string vpcInstanceId;
-
-			private string instanceStatus;
-
 			private long? createTime;
 
-			private int? authVersion;
+			private string kernel;
 
 			private bool? bind;
 
+			private string osName;
+
+			private string tag;
+
+			private string clientStatus;
+
+			private int? mem;
+
+			private long? memory;
+
+			private string vpcInstanceId;
+
+			private int? authVersion;
+
+			private string instanceName;
+
+			private string region;
+
+			private string groupTrace;
+
+			private string ip;
+
+			private string hostName;
+
+			private string os;
+
 			private long? authModifyTime;
+
+			private string instanceId;
+
+			private string intranetIp;
+
+			private string assetType;
+
+			private string regionId;
+
+			private string sysInfo;
+
+			private string uuid;
+
+			private int? cpu;
+
+			private string regionName;
+
+			private string instanceStatus;
+
+			private int? flag;
+
+			private string clientVersion;
 
 			private List<string> ipList;
 
 			private List<string> macList;
 
 			private List<string> diskInfoList;
-
-			public string InternetIp
-			{
-				get
-				{
-					return internetIp;
-				}
-				set	
-				{
-					internetIp = value;
-				}
-			}
-
-			public string IntranetIp
-			{
-				get
-				{
-					return intranetIp;
-				}
-				set	
-				{
-					intranetIp = value;
-				}
-			}
-
-			public string InstanceName
-			{
-				get
-				{
-					return instanceName;
-				}
-				set	
-				{
-					instanceName = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public string Ip
-			{
-				get
-				{
-					return ip;
-				}
-				set	
-				{
-					ip = value;
-				}
-			}
-
-			public string Uuid
-			{
-				get
-				{
-					return uuid;
-				}
-				set	
-				{
-					uuid = value;
-				}
-			}
-
-			public string AssetType
-			{
-				get
-				{
-					return assetType;
-				}
-				set	
-				{
-					assetType = value;
-				}
-			}
-
-			public string Os
-			{
-				get
-				{
-					return os;
-				}
-				set	
-				{
-					os = value;
-				}
-			}
-
-			public string ClientStatus
-			{
-				get
-				{
-					return clientStatus;
-				}
-				set	
-				{
-					clientStatus = value;
-				}
-			}
-
-			public string Region
-			{
-				get
-				{
-					return region;
-				}
-				set	
-				{
-					region = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string RegionName
-			{
-				get
-				{
-					return regionName;
-				}
-				set	
-				{
-					regionName = value;
-				}
-			}
-
-			public string Tag
-			{
-				get
-				{
-					return tag;
-				}
-				set	
-				{
-					tag = value;
-				}
-			}
-
-			public string GroupTrace
-			{
-				get
-				{
-					return groupTrace;
-				}
-				set	
-				{
-					groupTrace = value;
-				}
-			}
-
-			public int? Cpu
-			{
-				get
-				{
-					return cpu;
-				}
-				set	
-				{
-					cpu = value;
-				}
-			}
 
 			public string CpuInfo
 			{
@@ -310,15 +136,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Kernel
+			public string InternetIp
 			{
 				get
 				{
-					return kernel;
+					return internetIp;
 				}
 				set	
 				{
-					kernel = value;
+					internetIp = value;
 				}
 			}
 
@@ -334,78 +160,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? Mem
-			{
-				get
-				{
-					return mem;
-				}
-				set	
-				{
-					mem = value;
-				}
-			}
-
-			public string SysInfo
-			{
-				get
-				{
-					return sysInfo;
-				}
-				set	
-				{
-					sysInfo = value;
-				}
-			}
-
-			public string HostName
-			{
-				get
-				{
-					return hostName;
-				}
-				set	
-				{
-					hostName = value;
-				}
-			}
-
-			public string OsName
-			{
-				get
-				{
-					return osName;
-				}
-				set	
-				{
-					osName = value;
-				}
-			}
-
-			public string VpcInstanceId
-			{
-				get
-				{
-					return vpcInstanceId;
-				}
-				set	
-				{
-					vpcInstanceId = value;
-				}
-			}
-
-			public string InstanceStatus
-			{
-				get
-				{
-					return instanceStatus;
-				}
-				set	
-				{
-					instanceStatus = value;
-				}
-			}
-
 			public long? CreateTime
 			{
 				get
@@ -418,15 +172,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? AuthVersion
+			public string Kernel
 			{
 				get
 				{
-					return authVersion;
+					return kernel;
 				}
 				set	
 				{
-					authVersion = value;
+					kernel = value;
 				}
 			}
 
@@ -442,6 +196,162 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string OsName
+			{
+				get
+				{
+					return osName;
+				}
+				set	
+				{
+					osName = value;
+				}
+			}
+
+			public string Tag
+			{
+				get
+				{
+					return tag;
+				}
+				set	
+				{
+					tag = value;
+				}
+			}
+
+			public string ClientStatus
+			{
+				get
+				{
+					return clientStatus;
+				}
+				set	
+				{
+					clientStatus = value;
+				}
+			}
+
+			public int? Mem
+			{
+				get
+				{
+					return mem;
+				}
+				set	
+				{
+					mem = value;
+				}
+			}
+
+			public long? Memory
+			{
+				get
+				{
+					return memory;
+				}
+				set	
+				{
+					memory = value;
+				}
+			}
+
+			public string VpcInstanceId
+			{
+				get
+				{
+					return vpcInstanceId;
+				}
+				set	
+				{
+					vpcInstanceId = value;
+				}
+			}
+
+			public int? AuthVersion
+			{
+				get
+				{
+					return authVersion;
+				}
+				set	
+				{
+					authVersion = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
+				}
+			}
+
+			public string GroupTrace
+			{
+				get
+				{
+					return groupTrace;
+				}
+				set	
+				{
+					groupTrace = value;
+				}
+			}
+
+			public string Ip
+			{
+				get
+				{
+					return ip;
+				}
+				set	
+				{
+					ip = value;
+				}
+			}
+
+			public string HostName
+			{
+				get
+				{
+					return hostName;
+				}
+				set	
+				{
+					hostName = value;
+				}
+			}
+
+			public string Os
+			{
+				get
+				{
+					return os;
+				}
+				set	
+				{
+					os = value;
+				}
+			}
+
 			public long? AuthModifyTime
 			{
 				get
@@ -451,6 +361,138 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					authModifyTime = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string IntranetIp
+			{
+				get
+				{
+					return intranetIp;
+				}
+				set	
+				{
+					intranetIp = value;
+				}
+			}
+
+			public string AssetType
+			{
+				get
+				{
+					return assetType;
+				}
+				set	
+				{
+					assetType = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string SysInfo
+			{
+				get
+				{
+					return sysInfo;
+				}
+				set	
+				{
+					sysInfo = value;
+				}
+			}
+
+			public string Uuid
+			{
+				get
+				{
+					return uuid;
+				}
+				set	
+				{
+					uuid = value;
+				}
+			}
+
+			public int? Cpu
+			{
+				get
+				{
+					return cpu;
+				}
+				set	
+				{
+					cpu = value;
+				}
+			}
+
+			public string RegionName
+			{
+				get
+				{
+					return regionName;
+				}
+				set	
+				{
+					regionName = value;
+				}
+			}
+
+			public string InstanceStatus
+			{
+				get
+				{
+					return instanceStatus;
+				}
+				set	
+				{
+					instanceStatus = value;
+				}
+			}
+
+			public int? Flag
+			{
+				get
+				{
+					return flag;
+				}
+				set	
+				{
+					flag = value;
+				}
+			}
+
+			public string ClientVersion
+			{
+				get
+				{
+					return clientVersion;
+				}
+				set	
+				{
+					clientVersion = value;
 				}
 			}
 

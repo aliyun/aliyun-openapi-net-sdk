@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class DescribePropertyCronDetailRequest : RpcAcsRequest<DescribePropertyCronDetailResponse>
     {
         public DescribePropertyCronDetailRequest()
-            : base("Sas", "2018-12-03", "DescribePropertyCronDetail", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "DescribePropertyCronDetail")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -49,6 +50,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		private int? pageSize;
 
 		private int? currentPage;
+
+		private string extend;
 
 		private string user;
 
@@ -114,6 +117,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				currentPage = value;
 				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string Extend
+		{
+			get
+			{
+				return extend;
+			}
+			set	
+			{
+				extend = value;
+				DictionaryUtil.Add(QueryParameters, "Extend", value);
 			}
 		}
 

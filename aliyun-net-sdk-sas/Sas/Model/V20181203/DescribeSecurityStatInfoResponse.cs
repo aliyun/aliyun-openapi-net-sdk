@@ -25,9 +25,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeSecurityStatInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
+
+		private string requestId;
 
 		private DescribeSecurityStatInfo_SecurityEvent securityEvent;
 
@@ -36,18 +36,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		private DescribeSecurityStatInfo_HealthCheck healthCheck;
 
 		private DescribeSecurityStatInfo_Vulnerability vulnerability;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public bool? Success
 		{
@@ -58,6 +46,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -112,39 +112,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeSecurityStatInfo_SecurityEvent
 		{
 
-			private int? seriousCount;
-
 			private int? suspiciousCount;
+
+			private int? seriousCount;
 
 			private int? remindCount;
 
 			private int? totalCount;
 
-			private List<string> dateArray;
-
 			private List<string> valueArray;
-
-			private List<string> levelsOn;
-
-			private List<string> seriousList;
-
-			private List<string> suspiciousList;
-
-			private List<string> remindList;
 
 			private List<string> timeArray;
 
-			public int? SeriousCount
-			{
-				get
-				{
-					return seriousCount;
-				}
-				set	
-				{
-					seriousCount = value;
-				}
-			}
+			private List<string> remindList;
+
+			private List<string> levelsOn;
+
+			private List<string> dateArray;
+
+			private List<string> suspiciousList;
+
+			private List<string> seriousList;
 
 			public int? SuspiciousCount
 			{
@@ -155,6 +143,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					suspiciousCount = value;
+				}
+			}
+
+			public int? SeriousCount
+			{
+				get
+				{
+					return seriousCount;
+				}
+				set	
+				{
+					seriousCount = value;
 				}
 			}
 
@@ -182,18 +182,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public List<string> DateArray
-			{
-				get
-				{
-					return dateArray;
-				}
-				set	
-				{
-					dateArray = value;
-				}
-			}
-
 			public List<string> ValueArray
 			{
 				get
@@ -206,39 +194,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public List<string> LevelsOn
+			public List<string> TimeArray
 			{
 				get
 				{
-					return levelsOn;
+					return timeArray;
 				}
 				set	
 				{
-					levelsOn = value;
-				}
-			}
-
-			public List<string> SeriousList
-			{
-				get
-				{
-					return seriousList;
-				}
-				set	
-				{
-					seriousList = value;
-				}
-			}
-
-			public List<string> SuspiciousList
-			{
-				get
-				{
-					return suspiciousList;
-				}
-				set	
-				{
-					suspiciousList = value;
+					timeArray = value;
 				}
 			}
 
@@ -254,15 +218,51 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public List<string> TimeArray
+			public List<string> LevelsOn
 			{
 				get
 				{
-					return timeArray;
+					return levelsOn;
 				}
 				set	
 				{
-					timeArray = value;
+					levelsOn = value;
+				}
+			}
+
+			public List<string> DateArray
+			{
+				get
+				{
+					return dateArray;
+				}
+				set	
+				{
+					dateArray = value;
+				}
+			}
+
+			public List<string> SuspiciousList
+			{
+				get
+				{
+					return suspiciousList;
+				}
+				set	
+				{
+					suspiciousList = value;
+				}
+			}
+
+			public List<string> SeriousList
+			{
+				get
+				{
+					return seriousList;
+				}
+				set	
+				{
+					seriousList = value;
 				}
 			}
 		}
@@ -316,39 +316,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeSecurityStatInfo_HealthCheck
 		{
 
-			private int? mediumCount;
-
 			private int? highCount;
 
 			private int? lowCount;
 
 			private int? totalCount;
 
-			private List<string> dateArray3;
+			private int? mediumCount;
 
-			private List<string> valueArray4;
+			private List<string> valueArray3;
+
+			private List<string> timeArray4;
 
 			private List<string> levelsOn5;
 
-			private List<string> highList;
+			private List<string> lowList;
 
 			private List<string> mediumList;
 
-			private List<string> lowList;
+			private List<string> dateArray6;
 
-			private List<string> timeArray6;
-
-			public int? MediumCount
-			{
-				get
-				{
-					return mediumCount;
-				}
-				set	
-				{
-					mediumCount = value;
-				}
-			}
+			private List<string> highList;
 
 			public int? HighCount
 			{
@@ -386,27 +374,39 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public List<string> DateArray3
+			public int? MediumCount
 			{
 				get
 				{
-					return dateArray3;
+					return mediumCount;
 				}
 				set	
 				{
-					dateArray3 = value;
+					mediumCount = value;
 				}
 			}
 
-			public List<string> ValueArray4
+			public List<string> ValueArray3
 			{
 				get
 				{
-					return valueArray4;
+					return valueArray3;
 				}
 				set	
 				{
-					valueArray4 = value;
+					valueArray3 = value;
+				}
+			}
+
+			public List<string> TimeArray4
+			{
+				get
+				{
+					return timeArray4;
+				}
+				set	
+				{
+					timeArray4 = value;
 				}
 			}
 
@@ -422,15 +422,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public List<string> HighList
+			public List<string> LowList
 			{
 				get
 				{
-					return highList;
+					return lowList;
 				}
 				set	
 				{
-					highList = value;
+					lowList = value;
 				}
 			}
 
@@ -446,27 +446,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public List<string> LowList
+			public List<string> DateArray6
 			{
 				get
 				{
-					return lowList;
+					return dateArray6;
 				}
 				set	
 				{
-					lowList = value;
+					dateArray6 = value;
 				}
 			}
 
-			public List<string> TimeArray6
+			public List<string> HighList
 			{
 				get
 				{
-					return timeArray6;
+					return highList;
 				}
 				set	
 				{
-					timeArray6 = value;
+					highList = value;
 				}
 			}
 		}
@@ -478,23 +478,23 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private int? laterCount;
 
-			private int? asapCount;
-
 			private int? totalCount;
 
-			private List<string> dateArray7;
-
-			private List<string> valueArray8;
-
-			private List<string> levelsOn9;
+			private int? asapCount;
 
 			private List<string> nntfList;
 
 			private List<string> asapList;
 
+			private List<string> valueArray7;
+
+			private List<string> timeArray8;
+
+			private List<string> levelsOn9;
+
 			private List<string> laterList;
 
-			private List<string> timeArray10;
+			private List<string> dateArray10;
 
 			public int? NntfCount
 			{
@@ -520,18 +520,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? AsapCount
-			{
-				get
-				{
-					return asapCount;
-				}
-				set	
-				{
-					asapCount = value;
-				}
-			}
-
 			public int? TotalCount
 			{
 				get
@@ -544,39 +532,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public List<string> DateArray7
+			public int? AsapCount
 			{
 				get
 				{
-					return dateArray7;
+					return asapCount;
 				}
 				set	
 				{
-					dateArray7 = value;
-				}
-			}
-
-			public List<string> ValueArray8
-			{
-				get
-				{
-					return valueArray8;
-				}
-				set	
-				{
-					valueArray8 = value;
-				}
-			}
-
-			public List<string> LevelsOn9
-			{
-				get
-				{
-					return levelsOn9;
-				}
-				set	
-				{
-					levelsOn9 = value;
+					asapCount = value;
 				}
 			}
 
@@ -604,6 +568,42 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public List<string> ValueArray7
+			{
+				get
+				{
+					return valueArray7;
+				}
+				set	
+				{
+					valueArray7 = value;
+				}
+			}
+
+			public List<string> TimeArray8
+			{
+				get
+				{
+					return timeArray8;
+				}
+				set	
+				{
+					timeArray8 = value;
+				}
+			}
+
+			public List<string> LevelsOn9
+			{
+				get
+				{
+					return levelsOn9;
+				}
+				set	
+				{
+					levelsOn9 = value;
+				}
+			}
+
 			public List<string> LaterList
 			{
 				get
@@ -616,15 +616,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public List<string> TimeArray10
+			public List<string> DateArray10
 			{
 				get
 				{
-					return timeArray10;
+					return dateArray10;
 				}
 				set	
 				{
-					timeArray10 = value;
+					dateArray10 = value;
 				}
 			}
 		}

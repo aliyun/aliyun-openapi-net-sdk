@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeAllGroupsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? count;
 
-		private List<DescribeAllGroups_Group> groups;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeAllGroups_Group> groups;
 
 		public int? Count
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				count = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

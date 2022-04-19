@@ -25,39 +25,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeWarningMachinesResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? count;
+		private int? currentPage;
 
 		private int? pageSize;
 
+		private string requestId;
+
 		private int? totalCount;
 
-		private int? currentPage;
+		private int? count;
 
 		private List<DescribeWarningMachines_WarningMachine> warningMachines;
 
-		public string RequestId
+		public int? CurrentPage
 		{
 			get
 			{
-				return requestId;
+				return currentPage;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public int? Count
-		{
-			get
-			{
-				return count;
-			}
-			set	
-			{
-				count = value;
+				currentPage = value;
 			}
 		}
 
@@ -73,6 +61,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public int? TotalCount
 		{
 			get
@@ -85,15 +85,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public int? CurrentPage
+		public int? Count
 		{
 			get
 			{
-				return currentPage;
+				return count;
 			}
 			set	
 			{
-				currentPage = value;
+				count = value;
 			}
 		}
 
@@ -112,73 +112,39 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeWarningMachines_WarningMachine
 		{
 
-			private string uuid;
-
-			private string instanceName;
-
-			private string instanceId;
-
-			private string regionId;
+			private int? status;
 
 			private string internetIp;
 
-			private string intranetIp;
-
-			private int? passCount;
+			private string instanceId;
 
 			private int? highWarningCount;
 
-			private int? mediumWarningCount;
+			private string intranetIp;
+
+			private string regionId;
 
 			private int? lowWarningCount;
 
-			private int? status;
+			private bool? portOpen;
 
-			public string Uuid
+			private string uuid;
+
+			private int? mediumWarningCount;
+
+			private int? passCount;
+
+			private string instanceName;
+
+			public int? Status
 			{
 				get
 				{
-					return uuid;
+					return status;
 				}
 				set	
 				{
-					uuid = value;
-				}
-			}
-
-			public string InstanceName
-			{
-				get
-				{
-					return instanceName;
-				}
-				set	
-				{
-					instanceName = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
+					status = value;
 				}
 			}
 
@@ -194,27 +160,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string IntranetIp
+			public string InstanceId
 			{
 				get
 				{
-					return intranetIp;
+					return instanceId;
 				}
 				set	
 				{
-					intranetIp = value;
-				}
-			}
-
-			public int? PassCount
-			{
-				get
-				{
-					return passCount;
-				}
-				set	
-				{
-					passCount = value;
+					instanceId = value;
 				}
 			}
 
@@ -230,15 +184,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? MediumWarningCount
+			public string IntranetIp
 			{
 				get
 				{
-					return mediumWarningCount;
+					return intranetIp;
 				}
 				set	
 				{
-					mediumWarningCount = value;
+					intranetIp = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 
@@ -254,15 +220,63 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? Status
+			public bool? PortOpen
 			{
 				get
 				{
-					return status;
+					return portOpen;
 				}
 				set	
 				{
-					status = value;
+					portOpen = value;
+				}
+			}
+
+			public string Uuid
+			{
+				get
+				{
+					return uuid;
+				}
+				set	
+				{
+					uuid = value;
+				}
+			}
+
+			public int? MediumWarningCount
+			{
+				get
+				{
+					return mediumWarningCount;
+				}
+				set	
+				{
+					mediumWarningCount = value;
+				}
+			}
+
+			public int? PassCount
+			{
+				get
+				{
+					return passCount;
+				}
+				set	
+				{
+					passCount = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
 				}
 			}
 		}

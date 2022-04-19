@@ -31,27 +31,27 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeAccesskeyLeakListResponse describeAccesskeyLeakListResponse = new DescribeAccesskeyLeakListResponse();
 
 			describeAccesskeyLeakListResponse.HttpResponse = _ctx.HttpResponse;
+			describeAccesskeyLeakListResponse.CurrentPage = _ctx.IntegerValue("DescribeAccesskeyLeakList.CurrentPage");
 			describeAccesskeyLeakListResponse.RequestId = _ctx.StringValue("DescribeAccesskeyLeakList.RequestId");
 			describeAccesskeyLeakListResponse.GmtLast = _ctx.LongValue("DescribeAccesskeyLeakList.GmtLast");
 			describeAccesskeyLeakListResponse.AkLeakCount = _ctx.IntegerValue("DescribeAccesskeyLeakList.AkLeakCount");
 			describeAccesskeyLeakListResponse.PageSize = _ctx.IntegerValue("DescribeAccesskeyLeakList.PageSize");
-			describeAccesskeyLeakListResponse.CurrentPage = _ctx.IntegerValue("DescribeAccesskeyLeakList.CurrentPage");
 			describeAccesskeyLeakListResponse.TotalCount = _ctx.IntegerValue("DescribeAccesskeyLeakList.TotalCount");
 
 			List<DescribeAccesskeyLeakListResponse.DescribeAccesskeyLeakList_AccessKeyLeak> describeAccesskeyLeakListResponse_accessKeyLeakList = new List<DescribeAccesskeyLeakListResponse.DescribeAccesskeyLeakList_AccessKeyLeak>();
 			for (int i = 0; i < _ctx.Length("DescribeAccesskeyLeakList.AccessKeyLeakList.Length"); i++) {
 				DescribeAccesskeyLeakListResponse.DescribeAccesskeyLeakList_AccessKeyLeak accessKeyLeak = new DescribeAccesskeyLeakListResponse.DescribeAccesskeyLeakList_AccessKeyLeak();
-				accessKeyLeak.Id = _ctx.LongValue("DescribeAccesskeyLeakList.AccessKeyLeakList["+ i +"].Id");
-				accessKeyLeak.GmtModified = _ctx.LongValue("DescribeAccesskeyLeakList.AccessKeyLeakList["+ i +"].GmtModified");
-				accessKeyLeak.Asset = _ctx.StringValue("DescribeAccesskeyLeakList.AccessKeyLeakList["+ i +"].Asset");
-				accessKeyLeak.Type = _ctx.StringValue("DescribeAccesskeyLeakList.AccessKeyLeakList["+ i +"].Type");
-				accessKeyLeak.AccesskeyId = _ctx.StringValue("DescribeAccesskeyLeakList.AccessKeyLeakList["+ i +"].AccesskeyId");
+				accessKeyLeak.DealTime = _ctx.StringValue("DescribeAccesskeyLeakList.AccessKeyLeakList["+ i +"].DealTime");
 				accessKeyLeak.Status = _ctx.StringValue("DescribeAccesskeyLeakList.AccessKeyLeakList["+ i +"].Status");
+				accessKeyLeak.Type = _ctx.StringValue("DescribeAccesskeyLeakList.AccessKeyLeakList["+ i +"].Type");
+				accessKeyLeak.UserType = _ctx.StringValue("DescribeAccesskeyLeakList.AccessKeyLeakList["+ i +"].UserType");
+				accessKeyLeak.AccesskeyId = _ctx.StringValue("DescribeAccesskeyLeakList.AccessKeyLeakList["+ i +"].AccesskeyId");
 				accessKeyLeak.AliUserName = _ctx.StringValue("DescribeAccesskeyLeakList.AccessKeyLeakList["+ i +"].AliUserName");
 				accessKeyLeak.DealType = _ctx.StringValue("DescribeAccesskeyLeakList.AccessKeyLeakList["+ i +"].DealType");
-				accessKeyLeak.DealTime = _ctx.StringValue("DescribeAccesskeyLeakList.AccessKeyLeakList["+ i +"].DealTime");
-				accessKeyLeak.UserType = _ctx.StringValue("DescribeAccesskeyLeakList.AccessKeyLeakList["+ i +"].UserType");
 				accessKeyLeak.Url = _ctx.StringValue("DescribeAccesskeyLeakList.AccessKeyLeakList["+ i +"].Url");
+				accessKeyLeak.GmtModified = _ctx.LongValue("DescribeAccesskeyLeakList.AccessKeyLeakList["+ i +"].GmtModified");
+				accessKeyLeak.Asset = _ctx.StringValue("DescribeAccesskeyLeakList.AccessKeyLeakList["+ i +"].Asset");
+				accessKeyLeak.Id = _ctx.LongValue("DescribeAccesskeyLeakList.AccessKeyLeakList["+ i +"].Id");
 
 				describeAccesskeyLeakListResponse_accessKeyLeakList.Add(accessKeyLeak);
 			}

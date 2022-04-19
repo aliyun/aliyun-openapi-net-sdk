@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			FixCheckWarningsResponse fixCheckWarningsResponse = new FixCheckWarningsResponse();
 
 			fixCheckWarningsResponse.HttpResponse = _ctx.HttpResponse;
-			fixCheckWarningsResponse.RequestId = _ctx.StringValue("FixCheckWarnings.RequestId");
 			fixCheckWarningsResponse.BatchId = _ctx.LongValue("FixCheckWarnings.BatchId");
+			fixCheckWarningsResponse.RequestId = _ctx.StringValue("FixCheckWarnings.RequestId");
         
 			return fixCheckWarningsResponse;
         }

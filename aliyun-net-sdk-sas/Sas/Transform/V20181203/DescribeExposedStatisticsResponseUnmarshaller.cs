@@ -32,15 +32,15 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 
 			describeExposedStatisticsResponse.HttpResponse = _ctx.HttpResponse;
 			describeExposedStatisticsResponse.RequestId = _ctx.StringValue("DescribeExposedStatistics.RequestId");
+			describeExposedStatisticsResponse.ExposedLaterVulCount = _ctx.IntegerValue("DescribeExposedStatistics.ExposedLaterVulCount");
+			describeExposedStatisticsResponse.ExposedComponentCount = _ctx.IntegerValue("DescribeExposedStatistics.ExposedComponentCount");
+			describeExposedStatisticsResponse.ExposedPortCount = _ctx.IntegerValue("DescribeExposedStatistics.ExposedPortCount");
 			describeExposedStatisticsResponse.ExposedInstanceCount = _ctx.IntegerValue("DescribeExposedStatistics.ExposedInstanceCount");
+			describeExposedStatisticsResponse.ExposedWeekPasswordMachineCount = _ctx.IntegerValue("DescribeExposedStatistics.ExposedWeekPasswordMachineCount");
+			describeExposedStatisticsResponse.ExposedNntfVulCount = _ctx.IntegerValue("DescribeExposedStatistics.ExposedNntfVulCount");
 			describeExposedStatisticsResponse.GatewayAssetCount = _ctx.IntegerValue("DescribeExposedStatistics.GatewayAssetCount");
 			describeExposedStatisticsResponse.ExposedIpCount = _ctx.IntegerValue("DescribeExposedStatistics.ExposedIpCount");
-			describeExposedStatisticsResponse.ExposedPortCount = _ctx.IntegerValue("DescribeExposedStatistics.ExposedPortCount");
-			describeExposedStatisticsResponse.ExposedComponentCount = _ctx.IntegerValue("DescribeExposedStatistics.ExposedComponentCount");
 			describeExposedStatisticsResponse.ExposedAsapVulCount = _ctx.IntegerValue("DescribeExposedStatistics.ExposedAsapVulCount");
-			describeExposedStatisticsResponse.ExposedLaterVulCount = _ctx.IntegerValue("DescribeExposedStatistics.ExposedLaterVulCount");
-			describeExposedStatisticsResponse.ExposedNntfVulCount = _ctx.IntegerValue("DescribeExposedStatistics.ExposedNntfVulCount");
-			describeExposedStatisticsResponse.ExposedWeekPasswordMachineCount = _ctx.IntegerValue("DescribeExposedStatistics.ExposedWeekPasswordMachineCount");
         
 			return describeExposedStatisticsResponse;
         }

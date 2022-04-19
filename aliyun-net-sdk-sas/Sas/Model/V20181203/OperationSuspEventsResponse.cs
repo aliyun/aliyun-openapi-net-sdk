@@ -27,9 +27,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string requestId;
 
-		private bool? success;
-
 		private string accessCode;
+
+		private bool? success;
 
 		public string RequestId
 		{
@@ -43,18 +43,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
 		public string AccessCode
 		{
 			get
@@ -64,6 +52,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				accessCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

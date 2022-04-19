@@ -56,73 +56,55 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeFieldStatistics_GroupedFields
 		{
 
-			private int? riskInstanceCount;
-
-			private int? instanceCount;
-
-			private int? newInstanceCount;
+			private int? offlineInstanceCount;
 
 			private int? regionCount;
 
-			private int? unprotectedInstanceCount;
-
-			private int? vpcCount;
-
-			private int? groupCount;
-
-			private int? notRunningStatusCount;
-
-			private int? offlineInstanceCount;
-
-			private int? importantAssetCount;
-
-			private int? generalAssetCount;
-
-			private int? testAssetCount;
+			private int? newInstanceCount;
 
 			private int? exposedInstanceCount;
 
-			private int? aliYunInstanceCount;
-
-			private int? idcInstanceCount;
+			private int? groupCount;
 
 			private int? tencentInstanceCount;
 
+			private int? generalAssetCount;
+
 			private int? instanceSyncTaskCount;
 
-			public int? RiskInstanceCount
-			{
-				get
-				{
-					return riskInstanceCount;
-				}
-				set	
-				{
-					riskInstanceCount = value;
-				}
-			}
+			private int? unprotectedInstanceCount;
 
-			public int? InstanceCount
-			{
-				get
-				{
-					return instanceCount;
-				}
-				set	
-				{
-					instanceCount = value;
-				}
-			}
+			private int? importantAssetCount;
 
-			public int? NewInstanceCount
+			private int? testAssetCount;
+
+			private int? vpcCount;
+
+			private int? instanceCount;
+
+			private int? pauseInstanceCount;
+
+			private int? idcInstanceCount;
+
+			private int? notRunningStatusCount;
+
+			private int? aliYunInstanceCount;
+
+			private int? riskInstanceCount;
+
+			private int? huaweiInstanceCount;
+
+			private int? awsInstanceCount;
+
+			public int? OfflineInstanceCount
 			{
 				get
 				{
-					return newInstanceCount;
+					return offlineInstanceCount;
 				}
 				set	
 				{
-					newInstanceCount = value;
+					offlineInstanceCount = value;
 				}
 			}
 
@@ -138,99 +120,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? UnprotectedInstanceCount
+			public int? NewInstanceCount
 			{
 				get
 				{
-					return unprotectedInstanceCount;
+					return newInstanceCount;
 				}
 				set	
 				{
-					unprotectedInstanceCount = value;
-				}
-			}
-
-			public int? VpcCount
-			{
-				get
-				{
-					return vpcCount;
-				}
-				set	
-				{
-					vpcCount = value;
-				}
-			}
-
-			public int? GroupCount
-			{
-				get
-				{
-					return groupCount;
-				}
-				set	
-				{
-					groupCount = value;
-				}
-			}
-
-			public int? NotRunningStatusCount
-			{
-				get
-				{
-					return notRunningStatusCount;
-				}
-				set	
-				{
-					notRunningStatusCount = value;
-				}
-			}
-
-			public int? OfflineInstanceCount
-			{
-				get
-				{
-					return offlineInstanceCount;
-				}
-				set	
-				{
-					offlineInstanceCount = value;
-				}
-			}
-
-			public int? ImportantAssetCount
-			{
-				get
-				{
-					return importantAssetCount;
-				}
-				set	
-				{
-					importantAssetCount = value;
-				}
-			}
-
-			public int? GeneralAssetCount
-			{
-				get
-				{
-					return generalAssetCount;
-				}
-				set	
-				{
-					generalAssetCount = value;
-				}
-			}
-
-			public int? TestAssetCount
-			{
-				get
-				{
-					return testAssetCount;
-				}
-				set	
-				{
-					testAssetCount = value;
+					newInstanceCount = value;
 				}
 			}
 
@@ -246,27 +144,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? AliYunInstanceCount
+			public int? GroupCount
 			{
 				get
 				{
-					return aliYunInstanceCount;
+					return groupCount;
 				}
 				set	
 				{
-					aliYunInstanceCount = value;
-				}
-			}
-
-			public int? IdcInstanceCount
-			{
-				get
-				{
-					return idcInstanceCount;
-				}
-				set	
-				{
-					idcInstanceCount = value;
+					groupCount = value;
 				}
 			}
 
@@ -282,6 +168,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public int? GeneralAssetCount
+			{
+				get
+				{
+					return generalAssetCount;
+				}
+				set	
+				{
+					generalAssetCount = value;
+				}
+			}
+
 			public int? InstanceSyncTaskCount
 			{
 				get
@@ -291,6 +189,150 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					instanceSyncTaskCount = value;
+				}
+			}
+
+			public int? UnprotectedInstanceCount
+			{
+				get
+				{
+					return unprotectedInstanceCount;
+				}
+				set	
+				{
+					unprotectedInstanceCount = value;
+				}
+			}
+
+			public int? ImportantAssetCount
+			{
+				get
+				{
+					return importantAssetCount;
+				}
+				set	
+				{
+					importantAssetCount = value;
+				}
+			}
+
+			public int? TestAssetCount
+			{
+				get
+				{
+					return testAssetCount;
+				}
+				set	
+				{
+					testAssetCount = value;
+				}
+			}
+
+			public int? VpcCount
+			{
+				get
+				{
+					return vpcCount;
+				}
+				set	
+				{
+					vpcCount = value;
+				}
+			}
+
+			public int? InstanceCount
+			{
+				get
+				{
+					return instanceCount;
+				}
+				set	
+				{
+					instanceCount = value;
+				}
+			}
+
+			public int? PauseInstanceCount
+			{
+				get
+				{
+					return pauseInstanceCount;
+				}
+				set	
+				{
+					pauseInstanceCount = value;
+				}
+			}
+
+			public int? IdcInstanceCount
+			{
+				get
+				{
+					return idcInstanceCount;
+				}
+				set	
+				{
+					idcInstanceCount = value;
+				}
+			}
+
+			public int? NotRunningStatusCount
+			{
+				get
+				{
+					return notRunningStatusCount;
+				}
+				set	
+				{
+					notRunningStatusCount = value;
+				}
+			}
+
+			public int? AliYunInstanceCount
+			{
+				get
+				{
+					return aliYunInstanceCount;
+				}
+				set	
+				{
+					aliYunInstanceCount = value;
+				}
+			}
+
+			public int? RiskInstanceCount
+			{
+				get
+				{
+					return riskInstanceCount;
+				}
+				set	
+				{
+					riskInstanceCount = value;
+				}
+			}
+
+			public int? HuaweiInstanceCount
+			{
+				get
+				{
+					return huaweiInstanceCount;
+				}
+				set	
+				{
+					huaweiInstanceCount = value;
+				}
+			}
+
+			public int? AwsInstanceCount
+			{
+				get
+				{
+					return awsInstanceCount;
+				}
+				set	
+				{
+					awsInstanceCount = value;
 				}
 			}
 		}

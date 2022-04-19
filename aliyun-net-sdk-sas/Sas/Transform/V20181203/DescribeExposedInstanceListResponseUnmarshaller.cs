@@ -34,33 +34,33 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describeExposedInstanceListResponse.RequestId = _ctx.StringValue("DescribeExposedInstanceList.RequestId");
 
 			DescribeExposedInstanceListResponse.DescribeExposedInstanceList_PageInfo pageInfo = new DescribeExposedInstanceListResponse.DescribeExposedInstanceList_PageInfo();
-			pageInfo.Count = _ctx.IntegerValue("DescribeExposedInstanceList.PageInfo.Count");
+			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeExposedInstanceList.PageInfo.CurrentPage");
 			pageInfo.PageSize = _ctx.IntegerValue("DescribeExposedInstanceList.PageInfo.PageSize");
 			pageInfo.TotalCount = _ctx.IntegerValue("DescribeExposedInstanceList.PageInfo.TotalCount");
-			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeExposedInstanceList.PageInfo.CurrentPage");
+			pageInfo.Count = _ctx.IntegerValue("DescribeExposedInstanceList.PageInfo.Count");
 			describeExposedInstanceListResponse.PageInfo = pageInfo;
 
 			List<DescribeExposedInstanceListResponse.DescribeExposedInstanceList_ExposedInstance> describeExposedInstanceListResponse_exposedInstances = new List<DescribeExposedInstanceListResponse.DescribeExposedInstanceList_ExposedInstance>();
 			for (int i = 0; i < _ctx.Length("DescribeExposedInstanceList.ExposedInstances.Length"); i++) {
 				DescribeExposedInstanceListResponse.DescribeExposedInstanceList_ExposedInstance exposedInstance = new DescribeExposedInstanceListResponse.DescribeExposedInstanceList_ExposedInstance();
-				exposedInstance.Uuid = _ctx.StringValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].Uuid");
-				exposedInstance.IntranetIp = _ctx.StringValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].IntranetIp");
-				exposedInstance.InternetIp = _ctx.StringValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].InternetIp");
-				exposedInstance.AsapVulCount = _ctx.IntegerValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].AsapVulCount");
-				exposedInstance.LaterVulCount = _ctx.IntegerValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].LaterVulCount");
-				exposedInstance.NntfVulCount = _ctx.IntegerValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].NntfVulCount");
-				exposedInstance.TotalVulCount = _ctx.IntegerValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].TotalVulCount");
-				exposedInstance.ExploitHealthCount = _ctx.IntegerValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].ExploitHealthCount");
-				exposedInstance.ExposureComponent = _ctx.StringValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].ExposureComponent");
-				exposedInstance.ExposureType = _ctx.StringValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].ExposureType");
-				exposedInstance.ExposureTypeId = _ctx.StringValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].ExposureTypeId");
-				exposedInstance.ExposurePort = _ctx.StringValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].ExposurePort");
 				exposedInstance.ExposureIp = _ctx.StringValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].ExposureIp");
+				exposedInstance.TotalVulCount = _ctx.IntegerValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].TotalVulCount");
+				exposedInstance.InternetIp = _ctx.StringValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].InternetIp");
+				exposedInstance.NntfVulCount = _ctx.IntegerValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].NntfVulCount");
 				exposedInstance.InstanceId = _ctx.StringValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].InstanceId");
-				exposedInstance.InstanceName = _ctx.StringValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].InstanceName");
+				exposedInstance.ExposureType = _ctx.StringValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].ExposureType");
+				exposedInstance.IntranetIp = _ctx.StringValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].IntranetIp");
 				exposedInstance.RegionId = _ctx.StringValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].RegionId");
-				exposedInstance.GroupId = _ctx.LongValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].GroupId");
+				exposedInstance.ExposureTypeId = _ctx.StringValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].ExposureTypeId");
+				exposedInstance.AsapVulCount = _ctx.IntegerValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].AsapVulCount");
+				exposedInstance.ExposurePort = _ctx.StringValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].ExposurePort");
+				exposedInstance.Uuid = _ctx.StringValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].Uuid");
 				exposedInstance.GroupName = _ctx.StringValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].GroupName");
+				exposedInstance.GroupId = _ctx.LongValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].GroupId");
+				exposedInstance.ExploitHealthCount = _ctx.IntegerValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].ExploitHealthCount");
+				exposedInstance.InstanceName = _ctx.StringValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].InstanceName");
+				exposedInstance.ExposureComponent = _ctx.StringValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].ExposureComponent");
+				exposedInstance.LaterVulCount = _ctx.IntegerValue("DescribeExposedInstanceList.ExposedInstances["+ i +"].LaterVulCount");
 
 				describeExposedInstanceListResponse_exposedInstances.Add(exposedInstance);
 			}

@@ -72,9 +72,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string port;
 
-			private string proto;
-
 			private int? count;
+
+			private string proto;
 
 			public string Port
 			{
@@ -85,6 +85,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					port = value;
+				}
+			}
+
+			public int? Count
+			{
+				get
+				{
+					return count;
+				}
+				set	
+				{
+					count = value;
 				}
 			}
 
@@ -99,40 +111,28 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					proto = value;
 				}
 			}
-
-			public int? Count
-			{
-				get
-				{
-					return count;
-				}
-				set	
-				{
-					count = value;
-				}
-			}
 		}
 
 		public class DescribePropertyPortItem_PageInfo
 		{
 
-			private int? count;
+			private int? currentPage;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? currentPage;
+			private int? count;
 
-			public int? Count
+			public int? CurrentPage
 			{
 				get
 				{
-					return count;
+					return currentPage;
 				}
 				set	
 				{
-					count = value;
+					currentPage = value;
 				}
 			}
 
@@ -160,15 +160,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? CurrentPage
+			public int? Count
 			{
 				get
 				{
-					return currentPage;
+					return count;
 				}
 				set	
 				{
-					currentPage = value;
+					count = value;
 				}
 			}
 		}

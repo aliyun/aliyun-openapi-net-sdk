@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class DescribeSuspEventDetailRequest : RpcAcsRequest<DescribeSuspEventDetailResponse>
     {
         public DescribeSuspEventDetailRequest()
-            : base("Sas", "2018-12-03", "DescribeSuspEventDetail", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "DescribeSuspEventDetail")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,26 +41,13 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			Method = MethodType.POST;
         }
 
-		private int? suspiciousEventId;
-
 		private string sourceIp;
 
 		private string from;
 
 		private string lang;
 
-		public int? SuspiciousEventId
-		{
-			get
-			{
-				return suspiciousEventId;
-			}
-			set	
-			{
-				suspiciousEventId = value;
-				DictionaryUtil.Add(QueryParameters, "SuspiciousEventId", value.ToString());
-			}
-		}
+		private int? suspiciousEventId;
 
 		public string SourceIp
 		{
@@ -97,6 +85,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public int? SuspiciousEventId
+		{
+			get
+			{
+				return suspiciousEventId;
+			}
+			set	
+			{
+				suspiciousEventId = value;
+				DictionaryUtil.Add(QueryParameters, "SuspiciousEventId", value.ToString());
 			}
 		}
 

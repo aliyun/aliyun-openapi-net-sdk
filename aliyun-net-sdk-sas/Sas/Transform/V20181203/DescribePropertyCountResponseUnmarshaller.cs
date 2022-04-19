@@ -31,14 +31,18 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribePropertyCountResponse describePropertyCountResponse = new DescribePropertyCountResponse();
 
 			describePropertyCountResponse.HttpResponse = _ctx.HttpResponse;
-			describePropertyCountResponse.RequestId = _ctx.StringValue("DescribePropertyCount.RequestId");
-			describePropertyCountResponse.Port = _ctx.IntegerValue("DescribePropertyCount.Port");
 			describePropertyCountResponse.Process = _ctx.IntegerValue("DescribePropertyCount.Process");
-			describePropertyCountResponse.Software = _ctx.IntegerValue("DescribePropertyCount.Software");
+			describePropertyCountResponse.RequestId = _ctx.StringValue("DescribePropertyCount.RequestId");
 			describePropertyCountResponse.User = _ctx.IntegerValue("DescribePropertyCount.User");
+			describePropertyCountResponse.Software = _ctx.IntegerValue("DescribePropertyCount.Software");
 			describePropertyCountResponse.Cron = _ctx.IntegerValue("DescribePropertyCount.Cron");
+			describePropertyCountResponse.Port = _ctx.IntegerValue("DescribePropertyCount.Port");
 			describePropertyCountResponse.Sca = _ctx.IntegerValue("DescribePropertyCount.Sca");
-			describePropertyCountResponse.AutoRun = _ctx.IntegerValue("DescribePropertyCount.AutoRun");
+			describePropertyCountResponse.Web = _ctx.IntegerValue("DescribePropertyCount.Web");
+			describePropertyCountResponse.Database = _ctx.IntegerValue("DescribePropertyCount.Database");
+			describePropertyCountResponse.Lkm = _ctx.IntegerValue("DescribePropertyCount.Lkm");
+			describePropertyCountResponse.Autorun = _ctx.IntegerValue("DescribePropertyCount.Autorun");
+			describePropertyCountResponse.Webserver = _ctx.IntegerValue("DescribePropertyCount.Webserver");
         
 			return describePropertyCountResponse;
         }

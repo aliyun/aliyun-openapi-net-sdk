@@ -34,22 +34,22 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describeGroupedMaliciousFilesResponse.RequestId = _ctx.StringValue("DescribeGroupedMaliciousFiles.RequestId");
 
 			DescribeGroupedMaliciousFilesResponse.DescribeGroupedMaliciousFiles_PageInfo pageInfo = new DescribeGroupedMaliciousFilesResponse.DescribeGroupedMaliciousFiles_PageInfo();
-			pageInfo.Count = _ctx.IntegerValue("DescribeGroupedMaliciousFiles.PageInfo.Count");
+			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeGroupedMaliciousFiles.PageInfo.CurrentPage");
 			pageInfo.PageSize = _ctx.IntegerValue("DescribeGroupedMaliciousFiles.PageInfo.PageSize");
 			pageInfo.TotalCount = _ctx.IntegerValue("DescribeGroupedMaliciousFiles.PageInfo.TotalCount");
-			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeGroupedMaliciousFiles.PageInfo.CurrentPage");
+			pageInfo.Count = _ctx.IntegerValue("DescribeGroupedMaliciousFiles.PageInfo.Count");
 			describeGroupedMaliciousFilesResponse.PageInfo = pageInfo;
 
 			List<DescribeGroupedMaliciousFilesResponse.DescribeGroupedMaliciousFiles_GroupedMaliciousFile> describeGroupedMaliciousFilesResponse_groupedMaliciousFileResponse = new List<DescribeGroupedMaliciousFilesResponse.DescribeGroupedMaliciousFiles_GroupedMaliciousFile>();
 			for (int i = 0; i < _ctx.Length("DescribeGroupedMaliciousFiles.GroupedMaliciousFileResponse.Length"); i++) {
 				DescribeGroupedMaliciousFilesResponse.DescribeGroupedMaliciousFiles_GroupedMaliciousFile groupedMaliciousFile = new DescribeGroupedMaliciousFilesResponse.DescribeGroupedMaliciousFiles_GroupedMaliciousFile();
+				groupedMaliciousFile.Status = _ctx.IntegerValue("DescribeGroupedMaliciousFiles.GroupedMaliciousFileResponse["+ i +"].Status");
+				groupedMaliciousFile.ImageCount = _ctx.LongValue("DescribeGroupedMaliciousFiles.GroupedMaliciousFileResponse["+ i +"].ImageCount");
+				groupedMaliciousFile.LatestScanTimestamp = _ctx.LongValue("DescribeGroupedMaliciousFiles.GroupedMaliciousFileResponse["+ i +"].LatestScanTimestamp");
 				groupedMaliciousFile.MaliciousName = _ctx.StringValue("DescribeGroupedMaliciousFiles.GroupedMaliciousFileResponse["+ i +"].MaliciousName");
 				groupedMaliciousFile.MaliciousMd5 = _ctx.StringValue("DescribeGroupedMaliciousFiles.GroupedMaliciousFileResponse["+ i +"].MaliciousMd5");
 				groupedMaliciousFile.FirstScanTimestamp = _ctx.LongValue("DescribeGroupedMaliciousFiles.GroupedMaliciousFileResponse["+ i +"].FirstScanTimestamp");
-				groupedMaliciousFile.LatestScanTimestamp = _ctx.LongValue("DescribeGroupedMaliciousFiles.GroupedMaliciousFileResponse["+ i +"].LatestScanTimestamp");
-				groupedMaliciousFile.Status = _ctx.IntegerValue("DescribeGroupedMaliciousFiles.GroupedMaliciousFileResponse["+ i +"].Status");
 				groupedMaliciousFile.Level = _ctx.StringValue("DescribeGroupedMaliciousFiles.GroupedMaliciousFileResponse["+ i +"].Level");
-				groupedMaliciousFile.ImageCount = _ctx.LongValue("DescribeGroupedMaliciousFiles.GroupedMaliciousFileResponse["+ i +"].ImageCount");
 
 				describeGroupedMaliciousFilesResponse_groupedMaliciousFileResponse.Add(groupedMaliciousFile);
 			}

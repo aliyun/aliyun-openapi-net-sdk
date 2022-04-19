@@ -56,29 +56,17 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeRiskCheckItemResult_PageContentResource
 		{
 
-			private string contentResource;
-
 			private int? currentPage;
+
+			private string contentResource;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? count;
-
 			private int? pageCount;
 
-			public string ContentResource
-			{
-				get
-				{
-					return contentResource;
-				}
-				set	
-				{
-					contentResource = value;
-				}
-			}
+			private int? count;
 
 			public int? CurrentPage
 			{
@@ -89,6 +77,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					currentPage = value;
+				}
+			}
+
+			public string ContentResource
+			{
+				get
+				{
+					return contentResource;
+				}
+				set	
+				{
+					contentResource = value;
 				}
 			}
 
@@ -116,18 +116,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? Count
-			{
-				get
-				{
-					return count;
-				}
-				set	
-				{
-					count = value;
-				}
-			}
-
 			public int? PageCount
 			{
 				get
@@ -137,6 +125,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					pageCount = value;
+				}
+			}
+
+			public int? Count
+			{
+				get
+				{
+					return count;
+				}
+				set	
+				{
+					count = value;
 				}
 			}
 		}

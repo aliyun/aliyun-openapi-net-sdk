@@ -31,29 +31,29 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeSuspEventQuaraFilesResponse describeSuspEventQuaraFilesResponse = new DescribeSuspEventQuaraFilesResponse();
 
 			describeSuspEventQuaraFilesResponse.HttpResponse = _ctx.HttpResponse;
-			describeSuspEventQuaraFilesResponse.RequestId = _ctx.StringValue("DescribeSuspEventQuaraFiles.RequestId");
-			describeSuspEventQuaraFilesResponse.Count = _ctx.IntegerValue("DescribeSuspEventQuaraFiles.Count");
-			describeSuspEventQuaraFilesResponse.PageSize = _ctx.IntegerValue("DescribeSuspEventQuaraFiles.PageSize");
-			describeSuspEventQuaraFilesResponse.TotalCount = _ctx.IntegerValue("DescribeSuspEventQuaraFiles.TotalCount");
 			describeSuspEventQuaraFilesResponse.CurrentPage = _ctx.IntegerValue("DescribeSuspEventQuaraFiles.CurrentPage");
+			describeSuspEventQuaraFilesResponse.PageSize = _ctx.IntegerValue("DescribeSuspEventQuaraFiles.PageSize");
+			describeSuspEventQuaraFilesResponse.RequestId = _ctx.StringValue("DescribeSuspEventQuaraFiles.RequestId");
+			describeSuspEventQuaraFilesResponse.TotalCount = _ctx.IntegerValue("DescribeSuspEventQuaraFiles.TotalCount");
+			describeSuspEventQuaraFilesResponse.Count = _ctx.IntegerValue("DescribeSuspEventQuaraFiles.Count");
 
 			List<DescribeSuspEventQuaraFilesResponse.DescribeSuspEventQuaraFiles_QuaraFile> describeSuspEventQuaraFilesResponse_quaraFiles = new List<DescribeSuspEventQuaraFilesResponse.DescribeSuspEventQuaraFiles_QuaraFile>();
 			for (int i = 0; i < _ctx.Length("DescribeSuspEventQuaraFiles.QuaraFiles.Length"); i++) {
 				DescribeSuspEventQuaraFilesResponse.DescribeSuspEventQuaraFiles_QuaraFile quaraFile = new DescribeSuspEventQuaraFilesResponse.DescribeSuspEventQuaraFiles_QuaraFile();
-				quaraFile.Path = _ctx.StringValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].Path");
+				quaraFile.Link = _ctx.StringValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].Link");
+				quaraFile.Status = _ctx.StringValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].Status");
 				quaraFile.EventName = _ctx.StringValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].EventName");
-				quaraFile.Id = _ctx.IntegerValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].Id");
-				quaraFile.EventType = _ctx.StringValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].EventType");
-				quaraFile.Tag = _ctx.StringValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].Tag");
-				quaraFile.Uuid = _ctx.StringValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].Uuid");
-				quaraFile.InstanceId = _ctx.StringValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].InstanceId");
-				quaraFile.InstanceName = _ctx.StringValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].InstanceName");
 				quaraFile.InternetIp = _ctx.StringValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].InternetIp");
 				quaraFile.Ip = _ctx.StringValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].Ip");
-				quaraFile.Status = _ctx.StringValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].Status");
+				quaraFile.Tag = _ctx.StringValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].Tag");
+				quaraFile.InstanceId = _ctx.StringValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].InstanceId");
+				quaraFile.Uuid = _ctx.StringValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].Uuid");
+				quaraFile.EventType = _ctx.StringValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].EventType");
+				quaraFile.InstanceName = _ctx.StringValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].InstanceName");
+				quaraFile.Path = _ctx.StringValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].Path");
 				quaraFile.Md5 = _ctx.StringValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].Md5");
+				quaraFile.Id = _ctx.IntegerValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].Id");
 				quaraFile.ModifyTime = _ctx.StringValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].ModifyTime");
-				quaraFile.Link = _ctx.StringValue("DescribeSuspEventQuaraFiles.QuaraFiles["+ i +"].Link");
 
 				describeSuspEventQuaraFilesResponse_quaraFiles.Add(quaraFile);
 			}

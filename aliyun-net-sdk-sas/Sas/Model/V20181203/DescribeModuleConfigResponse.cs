@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeModuleConfigResponse : AcsResponse
 	{
 
+		private int? httpStatusCode;
+
 		private string requestId;
 
 		private bool? success;
 
 		private int? count;
 
-		private int? httpStatusCode;
-
 		private List<DescribeModuleConfig_ModuleConfig> moduleConfigList;
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -71,18 +83,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
 		public List<DescribeModuleConfig_ModuleConfig> ModuleConfigList
 		{
 			get
@@ -98,23 +98,11 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeModuleConfig_ModuleConfig
 		{
 
-			private string configName;
-
 			private string moduleName;
 
-			private List<DescribeModuleConfig_Item> items;
+			private string configName;
 
-			public string ConfigName
-			{
-				get
-				{
-					return configName;
-				}
-				set	
-				{
-					configName = value;
-				}
-			}
+			private List<DescribeModuleConfig_Item> items;
 
 			public string ModuleName
 			{
@@ -125,6 +113,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					moduleName = value;
+				}
+			}
+
+			public string ConfigName
+			{
+				get
+				{
+					return configName;
+				}
+				set	
+				{
+					configName = value;
 				}
 			}
 
@@ -143,39 +143,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			public class DescribeModuleConfig_Item
 			{
 
-				private string instanceId;
-
-				private string instanceName;
+				private string uuid;
 
 				private int? groupId;
 
-				private string ip;
+				private string instanceName;
 
 				private string region;
 
-				private string uuid;
+				private string ip;
 
-				public string InstanceId
+				private string instanceId;
+
+				public string Uuid
 				{
 					get
 					{
-						return instanceId;
+						return uuid;
 					}
 					set	
 					{
-						instanceId = value;
-					}
-				}
-
-				public string InstanceName
-				{
-					get
-					{
-						return instanceName;
-					}
-					set	
-					{
-						instanceName = value;
+						uuid = value;
 					}
 				}
 
@@ -191,15 +179,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					}
 				}
 
-				public string Ip
+				public string InstanceName
 				{
 					get
 					{
-						return ip;
+						return instanceName;
 					}
 					set	
 					{
-						ip = value;
+						instanceName = value;
 					}
 				}
 
@@ -215,15 +203,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					}
 				}
 
-				public string Uuid
+				public string Ip
 				{
 					get
 					{
-						return uuid;
+						return ip;
 					}
 					set	
 					{
-						uuid = value;
+						ip = value;
+					}
+				}
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
 					}
 				}
 			}

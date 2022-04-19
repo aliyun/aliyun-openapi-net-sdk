@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			createSimilarSecurityEventsQueryTaskResponse.RequestId = _ctx.StringValue("CreateSimilarSecurityEventsQueryTask.RequestId");
 
 			CreateSimilarSecurityEventsQueryTaskResponse.CreateSimilarSecurityEventsQueryTask_CreateSimilarSecurityEventsQueryTaskResponse1 createSimilarSecurityEventsQueryTaskResponse1 = new CreateSimilarSecurityEventsQueryTaskResponse.CreateSimilarSecurityEventsQueryTask_CreateSimilarSecurityEventsQueryTaskResponse1();
-			createSimilarSecurityEventsQueryTaskResponse1.TaskId = _ctx.LongValue("CreateSimilarSecurityEventsQueryTask.CreateSimilarSecurityEventsQueryTaskResponse.TaskId");
 			createSimilarSecurityEventsQueryTaskResponse1.Status = _ctx.StringValue("CreateSimilarSecurityEventsQueryTask.CreateSimilarSecurityEventsQueryTaskResponse.Status");
+			createSimilarSecurityEventsQueryTaskResponse1.TaskId = _ctx.LongValue("CreateSimilarSecurityEventsQueryTask.CreateSimilarSecurityEventsQueryTaskResponse.TaskId");
 			createSimilarSecurityEventsQueryTaskResponse.CreateSimilarSecurityEventsQueryTaskResponse1 = createSimilarSecurityEventsQueryTaskResponse1;
         
 			return createSimilarSecurityEventsQueryTaskResponse;

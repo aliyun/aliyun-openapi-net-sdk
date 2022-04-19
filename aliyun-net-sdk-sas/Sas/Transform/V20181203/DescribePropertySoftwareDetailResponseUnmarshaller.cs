@@ -34,27 +34,27 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describePropertySoftwareDetailResponse.RequestId = _ctx.StringValue("DescribePropertySoftwareDetail.RequestId");
 
 			DescribePropertySoftwareDetailResponse.DescribePropertySoftwareDetail_PageInfo pageInfo = new DescribePropertySoftwareDetailResponse.DescribePropertySoftwareDetail_PageInfo();
-			pageInfo.Count = _ctx.IntegerValue("DescribePropertySoftwareDetail.PageInfo.Count");
+			pageInfo.CurrentPage = _ctx.IntegerValue("DescribePropertySoftwareDetail.PageInfo.CurrentPage");
 			pageInfo.PageSize = _ctx.IntegerValue("DescribePropertySoftwareDetail.PageInfo.PageSize");
 			pageInfo.TotalCount = _ctx.IntegerValue("DescribePropertySoftwareDetail.PageInfo.TotalCount");
-			pageInfo.CurrentPage = _ctx.IntegerValue("DescribePropertySoftwareDetail.PageInfo.CurrentPage");
+			pageInfo.Count = _ctx.IntegerValue("DescribePropertySoftwareDetail.PageInfo.Count");
 			describePropertySoftwareDetailResponse.PageInfo = pageInfo;
 
 			List<DescribePropertySoftwareDetailResponse.DescribePropertySoftwareDetail_PropertySoftware> describePropertySoftwareDetailResponse_propertys = new List<DescribePropertySoftwareDetailResponse.DescribePropertySoftwareDetail_PropertySoftware>();
 			for (int i = 0; i < _ctx.Length("DescribePropertySoftwareDetail.Propertys.Length"); i++) {
 				DescribePropertySoftwareDetailResponse.DescribePropertySoftwareDetail_PropertySoftware propertySoftware = new DescribePropertySoftwareDetailResponse.DescribePropertySoftwareDetail_PropertySoftware();
-				propertySoftware.Name = _ctx.StringValue("DescribePropertySoftwareDetail.Propertys["+ i +"].Name");
-				propertySoftware.Path = _ctx.StringValue("DescribePropertySoftwareDetail.Propertys["+ i +"].Path");
-				propertySoftware.InstanceName = _ctx.StringValue("DescribePropertySoftwareDetail.Propertys["+ i +"].InstanceName");
+				propertySoftware.InternetIp = _ctx.StringValue("DescribePropertySoftwareDetail.Propertys["+ i +"].InternetIp");
 				propertySoftware.Ip = _ctx.StringValue("DescribePropertySoftwareDetail.Propertys["+ i +"].Ip");
-				propertySoftware.Create = _ctx.LongValue("DescribePropertySoftwareDetail.Propertys["+ i +"].Create");
-				propertySoftware.CreateTimestamp = _ctx.LongValue("DescribePropertySoftwareDetail.Propertys["+ i +"].CreateTimestamp");
-				propertySoftware.InstallTime = _ctx.StringValue("DescribePropertySoftwareDetail.Propertys["+ i +"].InstallTime");
-				propertySoftware.Version = _ctx.StringValue("DescribePropertySoftwareDetail.Propertys["+ i +"].Version");
-				propertySoftware.Uuid = _ctx.StringValue("DescribePropertySoftwareDetail.Propertys["+ i +"].Uuid");
 				propertySoftware.InstanceId = _ctx.StringValue("DescribePropertySoftwareDetail.Propertys["+ i +"].InstanceId");
 				propertySoftware.IntranetIp = _ctx.StringValue("DescribePropertySoftwareDetail.Propertys["+ i +"].IntranetIp");
-				propertySoftware.InternetIp = _ctx.StringValue("DescribePropertySoftwareDetail.Propertys["+ i +"].InternetIp");
+				propertySoftware.InstallTime = _ctx.StringValue("DescribePropertySoftwareDetail.Propertys["+ i +"].InstallTime");
+				propertySoftware.Uuid = _ctx.StringValue("DescribePropertySoftwareDetail.Propertys["+ i +"].Uuid");
+				propertySoftware.Version = _ctx.StringValue("DescribePropertySoftwareDetail.Propertys["+ i +"].Version");
+				propertySoftware.InstanceName = _ctx.StringValue("DescribePropertySoftwareDetail.Propertys["+ i +"].InstanceName");
+				propertySoftware.Path = _ctx.StringValue("DescribePropertySoftwareDetail.Propertys["+ i +"].Path");
+				propertySoftware.Name = _ctx.StringValue("DescribePropertySoftwareDetail.Propertys["+ i +"].Name");
+				propertySoftware.CreateTimestamp = _ctx.LongValue("DescribePropertySoftwareDetail.Propertys["+ i +"].CreateTimestamp");
+				propertySoftware.InstallTimeDt = _ctx.LongValue("DescribePropertySoftwareDetail.Propertys["+ i +"].InstallTimeDt");
 
 				describePropertySoftwareDetailResponse_propertys.Add(propertySoftware);
 			}

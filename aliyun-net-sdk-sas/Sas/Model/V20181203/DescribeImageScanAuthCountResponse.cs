@@ -56,21 +56,21 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeImageScanAuthCount_ImageScan
 		{
 
-			private string instanceId;
+			private long? scanCount;
 
 			private long? imageScanCapacity;
 
-			private long? scanCount;
+			private string instanceId;
 
-			public string InstanceId
+			public long? ScanCount
 			{
 				get
 				{
-					return instanceId;
+					return scanCount;
 				}
 				set	
 				{
-					instanceId = value;
+					scanCount = value;
 				}
 			}
 
@@ -86,15 +86,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public long? ScanCount
+			public string InstanceId
 			{
 				get
 				{
-					return scanCount;
+					return instanceId;
 				}
 				set	
 				{
-					scanCount = value;
+					instanceId = value;
 				}
 			}
 		}

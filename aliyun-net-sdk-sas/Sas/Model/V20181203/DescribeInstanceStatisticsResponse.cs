@@ -56,41 +56,29 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeInstanceStatistics_DataItem
 		{
 
-			private string uuid;
-
 			private int? account;
-
-			private int? health;
-
-			private int? trojan;
-
-			private int? suspicious;
-
-			private int? vul;
-
-			private int? cveNum;
-
-			private int? emgNum;
-
-			private int? sysNum;
-
-			private int? cmsNum;
 
 			private int? appNum;
 
 			private int? scaNum;
 
-			public string Uuid
-			{
-				get
-				{
-					return uuid;
-				}
-				set	
-				{
-					uuid = value;
-				}
-			}
+			private int? trojan;
+
+			private int? cveNum;
+
+			private int? emgNum;
+
+			private int? suspicious;
+
+			private int? cmsNum;
+
+			private string uuid;
+
+			private int? vul;
+
+			private int? health;
+
+			private int? sysNum;
 
 			public int? Account
 			{
@@ -104,15 +92,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? Health
+			public int? AppNum
 			{
 				get
 				{
-					return health;
+					return appNum;
 				}
 				set	
 				{
-					health = value;
+					appNum = value;
+				}
+			}
+
+			public int? ScaNum
+			{
+				get
+				{
+					return scaNum;
+				}
+				set	
+				{
+					scaNum = value;
 				}
 			}
 
@@ -125,30 +125,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					trojan = value;
-				}
-			}
-
-			public int? Suspicious
-			{
-				get
-				{
-					return suspicious;
-				}
-				set	
-				{
-					suspicious = value;
-				}
-			}
-
-			public int? Vul
-			{
-				get
-				{
-					return vul;
-				}
-				set	
-				{
-					vul = value;
 				}
 			}
 
@@ -176,15 +152,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? SysNum
+			public int? Suspicious
 			{
 				get
 				{
-					return sysNum;
+					return suspicious;
 				}
 				set	
 				{
-					sysNum = value;
+					suspicious = value;
 				}
 			}
 
@@ -200,27 +176,51 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? AppNum
+			public string Uuid
 			{
 				get
 				{
-					return appNum;
+					return uuid;
 				}
 				set	
 				{
-					appNum = value;
+					uuid = value;
 				}
 			}
 
-			public int? ScaNum
+			public int? Vul
 			{
 				get
 				{
-					return scaNum;
+					return vul;
 				}
 				set	
 				{
-					scaNum = value;
+					vul = value;
+				}
+			}
+
+			public int? Health
+			{
+				get
+				{
+					return health;
+				}
+				set	
+				{
+					health = value;
+				}
+			}
+
+			public int? SysNum
+			{
+				get
+				{
+					return sysNum;
+				}
+				set	
+				{
+					sysNum = value;
 				}
 			}
 		}

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class DescribeCloudCenterInstancesRequest : RpcAcsRequest<DescribeCloudCenterInstancesResponse>
     {
         public DescribeCloudCenterInstancesRequest()
-            : base("Sas", "2018-12-03", "DescribeCloudCenterInstances", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "DescribeCloudCenterInstances")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,8 +45,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private int? importance;
 
-		private bool? noPage;
-
 		private int? pageSize;
 
 		private string logicalExp;
@@ -53,6 +52,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		private int? currentPage;
 
 		private string machineTypes;
+
+		private bool? noGroupTrace;
 
 		public string Criteria
 		{
@@ -77,19 +78,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				importance = value;
 				DictionaryUtil.Add(QueryParameters, "Importance", value.ToString());
-			}
-		}
-
-		public bool? NoPage
-		{
-			get
-			{
-				return noPage;
-			}
-			set	
-			{
-				noPage = value;
-				DictionaryUtil.Add(QueryParameters, "NoPage", value.ToString());
 			}
 		}
 
@@ -142,6 +130,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				machineTypes = value;
 				DictionaryUtil.Add(QueryParameters, "MachineTypes", value);
+			}
+		}
+
+		public bool? NoGroupTrace
+		{
+			get
+			{
+				return noGroupTrace;
+			}
+			set	
+			{
+				noGroupTrace = value;
+				DictionaryUtil.Add(QueryParameters, "NoGroupTrace", value.ToString());
 			}
 		}
 

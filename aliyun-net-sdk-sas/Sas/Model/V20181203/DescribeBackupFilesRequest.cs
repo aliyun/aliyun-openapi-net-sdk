@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class DescribeBackupFilesRequest : RpcAcsRequest<DescribeBackupFilesResponse>
     {
         public DescribeBackupFilesRequest()
-            : base("Sas", "2018-12-03", "DescribeBackupFiles", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "DescribeBackupFiles")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,32 +41,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			Method = MethodType.POST;
         }
 
-		private long? resourceOwnerId;
-
 		private string uuid;
 
 		private string path;
 
 		private string snapshotHash;
 
-		private string sourceIp;
-
 		private string pageSize;
 
 		private string currentPage;
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
 
 		public string Uuid
 		{
@@ -103,19 +87,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				snapshotHash = value;
 				DictionaryUtil.Add(QueryParameters, "SnapshotHash", value);
-			}
-		}
-
-		public string SourceIp
-		{
-			get
-			{
-				return sourceIp;
-			}
-			set	
-			{
-				sourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 

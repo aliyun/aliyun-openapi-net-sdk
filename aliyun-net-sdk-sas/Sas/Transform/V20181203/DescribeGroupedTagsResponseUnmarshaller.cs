@@ -31,17 +31,17 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeGroupedTagsResponse describeGroupedTagsResponse = new DescribeGroupedTagsResponse();
 
 			describeGroupedTagsResponse.HttpResponse = _ctx.HttpResponse;
+			describeGroupedTagsResponse.HttpStatusCode = _ctx.IntegerValue("DescribeGroupedTags.HttpStatusCode");
 			describeGroupedTagsResponse.RequestId = _ctx.StringValue("DescribeGroupedTags.RequestId");
 			describeGroupedTagsResponse.Success = _ctx.BooleanValue("DescribeGroupedTags.Success");
 			describeGroupedTagsResponse.Count = _ctx.IntegerValue("DescribeGroupedTags.Count");
-			describeGroupedTagsResponse.HttpStatusCode = _ctx.IntegerValue("DescribeGroupedTags.HttpStatusCode");
 
 			List<DescribeGroupedTagsResponse.DescribeGroupedTags_GroupedFiled> describeGroupedTagsResponse_groupedFileds = new List<DescribeGroupedTagsResponse.DescribeGroupedTags_GroupedFiled>();
 			for (int i = 0; i < _ctx.Length("DescribeGroupedTags.GroupedFileds.Length"); i++) {
 				DescribeGroupedTagsResponse.DescribeGroupedTags_GroupedFiled groupedFiled = new DescribeGroupedTagsResponse.DescribeGroupedTags_GroupedFiled();
 				groupedFiled.Name = _ctx.StringValue("DescribeGroupedTags.GroupedFileds["+ i +"].Name");
-				groupedFiled.TagId = _ctx.IntegerValue("DescribeGroupedTags.GroupedFileds["+ i +"].TagId");
 				groupedFiled.Count = _ctx.StringValue("DescribeGroupedTags.GroupedFileds["+ i +"].Count");
+				groupedFiled.TagId = _ctx.IntegerValue("DescribeGroupedTags.GroupedFileds["+ i +"].TagId");
 
 				describeGroupedTagsResponse_groupedFileds.Add(groupedFiled);
 			}

@@ -70,97 +70,41 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeAffectedMaliciousFileImages_AffectedMaliciousFileImage
 		{
 
-			private string layer;
-
-			private long? firstScanTimestamp;
-
-			private long? latestScanTimestamp;
-
-			private long? latestVerifyTimestamp;
-
-			private string maliciousMd5;
-
 			private int? status;
-
-			private string level;
-
-			private string imageUuid;
-
-			private string filePath;
 
 			private string digest;
 
-			private string repoRegionId;
+			private long? latestVerifyTimestamp;
 
 			private string repoInstanceId;
-
-			private string repoId;
-
-			private string repoName;
 
 			private string _namespace;
 
 			private string tag;
 
-			public string Layer
-			{
-				get
-				{
-					return layer;
-				}
-				set	
-				{
-					layer = value;
-				}
-			}
+			private string repoRegionId;
 
-			public long? FirstScanTimestamp
-			{
-				get
-				{
-					return firstScanTimestamp;
-				}
-				set	
-				{
-					firstScanTimestamp = value;
-				}
-			}
+			private string imageUuid;
 
-			public long? LatestScanTimestamp
-			{
-				get
-				{
-					return latestScanTimestamp;
-				}
-				set	
-				{
-					latestScanTimestamp = value;
-				}
-			}
+			private long? firstScanTimestamp;
 
-			public long? LatestVerifyTimestamp
-			{
-				get
-				{
-					return latestVerifyTimestamp;
-				}
-				set	
-				{
-					latestVerifyTimestamp = value;
-				}
-			}
+			private string maliciousMd5;
 
-			public string MaliciousMd5
-			{
-				get
-				{
-					return maliciousMd5;
-				}
-				set	
-				{
-					maliciousMd5 = value;
-				}
-			}
+			private string filePath;
+
+			private string repoId;
+
+			private string layer;
+
+			private long? latestScanTimestamp;
+
+			private string repoName;
+
+			private string level;
+
+			private string downloadUrl;
+
+			private string highLight;
 
 			public int? Status
 			{
@@ -171,42 +115,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					status = value;
-				}
-			}
-
-			public string Level
-			{
-				get
-				{
-					return level;
-				}
-				set	
-				{
-					level = value;
-				}
-			}
-
-			public string ImageUuid
-			{
-				get
-				{
-					return imageUuid;
-				}
-				set	
-				{
-					imageUuid = value;
-				}
-			}
-
-			public string FilePath
-			{
-				get
-				{
-					return filePath;
-				}
-				set	
-				{
-					filePath = value;
 				}
 			}
 
@@ -222,15 +130,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string RepoRegionId
+			public long? LatestVerifyTimestamp
 			{
 				get
 				{
-					return repoRegionId;
+					return latestVerifyTimestamp;
 				}
 				set	
 				{
-					repoRegionId = value;
+					latestVerifyTimestamp = value;
 				}
 			}
 
@@ -243,30 +151,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					repoInstanceId = value;
-				}
-			}
-
-			public string RepoId
-			{
-				get
-				{
-					return repoId;
-				}
-				set	
-				{
-					repoId = value;
-				}
-			}
-
-			public string RepoName
-			{
-				get
-				{
-					return repoName;
-				}
-				set	
-				{
-					repoName = value;
 				}
 			}
 
@@ -293,28 +177,172 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					tag = value;
 				}
 			}
+
+			public string RepoRegionId
+			{
+				get
+				{
+					return repoRegionId;
+				}
+				set	
+				{
+					repoRegionId = value;
+				}
+			}
+
+			public string ImageUuid
+			{
+				get
+				{
+					return imageUuid;
+				}
+				set	
+				{
+					imageUuid = value;
+				}
+			}
+
+			public long? FirstScanTimestamp
+			{
+				get
+				{
+					return firstScanTimestamp;
+				}
+				set	
+				{
+					firstScanTimestamp = value;
+				}
+			}
+
+			public string MaliciousMd5
+			{
+				get
+				{
+					return maliciousMd5;
+				}
+				set	
+				{
+					maliciousMd5 = value;
+				}
+			}
+
+			public string FilePath
+			{
+				get
+				{
+					return filePath;
+				}
+				set	
+				{
+					filePath = value;
+				}
+			}
+
+			public string RepoId
+			{
+				get
+				{
+					return repoId;
+				}
+				set	
+				{
+					repoId = value;
+				}
+			}
+
+			public string Layer
+			{
+				get
+				{
+					return layer;
+				}
+				set	
+				{
+					layer = value;
+				}
+			}
+
+			public long? LatestScanTimestamp
+			{
+				get
+				{
+					return latestScanTimestamp;
+				}
+				set	
+				{
+					latestScanTimestamp = value;
+				}
+			}
+
+			public string RepoName
+			{
+				get
+				{
+					return repoName;
+				}
+				set	
+				{
+					repoName = value;
+				}
+			}
+
+			public string Level
+			{
+				get
+				{
+					return level;
+				}
+				set	
+				{
+					level = value;
+				}
+			}
+
+			public string DownloadUrl
+			{
+				get
+				{
+					return downloadUrl;
+				}
+				set	
+				{
+					downloadUrl = value;
+				}
+			}
+
+			public string HighLight
+			{
+				get
+				{
+					return highLight;
+				}
+				set	
+				{
+					highLight = value;
+				}
+			}
 		}
 
 		public class DescribeAffectedMaliciousFileImages_PageInfo
 		{
 
-			private int? count;
+			private int? currentPage;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? currentPage;
+			private int? count;
 
-			public int? Count
+			public int? CurrentPage
 			{
 				get
 				{
-					return count;
+					return currentPage;
 				}
 				set	
 				{
-					count = value;
+					currentPage = value;
 				}
 			}
 
@@ -342,15 +370,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? CurrentPage
+			public int? Count
 			{
 				get
 				{
-					return currentPage;
+					return count;
 				}
 				set	
 				{
-					currentPage = value;
+					count = value;
 				}
 			}
 		}

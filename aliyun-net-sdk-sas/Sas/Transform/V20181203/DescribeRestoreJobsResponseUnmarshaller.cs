@@ -43,7 +43,6 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			List<DescribeRestoreJobsResponse.DescribeRestoreJobs_RestoreJob> describeRestoreJobsResponse_restoreJobs = new List<DescribeRestoreJobsResponse.DescribeRestoreJobs_RestoreJob>();
 			for (int i = 0; i < _ctx.Length("DescribeRestoreJobs.RestoreJobs.Length"); i++) {
 				DescribeRestoreJobsResponse.DescribeRestoreJobs_RestoreJob restoreJob = new DescribeRestoreJobsResponse.DescribeRestoreJobs_RestoreJob();
-				restoreJob.Id = _ctx.LongValue("DescribeRestoreJobs.RestoreJobs["+ i +"].Id");
 				restoreJob.CreatedTime = _ctx.LongValue("DescribeRestoreJobs.RestoreJobs["+ i +"].CreatedTime");
 				restoreJob.UpdatedTime = _ctx.LongValue("DescribeRestoreJobs.RestoreJobs["+ i +"].UpdatedTime");
 				restoreJob.Uuid = _ctx.StringValue("DescribeRestoreJobs.RestoreJobs["+ i +"].Uuid");
@@ -73,17 +72,15 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				restoreJob.InstanceName = _ctx.StringValue("DescribeRestoreJobs.RestoreJobs["+ i +"].InstanceName");
 				restoreJob.InternetIp = _ctx.StringValue("DescribeRestoreJobs.RestoreJobs["+ i +"].InternetIp");
 				restoreJob.IntranetIp = _ctx.StringValue("DescribeRestoreJobs.RestoreJobs["+ i +"].IntranetIp");
-				restoreJob.ErrorFile = _ctx.StringValue("DescribeRestoreJobs.RestoreJobs["+ i +"].ErrorFile");
 				restoreJob.ErrorFileUrl = _ctx.StringValue("DescribeRestoreJobs.RestoreJobs["+ i +"].ErrorFileUrl");
 				restoreJob.RequestId = _ctx.StringValue("DescribeRestoreJobs.RestoreJobs["+ i +"].RequestId");
 				restoreJob.RestoreName = _ctx.StringValue("DescribeRestoreJobs.RestoreJobs["+ i +"].RestoreName");
 				restoreJob.InstanceId = _ctx.StringValue("DescribeRestoreJobs.RestoreJobs["+ i +"].InstanceId");
-				restoreJob.Extra = _ctx.StringValue("DescribeRestoreJobs.RestoreJobs["+ i +"].Extra");
 				restoreJob.Duration = _ctx.LongValue("DescribeRestoreJobs.RestoreJobs["+ i +"].Duration");
 				restoreJob.ExitCode = _ctx.StringValue("DescribeRestoreJobs.RestoreJobs["+ i +"].ExitCode");
-				restoreJob.ErrorFile1 = _ctx.StringValue("DescribeRestoreJobs.RestoreJobs["+ i +"].ErrorFile");
+				restoreJob.ErrorFile = _ctx.StringValue("DescribeRestoreJobs.RestoreJobs["+ i +"].ErrorFile");
 				restoreJob.GmtCreate = _ctx.StringValue("DescribeRestoreJobs.RestoreJobs["+ i +"].GmtCreate");
-				restoreJob.GmtModified = _ctx.LongValue("DescribeRestoreJobs.RestoreJobs["+ i +"].GmtModified");
+				restoreJob.GmtModified = _ctx.StringValue("DescribeRestoreJobs.RestoreJobs["+ i +"].GmtModified");
 				restoreJob.Excludes = _ctx.StringValue("DescribeRestoreJobs.RestoreJobs["+ i +"].Excludes");
 				restoreJob.Includes = _ctx.StringValue("DescribeRestoreJobs.RestoreJobs["+ i +"].Includes");
 

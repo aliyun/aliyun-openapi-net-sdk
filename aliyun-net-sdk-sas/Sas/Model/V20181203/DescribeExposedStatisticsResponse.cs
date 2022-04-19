@@ -27,23 +27,23 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string requestId;
 
+		private int? exposedLaterVulCount;
+
+		private int? exposedComponentCount;
+
+		private int? exposedPortCount;
+
 		private int? exposedInstanceCount;
+
+		private int? exposedWeekPasswordMachineCount;
+
+		private int? exposedNntfVulCount;
 
 		private int? gatewayAssetCount;
 
 		private int? exposedIpCount;
 
-		private int? exposedPortCount;
-
-		private int? exposedComponentCount;
-
 		private int? exposedAsapVulCount;
-
-		private int? exposedLaterVulCount;
-
-		private int? exposedNntfVulCount;
-
-		private int? exposedWeekPasswordMachineCount;
 
 		public string RequestId
 		{
@@ -57,6 +57,42 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public int? ExposedLaterVulCount
+		{
+			get
+			{
+				return exposedLaterVulCount;
+			}
+			set	
+			{
+				exposedLaterVulCount = value;
+			}
+		}
+
+		public int? ExposedComponentCount
+		{
+			get
+			{
+				return exposedComponentCount;
+			}
+			set	
+			{
+				exposedComponentCount = value;
+			}
+		}
+
+		public int? ExposedPortCount
+		{
+			get
+			{
+				return exposedPortCount;
+			}
+			set	
+			{
+				exposedPortCount = value;
+			}
+		}
+
 		public int? ExposedInstanceCount
 		{
 			get
@@ -66,6 +102,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				exposedInstanceCount = value;
+			}
+		}
+
+		public int? ExposedWeekPasswordMachineCount
+		{
+			get
+			{
+				return exposedWeekPasswordMachineCount;
+			}
+			set	
+			{
+				exposedWeekPasswordMachineCount = value;
+			}
+		}
+
+		public int? ExposedNntfVulCount
+		{
+			get
+			{
+				return exposedNntfVulCount;
+			}
+			set	
+			{
+				exposedNntfVulCount = value;
 			}
 		}
 
@@ -93,30 +153,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public int? ExposedPortCount
-		{
-			get
-			{
-				return exposedPortCount;
-			}
-			set	
-			{
-				exposedPortCount = value;
-			}
-		}
-
-		public int? ExposedComponentCount
-		{
-			get
-			{
-				return exposedComponentCount;
-			}
-			set	
-			{
-				exposedComponentCount = value;
-			}
-		}
-
 		public int? ExposedAsapVulCount
 		{
 			get
@@ -126,42 +162,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				exposedAsapVulCount = value;
-			}
-		}
-
-		public int? ExposedLaterVulCount
-		{
-			get
-			{
-				return exposedLaterVulCount;
-			}
-			set	
-			{
-				exposedLaterVulCount = value;
-			}
-		}
-
-		public int? ExposedNntfVulCount
-		{
-			get
-			{
-				return exposedNntfVulCount;
-			}
-			set	
-			{
-				exposedNntfVulCount = value;
-			}
-		}
-
-		public int? ExposedWeekPasswordMachineCount
-		{
-			get
-			{
-				return exposedWeekPasswordMachineCount;
-			}
-			set	
-			{
-				exposedWeekPasswordMachineCount = value;
 			}
 		}
 	}

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class DescribeSuspEventsRequest : RpcAcsRequest<DescribeSuspEventsResponse>
     {
         public DescribeSuspEventsRequest()
-            : base("Sas", "2018-12-03", "DescribeSuspEvents", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "DescribeSuspEvents")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -52,9 +53,13 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string containerFieldValue;
 
+		private string eventNames;
+
 		private string pageSize;
 
 		private string from;
+
+		private string tacticId;
 
 		private string lang;
 
@@ -160,6 +165,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public string EventNames
+		{
+			get
+			{
+				return eventNames;
+			}
+			set	
+			{
+				eventNames = value;
+				DictionaryUtil.Add(QueryParameters, "EventNames", value);
+			}
+		}
+
 		public string PageSize
 		{
 			get
@@ -183,6 +201,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				from = value;
 				DictionaryUtil.Add(QueryParameters, "From", value);
+			}
+		}
+
+		public string TacticId
+		{
+			get
+			{
+				return tacticId;
+			}
+			set	
+			{
+				tacticId = value;
+				DictionaryUtil.Add(BodyParameters, "TacticId", value);
 			}
 		}
 

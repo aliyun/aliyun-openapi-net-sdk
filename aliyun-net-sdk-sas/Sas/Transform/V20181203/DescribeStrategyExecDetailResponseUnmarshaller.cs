@@ -31,22 +31,23 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeStrategyExecDetailResponse describeStrategyExecDetailResponse = new DescribeStrategyExecDetailResponse();
 
 			describeStrategyExecDetailResponse.HttpResponse = _ctx.HttpResponse;
-			describeStrategyExecDetailResponse.RequestId = _ctx.StringValue("DescribeStrategyExecDetail.RequestId");
-			describeStrategyExecDetailResponse.StartTime = _ctx.StringValue("DescribeStrategyExecDetail.StartTime");
-			describeStrategyExecDetailResponse.EndTime = _ctx.StringValue("DescribeStrategyExecDetail.EndTime");
-			describeStrategyExecDetailResponse.Source = _ctx.StringValue("DescribeStrategyExecDetail.Source");
-			describeStrategyExecDetailResponse.Percent = _ctx.StringValue("DescribeStrategyExecDetail.Percent");
-			describeStrategyExecDetailResponse.SuccessCount = _ctx.IntegerValue("DescribeStrategyExecDetail.SuccessCount");
-			describeStrategyExecDetailResponse.FailCount = _ctx.IntegerValue("DescribeStrategyExecDetail.FailCount");
 			describeStrategyExecDetailResponse.InProcessCount = _ctx.IntegerValue("DescribeStrategyExecDetail.InProcessCount");
+			describeStrategyExecDetailResponse.EndTime = _ctx.StringValue("DescribeStrategyExecDetail.EndTime");
+			describeStrategyExecDetailResponse.StartTime = _ctx.StringValue("DescribeStrategyExecDetail.StartTime");
+			describeStrategyExecDetailResponse.Percent = _ctx.StringValue("DescribeStrategyExecDetail.Percent");
+			describeStrategyExecDetailResponse.RequestId = _ctx.StringValue("DescribeStrategyExecDetail.RequestId");
+			describeStrategyExecDetailResponse.FailCount = _ctx.IntegerValue("DescribeStrategyExecDetail.FailCount");
+			describeStrategyExecDetailResponse.Source = _ctx.StringValue("DescribeStrategyExecDetail.Source");
+			describeStrategyExecDetailResponse.SuccessCount = _ctx.IntegerValue("DescribeStrategyExecDetail.SuccessCount");
 
 			List<DescribeStrategyExecDetailResponse.DescribeStrategyExecDetail_FailedEcs> describeStrategyExecDetailResponse_failedEcsList = new List<DescribeStrategyExecDetailResponse.DescribeStrategyExecDetail_FailedEcs>();
 			for (int i = 0; i < _ctx.Length("DescribeStrategyExecDetail.FailedEcsList.Length"); i++) {
 				DescribeStrategyExecDetailResponse.DescribeStrategyExecDetail_FailedEcs failedEcs = new DescribeStrategyExecDetailResponse.DescribeStrategyExecDetail_FailedEcs();
+				failedEcs.IP = _ctx.StringValue("DescribeStrategyExecDetail.FailedEcsList["+ i +"].IP");
+				failedEcs.InternetIp = _ctx.StringValue("DescribeStrategyExecDetail.FailedEcsList["+ i +"].InternetIp");
+				failedEcs.IntranetIp = _ctx.StringValue("DescribeStrategyExecDetail.FailedEcsList["+ i +"].IntranetIp");
 				failedEcs.Reason = _ctx.StringValue("DescribeStrategyExecDetail.FailedEcsList["+ i +"].Reason");
 				failedEcs.InstanceName = _ctx.StringValue("DescribeStrategyExecDetail.FailedEcsList["+ i +"].InstanceName");
-				failedEcs.IP = _ctx.StringValue("DescribeStrategyExecDetail.FailedEcsList["+ i +"].IP");
-				failedEcs.IntranetIp = _ctx.StringValue("DescribeStrategyExecDetail.FailedEcsList["+ i +"].IntranetIp");
 
 				describeStrategyExecDetailResponse_failedEcsList.Add(failedEcs);
 			}

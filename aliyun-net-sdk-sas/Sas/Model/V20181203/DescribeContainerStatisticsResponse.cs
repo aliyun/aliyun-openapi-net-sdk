@@ -56,27 +56,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeContainerStatistics_Data
 		{
 
-			private int? totalAlarmCount;
+			private int? totalNode;
 
 			private int? remindAlarmCount;
+
+			private int? totalAlarmCount;
 
 			private int? suspiciousAlarmCount;
 
 			private int? seriousAlarmCount;
 
-			private int? totalNode;
-
 			private int? hasRiskNode;
 
-			public int? TotalAlarmCount
+			public int? TotalNode
 			{
 				get
 				{
-					return totalAlarmCount;
+					return totalNode;
 				}
 				set	
 				{
-					totalAlarmCount = value;
+					totalNode = value;
 				}
 			}
 
@@ -89,6 +89,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					remindAlarmCount = value;
+				}
+			}
+
+			public int? TotalAlarmCount
+			{
+				get
+				{
+					return totalAlarmCount;
+				}
+				set	
+				{
+					totalAlarmCount = value;
 				}
 			}
 
@@ -113,18 +125,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					seriousAlarmCount = value;
-				}
-			}
-
-			public int? TotalNode
-			{
-				get
-				{
-					return totalNode;
-				}
-				set	
-				{
-					totalNode = value;
 				}
 			}
 

@@ -56,49 +56,25 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeRiskCheckSummary_RiskCheckSummary
 		{
 
-			private int? riskCount;
-
-			private int? previousCount;
-
 			private int? itemCount;
+
+			private int? affectedAssetCount;
+
+			private int? disabledRiskCount;
+
+			private int? riskCount;
 
 			private float? riskRate;
 
-			private int? affectedAssetCount;
+			private int? previousCount;
 
 			private long? previousTime;
 
 			private int? enabledRiskCount;
 
-			private int? disabledRiskCount;
-
 			private List<DescribeRiskCheckSummary_LevelCount> riskLevelCount;
 
 			private List<DescribeRiskCheckSummary_Group> groups;
-
-			public int? RiskCount
-			{
-				get
-				{
-					return riskCount;
-				}
-				set	
-				{
-					riskCount = value;
-				}
-			}
-
-			public int? PreviousCount
-			{
-				get
-				{
-					return previousCount;
-				}
-				set	
-				{
-					previousCount = value;
-				}
-			}
 
 			public int? ItemCount
 			{
@@ -109,6 +85,42 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					itemCount = value;
+				}
+			}
+
+			public int? AffectedAssetCount
+			{
+				get
+				{
+					return affectedAssetCount;
+				}
+				set	
+				{
+					affectedAssetCount = value;
+				}
+			}
+
+			public int? DisabledRiskCount
+			{
+				get
+				{
+					return disabledRiskCount;
+				}
+				set	
+				{
+					disabledRiskCount = value;
+				}
+			}
+
+			public int? RiskCount
+			{
+				get
+				{
+					return riskCount;
+				}
+				set	
+				{
+					riskCount = value;
 				}
 			}
 
@@ -124,15 +136,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? AffectedAssetCount
+			public int? PreviousCount
 			{
 				get
 				{
-					return affectedAssetCount;
+					return previousCount;
 				}
 				set	
 				{
-					affectedAssetCount = value;
+					previousCount = value;
 				}
 			}
 
@@ -157,18 +169,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					enabledRiskCount = value;
-				}
-			}
-
-			public int? DisabledRiskCount
-			{
-				get
-				{
-					return disabledRiskCount;
-				}
-				set	
-				{
-					disabledRiskCount = value;
 				}
 			}
 
@@ -231,39 +231,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			public class DescribeRiskCheckSummary_Group
 			{
 
-				private long? id;
-
-				private string title;
+				private int? remainingTime;
 
 				private string status;
 
-				private int? remainingTime;
-
 				private int? sort;
+
+				private string title;
+
+				private long? id;
 
 				private List<DescribeRiskCheckSummary_StatusCount> countByStatus;
 
-				public long? Id
+				public int? RemainingTime
 				{
 					get
 					{
-						return id;
+						return remainingTime;
 					}
 					set	
 					{
-						id = value;
-					}
-				}
-
-				public string Title
-				{
-					get
-					{
-						return title;
-					}
-					set	
-					{
-						title = value;
+						remainingTime = value;
 					}
 				}
 
@@ -279,18 +267,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					}
 				}
 
-				public int? RemainingTime
-				{
-					get
-					{
-						return remainingTime;
-					}
-					set	
-					{
-						remainingTime = value;
-					}
-				}
-
 				public int? Sort
 				{
 					get
@@ -300,6 +276,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					set	
 					{
 						sort = value;
+					}
+				}
+
+				public string Title
+				{
+					get
+					{
+						return title;
+					}
+					set	
+					{
+						title = value;
+					}
+				}
+
+				public long? Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
 					}
 				}
 

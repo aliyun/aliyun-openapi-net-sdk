@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class DescribePropertyScaDetailRequest : RpcAcsRequest<DescribePropertyScaDetailResponse>
     {
         public DescribePropertyScaDetailRequest()
-            : base("Sas", "2018-12-03", "DescribePropertyScaDetail", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "DescribePropertyScaDetail")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,13 +45,23 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string remark;
 
+		private string pid;
+
 		private string searchItem;
 
 		private string uuid;
 
+		private string biz;
+
 		private int? pageSize;
 
+		private long? processStartedStart;
+
+		private long? processStartedEnd;
+
 		private string lang;
+
+		private string scaVersion;
 
 		private string searchInfoSub;
 
@@ -60,9 +71,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string bizType;
 
+		private string port;
+
 		private long? name;
 
 		private string scaName;
+
+		private string scaNamePattern;
+
+		private string user;
 
 		public string SearchItemSub
 		{
@@ -87,6 +104,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				remark = value;
 				DictionaryUtil.Add(QueryParameters, "Remark", value);
+			}
+		}
+
+		public string Pid
+		{
+			get
+			{
+				return pid;
+			}
+			set	
+			{
+				pid = value;
+				DictionaryUtil.Add(QueryParameters, "Pid", value);
 			}
 		}
 
@@ -116,6 +146,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public string Biz
+		{
+			get
+			{
+				return biz;
+			}
+			set	
+			{
+				biz = value;
+				DictionaryUtil.Add(QueryParameters, "Biz", value);
+			}
+		}
+
 		public int? PageSize
 		{
 			get
@@ -129,6 +172,32 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public long? ProcessStartedStart
+		{
+			get
+			{
+				return processStartedStart;
+			}
+			set	
+			{
+				processStartedStart = value;
+				DictionaryUtil.Add(QueryParameters, "ProcessStartedStart", value.ToString());
+			}
+		}
+
+		public long? ProcessStartedEnd
+		{
+			get
+			{
+				return processStartedEnd;
+			}
+			set	
+			{
+				processStartedEnd = value;
+				DictionaryUtil.Add(QueryParameters, "ProcessStartedEnd", value.ToString());
+			}
+		}
+
 		public string Lang
 		{
 			get
@@ -139,6 +208,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string ScaVersion
+		{
+			get
+			{
+				return scaVersion;
+			}
+			set	
+			{
+				scaVersion = value;
+				DictionaryUtil.Add(QueryParameters, "ScaVersion", value);
 			}
 		}
 
@@ -194,6 +276,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public string Port
+		{
+			get
+			{
+				return port;
+			}
+			set	
+			{
+				port = value;
+				DictionaryUtil.Add(QueryParameters, "Port", value);
+			}
+		}
+
 		public long? Name
 		{
 			get
@@ -217,6 +312,32 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				scaName = value;
 				DictionaryUtil.Add(QueryParameters, "ScaName", value);
+			}
+		}
+
+		public string ScaNamePattern
+		{
+			get
+			{
+				return scaNamePattern;
+			}
+			set	
+			{
+				scaNamePattern = value;
+				DictionaryUtil.Add(QueryParameters, "ScaNamePattern", value);
+			}
+		}
+
+		public string User
+		{
+			get
+			{
+				return user;
+			}
+			set	
+			{
+				user = value;
+				DictionaryUtil.Add(QueryParameters, "User", value);
 			}
 		}
 

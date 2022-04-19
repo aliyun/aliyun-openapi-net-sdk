@@ -25,39 +25,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeCheckWarningSummaryResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? count;
+		private int? currentPage;
 
 		private int? pageSize;
 
+		private string requestId;
+
 		private int? totalCount;
 
-		private int? currentPage;
+		private int? count;
 
 		private List<DescribeCheckWarningSummary_WarningSummary> warningSummarys;
 
-		public string RequestId
+		public int? CurrentPage
 		{
 			get
 			{
-				return requestId;
+				return currentPage;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public int? Count
-		{
-			get
-			{
-				return count;
-			}
-			set	
-			{
-				count = value;
+				currentPage = value;
 			}
 		}
 
@@ -73,6 +61,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public int? TotalCount
 		{
 			get
@@ -85,15 +85,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public int? CurrentPage
+		public int? Count
 		{
 			get
 			{
-				return currentPage;
+				return count;
 			}
 			set	
 			{
-				currentPage = value;
+				count = value;
 			}
 		}
 
@@ -112,97 +112,37 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeCheckWarningSummary_WarningSummary
 		{
 
-			private long? riskId;
-
-			private string riskName;
-
-			private string typeAlias;
-
-			private string subTypeAlias;
-
-			private string lastFoundTime;
-
-			private string level;
+			private int? lowWarningCount;
 
 			private int? checkCount;
 
-			private int? highWarningCount;
-
 			private int? mediumWarningCount;
 
-			private int? lowWarningCount;
+			private string lastFoundTime;
+
+			private long? riskId;
+
+			private string subTypeAlias;
 
 			private int? warningMachineCount;
 
-			public long? RiskId
-			{
-				get
-				{
-					return riskId;
-				}
-				set	
-				{
-					riskId = value;
-				}
-			}
+			private int? highWarningCount;
 
-			public string RiskName
-			{
-				get
-				{
-					return riskName;
-				}
-				set	
-				{
-					riskName = value;
-				}
-			}
+			private string typeAlias;
 
-			public string TypeAlias
-			{
-				get
-				{
-					return typeAlias;
-				}
-				set	
-				{
-					typeAlias = value;
-				}
-			}
+			private string riskName;
 
-			public string SubTypeAlias
-			{
-				get
-				{
-					return subTypeAlias;
-				}
-				set	
-				{
-					subTypeAlias = value;
-				}
-			}
+			private string level;
 
-			public string LastFoundTime
+			public int? LowWarningCount
 			{
 				get
 				{
-					return lastFoundTime;
+					return lowWarningCount;
 				}
 				set	
 				{
-					lastFoundTime = value;
-				}
-			}
-
-			public string Level
-			{
-				get
-				{
-					return level;
-				}
-				set	
-				{
-					level = value;
+					lowWarningCount = value;
 				}
 			}
 
@@ -218,18 +158,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? HighWarningCount
-			{
-				get
-				{
-					return highWarningCount;
-				}
-				set	
-				{
-					highWarningCount = value;
-				}
-			}
-
 			public int? MediumWarningCount
 			{
 				get
@@ -242,15 +170,39 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? LowWarningCount
+			public string LastFoundTime
 			{
 				get
 				{
-					return lowWarningCount;
+					return lastFoundTime;
 				}
 				set	
 				{
-					lowWarningCount = value;
+					lastFoundTime = value;
+				}
+			}
+
+			public long? RiskId
+			{
+				get
+				{
+					return riskId;
+				}
+				set	
+				{
+					riskId = value;
+				}
+			}
+
+			public string SubTypeAlias
+			{
+				get
+				{
+					return subTypeAlias;
+				}
+				set	
+				{
+					subTypeAlias = value;
 				}
 			}
 
@@ -263,6 +215,54 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					warningMachineCount = value;
+				}
+			}
+
+			public int? HighWarningCount
+			{
+				get
+				{
+					return highWarningCount;
+				}
+				set	
+				{
+					highWarningCount = value;
+				}
+			}
+
+			public string TypeAlias
+			{
+				get
+				{
+					return typeAlias;
+				}
+				set	
+				{
+					typeAlias = value;
+				}
+			}
+
+			public string RiskName
+			{
+				get
+				{
+					return riskName;
+				}
+				set	
+				{
+					riskName = value;
+				}
+			}
+
+			public string Level
+			{
+				get
+				{
+					return level;
+				}
+				set	
+				{
+					level = value;
 				}
 			}
 		}

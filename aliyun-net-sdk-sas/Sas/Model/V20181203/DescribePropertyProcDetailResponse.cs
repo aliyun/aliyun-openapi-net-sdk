@@ -70,71 +70,51 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribePropertyProcDetail_PropertyProc
 		{
 
-			private string pname;
-
-			private string euidName;
-
-			private string instanceName;
+			private string internetIp;
 
 			private string pid;
 
-			private string path;
-
-			private string cmdline;
-
-			private string name;
-
 			private string user;
-
-			private string md5;
-
-			private string create;
-
-			private long? createTimestamp;
-
-			private string startTime;
-
-			private string uuid;
 
 			private string instanceId;
 
+			private string cmdline;
+
 			private string intranetIp;
 
-			private string internetIp;
+			private string euidName;
 
-			public string Pname
+			private string uuid;
+
+			private string startTime;
+
+			private string pname;
+
+			private string instanceName;
+
+			private string path;
+
+			private string md5;
+
+			private string name;
+
+			private long? createTimestamp;
+
+			private long? startTimeDt;
+
+			private int? isPackage;
+
+			private string state;
+
+			public string InternetIp
 			{
 				get
 				{
-					return pname;
+					return internetIp;
 				}
 				set	
 				{
-					pname = value;
-				}
-			}
-
-			public string EuidName
-			{
-				get
-				{
-					return euidName;
-				}
-				set	
-				{
-					euidName = value;
-				}
-			}
-
-			public string InstanceName
-			{
-				get
-				{
-					return instanceName;
-				}
-				set	
-				{
-					instanceName = value;
+					internetIp = value;
 				}
 			}
 
@@ -150,42 +130,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Path
-			{
-				get
-				{
-					return path;
-				}
-				set	
-				{
-					path = value;
-				}
-			}
-
-			public string Cmdline
-			{
-				get
-				{
-					return cmdline;
-				}
-				set	
-				{
-					cmdline = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
 			public string User
 			{
 				get
@@ -195,66 +139,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					user = value;
-				}
-			}
-
-			public string Md5
-			{
-				get
-				{
-					return md5;
-				}
-				set	
-				{
-					md5 = value;
-				}
-			}
-
-			public string Create
-			{
-				get
-				{
-					return create;
-				}
-				set	
-				{
-					create = value;
-				}
-			}
-
-			public long? CreateTimestamp
-			{
-				get
-				{
-					return createTimestamp;
-				}
-				set	
-				{
-					createTimestamp = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
-			public string Uuid
-			{
-				get
-				{
-					return uuid;
-				}
-				set	
-				{
-					uuid = value;
 				}
 			}
 
@@ -270,6 +154,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string Cmdline
+			{
+				get
+				{
+					return cmdline;
+				}
+				set	
+				{
+					cmdline = value;
+				}
+			}
+
 			public string IntranetIp
 			{
 				get
@@ -282,15 +178,147 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string InternetIp
+			public string EuidName
 			{
 				get
 				{
-					return internetIp;
+					return euidName;
 				}
 				set	
 				{
-					internetIp = value;
+					euidName = value;
+				}
+			}
+
+			public string Uuid
+			{
+				get
+				{
+					return uuid;
+				}
+				set	
+				{
+					uuid = value;
+				}
+			}
+
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			public string Pname
+			{
+				get
+				{
+					return pname;
+				}
+				set	
+				{
+					pname = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public string Path
+			{
+				get
+				{
+					return path;
+				}
+				set	
+				{
+					path = value;
+				}
+			}
+
+			public string Md5
+			{
+				get
+				{
+					return md5;
+				}
+				set	
+				{
+					md5 = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public long? CreateTimestamp
+			{
+				get
+				{
+					return createTimestamp;
+				}
+				set	
+				{
+					createTimestamp = value;
+				}
+			}
+
+			public long? StartTimeDt
+			{
+				get
+				{
+					return startTimeDt;
+				}
+				set	
+				{
+					startTimeDt = value;
+				}
+			}
+
+			public int? IsPackage
+			{
+				get
+				{
+					return isPackage;
+				}
+				set	
+				{
+					isPackage = value;
+				}
+			}
+
+			public string State
+			{
+				get
+				{
+					return state;
+				}
+				set	
+				{
+					state = value;
 				}
 			}
 		}
@@ -298,23 +326,23 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribePropertyProcDetail_PageInfo
 		{
 
-			private int? count;
+			private int? currentPage;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? currentPage;
+			private int? count;
 
-			public int? Count
+			public int? CurrentPage
 			{
 				get
 				{
-					return count;
+					return currentPage;
 				}
 				set	
 				{
-					count = value;
+					currentPage = value;
 				}
 			}
 
@@ -342,15 +370,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? CurrentPage
+			public int? Count
 			{
 				get
 				{
-					return currentPage;
+					return count;
 				}
 				set	
 				{
-					currentPage = value;
+					count = value;
 				}
 			}
 		}

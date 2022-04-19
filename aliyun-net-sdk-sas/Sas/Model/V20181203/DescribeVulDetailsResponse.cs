@@ -56,43 +56,91 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeVulDetails_Cve
 		{
 
+			private string summary;
+
+			private string complexity;
+
+			private string product;
+
+			private long? pocCreateTime;
+
 			private string cveId;
 
 			private string cnvdId;
 
-			private string title;
+			private string reference;
 
 			private string cvssScore;
 
-			private string cvssVector;
-
-			private long? releaseTime;
-
-			private string complexity;
-
-			private string poc;
-
-			private long? pocCreateTime;
+			private string vendor;
 
 			private long? pocDisclosureTime;
 
-			private string summary;
+			private string classify;
+
+			private string cvssVector;
+
+			private string vulLevel;
+
+			private long? releaseTime;
+
+			private string title;
 
 			private string solution;
 
 			private string content;
 
-			private string vendor;
-
-			private string product;
-
-			private string vulLevel;
-
-			private string reference;
-
-			private string classify;
+			private string poc;
 
 			private List<DescribeVulDetails_Classify> classifys;
+
+			public string Summary
+			{
+				get
+				{
+					return summary;
+				}
+				set	
+				{
+					summary = value;
+				}
+			}
+
+			public string Complexity
+			{
+				get
+				{
+					return complexity;
+				}
+				set	
+				{
+					complexity = value;
+				}
+			}
+
+			public string Product
+			{
+				get
+				{
+					return product;
+				}
+				set	
+				{
+					product = value;
+				}
+			}
+
+			public long? PocCreateTime
+			{
+				get
+				{
+					return pocCreateTime;
+				}
+				set	
+				{
+					pocCreateTime = value;
+				}
+			}
 
 			public string CveId
 			{
@@ -118,15 +166,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Title
+			public string Reference
 			{
 				get
 				{
-					return title;
+					return reference;
 				}
 				set	
 				{
-					title = value;
+					reference = value;
 				}
 			}
 
@@ -142,63 +190,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string CvssVector
+			public string Vendor
 			{
 				get
 				{
-					return cvssVector;
+					return vendor;
 				}
 				set	
 				{
-					cvssVector = value;
-				}
-			}
-
-			public long? ReleaseTime
-			{
-				get
-				{
-					return releaseTime;
-				}
-				set	
-				{
-					releaseTime = value;
-				}
-			}
-
-			public string Complexity
-			{
-				get
-				{
-					return complexity;
-				}
-				set	
-				{
-					complexity = value;
-				}
-			}
-
-			public string Poc
-			{
-				get
-				{
-					return poc;
-				}
-				set	
-				{
-					poc = value;
-				}
-			}
-
-			public long? PocCreateTime
-			{
-				get
-				{
-					return pocCreateTime;
-				}
-				set	
-				{
-					pocCreateTime = value;
+					vendor = value;
 				}
 			}
 
@@ -214,15 +214,63 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Summary
+			public string Classify
 			{
 				get
 				{
-					return summary;
+					return classify;
 				}
 				set	
 				{
-					summary = value;
+					classify = value;
+				}
+			}
+
+			public string CvssVector
+			{
+				get
+				{
+					return cvssVector;
+				}
+				set	
+				{
+					cvssVector = value;
+				}
+			}
+
+			public string VulLevel
+			{
+				get
+				{
+					return vulLevel;
+				}
+				set	
+				{
+					vulLevel = value;
+				}
+			}
+
+			public long? ReleaseTime
+			{
+				get
+				{
+					return releaseTime;
+				}
+				set	
+				{
+					releaseTime = value;
+				}
+			}
+
+			public string Title
+			{
+				get
+				{
+					return title;
+				}
+				set	
+				{
+					title = value;
 				}
 			}
 
@@ -250,63 +298,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Vendor
+			public string Poc
 			{
 				get
 				{
-					return vendor;
+					return poc;
 				}
 				set	
 				{
-					vendor = value;
-				}
-			}
-
-			public string Product
-			{
-				get
-				{
-					return product;
-				}
-				set	
-				{
-					product = value;
-				}
-			}
-
-			public string VulLevel
-			{
-				get
-				{
-					return vulLevel;
-				}
-				set	
-				{
-					vulLevel = value;
-				}
-			}
-
-			public string Reference
-			{
-				get
-				{
-					return reference;
-				}
-				set	
-				{
-					reference = value;
-				}
-			}
-
-			public string Classify
-			{
-				get
-				{
-					return classify;
-				}
-				set	
-				{
-					classify = value;
+					poc = value;
 				}
 			}
 
@@ -325,23 +325,11 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			public class DescribeVulDetails_Classify
 			{
 
-				private string classify;
-
 				private string description;
 
-				private string demoVideoUrl;
+				private string classify;
 
-				public string Classify
-				{
-					get
-					{
-						return classify;
-					}
-					set	
-					{
-						classify = value;
-					}
-				}
+				private string demoVideoUrl;
 
 				public string Description
 				{
@@ -352,6 +340,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					set	
 					{
 						description = value;
+					}
+				}
+
+				public string Classify
+				{
+					get
+					{
+						return classify;
+					}
+					set	
+					{
+						classify = value;
 					}
 				}
 

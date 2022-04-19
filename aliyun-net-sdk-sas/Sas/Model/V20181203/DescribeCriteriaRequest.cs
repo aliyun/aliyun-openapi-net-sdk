@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class DescribeCriteriaRequest : RpcAcsRequest<DescribeCriteriaResponse>
     {
         public DescribeCriteriaRequest()
-            : base("Sas", "2018-12-03", "DescribeCriteria", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "DescribeCriteria")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,20 +41,22 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			Method = MethodType.POST;
         }
 
-		private string machineTypes;
+		private bool? supportAutoTag;
 
 		private string _value;
 
-		public string MachineTypes
+		private string machineTypes;
+
+		public bool? SupportAutoTag
 		{
 			get
 			{
-				return machineTypes;
+				return supportAutoTag;
 			}
 			set	
 			{
-				machineTypes = value;
-				DictionaryUtil.Add(QueryParameters, "MachineTypes", value);
+				supportAutoTag = value;
+				DictionaryUtil.Add(QueryParameters, "SupportAutoTag", value.ToString());
 			}
 		}
 
@@ -67,6 +70,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				_value = value;
 				DictionaryUtil.Add(QueryParameters, "Value", value);
+			}
+		}
+
+		public string MachineTypes
+		{
+			get
+			{
+				return machineTypes;
+			}
+			set	
+			{
+				machineTypes = value;
+				DictionaryUtil.Add(QueryParameters, "MachineTypes", value);
 			}
 		}
 

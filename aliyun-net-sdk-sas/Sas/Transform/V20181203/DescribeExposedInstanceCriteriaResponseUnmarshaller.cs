@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			List<DescribeExposedInstanceCriteriaResponse.DescribeExposedInstanceCriteria_Criteria> describeExposedInstanceCriteriaResponse_criteriaList = new List<DescribeExposedInstanceCriteriaResponse.DescribeExposedInstanceCriteria_Criteria>();
 			for (int i = 0; i < _ctx.Length("DescribeExposedInstanceCriteria.CriteriaList.Length"); i++) {
 				DescribeExposedInstanceCriteriaResponse.DescribeExposedInstanceCriteria_Criteria criteria = new DescribeExposedInstanceCriteriaResponse.DescribeExposedInstanceCriteria_Criteria();
-				criteria.Values = _ctx.StringValue("DescribeExposedInstanceCriteria.CriteriaList["+ i +"].Values");
-				criteria.Name = _ctx.StringValue("DescribeExposedInstanceCriteria.CriteriaList["+ i +"].Name");
 				criteria.Type = _ctx.StringValue("DescribeExposedInstanceCriteria.CriteriaList["+ i +"].Type");
+				criteria.Name = _ctx.StringValue("DescribeExposedInstanceCriteria.CriteriaList["+ i +"].Name");
+				criteria.Values = _ctx.StringValue("DescribeExposedInstanceCriteria.CriteriaList["+ i +"].Values");
 
 				describeExposedInstanceCriteriaResponse_criteriaList.Add(criteria);
 			}

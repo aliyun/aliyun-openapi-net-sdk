@@ -25,23 +25,23 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribePropertyUsageNewestResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string type;
 
 		private int? itemCount;
 
-		private string type;
+		private string requestId;
 
 		private List<DescribePropertyUsageNewest_NewestStatisticItem> newestStatisticItems;
 
-		public string RequestId
+		public string Type
 		{
 			get
 			{
-				return requestId;
+				return type;
 			}
 			set	
 			{
-				requestId = value;
+				type = value;
 			}
 		}
 
@@ -57,15 +57,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string Type
+		public string RequestId
 		{
 			get
 			{
-				return type;
+				return requestId;
 			}
 			set	
 			{
-				type = value;
+				requestId = value;
 			}
 		}
 

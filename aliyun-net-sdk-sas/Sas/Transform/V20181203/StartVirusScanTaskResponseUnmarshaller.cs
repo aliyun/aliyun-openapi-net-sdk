@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			StartVirusScanTaskResponse startVirusScanTaskResponse = new StartVirusScanTaskResponse();
 
 			startVirusScanTaskResponse.HttpResponse = _ctx.HttpResponse;
-			startVirusScanTaskResponse.RequestId = _ctx.StringValue("StartVirusScanTask.RequestId");
 			startVirusScanTaskResponse.ScanTaskId = _ctx.LongValue("StartVirusScanTask.ScanTaskId");
+			startVirusScanTaskResponse.RequestId = _ctx.StringValue("StartVirusScanTask.RequestId");
         
 			return startVirusScanTaskResponse;
         }

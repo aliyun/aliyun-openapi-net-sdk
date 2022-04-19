@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class CreateOrUpdateAssetGroupResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? groupId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public long? GroupId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				groupId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

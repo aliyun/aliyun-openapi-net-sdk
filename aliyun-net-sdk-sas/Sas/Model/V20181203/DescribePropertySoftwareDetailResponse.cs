@@ -70,63 +70,39 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribePropertySoftwareDetail_PropertySoftware
 		{
 
-			private string name;
-
-			private string path;
-
-			private string instanceName;
+			private string internetIp;
 
 			private string ip;
-
-			private long? create;
-
-			private long? createTimestamp;
-
-			private string installTime;
-
-			private string version;
-
-			private string uuid;
 
 			private string instanceId;
 
 			private string intranetIp;
 
-			private string internetIp;
+			private string installTime;
 
-			public string Name
+			private string uuid;
+
+			private string version;
+
+			private string instanceName;
+
+			private string path;
+
+			private string name;
+
+			private long? createTimestamp;
+
+			private long? installTimeDt;
+
+			public string InternetIp
 			{
 				get
 				{
-					return name;
+					return internetIp;
 				}
 				set	
 				{
-					name = value;
-				}
-			}
-
-			public string Path
-			{
-				get
-				{
-					return path;
-				}
-				set	
-				{
-					path = value;
-				}
-			}
-
-			public string InstanceName
-			{
-				get
-				{
-					return instanceName;
-				}
-				set	
-				{
-					instanceName = value;
+					internetIp = value;
 				}
 			}
 
@@ -139,66 +115,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					ip = value;
-				}
-			}
-
-			public long? Create
-			{
-				get
-				{
-					return create;
-				}
-				set	
-				{
-					create = value;
-				}
-			}
-
-			public long? CreateTimestamp
-			{
-				get
-				{
-					return createTimestamp;
-				}
-				set	
-				{
-					createTimestamp = value;
-				}
-			}
-
-			public string InstallTime
-			{
-				get
-				{
-					return installTime;
-				}
-				set	
-				{
-					installTime = value;
-				}
-			}
-
-			public string Version
-			{
-				get
-				{
-					return version;
-				}
-				set	
-				{
-					version = value;
-				}
-			}
-
-			public string Uuid
-			{
-				get
-				{
-					return uuid;
-				}
-				set	
-				{
-					uuid = value;
 				}
 			}
 
@@ -226,15 +142,99 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string InternetIp
+			public string InstallTime
 			{
 				get
 				{
-					return internetIp;
+					return installTime;
 				}
 				set	
 				{
-					internetIp = value;
+					installTime = value;
+				}
+			}
+
+			public string Uuid
+			{
+				get
+				{
+					return uuid;
+				}
+				set	
+				{
+					uuid = value;
+				}
+			}
+
+			public string Version
+			{
+				get
+				{
+					return version;
+				}
+				set	
+				{
+					version = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public string Path
+			{
+				get
+				{
+					return path;
+				}
+				set	
+				{
+					path = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public long? CreateTimestamp
+			{
+				get
+				{
+					return createTimestamp;
+				}
+				set	
+				{
+					createTimestamp = value;
+				}
+			}
+
+			public long? InstallTimeDt
+			{
+				get
+				{
+					return installTimeDt;
+				}
+				set	
+				{
+					installTimeDt = value;
 				}
 			}
 		}
@@ -242,23 +242,23 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribePropertySoftwareDetail_PageInfo
 		{
 
-			private int? count;
+			private int? currentPage;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? currentPage;
+			private int? count;
 
-			public int? Count
+			public int? CurrentPage
 			{
 				get
 				{
-					return count;
+					return currentPage;
 				}
 				set	
 				{
-					count = value;
+					currentPage = value;
 				}
 			}
 
@@ -286,15 +286,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? CurrentPage
+			public int? Count
 			{
 				get
 				{
-					return currentPage;
+					return count;
 				}
 				set	
 				{
-					currentPage = value;
+					count = value;
 				}
 			}
 		}

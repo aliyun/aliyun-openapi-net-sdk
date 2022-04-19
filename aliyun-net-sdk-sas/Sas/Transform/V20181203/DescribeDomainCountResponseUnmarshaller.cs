@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeDomainCountResponse describeDomainCountResponse = new DescribeDomainCountResponse();
 
 			describeDomainCountResponse.HttpResponse = _ctx.HttpResponse;
-			describeDomainCountResponse.RequestId = _ctx.StringValue("DescribeDomainCount.RequestId");
-			describeDomainCountResponse.TotalDomainsCount = _ctx.IntegerValue("DescribeDomainCount.TotalDomainsCount");
 			describeDomainCountResponse.RootDomainsCount = _ctx.IntegerValue("DescribeDomainCount.RootDomainsCount");
+			describeDomainCountResponse.RequestId = _ctx.StringValue("DescribeDomainCount.RequestId");
 			describeDomainCountResponse.SubDomainsCount = _ctx.IntegerValue("DescribeDomainCount.SubDomainsCount");
+			describeDomainCountResponse.TotalDomainsCount = _ctx.IntegerValue("DescribeDomainCount.TotalDomainsCount");
         
 			return describeDomainCountResponse;
         }

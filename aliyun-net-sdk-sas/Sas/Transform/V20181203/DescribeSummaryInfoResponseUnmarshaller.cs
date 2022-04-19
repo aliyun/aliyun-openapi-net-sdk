@@ -32,10 +32,10 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 
 			describeSummaryInfoResponse.HttpResponse = _ctx.HttpResponse;
 			describeSummaryInfoResponse.RequestId = _ctx.StringValue("DescribeSummaryInfo.RequestId");
-			describeSummaryInfoResponse.AegisClientOfflineCount = _ctx.IntegerValue("DescribeSummaryInfo.AegisClientOfflineCount");
-			describeSummaryInfoResponse.SecurityScore = _ctx.IntegerValue("DescribeSummaryInfo.SecurityScore");
-			describeSummaryInfoResponse.AegisClientOnlineCount = _ctx.IntegerValue("DescribeSummaryInfo.AegisClientOnlineCount");
 			describeSummaryInfoResponse.Success = _ctx.BooleanValue("DescribeSummaryInfo.Success");
+			describeSummaryInfoResponse.AegisClientOfflineCount = _ctx.IntegerValue("DescribeSummaryInfo.AegisClientOfflineCount");
+			describeSummaryInfoResponse.AegisClientOnlineCount = _ctx.IntegerValue("DescribeSummaryInfo.AegisClientOnlineCount");
+			describeSummaryInfoResponse.SecurityScore = _ctx.IntegerValue("DescribeSummaryInfo.SecurityScore");
         
 			return describeSummaryInfoResponse;
         }

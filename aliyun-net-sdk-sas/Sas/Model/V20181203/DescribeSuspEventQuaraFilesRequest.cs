@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class DescribeSuspEventQuaraFilesRequest : RpcAcsRequest<DescribeSuspEventQuaraFilesResponse>
     {
         public DescribeSuspEventQuaraFilesRequest()
-            : base("Sas", "2018-12-03", "DescribeSuspEventQuaraFiles", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "DescribeSuspEventQuaraFiles")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,6 +46,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		private string pageSize;
 
 		private string from;
+
+		private long? groupingId;
 
 		private string groupId;
 
@@ -90,6 +93,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				from = value;
 				DictionaryUtil.Add(QueryParameters, "From", value);
+			}
+		}
+
+		public long? GroupingId
+		{
+			get
+			{
+				return groupingId;
+			}
+			set	
+			{
+				groupingId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupingId", value.ToString());
 			}
 		}
 

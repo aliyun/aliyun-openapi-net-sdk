@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class OperateVulsRequest : RpcAcsRequest<OperateVulsResponse>
     {
         public OperateVulsRequest()
-            : base("Sas", "2018-12-03", "OperateVuls", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "OperateVuls")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,30 +41,13 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			Method = MethodType.POST;
         }
 
-		private string reason;
-
 		private string type;
 
 		private List<string> vulNamess = new List<string>(){ };
 
-		private int? precondition;
-
 		private string operateType;
 
 		private List<string> uuidss = new List<string>(){ };
-
-		public string Reason
-		{
-			get
-			{
-				return reason;
-			}
-			set	
-			{
-				reason = value;
-				DictionaryUtil.Add(QueryParameters, "Reason", value);
-			}
-		}
 
 		public string Type
 		{
@@ -92,19 +76,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				{
 					DictionaryUtil.Add(QueryParameters,"VulNames." + (i + 1) , vulNamess[i]);
 				}
-			}
-		}
-
-		public int? Precondition
-		{
-			get
-			{
-				return precondition;
-			}
-			set	
-			{
-				precondition = value;
-				DictionaryUtil.Add(QueryParameters, "Precondition", value.ToString());
 			}
 		}
 

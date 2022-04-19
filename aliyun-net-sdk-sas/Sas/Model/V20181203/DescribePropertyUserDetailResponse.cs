@@ -70,39 +70,85 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribePropertyUserDetail_PropertyUser
 		{
 
-			private string lastLoginTime;
+			private string status;
 
-			private long? lastLoginTimestamp;
+			private string lastLoginIp;
+
+			private string internetIp;
+
+			private string lastLoginTime;
 
 			private string isRoot;
 
-			private string instanceName;
-
-			private string accountsExpirationDate;
-
-			private string passwordExpirationDate;
-
 			private string ip;
 
-			private string create;
-
-			private long? createTimestamp;
-
 			private string user;
-
-			private string uuid;
-
-			private string lastLoginIp;
 
 			private string instanceId;
 
 			private string intranetIp;
 
-			private string internetIp;
+			private string passwordExpirationDate;
 
-			private string status;
+			private string uuid;
+
+			private long? lastLoginTimestamp;
+
+			private string instanceName;
+
+			private string accountsExpirationDate;
+
+			private long? createTimestamp;
+
+			private long? lastLoginTimeDt;
+
+			private int? isPasswdExpired;
+
+			private int? isPasswdLocked;
+
+			private int? isUserExpired;
+
+			private int? isCouldLogin;
+
+			private int? isSudoer;
 
 			private List<string> groupNames;
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string LastLoginIp
+			{
+				get
+				{
+					return lastLoginIp;
+				}
+				set	
+				{
+					lastLoginIp = value;
+				}
+			}
+
+			public string InternetIp
+			{
+				get
+				{
+					return internetIp;
+				}
+				set	
+				{
+					internetIp = value;
+				}
+			}
 
 			public string LastLoginTime
 			{
@@ -113,18 +159,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					lastLoginTime = value;
-				}
-			}
-
-			public long? LastLoginTimestamp
-			{
-				get
-				{
-					return lastLoginTimestamp;
-				}
-				set	
-				{
-					lastLoginTimestamp = value;
 				}
 			}
 
@@ -140,42 +174,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string InstanceName
-			{
-				get
-				{
-					return instanceName;
-				}
-				set	
-				{
-					instanceName = value;
-				}
-			}
-
-			public string AccountsExpirationDate
-			{
-				get
-				{
-					return accountsExpirationDate;
-				}
-				set	
-				{
-					accountsExpirationDate = value;
-				}
-			}
-
-			public string PasswordExpirationDate
-			{
-				get
-				{
-					return passwordExpirationDate;
-				}
-				set	
-				{
-					passwordExpirationDate = value;
-				}
-			}
-
 			public string Ip
 			{
 				get
@@ -188,30 +186,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Create
-			{
-				get
-				{
-					return create;
-				}
-				set	
-				{
-					create = value;
-				}
-			}
-
-			public long? CreateTimestamp
-			{
-				get
-				{
-					return createTimestamp;
-				}
-				set	
-				{
-					createTimestamp = value;
-				}
-			}
-
 			public string User
 			{
 				get
@@ -221,30 +195,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					user = value;
-				}
-			}
-
-			public string Uuid
-			{
-				get
-				{
-					return uuid;
-				}
-				set	
-				{
-					uuid = value;
-				}
-			}
-
-			public string LastLoginIp
-			{
-				get
-				{
-					return lastLoginIp;
-				}
-				set	
-				{
-					lastLoginIp = value;
 				}
 			}
 
@@ -272,27 +222,147 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string InternetIp
+			public string PasswordExpirationDate
 			{
 				get
 				{
-					return internetIp;
+					return passwordExpirationDate;
 				}
 				set	
 				{
-					internetIp = value;
+					passwordExpirationDate = value;
 				}
 			}
 
-			public string Status
+			public string Uuid
 			{
 				get
 				{
-					return status;
+					return uuid;
 				}
 				set	
 				{
-					status = value;
+					uuid = value;
+				}
+			}
+
+			public long? LastLoginTimestamp
+			{
+				get
+				{
+					return lastLoginTimestamp;
+				}
+				set	
+				{
+					lastLoginTimestamp = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public string AccountsExpirationDate
+			{
+				get
+				{
+					return accountsExpirationDate;
+				}
+				set	
+				{
+					accountsExpirationDate = value;
+				}
+			}
+
+			public long? CreateTimestamp
+			{
+				get
+				{
+					return createTimestamp;
+				}
+				set	
+				{
+					createTimestamp = value;
+				}
+			}
+
+			public long? LastLoginTimeDt
+			{
+				get
+				{
+					return lastLoginTimeDt;
+				}
+				set	
+				{
+					lastLoginTimeDt = value;
+				}
+			}
+
+			public int? IsPasswdExpired
+			{
+				get
+				{
+					return isPasswdExpired;
+				}
+				set	
+				{
+					isPasswdExpired = value;
+				}
+			}
+
+			public int? IsPasswdLocked
+			{
+				get
+				{
+					return isPasswdLocked;
+				}
+				set	
+				{
+					isPasswdLocked = value;
+				}
+			}
+
+			public int? IsUserExpired
+			{
+				get
+				{
+					return isUserExpired;
+				}
+				set	
+				{
+					isUserExpired = value;
+				}
+			}
+
+			public int? IsCouldLogin
+			{
+				get
+				{
+					return isCouldLogin;
+				}
+				set	
+				{
+					isCouldLogin = value;
+				}
+			}
+
+			public int? IsSudoer
+			{
+				get
+				{
+					return isSudoer;
+				}
+				set	
+				{
+					isSudoer = value;
 				}
 			}
 
@@ -312,23 +382,23 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribePropertyUserDetail_PageInfo
 		{
 
-			private int? count;
+			private int? currentPage;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? currentPage;
+			private int? count;
 
-			public int? Count
+			public int? CurrentPage
 			{
 				get
 				{
-					return count;
+					return currentPage;
 				}
 				set	
 				{
-					count = value;
+					currentPage = value;
 				}
 			}
 
@@ -356,15 +426,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? CurrentPage
+			public int? Count
 			{
 				get
 				{
-					return currentPage;
+					return count;
 				}
 				set	
 				{
-					currentPage = value;
+					count = value;
 				}
 			}
 		}

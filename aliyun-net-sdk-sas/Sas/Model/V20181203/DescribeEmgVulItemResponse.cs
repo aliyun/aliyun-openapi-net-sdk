@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeEmgVulItemResponse : AcsResponse
 	{
 
+		private int? currentPage;
+
 		private string requestId;
 
 		private int? pageSize;
 
-		private int? currentPage;
-
 		private int? totalCount;
 
 		private List<DescribeEmgVulItem_GroupedVulItem> groupedVulItems;
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -56,18 +68,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				pageSize = value;
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
 			}
 		}
 
@@ -98,81 +98,33 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeEmgVulItem_GroupedVulItem
 		{
 
-			private string aliasName;
-
-			private int? pendingCount;
-
-			private string name;
-
-			private long? gmtPublish;
-
-			private string description;
+			private int? status;
 
 			private string type;
 
-			private int? status;
+			private long? gmtLastCheck;
 
 			private int? progress;
 
-			private long? gmtLastCheck;
+			private string description;
 
-			public string AliasName
+			private long? gmtPublish;
+
+			private int? pendingCount;
+
+			private string aliasName;
+
+			private string name;
+
+			public int? Status
 			{
 				get
 				{
-					return aliasName;
+					return status;
 				}
 				set	
 				{
-					aliasName = value;
-				}
-			}
-
-			public int? PendingCount
-			{
-				get
-				{
-					return pendingCount;
-				}
-				set	
-				{
-					pendingCount = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public long? GmtPublish
-			{
-				get
-				{
-					return gmtPublish;
-				}
-				set	
-				{
-					gmtPublish = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
+					status = value;
 				}
 			}
 
@@ -188,15 +140,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? Status
+			public long? GmtLastCheck
 			{
 				get
 				{
-					return status;
+					return gmtLastCheck;
 				}
 				set	
 				{
-					status = value;
+					gmtLastCheck = value;
 				}
 			}
 
@@ -212,15 +164,63 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public long? GmtLastCheck
+			public string Description
 			{
 				get
 				{
-					return gmtLastCheck;
+					return description;
 				}
 				set	
 				{
-					gmtLastCheck = value;
+					description = value;
+				}
+			}
+
+			public long? GmtPublish
+			{
+				get
+				{
+					return gmtPublish;
+				}
+				set	
+				{
+					gmtPublish = value;
+				}
+			}
+
+			public int? PendingCount
+			{
+				get
+				{
+					return pendingCount;
+				}
+				set	
+				{
+					pendingCount = value;
+				}
+			}
+
+			public string AliasName
+			{
+				get
+				{
+					return aliasName;
+				}
+				set	
+				{
+					aliasName = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 		}

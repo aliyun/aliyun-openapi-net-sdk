@@ -36,18 +36,18 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			List<DescribeInstanceStatisticsResponse.DescribeInstanceStatistics_DataItem> describeInstanceStatisticsResponse_data = new List<DescribeInstanceStatisticsResponse.DescribeInstanceStatistics_DataItem>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceStatistics.Data.Length"); i++) {
 				DescribeInstanceStatisticsResponse.DescribeInstanceStatistics_DataItem dataItem = new DescribeInstanceStatisticsResponse.DescribeInstanceStatistics_DataItem();
-				dataItem.Uuid = _ctx.StringValue("DescribeInstanceStatistics.Data["+ i +"].Uuid");
 				dataItem.Account = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].Account");
-				dataItem.Health = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].Health");
-				dataItem.Trojan = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].Trojan");
-				dataItem.Suspicious = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].Suspicious");
-				dataItem.Vul = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].Vul");
-				dataItem.CveNum = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].CveNum");
-				dataItem.EmgNum = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].EmgNum");
-				dataItem.SysNum = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].SysNum");
-				dataItem.CmsNum = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].CmsNum");
 				dataItem.AppNum = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].AppNum");
 				dataItem.ScaNum = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].ScaNum");
+				dataItem.Trojan = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].Trojan");
+				dataItem.CveNum = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].CveNum");
+				dataItem.EmgNum = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].EmgNum");
+				dataItem.Suspicious = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].Suspicious");
+				dataItem.CmsNum = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].CmsNum");
+				dataItem.Uuid = _ctx.StringValue("DescribeInstanceStatistics.Data["+ i +"].Uuid");
+				dataItem.Vul = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].Vul");
+				dataItem.Health = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].Health");
+				dataItem.SysNum = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].SysNum");
 
 				describeInstanceStatisticsResponse_data.Add(dataItem);
 			}

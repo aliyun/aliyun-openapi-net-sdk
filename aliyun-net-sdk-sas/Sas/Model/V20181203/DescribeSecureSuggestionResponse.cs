@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeSecureSuggestionResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
 
-		private List<DescribeSecureSuggestion_Suggestion> suggestions;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeSecureSuggestion_Suggestion> suggestions;
 
 		public int? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,23 +70,11 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeSecureSuggestion_Suggestion
 		{
 
-			private string suggestType;
-
 			private int? points;
 
-			private List<DescribeSecureSuggestion_DetailItem> detail;
+			private string suggestType;
 
-			public string SuggestType
-			{
-				get
-				{
-					return suggestType;
-				}
-				set	
-				{
-					suggestType = value;
-				}
-			}
+			private List<DescribeSecureSuggestion_DetailItem> detail;
 
 			public int? Points
 			{
@@ -97,6 +85,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					points = value;
+				}
+			}
+
+			public string SuggestType
+			{
+				get
+				{
+					return suggestType;
+				}
+				set	
+				{
+					suggestType = value;
 				}
 			}
 
@@ -115,11 +115,23 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			public class DescribeSecureSuggestion_DetailItem
 			{
 
+				private string title;
+
 				private string description;
 
 				private string subType;
 
-				private string title;
+				public string Title
+				{
+					get
+					{
+						return title;
+					}
+					set	
+					{
+						title = value;
+					}
+				}
 
 				public string Description
 				{
@@ -142,18 +154,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					set	
 					{
 						subType = value;
-					}
-				}
-
-				public string Title
-				{
-					get
-					{
-						return title;
-					}
-					set	
-					{
-						title = value;
 					}
 				}
 			}

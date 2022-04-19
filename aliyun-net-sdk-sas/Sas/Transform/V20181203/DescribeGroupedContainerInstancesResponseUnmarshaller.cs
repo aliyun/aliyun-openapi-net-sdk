@@ -34,33 +34,40 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describeGroupedContainerInstancesResponse.RequestId = _ctx.StringValue("DescribeGroupedContainerInstances.RequestId");
 
 			DescribeGroupedContainerInstancesResponse.DescribeGroupedContainerInstances_PageInfo pageInfo = new DescribeGroupedContainerInstancesResponse.DescribeGroupedContainerInstances_PageInfo();
-			pageInfo.Count = _ctx.IntegerValue("DescribeGroupedContainerInstances.PageInfo.Count");
+			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeGroupedContainerInstances.PageInfo.CurrentPage");
 			pageInfo.PageSize = _ctx.IntegerValue("DescribeGroupedContainerInstances.PageInfo.PageSize");
 			pageInfo.TotalCount = _ctx.IntegerValue("DescribeGroupedContainerInstances.PageInfo.TotalCount");
-			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeGroupedContainerInstances.PageInfo.CurrentPage");
+			pageInfo.Count = _ctx.IntegerValue("DescribeGroupedContainerInstances.PageInfo.Count");
 			describeGroupedContainerInstancesResponse.PageInfo = pageInfo;
 
 			List<DescribeGroupedContainerInstancesResponse.DescribeGroupedContainerInstances_GroupedContainerInstance> describeGroupedContainerInstancesResponse_groupedContainerInstanceList = new List<DescribeGroupedContainerInstancesResponse.DescribeGroupedContainerInstances_GroupedContainerInstance>();
 			for (int i = 0; i < _ctx.Length("DescribeGroupedContainerInstances.GroupedContainerInstanceList.Length"); i++) {
 				DescribeGroupedContainerInstancesResponse.DescribeGroupedContainerInstances_GroupedContainerInstance groupedContainerInstance = new DescribeGroupedContainerInstancesResponse.DescribeGroupedContainerInstances_GroupedContainerInstance();
-				groupedContainerInstance.InstanceCount = _ctx.IntegerValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].InstanceCount");
-				groupedContainerInstance.RiskInstanceCount = _ctx.IntegerValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].RiskInstanceCount");
-				groupedContainerInstance.ClusterId = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].ClusterId");
+				groupedContainerInstance.RiskLevel = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].RiskLevel");
+				groupedContainerInstance.HostIp = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].HostIp");
+				groupedContainerInstance.Pod = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].Pod");
 				groupedContainerInstance.RiskStatus = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].RiskStatus");
+				groupedContainerInstance.CreateTime = _ctx.LongValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].CreateTime");
+				groupedContainerInstance._Namespace = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].Namespace");
+				groupedContainerInstance.CusterState = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].CusterState");
+				groupedContainerInstance.InstanceId = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].InstanceId");
+				groupedContainerInstance.RegionId = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].RegionId");
+				groupedContainerInstance.AppName = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].AppName");
+				groupedContainerInstance.InstanceCount = _ctx.IntegerValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].InstanceCount");
+				groupedContainerInstance.ClusterType = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].ClusterType");
+				groupedContainerInstance.ClusterName = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].ClusterName");
+				groupedContainerInstance.PodIp = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].PodIp");
 				groupedContainerInstance.VulCount = _ctx.IntegerValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].VulCount");
 				groupedContainerInstance.AlarmCount = _ctx.IntegerValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].AlarmCount");
-				groupedContainerInstance.Pod = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].Pod");
-				groupedContainerInstance.PodIp = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].PodIp");
-				groupedContainerInstance.InstanceId = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].InstanceId");
-				groupedContainerInstance.HostIp = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].HostIp");
-				groupedContainerInstance.ClusterName = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].ClusterName");
-				groupedContainerInstance.CreateTime = _ctx.LongValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].CreateTime");
-				groupedContainerInstance.AppName = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].AppName");
-				groupedContainerInstance.ClusterType = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].ClusterType");
-				groupedContainerInstance.CusterState = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].CusterState");
-				groupedContainerInstance.RegionId = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].RegionId");
-				groupedContainerInstance._Namespace = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].Namespace");
-				groupedContainerInstance.RiskLevel = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].RiskLevel");
+				groupedContainerInstance.RiskInstanceCount = _ctx.IntegerValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].RiskInstanceCount");
+				groupedContainerInstance.ClusterId = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].ClusterId");
+				groupedContainerInstance.Image = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].Image");
+				groupedContainerInstance.ImageRepoNamespace = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].ImageRepoNamespace");
+				groupedContainerInstance.ImageRepoName = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].ImageRepoName");
+				groupedContainerInstance.ImageRepoTag = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].ImageRepoTag");
+				groupedContainerInstance.ImageDigest = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].ImageDigest");
+				groupedContainerInstance.ImageUuid = _ctx.StringValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].ImageUuid");
+				groupedContainerInstance.HcCount = _ctx.IntegerValue("DescribeGroupedContainerInstances.GroupedContainerInstanceList["+ i +"].HcCount");
 
 				describeGroupedContainerInstancesResponse_groupedContainerInstanceList.Add(groupedContainerInstance);
 			}

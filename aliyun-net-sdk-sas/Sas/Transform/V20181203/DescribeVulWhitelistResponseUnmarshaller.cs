@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				vulWhitelist.Type = _ctx.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].Type");
 				vulWhitelist.AliasName = _ctx.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].AliasName");
 				vulWhitelist.Reason = _ctx.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].Reason");
+				vulWhitelist.TargetInfo = _ctx.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].TargetInfo");
+				vulWhitelist.Id = _ctx.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].Id");
 
 				describeVulWhitelistResponse_vulWhitelists.Add(vulWhitelist);
 			}

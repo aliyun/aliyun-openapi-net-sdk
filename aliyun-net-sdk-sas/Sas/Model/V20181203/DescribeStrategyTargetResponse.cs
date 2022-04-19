@@ -56,13 +56,25 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeStrategyTarget_StrategyTarget
 		{
 
+			private int? bindUuidCount;
+
 			private string flag;
 
 			private string target;
 
 			private string targetType;
 
-			private int? bindUuidCount;
+			public int? BindUuidCount
+			{
+				get
+				{
+					return bindUuidCount;
+				}
+				set	
+				{
+					bindUuidCount = value;
+				}
+			}
 
 			public string Flag
 			{
@@ -97,18 +109,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					targetType = value;
-				}
-			}
-
-			public int? BindUuidCount
-			{
-				get
-				{
-					return bindUuidCount;
-				}
-				set	
-				{
-					bindUuidCount = value;
 				}
 			}
 		}

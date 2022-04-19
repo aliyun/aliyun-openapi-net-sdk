@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeImageGroupedVulListResponse : AcsResponse
 	{
 
+		private int? currentPage;
+
 		private string requestId;
 
 		private int? pageSize;
 
-		private int? currentPage;
-
 		private int? totalCount;
 
 		private List<DescribeImageGroupedVulList_GroupedVulItem> groupedVulItems;
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -56,18 +68,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				pageSize = value;
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
 			}
 		}
 
@@ -98,47 +98,35 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeImageGroupedVulList_GroupedVulItem
 		{
 
-			private string name;
-
-			private string aliasName;
+			private int? status;
 
 			private string type;
 
-			private int? status;
-
-			private long? lastScanTime;
+			private int? nntfCount;
 
 			private long? gmtLast;
 
-			private int? asapCount;
-
-			private int? laterCount;
-
-			private int? nntfCount;
+			private long? lastScanTime;
 
 			private string tags;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private int? laterCount;
 
-			public string AliasName
+			private string aliasName;
+
+			private string name;
+
+			private int? asapCount;
+
+			public int? Status
 			{
 				get
 				{
-					return aliasName;
+					return status;
 				}
 				set	
 				{
-					aliasName = value;
+					status = value;
 				}
 			}
 
@@ -154,27 +142,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? Status
+			public int? NntfCount
 			{
 				get
 				{
-					return status;
+					return nntfCount;
 				}
 				set	
 				{
-					status = value;
-				}
-			}
-
-			public long? LastScanTime
-			{
-				get
-				{
-					return lastScanTime;
-				}
-				set	
-				{
-					lastScanTime = value;
+					nntfCount = value;
 				}
 			}
 
@@ -190,15 +166,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? AsapCount
+			public long? LastScanTime
 			{
 				get
 				{
-					return asapCount;
+					return lastScanTime;
 				}
 				set	
 				{
-					asapCount = value;
+					lastScanTime = value;
+				}
+			}
+
+			public string Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
 				}
 			}
 
@@ -214,27 +202,39 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? NntfCount
+			public string AliasName
 			{
 				get
 				{
-					return nntfCount;
+					return aliasName;
 				}
 				set	
 				{
-					nntfCount = value;
+					aliasName = value;
 				}
 			}
 
-			public string Tags
+			public string Name
 			{
 				get
 				{
-					return tags;
+					return name;
 				}
 				set	
 				{
-					tags = value;
+					name = value;
+				}
+			}
+
+			public int? AsapCount
+			{
+				get
+				{
+					return asapCount;
+				}
+				set	
+				{
+					asapCount = value;
 				}
 			}
 		}

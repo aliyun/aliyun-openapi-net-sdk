@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			List<DescribeCriteriaResponse.DescribeCriteria_Criteria> describeCriteriaResponse_criteriaList = new List<DescribeCriteriaResponse.DescribeCriteria_Criteria>();
 			for (int i = 0; i < _ctx.Length("DescribeCriteria.CriteriaList.Length"); i++) {
 				DescribeCriteriaResponse.DescribeCriteria_Criteria criteria = new DescribeCriteriaResponse.DescribeCriteria_Criteria();
-				criteria.Values = _ctx.StringValue("DescribeCriteria.CriteriaList["+ i +"].Values");
-				criteria.Name = _ctx.StringValue("DescribeCriteria.CriteriaList["+ i +"].Name");
 				criteria.Type = _ctx.StringValue("DescribeCriteria.CriteriaList["+ i +"].Type");
+				criteria.Name = _ctx.StringValue("DescribeCriteria.CriteriaList["+ i +"].Name");
+				criteria.Values = _ctx.StringValue("DescribeCriteria.CriteriaList["+ i +"].Values");
 
 				describeCriteriaResponse_criteriaList.Add(criteria);
 			}

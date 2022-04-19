@@ -56,21 +56,21 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeCloudProductFieldStatistics_GroupedFields
 		{
 
-			private int? riskInstanceCount;
+			private string categoryCount;
 
 			private int? instanceCount;
 
-			private string categoryCount;
+			private int? riskInstanceCount;
 
-			public int? RiskInstanceCount
+			public string CategoryCount
 			{
 				get
 				{
-					return riskInstanceCount;
+					return categoryCount;
 				}
 				set	
 				{
-					riskInstanceCount = value;
+					categoryCount = value;
 				}
 			}
 
@@ -86,15 +86,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string CategoryCount
+			public int? RiskInstanceCount
 			{
 				get
 				{
-					return categoryCount;
+					return riskInstanceCount;
 				}
 				set	
 				{
-					categoryCount = value;
+					riskInstanceCount = value;
 				}
 			}
 		}

@@ -31,24 +31,24 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeGroupedVulResponse describeGroupedVulResponse = new DescribeGroupedVulResponse();
 
 			describeGroupedVulResponse.HttpResponse = _ctx.HttpResponse;
+			describeGroupedVulResponse.CurrentPage = _ctx.IntegerValue("DescribeGroupedVul.CurrentPage");
 			describeGroupedVulResponse.RequestId = _ctx.StringValue("DescribeGroupedVul.RequestId");
 			describeGroupedVulResponse.PageSize = _ctx.IntegerValue("DescribeGroupedVul.PageSize");
-			describeGroupedVulResponse.CurrentPage = _ctx.IntegerValue("DescribeGroupedVul.CurrentPage");
 			describeGroupedVulResponse.TotalCount = _ctx.IntegerValue("DescribeGroupedVul.TotalCount");
 
 			List<DescribeGroupedVulResponse.DescribeGroupedVul_GroupedVulItem> describeGroupedVulResponse_groupedVulItems = new List<DescribeGroupedVulResponse.DescribeGroupedVul_GroupedVulItem>();
 			for (int i = 0; i < _ctx.Length("DescribeGroupedVul.GroupedVulItems.Length"); i++) {
 				DescribeGroupedVulResponse.DescribeGroupedVul_GroupedVulItem groupedVulItem = new DescribeGroupedVulResponse.DescribeGroupedVul_GroupedVulItem();
-				groupedVulItem.Name = _ctx.StringValue("DescribeGroupedVul.GroupedVulItems["+ i +"].Name");
-				groupedVulItem.AliasName = _ctx.StringValue("DescribeGroupedVul.GroupedVulItems["+ i +"].AliasName");
 				groupedVulItem.Type = _ctx.StringValue("DescribeGroupedVul.GroupedVulItems["+ i +"].Type");
-				groupedVulItem.GmtLast = _ctx.LongValue("DescribeGroupedVul.GroupedVulItems["+ i +"].GmtLast");
-				groupedVulItem.AsapCount = _ctx.IntegerValue("DescribeGroupedVul.GroupedVulItems["+ i +"].AsapCount");
-				groupedVulItem.LaterCount = _ctx.IntegerValue("DescribeGroupedVul.GroupedVulItems["+ i +"].LaterCount");
 				groupedVulItem.NntfCount = _ctx.IntegerValue("DescribeGroupedVul.GroupedVulItems["+ i +"].NntfCount");
 				groupedVulItem.HandledCount = _ctx.IntegerValue("DescribeGroupedVul.GroupedVulItems["+ i +"].HandledCount");
+				groupedVulItem.GmtLast = _ctx.LongValue("DescribeGroupedVul.GroupedVulItems["+ i +"].GmtLast");
 				groupedVulItem.Tags = _ctx.StringValue("DescribeGroupedVul.GroupedVulItems["+ i +"].Tags");
+				groupedVulItem.LaterCount = _ctx.IntegerValue("DescribeGroupedVul.GroupedVulItems["+ i +"].LaterCount");
+				groupedVulItem.AliasName = _ctx.StringValue("DescribeGroupedVul.GroupedVulItems["+ i +"].AliasName");
+				groupedVulItem.Name = _ctx.StringValue("DescribeGroupedVul.GroupedVulItems["+ i +"].Name");
 				groupedVulItem.TotalFixCount = _ctx.LongValue("DescribeGroupedVul.GroupedVulItems["+ i +"].TotalFixCount");
+				groupedVulItem.AsapCount = _ctx.IntegerValue("DescribeGroupedVul.GroupedVulItems["+ i +"].AsapCount");
 
 				describeGroupedVulResponse_groupedVulItems.Add(groupedVulItem);
 			}

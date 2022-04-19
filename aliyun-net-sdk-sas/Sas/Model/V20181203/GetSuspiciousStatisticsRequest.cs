@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class GetSuspiciousStatisticsRequest : RpcAcsRequest<GetSuspiciousStatisticsResponse>
     {
         public GetSuspiciousStatisticsRequest()
-            : base("Sas", "2018-12-03", "GetSuspiciousStatistics", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "GetSuspiciousStatistics")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

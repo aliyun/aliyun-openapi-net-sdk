@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class FixCheckWarningsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? batchId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public long? BatchId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				batchId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

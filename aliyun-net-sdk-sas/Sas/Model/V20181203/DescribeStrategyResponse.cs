@@ -56,65 +56,31 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeStrategy_Strategy
 		{
 
-			private int? cycleDays;
-
-			private int? id;
-
-			private int? cycleStartTime;
-
 			private int? type;
 
-			private string name;
-
-			private int? riskCount;
-
-			private int? ecsCount;
-
 			private int? execStatus;
-
-			private int? processRate;
 
 			private int? passRate;
 
 			private string authVersionList;
 
+			private int? cycleStartTime;
+
+			private string customType;
+
+			private int? ecsCount;
+
+			private int? processRate;
+
+			private int? cycleDays;
+
+			private int? riskCount;
+
+			private string name;
+
+			private int? id;
+
 			private List<DescribeStrategy_ConfigTarget> configTargets;
-
-			public int? CycleDays
-			{
-				get
-				{
-					return cycleDays;
-				}
-				set	
-				{
-					cycleDays = value;
-				}
-			}
-
-			public int? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
-
-			public int? CycleStartTime
-			{
-				get
-				{
-					return cycleStartTime;
-				}
-				set	
-				{
-					cycleStartTime = value;
-				}
-			}
 
 			public int? Type
 			{
@@ -128,42 +94,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public int? RiskCount
-			{
-				get
-				{
-					return riskCount;
-				}
-				set	
-				{
-					riskCount = value;
-				}
-			}
-
-			public int? EcsCount
-			{
-				get
-				{
-					return ecsCount;
-				}
-				set	
-				{
-					ecsCount = value;
-				}
-			}
-
 			public int? ExecStatus
 			{
 				get
@@ -173,18 +103,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					execStatus = value;
-				}
-			}
-
-			public int? ProcessRate
-			{
-				get
-				{
-					return processRate;
-				}
-				set	
-				{
-					processRate = value;
 				}
 			}
 
@@ -212,6 +130,102 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public int? CycleStartTime
+			{
+				get
+				{
+					return cycleStartTime;
+				}
+				set	
+				{
+					cycleStartTime = value;
+				}
+			}
+
+			public string CustomType
+			{
+				get
+				{
+					return customType;
+				}
+				set	
+				{
+					customType = value;
+				}
+			}
+
+			public int? EcsCount
+			{
+				get
+				{
+					return ecsCount;
+				}
+				set	
+				{
+					ecsCount = value;
+				}
+			}
+
+			public int? ProcessRate
+			{
+				get
+				{
+					return processRate;
+				}
+				set	
+				{
+					processRate = value;
+				}
+			}
+
+			public int? CycleDays
+			{
+				get
+				{
+					return cycleDays;
+				}
+				set	
+				{
+					cycleDays = value;
+				}
+			}
+
+			public int? RiskCount
+			{
+				get
+				{
+					return riskCount;
+				}
+				set	
+				{
+					riskCount = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public int? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
 			public List<DescribeStrategy_ConfigTarget> ConfigTargets
 			{
 				get
@@ -229,9 +243,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 				private string flag;
 
-				private string targetType;
-
 				private string target;
+
+				private string targetType;
 
 				public string Flag
 				{
@@ -245,18 +259,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					}
 				}
 
-				public string TargetType
-				{
-					get
-					{
-						return targetType;
-					}
-					set	
-					{
-						targetType = value;
-					}
-				}
-
 				public string Target
 				{
 					get
@@ -266,6 +268,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					set	
 					{
 						target = value;
+					}
+				}
+
+				public string TargetType
+				{
+					get
+					{
+						return targetType;
+					}
+					set	
+					{
+						targetType = value;
 					}
 				}
 			}

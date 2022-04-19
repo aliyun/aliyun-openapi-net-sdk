@@ -31,22 +31,22 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeCheckWarningsResponse describeCheckWarningsResponse = new DescribeCheckWarningsResponse();
 
 			describeCheckWarningsResponse.HttpResponse = _ctx.HttpResponse;
-			describeCheckWarningsResponse.RequestId = _ctx.StringValue("DescribeCheckWarnings.RequestId");
-			describeCheckWarningsResponse.Count = _ctx.IntegerValue("DescribeCheckWarnings.Count");
-			describeCheckWarningsResponse.PageSize = _ctx.IntegerValue("DescribeCheckWarnings.PageSize");
-			describeCheckWarningsResponse.TotalCount = _ctx.IntegerValue("DescribeCheckWarnings.TotalCount");
 			describeCheckWarningsResponse.CurrentPage = _ctx.IntegerValue("DescribeCheckWarnings.CurrentPage");
+			describeCheckWarningsResponse.PageSize = _ctx.IntegerValue("DescribeCheckWarnings.PageSize");
+			describeCheckWarningsResponse.RequestId = _ctx.StringValue("DescribeCheckWarnings.RequestId");
+			describeCheckWarningsResponse.TotalCount = _ctx.IntegerValue("DescribeCheckWarnings.TotalCount");
+			describeCheckWarningsResponse.Count = _ctx.IntegerValue("DescribeCheckWarnings.Count");
 
 			List<DescribeCheckWarningsResponse.DescribeCheckWarnings_CheckWarning> describeCheckWarningsResponse_checkWarnings = new List<DescribeCheckWarningsResponse.DescribeCheckWarnings_CheckWarning>();
 			for (int i = 0; i < _ctx.Length("DescribeCheckWarnings.CheckWarnings.Length"); i++) {
 				DescribeCheckWarningsResponse.DescribeCheckWarnings_CheckWarning checkWarning = new DescribeCheckWarningsResponse.DescribeCheckWarnings_CheckWarning();
-				checkWarning.Uuid = _ctx.StringValue("DescribeCheckWarnings.CheckWarnings["+ i +"].Uuid");
-				checkWarning.CheckId = _ctx.LongValue("DescribeCheckWarnings.CheckWarnings["+ i +"].CheckId");
-				checkWarning.CheckWarningId = _ctx.LongValue("DescribeCheckWarnings.CheckWarnings["+ i +"].CheckWarningId");
-				checkWarning.Level = _ctx.StringValue("DescribeCheckWarnings.CheckWarnings["+ i +"].Level");
-				checkWarning.Item = _ctx.StringValue("DescribeCheckWarnings.CheckWarnings["+ i +"].Item");
-				checkWarning.Type = _ctx.StringValue("DescribeCheckWarnings.CheckWarnings["+ i +"].Type");
 				checkWarning.Status = _ctx.IntegerValue("DescribeCheckWarnings.CheckWarnings["+ i +"].Status");
+				checkWarning.CheckWarningId = _ctx.LongValue("DescribeCheckWarnings.CheckWarnings["+ i +"].CheckWarningId");
+				checkWarning.Type = _ctx.StringValue("DescribeCheckWarnings.CheckWarnings["+ i +"].Type");
+				checkWarning.Uuid = _ctx.StringValue("DescribeCheckWarnings.CheckWarnings["+ i +"].Uuid");
+				checkWarning.Item = _ctx.StringValue("DescribeCheckWarnings.CheckWarnings["+ i +"].Item");
+				checkWarning.CheckId = _ctx.LongValue("DescribeCheckWarnings.CheckWarnings["+ i +"].CheckId");
+				checkWarning.Level = _ctx.StringValue("DescribeCheckWarnings.CheckWarnings["+ i +"].Level");
 
 				describeCheckWarningsResponse_checkWarnings.Add(checkWarning);
 			}

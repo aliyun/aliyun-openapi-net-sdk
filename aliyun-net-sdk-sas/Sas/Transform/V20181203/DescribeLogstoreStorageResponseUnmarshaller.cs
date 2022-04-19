@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeLogstoreStorageResponse describeLogstoreStorageResponse = new DescribeLogstoreStorageResponse();
 
 			describeLogstoreStorageResponse.HttpResponse = _ctx.HttpResponse;
-			describeLogstoreStorageResponse.RequestId = _ctx.StringValue("DescribeLogstoreStorage.RequestId");
-			describeLogstoreStorageResponse.Logstore = _ctx.StringValue("DescribeLogstoreStorage.Logstore");
-			describeLogstoreStorageResponse.Ttl = _ctx.IntegerValue("DescribeLogstoreStorage.Ttl");
-			describeLogstoreStorageResponse.Preserve = _ctx.LongValue("DescribeLogstoreStorage.Preserve");
 			describeLogstoreStorageResponse.Used = _ctx.LongValue("DescribeLogstoreStorage.Used");
+			describeLogstoreStorageResponse.Ttl = _ctx.IntegerValue("DescribeLogstoreStorage.Ttl");
+			describeLogstoreStorageResponse.Logstore = _ctx.StringValue("DescribeLogstoreStorage.Logstore");
+			describeLogstoreStorageResponse.RequestId = _ctx.StringValue("DescribeLogstoreStorage.RequestId");
+			describeLogstoreStorageResponse.Preserve = _ctx.LongValue("DescribeLogstoreStorage.Preserve");
         
 			return describeLogstoreStorageResponse;
         }

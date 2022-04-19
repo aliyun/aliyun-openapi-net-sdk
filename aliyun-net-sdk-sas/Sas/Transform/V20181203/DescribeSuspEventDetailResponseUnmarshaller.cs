@@ -31,33 +31,34 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeSuspEventDetailResponse describeSuspEventDetailResponse = new DescribeSuspEventDetailResponse();
 
 			describeSuspEventDetailResponse.HttpResponse = _ctx.HttpResponse;
-			describeSuspEventDetailResponse.RequestId = _ctx.StringValue("DescribeSuspEventDetail.RequestId");
-			describeSuspEventDetailResponse.LastTime = _ctx.StringValue("DescribeSuspEventDetail.LastTime");
-			describeSuspEventDetailResponse.Id = _ctx.IntegerValue("DescribeSuspEventDetail.Id");
-			describeSuspEventDetailResponse.InstanceName = _ctx.StringValue("DescribeSuspEventDetail.InstanceName");
+			describeSuspEventDetailResponse.Type = _ctx.StringValue("DescribeSuspEventDetail.Type");
+			describeSuspEventDetailResponse.DataSource = _ctx.StringValue("DescribeSuspEventDetail.DataSource");
+			describeSuspEventDetailResponse.EventName = _ctx.StringValue("DescribeSuspEventDetail.EventName");
 			describeSuspEventDetailResponse.InternetIp = _ctx.StringValue("DescribeSuspEventDetail.InternetIp");
 			describeSuspEventDetailResponse.IntranetIp = _ctx.StringValue("DescribeSuspEventDetail.IntranetIp");
+			describeSuspEventDetailResponse.LastTime = _ctx.StringValue("DescribeSuspEventDetail.LastTime");
+			describeSuspEventDetailResponse.OperateMsg = _ctx.StringValue("DescribeSuspEventDetail.OperateMsg");
 			describeSuspEventDetailResponse.Uuid = _ctx.StringValue("DescribeSuspEventDetail.Uuid");
-			describeSuspEventDetailResponse.EventDesc = _ctx.StringValue("DescribeSuspEventDetail.EventDesc");
+			describeSuspEventDetailResponse.CanBeDealOnLine = _ctx.BooleanValue("DescribeSuspEventDetail.CanBeDealOnLine");
+			describeSuspEventDetailResponse.RequestId = _ctx.StringValue("DescribeSuspEventDetail.RequestId");
 			describeSuspEventDetailResponse.EventTypeDesc = _ctx.StringValue("DescribeSuspEventDetail.EventTypeDesc");
-			describeSuspEventDetailResponse.Level = _ctx.StringValue("DescribeSuspEventDetail.Level");
+			describeSuspEventDetailResponse.EventDesc = _ctx.StringValue("DescribeSuspEventDetail.EventDesc");
+			describeSuspEventDetailResponse.InstanceName = _ctx.StringValue("DescribeSuspEventDetail.InstanceName");
 			describeSuspEventDetailResponse.EventStatus = _ctx.StringValue("DescribeSuspEventDetail.EventStatus");
 			describeSuspEventDetailResponse.SaleVersion = _ctx.StringValue("DescribeSuspEventDetail.SaleVersion");
-			describeSuspEventDetailResponse.DataSource = _ctx.StringValue("DescribeSuspEventDetail.DataSource");
-			describeSuspEventDetailResponse.Type = _ctx.StringValue("DescribeSuspEventDetail.Type");
-			describeSuspEventDetailResponse.OperateMsg = _ctx.StringValue("DescribeSuspEventDetail.OperateMsg");
-			describeSuspEventDetailResponse.SasId = _ctx.StringValue("DescribeSuspEventDetail.SasId");
-			describeSuspEventDetailResponse.EventName = _ctx.StringValue("DescribeSuspEventDetail.EventName");
-			describeSuspEventDetailResponse.CanBeDealOnLine = _ctx.BooleanValue("DescribeSuspEventDetail.CanBeDealOnLine");
 			describeSuspEventDetailResponse.OperateErrorCode = _ctx.StringValue("DescribeSuspEventDetail.OperateErrorCode");
+			describeSuspEventDetailResponse.SasId = _ctx.StringValue("DescribeSuspEventDetail.SasId");
+			describeSuspEventDetailResponse.Level = _ctx.StringValue("DescribeSuspEventDetail.Level");
+			describeSuspEventDetailResponse.Id = _ctx.IntegerValue("DescribeSuspEventDetail.Id");
 
 			List<DescribeSuspEventDetailResponse.DescribeSuspEventDetail_QuaraFile> describeSuspEventDetailResponse_details = new List<DescribeSuspEventDetailResponse.DescribeSuspEventDetail_QuaraFile>();
 			for (int i = 0; i < _ctx.Length("DescribeSuspEventDetail.Details.Length"); i++) {
 				DescribeSuspEventDetailResponse.DescribeSuspEventDetail_QuaraFile quaraFile = new DescribeSuspEventDetailResponse.DescribeSuspEventDetail_QuaraFile();
-				quaraFile.Name = _ctx.StringValue("DescribeSuspEventDetail.Details["+ i +"].Name");
 				quaraFile.Type = _ctx.StringValue("DescribeSuspEventDetail.Details["+ i +"].Type");
-				quaraFile.InfoType = _ctx.StringValue("DescribeSuspEventDetail.Details["+ i +"].InfoType");
 				quaraFile._Value = _ctx.StringValue("DescribeSuspEventDetail.Details["+ i +"].Value");
+				quaraFile.InfoType = _ctx.StringValue("DescribeSuspEventDetail.Details["+ i +"].InfoType");
+				quaraFile.NameDisplay = _ctx.StringValue("DescribeSuspEventDetail.Details["+ i +"].NameDisplay");
+				quaraFile.Name = _ctx.StringValue("DescribeSuspEventDetail.Details["+ i +"].Name");
 
 				describeSuspEventDetailResponse_details.Add(quaraFile);
 			}

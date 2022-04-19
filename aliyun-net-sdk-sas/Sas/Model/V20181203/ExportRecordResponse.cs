@@ -27,9 +27,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string requestId;
 
-		private long? id;
-
 		private string fileName;
+
+		private long? id;
 
 		public string RequestId
 		{
@@ -43,18 +43,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public long? Id
-		{
-			get
-			{
-				return id;
-			}
-			set	
-			{
-				id = value;
-			}
-		}
-
 		public string FileName
 		{
 			get
@@ -64,6 +52,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				fileName = value;
+			}
+		}
+
+		public long? Id
+		{
+			get
+			{
+				return id;
+			}
+			set	
+			{
+				id = value;
 			}
 		}
 	}

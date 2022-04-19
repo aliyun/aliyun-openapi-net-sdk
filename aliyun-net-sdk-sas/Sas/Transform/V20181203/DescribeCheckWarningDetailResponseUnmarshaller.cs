@@ -31,14 +31,14 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeCheckWarningDetailResponse describeCheckWarningDetailResponse = new DescribeCheckWarningDetailResponse();
 
 			describeCheckWarningDetailResponse.HttpResponse = _ctx.HttpResponse;
+			describeCheckWarningDetailResponse.Advice = _ctx.StringValue("DescribeCheckWarningDetail.Advice");
+			describeCheckWarningDetailResponse.Type = _ctx.StringValue("DescribeCheckWarningDetail.Type");
 			describeCheckWarningDetailResponse.RequestId = _ctx.StringValue("DescribeCheckWarningDetail.RequestId");
+			describeCheckWarningDetailResponse.Description = _ctx.StringValue("DescribeCheckWarningDetail.Description");
+			describeCheckWarningDetailResponse.Item = _ctx.StringValue("DescribeCheckWarningDetail.Item");
 			describeCheckWarningDetailResponse.CheckId = _ctx.LongValue("DescribeCheckWarningDetail.CheckId");
 			describeCheckWarningDetailResponse.Level = _ctx.StringValue("DescribeCheckWarningDetail.Level");
-			describeCheckWarningDetailResponse.Item = _ctx.StringValue("DescribeCheckWarningDetail.Item");
 			describeCheckWarningDetailResponse.Prompt = _ctx.StringValue("DescribeCheckWarningDetail.Prompt");
-			describeCheckWarningDetailResponse.Type = _ctx.StringValue("DescribeCheckWarningDetail.Type");
-			describeCheckWarningDetailResponse.Advice = _ctx.StringValue("DescribeCheckWarningDetail.Advice");
-			describeCheckWarningDetailResponse.Description = _ctx.StringValue("DescribeCheckWarningDetail.Description");
         
 			return describeCheckWarningDetailResponse;
         }

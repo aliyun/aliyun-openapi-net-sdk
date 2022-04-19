@@ -70,41 +70,39 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribePropertyCronDetail_PropertyCron
 		{
 
-			private string instanceName;
+			private string internetIp;
 
 			private string ip;
 
-			private string create;
-
-			private long? createTimestamp;
-
-			private string uuid;
+			private string user;
 
 			private string instanceId;
 
-			private string intranetIp;
-
-			private string internetIp;
-
-			private string period;
-
 			private string source;
+
+			private string intranetIp;
 
 			private string cmd;
 
-			private string user;
+			private string period;
+
+			private string uuid;
+
+			private string instanceName;
 
 			private string md5;
 
-			public string InstanceName
+			private long? createTimestamp;
+
+			public string InternetIp
 			{
 				get
 				{
-					return instanceName;
+					return internetIp;
 				}
 				set	
 				{
-					instanceName = value;
+					internetIp = value;
 				}
 			}
 
@@ -120,39 +118,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Create
+			public string User
 			{
 				get
 				{
-					return create;
+					return user;
 				}
 				set	
 				{
-					create = value;
-				}
-			}
-
-			public long? CreateTimestamp
-			{
-				get
-				{
-					return createTimestamp;
-				}
-				set	
-				{
-					createTimestamp = value;
-				}
-			}
-
-			public string Uuid
-			{
-				get
-				{
-					return uuid;
-				}
-				set	
-				{
-					uuid = value;
+					user = value;
 				}
 			}
 
@@ -168,42 +142,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string IntranetIp
-			{
-				get
-				{
-					return intranetIp;
-				}
-				set	
-				{
-					intranetIp = value;
-				}
-			}
-
-			public string InternetIp
-			{
-				get
-				{
-					return internetIp;
-				}
-				set	
-				{
-					internetIp = value;
-				}
-			}
-
-			public string Period
-			{
-				get
-				{
-					return period;
-				}
-				set	
-				{
-					period = value;
-				}
-			}
-
 			public string Source
 			{
 				get
@@ -213,6 +151,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					source = value;
+				}
+			}
+
+			public string IntranetIp
+			{
+				get
+				{
+					return intranetIp;
+				}
+				set	
+				{
+					intranetIp = value;
 				}
 			}
 
@@ -228,15 +178,39 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string User
+			public string Period
 			{
 				get
 				{
-					return user;
+					return period;
 				}
 				set	
 				{
-					user = value;
+					period = value;
+				}
+			}
+
+			public string Uuid
+			{
+				get
+				{
+					return uuid;
+				}
+				set	
+				{
+					uuid = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
 				}
 			}
 
@@ -251,28 +225,40 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					md5 = value;
 				}
 			}
+
+			public long? CreateTimestamp
+			{
+				get
+				{
+					return createTimestamp;
+				}
+				set	
+				{
+					createTimestamp = value;
+				}
+			}
 		}
 
 		public class DescribePropertyCronDetail_PageInfo
 		{
 
-			private int? count;
+			private int? currentPage;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? currentPage;
+			private int? count;
 
-			public int? Count
+			public int? CurrentPage
 			{
 				get
 				{
-					return count;
+					return currentPage;
 				}
 				set	
 				{
-					count = value;
+					currentPage = value;
 				}
 			}
 
@@ -300,15 +286,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? CurrentPage
+			public int? Count
 			{
 				get
 				{
-					return currentPage;
+					return count;
 				}
 				set	
 				{
-					currentPage = value;
+					count = value;
 				}
 			}
 		}

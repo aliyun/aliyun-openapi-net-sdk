@@ -34,21 +34,21 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describeSimilarSecurityEventsResponse.RequestId = _ctx.StringValue("DescribeSimilarSecurityEvents.RequestId");
 
 			DescribeSimilarSecurityEventsResponse.DescribeSimilarSecurityEvents_PageInfo pageInfo = new DescribeSimilarSecurityEventsResponse.DescribeSimilarSecurityEvents_PageInfo();
-			pageInfo.Count = _ctx.IntegerValue("DescribeSimilarSecurityEvents.PageInfo.Count");
+			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeSimilarSecurityEvents.PageInfo.CurrentPage");
 			pageInfo.PageSize = _ctx.IntegerValue("DescribeSimilarSecurityEvents.PageInfo.PageSize");
 			pageInfo.TotalCount = _ctx.IntegerValue("DescribeSimilarSecurityEvents.PageInfo.TotalCount");
-			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeSimilarSecurityEvents.PageInfo.CurrentPage");
+			pageInfo.Count = _ctx.IntegerValue("DescribeSimilarSecurityEvents.PageInfo.Count");
 			describeSimilarSecurityEventsResponse.PageInfo = pageInfo;
 
 			List<DescribeSimilarSecurityEventsResponse.DescribeSimilarSecurityEvents_SimpleSecurityEvent> describeSimilarSecurityEventsResponse_securityEventsResponse = new List<DescribeSimilarSecurityEventsResponse.DescribeSimilarSecurityEvents_SimpleSecurityEvent>();
 			for (int i = 0; i < _ctx.Length("DescribeSimilarSecurityEvents.SecurityEventsResponse.Length"); i++) {
 				DescribeSimilarSecurityEventsResponse.DescribeSimilarSecurityEvents_SimpleSecurityEvent simpleSecurityEvent = new DescribeSimilarSecurityEventsResponse.DescribeSimilarSecurityEvents_SimpleSecurityEvent();
-				simpleSecurityEvent.SecurityEventId = _ctx.LongValue("DescribeSimilarSecurityEvents.SecurityEventsResponse["+ i +"].SecurityEventId");
-				simpleSecurityEvent.Uuid = _ctx.StringValue("DescribeSimilarSecurityEvents.SecurityEventsResponse["+ i +"].Uuid");
-				simpleSecurityEvent.EventType = _ctx.StringValue("DescribeSimilarSecurityEvents.SecurityEventsResponse["+ i +"].EventType");
-				simpleSecurityEvent.EventName = _ctx.StringValue("DescribeSimilarSecurityEvents.SecurityEventsResponse["+ i +"].EventName");
-				simpleSecurityEvent.OccurrenceTime = _ctx.LongValue("DescribeSimilarSecurityEvents.SecurityEventsResponse["+ i +"].OccurrenceTime");
 				simpleSecurityEvent.LastTime = _ctx.LongValue("DescribeSimilarSecurityEvents.SecurityEventsResponse["+ i +"].LastTime");
+				simpleSecurityEvent.Uuid = _ctx.StringValue("DescribeSimilarSecurityEvents.SecurityEventsResponse["+ i +"].Uuid");
+				simpleSecurityEvent.EventName = _ctx.StringValue("DescribeSimilarSecurityEvents.SecurityEventsResponse["+ i +"].EventName");
+				simpleSecurityEvent.EventType = _ctx.StringValue("DescribeSimilarSecurityEvents.SecurityEventsResponse["+ i +"].EventType");
+				simpleSecurityEvent.SecurityEventId = _ctx.LongValue("DescribeSimilarSecurityEvents.SecurityEventsResponse["+ i +"].SecurityEventId");
+				simpleSecurityEvent.OccurrenceTime = _ctx.LongValue("DescribeSimilarSecurityEvents.SecurityEventsResponse["+ i +"].OccurrenceTime");
 
 				describeSimilarSecurityEventsResponse_securityEventsResponse.Add(simpleSecurityEvent);
 			}

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class DescribeGroupedVulRequest : RpcAcsRequest<DescribeGroupedVulResponse>
     {
         public DescribeGroupedVulRequest()
-            : base("Sas", "2018-12-03", "DescribeGroupedVul", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "DescribeGroupedVul")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,15 +41,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			Method = MethodType.POST;
         }
 
-		private string targetType;
-
-		private int? minScore;
+		private string attachTypes;
 
 		private string type;
-
-		private string containerFieldName;
-
-		private string containerFieldValue;
 
 		private int? pageSize;
 
@@ -60,37 +55,24 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private int? currentPage;
 
-		private string clusterId;
-
 		private string aliasName;
+
+		private string searchTags;
 
 		private string necessity;
 
 		private string uuids;
 
-		public string TargetType
+		public string AttachTypes
 		{
 			get
 			{
-				return targetType;
+				return attachTypes;
 			}
 			set	
 			{
-				targetType = value;
-				DictionaryUtil.Add(QueryParameters, "TargetType", value);
-			}
-		}
-
-		public int? MinScore
-		{
-			get
-			{
-				return minScore;
-			}
-			set	
-			{
-				minScore = value;
-				DictionaryUtil.Add(QueryParameters, "MinScore", value.ToString());
+				attachTypes = value;
+				DictionaryUtil.Add(QueryParameters, "AttachTypes", value);
 			}
 		}
 
@@ -104,32 +86,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				type = value;
 				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
-		public string ContainerFieldName
-		{
-			get
-			{
-				return containerFieldName;
-			}
-			set	
-			{
-				containerFieldName = value;
-				DictionaryUtil.Add(QueryParameters, "ContainerFieldName", value);
-			}
-		}
-
-		public string ContainerFieldValue
-		{
-			get
-			{
-				return containerFieldValue;
-			}
-			set	
-			{
-				containerFieldValue = value;
-				DictionaryUtil.Add(QueryParameters, "ContainerFieldValue", value);
 			}
 		}
 
@@ -198,19 +154,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
 		public string AliasName
 		{
 			get
@@ -221,6 +164,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				aliasName = value;
 				DictionaryUtil.Add(QueryParameters, "AliasName", value);
+			}
+		}
+
+		public string SearchTags
+		{
+			get
+			{
+				return searchTags;
+			}
+			set	
+			{
+				searchTags = value;
+				DictionaryUtil.Add(QueryParameters, "SearchTags", value);
 			}
 		}
 

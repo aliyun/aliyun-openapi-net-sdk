@@ -31,23 +31,23 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeEmgVulItemResponse describeEmgVulItemResponse = new DescribeEmgVulItemResponse();
 
 			describeEmgVulItemResponse.HttpResponse = _ctx.HttpResponse;
+			describeEmgVulItemResponse.CurrentPage = _ctx.IntegerValue("DescribeEmgVulItem.CurrentPage");
 			describeEmgVulItemResponse.RequestId = _ctx.StringValue("DescribeEmgVulItem.RequestId");
 			describeEmgVulItemResponse.PageSize = _ctx.IntegerValue("DescribeEmgVulItem.PageSize");
-			describeEmgVulItemResponse.CurrentPage = _ctx.IntegerValue("DescribeEmgVulItem.CurrentPage");
 			describeEmgVulItemResponse.TotalCount = _ctx.IntegerValue("DescribeEmgVulItem.TotalCount");
 
 			List<DescribeEmgVulItemResponse.DescribeEmgVulItem_GroupedVulItem> describeEmgVulItemResponse_groupedVulItems = new List<DescribeEmgVulItemResponse.DescribeEmgVulItem_GroupedVulItem>();
 			for (int i = 0; i < _ctx.Length("DescribeEmgVulItem.GroupedVulItems.Length"); i++) {
 				DescribeEmgVulItemResponse.DescribeEmgVulItem_GroupedVulItem groupedVulItem = new DescribeEmgVulItemResponse.DescribeEmgVulItem_GroupedVulItem();
-				groupedVulItem.AliasName = _ctx.StringValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].AliasName");
-				groupedVulItem.PendingCount = _ctx.IntegerValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].PendingCount");
-				groupedVulItem.Name = _ctx.StringValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].Name");
-				groupedVulItem.GmtPublish = _ctx.LongValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].GmtPublish");
-				groupedVulItem.Description = _ctx.StringValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].Description");
-				groupedVulItem.Type = _ctx.StringValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].Type");
 				groupedVulItem.Status = _ctx.IntegerValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].Status");
-				groupedVulItem.Progress = _ctx.IntegerValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].Progress");
+				groupedVulItem.Type = _ctx.StringValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].Type");
 				groupedVulItem.GmtLastCheck = _ctx.LongValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].GmtLastCheck");
+				groupedVulItem.Progress = _ctx.IntegerValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].Progress");
+				groupedVulItem.Description = _ctx.StringValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].Description");
+				groupedVulItem.GmtPublish = _ctx.LongValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].GmtPublish");
+				groupedVulItem.PendingCount = _ctx.IntegerValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].PendingCount");
+				groupedVulItem.AliasName = _ctx.StringValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].AliasName");
+				groupedVulItem.Name = _ctx.StringValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].Name");
 
 				describeEmgVulItemResponse_groupedVulItems.Add(groupedVulItem);
 			}

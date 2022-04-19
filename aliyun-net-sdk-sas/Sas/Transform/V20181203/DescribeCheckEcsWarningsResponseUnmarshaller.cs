@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeCheckEcsWarningsResponse describeCheckEcsWarningsResponse = new DescribeCheckEcsWarningsResponse();
 
 			describeCheckEcsWarningsResponse.HttpResponse = _ctx.HttpResponse;
-			describeCheckEcsWarningsResponse.RequestId = _ctx.StringValue("DescribeCheckEcsWarnings.RequestId");
-			describeCheckEcsWarningsResponse.CanTry = _ctx.StringValue("DescribeCheckEcsWarnings.CanTry");
 			describeCheckEcsWarningsResponse.SasVersion = _ctx.StringValue("DescribeCheckEcsWarnings.SasVersion");
+			describeCheckEcsWarningsResponse.CanTry = _ctx.StringValue("DescribeCheckEcsWarnings.CanTry");
 			describeCheckEcsWarningsResponse.WeakPasswordCount = _ctx.StringValue("DescribeCheckEcsWarnings.WeakPasswordCount");
+			describeCheckEcsWarningsResponse.RequestId = _ctx.StringValue("DescribeCheckEcsWarnings.RequestId");
         
 			return describeCheckEcsWarningsResponse;
         }

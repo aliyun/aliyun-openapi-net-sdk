@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class DeleteBackupPolicyMachineRequest : RpcAcsRequest<DeleteBackupPolicyMachineResponse>
     {
         public DeleteBackupPolicyMachineRequest()
-            : base("Sas", "2018-12-03", "DeleteBackupPolicyMachine", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "DeleteBackupPolicyMachine")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,30 +41,13 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			Method = MethodType.POST;
         }
 
-		private long? resourceOwnerId;
-
 		private string uuid;
-
-		private string sourceIp;
 
 		private long? policyId;
 
 		private List<string> uuidLists = new List<string>(){ };
 
 		private string policyVersion;
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
 
 		public string Uuid
 		{
@@ -75,19 +59,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				uuid = value;
 				DictionaryUtil.Add(QueryParameters, "Uuid", value);
-			}
-		}
-
-		public string SourceIp
-		{
-			get
-			{
-				return sourceIp;
-			}
-			set	
-			{
-				sourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 

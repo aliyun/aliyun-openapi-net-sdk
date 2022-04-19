@@ -25,91 +25,79 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeSuspEventDetailResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string type;
 
-		private string lastTime;
+		private string dataSource;
 
-		private int? id;
-
-		private string instanceName;
+		private string eventName;
 
 		private string internetIp;
 
 		private string intranetIp;
 
+		private string lastTime;
+
+		private string operateMsg;
+
 		private string uuid;
 
-		private string eventDesc;
+		private bool? canBeDealOnLine;
+
+		private string requestId;
 
 		private string eventTypeDesc;
 
-		private string level;
+		private string eventDesc;
+
+		private string instanceName;
 
 		private string eventStatus;
 
 		private string saleVersion;
 
-		private string dataSource;
-
-		private string type;
-
-		private string operateMsg;
+		private string operateErrorCode;
 
 		private string sasId;
 
-		private string eventName;
+		private string level;
 
-		private bool? canBeDealOnLine;
-
-		private string operateErrorCode;
+		private int? id;
 
 		private List<DescribeSuspEventDetail_QuaraFile> details;
 
-		public string RequestId
+		public string Type
 		{
 			get
 			{
-				return requestId;
+				return type;
 			}
 			set	
 			{
-				requestId = value;
+				type = value;
 			}
 		}
 
-		public string LastTime
+		public string DataSource
 		{
 			get
 			{
-				return lastTime;
+				return dataSource;
 			}
 			set	
 			{
-				lastTime = value;
+				dataSource = value;
 			}
 		}
 
-		public int? Id
+		public string EventName
 		{
 			get
 			{
-				return id;
+				return eventName;
 			}
 			set	
 			{
-				id = value;
-			}
-		}
-
-		public string InstanceName
-		{
-			get
-			{
-				return instanceName;
-			}
-			set	
-			{
-				instanceName = value;
+				eventName = value;
 			}
 		}
 
@@ -137,6 +125,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public string LastTime
+		{
+			get
+			{
+				return lastTime;
+			}
+			set	
+			{
+				lastTime = value;
+			}
+		}
+
+		public string OperateMsg
+		{
+			get
+			{
+				return operateMsg;
+			}
+			set	
+			{
+				operateMsg = value;
+			}
+		}
+
 		public string Uuid
 		{
 			get
@@ -149,15 +161,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string EventDesc
+		public bool? CanBeDealOnLine
 		{
 			get
 			{
-				return eventDesc;
+				return canBeDealOnLine;
 			}
 			set	
 			{
-				eventDesc = value;
+				canBeDealOnLine = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -173,15 +197,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string Level
+		public string EventDesc
 		{
 			get
 			{
-				return level;
+				return eventDesc;
 			}
 			set	
 			{
-				level = value;
+				eventDesc = value;
+			}
+		}
+
+		public string InstanceName
+		{
+			get
+			{
+				return instanceName;
+			}
+			set	
+			{
+				instanceName = value;
 			}
 		}
 
@@ -209,39 +245,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string DataSource
+		public string OperateErrorCode
 		{
 			get
 			{
-				return dataSource;
+				return operateErrorCode;
 			}
 			set	
 			{
-				dataSource = value;
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-			}
-		}
-
-		public string OperateMsg
-		{
-			get
-			{
-				return operateMsg;
-			}
-			set	
-			{
-				operateMsg = value;
+				operateErrorCode = value;
 			}
 		}
 
@@ -257,39 +269,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string EventName
+		public string Level
 		{
 			get
 			{
-				return eventName;
+				return level;
 			}
 			set	
 			{
-				eventName = value;
+				level = value;
 			}
 		}
 
-		public bool? CanBeDealOnLine
+		public int? Id
 		{
 			get
 			{
-				return canBeDealOnLine;
+				return id;
 			}
 			set	
 			{
-				canBeDealOnLine = value;
-			}
-		}
-
-		public string OperateErrorCode
-		{
-			get
-			{
-				return operateErrorCode;
-			}
-			set	
-			{
-				operateErrorCode = value;
+				id = value;
 			}
 		}
 
@@ -308,25 +308,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeSuspEventDetail_QuaraFile
 		{
 
-			private string name;
-
 			private string type;
-
-			private string infoType;
 
 			private string _value;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private string infoType;
+
+			private string nameDisplay;
+
+			private string name;
 
 			public string Type
 			{
@@ -337,6 +327,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					type = value;
+				}
+			}
+
+			public string _Value
+			{
+				get
+				{
+					return _value;
+				}
+				set	
+				{
+					_value = value;
 				}
 			}
 
@@ -352,15 +354,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string _Value
+			public string NameDisplay
 			{
 				get
 				{
-					return _value;
+					return nameDisplay;
 				}
 				set	
 				{
-					_value = value;
+					nameDisplay = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 		}

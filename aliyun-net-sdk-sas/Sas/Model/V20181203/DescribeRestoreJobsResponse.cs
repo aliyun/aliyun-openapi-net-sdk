@@ -70,8 +70,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeRestoreJobs_RestoreJob
 		{
 
-			private long? id;
-
 			private long? createdTime;
 
 			private long? updatedTime;
@@ -130,8 +128,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string intranetIp;
 
-			private string errorFile;
-
 			private string errorFileUrl;
 
 			private string requestId;
@@ -140,33 +136,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string instanceId;
 
-			private string extra;
-
 			private long? duration;
 
 			private string exitCode;
 
-			private string errorFile1;
+			private string errorFile;
 
 			private string gmtCreate;
 
-			private long? gmtModified;
+			private string gmtModified;
 
 			private string excludes;
 
 			private string includes;
-
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
 
 			public long? CreatedTime
 			{
@@ -516,18 +498,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string ErrorFile
-			{
-				get
-				{
-					return errorFile;
-				}
-				set	
-				{
-					errorFile = value;
-				}
-			}
-
 			public string ErrorFileUrl
 			{
 				get
@@ -576,18 +546,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Extra
-			{
-				get
-				{
-					return extra;
-				}
-				set	
-				{
-					extra = value;
-				}
-			}
-
 			public long? Duration
 			{
 				get
@@ -612,15 +570,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string ErrorFile1
+			public string ErrorFile
 			{
 				get
 				{
-					return errorFile1;
+					return errorFile;
 				}
 				set	
 				{
-					errorFile1 = value;
+					errorFile = value;
 				}
 			}
 
@@ -636,7 +594,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public long? GmtModified
+			public string GmtModified
 			{
 				get
 				{

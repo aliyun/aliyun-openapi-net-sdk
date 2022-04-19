@@ -31,26 +31,26 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeCheckWarningSummaryResponse describeCheckWarningSummaryResponse = new DescribeCheckWarningSummaryResponse();
 
 			describeCheckWarningSummaryResponse.HttpResponse = _ctx.HttpResponse;
-			describeCheckWarningSummaryResponse.RequestId = _ctx.StringValue("DescribeCheckWarningSummary.RequestId");
-			describeCheckWarningSummaryResponse.Count = _ctx.IntegerValue("DescribeCheckWarningSummary.Count");
-			describeCheckWarningSummaryResponse.PageSize = _ctx.IntegerValue("DescribeCheckWarningSummary.PageSize");
-			describeCheckWarningSummaryResponse.TotalCount = _ctx.IntegerValue("DescribeCheckWarningSummary.TotalCount");
 			describeCheckWarningSummaryResponse.CurrentPage = _ctx.IntegerValue("DescribeCheckWarningSummary.CurrentPage");
+			describeCheckWarningSummaryResponse.PageSize = _ctx.IntegerValue("DescribeCheckWarningSummary.PageSize");
+			describeCheckWarningSummaryResponse.RequestId = _ctx.StringValue("DescribeCheckWarningSummary.RequestId");
+			describeCheckWarningSummaryResponse.TotalCount = _ctx.IntegerValue("DescribeCheckWarningSummary.TotalCount");
+			describeCheckWarningSummaryResponse.Count = _ctx.IntegerValue("DescribeCheckWarningSummary.Count");
 
 			List<DescribeCheckWarningSummaryResponse.DescribeCheckWarningSummary_WarningSummary> describeCheckWarningSummaryResponse_warningSummarys = new List<DescribeCheckWarningSummaryResponse.DescribeCheckWarningSummary_WarningSummary>();
 			for (int i = 0; i < _ctx.Length("DescribeCheckWarningSummary.WarningSummarys.Length"); i++) {
 				DescribeCheckWarningSummaryResponse.DescribeCheckWarningSummary_WarningSummary warningSummary = new DescribeCheckWarningSummaryResponse.DescribeCheckWarningSummary_WarningSummary();
-				warningSummary.RiskId = _ctx.LongValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].RiskId");
-				warningSummary.RiskName = _ctx.StringValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].RiskName");
-				warningSummary.TypeAlias = _ctx.StringValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].TypeAlias");
-				warningSummary.SubTypeAlias = _ctx.StringValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].SubTypeAlias");
-				warningSummary.LastFoundTime = _ctx.StringValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].LastFoundTime");
-				warningSummary.Level = _ctx.StringValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].Level");
-				warningSummary.CheckCount = _ctx.IntegerValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].CheckCount");
-				warningSummary.HighWarningCount = _ctx.IntegerValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].HighWarningCount");
-				warningSummary.MediumWarningCount = _ctx.IntegerValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].MediumWarningCount");
 				warningSummary.LowWarningCount = _ctx.IntegerValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].LowWarningCount");
+				warningSummary.CheckCount = _ctx.IntegerValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].CheckCount");
+				warningSummary.MediumWarningCount = _ctx.IntegerValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].MediumWarningCount");
+				warningSummary.LastFoundTime = _ctx.StringValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].LastFoundTime");
+				warningSummary.RiskId = _ctx.LongValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].RiskId");
+				warningSummary.SubTypeAlias = _ctx.StringValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].SubTypeAlias");
 				warningSummary.WarningMachineCount = _ctx.IntegerValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].WarningMachineCount");
+				warningSummary.HighWarningCount = _ctx.IntegerValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].HighWarningCount");
+				warningSummary.TypeAlias = _ctx.StringValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].TypeAlias");
+				warningSummary.RiskName = _ctx.StringValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].RiskName");
+				warningSummary.Level = _ctx.StringValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].Level");
 
 				describeCheckWarningSummaryResponse_warningSummarys.Add(warningSummary);
 			}

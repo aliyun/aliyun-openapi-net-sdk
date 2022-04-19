@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeAutoDelConfigResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? days;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public int? Days
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				days = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

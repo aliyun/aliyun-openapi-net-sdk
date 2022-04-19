@@ -73,71 +73,35 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			public class ModifyPushAllTask_PushTaskResult
 			{
 
-				private string instanceId;
-
-				private string osVersion;
-
-				private string instanceName;
-
-				private bool? success;
+				private string uuid;
 
 				private long? groupId;
 
-				private string ip;
+				private bool? success;
+
+				private string region;
+
+				private string instanceName;
 
 				private bool? online;
 
 				private string message;
 
-				private string region;
+				private string ip;
 
-				private string uuid;
+				private string osVersion;
 
-				public string InstanceId
+				private string instanceId;
+
+				public string Uuid
 				{
 					get
 					{
-						return instanceId;
+						return uuid;
 					}
 					set	
 					{
-						instanceId = value;
-					}
-				}
-
-				public string OsVersion
-				{
-					get
-					{
-						return osVersion;
-					}
-					set	
-					{
-						osVersion = value;
-					}
-				}
-
-				public string InstanceName
-				{
-					get
-					{
-						return instanceName;
-					}
-					set	
-					{
-						instanceName = value;
-					}
-				}
-
-				public bool? Success
-				{
-					get
-					{
-						return success;
-					}
-					set	
-					{
-						success = value;
+						uuid = value;
 					}
 				}
 
@@ -153,15 +117,39 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					}
 				}
 
-				public string Ip
+				public bool? Success
 				{
 					get
 					{
-						return ip;
+						return success;
 					}
 					set	
 					{
-						ip = value;
+						success = value;
+					}
+				}
+
+				public string Region
+				{
+					get
+					{
+						return region;
+					}
+					set	
+					{
+						region = value;
+					}
+				}
+
+				public string InstanceName
+				{
+					get
+					{
+						return instanceName;
+					}
+					set	
+					{
+						instanceName = value;
 					}
 				}
 
@@ -189,27 +177,39 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					}
 				}
 
-				public string Region
+				public string Ip
 				{
 					get
 					{
-						return region;
+						return ip;
 					}
 					set	
 					{
-						region = value;
+						ip = value;
 					}
 				}
 
-				public string Uuid
+				public string OsVersion
 				{
 					get
 					{
-						return uuid;
+						return osVersion;
 					}
 					set	
 					{
-						uuid = value;
+						osVersion = value;
+					}
+				}
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
 					}
 				}
 			}

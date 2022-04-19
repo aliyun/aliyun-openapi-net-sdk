@@ -25,39 +25,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeSuspEventQuaraFilesResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? count;
+		private int? currentPage;
 
 		private int? pageSize;
 
+		private string requestId;
+
 		private int? totalCount;
 
-		private int? currentPage;
+		private int? count;
 
 		private List<DescribeSuspEventQuaraFiles_QuaraFile> quaraFiles;
 
-		public string RequestId
+		public int? CurrentPage
 		{
 			get
 			{
-				return requestId;
+				return currentPage;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public int? Count
-		{
-			get
-			{
-				return count;
-			}
-			set	
-			{
-				count = value;
+				currentPage = value;
 			}
 		}
 
@@ -73,6 +61,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public int? TotalCount
 		{
 			get
@@ -85,15 +85,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public int? CurrentPage
+		public int? Count
 		{
 			get
 			{
-				return currentPage;
+				return count;
 			}
 			set	
 			{
-				currentPage = value;
+				count = value;
 			}
 		}
 
@@ -112,43 +112,55 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeSuspEventQuaraFiles_QuaraFile
 		{
 
-			private string path;
+			private string link;
+
+			private string status;
 
 			private string eventName;
-
-			private int? id;
-
-			private string eventType;
-
-			private string tag;
-
-			private string uuid;
-
-			private string instanceId;
-
-			private string instanceName;
 
 			private string internetIp;
 
 			private string ip;
 
-			private string status;
+			private string tag;
+
+			private string instanceId;
+
+			private string uuid;
+
+			private string eventType;
+
+			private string instanceName;
+
+			private string path;
 
 			private string md5;
 
+			private int? id;
+
 			private string modifyTime;
 
-			private string link;
-
-			public string Path
+			public string Link
 			{
 				get
 				{
-					return path;
+					return link;
 				}
 				set	
 				{
-					path = value;
+					link = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 
@@ -161,78 +173,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					eventName = value;
-				}
-			}
-
-			public int? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
-
-			public string EventType
-			{
-				get
-				{
-					return eventType;
-				}
-				set	
-				{
-					eventType = value;
-				}
-			}
-
-			public string Tag
-			{
-				get
-				{
-					return tag;
-				}
-				set	
-				{
-					tag = value;
-				}
-			}
-
-			public string Uuid
-			{
-				get
-				{
-					return uuid;
-				}
-				set	
-				{
-					uuid = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public string InstanceName
-			{
-				get
-				{
-					return instanceName;
-				}
-				set	
-				{
-					instanceName = value;
 				}
 			}
 
@@ -260,15 +200,75 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Status
+			public string Tag
 			{
 				get
 				{
-					return status;
+					return tag;
 				}
 				set	
 				{
-					status = value;
+					tag = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string Uuid
+			{
+				get
+				{
+					return uuid;
+				}
+				set	
+				{
+					uuid = value;
+				}
+			}
+
+			public string EventType
+			{
+				get
+				{
+					return eventType;
+				}
+				set	
+				{
+					eventType = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public string Path
+			{
+				get
+				{
+					return path;
+				}
+				set	
+				{
+					path = value;
 				}
 			}
 
@@ -284,6 +284,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public int? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
 			public string ModifyTime
 			{
 				get
@@ -293,18 +305,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					modifyTime = value;
-				}
-			}
-
-			public string Link
-			{
-				get
-				{
-					return link;
-				}
-				set	
-				{
-					link = value;
 				}
 			}
 		}

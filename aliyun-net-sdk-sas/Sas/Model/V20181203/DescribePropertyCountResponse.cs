@@ -25,45 +25,29 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribePropertyCountResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? port;
-
 		private int? process;
 
-		private int? software;
+		private string requestId;
 
 		private int? user;
 
+		private int? software;
+
 		private int? cron;
+
+		private int? port;
 
 		private int? sca;
 
-		private int? autoRun;
+		private int? web;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private int? database;
 
-		public int? Port
-		{
-			get
-			{
-				return port;
-			}
-			set	
-			{
-				port = value;
-			}
-		}
+		private int? lkm;
+
+		private int? autorun;
+
+		private int? webserver;
 
 		public int? Process
 		{
@@ -77,15 +61,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public int? Software
+		public string RequestId
 		{
 			get
 			{
-				return software;
+				return requestId;
 			}
 			set	
 			{
-				software = value;
+				requestId = value;
 			}
 		}
 
@@ -101,6 +85,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public int? Software
+		{
+			get
+			{
+				return software;
+			}
+			set	
+			{
+				software = value;
+			}
+		}
+
 		public int? Cron
 		{
 			get
@@ -110,6 +106,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				cron = value;
+			}
+		}
+
+		public int? Port
+		{
+			get
+			{
+				return port;
+			}
+			set	
+			{
+				port = value;
 			}
 		}
 
@@ -125,15 +133,63 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public int? AutoRun
+		public int? Web
 		{
 			get
 			{
-				return autoRun;
+				return web;
 			}
 			set	
 			{
-				autoRun = value;
+				web = value;
+			}
+		}
+
+		public int? Database
+		{
+			get
+			{
+				return database;
+			}
+			set	
+			{
+				database = value;
+			}
+		}
+
+		public int? Lkm
+		{
+			get
+			{
+				return lkm;
+			}
+			set	
+			{
+				lkm = value;
+			}
+		}
+
+		public int? Autorun
+		{
+			get
+			{
+				return autorun;
+			}
+			set	
+			{
+				autorun = value;
+			}
+		}
+
+		public int? Webserver
+		{
+			get
+			{
+				return webserver;
+			}
+			set	
+			{
+				webserver = value;
 			}
 		}
 	}

@@ -34,18 +34,18 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describePropertyPortItemResponse.RequestId = _ctx.StringValue("DescribePropertyPortItem.RequestId");
 
 			DescribePropertyPortItemResponse.DescribePropertyPortItem_PageInfo pageInfo = new DescribePropertyPortItemResponse.DescribePropertyPortItem_PageInfo();
-			pageInfo.Count = _ctx.IntegerValue("DescribePropertyPortItem.PageInfo.Count");
+			pageInfo.CurrentPage = _ctx.IntegerValue("DescribePropertyPortItem.PageInfo.CurrentPage");
 			pageInfo.PageSize = _ctx.IntegerValue("DescribePropertyPortItem.PageInfo.PageSize");
 			pageInfo.TotalCount = _ctx.IntegerValue("DescribePropertyPortItem.PageInfo.TotalCount");
-			pageInfo.CurrentPage = _ctx.IntegerValue("DescribePropertyPortItem.PageInfo.CurrentPage");
+			pageInfo.Count = _ctx.IntegerValue("DescribePropertyPortItem.PageInfo.Count");
 			describePropertyPortItemResponse.PageInfo = pageInfo;
 
 			List<DescribePropertyPortItemResponse.DescribePropertyPortItem_PropertyItem> describePropertyPortItemResponse_propertyItems = new List<DescribePropertyPortItemResponse.DescribePropertyPortItem_PropertyItem>();
 			for (int i = 0; i < _ctx.Length("DescribePropertyPortItem.PropertyItems.Length"); i++) {
 				DescribePropertyPortItemResponse.DescribePropertyPortItem_PropertyItem propertyItem = new DescribePropertyPortItemResponse.DescribePropertyPortItem_PropertyItem();
 				propertyItem.Port = _ctx.StringValue("DescribePropertyPortItem.PropertyItems["+ i +"].Port");
-				propertyItem.Proto = _ctx.StringValue("DescribePropertyPortItem.PropertyItems["+ i +"].Proto");
 				propertyItem.Count = _ctx.IntegerValue("DescribePropertyPortItem.PropertyItems["+ i +"].Count");
+				propertyItem.Proto = _ctx.StringValue("DescribePropertyPortItem.PropertyItems["+ i +"].Proto");
 
 				describePropertyPortItemResponse_propertyItems.Add(propertyItem);
 			}

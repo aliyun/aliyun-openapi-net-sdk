@@ -34,11 +34,11 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describeContainerStatisticsResponse.RequestId = _ctx.StringValue("DescribeContainerStatistics.RequestId");
 
 			DescribeContainerStatisticsResponse.DescribeContainerStatistics_Data data = new DescribeContainerStatisticsResponse.DescribeContainerStatistics_Data();
-			data.TotalAlarmCount = _ctx.IntegerValue("DescribeContainerStatistics.Data.TotalAlarmCount");
+			data.TotalNode = _ctx.IntegerValue("DescribeContainerStatistics.Data.TotalNode");
 			data.RemindAlarmCount = _ctx.IntegerValue("DescribeContainerStatistics.Data.RemindAlarmCount");
+			data.TotalAlarmCount = _ctx.IntegerValue("DescribeContainerStatistics.Data.TotalAlarmCount");
 			data.SuspiciousAlarmCount = _ctx.IntegerValue("DescribeContainerStatistics.Data.SuspiciousAlarmCount");
 			data.SeriousAlarmCount = _ctx.IntegerValue("DescribeContainerStatistics.Data.SeriousAlarmCount");
-			data.TotalNode = _ctx.IntegerValue("DescribeContainerStatistics.Data.TotalNode");
 			data.HasRiskNode = _ctx.IntegerValue("DescribeContainerStatistics.Data.hasRiskNode");
 			describeContainerStatisticsResponse.Data = data;
         

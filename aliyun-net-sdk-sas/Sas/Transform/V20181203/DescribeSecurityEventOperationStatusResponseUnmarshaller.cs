@@ -39,8 +39,8 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			List<DescribeSecurityEventOperationStatusResponse.DescribeSecurityEventOperationStatus_SecurityEventOperationStatusResponse.DescribeSecurityEventOperationStatus_SecurityEventOperationStatus> securityEventOperationStatusResponse_securityEventOperationStatuses = new List<DescribeSecurityEventOperationStatusResponse.DescribeSecurityEventOperationStatus_SecurityEventOperationStatusResponse.DescribeSecurityEventOperationStatus_SecurityEventOperationStatus>();
 			for (int i = 0; i < _ctx.Length("DescribeSecurityEventOperationStatus.SecurityEventOperationStatusResponse.SecurityEventOperationStatuses.Length"); i++) {
 				DescribeSecurityEventOperationStatusResponse.DescribeSecurityEventOperationStatus_SecurityEventOperationStatusResponse.DescribeSecurityEventOperationStatus_SecurityEventOperationStatus securityEventOperationStatus = new DescribeSecurityEventOperationStatusResponse.DescribeSecurityEventOperationStatus_SecurityEventOperationStatusResponse.DescribeSecurityEventOperationStatus_SecurityEventOperationStatus();
-				securityEventOperationStatus.SecurityEventId = _ctx.StringValue("DescribeSecurityEventOperationStatus.SecurityEventOperationStatusResponse.SecurityEventOperationStatuses["+ i +"].SecurityEventId");
 				securityEventOperationStatus.Status = _ctx.StringValue("DescribeSecurityEventOperationStatus.SecurityEventOperationStatusResponse.SecurityEventOperationStatuses["+ i +"].Status");
+				securityEventOperationStatus.SecurityEventId = _ctx.StringValue("DescribeSecurityEventOperationStatus.SecurityEventOperationStatusResponse.SecurityEventOperationStatuses["+ i +"].SecurityEventId");
 				securityEventOperationStatus.ErrorCode = _ctx.StringValue("DescribeSecurityEventOperationStatus.SecurityEventOperationStatusResponse.SecurityEventOperationStatuses["+ i +"].ErrorCode");
 
 				securityEventOperationStatusResponse_securityEventOperationStatuses.Add(securityEventOperationStatus);

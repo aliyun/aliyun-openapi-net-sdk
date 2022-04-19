@@ -56,29 +56,17 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeHoneyPotSuspStatistics_SuspHoneyPotStatisticsResponseItem
 		{
 
-			private int? count;
-
 			private string type;
-
-			private string instanceId;
-
-			private string instanceName;
 
 			private string vpcId;
 
 			private string vpcName;
 
-			public int? Count
-			{
-				get
-				{
-					return count;
-				}
-				set	
-				{
-					count = value;
-				}
-			}
+			private string instanceName;
+
+			private string instanceId;
+
+			private int? count;
 
 			public string Type
 			{
@@ -89,30 +77,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					type = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public string InstanceName
-			{
-				get
-				{
-					return instanceName;
-				}
-				set	
-				{
-					instanceName = value;
 				}
 			}
 
@@ -137,6 +101,42 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					vpcName = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public int? Count
+			{
+				get
+				{
+					return count;
+				}
+				set	
+				{
+					count = value;
 				}
 			}
 		}

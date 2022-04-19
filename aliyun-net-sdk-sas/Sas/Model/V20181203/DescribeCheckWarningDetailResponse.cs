@@ -25,21 +25,45 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeCheckWarningDetailResponse : AcsResponse
 	{
 
+		private string advice;
+
+		private string type;
+
 		private string requestId;
+
+		private string description;
+
+		private string item;
 
 		private long? checkId;
 
 		private string level;
 
-		private string item;
-
 		private string prompt;
 
-		private string type;
+		public string Advice
+		{
+			get
+			{
+				return advice;
+			}
+			set	
+			{
+				advice = value;
+			}
+		}
 
-		private string advice;
-
-		private string description;
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -50,6 +74,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+			}
+		}
+
+		public string Item
+		{
+			get
+			{
+				return item;
+			}
+			set	
+			{
+				item = value;
 			}
 		}
 
@@ -77,18 +125,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string Item
-		{
-			get
-			{
-				return item;
-			}
-			set	
-			{
-				item = value;
-			}
-		}
-
 		public string Prompt
 		{
 			get
@@ -98,42 +134,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				prompt = value;
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-			}
-		}
-
-		public string Advice
-		{
-			get
-			{
-				return advice;
-			}
-			set	
-			{
-				advice = value;
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
 			}
 		}
 	}

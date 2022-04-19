@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class DescribeStrategyRequest : RpcAcsRequest<DescribeStrategyResponse>
     {
         public DescribeStrategyRequest()
-            : base("Sas", "2018-12-03", "DescribeStrategy", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "DescribeStrategy")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,9 +43,11 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string sourceIp;
 
-		private string strategyIds;
-
 		private string lang;
+
+		private string customType;
+
+		private string strategyIds;
 
 		public string SourceIp
 		{
@@ -59,19 +62,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string StrategyIds
-		{
-			get
-			{
-				return strategyIds;
-			}
-			set	
-			{
-				strategyIds = value;
-				DictionaryUtil.Add(QueryParameters, "StrategyIds", value);
-			}
-		}
-
 		public string Lang
 		{
 			get
@@ -82,6 +72,32 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string CustomType
+		{
+			get
+			{
+				return customType;
+			}
+			set	
+			{
+				customType = value;
+				DictionaryUtil.Add(QueryParameters, "CustomType", value);
+			}
+		}
+
+		public string StrategyIds
+		{
+			get
+			{
+				return strategyIds;
+			}
+			set	
+			{
+				strategyIds = value;
+				DictionaryUtil.Add(QueryParameters, "StrategyIds", value);
 			}
 		}
 

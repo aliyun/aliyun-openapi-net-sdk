@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeVulListResponse : AcsResponse
 	{
 
+		private int? currentPage;
+
 		private string requestId;
 
 		private int? pageSize;
 
-		private int? currentPage;
-
 		private int? totalCount;
 
 		private List<DescribeVulList_VulRecord> vulRecords;
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -56,18 +68,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				pageSize = value;
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
 			}
 		}
 
@@ -98,133 +98,97 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeVulList_VulRecord
 		{
 
-			private long? primaryId;
-
-			private string uuid;
-
-			private string name;
-
-			private string tag;
+			private int? status;
 
 			private string type;
 
-			private string aliasName;
-
-			private long? firstTs;
-
-			private long? lastTs;
-
-			private long? repairTs;
-
-			private int? status;
-
-			private string related;
-
-			private long? recordId;
-
-			private string resultCode;
-
-			private string resultMessage;
-
 			private long? modifyTs;
-
-			private string necessity;
-
-			private int? groupId;
-
-			private string instanceId;
-
-			private string instanceName;
-
-			private string regionId;
-
-			private bool? online;
-
-			private string level;
 
 			private string internetIp;
 
-			private string intranetIp;
-
-			private string ip;
-
-			private string osVersion;
-
-			private string needReboot;
-
-			private int? progress;
-
-			private string canFix;
+			private long? recordId;
 
 			private string containerImageId;
 
-			private string containerImageName;
+			private long? primaryId;
 
-			private string containerName;
-
-			private string containerInnerPath;
-
-			private string containerId;
-
-			private string k8sNamespace;
+			private string tag;
 
 			private string k8sClusterId;
 
+			private string containerImageName;
+
 			private string k8sNodeId;
+
+			private string instanceName;
+
+			private string containerInnerPath;
+
+			private bool? online;
+
+			private string osVersion;
+
+			private string name;
+
+			private string canFix;
+
+			private int? progress;
+
+			private string ip;
+
+			private string needReboot;
+
+			private string resultCode;
+
+			private string instanceId;
+
+			private string related;
+
+			private string intranetIp;
+
+			private long? lastTs;
+
+			private long? firstTs;
+
+			private string regionId;
+
+			private string necessity;
+
+			private long? repairTs;
+
+			private string uuid;
 
 			private string k8sPodName;
 
+			private string containerId;
+
+			private int? groupId;
+
+			private string resultMessage;
+
+			private string k8sNamespace;
+
+			private string aliasName;
+
 			private string k8sNodeName;
+
+			private string containerName;
+
+			private string level;
 
 			private DescribeVulList_ExtendContentJson extendContentJson;
 
 			private DescribeVulList_ProcessInfo processInfo;
 
-			public long? PrimaryId
+			public int? Status
 			{
 				get
 				{
-					return primaryId;
+					return status;
 				}
 				set	
 				{
-					primaryId = value;
-				}
-			}
-
-			public string Uuid
-			{
-				get
-				{
-					return uuid;
-				}
-				set	
-				{
-					uuid = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Tag
-			{
-				get
-				{
-					return tag;
-				}
-				set	
-				{
-					tag = value;
+					status = value;
 				}
 			}
 
@@ -240,114 +204,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string AliasName
-			{
-				get
-				{
-					return aliasName;
-				}
-				set	
-				{
-					aliasName = value;
-				}
-			}
-
-			public long? FirstTs
-			{
-				get
-				{
-					return firstTs;
-				}
-				set	
-				{
-					firstTs = value;
-				}
-			}
-
-			public long? LastTs
-			{
-				get
-				{
-					return lastTs;
-				}
-				set	
-				{
-					lastTs = value;
-				}
-			}
-
-			public long? RepairTs
-			{
-				get
-				{
-					return repairTs;
-				}
-				set	
-				{
-					repairTs = value;
-				}
-			}
-
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string Related
-			{
-				get
-				{
-					return related;
-				}
-				set	
-				{
-					related = value;
-				}
-			}
-
-			public long? RecordId
-			{
-				get
-				{
-					return recordId;
-				}
-				set	
-				{
-					recordId = value;
-				}
-			}
-
-			public string ResultCode
-			{
-				get
-				{
-					return resultCode;
-				}
-				set	
-				{
-					resultCode = value;
-				}
-			}
-
-			public string ResultMessage
-			{
-				get
-				{
-					return resultMessage;
-				}
-				set	
-				{
-					resultMessage = value;
-				}
-			}
-
 			public long? ModifyTs
 			{
 				get
@@ -357,90 +213,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					modifyTs = value;
-				}
-			}
-
-			public string Necessity
-			{
-				get
-				{
-					return necessity;
-				}
-				set	
-				{
-					necessity = value;
-				}
-			}
-
-			public int? GroupId
-			{
-				get
-				{
-					return groupId;
-				}
-				set	
-				{
-					groupId = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public string InstanceName
-			{
-				get
-				{
-					return instanceName;
-				}
-				set	
-				{
-					instanceName = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public bool? Online
-			{
-				get
-				{
-					return online;
-				}
-				set	
-				{
-					online = value;
-				}
-			}
-
-			public string Level
-			{
-				get
-				{
-					return level;
-				}
-				set	
-				{
-					level = value;
 				}
 			}
 
@@ -456,75 +228,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string IntranetIp
+			public long? RecordId
 			{
 				get
 				{
-					return intranetIp;
+					return recordId;
 				}
 				set	
 				{
-					intranetIp = value;
-				}
-			}
-
-			public string Ip
-			{
-				get
-				{
-					return ip;
-				}
-				set	
-				{
-					ip = value;
-				}
-			}
-
-			public string OsVersion
-			{
-				get
-				{
-					return osVersion;
-				}
-				set	
-				{
-					osVersion = value;
-				}
-			}
-
-			public string NeedReboot
-			{
-				get
-				{
-					return needReboot;
-				}
-				set	
-				{
-					needReboot = value;
-				}
-			}
-
-			public int? Progress
-			{
-				get
-				{
-					return progress;
-				}
-				set	
-				{
-					progress = value;
-				}
-			}
-
-			public string CanFix
-			{
-				get
-				{
-					return canFix;
-				}
-				set	
-				{
-					canFix = value;
+					recordId = value;
 				}
 			}
 
@@ -540,63 +252,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string ContainerImageName
+			public long? PrimaryId
 			{
 				get
 				{
-					return containerImageName;
+					return primaryId;
 				}
 				set	
 				{
-					containerImageName = value;
+					primaryId = value;
 				}
 			}
 
-			public string ContainerName
+			public string Tag
 			{
 				get
 				{
-					return containerName;
+					return tag;
 				}
 				set	
 				{
-					containerName = value;
-				}
-			}
-
-			public string ContainerInnerPath
-			{
-				get
-				{
-					return containerInnerPath;
-				}
-				set	
-				{
-					containerInnerPath = value;
-				}
-			}
-
-			public string ContainerId
-			{
-				get
-				{
-					return containerId;
-				}
-				set	
-				{
-					containerId = value;
-				}
-			}
-
-			public string K8sNamespace
-			{
-				get
-				{
-					return k8sNamespace;
-				}
-				set	
-				{
-					k8sNamespace = value;
+					tag = value;
 				}
 			}
 
@@ -612,6 +288,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string ContainerImageName
+			{
+				get
+				{
+					return containerImageName;
+				}
+				set	
+				{
+					containerImageName = value;
+				}
+			}
+
 			public string K8sNodeId
 			{
 				get
@@ -621,6 +309,234 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					k8sNodeId = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public string ContainerInnerPath
+			{
+				get
+				{
+					return containerInnerPath;
+				}
+				set	
+				{
+					containerInnerPath = value;
+				}
+			}
+
+			public bool? Online
+			{
+				get
+				{
+					return online;
+				}
+				set	
+				{
+					online = value;
+				}
+			}
+
+			public string OsVersion
+			{
+				get
+				{
+					return osVersion;
+				}
+				set	
+				{
+					osVersion = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string CanFix
+			{
+				get
+				{
+					return canFix;
+				}
+				set	
+				{
+					canFix = value;
+				}
+			}
+
+			public int? Progress
+			{
+				get
+				{
+					return progress;
+				}
+				set	
+				{
+					progress = value;
+				}
+			}
+
+			public string Ip
+			{
+				get
+				{
+					return ip;
+				}
+				set	
+				{
+					ip = value;
+				}
+			}
+
+			public string NeedReboot
+			{
+				get
+				{
+					return needReboot;
+				}
+				set	
+				{
+					needReboot = value;
+				}
+			}
+
+			public string ResultCode
+			{
+				get
+				{
+					return resultCode;
+				}
+				set	
+				{
+					resultCode = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string Related
+			{
+				get
+				{
+					return related;
+				}
+				set	
+				{
+					related = value;
+				}
+			}
+
+			public string IntranetIp
+			{
+				get
+				{
+					return intranetIp;
+				}
+				set	
+				{
+					intranetIp = value;
+				}
+			}
+
+			public long? LastTs
+			{
+				get
+				{
+					return lastTs;
+				}
+				set	
+				{
+					lastTs = value;
+				}
+			}
+
+			public long? FirstTs
+			{
+				get
+				{
+					return firstTs;
+				}
+				set	
+				{
+					firstTs = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string Necessity
+			{
+				get
+				{
+					return necessity;
+				}
+				set	
+				{
+					necessity = value;
+				}
+			}
+
+			public long? RepairTs
+			{
+				get
+				{
+					return repairTs;
+				}
+				set	
+				{
+					repairTs = value;
+				}
+			}
+
+			public string Uuid
+			{
+				get
+				{
+					return uuid;
+				}
+				set	
+				{
+					uuid = value;
 				}
 			}
 
@@ -636,6 +552,66 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string ContainerId
+			{
+				get
+				{
+					return containerId;
+				}
+				set	
+				{
+					containerId = value;
+				}
+			}
+
+			public int? GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
+				}
+			}
+
+			public string ResultMessage
+			{
+				get
+				{
+					return resultMessage;
+				}
+				set	
+				{
+					resultMessage = value;
+				}
+			}
+
+			public string K8sNamespace
+			{
+				get
+				{
+					return k8sNamespace;
+				}
+				set	
+				{
+					k8sNamespace = value;
+				}
+			}
+
+			public string AliasName
+			{
+				get
+				{
+					return aliasName;
+				}
+				set	
+				{
+					aliasName = value;
+				}
+			}
+
 			public string K8sNodeName
 			{
 				get
@@ -645,6 +621,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					k8sNodeName = value;
+				}
+			}
+
+			public string ContainerName
+			{
+				get
+				{
+					return containerName;
+				}
+				set	
+				{
+					containerName = value;
+				}
+			}
+
+			public string Level
+			{
+				get
+				{
+					return level;
+				}
+				set	
+				{
+					level = value;
 				}
 			}
 
@@ -675,79 +675,55 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			public class DescribeVulList_ExtendContentJson
 			{
 
-				private string os;
-
-				private string osRelease;
-
 				private string status;
 
-				private long? lastTs;
-
-				private string aliasName;
-
-				private string tag;
-
-				private long? primaryId;
-
-				private string absolutePath;
-
-				private string target;
+				private string effect;
 
 				private string emgProof;
-
-				private string reason;
-
-				private string title;
-
-				private string description;
-
-				private string ip;
 
 				private string owasp;
 
 				private string cwe;
 
-				private string wasc;
+				private string ip;
 
-				private string vulType;
+				private long? primaryId;
 
-				private string effect;
+				private string os;
 
-				private string solution;
+				private string tag;
 
 				private string reference;
 
+				private string wasc;
+
+				private long? lastTs;
+
+				private string vulType;
+
+				private string description;
+
+				private string osRelease;
+
+				private string title;
+
+				private string aliasName;
+
+				private string solution;
+
+				private string target;
+
+				private string absolutePath;
+
 				private string proof;
+
+				private string reason;
 
 				private List<DescribeVulList_RpmEntity> rpmEntityList;
 
 				private List<string> cveList;
 
 				private DescribeVulList_Necessity necessity;
-
-				public string Os
-				{
-					get
-					{
-						return os;
-					}
-					set	
-					{
-						os = value;
-					}
-				}
-
-				public string OsRelease
-				{
-					get
-					{
-						return osRelease;
-					}
-					set	
-					{
-						osRelease = value;
-					}
-				}
 
 				public string Status
 				{
@@ -761,75 +737,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					}
 				}
 
-				public long? LastTs
+				public string Effect
 				{
 					get
 					{
-						return lastTs;
+						return effect;
 					}
 					set	
 					{
-						lastTs = value;
-					}
-				}
-
-				public string AliasName
-				{
-					get
-					{
-						return aliasName;
-					}
-					set	
-					{
-						aliasName = value;
-					}
-				}
-
-				public string Tag
-				{
-					get
-					{
-						return tag;
-					}
-					set	
-					{
-						tag = value;
-					}
-				}
-
-				public long? PrimaryId
-				{
-					get
-					{
-						return primaryId;
-					}
-					set	
-					{
-						primaryId = value;
-					}
-				}
-
-				public string AbsolutePath
-				{
-					get
-					{
-						return absolutePath;
-					}
-					set	
-					{
-						absolutePath = value;
-					}
-				}
-
-				public string Target
-				{
-					get
-					{
-						return target;
-					}
-					set	
-					{
-						target = value;
+						effect = value;
 					}
 				}
 
@@ -842,54 +758,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					set	
 					{
 						emgProof = value;
-					}
-				}
-
-				public string Reason
-				{
-					get
-					{
-						return reason;
-					}
-					set	
-					{
-						reason = value;
-					}
-				}
-
-				public string Title
-				{
-					get
-					{
-						return title;
-					}
-					set	
-					{
-						title = value;
-					}
-				}
-
-				public string Description
-				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
-					}
-				}
-
-				public string Ip
-				{
-					get
-					{
-						return ip;
-					}
-					set	
-					{
-						ip = value;
 					}
 				}
 
@@ -917,51 +785,51 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					}
 				}
 
-				public string Wasc
+				public string Ip
 				{
 					get
 					{
-						return wasc;
+						return ip;
 					}
 					set	
 					{
-						wasc = value;
+						ip = value;
 					}
 				}
 
-				public string VulType
+				public long? PrimaryId
 				{
 					get
 					{
-						return vulType;
+						return primaryId;
 					}
 					set	
 					{
-						vulType = value;
+						primaryId = value;
 					}
 				}
 
-				public string Effect
+				public string Os
 				{
 					get
 					{
-						return effect;
+						return os;
 					}
 					set	
 					{
-						effect = value;
+						os = value;
 					}
 				}
 
-				public string Solution
+				public string Tag
 				{
 					get
 					{
-						return solution;
+						return tag;
 					}
 					set	
 					{
-						solution = value;
+						tag = value;
 					}
 				}
 
@@ -977,6 +845,126 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					}
 				}
 
+				public string Wasc
+				{
+					get
+					{
+						return wasc;
+					}
+					set	
+					{
+						wasc = value;
+					}
+				}
+
+				public long? LastTs
+				{
+					get
+					{
+						return lastTs;
+					}
+					set	
+					{
+						lastTs = value;
+					}
+				}
+
+				public string VulType
+				{
+					get
+					{
+						return vulType;
+					}
+					set	
+					{
+						vulType = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
+				public string OsRelease
+				{
+					get
+					{
+						return osRelease;
+					}
+					set	
+					{
+						osRelease = value;
+					}
+				}
+
+				public string Title
+				{
+					get
+					{
+						return title;
+					}
+					set	
+					{
+						title = value;
+					}
+				}
+
+				public string AliasName
+				{
+					get
+					{
+						return aliasName;
+					}
+					set	
+					{
+						aliasName = value;
+					}
+				}
+
+				public string Solution
+				{
+					get
+					{
+						return solution;
+					}
+					set	
+					{
+						solution = value;
+					}
+				}
+
+				public string Target
+				{
+					get
+					{
+						return target;
+					}
+					set	
+					{
+						target = value;
+					}
+				}
+
+				public string AbsolutePath
+				{
+					get
+					{
+						return absolutePath;
+					}
+					set	
+					{
+						absolutePath = value;
+					}
+				}
+
 				public string Proof
 				{
 					get
@@ -986,6 +974,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					set	
 					{
 						proof = value;
+					}
+				}
+
+				public string Reason
+				{
+					get
+					{
+						return reason;
+					}
+					set	
+					{
+						reason = value;
 					}
 				}
 
@@ -1030,15 +1030,23 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 					private string fullVersion;
 
+					private string version;
+
 					private string matchDetail;
 
-					private string name;
+					private string imageName;
 
 					private string path;
 
+					private string containerName;
+
+					private string name;
+
 					private string updateCmd;
 
-					private string version;
+					private string pid;
+
+					private List<string> matchList;
 
 					public string FullVersion
 					{
@@ -1049,6 +1057,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 						set	
 						{
 							fullVersion = value;
+						}
+					}
+
+					public string Version
+					{
+						get
+						{
+							return version;
+						}
+						set	
+						{
+							version = value;
 						}
 					}
 
@@ -1064,15 +1084,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 						}
 					}
 
-					public string Name
+					public string ImageName
 					{
 						get
 						{
-							return name;
+							return imageName;
 						}
 						set	
 						{
-							name = value;
+							imageName = value;
 						}
 					}
 
@@ -1088,6 +1108,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 						}
 					}
 
+					public string ContainerName
+					{
+						get
+						{
+							return containerName;
+						}
+						set	
+						{
+							containerName = value;
+						}
+					}
+
+					public string Name
+					{
+						get
+						{
+							return name;
+						}
+						set	
+						{
+							name = value;
+						}
+					}
+
 					public string UpdateCmd
 					{
 						get
@@ -1100,15 +1144,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 						}
 					}
 
-					public string Version
+					public string Pid
 					{
 						get
 						{
-							return version;
+							return pid;
 						}
 						set	
 						{
-							version = value;
+							pid = value;
+						}
+					}
+
+					public List<string> MatchList
+					{
+						get
+						{
+							return matchList;
+						}
+						set	
+						{
+							matchList = value;
 						}
 					}
 				}
@@ -1116,31 +1172,31 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				public class DescribeVulList_Necessity
 				{
 
-					private string cvss_factor;
+					private string status;
 
 					private string gmt_create;
 
-					private string status;
+					private string time_factor;
 
 					private string enviroment_factor;
-
-					private string assets_factor;
 
 					private string is_calc;
 
 					private string total_score;
 
-					private string time_factor;
+					private string cvss_factor;
 
-					public string Cvss_factor
+					private string assets_factor;
+
+					public string Status
 					{
 						get
 						{
-							return cvss_factor;
+							return status;
 						}
 						set	
 						{
-							cvss_factor = value;
+							status = value;
 						}
 					}
 
@@ -1156,15 +1212,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 						}
 					}
 
-					public string Status
+					public string Time_factor
 					{
 						get
 						{
-							return status;
+							return time_factor;
 						}
 						set	
 						{
-							status = value;
+							time_factor = value;
 						}
 					}
 
@@ -1177,18 +1233,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 						set	
 						{
 							enviroment_factor = value;
-						}
-					}
-
-					public string Assets_factor
-					{
-						get
-						{
-							return assets_factor;
-						}
-						set	
-						{
-							assets_factor = value;
 						}
 					}
 
@@ -1216,15 +1260,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 						}
 					}
 
-					public string Time_factor
+					public string Cvss_factor
 					{
 						get
 						{
-							return time_factor;
+							return cvss_factor;
 						}
 						set	
 						{
-							time_factor = value;
+							cvss_factor = value;
+						}
+					}
+
+					public string Assets_factor
+					{
+						get
+						{
+							return assets_factor;
+						}
+						set	
+						{
+							assets_factor = value;
 						}
 					}
 				}
@@ -1233,23 +1289,11 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			public class DescribeVulList_ProcessInfo
 			{
 
-				private long? gmtLastTs;
-
 				private int? totalCount;
 
-				private List<DescribeVulList_Process> processList;
+				private long? gmtLastTs;
 
-				public long? GmtLastTs
-				{
-					get
-					{
-						return gmtLastTs;
-					}
-					set	
-					{
-						gmtLastTs = value;
-					}
-				}
+				private List<DescribeVulList_Process> processList;
 
 				public int? TotalCount
 				{
@@ -1260,6 +1304,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					set	
 					{
 						totalCount = value;
+					}
+				}
+
+				public long? GmtLastTs
+				{
+					get
+					{
+						return gmtLastTs;
+					}
+					set	
+					{
+						gmtLastTs = value;
 					}
 				}
 

@@ -70,41 +70,175 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeGroupedContainerInstances_GroupedContainerInstance
 		{
 
-			private int? instanceCount;
+			private string riskLevel;
 
-			private int? riskInstanceCount;
+			private string hostIp;
 
-			private string clusterId;
+			private string pod;
 
 			private string riskStatus;
+
+			private long? createTime;
+
+			private string _namespace;
+
+			private string custerState;
+
+			private string instanceId;
+
+			private string regionId;
+
+			private string appName;
+
+			private int? instanceCount;
+
+			private string clusterType;
+
+			private string clusterName;
+
+			private string podIp;
 
 			private int? vulCount;
 
 			private int? alarmCount;
 
-			private string pod;
+			private int? riskInstanceCount;
 
-			private string podIp;
+			private string clusterId;
 
-			private string instanceId;
+			private string image;
 
-			private string hostIp;
+			private string imageRepoNamespace;
 
-			private string clusterName;
+			private string imageRepoName;
 
-			private long? createTime;
+			private string imageRepoTag;
 
-			private string appName;
+			private string imageDigest;
 
-			private string clusterType;
+			private string imageUuid;
 
-			private string custerState;
+			private int? hcCount;
 
-			private string regionId;
+			public string RiskLevel
+			{
+				get
+				{
+					return riskLevel;
+				}
+				set	
+				{
+					riskLevel = value;
+				}
+			}
 
-			private string _namespace;
+			public string HostIp
+			{
+				get
+				{
+					return hostIp;
+				}
+				set	
+				{
+					hostIp = value;
+				}
+			}
 
-			private string riskLevel;
+			public string Pod
+			{
+				get
+				{
+					return pod;
+				}
+				set	
+				{
+					pod = value;
+				}
+			}
+
+			public string RiskStatus
+			{
+				get
+				{
+					return riskStatus;
+				}
+				set	
+				{
+					riskStatus = value;
+				}
+			}
+
+			public long? CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string _Namespace
+			{
+				get
+				{
+					return _namespace;
+				}
+				set	
+				{
+					_namespace = value;
+				}
+			}
+
+			public string CusterState
+			{
+				get
+				{
+					return custerState;
+				}
+				set	
+				{
+					custerState = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string AppName
+			{
+				get
+				{
+					return appName;
+				}
+				set	
+				{
+					appName = value;
+				}
+			}
 
 			public int? InstanceCount
 			{
@@ -118,39 +252,39 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? RiskInstanceCount
+			public string ClusterType
 			{
 				get
 				{
-					return riskInstanceCount;
+					return clusterType;
 				}
 				set	
 				{
-					riskInstanceCount = value;
+					clusterType = value;
 				}
 			}
 
-			public string ClusterId
+			public string ClusterName
 			{
 				get
 				{
-					return clusterId;
+					return clusterName;
 				}
 				set	
 				{
-					clusterId = value;
+					clusterName = value;
 				}
 			}
 
-			public string RiskStatus
+			public string PodIp
 			{
 				get
 				{
-					return riskStatus;
+					return podIp;
 				}
 				set	
 				{
-					riskStatus = value;
+					podIp = value;
 				}
 			}
 
@@ -178,147 +312,111 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Pod
+			public int? RiskInstanceCount
 			{
 				get
 				{
-					return pod;
+					return riskInstanceCount;
 				}
 				set	
 				{
-					pod = value;
+					riskInstanceCount = value;
 				}
 			}
 
-			public string PodIp
+			public string ClusterId
 			{
 				get
 				{
-					return podIp;
+					return clusterId;
 				}
 				set	
 				{
-					podIp = value;
+					clusterId = value;
 				}
 			}
 
-			public string InstanceId
+			public string Image
 			{
 				get
 				{
-					return instanceId;
+					return image;
 				}
 				set	
 				{
-					instanceId = value;
+					image = value;
 				}
 			}
 
-			public string HostIp
+			public string ImageRepoNamespace
 			{
 				get
 				{
-					return hostIp;
+					return imageRepoNamespace;
 				}
 				set	
 				{
-					hostIp = value;
+					imageRepoNamespace = value;
 				}
 			}
 
-			public string ClusterName
+			public string ImageRepoName
 			{
 				get
 				{
-					return clusterName;
+					return imageRepoName;
 				}
 				set	
 				{
-					clusterName = value;
+					imageRepoName = value;
 				}
 			}
 
-			public long? CreateTime
+			public string ImageRepoTag
 			{
 				get
 				{
-					return createTime;
+					return imageRepoTag;
 				}
 				set	
 				{
-					createTime = value;
+					imageRepoTag = value;
 				}
 			}
 
-			public string AppName
+			public string ImageDigest
 			{
 				get
 				{
-					return appName;
+					return imageDigest;
 				}
 				set	
 				{
-					appName = value;
+					imageDigest = value;
 				}
 			}
 
-			public string ClusterType
+			public string ImageUuid
 			{
 				get
 				{
-					return clusterType;
+					return imageUuid;
 				}
 				set	
 				{
-					clusterType = value;
+					imageUuid = value;
 				}
 			}
 
-			public string CusterState
+			public int? HcCount
 			{
 				get
 				{
-					return custerState;
+					return hcCount;
 				}
 				set	
 				{
-					custerState = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string _Namespace
-			{
-				get
-				{
-					return _namespace;
-				}
-				set	
-				{
-					_namespace = value;
-				}
-			}
-
-			public string RiskLevel
-			{
-				get
-				{
-					return riskLevel;
-				}
-				set	
-				{
-					riskLevel = value;
+					hcCount = value;
 				}
 			}
 		}
@@ -326,23 +424,23 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeGroupedContainerInstances_PageInfo
 		{
 
-			private int? count;
+			private int? currentPage;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? currentPage;
+			private int? count;
 
-			public int? Count
+			public int? CurrentPage
 			{
 				get
 				{
-					return count;
+					return currentPage;
 				}
 				set	
 				{
-					count = value;
+					currentPage = value;
 				}
 			}
 
@@ -370,15 +468,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? CurrentPage
+			public int? Count
 			{
 				get
 				{
-					return currentPage;
+					return count;
 				}
 				set	
 				{
-					currentPage = value;
+					count = value;
 				}
 			}
 		}

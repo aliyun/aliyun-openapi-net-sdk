@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeImageVulListResponse : AcsResponse
 	{
 
+		private int? currentPage;
+
 		private string requestId;
 
 		private int? pageSize;
 
-		private int? currentPage;
-
 		private int? totalCount;
 
 		private List<DescribeImageVulList_VulRecord> vulRecords;
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -56,18 +68,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				pageSize = value;
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
 			}
 		}
 
@@ -98,99 +98,55 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeImageVulList_VulRecord
 		{
 
-			private long? primaryId;
-
-			private string uuid;
-
-			private string name;
-
-			private string tag;
-
-			private string aliasName;
+			private bool? canUpdate;
 
 			private string type;
 
-			private string level;
+			private int? status;
+
+			private long? modifyTs;
+
+			private int? progress;
+
+			private string imageDigest;
+
+			private long? primaryId;
+
+			private string tag;
+
+			private string repoNamespace;
+
+			private string repoName;
+
+			private string related;
 
 			private long? firstTs;
 
 			private long? lastTs;
 
-			private int? status;
-
-			private int? progress;
-
 			private string necessity;
 
-			private string related;
+			private string uuid;
 
-			private long? modifyTs;
+			private string aliasName;
 
-			private string imageDigest;
+			private string name;
 
-			private bool? canUpdate;
+			private string level;
 
 			private List<string> layers;
 
 			private DescribeImageVulList_ExtendContentJson extendContentJson;
 
-			public long? PrimaryId
+			public bool? CanUpdate
 			{
 				get
 				{
-					return primaryId;
+					return canUpdate;
 				}
 				set	
 				{
-					primaryId = value;
-				}
-			}
-
-			public string Uuid
-			{
-				get
-				{
-					return uuid;
-				}
-				set	
-				{
-					uuid = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Tag
-			{
-				get
-				{
-					return tag;
-				}
-				set	
-				{
-					tag = value;
-				}
-			}
-
-			public string AliasName
-			{
-				get
-				{
-					return aliasName;
-				}
-				set	
-				{
-					aliasName = value;
+					canUpdate = value;
 				}
 			}
 
@@ -206,15 +162,111 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Level
+			public int? Status
 			{
 				get
 				{
-					return level;
+					return status;
 				}
 				set	
 				{
-					level = value;
+					status = value;
+				}
+			}
+
+			public long? ModifyTs
+			{
+				get
+				{
+					return modifyTs;
+				}
+				set	
+				{
+					modifyTs = value;
+				}
+			}
+
+			public int? Progress
+			{
+				get
+				{
+					return progress;
+				}
+				set	
+				{
+					progress = value;
+				}
+			}
+
+			public string ImageDigest
+			{
+				get
+				{
+					return imageDigest;
+				}
+				set	
+				{
+					imageDigest = value;
+				}
+			}
+
+			public long? PrimaryId
+			{
+				get
+				{
+					return primaryId;
+				}
+				set	
+				{
+					primaryId = value;
+				}
+			}
+
+			public string Tag
+			{
+				get
+				{
+					return tag;
+				}
+				set	
+				{
+					tag = value;
+				}
+			}
+
+			public string RepoNamespace
+			{
+				get
+				{
+					return repoNamespace;
+				}
+				set	
+				{
+					repoNamespace = value;
+				}
+			}
+
+			public string RepoName
+			{
+				get
+				{
+					return repoName;
+				}
+				set	
+				{
+					repoName = value;
+				}
+			}
+
+			public string Related
+			{
+				get
+				{
+					return related;
+				}
+				set	
+				{
+					related = value;
 				}
 			}
 
@@ -242,30 +294,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public int? Progress
-			{
-				get
-				{
-					return progress;
-				}
-				set	
-				{
-					progress = value;
-				}
-			}
-
 			public string Necessity
 			{
 				get
@@ -278,51 +306,51 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Related
+			public string Uuid
 			{
 				get
 				{
-					return related;
+					return uuid;
 				}
 				set	
 				{
-					related = value;
+					uuid = value;
 				}
 			}
 
-			public long? ModifyTs
+			public string AliasName
 			{
 				get
 				{
-					return modifyTs;
+					return aliasName;
 				}
 				set	
 				{
-					modifyTs = value;
+					aliasName = value;
 				}
 			}
 
-			public string ImageDigest
+			public string Name
 			{
 				get
 				{
-					return imageDigest;
+					return name;
 				}
 				set	
 				{
-					imageDigest = value;
+					name = value;
 				}
 			}
 
-			public bool? CanUpdate
+			public string Level
 			{
 				get
 				{
-					return canUpdate;
+					return level;
 				}
 				set	
 				{
-					canUpdate = value;
+					level = value;
 				}
 			}
 
@@ -353,23 +381,11 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			public class DescribeImageVulList_ExtendContentJson
 			{
 
-				private string os;
-
 				private string osRelease;
 
-				private List<DescribeImageVulList_RpmEntity> rpmEntityList;
+				private string os;
 
-				public string Os
-				{
-					get
-					{
-						return os;
-					}
-					set	
-					{
-						os = value;
-					}
-				}
+				private List<DescribeImageVulList_RpmEntity> rpmEntityList;
 
 				public string OsRelease
 				{
@@ -380,6 +396,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					set	
 					{
 						osRelease = value;
+					}
+				}
+
+				public string Os
+				{
+					get
+					{
+						return os;
+					}
+					set	
+					{
+						os = value;
 					}
 				}
 
@@ -398,21 +426,33 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				public class DescribeImageVulList_RpmEntity
 				{
 
+					private string layer;
+
 					private string fullVersion;
-
-					private string matchDetail;
-
-					private string name;
-
-					private string path;
-
-					private string updateCmd;
 
 					private string version;
 
-					private string layer;
+					private string matchDetail;
 
-					private string matchList;
+					private string path;
+
+					private string name;
+
+					private string updateCmd;
+
+					private List<string> matchList;
+
+					public string Layer
+					{
+						get
+						{
+							return layer;
+						}
+						set	
+						{
+							layer = value;
+						}
+					}
 
 					public string FullVersion
 					{
@@ -423,54 +463,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 						set	
 						{
 							fullVersion = value;
-						}
-					}
-
-					public string MatchDetail
-					{
-						get
-						{
-							return matchDetail;
-						}
-						set	
-						{
-							matchDetail = value;
-						}
-					}
-
-					public string Name
-					{
-						get
-						{
-							return name;
-						}
-						set	
-						{
-							name = value;
-						}
-					}
-
-					public string Path
-					{
-						get
-						{
-							return path;
-						}
-						set	
-						{
-							path = value;
-						}
-					}
-
-					public string UpdateCmd
-					{
-						get
-						{
-							return updateCmd;
-						}
-						set	
-						{
-							updateCmd = value;
 						}
 					}
 
@@ -486,19 +478,55 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 						}
 					}
 
-					public string Layer
+					public string MatchDetail
 					{
 						get
 						{
-							return layer;
+							return matchDetail;
 						}
 						set	
 						{
-							layer = value;
+							matchDetail = value;
 						}
 					}
 
-					public string MatchList
+					public string Path
+					{
+						get
+						{
+							return path;
+						}
+						set	
+						{
+							path = value;
+						}
+					}
+
+					public string Name
+					{
+						get
+						{
+							return name;
+						}
+						set	
+						{
+							name = value;
+						}
+					}
+
+					public string UpdateCmd
+					{
+						get
+						{
+							return updateCmd;
+						}
+						set	
+						{
+							updateCmd = value;
+						}
+					}
+
+					public List<string> MatchList
 					{
 						get
 						{

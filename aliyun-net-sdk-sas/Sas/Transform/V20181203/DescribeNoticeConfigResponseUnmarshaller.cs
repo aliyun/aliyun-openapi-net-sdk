@@ -37,10 +37,10 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			for (int i = 0; i < _ctx.Length("DescribeNoticeConfig.NoticeConfigList.Length"); i++) {
 				DescribeNoticeConfigResponse.DescribeNoticeConfig_NoticeConfig noticeConfig = new DescribeNoticeConfigResponse.DescribeNoticeConfig_NoticeConfig();
 				noticeConfig.TimeLimit = _ctx.IntegerValue("DescribeNoticeConfig.NoticeConfigList["+ i +"].TimeLimit");
-				noticeConfig.Route = _ctx.IntegerValue("DescribeNoticeConfig.NoticeConfigList["+ i +"].Route");
-				noticeConfig.Project = _ctx.StringValue("DescribeNoticeConfig.NoticeConfigList["+ i +"].Project");
 				noticeConfig.AliUid = _ctx.LongValue("DescribeNoticeConfig.NoticeConfigList["+ i +"].AliUid");
 				noticeConfig.CurrentPage = _ctx.IntegerValue("DescribeNoticeConfig.NoticeConfigList["+ i +"].CurrentPage");
+				noticeConfig.Project = _ctx.StringValue("DescribeNoticeConfig.NoticeConfigList["+ i +"].Project");
+				noticeConfig.Route = _ctx.IntegerValue("DescribeNoticeConfig.NoticeConfigList["+ i +"].Route");
 
 				describeNoticeConfigResponse_noticeConfigList.Add(noticeConfig);
 			}

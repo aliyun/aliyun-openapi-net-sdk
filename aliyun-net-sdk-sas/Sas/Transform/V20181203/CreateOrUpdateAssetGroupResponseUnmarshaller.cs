@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			CreateOrUpdateAssetGroupResponse createOrUpdateAssetGroupResponse = new CreateOrUpdateAssetGroupResponse();
 
 			createOrUpdateAssetGroupResponse.HttpResponse = _ctx.HttpResponse;
-			createOrUpdateAssetGroupResponse.RequestId = _ctx.StringValue("CreateOrUpdateAssetGroup.RequestId");
 			createOrUpdateAssetGroupResponse.GroupId = _ctx.LongValue("CreateOrUpdateAssetGroup.GroupId");
+			createOrUpdateAssetGroupResponse.RequestId = _ctx.StringValue("CreateOrUpdateAssetGroup.RequestId");
         
 			return createOrUpdateAssetGroupResponse;
         }

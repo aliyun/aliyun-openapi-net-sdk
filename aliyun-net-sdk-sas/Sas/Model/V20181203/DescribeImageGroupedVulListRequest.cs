@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sas;
 using Aliyun.Acs.Sas.Transform;
 using Aliyun.Acs.Sas.Transform.V20181203;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
     public class DescribeImageGroupedVulListRequest : RpcAcsRequest<DescribeImageGroupedVulListResponse>
     {
         public DescribeImageGroupedVulListRequest()
-            : base("Sas", "2018-12-03", "DescribeImageGroupedVulList", "sas", "openAPI")
+            : base("Sas", "2018-12-03", "DescribeImageGroupedVulList")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,17 +43,11 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string type;
 
-		private long? lastTsEnd;
-
-		private long? createTsStart;
+		private int? isLatest;
 
 		private string imageTag;
 
-		private string level;
-
 		private string groupId;
-
-		private string orderBy;
 
 		private string aliasName;
 
@@ -60,19 +55,13 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string name;
 
-		private long? createTsEnd;
-
 		private string necessity;
 
 		private string uuids;
 
 		private string repoId;
 
-		private string statusList;
-
 		private string cveId;
-
-		private string remark;
 
 		private string repoNamespace;
 
@@ -82,15 +71,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string lang;
 
-		private long? lastTsStart;
-
-		private string direction;
-
-		private string dealed;
-
 		private int? currentPage;
 
-		private string searchTags;
+		private string clusterId;
 
 		private string repoName;
 
@@ -113,29 +96,16 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public long? LastTsEnd
+		public int? IsLatest
 		{
 			get
 			{
-				return lastTsEnd;
+				return isLatest;
 			}
 			set	
 			{
-				lastTsEnd = value;
-				DictionaryUtil.Add(QueryParameters, "LastTsEnd", value.ToString());
-			}
-		}
-
-		public long? CreateTsStart
-		{
-			get
-			{
-				return createTsStart;
-			}
-			set	
-			{
-				createTsStart = value;
-				DictionaryUtil.Add(QueryParameters, "CreateTsStart", value.ToString());
+				isLatest = value;
+				DictionaryUtil.Add(QueryParameters, "IsLatest", value.ToString());
 			}
 		}
 
@@ -152,19 +122,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string Level
-		{
-			get
-			{
-				return level;
-			}
-			set	
-			{
-				level = value;
-				DictionaryUtil.Add(QueryParameters, "Level", value);
-			}
-		}
-
 		public string GroupId
 		{
 			get
@@ -175,19 +132,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				groupId = value;
 				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
-
-		public string OrderBy
-		{
-			get
-			{
-				return orderBy;
-			}
-			set	
-			{
-				orderBy = value;
-				DictionaryUtil.Add(QueryParameters, "OrderBy", value);
 			}
 		}
 
@@ -230,19 +174,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public long? CreateTsEnd
-		{
-			get
-			{
-				return createTsEnd;
-			}
-			set	
-			{
-				createTsEnd = value;
-				DictionaryUtil.Add(QueryParameters, "CreateTsEnd", value.ToString());
-			}
-		}
-
 		public string Necessity
 		{
 			get
@@ -282,19 +213,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string StatusList
-		{
-			get
-			{
-				return statusList;
-			}
-			set	
-			{
-				statusList = value;
-				DictionaryUtil.Add(QueryParameters, "StatusList", value);
-			}
-		}
-
 		public string CveId
 		{
 			get
@@ -305,19 +223,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				cveId = value;
 				DictionaryUtil.Add(QueryParameters, "CveId", value);
-			}
-		}
-
-		public string Remark
-		{
-			get
-			{
-				return remark;
-			}
-			set	
-			{
-				remark = value;
-				DictionaryUtil.Add(QueryParameters, "Remark", value);
 			}
 		}
 
@@ -373,45 +278,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public long? LastTsStart
-		{
-			get
-			{
-				return lastTsStart;
-			}
-			set	
-			{
-				lastTsStart = value;
-				DictionaryUtil.Add(QueryParameters, "LastTsStart", value.ToString());
-			}
-		}
-
-		public string Direction
-		{
-			get
-			{
-				return direction;
-			}
-			set	
-			{
-				direction = value;
-				DictionaryUtil.Add(QueryParameters, "Direction", value);
-			}
-		}
-
-		public string Dealed
-		{
-			get
-			{
-				return dealed;
-			}
-			set	
-			{
-				dealed = value;
-				DictionaryUtil.Add(QueryParameters, "Dealed", value);
-			}
-		}
-
 		public int? CurrentPage
 		{
 			get
@@ -425,16 +291,16 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string SearchTags
+		public string ClusterId
 		{
 			get
 			{
-				return searchTags;
+				return clusterId;
 			}
 			set	
 			{
-				searchTags = value;
-				DictionaryUtil.Add(QueryParameters, "SearchTags", value);
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
 			}
 		}
 

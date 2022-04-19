@@ -34,22 +34,22 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describeGroupedInstancesResponse.RequestId = _ctx.StringValue("DescribeGroupedInstances.RequestId");
 
 			DescribeGroupedInstancesResponse.DescribeGroupedInstances_PageInfo pageInfo = new DescribeGroupedInstancesResponse.DescribeGroupedInstances_PageInfo();
-			pageInfo.Count = _ctx.IntegerValue("DescribeGroupedInstances.PageInfo.Count");
+			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeGroupedInstances.PageInfo.CurrentPage");
 			pageInfo.PageSize = _ctx.IntegerValue("DescribeGroupedInstances.PageInfo.PageSize");
 			pageInfo.TotalCount = _ctx.IntegerValue("DescribeGroupedInstances.PageInfo.TotalCount");
-			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeGroupedInstances.PageInfo.CurrentPage");
+			pageInfo.Count = _ctx.IntegerValue("DescribeGroupedInstances.PageInfo.Count");
 			describeGroupedInstancesResponse.PageInfo = pageInfo;
 
 			List<DescribeGroupedInstancesResponse.DescribeGroupedInstances_Instance> describeGroupedInstancesResponse_instances = new List<DescribeGroupedInstancesResponse.DescribeGroupedInstances_Instance>();
 			for (int i = 0; i < _ctx.Length("DescribeGroupedInstances.Instances.Length"); i++) {
 				DescribeGroupedInstancesResponse.DescribeGroupedInstances_Instance instance = new DescribeGroupedInstancesResponse.DescribeGroupedInstances_Instance();
+				instance.AsapVulInstanceCount = _ctx.LongValue("DescribeGroupedInstances.Instances["+ i +"].AsapVulInstanceCount");
 				instance.UnProtectedInstanceCount = _ctx.StringValue("DescribeGroupedInstances.Instances["+ i +"].UnProtectedInstanceCount");
 				instance.FieldAliasName = _ctx.StringValue("DescribeGroupedInstances.Instances["+ i +"].FieldAliasName");
-				instance.GroupFlag = _ctx.IntegerValue("DescribeGroupedInstances.Instances["+ i +"].GroupFlag");
+				instance.InstanceCount = _ctx.StringValue("DescribeGroupedInstances.Instances["+ i +"].InstanceCount");
 				instance.FieldId = _ctx.LongValue("DescribeGroupedInstances.Instances["+ i +"].FieldId");
 				instance.RiskInstanceCount = _ctx.StringValue("DescribeGroupedInstances.Instances["+ i +"].RiskInstanceCount");
-				instance.InstanceCount = _ctx.StringValue("DescribeGroupedInstances.Instances["+ i +"].InstanceCount");
-				instance.AsapVulInstanceCount = _ctx.LongValue("DescribeGroupedInstances.Instances["+ i +"].AsapVulInstanceCount");
+				instance.GroupFlag = _ctx.IntegerValue("DescribeGroupedInstances.Instances["+ i +"].GroupFlag");
 
 				List<string> instance_groupPath = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeGroupedInstances.Instances["+ i +"].GroupPath.Length"); j++) {

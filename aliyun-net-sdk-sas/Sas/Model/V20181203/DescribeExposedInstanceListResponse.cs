@@ -70,111 +70,51 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeExposedInstanceList_ExposedInstance
 		{
 
-			private string uuid;
-
-			private string intranetIp;
-
-			private string internetIp;
-
-			private int? asapVulCount;
-
-			private int? laterVulCount;
-
-			private int? nntfVulCount;
+			private string exposureIp;
 
 			private int? totalVulCount;
 
-			private int? exploitHealthCount;
+			private string internetIp;
 
-			private string exposureComponent;
-
-			private string exposureType;
-
-			private string exposureTypeId;
-
-			private string exposurePort;
-
-			private string exposureIp;
+			private int? nntfVulCount;
 
 			private string instanceId;
 
-			private string instanceName;
+			private string exposureType;
+
+			private string intranetIp;
 
 			private string regionId;
 
-			private long? groupId;
+			private string exposureTypeId;
+
+			private int? asapVulCount;
+
+			private string exposurePort;
+
+			private string uuid;
 
 			private string groupName;
 
-			public string Uuid
-			{
-				get
-				{
-					return uuid;
-				}
-				set	
-				{
-					uuid = value;
-				}
-			}
+			private long? groupId;
 
-			public string IntranetIp
-			{
-				get
-				{
-					return intranetIp;
-				}
-				set	
-				{
-					intranetIp = value;
-				}
-			}
+			private int? exploitHealthCount;
 
-			public string InternetIp
-			{
-				get
-				{
-					return internetIp;
-				}
-				set	
-				{
-					internetIp = value;
-				}
-			}
+			private string instanceName;
 
-			public int? AsapVulCount
-			{
-				get
-				{
-					return asapVulCount;
-				}
-				set	
-				{
-					asapVulCount = value;
-				}
-			}
+			private string exposureComponent;
 
-			public int? LaterVulCount
-			{
-				get
-				{
-					return laterVulCount;
-				}
-				set	
-				{
-					laterVulCount = value;
-				}
-			}
+			private int? laterVulCount;
 
-			public int? NntfVulCount
+			public string ExposureIp
 			{
 				get
 				{
-					return nntfVulCount;
+					return exposureIp;
 				}
 				set	
 				{
-					nntfVulCount = value;
+					exposureIp = value;
 				}
 			}
 
@@ -190,75 +130,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? ExploitHealthCount
+			public string InternetIp
 			{
 				get
 				{
-					return exploitHealthCount;
+					return internetIp;
 				}
 				set	
 				{
-					exploitHealthCount = value;
+					internetIp = value;
 				}
 			}
 
-			public string ExposureComponent
+			public int? NntfVulCount
 			{
 				get
 				{
-					return exposureComponent;
+					return nntfVulCount;
 				}
 				set	
 				{
-					exposureComponent = value;
-				}
-			}
-
-			public string ExposureType
-			{
-				get
-				{
-					return exposureType;
-				}
-				set	
-				{
-					exposureType = value;
-				}
-			}
-
-			public string ExposureTypeId
-			{
-				get
-				{
-					return exposureTypeId;
-				}
-				set	
-				{
-					exposureTypeId = value;
-				}
-			}
-
-			public string ExposurePort
-			{
-				get
-				{
-					return exposurePort;
-				}
-				set	
-				{
-					exposurePort = value;
-				}
-			}
-
-			public string ExposureIp
-			{
-				get
-				{
-					return exposureIp;
-				}
-				set	
-				{
-					exposureIp = value;
+					nntfVulCount = value;
 				}
 			}
 
@@ -274,15 +166,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string InstanceName
+			public string ExposureType
 			{
 				get
 				{
-					return instanceName;
+					return exposureType;
 				}
 				set	
 				{
-					instanceName = value;
+					exposureType = value;
+				}
+			}
+
+			public string IntranetIp
+			{
+				get
+				{
+					return intranetIp;
+				}
+				set	
+				{
+					intranetIp = value;
 				}
 			}
 
@@ -298,15 +202,51 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public long? GroupId
+			public string ExposureTypeId
 			{
 				get
 				{
-					return groupId;
+					return exposureTypeId;
 				}
 				set	
 				{
-					groupId = value;
+					exposureTypeId = value;
+				}
+			}
+
+			public int? AsapVulCount
+			{
+				get
+				{
+					return asapVulCount;
+				}
+				set	
+				{
+					asapVulCount = value;
+				}
+			}
+
+			public string ExposurePort
+			{
+				get
+				{
+					return exposurePort;
+				}
+				set	
+				{
+					exposurePort = value;
+				}
+			}
+
+			public string Uuid
+			{
+				get
+				{
+					return uuid;
+				}
+				set	
+				{
+					uuid = value;
 				}
 			}
 
@@ -321,28 +261,88 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					groupName = value;
 				}
 			}
+
+			public long? GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
+				}
+			}
+
+			public int? ExploitHealthCount
+			{
+				get
+				{
+					return exploitHealthCount;
+				}
+				set	
+				{
+					exploitHealthCount = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public string ExposureComponent
+			{
+				get
+				{
+					return exposureComponent;
+				}
+				set	
+				{
+					exposureComponent = value;
+				}
+			}
+
+			public int? LaterVulCount
+			{
+				get
+				{
+					return laterVulCount;
+				}
+				set	
+				{
+					laterVulCount = value;
+				}
+			}
 		}
 
 		public class DescribeExposedInstanceList_PageInfo
 		{
 
-			private int? count;
+			private int? currentPage;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? currentPage;
+			private int? count;
 
-			public int? Count
+			public int? CurrentPage
 			{
 				get
 				{
-					return count;
+					return currentPage;
 				}
 				set	
 				{
-					count = value;
+					currentPage = value;
 				}
 			}
 
@@ -370,15 +370,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? CurrentPage
+			public int? Count
 			{
 				get
 				{
-					return currentPage;
+					return count;
 				}
 				set	
 				{
-					currentPage = value;
+					count = value;
 				}
 			}
 		}

@@ -31,26 +31,27 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeWarningMachinesResponse describeWarningMachinesResponse = new DescribeWarningMachinesResponse();
 
 			describeWarningMachinesResponse.HttpResponse = _ctx.HttpResponse;
-			describeWarningMachinesResponse.RequestId = _ctx.StringValue("DescribeWarningMachines.RequestId");
-			describeWarningMachinesResponse.Count = _ctx.IntegerValue("DescribeWarningMachines.Count");
-			describeWarningMachinesResponse.PageSize = _ctx.IntegerValue("DescribeWarningMachines.PageSize");
-			describeWarningMachinesResponse.TotalCount = _ctx.IntegerValue("DescribeWarningMachines.TotalCount");
 			describeWarningMachinesResponse.CurrentPage = _ctx.IntegerValue("DescribeWarningMachines.CurrentPage");
+			describeWarningMachinesResponse.PageSize = _ctx.IntegerValue("DescribeWarningMachines.PageSize");
+			describeWarningMachinesResponse.RequestId = _ctx.StringValue("DescribeWarningMachines.RequestId");
+			describeWarningMachinesResponse.TotalCount = _ctx.IntegerValue("DescribeWarningMachines.TotalCount");
+			describeWarningMachinesResponse.Count = _ctx.IntegerValue("DescribeWarningMachines.Count");
 
 			List<DescribeWarningMachinesResponse.DescribeWarningMachines_WarningMachine> describeWarningMachinesResponse_warningMachines = new List<DescribeWarningMachinesResponse.DescribeWarningMachines_WarningMachine>();
 			for (int i = 0; i < _ctx.Length("DescribeWarningMachines.WarningMachines.Length"); i++) {
 				DescribeWarningMachinesResponse.DescribeWarningMachines_WarningMachine warningMachine = new DescribeWarningMachinesResponse.DescribeWarningMachines_WarningMachine();
-				warningMachine.Uuid = _ctx.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].Uuid");
-				warningMachine.InstanceName = _ctx.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].InstanceName");
-				warningMachine.InstanceId = _ctx.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].InstanceId");
-				warningMachine.RegionId = _ctx.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].RegionId");
-				warningMachine.InternetIp = _ctx.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].InternetIp");
-				warningMachine.IntranetIp = _ctx.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].IntranetIp");
-				warningMachine.PassCount = _ctx.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].PassCount");
-				warningMachine.HighWarningCount = _ctx.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].HighWarningCount");
-				warningMachine.MediumWarningCount = _ctx.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].MediumWarningCount");
-				warningMachine.LowWarningCount = _ctx.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].LowWarningCount");
 				warningMachine.Status = _ctx.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].Status");
+				warningMachine.InternetIp = _ctx.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].InternetIp");
+				warningMachine.InstanceId = _ctx.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].InstanceId");
+				warningMachine.HighWarningCount = _ctx.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].HighWarningCount");
+				warningMachine.IntranetIp = _ctx.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].IntranetIp");
+				warningMachine.RegionId = _ctx.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].RegionId");
+				warningMachine.LowWarningCount = _ctx.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].LowWarningCount");
+				warningMachine.PortOpen = _ctx.BooleanValue("DescribeWarningMachines.WarningMachines["+ i +"].PortOpen");
+				warningMachine.Uuid = _ctx.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].Uuid");
+				warningMachine.MediumWarningCount = _ctx.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].MediumWarningCount");
+				warningMachine.PassCount = _ctx.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].PassCount");
+				warningMachine.InstanceName = _ctx.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].InstanceName");
 
 				describeWarningMachinesResponse_warningMachines.Add(warningMachine);
 			}

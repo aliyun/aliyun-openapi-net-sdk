@@ -56,21 +56,21 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeExposedInstanceCriteria_Criteria
 		{
 
-			private string values;
+			private string type;
 
 			private string name;
 
-			private string type;
+			private string values;
 
-			public string Values
+			public string Type
 			{
 				get
 				{
-					return values;
+					return type;
 				}
 				set	
 				{
-					values = value;
+					type = value;
 				}
 			}
 
@@ -86,15 +86,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Type
+			public string Values
 			{
 				get
 				{
-					return type;
+					return values;
 				}
 				set	
 				{
-					type = value;
+					values = value;
 				}
 			}
 		}

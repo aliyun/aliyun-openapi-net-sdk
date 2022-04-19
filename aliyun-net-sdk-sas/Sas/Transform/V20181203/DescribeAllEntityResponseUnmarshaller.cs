@@ -36,12 +36,12 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			List<DescribeAllEntityResponse.DescribeAllEntity_Entity> describeAllEntityResponse_entityList = new List<DescribeAllEntityResponse.DescribeAllEntity_Entity>();
 			for (int i = 0; i < _ctx.Length("DescribeAllEntity.EntityList.Length"); i++) {
 				DescribeAllEntityResponse.DescribeAllEntity_Entity entity = new DescribeAllEntityResponse.DescribeAllEntity_Entity();
+				entity.Uuid = _ctx.StringValue("DescribeAllEntity.EntityList["+ i +"].Uuid");
 				entity.GroupId = _ctx.IntegerValue("DescribeAllEntity.EntityList["+ i +"].GroupId");
+				entity.InternetIp = _ctx.StringValue("DescribeAllEntity.EntityList["+ i +"].InternetIp");
 				entity.InstanceName = _ctx.StringValue("DescribeAllEntity.EntityList["+ i +"].InstanceName");
 				entity.Ip = _ctx.StringValue("DescribeAllEntity.EntityList["+ i +"].Ip");
-				entity.Uuid = _ctx.StringValue("DescribeAllEntity.EntityList["+ i +"].Uuid");
 				entity.Os = _ctx.StringValue("DescribeAllEntity.EntityList["+ i +"].Os");
-				entity.InternetIp = _ctx.StringValue("DescribeAllEntity.EntityList["+ i +"].InternetIp");
 				entity.IntranetIp = _ctx.StringValue("DescribeAllEntity.EntityList["+ i +"].IntranetIp");
 
 				describeAllEntityResponse_entityList.Add(entity);

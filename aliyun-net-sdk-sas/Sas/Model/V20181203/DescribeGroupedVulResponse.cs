@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeGroupedVulResponse : AcsResponse
 	{
 
+		private int? currentPage;
+
 		private string requestId;
 
 		private int? pageSize;
 
-		private int? currentPage;
-
 		private int? totalCount;
 
 		private List<DescribeGroupedVul_GroupedVulItem> groupedVulItems;
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -56,18 +68,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				pageSize = value;
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
 			}
 		}
 
@@ -98,49 +98,25 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeGroupedVul_GroupedVulItem
 		{
 
-			private string name;
-
-			private string aliasName;
-
 			private string type;
-
-			private long? gmtLast;
-
-			private int? asapCount;
-
-			private int? laterCount;
 
 			private int? nntfCount;
 
 			private int? handledCount;
 
+			private long? gmtLast;
+
 			private string tags;
+
+			private int? laterCount;
+
+			private string aliasName;
+
+			private string name;
 
 			private long? totalFixCount;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string AliasName
-			{
-				get
-				{
-					return aliasName;
-				}
-				set	
-				{
-					aliasName = value;
-				}
-			}
+			private int? asapCount;
 
 			public string Type
 			{
@@ -151,42 +127,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					type = value;
-				}
-			}
-
-			public long? GmtLast
-			{
-				get
-				{
-					return gmtLast;
-				}
-				set	
-				{
-					gmtLast = value;
-				}
-			}
-
-			public int? AsapCount
-			{
-				get
-				{
-					return asapCount;
-				}
-				set	
-				{
-					asapCount = value;
-				}
-			}
-
-			public int? LaterCount
-			{
-				get
-				{
-					return laterCount;
-				}
-				set	
-				{
-					laterCount = value;
 				}
 			}
 
@@ -214,6 +154,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public long? GmtLast
+			{
+				get
+				{
+					return gmtLast;
+				}
+				set	
+				{
+					gmtLast = value;
+				}
+			}
+
 			public string Tags
 			{
 				get
@@ -226,6 +178,42 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public int? LaterCount
+			{
+				get
+				{
+					return laterCount;
+				}
+				set	
+				{
+					laterCount = value;
+				}
+			}
+
+			public string AliasName
+			{
+				get
+				{
+					return aliasName;
+				}
+				set	
+				{
+					aliasName = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
 			public long? TotalFixCount
 			{
 				get
@@ -235,6 +223,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					totalFixCount = value;
+				}
+			}
+
+			public int? AsapCount
+			{
+				get
+				{
+					return asapCount;
+				}
+				set	
+				{
+					asapCount = value;
 				}
 			}
 		}

@@ -56,13 +56,37 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeSearchCondition_Condition
 		{
 
+			private string conditionType;
+
+			private string nameKey;
+
 			private string name;
 
 			private string filterConditions;
 
-			private string nameKey;
+			public string ConditionType
+			{
+				get
+				{
+					return conditionType;
+				}
+				set	
+				{
+					conditionType = value;
+				}
+			}
 
-			private string conditionType;
+			public string NameKey
+			{
+				get
+				{
+					return nameKey;
+				}
+				set	
+				{
+					nameKey = value;
+				}
+			}
 
 			public string Name
 			{
@@ -85,30 +109,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					filterConditions = value;
-				}
-			}
-
-			public string NameKey
-			{
-				get
-				{
-					return nameKey;
-				}
-				set	
-				{
-					nameKey = value;
-				}
-			}
-
-			public string ConditionType
-			{
-				get
-				{
-					return conditionType;
-				}
-				set	
-				{
-					conditionType = value;
 				}
 			}
 		}

@@ -25,37 +25,13 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeDomainCountResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? totalDomainsCount;
-
 		private int? rootDomainsCount;
+
+		private string requestId;
 
 		private int? subDomainsCount;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalDomainsCount
-		{
-			get
-			{
-				return totalDomainsCount;
-			}
-			set	
-			{
-				totalDomainsCount = value;
-			}
-		}
+		private int? totalDomainsCount;
 
 		public int? RootDomainsCount
 		{
@@ -69,6 +45,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public int? SubDomainsCount
 		{
 			get
@@ -78,6 +66,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				subDomainsCount = value;
+			}
+		}
+
+		public int? TotalDomainsCount
+		{
+			get
+			{
+				return totalDomainsCount;
+			}
+			set	
+			{
+				totalDomainsCount = value;
 			}
 		}
 	}

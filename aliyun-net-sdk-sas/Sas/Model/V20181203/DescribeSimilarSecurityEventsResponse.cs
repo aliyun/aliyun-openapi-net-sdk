@@ -70,27 +70,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeSimilarSecurityEvents_SimpleSecurityEvent
 		{
 
-			private long? securityEventId;
+			private long? lastTime;
 
 			private string uuid;
 
+			private string eventName;
+
 			private string eventType;
 
-			private string eventName;
+			private long? securityEventId;
 
 			private long? occurrenceTime;
 
-			private long? lastTime;
-
-			public long? SecurityEventId
+			public long? LastTime
 			{
 				get
 				{
-					return securityEventId;
+					return lastTime;
 				}
 				set	
 				{
-					securityEventId = value;
+					lastTime = value;
 				}
 			}
 
@@ -106,6 +106,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string EventName
+			{
+				get
+				{
+					return eventName;
+				}
+				set	
+				{
+					eventName = value;
+				}
+			}
+
 			public string EventType
 			{
 				get
@@ -118,15 +130,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string EventName
+			public long? SecurityEventId
 			{
 				get
 				{
-					return eventName;
+					return securityEventId;
 				}
 				set	
 				{
-					eventName = value;
+					securityEventId = value;
 				}
 			}
 
@@ -141,40 +153,28 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					occurrenceTime = value;
 				}
 			}
-
-			public long? LastTime
-			{
-				get
-				{
-					return lastTime;
-				}
-				set	
-				{
-					lastTime = value;
-				}
-			}
 		}
 
 		public class DescribeSimilarSecurityEvents_PageInfo
 		{
 
-			private int? count;
+			private int? currentPage;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? currentPage;
+			private int? count;
 
-			public int? Count
+			public int? CurrentPage
 			{
 				get
 				{
-					return count;
+					return currentPage;
 				}
 				set	
 				{
-					count = value;
+					currentPage = value;
 				}
 			}
 
@@ -202,15 +202,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? CurrentPage
+			public int? Count
 			{
 				get
 				{
-					return currentPage;
+					return count;
 				}
 				set	
 				{
-					currentPage = value;
+					count = value;
 				}
 			}
 		}
