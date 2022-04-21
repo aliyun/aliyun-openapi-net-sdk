@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
@@ -56,29 +56,29 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 		public class ListConversationDetails_ConversationDetail
 		{
 
-			private string conversationId;
+			private string action;
 
 			private string speaker;
 
-			private string utterance;
+			private long? createTime;
 
-			private string action;
+			private string conversationId;
 
 			private string actionParams;
 
-			private long? createTime;
-
 			private string sequenceId;
 
-			public string ConversationId
+			private string utterance;
+
+			public string Action
 			{
 				get
 				{
-					return conversationId;
+					return action;
 				}
 				set	
 				{
-					conversationId = value;
+					action = value;
 				}
 			}
 
@@ -94,27 +94,27 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 				}
 			}
 
-			public string Utterance
+			public long? CreateTime
 			{
 				get
 				{
-					return utterance;
+					return createTime;
 				}
 				set	
 				{
-					utterance = value;
+					createTime = value;
 				}
 			}
 
-			public string Action
+			public string ConversationId
 			{
 				get
 				{
-					return action;
+					return conversationId;
 				}
 				set	
 				{
-					action = value;
+					conversationId = value;
 				}
 			}
 
@@ -130,18 +130,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 				}
 			}
 
-			public long? CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
 			public string SequenceId
 			{
 				get
@@ -151,6 +139,18 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 				set	
 				{
 					sequenceId = value;
+				}
+			}
+
+			public string Utterance
+			{
+				get
+				{
+					return utterance;
+				}
+				set	
+				{
+					utterance = value;
 				}
 			}
 		}

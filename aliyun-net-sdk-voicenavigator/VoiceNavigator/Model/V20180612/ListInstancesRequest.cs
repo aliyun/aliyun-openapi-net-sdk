@@ -41,6 +41,8 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 
 		private int? pageNumber;
 
+		private string nluServiceTypeListJsonString;
+
 		private int? pageSize;
 
 		public int? PageNumber
@@ -53,6 +55,19 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string NluServiceTypeListJsonString
+		{
+			get
+			{
+				return nluServiceTypeListJsonString;
+			}
+			set	
+			{
+				nluServiceTypeListJsonString = value;
+				DictionaryUtil.Add(QueryParameters, "NluServiceTypeListJsonString", value);
 			}
 		}
 

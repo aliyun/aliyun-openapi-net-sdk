@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
@@ -27,17 +27,17 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 
 		private string requestId;
 
-		private DescribeNavigationConfig_GreetingConfig greetingConfig;
-
-		private DescribeNavigationConfig_UnrecognizingConfig unrecognizingConfig;
-
 		private DescribeNavigationConfig_RepeatingConfig repeatingConfig;
 
 		private DescribeNavigationConfig_AskingBackConfig askingBackConfig;
 
-		private DescribeNavigationConfig_ComplainingConfig complainingConfig;
-
 		private DescribeNavigationConfig_SilenceTimeoutConfig silenceTimeoutConfig;
+
+		private DescribeNavigationConfig_GreetingConfig greetingConfig;
+
+		private DescribeNavigationConfig_UnrecognizingConfig unrecognizingConfig;
+
+		private DescribeNavigationConfig_ComplainingConfig complainingConfig;
 
 		public string RequestId
 		{
@@ -48,30 +48,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public DescribeNavigationConfig_GreetingConfig GreetingConfig
-		{
-			get
-			{
-				return greetingConfig;
-			}
-			set	
-			{
-				greetingConfig = value;
-			}
-		}
-
-		public DescribeNavigationConfig_UnrecognizingConfig UnrecognizingConfig
-		{
-			get
-			{
-				return unrecognizingConfig;
-			}
-			set	
-			{
-				unrecognizingConfig = value;
 			}
 		}
 
@@ -99,18 +75,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
-		public DescribeNavigationConfig_ComplainingConfig ComplainingConfig
-		{
-			get
-			{
-				return complainingConfig;
-			}
-			set	
-			{
-				complainingConfig = value;
-			}
-		}
-
 		public DescribeNavigationConfig_SilenceTimeoutConfig SilenceTimeoutConfig
 		{
 			get
@@ -123,123 +87,39 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
-		public class DescribeNavigationConfig_GreetingConfig
+		public DescribeNavigationConfig_GreetingConfig GreetingConfig
 		{
-
-			private string greetingWords;
-
-			private string sourceType;
-
-			private string intentTrigger;
-
-			public string GreetingWords
+			get
 			{
-				get
-				{
-					return greetingWords;
-				}
-				set	
-				{
-					greetingWords = value;
-				}
+				return greetingConfig;
 			}
-
-			public string SourceType
+			set	
 			{
-				get
-				{
-					return sourceType;
-				}
-				set	
-				{
-					sourceType = value;
-				}
-			}
-
-			public string IntentTrigger
-			{
-				get
-				{
-					return intentTrigger;
-				}
-				set	
-				{
-					intentTrigger = value;
-				}
+				greetingConfig = value;
 			}
 		}
 
-		public class DescribeNavigationConfig_UnrecognizingConfig
+		public DescribeNavigationConfig_UnrecognizingConfig UnrecognizingConfig
 		{
-
-			private string prompt;
-
-			private int? threshold;
-
-			private string finalPrompt;
-
-			private string finalAction;
-
-			private string finalActionParams;
-
-			public string Prompt
+			get
 			{
-				get
-				{
-					return prompt;
-				}
-				set	
-				{
-					prompt = value;
-				}
+				return unrecognizingConfig;
 			}
-
-			public int? Threshold
+			set	
 			{
-				get
-				{
-					return threshold;
-				}
-				set	
-				{
-					threshold = value;
-				}
+				unrecognizingConfig = value;
 			}
+		}
 
-			public string FinalPrompt
+		public DescribeNavigationConfig_ComplainingConfig ComplainingConfig
+		{
+			get
 			{
-				get
-				{
-					return finalPrompt;
-				}
-				set	
-				{
-					finalPrompt = value;
-				}
+				return complainingConfig;
 			}
-
-			public string FinalAction
+			set	
 			{
-				get
-				{
-					return finalAction;
-				}
-				set	
-				{
-					finalAction = value;
-				}
-			}
-
-			public string FinalActionParams
-			{
-				get
-				{
-					return finalActionParams;
-				}
-				set	
-				{
-					finalActionParams = value;
-				}
+				complainingConfig = value;
 			}
 		}
 
@@ -264,55 +144,19 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 		public class DescribeNavigationConfig_AskingBackConfig
 		{
 
-			private bool? enabled;
-
-			private string prompt;
-
-			private bool? enableNegativeFeedback;
-
 			private string negativeFeedbackPrompt;
 
 			private string negativeFeedbackAction;
 
 			private string negativeFeedbackActionParams;
 
+			private bool? enableNegativeFeedback;
+
+			private bool? enabled;
+
+			private string prompt;
+
 			private List<string> negativeFeedbackUtterances;
-
-			public bool? Enabled
-			{
-				get
-				{
-					return enabled;
-				}
-				set	
-				{
-					enabled = value;
-				}
-			}
-
-			public string Prompt
-			{
-				get
-				{
-					return prompt;
-				}
-				set	
-				{
-					prompt = value;
-				}
-			}
-
-			public bool? EnableNegativeFeedback
-			{
-				get
-				{
-					return enableNegativeFeedback;
-				}
-				set	
-				{
-					enableNegativeFeedback = value;
-				}
-			}
 
 			public string NegativeFeedbackPrompt
 			{
@@ -350,6 +194,42 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 				}
 			}
 
+			public bool? EnableNegativeFeedback
+			{
+				get
+				{
+					return enableNegativeFeedback;
+				}
+				set	
+				{
+					enableNegativeFeedback = value;
+				}
+			}
+
+			public bool? Enabled
+			{
+				get
+				{
+					return enabled;
+				}
+				set	
+				{
+					enabled = value;
+				}
+			}
+
+			public string Prompt
+			{
+				get
+				{
+					return prompt;
+				}
+				set	
+				{
+					prompt = value;
+				}
+			}
+
 			public List<string> NegativeFeedbackUtterances
 			{
 				get
@@ -363,26 +243,70 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
-		public class DescribeNavigationConfig_ComplainingConfig
+		public class DescribeNavigationConfig_SilenceTimeoutConfig
 		{
 
-			private string prompt;
+			private long? timeout;
+
+			private string intentTrigger;
+
+			private string finalPrompt;
+
+			private string sourceType;
 
 			private string finalAction;
 
+			private string prompt;
+
+			private int? threshold;
+
 			private string finalActionParams;
 
-			private List<string> utterances1;
-
-			public string Prompt
+			public long? Timeout
 			{
 				get
 				{
-					return prompt;
+					return timeout;
 				}
 				set	
 				{
-					prompt = value;
+					timeout = value;
+				}
+			}
+
+			public string IntentTrigger
+			{
+				get
+				{
+					return intentTrigger;
+				}
+				set	
+				{
+					intentTrigger = value;
+				}
+			}
+
+			public string FinalPrompt
+			{
+				get
+				{
+					return finalPrompt;
+				}
+				set	
+				{
+					finalPrompt = value;
+				}
+			}
+
+			public string SourceType
+			{
+				get
+				{
+					return sourceType;
+				}
+				set	
+				{
+					sourceType = value;
 				}
 			}
 
@@ -398,50 +322,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 				}
 			}
 
-			public string FinalActionParams
-			{
-				get
-				{
-					return finalActionParams;
-				}
-				set	
-				{
-					finalActionParams = value;
-				}
-			}
-
-			public List<string> Utterances1
-			{
-				get
-				{
-					return utterances1;
-				}
-				set	
-				{
-					utterances1 = value;
-				}
-			}
-		}
-
-		public class DescribeNavigationConfig_SilenceTimeoutConfig
-		{
-
-			private string prompt;
-
-			private long? timeout;
-
-			private int? threshold;
-
-			private string finalPrompt;
-
-			private string finalAction;
-
-			private string finalActionParams;
-
-			private string sourceType;
-
-			private string intentTrigger;
-
 			public string Prompt
 			{
 				get
@@ -451,18 +331,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 				set	
 				{
 					prompt = value;
-				}
-			}
-
-			public long? Timeout
-			{
-				get
-				{
-					return timeout;
-				}
-				set	
-				{
-					timeout = value;
 				}
 			}
 
@@ -477,6 +345,78 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 					threshold = value;
 				}
 			}
+
+			public string FinalActionParams
+			{
+				get
+				{
+					return finalActionParams;
+				}
+				set	
+				{
+					finalActionParams = value;
+				}
+			}
+		}
+
+		public class DescribeNavigationConfig_GreetingConfig
+		{
+
+			private string intentTrigger;
+
+			private string greetingWords;
+
+			private string sourceType;
+
+			public string IntentTrigger
+			{
+				get
+				{
+					return intentTrigger;
+				}
+				set	
+				{
+					intentTrigger = value;
+				}
+			}
+
+			public string GreetingWords
+			{
+				get
+				{
+					return greetingWords;
+				}
+				set	
+				{
+					greetingWords = value;
+				}
+			}
+
+			public string SourceType
+			{
+				get
+				{
+					return sourceType;
+				}
+				set	
+				{
+					sourceType = value;
+				}
+			}
+		}
+
+		public class DescribeNavigationConfig_UnrecognizingConfig
+		{
+
+			private string finalPrompt;
+
+			private string finalAction;
+
+			private string finalActionParams;
+
+			private int? threshold;
+
+			private string prompt;
 
 			public string FinalPrompt
 			{
@@ -514,27 +454,87 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 				}
 			}
 
-			public string SourceType
+			public int? Threshold
 			{
 				get
 				{
-					return sourceType;
+					return threshold;
 				}
 				set	
 				{
-					sourceType = value;
+					threshold = value;
 				}
 			}
 
-			public string IntentTrigger
+			public string Prompt
 			{
 				get
 				{
-					return intentTrigger;
+					return prompt;
 				}
 				set	
 				{
-					intentTrigger = value;
+					prompt = value;
+				}
+			}
+		}
+
+		public class DescribeNavigationConfig_ComplainingConfig
+		{
+
+			private string finalAction;
+
+			private string prompt;
+
+			private string finalActionParams;
+
+			private List<string> utterances1;
+
+			public string FinalAction
+			{
+				get
+				{
+					return finalAction;
+				}
+				set	
+				{
+					finalAction = value;
+				}
+			}
+
+			public string Prompt
+			{
+				get
+				{
+					return prompt;
+				}
+				set	
+				{
+					prompt = value;
+				}
+			}
+
+			public string FinalActionParams
+			{
+				get
+				{
+					return finalActionParams;
+				}
+				set	
+				{
+					finalActionParams = value;
+				}
+			}
+
+			public List<string> Utterances1
+			{
+				get
+				{
+					return utterances1;
+				}
+				set	
+				{
+					utterances1 = value;
 				}
 			}
 		}

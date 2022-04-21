@@ -31,15 +31,15 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 			DescribeInstanceResponse describeInstanceResponse = new DescribeInstanceResponse();
 
 			describeInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			describeInstanceResponse.Status = _ctx.StringValue("DescribeInstance.Status");
+			describeInstanceResponse.ModifyTime = _ctx.LongValue("DescribeInstance.ModifyTime");
+			describeInstanceResponse.Description = _ctx.StringValue("DescribeInstance.Description");
 			describeInstanceResponse.RequestId = _ctx.StringValue("DescribeInstance.RequestId");
 			describeInstanceResponse.InstanceId = _ctx.StringValue("DescribeInstance.InstanceId");
-			describeInstanceResponse.Name = _ctx.StringValue("DescribeInstance.Name");
-			describeInstanceResponse.Description = _ctx.StringValue("DescribeInstance.Description");
-			describeInstanceResponse.Status = _ctx.StringValue("DescribeInstance.Status");
 			describeInstanceResponse.Concurrency = _ctx.LongValue("DescribeInstance.Concurrency");
-			describeInstanceResponse.ModifyTime = _ctx.LongValue("DescribeInstance.ModifyTime");
 			describeInstanceResponse.ModifyUserName = _ctx.StringValue("DescribeInstance.ModifyUserName");
 			describeInstanceResponse.NluServiceType = _ctx.StringValue("DescribeInstance.NluServiceType");
+			describeInstanceResponse.Name = _ctx.StringValue("DescribeInstance.Name");
 
 			List<string> describeInstanceResponse_applicableOperations = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeInstance.ApplicableOperations.Length"); i++) {

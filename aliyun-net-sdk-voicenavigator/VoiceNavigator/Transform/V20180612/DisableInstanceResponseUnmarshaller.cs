@@ -31,8 +31,8 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 			DisableInstanceResponse disableInstanceResponse = new DisableInstanceResponse();
 
 			disableInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			disableInstanceResponse.RequestId = _ctx.StringValue("DisableInstance.RequestId");
 			disableInstanceResponse.Status = _ctx.StringValue("DisableInstance.Status");
+			disableInstanceResponse.RequestId = _ctx.StringValue("DisableInstance.RequestId");
         
 			return disableInstanceResponse;
         }

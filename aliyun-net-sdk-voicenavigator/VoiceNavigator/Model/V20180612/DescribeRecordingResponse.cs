@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
@@ -25,11 +25,23 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 	public class DescribeRecordingResponse : AcsResponse
 	{
 
+		private string filePath;
+
 		private string requestId;
 
 		private string fileName;
 
-		private string filePath;
+		public string FilePath
+		{
+			get
+			{
+				return filePath;
+			}
+			set	
+			{
+				filePath = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -52,18 +64,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			set	
 			{
 				fileName = value;
-			}
-		}
-
-		public string FilePath
-		{
-			get
-			{
-				return filePath;
-			}
-			set	
-			{
-				filePath = value;
 			}
 		}
 	}

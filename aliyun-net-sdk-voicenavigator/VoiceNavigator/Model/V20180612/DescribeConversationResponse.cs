@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
@@ -25,107 +25,23 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 	public class DescribeConversationResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string callingNumber;
-
-		private long? beginTime;
-
-		private long? endTime;
-
-		private bool? transferredToAgent;
-
-		private string skillGroupId;
-
-		private int? userUtteranceCount;
-
 		private int? effectiveAnswerCount;
 
 		private string conversationId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private bool? transferredToAgent;
 
-		public string CallingNumber
-		{
-			get
-			{
-				return callingNumber;
-			}
-			set	
-			{
-				callingNumber = value;
-			}
-		}
+		private long? endTime;
 
-		public long? BeginTime
-		{
-			get
-			{
-				return beginTime;
-			}
-			set	
-			{
-				beginTime = value;
-			}
-		}
+		private string requestId;
 
-		public long? EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
+		private long? beginTime;
 
-		public bool? TransferredToAgent
-		{
-			get
-			{
-				return transferredToAgent;
-			}
-			set	
-			{
-				transferredToAgent = value;
-			}
-		}
+		private string skillGroupId;
 
-		public string SkillGroupId
-		{
-			get
-			{
-				return skillGroupId;
-			}
-			set	
-			{
-				skillGroupId = value;
-			}
-		}
+		private string callingNumber;
 
-		public int? UserUtteranceCount
-		{
-			get
-			{
-				return userUtteranceCount;
-			}
-			set	
-			{
-				userUtteranceCount = value;
-			}
-		}
+		private int? userUtteranceCount;
 
 		public int? EffectiveAnswerCount
 		{
@@ -148,6 +64,90 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			set	
 			{
 				conversationId = value;
+			}
+		}
+
+		public bool? TransferredToAgent
+		{
+			get
+			{
+				return transferredToAgent;
+			}
+			set	
+			{
+				transferredToAgent = value;
+			}
+		}
+
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public long? BeginTime
+		{
+			get
+			{
+				return beginTime;
+			}
+			set	
+			{
+				beginTime = value;
+			}
+		}
+
+		public string SkillGroupId
+		{
+			get
+			{
+				return skillGroupId;
+			}
+			set	
+			{
+				skillGroupId = value;
+			}
+		}
+
+		public string CallingNumber
+		{
+			get
+			{
+				return callingNumber;
+			}
+			set	
+			{
+				callingNumber = value;
+			}
+		}
+
+		public int? UserUtteranceCount
+		{
+			get
+			{
+				return userUtteranceCount;
+			}
+			set	
+			{
+				userUtteranceCount = value;
 			}
 		}
 	}

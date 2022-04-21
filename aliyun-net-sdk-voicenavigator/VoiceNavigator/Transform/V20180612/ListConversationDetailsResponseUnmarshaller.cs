@@ -36,13 +36,13 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 			List<ListConversationDetailsResponse.ListConversationDetails_ConversationDetail> listConversationDetailsResponse_conversationDetails = new List<ListConversationDetailsResponse.ListConversationDetails_ConversationDetail>();
 			for (int i = 0; i < _ctx.Length("ListConversationDetails.ConversationDetails.Length"); i++) {
 				ListConversationDetailsResponse.ListConversationDetails_ConversationDetail conversationDetail = new ListConversationDetailsResponse.ListConversationDetails_ConversationDetail();
-				conversationDetail.ConversationId = _ctx.StringValue("ListConversationDetails.ConversationDetails["+ i +"].ConversationId");
-				conversationDetail.Speaker = _ctx.StringValue("ListConversationDetails.ConversationDetails["+ i +"].Speaker");
-				conversationDetail.Utterance = _ctx.StringValue("ListConversationDetails.ConversationDetails["+ i +"].Utterance");
 				conversationDetail.Action = _ctx.StringValue("ListConversationDetails.ConversationDetails["+ i +"].Action");
-				conversationDetail.ActionParams = _ctx.StringValue("ListConversationDetails.ConversationDetails["+ i +"].ActionParams");
+				conversationDetail.Speaker = _ctx.StringValue("ListConversationDetails.ConversationDetails["+ i +"].Speaker");
 				conversationDetail.CreateTime = _ctx.LongValue("ListConversationDetails.ConversationDetails["+ i +"].CreateTime");
+				conversationDetail.ConversationId = _ctx.StringValue("ListConversationDetails.ConversationDetails["+ i +"].ConversationId");
+				conversationDetail.ActionParams = _ctx.StringValue("ListConversationDetails.ConversationDetails["+ i +"].ActionParams");
 				conversationDetail.SequenceId = _ctx.StringValue("ListConversationDetails.ConversationDetails["+ i +"].SequenceId");
+				conversationDetail.Utterance = _ctx.StringValue("ListConversationDetails.ConversationDetails["+ i +"].Utterance");
 
 				listConversationDetailsResponse_conversationDetails.Add(conversationDetail);
 			}

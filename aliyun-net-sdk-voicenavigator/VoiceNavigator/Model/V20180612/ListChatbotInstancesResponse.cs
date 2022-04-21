@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 	public class ListChatbotInstancesResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? pageNumber;
-
 		private long? totalCount;
 
 		private long? pageSize;
 
+		private string requestId;
+
+		private int? pageNumber;
+
 		private List<ListChatbotInstances_Bot> bots;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
 
 		public long? TotalCount
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
 		public List<ListChatbotInstances_Bot> Bots
 		{
 			get
@@ -98,41 +98,29 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 		public class ListChatbotInstances_Bot
 		{
 
-			private string instanceId;
-
-			private string timeZone;
+			private string introduction;
 
 			private string avatar;
 
-			private string languageCode;
-
-			private string name;
-
-			private string introduction;
+			private string timeZone;
 
 			private string createTime;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private string languageCode;
 
-			public string TimeZone
+			private string instanceId;
+
+			private string name;
+
+			public string Introduction
 			{
 				get
 				{
-					return timeZone;
+					return introduction;
 				}
 				set	
 				{
-					timeZone = value;
+					introduction = value;
 				}
 			}
 
@@ -148,39 +136,15 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 				}
 			}
 
-			public string LanguageCode
+			public string TimeZone
 			{
 				get
 				{
-					return languageCode;
+					return timeZone;
 				}
 				set	
 				{
-					languageCode = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Introduction
-			{
-				get
-				{
-					return introduction;
-				}
-				set	
-				{
-					introduction = value;
+					timeZone = value;
 				}
 			}
 
@@ -193,6 +157,42 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 				set	
 				{
 					createTime = value;
+				}
+			}
+
+			public string LanguageCode
+			{
+				get
+				{
+					return languageCode;
+				}
+				set	
+				{
+					languageCode = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 		}

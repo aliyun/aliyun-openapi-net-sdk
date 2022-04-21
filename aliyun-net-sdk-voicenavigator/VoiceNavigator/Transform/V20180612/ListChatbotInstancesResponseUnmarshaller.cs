@@ -31,21 +31,21 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 			ListChatbotInstancesResponse listChatbotInstancesResponse = new ListChatbotInstancesResponse();
 
 			listChatbotInstancesResponse.HttpResponse = _ctx.HttpResponse;
-			listChatbotInstancesResponse.RequestId = _ctx.StringValue("ListChatbotInstances.RequestId");
-			listChatbotInstancesResponse.PageNumber = _ctx.IntegerValue("ListChatbotInstances.PageNumber");
 			listChatbotInstancesResponse.TotalCount = _ctx.LongValue("ListChatbotInstances.TotalCount");
 			listChatbotInstancesResponse.PageSize = _ctx.LongValue("ListChatbotInstances.PageSize");
+			listChatbotInstancesResponse.RequestId = _ctx.StringValue("ListChatbotInstances.RequestId");
+			listChatbotInstancesResponse.PageNumber = _ctx.IntegerValue("ListChatbotInstances.PageNumber");
 
 			List<ListChatbotInstancesResponse.ListChatbotInstances_Bot> listChatbotInstancesResponse_bots = new List<ListChatbotInstancesResponse.ListChatbotInstances_Bot>();
 			for (int i = 0; i < _ctx.Length("ListChatbotInstances.Bots.Length"); i++) {
 				ListChatbotInstancesResponse.ListChatbotInstances_Bot bot = new ListChatbotInstancesResponse.ListChatbotInstances_Bot();
-				bot.InstanceId = _ctx.StringValue("ListChatbotInstances.Bots["+ i +"].InstanceId");
-				bot.TimeZone = _ctx.StringValue("ListChatbotInstances.Bots["+ i +"].TimeZone");
-				bot.Avatar = _ctx.StringValue("ListChatbotInstances.Bots["+ i +"].Avatar");
-				bot.LanguageCode = _ctx.StringValue("ListChatbotInstances.Bots["+ i +"].LanguageCode");
-				bot.Name = _ctx.StringValue("ListChatbotInstances.Bots["+ i +"].Name");
 				bot.Introduction = _ctx.StringValue("ListChatbotInstances.Bots["+ i +"].Introduction");
+				bot.Avatar = _ctx.StringValue("ListChatbotInstances.Bots["+ i +"].Avatar");
+				bot.TimeZone = _ctx.StringValue("ListChatbotInstances.Bots["+ i +"].TimeZone");
 				bot.CreateTime = _ctx.StringValue("ListChatbotInstances.Bots["+ i +"].CreateTime");
+				bot.LanguageCode = _ctx.StringValue("ListChatbotInstances.Bots["+ i +"].LanguageCode");
+				bot.InstanceId = _ctx.StringValue("ListChatbotInstances.Bots["+ i +"].InstanceId");
+				bot.Name = _ctx.StringValue("ListChatbotInstances.Bots["+ i +"].Name");
 
 				listChatbotInstancesResponse_bots.Add(bot);
 			}

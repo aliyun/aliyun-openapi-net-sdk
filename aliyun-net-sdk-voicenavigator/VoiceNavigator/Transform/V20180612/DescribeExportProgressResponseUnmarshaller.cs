@@ -31,8 +31,8 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 			DescribeExportProgressResponse describeExportProgressResponse = new DescribeExportProgressResponse();
 
 			describeExportProgressResponse.HttpResponse = _ctx.HttpResponse;
-			describeExportProgressResponse.RequestId = _ctx.StringValue("DescribeExportProgress.RequestId");
 			describeExportProgressResponse.Status = _ctx.StringValue("DescribeExportProgress.Status");
+			describeExportProgressResponse.RequestId = _ctx.StringValue("DescribeExportProgress.RequestId");
 			describeExportProgressResponse.FileHttpUrl = _ctx.StringValue("DescribeExportProgress.FileHttpUrl");
         
 			return describeExportProgressResponse;

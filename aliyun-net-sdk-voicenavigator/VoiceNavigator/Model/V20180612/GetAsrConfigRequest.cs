@@ -27,10 +27,10 @@ using Aliyun.Acs.VoiceNavigator.Transform.V20180612;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 {
-    public class DeleteSandBoxWhileListRequest : RpcAcsRequest<DeleteSandBoxWhileListResponse>
+    public class GetAsrConfigRequest : RpcAcsRequest<GetAsrConfigResponse>
     {
-        public DeleteSandBoxWhileListRequest()
-            : base("VoiceNavigator", "2018-06-12", "DeleteSandBoxWhileList", "voicebot", "openAPI")
+        public GetAsrConfigRequest()
+            : base("VoiceNavigator", "2018-06-12", "GetAsrConfig", "voicebot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,33 +40,33 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			Method = MethodType.POST;
         }
 
-		private string phoneNumber;
+		private string entryId;
 
-		private string instanceId;
+		private int? configLevel;
 
-		public string PhoneNumber
+		public string EntryId
 		{
 			get
 			{
-				return phoneNumber;
+				return entryId;
 			}
 			set	
 			{
-				phoneNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PhoneNumber", value);
+				entryId = value;
+				DictionaryUtil.Add(QueryParameters, "EntryId", value);
 			}
 		}
 
-		public string InstanceId
+		public int? ConfigLevel
 		{
 			get
 			{
-				return instanceId;
+				return configLevel;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				configLevel = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigLevel", value.ToString());
 			}
 		}
 
@@ -75,9 +75,9 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			return false;
 		}
 
-        public override DeleteSandBoxWhileListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetAsrConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteSandBoxWhileListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetAsrConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

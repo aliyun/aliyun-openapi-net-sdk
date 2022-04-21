@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
@@ -27,11 +27,11 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 
 		private string action;
 
-		private string actionParams;
-
 		private bool? interruptible;
 
 		private string requestId;
+
+		private string actionParams;
 
 		private string textResponse;
 
@@ -44,18 +44,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			set	
 			{
 				action = value;
-			}
-		}
-
-		public string ActionParams
-		{
-			get
-			{
-				return actionParams;
-			}
-			set	
-			{
-				actionParams = value;
 			}
 		}
 
@@ -80,6 +68,18 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ActionParams
+		{
+			get
+			{
+				return actionParams;
+			}
+			set	
+			{
+				actionParams = value;
 			}
 		}
 

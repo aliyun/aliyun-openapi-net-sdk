@@ -17,29 +17,35 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 {
-	public class EnableSandBoxWhileListResponse : AcsResponse
+	public class ModifyAsrConfigResponse : AcsResponse
 	{
 
-		private string uuid;
+		private bool? success;
 
 		private string requestId;
 
-		private string phoneNumber;
+		private int? httpStatusCode;
 
-		public string Uuid
+		private string code;
+
+		private string errorMsg;
+
+		private ModifyAsrConfig_Data data;
+
+		public bool? Success
 		{
 			get
 			{
-				return uuid;
+				return success;
 			}
 			set	
 			{
-				uuid = value;
+				success = value;
 			}
 		}
 
@@ -55,15 +61,69 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
-		public string PhoneNumber
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return phoneNumber;
+				return httpStatusCode;
 			}
 			set	
 			{
-				phoneNumber = value;
+				httpStatusCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string ErrorMsg
+		{
+			get
+			{
+				return errorMsg;
+			}
+			set	
+			{
+				errorMsg = value;
+			}
+		}
+
+		public ModifyAsrConfig_Data Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class ModifyAsrConfig_Data
+		{
+
+			private int? affectedRows;
+
+			public int? AffectedRows
+			{
+				get
+				{
+					return affectedRows;
+				}
+				set	
+				{
+					affectedRows = value;
+				}
 			}
 		}
 	}

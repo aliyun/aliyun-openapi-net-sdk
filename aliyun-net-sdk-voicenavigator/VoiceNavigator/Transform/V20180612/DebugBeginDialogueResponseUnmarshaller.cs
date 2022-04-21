@@ -32,9 +32,9 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 
 			debugBeginDialogueResponse.HttpResponse = _ctx.HttpResponse;
 			debugBeginDialogueResponse.Action = _ctx.StringValue("DebugBeginDialogue.Action");
-			debugBeginDialogueResponse.ActionParams = _ctx.StringValue("DebugBeginDialogue.ActionParams");
 			debugBeginDialogueResponse.Interruptible = _ctx.BooleanValue("DebugBeginDialogue.Interruptible");
 			debugBeginDialogueResponse.RequestId = _ctx.StringValue("DebugBeginDialogue.RequestId");
+			debugBeginDialogueResponse.ActionParams = _ctx.StringValue("DebugBeginDialogue.ActionParams");
 			debugBeginDialogueResponse.TextResponse = _ctx.StringValue("DebugBeginDialogue.TextResponse");
         
 			return debugBeginDialogueResponse;

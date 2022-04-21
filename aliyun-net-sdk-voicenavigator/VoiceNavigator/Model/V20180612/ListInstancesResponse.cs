@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 	public class ListInstancesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
-
-		private int? pageNumber;
 
 		private int? pageSize;
 
-		private List<ListInstances_Instance> instances;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private int? pageNumber;
+
+		private List<ListInstances_Instance> instances;
 
 		public int? TotalCount
 		{
@@ -59,18 +47,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
 			}
 		}
 
@@ -98,23 +98,71 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 		public class ListInstances_Instance
 		{
 
-			private string instanceId;
+			private string status;
 
-			private string name;
+			private string nluServiceType;
+
+			private string modifyUserName;
 
 			private string description;
 
-			private string status;
+			private string instanceId;
+
+			private string name;
 
 			private long? concurrency;
 
 			private long? modifyTime;
 
-			private string modifyUserName;
-
-			private string nluServiceType;
-
 			private List<string> applicableOperations;
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string NluServiceType
+			{
+				get
+				{
+					return nluServiceType;
+				}
+				set	
+				{
+					nluServiceType = value;
+				}
+			}
+
+			public string ModifyUserName
+			{
+				get
+				{
+					return modifyUserName;
+				}
+				set	
+				{
+					modifyUserName = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
 
 			public string InstanceId
 			{
@@ -140,30 +188,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 				}
 			}
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
 			public long? Concurrency
 			{
 				get
@@ -185,30 +209,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 				set	
 				{
 					modifyTime = value;
-				}
-			}
-
-			public string ModifyUserName
-			{
-				get
-				{
-					return modifyUserName;
-				}
-				set	
-				{
-					modifyUserName = value;
-				}
-			}
-
-			public string NluServiceType
-			{
-				get
-				{
-					return nluServiceType;
-				}
-				set	
-				{
-					nluServiceType = value;
 				}
 			}
 

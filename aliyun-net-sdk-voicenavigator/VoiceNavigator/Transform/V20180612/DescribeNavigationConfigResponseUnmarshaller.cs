@@ -33,20 +33,6 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 			describeNavigationConfigResponse.HttpResponse = _ctx.HttpResponse;
 			describeNavigationConfigResponse.RequestId = _ctx.StringValue("DescribeNavigationConfig.RequestId");
 
-			DescribeNavigationConfigResponse.DescribeNavigationConfig_GreetingConfig greetingConfig = new DescribeNavigationConfigResponse.DescribeNavigationConfig_GreetingConfig();
-			greetingConfig.GreetingWords = _ctx.StringValue("DescribeNavigationConfig.GreetingConfig.GreetingWords");
-			greetingConfig.SourceType = _ctx.StringValue("DescribeNavigationConfig.GreetingConfig.SourceType");
-			greetingConfig.IntentTrigger = _ctx.StringValue("DescribeNavigationConfig.GreetingConfig.IntentTrigger");
-			describeNavigationConfigResponse.GreetingConfig = greetingConfig;
-
-			DescribeNavigationConfigResponse.DescribeNavigationConfig_UnrecognizingConfig unrecognizingConfig = new DescribeNavigationConfigResponse.DescribeNavigationConfig_UnrecognizingConfig();
-			unrecognizingConfig.Prompt = _ctx.StringValue("DescribeNavigationConfig.UnrecognizingConfig.Prompt");
-			unrecognizingConfig.Threshold = _ctx.IntegerValue("DescribeNavigationConfig.UnrecognizingConfig.Threshold");
-			unrecognizingConfig.FinalPrompt = _ctx.StringValue("DescribeNavigationConfig.UnrecognizingConfig.FinalPrompt");
-			unrecognizingConfig.FinalAction = _ctx.StringValue("DescribeNavigationConfig.UnrecognizingConfig.FinalAction");
-			unrecognizingConfig.FinalActionParams = _ctx.StringValue("DescribeNavigationConfig.UnrecognizingConfig.FinalActionParams");
-			describeNavigationConfigResponse.UnrecognizingConfig = unrecognizingConfig;
-
 			DescribeNavigationConfigResponse.DescribeNavigationConfig_RepeatingConfig repeatingConfig = new DescribeNavigationConfigResponse.DescribeNavigationConfig_RepeatingConfig();
 
 			List<string> repeatingConfig_utterances = new List<string>();
@@ -57,12 +43,12 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 			describeNavigationConfigResponse.RepeatingConfig = repeatingConfig;
 
 			DescribeNavigationConfigResponse.DescribeNavigationConfig_AskingBackConfig askingBackConfig = new DescribeNavigationConfigResponse.DescribeNavigationConfig_AskingBackConfig();
-			askingBackConfig.Enabled = _ctx.BooleanValue("DescribeNavigationConfig.AskingBackConfig.Enabled");
-			askingBackConfig.Prompt = _ctx.StringValue("DescribeNavigationConfig.AskingBackConfig.Prompt");
-			askingBackConfig.EnableNegativeFeedback = _ctx.BooleanValue("DescribeNavigationConfig.AskingBackConfig.EnableNegativeFeedback");
 			askingBackConfig.NegativeFeedbackPrompt = _ctx.StringValue("DescribeNavigationConfig.AskingBackConfig.NegativeFeedbackPrompt");
 			askingBackConfig.NegativeFeedbackAction = _ctx.StringValue("DescribeNavigationConfig.AskingBackConfig.NegativeFeedbackAction");
 			askingBackConfig.NegativeFeedbackActionParams = _ctx.StringValue("DescribeNavigationConfig.AskingBackConfig.NegativeFeedbackActionParams");
+			askingBackConfig.EnableNegativeFeedback = _ctx.BooleanValue("DescribeNavigationConfig.AskingBackConfig.EnableNegativeFeedback");
+			askingBackConfig.Enabled = _ctx.BooleanValue("DescribeNavigationConfig.AskingBackConfig.Enabled");
+			askingBackConfig.Prompt = _ctx.StringValue("DescribeNavigationConfig.AskingBackConfig.Prompt");
 
 			List<string> askingBackConfig_negativeFeedbackUtterances = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeNavigationConfig.AskingBackConfig.NegativeFeedbackUtterances.Length"); i++) {
@@ -71,9 +57,34 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 			askingBackConfig.NegativeFeedbackUtterances = askingBackConfig_negativeFeedbackUtterances;
 			describeNavigationConfigResponse.AskingBackConfig = askingBackConfig;
 
+			DescribeNavigationConfigResponse.DescribeNavigationConfig_SilenceTimeoutConfig silenceTimeoutConfig = new DescribeNavigationConfigResponse.DescribeNavigationConfig_SilenceTimeoutConfig();
+			silenceTimeoutConfig.Timeout = _ctx.LongValue("DescribeNavigationConfig.SilenceTimeoutConfig.Timeout");
+			silenceTimeoutConfig.IntentTrigger = _ctx.StringValue("DescribeNavigationConfig.SilenceTimeoutConfig.IntentTrigger");
+			silenceTimeoutConfig.FinalPrompt = _ctx.StringValue("DescribeNavigationConfig.SilenceTimeoutConfig.FinalPrompt");
+			silenceTimeoutConfig.SourceType = _ctx.StringValue("DescribeNavigationConfig.SilenceTimeoutConfig.SourceType");
+			silenceTimeoutConfig.FinalAction = _ctx.StringValue("DescribeNavigationConfig.SilenceTimeoutConfig.FinalAction");
+			silenceTimeoutConfig.Prompt = _ctx.StringValue("DescribeNavigationConfig.SilenceTimeoutConfig.Prompt");
+			silenceTimeoutConfig.Threshold = _ctx.IntegerValue("DescribeNavigationConfig.SilenceTimeoutConfig.Threshold");
+			silenceTimeoutConfig.FinalActionParams = _ctx.StringValue("DescribeNavigationConfig.SilenceTimeoutConfig.FinalActionParams");
+			describeNavigationConfigResponse.SilenceTimeoutConfig = silenceTimeoutConfig;
+
+			DescribeNavigationConfigResponse.DescribeNavigationConfig_GreetingConfig greetingConfig = new DescribeNavigationConfigResponse.DescribeNavigationConfig_GreetingConfig();
+			greetingConfig.IntentTrigger = _ctx.StringValue("DescribeNavigationConfig.GreetingConfig.IntentTrigger");
+			greetingConfig.GreetingWords = _ctx.StringValue("DescribeNavigationConfig.GreetingConfig.GreetingWords");
+			greetingConfig.SourceType = _ctx.StringValue("DescribeNavigationConfig.GreetingConfig.SourceType");
+			describeNavigationConfigResponse.GreetingConfig = greetingConfig;
+
+			DescribeNavigationConfigResponse.DescribeNavigationConfig_UnrecognizingConfig unrecognizingConfig = new DescribeNavigationConfigResponse.DescribeNavigationConfig_UnrecognizingConfig();
+			unrecognizingConfig.FinalPrompt = _ctx.StringValue("DescribeNavigationConfig.UnrecognizingConfig.FinalPrompt");
+			unrecognizingConfig.FinalAction = _ctx.StringValue("DescribeNavigationConfig.UnrecognizingConfig.FinalAction");
+			unrecognizingConfig.FinalActionParams = _ctx.StringValue("DescribeNavigationConfig.UnrecognizingConfig.FinalActionParams");
+			unrecognizingConfig.Threshold = _ctx.IntegerValue("DescribeNavigationConfig.UnrecognizingConfig.Threshold");
+			unrecognizingConfig.Prompt = _ctx.StringValue("DescribeNavigationConfig.UnrecognizingConfig.Prompt");
+			describeNavigationConfigResponse.UnrecognizingConfig = unrecognizingConfig;
+
 			DescribeNavigationConfigResponse.DescribeNavigationConfig_ComplainingConfig complainingConfig = new DescribeNavigationConfigResponse.DescribeNavigationConfig_ComplainingConfig();
-			complainingConfig.Prompt = _ctx.StringValue("DescribeNavigationConfig.ComplainingConfig.Prompt");
 			complainingConfig.FinalAction = _ctx.StringValue("DescribeNavigationConfig.ComplainingConfig.FinalAction");
+			complainingConfig.Prompt = _ctx.StringValue("DescribeNavigationConfig.ComplainingConfig.Prompt");
 			complainingConfig.FinalActionParams = _ctx.StringValue("DescribeNavigationConfig.ComplainingConfig.FinalActionParams");
 
 			List<string> complainingConfig_utterances1 = new List<string>();
@@ -82,17 +93,6 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 			}
 			complainingConfig.Utterances1 = complainingConfig_utterances1;
 			describeNavigationConfigResponse.ComplainingConfig = complainingConfig;
-
-			DescribeNavigationConfigResponse.DescribeNavigationConfig_SilenceTimeoutConfig silenceTimeoutConfig = new DescribeNavigationConfigResponse.DescribeNavigationConfig_SilenceTimeoutConfig();
-			silenceTimeoutConfig.Prompt = _ctx.StringValue("DescribeNavigationConfig.SilenceTimeoutConfig.Prompt");
-			silenceTimeoutConfig.Timeout = _ctx.LongValue("DescribeNavigationConfig.SilenceTimeoutConfig.Timeout");
-			silenceTimeoutConfig.Threshold = _ctx.IntegerValue("DescribeNavigationConfig.SilenceTimeoutConfig.Threshold");
-			silenceTimeoutConfig.FinalPrompt = _ctx.StringValue("DescribeNavigationConfig.SilenceTimeoutConfig.FinalPrompt");
-			silenceTimeoutConfig.FinalAction = _ctx.StringValue("DescribeNavigationConfig.SilenceTimeoutConfig.FinalAction");
-			silenceTimeoutConfig.FinalActionParams = _ctx.StringValue("DescribeNavigationConfig.SilenceTimeoutConfig.FinalActionParams");
-			silenceTimeoutConfig.SourceType = _ctx.StringValue("DescribeNavigationConfig.SilenceTimeoutConfig.SourceType");
-			silenceTimeoutConfig.IntentTrigger = _ctx.StringValue("DescribeNavigationConfig.SilenceTimeoutConfig.IntentTrigger");
-			describeNavigationConfigResponse.SilenceTimeoutConfig = silenceTimeoutConfig;
         
 			return describeNavigationConfigResponse;
         }

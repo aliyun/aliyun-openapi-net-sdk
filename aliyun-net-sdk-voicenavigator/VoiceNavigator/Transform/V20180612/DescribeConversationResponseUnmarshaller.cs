@@ -31,15 +31,15 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 			DescribeConversationResponse describeConversationResponse = new DescribeConversationResponse();
 
 			describeConversationResponse.HttpResponse = _ctx.HttpResponse;
-			describeConversationResponse.RequestId = _ctx.StringValue("DescribeConversation.RequestId");
-			describeConversationResponse.CallingNumber = _ctx.StringValue("DescribeConversation.CallingNumber");
-			describeConversationResponse.BeginTime = _ctx.LongValue("DescribeConversation.BeginTime");
-			describeConversationResponse.EndTime = _ctx.LongValue("DescribeConversation.EndTime");
-			describeConversationResponse.TransferredToAgent = _ctx.BooleanValue("DescribeConversation.TransferredToAgent");
-			describeConversationResponse.SkillGroupId = _ctx.StringValue("DescribeConversation.SkillGroupId");
-			describeConversationResponse.UserUtteranceCount = _ctx.IntegerValue("DescribeConversation.UserUtteranceCount");
 			describeConversationResponse.EffectiveAnswerCount = _ctx.IntegerValue("DescribeConversation.EffectiveAnswerCount");
 			describeConversationResponse.ConversationId = _ctx.StringValue("DescribeConversation.ConversationId");
+			describeConversationResponse.TransferredToAgent = _ctx.BooleanValue("DescribeConversation.TransferredToAgent");
+			describeConversationResponse.EndTime = _ctx.LongValue("DescribeConversation.EndTime");
+			describeConversationResponse.RequestId = _ctx.StringValue("DescribeConversation.RequestId");
+			describeConversationResponse.BeginTime = _ctx.LongValue("DescribeConversation.BeginTime");
+			describeConversationResponse.SkillGroupId = _ctx.StringValue("DescribeConversation.SkillGroupId");
+			describeConversationResponse.CallingNumber = _ctx.StringValue("DescribeConversation.CallingNumber");
+			describeConversationResponse.UserUtteranceCount = _ctx.IntegerValue("DescribeConversation.UserUtteranceCount");
         
 			return describeConversationResponse;
         }

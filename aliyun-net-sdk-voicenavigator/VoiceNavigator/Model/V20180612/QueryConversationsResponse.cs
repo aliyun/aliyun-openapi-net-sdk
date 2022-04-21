@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 	public class QueryConversationsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? totalCount;
-
-		private int? pageNumber;
 
 		private int? pageSize;
 
-		private List<QueryConversations_Conversation> conversations;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private int? pageNumber;
+
+		private List<QueryConversations_Conversation> conversations;
 
 		public long? TotalCount
 		{
@@ -59,18 +47,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
 			}
 		}
 
@@ -98,45 +98,21 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 		public class QueryConversations_Conversation
 		{
 
-			private string callingNumber;
-
-			private long? beginTime;
-
 			private long? endTime;
-
-			private bool? transferredToAgent;
-
-			private string skillGroupId;
-
-			private int? userUtteranceCount;
 
 			private int? effectiveAnswerCount;
 
+			private bool? transferredToAgent;
+
+			private long? beginTime;
+
+			private string skillGroupId;
+
 			private string conversationId;
 
-			public string CallingNumber
-			{
-				get
-				{
-					return callingNumber;
-				}
-				set	
-				{
-					callingNumber = value;
-				}
-			}
+			private string callingNumber;
 
-			public long? BeginTime
-			{
-				get
-				{
-					return beginTime;
-				}
-				set	
-				{
-					beginTime = value;
-				}
-			}
+			private int? userUtteranceCount;
 
 			public long? EndTime
 			{
@@ -147,42 +123,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 				set	
 				{
 					endTime = value;
-				}
-			}
-
-			public bool? TransferredToAgent
-			{
-				get
-				{
-					return transferredToAgent;
-				}
-				set	
-				{
-					transferredToAgent = value;
-				}
-			}
-
-			public string SkillGroupId
-			{
-				get
-				{
-					return skillGroupId;
-				}
-				set	
-				{
-					skillGroupId = value;
-				}
-			}
-
-			public int? UserUtteranceCount
-			{
-				get
-				{
-					return userUtteranceCount;
-				}
-				set	
-				{
-					userUtteranceCount = value;
 				}
 			}
 
@@ -198,6 +138,42 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 				}
 			}
 
+			public bool? TransferredToAgent
+			{
+				get
+				{
+					return transferredToAgent;
+				}
+				set	
+				{
+					transferredToAgent = value;
+				}
+			}
+
+			public long? BeginTime
+			{
+				get
+				{
+					return beginTime;
+				}
+				set	
+				{
+					beginTime = value;
+				}
+			}
+
+			public string SkillGroupId
+			{
+				get
+				{
+					return skillGroupId;
+				}
+				set	
+				{
+					skillGroupId = value;
+				}
+			}
+
 			public string ConversationId
 			{
 				get
@@ -207,6 +183,30 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 				set	
 				{
 					conversationId = value;
+				}
+			}
+
+			public string CallingNumber
+			{
+				get
+				{
+					return callingNumber;
+				}
+				set	
+				{
+					callingNumber = value;
+				}
+			}
+
+			public int? UserUtteranceCount
+			{
+				get
+				{
+					return userUtteranceCount;
+				}
+				set	
+				{
+					userUtteranceCount = value;
 				}
 			}
 		}

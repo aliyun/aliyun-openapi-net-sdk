@@ -17,33 +17,71 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 {
-	public class ListSandBoxWhileListResponse : AcsResponse
+	public class GenerateUploadUrlResponse : AcsResponse
 	{
 
-		private int? pageSize;
+		private bool? success;
+
+		private string code;
+
+		private string message;
+
+		private int? httpStatusCode;
 
 		private string requestId;
 
-		private int? pageNumber;
+		private GenerateUploadUrl_Data data;
 
-		private long? totalCount;
-
-		private List<ListSandBoxWhileList_WhiteListItem> whiteList;
-
-		public int? PageSize
+		public bool? Success
 		{
 			get
 			{
-				return pageSize;
+				return success;
 			}
 			set	
 			{
-				pageSize = value;
+				success = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
 			}
 		}
 
@@ -59,154 +97,130 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
-		public int? PageNumber
+		public GenerateUploadUrl_Data Data
 		{
 			get
 			{
-				return pageNumber;
+				return data;
 			}
 			set	
 			{
-				pageNumber = value;
+				data = value;
 			}
 		}
 
-		public long? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
-
-		public List<ListSandBoxWhileList_WhiteListItem> WhiteList
-		{
-			get
-			{
-				return whiteList;
-			}
-			set	
-			{
-				whiteList = value;
-			}
-		}
-
-		public class ListSandBoxWhileList_WhiteListItem
+		public class GenerateUploadUrl_Data
 		{
 
-			private string uuid;
+			private string accessId;
 
-			private string phoneNumber;
+			private string policy;
 
-			private string description;
+			private string signature;
 
-			private int? isEnable;
+			private string folder;
 
-			private long? gmtCreate;
+			private string host;
 
-			private string instanceId;
+			private int? expire;
 
-			private long? gmtModified;
+			private bool? success;
 
-			private string name;
+			private string message;
 
-			public string Uuid
+			public string AccessId
 			{
 				get
 				{
-					return uuid;
+					return accessId;
 				}
 				set	
 				{
-					uuid = value;
+					accessId = value;
 				}
 			}
 
-			public string PhoneNumber
+			public string Policy
 			{
 				get
 				{
-					return phoneNumber;
+					return policy;
 				}
 				set	
 				{
-					phoneNumber = value;
+					policy = value;
 				}
 			}
 
-			public string Description
+			public string Signature
 			{
 				get
 				{
-					return description;
+					return signature;
 				}
 				set	
 				{
-					description = value;
+					signature = value;
 				}
 			}
 
-			public int? IsEnable
+			public string Folder
 			{
 				get
 				{
-					return isEnable;
+					return folder;
 				}
 				set	
 				{
-					isEnable = value;
+					folder = value;
 				}
 			}
 
-			public long? GmtCreate
+			public string Host
 			{
 				get
 				{
-					return gmtCreate;
+					return host;
 				}
 				set	
 				{
-					gmtCreate = value;
+					host = value;
 				}
 			}
 
-			public string InstanceId
+			public int? Expire
 			{
 				get
 				{
-					return instanceId;
+					return expire;
 				}
 				set	
 				{
-					instanceId = value;
+					expire = value;
 				}
 			}
 
-			public long? GmtModified
+			public bool? Success
 			{
 				get
 				{
-					return gmtModified;
+					return success;
 				}
 				set	
 				{
-					gmtModified = value;
+					success = value;
 				}
 			}
 
-			public string Name
+			public string Message
 			{
 				get
 				{
-					return name;
+					return message;
 				}
 				set	
 				{
-					name = value;
+					message = value;
 				}
 			}
 		}

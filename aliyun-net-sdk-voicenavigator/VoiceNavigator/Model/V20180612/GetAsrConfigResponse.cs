@@ -17,17 +17,17 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 {
-	public class UpdateNewBargeInSwitchResponse : AcsResponse
+	public class GetAsrConfigResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
+
+		private string requestId;
 
 		private int? httpStatusCode;
 
@@ -35,17 +35,7 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 
 		private string errorMsg;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private GetAsrConfig_Data data;
 
 		public bool? Success
 		{
@@ -56,6 +46,18 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -92,6 +94,78 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			set	
 			{
 				errorMsg = value;
+			}
+		}
+
+		public GetAsrConfig_Data Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class GetAsrConfig_Data
+		{
+
+			private string asrVocabularyId;
+
+			private string asrCustomizationId;
+
+			private string asrAcousticModelId;
+
+			private string asrClassVocabularyId;
+
+			public string AsrVocabularyId
+			{
+				get
+				{
+					return asrVocabularyId;
+				}
+				set	
+				{
+					asrVocabularyId = value;
+				}
+			}
+
+			public string AsrCustomizationId
+			{
+				get
+				{
+					return asrCustomizationId;
+				}
+				set	
+				{
+					asrCustomizationId = value;
+				}
+			}
+
+			public string AsrAcousticModelId
+			{
+				get
+				{
+					return asrAcousticModelId;
+				}
+				set	
+				{
+					asrAcousticModelId = value;
+				}
+			}
+
+			public string AsrClassVocabularyId
+			{
+				get
+				{
+					return asrClassVocabularyId;
+				}
+				set	
+				{
+					asrClassVocabularyId = value;
+				}
 			}
 		}
 	}

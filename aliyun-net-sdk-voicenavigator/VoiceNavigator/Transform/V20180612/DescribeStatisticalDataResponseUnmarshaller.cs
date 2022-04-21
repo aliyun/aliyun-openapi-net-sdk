@@ -31,24 +31,24 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 			DescribeStatisticalDataResponse describeStatisticalDataResponse = new DescribeStatisticalDataResponse();
 
 			describeStatisticalDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeStatisticalDataResponse.TotalDialoguePassRate = _ctx.StringValue("DescribeStatisticalData.TotalDialoguePassRate");
+			describeStatisticalDataResponse.TotalKnowledgeHitRate = _ctx.StringValue("DescribeStatisticalData.TotalKnowledgeHitRate");
+			describeStatisticalDataResponse.TotalResolutionRate = _ctx.StringValue("DescribeStatisticalData.TotalResolutionRate");
+			describeStatisticalDataResponse.TotalValidAnswerRate = _ctx.StringValue("DescribeStatisticalData.TotalValidAnswerRate");
 			describeStatisticalDataResponse.RequestId = _ctx.StringValue("DescribeStatisticalData.RequestId");
 			describeStatisticalDataResponse.ResolvedQuestionTotalNum = _ctx.LongValue("DescribeStatisticalData.ResolvedQuestionTotalNum");
 			describeStatisticalDataResponse.ConversationTotalNum = _ctx.LongValue("DescribeStatisticalData.ConversationTotalNum");
-			describeStatisticalDataResponse.TotalResolutionRate = _ctx.StringValue("DescribeStatisticalData.TotalResolutionRate");
-			describeStatisticalDataResponse.TotalValidAnswerRate = _ctx.StringValue("DescribeStatisticalData.TotalValidAnswerRate");
-			describeStatisticalDataResponse.TotalDialoguePassRate = _ctx.StringValue("DescribeStatisticalData.TotalDialoguePassRate");
-			describeStatisticalDataResponse.TotalKnowledgeHitRate = _ctx.StringValue("DescribeStatisticalData.TotalKnowledgeHitRate");
 
 			List<DescribeStatisticalDataResponse.DescribeStatisticalData_StatisticalDataReport> describeStatisticalDataResponse_statisticalDataReports = new List<DescribeStatisticalDataResponse.DescribeStatisticalData_StatisticalDataReport>();
 			for (int i = 0; i < _ctx.Length("DescribeStatisticalData.StatisticalDataReports.Length"); i++) {
 				DescribeStatisticalDataResponse.DescribeStatisticalData_StatisticalDataReport statisticalDataReport = new DescribeStatisticalDataResponse.DescribeStatisticalData_StatisticalDataReport();
-				statisticalDataReport.StatisticalDate = _ctx.StringValue("DescribeStatisticalData.StatisticalDataReports["+ i +"].StatisticalDate");
+				statisticalDataReport.KnowledgeHitRate = _ctx.StringValue("DescribeStatisticalData.StatisticalDataReports["+ i +"].KnowledgeHitRate");
 				statisticalDataReport.ResolvedQuestionNum = _ctx.IntegerValue("DescribeStatisticalData.StatisticalDataReports["+ i +"].ResolvedQuestionNum");
-				statisticalDataReport.TotalConversationNum = _ctx.IntegerValue("DescribeStatisticalData.StatisticalDataReports["+ i +"].TotalConversationNum");
 				statisticalDataReport.ResolutionRate = _ctx.StringValue("DescribeStatisticalData.StatisticalDataReports["+ i +"].ResolutionRate");
+				statisticalDataReport.StatisticalDate = _ctx.StringValue("DescribeStatisticalData.StatisticalDataReports["+ i +"].StatisticalDate");
+				statisticalDataReport.TotalConversationNum = _ctx.IntegerValue("DescribeStatisticalData.StatisticalDataReports["+ i +"].TotalConversationNum");
 				statisticalDataReport.ValidAnswerRate = _ctx.StringValue("DescribeStatisticalData.StatisticalDataReports["+ i +"].ValidAnswerRate");
 				statisticalDataReport.DialoguePassRate = _ctx.StringValue("DescribeStatisticalData.StatisticalDataReports["+ i +"].DialoguePassRate");
-				statisticalDataReport.KnowledgeHitRate = _ctx.StringValue("DescribeStatisticalData.StatisticalDataReports["+ i +"].KnowledgeHitRate");
 
 				describeStatisticalDataResponse_statisticalDataReports.Add(statisticalDataReport);
 			}

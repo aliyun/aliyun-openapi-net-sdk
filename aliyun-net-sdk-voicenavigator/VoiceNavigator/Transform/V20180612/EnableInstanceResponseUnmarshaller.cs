@@ -31,8 +31,8 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 			EnableInstanceResponse enableInstanceResponse = new EnableInstanceResponse();
 
 			enableInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			enableInstanceResponse.RequestId = _ctx.StringValue("EnableInstance.RequestId");
 			enableInstanceResponse.Status = _ctx.StringValue("EnableInstance.Status");
+			enableInstanceResponse.RequestId = _ctx.StringValue("EnableInstance.RequestId");
         
 			return enableInstanceResponse;
         }

@@ -24,16 +24,24 @@ using Aliyun.Acs.VoiceNavigator.Model.V20180612;
 
 namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 {
-    public class ModifyAsrVadConfigResponseUnmarshaller
+    public class ModifyAsrConfigResponseUnmarshaller
     {
-        public static ModifyAsrVadConfigResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ModifyAsrConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			ModifyAsrVadConfigResponse modifyAsrVadConfigResponse = new ModifyAsrVadConfigResponse();
+			ModifyAsrConfigResponse modifyAsrConfigResponse = new ModifyAsrConfigResponse();
 
-			modifyAsrVadConfigResponse.HttpResponse = _ctx.HttpResponse;
-			modifyAsrVadConfigResponse.RequestId = _ctx.StringValue("ModifyAsrVadConfig.RequestId");
+			modifyAsrConfigResponse.HttpResponse = _ctx.HttpResponse;
+			modifyAsrConfigResponse.Success = _ctx.BooleanValue("ModifyAsrConfig.Success");
+			modifyAsrConfigResponse.RequestId = _ctx.StringValue("ModifyAsrConfig.RequestId");
+			modifyAsrConfigResponse.HttpStatusCode = _ctx.IntegerValue("ModifyAsrConfig.HttpStatusCode");
+			modifyAsrConfigResponse.Code = _ctx.StringValue("ModifyAsrConfig.Code");
+			modifyAsrConfigResponse.ErrorMsg = _ctx.StringValue("ModifyAsrConfig.ErrorMsg");
+
+			ModifyAsrConfigResponse.ModifyAsrConfig_Data data = new ModifyAsrConfigResponse.ModifyAsrConfig_Data();
+			data.AffectedRows = _ctx.IntegerValue("ModifyAsrConfig.Data.AffectedRows");
+			modifyAsrConfigResponse.Data = data;
         
-			return modifyAsrVadConfigResponse;
+			return modifyAsrConfigResponse;
         }
     }
 }

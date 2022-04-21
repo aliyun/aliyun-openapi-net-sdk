@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
@@ -25,21 +25,69 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 	public class DescribeStatisticalDataResponse : AcsResponse
 	{
 
+		private string totalDialoguePassRate;
+
+		private string totalKnowledgeHitRate;
+
+		private string totalResolutionRate;
+
+		private string totalValidAnswerRate;
+
 		private string requestId;
 
 		private long? resolvedQuestionTotalNum;
 
 		private long? conversationTotalNum;
 
-		private string totalResolutionRate;
-
-		private string totalValidAnswerRate;
-
-		private string totalDialoguePassRate;
-
-		private string totalKnowledgeHitRate;
-
 		private List<DescribeStatisticalData_StatisticalDataReport> statisticalDataReports;
+
+		public string TotalDialoguePassRate
+		{
+			get
+			{
+				return totalDialoguePassRate;
+			}
+			set	
+			{
+				totalDialoguePassRate = value;
+			}
+		}
+
+		public string TotalKnowledgeHitRate
+		{
+			get
+			{
+				return totalKnowledgeHitRate;
+			}
+			set	
+			{
+				totalKnowledgeHitRate = value;
+			}
+		}
+
+		public string TotalResolutionRate
+		{
+			get
+			{
+				return totalResolutionRate;
+			}
+			set	
+			{
+				totalResolutionRate = value;
+			}
+		}
+
+		public string TotalValidAnswerRate
+		{
+			get
+			{
+				return totalValidAnswerRate;
+			}
+			set	
+			{
+				totalValidAnswerRate = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -77,54 +125,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
-		public string TotalResolutionRate
-		{
-			get
-			{
-				return totalResolutionRate;
-			}
-			set	
-			{
-				totalResolutionRate = value;
-			}
-		}
-
-		public string TotalValidAnswerRate
-		{
-			get
-			{
-				return totalValidAnswerRate;
-			}
-			set	
-			{
-				totalValidAnswerRate = value;
-			}
-		}
-
-		public string TotalDialoguePassRate
-		{
-			get
-			{
-				return totalDialoguePassRate;
-			}
-			set	
-			{
-				totalDialoguePassRate = value;
-			}
-		}
-
-		public string TotalKnowledgeHitRate
-		{
-			get
-			{
-				return totalKnowledgeHitRate;
-			}
-			set	
-			{
-				totalKnowledgeHitRate = value;
-			}
-		}
-
 		public List<DescribeStatisticalData_StatisticalDataReport> StatisticalDataReports
 		{
 			get
@@ -140,29 +140,29 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 		public class DescribeStatisticalData_StatisticalDataReport
 		{
 
-			private string statisticalDate;
+			private string knowledgeHitRate;
 
 			private int? resolvedQuestionNum;
 
-			private int? totalConversationNum;
-
 			private string resolutionRate;
+
+			private string statisticalDate;
+
+			private int? totalConversationNum;
 
 			private string validAnswerRate;
 
 			private string dialoguePassRate;
 
-			private string knowledgeHitRate;
-
-			public string StatisticalDate
+			public string KnowledgeHitRate
 			{
 				get
 				{
-					return statisticalDate;
+					return knowledgeHitRate;
 				}
 				set	
 				{
-					statisticalDate = value;
+					knowledgeHitRate = value;
 				}
 			}
 
@@ -178,18 +178,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 				}
 			}
 
-			public int? TotalConversationNum
-			{
-				get
-				{
-					return totalConversationNum;
-				}
-				set	
-				{
-					totalConversationNum = value;
-				}
-			}
-
 			public string ResolutionRate
 			{
 				get
@@ -199,6 +187,30 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 				set	
 				{
 					resolutionRate = value;
+				}
+			}
+
+			public string StatisticalDate
+			{
+				get
+				{
+					return statisticalDate;
+				}
+				set	
+				{
+					statisticalDate = value;
+				}
+			}
+
+			public int? TotalConversationNum
+			{
+				get
+				{
+					return totalConversationNum;
+				}
+				set	
+				{
+					totalConversationNum = value;
 				}
 			}
 
@@ -223,18 +235,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 				set	
 				{
 					dialoguePassRate = value;
-				}
-			}
-
-			public string KnowledgeHitRate
-			{
-				get
-				{
-					return knowledgeHitRate;
-				}
-				set	
-				{
-					knowledgeHitRate = value;
 				}
 			}
 		}

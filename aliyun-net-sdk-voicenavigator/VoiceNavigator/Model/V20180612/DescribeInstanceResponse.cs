@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
@@ -25,25 +25,61 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 	public class DescribeInstanceResponse : AcsResponse
 	{
 
+		private string status;
+
+		private long? modifyTime;
+
+		private string description;
+
 		private string requestId;
 
 		private string instanceId;
 
-		private string name;
-
-		private string description;
-
-		private string status;
-
 		private long? concurrency;
-
-		private long? modifyTime;
 
 		private string modifyUserName;
 
 		private string nluServiceType;
 
+		private string name;
+
 		private List<string> applicableOperations;
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+			}
+		}
+
+		public long? ModifyTime
+		{
+			get
+			{
+				return modifyTime;
+			}
+			set	
+			{
+				modifyTime = value;
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -69,42 +105,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-			}
-		}
-
 		public long? Concurrency
 		{
 			get
@@ -114,18 +114,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			set	
 			{
 				concurrency = value;
-			}
-		}
-
-		public long? ModifyTime
-		{
-			get
-			{
-				return modifyTime;
-			}
-			set	
-			{
-				modifyTime = value;
 			}
 		}
 
@@ -150,6 +138,18 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			set	
 			{
 				nluServiceType = value;
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
 			}
 		}
 

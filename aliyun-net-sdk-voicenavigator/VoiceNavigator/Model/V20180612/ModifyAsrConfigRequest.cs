@@ -27,10 +27,10 @@ using Aliyun.Acs.VoiceNavigator.Transform.V20180612;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 {
-    public class DisableSandBoxWhileListRequest : RpcAcsRequest<DisableSandBoxWhileListResponse>
+    public class ModifyAsrConfigRequest : RpcAcsRequest<ModifyAsrConfigResponse>
     {
-        public DisableSandBoxWhileListRequest()
-            : base("VoiceNavigator", "2018-06-12", "DisableSandBoxWhileList", "voicebot", "openAPI")
+        public ModifyAsrConfigRequest()
+            : base("VoiceNavigator", "2018-06-12", "ModifyAsrConfig", "voicebot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,33 +40,93 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			Method = MethodType.POST;
         }
 
-		private string phoneNumber;
+		private string asrVocabularyId;
 
-		private string instanceId;
+		private string asrClassVocabularyId;
 
-		public string PhoneNumber
+		private string entryId;
+
+		private string asrCustomizationId;
+
+		private int? configLevel;
+
+		private string asrAcousticModelId;
+
+		public string AsrVocabularyId
 		{
 			get
 			{
-				return phoneNumber;
+				return asrVocabularyId;
 			}
 			set	
 			{
-				phoneNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PhoneNumber", value);
+				asrVocabularyId = value;
+				DictionaryUtil.Add(QueryParameters, "AsrVocabularyId", value);
 			}
 		}
 
-		public string InstanceId
+		public string AsrClassVocabularyId
 		{
 			get
 			{
-				return instanceId;
+				return asrClassVocabularyId;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				asrClassVocabularyId = value;
+				DictionaryUtil.Add(QueryParameters, "AsrClassVocabularyId", value);
+			}
+		}
+
+		public string EntryId
+		{
+			get
+			{
+				return entryId;
+			}
+			set	
+			{
+				entryId = value;
+				DictionaryUtil.Add(QueryParameters, "EntryId", value);
+			}
+		}
+
+		public string AsrCustomizationId
+		{
+			get
+			{
+				return asrCustomizationId;
+			}
+			set	
+			{
+				asrCustomizationId = value;
+				DictionaryUtil.Add(QueryParameters, "AsrCustomizationId", value);
+			}
+		}
+
+		public int? ConfigLevel
+		{
+			get
+			{
+				return configLevel;
+			}
+			set	
+			{
+				configLevel = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigLevel", value.ToString());
+			}
+		}
+
+		public string AsrAcousticModelId
+		{
+			get
+			{
+				return asrAcousticModelId;
+			}
+			set	
+			{
+				asrAcousticModelId = value;
+				DictionaryUtil.Add(QueryParameters, "AsrAcousticModelId", value);
 			}
 		}
 
@@ -75,9 +135,9 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			return false;
 		}
 
-        public override DisableSandBoxWhileListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyAsrConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DisableSandBoxWhileListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyAsrConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

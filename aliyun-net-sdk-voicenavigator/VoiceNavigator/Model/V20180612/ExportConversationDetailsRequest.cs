@@ -112,10 +112,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			set
 			{
 				optionss = value;
-				for (int i = 0; i < optionss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Options." + (i + 1) , optionss[i]);
-				}
 			}
 		}
 

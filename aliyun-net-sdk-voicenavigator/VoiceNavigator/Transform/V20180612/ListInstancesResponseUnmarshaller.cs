@@ -31,22 +31,22 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 			ListInstancesResponse listInstancesResponse = new ListInstancesResponse();
 
 			listInstancesResponse.HttpResponse = _ctx.HttpResponse;
-			listInstancesResponse.RequestId = _ctx.StringValue("ListInstances.RequestId");
 			listInstancesResponse.TotalCount = _ctx.IntegerValue("ListInstances.TotalCount");
-			listInstancesResponse.PageNumber = _ctx.IntegerValue("ListInstances.PageNumber");
 			listInstancesResponse.PageSize = _ctx.IntegerValue("ListInstances.PageSize");
+			listInstancesResponse.RequestId = _ctx.StringValue("ListInstances.RequestId");
+			listInstancesResponse.PageNumber = _ctx.IntegerValue("ListInstances.PageNumber");
 
 			List<ListInstancesResponse.ListInstances_Instance> listInstancesResponse_instances = new List<ListInstancesResponse.ListInstances_Instance>();
 			for (int i = 0; i < _ctx.Length("ListInstances.Instances.Length"); i++) {
 				ListInstancesResponse.ListInstances_Instance instance = new ListInstancesResponse.ListInstances_Instance();
+				instance.Status = _ctx.StringValue("ListInstances.Instances["+ i +"].Status");
+				instance.NluServiceType = _ctx.StringValue("ListInstances.Instances["+ i +"].NluServiceType");
+				instance.ModifyUserName = _ctx.StringValue("ListInstances.Instances["+ i +"].ModifyUserName");
+				instance.Description = _ctx.StringValue("ListInstances.Instances["+ i +"].Description");
 				instance.InstanceId = _ctx.StringValue("ListInstances.Instances["+ i +"].InstanceId");
 				instance.Name = _ctx.StringValue("ListInstances.Instances["+ i +"].Name");
-				instance.Description = _ctx.StringValue("ListInstances.Instances["+ i +"].Description");
-				instance.Status = _ctx.StringValue("ListInstances.Instances["+ i +"].Status");
 				instance.Concurrency = _ctx.LongValue("ListInstances.Instances["+ i +"].Concurrency");
 				instance.ModifyTime = _ctx.LongValue("ListInstances.Instances["+ i +"].ModifyTime");
-				instance.ModifyUserName = _ctx.StringValue("ListInstances.Instances["+ i +"].ModifyUserName");
-				instance.NluServiceType = _ctx.StringValue("ListInstances.Instances["+ i +"].NluServiceType");
 
 				List<string> instance_applicableOperations = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListInstances.Instances["+ i +"].ApplicableOperations.Length"); j++) {
