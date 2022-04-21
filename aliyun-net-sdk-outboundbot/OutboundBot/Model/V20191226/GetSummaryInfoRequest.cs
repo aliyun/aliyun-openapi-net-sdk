@@ -52,10 +52,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set
 			{
 				instanceIdLists = value;
-				for (int i = 0; i < instanceIdLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceIdList." + (i + 1) , instanceIdLists[i]);
-				}
 			}
 		}
 

@@ -31,20 +31,20 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ListTagResourcesResponse listTagResourcesResponse = new ListTagResourcesResponse();
 
 			listTagResourcesResponse.HttpResponse = _ctx.HttpResponse;
+			listTagResourcesResponse.HttpStatusCode = _ctx.IntegerValue("ListTagResources.HttpStatusCode");
+			listTagResourcesResponse.NextToken = _ctx.StringValue("ListTagResources.NextToken");
 			listTagResourcesResponse.RequestId = _ctx.StringValue("ListTagResources.RequestId");
 			listTagResourcesResponse.Success = _ctx.BooleanValue("ListTagResources.Success");
 			listTagResourcesResponse.Code = _ctx.StringValue("ListTagResources.Code");
 			listTagResourcesResponse.Message = _ctx.StringValue("ListTagResources.Message");
-			listTagResourcesResponse.HttpStatusCode = _ctx.IntegerValue("ListTagResources.HttpStatusCode");
-			listTagResourcesResponse.NextToken = _ctx.StringValue("ListTagResources.NextToken");
 
 			List<ListTagResourcesResponse.ListTagResources_TagResource> listTagResourcesResponse_tagResources = new List<ListTagResourcesResponse.ListTagResources_TagResource>();
 			for (int i = 0; i < _ctx.Length("ListTagResources.TagResources.Length"); i++) {
 				ListTagResourcesResponse.ListTagResources_TagResource tagResource = new ListTagResourcesResponse.ListTagResources_TagResource();
-				tagResource.TagKey = _ctx.StringValue("ListTagResources.TagResources["+ i +"].TagKey");
+				tagResource.ResourceType = _ctx.StringValue("ListTagResources.TagResources["+ i +"].ResourceType");
 				tagResource.TagValue = _ctx.StringValue("ListTagResources.TagResources["+ i +"].TagValue");
 				tagResource.ResourceId = _ctx.StringValue("ListTagResources.TagResources["+ i +"].ResourceId");
-				tagResource.ResourceType = _ctx.StringValue("ListTagResources.TagResources["+ i +"].ResourceType");
+				tagResource.TagKey = _ctx.StringValue("ListTagResources.TagResources["+ i +"].TagKey");
 
 				listTagResourcesResponse_tagResources.Add(tagResource);
 			}

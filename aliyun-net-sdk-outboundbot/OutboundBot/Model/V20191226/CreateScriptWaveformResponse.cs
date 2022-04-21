@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,29 +25,17 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class CreateScriptWaveformResponse : AcsResponse
 	{
 
-		private string code;
-
 		private int? httpStatusCode;
-
-		private string message;
 
 		private string requestId;
 
-		private string scriptWaveformId;
-
 		private bool? success;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private string code;
+
+		private string message;
+
+		private string scriptWaveformId;
 
 		public int? HttpStatusCode
 		{
@@ -58,18 +46,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				httpStatusCode = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 
@@ -85,18 +61,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string ScriptWaveformId
-		{
-			get
-			{
-				return scriptWaveformId;
-			}
-			set	
-			{
-				scriptWaveformId = value;
-			}
-		}
-
 		public bool? Success
 		{
 			get
@@ -106,6 +70,42 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public string ScriptWaveformId
+		{
+			get
+			{
+				return scriptWaveformId;
+			}
+			set	
+			{
+				scriptWaveformId = value;
 			}
 		}
 	}

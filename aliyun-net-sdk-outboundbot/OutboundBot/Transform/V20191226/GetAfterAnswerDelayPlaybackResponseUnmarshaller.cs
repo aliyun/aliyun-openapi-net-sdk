@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			GetAfterAnswerDelayPlaybackResponse getAfterAnswerDelayPlaybackResponse = new GetAfterAnswerDelayPlaybackResponse();
 
 			getAfterAnswerDelayPlaybackResponse.HttpResponse = _ctx.HttpResponse;
+			getAfterAnswerDelayPlaybackResponse.HttpStatusCode = _ctx.IntegerValue("GetAfterAnswerDelayPlayback.HttpStatusCode");
 			getAfterAnswerDelayPlaybackResponse.RequestId = _ctx.StringValue("GetAfterAnswerDelayPlayback.RequestId");
 			getAfterAnswerDelayPlaybackResponse.Success = _ctx.BooleanValue("GetAfterAnswerDelayPlayback.Success");
 			getAfterAnswerDelayPlaybackResponse.Code = _ctx.StringValue("GetAfterAnswerDelayPlayback.Code");
 			getAfterAnswerDelayPlaybackResponse.Message = _ctx.StringValue("GetAfterAnswerDelayPlayback.Message");
-			getAfterAnswerDelayPlaybackResponse.HttpStatusCode = _ctx.IntegerValue("GetAfterAnswerDelayPlayback.HttpStatusCode");
 			getAfterAnswerDelayPlaybackResponse.AfterAnswerDelayPlayback = _ctx.IntegerValue("GetAfterAnswerDelayPlayback.AfterAnswerDelayPlayback");
         
 			return getAfterAnswerDelayPlaybackResponse;

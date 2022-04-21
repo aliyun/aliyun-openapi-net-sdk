@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,9 +25,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class QueryScriptsByStatusResponse : AcsResponse
 	{
 
-		private string code;
-
 		private int? httpStatusCode;
+
+		private string code;
 
 		private string message;
 
@@ -36,18 +36,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private bool? success;
 
 		private QueryScriptsByStatus_Scripts scripts;
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -58,6 +46,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				httpStatusCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -171,29 +171,65 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			public class QueryScriptsByStatus_Script
 			{
 
+				private string status;
+
+				private long? updateTime;
+
+				private string scriptId;
+
 				private string appliedVersion;
+
+				private bool? isDebugDrafted;
+
+				private string industry;
+
+				private string scriptDescription;
+
+				private bool? isDrafted;
 
 				private string debugStatus;
 
 				private string debugVersion;
 
-				private string industry;
-
-				private bool? isDebugDrafted;
-
-				private bool? isDrafted;
-
 				private string scene;
-
-				private string scriptDescription;
-
-				private string scriptId;
 
 				private string scriptName;
 
-				private string status;
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 
-				private long? updateTime;
+				public long? UpdateTime
+				{
+					get
+					{
+						return updateTime;
+					}
+					set	
+					{
+						updateTime = value;
+					}
+				}
+
+				public string ScriptId
+				{
+					get
+					{
+						return scriptId;
+					}
+					set	
+					{
+						scriptId = value;
+					}
+				}
 
 				public string AppliedVersion
 				{
@@ -204,6 +240,54 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						appliedVersion = value;
+					}
+				}
+
+				public bool? IsDebugDrafted
+				{
+					get
+					{
+						return isDebugDrafted;
+					}
+					set	
+					{
+						isDebugDrafted = value;
+					}
+				}
+
+				public string Industry
+				{
+					get
+					{
+						return industry;
+					}
+					set	
+					{
+						industry = value;
+					}
+				}
+
+				public string ScriptDescription
+				{
+					get
+					{
+						return scriptDescription;
+					}
+					set	
+					{
+						scriptDescription = value;
+					}
+				}
+
+				public bool? IsDrafted
+				{
+					get
+					{
+						return isDrafted;
+					}
+					set	
+					{
+						isDrafted = value;
 					}
 				}
 
@@ -231,42 +315,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public string Industry
-				{
-					get
-					{
-						return industry;
-					}
-					set	
-					{
-						industry = value;
-					}
-				}
-
-				public bool? IsDebugDrafted
-				{
-					get
-					{
-						return isDebugDrafted;
-					}
-					set	
-					{
-						isDebugDrafted = value;
-					}
-				}
-
-				public bool? IsDrafted
-				{
-					get
-					{
-						return isDrafted;
-					}
-					set	
-					{
-						isDrafted = value;
-					}
-				}
-
 				public string Scene
 				{
 					get
@@ -279,30 +327,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public string ScriptDescription
-				{
-					get
-					{
-						return scriptDescription;
-					}
-					set	
-					{
-						scriptDescription = value;
-					}
-				}
-
-				public string ScriptId
-				{
-					get
-					{
-						return scriptId;
-					}
-					set	
-					{
-						scriptId = value;
-					}
-				}
-
 				public string ScriptName
 				{
 					get
@@ -312,30 +336,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						scriptName = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				public long? UpdateTime
-				{
-					get
-					{
-						return updateTime;
-					}
-					set	
-					{
-						updateTime = value;
 					}
 				}
 			}

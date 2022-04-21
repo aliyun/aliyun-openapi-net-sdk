@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,39 +25,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class GetContactBlockListResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
+		private int? httpStatusCode;
 
 		private string code;
 
 		private string message;
 
-		private int? httpStatusCode;
+		private string requestId;
+
+		private bool? success;
 
 		private GetContactBlockList_ContactBlocklistList contactBlocklistList;
 
-		public string RequestId
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return requestId;
+				return httpStatusCode;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
+				httpStatusCode = value;
 			}
 		}
 
@@ -85,15 +73,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public int? HttpStatusCode
+		public string RequestId
 		{
 			get
 			{
-				return httpStatusCode;
+				return requestId;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -173,19 +173,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 				private string contactBlockListId;
 
-				private string instanceId;
-
 				private long? creationTime;
 
+				private string remark;
+
 				private string phoneNumber;
+
+				private string _operator;
+
+				private string instanceId;
 
 				private string name;
 
 				private string creator;
-
-				private string _operator;
-
-				private string remark;
 
 				public string ContactBlockListId
 				{
@@ -196,18 +196,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						contactBlockListId = value;
-					}
-				}
-
-				public string InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
 					}
 				}
 
@@ -223,6 +211,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
+				public string Remark
+				{
+					get
+					{
+						return remark;
+					}
+					set	
+					{
+						remark = value;
+					}
+				}
+
 				public string PhoneNumber
 				{
 					get
@@ -232,6 +232,30 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						phoneNumber = value;
+					}
+				}
+
+				public string _Operator
+				{
+					get
+					{
+						return _operator;
+					}
+					set	
+					{
+						_operator = value;
+					}
+				}
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
 					}
 				}
 
@@ -256,30 +280,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						creator = value;
-					}
-				}
-
-				public string _Operator
-				{
-					get
-					{
-						return _operator;
-					}
-					set	
-					{
-						_operator = value;
-					}
-				}
-
-				public string Remark
-				{
-					get
-					{
-						return remark;
-					}
-					set	
-					{
-						remark = value;
 					}
 				}
 			}

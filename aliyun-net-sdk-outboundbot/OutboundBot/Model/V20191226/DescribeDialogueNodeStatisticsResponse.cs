@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,23 +25,35 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class DescribeDialogueNodeStatisticsResponse : AcsResponse
 	{
 
+		private int? httpStatusCode;
+
 		private string requestId;
 
+		private string groupId;
+
 		private bool? success;
+
+		private int? totalCompleted;
 
 		private string code;
 
 		private string message;
 
-		private int? httpStatusCode;
-
-		private string groupId;
-
 		private string instanceId;
 
-		private int? totalCompleted;
-
 		private List<DescribeDialogueNodeStatistics_NoAnswerDialogueNode> noAnswerDialogueNodes;
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -55,6 +67,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+			}
+		}
+
 		public bool? Success
 		{
 			get
@@ -64,6 +88,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public int? TotalCompleted
+		{
+			get
+			{
+				return totalCompleted;
+			}
+			set	
+			{
+				totalCompleted = value;
 			}
 		}
 
@@ -91,30 +127,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-			}
-		}
-
 		public string InstanceId
 		{
 			get
@@ -124,18 +136,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				instanceId = value;
-			}
-		}
-
-		public int? TotalCompleted
-		{
-			get
-			{
-				return totalCompleted;
-			}
-			set	
-			{
-				totalCompleted = value;
 			}
 		}
 
@@ -154,43 +154,31 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class DescribeDialogueNodeStatistics_NoAnswerDialogueNode
 		{
 
-			private string id;
-
-			private string instanceId;
+			private int? noAnswerNum;
 
 			private string groupId;
 
-			private string nodeId;
-
 			private string nodeName;
-
-			private int? hitNum;
 
 			private int? hangUpNum;
 
-			private int? noAnswerNum;
+			private string instanceId;
 
-			public string Id
+			private int? hitNum;
+
+			private string id;
+
+			private string nodeId;
+
+			public int? NoAnswerNum
 			{
 				get
 				{
-					return id;
+					return noAnswerNum;
 				}
 				set	
 				{
-					id = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
+					noAnswerNum = value;
 				}
 			}
 
@@ -206,18 +194,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string NodeId
-			{
-				get
-				{
-					return nodeId;
-				}
-				set	
-				{
-					nodeId = value;
-				}
-			}
-
 			public string NodeName
 			{
 				get
@@ -227,18 +203,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					nodeName = value;
-				}
-			}
-
-			public int? HitNum
-			{
-				get
-				{
-					return hitNum;
-				}
-				set	
-				{
-					hitNum = value;
 				}
 			}
 
@@ -254,15 +218,51 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public int? NoAnswerNum
+			public string InstanceId
 			{
 				get
 				{
-					return noAnswerNum;
+					return instanceId;
 				}
 				set	
 				{
-					noAnswerNum = value;
+					instanceId = value;
+				}
+			}
+
+			public int? HitNum
+			{
+				get
+				{
+					return hitNum;
+				}
+				set	
+				{
+					hitNum = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string NodeId
+			{
+				get
+				{
+					return nodeId;
+				}
+				set	
+				{
+					nodeId = value;
 				}
 			}
 		}

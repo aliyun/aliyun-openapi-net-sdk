@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			StartJobResponse startJobResponse = new StartJobResponse();
 
 			startJobResponse.HttpResponse = _ctx.HttpResponse;
-			startJobResponse.Code = _ctx.StringValue("StartJob.Code");
 			startJobResponse.HttpStatusCode = _ctx.IntegerValue("StartJob.HttpStatusCode");
+			startJobResponse.Code = _ctx.StringValue("StartJob.Code");
 			startJobResponse.Message = _ctx.StringValue("StartJob.Message");
 			startJobResponse.RequestId = _ctx.StringValue("StartJob.RequestId");
 			startJobResponse.Success = _ctx.BooleanValue("StartJob.Success");

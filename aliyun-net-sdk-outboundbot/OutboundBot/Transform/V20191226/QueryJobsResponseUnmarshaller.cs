@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			QueryJobsResponse queryJobsResponse = new QueryJobsResponse();
 
 			queryJobsResponse.HttpResponse = _ctx.HttpResponse;
-			queryJobsResponse.Code = _ctx.StringValue("QueryJobs.Code");
 			queryJobsResponse.HttpStatusCode = _ctx.IntegerValue("QueryJobs.HttpStatusCode");
+			queryJobsResponse.Code = _ctx.StringValue("QueryJobs.Code");
 			queryJobsResponse.Message = _ctx.StringValue("QueryJobs.Message");
 			queryJobsResponse.RequestId = _ctx.StringValue("QueryJobs.RequestId");
 			queryJobsResponse.Success = _ctx.BooleanValue("QueryJobs.Success");
@@ -45,14 +45,14 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			List<QueryJobsResponse.QueryJobs_Jobs.QueryJobs_Job> jobs_list = new List<QueryJobsResponse.QueryJobs_Jobs.QueryJobs_Job>();
 			for (int i = 0; i < _ctx.Length("QueryJobs.Jobs.List.Length"); i++) {
 				QueryJobsResponse.QueryJobs_Jobs.QueryJobs_Job job = new QueryJobsResponse.QueryJobs_Jobs.QueryJobs_Job();
-				job.FailureReason = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].FailureReason");
+				job.Status = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Status");
 				job.JobGroupId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].JobGroupId");
+				job.ScenarioId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].ScenarioId");
+				job.StrategyId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].StrategyId");
 				job.JobId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].JobId");
 				job.Priority = _ctx.IntegerValue("QueryJobs.Jobs.List["+ i +"].Priority");
+				job.FailureReason = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].FailureReason");
 				job.ReferenceId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].ReferenceId");
-				job.ScenarioId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].ScenarioId");
-				job.Status = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Status");
-				job.StrategyId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].StrategyId");
 
 				List<string> job_callingNumbers = new List<string>();
 				for (int j = 0; j < _ctx.Length("QueryJobs.Jobs.List["+ i +"].CallingNumbers.Length"); j++) {
@@ -63,14 +63,14 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 				List<QueryJobsResponse.QueryJobs_Jobs.QueryJobs_Job.QueryJobs_Contact> job_contacts = new List<QueryJobsResponse.QueryJobs_Jobs.QueryJobs_Job.QueryJobs_Contact>();
 				for (int j = 0; j < _ctx.Length("QueryJobs.Jobs.List["+ i +"].Contacts.Length"); j++) {
 					QueryJobsResponse.QueryJobs_Jobs.QueryJobs_Job.QueryJobs_Contact contact = new QueryJobsResponse.QueryJobs_Jobs.QueryJobs_Job.QueryJobs_Contact();
+					contact.PhoneNumber = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Contacts["+ j +"].PhoneNumber");
+					contact.State = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Contacts["+ j +"].State");
 					contact.ContactId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Contacts["+ j +"].ContactId");
-					contact.ContactName = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Contacts["+ j +"].ContactName");
 					contact.Honorific = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Contacts["+ j +"].Honorific");
 					contact.JobId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Contacts["+ j +"].JobId");
-					contact.PhoneNumber = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Contacts["+ j +"].PhoneNumber");
-					contact.ReferenceId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Contacts["+ j +"].ReferenceId");
+					contact.ContactName = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Contacts["+ j +"].ContactName");
 					contact.Role = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Contacts["+ j +"].Role");
-					contact.State = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Contacts["+ j +"].State");
+					contact.ReferenceId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Contacts["+ j +"].ReferenceId");
 
 					job_contacts.Add(contact);
 				}
@@ -89,14 +89,14 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 				List<QueryJobsResponse.QueryJobs_Jobs.QueryJobs_Job.QueryJobs_SummaryItem> job_summary = new List<QueryJobsResponse.QueryJobs_Jobs.QueryJobs_Job.QueryJobs_SummaryItem>();
 				for (int j = 0; j < _ctx.Length("QueryJobs.Jobs.List["+ i +"].Summary.Length"); j++) {
 					QueryJobsResponse.QueryJobs_Jobs.QueryJobs_Job.QueryJobs_SummaryItem summaryItem = new QueryJobsResponse.QueryJobs_Jobs.QueryJobs_Job.QueryJobs_SummaryItem();
-					summaryItem.Category = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Summary["+ j +"].Category");
-					summaryItem.Content = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Summary["+ j +"].Content");
-					summaryItem.ConversationDetailId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Summary["+ j +"].ConversationDetailId");
+					summaryItem.SummaryName = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Summary["+ j +"].SummaryName");
 					summaryItem.GroupId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Summary["+ j +"].GroupId");
 					summaryItem.JobId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Summary["+ j +"].JobId");
-					summaryItem.SummaryId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Summary["+ j +"].SummaryId");
-					summaryItem.SummaryName = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Summary["+ j +"].SummaryName");
+					summaryItem.Category = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Summary["+ j +"].Category");
 					summaryItem.TaskId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Summary["+ j +"].TaskId");
+					summaryItem.Content = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Summary["+ j +"].Content");
+					summaryItem.ConversationDetailId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Summary["+ j +"].ConversationDetailId");
+					summaryItem.SummaryId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Summary["+ j +"].SummaryId");
 
 					job_summary.Add(summaryItem);
 				}
@@ -105,28 +105,28 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 				List<QueryJobsResponse.QueryJobs_Jobs.QueryJobs_Job.QueryJobs_Task> job_tasks = new List<QueryJobsResponse.QueryJobs_Jobs.QueryJobs_Job.QueryJobs_Task>();
 				for (int j = 0; j < _ctx.Length("QueryJobs.Jobs.List["+ i +"].Tasks.Length"); j++) {
 					QueryJobsResponse.QueryJobs_Jobs.QueryJobs_Job.QueryJobs_Task task = new QueryJobsResponse.QueryJobs_Jobs.QueryJobs_Job.QueryJobs_Task();
-					task.ActualTime = _ctx.LongValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].ActualTime");
-					task.Brief = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].Brief");
-					task.CallId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].CallId");
-					task.CalledNumber = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].CalledNumber");
-					task.CallingNumber = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].CallingNumber");
-					task.ChatbotId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].ChatbotId");
-					task.Duration = _ctx.IntegerValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].Duration");
-					task.JobId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].JobId");
-					task.PlanedTime = _ctx.LongValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].PlanedTime");
-					task.ScenarioId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].ScenarioId");
 					task.Status = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].Status");
+					task.PlanedTime = _ctx.LongValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].PlanedTime");
+					task.ChatbotId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].ChatbotId");
+					task.ActualTime = _ctx.LongValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].ActualTime");
+					task.CalledNumber = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].CalledNumber");
+					task.ScenarioId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].ScenarioId");
+					task.JobId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].JobId");
+					task.CallId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].CallId");
+					task.CallingNumber = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].CallingNumber");
+					task.Brief = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].Brief");
+					task.Duration = _ctx.IntegerValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].Duration");
 					task.TaskId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].TaskId");
 
 					QueryJobsResponse.QueryJobs_Jobs.QueryJobs_Job.QueryJobs_Task.QueryJobs_Contact1 contact1 = new QueryJobsResponse.QueryJobs_Jobs.QueryJobs_Job.QueryJobs_Task.QueryJobs_Contact1();
+					contact1.PhoneNumber = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].Contact.PhoneNumber");
+					contact1.State = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].Contact.State");
 					contact1.ContactId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].Contact.ContactId");
-					contact1.ContactName = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].Contact.ContactName");
 					contact1.Honorific = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].Contact.Honorific");
 					contact1.JobId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].Contact.JobId");
-					contact1.PhoneNumber = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].Contact.PhoneNumber");
-					contact1.ReferenceId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].Contact.ReferenceId");
+					contact1.ContactName = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].Contact.ContactName");
 					contact1.Role = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].Contact.Role");
-					contact1.State = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].Contact.State");
+					contact1.ReferenceId = _ctx.StringValue("QueryJobs.Jobs.List["+ i +"].Tasks["+ j +"].Contact.ReferenceId");
 					task.Contact1 = contact1;
 
 					job_tasks.Add(task);

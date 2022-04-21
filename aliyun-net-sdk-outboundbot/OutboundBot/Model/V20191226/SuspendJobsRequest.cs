@@ -75,10 +75,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set
 			{
 				jobReferenceIds = value;
-				for (int i = 0; i < jobReferenceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"JobReferenceId." + (i + 1) , jobReferenceIds[i]);
-				}
 			}
 		}
 
@@ -92,10 +88,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set
 			{
 				jobIds = value;
-				for (int i = 0; i < jobIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"JobId." + (i + 1) , jobIds[i]);
-				}
 			}
 		}
 

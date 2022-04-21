@@ -31,21 +31,21 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DescribeIntentResponse describeIntentResponse = new DescribeIntentResponse();
 
 			describeIntentResponse.HttpResponse = _ctx.HttpResponse;
-			describeIntentResponse.Code = _ctx.StringValue("DescribeIntent.Code");
 			describeIntentResponse.HttpStatusCode = _ctx.IntegerValue("DescribeIntent.HttpStatusCode");
+			describeIntentResponse.Code = _ctx.StringValue("DescribeIntent.Code");
 			describeIntentResponse.Message = _ctx.StringValue("DescribeIntent.Message");
 			describeIntentResponse.RequestId = _ctx.StringValue("DescribeIntent.RequestId");
 			describeIntentResponse.Success = _ctx.BooleanValue("DescribeIntent.Success");
 
 			DescribeIntentResponse.DescribeIntent_Intent intent = new DescribeIntentResponse.DescribeIntent_Intent();
-			intent.CreateTime = _ctx.LongValue("DescribeIntent.Intent.CreateTime");
+			intent.Utterances = _ctx.StringValue("DescribeIntent.Intent.Utterances");
 			intent.IntentDescription = _ctx.StringValue("DescribeIntent.Intent.IntentDescription");
-			intent.IntentId = _ctx.StringValue("DescribeIntent.Intent.IntentId");
-			intent.IntentName = _ctx.StringValue("DescribeIntent.Intent.IntentName");
+			intent.UpdateTime = _ctx.LongValue("DescribeIntent.Intent.UpdateTime");
+			intent.CreateTime = _ctx.LongValue("DescribeIntent.Intent.CreateTime");
 			intent.Keywords = _ctx.StringValue("DescribeIntent.Intent.Keywords");
 			intent.ScriptId = _ctx.StringValue("DescribeIntent.Intent.ScriptId");
-			intent.UpdateTime = _ctx.LongValue("DescribeIntent.Intent.UpdateTime");
-			intent.Utterances = _ctx.StringValue("DescribeIntent.Intent.Utterances");
+			intent.IntentId = _ctx.StringValue("DescribeIntent.Intent.IntentId");
+			intent.IntentName = _ctx.StringValue("DescribeIntent.Intent.IntentName");
 			describeIntentResponse.Intent = intent;
         
 			return describeIntentResponse;

@@ -141,10 +141,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set
 			{
 				scriptWaveforms = value;
-				for (int i = 0; i < scriptWaveforms.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ScriptWaveform." + (i + 1) , scriptWaveforms[i]);
-				}
 			}
 		}
 
@@ -236,10 +232,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set
 			{
 				scriptContents = value;
-				for (int i = 0; i < scriptContents.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ScriptContent." + (i + 1) , scriptContents[i]);
-				}
 			}
 		}
 

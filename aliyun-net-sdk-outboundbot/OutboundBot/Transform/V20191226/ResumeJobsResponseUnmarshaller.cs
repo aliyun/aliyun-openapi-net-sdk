@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ResumeJobsResponse resumeJobsResponse = new ResumeJobsResponse();
 
 			resumeJobsResponse.HttpResponse = _ctx.HttpResponse;
-			resumeJobsResponse.Code = _ctx.StringValue("ResumeJobs.Code");
 			resumeJobsResponse.HttpStatusCode = _ctx.IntegerValue("ResumeJobs.HttpStatusCode");
+			resumeJobsResponse.Code = _ctx.StringValue("ResumeJobs.Code");
 			resumeJobsResponse.Message = _ctx.StringValue("ResumeJobs.Message");
 			resumeJobsResponse.RequestId = _ctx.StringValue("ResumeJobs.RequestId");
 			resumeJobsResponse.Success = _ctx.BooleanValue("ResumeJobs.Success");

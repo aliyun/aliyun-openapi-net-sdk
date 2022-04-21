@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			CreateTagResponse createTagResponse = new CreateTagResponse();
 
 			createTagResponse.HttpResponse = _ctx.HttpResponse;
-			createTagResponse.Code = _ctx.StringValue("CreateTag.Code");
 			createTagResponse.HttpStatusCode = _ctx.IntegerValue("CreateTag.HttpStatusCode");
-			createTagResponse.Message = _ctx.StringValue("CreateTag.Message");
 			createTagResponse.RequestId = _ctx.StringValue("CreateTag.RequestId");
 			createTagResponse.Success = _ctx.BooleanValue("CreateTag.Success");
+			createTagResponse.Code = _ctx.StringValue("CreateTag.Code");
+			createTagResponse.Message = _ctx.StringValue("CreateTag.Message");
 			createTagResponse.TagId = _ctx.StringValue("CreateTag.TagId");
         
 			return createTagResponse;

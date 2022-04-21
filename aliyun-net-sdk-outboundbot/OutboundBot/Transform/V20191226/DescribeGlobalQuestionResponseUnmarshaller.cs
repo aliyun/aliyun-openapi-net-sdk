@@ -31,17 +31,17 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DescribeGlobalQuestionResponse describeGlobalQuestionResponse = new DescribeGlobalQuestionResponse();
 
 			describeGlobalQuestionResponse.HttpResponse = _ctx.HttpResponse;
-			describeGlobalQuestionResponse.Code = _ctx.StringValue("DescribeGlobalQuestion.Code");
 			describeGlobalQuestionResponse.HttpStatusCode = _ctx.IntegerValue("DescribeGlobalQuestion.HttpStatusCode");
+			describeGlobalQuestionResponse.Code = _ctx.StringValue("DescribeGlobalQuestion.Code");
 			describeGlobalQuestionResponse.Message = _ctx.StringValue("DescribeGlobalQuestion.Message");
 			describeGlobalQuestionResponse.RequestId = _ctx.StringValue("DescribeGlobalQuestion.RequestId");
 			describeGlobalQuestionResponse.Success = _ctx.BooleanValue("DescribeGlobalQuestion.Success");
 
 			DescribeGlobalQuestionResponse.DescribeGlobalQuestion_GlobalQuestion globalQuestion = new DescribeGlobalQuestionResponse.DescribeGlobalQuestion_GlobalQuestion();
-			globalQuestion.Answers = _ctx.StringValue("DescribeGlobalQuestion.GlobalQuestion.Answers");
 			globalQuestion.GlobalQuestionId = _ctx.StringValue("DescribeGlobalQuestion.GlobalQuestion.GlobalQuestionId");
-			globalQuestion.GlobalQuestionName = _ctx.StringValue("DescribeGlobalQuestion.GlobalQuestion.GlobalQuestionName");
+			globalQuestion.Answers = _ctx.StringValue("DescribeGlobalQuestion.GlobalQuestion.Answers");
 			globalQuestion.GlobalQuestionType = _ctx.StringValue("DescribeGlobalQuestion.GlobalQuestion.GlobalQuestionType");
+			globalQuestion.GlobalQuestionName = _ctx.StringValue("DescribeGlobalQuestion.GlobalQuestion.GlobalQuestionName");
 			globalQuestion.Questions = _ctx.StringValue("DescribeGlobalQuestion.GlobalQuestion.Questions");
 			globalQuestion.ScriptId = _ctx.StringValue("DescribeGlobalQuestion.GlobalQuestion.ScriptId");
 			describeGlobalQuestionResponse.GlobalQuestion = globalQuestion;

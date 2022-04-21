@@ -56,10 +56,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set
 			{
 				contactWhiteListLists = value;
-				for (int i = 0; i < contactWhiteListLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ContactWhiteListList." + (i + 1) , contactWhiteListLists[i]);
-				}
 			}
 		}
 

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			QueryScriptsByStatusResponse queryScriptsByStatusResponse = new QueryScriptsByStatusResponse();
 
 			queryScriptsByStatusResponse.HttpResponse = _ctx.HttpResponse;
-			queryScriptsByStatusResponse.Code = _ctx.StringValue("QueryScriptsByStatus.Code");
 			queryScriptsByStatusResponse.HttpStatusCode = _ctx.IntegerValue("QueryScriptsByStatus.HttpStatusCode");
+			queryScriptsByStatusResponse.Code = _ctx.StringValue("QueryScriptsByStatus.Code");
 			queryScriptsByStatusResponse.Message = _ctx.StringValue("QueryScriptsByStatus.Message");
 			queryScriptsByStatusResponse.RequestId = _ctx.StringValue("QueryScriptsByStatus.RequestId");
 			queryScriptsByStatusResponse.Success = _ctx.BooleanValue("QueryScriptsByStatus.Success");
@@ -45,18 +45,18 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			List<QueryScriptsByStatusResponse.QueryScriptsByStatus_Scripts.QueryScriptsByStatus_Script> scripts_list = new List<QueryScriptsByStatusResponse.QueryScriptsByStatus_Scripts.QueryScriptsByStatus_Script>();
 			for (int i = 0; i < _ctx.Length("QueryScriptsByStatus.Scripts.List.Length"); i++) {
 				QueryScriptsByStatusResponse.QueryScriptsByStatus_Scripts.QueryScriptsByStatus_Script script = new QueryScriptsByStatusResponse.QueryScriptsByStatus_Scripts.QueryScriptsByStatus_Script();
-				script.AppliedVersion = _ctx.StringValue("QueryScriptsByStatus.Scripts.List["+ i +"].AppliedVersion");
-				script.DebugStatus = _ctx.StringValue("QueryScriptsByStatus.Scripts.List["+ i +"].DebugStatus");
-				script.DebugVersion = _ctx.StringValue("QueryScriptsByStatus.Scripts.List["+ i +"].DebugVersion");
-				script.Industry = _ctx.StringValue("QueryScriptsByStatus.Scripts.List["+ i +"].Industry");
-				script.IsDebugDrafted = _ctx.BooleanValue("QueryScriptsByStatus.Scripts.List["+ i +"].IsDebugDrafted");
-				script.IsDrafted = _ctx.BooleanValue("QueryScriptsByStatus.Scripts.List["+ i +"].IsDrafted");
-				script.Scene = _ctx.StringValue("QueryScriptsByStatus.Scripts.List["+ i +"].Scene");
-				script.ScriptDescription = _ctx.StringValue("QueryScriptsByStatus.Scripts.List["+ i +"].ScriptDescription");
-				script.ScriptId = _ctx.StringValue("QueryScriptsByStatus.Scripts.List["+ i +"].ScriptId");
-				script.ScriptName = _ctx.StringValue("QueryScriptsByStatus.Scripts.List["+ i +"].ScriptName");
 				script.Status = _ctx.StringValue("QueryScriptsByStatus.Scripts.List["+ i +"].Status");
 				script.UpdateTime = _ctx.LongValue("QueryScriptsByStatus.Scripts.List["+ i +"].UpdateTime");
+				script.ScriptId = _ctx.StringValue("QueryScriptsByStatus.Scripts.List["+ i +"].ScriptId");
+				script.AppliedVersion = _ctx.StringValue("QueryScriptsByStatus.Scripts.List["+ i +"].AppliedVersion");
+				script.IsDebugDrafted = _ctx.BooleanValue("QueryScriptsByStatus.Scripts.List["+ i +"].IsDebugDrafted");
+				script.Industry = _ctx.StringValue("QueryScriptsByStatus.Scripts.List["+ i +"].Industry");
+				script.ScriptDescription = _ctx.StringValue("QueryScriptsByStatus.Scripts.List["+ i +"].ScriptDescription");
+				script.IsDrafted = _ctx.BooleanValue("QueryScriptsByStatus.Scripts.List["+ i +"].IsDrafted");
+				script.DebugStatus = _ctx.StringValue("QueryScriptsByStatus.Scripts.List["+ i +"].DebugStatus");
+				script.DebugVersion = _ctx.StringValue("QueryScriptsByStatus.Scripts.List["+ i +"].DebugVersion");
+				script.Scene = _ctx.StringValue("QueryScriptsByStatus.Scripts.List["+ i +"].Scene");
+				script.ScriptName = _ctx.StringValue("QueryScriptsByStatus.Scripts.List["+ i +"].ScriptName");
 
 				scripts_list.Add(script);
 			}

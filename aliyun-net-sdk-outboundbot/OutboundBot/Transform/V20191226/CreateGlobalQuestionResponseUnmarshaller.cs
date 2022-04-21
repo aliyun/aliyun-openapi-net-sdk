@@ -31,12 +31,12 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			CreateGlobalQuestionResponse createGlobalQuestionResponse = new CreateGlobalQuestionResponse();
 
 			createGlobalQuestionResponse.HttpResponse = _ctx.HttpResponse;
-			createGlobalQuestionResponse.Code = _ctx.StringValue("CreateGlobalQuestion.Code");
-			createGlobalQuestionResponse.GlobalQuestionId = _ctx.StringValue("CreateGlobalQuestion.GlobalQuestionId");
 			createGlobalQuestionResponse.HttpStatusCode = _ctx.IntegerValue("CreateGlobalQuestion.HttpStatusCode");
-			createGlobalQuestionResponse.Message = _ctx.StringValue("CreateGlobalQuestion.Message");
+			createGlobalQuestionResponse.GlobalQuestionId = _ctx.StringValue("CreateGlobalQuestion.GlobalQuestionId");
 			createGlobalQuestionResponse.RequestId = _ctx.StringValue("CreateGlobalQuestion.RequestId");
 			createGlobalQuestionResponse.Success = _ctx.BooleanValue("CreateGlobalQuestion.Success");
+			createGlobalQuestionResponse.Code = _ctx.StringValue("CreateGlobalQuestion.Code");
+			createGlobalQuestionResponse.Message = _ctx.StringValue("CreateGlobalQuestion.Message");
         
 			return createGlobalQuestionResponse;
         }

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ModifyTagGroupsResponse modifyTagGroupsResponse = new ModifyTagGroupsResponse();
 
 			modifyTagGroupsResponse.HttpResponse = _ctx.HttpResponse;
-			modifyTagGroupsResponse.Code = _ctx.StringValue("ModifyTagGroups.Code");
 			modifyTagGroupsResponse.HttpStatusCode = _ctx.IntegerValue("ModifyTagGroups.HttpStatusCode");
+			modifyTagGroupsResponse.Code = _ctx.StringValue("ModifyTagGroups.Code");
 			modifyTagGroupsResponse.Message = _ctx.StringValue("ModifyTagGroups.Message");
 			modifyTagGroupsResponse.RequestId = _ctx.StringValue("ModifyTagGroups.RequestId");
 			modifyTagGroupsResponse.Success = _ctx.BooleanValue("ModifyTagGroups.Success");
@@ -40,10 +40,10 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			List<ModifyTagGroupsResponse.ModifyTagGroups_TagGroup> modifyTagGroupsResponse_tagGroups = new List<ModifyTagGroupsResponse.ModifyTagGroups_TagGroup>();
 			for (int i = 0; i < _ctx.Length("ModifyTagGroups.TagGroups.Length"); i++) {
 				ModifyTagGroupsResponse.ModifyTagGroups_TagGroup tagGroup = new ModifyTagGroupsResponse.ModifyTagGroups_TagGroup();
-				tagGroup.ScriptId = _ctx.StringValue("ModifyTagGroups.TagGroups["+ i +"].ScriptId");
-				tagGroup.TagGroup = _ctx.StringValue("ModifyTagGroups.TagGroups["+ i +"].TagGroup");
 				tagGroup.TagGroupId = _ctx.StringValue("ModifyTagGroups.TagGroups["+ i +"].TagGroupId");
 				tagGroup.TagGroupIndex = _ctx.IntegerValue("ModifyTagGroups.TagGroups["+ i +"].TagGroupIndex");
+				tagGroup.TagGroup = _ctx.StringValue("ModifyTagGroups.TagGroups["+ i +"].TagGroup");
+				tagGroup.ScriptId = _ctx.StringValue("ModifyTagGroups.TagGroups["+ i +"].ScriptId");
 
 				modifyTagGroupsResponse_tagGroups.Add(tagGroup);
 			}
@@ -52,11 +52,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			List<ModifyTagGroupsResponse.ModifyTagGroups_Tag> modifyTagGroupsResponse_tags = new List<ModifyTagGroupsResponse.ModifyTagGroups_Tag>();
 			for (int i = 0; i < _ctx.Length("ModifyTagGroups.Tags.Length"); i++) {
 				ModifyTagGroupsResponse.ModifyTagGroups_Tag tag = new ModifyTagGroupsResponse.ModifyTagGroups_Tag();
-				tag.ScriptId = _ctx.StringValue("ModifyTagGroups.Tags["+ i +"].ScriptId");
 				tag.TagGroup = _ctx.StringValue("ModifyTagGroups.Tags["+ i +"].TagGroup");
-				tag.TagId = _ctx.StringValue("ModifyTagGroups.Tags["+ i +"].TagId");
-				tag.TagIndex = _ctx.IntegerValue("ModifyTagGroups.Tags["+ i +"].TagIndex");
 				tag.TagName = _ctx.StringValue("ModifyTagGroups.Tags["+ i +"].TagName");
+				tag.TagIndex = _ctx.IntegerValue("ModifyTagGroups.Tags["+ i +"].TagIndex");
+				tag.ScriptId = _ctx.StringValue("ModifyTagGroups.Tags["+ i +"].ScriptId");
+				tag.TagId = _ctx.StringValue("ModifyTagGroups.Tags["+ i +"].TagId");
 
 				modifyTagGroupsResponse_tags.Add(tag);
 			}

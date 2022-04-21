@@ -31,19 +31,19 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			GetSummaryInfoResponse getSummaryInfoResponse = new GetSummaryInfoResponse();
 
 			getSummaryInfoResponse.HttpResponse = _ctx.HttpResponse;
-			getSummaryInfoResponse.RequestId = _ctx.StringValue("GetSummaryInfo.RequestId");
-			getSummaryInfoResponse.Success = _ctx.BooleanValue("GetSummaryInfo.Success");
+			getSummaryInfoResponse.HttpStatusCode = _ctx.IntegerValue("GetSummaryInfo.HttpStatusCode");
 			getSummaryInfoResponse.Code = _ctx.StringValue("GetSummaryInfo.Code");
 			getSummaryInfoResponse.Message = _ctx.StringValue("GetSummaryInfo.Message");
-			getSummaryInfoResponse.HttpStatusCode = _ctx.IntegerValue("GetSummaryInfo.HttpStatusCode");
+			getSummaryInfoResponse.RequestId = _ctx.StringValue("GetSummaryInfo.RequestId");
+			getSummaryInfoResponse.Success = _ctx.BooleanValue("GetSummaryInfo.Success");
 
 			List<GetSummaryInfoResponse.GetSummaryInfo_AgentBotInstanceSummary> getSummaryInfoResponse_agentBotInstanceSummaryList = new List<GetSummaryInfoResponse.GetSummaryInfo_AgentBotInstanceSummary>();
 			for (int i = 0; i < _ctx.Length("GetSummaryInfo.AgentBotInstanceSummaryList.Length"); i++) {
 				GetSummaryInfoResponse.GetSummaryInfo_AgentBotInstanceSummary agentBotInstanceSummary = new GetSummaryInfoResponse.GetSummaryInfo_AgentBotInstanceSummary();
-				agentBotInstanceSummary.TotalCallTime = _ctx.LongValue("GetSummaryInfo.AgentBotInstanceSummaryList["+ i +"].TotalCallTime");
 				agentBotInstanceSummary.TotalCallCount = _ctx.LongValue("GetSummaryInfo.AgentBotInstanceSummaryList["+ i +"].TotalCallCount");
-				agentBotInstanceSummary.UsedRecordingStorageSpace = _ctx.IntegerValue("GetSummaryInfo.AgentBotInstanceSummaryList["+ i +"].UsedRecordingStorageSpace");
 				agentBotInstanceSummary.InstanceId = _ctx.StringValue("GetSummaryInfo.AgentBotInstanceSummaryList["+ i +"].InstanceId");
+				agentBotInstanceSummary.TotalCallTime = _ctx.LongValue("GetSummaryInfo.AgentBotInstanceSummaryList["+ i +"].TotalCallTime");
+				agentBotInstanceSummary.UsedRecordingStorageSpace = _ctx.IntegerValue("GetSummaryInfo.AgentBotInstanceSummaryList["+ i +"].UsedRecordingStorageSpace");
 
 				getSummaryInfoResponse_agentBotInstanceSummaryList.Add(agentBotInstanceSummary);
 			}

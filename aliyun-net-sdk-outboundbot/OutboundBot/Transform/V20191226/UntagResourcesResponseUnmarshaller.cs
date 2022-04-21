@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			UntagResourcesResponse untagResourcesResponse = new UntagResourcesResponse();
 
 			untagResourcesResponse.HttpResponse = _ctx.HttpResponse;
-			untagResourcesResponse.RequestId = _ctx.StringValue("UntagResources.RequestId");
-			untagResourcesResponse.Success = _ctx.BooleanValue("UntagResources.Success");
+			untagResourcesResponse.HttpStatusCode = _ctx.IntegerValue("UntagResources.HttpStatusCode");
 			untagResourcesResponse.Code = _ctx.StringValue("UntagResources.Code");
 			untagResourcesResponse.Message = _ctx.StringValue("UntagResources.Message");
-			untagResourcesResponse.HttpStatusCode = _ctx.IntegerValue("UntagResources.HttpStatusCode");
+			untagResourcesResponse.RequestId = _ctx.StringValue("UntagResources.RequestId");
+			untagResourcesResponse.Success = _ctx.BooleanValue("UntagResources.Success");
         
 			return untagResourcesResponse;
         }

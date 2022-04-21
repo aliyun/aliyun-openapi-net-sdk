@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ModifyEmptyNumberNoMoreCallsInfoResponse modifyEmptyNumberNoMoreCallsInfoResponse = new ModifyEmptyNumberNoMoreCallsInfoResponse();
 
 			modifyEmptyNumberNoMoreCallsInfoResponse.HttpResponse = _ctx.HttpResponse;
-			modifyEmptyNumberNoMoreCallsInfoResponse.RequestId = _ctx.StringValue("ModifyEmptyNumberNoMoreCallsInfo.RequestId");
-			modifyEmptyNumberNoMoreCallsInfoResponse.Success = _ctx.BooleanValue("ModifyEmptyNumberNoMoreCallsInfo.Success");
+			modifyEmptyNumberNoMoreCallsInfoResponse.HttpStatusCode = _ctx.IntegerValue("ModifyEmptyNumberNoMoreCallsInfo.HttpStatusCode");
 			modifyEmptyNumberNoMoreCallsInfoResponse.Code = _ctx.StringValue("ModifyEmptyNumberNoMoreCallsInfo.Code");
 			modifyEmptyNumberNoMoreCallsInfoResponse.Message = _ctx.StringValue("ModifyEmptyNumberNoMoreCallsInfo.Message");
-			modifyEmptyNumberNoMoreCallsInfoResponse.HttpStatusCode = _ctx.IntegerValue("ModifyEmptyNumberNoMoreCallsInfo.HttpStatusCode");
+			modifyEmptyNumberNoMoreCallsInfoResponse.RequestId = _ctx.StringValue("ModifyEmptyNumberNoMoreCallsInfo.RequestId");
+			modifyEmptyNumberNoMoreCallsInfoResponse.Success = _ctx.BooleanValue("ModifyEmptyNumberNoMoreCallsInfo.Success");
         
 			return modifyEmptyNumberNoMoreCallsInfoResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,27 +25,51 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class ListJobGroupsAsyncResponse : AcsResponse
 	{
 
+		private bool? timeout;
+
+		private int? httpStatusCode;
+
 		private string requestId;
 
 		private bool? success;
+
+		private bool? vaild;
 
 		private string code;
 
 		private string message;
 
-		private int? httpStatusCode;
-
-		private int? totalCount;
+		private int? pageSize;
 
 		private int? pageNumber;
 
-		private int? pageSize;
-
-		private bool? vaild;
-
-		private bool? timeout;
+		private int? totalCount;
 
 		private List<ListJobGroupsAsync_JobGroup> jobGroups;
+
+		public bool? Timeout
+		{
+			get
+			{
+				return timeout;
+			}
+			set	
+			{
+				timeout = value;
+			}
+		}
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -68,6 +92,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public bool? Vaild
+		{
+			get
+			{
+				return vaild;
+			}
+			set	
+			{
+				vaild = value;
 			}
 		}
 
@@ -95,27 +131,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public int? HttpStatusCode
+		public int? PageSize
 		{
 			get
 			{
-				return httpStatusCode;
+				return pageSize;
 			}
 			set	
 			{
-				httpStatusCode = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
+				pageSize = value;
 			}
 		}
 
@@ -131,39 +155,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
-			}
-		}
-
-		public bool? Vaild
-		{
-			get
-			{
-				return vaild;
-			}
-			set	
-			{
-				vaild = value;
-			}
-		}
-
-		public bool? Timeout
-		{
-			get
-			{
-				return timeout;
-			}
-			set	
-			{
-				timeout = value;
+				totalCount = value;
 			}
 		}
 
@@ -182,33 +182,57 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class ListJobGroupsAsync_JobGroup
 		{
 
+			private string status;
+
+			private long? creationTime;
+
 			private string jobGroupId;
 
 			private string jobGroupName;
 
-			private string jobGroupDescription;
+			private int? totalCallNum;
 
 			private string scriptId;
 
-			private string scriptName;
-
-			private long? creationTime;
-
-			private string status;
+			private string jobGroupDescription;
 
 			private string jobDataParsingTaskId;
 
-			private string modifyTime;
+			private string scriptName;
 
 			private string scriptVersion;
 
-			private int? totalCallNum;
+			private string modifyTime;
 
 			private ListJobGroupsAsync_Strategy strategy;
 
 			private ListJobGroupsAsync_Progress progress;
 
 			private ListJobGroupsAsync_ExportProgress exportProgress;
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public long? CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
+				}
+			}
 
 			public string JobGroupId
 			{
@@ -234,15 +258,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string JobGroupDescription
+			public int? TotalCallNum
 			{
 				get
 				{
-					return jobGroupDescription;
+					return totalCallNum;
 				}
 				set	
 				{
-					jobGroupDescription = value;
+					totalCallNum = value;
 				}
 			}
 
@@ -258,39 +282,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string ScriptName
+			public string JobGroupDescription
 			{
 				get
 				{
-					return scriptName;
+					return jobGroupDescription;
 				}
 				set	
 				{
-					scriptName = value;
-				}
-			}
-
-			public long? CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
+					jobGroupDescription = value;
 				}
 			}
 
@@ -306,15 +306,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string ModifyTime
+			public string ScriptName
 			{
 				get
 				{
-					return modifyTime;
+					return scriptName;
 				}
 				set	
 				{
-					modifyTime = value;
+					scriptName = value;
 				}
 			}
 
@@ -330,15 +330,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public int? TotalCallNum
+			public string ModifyTime
 			{
 				get
 				{
-					return totalCallNum;
+					return modifyTime;
 				}
 				set	
 				{
-					totalCallNum = value;
+					modifyTime = value;
 				}
 			}
 
@@ -381,21 +381,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			public class ListJobGroupsAsync_Strategy
 			{
 
-				private long? startTime;
-
 				private long? endTime;
 
-				public long? StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
-					}
-				}
+				private long? startTime;
 
 				public long? EndTime
 				{
@@ -408,42 +396,54 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						endTime = value;
 					}
 				}
+
+				public long? StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
+					}
+				}
 			}
 
 			public class ListJobGroupsAsync_Progress
 			{
 
-				private int? totalJobs;
+				private int? totalNotAnswered;
 
 				private string status;
 
-				private int? totalNotAnswered;
-
-				private int? totalCompleted;
-
 				private long? startTime;
-
-				private int? duration;
-
-				private int? executingNum;
-
-				private int? cancelledNum;
-
-				private int? scheduling;
 
 				private int? failedNum;
 
 				private int? pausedNum;
 
-				public int? TotalJobs
+				private int? cancelledNum;
+
+				private int? totalCompleted;
+
+				private int? totalJobs;
+
+				private int? duration;
+
+				private int? scheduling;
+
+				private int? executingNum;
+
+				public int? TotalNotAnswered
 				{
 					get
 					{
-						return totalJobs;
+						return totalNotAnswered;
 					}
 					set	
 					{
-						totalJobs = value;
+						totalNotAnswered = value;
 					}
 				}
 
@@ -459,30 +459,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public int? TotalNotAnswered
-				{
-					get
-					{
-						return totalNotAnswered;
-					}
-					set	
-					{
-						totalNotAnswered = value;
-					}
-				}
-
-				public int? TotalCompleted
-				{
-					get
-					{
-						return totalCompleted;
-					}
-					set	
-					{
-						totalCompleted = value;
-					}
-				}
-
 				public long? StartTime
 				{
 					get
@@ -492,54 +468,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						startTime = value;
-					}
-				}
-
-				public int? Duration
-				{
-					get
-					{
-						return duration;
-					}
-					set	
-					{
-						duration = value;
-					}
-				}
-
-				public int? ExecutingNum
-				{
-					get
-					{
-						return executingNum;
-					}
-					set	
-					{
-						executingNum = value;
-					}
-				}
-
-				public int? CancelledNum
-				{
-					get
-					{
-						return cancelledNum;
-					}
-					set	
-					{
-						cancelledNum = value;
-					}
-				}
-
-				public int? Scheduling
-				{
-					get
-					{
-						return scheduling;
-					}
-					set	
-					{
-						scheduling = value;
 					}
 				}
 
@@ -566,16 +494,100 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						pausedNum = value;
 					}
 				}
+
+				public int? CancelledNum
+				{
+					get
+					{
+						return cancelledNum;
+					}
+					set	
+					{
+						cancelledNum = value;
+					}
+				}
+
+				public int? TotalCompleted
+				{
+					get
+					{
+						return totalCompleted;
+					}
+					set	
+					{
+						totalCompleted = value;
+					}
+				}
+
+				public int? TotalJobs
+				{
+					get
+					{
+						return totalJobs;
+					}
+					set	
+					{
+						totalJobs = value;
+					}
+				}
+
+				public int? Duration
+				{
+					get
+					{
+						return duration;
+					}
+					set	
+					{
+						duration = value;
+					}
+				}
+
+				public int? Scheduling
+				{
+					get
+					{
+						return scheduling;
+					}
+					set	
+					{
+						scheduling = value;
+					}
+				}
+
+				public int? ExecutingNum
+				{
+					get
+					{
+						return executingNum;
+					}
+					set	
+					{
+						executingNum = value;
+					}
+				}
 			}
 
 			public class ListJobGroupsAsync_ExportProgress
 			{
 
+				private string status;
+
 				private string fileHttpUrl;
 
 				private string progress;
 
-				private string status;
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 
 				public string FileHttpUrl
 				{
@@ -598,18 +610,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						progress = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
 					}
 				}
 			}

@@ -44,6 +44,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string instanceId;
 
+		private bool? withScript;
+
 		public string JobId
 		{
 			get
@@ -67,6 +69,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public bool? WithScript
+		{
+			get
+			{
+				return withScript;
+			}
+			set	
+			{
+				withScript = value;
+				DictionaryUtil.Add(QueryParameters, "WithScript", value.ToString());
 			}
 		}
 

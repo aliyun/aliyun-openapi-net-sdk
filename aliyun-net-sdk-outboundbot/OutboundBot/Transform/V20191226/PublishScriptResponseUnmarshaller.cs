@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			PublishScriptResponse publishScriptResponse = new PublishScriptResponse();
 
 			publishScriptResponse.HttpResponse = _ctx.HttpResponse;
-			publishScriptResponse.Code = _ctx.StringValue("PublishScript.Code");
 			publishScriptResponse.HttpStatusCode = _ctx.IntegerValue("PublishScript.HttpStatusCode");
+			publishScriptResponse.Code = _ctx.StringValue("PublishScript.Code");
 			publishScriptResponse.Message = _ctx.StringValue("PublishScript.Message");
 			publishScriptResponse.RequestId = _ctx.StringValue("PublishScript.RequestId");
 			publishScriptResponse.Success = _ctx.BooleanValue("PublishScript.Success");

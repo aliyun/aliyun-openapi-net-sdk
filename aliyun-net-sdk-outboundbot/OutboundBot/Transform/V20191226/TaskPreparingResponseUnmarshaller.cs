@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			TaskPreparingResponse taskPreparingResponse = new TaskPreparingResponse();
 
 			taskPreparingResponse.HttpResponse = _ctx.HttpResponse;
+			taskPreparingResponse.HttpStatusCode = _ctx.IntegerValue("TaskPreparing.HttpStatusCode");
 			taskPreparingResponse.RequestId = _ctx.StringValue("TaskPreparing.RequestId");
 			taskPreparingResponse.Success = _ctx.BooleanValue("TaskPreparing.Success");
 			taskPreparingResponse.Code = _ctx.StringValue("TaskPreparing.Code");
 			taskPreparingResponse.Message = _ctx.StringValue("TaskPreparing.Message");
-			taskPreparingResponse.HttpStatusCode = _ctx.IntegerValue("TaskPreparing.HttpStatusCode");
 			taskPreparingResponse.TaskId = _ctx.StringValue("TaskPreparing.TaskId");
         
 			return taskPreparingResponse;

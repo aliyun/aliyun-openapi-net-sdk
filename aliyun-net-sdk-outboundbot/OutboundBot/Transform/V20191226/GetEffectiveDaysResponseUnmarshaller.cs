@@ -31,12 +31,12 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			GetEffectiveDaysResponse getEffectiveDaysResponse = new GetEffectiveDaysResponse();
 
 			getEffectiveDaysResponse.HttpResponse = _ctx.HttpResponse;
+			getEffectiveDaysResponse.HttpStatusCode = _ctx.IntegerValue("GetEffectiveDays.HttpStatusCode");
 			getEffectiveDaysResponse.RequestId = _ctx.StringValue("GetEffectiveDays.RequestId");
+			getEffectiveDaysResponse.EffectiveDays = _ctx.IntegerValue("GetEffectiveDays.EffectiveDays");
 			getEffectiveDaysResponse.Success = _ctx.BooleanValue("GetEffectiveDays.Success");
 			getEffectiveDaysResponse.Code = _ctx.StringValue("GetEffectiveDays.Code");
 			getEffectiveDaysResponse.Message = _ctx.StringValue("GetEffectiveDays.Message");
-			getEffectiveDaysResponse.HttpStatusCode = _ctx.IntegerValue("GetEffectiveDays.HttpStatusCode");
-			getEffectiveDaysResponse.EffectiveDays = _ctx.IntegerValue("GetEffectiveDays.EffectiveDays");
         
 			return getEffectiveDaysResponse;
         }

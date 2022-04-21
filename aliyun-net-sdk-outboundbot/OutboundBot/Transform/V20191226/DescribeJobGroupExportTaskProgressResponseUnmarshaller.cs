@@ -31,13 +31,13 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DescribeJobGroupExportTaskProgressResponse describeJobGroupExportTaskProgressResponse = new DescribeJobGroupExportTaskProgressResponse();
 
 			describeJobGroupExportTaskProgressResponse.HttpResponse = _ctx.HttpResponse;
+			describeJobGroupExportTaskProgressResponse.HttpStatusCode = _ctx.IntegerValue("DescribeJobGroupExportTaskProgress.HttpStatusCode");
+			describeJobGroupExportTaskProgressResponse.FileHttpUrl = _ctx.StringValue("DescribeJobGroupExportTaskProgress.FileHttpUrl");
+			describeJobGroupExportTaskProgressResponse.Progress = _ctx.FloatValue("DescribeJobGroupExportTaskProgress.Progress");
 			describeJobGroupExportTaskProgressResponse.RequestId = _ctx.StringValue("DescribeJobGroupExportTaskProgress.RequestId");
 			describeJobGroupExportTaskProgressResponse.Success = _ctx.BooleanValue("DescribeJobGroupExportTaskProgress.Success");
 			describeJobGroupExportTaskProgressResponse.Code = _ctx.StringValue("DescribeJobGroupExportTaskProgress.Code");
 			describeJobGroupExportTaskProgressResponse.Message = _ctx.StringValue("DescribeJobGroupExportTaskProgress.Message");
-			describeJobGroupExportTaskProgressResponse.HttpStatusCode = _ctx.IntegerValue("DescribeJobGroupExportTaskProgress.HttpStatusCode");
-			describeJobGroupExportTaskProgressResponse.FileHttpUrl = _ctx.StringValue("DescribeJobGroupExportTaskProgress.FileHttpUrl");
-			describeJobGroupExportTaskProgressResponse.Progress = _ctx.FloatValue("DescribeJobGroupExportTaskProgress.Progress");
         
 			return describeJobGroupExportTaskProgressResponse;
         }

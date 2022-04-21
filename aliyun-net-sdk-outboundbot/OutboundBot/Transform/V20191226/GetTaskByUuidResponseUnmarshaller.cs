@@ -34,17 +34,17 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			getTaskByUuidResponse.RequestId = _ctx.StringValue("GetTaskByUuid.RequestId");
 
 			GetTaskByUuidResponse.GetTaskByUuid_Task task = new GetTaskByUuidResponse.GetTaskByUuid_Task();
-			task.Id = _ctx.StringValue("GetTaskByUuid.Task.Id");
-			task.JobId = _ctx.StringValue("GetTaskByUuid.Task.JobId");
-			task.PlannedTime = _ctx.LongValue("GetTaskByUuid.Task.PlannedTime");
-			task.ActualTime = _ctx.LongValue("GetTaskByUuid.Task.ActualTime");
-			task.EndTime = _ctx.LongValue("GetTaskByUuid.Task.EndTime");
-			task.CallingNumber = _ctx.StringValue("GetTaskByUuid.Task.CallingNumber");
-			task.CalledNumber = _ctx.StringValue("GetTaskByUuid.Task.CalledNumber");
-			task.CallId = _ctx.StringValue("GetTaskByUuid.Task.CallId");
-			task.EndReason = _ctx.IntegerValue("GetTaskByUuid.Task.EndReason");
-			task.InstanceId = _ctx.StringValue("GetTaskByUuid.Task.InstanceId");
 			task.JobGroupId = _ctx.StringValue("GetTaskByUuid.Task.JobGroupId");
+			task.EndTime = _ctx.LongValue("GetTaskByUuid.Task.EndTime");
+			task.EndReason = _ctx.IntegerValue("GetTaskByUuid.Task.EndReason");
+			task.PlannedTime = _ctx.LongValue("GetTaskByUuid.Task.PlannedTime");
+			task.JobId = _ctx.StringValue("GetTaskByUuid.Task.JobId");
+			task.CallId = _ctx.StringValue("GetTaskByUuid.Task.CallId");
+			task.CallingNumber = _ctx.StringValue("GetTaskByUuid.Task.CallingNumber");
+			task.ActualTime = _ctx.LongValue("GetTaskByUuid.Task.ActualTime");
+			task.InstanceId = _ctx.StringValue("GetTaskByUuid.Task.InstanceId");
+			task.CalledNumber = _ctx.StringValue("GetTaskByUuid.Task.CalledNumber");
+			task.Id = _ctx.StringValue("GetTaskByUuid.Task.Id");
 			getTaskByUuidResponse.Task = task;
         
 			return getTaskByUuidResponse;

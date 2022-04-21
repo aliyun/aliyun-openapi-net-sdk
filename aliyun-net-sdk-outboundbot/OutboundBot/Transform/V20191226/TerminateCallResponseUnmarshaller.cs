@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			TerminateCallResponse terminateCallResponse = new TerminateCallResponse();
 
 			terminateCallResponse.HttpResponse = _ctx.HttpResponse;
-			terminateCallResponse.RequestId = _ctx.StringValue("TerminateCall.RequestId");
-			terminateCallResponse.Success = _ctx.BooleanValue("TerminateCall.Success");
+			terminateCallResponse.HttpStatusCode = _ctx.IntegerValue("TerminateCall.HttpStatusCode");
 			terminateCallResponse.Code = _ctx.StringValue("TerminateCall.Code");
 			terminateCallResponse.Message = _ctx.StringValue("TerminateCall.Message");
-			terminateCallResponse.HttpStatusCode = _ctx.IntegerValue("TerminateCall.HttpStatusCode");
+			terminateCallResponse.RequestId = _ctx.StringValue("TerminateCall.RequestId");
+			terminateCallResponse.Success = _ctx.BooleanValue("TerminateCall.Success");
         
 			return terminateCallResponse;
         }

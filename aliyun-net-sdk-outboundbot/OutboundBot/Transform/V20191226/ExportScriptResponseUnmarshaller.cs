@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ExportScriptResponse exportScriptResponse = new ExportScriptResponse();
 
 			exportScriptResponse.HttpResponse = _ctx.HttpResponse;
-			exportScriptResponse.Code = _ctx.StringValue("ExportScript.Code");
 			exportScriptResponse.HttpStatusCode = _ctx.IntegerValue("ExportScript.HttpStatusCode");
+			exportScriptResponse.Code = _ctx.StringValue("ExportScript.Code");
 			exportScriptResponse.Message = _ctx.StringValue("ExportScript.Message");
 			exportScriptResponse.RequestId = _ctx.StringValue("ExportScript.RequestId");
 			exportScriptResponse.Success = _ctx.BooleanValue("ExportScript.Success");

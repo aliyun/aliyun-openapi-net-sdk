@@ -31,26 +31,26 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DescribeDialogueNodeStatisticsResponse describeDialogueNodeStatisticsResponse = new DescribeDialogueNodeStatisticsResponse();
 
 			describeDialogueNodeStatisticsResponse.HttpResponse = _ctx.HttpResponse;
+			describeDialogueNodeStatisticsResponse.HttpStatusCode = _ctx.IntegerValue("DescribeDialogueNodeStatistics.HttpStatusCode");
 			describeDialogueNodeStatisticsResponse.RequestId = _ctx.StringValue("DescribeDialogueNodeStatistics.RequestId");
+			describeDialogueNodeStatisticsResponse.GroupId = _ctx.StringValue("DescribeDialogueNodeStatistics.GroupId");
 			describeDialogueNodeStatisticsResponse.Success = _ctx.BooleanValue("DescribeDialogueNodeStatistics.Success");
+			describeDialogueNodeStatisticsResponse.TotalCompleted = _ctx.IntegerValue("DescribeDialogueNodeStatistics.TotalCompleted");
 			describeDialogueNodeStatisticsResponse.Code = _ctx.StringValue("DescribeDialogueNodeStatistics.Code");
 			describeDialogueNodeStatisticsResponse.Message = _ctx.StringValue("DescribeDialogueNodeStatistics.Message");
-			describeDialogueNodeStatisticsResponse.HttpStatusCode = _ctx.IntegerValue("DescribeDialogueNodeStatistics.HttpStatusCode");
-			describeDialogueNodeStatisticsResponse.GroupId = _ctx.StringValue("DescribeDialogueNodeStatistics.GroupId");
 			describeDialogueNodeStatisticsResponse.InstanceId = _ctx.StringValue("DescribeDialogueNodeStatistics.InstanceId");
-			describeDialogueNodeStatisticsResponse.TotalCompleted = _ctx.IntegerValue("DescribeDialogueNodeStatistics.TotalCompleted");
 
 			List<DescribeDialogueNodeStatisticsResponse.DescribeDialogueNodeStatistics_NoAnswerDialogueNode> describeDialogueNodeStatisticsResponse_noAnswerDialogueNodes = new List<DescribeDialogueNodeStatisticsResponse.DescribeDialogueNodeStatistics_NoAnswerDialogueNode>();
 			for (int i = 0; i < _ctx.Length("DescribeDialogueNodeStatistics.NoAnswerDialogueNodes.Length"); i++) {
 				DescribeDialogueNodeStatisticsResponse.DescribeDialogueNodeStatistics_NoAnswerDialogueNode noAnswerDialogueNode = new DescribeDialogueNodeStatisticsResponse.DescribeDialogueNodeStatistics_NoAnswerDialogueNode();
-				noAnswerDialogueNode.Id = _ctx.StringValue("DescribeDialogueNodeStatistics.NoAnswerDialogueNodes["+ i +"].Id");
-				noAnswerDialogueNode.InstanceId = _ctx.StringValue("DescribeDialogueNodeStatistics.NoAnswerDialogueNodes["+ i +"].InstanceId");
-				noAnswerDialogueNode.GroupId = _ctx.StringValue("DescribeDialogueNodeStatistics.NoAnswerDialogueNodes["+ i +"].GroupId");
-				noAnswerDialogueNode.NodeId = _ctx.StringValue("DescribeDialogueNodeStatistics.NoAnswerDialogueNodes["+ i +"].NodeId");
-				noAnswerDialogueNode.NodeName = _ctx.StringValue("DescribeDialogueNodeStatistics.NoAnswerDialogueNodes["+ i +"].NodeName");
-				noAnswerDialogueNode.HitNum = _ctx.IntegerValue("DescribeDialogueNodeStatistics.NoAnswerDialogueNodes["+ i +"].HitNum");
-				noAnswerDialogueNode.HangUpNum = _ctx.IntegerValue("DescribeDialogueNodeStatistics.NoAnswerDialogueNodes["+ i +"].HangUpNum");
 				noAnswerDialogueNode.NoAnswerNum = _ctx.IntegerValue("DescribeDialogueNodeStatistics.NoAnswerDialogueNodes["+ i +"].NoAnswerNum");
+				noAnswerDialogueNode.GroupId = _ctx.StringValue("DescribeDialogueNodeStatistics.NoAnswerDialogueNodes["+ i +"].GroupId");
+				noAnswerDialogueNode.NodeName = _ctx.StringValue("DescribeDialogueNodeStatistics.NoAnswerDialogueNodes["+ i +"].NodeName");
+				noAnswerDialogueNode.HangUpNum = _ctx.IntegerValue("DescribeDialogueNodeStatistics.NoAnswerDialogueNodes["+ i +"].HangUpNum");
+				noAnswerDialogueNode.InstanceId = _ctx.StringValue("DescribeDialogueNodeStatistics.NoAnswerDialogueNodes["+ i +"].InstanceId");
+				noAnswerDialogueNode.HitNum = _ctx.IntegerValue("DescribeDialogueNodeStatistics.NoAnswerDialogueNodes["+ i +"].HitNum");
+				noAnswerDialogueNode.Id = _ctx.StringValue("DescribeDialogueNodeStatistics.NoAnswerDialogueNodes["+ i +"].Id");
+				noAnswerDialogueNode.NodeId = _ctx.StringValue("DescribeDialogueNodeStatistics.NoAnswerDialogueNodes["+ i +"].NodeId");
 
 				describeDialogueNodeStatisticsResponse_noAnswerDialogueNodes.Add(noAnswerDialogueNode);
 			}

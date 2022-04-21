@@ -60,6 +60,23 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			}
 			job.CallingNumbers = job_callingNumbers;
 
+			DescribeJobResponse.DescribeJob_Job.DescribeJob_Script script = new DescribeJobResponse.DescribeJob_Job.DescribeJob_Script();
+			script.Status = _ctx.StringValue("DescribeJob.Job.Script.Status");
+			script.UpdateTime = _ctx.LongValue("DescribeJob.Job.Script.UpdateTime");
+			script.ChatbotId = _ctx.StringValue("DescribeJob.Job.Script.ChatbotId");
+			script.ScriptId = _ctx.StringValue("DescribeJob.Job.Script.ScriptId");
+			script.IsDebugDrafted = _ctx.BooleanValue("DescribeJob.Job.Script.IsDebugDrafted");
+			script.Industry = _ctx.StringValue("DescribeJob.Job.Script.Industry");
+			script.ScriptDescription = _ctx.StringValue("DescribeJob.Job.Script.ScriptDescription");
+			script.MiniPlaybackConfigEnabled = _ctx.BooleanValue("DescribeJob.Job.Script.MiniPlaybackConfigEnabled");
+			script.IsDrafted = _ctx.BooleanValue("DescribeJob.Job.Script.IsDrafted");
+			script.TtsConfig = _ctx.StringValue("DescribeJob.Job.Script.TtsConfig");
+			script.DebugStatus = _ctx.StringValue("DescribeJob.Job.Script.DebugStatus");
+			script.AsrConfig = _ctx.StringValue("DescribeJob.Job.Script.AsrConfig");
+			script.Scene = _ctx.StringValue("DescribeJob.Job.Script.Scene");
+			script.Name = _ctx.StringValue("DescribeJob.Job.Script.Name");
+			job.Script = script;
+
 			List<DescribeJobResponse.DescribeJob_Job.DescribeJob_Contact> job_contacts = new List<DescribeJobResponse.DescribeJob_Job.DescribeJob_Contact>();
 			for (int i = 0; i < _ctx.Length("DescribeJob.Job.Contacts.Length"); i++) {
 				DescribeJobResponse.DescribeJob_Job.DescribeJob_Contact contact = new DescribeJobResponse.DescribeJob_Job.DescribeJob_Contact();
@@ -136,6 +153,7 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 					conversationDetail.Timestamp = _ctx.LongValue("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Timestamp");
 					conversationDetail.Speaker = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Speaker");
 					conversationDetail.Script = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Script");
+					conversationDetail.SequenceId = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].SequenceId");
 
 					List<DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_ConversationDetail.DescribeJob_SummaryItem2> conversationDetail_summary1 = new List<DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_ConversationDetail.DescribeJob_SummaryItem2>();
 					for (int k = 0; k < _ctx.Length("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Summary.Length"); k++) {

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,17 +25,29 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class GetMaxAttemptsPerDayResponse : AcsResponse
 	{
 
+		private int? httpStatusCode;
+
 		private string requestId;
 
 		private bool? success;
+
+		private int? maxAttemptsPerDay;
 
 		private string code;
 
 		private string message;
 
-		private int? httpStatusCode;
-
-		private int? maxAttemptsPerDay;
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -61,6 +73,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
+		public int? MaxAttemptsPerDay
+		{
+			get
+			{
+				return maxAttemptsPerDay;
+			}
+			set	
+			{
+				maxAttemptsPerDay = value;
+			}
+		}
+
 		public string Code
 		{
 			get
@@ -82,30 +106,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				message = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
-		public int? MaxAttemptsPerDay
-		{
-			get
-			{
-				return maxAttemptsPerDay;
-			}
-			set	
-			{
-				maxAttemptsPerDay = value;
 			}
 		}
 	}

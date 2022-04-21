@@ -31,12 +31,12 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			GetEmptyNumberNoMoreCallsInfoResponse getEmptyNumberNoMoreCallsInfoResponse = new GetEmptyNumberNoMoreCallsInfoResponse();
 
 			getEmptyNumberNoMoreCallsInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getEmptyNumberNoMoreCallsInfoResponse.HttpStatusCode = _ctx.IntegerValue("GetEmptyNumberNoMoreCallsInfo.HttpStatusCode");
 			getEmptyNumberNoMoreCallsInfoResponse.RequestId = _ctx.StringValue("GetEmptyNumberNoMoreCallsInfo.RequestId");
+			getEmptyNumberNoMoreCallsInfoResponse.EmptyNumberNoMoreCalls = _ctx.BooleanValue("GetEmptyNumberNoMoreCallsInfo.EmptyNumberNoMoreCalls");
 			getEmptyNumberNoMoreCallsInfoResponse.Success = _ctx.BooleanValue("GetEmptyNumberNoMoreCallsInfo.Success");
 			getEmptyNumberNoMoreCallsInfoResponse.Code = _ctx.StringValue("GetEmptyNumberNoMoreCallsInfo.Code");
 			getEmptyNumberNoMoreCallsInfoResponse.Message = _ctx.StringValue("GetEmptyNumberNoMoreCallsInfo.Message");
-			getEmptyNumberNoMoreCallsInfoResponse.HttpStatusCode = _ctx.IntegerValue("GetEmptyNumberNoMoreCallsInfo.HttpStatusCode");
-			getEmptyNumberNoMoreCallsInfoResponse.EmptyNumberNoMoreCalls = _ctx.BooleanValue("GetEmptyNumberNoMoreCallsInfo.EmptyNumberNoMoreCalls");
         
 			return getEmptyNumberNoMoreCallsInfoResponse;
         }

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			SubmitRecordingResponse submitRecordingResponse = new SubmitRecordingResponse();
 
 			submitRecordingResponse.HttpResponse = _ctx.HttpResponse;
-			submitRecordingResponse.Code = _ctx.StringValue("SubmitRecording.Code");
 			submitRecordingResponse.HttpStatusCode = _ctx.IntegerValue("SubmitRecording.HttpStatusCode");
+			submitRecordingResponse.Code = _ctx.StringValue("SubmitRecording.Code");
 			submitRecordingResponse.Message = _ctx.StringValue("SubmitRecording.Message");
 			submitRecordingResponse.RequestId = _ctx.StringValue("SubmitRecording.RequestId");
 			submitRecordingResponse.Success = _ctx.BooleanValue("SubmitRecording.Success");

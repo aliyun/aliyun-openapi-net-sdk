@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DescribeDsReportsResponse describeDsReportsResponse = new DescribeDsReportsResponse();
 
 			describeDsReportsResponse.HttpResponse = _ctx.HttpResponse;
+			describeDsReportsResponse.HttpStatusCode = _ctx.IntegerValue("DescribeDsReports.HttpStatusCode");
 			describeDsReportsResponse.RequestId = _ctx.StringValue("DescribeDsReports.RequestId");
 			describeDsReportsResponse.Success = _ctx.BooleanValue("DescribeDsReports.Success");
 			describeDsReportsResponse.Code = _ctx.StringValue("DescribeDsReports.Code");
 			describeDsReportsResponse.Message = _ctx.StringValue("DescribeDsReports.Message");
-			describeDsReportsResponse.HttpStatusCode = _ctx.IntegerValue("DescribeDsReports.HttpStatusCode");
 			describeDsReportsResponse.DsReports = _ctx.StringValue("DescribeDsReports.DsReports");
         
 			return describeDsReportsResponse;

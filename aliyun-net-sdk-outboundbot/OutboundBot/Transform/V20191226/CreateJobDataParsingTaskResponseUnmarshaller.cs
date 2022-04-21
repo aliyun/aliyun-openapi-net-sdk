@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			CreateJobDataParsingTaskResponse createJobDataParsingTaskResponse = new CreateJobDataParsingTaskResponse();
 
 			createJobDataParsingTaskResponse.HttpResponse = _ctx.HttpResponse;
+			createJobDataParsingTaskResponse.HttpStatusCode = _ctx.IntegerValue("CreateJobDataParsingTask.HttpStatusCode");
 			createJobDataParsingTaskResponse.RequestId = _ctx.StringValue("CreateJobDataParsingTask.RequestId");
 			createJobDataParsingTaskResponse.Success = _ctx.BooleanValue("CreateJobDataParsingTask.Success");
 			createJobDataParsingTaskResponse.Code = _ctx.StringValue("CreateJobDataParsingTask.Code");
 			createJobDataParsingTaskResponse.Message = _ctx.StringValue("CreateJobDataParsingTask.Message");
-			createJobDataParsingTaskResponse.HttpStatusCode = _ctx.IntegerValue("CreateJobDataParsingTask.HttpStatusCode");
 			createJobDataParsingTaskResponse.JobDataParsingTaskId = _ctx.StringValue("CreateJobDataParsingTask.JobDataParsingTaskId");
         
 			return createJobDataParsingTaskResponse;

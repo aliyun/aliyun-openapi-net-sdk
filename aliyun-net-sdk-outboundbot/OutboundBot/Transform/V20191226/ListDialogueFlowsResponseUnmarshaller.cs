@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ListDialogueFlowsResponse listDialogueFlowsResponse = new ListDialogueFlowsResponse();
 
 			listDialogueFlowsResponse.HttpResponse = _ctx.HttpResponse;
-			listDialogueFlowsResponse.Code = _ctx.StringValue("ListDialogueFlows.Code");
 			listDialogueFlowsResponse.HttpStatusCode = _ctx.IntegerValue("ListDialogueFlows.HttpStatusCode");
+			listDialogueFlowsResponse.Code = _ctx.StringValue("ListDialogueFlows.Code");
 			listDialogueFlowsResponse.Message = _ctx.StringValue("ListDialogueFlows.Message");
 			listDialogueFlowsResponse.RequestId = _ctx.StringValue("ListDialogueFlows.RequestId");
 			listDialogueFlowsResponse.Success = _ctx.BooleanValue("ListDialogueFlows.Success");
@@ -41,9 +41,9 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			for (int i = 0; i < _ctx.Length("ListDialogueFlows.DialogueFlows.Length"); i++) {
 				ListDialogueFlowsResponse.ListDialogueFlows_DialogueFlow dialogueFlow = new ListDialogueFlowsResponse.ListDialogueFlows_DialogueFlow();
 				dialogueFlow.DialogueFlowDefinition = _ctx.StringValue("ListDialogueFlows.DialogueFlows["+ i +"].DialogueFlowDefinition");
+				dialogueFlow.DialogueFlowType = _ctx.StringValue("ListDialogueFlows.DialogueFlows["+ i +"].DialogueFlowType");
 				dialogueFlow.DialogueFlowId = _ctx.StringValue("ListDialogueFlows.DialogueFlows["+ i +"].DialogueFlowId");
 				dialogueFlow.DialogueFlowName = _ctx.StringValue("ListDialogueFlows.DialogueFlows["+ i +"].DialogueFlowName");
-				dialogueFlow.DialogueFlowType = _ctx.StringValue("ListDialogueFlows.DialogueFlows["+ i +"].DialogueFlowType");
 				dialogueFlow.ScriptId = _ctx.StringValue("ListDialogueFlows.DialogueFlows["+ i +"].ScriptId");
 				dialogueFlow.ScriptVersion = _ctx.StringValue("ListDialogueFlows.DialogueFlows["+ i +"].ScriptVersion");
 

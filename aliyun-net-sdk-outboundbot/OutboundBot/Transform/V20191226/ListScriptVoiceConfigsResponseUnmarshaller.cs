@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ListScriptVoiceConfigsResponse listScriptVoiceConfigsResponse = new ListScriptVoiceConfigsResponse();
 
 			listScriptVoiceConfigsResponse.HttpResponse = _ctx.HttpResponse;
-			listScriptVoiceConfigsResponse.Code = _ctx.StringValue("ListScriptVoiceConfigs.Code");
 			listScriptVoiceConfigsResponse.HttpStatusCode = _ctx.IntegerValue("ListScriptVoiceConfigs.HttpStatusCode");
+			listScriptVoiceConfigsResponse.Code = _ctx.StringValue("ListScriptVoiceConfigs.Code");
 			listScriptVoiceConfigsResponse.Message = _ctx.StringValue("ListScriptVoiceConfigs.Message");
 			listScriptVoiceConfigsResponse.RequestId = _ctx.StringValue("ListScriptVoiceConfigs.RequestId");
 			listScriptVoiceConfigsResponse.Success = _ctx.BooleanValue("ListScriptVoiceConfigs.Success");
@@ -45,13 +45,13 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			List<ListScriptVoiceConfigsResponse.ListScriptVoiceConfigs_ScriptVoiceConfigs.ListScriptVoiceConfigs_ScriptVoiceConfig> scriptVoiceConfigs_list = new List<ListScriptVoiceConfigsResponse.ListScriptVoiceConfigs_ScriptVoiceConfigs.ListScriptVoiceConfigs_ScriptVoiceConfig>();
 			for (int i = 0; i < _ctx.Length("ListScriptVoiceConfigs.ScriptVoiceConfigs.List.Length"); i++) {
 				ListScriptVoiceConfigsResponse.ListScriptVoiceConfigs_ScriptVoiceConfigs.ListScriptVoiceConfigs_ScriptVoiceConfig scriptVoiceConfig = new ListScriptVoiceConfigsResponse.ListScriptVoiceConfigs_ScriptVoiceConfigs.ListScriptVoiceConfigs_ScriptVoiceConfig();
-				scriptVoiceConfig.InstanceId = _ctx.StringValue("ListScriptVoiceConfigs.ScriptVoiceConfigs.List["+ i +"].InstanceId");
-				scriptVoiceConfig.ScriptContent = _ctx.StringValue("ListScriptVoiceConfigs.ScriptVoiceConfigs.List["+ i +"].ScriptContent");
-				scriptVoiceConfig.ScriptId = _ctx.StringValue("ListScriptVoiceConfigs.ScriptVoiceConfigs.List["+ i +"].ScriptId");
+				scriptVoiceConfig.Type = _ctx.StringValue("ListScriptVoiceConfigs.ScriptVoiceConfigs.List["+ i +"].Type");
 				scriptVoiceConfig.ScriptVoiceConfigId = _ctx.StringValue("ListScriptVoiceConfigs.ScriptVoiceConfigs.List["+ i +"].ScriptVoiceConfigId");
+				scriptVoiceConfig.ScriptContent = _ctx.StringValue("ListScriptVoiceConfigs.ScriptVoiceConfigs.List["+ i +"].ScriptContent");
+				scriptVoiceConfig.InstanceId = _ctx.StringValue("ListScriptVoiceConfigs.ScriptVoiceConfigs.List["+ i +"].InstanceId");
+				scriptVoiceConfig.ScriptId = _ctx.StringValue("ListScriptVoiceConfigs.ScriptVoiceConfigs.List["+ i +"].ScriptId");
 				scriptVoiceConfig.ScriptWaveformRelation = _ctx.StringValue("ListScriptVoiceConfigs.ScriptVoiceConfigs.List["+ i +"].ScriptWaveformRelation");
 				scriptVoiceConfig.Source = _ctx.StringValue("ListScriptVoiceConfigs.ScriptVoiceConfigs.List["+ i +"].Source");
-				scriptVoiceConfig.Type = _ctx.StringValue("ListScriptVoiceConfigs.ScriptVoiceConfigs.List["+ i +"].Type");
 
 				scriptVoiceConfigs_list.Add(scriptVoiceConfig);
 			}

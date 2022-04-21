@@ -31,12 +31,12 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ImportScriptResponse importScriptResponse = new ImportScriptResponse();
 
 			importScriptResponse.HttpResponse = _ctx.HttpResponse;
-			importScriptResponse.Code = _ctx.StringValue("ImportScript.Code");
 			importScriptResponse.HttpStatusCode = _ctx.IntegerValue("ImportScript.HttpStatusCode");
-			importScriptResponse.Message = _ctx.StringValue("ImportScript.Message");
 			importScriptResponse.RequestId = _ctx.StringValue("ImportScript.RequestId");
-			importScriptResponse.ScriptId = _ctx.StringValue("ImportScript.ScriptId");
 			importScriptResponse.Success = _ctx.BooleanValue("ImportScript.Success");
+			importScriptResponse.Code = _ctx.StringValue("ImportScript.Code");
+			importScriptResponse.Message = _ctx.StringValue("ImportScript.Message");
+			importScriptResponse.ScriptId = _ctx.StringValue("ImportScript.ScriptId");
         
 			return importScriptResponse;
         }

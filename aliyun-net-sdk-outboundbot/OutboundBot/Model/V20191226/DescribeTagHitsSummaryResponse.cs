@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,9 +25,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class DescribeTagHitsSummaryResponse : AcsResponse
 	{
 
-		private string code;
-
 		private int? httpStatusCode;
+
+		private string code;
 
 		private string message;
 
@@ -39,18 +39,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private List<DescribeTagHitsSummary_TagHits> tagHitsList;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
 		public int? HttpStatusCode
 		{
 			get
@@ -60,6 +48,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				httpStatusCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -126,35 +126,23 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class DescribeTagHitsSummary_TagGroup
 		{
 
-			private string id;
-
-			private string scriptId;
+			private int? tagGroupIndex;
 
 			private string tagGroup;
 
-			private int? tagGroupIndex;
+			private string scriptId;
 
-			public string Id
+			private string id;
+
+			public int? TagGroupIndex
 			{
 				get
 				{
-					return id;
+					return tagGroupIndex;
 				}
 				set	
 				{
-					id = value;
-				}
-			}
-
-			public string ScriptId
-			{
-				get
-				{
-					return scriptId;
-				}
-				set	
-				{
-					scriptId = value;
+					tagGroupIndex = value;
 				}
 			}
 
@@ -170,15 +158,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public int? TagGroupIndex
+			public string ScriptId
 			{
 				get
 				{
-					return tagGroupIndex;
+					return scriptId;
 				}
 				set	
 				{
-					tagGroupIndex = value;
+					scriptId = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 		}

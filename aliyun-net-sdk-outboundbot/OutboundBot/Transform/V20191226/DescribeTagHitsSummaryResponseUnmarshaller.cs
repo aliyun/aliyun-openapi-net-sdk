@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DescribeTagHitsSummaryResponse describeTagHitsSummaryResponse = new DescribeTagHitsSummaryResponse();
 
 			describeTagHitsSummaryResponse.HttpResponse = _ctx.HttpResponse;
-			describeTagHitsSummaryResponse.Code = _ctx.StringValue("DescribeTagHitsSummary.Code");
 			describeTagHitsSummaryResponse.HttpStatusCode = _ctx.IntegerValue("DescribeTagHitsSummary.HttpStatusCode");
+			describeTagHitsSummaryResponse.Code = _ctx.StringValue("DescribeTagHitsSummary.Code");
 			describeTagHitsSummaryResponse.Message = _ctx.StringValue("DescribeTagHitsSummary.Message");
 			describeTagHitsSummaryResponse.RequestId = _ctx.StringValue("DescribeTagHitsSummary.RequestId");
 			describeTagHitsSummaryResponse.Success = _ctx.BooleanValue("DescribeTagHitsSummary.Success");
@@ -40,10 +40,10 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			List<DescribeTagHitsSummaryResponse.DescribeTagHitsSummary_TagGroup> describeTagHitsSummaryResponse_tagGroups = new List<DescribeTagHitsSummaryResponse.DescribeTagHitsSummary_TagGroup>();
 			for (int i = 0; i < _ctx.Length("DescribeTagHitsSummary.TagGroups.Length"); i++) {
 				DescribeTagHitsSummaryResponse.DescribeTagHitsSummary_TagGroup tagGroup = new DescribeTagHitsSummaryResponse.DescribeTagHitsSummary_TagGroup();
-				tagGroup.Id = _ctx.StringValue("DescribeTagHitsSummary.TagGroups["+ i +"].Id");
-				tagGroup.ScriptId = _ctx.StringValue("DescribeTagHitsSummary.TagGroups["+ i +"].ScriptId");
-				tagGroup.TagGroup = _ctx.StringValue("DescribeTagHitsSummary.TagGroups["+ i +"].TagGroup");
 				tagGroup.TagGroupIndex = _ctx.IntegerValue("DescribeTagHitsSummary.TagGroups["+ i +"].TagGroupIndex");
+				tagGroup.TagGroup = _ctx.StringValue("DescribeTagHitsSummary.TagGroups["+ i +"].TagGroup");
+				tagGroup.ScriptId = _ctx.StringValue("DescribeTagHitsSummary.TagGroups["+ i +"].ScriptId");
+				tagGroup.Id = _ctx.StringValue("DescribeTagHitsSummary.TagGroups["+ i +"].Id");
 
 				describeTagHitsSummaryResponse_tagGroups.Add(tagGroup);
 			}

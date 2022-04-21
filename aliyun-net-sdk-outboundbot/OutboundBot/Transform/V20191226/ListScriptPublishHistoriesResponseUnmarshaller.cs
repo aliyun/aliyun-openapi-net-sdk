@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ListScriptPublishHistoriesResponse listScriptPublishHistoriesResponse = new ListScriptPublishHistoriesResponse();
 
 			listScriptPublishHistoriesResponse.HttpResponse = _ctx.HttpResponse;
-			listScriptPublishHistoriesResponse.Code = _ctx.StringValue("ListScriptPublishHistories.Code");
 			listScriptPublishHistoriesResponse.HttpStatusCode = _ctx.IntegerValue("ListScriptPublishHistories.HttpStatusCode");
+			listScriptPublishHistoriesResponse.Code = _ctx.StringValue("ListScriptPublishHistories.Code");
 			listScriptPublishHistoriesResponse.Message = _ctx.StringValue("ListScriptPublishHistories.Message");
 			listScriptPublishHistoriesResponse.RequestId = _ctx.StringValue("ListScriptPublishHistories.RequestId");
 			listScriptPublishHistoriesResponse.Success = _ctx.BooleanValue("ListScriptPublishHistories.Success");
@@ -45,10 +45,10 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			List<ListScriptPublishHistoriesResponse.ListScriptPublishHistories_ScriptPublishHistories.ListScriptPublishHistories_PublishHistory> scriptPublishHistories_list = new List<ListScriptPublishHistoriesResponse.ListScriptPublishHistories_ScriptPublishHistories.ListScriptPublishHistories_PublishHistory>();
 			for (int i = 0; i < _ctx.Length("ListScriptPublishHistories.ScriptPublishHistories.List.Length"); i++) {
 				ListScriptPublishHistoriesResponse.ListScriptPublishHistories_ScriptPublishHistories.ListScriptPublishHistories_PublishHistory publishHistory = new ListScriptPublishHistoriesResponse.ListScriptPublishHistories_ScriptPublishHistories.ListScriptPublishHistories_PublishHistory();
-				publishHistory.Description = _ctx.StringValue("ListScriptPublishHistories.ScriptPublishHistories.List["+ i +"].Description");
-				publishHistory.InstanceId = _ctx.StringValue("ListScriptPublishHistories.ScriptPublishHistories.List["+ i +"].InstanceId");
 				publishHistory.PublishTime = _ctx.LongValue("ListScriptPublishHistories.ScriptPublishHistories.List["+ i +"].PublishTime");
+				publishHistory.InstanceId = _ctx.StringValue("ListScriptPublishHistories.ScriptPublishHistories.List["+ i +"].InstanceId");
 				publishHistory.ScriptId = _ctx.StringValue("ListScriptPublishHistories.ScriptPublishHistories.List["+ i +"].ScriptId");
+				publishHistory.Description = _ctx.StringValue("ListScriptPublishHistories.ScriptPublishHistories.List["+ i +"].Description");
 				publishHistory.ScriptVersion = _ctx.StringValue("ListScriptPublishHistories.ScriptPublishHistories.List["+ i +"].ScriptVersion");
 
 				scriptPublishHistories_list.Add(publishHistory);

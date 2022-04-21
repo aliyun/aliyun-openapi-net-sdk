@@ -31,12 +31,12 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			GetMaxAttemptsPerDayResponse getMaxAttemptsPerDayResponse = new GetMaxAttemptsPerDayResponse();
 
 			getMaxAttemptsPerDayResponse.HttpResponse = _ctx.HttpResponse;
+			getMaxAttemptsPerDayResponse.HttpStatusCode = _ctx.IntegerValue("GetMaxAttemptsPerDay.HttpStatusCode");
 			getMaxAttemptsPerDayResponse.RequestId = _ctx.StringValue("GetMaxAttemptsPerDay.RequestId");
 			getMaxAttemptsPerDayResponse.Success = _ctx.BooleanValue("GetMaxAttemptsPerDay.Success");
+			getMaxAttemptsPerDayResponse.MaxAttemptsPerDay = _ctx.IntegerValue("GetMaxAttemptsPerDay.MaxAttemptsPerDay");
 			getMaxAttemptsPerDayResponse.Code = _ctx.StringValue("GetMaxAttemptsPerDay.Code");
 			getMaxAttemptsPerDayResponse.Message = _ctx.StringValue("GetMaxAttemptsPerDay.Message");
-			getMaxAttemptsPerDayResponse.HttpStatusCode = _ctx.IntegerValue("GetMaxAttemptsPerDay.HttpStatusCode");
-			getMaxAttemptsPerDayResponse.MaxAttemptsPerDay = _ctx.IntegerValue("GetMaxAttemptsPerDay.MaxAttemptsPerDay");
         
 			return getMaxAttemptsPerDayResponse;
         }

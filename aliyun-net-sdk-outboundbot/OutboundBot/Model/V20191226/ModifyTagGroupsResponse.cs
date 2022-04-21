@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,9 +25,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class ModifyTagGroupsResponse : AcsResponse
 	{
 
-		private string code;
-
 		private int? httpStatusCode;
+
+		private string code;
 
 		private string message;
 
@@ -39,18 +39,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private List<ModifyTagGroups_Tag> tags;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
 		public int? HttpStatusCode
 		{
 			get
@@ -60,6 +48,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				httpStatusCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -126,37 +126,13 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class ModifyTagGroups_TagGroup
 		{
 
-			private string scriptId;
-
-			private string tagGroup;
-
 			private string tagGroupId;
 
 			private int? tagGroupIndex;
 
-			public string ScriptId
-			{
-				get
-				{
-					return scriptId;
-				}
-				set	
-				{
-					scriptId = value;
-				}
-			}
+			private string tagGroup;
 
-			public string TagGroup
-			{
-				get
-				{
-					return tagGroup;
-				}
-				set	
-				{
-					tagGroup = value;
-				}
-			}
+			private string scriptId;
 
 			public string TagGroupId
 			{
@@ -181,32 +157,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					tagGroupIndex = value;
 				}
 			}
-		}
-
-		public class ModifyTagGroups_Tag
-		{
-
-			private string scriptId;
-
-			private string tagGroup;
-
-			private string tagId;
-
-			private int? tagIndex;
-
-			private string tagName;
-
-			public string ScriptId
-			{
-				get
-				{
-					return scriptId;
-				}
-				set	
-				{
-					scriptId = value;
-				}
-			}
 
 			public string TagGroup
 			{
@@ -220,15 +170,53 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string TagId
+			public string ScriptId
 			{
 				get
 				{
-					return tagId;
+					return scriptId;
 				}
 				set	
 				{
-					tagId = value;
+					scriptId = value;
+				}
+			}
+		}
+
+		public class ModifyTagGroups_Tag
+		{
+
+			private string tagGroup;
+
+			private string tagName;
+
+			private int? tagIndex;
+
+			private string scriptId;
+
+			private string tagId;
+
+			public string TagGroup
+			{
+				get
+				{
+					return tagGroup;
+				}
+				set	
+				{
+					tagGroup = value;
+				}
+			}
+
+			public string TagName
+			{
+				get
+				{
+					return tagName;
+				}
+				set	
+				{
+					tagName = value;
 				}
 			}
 
@@ -244,15 +232,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string TagName
+			public string ScriptId
 			{
 				get
 				{
-					return tagName;
+					return scriptId;
 				}
 				set	
 				{
-					tagName = value;
+					scriptId = value;
+				}
+			}
+
+			public string TagId
+			{
+				get
+				{
+					return tagId;
+				}
+				set	
+				{
+					tagId = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -151,6 +151,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			private List<DescribeJob_Task> tasks;
 
 			private List<string> callingNumbers;
+
+			private DescribeJob_Script script;
 
 			public string Status
 			{
@@ -389,6 +391,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					callingNumbers = value;
+				}
+			}
+
+			public DescribeJob_Script Script
+			{
+				get
+				{
+					return script;
+				}
+				set	
+				{
+					script = value;
 				}
 			}
 
@@ -854,6 +868,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 					private string script;
 
+					private string sequenceId;
+
 					private List<DescribeJob_SummaryItem2> summary1;
 
 					public string ActionParams
@@ -913,6 +929,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						set	
 						{
 							script = value;
+						}
+					}
+
+					public string SequenceId
+					{
+						get
+						{
+							return sequenceId;
+						}
+						set	
+						{
+							sequenceId = value;
 						}
 					}
 
@@ -1088,6 +1116,206 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						{
 							referenceId = value;
 						}
+					}
+				}
+			}
+
+			public class DescribeJob_Script
+			{
+
+				private string status;
+
+				private long? updateTime;
+
+				private string chatbotId;
+
+				private string scriptId;
+
+				private bool? isDebugDrafted;
+
+				private string industry;
+
+				private string scriptDescription;
+
+				private bool? miniPlaybackConfigEnabled;
+
+				private bool? isDrafted;
+
+				private string ttsConfig;
+
+				private string debugStatus;
+
+				private string asrConfig;
+
+				private string scene;
+
+				private string name;
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public long? UpdateTime
+				{
+					get
+					{
+						return updateTime;
+					}
+					set	
+					{
+						updateTime = value;
+					}
+				}
+
+				public string ChatbotId
+				{
+					get
+					{
+						return chatbotId;
+					}
+					set	
+					{
+						chatbotId = value;
+					}
+				}
+
+				public string ScriptId
+				{
+					get
+					{
+						return scriptId;
+					}
+					set	
+					{
+						scriptId = value;
+					}
+				}
+
+				public bool? IsDebugDrafted
+				{
+					get
+					{
+						return isDebugDrafted;
+					}
+					set	
+					{
+						isDebugDrafted = value;
+					}
+				}
+
+				public string Industry
+				{
+					get
+					{
+						return industry;
+					}
+					set	
+					{
+						industry = value;
+					}
+				}
+
+				public string ScriptDescription
+				{
+					get
+					{
+						return scriptDescription;
+					}
+					set	
+					{
+						scriptDescription = value;
+					}
+				}
+
+				public bool? MiniPlaybackConfigEnabled
+				{
+					get
+					{
+						return miniPlaybackConfigEnabled;
+					}
+					set	
+					{
+						miniPlaybackConfigEnabled = value;
+					}
+				}
+
+				public bool? IsDrafted
+				{
+					get
+					{
+						return isDrafted;
+					}
+					set	
+					{
+						isDrafted = value;
+					}
+				}
+
+				public string TtsConfig
+				{
+					get
+					{
+						return ttsConfig;
+					}
+					set	
+					{
+						ttsConfig = value;
+					}
+				}
+
+				public string DebugStatus
+				{
+					get
+					{
+						return debugStatus;
+					}
+					set	
+					{
+						debugStatus = value;
+					}
+				}
+
+				public string AsrConfig
+				{
+					get
+					{
+						return asrConfig;
+					}
+					set	
+					{
+						asrConfig = value;
+					}
+				}
+
+				public string Scene
+				{
+					get
+					{
+						return scene;
+					}
+					set	
+					{
+						scene = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 			}

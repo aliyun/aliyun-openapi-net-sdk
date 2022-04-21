@@ -31,13 +31,13 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			GetConcurrentConversationQuotaResponse getConcurrentConversationQuotaResponse = new GetConcurrentConversationQuotaResponse();
 
 			getConcurrentConversationQuotaResponse.HttpResponse = _ctx.HttpResponse;
-			getConcurrentConversationQuotaResponse.Code = _ctx.StringValue("GetConcurrentConversationQuota.Code");
 			getConcurrentConversationQuotaResponse.HttpStatusCode = _ctx.IntegerValue("GetConcurrentConversationQuota.HttpStatusCode");
-			getConcurrentConversationQuotaResponse.MaxConcurrent = _ctx.IntegerValue("GetConcurrentConversationQuota.MaxConcurrent");
-			getConcurrentConversationQuotaResponse.Message = _ctx.StringValue("GetConcurrentConversationQuota.Message");
-			getConcurrentConversationQuotaResponse.RemainingConcurrent = _ctx.IntegerValue("GetConcurrentConversationQuota.RemainingConcurrent");
 			getConcurrentConversationQuotaResponse.RequestId = _ctx.StringValue("GetConcurrentConversationQuota.RequestId");
 			getConcurrentConversationQuotaResponse.Success = _ctx.BooleanValue("GetConcurrentConversationQuota.Success");
+			getConcurrentConversationQuotaResponse.Code = _ctx.StringValue("GetConcurrentConversationQuota.Code");
+			getConcurrentConversationQuotaResponse.Message = _ctx.StringValue("GetConcurrentConversationQuota.Message");
+			getConcurrentConversationQuotaResponse.RemainingConcurrent = _ctx.IntegerValue("GetConcurrentConversationQuota.RemainingConcurrent");
+			getConcurrentConversationQuotaResponse.MaxConcurrent = _ctx.IntegerValue("GetConcurrentConversationQuota.MaxConcurrent");
         
 			return getConcurrentConversationQuotaResponse;
         }

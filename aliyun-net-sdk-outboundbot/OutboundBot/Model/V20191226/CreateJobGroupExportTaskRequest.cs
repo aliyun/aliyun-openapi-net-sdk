@@ -82,10 +82,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set
 			{
 				options = value;
-				for (int i = 0; i < options.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Option." + (i + 1) , options[i]);
-				}
 			}
 		}
 

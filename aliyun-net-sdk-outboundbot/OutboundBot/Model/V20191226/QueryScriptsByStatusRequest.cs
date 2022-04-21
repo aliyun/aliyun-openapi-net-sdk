@@ -58,10 +58,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set
 			{
 				statusLists = value;
-				for (int i = 0; i < statusLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"StatusList." + (i + 1) , statusLists[i]);
-				}
 			}
 		}
 

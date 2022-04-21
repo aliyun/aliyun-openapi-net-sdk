@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,31 +25,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class GetConcurrentConversationQuotaResponse : AcsResponse
 	{
 
-		private string code;
-
 		private int? httpStatusCode;
-
-		private int? maxConcurrent;
-
-		private string message;
-
-		private int? remainingConcurrent;
 
 		private string requestId;
 
 		private bool? success;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private string code;
+
+		private string message;
+
+		private int? remainingConcurrent;
+
+		private int? maxConcurrent;
 
 		public int? HttpStatusCode
 		{
@@ -63,15 +51,39 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public int? MaxConcurrent
+		public string RequestId
 		{
 			get
 			{
-				return maxConcurrent;
+				return requestId;
 			}
 			set	
 			{
-				maxConcurrent = value;
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -99,27 +111,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string RequestId
+		public int? MaxConcurrent
 		{
 			get
 			{
-				return requestId;
+				return maxConcurrent;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
+				maxConcurrent = value;
 			}
 		}
 	}

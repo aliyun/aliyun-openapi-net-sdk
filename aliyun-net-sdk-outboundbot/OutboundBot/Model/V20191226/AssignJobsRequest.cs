@@ -66,10 +66,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set
 			{
 				jobsJsons = value;
-				for (int i = 0; i < jobsJsons.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"JobsJson." + (i + 1) , jobsJsons[i]);
-				}
 			}
 		}
 
@@ -83,10 +79,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set
 			{
 				callingNumbers = value;
-				for (int i = 0; i < callingNumbers.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"CallingNumber." + (i + 1) , callingNumbers[i]);
-				}
 			}
 		}
 

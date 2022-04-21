@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,9 +25,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class QueryScriptWaveformsResponse : AcsResponse
 	{
 
-		private string code;
-
 		private int? httpStatusCode;
+
+		private string code;
 
 		private string message;
 
@@ -36,18 +36,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private bool? success;
 
 		private List<QueryScriptWaveforms_ScriptWaveform> scriptWaveforms;
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -58,6 +46,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				httpStatusCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -112,25 +112,37 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class QueryScriptWaveforms_ScriptWaveform
 		{
 
-			private string fileId;
-
-			private string fileName;
-
 			private string scriptContent;
-
-			private string scriptId;
 
 			private string scriptWaveformId;
 
-			public string FileId
+			private string fileName;
+
+			private string scriptId;
+
+			private string fileId;
+
+			public string ScriptContent
 			{
 				get
 				{
-					return fileId;
+					return scriptContent;
 				}
 				set	
 				{
-					fileId = value;
+					scriptContent = value;
+				}
+			}
+
+			public string ScriptWaveformId
+			{
+				get
+				{
+					return scriptWaveformId;
+				}
+				set	
+				{
+					scriptWaveformId = value;
 				}
 			}
 
@@ -146,18 +158,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string ScriptContent
-			{
-				get
-				{
-					return scriptContent;
-				}
-				set	
-				{
-					scriptContent = value;
-				}
-			}
-
 			public string ScriptId
 			{
 				get
@@ -170,15 +170,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string ScriptWaveformId
+			public string FileId
 			{
 				get
 				{
-					return scriptWaveformId;
+					return fileId;
 				}
 				set	
 				{
-					scriptWaveformId = value;
+					fileId = value;
 				}
 			}
 		}

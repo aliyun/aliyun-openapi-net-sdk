@@ -31,12 +31,12 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DeleteContactWhiteListResponse deleteContactWhiteListResponse = new DeleteContactWhiteListResponse();
 
 			deleteContactWhiteListResponse.HttpResponse = _ctx.HttpResponse;
+			deleteContactWhiteListResponse.HttpStatusCode = _ctx.IntegerValue("DeleteContactWhiteList.HttpStatusCode");
 			deleteContactWhiteListResponse.RequestId = _ctx.StringValue("DeleteContactWhiteList.RequestId");
+			deleteContactWhiteListResponse.AffectedRows = _ctx.IntegerValue("DeleteContactWhiteList.AffectedRows");
 			deleteContactWhiteListResponse.Success = _ctx.BooleanValue("DeleteContactWhiteList.Success");
 			deleteContactWhiteListResponse.Code = _ctx.StringValue("DeleteContactWhiteList.Code");
 			deleteContactWhiteListResponse.Message = _ctx.StringValue("DeleteContactWhiteList.Message");
-			deleteContactWhiteListResponse.HttpStatusCode = _ctx.IntegerValue("DeleteContactWhiteList.HttpStatusCode");
-			deleteContactWhiteListResponse.AffectedRows = _ctx.IntegerValue("DeleteContactWhiteList.AffectedRows");
         
 			return deleteContactWhiteListResponse;
         }

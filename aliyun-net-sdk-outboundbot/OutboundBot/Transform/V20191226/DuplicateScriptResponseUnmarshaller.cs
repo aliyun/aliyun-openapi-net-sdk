@@ -31,12 +31,12 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DuplicateScriptResponse duplicateScriptResponse = new DuplicateScriptResponse();
 
 			duplicateScriptResponse.HttpResponse = _ctx.HttpResponse;
-			duplicateScriptResponse.Code = _ctx.StringValue("DuplicateScript.Code");
 			duplicateScriptResponse.HttpStatusCode = _ctx.IntegerValue("DuplicateScript.HttpStatusCode");
-			duplicateScriptResponse.Message = _ctx.StringValue("DuplicateScript.Message");
 			duplicateScriptResponse.RequestId = _ctx.StringValue("DuplicateScript.RequestId");
-			duplicateScriptResponse.ScriptId = _ctx.StringValue("DuplicateScript.ScriptId");
 			duplicateScriptResponse.Success = _ctx.BooleanValue("DuplicateScript.Success");
+			duplicateScriptResponse.Code = _ctx.StringValue("DuplicateScript.Code");
+			duplicateScriptResponse.Message = _ctx.StringValue("DuplicateScript.Message");
+			duplicateScriptResponse.ScriptId = _ctx.StringValue("DuplicateScript.ScriptId");
         
 			return duplicateScriptResponse;
         }

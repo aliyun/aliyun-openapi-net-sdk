@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			GetContactBlockListResponse getContactBlockListResponse = new GetContactBlockListResponse();
 
 			getContactBlockListResponse.HttpResponse = _ctx.HttpResponse;
-			getContactBlockListResponse.RequestId = _ctx.StringValue("GetContactBlockList.RequestId");
-			getContactBlockListResponse.Success = _ctx.BooleanValue("GetContactBlockList.Success");
+			getContactBlockListResponse.HttpStatusCode = _ctx.IntegerValue("GetContactBlockList.HttpStatusCode");
 			getContactBlockListResponse.Code = _ctx.StringValue("GetContactBlockList.Code");
 			getContactBlockListResponse.Message = _ctx.StringValue("GetContactBlockList.Message");
-			getContactBlockListResponse.HttpStatusCode = _ctx.IntegerValue("GetContactBlockList.HttpStatusCode");
+			getContactBlockListResponse.RequestId = _ctx.StringValue("GetContactBlockList.RequestId");
+			getContactBlockListResponse.Success = _ctx.BooleanValue("GetContactBlockList.Success");
 
 			GetContactBlockListResponse.GetContactBlockList_ContactBlocklistList contactBlocklistList = new GetContactBlockListResponse.GetContactBlockList_ContactBlocklistList();
 			contactBlocklistList.PageNumber = _ctx.IntegerValue("GetContactBlockList.ContactBlocklistList.PageNumber");
@@ -46,13 +46,13 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			for (int i = 0; i < _ctx.Length("GetContactBlockList.ContactBlocklistList.List.Length"); i++) {
 				GetContactBlockListResponse.GetContactBlockList_ContactBlocklistList.GetContactBlockList_ContactBlockList contactBlockList = new GetContactBlockListResponse.GetContactBlockList_ContactBlocklistList.GetContactBlockList_ContactBlockList();
 				contactBlockList.ContactBlockListId = _ctx.StringValue("GetContactBlockList.ContactBlocklistList.List["+ i +"].ContactBlockListId");
-				contactBlockList.InstanceId = _ctx.StringValue("GetContactBlockList.ContactBlocklistList.List["+ i +"].InstanceId");
 				contactBlockList.CreationTime = _ctx.LongValue("GetContactBlockList.ContactBlocklistList.List["+ i +"].CreationTime");
+				contactBlockList.Remark = _ctx.StringValue("GetContactBlockList.ContactBlocklistList.List["+ i +"].Remark");
 				contactBlockList.PhoneNumber = _ctx.StringValue("GetContactBlockList.ContactBlocklistList.List["+ i +"].PhoneNumber");
+				contactBlockList._Operator = _ctx.StringValue("GetContactBlockList.ContactBlocklistList.List["+ i +"].Operator");
+				contactBlockList.InstanceId = _ctx.StringValue("GetContactBlockList.ContactBlocklistList.List["+ i +"].InstanceId");
 				contactBlockList.Name = _ctx.StringValue("GetContactBlockList.ContactBlocklistList.List["+ i +"].Name");
 				contactBlockList.Creator = _ctx.StringValue("GetContactBlockList.ContactBlocklistList.List["+ i +"].Creator");
-				contactBlockList._Operator = _ctx.StringValue("GetContactBlockList.ContactBlocklistList.List["+ i +"].Operator");
-				contactBlockList.Remark = _ctx.StringValue("GetContactBlockList.ContactBlocklistList.List["+ i +"].Remark");
 
 				contactBlocklistList_list.Add(contactBlockList);
 			}

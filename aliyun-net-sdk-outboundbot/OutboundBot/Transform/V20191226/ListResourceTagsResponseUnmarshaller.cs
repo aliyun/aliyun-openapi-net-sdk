@@ -31,16 +31,16 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ListResourceTagsResponse listResourceTagsResponse = new ListResourceTagsResponse();
 
 			listResourceTagsResponse.HttpResponse = _ctx.HttpResponse;
-			listResourceTagsResponse.RequestId = _ctx.StringValue("ListResourceTags.RequestId");
-			listResourceTagsResponse.Success = _ctx.BooleanValue("ListResourceTags.Success");
+			listResourceTagsResponse.HttpStatusCode = _ctx.IntegerValue("ListResourceTags.HttpStatusCode");
 			listResourceTagsResponse.Code = _ctx.StringValue("ListResourceTags.Code");
 			listResourceTagsResponse.Message = _ctx.StringValue("ListResourceTags.Message");
-			listResourceTagsResponse.HttpStatusCode = _ctx.IntegerValue("ListResourceTags.HttpStatusCode");
+			listResourceTagsResponse.RequestId = _ctx.StringValue("ListResourceTags.RequestId");
+			listResourceTagsResponse.Success = _ctx.BooleanValue("ListResourceTags.Success");
 
 			ListResourceTagsResponse.ListResourceTags_ResourceTags resourceTags = new ListResourceTagsResponse.ListResourceTags_ResourceTags();
-			resourceTags.TotalCount = _ctx.IntegerValue("ListResourceTags.ResourceTags.TotalCount");
 			resourceTags.PageNumber = _ctx.IntegerValue("ListResourceTags.ResourceTags.PageNumber");
 			resourceTags.PageSize = _ctx.IntegerValue("ListResourceTags.ResourceTags.PageSize");
+			resourceTags.TotalCount = _ctx.IntegerValue("ListResourceTags.ResourceTags.TotalCount");
 
 			List<ListResourceTagsResponse.ListResourceTags_ResourceTags.ListResourceTags_ResourceTag> resourceTags_list = new List<ListResourceTagsResponse.ListResourceTags_ResourceTags.ListResourceTags_ResourceTag>();
 			for (int i = 0; i < _ctx.Length("ListResourceTags.ResourceTags.List.Length"); i++) {

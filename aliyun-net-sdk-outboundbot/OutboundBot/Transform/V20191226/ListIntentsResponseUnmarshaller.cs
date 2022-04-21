@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ListIntentsResponse listIntentsResponse = new ListIntentsResponse();
 
 			listIntentsResponse.HttpResponse = _ctx.HttpResponse;
-			listIntentsResponse.Code = _ctx.StringValue("ListIntents.Code");
 			listIntentsResponse.HttpStatusCode = _ctx.IntegerValue("ListIntents.HttpStatusCode");
+			listIntentsResponse.Code = _ctx.StringValue("ListIntents.Code");
 			listIntentsResponse.Message = _ctx.StringValue("ListIntents.Message");
 			listIntentsResponse.RequestId = _ctx.StringValue("ListIntents.RequestId");
 			listIntentsResponse.Success = _ctx.BooleanValue("ListIntents.Success");
@@ -45,14 +45,14 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			List<ListIntentsResponse.ListIntents_Intents.ListIntents_Intent> intents_list = new List<ListIntentsResponse.ListIntents_Intents.ListIntents_Intent>();
 			for (int i = 0; i < _ctx.Length("ListIntents.Intents.List.Length"); i++) {
 				ListIntentsResponse.ListIntents_Intents.ListIntents_Intent intent = new ListIntentsResponse.ListIntents_Intents.ListIntents_Intent();
-				intent.CreateTime = _ctx.LongValue("ListIntents.Intents.List["+ i +"].CreateTime");
+				intent.Utterances = _ctx.StringValue("ListIntents.Intents.List["+ i +"].Utterances");
 				intent.IntentDescription = _ctx.StringValue("ListIntents.Intents.List["+ i +"].IntentDescription");
-				intent.IntentId = _ctx.StringValue("ListIntents.Intents.List["+ i +"].IntentId");
-				intent.IntentName = _ctx.StringValue("ListIntents.Intents.List["+ i +"].IntentName");
+				intent.UpdateTime = _ctx.LongValue("ListIntents.Intents.List["+ i +"].UpdateTime");
+				intent.CreateTime = _ctx.LongValue("ListIntents.Intents.List["+ i +"].CreateTime");
 				intent.Keywords = _ctx.StringValue("ListIntents.Intents.List["+ i +"].Keywords");
 				intent.ScriptId = _ctx.StringValue("ListIntents.Intents.List["+ i +"].ScriptId");
-				intent.UpdateTime = _ctx.LongValue("ListIntents.Intents.List["+ i +"].UpdateTime");
-				intent.Utterances = _ctx.StringValue("ListIntents.Intents.List["+ i +"].Utterances");
+				intent.IntentId = _ctx.StringValue("ListIntents.Intents.List["+ i +"].IntentId");
+				intent.IntentName = _ctx.StringValue("ListIntents.Intents.List["+ i +"].IntentName");
 
 				intents_list.Add(intent);
 			}

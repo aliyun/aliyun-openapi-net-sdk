@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,9 +25,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class WithdrawScriptReviewResponse : AcsResponse
 	{
 
-		private string code;
-
 		private int? httpStatusCode;
+
+		private string code;
 
 		private string message;
 
@@ -36,18 +36,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private bool? success;
 
 		private WithdrawScriptReview_Script script;
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -58,6 +46,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				httpStatusCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -112,121 +112,25 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class WithdrawScriptReview_Script
 		{
 
-			private string debugStatus;
-
-			private string industry;
-
-			private bool? isDebugDrafted;
-
-			private bool? isDrafted;
-
-			private string scene;
-
-			private string scriptDescription;
-
-			private string scriptId;
-
-			private string scriptName;
-
 			private string status;
 
 			private long? updateTime;
 
-			public string DebugStatus
-			{
-				get
-				{
-					return debugStatus;
-				}
-				set	
-				{
-					debugStatus = value;
-				}
-			}
+			private string industry;
 
-			public string Industry
-			{
-				get
-				{
-					return industry;
-				}
-				set	
-				{
-					industry = value;
-				}
-			}
+			private string scriptDescription;
 
-			public bool? IsDebugDrafted
-			{
-				get
-				{
-					return isDebugDrafted;
-				}
-				set	
-				{
-					isDebugDrafted = value;
-				}
-			}
+			private bool? isDrafted;
 
-			public bool? IsDrafted
-			{
-				get
-				{
-					return isDrafted;
-				}
-				set	
-				{
-					isDrafted = value;
-				}
-			}
+			private string debugStatus;
 
-			public string Scene
-			{
-				get
-				{
-					return scene;
-				}
-				set	
-				{
-					scene = value;
-				}
-			}
+			private string scriptId;
 
-			public string ScriptDescription
-			{
-				get
-				{
-					return scriptDescription;
-				}
-				set	
-				{
-					scriptDescription = value;
-				}
-			}
+			private bool? isDebugDrafted;
 
-			public string ScriptId
-			{
-				get
-				{
-					return scriptId;
-				}
-				set	
-				{
-					scriptId = value;
-				}
-			}
+			private string scriptName;
 
-			public string ScriptName
-			{
-				get
-				{
-					return scriptName;
-				}
-				set	
-				{
-					scriptName = value;
-				}
-			}
+			private string scene;
 
 			public string Status
 			{
@@ -249,6 +153,102 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					updateTime = value;
+				}
+			}
+
+			public string Industry
+			{
+				get
+				{
+					return industry;
+				}
+				set	
+				{
+					industry = value;
+				}
+			}
+
+			public string ScriptDescription
+			{
+				get
+				{
+					return scriptDescription;
+				}
+				set	
+				{
+					scriptDescription = value;
+				}
+			}
+
+			public bool? IsDrafted
+			{
+				get
+				{
+					return isDrafted;
+				}
+				set	
+				{
+					isDrafted = value;
+				}
+			}
+
+			public string DebugStatus
+			{
+				get
+				{
+					return debugStatus;
+				}
+				set	
+				{
+					debugStatus = value;
+				}
+			}
+
+			public string ScriptId
+			{
+				get
+				{
+					return scriptId;
+				}
+				set	
+				{
+					scriptId = value;
+				}
+			}
+
+			public bool? IsDebugDrafted
+			{
+				get
+				{
+					return isDebugDrafted;
+				}
+				set	
+				{
+					isDebugDrafted = value;
+				}
+			}
+
+			public string ScriptName
+			{
+				get
+				{
+					return scriptName;
+				}
+				set	
+				{
+					scriptName = value;
+				}
+			}
+
+			public string Scene
+			{
+				get
+				{
+					return scene;
+				}
+				set	
+				{
+					scene = value;
 				}
 			}
 		}

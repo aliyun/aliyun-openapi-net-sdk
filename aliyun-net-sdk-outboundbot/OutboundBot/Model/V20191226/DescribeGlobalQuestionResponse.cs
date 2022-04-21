@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,9 +25,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class DescribeGlobalQuestionResponse : AcsResponse
 	{
 
-		private string code;
-
 		private int? httpStatusCode;
+
+		private string code;
 
 		private string message;
 
@@ -36,18 +36,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private bool? success;
 
 		private DescribeGlobalQuestion_GlobalQuestion globalQuestion;
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -58,6 +46,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				httpStatusCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -112,29 +112,17 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class DescribeGlobalQuestion_GlobalQuestion
 		{
 
-			private string answers;
-
 			private string globalQuestionId;
 
-			private string globalQuestionName;
+			private string answers;
 
 			private string globalQuestionType;
+
+			private string globalQuestionName;
 
 			private string questions;
 
 			private string scriptId;
-
-			public string Answers
-			{
-				get
-				{
-					return answers;
-				}
-				set	
-				{
-					answers = value;
-				}
-			}
 
 			public string GlobalQuestionId
 			{
@@ -148,15 +136,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string GlobalQuestionName
+			public string Answers
 			{
 				get
 				{
-					return globalQuestionName;
+					return answers;
 				}
 				set	
 				{
-					globalQuestionName = value;
+					answers = value;
 				}
 			}
 
@@ -169,6 +157,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					globalQuestionType = value;
+				}
+			}
+
+			public string GlobalQuestionName
+			{
+				get
+				{
+					return globalQuestionName;
+				}
+				set	
+				{
+					globalQuestionName = value;
 				}
 			}
 

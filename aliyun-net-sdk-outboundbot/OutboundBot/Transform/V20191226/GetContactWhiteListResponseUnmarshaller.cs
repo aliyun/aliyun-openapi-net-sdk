@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			GetContactWhiteListResponse getContactWhiteListResponse = new GetContactWhiteListResponse();
 
 			getContactWhiteListResponse.HttpResponse = _ctx.HttpResponse;
-			getContactWhiteListResponse.RequestId = _ctx.StringValue("GetContactWhiteList.RequestId");
-			getContactWhiteListResponse.Success = _ctx.BooleanValue("GetContactWhiteList.Success");
+			getContactWhiteListResponse.HttpStatusCode = _ctx.IntegerValue("GetContactWhiteList.HttpStatusCode");
 			getContactWhiteListResponse.Code = _ctx.StringValue("GetContactWhiteList.Code");
 			getContactWhiteListResponse.Message = _ctx.StringValue("GetContactWhiteList.Message");
-			getContactWhiteListResponse.HttpStatusCode = _ctx.IntegerValue("GetContactWhiteList.HttpStatusCode");
+			getContactWhiteListResponse.RequestId = _ctx.StringValue("GetContactWhiteList.RequestId");
+			getContactWhiteListResponse.Success = _ctx.BooleanValue("GetContactWhiteList.Success");
 
 			GetContactWhiteListResponse.GetContactWhiteList_ContactWhitelistList contactWhitelistList = new GetContactWhiteListResponse.GetContactWhiteList_ContactWhitelistList();
 			contactWhitelistList.PageSize = _ctx.IntegerValue("GetContactWhiteList.ContactWhitelistList.PageSize");
@@ -45,14 +45,14 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			List<GetContactWhiteListResponse.GetContactWhiteList_ContactWhitelistList.GetContactWhiteList_ContactWhitelistList1> contactWhitelistList_list = new List<GetContactWhiteListResponse.GetContactWhiteList_ContactWhitelistList.GetContactWhiteList_ContactWhitelistList1>();
 			for (int i = 0; i < _ctx.Length("GetContactWhiteList.ContactWhitelistList.List.Length"); i++) {
 				GetContactWhiteListResponse.GetContactWhiteList_ContactWhitelistList.GetContactWhiteList_ContactWhitelistList1 contactWhitelistList1 = new GetContactWhiteListResponse.GetContactWhiteList_ContactWhitelistList.GetContactWhiteList_ContactWhitelistList1();
+				contactWhitelistList1.CreationTime = _ctx.LongValue("GetContactWhiteList.ContactWhitelistList.List["+ i +"].CreationTime");
+				contactWhitelistList1.Remark = _ctx.StringValue("GetContactWhiteList.ContactWhitelistList.List["+ i +"].Remark");
+				contactWhitelistList1.PhoneNumber = _ctx.StringValue("GetContactWhiteList.ContactWhitelistList.List["+ i +"].PhoneNumber");
+				contactWhitelistList1._Operator = _ctx.StringValue("GetContactWhiteList.ContactWhitelistList.List["+ i +"].Operator");
 				contactWhitelistList1.ContactWhiteListId = _ctx.StringValue("GetContactWhiteList.ContactWhitelistList.List["+ i +"].ContactWhiteListId");
 				contactWhitelistList1.InstanceId = _ctx.StringValue("GetContactWhiteList.ContactWhitelistList.List["+ i +"].InstanceId");
-				contactWhitelistList1.CreationTime = _ctx.LongValue("GetContactWhiteList.ContactWhitelistList.List["+ i +"].CreationTime");
-				contactWhitelistList1.PhoneNumber = _ctx.StringValue("GetContactWhiteList.ContactWhitelistList.List["+ i +"].PhoneNumber");
 				contactWhitelistList1.Name = _ctx.StringValue("GetContactWhiteList.ContactWhitelistList.List["+ i +"].Name");
 				contactWhitelistList1.Creator = _ctx.StringValue("GetContactWhiteList.ContactWhitelistList.List["+ i +"].Creator");
-				contactWhitelistList1._Operator = _ctx.StringValue("GetContactWhiteList.ContactWhitelistList.List["+ i +"].Operator");
-				contactWhitelistList1.Remark = _ctx.StringValue("GetContactWhiteList.ContactWhitelistList.List["+ i +"].Remark");
 
 				contactWhitelistList_list.Add(contactWhitelistList1);
 			}

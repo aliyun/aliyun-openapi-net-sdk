@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,41 +25,17 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class ModifyGlobalQuestionResponse : AcsResponse
 	{
 
-		private string code;
-
-		private string dialogueQuestionId;
-
 		private int? httpStatusCode;
-
-		private string message;
 
 		private string requestId;
 
 		private bool? success;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private string code;
 
-		public string DialogueQuestionId
-		{
-			get
-			{
-				return dialogueQuestionId;
-			}
-			set	
-			{
-				dialogueQuestionId = value;
-			}
-		}
+		private string message;
+
+		private string dialogueQuestionId;
 
 		public int? HttpStatusCode
 		{
@@ -70,18 +46,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				httpStatusCode = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 
@@ -106,6 +70,42 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public string DialogueQuestionId
+		{
+			get
+			{
+				return dialogueQuestionId;
+			}
+			set	
+			{
+				dialogueQuestionId = value;
 			}
 		}
 	}

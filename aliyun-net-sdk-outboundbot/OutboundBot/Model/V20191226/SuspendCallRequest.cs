@@ -69,10 +69,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set
 			{
 				calledNumberss = value;
-				for (int i = 0; i < calledNumberss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"CalledNumbers." + (i + 1) , calledNumberss[i]);
-				}
 			}
 		}
 

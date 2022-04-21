@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,9 +25,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class ListScriptVoiceConfigsResponse : AcsResponse
 	{
 
-		private string code;
-
 		private int? httpStatusCode;
+
+		private string code;
 
 		private string message;
 
@@ -36,18 +36,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private bool? success;
 
 		private ListScriptVoiceConfigs_ScriptVoiceConfigs scriptVoiceConfigs;
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -58,6 +46,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				httpStatusCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -171,29 +171,41 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			public class ListScriptVoiceConfigs_ScriptVoiceConfig
 			{
 
-				private string instanceId;
+				private string type;
+
+				private string scriptVoiceConfigId;
 
 				private string scriptContent;
 
-				private string scriptId;
+				private string instanceId;
 
-				private string scriptVoiceConfigId;
+				private string scriptId;
 
 				private string scriptWaveformRelation;
 
 				private string source;
 
-				private string type;
-
-				public string InstanceId
+				public string Type
 				{
 					get
 					{
-						return instanceId;
+						return type;
 					}
 					set	
 					{
-						instanceId = value;
+						type = value;
+					}
+				}
+
+				public string ScriptVoiceConfigId
+				{
+					get
+					{
+						return scriptVoiceConfigId;
+					}
+					set	
+					{
+						scriptVoiceConfigId = value;
 					}
 				}
 
@@ -209,6 +221,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
+					}
+				}
+
 				public string ScriptId
 				{
 					get
@@ -218,18 +242,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						scriptId = value;
-					}
-				}
-
-				public string ScriptVoiceConfigId
-				{
-					get
-					{
-						return scriptVoiceConfigId;
-					}
-					set	
-					{
-						scriptVoiceConfigId = value;
 					}
 				}
 
@@ -254,18 +266,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						source = value;
-					}
-				}
-
-				public string Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
 					}
 				}
 			}

@@ -112,10 +112,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set
 			{
 				workingTimes = value;
-				for (int i = 0; i < workingTimes.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"WorkingTime." + (i + 1) , workingTimes[i]);
-				}
 			}
 		}
 

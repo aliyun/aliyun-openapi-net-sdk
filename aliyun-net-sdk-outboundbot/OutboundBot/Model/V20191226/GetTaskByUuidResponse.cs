@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -56,73 +56,37 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class GetTaskByUuid_Task
 		{
 
-			private string id;
-
-			private string jobId;
-
-			private long? plannedTime;
-
-			private long? actualTime;
+			private string jobGroupId;
 
 			private long? endTime;
 
-			private string callingNumber;
+			private int? endReason;
 
-			private string calledNumber;
+			private long? plannedTime;
+
+			private string jobId;
 
 			private string callId;
 
-			private int? endReason;
+			private string callingNumber;
+
+			private long? actualTime;
 
 			private string instanceId;
 
-			private string jobGroupId;
+			private string calledNumber;
 
-			public string Id
+			private string id;
+
+			public string JobGroupId
 			{
 				get
 				{
-					return id;
+					return jobGroupId;
 				}
 				set	
 				{
-					id = value;
-				}
-			}
-
-			public string JobId
-			{
-				get
-				{
-					return jobId;
-				}
-				set	
-				{
-					jobId = value;
-				}
-			}
-
-			public long? PlannedTime
-			{
-				get
-				{
-					return plannedTime;
-				}
-				set	
-				{
-					plannedTime = value;
-				}
-			}
-
-			public long? ActualTime
-			{
-				get
-				{
-					return actualTime;
-				}
-				set	
-				{
-					actualTime = value;
+					jobGroupId = value;
 				}
 			}
 
@@ -138,27 +102,39 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string CallingNumber
+			public int? EndReason
 			{
 				get
 				{
-					return callingNumber;
+					return endReason;
 				}
 				set	
 				{
-					callingNumber = value;
+					endReason = value;
 				}
 			}
 
-			public string CalledNumber
+			public long? PlannedTime
 			{
 				get
 				{
-					return calledNumber;
+					return plannedTime;
 				}
 				set	
 				{
-					calledNumber = value;
+					plannedTime = value;
+				}
+			}
+
+			public string JobId
+			{
+				get
+				{
+					return jobId;
+				}
+				set	
+				{
+					jobId = value;
 				}
 			}
 
@@ -174,15 +150,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public int? EndReason
+			public string CallingNumber
 			{
 				get
 				{
-					return endReason;
+					return callingNumber;
 				}
 				set	
 				{
-					endReason = value;
+					callingNumber = value;
+				}
+			}
+
+			public long? ActualTime
+			{
+				get
+				{
+					return actualTime;
+				}
+				set	
+				{
+					actualTime = value;
 				}
 			}
 
@@ -198,15 +186,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string JobGroupId
+			public string CalledNumber
 			{
 				get
 				{
-					return jobGroupId;
+					return calledNumber;
 				}
 				set	
 				{
-					jobGroupId = value;
+					calledNumber = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 		}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DeleteOutboundCallNumberResponse deleteOutboundCallNumberResponse = new DeleteOutboundCallNumberResponse();
 
 			deleteOutboundCallNumberResponse.HttpResponse = _ctx.HttpResponse;
-			deleteOutboundCallNumberResponse.Code = _ctx.StringValue("DeleteOutboundCallNumber.Code");
 			deleteOutboundCallNumberResponse.HttpStatusCode = _ctx.IntegerValue("DeleteOutboundCallNumber.HttpStatusCode");
+			deleteOutboundCallNumberResponse.Code = _ctx.StringValue("DeleteOutboundCallNumber.Code");
 			deleteOutboundCallNumberResponse.Message = _ctx.StringValue("DeleteOutboundCallNumber.Message");
 			deleteOutboundCallNumberResponse.RequestId = _ctx.StringValue("DeleteOutboundCallNumber.RequestId");
 			deleteOutboundCallNumberResponse.Success = _ctx.BooleanValue("DeleteOutboundCallNumber.Success");

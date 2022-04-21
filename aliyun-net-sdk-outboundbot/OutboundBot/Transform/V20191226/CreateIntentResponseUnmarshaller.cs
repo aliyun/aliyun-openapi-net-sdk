@@ -31,12 +31,12 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			CreateIntentResponse createIntentResponse = new CreateIntentResponse();
 
 			createIntentResponse.HttpResponse = _ctx.HttpResponse;
-			createIntentResponse.Code = _ctx.StringValue("CreateIntent.Code");
 			createIntentResponse.HttpStatusCode = _ctx.IntegerValue("CreateIntent.HttpStatusCode");
-			createIntentResponse.IntentId = _ctx.StringValue("CreateIntent.IntentId");
-			createIntentResponse.Message = _ctx.StringValue("CreateIntent.Message");
 			createIntentResponse.RequestId = _ctx.StringValue("CreateIntent.RequestId");
 			createIntentResponse.Success = _ctx.BooleanValue("CreateIntent.Success");
+			createIntentResponse.Code = _ctx.StringValue("CreateIntent.Code");
+			createIntentResponse.Message = _ctx.StringValue("CreateIntent.Message");
+			createIntentResponse.IntentId = _ctx.StringValue("CreateIntent.IntentId");
         
 			return createIntentResponse;
         }

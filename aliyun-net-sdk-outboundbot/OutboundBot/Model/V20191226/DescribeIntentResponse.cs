@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,9 +25,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class DescribeIntentResponse : AcsResponse
 	{
 
-		private string code;
-
 		private int? httpStatusCode;
+
+		private string code;
 
 		private string message;
 
@@ -36,18 +36,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private bool? success;
 
 		private DescribeIntent_Intent intent;
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -58,6 +46,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				httpStatusCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -112,31 +112,31 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class DescribeIntent_Intent
 		{
 
-			private long? createTime;
+			private string utterances;
 
 			private string intentDescription;
 
-			private string intentId;
+			private long? updateTime;
 
-			private string intentName;
+			private long? createTime;
 
 			private string keywords;
 
 			private string scriptId;
 
-			private long? updateTime;
+			private string intentId;
 
-			private string utterances;
+			private string intentName;
 
-			public long? CreateTime
+			public string Utterances
 			{
 				get
 				{
-					return createTime;
+					return utterances;
 				}
 				set	
 				{
-					createTime = value;
+					utterances = value;
 				}
 			}
 
@@ -152,27 +152,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string IntentId
+			public long? UpdateTime
 			{
 				get
 				{
-					return intentId;
+					return updateTime;
 				}
 				set	
 				{
-					intentId = value;
+					updateTime = value;
 				}
 			}
 
-			public string IntentName
+			public long? CreateTime
 			{
 				get
 				{
-					return intentName;
+					return createTime;
 				}
 				set	
 				{
-					intentName = value;
+					createTime = value;
 				}
 			}
 
@@ -200,27 +200,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public long? UpdateTime
+			public string IntentId
 			{
 				get
 				{
-					return updateTime;
+					return intentId;
 				}
 				set	
 				{
-					updateTime = value;
+					intentId = value;
 				}
 			}
 
-			public string Utterances
+			public string IntentName
 			{
 				get
 				{
-					return utterances;
+					return intentName;
 				}
 				set	
 				{
-					utterances = value;
+					intentName = value;
 				}
 			}
 		}

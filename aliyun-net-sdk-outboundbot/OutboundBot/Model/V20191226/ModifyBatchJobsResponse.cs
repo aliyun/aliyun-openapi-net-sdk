@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,9 +25,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class ModifyBatchJobsResponse : AcsResponse
 	{
 
-		private string code;
-
 		private int? httpStatusCode;
+
+		private string code;
 
 		private string message;
 
@@ -36,18 +36,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private bool? success;
 
 		private ModifyBatchJobs_JobGroup jobGroup;
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -58,6 +46,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				httpStatusCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -114,15 +114,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 			private long? creationTime;
 
-			private string jobFilePath;
-
-			private string jobGroupDescription;
-
 			private string jobGroupId;
+
+			private string scenarioId;
 
 			private string jobGroupName;
 
-			private string scenarioId;
+			private string jobFilePath;
+
+			private string jobGroupDescription;
 
 			private List<string> callingNumbers;
 
@@ -137,6 +137,42 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string JobGroupId
+			{
+				get
+				{
+					return jobGroupId;
+				}
+				set	
+				{
+					jobGroupId = value;
+				}
+			}
+
+			public string ScenarioId
+			{
+				get
+				{
+					return scenarioId;
+				}
+				set	
+				{
+					scenarioId = value;
+				}
+			}
+
+			public string JobGroupName
+			{
+				get
+				{
+					return jobGroupName;
+				}
+				set	
+				{
+					jobGroupName = value;
 				}
 			}
 
@@ -161,42 +197,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					jobGroupDescription = value;
-				}
-			}
-
-			public string JobGroupId
-			{
-				get
-				{
-					return jobGroupId;
-				}
-				set	
-				{
-					jobGroupId = value;
-				}
-			}
-
-			public string JobGroupName
-			{
-				get
-				{
-					return jobGroupName;
-				}
-				set	
-				{
-					jobGroupName = value;
-				}
-			}
-
-			public string ScenarioId
-			{
-				get
-				{
-					return scenarioId;
-				}
-				set	
-				{
-					scenarioId = value;
 				}
 			}
 
@@ -227,165 +227,45 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			public class ModifyBatchJobs_Strategy
 			{
 
-				private string customized;
-
-				private long? endTime;
-
-				private string followUpStrategy;
-
-				private bool? isTemplate;
-
-				private int? maxAttemptsPerDay;
-
-				private int? minAttemptInterval;
-
-				private string repeatBy;
-
-				private string routingStrategy;
-
-				private long? startTime;
-
-				private string strategyDescription;
-
-				private string strategyId;
+				private string type;
 
 				private string strategyName;
 
-				private string type;
+				private int? maxAttemptsPerDay;
+
+				private string followUpStrategy;
+
+				private long? endTime;
+
+				private string customized;
+
+				private bool? isTemplate;
+
+				private long? startTime;
+
+				private string strategyId;
+
+				private string routingStrategy;
+
+				private int? minAttemptInterval;
+
+				private string strategyDescription;
+
+				private string repeatBy;
 
 				private List<ModifyBatchJobs_TimeFrame> workingTime;
 
 				private List<string> repeatDays;
 
-				public string Customized
+				public string Type
 				{
 					get
 					{
-						return customized;
+						return type;
 					}
 					set	
 					{
-						customized = value;
-					}
-				}
-
-				public long? EndTime
-				{
-					get
-					{
-						return endTime;
-					}
-					set	
-					{
-						endTime = value;
-					}
-				}
-
-				public string FollowUpStrategy
-				{
-					get
-					{
-						return followUpStrategy;
-					}
-					set	
-					{
-						followUpStrategy = value;
-					}
-				}
-
-				public bool? IsTemplate
-				{
-					get
-					{
-						return isTemplate;
-					}
-					set	
-					{
-						isTemplate = value;
-					}
-				}
-
-				public int? MaxAttemptsPerDay
-				{
-					get
-					{
-						return maxAttemptsPerDay;
-					}
-					set	
-					{
-						maxAttemptsPerDay = value;
-					}
-				}
-
-				public int? MinAttemptInterval
-				{
-					get
-					{
-						return minAttemptInterval;
-					}
-					set	
-					{
-						minAttemptInterval = value;
-					}
-				}
-
-				public string RepeatBy
-				{
-					get
-					{
-						return repeatBy;
-					}
-					set	
-					{
-						repeatBy = value;
-					}
-				}
-
-				public string RoutingStrategy
-				{
-					get
-					{
-						return routingStrategy;
-					}
-					set	
-					{
-						routingStrategy = value;
-					}
-				}
-
-				public long? StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
-					}
-				}
-
-				public string StrategyDescription
-				{
-					get
-					{
-						return strategyDescription;
-					}
-					set	
-					{
-						strategyDescription = value;
-					}
-				}
-
-				public string StrategyId
-				{
-					get
-					{
-						return strategyId;
-					}
-					set	
-					{
-						strategyId = value;
+						type = value;
 					}
 				}
 
@@ -401,15 +281,135 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public string Type
+				public int? MaxAttemptsPerDay
 				{
 					get
 					{
-						return type;
+						return maxAttemptsPerDay;
 					}
 					set	
 					{
-						type = value;
+						maxAttemptsPerDay = value;
+					}
+				}
+
+				public string FollowUpStrategy
+				{
+					get
+					{
+						return followUpStrategy;
+					}
+					set	
+					{
+						followUpStrategy = value;
+					}
+				}
+
+				public long? EndTime
+				{
+					get
+					{
+						return endTime;
+					}
+					set	
+					{
+						endTime = value;
+					}
+				}
+
+				public string Customized
+				{
+					get
+					{
+						return customized;
+					}
+					set	
+					{
+						customized = value;
+					}
+				}
+
+				public bool? IsTemplate
+				{
+					get
+					{
+						return isTemplate;
+					}
+					set	
+					{
+						isTemplate = value;
+					}
+				}
+
+				public long? StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
+					}
+				}
+
+				public string StrategyId
+				{
+					get
+					{
+						return strategyId;
+					}
+					set	
+					{
+						strategyId = value;
+					}
+				}
+
+				public string RoutingStrategy
+				{
+					get
+					{
+						return routingStrategy;
+					}
+					set	
+					{
+						routingStrategy = value;
+					}
+				}
+
+				public int? MinAttemptInterval
+				{
+					get
+					{
+						return minAttemptInterval;
+					}
+					set	
+					{
+						minAttemptInterval = value;
+					}
+				}
+
+				public string StrategyDescription
+				{
+					get
+					{
+						return strategyDescription;
+					}
+					set	
+					{
+						strategyDescription = value;
+					}
+				}
+
+				public string RepeatBy
+				{
+					get
+					{
+						return repeatBy;
+					}
+					set	
+					{
+						repeatBy = value;
 					}
 				}
 
@@ -440,21 +440,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				public class ModifyBatchJobs_TimeFrame
 				{
 
-					private string beginTime;
-
 					private string endTime;
 
-					public string BeginTime
-					{
-						get
-						{
-							return beginTime;
-						}
-						set	
-						{
-							beginTime = value;
-						}
-					}
+					private string beginTime;
 
 					public string EndTime
 					{
@@ -465,6 +453,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						set	
 						{
 							endTime = value;
+						}
+					}
+
+					public string BeginTime
+					{
+						get
+						{
+							return beginTime;
+						}
+						set	
+						{
+							beginTime = value;
 						}
 					}
 				}

@@ -27,10 +27,10 @@ using Aliyun.Acs.OutboundBot.Transform.V20191226;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-    public class ListTagResourcesRequest : RpcAcsRequest<ListTagResourcesResponse>
+    public class GenerateUploadUrlRequest : RpcAcsRequest<GenerateUploadUrlResponse>
     {
-        public ListTagResourcesRequest()
-            : base("OutboundBot", "2019-12-26", "ListTagResources", "outboundbot", "openAPI")
+        public GenerateUploadUrlRequest()
+            : base("OutboundBot", "2019-12-26", "GenerateUploadUrl", "outboundbot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,103 +40,33 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			Method = MethodType.POST;
         }
 
-		private List<string> resourceIds = new List<string>(){ };
+		private string fileName;
 
-		private string resourceType;
+		private string key;
 
-		private string nextToken;
-
-		private List<string> tags = new List<string>(){ };
-
-		public List<string> ResourceIds
+		public string FileName
 		{
 			get
 			{
-				return resourceIds;
-			}
-
-			set
-			{
-				resourceIds = value;
-			}
-		}
-
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
+				return fileName;
 			}
 			set	
 			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+				fileName = value;
+				DictionaryUtil.Add(QueryParameters, "FileName", value);
 			}
 		}
 
-		public string NextToken
+		public string Key
 		{
 			get
 			{
-				return nextToken;
+				return key;
 			}
 			set	
 			{
-				nextToken = value;
-				DictionaryUtil.Add(QueryParameters, "NextToken", value);
-			}
-		}
-
-		public List<string> Tags
-		{
-			get
-			{
-				return tags;
-			}
-
-			set
-			{
-				tags = value;
-				if(tags != null)
-				{
-					for (int depth1 = 0; depth1 < tags.Count; depth1++)
-					{
-						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
-						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
-					}
-				}
-			}
-		}
-
-		public class Tag
-		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value_
-			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
-			}
-
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
+				key = value;
+				DictionaryUtil.Add(QueryParameters, "Key", value);
 			}
 		}
 
@@ -145,9 +75,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			return false;
 		}
 
-        public override ListTagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GenerateUploadUrlResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListTagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GenerateUploadUrlResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

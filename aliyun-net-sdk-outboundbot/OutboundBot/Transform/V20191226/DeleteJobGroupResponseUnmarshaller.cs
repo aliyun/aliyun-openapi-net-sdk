@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DeleteJobGroupResponse deleteJobGroupResponse = new DeleteJobGroupResponse();
 
 			deleteJobGroupResponse.HttpResponse = _ctx.HttpResponse;
-			deleteJobGroupResponse.Code = _ctx.StringValue("DeleteJobGroup.Code");
 			deleteJobGroupResponse.HttpStatusCode = _ctx.IntegerValue("DeleteJobGroup.HttpStatusCode");
+			deleteJobGroupResponse.Code = _ctx.StringValue("DeleteJobGroup.Code");
 			deleteJobGroupResponse.Message = _ctx.StringValue("DeleteJobGroup.Message");
 			deleteJobGroupResponse.RequestId = _ctx.StringValue("DeleteJobGroup.RequestId");
 			deleteJobGroupResponse.Success = _ctx.BooleanValue("DeleteJobGroup.Success");

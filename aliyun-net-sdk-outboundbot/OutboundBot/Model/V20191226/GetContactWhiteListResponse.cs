@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,39 +25,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class GetContactWhiteListResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
+		private int? httpStatusCode;
 
 		private string code;
 
 		private string message;
 
-		private int? httpStatusCode;
+		private string requestId;
+
+		private bool? success;
 
 		private GetContactWhiteList_ContactWhitelistList contactWhitelistList;
 
-		public string RequestId
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return requestId;
+				return httpStatusCode;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
+				httpStatusCode = value;
 			}
 		}
 
@@ -85,15 +73,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public int? HttpStatusCode
+		public string RequestId
 		{
 			get
 			{
-				return httpStatusCode;
+				return requestId;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -171,21 +171,69 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			public class GetContactWhiteList_ContactWhitelistList1
 			{
 
+				private long? creationTime;
+
+				private string remark;
+
+				private string phoneNumber;
+
+				private string _operator;
+
 				private string contactWhiteListId;
 
 				private string instanceId;
-
-				private long? creationTime;
-
-				private string phoneNumber;
 
 				private string name;
 
 				private string creator;
 
-				private string _operator;
+				public long? CreationTime
+				{
+					get
+					{
+						return creationTime;
+					}
+					set	
+					{
+						creationTime = value;
+					}
+				}
 
-				private string remark;
+				public string Remark
+				{
+					get
+					{
+						return remark;
+					}
+					set	
+					{
+						remark = value;
+					}
+				}
+
+				public string PhoneNumber
+				{
+					get
+					{
+						return phoneNumber;
+					}
+					set	
+					{
+						phoneNumber = value;
+					}
+				}
+
+				public string _Operator
+				{
+					get
+					{
+						return _operator;
+					}
+					set	
+					{
+						_operator = value;
+					}
+				}
 
 				public string ContactWhiteListId
 				{
@@ -211,30 +259,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public long? CreationTime
-				{
-					get
-					{
-						return creationTime;
-					}
-					set	
-					{
-						creationTime = value;
-					}
-				}
-
-				public string PhoneNumber
-				{
-					get
-					{
-						return phoneNumber;
-					}
-					set	
-					{
-						phoneNumber = value;
-					}
-				}
-
 				public string Name
 				{
 					get
@@ -256,30 +280,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						creator = value;
-					}
-				}
-
-				public string _Operator
-				{
-					get
-					{
-						return _operator;
-					}
-					set	
-					{
-						_operator = value;
-					}
-				}
-
-				public string Remark
-				{
-					get
-					{
-						return remark;
-					}
-					set	
-					{
-						remark = value;
 					}
 				}
 			}

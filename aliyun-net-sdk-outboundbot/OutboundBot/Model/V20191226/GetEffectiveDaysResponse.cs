@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,7 +25,11 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class GetEffectiveDaysResponse : AcsResponse
 	{
 
+		private int? httpStatusCode;
+
 		private string requestId;
+
+		private int? effectiveDays;
 
 		private bool? success;
 
@@ -33,9 +37,17 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string message;
 
-		private int? httpStatusCode;
-
-		private int? effectiveDays;
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -46,6 +58,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? EffectiveDays
+		{
+			get
+			{
+				return effectiveDays;
+			}
+			set	
+			{
+				effectiveDays = value;
 			}
 		}
 
@@ -82,30 +106,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				message = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
-		public int? EffectiveDays
-		{
-			get
-			{
-				return effectiveDays;
-			}
-			set	
-			{
-				effectiveDays = value;
 			}
 		}
 	}

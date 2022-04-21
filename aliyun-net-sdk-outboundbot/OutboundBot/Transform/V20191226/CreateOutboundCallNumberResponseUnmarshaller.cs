@@ -31,12 +31,12 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			CreateOutboundCallNumberResponse createOutboundCallNumberResponse = new CreateOutboundCallNumberResponse();
 
 			createOutboundCallNumberResponse.HttpResponse = _ctx.HttpResponse;
-			createOutboundCallNumberResponse.Code = _ctx.StringValue("CreateOutboundCallNumber.Code");
 			createOutboundCallNumberResponse.HttpStatusCode = _ctx.IntegerValue("CreateOutboundCallNumber.HttpStatusCode");
-			createOutboundCallNumberResponse.Message = _ctx.StringValue("CreateOutboundCallNumber.Message");
-			createOutboundCallNumberResponse.OutboundCallNumberId = _ctx.StringValue("CreateOutboundCallNumber.OutboundCallNumberId");
 			createOutboundCallNumberResponse.RequestId = _ctx.StringValue("CreateOutboundCallNumber.RequestId");
 			createOutboundCallNumberResponse.Success = _ctx.BooleanValue("CreateOutboundCallNumber.Success");
+			createOutboundCallNumberResponse.Code = _ctx.StringValue("CreateOutboundCallNumber.Code");
+			createOutboundCallNumberResponse.Message = _ctx.StringValue("CreateOutboundCallNumber.Message");
+			createOutboundCallNumberResponse.OutboundCallNumberId = _ctx.StringValue("CreateOutboundCallNumber.OutboundCallNumberId");
         
 			return createOutboundCallNumberResponse;
         }

@@ -31,20 +31,20 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ModifyScriptVoiceConfigResponse modifyScriptVoiceConfigResponse = new ModifyScriptVoiceConfigResponse();
 
 			modifyScriptVoiceConfigResponse.HttpResponse = _ctx.HttpResponse;
-			modifyScriptVoiceConfigResponse.Code = _ctx.StringValue("ModifyScriptVoiceConfig.Code");
 			modifyScriptVoiceConfigResponse.HttpStatusCode = _ctx.IntegerValue("ModifyScriptVoiceConfig.HttpStatusCode");
+			modifyScriptVoiceConfigResponse.Code = _ctx.StringValue("ModifyScriptVoiceConfig.Code");
 			modifyScriptVoiceConfigResponse.Message = _ctx.StringValue("ModifyScriptVoiceConfig.Message");
 			modifyScriptVoiceConfigResponse.RequestId = _ctx.StringValue("ModifyScriptVoiceConfig.RequestId");
 			modifyScriptVoiceConfigResponse.Success = _ctx.BooleanValue("ModifyScriptVoiceConfig.Success");
 
 			ModifyScriptVoiceConfigResponse.ModifyScriptVoiceConfig_ScriptVoiceConfig scriptVoiceConfig = new ModifyScriptVoiceConfigResponse.ModifyScriptVoiceConfig_ScriptVoiceConfig();
-			scriptVoiceConfig.InstanceId = _ctx.StringValue("ModifyScriptVoiceConfig.ScriptVoiceConfig.InstanceId");
-			scriptVoiceConfig.ScriptContent = _ctx.StringValue("ModifyScriptVoiceConfig.ScriptVoiceConfig.ScriptContent");
-			scriptVoiceConfig.ScriptId = _ctx.StringValue("ModifyScriptVoiceConfig.ScriptVoiceConfig.ScriptId");
+			scriptVoiceConfig.Type = _ctx.StringValue("ModifyScriptVoiceConfig.ScriptVoiceConfig.Type");
 			scriptVoiceConfig.ScriptVoiceConfigId = _ctx.StringValue("ModifyScriptVoiceConfig.ScriptVoiceConfig.ScriptVoiceConfigId");
+			scriptVoiceConfig.ScriptContent = _ctx.StringValue("ModifyScriptVoiceConfig.ScriptVoiceConfig.ScriptContent");
+			scriptVoiceConfig.InstanceId = _ctx.StringValue("ModifyScriptVoiceConfig.ScriptVoiceConfig.InstanceId");
+			scriptVoiceConfig.ScriptId = _ctx.StringValue("ModifyScriptVoiceConfig.ScriptVoiceConfig.ScriptId");
 			scriptVoiceConfig.ScriptWaveformRelation = _ctx.StringValue("ModifyScriptVoiceConfig.ScriptVoiceConfig.ScriptWaveformRelation");
 			scriptVoiceConfig.Source = _ctx.StringValue("ModifyScriptVoiceConfig.ScriptVoiceConfig.Source");
-			scriptVoiceConfig.Type = _ctx.StringValue("ModifyScriptVoiceConfig.ScriptVoiceConfig.Type");
 			modifyScriptVoiceConfigResponse.ScriptVoiceConfig = scriptVoiceConfig;
         
 			return modifyScriptVoiceConfigResponse;

@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			CreateJobGroupExportTaskResponse createJobGroupExportTaskResponse = new CreateJobGroupExportTaskResponse();
 
 			createJobGroupExportTaskResponse.HttpResponse = _ctx.HttpResponse;
+			createJobGroupExportTaskResponse.HttpStatusCode = _ctx.IntegerValue("CreateJobGroupExportTask.HttpStatusCode");
 			createJobGroupExportTaskResponse.RequestId = _ctx.StringValue("CreateJobGroupExportTask.RequestId");
 			createJobGroupExportTaskResponse.Success = _ctx.BooleanValue("CreateJobGroupExportTask.Success");
 			createJobGroupExportTaskResponse.Code = _ctx.StringValue("CreateJobGroupExportTask.Code");
 			createJobGroupExportTaskResponse.Message = _ctx.StringValue("CreateJobGroupExportTask.Message");
-			createJobGroupExportTaskResponse.HttpStatusCode = _ctx.IntegerValue("CreateJobGroupExportTask.HttpStatusCode");
 			createJobGroupExportTaskResponse.TaskId = _ctx.StringValue("CreateJobGroupExportTask.TaskId");
         
 			return createJobGroupExportTaskResponse;

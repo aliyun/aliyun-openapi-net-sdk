@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DeleteScriptResponse deleteScriptResponse = new DeleteScriptResponse();
 
 			deleteScriptResponse.HttpResponse = _ctx.HttpResponse;
-			deleteScriptResponse.Code = _ctx.StringValue("DeleteScript.Code");
 			deleteScriptResponse.HttpStatusCode = _ctx.IntegerValue("DeleteScript.HttpStatusCode");
+			deleteScriptResponse.Code = _ctx.StringValue("DeleteScript.Code");
 			deleteScriptResponse.Message = _ctx.StringValue("DeleteScript.Message");
 			deleteScriptResponse.RequestId = _ctx.StringValue("DeleteScript.RequestId");
 			deleteScriptResponse.Success = _ctx.BooleanValue("DeleteScript.Success");

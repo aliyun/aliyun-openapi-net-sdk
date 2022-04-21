@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			SuspendJobsResponse suspendJobsResponse = new SuspendJobsResponse();
 
 			suspendJobsResponse.HttpResponse = _ctx.HttpResponse;
-			suspendJobsResponse.Code = _ctx.StringValue("SuspendJobs.Code");
 			suspendJobsResponse.HttpStatusCode = _ctx.IntegerValue("SuspendJobs.HttpStatusCode");
+			suspendJobsResponse.Code = _ctx.StringValue("SuspendJobs.Code");
 			suspendJobsResponse.Message = _ctx.StringValue("SuspendJobs.Message");
 			suspendJobsResponse.RequestId = _ctx.StringValue("SuspendJobs.RequestId");
 			suspendJobsResponse.Success = _ctx.BooleanValue("SuspendJobs.Success");

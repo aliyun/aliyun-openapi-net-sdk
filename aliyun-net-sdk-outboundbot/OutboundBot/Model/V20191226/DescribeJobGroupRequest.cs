@@ -56,10 +56,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set
 			{
 				briefTypess = value;
-				for (int i = 0; i < briefTypess.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"BriefTypes." + (i + 1) , briefTypess[i]);
-				}
 			}
 		}
 

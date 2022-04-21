@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ChangeResourceGroupResponse changeResourceGroupResponse = new ChangeResourceGroupResponse();
 
 			changeResourceGroupResponse.HttpResponse = _ctx.HttpResponse;
-			changeResourceGroupResponse.RequestId = _ctx.StringValue("ChangeResourceGroup.RequestId");
-			changeResourceGroupResponse.Success = _ctx.BooleanValue("ChangeResourceGroup.Success");
+			changeResourceGroupResponse.HttpStatusCode = _ctx.IntegerValue("ChangeResourceGroup.HttpStatusCode");
 			changeResourceGroupResponse.Code = _ctx.StringValue("ChangeResourceGroup.Code");
 			changeResourceGroupResponse.Message = _ctx.StringValue("ChangeResourceGroup.Message");
-			changeResourceGroupResponse.HttpStatusCode = _ctx.IntegerValue("ChangeResourceGroup.HttpStatusCode");
+			changeResourceGroupResponse.RequestId = _ctx.StringValue("ChangeResourceGroup.RequestId");
+			changeResourceGroupResponse.Success = _ctx.BooleanValue("ChangeResourceGroup.Success");
         
 			return changeResourceGroupResponse;
         }

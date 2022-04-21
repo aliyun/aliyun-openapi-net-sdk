@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			SubmitBatchJobsResponse submitBatchJobsResponse = new SubmitBatchJobsResponse();
 
 			submitBatchJobsResponse.HttpResponse = _ctx.HttpResponse;
-			submitBatchJobsResponse.Code = _ctx.StringValue("SubmitBatchJobs.Code");
 			submitBatchJobsResponse.HttpStatusCode = _ctx.IntegerValue("SubmitBatchJobs.HttpStatusCode");
+			submitBatchJobsResponse.Code = _ctx.StringValue("SubmitBatchJobs.Code");
 			submitBatchJobsResponse.Message = _ctx.StringValue("SubmitBatchJobs.Message");
 			submitBatchJobsResponse.RequestId = _ctx.StringValue("SubmitBatchJobs.RequestId");
 			submitBatchJobsResponse.Success = _ctx.BooleanValue("SubmitBatchJobs.Success");

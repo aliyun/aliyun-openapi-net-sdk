@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DeleteDialogueFlowResponse deleteDialogueFlowResponse = new DeleteDialogueFlowResponse();
 
 			deleteDialogueFlowResponse.HttpResponse = _ctx.HttpResponse;
-			deleteDialogueFlowResponse.Code = _ctx.StringValue("DeleteDialogueFlow.Code");
 			deleteDialogueFlowResponse.HttpStatusCode = _ctx.IntegerValue("DeleteDialogueFlow.HttpStatusCode");
+			deleteDialogueFlowResponse.Code = _ctx.StringValue("DeleteDialogueFlow.Code");
 			deleteDialogueFlowResponse.Message = _ctx.StringValue("DeleteDialogueFlow.Message");
 			deleteDialogueFlowResponse.RequestId = _ctx.StringValue("DeleteDialogueFlow.RequestId");
 			deleteDialogueFlowResponse.Success = _ctx.BooleanValue("DeleteDialogueFlow.Success");

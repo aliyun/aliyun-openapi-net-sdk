@@ -17,13 +17,17 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
 	public class GetBaseStrategyPeriodResponse : AcsResponse
 	{
+
+		private int? httpStatusCode;
+
+		private bool? onlyWeekdays;
 
 		private string requestId;
 
@@ -33,11 +37,31 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string message;
 
-		private int? httpStatusCode;
-
-		private bool? onlyWeekdays;
-
 		private List<GetBaseStrategyPeriod_TimeFrame> workingTime;
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
+		public bool? OnlyWeekdays
+		{
+			get
+			{
+				return onlyWeekdays;
+			}
+			set	
+			{
+				onlyWeekdays = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -87,30 +111,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
-		public bool? OnlyWeekdays
-		{
-			get
-			{
-				return onlyWeekdays;
-			}
-			set	
-			{
-				onlyWeekdays = value;
-			}
-		}
-
 		public List<GetBaseStrategyPeriod_TimeFrame> WorkingTime
 		{
 			get
@@ -126,13 +126,25 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class GetBaseStrategyPeriod_TimeFrame
 		{
 
-			private long? beginTimeMillis;
+			private string endTime;
 
-			private string beginTime;
+			private long? beginTimeMillis;
 
 			private long? endTimeMillis;
 
-			private string endTime;
+			private string beginTime;
+
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
 
 			public long? BeginTimeMillis
 			{
@@ -143,18 +155,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					beginTimeMillis = value;
-				}
-			}
-
-			public string BeginTime
-			{
-				get
-				{
-					return beginTime;
-				}
-				set	
-				{
-					beginTime = value;
 				}
 			}
 
@@ -170,15 +170,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string EndTime
+			public string BeginTime
 			{
 				get
 				{
-					return endTime;
+					return beginTime;
 				}
 				set	
 				{
-					endTime = value;
+					beginTime = value;
 				}
 			}
 		}

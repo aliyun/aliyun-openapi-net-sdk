@@ -31,12 +31,12 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			CreateDialogueFlowResponse createDialogueFlowResponse = new CreateDialogueFlowResponse();
 
 			createDialogueFlowResponse.HttpResponse = _ctx.HttpResponse;
-			createDialogueFlowResponse.Code = _ctx.StringValue("CreateDialogueFlow.Code");
-			createDialogueFlowResponse.DialogueFlowId = _ctx.StringValue("CreateDialogueFlow.DialogueFlowId");
 			createDialogueFlowResponse.HttpStatusCode = _ctx.IntegerValue("CreateDialogueFlow.HttpStatusCode");
-			createDialogueFlowResponse.Message = _ctx.StringValue("CreateDialogueFlow.Message");
 			createDialogueFlowResponse.RequestId = _ctx.StringValue("CreateDialogueFlow.RequestId");
+			createDialogueFlowResponse.DialogueFlowId = _ctx.StringValue("CreateDialogueFlow.DialogueFlowId");
 			createDialogueFlowResponse.Success = _ctx.BooleanValue("CreateDialogueFlow.Success");
+			createDialogueFlowResponse.Code = _ctx.StringValue("CreateDialogueFlow.Code");
+			createDialogueFlowResponse.Message = _ctx.StringValue("CreateDialogueFlow.Message");
         
 			return createDialogueFlowResponse;
         }

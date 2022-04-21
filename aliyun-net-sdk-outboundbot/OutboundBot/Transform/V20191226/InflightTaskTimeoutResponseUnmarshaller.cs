@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			InflightTaskTimeoutResponse inflightTaskTimeoutResponse = new InflightTaskTimeoutResponse();
 
 			inflightTaskTimeoutResponse.HttpResponse = _ctx.HttpResponse;
-			inflightTaskTimeoutResponse.RequestId = _ctx.StringValue("InflightTaskTimeout.RequestId");
-			inflightTaskTimeoutResponse.Success = _ctx.BooleanValue("InflightTaskTimeout.Success");
+			inflightTaskTimeoutResponse.HttpStatusCode = _ctx.IntegerValue("InflightTaskTimeout.HttpStatusCode");
 			inflightTaskTimeoutResponse.Code = _ctx.StringValue("InflightTaskTimeout.Code");
 			inflightTaskTimeoutResponse.Message = _ctx.StringValue("InflightTaskTimeout.Message");
-			inflightTaskTimeoutResponse.HttpStatusCode = _ctx.IntegerValue("InflightTaskTimeout.HttpStatusCode");
+			inflightTaskTimeoutResponse.RequestId = _ctx.StringValue("InflightTaskTimeout.RequestId");
+			inflightTaskTimeoutResponse.Success = _ctx.BooleanValue("InflightTaskTimeout.Success");
         
 			return inflightTaskTimeoutResponse;
         }

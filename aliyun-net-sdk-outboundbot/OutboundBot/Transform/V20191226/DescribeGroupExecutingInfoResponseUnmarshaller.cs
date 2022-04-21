@@ -31,34 +31,34 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DescribeGroupExecutingInfoResponse describeGroupExecutingInfoResponse = new DescribeGroupExecutingInfoResponse();
 
 			describeGroupExecutingInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeGroupExecutingInfoResponse.HttpStatusCode = _ctx.IntegerValue("DescribeGroupExecutingInfo.HttpStatusCode");
 			describeGroupExecutingInfoResponse.RequestId = _ctx.StringValue("DescribeGroupExecutingInfo.RequestId");
+			describeGroupExecutingInfoResponse.GroupId = _ctx.StringValue("DescribeGroupExecutingInfo.GroupId");
 			describeGroupExecutingInfoResponse.Success = _ctx.BooleanValue("DescribeGroupExecutingInfo.Success");
 			describeGroupExecutingInfoResponse.Code = _ctx.StringValue("DescribeGroupExecutingInfo.Code");
 			describeGroupExecutingInfoResponse.Message = _ctx.StringValue("DescribeGroupExecutingInfo.Message");
-			describeGroupExecutingInfoResponse.HttpStatusCode = _ctx.IntegerValue("DescribeGroupExecutingInfo.HttpStatusCode");
-			describeGroupExecutingInfoResponse.GroupId = _ctx.StringValue("DescribeGroupExecutingInfo.GroupId");
 			describeGroupExecutingInfoResponse.InstanceId = _ctx.StringValue("DescribeGroupExecutingInfo.InstanceId");
 
 			DescribeGroupExecutingInfoResponse.DescribeGroupExecutingInfo_ExecutingInfo executingInfo = new DescribeGroupExecutingInfoResponse.DescribeGroupExecutingInfo_ExecutingInfo();
-			executingInfo.StartTime = _ctx.LongValue("DescribeGroupExecutingInfo.ExecutingInfo.StartTime");
 			executingInfo.EndTime = _ctx.LongValue("DescribeGroupExecutingInfo.ExecutingInfo.EndTime");
-			executingInfo.CallFailedNum = _ctx.IntegerValue("DescribeGroupExecutingInfo.ExecutingInfo.CallFailedNum");
-			executingInfo.CallNum = _ctx.IntegerValue("DescribeGroupExecutingInfo.ExecutingInfo.CallNum");
-			executingInfo.CreatorName = _ctx.StringValue("DescribeGroupExecutingInfo.ExecutingInfo.CreatorName");
-			executingInfo.FinishedNum = _ctx.IntegerValue("DescribeGroupExecutingInfo.ExecutingInfo.FinishedNum");
+			executingInfo.StartTime = _ctx.LongValue("DescribeGroupExecutingInfo.ExecutingInfo.StartTime");
 			executingInfo.HangUpByClientNum = _ctx.IntegerValue("DescribeGroupExecutingInfo.ExecutingInfo.HangUpByClientNum");
-			executingInfo.TransferByIntentNum = _ctx.IntegerValue("DescribeGroupExecutingInfo.ExecutingInfo.TransferByIntentNum");
+			executingInfo.CreatorName = _ctx.StringValue("DescribeGroupExecutingInfo.ExecutingInfo.CreatorName");
 			executingInfo.TransferByNoAnswer = _ctx.IntegerValue("DescribeGroupExecutingInfo.ExecutingInfo.TransferByNoAnswer");
+			executingInfo.FinishedNum = _ctx.IntegerValue("DescribeGroupExecutingInfo.ExecutingInfo.FinishedNum");
+			executingInfo.TransferByIntentNum = _ctx.IntegerValue("DescribeGroupExecutingInfo.ExecutingInfo.TransferByIntentNum");
+			executingInfo.CallNum = _ctx.IntegerValue("DescribeGroupExecutingInfo.ExecutingInfo.CallNum");
+			executingInfo.CallFailedNum = _ctx.IntegerValue("DescribeGroupExecutingInfo.ExecutingInfo.CallFailedNum");
 
 			DescribeGroupExecutingInfoResponse.DescribeGroupExecutingInfo_ExecutingInfo.DescribeGroupExecutingInfo_JobsProgress jobsProgress = new DescribeGroupExecutingInfoResponse.DescribeGroupExecutingInfo_ExecutingInfo.DescribeGroupExecutingInfo_JobsProgress();
-			jobsProgress.TotalJobs = _ctx.IntegerValue("DescribeGroupExecutingInfo.ExecutingInfo.JobsProgress.TotalJobs");
+			jobsProgress.SchedulingNum = _ctx.IntegerValue("DescribeGroupExecutingInfo.ExecutingInfo.JobsProgress.SchedulingNum");
 			jobsProgress.TotalCompletedNum = _ctx.IntegerValue("DescribeGroupExecutingInfo.ExecutingInfo.JobsProgress.TotalCompletedNum");
 			jobsProgress.FailedNum = _ctx.IntegerValue("DescribeGroupExecutingInfo.ExecutingInfo.JobsProgress.FailedNum");
+			jobsProgress.PausedNum = _ctx.IntegerValue("DescribeGroupExecutingInfo.ExecutingInfo.JobsProgress.PausedNum");
 			jobsProgress.CancelledNum = _ctx.IntegerValue("DescribeGroupExecutingInfo.ExecutingInfo.JobsProgress.CancelledNum");
+			jobsProgress.TotalJobs = _ctx.IntegerValue("DescribeGroupExecutingInfo.ExecutingInfo.JobsProgress.TotalJobs");
 			jobsProgress.TotalNotAnsweredNum = _ctx.IntegerValue("DescribeGroupExecutingInfo.ExecutingInfo.JobsProgress.TotalNotAnsweredNum");
 			jobsProgress.ExecutingNum = _ctx.IntegerValue("DescribeGroupExecutingInfo.ExecutingInfo.JobsProgress.ExecutingNum");
-			jobsProgress.PausedNum = _ctx.IntegerValue("DescribeGroupExecutingInfo.ExecutingInfo.JobsProgress.PausedNum");
-			jobsProgress.SchedulingNum = _ctx.IntegerValue("DescribeGroupExecutingInfo.ExecutingInfo.JobsProgress.SchedulingNum");
 			executingInfo.JobsProgress = jobsProgress;
 			describeGroupExecutingInfoResponse.ExecutingInfo = executingInfo;
         

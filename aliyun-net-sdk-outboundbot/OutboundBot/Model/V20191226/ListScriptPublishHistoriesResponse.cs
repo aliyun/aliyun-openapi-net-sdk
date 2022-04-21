@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,9 +25,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class ListScriptPublishHistoriesResponse : AcsResponse
 	{
 
-		private string code;
-
 		private int? httpStatusCode;
+
+		private string code;
 
 		private string message;
 
@@ -36,18 +36,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private bool? success;
 
 		private ListScriptPublishHistories_ScriptPublishHistories scriptPublishHistories;
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -58,6 +46,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				httpStatusCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -171,25 +171,25 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			public class ListScriptPublishHistories_PublishHistory
 			{
 
-				private string description;
+				private long? publishTime;
 
 				private string instanceId;
 
-				private long? publishTime;
-
 				private string scriptId;
+
+				private string description;
 
 				private string scriptVersion;
 
-				public string Description
+				public long? PublishTime
 				{
 					get
 					{
-						return description;
+						return publishTime;
 					}
 					set	
 					{
-						description = value;
+						publishTime = value;
 					}
 				}
 
@@ -205,18 +205,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public long? PublishTime
-				{
-					get
-					{
-						return publishTime;
-					}
-					set	
-					{
-						publishTime = value;
-					}
-				}
-
 				public string ScriptId
 				{
 					get
@@ -226,6 +214,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						scriptId = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
 					}
 				}
 

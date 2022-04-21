@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			SaveEffectiveDaysResponse saveEffectiveDaysResponse = new SaveEffectiveDaysResponse();
 
 			saveEffectiveDaysResponse.HttpResponse = _ctx.HttpResponse;
-			saveEffectiveDaysResponse.RequestId = _ctx.StringValue("SaveEffectiveDays.RequestId");
-			saveEffectiveDaysResponse.Success = _ctx.BooleanValue("SaveEffectiveDays.Success");
+			saveEffectiveDaysResponse.HttpStatusCode = _ctx.IntegerValue("SaveEffectiveDays.HttpStatusCode");
 			saveEffectiveDaysResponse.Code = _ctx.StringValue("SaveEffectiveDays.Code");
 			saveEffectiveDaysResponse.Message = _ctx.StringValue("SaveEffectiveDays.Message");
-			saveEffectiveDaysResponse.HttpStatusCode = _ctx.IntegerValue("SaveEffectiveDays.HttpStatusCode");
+			saveEffectiveDaysResponse.RequestId = _ctx.StringValue("SaveEffectiveDays.RequestId");
+			saveEffectiveDaysResponse.Success = _ctx.BooleanValue("SaveEffectiveDays.Success");
         
 			return saveEffectiveDaysResponse;
         }

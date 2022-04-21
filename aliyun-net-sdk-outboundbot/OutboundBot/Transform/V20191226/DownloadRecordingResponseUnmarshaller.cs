@@ -31,15 +31,15 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DownloadRecordingResponse downloadRecordingResponse = new DownloadRecordingResponse();
 
 			downloadRecordingResponse.HttpResponse = _ctx.HttpResponse;
-			downloadRecordingResponse.Code = _ctx.StringValue("DownloadRecording.Code");
 			downloadRecordingResponse.HttpStatusCode = _ctx.IntegerValue("DownloadRecording.HttpStatusCode");
+			downloadRecordingResponse.Code = _ctx.StringValue("DownloadRecording.Code");
 			downloadRecordingResponse.Message = _ctx.StringValue("DownloadRecording.Message");
 			downloadRecordingResponse.RequestId = _ctx.StringValue("DownloadRecording.RequestId");
 			downloadRecordingResponse.Success = _ctx.BooleanValue("DownloadRecording.Success");
 
 			DownloadRecordingResponse.DownloadRecording_DownloadParams downloadParams = new DownloadRecordingResponse.DownloadRecording_DownloadParams();
-			downloadParams.FileName = _ctx.StringValue("DownloadRecording.DownloadParams.FileName");
 			downloadParams.SignatureUrl = _ctx.StringValue("DownloadRecording.DownloadParams.SignatureUrl");
+			downloadParams.FileName = _ctx.StringValue("DownloadRecording.DownloadParams.FileName");
 			downloadRecordingResponse.DownloadParams = downloadParams;
         
 			return downloadRecordingResponse;

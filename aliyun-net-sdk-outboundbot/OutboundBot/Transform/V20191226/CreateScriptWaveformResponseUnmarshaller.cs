@@ -31,12 +31,12 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			CreateScriptWaveformResponse createScriptWaveformResponse = new CreateScriptWaveformResponse();
 
 			createScriptWaveformResponse.HttpResponse = _ctx.HttpResponse;
-			createScriptWaveformResponse.Code = _ctx.StringValue("CreateScriptWaveform.Code");
 			createScriptWaveformResponse.HttpStatusCode = _ctx.IntegerValue("CreateScriptWaveform.HttpStatusCode");
-			createScriptWaveformResponse.Message = _ctx.StringValue("CreateScriptWaveform.Message");
 			createScriptWaveformResponse.RequestId = _ctx.StringValue("CreateScriptWaveform.RequestId");
-			createScriptWaveformResponse.ScriptWaveformId = _ctx.StringValue("CreateScriptWaveform.ScriptWaveformId");
 			createScriptWaveformResponse.Success = _ctx.BooleanValue("CreateScriptWaveform.Success");
+			createScriptWaveformResponse.Code = _ctx.StringValue("CreateScriptWaveform.Code");
+			createScriptWaveformResponse.Message = _ctx.StringValue("CreateScriptWaveform.Message");
+			createScriptWaveformResponse.ScriptWaveformId = _ctx.StringValue("CreateScriptWaveform.ScriptWaveformId");
         
 			return createScriptWaveformResponse;
         }

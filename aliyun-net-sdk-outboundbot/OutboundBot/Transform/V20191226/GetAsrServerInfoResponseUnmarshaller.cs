@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			GetAsrServerInfoResponse getAsrServerInfoResponse = new GetAsrServerInfoResponse();
 
 			getAsrServerInfoResponse.HttpResponse = _ctx.HttpResponse;
-			getAsrServerInfoResponse.RequestId = _ctx.StringValue("GetAsrServerInfo.RequestId");
-			getAsrServerInfoResponse.Success = _ctx.BooleanValue("GetAsrServerInfo.Success");
+			getAsrServerInfoResponse.HttpStatusCode = _ctx.IntegerValue("GetAsrServerInfo.HttpStatusCode");
 			getAsrServerInfoResponse.Code = _ctx.StringValue("GetAsrServerInfo.Code");
 			getAsrServerInfoResponse.Message = _ctx.StringValue("GetAsrServerInfo.Message");
-			getAsrServerInfoResponse.HttpStatusCode = _ctx.IntegerValue("GetAsrServerInfo.HttpStatusCode");
+			getAsrServerInfoResponse.RequestId = _ctx.StringValue("GetAsrServerInfo.RequestId");
+			getAsrServerInfoResponse.Success = _ctx.BooleanValue("GetAsrServerInfo.Success");
         
 			return getAsrServerInfoResponse;
         }

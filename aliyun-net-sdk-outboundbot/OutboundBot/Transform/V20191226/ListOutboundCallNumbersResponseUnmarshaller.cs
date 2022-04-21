@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ListOutboundCallNumbersResponse listOutboundCallNumbersResponse = new ListOutboundCallNumbersResponse();
 
 			listOutboundCallNumbersResponse.HttpResponse = _ctx.HttpResponse;
-			listOutboundCallNumbersResponse.Code = _ctx.StringValue("ListOutboundCallNumbers.Code");
 			listOutboundCallNumbersResponse.HttpStatusCode = _ctx.IntegerValue("ListOutboundCallNumbers.HttpStatusCode");
+			listOutboundCallNumbersResponse.Code = _ctx.StringValue("ListOutboundCallNumbers.Code");
 			listOutboundCallNumbersResponse.Message = _ctx.StringValue("ListOutboundCallNumbers.Message");
 			listOutboundCallNumbersResponse.RequestId = _ctx.StringValue("ListOutboundCallNumbers.RequestId");
 			listOutboundCallNumbersResponse.Success = _ctx.BooleanValue("ListOutboundCallNumbers.Success");

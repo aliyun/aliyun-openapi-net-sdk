@@ -44,9 +44,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string jobFilePath;
 
-		private List<string> callingNumbers = new List<string>(){ };
-
 		private string scriptId;
+
+		private List<string> callingNumbers = new List<string>(){ };
 
 		private string instanceId;
 
@@ -86,23 +86,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public List<string> CallingNumbers
-		{
-			get
-			{
-				return callingNumbers;
-			}
-
-			set
-			{
-				callingNumbers = value;
-				for (int i = 0; i < callingNumbers.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"CallingNumber." + (i + 1) , callingNumbers[i]);
-				}
-			}
-		}
-
 		public string ScriptId
 		{
 			get
@@ -113,6 +96,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				scriptId = value;
 				DictionaryUtil.Add(QueryParameters, "ScriptId", value);
+			}
+		}
+
+		public List<string> CallingNumbers
+		{
+			get
+			{
+				return callingNumbers;
+			}
+
+			set
+			{
+				callingNumbers = value;
 			}
 		}
 

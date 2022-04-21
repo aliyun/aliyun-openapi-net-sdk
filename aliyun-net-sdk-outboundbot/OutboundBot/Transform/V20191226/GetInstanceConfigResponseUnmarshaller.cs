@@ -43,6 +43,7 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			instanceConfig.MiniPlaybackSystemSwitch = _ctx.BooleanValue("GetInstanceConfig.Data.InstanceConfig.MiniPlaybackSystemSwitch");
 			instanceConfig.NewBargeInSystemSwitch = _ctx.BooleanValue("GetInstanceConfig.Data.InstanceConfig.NewBargeInSystemSwitch");
 			instanceConfig.SearchTaskFunctionSwitch = _ctx.BooleanValue("GetInstanceConfig.Data.InstanceConfig.SearchTaskFunctionSwitch");
+			instanceConfig.EsAllDataKeepDay = _ctx.LongValue("GetInstanceConfig.Data.InstanceConfig.EsAllDataKeepDay");
 			data.InstanceConfig = instanceConfig;
 			getInstanceConfigResponse.Data = data;
         

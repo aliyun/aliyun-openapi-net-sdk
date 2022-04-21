@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,21 +25,33 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class GetCurrentConcurrencyResponse : AcsResponse
 	{
 
+		private int? httpStatusCode;
+
 		private string requestId;
 
 		private bool? success;
+
+		private int? currentConcurrency;
 
 		private string code;
 
 		private string message;
 
-		private int? httpStatusCode;
-
 		private int? maxConcurrentConversation;
 
-		private int? currentConcurrency;
-
 		private string instanceId;
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -62,6 +74,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public int? CurrentConcurrency
+		{
+			get
+			{
+				return currentConcurrency;
+			}
+			set	
+			{
+				currentConcurrency = value;
 			}
 		}
 
@@ -89,18 +113,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
 		public int? MaxConcurrentConversation
 		{
 			get
@@ -110,18 +122,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				maxConcurrentConversation = value;
-			}
-		}
-
-		public int? CurrentConcurrency
-		{
-			get
-			{
-				return currentConcurrency;
-			}
-			set	
-			{
-				currentConcurrency = value;
 			}
 		}
 

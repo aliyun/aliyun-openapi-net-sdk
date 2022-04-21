@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,41 +25,17 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class CreateGlobalQuestionResponse : AcsResponse
 	{
 
-		private string code;
-
-		private string globalQuestionId;
-
 		private int? httpStatusCode;
 
-		private string message;
+		private string globalQuestionId;
 
 		private string requestId;
 
 		private bool? success;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private string code;
 
-		public string GlobalQuestionId
-		{
-			get
-			{
-				return globalQuestionId;
-			}
-			set	
-			{
-				globalQuestionId = value;
-			}
-		}
+		private string message;
 
 		public int? HttpStatusCode
 		{
@@ -73,15 +49,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string Message
+		public string GlobalQuestionId
 		{
 			get
 			{
-				return message;
+				return globalQuestionId;
 			}
 			set	
 			{
-				message = value;
+				globalQuestionId = value;
 			}
 		}
 
@@ -106,6 +82,30 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 	}

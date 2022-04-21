@@ -56,10 +56,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set
 			{
 				contactBlockListLists = value;
-				for (int i = 0; i < contactBlockListLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ContactBlockListList." + (i + 1) , contactBlockListLists[i]);
-				}
 			}
 		}
 

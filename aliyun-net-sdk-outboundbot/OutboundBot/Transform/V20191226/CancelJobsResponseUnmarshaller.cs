@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			CancelJobsResponse cancelJobsResponse = new CancelJobsResponse();
 
 			cancelJobsResponse.HttpResponse = _ctx.HttpResponse;
-			cancelJobsResponse.Code = _ctx.StringValue("CancelJobs.Code");
 			cancelJobsResponse.HttpStatusCode = _ctx.IntegerValue("CancelJobs.HttpStatusCode");
+			cancelJobsResponse.Code = _ctx.StringValue("CancelJobs.Code");
 			cancelJobsResponse.Message = _ctx.StringValue("CancelJobs.Message");
 			cancelJobsResponse.RequestId = _ctx.StringValue("CancelJobs.RequestId");
 			cancelJobsResponse.Success = _ctx.BooleanValue("CancelJobs.Success");

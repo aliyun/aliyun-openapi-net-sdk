@@ -17,13 +17,17 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
 	public class ListTagResourcesResponse : AcsResponse
 	{
+
+		private int? httpStatusCode;
+
+		private string nextToken;
 
 		private string requestId;
 
@@ -33,11 +37,31 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string message;
 
-		private int? httpStatusCode;
-
-		private string nextToken;
-
 		private List<ListTagResources_TagResource> tagResources;
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -87,30 +111,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-			}
-		}
-
 		public List<ListTagResources_TagResource> TagResources
 		{
 			get
@@ -126,23 +126,23 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class ListTagResources_TagResource
 		{
 
-			private string tagKey;
+			private string resourceType;
 
 			private string tagValue;
 
 			private string resourceId;
 
-			private string resourceType;
+			private string tagKey;
 
-			public string TagKey
+			public string ResourceType
 			{
 				get
 				{
-					return tagKey;
+					return resourceType;
 				}
 				set	
 				{
-					tagKey = value;
+					resourceType = value;
 				}
 			}
 
@@ -170,15 +170,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string ResourceType
+			public string TagKey
 			{
 				get
 				{
-					return resourceType;
+					return tagKey;
 				}
 				set	
 				{
-					resourceType = value;
+					tagKey = value;
 				}
 			}
 		}

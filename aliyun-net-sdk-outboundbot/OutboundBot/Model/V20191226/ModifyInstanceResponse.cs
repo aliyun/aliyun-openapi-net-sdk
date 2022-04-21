@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,9 +25,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class ModifyInstanceResponse : AcsResponse
 	{
 
-		private string code;
-
 		private int? httpStatusCode;
+
+		private string code;
 
 		private string message;
 
@@ -36,18 +36,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private bool? success;
 
 		private ModifyInstance_Instance instance;
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -58,6 +46,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				httpStatusCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -112,41 +112,29 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class ModifyInstance_Instance
 		{
 
-			private string callCenterInstanceId;
-
 			private long? creationTime;
-
-			private string instanceDescription;
-
-			private string instanceId;
-
-			private string instanceName;
-
-			private int? maxConcurrentConversation;
-
-			private string nluServiceType;
 
 			private string owner;
 
-			private long? creatorId;
+			private string callCenterInstanceId;
+
+			private string nluServiceType;
+
+			private string instanceName;
 
 			private string creatorName;
 
+			private int? maxConcurrentConversation;
+
 			private string ownerName;
 
-			private ModifyInstance_NluProfile nluProfile;
+			private long? creatorId;
 
-			public string CallCenterInstanceId
-			{
-				get
-				{
-					return callCenterInstanceId;
-				}
-				set	
-				{
-					callCenterInstanceId = value;
-				}
-			}
+			private string instanceId;
+
+			private string instanceDescription;
+
+			private ModifyInstance_NluProfile nluProfile;
 
 			public long? CreationTime
 			{
@@ -157,66 +145,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					creationTime = value;
-				}
-			}
-
-			public string InstanceDescription
-			{
-				get
-				{
-					return instanceDescription;
-				}
-				set	
-				{
-					instanceDescription = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public string InstanceName
-			{
-				get
-				{
-					return instanceName;
-				}
-				set	
-				{
-					instanceName = value;
-				}
-			}
-
-			public int? MaxConcurrentConversation
-			{
-				get
-				{
-					return maxConcurrentConversation;
-				}
-				set	
-				{
-					maxConcurrentConversation = value;
-				}
-			}
-
-			public string NluServiceType
-			{
-				get
-				{
-					return nluServiceType;
-				}
-				set	
-				{
-					nluServiceType = value;
 				}
 			}
 
@@ -232,15 +160,39 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public long? CreatorId
+			public string CallCenterInstanceId
 			{
 				get
 				{
-					return creatorId;
+					return callCenterInstanceId;
 				}
 				set	
 				{
-					creatorId = value;
+					callCenterInstanceId = value;
+				}
+			}
+
+			public string NluServiceType
+			{
+				get
+				{
+					return nluServiceType;
+				}
+				set	
+				{
+					nluServiceType = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
 				}
 			}
 
@@ -256,6 +208,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
+			public int? MaxConcurrentConversation
+			{
+				get
+				{
+					return maxConcurrentConversation;
+				}
+				set	
+				{
+					maxConcurrentConversation = value;
+				}
+			}
+
 			public string OwnerName
 			{
 				get
@@ -265,6 +229,42 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					ownerName = value;
+				}
+			}
+
+			public long? CreatorId
+			{
+				get
+				{
+					return creatorId;
+				}
+				set	
+				{
+					creatorId = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string InstanceDescription
+			{
+				get
+				{
+					return instanceDescription;
+				}
+				set	
+				{
+					instanceDescription = value;
 				}
 			}
 
@@ -285,9 +285,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 				private string accessKey;
 
-				private string endpoint;
-
 				private string secretKey;
+
+				private string endpoint;
 
 				public string AccessKey
 				{
@@ -301,18 +301,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public string Endpoint
-				{
-					get
-					{
-						return endpoint;
-					}
-					set	
-					{
-						endpoint = value;
-					}
-				}
-
 				public string SecretKey
 				{
 					get
@@ -322,6 +310,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						secretKey = value;
+					}
+				}
+
+				public string Endpoint
+				{
+					get
+					{
+						return endpoint;
+					}
+					set	
+					{
+						endpoint = value;
 					}
 				}
 			}

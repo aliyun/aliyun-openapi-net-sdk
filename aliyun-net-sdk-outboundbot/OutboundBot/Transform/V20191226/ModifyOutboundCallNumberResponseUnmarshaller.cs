@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ModifyOutboundCallNumberResponse modifyOutboundCallNumberResponse = new ModifyOutboundCallNumberResponse();
 
 			modifyOutboundCallNumberResponse.HttpResponse = _ctx.HttpResponse;
-			modifyOutboundCallNumberResponse.Code = _ctx.StringValue("ModifyOutboundCallNumber.Code");
 			modifyOutboundCallNumberResponse.HttpStatusCode = _ctx.IntegerValue("ModifyOutboundCallNumber.HttpStatusCode");
+			modifyOutboundCallNumberResponse.Code = _ctx.StringValue("ModifyOutboundCallNumber.Code");
 			modifyOutboundCallNumberResponse.Message = _ctx.StringValue("ModifyOutboundCallNumber.Message");
 			modifyOutboundCallNumberResponse.RequestId = _ctx.StringValue("ModifyOutboundCallNumber.RequestId");
 			modifyOutboundCallNumberResponse.Success = _ctx.BooleanValue("ModifyOutboundCallNumber.Success");

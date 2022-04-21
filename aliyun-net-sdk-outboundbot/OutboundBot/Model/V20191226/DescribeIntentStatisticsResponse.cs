@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,7 +25,11 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class DescribeIntentStatisticsResponse : AcsResponse
 	{
 
+		private int? httpStatusCode;
+
 		private string requestId;
+
+		private string groupId;
 
 		private bool? success;
 
@@ -33,13 +37,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string message;
 
-		private int? httpStatusCode;
+		private int? processIntentNum;
 
 		private string instanceId;
-
-		private string groupId;
-
-		private int? processIntentNum;
 
 		private int? globalIntentNum;
 
@@ -48,6 +48,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private List<DescribeIntentStatistics_IntentStatisticsItem> globalIntents;
 
 		private List<DescribeIntentStatistics_IntentStatisticsItem1> intentsAfterNoAnswer;
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -58,6 +70,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
 			}
 		}
 
@@ -97,15 +121,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public int? HttpStatusCode
+		public int? ProcessIntentNum
 		{
 			get
 			{
-				return httpStatusCode;
+				return processIntentNum;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				processIntentNum = value;
 			}
 		}
 
@@ -118,30 +142,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				instanceId = value;
-			}
-		}
-
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-			}
-		}
-
-		public int? ProcessIntentNum
-		{
-			get
-			{
-				return processIntentNum;
-			}
-			set	
-			{
-				processIntentNum = value;
 			}
 		}
 
@@ -196,19 +196,55 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class DescribeIntentStatistics_IntentStatisticsItem
 		{
 
-			private string instanceId;
+			private string type;
 
 			private string groupId;
+
+			private int? hitAfterNoAnswer;
+
+			private string instanceId;
+
+			private int? hitNum;
 
 			private string intentId;
 
 			private string intentName;
 
-			private string type;
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
 
-			private int? hitNum;
+			public string GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
+				}
+			}
 
-			private int? hitAfterNoAnswer;
+			public int? HitAfterNoAnswer
+			{
+				get
+				{
+					return hitAfterNoAnswer;
+				}
+				set	
+				{
+					hitAfterNoAnswer = value;
+				}
+			}
 
 			public string InstanceId
 			{
@@ -222,15 +258,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string GroupId
+			public int? HitNum
 			{
 				get
 				{
-					return groupId;
+					return hitNum;
 				}
 				set	
 				{
-					groupId = value;
+					hitNum = value;
 				}
 			}
 
@@ -255,42 +291,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					intentName = value;
-				}
-			}
-
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-
-			public int? HitNum
-			{
-				get
-				{
-					return hitNum;
-				}
-				set	
-				{
-					hitNum = value;
-				}
-			}
-
-			public int? HitAfterNoAnswer
-			{
-				get
-				{
-					return hitAfterNoAnswer;
-				}
-				set	
-				{
-					hitAfterNoAnswer = value;
 				}
 			}
 		}

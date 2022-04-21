@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DeleteScriptWaveformResponse deleteScriptWaveformResponse = new DeleteScriptWaveformResponse();
 
 			deleteScriptWaveformResponse.HttpResponse = _ctx.HttpResponse;
-			deleteScriptWaveformResponse.Code = _ctx.StringValue("DeleteScriptWaveform.Code");
 			deleteScriptWaveformResponse.HttpStatusCode = _ctx.IntegerValue("DeleteScriptWaveform.HttpStatusCode");
+			deleteScriptWaveformResponse.Code = _ctx.StringValue("DeleteScriptWaveform.Code");
 			deleteScriptWaveformResponse.Message = _ctx.StringValue("DeleteScriptWaveform.Message");
 			deleteScriptWaveformResponse.RequestId = _ctx.StringValue("DeleteScriptWaveform.RequestId");
 			deleteScriptWaveformResponse.Success = _ctx.BooleanValue("DeleteScriptWaveform.Success");

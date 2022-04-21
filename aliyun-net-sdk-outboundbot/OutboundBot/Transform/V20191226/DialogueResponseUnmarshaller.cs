@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DialogueResponse dialogueResponse = new DialogueResponse();
 
 			dialogueResponse.HttpResponse = _ctx.HttpResponse;
-			dialogueResponse.Code = _ctx.StringValue("Dialogue.Code");
 			dialogueResponse.HttpStatusCode = _ctx.IntegerValue("Dialogue.HttpStatusCode");
+			dialogueResponse.Code = _ctx.StringValue("Dialogue.Code");
 			dialogueResponse.Message = _ctx.StringValue("Dialogue.Message");
 			dialogueResponse.RequestId = _ctx.StringValue("Dialogue.RequestId");
 			dialogueResponse.Success = _ctx.BooleanValue("Dialogue.Success");

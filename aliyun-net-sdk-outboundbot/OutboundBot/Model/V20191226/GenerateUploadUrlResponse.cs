@@ -22,30 +22,30 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-	public class ListDialogueFlowsResponse : AcsResponse
+	public class GenerateUploadUrlResponse : AcsResponse
 	{
 
-		private int? httpStatusCode;
+		private bool? success;
 
 		private string code;
 
 		private string message;
 
+		private int? httpStatusCode;
+
 		private string requestId;
 
-		private bool? success;
+		private GenerateUploadUrl_Data data;
 
-		private List<ListDialogueFlows_DialogueFlow> dialogueFlows;
-
-		public int? HttpStatusCode
+		public bool? Success
 		{
 			get
 			{
-				return httpStatusCode;
+				return success;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				success = value;
 			}
 		}
 
@@ -73,6 +73,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
 		public string RequestId
 		{
 			get
@@ -85,114 +97,130 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public bool? Success
+		public GenerateUploadUrl_Data Data
 		{
 			get
 			{
-				return success;
+				return data;
 			}
 			set	
 			{
-				success = value;
+				data = value;
 			}
 		}
 
-		public List<ListDialogueFlows_DialogueFlow> DialogueFlows
-		{
-			get
-			{
-				return dialogueFlows;
-			}
-			set	
-			{
-				dialogueFlows = value;
-			}
-		}
-
-		public class ListDialogueFlows_DialogueFlow
+		public class GenerateUploadUrl_Data
 		{
 
-			private string dialogueFlowDefinition;
+			private string accessId;
 
-			private string dialogueFlowType;
+			private string policy;
 
-			private string dialogueFlowId;
+			private string signature;
 
-			private string dialogueFlowName;
+			private string folder;
 
-			private string scriptId;
+			private string host;
 
-			private string scriptVersion;
+			private int? expire;
 
-			public string DialogueFlowDefinition
+			private bool? success;
+
+			private string message;
+
+			public string AccessId
 			{
 				get
 				{
-					return dialogueFlowDefinition;
+					return accessId;
 				}
 				set	
 				{
-					dialogueFlowDefinition = value;
+					accessId = value;
 				}
 			}
 
-			public string DialogueFlowType
+			public string Policy
 			{
 				get
 				{
-					return dialogueFlowType;
+					return policy;
 				}
 				set	
 				{
-					dialogueFlowType = value;
+					policy = value;
 				}
 			}
 
-			public string DialogueFlowId
+			public string Signature
 			{
 				get
 				{
-					return dialogueFlowId;
+					return signature;
 				}
 				set	
 				{
-					dialogueFlowId = value;
+					signature = value;
 				}
 			}
 
-			public string DialogueFlowName
+			public string Folder
 			{
 				get
 				{
-					return dialogueFlowName;
+					return folder;
 				}
 				set	
 				{
-					dialogueFlowName = value;
+					folder = value;
 				}
 			}
 
-			public string ScriptId
+			public string Host
 			{
 				get
 				{
-					return scriptId;
+					return host;
 				}
 				set	
 				{
-					scriptId = value;
+					host = value;
 				}
 			}
 
-			public string ScriptVersion
+			public int? Expire
 			{
 				get
 				{
-					return scriptVersion;
+					return expire;
 				}
 				set	
 				{
-					scriptVersion = value;
+					expire = value;
+				}
+			}
+
+			public bool? Success
+			{
+				get
+				{
+					return success;
+				}
+				set	
+				{
+					success = value;
+				}
+			}
+
+			public string Message
+			{
+				get
+				{
+					return message;
+				}
+				set	
+				{
+					message = value;
 				}
 			}
 		}

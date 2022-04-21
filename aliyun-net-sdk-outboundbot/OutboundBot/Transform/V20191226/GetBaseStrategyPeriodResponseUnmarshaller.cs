@@ -31,20 +31,20 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			GetBaseStrategyPeriodResponse getBaseStrategyPeriodResponse = new GetBaseStrategyPeriodResponse();
 
 			getBaseStrategyPeriodResponse.HttpResponse = _ctx.HttpResponse;
+			getBaseStrategyPeriodResponse.HttpStatusCode = _ctx.IntegerValue("GetBaseStrategyPeriod.HttpStatusCode");
+			getBaseStrategyPeriodResponse.OnlyWeekdays = _ctx.BooleanValue("GetBaseStrategyPeriod.OnlyWeekdays");
 			getBaseStrategyPeriodResponse.RequestId = _ctx.StringValue("GetBaseStrategyPeriod.RequestId");
 			getBaseStrategyPeriodResponse.Success = _ctx.BooleanValue("GetBaseStrategyPeriod.Success");
 			getBaseStrategyPeriodResponse.Code = _ctx.StringValue("GetBaseStrategyPeriod.Code");
 			getBaseStrategyPeriodResponse.Message = _ctx.StringValue("GetBaseStrategyPeriod.Message");
-			getBaseStrategyPeriodResponse.HttpStatusCode = _ctx.IntegerValue("GetBaseStrategyPeriod.HttpStatusCode");
-			getBaseStrategyPeriodResponse.OnlyWeekdays = _ctx.BooleanValue("GetBaseStrategyPeriod.OnlyWeekdays");
 
 			List<GetBaseStrategyPeriodResponse.GetBaseStrategyPeriod_TimeFrame> getBaseStrategyPeriodResponse_workingTime = new List<GetBaseStrategyPeriodResponse.GetBaseStrategyPeriod_TimeFrame>();
 			for (int i = 0; i < _ctx.Length("GetBaseStrategyPeriod.WorkingTime.Length"); i++) {
 				GetBaseStrategyPeriodResponse.GetBaseStrategyPeriod_TimeFrame timeFrame = new GetBaseStrategyPeriodResponse.GetBaseStrategyPeriod_TimeFrame();
-				timeFrame.BeginTimeMillis = _ctx.LongValue("GetBaseStrategyPeriod.WorkingTime["+ i +"].BeginTimeMillis");
-				timeFrame.BeginTime = _ctx.StringValue("GetBaseStrategyPeriod.WorkingTime["+ i +"].BeginTime");
-				timeFrame.EndTimeMillis = _ctx.LongValue("GetBaseStrategyPeriod.WorkingTime["+ i +"].EndTimeMillis");
 				timeFrame.EndTime = _ctx.StringValue("GetBaseStrategyPeriod.WorkingTime["+ i +"].EndTime");
+				timeFrame.BeginTimeMillis = _ctx.LongValue("GetBaseStrategyPeriod.WorkingTime["+ i +"].BeginTimeMillis");
+				timeFrame.EndTimeMillis = _ctx.LongValue("GetBaseStrategyPeriod.WorkingTime["+ i +"].EndTimeMillis");
+				timeFrame.BeginTime = _ctx.StringValue("GetBaseStrategyPeriod.WorkingTime["+ i +"].BeginTime");
 
 				getBaseStrategyPeriodResponse_workingTime.Add(timeFrame);
 			}

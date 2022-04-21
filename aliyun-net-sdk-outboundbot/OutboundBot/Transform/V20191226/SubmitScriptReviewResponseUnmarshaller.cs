@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			SubmitScriptReviewResponse submitScriptReviewResponse = new SubmitScriptReviewResponse();
 
 			submitScriptReviewResponse.HttpResponse = _ctx.HttpResponse;
-			submitScriptReviewResponse.Code = _ctx.StringValue("SubmitScriptReview.Code");
 			submitScriptReviewResponse.HttpStatusCode = _ctx.IntegerValue("SubmitScriptReview.HttpStatusCode");
+			submitScriptReviewResponse.Code = _ctx.StringValue("SubmitScriptReview.Code");
 			submitScriptReviewResponse.Message = _ctx.StringValue("SubmitScriptReview.Message");
 			submitScriptReviewResponse.RequestId = _ctx.StringValue("SubmitScriptReview.RequestId");
 			submitScriptReviewResponse.Success = _ctx.BooleanValue("SubmitScriptReview.Success");

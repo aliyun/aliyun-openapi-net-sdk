@@ -31,23 +31,23 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			WithdrawScriptReviewResponse withdrawScriptReviewResponse = new WithdrawScriptReviewResponse();
 
 			withdrawScriptReviewResponse.HttpResponse = _ctx.HttpResponse;
-			withdrawScriptReviewResponse.Code = _ctx.StringValue("WithdrawScriptReview.Code");
 			withdrawScriptReviewResponse.HttpStatusCode = _ctx.IntegerValue("WithdrawScriptReview.HttpStatusCode");
+			withdrawScriptReviewResponse.Code = _ctx.StringValue("WithdrawScriptReview.Code");
 			withdrawScriptReviewResponse.Message = _ctx.StringValue("WithdrawScriptReview.Message");
 			withdrawScriptReviewResponse.RequestId = _ctx.StringValue("WithdrawScriptReview.RequestId");
 			withdrawScriptReviewResponse.Success = _ctx.BooleanValue("WithdrawScriptReview.Success");
 
 			WithdrawScriptReviewResponse.WithdrawScriptReview_Script script = new WithdrawScriptReviewResponse.WithdrawScriptReview_Script();
-			script.DebugStatus = _ctx.StringValue("WithdrawScriptReview.Script.DebugStatus");
-			script.Industry = _ctx.StringValue("WithdrawScriptReview.Script.Industry");
-			script.IsDebugDrafted = _ctx.BooleanValue("WithdrawScriptReview.Script.IsDebugDrafted");
-			script.IsDrafted = _ctx.BooleanValue("WithdrawScriptReview.Script.IsDrafted");
-			script.Scene = _ctx.StringValue("WithdrawScriptReview.Script.Scene");
-			script.ScriptDescription = _ctx.StringValue("WithdrawScriptReview.Script.ScriptDescription");
-			script.ScriptId = _ctx.StringValue("WithdrawScriptReview.Script.ScriptId");
-			script.ScriptName = _ctx.StringValue("WithdrawScriptReview.Script.ScriptName");
 			script.Status = _ctx.StringValue("WithdrawScriptReview.Script.Status");
 			script.UpdateTime = _ctx.LongValue("WithdrawScriptReview.Script.UpdateTime");
+			script.Industry = _ctx.StringValue("WithdrawScriptReview.Script.Industry");
+			script.ScriptDescription = _ctx.StringValue("WithdrawScriptReview.Script.ScriptDescription");
+			script.IsDrafted = _ctx.BooleanValue("WithdrawScriptReview.Script.IsDrafted");
+			script.DebugStatus = _ctx.StringValue("WithdrawScriptReview.Script.DebugStatus");
+			script.ScriptId = _ctx.StringValue("WithdrawScriptReview.Script.ScriptId");
+			script.IsDebugDrafted = _ctx.BooleanValue("WithdrawScriptReview.Script.IsDebugDrafted");
+			script.ScriptName = _ctx.StringValue("WithdrawScriptReview.Script.ScriptName");
+			script.Scene = _ctx.StringValue("WithdrawScriptReview.Script.Scene");
 			withdrawScriptReviewResponse.Script = script;
         
 			return withdrawScriptReviewResponse;

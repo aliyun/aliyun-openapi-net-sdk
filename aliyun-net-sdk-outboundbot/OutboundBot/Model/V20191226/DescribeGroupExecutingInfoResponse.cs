@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,7 +25,11 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class DescribeGroupExecutingInfoResponse : AcsResponse
 	{
 
+		private int? httpStatusCode;
+
 		private string requestId;
+
+		private string groupId;
 
 		private bool? success;
 
@@ -33,13 +37,21 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string message;
 
-		private int? httpStatusCode;
-
-		private string groupId;
-
 		private string instanceId;
 
 		private DescribeGroupExecutingInfo_ExecutingInfo executingInfo;
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -50,6 +62,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
 			}
 		}
 
@@ -89,30 +113,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-			}
-		}
-
 		public string InstanceId
 		{
 			get
@@ -140,37 +140,25 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class DescribeGroupExecutingInfo_ExecutingInfo
 		{
 
-			private long? startTime;
-
 			private long? endTime;
 
-			private int? callFailedNum;
-
-			private int? callNum;
-
-			private string creatorName;
-
-			private int? finishedNum;
+			private long? startTime;
 
 			private int? hangUpByClientNum;
 
-			private int? transferByIntentNum;
+			private string creatorName;
 
 			private int? transferByNoAnswer;
 
-			private DescribeGroupExecutingInfo_JobsProgress jobsProgress;
+			private int? finishedNum;
 
-			public long? StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
+			private int? transferByIntentNum;
+
+			private int? callNum;
+
+			private int? callFailedNum;
+
+			private DescribeGroupExecutingInfo_JobsProgress jobsProgress;
 
 			public long? EndTime
 			{
@@ -184,51 +172,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public int? CallFailedNum
+			public long? StartTime
 			{
 				get
 				{
-					return callFailedNum;
+					return startTime;
 				}
 				set	
 				{
-					callFailedNum = value;
-				}
-			}
-
-			public int? CallNum
-			{
-				get
-				{
-					return callNum;
-				}
-				set	
-				{
-					callNum = value;
-				}
-			}
-
-			public string CreatorName
-			{
-				get
-				{
-					return creatorName;
-				}
-				set	
-				{
-					creatorName = value;
-				}
-			}
-
-			public int? FinishedNum
-			{
-				get
-				{
-					return finishedNum;
-				}
-				set	
-				{
-					finishedNum = value;
+					startTime = value;
 				}
 			}
 
@@ -244,15 +196,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public int? TransferByIntentNum
+			public string CreatorName
 			{
 				get
 				{
-					return transferByIntentNum;
+					return creatorName;
 				}
 				set	
 				{
-					transferByIntentNum = value;
+					creatorName = value;
 				}
 			}
 
@@ -265,6 +217,54 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					transferByNoAnswer = value;
+				}
+			}
+
+			public int? FinishedNum
+			{
+				get
+				{
+					return finishedNum;
+				}
+				set	
+				{
+					finishedNum = value;
+				}
+			}
+
+			public int? TransferByIntentNum
+			{
+				get
+				{
+					return transferByIntentNum;
+				}
+				set	
+				{
+					transferByIntentNum = value;
+				}
+			}
+
+			public int? CallNum
+			{
+				get
+				{
+					return callNum;
+				}
+				set	
+				{
+					callNum = value;
+				}
+			}
+
+			public int? CallFailedNum
+			{
+				get
+				{
+					return callFailedNum;
+				}
+				set	
+				{
+					callFailedNum = value;
 				}
 			}
 
@@ -283,31 +283,31 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			public class DescribeGroupExecutingInfo_JobsProgress
 			{
 
-				private int? totalJobs;
+				private int? schedulingNum;
 
 				private int? totalCompletedNum;
 
 				private int? failedNum;
 
+				private int? pausedNum;
+
 				private int? cancelledNum;
+
+				private int? totalJobs;
 
 				private int? totalNotAnsweredNum;
 
 				private int? executingNum;
 
-				private int? pausedNum;
-
-				private int? schedulingNum;
-
-				public int? TotalJobs
+				public int? SchedulingNum
 				{
 					get
 					{
-						return totalJobs;
+						return schedulingNum;
 					}
 					set	
 					{
-						totalJobs = value;
+						schedulingNum = value;
 					}
 				}
 
@@ -335,6 +335,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
+				public int? PausedNum
+				{
+					get
+					{
+						return pausedNum;
+					}
+					set	
+					{
+						pausedNum = value;
+					}
+				}
+
 				public int? CancelledNum
 				{
 					get
@@ -344,6 +356,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						cancelledNum = value;
+					}
+				}
+
+				public int? TotalJobs
+				{
+					get
+					{
+						return totalJobs;
+					}
+					set	
+					{
+						totalJobs = value;
 					}
 				}
 
@@ -368,30 +392,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						executingNum = value;
-					}
-				}
-
-				public int? PausedNum
-				{
-					get
-					{
-						return pausedNum;
-					}
-					set	
-					{
-						pausedNum = value;
-					}
-				}
-
-				public int? SchedulingNum
-				{
-					get
-					{
-						return schedulingNum;
-					}
-					set	
-					{
-						schedulingNum = value;
 					}
 				}
 			}

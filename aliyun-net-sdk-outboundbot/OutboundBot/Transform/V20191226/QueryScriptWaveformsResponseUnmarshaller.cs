@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			QueryScriptWaveformsResponse queryScriptWaveformsResponse = new QueryScriptWaveformsResponse();
 
 			queryScriptWaveformsResponse.HttpResponse = _ctx.HttpResponse;
-			queryScriptWaveformsResponse.Code = _ctx.StringValue("QueryScriptWaveforms.Code");
 			queryScriptWaveformsResponse.HttpStatusCode = _ctx.IntegerValue("QueryScriptWaveforms.HttpStatusCode");
+			queryScriptWaveformsResponse.Code = _ctx.StringValue("QueryScriptWaveforms.Code");
 			queryScriptWaveformsResponse.Message = _ctx.StringValue("QueryScriptWaveforms.Message");
 			queryScriptWaveformsResponse.RequestId = _ctx.StringValue("QueryScriptWaveforms.RequestId");
 			queryScriptWaveformsResponse.Success = _ctx.BooleanValue("QueryScriptWaveforms.Success");
@@ -40,11 +40,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			List<QueryScriptWaveformsResponse.QueryScriptWaveforms_ScriptWaveform> queryScriptWaveformsResponse_scriptWaveforms = new List<QueryScriptWaveformsResponse.QueryScriptWaveforms_ScriptWaveform>();
 			for (int i = 0; i < _ctx.Length("QueryScriptWaveforms.ScriptWaveforms.Length"); i++) {
 				QueryScriptWaveformsResponse.QueryScriptWaveforms_ScriptWaveform scriptWaveform = new QueryScriptWaveformsResponse.QueryScriptWaveforms_ScriptWaveform();
-				scriptWaveform.FileId = _ctx.StringValue("QueryScriptWaveforms.ScriptWaveforms["+ i +"].FileId");
-				scriptWaveform.FileName = _ctx.StringValue("QueryScriptWaveforms.ScriptWaveforms["+ i +"].FileName");
 				scriptWaveform.ScriptContent = _ctx.StringValue("QueryScriptWaveforms.ScriptWaveforms["+ i +"].ScriptContent");
-				scriptWaveform.ScriptId = _ctx.StringValue("QueryScriptWaveforms.ScriptWaveforms["+ i +"].ScriptId");
 				scriptWaveform.ScriptWaveformId = _ctx.StringValue("QueryScriptWaveforms.ScriptWaveforms["+ i +"].ScriptWaveformId");
+				scriptWaveform.FileName = _ctx.StringValue("QueryScriptWaveforms.ScriptWaveforms["+ i +"].FileName");
+				scriptWaveform.ScriptId = _ctx.StringValue("QueryScriptWaveforms.ScriptWaveforms["+ i +"].ScriptId");
+				scriptWaveform.FileId = _ctx.StringValue("QueryScriptWaveforms.ScriptWaveforms["+ i +"].FileId");
 
 				queryScriptWaveformsResponse_scriptWaveforms.Add(scriptWaveform);
 			}

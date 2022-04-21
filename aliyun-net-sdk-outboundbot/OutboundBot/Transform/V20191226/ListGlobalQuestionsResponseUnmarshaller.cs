@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ListGlobalQuestionsResponse listGlobalQuestionsResponse = new ListGlobalQuestionsResponse();
 
 			listGlobalQuestionsResponse.HttpResponse = _ctx.HttpResponse;
-			listGlobalQuestionsResponse.Code = _ctx.StringValue("ListGlobalQuestions.Code");
 			listGlobalQuestionsResponse.HttpStatusCode = _ctx.IntegerValue("ListGlobalQuestions.HttpStatusCode");
+			listGlobalQuestionsResponse.Code = _ctx.StringValue("ListGlobalQuestions.Code");
 			listGlobalQuestionsResponse.Message = _ctx.StringValue("ListGlobalQuestions.Message");
 			listGlobalQuestionsResponse.RequestId = _ctx.StringValue("ListGlobalQuestions.RequestId");
 			listGlobalQuestionsResponse.Success = _ctx.BooleanValue("ListGlobalQuestions.Success");
@@ -45,10 +45,10 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			List<ListGlobalQuestionsResponse.ListGlobalQuestions_GlobalQuestions.ListGlobalQuestions_GlobalQuestion> globalQuestions_list = new List<ListGlobalQuestionsResponse.ListGlobalQuestions_GlobalQuestions.ListGlobalQuestions_GlobalQuestion>();
 			for (int i = 0; i < _ctx.Length("ListGlobalQuestions.GlobalQuestions.List.Length"); i++) {
 				ListGlobalQuestionsResponse.ListGlobalQuestions_GlobalQuestions.ListGlobalQuestions_GlobalQuestion globalQuestion = new ListGlobalQuestionsResponse.ListGlobalQuestions_GlobalQuestions.ListGlobalQuestions_GlobalQuestion();
-				globalQuestion.Answers = _ctx.StringValue("ListGlobalQuestions.GlobalQuestions.List["+ i +"].Answers");
 				globalQuestion.GlobalQuestionId = _ctx.StringValue("ListGlobalQuestions.GlobalQuestions.List["+ i +"].GlobalQuestionId");
-				globalQuestion.GlobalQuestionName = _ctx.StringValue("ListGlobalQuestions.GlobalQuestions.List["+ i +"].GlobalQuestionName");
+				globalQuestion.Answers = _ctx.StringValue("ListGlobalQuestions.GlobalQuestions.List["+ i +"].Answers");
 				globalQuestion.GlobalQuestionType = _ctx.StringValue("ListGlobalQuestions.GlobalQuestions.List["+ i +"].GlobalQuestionType");
+				globalQuestion.GlobalQuestionName = _ctx.StringValue("ListGlobalQuestions.GlobalQuestions.List["+ i +"].GlobalQuestionName");
 				globalQuestion.Questions = _ctx.StringValue("ListGlobalQuestions.GlobalQuestions.List["+ i +"].Questions");
 				globalQuestion.ScriptId = _ctx.StringValue("ListGlobalQuestions.GlobalQuestions.List["+ i +"].ScriptId");
 

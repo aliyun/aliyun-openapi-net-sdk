@@ -31,13 +31,13 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			GetCurrentConcurrencyResponse getCurrentConcurrencyResponse = new GetCurrentConcurrencyResponse();
 
 			getCurrentConcurrencyResponse.HttpResponse = _ctx.HttpResponse;
+			getCurrentConcurrencyResponse.HttpStatusCode = _ctx.IntegerValue("GetCurrentConcurrency.HttpStatusCode");
 			getCurrentConcurrencyResponse.RequestId = _ctx.StringValue("GetCurrentConcurrency.RequestId");
 			getCurrentConcurrencyResponse.Success = _ctx.BooleanValue("GetCurrentConcurrency.Success");
+			getCurrentConcurrencyResponse.CurrentConcurrency = _ctx.IntegerValue("GetCurrentConcurrency.CurrentConcurrency");
 			getCurrentConcurrencyResponse.Code = _ctx.StringValue("GetCurrentConcurrency.Code");
 			getCurrentConcurrencyResponse.Message = _ctx.StringValue("GetCurrentConcurrency.Message");
-			getCurrentConcurrencyResponse.HttpStatusCode = _ctx.IntegerValue("GetCurrentConcurrency.HttpStatusCode");
 			getCurrentConcurrencyResponse.MaxConcurrentConversation = _ctx.IntegerValue("GetCurrentConcurrency.MaxConcurrentConversation");
-			getCurrentConcurrencyResponse.CurrentConcurrency = _ctx.IntegerValue("GetCurrentConcurrency.CurrentConcurrency");
 			getCurrentConcurrencyResponse.InstanceId = _ctx.StringValue("GetCurrentConcurrency.InstanceId");
         
 			return getCurrentConcurrencyResponse;

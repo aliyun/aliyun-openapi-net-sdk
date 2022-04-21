@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ListJobGroupsResponse listJobGroupsResponse = new ListJobGroupsResponse();
 
 			listJobGroupsResponse.HttpResponse = _ctx.HttpResponse;
-			listJobGroupsResponse.Code = _ctx.StringValue("ListJobGroups.Code");
 			listJobGroupsResponse.HttpStatusCode = _ctx.IntegerValue("ListJobGroups.HttpStatusCode");
-			listJobGroupsResponse.Message = _ctx.StringValue("ListJobGroups.Message");
 			listJobGroupsResponse.RequestId = _ctx.StringValue("ListJobGroups.RequestId");
 			listJobGroupsResponse.Success = _ctx.BooleanValue("ListJobGroups.Success");
+			listJobGroupsResponse.Code = _ctx.StringValue("ListJobGroups.Code");
+			listJobGroupsResponse.Message = _ctx.StringValue("ListJobGroups.Message");
 			listJobGroupsResponse.AsyncTaskId = _ctx.StringValue("ListJobGroups.AsyncTaskId");
 
 			ListJobGroupsResponse.ListJobGroups_JobGroups jobGroups = new ListJobGroupsResponse.ListJobGroups_JobGroups();
@@ -46,36 +46,36 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			List<ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup> jobGroups_list = new List<ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup>();
 			for (int i = 0; i < _ctx.Length("ListJobGroups.JobGroups.List.Length"); i++) {
 				ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup jobGroup = new ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup();
-				jobGroup.CreationTime = _ctx.LongValue("ListJobGroups.JobGroups.List["+ i +"].CreationTime");
-				jobGroup.JobGroupDescription = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].JobGroupDescription");
-				jobGroup.JobGroupId = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].JobGroupId");
-				jobGroup.JobGroupName = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].JobGroupName");
-				jobGroup.ScriptId = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].ScriptId");
-				jobGroup.ScriptName = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].ScriptName");
-				jobGroup.JobDataParsingTaskId = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].JobDataParsingTaskId");
-				jobGroup.ModifyTime = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].ModifyTime");
-				jobGroup.ScriptVersion = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].ScriptVersion");
 				jobGroup.Status = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].Status");
+				jobGroup.JobGroupId = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].JobGroupId");
+				jobGroup.CreationTime = _ctx.LongValue("ListJobGroups.JobGroups.List["+ i +"].CreationTime");
+				jobGroup.JobGroupName = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].JobGroupName");
 				jobGroup.TotalCallNum = _ctx.IntegerValue("ListJobGroups.JobGroups.List["+ i +"].TotalCallNum");
+				jobGroup.ScriptId = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].ScriptId");
+				jobGroup.JobGroupDescription = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].JobGroupDescription");
+				jobGroup.JobDataParsingTaskId = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].JobDataParsingTaskId");
+				jobGroup.ScriptName = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].ScriptName");
+				jobGroup.ScriptVersion = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].ScriptVersion");
+				jobGroup.ModifyTime = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].ModifyTime");
 
 				ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup.ListJobGroups_Progress progress = new ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup.ListJobGroups_Progress();
-				progress.Duration = _ctx.IntegerValue("ListJobGroups.JobGroups.List["+ i +"].Progress.Duration");
-				progress.StartTime = _ctx.LongValue("ListJobGroups.JobGroups.List["+ i +"].Progress.StartTime");
-				progress.Status = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].Progress.Status");
-				progress.TotalCompleted = _ctx.IntegerValue("ListJobGroups.JobGroups.List["+ i +"].Progress.TotalCompleted");
-				progress.TotalJobs = _ctx.IntegerValue("ListJobGroups.JobGroups.List["+ i +"].Progress.TotalJobs");
 				progress.TotalNotAnswered = _ctx.IntegerValue("ListJobGroups.JobGroups.List["+ i +"].Progress.TotalNotAnswered");
-				progress.CancelledNum = _ctx.IntegerValue("ListJobGroups.JobGroups.List["+ i +"].Progress.CancelledNum");
+				progress.Status = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].Progress.Status");
+				progress.StartTime = _ctx.LongValue("ListJobGroups.JobGroups.List["+ i +"].Progress.StartTime");
 				progress.FailedNum = _ctx.IntegerValue("ListJobGroups.JobGroups.List["+ i +"].Progress.FailedNum");
-				progress.Scheduling = _ctx.IntegerValue("ListJobGroups.JobGroups.List["+ i +"].Progress.Scheduling");
 				progress.PausedNum = _ctx.IntegerValue("ListJobGroups.JobGroups.List["+ i +"].Progress.PausedNum");
+				progress.CancelledNum = _ctx.IntegerValue("ListJobGroups.JobGroups.List["+ i +"].Progress.CancelledNum");
+				progress.TotalJobs = _ctx.IntegerValue("ListJobGroups.JobGroups.List["+ i +"].Progress.TotalJobs");
+				progress.TotalCompleted = _ctx.IntegerValue("ListJobGroups.JobGroups.List["+ i +"].Progress.TotalCompleted");
+				progress.Duration = _ctx.IntegerValue("ListJobGroups.JobGroups.List["+ i +"].Progress.Duration");
 				progress.ExecutingNum = _ctx.IntegerValue("ListJobGroups.JobGroups.List["+ i +"].Progress.ExecutingNum");
+				progress.Scheduling = _ctx.IntegerValue("ListJobGroups.JobGroups.List["+ i +"].Progress.Scheduling");
 				jobGroup.Progress = progress;
 
 				ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup.ListJobGroups_ExportProgress exportProgress = new ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup.ListJobGroups_ExportProgress();
+				exportProgress.Status = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].ExportProgress.Status");
 				exportProgress.FileHttpUrl = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].ExportProgress.FileHttpUrl");
 				exportProgress.Progress = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].ExportProgress.Progress");
-				exportProgress.Status = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].ExportProgress.Status");
 				jobGroup.ExportProgress = exportProgress;
 
 				ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup.ListJobGroups_Strategy strategy = new ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup.ListJobGroups_Strategy();

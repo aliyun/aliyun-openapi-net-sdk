@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			RollbackScriptResponse rollbackScriptResponse = new RollbackScriptResponse();
 
 			rollbackScriptResponse.HttpResponse = _ctx.HttpResponse;
-			rollbackScriptResponse.Code = _ctx.StringValue("RollbackScript.Code");
 			rollbackScriptResponse.HttpStatusCode = _ctx.IntegerValue("RollbackScript.HttpStatusCode");
+			rollbackScriptResponse.Code = _ctx.StringValue("RollbackScript.Code");
 			rollbackScriptResponse.Message = _ctx.StringValue("RollbackScript.Message");
 			rollbackScriptResponse.RequestId = _ctx.StringValue("RollbackScript.RequestId");
 			rollbackScriptResponse.Success = _ctx.BooleanValue("RollbackScript.Success");

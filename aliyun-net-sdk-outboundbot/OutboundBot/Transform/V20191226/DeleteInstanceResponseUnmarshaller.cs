@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DeleteInstanceResponse deleteInstanceResponse = new DeleteInstanceResponse();
 
 			deleteInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			deleteInstanceResponse.Code = _ctx.StringValue("DeleteInstance.Code");
 			deleteInstanceResponse.HttpStatusCode = _ctx.IntegerValue("DeleteInstance.HttpStatusCode");
+			deleteInstanceResponse.Code = _ctx.StringValue("DeleteInstance.Code");
 			deleteInstanceResponse.Message = _ctx.StringValue("DeleteInstance.Message");
 			deleteInstanceResponse.RequestId = _ctx.StringValue("DeleteInstance.RequestId");
 			deleteInstanceResponse.Success = _ctx.BooleanValue("DeleteInstance.Success");

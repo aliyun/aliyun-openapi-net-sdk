@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -135,6 +135,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 				private bool? searchTaskFunctionSwitch;
 
+				private long? esAllDataKeepDay;
+
 				public bool? MiniPlaybackSystemSwitch
 				{
 					get
@@ -168,6 +170,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						searchTaskFunctionSwitch = value;
+					}
+				}
+
+				public long? EsAllDataKeepDay
+				{
+					get
+					{
+						return esAllDataKeepDay;
+					}
+					set	
+					{
+						esAllDataKeepDay = value;
 					}
 				}
 			}

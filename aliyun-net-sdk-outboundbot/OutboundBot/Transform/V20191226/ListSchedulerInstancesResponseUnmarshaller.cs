@@ -31,20 +31,20 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ListSchedulerInstancesResponse listSchedulerInstancesResponse = new ListSchedulerInstancesResponse();
 
 			listSchedulerInstancesResponse.HttpResponse = _ctx.HttpResponse;
-			listSchedulerInstancesResponse.RequestId = _ctx.StringValue("ListSchedulerInstances.RequestId");
-			listSchedulerInstancesResponse.Success = _ctx.BooleanValue("ListSchedulerInstances.Success");
+			listSchedulerInstancesResponse.HttpStatusCode = _ctx.IntegerValue("ListSchedulerInstances.HttpStatusCode");
 			listSchedulerInstancesResponse.Code = _ctx.StringValue("ListSchedulerInstances.Code");
 			listSchedulerInstancesResponse.Message = _ctx.StringValue("ListSchedulerInstances.Message");
-			listSchedulerInstancesResponse.HttpStatusCode = _ctx.IntegerValue("ListSchedulerInstances.HttpStatusCode");
+			listSchedulerInstancesResponse.RequestId = _ctx.StringValue("ListSchedulerInstances.RequestId");
+			listSchedulerInstancesResponse.Success = _ctx.BooleanValue("ListSchedulerInstances.Success");
 
 			List<ListSchedulerInstancesResponse.ListSchedulerInstances_SchedulerInstance> listSchedulerInstancesResponse_schedulerInstances = new List<ListSchedulerInstancesResponse.ListSchedulerInstances_SchedulerInstance>();
 			for (int i = 0; i < _ctx.Length("ListSchedulerInstances.SchedulerInstances.Length"); i++) {
 				ListSchedulerInstancesResponse.ListSchedulerInstances_SchedulerInstance schedulerInstance = new ListSchedulerInstancesResponse.ListSchedulerInstances_SchedulerInstance();
-				schedulerInstance.OwnerId = _ctx.StringValue("ListSchedulerInstances.SchedulerInstances["+ i +"].OwnerId");
-				schedulerInstance.InstanceId = _ctx.StringValue("ListSchedulerInstances.SchedulerInstances["+ i +"].InstanceId");
 				schedulerInstance.Business = _ctx.StringValue("ListSchedulerInstances.SchedulerInstances["+ i +"].Business");
 				schedulerInstance.MaxConcurrency = _ctx.IntegerValue("ListSchedulerInstances.SchedulerInstances["+ i +"].MaxConcurrency");
+				schedulerInstance.InstanceId = _ctx.StringValue("ListSchedulerInstances.SchedulerInstances["+ i +"].InstanceId");
 				schedulerInstance.BaseStrategy = _ctx.StringValue("ListSchedulerInstances.SchedulerInstances["+ i +"].BaseStrategy");
+				schedulerInstance.OwnerId = _ctx.StringValue("ListSchedulerInstances.SchedulerInstances["+ i +"].OwnerId");
 
 				listSchedulerInstancesResponse_schedulerInstances.Add(schedulerInstance);
 			}

@@ -31,26 +31,26 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DescribeIntentStatisticsResponse describeIntentStatisticsResponse = new DescribeIntentStatisticsResponse();
 
 			describeIntentStatisticsResponse.HttpResponse = _ctx.HttpResponse;
+			describeIntentStatisticsResponse.HttpStatusCode = _ctx.IntegerValue("DescribeIntentStatistics.HttpStatusCode");
 			describeIntentStatisticsResponse.RequestId = _ctx.StringValue("DescribeIntentStatistics.RequestId");
+			describeIntentStatisticsResponse.GroupId = _ctx.StringValue("DescribeIntentStatistics.GroupId");
 			describeIntentStatisticsResponse.Success = _ctx.BooleanValue("DescribeIntentStatistics.Success");
 			describeIntentStatisticsResponse.Code = _ctx.StringValue("DescribeIntentStatistics.Code");
 			describeIntentStatisticsResponse.Message = _ctx.StringValue("DescribeIntentStatistics.Message");
-			describeIntentStatisticsResponse.HttpStatusCode = _ctx.IntegerValue("DescribeIntentStatistics.HttpStatusCode");
-			describeIntentStatisticsResponse.InstanceId = _ctx.StringValue("DescribeIntentStatistics.InstanceId");
-			describeIntentStatisticsResponse.GroupId = _ctx.StringValue("DescribeIntentStatistics.GroupId");
 			describeIntentStatisticsResponse.ProcessIntentNum = _ctx.IntegerValue("DescribeIntentStatistics.ProcessIntentNum");
+			describeIntentStatisticsResponse.InstanceId = _ctx.StringValue("DescribeIntentStatistics.InstanceId");
 			describeIntentStatisticsResponse.GlobalIntentNum = _ctx.IntegerValue("DescribeIntentStatistics.GlobalIntentNum");
 
 			List<DescribeIntentStatisticsResponse.DescribeIntentStatistics_IntentStatisticsItem> describeIntentStatisticsResponse_processIntents = new List<DescribeIntentStatisticsResponse.DescribeIntentStatistics_IntentStatisticsItem>();
 			for (int i = 0; i < _ctx.Length("DescribeIntentStatistics.ProcessIntents.Length"); i++) {
 				DescribeIntentStatisticsResponse.DescribeIntentStatistics_IntentStatisticsItem intentStatisticsItem = new DescribeIntentStatisticsResponse.DescribeIntentStatistics_IntentStatisticsItem();
-				intentStatisticsItem.InstanceId = _ctx.StringValue("DescribeIntentStatistics.ProcessIntents["+ i +"].InstanceId");
+				intentStatisticsItem.Type = _ctx.StringValue("DescribeIntentStatistics.ProcessIntents["+ i +"].Type");
 				intentStatisticsItem.GroupId = _ctx.StringValue("DescribeIntentStatistics.ProcessIntents["+ i +"].GroupId");
+				intentStatisticsItem.HitAfterNoAnswer = _ctx.IntegerValue("DescribeIntentStatistics.ProcessIntents["+ i +"].HitAfterNoAnswer");
+				intentStatisticsItem.InstanceId = _ctx.StringValue("DescribeIntentStatistics.ProcessIntents["+ i +"].InstanceId");
+				intentStatisticsItem.HitNum = _ctx.IntegerValue("DescribeIntentStatistics.ProcessIntents["+ i +"].HitNum");
 				intentStatisticsItem.IntentId = _ctx.StringValue("DescribeIntentStatistics.ProcessIntents["+ i +"].IntentId");
 				intentStatisticsItem.IntentName = _ctx.StringValue("DescribeIntentStatistics.ProcessIntents["+ i +"].IntentName");
-				intentStatisticsItem.Type = _ctx.StringValue("DescribeIntentStatistics.ProcessIntents["+ i +"].Type");
-				intentStatisticsItem.HitNum = _ctx.IntegerValue("DescribeIntentStatistics.ProcessIntents["+ i +"].HitNum");
-				intentStatisticsItem.HitAfterNoAnswer = _ctx.IntegerValue("DescribeIntentStatistics.ProcessIntents["+ i +"].HitAfterNoAnswer");
 
 				describeIntentStatisticsResponse_processIntents.Add(intentStatisticsItem);
 			}
@@ -59,13 +59,13 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			List<DescribeIntentStatisticsResponse.DescribeIntentStatistics_IntentStatisticsItem> describeIntentStatisticsResponse_globalIntents = new List<DescribeIntentStatisticsResponse.DescribeIntentStatistics_IntentStatisticsItem>();
 			for (int i = 0; i < _ctx.Length("DescribeIntentStatistics.GlobalIntents.Length"); i++) {
 				DescribeIntentStatisticsResponse.DescribeIntentStatistics_IntentStatisticsItem intentStatisticsItem = new DescribeIntentStatisticsResponse.DescribeIntentStatistics_IntentStatisticsItem();
-				intentStatisticsItem.InstanceId = _ctx.StringValue("DescribeIntentStatistics.GlobalIntents["+ i +"].InstanceId");
+				intentStatisticsItem.Type = _ctx.StringValue("DescribeIntentStatistics.GlobalIntents["+ i +"].Type");
 				intentStatisticsItem.GroupId = _ctx.StringValue("DescribeIntentStatistics.GlobalIntents["+ i +"].GroupId");
+				intentStatisticsItem.HitAfterNoAnswer = _ctx.IntegerValue("DescribeIntentStatistics.GlobalIntents["+ i +"].HitAfterNoAnswer");
+				intentStatisticsItem.InstanceId = _ctx.StringValue("DescribeIntentStatistics.GlobalIntents["+ i +"].InstanceId");
+				intentStatisticsItem.HitNum = _ctx.IntegerValue("DescribeIntentStatistics.GlobalIntents["+ i +"].HitNum");
 				intentStatisticsItem.IntentId = _ctx.StringValue("DescribeIntentStatistics.GlobalIntents["+ i +"].IntentId");
 				intentStatisticsItem.IntentName = _ctx.StringValue("DescribeIntentStatistics.GlobalIntents["+ i +"].IntentName");
-				intentStatisticsItem.Type = _ctx.StringValue("DescribeIntentStatistics.GlobalIntents["+ i +"].Type");
-				intentStatisticsItem.HitNum = _ctx.IntegerValue("DescribeIntentStatistics.GlobalIntents["+ i +"].HitNum");
-				intentStatisticsItem.HitAfterNoAnswer = _ctx.IntegerValue("DescribeIntentStatistics.GlobalIntents["+ i +"].HitAfterNoAnswer");
 
 				describeIntentStatisticsResponse_globalIntents.Add(intentStatisticsItem);
 			}

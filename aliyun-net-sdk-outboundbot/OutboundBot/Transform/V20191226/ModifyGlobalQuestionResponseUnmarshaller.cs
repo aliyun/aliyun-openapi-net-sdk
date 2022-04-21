@@ -31,12 +31,12 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ModifyGlobalQuestionResponse modifyGlobalQuestionResponse = new ModifyGlobalQuestionResponse();
 
 			modifyGlobalQuestionResponse.HttpResponse = _ctx.HttpResponse;
-			modifyGlobalQuestionResponse.Code = _ctx.StringValue("ModifyGlobalQuestion.Code");
-			modifyGlobalQuestionResponse.DialogueQuestionId = _ctx.StringValue("ModifyGlobalQuestion.DialogueQuestionId");
 			modifyGlobalQuestionResponse.HttpStatusCode = _ctx.IntegerValue("ModifyGlobalQuestion.HttpStatusCode");
-			modifyGlobalQuestionResponse.Message = _ctx.StringValue("ModifyGlobalQuestion.Message");
 			modifyGlobalQuestionResponse.RequestId = _ctx.StringValue("ModifyGlobalQuestion.RequestId");
 			modifyGlobalQuestionResponse.Success = _ctx.BooleanValue("ModifyGlobalQuestion.Success");
+			modifyGlobalQuestionResponse.Code = _ctx.StringValue("ModifyGlobalQuestion.Code");
+			modifyGlobalQuestionResponse.Message = _ctx.StringValue("ModifyGlobalQuestion.Message");
+			modifyGlobalQuestionResponse.DialogueQuestionId = _ctx.StringValue("ModifyGlobalQuestion.DialogueQuestionId");
         
 			return modifyGlobalQuestionResponse;
         }

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DeleteIntentResponse deleteIntentResponse = new DeleteIntentResponse();
 
 			deleteIntentResponse.HttpResponse = _ctx.HttpResponse;
-			deleteIntentResponse.Code = _ctx.StringValue("DeleteIntent.Code");
 			deleteIntentResponse.HttpStatusCode = _ctx.IntegerValue("DeleteIntent.HttpStatusCode");
+			deleteIntentResponse.Code = _ctx.StringValue("DeleteIntent.Code");
 			deleteIntentResponse.Message = _ctx.StringValue("DeleteIntent.Message");
 			deleteIntentResponse.RequestId = _ctx.StringValue("DeleteIntent.RequestId");
 			deleteIntentResponse.Success = _ctx.BooleanValue("DeleteIntent.Success");

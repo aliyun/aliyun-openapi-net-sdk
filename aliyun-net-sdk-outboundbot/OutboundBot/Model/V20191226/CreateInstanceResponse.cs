@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,9 +25,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class CreateInstanceResponse : AcsResponse
 	{
 
-		private string code;
-
 		private int? httpStatusCode;
+
+		private string code;
 
 		private string message;
 
@@ -36,18 +36,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private bool? success;
 
 		private CreateInstance_Instance instance;
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -58,6 +46,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				httpStatusCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -112,43 +112,31 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class CreateInstance_Instance
 		{
 
-			private string callCenterInstanceId;
-
 			private long? creationTime;
 
-			private string instanceDescription;
-
-			private string instanceId;
-
-			private string instanceName;
-
-			private int? maxConcurrentConversation;
-
-			private string nluServiceType;
+			private string callCenterInstanceId;
 
 			private string owner;
 
-			private long? creatorId;
+			private string nluServiceType;
 
-			private string creatorName;
+			private string instanceId;
+
+			private long? creatorId;
 
 			private string ownerName;
 
+			private string instanceDescription;
+
+			private string instanceName;
+
+			private string creatorName;
+
 			private string resourceGroupId;
 
-			private CreateInstance_NluProfile nluProfile;
+			private int? maxConcurrentConversation;
 
-			public string CallCenterInstanceId
-			{
-				get
-				{
-					return callCenterInstanceId;
-				}
-				set	
-				{
-					callCenterInstanceId = value;
-				}
-			}
+			private CreateInstance_NluProfile nluProfile;
 
 			public long? CreationTime
 			{
@@ -162,63 +150,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string InstanceDescription
+			public string CallCenterInstanceId
 			{
 				get
 				{
-					return instanceDescription;
+					return callCenterInstanceId;
 				}
 				set	
 				{
-					instanceDescription = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public string InstanceName
-			{
-				get
-				{
-					return instanceName;
-				}
-				set	
-				{
-					instanceName = value;
-				}
-			}
-
-			public int? MaxConcurrentConversation
-			{
-				get
-				{
-					return maxConcurrentConversation;
-				}
-				set	
-				{
-					maxConcurrentConversation = value;
-				}
-			}
-
-			public string NluServiceType
-			{
-				get
-				{
-					return nluServiceType;
-				}
-				set	
-				{
-					nluServiceType = value;
+					callCenterInstanceId = value;
 				}
 			}
 
@@ -234,6 +174,30 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
+			public string NluServiceType
+			{
+				get
+				{
+					return nluServiceType;
+				}
+				set	
+				{
+					nluServiceType = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
 			public long? CreatorId
 			{
 				get
@@ -243,18 +207,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					creatorId = value;
-				}
-			}
-
-			public string CreatorName
-			{
-				get
-				{
-					return creatorName;
-				}
-				set	
-				{
-					creatorName = value;
 				}
 			}
 
@@ -270,6 +222,42 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
+			public string InstanceDescription
+			{
+				get
+				{
+					return instanceDescription;
+				}
+				set	
+				{
+					instanceDescription = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public string CreatorName
+			{
+				get
+				{
+					return creatorName;
+				}
+				set	
+				{
+					creatorName = value;
+				}
+			}
+
 			public string ResourceGroupId
 			{
 				get
@@ -279,6 +267,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public int? MaxConcurrentConversation
+			{
+				get
+				{
+					return maxConcurrentConversation;
+				}
+				set	
+				{
+					maxConcurrentConversation = value;
 				}
 			}
 
@@ -299,9 +299,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 				private string accessKey;
 
-				private string endpoint;
-
 				private string secretKey;
+
+				private string endpoint;
 
 				public string AccessKey
 				{
@@ -315,18 +315,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public string Endpoint
-				{
-					get
-					{
-						return endpoint;
-					}
-					set	
-					{
-						endpoint = value;
-					}
-				}
-
 				public string SecretKey
 				{
 					get
@@ -336,6 +324,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						secretKey = value;
+					}
+				}
+
+				public string Endpoint
+				{
+					get
+					{
+						return endpoint;
+					}
+					set	
+					{
+						endpoint = value;
 					}
 				}
 			}

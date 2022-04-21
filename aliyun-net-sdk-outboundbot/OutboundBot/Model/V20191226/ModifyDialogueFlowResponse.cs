@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
@@ -25,55 +25,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class ModifyDialogueFlowResponse : AcsResponse
 	{
 
-		private string code;
-
-		private string dialogueFlowDefinition;
-
-		private string dialogueFlowId;
-
 		private int? httpStatusCode;
 
-		private string message;
+		private string dialogueFlowDefinition;
 
 		private string requestId;
 
 		private bool? success;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private string dialogueFlowId;
 
-		public string DialogueFlowDefinition
-		{
-			get
-			{
-				return dialogueFlowDefinition;
-			}
-			set	
-			{
-				dialogueFlowDefinition = value;
-			}
-		}
+		private string code;
 
-		public string DialogueFlowId
-		{
-			get
-			{
-				return dialogueFlowId;
-			}
-			set	
-			{
-				dialogueFlowId = value;
-			}
-		}
+		private string message;
 
 		public int? HttpStatusCode
 		{
@@ -87,15 +51,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string Message
+		public string DialogueFlowDefinition
 		{
 			get
 			{
-				return message;
+				return dialogueFlowDefinition;
 			}
 			set	
 			{
-				message = value;
+				dialogueFlowDefinition = value;
 			}
 		}
 
@@ -120,6 +84,42 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string DialogueFlowId
+		{
+			get
+			{
+				return dialogueFlowId;
+			}
+			set	
+			{
+				dialogueFlowId = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 	}

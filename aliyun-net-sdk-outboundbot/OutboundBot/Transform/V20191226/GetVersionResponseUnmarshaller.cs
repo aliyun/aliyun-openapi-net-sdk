@@ -31,12 +31,12 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			GetVersionResponse getVersionResponse = new GetVersionResponse();
 
 			getVersionResponse.HttpResponse = _ctx.HttpResponse;
+			getVersionResponse.HttpStatusCode = _ctx.IntegerValue("GetVersion.HttpStatusCode");
 			getVersionResponse.RequestId = _ctx.StringValue("GetVersion.RequestId");
 			getVersionResponse.Success = _ctx.BooleanValue("GetVersion.Success");
+			getVersionResponse.Version = _ctx.StringValue("GetVersion.Version");
 			getVersionResponse.Code = _ctx.StringValue("GetVersion.Code");
 			getVersionResponse.Message = _ctx.StringValue("GetVersion.Message");
-			getVersionResponse.HttpStatusCode = _ctx.IntegerValue("GetVersion.HttpStatusCode");
-			getVersionResponse.Version = _ctx.StringValue("GetVersion.Version");
         
 			return getVersionResponse;
         }

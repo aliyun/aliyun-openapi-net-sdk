@@ -31,19 +31,19 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ModifyBatchJobsResponse modifyBatchJobsResponse = new ModifyBatchJobsResponse();
 
 			modifyBatchJobsResponse.HttpResponse = _ctx.HttpResponse;
-			modifyBatchJobsResponse.Code = _ctx.StringValue("ModifyBatchJobs.Code");
 			modifyBatchJobsResponse.HttpStatusCode = _ctx.IntegerValue("ModifyBatchJobs.HttpStatusCode");
+			modifyBatchJobsResponse.Code = _ctx.StringValue("ModifyBatchJobs.Code");
 			modifyBatchJobsResponse.Message = _ctx.StringValue("ModifyBatchJobs.Message");
 			modifyBatchJobsResponse.RequestId = _ctx.StringValue("ModifyBatchJobs.RequestId");
 			modifyBatchJobsResponse.Success = _ctx.BooleanValue("ModifyBatchJobs.Success");
 
 			ModifyBatchJobsResponse.ModifyBatchJobs_JobGroup jobGroup = new ModifyBatchJobsResponse.ModifyBatchJobs_JobGroup();
 			jobGroup.CreationTime = _ctx.LongValue("ModifyBatchJobs.JobGroup.CreationTime");
+			jobGroup.JobGroupId = _ctx.StringValue("ModifyBatchJobs.JobGroup.JobGroupId");
+			jobGroup.ScenarioId = _ctx.StringValue("ModifyBatchJobs.JobGroup.ScenarioId");
+			jobGroup.JobGroupName = _ctx.StringValue("ModifyBatchJobs.JobGroup.JobGroupName");
 			jobGroup.JobFilePath = _ctx.StringValue("ModifyBatchJobs.JobGroup.JobFilePath");
 			jobGroup.JobGroupDescription = _ctx.StringValue("ModifyBatchJobs.JobGroup.JobGroupDescription");
-			jobGroup.JobGroupId = _ctx.StringValue("ModifyBatchJobs.JobGroup.JobGroupId");
-			jobGroup.JobGroupName = _ctx.StringValue("ModifyBatchJobs.JobGroup.JobGroupName");
-			jobGroup.ScenarioId = _ctx.StringValue("ModifyBatchJobs.JobGroup.ScenarioId");
 
 			List<string> jobGroup_callingNumbers = new List<string>();
 			for (int i = 0; i < _ctx.Length("ModifyBatchJobs.JobGroup.CallingNumbers.Length"); i++) {
@@ -52,19 +52,19 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			jobGroup.CallingNumbers = jobGroup_callingNumbers;
 
 			ModifyBatchJobsResponse.ModifyBatchJobs_JobGroup.ModifyBatchJobs_Strategy strategy = new ModifyBatchJobsResponse.ModifyBatchJobs_JobGroup.ModifyBatchJobs_Strategy();
-			strategy.Customized = _ctx.StringValue("ModifyBatchJobs.JobGroup.Strategy.Customized");
-			strategy.EndTime = _ctx.LongValue("ModifyBatchJobs.JobGroup.Strategy.EndTime");
-			strategy.FollowUpStrategy = _ctx.StringValue("ModifyBatchJobs.JobGroup.Strategy.FollowUpStrategy");
-			strategy.IsTemplate = _ctx.BooleanValue("ModifyBatchJobs.JobGroup.Strategy.IsTemplate");
-			strategy.MaxAttemptsPerDay = _ctx.IntegerValue("ModifyBatchJobs.JobGroup.Strategy.MaxAttemptsPerDay");
-			strategy.MinAttemptInterval = _ctx.IntegerValue("ModifyBatchJobs.JobGroup.Strategy.MinAttemptInterval");
-			strategy.RepeatBy = _ctx.StringValue("ModifyBatchJobs.JobGroup.Strategy.RepeatBy");
-			strategy.RoutingStrategy = _ctx.StringValue("ModifyBatchJobs.JobGroup.Strategy.RoutingStrategy");
-			strategy.StartTime = _ctx.LongValue("ModifyBatchJobs.JobGroup.Strategy.StartTime");
-			strategy.StrategyDescription = _ctx.StringValue("ModifyBatchJobs.JobGroup.Strategy.StrategyDescription");
-			strategy.StrategyId = _ctx.StringValue("ModifyBatchJobs.JobGroup.Strategy.StrategyId");
-			strategy.StrategyName = _ctx.StringValue("ModifyBatchJobs.JobGroup.Strategy.StrategyName");
 			strategy.Type = _ctx.StringValue("ModifyBatchJobs.JobGroup.Strategy.Type");
+			strategy.StrategyName = _ctx.StringValue("ModifyBatchJobs.JobGroup.Strategy.StrategyName");
+			strategy.MaxAttemptsPerDay = _ctx.IntegerValue("ModifyBatchJobs.JobGroup.Strategy.MaxAttemptsPerDay");
+			strategy.FollowUpStrategy = _ctx.StringValue("ModifyBatchJobs.JobGroup.Strategy.FollowUpStrategy");
+			strategy.EndTime = _ctx.LongValue("ModifyBatchJobs.JobGroup.Strategy.EndTime");
+			strategy.Customized = _ctx.StringValue("ModifyBatchJobs.JobGroup.Strategy.Customized");
+			strategy.IsTemplate = _ctx.BooleanValue("ModifyBatchJobs.JobGroup.Strategy.IsTemplate");
+			strategy.StartTime = _ctx.LongValue("ModifyBatchJobs.JobGroup.Strategy.StartTime");
+			strategy.StrategyId = _ctx.StringValue("ModifyBatchJobs.JobGroup.Strategy.StrategyId");
+			strategy.RoutingStrategy = _ctx.StringValue("ModifyBatchJobs.JobGroup.Strategy.RoutingStrategy");
+			strategy.MinAttemptInterval = _ctx.IntegerValue("ModifyBatchJobs.JobGroup.Strategy.MinAttemptInterval");
+			strategy.StrategyDescription = _ctx.StringValue("ModifyBatchJobs.JobGroup.Strategy.StrategyDescription");
+			strategy.RepeatBy = _ctx.StringValue("ModifyBatchJobs.JobGroup.Strategy.RepeatBy");
 
 			List<string> strategy_repeatDays = new List<string>();
 			for (int i = 0; i < _ctx.Length("ModifyBatchJobs.JobGroup.Strategy.RepeatDays.Length"); i++) {
@@ -75,8 +75,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			List<ModifyBatchJobsResponse.ModifyBatchJobs_JobGroup.ModifyBatchJobs_Strategy.ModifyBatchJobs_TimeFrame> strategy_workingTime = new List<ModifyBatchJobsResponse.ModifyBatchJobs_JobGroup.ModifyBatchJobs_Strategy.ModifyBatchJobs_TimeFrame>();
 			for (int i = 0; i < _ctx.Length("ModifyBatchJobs.JobGroup.Strategy.WorkingTime.Length"); i++) {
 				ModifyBatchJobsResponse.ModifyBatchJobs_JobGroup.ModifyBatchJobs_Strategy.ModifyBatchJobs_TimeFrame timeFrame = new ModifyBatchJobsResponse.ModifyBatchJobs_JobGroup.ModifyBatchJobs_Strategy.ModifyBatchJobs_TimeFrame();
-				timeFrame.BeginTime = _ctx.StringValue("ModifyBatchJobs.JobGroup.Strategy.WorkingTime["+ i +"].BeginTime");
 				timeFrame.EndTime = _ctx.StringValue("ModifyBatchJobs.JobGroup.Strategy.WorkingTime["+ i +"].EndTime");
+				timeFrame.BeginTime = _ctx.StringValue("ModifyBatchJobs.JobGroup.Strategy.WorkingTime["+ i +"].BeginTime");
 
 				strategy_workingTime.Add(timeFrame);
 			}

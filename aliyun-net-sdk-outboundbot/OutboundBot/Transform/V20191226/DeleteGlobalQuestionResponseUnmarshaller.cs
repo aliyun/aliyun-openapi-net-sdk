@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DeleteGlobalQuestionResponse deleteGlobalQuestionResponse = new DeleteGlobalQuestionResponse();
 
 			deleteGlobalQuestionResponse.HttpResponse = _ctx.HttpResponse;
-			deleteGlobalQuestionResponse.Code = _ctx.StringValue("DeleteGlobalQuestion.Code");
 			deleteGlobalQuestionResponse.HttpStatusCode = _ctx.IntegerValue("DeleteGlobalQuestion.HttpStatusCode");
+			deleteGlobalQuestionResponse.Code = _ctx.StringValue("DeleteGlobalQuestion.Code");
 			deleteGlobalQuestionResponse.Message = _ctx.StringValue("DeleteGlobalQuestion.Message");
 			deleteGlobalQuestionResponse.RequestId = _ctx.StringValue("DeleteGlobalQuestion.RequestId");
 			deleteGlobalQuestionResponse.Success = _ctx.BooleanValue("DeleteGlobalQuestion.Success");
