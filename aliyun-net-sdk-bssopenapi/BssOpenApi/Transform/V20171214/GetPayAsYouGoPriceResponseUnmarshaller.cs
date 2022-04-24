@@ -31,10 +31,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			GetPayAsYouGoPriceResponse getPayAsYouGoPriceResponse = new GetPayAsYouGoPriceResponse();
 
 			getPayAsYouGoPriceResponse.HttpResponse = _ctx.HttpResponse;
-			getPayAsYouGoPriceResponse.RequestId = _ctx.StringValue("GetPayAsYouGoPrice.RequestId");
-			getPayAsYouGoPriceResponse.Success = _ctx.BooleanValue("GetPayAsYouGoPrice.Success");
 			getPayAsYouGoPriceResponse.Code = _ctx.StringValue("GetPayAsYouGoPrice.Code");
 			getPayAsYouGoPriceResponse.Message = _ctx.StringValue("GetPayAsYouGoPrice.Message");
+			getPayAsYouGoPriceResponse.RequestId = _ctx.StringValue("GetPayAsYouGoPrice.RequestId");
+			getPayAsYouGoPriceResponse.Success = _ctx.BooleanValue("GetPayAsYouGoPrice.Success");
 
 			GetPayAsYouGoPriceResponse.GetPayAsYouGoPrice_Data data = new GetPayAsYouGoPriceResponse.GetPayAsYouGoPrice_Data();
 			data.Currency = _ctx.StringValue("GetPayAsYouGoPrice.Data.Currency");
@@ -42,11 +42,11 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			List<GetPayAsYouGoPriceResponse.GetPayAsYouGoPrice_Data.GetPayAsYouGoPrice_ModuleDetail> data_moduleDetails = new List<GetPayAsYouGoPriceResponse.GetPayAsYouGoPrice_Data.GetPayAsYouGoPrice_ModuleDetail>();
 			for (int i = 0; i < _ctx.Length("GetPayAsYouGoPrice.Data.ModuleDetails.Length"); i++) {
 				GetPayAsYouGoPriceResponse.GetPayAsYouGoPrice_Data.GetPayAsYouGoPrice_ModuleDetail moduleDetail = new GetPayAsYouGoPriceResponse.GetPayAsYouGoPrice_Data.GetPayAsYouGoPrice_ModuleDetail();
-				moduleDetail.ModuleCode = _ctx.StringValue("GetPayAsYouGoPrice.Data.ModuleDetails["+ i +"].ModuleCode");
-				moduleDetail.OriginalCost = _ctx.FloatValue("GetPayAsYouGoPrice.Data.ModuleDetails["+ i +"].OriginalCost");
-				moduleDetail.InvoiceDiscount = _ctx.FloatValue("GetPayAsYouGoPrice.Data.ModuleDetails["+ i +"].InvoiceDiscount");
 				moduleDetail.CostAfterDiscount = _ctx.FloatValue("GetPayAsYouGoPrice.Data.ModuleDetails["+ i +"].CostAfterDiscount");
+				moduleDetail.InvoiceDiscount = _ctx.FloatValue("GetPayAsYouGoPrice.Data.ModuleDetails["+ i +"].InvoiceDiscount");
 				moduleDetail.UnitPrice = _ctx.FloatValue("GetPayAsYouGoPrice.Data.ModuleDetails["+ i +"].UnitPrice");
+				moduleDetail.OriginalCost = _ctx.FloatValue("GetPayAsYouGoPrice.Data.ModuleDetails["+ i +"].OriginalCost");
+				moduleDetail.ModuleCode = _ctx.StringValue("GetPayAsYouGoPrice.Data.ModuleDetails["+ i +"].ModuleCode");
 
 				data_moduleDetails.Add(moduleDetail);
 			}
@@ -55,9 +55,9 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			List<GetPayAsYouGoPriceResponse.GetPayAsYouGoPrice_Data.GetPayAsYouGoPrice_PromotionDetail> data_promotionDetails = new List<GetPayAsYouGoPriceResponse.GetPayAsYouGoPrice_Data.GetPayAsYouGoPrice_PromotionDetail>();
 			for (int i = 0; i < _ctx.Length("GetPayAsYouGoPrice.Data.PromotionDetails.Length"); i++) {
 				GetPayAsYouGoPriceResponse.GetPayAsYouGoPrice_Data.GetPayAsYouGoPrice_PromotionDetail promotionDetail = new GetPayAsYouGoPriceResponse.GetPayAsYouGoPrice_Data.GetPayAsYouGoPrice_PromotionDetail();
-				promotionDetail.PromotionName = _ctx.StringValue("GetPayAsYouGoPrice.Data.PromotionDetails["+ i +"].PromotionName");
 				promotionDetail.PromotionDesc = _ctx.StringValue("GetPayAsYouGoPrice.Data.PromotionDetails["+ i +"].PromotionDesc");
 				promotionDetail.PromotionId = _ctx.LongValue("GetPayAsYouGoPrice.Data.PromotionDetails["+ i +"].PromotionId");
+				promotionDetail.PromotionName = _ctx.StringValue("GetPayAsYouGoPrice.Data.PromotionDetails["+ i +"].PromotionName");
 
 				data_promotionDetails.Add(promotionDetail);
 			}

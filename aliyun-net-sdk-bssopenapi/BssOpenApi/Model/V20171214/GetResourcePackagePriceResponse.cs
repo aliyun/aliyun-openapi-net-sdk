@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class GetResourcePackagePriceResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private GetResourcePackagePrice_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public GetResourcePackagePrice_Data Data
 		{
 			get
@@ -98,27 +98,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class GetResourcePackagePrice_Data
 		{
 
-			private string currency;
-
 			private float? originalPrice;
-
-			private float? tradePrice;
 
 			private float? discountPrice;
 
-			private List<GetResourcePackagePrice_Promotion> promotions;
+			private string currency;
 
-			public string Currency
-			{
-				get
-				{
-					return currency;
-				}
-				set	
-				{
-					currency = value;
-				}
-			}
+			private float? tradePrice;
+
+			private List<GetResourcePackagePrice_Promotion> promotions;
 
 			public float? OriginalPrice
 			{
@@ -132,18 +120,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public float? TradePrice
-			{
-				get
-				{
-					return tradePrice;
-				}
-				set	
-				{
-					tradePrice = value;
-				}
-			}
-
 			public float? DiscountPrice
 			{
 				get
@@ -153,6 +129,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				set	
 				{
 					discountPrice = value;
+				}
+			}
+
+			public string Currency
+			{
+				get
+				{
+					return currency;
+				}
+				set	
+				{
+					currency = value;
+				}
+			}
+
+			public float? TradePrice
+			{
+				get
+				{
+					return tradePrice;
+				}
+				set	
+				{
+					tradePrice = value;
 				}
 			}
 
@@ -171,21 +171,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class GetResourcePackagePrice_Promotion
 			{
 
-				private long? id;
-
 				private string name;
 
-				public long? Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
+				private long? id;
 
 				public string Name
 				{
@@ -196,6 +184,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						name = value;
+					}
+				}
+
+				public long? Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
 					}
 				}
 			}

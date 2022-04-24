@@ -31,24 +31,24 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			QueryPrepaidCardsResponse queryPrepaidCardsResponse = new QueryPrepaidCardsResponse();
 
 			queryPrepaidCardsResponse.HttpResponse = _ctx.HttpResponse;
-			queryPrepaidCardsResponse.RequestId = _ctx.StringValue("QueryPrepaidCards.RequestId");
-			queryPrepaidCardsResponse.Success = _ctx.BooleanValue("QueryPrepaidCards.Success");
 			queryPrepaidCardsResponse.Code = _ctx.StringValue("QueryPrepaidCards.Code");
 			queryPrepaidCardsResponse.Message = _ctx.StringValue("QueryPrepaidCards.Message");
+			queryPrepaidCardsResponse.RequestId = _ctx.StringValue("QueryPrepaidCards.RequestId");
+			queryPrepaidCardsResponse.Success = _ctx.BooleanValue("QueryPrepaidCards.Success");
 
 			List<QueryPrepaidCardsResponse.QueryPrepaidCards_PrepaidCard> queryPrepaidCardsResponse_data = new List<QueryPrepaidCardsResponse.QueryPrepaidCards_PrepaidCard>();
 			for (int i = 0; i < _ctx.Length("QueryPrepaidCards.Data.Length"); i++) {
 				QueryPrepaidCardsResponse.QueryPrepaidCards_PrepaidCard prepaidCard = new QueryPrepaidCardsResponse.QueryPrepaidCards_PrepaidCard();
-				prepaidCard.PrepaidCardId = _ctx.LongValue("QueryPrepaidCards.Data["+ i +"].PrepaidCardId");
-				prepaidCard.PrepaidCardNo = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].PrepaidCardNo");
-				prepaidCard.GrantedTime = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].GrantedTime");
-				prepaidCard.EffectiveTime = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].EffectiveTime");
-				prepaidCard.ExpiryTime = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].ExpiryTime");
-				prepaidCard.ApplicableProducts = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].ApplicableProducts");
-				prepaidCard.ApplicableScenarios = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].ApplicableScenarios");
-				prepaidCard.NominalValue = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].NominalValue");
-				prepaidCard.Balance = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].Balance");
 				prepaidCard.Status = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].Status");
+				prepaidCard.ExpiryTime = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].ExpiryTime");
+				prepaidCard.GrantedTime = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].GrantedTime");
+				prepaidCard.NominalValue = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].NominalValue");
+				prepaidCard.EffectiveTime = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].EffectiveTime");
+				prepaidCard.PrepaidCardNo = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].PrepaidCardNo");
+				prepaidCard.ApplicableScenarios = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].ApplicableScenarios");
+				prepaidCard.PrepaidCardId = _ctx.LongValue("QueryPrepaidCards.Data["+ i +"].PrepaidCardId");
+				prepaidCard.ApplicableProducts = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].ApplicableProducts");
+				prepaidCard.Balance = _ctx.StringValue("QueryPrepaidCards.Data["+ i +"].Balance");
 
 				queryPrepaidCardsResponse_data.Add(prepaidCard);
 			}

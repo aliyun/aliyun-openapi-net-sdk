@@ -31,10 +31,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			UnsubscribeBillToOSSResponse unsubscribeBillToOSSResponse = new UnsubscribeBillToOSSResponse();
 
 			unsubscribeBillToOSSResponse.HttpResponse = _ctx.HttpResponse;
-			unsubscribeBillToOSSResponse.RequestId = _ctx.StringValue("UnsubscribeBillToOSS.RequestId");
-			unsubscribeBillToOSSResponse.Success = _ctx.BooleanValue("UnsubscribeBillToOSS.Success");
 			unsubscribeBillToOSSResponse.Code = _ctx.StringValue("UnsubscribeBillToOSS.Code");
 			unsubscribeBillToOSSResponse.Message = _ctx.StringValue("UnsubscribeBillToOSS.Message");
+			unsubscribeBillToOSSResponse.RequestId = _ctx.StringValue("UnsubscribeBillToOSS.RequestId");
+			unsubscribeBillToOSSResponse.Success = _ctx.BooleanValue("UnsubscribeBillToOSS.Success");
         
 			return unsubscribeBillToOSSResponse;
         }

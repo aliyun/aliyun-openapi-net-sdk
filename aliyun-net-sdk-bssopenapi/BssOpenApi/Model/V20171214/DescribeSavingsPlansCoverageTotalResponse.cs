@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class DescribeSavingsPlansCoverageTotalResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private DescribeSavingsPlansCoverageTotal_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -129,21 +129,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class DescribeSavingsPlansCoverageTotal_Item
 			{
 
-				private string period;
-
 				private float? percentage;
 
-				public string Period
-				{
-					get
-					{
-						return period;
-					}
-					set	
-					{
-						period = value;
-					}
-				}
+				private string period;
 
 				public float? Percentage
 				{
@@ -154,6 +142,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						percentage = value;
+					}
+				}
+
+				public string Period
+				{
+					get
+					{
+						return period;
+					}
+					set	
+					{
+						period = value;
 					}
 				}
 			}

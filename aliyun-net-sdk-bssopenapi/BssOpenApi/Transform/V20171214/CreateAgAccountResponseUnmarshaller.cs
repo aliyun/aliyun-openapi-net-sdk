@@ -31,16 +31,16 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			CreateAgAccountResponse createAgAccountResponse = new CreateAgAccountResponse();
 
 			createAgAccountResponse.HttpResponse = _ctx.HttpResponse;
-			createAgAccountResponse.RequestId = _ctx.StringValue("CreateAgAccount.RequestId");
 			createAgAccountResponse.Code = _ctx.StringValue("CreateAgAccount.Code");
 			createAgAccountResponse.Message = _ctx.StringValue("CreateAgAccount.Message");
+			createAgAccountResponse.RequestId = _ctx.StringValue("CreateAgAccount.RequestId");
 			createAgAccountResponse.Success = _ctx.BooleanValue("CreateAgAccount.Success");
 
 			CreateAgAccountResponse.CreateAgAccount_AgRelationDto agRelationDto = new CreateAgAccountResponse.CreateAgAccount_AgRelationDto();
-			agRelationDto.Pk = _ctx.StringValue("CreateAgAccount.AgRelationDto.Pk");
 			agRelationDto.Type = _ctx.StringValue("CreateAgAccount.AgRelationDto.Type");
-			agRelationDto.Mpk = _ctx.StringValue("CreateAgAccount.AgRelationDto.Mpk");
+			agRelationDto.Pk = _ctx.StringValue("CreateAgAccount.AgRelationDto.Pk");
 			agRelationDto.RamAdminRoleName = _ctx.StringValue("CreateAgAccount.AgRelationDto.RamAdminRoleName");
+			agRelationDto.Mpk = _ctx.StringValue("CreateAgAccount.AgRelationDto.Mpk");
 			createAgAccountResponse.AgRelationDto = agRelationDto;
         
 			return createAgAccountResponse;

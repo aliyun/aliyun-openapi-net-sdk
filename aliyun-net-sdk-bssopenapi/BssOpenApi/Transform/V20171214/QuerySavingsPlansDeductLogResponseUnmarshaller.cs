@@ -32,9 +32,9 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 
 			querySavingsPlansDeductLogResponse.HttpResponse = _ctx.HttpResponse;
 			querySavingsPlansDeductLogResponse.Code = _ctx.StringValue("QuerySavingsPlansDeductLog.Code");
+			querySavingsPlansDeductLogResponse.Message = _ctx.StringValue("QuerySavingsPlansDeductLog.Message");
 			querySavingsPlansDeductLogResponse.RequestId = _ctx.StringValue("QuerySavingsPlansDeductLog.RequestId");
 			querySavingsPlansDeductLogResponse.Success = _ctx.BooleanValue("QuerySavingsPlansDeductLog.Success");
-			querySavingsPlansDeductLogResponse.Message = _ctx.StringValue("QuerySavingsPlansDeductLog.Message");
 
 			QuerySavingsPlansDeductLogResponse.QuerySavingsPlansDeductLog_Data data = new QuerySavingsPlansDeductLogResponse.QuerySavingsPlansDeductLog_Data();
 			data.PageNum = _ctx.IntegerValue("QuerySavingsPlansDeductLog.Data.PageNum");
@@ -44,17 +44,17 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			List<QuerySavingsPlansDeductLogResponse.QuerySavingsPlansDeductLog_Data.QuerySavingsPlansDeductLog_SavingsPlansDeductDetailResponse> data_items = new List<QuerySavingsPlansDeductLogResponse.QuerySavingsPlansDeductLog_Data.QuerySavingsPlansDeductLog_SavingsPlansDeductDetailResponse>();
 			for (int i = 0; i < _ctx.Length("QuerySavingsPlansDeductLog.Data.Items.Length"); i++) {
 				QuerySavingsPlansDeductLogResponse.QuerySavingsPlansDeductLog_Data.QuerySavingsPlansDeductLog_SavingsPlansDeductDetailResponse savingsPlansDeductDetailResponse = new QuerySavingsPlansDeductLogResponse.QuerySavingsPlansDeductLog_Data.QuerySavingsPlansDeductLog_SavingsPlansDeductDetailResponse();
-				savingsPlansDeductDetailResponse.InstanceId = _ctx.StringValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].InstanceId");
-				savingsPlansDeductDetailResponse.StartTime = _ctx.StringValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].StartTime");
 				savingsPlansDeductDetailResponse.EndTime = _ctx.StringValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].EndTime");
+				savingsPlansDeductDetailResponse.StartTime = _ctx.StringValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].StartTime");
 				savingsPlansDeductDetailResponse.SavingsType = _ctx.StringValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].SavingsType");
-				savingsPlansDeductDetailResponse.BillModule = _ctx.StringValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].BillModule");
-				savingsPlansDeductDetailResponse.DeductFee = _ctx.StringValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].DeductFee");
-				savingsPlansDeductDetailResponse.DeductRate = _ctx.StringValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].DeductRate");
 				savingsPlansDeductDetailResponse.UserId = _ctx.LongValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].UserId");
-				savingsPlansDeductDetailResponse.DeductCommodity = _ctx.StringValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].DeductCommodity");
-				savingsPlansDeductDetailResponse.DeductInstanceId = _ctx.StringValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].DeductInstanceId");
 				savingsPlansDeductDetailResponse.DiscountRate = _ctx.StringValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].DiscountRate");
+				savingsPlansDeductDetailResponse.BillModule = _ctx.StringValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].BillModule");
+				savingsPlansDeductDetailResponse.InstanceId = _ctx.StringValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].InstanceId");
+				savingsPlansDeductDetailResponse.DeductInstanceId = _ctx.StringValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].DeductInstanceId");
+				savingsPlansDeductDetailResponse.DeductCommodity = _ctx.StringValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].DeductCommodity");
+				savingsPlansDeductDetailResponse.DeductRate = _ctx.StringValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].DeductRate");
+				savingsPlansDeductDetailResponse.DeductFee = _ctx.StringValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].DeductFee");
 
 				data_items.Add(savingsPlansDeductDetailResponse);
 			}

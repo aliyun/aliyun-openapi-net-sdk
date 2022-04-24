@@ -32,9 +32,9 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 
 			queryRelationListResponse.HttpResponse = _ctx.HttpResponse;
 			queryRelationListResponse.Code = _ctx.StringValue("QueryRelationList.Code");
+			queryRelationListResponse.Message = _ctx.StringValue("QueryRelationList.Message");
 			queryRelationListResponse.RequestId = _ctx.StringValue("QueryRelationList.RequestId");
 			queryRelationListResponse.Success = _ctx.BooleanValue("QueryRelationList.Success");
-			queryRelationListResponse.Message = _ctx.StringValue("QueryRelationList.Message");
 
 			QueryRelationListResponse.QueryRelationList_Data data = new QueryRelationListResponse.QueryRelationList_Data();
 			data.PageNum = _ctx.IntegerValue("QueryRelationList.Data.PageNum");
@@ -44,16 +44,16 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			List<QueryRelationListResponse.QueryRelationList_Data.QueryRelationList_FinancialRelationInfoListItem> data_financialRelationInfoList = new List<QueryRelationListResponse.QueryRelationList_Data.QueryRelationList_FinancialRelationInfoListItem>();
 			for (int i = 0; i < _ctx.Length("QueryRelationList.Data.FinancialRelationInfoList.Length"); i++) {
 				QueryRelationListResponse.QueryRelationList_Data.QueryRelationList_FinancialRelationInfoListItem financialRelationInfoListItem = new QueryRelationListResponse.QueryRelationList_Data.QueryRelationList_FinancialRelationInfoListItem();
-				financialRelationInfoListItem.RelationId = _ctx.LongValue("QueryRelationList.Data.FinancialRelationInfoList["+ i +"].RelationId");
-				financialRelationInfoListItem.AccountType = _ctx.StringValue("QueryRelationList.Data.FinancialRelationInfoList["+ i +"].AccountType");
-				financialRelationInfoListItem.AccountId = _ctx.LongValue("QueryRelationList.Data.FinancialRelationInfoList["+ i +"].AccountId");
-				financialRelationInfoListItem.AccountName = _ctx.StringValue("QueryRelationList.Data.FinancialRelationInfoList["+ i +"].AccountName");
-				financialRelationInfoListItem.AccountNickName = _ctx.StringValue("QueryRelationList.Data.FinancialRelationInfoList["+ i +"].AccountNickName");
-				financialRelationInfoListItem.RelationType = _ctx.StringValue("QueryRelationList.Data.FinancialRelationInfoList["+ i +"].RelationType");
-				financialRelationInfoListItem.State = _ctx.StringValue("QueryRelationList.Data.FinancialRelationInfoList["+ i +"].State");
-				financialRelationInfoListItem.SetupTime = _ctx.StringValue("QueryRelationList.Data.FinancialRelationInfoList["+ i +"].SetupTime");
-				financialRelationInfoListItem.StartTime = _ctx.StringValue("QueryRelationList.Data.FinancialRelationInfoList["+ i +"].StartTime");
 				financialRelationInfoListItem.EndTime = _ctx.StringValue("QueryRelationList.Data.FinancialRelationInfoList["+ i +"].EndTime");
+				financialRelationInfoListItem.RelationType = _ctx.StringValue("QueryRelationList.Data.FinancialRelationInfoList["+ i +"].RelationType");
+				financialRelationInfoListItem.AccountNickName = _ctx.StringValue("QueryRelationList.Data.FinancialRelationInfoList["+ i +"].AccountNickName");
+				financialRelationInfoListItem.StartTime = _ctx.StringValue("QueryRelationList.Data.FinancialRelationInfoList["+ i +"].StartTime");
+				financialRelationInfoListItem.State = _ctx.StringValue("QueryRelationList.Data.FinancialRelationInfoList["+ i +"].State");
+				financialRelationInfoListItem.AccountId = _ctx.LongValue("QueryRelationList.Data.FinancialRelationInfoList["+ i +"].AccountId");
+				financialRelationInfoListItem.SetupTime = _ctx.StringValue("QueryRelationList.Data.FinancialRelationInfoList["+ i +"].SetupTime");
+				financialRelationInfoListItem.AccountType = _ctx.StringValue("QueryRelationList.Data.FinancialRelationInfoList["+ i +"].AccountType");
+				financialRelationInfoListItem.AccountName = _ctx.StringValue("QueryRelationList.Data.FinancialRelationInfoList["+ i +"].AccountName");
+				financialRelationInfoListItem.RelationId = _ctx.LongValue("QueryRelationList.Data.FinancialRelationInfoList["+ i +"].RelationId");
 
 				data_financialRelationInfoList.Add(financialRelationInfoListItem);
 			}

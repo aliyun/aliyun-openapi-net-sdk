@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class QueryAccountBalanceResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private QueryAccountBalance_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public QueryAccountBalance_Data Data
 		{
 			get
@@ -100,13 +100,13 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private string availableAmount;
 
-			private string availableCashAmount;
-
 			private string creditAmount;
 
 			private string mybankCreditAmount;
 
 			private string currency;
+
+			private string availableCashAmount;
 
 			public string AvailableAmount
 			{
@@ -117,18 +117,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				set	
 				{
 					availableAmount = value;
-				}
-			}
-
-			public string AvailableCashAmount
-			{
-				get
-				{
-					return availableCashAmount;
-				}
-				set	
-				{
-					availableCashAmount = value;
 				}
 			}
 
@@ -165,6 +153,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				set	
 				{
 					currency = value;
+				}
+			}
+
+			public string AvailableCashAmount
+			{
+				get
+				{
+					return availableCashAmount;
+				}
+				set	
+				{
+					availableCashAmount = value;
 				}
 			}
 		}

@@ -31,26 +31,26 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			DescribeResourceUsageTotalResponse describeResourceUsageTotalResponse = new DescribeResourceUsageTotalResponse();
 
 			describeResourceUsageTotalResponse.HttpResponse = _ctx.HttpResponse;
-			describeResourceUsageTotalResponse.RequestId = _ctx.StringValue("DescribeResourceUsageTotal.RequestId");
-			describeResourceUsageTotalResponse.Success = _ctx.BooleanValue("DescribeResourceUsageTotal.Success");
 			describeResourceUsageTotalResponse.Code = _ctx.StringValue("DescribeResourceUsageTotal.Code");
 			describeResourceUsageTotalResponse.Message = _ctx.StringValue("DescribeResourceUsageTotal.Message");
+			describeResourceUsageTotalResponse.RequestId = _ctx.StringValue("DescribeResourceUsageTotal.RequestId");
+			describeResourceUsageTotalResponse.Success = _ctx.BooleanValue("DescribeResourceUsageTotal.Success");
 
 			DescribeResourceUsageTotalResponse.DescribeResourceUsageTotal_Data data = new DescribeResourceUsageTotalResponse.DescribeResourceUsageTotal_Data();
 
 			DescribeResourceUsageTotalResponse.DescribeResourceUsageTotal_Data.DescribeResourceUsageTotal_TotalUsage totalUsage = new DescribeResourceUsageTotalResponse.DescribeResourceUsageTotal_Data.DescribeResourceUsageTotal_TotalUsage();
-			totalUsage.UsagePercentage = _ctx.FloatValue("DescribeResourceUsageTotal.Data.TotalUsage.UsagePercentage");
 			totalUsage.PostpaidCost = _ctx.FloatValue("DescribeResourceUsageTotal.Data.TotalUsage.PostpaidCost");
-			totalUsage.ReservationCost = _ctx.FloatValue("DescribeResourceUsageTotal.Data.TotalUsage.ReservationCost");
 			totalUsage.SavedCost = _ctx.FloatValue("DescribeResourceUsageTotal.Data.TotalUsage.SavedCost");
+			totalUsage.UsagePercentage = _ctx.FloatValue("DescribeResourceUsageTotal.Data.TotalUsage.UsagePercentage");
 			totalUsage.PotentialSavedCost = _ctx.FloatValue("DescribeResourceUsageTotal.Data.TotalUsage.PotentialSavedCost");
+			totalUsage.ReservationCost = _ctx.FloatValue("DescribeResourceUsageTotal.Data.TotalUsage.ReservationCost");
 			data.TotalUsage = totalUsage;
 
 			List<DescribeResourceUsageTotalResponse.DescribeResourceUsageTotal_Data.DescribeResourceUsageTotal_Item> data_periodCoverage = new List<DescribeResourceUsageTotalResponse.DescribeResourceUsageTotal_Data.DescribeResourceUsageTotal_Item>();
 			for (int i = 0; i < _ctx.Length("DescribeResourceUsageTotal.Data.PeriodCoverage.Length"); i++) {
 				DescribeResourceUsageTotalResponse.DescribeResourceUsageTotal_Data.DescribeResourceUsageTotal_Item item = new DescribeResourceUsageTotalResponse.DescribeResourceUsageTotal_Data.DescribeResourceUsageTotal_Item();
-				item.Period = _ctx.StringValue("DescribeResourceUsageTotal.Data.PeriodCoverage["+ i +"].Period");
 				item.UsagePercentage = _ctx.FloatValue("DescribeResourceUsageTotal.Data.PeriodCoverage["+ i +"].UsagePercentage");
+				item.Period = _ctx.StringValue("DescribeResourceUsageTotal.Data.PeriodCoverage["+ i +"].Period");
 
 				data_periodCoverage.Add(item);
 			}

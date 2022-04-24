@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class DescribeResourceCoverageDetailResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private DescribeResourceCoverageDetail_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public DescribeResourceCoverageDetail_Data Data
 		{
 			get
@@ -98,25 +98,13 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class DescribeResourceCoverageDetail_Data
 		{
 
-			private int? totalCount;
-
 			private string nextToken;
+
+			private int? totalCount;
 
 			private int? maxResults;
 
 			private List<DescribeResourceCoverageDetail_Item> items;
-
-			public int? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
 
 			public string NextToken
 			{
@@ -127,6 +115,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				set	
 				{
 					nextToken = value;
+				}
+			}
+
+			public int? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
 				}
 			}
 
@@ -157,79 +157,55 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class DescribeResourceCoverageDetail_Item
 			{
 
-				private string userId;
-
-				private string userName;
-
-				private string productCode;
+				private string commodityCode;
 
 				private string productName;
 
-				private string commodityCode;
-
-				private string commodityName;
-
-				private string instanceId;
-
-				private string region;
+				private float? totalQuantity;
 
 				private string regionNo;
 
-				private string zone;
+				private string userId;
+
+				private string commodityName;
+
+				private string capacityUnit;
+
+				private string instanceId;
+
+				private string currency;
 
 				private string zoneName;
 
 				private string instanceSpec;
 
-				private string currency;
-
-				private float? coveragePercentage;
-
-				private float? paymentAmount;
-
-				private float? deductQuantity;
-
-				private float? totalQuantity;
-
-				private string capacityUnit;
+				private string endTime;
 
 				private string startTime;
 
-				private string endTime;
+				private float? paymentAmount;
 
-				public string UserId
+				private float? coveragePercentage;
+
+				private string region;
+
+				private float? deductQuantity;
+
+				private string zone;
+
+				private string userName;
+
+				private string productCode;
+
+				public string CommodityCode
 				{
 					get
 					{
-						return userId;
+						return commodityCode;
 					}
 					set	
 					{
-						userId = value;
-					}
-				}
-
-				public string UserName
-				{
-					get
-					{
-						return userName;
-					}
-					set	
-					{
-						userName = value;
-					}
-				}
-
-				public string ProductCode
-				{
-					get
-					{
-						return productCode;
-					}
-					set	
-					{
-						productCode = value;
+						commodityCode = value;
 					}
 				}
 
@@ -245,51 +221,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string CommodityCode
+				public float? TotalQuantity
 				{
 					get
 					{
-						return commodityCode;
+						return totalQuantity;
 					}
 					set	
 					{
-						commodityCode = value;
-					}
-				}
-
-				public string CommodityName
-				{
-					get
-					{
-						return commodityName;
-					}
-					set	
-					{
-						commodityName = value;
-					}
-				}
-
-				public string InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
-					}
-				}
-
-				public string Region
-				{
-					get
-					{
-						return region;
-					}
-					set	
-					{
-						region = value;
+						totalQuantity = value;
 					}
 				}
 
@@ -305,15 +245,63 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string Zone
+				public string UserId
 				{
 					get
 					{
-						return zone;
+						return userId;
 					}
 					set	
 					{
-						zone = value;
+						userId = value;
+					}
+				}
+
+				public string CommodityName
+				{
+					get
+					{
+						return commodityName;
+					}
+					set	
+					{
+						commodityName = value;
+					}
+				}
+
+				public string CapacityUnit
+				{
+					get
+					{
+						return capacityUnit;
+					}
+					set	
+					{
+						capacityUnit = value;
+					}
+				}
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
+					}
+				}
+
+				public string Currency
+				{
+					get
+					{
+						return currency;
+					}
+					set	
+					{
+						currency = value;
 					}
 				}
 
@@ -341,75 +329,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string Currency
+				public string EndTime
 				{
 					get
 					{
-						return currency;
+						return endTime;
 					}
 					set	
 					{
-						currency = value;
-					}
-				}
-
-				public float? CoveragePercentage
-				{
-					get
-					{
-						return coveragePercentage;
-					}
-					set	
-					{
-						coveragePercentage = value;
-					}
-				}
-
-				public float? PaymentAmount
-				{
-					get
-					{
-						return paymentAmount;
-					}
-					set	
-					{
-						paymentAmount = value;
-					}
-				}
-
-				public float? DeductQuantity
-				{
-					get
-					{
-						return deductQuantity;
-					}
-					set	
-					{
-						deductQuantity = value;
-					}
-				}
-
-				public float? TotalQuantity
-				{
-					get
-					{
-						return totalQuantity;
-					}
-					set	
-					{
-						totalQuantity = value;
-					}
-				}
-
-				public string CapacityUnit
-				{
-					get
-					{
-						return capacityUnit;
-					}
-					set	
-					{
-						capacityUnit = value;
+						endTime = value;
 					}
 				}
 
@@ -425,15 +353,87 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string EndTime
+				public float? PaymentAmount
 				{
 					get
 					{
-						return endTime;
+						return paymentAmount;
 					}
 					set	
 					{
-						endTime = value;
+						paymentAmount = value;
+					}
+				}
+
+				public float? CoveragePercentage
+				{
+					get
+					{
+						return coveragePercentage;
+					}
+					set	
+					{
+						coveragePercentage = value;
+					}
+				}
+
+				public string Region
+				{
+					get
+					{
+						return region;
+					}
+					set	
+					{
+						region = value;
+					}
+				}
+
+				public float? DeductQuantity
+				{
+					get
+					{
+						return deductQuantity;
+					}
+					set	
+					{
+						deductQuantity = value;
+					}
+				}
+
+				public string Zone
+				{
+					get
+					{
+						return zone;
+					}
+					set	
+					{
+						zone = value;
+					}
+				}
+
+				public string UserName
+				{
+					get
+					{
+						return userName;
+					}
+					set	
+					{
+						userName = value;
+					}
+				}
+
+				public string ProductCode
+				{
+					get
+					{
+						return productCode;
+					}
+					set	
+					{
+						productCode = value;
 					}
 				}
 			}

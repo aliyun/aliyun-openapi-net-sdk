@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -27,11 +27,11 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string code;
 
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
-
-		private string message;
 
 		private QueryRelationList_Data data;
 
@@ -44,6 +44,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -68,18 +80,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 
@@ -157,83 +157,35 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class QueryRelationList_FinancialRelationInfoListItem
 			{
 
-				private long? relationId;
-
-				private string accountType;
-
-				private long? accountId;
-
-				private string accountName;
-
-				private string accountNickName;
+				private string endTime;
 
 				private string relationType;
 
-				private string state;
-
-				private string setupTime;
+				private string accountNickName;
 
 				private string startTime;
 
-				private string endTime;
+				private string state;
 
-				public long? RelationId
+				private long? accountId;
+
+				private string setupTime;
+
+				private string accountType;
+
+				private string accountName;
+
+				private long? relationId;
+
+				public string EndTime
 				{
 					get
 					{
-						return relationId;
+						return endTime;
 					}
 					set	
 					{
-						relationId = value;
-					}
-				}
-
-				public string AccountType
-				{
-					get
-					{
-						return accountType;
-					}
-					set	
-					{
-						accountType = value;
-					}
-				}
-
-				public long? AccountId
-				{
-					get
-					{
-						return accountId;
-					}
-					set	
-					{
-						accountId = value;
-					}
-				}
-
-				public string AccountName
-				{
-					get
-					{
-						return accountName;
-					}
-					set	
-					{
-						accountName = value;
-					}
-				}
-
-				public string AccountNickName
-				{
-					get
-					{
-						return accountNickName;
-					}
-					set	
-					{
-						accountNickName = value;
+						endTime = value;
 					}
 				}
 
@@ -249,27 +201,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string State
+				public string AccountNickName
 				{
 					get
 					{
-						return state;
+						return accountNickName;
 					}
 					set	
 					{
-						state = value;
-					}
-				}
-
-				public string SetupTime
-				{
-					get
-					{
-						return setupTime;
-					}
-					set	
-					{
-						setupTime = value;
+						accountNickName = value;
 					}
 				}
 
@@ -285,15 +225,75 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string EndTime
+				public string State
 				{
 					get
 					{
-						return endTime;
+						return state;
 					}
 					set	
 					{
-						endTime = value;
+						state = value;
+					}
+				}
+
+				public long? AccountId
+				{
+					get
+					{
+						return accountId;
+					}
+					set	
+					{
+						accountId = value;
+					}
+				}
+
+				public string SetupTime
+				{
+					get
+					{
+						return setupTime;
+					}
+					set	
+					{
+						setupTime = value;
+					}
+				}
+
+				public string AccountType
+				{
+					get
+					{
+						return accountType;
+					}
+					set	
+					{
+						accountType = value;
+					}
+				}
+
+				public string AccountName
+				{
+					get
+					{
+						return accountName;
+					}
+					set	
+					{
+						accountName = value;
+					}
+				}
+
+				public long? RelationId
+				{
+					get
+					{
+						return relationId;
+					}
+					set	
+					{
+						relationId = value;
 					}
 				}
 			}

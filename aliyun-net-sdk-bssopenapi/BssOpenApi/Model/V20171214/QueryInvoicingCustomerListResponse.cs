@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class QueryInvoicingCustomerListResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private QueryInvoicingCustomerList_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -115,189 +115,57 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class QueryInvoicingCustomerList_CustomerInvoice
 			{
 
-				private long? id;
-
-				private long? userId;
-
-				private string userNick;
-
-				private string invoiceTitle;
-
-				private long? customerType;
-
-				private long? taxpayerType;
-
-				private string bank;
-
-				private string bankNo;
-
-				private string operatingLicenseAddress;
-
-				private string operatingLicensePhone;
-
-				private string registerNo;
-
-				private long? startCycle;
+				private long? type;
 
 				private long? status;
 
-				private string gmtCreate;
-
-				private string taxationLicense;
-
 				private long? adjustType;
 
-				private long? endCycle;
+				private string bank;
+
+				private long? startCycle;
 
 				private string titleChangeInstructions;
 
-				private long? issueType;
+				private long? userId;
 
-				private long? type;
+				private string operatingLicenseAddress;
+
+				private string invoiceTitle;
+
+				private string userNick;
+
+				private string operatingLicensePhone;
+
+				private long? endCycle;
 
 				private string defaultRemark;
 
-				public long? Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
+				private string taxationLicense;
 
-				public long? UserId
-				{
-					get
-					{
-						return userId;
-					}
-					set	
-					{
-						userId = value;
-					}
-				}
+				private string registerNo;
 
-				public string UserNick
-				{
-					get
-					{
-						return userNick;
-					}
-					set	
-					{
-						userNick = value;
-					}
-				}
+				private string gmtCreate;
 
-				public string InvoiceTitle
-				{
-					get
-					{
-						return invoiceTitle;
-					}
-					set	
-					{
-						invoiceTitle = value;
-					}
-				}
+				private long? taxpayerType;
 
-				public long? CustomerType
-				{
-					get
-					{
-						return customerType;
-					}
-					set	
-					{
-						customerType = value;
-					}
-				}
+				private long? customerType;
 
-				public long? TaxpayerType
-				{
-					get
-					{
-						return taxpayerType;
-					}
-					set	
-					{
-						taxpayerType = value;
-					}
-				}
+				private long? issueType;
 
-				public string Bank
-				{
-					get
-					{
-						return bank;
-					}
-					set	
-					{
-						bank = value;
-					}
-				}
+				private long? id;
 
-				public string BankNo
-				{
-					get
-					{
-						return bankNo;
-					}
-					set	
-					{
-						bankNo = value;
-					}
-				}
+				private string bankNo;
 
-				public string OperatingLicenseAddress
+				public long? Type
 				{
 					get
 					{
-						return operatingLicenseAddress;
+						return type;
 					}
 					set	
 					{
-						operatingLicenseAddress = value;
-					}
-				}
-
-				public string OperatingLicensePhone
-				{
-					get
-					{
-						return operatingLicensePhone;
-					}
-					set	
-					{
-						operatingLicensePhone = value;
-					}
-				}
-
-				public string RegisterNo
-				{
-					get
-					{
-						return registerNo;
-					}
-					set	
-					{
-						registerNo = value;
-					}
-				}
-
-				public long? StartCycle
-				{
-					get
-					{
-						return startCycle;
-					}
-					set	
-					{
-						startCycle = value;
+						type = value;
 					}
 				}
 
@@ -313,30 +181,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string GmtCreate
-				{
-					get
-					{
-						return gmtCreate;
-					}
-					set	
-					{
-						gmtCreate = value;
-					}
-				}
-
-				public string TaxationLicense
-				{
-					get
-					{
-						return taxationLicense;
-					}
-					set	
-					{
-						taxationLicense = value;
-					}
-				}
-
 				public long? AdjustType
 				{
 					get
@@ -349,15 +193,27 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public long? EndCycle
+				public string Bank
 				{
 					get
 					{
-						return endCycle;
+						return bank;
 					}
 					set	
 					{
-						endCycle = value;
+						bank = value;
+					}
+				}
+
+				public long? StartCycle
+				{
+					get
+					{
+						return startCycle;
+					}
+					set	
+					{
+						startCycle = value;
 					}
 				}
 
@@ -373,27 +229,75 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public long? IssueType
+				public long? UserId
 				{
 					get
 					{
-						return issueType;
+						return userId;
 					}
 					set	
 					{
-						issueType = value;
+						userId = value;
 					}
 				}
 
-				public long? Type
+				public string OperatingLicenseAddress
 				{
 					get
 					{
-						return type;
+						return operatingLicenseAddress;
 					}
 					set	
 					{
-						type = value;
+						operatingLicenseAddress = value;
+					}
+				}
+
+				public string InvoiceTitle
+				{
+					get
+					{
+						return invoiceTitle;
+					}
+					set	
+					{
+						invoiceTitle = value;
+					}
+				}
+
+				public string UserNick
+				{
+					get
+					{
+						return userNick;
+					}
+					set	
+					{
+						userNick = value;
+					}
+				}
+
+				public string OperatingLicensePhone
+				{
+					get
+					{
+						return operatingLicensePhone;
+					}
+					set	
+					{
+						operatingLicensePhone = value;
+					}
+				}
+
+				public long? EndCycle
+				{
+					get
+					{
+						return endCycle;
+					}
+					set	
+					{
+						endCycle = value;
 					}
 				}
 
@@ -406,6 +310,102 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						defaultRemark = value;
+					}
+				}
+
+				public string TaxationLicense
+				{
+					get
+					{
+						return taxationLicense;
+					}
+					set	
+					{
+						taxationLicense = value;
+					}
+				}
+
+				public string RegisterNo
+				{
+					get
+					{
+						return registerNo;
+					}
+					set	
+					{
+						registerNo = value;
+					}
+				}
+
+				public string GmtCreate
+				{
+					get
+					{
+						return gmtCreate;
+					}
+					set	
+					{
+						gmtCreate = value;
+					}
+				}
+
+				public long? TaxpayerType
+				{
+					get
+					{
+						return taxpayerType;
+					}
+					set	
+					{
+						taxpayerType = value;
+					}
+				}
+
+				public long? CustomerType
+				{
+					get
+					{
+						return customerType;
+					}
+					set	
+					{
+						customerType = value;
+					}
+				}
+
+				public long? IssueType
+				{
+					get
+					{
+						return issueType;
+					}
+					set	
+					{
+						issueType = value;
+					}
+				}
+
+				public long? Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
+
+				public string BankNo
+				{
+					get
+					{
+						return bankNo;
+					}
+					set	
+					{
+						bankNo = value;
 					}
 				}
 			}

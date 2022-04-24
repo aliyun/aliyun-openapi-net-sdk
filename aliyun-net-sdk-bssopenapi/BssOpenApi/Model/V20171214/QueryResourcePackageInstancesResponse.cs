@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -33,11 +33,11 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string message;
 
-		private int? page;
-
 		private int? pageSize;
 
 		private int? total;
+
+		private int? page;
 
 		private QueryResourcePackageInstances_Data data;
 
@@ -89,18 +89,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public int? Page
-		{
-			get
-			{
-				return page;
-			}
-			set	
-			{
-				page = value;
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -125,6 +113,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public int? Page
+		{
+			get
+			{
+				return page;
+			}
+			set	
+			{
+				page = value;
+			}
+		}
+
 		public QueryResourcePackageInstances_Data Data
 		{
 			get
@@ -140,27 +140,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class QueryResourcePackageInstances_Data
 		{
 
-			private string hostId;
-
 			private string pageNum;
 
 			private string pageSize;
 
 			private string totalCount;
 
-			private List<QueryResourcePackageInstances_Instance> instances;
+			private string hostId;
 
-			public string HostId
-			{
-				get
-				{
-					return hostId;
-				}
-				set	
-				{
-					hostId = value;
-				}
-			}
+			private List<QueryResourcePackageInstances_Instance> instances;
 
 			public string PageNum
 			{
@@ -198,6 +186,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			public string HostId
+			{
+				get
+				{
+					return hostId;
+				}
+				set	
+				{
+					hostId = value;
+				}
+			}
+
 			public List<QueryResourcePackageInstances_Instance> Instances
 			{
 				get
@@ -213,31 +213,79 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class QueryResourcePackageInstances_Instance
 			{
 
+				private string expiryTime;
+
+				private string status;
+
+				private string remark;
+
+				private string remainingAmountUnit;
+
 				private string instanceId;
+
+				private string packageType;
+
+				private string effectiveTime;
 
 				private string region;
 
 				private string totalAmount;
 
+				private string deductType;
+
 				private string totalAmountUnit;
 
 				private string remainingAmount;
 
-				private string remainingAmountUnit;
-
-				private string effectiveTime;
-
-				private string expiryTime;
-
-				private string remark;
-
-				private string packageType;
-
-				private string status;
-
-				private string deductType;
-
 				private List<string> applicableProducts;
+
+				public string ExpiryTime
+				{
+					get
+					{
+						return expiryTime;
+					}
+					set	
+					{
+						expiryTime = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string Remark
+				{
+					get
+					{
+						return remark;
+					}
+					set	
+					{
+						remark = value;
+					}
+				}
+
+				public string RemainingAmountUnit
+				{
+					get
+					{
+						return remainingAmountUnit;
+					}
+					set	
+					{
+						remainingAmountUnit = value;
+					}
+				}
 
 				public string InstanceId
 				{
@@ -248,6 +296,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						instanceId = value;
+					}
+				}
+
+				public string PackageType
+				{
+					get
+					{
+						return packageType;
+					}
+					set	
+					{
+						packageType = value;
+					}
+				}
+
+				public string EffectiveTime
+				{
+					get
+					{
+						return effectiveTime;
+					}
+					set	
+					{
+						effectiveTime = value;
 					}
 				}
 
@@ -275,6 +347,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				public string DeductType
+				{
+					get
+					{
+						return deductType;
+					}
+					set	
+					{
+						deductType = value;
+					}
+				}
+
 				public string TotalAmountUnit
 				{
 					get
@@ -296,90 +380,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						remainingAmount = value;
-					}
-				}
-
-				public string RemainingAmountUnit
-				{
-					get
-					{
-						return remainingAmountUnit;
-					}
-					set	
-					{
-						remainingAmountUnit = value;
-					}
-				}
-
-				public string EffectiveTime
-				{
-					get
-					{
-						return effectiveTime;
-					}
-					set	
-					{
-						effectiveTime = value;
-					}
-				}
-
-				public string ExpiryTime
-				{
-					get
-					{
-						return expiryTime;
-					}
-					set	
-					{
-						expiryTime = value;
-					}
-				}
-
-				public string Remark
-				{
-					get
-					{
-						return remark;
-					}
-					set	
-					{
-						remark = value;
-					}
-				}
-
-				public string PackageType
-				{
-					get
-					{
-						return packageType;
-					}
-					set	
-					{
-						packageType = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				public string DeductType
-				{
-					get
-					{
-						return deductType;
-					}
-					set	
-					{
-						deductType = value;
 					}
 				}
 

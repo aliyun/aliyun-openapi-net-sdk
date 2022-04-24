@@ -32,10 +32,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 
 			tagResourcesResponse.HttpResponse = _ctx.HttpResponse;
 			tagResourcesResponse.Code = _ctx.StringValue("TagResources.Code");
-			tagResourcesResponse.RequestId = _ctx.StringValue("TagResources.RequestId");
-			tagResourcesResponse.Success = _ctx.BooleanValue("TagResources.Success");
 			tagResourcesResponse.Message = _ctx.StringValue("TagResources.Message");
 			tagResourcesResponse.Data = _ctx.BooleanValue("TagResources.Data");
+			tagResourcesResponse.RequestId = _ctx.StringValue("TagResources.RequestId");
+			tagResourcesResponse.Success = _ctx.BooleanValue("TagResources.Success");
         
 			return tagResourcesResponse;
         }

@@ -31,17 +31,17 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			QueryAccountBalanceResponse queryAccountBalanceResponse = new QueryAccountBalanceResponse();
 
 			queryAccountBalanceResponse.HttpResponse = _ctx.HttpResponse;
-			queryAccountBalanceResponse.RequestId = _ctx.StringValue("QueryAccountBalance.RequestId");
-			queryAccountBalanceResponse.Success = _ctx.BooleanValue("QueryAccountBalance.Success");
 			queryAccountBalanceResponse.Code = _ctx.StringValue("QueryAccountBalance.Code");
 			queryAccountBalanceResponse.Message = _ctx.StringValue("QueryAccountBalance.Message");
+			queryAccountBalanceResponse.RequestId = _ctx.StringValue("QueryAccountBalance.RequestId");
+			queryAccountBalanceResponse.Success = _ctx.BooleanValue("QueryAccountBalance.Success");
 
 			QueryAccountBalanceResponse.QueryAccountBalance_Data data = new QueryAccountBalanceResponse.QueryAccountBalance_Data();
 			data.AvailableAmount = _ctx.StringValue("QueryAccountBalance.Data.AvailableAmount");
-			data.AvailableCashAmount = _ctx.StringValue("QueryAccountBalance.Data.AvailableCashAmount");
 			data.CreditAmount = _ctx.StringValue("QueryAccountBalance.Data.CreditAmount");
 			data.MybankCreditAmount = _ctx.StringValue("QueryAccountBalance.Data.MybankCreditAmount");
 			data.Currency = _ctx.StringValue("QueryAccountBalance.Data.Currency");
+			data.AvailableCashAmount = _ctx.StringValue("QueryAccountBalance.Data.AvailableCashAmount");
 			queryAccountBalanceResponse.Data = data;
         
 			return queryAccountBalanceResponse;

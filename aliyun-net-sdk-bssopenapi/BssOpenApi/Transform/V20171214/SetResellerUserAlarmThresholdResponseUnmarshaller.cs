@@ -31,11 +31,11 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			SetResellerUserAlarmThresholdResponse setResellerUserAlarmThresholdResponse = new SetResellerUserAlarmThresholdResponse();
 
 			setResellerUserAlarmThresholdResponse.HttpResponse = _ctx.HttpResponse;
-			setResellerUserAlarmThresholdResponse.RequestId = _ctx.StringValue("SetResellerUserAlarmThreshold.RequestId");
 			setResellerUserAlarmThresholdResponse.Code = _ctx.StringValue("SetResellerUserAlarmThreshold.Code");
 			setResellerUserAlarmThresholdResponse.Message = _ctx.StringValue("SetResellerUserAlarmThreshold.Message");
-			setResellerUserAlarmThresholdResponse.Success = _ctx.BooleanValue("SetResellerUserAlarmThreshold.Success");
 			setResellerUserAlarmThresholdResponse.Data = _ctx.BooleanValue("SetResellerUserAlarmThreshold.Data");
+			setResellerUserAlarmThresholdResponse.RequestId = _ctx.StringValue("SetResellerUserAlarmThreshold.RequestId");
+			setResellerUserAlarmThresholdResponse.Success = _ctx.BooleanValue("SetResellerUserAlarmThreshold.Success");
         
 			return setResellerUserAlarmThresholdResponse;
         }

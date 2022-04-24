@@ -31,47 +31,47 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			GetOrderDetailResponse getOrderDetailResponse = new GetOrderDetailResponse();
 
 			getOrderDetailResponse.HttpResponse = _ctx.HttpResponse;
-			getOrderDetailResponse.RequestId = _ctx.StringValue("GetOrderDetail.RequestId");
-			getOrderDetailResponse.Message = _ctx.StringValue("GetOrderDetail.Message");
 			getOrderDetailResponse.Code = _ctx.StringValue("GetOrderDetail.Code");
+			getOrderDetailResponse.Message = _ctx.StringValue("GetOrderDetail.Message");
+			getOrderDetailResponse.RequestId = _ctx.StringValue("GetOrderDetail.RequestId");
 			getOrderDetailResponse.Success = _ctx.BooleanValue("GetOrderDetail.Success");
 
 			GetOrderDetailResponse.GetOrderDetail_Data data = new GetOrderDetailResponse.GetOrderDetail_Data();
-			data.TotalCount = _ctx.IntegerValue("GetOrderDetail.Data.TotalCount");
-			data.PageSize = _ctx.IntegerValue("GetOrderDetail.Data.PageSize");
-			data.PageNum = _ctx.IntegerValue("GetOrderDetail.Data.PageNum");
 			data.HostName = _ctx.StringValue("GetOrderDetail.Data.HostName");
+			data.PageNum = _ctx.IntegerValue("GetOrderDetail.Data.PageNum");
+			data.PageSize = _ctx.IntegerValue("GetOrderDetail.Data.PageSize");
+			data.TotalCount = _ctx.IntegerValue("GetOrderDetail.Data.TotalCount");
 
 			List<GetOrderDetailResponse.GetOrderDetail_Data.GetOrderDetail_Order> data_orderList = new List<GetOrderDetailResponse.GetOrderDetail_Data.GetOrderDetail_Order>();
 			for (int i = 0; i < _ctx.Length("GetOrderDetail.Data.OrderList.Length"); i++) {
 				GetOrderDetailResponse.GetOrderDetail_Data.GetOrderDetail_Order order = new GetOrderDetailResponse.GetOrderDetail_Data.GetOrderDetail_Order();
-				order._Operator = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].Operator");
-				order.AfterTaxAmount = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].AfterTaxAmount");
-				order.SubOrderId = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].SubOrderId");
-				order.Config = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].Config");
-				order.Tax = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].Tax");
-				order.PaymentTime = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].PaymentTime");
-				order.PaymentCurrency = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].PaymentCurrency");
-				order.UsageEndTime = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].UsageEndTime");
-				order.SubscriptionType = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].SubscriptionType");
-				order.PretaxGrossAmount = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].PretaxGrossAmount");
-				order.OrderType = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].OrderType");
-				order.Currency = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].Currency");
-				order.UsageStartTime = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].UsageStartTime");
-				order.OriginalConfig = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].OriginalConfig");
-				order.PaymentStatus = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].PaymentStatus");
-				order.ProductCode = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].ProductCode");
-				order.CreateTime = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].CreateTime");
-				order.ProductType = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].ProductType");
-				order.RelatedOrderId = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].RelatedOrderId");
-				order.Quantity = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].Quantity");
-				order.OrderId = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].OrderId");
-				order.PretaxAmount = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].PretaxAmount");
 				order.OrderSubType = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].OrderSubType");
+				order.CreateTime = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].CreateTime");
+				order.Currency = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].Currency");
+				order.Config = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].Config");
+				order.SubscriptionType = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].SubscriptionType");
+				order.UsageStartTime = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].UsageStartTime");
+				order.UsageEndTime = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].UsageEndTime");
+				order.SubOrderId = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].SubOrderId");
 				order.Region = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].Region");
-				order.InstanceIDs = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].InstanceIDs");
+				order.AfterTaxAmount = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].AfterTaxAmount");
+				order.PaymentTime = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].PaymentTime");
+				order._Operator = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].Operator");
+				order.OrderType = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].OrderType");
+				order.PaymentStatus = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].PaymentStatus");
+				order.Quantity = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].Quantity");
 				order.PretaxAmountLocal = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].PretaxAmountLocal");
+				order.Tax = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].Tax");
+				order.OriginalConfig = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].OriginalConfig");
+				order.PretaxAmount = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].PretaxAmount");
 				order.CommodityCode = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].CommodityCode");
+				order.RelatedOrderId = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].RelatedOrderId");
+				order.PaymentCurrency = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].PaymentCurrency");
+				order.ProductType = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].ProductType");
+				order.InstanceIDs = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].InstanceIDs");
+				order.PretaxGrossAmount = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].PretaxGrossAmount");
+				order.OrderId = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].OrderId");
+				order.ProductCode = _ctx.StringValue("GetOrderDetail.Data.OrderList["+ i +"].ProductCode");
 
 				data_orderList.Add(order);
 			}

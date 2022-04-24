@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class DescribeSavingsPlansUsageDetailResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private DescribeSavingsPlansUsageDetail_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -143,91 +143,31 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class DescribeSavingsPlansUsageDetail_Item
 			{
 
-				private long? userId;
-
-				private string userName;
-
-				private string instanceId;
-
-				private string startPeriod;
-
-				private string endPeriod;
-
 				private string status;
 
 				private string type;
 
 				private float? usagePercentage;
 
-				private float? poolValue;
+				private long? userId;
 
-				private float? deductValue;
-
-				private float? postpaidCost;
-
-				private float? savedCost;
+				private string instanceId;
 
 				private string currency;
 
-				public long? UserId
-				{
-					get
-					{
-						return userId;
-					}
-					set	
-					{
-						userId = value;
-					}
-				}
+				private float? postpaidCost;
 
-				public string UserName
-				{
-					get
-					{
-						return userName;
-					}
-					set	
-					{
-						userName = value;
-					}
-				}
+				private float? deductValue;
 
-				public string InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
-					}
-				}
+				private string startPeriod;
 
-				public string StartPeriod
-				{
-					get
-					{
-						return startPeriod;
-					}
-					set	
-					{
-						startPeriod = value;
-					}
-				}
+				private float? savedCost;
 
-				public string EndPeriod
-				{
-					get
-					{
-						return endPeriod;
-					}
-					set	
-					{
-						endPeriod = value;
-					}
-				}
+				private float? poolValue;
+
+				private string userName;
+
+				private string endPeriod;
 
 				public string Status
 				{
@@ -265,27 +205,39 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public float? PoolValue
+				public long? UserId
 				{
 					get
 					{
-						return poolValue;
+						return userId;
 					}
 					set	
 					{
-						poolValue = value;
+						userId = value;
 					}
 				}
 
-				public float? DeductValue
+				public string InstanceId
 				{
 					get
 					{
-						return deductValue;
+						return instanceId;
 					}
 					set	
 					{
-						deductValue = value;
+						instanceId = value;
+					}
+				}
+
+				public string Currency
+				{
+					get
+					{
+						return currency;
+					}
+					set	
+					{
+						currency = value;
 					}
 				}
 
@@ -301,6 +253,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				public float? DeductValue
+				{
+					get
+					{
+						return deductValue;
+					}
+					set	
+					{
+						deductValue = value;
+					}
+				}
+
+				public string StartPeriod
+				{
+					get
+					{
+						return startPeriod;
+					}
+					set	
+					{
+						startPeriod = value;
+					}
+				}
+
 				public float? SavedCost
 				{
 					get
@@ -313,15 +289,39 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string Currency
+				public float? PoolValue
 				{
 					get
 					{
-						return currency;
+						return poolValue;
 					}
 					set	
 					{
-						currency = value;
+						poolValue = value;
+					}
+				}
+
+				public string UserName
+				{
+					get
+					{
+						return userName;
+					}
+					set	
+					{
+						userName = value;
+					}
+				}
+
+				public string EndPeriod
+				{
+					get
+					{
+						return endPeriod;
+					}
+					set	
+					{
+						endPeriod = value;
 					}
 				}
 			}

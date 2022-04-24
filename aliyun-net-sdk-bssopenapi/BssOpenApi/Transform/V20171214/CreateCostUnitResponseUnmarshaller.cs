@@ -31,9 +31,9 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			CreateCostUnitResponse createCostUnitResponse = new CreateCostUnitResponse();
 
 			createCostUnitResponse.HttpResponse = _ctx.HttpResponse;
-			createCostUnitResponse.RequestId = _ctx.StringValue("CreateCostUnit.RequestId");
-			createCostUnitResponse.Message = _ctx.StringValue("CreateCostUnit.Message");
 			createCostUnitResponse.Code = _ctx.StringValue("CreateCostUnit.Code");
+			createCostUnitResponse.Message = _ctx.StringValue("CreateCostUnit.Message");
+			createCostUnitResponse.RequestId = _ctx.StringValue("CreateCostUnit.RequestId");
 			createCostUnitResponse.Success = _ctx.BooleanValue("CreateCostUnit.Success");
 
 			CreateCostUnitResponse.CreateCostUnit_Data data = new CreateCostUnitResponse.CreateCostUnit_Data();
@@ -41,10 +41,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			List<CreateCostUnitResponse.CreateCostUnit_Data.CreateCostUnit_CostUnitDtoListItem> data_costUnitDtoList = new List<CreateCostUnitResponse.CreateCostUnit_Data.CreateCostUnit_CostUnitDtoListItem>();
 			for (int i = 0; i < _ctx.Length("CreateCostUnit.Data.CostUnitDtoList.Length"); i++) {
 				CreateCostUnitResponse.CreateCostUnit_Data.CreateCostUnit_CostUnitDtoListItem costUnitDtoListItem = new CreateCostUnitResponse.CreateCostUnit_Data.CreateCostUnit_CostUnitDtoListItem();
-				costUnitDtoListItem.UnitId = _ctx.LongValue("CreateCostUnit.Data.CostUnitDtoList["+ i +"].UnitId");
 				costUnitDtoListItem.ParentUnitId = _ctx.LongValue("CreateCostUnit.Data.CostUnitDtoList["+ i +"].ParentUnitId");
-				costUnitDtoListItem.OwnerUid = _ctx.LongValue("CreateCostUnit.Data.CostUnitDtoList["+ i +"].OwnerUid");
 				costUnitDtoListItem.UnitName = _ctx.StringValue("CreateCostUnit.Data.CostUnitDtoList["+ i +"].UnitName");
+				costUnitDtoListItem.UnitId = _ctx.LongValue("CreateCostUnit.Data.CostUnitDtoList["+ i +"].UnitId");
+				costUnitDtoListItem.OwnerUid = _ctx.LongValue("CreateCostUnit.Data.CostUnitDtoList["+ i +"].OwnerUid");
 
 				data_costUnitDtoList.Add(costUnitDtoListItem);
 			}

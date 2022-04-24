@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class QueryInstanceGaapCostResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private QueryInstanceGaapCost_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public QueryInstanceGaapCost_Data Data
 		{
 			get
@@ -98,27 +98,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class QueryInstanceGaapCost_Data
 		{
 
-			private string hostId;
-
 			private int? pageNum;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private List<QueryInstanceGaapCost_Module> modules;
+			private string hostId;
 
-			public string HostId
-			{
-				get
-				{
-					return hostId;
-				}
-				set	
-				{
-					hostId = value;
-				}
-			}
+			private List<QueryInstanceGaapCost_Module> modules;
 
 			public int? PageNum
 			{
@@ -156,6 +144,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			public string HostId
+			{
+				get
+				{
+					return hostId;
+				}
+				set	
+				{
+					hostId = value;
+				}
+			}
+
 			public List<QueryInstanceGaapCost_Module> Modules
 			{
 				get
@@ -171,155 +171,119 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class QueryInstanceGaapCost_Module
 			{
 
-				private string billingCycle;
-
-				private string instanceID;
-
-				private string productCode;
-
-				private string productType;
+				private string gaapDeductedByCashCoupons;
 
 				private string subscriptionType;
 
-				private string tag;
+				private string monthGaapPretaxAmount;
 
-				private string resourceGroup;
+				private string deductedByCoupons;
 
-				private string accountingUnit;
-
-				private string payerAccount;
-
-				private string ownerID;
+				private string subOrderId;
 
 				private string region;
 
-				private string currency;
-
-				private string paymentCurrency;
-
 				private string orderType;
+
+				private string monthGaapDeductedByPrepaidCard;
+
+				private string unallocatedDeductedByCashCoupons;
+
+				private string pretaxAmountLocal;
+
+				private string billingCycle;
+
+				private string payerAccount;
+
+				private string monthGaapPretaxAmountLocal;
+
+				private string accountingUnit;
+
+				private string gaapPretaxAmountLocal;
+
+				private string unallocatedDeductedByPrepaidCard;
+
+				private string productType;
+
+				private string paymentAmount;
+
+				private string monthGaapPretaxGrossAmount;
+
+				private string billType;
 
 				private string payTime;
 
 				private string pretaxGrossAmount;
 
-				private string pricingDiscount;
+				private string orderId;
 
-				private string deductedByCoupons;
+				private string unallocatedPricingDiscount;
 
-				private string pretaxAmount;
+				private string monthGaapDeductedByCashCoupons;
 
-				private string pretaxAmountLocal;
+				private string unallocatedPretaxGrossAmount;
 
-				private string deductedByCashCoupons;
+				private string instanceID;
 
-				private string deductedByPrepaidCard;
+				private string tag;
 
-				private string paymentAmount;
-
-				private string gaapPretaxGrossAmount;
-
-				private string gaapPricingDiscount;
+				private string currency;
 
 				private string gaapDeductedByCoupons;
 
-				private string gaapPretaxAmount;
-
-				private string gaapPretaxAmountLocal;
-
-				private string gaapDeductedByCashCoupons;
+				private string deductedByCashCoupons;
 
 				private string gaapDeductedByPrepaidCard;
 
 				private string gaapPaymentAmount;
 
-				private string monthGaapPretaxGrossAmount;
+				private string unallocatedPretaxAmountLocal;
 
 				private string monthGaapPricingDiscount;
 
-				private string monthGaapDeductedByCoupons;
+				private string pricingDiscount;
 
-				private string monthGaapPretaxAmount;
+				private string gaapPricingDiscount;
 
-				private string monthGaapPretaxAmountLocal;
-
-				private string monthGaapDeductedByCashCoupons;
-
-				private string monthGaapDeductedByPrepaidCard;
-
-				private string monthGaapPaymentAmount;
-
-				private string unallocatedPaymentAmount;
-
-				private string usageStartDate;
-
-				private string usageEndDate;
-
-				private string billType;
-
-				private string orderId;
-
-				private string subOrderId;
-
-				private string unallocatedPretaxGrossAmount;
-
-				private string unallocatedPricingDiscount;
+				private string resourceGroup;
 
 				private string unallocatedDeductedByCoupons;
 
+				private string pretaxAmount;
+
 				private string unallocatedPretaxAmount;
 
-				private string unallocatedPretaxAmountLocal;
+				private string gaapPretaxGrossAmount;
 
-				private string unallocatedDeductedByCashCoupons;
+				private string unallocatedPaymentAmount;
 
-				private string unallocatedDeductedByPrepaidCard;
+				private string paymentCurrency;
 
-				public string BillingCycle
+				private string ownerID;
+
+				private string deductedByPrepaidCard;
+
+				private string gaapPretaxAmount;
+
+				private string monthGaapDeductedByCoupons;
+
+				private string monthGaapPaymentAmount;
+
+				private string usageEndDate;
+
+				private string usageStartDate;
+
+				private string productCode;
+
+				public string GaapDeductedByCashCoupons
 				{
 					get
 					{
-						return billingCycle;
+						return gaapDeductedByCashCoupons;
 					}
 					set	
 					{
-						billingCycle = value;
-					}
-				}
-
-				public string InstanceID
-				{
-					get
-					{
-						return instanceID;
-					}
-					set	
-					{
-						instanceID = value;
-					}
-				}
-
-				public string ProductCode
-				{
-					get
-					{
-						return productCode;
-					}
-					set	
-					{
-						productCode = value;
-					}
-				}
-
-				public string ProductType
-				{
-					get
-					{
-						return productType;
-					}
-					set	
-					{
-						productType = value;
+						gaapDeductedByCashCoupons = value;
 					}
 				}
 
@@ -335,63 +299,39 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string Tag
+				public string MonthGaapPretaxAmount
 				{
 					get
 					{
-						return tag;
+						return monthGaapPretaxAmount;
 					}
 					set	
 					{
-						tag = value;
+						monthGaapPretaxAmount = value;
 					}
 				}
 
-				public string ResourceGroup
+				public string DeductedByCoupons
 				{
 					get
 					{
-						return resourceGroup;
+						return deductedByCoupons;
 					}
 					set	
 					{
-						resourceGroup = value;
+						deductedByCoupons = value;
 					}
 				}
 
-				public string AccountingUnit
+				public string SubOrderId
 				{
 					get
 					{
-						return accountingUnit;
+						return subOrderId;
 					}
 					set	
 					{
-						accountingUnit = value;
-					}
-				}
-
-				public string PayerAccount
-				{
-					get
-					{
-						return payerAccount;
-					}
-					set	
-					{
-						payerAccount = value;
-					}
-				}
-
-				public string OwnerID
-				{
-					get
-					{
-						return ownerID;
-					}
-					set	
-					{
-						ownerID = value;
+						subOrderId = value;
 					}
 				}
 
@@ -407,30 +347,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string Currency
-				{
-					get
-					{
-						return currency;
-					}
-					set	
-					{
-						currency = value;
-					}
-				}
-
-				public string PaymentCurrency
-				{
-					get
-					{
-						return paymentCurrency;
-					}
-					set	
-					{
-						paymentCurrency = value;
-					}
-				}
-
 				public string OrderType
 				{
 					get
@@ -440,6 +356,162 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						orderType = value;
+					}
+				}
+
+				public string MonthGaapDeductedByPrepaidCard
+				{
+					get
+					{
+						return monthGaapDeductedByPrepaidCard;
+					}
+					set	
+					{
+						monthGaapDeductedByPrepaidCard = value;
+					}
+				}
+
+				public string UnallocatedDeductedByCashCoupons
+				{
+					get
+					{
+						return unallocatedDeductedByCashCoupons;
+					}
+					set	
+					{
+						unallocatedDeductedByCashCoupons = value;
+					}
+				}
+
+				public string PretaxAmountLocal
+				{
+					get
+					{
+						return pretaxAmountLocal;
+					}
+					set	
+					{
+						pretaxAmountLocal = value;
+					}
+				}
+
+				public string BillingCycle
+				{
+					get
+					{
+						return billingCycle;
+					}
+					set	
+					{
+						billingCycle = value;
+					}
+				}
+
+				public string PayerAccount
+				{
+					get
+					{
+						return payerAccount;
+					}
+					set	
+					{
+						payerAccount = value;
+					}
+				}
+
+				public string MonthGaapPretaxAmountLocal
+				{
+					get
+					{
+						return monthGaapPretaxAmountLocal;
+					}
+					set	
+					{
+						monthGaapPretaxAmountLocal = value;
+					}
+				}
+
+				public string AccountingUnit
+				{
+					get
+					{
+						return accountingUnit;
+					}
+					set	
+					{
+						accountingUnit = value;
+					}
+				}
+
+				public string GaapPretaxAmountLocal
+				{
+					get
+					{
+						return gaapPretaxAmountLocal;
+					}
+					set	
+					{
+						gaapPretaxAmountLocal = value;
+					}
+				}
+
+				public string UnallocatedDeductedByPrepaidCard
+				{
+					get
+					{
+						return unallocatedDeductedByPrepaidCard;
+					}
+					set	
+					{
+						unallocatedDeductedByPrepaidCard = value;
+					}
+				}
+
+				public string ProductType
+				{
+					get
+					{
+						return productType;
+					}
+					set	
+					{
+						productType = value;
+					}
+				}
+
+				public string PaymentAmount
+				{
+					get
+					{
+						return paymentAmount;
+					}
+					set	
+					{
+						paymentAmount = value;
+					}
+				}
+
+				public string MonthGaapPretaxGrossAmount
+				{
+					get
+					{
+						return monthGaapPretaxGrossAmount;
+					}
+					set	
+					{
+						monthGaapPretaxGrossAmount = value;
+					}
+				}
+
+				public string BillType
+				{
+					get
+					{
+						return billType;
+					}
+					set	
+					{
+						billType = value;
 					}
 				}
 
@@ -467,111 +539,87 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string PricingDiscount
+				public string OrderId
 				{
 					get
 					{
-						return pricingDiscount;
+						return orderId;
 					}
 					set	
 					{
-						pricingDiscount = value;
+						orderId = value;
 					}
 				}
 
-				public string DeductedByCoupons
+				public string UnallocatedPricingDiscount
 				{
 					get
 					{
-						return deductedByCoupons;
+						return unallocatedPricingDiscount;
 					}
 					set	
 					{
-						deductedByCoupons = value;
+						unallocatedPricingDiscount = value;
 					}
 				}
 
-				public string PretaxAmount
+				public string MonthGaapDeductedByCashCoupons
 				{
 					get
 					{
-						return pretaxAmount;
+						return monthGaapDeductedByCashCoupons;
 					}
 					set	
 					{
-						pretaxAmount = value;
+						monthGaapDeductedByCashCoupons = value;
 					}
 				}
 
-				public string PretaxAmountLocal
+				public string UnallocatedPretaxGrossAmount
 				{
 					get
 					{
-						return pretaxAmountLocal;
+						return unallocatedPretaxGrossAmount;
 					}
 					set	
 					{
-						pretaxAmountLocal = value;
+						unallocatedPretaxGrossAmount = value;
 					}
 				}
 
-				public string DeductedByCashCoupons
+				public string InstanceID
 				{
 					get
 					{
-						return deductedByCashCoupons;
+						return instanceID;
 					}
 					set	
 					{
-						deductedByCashCoupons = value;
+						instanceID = value;
 					}
 				}
 
-				public string DeductedByPrepaidCard
+				public string Tag
 				{
 					get
 					{
-						return deductedByPrepaidCard;
+						return tag;
 					}
 					set	
 					{
-						deductedByPrepaidCard = value;
+						tag = value;
 					}
 				}
 
-				public string PaymentAmount
+				public string Currency
 				{
 					get
 					{
-						return paymentAmount;
+						return currency;
 					}
 					set	
 					{
-						paymentAmount = value;
-					}
-				}
-
-				public string GaapPretaxGrossAmount
-				{
-					get
-					{
-						return gaapPretaxGrossAmount;
-					}
-					set	
-					{
-						gaapPretaxGrossAmount = value;
-					}
-				}
-
-				public string GaapPricingDiscount
-				{
-					get
-					{
-						return gaapPricingDiscount;
-					}
-					set	
-					{
-						gaapPricingDiscount = value;
+						currency = value;
 					}
 				}
 
@@ -587,39 +635,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string GaapPretaxAmount
+				public string DeductedByCashCoupons
 				{
 					get
 					{
-						return gaapPretaxAmount;
+						return deductedByCashCoupons;
 					}
 					set	
 					{
-						gaapPretaxAmount = value;
-					}
-				}
-
-				public string GaapPretaxAmountLocal
-				{
-					get
-					{
-						return gaapPretaxAmountLocal;
-					}
-					set	
-					{
-						gaapPretaxAmountLocal = value;
-					}
-				}
-
-				public string GaapDeductedByCashCoupons
-				{
-					get
-					{
-						return gaapDeductedByCashCoupons;
-					}
-					set	
-					{
-						gaapDeductedByCashCoupons = value;
+						deductedByCashCoupons = value;
 					}
 				}
 
@@ -647,15 +671,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string MonthGaapPretaxGrossAmount
+				public string UnallocatedPretaxAmountLocal
 				{
 					get
 					{
-						return monthGaapPretaxGrossAmount;
+						return unallocatedPretaxAmountLocal;
 					}
 					set	
 					{
-						monthGaapPretaxGrossAmount = value;
+						unallocatedPretaxAmountLocal = value;
 					}
 				}
 
@@ -671,171 +695,39 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string MonthGaapDeductedByCoupons
+				public string PricingDiscount
 				{
 					get
 					{
-						return monthGaapDeductedByCoupons;
+						return pricingDiscount;
 					}
 					set	
 					{
-						monthGaapDeductedByCoupons = value;
+						pricingDiscount = value;
 					}
 				}
 
-				public string MonthGaapPretaxAmount
+				public string GaapPricingDiscount
 				{
 					get
 					{
-						return monthGaapPretaxAmount;
+						return gaapPricingDiscount;
 					}
 					set	
 					{
-						monthGaapPretaxAmount = value;
+						gaapPricingDiscount = value;
 					}
 				}
 
-				public string MonthGaapPretaxAmountLocal
+				public string ResourceGroup
 				{
 					get
 					{
-						return monthGaapPretaxAmountLocal;
+						return resourceGroup;
 					}
 					set	
 					{
-						monthGaapPretaxAmountLocal = value;
-					}
-				}
-
-				public string MonthGaapDeductedByCashCoupons
-				{
-					get
-					{
-						return monthGaapDeductedByCashCoupons;
-					}
-					set	
-					{
-						monthGaapDeductedByCashCoupons = value;
-					}
-				}
-
-				public string MonthGaapDeductedByPrepaidCard
-				{
-					get
-					{
-						return monthGaapDeductedByPrepaidCard;
-					}
-					set	
-					{
-						monthGaapDeductedByPrepaidCard = value;
-					}
-				}
-
-				public string MonthGaapPaymentAmount
-				{
-					get
-					{
-						return monthGaapPaymentAmount;
-					}
-					set	
-					{
-						monthGaapPaymentAmount = value;
-					}
-				}
-
-				public string UnallocatedPaymentAmount
-				{
-					get
-					{
-						return unallocatedPaymentAmount;
-					}
-					set	
-					{
-						unallocatedPaymentAmount = value;
-					}
-				}
-
-				public string UsageStartDate
-				{
-					get
-					{
-						return usageStartDate;
-					}
-					set	
-					{
-						usageStartDate = value;
-					}
-				}
-
-				public string UsageEndDate
-				{
-					get
-					{
-						return usageEndDate;
-					}
-					set	
-					{
-						usageEndDate = value;
-					}
-				}
-
-				public string BillType
-				{
-					get
-					{
-						return billType;
-					}
-					set	
-					{
-						billType = value;
-					}
-				}
-
-				public string OrderId
-				{
-					get
-					{
-						return orderId;
-					}
-					set	
-					{
-						orderId = value;
-					}
-				}
-
-				public string SubOrderId
-				{
-					get
-					{
-						return subOrderId;
-					}
-					set	
-					{
-						subOrderId = value;
-					}
-				}
-
-				public string UnallocatedPretaxGrossAmount
-				{
-					get
-					{
-						return unallocatedPretaxGrossAmount;
-					}
-					set	
-					{
-						unallocatedPretaxGrossAmount = value;
-					}
-				}
-
-				public string UnallocatedPricingDiscount
-				{
-					get
-					{
-						return unallocatedPricingDiscount;
-					}
-					set	
-					{
-						unallocatedPricingDiscount = value;
+						resourceGroup = value;
 					}
 				}
 
@@ -851,6 +743,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				public string PretaxAmount
+				{
+					get
+					{
+						return pretaxAmount;
+					}
+					set	
+					{
+						pretaxAmount = value;
+					}
+				}
+
 				public string UnallocatedPretaxAmount
 				{
 					get
@@ -863,39 +767,135 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string UnallocatedPretaxAmountLocal
+				public string GaapPretaxGrossAmount
 				{
 					get
 					{
-						return unallocatedPretaxAmountLocal;
+						return gaapPretaxGrossAmount;
 					}
 					set	
 					{
-						unallocatedPretaxAmountLocal = value;
+						gaapPretaxGrossAmount = value;
 					}
 				}
 
-				public string UnallocatedDeductedByCashCoupons
+				public string UnallocatedPaymentAmount
 				{
 					get
 					{
-						return unallocatedDeductedByCashCoupons;
+						return unallocatedPaymentAmount;
 					}
 					set	
 					{
-						unallocatedDeductedByCashCoupons = value;
+						unallocatedPaymentAmount = value;
 					}
 				}
 
-				public string UnallocatedDeductedByPrepaidCard
+				public string PaymentCurrency
 				{
 					get
 					{
-						return unallocatedDeductedByPrepaidCard;
+						return paymentCurrency;
 					}
 					set	
 					{
-						unallocatedDeductedByPrepaidCard = value;
+						paymentCurrency = value;
+					}
+				}
+
+				public string OwnerID
+				{
+					get
+					{
+						return ownerID;
+					}
+					set	
+					{
+						ownerID = value;
+					}
+				}
+
+				public string DeductedByPrepaidCard
+				{
+					get
+					{
+						return deductedByPrepaidCard;
+					}
+					set	
+					{
+						deductedByPrepaidCard = value;
+					}
+				}
+
+				public string GaapPretaxAmount
+				{
+					get
+					{
+						return gaapPretaxAmount;
+					}
+					set	
+					{
+						gaapPretaxAmount = value;
+					}
+				}
+
+				public string MonthGaapDeductedByCoupons
+				{
+					get
+					{
+						return monthGaapDeductedByCoupons;
+					}
+					set	
+					{
+						monthGaapDeductedByCoupons = value;
+					}
+				}
+
+				public string MonthGaapPaymentAmount
+				{
+					get
+					{
+						return monthGaapPaymentAmount;
+					}
+					set	
+					{
+						monthGaapPaymentAmount = value;
+					}
+				}
+
+				public string UsageEndDate
+				{
+					get
+					{
+						return usageEndDate;
+					}
+					set	
+					{
+						usageEndDate = value;
+					}
+				}
+
+				public string UsageStartDate
+				{
+					get
+					{
+						return usageStartDate;
+					}
+					set	
+					{
+						usageStartDate = value;
+					}
+				}
+
+				public string ProductCode
+				{
+					get
+					{
+						return productCode;
+					}
+					set	
+					{
+						productCode = value;
 					}
 				}
 			}

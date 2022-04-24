@@ -181,13 +181,12 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set
 			{
 				tagFilters = value;
-				for (int i = 0; i < tagFilters.Count; i++)
+				if(tagFilters != null)
 				{
-					for (int j = 0; j < tagFilters[i].TagValuess.Count; j++)
+					for (int depth1 = 0; depth1 < tagFilters.Count; depth1++)
 					{
-						DictionaryUtil.Add(QueryParameters,"TagFilter." + (i + 1) + ".TagValues." +(j + 1), tagFilters[i].TagValuess[j]);
+						DictionaryUtil.Add(QueryParameters,"TagFilter." + (depth1 + 1), tagFilters[depth1]);
 					}
-					DictionaryUtil.Add(QueryParameters,"TagFilter." + (i + 1) + ".TagKey", tagFilters[i].TagKey);
 				}
 			}
 		}

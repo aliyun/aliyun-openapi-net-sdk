@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -27,11 +27,11 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string code;
 
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
-
-		private string message;
 
 		private QuerySavingsPlansDeductLog_Data data;
 
@@ -44,6 +44,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -68,18 +80,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 
@@ -157,37 +157,37 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class QuerySavingsPlansDeductLog_SavingsPlansDeductDetailResponse
 			{
 
-				private string instanceId;
+				private string endTime;
 
 				private string startTime;
 
-				private string endTime;
-
 				private string savingsType;
-
-				private string billModule;
-
-				private string deductFee;
-
-				private string deductRate;
 
 				private long? userId;
 
-				private string deductCommodity;
+				private string discountRate;
+
+				private string billModule;
+
+				private string instanceId;
 
 				private string deductInstanceId;
 
-				private string discountRate;
+				private string deductCommodity;
 
-				public string InstanceId
+				private string deductRate;
+
+				private string deductFee;
+
+				public string EndTime
 				{
 					get
 					{
-						return instanceId;
+						return endTime;
 					}
 					set	
 					{
-						instanceId = value;
+						endTime = value;
 					}
 				}
 
@@ -203,18 +203,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string EndTime
-				{
-					get
-					{
-						return endTime;
-					}
-					set	
-					{
-						endTime = value;
-					}
-				}
-
 				public string SavingsType
 				{
 					get
@@ -224,42 +212,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						savingsType = value;
-					}
-				}
-
-				public string BillModule
-				{
-					get
-					{
-						return billModule;
-					}
-					set	
-					{
-						billModule = value;
-					}
-				}
-
-				public string DeductFee
-				{
-					get
-					{
-						return deductFee;
-					}
-					set	
-					{
-						deductFee = value;
-					}
-				}
-
-				public string DeductRate
-				{
-					get
-					{
-						return deductRate;
-					}
-					set	
-					{
-						deductRate = value;
 					}
 				}
 
@@ -275,15 +227,39 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string DeductCommodity
+				public string DiscountRate
 				{
 					get
 					{
-						return deductCommodity;
+						return discountRate;
 					}
 					set	
 					{
-						deductCommodity = value;
+						discountRate = value;
+					}
+				}
+
+				public string BillModule
+				{
+					get
+					{
+						return billModule;
+					}
+					set	
+					{
+						billModule = value;
+					}
+				}
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
 					}
 				}
 
@@ -299,15 +275,39 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string DiscountRate
+				public string DeductCommodity
 				{
 					get
 					{
-						return discountRate;
+						return deductCommodity;
 					}
 					set	
 					{
-						discountRate = value;
+						deductCommodity = value;
+					}
+				}
+
+				public string DeductRate
+				{
+					get
+					{
+						return deductRate;
+					}
+					set	
+					{
+						deductRate = value;
+					}
+				}
+
+				public string DeductFee
+				{
+					get
+					{
+						return deductFee;
+					}
+					set	
+					{
+						deductFee = value;
 					}
 				}
 			}

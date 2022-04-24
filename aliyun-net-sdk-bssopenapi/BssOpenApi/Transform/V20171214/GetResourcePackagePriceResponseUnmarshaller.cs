@@ -31,22 +31,22 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			GetResourcePackagePriceResponse getResourcePackagePriceResponse = new GetResourcePackagePriceResponse();
 
 			getResourcePackagePriceResponse.HttpResponse = _ctx.HttpResponse;
-			getResourcePackagePriceResponse.RequestId = _ctx.StringValue("GetResourcePackagePrice.RequestId");
-			getResourcePackagePriceResponse.Success = _ctx.BooleanValue("GetResourcePackagePrice.Success");
 			getResourcePackagePriceResponse.Code = _ctx.StringValue("GetResourcePackagePrice.Code");
 			getResourcePackagePriceResponse.Message = _ctx.StringValue("GetResourcePackagePrice.Message");
+			getResourcePackagePriceResponse.RequestId = _ctx.StringValue("GetResourcePackagePrice.RequestId");
+			getResourcePackagePriceResponse.Success = _ctx.BooleanValue("GetResourcePackagePrice.Success");
 
 			GetResourcePackagePriceResponse.GetResourcePackagePrice_Data data = new GetResourcePackagePriceResponse.GetResourcePackagePrice_Data();
-			data.Currency = _ctx.StringValue("GetResourcePackagePrice.Data.Currency");
 			data.OriginalPrice = _ctx.FloatValue("GetResourcePackagePrice.Data.OriginalPrice");
-			data.TradePrice = _ctx.FloatValue("GetResourcePackagePrice.Data.TradePrice");
 			data.DiscountPrice = _ctx.FloatValue("GetResourcePackagePrice.Data.DiscountPrice");
+			data.Currency = _ctx.StringValue("GetResourcePackagePrice.Data.Currency");
+			data.TradePrice = _ctx.FloatValue("GetResourcePackagePrice.Data.TradePrice");
 
 			List<GetResourcePackagePriceResponse.GetResourcePackagePrice_Data.GetResourcePackagePrice_Promotion> data_promotions = new List<GetResourcePackagePriceResponse.GetResourcePackagePrice_Data.GetResourcePackagePrice_Promotion>();
 			for (int i = 0; i < _ctx.Length("GetResourcePackagePrice.Data.Promotions.Length"); i++) {
 				GetResourcePackagePriceResponse.GetResourcePackagePrice_Data.GetResourcePackagePrice_Promotion promotion = new GetResourcePackagePriceResponse.GetResourcePackagePrice_Data.GetResourcePackagePrice_Promotion();
-				promotion.Id = _ctx.LongValue("GetResourcePackagePrice.Data.Promotions["+ i +"].Id");
 				promotion.Name = _ctx.StringValue("GetResourcePackagePrice.Data.Promotions["+ i +"].Name");
+				promotion.Id = _ctx.LongValue("GetResourcePackagePrice.Data.Promotions["+ i +"].Id");
 
 				data_promotions.Add(promotion);
 			}

@@ -47,7 +47,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string subscriptionType;
 
-		private List<ModuleList> moduleLists = new List<ModuleList>(){ };
+		private List<string> moduleLists = new List<string>(){ };
 
 		private long? ownerId;
 
@@ -102,7 +102,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public List<ModuleList> ModuleLists
+		public List<string> ModuleLists
 		{
 			get
 			{
@@ -112,12 +112,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set
 			{
 				moduleLists = value;
-				for (int i = 0; i < moduleLists.Count; i++)
+				if(moduleLists != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"ModuleList." + (i + 1) + ".ModuleCode", moduleLists[i].ModuleCode);
-					DictionaryUtil.Add(QueryParameters,"ModuleList." + (i + 1) + ".ModuleStatus", moduleLists[i].ModuleStatus);
-					DictionaryUtil.Add(QueryParameters,"ModuleList." + (i + 1) + ".Tag", moduleLists[i].Tag);
-					DictionaryUtil.Add(QueryParameters,"ModuleList." + (i + 1) + ".Config", moduleLists[i].Config);
+					for (int depth1 = 0; depth1 < moduleLists.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"ModuleList." + (depth1 + 1), moduleLists[depth1]);
+						DictionaryUtil.Add(QueryParameters,"ModuleList." + (depth1 + 1), moduleLists[depth1]);
+						DictionaryUtil.Add(QueryParameters,"ModuleList." + (depth1 + 1), moduleLists[depth1]);
+						DictionaryUtil.Add(QueryParameters,"ModuleList." + (depth1 + 1), moduleLists[depth1]);
+					}
 				}
 			}
 		}

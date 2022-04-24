@@ -41,7 +41,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			Method = MethodType.POST;
         }
 
-		private List<ResourceInstanceList> resourceInstanceLists = new List<ResourceInstanceList>(){ };
+		private List<string> resourceInstanceLists = new List<string>(){ };
 
 		private long? fromUnitId;
 
@@ -51,7 +51,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private long? toUnitUserId;
 
-		public List<ResourceInstanceList> ResourceInstanceLists
+		public List<string> ResourceInstanceLists
 		{
 			get
 			{
@@ -61,12 +61,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set
 			{
 				resourceInstanceLists = value;
-				for (int i = 0; i < resourceInstanceLists.Count; i++)
+				if(resourceInstanceLists != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"ResourceInstanceList." + (i + 1) + ".ResourceId", resourceInstanceLists[i].ResourceId);
-					DictionaryUtil.Add(QueryParameters,"ResourceInstanceList." + (i + 1) + ".CommodityCode", resourceInstanceLists[i].CommodityCode);
-					DictionaryUtil.Add(QueryParameters,"ResourceInstanceList." + (i + 1) + ".ApportionCode", resourceInstanceLists[i].ApportionCode);
-					DictionaryUtil.Add(QueryParameters,"ResourceInstanceList." + (i + 1) + ".ResourceUserId", resourceInstanceLists[i].ResourceUserId);
+					for (int depth1 = 0; depth1 < resourceInstanceLists.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"ResourceInstanceList." + (depth1 + 1), resourceInstanceLists[depth1]);
+						DictionaryUtil.Add(QueryParameters,"ResourceInstanceList." + (depth1 + 1), resourceInstanceLists[depth1]);
+						DictionaryUtil.Add(QueryParameters,"ResourceInstanceList." + (depth1 + 1), resourceInstanceLists[depth1]);
+						DictionaryUtil.Add(QueryParameters,"ResourceInstanceList." + (depth1 + 1), resourceInstanceLists[depth1]);
+					}
 				}
 			}
 		}

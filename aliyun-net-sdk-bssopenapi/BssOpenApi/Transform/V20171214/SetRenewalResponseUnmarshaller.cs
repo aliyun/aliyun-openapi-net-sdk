@@ -31,10 +31,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			SetRenewalResponse setRenewalResponse = new SetRenewalResponse();
 
 			setRenewalResponse.HttpResponse = _ctx.HttpResponse;
-			setRenewalResponse.RequestId = _ctx.StringValue("SetRenewal.RequestId");
-			setRenewalResponse.Success = _ctx.BooleanValue("SetRenewal.Success");
 			setRenewalResponse.Code = _ctx.StringValue("SetRenewal.Code");
 			setRenewalResponse.Message = _ctx.StringValue("SetRenewal.Message");
+			setRenewalResponse.RequestId = _ctx.StringValue("SetRenewal.RequestId");
+			setRenewalResponse.Success = _ctx.BooleanValue("SetRenewal.Success");
         
 			return setRenewalResponse;
         }

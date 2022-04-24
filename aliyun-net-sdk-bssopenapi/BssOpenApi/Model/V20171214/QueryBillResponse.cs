@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class QueryBillResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private QueryBill_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public QueryBill_Data Data
 		{
 			get
@@ -98,19 +98,31 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class QueryBill_Data
 		{
 
+			private int? pageNum;
+
 			private string billingCycle;
 
 			private string accountID;
-
-			private string accountName;
-
-			private int? pageNum;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
+			private string accountName;
+
 			private List<QueryBill_Item> items;
+
+			public int? PageNum
+			{
+				get
+				{
+					return pageNum;
+				}
+				set	
+				{
+					pageNum = value;
+				}
+			}
 
 			public string BillingCycle
 			{
@@ -133,30 +145,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				set	
 				{
 					accountID = value;
-				}
-			}
-
-			public string AccountName
-			{
-				get
-				{
-					return accountName;
-				}
-				set	
-				{
-					accountName = value;
-				}
-			}
-
-			public int? PageNum
-			{
-				get
-				{
-					return pageNum;
-				}
-				set	
-				{
-					pageNum = value;
 				}
 			}
 
@@ -184,6 +172,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			public string AccountName
+			{
+				get
+				{
+					return accountName;
+				}
+				set	
+				{
+					accountName = value;
+				}
+			}
+
 			public List<QueryBill_Item> Items
 			{
 				get
@@ -199,75 +199,91 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class QueryBill_Item
 			{
 
-				private string recordID;
+				private string status;
+
+				private string roundDownDiscount;
 
 				private string item;
 
-				private string ownerID;
+				private string currency;
 
 				private string usageStartTime;
 
-				private string usageEndTime;
-
-				private string paymentTime;
-
-				private string productCode;
-
-				private string productType;
-
 				private string subscriptionType;
-
-				private string productName;
-
-				private string productDetail;
-
-				private float? pretaxGrossAmount;
-
-				private float? deductedByCoupons;
-
-				private float? invoiceDiscount;
-
-				private float? pretaxAmount;
-
-				private string currency;
-
-				private float? pretaxAmountLocal;
-
-				private float? tax;
-
-				private float? paymentAmount;
 
 				private float? deductedByCashCoupons;
 
-				private float? deductedByPrepaidCard;
+				private string usageEndTime;
+
+				private float? deductedByCoupons;
+
+				private string subOrderId;
 
 				private float? outstandingAmount;
 
 				private float? afterTaxAmount;
 
-				private string status;
+				private string paymentTime;
 
-				private string paymentCurrency;
+				private float? pretaxAmountLocal;
 
-				private string paymentTransactionID;
-
-				private string roundDownDiscount;
-
-				private string subOrderId;
+				private float? tax;
 
 				private string pipCode;
 
+				private string paymentTransactionID;
+
+				private float? pretaxAmount;
+
 				private string commodityCode;
 
-				public string RecordID
+				private string productName;
+
+				private string recordID;
+
+				private float? adjustAmount;
+
+				private string productDetail;
+
+				private string paymentCurrency;
+
+				private string ownerID;
+
+				private float? deductedByPrepaidCard;
+
+				private string productType;
+
+				private float? invoiceDiscount;
+
+				private float? paymentAmount;
+
+				private float? pretaxGrossAmount;
+
+				private float? cashAmount;
+
+				private string productCode;
+
+				public string Status
 				{
 					get
 					{
-						return recordID;
+						return status;
 					}
 					set	
 					{
-						recordID = value;
+						status = value;
+					}
+				}
+
+				public string RoundDownDiscount
+				{
+					get
+					{
+						return roundDownDiscount;
+					}
+					set	
+					{
+						roundDownDiscount = value;
 					}
 				}
 
@@ -283,15 +299,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string OwnerID
+				public string Currency
 				{
 					get
 					{
-						return ownerID;
+						return currency;
 					}
 					set	
 					{
-						ownerID = value;
+						currency = value;
 					}
 				}
 
@@ -307,54 +323,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string UsageEndTime
-				{
-					get
-					{
-						return usageEndTime;
-					}
-					set	
-					{
-						usageEndTime = value;
-					}
-				}
-
-				public string PaymentTime
-				{
-					get
-					{
-						return paymentTime;
-					}
-					set	
-					{
-						paymentTime = value;
-					}
-				}
-
-				public string ProductCode
-				{
-					get
-					{
-						return productCode;
-					}
-					set	
-					{
-						productCode = value;
-					}
-				}
-
-				public string ProductType
-				{
-					get
-					{
-						return productType;
-					}
-					set	
-					{
-						productType = value;
-					}
-				}
-
 				public string SubscriptionType
 				{
 					get
@@ -364,126 +332,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						subscriptionType = value;
-					}
-				}
-
-				public string ProductName
-				{
-					get
-					{
-						return productName;
-					}
-					set	
-					{
-						productName = value;
-					}
-				}
-
-				public string ProductDetail
-				{
-					get
-					{
-						return productDetail;
-					}
-					set	
-					{
-						productDetail = value;
-					}
-				}
-
-				public float? PretaxGrossAmount
-				{
-					get
-					{
-						return pretaxGrossAmount;
-					}
-					set	
-					{
-						pretaxGrossAmount = value;
-					}
-				}
-
-				public float? DeductedByCoupons
-				{
-					get
-					{
-						return deductedByCoupons;
-					}
-					set	
-					{
-						deductedByCoupons = value;
-					}
-				}
-
-				public float? InvoiceDiscount
-				{
-					get
-					{
-						return invoiceDiscount;
-					}
-					set	
-					{
-						invoiceDiscount = value;
-					}
-				}
-
-				public float? PretaxAmount
-				{
-					get
-					{
-						return pretaxAmount;
-					}
-					set	
-					{
-						pretaxAmount = value;
-					}
-				}
-
-				public string Currency
-				{
-					get
-					{
-						return currency;
-					}
-					set	
-					{
-						currency = value;
-					}
-				}
-
-				public float? PretaxAmountLocal
-				{
-					get
-					{
-						return pretaxAmountLocal;
-					}
-					set	
-					{
-						pretaxAmountLocal = value;
-					}
-				}
-
-				public float? Tax
-				{
-					get
-					{
-						return tax;
-					}
-					set	
-					{
-						tax = value;
-					}
-				}
-
-				public float? PaymentAmount
-				{
-					get
-					{
-						return paymentAmount;
-					}
-					set	
-					{
-						paymentAmount = value;
 					}
 				}
 
@@ -499,15 +347,39 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public float? DeductedByPrepaidCard
+				public string UsageEndTime
 				{
 					get
 					{
-						return deductedByPrepaidCard;
+						return usageEndTime;
 					}
 					set	
 					{
-						deductedByPrepaidCard = value;
+						usageEndTime = value;
+					}
+				}
+
+				public float? DeductedByCoupons
+				{
+					get
+					{
+						return deductedByCoupons;
+					}
+					set	
+					{
+						deductedByCoupons = value;
+					}
+				}
+
+				public string SubOrderId
+				{
+					get
+					{
+						return subOrderId;
+					}
+					set	
+					{
+						subOrderId = value;
 					}
 				}
 
@@ -535,63 +407,39 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string Status
+				public string PaymentTime
 				{
 					get
 					{
-						return status;
+						return paymentTime;
 					}
 					set	
 					{
-						status = value;
+						paymentTime = value;
 					}
 				}
 
-				public string PaymentCurrency
+				public float? PretaxAmountLocal
 				{
 					get
 					{
-						return paymentCurrency;
+						return pretaxAmountLocal;
 					}
 					set	
 					{
-						paymentCurrency = value;
+						pretaxAmountLocal = value;
 					}
 				}
 
-				public string PaymentTransactionID
+				public float? Tax
 				{
 					get
 					{
-						return paymentTransactionID;
+						return tax;
 					}
 					set	
 					{
-						paymentTransactionID = value;
-					}
-				}
-
-				public string RoundDownDiscount
-				{
-					get
-					{
-						return roundDownDiscount;
-					}
-					set	
-					{
-						roundDownDiscount = value;
-					}
-				}
-
-				public string SubOrderId
-				{
-					get
-					{
-						return subOrderId;
-					}
-					set	
-					{
-						subOrderId = value;
+						tax = value;
 					}
 				}
 
@@ -607,6 +455,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				public string PaymentTransactionID
+				{
+					get
+					{
+						return paymentTransactionID;
+					}
+					set	
+					{
+						paymentTransactionID = value;
+					}
+				}
+
+				public float? PretaxAmount
+				{
+					get
+					{
+						return pretaxAmount;
+					}
+					set	
+					{
+						pretaxAmount = value;
+					}
+				}
+
 				public string CommodityCode
 				{
 					get
@@ -616,6 +488,162 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						commodityCode = value;
+					}
+				}
+
+				public string ProductName
+				{
+					get
+					{
+						return productName;
+					}
+					set	
+					{
+						productName = value;
+					}
+				}
+
+				public string RecordID
+				{
+					get
+					{
+						return recordID;
+					}
+					set	
+					{
+						recordID = value;
+					}
+				}
+
+				public float? AdjustAmount
+				{
+					get
+					{
+						return adjustAmount;
+					}
+					set	
+					{
+						adjustAmount = value;
+					}
+				}
+
+				public string ProductDetail
+				{
+					get
+					{
+						return productDetail;
+					}
+					set	
+					{
+						productDetail = value;
+					}
+				}
+
+				public string PaymentCurrency
+				{
+					get
+					{
+						return paymentCurrency;
+					}
+					set	
+					{
+						paymentCurrency = value;
+					}
+				}
+
+				public string OwnerID
+				{
+					get
+					{
+						return ownerID;
+					}
+					set	
+					{
+						ownerID = value;
+					}
+				}
+
+				public float? DeductedByPrepaidCard
+				{
+					get
+					{
+						return deductedByPrepaidCard;
+					}
+					set	
+					{
+						deductedByPrepaidCard = value;
+					}
+				}
+
+				public string ProductType
+				{
+					get
+					{
+						return productType;
+					}
+					set	
+					{
+						productType = value;
+					}
+				}
+
+				public float? InvoiceDiscount
+				{
+					get
+					{
+						return invoiceDiscount;
+					}
+					set	
+					{
+						invoiceDiscount = value;
+					}
+				}
+
+				public float? PaymentAmount
+				{
+					get
+					{
+						return paymentAmount;
+					}
+					set	
+					{
+						paymentAmount = value;
+					}
+				}
+
+				public float? PretaxGrossAmount
+				{
+					get
+					{
+						return pretaxGrossAmount;
+					}
+					set	
+					{
+						pretaxGrossAmount = value;
+					}
+				}
+
+				public float? CashAmount
+				{
+					get
+					{
+						return cashAmount;
+					}
+					set	
+					{
+						cashAmount = value;
+					}
+				}
+
+				public string ProductCode
+				{
+					get
+					{
+						return productCode;
+					}
+					set	
+					{
+						productCode = value;
 					}
 				}
 			}

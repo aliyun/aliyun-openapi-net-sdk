@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class GetCustomerAccountInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private GetCustomerAccountInfo_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public GetCustomerAccountInfo_Data Data
 		{
 			get
@@ -98,41 +98,17 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class GetCustomerAccountInfo_Data
 		{
 
-			private string loginEmail;
-
-			private string accountType;
-
 			private long? mpk;
 
+			private string loginEmail;
+
 			private string hostingStatus;
+
+			private string accountType;
 
 			private string creditLimitStatus;
 
 			private bool? isCertified;
-
-			public string LoginEmail
-			{
-				get
-				{
-					return loginEmail;
-				}
-				set	
-				{
-					loginEmail = value;
-				}
-			}
-
-			public string AccountType
-			{
-				get
-				{
-					return accountType;
-				}
-				set	
-				{
-					accountType = value;
-				}
-			}
 
 			public long? Mpk
 			{
@@ -146,6 +122,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			public string LoginEmail
+			{
+				get
+				{
+					return loginEmail;
+				}
+				set	
+				{
+					loginEmail = value;
+				}
+			}
+
 			public string HostingStatus
 			{
 				get
@@ -155,6 +143,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				set	
 				{
 					hostingStatus = value;
+				}
+			}
+
+			public string AccountType
+			{
+				get
+				{
+					return accountType;
+				}
+				set	
+				{
+					accountType = value;
 				}
 			}
 

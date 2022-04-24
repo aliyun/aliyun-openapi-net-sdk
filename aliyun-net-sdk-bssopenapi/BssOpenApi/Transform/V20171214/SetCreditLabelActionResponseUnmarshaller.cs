@@ -32,10 +32,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 
 			setCreditLabelActionResponse.HttpResponse = _ctx.HttpResponse;
 			setCreditLabelActionResponse.Code = _ctx.StringValue("SetCreditLabelAction.Code");
-			setCreditLabelActionResponse.Data = _ctx.BooleanValue("SetCreditLabelAction.Data");
 			setCreditLabelActionResponse.Message = _ctx.StringValue("SetCreditLabelAction.Message");
-			setCreditLabelActionResponse.Success = _ctx.BooleanValue("SetCreditLabelAction.Success");
+			setCreditLabelActionResponse.Data = _ctx.BooleanValue("SetCreditLabelAction.Data");
 			setCreditLabelActionResponse.RequestId = _ctx.StringValue("SetCreditLabelAction.RequestId");
+			setCreditLabelActionResponse.Success = _ctx.BooleanValue("SetCreditLabelAction.Success");
         
 			return setCreditLabelActionResponse;
         }

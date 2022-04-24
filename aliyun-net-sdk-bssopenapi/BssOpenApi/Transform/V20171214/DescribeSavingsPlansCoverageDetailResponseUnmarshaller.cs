@@ -31,10 +31,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			DescribeSavingsPlansCoverageDetailResponse describeSavingsPlansCoverageDetailResponse = new DescribeSavingsPlansCoverageDetailResponse();
 
 			describeSavingsPlansCoverageDetailResponse.HttpResponse = _ctx.HttpResponse;
-			describeSavingsPlansCoverageDetailResponse.RequestId = _ctx.StringValue("DescribeSavingsPlansCoverageDetail.RequestId");
-			describeSavingsPlansCoverageDetailResponse.Success = _ctx.BooleanValue("DescribeSavingsPlansCoverageDetail.Success");
 			describeSavingsPlansCoverageDetailResponse.Code = _ctx.StringValue("DescribeSavingsPlansCoverageDetail.Code");
 			describeSavingsPlansCoverageDetailResponse.Message = _ctx.StringValue("DescribeSavingsPlansCoverageDetail.Message");
+			describeSavingsPlansCoverageDetailResponse.RequestId = _ctx.StringValue("DescribeSavingsPlansCoverageDetail.RequestId");
+			describeSavingsPlansCoverageDetailResponse.Success = _ctx.BooleanValue("DescribeSavingsPlansCoverageDetail.Success");
 
 			DescribeSavingsPlansCoverageDetailResponse.DescribeSavingsPlansCoverageDetail_Data data = new DescribeSavingsPlansCoverageDetailResponse.DescribeSavingsPlansCoverageDetail_Data();
 			data.TotalCount = _ctx.IntegerValue("DescribeSavingsPlansCoverageDetail.Data.TotalCount");
@@ -44,16 +44,16 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			for (int i = 0; i < _ctx.Length("DescribeSavingsPlansCoverageDetail.Data.Items.Length"); i++) {
 				DescribeSavingsPlansCoverageDetailResponse.DescribeSavingsPlansCoverageDetail_Data.DescribeSavingsPlansCoverageDetail_Item item = new DescribeSavingsPlansCoverageDetailResponse.DescribeSavingsPlansCoverageDetail_Data.DescribeSavingsPlansCoverageDetail_Item();
 				item.UserId = _ctx.LongValue("DescribeSavingsPlansCoverageDetail.Data.Items["+ i +"].UserId");
-				item.UserName = _ctx.StringValue("DescribeSavingsPlansCoverageDetail.Data.Items["+ i +"].UserName");
 				item.InstanceId = _ctx.StringValue("DescribeSavingsPlansCoverageDetail.Data.Items["+ i +"].InstanceId");
-				item.Region = _ctx.StringValue("DescribeSavingsPlansCoverageDetail.Data.Items["+ i +"].Region");
-				item.InstanceSpec = _ctx.StringValue("DescribeSavingsPlansCoverageDetail.Data.Items["+ i +"].InstanceSpec");
 				item.Currency = _ctx.StringValue("DescribeSavingsPlansCoverageDetail.Data.Items["+ i +"].Currency");
-				item.CoveragePercentage = _ctx.FloatValue("DescribeSavingsPlansCoverageDetail.Data.Items["+ i +"].CoveragePercentage");
-				item.DeductAmount = _ctx.FloatValue("DescribeSavingsPlansCoverageDetail.Data.Items["+ i +"].DeductAmount");
-				item.TotalAmount = _ctx.FloatValue("DescribeSavingsPlansCoverageDetail.Data.Items["+ i +"].TotalAmount");
+				item.InstanceSpec = _ctx.StringValue("DescribeSavingsPlansCoverageDetail.Data.Items["+ i +"].InstanceSpec");
 				item.PostpaidCost = _ctx.FloatValue("DescribeSavingsPlansCoverageDetail.Data.Items["+ i +"].PostpaidCost");
+				item.CoveragePercentage = _ctx.FloatValue("DescribeSavingsPlansCoverageDetail.Data.Items["+ i +"].CoveragePercentage");
+				item.Region = _ctx.StringValue("DescribeSavingsPlansCoverageDetail.Data.Items["+ i +"].Region");
+				item.DeductAmount = _ctx.FloatValue("DescribeSavingsPlansCoverageDetail.Data.Items["+ i +"].DeductAmount");
 				item.StartPeriod = _ctx.StringValue("DescribeSavingsPlansCoverageDetail.Data.Items["+ i +"].StartPeriod");
+				item.TotalAmount = _ctx.FloatValue("DescribeSavingsPlansCoverageDetail.Data.Items["+ i +"].TotalAmount");
+				item.UserName = _ctx.StringValue("DescribeSavingsPlansCoverageDetail.Data.Items["+ i +"].UserName");
 				item.EndPeriod = _ctx.StringValue("DescribeSavingsPlansCoverageDetail.Data.Items["+ i +"].EndPeriod");
 
 				data_items.Add(item);

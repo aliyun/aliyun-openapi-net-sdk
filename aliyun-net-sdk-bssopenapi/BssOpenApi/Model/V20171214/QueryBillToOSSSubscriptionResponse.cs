@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class QueryBillToOSSSubscriptionResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private QueryBillToOSSSubscription_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public QueryBillToOSSSubscription_Data Data
 		{
 			get
@@ -98,23 +98,11 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class QueryBillToOSSSubscription_Data
 		{
 
-			private string accountID;
-
 			private string accountName;
 
-			private List<QueryBillToOSSSubscription_Item> items;
+			private string accountID;
 
-			public string AccountID
-			{
-				get
-				{
-					return accountID;
-				}
-				set	
-				{
-					accountID = value;
-				}
-			}
+			private List<QueryBillToOSSSubscription_Item> items;
 
 			public string AccountName
 			{
@@ -125,6 +113,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				set	
 				{
 					accountName = value;
+				}
+			}
+
+			public string AccountID
+			{
+				get
+				{
+					return accountID;
+				}
+				set	
+				{
+					accountID = value;
 				}
 			}
 
@@ -143,17 +143,29 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class QueryBillToOSSSubscription_Item
 			{
 
+				private long? bucketOwnerId;
+
 				private string subscribeType;
 
 				private string subscribeBucket;
-
-				private long? bucketOwnerId;
 
 				private string subscribeTime;
 
 				private string subscribeLanguage;
 
 				private string multAccountRelSubscribe;
+
+				public long? BucketOwnerId
+				{
+					get
+					{
+						return bucketOwnerId;
+					}
+					set	
+					{
+						bucketOwnerId = value;
+					}
+				}
 
 				public string SubscribeType
 				{
@@ -176,18 +188,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						subscribeBucket = value;
-					}
-				}
-
-				public long? BucketOwnerId
-				{
-					get
-					{
-						return bucketOwnerId;
-					}
-					set	
-					{
-						bucketOwnerId = value;
 					}
 				}
 

@@ -31,9 +31,9 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			ModifyCostUnitResponse modifyCostUnitResponse = new ModifyCostUnitResponse();
 
 			modifyCostUnitResponse.HttpResponse = _ctx.HttpResponse;
-			modifyCostUnitResponse.RequestId = _ctx.StringValue("ModifyCostUnit.RequestId");
-			modifyCostUnitResponse.Message = _ctx.StringValue("ModifyCostUnit.Message");
 			modifyCostUnitResponse.Code = _ctx.StringValue("ModifyCostUnit.Code");
+			modifyCostUnitResponse.Message = _ctx.StringValue("ModifyCostUnit.Message");
+			modifyCostUnitResponse.RequestId = _ctx.StringValue("ModifyCostUnit.RequestId");
 			modifyCostUnitResponse.Success = _ctx.BooleanValue("ModifyCostUnit.Success");
 
 			List<ModifyCostUnitResponse.ModifyCostUnit_DataItem> modifyCostUnitResponse_data = new List<ModifyCostUnitResponse.ModifyCostUnit_DataItem>();

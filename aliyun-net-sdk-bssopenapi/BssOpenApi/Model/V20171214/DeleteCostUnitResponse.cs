@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,25 +25,25 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class DeleteCostUnitResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string code;
 
 		private string message;
 
-		private string code;
+		private string requestId;
 
 		private bool? success;
 
 		private DeleteCostUnit_Data data;
 
-		public string RequestId
+		public string Code
 		{
 			get
 			{
-				return requestId;
+				return code;
 			}
 			set	
 			{
-				requestId = value;
+				code = value;
 			}
 		}
 
@@ -59,15 +59,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
 			}
 		}
 

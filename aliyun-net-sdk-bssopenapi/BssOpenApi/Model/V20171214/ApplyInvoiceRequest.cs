@@ -57,7 +57,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private long? customerId;
 
-		private List<long?> selectedIdss = new List<long?>(){ };
+		private List<string> selectedIdss = new List<string>(){ };
 
 		private string userRemark;
 
@@ -165,7 +165,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public List<long?> SelectedIdss
+		public List<string> SelectedIdss
 		{
 			get
 			{
@@ -175,10 +175,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set
 			{
 				selectedIdss = value;
-				for (int i = 0; i < selectedIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SelectedIds." + (i + 1) , selectedIdss[i]);
-				}
 			}
 		}
 

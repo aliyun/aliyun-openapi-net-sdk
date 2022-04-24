@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class QuerySplitItemBillResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private QuerySplitItemBill_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public QuerySplitItemBill_Data Data
 		{
 			get
@@ -98,19 +98,31 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class QuerySplitItemBill_Data
 		{
 
+			private int? pageNum;
+
 			private string billingCycle;
 
 			private string accountID;
 
-			private string accountName;
+			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? pageNum;
-
-			private int? pageSize;
+			private string accountName;
 
 			private List<QuerySplitItemBill_Item> items;
+
+			public int? PageNum
+			{
+				get
+				{
+					return pageNum;
+				}
+				set	
+				{
+					pageNum = value;
+				}
+			}
 
 			public string BillingCycle
 			{
@@ -136,15 +148,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public string AccountName
+			public int? PageSize
 			{
 				get
 				{
-					return accountName;
+					return pageSize;
 				}
 				set	
 				{
-					accountName = value;
+					pageSize = value;
 				}
 			}
 
@@ -160,27 +172,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public int? PageNum
+			public string AccountName
 			{
 				get
 				{
-					return pageNum;
+					return accountName;
 				}
 				set	
 				{
-					pageNum = value;
-				}
-			}
-
-			public int? PageSize
-			{
-				get
-				{
-					return pageSize;
-				}
-				set	
-				{
-					pageSize = value;
+					accountName = value;
 				}
 			}
 
@@ -199,155 +199,111 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class QuerySplitItemBill_Item
 			{
 
-				private string instanceID;
-
-				private string billingType;
-
-				private string costUnit;
-
-				private string productCode;
-
-				private string productType;
+				private string splitAccountID;
 
 				private string subscriptionType;
 
-				private string productName;
-
-				private string productDetail;
-
-				private string ownerID;
-
-				private string billingItem;
-
-				private string listPrice;
-
-				private string listPriceUnit;
-
-				private string usage;
-
-				private string usageUnit;
-
-				private string deductedByResourcePackage;
-
-				private float? pretaxGrossAmount;
-
-				private float? invoiceDiscount;
+				private string instanceSpec;
 
 				private float? deductedByCoupons;
 
-				private float? pretaxAmount;
-
-				private float? deductedByCashCoupons;
-
-				private float? deductedByPrepaidCard;
-
-				private float? paymentAmount;
-
-				private float? outstandingAmount;
-
-				private string currency;
-
-				private string nickName;
-
-				private string resourceGroup;
-
-				private string tag;
-
-				private string instanceConfig;
-
-				private string instanceSpec;
-
-				private string internetIP;
-
-				private string intranetIP;
-
 				private string region;
 
-				private string zone;
-
-				private string item;
-
-				private string servicePeriod;
-
-				private string billingDate;
-
-				private string splitItemID;
-
-				private string splitItemName;
+				private float? outstandingAmount;
 
 				private string pipCode;
 
 				private string commodityCode;
 
-				private string servicePeriodUnit;
+				private string nickName;
+
+				private string productDetail;
+
+				private string usage;
+
+				private string intranetIP;
+
+				private string usageUnit;
 
 				private string splitCommodityCode;
 
-				private string splitProductDetail;
+				private string productType;
 
-				private string splitAccountID;
+				private string deductedByResourcePackage;
 
-				private string splitAccountName;
+				private float? paymentAmount;
 
 				private string splitBillingCycle;
 
-				public string InstanceID
-				{
-					get
-					{
-						return instanceID;
-					}
-					set	
-					{
-						instanceID = value;
-					}
-				}
+				private string servicePeriod;
 
-				public string BillingType
-				{
-					get
-					{
-						return billingType;
-					}
-					set	
-					{
-						billingType = value;
-					}
-				}
+				private string splitItemName;
 
-				public string CostUnit
-				{
-					get
-					{
-						return costUnit;
-					}
-					set	
-					{
-						costUnit = value;
-					}
-				}
+				private string listPrice;
 
-				public string ProductCode
-				{
-					get
-					{
-						return productCode;
-					}
-					set	
-					{
-						productCode = value;
-					}
-				}
+				private string zone;
 
-				public string ProductType
+				private float? pretaxGrossAmount;
+
+				private float? cashAmount;
+
+				private string instanceConfig;
+
+				private string billingDate;
+
+				private string internetIP;
+
+				private string item;
+
+				private string splitItemID;
+
+				private string instanceID;
+
+				private string tag;
+
+				private string currency;
+
+				private float? deductedByCashCoupons;
+
+				private string billingItem;
+
+				private string costUnit;
+
+				private string listPriceUnit;
+
+				private string resourceGroup;
+
+				private float? pretaxAmount;
+
+				private string servicePeriodUnit;
+
+				private string productName;
+
+				private string splitProductDetail;
+
+				private float? adjustAmount;
+
+				private string ownerID;
+
+				private float? deductedByPrepaidCard;
+
+				private float? invoiceDiscount;
+
+				private string splitAccountName;
+
+				private string billingType;
+
+				private string productCode;
+
+				public string SplitAccountID
 				{
 					get
 					{
-						return productType;
+						return splitAccountID;
 					}
 					set	
 					{
-						productType = value;
+						splitAccountID = value;
 					}
 				}
 
@@ -363,135 +319,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string ProductName
+				public string InstanceSpec
 				{
 					get
 					{
-						return productName;
+						return instanceSpec;
 					}
 					set	
 					{
-						productName = value;
-					}
-				}
-
-				public string ProductDetail
-				{
-					get
-					{
-						return productDetail;
-					}
-					set	
-					{
-						productDetail = value;
-					}
-				}
-
-				public string OwnerID
-				{
-					get
-					{
-						return ownerID;
-					}
-					set	
-					{
-						ownerID = value;
-					}
-				}
-
-				public string BillingItem
-				{
-					get
-					{
-						return billingItem;
-					}
-					set	
-					{
-						billingItem = value;
-					}
-				}
-
-				public string ListPrice
-				{
-					get
-					{
-						return listPrice;
-					}
-					set	
-					{
-						listPrice = value;
-					}
-				}
-
-				public string ListPriceUnit
-				{
-					get
-					{
-						return listPriceUnit;
-					}
-					set	
-					{
-						listPriceUnit = value;
-					}
-				}
-
-				public string Usage
-				{
-					get
-					{
-						return usage;
-					}
-					set	
-					{
-						usage = value;
-					}
-				}
-
-				public string UsageUnit
-				{
-					get
-					{
-						return usageUnit;
-					}
-					set	
-					{
-						usageUnit = value;
-					}
-				}
-
-				public string DeductedByResourcePackage
-				{
-					get
-					{
-						return deductedByResourcePackage;
-					}
-					set	
-					{
-						deductedByResourcePackage = value;
-					}
-				}
-
-				public float? PretaxGrossAmount
-				{
-					get
-					{
-						return pretaxGrossAmount;
-					}
-					set	
-					{
-						pretaxGrossAmount = value;
-					}
-				}
-
-				public float? InvoiceDiscount
-				{
-					get
-					{
-						return invoiceDiscount;
-					}
-					set	
-					{
-						invoiceDiscount = value;
+						instanceSpec = value;
 					}
 				}
 
@@ -507,162 +343,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public float? PretaxAmount
-				{
-					get
-					{
-						return pretaxAmount;
-					}
-					set	
-					{
-						pretaxAmount = value;
-					}
-				}
-
-				public float? DeductedByCashCoupons
-				{
-					get
-					{
-						return deductedByCashCoupons;
-					}
-					set	
-					{
-						deductedByCashCoupons = value;
-					}
-				}
-
-				public float? DeductedByPrepaidCard
-				{
-					get
-					{
-						return deductedByPrepaidCard;
-					}
-					set	
-					{
-						deductedByPrepaidCard = value;
-					}
-				}
-
-				public float? PaymentAmount
-				{
-					get
-					{
-						return paymentAmount;
-					}
-					set	
-					{
-						paymentAmount = value;
-					}
-				}
-
-				public float? OutstandingAmount
-				{
-					get
-					{
-						return outstandingAmount;
-					}
-					set	
-					{
-						outstandingAmount = value;
-					}
-				}
-
-				public string Currency
-				{
-					get
-					{
-						return currency;
-					}
-					set	
-					{
-						currency = value;
-					}
-				}
-
-				public string NickName
-				{
-					get
-					{
-						return nickName;
-					}
-					set	
-					{
-						nickName = value;
-					}
-				}
-
-				public string ResourceGroup
-				{
-					get
-					{
-						return resourceGroup;
-					}
-					set	
-					{
-						resourceGroup = value;
-					}
-				}
-
-				public string Tag
-				{
-					get
-					{
-						return tag;
-					}
-					set	
-					{
-						tag = value;
-					}
-				}
-
-				public string InstanceConfig
-				{
-					get
-					{
-						return instanceConfig;
-					}
-					set	
-					{
-						instanceConfig = value;
-					}
-				}
-
-				public string InstanceSpec
-				{
-					get
-					{
-						return instanceSpec;
-					}
-					set	
-					{
-						instanceSpec = value;
-					}
-				}
-
-				public string InternetIP
-				{
-					get
-					{
-						return internetIP;
-					}
-					set	
-					{
-						internetIP = value;
-					}
-				}
-
-				public string IntranetIP
-				{
-					get
-					{
-						return intranetIP;
-					}
-					set	
-					{
-						intranetIP = value;
-					}
-				}
-
 				public string Region
 				{
 					get
@@ -675,75 +355,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string Zone
+				public float? OutstandingAmount
 				{
 					get
 					{
-						return zone;
+						return outstandingAmount;
 					}
 					set	
 					{
-						zone = value;
-					}
-				}
-
-				public string Item
-				{
-					get
-					{
-						return item;
-					}
-					set	
-					{
-						item = value;
-					}
-				}
-
-				public string ServicePeriod
-				{
-					get
-					{
-						return servicePeriod;
-					}
-					set	
-					{
-						servicePeriod = value;
-					}
-				}
-
-				public string BillingDate
-				{
-					get
-					{
-						return billingDate;
-					}
-					set	
-					{
-						billingDate = value;
-					}
-				}
-
-				public string SplitItemID
-				{
-					get
-					{
-						return splitItemID;
-					}
-					set	
-					{
-						splitItemID = value;
-					}
-				}
-
-				public string SplitItemName
-				{
-					get
-					{
-						return splitItemName;
-					}
-					set	
-					{
-						splitItemName = value;
+						outstandingAmount = value;
 					}
 				}
 
@@ -771,15 +391,63 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string ServicePeriodUnit
+				public string NickName
 				{
 					get
 					{
-						return servicePeriodUnit;
+						return nickName;
 					}
 					set	
 					{
-						servicePeriodUnit = value;
+						nickName = value;
+					}
+				}
+
+				public string ProductDetail
+				{
+					get
+					{
+						return productDetail;
+					}
+					set	
+					{
+						productDetail = value;
+					}
+				}
+
+				public string Usage
+				{
+					get
+					{
+						return usage;
+					}
+					set	
+					{
+						usage = value;
+					}
+				}
+
+				public string IntranetIP
+				{
+					get
+					{
+						return intranetIP;
+					}
+					set	
+					{
+						intranetIP = value;
+					}
+				}
+
+				public string UsageUnit
+				{
+					get
+					{
+						return usageUnit;
+					}
+					set	
+					{
+						usageUnit = value;
 					}
 				}
 
@@ -795,6 +463,318 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				public string ProductType
+				{
+					get
+					{
+						return productType;
+					}
+					set	
+					{
+						productType = value;
+					}
+				}
+
+				public string DeductedByResourcePackage
+				{
+					get
+					{
+						return deductedByResourcePackage;
+					}
+					set	
+					{
+						deductedByResourcePackage = value;
+					}
+				}
+
+				public float? PaymentAmount
+				{
+					get
+					{
+						return paymentAmount;
+					}
+					set	
+					{
+						paymentAmount = value;
+					}
+				}
+
+				public string SplitBillingCycle
+				{
+					get
+					{
+						return splitBillingCycle;
+					}
+					set	
+					{
+						splitBillingCycle = value;
+					}
+				}
+
+				public string ServicePeriod
+				{
+					get
+					{
+						return servicePeriod;
+					}
+					set	
+					{
+						servicePeriod = value;
+					}
+				}
+
+				public string SplitItemName
+				{
+					get
+					{
+						return splitItemName;
+					}
+					set	
+					{
+						splitItemName = value;
+					}
+				}
+
+				public string ListPrice
+				{
+					get
+					{
+						return listPrice;
+					}
+					set	
+					{
+						listPrice = value;
+					}
+				}
+
+				public string Zone
+				{
+					get
+					{
+						return zone;
+					}
+					set	
+					{
+						zone = value;
+					}
+				}
+
+				public float? PretaxGrossAmount
+				{
+					get
+					{
+						return pretaxGrossAmount;
+					}
+					set	
+					{
+						pretaxGrossAmount = value;
+					}
+				}
+
+				public float? CashAmount
+				{
+					get
+					{
+						return cashAmount;
+					}
+					set	
+					{
+						cashAmount = value;
+					}
+				}
+
+				public string InstanceConfig
+				{
+					get
+					{
+						return instanceConfig;
+					}
+					set	
+					{
+						instanceConfig = value;
+					}
+				}
+
+				public string BillingDate
+				{
+					get
+					{
+						return billingDate;
+					}
+					set	
+					{
+						billingDate = value;
+					}
+				}
+
+				public string InternetIP
+				{
+					get
+					{
+						return internetIP;
+					}
+					set	
+					{
+						internetIP = value;
+					}
+				}
+
+				public string Item
+				{
+					get
+					{
+						return item;
+					}
+					set	
+					{
+						item = value;
+					}
+				}
+
+				public string SplitItemID
+				{
+					get
+					{
+						return splitItemID;
+					}
+					set	
+					{
+						splitItemID = value;
+					}
+				}
+
+				public string InstanceID
+				{
+					get
+					{
+						return instanceID;
+					}
+					set	
+					{
+						instanceID = value;
+					}
+				}
+
+				public string Tag
+				{
+					get
+					{
+						return tag;
+					}
+					set	
+					{
+						tag = value;
+					}
+				}
+
+				public string Currency
+				{
+					get
+					{
+						return currency;
+					}
+					set	
+					{
+						currency = value;
+					}
+				}
+
+				public float? DeductedByCashCoupons
+				{
+					get
+					{
+						return deductedByCashCoupons;
+					}
+					set	
+					{
+						deductedByCashCoupons = value;
+					}
+				}
+
+				public string BillingItem
+				{
+					get
+					{
+						return billingItem;
+					}
+					set	
+					{
+						billingItem = value;
+					}
+				}
+
+				public string CostUnit
+				{
+					get
+					{
+						return costUnit;
+					}
+					set	
+					{
+						costUnit = value;
+					}
+				}
+
+				public string ListPriceUnit
+				{
+					get
+					{
+						return listPriceUnit;
+					}
+					set	
+					{
+						listPriceUnit = value;
+					}
+				}
+
+				public string ResourceGroup
+				{
+					get
+					{
+						return resourceGroup;
+					}
+					set	
+					{
+						resourceGroup = value;
+					}
+				}
+
+				public float? PretaxAmount
+				{
+					get
+					{
+						return pretaxAmount;
+					}
+					set	
+					{
+						pretaxAmount = value;
+					}
+				}
+
+				public string ServicePeriodUnit
+				{
+					get
+					{
+						return servicePeriodUnit;
+					}
+					set	
+					{
+						servicePeriodUnit = value;
+					}
+				}
+
+				public string ProductName
+				{
+					get
+					{
+						return productName;
+					}
+					set	
+					{
+						productName = value;
+					}
+				}
+
 				public string SplitProductDetail
 				{
 					get
@@ -807,15 +787,51 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string SplitAccountID
+				public float? AdjustAmount
 				{
 					get
 					{
-						return splitAccountID;
+						return adjustAmount;
 					}
 					set	
 					{
-						splitAccountID = value;
+						adjustAmount = value;
+					}
+				}
+
+				public string OwnerID
+				{
+					get
+					{
+						return ownerID;
+					}
+					set	
+					{
+						ownerID = value;
+					}
+				}
+
+				public float? DeductedByPrepaidCard
+				{
+					get
+					{
+						return deductedByPrepaidCard;
+					}
+					set	
+					{
+						deductedByPrepaidCard = value;
+					}
+				}
+
+				public float? InvoiceDiscount
+				{
+					get
+					{
+						return invoiceDiscount;
+					}
+					set	
+					{
+						invoiceDiscount = value;
 					}
 				}
 
@@ -831,15 +847,27 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string SplitBillingCycle
+				public string BillingType
 				{
 					get
 					{
-						return splitBillingCycle;
+						return billingType;
 					}
 					set	
 					{
-						splitBillingCycle = value;
+						billingType = value;
+					}
+				}
+
+				public string ProductCode
+				{
+					get
+					{
+						return productCode;
+					}
+					set	
+					{
+						productCode = value;
 					}
 				}
 			}

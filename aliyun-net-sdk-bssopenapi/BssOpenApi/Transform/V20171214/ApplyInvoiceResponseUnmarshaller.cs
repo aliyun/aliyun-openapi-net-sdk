@@ -31,10 +31,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			ApplyInvoiceResponse applyInvoiceResponse = new ApplyInvoiceResponse();
 
 			applyInvoiceResponse.HttpResponse = _ctx.HttpResponse;
-			applyInvoiceResponse.RequestId = _ctx.StringValue("ApplyInvoice.RequestId");
-			applyInvoiceResponse.Success = _ctx.BooleanValue("ApplyInvoice.Success");
 			applyInvoiceResponse.Code = _ctx.StringValue("ApplyInvoice.Code");
 			applyInvoiceResponse.Message = _ctx.StringValue("ApplyInvoice.Message");
+			applyInvoiceResponse.RequestId = _ctx.StringValue("ApplyInvoice.RequestId");
+			applyInvoiceResponse.Success = _ctx.BooleanValue("ApplyInvoice.Success");
 
 			ApplyInvoiceResponse.ApplyInvoice_Data data = new ApplyInvoiceResponse.ApplyInvoice_Data();
 			data.InvoiceApplyId = _ctx.LongValue("ApplyInvoice.Data.InvoiceApplyId");

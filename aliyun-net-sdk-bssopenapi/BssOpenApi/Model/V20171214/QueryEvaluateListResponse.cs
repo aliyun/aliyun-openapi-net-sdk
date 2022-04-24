@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class QueryEvaluateListResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private QueryEvaluateList_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public QueryEvaluateList_Data Data
 		{
 			get
@@ -98,9 +98,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class QueryEvaluateList_Data
 		{
 
-			private string hostId;
-
 			private int? pageNum;
+
+			private long? totalUnAppliedInvoiceAmount;
 
 			private int? pageSize;
 
@@ -108,21 +108,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private long? totalInvoiceAmount;
 
-			private long? totalUnAppliedInvoiceAmount;
+			private string hostId;
 
 			private List<QueryEvaluateList_Evaluate> evaluateList;
-
-			public string HostId
-			{
-				get
-				{
-					return hostId;
-				}
-				set	
-				{
-					hostId = value;
-				}
-			}
 
 			public int? PageNum
 			{
@@ -133,6 +121,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				set	
 				{
 					pageNum = value;
+				}
+			}
+
+			public long? TotalUnAppliedInvoiceAmount
+			{
+				get
+				{
+					return totalUnAppliedInvoiceAmount;
+				}
+				set	
+				{
+					totalUnAppliedInvoiceAmount = value;
 				}
 			}
 
@@ -172,15 +172,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public long? TotalUnAppliedInvoiceAmount
+			public string HostId
 			{
 				get
 				{
-					return totalUnAppliedInvoiceAmount;
+					return hostId;
 				}
 				set	
 				{
-					totalUnAppliedInvoiceAmount = value;
+					hostId = value;
 				}
 			}
 
@@ -199,117 +199,69 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class QueryEvaluateList_Evaluate
 			{
 
-				private long? id;
+				private int? type;
 
-				private string gmtCreate;
-
-				private string gmtModified;
-
-				private long? userId;
-
-				private string userNick;
-
-				private string outBizId;
+				private int? status;
 
 				private long? billId;
 
-				private long? itemId;
+				private long? userId;
 
 				private string billCycle;
+
+				private long? canInvoiceAmount;
+
+				private long? offsetAcceptAmount;
+
+				private long? itemId;
+
+				private string outBizId;
+
+				private string userNick;
+
+				private string gmtModified;
+
+				private string opId;
 
 				private string bizType;
 
 				private long? originalAmount;
 
-				private long? presentAmount;
-
-				private long? canInvoiceAmount;
-
 				private long? invoicedAmount;
 
-				private long? offsetCostAmount;
+				private string gmtCreate;
 
-				private long? offsetAcceptAmount;
-
-				private int? status;
-
-				private string opId;
-
-				private string name;
+				private long? presentAmount;
 
 				private string bizTime;
 
-				private int? type;
+				private string name;
 
-				public long? Id
+				private long? offsetCostAmount;
+
+				private long? id;
+
+				public int? Type
 				{
 					get
 					{
-						return id;
+						return type;
 					}
 					set	
 					{
-						id = value;
+						type = value;
 					}
 				}
 
-				public string GmtCreate
+				public int? Status
 				{
 					get
 					{
-						return gmtCreate;
+						return status;
 					}
 					set	
 					{
-						gmtCreate = value;
-					}
-				}
-
-				public string GmtModified
-				{
-					get
-					{
-						return gmtModified;
-					}
-					set	
-					{
-						gmtModified = value;
-					}
-				}
-
-				public long? UserId
-				{
-					get
-					{
-						return userId;
-					}
-					set	
-					{
-						userId = value;
-					}
-				}
-
-				public string UserNick
-				{
-					get
-					{
-						return userNick;
-					}
-					set	
-					{
-						userNick = value;
-					}
-				}
-
-				public string OutBizId
-				{
-					get
-					{
-						return outBizId;
-					}
-					set	
-					{
-						outBizId = value;
+						status = value;
 					}
 				}
 
@@ -325,15 +277,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public long? ItemId
+				public long? UserId
 				{
 					get
 					{
-						return itemId;
+						return userId;
 					}
 					set	
 					{
-						itemId = value;
+						userId = value;
 					}
 				}
 
@@ -346,6 +298,90 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						billCycle = value;
+					}
+				}
+
+				public long? CanInvoiceAmount
+				{
+					get
+					{
+						return canInvoiceAmount;
+					}
+					set	
+					{
+						canInvoiceAmount = value;
+					}
+				}
+
+				public long? OffsetAcceptAmount
+				{
+					get
+					{
+						return offsetAcceptAmount;
+					}
+					set	
+					{
+						offsetAcceptAmount = value;
+					}
+				}
+
+				public long? ItemId
+				{
+					get
+					{
+						return itemId;
+					}
+					set	
+					{
+						itemId = value;
+					}
+				}
+
+				public string OutBizId
+				{
+					get
+					{
+						return outBizId;
+					}
+					set	
+					{
+						outBizId = value;
+					}
+				}
+
+				public string UserNick
+				{
+					get
+					{
+						return userNick;
+					}
+					set	
+					{
+						userNick = value;
+					}
+				}
+
+				public string GmtModified
+				{
+					get
+					{
+						return gmtModified;
+					}
+					set	
+					{
+						gmtModified = value;
+					}
+				}
+
+				public string OpId
+				{
+					get
+					{
+						return opId;
+					}
+					set	
+					{
+						opId = value;
 					}
 				}
 
@@ -373,30 +409,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public long? PresentAmount
-				{
-					get
-					{
-						return presentAmount;
-					}
-					set	
-					{
-						presentAmount = value;
-					}
-				}
-
-				public long? CanInvoiceAmount
-				{
-					get
-					{
-						return canInvoiceAmount;
-					}
-					set	
-					{
-						canInvoiceAmount = value;
-					}
-				}
-
 				public long? InvoicedAmount
 				{
 					get
@@ -409,63 +421,27 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public long? OffsetCostAmount
+				public string GmtCreate
 				{
 					get
 					{
-						return offsetCostAmount;
+						return gmtCreate;
 					}
 					set	
 					{
-						offsetCostAmount = value;
+						gmtCreate = value;
 					}
 				}
 
-				public long? OffsetAcceptAmount
+				public long? PresentAmount
 				{
 					get
 					{
-						return offsetAcceptAmount;
+						return presentAmount;
 					}
 					set	
 					{
-						offsetAcceptAmount = value;
-					}
-				}
-
-				public int? Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				public string OpId
-				{
-					get
-					{
-						return opId;
-					}
-					set	
-					{
-						opId = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
+						presentAmount = value;
 					}
 				}
 
@@ -481,15 +457,39 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public int? Type
+				public string Name
 				{
 					get
 					{
-						return type;
+						return name;
 					}
 					set	
 					{
-						type = value;
+						name = value;
+					}
+				}
+
+				public long? OffsetCostAmount
+				{
+					get
+					{
+						return offsetCostAmount;
+					}
+					set	
+					{
+						offsetCostAmount = value;
+					}
+				}
+
+				public long? Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
 					}
 				}
 			}

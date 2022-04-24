@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class DescribeInstanceBillResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private DescribeInstanceBill_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public DescribeInstanceBill_Data Data
 		{
 			get
@@ -98,19 +98,31 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class DescribeInstanceBill_Data
 		{
 
-			private string billingCycle;
-
-			private string accountID;
-
-			private string accountName;
-
-			private int? totalCount;
-
 			private string nextToken;
+
+			private string billingCycle;
 
 			private int? maxResults;
 
+			private string accountID;
+
+			private int? totalCount;
+
+			private string accountName;
+
 			private List<DescribeInstanceBill_Item> items;
+
+			public string NextToken
+			{
+				get
+				{
+					return nextToken;
+				}
+				set	
+				{
+					nextToken = value;
+				}
+			}
 
 			public string BillingCycle
 			{
@@ -121,6 +133,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				set	
 				{
 					billingCycle = value;
+				}
+			}
+
+			public int? MaxResults
+			{
+				get
+				{
+					return maxResults;
+				}
+				set	
+				{
+					maxResults = value;
 				}
 			}
 
@@ -136,18 +160,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public string AccountName
-			{
-				get
-				{
-					return accountName;
-				}
-				set	
-				{
-					accountName = value;
-				}
-			}
-
 			public int? TotalCount
 			{
 				get
@@ -160,27 +172,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public string NextToken
+			public string AccountName
 			{
 				get
 				{
-					return nextToken;
+					return accountName;
 				}
 				set	
 				{
-					nextToken = value;
-				}
-			}
-
-			public int? MaxResults
-			{
-				get
-				{
-					return maxResults;
-				}
-				set	
-				{
-					maxResults = value;
+					accountName = value;
 				}
 			}
 
@@ -199,411 +199,107 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class DescribeInstanceBill_Item
 			{
 
-				private string instanceID;
-
-				private string billingType;
-
-				private string costUnit;
-
-				private string productCode;
-
-				private string productType;
-
-				private string subscriptionType;
-
-				private string productName;
-
-				private string productDetail;
-
-				private string ownerID;
-
-				private string billingItem;
-
-				private string listPrice;
-
-				private string listPriceUnit;
-
-				private string usage;
-
-				private string usageUnit;
-
-				private string deductedByResourcePackage;
-
-				private float? pretaxGrossAmount;
-
-				private float? invoiceDiscount;
-
-				private float? deductedByCoupons;
-
-				private float? pretaxAmount;
-
-				private float? deductedByCashCoupons;
-
-				private float? deductedByPrepaidCard;
-
-				private float? paymentAmount;
-
-				private float? outstandingAmount;
-
-				private string currency;
-
-				private string nickName;
-
-				private string resourceGroup;
-
-				private string tag;
+				private string billingDate;
 
 				private string instanceConfig;
 
-				private string instanceSpec;
-
 				private string internetIP;
-
-				private string intranetIP;
-
-				private string region;
-
-				private string zone;
 
 				private string item;
 
-				private string servicePeriod;
+				private string tag;
 
-				private string billingDate;
+				private string instanceID;
 
-				private string servicePeriodUnit;
-
-				private string pipCode;
-
-				private string commodityCode;
-
-				private string billAccountID;
+				private string currency;
 
 				private string billAccountName;
 
+				private float? deductedByCashCoupons;
+
+				private string subscriptionType;
+
 				private string bizType;
 
-				public string InstanceID
-				{
-					get
-					{
-						return instanceID;
-					}
-					set	
-					{
-						instanceID = value;
-					}
-				}
+				private string instanceSpec;
 
-				public string BillingType
-				{
-					get
-					{
-						return billingType;
-					}
-					set	
-					{
-						billingType = value;
-					}
-				}
+				private float? deductedByCoupons;
 
-				public string CostUnit
-				{
-					get
-					{
-						return costUnit;
-					}
-					set	
-					{
-						costUnit = value;
-					}
-				}
+				private string billingItem;
 
-				public string ProductCode
-				{
-					get
-					{
-						return productCode;
-					}
-					set	
-					{
-						productCode = value;
-					}
-				}
+				private string billingItemCode;
 
-				public string ProductType
-				{
-					get
-					{
-						return productType;
-					}
-					set	
-					{
-						productType = value;
-					}
-				}
+				private string region;
 
-				public string SubscriptionType
-				{
-					get
-					{
-						return subscriptionType;
-					}
-					set	
-					{
-						subscriptionType = value;
-					}
-				}
+				private float? outstandingAmount;
 
-				public string ProductName
-				{
-					get
-					{
-						return productName;
-					}
-					set	
-					{
-						productName = value;
-					}
-				}
+				private string costUnit;
 
-				public string ProductDetail
-				{
-					get
-					{
-						return productDetail;
-					}
-					set	
-					{
-						productDetail = value;
-					}
-				}
+				private string listPriceUnit;
 
-				public string OwnerID
-				{
-					get
-					{
-						return ownerID;
-					}
-					set	
-					{
-						ownerID = value;
-					}
-				}
+				private string resourceGroup;
 
-				public string BillingItem
-				{
-					get
-					{
-						return billingItem;
-					}
-					set	
-					{
-						billingItem = value;
-					}
-				}
+				private string pipCode;
 
-				public string ListPrice
-				{
-					get
-					{
-						return listPrice;
-					}
-					set	
-					{
-						listPrice = value;
-					}
-				}
+				private string servicePeriodUnit;
 
-				public string ListPriceUnit
-				{
-					get
-					{
-						return listPriceUnit;
-					}
-					set	
-					{
-						listPriceUnit = value;
-					}
-				}
+				private float? pretaxAmount;
 
-				public string Usage
-				{
-					get
-					{
-						return usage;
-					}
-					set	
-					{
-						usage = value;
-					}
-				}
+				private string commodityCode;
 
-				public string UsageUnit
-				{
-					get
-					{
-						return usageUnit;
-					}
-					set	
-					{
-						usageUnit = value;
-					}
-				}
+				private string productName;
 
-				public string DeductedByResourcePackage
-				{
-					get
-					{
-						return deductedByResourcePackage;
-					}
-					set	
-					{
-						deductedByResourcePackage = value;
-					}
-				}
+				private float? adjustAmount;
 
-				public float? PretaxGrossAmount
-				{
-					get
-					{
-						return pretaxGrossAmount;
-					}
-					set	
-					{
-						pretaxGrossAmount = value;
-					}
-				}
+				private string nickName;
 
-				public float? InvoiceDiscount
-				{
-					get
-					{
-						return invoiceDiscount;
-					}
-					set	
-					{
-						invoiceDiscount = value;
-					}
-				}
+				private string productDetail;
 
-				public float? DeductedByCoupons
-				{
-					get
-					{
-						return deductedByCoupons;
-					}
-					set	
-					{
-						deductedByCoupons = value;
-					}
-				}
+				private string usage;
 
-				public float? PretaxAmount
-				{
-					get
-					{
-						return pretaxAmount;
-					}
-					set	
-					{
-						pretaxAmount = value;
-					}
-				}
+				private string intranetIP;
 
-				public float? DeductedByCashCoupons
-				{
-					get
-					{
-						return deductedByCashCoupons;
-					}
-					set	
-					{
-						deductedByCashCoupons = value;
-					}
-				}
+				private string ownerID;
 
-				public float? DeductedByPrepaidCard
-				{
-					get
-					{
-						return deductedByPrepaidCard;
-					}
-					set	
-					{
-						deductedByPrepaidCard = value;
-					}
-				}
+				private float? deductedByPrepaidCard;
 
-				public float? PaymentAmount
-				{
-					get
-					{
-						return paymentAmount;
-					}
-					set	
-					{
-						paymentAmount = value;
-					}
-				}
+				private string usageUnit;
 
-				public float? OutstandingAmount
-				{
-					get
-					{
-						return outstandingAmount;
-					}
-					set	
-					{
-						outstandingAmount = value;
-					}
-				}
+				private string billAccountID;
 
-				public string Currency
-				{
-					get
-					{
-						return currency;
-					}
-					set	
-					{
-						currency = value;
-					}
-				}
+				private float? paymentAmount;
 
-				public string NickName
-				{
-					get
-					{
-						return nickName;
-					}
-					set	
-					{
-						nickName = value;
-					}
-				}
+				private float? invoiceDiscount;
 
-				public string ResourceGroup
-				{
-					get
-					{
-						return resourceGroup;
-					}
-					set	
-					{
-						resourceGroup = value;
-					}
-				}
+				private string deductedByResourcePackage;
 
-				public string Tag
+				private string productType;
+
+				private string servicePeriod;
+
+				private string zone;
+
+				private string listPrice;
+
+				private float? pretaxGrossAmount;
+
+				private float? cashAmount;
+
+				private string productCode;
+
+				private string billingType;
+
+				private string itemName;
+
+				public string BillingDate
 				{
 					get
 					{
-						return tag;
+						return billingDate;
 					}
 					set	
 					{
-						tag = value;
+						billingDate = value;
 					}
 				}
 
@@ -619,18 +315,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string InstanceSpec
-				{
-					get
-					{
-						return instanceSpec;
-					}
-					set	
-					{
-						instanceSpec = value;
-					}
-				}
-
 				public string InternetIP
 				{
 					get
@@ -640,42 +324,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						internetIP = value;
-					}
-				}
-
-				public string IntranetIP
-				{
-					get
-					{
-						return intranetIP;
-					}
-					set	
-					{
-						intranetIP = value;
-					}
-				}
-
-				public string Region
-				{
-					get
-					{
-						return region;
-					}
-					set	
-					{
-						region = value;
-					}
-				}
-
-				public string Zone
-				{
-					get
-					{
-						return zone;
-					}
-					set	
-					{
-						zone = value;
 					}
 				}
 
@@ -691,75 +339,39 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string ServicePeriod
+				public string Tag
 				{
 					get
 					{
-						return servicePeriod;
+						return tag;
 					}
 					set	
 					{
-						servicePeriod = value;
+						tag = value;
 					}
 				}
 
-				public string BillingDate
+				public string InstanceID
 				{
 					get
 					{
-						return billingDate;
+						return instanceID;
 					}
 					set	
 					{
-						billingDate = value;
+						instanceID = value;
 					}
 				}
 
-				public string ServicePeriodUnit
+				public string Currency
 				{
 					get
 					{
-						return servicePeriodUnit;
+						return currency;
 					}
 					set	
 					{
-						servicePeriodUnit = value;
-					}
-				}
-
-				public string PipCode
-				{
-					get
-					{
-						return pipCode;
-					}
-					set	
-					{
-						pipCode = value;
-					}
-				}
-
-				public string CommodityCode
-				{
-					get
-					{
-						return commodityCode;
-					}
-					set	
-					{
-						commodityCode = value;
-					}
-				}
-
-				public string BillAccountID
-				{
-					get
-					{
-						return billAccountID;
-					}
-					set	
-					{
-						billAccountID = value;
+						currency = value;
 					}
 				}
 
@@ -775,6 +387,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				public float? DeductedByCashCoupons
+				{
+					get
+					{
+						return deductedByCashCoupons;
+					}
+					set	
+					{
+						deductedByCashCoupons = value;
+					}
+				}
+
+				public string SubscriptionType
+				{
+					get
+					{
+						return subscriptionType;
+					}
+					set	
+					{
+						subscriptionType = value;
+					}
+				}
+
 				public string BizType
 				{
 					get
@@ -784,6 +420,426 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						bizType = value;
+					}
+				}
+
+				public string InstanceSpec
+				{
+					get
+					{
+						return instanceSpec;
+					}
+					set	
+					{
+						instanceSpec = value;
+					}
+				}
+
+				public float? DeductedByCoupons
+				{
+					get
+					{
+						return deductedByCoupons;
+					}
+					set	
+					{
+						deductedByCoupons = value;
+					}
+				}
+
+				public string BillingItem
+				{
+					get
+					{
+						return billingItem;
+					}
+					set	
+					{
+						billingItem = value;
+					}
+				}
+
+				public string BillingItemCode
+				{
+					get
+					{
+						return billingItemCode;
+					}
+					set	
+					{
+						billingItemCode = value;
+					}
+				}
+
+				public string Region
+				{
+					get
+					{
+						return region;
+					}
+					set	
+					{
+						region = value;
+					}
+				}
+
+				public float? OutstandingAmount
+				{
+					get
+					{
+						return outstandingAmount;
+					}
+					set	
+					{
+						outstandingAmount = value;
+					}
+				}
+
+				public string CostUnit
+				{
+					get
+					{
+						return costUnit;
+					}
+					set	
+					{
+						costUnit = value;
+					}
+				}
+
+				public string ListPriceUnit
+				{
+					get
+					{
+						return listPriceUnit;
+					}
+					set	
+					{
+						listPriceUnit = value;
+					}
+				}
+
+				public string ResourceGroup
+				{
+					get
+					{
+						return resourceGroup;
+					}
+					set	
+					{
+						resourceGroup = value;
+					}
+				}
+
+				public string PipCode
+				{
+					get
+					{
+						return pipCode;
+					}
+					set	
+					{
+						pipCode = value;
+					}
+				}
+
+				public string ServicePeriodUnit
+				{
+					get
+					{
+						return servicePeriodUnit;
+					}
+					set	
+					{
+						servicePeriodUnit = value;
+					}
+				}
+
+				public float? PretaxAmount
+				{
+					get
+					{
+						return pretaxAmount;
+					}
+					set	
+					{
+						pretaxAmount = value;
+					}
+				}
+
+				public string CommodityCode
+				{
+					get
+					{
+						return commodityCode;
+					}
+					set	
+					{
+						commodityCode = value;
+					}
+				}
+
+				public string ProductName
+				{
+					get
+					{
+						return productName;
+					}
+					set	
+					{
+						productName = value;
+					}
+				}
+
+				public float? AdjustAmount
+				{
+					get
+					{
+						return adjustAmount;
+					}
+					set	
+					{
+						adjustAmount = value;
+					}
+				}
+
+				public string NickName
+				{
+					get
+					{
+						return nickName;
+					}
+					set	
+					{
+						nickName = value;
+					}
+				}
+
+				public string ProductDetail
+				{
+					get
+					{
+						return productDetail;
+					}
+					set	
+					{
+						productDetail = value;
+					}
+				}
+
+				public string Usage
+				{
+					get
+					{
+						return usage;
+					}
+					set	
+					{
+						usage = value;
+					}
+				}
+
+				public string IntranetIP
+				{
+					get
+					{
+						return intranetIP;
+					}
+					set	
+					{
+						intranetIP = value;
+					}
+				}
+
+				public string OwnerID
+				{
+					get
+					{
+						return ownerID;
+					}
+					set	
+					{
+						ownerID = value;
+					}
+				}
+
+				public float? DeductedByPrepaidCard
+				{
+					get
+					{
+						return deductedByPrepaidCard;
+					}
+					set	
+					{
+						deductedByPrepaidCard = value;
+					}
+				}
+
+				public string UsageUnit
+				{
+					get
+					{
+						return usageUnit;
+					}
+					set	
+					{
+						usageUnit = value;
+					}
+				}
+
+				public string BillAccountID
+				{
+					get
+					{
+						return billAccountID;
+					}
+					set	
+					{
+						billAccountID = value;
+					}
+				}
+
+				public float? PaymentAmount
+				{
+					get
+					{
+						return paymentAmount;
+					}
+					set	
+					{
+						paymentAmount = value;
+					}
+				}
+
+				public float? InvoiceDiscount
+				{
+					get
+					{
+						return invoiceDiscount;
+					}
+					set	
+					{
+						invoiceDiscount = value;
+					}
+				}
+
+				public string DeductedByResourcePackage
+				{
+					get
+					{
+						return deductedByResourcePackage;
+					}
+					set	
+					{
+						deductedByResourcePackage = value;
+					}
+				}
+
+				public string ProductType
+				{
+					get
+					{
+						return productType;
+					}
+					set	
+					{
+						productType = value;
+					}
+				}
+
+				public string ServicePeriod
+				{
+					get
+					{
+						return servicePeriod;
+					}
+					set	
+					{
+						servicePeriod = value;
+					}
+				}
+
+				public string Zone
+				{
+					get
+					{
+						return zone;
+					}
+					set	
+					{
+						zone = value;
+					}
+				}
+
+				public string ListPrice
+				{
+					get
+					{
+						return listPrice;
+					}
+					set	
+					{
+						listPrice = value;
+					}
+				}
+
+				public float? PretaxGrossAmount
+				{
+					get
+					{
+						return pretaxGrossAmount;
+					}
+					set	
+					{
+						pretaxGrossAmount = value;
+					}
+				}
+
+				public float? CashAmount
+				{
+					get
+					{
+						return cashAmount;
+					}
+					set	
+					{
+						cashAmount = value;
+					}
+				}
+
+				public string ProductCode
+				{
+					get
+					{
+						return productCode;
+					}
+					set	
+					{
+						productCode = value;
+					}
+				}
+
+				public string BillingType
+				{
+					get
+					{
+						return billingType;
+					}
+					set	
+					{
+						billingType = value;
+					}
+				}
+
+				public string ItemName
+				{
+					get
+					{
+						return itemName;
+					}
+					set	
+					{
+						itemName = value;
 					}
 				}
 			}

@@ -31,14 +31,14 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			AllocateCostUnitResourceResponse allocateCostUnitResourceResponse = new AllocateCostUnitResourceResponse();
 
 			allocateCostUnitResourceResponse.HttpResponse = _ctx.HttpResponse;
-			allocateCostUnitResourceResponse.RequestId = _ctx.StringValue("AllocateCostUnitResource.RequestId");
-			allocateCostUnitResourceResponse.Message = _ctx.StringValue("AllocateCostUnitResource.Message");
 			allocateCostUnitResourceResponse.Code = _ctx.StringValue("AllocateCostUnitResource.Code");
+			allocateCostUnitResourceResponse.Message = _ctx.StringValue("AllocateCostUnitResource.Message");
+			allocateCostUnitResourceResponse.RequestId = _ctx.StringValue("AllocateCostUnitResource.RequestId");
 			allocateCostUnitResourceResponse.Success = _ctx.BooleanValue("AllocateCostUnitResource.Success");
 
 			AllocateCostUnitResourceResponse.AllocateCostUnitResource_Data data = new AllocateCostUnitResourceResponse.AllocateCostUnitResource_Data();
-			data.IsSuccess = _ctx.BooleanValue("AllocateCostUnitResource.Data.IsSuccess");
 			data.ToUnitUserId = _ctx.LongValue("AllocateCostUnitResource.Data.ToUnitUserId");
+			data.IsSuccess = _ctx.BooleanValue("AllocateCostUnitResource.Data.IsSuccess");
 			data.ToUnitId = _ctx.LongValue("AllocateCostUnitResource.Data.ToUnitId");
 			allocateCostUnitResourceResponse.Data = data;
         

@@ -32,17 +32,17 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 
 			queryFinancialAccountInfoResponse.HttpResponse = _ctx.HttpResponse;
 			queryFinancialAccountInfoResponse.Code = _ctx.StringValue("QueryFinancialAccountInfo.Code");
+			queryFinancialAccountInfoResponse.Message = _ctx.StringValue("QueryFinancialAccountInfo.Message");
 			queryFinancialAccountInfoResponse.RequestId = _ctx.StringValue("QueryFinancialAccountInfo.RequestId");
 			queryFinancialAccountInfoResponse.Success = _ctx.BooleanValue("QueryFinancialAccountInfo.Success");
-			queryFinancialAccountInfoResponse.Message = _ctx.StringValue("QueryFinancialAccountInfo.Message");
 
 			QueryFinancialAccountInfoResponse.QueryFinancialAccountInfo_Data data = new QueryFinancialAccountInfoResponse.QueryFinancialAccountInfo_Data();
-			data.UserName = _ctx.StringValue("QueryFinancialAccountInfo.Data.UserName");
-			data.IsFinancialAccount = _ctx.BooleanValue("QueryFinancialAccountInfo.Data.IsFinancialAccount");
-			data.AccountType = _ctx.StringValue("QueryFinancialAccountInfo.Data.AccountType");
 			data.MemberNickName = _ctx.StringValue("QueryFinancialAccountInfo.Data.MemberNickName");
-			data.MemberGroupId = _ctx.LongValue("QueryFinancialAccountInfo.Data.MemberGroupId");
+			data.IsFinancialAccount = _ctx.BooleanValue("QueryFinancialAccountInfo.Data.IsFinancialAccount");
 			data.MemberGroupName = _ctx.StringValue("QueryFinancialAccountInfo.Data.MemberGroupName");
+			data.UserName = _ctx.StringValue("QueryFinancialAccountInfo.Data.UserName");
+			data.AccountType = _ctx.StringValue("QueryFinancialAccountInfo.Data.AccountType");
+			data.MemberGroupId = _ctx.LongValue("QueryFinancialAccountInfo.Data.MemberGroupId");
 			queryFinancialAccountInfoResponse.Data = data;
         
 			return queryFinancialAccountInfoResponse;

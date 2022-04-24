@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class QueryAccountTransactionsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private QueryAccountTransactions_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public QueryAccountTransactions_Data Data
 		{
 			get
@@ -98,39 +98,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class QueryAccountTransactions_Data
 		{
 
-			private string accountName;
-
-			private int? totalCount;
-
 			private int? pageNum;
 
 			private int? pageSize;
 
+			private int? totalCount;
+
+			private string accountName;
+
 			private List<QueryAccountTransactions_AccountTransactionsListItem> accountTransactionsList;
-
-			public string AccountName
-			{
-				get
-				{
-					return accountName;
-				}
-				set	
-				{
-					accountName = value;
-				}
-			}
-
-			public int? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
 
 			public int? PageNum
 			{
@@ -156,6 +132,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			public int? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
+				}
+			}
+
+			public string AccountName
+			{
+				get
+				{
+					return accountName;
+				}
+				set	
+				{
+					accountName = value;
+				}
+			}
+
 			public List<QueryAccountTransactions_AccountTransactionsListItem> AccountTransactionsList
 			{
 				get
@@ -171,77 +171,41 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class QueryAccountTransactions_AccountTransactionsListItem
 			{
 
-				private string transactionNumber;
-
-				private string transactionTime;
-
-				private string transactionFlow;
-
-				private string transactionType;
+				private string billingCycle;
 
 				private string transactionChannel;
-
-				private string transactionChannelSN;
-
-				private string fundType;
 
 				private string recordID;
 
 				private string remarks;
 
-				private string billingCycle;
-
 				private string amount;
-
-				private string balance;
 
 				private string transactionAccount;
 
-				public string TransactionNumber
-				{
-					get
-					{
-						return transactionNumber;
-					}
-					set	
-					{
-						transactionNumber = value;
-					}
-				}
+				private string transactionTime;
 
-				public string TransactionTime
-				{
-					get
-					{
-						return transactionTime;
-					}
-					set	
-					{
-						transactionTime = value;
-					}
-				}
+				private string transactionType;
 
-				public string TransactionFlow
-				{
-					get
-					{
-						return transactionFlow;
-					}
-					set	
-					{
-						transactionFlow = value;
-					}
-				}
+				private string transactionFlow;
 
-				public string TransactionType
+				private string fundType;
+
+				private string transactionChannelSN;
+
+				private string transactionNumber;
+
+				private string balance;
+
+				public string BillingCycle
 				{
 					get
 					{
-						return transactionType;
+						return billingCycle;
 					}
 					set	
 					{
-						transactionType = value;
+						billingCycle = value;
 					}
 				}
 
@@ -254,30 +218,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						transactionChannel = value;
-					}
-				}
-
-				public string TransactionChannelSN
-				{
-					get
-					{
-						return transactionChannelSN;
-					}
-					set	
-					{
-						transactionChannelSN = value;
-					}
-				}
-
-				public string FundType
-				{
-					get
-					{
-						return fundType;
-					}
-					set	
-					{
-						fundType = value;
 					}
 				}
 
@@ -305,18 +245,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string BillingCycle
-				{
-					get
-					{
-						return billingCycle;
-					}
-					set	
-					{
-						billingCycle = value;
-					}
-				}
-
 				public string Amount
 				{
 					get
@@ -329,18 +257,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string Balance
-				{
-					get
-					{
-						return balance;
-					}
-					set	
-					{
-						balance = value;
-					}
-				}
-
 				public string TransactionAccount
 				{
 					get
@@ -350,6 +266,90 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						transactionAccount = value;
+					}
+				}
+
+				public string TransactionTime
+				{
+					get
+					{
+						return transactionTime;
+					}
+					set	
+					{
+						transactionTime = value;
+					}
+				}
+
+				public string TransactionType
+				{
+					get
+					{
+						return transactionType;
+					}
+					set	
+					{
+						transactionType = value;
+					}
+				}
+
+				public string TransactionFlow
+				{
+					get
+					{
+						return transactionFlow;
+					}
+					set	
+					{
+						transactionFlow = value;
+					}
+				}
+
+				public string FundType
+				{
+					get
+					{
+						return fundType;
+					}
+					set	
+					{
+						fundType = value;
+					}
+				}
+
+				public string TransactionChannelSN
+				{
+					get
+					{
+						return transactionChannelSN;
+					}
+					set	
+					{
+						transactionChannelSN = value;
+					}
+				}
+
+				public string TransactionNumber
+				{
+					get
+					{
+						return transactionNumber;
+					}
+					set	
+					{
+						transactionNumber = value;
+					}
+				}
+
+				public string Balance
+				{
+					get
+					{
+						return balance;
+					}
+					set	
+					{
+						balance = value;
 					}
 				}
 			}

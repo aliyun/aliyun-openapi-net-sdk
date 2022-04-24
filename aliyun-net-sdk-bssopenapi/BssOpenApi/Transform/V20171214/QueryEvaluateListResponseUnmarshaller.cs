@@ -31,43 +31,43 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			QueryEvaluateListResponse queryEvaluateListResponse = new QueryEvaluateListResponse();
 
 			queryEvaluateListResponse.HttpResponse = _ctx.HttpResponse;
-			queryEvaluateListResponse.RequestId = _ctx.StringValue("QueryEvaluateList.RequestId");
-			queryEvaluateListResponse.Success = _ctx.BooleanValue("QueryEvaluateList.Success");
 			queryEvaluateListResponse.Code = _ctx.StringValue("QueryEvaluateList.Code");
 			queryEvaluateListResponse.Message = _ctx.StringValue("QueryEvaluateList.Message");
+			queryEvaluateListResponse.RequestId = _ctx.StringValue("QueryEvaluateList.RequestId");
+			queryEvaluateListResponse.Success = _ctx.BooleanValue("QueryEvaluateList.Success");
 
 			QueryEvaluateListResponse.QueryEvaluateList_Data data = new QueryEvaluateListResponse.QueryEvaluateList_Data();
-			data.HostId = _ctx.StringValue("QueryEvaluateList.Data.HostId");
 			data.PageNum = _ctx.IntegerValue("QueryEvaluateList.Data.PageNum");
+			data.TotalUnAppliedInvoiceAmount = _ctx.LongValue("QueryEvaluateList.Data.TotalUnAppliedInvoiceAmount");
 			data.PageSize = _ctx.IntegerValue("QueryEvaluateList.Data.PageSize");
 			data.TotalCount = _ctx.IntegerValue("QueryEvaluateList.Data.TotalCount");
 			data.TotalInvoiceAmount = _ctx.LongValue("QueryEvaluateList.Data.TotalInvoiceAmount");
-			data.TotalUnAppliedInvoiceAmount = _ctx.LongValue("QueryEvaluateList.Data.TotalUnAppliedInvoiceAmount");
+			data.HostId = _ctx.StringValue("QueryEvaluateList.Data.HostId");
 
 			List<QueryEvaluateListResponse.QueryEvaluateList_Data.QueryEvaluateList_Evaluate> data_evaluateList = new List<QueryEvaluateListResponse.QueryEvaluateList_Data.QueryEvaluateList_Evaluate>();
 			for (int i = 0; i < _ctx.Length("QueryEvaluateList.Data.EvaluateList.Length"); i++) {
 				QueryEvaluateListResponse.QueryEvaluateList_Data.QueryEvaluateList_Evaluate evaluate = new QueryEvaluateListResponse.QueryEvaluateList_Data.QueryEvaluateList_Evaluate();
-				evaluate.Id = _ctx.LongValue("QueryEvaluateList.Data.EvaluateList["+ i +"].Id");
-				evaluate.GmtCreate = _ctx.StringValue("QueryEvaluateList.Data.EvaluateList["+ i +"].GmtCreate");
-				evaluate.GmtModified = _ctx.StringValue("QueryEvaluateList.Data.EvaluateList["+ i +"].GmtModified");
-				evaluate.UserId = _ctx.LongValue("QueryEvaluateList.Data.EvaluateList["+ i +"].UserId");
-				evaluate.UserNick = _ctx.StringValue("QueryEvaluateList.Data.EvaluateList["+ i +"].UserNick");
-				evaluate.OutBizId = _ctx.StringValue("QueryEvaluateList.Data.EvaluateList["+ i +"].OutBizId");
+				evaluate.Type = _ctx.IntegerValue("QueryEvaluateList.Data.EvaluateList["+ i +"].Type");
+				evaluate.Status = _ctx.IntegerValue("QueryEvaluateList.Data.EvaluateList["+ i +"].Status");
 				evaluate.BillId = _ctx.LongValue("QueryEvaluateList.Data.EvaluateList["+ i +"].BillId");
-				evaluate.ItemId = _ctx.LongValue("QueryEvaluateList.Data.EvaluateList["+ i +"].ItemId");
+				evaluate.UserId = _ctx.LongValue("QueryEvaluateList.Data.EvaluateList["+ i +"].UserId");
 				evaluate.BillCycle = _ctx.StringValue("QueryEvaluateList.Data.EvaluateList["+ i +"].BillCycle");
+				evaluate.CanInvoiceAmount = _ctx.LongValue("QueryEvaluateList.Data.EvaluateList["+ i +"].CanInvoiceAmount");
+				evaluate.OffsetAcceptAmount = _ctx.LongValue("QueryEvaluateList.Data.EvaluateList["+ i +"].OffsetAcceptAmount");
+				evaluate.ItemId = _ctx.LongValue("QueryEvaluateList.Data.EvaluateList["+ i +"].ItemId");
+				evaluate.OutBizId = _ctx.StringValue("QueryEvaluateList.Data.EvaluateList["+ i +"].OutBizId");
+				evaluate.UserNick = _ctx.StringValue("QueryEvaluateList.Data.EvaluateList["+ i +"].UserNick");
+				evaluate.GmtModified = _ctx.StringValue("QueryEvaluateList.Data.EvaluateList["+ i +"].GmtModified");
+				evaluate.OpId = _ctx.StringValue("QueryEvaluateList.Data.EvaluateList["+ i +"].OpId");
 				evaluate.BizType = _ctx.StringValue("QueryEvaluateList.Data.EvaluateList["+ i +"].BizType");
 				evaluate.OriginalAmount = _ctx.LongValue("QueryEvaluateList.Data.EvaluateList["+ i +"].OriginalAmount");
-				evaluate.PresentAmount = _ctx.LongValue("QueryEvaluateList.Data.EvaluateList["+ i +"].PresentAmount");
-				evaluate.CanInvoiceAmount = _ctx.LongValue("QueryEvaluateList.Data.EvaluateList["+ i +"].CanInvoiceAmount");
 				evaluate.InvoicedAmount = _ctx.LongValue("QueryEvaluateList.Data.EvaluateList["+ i +"].InvoicedAmount");
-				evaluate.OffsetCostAmount = _ctx.LongValue("QueryEvaluateList.Data.EvaluateList["+ i +"].OffsetCostAmount");
-				evaluate.OffsetAcceptAmount = _ctx.LongValue("QueryEvaluateList.Data.EvaluateList["+ i +"].OffsetAcceptAmount");
-				evaluate.Status = _ctx.IntegerValue("QueryEvaluateList.Data.EvaluateList["+ i +"].Status");
-				evaluate.OpId = _ctx.StringValue("QueryEvaluateList.Data.EvaluateList["+ i +"].OpId");
-				evaluate.Name = _ctx.StringValue("QueryEvaluateList.Data.EvaluateList["+ i +"].Name");
+				evaluate.GmtCreate = _ctx.StringValue("QueryEvaluateList.Data.EvaluateList["+ i +"].GmtCreate");
+				evaluate.PresentAmount = _ctx.LongValue("QueryEvaluateList.Data.EvaluateList["+ i +"].PresentAmount");
 				evaluate.BizTime = _ctx.StringValue("QueryEvaluateList.Data.EvaluateList["+ i +"].BizTime");
-				evaluate.Type = _ctx.IntegerValue("QueryEvaluateList.Data.EvaluateList["+ i +"].Type");
+				evaluate.Name = _ctx.StringValue("QueryEvaluateList.Data.EvaluateList["+ i +"].Name");
+				evaluate.OffsetCostAmount = _ctx.LongValue("QueryEvaluateList.Data.EvaluateList["+ i +"].OffsetCostAmount");
+				evaluate.Id = _ctx.LongValue("QueryEvaluateList.Data.EvaluateList["+ i +"].Id");
 
 				data_evaluateList.Add(evaluate);
 			}

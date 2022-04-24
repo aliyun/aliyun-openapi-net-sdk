@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class DescribeResourceCoverageTotalResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private DescribeResourceCoverageTotal_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -129,9 +129,21 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class DescribeResourceCoverageTotal_Item
 			{
 
+				private float? coveragePercentage;
+
 				private string period;
 
-				private float? coveragePercentage;
+				public float? CoveragePercentage
+				{
+					get
+					{
+						return coveragePercentage;
+					}
+					set	
+					{
+						coveragePercentage = value;
+					}
+				}
 
 				public string Period
 				{
@@ -144,40 +156,28 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 						period = value;
 					}
 				}
-
-				public float? CoveragePercentage
-				{
-					get
-					{
-						return coveragePercentage;
-					}
-					set	
-					{
-						coveragePercentage = value;
-					}
-				}
 			}
 
 			public class DescribeResourceCoverageTotal_TotalCoverage
 			{
 
-				private float? coveragePercentage;
+				private string capacityUnit;
 
 				private float? deductQuantity;
 
+				private float? coveragePercentage;
+
 				private float? totalQuantity;
 
-				private string capacityUnit;
-
-				public float? CoveragePercentage
+				public string CapacityUnit
 				{
 					get
 					{
-						return coveragePercentage;
+						return capacityUnit;
 					}
 					set	
 					{
-						coveragePercentage = value;
+						capacityUnit = value;
 					}
 				}
 
@@ -193,6 +193,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				public float? CoveragePercentage
+				{
+					get
+					{
+						return coveragePercentage;
+					}
+					set	
+					{
+						coveragePercentage = value;
+					}
+				}
+
 				public float? TotalQuantity
 				{
 					get
@@ -202,18 +214,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						totalQuantity = value;
-					}
-				}
-
-				public string CapacityUnit
-				{
-					get
-					{
-						return capacityUnit;
-					}
-					set	
-					{
-						capacityUnit = value;
 					}
 				}
 			}

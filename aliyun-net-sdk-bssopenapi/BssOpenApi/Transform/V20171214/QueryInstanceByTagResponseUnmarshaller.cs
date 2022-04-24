@@ -32,10 +32,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 
 			queryInstanceByTagResponse.HttpResponse = _ctx.HttpResponse;
 			queryInstanceByTagResponse.Code = _ctx.StringValue("QueryInstanceByTag.Code");
-			queryInstanceByTagResponse.RequestId = _ctx.StringValue("QueryInstanceByTag.RequestId");
-			queryInstanceByTagResponse.Success = _ctx.BooleanValue("QueryInstanceByTag.Success");
 			queryInstanceByTagResponse.Message = _ctx.StringValue("QueryInstanceByTag.Message");
 			queryInstanceByTagResponse.NextToken = _ctx.StringValue("QueryInstanceByTag.NextToken");
+			queryInstanceByTagResponse.RequestId = _ctx.StringValue("QueryInstanceByTag.RequestId");
+			queryInstanceByTagResponse.Success = _ctx.BooleanValue("QueryInstanceByTag.Success");
 
 			List<QueryInstanceByTagResponse.QueryInstanceByTag_TagResourceItem> queryInstanceByTagResponse_tagResource = new List<QueryInstanceByTagResponse.QueryInstanceByTag_TagResourceItem>();
 			for (int i = 0; i < _ctx.Length("QueryInstanceByTag.TagResource.Length"); i++) {

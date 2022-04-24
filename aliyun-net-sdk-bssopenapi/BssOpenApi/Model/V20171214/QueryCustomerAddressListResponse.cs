@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class QueryCustomerAddressListResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private QueryCustomerAddressList_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -115,65 +115,29 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class QueryCustomerAddressList_CustomerInvoiceAddress
 			{
 
-				private long? id;
-
-				private long? userId;
-
-				private string userNick;
-
 				private string addressee;
-
-				private string province;
-
-				private string city;
-
-				private string county;
-
-				private string street;
 
 				private string postalCode;
 
+				private long? userId;
+
+				private string city;
+
+				private string userNick;
+
+				private string street;
+
 				private string phone;
+
+				private string county;
 
 				private string bizType;
 
 				private string deliveryAddress;
 
-				public long? Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
+				private long? id;
 
-				public long? UserId
-				{
-					get
-					{
-						return userId;
-					}
-					set	
-					{
-						userId = value;
-					}
-				}
-
-				public string UserNick
-				{
-					get
-					{
-						return userNick;
-					}
-					set	
-					{
-						userNick = value;
-					}
-				}
+				private string province;
 
 				public string Addressee
 				{
@@ -184,54 +148,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						addressee = value;
-					}
-				}
-
-				public string Province
-				{
-					get
-					{
-						return province;
-					}
-					set	
-					{
-						province = value;
-					}
-				}
-
-				public string City
-				{
-					get
-					{
-						return city;
-					}
-					set	
-					{
-						city = value;
-					}
-				}
-
-				public string County
-				{
-					get
-					{
-						return county;
-					}
-					set	
-					{
-						county = value;
-					}
-				}
-
-				public string Street
-				{
-					get
-					{
-						return street;
-					}
-					set	
-					{
-						street = value;
 					}
 				}
 
@@ -247,6 +163,54 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				public long? UserId
+				{
+					get
+					{
+						return userId;
+					}
+					set	
+					{
+						userId = value;
+					}
+				}
+
+				public string City
+				{
+					get
+					{
+						return city;
+					}
+					set	
+					{
+						city = value;
+					}
+				}
+
+				public string UserNick
+				{
+					get
+					{
+						return userNick;
+					}
+					set	
+					{
+						userNick = value;
+					}
+				}
+
+				public string Street
+				{
+					get
+					{
+						return street;
+					}
+					set	
+					{
+						street = value;
+					}
+				}
+
 				public string Phone
 				{
 					get
@@ -256,6 +220,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						phone = value;
+					}
+				}
+
+				public string County
+				{
+					get
+					{
+						return county;
+					}
+					set	
+					{
+						county = value;
 					}
 				}
 
@@ -280,6 +256,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						deliveryAddress = value;
+					}
+				}
+
+				public long? Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
+
+				public string Province
+				{
+					get
+					{
+						return province;
+					}
+					set	
+					{
+						province = value;
 					}
 				}
 			}

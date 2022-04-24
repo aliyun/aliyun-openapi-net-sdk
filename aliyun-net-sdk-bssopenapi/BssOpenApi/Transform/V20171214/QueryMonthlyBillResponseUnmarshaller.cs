@@ -31,39 +31,39 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			QueryMonthlyBillResponse queryMonthlyBillResponse = new QueryMonthlyBillResponse();
 
 			queryMonthlyBillResponse.HttpResponse = _ctx.HttpResponse;
-			queryMonthlyBillResponse.RequestId = _ctx.StringValue("QueryMonthlyBill.RequestId");
-			queryMonthlyBillResponse.Success = _ctx.BooleanValue("QueryMonthlyBill.Success");
 			queryMonthlyBillResponse.Code = _ctx.StringValue("QueryMonthlyBill.Code");
 			queryMonthlyBillResponse.Message = _ctx.StringValue("QueryMonthlyBill.Message");
+			queryMonthlyBillResponse.RequestId = _ctx.StringValue("QueryMonthlyBill.RequestId");
+			queryMonthlyBillResponse.Success = _ctx.BooleanValue("QueryMonthlyBill.Success");
 
 			QueryMonthlyBillResponse.QueryMonthlyBill_Data data = new QueryMonthlyBillResponse.QueryMonthlyBill_Data();
 			data.OutstandingAmount = _ctx.FloatValue("QueryMonthlyBill.Data.OutstandingAmount");
+			data.BillingCycle = _ctx.StringValue("QueryMonthlyBill.Data.BillingCycle");
 			data.TotalOutstandingAmount = _ctx.FloatValue("QueryMonthlyBill.Data.TotalOutstandingAmount");
 			data.NewInvoiceAmount = _ctx.FloatValue("QueryMonthlyBill.Data.NewInvoiceAmount");
-			data.BillingCycle = _ctx.StringValue("QueryMonthlyBill.Data.BillingCycle");
 
 			List<QueryMonthlyBillResponse.QueryMonthlyBill_Data.QueryMonthlyBill_Item> data_items = new List<QueryMonthlyBillResponse.QueryMonthlyBill_Data.QueryMonthlyBill_Item>();
 			for (int i = 0; i < _ctx.Length("QueryMonthlyBill.Data.Items.Length"); i++) {
 				QueryMonthlyBillResponse.QueryMonthlyBill_Data.QueryMonthlyBill_Item item = new QueryMonthlyBillResponse.QueryMonthlyBill_Data.QueryMonthlyBill_Item();
-				item.Item = _ctx.StringValue("QueryMonthlyBill.Data.Items["+ i +"].Item");
-				item.ProductCode = _ctx.StringValue("QueryMonthlyBill.Data.Items["+ i +"].ProductCode");
-				item.ProductType = _ctx.StringValue("QueryMonthlyBill.Data.Items["+ i +"].ProductType");
-				item.SubscriptionType = _ctx.StringValue("QueryMonthlyBill.Data.Items["+ i +"].SubscriptionType");
-				item.SolutionCode = _ctx.StringValue("QueryMonthlyBill.Data.Items["+ i +"].SolutionCode");
-				item.SolutionName = _ctx.StringValue("QueryMonthlyBill.Data.Items["+ i +"].SolutionName");
-				item.PretaxGrossAmount = _ctx.FloatValue("QueryMonthlyBill.Data.Items["+ i +"].PretaxGrossAmount");
-				item.InvoiceDiscount = _ctx.FloatValue("QueryMonthlyBill.Data.Items["+ i +"].InvoiceDiscount");
-				item.DeductedByCoupons = _ctx.FloatValue("QueryMonthlyBill.Data.Items["+ i +"].DeductedByCoupons");
 				item.PretaxAmount = _ctx.FloatValue("QueryMonthlyBill.Data.Items["+ i +"].PretaxAmount");
+				item.SolutionCode = _ctx.StringValue("QueryMonthlyBill.Data.Items["+ i +"].SolutionCode");
+				item.Item = _ctx.StringValue("QueryMonthlyBill.Data.Items["+ i +"].Item");
 				item.Currency = _ctx.StringValue("QueryMonthlyBill.Data.Items["+ i +"].Currency");
-				item.PretaxAmountLocal = _ctx.FloatValue("QueryMonthlyBill.Data.Items["+ i +"].PretaxAmountLocal");
-				item.Tax = _ctx.FloatValue("QueryMonthlyBill.Data.Items["+ i +"].Tax");
-				item.AfterTaxAmount = _ctx.FloatValue("QueryMonthlyBill.Data.Items["+ i +"].AfterTaxAmount");
-				item.OutstandingAmount = _ctx.FloatValue("QueryMonthlyBill.Data.Items["+ i +"].OutstandingAmount");
 				item.DeductedByCashCoupons = _ctx.FloatValue("QueryMonthlyBill.Data.Items["+ i +"].DeductedByCashCoupons");
-				item.DeductedByPrepaidCard = _ctx.FloatValue("QueryMonthlyBill.Data.Items["+ i +"].DeductedByPrepaidCard");
-				item.PaymentAmount = _ctx.FloatValue("QueryMonthlyBill.Data.Items["+ i +"].PaymentAmount");
+				item.SubscriptionType = _ctx.StringValue("QueryMonthlyBill.Data.Items["+ i +"].SubscriptionType");
 				item.PaymentCurrency = _ctx.StringValue("QueryMonthlyBill.Data.Items["+ i +"].PaymentCurrency");
+				item.DeductedByPrepaidCard = _ctx.FloatValue("QueryMonthlyBill.Data.Items["+ i +"].DeductedByPrepaidCard");
+				item.DeductedByCoupons = _ctx.FloatValue("QueryMonthlyBill.Data.Items["+ i +"].DeductedByCoupons");
+				item.PaymentAmount = _ctx.FloatValue("QueryMonthlyBill.Data.Items["+ i +"].PaymentAmount");
+				item.InvoiceDiscount = _ctx.FloatValue("QueryMonthlyBill.Data.Items["+ i +"].InvoiceDiscount");
+				item.ProductType = _ctx.StringValue("QueryMonthlyBill.Data.Items["+ i +"].ProductType");
+				item.OutstandingAmount = _ctx.FloatValue("QueryMonthlyBill.Data.Items["+ i +"].OutstandingAmount");
+				item.AfterTaxAmount = _ctx.FloatValue("QueryMonthlyBill.Data.Items["+ i +"].AfterTaxAmount");
+				item.PretaxGrossAmount = _ctx.FloatValue("QueryMonthlyBill.Data.Items["+ i +"].PretaxGrossAmount");
+				item.SolutionName = _ctx.StringValue("QueryMonthlyBill.Data.Items["+ i +"].SolutionName");
+				item.Tax = _ctx.FloatValue("QueryMonthlyBill.Data.Items["+ i +"].Tax");
+				item.PretaxAmountLocal = _ctx.FloatValue("QueryMonthlyBill.Data.Items["+ i +"].PretaxAmountLocal");
+				item.ProductCode = _ctx.StringValue("QueryMonthlyBill.Data.Items["+ i +"].ProductCode");
 
 				data_items.Add(item);
 			}

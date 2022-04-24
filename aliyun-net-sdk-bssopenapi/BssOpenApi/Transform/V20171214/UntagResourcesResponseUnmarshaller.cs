@@ -32,10 +32,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 
 			untagResourcesResponse.HttpResponse = _ctx.HttpResponse;
 			untagResourcesResponse.Code = _ctx.StringValue("UntagResources.Code");
-			untagResourcesResponse.RequestId = _ctx.StringValue("UntagResources.RequestId");
-			untagResourcesResponse.Success = _ctx.BooleanValue("UntagResources.Success");
 			untagResourcesResponse.Message = _ctx.StringValue("UntagResources.Message");
 			untagResourcesResponse.Data = _ctx.BooleanValue("UntagResources.Data");
+			untagResourcesResponse.RequestId = _ctx.StringValue("UntagResources.RequestId");
+			untagResourcesResponse.Success = _ctx.BooleanValue("UntagResources.Success");
         
 			return untagResourcesResponse;
         }

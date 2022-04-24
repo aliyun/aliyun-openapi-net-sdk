@@ -43,19 +43,21 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string childNick;
 
+		private long? parentUserId;
+
+		private long? relationId;
+
+		private List<string> roleCodess = new List<string>(){ };
+
 		private string relationOperation;
 
 		private string relationType;
-
-		private long? parentUserId;
 
 		private long? childUserId;
 
 		private string requestId;
 
 		private List<string> permissionCodess = new List<string>(){ };
-
-		private List<string> roleCodess = new List<string>(){ };
 
 		public string ChildNick
 		{
@@ -67,6 +69,45 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				childNick = value;
 				DictionaryUtil.Add(QueryParameters, "ChildNick", value);
+			}
+		}
+
+		public long? ParentUserId
+		{
+			get
+			{
+				return parentUserId;
+			}
+			set	
+			{
+				parentUserId = value;
+				DictionaryUtil.Add(QueryParameters, "ParentUserId", value.ToString());
+			}
+		}
+
+		public long? RelationId
+		{
+			get
+			{
+				return relationId;
+			}
+			set	
+			{
+				relationId = value;
+				DictionaryUtil.Add(QueryParameters, "RelationId", value.ToString());
+			}
+		}
+
+		public List<string> RoleCodess
+		{
+			get
+			{
+				return roleCodess;
+			}
+
+			set
+			{
+				roleCodess = value;
 			}
 		}
 
@@ -93,19 +134,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				relationType = value;
 				DictionaryUtil.Add(QueryParameters, "RelationType", value);
-			}
-		}
-
-		public long? ParentUserId
-		{
-			get
-			{
-				return parentUserId;
-			}
-			set	
-			{
-				parentUserId = value;
-				DictionaryUtil.Add(QueryParameters, "ParentUserId", value.ToString());
 			}
 		}
 
@@ -145,27 +173,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set
 			{
 				permissionCodess = value;
-				for (int i = 0; i < permissionCodess.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"PermissionCodes." + (i + 1) , permissionCodess[i]);
-				}
-			}
-		}
-
-		public List<string> RoleCodess
-		{
-			get
-			{
-				return roleCodess;
-			}
-
-			set
-			{
-				roleCodess = value;
-				for (int i = 0; i < roleCodess.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"RoleCodes." + (i + 1) , roleCodess[i]);
-				}
 			}
 		}
 

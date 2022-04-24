@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class QueryDPUtilizationDetailResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private QueryDPUtilizationDetail_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -129,43 +129,43 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class QueryDPUtilizationDetail_DetailListItem
 			{
 
-				private long? uid;
+				private string deductedInstanceId;
 
 				private string instanceId;
 
-				private string instanceSpec;
+				private float? deductHours;
 
-				private string deductedInstanceId;
+				private long? shareUid;
+
+				private string deductDate;
+
+				private string instanceSpec;
 
 				private string deductedCommodityCode;
 
 				private string deductedProductDetail;
 
-				private string resCode;
-
-				private string deductDate;
-
-				private float? deductQuantity;
-
 				private float? deductMeasure;
-
-				private float? deductHours;
-
-				private float? deductFactorTotal;
 
 				private string region;
 
-				private long? shareUid;
+				private float? deductQuantity;
 
-				public long? Uid
+				private float? deductFactorTotal;
+
+				private string resCode;
+
+				private long? uid;
+
+				public string DeductedInstanceId
 				{
 					get
 					{
-						return uid;
+						return deductedInstanceId;
 					}
 					set	
 					{
-						uid = value;
+						deductedInstanceId = value;
 					}
 				}
 
@@ -181,6 +181,42 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				public float? DeductHours
+				{
+					get
+					{
+						return deductHours;
+					}
+					set	
+					{
+						deductHours = value;
+					}
+				}
+
+				public long? ShareUid
+				{
+					get
+					{
+						return shareUid;
+					}
+					set	
+					{
+						shareUid = value;
+					}
+				}
+
+				public string DeductDate
+				{
+					get
+					{
+						return deductDate;
+					}
+					set	
+					{
+						deductDate = value;
+					}
+				}
+
 				public string InstanceSpec
 				{
 					get
@@ -190,18 +226,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						instanceSpec = value;
-					}
-				}
-
-				public string DeductedInstanceId
-				{
-					get
-					{
-						return deductedInstanceId;
-					}
-					set	
-					{
-						deductedInstanceId = value;
 					}
 				}
 
@@ -229,42 +253,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string ResCode
-				{
-					get
-					{
-						return resCode;
-					}
-					set	
-					{
-						resCode = value;
-					}
-				}
-
-				public string DeductDate
-				{
-					get
-					{
-						return deductDate;
-					}
-					set	
-					{
-						deductDate = value;
-					}
-				}
-
-				public float? DeductQuantity
-				{
-					get
-					{
-						return deductQuantity;
-					}
-					set	
-					{
-						deductQuantity = value;
-					}
-				}
-
 				public float? DeductMeasure
 				{
 					get
@@ -274,30 +262,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						deductMeasure = value;
-					}
-				}
-
-				public float? DeductHours
-				{
-					get
-					{
-						return deductHours;
-					}
-					set	
-					{
-						deductHours = value;
-					}
-				}
-
-				public float? DeductFactorTotal
-				{
-					get
-					{
-						return deductFactorTotal;
-					}
-					set	
-					{
-						deductFactorTotal = value;
 					}
 				}
 
@@ -313,15 +277,51 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public long? ShareUid
+				public float? DeductQuantity
 				{
 					get
 					{
-						return shareUid;
+						return deductQuantity;
 					}
 					set	
 					{
-						shareUid = value;
+						deductQuantity = value;
+					}
+				}
+
+				public float? DeductFactorTotal
+				{
+					get
+					{
+						return deductFactorTotal;
+					}
+					set	
+					{
+						deductFactorTotal = value;
+					}
+				}
+
+				public string ResCode
+				{
+					get
+					{
+						return resCode;
+					}
+					set	
+					{
+						resCode = value;
+					}
+				}
+
+				public long? Uid
+				{
+					get
+					{
+						return uid;
+					}
+					set	
+					{
+						uid = value;
 					}
 				}
 			}

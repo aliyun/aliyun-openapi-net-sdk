@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -27,11 +27,11 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string code;
 
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
-
-		private string message;
 
 		private QueryFinancialAccountInfo_Data data;
 
@@ -44,6 +44,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -71,18 +83,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
 		public QueryFinancialAccountInfo_Data Data
 		{
 			get
@@ -98,27 +98,27 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class QueryFinancialAccountInfo_Data
 		{
 
-			private string userName;
+			private string memberNickName;
 
 			private bool? isFinancialAccount;
 
-			private string accountType;
+			private string memberGroupName;
 
-			private string memberNickName;
+			private string userName;
+
+			private string accountType;
 
 			private long? memberGroupId;
 
-			private string memberGroupName;
-
-			public string UserName
+			public string MemberNickName
 			{
 				get
 				{
-					return userName;
+					return memberNickName;
 				}
 				set	
 				{
-					userName = value;
+					memberNickName = value;
 				}
 			}
 
@@ -134,6 +134,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			public string MemberGroupName
+			{
+				get
+				{
+					return memberGroupName;
+				}
+				set	
+				{
+					memberGroupName = value;
+				}
+			}
+
+			public string UserName
+			{
+				get
+				{
+					return userName;
+				}
+				set	
+				{
+					userName = value;
+				}
+			}
+
 			public string AccountType
 			{
 				get
@@ -146,18 +170,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public string MemberNickName
-			{
-				get
-				{
-					return memberNickName;
-				}
-				set	
-				{
-					memberNickName = value;
-				}
-			}
-
 			public long? MemberGroupId
 			{
 				get
@@ -167,18 +179,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				set	
 				{
 					memberGroupId = value;
-				}
-			}
-
-			public string MemberGroupName
-			{
-				get
-				{
-					return memberGroupName;
-				}
-				set	
-				{
-					memberGroupName = value;
 				}
 			}
 		}

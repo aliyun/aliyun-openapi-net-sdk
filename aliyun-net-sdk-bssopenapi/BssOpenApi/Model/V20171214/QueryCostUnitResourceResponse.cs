@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,25 +25,25 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class QueryCostUnitResourceResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string code;
 
 		private string message;
 
-		private string code;
+		private string requestId;
 
 		private bool? success;
 
 		private QueryCostUnitResource_Data data;
 
-		public string RequestId
+		public string Code
 		{
 			get
 			{
-				return requestId;
+				return code;
 			}
 			set	
 			{
-				requestId = value;
+				code = value;
 			}
 		}
 
@@ -59,15 +59,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
 			}
 		}
 
@@ -98,11 +98,11 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class QueryCostUnitResource_Data
 		{
 
-			private int? totalCount;
+			private int? pageNum;
 
 			private int? pageSize;
 
-			private int? pageNum;
+			private int? totalCount;
 
 			private List<QueryCostUnitResource_ResourceInstanceList> resourceInstanceDtoList;
 
@@ -110,15 +110,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private QueryCostUnitResource_CostUnitStatisInfo costUnitStatisInfo;
 
-			public int? TotalCount
+			public int? PageNum
 			{
 				get
 				{
-					return totalCount;
+					return pageNum;
 				}
 				set	
 				{
-					totalCount = value;
+					pageNum = value;
 				}
 			}
 
@@ -134,15 +134,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public int? PageNum
+			public int? TotalCount
 			{
 				get
 				{
-					return pageNum;
+					return totalCount;
 				}
 				set	
 				{
-					pageNum = value;
+					totalCount = value;
 				}
 			}
 
@@ -185,91 +185,31 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class QueryCostUnitResource_ResourceInstanceList
 			{
 
-				private long? resourceUserId;
-
-				private string resourceTag;
-
-				private string relatedResources;
-
-				private string apportionName;
-
-				private string resourceId;
-
 				private string commodityCode;
-
-				private string resourceStatus;
-
-				private string resourceType;
 
 				private string resourceUserName;
 
-				private string resourceNick;
-
-				private string resourceGroup;
-
 				private string commodityName;
+
+				private long? resourceUserId;
+
+				private string apportionName;
 
 				private string apportionCode;
 
-				public long? ResourceUserId
-				{
-					get
-					{
-						return resourceUserId;
-					}
-					set	
-					{
-						resourceUserId = value;
-					}
-				}
+				private string resourceType;
 
-				public string ResourceTag
-				{
-					get
-					{
-						return resourceTag;
-					}
-					set	
-					{
-						resourceTag = value;
-					}
-				}
+				private string resourceNick;
 
-				public string RelatedResources
-				{
-					get
-					{
-						return relatedResources;
-					}
-					set	
-					{
-						relatedResources = value;
-					}
-				}
+				private string resourceTag;
 
-				public string ApportionName
-				{
-					get
-					{
-						return apportionName;
-					}
-					set	
-					{
-						apportionName = value;
-					}
-				}
+				private string resourceId;
 
-				public string ResourceId
-				{
-					get
-					{
-						return resourceId;
-					}
-					set	
-					{
-						resourceId = value;
-					}
-				}
+				private string resourceGroup;
+
+				private string relatedResources;
+
+				private string resourceStatus;
 
 				public string CommodityCode
 				{
@@ -280,30 +220,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						commodityCode = value;
-					}
-				}
-
-				public string ResourceStatus
-				{
-					get
-					{
-						return resourceStatus;
-					}
-					set	
-					{
-						resourceStatus = value;
-					}
-				}
-
-				public string ResourceType
-				{
-					get
-					{
-						return resourceType;
-					}
-					set	
-					{
-						resourceType = value;
 					}
 				}
 
@@ -319,6 +235,66 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				public string CommodityName
+				{
+					get
+					{
+						return commodityName;
+					}
+					set	
+					{
+						commodityName = value;
+					}
+				}
+
+				public long? ResourceUserId
+				{
+					get
+					{
+						return resourceUserId;
+					}
+					set	
+					{
+						resourceUserId = value;
+					}
+				}
+
+				public string ApportionName
+				{
+					get
+					{
+						return apportionName;
+					}
+					set	
+					{
+						apportionName = value;
+					}
+				}
+
+				public string ApportionCode
+				{
+					get
+					{
+						return apportionCode;
+					}
+					set	
+					{
+						apportionCode = value;
+					}
+				}
+
+				public string ResourceType
+				{
+					get
+					{
+						return resourceType;
+					}
+					set	
+					{
+						resourceType = value;
+					}
+				}
+
 				public string ResourceNick
 				{
 					get
@@ -328,6 +304,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						resourceNick = value;
+					}
+				}
+
+				public string ResourceTag
+				{
+					get
+					{
+						return resourceTag;
+					}
+					set	
+					{
+						resourceTag = value;
+					}
+				}
+
+				public string ResourceId
+				{
+					get
+					{
+						return resourceId;
+					}
+					set	
+					{
+						resourceId = value;
 					}
 				}
 
@@ -343,27 +343,27 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string CommodityName
+				public string RelatedResources
 				{
 					get
 					{
-						return commodityName;
+						return relatedResources;
 					}
 					set	
 					{
-						commodityName = value;
+						relatedResources = value;
 					}
 				}
 
-				public string ApportionCode
+				public string ResourceStatus
 				{
 					get
 					{
-						return apportionCode;
+						return resourceStatus;
 					}
 					set	
 					{
-						apportionCode = value;
+						resourceStatus = value;
 					}
 				}
 			}
@@ -371,25 +371,13 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class QueryCostUnitResource_CostUnit
 			{
 
-				private long? unitId;
-
 				private long? parentUnitId;
-
-				private long? ownerUid;
 
 				private string unitName;
 
-				public long? UnitId
-				{
-					get
-					{
-						return unitId;
-					}
-					set	
-					{
-						unitId = value;
-					}
-				}
+				private long? unitId;
+
+				private long? ownerUid;
 
 				public long? ParentUnitId
 				{
@@ -400,18 +388,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						parentUnitId = value;
-					}
-				}
-
-				public long? OwnerUid
-				{
-					get
-					{
-						return ownerUid;
-					}
-					set	
-					{
-						ownerUid = value;
 					}
 				}
 
@@ -426,48 +402,48 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 						unitName = value;
 					}
 				}
+
+				public long? UnitId
+				{
+					get
+					{
+						return unitId;
+					}
+					set	
+					{
+						unitId = value;
+					}
+				}
+
+				public long? OwnerUid
+				{
+					get
+					{
+						return ownerUid;
+					}
+					set	
+					{
+						ownerUid = value;
+					}
+				}
 			}
 
 			public class QueryCostUnitResource_CostUnitStatisInfo
 			{
 
-				private long? subUnitCount;
-
-				private long? totalResourceGroupCount;
-
 				private long? totalResourceCount;
-
-				private long? userCount;
 
 				private long? resourceCount;
 
 				private long? totalUserCount;
 
+				private long? subUnitCount;
+
 				private long? resourceGroupCount;
 
-				public long? SubUnitCount
-				{
-					get
-					{
-						return subUnitCount;
-					}
-					set	
-					{
-						subUnitCount = value;
-					}
-				}
+				private long? totalResourceGroupCount;
 
-				public long? TotalResourceGroupCount
-				{
-					get
-					{
-						return totalResourceGroupCount;
-					}
-					set	
-					{
-						totalResourceGroupCount = value;
-					}
-				}
+				private long? userCount;
 
 				public long? TotalResourceCount
 				{
@@ -478,18 +454,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						totalResourceCount = value;
-					}
-				}
-
-				public long? UserCount
-				{
-					get
-					{
-						return userCount;
-					}
-					set	
-					{
-						userCount = value;
 					}
 				}
 
@@ -517,6 +481,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				public long? SubUnitCount
+				{
+					get
+					{
+						return subUnitCount;
+					}
+					set	
+					{
+						subUnitCount = value;
+					}
+				}
+
 				public long? ResourceGroupCount
 				{
 					get
@@ -526,6 +502,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						resourceGroupCount = value;
+					}
+				}
+
+				public long? TotalResourceGroupCount
+				{
+					get
+					{
+						return totalResourceGroupCount;
+					}
+					set	
+					{
+						totalResourceGroupCount = value;
+					}
+				}
+
+				public long? UserCount
+				{
+					get
+					{
+						return userCount;
+					}
+					set	
+					{
+						userCount = value;
 					}
 				}
 			}

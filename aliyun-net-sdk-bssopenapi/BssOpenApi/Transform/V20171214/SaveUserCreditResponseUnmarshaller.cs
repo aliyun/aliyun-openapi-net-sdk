@@ -32,9 +32,9 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 
 			saveUserCreditResponse.HttpResponse = _ctx.HttpResponse;
 			saveUserCreditResponse.Code = _ctx.StringValue("SaveUserCredit.Code");
-			saveUserCreditResponse.Success = _ctx.BooleanValue("SaveUserCredit.Success");
-			saveUserCreditResponse.RequestId = _ctx.StringValue("SaveUserCredit.RequestId");
 			saveUserCreditResponse.Message = _ctx.StringValue("SaveUserCredit.Message");
+			saveUserCreditResponse.RequestId = _ctx.StringValue("SaveUserCredit.RequestId");
+			saveUserCreditResponse.Success = _ctx.BooleanValue("SaveUserCredit.Success");
         
 			return saveUserCreditResponse;
         }

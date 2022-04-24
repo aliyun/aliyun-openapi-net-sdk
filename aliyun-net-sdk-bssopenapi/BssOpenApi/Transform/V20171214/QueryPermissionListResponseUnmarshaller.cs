@@ -32,26 +32,26 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 
 			queryPermissionListResponse.HttpResponse = _ctx.HttpResponse;
 			queryPermissionListResponse.Code = _ctx.StringValue("QueryPermissionList.Code");
+			queryPermissionListResponse.Message = _ctx.StringValue("QueryPermissionList.Message");
 			queryPermissionListResponse.RequestId = _ctx.StringValue("QueryPermissionList.RequestId");
 			queryPermissionListResponse.Success = _ctx.BooleanValue("QueryPermissionList.Success");
-			queryPermissionListResponse.Message = _ctx.StringValue("QueryPermissionList.Message");
 
 			QueryPermissionListResponse.QueryPermissionList_Data data = new QueryPermissionListResponse.QueryPermissionList_Data();
+			data.EndTime = _ctx.StringValue("QueryPermissionList.Data.EndTime");
+			data.RelationType = _ctx.StringValue("QueryPermissionList.Data.RelationType");
+			data.StartTime = _ctx.StringValue("QueryPermissionList.Data.StartTime");
+			data.State = _ctx.StringValue("QueryPermissionList.Data.State");
 			data.MasterId = _ctx.LongValue("QueryPermissionList.Data.MasterId");
 			data.MemberId = _ctx.LongValue("QueryPermissionList.Data.MemberId");
-			data.RelationType = _ctx.StringValue("QueryPermissionList.Data.RelationType");
-			data.State = _ctx.StringValue("QueryPermissionList.Data.State");
 			data.SetupTime = _ctx.StringValue("QueryPermissionList.Data.SetupTime");
-			data.StartTime = _ctx.StringValue("QueryPermissionList.Data.StartTime");
-			data.EndTime = _ctx.StringValue("QueryPermissionList.Data.EndTime");
 
 			List<QueryPermissionListResponse.QueryPermissionList_Data.QueryPermissionList_PermissionListItem> data_permissionList = new List<QueryPermissionListResponse.QueryPermissionList_Data.QueryPermissionList_PermissionListItem>();
 			for (int i = 0; i < _ctx.Length("QueryPermissionList.Data.PermissionList.Length"); i++) {
 				QueryPermissionListResponse.QueryPermissionList_Data.QueryPermissionList_PermissionListItem permissionListItem = new QueryPermissionListResponse.QueryPermissionList_Data.QueryPermissionList_PermissionListItem();
+				permissionListItem.EndTime = _ctx.StringValue("QueryPermissionList.Data.PermissionList["+ i +"].EndTime");
+				permissionListItem.StartTime = _ctx.StringValue("QueryPermissionList.Data.PermissionList["+ i +"].StartTime");
 				permissionListItem.PermissionCode = _ctx.StringValue("QueryPermissionList.Data.PermissionList["+ i +"].PermissionCode");
 				permissionListItem.PermissionName = _ctx.StringValue("QueryPermissionList.Data.PermissionList["+ i +"].PermissionName");
-				permissionListItem.StartTime = _ctx.StringValue("QueryPermissionList.Data.PermissionList["+ i +"].StartTime");
-				permissionListItem.EndTime = _ctx.StringValue("QueryPermissionList.Data.PermissionList["+ i +"].EndTime");
 
 				data_permissionList.Add(permissionListItem);
 			}

@@ -31,10 +31,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			RenewInstanceResponse renewInstanceResponse = new RenewInstanceResponse();
 
 			renewInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			renewInstanceResponse.RequestId = _ctx.StringValue("RenewInstance.RequestId");
-			renewInstanceResponse.Success = _ctx.BooleanValue("RenewInstance.Success");
 			renewInstanceResponse.Code = _ctx.StringValue("RenewInstance.Code");
 			renewInstanceResponse.Message = _ctx.StringValue("RenewInstance.Message");
+			renewInstanceResponse.RequestId = _ctx.StringValue("RenewInstance.RequestId");
+			renewInstanceResponse.Success = _ctx.BooleanValue("RenewInstance.Success");
 
 			RenewInstanceResponse.RenewInstance_Data data = new RenewInstanceResponse.RenewInstance_Data();
 			data.OrderId = _ctx.StringValue("RenewInstance.Data.OrderId");

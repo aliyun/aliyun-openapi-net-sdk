@@ -31,11 +31,11 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			CreateResellerUserQuotaResponse createResellerUserQuotaResponse = new CreateResellerUserQuotaResponse();
 
 			createResellerUserQuotaResponse.HttpResponse = _ctx.HttpResponse;
-			createResellerUserQuotaResponse.RequestId = _ctx.StringValue("CreateResellerUserQuota.RequestId");
 			createResellerUserQuotaResponse.Code = _ctx.StringValue("CreateResellerUserQuota.Code");
 			createResellerUserQuotaResponse.Message = _ctx.StringValue("CreateResellerUserQuota.Message");
-			createResellerUserQuotaResponse.Success = _ctx.BooleanValue("CreateResellerUserQuota.Success");
 			createResellerUserQuotaResponse.Data = _ctx.BooleanValue("CreateResellerUserQuota.Data");
+			createResellerUserQuotaResponse.RequestId = _ctx.StringValue("CreateResellerUserQuota.RequestId");
+			createResellerUserQuotaResponse.Success = _ctx.BooleanValue("CreateResellerUserQuota.Success");
         
 			return createResellerUserQuotaResponse;
         }

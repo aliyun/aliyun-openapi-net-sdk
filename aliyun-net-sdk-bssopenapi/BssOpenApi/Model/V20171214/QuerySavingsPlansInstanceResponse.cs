@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -27,11 +27,11 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string code;
 
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
-
-		private string message;
 
 		private QuerySavingsPlansInstance_Data data;
 
@@ -44,6 +44,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -68,18 +80,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 
@@ -157,35 +157,117 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class QuerySavingsPlansInstance_SavingsPlansDetailResponse
 			{
 
-				private string instanceId;
+				private string status;
+
+				private string cycle;
+
+				private long? startTimestamp;
 
 				private string savingsType;
+
+				private string utilization;
+
+				private string prepayFee;
+
+				private string instanceId;
+
+				private string currency;
+
+				private long? endTimestamp;
+
+				private string endTime;
+
+				private string startTime;
+
+				private string allocationStatus;
 
 				private string instanceFamily;
 
 				private string region;
 
-				private string poolValue;
+				private string lastBillTotalUsage;
 
-				private string currency;
-
-				private string status;
-
-				private string startTime;
-
-				private string endTime;
-
-				private string payMode;
-
-				private string prepayFee;
+				private string lastBillUtilization;
 
 				private string totalSave;
 
-				private string utilization;
+				private string poolValue;
 
-				private string allocationStatus;
+				private string payMode;
 
 				private List<QuerySavingsPlansInstance_Tag> tags;
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string Cycle
+				{
+					get
+					{
+						return cycle;
+					}
+					set	
+					{
+						cycle = value;
+					}
+				}
+
+				public long? StartTimestamp
+				{
+					get
+					{
+						return startTimestamp;
+					}
+					set	
+					{
+						startTimestamp = value;
+					}
+				}
+
+				public string SavingsType
+				{
+					get
+					{
+						return savingsType;
+					}
+					set	
+					{
+						savingsType = value;
+					}
+				}
+
+				public string Utilization
+				{
+					get
+					{
+						return utilization;
+					}
+					set	
+					{
+						utilization = value;
+					}
+				}
+
+				public string PrepayFee
+				{
+					get
+					{
+						return prepayFee;
+					}
+					set	
+					{
+						prepayFee = value;
+					}
+				}
 
 				public string InstanceId
 				{
@@ -199,15 +281,63 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string SavingsType
+				public string Currency
 				{
 					get
 					{
-						return savingsType;
+						return currency;
 					}
 					set	
 					{
-						savingsType = value;
+						currency = value;
+					}
+				}
+
+				public long? EndTimestamp
+				{
+					get
+					{
+						return endTimestamp;
+					}
+					set	
+					{
+						endTimestamp = value;
+					}
+				}
+
+				public string EndTime
+				{
+					get
+					{
+						return endTime;
+					}
+					set	
+					{
+						endTime = value;
+					}
+				}
+
+				public string StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
+					}
+				}
+
+				public string AllocationStatus
+				{
+					get
+					{
+						return allocationStatus;
+					}
+					set	
+					{
+						allocationStatus = value;
 					}
 				}
 
@@ -235,87 +365,27 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string PoolValue
+				public string LastBillTotalUsage
 				{
 					get
 					{
-						return poolValue;
+						return lastBillTotalUsage;
 					}
 					set	
 					{
-						poolValue = value;
+						lastBillTotalUsage = value;
 					}
 				}
 
-				public string Currency
+				public string LastBillUtilization
 				{
 					get
 					{
-						return currency;
+						return lastBillUtilization;
 					}
 					set	
 					{
-						currency = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				public string StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
-					}
-				}
-
-				public string EndTime
-				{
-					get
-					{
-						return endTime;
-					}
-					set	
-					{
-						endTime = value;
-					}
-				}
-
-				public string PayMode
-				{
-					get
-					{
-						return payMode;
-					}
-					set	
-					{
-						payMode = value;
-					}
-				}
-
-				public string PrepayFee
-				{
-					get
-					{
-						return prepayFee;
-					}
-					set	
-					{
-						prepayFee = value;
+						lastBillUtilization = value;
 					}
 				}
 
@@ -331,27 +401,27 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string Utilization
+				public string PoolValue
 				{
 					get
 					{
-						return utilization;
+						return poolValue;
 					}
 					set	
 					{
-						utilization = value;
+						poolValue = value;
 					}
 				}
 
-				public string AllocationStatus
+				public string PayMode
 				{
 					get
 					{
-						return allocationStatus;
+						return payMode;
 					}
 					set	
 					{
-						allocationStatus = value;
+						payMode = value;
 					}
 				}
 

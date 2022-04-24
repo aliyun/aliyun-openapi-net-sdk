@@ -51,6 +51,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private int? pageNum;
 
+		private bool? includePartner;
+
 		private int? pageSize;
 
 		public string ExpiryTimeEnd
@@ -115,6 +117,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public bool? IncludePartner
+		{
+			get
+			{
+				return includePartner;
+			}
+			set	
+			{
+				includePartner = value;
+				DictionaryUtil.Add(QueryParameters, "IncludePartner", value.ToString());
 			}
 		}
 

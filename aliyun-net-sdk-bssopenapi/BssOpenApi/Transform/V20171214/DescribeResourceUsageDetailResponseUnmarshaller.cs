@@ -31,42 +31,42 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			DescribeResourceUsageDetailResponse describeResourceUsageDetailResponse = new DescribeResourceUsageDetailResponse();
 
 			describeResourceUsageDetailResponse.HttpResponse = _ctx.HttpResponse;
-			describeResourceUsageDetailResponse.RequestId = _ctx.StringValue("DescribeResourceUsageDetail.RequestId");
-			describeResourceUsageDetailResponse.Success = _ctx.BooleanValue("DescribeResourceUsageDetail.Success");
 			describeResourceUsageDetailResponse.Code = _ctx.StringValue("DescribeResourceUsageDetail.Code");
 			describeResourceUsageDetailResponse.Message = _ctx.StringValue("DescribeResourceUsageDetail.Message");
+			describeResourceUsageDetailResponse.RequestId = _ctx.StringValue("DescribeResourceUsageDetail.RequestId");
+			describeResourceUsageDetailResponse.Success = _ctx.BooleanValue("DescribeResourceUsageDetail.Success");
 
 			DescribeResourceUsageDetailResponse.DescribeResourceUsageDetail_Data data = new DescribeResourceUsageDetailResponse.DescribeResourceUsageDetail_Data();
-			data.TotalCount = _ctx.IntegerValue("DescribeResourceUsageDetail.Data.TotalCount");
 			data.NextToken = _ctx.StringValue("DescribeResourceUsageDetail.Data.NextToken");
+			data.TotalCount = _ctx.IntegerValue("DescribeResourceUsageDetail.Data.TotalCount");
 			data.MaxResults = _ctx.IntegerValue("DescribeResourceUsageDetail.Data.MaxResults");
 
 			List<DescribeResourceUsageDetailResponse.DescribeResourceUsageDetail_Data.DescribeResourceUsageDetail_Item> data_items = new List<DescribeResourceUsageDetailResponse.DescribeResourceUsageDetail_Data.DescribeResourceUsageDetail_Item>();
 			for (int i = 0; i < _ctx.Length("DescribeResourceUsageDetail.Data.Items.Length"); i++) {
 				DescribeResourceUsageDetailResponse.DescribeResourceUsageDetail_Data.DescribeResourceUsageDetail_Item item = new DescribeResourceUsageDetailResponse.DescribeResourceUsageDetail_Data.DescribeResourceUsageDetail_Item();
-				item.UserId = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].UserId");
-				item.UserName = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].UserName");
-				item.ResourceInstanceId = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].ResourceInstanceId");
-				item.StartTime = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].StartTime");
-				item.EndTime = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].EndTime");
 				item.Status = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].Status");
-				item.StatusName = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].StatusName");
-				item.Region = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].Region");
+				item.UsagePercentage = _ctx.FloatValue("DescribeResourceUsageDetail.Data.Items["+ i +"].UsagePercentage");
+				item.ResourceInstanceId = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].ResourceInstanceId");
+				item.TotalQuantity = _ctx.FloatValue("DescribeResourceUsageDetail.Data.Items["+ i +"].TotalQuantity");
+				item.ReservationCost = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].ReservationCost");
 				item.RegionNo = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].RegionNo");
-				item.Zone = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].Zone");
+				item.UserId = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].UserId");
+				item.StatusName = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].StatusName");
+				item.CapacityUnit = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].CapacityUnit");
+				item.PotentialSavedCost = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].PotentialSavedCost");
+				item.Currency = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].Currency");
 				item.ZoneName = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].ZoneName");
 				item.InstanceSpec = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].InstanceSpec");
-				item.Quantity = _ctx.LongValue("DescribeResourceUsageDetail.Data.Items["+ i +"].Quantity");
-				item.ImageType = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].ImageType");
-				item.UsagePercentage = _ctx.FloatValue("DescribeResourceUsageDetail.Data.Items["+ i +"].UsagePercentage");
-				item.DeductQuantity = _ctx.FloatValue("DescribeResourceUsageDetail.Data.Items["+ i +"].DeductQuantity");
-				item.TotalQuantity = _ctx.FloatValue("DescribeResourceUsageDetail.Data.Items["+ i +"].TotalQuantity");
-				item.CapacityUnit = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].CapacityUnit");
-				item.Currency = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].Currency");
-				item.ReservationCost = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].ReservationCost");
+				item.EndTime = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].EndTime");
 				item.PostpaidCost = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].PostpaidCost");
+				item.ImageType = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].ImageType");
+				item.StartTime = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].StartTime");
+				item.Region = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].Region");
+				item.DeductQuantity = _ctx.FloatValue("DescribeResourceUsageDetail.Data.Items["+ i +"].DeductQuantity");
 				item.SavedCost = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].SavedCost");
-				item.PotentialSavedCost = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].PotentialSavedCost");
+				item.Zone = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].Zone");
+				item.UserName = _ctx.StringValue("DescribeResourceUsageDetail.Data.Items["+ i +"].UserName");
+				item.Quantity = _ctx.LongValue("DescribeResourceUsageDetail.Data.Items["+ i +"].Quantity");
 
 				data_items.Add(item);
 			}

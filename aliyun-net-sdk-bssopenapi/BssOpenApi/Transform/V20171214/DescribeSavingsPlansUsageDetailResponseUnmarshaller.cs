@@ -31,10 +31,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			DescribeSavingsPlansUsageDetailResponse describeSavingsPlansUsageDetailResponse = new DescribeSavingsPlansUsageDetailResponse();
 
 			describeSavingsPlansUsageDetailResponse.HttpResponse = _ctx.HttpResponse;
-			describeSavingsPlansUsageDetailResponse.RequestId = _ctx.StringValue("DescribeSavingsPlansUsageDetail.RequestId");
-			describeSavingsPlansUsageDetailResponse.Success = _ctx.BooleanValue("DescribeSavingsPlansUsageDetail.Success");
 			describeSavingsPlansUsageDetailResponse.Code = _ctx.StringValue("DescribeSavingsPlansUsageDetail.Code");
 			describeSavingsPlansUsageDetailResponse.Message = _ctx.StringValue("DescribeSavingsPlansUsageDetail.Message");
+			describeSavingsPlansUsageDetailResponse.RequestId = _ctx.StringValue("DescribeSavingsPlansUsageDetail.RequestId");
+			describeSavingsPlansUsageDetailResponse.Success = _ctx.BooleanValue("DescribeSavingsPlansUsageDetail.Success");
 
 			DescribeSavingsPlansUsageDetailResponse.DescribeSavingsPlansUsageDetail_Data data = new DescribeSavingsPlansUsageDetailResponse.DescribeSavingsPlansUsageDetail_Data();
 			data.TotalCount = _ctx.IntegerValue("DescribeSavingsPlansUsageDetail.Data.TotalCount");
@@ -43,19 +43,19 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			List<DescribeSavingsPlansUsageDetailResponse.DescribeSavingsPlansUsageDetail_Data.DescribeSavingsPlansUsageDetail_Item> data_items = new List<DescribeSavingsPlansUsageDetailResponse.DescribeSavingsPlansUsageDetail_Data.DescribeSavingsPlansUsageDetail_Item>();
 			for (int i = 0; i < _ctx.Length("DescribeSavingsPlansUsageDetail.Data.Items.Length"); i++) {
 				DescribeSavingsPlansUsageDetailResponse.DescribeSavingsPlansUsageDetail_Data.DescribeSavingsPlansUsageDetail_Item item = new DescribeSavingsPlansUsageDetailResponse.DescribeSavingsPlansUsageDetail_Data.DescribeSavingsPlansUsageDetail_Item();
-				item.UserId = _ctx.LongValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].UserId");
-				item.UserName = _ctx.StringValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].UserName");
-				item.InstanceId = _ctx.StringValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].InstanceId");
-				item.StartPeriod = _ctx.StringValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].StartPeriod");
-				item.EndPeriod = _ctx.StringValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].EndPeriod");
 				item.Status = _ctx.StringValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].Status");
 				item.Type = _ctx.StringValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].Type");
 				item.UsagePercentage = _ctx.FloatValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].UsagePercentage");
-				item.PoolValue = _ctx.FloatValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].PoolValue");
-				item.DeductValue = _ctx.FloatValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].DeductValue");
-				item.PostpaidCost = _ctx.FloatValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].PostpaidCost");
-				item.SavedCost = _ctx.FloatValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].SavedCost");
+				item.UserId = _ctx.LongValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].UserId");
+				item.InstanceId = _ctx.StringValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].InstanceId");
 				item.Currency = _ctx.StringValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].Currency");
+				item.PostpaidCost = _ctx.FloatValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].PostpaidCost");
+				item.DeductValue = _ctx.FloatValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].DeductValue");
+				item.StartPeriod = _ctx.StringValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].StartPeriod");
+				item.SavedCost = _ctx.FloatValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].SavedCost");
+				item.PoolValue = _ctx.FloatValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].PoolValue");
+				item.UserName = _ctx.StringValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].UserName");
+				item.EndPeriod = _ctx.StringValue("DescribeSavingsPlansUsageDetail.Data.Items["+ i +"].EndPeriod");
 
 				data_items.Add(item);
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class ModifyInstanceResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private ModifyInstance_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public ModifyInstance_Data Data
 		{
 			get
@@ -98,21 +98,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class ModifyInstance_Data
 		{
 
-			private string hostId;
-
 			private string orderId;
 
-			public string HostId
-			{
-				get
-				{
-					return hostId;
-				}
-				set	
-				{
-					hostId = value;
-				}
-			}
+			private string hostId;
 
 			public string OrderId
 			{
@@ -123,6 +111,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				set	
 				{
 					orderId = value;
+				}
+			}
+
+			public string HostId
+			{
+				get
+				{
+					return hostId;
+				}
+				set	
+				{
+					hostId = value;
 				}
 			}
 		}

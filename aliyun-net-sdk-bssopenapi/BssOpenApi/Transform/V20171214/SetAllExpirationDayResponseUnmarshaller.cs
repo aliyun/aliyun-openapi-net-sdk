@@ -31,10 +31,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			SetAllExpirationDayResponse setAllExpirationDayResponse = new SetAllExpirationDayResponse();
 
 			setAllExpirationDayResponse.HttpResponse = _ctx.HttpResponse;
-			setAllExpirationDayResponse.RequestId = _ctx.StringValue("SetAllExpirationDay.RequestId");
-			setAllExpirationDayResponse.Success = _ctx.BooleanValue("SetAllExpirationDay.Success");
 			setAllExpirationDayResponse.Code = _ctx.StringValue("SetAllExpirationDay.Code");
 			setAllExpirationDayResponse.Message = _ctx.StringValue("SetAllExpirationDay.Message");
+			setAllExpirationDayResponse.RequestId = _ctx.StringValue("SetAllExpirationDay.RequestId");
+			setAllExpirationDayResponse.Success = _ctx.BooleanValue("SetAllExpirationDay.Success");
         
 			return setAllExpirationDayResponse;
         }

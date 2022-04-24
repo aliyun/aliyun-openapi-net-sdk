@@ -43,17 +43,23 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private int? pageNum;
 
+		private string transactionType;
+
 		private string createTimeEnd;
 
 		private string recordID;
 
 		private int? pageSize;
 
+		private string transactionChannel;
+
 		private string transactionChannelSN;
 
 		private string createTimeStart;
 
 		private string transactionNumber;
+
+		private string transactionFlow;
 
 		public int? PageNum
 		{
@@ -65,6 +71,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public string TransactionType
+		{
+			get
+			{
+				return transactionType;
+			}
+			set	
+			{
+				transactionType = value;
+				DictionaryUtil.Add(QueryParameters, "TransactionType", value);
 			}
 		}
 
@@ -107,6 +126,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public string TransactionChannel
+		{
+			get
+			{
+				return transactionChannel;
+			}
+			set	
+			{
+				transactionChannel = value;
+				DictionaryUtil.Add(QueryParameters, "TransactionChannel", value);
+			}
+		}
+
 		public string TransactionChannelSN
 		{
 			get
@@ -143,6 +175,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				transactionNumber = value;
 				DictionaryUtil.Add(QueryParameters, "TransactionNumber", value);
+			}
+		}
+
+		public string TransactionFlow
+		{
+			get
+			{
+				return transactionFlow;
+			}
+			set	
+			{
+				transactionFlow = value;
+				DictionaryUtil.Add(QueryParameters, "TransactionFlow", value);
 			}
 		}
 

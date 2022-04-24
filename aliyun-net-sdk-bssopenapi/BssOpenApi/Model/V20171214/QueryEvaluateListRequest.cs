@@ -183,10 +183,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set
 			{
 				bizTypeLists = value;
-				for (int i = 0; i < bizTypeLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"BizTypeList." + (i + 1) , bizTypeLists[i]);
-				}
 			}
 		}
 

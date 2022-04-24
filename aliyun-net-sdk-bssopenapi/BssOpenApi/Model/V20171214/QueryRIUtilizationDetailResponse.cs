@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class QueryRIUtilizationDetailResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private QueryRIUtilizationDetail_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -157,23 +157,107 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class QueryRIUtilizationDetail_DetailListItem
 			{
 
+				private string deductedCommodityCode;
+
+				private string deductedProductDetail;
+
+				private string deductedInstanceId;
+
+				private float? deductFactorTotal;
+
+				private float? deductQuantity;
+
+				private string deductHours;
+
+				private string deductDate;
+
 				private string rIInstanceId;
 
 				private string instanceSpec;
 
-				private string deductedInstanceId;
+				public string DeductedCommodityCode
+				{
+					get
+					{
+						return deductedCommodityCode;
+					}
+					set	
+					{
+						deductedCommodityCode = value;
+					}
+				}
 
-				private string deductedCommodityCode;
+				public string DeductedProductDetail
+				{
+					get
+					{
+						return deductedProductDetail;
+					}
+					set	
+					{
+						deductedProductDetail = value;
+					}
+				}
 
-				private string deductDate;
+				public string DeductedInstanceId
+				{
+					get
+					{
+						return deductedInstanceId;
+					}
+					set	
+					{
+						deductedInstanceId = value;
+					}
+				}
 
-				private string deductHours;
+				public float? DeductFactorTotal
+				{
+					get
+					{
+						return deductFactorTotal;
+					}
+					set	
+					{
+						deductFactorTotal = value;
+					}
+				}
 
-				private string deductedProductDetail;
+				public float? DeductQuantity
+				{
+					get
+					{
+						return deductQuantity;
+					}
+					set	
+					{
+						deductQuantity = value;
+					}
+				}
 
-				private float? deductQuantity;
+				public string DeductHours
+				{
+					get
+					{
+						return deductHours;
+					}
+					set	
+					{
+						deductHours = value;
+					}
+				}
 
-				private float? deductFactorTotal;
+				public string DeductDate
+				{
+					get
+					{
+						return deductDate;
+					}
+					set	
+					{
+						deductDate = value;
+					}
+				}
 
 				public string RIInstanceId
 				{
@@ -196,90 +280,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						instanceSpec = value;
-					}
-				}
-
-				public string DeductedInstanceId
-				{
-					get
-					{
-						return deductedInstanceId;
-					}
-					set	
-					{
-						deductedInstanceId = value;
-					}
-				}
-
-				public string DeductedCommodityCode
-				{
-					get
-					{
-						return deductedCommodityCode;
-					}
-					set	
-					{
-						deductedCommodityCode = value;
-					}
-				}
-
-				public string DeductDate
-				{
-					get
-					{
-						return deductDate;
-					}
-					set	
-					{
-						deductDate = value;
-					}
-				}
-
-				public string DeductHours
-				{
-					get
-					{
-						return deductHours;
-					}
-					set	
-					{
-						deductHours = value;
-					}
-				}
-
-				public string DeductedProductDetail
-				{
-					get
-					{
-						return deductedProductDetail;
-					}
-					set	
-					{
-						deductedProductDetail = value;
-					}
-				}
-
-				public float? DeductQuantity
-				{
-					get
-					{
-						return deductQuantity;
-					}
-					set	
-					{
-						deductQuantity = value;
-					}
-				}
-
-				public float? DeductFactorTotal
-				{
-					get
-					{
-						return deductFactorTotal;
-					}
-					set	
-					{
-						deductFactorTotal = value;
 					}
 				}
 			}

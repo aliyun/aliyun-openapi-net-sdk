@@ -31,10 +31,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			QueryRIUtilizationDetailResponse queryRIUtilizationDetailResponse = new QueryRIUtilizationDetailResponse();
 
 			queryRIUtilizationDetailResponse.HttpResponse = _ctx.HttpResponse;
-			queryRIUtilizationDetailResponse.RequestId = _ctx.StringValue("QueryRIUtilizationDetail.RequestId");
-			queryRIUtilizationDetailResponse.Success = _ctx.BooleanValue("QueryRIUtilizationDetail.Success");
 			queryRIUtilizationDetailResponse.Code = _ctx.StringValue("QueryRIUtilizationDetail.Code");
 			queryRIUtilizationDetailResponse.Message = _ctx.StringValue("QueryRIUtilizationDetail.Message");
+			queryRIUtilizationDetailResponse.RequestId = _ctx.StringValue("QueryRIUtilizationDetail.RequestId");
+			queryRIUtilizationDetailResponse.Success = _ctx.BooleanValue("QueryRIUtilizationDetail.Success");
 
 			QueryRIUtilizationDetailResponse.QueryRIUtilizationDetail_Data data = new QueryRIUtilizationDetailResponse.QueryRIUtilizationDetail_Data();
 			data.PageNum = _ctx.LongValue("QueryRIUtilizationDetail.Data.PageNum");
@@ -44,15 +44,15 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			List<QueryRIUtilizationDetailResponse.QueryRIUtilizationDetail_Data.QueryRIUtilizationDetail_DetailListItem> data_detailList = new List<QueryRIUtilizationDetailResponse.QueryRIUtilizationDetail_Data.QueryRIUtilizationDetail_DetailListItem>();
 			for (int i = 0; i < _ctx.Length("QueryRIUtilizationDetail.Data.DetailList.Length"); i++) {
 				QueryRIUtilizationDetailResponse.QueryRIUtilizationDetail_Data.QueryRIUtilizationDetail_DetailListItem detailListItem = new QueryRIUtilizationDetailResponse.QueryRIUtilizationDetail_Data.QueryRIUtilizationDetail_DetailListItem();
+				detailListItem.DeductedCommodityCode = _ctx.StringValue("QueryRIUtilizationDetail.Data.DetailList["+ i +"].DeductedCommodityCode");
+				detailListItem.DeductedProductDetail = _ctx.StringValue("QueryRIUtilizationDetail.Data.DetailList["+ i +"].DeductedProductDetail");
+				detailListItem.DeductedInstanceId = _ctx.StringValue("QueryRIUtilizationDetail.Data.DetailList["+ i +"].DeductedInstanceId");
+				detailListItem.DeductFactorTotal = _ctx.FloatValue("QueryRIUtilizationDetail.Data.DetailList["+ i +"].DeductFactorTotal");
+				detailListItem.DeductQuantity = _ctx.FloatValue("QueryRIUtilizationDetail.Data.DetailList["+ i +"].DeductQuantity");
+				detailListItem.DeductHours = _ctx.StringValue("QueryRIUtilizationDetail.Data.DetailList["+ i +"].DeductHours");
+				detailListItem.DeductDate = _ctx.StringValue("QueryRIUtilizationDetail.Data.DetailList["+ i +"].DeductDate");
 				detailListItem.RIInstanceId = _ctx.StringValue("QueryRIUtilizationDetail.Data.DetailList["+ i +"].RIInstanceId");
 				detailListItem.InstanceSpec = _ctx.StringValue("QueryRIUtilizationDetail.Data.DetailList["+ i +"].InstanceSpec");
-				detailListItem.DeductedInstanceId = _ctx.StringValue("QueryRIUtilizationDetail.Data.DetailList["+ i +"].DeductedInstanceId");
-				detailListItem.DeductedCommodityCode = _ctx.StringValue("QueryRIUtilizationDetail.Data.DetailList["+ i +"].DeductedCommodityCode");
-				detailListItem.DeductDate = _ctx.StringValue("QueryRIUtilizationDetail.Data.DetailList["+ i +"].DeductDate");
-				detailListItem.DeductHours = _ctx.StringValue("QueryRIUtilizationDetail.Data.DetailList["+ i +"].DeductHours");
-				detailListItem.DeductedProductDetail = _ctx.StringValue("QueryRIUtilizationDetail.Data.DetailList["+ i +"].DeductedProductDetail");
-				detailListItem.DeductQuantity = _ctx.FloatValue("QueryRIUtilizationDetail.Data.DetailList["+ i +"].DeductQuantity");
-				detailListItem.DeductFactorTotal = _ctx.FloatValue("QueryRIUtilizationDetail.Data.DetailList["+ i +"].DeductFactorTotal");
 
 				data_detailList.Add(detailListItem);
 			}

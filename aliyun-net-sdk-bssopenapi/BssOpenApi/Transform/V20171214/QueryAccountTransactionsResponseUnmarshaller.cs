@@ -31,33 +31,33 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			QueryAccountTransactionsResponse queryAccountTransactionsResponse = new QueryAccountTransactionsResponse();
 
 			queryAccountTransactionsResponse.HttpResponse = _ctx.HttpResponse;
-			queryAccountTransactionsResponse.RequestId = _ctx.StringValue("QueryAccountTransactions.RequestId");
-			queryAccountTransactionsResponse.Success = _ctx.BooleanValue("QueryAccountTransactions.Success");
 			queryAccountTransactionsResponse.Code = _ctx.StringValue("QueryAccountTransactions.Code");
 			queryAccountTransactionsResponse.Message = _ctx.StringValue("QueryAccountTransactions.Message");
+			queryAccountTransactionsResponse.RequestId = _ctx.StringValue("QueryAccountTransactions.RequestId");
+			queryAccountTransactionsResponse.Success = _ctx.BooleanValue("QueryAccountTransactions.Success");
 
 			QueryAccountTransactionsResponse.QueryAccountTransactions_Data data = new QueryAccountTransactionsResponse.QueryAccountTransactions_Data();
-			data.AccountName = _ctx.StringValue("QueryAccountTransactions.Data.AccountName");
-			data.TotalCount = _ctx.IntegerValue("QueryAccountTransactions.Data.TotalCount");
 			data.PageNum = _ctx.IntegerValue("QueryAccountTransactions.Data.PageNum");
 			data.PageSize = _ctx.IntegerValue("QueryAccountTransactions.Data.PageSize");
+			data.TotalCount = _ctx.IntegerValue("QueryAccountTransactions.Data.TotalCount");
+			data.AccountName = _ctx.StringValue("QueryAccountTransactions.Data.AccountName");
 
 			List<QueryAccountTransactionsResponse.QueryAccountTransactions_Data.QueryAccountTransactions_AccountTransactionsListItem> data_accountTransactionsList = new List<QueryAccountTransactionsResponse.QueryAccountTransactions_Data.QueryAccountTransactions_AccountTransactionsListItem>();
 			for (int i = 0; i < _ctx.Length("QueryAccountTransactions.Data.AccountTransactionsList.Length"); i++) {
 				QueryAccountTransactionsResponse.QueryAccountTransactions_Data.QueryAccountTransactions_AccountTransactionsListItem accountTransactionsListItem = new QueryAccountTransactionsResponse.QueryAccountTransactions_Data.QueryAccountTransactions_AccountTransactionsListItem();
-				accountTransactionsListItem.TransactionNumber = _ctx.StringValue("QueryAccountTransactions.Data.AccountTransactionsList["+ i +"].TransactionNumber");
-				accountTransactionsListItem.TransactionTime = _ctx.StringValue("QueryAccountTransactions.Data.AccountTransactionsList["+ i +"].TransactionTime");
-				accountTransactionsListItem.TransactionFlow = _ctx.StringValue("QueryAccountTransactions.Data.AccountTransactionsList["+ i +"].TransactionFlow");
-				accountTransactionsListItem.TransactionType = _ctx.StringValue("QueryAccountTransactions.Data.AccountTransactionsList["+ i +"].TransactionType");
+				accountTransactionsListItem.BillingCycle = _ctx.StringValue("QueryAccountTransactions.Data.AccountTransactionsList["+ i +"].BillingCycle");
 				accountTransactionsListItem.TransactionChannel = _ctx.StringValue("QueryAccountTransactions.Data.AccountTransactionsList["+ i +"].TransactionChannel");
-				accountTransactionsListItem.TransactionChannelSN = _ctx.StringValue("QueryAccountTransactions.Data.AccountTransactionsList["+ i +"].TransactionChannelSN");
-				accountTransactionsListItem.FundType = _ctx.StringValue("QueryAccountTransactions.Data.AccountTransactionsList["+ i +"].FundType");
 				accountTransactionsListItem.RecordID = _ctx.StringValue("QueryAccountTransactions.Data.AccountTransactionsList["+ i +"].RecordID");
 				accountTransactionsListItem.Remarks = _ctx.StringValue("QueryAccountTransactions.Data.AccountTransactionsList["+ i +"].Remarks");
-				accountTransactionsListItem.BillingCycle = _ctx.StringValue("QueryAccountTransactions.Data.AccountTransactionsList["+ i +"].BillingCycle");
 				accountTransactionsListItem.Amount = _ctx.StringValue("QueryAccountTransactions.Data.AccountTransactionsList["+ i +"].Amount");
-				accountTransactionsListItem.Balance = _ctx.StringValue("QueryAccountTransactions.Data.AccountTransactionsList["+ i +"].Balance");
 				accountTransactionsListItem.TransactionAccount = _ctx.StringValue("QueryAccountTransactions.Data.AccountTransactionsList["+ i +"].TransactionAccount");
+				accountTransactionsListItem.TransactionTime = _ctx.StringValue("QueryAccountTransactions.Data.AccountTransactionsList["+ i +"].TransactionTime");
+				accountTransactionsListItem.TransactionType = _ctx.StringValue("QueryAccountTransactions.Data.AccountTransactionsList["+ i +"].TransactionType");
+				accountTransactionsListItem.TransactionFlow = _ctx.StringValue("QueryAccountTransactions.Data.AccountTransactionsList["+ i +"].TransactionFlow");
+				accountTransactionsListItem.FundType = _ctx.StringValue("QueryAccountTransactions.Data.AccountTransactionsList["+ i +"].FundType");
+				accountTransactionsListItem.TransactionChannelSN = _ctx.StringValue("QueryAccountTransactions.Data.AccountTransactionsList["+ i +"].TransactionChannelSN");
+				accountTransactionsListItem.TransactionNumber = _ctx.StringValue("QueryAccountTransactions.Data.AccountTransactionsList["+ i +"].TransactionNumber");
+				accountTransactionsListItem.Balance = _ctx.StringValue("QueryAccountTransactions.Data.AccountTransactionsList["+ i +"].Balance");
 
 				data_accountTransactionsList.Add(accountTransactionsListItem);
 			}

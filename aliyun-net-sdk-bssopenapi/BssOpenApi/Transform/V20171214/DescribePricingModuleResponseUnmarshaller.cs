@@ -31,20 +31,20 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			DescribePricingModuleResponse describePricingModuleResponse = new DescribePricingModuleResponse();
 
 			describePricingModuleResponse.HttpResponse = _ctx.HttpResponse;
-			describePricingModuleResponse.RequestId = _ctx.StringValue("DescribePricingModule.RequestId");
-			describePricingModuleResponse.Success = _ctx.BooleanValue("DescribePricingModule.Success");
 			describePricingModuleResponse.Code = _ctx.StringValue("DescribePricingModule.Code");
 			describePricingModuleResponse.Message = _ctx.StringValue("DescribePricingModule.Message");
+			describePricingModuleResponse.RequestId = _ctx.StringValue("DescribePricingModule.RequestId");
+			describePricingModuleResponse.Success = _ctx.BooleanValue("DescribePricingModule.Success");
 
 			DescribePricingModuleResponse.DescribePricingModule_Data data = new DescribePricingModuleResponse.DescribePricingModule_Data();
 
 			List<DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Module> data_moduleList = new List<DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Module>();
 			for (int i = 0; i < _ctx.Length("DescribePricingModule.Data.ModuleList.Length"); i++) {
 				DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Module module = new DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Module();
-				module.ModuleCode = _ctx.StringValue("DescribePricingModule.Data.ModuleList["+ i +"].ModuleCode");
 				module.ModuleName = _ctx.StringValue("DescribePricingModule.Data.ModuleList["+ i +"].ModuleName");
 				module.PriceType = _ctx.StringValue("DescribePricingModule.Data.ModuleList["+ i +"].PriceType");
 				module.Currency = _ctx.StringValue("DescribePricingModule.Data.ModuleList["+ i +"].Currency");
+				module.ModuleCode = _ctx.StringValue("DescribePricingModule.Data.ModuleList["+ i +"].ModuleCode");
 
 				List<string> module_configList = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribePricingModule.Data.ModuleList["+ i +"].ConfigList.Length"); j++) {
@@ -67,9 +67,9 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				for (int j = 0; j < _ctx.Length("DescribePricingModule.Data.AttributeList["+ i +"].Values.Length"); j++) {
 					DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Attribute.DescribePricingModule_AttributeValue attributeValue = new DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Attribute.DescribePricingModule_AttributeValue();
 					attributeValue.Type = _ctx.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"].Type");
-					attributeValue.Name = _ctx.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"].Name");
 					attributeValue._Value = _ctx.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"].Value");
 					attributeValue.Remark = _ctx.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"].Remark");
+					attributeValue.Name = _ctx.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"].Name");
 
 					attribute_values.Add(attributeValue);
 				}

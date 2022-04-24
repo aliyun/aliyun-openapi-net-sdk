@@ -31,10 +31,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			DescribeSavingsPlansCoverageTotalResponse describeSavingsPlansCoverageTotalResponse = new DescribeSavingsPlansCoverageTotalResponse();
 
 			describeSavingsPlansCoverageTotalResponse.HttpResponse = _ctx.HttpResponse;
-			describeSavingsPlansCoverageTotalResponse.RequestId = _ctx.StringValue("DescribeSavingsPlansCoverageTotal.RequestId");
-			describeSavingsPlansCoverageTotalResponse.Success = _ctx.BooleanValue("DescribeSavingsPlansCoverageTotal.Success");
 			describeSavingsPlansCoverageTotalResponse.Code = _ctx.StringValue("DescribeSavingsPlansCoverageTotal.Code");
 			describeSavingsPlansCoverageTotalResponse.Message = _ctx.StringValue("DescribeSavingsPlansCoverageTotal.Message");
+			describeSavingsPlansCoverageTotalResponse.RequestId = _ctx.StringValue("DescribeSavingsPlansCoverageTotal.RequestId");
+			describeSavingsPlansCoverageTotalResponse.Success = _ctx.BooleanValue("DescribeSavingsPlansCoverageTotal.Success");
 
 			DescribeSavingsPlansCoverageTotalResponse.DescribeSavingsPlansCoverageTotal_Data data = new DescribeSavingsPlansCoverageTotalResponse.DescribeSavingsPlansCoverageTotal_Data();
 
@@ -46,8 +46,8 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			List<DescribeSavingsPlansCoverageTotalResponse.DescribeSavingsPlansCoverageTotal_Data.DescribeSavingsPlansCoverageTotal_Item> data_periodCoverage = new List<DescribeSavingsPlansCoverageTotalResponse.DescribeSavingsPlansCoverageTotal_Data.DescribeSavingsPlansCoverageTotal_Item>();
 			for (int i = 0; i < _ctx.Length("DescribeSavingsPlansCoverageTotal.Data.PeriodCoverage.Length"); i++) {
 				DescribeSavingsPlansCoverageTotalResponse.DescribeSavingsPlansCoverageTotal_Data.DescribeSavingsPlansCoverageTotal_Item item = new DescribeSavingsPlansCoverageTotalResponse.DescribeSavingsPlansCoverageTotal_Data.DescribeSavingsPlansCoverageTotal_Item();
-				item.Period = _ctx.StringValue("DescribeSavingsPlansCoverageTotal.Data.PeriodCoverage["+ i +"].Period");
 				item.Percentage = _ctx.FloatValue("DescribeSavingsPlansCoverageTotal.Data.PeriodCoverage["+ i +"].Percentage");
+				item.Period = _ctx.StringValue("DescribeSavingsPlansCoverageTotal.Data.PeriodCoverage["+ i +"].Period");
 
 				data_periodCoverage.Add(item);
 			}

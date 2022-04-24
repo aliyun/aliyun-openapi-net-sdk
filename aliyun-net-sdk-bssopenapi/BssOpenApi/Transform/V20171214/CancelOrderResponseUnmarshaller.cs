@@ -31,10 +31,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			CancelOrderResponse cancelOrderResponse = new CancelOrderResponse();
 
 			cancelOrderResponse.HttpResponse = _ctx.HttpResponse;
-			cancelOrderResponse.RequestId = _ctx.StringValue("CancelOrder.RequestId");
-			cancelOrderResponse.Success = _ctx.BooleanValue("CancelOrder.Success");
 			cancelOrderResponse.Code = _ctx.StringValue("CancelOrder.Code");
 			cancelOrderResponse.Message = _ctx.StringValue("CancelOrder.Message");
+			cancelOrderResponse.RequestId = _ctx.StringValue("CancelOrder.RequestId");
+			cancelOrderResponse.Success = _ctx.BooleanValue("CancelOrder.Success");
 
 			CancelOrderResponse.CancelOrder_Data data = new CancelOrderResponse.CancelOrder_Data();
 			data.HostId = _ctx.StringValue("CancelOrder.Data.HostId");

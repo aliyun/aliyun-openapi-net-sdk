@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class DescribeSavingsPlansCoverageDetailResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private DescribeSavingsPlansCoverageDetail_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -145,25 +145,25 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private long? userId;
 
-				private string userName;
-
 				private string instanceId;
-
-				private string region;
-
-				private string instanceSpec;
 
 				private string currency;
 
-				private float? coveragePercentage;
-
-				private float? deductAmount;
-
-				private float? totalAmount;
+				private string instanceSpec;
 
 				private float? postpaidCost;
 
+				private float? coveragePercentage;
+
+				private string region;
+
+				private float? deductAmount;
+
 				private string startPeriod;
+
+				private float? totalAmount;
+
+				private string userName;
 
 				private string endPeriod;
 
@@ -179,18 +179,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string UserName
-				{
-					get
-					{
-						return userName;
-					}
-					set	
-					{
-						userName = value;
-					}
-				}
-
 				public string InstanceId
 				{
 					get
@@ -200,30 +188,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						instanceId = value;
-					}
-				}
-
-				public string Region
-				{
-					get
-					{
-						return region;
-					}
-					set	
-					{
-						region = value;
-					}
-				}
-
-				public string InstanceSpec
-				{
-					get
-					{
-						return instanceSpec;
-					}
-					set	
-					{
-						instanceSpec = value;
 					}
 				}
 
@@ -239,39 +203,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public float? CoveragePercentage
+				public string InstanceSpec
 				{
 					get
 					{
-						return coveragePercentage;
+						return instanceSpec;
 					}
 					set	
 					{
-						coveragePercentage = value;
-					}
-				}
-
-				public float? DeductAmount
-				{
-					get
-					{
-						return deductAmount;
-					}
-					set	
-					{
-						deductAmount = value;
-					}
-				}
-
-				public float? TotalAmount
-				{
-					get
-					{
-						return totalAmount;
-					}
-					set	
-					{
-						totalAmount = value;
+						instanceSpec = value;
 					}
 				}
 
@@ -287,6 +227,42 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				public float? CoveragePercentage
+				{
+					get
+					{
+						return coveragePercentage;
+					}
+					set	
+					{
+						coveragePercentage = value;
+					}
+				}
+
+				public string Region
+				{
+					get
+					{
+						return region;
+					}
+					set	
+					{
+						region = value;
+					}
+				}
+
+				public float? DeductAmount
+				{
+					get
+					{
+						return deductAmount;
+					}
+					set	
+					{
+						deductAmount = value;
+					}
+				}
+
 				public string StartPeriod
 				{
 					get
@@ -296,6 +272,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						startPeriod = value;
+					}
+				}
+
+				public float? TotalAmount
+				{
+					get
+					{
+						return totalAmount;
+					}
+					set	
+					{
+						totalAmount = value;
+					}
+				}
+
+				public string UserName
+				{
+					get
+					{
+						return userName;
+					}
+					set	
+					{
+						userName = value;
 					}
 				}
 

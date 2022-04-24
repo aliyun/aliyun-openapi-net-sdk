@@ -31,25 +31,25 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			DescribeResourceCoverageTotalResponse describeResourceCoverageTotalResponse = new DescribeResourceCoverageTotalResponse();
 
 			describeResourceCoverageTotalResponse.HttpResponse = _ctx.HttpResponse;
-			describeResourceCoverageTotalResponse.RequestId = _ctx.StringValue("DescribeResourceCoverageTotal.RequestId");
-			describeResourceCoverageTotalResponse.Success = _ctx.BooleanValue("DescribeResourceCoverageTotal.Success");
 			describeResourceCoverageTotalResponse.Code = _ctx.StringValue("DescribeResourceCoverageTotal.Code");
 			describeResourceCoverageTotalResponse.Message = _ctx.StringValue("DescribeResourceCoverageTotal.Message");
+			describeResourceCoverageTotalResponse.RequestId = _ctx.StringValue("DescribeResourceCoverageTotal.RequestId");
+			describeResourceCoverageTotalResponse.Success = _ctx.BooleanValue("DescribeResourceCoverageTotal.Success");
 
 			DescribeResourceCoverageTotalResponse.DescribeResourceCoverageTotal_Data data = new DescribeResourceCoverageTotalResponse.DescribeResourceCoverageTotal_Data();
 
 			DescribeResourceCoverageTotalResponse.DescribeResourceCoverageTotal_Data.DescribeResourceCoverageTotal_TotalCoverage totalCoverage = new DescribeResourceCoverageTotalResponse.DescribeResourceCoverageTotal_Data.DescribeResourceCoverageTotal_TotalCoverage();
-			totalCoverage.CoveragePercentage = _ctx.FloatValue("DescribeResourceCoverageTotal.Data.TotalCoverage.CoveragePercentage");
-			totalCoverage.DeductQuantity = _ctx.FloatValue("DescribeResourceCoverageTotal.Data.TotalCoverage.DeductQuantity");
-			totalCoverage.TotalQuantity = _ctx.FloatValue("DescribeResourceCoverageTotal.Data.TotalCoverage.TotalQuantity");
 			totalCoverage.CapacityUnit = _ctx.StringValue("DescribeResourceCoverageTotal.Data.TotalCoverage.CapacityUnit");
+			totalCoverage.DeductQuantity = _ctx.FloatValue("DescribeResourceCoverageTotal.Data.TotalCoverage.DeductQuantity");
+			totalCoverage.CoveragePercentage = _ctx.FloatValue("DescribeResourceCoverageTotal.Data.TotalCoverage.CoveragePercentage");
+			totalCoverage.TotalQuantity = _ctx.FloatValue("DescribeResourceCoverageTotal.Data.TotalCoverage.TotalQuantity");
 			data.TotalCoverage = totalCoverage;
 
 			List<DescribeResourceCoverageTotalResponse.DescribeResourceCoverageTotal_Data.DescribeResourceCoverageTotal_Item> data_periodCoverage = new List<DescribeResourceCoverageTotalResponse.DescribeResourceCoverageTotal_Data.DescribeResourceCoverageTotal_Item>();
 			for (int i = 0; i < _ctx.Length("DescribeResourceCoverageTotal.Data.PeriodCoverage.Length"); i++) {
 				DescribeResourceCoverageTotalResponse.DescribeResourceCoverageTotal_Data.DescribeResourceCoverageTotal_Item item = new DescribeResourceCoverageTotalResponse.DescribeResourceCoverageTotal_Data.DescribeResourceCoverageTotal_Item();
-				item.Period = _ctx.StringValue("DescribeResourceCoverageTotal.Data.PeriodCoverage["+ i +"].Period");
 				item.CoveragePercentage = _ctx.FloatValue("DescribeResourceCoverageTotal.Data.PeriodCoverage["+ i +"].CoveragePercentage");
+				item.Period = _ctx.StringValue("DescribeResourceCoverageTotal.Data.PeriodCoverage["+ i +"].Period");
 
 				data_periodCoverage.Add(item);
 			}

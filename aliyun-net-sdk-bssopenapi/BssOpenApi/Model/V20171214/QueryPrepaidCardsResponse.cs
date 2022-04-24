@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class QueryPrepaidCardsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private List<QueryPrepaidCards_PrepaidCard> data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public List<QueryPrepaidCards_PrepaidCard> Data
 		{
 			get
@@ -98,71 +98,35 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class QueryPrepaidCards_PrepaidCard
 		{
 
-			private long? prepaidCardId;
-
-			private string prepaidCardNo;
-
-			private string grantedTime;
-
-			private string effectiveTime;
+			private string status;
 
 			private string expiryTime;
 
-			private string applicableProducts;
-
-			private string applicableScenarios;
+			private string grantedTime;
 
 			private string nominalValue;
 
+			private string effectiveTime;
+
+			private string prepaidCardNo;
+
+			private string applicableScenarios;
+
+			private long? prepaidCardId;
+
+			private string applicableProducts;
+
 			private string balance;
 
-			private string status;
-
-			public long? PrepaidCardId
+			public string Status
 			{
 				get
 				{
-					return prepaidCardId;
+					return status;
 				}
 				set	
 				{
-					prepaidCardId = value;
-				}
-			}
-
-			public string PrepaidCardNo
-			{
-				get
-				{
-					return prepaidCardNo;
-				}
-				set	
-				{
-					prepaidCardNo = value;
-				}
-			}
-
-			public string GrantedTime
-			{
-				get
-				{
-					return grantedTime;
-				}
-				set	
-				{
-					grantedTime = value;
-				}
-			}
-
-			public string EffectiveTime
-			{
-				get
-				{
-					return effectiveTime;
-				}
-				set	
-				{
-					effectiveTime = value;
+					status = value;
 				}
 			}
 
@@ -178,27 +142,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public string ApplicableProducts
+			public string GrantedTime
 			{
 				get
 				{
-					return applicableProducts;
+					return grantedTime;
 				}
 				set	
 				{
-					applicableProducts = value;
-				}
-			}
-
-			public string ApplicableScenarios
-			{
-				get
-				{
-					return applicableScenarios;
-				}
-				set	
-				{
-					applicableScenarios = value;
+					grantedTime = value;
 				}
 			}
 
@@ -214,6 +166,66 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
+			public string EffectiveTime
+			{
+				get
+				{
+					return effectiveTime;
+				}
+				set	
+				{
+					effectiveTime = value;
+				}
+			}
+
+			public string PrepaidCardNo
+			{
+				get
+				{
+					return prepaidCardNo;
+				}
+				set	
+				{
+					prepaidCardNo = value;
+				}
+			}
+
+			public string ApplicableScenarios
+			{
+				get
+				{
+					return applicableScenarios;
+				}
+				set	
+				{
+					applicableScenarios = value;
+				}
+			}
+
+			public long? PrepaidCardId
+			{
+				get
+				{
+					return prepaidCardId;
+				}
+				set	
+				{
+					prepaidCardId = value;
+				}
+			}
+
+			public string ApplicableProducts
+			{
+				get
+				{
+					return applicableProducts;
+				}
+				set	
+				{
+					applicableProducts = value;
+				}
+			}
+
 			public string Balance
 			{
 				get
@@ -223,18 +235,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				set	
 				{
 					balance = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
 				}
 			}
 		}

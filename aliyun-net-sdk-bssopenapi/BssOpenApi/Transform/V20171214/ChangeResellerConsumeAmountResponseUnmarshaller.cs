@@ -31,11 +31,11 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			ChangeResellerConsumeAmountResponse changeResellerConsumeAmountResponse = new ChangeResellerConsumeAmountResponse();
 
 			changeResellerConsumeAmountResponse.HttpResponse = _ctx.HttpResponse;
-			changeResellerConsumeAmountResponse.RequestId = _ctx.StringValue("ChangeResellerConsumeAmount.RequestId");
 			changeResellerConsumeAmountResponse.Code = _ctx.StringValue("ChangeResellerConsumeAmount.Code");
 			changeResellerConsumeAmountResponse.Message = _ctx.StringValue("ChangeResellerConsumeAmount.Message");
-			changeResellerConsumeAmountResponse.Success = _ctx.BooleanValue("ChangeResellerConsumeAmount.Success");
 			changeResellerConsumeAmountResponse.Data = _ctx.StringValue("ChangeResellerConsumeAmount.Data");
+			changeResellerConsumeAmountResponse.RequestId = _ctx.StringValue("ChangeResellerConsumeAmount.RequestId");
+			changeResellerConsumeAmountResponse.Success = _ctx.BooleanValue("ChangeResellerConsumeAmount.Success");
         
 			return changeResellerConsumeAmountResponse;
         }

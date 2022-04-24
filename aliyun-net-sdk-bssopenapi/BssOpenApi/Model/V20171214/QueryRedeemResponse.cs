@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class QueryRedeemResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private QueryRedeem_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -157,25 +157,97 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class QueryRedeem_RedeemItem
 			{
 
+				private string expiryTime;
+
+				private string grantedTime;
+
+				private string status;
+
+				private string specification;
+
+				private string nominalValue;
+
+				private string effectiveTime;
+
 				private string redeemId;
 
 				private string redeemNo;
 
-				private string status;
-
-				private string grantedTime;
-
-				private string effectiveTime;
-
-				private string expiryTime;
-
-				private string nominalValue;
+				private string applicableProducts;
 
 				private string balance;
 
-				private string applicableProducts;
+				public string ExpiryTime
+				{
+					get
+					{
+						return expiryTime;
+					}
+					set	
+					{
+						expiryTime = value;
+					}
+				}
 
-				private string specification;
+				public string GrantedTime
+				{
+					get
+					{
+						return grantedTime;
+					}
+					set	
+					{
+						grantedTime = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string Specification
+				{
+					get
+					{
+						return specification;
+					}
+					set	
+					{
+						specification = value;
+					}
+				}
+
+				public string NominalValue
+				{
+					get
+					{
+						return nominalValue;
+					}
+					set	
+					{
+						nominalValue = value;
+					}
+				}
+
+				public string EffectiveTime
+				{
+					get
+					{
+						return effectiveTime;
+					}
+					set	
+					{
+						effectiveTime = value;
+					}
+				}
 
 				public string RedeemId
 				{
@@ -201,78 +273,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				public string GrantedTime
-				{
-					get
-					{
-						return grantedTime;
-					}
-					set	
-					{
-						grantedTime = value;
-					}
-				}
-
-				public string EffectiveTime
-				{
-					get
-					{
-						return effectiveTime;
-					}
-					set	
-					{
-						effectiveTime = value;
-					}
-				}
-
-				public string ExpiryTime
-				{
-					get
-					{
-						return expiryTime;
-					}
-					set	
-					{
-						expiryTime = value;
-					}
-				}
-
-				public string NominalValue
-				{
-					get
-					{
-						return nominalValue;
-					}
-					set	
-					{
-						nominalValue = value;
-					}
-				}
-
-				public string Balance
-				{
-					get
-					{
-						return balance;
-					}
-					set	
-					{
-						balance = value;
-					}
-				}
-
 				public string ApplicableProducts
 				{
 					get
@@ -285,15 +285,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string Specification
+				public string Balance
 				{
 					get
 					{
-						return specification;
+						return balance;
 					}
 					set	
 					{
-						specification = value;
+						balance = value;
 					}
 				}
 			}

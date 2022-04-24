@@ -32,9 +32,9 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 
 			querySavingsPlansInstanceResponse.HttpResponse = _ctx.HttpResponse;
 			querySavingsPlansInstanceResponse.Code = _ctx.StringValue("QuerySavingsPlansInstance.Code");
+			querySavingsPlansInstanceResponse.Message = _ctx.StringValue("QuerySavingsPlansInstance.Message");
 			querySavingsPlansInstanceResponse.RequestId = _ctx.StringValue("QuerySavingsPlansInstance.RequestId");
 			querySavingsPlansInstanceResponse.Success = _ctx.BooleanValue("QuerySavingsPlansInstance.Success");
-			querySavingsPlansInstanceResponse.Message = _ctx.StringValue("QuerySavingsPlansInstance.Message");
 
 			QuerySavingsPlansInstanceResponse.QuerySavingsPlansInstance_Data data = new QuerySavingsPlansInstanceResponse.QuerySavingsPlansInstance_Data();
 			data.PageNum = _ctx.IntegerValue("QuerySavingsPlansInstance.Data.PageNum");
@@ -44,20 +44,25 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			List<QuerySavingsPlansInstanceResponse.QuerySavingsPlansInstance_Data.QuerySavingsPlansInstance_SavingsPlansDetailResponse> data_items = new List<QuerySavingsPlansInstanceResponse.QuerySavingsPlansInstance_Data.QuerySavingsPlansInstance_SavingsPlansDetailResponse>();
 			for (int i = 0; i < _ctx.Length("QuerySavingsPlansInstance.Data.Items.Length"); i++) {
 				QuerySavingsPlansInstanceResponse.QuerySavingsPlansInstance_Data.QuerySavingsPlansInstance_SavingsPlansDetailResponse savingsPlansDetailResponse = new QuerySavingsPlansInstanceResponse.QuerySavingsPlansInstance_Data.QuerySavingsPlansInstance_SavingsPlansDetailResponse();
-				savingsPlansDetailResponse.InstanceId = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].InstanceId");
+				savingsPlansDetailResponse.Status = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].Status");
+				savingsPlansDetailResponse.Cycle = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].Cycle");
+				savingsPlansDetailResponse.StartTimestamp = _ctx.LongValue("QuerySavingsPlansInstance.Data.Items["+ i +"].StartTimestamp");
 				savingsPlansDetailResponse.SavingsType = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].SavingsType");
+				savingsPlansDetailResponse.Utilization = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].Utilization");
+				savingsPlansDetailResponse.PrepayFee = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].PrepayFee");
+				savingsPlansDetailResponse.InstanceId = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].InstanceId");
+				savingsPlansDetailResponse.Currency = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].Currency");
+				savingsPlansDetailResponse.EndTimestamp = _ctx.LongValue("QuerySavingsPlansInstance.Data.Items["+ i +"].EndTimestamp");
+				savingsPlansDetailResponse.EndTime = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].EndTime");
+				savingsPlansDetailResponse.StartTime = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].StartTime");
+				savingsPlansDetailResponse.AllocationStatus = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].AllocationStatus");
 				savingsPlansDetailResponse.InstanceFamily = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].InstanceFamily");
 				savingsPlansDetailResponse.Region = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].Region");
-				savingsPlansDetailResponse.PoolValue = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].PoolValue");
-				savingsPlansDetailResponse.Currency = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].Currency");
-				savingsPlansDetailResponse.Status = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].Status");
-				savingsPlansDetailResponse.StartTime = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].StartTime");
-				savingsPlansDetailResponse.EndTime = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].EndTime");
-				savingsPlansDetailResponse.PayMode = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].PayMode");
-				savingsPlansDetailResponse.PrepayFee = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].PrepayFee");
+				savingsPlansDetailResponse.LastBillTotalUsage = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].LastBillTotalUsage");
+				savingsPlansDetailResponse.LastBillUtilization = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].LastBillUtilization");
 				savingsPlansDetailResponse.TotalSave = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].TotalSave");
-				savingsPlansDetailResponse.Utilization = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].Utilization");
-				savingsPlansDetailResponse.AllocationStatus = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].AllocationStatus");
+				savingsPlansDetailResponse.PoolValue = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].PoolValue");
+				savingsPlansDetailResponse.PayMode = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].PayMode");
 
 				List<QuerySavingsPlansInstanceResponse.QuerySavingsPlansInstance_Data.QuerySavingsPlansInstance_SavingsPlansDetailResponse.QuerySavingsPlansInstance_Tag> savingsPlansDetailResponse_tags = new List<QuerySavingsPlansInstanceResponse.QuerySavingsPlansInstance_Data.QuerySavingsPlansInstance_SavingsPlansDetailResponse.QuerySavingsPlansInstance_Tag>();
 				for (int j = 0; j < _ctx.Length("QuerySavingsPlansInstance.Data.Items["+ i +"].Tags.Length"); j++) {

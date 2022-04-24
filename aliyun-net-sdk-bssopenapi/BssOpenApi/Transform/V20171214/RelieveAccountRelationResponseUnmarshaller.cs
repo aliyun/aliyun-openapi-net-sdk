@@ -32,9 +32,9 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 
 			relieveAccountRelationResponse.HttpResponse = _ctx.HttpResponse;
 			relieveAccountRelationResponse.Code = _ctx.StringValue("RelieveAccountRelation.Code");
+			relieveAccountRelationResponse.Message = _ctx.StringValue("RelieveAccountRelation.Message");
 			relieveAccountRelationResponse.RequestId = _ctx.StringValue("RelieveAccountRelation.RequestId");
 			relieveAccountRelationResponse.Success = _ctx.BooleanValue("RelieveAccountRelation.Success");
-			relieveAccountRelationResponse.Message = _ctx.StringValue("RelieveAccountRelation.Message");
 
 			RelieveAccountRelationResponse.RelieveAccountRelation_Data data = new RelieveAccountRelationResponse.RelieveAccountRelation_Data();
 			data.HostId = _ctx.StringValue("RelieveAccountRelation.Data.HostId");

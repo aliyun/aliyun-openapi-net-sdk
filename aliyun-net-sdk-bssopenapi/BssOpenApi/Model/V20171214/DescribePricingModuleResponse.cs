@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class DescribePricingModuleResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private DescribePricingModule_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -129,27 +129,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class DescribePricingModule_Module
 			{
 
-				private string moduleCode;
-
 				private string moduleName;
 
 				private string priceType;
 
 				private string currency;
 
-				private List<string> configList;
+				private string moduleCode;
 
-				public string ModuleCode
-				{
-					get
-					{
-						return moduleCode;
-					}
-					set	
-					{
-						moduleCode = value;
-					}
-				}
+				private List<string> configList;
 
 				public string ModuleName
 				{
@@ -184,6 +172,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						currency = value;
+					}
+				}
+
+				public string ModuleCode
+				{
+					get
+					{
+						return moduleCode;
+					}
+					set	
+					{
+						moduleCode = value;
 					}
 				}
 
@@ -264,11 +264,11 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 					private string type;
 
-					private string name;
-
 					private string _value;
 
 					private string remark;
+
+					private string name;
 
 					public string Type
 					{
@@ -279,18 +279,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 						set	
 						{
 							type = value;
-						}
-					}
-
-					public string Name
-					{
-						get
-						{
-							return name;
-						}
-						set	
-						{
-							name = value;
 						}
 					}
 
@@ -315,6 +303,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 						set	
 						{
 							remark = value;
+						}
+					}
+
+					public string Name
+					{
+						get
+						{
+							return name;
+						}
+						set	
+						{
+							name = value;
 						}
 					}
 				}

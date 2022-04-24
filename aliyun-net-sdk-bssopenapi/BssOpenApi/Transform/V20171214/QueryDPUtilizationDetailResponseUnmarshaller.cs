@@ -31,10 +31,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			QueryDPUtilizationDetailResponse queryDPUtilizationDetailResponse = new QueryDPUtilizationDetailResponse();
 
 			queryDPUtilizationDetailResponse.HttpResponse = _ctx.HttpResponse;
-			queryDPUtilizationDetailResponse.RequestId = _ctx.StringValue("QueryDPUtilizationDetail.RequestId");
-			queryDPUtilizationDetailResponse.Success = _ctx.BooleanValue("QueryDPUtilizationDetail.Success");
 			queryDPUtilizationDetailResponse.Code = _ctx.StringValue("QueryDPUtilizationDetail.Code");
 			queryDPUtilizationDetailResponse.Message = _ctx.StringValue("QueryDPUtilizationDetail.Message");
+			queryDPUtilizationDetailResponse.RequestId = _ctx.StringValue("QueryDPUtilizationDetail.RequestId");
+			queryDPUtilizationDetailResponse.Success = _ctx.BooleanValue("QueryDPUtilizationDetail.Success");
 
 			QueryDPUtilizationDetailResponse.QueryDPUtilizationDetail_Data data = new QueryDPUtilizationDetailResponse.QueryDPUtilizationDetail_Data();
 			data.NextToken = _ctx.StringValue("QueryDPUtilizationDetail.Data.NextToken");
@@ -42,20 +42,20 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			List<QueryDPUtilizationDetailResponse.QueryDPUtilizationDetail_Data.QueryDPUtilizationDetail_DetailListItem> data_detailList = new List<QueryDPUtilizationDetailResponse.QueryDPUtilizationDetail_Data.QueryDPUtilizationDetail_DetailListItem>();
 			for (int i = 0; i < _ctx.Length("QueryDPUtilizationDetail.Data.DetailList.Length"); i++) {
 				QueryDPUtilizationDetailResponse.QueryDPUtilizationDetail_Data.QueryDPUtilizationDetail_DetailListItem detailListItem = new QueryDPUtilizationDetailResponse.QueryDPUtilizationDetail_Data.QueryDPUtilizationDetail_DetailListItem();
-				detailListItem.Uid = _ctx.LongValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].Uid");
-				detailListItem.InstanceId = _ctx.StringValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].InstanceId");
-				detailListItem.InstanceSpec = _ctx.StringValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].InstanceSpec");
 				detailListItem.DeductedInstanceId = _ctx.StringValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].DeductedInstanceId");
+				detailListItem.InstanceId = _ctx.StringValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].InstanceId");
+				detailListItem.DeductHours = _ctx.FloatValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].DeductHours");
+				detailListItem.ShareUid = _ctx.LongValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].ShareUid");
+				detailListItem.DeductDate = _ctx.StringValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].DeductDate");
+				detailListItem.InstanceSpec = _ctx.StringValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].InstanceSpec");
 				detailListItem.DeductedCommodityCode = _ctx.StringValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].DeductedCommodityCode");
 				detailListItem.DeductedProductDetail = _ctx.StringValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].DeductedProductDetail");
-				detailListItem.ResCode = _ctx.StringValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].ResCode");
-				detailListItem.DeductDate = _ctx.StringValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].DeductDate");
-				detailListItem.DeductQuantity = _ctx.FloatValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].DeductQuantity");
 				detailListItem.DeductMeasure = _ctx.FloatValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].DeductMeasure");
-				detailListItem.DeductHours = _ctx.FloatValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].DeductHours");
-				detailListItem.DeductFactorTotal = _ctx.FloatValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].DeductFactorTotal");
 				detailListItem.Region = _ctx.StringValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].Region");
-				detailListItem.ShareUid = _ctx.LongValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].ShareUid");
+				detailListItem.DeductQuantity = _ctx.FloatValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].DeductQuantity");
+				detailListItem.DeductFactorTotal = _ctx.FloatValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].DeductFactorTotal");
+				detailListItem.ResCode = _ctx.StringValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].ResCode");
+				detailListItem.Uid = _ctx.LongValue("QueryDPUtilizationDetail.Data.DetailList["+ i +"].Uid");
 
 				data_detailList.Add(detailListItem);
 			}

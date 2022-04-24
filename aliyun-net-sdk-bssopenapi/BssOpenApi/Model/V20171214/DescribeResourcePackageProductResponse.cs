@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,53 +25,17 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class DescribeResourcePackageProductResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private long? orderId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
+		private long? orderId;
+
 		private DescribeResourcePackageProduct_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public long? OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -94,6 +58,42 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public long? OrderId
+		{
+			get
+			{
+				return orderId;
+			}
+			set	
+			{
+				orderId = value;
 			}
 		}
 
@@ -129,25 +129,13 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class DescribeResourcePackageProduct_ResourcePackage
 			{
 
-				private string productCode;
-
 				private string productType;
 
 				private string name;
 
-				private List<DescribeResourcePackageProduct_PackageType> packageTypes;
+				private string productCode;
 
-				public string ProductCode
-				{
-					get
-					{
-						return productCode;
-					}
-					set	
-					{
-						productCode = value;
-					}
-				}
+				private List<DescribeResourcePackageProduct_PackageType> packageTypes;
 
 				public string ProductType
 				{
@@ -173,6 +161,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				public string ProductCode
+				{
+					get
+					{
+						return productCode;
+					}
+					set	
+					{
+						productCode = value;
+					}
+				}
+
 				public List<DescribeResourcePackageProduct_PackageType> PackageTypes
 				{
 					get
@@ -188,25 +188,13 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				public class DescribeResourcePackageProduct_PackageType
 				{
 
-					private string name;
-
 					private string code;
+
+					private string name;
 
 					private List<DescribeResourcePackageProduct_Property> properties;
 
 					private List<DescribeResourcePackageProduct_Specification> specifications;
-
-					public string Name
-					{
-						get
-						{
-							return name;
-						}
-						set	
-						{
-							name = value;
-						}
-					}
 
 					public string Code
 					{
@@ -217,6 +205,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 						set	
 						{
 							code = value;
+						}
+					}
+
+					public string Name
+					{
+						get
+						{
+							return name;
+						}
+						set	
+						{
+							name = value;
 						}
 					}
 
@@ -324,23 +324,11 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 						public class DescribeResourcePackageProduct_AvailableDuration
 						{
 
-							private string name;
-
 							private int? _value;
 
-							private string unit;
+							private string name;
 
-							public string Name
-							{
-								get
-								{
-									return name;
-								}
-								set	
-								{
-									name = value;
-								}
-							}
+							private string unit;
 
 							public int? _Value
 							{
@@ -351,6 +339,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 								set	
 								{
 									_value = value;
+								}
+							}
+
+							public string Name
+							{
+								get
+								{
+									return name;
+								}
+								set	
+								{
+									name = value;
 								}
 							}
 

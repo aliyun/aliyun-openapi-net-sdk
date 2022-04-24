@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class QueryMonthlyInstanceConsumptionResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private QueryMonthlyInstanceConsumption_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public QueryMonthlyInstanceConsumption_Data Data
 		{
 			get
@@ -100,11 +100,11 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private int? pageNum;
 
+			private string billingCycle;
+
 			private int? pageSize;
 
 			private int? totalCount;
-
-			private string billingCycle;
 
 			private List<QueryMonthlyInstanceConsumption_Item> items;
 
@@ -117,6 +117,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				set	
 				{
 					pageNum = value;
+				}
+			}
+
+			public string BillingCycle
+			{
+				get
+				{
+					return billingCycle;
+				}
+				set	
+				{
+					billingCycle = value;
 				}
 			}
 
@@ -144,18 +156,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public string BillingCycle
-			{
-				get
-				{
-					return billingCycle;
-				}
-				set	
-				{
-					billingCycle = value;
-				}
-			}
-
 			public List<QueryMonthlyInstanceConsumption_Item> Items
 			{
 				get
@@ -171,157 +171,49 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class QueryMonthlyInstanceConsumption_Item
 			{
 
-				private string instanceID;
-
-				private string productCode;
-
-				private string productType;
-
-				private string subscriptionType;
-
-				private string tag;
-
-				private string resourceGroup;
-
-				private string payerAccount;
-
-				private string ownerID;
-
-				private string region;
-
-				private float? pretaxGrossAmount;
+				private float? pretaxAmount;
 
 				private float? discountAmount;
 
-				private float? pretaxAmount;
+				private string payerAccount;
+
+				private string tag;
+
+				private string instanceID;
 
 				private string currency;
 
-				private float? pretaxAmountLocal;
-
-				private float? tax;
-
-				private float? afterTaxAmount;
+				private string subscriptionType;
 
 				private string paymentCurrency;
 
-				public string InstanceID
-				{
-					get
-					{
-						return instanceID;
-					}
-					set	
-					{
-						instanceID = value;
-					}
-				}
+				private string ownerID;
 
-				public string ProductCode
-				{
-					get
-					{
-						return productCode;
-					}
-					set	
-					{
-						productCode = value;
-					}
-				}
+				private string productType;
 
-				public string ProductType
-				{
-					get
-					{
-						return productType;
-					}
-					set	
-					{
-						productType = value;
-					}
-				}
+				private string region;
 
-				public string SubscriptionType
-				{
-					get
-					{
-						return subscriptionType;
-					}
-					set	
-					{
-						subscriptionType = value;
-					}
-				}
+				private float? afterTaxAmount;
 
-				public string Tag
-				{
-					get
-					{
-						return tag;
-					}
-					set	
-					{
-						tag = value;
-					}
-				}
+				private float? pretaxGrossAmount;
 
-				public string ResourceGroup
-				{
-					get
-					{
-						return resourceGroup;
-					}
-					set	
-					{
-						resourceGroup = value;
-					}
-				}
+				private string resourceGroup;
 
-				public string PayerAccount
-				{
-					get
-					{
-						return payerAccount;
-					}
-					set	
-					{
-						payerAccount = value;
-					}
-				}
+				private float? tax;
 
-				public string OwnerID
-				{
-					get
-					{
-						return ownerID;
-					}
-					set	
-					{
-						ownerID = value;
-					}
-				}
+				private float? pretaxAmountLocal;
 
-				public string Region
-				{
-					get
-					{
-						return region;
-					}
-					set	
-					{
-						region = value;
-					}
-				}
+				private string productCode;
 
-				public float? PretaxGrossAmount
+				public float? PretaxAmount
 				{
 					get
 					{
-						return pretaxGrossAmount;
+						return pretaxAmount;
 					}
 					set	
 					{
-						pretaxGrossAmount = value;
+						pretaxAmount = value;
 					}
 				}
 
@@ -337,15 +229,39 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public float? PretaxAmount
+				public string PayerAccount
 				{
 					get
 					{
-						return pretaxAmount;
+						return payerAccount;
 					}
 					set	
 					{
-						pretaxAmount = value;
+						payerAccount = value;
+					}
+				}
+
+				public string Tag
+				{
+					get
+					{
+						return tag;
+					}
+					set	
+					{
+						tag = value;
+					}
+				}
+
+				public string InstanceID
+				{
+					get
+					{
+						return instanceID;
+					}
+					set	
+					{
+						instanceID = value;
 					}
 				}
 
@@ -361,27 +277,63 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public float? PretaxAmountLocal
+				public string SubscriptionType
 				{
 					get
 					{
-						return pretaxAmountLocal;
+						return subscriptionType;
 					}
 					set	
 					{
-						pretaxAmountLocal = value;
+						subscriptionType = value;
 					}
 				}
 
-				public float? Tax
+				public string PaymentCurrency
 				{
 					get
 					{
-						return tax;
+						return paymentCurrency;
 					}
 					set	
 					{
-						tax = value;
+						paymentCurrency = value;
+					}
+				}
+
+				public string OwnerID
+				{
+					get
+					{
+						return ownerID;
+					}
+					set	
+					{
+						ownerID = value;
+					}
+				}
+
+				public string ProductType
+				{
+					get
+					{
+						return productType;
+					}
+					set	
+					{
+						productType = value;
+					}
+				}
+
+				public string Region
+				{
+					get
+					{
+						return region;
+					}
+					set	
+					{
+						region = value;
 					}
 				}
 
@@ -397,15 +349,63 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string PaymentCurrency
+				public float? PretaxGrossAmount
 				{
 					get
 					{
-						return paymentCurrency;
+						return pretaxGrossAmount;
 					}
 					set	
 					{
-						paymentCurrency = value;
+						pretaxGrossAmount = value;
+					}
+				}
+
+				public string ResourceGroup
+				{
+					get
+					{
+						return resourceGroup;
+					}
+					set	
+					{
+						resourceGroup = value;
+					}
+				}
+
+				public float? Tax
+				{
+					get
+					{
+						return tax;
+					}
+					set	
+					{
+						tax = value;
+					}
+				}
+
+				public float? PretaxAmountLocal
+				{
+					get
+					{
+						return pretaxAmountLocal;
+					}
+					set	
+					{
+						pretaxAmountLocal = value;
+					}
+				}
+
+				public string ProductCode
+				{
+					get
+					{
+						return productCode;
+					}
+					set	
+					{
+						productCode = value;
 					}
 				}
 			}

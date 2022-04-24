@@ -31,10 +31,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			QueryUserOmsDataResponse queryUserOmsDataResponse = new QueryUserOmsDataResponse();
 
 			queryUserOmsDataResponse.HttpResponse = _ctx.HttpResponse;
-			queryUserOmsDataResponse.RequestId = _ctx.StringValue("QueryUserOmsData.RequestId");
-			queryUserOmsDataResponse.Success = _ctx.BooleanValue("QueryUserOmsData.Success");
 			queryUserOmsDataResponse.Code = _ctx.StringValue("QueryUserOmsData.Code");
 			queryUserOmsDataResponse.Message = _ctx.StringValue("QueryUserOmsData.Message");
+			queryUserOmsDataResponse.RequestId = _ctx.StringValue("QueryUserOmsData.RequestId");
+			queryUserOmsDataResponse.Success = _ctx.BooleanValue("QueryUserOmsData.Success");
 
 			QueryUserOmsDataResponse.QueryUserOmsData_Data data = new QueryUserOmsDataResponse.QueryUserOmsData_Data();
 			data.Marker = _ctx.StringValue("QueryUserOmsData.Data.Marker");

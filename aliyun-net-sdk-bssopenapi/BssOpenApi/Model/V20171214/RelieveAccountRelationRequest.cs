@@ -49,6 +49,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string requestId;
 
+		private long? relationId;
+
 		public string RelationType
 		{
 			get
@@ -98,6 +100,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				requestId = value;
 				DictionaryUtil.Add(QueryParameters, "RequestId", value);
+			}
+		}
+
+		public long? RelationId
+		{
+			get
+			{
+				return relationId;
+			}
+			set	
+			{
+				relationId = value;
+				DictionaryUtil.Add(QueryParameters, "RelationId", value.ToString());
 			}
 		}
 

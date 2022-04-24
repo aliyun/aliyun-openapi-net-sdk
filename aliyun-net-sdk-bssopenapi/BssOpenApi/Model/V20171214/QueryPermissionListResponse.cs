@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -27,11 +27,11 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string code;
 
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
-
-		private string message;
 
 		private QueryPermissionList_Data data;
 
@@ -44,6 +44,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -71,18 +83,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
 		public QueryPermissionList_Data Data
 		{
 			get
@@ -98,21 +98,69 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class QueryPermissionList_Data
 		{
 
+			private string endTime;
+
+			private string relationType;
+
+			private string startTime;
+
+			private string state;
+
 			private long? masterId;
 
 			private long? memberId;
 
-			private string relationType;
-
-			private string state;
-
 			private string setupTime;
 
-			private string startTime;
-
-			private string endTime;
-
 			private List<QueryPermissionList_PermissionListItem> permissionList;
+
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			public string RelationType
+			{
+				get
+				{
+					return relationType;
+				}
+				set	
+				{
+					relationType = value;
+				}
+			}
+
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			public string State
+			{
+				get
+				{
+					return state;
+				}
+				set	
+				{
+					state = value;
+				}
+			}
 
 			public long? MasterId
 			{
@@ -138,30 +186,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public string RelationType
-			{
-				get
-				{
-					return relationType;
-				}
-				set	
-				{
-					relationType = value;
-				}
-			}
-
-			public string State
-			{
-				get
-				{
-					return state;
-				}
-				set	
-				{
-					state = value;
-				}
-			}
-
 			public string SetupTime
 			{
 				get
@@ -171,30 +195,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				set	
 				{
 					setupTime = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
 				}
 			}
 
@@ -213,13 +213,37 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class QueryPermissionList_PermissionListItem
 			{
 
+				private string endTime;
+
+				private string startTime;
+
 				private string permissionCode;
 
 				private string permissionName;
 
-				private string startTime;
+				public string EndTime
+				{
+					get
+					{
+						return endTime;
+					}
+					set	
+					{
+						endTime = value;
+					}
+				}
 
-				private string endTime;
+				public string StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
+					}
+				}
 
 				public string PermissionCode
 				{
@@ -242,30 +266,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						permissionName = value;
-					}
-				}
-
-				public string StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
-					}
-				}
-
-				public string EndTime
-				{
-					get
-					{
-						return endTime;
-					}
-					set	
-					{
-						endTime = value;
 					}
 				}
 			}

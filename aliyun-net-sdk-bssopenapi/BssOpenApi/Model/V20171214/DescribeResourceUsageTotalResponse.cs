@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class DescribeResourceUsageTotalResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private DescribeResourceUsageTotal_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -129,9 +129,21 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class DescribeResourceUsageTotal_Item
 			{
 
+				private float? usagePercentage;
+
 				private string period;
 
-				private float? usagePercentage;
+				public float? UsagePercentage
+				{
+					get
+					{
+						return usagePercentage;
+					}
+					set	
+					{
+						usagePercentage = value;
+					}
+				}
 
 				public string Period
 				{
@@ -144,44 +156,20 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 						period = value;
 					}
 				}
-
-				public float? UsagePercentage
-				{
-					get
-					{
-						return usagePercentage;
-					}
-					set	
-					{
-						usagePercentage = value;
-					}
-				}
 			}
 
 			public class DescribeResourceUsageTotal_TotalUsage
 			{
 
-				private float? usagePercentage;
-
 				private float? postpaidCost;
-
-				private float? reservationCost;
 
 				private float? savedCost;
 
+				private float? usagePercentage;
+
 				private float? potentialSavedCost;
 
-				public float? UsagePercentage
-				{
-					get
-					{
-						return usagePercentage;
-					}
-					set	
-					{
-						usagePercentage = value;
-					}
-				}
+				private float? reservationCost;
 
 				public float? PostpaidCost
 				{
@@ -192,18 +180,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						postpaidCost = value;
-					}
-				}
-
-				public float? ReservationCost
-				{
-					get
-					{
-						return reservationCost;
-					}
-					set	
-					{
-						reservationCost = value;
 					}
 				}
 
@@ -219,6 +195,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				public float? UsagePercentage
+				{
+					get
+					{
+						return usagePercentage;
+					}
+					set	
+					{
+						usagePercentage = value;
+					}
+				}
+
 				public float? PotentialSavedCost
 				{
 					get
@@ -228,6 +216,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						potentialSavedCost = value;
+					}
+				}
+
+				public float? ReservationCost
+				{
+					get
+					{
+						return reservationCost;
+					}
+					set	
+					{
+						reservationCost = value;
 					}
 				}
 			}

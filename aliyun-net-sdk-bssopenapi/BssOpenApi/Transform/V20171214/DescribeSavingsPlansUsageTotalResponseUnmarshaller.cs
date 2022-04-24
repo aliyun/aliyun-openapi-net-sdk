@@ -31,25 +31,25 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			DescribeSavingsPlansUsageTotalResponse describeSavingsPlansUsageTotalResponse = new DescribeSavingsPlansUsageTotalResponse();
 
 			describeSavingsPlansUsageTotalResponse.HttpResponse = _ctx.HttpResponse;
-			describeSavingsPlansUsageTotalResponse.RequestId = _ctx.StringValue("DescribeSavingsPlansUsageTotal.RequestId");
-			describeSavingsPlansUsageTotalResponse.Success = _ctx.BooleanValue("DescribeSavingsPlansUsageTotal.Success");
 			describeSavingsPlansUsageTotalResponse.Code = _ctx.StringValue("DescribeSavingsPlansUsageTotal.Code");
 			describeSavingsPlansUsageTotalResponse.Message = _ctx.StringValue("DescribeSavingsPlansUsageTotal.Message");
+			describeSavingsPlansUsageTotalResponse.RequestId = _ctx.StringValue("DescribeSavingsPlansUsageTotal.RequestId");
+			describeSavingsPlansUsageTotalResponse.Success = _ctx.BooleanValue("DescribeSavingsPlansUsageTotal.Success");
 
 			DescribeSavingsPlansUsageTotalResponse.DescribeSavingsPlansUsageTotal_Data data = new DescribeSavingsPlansUsageTotalResponse.DescribeSavingsPlansUsageTotal_Data();
 
 			DescribeSavingsPlansUsageTotalResponse.DescribeSavingsPlansUsageTotal_Data.DescribeSavingsPlansUsageTotal_TotalUsage totalUsage = new DescribeSavingsPlansUsageTotalResponse.DescribeSavingsPlansUsageTotal_Data.DescribeSavingsPlansUsageTotal_TotalUsage();
-			totalUsage.UsagePercentage = _ctx.FloatValue("DescribeSavingsPlansUsageTotal.Data.TotalUsage.UsagePercentage");
 			totalUsage.PostpaidCost = _ctx.FloatValue("DescribeSavingsPlansUsageTotal.Data.TotalUsage.PostpaidCost");
-			totalUsage.PoolValue = _ctx.FloatValue("DescribeSavingsPlansUsageTotal.Data.TotalUsage.PoolValue");
 			totalUsage.SavedCost = _ctx.FloatValue("DescribeSavingsPlansUsageTotal.Data.TotalUsage.SavedCost");
+			totalUsage.UsagePercentage = _ctx.FloatValue("DescribeSavingsPlansUsageTotal.Data.TotalUsage.UsagePercentage");
+			totalUsage.PoolValue = _ctx.FloatValue("DescribeSavingsPlansUsageTotal.Data.TotalUsage.PoolValue");
 			data.TotalUsage = totalUsage;
 
 			List<DescribeSavingsPlansUsageTotalResponse.DescribeSavingsPlansUsageTotal_Data.DescribeSavingsPlansUsageTotal_Item> data_periodCoverage = new List<DescribeSavingsPlansUsageTotalResponse.DescribeSavingsPlansUsageTotal_Data.DescribeSavingsPlansUsageTotal_Item>();
 			for (int i = 0; i < _ctx.Length("DescribeSavingsPlansUsageTotal.Data.PeriodCoverage.Length"); i++) {
 				DescribeSavingsPlansUsageTotalResponse.DescribeSavingsPlansUsageTotal_Data.DescribeSavingsPlansUsageTotal_Item item = new DescribeSavingsPlansUsageTotalResponse.DescribeSavingsPlansUsageTotal_Data.DescribeSavingsPlansUsageTotal_Item();
-				item.Period = _ctx.StringValue("DescribeSavingsPlansUsageTotal.Data.PeriodCoverage["+ i +"].Period");
 				item.Percentage = _ctx.FloatValue("DescribeSavingsPlansUsageTotal.Data.PeriodCoverage["+ i +"].Percentage");
+				item.Period = _ctx.StringValue("DescribeSavingsPlansUsageTotal.Data.PeriodCoverage["+ i +"].Period");
 
 				data_periodCoverage.Add(item);
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class QueryAvailableInstancesResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private QueryAvailableInstances_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -157,183 +157,51 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class QueryAvailableInstances_Instance
 			{
 
-				private long? ownerId;
-
-				private long? sellerId;
-
-				private string productCode;
-
-				private string productType;
-
-				private string subscriptionType;
-
-				private string instanceID;
-
-				private string region;
-
-				private string createTime;
-
-				private string endTime;
-
-				private string stopTime;
-
-				private string releaseTime;
-
-				private string expectedReleaseTime;
+				private string subStatus;
 
 				private string status;
 
-				private string subStatus;
+				private string expectedReleaseTime;
 
 				private string renewStatus;
 
-				private int? renewalDuration;
+				private string createTime;
 
-				private string renewalDurationUnit;
+				private long? sellerId;
+
+				private string instanceID;
 
 				private string seller;
 
-				public long? OwnerId
-				{
-					get
-					{
-						return ownerId;
-					}
-					set	
-					{
-						ownerId = value;
-					}
-				}
+				private string stopTime;
 
-				public long? SellerId
-				{
-					get
-					{
-						return sellerId;
-					}
-					set	
-					{
-						sellerId = value;
-					}
-				}
+				private string renewalDurationUnit;
 
-				public string ProductCode
-				{
-					get
-					{
-						return productCode;
-					}
-					set	
-					{
-						productCode = value;
-					}
-				}
+				private string subscriptionType;
 
-				public string ProductType
-				{
-					get
-					{
-						return productType;
-					}
-					set	
-					{
-						productType = value;
-					}
-				}
+				private long? ownerId;
 
-				public string SubscriptionType
-				{
-					get
-					{
-						return subscriptionType;
-					}
-					set	
-					{
-						subscriptionType = value;
-					}
-				}
+				private string endTime;
 
-				public string InstanceID
-				{
-					get
-					{
-						return instanceID;
-					}
-					set	
-					{
-						instanceID = value;
-					}
-				}
+				private string productType;
 
-				public string Region
-				{
-					get
-					{
-						return region;
-					}
-					set	
-					{
-						region = value;
-					}
-				}
+				private string region;
 
-				public string CreateTime
-				{
-					get
-					{
-						return createTime;
-					}
-					set	
-					{
-						createTime = value;
-					}
-				}
+				private string releaseTime;
 
-				public string EndTime
-				{
-					get
-					{
-						return endTime;
-					}
-					set	
-					{
-						endTime = value;
-					}
-				}
+				private int? renewalDuration;
 
-				public string StopTime
-				{
-					get
-					{
-						return stopTime;
-					}
-					set	
-					{
-						stopTime = value;
-					}
-				}
+				private string productCode;
 
-				public string ReleaseTime
+				public string SubStatus
 				{
 					get
 					{
-						return releaseTime;
+						return subStatus;
 					}
 					set	
 					{
-						releaseTime = value;
-					}
-				}
-
-				public string ExpectedReleaseTime
-				{
-					get
-					{
-						return expectedReleaseTime;
-					}
-					set	
-					{
-						expectedReleaseTime = value;
+						subStatus = value;
 					}
 				}
 
@@ -349,15 +217,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string SubStatus
+				public string ExpectedReleaseTime
 				{
 					get
 					{
-						return subStatus;
+						return expectedReleaseTime;
 					}
 					set	
 					{
-						subStatus = value;
+						expectedReleaseTime = value;
 					}
 				}
 
@@ -373,15 +241,63 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public int? RenewalDuration
+				public string CreateTime
 				{
 					get
 					{
-						return renewalDuration;
+						return createTime;
 					}
 					set	
 					{
-						renewalDuration = value;
+						createTime = value;
+					}
+				}
+
+				public long? SellerId
+				{
+					get
+					{
+						return sellerId;
+					}
+					set	
+					{
+						sellerId = value;
+					}
+				}
+
+				public string InstanceID
+				{
+					get
+					{
+						return instanceID;
+					}
+					set	
+					{
+						instanceID = value;
+					}
+				}
+
+				public string Seller
+				{
+					get
+					{
+						return seller;
+					}
+					set	
+					{
+						seller = value;
+					}
+				}
+
+				public string StopTime
+				{
+					get
+					{
+						return stopTime;
+					}
+					set	
+					{
+						stopTime = value;
 					}
 				}
 
@@ -397,15 +313,99 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string Seller
+				public string SubscriptionType
 				{
 					get
 					{
-						return seller;
+						return subscriptionType;
 					}
 					set	
 					{
-						seller = value;
+						subscriptionType = value;
+					}
+				}
+
+				public long? OwnerId
+				{
+					get
+					{
+						return ownerId;
+					}
+					set	
+					{
+						ownerId = value;
+					}
+				}
+
+				public string EndTime
+				{
+					get
+					{
+						return endTime;
+					}
+					set	
+					{
+						endTime = value;
+					}
+				}
+
+				public string ProductType
+				{
+					get
+					{
+						return productType;
+					}
+					set	
+					{
+						productType = value;
+					}
+				}
+
+				public string Region
+				{
+					get
+					{
+						return region;
+					}
+					set	
+					{
+						region = value;
+					}
+				}
+
+				public string ReleaseTime
+				{
+					get
+					{
+						return releaseTime;
+					}
+					set	
+					{
+						releaseTime = value;
+					}
+				}
+
+				public int? RenewalDuration
+				{
+					get
+					{
+						return renewalDuration;
+					}
+					set	
+					{
+						renewalDuration = value;
+					}
+				}
+
+				public string ProductCode
+				{
+					get
+					{
+						return productCode;
+					}
+					set	
+					{
+						productCode = value;
 					}
 				}
 			}

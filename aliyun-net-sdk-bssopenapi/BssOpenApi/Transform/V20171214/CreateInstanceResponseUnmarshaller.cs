@@ -31,14 +31,14 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			CreateInstanceResponse createInstanceResponse = new CreateInstanceResponse();
 
 			createInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			createInstanceResponse.RequestId = _ctx.StringValue("CreateInstance.RequestId");
-			createInstanceResponse.Success = _ctx.BooleanValue("CreateInstance.Success");
 			createInstanceResponse.Code = _ctx.StringValue("CreateInstance.Code");
 			createInstanceResponse.Message = _ctx.StringValue("CreateInstance.Message");
+			createInstanceResponse.RequestId = _ctx.StringValue("CreateInstance.RequestId");
+			createInstanceResponse.Success = _ctx.BooleanValue("CreateInstance.Success");
 
 			CreateInstanceResponse.CreateInstance_Data data = new CreateInstanceResponse.CreateInstance_Data();
-			data.InstanceId = _ctx.StringValue("CreateInstance.Data.InstanceId");
 			data.OrderId = _ctx.StringValue("CreateInstance.Data.OrderId");
+			data.InstanceId = _ctx.StringValue("CreateInstance.Data.InstanceId");
 			createInstanceResponse.Data = data;
         
 			return createInstanceResponse;

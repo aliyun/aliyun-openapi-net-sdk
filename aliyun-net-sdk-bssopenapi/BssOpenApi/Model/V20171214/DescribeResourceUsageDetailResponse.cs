@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class DescribeResourceUsageDetailResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private DescribeResourceUsageDetail_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public DescribeResourceUsageDetail_Data Data
 		{
 			get
@@ -98,25 +98,13 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class DescribeResourceUsageDetail_Data
 		{
 
-			private int? totalCount;
-
 			private string nextToken;
+
+			private int? totalCount;
 
 			private int? maxResults;
 
 			private List<DescribeResourceUsageDetail_Item> items;
-
-			public int? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
 
 			public string NextToken
 			{
@@ -127,6 +115,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				set	
 				{
 					nextToken = value;
+				}
+			}
+
+			public int? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
 				}
 			}
 
@@ -157,73 +157,73 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class DescribeResourceUsageDetail_Item
 			{
 
-				private string userId;
+				private string status;
 
-				private string userName;
+				private float? usagePercentage;
 
 				private string resourceInstanceId;
 
-				private string startTime;
+				private float? totalQuantity;
 
-				private string endTime;
-
-				private string status;
-
-				private string statusName;
-
-				private string region;
+				private string reservationCost;
 
 				private string regionNo;
 
-				private string zone;
+				private string userId;
+
+				private string statusName;
+
+				private string capacityUnit;
+
+				private string potentialSavedCost;
+
+				private string currency;
 
 				private string zoneName;
 
 				private string instanceSpec;
 
-				private long? quantity;
-
-				private string imageType;
-
-				private float? usagePercentage;
-
-				private float? deductQuantity;
-
-				private float? totalQuantity;
-
-				private string capacityUnit;
-
-				private string currency;
-
-				private string reservationCost;
+				private string endTime;
 
 				private string postpaidCost;
 
+				private string imageType;
+
+				private string startTime;
+
+				private string region;
+
+				private float? deductQuantity;
+
 				private string savedCost;
 
-				private string potentialSavedCost;
+				private string zone;
 
-				public string UserId
+				private string userName;
+
+				private long? quantity;
+
+				public string Status
 				{
 					get
 					{
-						return userId;
+						return status;
 					}
 					set	
 					{
-						userId = value;
+						status = value;
 					}
 				}
 
-				public string UserName
+				public float? UsagePercentage
 				{
 					get
 					{
-						return userName;
+						return usagePercentage;
 					}
 					set	
 					{
-						userName = value;
+						usagePercentage = value;
 					}
 				}
 
@@ -239,63 +239,27 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string StartTime
+				public float? TotalQuantity
 				{
 					get
 					{
-						return startTime;
+						return totalQuantity;
 					}
 					set	
 					{
-						startTime = value;
+						totalQuantity = value;
 					}
 				}
 
-				public string EndTime
+				public string ReservationCost
 				{
 					get
 					{
-						return endTime;
+						return reservationCost;
 					}
 					set	
 					{
-						endTime = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				public string StatusName
-				{
-					get
-					{
-						return statusName;
-					}
-					set	
-					{
-						statusName = value;
-					}
-				}
-
-				public string Region
-				{
-					get
-					{
-						return region;
-					}
-					set	
-					{
-						region = value;
+						reservationCost = value;
 					}
 				}
 
@@ -311,15 +275,63 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string Zone
+				public string UserId
 				{
 					get
 					{
-						return zone;
+						return userId;
 					}
 					set	
 					{
-						zone = value;
+						userId = value;
+					}
+				}
+
+				public string StatusName
+				{
+					get
+					{
+						return statusName;
+					}
+					set	
+					{
+						statusName = value;
+					}
+				}
+
+				public string CapacityUnit
+				{
+					get
+					{
+						return capacityUnit;
+					}
+					set	
+					{
+						capacityUnit = value;
+					}
+				}
+
+				public string PotentialSavedCost
+				{
+					get
+					{
+						return potentialSavedCost;
+					}
+					set	
+					{
+						potentialSavedCost = value;
+					}
+				}
+
+				public string Currency
+				{
+					get
+					{
+						return currency;
+					}
+					set	
+					{
+						currency = value;
 					}
 				}
 
@@ -347,99 +359,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public long? Quantity
+				public string EndTime
 				{
 					get
 					{
-						return quantity;
+						return endTime;
 					}
 					set	
 					{
-						quantity = value;
-					}
-				}
-
-				public string ImageType
-				{
-					get
-					{
-						return imageType;
-					}
-					set	
-					{
-						imageType = value;
-					}
-				}
-
-				public float? UsagePercentage
-				{
-					get
-					{
-						return usagePercentage;
-					}
-					set	
-					{
-						usagePercentage = value;
-					}
-				}
-
-				public float? DeductQuantity
-				{
-					get
-					{
-						return deductQuantity;
-					}
-					set	
-					{
-						deductQuantity = value;
-					}
-				}
-
-				public float? TotalQuantity
-				{
-					get
-					{
-						return totalQuantity;
-					}
-					set	
-					{
-						totalQuantity = value;
-					}
-				}
-
-				public string CapacityUnit
-				{
-					get
-					{
-						return capacityUnit;
-					}
-					set	
-					{
-						capacityUnit = value;
-					}
-				}
-
-				public string Currency
-				{
-					get
-					{
-						return currency;
-					}
-					set	
-					{
-						currency = value;
-					}
-				}
-
-				public string ReservationCost
-				{
-					get
-					{
-						return reservationCost;
-					}
-					set	
-					{
-						reservationCost = value;
+						endTime = value;
 					}
 				}
 
@@ -455,6 +383,54 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
+				public string ImageType
+				{
+					get
+					{
+						return imageType;
+					}
+					set	
+					{
+						imageType = value;
+					}
+				}
+
+				public string StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
+					}
+				}
+
+				public string Region
+				{
+					get
+					{
+						return region;
+					}
+					set	
+					{
+						region = value;
+					}
+				}
+
+				public float? DeductQuantity
+				{
+					get
+					{
+						return deductQuantity;
+					}
+					set	
+					{
+						deductQuantity = value;
+					}
+				}
+
 				public string SavedCost
 				{
 					get
@@ -467,15 +443,39 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string PotentialSavedCost
+				public string Zone
 				{
 					get
 					{
-						return potentialSavedCost;
+						return zone;
 					}
 					set	
 					{
-						potentialSavedCost = value;
+						zone = value;
+					}
+				}
+
+				public string UserName
+				{
+					get
+					{
+						return userName;
+					}
+					set	
+					{
+						userName = value;
+					}
+				}
+
+				public long? Quantity
+				{
+					get
+					{
+						return quantity;
+					}
+					set	
+					{
+						quantity = value;
 					}
 				}
 			}

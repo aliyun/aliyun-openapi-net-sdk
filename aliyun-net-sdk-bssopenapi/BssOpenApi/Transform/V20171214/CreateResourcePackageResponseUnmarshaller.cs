@@ -31,11 +31,11 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			CreateResourcePackageResponse createResourcePackageResponse = new CreateResourcePackageResponse();
 
 			createResourcePackageResponse.HttpResponse = _ctx.HttpResponse;
-			createResourcePackageResponse.RequestId = _ctx.StringValue("CreateResourcePackage.RequestId");
-			createResourcePackageResponse.OrderId = _ctx.LongValue("CreateResourcePackage.OrderId");
-			createResourcePackageResponse.Success = _ctx.BooleanValue("CreateResourcePackage.Success");
 			createResourcePackageResponse.Code = _ctx.StringValue("CreateResourcePackage.Code");
 			createResourcePackageResponse.Message = _ctx.StringValue("CreateResourcePackage.Message");
+			createResourcePackageResponse.RequestId = _ctx.StringValue("CreateResourcePackage.RequestId");
+			createResourcePackageResponse.Success = _ctx.BooleanValue("CreateResourcePackage.Success");
+			createResourcePackageResponse.OrderId = _ctx.LongValue("CreateResourcePackage.OrderId");
 
 			CreateResourcePackageResponse.CreateResourcePackage_Data data = new CreateResourcePackageResponse.CreateResourcePackage_Data();
 			data.OrderId = _ctx.LongValue("CreateResourcePackage.Data.OrderId");

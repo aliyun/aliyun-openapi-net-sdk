@@ -53,6 +53,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private List<string> permissionCodess = new List<string>(){ };
 
+		private long? relationId;
+
 		public string RelationType
 		{
 			get
@@ -128,10 +130,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set
 			{
 				permissionCodess = value;
-				for (int i = 0; i < permissionCodess.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"PermissionCodes." + (i + 1) , permissionCodess[i]);
-				}
+			}
+		}
+
+		public long? RelationId
+		{
+			get
+			{
+				return relationId;
+			}
+			set	
+			{
+				relationId = value;
+				DictionaryUtil.Add(QueryParameters, "RelationId", value.ToString());
 			}
 		}
 

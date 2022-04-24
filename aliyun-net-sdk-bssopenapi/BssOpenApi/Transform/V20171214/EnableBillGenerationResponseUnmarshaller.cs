@@ -31,10 +31,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			EnableBillGenerationResponse enableBillGenerationResponse = new EnableBillGenerationResponse();
 
 			enableBillGenerationResponse.HttpResponse = _ctx.HttpResponse;
-			enableBillGenerationResponse.RequestId = _ctx.StringValue("EnableBillGeneration.RequestId");
-			enableBillGenerationResponse.Success = _ctx.BooleanValue("EnableBillGeneration.Success");
 			enableBillGenerationResponse.Code = _ctx.StringValue("EnableBillGeneration.Code");
 			enableBillGenerationResponse.Message = _ctx.StringValue("EnableBillGeneration.Message");
+			enableBillGenerationResponse.RequestId = _ctx.StringValue("EnableBillGeneration.RequestId");
+			enableBillGenerationResponse.Success = _ctx.BooleanValue("EnableBillGeneration.Success");
 
 			EnableBillGenerationResponse.EnableBillGeneration_Data data = new EnableBillGenerationResponse.EnableBillGeneration_Data();
 			data.Boolean = _ctx.BooleanValue("EnableBillGeneration.Data.Boolean");

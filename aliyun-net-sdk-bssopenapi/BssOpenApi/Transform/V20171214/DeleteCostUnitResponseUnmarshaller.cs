@@ -31,9 +31,9 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			DeleteCostUnitResponse deleteCostUnitResponse = new DeleteCostUnitResponse();
 
 			deleteCostUnitResponse.HttpResponse = _ctx.HttpResponse;
-			deleteCostUnitResponse.RequestId = _ctx.StringValue("DeleteCostUnit.RequestId");
-			deleteCostUnitResponse.Message = _ctx.StringValue("DeleteCostUnit.Message");
 			deleteCostUnitResponse.Code = _ctx.StringValue("DeleteCostUnit.Code");
+			deleteCostUnitResponse.Message = _ctx.StringValue("DeleteCostUnit.Message");
+			deleteCostUnitResponse.RequestId = _ctx.StringValue("DeleteCostUnit.RequestId");
 			deleteCostUnitResponse.Success = _ctx.BooleanValue("DeleteCostUnit.Success");
 
 			DeleteCostUnitResponse.DeleteCostUnit_Data data = new DeleteCostUnitResponse.DeleteCostUnit_Data();

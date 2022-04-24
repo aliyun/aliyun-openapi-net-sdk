@@ -31,23 +31,23 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			QueryProductListResponse queryProductListResponse = new QueryProductListResponse();
 
 			queryProductListResponse.HttpResponse = _ctx.HttpResponse;
-			queryProductListResponse.RequestId = _ctx.StringValue("QueryProductList.RequestId");
-			queryProductListResponse.Success = _ctx.BooleanValue("QueryProductList.Success");
 			queryProductListResponse.Code = _ctx.StringValue("QueryProductList.Code");
 			queryProductListResponse.Message = _ctx.StringValue("QueryProductList.Message");
+			queryProductListResponse.RequestId = _ctx.StringValue("QueryProductList.RequestId");
+			queryProductListResponse.Success = _ctx.BooleanValue("QueryProductList.Success");
 
 			QueryProductListResponse.QueryProductList_Data data = new QueryProductListResponse.QueryProductList_Data();
-			data.TotalCount = _ctx.IntegerValue("QueryProductList.Data.TotalCount");
 			data.PageNum = _ctx.IntegerValue("QueryProductList.Data.PageNum");
 			data.PageSize = _ctx.IntegerValue("QueryProductList.Data.PageSize");
+			data.TotalCount = _ctx.IntegerValue("QueryProductList.Data.TotalCount");
 
 			List<QueryProductListResponse.QueryProductList_Data.QueryProductList_Product> data_productList = new List<QueryProductListResponse.QueryProductList_Data.QueryProductList_Product>();
 			for (int i = 0; i < _ctx.Length("QueryProductList.Data.ProductList.Length"); i++) {
 				QueryProductListResponse.QueryProductList_Data.QueryProductList_Product product = new QueryProductListResponse.QueryProductList_Data.QueryProductList_Product();
-				product.ProductCode = _ctx.StringValue("QueryProductList.Data.ProductList["+ i +"].ProductCode");
 				product.ProductName = _ctx.StringValue("QueryProductList.Data.ProductList["+ i +"].ProductName");
 				product.ProductType = _ctx.StringValue("QueryProductList.Data.ProductList["+ i +"].ProductType");
 				product.SubscriptionType = _ctx.StringValue("QueryProductList.Data.ProductList["+ i +"].SubscriptionType");
+				product.ProductCode = _ctx.StringValue("QueryProductList.Data.ProductList["+ i +"].ProductCode");
 
 				data_productList.Add(product);
 			}

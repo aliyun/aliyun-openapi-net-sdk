@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class CreateAgAccountResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
 		private bool? success;
 
 		private CreateAgAccount_AgRelationDto agRelationDto;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public string Code
 		{
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -98,25 +98,13 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class CreateAgAccount_AgRelationDto
 		{
 
-			private string pk;
-
 			private string type;
 
-			private string mpk;
+			private string pk;
 
 			private string ramAdminRoleName;
 
-			public string Pk
-			{
-				get
-				{
-					return pk;
-				}
-				set	
-				{
-					pk = value;
-				}
-			}
+			private string mpk;
 
 			public string Type
 			{
@@ -130,15 +118,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public string Mpk
+			public string Pk
 			{
 				get
 				{
-					return mpk;
+					return pk;
 				}
 				set	
 				{
-					mpk = value;
+					pk = value;
 				}
 			}
 
@@ -151,6 +139,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				set	
 				{
 					ramAdminRoleName = value;
+				}
+			}
+
+			public string Mpk
+			{
+				get
+				{
+					return mpk;
+				}
+				set	
+				{
+					mpk = value;
 				}
 			}
 		}

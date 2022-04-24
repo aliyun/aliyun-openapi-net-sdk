@@ -57,9 +57,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private int? renewPeriod;
 
-		private List<Parameter> parameters = new List<Parameter>(){ };
-
 		private string renewalStatus;
+
+		private List<string> parameters = new List<string>(){ };
 
 		public string ProductCode
 		{
@@ -165,24 +165,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public List<Parameter> Parameters
-		{
-			get
-			{
-				return parameters;
-			}
-
-			set
-			{
-				parameters = value;
-				for (int i = 0; i < parameters.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Parameter." + (i + 1) + ".Code", parameters[i].Code);
-					DictionaryUtil.Add(QueryParameters,"Parameter." + (i + 1) + ".Value", parameters[i].Value);
-				}
-			}
-		}
-
 		public string RenewalStatus
 		{
 			get
@@ -193,6 +175,27 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				renewalStatus = value;
 				DictionaryUtil.Add(QueryParameters, "RenewalStatus", value);
+			}
+		}
+
+		public List<string> Parameters
+		{
+			get
+			{
+				return parameters;
+			}
+
+			set
+			{
+				parameters = value;
+				if(parameters != null)
+				{
+					for (int depth1 = 0; depth1 < parameters.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Parameter." + (depth1 + 1), parameters[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Parameter." + (depth1 + 1), parameters[depth1]);
+					}
+				}
 			}
 		}
 
@@ -215,7 +218,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public string Value
+			public string Value_
 			{
 				get
 				{

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class GetPayAsYouGoPriceResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private GetPayAsYouGoPrice_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -143,37 +143,25 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class GetPayAsYouGoPrice_ModuleDetail
 			{
 
-				private string moduleCode;
-
-				private float? originalCost;
+				private float? costAfterDiscount;
 
 				private float? invoiceDiscount;
 
-				private float? costAfterDiscount;
-
 				private float? unitPrice;
 
-				public string ModuleCode
-				{
-					get
-					{
-						return moduleCode;
-					}
-					set	
-					{
-						moduleCode = value;
-					}
-				}
+				private float? originalCost;
 
-				public float? OriginalCost
+				private string moduleCode;
+
+				public float? CostAfterDiscount
 				{
 					get
 					{
-						return originalCost;
+						return costAfterDiscount;
 					}
 					set	
 					{
-						originalCost = value;
+						costAfterDiscount = value;
 					}
 				}
 
@@ -189,18 +177,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public float? CostAfterDiscount
-				{
-					get
-					{
-						return costAfterDiscount;
-					}
-					set	
-					{
-						costAfterDiscount = value;
-					}
-				}
-
 				public float? UnitPrice
 				{
 					get
@@ -212,28 +188,40 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 						unitPrice = value;
 					}
 				}
+
+				public float? OriginalCost
+				{
+					get
+					{
+						return originalCost;
+					}
+					set	
+					{
+						originalCost = value;
+					}
+				}
+
+				public string ModuleCode
+				{
+					get
+					{
+						return moduleCode;
+					}
+					set	
+					{
+						moduleCode = value;
+					}
+				}
 			}
 
 			public class GetPayAsYouGoPrice_PromotionDetail
 			{
 
-				private string promotionName;
-
 				private string promotionDesc;
 
 				private long? promotionId;
 
-				public string PromotionName
-				{
-					get
-					{
-						return promotionName;
-					}
-					set	
-					{
-						promotionName = value;
-					}
-				}
+				private string promotionName;
 
 				public string PromotionDesc
 				{
@@ -256,6 +244,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						promotionId = value;
+					}
+				}
+
+				public string PromotionName
+				{
+					get
+					{
+						return promotionName;
+					}
+					set	
+					{
+						promotionName = value;
 					}
 				}
 			}

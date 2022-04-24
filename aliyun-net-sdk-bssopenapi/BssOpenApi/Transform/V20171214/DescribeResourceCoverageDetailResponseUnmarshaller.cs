@@ -31,39 +31,39 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			DescribeResourceCoverageDetailResponse describeResourceCoverageDetailResponse = new DescribeResourceCoverageDetailResponse();
 
 			describeResourceCoverageDetailResponse.HttpResponse = _ctx.HttpResponse;
-			describeResourceCoverageDetailResponse.RequestId = _ctx.StringValue("DescribeResourceCoverageDetail.RequestId");
-			describeResourceCoverageDetailResponse.Success = _ctx.BooleanValue("DescribeResourceCoverageDetail.Success");
 			describeResourceCoverageDetailResponse.Code = _ctx.StringValue("DescribeResourceCoverageDetail.Code");
 			describeResourceCoverageDetailResponse.Message = _ctx.StringValue("DescribeResourceCoverageDetail.Message");
+			describeResourceCoverageDetailResponse.RequestId = _ctx.StringValue("DescribeResourceCoverageDetail.RequestId");
+			describeResourceCoverageDetailResponse.Success = _ctx.BooleanValue("DescribeResourceCoverageDetail.Success");
 
 			DescribeResourceCoverageDetailResponse.DescribeResourceCoverageDetail_Data data = new DescribeResourceCoverageDetailResponse.DescribeResourceCoverageDetail_Data();
-			data.TotalCount = _ctx.IntegerValue("DescribeResourceCoverageDetail.Data.TotalCount");
 			data.NextToken = _ctx.StringValue("DescribeResourceCoverageDetail.Data.NextToken");
+			data.TotalCount = _ctx.IntegerValue("DescribeResourceCoverageDetail.Data.TotalCount");
 			data.MaxResults = _ctx.IntegerValue("DescribeResourceCoverageDetail.Data.MaxResults");
 
 			List<DescribeResourceCoverageDetailResponse.DescribeResourceCoverageDetail_Data.DescribeResourceCoverageDetail_Item> data_items = new List<DescribeResourceCoverageDetailResponse.DescribeResourceCoverageDetail_Data.DescribeResourceCoverageDetail_Item>();
 			for (int i = 0; i < _ctx.Length("DescribeResourceCoverageDetail.Data.Items.Length"); i++) {
 				DescribeResourceCoverageDetailResponse.DescribeResourceCoverageDetail_Data.DescribeResourceCoverageDetail_Item item = new DescribeResourceCoverageDetailResponse.DescribeResourceCoverageDetail_Data.DescribeResourceCoverageDetail_Item();
-				item.UserId = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].UserId");
-				item.UserName = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].UserName");
-				item.ProductCode = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].ProductCode");
-				item.ProductName = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].ProductName");
 				item.CommodityCode = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].CommodityCode");
-				item.CommodityName = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].CommodityName");
-				item.InstanceId = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].InstanceId");
-				item.Region = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].Region");
+				item.ProductName = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].ProductName");
+				item.TotalQuantity = _ctx.FloatValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].TotalQuantity");
 				item.RegionNo = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].RegionNo");
-				item.Zone = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].Zone");
+				item.UserId = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].UserId");
+				item.CommodityName = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].CommodityName");
+				item.CapacityUnit = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].CapacityUnit");
+				item.InstanceId = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].InstanceId");
+				item.Currency = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].Currency");
 				item.ZoneName = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].ZoneName");
 				item.InstanceSpec = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].InstanceSpec");
-				item.Currency = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].Currency");
-				item.CoveragePercentage = _ctx.FloatValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].CoveragePercentage");
-				item.PaymentAmount = _ctx.FloatValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].PaymentAmount");
-				item.DeductQuantity = _ctx.FloatValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].DeductQuantity");
-				item.TotalQuantity = _ctx.FloatValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].TotalQuantity");
-				item.CapacityUnit = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].CapacityUnit");
-				item.StartTime = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].StartTime");
 				item.EndTime = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].EndTime");
+				item.StartTime = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].StartTime");
+				item.PaymentAmount = _ctx.FloatValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].PaymentAmount");
+				item.CoveragePercentage = _ctx.FloatValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].CoveragePercentage");
+				item.Region = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].Region");
+				item.DeductQuantity = _ctx.FloatValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].DeductQuantity");
+				item.Zone = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].Zone");
+				item.UserName = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].UserName");
+				item.ProductCode = _ctx.StringValue("DescribeResourceCoverageDetail.Data.Items["+ i +"].ProductCode");
 
 				data_items.Add(item);
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -27,13 +27,13 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string code;
 
-		private bool? data;
-
 		private string message;
 
-		private bool? success;
+		private bool? data;
 
 		private string requestId;
+
+		private bool? success;
 
 		public string Code
 		{
@@ -44,18 +44,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				code = value;
-			}
-		}
-
-		public bool? Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
 			}
 		}
 
@@ -71,15 +59,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public bool? Success
+		public bool? Data
 		{
 			get
 			{
-				return success;
+				return data;
 			}
 			set	
 			{
-				success = value;
+				data = value;
 			}
 		}
 
@@ -92,6 +80,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

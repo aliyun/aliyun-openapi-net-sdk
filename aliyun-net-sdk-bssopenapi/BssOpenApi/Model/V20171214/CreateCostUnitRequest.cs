@@ -41,9 +41,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			Method = MethodType.POST;
         }
 
-		private List<UnitEntityList> unitEntityLists = new List<UnitEntityList>(){ };
+		private List<string> unitEntityLists = new List<string>(){ };
 
-		public List<UnitEntityList> UnitEntityLists
+		public List<string> UnitEntityLists
 		{
 			get
 			{
@@ -53,11 +53,14 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set
 			{
 				unitEntityLists = value;
-				for (int i = 0; i < unitEntityLists.Count; i++)
+				if(unitEntityLists != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"UnitEntityList." + (i + 1) + ".UnitName", unitEntityLists[i].UnitName);
-					DictionaryUtil.Add(QueryParameters,"UnitEntityList." + (i + 1) + ".ParentUnitId", unitEntityLists[i].ParentUnitId);
-					DictionaryUtil.Add(QueryParameters,"UnitEntityList." + (i + 1) + ".OwnerUid", unitEntityLists[i].OwnerUid);
+					for (int depth1 = 0; depth1 < unitEntityLists.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"UnitEntityList." + (depth1 + 1), unitEntityLists[depth1]);
+						DictionaryUtil.Add(QueryParameters,"UnitEntityList." + (depth1 + 1), unitEntityLists[depth1]);
+						DictionaryUtil.Add(QueryParameters,"UnitEntityList." + (depth1 + 1), unitEntityLists[depth1]);
+					}
 				}
 			}
 		}

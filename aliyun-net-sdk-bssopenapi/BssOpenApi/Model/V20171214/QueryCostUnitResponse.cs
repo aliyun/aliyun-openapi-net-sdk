@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
@@ -25,25 +25,25 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 	public class QueryCostUnitResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string code;
 
 		private string message;
 
-		private string code;
+		private string requestId;
 
 		private bool? success;
 
 		private QueryCostUnit_Data data;
 
-		public string RequestId
+		public string Code
 		{
 			get
 			{
-				return requestId;
+				return code;
 			}
 			set	
 			{
-				requestId = value;
+				code = value;
 			}
 		}
 
@@ -59,15 +59,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
 			}
 		}
 
@@ -98,23 +98,23 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class QueryCostUnit_Data
 		{
 
-			private int? totalCount;
+			private int? pageNum;
 
 			private int? pageSize;
 
-			private int? pageNum;
+			private int? totalCount;
 
 			private List<QueryCostUnit_CostUnitDtoListItem> costUnitDtoList;
 
-			public int? TotalCount
+			public int? PageNum
 			{
 				get
 				{
-					return totalCount;
+					return pageNum;
 				}
 				set	
 				{
-					totalCount = value;
+					pageNum = value;
 				}
 			}
 
@@ -130,15 +130,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public int? PageNum
+			public int? TotalCount
 			{
 				get
 				{
-					return pageNum;
+					return totalCount;
 				}
 				set	
 				{
-					pageNum = value;
+					totalCount = value;
 				}
 			}
 
@@ -157,25 +157,13 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class QueryCostUnit_CostUnitDtoListItem
 			{
 
-				private long? unitId;
-
 				private long? parentUnitId;
-
-				private long? ownerUid;
 
 				private string unitName;
 
-				public long? UnitId
-				{
-					get
-					{
-						return unitId;
-					}
-					set	
-					{
-						unitId = value;
-					}
-				}
+				private long? unitId;
+
+				private long? ownerUid;
 
 				public long? ParentUnitId
 				{
@@ -189,18 +177,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public long? OwnerUid
-				{
-					get
-					{
-						return ownerUid;
-					}
-					set	
-					{
-						ownerUid = value;
-					}
-				}
-
 				public string UnitName
 				{
 					get
@@ -210,6 +186,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						unitName = value;
+					}
+				}
+
+				public long? UnitId
+				{
+					get
+					{
+						return unitId;
+					}
+					set	
+					{
+						unitId = value;
+					}
+				}
+
+				public long? OwnerUid
+				{
+					get
+					{
+						return ownerUid;
+					}
+					set	
+					{
+						ownerUid = value;
 					}
 				}
 			}

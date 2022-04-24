@@ -31,10 +31,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			GetCustomerListResponse getCustomerListResponse = new GetCustomerListResponse();
 
 			getCustomerListResponse.HttpResponse = _ctx.HttpResponse;
-			getCustomerListResponse.RequestId = _ctx.StringValue("GetCustomerList.RequestId");
-			getCustomerListResponse.Success = _ctx.BooleanValue("GetCustomerList.Success");
 			getCustomerListResponse.Code = _ctx.StringValue("GetCustomerList.Code");
 			getCustomerListResponse.Message = _ctx.StringValue("GetCustomerList.Message");
+			getCustomerListResponse.RequestId = _ctx.StringValue("GetCustomerList.RequestId");
+			getCustomerListResponse.Success = _ctx.BooleanValue("GetCustomerList.Success");
 
 			GetCustomerListResponse.GetCustomerList_Data data = new GetCustomerListResponse.GetCustomerList_Data();
 

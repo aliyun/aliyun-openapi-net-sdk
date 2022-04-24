@@ -130,10 +130,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set
 			{
 				permissionCodess = value;
-				for (int i = 0; i < permissionCodess.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"PermissionCodes." + (i + 1) , permissionCodess[i]);
-				}
 			}
 		}
 
@@ -147,10 +143,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			set
 			{
 				roleCodess = value;
-				for (int i = 0; i < roleCodess.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"RoleCodes." + (i + 1) , roleCodess[i]);
-				}
 			}
 		}
 

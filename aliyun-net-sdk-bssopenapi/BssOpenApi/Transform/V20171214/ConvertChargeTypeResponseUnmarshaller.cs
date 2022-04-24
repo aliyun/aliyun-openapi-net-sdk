@@ -31,10 +31,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			ConvertChargeTypeResponse convertChargeTypeResponse = new ConvertChargeTypeResponse();
 
 			convertChargeTypeResponse.HttpResponse = _ctx.HttpResponse;
-			convertChargeTypeResponse.RequestId = _ctx.StringValue("ConvertChargeType.RequestId");
-			convertChargeTypeResponse.Success = _ctx.BooleanValue("ConvertChargeType.Success");
 			convertChargeTypeResponse.Code = _ctx.StringValue("ConvertChargeType.Code");
 			convertChargeTypeResponse.Message = _ctx.StringValue("ConvertChargeType.Message");
+			convertChargeTypeResponse.RequestId = _ctx.StringValue("ConvertChargeType.RequestId");
+			convertChargeTypeResponse.Success = _ctx.BooleanValue("ConvertChargeType.Success");
 
 			ConvertChargeTypeResponse.ConvertChargeType_Data data = new ConvertChargeTypeResponse.ConvertChargeType_Data();
 			data.OrderId = _ctx.StringValue("ConvertChargeType.Data.OrderId");
