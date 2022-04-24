@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
@@ -70,23 +70,11 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeDBClusterAccessWhitelist_DBClusterIPArray
 		{
 
-			private string dBClusterIPArrayName;
-
 			private string dBClusterIPArrayAttribute;
 
-			private string securityIps;
+			private string dBClusterIPArrayName;
 
-			public string DBClusterIPArrayName
-			{
-				get
-				{
-					return dBClusterIPArrayName;
-				}
-				set	
-				{
-					dBClusterIPArrayName = value;
-				}
-			}
+			private string securityIps;
 
 			public string DBClusterIPArrayAttribute
 			{
@@ -97,6 +85,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					dBClusterIPArrayAttribute = value;
+				}
+			}
+
+			public string DBClusterIPArrayName
+			{
+				get
+				{
+					return dBClusterIPArrayName;
+				}
+				set	
+				{
+					dBClusterIPArrayName = value;
 				}
 			}
 

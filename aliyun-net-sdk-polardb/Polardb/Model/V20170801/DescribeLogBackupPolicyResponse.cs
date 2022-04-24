@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
@@ -25,11 +25,23 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeLogBackupPolicyResponse : AcsResponse
 	{
 
+		private int? logBackupRetentionPeriod;
+
 		private string requestId;
 
 		private int? enableBackupLog;
 
-		private int? logBackupRetentionPeriod;
+		public int? LogBackupRetentionPeriod
+		{
+			get
+			{
+				return logBackupRetentionPeriod;
+			}
+			set	
+			{
+				logBackupRetentionPeriod = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -52,18 +64,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				enableBackupLog = value;
-			}
-		}
-
-		public int? LogBackupRetentionPeriod
-		{
-			get
-			{
-				return logBackupRetentionPeriod;
-			}
-			set	
-			{
-				logBackupRetentionPeriod = value;
 			}
 		}
 	}

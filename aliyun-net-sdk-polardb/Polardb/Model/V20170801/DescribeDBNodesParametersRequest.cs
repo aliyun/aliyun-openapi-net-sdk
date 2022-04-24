@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.polardb;
 using Aliyun.Acs.polardb.Transform;
 using Aliyun.Acs.polardb.Transform.V20170801;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
     public class DescribeDBNodesParametersRequest : RpcAcsRequest<DescribeDBNodesParametersResponse>
     {
         public DescribeDBNodesParametersRequest()
-            : base("polardb", "2017-08-01", "DescribeDBNodesParameters", "polardb", "openAPI")
+            : base("polardb", "2017-08-01", "DescribeDBNodesParameters")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -128,6 +129,11 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
 		}
 
         public override DescribeDBNodesParametersResponse GetResponse(UnmarshallerContext unmarshallerContext)

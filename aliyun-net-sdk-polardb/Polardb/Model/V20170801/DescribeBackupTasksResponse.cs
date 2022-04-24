@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
@@ -56,53 +56,17 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeBackupTasks_BackupJob
 		{
 
-			private string backupJobId;
-
-			private string backupProgressStatus;
-
-			private string jobMode;
-
 			private string startTime;
 
 			private string process;
 
+			private string backupJobId;
+
+			private string jobMode;
+
+			private string backupProgressStatus;
+
 			private string taskAction;
-
-			public string BackupJobId
-			{
-				get
-				{
-					return backupJobId;
-				}
-				set	
-				{
-					backupJobId = value;
-				}
-			}
-
-			public string BackupProgressStatus
-			{
-				get
-				{
-					return backupProgressStatus;
-				}
-				set	
-				{
-					backupProgressStatus = value;
-				}
-			}
-
-			public string JobMode
-			{
-				get
-				{
-					return jobMode;
-				}
-				set	
-				{
-					jobMode = value;
-				}
-			}
 
 			public string StartTime
 			{
@@ -125,6 +89,42 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					process = value;
+				}
+			}
+
+			public string BackupJobId
+			{
+				get
+				{
+					return backupJobId;
+				}
+				set	
+				{
+					backupJobId = value;
+				}
+			}
+
+			public string JobMode
+			{
+				get
+				{
+					return jobMode;
+				}
+				set	
+				{
+					jobMode = value;
+				}
+			}
+
+			public string BackupProgressStatus
+			{
+				get
+				{
+					return backupProgressStatus;
+				}
+				set	
+				{
+					backupProgressStatus = value;
 				}
 			}
 

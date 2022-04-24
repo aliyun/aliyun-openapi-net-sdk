@@ -31,8 +31,8 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			DescribeDBClusterMonitorResponse describeDBClusterMonitorResponse = new DescribeDBClusterMonitorResponse();
 
 			describeDBClusterMonitorResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBClusterMonitorResponse.Period = _ctx.StringValue("DescribeDBClusterMonitor.Period");
 			describeDBClusterMonitorResponse.RequestId = _ctx.StringValue("DescribeDBClusterMonitor.RequestId");
+			describeDBClusterMonitorResponse.Period = _ctx.StringValue("DescribeDBClusterMonitor.Period");
         
 			return describeDBClusterMonitorResponse;
         }

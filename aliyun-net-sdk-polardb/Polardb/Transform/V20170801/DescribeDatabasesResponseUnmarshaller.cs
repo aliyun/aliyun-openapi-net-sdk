@@ -31,26 +31,26 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			DescribeDatabasesResponse describeDatabasesResponse = new DescribeDatabasesResponse();
 
 			describeDatabasesResponse.HttpResponse = _ctx.HttpResponse;
+			describeDatabasesResponse.PageRecordCount = _ctx.IntegerValue("DescribeDatabases.PageRecordCount");
 			describeDatabasesResponse.RequestId = _ctx.StringValue("DescribeDatabases.RequestId");
 			describeDatabasesResponse.PageNumber = _ctx.IntegerValue("DescribeDatabases.PageNumber");
-			describeDatabasesResponse.PageRecordCount = _ctx.IntegerValue("DescribeDatabases.PageRecordCount");
 
 			List<DescribeDatabasesResponse.DescribeDatabases_Database> describeDatabasesResponse_databases = new List<DescribeDatabasesResponse.DescribeDatabases_Database>();
 			for (int i = 0; i < _ctx.Length("DescribeDatabases.Databases.Length"); i++) {
 				DescribeDatabasesResponse.DescribeDatabases_Database database = new DescribeDatabasesResponse.DescribeDatabases_Database();
-				database.DBName = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].DBName");
-				database.DBStatus = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].DBStatus");
 				database.DBDescription = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].DBDescription");
-				database.CharacterSetName = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].CharacterSetName");
+				database.DBStatus = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].DBStatus");
+				database.DBName = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].DBName");
 				database.Engine = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].Engine");
+				database.CharacterSetName = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].CharacterSetName");
 
 				List<DescribeDatabasesResponse.DescribeDatabases_Database.DescribeDatabases_Account> database_accounts = new List<DescribeDatabasesResponse.DescribeDatabases_Database.DescribeDatabases_Account>();
 				for (int j = 0; j < _ctx.Length("DescribeDatabases.Databases["+ i +"].Accounts.Length"); j++) {
 					DescribeDatabasesResponse.DescribeDatabases_Database.DescribeDatabases_Account account = new DescribeDatabasesResponse.DescribeDatabases_Database.DescribeDatabases_Account();
-					account.AccountName = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].Accounts["+ j +"].AccountName");
+					account.PrivilegeStatus = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].Accounts["+ j +"].PrivilegeStatus");
 					account.AccountStatus = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].Accounts["+ j +"].AccountStatus");
 					account.AccountPrivilege = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].Accounts["+ j +"].AccountPrivilege");
-					account.PrivilegeStatus = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].Accounts["+ j +"].PrivilegeStatus");
+					account.AccountName = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].Accounts["+ j +"].AccountName");
 
 					database_accounts.Add(account);
 				}

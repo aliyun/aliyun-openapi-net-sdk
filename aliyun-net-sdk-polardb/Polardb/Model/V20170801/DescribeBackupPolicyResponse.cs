@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
@@ -31,17 +31,25 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string requestId;
 
-		private string backupRetentionPolicyOnClusterDeletion;
-
 		private string preferredBackupTime;
 
-		private string backupFrequency;
-
-		private string preferredNextBackupTime;
+		private string backupRetentionPolicyOnClusterDeletion;
 
 		private int? backupRetentionPeriod;
 
+		private string preferredNextBackupTime;
+
 		private string dataLevel2BackupRetentionPeriod;
+
+		private string backupFrequency;
+
+		private string dataLevel1BackupFrequency;
+
+		private string dataLevel1BackupPeriod;
+
+		private string dataLevel1BackupTime;
+
+		private string dataLevel2BackupPeriod;
 
 		public string PreferredBackupPeriod
 		{
@@ -79,18 +87,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string BackupRetentionPolicyOnClusterDeletion
-		{
-			get
-			{
-				return backupRetentionPolicyOnClusterDeletion;
-			}
-			set	
-			{
-				backupRetentionPolicyOnClusterDeletion = value;
-			}
-		}
-
 		public string PreferredBackupTime
 		{
 			get
@@ -103,27 +99,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string BackupFrequency
+		public string BackupRetentionPolicyOnClusterDeletion
 		{
 			get
 			{
-				return backupFrequency;
+				return backupRetentionPolicyOnClusterDeletion;
 			}
 			set	
 			{
-				backupFrequency = value;
-			}
-		}
-
-		public string PreferredNextBackupTime
-		{
-			get
-			{
-				return preferredNextBackupTime;
-			}
-			set	
-			{
-				preferredNextBackupTime = value;
+				backupRetentionPolicyOnClusterDeletion = value;
 			}
 		}
 
@@ -139,6 +123,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string PreferredNextBackupTime
+		{
+			get
+			{
+				return preferredNextBackupTime;
+			}
+			set	
+			{
+				preferredNextBackupTime = value;
+			}
+		}
+
 		public string DataLevel2BackupRetentionPeriod
 		{
 			get
@@ -148,6 +144,66 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				dataLevel2BackupRetentionPeriod = value;
+			}
+		}
+
+		public string BackupFrequency
+		{
+			get
+			{
+				return backupFrequency;
+			}
+			set	
+			{
+				backupFrequency = value;
+			}
+		}
+
+		public string DataLevel1BackupFrequency
+		{
+			get
+			{
+				return dataLevel1BackupFrequency;
+			}
+			set	
+			{
+				dataLevel1BackupFrequency = value;
+			}
+		}
+
+		public string DataLevel1BackupPeriod
+		{
+			get
+			{
+				return dataLevel1BackupPeriod;
+			}
+			set	
+			{
+				dataLevel1BackupPeriod = value;
+			}
+		}
+
+		public string DataLevel1BackupTime
+		{
+			get
+			{
+				return dataLevel1BackupTime;
+			}
+			set	
+			{
+				dataLevel1BackupTime = value;
+			}
+		}
+
+		public string DataLevel2BackupPeriod
+		{
+			get
+			{
+				return dataLevel2BackupPeriod;
+			}
+			set	
+			{
+				dataLevel2BackupPeriod = value;
 			}
 		}
 	}

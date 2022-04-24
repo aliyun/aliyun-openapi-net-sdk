@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
@@ -56,35 +56,23 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeDBClusterEndpoints_DBEndpoint
 		{
 
-			private string dBEndpointId;
-
 			private string nodeWithRoles;
-
-			private string autoAddNewNodes;
-
-			private string endpointType;
-
-			private string dBEndpointDescription;
-
-			private string endpointConfig;
-
-			private string readWriteMode;
 
 			private string nodes;
 
-			private List<DescribeDBClusterEndpoints_Address> addressItems;
+			private string readWriteMode;
 
-			public string DBEndpointId
-			{
-				get
-				{
-					return dBEndpointId;
-				}
-				set	
-				{
-					dBEndpointId = value;
-				}
-			}
+			private string dBEndpointId;
+
+			private string endpointConfig;
+
+			private string dBEndpointDescription;
+
+			private string endpointType;
+
+			private string autoAddNewNodes;
+
+			private List<DescribeDBClusterEndpoints_Address> addressItems;
 
 			public string NodeWithRoles
 			{
@@ -98,51 +86,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string AutoAddNewNodes
+			public string Nodes
 			{
 				get
 				{
-					return autoAddNewNodes;
+					return nodes;
 				}
 				set	
 				{
-					autoAddNewNodes = value;
-				}
-			}
-
-			public string EndpointType
-			{
-				get
-				{
-					return endpointType;
-				}
-				set	
-				{
-					endpointType = value;
-				}
-			}
-
-			public string DBEndpointDescription
-			{
-				get
-				{
-					return dBEndpointDescription;
-				}
-				set	
-				{
-					dBEndpointDescription = value;
-				}
-			}
-
-			public string EndpointConfig
-			{
-				get
-				{
-					return endpointConfig;
-				}
-				set	
-				{
-					endpointConfig = value;
+					nodes = value;
 				}
 			}
 
@@ -158,15 +110,63 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string Nodes
+			public string DBEndpointId
 			{
 				get
 				{
-					return nodes;
+					return dBEndpointId;
 				}
 				set	
 				{
-					nodes = value;
+					dBEndpointId = value;
+				}
+			}
+
+			public string EndpointConfig
+			{
+				get
+				{
+					return endpointConfig;
+				}
+				set	
+				{
+					endpointConfig = value;
+				}
+			}
+
+			public string DBEndpointDescription
+			{
+				get
+				{
+					return dBEndpointDescription;
+				}
+				set	
+				{
+					dBEndpointDescription = value;
+				}
+			}
+
+			public string EndpointType
+			{
+				get
+				{
+					return endpointType;
+				}
+				set	
+				{
+					endpointType = value;
+				}
+			}
+
+			public string AutoAddNewNodes
+			{
+				get
+				{
+					return autoAddNewNodes;
+				}
+				set	
+				{
+					autoAddNewNodes = value;
 				}
 			}
 
@@ -185,57 +185,21 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			public class DescribeDBClusterEndpoints_Address
 			{
 
-				private string privateZoneConnectionString;
-
-				private string vPCId;
-
-				private string port;
-
 				private string vSwitchId;
 
-				private string vpcInstanceId;
-
-				private string iPAddress;
+				private string privateZoneConnectionString;
 
 				private string connectionString;
 
 				private string netType;
 
-				public string PrivateZoneConnectionString
-				{
-					get
-					{
-						return privateZoneConnectionString;
-					}
-					set	
-					{
-						privateZoneConnectionString = value;
-					}
-				}
+				private string port;
 
-				public string VPCId
-				{
-					get
-					{
-						return vPCId;
-					}
-					set	
-					{
-						vPCId = value;
-					}
-				}
+				private string vpcInstanceId;
 
-				public string Port
-				{
-					get
-					{
-						return port;
-					}
-					set	
-					{
-						port = value;
-					}
-				}
+				private string vPCId;
+
+				private string iPAddress;
 
 				public string VSwitchId
 				{
@@ -249,27 +213,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					}
 				}
 
-				public string VpcInstanceId
+				public string PrivateZoneConnectionString
 				{
 					get
 					{
-						return vpcInstanceId;
+						return privateZoneConnectionString;
 					}
 					set	
 					{
-						vpcInstanceId = value;
-					}
-				}
-
-				public string IPAddress
-				{
-					get
-					{
-						return iPAddress;
-					}
-					set	
-					{
-						iPAddress = value;
+						privateZoneConnectionString = value;
 					}
 				}
 
@@ -294,6 +246,54 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					set	
 					{
 						netType = value;
+					}
+				}
+
+				public string Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
+					}
+				}
+
+				public string VpcInstanceId
+				{
+					get
+					{
+						return vpcInstanceId;
+					}
+					set	
+					{
+						vpcInstanceId = value;
+					}
+				}
+
+				public string VPCId
+				{
+					get
+					{
+						return vPCId;
+					}
+					set	
+					{
+						vPCId = value;
+					}
+				}
+
+				public string IPAddress
+				{
+					get
+					{
+						return iPAddress;
+					}
+					set	
+					{
+						iPAddress = value;
 					}
 				}
 			}

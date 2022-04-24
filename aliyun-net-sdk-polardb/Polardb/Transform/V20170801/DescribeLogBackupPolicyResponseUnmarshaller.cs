@@ -31,9 +31,9 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			DescribeLogBackupPolicyResponse describeLogBackupPolicyResponse = new DescribeLogBackupPolicyResponse();
 
 			describeLogBackupPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			describeLogBackupPolicyResponse.LogBackupRetentionPeriod = _ctx.IntegerValue("DescribeLogBackupPolicy.LogBackupRetentionPeriod");
 			describeLogBackupPolicyResponse.RequestId = _ctx.StringValue("DescribeLogBackupPolicy.RequestId");
 			describeLogBackupPolicyResponse.EnableBackupLog = _ctx.IntegerValue("DescribeLogBackupPolicy.EnableBackupLog");
-			describeLogBackupPolicyResponse.LogBackupRetentionPeriod = _ctx.IntegerValue("DescribeLogBackupPolicy.LogBackupRetentionPeriod");
         
 			return describeLogBackupPolicyResponse;
         }

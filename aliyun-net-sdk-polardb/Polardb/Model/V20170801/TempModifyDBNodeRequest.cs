@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.polardb;
 using Aliyun.Acs.polardb.Transform;
 using Aliyun.Acs.polardb.Transform.V20170801;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
     public class TempModifyDBNodeRequest : RpcAcsRequest<TempModifyDBNodeResponse>
     {
         public TempModifyDBNodeRequest()
-            : base("polardb", "2017-08-01", "TempModifyDBNode", "polardb", "openAPI")
+            : base("polardb", "2017-08-01", "TempModifyDBNode")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -58,7 +59,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string modifyType;
 
-		private List<DBNode> dBNodes = new List<DBNode>(){ };
+		private List<string> dBNodes = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -177,7 +178,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public List<DBNode> DBNodes
+		public List<string> DBNodes
 		{
 			get
 			{
@@ -187,10 +188,13 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set
 			{
 				dBNodes = value;
-				for (int i = 0; i < dBNodes.Count; i++)
+				if(dBNodes != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"DBNode." + (i + 1) + ".TargetClass", dBNodes[i].TargetClass);
-					DictionaryUtil.Add(QueryParameters,"DBNode." + (i + 1) + ".ZoneId", dBNodes[i].ZoneId);
+					for (int depth1 = 0; depth1 < dBNodes.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"DBNode." + (depth1 + 1), dBNodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DBNode." + (depth1 + 1), dBNodes[depth1]);
+					}
 				}
 			}
 		}

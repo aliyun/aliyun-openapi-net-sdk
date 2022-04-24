@@ -28,10 +28,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class ModifyDBClusterParametersRequest : RpcAcsRequest<ModifyDBClusterParametersResponse>
+    public class ModifyDBNodesClassRequest : RpcAcsRequest<ModifyDBNodesClassResponse>
     {
-        public ModifyDBClusterParametersRequest()
-            : base("polardb", "2017-08-01", "ModifyDBClusterParameters")
+        public ModifyDBNodesClassRequest()
+            : base("polardb", "2017-08-01", "ModifyDBNodesClass")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,7 +43,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private string parameterGroupId;
+		private string clientToken;
+
+		private string plannedEndTime;
 
 		private string resourceOwnerAccount;
 
@@ -53,7 +55,13 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? ownerId;
 
-		private string parameters;
+		private string plannedStartTime;
+
+		private string modifyType;
+
+		private string subCategory;
+
+		private List<string> dBNodes = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -68,16 +76,29 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string ParameterGroupId
+		public string ClientToken
 		{
 			get
 			{
-				return parameterGroupId;
+				return clientToken;
 			}
 			set	
 			{
-				parameterGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ParameterGroupId", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string PlannedEndTime
+		{
+			get
+			{
+				return plannedEndTime;
+			}
+			set	
+			{
+				plannedEndTime = value;
+				DictionaryUtil.Add(QueryParameters, "PlannedEndTime", value);
 			}
 		}
 
@@ -133,22 +154,101 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string Parameters
+		public string PlannedStartTime
 		{
 			get
 			{
-				return parameters;
+				return plannedStartTime;
 			}
 			set	
 			{
-				parameters = value;
-				DictionaryUtil.Add(QueryParameters, "Parameters", value);
+				plannedStartTime = value;
+				DictionaryUtil.Add(QueryParameters, "PlannedStartTime", value);
 			}
 		}
 
-        public override ModifyDBClusterParametersResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string ModifyType
+		{
+			get
+			{
+				return modifyType;
+			}
+			set	
+			{
+				modifyType = value;
+				DictionaryUtil.Add(QueryParameters, "ModifyType", value);
+			}
+		}
+
+		public string SubCategory
+		{
+			get
+			{
+				return subCategory;
+			}
+			set	
+			{
+				subCategory = value;
+				DictionaryUtil.Add(QueryParameters, "SubCategory", value);
+			}
+		}
+
+		public List<string> DBNodes
+		{
+			get
+			{
+				return dBNodes;
+			}
+
+			set
+			{
+				dBNodes = value;
+				if(dBNodes != null)
+				{
+					for (int depth1 = 0; depth1 < dBNodes.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"DBNode." + (depth1 + 1), dBNodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DBNode." + (depth1 + 1), dBNodes[depth1]);
+					}
+				}
+			}
+		}
+
+		public class DBNode
+		{
+
+			private string dBNodeId;
+
+			private string targetClass;
+
+			public string DBNodeId
+			{
+				get
+				{
+					return dBNodeId;
+				}
+				set	
+				{
+					dBNodeId = value;
+				}
+			}
+
+			public string TargetClass
+			{
+				get
+				{
+					return targetClass;
+				}
+				set	
+				{
+					targetClass = value;
+				}
+			}
+		}
+
+        public override ModifyDBNodesClassResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyDBClusterParametersResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyDBNodesClassResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

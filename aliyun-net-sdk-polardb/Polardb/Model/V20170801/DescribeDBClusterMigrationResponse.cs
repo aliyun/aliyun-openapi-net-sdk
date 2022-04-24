@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
@@ -25,29 +25,41 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeDBClusterMigrationResponse : AcsResponse
 	{
 
+		private string comment;
+
 		private string requestId;
-
-		private string dBClusterId;
-
-		private string sourceRDSDBInstanceId;
-
-		private string migrationStatus;
-
-		private string topologies;
-
-		private int? delayedSeconds;
 
 		private string expiredTime;
 
+		private string dBClusterId;
+
+		private string topologies;
+
 		private string rdsReadWriteMode;
+
+		private string sourceRDSDBInstanceId;
 
 		private string dBClusterReadWriteMode;
 
-		private string comment;
+		private int? delayedSeconds;
+
+		private string migrationStatus;
 
 		private List<DescribeDBClusterMigration_DBClusterEndpoint> dBClusterEndpointList;
 
 		private List<DescribeDBClusterMigration_RdsEndpoint> rdsEndpointList;
+
+		public string Comment
+		{
+			get
+			{
+				return comment;
+			}
+			set	
+			{
+				comment = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -58,66 +70,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string DBClusterId
-		{
-			get
-			{
-				return dBClusterId;
-			}
-			set	
-			{
-				dBClusterId = value;
-			}
-		}
-
-		public string SourceRDSDBInstanceId
-		{
-			get
-			{
-				return sourceRDSDBInstanceId;
-			}
-			set	
-			{
-				sourceRDSDBInstanceId = value;
-			}
-		}
-
-		public string MigrationStatus
-		{
-			get
-			{
-				return migrationStatus;
-			}
-			set	
-			{
-				migrationStatus = value;
-			}
-		}
-
-		public string Topologies
-		{
-			get
-			{
-				return topologies;
-			}
-			set	
-			{
-				topologies = value;
-			}
-		}
-
-		public int? DelayedSeconds
-		{
-			get
-			{
-				return delayedSeconds;
-			}
-			set	
-			{
-				delayedSeconds = value;
 			}
 		}
 
@@ -133,6 +85,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string DBClusterId
+		{
+			get
+			{
+				return dBClusterId;
+			}
+			set	
+			{
+				dBClusterId = value;
+			}
+		}
+
+		public string Topologies
+		{
+			get
+			{
+				return topologies;
+			}
+			set	
+			{
+				topologies = value;
+			}
+		}
+
 		public string RdsReadWriteMode
 		{
 			get
@@ -142,6 +118,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				rdsReadWriteMode = value;
+			}
+		}
+
+		public string SourceRDSDBInstanceId
+		{
+			get
+			{
+				return sourceRDSDBInstanceId;
+			}
+			set	
+			{
+				sourceRDSDBInstanceId = value;
 			}
 		}
 
@@ -157,15 +145,27 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string Comment
+		public int? DelayedSeconds
 		{
 			get
 			{
-				return comment;
+				return delayedSeconds;
 			}
 			set	
 			{
-				comment = value;
+				delayedSeconds = value;
+			}
+		}
+
+		public string MigrationStatus
+		{
+			get
+			{
+				return migrationStatus;
+			}
+			set	
+			{
+				migrationStatus = value;
 			}
 		}
 
@@ -241,9 +241,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			public class DescribeDBClusterMigration_Address
 			{
 
-				private string connectionString;
+				private string vSwitchId;
 
-				private string iPAddress;
+				private string connectionString;
 
 				private string netType;
 
@@ -251,7 +251,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 				private string vPCId;
 
-				private string vSwitchId;
+				private string iPAddress;
+
+				public string VSwitchId
+				{
+					get
+					{
+						return vSwitchId;
+					}
+					set	
+					{
+						vSwitchId = value;
+					}
+				}
 
 				public string ConnectionString
 				{
@@ -262,18 +274,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					set	
 					{
 						connectionString = value;
-					}
-				}
-
-				public string IPAddress
-				{
-					get
-					{
-						return iPAddress;
-					}
-					set	
-					{
-						iPAddress = value;
 					}
 				}
 
@@ -313,15 +313,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					}
 				}
 
-				public string VSwitchId
+				public string IPAddress
 				{
 					get
 					{
-						return vSwitchId;
+						return iPAddress;
 					}
 					set	
 					{
-						vSwitchId = value;
+						iPAddress = value;
 					}
 				}
 			}
@@ -375,9 +375,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			public class DescribeDBClusterMigration_Address2
 			{
 
-				private string connectionString;
+				private string vSwitchId;
 
-				private string iPAddress;
+				private string connectionString;
 
 				private string netType;
 
@@ -385,7 +385,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 				private string vPCId;
 
-				private string vSwitchId;
+				private string iPAddress;
+
+				public string VSwitchId
+				{
+					get
+					{
+						return vSwitchId;
+					}
+					set	
+					{
+						vSwitchId = value;
+					}
+				}
 
 				public string ConnectionString
 				{
@@ -396,18 +408,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					set	
 					{
 						connectionString = value;
-					}
-				}
-
-				public string IPAddress
-				{
-					get
-					{
-						return iPAddress;
-					}
-					set	
-					{
-						iPAddress = value;
 					}
 				}
 
@@ -447,15 +447,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					}
 				}
 
-				public string VSwitchId
+				public string IPAddress
 				{
 					get
 					{
-						return vSwitchId;
+						return iPAddress;
 					}
 					set	
 					{
-						vSwitchId = value;
+						iPAddress = value;
 					}
 				}
 			}

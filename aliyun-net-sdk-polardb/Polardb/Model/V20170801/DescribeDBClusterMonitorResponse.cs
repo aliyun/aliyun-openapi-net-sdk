@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeDBClusterMonitorResponse : AcsResponse
 	{
 
-		private string period;
-
 		private string requestId;
 
-		public string Period
-		{
-			get
-			{
-				return period;
-			}
-			set	
-			{
-				period = value;
-			}
-		}
+		private string period;
 
 		public string RequestId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Period
+		{
+			get
+			{
+				return period;
+			}
+			set	
+			{
+				period = value;
 			}
 		}
 	}

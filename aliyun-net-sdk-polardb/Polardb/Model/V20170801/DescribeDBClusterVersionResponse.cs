@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
@@ -25,39 +25,27 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeDBClusterVersionResponse : AcsResponse
 	{
 
-		private string proxyVersionStatus;
-
 		private string isLatestVersion;
 
 		private string dBVersion;
 
-		private string requestId;
-
 		private string dBRevisionVersion;
+
+		private string requestId;
 
 		private string dBVersionStatus;
 
 		private string dBClusterId;
 
-		private string dBLatestVersion;
+		private string dBMinorVersion;
 
 		private string proxyRevisionVersion;
 
-		private string dBMinorVersion;
+		private string proxyVersionStatus;
 
 		private string proxyLatestVersion;
 
-		public string ProxyVersionStatus
-		{
-			get
-			{
-				return proxyVersionStatus;
-			}
-			set	
-			{
-				proxyVersionStatus = value;
-			}
-		}
+		private string dBLatestVersion;
 
 		public string IsLatestVersion
 		{
@@ -83,18 +71,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
 		public string DBRevisionVersion
 		{
 			get
@@ -104,6 +80,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				dBRevisionVersion = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -131,15 +119,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string DBLatestVersion
+		public string DBMinorVersion
 		{
 			get
 			{
-				return dBLatestVersion;
+				return dBMinorVersion;
 			}
 			set	
 			{
-				dBLatestVersion = value;
+				dBMinorVersion = value;
 			}
 		}
 
@@ -155,15 +143,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string DBMinorVersion
+		public string ProxyVersionStatus
 		{
 			get
 			{
-				return dBMinorVersion;
+				return proxyVersionStatus;
 			}
 			set	
 			{
-				dBMinorVersion = value;
+				proxyVersionStatus = value;
 			}
 		}
 
@@ -176,6 +164,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				proxyLatestVersion = value;
+			}
+		}
+
+		public string DBLatestVersion
+		{
+			get
+			{
+				return dBLatestVersion;
+			}
+			set	
+			{
+				dBLatestVersion = value;
 			}
 		}
 	}

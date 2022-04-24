@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
@@ -25,13 +25,25 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeAccountsResponse : AcsResponse
 	{
 
+		private int? pageRecordCount;
+
 		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageRecordCount;
-
 		private List<DescribeAccounts_DBAccount> accounts;
+
+		public int? PageRecordCount
+		{
+			get
+			{
+				return pageRecordCount;
+			}
+			set	
+			{
+				pageRecordCount = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -57,18 +69,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public int? PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
-
 		public List<DescribeAccounts_DBAccount> Accounts
 		{
 			get
@@ -84,33 +84,21 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeAccounts_DBAccount
 		{
 
-			private string accountName;
-
 			private string accountStatus;
 
 			private string accountDescription;
-
-			private string accountType;
-
-			private string accountLockState;
 
 			private string privilegeExceeded;
 
 			private string accountPasswordValidTime;
 
-			private List<DescribeAccounts_DatabasePrivilege> databasePrivileges;
+			private string accountType;
 
-			public string AccountName
-			{
-				get
-				{
-					return accountName;
-				}
-				set	
-				{
-					accountName = value;
-				}
-			}
+			private string accountLockState;
+
+			private string accountName;
+
+			private List<DescribeAccounts_DatabasePrivilege> databasePrivileges;
 
 			public string AccountStatus
 			{
@@ -133,6 +121,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					accountDescription = value;
+				}
+			}
+
+			public string PrivilegeExceeded
+			{
+				get
+				{
+					return privilegeExceeded;
+				}
+				set	
+				{
+					privilegeExceeded = value;
+				}
+			}
+
+			public string AccountPasswordValidTime
+			{
+				get
+				{
+					return accountPasswordValidTime;
+				}
+				set	
+				{
+					accountPasswordValidTime = value;
 				}
 			}
 
@@ -160,27 +172,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string PrivilegeExceeded
+			public string AccountName
 			{
 				get
 				{
-					return privilegeExceeded;
+					return accountName;
 				}
 				set	
 				{
-					privilegeExceeded = value;
-				}
-			}
-
-			public string AccountPasswordValidTime
-			{
-				get
-				{
-					return accountPasswordValidTime;
-				}
-				set	
-				{
-					accountPasswordValidTime = value;
+					accountName = value;
 				}
 			}
 

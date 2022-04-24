@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
@@ -25,43 +25,43 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeTasksResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? totalRecordCount;
 
-		private string startTime;
+		private int? pageRecordCount;
 
 		private string endTime;
 
-		private int? totalRecordCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageRecordCount;
+		private string startTime;
 
 		private string dBClusterId;
 
 		private List<DescribeTasks_Task> tasks;
 
-		public string RequestId
+		public int? TotalRecordCount
 		{
 			get
 			{
-				return requestId;
+				return totalRecordCount;
 			}
 			set	
 			{
-				requestId = value;
+				totalRecordCount = value;
 			}
 		}
 
-		public string StartTime
+		public int? PageRecordCount
 		{
 			get
 			{
-				return startTime;
+				return pageRecordCount;
 			}
 			set	
 			{
-				startTime = value;
+				pageRecordCount = value;
 			}
 		}
 
@@ -77,15 +77,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public int? TotalRecordCount
+		public string RequestId
 		{
 			get
 			{
-				return totalRecordCount;
+				return requestId;
 			}
 			set	
 			{
-				totalRecordCount = value;
+				requestId = value;
 			}
 		}
 
@@ -101,15 +101,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public int? PageRecordCount
+		public string StartTime
 		{
 			get
 			{
-				return pageRecordCount;
+				return startTime;
 			}
 			set	
 			{
-				pageRecordCount = value;
+				startTime = value;
 			}
 		}
 
@@ -140,57 +140,33 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeTasks_Task
 		{
 
-			private string taskId;
-
-			private string beginTime;
-
 			private string finishTime;
-
-			private string expectedFinishTime;
-
-			private string taskAction;
-
-			private int? progress;
-
-			private string dBName;
-
-			private string progressInfo;
-
-			private string taskErrorCode;
-
-			private string taskErrorMessage;
 
 			private string stepsInfo;
 
-			private int? remain;
+			private int? progress;
 
-			private string stepProgressInfo;
+			private string expectedFinishTime;
+
+			private string beginTime;
+
+			private string taskErrorCode;
+
+			private string progressInfo;
 
 			private string currentStepName;
 
-			public string TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
+			private string stepProgressInfo;
 
-			public string BeginTime
-			{
-				get
-				{
-					return beginTime;
-				}
-				set	
-				{
-					beginTime = value;
-				}
-			}
+			private string taskErrorMessage;
+
+			private string taskAction;
+
+			private string dBName;
+
+			private int? remain;
+
+			private string taskId;
 
 			public string FinishTime
 			{
@@ -201,90 +177,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					finishTime = value;
-				}
-			}
-
-			public string ExpectedFinishTime
-			{
-				get
-				{
-					return expectedFinishTime;
-				}
-				set	
-				{
-					expectedFinishTime = value;
-				}
-			}
-
-			public string TaskAction
-			{
-				get
-				{
-					return taskAction;
-				}
-				set	
-				{
-					taskAction = value;
-				}
-			}
-
-			public int? Progress
-			{
-				get
-				{
-					return progress;
-				}
-				set	
-				{
-					progress = value;
-				}
-			}
-
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
-				}
-			}
-
-			public string ProgressInfo
-			{
-				get
-				{
-					return progressInfo;
-				}
-				set	
-				{
-					progressInfo = value;
-				}
-			}
-
-			public string TaskErrorCode
-			{
-				get
-				{
-					return taskErrorCode;
-				}
-				set	
-				{
-					taskErrorCode = value;
-				}
-			}
-
-			public string TaskErrorMessage
-			{
-				get
-				{
-					return taskErrorMessage;
-				}
-				set	
-				{
-					taskErrorMessage = value;
 				}
 			}
 
@@ -300,15 +192,75 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public int? Remain
+			public int? Progress
 			{
 				get
 				{
-					return remain;
+					return progress;
 				}
 				set	
 				{
-					remain = value;
+					progress = value;
+				}
+			}
+
+			public string ExpectedFinishTime
+			{
+				get
+				{
+					return expectedFinishTime;
+				}
+				set	
+				{
+					expectedFinishTime = value;
+				}
+			}
+
+			public string BeginTime
+			{
+				get
+				{
+					return beginTime;
+				}
+				set	
+				{
+					beginTime = value;
+				}
+			}
+
+			public string TaskErrorCode
+			{
+				get
+				{
+					return taskErrorCode;
+				}
+				set	
+				{
+					taskErrorCode = value;
+				}
+			}
+
+			public string ProgressInfo
+			{
+				get
+				{
+					return progressInfo;
+				}
+				set	
+				{
+					progressInfo = value;
+				}
+			}
+
+			public string CurrentStepName
+			{
+				get
+				{
+					return currentStepName;
+				}
+				set	
+				{
+					currentStepName = value;
 				}
 			}
 
@@ -324,15 +276,63 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string CurrentStepName
+			public string TaskErrorMessage
 			{
 				get
 				{
-					return currentStepName;
+					return taskErrorMessage;
 				}
 				set	
 				{
-					currentStepName = value;
+					taskErrorMessage = value;
+				}
+			}
+
+			public string TaskAction
+			{
+				get
+				{
+					return taskAction;
+				}
+				set	
+				{
+					taskAction = value;
+				}
+			}
+
+			public string DBName
+			{
+				get
+				{
+					return dBName;
+				}
+				set	
+				{
+					dBName = value;
+				}
+			}
+
+			public int? Remain
+			{
+				get
+				{
+					return remain;
+				}
+				set	
+				{
+					remain = value;
+				}
+			}
+
+			public string TaskId
+			{
+				get
+				{
+					return taskId;
+				}
+				set	
+				{
+					taskId = value;
 				}
 			}
 		}

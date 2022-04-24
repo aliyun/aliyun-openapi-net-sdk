@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class ListTagResourcesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
 
-		private List<ListTagResources_TagResource> tagResources;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<ListTagResources_TagResource> tagResources;
 
 		public string NextToken
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,23 +70,23 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class ListTagResources_TagResource
 		{
 
-			private string tagKey;
+			private string resourceType;
 
 			private string tagValue;
 
-			private string resourceType;
-
 			private string resourceId;
 
-			public string TagKey
+			private string tagKey;
+
+			public string ResourceType
 			{
 				get
 				{
-					return tagKey;
+					return resourceType;
 				}
 				set	
 				{
-					tagKey = value;
+					resourceType = value;
 				}
 			}
 
@@ -102,18 +102,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string ResourceType
-			{
-				get
-				{
-					return resourceType;
-				}
-				set	
-				{
-					resourceType = value;
-				}
-			}
-
 			public string ResourceId
 			{
 				get
@@ -123,6 +111,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					resourceId = value;
+				}
+			}
+
+			public string TagKey
+			{
+				get
+				{
+					return tagKey;
+				}
+				set	
+				{
+					tagKey = value;
 				}
 			}
 		}

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.polardb;
 using Aliyun.Acs.polardb.Transform;
 using Aliyun.Acs.polardb.Transform.V20170801;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
     public class ModifyBackupPolicyRequest : RpcAcsRequest<ModifyBackupPolicyResponse>
     {
         public ModifyBackupPolicyRequest()
-            : base("polardb", "2017-08-01", "ModifyBackupPolicy", "polardb", "openAPI")
+            : base("polardb", "2017-08-01", "ModifyBackupPolicy")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,6 +44,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private long? resourceOwnerId;
 
 		private string dataLevel2BackupRetentionPeriod;
+
+		private string dataLevel1BackupPeriod;
+
+		private string dataLevel2BackupPeriod;
 
 		private string preferredBackupPeriod;
 
@@ -61,6 +66,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string preferredBackupTime;
 
 		private string backupFrequency;
+
+		private string dataLevel1BackupFrequency;
+
+		private string dataLevel1BackupTime;
 
 		public long? ResourceOwnerId
 		{
@@ -85,6 +94,32 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				dataLevel2BackupRetentionPeriod = value;
 				DictionaryUtil.Add(QueryParameters, "DataLevel2BackupRetentionPeriod", value);
+			}
+		}
+
+		public string DataLevel1BackupPeriod
+		{
+			get
+			{
+				return dataLevel1BackupPeriod;
+			}
+			set	
+			{
+				dataLevel1BackupPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "DataLevel1BackupPeriod", value);
+			}
+		}
+
+		public string DataLevel2BackupPeriod
+		{
+			get
+			{
+				return dataLevel2BackupPeriod;
+			}
+			set	
+			{
+				dataLevel2BackupPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "DataLevel2BackupPeriod", value);
 			}
 		}
 
@@ -202,6 +237,32 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				backupFrequency = value;
 				DictionaryUtil.Add(QueryParameters, "BackupFrequency", value);
+			}
+		}
+
+		public string DataLevel1BackupFrequency
+		{
+			get
+			{
+				return dataLevel1BackupFrequency;
+			}
+			set	
+			{
+				dataLevel1BackupFrequency = value;
+				DictionaryUtil.Add(QueryParameters, "DataLevel1BackupFrequency", value);
+			}
+		}
+
+		public string DataLevel1BackupTime
+		{
+			get
+			{
+				return dataLevel1BackupTime;
+			}
+			set	
+			{
+				dataLevel1BackupTime = value;
+				DictionaryUtil.Add(QueryParameters, "DataLevel1BackupTime", value);
 			}
 		}
 

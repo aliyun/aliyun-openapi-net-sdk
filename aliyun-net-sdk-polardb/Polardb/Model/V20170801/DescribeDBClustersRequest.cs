@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.polardb;
 using Aliyun.Acs.polardb.Transform;
 using Aliyun.Acs.polardb.Transform.V20170801;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
     public class DescribeDBClustersRequest : RpcAcsRequest<DescribeDBClustersResponse>
     {
         public DescribeDBClustersRequest()
-            : base("polardb", "2017-08-01", "DescribeDBClusters", "polardb", "openAPI")
+            : base("polardb", "2017-08-01", "DescribeDBClusters")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -54,7 +55,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private int? pageSize;
 
-		private List<Tag> tags = new List<Tag>(){ };
+		private List<string> tags = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -159,7 +160,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public List<Tag> Tags
+		public List<string> Tags
 		{
 			get
 			{
@@ -169,10 +170,13 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set
 			{
 				tags = value;
-				for (int i = 0; i < tags.Count; i++)
+				if(tags != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
 				}
 			}
 		}
@@ -262,7 +266,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string key;
 
-			public string Value
+			public string Value_
 			{
 				get
 				{

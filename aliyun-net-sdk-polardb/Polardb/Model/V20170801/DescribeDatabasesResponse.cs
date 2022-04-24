@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
@@ -25,13 +25,25 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeDatabasesResponse : AcsResponse
 	{
 
+		private int? pageRecordCount;
+
 		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageRecordCount;
-
 		private List<DescribeDatabases_Database> databases;
+
+		public int? PageRecordCount
+		{
+			get
+			{
+				return pageRecordCount;
+			}
+			set	
+			{
+				pageRecordCount = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -57,18 +69,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public int? PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
-
 		public List<DescribeDatabases_Database> Databases
 		{
 			get
@@ -84,27 +84,27 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeDatabases_Database
 		{
 
-			private string dBName;
+			private string dBDescription;
 
 			private string dBStatus;
 
-			private string dBDescription;
-
-			private string characterSetName;
+			private string dBName;
 
 			private string engine;
 
+			private string characterSetName;
+
 			private List<DescribeDatabases_Account> accounts;
 
-			public string DBName
+			public string DBDescription
 			{
 				get
 				{
-					return dBName;
+					return dBDescription;
 				}
 				set	
 				{
-					dBName = value;
+					dBDescription = value;
 				}
 			}
 
@@ -120,27 +120,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string DBDescription
+			public string DBName
 			{
 				get
 				{
-					return dBDescription;
+					return dBName;
 				}
 				set	
 				{
-					dBDescription = value;
-				}
-			}
-
-			public string CharacterSetName
-			{
-				get
-				{
-					return characterSetName;
-				}
-				set	
-				{
-					characterSetName = value;
+					dBName = value;
 				}
 			}
 
@@ -153,6 +141,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					engine = value;
+				}
+			}
+
+			public string CharacterSetName
+			{
+				get
+				{
+					return characterSetName;
+				}
+				set	
+				{
+					characterSetName = value;
 				}
 			}
 
@@ -171,23 +171,23 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			public class DescribeDatabases_Account
 			{
 
-				private string accountName;
+				private string privilegeStatus;
 
 				private string accountStatus;
 
 				private string accountPrivilege;
 
-				private string privilegeStatus;
+				private string accountName;
 
-				public string AccountName
+				public string PrivilegeStatus
 				{
 					get
 					{
-						return accountName;
+						return privilegeStatus;
 					}
 					set	
 					{
-						accountName = value;
+						privilegeStatus = value;
 					}
 				}
 
@@ -215,15 +215,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					}
 				}
 
-				public string PrivilegeStatus
+				public string AccountName
 				{
 					get
 					{
-						return privilegeStatus;
+						return accountName;
 					}
 					set	
 					{
-						privilegeStatus = value;
+						accountName = value;
 					}
 				}
 			}

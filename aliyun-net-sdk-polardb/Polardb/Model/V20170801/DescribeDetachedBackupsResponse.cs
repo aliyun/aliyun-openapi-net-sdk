@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeDetachedBackupsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string totalRecordCount;
-
-		private string pageNumber;
 
 		private string pageRecordCount;
 
-		private List<DescribeDetachedBackups_Backup> items;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string pageNumber;
+
+		private List<DescribeDetachedBackups_Backup> items;
 
 		public string TotalRecordCount
 		{
@@ -59,18 +47,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
 		public string PageRecordCount
 		{
 			get
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				pageRecordCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
 			}
 		}
 
@@ -98,139 +98,31 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeDetachedBackups_Backup
 		{
 
-			private string backupId;
-
-			private string dBClusterId;
-
-			private string backupStatus;
-
-			private string backupStartTime;
-
-			private string backupEndTime;
-
-			private string backupType;
-
-			private string backupMode;
-
-			private string backupMethod;
-
-			private string storeStatus;
-
 			private string backupSetSize;
 
 			private string consistentTime;
 
-			private string backupsLevel;
+			private string storeStatus;
+
+			private string backupStatus;
+
+			private string backupType;
+
+			private string backupStartTime;
 
 			private string isAvail;
 
-			public string BackupId
-			{
-				get
-				{
-					return backupId;
-				}
-				set	
-				{
-					backupId = value;
-				}
-			}
+			private string backupEndTime;
 
-			public string DBClusterId
-			{
-				get
-				{
-					return dBClusterId;
-				}
-				set	
-				{
-					dBClusterId = value;
-				}
-			}
+			private string backupId;
 
-			public string BackupStatus
-			{
-				get
-				{
-					return backupStatus;
-				}
-				set	
-				{
-					backupStatus = value;
-				}
-			}
+			private string dBClusterId;
 
-			public string BackupStartTime
-			{
-				get
-				{
-					return backupStartTime;
-				}
-				set	
-				{
-					backupStartTime = value;
-				}
-			}
+			private string backupsLevel;
 
-			public string BackupEndTime
-			{
-				get
-				{
-					return backupEndTime;
-				}
-				set	
-				{
-					backupEndTime = value;
-				}
-			}
+			private string backupMode;
 
-			public string BackupType
-			{
-				get
-				{
-					return backupType;
-				}
-				set	
-				{
-					backupType = value;
-				}
-			}
-
-			public string BackupMode
-			{
-				get
-				{
-					return backupMode;
-				}
-				set	
-				{
-					backupMode = value;
-				}
-			}
-
-			public string BackupMethod
-			{
-				get
-				{
-					return backupMethod;
-				}
-				set	
-				{
-					backupMethod = value;
-				}
-			}
-
-			public string StoreStatus
-			{
-				get
-				{
-					return storeStatus;
-				}
-				set	
-				{
-					storeStatus = value;
-				}
-			}
+			private string backupMethod;
 
 			public string BackupSetSize
 			{
@@ -256,15 +148,51 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string BackupsLevel
+			public string StoreStatus
 			{
 				get
 				{
-					return backupsLevel;
+					return storeStatus;
 				}
 				set	
 				{
-					backupsLevel = value;
+					storeStatus = value;
+				}
+			}
+
+			public string BackupStatus
+			{
+				get
+				{
+					return backupStatus;
+				}
+				set	
+				{
+					backupStatus = value;
+				}
+			}
+
+			public string BackupType
+			{
+				get
+				{
+					return backupType;
+				}
+				set	
+				{
+					backupType = value;
+				}
+			}
+
+			public string BackupStartTime
+			{
+				get
+				{
+					return backupStartTime;
+				}
+				set	
+				{
+					backupStartTime = value;
 				}
 			}
 
@@ -277,6 +205,78 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					isAvail = value;
+				}
+			}
+
+			public string BackupEndTime
+			{
+				get
+				{
+					return backupEndTime;
+				}
+				set	
+				{
+					backupEndTime = value;
+				}
+			}
+
+			public string BackupId
+			{
+				get
+				{
+					return backupId;
+				}
+				set	
+				{
+					backupId = value;
+				}
+			}
+
+			public string DBClusterId
+			{
+				get
+				{
+					return dBClusterId;
+				}
+				set	
+				{
+					dBClusterId = value;
+				}
+			}
+
+			public string BackupsLevel
+			{
+				get
+				{
+					return backupsLevel;
+				}
+				set	
+				{
+					backupsLevel = value;
+				}
+			}
+
+			public string BackupMode
+			{
+				get
+				{
+					return backupMode;
+				}
+				set	
+				{
+					backupMode = value;
+				}
+			}
+
+			public string BackupMethod
+			{
+				get
+				{
+					return backupMethod;
+				}
+				set	
+				{
+					backupMethod = value;
 				}
 			}
 		}

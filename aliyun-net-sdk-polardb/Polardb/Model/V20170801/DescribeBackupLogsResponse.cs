@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeBackupLogsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string totalRecordCount;
-
-		private string pageNumber;
 
 		private string pageRecordCount;
 
-		private List<DescribeBackupLogs_BackupLog> items;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string pageNumber;
+
+		private List<DescribeBackupLogs_BackupLog> items;
 
 		public string TotalRecordCount
 		{
@@ -59,18 +47,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
 		public string PageRecordCount
 		{
 			get
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				pageRecordCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
 			}
 		}
 
@@ -100,19 +100,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string backupLogId;
 
-			private string backupLogName;
+			private string intranetDownloadLink;
+
+			private string linkExpiredTime;
 
 			private string backupLogStartTime;
 
 			private string backupLogEndTime;
 
-			private string backupLogSize;
-
 			private string downloadLink;
 
-			private string intranetDownloadLink;
+			private string backupLogSize;
 
-			private string linkExpiredTime;
+			private string backupLogName;
 
 			public string BackupLogId
 			{
@@ -126,15 +126,27 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string BackupLogName
+			public string IntranetDownloadLink
 			{
 				get
 				{
-					return backupLogName;
+					return intranetDownloadLink;
 				}
 				set	
 				{
-					backupLogName = value;
+					intranetDownloadLink = value;
+				}
+			}
+
+			public string LinkExpiredTime
+			{
+				get
+				{
+					return linkExpiredTime;
+				}
+				set	
+				{
+					linkExpiredTime = value;
 				}
 			}
 
@@ -162,18 +174,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string BackupLogSize
-			{
-				get
-				{
-					return backupLogSize;
-				}
-				set	
-				{
-					backupLogSize = value;
-				}
-			}
-
 			public string DownloadLink
 			{
 				get
@@ -186,27 +186,27 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string IntranetDownloadLink
+			public string BackupLogSize
 			{
 				get
 				{
-					return intranetDownloadLink;
+					return backupLogSize;
 				}
 				set	
 				{
-					intranetDownloadLink = value;
+					backupLogSize = value;
 				}
 			}
 
-			public string LinkExpiredTime
+			public string BackupLogName
 			{
 				get
 				{
-					return linkExpiredTime;
+					return backupLogName;
 				}
 				set	
 				{
-					linkExpiredTime = value;
+					backupLogName = value;
 				}
 			}
 		}

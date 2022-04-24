@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
@@ -25,57 +25,45 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeSlowLogsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string dBClusterId;
-
-		private string startTime;
-
-		private string endTime;
-
-		private string engine;
-
 		private int? totalRecordCount;
-
-		private int? pageNumber;
 
 		private int? pageRecordCount;
 
+		private string endTime;
+
+		private string requestId;
+
+		private int? pageNumber;
+
+		private string startTime;
+
+		private string dBClusterId;
+
+		private string engine;
+
 		private List<DescribeSlowLogs_SQLSlowLog> items;
 
-		public string RequestId
+		public int? TotalRecordCount
 		{
 			get
 			{
-				return requestId;
+				return totalRecordCount;
 			}
 			set	
 			{
-				requestId = value;
+				totalRecordCount = value;
 			}
 		}
 
-		public string DBClusterId
+		public int? PageRecordCount
 		{
 			get
 			{
-				return dBClusterId;
+				return pageRecordCount;
 			}
 			set	
 			{
-				dBClusterId = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
+				pageRecordCount = value;
 			}
 		}
 
@@ -91,27 +79,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string Engine
+		public string RequestId
 		{
 			get
 			{
-				return engine;
+				return requestId;
 			}
 			set	
 			{
-				engine = value;
-			}
-		}
-
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
+				requestId = value;
 			}
 		}
 
@@ -127,15 +103,39 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public int? PageRecordCount
+		public string StartTime
 		{
 			get
 			{
-				return pageRecordCount;
+				return startTime;
 			}
 			set	
 			{
-				pageRecordCount = value;
+				startTime = value;
+			}
+		}
+
+		public string DBClusterId
+		{
+			get
+			{
+				return dBClusterId;
+			}
+			set	
+			{
+				dBClusterId = value;
+			}
+		}
+
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
 			}
 		}
 
@@ -154,105 +154,33 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeSlowLogs_SQLSlowLog
 		{
 
-			private string dBNodeId;
-
-			private long? parseMaxRowCount;
-
-			private long? totalLockTimes;
-
-			private string dBName;
-
-			private long? maxExecutionTime;
-
-			private string sQLHASH;
-
 			private string sQLText;
-
-			private string createTime;
-
-			private long? totalExecutionTimes;
-
-			private long? returnTotalRowCounts;
-
-			private long? totalExecutionCounts;
-
-			private long? maxLockTime;
 
 			private long? returnMaxRowCount;
 
+			private string createTime;
+
+			private long? maxExecutionTime;
+
 			private long? parseTotalRowCounts;
 
-			public string DBNodeId
-			{
-				get
-				{
-					return dBNodeId;
-				}
-				set	
-				{
-					dBNodeId = value;
-				}
-			}
+			private long? totalLockTimes;
 
-			public long? ParseMaxRowCount
-			{
-				get
-				{
-					return parseMaxRowCount;
-				}
-				set	
-				{
-					parseMaxRowCount = value;
-				}
-			}
+			private long? totalExecutionTimes;
 
-			public long? TotalLockTimes
-			{
-				get
-				{
-					return totalLockTimes;
-				}
-				set	
-				{
-					totalLockTimes = value;
-				}
-			}
+			private string dBNodeId;
 
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
-				}
-			}
+			private string sQLHASH;
 
-			public long? MaxExecutionTime
-			{
-				get
-				{
-					return maxExecutionTime;
-				}
-				set	
-				{
-					maxExecutionTime = value;
-				}
-			}
+			private long? parseMaxRowCount;
 
-			public string SQLHASH
-			{
-				get
-				{
-					return sQLHASH;
-				}
-				set	
-				{
-					sQLHASH = value;
-				}
-			}
+			private long? maxLockTime;
+
+			private long? returnTotalRowCounts;
+
+			private string dBName;
+
+			private long? totalExecutionCounts;
 
 			public string SQLText
 			{
@@ -263,66 +191,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					sQLText = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public long? TotalExecutionTimes
-			{
-				get
-				{
-					return totalExecutionTimes;
-				}
-				set	
-				{
-					totalExecutionTimes = value;
-				}
-			}
-
-			public long? ReturnTotalRowCounts
-			{
-				get
-				{
-					return returnTotalRowCounts;
-				}
-				set	
-				{
-					returnTotalRowCounts = value;
-				}
-			}
-
-			public long? TotalExecutionCounts
-			{
-				get
-				{
-					return totalExecutionCounts;
-				}
-				set	
-				{
-					totalExecutionCounts = value;
-				}
-			}
-
-			public long? MaxLockTime
-			{
-				get
-				{
-					return maxLockTime;
-				}
-				set	
-				{
-					maxLockTime = value;
 				}
 			}
 
@@ -338,6 +206,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public long? MaxExecutionTime
+			{
+				get
+				{
+					return maxExecutionTime;
+				}
+				set	
+				{
+					maxExecutionTime = value;
+				}
+			}
+
 			public long? ParseTotalRowCounts
 			{
 				get
@@ -347,6 +239,114 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					parseTotalRowCounts = value;
+				}
+			}
+
+			public long? TotalLockTimes
+			{
+				get
+				{
+					return totalLockTimes;
+				}
+				set	
+				{
+					totalLockTimes = value;
+				}
+			}
+
+			public long? TotalExecutionTimes
+			{
+				get
+				{
+					return totalExecutionTimes;
+				}
+				set	
+				{
+					totalExecutionTimes = value;
+				}
+			}
+
+			public string DBNodeId
+			{
+				get
+				{
+					return dBNodeId;
+				}
+				set	
+				{
+					dBNodeId = value;
+				}
+			}
+
+			public string SQLHASH
+			{
+				get
+				{
+					return sQLHASH;
+				}
+				set	
+				{
+					sQLHASH = value;
+				}
+			}
+
+			public long? ParseMaxRowCount
+			{
+				get
+				{
+					return parseMaxRowCount;
+				}
+				set	
+				{
+					parseMaxRowCount = value;
+				}
+			}
+
+			public long? MaxLockTime
+			{
+				get
+				{
+					return maxLockTime;
+				}
+				set	
+				{
+					maxLockTime = value;
+				}
+			}
+
+			public long? ReturnTotalRowCounts
+			{
+				get
+				{
+					return returnTotalRowCounts;
+				}
+				set	
+				{
+					returnTotalRowCounts = value;
+				}
+			}
+
+			public string DBName
+			{
+				get
+				{
+					return dBName;
+				}
+				set	
+				{
+					dBName = value;
+				}
+			}
+
+			public long? TotalExecutionCounts
+			{
+				get
+				{
+					return totalExecutionCounts;
+				}
+				set	
+				{
+					totalExecutionCounts = value;
 				}
 			}
 		}

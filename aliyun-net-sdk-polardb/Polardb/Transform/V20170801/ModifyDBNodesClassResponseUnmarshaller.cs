@@ -16,27 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.polardb.Model.V20170801
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.polardb.Model.V20170801;
+
+namespace Aliyun.Acs.polardb.Transform.V20170801
 {
-	public class ModifyDBEndpointAddressResponse : AcsResponse
-	{
+    public class ModifyDBNodesClassResponseUnmarshaller
+    {
+        public static ModifyDBNodesClassResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			ModifyDBNodesClassResponse modifyDBNodesClassResponse = new ModifyDBNodesClassResponse();
 
-		private string requestId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			modifyDBNodesClassResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDBNodesClassResponse.RequestId = _ctx.StringValue("ModifyDBNodesClass.RequestId");
+			modifyDBNodesClassResponse.DBClusterId = _ctx.StringValue("ModifyDBNodesClass.DBClusterId");
+			modifyDBNodesClassResponse.OrderId = _ctx.StringValue("ModifyDBNodesClass.OrderId");
+        
+			return modifyDBNodesClassResponse;
+        }
+    }
 }

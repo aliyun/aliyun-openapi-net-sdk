@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
@@ -56,25 +56,37 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeParameterGroup_ParameterGroupItem
 		{
 
+			private string dBType;
+
 			private string dBVersion;
-
-			private string parameterGroupId;
-
-			private string forceRestart;
 
 			private string parameterGroupName;
 
-			private string createTime;
-
-			private string parameterGroupDesc;
+			private string forceRestart;
 
 			private string parameterGroupType;
 
 			private int? parameterCounts;
 
-			private string dBType;
+			private string parameterGroupDesc;
+
+			private string createTime;
+
+			private string parameterGroupId;
 
 			private List<DescribeParameterGroup_ParameterDetailItem> parameterDetail;
+
+			public string DBType
+			{
+				get
+				{
+					return dBType;
+				}
+				set	
+				{
+					dBType = value;
+				}
+			}
 
 			public string DBVersion
 			{
@@ -85,30 +97,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					dBVersion = value;
-				}
-			}
-
-			public string ParameterGroupId
-			{
-				get
-				{
-					return parameterGroupId;
-				}
-				set	
-				{
-					parameterGroupId = value;
-				}
-			}
-
-			public string ForceRestart
-			{
-				get
-				{
-					return forceRestart;
-				}
-				set	
-				{
-					forceRestart = value;
 				}
 			}
 
@@ -124,27 +112,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string CreateTime
+			public string ForceRestart
 			{
 				get
 				{
-					return createTime;
+					return forceRestart;
 				}
 				set	
 				{
-					createTime = value;
-				}
-			}
-
-			public string ParameterGroupDesc
-			{
-				get
-				{
-					return parameterGroupDesc;
-				}
-				set	
-				{
-					parameterGroupDesc = value;
+					forceRestart = value;
 				}
 			}
 
@@ -172,15 +148,39 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string DBType
+			public string ParameterGroupDesc
 			{
 				get
 				{
-					return dBType;
+					return parameterGroupDesc;
 				}
 				set	
 				{
-					dBType = value;
+					parameterGroupDesc = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string ParameterGroupId
+			{
+				get
+				{
+					return parameterGroupId;
+				}
+				set	
+				{
+					parameterGroupId = value;
 				}
 			}
 

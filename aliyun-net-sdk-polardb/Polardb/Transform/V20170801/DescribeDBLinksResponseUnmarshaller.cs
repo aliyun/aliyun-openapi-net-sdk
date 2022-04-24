@@ -37,12 +37,12 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			List<DescribeDBLinksResponse.DescribeDBLinks_DBLinkInfosItem> describeDBLinksResponse_dBLinkInfos = new List<DescribeDBLinksResponse.DescribeDBLinks_DBLinkInfosItem>();
 			for (int i = 0; i < _ctx.Length("DescribeDBLinks.DBLinkInfos.Length"); i++) {
 				DescribeDBLinksResponse.DescribeDBLinks_DBLinkInfosItem dBLinkInfosItem = new DescribeDBLinksResponse.DescribeDBLinks_DBLinkInfosItem();
-				dBLinkInfosItem.TargetDBInstanceName = _ctx.StringValue("DescribeDBLinks.DBLinkInfos["+ i +"].TargetDBInstanceName");
 				dBLinkInfosItem.DBInstanceName = _ctx.StringValue("DescribeDBLinks.DBLinkInfos["+ i +"].DBInstanceName");
-				dBLinkInfosItem.TargetDBName = _ctx.StringValue("DescribeDBLinks.DBLinkInfos["+ i +"].TargetDBName");
-				dBLinkInfosItem.TargetAccount = _ctx.StringValue("DescribeDBLinks.DBLinkInfos["+ i +"].TargetAccount");
 				dBLinkInfosItem.DBLinkName = _ctx.StringValue("DescribeDBLinks.DBLinkInfos["+ i +"].DBLinkName");
 				dBLinkInfosItem.SourceDBName = _ctx.StringValue("DescribeDBLinks.DBLinkInfos["+ i +"].SourceDBName");
+				dBLinkInfosItem.TargetDBName = _ctx.StringValue("DescribeDBLinks.DBLinkInfos["+ i +"].TargetDBName");
+				dBLinkInfosItem.TargetDBInstanceName = _ctx.StringValue("DescribeDBLinks.DBLinkInfos["+ i +"].TargetDBInstanceName");
+				dBLinkInfosItem.TargetAccount = _ctx.StringValue("DescribeDBLinks.DBLinkInfos["+ i +"].TargetAccount");
 
 				describeDBLinksResponse_dBLinkInfos.Add(dBLinkInfosItem);
 			}

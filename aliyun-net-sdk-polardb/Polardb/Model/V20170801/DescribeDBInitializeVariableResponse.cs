@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
@@ -25,13 +25,25 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeDBInitializeVariableResponse : AcsResponse
 	{
 
+		private string dBVersion;
+
 		private string requestId;
 
 		private string dBType;
 
-		private string dBVersion;
-
 		private List<DescribeDBInitializeVariable_Variable> variables;
+
+		public string DBVersion
+		{
+			get
+			{
+				return dBVersion;
+			}
+			set	
+			{
+				dBVersion = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -54,18 +66,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				dBType = value;
-			}
-		}
-
-		public string DBVersion
-		{
-			get
-			{
-				return dBVersion;
-			}
-			set	
-			{
-				dBVersion = value;
 			}
 		}
 

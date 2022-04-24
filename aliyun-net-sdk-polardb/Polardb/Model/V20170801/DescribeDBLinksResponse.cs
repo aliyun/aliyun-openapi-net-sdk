@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
@@ -70,29 +70,17 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeDBLinks_DBLinkInfosItem
 		{
 
-			private string targetDBInstanceName;
-
 			private string dBInstanceName;
-
-			private string targetDBName;
-
-			private string targetAccount;
 
 			private string dBLinkName;
 
 			private string sourceDBName;
 
-			public string TargetDBInstanceName
-			{
-				get
-				{
-					return targetDBInstanceName;
-				}
-				set	
-				{
-					targetDBInstanceName = value;
-				}
-			}
+			private string targetDBName;
+
+			private string targetDBInstanceName;
+
+			private string targetAccount;
 
 			public string DBInstanceName
 			{
@@ -103,30 +91,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					dBInstanceName = value;
-				}
-			}
-
-			public string TargetDBName
-			{
-				get
-				{
-					return targetDBName;
-				}
-				set	
-				{
-					targetDBName = value;
-				}
-			}
-
-			public string TargetAccount
-			{
-				get
-				{
-					return targetAccount;
-				}
-				set	
-				{
-					targetAccount = value;
 				}
 			}
 
@@ -151,6 +115,42 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					sourceDBName = value;
+				}
+			}
+
+			public string TargetDBName
+			{
+				get
+				{
+					return targetDBName;
+				}
+				set	
+				{
+					targetDBName = value;
+				}
+			}
+
+			public string TargetDBInstanceName
+			{
+				get
+				{
+					return targetDBInstanceName;
+				}
+				set	
+				{
+					targetDBInstanceName = value;
+				}
+			}
+
+			public string TargetAccount
+			{
+				get
+				{
+					return targetAccount;
+				}
+				set	
+				{
+					targetAccount = value;
 				}
 			}
 		}

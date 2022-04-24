@@ -31,27 +31,27 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			DescribeBackupsResponse describeBackupsResponse = new DescribeBackupsResponse();
 
 			describeBackupsResponse.HttpResponse = _ctx.HttpResponse;
-			describeBackupsResponse.RequestId = _ctx.StringValue("DescribeBackups.RequestId");
 			describeBackupsResponse.TotalRecordCount = _ctx.StringValue("DescribeBackups.TotalRecordCount");
-			describeBackupsResponse.PageNumber = _ctx.StringValue("DescribeBackups.PageNumber");
 			describeBackupsResponse.PageRecordCount = _ctx.StringValue("DescribeBackups.PageRecordCount");
+			describeBackupsResponse.RequestId = _ctx.StringValue("DescribeBackups.RequestId");
+			describeBackupsResponse.PageNumber = _ctx.StringValue("DescribeBackups.PageNumber");
 
 			List<DescribeBackupsResponse.DescribeBackups_Backup> describeBackupsResponse_items = new List<DescribeBackupsResponse.DescribeBackups_Backup>();
 			for (int i = 0; i < _ctx.Length("DescribeBackups.Items.Length"); i++) {
 				DescribeBackupsResponse.DescribeBackups_Backup backup = new DescribeBackupsResponse.DescribeBackups_Backup();
-				backup.BackupId = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupId");
-				backup.DBClusterId = _ctx.StringValue("DescribeBackups.Items["+ i +"].DBClusterId");
-				backup.BackupStatus = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupStatus");
-				backup.BackupStartTime = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupStartTime");
-				backup.BackupEndTime = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupEndTime");
-				backup.BackupType = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupType");
-				backup.BackupMode = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupMode");
-				backup.BackupMethod = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupMethod");
-				backup.StoreStatus = _ctx.StringValue("DescribeBackups.Items["+ i +"].StoreStatus");
 				backup.BackupSetSize = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupSetSize");
 				backup.ConsistentTime = _ctx.StringValue("DescribeBackups.Items["+ i +"].ConsistentTime");
-				backup.BackupsLevel = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupsLevel");
+				backup.StoreStatus = _ctx.StringValue("DescribeBackups.Items["+ i +"].StoreStatus");
+				backup.BackupStatus = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupStatus");
+				backup.BackupType = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupType");
+				backup.BackupStartTime = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupStartTime");
 				backup.IsAvail = _ctx.StringValue("DescribeBackups.Items["+ i +"].IsAvail");
+				backup.BackupEndTime = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupEndTime");
+				backup.BackupId = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupId");
+				backup.DBClusterId = _ctx.StringValue("DescribeBackups.Items["+ i +"].DBClusterId");
+				backup.BackupsLevel = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupsLevel");
+				backup.BackupMode = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupMode");
+				backup.BackupMethod = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupMethod");
 
 				describeBackupsResponse_items.Add(backup);
 			}

@@ -22,10 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-	public class ModifyDBEndpointAddressResponse : AcsResponse
+	public class ModifyDBNodesClassResponse : AcsResponse
 	{
 
 		private string requestId;
+
+		private string dBClusterId;
+
+		private string orderId;
 
 		public string RequestId
 		{
@@ -36,6 +40,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string DBClusterId
+		{
+			get
+			{
+				return dBClusterId;
+			}
+			set	
+			{
+				dBClusterId = value;
+			}
+		}
+
+		public string OrderId
+		{
+			get
+			{
+				return orderId;
+			}
+			set	
+			{
+				orderId = value;
 			}
 		}
 	}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
@@ -29,9 +29,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private int? pageNumber;
 
-		private int? totalRecordCount;
-
 		private int? pageRecordCount;
+
+		private int? totalRecordCount;
 
 		private List<DescribeDBClustersWithBackups_DBCluster> items;
 
@@ -59,18 +59,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
-
 		public int? PageRecordCount
 		{
 			get
@@ -80,6 +68,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				pageRecordCount = value;
+			}
+		}
+
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
 			}
 		}
 
@@ -98,113 +98,65 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeDBClustersWithBackups_DBCluster
 		{
 
-			private string dBClusterId;
+			private string deletedTime;
 
-			private string dBClusterDescription;
-
-			private string payType;
-
-			private string dBClusterNetworkType;
-
-			private string regionId;
-
-			private string zoneId;
+			private string vpcId;
 
 			private string expireTime;
 
 			private string expired;
 
-			private string dBClusterStatus;
-
-			private string engine;
-
-			private string dBType;
-
-			private string dBVersion;
-
-			private string lockMode;
-
-			private int? deletionLock;
-
 			private string createTime;
-
-			private string vpcId;
-
-			private int? isDeleted;
-
-			private string deletedTime;
 
 			private string dBNodeClass;
 
-			public string DBClusterId
+			private string payType;
+
+			private string dBType;
+
+			private string lockMode;
+
+			private string regionId;
+
+			private int? deletionLock;
+
+			private string dBVersion;
+
+			private string dBClusterId;
+
+			private string dBClusterStatus;
+
+			private int? isDeleted;
+
+			private string dBClusterNetworkType;
+
+			private string dBClusterDescription;
+
+			private string zoneId;
+
+			private string engine;
+
+			public string DeletedTime
 			{
 				get
 				{
-					return dBClusterId;
+					return deletedTime;
 				}
 				set	
 				{
-					dBClusterId = value;
+					deletedTime = value;
 				}
 			}
 
-			public string DBClusterDescription
+			public string VpcId
 			{
 				get
 				{
-					return dBClusterDescription;
+					return vpcId;
 				}
 				set	
 				{
-					dBClusterDescription = value;
-				}
-			}
-
-			public string PayType
-			{
-				get
-				{
-					return payType;
-				}
-				set	
-				{
-					payType = value;
-				}
-			}
-
-			public string DBClusterNetworkType
-			{
-				get
-				{
-					return dBClusterNetworkType;
-				}
-				set	
-				{
-					dBClusterNetworkType = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
+					vpcId = value;
 				}
 			}
 
@@ -232,27 +184,39 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string DBClusterStatus
+			public string CreateTime
 			{
 				get
 				{
-					return dBClusterStatus;
+					return createTime;
 				}
 				set	
 				{
-					dBClusterStatus = value;
+					createTime = value;
 				}
 			}
 
-			public string Engine
+			public string DBNodeClass
 			{
 				get
 				{
-					return engine;
+					return dBNodeClass;
 				}
 				set	
 				{
-					engine = value;
+					dBNodeClass = value;
+				}
+			}
+
+			public string PayType
+			{
+				get
+				{
+					return payType;
+				}
+				set	
+				{
+					payType = value;
 				}
 			}
 
@@ -268,18 +232,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string DBVersion
-			{
-				get
-				{
-					return dBVersion;
-				}
-				set	
-				{
-					dBVersion = value;
-				}
-			}
-
 			public string LockMode
 			{
 				get
@@ -289,6 +241,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					lockMode = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 
@@ -304,27 +268,39 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string CreateTime
+			public string DBVersion
 			{
 				get
 				{
-					return createTime;
+					return dBVersion;
 				}
 				set	
 				{
-					createTime = value;
+					dBVersion = value;
 				}
 			}
 
-			public string VpcId
+			public string DBClusterId
 			{
 				get
 				{
-					return vpcId;
+					return dBClusterId;
 				}
 				set	
 				{
-					vpcId = value;
+					dBClusterId = value;
+				}
+			}
+
+			public string DBClusterStatus
+			{
+				get
+				{
+					return dBClusterStatus;
+				}
+				set	
+				{
+					dBClusterStatus = value;
 				}
 			}
 
@@ -340,27 +316,51 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string DeletedTime
+			public string DBClusterNetworkType
 			{
 				get
 				{
-					return deletedTime;
+					return dBClusterNetworkType;
 				}
 				set	
 				{
-					deletedTime = value;
+					dBClusterNetworkType = value;
 				}
 			}
 
-			public string DBNodeClass
+			public string DBClusterDescription
 			{
 				get
 				{
-					return dBNodeClass;
+					return dBClusterDescription;
 				}
 				set	
 				{
-					dBNodeClass = value;
+					dBClusterDescription = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public string Engine
+			{
+				get
+				{
+					return engine;
+				}
+				set	
+				{
+					engine = value;
 				}
 			}
 		}

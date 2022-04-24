@@ -31,16 +31,16 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			DescribeDBClusterMigrationResponse describeDBClusterMigrationResponse = new DescribeDBClusterMigrationResponse();
 
 			describeDBClusterMigrationResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBClusterMigrationResponse.RequestId = _ctx.StringValue("DescribeDBClusterMigration.RequestId");
-			describeDBClusterMigrationResponse.DBClusterId = _ctx.StringValue("DescribeDBClusterMigration.DBClusterId");
-			describeDBClusterMigrationResponse.SourceRDSDBInstanceId = _ctx.StringValue("DescribeDBClusterMigration.SourceRDSDBInstanceId");
-			describeDBClusterMigrationResponse.MigrationStatus = _ctx.StringValue("DescribeDBClusterMigration.MigrationStatus");
-			describeDBClusterMigrationResponse.Topologies = _ctx.StringValue("DescribeDBClusterMigration.Topologies");
-			describeDBClusterMigrationResponse.DelayedSeconds = _ctx.IntegerValue("DescribeDBClusterMigration.DelayedSeconds");
-			describeDBClusterMigrationResponse.ExpiredTime = _ctx.StringValue("DescribeDBClusterMigration.ExpiredTime");
-			describeDBClusterMigrationResponse.RdsReadWriteMode = _ctx.StringValue("DescribeDBClusterMigration.RdsReadWriteMode");
-			describeDBClusterMigrationResponse.DBClusterReadWriteMode = _ctx.StringValue("DescribeDBClusterMigration.DBClusterReadWriteMode");
 			describeDBClusterMigrationResponse.Comment = _ctx.StringValue("DescribeDBClusterMigration.Comment");
+			describeDBClusterMigrationResponse.RequestId = _ctx.StringValue("DescribeDBClusterMigration.RequestId");
+			describeDBClusterMigrationResponse.ExpiredTime = _ctx.StringValue("DescribeDBClusterMigration.ExpiredTime");
+			describeDBClusterMigrationResponse.DBClusterId = _ctx.StringValue("DescribeDBClusterMigration.DBClusterId");
+			describeDBClusterMigrationResponse.Topologies = _ctx.StringValue("DescribeDBClusterMigration.Topologies");
+			describeDBClusterMigrationResponse.RdsReadWriteMode = _ctx.StringValue("DescribeDBClusterMigration.RdsReadWriteMode");
+			describeDBClusterMigrationResponse.SourceRDSDBInstanceId = _ctx.StringValue("DescribeDBClusterMigration.SourceRDSDBInstanceId");
+			describeDBClusterMigrationResponse.DBClusterReadWriteMode = _ctx.StringValue("DescribeDBClusterMigration.DBClusterReadWriteMode");
+			describeDBClusterMigrationResponse.DelayedSeconds = _ctx.IntegerValue("DescribeDBClusterMigration.DelayedSeconds");
+			describeDBClusterMigrationResponse.MigrationStatus = _ctx.StringValue("DescribeDBClusterMigration.MigrationStatus");
 
 			List<DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_DBClusterEndpoint> describeDBClusterMigrationResponse_dBClusterEndpointList = new List<DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_DBClusterEndpoint>();
 			for (int i = 0; i < _ctx.Length("DescribeDBClusterMigration.DBClusterEndpointList.Length"); i++) {
@@ -51,12 +51,12 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				List<DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_DBClusterEndpoint.DescribeDBClusterMigration_Address> dBClusterEndpoint_addressItems = new List<DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_DBClusterEndpoint.DescribeDBClusterMigration_Address>();
 				for (int j = 0; j < _ctx.Length("DescribeDBClusterMigration.DBClusterEndpointList["+ i +"].AddressItems.Length"); j++) {
 					DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_DBClusterEndpoint.DescribeDBClusterMigration_Address address = new DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_DBClusterEndpoint.DescribeDBClusterMigration_Address();
+					address.VSwitchId = _ctx.StringValue("DescribeDBClusterMigration.DBClusterEndpointList["+ i +"].AddressItems["+ j +"].VSwitchId");
 					address.ConnectionString = _ctx.StringValue("DescribeDBClusterMigration.DBClusterEndpointList["+ i +"].AddressItems["+ j +"].ConnectionString");
-					address.IPAddress = _ctx.StringValue("DescribeDBClusterMigration.DBClusterEndpointList["+ i +"].AddressItems["+ j +"].IPAddress");
 					address.NetType = _ctx.StringValue("DescribeDBClusterMigration.DBClusterEndpointList["+ i +"].AddressItems["+ j +"].NetType");
 					address.Port = _ctx.StringValue("DescribeDBClusterMigration.DBClusterEndpointList["+ i +"].AddressItems["+ j +"].Port");
 					address.VPCId = _ctx.StringValue("DescribeDBClusterMigration.DBClusterEndpointList["+ i +"].AddressItems["+ j +"].VPCId");
-					address.VSwitchId = _ctx.StringValue("DescribeDBClusterMigration.DBClusterEndpointList["+ i +"].AddressItems["+ j +"].VSwitchId");
+					address.IPAddress = _ctx.StringValue("DescribeDBClusterMigration.DBClusterEndpointList["+ i +"].AddressItems["+ j +"].IPAddress");
 
 					dBClusterEndpoint_addressItems.Add(address);
 				}
@@ -75,12 +75,12 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				List<DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_RdsEndpoint.DescribeDBClusterMigration_Address2> rdsEndpoint_addressItems1 = new List<DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_RdsEndpoint.DescribeDBClusterMigration_Address2>();
 				for (int j = 0; j < _ctx.Length("DescribeDBClusterMigration.RdsEndpointList["+ i +"].AddressItems.Length"); j++) {
 					DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_RdsEndpoint.DescribeDBClusterMigration_Address2 address2 = new DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_RdsEndpoint.DescribeDBClusterMigration_Address2();
+					address2.VSwitchId = _ctx.StringValue("DescribeDBClusterMigration.RdsEndpointList["+ i +"].AddressItems["+ j +"].VSwitchId");
 					address2.ConnectionString = _ctx.StringValue("DescribeDBClusterMigration.RdsEndpointList["+ i +"].AddressItems["+ j +"].ConnectionString");
-					address2.IPAddress = _ctx.StringValue("DescribeDBClusterMigration.RdsEndpointList["+ i +"].AddressItems["+ j +"].IPAddress");
 					address2.NetType = _ctx.StringValue("DescribeDBClusterMigration.RdsEndpointList["+ i +"].AddressItems["+ j +"].NetType");
 					address2.Port = _ctx.StringValue("DescribeDBClusterMigration.RdsEndpointList["+ i +"].AddressItems["+ j +"].Port");
 					address2.VPCId = _ctx.StringValue("DescribeDBClusterMigration.RdsEndpointList["+ i +"].AddressItems["+ j +"].VPCId");
-					address2.VSwitchId = _ctx.StringValue("DescribeDBClusterMigration.RdsEndpointList["+ i +"].AddressItems["+ j +"].VSwitchId");
+					address2.IPAddress = _ctx.StringValue("DescribeDBClusterMigration.RdsEndpointList["+ i +"].AddressItems["+ j +"].IPAddress");
 
 					rdsEndpoint_addressItems1.Add(address2);
 				}

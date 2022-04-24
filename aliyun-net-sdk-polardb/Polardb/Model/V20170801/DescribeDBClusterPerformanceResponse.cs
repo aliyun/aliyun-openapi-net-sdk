@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
@@ -25,69 +25,21 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeDBClusterPerformanceResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string dBClusterId;
-
-		private string engine;
-
-		private string dBType;
-
 		private string dBVersion;
-
-		private string startTime;
 
 		private string endTime;
 
+		private string requestId;
+
+		private string startTime;
+
+		private string dBClusterId;
+
+		private string dBType;
+
+		private string engine;
+
 		private List<DescribeDBClusterPerformance_PerformanceItem> performanceKeys;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string DBClusterId
-		{
-			get
-			{
-				return dBClusterId;
-			}
-			set	
-			{
-				dBClusterId = value;
-			}
-		}
-
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-			}
-		}
-
-		public string DBType
-		{
-			get
-			{
-				return dBType;
-			}
-			set	
-			{
-				dBType = value;
-			}
-		}
 
 		public string DBVersion
 		{
@@ -98,6 +50,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				dBVersion = value;
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -113,15 +89,39 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string EndTime
+		public string DBClusterId
 		{
 			get
 			{
-				return endTime;
+				return dBClusterId;
 			}
 			set	
 			{
-				endTime = value;
+				dBClusterId = value;
+			}
+		}
+
+		public string DBType
+		{
+			get
+			{
+				return dBType;
+			}
+			set	
+			{
+				dBType = value;
+			}
+		}
+
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
 			}
 		}
 
@@ -140,23 +140,23 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeDBClusterPerformance_PerformanceItem
 		{
 
-			private string dBNodeId;
+			private string metricName;
 
 			private string measurement;
 
-			private string metricName;
+			private string dBNodeId;
 
 			private List<DescribeDBClusterPerformance_PerformanceItemValue> points;
 
-			public string DBNodeId
+			public string MetricName
 			{
 				get
 				{
-					return dBNodeId;
+					return metricName;
 				}
 				set	
 				{
-					dBNodeId = value;
+					metricName = value;
 				}
 			}
 
@@ -172,15 +172,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string MetricName
+			public string DBNodeId
 			{
 				get
 				{
-					return metricName;
+					return dBNodeId;
 				}
 				set	
 				{
-					metricName = value;
+					dBNodeId = value;
 				}
 			}
 

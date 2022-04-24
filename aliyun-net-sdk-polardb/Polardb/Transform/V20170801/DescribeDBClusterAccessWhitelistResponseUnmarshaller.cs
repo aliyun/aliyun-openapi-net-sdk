@@ -36,8 +36,8 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			List<DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterIPArray> describeDBClusterAccessWhitelistResponse_items = new List<DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterIPArray>();
 			for (int i = 0; i < _ctx.Length("DescribeDBClusterAccessWhitelist.Items.Length"); i++) {
 				DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterIPArray dBClusterIPArray = new DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterIPArray();
-				dBClusterIPArray.DBClusterIPArrayName = _ctx.StringValue("DescribeDBClusterAccessWhitelist.Items["+ i +"].DBClusterIPArrayName");
 				dBClusterIPArray.DBClusterIPArrayAttribute = _ctx.StringValue("DescribeDBClusterAccessWhitelist.Items["+ i +"].DBClusterIPArrayAttribute");
+				dBClusterIPArray.DBClusterIPArrayName = _ctx.StringValue("DescribeDBClusterAccessWhitelist.Items["+ i +"].DBClusterIPArrayName");
 				dBClusterIPArray.SecurityIps = _ctx.StringValue("DescribeDBClusterAccessWhitelist.Items["+ i +"].SecurityIps");
 
 				describeDBClusterAccessWhitelistResponse_items.Add(dBClusterIPArray);

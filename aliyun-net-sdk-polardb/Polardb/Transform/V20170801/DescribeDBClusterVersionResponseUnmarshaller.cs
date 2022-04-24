@@ -31,17 +31,17 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			DescribeDBClusterVersionResponse describeDBClusterVersionResponse = new DescribeDBClusterVersionResponse();
 
 			describeDBClusterVersionResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBClusterVersionResponse.ProxyVersionStatus = _ctx.StringValue("DescribeDBClusterVersion.ProxyVersionStatus");
 			describeDBClusterVersionResponse.IsLatestVersion = _ctx.StringValue("DescribeDBClusterVersion.IsLatestVersion");
 			describeDBClusterVersionResponse.DBVersion = _ctx.StringValue("DescribeDBClusterVersion.DBVersion");
-			describeDBClusterVersionResponse.RequestId = _ctx.StringValue("DescribeDBClusterVersion.RequestId");
 			describeDBClusterVersionResponse.DBRevisionVersion = _ctx.StringValue("DescribeDBClusterVersion.DBRevisionVersion");
+			describeDBClusterVersionResponse.RequestId = _ctx.StringValue("DescribeDBClusterVersion.RequestId");
 			describeDBClusterVersionResponse.DBVersionStatus = _ctx.StringValue("DescribeDBClusterVersion.DBVersionStatus");
 			describeDBClusterVersionResponse.DBClusterId = _ctx.StringValue("DescribeDBClusterVersion.DBClusterId");
-			describeDBClusterVersionResponse.DBLatestVersion = _ctx.StringValue("DescribeDBClusterVersion.DBLatestVersion");
-			describeDBClusterVersionResponse.ProxyRevisionVersion = _ctx.StringValue("DescribeDBClusterVersion.ProxyRevisionVersion");
 			describeDBClusterVersionResponse.DBMinorVersion = _ctx.StringValue("DescribeDBClusterVersion.DBMinorVersion");
+			describeDBClusterVersionResponse.ProxyRevisionVersion = _ctx.StringValue("DescribeDBClusterVersion.ProxyRevisionVersion");
+			describeDBClusterVersionResponse.ProxyVersionStatus = _ctx.StringValue("DescribeDBClusterVersion.ProxyVersionStatus");
 			describeDBClusterVersionResponse.ProxyLatestVersion = _ctx.StringValue("DescribeDBClusterVersion.ProxyLatestVersion");
+			describeDBClusterVersionResponse.DBLatestVersion = _ctx.StringValue("DescribeDBClusterVersion.DBLatestVersion");
         
 			return describeDBClusterVersionResponse;
         }

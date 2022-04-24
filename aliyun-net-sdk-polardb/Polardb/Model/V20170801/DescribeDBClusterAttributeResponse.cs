@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
@@ -554,6 +554,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string hotReplicaMode;
 
+			private string addedCpuCores;
+
+			private string masterId;
+
 			public string CreationTime
 			{
 				get
@@ -683,6 +687,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					hotReplicaMode = value;
+				}
+			}
+
+			public string AddedCpuCores
+			{
+				get
+				{
+					return addedCpuCores;
+				}
+				set	
+				{
+					addedCpuCores = value;
+				}
+			}
+
+			public string MasterId
+			{
+				get
+				{
+					return masterId;
+				}
+				set	
+				{
+					masterId = value;
 				}
 			}
 		}

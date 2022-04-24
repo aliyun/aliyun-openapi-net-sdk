@@ -80,6 +80,8 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				dBNode.DBNodeId = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].DBNodeId");
 				dBNode.ImciSwitch = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].ImciSwitch");
 				dBNode.HotReplicaMode = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].HotReplicaMode");
+				dBNode.AddedCpuCores = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].AddedCpuCores");
+				dBNode.MasterId = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].MasterId");
 
 				describeDBClusterAttributeResponse_dBNodes.Add(dBNode);
 			}

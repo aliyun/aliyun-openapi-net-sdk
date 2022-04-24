@@ -31,9 +31,9 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			DescribeDBInitializeVariableResponse describeDBInitializeVariableResponse = new DescribeDBInitializeVariableResponse();
 
 			describeDBInitializeVariableResponse.HttpResponse = _ctx.HttpResponse;
+			describeDBInitializeVariableResponse.DBVersion = _ctx.StringValue("DescribeDBInitializeVariable.DBVersion");
 			describeDBInitializeVariableResponse.RequestId = _ctx.StringValue("DescribeDBInitializeVariable.RequestId");
 			describeDBInitializeVariableResponse.DBType = _ctx.StringValue("DescribeDBInitializeVariable.DBType");
-			describeDBInitializeVariableResponse.DBVersion = _ctx.StringValue("DescribeDBInitializeVariable.DBVersion");
 
 			List<DescribeDBInitializeVariableResponse.DescribeDBInitializeVariable_Variable> describeDBInitializeVariableResponse_variables = new List<DescribeDBInitializeVariableResponse.DescribeDBInitializeVariable_Variable>();
 			for (int i = 0; i < _ctx.Length("DescribeDBInitializeVariable.Variables.Length"); i++) {

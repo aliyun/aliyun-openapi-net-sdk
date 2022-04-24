@@ -34,12 +34,16 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeBackupPolicyResponse.PreferredBackupPeriod = _ctx.StringValue("DescribeBackupPolicy.PreferredBackupPeriod");
 			describeBackupPolicyResponse.DataLevel1BackupRetentionPeriod = _ctx.StringValue("DescribeBackupPolicy.DataLevel1BackupRetentionPeriod");
 			describeBackupPolicyResponse.RequestId = _ctx.StringValue("DescribeBackupPolicy.RequestId");
-			describeBackupPolicyResponse.BackupRetentionPolicyOnClusterDeletion = _ctx.StringValue("DescribeBackupPolicy.BackupRetentionPolicyOnClusterDeletion");
 			describeBackupPolicyResponse.PreferredBackupTime = _ctx.StringValue("DescribeBackupPolicy.PreferredBackupTime");
-			describeBackupPolicyResponse.BackupFrequency = _ctx.StringValue("DescribeBackupPolicy.BackupFrequency");
-			describeBackupPolicyResponse.PreferredNextBackupTime = _ctx.StringValue("DescribeBackupPolicy.PreferredNextBackupTime");
+			describeBackupPolicyResponse.BackupRetentionPolicyOnClusterDeletion = _ctx.StringValue("DescribeBackupPolicy.BackupRetentionPolicyOnClusterDeletion");
 			describeBackupPolicyResponse.BackupRetentionPeriod = _ctx.IntegerValue("DescribeBackupPolicy.BackupRetentionPeriod");
+			describeBackupPolicyResponse.PreferredNextBackupTime = _ctx.StringValue("DescribeBackupPolicy.PreferredNextBackupTime");
 			describeBackupPolicyResponse.DataLevel2BackupRetentionPeriod = _ctx.StringValue("DescribeBackupPolicy.DataLevel2BackupRetentionPeriod");
+			describeBackupPolicyResponse.BackupFrequency = _ctx.StringValue("DescribeBackupPolicy.BackupFrequency");
+			describeBackupPolicyResponse.DataLevel1BackupFrequency = _ctx.StringValue("DescribeBackupPolicy.DataLevel1BackupFrequency");
+			describeBackupPolicyResponse.DataLevel1BackupPeriod = _ctx.StringValue("DescribeBackupPolicy.DataLevel1BackupPeriod");
+			describeBackupPolicyResponse.DataLevel1BackupTime = _ctx.StringValue("DescribeBackupPolicy.DataLevel1BackupTime");
+			describeBackupPolicyResponse.DataLevel2BackupPeriod = _ctx.StringValue("DescribeBackupPolicy.DataLevel2BackupPeriod");
         
 			return describeBackupPolicyResponse;
         }
