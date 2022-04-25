@@ -99,6 +99,28 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 				nodeConfiguration_outputList.Add(nodeInputOutput1);
 			}
 			nodeConfiguration.OutputList = nodeConfiguration_outputList;
+
+			List<GetFileResponse.GetFile_Data.GetFile_NodeConfiguration.GetFile_InputContextParameter> nodeConfiguration_inputParameters = new List<GetFileResponse.GetFile_Data.GetFile_NodeConfiguration.GetFile_InputContextParameter>();
+			for (int i = 0; i < _ctx.Length("GetFile.Data.NodeConfiguration.InputParameters.Length"); i++) {
+				GetFileResponse.GetFile_Data.GetFile_NodeConfiguration.GetFile_InputContextParameter inputContextParameter = new GetFileResponse.GetFile_Data.GetFile_NodeConfiguration.GetFile_InputContextParameter();
+				inputContextParameter.ParameterName = _ctx.StringValue("GetFile.Data.NodeConfiguration.InputParameters["+ i +"].ParameterName");
+				inputContextParameter.ValueSource = _ctx.StringValue("GetFile.Data.NodeConfiguration.InputParameters["+ i +"].ValueSource");
+
+				nodeConfiguration_inputParameters.Add(inputContextParameter);
+			}
+			nodeConfiguration.InputParameters = nodeConfiguration_inputParameters;
+
+			List<GetFileResponse.GetFile_Data.GetFile_NodeConfiguration.GetFile_OutputContextParameter> nodeConfiguration_outputParameters = new List<GetFileResponse.GetFile_Data.GetFile_NodeConfiguration.GetFile_OutputContextParameter>();
+			for (int i = 0; i < _ctx.Length("GetFile.Data.NodeConfiguration.OutputParameters.Length"); i++) {
+				GetFileResponse.GetFile_Data.GetFile_NodeConfiguration.GetFile_OutputContextParameter outputContextParameter = new GetFileResponse.GetFile_Data.GetFile_NodeConfiguration.GetFile_OutputContextParameter();
+				outputContextParameter.ParameterName = _ctx.StringValue("GetFile.Data.NodeConfiguration.OutputParameters["+ i +"].ParameterName");
+				outputContextParameter._Value = _ctx.StringValue("GetFile.Data.NodeConfiguration.OutputParameters["+ i +"].Value");
+				outputContextParameter.Type = _ctx.StringValue("GetFile.Data.NodeConfiguration.OutputParameters["+ i +"].Type");
+				outputContextParameter.Description = _ctx.StringValue("GetFile.Data.NodeConfiguration.OutputParameters["+ i +"].Description");
+
+				nodeConfiguration_outputParameters.Add(outputContextParameter);
+			}
+			nodeConfiguration.OutputParameters = nodeConfiguration_outputParameters;
 			data.NodeConfiguration = nodeConfiguration;
 			getFileResponse.Data = data;
         

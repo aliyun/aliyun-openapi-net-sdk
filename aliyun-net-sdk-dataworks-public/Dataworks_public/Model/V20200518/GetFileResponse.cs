@@ -487,6 +487,10 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private List<GetFile_NodeInputOutput1> outputList;
 
+				private List<GetFile_InputContextParameter> inputParameters;
+
+				private List<GetFile_OutputContextParameter> outputParameters;
+
 				public string RerunMode
 				{
 					get
@@ -679,6 +683,30 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
+				public List<GetFile_InputContextParameter> InputParameters
+				{
+					get
+					{
+						return inputParameters;
+					}
+					set	
+					{
+						inputParameters = value;
+					}
+				}
+
+				public List<GetFile_OutputContextParameter> OutputParameters
+				{
+					get
+					{
+						return outputParameters;
+					}
+					set	
+					{
+						outputParameters = value;
+					}
+				}
+
 				public class GetFile_NodeInputOutput
 				{
 
@@ -739,6 +767,98 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 						set	
 						{
 							output = value;
+						}
+					}
+				}
+
+				public class GetFile_InputContextParameter
+				{
+
+					private string parameterName;
+
+					private string valueSource;
+
+					public string ParameterName
+					{
+						get
+						{
+							return parameterName;
+						}
+						set	
+						{
+							parameterName = value;
+						}
+					}
+
+					public string ValueSource
+					{
+						get
+						{
+							return valueSource;
+						}
+						set	
+						{
+							valueSource = value;
+						}
+					}
+				}
+
+				public class GetFile_OutputContextParameter
+				{
+
+					private string parameterName;
+
+					private string _value;
+
+					private string type;
+
+					private string description;
+
+					public string ParameterName
+					{
+						get
+						{
+							return parameterName;
+						}
+						set	
+						{
+							parameterName = value;
+						}
+					}
+
+					public string _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
+						}
+					}
+
+					public string Type
+					{
+						get
+						{
+							return type;
+						}
+						set	
+						{
+							type = value;
+						}
+					}
+
+					public string Description
+					{
+						get
+						{
+							return description;
+						}
+						set	
+						{
+							description = value;
 						}
 					}
 				}

@@ -71,6 +71,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string connectionName;
 
+		private string outputParameters;
+
 		private string paraValue;
 
 		private string resourceGroupIdentifier;
@@ -82,6 +84,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		private long? endEffectDate;
 
 		private string fileName;
+
+		private string inputParameters;
 
 		private bool? stop;
 
@@ -290,6 +294,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public string OutputParameters
+		{
+			get
+			{
+				return outputParameters;
+			}
+			set	
+			{
+				outputParameters = value;
+				DictionaryUtil.Add(BodyParameters, "OutputParameters", value);
+			}
+		}
+
 		public string ParaValue
 		{
 			get
@@ -365,6 +382,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				fileName = value;
 				DictionaryUtil.Add(BodyParameters, "FileName", value);
+			}
+		}
+
+		public string InputParameters
+		{
+			get
+			{
+				return inputParameters;
+			}
+			set	
+			{
+				inputParameters = value;
+				DictionaryUtil.Add(BodyParameters, "InputParameters", value);
 			}
 		}
 
