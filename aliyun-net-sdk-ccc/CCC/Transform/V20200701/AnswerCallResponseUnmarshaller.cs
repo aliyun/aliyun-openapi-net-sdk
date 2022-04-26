@@ -48,6 +48,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			AnswerCallResponse.AnswerCall_Data.AnswerCall_CallContext callContext = new AnswerCallResponse.AnswerCall_Data.AnswerCall_CallContext();
 			callContext.JobId = _ctx.StringValue("AnswerCall.Data.CallContext.JobId");
 			callContext.InstanceId = _ctx.StringValue("AnswerCall.Data.CallContext.InstanceId");
+			callContext.CallType = _ctx.StringValue("AnswerCall.Data.CallContext.CallType");
 
 			List<AnswerCallResponse.AnswerCall_Data.AnswerCall_CallContext.AnswerCall_ChannelContext> callContext_channelContexts = new List<AnswerCallResponse.AnswerCall_Data.AnswerCall_CallContext.AnswerCall_ChannelContext>();
 			for (int i = 0; i < _ctx.Length("AnswerCall.Data.CallContext.ChannelContexts.Length"); i++) {

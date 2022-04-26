@@ -56,6 +56,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			data.QueueId = _ctx.StringValue("GetCampaign.Data.QueueId");
 			data.Simulation = _ctx.BooleanValue("GetCampaign.Data.Simulation");
 			data.SimulationParameters = _ctx.StringValue("GetCampaign.Data.SimulationParameters");
+			data.CasesUncompletedAfterAttempted = _ctx.LongValue("GetCampaign.Data.CasesUncompletedAfterAttempted");
 			getCampaignResponse.Data = data;
         
 			return getCampaignResponse;

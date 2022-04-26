@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20200701
@@ -106,6 +106,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 			private string state;
 
+			private bool? outboundScenario;
+
 			public long? StartTime
 			{
 				get
@@ -151,6 +153,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				set	
 				{
 					state = value;
+				}
+			}
+
+			public bool? OutboundScenario
+			{
+				get
+				{
+					return outboundScenario;
+				}
+				set	
+				{
+					outboundScenario = value;
 				}
 			}
 		}

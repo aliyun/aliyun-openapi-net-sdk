@@ -43,6 +43,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			launchSurveyResponse._Params = launchSurveyResponse_params;
 
 			LaunchSurveyResponse.LaunchSurvey_Data data = new LaunchSurveyResponse.LaunchSurvey_Data();
+			data.ContextId = _ctx.LongValue("LaunchSurvey.Data.ContextId");
 
 			LaunchSurveyResponse.LaunchSurvey_Data.LaunchSurvey_CallContext callContext = new LaunchSurveyResponse.LaunchSurvey_Data.LaunchSurvey_CallContext();
 			callContext.CallType = _ctx.StringValue("LaunchSurvey.Data.CallContext.CallType");

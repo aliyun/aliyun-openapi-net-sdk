@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20200701
@@ -135,6 +135,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			private bool? simulation;
 
 			private string simulationParameters;
+
+			private long? casesUncompletedAfterAttempted;
 
 			public long? ActualEndTime
 			{
@@ -361,6 +363,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				set	
 				{
 					simulationParameters = value;
+				}
+			}
+
+			public long? CasesUncompletedAfterAttempted
+			{
+				get
+				{
+					return casesUncompletedAfterAttempted;
+				}
+				set	
+				{
+					casesUncompletedAfterAttempted = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20200701
@@ -112,9 +112,23 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 		public class BlindTransfer_Data
 		{
 
+			private long? contextId;
+
 			private BlindTransfer_CallContext callContext;
 
 			private BlindTransfer_UserContext userContext;
+
+			public long? ContextId
+			{
+				get
+				{
+					return contextId;
+				}
+				set	
+				{
+					contextId = value;
+				}
+			}
 
 			public BlindTransfer_CallContext CallContext
 			{

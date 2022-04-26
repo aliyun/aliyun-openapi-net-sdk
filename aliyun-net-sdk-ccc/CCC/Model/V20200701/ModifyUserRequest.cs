@@ -51,6 +51,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 		private string instanceId;
 
+		private string displayId;
+
 		public string RoleId
 		{
 			get
@@ -113,6 +115,19 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string DisplayId
+		{
+			get
+			{
+				return displayId;
+			}
+			set	
+			{
+				displayId = value;
+				DictionaryUtil.Add(QueryParameters, "DisplayId", value);
 			}
 		}
 

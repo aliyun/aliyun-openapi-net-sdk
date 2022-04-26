@@ -31,13 +31,13 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			SaveRTCStatsV2Response saveRTCStatsV2Response = new SaveRTCStatsV2Response();
 
 			saveRTCStatsV2Response.HttpResponse = _ctx.HttpResponse;
-			saveRTCStatsV2Response.Code = _ctx.StringValue("SaveRTCStatsV2.Code");
 			saveRTCStatsV2Response.HttpStatusCode = _ctx.LongValue("SaveRTCStatsV2.HttpStatusCode");
-			saveRTCStatsV2Response.Message = _ctx.StringValue("SaveRTCStatsV2.Message");
 			saveRTCStatsV2Response.RequestId = _ctx.StringValue("SaveRTCStatsV2.RequestId");
-			saveRTCStatsV2Response.RowCount = _ctx.LongValue("SaveRTCStatsV2.RowCount");
 			saveRTCStatsV2Response.Success = _ctx.BooleanValue("SaveRTCStatsV2.Success");
+			saveRTCStatsV2Response.Code = _ctx.StringValue("SaveRTCStatsV2.Code");
+			saveRTCStatsV2Response.Message = _ctx.StringValue("SaveRTCStatsV2.Message");
 			saveRTCStatsV2Response.TimeStamp = _ctx.LongValue("SaveRTCStatsV2.TimeStamp");
+			saveRTCStatsV2Response.RowCount = _ctx.LongValue("SaveRTCStatsV2.RowCount");
         
 			return saveRTCStatsV2Response;
         }

@@ -43,6 +43,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			blindTransferResponse._Params = blindTransferResponse_params;
 
 			BlindTransferResponse.BlindTransfer_Data data = new BlindTransferResponse.BlindTransfer_Data();
+			data.ContextId = _ctx.LongValue("BlindTransfer.Data.ContextId");
 
 			BlindTransferResponse.BlindTransfer_Data.BlindTransfer_CallContext callContext = new BlindTransferResponse.BlindTransfer_Data.BlindTransfer_CallContext();
 			callContext.CallType = _ctx.StringValue("BlindTransfer.Data.CallContext.CallType");

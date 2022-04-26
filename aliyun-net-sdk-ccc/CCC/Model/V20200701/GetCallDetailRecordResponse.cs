@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20200701
@@ -528,6 +528,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 					private long? eventTime;
 
+					private long? duration;
+
 					public string _Event
 					{
 						get
@@ -551,6 +553,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 							eventTime = value;
 						}
 					}
+
+					public long? Duration
+					{
+						get
+						{
+							return duration;
+						}
+						set	
+						{
+							duration = value;
+						}
+					}
 				}
 			}
 
@@ -558,6 +572,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			{
 
 				private string flowId;
+
+				private string flowType;
 
 				private List<GetCallDetailRecord_EventSequenceItem2> eventSequence1;
 
@@ -570,6 +586,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						flowId = value;
+					}
+				}
+
+				public string FlowType
+				{
+					get
+					{
+						return flowType;
+					}
+					set	
+					{
+						flowType = value;
 					}
 				}
 

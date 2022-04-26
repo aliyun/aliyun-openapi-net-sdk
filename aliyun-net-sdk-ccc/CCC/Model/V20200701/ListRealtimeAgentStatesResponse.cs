@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20200701
@@ -175,6 +175,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 				private List<string> skillGroupIdList;
 
+				private List<string> skillGroupNameList;
+
 				public string Extension
 				{
 					get
@@ -280,6 +282,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						skillGroupIdList = value;
+					}
+				}
+
+				public List<string> SkillGroupNameList
+				{
+					get
+					{
+						return skillGroupNameList;
+					}
+					set	
+					{
+						skillGroupNameList = value;
 					}
 				}
 			}

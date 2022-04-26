@@ -43,6 +43,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 		private string contactFlowId;
 
+		private string contactFlowVariables;
+
 		private string userId;
 
 		private string deviceId;
@@ -50,6 +52,10 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 		private string jobId;
 
 		private string instanceId;
+
+		private string smsMetadataId;
+
+		private string surveyChannel;
 
 		public string ContactFlowId
 		{
@@ -61,6 +67,19 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			{
 				contactFlowId = value;
 				DictionaryUtil.Add(QueryParameters, "ContactFlowId", value);
+			}
+		}
+
+		public string ContactFlowVariables
+		{
+			get
+			{
+				return contactFlowVariables;
+			}
+			set	
+			{
+				contactFlowVariables = value;
+				DictionaryUtil.Add(QueryParameters, "ContactFlowVariables", value);
 			}
 		}
 
@@ -113,6 +132,32 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string SmsMetadataId
+		{
+			get
+			{
+				return smsMetadataId;
+			}
+			set	
+			{
+				smsMetadataId = value;
+				DictionaryUtil.Add(QueryParameters, "SmsMetadataId", value);
+			}
+		}
+
+		public string SurveyChannel
+		{
+			get
+			{
+				return surveyChannel;
+			}
+			set	
+			{
+				surveyChannel = value;
+				DictionaryUtil.Add(QueryParameters, "SurveyChannel", value);
 			}
 		}
 

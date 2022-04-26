@@ -31,11 +31,11 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			SaveTerminalLogResponse saveTerminalLogResponse = new SaveTerminalLogResponse();
 
 			saveTerminalLogResponse.HttpResponse = _ctx.HttpResponse;
-			saveTerminalLogResponse.Code = _ctx.StringValue("SaveTerminalLog.Code");
 			saveTerminalLogResponse.HttpStatusCode = _ctx.LongValue("SaveTerminalLog.HttpStatusCode");
-			saveTerminalLogResponse.Message = _ctx.StringValue("SaveTerminalLog.Message");
 			saveTerminalLogResponse.RequestId = _ctx.StringValue("SaveTerminalLog.RequestId");
 			saveTerminalLogResponse.Success = _ctx.BooleanValue("SaveTerminalLog.Success");
+			saveTerminalLogResponse.Code = _ctx.StringValue("SaveTerminalLog.Code");
+			saveTerminalLogResponse.Message = _ctx.StringValue("SaveTerminalLog.Message");
 			saveTerminalLogResponse.TimeStamp = _ctx.LongValue("SaveTerminalLog.TimeStamp");
         
 			return saveTerminalLogResponse;

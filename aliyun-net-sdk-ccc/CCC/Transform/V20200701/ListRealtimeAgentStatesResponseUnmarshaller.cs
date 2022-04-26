@@ -59,6 +59,12 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 				}
 				agentState.SkillGroupIdList = agentState_skillGroupIdList;
 
+				List<string> agentState_skillGroupNameList = new List<string>();
+				for (int j = 0; j < _ctx.Length("ListRealtimeAgentStates.Data.List["+ i +"].SkillGroupNameList.Length"); j++) {
+					agentState_skillGroupNameList.Add(_ctx.StringValue("ListRealtimeAgentStates.Data.List["+ i +"].SkillGroupNameList["+ j +"]"));
+				}
+				agentState.SkillGroupNameList = agentState_skillGroupNameList;
+
 				data_list.Add(agentState);
 			}
 			data.List = data_list;

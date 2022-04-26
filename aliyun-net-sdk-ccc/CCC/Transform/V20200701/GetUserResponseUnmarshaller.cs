@@ -44,6 +44,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 
 			GetUserResponse.GetUser_Data data = new GetUserResponse.GetUser_Data();
 			data.DisplayName = _ctx.StringValue("GetUser.Data.DisplayName");
+			data.DisplayId = _ctx.StringValue("GetUser.Data.DisplayId");
 			data.Extension = _ctx.StringValue("GetUser.Data.Extension");
 			data.LoginName = _ctx.StringValue("GetUser.Data.LoginName");
 			data.Email = _ctx.StringValue("GetUser.Data.Email");

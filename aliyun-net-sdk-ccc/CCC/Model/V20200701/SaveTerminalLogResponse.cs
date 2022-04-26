@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20200701
@@ -25,29 +25,17 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 	public class SaveTerminalLogResponse : AcsResponse
 	{
 
-		private string code;
-
 		private long? httpStatusCode;
-
-		private string message;
 
 		private string requestId;
 
 		private bool? success;
 
-		private long? timeStamp;
+		private string code;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private string message;
+
+		private long? timeStamp;
 
 		public long? HttpStatusCode
 		{
@@ -58,18 +46,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			set	
 			{
 				httpStatusCode = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 
@@ -94,6 +70,30 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 

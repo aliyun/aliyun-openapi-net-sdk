@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20200701
@@ -114,6 +114,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 			private string displayName;
 
+			private string displayId;
+
 			private string extension;
 
 			private string loginName;
@@ -147,6 +149,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				set	
 				{
 					displayName = value;
+				}
+			}
+
+			public string DisplayId
+			{
+				get
+				{
+					return displayId;
+				}
+				set	
+				{
+					displayId = value;
 				}
 			}
 

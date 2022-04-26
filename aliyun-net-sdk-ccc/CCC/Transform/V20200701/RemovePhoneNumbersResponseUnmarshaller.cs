@@ -34,14 +34,13 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			removePhoneNumbersResponse.HttpStatusCode = _ctx.IntegerValue("RemovePhoneNumbers.HttpStatusCode");
 			removePhoneNumbersResponse.Code = _ctx.StringValue("RemovePhoneNumbers.Code");
 			removePhoneNumbersResponse.Message = _ctx.StringValue("RemovePhoneNumbers.Message");
-			removePhoneNumbersResponse.Data = _ctx.StringValue("RemovePhoneNumbers.Data");
 			removePhoneNumbersResponse.RequestId = _ctx.StringValue("RemovePhoneNumbers.RequestId");
 
-			List<string> removePhoneNumbersResponse_failureList = new List<string>();
-			for (int i = 0; i < _ctx.Length("RemovePhoneNumbers.FailureList.Length"); i++) {
-				removePhoneNumbersResponse_failureList.Add(_ctx.StringValue("RemovePhoneNumbers.FailureList["+ i +"]"));
+			List<string> removePhoneNumbersResponse_data = new List<string>();
+			for (int i = 0; i < _ctx.Length("RemovePhoneNumbers.Data.Length"); i++) {
+				removePhoneNumbersResponse_data.Add(_ctx.StringValue("RemovePhoneNumbers.Data["+ i +"]"));
 			}
-			removePhoneNumbersResponse.FailureList = removePhoneNumbersResponse_failureList;
+			removePhoneNumbersResponse.Data = removePhoneNumbersResponse_data;
 
 			List<string> removePhoneNumbersResponse_params = new List<string>();
 			for (int i = 0; i < _ctx.Length("RemovePhoneNumbers.Params.Length"); i++) {

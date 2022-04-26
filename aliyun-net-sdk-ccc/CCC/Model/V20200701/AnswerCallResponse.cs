@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20200701
@@ -161,6 +161,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 				private string instanceId;
 
+				private string callType;
+
 				private List<AnswerCall_ChannelContext> channelContexts;
 
 				public string JobId
@@ -184,6 +186,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						instanceId = value;
+					}
+				}
+
+				public string CallType
+				{
+					get
+					{
+						return callType;
+					}
+					set	
+					{
+						callType = value;
 					}
 				}
 

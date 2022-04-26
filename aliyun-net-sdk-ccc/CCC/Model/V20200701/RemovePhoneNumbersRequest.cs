@@ -45,6 +45,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 		private string instanceId;
 
+		private bool? force;
+
 		public string NumberList
 		{
 			get
@@ -68,6 +70,19 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public bool? Force
+		{
+			get
+			{
+				return force;
+			}
+			set	
+			{
+				force = value;
+				DictionaryUtil.Add(QueryParameters, "Force", value.ToString());
 			}
 		}
 

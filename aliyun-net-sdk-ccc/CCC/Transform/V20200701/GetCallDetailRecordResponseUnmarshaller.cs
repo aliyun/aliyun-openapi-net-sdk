@@ -72,6 +72,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 					GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_AgentEventsItem.GetCallDetailRecord_EventSequenceItem eventSequenceItem = new GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_AgentEventsItem.GetCallDetailRecord_EventSequenceItem();
 					eventSequenceItem._Event = _ctx.StringValue("GetCallDetailRecord.Data.AgentEvents["+ i +"].EventSequence["+ j +"].Event");
 					eventSequenceItem.EventTime = _ctx.LongValue("GetCallDetailRecord.Data.AgentEvents["+ i +"].EventSequence["+ j +"].EventTime");
+					eventSequenceItem.Duration = _ctx.LongValue("GetCallDetailRecord.Data.AgentEvents["+ i +"].EventSequence["+ j +"].Duration");
 
 					agentEventsItem_eventSequence.Add(eventSequenceItem);
 				}
@@ -85,6 +86,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			for (int i = 0; i < _ctx.Length("GetCallDetailRecord.Data.IvrEvents.Length"); i++) {
 				GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_IvrEventsItem ivrEventsItem = new GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_IvrEventsItem();
 				ivrEventsItem.FlowId = _ctx.StringValue("GetCallDetailRecord.Data.IvrEvents["+ i +"].FlowId");
+				ivrEventsItem.FlowType = _ctx.StringValue("GetCallDetailRecord.Data.IvrEvents["+ i +"].FlowType");
 
 				List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_IvrEventsItem.GetCallDetailRecord_EventSequenceItem2> ivrEventsItem_eventSequence1 = new List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_IvrEventsItem.GetCallDetailRecord_EventSequenceItem2>();
 				for (int j = 0; j < _ctx.Length("GetCallDetailRecord.Data.IvrEvents["+ i +"].EventSequence.Length"); j++) {

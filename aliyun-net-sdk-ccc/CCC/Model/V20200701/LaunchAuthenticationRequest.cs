@@ -43,6 +43,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 		private string contactFlowId;
 
+		private string contactFlowVariables;
+
 		private string userId;
 
 		private string deviceId;
@@ -61,6 +63,19 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			{
 				contactFlowId = value;
 				DictionaryUtil.Add(QueryParameters, "ContactFlowId", value);
+			}
+		}
+
+		public string ContactFlowVariables
+		{
+			get
+			{
+				return contactFlowVariables;
+			}
+			set	
+			{
+				contactFlowVariables = value;
+				DictionaryUtil.Add(QueryParameters, "ContactFlowVariables", value);
 			}
 		}
 

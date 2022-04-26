@@ -55,6 +55,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 		private bool? resetPassword;
 
+		private string displayId;
+
 		private string skillLevelList;
 
 		private string email;
@@ -147,6 +149,19 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			{
 				resetPassword = value;
 				DictionaryUtil.Add(QueryParameters, "ResetPassword", value.ToString());
+			}
+		}
+
+		public string DisplayId
+		{
+			get
+			{
+				return displayId;
+			}
+			set	
+			{
+				displayId = value;
+				DictionaryUtil.Add(QueryParameters, "DisplayId", value);
 			}
 		}
 

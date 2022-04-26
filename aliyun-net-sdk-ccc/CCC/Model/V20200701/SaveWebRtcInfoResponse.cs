@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20200701
@@ -25,31 +25,19 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 	public class SaveWebRtcInfoResponse : AcsResponse
 	{
 
-		private string code;
-
 		private long? httpStatusCode;
-
-		private string message;
 
 		private string requestId;
 
-		private long? rowCount;
-
 		private bool? success;
+
+		private string code;
+
+		private string message;
 
 		private long? timeStamp;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private long? rowCount;
 
 		public long? HttpStatusCode
 		{
@@ -60,18 +48,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			set	
 			{
 				httpStatusCode = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 
@@ -87,18 +63,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			}
 		}
 
-		public long? RowCount
-		{
-			get
-			{
-				return rowCount;
-			}
-			set	
-			{
-				rowCount = value;
-			}
-		}
-
 		public bool? Success
 		{
 			get
@@ -111,6 +75,30 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			}
 		}
 
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
 		public long? TimeStamp
 		{
 			get
@@ -120,6 +108,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			set	
 			{
 				timeStamp = value;
+			}
+		}
+
+		public long? RowCount
+		{
+			get
+			{
+				return rowCount;
+			}
+			set	
+			{
+				rowCount = value;
 			}
 		}
 	}

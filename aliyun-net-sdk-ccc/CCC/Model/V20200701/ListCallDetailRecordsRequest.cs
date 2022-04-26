@@ -45,6 +45,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 		private string criteria;
 
+		private string contactDispositionList;
+
 		private string orderByField;
 
 		private long? startTime;
@@ -66,6 +68,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 		private string agentId;
 
 		private string contactType;
+
+		private string contactTypeList;
 
 		private string satisfactionSurveyChannel;
 
@@ -102,6 +106,19 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			{
 				criteria = value;
 				DictionaryUtil.Add(QueryParameters, "Criteria", value);
+			}
+		}
+
+		public string ContactDispositionList
+		{
+			get
+			{
+				return contactDispositionList;
+			}
+			set	
+			{
+				contactDispositionList = value;
+				DictionaryUtil.Add(QueryParameters, "ContactDispositionList", value);
 			}
 		}
 
@@ -245,6 +262,19 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			{
 				contactType = value;
 				DictionaryUtil.Add(QueryParameters, "ContactType", value);
+			}
+		}
+
+		public string ContactTypeList
+		{
+			get
+			{
+				return contactTypeList;
+			}
+			set	
+			{
+				contactTypeList = value;
+				DictionaryUtil.Add(QueryParameters, "ContactTypeList", value);
 			}
 		}
 

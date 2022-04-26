@@ -31,13 +31,13 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			SaveWebRTCStatsResponse saveWebRTCStatsResponse = new SaveWebRTCStatsResponse();
 
 			saveWebRTCStatsResponse.HttpResponse = _ctx.HttpResponse;
-			saveWebRTCStatsResponse.Code = _ctx.StringValue("SaveWebRTCStats.Code");
 			saveWebRTCStatsResponse.HttpStatusCode = _ctx.LongValue("SaveWebRTCStats.HttpStatusCode");
-			saveWebRTCStatsResponse.Message = _ctx.StringValue("SaveWebRTCStats.Message");
 			saveWebRTCStatsResponse.RequestId = _ctx.StringValue("SaveWebRTCStats.RequestId");
-			saveWebRTCStatsResponse.RowCount = _ctx.LongValue("SaveWebRTCStats.RowCount");
 			saveWebRTCStatsResponse.Success = _ctx.BooleanValue("SaveWebRTCStats.Success");
+			saveWebRTCStatsResponse.Code = _ctx.StringValue("SaveWebRTCStats.Code");
+			saveWebRTCStatsResponse.Message = _ctx.StringValue("SaveWebRTCStats.Message");
 			saveWebRTCStatsResponse.TimeStamp = _ctx.LongValue("SaveWebRTCStats.TimeStamp");
+			saveWebRTCStatsResponse.RowCount = _ctx.LongValue("SaveWebRTCStats.RowCount");
         
 			return saveWebRTCStatsResponse;
         }

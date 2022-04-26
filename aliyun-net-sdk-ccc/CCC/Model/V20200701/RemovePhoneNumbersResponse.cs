@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20200701
@@ -31,11 +31,9 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 		private string message;
 
-		private string data;
-
 		private string requestId;
 
-		private List<string> failureList;
+		private List<string> data;
 
 		private List<string> _params;
 
@@ -75,18 +73,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			}
 		}
 
-		public string Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
-			}
-		}
-
 		public string RequestId
 		{
 			get
@@ -99,15 +85,15 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			}
 		}
 
-		public List<string> FailureList
+		public List<string> Data
 		{
 			get
 			{
-				return failureList;
+				return data;
 			}
 			set	
 			{
-				failureList = value;
+				data = value;
 			}
 		}
 

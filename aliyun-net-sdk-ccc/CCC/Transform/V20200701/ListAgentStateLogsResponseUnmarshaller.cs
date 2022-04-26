@@ -43,6 +43,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 				dataItem.StateCode = _ctx.StringValue("ListAgentStateLogs.Data["+ i +"].StateCode");
 				dataItem.Duration = _ctx.LongValue("ListAgentStateLogs.Data["+ i +"].Duration");
 				dataItem.State = _ctx.StringValue("ListAgentStateLogs.Data["+ i +"].State");
+				dataItem.OutboundScenario = _ctx.BooleanValue("ListAgentStateLogs.Data["+ i +"].OutboundScenario");
 
 				listAgentStateLogsResponse_data.Add(dataItem);
 			}
