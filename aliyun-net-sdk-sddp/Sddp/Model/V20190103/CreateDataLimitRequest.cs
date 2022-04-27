@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private string password;
 
+		private int? enable;
+
 		private string lang;
 
 		private string serviceRegionId;
@@ -102,6 +104,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				password = value;
 				DictionaryUtil.Add(QueryParameters, "Password", value);
+			}
+		}
+
+		public int? Enable
+		{
+			get
+			{
+				return enable;
+			}
+			set	
+			{
+				enable = value;
+				DictionaryUtil.Add(QueryParameters, "Enable", value.ToString());
 			}
 		}
 
