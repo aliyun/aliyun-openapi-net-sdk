@@ -35,15 +35,15 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 
 			GetDirectoryOrFilePropertiesResponse.GetDirectoryOrFileProperties_Entry entry = new GetDirectoryOrFilePropertiesResponse.GetDirectoryOrFileProperties_Entry();
 			entry.Type = _ctx.StringValue("GetDirectoryOrFileProperties.Entry.Type");
-			entry.Inode = _ctx.StringValue("GetDirectoryOrFileProperties.Entry.Inode");
-			entry.StorageType = _ctx.StringValue("GetDirectoryOrFileProperties.Entry.StorageType");
+			entry.HasInfrequentAccessFile = _ctx.BooleanValue("GetDirectoryOrFileProperties.Entry.HasInfrequentAccessFile");
+			entry.MTime = _ctx.StringValue("GetDirectoryOrFileProperties.Entry.MTime");
 			entry.ATime = _ctx.StringValue("GetDirectoryOrFileProperties.Entry.ATime");
 			entry.Size = _ctx.LongValue("GetDirectoryOrFileProperties.Entry.Size");
-			entry.HasInfrequentAccessFile = _ctx.BooleanValue("GetDirectoryOrFileProperties.Entry.HasInfrequentAccessFile");
 			entry.CTime = _ctx.StringValue("GetDirectoryOrFileProperties.Entry.CTime");
-			entry.RetrieveTime = _ctx.StringValue("GetDirectoryOrFileProperties.Entry.RetrieveTime");
-			entry.MTime = _ctx.StringValue("GetDirectoryOrFileProperties.Entry.MTime");
+			entry.StorageType = _ctx.StringValue("GetDirectoryOrFileProperties.Entry.StorageType");
 			entry.Name = _ctx.StringValue("GetDirectoryOrFileProperties.Entry.Name");
+			entry.RetrieveTime = _ctx.StringValue("GetDirectoryOrFileProperties.Entry.RetrieveTime");
+			entry.Inode = _ctx.StringValue("GetDirectoryOrFileProperties.Entry.Inode");
 			getDirectoryOrFilePropertiesResponse.Entry = entry;
         
 			return getDirectoryOrFilePropertiesResponse;

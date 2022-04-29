@@ -44,7 +44,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 		private string fileSystemId;
 
-		private List<Filters> filterss = new List<Filters>(){ };
+		private List<string> filterss = new List<string>(){ };
 
 		private long? maxResults;
 
@@ -74,7 +74,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
-		public List<Filters> Filterss
+		public List<string> Filterss
 		{
 			get
 			{
@@ -84,10 +84,13 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			set
 			{
 				filterss = value;
-				for (int i = 0; i < filterss.Count; i++)
+				if(filterss != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Filters." + (i + 1) + ".Value", filterss[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Filters." + (i + 1) + ".Key", filterss[i].Key);
+					for (int depth1 = 0; depth1 < filterss.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Filters." + (depth1 + 1), filterss[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Filters." + (depth1 + 1), filterss[depth1]);
+					}
 				}
 			}
 		}
@@ -112,7 +115,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string key;
 
-			public string Value
+			public string Value_
 			{
 				get
 				{

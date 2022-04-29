@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 	public class DescribeAccessGroupsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
+
+		private string requestId;
 
 		private int? pageSize;
 
 		private int? pageNumber;
 
 		private List<DescribeAccessGroups_AccessGroup> accessGroups;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public int? TotalCount
 		{
@@ -56,6 +44,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -100,15 +100,15 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string accessGroupName;
 
+			private string description;
+
+			private string createTime;
+
 			private string accessGroupType;
 
 			private int? ruleCount;
 
 			private int? mountTargetCount;
-
-			private string description;
-
-			private string createTime;
 
 			private List<DescribeAccessGroups_Tag> tags;
 
@@ -121,6 +121,30 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					accessGroupName = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
 				}
 			}
 
@@ -157,30 +181,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					mountTargetCount = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
 				}
 			}
 

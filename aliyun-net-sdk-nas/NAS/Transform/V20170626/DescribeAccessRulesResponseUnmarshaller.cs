@@ -31,20 +31,20 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 			DescribeAccessRulesResponse describeAccessRulesResponse = new DescribeAccessRulesResponse();
 
 			describeAccessRulesResponse.HttpResponse = _ctx.HttpResponse;
-			describeAccessRulesResponse.RequestId = _ctx.StringValue("DescribeAccessRules.RequestId");
 			describeAccessRulesResponse.TotalCount = _ctx.IntegerValue("DescribeAccessRules.TotalCount");
+			describeAccessRulesResponse.RequestId = _ctx.StringValue("DescribeAccessRules.RequestId");
 			describeAccessRulesResponse.PageSize = _ctx.IntegerValue("DescribeAccessRules.PageSize");
 			describeAccessRulesResponse.PageNumber = _ctx.IntegerValue("DescribeAccessRules.PageNumber");
 
 			List<DescribeAccessRulesResponse.DescribeAccessRules_AccessRule> describeAccessRulesResponse_accessRules = new List<DescribeAccessRulesResponse.DescribeAccessRules_AccessRule>();
 			for (int i = 0; i < _ctx.Length("DescribeAccessRules.AccessRules.Length"); i++) {
 				DescribeAccessRulesResponse.DescribeAccessRules_AccessRule accessRule = new DescribeAccessRulesResponse.DescribeAccessRules_AccessRule();
-				accessRule.SourceCidrIp = _ctx.StringValue("DescribeAccessRules.AccessRules["+ i +"].SourceCidrIp");
-				accessRule.Priority = _ctx.IntegerValue("DescribeAccessRules.AccessRules["+ i +"].Priority");
 				accessRule.AccessRuleId = _ctx.StringValue("DescribeAccessRules.AccessRules["+ i +"].AccessRuleId");
+				accessRule.SourceCidrIp = _ctx.StringValue("DescribeAccessRules.AccessRules["+ i +"].SourceCidrIp");
+				accessRule.Ipv6SourceCidrIp = _ctx.StringValue("DescribeAccessRules.AccessRules["+ i +"].Ipv6SourceCidrIp");
 				accessRule.RWAccess = _ctx.StringValue("DescribeAccessRules.AccessRules["+ i +"].RWAccess");
 				accessRule.UserAccess = _ctx.StringValue("DescribeAccessRules.AccessRules["+ i +"].UserAccess");
-				accessRule.Ipv6SourceCidrIp = _ctx.StringValue("DescribeAccessRules.AccessRules["+ i +"].Ipv6SourceCidrIp");
+				accessRule.Priority = _ctx.IntegerValue("DescribeAccessRules.AccessRules["+ i +"].Priority");
 
 				describeAccessRulesResponse_accessRules.Add(accessRule);
 			}

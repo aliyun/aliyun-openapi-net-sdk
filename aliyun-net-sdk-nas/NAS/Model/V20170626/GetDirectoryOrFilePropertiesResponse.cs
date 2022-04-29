@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
@@ -58,23 +58,23 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string type;
 
-			private string inode;
+			private bool? hasInfrequentAccessFile;
 
-			private string storageType;
+			private string mTime;
 
 			private string aTime;
 
 			private long? size;
 
-			private bool? hasInfrequentAccessFile;
-
 			private string cTime;
+
+			private string storageType;
+
+			private string name;
 
 			private string retrieveTime;
 
-			private string mTime;
-
-			private string name;
+			private string inode;
 
 			public string Type
 			{
@@ -88,27 +88,27 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
-			public string Inode
+			public bool? HasInfrequentAccessFile
 			{
 				get
 				{
-					return inode;
+					return hasInfrequentAccessFile;
 				}
 				set	
 				{
-					inode = value;
+					hasInfrequentAccessFile = value;
 				}
 			}
 
-			public string StorageType
+			public string MTime
 			{
 				get
 				{
-					return storageType;
+					return mTime;
 				}
 				set	
 				{
-					storageType = value;
+					mTime = value;
 				}
 			}
 
@@ -136,18 +136,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
-			public bool? HasInfrequentAccessFile
-			{
-				get
-				{
-					return hasInfrequentAccessFile;
-				}
-				set	
-				{
-					hasInfrequentAccessFile = value;
-				}
-			}
-
 			public string CTime
 			{
 				get
@@ -157,6 +145,30 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					cTime = value;
+				}
+			}
+
+			public string StorageType
+			{
+				get
+				{
+					return storageType;
+				}
+				set	
+				{
+					storageType = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 
@@ -172,27 +184,15 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
-			public string MTime
+			public string Inode
 			{
 				get
 				{
-					return mTime;
+					return inode;
 				}
 				set	
 				{
-					mTime = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
+					inode = value;
 				}
 			}
 		}

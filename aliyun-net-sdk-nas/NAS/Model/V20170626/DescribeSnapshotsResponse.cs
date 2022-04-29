@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 	public class DescribeSnapshotsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
+
+		private string requestId;
 
 		private int? pageSize;
 
 		private int? pageNumber;
 
 		private List<DescribeSnapshots_Snapshot> snapshots;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public int? TotalCount
 		{
@@ -56,6 +44,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -98,51 +98,39 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 		public class DescribeSnapshots_Snapshot
 		{
 
-			private string createTime;
-
-			private string description;
+			private string status;
 
 			private string progress;
 
-			private int? remainTime;
-
-			private int? retentionDays;
-
-			private string snapshotId;
-
-			private string snapshotName;
+			private string createTime;
 
 			private string sourceFileSystemId;
 
+			private int? retentionDays;
+
+			private int? remainTime;
+
 			private long? sourceFileSystemSize;
-
-			private string status;
-
-			private int? encryptType;
 
 			private string sourceFileSystemVersion;
 
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
+			private string snapshotName;
 
-			public string Description
+			private int? encryptType;
+
+			private string description;
+
+			private string snapshotId;
+
+			public string Status
 			{
 				get
 				{
-					return description;
+					return status;
 				}
 				set	
 				{
-					description = value;
+					status = value;
 				}
 			}
 
@@ -158,51 +146,15 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
-			public int? RemainTime
+			public string CreateTime
 			{
 				get
 				{
-					return remainTime;
+					return createTime;
 				}
 				set	
 				{
-					remainTime = value;
-				}
-			}
-
-			public int? RetentionDays
-			{
-				get
-				{
-					return retentionDays;
-				}
-				set	
-				{
-					retentionDays = value;
-				}
-			}
-
-			public string SnapshotId
-			{
-				get
-				{
-					return snapshotId;
-				}
-				set	
-				{
-					snapshotId = value;
-				}
-			}
-
-			public string SnapshotName
-			{
-				get
-				{
-					return snapshotName;
-				}
-				set	
-				{
-					snapshotName = value;
+					createTime = value;
 				}
 			}
 
@@ -218,6 +170,30 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
+			public int? RetentionDays
+			{
+				get
+				{
+					return retentionDays;
+				}
+				set	
+				{
+					retentionDays = value;
+				}
+			}
+
+			public int? RemainTime
+			{
+				get
+				{
+					return remainTime;
+				}
+				set	
+				{
+					remainTime = value;
+				}
+			}
+
 			public long? SourceFileSystemSize
 			{
 				get
@@ -230,15 +206,27 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
-			public string Status
+			public string SourceFileSystemVersion
 			{
 				get
 				{
-					return status;
+					return sourceFileSystemVersion;
 				}
 				set	
 				{
-					status = value;
+					sourceFileSystemVersion = value;
+				}
+			}
+
+			public string SnapshotName
+			{
+				get
+				{
+					return snapshotName;
+				}
+				set	
+				{
+					snapshotName = value;
 				}
 			}
 
@@ -254,15 +242,27 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
-			public string SourceFileSystemVersion
+			public string Description
 			{
 				get
 				{
-					return sourceFileSystemVersion;
+					return description;
 				}
 				set	
 				{
-					sourceFileSystemVersion = value;
+					description = value;
+				}
+			}
+
+			public string SnapshotId
+			{
+				get
+				{
+					return snapshotId;
+				}
+				set	
+				{
+					snapshotId = value;
 				}
 			}
 		}

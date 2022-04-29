@@ -43,7 +43,7 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 				entrie.FsetId = _ctx.StringValue("DescribeFilesets.Entries["+ i +"].FsetId");
 				entrie.Status = _ctx.StringValue("DescribeFilesets.Entries["+ i +"].Status");
 				entrie.CreateTime = _ctx.StringValue("DescribeFilesets.Entries["+ i +"].CreateTime");
-				entrie.UpdateTiem = _ctx.StringValue("DescribeFilesets.Entries["+ i +"].UpdateTiem");
+				entrie.UpdateTime = _ctx.StringValue("DescribeFilesets.Entries["+ i +"].UpdateTime");
 
 				describeFilesetsResponse_entries.Add(entrie);
 			}

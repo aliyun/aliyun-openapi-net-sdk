@@ -32,19 +32,19 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 
 			describeLifecyclePoliciesResponse.HttpResponse = _ctx.HttpResponse;
 			describeLifecyclePoliciesResponse.TotalCount = _ctx.IntegerValue("DescribeLifecyclePolicies.TotalCount");
-			describeLifecyclePoliciesResponse.PageSize = _ctx.IntegerValue("DescribeLifecyclePolicies.PageSize");
 			describeLifecyclePoliciesResponse.RequestId = _ctx.StringValue("DescribeLifecyclePolicies.RequestId");
+			describeLifecyclePoliciesResponse.PageSize = _ctx.IntegerValue("DescribeLifecyclePolicies.PageSize");
 			describeLifecyclePoliciesResponse.PageNumber = _ctx.IntegerValue("DescribeLifecyclePolicies.PageNumber");
 
 			List<DescribeLifecyclePoliciesResponse.DescribeLifecyclePolicies_LifecyclePolicy> describeLifecyclePoliciesResponse_lifecyclePolicies = new List<DescribeLifecyclePoliciesResponse.DescribeLifecyclePolicies_LifecyclePolicy>();
 			for (int i = 0; i < _ctx.Length("DescribeLifecyclePolicies.LifecyclePolicies.Length"); i++) {
 				DescribeLifecyclePoliciesResponse.DescribeLifecyclePolicies_LifecyclePolicy lifecyclePolicy = new DescribeLifecyclePoliciesResponse.DescribeLifecyclePolicies_LifecyclePolicy();
-				lifecyclePolicy.Path = _ctx.StringValue("DescribeLifecyclePolicies.LifecyclePolicies["+ i +"].Path");
-				lifecyclePolicy.LifecyclePolicyName = _ctx.StringValue("DescribeLifecyclePolicies.LifecyclePolicies["+ i +"].LifecyclePolicyName");
-				lifecyclePolicy.StorageType = _ctx.StringValue("DescribeLifecyclePolicies.LifecyclePolicies["+ i +"].StorageType");
+				lifecyclePolicy.FileSystemId = _ctx.StringValue("DescribeLifecyclePolicies.LifecyclePolicies["+ i +"].FileSystemId");
 				lifecyclePolicy.LifecycleRuleName = _ctx.StringValue("DescribeLifecyclePolicies.LifecyclePolicies["+ i +"].LifecycleRuleName");
 				lifecyclePolicy.CreateTime = _ctx.StringValue("DescribeLifecyclePolicies.LifecyclePolicies["+ i +"].CreateTime");
-				lifecyclePolicy.FileSystemId = _ctx.StringValue("DescribeLifecyclePolicies.LifecyclePolicies["+ i +"].FileSystemId");
+				lifecyclePolicy.Path = _ctx.StringValue("DescribeLifecyclePolicies.LifecyclePolicies["+ i +"].Path");
+				lifecyclePolicy.StorageType = _ctx.StringValue("DescribeLifecyclePolicies.LifecyclePolicies["+ i +"].StorageType");
+				lifecyclePolicy.LifecyclePolicyName = _ctx.StringValue("DescribeLifecyclePolicies.LifecyclePolicies["+ i +"].LifecyclePolicyName");
 
 				List<string> lifecyclePolicy_paths = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeLifecyclePolicies.LifecyclePolicies["+ i +"].Paths.Length"); j++) {

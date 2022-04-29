@@ -128,10 +128,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			set
 			{
 				pathss = value;
-				for (int i = 0; i < pathss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Paths." + (i + 1) , pathss[i]);
-				}
 			}
 		}
 

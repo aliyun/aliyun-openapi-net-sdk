@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 	public class ListTagResourcesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
 
-		private List<ListTagResources_TagResource> tagResources;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<ListTagResources_TagResource> tagResources;
 
 		public string NextToken
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			set	
 			{
 				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,25 +70,13 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 		public class ListTagResources_TagResource
 		{
 
-			private string resourceId;
-
 			private string resourceType;
-
-			private string tagKey;
 
 			private string tagValue;
 
-			public string ResourceId
-			{
-				get
-				{
-					return resourceId;
-				}
-				set	
-				{
-					resourceId = value;
-				}
-			}
+			private string resourceId;
+
+			private string tagKey;
 
 			public string ResourceType
 			{
@@ -102,18 +90,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
-			public string TagKey
-			{
-				get
-				{
-					return tagKey;
-				}
-				set	
-				{
-					tagKey = value;
-				}
-			}
-
 			public string TagValue
 			{
 				get
@@ -123,6 +99,30 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					tagValue = value;
+				}
+			}
+
+			public string ResourceId
+			{
+				get
+				{
+					return resourceId;
+				}
+				set	
+				{
+					resourceId = value;
+				}
+			}
+
+			public string TagKey
+			{
+				get
+				{
+					return tagKey;
+				}
+				set	
+				{
+					tagKey = value;
 				}
 			}
 		}

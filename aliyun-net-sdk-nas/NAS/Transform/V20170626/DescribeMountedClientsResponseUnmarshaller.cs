@@ -31,8 +31,8 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 			DescribeMountedClientsResponse describeMountedClientsResponse = new DescribeMountedClientsResponse();
 
 			describeMountedClientsResponse.HttpResponse = _ctx.HttpResponse;
-			describeMountedClientsResponse.RequestId = _ctx.StringValue("DescribeMountedClients.RequestId");
 			describeMountedClientsResponse.TotalCount = _ctx.IntegerValue("DescribeMountedClients.TotalCount");
+			describeMountedClientsResponse.RequestId = _ctx.StringValue("DescribeMountedClients.RequestId");
 			describeMountedClientsResponse.PageSize = _ctx.IntegerValue("DescribeMountedClients.PageSize");
 			describeMountedClientsResponse.PageNumber = _ctx.IntegerValue("DescribeMountedClients.PageNumber");
 

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 			DescribeAccessGroupsResponse describeAccessGroupsResponse = new DescribeAccessGroupsResponse();
 
 			describeAccessGroupsResponse.HttpResponse = _ctx.HttpResponse;
-			describeAccessGroupsResponse.RequestId = _ctx.StringValue("DescribeAccessGroups.RequestId");
 			describeAccessGroupsResponse.TotalCount = _ctx.IntegerValue("DescribeAccessGroups.TotalCount");
+			describeAccessGroupsResponse.RequestId = _ctx.StringValue("DescribeAccessGroups.RequestId");
 			describeAccessGroupsResponse.PageSize = _ctx.IntegerValue("DescribeAccessGroups.PageSize");
 			describeAccessGroupsResponse.PageNumber = _ctx.IntegerValue("DescribeAccessGroups.PageNumber");
 
@@ -40,11 +40,11 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 			for (int i = 0; i < _ctx.Length("DescribeAccessGroups.AccessGroups.Length"); i++) {
 				DescribeAccessGroupsResponse.DescribeAccessGroups_AccessGroup accessGroup = new DescribeAccessGroupsResponse.DescribeAccessGroups_AccessGroup();
 				accessGroup.AccessGroupName = _ctx.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].AccessGroupName");
+				accessGroup.Description = _ctx.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].Description");
+				accessGroup.CreateTime = _ctx.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].CreateTime");
 				accessGroup.AccessGroupType = _ctx.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].AccessGroupType");
 				accessGroup.RuleCount = _ctx.IntegerValue("DescribeAccessGroups.AccessGroups["+ i +"].RuleCount");
 				accessGroup.MountTargetCount = _ctx.IntegerValue("DescribeAccessGroups.AccessGroups["+ i +"].MountTargetCount");
-				accessGroup.Description = _ctx.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].Description");
-				accessGroup.CreateTime = _ctx.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].CreateTime");
 
 				List<DescribeAccessGroupsResponse.DescribeAccessGroups_AccessGroup.DescribeAccessGroups_Tag> accessGroup_tags = new List<DescribeAccessGroupsResponse.DescribeAccessGroups_AccessGroup.DescribeAccessGroups_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeAccessGroups.AccessGroups["+ i +"].Tags.Length"); j++) {

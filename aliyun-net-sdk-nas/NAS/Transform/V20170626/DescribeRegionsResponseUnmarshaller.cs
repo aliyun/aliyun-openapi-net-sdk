@@ -31,17 +31,17 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 			DescribeRegionsResponse describeRegionsResponse = new DescribeRegionsResponse();
 
 			describeRegionsResponse.HttpResponse = _ctx.HttpResponse;
-			describeRegionsResponse.RequestId = _ctx.StringValue("DescribeRegions.RequestId");
 			describeRegionsResponse.TotalCount = _ctx.IntegerValue("DescribeRegions.TotalCount");
+			describeRegionsResponse.RequestId = _ctx.StringValue("DescribeRegions.RequestId");
 			describeRegionsResponse.PageSize = _ctx.IntegerValue("DescribeRegions.PageSize");
 			describeRegionsResponse.PageNumber = _ctx.IntegerValue("DescribeRegions.PageNumber");
 
 			List<DescribeRegionsResponse.DescribeRegions_Region> describeRegionsResponse_regions = new List<DescribeRegionsResponse.DescribeRegions_Region>();
 			for (int i = 0; i < _ctx.Length("DescribeRegions.Regions.Length"); i++) {
 				DescribeRegionsResponse.DescribeRegions_Region region = new DescribeRegionsResponse.DescribeRegions_Region();
-				region.RegionId = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
 				region.LocalName = _ctx.StringValue("DescribeRegions.Regions["+ i +"].LocalName");
 				region.RegionEndpoint = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionEndpoint");
+				region.RegionId = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
 
 				describeRegionsResponse_regions.Add(region);
 			}

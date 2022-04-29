@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 	public class DescribeStoragePackagesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
+
+		private string requestId;
 
 		private int? pageSize;
 
 		private int? pageNumber;
 
 		private List<DescribeStoragePackages_Package> packages;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public int? TotalCount
 		{
@@ -56,6 +44,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -98,43 +98,19 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 		public class DescribeStoragePackages_Package
 		{
 
-			private string startTime;
-
-			private string storageType;
-
 			private string status;
 
 			private string fileSystemId;
 
-			private string packageId;
+			private string startTime;
 
 			private string expiredTime;
 
 			private long? size;
 
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
+			private string storageType;
 
-			public string StorageType
-			{
-				get
-				{
-					return storageType;
-				}
-				set	
-				{
-					storageType = value;
-				}
-			}
+			private string packageId;
 
 			public string Status
 			{
@@ -160,15 +136,15 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
-			public string PackageId
+			public string StartTime
 			{
 				get
 				{
-					return packageId;
+					return startTime;
 				}
 				set	
 				{
-					packageId = value;
+					startTime = value;
 				}
 			}
 
@@ -193,6 +169,30 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					size = value;
+				}
+			}
+
+			public string StorageType
+			{
+				get
+				{
+					return storageType;
+				}
+				set	
+				{
+					storageType = value;
+				}
+			}
+
+			public string PackageId
+			{
+				get
+				{
+					return packageId;
+				}
+				set	
+				{
+					packageId = value;
 				}
 			}
 		}

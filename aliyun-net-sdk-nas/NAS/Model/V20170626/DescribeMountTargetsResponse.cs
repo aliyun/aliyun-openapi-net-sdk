@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 	public class DescribeMountTargetsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
+
+		private string requestId;
 
 		private int? pageSize;
 
 		private int? pageNumber;
 
 		private List<DescribeMountTargets_MountTarget> mountTargets;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public int? TotalCount
 		{
@@ -56,6 +44,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -98,47 +98,23 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 		public class DescribeMountTargets_MountTarget
 		{
 
-			private string mountTargetDomain;
-
-			private string networkType;
-
 			private string vpcId;
-
-			private string vswId;
-
-			private string accessGroup;
 
 			private string status;
 
+			private string mountTargetDomain;
+
+			private string accessGroup;
+
 			private string dualStackMountTargetDomain;
+
+			private string vswId;
+
+			private string networkType;
 
 			private List<DescribeMountTargets_ClientMasterNode> clientMasterNodes;
 
 			private List<DescribeMountTargets_Tag> tags;
-
-			public string MountTargetDomain
-			{
-				get
-				{
-					return mountTargetDomain;
-				}
-				set	
-				{
-					mountTargetDomain = value;
-				}
-			}
-
-			public string NetworkType
-			{
-				get
-				{
-					return networkType;
-				}
-				set	
-				{
-					networkType = value;
-				}
-			}
 
 			public string VpcId
 			{
@@ -149,30 +125,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					vpcId = value;
-				}
-			}
-
-			public string VswId
-			{
-				get
-				{
-					return vswId;
-				}
-				set	
-				{
-					vswId = value;
-				}
-			}
-
-			public string AccessGroup
-			{
-				get
-				{
-					return accessGroup;
-				}
-				set	
-				{
-					accessGroup = value;
 				}
 			}
 
@@ -188,6 +140,30 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
+			public string MountTargetDomain
+			{
+				get
+				{
+					return mountTargetDomain;
+				}
+				set	
+				{
+					mountTargetDomain = value;
+				}
+			}
+
+			public string AccessGroup
+			{
+				get
+				{
+					return accessGroup;
+				}
+				set	
+				{
+					accessGroup = value;
+				}
+			}
+
 			public string DualStackMountTargetDomain
 			{
 				get
@@ -197,6 +173,30 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					dualStackMountTargetDomain = value;
+				}
+			}
+
+			public string VswId
+			{
+				get
+				{
+					return vswId;
+				}
+				set	
+				{
+					vswId = value;
+				}
+			}
+
+			public string NetworkType
+			{
+				get
+				{
+					return networkType;
+				}
+				set	
+				{
+					networkType = value;
 				}
 			}
 
@@ -229,9 +229,9 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 				private string ecsId;
 
-				private string ecsIp;
-
 				private string defaultPasswd;
+
+				private string ecsIp;
 
 				public string EcsId
 				{
@@ -245,18 +245,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 					}
 				}
 
-				public string EcsIp
-				{
-					get
-					{
-						return ecsIp;
-					}
-					set	
-					{
-						ecsIp = value;
-					}
-				}
-
 				public string DefaultPasswd
 				{
 					get
@@ -266,6 +254,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 					set	
 					{
 						defaultPasswd = value;
+					}
+				}
+
+				public string EcsIp
+				{
+					get
+					{
+						return ecsIp;
+					}
+					set	
+					{
+						ecsIp = value;
 					}
 				}
 			}

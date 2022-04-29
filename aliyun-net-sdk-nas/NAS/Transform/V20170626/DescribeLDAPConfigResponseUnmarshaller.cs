@@ -35,8 +35,8 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 
 			DescribeLDAPConfigResponse.DescribeLDAPConfig_Ldap ldap = new DescribeLDAPConfigResponse.DescribeLDAPConfig_Ldap();
 			ldap.BindDN = _ctx.StringValue("DescribeLDAPConfig.Ldap.BindDN");
-			ldap.URI = _ctx.StringValue("DescribeLDAPConfig.Ldap.URI");
 			ldap.SearchBase = _ctx.StringValue("DescribeLDAPConfig.Ldap.SearchBase");
+			ldap.URI = _ctx.StringValue("DescribeLDAPConfig.Ldap.URI");
 			describeLDAPConfigResponse.Ldap = ldap;
         
 			return describeLDAPConfigResponse;

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 			DescribeAutoSnapshotTasksResponse describeAutoSnapshotTasksResponse = new DescribeAutoSnapshotTasksResponse();
 
 			describeAutoSnapshotTasksResponse.HttpResponse = _ctx.HttpResponse;
-			describeAutoSnapshotTasksResponse.RequestId = _ctx.StringValue("DescribeAutoSnapshotTasks.RequestId");
 			describeAutoSnapshotTasksResponse.TotalCount = _ctx.IntegerValue("DescribeAutoSnapshotTasks.TotalCount");
+			describeAutoSnapshotTasksResponse.RequestId = _ctx.StringValue("DescribeAutoSnapshotTasks.RequestId");
 			describeAutoSnapshotTasksResponse.PageSize = _ctx.IntegerValue("DescribeAutoSnapshotTasks.PageSize");
 			describeAutoSnapshotTasksResponse.PageNumber = _ctx.IntegerValue("DescribeAutoSnapshotTasks.PageNumber");
 

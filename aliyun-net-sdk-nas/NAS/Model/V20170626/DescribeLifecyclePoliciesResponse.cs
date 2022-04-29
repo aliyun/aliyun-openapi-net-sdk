@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 		private int? totalCount;
 
-		private int? pageSize;
-
 		private string requestId;
+
+		private int? pageSize;
 
 		private int? pageNumber;
 
@@ -47,18 +47,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
 		public string RequestId
 		{
 			get
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
 			}
 		}
 
@@ -98,53 +98,29 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 		public class DescribeLifecyclePolicies_LifecyclePolicy
 		{
 
-			private string path;
-
-			private string lifecyclePolicyName;
-
-			private string storageType;
+			private string fileSystemId;
 
 			private string lifecycleRuleName;
 
 			private string createTime;
 
-			private string fileSystemId;
+			private string path;
+
+			private string storageType;
+
+			private string lifecyclePolicyName;
 
 			private List<string> paths;
 
-			public string Path
+			public string FileSystemId
 			{
 				get
 				{
-					return path;
+					return fileSystemId;
 				}
 				set	
 				{
-					path = value;
-				}
-			}
-
-			public string LifecyclePolicyName
-			{
-				get
-				{
-					return lifecyclePolicyName;
-				}
-				set	
-				{
-					lifecyclePolicyName = value;
-				}
-			}
-
-			public string StorageType
-			{
-				get
-				{
-					return storageType;
-				}
-				set	
-				{
-					storageType = value;
+					fileSystemId = value;
 				}
 			}
 
@@ -172,15 +148,39 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
-			public string FileSystemId
+			public string Path
 			{
 				get
 				{
-					return fileSystemId;
+					return path;
 				}
 				set	
 				{
-					fileSystemId = value;
+					path = value;
+				}
+			}
+
+			public string StorageType
+			{
+				get
+				{
+					return storageType;
+				}
+				set	
+				{
+					storageType = value;
+				}
+			}
+
+			public string LifecyclePolicyName
+			{
+				get
+				{
+					return lifecyclePolicyName;
+				}
+				set	
+				{
+					lifecyclePolicyName = value;
 				}
 			}
 

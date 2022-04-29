@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
@@ -25,41 +25,17 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 	public class DescribeLogAnalysisResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string code;
-
 		private int? totalCount;
 
 		private int? pageSize;
 
+		private string requestId;
+
 		private int? pageNumber;
 
+		private string code;
+
 		private List<DescribeLogAnalysis_Analysis> analyses;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public int? TotalCount
 		{
@@ -85,6 +61,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public int? PageNumber
 		{
 			get
@@ -94,6 +82,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			set	
 			{
 				pageNumber = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -143,23 +143,23 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			public class DescribeLogAnalysis_MetaValue
 			{
 
-				private string logstore;
+				private string roleArn;
 
 				private string region;
 
+				private string logstore;
+
 				private string project;
 
-				private string roleArn;
-
-				public string Logstore
+				public string RoleArn
 				{
 					get
 					{
-						return logstore;
+						return roleArn;
 					}
 					set	
 					{
-						logstore = value;
+						roleArn = value;
 					}
 				}
 
@@ -175,6 +175,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 					}
 				}
 
+				public string Logstore
+				{
+					get
+					{
+						return logstore;
+					}
+					set	
+					{
+						logstore = value;
+					}
+				}
+
 				public string Project
 				{
 					get
@@ -184,18 +196,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 					set	
 					{
 						project = value;
-					}
-				}
-
-				public string RoleArn
-				{
-					get
-					{
-						return roleArn;
-					}
-					set	
-					{
-						roleArn = value;
 					}
 				}
 			}

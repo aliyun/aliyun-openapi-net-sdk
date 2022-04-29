@@ -31,11 +31,11 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 			DescribeLogAnalysisResponse describeLogAnalysisResponse = new DescribeLogAnalysisResponse();
 
 			describeLogAnalysisResponse.HttpResponse = _ctx.HttpResponse;
-			describeLogAnalysisResponse.RequestId = _ctx.StringValue("DescribeLogAnalysis.RequestId");
-			describeLogAnalysisResponse.Code = _ctx.StringValue("DescribeLogAnalysis.Code");
 			describeLogAnalysisResponse.TotalCount = _ctx.IntegerValue("DescribeLogAnalysis.TotalCount");
 			describeLogAnalysisResponse.PageSize = _ctx.IntegerValue("DescribeLogAnalysis.PageSize");
+			describeLogAnalysisResponse.RequestId = _ctx.StringValue("DescribeLogAnalysis.RequestId");
 			describeLogAnalysisResponse.PageNumber = _ctx.IntegerValue("DescribeLogAnalysis.PageNumber");
+			describeLogAnalysisResponse.Code = _ctx.StringValue("DescribeLogAnalysis.Code");
 
 			List<DescribeLogAnalysisResponse.DescribeLogAnalysis_Analysis> describeLogAnalysisResponse_analyses = new List<DescribeLogAnalysisResponse.DescribeLogAnalysis_Analysis>();
 			for (int i = 0; i < _ctx.Length("DescribeLogAnalysis.Analyses.Length"); i++) {
@@ -43,10 +43,10 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 				analysis.MetaKey = _ctx.StringValue("DescribeLogAnalysis.Analyses["+ i +"].MetaKey");
 
 				DescribeLogAnalysisResponse.DescribeLogAnalysis_Analysis.DescribeLogAnalysis_MetaValue metaValue = new DescribeLogAnalysisResponse.DescribeLogAnalysis_Analysis.DescribeLogAnalysis_MetaValue();
-				metaValue.Logstore = _ctx.StringValue("DescribeLogAnalysis.Analyses["+ i +"].MetaValue.Logstore");
-				metaValue.Region = _ctx.StringValue("DescribeLogAnalysis.Analyses["+ i +"].MetaValue.Region");
-				metaValue.Project = _ctx.StringValue("DescribeLogAnalysis.Analyses["+ i +"].MetaValue.Project");
 				metaValue.RoleArn = _ctx.StringValue("DescribeLogAnalysis.Analyses["+ i +"].MetaValue.RoleArn");
+				metaValue.Region = _ctx.StringValue("DescribeLogAnalysis.Analyses["+ i +"].MetaValue.Region");
+				metaValue.Logstore = _ctx.StringValue("DescribeLogAnalysis.Analyses["+ i +"].MetaValue.Logstore");
+				metaValue.Project = _ctx.StringValue("DescribeLogAnalysis.Analyses["+ i +"].MetaValue.Project");
 				analysis.MetaValue = metaValue;
 
 				describeLogAnalysisResponse_analyses.Add(analysis);

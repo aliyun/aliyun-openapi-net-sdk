@@ -31,8 +31,8 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 			DescribeTagsResponse describeTagsResponse = new DescribeTagsResponse();
 
 			describeTagsResponse.HttpResponse = _ctx.HttpResponse;
-			describeTagsResponse.RequestId = _ctx.StringValue("DescribeTags.RequestId");
 			describeTagsResponse.TotalCount = _ctx.IntegerValue("DescribeTags.TotalCount");
+			describeTagsResponse.RequestId = _ctx.StringValue("DescribeTags.RequestId");
 			describeTagsResponse.PageSize = _ctx.IntegerValue("DescribeTags.PageSize");
 			describeTagsResponse.PageNumber = _ctx.IntegerValue("DescribeTags.PageNumber");
 

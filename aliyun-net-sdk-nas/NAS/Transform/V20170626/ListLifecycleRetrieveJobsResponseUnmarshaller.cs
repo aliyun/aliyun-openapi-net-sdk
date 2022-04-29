@@ -32,20 +32,20 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 
 			listLifecycleRetrieveJobsResponse.HttpResponse = _ctx.HttpResponse;
 			listLifecycleRetrieveJobsResponse.TotalCount = _ctx.IntegerValue("ListLifecycleRetrieveJobs.TotalCount");
-			listLifecycleRetrieveJobsResponse.PageSize = _ctx.IntegerValue("ListLifecycleRetrieveJobs.PageSize");
 			listLifecycleRetrieveJobsResponse.RequestId = _ctx.StringValue("ListLifecycleRetrieveJobs.RequestId");
+			listLifecycleRetrieveJobsResponse.PageSize = _ctx.IntegerValue("ListLifecycleRetrieveJobs.PageSize");
 			listLifecycleRetrieveJobsResponse.PageNumber = _ctx.IntegerValue("ListLifecycleRetrieveJobs.PageNumber");
 
 			List<ListLifecycleRetrieveJobsResponse.ListLifecycleRetrieveJobs_LifecycleRetrieveJob> listLifecycleRetrieveJobsResponse_lifecycleRetrieveJobs = new List<ListLifecycleRetrieveJobsResponse.ListLifecycleRetrieveJobs_LifecycleRetrieveJob>();
 			for (int i = 0; i < _ctx.Length("ListLifecycleRetrieveJobs.LifecycleRetrieveJobs.Length"); i++) {
 				ListLifecycleRetrieveJobsResponse.ListLifecycleRetrieveJobs_LifecycleRetrieveJob lifecycleRetrieveJob = new ListLifecycleRetrieveJobsResponse.ListLifecycleRetrieveJobs_LifecycleRetrieveJob();
-				lifecycleRetrieveJob.Status = _ctx.StringValue("ListLifecycleRetrieveJobs.LifecycleRetrieveJobs["+ i +"].Status");
-				lifecycleRetrieveJob.CreateTime = _ctx.StringValue("ListLifecycleRetrieveJobs.LifecycleRetrieveJobs["+ i +"].CreateTime");
-				lifecycleRetrieveJob.RetrievedFileCount = _ctx.LongValue("ListLifecycleRetrieveJobs.LifecycleRetrieveJobs["+ i +"].RetrievedFileCount");
-				lifecycleRetrieveJob.UpdateTime = _ctx.StringValue("ListLifecycleRetrieveJobs.LifecycleRetrieveJobs["+ i +"].UpdateTime");
 				lifecycleRetrieveJob.FileSystemId = _ctx.StringValue("ListLifecycleRetrieveJobs.LifecycleRetrieveJobs["+ i +"].FileSystemId");
-				lifecycleRetrieveJob.JobId = _ctx.StringValue("ListLifecycleRetrieveJobs.LifecycleRetrieveJobs["+ i +"].JobId");
+				lifecycleRetrieveJob.Status = _ctx.StringValue("ListLifecycleRetrieveJobs.LifecycleRetrieveJobs["+ i +"].Status");
 				lifecycleRetrieveJob.DiscoveredFileCount = _ctx.LongValue("ListLifecycleRetrieveJobs.LifecycleRetrieveJobs["+ i +"].DiscoveredFileCount");
+				lifecycleRetrieveJob.UpdateTime = _ctx.StringValue("ListLifecycleRetrieveJobs.LifecycleRetrieveJobs["+ i +"].UpdateTime");
+				lifecycleRetrieveJob.RetrievedFileCount = _ctx.LongValue("ListLifecycleRetrieveJobs.LifecycleRetrieveJobs["+ i +"].RetrievedFileCount");
+				lifecycleRetrieveJob.JobId = _ctx.StringValue("ListLifecycleRetrieveJobs.LifecycleRetrieveJobs["+ i +"].JobId");
+				lifecycleRetrieveJob.CreateTime = _ctx.StringValue("ListLifecycleRetrieveJobs.LifecycleRetrieveJobs["+ i +"].CreateTime");
 
 				List<string> lifecycleRetrieveJob_paths = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListLifecycleRetrieveJobs.LifecycleRetrieveJobs["+ i +"].Paths.Length"); j++) {

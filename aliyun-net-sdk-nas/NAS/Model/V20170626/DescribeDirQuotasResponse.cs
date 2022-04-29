@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 	public class DescribeDirQuotasResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
+
+		private string requestId;
 
 		private int? pageSize;
 
 		private int? pageNumber;
 
 		private List<DescribeDirQuotas_DirQuotaInfo> dirQuotaInfos;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public int? TotalCount
 		{
@@ -56,6 +44,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -98,13 +98,25 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 		public class DescribeDirQuotas_DirQuotaInfo
 		{
 
+			private string status;
+
 			private string path;
 
 			private string dirInode;
 
-			private string status;
-
 			private List<DescribeDirQuotas_UserQuotaInfo> userQuotaInfos;
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
 
 			public string Path
 			{
@@ -130,18 +142,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
 			public List<DescribeDirQuotas_UserQuotaInfo> UserQuotaInfos
 			{
 				get
@@ -157,19 +157,31 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			public class DescribeDirQuotas_UserQuotaInfo
 			{
 
+				private long? fileCountReal;
+
 				private string userType;
-
-				private string userId;
-
-				private string quotaType;
-
-				private long? sizeLimit;
-
-				private long? sizeReal;
 
 				private long? fileCountLimit;
 
-				private long? fileCountReal;
+				private string userId;
+
+				private long? sizeLimit;
+
+				private string quotaType;
+
+				private long? sizeReal;
+
+				public long? FileCountReal
+				{
+					get
+					{
+						return fileCountReal;
+					}
+					set	
+					{
+						fileCountReal = value;
+					}
+				}
 
 				public string UserType
 				{
@@ -180,54 +192,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 					set	
 					{
 						userType = value;
-					}
-				}
-
-				public string UserId
-				{
-					get
-					{
-						return userId;
-					}
-					set	
-					{
-						userId = value;
-					}
-				}
-
-				public string QuotaType
-				{
-					get
-					{
-						return quotaType;
-					}
-					set	
-					{
-						quotaType = value;
-					}
-				}
-
-				public long? SizeLimit
-				{
-					get
-					{
-						return sizeLimit;
-					}
-					set	
-					{
-						sizeLimit = value;
-					}
-				}
-
-				public long? SizeReal
-				{
-					get
-					{
-						return sizeReal;
-					}
-					set	
-					{
-						sizeReal = value;
 					}
 				}
 
@@ -243,15 +207,51 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 					}
 				}
 
-				public long? FileCountReal
+				public string UserId
 				{
 					get
 					{
-						return fileCountReal;
+						return userId;
 					}
 					set	
 					{
-						fileCountReal = value;
+						userId = value;
+					}
+				}
+
+				public long? SizeLimit
+				{
+					get
+					{
+						return sizeLimit;
+					}
+					set	
+					{
+						sizeLimit = value;
+					}
+				}
+
+				public string QuotaType
+				{
+					get
+					{
+						return quotaType;
+					}
+					set	
+					{
+						quotaType = value;
+					}
+				}
+
+				public long? SizeReal
+				{
+					get
+					{
+						return sizeReal;
+					}
+					set	
+					{
+						sizeReal = value;
 					}
 				}
 			}

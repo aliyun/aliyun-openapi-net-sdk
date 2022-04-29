@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
@@ -58,9 +58,9 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string bindDN;
 
-			private string uRI;
-
 			private string searchBase;
+
+			private string uRI;
 
 			public string BindDN
 			{
@@ -74,18 +74,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
-			public string URI
-			{
-				get
-				{
-					return uRI;
-				}
-				set	
-				{
-					uRI = value;
-				}
-			}
-
 			public string SearchBase
 			{
 				get
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					searchBase = value;
+				}
+			}
+
+			public string URI
+			{
+				get
+				{
+					return uRI;
+				}
+				set	
+				{
+					uRI = value;
 				}
 			}
 		}

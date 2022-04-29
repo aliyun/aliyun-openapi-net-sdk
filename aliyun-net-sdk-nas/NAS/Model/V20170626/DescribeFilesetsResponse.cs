@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
@@ -94,7 +94,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string createTime;
 
-			private string updateTiem;
+			private string updateTime;
 
 			public string Description
 			{
@@ -156,15 +156,15 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
-			public string UpdateTiem
+			public string UpdateTime
 			{
 				get
 				{
-					return updateTiem;
+					return updateTime;
 				}
 				set	
 				{
-					updateTiem = value;
+					updateTime = value;
 				}
 			}
 		}

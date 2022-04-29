@@ -31,21 +31,21 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 			DescribeStoragePackagesResponse describeStoragePackagesResponse = new DescribeStoragePackagesResponse();
 
 			describeStoragePackagesResponse.HttpResponse = _ctx.HttpResponse;
-			describeStoragePackagesResponse.RequestId = _ctx.StringValue("DescribeStoragePackages.RequestId");
 			describeStoragePackagesResponse.TotalCount = _ctx.IntegerValue("DescribeStoragePackages.TotalCount");
+			describeStoragePackagesResponse.RequestId = _ctx.StringValue("DescribeStoragePackages.RequestId");
 			describeStoragePackagesResponse.PageSize = _ctx.IntegerValue("DescribeStoragePackages.PageSize");
 			describeStoragePackagesResponse.PageNumber = _ctx.IntegerValue("DescribeStoragePackages.PageNumber");
 
 			List<DescribeStoragePackagesResponse.DescribeStoragePackages_Package> describeStoragePackagesResponse_packages = new List<DescribeStoragePackagesResponse.DescribeStoragePackages_Package>();
 			for (int i = 0; i < _ctx.Length("DescribeStoragePackages.Packages.Length"); i++) {
 				DescribeStoragePackagesResponse.DescribeStoragePackages_Package package = new DescribeStoragePackagesResponse.DescribeStoragePackages_Package();
-				package.StartTime = _ctx.StringValue("DescribeStoragePackages.Packages["+ i +"].StartTime");
-				package.StorageType = _ctx.StringValue("DescribeStoragePackages.Packages["+ i +"].StorageType");
 				package.Status = _ctx.StringValue("DescribeStoragePackages.Packages["+ i +"].Status");
 				package.FileSystemId = _ctx.StringValue("DescribeStoragePackages.Packages["+ i +"].FileSystemId");
-				package.PackageId = _ctx.StringValue("DescribeStoragePackages.Packages["+ i +"].PackageId");
+				package.StartTime = _ctx.StringValue("DescribeStoragePackages.Packages["+ i +"].StartTime");
 				package.ExpiredTime = _ctx.StringValue("DescribeStoragePackages.Packages["+ i +"].ExpiredTime");
 				package.Size = _ctx.LongValue("DescribeStoragePackages.Packages["+ i +"].Size");
+				package.StorageType = _ctx.StringValue("DescribeStoragePackages.Packages["+ i +"].StorageType");
+				package.PackageId = _ctx.StringValue("DescribeStoragePackages.Packages["+ i +"].PackageId");
 
 				describeStoragePackagesResponse_packages.Add(package);
 			}

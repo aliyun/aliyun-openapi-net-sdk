@@ -31,35 +31,36 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 			DescribeFileSystemsResponse describeFileSystemsResponse = new DescribeFileSystemsResponse();
 
 			describeFileSystemsResponse.HttpResponse = _ctx.HttpResponse;
-			describeFileSystemsResponse.RequestId = _ctx.StringValue("DescribeFileSystems.RequestId");
 			describeFileSystemsResponse.TotalCount = _ctx.IntegerValue("DescribeFileSystems.TotalCount");
+			describeFileSystemsResponse.RequestId = _ctx.StringValue("DescribeFileSystems.RequestId");
 			describeFileSystemsResponse.PageSize = _ctx.IntegerValue("DescribeFileSystems.PageSize");
 			describeFileSystemsResponse.PageNumber = _ctx.IntegerValue("DescribeFileSystems.PageNumber");
 
 			List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem> describeFileSystemsResponse_fileSystems = new List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem>();
 			for (int i = 0; i < _ctx.Length("DescribeFileSystems.FileSystems.Length"); i++) {
 				DescribeFileSystemsResponse.DescribeFileSystems_FileSystem fileSystem = new DescribeFileSystemsResponse.DescribeFileSystems_FileSystem();
-				fileSystem.FileSystemId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].FileSystemId");
-				fileSystem.Description = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].Description");
-				fileSystem.CreateTime = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].CreateTime");
-				fileSystem.ExpiredTime = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].ExpiredTime");
-				fileSystem.RegionId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].RegionId");
-				fileSystem.ZoneId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].ZoneId");
-				fileSystem.ProtocolType = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].ProtocolType");
-				fileSystem.StorageType = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].StorageType");
-				fileSystem.FileSystemType = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].FileSystemType");
-				fileSystem.EncryptType = _ctx.IntegerValue("DescribeFileSystems.FileSystems["+ i +"].EncryptType");
-				fileSystem.MeteredSize = _ctx.LongValue("DescribeFileSystems.FileSystems["+ i +"].MeteredSize");
-				fileSystem.MeteredIASize = _ctx.LongValue("DescribeFileSystems.FileSystems["+ i +"].MeteredIASize");
-				fileSystem.Bandwidth = _ctx.LongValue("DescribeFileSystems.FileSystems["+ i +"].Bandwidth");
-				fileSystem.Capacity = _ctx.LongValue("DescribeFileSystems.FileSystems["+ i +"].Capacity");
-				fileSystem.AutoSnapshotPolicyId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].AutoSnapshotPolicyId");
 				fileSystem.Status = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].Status");
-				fileSystem.ChargeType = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].ChargeType");
+				fileSystem.MeteredIASize = _ctx.LongValue("DescribeFileSystems.FileSystems["+ i +"].MeteredIASize");
+				fileSystem.Capacity = _ctx.LongValue("DescribeFileSystems.FileSystems["+ i +"].Capacity");
 				fileSystem.MountTargetCountLimit = _ctx.LongValue("DescribeFileSystems.FileSystems["+ i +"].MountTargetCountLimit");
-				fileSystem.NasNamespaceId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].NasNamespaceId");
-				fileSystem.KMSKeyId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].KMSKeyId");
+				fileSystem.CreateTime = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].CreateTime");
+				fileSystem.ChargeType = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].ChargeType");
+				fileSystem.StorageType = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].StorageType");
+				fileSystem.MeteredSize = _ctx.LongValue("DescribeFileSystems.FileSystems["+ i +"].MeteredSize");
+				fileSystem.Description = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].Description");
+				fileSystem.Bandwidth = _ctx.LongValue("DescribeFileSystems.FileSystems["+ i +"].Bandwidth");
 				fileSystem.Version = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].Version");
+				fileSystem.NasNamespaceId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].NasNamespaceId");
+				fileSystem.ProtocolType = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].ProtocolType");
+				fileSystem.KMSKeyId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].KMSKeyId");
+				fileSystem.AutoSnapshotPolicyId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].AutoSnapshotPolicyId");
+				fileSystem.RegionId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].RegionId");
+				fileSystem.FileSystemType = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].FileSystemType");
+				fileSystem.FileSystemId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].FileSystemId");
+				fileSystem.EncryptType = _ctx.IntegerValue("DescribeFileSystems.FileSystems["+ i +"].EncryptType");
+				fileSystem.ExpiredTime = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].ExpiredTime");
+				fileSystem.ZoneId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].ZoneId");
+				fileSystem.VpcId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].VpcId");
 
 				List<string> fileSystem_supportedFeatures = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeFileSystems.FileSystems["+ i +"].SupportedFeatures.Length"); j++) {
@@ -67,41 +68,57 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 				}
 				fileSystem.SupportedFeatures = fileSystem_supportedFeatures;
 
+				List<string> fileSystem_vswIds = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeFileSystems.FileSystems["+ i +"].VswIds.Length"); j++) {
+					fileSystem_vswIds.Add(_ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].VswIds["+ j +"]"));
+				}
+				fileSystem.VswIds = fileSystem_vswIds;
+
 				DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Ldap ldap = new DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Ldap();
 				ldap.BindDN = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].Ldap.BindDN");
-				ldap.URI = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].Ldap.URI");
 				ldap.SearchBase = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].Ldap.SearchBase");
+				ldap.URI = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].Ldap.URI");
 				fileSystem.Ldap = ldap;
+
+				List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Tag> fileSystem_tags = new List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Tag>();
+				for (int j = 0; j < _ctx.Length("DescribeFileSystems.FileSystems["+ i +"].Tags.Length"); j++) {
+					DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Tag tag = new DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Tag();
+					tag.Key = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].Tags["+ j +"].Value");
+
+					fileSystem_tags.Add(tag);
+				}
+				fileSystem.Tags = fileSystem_tags;
 
 				List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget> fileSystem_mountTargets = new List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget>();
 				for (int j = 0; j < _ctx.Length("DescribeFileSystems.FileSystems["+ i +"].MountTargets.Length"); j++) {
 					DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget mountTarget = new DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget();
-					mountTarget.MountTargetDomain = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].MountTargetDomain");
-					mountTarget.NetworkType = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].NetworkType");
 					mountTarget.VpcId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].VpcId");
-					mountTarget.VswId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].VswId");
-					mountTarget.AccessGroupName = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].AccessGroupName");
 					mountTarget.Status = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].Status");
+					mountTarget.MountTargetDomain = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].MountTargetDomain");
+					mountTarget.AccessGroupName = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].AccessGroupName");
 					mountTarget.DualStackMountTargetDomain = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].DualStackMountTargetDomain");
+					mountTarget.VswId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].VswId");
+					mountTarget.NetworkType = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].NetworkType");
 
 					List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget.DescribeFileSystems_ClientMasterNode> mountTarget_clientMasterNodes = new List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget.DescribeFileSystems_ClientMasterNode>();
 					for (int k = 0; k < _ctx.Length("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].ClientMasterNodes.Length"); k++) {
 						DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget.DescribeFileSystems_ClientMasterNode clientMasterNode = new DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget.DescribeFileSystems_ClientMasterNode();
 						clientMasterNode.EcsId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].ClientMasterNodes["+ k +"].EcsId");
-						clientMasterNode.EcsIp = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].ClientMasterNodes["+ k +"].EcsIp");
 						clientMasterNode.DefaultPasswd = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].ClientMasterNodes["+ k +"].DefaultPasswd");
+						clientMasterNode.EcsIp = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].ClientMasterNodes["+ k +"].EcsIp");
 
 						mountTarget_clientMasterNodes.Add(clientMasterNode);
 					}
 					mountTarget.ClientMasterNodes = mountTarget_clientMasterNodes;
 
-					List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget.DescribeFileSystems_Tag> mountTarget_tags1 = new List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget.DescribeFileSystems_Tag>();
+					List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget.DescribeFileSystems_Tag2> mountTarget_tags1 = new List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget.DescribeFileSystems_Tag2>();
 					for (int k = 0; k < _ctx.Length("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].Tags.Length"); k++) {
-						DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget.DescribeFileSystems_Tag tag = new DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget.DescribeFileSystems_Tag();
-						tag.Key = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].Tags["+ k +"].Key");
-						tag._Value = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].Tags["+ k +"].Value");
+						DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget.DescribeFileSystems_Tag2 tag2 = new DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget.DescribeFileSystems_Tag2();
+						tag2.Key = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].Tags["+ k +"].Key");
+						tag2._Value = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].Tags["+ k +"].Value");
 
-						mountTarget_tags1.Add(tag);
+						mountTarget_tags1.Add(tag2);
 					}
 					mountTarget.Tags1 = mountTarget_tags1;
 
@@ -112,25 +129,15 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 				List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Package> fileSystem_packages = new List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Package>();
 				for (int j = 0; j < _ctx.Length("DescribeFileSystems.FileSystems["+ i +"].Packages.Length"); j++) {
 					DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Package package = new DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Package();
-					package.PackageId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].Packages["+ j +"].PackageId");
-					package.PackageType = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].Packages["+ j +"].PackageType");
-					package.Size = _ctx.LongValue("DescribeFileSystems.FileSystems["+ i +"].Packages["+ j +"].Size");
 					package.StartTime = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].Packages["+ j +"].StartTime");
 					package.ExpiredTime = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].Packages["+ j +"].ExpiredTime");
+					package.Size = _ctx.LongValue("DescribeFileSystems.FileSystems["+ i +"].Packages["+ j +"].Size");
+					package.PackageId = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].Packages["+ j +"].PackageId");
+					package.PackageType = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].Packages["+ j +"].PackageType");
 
 					fileSystem_packages.Add(package);
 				}
 				fileSystem.Packages = fileSystem_packages;
-
-				List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Tag2> fileSystem_tags = new List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Tag2>();
-				for (int j = 0; j < _ctx.Length("DescribeFileSystems.FileSystems["+ i +"].Tags.Length"); j++) {
-					DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Tag2 tag2 = new DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Tag2();
-					tag2.Key = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].Tags["+ j +"].Key");
-					tag2._Value = _ctx.StringValue("DescribeFileSystems.FileSystems["+ i +"].Tags["+ j +"].Value");
-
-					fileSystem_tags.Add(tag2);
-				}
-				fileSystem.Tags = fileSystem_tags;
 
 				describeFileSystemsResponse_fileSystems.Add(fileSystem);
 			}

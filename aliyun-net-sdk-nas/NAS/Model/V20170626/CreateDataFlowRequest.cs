@@ -48,7 +48,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 		private string description;
 
-		private List<AutoRefreshs> autoRefreshss = new List<AutoRefreshs>(){ };
+		private List<string> autoRefreshss = new List<string>(){ };
 
 		private string sourceSecurityType;
 
@@ -114,7 +114,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
-		public List<AutoRefreshs> AutoRefreshss
+		public List<string> AutoRefreshss
 		{
 			get
 			{
@@ -124,9 +124,12 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			set
 			{
 				autoRefreshss = value;
-				for (int i = 0; i < autoRefreshss.Count; i++)
+				if(autoRefreshss != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"AutoRefreshs." + (i + 1) + ".RefreshPath", autoRefreshss[i].RefreshPath);
+					for (int depth1 = 0; depth1 < autoRefreshss.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"AutoRefreshs." + (depth1 + 1), autoRefreshss[depth1]);
+					}
 				}
 			}
 		}

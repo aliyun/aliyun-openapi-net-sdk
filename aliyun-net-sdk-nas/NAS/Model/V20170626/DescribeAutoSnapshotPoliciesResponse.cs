@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 	public class DescribeAutoSnapshotPoliciesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
+
+		private string requestId;
 
 		private int? pageSize;
 
 		private int? pageNumber;
 
 		private List<DescribeAutoSnapshotPolicies_AutoSnapshotPolicy> autoSnapshotPolicies;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public int? TotalCount
 		{
@@ -56,6 +44,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -98,33 +98,57 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 		public class DescribeAutoSnapshotPolicies_AutoSnapshotPolicy
 		{
 
-			private string autoSnapshotPolicyId;
+			private string timePoints;
+
+			private string status;
+
+			private string repeatWeekdays;
 
 			private string autoSnapshotPolicyName;
 
 			private string createTime;
 
+			private string autoSnapshotPolicyId;
+
+			private int? retentionDays;
+
 			private int? fileSystemNums;
 
 			private string regionId;
 
-			private string repeatWeekdays;
-
-			private int? retentionDays;
-
-			private string status;
-
-			private string timePoints;
-
-			public string AutoSnapshotPolicyId
+			public string TimePoints
 			{
 				get
 				{
-					return autoSnapshotPolicyId;
+					return timePoints;
 				}
 				set	
 				{
-					autoSnapshotPolicyId = value;
+					timePoints = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string RepeatWeekdays
+			{
+				get
+				{
+					return repeatWeekdays;
+				}
+				set	
+				{
+					repeatWeekdays = value;
 				}
 			}
 
@@ -152,6 +176,30 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
+			public string AutoSnapshotPolicyId
+			{
+				get
+				{
+					return autoSnapshotPolicyId;
+				}
+				set	
+				{
+					autoSnapshotPolicyId = value;
+				}
+			}
+
+			public int? RetentionDays
+			{
+				get
+				{
+					return retentionDays;
+				}
+				set	
+				{
+					retentionDays = value;
+				}
+			}
+
 			public int? FileSystemNums
 			{
 				get
@@ -173,54 +221,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					regionId = value;
-				}
-			}
-
-			public string RepeatWeekdays
-			{
-				get
-				{
-					return repeatWeekdays;
-				}
-				set	
-				{
-					repeatWeekdays = value;
-				}
-			}
-
-			public int? RetentionDays
-			{
-				get
-				{
-					return retentionDays;
-				}
-				set	
-				{
-					retentionDays = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string TimePoints
-			{
-				get
-				{
-					return timePoints;
-				}
-				set	
-				{
-					timePoints = value;
 				}
 			}
 		}
