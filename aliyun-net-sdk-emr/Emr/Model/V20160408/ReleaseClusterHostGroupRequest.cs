@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Emr;
 using Aliyun.Acs.Emr.Transform;
 using Aliyun.Acs.Emr.Transform.V20160408;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Emr.Model.V20160408
     public class ReleaseClusterHostGroupRequest : RpcAcsRequest<ReleaseClusterHostGroupResponse>
     {
         public ReleaseClusterHostGroupRequest()
-            : base("Emr", "2016-04-08", "ReleaseClusterHostGroup")
+            : base("Emr", "2016-04-08", "ReleaseClusterHostGroup", "emr", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,11 +42,17 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private long? resourceOwnerId;
 
+		private bool? enableGracefulDecommission;
+
 		private string clusterId;
 
 		private string hostGroupId;
 
 		private string instanceIdList;
+
+		private int? releaseNumber;
+
+		private int? decommissionTimeout;
 
 		public long? ResourceOwnerId
 		{
@@ -59,6 +64,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? EnableGracefulDecommission
+		{
+			get
+			{
+				return enableGracefulDecommission;
+			}
+			set	
+			{
+				enableGracefulDecommission = value;
+				DictionaryUtil.Add(QueryParameters, "EnableGracefulDecommission", value.ToString());
 			}
 		}
 
@@ -98,6 +116,32 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				instanceIdList = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceIdList", value);
+			}
+		}
+
+		public int? ReleaseNumber
+		{
+			get
+			{
+				return releaseNumber;
+			}
+			set	
+			{
+				releaseNumber = value;
+				DictionaryUtil.Add(QueryParameters, "ReleaseNumber", value.ToString());
+			}
+		}
+
+		public int? DecommissionTimeout
+		{
+			get
+			{
+				return decommissionTimeout;
+			}
+			set	
+			{
+				decommissionTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "DecommissionTimeout", value.ToString());
 			}
 		}
 

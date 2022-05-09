@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Emr;
 using Aliyun.Acs.Emr.Transform;
 using Aliyun.Acs.Emr.Transform.V20160408;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Emr.Model.V20160408
     public class DescribeFlowRequest : RpcAcsRequest<DescribeFlowResponse>
     {
         public DescribeFlowRequest()
-            : base("Emr", "2016-04-08", "DescribeFlow")
+            : base("Emr", "2016-04-08", "DescribeFlow", "emr", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
