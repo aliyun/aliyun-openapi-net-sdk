@@ -86,10 +86,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string networkType;
 
-			private string connectionMode;
-
-			private long? port;
-
 			private string engineVersion;
 
 			private string instanceName;
@@ -207,30 +203,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					networkType = value;
-				}
-			}
-
-			public string ConnectionMode
-			{
-				get
-				{
-					return connectionMode;
-				}
-				set	
-				{
-					connectionMode = value;
-				}
-			}
-
-			public long? Port
-			{
-				get
-				{
-					return port;
-				}
-				set	
-				{
-					port = value;
 				}
 			}
 

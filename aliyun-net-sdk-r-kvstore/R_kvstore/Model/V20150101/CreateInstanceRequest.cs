@@ -60,6 +60,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string businessInfo;
 
+		private int? shardCount;
+
 		private string autoRenewPeriod;
 
 		private string period;
@@ -245,6 +247,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				businessInfo = value;
 				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
+			}
+		}
+
+		public int? ShardCount
+		{
+			get
+			{
+				return shardCount;
+			}
+			set	
+			{
+				shardCount = value;
+				DictionaryUtil.Add(QueryParameters, "ShardCount", value.ToString());
 			}
 		}
 

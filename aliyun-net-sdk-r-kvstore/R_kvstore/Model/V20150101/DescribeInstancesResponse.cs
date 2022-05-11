@@ -156,8 +156,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string regionId;
 
-			private string searchKey;
-
 			private string endTime;
 
 			private string vSwitchId;
@@ -525,18 +523,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					regionId = value;
-				}
-			}
-
-			public string SearchKey
-			{
-				get
-				{
-					return searchKey;
-				}
-				set	
-				{
-					searchKey = value;
 				}
 			}
 

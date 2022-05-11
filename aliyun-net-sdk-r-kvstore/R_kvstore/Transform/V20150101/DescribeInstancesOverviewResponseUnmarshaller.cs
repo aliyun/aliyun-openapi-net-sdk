@@ -45,8 +45,6 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				kVStoreInstance.ChargeType = _ctx.StringValue("DescribeInstancesOverview.Instances["+ i +"].ChargeType");
 				kVStoreInstance.ArchitectureType = _ctx.StringValue("DescribeInstancesOverview.Instances["+ i +"].ArchitectureType");
 				kVStoreInstance.NetworkType = _ctx.StringValue("DescribeInstancesOverview.Instances["+ i +"].NetworkType");
-				kVStoreInstance.ConnectionMode = _ctx.StringValue("DescribeInstancesOverview.Instances["+ i +"].ConnectionMode");
-				kVStoreInstance.Port = _ctx.LongValue("DescribeInstancesOverview.Instances["+ i +"].Port");
 				kVStoreInstance.EngineVersion = _ctx.StringValue("DescribeInstancesOverview.Instances["+ i +"].EngineVersion");
 				kVStoreInstance.InstanceName = _ctx.StringValue("DescribeInstancesOverview.Instances["+ i +"].InstanceName");
 				kVStoreInstance.GlobalInstanceId = _ctx.StringValue("DescribeInstancesOverview.Instances["+ i +"].GlobalInstanceId");
