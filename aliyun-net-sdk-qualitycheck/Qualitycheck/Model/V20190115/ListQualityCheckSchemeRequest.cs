@@ -28,10 +28,10 @@ using Aliyun.Acs.Qualitycheck.Transform.V20190115;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 {
-    public class ConfigDataSetRequest : RpcAcsRequest<ConfigDataSetResponse>
+    public class ListQualityCheckSchemeRequest : RpcAcsRequest<ListQualityCheckSchemeResponse>
     {
-        public ConfigDataSetRequest()
-            : base("Qualitycheck", "2019-01-15", "ConfigDataSet")
+        public ListQualityCheckSchemeRequest()
+            : base("Qualitycheck", "2019-01-15", "ListQualityCheckScheme")
         {
 			Method = MethodType.POST;
         }
@@ -51,9 +51,14 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			}
 		}
 
-        public override ConfigDataSetResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override ListQualityCheckSchemeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ConfigDataSetResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListQualityCheckSchemeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
