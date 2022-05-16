@@ -29,6 +29,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string requestId;
 
+		private DescribeShowList_ShowListInfo showListInfo;
+
 		public string ShowList
 		{
 			get
@@ -50,6 +52,240 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public DescribeShowList_ShowListInfo ShowListInfo
+		{
+			get
+			{
+				return showListInfo;
+			}
+			set	
+			{
+				showListInfo = value;
+			}
+		}
+
+		public class DescribeShowList_ShowListInfo
+		{
+
+			private string highPriorityShowStartTime;
+
+			private int? totalShowListRepeatTimes;
+
+			private int? showListRepeatTimes;
+
+			private string currentShowId;
+
+			private string highPriorityShowId;
+
+			private List<DescribeShowList_Show> showList;
+
+			public string HighPriorityShowStartTime
+			{
+				get
+				{
+					return highPriorityShowStartTime;
+				}
+				set	
+				{
+					highPriorityShowStartTime = value;
+				}
+			}
+
+			public int? TotalShowListRepeatTimes
+			{
+				get
+				{
+					return totalShowListRepeatTimes;
+				}
+				set	
+				{
+					totalShowListRepeatTimes = value;
+				}
+			}
+
+			public int? ShowListRepeatTimes
+			{
+				get
+				{
+					return showListRepeatTimes;
+				}
+				set	
+				{
+					showListRepeatTimes = value;
+				}
+			}
+
+			public string CurrentShowId
+			{
+				get
+				{
+					return currentShowId;
+				}
+				set	
+				{
+					currentShowId = value;
+				}
+			}
+
+			public string HighPriorityShowId
+			{
+				get
+				{
+					return highPriorityShowId;
+				}
+				set	
+				{
+					highPriorityShowId = value;
+				}
+			}
+
+			public List<DescribeShowList_Show> ShowList
+			{
+				get
+				{
+					return showList;
+				}
+				set	
+				{
+					showList = value;
+				}
+			}
+
+			public class DescribeShowList_Show
+			{
+
+				private string showName;
+
+				private long? duration;
+
+				private int? repeatTimes;
+
+				private string showId;
+
+				private DescribeShowList_ResourceInfo resourceInfo;
+
+				public string ShowName
+				{
+					get
+					{
+						return showName;
+					}
+					set	
+					{
+						showName = value;
+					}
+				}
+
+				public long? Duration
+				{
+					get
+					{
+						return duration;
+					}
+					set	
+					{
+						duration = value;
+					}
+				}
+
+				public int? RepeatTimes
+				{
+					get
+					{
+						return repeatTimes;
+					}
+					set	
+					{
+						repeatTimes = value;
+					}
+				}
+
+				public string ShowId
+				{
+					get
+					{
+						return showId;
+					}
+					set	
+					{
+						showId = value;
+					}
+				}
+
+				public DescribeShowList_ResourceInfo ResourceInfo
+				{
+					get
+					{
+						return resourceInfo;
+					}
+					set	
+					{
+						resourceInfo = value;
+					}
+				}
+
+				public class DescribeShowList_ResourceInfo
+				{
+
+					private int? liveInputType;
+
+					private string resourceUrl;
+
+					private string resourceType;
+
+					private string resourceId;
+
+					public int? LiveInputType
+					{
+						get
+						{
+							return liveInputType;
+						}
+						set	
+						{
+							liveInputType = value;
+						}
+					}
+
+					public string ResourceUrl
+					{
+						get
+						{
+							return resourceUrl;
+						}
+						set	
+						{
+							resourceUrl = value;
+						}
+					}
+
+					public string ResourceType
+					{
+						get
+						{
+							return resourceType;
+						}
+						set	
+						{
+							resourceType = value;
+						}
+					}
+
+					public string ResourceId
+					{
+						get
+						{
+							return resourceId;
+						}
+						set	
+						{
+							resourceId = value;
+						}
+					}
+				}
 			}
 		}
 	}

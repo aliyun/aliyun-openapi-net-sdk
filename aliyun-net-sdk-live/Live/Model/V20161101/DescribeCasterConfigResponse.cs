@@ -27,25 +27,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private float? delay;
 
-		private string callbackUrl;
-
 		private string urgentMaterialId;
+
+		private string callbackUrl;
 
 		private string programName;
 
-		private string requestId;
-
-		private string sideOutputUrl;
-
 		private string casterName;
-
-		private int? programEffect;
 
 		private string casterId;
 
-		private int? channelEnable;
+		private int? programEffect;
 
 		private string domainName;
+
+		private int? channelEnable;
+
+		private string requestId;
+
+		private string sideOutputUrlList;
+
+		private string sideOutputUrl;
 
 		private List<DescribeCasterConfig_SyncGroup> syncGroupsConfig;
 
@@ -65,18 +67,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string CallbackUrl
-		{
-			get
-			{
-				return callbackUrl;
-			}
-			set	
-			{
-				callbackUrl = value;
-			}
-		}
-
 		public string UrgentMaterialId
 		{
 			get
@@ -86,6 +76,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				urgentMaterialId = value;
+			}
+		}
+
+		public string CallbackUrl
+		{
+			get
+			{
+				return callbackUrl;
+			}
+			set	
+			{
+				callbackUrl = value;
 			}
 		}
 
@@ -101,30 +103,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string SideOutputUrl
-		{
-			get
-			{
-				return sideOutputUrl;
-			}
-			set	
-			{
-				sideOutputUrl = value;
-			}
-		}
-
 		public string CasterName
 		{
 			get
@@ -134,18 +112,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				casterName = value;
-			}
-		}
-
-		public int? ProgramEffect
-		{
-			get
-			{
-				return programEffect;
-			}
-			set	
-			{
-				programEffect = value;
 			}
 		}
 
@@ -161,15 +127,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? ChannelEnable
+		public int? ProgramEffect
 		{
 			get
 			{
-				return channelEnable;
+				return programEffect;
 			}
 			set	
 			{
-				channelEnable = value;
+				programEffect = value;
 			}
 		}
 
@@ -182,6 +148,54 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				domainName = value;
+			}
+		}
+
+		public int? ChannelEnable
+		{
+			get
+			{
+				return channelEnable;
+			}
+			set	
+			{
+				channelEnable = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string SideOutputUrlList
+		{
+			get
+			{
+				return sideOutputUrlList;
+			}
+			set	
+			{
+				sideOutputUrlList = value;
+			}
+		}
+
+		public string SideOutputUrl
+		{
+			get
+			{
+				return sideOutputUrl;
+			}
+			set	
+			{
+				sideOutputUrl = value;
 			}
 		}
 

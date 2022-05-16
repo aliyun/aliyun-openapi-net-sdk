@@ -32,16 +32,17 @@ namespace Aliyun.Acs.live.Transform.V20161101
 
 			describeCasterConfigResponse.HttpResponse = _ctx.HttpResponse;
 			describeCasterConfigResponse.Delay = _ctx.FloatValue("DescribeCasterConfig.Delay");
-			describeCasterConfigResponse.CallbackUrl = _ctx.StringValue("DescribeCasterConfig.CallbackUrl");
 			describeCasterConfigResponse.UrgentMaterialId = _ctx.StringValue("DescribeCasterConfig.UrgentMaterialId");
+			describeCasterConfigResponse.CallbackUrl = _ctx.StringValue("DescribeCasterConfig.CallbackUrl");
 			describeCasterConfigResponse.ProgramName = _ctx.StringValue("DescribeCasterConfig.ProgramName");
-			describeCasterConfigResponse.RequestId = _ctx.StringValue("DescribeCasterConfig.RequestId");
-			describeCasterConfigResponse.SideOutputUrl = _ctx.StringValue("DescribeCasterConfig.SideOutputUrl");
 			describeCasterConfigResponse.CasterName = _ctx.StringValue("DescribeCasterConfig.CasterName");
-			describeCasterConfigResponse.ProgramEffect = _ctx.IntegerValue("DescribeCasterConfig.ProgramEffect");
 			describeCasterConfigResponse.CasterId = _ctx.StringValue("DescribeCasterConfig.CasterId");
-			describeCasterConfigResponse.ChannelEnable = _ctx.IntegerValue("DescribeCasterConfig.ChannelEnable");
+			describeCasterConfigResponse.ProgramEffect = _ctx.IntegerValue("DescribeCasterConfig.ProgramEffect");
 			describeCasterConfigResponse.DomainName = _ctx.StringValue("DescribeCasterConfig.DomainName");
+			describeCasterConfigResponse.ChannelEnable = _ctx.IntegerValue("DescribeCasterConfig.ChannelEnable");
+			describeCasterConfigResponse.RequestId = _ctx.StringValue("DescribeCasterConfig.RequestId");
+			describeCasterConfigResponse.SideOutputUrlList = _ctx.StringValue("DescribeCasterConfig.SideOutputUrlList");
+			describeCasterConfigResponse.SideOutputUrl = _ctx.StringValue("DescribeCasterConfig.SideOutputUrl");
 
 			DescribeCasterConfigResponse.DescribeCasterConfig_TranscodeConfig transcodeConfig = new DescribeCasterConfigResponse.DescribeCasterConfig_TranscodeConfig();
 			transcodeConfig.CasterTemplate = _ctx.StringValue("DescribeCasterConfig.TranscodeConfig.CasterTemplate");

@@ -50,6 +50,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
+		private string callBackUrl;
+
 		private string resourceIds;
 
 		public long? StartTime
@@ -114,6 +116,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string CallBackUrl
+		{
+			get
+			{
+				return callBackUrl;
+			}
+			set	
+			{
+				callBackUrl = value;
+				DictionaryUtil.Add(QueryParameters, "CallBackUrl", value);
 			}
 		}
 
