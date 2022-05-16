@@ -31,8 +31,8 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			ListConsumedServicesResponse listConsumedServicesResponse = new ListConsumedServicesResponse();
 
 			listConsumedServicesResponse.HttpResponse = _ctx.HttpResponse;
-			listConsumedServicesResponse.Message = _ctx.StringValue("ListConsumedServices.Message");
 			listConsumedServicesResponse.RequestId = _ctx.StringValue("ListConsumedServices.RequestId");
+			listConsumedServicesResponse.Message = _ctx.StringValue("ListConsumedServices.Message");
 			listConsumedServicesResponse.TraceId = _ctx.StringValue("ListConsumedServices.TraceId");
 			listConsumedServicesResponse.ErrorCode = _ctx.StringValue("ListConsumedServices.ErrorCode");
 			listConsumedServicesResponse.Code = _ctx.StringValue("ListConsumedServices.Code");
@@ -41,10 +41,10 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			List<ListConsumedServicesResponse.ListConsumedServices_ListConsumedServices> listConsumedServicesResponse_data = new List<ListConsumedServicesResponse.ListConsumedServices_ListConsumedServices>();
 			for (int i = 0; i < _ctx.Length("ListConsumedServices.Data.Length"); i++) {
 				ListConsumedServicesResponse.ListConsumedServices_ListConsumedServices listConsumedServices = new ListConsumedServicesResponse.ListConsumedServices_ListConsumedServices();
-				listConsumedServices.Group2Ip = _ctx.StringValue("ListConsumedServices.Data["+ i +"].Group2Ip");
 				listConsumedServices.Type = _ctx.StringValue("ListConsumedServices.Data["+ i +"].Type");
-				listConsumedServices.AppId = _ctx.StringValue("ListConsumedServices.Data["+ i +"].AppId");
 				listConsumedServices.Version = _ctx.StringValue("ListConsumedServices.Data["+ i +"].Version");
+				listConsumedServices.AppId = _ctx.StringValue("ListConsumedServices.Data["+ i +"].AppId");
+				listConsumedServices.Group2Ip = _ctx.StringValue("ListConsumedServices.Data["+ i +"].Group2Ip");
 				listConsumedServices.Name = _ctx.StringValue("ListConsumedServices.Data["+ i +"].Name");
 
 				List<string> listConsumedServices_groups = new List<string>();

@@ -31,12 +31,12 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			DeleteApplicationResponse deleteApplicationResponse = new DeleteApplicationResponse();
 
 			deleteApplicationResponse.HttpResponse = _ctx.HttpResponse;
-			deleteApplicationResponse.Code = _ctx.StringValue("DeleteApplication.Code");
-			deleteApplicationResponse.Message = _ctx.StringValue("DeleteApplication.Message");
 			deleteApplicationResponse.RequestId = _ctx.StringValue("DeleteApplication.RequestId");
-			deleteApplicationResponse.Success = _ctx.BooleanValue("DeleteApplication.Success");
-			deleteApplicationResponse.ErrorCode = _ctx.StringValue("DeleteApplication.ErrorCode");
+			deleteApplicationResponse.Message = _ctx.StringValue("DeleteApplication.Message");
 			deleteApplicationResponse.TraceId = _ctx.StringValue("DeleteApplication.TraceId");
+			deleteApplicationResponse.ErrorCode = _ctx.StringValue("DeleteApplication.ErrorCode");
+			deleteApplicationResponse.Code = _ctx.StringValue("DeleteApplication.Code");
+			deleteApplicationResponse.Success = _ctx.BooleanValue("DeleteApplication.Success");
 
 			DeleteApplicationResponse.DeleteApplication_Data data = new DeleteApplicationResponse.DeleteApplication_Data();
 			data.ChangeOrderId = _ctx.StringValue("DeleteApplication.Data.ChangeOrderId");

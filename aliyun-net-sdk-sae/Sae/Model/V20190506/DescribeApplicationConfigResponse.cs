@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
@@ -233,6 +233,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			private bool? associateEip;
 
 			private string kafkaConfigs;
+
+			private string programmingLanguage;
 
 			private List<DescribeApplicationConfig_ConfigMapMountDescItem> configMapMountDesc;
 
@@ -887,6 +889,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					kafkaConfigs = value;
+				}
+			}
+
+			public string ProgrammingLanguage
+			{
+				get
+				{
+					return programmingLanguage;
+				}
+				set	
+				{
+					programmingLanguage = value;
 				}
 			}
 

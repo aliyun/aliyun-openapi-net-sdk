@@ -32,11 +32,11 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 
 			listNamespaceChangeOrdersResponse.HttpResponse = _ctx.HttpResponse;
 			listNamespaceChangeOrdersResponse.RequestId = _ctx.StringValue("ListNamespaceChangeOrders.RequestId");
+			listNamespaceChangeOrdersResponse.ErrorCode = _ctx.StringValue("ListNamespaceChangeOrders.ErrorCode");
+			listNamespaceChangeOrdersResponse.Success = _ctx.BooleanValue("ListNamespaceChangeOrders.Success");
 			listNamespaceChangeOrdersResponse.Code = _ctx.StringValue("ListNamespaceChangeOrders.Code");
 			listNamespaceChangeOrdersResponse.Message = _ctx.StringValue("ListNamespaceChangeOrders.Message");
-			listNamespaceChangeOrdersResponse.ErrorCode = _ctx.StringValue("ListNamespaceChangeOrders.ErrorCode");
 			listNamespaceChangeOrdersResponse.TraceId = _ctx.StringValue("ListNamespaceChangeOrders.TraceId");
-			listNamespaceChangeOrdersResponse.Success = _ctx.BooleanValue("ListNamespaceChangeOrders.Success");
 
 			ListNamespaceChangeOrdersResponse.ListNamespaceChangeOrders_Data data = new ListNamespaceChangeOrdersResponse.ListNamespaceChangeOrders_Data();
 			data.CurrentPage = _ctx.IntegerValue("ListNamespaceChangeOrders.Data.CurrentPage");
@@ -46,21 +46,21 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			List<ListNamespaceChangeOrdersResponse.ListNamespaceChangeOrders_Data.ListNamespaceChangeOrders_ChangeOrder> data_changeOrderList = new List<ListNamespaceChangeOrdersResponse.ListNamespaceChangeOrders_Data.ListNamespaceChangeOrders_ChangeOrder>();
 			for (int i = 0; i < _ctx.Length("ListNamespaceChangeOrders.Data.ChangeOrderList.Length"); i++) {
 				ListNamespaceChangeOrdersResponse.ListNamespaceChangeOrders_Data.ListNamespaceChangeOrders_ChangeOrder changeOrder = new ListNamespaceChangeOrdersResponse.ListNamespaceChangeOrders_Data.ListNamespaceChangeOrders_ChangeOrder();
-				changeOrder.NamespaceId = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].NamespaceId");
-				changeOrder.BatchCount = _ctx.IntegerValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].BatchCount");
-				changeOrder.BatchType = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].BatchType");
-				changeOrder.ChangeOrderId = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].ChangeOrderId");
-				changeOrder.CoType = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].CoType");
-				changeOrder.CoTypeCode = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].CoTypeCode");
-				changeOrder.CreateTime = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].CreateTime");
-				changeOrder.Description = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].Description");
-				changeOrder.FinishTime = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].FinishTime");
-				changeOrder.GroupId = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].GroupId");
-				changeOrder.Pipelines = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].Pipelines");
-				changeOrder.Source = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].Source");
 				changeOrder.Status = _ctx.IntegerValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].Status");
-				changeOrder.CreateUserId = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].CreateUserId");
+				changeOrder.FinishTime = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].FinishTime");
+				changeOrder.NamespaceId = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].NamespaceId");
+				changeOrder.CreateTime = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].CreateTime");
 				changeOrder.UserId = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].UserId");
+				changeOrder.Source = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].Source");
+				changeOrder.CreateUserId = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].CreateUserId");
+				changeOrder.BatchCount = _ctx.IntegerValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].BatchCount");
+				changeOrder.CoTypeCode = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].CoTypeCode");
+				changeOrder.ChangeOrderId = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].ChangeOrderId");
+				changeOrder.BatchType = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].BatchType");
+				changeOrder.Description = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].Description");
+				changeOrder.GroupId = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].GroupId");
+				changeOrder.CoType = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].CoType");
+				changeOrder.Pipelines = _ctx.StringValue("ListNamespaceChangeOrders.Data.ChangeOrderList["+ i +"].Pipelines");
 
 				data_changeOrderList.Add(changeOrder);
 			}

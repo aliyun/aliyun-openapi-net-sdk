@@ -31,12 +31,12 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			AbortChangeOrderResponse abortChangeOrderResponse = new AbortChangeOrderResponse();
 
 			abortChangeOrderResponse.HttpResponse = _ctx.HttpResponse;
-			abortChangeOrderResponse.Code = _ctx.StringValue("AbortChangeOrder.Code");
-			abortChangeOrderResponse.ErrorCode = _ctx.StringValue("AbortChangeOrder.ErrorCode");
-			abortChangeOrderResponse.Message = _ctx.StringValue("AbortChangeOrder.Message");
-			abortChangeOrderResponse.Success = _ctx.BooleanValue("AbortChangeOrder.Success");
-			abortChangeOrderResponse.TraceId = _ctx.StringValue("AbortChangeOrder.TraceId");
 			abortChangeOrderResponse.RequestId = _ctx.StringValue("AbortChangeOrder.RequestId");
+			abortChangeOrderResponse.Message = _ctx.StringValue("AbortChangeOrder.Message");
+			abortChangeOrderResponse.TraceId = _ctx.StringValue("AbortChangeOrder.TraceId");
+			abortChangeOrderResponse.ErrorCode = _ctx.StringValue("AbortChangeOrder.ErrorCode");
+			abortChangeOrderResponse.Code = _ctx.StringValue("AbortChangeOrder.Code");
+			abortChangeOrderResponse.Success = _ctx.BooleanValue("AbortChangeOrder.Success");
 
 			AbortChangeOrderResponse.AbortChangeOrder_Data data = new AbortChangeOrderResponse.AbortChangeOrder_Data();
 			data.ChangeOrderId = _ctx.StringValue("AbortChangeOrder.Data.ChangeOrderId");

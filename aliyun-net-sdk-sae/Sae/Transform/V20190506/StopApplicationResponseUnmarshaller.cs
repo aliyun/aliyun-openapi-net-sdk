@@ -32,11 +32,11 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 
 			stopApplicationResponse.HttpResponse = _ctx.HttpResponse;
 			stopApplicationResponse.RequestId = _ctx.StringValue("StopApplication.RequestId");
-			stopApplicationResponse.Code = _ctx.StringValue("StopApplication.Code");
-			stopApplicationResponse.Success = _ctx.BooleanValue("StopApplication.Success");
-			stopApplicationResponse.ErrorCode = _ctx.StringValue("StopApplication.ErrorCode");
 			stopApplicationResponse.Message = _ctx.StringValue("StopApplication.Message");
 			stopApplicationResponse.TraceId = _ctx.StringValue("StopApplication.TraceId");
+			stopApplicationResponse.ErrorCode = _ctx.StringValue("StopApplication.ErrorCode");
+			stopApplicationResponse.Code = _ctx.StringValue("StopApplication.Code");
+			stopApplicationResponse.Success = _ctx.BooleanValue("StopApplication.Success");
 
 			StopApplicationResponse.StopApplication_Data data = new StopApplicationResponse.StopApplication_Data();
 			data.ChangeOrderId = _ctx.StringValue("StopApplication.Data.ChangeOrderId");

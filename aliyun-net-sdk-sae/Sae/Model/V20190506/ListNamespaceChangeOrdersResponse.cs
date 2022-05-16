@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
@@ -27,15 +27,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string requestId;
 
+		private string errorCode;
+
+		private bool? success;
+
 		private string code;
 
 		private string message;
 
-		private string errorCode;
-
 		private string traceId;
-
-		private bool? success;
 
 		private ListNamespaceChangeOrders_Data data;
 
@@ -48,6 +48,30 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -75,18 +99,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
 		public string TraceId
 		{
 			get
@@ -96,18 +108,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				traceId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
 			}
 		}
 
@@ -185,129 +185,45 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			public class ListNamespaceChangeOrders_ChangeOrder
 			{
 
-				private string namespaceId;
-
-				private int? batchCount;
-
-				private string batchType;
-
-				private string changeOrderId;
-
-				private string coType;
-
-				private string coTypeCode;
-
-				private string createTime;
-
-				private string description;
+				private int? status;
 
 				private string finishTime;
 
-				private string groupId;
+				private string namespaceId;
 
-				private string pipelines;
-
-				private string source;
-
-				private int? status;
-
-				private string createUserId;
+				private string createTime;
 
 				private string userId;
 
-				public string NamespaceId
-				{
-					get
-					{
-						return namespaceId;
-					}
-					set	
-					{
-						namespaceId = value;
-					}
-				}
+				private string source;
 
-				public int? BatchCount
-				{
-					get
-					{
-						return batchCount;
-					}
-					set	
-					{
-						batchCount = value;
-					}
-				}
+				private string createUserId;
 
-				public string BatchType
-				{
-					get
-					{
-						return batchType;
-					}
-					set	
-					{
-						batchType = value;
-					}
-				}
+				private int? batchCount;
 
-				public string ChangeOrderId
-				{
-					get
-					{
-						return changeOrderId;
-					}
-					set	
-					{
-						changeOrderId = value;
-					}
-				}
+				private string coTypeCode;
 
-				public string CoType
-				{
-					get
-					{
-						return coType;
-					}
-					set	
-					{
-						coType = value;
-					}
-				}
+				private string changeOrderId;
 
-				public string CoTypeCode
-				{
-					get
-					{
-						return coTypeCode;
-					}
-					set	
-					{
-						coTypeCode = value;
-					}
-				}
+				private string batchType;
 
-				public string CreateTime
-				{
-					get
-					{
-						return createTime;
-					}
-					set	
-					{
-						createTime = value;
-					}
-				}
+				private string description;
 
-				public string Description
+				private string groupId;
+
+				private string coType;
+
+				private string pipelines;
+
+				public int? Status
 				{
 					get
 					{
-						return description;
+						return status;
 					}
 					set	
 					{
-						description = value;
+						status = value;
 					}
 				}
 
@@ -323,27 +239,39 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public string GroupId
+				public string NamespaceId
 				{
 					get
 					{
-						return groupId;
+						return namespaceId;
 					}
 					set	
 					{
-						groupId = value;
+						namespaceId = value;
 					}
 				}
 
-				public string Pipelines
+				public string CreateTime
 				{
 					get
 					{
-						return pipelines;
+						return createTime;
 					}
 					set	
 					{
-						pipelines = value;
+						createTime = value;
+					}
+				}
+
+				public string UserId
+				{
+					get
+					{
+						return userId;
+					}
+					set	
+					{
+						userId = value;
 					}
 				}
 
@@ -359,18 +287,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public int? Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
 				public string CreateUserId
 				{
 					get
@@ -383,15 +299,99 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public string UserId
+				public int? BatchCount
 				{
 					get
 					{
-						return userId;
+						return batchCount;
 					}
 					set	
 					{
-						userId = value;
+						batchCount = value;
+					}
+				}
+
+				public string CoTypeCode
+				{
+					get
+					{
+						return coTypeCode;
+					}
+					set	
+					{
+						coTypeCode = value;
+					}
+				}
+
+				public string ChangeOrderId
+				{
+					get
+					{
+						return changeOrderId;
+					}
+					set	
+					{
+						changeOrderId = value;
+					}
+				}
+
+				public string BatchType
+				{
+					get
+					{
+						return batchType;
+					}
+					set	
+					{
+						batchType = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
+				public string GroupId
+				{
+					get
+					{
+						return groupId;
+					}
+					set	
+					{
+						groupId = value;
+					}
+				}
+
+				public string CoType
+				{
+					get
+					{
+						return coType;
+					}
+					set	
+					{
+						coType = value;
+					}
+				}
+
+				public string Pipelines
+				{
+					get
+					{
+						return pipelines;
+					}
+					set	
+					{
+						pipelines = value;
 					}
 				}
 			}

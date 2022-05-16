@@ -93,6 +93,7 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			data.AcrAssumeRoleArn = _ctx.StringValue("DescribeApplicationConfig.Data.AcrAssumeRoleArn");
 			data.AssociateEip = _ctx.BooleanValue("DescribeApplicationConfig.Data.AssociateEip");
 			data.KafkaConfigs = _ctx.StringValue("DescribeApplicationConfig.Data.KafkaConfigs");
+			data.ProgrammingLanguage = _ctx.StringValue("DescribeApplicationConfig.Data.ProgrammingLanguage");
 
 			List<DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_ConfigMapMountDescItem> data_configMapMountDesc = new List<DescribeApplicationConfigResponse.DescribeApplicationConfig_Data.DescribeApplicationConfig_ConfigMapMountDescItem>();
 			for (int i = 0; i < _ctx.Length("DescribeApplicationConfig.Data.ConfigMapMountDesc.Length"); i++) {

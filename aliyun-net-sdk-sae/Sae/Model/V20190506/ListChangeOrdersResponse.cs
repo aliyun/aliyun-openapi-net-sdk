@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
@@ -25,9 +25,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class ListChangeOrdersResponse : AcsResponse
 	{
 
-		private string message;
-
 		private string requestId;
+
+		private string message;
 
 		private string traceId;
 
@@ -39,18 +39,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private ListChangeOrders_Data data;
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
 		public string RequestId
 		{
 			get
@@ -60,6 +48,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -126,25 +126,13 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class ListChangeOrders_Data
 		{
 
-			private int? pageSize;
-
 			private int? currentPage;
 
 			private int? totalSize;
 
-			private List<ListChangeOrders_ChangeOrder> changeOrderList;
+			private int? pageSize;
 
-			public int? PageSize
-			{
-				get
-				{
-					return pageSize;
-				}
-				set	
-				{
-					pageSize = value;
-				}
-			}
+			private List<ListChangeOrders_ChangeOrder> changeOrderList;
 
 			public int? CurrentPage
 			{
@@ -170,6 +158,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
+			public int? PageSize
+			{
+				get
+				{
+					return pageSize;
+				}
+				set	
+				{
+					pageSize = value;
+				}
+			}
+
 			public List<ListChangeOrders_ChangeOrder> ChangeOrderList
 			{
 				get
@@ -187,31 +187,31 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 				private int? status;
 
-				private string description;
+				private string finishTime;
 
 				private string createTime;
 
-				private string changeOrderId;
-
-				private string createUserId;
-
-				private string batchType;
+				private string userId;
 
 				private string source;
 
-				private string groupId;
+				private int? batchCount;
 
-				private string appId;
+				private string createUserId;
 
 				private string coTypeCode;
 
-				private string finishTime;
+				private string changeOrderId;
 
-				private string userId;
+				private string batchType;
+
+				private string groupId;
+
+				private string description;
 
 				private string coType;
 
-				private int? batchCount;
+				private string appId;
 
 				public int? Status
 				{
@@ -222,114 +222,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						status = value;
-					}
-				}
-
-				public string Description
-				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
-					}
-				}
-
-				public string CreateTime
-				{
-					get
-					{
-						return createTime;
-					}
-					set	
-					{
-						createTime = value;
-					}
-				}
-
-				public string ChangeOrderId
-				{
-					get
-					{
-						return changeOrderId;
-					}
-					set	
-					{
-						changeOrderId = value;
-					}
-				}
-
-				public string CreateUserId
-				{
-					get
-					{
-						return createUserId;
-					}
-					set	
-					{
-						createUserId = value;
-					}
-				}
-
-				public string BatchType
-				{
-					get
-					{
-						return batchType;
-					}
-					set	
-					{
-						batchType = value;
-					}
-				}
-
-				public string Source
-				{
-					get
-					{
-						return source;
-					}
-					set	
-					{
-						source = value;
-					}
-				}
-
-				public string GroupId
-				{
-					get
-					{
-						return groupId;
-					}
-					set	
-					{
-						groupId = value;
-					}
-				}
-
-				public string AppId
-				{
-					get
-					{
-						return appId;
-					}
-					set	
-					{
-						appId = value;
-					}
-				}
-
-				public string CoTypeCode
-				{
-					get
-					{
-						return coTypeCode;
-					}
-					set	
-					{
-						coTypeCode = value;
 					}
 				}
 
@@ -345,6 +237,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
+				public string CreateTime
+				{
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
+					}
+				}
+
 				public string UserId
 				{
 					get
@@ -354,6 +258,102 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						userId = value;
+					}
+				}
+
+				public string Source
+				{
+					get
+					{
+						return source;
+					}
+					set	
+					{
+						source = value;
+					}
+				}
+
+				public int? BatchCount
+				{
+					get
+					{
+						return batchCount;
+					}
+					set	
+					{
+						batchCount = value;
+					}
+				}
+
+				public string CreateUserId
+				{
+					get
+					{
+						return createUserId;
+					}
+					set	
+					{
+						createUserId = value;
+					}
+				}
+
+				public string CoTypeCode
+				{
+					get
+					{
+						return coTypeCode;
+					}
+					set	
+					{
+						coTypeCode = value;
+					}
+				}
+
+				public string ChangeOrderId
+				{
+					get
+					{
+						return changeOrderId;
+					}
+					set	
+					{
+						changeOrderId = value;
+					}
+				}
+
+				public string BatchType
+				{
+					get
+					{
+						return batchType;
+					}
+					set	
+					{
+						batchType = value;
+					}
+				}
+
+				public string GroupId
+				{
+					get
+					{
+						return groupId;
+					}
+					set	
+					{
+						groupId = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
 					}
 				}
 
@@ -369,15 +369,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public int? BatchCount
+				public string AppId
 				{
 					get
 					{
-						return batchCount;
+						return appId;
 					}
 					set	
 					{
-						batchCount = value;
+						appId = value;
 					}
 				}
 			}

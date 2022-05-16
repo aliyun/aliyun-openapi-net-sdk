@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
@@ -27,15 +27,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string requestId;
 
-		private string code;
-
 		private string message;
 
-		private bool? success;
+		private string traceId;
 
 		private string errorCode;
 
-		private string traceId;
+		private string code;
+
+		private bool? success;
 
 		private DescribeIngress_Data data;
 
@@ -51,18 +51,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
 		public string Message
 		{
 			get
@@ -75,15 +63,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public bool? Success
+		public string TraceId
 		{
 			get
 			{
-				return success;
+				return traceId;
 			}
 			set	
 			{
-				success = value;
+				traceId = value;
 			}
 		}
 
@@ -99,15 +87,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string TraceId
+		public string Code
 		{
 			get
 			{
-				return traceId;
+				return code;
 			}
 			set	
 			{
-				traceId = value;
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -126,47 +126,39 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class DescribeIngress_Data
 		{
 
-			private long? id;
-
-			private string name;
+			private string slbId;
 
 			private string namespaceId;
 
 			private string description;
 
-			private string slbId;
-
 			private int? listenerPort;
+
+			private string slbType;
 
 			private string certId;
 
-			private string slbType;
+			private string name;
+
+			private long? id;
+
+			private string loadBalanceType;
+
+			private string listenerProtocol;
 
 			private List<DescribeIngress_Rule> rules;
 
 			private DescribeIngress_DefaultRule defaultRule;
 
-			public long? Id
+			public string SlbId
 			{
 				get
 				{
-					return id;
+					return slbId;
 				}
 				set	
 				{
-					id = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
+					slbId = value;
 				}
 			}
 
@@ -194,18 +186,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string SlbId
-			{
-				get
-				{
-					return slbId;
-				}
-				set	
-				{
-					slbId = value;
-				}
-			}
-
 			public int? ListenerPort
 			{
 				get
@@ -215,6 +195,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					listenerPort = value;
+				}
+			}
+
+			public string SlbType
+			{
+				get
+				{
+					return slbType;
+				}
+				set	
+				{
+					slbType = value;
 				}
 			}
 
@@ -230,15 +222,51 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string SlbType
+			public string Name
 			{
 				get
 				{
-					return slbType;
+					return name;
 				}
 				set	
 				{
-					slbType = value;
+					name = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string LoadBalanceType
+			{
+				get
+				{
+					return loadBalanceType;
+				}
+				set	
+				{
+					loadBalanceType = value;
+				}
+			}
+
+			public string ListenerProtocol
+			{
+				get
+				{
+					return listenerProtocol;
+				}
+				set	
+				{
+					listenerProtocol = value;
 				}
 			}
 
@@ -269,25 +297,25 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			public class DescribeIngress_Rule
 			{
 
-				private string appId;
+				private string appName;
 
 				private int? containerPort;
 
 				private string domain;
 
+				private string appId;
+
 				private string path;
 
-				private string appName;
-
-				public string AppId
+				public string AppName
 				{
 					get
 					{
-						return appId;
+						return appName;
 					}
 					set	
 					{
-						appId = value;
+						appName = value;
 					}
 				}
 
@@ -315,40 +343,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public string Path
-				{
-					get
-					{
-						return path;
-					}
-					set	
-					{
-						path = value;
-					}
-				}
-
-				public string AppName
-				{
-					get
-					{
-						return appName;
-					}
-					set	
-					{
-						appName = value;
-					}
-				}
-			}
-
-			public class DescribeIngress_DefaultRule
-			{
-
-				private string appId;
-
-				private int? containerPort;
-
-				private string appName;
-
 				public string AppId
 				{
 					get
@@ -360,6 +354,28 @@ namespace Aliyun.Acs.sae.Model.V20190506
 						appId = value;
 					}
 				}
+
+				public string Path
+				{
+					get
+					{
+						return path;
+					}
+					set	
+					{
+						path = value;
+					}
+				}
+			}
+
+			public class DescribeIngress_DefaultRule
+			{
+
+				private int? containerPort;
+
+				private string appName;
+
+				private string appId;
 
 				public int? ContainerPort
 				{
@@ -382,6 +398,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						appName = value;
+					}
+				}
+
+				public string AppId
+				{
+					get
+					{
+						return appId;
+					}
+					set	
+					{
+						appId = value;
 					}
 				}
 			}

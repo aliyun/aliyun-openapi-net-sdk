@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
@@ -29,11 +29,11 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string message;
 
-		private string code;
+		private string traceId;
 
 		private string errorCode;
 
-		private string traceId;
+		private string code;
 
 		private bool? success;
 
@@ -63,15 +63,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Code
+		public string TraceId
 		{
 			get
 			{
-				return code;
+				return traceId;
 			}
 			set	
 			{
-				code = value;
+				traceId = value;
 			}
 		}
 
@@ -87,15 +87,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string TraceId
+		public string Code
 		{
 			get
 			{
-				return traceId;
+				return code;
 			}
 			set	
 			{
-				traceId = value;
+				code = value;
 			}
 		}
 

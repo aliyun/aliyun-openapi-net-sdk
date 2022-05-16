@@ -31,12 +31,12 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			UnbindSlbResponse unbindSlbResponse = new UnbindSlbResponse();
 
 			unbindSlbResponse.HttpResponse = _ctx.HttpResponse;
-			unbindSlbResponse.Code = _ctx.StringValue("UnbindSlb.Code");
-			unbindSlbResponse.Message = _ctx.StringValue("UnbindSlb.Message");
-			unbindSlbResponse.ErrorCode = _ctx.StringValue("UnbindSlb.ErrorCode");
-			unbindSlbResponse.Success = _ctx.BooleanValue("UnbindSlb.Success");
-			unbindSlbResponse.TraceId = _ctx.StringValue("UnbindSlb.TraceId");
 			unbindSlbResponse.RequestId = _ctx.StringValue("UnbindSlb.RequestId");
+			unbindSlbResponse.Message = _ctx.StringValue("UnbindSlb.Message");
+			unbindSlbResponse.TraceId = _ctx.StringValue("UnbindSlb.TraceId");
+			unbindSlbResponse.ErrorCode = _ctx.StringValue("UnbindSlb.ErrorCode");
+			unbindSlbResponse.Code = _ctx.StringValue("UnbindSlb.Code");
+			unbindSlbResponse.Success = _ctx.BooleanValue("UnbindSlb.Success");
 
 			UnbindSlbResponse.UnbindSlb_Data data = new UnbindSlbResponse.UnbindSlb_Data();
 			data.ChangeOrderId = _ctx.StringValue("UnbindSlb.Data.ChangeOrderId");

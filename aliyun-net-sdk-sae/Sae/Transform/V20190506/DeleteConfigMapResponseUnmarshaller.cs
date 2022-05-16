@@ -33,9 +33,9 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			deleteConfigMapResponse.HttpResponse = _ctx.HttpResponse;
 			deleteConfigMapResponse.RequestId = _ctx.StringValue("DeleteConfigMap.RequestId");
 			deleteConfigMapResponse.Message = _ctx.StringValue("DeleteConfigMap.Message");
-			deleteConfigMapResponse.Code = _ctx.StringValue("DeleteConfigMap.Code");
-			deleteConfigMapResponse.ErrorCode = _ctx.StringValue("DeleteConfigMap.ErrorCode");
 			deleteConfigMapResponse.TraceId = _ctx.StringValue("DeleteConfigMap.TraceId");
+			deleteConfigMapResponse.ErrorCode = _ctx.StringValue("DeleteConfigMap.ErrorCode");
+			deleteConfigMapResponse.Code = _ctx.StringValue("DeleteConfigMap.Code");
 			deleteConfigMapResponse.Success = _ctx.BooleanValue("DeleteConfigMap.Success");
 
 			DeleteConfigMapResponse.DeleteConfigMap_Data data = new DeleteConfigMapResponse.DeleteConfigMap_Data();

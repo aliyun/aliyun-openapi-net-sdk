@@ -57,6 +57,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string phpArmsConfigLocation;
 
+		private string programmingLanguage;
+
 		private string customHostAlias;
 
 		private bool? deploy;
@@ -90,6 +92,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		private int? memory;
 
 		private string slsConfigs;
+
+		private string kafkaConfigs;
 
 		private bool? openCollectToKafka;
 
@@ -242,6 +246,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				phpArmsConfigLocation = value;
 				DictionaryUtil.Add(QueryParameters, "PhpArmsConfigLocation", value);
+			}
+		}
+
+		public string ProgrammingLanguage
+		{
+			get
+			{
+				return programmingLanguage;
+			}
+			set	
+			{
+				programmingLanguage = value;
+				DictionaryUtil.Add(QueryParameters, "ProgrammingLanguage", value);
 			}
 		}
 
@@ -463,6 +480,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				slsConfigs = value;
 				DictionaryUtil.Add(QueryParameters, "SlsConfigs", value);
+			}
+		}
+
+		public string KafkaConfigs
+		{
+			get
+			{
+				return kafkaConfigs;
+			}
+			set	
+			{
+				kafkaConfigs = value;
+				DictionaryUtil.Add(QueryParameters, "KafkaConfigs", value);
 			}
 		}
 

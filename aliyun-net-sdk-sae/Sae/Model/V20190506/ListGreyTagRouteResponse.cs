@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
@@ -25,9 +25,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class ListGreyTagRouteResponse : AcsResponse
 	{
 
-		private string message;
-
 		private string requestId;
+
+		private string message;
 
 		private string traceId;
 
@@ -39,18 +39,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private ListGreyTagRoute_Data data;
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
 		public string RequestId
 		{
 			get
@@ -60,6 +48,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -126,25 +126,13 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class ListGreyTagRoute_Data
 		{
 
-			private int? pageSize;
-
 			private int? currentPage;
+
+			private int? pageSize;
 
 			private long? totalSize;
 
 			private List<ListGreyTagRoute_ResultItem> result;
-
-			public int? PageSize
-			{
-				get
-				{
-					return pageSize;
-				}
-				set	
-				{
-					pageSize = value;
-				}
-			}
 
 			public int? CurrentPage
 			{
@@ -155,6 +143,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					currentPage = value;
+				}
+			}
+
+			public int? PageSize
+			{
+				get
+				{
+					return pageSize;
+				}
+				set	
+				{
+					pageSize = value;
 				}
 			}
 
@@ -185,31 +185,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			public class ListGreyTagRoute_ResultItem
 			{
 
-				private string description;
-
 				private long? greyTagRouteId;
+
+				private string name;
+
+				private string description;
 
 				private long? createTime;
 
 				private long? updateTime;
 
-				private string name;
-
 				private List<ListGreyTagRoute_ScRule> scRules;
 
 				private List<ListGreyTagRoute_DubboRule> dubboRules;
-
-				public string Description
-				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
-					}
-				}
 
 				public long? GreyTagRouteId
 				{
@@ -220,6 +208,30 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						greyTagRouteId = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
 					}
 				}
 
@@ -244,18 +256,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						updateTime = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
 					}
 				}
 
@@ -331,19 +331,31 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					public class ListGreyTagRoute_Item
 					{
 
+						private string type;
+
 						private string name;
+
+						private string _operator;
+
+						private string _value;
+
+						private string cond;
 
 						private int? index;
 
 						private string expr;
 
-						private string type;
-
-						private string cond;
-
-						private string _value;
-
-						private string _operator;
+						public string Type
+						{
+							get
+							{
+								return type;
+							}
+							set	
+							{
+								type = value;
+							}
+						}
 
 						public string Name
 						{
@@ -354,6 +366,42 @@ namespace Aliyun.Acs.sae.Model.V20190506
 							set	
 							{
 								name = value;
+							}
+						}
+
+						public string _Operator
+						{
+							get
+							{
+								return _operator;
+							}
+							set	
+							{
+								_operator = value;
+							}
+						}
+
+						public string _Value
+						{
+							get
+							{
+								return _value;
+							}
+							set	
+							{
+								_value = value;
+							}
+						}
+
+						public string Cond
+						{
+							get
+							{
+								return cond;
+							}
+							set	
+							{
+								cond = value;
 							}
 						}
 
@@ -380,95 +428,23 @@ namespace Aliyun.Acs.sae.Model.V20190506
 								expr = value;
 							}
 						}
-
-						public string Type
-						{
-							get
-							{
-								return type;
-							}
-							set	
-							{
-								type = value;
-							}
-						}
-
-						public string Cond
-						{
-							get
-							{
-								return cond;
-							}
-							set	
-							{
-								cond = value;
-							}
-						}
-
-						public string _Value
-						{
-							get
-							{
-								return _value;
-							}
-							set	
-							{
-								_value = value;
-							}
-						}
-
-						public string _Operator
-						{
-							get
-							{
-								return _operator;
-							}
-							set	
-							{
-								_operator = value;
-							}
-						}
 					}
 				}
 
 				public class ListGreyTagRoute_DubboRule
 				{
 
-					private string condition;
-
-					private string methodName;
-
 					private string serviceName;
-
-					private string version;
 
 					private string group;
 
+					private string version;
+
+					private string methodName;
+
+					private string condition;
+
 					private List<ListGreyTagRoute_Item2> items1;
-
-					public string Condition
-					{
-						get
-						{
-							return condition;
-						}
-						set	
-						{
-							condition = value;
-						}
-					}
-
-					public string MethodName
-					{
-						get
-						{
-							return methodName;
-						}
-						set	
-						{
-							methodName = value;
-						}
-					}
 
 					public string ServiceName
 					{
@@ -479,6 +455,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 						set	
 						{
 							serviceName = value;
+						}
+					}
+
+					public string Group
+					{
+						get
+						{
+							return group;
+						}
+						set	
+						{
+							group = value;
 						}
 					}
 
@@ -494,15 +482,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 						}
 					}
 
-					public string Group
+					public string MethodName
 					{
 						get
 						{
-							return group;
+							return methodName;
 						}
 						set	
 						{
-							group = value;
+							methodName = value;
+						}
+					}
+
+					public string Condition
+					{
+						get
+						{
+							return condition;
+						}
+						set	
+						{
+							condition = value;
 						}
 					}
 
@@ -521,31 +521,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					public class ListGreyTagRoute_Item2
 					{
 
-						private string name;
-
 						private int? index;
 
 						private string expr;
 
-						private string type;
-
-						private string cond;
+						private string _operator;
 
 						private string _value;
 
-						private string _operator;
+						private string cond;
 
-						public string Name
-						{
-							get
-							{
-								return name;
-							}
-							set	
-							{
-								name = value;
-							}
-						}
+						private string type;
+
+						private string name;
 
 						public int? Index
 						{
@@ -571,27 +559,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 							}
 						}
 
-						public string Type
+						public string _Operator
 						{
 							get
 							{
-								return type;
+								return _operator;
 							}
 							set	
 							{
-								type = value;
-							}
-						}
-
-						public string Cond
-						{
-							get
-							{
-								return cond;
-							}
-							set	
-							{
-								cond = value;
+								_operator = value;
 							}
 						}
 
@@ -607,15 +583,39 @@ namespace Aliyun.Acs.sae.Model.V20190506
 							}
 						}
 
-						public string _Operator
+						public string Cond
 						{
 							get
 							{
-								return _operator;
+								return cond;
 							}
 							set	
 							{
-								_operator = value;
+								cond = value;
+							}
+						}
+
+						public string Type
+						{
+							get
+							{
+								return type;
+							}
+							set	
+							{
+								type = value;
+							}
+						}
+
+						public string Name
+						{
+							get
+							{
+								return name;
+							}
+							set	
+							{
+								name = value;
 							}
 						}
 					}

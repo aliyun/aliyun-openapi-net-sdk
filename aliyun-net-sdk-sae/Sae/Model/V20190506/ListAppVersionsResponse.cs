@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
@@ -25,17 +25,29 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class ListAppVersionsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string code;
-
 		private string message;
 
-		private bool? success;
+		private string requestId;
 
 		private string errorCode;
 
+		private string code;
+
+		private bool? success;
+
 		private List<ListAppVersions_PackageVersionEntity> data;
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -46,6 +58,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 
@@ -61,18 +85,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
 		public bool? Success
 		{
 			get
@@ -82,18 +94,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
 			}
 		}
 
@@ -112,25 +112,25 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class ListAppVersions_PackageVersionEntity
 		{
 
-			private string id;
+			private string type;
 
 			private string createTime;
 
-			private string warUrl;
-
-			private string type;
-
 			private string buildPackageUrl;
 
-			public string Id
+			private string warUrl;
+
+			private string id;
+
+			public string Type
 			{
 				get
 				{
-					return id;
+					return type;
 				}
 				set	
 				{
-					id = value;
+					type = value;
 				}
 			}
 
@@ -146,6 +146,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
+			public string BuildPackageUrl
+			{
+				get
+				{
+					return buildPackageUrl;
+				}
+				set	
+				{
+					buildPackageUrl = value;
+				}
+			}
+
 			public string WarUrl
 			{
 				get
@@ -158,27 +170,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string Type
+			public string Id
 			{
 				get
 				{
-					return type;
+					return id;
 				}
 				set	
 				{
-					type = value;
-				}
-			}
-
-			public string BuildPackageUrl
-			{
-				get
-				{
-					return buildPackageUrl;
-				}
-				set	
-				{
-					buildPackageUrl = value;
+					id = value;
 				}
 			}
 		}

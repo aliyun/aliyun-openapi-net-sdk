@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
@@ -25,41 +25,29 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class DescribeApplicationSlbsResponse : AcsResponse
 	{
 
-		private string code;
-
-		private string errorCode;
+		private string requestId;
 
 		private string message;
 
-		private bool? success;
-
 		private string traceId;
 
-		private string requestId;
+		private string errorCode;
+
+		private string code;
+
+		private bool? success;
 
 		private DescribeApplicationSlbs_Data data;
 
-		public string Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				requestId = value;
 			}
 		}
 
@@ -75,18 +63,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
 		public string TraceId
 		{
 			get
@@ -99,15 +75,39 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string RequestId
+		public string ErrorCode
 		{
 			get
 			{
-				return requestId;
+				return errorCode;
 			}
 			set	
 			{
-				requestId = value;
+				errorCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -128,15 +128,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private string internetIp;
 
-			private string intranetIp;
-
 			private string internetSlbId;
 
 			private string intranetSlbId;
 
-			private List<DescribeApplicationSlbs_InternetItem> internet;
+			private string intranetIp;
 
 			private List<DescribeApplicationSlbs_IntranetItem> intranet;
+
+			private List<DescribeApplicationSlbs_InternetItem> internet;
 
 			public string InternetIp
 			{
@@ -147,18 +147,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					internetIp = value;
-				}
-			}
-
-			public string IntranetIp
-			{
-				get
-				{
-					return intranetIp;
-				}
-				set	
-				{
-					intranetIp = value;
 				}
 			}
 
@@ -186,15 +174,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public List<DescribeApplicationSlbs_InternetItem> Internet
+			public string IntranetIp
 			{
 				get
 				{
-					return internet;
+					return intranetIp;
 				}
 				set	
 				{
-					internet = value;
+					intranetIp = value;
 				}
 			}
 
@@ -210,86 +198,38 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public class DescribeApplicationSlbs_InternetItem
+			public List<DescribeApplicationSlbs_InternetItem> Internet
 			{
-
-				private int? port;
-
-				private string protocol;
-
-				private int? targetPort;
-
-				private string httpsCertId;
-
-				public int? Port
+				get
 				{
-					get
-					{
-						return port;
-					}
-					set	
-					{
-						port = value;
-					}
+					return internet;
 				}
-
-				public string Protocol
+				set	
 				{
-					get
-					{
-						return protocol;
-					}
-					set	
-					{
-						protocol = value;
-					}
-				}
-
-				public int? TargetPort
-				{
-					get
-					{
-						return targetPort;
-					}
-					set	
-					{
-						targetPort = value;
-					}
-				}
-
-				public string HttpsCertId
-				{
-					get
-					{
-						return httpsCertId;
-					}
-					set	
-					{
-						httpsCertId = value;
-					}
+					internet = value;
 				}
 			}
 
 			public class DescribeApplicationSlbs_IntranetItem
 			{
 
-				private int? port;
+				private string httpsCertId;
 
 				private string protocol;
 
 				private int? targetPort;
 
-				private string httpsCertId;
+				private int? port;
 
-				public int? Port
+				public string HttpsCertId
 				{
 					get
 					{
-						return port;
+						return httpsCertId;
 					}
 					set	
 					{
-						port = value;
+						httpsCertId = value;
 					}
 				}
 
@@ -317,6 +257,30 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
+				public int? Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
+					}
+				}
+			}
+
+			public class DescribeApplicationSlbs_InternetItem
+			{
+
+				private string httpsCertId;
+
+				private string protocol;
+
+				private int? targetPort;
+
+				private int? port;
+
 				public string HttpsCertId
 				{
 					get
@@ -326,6 +290,42 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						httpsCertId = value;
+					}
+				}
+
+				public string Protocol
+				{
+					get
+					{
+						return protocol;
+					}
+					set	
+					{
+						protocol = value;
+					}
+				}
+
+				public int? TargetPort
+				{
+					get
+					{
+						return targetPort;
+					}
+					set	
+					{
+						targetPort = value;
+					}
+				}
+
+				public int? Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
 					}
 				}
 			}

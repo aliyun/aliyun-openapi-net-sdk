@@ -31,8 +31,8 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			ListPublishedServicesResponse listPublishedServicesResponse = new ListPublishedServicesResponse();
 
 			listPublishedServicesResponse.HttpResponse = _ctx.HttpResponse;
-			listPublishedServicesResponse.Message = _ctx.StringValue("ListPublishedServices.Message");
 			listPublishedServicesResponse.RequestId = _ctx.StringValue("ListPublishedServices.RequestId");
+			listPublishedServicesResponse.Message = _ctx.StringValue("ListPublishedServices.Message");
 			listPublishedServicesResponse.TraceId = _ctx.StringValue("ListPublishedServices.TraceId");
 			listPublishedServicesResponse.ErrorCode = _ctx.StringValue("ListPublishedServices.ErrorCode");
 			listPublishedServicesResponse.Code = _ctx.StringValue("ListPublishedServices.Code");
@@ -41,10 +41,10 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			List<ListPublishedServicesResponse.ListPublishedServices_DataItem> listPublishedServicesResponse_data = new List<ListPublishedServicesResponse.ListPublishedServices_DataItem>();
 			for (int i = 0; i < _ctx.Length("ListPublishedServices.Data.Length"); i++) {
 				ListPublishedServicesResponse.ListPublishedServices_DataItem dataItem = new ListPublishedServicesResponse.ListPublishedServices_DataItem();
-				dataItem.Group2Ip = _ctx.StringValue("ListPublishedServices.Data["+ i +"].Group2Ip");
 				dataItem.Type = _ctx.StringValue("ListPublishedServices.Data["+ i +"].Type");
-				dataItem.AppId = _ctx.StringValue("ListPublishedServices.Data["+ i +"].AppId");
 				dataItem.Version = _ctx.StringValue("ListPublishedServices.Data["+ i +"].Version");
+				dataItem.AppId = _ctx.StringValue("ListPublishedServices.Data["+ i +"].AppId");
+				dataItem.Group2Ip = _ctx.StringValue("ListPublishedServices.Data["+ i +"].Group2Ip");
 				dataItem.Name = _ctx.StringValue("ListPublishedServices.Data["+ i +"].Name");
 
 				List<string> dataItem_groups = new List<string>();

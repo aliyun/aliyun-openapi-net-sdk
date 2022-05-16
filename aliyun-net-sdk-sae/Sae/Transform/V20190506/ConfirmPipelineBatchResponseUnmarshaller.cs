@@ -31,12 +31,12 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			ConfirmPipelineBatchResponse confirmPipelineBatchResponse = new ConfirmPipelineBatchResponse();
 
 			confirmPipelineBatchResponse.HttpResponse = _ctx.HttpResponse;
-			confirmPipelineBatchResponse.Code = _ctx.StringValue("ConfirmPipelineBatch.Code");
-			confirmPipelineBatchResponse.ErrorCode = _ctx.StringValue("ConfirmPipelineBatch.ErrorCode");
-			confirmPipelineBatchResponse.Message = _ctx.StringValue("ConfirmPipelineBatch.Message");
-			confirmPipelineBatchResponse.Success = _ctx.BooleanValue("ConfirmPipelineBatch.Success");
-			confirmPipelineBatchResponse.TraceId = _ctx.StringValue("ConfirmPipelineBatch.TraceId");
 			confirmPipelineBatchResponse.RequestId = _ctx.StringValue("ConfirmPipelineBatch.RequestId");
+			confirmPipelineBatchResponse.Message = _ctx.StringValue("ConfirmPipelineBatch.Message");
+			confirmPipelineBatchResponse.TraceId = _ctx.StringValue("ConfirmPipelineBatch.TraceId");
+			confirmPipelineBatchResponse.ErrorCode = _ctx.StringValue("ConfirmPipelineBatch.ErrorCode");
+			confirmPipelineBatchResponse.Code = _ctx.StringValue("ConfirmPipelineBatch.Code");
+			confirmPipelineBatchResponse.Success = _ctx.BooleanValue("ConfirmPipelineBatch.Success");
 
 			ConfirmPipelineBatchResponse.ConfirmPipelineBatch_Data data = new ConfirmPipelineBatchResponse.ConfirmPipelineBatch_Data();
 			data.PipelineId = _ctx.StringValue("ConfirmPipelineBatch.Data.PipelineId");

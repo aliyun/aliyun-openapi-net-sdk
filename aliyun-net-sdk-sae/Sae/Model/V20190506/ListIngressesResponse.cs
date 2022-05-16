@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
@@ -27,15 +27,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string requestId;
 
-		private string code;
-
 		private string message;
 
-		private bool? success;
+		private string traceId;
 
 		private string errorCode;
 
-		private string traceId;
+		private string code;
+
+		private bool? success;
 
 		private ListIngresses_Data data;
 
@@ -51,18 +51,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
 		public string Message
 		{
 			get
@@ -75,15 +63,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public bool? Success
+		public string TraceId
 		{
 			get
 			{
-				return success;
+				return traceId;
 			}
 			set	
 			{
-				success = value;
+				traceId = value;
 			}
 		}
 
@@ -99,15 +87,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string TraceId
+		public string Code
 		{
 			get
 			{
-				return traceId;
+				return code;
 			}
 			set	
 			{
-				traceId = value;
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -143,43 +143,35 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			public class ListIngresses_Ingress
 			{
 
-				private long? id;
-
-				private string name;
+				private string slbId;
 
 				private string namespaceId;
 
-				private string slbId;
+				private string description;
 
 				private string listenerPort;
 
-				private string certId;
-
-				private string description;
-
 				private string slbType;
 
-				public long? Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
+				private string certId;
 
-				public string Name
+				private string name;
+
+				private long? id;
+
+				private string loadBalanceType;
+
+				private string listenerProtocol;
+
+				public string SlbId
 				{
 					get
 					{
-						return name;
+						return slbId;
 					}
 					set	
 					{
-						name = value;
+						slbId = value;
 					}
 				}
 
@@ -195,15 +187,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public string SlbId
+				public string Description
 				{
 					get
 					{
-						return slbId;
+						return description;
 					}
 					set	
 					{
-						slbId = value;
+						description = value;
 					}
 				}
 
@@ -219,6 +211,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
+				public string SlbType
+				{
+					get
+					{
+						return slbType;
+					}
+					set	
+					{
+						slbType = value;
+					}
+				}
+
 				public string CertId
 				{
 					get
@@ -231,27 +235,51 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public string Description
+				public string Name
 				{
 					get
 					{
-						return description;
+						return name;
 					}
 					set	
 					{
-						description = value;
+						name = value;
 					}
 				}
 
-				public string SlbType
+				public long? Id
 				{
 					get
 					{
-						return slbType;
+						return id;
 					}
 					set	
 					{
-						slbType = value;
+						id = value;
+					}
+				}
+
+				public string LoadBalanceType
+				{
+					get
+					{
+						return loadBalanceType;
+					}
+					set	
+					{
+						loadBalanceType = value;
+					}
+				}
+
+				public string ListenerProtocol
+				{
+					get
+					{
+						return listenerProtocol;
+					}
+					set	
+					{
+						listenerProtocol = value;
 					}
 				}
 			}

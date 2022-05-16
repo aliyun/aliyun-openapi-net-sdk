@@ -32,10 +32,10 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 
 			updateAppSecurityGroupResponse.HttpResponse = _ctx.HttpResponse;
 			updateAppSecurityGroupResponse.RequestId = _ctx.StringValue("UpdateAppSecurityGroup.RequestId");
-			updateAppSecurityGroupResponse.Code = _ctx.StringValue("UpdateAppSecurityGroup.Code");
 			updateAppSecurityGroupResponse.Message = _ctx.StringValue("UpdateAppSecurityGroup.Message");
-			updateAppSecurityGroupResponse.ErrorCode = _ctx.StringValue("UpdateAppSecurityGroup.ErrorCode");
 			updateAppSecurityGroupResponse.TraceId = _ctx.StringValue("UpdateAppSecurityGroup.TraceId");
+			updateAppSecurityGroupResponse.ErrorCode = _ctx.StringValue("UpdateAppSecurityGroup.ErrorCode");
+			updateAppSecurityGroupResponse.Code = _ctx.StringValue("UpdateAppSecurityGroup.Code");
 			updateAppSecurityGroupResponse.Success = _ctx.BooleanValue("UpdateAppSecurityGroup.Success");
         
 			return updateAppSecurityGroupResponse;

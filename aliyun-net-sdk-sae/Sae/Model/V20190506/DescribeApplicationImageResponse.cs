@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
@@ -27,15 +27,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string requestId;
 
-		private string code;
-
 		private string message;
 
-		private bool? success;
+		private string traceId;
 
 		private string errorCode;
 
-		private string traceId;
+		private string code;
+
+		private bool? success;
 
 		private DescribeApplicationImage_Data data;
 
@@ -51,18 +51,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
 		public string Message
 		{
 			get
@@ -75,15 +63,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public bool? Success
+		public string TraceId
 		{
 			get
 			{
-				return success;
+				return traceId;
 			}
 			set	
 			{
-				success = value;
+				traceId = value;
 			}
 		}
 
@@ -99,15 +87,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string TraceId
+		public string Code
 		{
 			get
 			{
-				return traceId;
+				return code;
 			}
 			set	
 			{
-				traceId = value;
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -126,33 +126,33 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class DescribeApplicationImage_Data
 		{
 
-			private string crUrl;
+			private int? repoId;
 
 			private string logo;
 
-			private string regionId;
+			private string repoOriginType;
 
-			private int? repoId;
+			private string crUrl;
+
+			private string repoTag;
+
+			private string repoType;
 
 			private string repoName;
 
 			private string repoNamespace;
 
-			private string repoOriginType;
+			private string regionId;
 
-			private string repoType;
-
-			private string repoTag;
-
-			public string CrUrl
+			public int? RepoId
 			{
 				get
 				{
-					return crUrl;
+					return repoId;
 				}
 				set	
 				{
-					crUrl = value;
+					repoId = value;
 				}
 			}
 
@@ -168,27 +168,51 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string RegionId
+			public string RepoOriginType
 			{
 				get
 				{
-					return regionId;
+					return repoOriginType;
 				}
 				set	
 				{
-					regionId = value;
+					repoOriginType = value;
 				}
 			}
 
-			public int? RepoId
+			public string CrUrl
 			{
 				get
 				{
-					return repoId;
+					return crUrl;
 				}
 				set	
 				{
-					repoId = value;
+					crUrl = value;
+				}
+			}
+
+			public string RepoTag
+			{
+				get
+				{
+					return repoTag;
+				}
+				set	
+				{
+					repoTag = value;
+				}
+			}
+
+			public string RepoType
+			{
+				get
+				{
+					return repoType;
+				}
+				set	
+				{
+					repoType = value;
 				}
 			}
 
@@ -216,39 +240,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string RepoOriginType
+			public string RegionId
 			{
 				get
 				{
-					return repoOriginType;
+					return regionId;
 				}
 				set	
 				{
-					repoOriginType = value;
-				}
-			}
-
-			public string RepoType
-			{
-				get
-				{
-					return repoType;
-				}
-				set	
-				{
-					repoType = value;
-				}
-			}
-
-			public string RepoTag
-			{
-				get
-				{
-					return repoTag;
-				}
-				set	
-				{
-					repoTag = value;
+					regionId = value;
 				}
 			}
 		}

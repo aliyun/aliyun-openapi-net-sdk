@@ -31,8 +31,8 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			DeleteGreyTagRouteResponse deleteGreyTagRouteResponse = new DeleteGreyTagRouteResponse();
 
 			deleteGreyTagRouteResponse.HttpResponse = _ctx.HttpResponse;
-			deleteGreyTagRouteResponse.Message = _ctx.StringValue("DeleteGreyTagRoute.Message");
 			deleteGreyTagRouteResponse.RequestId = _ctx.StringValue("DeleteGreyTagRoute.RequestId");
+			deleteGreyTagRouteResponse.Message = _ctx.StringValue("DeleteGreyTagRoute.Message");
 			deleteGreyTagRouteResponse.TraceId = _ctx.StringValue("DeleteGreyTagRoute.TraceId");
 			deleteGreyTagRouteResponse.ErrorCode = _ctx.StringValue("DeleteGreyTagRoute.ErrorCode");
 			deleteGreyTagRouteResponse.Code = _ctx.StringValue("DeleteGreyTagRoute.Code");

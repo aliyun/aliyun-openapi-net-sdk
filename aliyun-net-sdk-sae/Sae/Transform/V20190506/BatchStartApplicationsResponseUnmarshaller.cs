@@ -32,10 +32,10 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 
 			batchStartApplicationsResponse.HttpResponse = _ctx.HttpResponse;
 			batchStartApplicationsResponse.RequestId = _ctx.StringValue("BatchStartApplications.RequestId");
-			batchStartApplicationsResponse.Code = _ctx.StringValue("BatchStartApplications.Code");
 			batchStartApplicationsResponse.Message = _ctx.StringValue("BatchStartApplications.Message");
-			batchStartApplicationsResponse.ErrorCode = _ctx.StringValue("BatchStartApplications.ErrorCode");
 			batchStartApplicationsResponse.TraceId = _ctx.StringValue("BatchStartApplications.TraceId");
+			batchStartApplicationsResponse.ErrorCode = _ctx.StringValue("BatchStartApplications.ErrorCode");
+			batchStartApplicationsResponse.Code = _ctx.StringValue("BatchStartApplications.Code");
 			batchStartApplicationsResponse.Success = _ctx.BooleanValue("BatchStartApplications.Success");
 
 			BatchStartApplicationsResponse.BatchStartApplications_Data data = new BatchStartApplicationsResponse.BatchStartApplications_Data();

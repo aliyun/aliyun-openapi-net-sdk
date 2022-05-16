@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
@@ -27,15 +27,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string requestId;
 
-		private string code;
-
 		private string message;
 
-		private bool? success;
+		private string traceId;
 
 		private string errorCode;
 
-		private string traceId;
+		private string code;
+
+		private bool? success;
 
 		private List<DescribeInstanceSpecifications_DataItem> data;
 
@@ -51,18 +51,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
 		public string Message
 		{
 			get
@@ -75,15 +63,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public bool? Success
+		public string TraceId
 		{
 			get
 			{
-				return success;
+				return traceId;
 			}
 			set	
 			{
-				success = value;
+				traceId = value;
 			}
 		}
 
@@ -99,15 +87,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string TraceId
+		public string Code
 		{
 			get
 			{
-				return traceId;
+				return code;
 			}
 			set	
 			{
-				traceId = value;
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -128,15 +128,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private int? cpu;
 
-			private bool? enable;
-
-			private int? id;
+			private int? version;
 
 			private int? memory;
 
 			private string specInfo;
 
-			private int? version;
+			private int? id;
+
+			private bool? enable;
 
 			public int? Cpu
 			{
@@ -150,27 +150,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public bool? Enable
+			public int? Version
 			{
 				get
 				{
-					return enable;
+					return version;
 				}
 				set	
 				{
-					enable = value;
-				}
-			}
-
-			public int? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
+					version = value;
 				}
 			}
 
@@ -198,15 +186,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public int? Version
+			public int? Id
 			{
 				get
 				{
-					return version;
+					return id;
 				}
 				set	
 				{
-					version = value;
+					id = value;
+				}
+			}
+
+			public bool? Enable
+			{
+				get
+				{
+					return enable;
+				}
+				set	
+				{
+					enable = value;
 				}
 			}
 		}

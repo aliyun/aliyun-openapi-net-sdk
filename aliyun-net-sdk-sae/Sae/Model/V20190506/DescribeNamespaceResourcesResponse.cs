@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
@@ -27,13 +27,13 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string requestId;
 
-		private string code;
-
 		private string message;
+
+		private string traceId;
 
 		private string errorCode;
 
-		private string traceId;
+		private string code;
 
 		private bool? success;
 
@@ -51,18 +51,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
 		public string Message
 		{
 			get
@@ -72,6 +60,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string TraceId
+		{
+			get
+			{
+				return traceId;
+			}
+			set	
+			{
+				traceId = value;
 			}
 		}
 
@@ -87,15 +87,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string TraceId
+		public string Code
 		{
 			get
 			{
-				return traceId;
+				return code;
 			}
 			set	
 			{
-				traceId = value;
+				code = value;
 			}
 		}
 
@@ -126,109 +126,39 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class DescribeNamespaceResources_Data
 		{
 
-			private string namespaceId;
-
-			private string namespaceName;
-
-			private string description;
-
-			private string userId;
-
-			private string belongRegion;
-
-			private string tenantId;
-
 			private string vpcId;
-
-			private string vSwitchId;
-
-			private string securityGroupId;
-
-			private long? appCount;
 
 			private string lastChangeOrderId;
 
+			private string belongRegion;
+
+			private string namespaceId;
+
+			private string securityGroupId;
+
+			private string userId;
+
+			private string namespaceName;
+
 			private string lastChangeOrderStatus;
+
+			private string vpcName;
+
+			private string vSwitchId;
+
+			private string description;
 
 			private bool? lastChangeOrderRunning;
 
-			private string vpcName;
+			private long? appCount;
 
 			private string vSwitchName;
 
 			private bool? notificationExpired;
 
-			public string NamespaceId
-			{
-				get
-				{
-					return namespaceId;
-				}
-				set	
-				{
-					namespaceId = value;
-				}
-			}
+			private string tenantId;
 
-			public string NamespaceName
-			{
-				get
-				{
-					return namespaceName;
-				}
-				set	
-				{
-					namespaceName = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
-
-			public string BelongRegion
-			{
-				get
-				{
-					return belongRegion;
-				}
-				set	
-				{
-					belongRegion = value;
-				}
-			}
-
-			public string TenantId
-			{
-				get
-				{
-					return tenantId;
-				}
-				set	
-				{
-					tenantId = value;
-				}
-			}
+			private string jumpServerAppId;
 
 			public string VpcId
 			{
@@ -239,42 +169,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					vpcId = value;
-				}
-			}
-
-			public string VSwitchId
-			{
-				get
-				{
-					return vSwitchId;
-				}
-				set	
-				{
-					vSwitchId = value;
-				}
-			}
-
-			public string SecurityGroupId
-			{
-				get
-				{
-					return securityGroupId;
-				}
-				set	
-				{
-					securityGroupId = value;
-				}
-			}
-
-			public long? AppCount
-			{
-				get
-				{
-					return appCount;
-				}
-				set	
-				{
-					appCount = value;
 				}
 			}
 
@@ -290,6 +184,66 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
+			public string BelongRegion
+			{
+				get
+				{
+					return belongRegion;
+				}
+				set	
+				{
+					belongRegion = value;
+				}
+			}
+
+			public string NamespaceId
+			{
+				get
+				{
+					return namespaceId;
+				}
+				set	
+				{
+					namespaceId = value;
+				}
+			}
+
+			public string SecurityGroupId
+			{
+				get
+				{
+					return securityGroupId;
+				}
+				set	
+				{
+					securityGroupId = value;
+				}
+			}
+
+			public string UserId
+			{
+				get
+				{
+					return userId;
+				}
+				set	
+				{
+					userId = value;
+				}
+			}
+
+			public string NamespaceName
+			{
+				get
+				{
+					return namespaceName;
+				}
+				set	
+				{
+					namespaceName = value;
+				}
+			}
+
 			public string LastChangeOrderStatus
 			{
 				get
@@ -299,6 +253,42 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					lastChangeOrderStatus = value;
+				}
+			}
+
+			public string VpcName
+			{
+				get
+				{
+					return vpcName;
+				}
+				set	
+				{
+					vpcName = value;
+				}
+			}
+
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 
@@ -314,15 +304,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string VpcName
+			public long? AppCount
 			{
 				get
 				{
-					return vpcName;
+					return appCount;
 				}
 				set	
 				{
-					vpcName = value;
+					appCount = value;
 				}
 			}
 
@@ -347,6 +337,30 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					notificationExpired = value;
+				}
+			}
+
+			public string TenantId
+			{
+				get
+				{
+					return tenantId;
+				}
+				set	
+				{
+					tenantId = value;
+				}
+			}
+
+			public string JumpServerAppId
+			{
+				get
+				{
+					return jumpServerAppId;
+				}
+				set	
+				{
+					jumpServerAppId = value;
 				}
 			}
 		}

@@ -32,11 +32,11 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 
 			restartInstancesResponse.HttpResponse = _ctx.HttpResponse;
 			restartInstancesResponse.RequestId = _ctx.StringValue("RestartInstances.RequestId");
-			restartInstancesResponse.Code = _ctx.StringValue("RestartInstances.Code");
-			restartInstancesResponse.Success = _ctx.BooleanValue("RestartInstances.Success");
-			restartInstancesResponse.ErrorCode = _ctx.StringValue("RestartInstances.ErrorCode");
 			restartInstancesResponse.Message = _ctx.StringValue("RestartInstances.Message");
 			restartInstancesResponse.TraceId = _ctx.StringValue("RestartInstances.TraceId");
+			restartInstancesResponse.ErrorCode = _ctx.StringValue("RestartInstances.ErrorCode");
+			restartInstancesResponse.Code = _ctx.StringValue("RestartInstances.Code");
+			restartInstancesResponse.Success = _ctx.BooleanValue("RestartInstances.Success");
 
 			RestartInstancesResponse.RestartInstances_Data data = new RestartInstancesResponse.RestartInstances_Data();
 			data.ChangeOrderId = _ctx.StringValue("RestartInstances.Data.ChangeOrderId");

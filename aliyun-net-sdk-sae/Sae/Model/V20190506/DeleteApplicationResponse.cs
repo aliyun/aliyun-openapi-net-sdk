@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
@@ -25,29 +25,29 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class DeleteApplicationResponse : AcsResponse
 	{
 
-		private string code;
+		private string requestId;
 
 		private string message;
 
-		private string requestId;
-
-		private bool? success;
+		private string traceId;
 
 		private string errorCode;
 
-		private string traceId;
+		private string code;
+
+		private bool? success;
 
 		private DeleteApplication_Data data;
 
-		public string Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
 			}
 		}
 
@@ -63,27 +63,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string RequestId
+		public string TraceId
 		{
 			get
 			{
-				return requestId;
+				return traceId;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
+				traceId = value;
 			}
 		}
 
@@ -99,15 +87,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string TraceId
+		public string Code
 		{
 			get
 			{
-				return traceId;
+				return code;
 			}
 			set	
 			{
-				traceId = value;
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 

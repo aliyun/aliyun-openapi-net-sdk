@@ -32,10 +32,10 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 
 			batchStopApplicationsResponse.HttpResponse = _ctx.HttpResponse;
 			batchStopApplicationsResponse.RequestId = _ctx.StringValue("BatchStopApplications.RequestId");
-			batchStopApplicationsResponse.Code = _ctx.StringValue("BatchStopApplications.Code");
 			batchStopApplicationsResponse.Message = _ctx.StringValue("BatchStopApplications.Message");
-			batchStopApplicationsResponse.ErrorCode = _ctx.StringValue("BatchStopApplications.ErrorCode");
 			batchStopApplicationsResponse.TraceId = _ctx.StringValue("BatchStopApplications.TraceId");
+			batchStopApplicationsResponse.ErrorCode = _ctx.StringValue("BatchStopApplications.ErrorCode");
+			batchStopApplicationsResponse.Code = _ctx.StringValue("BatchStopApplications.Code");
 			batchStopApplicationsResponse.Success = _ctx.BooleanValue("BatchStopApplications.Success");
 
 			BatchStopApplicationsResponse.BatchStopApplications_Data data = new BatchStopApplicationsResponse.BatchStopApplications_Data();

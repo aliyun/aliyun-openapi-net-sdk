@@ -32,26 +32,26 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 
 			describeConfigMapResponse.HttpResponse = _ctx.HttpResponse;
 			describeConfigMapResponse.RequestId = _ctx.StringValue("DescribeConfigMap.RequestId");
-			describeConfigMapResponse.Code = _ctx.StringValue("DescribeConfigMap.Code");
 			describeConfigMapResponse.Message = _ctx.StringValue("DescribeConfigMap.Message");
-			describeConfigMapResponse.ErrorCode = _ctx.StringValue("DescribeConfigMap.ErrorCode");
 			describeConfigMapResponse.TraceId = _ctx.StringValue("DescribeConfigMap.TraceId");
+			describeConfigMapResponse.ErrorCode = _ctx.StringValue("DescribeConfigMap.ErrorCode");
+			describeConfigMapResponse.Code = _ctx.StringValue("DescribeConfigMap.Code");
 			describeConfigMapResponse.Success = _ctx.BooleanValue("DescribeConfigMap.Success");
 
 			DescribeConfigMapResponse.DescribeConfigMap_Data data = new DescribeConfigMapResponse.DescribeConfigMap_Data();
-			data.ConfigMapId = _ctx.LongValue("DescribeConfigMap.Data.ConfigMapId");
-			data.Name = _ctx.StringValue("DescribeConfigMap.Data.Name");
+			data.UpdateTime = _ctx.LongValue("DescribeConfigMap.Data.UpdateTime");
+			data.Data = _ctx.StringValue("DescribeConfigMap.Data.Data");
 			data.NamespaceId = _ctx.StringValue("DescribeConfigMap.Data.NamespaceId");
 			data.Description = _ctx.StringValue("DescribeConfigMap.Data.Description");
-			data.Data = _ctx.StringValue("DescribeConfigMap.Data.Data");
 			data.CreateTime = _ctx.LongValue("DescribeConfigMap.Data.CreateTime");
-			data.UpdateTime = _ctx.LongValue("DescribeConfigMap.Data.UpdateTime");
+			data.ConfigMapId = _ctx.LongValue("DescribeConfigMap.Data.ConfigMapId");
+			data.Name = _ctx.StringValue("DescribeConfigMap.Data.Name");
 
 			List<DescribeConfigMapResponse.DescribeConfigMap_Data.DescribeConfigMap_RelateApp> data_relateApps = new List<DescribeConfigMapResponse.DescribeConfigMap_Data.DescribeConfigMap_RelateApp>();
 			for (int i = 0; i < _ctx.Length("DescribeConfigMap.Data.RelateApps.Length"); i++) {
 				DescribeConfigMapResponse.DescribeConfigMap_Data.DescribeConfigMap_RelateApp relateApp = new DescribeConfigMapResponse.DescribeConfigMap_Data.DescribeConfigMap_RelateApp();
-				relateApp.AppId = _ctx.StringValue("DescribeConfigMap.Data.RelateApps["+ i +"].AppId");
 				relateApp.AppName = _ctx.StringValue("DescribeConfigMap.Data.RelateApps["+ i +"].AppName");
+				relateApp.AppId = _ctx.StringValue("DescribeConfigMap.Data.RelateApps["+ i +"].AppId");
 
 				data_relateApps.Add(relateApp);
 			}

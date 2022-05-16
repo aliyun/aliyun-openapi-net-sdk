@@ -32,19 +32,19 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 
 			describeComponentsResponse.HttpResponse = _ctx.HttpResponse;
 			describeComponentsResponse.RequestId = _ctx.StringValue("DescribeComponents.RequestId");
-			describeComponentsResponse.Code = _ctx.StringValue("DescribeComponents.Code");
-			describeComponentsResponse.ErrorCode = _ctx.StringValue("DescribeComponents.ErrorCode");
 			describeComponentsResponse.Message = _ctx.StringValue("DescribeComponents.Message");
-			describeComponentsResponse.Success = _ctx.BooleanValue("DescribeComponents.Success");
 			describeComponentsResponse.TraceId = _ctx.StringValue("DescribeComponents.TraceId");
+			describeComponentsResponse.ErrorCode = _ctx.StringValue("DescribeComponents.ErrorCode");
+			describeComponentsResponse.Code = _ctx.StringValue("DescribeComponents.Code");
+			describeComponentsResponse.Success = _ctx.BooleanValue("DescribeComponents.Success");
 
 			List<DescribeComponentsResponse.DescribeComponents_DataItem> describeComponentsResponse_data = new List<DescribeComponentsResponse.DescribeComponents_DataItem>();
 			for (int i = 0; i < _ctx.Length("DescribeComponents.Data.Length"); i++) {
 				DescribeComponentsResponse.DescribeComponents_DataItem dataItem = new DescribeComponentsResponse.DescribeComponents_DataItem();
+				dataItem.Type = _ctx.StringValue("DescribeComponents.Data["+ i +"].Type");
 				dataItem.ComponentKey = _ctx.StringValue("DescribeComponents.Data["+ i +"].ComponentKey");
 				dataItem.ComponentDescription = _ctx.StringValue("DescribeComponents.Data["+ i +"].ComponentDescription");
 				dataItem.Expired = _ctx.BooleanValue("DescribeComponents.Data["+ i +"].Expired");
-				dataItem.Type = _ctx.StringValue("DescribeComponents.Data["+ i +"].Type");
 
 				describeComponentsResponse_data.Add(dataItem);
 			}

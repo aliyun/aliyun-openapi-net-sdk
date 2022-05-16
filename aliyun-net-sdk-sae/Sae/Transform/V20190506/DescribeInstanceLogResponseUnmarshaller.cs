@@ -32,12 +32,12 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 
 			describeInstanceLogResponse.HttpResponse = _ctx.HttpResponse;
 			describeInstanceLogResponse.RequestId = _ctx.StringValue("DescribeInstanceLog.RequestId");
-			describeInstanceLogResponse.Code = _ctx.StringValue("DescribeInstanceLog.Code");
 			describeInstanceLogResponse.Message = _ctx.StringValue("DescribeInstanceLog.Message");
-			describeInstanceLogResponse.Success = _ctx.BooleanValue("DescribeInstanceLog.Success");
-			describeInstanceLogResponse.ErrorCode = _ctx.StringValue("DescribeInstanceLog.ErrorCode");
 			describeInstanceLogResponse.TraceId = _ctx.StringValue("DescribeInstanceLog.TraceId");
 			describeInstanceLogResponse.Data = _ctx.StringValue("DescribeInstanceLog.Data");
+			describeInstanceLogResponse.ErrorCode = _ctx.StringValue("DescribeInstanceLog.ErrorCode");
+			describeInstanceLogResponse.Code = _ctx.StringValue("DescribeInstanceLog.Code");
+			describeInstanceLogResponse.Success = _ctx.BooleanValue("DescribeInstanceLog.Success");
         
 			return describeInstanceLogResponse;
         }

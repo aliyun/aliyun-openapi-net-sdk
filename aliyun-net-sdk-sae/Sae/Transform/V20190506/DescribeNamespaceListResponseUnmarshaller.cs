@@ -32,25 +32,25 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 
 			describeNamespaceListResponse.HttpResponse = _ctx.HttpResponse;
 			describeNamespaceListResponse.RequestId = _ctx.StringValue("DescribeNamespaceList.RequestId");
-			describeNamespaceListResponse.Code = _ctx.StringValue("DescribeNamespaceList.Code");
 			describeNamespaceListResponse.Message = _ctx.StringValue("DescribeNamespaceList.Message");
-			describeNamespaceListResponse.Success = _ctx.BooleanValue("DescribeNamespaceList.Success");
-			describeNamespaceListResponse.ErrorCode = _ctx.StringValue("DescribeNamespaceList.ErrorCode");
 			describeNamespaceListResponse.TraceId = _ctx.StringValue("DescribeNamespaceList.TraceId");
+			describeNamespaceListResponse.ErrorCode = _ctx.StringValue("DescribeNamespaceList.ErrorCode");
+			describeNamespaceListResponse.Code = _ctx.StringValue("DescribeNamespaceList.Code");
+			describeNamespaceListResponse.Success = _ctx.BooleanValue("DescribeNamespaceList.Success");
 
 			List<DescribeNamespaceListResponse.DescribeNamespaceList_RegionList> describeNamespaceListResponse_data = new List<DescribeNamespaceListResponse.DescribeNamespaceList_RegionList>();
 			for (int i = 0; i < _ctx.Length("DescribeNamespaceList.Data.Length"); i++) {
 				DescribeNamespaceListResponse.DescribeNamespaceList_RegionList regionList = new DescribeNamespaceListResponse.DescribeNamespaceList_RegionList();
-				regionList.NamespaceName = _ctx.StringValue("DescribeNamespaceList.Data["+ i +"].NamespaceName");
-				regionList.NamespaceId = _ctx.StringValue("DescribeNamespaceList.Data["+ i +"].NamespaceId");
-				regionList.AgentInstall = _ctx.StringValue("DescribeNamespaceList.Data["+ i +"].AgentInstall");
-				regionList.Current = _ctx.BooleanValue("DescribeNamespaceList.Data["+ i +"].Current");
-				regionList.Custom = _ctx.BooleanValue("DescribeNamespaceList.Data["+ i +"].Custom");
-				regionList.RegionId = _ctx.StringValue("DescribeNamespaceList.Data["+ i +"].RegionId");
-				regionList.HybridCloudEnable = _ctx.BooleanValue("DescribeNamespaceList.Data["+ i +"].HybridCloudEnable");
 				regionList.VpcId = _ctx.StringValue("DescribeNamespaceList.Data["+ i +"].VpcId");
 				regionList.VSwitchId = _ctx.StringValue("DescribeNamespaceList.Data["+ i +"].VSwitchId");
+				regionList.Custom = _ctx.BooleanValue("DescribeNamespaceList.Data["+ i +"].Custom");
+				regionList.AgentInstall = _ctx.StringValue("DescribeNamespaceList.Data["+ i +"].AgentInstall");
+				regionList.NamespaceId = _ctx.StringValue("DescribeNamespaceList.Data["+ i +"].NamespaceId");
+				regionList.HybridCloudEnable = _ctx.BooleanValue("DescribeNamespaceList.Data["+ i +"].HybridCloudEnable");
 				regionList.SecurityGroupId = _ctx.StringValue("DescribeNamespaceList.Data["+ i +"].SecurityGroupId");
+				regionList.Current = _ctx.BooleanValue("DescribeNamespaceList.Data["+ i +"].Current");
+				regionList.NamespaceName = _ctx.StringValue("DescribeNamespaceList.Data["+ i +"].NamespaceName");
+				regionList.RegionId = _ctx.StringValue("DescribeNamespaceList.Data["+ i +"].RegionId");
 
 				describeNamespaceListResponse_data.Add(regionList);
 			}

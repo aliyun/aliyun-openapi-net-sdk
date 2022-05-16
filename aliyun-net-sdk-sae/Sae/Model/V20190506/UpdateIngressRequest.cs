@@ -47,9 +47,13 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string description;
 
+		private string loadBalanceType;
+
 		private string rules;
 
 		private string certId;
+
+		private string listenerProtocol;
 
 		private string defaultRule;
 
@@ -92,6 +96,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public string LoadBalanceType
+		{
+			get
+			{
+				return loadBalanceType;
+			}
+			set	
+			{
+				loadBalanceType = value;
+				DictionaryUtil.Add(QueryParameters, "LoadBalanceType", value);
+			}
+		}
+
 		public string Rules
 		{
 			get
@@ -115,6 +132,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				certId = value;
 				DictionaryUtil.Add(QueryParameters, "CertId", value);
+			}
+		}
+
+		public string ListenerProtocol
+		{
+			get
+			{
+				return listenerProtocol;
+			}
+			set	
+			{
+				listenerProtocol = value;
+				DictionaryUtil.Add(QueryParameters, "ListenerProtocol", value);
 			}
 		}
 

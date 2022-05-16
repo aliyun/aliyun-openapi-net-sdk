@@ -52,18 +52,18 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 				scRule.Path = _ctx.StringValue("DescribeGreyTagRoute.Data.ScRules["+ i +"].path");
 				scRule.Condition = _ctx.StringValue("DescribeGreyTagRoute.Data.ScRules["+ i +"].condition");
 
-				List<DescribeGreyTagRouteResponse.DescribeGreyTagRoute_Data.DescribeGreyTagRoute_ScRule.DescribeGreyTagRoute_Item> scRule_items = new List<DescribeGreyTagRouteResponse.DescribeGreyTagRoute_Data.DescribeGreyTagRoute_ScRule.DescribeGreyTagRoute_Item>();
+				List<DescribeGreyTagRouteResponse.DescribeGreyTagRoute_Data.DescribeGreyTagRoute_ScRule.DescribeGreyTagRoute_Scrulesitem> scRule_items = new List<DescribeGreyTagRouteResponse.DescribeGreyTagRoute_Data.DescribeGreyTagRoute_ScRule.DescribeGreyTagRoute_Scrulesitem>();
 				for (int j = 0; j < _ctx.Length("DescribeGreyTagRoute.Data.ScRules["+ i +"].Items.Length"); j++) {
-					DescribeGreyTagRouteResponse.DescribeGreyTagRoute_Data.DescribeGreyTagRoute_ScRule.DescribeGreyTagRoute_Item item = new DescribeGreyTagRouteResponse.DescribeGreyTagRoute_Data.DescribeGreyTagRoute_ScRule.DescribeGreyTagRoute_Item();
-					item.Index = _ctx.IntegerValue("DescribeGreyTagRoute.Data.ScRules["+ i +"].Items["+ j +"].index");
-					item.Expr = _ctx.StringValue("DescribeGreyTagRoute.Data.ScRules["+ i +"].Items["+ j +"].expr");
-					item._Operator = _ctx.StringValue("DescribeGreyTagRoute.Data.ScRules["+ i +"].Items["+ j +"].operator");
-					item._Value = _ctx.StringValue("DescribeGreyTagRoute.Data.ScRules["+ i +"].Items["+ j +"].value");
-					item.Cond = _ctx.StringValue("DescribeGreyTagRoute.Data.ScRules["+ i +"].Items["+ j +"].cond");
-					item.Type = _ctx.StringValue("DescribeGreyTagRoute.Data.ScRules["+ i +"].Items["+ j +"].type");
-					item.Name = _ctx.StringValue("DescribeGreyTagRoute.Data.ScRules["+ i +"].Items["+ j +"].name");
+					DescribeGreyTagRouteResponse.DescribeGreyTagRoute_Data.DescribeGreyTagRoute_ScRule.DescribeGreyTagRoute_Scrulesitem scrulesitem = new DescribeGreyTagRouteResponse.DescribeGreyTagRoute_Data.DescribeGreyTagRoute_ScRule.DescribeGreyTagRoute_Scrulesitem();
+					scrulesitem.Type = _ctx.StringValue("DescribeGreyTagRoute.Data.ScRules["+ i +"].Items["+ j +"].type");
+					scrulesitem.Name = _ctx.StringValue("DescribeGreyTagRoute.Data.ScRules["+ i +"].Items["+ j +"].name");
+					scrulesitem._Operator = _ctx.StringValue("DescribeGreyTagRoute.Data.ScRules["+ i +"].Items["+ j +"].operator");
+					scrulesitem._Value = _ctx.StringValue("DescribeGreyTagRoute.Data.ScRules["+ i +"].Items["+ j +"].value");
+					scrulesitem.Cond = _ctx.StringValue("DescribeGreyTagRoute.Data.ScRules["+ i +"].Items["+ j +"].cond");
+					scrulesitem.Index = _ctx.IntegerValue("DescribeGreyTagRoute.Data.ScRules["+ i +"].Items["+ j +"].index");
+					scrulesitem.Expr = _ctx.StringValue("DescribeGreyTagRoute.Data.ScRules["+ i +"].Items["+ j +"].expr");
 
-					scRule_items.Add(item);
+					scRule_items.Add(scrulesitem);
 				}
 				scRule.Items = scRule_items;
 
@@ -80,18 +80,18 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 				dubboRule.MethodName = _ctx.StringValue("DescribeGreyTagRoute.Data.DubboRules["+ i +"].methodName");
 				dubboRule.Condition = _ctx.StringValue("DescribeGreyTagRoute.Data.DubboRules["+ i +"].condition");
 
-				List<DescribeGreyTagRouteResponse.DescribeGreyTagRoute_Data.DescribeGreyTagRoute_DubboRule.DescribeGreyTagRoute_Item2> dubboRule_items1 = new List<DescribeGreyTagRouteResponse.DescribeGreyTagRoute_Data.DescribeGreyTagRoute_DubboRule.DescribeGreyTagRoute_Item2>();
+				List<DescribeGreyTagRouteResponse.DescribeGreyTagRoute_Data.DescribeGreyTagRoute_DubboRule.DescribeGreyTagRoute_Item> dubboRule_items1 = new List<DescribeGreyTagRouteResponse.DescribeGreyTagRoute_Data.DescribeGreyTagRoute_DubboRule.DescribeGreyTagRoute_Item>();
 				for (int j = 0; j < _ctx.Length("DescribeGreyTagRoute.Data.DubboRules["+ i +"].Items.Length"); j++) {
-					DescribeGreyTagRouteResponse.DescribeGreyTagRoute_Data.DescribeGreyTagRoute_DubboRule.DescribeGreyTagRoute_Item2 item2 = new DescribeGreyTagRouteResponse.DescribeGreyTagRoute_Data.DescribeGreyTagRoute_DubboRule.DescribeGreyTagRoute_Item2();
-					item2.Index = _ctx.IntegerValue("DescribeGreyTagRoute.Data.DubboRules["+ i +"].Items["+ j +"].index");
-					item2.Expr = _ctx.StringValue("DescribeGreyTagRoute.Data.DubboRules["+ i +"].Items["+ j +"].expr");
-					item2._Operator = _ctx.StringValue("DescribeGreyTagRoute.Data.DubboRules["+ i +"].Items["+ j +"].operator");
-					item2._Value = _ctx.StringValue("DescribeGreyTagRoute.Data.DubboRules["+ i +"].Items["+ j +"].value");
-					item2.Cond = _ctx.StringValue("DescribeGreyTagRoute.Data.DubboRules["+ i +"].Items["+ j +"].cond");
-					item2.Type = _ctx.StringValue("DescribeGreyTagRoute.Data.DubboRules["+ i +"].Items["+ j +"].type");
-					item2.Name = _ctx.StringValue("DescribeGreyTagRoute.Data.DubboRules["+ i +"].Items["+ j +"].name");
+					DescribeGreyTagRouteResponse.DescribeGreyTagRoute_Data.DescribeGreyTagRoute_DubboRule.DescribeGreyTagRoute_Item item = new DescribeGreyTagRouteResponse.DescribeGreyTagRoute_Data.DescribeGreyTagRoute_DubboRule.DescribeGreyTagRoute_Item();
+					item.Index = _ctx.IntegerValue("DescribeGreyTagRoute.Data.DubboRules["+ i +"].Items["+ j +"].index");
+					item.Expr = _ctx.StringValue("DescribeGreyTagRoute.Data.DubboRules["+ i +"].Items["+ j +"].expr");
+					item._Operator = _ctx.StringValue("DescribeGreyTagRoute.Data.DubboRules["+ i +"].Items["+ j +"].operator");
+					item._Value = _ctx.StringValue("DescribeGreyTagRoute.Data.DubboRules["+ i +"].Items["+ j +"].value");
+					item.Cond = _ctx.StringValue("DescribeGreyTagRoute.Data.DubboRules["+ i +"].Items["+ j +"].cond");
+					item.Type = _ctx.StringValue("DescribeGreyTagRoute.Data.DubboRules["+ i +"].Items["+ j +"].type");
+					item.Name = _ctx.StringValue("DescribeGreyTagRoute.Data.DubboRules["+ i +"].Items["+ j +"].name");
 
-					dubboRule_items1.Add(item2);
+					dubboRule_items1.Add(item);
 				}
 				dubboRule.Items1 = dubboRule_items1;
 

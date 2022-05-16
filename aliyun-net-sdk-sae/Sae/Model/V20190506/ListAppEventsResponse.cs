@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
@@ -25,17 +25,29 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class ListAppEventsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string code;
-
 		private string message;
 
-		private bool? success;
+		private string requestId;
 
 		private string errorCode;
 
+		private string code;
+
+		private bool? success;
+
 		private ListAppEvents_Data data;
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -46,6 +58,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 
@@ -61,18 +85,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
 		public bool? Success
 		{
 			get
@@ -82,18 +94,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
 			}
 		}
 
@@ -114,9 +114,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private int? currentPage;
 
-			private int? pageSize;
-
 			private int? totalSize;
+
+			private int? pageSize;
 
 			private List<ListAppEvents_AppEventEntityItem> appEventEntity;
 
@@ -132,18 +132,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public int? PageSize
-			{
-				get
-				{
-					return pageSize;
-				}
-				set	
-				{
-					pageSize = value;
-				}
-			}
-
 			public int? TotalSize
 			{
 				get
@@ -153,6 +141,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					totalSize = value;
+				}
+			}
+
+			public int? PageSize
+			{
+				get
+				{
+					return pageSize;
+				}
+				set	
+				{
+					pageSize = value;
 				}
 			}
 
@@ -173,17 +173,17 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 				private string objectKind;
 
-				private string objectName;
-
 				private string eventType;
-
-				private string message;
-
-				private string firstTimestamp;
 
 				private string lastTimestamp;
 
+				private string message;
+
+				private string objectName;
+
 				private string reason;
+
+				private string firstTimestamp;
 
 				public string ObjectKind
 				{
@@ -194,18 +194,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						objectKind = value;
-					}
-				}
-
-				public string ObjectName
-				{
-					get
-					{
-						return objectName;
-					}
-					set	
-					{
-						objectName = value;
 					}
 				}
 
@@ -221,30 +209,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public string Message
-				{
-					get
-					{
-						return message;
-					}
-					set	
-					{
-						message = value;
-					}
-				}
-
-				public string FirstTimestamp
-				{
-					get
-					{
-						return firstTimestamp;
-					}
-					set	
-					{
-						firstTimestamp = value;
-					}
-				}
-
 				public string LastTimestamp
 				{
 					get
@@ -257,6 +221,30 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
+				public string Message
+				{
+					get
+					{
+						return message;
+					}
+					set	
+					{
+						message = value;
+					}
+				}
+
+				public string ObjectName
+				{
+					get
+					{
+						return objectName;
+					}
+					set	
+					{
+						objectName = value;
+					}
+				}
+
 				public string Reason
 				{
 					get
@@ -266,6 +254,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						reason = value;
+					}
+				}
+
+				public string FirstTimestamp
+				{
+					get
+					{
+						return firstTimestamp;
+					}
+					set	
+					{
+						firstTimestamp = value;
 					}
 				}
 			}

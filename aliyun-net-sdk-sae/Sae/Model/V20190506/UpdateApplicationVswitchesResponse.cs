@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
 {
-	public class DescribeInstanceLogResponse : AcsResponse
+	public class UpdateApplicationVswitchesResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -30,8 +30,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		private string message;
 
 		private string traceId;
-
-		private string data;
 
 		private string errorCode;
 
@@ -72,18 +70,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				traceId = value;
-			}
-		}
-
-		public string Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
 			}
 		}
 

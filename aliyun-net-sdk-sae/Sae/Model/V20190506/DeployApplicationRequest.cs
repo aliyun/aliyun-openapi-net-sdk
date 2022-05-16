@@ -87,6 +87,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string slsConfigs;
 
+		private string kafkaConfigs;
+
 		private bool? openCollectToKafka;
 
 		private string commandArgs;
@@ -431,6 +433,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				slsConfigs = value;
 				DictionaryUtil.Add(QueryParameters, "SlsConfigs", value);
+			}
+		}
+
+		public string KafkaConfigs
+		{
+			get
+			{
+				return kafkaConfigs;
+			}
+			set	
+			{
+				kafkaConfigs = value;
+				DictionaryUtil.Add(QueryParameters, "KafkaConfigs", value);
 			}
 		}
 

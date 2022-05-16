@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
@@ -25,9 +25,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class ListPublishedServicesResponse : AcsResponse
 	{
 
-		private string message;
-
 		private string requestId;
+
+		private string message;
 
 		private string traceId;
 
@@ -39,18 +39,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private List<ListPublishedServices_DataItem> data;
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
 		public string RequestId
 		{
 			get
@@ -60,6 +48,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -126,31 +126,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class ListPublishedServices_DataItem
 		{
 
-			private string group2Ip;
-
 			private string type;
+
+			private string version;
 
 			private string appId;
 
-			private string version;
+			private string group2Ip;
 
 			private string name;
 
 			private List<string> groups;
 
 			private List<string> ips;
-
-			public string Group2Ip
-			{
-				get
-				{
-					return group2Ip;
-				}
-				set	
-				{
-					group2Ip = value;
-				}
-			}
 
 			public string Type
 			{
@@ -161,6 +149,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					type = value;
+				}
+			}
+
+			public string Version
+			{
+				get
+				{
+					return version;
+				}
+				set	
+				{
+					version = value;
 				}
 			}
 
@@ -176,15 +176,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string Version
+			public string Group2Ip
 			{
 				get
 				{
-					return version;
+					return group2Ip;
 				}
 				set	
 				{
-					version = value;
+					group2Ip = value;
 				}
 			}
 

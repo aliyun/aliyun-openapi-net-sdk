@@ -31,8 +31,8 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			ReduceApplicationCapacityByInstanceIdsResponse reduceApplicationCapacityByInstanceIdsResponse = new ReduceApplicationCapacityByInstanceIdsResponse();
 
 			reduceApplicationCapacityByInstanceIdsResponse.HttpResponse = _ctx.HttpResponse;
-			reduceApplicationCapacityByInstanceIdsResponse.Message = _ctx.StringValue("ReduceApplicationCapacityByInstanceIds.Message");
 			reduceApplicationCapacityByInstanceIdsResponse.RequestId = _ctx.StringValue("ReduceApplicationCapacityByInstanceIds.RequestId");
+			reduceApplicationCapacityByInstanceIdsResponse.Message = _ctx.StringValue("ReduceApplicationCapacityByInstanceIds.Message");
 			reduceApplicationCapacityByInstanceIdsResponse.TraceId = _ctx.StringValue("ReduceApplicationCapacityByInstanceIds.TraceId");
 			reduceApplicationCapacityByInstanceIdsResponse.ErrorCode = _ctx.StringValue("ReduceApplicationCapacityByInstanceIds.ErrorCode");
 			reduceApplicationCapacityByInstanceIdsResponse.Code = _ctx.StringValue("ReduceApplicationCapacityByInstanceIds.Code");

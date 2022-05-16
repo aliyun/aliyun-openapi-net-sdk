@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
@@ -25,29 +25,29 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class UnbindSlbResponse : AcsResponse
 	{
 
-		private string code;
+		private string requestId;
 
 		private string message;
 
+		private string traceId;
+
 		private string errorCode;
+
+		private string code;
 
 		private bool? success;
 
-		private string traceId;
-
-		private string requestId;
-
 		private UnbindSlb_Data data;
 
-		public string Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
 			}
 		}
 
@@ -63,30 +63,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
 		public string TraceId
 		{
 			get
@@ -99,15 +75,39 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string RequestId
+		public string ErrorCode
 		{
 			get
 			{
-				return requestId;
+				return errorCode;
 			}
 			set	
 			{
-				requestId = value;
+				errorCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 

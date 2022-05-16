@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
@@ -245,7 +245,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 				private string condition;
 
-				private List<DescribeGreyTagRoute_Item> items;
+				private List<DescribeGreyTagRoute_Scrulesitem> items;
 
 				public string Path
 				{
@@ -271,7 +271,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public List<DescribeGreyTagRoute_Item> Items
+				public List<DescribeGreyTagRoute_Scrulesitem> Items
 				{
 					get
 					{
@@ -283,12 +283,12 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public class DescribeGreyTagRoute_Item
+				public class DescribeGreyTagRoute_Scrulesitem
 				{
 
-					private int? index;
+					private string type;
 
-					private string expr;
+					private string name;
 
 					private string _operator;
 
@@ -296,31 +296,31 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 					private string cond;
 
-					private string type;
+					private int? index;
 
-					private string name;
+					private string expr;
 
-					public int? Index
+					public string Type
 					{
 						get
 						{
-							return index;
+							return type;
 						}
 						set	
 						{
-							index = value;
+							type = value;
 						}
 					}
 
-					public string Expr
+					public string Name
 					{
 						get
 						{
-							return expr;
+							return name;
 						}
 						set	
 						{
-							expr = value;
+							name = value;
 						}
 					}
 
@@ -360,27 +360,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 						}
 					}
 
-					public string Type
+					public int? Index
 					{
 						get
 						{
-							return type;
+							return index;
 						}
 						set	
 						{
-							type = value;
+							index = value;
 						}
 					}
 
-					public string Name
+					public string Expr
 					{
 						get
 						{
-							return name;
+							return expr;
 						}
 						set	
 						{
-							name = value;
+							expr = value;
 						}
 					}
 				}
@@ -399,7 +399,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 				private string condition;
 
-				private List<DescribeGreyTagRoute_Item2> items1;
+				private List<DescribeGreyTagRoute_Item> items1;
 
 				public string ServiceName
 				{
@@ -461,7 +461,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public List<DescribeGreyTagRoute_Item2> Items1
+				public List<DescribeGreyTagRoute_Item> Items1
 				{
 					get
 					{
@@ -473,7 +473,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public class DescribeGreyTagRoute_Item2
+				public class DescribeGreyTagRoute_Item
 				{
 
 					private int? index;

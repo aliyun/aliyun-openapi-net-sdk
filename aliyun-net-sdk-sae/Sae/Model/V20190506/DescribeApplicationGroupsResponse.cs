@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
@@ -25,29 +25,29 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class DescribeApplicationGroupsResponse : AcsResponse
 	{
 
-		private string code;
+		private string requestId;
 
 		private string message;
 
 		private string traceId;
 
-		private string requestId;
+		private string errorCode;
+
+		private string code;
 
 		private bool? success;
 
-		private string errorCode;
-
 		private List<DescribeApplicationGroups_ApplicationGroup> data;
 
-		public string Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
 			}
 		}
 
@@ -75,15 +75,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string RequestId
+		public string ErrorCode
 		{
 			get
 			{
-				return requestId;
+				return errorCode;
 			}
 			set	
 			{
-				requestId = value;
+				errorCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -96,18 +108,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
 			}
 		}
 
@@ -126,87 +126,39 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class DescribeApplicationGroups_ApplicationGroup
 		{
 
-			private string groupId;
-
-			private string groupName;
-
-			private int? groupType;
-
-			private string packageType;
-
-			private string packageVersion;
+			private string jdk;
 
 			private string imageUrl;
 
 			private string packageUrl;
 
-			private string jdk;
+			private string packageType;
+
+			private string packageVersion;
+
+			private string groupName;
+
+			private string groupId;
 
 			private string webContainer;
 
-			private string edasContainerVersion;
-
 			private int? replicas;
+
+			private string edasContainerVersion;
 
 			private int? runningInstances;
 
-			public string GroupId
-			{
-				get
-				{
-					return groupId;
-				}
-				set	
-				{
-					groupId = value;
-				}
-			}
+			private int? groupType;
 
-			public string GroupName
+			public string Jdk
 			{
 				get
 				{
-					return groupName;
+					return jdk;
 				}
 				set	
 				{
-					groupName = value;
-				}
-			}
-
-			public int? GroupType
-			{
-				get
-				{
-					return groupType;
-				}
-				set	
-				{
-					groupType = value;
-				}
-			}
-
-			public string PackageType
-			{
-				get
-				{
-					return packageType;
-				}
-				set	
-				{
-					packageType = value;
-				}
-			}
-
-			public string PackageVersion
-			{
-				get
-				{
-					return packageVersion;
-				}
-				set	
-				{
-					packageVersion = value;
+					jdk = value;
 				}
 			}
 
@@ -234,15 +186,51 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string Jdk
+			public string PackageType
 			{
 				get
 				{
-					return jdk;
+					return packageType;
 				}
 				set	
 				{
-					jdk = value;
+					packageType = value;
+				}
+			}
+
+			public string PackageVersion
+			{
+				get
+				{
+					return packageVersion;
+				}
+				set	
+				{
+					packageVersion = value;
+				}
+			}
+
+			public string GroupName
+			{
+				get
+				{
+					return groupName;
+				}
+				set	
+				{
+					groupName = value;
+				}
+			}
+
+			public string GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
 				}
 			}
 
@@ -258,18 +246,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string EdasContainerVersion
-			{
-				get
-				{
-					return edasContainerVersion;
-				}
-				set	
-				{
-					edasContainerVersion = value;
-				}
-			}
-
 			public int? Replicas
 			{
 				get
@@ -282,6 +258,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
+			public string EdasContainerVersion
+			{
+				get
+				{
+					return edasContainerVersion;
+				}
+				set	
+				{
+					edasContainerVersion = value;
+				}
+			}
+
 			public int? RunningInstances
 			{
 				get
@@ -291,6 +279,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					runningInstances = value;
+				}
+			}
+
+			public int? GroupType
+			{
+				get
+				{
+					return groupType;
+				}
+				set	
+				{
+					groupType = value;
 				}
 			}
 		}

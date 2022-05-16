@@ -31,28 +31,28 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			DescribeApplicationGroupsResponse describeApplicationGroupsResponse = new DescribeApplicationGroupsResponse();
 
 			describeApplicationGroupsResponse.HttpResponse = _ctx.HttpResponse;
-			describeApplicationGroupsResponse.Code = _ctx.StringValue("DescribeApplicationGroups.Code");
+			describeApplicationGroupsResponse.RequestId = _ctx.StringValue("DescribeApplicationGroups.RequestId");
 			describeApplicationGroupsResponse.Message = _ctx.StringValue("DescribeApplicationGroups.Message");
 			describeApplicationGroupsResponse.TraceId = _ctx.StringValue("DescribeApplicationGroups.TraceId");
-			describeApplicationGroupsResponse.RequestId = _ctx.StringValue("DescribeApplicationGroups.RequestId");
-			describeApplicationGroupsResponse.Success = _ctx.BooleanValue("DescribeApplicationGroups.Success");
 			describeApplicationGroupsResponse.ErrorCode = _ctx.StringValue("DescribeApplicationGroups.ErrorCode");
+			describeApplicationGroupsResponse.Code = _ctx.StringValue("DescribeApplicationGroups.Code");
+			describeApplicationGroupsResponse.Success = _ctx.BooleanValue("DescribeApplicationGroups.Success");
 
 			List<DescribeApplicationGroupsResponse.DescribeApplicationGroups_ApplicationGroup> describeApplicationGroupsResponse_data = new List<DescribeApplicationGroupsResponse.DescribeApplicationGroups_ApplicationGroup>();
 			for (int i = 0; i < _ctx.Length("DescribeApplicationGroups.Data.Length"); i++) {
 				DescribeApplicationGroupsResponse.DescribeApplicationGroups_ApplicationGroup applicationGroup = new DescribeApplicationGroupsResponse.DescribeApplicationGroups_ApplicationGroup();
-				applicationGroup.GroupId = _ctx.StringValue("DescribeApplicationGroups.Data["+ i +"].GroupId");
-				applicationGroup.GroupName = _ctx.StringValue("DescribeApplicationGroups.Data["+ i +"].GroupName");
-				applicationGroup.GroupType = _ctx.IntegerValue("DescribeApplicationGroups.Data["+ i +"].GroupType");
-				applicationGroup.PackageType = _ctx.StringValue("DescribeApplicationGroups.Data["+ i +"].PackageType");
-				applicationGroup.PackageVersion = _ctx.StringValue("DescribeApplicationGroups.Data["+ i +"].PackageVersion");
+				applicationGroup.Jdk = _ctx.StringValue("DescribeApplicationGroups.Data["+ i +"].Jdk");
 				applicationGroup.ImageUrl = _ctx.StringValue("DescribeApplicationGroups.Data["+ i +"].ImageUrl");
 				applicationGroup.PackageUrl = _ctx.StringValue("DescribeApplicationGroups.Data["+ i +"].PackageUrl");
-				applicationGroup.Jdk = _ctx.StringValue("DescribeApplicationGroups.Data["+ i +"].Jdk");
+				applicationGroup.PackageType = _ctx.StringValue("DescribeApplicationGroups.Data["+ i +"].PackageType");
+				applicationGroup.PackageVersion = _ctx.StringValue("DescribeApplicationGroups.Data["+ i +"].PackageVersion");
+				applicationGroup.GroupName = _ctx.StringValue("DescribeApplicationGroups.Data["+ i +"].GroupName");
+				applicationGroup.GroupId = _ctx.StringValue("DescribeApplicationGroups.Data["+ i +"].GroupId");
 				applicationGroup.WebContainer = _ctx.StringValue("DescribeApplicationGroups.Data["+ i +"].WebContainer");
-				applicationGroup.EdasContainerVersion = _ctx.StringValue("DescribeApplicationGroups.Data["+ i +"].EdasContainerVersion");
 				applicationGroup.Replicas = _ctx.IntegerValue("DescribeApplicationGroups.Data["+ i +"].Replicas");
+				applicationGroup.EdasContainerVersion = _ctx.StringValue("DescribeApplicationGroups.Data["+ i +"].EdasContainerVersion");
 				applicationGroup.RunningInstances = _ctx.IntegerValue("DescribeApplicationGroups.Data["+ i +"].RunningInstances");
+				applicationGroup.GroupType = _ctx.IntegerValue("DescribeApplicationGroups.Data["+ i +"].GroupType");
 
 				describeApplicationGroupsResponse_data.Add(applicationGroup);
 			}

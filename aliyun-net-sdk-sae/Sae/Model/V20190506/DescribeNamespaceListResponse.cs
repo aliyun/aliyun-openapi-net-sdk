@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
@@ -27,15 +27,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string requestId;
 
-		private string code;
-
 		private string message;
 
-		private bool? success;
+		private string traceId;
 
 		private string errorCode;
 
-		private string traceId;
+		private string code;
+
+		private bool? success;
 
 		private List<DescribeNamespaceList_RegionList> data;
 
@@ -51,18 +51,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
 		public string Message
 		{
 			get
@@ -75,15 +63,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public bool? Success
+		public string TraceId
 		{
 			get
 			{
-				return success;
+				return traceId;
 			}
 			set	
 			{
-				success = value;
+				traceId = value;
 			}
 		}
 
@@ -99,15 +87,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string TraceId
+		public string Code
 		{
 			get
 			{
-				return traceId;
+				return code;
 			}
 			set	
 			{
-				traceId = value;
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -126,109 +126,25 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class DescribeNamespaceList_RegionList
 		{
 
-			private string namespaceName;
-
-			private string namespaceId;
-
-			private string agentInstall;
-
-			private bool? current;
-
-			private bool? custom;
-
-			private string regionId;
-
-			private bool? hybridCloudEnable;
-
 			private string vpcId;
 
 			private string vSwitchId;
 
+			private bool? custom;
+
+			private string agentInstall;
+
+			private string namespaceId;
+
+			private bool? hybridCloudEnable;
+
 			private string securityGroupId;
 
-			public string NamespaceName
-			{
-				get
-				{
-					return namespaceName;
-				}
-				set	
-				{
-					namespaceName = value;
-				}
-			}
+			private bool? current;
 
-			public string NamespaceId
-			{
-				get
-				{
-					return namespaceId;
-				}
-				set	
-				{
-					namespaceId = value;
-				}
-			}
+			private string namespaceName;
 
-			public string AgentInstall
-			{
-				get
-				{
-					return agentInstall;
-				}
-				set	
-				{
-					agentInstall = value;
-				}
-			}
-
-			public bool? Current
-			{
-				get
-				{
-					return current;
-				}
-				set	
-				{
-					current = value;
-				}
-			}
-
-			public bool? Custom
-			{
-				get
-				{
-					return custom;
-				}
-				set	
-				{
-					custom = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public bool? HybridCloudEnable
-			{
-				get
-				{
-					return hybridCloudEnable;
-				}
-				set	
-				{
-					hybridCloudEnable = value;
-				}
-			}
+			private string regionId;
 
 			public string VpcId
 			{
@@ -254,6 +170,54 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
+			public bool? Custom
+			{
+				get
+				{
+					return custom;
+				}
+				set	
+				{
+					custom = value;
+				}
+			}
+
+			public string AgentInstall
+			{
+				get
+				{
+					return agentInstall;
+				}
+				set	
+				{
+					agentInstall = value;
+				}
+			}
+
+			public string NamespaceId
+			{
+				get
+				{
+					return namespaceId;
+				}
+				set	
+				{
+					namespaceId = value;
+				}
+			}
+
+			public bool? HybridCloudEnable
+			{
+				get
+				{
+					return hybridCloudEnable;
+				}
+				set	
+				{
+					hybridCloudEnable = value;
+				}
+			}
+
 			public string SecurityGroupId
 			{
 				get
@@ -263,6 +227,42 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					securityGroupId = value;
+				}
+			}
+
+			public bool? Current
+			{
+				get
+				{
+					return current;
+				}
+				set	
+				{
+					current = value;
+				}
+			}
+
+			public string NamespaceName
+			{
+				get
+				{
+					return namespaceName;
+				}
+				set	
+				{
+					namespaceName = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 		}

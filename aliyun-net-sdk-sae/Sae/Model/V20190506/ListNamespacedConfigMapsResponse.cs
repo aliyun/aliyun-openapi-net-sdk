@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
@@ -27,13 +27,13 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string requestId;
 
-		private string code;
-
 		private string message;
+
+		private string traceId;
 
 		private string errorCode;
 
-		private string traceId;
+		private string code;
 
 		private bool? success;
 
@@ -51,18 +51,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
 		public string Message
 		{
 			get
@@ -72,6 +60,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string TraceId
+		{
+			get
+			{
+				return traceId;
+			}
+			set	
+			{
+				traceId = value;
 			}
 		}
 
@@ -87,15 +87,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string TraceId
+		public string Code
 		{
 			get
 			{
-				return traceId;
+				return code;
 			}
 			set	
 			{
-				traceId = value;
+				code = value;
 			}
 		}
 
@@ -143,43 +143,43 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			public class ListNamespacedConfigMaps_ConfigMap
 			{
 
-				private long? configMapId;
+				private long? updateTime;
 
-				private string name;
+				private string data;
 
 				private string namespaceId;
 
 				private string description;
 
-				private string data;
-
 				private long? createTime;
 
-				private long? updateTime;
+				private long? configMapId;
+
+				private string name;
 
 				private List<ListNamespacedConfigMaps_RelateApp> relateApps;
 
-				public long? ConfigMapId
+				public long? UpdateTime
 				{
 					get
 					{
-						return configMapId;
+						return updateTime;
 					}
 					set	
 					{
-						configMapId = value;
+						updateTime = value;
 					}
 				}
 
-				public string Name
+				public string Data
 				{
 					get
 					{
-						return name;
+						return data;
 					}
 					set	
 					{
-						name = value;
+						data = value;
 					}
 				}
 
@@ -207,18 +207,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public string Data
-				{
-					get
-					{
-						return data;
-					}
-					set	
-					{
-						data = value;
-					}
-				}
-
 				public long? CreateTime
 				{
 					get
@@ -231,15 +219,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public long? UpdateTime
+				public long? ConfigMapId
 				{
 					get
 					{
-						return updateTime;
+						return configMapId;
 					}
 					set	
 					{
-						updateTime = value;
+						configMapId = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 
@@ -258,21 +258,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				public class ListNamespacedConfigMaps_RelateApp
 				{
 
-					private string appId;
-
 					private string appName;
 
-					public string AppId
-					{
-						get
-						{
-							return appId;
-						}
-						set	
-						{
-							appId = value;
-						}
-					}
+					private string appId;
 
 					public string AppName
 					{
@@ -283,6 +271,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 						set	
 						{
 							appName = value;
+						}
+					}
+
+					public string AppId
+					{
+						get
+						{
+							return appId;
+						}
+						set	
+						{
+							appId = value;
 						}
 					}
 				}

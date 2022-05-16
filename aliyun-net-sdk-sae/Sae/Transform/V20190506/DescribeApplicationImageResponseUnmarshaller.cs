@@ -32,22 +32,22 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 
 			describeApplicationImageResponse.HttpResponse = _ctx.HttpResponse;
 			describeApplicationImageResponse.RequestId = _ctx.StringValue("DescribeApplicationImage.RequestId");
-			describeApplicationImageResponse.Code = _ctx.StringValue("DescribeApplicationImage.Code");
 			describeApplicationImageResponse.Message = _ctx.StringValue("DescribeApplicationImage.Message");
-			describeApplicationImageResponse.Success = _ctx.BooleanValue("DescribeApplicationImage.Success");
-			describeApplicationImageResponse.ErrorCode = _ctx.StringValue("DescribeApplicationImage.ErrorCode");
 			describeApplicationImageResponse.TraceId = _ctx.StringValue("DescribeApplicationImage.TraceId");
+			describeApplicationImageResponse.ErrorCode = _ctx.StringValue("DescribeApplicationImage.ErrorCode");
+			describeApplicationImageResponse.Code = _ctx.StringValue("DescribeApplicationImage.Code");
+			describeApplicationImageResponse.Success = _ctx.BooleanValue("DescribeApplicationImage.Success");
 
 			DescribeApplicationImageResponse.DescribeApplicationImage_Data data = new DescribeApplicationImageResponse.DescribeApplicationImage_Data();
-			data.CrUrl = _ctx.StringValue("DescribeApplicationImage.Data.CrUrl");
-			data.Logo = _ctx.StringValue("DescribeApplicationImage.Data.Logo");
-			data.RegionId = _ctx.StringValue("DescribeApplicationImage.Data.RegionId");
 			data.RepoId = _ctx.IntegerValue("DescribeApplicationImage.Data.RepoId");
+			data.Logo = _ctx.StringValue("DescribeApplicationImage.Data.Logo");
+			data.RepoOriginType = _ctx.StringValue("DescribeApplicationImage.Data.RepoOriginType");
+			data.CrUrl = _ctx.StringValue("DescribeApplicationImage.Data.CrUrl");
+			data.RepoTag = _ctx.StringValue("DescribeApplicationImage.Data.RepoTag");
+			data.RepoType = _ctx.StringValue("DescribeApplicationImage.Data.RepoType");
 			data.RepoName = _ctx.StringValue("DescribeApplicationImage.Data.RepoName");
 			data.RepoNamespace = _ctx.StringValue("DescribeApplicationImage.Data.RepoNamespace");
-			data.RepoOriginType = _ctx.StringValue("DescribeApplicationImage.Data.RepoOriginType");
-			data.RepoType = _ctx.StringValue("DescribeApplicationImage.Data.RepoType");
-			data.RepoTag = _ctx.StringValue("DescribeApplicationImage.Data.RepoTag");
+			data.RegionId = _ctx.StringValue("DescribeApplicationImage.Data.RegionId");
 			describeApplicationImageResponse.Data = data;
         
 			return describeApplicationImageResponse;

@@ -32,11 +32,11 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 
 			rescaleApplicationVerticallyResponse.HttpResponse = _ctx.HttpResponse;
 			rescaleApplicationVerticallyResponse.RequestId = _ctx.StringValue("RescaleApplicationVertically.RequestId");
-			rescaleApplicationVerticallyResponse.Code = _ctx.StringValue("RescaleApplicationVertically.Code");
-			rescaleApplicationVerticallyResponse.Success = _ctx.BooleanValue("RescaleApplicationVertically.Success");
-			rescaleApplicationVerticallyResponse.ErrorCode = _ctx.StringValue("RescaleApplicationVertically.ErrorCode");
 			rescaleApplicationVerticallyResponse.Message = _ctx.StringValue("RescaleApplicationVertically.Message");
 			rescaleApplicationVerticallyResponse.TraceId = _ctx.StringValue("RescaleApplicationVertically.TraceId");
+			rescaleApplicationVerticallyResponse.ErrorCode = _ctx.StringValue("RescaleApplicationVertically.ErrorCode");
+			rescaleApplicationVerticallyResponse.Code = _ctx.StringValue("RescaleApplicationVertically.Code");
+			rescaleApplicationVerticallyResponse.Success = _ctx.BooleanValue("RescaleApplicationVertically.Success");
 
 			RescaleApplicationVerticallyResponse.RescaleApplicationVertically_Data data = new RescaleApplicationVerticallyResponse.RescaleApplicationVertically_Data();
 			data.ChangeOrderId = _ctx.StringValue("RescaleApplicationVertically.Data.ChangeOrderId");

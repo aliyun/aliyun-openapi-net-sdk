@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
@@ -27,15 +27,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string requestId;
 
-		private string code;
+		private string message;
+
+		private string traceId;
 
 		private string errorCode;
 
-		private string message;
+		private string code;
 
 		private bool? success;
-
-		private string traceId;
 
 		private UpdateNamespace_Data data;
 
@@ -51,15 +51,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Code
+		public string Message
 		{
 			get
 			{
-				return code;
+				return message;
 			}
 			set	
 			{
-				code = value;
+				message = value;
+			}
+		}
+
+		public string TraceId
+		{
+			get
+			{
+				return traceId;
+			}
+			set	
+			{
+				traceId = value;
 			}
 		}
 
@@ -75,15 +87,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Message
+		public string Code
 		{
 			get
 			{
-				return message;
+				return code;
 			}
 			set	
 			{
-				message = value;
+				code = value;
 			}
 		}
 
@@ -96,18 +108,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string TraceId
-		{
-			get
-			{
-				return traceId;
-			}
-			set	
-			{
-				traceId = value;
 			}
 		}
 
@@ -126,23 +126,23 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class UpdateNamespace_Data
 		{
 
-			private string regionId;
+			private string namespaceDescription;
 
 			private string namespaceId;
 
 			private string namespaceName;
 
-			private string namespaceDescription;
+			private string regionId;
 
-			public string RegionId
+			public string NamespaceDescription
 			{
 				get
 				{
-					return regionId;
+					return namespaceDescription;
 				}
 				set	
 				{
-					regionId = value;
+					namespaceDescription = value;
 				}
 			}
 
@@ -170,15 +170,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string NamespaceDescription
+			public string RegionId
 			{
 				get
 				{
-					return namespaceDescription;
+					return regionId;
 				}
 				set	
 				{
-					namespaceDescription = value;
+					regionId = value;
 				}
 			}
 		}

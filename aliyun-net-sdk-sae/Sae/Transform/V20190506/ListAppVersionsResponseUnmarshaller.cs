@@ -31,20 +31,20 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			ListAppVersionsResponse listAppVersionsResponse = new ListAppVersionsResponse();
 
 			listAppVersionsResponse.HttpResponse = _ctx.HttpResponse;
-			listAppVersionsResponse.RequestId = _ctx.StringValue("ListAppVersions.RequestId");
-			listAppVersionsResponse.Code = _ctx.StringValue("ListAppVersions.Code");
 			listAppVersionsResponse.Message = _ctx.StringValue("ListAppVersions.Message");
-			listAppVersionsResponse.Success = _ctx.BooleanValue("ListAppVersions.Success");
+			listAppVersionsResponse.RequestId = _ctx.StringValue("ListAppVersions.RequestId");
 			listAppVersionsResponse.ErrorCode = _ctx.StringValue("ListAppVersions.ErrorCode");
+			listAppVersionsResponse.Code = _ctx.StringValue("ListAppVersions.Code");
+			listAppVersionsResponse.Success = _ctx.BooleanValue("ListAppVersions.Success");
 
 			List<ListAppVersionsResponse.ListAppVersions_PackageVersionEntity> listAppVersionsResponse_data = new List<ListAppVersionsResponse.ListAppVersions_PackageVersionEntity>();
 			for (int i = 0; i < _ctx.Length("ListAppVersions.Data.Length"); i++) {
 				ListAppVersionsResponse.ListAppVersions_PackageVersionEntity packageVersionEntity = new ListAppVersionsResponse.ListAppVersions_PackageVersionEntity();
-				packageVersionEntity.Id = _ctx.StringValue("ListAppVersions.Data["+ i +"].Id");
-				packageVersionEntity.CreateTime = _ctx.StringValue("ListAppVersions.Data["+ i +"].CreateTime");
-				packageVersionEntity.WarUrl = _ctx.StringValue("ListAppVersions.Data["+ i +"].WarUrl");
 				packageVersionEntity.Type = _ctx.StringValue("ListAppVersions.Data["+ i +"].Type");
+				packageVersionEntity.CreateTime = _ctx.StringValue("ListAppVersions.Data["+ i +"].CreateTime");
 				packageVersionEntity.BuildPackageUrl = _ctx.StringValue("ListAppVersions.Data["+ i +"].BuildPackageUrl");
+				packageVersionEntity.WarUrl = _ctx.StringValue("ListAppVersions.Data["+ i +"].WarUrl");
+				packageVersionEntity.Id = _ctx.StringValue("ListAppVersions.Data["+ i +"].Id");
 
 				listAppVersionsResponse_data.Add(packageVersionEntity);
 			}

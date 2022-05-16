@@ -32,10 +32,10 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 
 			updateNamespaceVpcResponse.HttpResponse = _ctx.HttpResponse;
 			updateNamespaceVpcResponse.RequestId = _ctx.StringValue("UpdateNamespaceVpc.RequestId");
-			updateNamespaceVpcResponse.Code = _ctx.StringValue("UpdateNamespaceVpc.Code");
 			updateNamespaceVpcResponse.Message = _ctx.StringValue("UpdateNamespaceVpc.Message");
-			updateNamespaceVpcResponse.ErrorCode = _ctx.StringValue("UpdateNamespaceVpc.ErrorCode");
 			updateNamespaceVpcResponse.TraceId = _ctx.StringValue("UpdateNamespaceVpc.TraceId");
+			updateNamespaceVpcResponse.ErrorCode = _ctx.StringValue("UpdateNamespaceVpc.ErrorCode");
+			updateNamespaceVpcResponse.Code = _ctx.StringValue("UpdateNamespaceVpc.Code");
 			updateNamespaceVpcResponse.Success = _ctx.BooleanValue("UpdateNamespaceVpc.Success");
         
 			return updateNamespaceVpcResponse;

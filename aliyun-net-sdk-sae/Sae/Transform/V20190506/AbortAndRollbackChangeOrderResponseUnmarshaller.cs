@@ -31,12 +31,12 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			AbortAndRollbackChangeOrderResponse abortAndRollbackChangeOrderResponse = new AbortAndRollbackChangeOrderResponse();
 
 			abortAndRollbackChangeOrderResponse.HttpResponse = _ctx.HttpResponse;
-			abortAndRollbackChangeOrderResponse.Code = _ctx.StringValue("AbortAndRollbackChangeOrder.Code");
-			abortAndRollbackChangeOrderResponse.ErrorCode = _ctx.StringValue("AbortAndRollbackChangeOrder.ErrorCode");
-			abortAndRollbackChangeOrderResponse.Message = _ctx.StringValue("AbortAndRollbackChangeOrder.Message");
-			abortAndRollbackChangeOrderResponse.Success = _ctx.BooleanValue("AbortAndRollbackChangeOrder.Success");
-			abortAndRollbackChangeOrderResponse.TraceId = _ctx.StringValue("AbortAndRollbackChangeOrder.TraceId");
 			abortAndRollbackChangeOrderResponse.RequestId = _ctx.StringValue("AbortAndRollbackChangeOrder.RequestId");
+			abortAndRollbackChangeOrderResponse.Message = _ctx.StringValue("AbortAndRollbackChangeOrder.Message");
+			abortAndRollbackChangeOrderResponse.TraceId = _ctx.StringValue("AbortAndRollbackChangeOrder.TraceId");
+			abortAndRollbackChangeOrderResponse.ErrorCode = _ctx.StringValue("AbortAndRollbackChangeOrder.ErrorCode");
+			abortAndRollbackChangeOrderResponse.Code = _ctx.StringValue("AbortAndRollbackChangeOrder.Code");
+			abortAndRollbackChangeOrderResponse.Success = _ctx.BooleanValue("AbortAndRollbackChangeOrder.Success");
 
 			AbortAndRollbackChangeOrderResponse.AbortAndRollbackChangeOrder_Data data = new AbortAndRollbackChangeOrderResponse.AbortAndRollbackChangeOrder_Data();
 			data.ChangeOrderId = _ctx.StringValue("AbortAndRollbackChangeOrder.Data.ChangeOrderId");

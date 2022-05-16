@@ -32,21 +32,21 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 
 			describeInstanceSpecificationsResponse.HttpResponse = _ctx.HttpResponse;
 			describeInstanceSpecificationsResponse.RequestId = _ctx.StringValue("DescribeInstanceSpecifications.RequestId");
-			describeInstanceSpecificationsResponse.Code = _ctx.StringValue("DescribeInstanceSpecifications.Code");
 			describeInstanceSpecificationsResponse.Message = _ctx.StringValue("DescribeInstanceSpecifications.Message");
-			describeInstanceSpecificationsResponse.Success = _ctx.BooleanValue("DescribeInstanceSpecifications.Success");
-			describeInstanceSpecificationsResponse.ErrorCode = _ctx.StringValue("DescribeInstanceSpecifications.ErrorCode");
 			describeInstanceSpecificationsResponse.TraceId = _ctx.StringValue("DescribeInstanceSpecifications.TraceId");
+			describeInstanceSpecificationsResponse.ErrorCode = _ctx.StringValue("DescribeInstanceSpecifications.ErrorCode");
+			describeInstanceSpecificationsResponse.Code = _ctx.StringValue("DescribeInstanceSpecifications.Code");
+			describeInstanceSpecificationsResponse.Success = _ctx.BooleanValue("DescribeInstanceSpecifications.Success");
 
 			List<DescribeInstanceSpecificationsResponse.DescribeInstanceSpecifications_DataItem> describeInstanceSpecificationsResponse_data = new List<DescribeInstanceSpecificationsResponse.DescribeInstanceSpecifications_DataItem>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceSpecifications.Data.Length"); i++) {
 				DescribeInstanceSpecificationsResponse.DescribeInstanceSpecifications_DataItem dataItem = new DescribeInstanceSpecificationsResponse.DescribeInstanceSpecifications_DataItem();
 				dataItem.Cpu = _ctx.IntegerValue("DescribeInstanceSpecifications.Data["+ i +"].Cpu");
-				dataItem.Enable = _ctx.BooleanValue("DescribeInstanceSpecifications.Data["+ i +"].Enable");
-				dataItem.Id = _ctx.IntegerValue("DescribeInstanceSpecifications.Data["+ i +"].Id");
+				dataItem.Version = _ctx.IntegerValue("DescribeInstanceSpecifications.Data["+ i +"].Version");
 				dataItem.Memory = _ctx.IntegerValue("DescribeInstanceSpecifications.Data["+ i +"].Memory");
 				dataItem.SpecInfo = _ctx.StringValue("DescribeInstanceSpecifications.Data["+ i +"].SpecInfo");
-				dataItem.Version = _ctx.IntegerValue("DescribeInstanceSpecifications.Data["+ i +"].Version");
+				dataItem.Id = _ctx.IntegerValue("DescribeInstanceSpecifications.Data["+ i +"].Id");
+				dataItem.Enable = _ctx.BooleanValue("DescribeInstanceSpecifications.Data["+ i +"].Enable");
 
 				describeInstanceSpecificationsResponse_data.Add(dataItem);
 			}
