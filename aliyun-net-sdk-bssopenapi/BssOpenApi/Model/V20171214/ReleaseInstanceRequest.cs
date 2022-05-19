@@ -28,10 +28,10 @@ using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class SubscribeBillToOSSRequest : RpcAcsRequest<SubscribeBillToOSSResponse>
+    public class ReleaseInstanceRequest : RpcAcsRequest<ReleaseInstanceResponse>
     {
-        public SubscribeBillToOSSRequest()
-            : base("BssOpenApi", "2017-12-14", "SubscribeBillToOSS")
+        public ReleaseInstanceRequest()
+            : base("BssOpenApi", "2017-12-14", "ReleaseInstance")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,99 +41,119 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			Method = MethodType.POST;
         }
 
-		private long? bucketOwnerId;
+		private string productCode;
 
-		private string subscribeType;
+		private string subscriptionType;
 
-		private string subscribeBucket;
+		private long? ownerId;
 
-		private string bucketPath;
+		private string productType;
 
-		private string beginBillingCycle;
+		private string instanceIds;
 
-		private string multAccountRelSubscribe;
+		private string region;
 
-		public long? BucketOwnerId
+		private string renewStatus;
+
+		public string ProductCode
 		{
 			get
 			{
-				return bucketOwnerId;
+				return productCode;
 			}
 			set	
 			{
-				bucketOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "BucketOwnerId", value.ToString());
+				productCode = value;
+				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
 			}
 		}
 
-		public string SubscribeType
+		public string SubscriptionType
 		{
 			get
 			{
-				return subscribeType;
+				return subscriptionType;
 			}
 			set	
 			{
-				subscribeType = value;
-				DictionaryUtil.Add(QueryParameters, "SubscribeType", value);
+				subscriptionType = value;
+				DictionaryUtil.Add(QueryParameters, "SubscriptionType", value);
 			}
 		}
 
-		public string SubscribeBucket
+		public long? OwnerId
 		{
 			get
 			{
-				return subscribeBucket;
+				return ownerId;
 			}
 			set	
 			{
-				subscribeBucket = value;
-				DictionaryUtil.Add(QueryParameters, "SubscribeBucket", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-		public string BucketPath
+		public string ProductType
 		{
 			get
 			{
-				return bucketPath;
+				return productType;
 			}
 			set	
 			{
-				bucketPath = value;
-				DictionaryUtil.Add(QueryParameters, "BucketPath", value);
+				productType = value;
+				DictionaryUtil.Add(QueryParameters, "ProductType", value);
 			}
 		}
 
-		public string BeginBillingCycle
+		public string InstanceIds
 		{
 			get
 			{
-				return beginBillingCycle;
+				return instanceIds;
 			}
 			set	
 			{
-				beginBillingCycle = value;
-				DictionaryUtil.Add(QueryParameters, "BeginBillingCycle", value);
+				instanceIds = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
 			}
 		}
 
-		public string MultAccountRelSubscribe
+		public string Region
 		{
 			get
 			{
-				return multAccountRelSubscribe;
+				return region;
 			}
 			set	
 			{
-				multAccountRelSubscribe = value;
-				DictionaryUtil.Add(QueryParameters, "MultAccountRelSubscribe", value);
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
 			}
 		}
 
-        public override SubscribeBillToOSSResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string RenewStatus
+		{
+			get
+			{
+				return renewStatus;
+			}
+			set	
+			{
+				renewStatus = value;
+				DictionaryUtil.Add(QueryParameters, "RenewStatus", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override ReleaseInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SubscribeBillToOSSResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ReleaseInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

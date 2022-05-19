@@ -49,6 +49,7 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				item.SubscribeTime = _ctx.StringValue("QueryBillToOSSSubscription.Data.Items["+ i +"].SubscribeTime");
 				item.SubscribeLanguage = _ctx.StringValue("QueryBillToOSSSubscription.Data.Items["+ i +"].SubscribeLanguage");
 				item.MultAccountRelSubscribe = _ctx.StringValue("QueryBillToOSSSubscription.Data.Items["+ i +"].MultAccountRelSubscribe");
+				item.BucketPath = _ctx.StringValue("QueryBillToOSSSubscription.Data.Items["+ i +"].BucketPath");
 
 				data_items.Add(item);
 			}
