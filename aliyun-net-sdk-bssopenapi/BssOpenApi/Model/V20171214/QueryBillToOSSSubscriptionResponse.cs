@@ -155,6 +155,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string multAccountRelSubscribe;
 
+				private string bucketPath;
+
 				public long? BucketOwnerId
 				{
 					get
@@ -224,6 +226,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						multAccountRelSubscribe = value;
+					}
+				}
+
+				public string BucketPath
+				{
+					get
+					{
+						return bucketPath;
+					}
+					set	
+					{
+						bucketPath = value;
 					}
 				}
 			}
