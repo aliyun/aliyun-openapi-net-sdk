@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -29,12 +29,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageNumber;
 
-		private int? totalRecordCount;
-
 		private int? pageRecordCount;
+
+		private int? totalRecordCount;
 
 		private List<DescribeDBInstancesByPerformance_DBInstancePerformance> items;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -59,18 +61,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "PageRecordCount")]
 		public int? PageRecordCount
 		{
 			get
@@ -83,6 +74,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalRecordCount")]
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeDBInstancesByPerformance_DBInstancePerformance> Items
 		{
 			get
@@ -100,16 +105,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string cPUUsage;
 
-			private string iOPSUsage;
-
-			private string diskUsage;
-
 			private string sessionUsage;
 
 			private string dBInstanceId;
 
 			private string dBInstanceDescription;
 
+			private string iOPSUsage;
+
+			private string diskUsage;
+
+			[JsonProperty(PropertyName = "CPUUsage")]
 			public string CPUUsage
 			{
 				get
@@ -122,30 +128,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string IOPSUsage
-			{
-				get
-				{
-					return iOPSUsage;
-				}
-				set	
-				{
-					iOPSUsage = value;
-				}
-			}
-
-			public string DiskUsage
-			{
-				get
-				{
-					return diskUsage;
-				}
-				set	
-				{
-					diskUsage = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "SessionUsage")]
 			public string SessionUsage
 			{
 				get
@@ -158,6 +141,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DBInstanceId")]
 			public string DBInstanceId
 			{
 				get
@@ -170,6 +154,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DBInstanceDescription")]
 			public string DBInstanceDescription
 			{
 				get
@@ -179,6 +164,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					dBInstanceDescription = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IOPSUsage")]
+			public string IOPSUsage
+			{
+				get
+				{
+					return iOPSUsage;
+				}
+				set	
+				{
+					iOPSUsage = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DiskUsage")]
+			public string DiskUsage
+			{
+				get
+				{
+					return diskUsage;
+				}
+				set	
+				{
+					diskUsage = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeTags_TagInfos> items;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeTags_TagInfos> Items
 		{
 			get
@@ -56,24 +58,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeTags_TagInfos
 		{
 
-			private string tagKey;
-
 			private string tagValue;
+
+			private string tagKey;
 
 			private List<string> dBInstanceIds;
 
-			public string TagKey
-			{
-				get
-				{
-					return tagKey;
-				}
-				set	
-				{
-					tagKey = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "TagValue")]
 			public string TagValue
 			{
 				get
@@ -86,6 +77,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "TagKey")]
+			public string TagKey
+			{
+				get
+				{
+					return tagKey;
+				}
+				set	
+				{
+					tagKey = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceIds")]
 			public List<string> DBInstanceIds
 			{
 				get

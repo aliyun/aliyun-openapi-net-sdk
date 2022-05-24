@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -44,6 +45,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string clientToken;
 
+		private bool? instantRecovery;
+
 		private string tableMeta;
 
 		private string dBInstanceId;
@@ -58,6 +61,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -71,6 +75,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ClientToken")]
 		public string ClientToken
 		{
 			get
@@ -84,6 +89,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstantRecovery")]
+		public bool? InstantRecovery
+		{
+			get
+			{
+				return instantRecovery;
+			}
+			set	
+			{
+				instantRecovery = value;
+				DictionaryUtil.Add(QueryParameters, "InstantRecovery", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "TableMeta")]
 		public string TableMeta
 		{
 			get
@@ -97,6 +117,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -110,6 +131,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RestoreTime")]
 		public string RestoreTime
 		{
 			get
@@ -123,6 +145,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -136,6 +159,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "BackupId")]
 		public string BackupId
 		{
 			get
@@ -149,6 +173,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -162,6 +187,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get

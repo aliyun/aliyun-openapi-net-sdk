@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -27,16 +27,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
-		private string dBInstanceId;
-
-		private string taskId;
-
 		private string dBName;
-
-		private string migrateTaskId;
 
 		private string backupMode;
 
+		private string dBInstanceId;
+
+		private string migrateTaskId;
+
+		private string taskId;
+
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -49,30 +50,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-			}
-		}
-
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "DBName")]
 		public string DBName
 		{
 			get
@@ -85,6 +63,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "BackupMode")]
+		public string BackupMode
+		{
+			get
+			{
+				return backupMode;
+			}
+			set	
+			{
+				backupMode = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBInstanceId")]
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "MigrateTaskId")]
 		public string MigrateTaskId
 		{
 			get
@@ -97,15 +102,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string BackupMode
+		[JsonProperty(PropertyName = "TaskId")]
+		public string TaskId
 		{
 			get
 			{
-				return backupMode;
+				return taskId;
 			}
 			set	
 			{
-				backupMode = value;
+				taskId = value;
 			}
 		}
 	}

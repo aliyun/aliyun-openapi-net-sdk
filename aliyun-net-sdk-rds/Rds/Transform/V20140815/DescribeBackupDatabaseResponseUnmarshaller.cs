@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeBackupDatabaseResponse describeBackupDatabaseResponse = new DescribeBackupDatabaseResponse();
 
 			describeBackupDatabaseResponse.HttpResponse = _ctx.HttpResponse;
-			describeBackupDatabaseResponse.RequestId = _ctx.StringValue("DescribeBackupDatabase.RequestId");
 			describeBackupDatabaseResponse.DatabaseNames = _ctx.StringValue("DescribeBackupDatabase.DatabaseNames");
+			describeBackupDatabaseResponse.RequestId = _ctx.StringValue("DescribeBackupDatabase.RequestId");
         
 			return describeBackupDatabaseResponse;
         }

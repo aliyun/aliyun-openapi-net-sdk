@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeAvailableDedicatedHostClassesRequest : RpcAcsRequest<DescribeAvailableDedicatedHostClassesResponse>
+    public class ActivateMigrationTargetInstanceRequest : RpcAcsRequest<ActivateMigrationTargetInstanceResponse>
     {
-        public DescribeAvailableDedicatedHostClassesRequest()
-            : base("Rds", "2014-08-15", "DescribeAvailableDedicatedHostClasses", "rds", "openAPI")
+        public ActivateMigrationTargetInstanceRequest()
+            : base("Rds", "2014-08-15", "ActivateMigrationTargetInstance", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,15 +40,28 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			Method = MethodType.POST;
         }
 
+		private string dBInstanceName;
+
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private string forceSwitch;
 
-		private long? ownerId;
+		private string switchTimeMode;
 
-		private string storageType;
+		private string switchTime;
 
-		private string zoneId;
+		public string DBInstanceName
+		{
+			get
+			{
+				return dBInstanceName;
+			}
+			set	
+			{
+				dBInstanceName = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceName", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -63,61 +76,53 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public string ForceSwitch
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return forceSwitch;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				forceSwitch = value;
+				DictionaryUtil.Add(QueryParameters, "ForceSwitch", value);
 			}
 		}
 
-		public long? OwnerId
+		public string SwitchTimeMode
 		{
 			get
 			{
-				return ownerId;
+				return switchTimeMode;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				switchTimeMode = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchTimeMode", value);
 			}
 		}
 
-		public string StorageType
+		public string SwitchTime
 		{
 			get
 			{
-				return storageType;
+				return switchTime;
 			}
 			set	
 			{
-				storageType = value;
-				DictionaryUtil.Add(QueryParameters, "StorageType", value);
+				switchTime = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchTime", value);
 			}
 		}
 
-		public string ZoneId
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
+			return false;
 		}
 
-        public override DescribeAvailableDedicatedHostClassesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ActivateMigrationTargetInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAvailableDedicatedHostClassesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ActivateMigrationTargetInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeOssDownloadsForSQLServerRequest : RpcAcsRequest<DescribeOssDownloadsForSQLServerResponse>
+    public class ConfirmNotifyRequest : RpcAcsRequest<ConfirmNotifyResponse>
     {
-        public DescribeOssDownloadsForSQLServerRequest()
-            : base("Rds", "2014-08-15", "DescribeOssDownloadsForSQLServer", "rds", "openAPI")
+        public ConfirmNotifyRequest()
+            : base("Rds", "2014-08-15", "ConfirmNotify", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,84 +41,53 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			Method = MethodType.POST;
         }
 
-		private long? resourceOwnerId;
+		private List<long?> notifyIdList = new List<long?>(){ };
 
-		private string migrateTaskId;
+		private long? confirmor;
 
-		private string resourceOwnerAccount;
-
-		private long? ownerId;
-
-		private string dBInstanceId;
-
-		public long? ResourceOwnerId
+		[JsonProperty(PropertyName = "NotifyIdList")]
+		public List<long?> NotifyIdList
 		{
 			get
 			{
-				return resourceOwnerId;
+				return notifyIdList;
 			}
-			set	
+
+			set
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				notifyIdList = value;
+				if(notifyIdList != null)
+				{
+					for (int depth1 = 0; depth1 < notifyIdList.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"NotifyIdList." + (depth1 + 1), notifyIdList[depth1]);
+					}
+				}
 			}
 		}
 
-		public string MigrateTaskId
+		[JsonProperty(PropertyName = "Confirmor")]
+		public long? Confirmor
 		{
 			get
 			{
-				return migrateTaskId;
+				return confirmor;
 			}
 			set	
 			{
-				migrateTaskId = value;
-				DictionaryUtil.Add(QueryParameters, "MigrateTaskId", value);
+				confirmor = value;
+				DictionaryUtil.Add(BodyParameters, "Confirmor", value.ToString());
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
+			return false;
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-        public override DescribeOssDownloadsForSQLServerResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ConfirmNotifyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeOssDownloadsForSQLServerResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ConfirmNotifyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

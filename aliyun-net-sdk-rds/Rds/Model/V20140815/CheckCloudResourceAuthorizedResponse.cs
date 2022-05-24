@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
-		private int? authorizationState;
-
 		private string roleArn;
+
+		private int? authorizationState;
 
 		public string RequestId
 		{
@@ -43,18 +43,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? AuthorizationState
-		{
-			get
-			{
-				return authorizationState;
-			}
-			set	
-			{
-				authorizationState = value;
-			}
-		}
-
 		public string RoleArn
 		{
 			get
@@ -64,6 +52,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				roleArn = value;
+			}
+		}
+
+		public int? AuthorizationState
+		{
+			get
+			{
+				return authorizationState;
+			}
+			set	
+			{
+				authorizationState = value;
 			}
 		}
 	}

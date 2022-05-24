@@ -36,8 +36,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			List<DescribeTagsResponse.DescribeTags_TagInfos> describeTagsResponse_items = new List<DescribeTagsResponse.DescribeTags_TagInfos>();
 			for (int i = 0; i < _ctx.Length("DescribeTags.Items.Length"); i++) {
 				DescribeTagsResponse.DescribeTags_TagInfos tagInfos = new DescribeTagsResponse.DescribeTags_TagInfos();
-				tagInfos.TagKey = _ctx.StringValue("DescribeTags.Items["+ i +"].TagKey");
 				tagInfos.TagValue = _ctx.StringValue("DescribeTags.Items["+ i +"].TagValue");
+				tagInfos.TagKey = _ctx.StringValue("DescribeTags.Items["+ i +"].TagKey");
 
 				List<string> tagInfos_dBInstanceIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeTags.Items["+ i +"].DBInstanceIds.Length"); j++) {

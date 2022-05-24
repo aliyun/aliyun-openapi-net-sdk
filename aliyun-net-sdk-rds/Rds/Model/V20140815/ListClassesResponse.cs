@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class ListClassesResponse : AcsResponse
 	{
 
-		private string regionId;
-
 		private string requestId;
+
+		private string regionId;
 
 		private List<ListClasses_ClassList> items;
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RegionId")]
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Items")]
 		public List<ListClasses_ClassList> Items
 		{
 			get
@@ -70,82 +73,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class ListClasses_ClassList
 		{
 
+			private string maxIOPS;
+
+			private string cpu;
+
+			private string referencePrice;
+
+			private string maxConnections;
+
+			private string memoryClass;
+
 			private string classCode;
 
 			private string classGroup;
 
-			private string cpu;
-
-			private string maxConnections;
-
 			private string maxIOMBPS;
 
-			private string maxIOPS;
-
-			private string memoryClass;
-
-			private string referencePrice;
-
-			public string ClassCode
-			{
-				get
-				{
-					return classCode;
-				}
-				set	
-				{
-					classCode = value;
-				}
-			}
-
-			public string ClassGroup
-			{
-				get
-				{
-					return classGroup;
-				}
-				set	
-				{
-					classGroup = value;
-				}
-			}
-
-			public string Cpu
-			{
-				get
-				{
-					return cpu;
-				}
-				set	
-				{
-					cpu = value;
-				}
-			}
-
-			public string MaxConnections
-			{
-				get
-				{
-					return maxConnections;
-				}
-				set	
-				{
-					maxConnections = value;
-				}
-			}
-
-			public string MaxIOMBPS
-			{
-				get
-				{
-					return maxIOMBPS;
-				}
-				set	
-				{
-					maxIOMBPS = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "MaxIOPS")]
 			public string MaxIOPS
 			{
 				get
@@ -158,6 +102,46 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Cpu")]
+			public string Cpu
+			{
+				get
+				{
+					return cpu;
+				}
+				set	
+				{
+					cpu = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ReferencePrice")]
+			public string ReferencePrice
+			{
+				get
+				{
+					return referencePrice;
+				}
+				set	
+				{
+					referencePrice = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaxConnections")]
+			public string MaxConnections
+			{
+				get
+				{
+					return maxConnections;
+				}
+				set	
+				{
+					maxConnections = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MemoryClass")]
 			public string MemoryClass
 			{
 				get
@@ -170,15 +154,42 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string ReferencePrice
+			[JsonProperty(PropertyName = "ClassCode")]
+			public string ClassCode
 			{
 				get
 				{
-					return referencePrice;
+					return classCode;
 				}
 				set	
 				{
-					referencePrice = value;
+					classCode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ClassGroup")]
+			public string ClassGroup
+			{
+				get
+				{
+					return classGroup;
+				}
+				set	
+				{
+					classGroup = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaxIOMBPS")]
+			public string MaxIOMBPS
+			{
+				get
+				{
+					return maxIOMBPS;
+				}
+				set	
+				{
+					maxIOMBPS = value;
 				}
 			}
 		}

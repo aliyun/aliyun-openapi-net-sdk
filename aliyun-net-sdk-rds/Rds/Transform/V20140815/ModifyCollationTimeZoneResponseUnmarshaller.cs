@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			ModifyCollationTimeZoneResponse modifyCollationTimeZoneResponse = new ModifyCollationTimeZoneResponse();
 
 			modifyCollationTimeZoneResponse.HttpResponse = _ctx.HttpResponse;
-			modifyCollationTimeZoneResponse.RequestId = _ctx.StringValue("ModifyCollationTimeZone.RequestId");
-			modifyCollationTimeZoneResponse.DBInstanceId = _ctx.StringValue("ModifyCollationTimeZone.DBInstanceId");
-			modifyCollationTimeZoneResponse.TaskId = _ctx.StringValue("ModifyCollationTimeZone.TaskId");
-			modifyCollationTimeZoneResponse.Timezone = _ctx.StringValue("ModifyCollationTimeZone.Timezone");
 			modifyCollationTimeZoneResponse.Collation = _ctx.StringValue("ModifyCollationTimeZone.Collation");
+			modifyCollationTimeZoneResponse.DBInstanceId = _ctx.StringValue("ModifyCollationTimeZone.DBInstanceId");
+			modifyCollationTimeZoneResponse.RequestId = _ctx.StringValue("ModifyCollationTimeZone.RequestId");
+			modifyCollationTimeZoneResponse.Timezone = _ctx.StringValue("ModifyCollationTimeZone.Timezone");
+			modifyCollationTimeZoneResponse.TaskId = _ctx.StringValue("ModifyCollationTimeZone.TaskId");
         
 			return modifyCollationTimeZoneResponse;
         }

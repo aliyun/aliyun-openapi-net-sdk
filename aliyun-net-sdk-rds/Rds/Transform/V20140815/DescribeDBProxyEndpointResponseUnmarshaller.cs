@@ -31,23 +31,23 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeDBProxyEndpointResponse describeDBProxyEndpointResponse = new DescribeDBProxyEndpointResponse();
 
 			describeDBProxyEndpointResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBProxyEndpointResponse.RequestId = _ctx.StringValue("DescribeDBProxyEndpoint.RequestId");
-			describeDBProxyEndpointResponse.DBProxyEndpointId = _ctx.StringValue("DescribeDBProxyEndpoint.DBProxyEndpointId");
-			describeDBProxyEndpointResponse.DBProxyConnectString = _ctx.StringValue("DescribeDBProxyEndpoint.DBProxyConnectString");
-			describeDBProxyEndpointResponse.DBProxyConnectStringPort = _ctx.StringValue("DescribeDBProxyEndpoint.DBProxyConnectStringPort");
 			describeDBProxyEndpointResponse.DBProxyConnectStringNetType = _ctx.StringValue("DescribeDBProxyEndpoint.DBProxyConnectStringNetType");
 			describeDBProxyEndpointResponse.DBProxyFeatures = _ctx.StringValue("DescribeDBProxyEndpoint.DBProxyFeatures");
-			describeDBProxyEndpointResponse.ReadOnlyInstanceMaxDelayTime = _ctx.StringValue("DescribeDBProxyEndpoint.ReadOnlyInstanceMaxDelayTime");
-			describeDBProxyEndpointResponse.ReadOnlyInstanceDistributionType = _ctx.StringValue("DescribeDBProxyEndpoint.ReadOnlyInstanceDistributionType");
+			describeDBProxyEndpointResponse.RequestId = _ctx.StringValue("DescribeDBProxyEndpoint.RequestId");
 			describeDBProxyEndpointResponse.ReadOnlyInstanceWeight = _ctx.StringValue("DescribeDBProxyEndpoint.ReadOnlyInstanceWeight");
-			describeDBProxyEndpointResponse.DbProxyEndpointAliases = _ctx.StringValue("DescribeDBProxyEndpoint.DbProxyEndpointAliases");
+			describeDBProxyEndpointResponse.ReadOnlyInstanceDistributionType = _ctx.StringValue("DescribeDBProxyEndpoint.ReadOnlyInstanceDistributionType");
+			describeDBProxyEndpointResponse.ReadOnlyInstanceMaxDelayTime = _ctx.StringValue("DescribeDBProxyEndpoint.ReadOnlyInstanceMaxDelayTime");
 			describeDBProxyEndpointResponse.DbProxyEndpointReadWriteMode = _ctx.StringValue("DescribeDBProxyEndpoint.DbProxyEndpointReadWriteMode");
+			describeDBProxyEndpointResponse.DbProxyEndpointAliases = _ctx.StringValue("DescribeDBProxyEndpoint.DbProxyEndpointAliases");
+			describeDBProxyEndpointResponse.DBProxyEndpointId = _ctx.StringValue("DescribeDBProxyEndpoint.DBProxyEndpointId");
+			describeDBProxyEndpointResponse.DBProxyConnectStringPort = _ctx.StringValue("DescribeDBProxyEndpoint.DBProxyConnectStringPort");
+			describeDBProxyEndpointResponse.DBProxyConnectString = _ctx.StringValue("DescribeDBProxyEndpoint.DBProxyConnectString");
 
 			List<DescribeDBProxyEndpointResponse.DescribeDBProxyEndpoint_EndpointConnectItemsItem> describeDBProxyEndpointResponse_endpointConnectItems = new List<DescribeDBProxyEndpointResponse.DescribeDBProxyEndpoint_EndpointConnectItemsItem>();
 			for (int i = 0; i < _ctx.Length("DescribeDBProxyEndpoint.EndpointConnectItems.Length"); i++) {
 				DescribeDBProxyEndpointResponse.DescribeDBProxyEndpoint_EndpointConnectItemsItem endpointConnectItemsItem = new DescribeDBProxyEndpointResponse.DescribeDBProxyEndpoint_EndpointConnectItemsItem();
-				endpointConnectItemsItem.DbProxyEndpointConnectString = _ctx.StringValue("DescribeDBProxyEndpoint.EndpointConnectItems["+ i +"].DbProxyEndpointConnectString");
 				endpointConnectItemsItem.DbProxyEndpointPort = _ctx.StringValue("DescribeDBProxyEndpoint.EndpointConnectItems["+ i +"].DbProxyEndpointPort");
+				endpointConnectItemsItem.DbProxyEndpointConnectString = _ctx.StringValue("DescribeDBProxyEndpoint.EndpointConnectItems["+ i +"].DbProxyEndpointConnectString");
 				endpointConnectItemsItem.DbProxyEndpointNetType = _ctx.StringValue("DescribeDBProxyEndpoint.EndpointConnectItems["+ i +"].DbProxyEndpointNetType");
 
 				describeDBProxyEndpointResponse_endpointConnectItems.Add(endpointConnectItemsItem);

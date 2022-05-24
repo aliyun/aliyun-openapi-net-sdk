@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			ModifyParameterGroupResponse modifyParameterGroupResponse = new ModifyParameterGroupResponse();
 
 			modifyParameterGroupResponse.HttpResponse = _ctx.HttpResponse;
-			modifyParameterGroupResponse.RequestId = _ctx.StringValue("ModifyParameterGroup.RequestId");
 			modifyParameterGroupResponse.ParameterGroupId = _ctx.StringValue("ModifyParameterGroup.ParameterGroupId");
+			modifyParameterGroupResponse.RequestId = _ctx.StringValue("ModifyParameterGroup.RequestId");
         
 			return modifyParameterGroupResponse;
         }

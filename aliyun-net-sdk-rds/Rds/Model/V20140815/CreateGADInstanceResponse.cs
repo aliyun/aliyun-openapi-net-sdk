@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private CreateGADInstance_Result result;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Result")]
 		public CreateGADInstance_Result Result
 		{
 			get
@@ -58,8 +60,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string gadInstanceName;
 
-			private string createCount;
+			private string createMemberCount;
 
+			private string taskID;
+
+			[JsonProperty(PropertyName = "GadInstanceName")]
 			public string GadInstanceName
 			{
 				get
@@ -72,15 +77,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string CreateCount
+			[JsonProperty(PropertyName = "CreateMemberCount")]
+			public string CreateMemberCount
 			{
 				get
 				{
-					return createCount;
+					return createMemberCount;
 				}
 				set	
 				{
-					createCount = value;
+					createMemberCount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TaskID")]
+			public string TaskID
+			{
+				get
+				{
+					return taskID;
+				}
+				set	
+				{
+					taskID = value;
 				}
 			}
 		}

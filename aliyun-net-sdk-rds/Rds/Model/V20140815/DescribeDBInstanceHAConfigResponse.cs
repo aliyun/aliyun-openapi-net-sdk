@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeDBInstanceHAConfig_NodeInfo> hostInstanceInfos;
 
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "HAMode")]
 		public string HAMode
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "SyncMode")]
 		public string SyncMode
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "HostInstanceInfos")]
 		public List<DescribeDBInstanceHAConfig_NodeInfo> HostInstanceInfos
 		{
 			get
@@ -112,6 +117,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string regionId;
 
+			[JsonProperty(PropertyName = "LogSyncTime")]
 			public string LogSyncTime
 			{
 				get
@@ -124,6 +130,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "NodeType")]
 			public string NodeType
 			{
 				get
@@ -136,6 +143,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ZoneId")]
 			public string ZoneId
 			{
 				get
@@ -148,6 +156,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "SyncStatus")]
 			public string SyncStatus
 			{
 				get
@@ -160,6 +169,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DataSyncTime")]
 			public string DataSyncTime
 			{
 				get
@@ -172,6 +182,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "NodeId")]
 			public string NodeId
 			{
 				get
@@ -184,6 +195,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "RegionId")]
 			public string RegionId
 			{
 				get

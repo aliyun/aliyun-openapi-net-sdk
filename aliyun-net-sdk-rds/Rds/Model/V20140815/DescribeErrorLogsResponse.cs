@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageNumber;
 
-		private int? pageRecordCount;
-
 		private string requestId;
+
+		private int? pageRecordCount;
 
 		private int? totalRecordCount;
 
 		private List<DescribeErrorLogs_ErrorLog> items;
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -47,18 +48,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -71,6 +61,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageRecordCount")]
+		public int? PageRecordCount
+		{
+			get
+			{
+				return pageRecordCount;
+			}
+			set	
+			{
+				pageRecordCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalRecordCount")]
 		public int? TotalRecordCount
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeErrorLogs_ErrorLog> Items
 		{
 			get
@@ -102,6 +107,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string errorInfo;
 
+			[JsonProperty(PropertyName = "CreateTime")]
 			public string CreateTime
 			{
 				get
@@ -114,6 +120,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ErrorInfo")]
 			public string ErrorInfo
 			{
 				get

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,28 +25,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDBInstanceDetailResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string activationState;
 
 		private string dBInstanceId;
 
-		private string regionId;
-
 		private string licenseType;
 
-		private string activationState;
+		private string requestId;
 
-		public string RequestId
+		private string regionId;
+
+		[JsonProperty(PropertyName = "ActivationState")]
+		public string ActivationState
 		{
 			get
 			{
-				return requestId;
+				return activationState;
 			}
 			set	
 			{
-				requestId = value;
+				activationState = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -59,18 +61,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "LicenseType")]
 		public string LicenseType
 		{
 			get
@@ -83,15 +74,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ActivationState
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return activationState;
+				return requestId;
 			}
 			set	
 			{
-				activationState = value;
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RegionId")]
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
 			}
 		}
 	}

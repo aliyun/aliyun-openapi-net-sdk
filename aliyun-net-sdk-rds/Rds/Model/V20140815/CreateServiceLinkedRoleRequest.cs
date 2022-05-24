@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeMigrateTasksForSQLServerRequest : RpcAcsRequest<DescribeMigrateTasksForSQLServerResponse>
+    public class CreateServiceLinkedRoleRequest : RpcAcsRequest<CreateServiceLinkedRoleResponse>
     {
-        public DescribeMigrateTasksForSQLServerRequest()
-            : base("Rds", "2014-08-15", "DescribeMigrateTasksForSQLServer", "rds", "openAPI")
+        public CreateServiceLinkedRoleRequest()
+            : base("Rds", "2014-08-15", "CreateServiceLinkedRole", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,20 +43,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string startTime;
-
-		private int? pageNumber;
-
-		private int? pageSize;
-
-		private string dBInstanceId;
-
 		private string resourceOwnerAccount;
-
-		private string endTime;
 
 		private long? ownerId;
 
+		private string serviceLinkedRole;
+
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -69,58 +63,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -134,19 +77,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -160,9 +91,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override DescribeMigrateTasksForSQLServerResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		[JsonProperty(PropertyName = "ServiceLinkedRole")]
+		public string ServiceLinkedRole
+		{
+			get
+			{
+				return serviceLinkedRole;
+			}
+			set	
+			{
+				serviceLinkedRole = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceLinkedRole", value);
+			}
+		}
+
+        public override CreateServiceLinkedRoleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeMigrateTasksForSQLServerResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateServiceLinkedRoleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

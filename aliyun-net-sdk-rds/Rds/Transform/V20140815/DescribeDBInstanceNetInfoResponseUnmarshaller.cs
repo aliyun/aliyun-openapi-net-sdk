@@ -31,30 +31,31 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeDBInstanceNetInfoResponse describeDBInstanceNetInfoResponse = new DescribeDBInstanceNetInfoResponse();
 
 			describeDBInstanceNetInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeDBInstanceNetInfoResponse.SecurityIPMode = _ctx.StringValue("DescribeDBInstanceNetInfo.SecurityIPMode");
 			describeDBInstanceNetInfoResponse.RequestId = _ctx.StringValue("DescribeDBInstanceNetInfo.RequestId");
 			describeDBInstanceNetInfoResponse.InstanceNetworkType = _ctx.StringValue("DescribeDBInstanceNetInfo.InstanceNetworkType");
-			describeDBInstanceNetInfoResponse.SecurityIPMode = _ctx.StringValue("DescribeDBInstanceNetInfo.SecurityIPMode");
 
 			List<DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_DBInstanceNetInfo> describeDBInstanceNetInfoResponse_dBInstanceNetInfos = new List<DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_DBInstanceNetInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeDBInstanceNetInfo.DBInstanceNetInfos.Length"); i++) {
 				DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_DBInstanceNetInfo dBInstanceNetInfo = new DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_DBInstanceNetInfo();
-				dBInstanceNetInfo.Upgradeable = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].Upgradeable");
-				dBInstanceNetInfo.ExpiredTime = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].ExpiredTime");
-				dBInstanceNetInfo.ConnectionString = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].ConnectionString");
-				dBInstanceNetInfo.IPAddress = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].IPAddress");
-				dBInstanceNetInfo.IPType = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].IPType");
-				dBInstanceNetInfo.Port = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].Port");
-				dBInstanceNetInfo.VPCId = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].VPCId");
 				dBInstanceNetInfo.VSwitchId = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].VSwitchId");
 				dBInstanceNetInfo.ConnectionStringType = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].ConnectionStringType");
+				dBInstanceNetInfo.ConnectionString = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].ConnectionString");
+				dBInstanceNetInfo.ExpiredTime = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].ExpiredTime");
+				dBInstanceNetInfo.Upgradeable = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].Upgradeable");
 				dBInstanceNetInfo.MaxDelayTime = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].MaxDelayTime");
+				dBInstanceNetInfo.IPType = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].IPType");
+				dBInstanceNetInfo.Port = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].Port");
+				dBInstanceNetInfo.BabelfishPort = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].BabelfishPort");
+				dBInstanceNetInfo.VPCId = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].VPCId");
 				dBInstanceNetInfo.DistributionType = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].DistributionType");
+				dBInstanceNetInfo.IPAddress = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].IPAddress");
 
 				List<DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_DBInstanceNetInfo.DescribeDBInstanceNetInfo_SecurityIPGroup> dBInstanceNetInfo_securityIPGroups = new List<DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_DBInstanceNetInfo.DescribeDBInstanceNetInfo_SecurityIPGroup>();
 				for (int j = 0; j < _ctx.Length("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].SecurityIPGroups.Length"); j++) {
 					DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_DBInstanceNetInfo.DescribeDBInstanceNetInfo_SecurityIPGroup securityIPGroup = new DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_DBInstanceNetInfo.DescribeDBInstanceNetInfo_SecurityIPGroup();
-					securityIPGroup.SecurityIPGroupName = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].SecurityIPGroups["+ j +"].SecurityIPGroupName");
 					securityIPGroup.SecurityIPs = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].SecurityIPGroups["+ j +"].SecurityIPs");
+					securityIPGroup.SecurityIPGroupName = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].SecurityIPGroups["+ j +"].SecurityIPGroupName");
 
 					dBInstanceNetInfo_securityIPGroups.Add(securityIPGroup);
 				}
@@ -63,11 +64,11 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				List<DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_DBInstanceNetInfo.DescribeDBInstanceNetInfo_DBInstanceWeight> dBInstanceNetInfo_dBInstanceWeights = new List<DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_DBInstanceNetInfo.DescribeDBInstanceNetInfo_DBInstanceWeight>();
 				for (int j = 0; j < _ctx.Length("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].DBInstanceWeights.Length"); j++) {
 					DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_DBInstanceNetInfo.DescribeDBInstanceNetInfo_DBInstanceWeight dBInstanceWeight = new DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_DBInstanceNetInfo.DescribeDBInstanceNetInfo_DBInstanceWeight();
-					dBInstanceWeight.DBInstanceId = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].DBInstanceWeights["+ j +"].DBInstanceId");
-					dBInstanceWeight.DBInstanceType = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].DBInstanceWeights["+ j +"].DBInstanceType");
 					dBInstanceWeight.Availability = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].DBInstanceWeights["+ j +"].Availability");
 					dBInstanceWeight.Weight = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].DBInstanceWeights["+ j +"].Weight");
+					dBInstanceWeight.DBInstanceId = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].DBInstanceWeights["+ j +"].DBInstanceId");
 					dBInstanceWeight.Role = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].DBInstanceWeights["+ j +"].Role");
+					dBInstanceWeight.DBInstanceType = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].DBInstanceWeights["+ j +"].DBInstanceType");
 
 					dBInstanceNetInfo_dBInstanceWeights.Add(dBInstanceWeight);
 				}

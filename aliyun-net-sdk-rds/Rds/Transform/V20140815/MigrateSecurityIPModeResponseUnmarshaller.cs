@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			MigrateSecurityIPModeResponse migrateSecurityIPModeResponse = new MigrateSecurityIPModeResponse();
 
 			migrateSecurityIPModeResponse.HttpResponse = _ctx.HttpResponse;
-			migrateSecurityIPModeResponse.RequestId = _ctx.StringValue("MigrateSecurityIPMode.RequestId");
-			migrateSecurityIPModeResponse.DBInstanceId = _ctx.StringValue("MigrateSecurityIPMode.DBInstanceId");
 			migrateSecurityIPModeResponse.SecurityIPMode = _ctx.StringValue("MigrateSecurityIPMode.SecurityIPMode");
+			migrateSecurityIPModeResponse.DBInstanceId = _ctx.StringValue("MigrateSecurityIPMode.DBInstanceId");
+			migrateSecurityIPModeResponse.RequestId = _ctx.StringValue("MigrateSecurityIPMode.RequestId");
         
 			return migrateSecurityIPModeResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,110 +25,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeMigrateTaskByIdResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string dBInstanceName;
-
-		private string dBName;
-
-		private string migrateTaskId;
-
-		private string createTime;
+		private string status;
 
 		private string endTime;
 
-		private string backupMode;
+		private string dBInstanceName;
 
-		private string status;
-
-		private string isDBReplaced;
+		private string requestId;
 
 		private string description;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string createTime;
 
-		public string DBInstanceName
-		{
-			get
-			{
-				return dBInstanceName;
-			}
-			set	
-			{
-				dBInstanceName = value;
-			}
-		}
+		private string dBName;
 
-		public string DBName
-		{
-			get
-			{
-				return dBName;
-			}
-			set	
-			{
-				dBName = value;
-			}
-		}
+		private string backupMode;
 
-		public string MigrateTaskId
-		{
-			get
-			{
-				return migrateTaskId;
-			}
-			set	
-			{
-				migrateTaskId = value;
-			}
-		}
+		private string migrateTaskId;
 
-		public string CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
-			}
-		}
+		private string isDBReplaced;
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
-
-		public string BackupMode
-		{
-			get
-			{
-				return backupMode;
-			}
-			set	
-			{
-				backupMode = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Status")]
 		public string Status
 		{
 			get
@@ -141,18 +58,46 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string IsDBReplaced
+		[JsonProperty(PropertyName = "EndTime")]
+		public string EndTime
 		{
 			get
 			{
-				return isDBReplaced;
+				return endTime;
 			}
 			set	
 			{
-				isDBReplaced = value;
+				endTime = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceName")]
+		public string DBInstanceName
+		{
+			get
+			{
+				return dBInstanceName;
+			}
+			set	
+			{
+				dBInstanceName = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -162,6 +107,71 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				description = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "CreateTime")]
+		public string CreateTime
+		{
+			get
+			{
+				return createTime;
+			}
+			set	
+			{
+				createTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBName")]
+		public string DBName
+		{
+			get
+			{
+				return dBName;
+			}
+			set	
+			{
+				dBName = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "BackupMode")]
+		public string BackupMode
+		{
+			get
+			{
+				return backupMode;
+			}
+			set	
+			{
+				backupMode = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "MigrateTaskId")]
+		public string MigrateTaskId
+		{
+			get
+			{
+				return migrateTaskId;
+			}
+			set	
+			{
+				migrateTaskId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "IsDBReplaced")]
+		public string IsDBReplaced
+		{
+			get
+			{
+				return isDBReplaced;
+			}
+			set	
+			{
+				isDBReplaced = value;
 			}
 		}
 	}

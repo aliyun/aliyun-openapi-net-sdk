@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeAvailableZones_AvailableZone> availableZones;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "AvailableZones")]
 		public List<DescribeAvailableZones_AvailableZone> AvailableZones
 		{
 			get
@@ -56,38 +58,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeAvailableZones_AvailableZone
 		{
 
+			private string zoneId;
+
 			private string networkTypes;
 
 			private string regionId;
 
-			private string zoneId;
-
 			private List<DescribeAvailableZones_SupportedEngine> supportedEngines;
 
-			public string NetworkTypes
-			{
-				get
-				{
-					return networkTypes;
-				}
-				set	
-				{
-					networkTypes = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "ZoneId")]
 			public string ZoneId
 			{
 				get
@@ -100,6 +79,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "NetworkTypes")]
+			public string NetworkTypes
+			{
+				get
+				{
+					return networkTypes;
+				}
+				set	
+				{
+					networkTypes = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RegionId")]
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SupportedEngines")]
 			public List<DescribeAvailableZones_SupportedEngine> SupportedEngines
 			{
 				get
@@ -119,6 +125,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 				private List<DescribeAvailableZones_SupportedEngineVersion> supportedEngineVersions;
 
+				[JsonProperty(PropertyName = "Engine")]
 				public string Engine
 				{
 					get
@@ -131,6 +138,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "SupportedEngineVersions")]
 				public List<DescribeAvailableZones_SupportedEngineVersion> SupportedEngineVersions
 				{
 					get
@@ -150,6 +158,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 					private List<DescribeAvailableZones_SupportedCategory> supportedCategorys;
 
+					[JsonProperty(PropertyName = "Version")]
 					public string Version
 					{
 						get
@@ -162,6 +171,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 						}
 					}
 
+					[JsonProperty(PropertyName = "SupportedCategorys")]
 					public List<DescribeAvailableZones_SupportedCategory> SupportedCategorys
 					{
 						get
@@ -181,6 +191,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 						private List<DescribeAvailableZones_SupportedStorageType> supportedStorageTypes;
 
+						[JsonProperty(PropertyName = "Category")]
 						public string Category
 						{
 							get
@@ -193,6 +204,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 							}
 						}
 
+						[JsonProperty(PropertyName = "SupportedStorageTypes")]
 						public List<DescribeAvailableZones_SupportedStorageType> SupportedStorageTypes
 						{
 							get
@@ -210,6 +222,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 							private string storageType;
 
+							[JsonProperty(PropertyName = "StorageType")]
 							public string StorageType
 							{
 								get

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeDBInstanceIPArrayList_DBInstanceIPArray> items;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeDBInstanceIPArrayList_DBInstanceIPArray> Items
 		{
 			get
@@ -56,28 +58,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeDBInstanceIPArrayList_DBInstanceIPArray
 		{
 
-			private string dBInstanceIPArrayName;
-
 			private string dBInstanceIPArrayAttribute;
+
+			private string whitelistNetworkType;
+
+			private string dBInstanceIPArrayName;
 
 			private string securityIPType;
 
 			private string securityIPList;
 
-			private string whitelistNetworkType;
-
-			public string DBInstanceIPArrayName
-			{
-				get
-				{
-					return dBInstanceIPArrayName;
-				}
-				set	
-				{
-					dBInstanceIPArrayName = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "DBInstanceIPArrayAttribute")]
 			public string DBInstanceIPArrayAttribute
 			{
 				get
@@ -90,6 +81,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "WhitelistNetworkType")]
+			public string WhitelistNetworkType
+			{
+				get
+				{
+					return whitelistNetworkType;
+				}
+				set	
+				{
+					whitelistNetworkType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceIPArrayName")]
+			public string DBInstanceIPArrayName
+			{
+				get
+				{
+					return dBInstanceIPArrayName;
+				}
+				set	
+				{
+					dBInstanceIPArrayName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SecurityIPType")]
 			public string SecurityIPType
 			{
 				get
@@ -102,6 +120,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "SecurityIPList")]
 			public string SecurityIPList
 			{
 				get
@@ -111,18 +130,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					securityIPList = value;
-				}
-			}
-
-			public string WhitelistNetworkType
-			{
-				get
-				{
-					return whitelistNetworkType;
-				}
-				set	
-				{
-					whitelistNetworkType = value;
 				}
 			}
 		}

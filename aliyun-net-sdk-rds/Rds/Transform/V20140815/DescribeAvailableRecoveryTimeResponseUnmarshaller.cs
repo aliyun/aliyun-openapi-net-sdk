@@ -31,12 +31,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeAvailableRecoveryTimeResponse describeAvailableRecoveryTimeResponse = new DescribeAvailableRecoveryTimeResponse();
 
 			describeAvailableRecoveryTimeResponse.HttpResponse = _ctx.HttpResponse;
-			describeAvailableRecoveryTimeResponse.RequestId = _ctx.StringValue("DescribeAvailableRecoveryTime.RequestId");
-			describeAvailableRecoveryTimeResponse.RecoveryBeginTime = _ctx.StringValue("DescribeAvailableRecoveryTime.RecoveryBeginTime");
 			describeAvailableRecoveryTimeResponse.RecoveryEndTime = _ctx.StringValue("DescribeAvailableRecoveryTime.RecoveryEndTime");
-			describeAvailableRecoveryTimeResponse.DBInstanceId = _ctx.StringValue("DescribeAvailableRecoveryTime.DBInstanceId");
-			describeAvailableRecoveryTimeResponse.RegionId = _ctx.StringValue("DescribeAvailableRecoveryTime.RegionId");
+			describeAvailableRecoveryTimeResponse.RequestId = _ctx.StringValue("DescribeAvailableRecoveryTime.RequestId");
 			describeAvailableRecoveryTimeResponse.CrossBackupId = _ctx.IntegerValue("DescribeAvailableRecoveryTime.CrossBackupId");
+			describeAvailableRecoveryTimeResponse.DBInstanceId = _ctx.StringValue("DescribeAvailableRecoveryTime.DBInstanceId");
+			describeAvailableRecoveryTimeResponse.RecoveryBeginTime = _ctx.StringValue("DescribeAvailableRecoveryTime.RecoveryBeginTime");
+			describeAvailableRecoveryTimeResponse.RegionId = _ctx.StringValue("DescribeAvailableRecoveryTime.RegionId");
         
 			return describeAvailableRecoveryTimeResponse;
         }

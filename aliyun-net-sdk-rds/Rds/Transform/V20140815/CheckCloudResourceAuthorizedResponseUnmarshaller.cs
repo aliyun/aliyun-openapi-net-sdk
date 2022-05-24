@@ -32,8 +32,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			checkCloudResourceAuthorizedResponse.HttpResponse = _ctx.HttpResponse;
 			checkCloudResourceAuthorizedResponse.RequestId = _ctx.StringValue("CheckCloudResourceAuthorized.RequestId");
-			checkCloudResourceAuthorizedResponse.AuthorizationState = _ctx.IntegerValue("CheckCloudResourceAuthorized.AuthorizationState");
 			checkCloudResourceAuthorizedResponse.RoleArn = _ctx.StringValue("CheckCloudResourceAuthorized.RoleArn");
+			checkCloudResourceAuthorizedResponse.AuthorizationState = _ctx.IntegerValue("CheckCloudResourceAuthorized.AuthorizationState");
         
 			return checkCloudResourceAuthorizedResponse;
         }

@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			CreateDdrInstanceResponse createDdrInstanceResponse = new CreateDdrInstanceResponse();
 
 			createDdrInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			createDdrInstanceResponse.RequestId = _ctx.StringValue("CreateDdrInstance.RequestId");
 			createDdrInstanceResponse.DBInstanceId = _ctx.StringValue("CreateDdrInstance.DBInstanceId");
-			createDdrInstanceResponse.OrderId = _ctx.StringValue("CreateDdrInstance.OrderId");
-			createDdrInstanceResponse.ConnectionString = _ctx.StringValue("CreateDdrInstance.ConnectionString");
+			createDdrInstanceResponse.RequestId = _ctx.StringValue("CreateDdrInstance.RequestId");
 			createDdrInstanceResponse.Port = _ctx.StringValue("CreateDdrInstance.Port");
+			createDdrInstanceResponse.ConnectionString = _ctx.StringValue("CreateDdrInstance.ConnectionString");
+			createDdrInstanceResponse.OrderId = _ctx.StringValue("CreateDdrInstance.OrderId");
         
 			return createDdrInstanceResponse;
         }

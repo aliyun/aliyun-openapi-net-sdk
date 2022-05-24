@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeParameterGroupsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? signalForOptimizeParams;
+
+		private string requestId;
 
 		private List<DescribeParameterGroups_ParameterGroup> parameterGroups;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "SignalForOptimizeParams")]
 		public bool? SignalForOptimizeParams
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ParameterGroups")]
 		public List<DescribeParameterGroups_ParameterGroup> ParameterGroups
 		{
 			get
@@ -70,122 +73,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeParameterGroups_ParameterGroup
 		{
 
-			private int? parameterGroupType;
-
-			private string parameterGroupName;
-
-			private int? paramCounts;
+			private string updateTime;
 
 			private string parameterGroupDesc;
 
-			private int? forceRestart;
-
-			private string engine;
-
-			private string engineVersion;
-
 			private string createTime;
 
-			private string updateTime;
+			private int? forceRestart;
 
 			private string parameterGroupId;
 
-			public int? ParameterGroupType
-			{
-				get
-				{
-					return parameterGroupType;
-				}
-				set	
-				{
-					parameterGroupType = value;
-				}
-			}
+			private string parameterGroupName;
 
-			public string ParameterGroupName
-			{
-				get
-				{
-					return parameterGroupName;
-				}
-				set	
-				{
-					parameterGroupName = value;
-				}
-			}
+			private string engine;
 
-			public int? ParamCounts
-			{
-				get
-				{
-					return paramCounts;
-				}
-				set	
-				{
-					paramCounts = value;
-				}
-			}
+			private int? paramCounts;
 
-			public string ParameterGroupDesc
-			{
-				get
-				{
-					return parameterGroupDesc;
-				}
-				set	
-				{
-					parameterGroupDesc = value;
-				}
-			}
+			private string engineVersion;
 
-			public int? ForceRestart
-			{
-				get
-				{
-					return forceRestart;
-				}
-				set	
-				{
-					forceRestart = value;
-				}
-			}
+			private int? parameterGroupType;
 
-			public string Engine
-			{
-				get
-				{
-					return engine;
-				}
-				set	
-				{
-					engine = value;
-				}
-			}
-
-			public string EngineVersion
-			{
-				get
-				{
-					return engineVersion;
-				}
-				set	
-				{
-					engineVersion = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "UpdateTime")]
 			public string UpdateTime
 			{
 				get
@@ -198,6 +106,46 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ParameterGroupDesc")]
+			public string ParameterGroupDesc
+			{
+				get
+				{
+					return parameterGroupDesc;
+				}
+				set	
+				{
+					parameterGroupDesc = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreateTime")]
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ForceRestart")]
+			public int? ForceRestart
+			{
+				get
+				{
+					return forceRestart;
+				}
+				set	
+				{
+					forceRestart = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ParameterGroupId")]
 			public string ParameterGroupId
 			{
 				get
@@ -207,6 +155,71 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					parameterGroupId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ParameterGroupName")]
+			public string ParameterGroupName
+			{
+				get
+				{
+					return parameterGroupName;
+				}
+				set	
+				{
+					parameterGroupName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Engine")]
+			public string Engine
+			{
+				get
+				{
+					return engine;
+				}
+				set	
+				{
+					engine = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ParamCounts")]
+			public int? ParamCounts
+			{
+				get
+				{
+					return paramCounts;
+				}
+				set	
+				{
+					paramCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EngineVersion")]
+			public string EngineVersion
+			{
+				get
+				{
+					return engineVersion;
+				}
+				set	
+				{
+					engineVersion = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ParameterGroupType")]
+			public int? ParameterGroupType
+			{
+				get
+				{
+					return parameterGroupType;
+				}
+				set	
+				{
+					parameterGroupType = value;
 				}
 			}
 		}

@@ -35,7 +35,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			CreateGADInstanceResponse.CreateGADInstance_Result result = new CreateGADInstanceResponse.CreateGADInstance_Result();
 			result.GadInstanceName = _ctx.StringValue("CreateGADInstance.Result.GadInstanceName");
-			result.CreateCount = _ctx.StringValue("CreateGADInstance.Result.CreateCount");
+			result.CreateMemberCount = _ctx.StringValue("CreateGADInstance.Result.CreateMemberCount");
+			result.TaskID = _ctx.StringValue("CreateGADInstance.Result.TaskID");
 			createGADInstanceResponse.Result = result;
         
 			return createGADInstanceResponse;

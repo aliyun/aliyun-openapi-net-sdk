@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,130 +25,59 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeBackupPolicyResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? backupRetentionPeriod;
-
-		private string preferredNextBackupTime;
-
-		private string preferredBackupTime;
-
-		private string preferredBackupPeriod;
-
-		private string backupLog;
-
 		private int? logBackupRetentionPeriod;
-
-		private string enableBackupLog;
-
-		private int? localLogRetentionHours;
-
-		private string localLogRetentionSpace;
-
-		private string duplication;
-
-		private string duplicationContent;
-
-		private string highSpaceUsageProtection;
-
-		private string logBackupFrequency;
-
-		private string compressType;
-
-		private string archiveBackupRetentionPeriod;
 
 		private string archiveBackupKeepPolicy;
 
 		private string archiveBackupKeepCount;
 
-		private string releasedKeepPolicy;
+		private int? localLogRetentionHours;
 
-		private int? logBackupLocalRetentionNumber;
+		private int? backupRetentionPeriod;
 
-		private string category;
+		private string requestId;
+
+		private string preferredBackupPeriod;
+
+		private string compressType;
 
 		private int? supportReleasedKeep;
 
-		private string backupInterval;
+		private string localLogRetentionSpace;
 
 		private int? supportVolumeShadowCopy;
 
 		private string backupMethod;
 
+		private string logBackupFrequency;
+
+		private string preferredNextBackupTime;
+
+		private string highSpaceUsageProtection;
+
+		private string duplicationContent;
+
+		private string archiveBackupRetentionPeriod;
+
+		private string backupInterval;
+
+		private string releasedKeepPolicy;
+
+		private string preferredBackupTime;
+
+		private string duplication;
+
+		private int? logBackupLocalRetentionNumber;
+
+		private string category;
+
+		private string enableBackupLog;
+
+		private string backupLog;
+
 		private DescribeBackupPolicy_DuplicationLocation duplicationLocation;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? BackupRetentionPeriod
-		{
-			get
-			{
-				return backupRetentionPeriod;
-			}
-			set	
-			{
-				backupRetentionPeriod = value;
-			}
-		}
-
-		public string PreferredNextBackupTime
-		{
-			get
-			{
-				return preferredNextBackupTime;
-			}
-			set	
-			{
-				preferredNextBackupTime = value;
-			}
-		}
-
-		public string PreferredBackupTime
-		{
-			get
-			{
-				return preferredBackupTime;
-			}
-			set	
-			{
-				preferredBackupTime = value;
-			}
-		}
-
-		public string PreferredBackupPeriod
-		{
-			get
-			{
-				return preferredBackupPeriod;
-			}
-			set	
-			{
-				preferredBackupPeriod = value;
-			}
-		}
-
-		public string BackupLog
-		{
-			get
-			{
-				return backupLog;
-			}
-			set	
-			{
-				backupLog = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "LogBackupRetentionPeriod")]
 		public int? LogBackupRetentionPeriod
 		{
 			get
@@ -161,114 +90,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string EnableBackupLog
-		{
-			get
-			{
-				return enableBackupLog;
-			}
-			set	
-			{
-				enableBackupLog = value;
-			}
-		}
-
-		public int? LocalLogRetentionHours
-		{
-			get
-			{
-				return localLogRetentionHours;
-			}
-			set	
-			{
-				localLogRetentionHours = value;
-			}
-		}
-
-		public string LocalLogRetentionSpace
-		{
-			get
-			{
-				return localLogRetentionSpace;
-			}
-			set	
-			{
-				localLogRetentionSpace = value;
-			}
-		}
-
-		public string Duplication
-		{
-			get
-			{
-				return duplication;
-			}
-			set	
-			{
-				duplication = value;
-			}
-		}
-
-		public string DuplicationContent
-		{
-			get
-			{
-				return duplicationContent;
-			}
-			set	
-			{
-				duplicationContent = value;
-			}
-		}
-
-		public string HighSpaceUsageProtection
-		{
-			get
-			{
-				return highSpaceUsageProtection;
-			}
-			set	
-			{
-				highSpaceUsageProtection = value;
-			}
-		}
-
-		public string LogBackupFrequency
-		{
-			get
-			{
-				return logBackupFrequency;
-			}
-			set	
-			{
-				logBackupFrequency = value;
-			}
-		}
-
-		public string CompressType
-		{
-			get
-			{
-				return compressType;
-			}
-			set	
-			{
-				compressType = value;
-			}
-		}
-
-		public string ArchiveBackupRetentionPeriod
-		{
-			get
-			{
-				return archiveBackupRetentionPeriod;
-			}
-			set	
-			{
-				archiveBackupRetentionPeriod = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ArchiveBackupKeepPolicy")]
 		public string ArchiveBackupKeepPolicy
 		{
 			get
@@ -281,6 +103,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ArchiveBackupKeepCount")]
 		public string ArchiveBackupKeepCount
 		{
 			get
@@ -293,42 +116,72 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ReleasedKeepPolicy
+		[JsonProperty(PropertyName = "LocalLogRetentionHours")]
+		public int? LocalLogRetentionHours
 		{
 			get
 			{
-				return releasedKeepPolicy;
+				return localLogRetentionHours;
 			}
 			set	
 			{
-				releasedKeepPolicy = value;
+				localLogRetentionHours = value;
 			}
 		}
 
-		public int? LogBackupLocalRetentionNumber
+		[JsonProperty(PropertyName = "BackupRetentionPeriod")]
+		public int? BackupRetentionPeriod
 		{
 			get
 			{
-				return logBackupLocalRetentionNumber;
+				return backupRetentionPeriod;
 			}
 			set	
 			{
-				logBackupLocalRetentionNumber = value;
+				backupRetentionPeriod = value;
 			}
 		}
 
-		public string Category
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return category;
+				return requestId;
 			}
 			set	
 			{
-				category = value;
+				requestId = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "PreferredBackupPeriod")]
+		public string PreferredBackupPeriod
+		{
+			get
+			{
+				return preferredBackupPeriod;
+			}
+			set	
+			{
+				preferredBackupPeriod = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "CompressType")]
+		public string CompressType
+		{
+			get
+			{
+				return compressType;
+			}
+			set	
+			{
+				compressType = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SupportReleasedKeep")]
 		public int? SupportReleasedKeep
 		{
 			get
@@ -341,18 +194,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string BackupInterval
+		[JsonProperty(PropertyName = "LocalLogRetentionSpace")]
+		public string LocalLogRetentionSpace
 		{
 			get
 			{
-				return backupInterval;
+				return localLogRetentionSpace;
 			}
 			set	
 			{
-				backupInterval = value;
+				localLogRetentionSpace = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "SupportVolumeShadowCopy")]
 		public int? SupportVolumeShadowCopy
 		{
 			get
@@ -365,6 +220,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "BackupMethod")]
 		public string BackupMethod
 		{
 			get
@@ -377,6 +233,176 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "LogBackupFrequency")]
+		public string LogBackupFrequency
+		{
+			get
+			{
+				return logBackupFrequency;
+			}
+			set	
+			{
+				logBackupFrequency = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PreferredNextBackupTime")]
+		public string PreferredNextBackupTime
+		{
+			get
+			{
+				return preferredNextBackupTime;
+			}
+			set	
+			{
+				preferredNextBackupTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "HighSpaceUsageProtection")]
+		public string HighSpaceUsageProtection
+		{
+			get
+			{
+				return highSpaceUsageProtection;
+			}
+			set	
+			{
+				highSpaceUsageProtection = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DuplicationContent")]
+		public string DuplicationContent
+		{
+			get
+			{
+				return duplicationContent;
+			}
+			set	
+			{
+				duplicationContent = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ArchiveBackupRetentionPeriod")]
+		public string ArchiveBackupRetentionPeriod
+		{
+			get
+			{
+				return archiveBackupRetentionPeriod;
+			}
+			set	
+			{
+				archiveBackupRetentionPeriod = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "BackupInterval")]
+		public string BackupInterval
+		{
+			get
+			{
+				return backupInterval;
+			}
+			set	
+			{
+				backupInterval = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ReleasedKeepPolicy")]
+		public string ReleasedKeepPolicy
+		{
+			get
+			{
+				return releasedKeepPolicy;
+			}
+			set	
+			{
+				releasedKeepPolicy = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PreferredBackupTime")]
+		public string PreferredBackupTime
+		{
+			get
+			{
+				return preferredBackupTime;
+			}
+			set	
+			{
+				preferredBackupTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Duplication")]
+		public string Duplication
+		{
+			get
+			{
+				return duplication;
+			}
+			set	
+			{
+				duplication = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "LogBackupLocalRetentionNumber")]
+		public int? LogBackupLocalRetentionNumber
+		{
+			get
+			{
+				return logBackupLocalRetentionNumber;
+			}
+			set	
+			{
+				logBackupLocalRetentionNumber = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Category")]
+		public string Category
+		{
+			get
+			{
+				return category;
+			}
+			set	
+			{
+				category = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "EnableBackupLog")]
+		public string EnableBackupLog
+		{
+			get
+			{
+				return enableBackupLog;
+			}
+			set	
+			{
+				enableBackupLog = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "BackupLog")]
+		public string BackupLog
+		{
+			get
+			{
+				return backupLog;
+			}
+			set	
+			{
+				backupLog = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DuplicationLocation")]
 		public DescribeBackupPolicy_DuplicationLocation DuplicationLocation
 		{
 			get
@@ -396,6 +422,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private DescribeBackupPolicy_Location location;
 
+			[JsonProperty(PropertyName = "Sotrage")]
 			public string Sotrage
 			{
 				get
@@ -408,6 +435,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Location")]
 			public DescribeBackupPolicy_Location Location
 			{
 				get
@@ -423,22 +451,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			public class DescribeBackupPolicy_Location
 			{
 
-				private string endpoint;
-
 				private string bucket;
 
-				public string Endpoint
-				{
-					get
-					{
-						return endpoint;
-					}
-					set	
-					{
-						endpoint = value;
-					}
-				}
+				private string endpoint;
 
+				[JsonProperty(PropertyName = "Bucket")]
 				public string Bucket
 				{
 					get
@@ -448,6 +465,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						bucket = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Endpoint")]
+				public string Endpoint
+				{
+					get
+					{
+						return endpoint;
+					}
+					set	
+					{
+						endpoint = value;
 					}
 				}
 			}

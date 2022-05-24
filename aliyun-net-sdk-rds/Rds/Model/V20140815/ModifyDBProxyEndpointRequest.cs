@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -66,6 +67,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string readOnlyInstanceDistributionType;
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -79,6 +81,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ConfigDBProxyFeatures")]
 		public string ConfigDBProxyFeatures
 		{
 			get
@@ -92,6 +95,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -105,6 +109,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ReadOnlyInstanceWeight")]
 		public string ReadOnlyInstanceWeight
 		{
 			get
@@ -118,6 +123,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ReadOnlyInstanceMaxDelayTime")]
 		public string ReadOnlyInstanceMaxDelayTime
 		{
 			get
@@ -131,6 +137,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -144,6 +151,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DbEndpointAliases")]
 		public string DbEndpointAliases
 		{
 			get
@@ -157,6 +165,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DbEndpointOperator")]
 		public string DbEndpointOperator
 		{
 			get
@@ -170,6 +179,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DbEndpointType")]
 		public string DbEndpointType
 		{
 			get
@@ -183,6 +193,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -196,6 +207,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DbEndpointReadWriteMode")]
 		public string DbEndpointReadWriteMode
 		{
 			get
@@ -209,6 +221,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBProxyEndpointId")]
 		public string DBProxyEndpointId
 		{
 			get
@@ -222,6 +235,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ReadOnlyInstanceDistributionType")]
 		public string ReadOnlyInstanceDistributionType
 		{
 			get

@@ -31,28 +31,28 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeCrossRegionLogBackupFilesResponse describeCrossRegionLogBackupFilesResponse = new DescribeCrossRegionLogBackupFilesResponse();
 
 			describeCrossRegionLogBackupFilesResponse.HttpResponse = _ctx.HttpResponse;
-			describeCrossRegionLogBackupFilesResponse.RequestId = _ctx.StringValue("DescribeCrossRegionLogBackupFiles.RequestId");
-			describeCrossRegionLogBackupFilesResponse.RegionId = _ctx.StringValue("DescribeCrossRegionLogBackupFiles.RegionId");
-			describeCrossRegionLogBackupFilesResponse.DBInstanceId = _ctx.StringValue("DescribeCrossRegionLogBackupFiles.DBInstanceId");
-			describeCrossRegionLogBackupFilesResponse.StartTime = _ctx.StringValue("DescribeCrossRegionLogBackupFiles.StartTime");
 			describeCrossRegionLogBackupFilesResponse.EndTime = _ctx.StringValue("DescribeCrossRegionLogBackupFiles.EndTime");
-			describeCrossRegionLogBackupFilesResponse.TotalRecordCount = _ctx.IntegerValue("DescribeCrossRegionLogBackupFiles.TotalRecordCount");
+			describeCrossRegionLogBackupFilesResponse.StartTime = _ctx.StringValue("DescribeCrossRegionLogBackupFiles.StartTime");
+			describeCrossRegionLogBackupFilesResponse.RequestId = _ctx.StringValue("DescribeCrossRegionLogBackupFiles.RequestId");
 			describeCrossRegionLogBackupFilesResponse.PageRecordCount = _ctx.IntegerValue("DescribeCrossRegionLogBackupFiles.PageRecordCount");
+			describeCrossRegionLogBackupFilesResponse.TotalRecordCount = _ctx.IntegerValue("DescribeCrossRegionLogBackupFiles.TotalRecordCount");
+			describeCrossRegionLogBackupFilesResponse.DBInstanceId = _ctx.StringValue("DescribeCrossRegionLogBackupFiles.DBInstanceId");
 			describeCrossRegionLogBackupFilesResponse.PageNumber = _ctx.IntegerValue("DescribeCrossRegionLogBackupFiles.PageNumber");
+			describeCrossRegionLogBackupFilesResponse.RegionId = _ctx.StringValue("DescribeCrossRegionLogBackupFiles.RegionId");
 
 			List<DescribeCrossRegionLogBackupFilesResponse.DescribeCrossRegionLogBackupFiles_Item> describeCrossRegionLogBackupFilesResponse_items = new List<DescribeCrossRegionLogBackupFilesResponse.DescribeCrossRegionLogBackupFiles_Item>();
 			for (int i = 0; i < _ctx.Length("DescribeCrossRegionLogBackupFiles.Items.Length"); i++) {
 				DescribeCrossRegionLogBackupFilesResponse.DescribeCrossRegionLogBackupFiles_Item item = new DescribeCrossRegionLogBackupFilesResponse.DescribeCrossRegionLogBackupFiles_Item();
-				item.CrossLogBackupId = _ctx.IntegerValue("DescribeCrossRegionLogBackupFiles.Items["+ i +"].CrossLogBackupId");
-				item.CrossBackupRegion = _ctx.StringValue("DescribeCrossRegionLogBackupFiles.Items["+ i +"].CrossBackupRegion");
-				item.CrossLogBackupSize = _ctx.LongValue("DescribeCrossRegionLogBackupFiles.Items["+ i +"].CrossLogBackupSize");
 				item.LogBeginTime = _ctx.StringValue("DescribeCrossRegionLogBackupFiles.Items["+ i +"].LogBeginTime");
-				item.LogEndTime = _ctx.StringValue("DescribeCrossRegionLogBackupFiles.Items["+ i +"].LogEndTime");
-				item.CrossDownloadLink = _ctx.StringValue("DescribeCrossRegionLogBackupFiles.Items["+ i +"].CrossDownloadLink");
-				item.CrossIntranetDownloadLink = _ctx.StringValue("DescribeCrossRegionLogBackupFiles.Items["+ i +"].CrossIntranetDownloadLink");
 				item.LinkExpiredTime = _ctx.StringValue("DescribeCrossRegionLogBackupFiles.Items["+ i +"].LinkExpiredTime");
+				item.CrossIntranetDownloadLink = _ctx.StringValue("DescribeCrossRegionLogBackupFiles.Items["+ i +"].CrossIntranetDownloadLink");
 				item.LogFileName = _ctx.StringValue("DescribeCrossRegionLogBackupFiles.Items["+ i +"].LogFileName");
+				item.CrossBackupRegion = _ctx.StringValue("DescribeCrossRegionLogBackupFiles.Items["+ i +"].CrossBackupRegion");
+				item.CrossDownloadLink = _ctx.StringValue("DescribeCrossRegionLogBackupFiles.Items["+ i +"].CrossDownloadLink");
+				item.CrossLogBackupSize = _ctx.LongValue("DescribeCrossRegionLogBackupFiles.Items["+ i +"].CrossLogBackupSize");
 				item.InstanceId = _ctx.IntegerValue("DescribeCrossRegionLogBackupFiles.Items["+ i +"].InstanceId");
+				item.CrossLogBackupId = _ctx.IntegerValue("DescribeCrossRegionLogBackupFiles.Items["+ i +"].CrossLogBackupId");
+				item.LogEndTime = _ctx.StringValue("DescribeCrossRegionLogBackupFiles.Items["+ i +"].LogEndTime");
 
 				describeCrossRegionLogBackupFilesResponse_items.Add(item);
 			}

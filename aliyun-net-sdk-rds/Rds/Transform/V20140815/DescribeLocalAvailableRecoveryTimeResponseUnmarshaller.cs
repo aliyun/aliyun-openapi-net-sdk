@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeLocalAvailableRecoveryTimeResponse describeLocalAvailableRecoveryTimeResponse = new DescribeLocalAvailableRecoveryTimeResponse();
 
 			describeLocalAvailableRecoveryTimeResponse.HttpResponse = _ctx.HttpResponse;
-			describeLocalAvailableRecoveryTimeResponse.RequestId = _ctx.StringValue("DescribeLocalAvailableRecoveryTime.RequestId");
-			describeLocalAvailableRecoveryTimeResponse.DBInstanceId = _ctx.StringValue("DescribeLocalAvailableRecoveryTime.DBInstanceId");
-			describeLocalAvailableRecoveryTimeResponse.RecoveryBeginTime = _ctx.StringValue("DescribeLocalAvailableRecoveryTime.RecoveryBeginTime");
 			describeLocalAvailableRecoveryTimeResponse.RecoveryEndTime = _ctx.StringValue("DescribeLocalAvailableRecoveryTime.RecoveryEndTime");
+			describeLocalAvailableRecoveryTimeResponse.DBInstanceId = _ctx.StringValue("DescribeLocalAvailableRecoveryTime.DBInstanceId");
+			describeLocalAvailableRecoveryTimeResponse.RequestId = _ctx.StringValue("DescribeLocalAvailableRecoveryTime.RequestId");
+			describeLocalAvailableRecoveryTimeResponse.RecoveryBeginTime = _ctx.StringValue("DescribeLocalAvailableRecoveryTime.RecoveryBeginTime");
         
 			return describeLocalAvailableRecoveryTimeResponse;
         }

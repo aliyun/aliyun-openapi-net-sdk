@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private DescribeRenewalPrice_PriceInfo priceInfo;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -43,6 +44,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Rules")]
 		public List<DescribeRenewalPrice_Rule> Rules
 		{
 			get
@@ -55,6 +57,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PriceInfo")]
 		public DescribeRenewalPrice_PriceInfo PriceInfo
 		{
 			get
@@ -70,24 +73,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeRenewalPrice_Rule
 		{
 
-			private long? ruleId;
-
 			private string name;
 
 			private string description;
 
-			public long? RuleId
-			{
-				get
-				{
-					return ruleId;
-				}
-				set	
-				{
-					ruleId = value;
-				}
-			}
+			private long? ruleId;
 
+			[JsonProperty(PropertyName = "Name")]
 			public string Name
 			{
 				get
@@ -100,6 +92,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Description")]
 			public string Description
 			{
 				get
@@ -111,18 +104,31 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					description = value;
 				}
 			}
+
+			[JsonProperty(PropertyName = "RuleId")]
+			public long? RuleId
+			{
+				get
+				{
+					return ruleId;
+				}
+				set	
+				{
+					ruleId = value;
+				}
+			}
 		}
 
 		public class DescribeRenewalPrice_PriceInfo
 		{
 
-			private string currency;
-
 			private float? originalPrice;
 
-			private float? tradePrice;
-
 			private float? discountPrice;
+
+			private string currency;
+
+			private float? tradePrice;
 
 			private List<DescribeRenewalPrice_Coupon> coupons;
 
@@ -130,18 +136,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private DescribeRenewalPrice_ActivityInfo activityInfo;
 
-			public string Currency
-			{
-				get
-				{
-					return currency;
-				}
-				set	
-				{
-					currency = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "OriginalPrice")]
 			public float? OriginalPrice
 			{
 				get
@@ -154,18 +149,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public float? TradePrice
-			{
-				get
-				{
-					return tradePrice;
-				}
-				set	
-				{
-					tradePrice = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "DiscountPrice")]
 			public float? DiscountPrice
 			{
 				get
@@ -178,6 +162,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Currency")]
+			public string Currency
+			{
+				get
+				{
+					return currency;
+				}
+				set	
+				{
+					currency = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TradePrice")]
+			public float? TradePrice
+			{
+				get
+				{
+					return tradePrice;
+				}
+				set	
+				{
+					tradePrice = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Coupons")]
 			public List<DescribeRenewalPrice_Coupon> Coupons
 			{
 				get
@@ -190,6 +201,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "RuleIds")]
 			public List<string> RuleIds
 			{
 				get
@@ -202,6 +214,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ActivityInfo")]
 			public DescribeRenewalPrice_ActivityInfo ActivityInfo
 			{
 				get
@@ -217,14 +230,28 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			public class DescribeRenewalPrice_Coupon
 			{
 
+				private string isSelected;
+
 				private string couponNo;
 
 				private string name;
 
 				private string description;
 
-				private string isSelected;
+				[JsonProperty(PropertyName = "IsSelected")]
+				public string IsSelected
+				{
+					get
+					{
+						return isSelected;
+					}
+					set	
+					{
+						isSelected = value;
+					}
+				}
 
+				[JsonProperty(PropertyName = "CouponNo")]
 				public string CouponNo
 				{
 					get
@@ -237,6 +264,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "Name")]
 				public string Name
 				{
 					get
@@ -249,6 +277,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "Description")]
 				public string Description
 				{
 					get
@@ -258,18 +287,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						description = value;
-					}
-				}
-
-				public string IsSelected
-				{
-					get
-					{
-						return isSelected;
-					}
-					set	
-					{
-						isSelected = value;
 					}
 				}
 			}
@@ -283,6 +300,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 				private string success;
 
+				[JsonProperty(PropertyName = "CheckErrMsg")]
 				public string CheckErrMsg
 				{
 					get
@@ -295,6 +313,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "ErrorCode")]
 				public string ErrorCode
 				{
 					get
@@ -307,6 +326,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "Success")]
 				public string Success
 				{
 					get

@@ -31,16 +31,16 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeMigrateTaskByIdResponse describeMigrateTaskByIdResponse = new DescribeMigrateTaskByIdResponse();
 
 			describeMigrateTaskByIdResponse.HttpResponse = _ctx.HttpResponse;
-			describeMigrateTaskByIdResponse.RequestId = _ctx.StringValue("DescribeMigrateTaskById.RequestId");
-			describeMigrateTaskByIdResponse.DBInstanceName = _ctx.StringValue("DescribeMigrateTaskById.DBInstanceName");
-			describeMigrateTaskByIdResponse.DBName = _ctx.StringValue("DescribeMigrateTaskById.DBName");
-			describeMigrateTaskByIdResponse.MigrateTaskId = _ctx.StringValue("DescribeMigrateTaskById.MigrateTaskId");
-			describeMigrateTaskByIdResponse.CreateTime = _ctx.StringValue("DescribeMigrateTaskById.CreateTime");
-			describeMigrateTaskByIdResponse.EndTime = _ctx.StringValue("DescribeMigrateTaskById.EndTime");
-			describeMigrateTaskByIdResponse.BackupMode = _ctx.StringValue("DescribeMigrateTaskById.BackupMode");
 			describeMigrateTaskByIdResponse.Status = _ctx.StringValue("DescribeMigrateTaskById.Status");
-			describeMigrateTaskByIdResponse.IsDBReplaced = _ctx.StringValue("DescribeMigrateTaskById.IsDBReplaced");
+			describeMigrateTaskByIdResponse.EndTime = _ctx.StringValue("DescribeMigrateTaskById.EndTime");
+			describeMigrateTaskByIdResponse.DBInstanceName = _ctx.StringValue("DescribeMigrateTaskById.DBInstanceName");
+			describeMigrateTaskByIdResponse.RequestId = _ctx.StringValue("DescribeMigrateTaskById.RequestId");
 			describeMigrateTaskByIdResponse.Description = _ctx.StringValue("DescribeMigrateTaskById.Description");
+			describeMigrateTaskByIdResponse.CreateTime = _ctx.StringValue("DescribeMigrateTaskById.CreateTime");
+			describeMigrateTaskByIdResponse.DBName = _ctx.StringValue("DescribeMigrateTaskById.DBName");
+			describeMigrateTaskByIdResponse.BackupMode = _ctx.StringValue("DescribeMigrateTaskById.BackupMode");
+			describeMigrateTaskByIdResponse.MigrateTaskId = _ctx.StringValue("DescribeMigrateTaskById.MigrateTaskId");
+			describeMigrateTaskByIdResponse.IsDBReplaced = _ctx.StringValue("DescribeMigrateTaskById.IsDBReplaced");
         
 			return describeMigrateTaskByIdResponse;
         }

@@ -31,15 +31,15 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeDBInstanceEncryptionKeyResponse describeDBInstanceEncryptionKeyResponse = new DescribeDBInstanceEncryptionKeyResponse();
 
 			describeDBInstanceEncryptionKeyResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBInstanceEncryptionKeyResponse.RequestId = _ctx.StringValue("DescribeDBInstanceEncryptionKey.RequestId");
-			describeDBInstanceEncryptionKeyResponse.EncryptionKey = _ctx.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKey");
-			describeDBInstanceEncryptionKeyResponse.Description = _ctx.StringValue("DescribeDBInstanceEncryptionKey.Description");
-			describeDBInstanceEncryptionKeyResponse.KeyUsage = _ctx.StringValue("DescribeDBInstanceEncryptionKey.KeyUsage");
 			describeDBInstanceEncryptionKeyResponse.DeleteDate = _ctx.StringValue("DescribeDBInstanceEncryptionKey.DeleteDate");
-			describeDBInstanceEncryptionKeyResponse.Creator = _ctx.StringValue("DescribeDBInstanceEncryptionKey.Creator");
+			describeDBInstanceEncryptionKeyResponse.RequestId = _ctx.StringValue("DescribeDBInstanceEncryptionKey.RequestId");
+			describeDBInstanceEncryptionKeyResponse.Description = _ctx.StringValue("DescribeDBInstanceEncryptionKey.Description");
 			describeDBInstanceEncryptionKeyResponse.Origin = _ctx.StringValue("DescribeDBInstanceEncryptionKey.Origin");
 			describeDBInstanceEncryptionKeyResponse.MaterialExpireTime = _ctx.StringValue("DescribeDBInstanceEncryptionKey.MaterialExpireTime");
 			describeDBInstanceEncryptionKeyResponse.EncryptionKeyStatus = _ctx.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKeyStatus");
+			describeDBInstanceEncryptionKeyResponse.KeyUsage = _ctx.StringValue("DescribeDBInstanceEncryptionKey.KeyUsage");
+			describeDBInstanceEncryptionKeyResponse.EncryptionKey = _ctx.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKey");
+			describeDBInstanceEncryptionKeyResponse.Creator = _ctx.StringValue("DescribeDBInstanceEncryptionKey.Creator");
         
 			return describeDBInstanceEncryptionKeyResponse;
         }

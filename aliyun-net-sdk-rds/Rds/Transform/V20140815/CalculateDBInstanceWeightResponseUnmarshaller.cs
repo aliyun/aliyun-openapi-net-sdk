@@ -36,11 +36,11 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			List<CalculateDBInstanceWeightResponse.CalculateDBInstanceWeight_DBInstanceWeight> calculateDBInstanceWeightResponse_items = new List<CalculateDBInstanceWeightResponse.CalculateDBInstanceWeight_DBInstanceWeight>();
 			for (int i = 0; i < _ctx.Length("CalculateDBInstanceWeight.Items.Length"); i++) {
 				CalculateDBInstanceWeightResponse.CalculateDBInstanceWeight_DBInstanceWeight dBInstanceWeight = new CalculateDBInstanceWeightResponse.CalculateDBInstanceWeight_DBInstanceWeight();
-				dBInstanceWeight.DBInstanceId = _ctx.StringValue("CalculateDBInstanceWeight.Items["+ i +"].DBInstanceId");
-				dBInstanceWeight.DBInstanceType = _ctx.StringValue("CalculateDBInstanceWeight.Items["+ i +"].DBInstanceType");
 				dBInstanceWeight.ReadonlyInstanceSQLDelayedTime = _ctx.StringValue("CalculateDBInstanceWeight.Items["+ i +"].ReadonlyInstanceSQLDelayedTime");
 				dBInstanceWeight.Availability = _ctx.StringValue("CalculateDBInstanceWeight.Items["+ i +"].Availability");
 				dBInstanceWeight.Weight = _ctx.StringValue("CalculateDBInstanceWeight.Items["+ i +"].Weight");
+				dBInstanceWeight.DBInstanceType = _ctx.StringValue("CalculateDBInstanceWeight.Items["+ i +"].DBInstanceType");
+				dBInstanceWeight.DBInstanceId = _ctx.StringValue("CalculateDBInstanceWeight.Items["+ i +"].DBInstanceId");
 				dBInstanceWeight.Role = _ctx.StringValue("CalculateDBInstanceWeight.Items["+ i +"].Role");
 
 				calculateDBInstanceWeightResponse_items.Add(dBInstanceWeight);

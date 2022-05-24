@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -56,41 +56,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class CalculateDBInstanceWeight_DBInstanceWeight
 		{
 
-			private string dBInstanceId;
-
-			private string dBInstanceType;
-
 			private string readonlyInstanceSQLDelayedTime;
 
 			private string availability;
 
 			private string weight;
 
+			private string dBInstanceType;
+
+			private string dBInstanceId;
+
 			private string role;
-
-			public string DBInstanceId
-			{
-				get
-				{
-					return dBInstanceId;
-				}
-				set	
-				{
-					dBInstanceId = value;
-				}
-			}
-
-			public string DBInstanceType
-			{
-				get
-				{
-					return dBInstanceType;
-				}
-				set	
-				{
-					dBInstanceType = value;
-				}
-			}
 
 			public string ReadonlyInstanceSQLDelayedTime
 			{
@@ -125,6 +101,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					weight = value;
+				}
+			}
+
+			public string DBInstanceType
+			{
+				get
+				{
+					return dBInstanceType;
+				}
+				set	
+				{
+					dBInstanceType = value;
+				}
+			}
+
+			public string DBInstanceId
+			{
+				get
+				{
+					return dBInstanceId;
+				}
+				set	
+				{
+					dBInstanceId = value;
 				}
 			}
 

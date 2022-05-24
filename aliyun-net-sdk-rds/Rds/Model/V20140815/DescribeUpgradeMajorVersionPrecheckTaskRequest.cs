@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class CreateMigrateTaskForSQLServerRequest : RpcAcsRequest<CreateMigrateTaskForSQLServerResponse>
+    public class DescribeUpgradeMajorVersionPrecheckTaskRequest : RpcAcsRequest<DescribeUpgradeMajorVersionPrecheckTaskResponse>
     {
-        public CreateMigrateTaskForSQLServerRequest()
-            : base("Rds", "2014-08-15", "CreateMigrateTaskForSQLServer", "rds", "openAPI")
+        public DescribeUpgradeMajorVersionPrecheckTaskRequest()
+            : base("Rds", "2014-08-15", "DescribeUpgradeMajorVersionPrecheckTask", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,20 +43,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string isOnlineDB;
+		private int? pageNumber;
+
+		private int? pageSize;
 
 		private string dBInstanceId;
 
-		private string taskType;
+		private int? taskId;
 
 		private string resourceOwnerAccount;
 
+		private string ownerAccount;
+
 		private long? ownerId;
 
-		private string oSSUrls;
+		private string targetMajorVersion;
 
-		private string dBName;
-
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -69,19 +73,35 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string IsOnlineDB
+		[JsonProperty(PropertyName = "PageNumber")]
+		public int? PageNumber
 		{
 			get
 			{
-				return isOnlineDB;
+				return pageNumber;
 			}
 			set	
 			{
-				isOnlineDB = value;
-				DictionaryUtil.Add(QueryParameters, "IsOnlineDB", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -95,19 +115,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string TaskType
+		[JsonProperty(PropertyName = "TaskId")]
+		public int? TaskId
 		{
 			get
 			{
-				return taskType;
+				return taskId;
 			}
 			set	
 			{
-				taskType = value;
-				DictionaryUtil.Add(QueryParameters, "TaskType", value);
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value.ToString());
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -121,6 +143,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -134,35 +171,28 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string OSSUrls
+		[JsonProperty(PropertyName = "TargetMajorVersion")]
+		public string TargetMajorVersion
 		{
 			get
 			{
-				return oSSUrls;
+				return targetMajorVersion;
 			}
 			set	
 			{
-				oSSUrls = value;
-				DictionaryUtil.Add(QueryParameters, "OSSUrls", value);
+				targetMajorVersion = value;
+				DictionaryUtil.Add(QueryParameters, "TargetMajorVersion", value);
 			}
 		}
 
-		public string DBName
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return dBName;
-			}
-			set	
-			{
-				dBName = value;
-				DictionaryUtil.Add(QueryParameters, "DBName", value);
-			}
+			return false;
 		}
 
-        public override CreateMigrateTaskForSQLServerResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeUpgradeMajorVersionPrecheckTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateMigrateTaskForSQLServerResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeUpgradeMajorVersionPrecheckTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

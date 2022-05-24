@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeSQLLogReportsRequest : RpcAcsRequest<DescribeSQLLogReportsResponse>
+    public class UpgradeDBInstanceMajorVersionPrecheckRequest : RpcAcsRequest<UpgradeDBInstanceMajorVersionPrecheckResponse>
     {
-        public DescribeSQLLogReportsRequest()
-            : base("Rds", "2014-08-15", "DescribeSQLLogReports", "rds", "openAPI")
+        public UpgradeDBInstanceMajorVersionPrecheckRequest()
+            : base("Rds", "2014-08-15", "UpgradeDBInstanceMajorVersionPrecheck", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,22 +43,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string startTime;
-
-		private int? pageNumber;
-
-		private int? pageSize;
-
 		private string dBInstanceId;
 
-		private string resourceOwnerAccount;
+		private string targetMajorVersion;
 
-		private string ownerAccount;
-
-		private string endTime;
-
-		private long? ownerId;
-
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -71,45 +61,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -123,61 +75,28 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ResourceOwnerAccount
+		[JsonProperty(PropertyName = "TargetMajorVersion")]
+		public string TargetMajorVersion
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return targetMajorVersion;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				targetMajorVersion = value;
+				DictionaryUtil.Add(QueryParameters, "TargetMajorVersion", value);
 			}
 		}
 
-		public string OwnerAccount
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
+			return false;
 		}
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-        public override DescribeSQLLogReportsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpgradeDBInstanceMajorVersionPrecheckResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSQLLogReportsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpgradeDBInstanceMajorVersionPrecheckResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

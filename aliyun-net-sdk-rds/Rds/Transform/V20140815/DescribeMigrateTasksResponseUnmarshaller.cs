@@ -31,23 +31,23 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeMigrateTasksResponse describeMigrateTasksResponse = new DescribeMigrateTasksResponse();
 
 			describeMigrateTasksResponse.HttpResponse = _ctx.HttpResponse;
-			describeMigrateTasksResponse.RequestId = _ctx.StringValue("DescribeMigrateTasks.RequestId");
 			describeMigrateTasksResponse.DBInstanceId = _ctx.StringValue("DescribeMigrateTasks.DBInstanceId");
-			describeMigrateTasksResponse.TotalRecordCount = _ctx.IntegerValue("DescribeMigrateTasks.TotalRecordCount");
 			describeMigrateTasksResponse.PageNumber = _ctx.IntegerValue("DescribeMigrateTasks.PageNumber");
+			describeMigrateTasksResponse.RequestId = _ctx.StringValue("DescribeMigrateTasks.RequestId");
 			describeMigrateTasksResponse.PageRecordCount = _ctx.IntegerValue("DescribeMigrateTasks.PageRecordCount");
+			describeMigrateTasksResponse.TotalRecordCount = _ctx.IntegerValue("DescribeMigrateTasks.TotalRecordCount");
 
 			List<DescribeMigrateTasksResponse.DescribeMigrateTasks_MigrateTask> describeMigrateTasksResponse_items = new List<DescribeMigrateTasksResponse.DescribeMigrateTasks_MigrateTask>();
 			for (int i = 0; i < _ctx.Length("DescribeMigrateTasks.Items.Length"); i++) {
 				DescribeMigrateTasksResponse.DescribeMigrateTasks_MigrateTask migrateTask = new DescribeMigrateTasksResponse.DescribeMigrateTasks_MigrateTask();
-				migrateTask.DBName = _ctx.StringValue("DescribeMigrateTasks.Items["+ i +"].DBName");
-				migrateTask.MigrateTaskId = _ctx.StringValue("DescribeMigrateTasks.Items["+ i +"].MigrateTaskId");
-				migrateTask.CreateTime = _ctx.StringValue("DescribeMigrateTasks.Items["+ i +"].CreateTime");
 				migrateTask.EndTime = _ctx.StringValue("DescribeMigrateTasks.Items["+ i +"].EndTime");
-				migrateTask.BackupMode = _ctx.StringValue("DescribeMigrateTasks.Items["+ i +"].BackupMode");
 				migrateTask.Status = _ctx.StringValue("DescribeMigrateTasks.Items["+ i +"].Status");
-				migrateTask.IsDBReplaced = _ctx.StringValue("DescribeMigrateTasks.Items["+ i +"].IsDBReplaced");
 				migrateTask.Description = _ctx.StringValue("DescribeMigrateTasks.Items["+ i +"].Description");
+				migrateTask.CreateTime = _ctx.StringValue("DescribeMigrateTasks.Items["+ i +"].CreateTime");
+				migrateTask.DBName = _ctx.StringValue("DescribeMigrateTasks.Items["+ i +"].DBName");
+				migrateTask.BackupMode = _ctx.StringValue("DescribeMigrateTasks.Items["+ i +"].BackupMode");
+				migrateTask.MigrateTaskId = _ctx.StringValue("DescribeMigrateTasks.Items["+ i +"].MigrateTaskId");
+				migrateTask.IsDBReplaced = _ctx.StringValue("DescribeMigrateTasks.Items["+ i +"].IsDBReplaced");
 
 				describeMigrateTasksResponse_items.Add(migrateTask);
 			}

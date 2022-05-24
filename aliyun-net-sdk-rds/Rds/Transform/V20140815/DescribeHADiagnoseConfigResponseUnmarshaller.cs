@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeHADiagnoseConfigResponse describeHADiagnoseConfigResponse = new DescribeHADiagnoseConfigResponse();
 
 			describeHADiagnoseConfigResponse.HttpResponse = _ctx.HttpResponse;
-			describeHADiagnoseConfigResponse.RequestId = _ctx.StringValue("DescribeHADiagnoseConfig.RequestId");
 			describeHADiagnoseConfigResponse.TcpConnectionType = _ctx.StringValue("DescribeHADiagnoseConfig.TcpConnectionType");
+			describeHADiagnoseConfigResponse.RequestId = _ctx.StringValue("DescribeHADiagnoseConfig.RequestId");
         
 			return describeHADiagnoseConfigResponse;
         }

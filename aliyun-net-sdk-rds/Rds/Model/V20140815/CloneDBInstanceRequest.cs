@@ -44,6 +44,24 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? dBInstanceStorage;
 
+		private bool? deletionProtection;
+
+		private string backupType;
+
+		private string period;
+
+		private string backupId;
+
+		private string dBInstanceClass;
+
+		private string vSwitchId;
+
+		private string privateIpAddress;
+
+		private string zoneId;
+
+		private string instanceNetworkType;
+
 		private string tableMeta;
 
 		private string dBInstanceId;
@@ -52,35 +70,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dedicatedHostGroupId;
 
-		private string backupType;
-
 		private string restoreTime;
-
-		private string period;
-
-		private string backupId;
 
 		private string restoreTable;
 
 		private int? usedTime;
 
-		private string dBInstanceClass;
-
 		private string dbNames;
 
-		private string vSwitchId;
-
-		private string privateIpAddress;
-
 		private string vPCId;
-
-		private string zoneId;
 
 		private string category;
 
 		private string payType;
-
-		private string instanceNetworkType;
 
 		public long? ResourceOwnerId
 		{
@@ -105,6 +107,123 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceStorage = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceStorage", value.ToString());
+			}
+		}
+
+		public bool? DeletionProtection
+		{
+			get
+			{
+				return deletionProtection;
+			}
+			set	
+			{
+				deletionProtection = value;
+				DictionaryUtil.Add(QueryParameters, "DeletionProtection", value.ToString());
+			}
+		}
+
+		public string BackupType
+		{
+			get
+			{
+				return backupType;
+			}
+			set	
+			{
+				backupType = value;
+				DictionaryUtil.Add(QueryParameters, "BackupType", value);
+			}
+		}
+
+		public string Period
+		{
+			get
+			{
+				return period;
+			}
+			set	
+			{
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value);
+			}
+		}
+
+		public string BackupId
+		{
+			get
+			{
+				return backupId;
+			}
+			set	
+			{
+				backupId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupId", value);
+			}
+		}
+
+		public string DBInstanceClass
+		{
+			get
+			{
+				return dBInstanceClass;
+			}
+			set	
+			{
+				dBInstanceClass = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
+			}
+		}
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public string PrivateIpAddress
+		{
+			get
+			{
+				return privateIpAddress;
+			}
+			set	
+			{
+				privateIpAddress = value;
+				DictionaryUtil.Add(QueryParameters, "PrivateIpAddress", value);
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public string InstanceNetworkType
+		{
+			get
+			{
+				return instanceNetworkType;
+			}
+			set	
+			{
+				instanceNetworkType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceNetworkType", value);
 			}
 		}
 
@@ -160,19 +279,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string BackupType
-		{
-			get
-			{
-				return backupType;
-			}
-			set	
-			{
-				backupType = value;
-				DictionaryUtil.Add(QueryParameters, "BackupType", value);
-			}
-		}
-
 		public string RestoreTime
 		{
 			get
@@ -183,32 +289,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				restoreTime = value;
 				DictionaryUtil.Add(QueryParameters, "RestoreTime", value);
-			}
-		}
-
-		public string Period
-		{
-			get
-			{
-				return period;
-			}
-			set	
-			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value);
-			}
-		}
-
-		public string BackupId
-		{
-			get
-			{
-				return backupId;
-			}
-			set	
-			{
-				backupId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupId", value);
 			}
 		}
 
@@ -238,19 +318,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceClass
-		{
-			get
-			{
-				return dBInstanceClass;
-			}
-			set	
-			{
-				dBInstanceClass = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
-			}
-		}
-
 		public string DbNames
 		{
 			get
@@ -264,32 +331,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
-			}
-		}
-
-		public string PrivateIpAddress
-		{
-			get
-			{
-				return privateIpAddress;
-			}
-			set	
-			{
-				privateIpAddress = value;
-				DictionaryUtil.Add(QueryParameters, "PrivateIpAddress", value);
-			}
-		}
-
 		public string VPCId
 		{
 			get
@@ -300,19 +341,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				vPCId = value;
 				DictionaryUtil.Add(QueryParameters, "VPCId", value);
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 
@@ -339,19 +367,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				payType = value;
 				DictionaryUtil.Add(QueryParameters, "PayType", value);
-			}
-		}
-
-		public string InstanceNetworkType
-		{
-			get
-			{
-				return instanceNetworkType;
-			}
-			set	
-			{
-				instanceNetworkType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceNetworkType", value);
 			}
 		}
 

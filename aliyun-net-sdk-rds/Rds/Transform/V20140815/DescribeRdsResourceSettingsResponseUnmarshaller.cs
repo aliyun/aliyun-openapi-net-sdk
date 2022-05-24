@@ -36,15 +36,15 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			List<DescribeRdsResourceSettingsResponse.DescribeRdsResourceSettings_RdsInstanceResourceSetting> describeRdsResourceSettingsResponse_rdsInstanceResourceSettings = new List<DescribeRdsResourceSettingsResponse.DescribeRdsResourceSettings_RdsInstanceResourceSetting>();
 			for (int i = 0; i < _ctx.Length("DescribeRdsResourceSettings.RdsInstanceResourceSettings.Length"); i++) {
 				DescribeRdsResourceSettingsResponse.DescribeRdsResourceSettings_RdsInstanceResourceSetting rdsInstanceResourceSetting = new DescribeRdsResourceSettingsResponse.DescribeRdsResourceSettings_RdsInstanceResourceSetting();
-				rdsInstanceResourceSetting.StartDate = _ctx.StringValue("DescribeRdsResourceSettings.RdsInstanceResourceSettings["+ i +"].StartDate");
-				rdsInstanceResourceSetting.EndDate = _ctx.StringValue("DescribeRdsResourceSettings.RdsInstanceResourceSettings["+ i +"].EndDate");
-				rdsInstanceResourceSetting.ResourceNiche = _ctx.StringValue("DescribeRdsResourceSettings.RdsInstanceResourceSettings["+ i +"].ResourceNiche");
-				rdsInstanceResourceSetting.NoticeBarContent = _ctx.StringValue("DescribeRdsResourceSettings.RdsInstanceResourceSettings["+ i +"].NoticeBarContent");
-				rdsInstanceResourceSetting.PoppedUpButtonText = _ctx.StringValue("DescribeRdsResourceSettings.RdsInstanceResourceSettings["+ i +"].PoppedUpButtonText");
 				rdsInstanceResourceSetting.PoppedUpButtonType = _ctx.StringValue("DescribeRdsResourceSettings.RdsInstanceResourceSettings["+ i +"].PoppedUpButtonType");
-				rdsInstanceResourceSetting.PoppedUpButtonUrl = _ctx.StringValue("DescribeRdsResourceSettings.RdsInstanceResourceSettings["+ i +"].PoppedUpButtonUrl");
+				rdsInstanceResourceSetting.NoticeBarContent = _ctx.StringValue("DescribeRdsResourceSettings.RdsInstanceResourceSettings["+ i +"].NoticeBarContent");
+				rdsInstanceResourceSetting.EndDate = _ctx.StringValue("DescribeRdsResourceSettings.RdsInstanceResourceSettings["+ i +"].EndDate");
 				rdsInstanceResourceSetting.PoppedUpContent = _ctx.StringValue("DescribeRdsResourceSettings.RdsInstanceResourceSettings["+ i +"].PoppedUpContent");
+				rdsInstanceResourceSetting.StartDate = _ctx.StringValue("DescribeRdsResourceSettings.RdsInstanceResourceSettings["+ i +"].StartDate");
+				rdsInstanceResourceSetting.PoppedUpButtonText = _ctx.StringValue("DescribeRdsResourceSettings.RdsInstanceResourceSettings["+ i +"].PoppedUpButtonText");
 				rdsInstanceResourceSetting.IsTop = _ctx.StringValue("DescribeRdsResourceSettings.RdsInstanceResourceSettings["+ i +"].IsTop");
+				rdsInstanceResourceSetting.ResourceNiche = _ctx.StringValue("DescribeRdsResourceSettings.RdsInstanceResourceSettings["+ i +"].ResourceNiche");
+				rdsInstanceResourceSetting.PoppedUpButtonUrl = _ctx.StringValue("DescribeRdsResourceSettings.RdsInstanceResourceSettings["+ i +"].PoppedUpButtonUrl");
 
 				describeRdsResourceSettingsResponse_rdsInstanceResourceSettings.Add(rdsInstanceResourceSetting);
 			}

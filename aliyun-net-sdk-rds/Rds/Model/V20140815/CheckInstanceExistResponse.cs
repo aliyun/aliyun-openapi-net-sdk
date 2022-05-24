@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class CheckInstanceExistResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? isExistInstance;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public bool? IsExistInstance
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				isExistInstance = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

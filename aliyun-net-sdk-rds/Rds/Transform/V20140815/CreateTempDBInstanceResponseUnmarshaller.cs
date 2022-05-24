@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			CreateTempDBInstanceResponse createTempDBInstanceResponse = new CreateTempDBInstanceResponse();
 
 			createTempDBInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			createTempDBInstanceResponse.RequestId = _ctx.StringValue("CreateTempDBInstance.RequestId");
 			createTempDBInstanceResponse.TempDBInstanceId = _ctx.StringValue("CreateTempDBInstance.TempDBInstanceId");
+			createTempDBInstanceResponse.RequestId = _ctx.StringValue("CreateTempDBInstance.RequestId");
         
 			return createTempDBInstanceResponse;
         }

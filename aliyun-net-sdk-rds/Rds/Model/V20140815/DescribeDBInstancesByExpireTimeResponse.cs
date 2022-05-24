@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -29,12 +29,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageNumber;
 
-		private int? totalRecordCount;
-
 		private int? pageRecordCount;
+
+		private int? totalRecordCount;
 
 		private List<DescribeDBInstancesByExpireTime_DBInstanceExpireTime> items;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -59,18 +61,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "PageRecordCount")]
 		public int? PageRecordCount
 		{
 			get
@@ -83,6 +74,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalRecordCount")]
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeDBInstancesByExpireTime_DBInstanceExpireTime> Items
 		{
 			get
@@ -98,42 +103,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeDBInstancesByExpireTime_DBInstanceExpireTime
 		{
 
-			private string dBInstanceId;
-
-			private string dBInstanceDescription;
-
 			private string expireTime;
-
-			private string dBInstanceStatus;
-
-			private string lockMode;
 
 			private string payType;
 
-			public string DBInstanceId
-			{
-				get
-				{
-					return dBInstanceId;
-				}
-				set	
-				{
-					dBInstanceId = value;
-				}
-			}
+			private string dBInstanceId;
 
-			public string DBInstanceDescription
-			{
-				get
-				{
-					return dBInstanceDescription;
-				}
-				set	
-				{
-					dBInstanceDescription = value;
-				}
-			}
+			private string dBInstanceStatus;
 
+			private string dBInstanceDescription;
+
+			private string lockMode;
+
+			[JsonProperty(PropertyName = "ExpireTime")]
 			public string ExpireTime
 			{
 				get
@@ -146,6 +128,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "PayType")]
+			public string PayType
+			{
+				get
+				{
+					return payType;
+				}
+				set	
+				{
+					payType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceId")]
+			public string DBInstanceId
+			{
+				get
+				{
+					return dBInstanceId;
+				}
+				set	
+				{
+					dBInstanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceStatus")]
 			public string DBInstanceStatus
 			{
 				get
@@ -158,6 +167,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DBInstanceDescription")]
+			public string DBInstanceDescription
+			{
+				get
+				{
+					return dBInstanceDescription;
+				}
+				set	
+				{
+					dBInstanceDescription = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LockMode")]
 			public string LockMode
 			{
 				get
@@ -167,18 +190,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					lockMode = value;
-				}
-			}
-
-			public string PayType
-			{
-				get
-				{
-					return payType;
-				}
-				set	
-				{
-					payType = value;
 				}
 			}
 		}

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeAvailableResourceRequest : RpcAcsRequest<DescribeAvailableResourceResponse>
+    public class DescribeModifyPGHbaConfigLogRequest : RpcAcsRequest<DescribeModifyPGHbaConfigLogResponse>
     {
-        public DescribeAvailableResourceRequest()
-            : base("Rds", "2014-08-15", "DescribeAvailableResource", "rds", "openAPI")
+        public DescribeModifyPGHbaConfigLogRequest()
+            : base("Rds", "2014-08-15", "DescribeModifyPGHbaConfigLog", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,24 +43,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string engineVersion;
+		private string clientToken;
 
-		private string engine;
+		private string startTime;
 
-		private string dBInstanceStorageType;
+		private string dBInstanceId;
 
-		private string instanceChargeType;
+		private string resourceOwnerAccount;
 
-		private int? dispenseMode;
+		private string ownerAccount;
 
-		private string dBInstanceClass;
+		private string endTime;
 
-		private string zoneId;
+		private long? ownerId;
 
-		private string category;
-
-		private string orderType;
-
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -73,126 +71,107 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string EngineVersion
+		[JsonProperty(PropertyName = "ClientToken")]
+		public string ClientToken
 		{
 			get
 			{
-				return engineVersion;
+				return clientToken;
 			}
 			set	
 			{
-				engineVersion = value;
-				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
-		public string Engine
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
 		{
 			get
 			{
-				return engine;
+				return startTime;
 			}
 			set	
 			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		public string DBInstanceStorageType
+		[JsonProperty(PropertyName = "DBInstanceId")]
+		public string DBInstanceId
 		{
 			get
 			{
-				return dBInstanceStorageType;
+				return dBInstanceId;
 			}
 			set	
 			{
-				dBInstanceStorageType = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceStorageType", value);
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
-		public string InstanceChargeType
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return instanceChargeType;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				instanceChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
-		public int? DispenseMode
+		[JsonProperty(PropertyName = "OwnerAccount")]
+		public string OwnerAccount
 		{
 			get
 			{
-				return dispenseMode;
+				return ownerAccount;
 			}
 			set	
 			{
-				dispenseMode = value;
-				DictionaryUtil.Add(QueryParameters, "DispenseMode", value.ToString());
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
-		public string DBInstanceClass
+		[JsonProperty(PropertyName = "EndTime")]
+		public string EndTime
 		{
 			get
 			{
-				return dBInstanceClass;
+				return endTime;
 			}
 			set	
 			{
-				dBInstanceClass = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
-		public string ZoneId
+		[JsonProperty(PropertyName = "OwnerId")]
+		public long? OwnerId
 		{
 			get
 			{
-				return zoneId;
+				return ownerId;
 			}
 			set	
 			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-		public string Category
-		{
-			get
-			{
-				return category;
-			}
-			set	
-			{
-				category = value;
-				DictionaryUtil.Add(QueryParameters, "Category", value);
-			}
-		}
-
-		public string OrderType
-		{
-			get
-			{
-				return orderType;
-			}
-			set	
-			{
-				orderType = value;
-				DictionaryUtil.Add(QueryParameters, "OrderType", value);
-			}
-		}
-
-        public override DescribeAvailableResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeModifyPGHbaConfigLogResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAvailableResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeModifyPGHbaConfigLogResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

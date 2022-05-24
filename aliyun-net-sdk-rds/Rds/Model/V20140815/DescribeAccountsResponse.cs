@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,30 +25,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeAccountsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string systemAdminAccountStatus;
 
 		private string systemAdminAccountFirstActivationTime;
 
 		private int? pageNumber;
 
+		private string requestId;
+
 		private int? totalRecordCount;
 
 		private List<DescribeAccounts_DBInstanceAccount> accounts;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "SystemAdminAccountStatus")]
 		public string SystemAdminAccountStatus
 		{
 			get
@@ -61,6 +50,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "SystemAdminAccountFirstActivationTime")]
 		public string SystemAdminAccountFirstActivationTime
 		{
 			get
@@ -73,6 +63,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -85,6 +76,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalRecordCount")]
 		public int? TotalRecordCount
 		{
 			get
@@ -97,6 +102,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Accounts")]
 		public List<DescribeAccounts_DBInstanceAccount> Accounts
 		{
 			get
@@ -112,44 +118,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeAccounts_DBInstanceAccount
 		{
 
-			private string dBInstanceId;
-
-			private string accountName;
-
 			private string accountStatus;
-
-			private string accountType;
 
 			private string accountDescription;
 
+			private string dBInstanceId;
+
 			private string privExceeded;
+
+			private string accountType;
+
+			private string accountName;
 
 			private List<DescribeAccounts_DatabasePrivilege> databasePrivileges;
 
-			public string DBInstanceId
-			{
-				get
-				{
-					return dBInstanceId;
-				}
-				set	
-				{
-					dBInstanceId = value;
-				}
-			}
-
-			public string AccountName
-			{
-				get
-				{
-					return accountName;
-				}
-				set	
-				{
-					accountName = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "AccountStatus")]
 			public string AccountStatus
 			{
 				get
@@ -162,18 +145,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string AccountType
-			{
-				get
-				{
-					return accountType;
-				}
-				set	
-				{
-					accountType = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "AccountDescription")]
 			public string AccountDescription
 			{
 				get
@@ -186,6 +158,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DBInstanceId")]
+			public string DBInstanceId
+			{
+				get
+				{
+					return dBInstanceId;
+				}
+				set	
+				{
+					dBInstanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PrivExceeded")]
 			public string PrivExceeded
 			{
 				get
@@ -198,6 +184,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "AccountType")]
+			public string AccountType
+			{
+				get
+				{
+					return accountType;
+				}
+				set	
+				{
+					accountType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AccountName")]
+			public string AccountName
+			{
+				get
+				{
+					return accountName;
+				}
+				set	
+				{
+					accountName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DatabasePrivileges")]
 			public List<DescribeAccounts_DatabasePrivilege> DatabasePrivileges
 			{
 				get
@@ -219,6 +232,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 				private string accountPrivilegeDetail;
 
+				[JsonProperty(PropertyName = "DBName")]
 				public string DBName
 				{
 					get
@@ -231,6 +245,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "AccountPrivilege")]
 				public string AccountPrivilege
 				{
 					get
@@ -243,6 +258,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "AccountPrivilegeDetail")]
 				public string AccountPrivilegeDetail
 				{
 					get

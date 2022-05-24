@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,17 +25,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDBInstanceEncryptionKeyResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string encryptionKey;
-
-		private string description;
-
-		private string keyUsage;
-
 		private string deleteDate;
 
-		private string creator;
+		private string requestId;
+
+		private string description;
 
 		private string origin;
 
@@ -43,54 +37,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string encryptionKeyStatus;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string keyUsage;
 
-		public string EncryptionKey
-		{
-			get
-			{
-				return encryptionKey;
-			}
-			set	
-			{
-				encryptionKey = value;
-			}
-		}
+		private string encryptionKey;
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-			}
-		}
+		private string creator;
 
-		public string KeyUsage
-		{
-			get
-			{
-				return keyUsage;
-			}
-			set	
-			{
-				keyUsage = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "DeleteDate")]
 		public string DeleteDate
 		{
 			get
@@ -103,18 +56,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Creator
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return creator;
+				return requestId;
 			}
 			set	
 			{
-				creator = value;
+				requestId = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "Description")]
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Origin")]
 		public string Origin
 		{
 			get
@@ -127,6 +95,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaterialExpireTime")]
 		public string MaterialExpireTime
 		{
 			get
@@ -139,6 +108,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "EncryptionKeyStatus")]
 		public string EncryptionKeyStatus
 		{
 			get
@@ -148,6 +118,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				encryptionKeyStatus = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "KeyUsage")]
+		public string KeyUsage
+		{
+			get
+			{
+				return keyUsage;
+			}
+			set	
+			{
+				keyUsage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "EncryptionKey")]
+		public string EncryptionKey
+		{
+			get
+			{
+				return encryptionKey;
+			}
+			set	
+			{
+				encryptionKey = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Creator")]
+		public string Creator
+		{
+			get
+			{
+				return creator;
+			}
+			set	
+			{
+				creator = value;
 			}
 		}
 	}

@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeDBInstanceProxyConfigurationResponse describeDBInstanceProxyConfigurationResponse = new DescribeDBInstanceProxyConfigurationResponse();
 
 			describeDBInstanceProxyConfigurationResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBInstanceProxyConfigurationResponse.RequestId = _ctx.StringValue("DescribeDBInstanceProxyConfiguration.RequestId");
-			describeDBInstanceProxyConfigurationResponse.TransparentSwitchConfiguration = _ctx.StringValue("DescribeDBInstanceProxyConfiguration.TransparentSwitchConfiguration");
 			describeDBInstanceProxyConfigurationResponse.PersistentConnectionsConfiguration = _ctx.StringValue("DescribeDBInstanceProxyConfiguration.PersistentConnectionsConfiguration");
 			describeDBInstanceProxyConfigurationResponse.AttacksProtectionConfiguration = _ctx.StringValue("DescribeDBInstanceProxyConfiguration.AttacksProtectionConfiguration");
+			describeDBInstanceProxyConfigurationResponse.RequestId = _ctx.StringValue("DescribeDBInstanceProxyConfiguration.RequestId");
+			describeDBInstanceProxyConfigurationResponse.TransparentSwitchConfiguration = _ctx.StringValue("DescribeDBInstanceProxyConfiguration.TransparentSwitchConfiguration");
         
 			return describeDBInstanceProxyConfigurationResponse;
         }

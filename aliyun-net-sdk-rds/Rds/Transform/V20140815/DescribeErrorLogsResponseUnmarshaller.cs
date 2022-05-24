@@ -32,8 +32,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			describeErrorLogsResponse.HttpResponse = _ctx.HttpResponse;
 			describeErrorLogsResponse.PageNumber = _ctx.IntegerValue("DescribeErrorLogs.PageNumber");
-			describeErrorLogsResponse.PageRecordCount = _ctx.IntegerValue("DescribeErrorLogs.PageRecordCount");
 			describeErrorLogsResponse.RequestId = _ctx.StringValue("DescribeErrorLogs.RequestId");
+			describeErrorLogsResponse.PageRecordCount = _ctx.IntegerValue("DescribeErrorLogs.PageRecordCount");
 			describeErrorLogsResponse.TotalRecordCount = _ctx.IntegerValue("DescribeErrorLogs.TotalRecordCount");
 
 			List<DescribeErrorLogsResponse.DescribeErrorLogs_ErrorLog> describeErrorLogsResponse_items = new List<DescribeErrorLogsResponse.DescribeErrorLogs_ErrorLog>();

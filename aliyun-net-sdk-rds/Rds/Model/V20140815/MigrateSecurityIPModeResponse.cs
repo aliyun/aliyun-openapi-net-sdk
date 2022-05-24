@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,24 +25,26 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class MigrateSecurityIPModeResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string securityIPMode;
 
 		private string dBInstanceId;
 
-		private string securityIPMode;
+		private string requestId;
 
-		public string RequestId
+		[JsonProperty(PropertyName = "SecurityIPMode")]
+		public string SecurityIPMode
 		{
 			get
 			{
-				return requestId;
+				return securityIPMode;
 			}
 			set	
 			{
-				requestId = value;
+				securityIPMode = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -55,15 +57,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string SecurityIPMode
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return securityIPMode;
+				return requestId;
 			}
 			set	
 			{
-				securityIPMode = value;
+				requestId = value;
 			}
 		}
 	}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,12 +25,26 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeActionEventPolicyResponse : AcsResponse
 	{
 
+		private string enableEventLog;
+
 		private string requestId;
 
 		private string regionId;
 
-		private string enableEventLog;
+		[JsonProperty(PropertyName = "EnableEventLog")]
+		public string EnableEventLog
+		{
+			get
+			{
+				return enableEventLog;
+			}
+			set	
+			{
+				enableEventLog = value;
+			}
+		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -43,6 +57,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RegionId")]
 		public string RegionId
 		{
 			get
@@ -52,18 +67,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				regionId = value;
-			}
-		}
-
-		public string EnableEventLog
-		{
-			get
-			{
-				return enableEventLog;
-			}
-			set	
-			{
-				enableEventLog = value;
 			}
 		}
 	}

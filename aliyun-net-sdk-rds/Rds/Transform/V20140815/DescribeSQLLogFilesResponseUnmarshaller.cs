@@ -32,19 +32,19 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			describeSQLLogFilesResponse.HttpResponse = _ctx.HttpResponse;
 			describeSQLLogFilesResponse.RequestId = _ctx.StringValue("DescribeSQLLogFiles.RequestId");
-			describeSQLLogFilesResponse.TotalRecordCount = _ctx.IntegerValue("DescribeSQLLogFiles.TotalRecordCount");
 			describeSQLLogFilesResponse.PageNumber = _ctx.IntegerValue("DescribeSQLLogFiles.PageNumber");
 			describeSQLLogFilesResponse.PageRecordCount = _ctx.IntegerValue("DescribeSQLLogFiles.PageRecordCount");
+			describeSQLLogFilesResponse.TotalRecordCount = _ctx.IntegerValue("DescribeSQLLogFiles.TotalRecordCount");
 
 			List<DescribeSQLLogFilesResponse.DescribeSQLLogFiles_LogFile> describeSQLLogFilesResponse_items = new List<DescribeSQLLogFilesResponse.DescribeSQLLogFiles_LogFile>();
 			for (int i = 0; i < _ctx.Length("DescribeSQLLogFiles.Items.Length"); i++) {
 				DescribeSQLLogFilesResponse.DescribeSQLLogFiles_LogFile logFile = new DescribeSQLLogFilesResponse.DescribeSQLLogFiles_LogFile();
 				logFile.FileID = _ctx.StringValue("DescribeSQLLogFiles.Items["+ i +"].FileID");
-				logFile.LogStatus = _ctx.StringValue("DescribeSQLLogFiles.Items["+ i +"].LogStatus");
-				logFile.LogDownloadURL = _ctx.StringValue("DescribeSQLLogFiles.Items["+ i +"].LogDownloadURL");
-				logFile.LogSize = _ctx.StringValue("DescribeSQLLogFiles.Items["+ i +"].LogSize");
 				logFile.LogStartTime = _ctx.StringValue("DescribeSQLLogFiles.Items["+ i +"].LogStartTime");
+				logFile.LogSize = _ctx.StringValue("DescribeSQLLogFiles.Items["+ i +"].LogSize");
+				logFile.LogDownloadURL = _ctx.StringValue("DescribeSQLLogFiles.Items["+ i +"].LogDownloadURL");
 				logFile.LogEndTime = _ctx.StringValue("DescribeSQLLogFiles.Items["+ i +"].LogEndTime");
+				logFile.LogStatus = _ctx.StringValue("DescribeSQLLogFiles.Items["+ i +"].LogStatus");
 
 				describeSQLLogFilesResponse_items.Add(logFile);
 			}

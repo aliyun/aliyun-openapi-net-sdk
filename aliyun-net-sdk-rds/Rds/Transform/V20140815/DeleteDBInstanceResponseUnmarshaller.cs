@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DeleteDBInstanceResponse deleteDBInstanceResponse = new DeleteDBInstanceResponse();
 
 			deleteDBInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			deleteDBInstanceResponse.RequestId = _ctx.StringValue("DeleteDBInstance.RequestId");
 			deleteDBInstanceResponse.RegionId = _ctx.StringValue("DeleteDBInstance.RegionId");
+			deleteDBInstanceResponse.RequestId = _ctx.StringValue("DeleteDBInstance.RequestId");
         
 			return deleteDBInstanceResponse;
         }

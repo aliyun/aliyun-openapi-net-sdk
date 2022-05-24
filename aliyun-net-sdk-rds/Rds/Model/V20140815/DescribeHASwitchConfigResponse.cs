@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -27,10 +27,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
-		private string hAConfig;
-
 		private string manualHATime;
 
+		private string hAConfig;
+
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -43,18 +44,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string HAConfig
-		{
-			get
-			{
-				return hAConfig;
-			}
-			set	
-			{
-				hAConfig = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ManualHATime")]
 		public string ManualHATime
 		{
 			get
@@ -64,6 +54,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				manualHATime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "HAConfig")]
+		public string HAConfig
+		{
+			get
+			{
+				return hAConfig;
+			}
+			set	
+			{
+				hAConfig = value;
 			}
 		}
 	}

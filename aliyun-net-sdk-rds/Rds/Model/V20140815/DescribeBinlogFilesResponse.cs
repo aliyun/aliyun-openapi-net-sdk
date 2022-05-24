@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,66 +25,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeBinlogFilesResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? totalRecordCount;
+		private long? totalFileSize;
 
 		private int? pageNumber;
 
+		private string requestId;
+
 		private int? pageRecordCount;
 
-		private long? totalFileSize;
+		private int? totalRecordCount;
 
 		private List<DescribeBinlogFiles_BinLogFile> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public int? PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TotalFileSize")]
 		public long? TotalFileSize
 		{
 			get
@@ -97,6 +50,59 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageRecordCount")]
+		public int? PageRecordCount
+		{
+			get
+			{
+				return pageRecordCount;
+			}
+			set	
+			{
+				pageRecordCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalRecordCount")]
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeBinlogFiles_BinLogFile> Items
 		{
 			get
@@ -112,74 +118,40 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeBinlogFiles_BinLogFile
 		{
 
-			private long? fileSize;
-
-			private string logBeginTime;
-
-			private string logEndTime;
-
-			private string downloadLink;
+			private string remoteStatus;
 
 			private string intranetDownloadLink;
 
+			private string logBeginTime;
+
 			private string linkExpiredTime;
 
-			private string checksum;
-
-			private string hostInstanceID;
+			private string downloadLink;
 
 			private string logFileName;
 
-			private string remoteStatus;
+			private string checksum;
 
-			public long? FileSize
+			private string logEndTime;
+
+			private string hostInstanceID;
+
+			private long? fileSize;
+
+			[JsonProperty(PropertyName = "RemoteStatus")]
+			public string RemoteStatus
 			{
 				get
 				{
-					return fileSize;
+					return remoteStatus;
 				}
 				set	
 				{
-					fileSize = value;
+					remoteStatus = value;
 				}
 			}
 
-			public string LogBeginTime
-			{
-				get
-				{
-					return logBeginTime;
-				}
-				set	
-				{
-					logBeginTime = value;
-				}
-			}
-
-			public string LogEndTime
-			{
-				get
-				{
-					return logEndTime;
-				}
-				set	
-				{
-					logEndTime = value;
-				}
-			}
-
-			public string DownloadLink
-			{
-				get
-				{
-					return downloadLink;
-				}
-				set	
-				{
-					downloadLink = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "IntranetDownloadLink")]
 			public string IntranetDownloadLink
 			{
 				get
@@ -192,6 +164,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "LogBeginTime")]
+			public string LogBeginTime
+			{
+				get
+				{
+					return logBeginTime;
+				}
+				set	
+				{
+					logBeginTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LinkExpiredTime")]
 			public string LinkExpiredTime
 			{
 				get
@@ -204,30 +190,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string Checksum
+			[JsonProperty(PropertyName = "DownloadLink")]
+			public string DownloadLink
 			{
 				get
 				{
-					return checksum;
+					return downloadLink;
 				}
 				set	
 				{
-					checksum = value;
+					downloadLink = value;
 				}
 			}
 
-			public string HostInstanceID
-			{
-				get
-				{
-					return hostInstanceID;
-				}
-				set	
-				{
-					hostInstanceID = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "LogFileName")]
 			public string LogFileName
 			{
 				get
@@ -240,15 +216,55 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string RemoteStatus
+			[JsonProperty(PropertyName = "Checksum")]
+			public string Checksum
 			{
 				get
 				{
-					return remoteStatus;
+					return checksum;
 				}
 				set	
 				{
-					remoteStatus = value;
+					checksum = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LogEndTime")]
+			public string LogEndTime
+			{
+				get
+				{
+					return logEndTime;
+				}
+				set	
+				{
+					logEndTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "HostInstanceID")]
+			public string HostInstanceID
+			{
+				get
+				{
+					return hostInstanceID;
+				}
+				set	
+				{
+					hostInstanceID = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "FileSize")]
+			public long? FileSize
+			{
+				get
+				{
+					return fileSize;
+				}
+				set	
+				{
+					fileSize = value;
 				}
 			}
 		}

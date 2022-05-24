@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,114 +25,31 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class ModifyInstanceCrossBackupPolicyResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string storageOwner;
 
-		private string dBInstanceId;
+		private string backupEnabled;
+
+		private string storageType;
 
 		private string regionId;
+
+		private string logBackupEnabled;
+
+		private string requestId;
+
+		private int? retentType;
+
+		private string endpoint;
 
 		private string crossBackupRegion;
 
 		private string crossBackupType;
 
-		private string backupEnabled;
-
-		private string logBackupEnabled;
-
-		private string storageOwner;
-
-		private string storageType;
-
-		private string endpoint;
-
-		private int? retentType;
-
 		private int? retention;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string dBInstanceId;
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
-
-		public string CrossBackupRegion
-		{
-			get
-			{
-				return crossBackupRegion;
-			}
-			set	
-			{
-				crossBackupRegion = value;
-			}
-		}
-
-		public string CrossBackupType
-		{
-			get
-			{
-				return crossBackupType;
-			}
-			set	
-			{
-				crossBackupType = value;
-			}
-		}
-
-		public string BackupEnabled
-		{
-			get
-			{
-				return backupEnabled;
-			}
-			set	
-			{
-				backupEnabled = value;
-			}
-		}
-
-		public string LogBackupEnabled
-		{
-			get
-			{
-				return logBackupEnabled;
-			}
-			set	
-			{
-				logBackupEnabled = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "StorageOwner")]
 		public string StorageOwner
 		{
 			get
@@ -145,6 +62,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "BackupEnabled")]
+		public string BackupEnabled
+		{
+			get
+			{
+				return backupEnabled;
+			}
+			set	
+			{
+				backupEnabled = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "StorageType")]
 		public string StorageType
 		{
 			get
@@ -157,18 +88,46 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Endpoint
+		[JsonProperty(PropertyName = "RegionId")]
+		public string RegionId
 		{
 			get
 			{
-				return endpoint;
+				return regionId;
 			}
 			set	
 			{
-				endpoint = value;
+				regionId = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "LogBackupEnabled")]
+		public string LogBackupEnabled
+		{
+			get
+			{
+				return logBackupEnabled;
+			}
+			set	
+			{
+				logBackupEnabled = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RetentType")]
 		public int? RetentType
 		{
 			get
@@ -181,6 +140,46 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Endpoint")]
+		public string Endpoint
+		{
+			get
+			{
+				return endpoint;
+			}
+			set	
+			{
+				endpoint = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "CrossBackupRegion")]
+		public string CrossBackupRegion
+		{
+			get
+			{
+				return crossBackupRegion;
+			}
+			set	
+			{
+				crossBackupRegion = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "CrossBackupType")]
+		public string CrossBackupType
+		{
+			get
+			{
+				return crossBackupType;
+			}
+			set	
+			{
+				crossBackupType = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Retention")]
 		public int? Retention
 		{
 			get
@@ -190,6 +189,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				retention = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBInstanceId")]
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
 			}
 		}
 	}

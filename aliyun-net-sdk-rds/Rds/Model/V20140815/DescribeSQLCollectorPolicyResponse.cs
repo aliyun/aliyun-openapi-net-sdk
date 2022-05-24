@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? storagePeriod;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -43,6 +44,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "SQLCollectorStatus")]
 		public string SQLCollectorStatus
 		{
 			get
@@ -55,6 +57,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "StoragePeriod")]
 		public int? StoragePeriod
 		{
 			get

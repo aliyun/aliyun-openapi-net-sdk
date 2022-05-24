@@ -31,15 +31,15 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			ModifySecurityGroupConfigurationResponse modifySecurityGroupConfigurationResponse = new ModifySecurityGroupConfigurationResponse();
 
 			modifySecurityGroupConfigurationResponse.HttpResponse = _ctx.HttpResponse;
-			modifySecurityGroupConfigurationResponse.RequestId = _ctx.StringValue("ModifySecurityGroupConfiguration.RequestId");
 			modifySecurityGroupConfigurationResponse.DBInstanceName = _ctx.StringValue("ModifySecurityGroupConfiguration.DBInstanceName");
+			modifySecurityGroupConfigurationResponse.RequestId = _ctx.StringValue("ModifySecurityGroupConfiguration.RequestId");
 
 			List<ModifySecurityGroupConfigurationResponse.ModifySecurityGroupConfiguration_EcsSecurityGroupRelation> modifySecurityGroupConfigurationResponse_items = new List<ModifySecurityGroupConfigurationResponse.ModifySecurityGroupConfiguration_EcsSecurityGroupRelation>();
 			for (int i = 0; i < _ctx.Length("ModifySecurityGroupConfiguration.Items.Length"); i++) {
 				ModifySecurityGroupConfigurationResponse.ModifySecurityGroupConfiguration_EcsSecurityGroupRelation ecsSecurityGroupRelation = new ModifySecurityGroupConfigurationResponse.ModifySecurityGroupConfiguration_EcsSecurityGroupRelation();
-				ecsSecurityGroupRelation.RegionId = _ctx.StringValue("ModifySecurityGroupConfiguration.Items["+ i +"].RegionId");
-				ecsSecurityGroupRelation.SecurityGroupId = _ctx.StringValue("ModifySecurityGroupConfiguration.Items["+ i +"].SecurityGroupId");
 				ecsSecurityGroupRelation.NetworkType = _ctx.StringValue("ModifySecurityGroupConfiguration.Items["+ i +"].NetworkType");
+				ecsSecurityGroupRelation.SecurityGroupId = _ctx.StringValue("ModifySecurityGroupConfiguration.Items["+ i +"].SecurityGroupId");
+				ecsSecurityGroupRelation.RegionId = _ctx.StringValue("ModifySecurityGroupConfiguration.Items["+ i +"].RegionId");
 
 				modifySecurityGroupConfigurationResponse_items.Add(ecsSecurityGroupRelation);
 			}

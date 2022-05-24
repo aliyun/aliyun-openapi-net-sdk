@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			ImportUserBackupFileResponse importUserBackupFileResponse = new ImportUserBackupFileResponse();
 
 			importUserBackupFileResponse.HttpResponse = _ctx.HttpResponse;
-			importUserBackupFileResponse.BackupId = _ctx.StringValue("ImportUserBackupFile.BackupId");
-			importUserBackupFileResponse.RequestId = _ctx.StringValue("ImportUserBackupFile.RequestId");
 			importUserBackupFileResponse.Status = _ctx.BooleanValue("ImportUserBackupFile.Status");
+			importUserBackupFileResponse.RequestId = _ctx.StringValue("ImportUserBackupFile.RequestId");
+			importUserBackupFileResponse.BackupId = _ctx.StringValue("ImportUserBackupFile.BackupId");
         
 			return importUserBackupFileResponse;
         }

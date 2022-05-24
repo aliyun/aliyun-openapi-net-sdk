@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<GetDbProxyInstanceSsl_DbProxyCertListItemsItem> dbProxyCertListItems;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DbProxyCertListItems")]
 		public List<GetDbProxyInstanceSsl_DbProxyCertListItemsItem> DbProxyCertListItems
 		{
 			get
@@ -62,10 +64,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string endpointType;
 
-			private string certCommonName;
-
 			private string sslExpiredTime;
 
+			private string certCommonName;
+
+			[JsonProperty(PropertyName = "DbInstanceName")]
 			public string DbInstanceName
 			{
 				get
@@ -78,6 +81,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "EndpointName")]
 			public string EndpointName
 			{
 				get
@@ -90,6 +94,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "EndpointType")]
 			public string EndpointType
 			{
 				get
@@ -102,18 +107,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string CertCommonName
-			{
-				get
-				{
-					return certCommonName;
-				}
-				set	
-				{
-					certCommonName = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "SslExpiredTime")]
 			public string SslExpiredTime
 			{
 				get
@@ -123,6 +117,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					sslExpiredTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CertCommonName")]
+			public string CertCommonName
+			{
+				get
+				{
+					return certCommonName;
+				}
+				set	
+				{
+					certCommonName = value;
 				}
 			}
 		}

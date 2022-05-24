@@ -32,21 +32,21 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			describeSQLLogRecordsResponse.HttpResponse = _ctx.HttpResponse;
 			describeSQLLogRecordsResponse.RequestId = _ctx.StringValue("DescribeSQLLogRecords.RequestId");
-			describeSQLLogRecordsResponse.TotalRecordCount = _ctx.LongValue("DescribeSQLLogRecords.TotalRecordCount");
 			describeSQLLogRecordsResponse.PageNumber = _ctx.IntegerValue("DescribeSQLLogRecords.PageNumber");
 			describeSQLLogRecordsResponse.PageRecordCount = _ctx.IntegerValue("DescribeSQLLogRecords.PageRecordCount");
+			describeSQLLogRecordsResponse.TotalRecordCount = _ctx.LongValue("DescribeSQLLogRecords.TotalRecordCount");
 
 			List<DescribeSQLLogRecordsResponse.DescribeSQLLogRecords_SQLRecord> describeSQLLogRecordsResponse_items = new List<DescribeSQLLogRecordsResponse.DescribeSQLLogRecords_SQLRecord>();
 			for (int i = 0; i < _ctx.Length("DescribeSQLLogRecords.Items.Length"); i++) {
 				DescribeSQLLogRecordsResponse.DescribeSQLLogRecords_SQLRecord sQLRecord = new DescribeSQLLogRecordsResponse.DescribeSQLLogRecords_SQLRecord();
-				sQLRecord.DBName = _ctx.StringValue("DescribeSQLLogRecords.Items["+ i +"].DBName");
-				sQLRecord.AccountName = _ctx.StringValue("DescribeSQLLogRecords.Items["+ i +"].AccountName");
 				sQLRecord.HostAddress = _ctx.StringValue("DescribeSQLLogRecords.Items["+ i +"].HostAddress");
 				sQLRecord.SQLText = _ctx.StringValue("DescribeSQLLogRecords.Items["+ i +"].SQLText");
-				sQLRecord.TotalExecutionTimes = _ctx.LongValue("DescribeSQLLogRecords.Items["+ i +"].TotalExecutionTimes");
 				sQLRecord.ReturnRowCounts = _ctx.LongValue("DescribeSQLLogRecords.Items["+ i +"].ReturnRowCounts");
+				sQLRecord.DBName = _ctx.StringValue("DescribeSQLLogRecords.Items["+ i +"].DBName");
 				sQLRecord.ExecuteTime = _ctx.StringValue("DescribeSQLLogRecords.Items["+ i +"].ExecuteTime");
 				sQLRecord.ThreadID = _ctx.StringValue("DescribeSQLLogRecords.Items["+ i +"].ThreadID");
+				sQLRecord.TotalExecutionTimes = _ctx.LongValue("DescribeSQLLogRecords.Items["+ i +"].TotalExecutionTimes");
+				sQLRecord.AccountName = _ctx.StringValue("DescribeSQLLogRecords.Items["+ i +"].AccountName");
 
 				describeSQLLogRecordsResponse_items.Add(sQLRecord);
 			}

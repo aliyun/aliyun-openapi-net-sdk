@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,32 +25,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeCrossBackupMetaListResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dBInstanceName;
 
-		private int? pageNumber;
+		private int? totalPageCount;
+
+		private string requestId;
 
 		private int? pageRecordCount;
 
 		private int? totalRecordCount;
 
-		private int? totalPageCount;
+		private int? pageNumber;
 
 		private List<DescribeCrossBackupMetaList_Meta> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "DBInstanceName")]
 		public string DBInstanceName
 		{
 			get
@@ -63,42 +52,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public int? PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
-
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TotalPageCount")]
 		public int? TotalPageCount
 		{
 			get
@@ -111,6 +65,59 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageRecordCount")]
+		public int? PageRecordCount
+		{
+			get
+			{
+				return pageRecordCount;
+			}
+			set	
+			{
+				pageRecordCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalRecordCount")]
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageNumber")]
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeCrossBackupMetaList_Meta> Items
 		{
 			get
@@ -126,24 +133,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeCrossBackupMetaList_Meta
 		{
 
-			private string database;
-
 			private string tables;
+
+			private string database;
 
 			private string size;
 
-			public string Database
-			{
-				get
-				{
-					return database;
-				}
-				set	
-				{
-					database = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Tables")]
 			public string Tables
 			{
 				get
@@ -156,6 +152,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Database")]
+			public string Database
+			{
+				get
+				{
+					return database;
+				}
+				set	
+				{
+					database = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Size")]
 			public string Size
 			{
 				get

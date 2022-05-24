@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,38 +25,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDBInstanceProxyConfigurationResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string transparentSwitchConfiguration;
-
 		private string persistentConnectionsConfiguration;
 
 		private string attacksProtectionConfiguration;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
-		public string TransparentSwitchConfiguration
-		{
-			get
-			{
-				return transparentSwitchConfiguration;
-			}
-			set	
-			{
-				transparentSwitchConfiguration = value;
-			}
-		}
+		private string transparentSwitchConfiguration;
 
+		[JsonProperty(PropertyName = "PersistentConnectionsConfiguration")]
 		public string PersistentConnectionsConfiguration
 		{
 			get
@@ -69,6 +46,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "AttacksProtectionConfiguration")]
 		public string AttacksProtectionConfiguration
 		{
 			get
@@ -78,6 +56,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				attacksProtectionConfiguration = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TransparentSwitchConfiguration")]
+		public string TransparentSwitchConfiguration
+		{
+			get
+			{
+				return transparentSwitchConfiguration;
+			}
+			set	
+			{
+				transparentSwitchConfiguration = value;
 			}
 		}
 	}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeAvailableClasses_DBInstanceClass> dBInstanceClasses;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceClasses")]
 		public List<DescribeAvailableClasses_DBInstanceClass> DBInstanceClasses
 		{
 			get
@@ -56,24 +58,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeAvailableClasses_DBInstanceClass
 		{
 
-			private string dBInstanceClass;
-
 			private string storageRange;
+
+			private string dBInstanceClass;
 
 			private DescribeAvailableClasses_DBInstanceStorageRange dBInstanceStorageRange;
 
-			public string DBInstanceClass
-			{
-				get
-				{
-					return dBInstanceClass;
-				}
-				set	
-				{
-					dBInstanceClass = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "StorageRange")]
 			public string StorageRange
 			{
 				get
@@ -86,6 +77,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DBInstanceClass")]
+			public string DBInstanceClass
+			{
+				get
+				{
+					return dBInstanceClass;
+				}
+				set	
+				{
+					dBInstanceClass = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceStorageRange")]
 			public DescribeAvailableClasses_DBInstanceStorageRange DBInstanceStorageRange
 			{
 				get
@@ -101,24 +106,26 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			public class DescribeAvailableClasses_DBInstanceStorageRange
 			{
 
-				private int? maxValue;
+				private int? step;
 
 				private int? minValue;
 
-				private int? step;
+				private int? maxValue;
 
-				public int? MaxValue
+				[JsonProperty(PropertyName = "Step")]
+				public int? Step
 				{
 					get
 					{
-						return maxValue;
+						return step;
 					}
 					set	
 					{
-						maxValue = value;
+						step = value;
 					}
 				}
 
+				[JsonProperty(PropertyName = "MinValue")]
 				public int? MinValue
 				{
 					get
@@ -131,15 +138,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
-				public int? Step
+				[JsonProperty(PropertyName = "MaxValue")]
+				public int? MaxValue
 				{
 					get
 					{
-						return step;
+						return maxValue;
 					}
 					set	
 					{
-						step = value;
+						maxValue = value;
 					}
 				}
 			}

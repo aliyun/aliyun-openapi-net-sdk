@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeDBInstanceDetailResponse describeDBInstanceDetailResponse = new DescribeDBInstanceDetailResponse();
 
 			describeDBInstanceDetailResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBInstanceDetailResponse.RequestId = _ctx.StringValue("DescribeDBInstanceDetail.RequestId");
-			describeDBInstanceDetailResponse.DBInstanceId = _ctx.StringValue("DescribeDBInstanceDetail.DBInstanceId");
-			describeDBInstanceDetailResponse.RegionId = _ctx.StringValue("DescribeDBInstanceDetail.RegionId");
-			describeDBInstanceDetailResponse.LicenseType = _ctx.StringValue("DescribeDBInstanceDetail.LicenseType");
 			describeDBInstanceDetailResponse.ActivationState = _ctx.StringValue("DescribeDBInstanceDetail.ActivationState");
+			describeDBInstanceDetailResponse.DBInstanceId = _ctx.StringValue("DescribeDBInstanceDetail.DBInstanceId");
+			describeDBInstanceDetailResponse.LicenseType = _ctx.StringValue("DescribeDBInstanceDetail.LicenseType");
+			describeDBInstanceDetailResponse.RequestId = _ctx.StringValue("DescribeDBInstanceDetail.RequestId");
+			describeDBInstanceDetailResponse.RegionId = _ctx.StringValue("DescribeDBInstanceDetail.RegionId");
         
 			return describeDBInstanceDetailResponse;
         }

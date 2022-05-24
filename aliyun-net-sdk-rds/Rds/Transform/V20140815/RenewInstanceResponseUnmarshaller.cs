@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			RenewInstanceResponse renewInstanceResponse = new RenewInstanceResponse();
 
 			renewInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			renewInstanceResponse.RequestId = _ctx.StringValue("RenewInstance.RequestId");
 			renewInstanceResponse.OrderId = _ctx.LongValue("RenewInstance.OrderId");
+			renewInstanceResponse.RequestId = _ctx.StringValue("RenewInstance.RequestId");
         
 			return renewInstanceResponse;
         }

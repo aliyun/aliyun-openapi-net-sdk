@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeDTCSecurityIpHostsForSQLServerResponse describeDTCSecurityIpHostsForSQLServerResponse = new DescribeDTCSecurityIpHostsForSQLServerResponse();
 
 			describeDTCSecurityIpHostsForSQLServerResponse.HttpResponse = _ctx.HttpResponse;
-			describeDTCSecurityIpHostsForSQLServerResponse.RequestId = _ctx.StringValue("DescribeDTCSecurityIpHostsForSQLServer.RequestId");
 			describeDTCSecurityIpHostsForSQLServerResponse.DBInstanceId = _ctx.StringValue("DescribeDTCSecurityIpHostsForSQLServer.DBInstanceId");
+			describeDTCSecurityIpHostsForSQLServerResponse.RequestId = _ctx.StringValue("DescribeDTCSecurityIpHostsForSQLServer.RequestId");
 			describeDTCSecurityIpHostsForSQLServerResponse.IpHostPairNum = _ctx.StringValue("DescribeDTCSecurityIpHostsForSQLServer.IpHostPairNum");
 
 			List<DescribeDTCSecurityIpHostsForSQLServerResponse.DescribeDTCSecurityIpHostsForSQLServer_WhiteListGroups> describeDTCSecurityIpHostsForSQLServerResponse_items = new List<DescribeDTCSecurityIpHostsForSQLServerResponse.DescribeDTCSecurityIpHostsForSQLServer_WhiteListGroups>();

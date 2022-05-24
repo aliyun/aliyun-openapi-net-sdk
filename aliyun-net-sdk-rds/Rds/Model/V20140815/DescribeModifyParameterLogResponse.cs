@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -27,20 +27,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
-		private string engine;
-
-		private string dBInstanceId;
-
-		private string engineVersion;
+		private int? pageRecordCount;
 
 		private int? totalRecordCount;
 
+		private string dBInstanceId;
+
+		private string engine;
+
 		private int? pageNumber;
 
-		private int? pageRecordCount;
+		private string engineVersion;
 
 		private List<DescribeModifyParameterLog_ParameterChangeLog> items;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -53,66 +54,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-			}
-		}
-
-		public string EngineVersion
-		{
-			get
-			{
-				return engineVersion;
-			}
-			set	
-			{
-				engineVersion = value;
-			}
-		}
-
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "PageRecordCount")]
 		public int? PageRecordCount
 		{
 			get
@@ -125,6 +67,72 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalRecordCount")]
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBInstanceId")]
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Engine")]
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageNumber")]
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "EngineVersion")]
+		public string EngineVersion
+		{
+			get
+			{
+				return engineVersion;
+			}
+			set	
+			{
+				engineVersion = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeModifyParameterLog_ParameterChangeLog> Items
 		{
 			get
@@ -140,28 +148,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeModifyParameterLog_ParameterChangeLog
 		{
 
-			private string modifyTime;
+			private string status;
 
 			private string oldParameterValue;
 
-			private string newParameterValue;
-
 			private string parameterName;
 
-			private string status;
+			private string newParameterValue;
 
-			public string ModifyTime
+			private string modifyTime;
+
+			[JsonProperty(PropertyName = "Status")]
+			public string Status
 			{
 				get
 				{
-					return modifyTime;
+					return status;
 				}
 				set	
 				{
-					modifyTime = value;
+					status = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "OldParameterValue")]
 			public string OldParameterValue
 			{
 				get
@@ -174,18 +184,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string NewParameterValue
-			{
-				get
-				{
-					return newParameterValue;
-				}
-				set	
-				{
-					newParameterValue = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "ParameterName")]
 			public string ParameterName
 			{
 				get
@@ -198,15 +197,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string Status
+			[JsonProperty(PropertyName = "NewParameterValue")]
+			public string NewParameterValue
 			{
 				get
 				{
-					return status;
+					return newParameterValue;
 				}
 				set	
 				{
-					status = value;
+					newParameterValue = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ModifyTime")]
+			public string ModifyTime
+			{
+				get
+				{
+					return modifyTime;
+				}
+				set	
+				{
+					modifyTime = value;
 				}
 			}
 		}

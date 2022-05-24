@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,72 +25,25 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeCrossRegionLogBackupFilesResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string regionId;
-
-		private string dBInstanceId;
+		private string endTime;
 
 		private string startTime;
 
-		private string endTime;
-
-		private int? totalRecordCount;
+		private string requestId;
 
 		private int? pageRecordCount;
 
+		private int? totalRecordCount;
+
+		private string dBInstanceId;
+
 		private int? pageNumber;
+
+		private string regionId;
 
 		private List<DescribeCrossRegionLogBackupFiles_Item> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
 		{
 			get
@@ -103,18 +56,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? TotalRecordCount
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
 		{
 			get
 			{
-				return totalRecordCount;
+				return startTime;
 			}
 			set	
 			{
-				totalRecordCount = value;
+				startTime = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageRecordCount")]
 		public int? PageRecordCount
 		{
 			get
@@ -127,6 +95,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalRecordCount")]
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBInstanceId")]
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -139,6 +134,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RegionId")]
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeCrossRegionLogBackupFiles_Item> Items
 		{
 			get
@@ -154,62 +163,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeCrossRegionLogBackupFiles_Item
 		{
 
-			private int? crossLogBackupId;
-
-			private string crossBackupRegion;
-
-			private long? crossLogBackupSize;
-
 			private string logBeginTime;
-
-			private string logEndTime;
-
-			private string crossDownloadLink;
-
-			private string crossIntranetDownloadLink;
 
 			private string linkExpiredTime;
 
+			private string crossIntranetDownloadLink;
+
 			private string logFileName;
+
+			private string crossBackupRegion;
+
+			private string crossDownloadLink;
+
+			private long? crossLogBackupSize;
 
 			private int? instanceId;
 
-			public int? CrossLogBackupId
-			{
-				get
-				{
-					return crossLogBackupId;
-				}
-				set	
-				{
-					crossLogBackupId = value;
-				}
-			}
+			private int? crossLogBackupId;
 
-			public string CrossBackupRegion
-			{
-				get
-				{
-					return crossBackupRegion;
-				}
-				set	
-				{
-					crossBackupRegion = value;
-				}
-			}
+			private string logEndTime;
 
-			public long? CrossLogBackupSize
-			{
-				get
-				{
-					return crossLogBackupSize;
-				}
-				set	
-				{
-					crossLogBackupSize = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "LogBeginTime")]
 			public string LogBeginTime
 			{
 				get
@@ -222,42 +196,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string LogEndTime
-			{
-				get
-				{
-					return logEndTime;
-				}
-				set	
-				{
-					logEndTime = value;
-				}
-			}
-
-			public string CrossDownloadLink
-			{
-				get
-				{
-					return crossDownloadLink;
-				}
-				set	
-				{
-					crossDownloadLink = value;
-				}
-			}
-
-			public string CrossIntranetDownloadLink
-			{
-				get
-				{
-					return crossIntranetDownloadLink;
-				}
-				set	
-				{
-					crossIntranetDownloadLink = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "LinkExpiredTime")]
 			public string LinkExpiredTime
 			{
 				get
@@ -270,6 +209,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "CrossIntranetDownloadLink")]
+			public string CrossIntranetDownloadLink
+			{
+				get
+				{
+					return crossIntranetDownloadLink;
+				}
+				set	
+				{
+					crossIntranetDownloadLink = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LogFileName")]
 			public string LogFileName
 			{
 				get
@@ -282,6 +235,46 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "CrossBackupRegion")]
+			public string CrossBackupRegion
+			{
+				get
+				{
+					return crossBackupRegion;
+				}
+				set	
+				{
+					crossBackupRegion = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CrossDownloadLink")]
+			public string CrossDownloadLink
+			{
+				get
+				{
+					return crossDownloadLink;
+				}
+				set	
+				{
+					crossDownloadLink = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CrossLogBackupSize")]
+			public long? CrossLogBackupSize
+			{
+				get
+				{
+					return crossLogBackupSize;
+				}
+				set	
+				{
+					crossLogBackupSize = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceId")]
 			public int? InstanceId
 			{
 				get
@@ -291,6 +284,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					instanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CrossLogBackupId")]
+			public int? CrossLogBackupId
+			{
+				get
+				{
+					return crossLogBackupId;
+				}
+				set	
+				{
+					crossLogBackupId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LogEndTime")]
+			public string LogEndTime
+			{
+				get
+				{
+					return logEndTime;
+				}
+				set	
+				{
+					logEndTime = value;
 				}
 			}
 		}

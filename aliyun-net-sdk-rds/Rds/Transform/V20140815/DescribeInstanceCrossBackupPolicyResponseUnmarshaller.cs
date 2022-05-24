@@ -31,28 +31,28 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeInstanceCrossBackupPolicyResponse describeInstanceCrossBackupPolicyResponse = new DescribeInstanceCrossBackupPolicyResponse();
 
 			describeInstanceCrossBackupPolicyResponse.HttpResponse = _ctx.HttpResponse;
-			describeInstanceCrossBackupPolicyResponse.RequestId = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.RequestId");
-			describeInstanceCrossBackupPolicyResponse.DBInstanceId = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.DBInstanceId");
-			describeInstanceCrossBackupPolicyResponse.DBInstanceDescription = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.DBInstanceDescription");
-			describeInstanceCrossBackupPolicyResponse.DBInstanceStatus = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.DBInstanceStatus");
+			describeInstanceCrossBackupPolicyResponse.RelServiceId = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.RelServiceId");
+			describeInstanceCrossBackupPolicyResponse.LogBackupEnabledTime = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.LogBackupEnabledTime");
 			describeInstanceCrossBackupPolicyResponse.DBInstanceStatusDesc = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.DBInstanceStatusDesc");
-			describeInstanceCrossBackupPolicyResponse.Engine = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.Engine");
+			describeInstanceCrossBackupPolicyResponse.StorageOwner = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.StorageOwner");
+			describeInstanceCrossBackupPolicyResponse.RelService = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.RelService");
+			describeInstanceCrossBackupPolicyResponse.BackupEnabled = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.BackupEnabled");
+			describeInstanceCrossBackupPolicyResponse.StorageType = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.StorageType");
+			describeInstanceCrossBackupPolicyResponse.DBInstanceStatus = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.DBInstanceStatus");
+			describeInstanceCrossBackupPolicyResponse.LockMode = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.LockMode");
 			describeInstanceCrossBackupPolicyResponse.EngineVersion = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.EngineVersion");
 			describeInstanceCrossBackupPolicyResponse.RegionId = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.RegionId");
-			describeInstanceCrossBackupPolicyResponse.CrossBackupRegion = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.CrossBackupRegion");
-			describeInstanceCrossBackupPolicyResponse.CrossBackupType = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.CrossBackupType");
-			describeInstanceCrossBackupPolicyResponse.BackupEnabledTime = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.BackupEnabledTime");
-			describeInstanceCrossBackupPolicyResponse.BackupEnabled = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.BackupEnabled");
 			describeInstanceCrossBackupPolicyResponse.LogBackupEnabled = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.LogBackupEnabled");
-			describeInstanceCrossBackupPolicyResponse.LogBackupEnabledTime = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.LogBackupEnabledTime");
-			describeInstanceCrossBackupPolicyResponse.StorageOwner = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.StorageOwner");
-			describeInstanceCrossBackupPolicyResponse.StorageType = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.StorageType");
-			describeInstanceCrossBackupPolicyResponse.Endpoint = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.Endpoint");
+			describeInstanceCrossBackupPolicyResponse.RequestId = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.RequestId");
 			describeInstanceCrossBackupPolicyResponse.RetentType = _ctx.IntegerValue("DescribeInstanceCrossBackupPolicy.RetentType");
+			describeInstanceCrossBackupPolicyResponse.Endpoint = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.Endpoint");
 			describeInstanceCrossBackupPolicyResponse.Retention = _ctx.IntegerValue("DescribeInstanceCrossBackupPolicy.Retention");
-			describeInstanceCrossBackupPolicyResponse.LockMode = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.LockMode");
-			describeInstanceCrossBackupPolicyResponse.RelService = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.RelService");
-			describeInstanceCrossBackupPolicyResponse.RelServiceId = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.RelServiceId");
+			describeInstanceCrossBackupPolicyResponse.CrossBackupType = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.CrossBackupType");
+			describeInstanceCrossBackupPolicyResponse.CrossBackupRegion = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.CrossBackupRegion");
+			describeInstanceCrossBackupPolicyResponse.DBInstanceId = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.DBInstanceId");
+			describeInstanceCrossBackupPolicyResponse.Engine = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.Engine");
+			describeInstanceCrossBackupPolicyResponse.BackupEnabledTime = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.BackupEnabledTime");
+			describeInstanceCrossBackupPolicyResponse.DBInstanceDescription = _ctx.StringValue("DescribeInstanceCrossBackupPolicy.DBInstanceDescription");
         
 			return describeInstanceCrossBackupPolicyResponse;
         }

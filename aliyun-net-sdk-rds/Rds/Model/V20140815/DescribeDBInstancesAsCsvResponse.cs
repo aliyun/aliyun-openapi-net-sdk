@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeDBInstancesAsCsv_DBInstanceAttribute> items;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeDBInstancesAsCsv_DBInstanceAttribute> Items
 		{
 			get
@@ -56,532 +58,89 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeDBInstancesAsCsv_DBInstanceAttribute
 		{
 
-			private string dBInstanceId;
-
-			private string payType;
-
-			private string dBInstanceClassType;
-
-			private string dBInstanceType;
-
-			private string regionId;
-
-			private string connectionString;
-
-			private string port;
-
-			private string engine;
-
-			private string engineVersion;
-
-			private string dBInstanceClass;
-
-			private long? dBInstanceMemory;
-
-			private int? dBInstanceStorage;
-
-			private string dBInstanceNetType;
-
-			private string dBInstanceStatus;
-
-			private string dBInstanceDescription;
-
-			private string lockMode;
-
-			private string lockReason;
-
-			private string readDelayTime;
-
-			private int? dBMaxQuantity;
-
-			private int? accountMaxQuantity;
+			private string vpcId;
 
 			private string creationTime;
 
-			private string expireTime;
-
-			private string maintainTime;
-
-			private string availabilityValue;
-
-			private int? maxIOPS;
-
-			private int? maxConnections;
-
-			private string masterInstanceId;
-
-			private string dBInstanceCPU;
-
-			private string incrementSourceDBInstanceId;
-
-			private string guardDBInstanceId;
-
 			private string tempDBInstanceId;
-
-			private string securityIPList;
-
-			private string zoneId;
-
-			private string instanceNetworkType;
-
-			private string category;
-
-			private string accountType;
 
 			private string supportUpgradeAccountType;
 
-			private string vpcId;
+			private string incrementSourceDBInstanceId;
 
-			private string vSwitchId;
+			private long? dBInstanceMemory;
 
-			private string connectionMode;
+			private string maintainTime;
+
+			private string payType;
 
 			private string tags;
 
-			public string DBInstanceId
-			{
-				get
-				{
-					return dBInstanceId;
-				}
-				set	
-				{
-					dBInstanceId = value;
-				}
-			}
+			private string availabilityValue;
 
-			public string PayType
-			{
-				get
-				{
-					return payType;
-				}
-				set	
-				{
-					payType = value;
-				}
-			}
+			private string readDelayTime;
 
-			public string DBInstanceClassType
-			{
-				get
-				{
-					return dBInstanceClassType;
-				}
-				set	
-				{
-					dBInstanceClassType = value;
-				}
-			}
+			private string connectionMode;
 
-			public string DBInstanceType
-			{
-				get
-				{
-					return dBInstanceType;
-				}
-				set	
-				{
-					dBInstanceType = value;
-				}
-			}
+			private string port;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+			private string accountType;
 
-			public string ConnectionString
-			{
-				get
-				{
-					return connectionString;
-				}
-				set	
-				{
-					connectionString = value;
-				}
-			}
+			private string lockMode;
 
-			public string Port
-			{
-				get
-				{
-					return port;
-				}
-				set	
-				{
-					port = value;
-				}
-			}
+			private string engineVersion;
 
-			public string Engine
-			{
-				get
-				{
-					return engine;
-				}
-				set	
-				{
-					engine = value;
-				}
-			}
+			private int? maxIOPS;
 
-			public string EngineVersion
-			{
-				get
-				{
-					return engineVersion;
-				}
-				set	
-				{
-					engineVersion = value;
-				}
-			}
+			private string connectionString;
 
-			public string DBInstanceClass
-			{
-				get
-				{
-					return dBInstanceClass;
-				}
-				set	
-				{
-					dBInstanceClass = value;
-				}
-			}
+			private string instanceNetworkType;
 
-			public long? DBInstanceMemory
-			{
-				get
-				{
-					return dBInstanceMemory;
-				}
-				set	
-				{
-					dBInstanceMemory = value;
-				}
-			}
+			private string securityIPList;
 
-			public int? DBInstanceStorage
-			{
-				get
-				{
-					return dBInstanceStorage;
-				}
-				set	
-				{
-					dBInstanceStorage = value;
-				}
-			}
+			private string masterInstanceId;
 
-			public string DBInstanceNetType
-			{
-				get
-				{
-					return dBInstanceNetType;
-				}
-				set	
-				{
-					dBInstanceNetType = value;
-				}
-			}
+			private string dBInstanceClassType;
 
-			public string DBInstanceStatus
-			{
-				get
-				{
-					return dBInstanceStatus;
-				}
-				set	
-				{
-					dBInstanceStatus = value;
-				}
-			}
+			private string dBInstanceDescription;
 
-			public string DBInstanceDescription
-			{
-				get
-				{
-					return dBInstanceDescription;
-				}
-				set	
-				{
-					dBInstanceDescription = value;
-				}
-			}
+			private string dBInstanceCPU;
 
-			public string LockMode
-			{
-				get
-				{
-					return lockMode;
-				}
-				set	
-				{
-					lockMode = value;
-				}
-			}
+			private string expireTime;
 
-			public string LockReason
-			{
-				get
-				{
-					return lockReason;
-				}
-				set	
-				{
-					lockReason = value;
-				}
-			}
+			private string dBInstanceNetType;
 
-			public string ReadDelayTime
-			{
-				get
-				{
-					return readDelayTime;
-				}
-				set	
-				{
-					readDelayTime = value;
-				}
-			}
+			private string dBInstanceType;
 
-			public int? DBMaxQuantity
-			{
-				get
-				{
-					return dBMaxQuantity;
-				}
-				set	
-				{
-					dBMaxQuantity = value;
-				}
-			}
+			private int? accountMaxQuantity;
 
-			public int? AccountMaxQuantity
-			{
-				get
-				{
-					return accountMaxQuantity;
-				}
-				set	
-				{
-					accountMaxQuantity = value;
-				}
-			}
+			private string lockReason;
 
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
+			private string dBInstanceStatus;
 
-			public string ExpireTime
-			{
-				get
-				{
-					return expireTime;
-				}
-				set	
-				{
-					expireTime = value;
-				}
-			}
+			private int? dBMaxQuantity;
 
-			public string MaintainTime
-			{
-				get
-				{
-					return maintainTime;
-				}
-				set	
-				{
-					maintainTime = value;
-				}
-			}
+			private string guardDBInstanceId;
 
-			public string AvailabilityValue
-			{
-				get
-				{
-					return availabilityValue;
-				}
-				set	
-				{
-					availabilityValue = value;
-				}
-			}
+			private string regionId;
 
-			public int? MaxIOPS
-			{
-				get
-				{
-					return maxIOPS;
-				}
-				set	
-				{
-					maxIOPS = value;
-				}
-			}
+			private int? dBInstanceStorage;
 
-			public int? MaxConnections
-			{
-				get
-				{
-					return maxConnections;
-				}
-				set	
-				{
-					maxConnections = value;
-				}
-			}
+			private string vSwitchId;
 
-			public string MasterInstanceId
-			{
-				get
-				{
-					return masterInstanceId;
-				}
-				set	
-				{
-					masterInstanceId = value;
-				}
-			}
+			private string zoneId;
 
-			public string DBInstanceCPU
-			{
-				get
-				{
-					return dBInstanceCPU;
-				}
-				set	
-				{
-					dBInstanceCPU = value;
-				}
-			}
+			private string category;
 
-			public string IncrementSourceDBInstanceId
-			{
-				get
-				{
-					return incrementSourceDBInstanceId;
-				}
-				set	
-				{
-					incrementSourceDBInstanceId = value;
-				}
-			}
+			private int? maxConnections;
 
-			public string GuardDBInstanceId
-			{
-				get
-				{
-					return guardDBInstanceId;
-				}
-				set	
-				{
-					guardDBInstanceId = value;
-				}
-			}
+			private string dBInstanceId;
 
-			public string TempDBInstanceId
-			{
-				get
-				{
-					return tempDBInstanceId;
-				}
-				set	
-				{
-					tempDBInstanceId = value;
-				}
-			}
+			private string dBInstanceClass;
 
-			public string SecurityIPList
-			{
-				get
-				{
-					return securityIPList;
-				}
-				set	
-				{
-					securityIPList = value;
-				}
-			}
+			private string engine;
 
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
-			public string InstanceNetworkType
-			{
-				get
-				{
-					return instanceNetworkType;
-				}
-				set	
-				{
-					instanceNetworkType = value;
-				}
-			}
-
-			public string Category
-			{
-				get
-				{
-					return category;
-				}
-				set	
-				{
-					category = value;
-				}
-			}
-
-			public string AccountType
-			{
-				get
-				{
-					return accountType;
-				}
-				set	
-				{
-					accountType = value;
-				}
-			}
-
-			public string SupportUpgradeAccountType
-			{
-				get
-				{
-					return supportUpgradeAccountType;
-				}
-				set	
-				{
-					supportUpgradeAccountType = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "VpcId")]
 			public string VpcId
 			{
 				get
@@ -594,18 +153,137 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string VSwitchId
+			[JsonProperty(PropertyName = "CreationTime")]
+			public string CreationTime
 			{
 				get
 				{
-					return vSwitchId;
+					return creationTime;
 				}
 				set	
 				{
-					vSwitchId = value;
+					creationTime = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "TempDBInstanceId")]
+			public string TempDBInstanceId
+			{
+				get
+				{
+					return tempDBInstanceId;
+				}
+				set	
+				{
+					tempDBInstanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SupportUpgradeAccountType")]
+			public string SupportUpgradeAccountType
+			{
+				get
+				{
+					return supportUpgradeAccountType;
+				}
+				set	
+				{
+					supportUpgradeAccountType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IncrementSourceDBInstanceId")]
+			public string IncrementSourceDBInstanceId
+			{
+				get
+				{
+					return incrementSourceDBInstanceId;
+				}
+				set	
+				{
+					incrementSourceDBInstanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceMemory")]
+			public long? DBInstanceMemory
+			{
+				get
+				{
+					return dBInstanceMemory;
+				}
+				set	
+				{
+					dBInstanceMemory = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaintainTime")]
+			public string MaintainTime
+			{
+				get
+				{
+					return maintainTime;
+				}
+				set	
+				{
+					maintainTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PayType")]
+			public string PayType
+			{
+				get
+				{
+					return payType;
+				}
+				set	
+				{
+					payType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Tags")]
+			public string Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AvailabilityValue")]
+			public string AvailabilityValue
+			{
+				get
+				{
+					return availabilityValue;
+				}
+				set	
+				{
+					availabilityValue = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ReadDelayTime")]
+			public string ReadDelayTime
+			{
+				get
+				{
+					return readDelayTime;
+				}
+				set	
+				{
+					readDelayTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ConnectionMode")]
 			public string ConnectionMode
 			{
 				get
@@ -618,15 +296,380 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string Tags
+			[JsonProperty(PropertyName = "Port")]
+			public string Port
 			{
 				get
 				{
-					return tags;
+					return port;
 				}
 				set	
 				{
-					tags = value;
+					port = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AccountType")]
+			public string AccountType
+			{
+				get
+				{
+					return accountType;
+				}
+				set	
+				{
+					accountType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LockMode")]
+			public string LockMode
+			{
+				get
+				{
+					return lockMode;
+				}
+				set	
+				{
+					lockMode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EngineVersion")]
+			public string EngineVersion
+			{
+				get
+				{
+					return engineVersion;
+				}
+				set	
+				{
+					engineVersion = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaxIOPS")]
+			public int? MaxIOPS
+			{
+				get
+				{
+					return maxIOPS;
+				}
+				set	
+				{
+					maxIOPS = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ConnectionString")]
+			public string ConnectionString
+			{
+				get
+				{
+					return connectionString;
+				}
+				set	
+				{
+					connectionString = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceNetworkType")]
+			public string InstanceNetworkType
+			{
+				get
+				{
+					return instanceNetworkType;
+				}
+				set	
+				{
+					instanceNetworkType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SecurityIPList")]
+			public string SecurityIPList
+			{
+				get
+				{
+					return securityIPList;
+				}
+				set	
+				{
+					securityIPList = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MasterInstanceId")]
+			public string MasterInstanceId
+			{
+				get
+				{
+					return masterInstanceId;
+				}
+				set	
+				{
+					masterInstanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceClassType")]
+			public string DBInstanceClassType
+			{
+				get
+				{
+					return dBInstanceClassType;
+				}
+				set	
+				{
+					dBInstanceClassType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceDescription")]
+			public string DBInstanceDescription
+			{
+				get
+				{
+					return dBInstanceDescription;
+				}
+				set	
+				{
+					dBInstanceDescription = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceCPU")]
+			public string DBInstanceCPU
+			{
+				get
+				{
+					return dBInstanceCPU;
+				}
+				set	
+				{
+					dBInstanceCPU = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExpireTime")]
+			public string ExpireTime
+			{
+				get
+				{
+					return expireTime;
+				}
+				set	
+				{
+					expireTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceNetType")]
+			public string DBInstanceNetType
+			{
+				get
+				{
+					return dBInstanceNetType;
+				}
+				set	
+				{
+					dBInstanceNetType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceType")]
+			public string DBInstanceType
+			{
+				get
+				{
+					return dBInstanceType;
+				}
+				set	
+				{
+					dBInstanceType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AccountMaxQuantity")]
+			public int? AccountMaxQuantity
+			{
+				get
+				{
+					return accountMaxQuantity;
+				}
+				set	
+				{
+					accountMaxQuantity = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LockReason")]
+			public string LockReason
+			{
+				get
+				{
+					return lockReason;
+				}
+				set	
+				{
+					lockReason = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceStatus")]
+			public string DBInstanceStatus
+			{
+				get
+				{
+					return dBInstanceStatus;
+				}
+				set	
+				{
+					dBInstanceStatus = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBMaxQuantity")]
+			public int? DBMaxQuantity
+			{
+				get
+				{
+					return dBMaxQuantity;
+				}
+				set	
+				{
+					dBMaxQuantity = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "GuardDBInstanceId")]
+			public string GuardDBInstanceId
+			{
+				get
+				{
+					return guardDBInstanceId;
+				}
+				set	
+				{
+					guardDBInstanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RegionId")]
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceStorage")]
+			public int? DBInstanceStorage
+			{
+				get
+				{
+					return dBInstanceStorage;
+				}
+				set	
+				{
+					dBInstanceStorage = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "VSwitchId")]
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ZoneId")]
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Category")]
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaxConnections")]
+			public int? MaxConnections
+			{
+				get
+				{
+					return maxConnections;
+				}
+				set	
+				{
+					maxConnections = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceId")]
+			public string DBInstanceId
+			{
+				get
+				{
+					return dBInstanceId;
+				}
+				set	
+				{
+					dBInstanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceClass")]
+			public string DBInstanceClass
+			{
+				get
+				{
+					return dBInstanceClass;
+				}
+				set	
+				{
+					dBInstanceClass = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Engine")]
+			public string Engine
+			{
+				get
+				{
+					return engine;
+				}
+				set	
+				{
+					engine = value;
 				}
 			}
 		}

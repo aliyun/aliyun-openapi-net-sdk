@@ -32,8 +32,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			describeHASwitchConfigResponse.HttpResponse = _ctx.HttpResponse;
 			describeHASwitchConfigResponse.RequestId = _ctx.StringValue("DescribeHASwitchConfig.RequestId");
-			describeHASwitchConfigResponse.HAConfig = _ctx.StringValue("DescribeHASwitchConfig.HAConfig");
 			describeHASwitchConfigResponse.ManualHATime = _ctx.StringValue("DescribeHASwitchConfig.ManualHATime");
+			describeHASwitchConfigResponse.HAConfig = _ctx.StringValue("DescribeHASwitchConfig.HAConfig");
         
 			return describeHASwitchConfigResponse;
         }

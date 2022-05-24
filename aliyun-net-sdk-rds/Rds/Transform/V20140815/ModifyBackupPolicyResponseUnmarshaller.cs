@@ -32,13 +32,13 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			modifyBackupPolicyResponse.HttpResponse = _ctx.HttpResponse;
 			modifyBackupPolicyResponse.RequestId = _ctx.StringValue("ModifyBackupPolicy.RequestId");
+			modifyBackupPolicyResponse.CompressType = _ctx.StringValue("ModifyBackupPolicy.CompressType");
+			modifyBackupPolicyResponse.LocalLogRetentionSpace = _ctx.StringValue("ModifyBackupPolicy.LocalLogRetentionSpace");
+			modifyBackupPolicyResponse.LogBackupLocalRetentionNumber = _ctx.IntegerValue("ModifyBackupPolicy.LogBackupLocalRetentionNumber");
 			modifyBackupPolicyResponse.DBInstanceID = _ctx.StringValue("ModifyBackupPolicy.DBInstanceID");
 			modifyBackupPolicyResponse.EnableBackupLog = _ctx.StringValue("ModifyBackupPolicy.EnableBackupLog");
 			modifyBackupPolicyResponse.LocalLogRetentionHours = _ctx.IntegerValue("ModifyBackupPolicy.LocalLogRetentionHours");
-			modifyBackupPolicyResponse.LocalLogRetentionSpace = _ctx.StringValue("ModifyBackupPolicy.LocalLogRetentionSpace");
 			modifyBackupPolicyResponse.HighSpaceUsageProtection = _ctx.StringValue("ModifyBackupPolicy.HighSpaceUsageProtection");
-			modifyBackupPolicyResponse.CompressType = _ctx.StringValue("ModifyBackupPolicy.CompressType");
-			modifyBackupPolicyResponse.LogBackupLocalRetentionNumber = _ctx.IntegerValue("ModifyBackupPolicy.LogBackupLocalRetentionNumber");
         
 			return modifyBackupPolicyResponse;
         }

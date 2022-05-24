@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,28 +25,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class ModifyCollationTimeZoneResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string collation;
 
 		private string dBInstanceId;
 
-		private string taskId;
+		private string requestId;
 
 		private string timezone;
 
-		private string collation;
+		private string taskId;
 
-		public string RequestId
+		[JsonProperty(PropertyName = "Collation")]
+		public string Collation
 		{
 			get
 			{
-				return requestId;
+				return collation;
 			}
 			set	
 			{
-				requestId = value;
+				collation = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -59,18 +61,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string TaskId
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return taskId;
+				return requestId;
 			}
 			set	
 			{
-				taskId = value;
+				requestId = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "Timezone")]
 		public string Timezone
 		{
 			get
@@ -83,15 +87,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Collation
+		[JsonProperty(PropertyName = "TaskId")]
+		public string TaskId
 		{
 			get
 			{
-				return collation;
+				return taskId;
 			}
 			set	
 			{
-				collation = value;
+				taskId = value;
 			}
 		}
 	}

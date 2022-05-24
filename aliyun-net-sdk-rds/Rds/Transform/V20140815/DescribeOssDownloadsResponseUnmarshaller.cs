@@ -31,21 +31,21 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeOssDownloadsResponse describeOssDownloadsResponse = new DescribeOssDownloadsResponse();
 
 			describeOssDownloadsResponse.HttpResponse = _ctx.HttpResponse;
-			describeOssDownloadsResponse.RequestId = _ctx.StringValue("DescribeOssDownloads.RequestId");
 			describeOssDownloadsResponse.DBInstanceId = _ctx.StringValue("DescribeOssDownloads.DBInstanceId");
+			describeOssDownloadsResponse.RequestId = _ctx.StringValue("DescribeOssDownloads.RequestId");
 			describeOssDownloadsResponse.MigrateTaskId = _ctx.StringValue("DescribeOssDownloads.MigrateTaskId");
 
 			List<DescribeOssDownloadsResponse.DescribeOssDownloads_OssDownload> describeOssDownloadsResponse_items = new List<DescribeOssDownloadsResponse.DescribeOssDownloads_OssDownload>();
 			for (int i = 0; i < _ctx.Length("DescribeOssDownloads.Items.Length"); i++) {
 				DescribeOssDownloadsResponse.DescribeOssDownloads_OssDownload ossDownload = new DescribeOssDownloadsResponse.DescribeOssDownloads_OssDownload();
-				ossDownload.FileName = _ctx.StringValue("DescribeOssDownloads.Items["+ i +"].FileName");
-				ossDownload.CreateTime = _ctx.StringValue("DescribeOssDownloads.Items["+ i +"].CreateTime");
 				ossDownload.EndTime = _ctx.StringValue("DescribeOssDownloads.Items["+ i +"].EndTime");
-				ossDownload.BackupMode = _ctx.StringValue("DescribeOssDownloads.Items["+ i +"].BackupMode");
-				ossDownload.FileSize = _ctx.StringValue("DescribeOssDownloads.Items["+ i +"].FileSize");
 				ossDownload.Status = _ctx.StringValue("DescribeOssDownloads.Items["+ i +"].Status");
-				ossDownload.IsAvailable = _ctx.StringValue("DescribeOssDownloads.Items["+ i +"].IsAvailable");
 				ossDownload.Description = _ctx.StringValue("DescribeOssDownloads.Items["+ i +"].Description");
+				ossDownload.CreateTime = _ctx.StringValue("DescribeOssDownloads.Items["+ i +"].CreateTime");
+				ossDownload.BackupMode = _ctx.StringValue("DescribeOssDownloads.Items["+ i +"].BackupMode");
+				ossDownload.IsAvailable = _ctx.StringValue("DescribeOssDownloads.Items["+ i +"].IsAvailable");
+				ossDownload.FileName = _ctx.StringValue("DescribeOssDownloads.Items["+ i +"].FileName");
+				ossDownload.FileSize = _ctx.StringValue("DescribeOssDownloads.Items["+ i +"].FileSize");
 
 				describeOssDownloadsResponse_items.Add(ossDownload);
 			}

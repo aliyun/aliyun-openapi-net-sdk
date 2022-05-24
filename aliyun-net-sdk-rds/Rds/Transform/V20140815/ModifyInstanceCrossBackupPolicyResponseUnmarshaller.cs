@@ -31,18 +31,18 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			ModifyInstanceCrossBackupPolicyResponse modifyInstanceCrossBackupPolicyResponse = new ModifyInstanceCrossBackupPolicyResponse();
 
 			modifyInstanceCrossBackupPolicyResponse.HttpResponse = _ctx.HttpResponse;
-			modifyInstanceCrossBackupPolicyResponse.RequestId = _ctx.StringValue("ModifyInstanceCrossBackupPolicy.RequestId");
-			modifyInstanceCrossBackupPolicyResponse.DBInstanceId = _ctx.StringValue("ModifyInstanceCrossBackupPolicy.DBInstanceId");
+			modifyInstanceCrossBackupPolicyResponse.StorageOwner = _ctx.StringValue("ModifyInstanceCrossBackupPolicy.StorageOwner");
+			modifyInstanceCrossBackupPolicyResponse.BackupEnabled = _ctx.StringValue("ModifyInstanceCrossBackupPolicy.BackupEnabled");
+			modifyInstanceCrossBackupPolicyResponse.StorageType = _ctx.StringValue("ModifyInstanceCrossBackupPolicy.StorageType");
 			modifyInstanceCrossBackupPolicyResponse.RegionId = _ctx.StringValue("ModifyInstanceCrossBackupPolicy.RegionId");
+			modifyInstanceCrossBackupPolicyResponse.LogBackupEnabled = _ctx.StringValue("ModifyInstanceCrossBackupPolicy.LogBackupEnabled");
+			modifyInstanceCrossBackupPolicyResponse.RequestId = _ctx.StringValue("ModifyInstanceCrossBackupPolicy.RequestId");
+			modifyInstanceCrossBackupPolicyResponse.RetentType = _ctx.IntegerValue("ModifyInstanceCrossBackupPolicy.RetentType");
+			modifyInstanceCrossBackupPolicyResponse.Endpoint = _ctx.StringValue("ModifyInstanceCrossBackupPolicy.Endpoint");
 			modifyInstanceCrossBackupPolicyResponse.CrossBackupRegion = _ctx.StringValue("ModifyInstanceCrossBackupPolicy.CrossBackupRegion");
 			modifyInstanceCrossBackupPolicyResponse.CrossBackupType = _ctx.StringValue("ModifyInstanceCrossBackupPolicy.CrossBackupType");
-			modifyInstanceCrossBackupPolicyResponse.BackupEnabled = _ctx.StringValue("ModifyInstanceCrossBackupPolicy.BackupEnabled");
-			modifyInstanceCrossBackupPolicyResponse.LogBackupEnabled = _ctx.StringValue("ModifyInstanceCrossBackupPolicy.LogBackupEnabled");
-			modifyInstanceCrossBackupPolicyResponse.StorageOwner = _ctx.StringValue("ModifyInstanceCrossBackupPolicy.StorageOwner");
-			modifyInstanceCrossBackupPolicyResponse.StorageType = _ctx.StringValue("ModifyInstanceCrossBackupPolicy.StorageType");
-			modifyInstanceCrossBackupPolicyResponse.Endpoint = _ctx.StringValue("ModifyInstanceCrossBackupPolicy.Endpoint");
-			modifyInstanceCrossBackupPolicyResponse.RetentType = _ctx.IntegerValue("ModifyInstanceCrossBackupPolicy.RetentType");
 			modifyInstanceCrossBackupPolicyResponse.Retention = _ctx.IntegerValue("ModifyInstanceCrossBackupPolicy.Retention");
+			modifyInstanceCrossBackupPolicyResponse.DBInstanceId = _ctx.StringValue("ModifyInstanceCrossBackupPolicy.DBInstanceId");
         
 			return modifyInstanceCrossBackupPolicyResponse;
         }

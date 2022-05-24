@@ -17,18 +17,36 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeAvailableDedicatedHostClassesResponse : AcsResponse
+	public class CreateCloudMigrationPrecheckTaskResponse : AcsResponse
 	{
+
+		private string dBInstanceName;
 
 		private string requestId;
 
-		private List<DescribeAvailableDedicatedHostClasses_HostClassesItem> hostClasses;
+		private long? taskId;
 
+		private string taskName;
+
+		[JsonProperty(PropertyName = "DBInstanceName")]
+		public string DBInstanceName
+		{
+			get
+			{
+				return dBInstanceName;
+			}
+			set	
+			{
+				dBInstanceName = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,47 +59,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<DescribeAvailableDedicatedHostClasses_HostClassesItem> HostClasses
+		[JsonProperty(PropertyName = "TaskId")]
+		public long? TaskId
 		{
 			get
 			{
-				return hostClasses;
+				return taskId;
 			}
 			set	
 			{
-				hostClasses = value;
+				taskId = value;
 			}
 		}
 
-		public class DescribeAvailableDedicatedHostClasses_HostClassesItem
+		[JsonProperty(PropertyName = "TaskName")]
+		public string TaskName
 		{
-
-			private string hostClassName;
-
-			private string description;
-
-			public string HostClassName
+			get
 			{
-				get
-				{
-					return hostClassName;
-				}
-				set	
-				{
-					hostClassName = value;
-				}
+				return taskName;
 			}
-
-			public string Description
+			set	
 			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
+				taskName = value;
 			}
 		}
 	}

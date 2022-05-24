@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,26 +25,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class UpgradeDBInstanceKernelVersionResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dBInstanceName;
-
-		private string taskId;
 
 		private string targetMinorVersion;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
+		private string taskId;
+
+		[JsonProperty(PropertyName = "DBInstanceName")]
 		public string DBInstanceName
 		{
 			get
@@ -57,18 +46,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TargetMinorVersion")]
 		public string TargetMinorVersion
 		{
 			get
@@ -78,6 +56,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				targetMinorVersion = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TaskId")]
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
 			}
 		}
 	}

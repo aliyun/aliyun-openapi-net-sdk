@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
-		private int? totalRecordCount;
-
 		private int? pageNumber;
 
 		private int? pageRecordCount;
 
+		private int? totalRecordCount;
+
 		private List<DescribeSQLLogReportList_Item> items;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,18 +48,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -71,6 +61,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageRecordCount")]
 		public int? PageRecordCount
 		{
 			get
@@ -83,6 +74,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalRecordCount")]
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeSQLLogReportList_Item> Items
 		{
 			get
@@ -104,6 +109,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private List<DescribeSQLLogReportList_QPSTopNItem> qPSTopNItems;
 
+			[JsonProperty(PropertyName = "ReportTime")]
 			public string ReportTime
 			{
 				get
@@ -116,6 +122,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "LatencyTopNItems")]
 			public List<DescribeSQLLogReportList_LatencyTopNItem> LatencyTopNItems
 			{
 				get
@@ -128,6 +135,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "QPSTopNItems")]
 			public List<DescribeSQLLogReportList_QPSTopNItem> QPSTopNItems
 			{
 				get
@@ -145,10 +153,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 				private string sQLText;
 
-				private long? avgLatency;
-
 				private long? sQLExecuteTimes;
 
+				private long? avgLatency;
+
+				[JsonProperty(PropertyName = "SQLText")]
 				public string SQLText
 				{
 					get
@@ -161,6 +170,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "SQLExecuteTimes")]
+				public long? SQLExecuteTimes
+				{
+					get
+					{
+						return sQLExecuteTimes;
+					}
+					set	
+					{
+						sQLExecuteTimes = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "AvgLatency")]
 				public long? AvgLatency
 				{
 					get
@@ -172,7 +195,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 						avgLatency = value;
 					}
 				}
+			}
 
+			public class DescribeSQLLogReportList_QPSTopNItem
+			{
+
+				private long? sQLExecuteTimes;
+
+				private string sQLText;
+
+				[JsonProperty(PropertyName = "SQLExecuteTimes")]
 				public long? SQLExecuteTimes
 				{
 					get
@@ -184,15 +216,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 						sQLExecuteTimes = value;
 					}
 				}
-			}
 
-			public class DescribeSQLLogReportList_QPSTopNItem
-			{
-
-				private string sQLText;
-
-				private long? sQLExecuteTimes;
-
+				[JsonProperty(PropertyName = "SQLText")]
 				public string SQLText
 				{
 					get
@@ -202,18 +227,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						sQLText = value;
-					}
-				}
-
-				public long? SQLExecuteTimes
-				{
-					get
-					{
-						return sQLExecuteTimes;
-					}
-					set	
-					{
-						sQLExecuteTimes = value;
 					}
 				}
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,66 +25,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeLogBackupFilesResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? totalRecordCount;
+		private long? totalFileSize;
 
 		private int? pageNumber;
 
+		private string requestId;
+
 		private int? pageRecordCount;
 
-		private long? totalFileSize;
+		private int? totalRecordCount;
 
 		private List<DescribeLogBackupFiles_BinLogFile> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public int? PageRecordCount
-		{
-			get
-			{
-				return pageRecordCount;
-			}
-			set	
-			{
-				pageRecordCount = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TotalFileSize")]
 		public long? TotalFileSize
 		{
 			get
@@ -97,6 +50,59 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageRecordCount")]
+		public int? PageRecordCount
+		{
+			get
+			{
+				return pageRecordCount;
+			}
+			set	
+			{
+				pageRecordCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalRecordCount")]
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeLogBackupFiles_BinLogFile> Items
 		{
 			get
@@ -112,30 +118,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeLogBackupFiles_BinLogFile
 		{
 
-			private long? fileSize;
-
 			private string logBeginTime;
-
-			private string logEndTime;
-
-			private string downloadLink;
 
 			private string intranetDownloadLink;
 
 			private string linkExpiredTime;
 
-			public long? FileSize
-			{
-				get
-				{
-					return fileSize;
-				}
-				set	
-				{
-					fileSize = value;
-				}
-			}
+			private string downloadLink;
 
+			private string logEndTime;
+
+			private long? fileSize;
+
+			[JsonProperty(PropertyName = "LogBeginTime")]
 			public string LogBeginTime
 			{
 				get
@@ -148,30 +143,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string LogEndTime
-			{
-				get
-				{
-					return logEndTime;
-				}
-				set	
-				{
-					logEndTime = value;
-				}
-			}
-
-			public string DownloadLink
-			{
-				get
-				{
-					return downloadLink;
-				}
-				set	
-				{
-					downloadLink = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "IntranetDownloadLink")]
 			public string IntranetDownloadLink
 			{
 				get
@@ -184,6 +156,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "LinkExpiredTime")]
 			public string LinkExpiredTime
 			{
 				get
@@ -193,6 +166,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					linkExpiredTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DownloadLink")]
+			public string DownloadLink
+			{
+				get
+				{
+					return downloadLink;
+				}
+				set	
+				{
+					downloadLink = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LogEndTime")]
+			public string LogEndTime
+			{
+				get
+				{
+					return logEndTime;
+				}
+				set	
+				{
+					logEndTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "FileSize")]
+			public long? FileSize
+			{
+				get
+				{
+					return fileSize;
+				}
+				set	
+				{
+					fileSize = value;
 				}
 			}
 		}

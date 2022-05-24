@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			CreateDiagnosticReportResponse createDiagnosticReportResponse = new CreateDiagnosticReportResponse();
 
 			createDiagnosticReportResponse.HttpResponse = _ctx.HttpResponse;
-			createDiagnosticReportResponse.RequestId = _ctx.StringValue("CreateDiagnosticReport.RequestId");
 			createDiagnosticReportResponse.ReportId = _ctx.StringValue("CreateDiagnosticReport.ReportId");
+			createDiagnosticReportResponse.RequestId = _ctx.StringValue("CreateDiagnosticReport.RequestId");
         
 			return createDiagnosticReportResponse;
         }

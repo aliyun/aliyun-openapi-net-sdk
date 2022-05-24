@@ -32,28 +32,28 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			describeTasksResponse.HttpResponse = _ctx.HttpResponse;
 			describeTasksResponse.RequestId = _ctx.StringValue("DescribeTasks.RequestId");
-			describeTasksResponse.TotalRecordCount = _ctx.IntegerValue("DescribeTasks.TotalRecordCount");
 			describeTasksResponse.PageNumber = _ctx.IntegerValue("DescribeTasks.PageNumber");
 			describeTasksResponse.PageRecordCount = _ctx.IntegerValue("DescribeTasks.PageRecordCount");
+			describeTasksResponse.TotalRecordCount = _ctx.IntegerValue("DescribeTasks.TotalRecordCount");
 
 			List<DescribeTasksResponse.DescribeTasks_TaskProgressInfo> describeTasksResponse_items = new List<DescribeTasksResponse.DescribeTasks_TaskProgressInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeTasks.Items.Length"); i++) {
 				DescribeTasksResponse.DescribeTasks_TaskProgressInfo taskProgressInfo = new DescribeTasksResponse.DescribeTasks_TaskProgressInfo();
-				taskProgressInfo.DBName = _ctx.StringValue("DescribeTasks.Items["+ i +"].DBName");
-				taskProgressInfo.BeginTime = _ctx.StringValue("DescribeTasks.Items["+ i +"].BeginTime");
-				taskProgressInfo.ProgressInfo = _ctx.StringValue("DescribeTasks.Items["+ i +"].ProgressInfo");
-				taskProgressInfo.FinishTime = _ctx.StringValue("DescribeTasks.Items["+ i +"].FinishTime");
-				taskProgressInfo.TaskAction = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskAction");
-				taskProgressInfo.TaskId = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskId");
-				taskProgressInfo.Progress = _ctx.StringValue("DescribeTasks.Items["+ i +"].Progress");
-				taskProgressInfo.ExpectedFinishTime = _ctx.StringValue("DescribeTasks.Items["+ i +"].ExpectedFinishTime");
 				taskProgressInfo.Status = _ctx.StringValue("DescribeTasks.Items["+ i +"].Status");
-				taskProgressInfo.TaskErrorCode = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskErrorCode");
-				taskProgressInfo.TaskErrorMessage = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskErrorMessage");
+				taskProgressInfo.FinishTime = _ctx.StringValue("DescribeTasks.Items["+ i +"].FinishTime");
+				taskProgressInfo.Progress = _ctx.StringValue("DescribeTasks.Items["+ i +"].Progress");
 				taskProgressInfo.StepsInfo = _ctx.StringValue("DescribeTasks.Items["+ i +"].StepsInfo");
-				taskProgressInfo.Remain = _ctx.IntegerValue("DescribeTasks.Items["+ i +"].Remain");
-				taskProgressInfo.StepProgressInfo = _ctx.StringValue("DescribeTasks.Items["+ i +"].StepProgressInfo");
+				taskProgressInfo.BeginTime = _ctx.StringValue("DescribeTasks.Items["+ i +"].BeginTime");
+				taskProgressInfo.ExpectedFinishTime = _ctx.StringValue("DescribeTasks.Items["+ i +"].ExpectedFinishTime");
+				taskProgressInfo.TaskErrorCode = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskErrorCode");
 				taskProgressInfo.CurrentStepName = _ctx.StringValue("DescribeTasks.Items["+ i +"].CurrentStepName");
+				taskProgressInfo.ProgressInfo = _ctx.StringValue("DescribeTasks.Items["+ i +"].ProgressInfo");
+				taskProgressInfo.StepProgressInfo = _ctx.StringValue("DescribeTasks.Items["+ i +"].StepProgressInfo");
+				taskProgressInfo.TaskErrorMessage = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskErrorMessage");
+				taskProgressInfo.TaskAction = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskAction");
+				taskProgressInfo.Remain = _ctx.IntegerValue("DescribeTasks.Items["+ i +"].Remain");
+				taskProgressInfo.DBName = _ctx.StringValue("DescribeTasks.Items["+ i +"].DBName");
+				taskProgressInfo.TaskId = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskId");
 
 				describeTasksResponse_items.Add(taskProgressInfo);
 			}

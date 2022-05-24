@@ -32,7 +32,6 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			copyDatabaseBetweenInstancesResponse.HttpResponse = _ctx.HttpResponse;
 			copyDatabaseBetweenInstancesResponse.RequestId = _ctx.StringValue("CopyDatabaseBetweenInstances.RequestId");
-			copyDatabaseBetweenInstancesResponse.DBInstanceId = _ctx.StringValue("CopyDatabaseBetweenInstances.DBInstanceId");
         
 			return copyDatabaseBetweenInstancesResponse;
         }

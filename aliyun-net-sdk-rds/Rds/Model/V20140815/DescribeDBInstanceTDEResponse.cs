@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeDBInstanceTDE_Database> databases;
 
+		[JsonProperty(PropertyName = "TDEStatus")]
 		public string TDEStatus
 		{
 			get
@@ -43,6 +44,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -55,6 +57,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Databases")]
 		public List<DescribeDBInstanceTDE_Database> Databases
 		{
 			get
@@ -74,6 +77,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string tDEStatus;
 
+			[JsonProperty(PropertyName = "DBName")]
 			public string DBName
 			{
 				get
@@ -86,6 +90,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "TDEStatus")]
 			public string TDEStatus
 			{
 				get

@@ -32,6 +32,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			migrateToOtherZoneResponse.HttpResponse = _ctx.HttpResponse;
 			migrateToOtherZoneResponse.RequestId = _ctx.StringValue("MigrateToOtherZone.RequestId");
+			migrateToOtherZoneResponse.DBInstanceId = _ctx.StringValue("MigrateToOtherZone.DBInstanceId");
+			migrateToOtherZoneResponse.OrderId = _ctx.LongValue("MigrateToOtherZone.OrderId");
         
 			return migrateToOtherZoneResponse;
         }

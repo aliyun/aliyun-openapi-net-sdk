@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeDBInstanceMonitorResponse describeDBInstanceMonitorResponse = new DescribeDBInstanceMonitorResponse();
 
 			describeDBInstanceMonitorResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBInstanceMonitorResponse.RequestId = _ctx.StringValue("DescribeDBInstanceMonitor.RequestId");
 			describeDBInstanceMonitorResponse.Period = _ctx.StringValue("DescribeDBInstanceMonitor.Period");
+			describeDBInstanceMonitorResponse.RequestId = _ctx.StringValue("DescribeDBInstanceMonitor.RequestId");
         
 			return describeDBInstanceMonitorResponse;
         }

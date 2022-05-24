@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			AllocateInstancePublicConnectionResponse allocateInstancePublicConnectionResponse = new AllocateInstancePublicConnectionResponse();
 
 			allocateInstancePublicConnectionResponse.HttpResponse = _ctx.HttpResponse;
+			allocateInstancePublicConnectionResponse.DbInstanceName = _ctx.StringValue("AllocateInstancePublicConnection.DbInstanceName");
 			allocateInstancePublicConnectionResponse.RequestId = _ctx.StringValue("AllocateInstancePublicConnection.RequestId");
 			allocateInstancePublicConnectionResponse.ConnectionString = _ctx.StringValue("AllocateInstancePublicConnection.ConnectionString");
-			allocateInstancePublicConnectionResponse.DbInstanceName = _ctx.StringValue("AllocateInstancePublicConnection.DbInstanceName");
         
 			return allocateInstancePublicConnectionResponse;
         }

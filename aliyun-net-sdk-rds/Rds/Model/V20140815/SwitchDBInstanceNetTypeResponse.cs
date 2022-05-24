@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,12 +25,26 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class SwitchDBInstanceNetTypeResponse : AcsResponse
 	{
 
+		private string newConnectionString;
+
 		private string requestId;
 
 		private string oldConnectionString;
 
-		private string newConnectionString;
+		[JsonProperty(PropertyName = "NewConnectionString")]
+		public string NewConnectionString
+		{
+			get
+			{
+				return newConnectionString;
+			}
+			set	
+			{
+				newConnectionString = value;
+			}
+		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -43,6 +57,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OldConnectionString")]
 		public string OldConnectionString
 		{
 			get
@@ -52,18 +67,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				oldConnectionString = value;
-			}
-		}
-
-		public string NewConnectionString
-		{
-			get
-			{
-				return newConnectionString;
-			}
-			set	
-			{
-				newConnectionString = value;
 			}
 		}
 	}

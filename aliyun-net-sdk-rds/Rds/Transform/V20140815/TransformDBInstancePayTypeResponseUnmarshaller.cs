@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			TransformDBInstancePayTypeResponse transformDBInstancePayTypeResponse = new TransformDBInstancePayTypeResponse();
 
 			transformDBInstancePayTypeResponse.HttpResponse = _ctx.HttpResponse;
+			transformDBInstancePayTypeResponse.DBInstanceId = _ctx.StringValue("TransformDBInstancePayType.DBInstanceId");
 			transformDBInstancePayTypeResponse.RequestId = _ctx.StringValue("TransformDBInstancePayType.RequestId");
+			transformDBInstancePayTypeResponse.ExpiredTime = _ctx.StringValue("TransformDBInstancePayType.ExpiredTime");
 			transformDBInstancePayTypeResponse.OrderId = _ctx.LongValue("TransformDBInstancePayType.OrderId");
 			transformDBInstancePayTypeResponse.ChargeType = _ctx.StringValue("TransformDBInstancePayType.ChargeType");
-			transformDBInstancePayTypeResponse.ExpiredTime = _ctx.StringValue("TransformDBInstancePayType.ExpiredTime");
-			transformDBInstancePayTypeResponse.DBInstanceId = _ctx.StringValue("TransformDBInstancePayType.DBInstanceId");
         
 			return transformDBInstancePayTypeResponse;
         }

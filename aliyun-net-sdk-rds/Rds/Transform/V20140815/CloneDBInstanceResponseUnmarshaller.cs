@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			CloneDBInstanceResponse cloneDBInstanceResponse = new CloneDBInstanceResponse();
 
 			cloneDBInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			cloneDBInstanceResponse.RequestId = _ctx.StringValue("CloneDBInstance.RequestId");
 			cloneDBInstanceResponse.DBInstanceId = _ctx.StringValue("CloneDBInstance.DBInstanceId");
-			cloneDBInstanceResponse.OrderId = _ctx.StringValue("CloneDBInstance.OrderId");
-			cloneDBInstanceResponse.ConnectionString = _ctx.StringValue("CloneDBInstance.ConnectionString");
+			cloneDBInstanceResponse.RequestId = _ctx.StringValue("CloneDBInstance.RequestId");
 			cloneDBInstanceResponse.Port = _ctx.StringValue("CloneDBInstance.Port");
+			cloneDBInstanceResponse.ConnectionString = _ctx.StringValue("CloneDBInstance.ConnectionString");
+			cloneDBInstanceResponse.OrderId = _ctx.StringValue("CloneDBInstance.OrderId");
         
 			return cloneDBInstanceResponse;
         }

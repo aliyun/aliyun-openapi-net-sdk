@@ -39,8 +39,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dbProxyCertListItemsItem.DbInstanceName = _ctx.StringValue("GetDbProxyInstanceSsl.DbProxyCertListItems["+ i +"].DbInstanceName");
 				dbProxyCertListItemsItem.EndpointName = _ctx.StringValue("GetDbProxyInstanceSsl.DbProxyCertListItems["+ i +"].EndpointName");
 				dbProxyCertListItemsItem.EndpointType = _ctx.StringValue("GetDbProxyInstanceSsl.DbProxyCertListItems["+ i +"].EndpointType");
-				dbProxyCertListItemsItem.CertCommonName = _ctx.StringValue("GetDbProxyInstanceSsl.DbProxyCertListItems["+ i +"].CertCommonName");
 				dbProxyCertListItemsItem.SslExpiredTime = _ctx.StringValue("GetDbProxyInstanceSsl.DbProxyCertListItems["+ i +"].SslExpiredTime");
+				dbProxyCertListItemsItem.CertCommonName = _ctx.StringValue("GetDbProxyInstanceSsl.DbProxyCertListItems["+ i +"].CertCommonName");
 
 				getDbProxyInstanceSslResponse_dbProxyCertListItems.Add(dbProxyCertListItemsItem);
 			}

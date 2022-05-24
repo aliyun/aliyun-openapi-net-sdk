@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,120 +25,37 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeResourceUsageResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string dBInstanceId;
-
-		private string engine;
+		private long? backupOssDataSize;
 
 		private long? diskUsed;
 
+		private long? archiveBackupSize;
+
+		private long? backupOssLogSize;
+
+		private long? backupLogSize;
+
+		private long? backupDataSize;
+
+		private long? coldBackupSize;
+
 		private long? dataSize;
+
+		private long? paidBackupSize;
+
+		private string requestId;
 
 		private long? logSize;
 
 		private long? backupSize;
 
-		private long? backupOssDataSize;
+		private string dBInstanceId;
 
-		private long? backupOssLogSize;
+		private string engine;
 
 		private long? sQLSize;
 
-		private long? coldBackupSize;
-
-		private long? backupDataSize;
-
-		private long? backupLogSize;
-
-		private long? paidBackupSize;
-
-		private long? archiveBackupSize;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-			}
-		}
-
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-			}
-		}
-
-		public long? DiskUsed
-		{
-			get
-			{
-				return diskUsed;
-			}
-			set	
-			{
-				diskUsed = value;
-			}
-		}
-
-		public long? DataSize
-		{
-			get
-			{
-				return dataSize;
-			}
-			set	
-			{
-				dataSize = value;
-			}
-		}
-
-		public long? LogSize
-		{
-			get
-			{
-				return logSize;
-			}
-			set	
-			{
-				logSize = value;
-			}
-		}
-
-		public long? BackupSize
-		{
-			get
-			{
-				return backupSize;
-			}
-			set	
-			{
-				backupSize = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "BackupOssDataSize")]
 		public long? BackupOssDataSize
 		{
 			get
@@ -151,6 +68,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DiskUsed")]
+		public long? DiskUsed
+		{
+			get
+			{
+				return diskUsed;
+			}
+			set	
+			{
+				diskUsed = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ArchiveBackupSize")]
+		public long? ArchiveBackupSize
+		{
+			get
+			{
+				return archiveBackupSize;
+			}
+			set	
+			{
+				archiveBackupSize = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "BackupOssLogSize")]
 		public long? BackupOssLogSize
 		{
 			get
@@ -163,42 +107,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? SQLSize
-		{
-			get
-			{
-				return sQLSize;
-			}
-			set	
-			{
-				sQLSize = value;
-			}
-		}
-
-		public long? ColdBackupSize
-		{
-			get
-			{
-				return coldBackupSize;
-			}
-			set	
-			{
-				coldBackupSize = value;
-			}
-		}
-
-		public long? BackupDataSize
-		{
-			get
-			{
-				return backupDataSize;
-			}
-			set	
-			{
-				backupDataSize = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "BackupLogSize")]
 		public long? BackupLogSize
 		{
 			get
@@ -211,6 +120,46 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "BackupDataSize")]
+		public long? BackupDataSize
+		{
+			get
+			{
+				return backupDataSize;
+			}
+			set	
+			{
+				backupDataSize = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ColdBackupSize")]
+		public long? ColdBackupSize
+		{
+			get
+			{
+				return coldBackupSize;
+			}
+			set	
+			{
+				coldBackupSize = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DataSize")]
+		public long? DataSize
+		{
+			get
+			{
+				return dataSize;
+			}
+			set	
+			{
+				dataSize = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PaidBackupSize")]
 		public long? PaidBackupSize
 		{
 			get
@@ -223,15 +172,81 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? ArchiveBackupSize
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return archiveBackupSize;
+				return requestId;
 			}
 			set	
 			{
-				archiveBackupSize = value;
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "LogSize")]
+		public long? LogSize
+		{
+			get
+			{
+				return logSize;
+			}
+			set	
+			{
+				logSize = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "BackupSize")]
+		public long? BackupSize
+		{
+			get
+			{
+				return backupSize;
+			}
+			set	
+			{
+				backupSize = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBInstanceId")]
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Engine")]
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SQLSize")]
+		public long? SQLSize
+		{
+			get
+			{
+				return sQLSize;
+			}
+			set	
+			{
+				sQLSize = value;
 			}
 		}
 	}

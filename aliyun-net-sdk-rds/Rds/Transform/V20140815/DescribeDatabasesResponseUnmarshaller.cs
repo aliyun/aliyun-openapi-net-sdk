@@ -36,12 +36,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			List<DescribeDatabasesResponse.DescribeDatabases_Database> describeDatabasesResponse_databases = new List<DescribeDatabasesResponse.DescribeDatabases_Database>();
 			for (int i = 0; i < _ctx.Length("DescribeDatabases.Databases.Length"); i++) {
 				DescribeDatabasesResponse.DescribeDatabases_Database database = new DescribeDatabasesResponse.DescribeDatabases_Database();
+				database.DBDescription = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].DBDescription");
+				database.DBStatus = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].DBStatus");
 				database.DBName = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].DBName");
 				database.DBInstanceId = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].DBInstanceId");
 				database.Engine = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].Engine");
-				database.DBStatus = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].DBStatus");
 				database.CharacterSetName = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].CharacterSetName");
-				database.DBDescription = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].DBDescription");
 
 				List<DescribeDatabasesResponse.DescribeDatabases_Database.DescribeDatabases_AccountPrivilegeInfo> database_accounts = new List<DescribeDatabasesResponse.DescribeDatabases_Database.DescribeDatabases_AccountPrivilegeInfo>();
 				for (int j = 0; j < _ctx.Length("DescribeDatabases.Databases["+ i +"].Accounts.Length"); j++) {

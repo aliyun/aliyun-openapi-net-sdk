@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeDBInstances_DBInstance> items;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -49,6 +50,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -61,6 +63,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageRecordCount")]
 		public int? PageRecordCount
 		{
 			get
@@ -73,6 +76,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalRecordCount")]
 		public int? TotalRecordCount
 		{
 			get
@@ -85,6 +89,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -97,6 +102,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeDBInstances_DBInstance> Items
 		{
 			get
@@ -208,8 +214,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private int? switchWeight;
 
+			private bool? deletionProtection;
+
 			private List<DescribeDBInstances_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
+			[JsonProperty(PropertyName = "VpcId")]
 			public string VpcId
 			{
 				get
@@ -222,6 +231,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DedicatedHostIdForLog")]
 			public string DedicatedHostIdForLog
 			{
 				get
@@ -234,6 +244,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "CreateTime")]
 			public string CreateTime
 			{
 				get
@@ -246,6 +257,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "PayType")]
 			public string PayType
 			{
 				get
@@ -258,6 +270,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DedicatedHostNameForLog")]
 			public string DedicatedHostNameForLog
 			{
 				get
@@ -270,6 +283,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "MutriORsignle")]
 			public bool? MutriORsignle
 			{
 				get
@@ -282,6 +296,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DedicatedHostGroupName")]
 			public string DedicatedHostGroupName
 			{
 				get
@@ -294,6 +309,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "EngineVersion")]
 			public string EngineVersion
 			{
 				get
@@ -306,6 +322,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DedicatedHostGroupId")]
 			public string DedicatedHostGroupId
 			{
 				get
@@ -318,6 +335,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "VpcName")]
 			public string VpcName
 			{
 				get
@@ -330,6 +348,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DedicatedHostZoneIdForMaster")]
 			public string DedicatedHostZoneIdForMaster
 			{
 				get
@@ -342,6 +361,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "InsId")]
 			public int? InsId
 			{
 				get
@@ -354,6 +374,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ConnectionString")]
 			public string ConnectionString
 			{
 				get
@@ -366,6 +387,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "InstanceNetworkType")]
 			public string InstanceNetworkType
 			{
 				get
@@ -378,6 +400,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "MasterInstanceId")]
 			public string MasterInstanceId
 			{
 				get
@@ -390,6 +413,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "AutoUpgradeMinorVersion")]
 			public string AutoUpgradeMinorVersion
 			{
 				get
@@ -402,6 +426,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ExpireTime")]
 			public string ExpireTime
 			{
 				get
@@ -414,6 +439,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DestroyTime")]
 			public string DestroyTime
 			{
 				get
@@ -426,6 +452,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "GuardDBInstanceId")]
 			public string GuardDBInstanceId
 			{
 				get
@@ -438,6 +465,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DedicatedHostNameForMaster")]
 			public string DedicatedHostNameForMaster
 			{
 				get
@@ -450,6 +478,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ZoneId")]
 			public string ZoneId
 			{
 				get
@@ -462,6 +491,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "TipsLevel")]
 			public int? TipsLevel
 			{
 				get
@@ -474,6 +504,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DBInstanceId")]
 			public string DBInstanceId
 			{
 				get
@@ -486,6 +517,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DedicatedHostIdForMaster")]
 			public string DedicatedHostIdForMaster
 			{
 				get
@@ -498,6 +530,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ReplicateId")]
 			public string ReplicateId
 			{
 				get
@@ -510,6 +543,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "TempDBInstanceId")]
 			public string TempDBInstanceId
 			{
 				get
@@ -522,6 +556,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DBInstanceStorageType")]
 			public string DBInstanceStorageType
 			{
 				get
@@ -534,6 +569,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ConnectionMode")]
 			public string ConnectionMode
 			{
 				get
@@ -546,6 +582,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "LockMode")]
 			public string LockMode
 			{
 				get
@@ -558,6 +595,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "GeneralGroupName")]
 			public string GeneralGroupName
 			{
 				get
@@ -570,6 +608,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "VpcCloudInstanceId")]
 			public string VpcCloudInstanceId
 			{
 				get
@@ -582,6 +621,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DedicatedHostZoneIdForSlave")]
 			public string DedicatedHostZoneIdForSlave
 			{
 				get
@@ -594,6 +634,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Tips")]
 			public string Tips
 			{
 				get
@@ -606,6 +647,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DedicatedHostZoneIdForLog")]
 			public string DedicatedHostZoneIdForLog
 			{
 				get
@@ -618,6 +660,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DedicatedHostNameForSlave")]
 			public string DedicatedHostNameForSlave
 			{
 				get
@@ -630,6 +673,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DBInstanceDescription")]
 			public string DBInstanceDescription
 			{
 				get
@@ -642,6 +686,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DBInstanceNetType")]
 			public string DBInstanceNetType
 			{
 				get
@@ -654,6 +699,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DBInstanceType")]
 			public string DBInstanceType
 			{
 				get
@@ -666,6 +712,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "LockReason")]
 			public string LockReason
 			{
 				get
@@ -678,6 +725,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DBInstanceStatus")]
 			public string DBInstanceStatus
 			{
 				get
@@ -690,6 +738,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "RegionId")]
 			public string RegionId
 			{
 				get
@@ -702,6 +751,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "VSwitchId")]
 			public string VSwitchId
 			{
 				get
@@ -714,6 +764,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DedicatedHostIdForSlave")]
 			public string DedicatedHostIdForSlave
 			{
 				get
@@ -726,6 +777,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ResourceGroupId")]
 			public string ResourceGroupId
 			{
 				get
@@ -738,6 +790,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Category")]
 			public string Category
 			{
 				get
@@ -750,6 +803,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Engine")]
 			public string Engine
 			{
 				get
@@ -762,6 +816,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DBInstanceClass")]
 			public string DBInstanceClass
 			{
 				get
@@ -774,6 +829,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "SwitchWeight")]
 			public int? SwitchWeight
 			{
 				get
@@ -786,6 +842,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DeletionProtection")]
+			public bool? DeletionProtection
+			{
+				get
+				{
+					return deletionProtection;
+				}
+				set	
+				{
+					deletionProtection = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ReadOnlyDBInstanceIds")]
 			public List<DescribeDBInstances_ReadOnlyDBInstanceId> ReadOnlyDBInstanceIds
 			{
 				get
@@ -803,6 +873,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 				private string dBInstanceId;
 
+				[JsonProperty(PropertyName = "DBInstanceId")]
 				public string DBInstanceId
 				{
 					get

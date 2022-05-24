@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,26 +25,28 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeLocalAvailableRecoveryTimeResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string recoveryEndTime;
 
 		private string dBInstanceId;
 
+		private string requestId;
+
 		private string recoveryBeginTime;
 
-		private string recoveryEndTime;
-
-		public string RequestId
+		[JsonProperty(PropertyName = "RecoveryEndTime")]
+		public string RecoveryEndTime
 		{
 			get
 			{
-				return requestId;
+				return recoveryEndTime;
 			}
 			set	
 			{
-				requestId = value;
+				recoveryEndTime = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -57,6 +59,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RecoveryBeginTime")]
 		public string RecoveryBeginTime
 		{
 			get
@@ -66,18 +82,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				recoveryBeginTime = value;
-			}
-		}
-
-		public string RecoveryEndTime
-		{
-			get
-			{
-				return recoveryEndTime;
-			}
-			set	
-			{
-				recoveryEndTime = value;
 			}
 		}
 	}

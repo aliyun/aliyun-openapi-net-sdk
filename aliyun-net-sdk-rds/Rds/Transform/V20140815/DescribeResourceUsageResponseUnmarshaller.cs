@@ -31,21 +31,21 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeResourceUsageResponse describeResourceUsageResponse = new DescribeResourceUsageResponse();
 
 			describeResourceUsageResponse.HttpResponse = _ctx.HttpResponse;
-			describeResourceUsageResponse.RequestId = _ctx.StringValue("DescribeResourceUsage.RequestId");
-			describeResourceUsageResponse.DBInstanceId = _ctx.StringValue("DescribeResourceUsage.DBInstanceId");
-			describeResourceUsageResponse.Engine = _ctx.StringValue("DescribeResourceUsage.Engine");
+			describeResourceUsageResponse.BackupOssDataSize = _ctx.LongValue("DescribeResourceUsage.BackupOssDataSize");
 			describeResourceUsageResponse.DiskUsed = _ctx.LongValue("DescribeResourceUsage.DiskUsed");
+			describeResourceUsageResponse.ArchiveBackupSize = _ctx.LongValue("DescribeResourceUsage.ArchiveBackupSize");
+			describeResourceUsageResponse.BackupOssLogSize = _ctx.LongValue("DescribeResourceUsage.BackupOssLogSize");
+			describeResourceUsageResponse.BackupLogSize = _ctx.LongValue("DescribeResourceUsage.BackupLogSize");
+			describeResourceUsageResponse.BackupDataSize = _ctx.LongValue("DescribeResourceUsage.BackupDataSize");
+			describeResourceUsageResponse.ColdBackupSize = _ctx.LongValue("DescribeResourceUsage.ColdBackupSize");
 			describeResourceUsageResponse.DataSize = _ctx.LongValue("DescribeResourceUsage.DataSize");
+			describeResourceUsageResponse.PaidBackupSize = _ctx.LongValue("DescribeResourceUsage.PaidBackupSize");
+			describeResourceUsageResponse.RequestId = _ctx.StringValue("DescribeResourceUsage.RequestId");
 			describeResourceUsageResponse.LogSize = _ctx.LongValue("DescribeResourceUsage.LogSize");
 			describeResourceUsageResponse.BackupSize = _ctx.LongValue("DescribeResourceUsage.BackupSize");
-			describeResourceUsageResponse.BackupOssDataSize = _ctx.LongValue("DescribeResourceUsage.BackupOssDataSize");
-			describeResourceUsageResponse.BackupOssLogSize = _ctx.LongValue("DescribeResourceUsage.BackupOssLogSize");
+			describeResourceUsageResponse.DBInstanceId = _ctx.StringValue("DescribeResourceUsage.DBInstanceId");
+			describeResourceUsageResponse.Engine = _ctx.StringValue("DescribeResourceUsage.Engine");
 			describeResourceUsageResponse.SQLSize = _ctx.LongValue("DescribeResourceUsage.SQLSize");
-			describeResourceUsageResponse.ColdBackupSize = _ctx.LongValue("DescribeResourceUsage.ColdBackupSize");
-			describeResourceUsageResponse.BackupDataSize = _ctx.LongValue("DescribeResourceUsage.BackupDataSize");
-			describeResourceUsageResponse.BackupLogSize = _ctx.LongValue("DescribeResourceUsage.BackupLogSize");
-			describeResourceUsageResponse.PaidBackupSize = _ctx.LongValue("DescribeResourceUsage.PaidBackupSize");
-			describeResourceUsageResponse.ArchiveBackupSize = _ctx.LongValue("DescribeResourceUsage.ArchiveBackupSize");
         
 			return describeResourceUsageResponse;
         }

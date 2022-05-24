@@ -36,10 +36,10 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			List<DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report> describeDiagnosticReportListResponse_reportList = new List<DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report>();
 			for (int i = 0; i < _ctx.Length("DescribeDiagnosticReportList.ReportList.Length"); i++) {
 				DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report report = new DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report();
-				report.DiagnosticTime = _ctx.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].DiagnosticTime");
-				report.Score = _ctx.IntegerValue("DescribeDiagnosticReportList.ReportList["+ i +"].Score");
-				report.StartTime = _ctx.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].StartTime");
 				report.EndTime = _ctx.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].EndTime");
+				report.DiagnosticTime = _ctx.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].DiagnosticTime");
+				report.StartTime = _ctx.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].StartTime");
+				report.Score = _ctx.IntegerValue("DescribeDiagnosticReportList.ReportList["+ i +"].Score");
 				report.DownloadURL = _ctx.StringValue("DescribeDiagnosticReportList.ReportList["+ i +"].DownloadURL");
 
 				describeDiagnosticReportListResponse_reportList.Add(report);

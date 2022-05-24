@@ -17,28 +17,17 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class CreateMigrateTaskForSQLServerResponse : AcsResponse
+	public class CreateServiceLinkedRoleResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string dBInstanceId;
-
-		private string dBInstanceName;
-
-		private string taskId;
-
-		private string dBName;
-
-		private string migrateIaskId;
-
-		private string taskType;
-
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -48,78 +37,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-			}
-		}
-
-		public string DBInstanceName
-		{
-			get
-			{
-				return dBInstanceName;
-			}
-			set	
-			{
-				dBInstanceName = value;
-			}
-		}
-
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-			}
-		}
-
-		public string DBName
-		{
-			get
-			{
-				return dBName;
-			}
-			set	
-			{
-				dBName = value;
-			}
-		}
-
-		public string MigrateIaskId
-		{
-			get
-			{
-				return migrateIaskId;
-			}
-			set	
-			{
-				migrateIaskId = value;
-			}
-		}
-
-		public string TaskType
-		{
-			get
-			{
-				return taskType;
-			}
-			set	
-			{
-				taskType = value;
 			}
 		}
 	}

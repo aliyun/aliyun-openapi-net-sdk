@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<ListUserBackupFiles_RecordsItem> records;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Records")]
 		public List<ListUserBackupFiles_RecordsItem> Records
 		{
 			get
@@ -96,6 +98,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string reason;
 
+			[JsonProperty(PropertyName = "Status")]
 			public string Status
 			{
 				get
@@ -108,6 +111,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "CreationTime")]
 			public string CreationTime
 			{
 				get
@@ -120,6 +124,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "FinishTime")]
 			public string FinishTime
 			{
 				get
@@ -132,6 +137,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Comment")]
 			public string Comment
 			{
 				get
@@ -144,6 +150,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "OssFilePath")]
 			public string OssFilePath
 			{
 				get
@@ -156,6 +163,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "OssBucket")]
 			public string OssBucket
 			{
 				get
@@ -168,6 +176,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ModificationTime")]
 			public string ModificationTime
 			{
 				get
@@ -180,6 +189,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "OssFileSize")]
 			public long? OssFileSize
 			{
 				get
@@ -192,6 +202,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "OssFileName")]
 			public string OssFileName
 			{
 				get
@@ -204,6 +215,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "EngineVersion")]
 			public string EngineVersion
 			{
 				get
@@ -216,6 +228,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "BackupId")]
 			public string BackupId
 			{
 				get
@@ -228,6 +241,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "RestoreSize")]
 			public string RestoreSize
 			{
 				get
@@ -240,6 +254,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ZoneId")]
 			public string ZoneId
 			{
 				get
@@ -252,6 +267,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Retention")]
 			public int? Retention
 			{
 				get
@@ -264,6 +280,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DBInstanceId")]
 			public string DBInstanceId
 			{
 				get
@@ -276,6 +293,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Engine")]
 			public string Engine
 			{
 				get
@@ -288,6 +306,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "OssUrl")]
 			public string OssUrl
 			{
 				get
@@ -300,6 +319,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "OssFileMetaData")]
 			public string OssFileMetaData
 			{
 				get
@@ -312,6 +332,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "BinlogInfo")]
 			public string BinlogInfo
 			{
 				get
@@ -324,6 +345,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Reason")]
 			public string Reason
 			{
 				get

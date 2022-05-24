@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -27,20 +27,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
+		private string compressType;
+
+		private string localLogRetentionSpace;
+
+		private int? logBackupLocalRetentionNumber;
+
 		private string dBInstanceID;
 
 		private string enableBackupLog;
 
 		private int? localLogRetentionHours;
 
-		private string localLogRetentionSpace;
-
 		private string highSpaceUsageProtection;
 
-		private string compressType;
-
-		private int? logBackupLocalRetentionNumber;
-
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -53,66 +54,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceID
-		{
-			get
-			{
-				return dBInstanceID;
-			}
-			set	
-			{
-				dBInstanceID = value;
-			}
-		}
-
-		public string EnableBackupLog
-		{
-			get
-			{
-				return enableBackupLog;
-			}
-			set	
-			{
-				enableBackupLog = value;
-			}
-		}
-
-		public int? LocalLogRetentionHours
-		{
-			get
-			{
-				return localLogRetentionHours;
-			}
-			set	
-			{
-				localLogRetentionHours = value;
-			}
-		}
-
-		public string LocalLogRetentionSpace
-		{
-			get
-			{
-				return localLogRetentionSpace;
-			}
-			set	
-			{
-				localLogRetentionSpace = value;
-			}
-		}
-
-		public string HighSpaceUsageProtection
-		{
-			get
-			{
-				return highSpaceUsageProtection;
-			}
-			set	
-			{
-				highSpaceUsageProtection = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "CompressType")]
 		public string CompressType
 		{
 			get
@@ -125,6 +67,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "LocalLogRetentionSpace")]
+		public string LocalLogRetentionSpace
+		{
+			get
+			{
+				return localLogRetentionSpace;
+			}
+			set	
+			{
+				localLogRetentionSpace = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "LogBackupLocalRetentionNumber")]
 		public int? LogBackupLocalRetentionNumber
 		{
 			get
@@ -134,6 +90,58 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				logBackupLocalRetentionNumber = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBInstanceID")]
+		public string DBInstanceID
+		{
+			get
+			{
+				return dBInstanceID;
+			}
+			set	
+			{
+				dBInstanceID = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "EnableBackupLog")]
+		public string EnableBackupLog
+		{
+			get
+			{
+				return enableBackupLog;
+			}
+			set	
+			{
+				enableBackupLog = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "LocalLogRetentionHours")]
+		public int? LocalLogRetentionHours
+		{
+			get
+			{
+				return localLogRetentionHours;
+			}
+			set	
+			{
+				localLogRetentionHours = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "HighSpaceUsageProtection")]
+		public string HighSpaceUsageProtection
+		{
+			get
+			{
+				return highSpaceUsageProtection;
+			}
+			set	
+			{
+				highSpaceUsageProtection = value;
 			}
 		}
 	}
