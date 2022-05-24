@@ -28,10 +28,10 @@ using Aliyun.Acs.Cbn.Transform.V20170912;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
 {
-    public class UpdateTransitRouterVbrAttachmentAttributeRequest : RpcAcsRequest<UpdateTransitRouterVbrAttachmentAttributeResponse>
+    public class DisassociateTransitRouterMulticastDomainRequest : RpcAcsRequest<DisassociateTransitRouterMulticastDomainResponse>
     {
-        public UpdateTransitRouterVbrAttachmentAttributeRequest()
-            : base("Cbn", "2017-09-12", "UpdateTransitRouterVbrAttachmentAttribute")
+        public DisassociateTransitRouterMulticastDomainRequest()
+            : base("Cbn", "2017-09-12", "DisassociateTransitRouterMulticastDomain")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,9 +45,9 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private string clientToken;
 
-		private string transitRouterAttachmentName;
+		private List<string> vSwitchIdss = new List<string>(){ };
 
-		private bool? autoPublishRouteEnabled;
+		private string transitRouterMulticastDomainId;
 
 		private bool? dryRun;
 
@@ -58,8 +58,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		private long? ownerId;
 
 		private string transitRouterAttachmentId;
-
-		private string transitRouterAttachmentDescription;
 
 		public long? ResourceOwnerId
 		{
@@ -87,29 +85,29 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string TransitRouterAttachmentName
+		public List<string> VSwitchIdss
 		{
 			get
 			{
-				return transitRouterAttachmentName;
+				return vSwitchIdss;
 			}
-			set	
+
+			set
 			{
-				transitRouterAttachmentName = value;
-				DictionaryUtil.Add(QueryParameters, "TransitRouterAttachmentName", value);
+				vSwitchIdss = value;
 			}
 		}
 
-		public bool? AutoPublishRouteEnabled
+		public string TransitRouterMulticastDomainId
 		{
 			get
 			{
-				return autoPublishRouteEnabled;
+				return transitRouterMulticastDomainId;
 			}
 			set	
 			{
-				autoPublishRouteEnabled = value;
-				DictionaryUtil.Add(QueryParameters, "AutoPublishRouteEnabled", value.ToString());
+				transitRouterMulticastDomainId = value;
+				DictionaryUtil.Add(QueryParameters, "TransitRouterMulticastDomainId", value);
 			}
 		}
 
@@ -178,27 +176,14 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string TransitRouterAttachmentDescription
-		{
-			get
-			{
-				return transitRouterAttachmentDescription;
-			}
-			set	
-			{
-				transitRouterAttachmentDescription = value;
-				DictionaryUtil.Add(QueryParameters, "TransitRouterAttachmentDescription", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override UpdateTransitRouterVbrAttachmentAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DisassociateTransitRouterMulticastDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateTransitRouterVbrAttachmentAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DisassociateTransitRouterMulticastDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

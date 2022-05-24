@@ -28,10 +28,10 @@ using Aliyun.Acs.Cbn.Transform.V20170912;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
 {
-    public class UpdateTransitRouterVbrAttachmentAttributeRequest : RpcAcsRequest<UpdateTransitRouterVbrAttachmentAttributeResponse>
+    public class RegisterTransitRouterMulticastGroupMembersRequest : RpcAcsRequest<RegisterTransitRouterMulticastGroupMembersResponse>
     {
-        public UpdateTransitRouterVbrAttachmentAttributeRequest()
-            : base("Cbn", "2017-09-12", "UpdateTransitRouterVbrAttachmentAttribute")
+        public RegisterTransitRouterMulticastGroupMembersRequest()
+            : base("Cbn", "2017-09-12", "RegisterTransitRouterMulticastGroupMembers")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,9 +45,11 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private string clientToken;
 
-		private string transitRouterAttachmentName;
+		private List<string> networkInterfaceIdss = new List<string>(){ };
 
-		private bool? autoPublishRouteEnabled;
+		private string transitRouterMulticastDomainId;
+
+		private string groupIpAddress;
 
 		private bool? dryRun;
 
@@ -55,11 +57,9 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private string ownerAccount;
 
+		private List<string> peerTransitRouterMulticastDomainss = new List<string>(){ };
+
 		private long? ownerId;
-
-		private string transitRouterAttachmentId;
-
-		private string transitRouterAttachmentDescription;
 
 		public long? ResourceOwnerId
 		{
@@ -87,29 +87,42 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string TransitRouterAttachmentName
+		public List<string> NetworkInterfaceIdss
 		{
 			get
 			{
-				return transitRouterAttachmentName;
+				return networkInterfaceIdss;
 			}
-			set	
+
+			set
 			{
-				transitRouterAttachmentName = value;
-				DictionaryUtil.Add(QueryParameters, "TransitRouterAttachmentName", value);
+				networkInterfaceIdss = value;
 			}
 		}
 
-		public bool? AutoPublishRouteEnabled
+		public string TransitRouterMulticastDomainId
 		{
 			get
 			{
-				return autoPublishRouteEnabled;
+				return transitRouterMulticastDomainId;
 			}
 			set	
 			{
-				autoPublishRouteEnabled = value;
-				DictionaryUtil.Add(QueryParameters, "AutoPublishRouteEnabled", value.ToString());
+				transitRouterMulticastDomainId = value;
+				DictionaryUtil.Add(QueryParameters, "TransitRouterMulticastDomainId", value);
+			}
+		}
+
+		public string GroupIpAddress
+		{
+			get
+			{
+				return groupIpAddress;
+			}
+			set	
+			{
+				groupIpAddress = value;
+				DictionaryUtil.Add(QueryParameters, "GroupIpAddress", value);
 			}
 		}
 
@@ -152,6 +165,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
+		public List<string> PeerTransitRouterMulticastDomainss
+		{
+			get
+			{
+				return peerTransitRouterMulticastDomainss;
+			}
+
+			set
+			{
+				peerTransitRouterMulticastDomainss = value;
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -165,40 +191,14 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string TransitRouterAttachmentId
-		{
-			get
-			{
-				return transitRouterAttachmentId;
-			}
-			set	
-			{
-				transitRouterAttachmentId = value;
-				DictionaryUtil.Add(QueryParameters, "TransitRouterAttachmentId", value);
-			}
-		}
-
-		public string TransitRouterAttachmentDescription
-		{
-			get
-			{
-				return transitRouterAttachmentDescription;
-			}
-			set	
-			{
-				transitRouterAttachmentDescription = value;
-				DictionaryUtil.Add(QueryParameters, "TransitRouterAttachmentDescription", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override UpdateTransitRouterVbrAttachmentAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RegisterTransitRouterMulticastGroupMembersResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateTransitRouterVbrAttachmentAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RegisterTransitRouterMulticastGroupMembersResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

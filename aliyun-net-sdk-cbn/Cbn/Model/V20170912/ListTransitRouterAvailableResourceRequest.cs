@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private long? ownerId;
 
+		private bool? supportMulticast;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -98,6 +100,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public bool? SupportMulticast
+		{
+			get
+			{
+				return supportMulticast;
+			}
+			set	
+			{
+				supportMulticast = value;
+				DictionaryUtil.Add(QueryParameters, "SupportMulticast", value.ToString());
 			}
 		}
 

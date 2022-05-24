@@ -59,6 +59,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private string transitRouterDescription;
 
+		private bool? supportMulticast;
+
 		public string TransitRouterName
 		{
 			get
@@ -173,6 +175,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				transitRouterDescription = value;
 				DictionaryUtil.Add(QueryParameters, "TransitRouterDescription", value);
+			}
+		}
+
+		public bool? SupportMulticast
+		{
+			get
+			{
+				return supportMulticast;
+			}
+			set	
+			{
+				supportMulticast = value;
+				DictionaryUtil.Add(QueryParameters, "SupportMulticast", value.ToString());
 			}
 		}
 

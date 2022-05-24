@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private int? pageNumber;
 
+		private string transitRouterRouteTableId;
+
 		private int? pageSize;
 
 		private string transmitDirection;
@@ -97,6 +99,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string TransitRouterRouteTableId
+		{
+			get
+			{
+				return transitRouterRouteTableId;
+			}
+			set	
+			{
+				transitRouterRouteTableId = value;
+				DictionaryUtil.Add(QueryParameters, "TransitRouterRouteTableId", value);
 			}
 		}
 

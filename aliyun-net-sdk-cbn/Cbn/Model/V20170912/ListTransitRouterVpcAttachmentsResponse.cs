@@ -120,6 +120,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string serviceMode;
 
+			private string chargeType;
+
 			private List<ListTransitRouterVpcAttachments_ZoneMapping> zoneMappings;
 
 			public string CreationTime
@@ -251,6 +253,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					serviceMode = value;
+				}
+			}
+
+			public string ChargeType
+			{
+				get
+				{
+					return chargeType;
+				}
+				set	
+				{
+					chargeType = value;
 				}
 			}
 
