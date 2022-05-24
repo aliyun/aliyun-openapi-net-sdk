@@ -32,11 +32,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public CreateDBInstanceRequest()
             : base("Dds", "2015-12-01", "CreateDBInstance", "dds", "openAPI")
         {
-            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
-            {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
-            }
 			Method = MethodType.POST;
         }
 
@@ -49,6 +44,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string engineVersion;
 
 		private string networkType;
+
+		private string storageType;
 
 		private string resourceGroupId;
 
@@ -164,6 +161,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				networkType = value;
 				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
+			}
+		}
+
+		public string StorageType
+		{
+			get
+			{
+				return storageType;
+			}
+			set	
+			{
+				storageType = value;
+				DictionaryUtil.Add(QueryParameters, "StorageType", value);
 			}
 		}
 

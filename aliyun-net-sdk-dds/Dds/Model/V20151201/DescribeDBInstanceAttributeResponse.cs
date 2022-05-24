@@ -128,6 +128,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string cloudType;
 
+			private string storageType;
+
 			private List<DescribeDBInstanceAttribute_ReplicaSet> replicaSets;
 
 			private List<DescribeDBInstanceAttribute_Tag> tags;
@@ -567,6 +569,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					cloudType = value;
+				}
+			}
+
+			public string StorageType
+			{
+				get
+				{
+					return storageType;
+				}
+				set	
+				{
+					storageType = value;
 				}
 			}
 

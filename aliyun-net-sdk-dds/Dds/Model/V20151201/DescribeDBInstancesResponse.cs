@@ -144,6 +144,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string capacityUnit;
 
+			private string storageType;
+
 			private List<DescribeDBInstances_Tag> tags;
 
 			private List<DescribeDBInstances_MongosAttribute> mongosList;
@@ -423,6 +425,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					capacityUnit = value;
+				}
+			}
+
+			public string StorageType
+			{
+				get
+				{
+					return storageType;
+				}
+				set	
+				{
+					storageType = value;
 				}
 			}
 
