@@ -74,6 +74,7 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			userStatus.AssetScanned = _ctx.BooleanValue("DescribeUserStatus.UserStatus.AssetScanned");
 			userStatus.AlarmCount = _ctx.LongValue("DescribeUserStatus.UserStatus.AlarmCount");
 			userStatus.DisplayTime = _ctx.StringValue("DescribeUserStatus.UserStatus.DisplayTime");
+			userStatus.DataManagerRole = _ctx.IntegerValue("DescribeUserStatus.UserStatus.DataManagerRole");
 			describeUserStatusResponse.UserStatus = userStatus;
         
 			return describeUserStatusResponse;

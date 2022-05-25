@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private bool? modifyPassword;
 
+		private int? samplingSize;
+
 		private string password;
 
 		private long? id;
@@ -74,6 +76,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				modifyPassword = value;
 				DictionaryUtil.Add(QueryParameters, "ModifyPassword", value.ToString());
+			}
+		}
+
+		public int? SamplingSize
+		{
+			get
+			{
+				return samplingSize;
+			}
+			set	
+			{
+				samplingSize = value;
+				DictionaryUtil.Add(QueryParameters, "SamplingSize", value.ToString());
 			}
 		}
 
