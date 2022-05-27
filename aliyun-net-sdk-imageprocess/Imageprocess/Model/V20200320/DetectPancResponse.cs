@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imageprocess.Model.V20200320
 {
-	public class CalcCACSResponse : AcsResponse
+	public class DetectPancResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 
 		private string message;
 
-		private CalcCACS_Data data;
+		private DetectPanc_Data data;
 
 		public string RequestId
 		{
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			}
 		}
 
-		public CalcCACS_Data Data
+		public DetectPanc_Data Data
 		{
 			get
 			{
@@ -81,107 +81,93 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			}
 		}
 
-		public class CalcCACS_Data
+		public class DetectPanc_Data
 		{
 
-			private string resultUrl;
+			private DetectPanc_Lesion lesion;
 
-			private string score;
-
-			private string volumeScore;
-
-			private List<CalcCACS_DetectionsItem> detections;
-
-			public string ResultUrl
+			public DetectPanc_Lesion Lesion
 			{
 				get
 				{
-					return resultUrl;
+					return lesion;
 				}
 				set	
 				{
-					resultUrl = value;
+					lesion = value;
 				}
 			}
 
-			public string Score
-			{
-				get
-				{
-					return score;
-				}
-				set	
-				{
-					score = value;
-				}
-			}
-
-			public string VolumeScore
-			{
-				get
-				{
-					return volumeScore;
-				}
-				set	
-				{
-					volumeScore = value;
-				}
-			}
-
-			public List<CalcCACS_DetectionsItem> Detections
-			{
-				get
-				{
-					return detections;
-				}
-				set	
-				{
-					detections = value;
-				}
-			}
-
-			public class CalcCACS_DetectionsItem
+			public class DetectPanc_Lesion
 			{
 
-				private long? calciumId;
+				private string pancVol;
 
-				private float? calciumScore;
+				private string pdacVol;
 
-				private float? calciumVolume;
+				private string nonPdacVol;
 
-				public long? CalciumId
+				private string mask;
+
+				private List<string> possibilities;
+
+				public string PancVol
 				{
 					get
 					{
-						return calciumId;
+						return pancVol;
 					}
 					set	
 					{
-						calciumId = value;
+						pancVol = value;
 					}
 				}
 
-				public float? CalciumScore
+				public string PdacVol
 				{
 					get
 					{
-						return calciumScore;
+						return pdacVol;
 					}
 					set	
 					{
-						calciumScore = value;
+						pdacVol = value;
 					}
 				}
 
-				public float? CalciumVolume
+				public string NonPdacVol
 				{
 					get
 					{
-						return calciumVolume;
+						return nonPdacVol;
 					}
 					set	
 					{
-						calciumVolume = value;
+						nonPdacVol = value;
+					}
+				}
+
+				public string Mask
+				{
+					get
+					{
+						return mask;
+					}
+					set	
+					{
+						mask = value;
+					}
+				}
+
+				public List<string> Possibilities
+				{
+					get
+					{
+						return possibilities;
+					}
+					set	
+					{
+						possibilities = value;
 					}
 				}
 			}

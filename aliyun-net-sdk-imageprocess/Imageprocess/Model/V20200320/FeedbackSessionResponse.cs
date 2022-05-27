@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imageprocess.Model.V20200320
 {
-	public class CalcCACSResponse : AcsResponse
+	public class FeedbackSessionResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 
 		private string message;
 
-		private CalcCACS_Data data;
+		private FeedbackSession_Data data;
 
 		public string RequestId
 		{
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			}
 		}
 
-		public CalcCACS_Data Data
+		public FeedbackSession_Data Data
 		{
 			get
 			{
@@ -81,108 +81,20 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			}
 		}
 
-		public class CalcCACS_Data
+		public class FeedbackSession_Data
 		{
 
-			private string resultUrl;
+			private string data;
 
-			private string score;
-
-			private string volumeScore;
-
-			private List<CalcCACS_DetectionsItem> detections;
-
-			public string ResultUrl
+			public string Data
 			{
 				get
 				{
-					return resultUrl;
+					return data;
 				}
 				set	
 				{
-					resultUrl = value;
-				}
-			}
-
-			public string Score
-			{
-				get
-				{
-					return score;
-				}
-				set	
-				{
-					score = value;
-				}
-			}
-
-			public string VolumeScore
-			{
-				get
-				{
-					return volumeScore;
-				}
-				set	
-				{
-					volumeScore = value;
-				}
-			}
-
-			public List<CalcCACS_DetectionsItem> Detections
-			{
-				get
-				{
-					return detections;
-				}
-				set	
-				{
-					detections = value;
-				}
-			}
-
-			public class CalcCACS_DetectionsItem
-			{
-
-				private long? calciumId;
-
-				private float? calciumScore;
-
-				private float? calciumVolume;
-
-				public long? CalciumId
-				{
-					get
-					{
-						return calciumId;
-					}
-					set	
-					{
-						calciumId = value;
-					}
-				}
-
-				public float? CalciumScore
-				{
-					get
-					{
-						return calciumScore;
-					}
-					set	
-					{
-						calciumScore = value;
-					}
-				}
-
-				public float? CalciumVolume
-				{
-					get
-					{
-						return calciumVolume;
-					}
-					set	
-					{
-						calciumVolume = value;
-					}
+					data = value;
 				}
 			}
 		}
