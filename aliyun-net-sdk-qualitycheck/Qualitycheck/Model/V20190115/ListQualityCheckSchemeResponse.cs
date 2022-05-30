@@ -154,7 +154,7 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 		public class ListQualityCheckScheme_DataItem
 		{
 
-			private int? schemeId;
+			private long? schemeId;
 
 			private string name;
 
@@ -176,11 +176,13 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 
 			private string updateTime;
 
+			private long? version;
+
 			private List<ListQualityCheckScheme_SchemeCheckTypeListItem> schemeCheckTypeList;
 
 			private List<ListQualityCheckScheme_RuleListItem> ruleList;
 
-			public int? SchemeId
+			public long? SchemeId
 			{
 				get
 				{
@@ -309,6 +311,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				set	
 				{
 					updateTime = value;
+				}
+			}
+
+			public long? Version
+			{
+				get
+				{
+					return version;
+				}
+				set	
+				{
+					version = value;
 				}
 			}
 

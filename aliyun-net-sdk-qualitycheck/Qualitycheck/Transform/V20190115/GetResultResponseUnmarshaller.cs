@@ -61,6 +61,18 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 				resultInfo.ReviewType = _ctx.IntegerValue("GetResult.Data["+ i +"].ReviewType");
 				resultInfo.Resolver = _ctx.StringValue("GetResult.Data["+ i +"].Resolver");
 
+				List<string> resultInfo_schemeIdList = new List<string>();
+				for (int j = 0; j < _ctx.Length("GetResult.Data["+ i +"].SchemeIdList.Length"); j++) {
+					resultInfo_schemeIdList.Add(_ctx.StringValue("GetResult.Data["+ i +"].SchemeIdList["+ j +"]"));
+				}
+				resultInfo.SchemeIdList = resultInfo_schemeIdList;
+
+				List<string> resultInfo_schemeNameList = new List<string>();
+				for (int j = 0; j < _ctx.Length("GetResult.Data["+ i +"].SchemeNameList.Length"); j++) {
+					resultInfo_schemeNameList.Add(_ctx.StringValue("GetResult.Data["+ i +"].SchemeNameList["+ j +"]"));
+				}
+				resultInfo.SchemeNameList = resultInfo_schemeNameList;
+
 				GetResultResponse.GetResult_ResultInfo.GetResult_Recording recording = new GetResultResponse.GetResult_ResultInfo.GetResult_Recording();
 				recording.Remark13 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark13");
 				recording.Callee = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Callee");
@@ -117,6 +129,8 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 					hitResultItem.ReviewResult = _ctx.IntegerValue("GetResult.Data["+ i +"].HitResult["+ j +"].ReviewResult");
 					hitResultItem.Name = _ctx.StringValue("GetResult.Data["+ i +"].HitResult["+ j +"].Name");
 					hitResultItem.Rid = _ctx.StringValue("GetResult.Data["+ i +"].HitResult["+ j +"].Rid");
+					hitResultItem.SchemeId = _ctx.LongValue("GetResult.Data["+ i +"].HitResult["+ j +"].SchemeId");
+					hitResultItem.SchemeVersion = _ctx.LongValue("GetResult.Data["+ i +"].HitResult["+ j +"].SchemeVersion");
 
 					List<GetResultResponse.GetResult_ResultInfo.GetResult_HitResultItem.GetResult_Hit> hitResultItem_hits = new List<GetResultResponse.GetResult_ResultInfo.GetResult_HitResultItem.GetResult_Hit>();
 					for (int k = 0; k < _ctx.Length("GetResult.Data["+ i +"].HitResult["+ j +"].Hits.Length"); k++) {

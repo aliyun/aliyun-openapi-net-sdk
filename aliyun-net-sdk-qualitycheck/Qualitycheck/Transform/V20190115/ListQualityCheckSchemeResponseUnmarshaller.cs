@@ -43,7 +43,7 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			List<ListQualityCheckSchemeResponse.ListQualityCheckScheme_DataItem> listQualityCheckSchemeResponse_data = new List<ListQualityCheckSchemeResponse.ListQualityCheckScheme_DataItem>();
 			for (int i = 0; i < _ctx.Length("ListQualityCheckScheme.Data.Length"); i++) {
 				ListQualityCheckSchemeResponse.ListQualityCheckScheme_DataItem dataItem = new ListQualityCheckSchemeResponse.ListQualityCheckScheme_DataItem();
-				dataItem.SchemeId = _ctx.IntegerValue("ListQualityCheckScheme.Data["+ i +"].SchemeId");
+				dataItem.SchemeId = _ctx.LongValue("ListQualityCheckScheme.Data["+ i +"].SchemeId");
 				dataItem.Name = _ctx.StringValue("ListQualityCheckScheme.Data["+ i +"].Name");
 				dataItem.Description = _ctx.StringValue("ListQualityCheckScheme.Data["+ i +"].Description");
 				dataItem.DataType = _ctx.IntegerValue("ListQualityCheckScheme.Data["+ i +"].DataType");
@@ -54,6 +54,7 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 				dataItem.CreateTime = _ctx.StringValue("ListQualityCheckScheme.Data["+ i +"].CreateTime");
 				dataItem.UpdateUserName = _ctx.StringValue("ListQualityCheckScheme.Data["+ i +"].UpdateUserName");
 				dataItem.UpdateTime = _ctx.StringValue("ListQualityCheckScheme.Data["+ i +"].UpdateTime");
+				dataItem.Version = _ctx.LongValue("ListQualityCheckScheme.Data["+ i +"].Version");
 
 				List<ListQualityCheckSchemeResponse.ListQualityCheckScheme_DataItem.ListQualityCheckScheme_SchemeCheckTypeListItem> dataItem_schemeCheckTypeList = new List<ListQualityCheckSchemeResponse.ListQualityCheckScheme_DataItem.ListQualityCheckScheme_SchemeCheckTypeListItem>();
 				for (int j = 0; j < _ctx.Length("ListQualityCheckScheme.Data["+ i +"].SchemeCheckTypeList.Length"); j++) {
