@@ -25,23 +25,35 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 	public class DescribeStoreConfigResponse : AcsResponse
 	{
 
-		private string errorMessage;
-
-		private string errorCode;
-
-		private string message;
-
-		private string dynamicCode;
-
-		private string code;
-
-		private string dynamicMessage;
-
 		private string requestId;
+
+		private string errorMessage;
 
 		private bool? success;
 
+		private string errorCode;
+
+		private string code;
+
+		private string message;
+
+		private string dynamicMessage;
+
+		private string dynamicCode;
+
 		private DescribeStoreConfig_StoreConfigInfo storeConfigInfo;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string ErrorMessage
 		{
@@ -52,6 +64,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			set	
 			{
 				errorMessage = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -67,30 +91,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public string DynamicCode
-		{
-			get
-			{
-				return dynamicCode;
-			}
-			set	
-			{
-				dynamicCode = value;
-			}
-		}
-
 		public string Code
 		{
 			get
@@ -100,6 +100,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			set	
 			{
 				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -115,27 +127,15 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string RequestId
+		public string DynamicCode
 		{
 			get
 			{
-				return requestId;
+				return dynamicCode;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
+				dynamicCode = value;
 			}
 		}
 
@@ -154,13 +154,27 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 		public class DescribeStoreConfig_StoreConfigInfo
 		{
 
+			private string storeId;
+
 			private bool? enableNotification;
 
 			private string notificationWebHook;
 
 			private string notificationSilentTimes;
 
-			private string storeId;
+			private List<DescribeStoreConfig_SubscribeContent> subscribeContents;
+
+			public string StoreId
+			{
+				get
+				{
+					return storeId;
+				}
+				set	
+				{
+					storeId = value;
+				}
+			}
 
 			public bool? EnableNotification
 			{
@@ -198,15 +212,89 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
-			public string StoreId
+			public List<DescribeStoreConfig_SubscribeContent> SubscribeContents
 			{
 				get
 				{
-					return storeId;
+					return subscribeContents;
 				}
 				set	
 				{
-					storeId = value;
+					subscribeContents = value;
+				}
+			}
+
+			public class DescribeStoreConfig_SubscribeContent
+			{
+
+				private string category;
+
+				private bool? enable;
+
+				private string threshold;
+
+				private bool? atAll;
+
+				private string atMobileList;
+
+				public string Category
+				{
+					get
+					{
+						return category;
+					}
+					set	
+					{
+						category = value;
+					}
+				}
+
+				public bool? Enable
+				{
+					get
+					{
+						return enable;
+					}
+					set	
+					{
+						enable = value;
+					}
+				}
+
+				public string Threshold
+				{
+					get
+					{
+						return threshold;
+					}
+					set	
+					{
+						threshold = value;
+					}
+				}
+
+				public bool? AtAll
+				{
+					get
+					{
+						return atAll;
+					}
+					set	
+					{
+						atAll = value;
+					}
+				}
+
+				public string AtMobileList
+				{
+					get
+					{
+						return atMobileList;
+					}
+					set	
+					{
+						atMobileList = value;
+					}
 				}
 			}
 		}

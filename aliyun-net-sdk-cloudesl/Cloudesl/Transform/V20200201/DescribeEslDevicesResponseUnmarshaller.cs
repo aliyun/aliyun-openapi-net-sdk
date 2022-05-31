@@ -31,32 +31,33 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 			DescribeEslDevicesResponse describeEslDevicesResponse = new DescribeEslDevicesResponse();
 
 			describeEslDevicesResponse.HttpResponse = _ctx.HttpResponse;
+			describeEslDevicesResponse.RequestId = _ctx.StringValue("DescribeEslDevices.RequestId");
 			describeEslDevicesResponse.ErrorMessage = _ctx.StringValue("DescribeEslDevices.ErrorMessage");
+			describeEslDevicesResponse.Success = _ctx.BooleanValue("DescribeEslDevices.Success");
 			describeEslDevicesResponse.ErrorCode = _ctx.StringValue("DescribeEslDevices.ErrorCode");
-			describeEslDevicesResponse.PageSize = _ctx.IntegerValue("DescribeEslDevices.PageSize");
+			describeEslDevicesResponse.Code = _ctx.StringValue("DescribeEslDevices.Code");
 			describeEslDevicesResponse.Message = _ctx.StringValue("DescribeEslDevices.Message");
+			describeEslDevicesResponse.DynamicMessage = _ctx.StringValue("DescribeEslDevices.DynamicMessage");
+			describeEslDevicesResponse.PageNumber = _ctx.IntegerValue("DescribeEslDevices.PageNumber");
+			describeEslDevicesResponse.PageSize = _ctx.IntegerValue("DescribeEslDevices.PageSize");
 			describeEslDevicesResponse.TotalCount = _ctx.IntegerValue("DescribeEslDevices.TotalCount");
 			describeEslDevicesResponse.DynamicCode = _ctx.StringValue("DescribeEslDevices.DynamicCode");
-			describeEslDevicesResponse.Code = _ctx.StringValue("DescribeEslDevices.Code");
-			describeEslDevicesResponse.PageNumber = _ctx.IntegerValue("DescribeEslDevices.PageNumber");
-			describeEslDevicesResponse.DynamicMessage = _ctx.StringValue("DescribeEslDevices.DynamicMessage");
-			describeEslDevicesResponse.RequestId = _ctx.StringValue("DescribeEslDevices.RequestId");
-			describeEslDevicesResponse.Success = _ctx.BooleanValue("DescribeEslDevices.Success");
 
 			List<DescribeEslDevicesResponse.DescribeEslDevices_EslDeviceInfo> describeEslDevicesResponse_eslDevices = new List<DescribeEslDevicesResponse.DescribeEslDevices_EslDeviceInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeEslDevices.EslDevices.Length"); i++) {
 				DescribeEslDevicesResponse.DescribeEslDevices_EslDeviceInfo eslDeviceInfo = new DescribeEslDevicesResponse.DescribeEslDevices_EslDeviceInfo();
-				eslDeviceInfo.LastCommunicateTime = _ctx.StringValue("DescribeEslDevices.EslDevices["+ i +"].LastCommunicateTime");
-				eslDeviceInfo.Model = _ctx.StringValue("DescribeEslDevices.EslDevices["+ i +"].Model");
-				eslDeviceInfo.EslStatus = _ctx.StringValue("DescribeEslDevices.EslDevices["+ i +"].EslStatus");
+				eslDeviceInfo.Type = _ctx.StringValue("DescribeEslDevices.EslDevices["+ i +"].Type");
 				eslDeviceInfo.StoreId = _ctx.StringValue("DescribeEslDevices.EslDevices["+ i +"].StoreId");
 				eslDeviceInfo.EslBarCode = _ctx.StringValue("DescribeEslDevices.EslDevices["+ i +"].EslBarCode");
-				eslDeviceInfo.Type = _ctx.StringValue("DescribeEslDevices.EslDevices["+ i +"].Type");
-				eslDeviceInfo.Mac = _ctx.StringValue("DescribeEslDevices.EslDevices["+ i +"].Mac");
-				eslDeviceInfo.BatteryLevel = _ctx.IntegerValue("DescribeEslDevices.EslDevices["+ i +"].BatteryLevel");
-				eslDeviceInfo.ScreenWidth = _ctx.IntegerValue("DescribeEslDevices.EslDevices["+ i +"].ScreenWidth");
+				eslDeviceInfo.Model = _ctx.StringValue("DescribeEslDevices.EslDevices["+ i +"].Model");
+				eslDeviceInfo.LastCommunicateTime = _ctx.StringValue("DescribeEslDevices.EslDevices["+ i +"].LastCommunicateTime");
 				eslDeviceInfo.ScreenHeight = _ctx.IntegerValue("DescribeEslDevices.EslDevices["+ i +"].ScreenHeight");
+				eslDeviceInfo.ScreenWidth = _ctx.IntegerValue("DescribeEslDevices.EslDevices["+ i +"].ScreenWidth");
 				eslDeviceInfo.EslSignal = _ctx.IntegerValue("DescribeEslDevices.EslDevices["+ i +"].EslSignal");
+				eslDeviceInfo.BatteryLevel = _ctx.IntegerValue("DescribeEslDevices.EslDevices["+ i +"].BatteryLevel");
+				eslDeviceInfo.EslStatus = _ctx.StringValue("DescribeEslDevices.EslDevices["+ i +"].EslStatus");
+				eslDeviceInfo.Mac = _ctx.StringValue("DescribeEslDevices.EslDevices["+ i +"].Mac");
+				eslDeviceInfo.TypeEncode = _ctx.StringValue("DescribeEslDevices.EslDevices["+ i +"].TypeEncode");
 
 				describeEslDevicesResponse_eslDevices.Add(eslDeviceInfo);
 			}

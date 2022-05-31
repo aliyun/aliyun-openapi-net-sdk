@@ -25,21 +25,33 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 	public class UpdateStoreConfigResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string errorMessage;
+
+		private bool? success;
 
 		private string errorCode;
 
-		private string message;
-
-		private string dynamicCode;
-
 		private string code;
+
+		private string message;
 
 		private string dynamicMessage;
 
-		private string requestId;
+		private string dynamicCode;
 
-		private bool? success;
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string ErrorMessage
 		{
@@ -50,6 +62,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			set	
 			{
 				errorMessage = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -65,30 +89,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public string DynamicCode
-		{
-			get
-			{
-				return dynamicCode;
-			}
-			set	
-			{
-				dynamicCode = value;
-			}
-		}
-
 		public string Code
 		{
 			get
@@ -98,6 +98,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			set	
 			{
 				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -113,27 +125,15 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string RequestId
+		public string DynamicCode
 		{
 			get
 			{
-				return requestId;
+				return dynamicCode;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
+				dynamicCode = value;
 			}
 		}
 	}

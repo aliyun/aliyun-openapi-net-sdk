@@ -25,125 +25,29 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 	public class DescribeUserLogResponse : AcsResponse
 	{
 
-		private string errorMessage;
-
-		private string errorCode;
-
-		private int? pageNumber;
-
-		private string message;
-
-		private string dynamicCode;
-
-		private string code;
-
-		private int? pageSize;
-
-		private string dynamicMessage;
-
 		private string requestId;
+
+		private string errorMessage;
 
 		private bool? success;
 
+		private string errorCode;
+
+		private string code;
+
+		private string message;
+
+		private string dynamicMessage;
+
+		private int? pageSize;
+
+		private int? pageNumber;
+
 		private int? totalCount;
 
+		private string dynamicCode;
+
 		private List<DescribeUserLog_UserLogInfo> userLogs;
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public string DynamicCode
-		{
-			get
-			{
-				return dynamicCode;
-			}
-			set	
-			{
-				dynamicCode = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public string DynamicMessage
-		{
-			get
-			{
-				return dynamicMessage;
-			}
-			set	
-			{
-				dynamicMessage = value;
-			}
-		}
 
 		public string RequestId
 		{
@@ -154,6 +58,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
 			}
 		}
 
@@ -169,6 +85,78 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public string DynamicMessage
+		{
+			get
+			{
+				return dynamicMessage;
+			}
+			set	
+			{
+				dynamicMessage = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
 		public int? TotalCount
 		{
 			get
@@ -178,6 +166,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string DynamicCode
+		{
+			get
+			{
+				return dynamicCode;
+			}
+			set	
+			{
+				dynamicCode = value;
 			}
 		}
 
@@ -196,53 +196,55 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 		public class DescribeUserLog_UserLogInfo
 		{
 
-			private string resultCode;
+			private string eslBarCode;
 
 			private string operationSendTime;
 
-			private string gmtCreate;
-
-			private string storeId;
-
-			private string gmtModified;
-
 			private string actionPrice;
 
-			private string operationStatus;
+			private string userId;
 
 			private string priceUnit;
 
-			private string logId;
+			private string resultCode;
 
-			private string itemShortTitle;
+			private string itemId;
+
+			private string gmtModified;
 
 			private string operationType;
 
 			private string operationResponseTime;
 
-			private string spendTime;
+			private string operationStatus;
 
-			private string eslBarCode;
+			private string storeId;
 
-			private string itemId;
+			private string itemShortTitle;
 
-			private string itemBarCode;
+			private string logId;
 
 			private bool? bePromotion;
 
-			private string userId;
+			private string gmtCreate;
 
 			private int? eslSignal;
 
-			public string ResultCode
+			private string spendTime;
+
+			private string itemBarCode;
+
+			private string i18nResultKey;
+
+			public string EslBarCode
 			{
 				get
 				{
-					return resultCode;
+					return eslBarCode;
 				}
 				set	
 				{
-					resultCode = value;
+					eslBarCode = value;
 				}
 			}
 
@@ -258,42 +260,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
-			public string GmtCreate
-			{
-				get
-				{
-					return gmtCreate;
-				}
-				set	
-				{
-					gmtCreate = value;
-				}
-			}
-
-			public string StoreId
-			{
-				get
-				{
-					return storeId;
-				}
-				set	
-				{
-					storeId = value;
-				}
-			}
-
-			public string GmtModified
-			{
-				get
-				{
-					return gmtModified;
-				}
-				set	
-				{
-					gmtModified = value;
-				}
-			}
-
 			public string ActionPrice
 			{
 				get
@@ -306,15 +272,15 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
-			public string OperationStatus
+			public string UserId
 			{
 				get
 				{
-					return operationStatus;
+					return userId;
 				}
 				set	
 				{
-					operationStatus = value;
+					userId = value;
 				}
 			}
 
@@ -330,27 +296,39 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
-			public string LogId
+			public string ResultCode
 			{
 				get
 				{
-					return logId;
+					return resultCode;
 				}
 				set	
 				{
-					logId = value;
+					resultCode = value;
 				}
 			}
 
-			public string ItemShortTitle
+			public string ItemId
 			{
 				get
 				{
-					return itemShortTitle;
+					return itemId;
 				}
 				set	
 				{
-					itemShortTitle = value;
+					itemId = value;
+				}
+			}
+
+			public string GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
 				}
 			}
 
@@ -378,51 +356,51 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
-			public string SpendTime
+			public string OperationStatus
 			{
 				get
 				{
-					return spendTime;
+					return operationStatus;
 				}
 				set	
 				{
-					spendTime = value;
+					operationStatus = value;
 				}
 			}
 
-			public string EslBarCode
+			public string StoreId
 			{
 				get
 				{
-					return eslBarCode;
+					return storeId;
 				}
 				set	
 				{
-					eslBarCode = value;
+					storeId = value;
 				}
 			}
 
-			public string ItemId
+			public string ItemShortTitle
 			{
 				get
 				{
-					return itemId;
+					return itemShortTitle;
 				}
 				set	
 				{
-					itemId = value;
+					itemShortTitle = value;
 				}
 			}
 
-			public string ItemBarCode
+			public string LogId
 			{
 				get
 				{
-					return itemBarCode;
+					return logId;
 				}
 				set	
 				{
-					itemBarCode = value;
+					logId = value;
 				}
 			}
 
@@ -438,15 +416,15 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
-			public string UserId
+			public string GmtCreate
 			{
 				get
 				{
-					return userId;
+					return gmtCreate;
 				}
 				set	
 				{
-					userId = value;
+					gmtCreate = value;
 				}
 			}
 
@@ -459,6 +437,42 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					eslSignal = value;
+				}
+			}
+
+			public string SpendTime
+			{
+				get
+				{
+					return spendTime;
+				}
+				set	
+				{
+					spendTime = value;
+				}
+			}
+
+			public string ItemBarCode
+			{
+				get
+				{
+					return itemBarCode;
+				}
+				set	
+				{
+					itemBarCode = value;
+				}
+			}
+
+			public string I18nResultKey
+			{
+				get
+				{
+					return i18nResultKey;
+				}
+				set	
+				{
+					i18nResultKey = value;
 				}
 			}
 		}

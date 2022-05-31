@@ -31,14 +31,14 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 			UpdateStoreConfigResponse updateStoreConfigResponse = new UpdateStoreConfigResponse();
 
 			updateStoreConfigResponse.HttpResponse = _ctx.HttpResponse;
-			updateStoreConfigResponse.ErrorMessage = _ctx.StringValue("UpdateStoreConfig.ErrorMessage");
-			updateStoreConfigResponse.ErrorCode = _ctx.StringValue("UpdateStoreConfig.ErrorCode");
-			updateStoreConfigResponse.Message = _ctx.StringValue("UpdateStoreConfig.Message");
-			updateStoreConfigResponse.DynamicCode = _ctx.StringValue("UpdateStoreConfig.DynamicCode");
-			updateStoreConfigResponse.Code = _ctx.StringValue("UpdateStoreConfig.Code");
-			updateStoreConfigResponse.DynamicMessage = _ctx.StringValue("UpdateStoreConfig.DynamicMessage");
 			updateStoreConfigResponse.RequestId = _ctx.StringValue("UpdateStoreConfig.RequestId");
+			updateStoreConfigResponse.ErrorMessage = _ctx.StringValue("UpdateStoreConfig.ErrorMessage");
 			updateStoreConfigResponse.Success = _ctx.BooleanValue("UpdateStoreConfig.Success");
+			updateStoreConfigResponse.ErrorCode = _ctx.StringValue("UpdateStoreConfig.ErrorCode");
+			updateStoreConfigResponse.Code = _ctx.StringValue("UpdateStoreConfig.Code");
+			updateStoreConfigResponse.Message = _ctx.StringValue("UpdateStoreConfig.Message");
+			updateStoreConfigResponse.DynamicMessage = _ctx.StringValue("UpdateStoreConfig.DynamicMessage");
+			updateStoreConfigResponse.DynamicCode = _ctx.StringValue("UpdateStoreConfig.DynamicCode");
         
 			return updateStoreConfigResponse;
         }

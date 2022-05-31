@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.cloudesl;
 using Aliyun.Acs.cloudesl.Transform;
 using Aliyun.Acs.cloudesl.Transform.V20200201;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
     public class DescribeEslDevicesRequest : RpcAcsRequest<DescribeEslDevicesResponse>
     {
         public DescribeEslDevicesRequest()
-            : base("cloudesl", "2020-02-01", "DescribeEslDevices", "cloudesl", "openAPI")
+            : base("cloudesl", "2020-02-01", "DescribeEslDevices")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -51,6 +52,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 		private string eslBarCode;
 
 		private int? pageSize;
+
+		private string typeEncode;
 
 		private string eslStatus;
 
@@ -133,6 +136,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				pageSize = value;
 				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string TypeEncode
+		{
+			get
+			{
+				return typeEncode;
+			}
+			set	
+			{
+				typeEncode = value;
+				DictionaryUtil.Add(BodyParameters, "TypeEncode", value);
 			}
 		}
 

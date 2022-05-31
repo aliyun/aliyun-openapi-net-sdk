@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.cloudesl;
 using Aliyun.Acs.cloudesl.Transform;
 using Aliyun.Acs.cloudesl.Transform.V20200201;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
     public class BatchInsertItemsRequest : RpcAcsRequest<BatchInsertItemsResponse>
     {
         public BatchInsertItemsRequest()
-            : base("cloudesl", "2020-02-01", "BatchInsertItems", "cloudesl", "openAPI")
+            : base("cloudesl", "2020-02-01", "BatchInsertItems")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -111,17 +112,20 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureK", itemInfos[i].CustomizeFeatureK);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureL", itemInfos[i].CustomizeFeatureL);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureM", itemInfos[i].CustomizeFeatureM);
-					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".BePromotion", itemInfos[i].BePromotion);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureN", itemInfos[i].CustomizeFeatureN);
+					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".BePromotion", itemInfos[i].BePromotion);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureO", itemInfos[i].CustomizeFeatureO);
+					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureP", itemInfos[i].CustomizeFeatureP);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".PromotionEnd", itemInfos[i].PromotionEnd);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".ItemTitle", itemInfos[i].ItemTitle);
+					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureQ", itemInfos[i].CustomizeFeatureQ);
+					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureR", itemInfos[i].CustomizeFeatureR);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureC", itemInfos[i].CustomizeFeatureC);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureD", itemInfos[i].CustomizeFeatureD);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".ItemQrCode", itemInfos[i].ItemQrCode);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureE", itemInfos[i].CustomizeFeatureE);
-					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".InventoryStatus", itemInfos[i].InventoryStatus);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".PromotionReason", itemInfos[i].PromotionReason);
+					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".InventoryStatus", itemInfos[i].InventoryStatus);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureF", itemInfos[i].CustomizeFeatureF);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureG", itemInfos[i].CustomizeFeatureG);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureH", itemInfos[i].CustomizeFeatureH);
@@ -132,16 +136,24 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".SuggestPrice", itemInfos[i].SuggestPrice);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".ForestFirstId", itemInfos[i].ForestFirstId);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".ProductionPlace", itemInfos[i].ProductionPlace);
-					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".Manufacturer", itemInfos[i].Manufacturer);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".SourceCode", itemInfos[i].SourceCode);
+					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".Manufacturer", itemInfos[i].Manufacturer);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".ItemId", itemInfos[i].ItemId);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".BeMember", itemInfos[i].BeMember);
+					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureS", itemInfos[i].CustomizeFeatureS);
+					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureT", itemInfos[i].CustomizeFeatureT);
+					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureU", itemInfos[i].CustomizeFeatureU);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".TemplateSceneId", itemInfos[i].TemplateSceneId);
+					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureV", itemInfos[i].CustomizeFeatureV);
+					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureW", itemInfos[i].CustomizeFeatureW);
+					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureX", itemInfos[i].CustomizeFeatureX);
+					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureY", itemInfos[i].CustomizeFeatureY);
+					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".CustomizeFeatureZ", itemInfos[i].CustomizeFeatureZ);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".SalesPrice", itemInfos[i].SalesPrice);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".OriginalPrice", itemInfos[i].OriginalPrice);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".ItemShortTitle", itemInfos[i].ItemShortTitle);
-					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".ForestSecondId", itemInfos[i].ForestSecondId);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".ItemPicUrl", itemInfos[i].ItemPicUrl);
+					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".ForestSecondId", itemInfos[i].ForestSecondId);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".SupplierName", itemInfos[i].SupplierName);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".Material", itemInfos[i].Material);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".ModelNumber", itemInfos[i].ModelNumber);
@@ -182,15 +194,21 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 			private string customizeFeatureM;
 
-			private bool? bePromotion;
-
 			private string customizeFeatureN;
 
+			private bool? bePromotion;
+
 			private string customizeFeatureO;
+
+			private string customizeFeatureP;
 
 			private string promotionEnd;
 
 			private string itemTitle;
+
+			private string customizeFeatureQ;
+
+			private string customizeFeatureR;
 
 			private string customizeFeatureC;
 
@@ -200,9 +218,9 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 			private string customizeFeatureE;
 
-			private string inventoryStatus;
-
 			private string promotionReason;
+
+			private string inventoryStatus;
 
 			private string customizeFeatureF;
 
@@ -224,15 +242,31 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 			private string productionPlace;
 
-			private string manufacturer;
-
 			private string sourceCode;
+
+			private string manufacturer;
 
 			private string itemId;
 
 			private bool? beMember;
 
+			private string customizeFeatureS;
+
+			private string customizeFeatureT;
+
+			private string customizeFeatureU;
+
 			private string templateSceneId;
+
+			private string customizeFeatureV;
+
+			private string customizeFeatureW;
+
+			private string customizeFeatureX;
+
+			private string customizeFeatureY;
+
+			private string customizeFeatureZ;
 
 			private int? salesPrice;
 
@@ -240,9 +274,9 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 			private string itemShortTitle;
 
-			private string forestSecondId;
-
 			private string itemPicUrl;
+
+			private string forestSecondId;
 
 			private string supplierName;
 
@@ -406,18 +440,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
-			public bool? BePromotion
-			{
-				get
-				{
-					return bePromotion;
-				}
-				set	
-				{
-					bePromotion = value;
-				}
-			}
-
 			public string CustomizeFeatureN
 			{
 				get
@@ -430,6 +452,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
+			public bool? BePromotion
+			{
+				get
+				{
+					return bePromotion;
+				}
+				set	
+				{
+					bePromotion = value;
+				}
+			}
+
 			public string CustomizeFeatureO
 			{
 				get
@@ -439,6 +473,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					customizeFeatureO = value;
+				}
+			}
+
+			public string CustomizeFeatureP
+			{
+				get
+				{
+					return customizeFeatureP;
+				}
+				set	
+				{
+					customizeFeatureP = value;
 				}
 			}
 
@@ -463,6 +509,30 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					itemTitle = value;
+				}
+			}
+
+			public string CustomizeFeatureQ
+			{
+				get
+				{
+					return customizeFeatureQ;
+				}
+				set	
+				{
+					customizeFeatureQ = value;
+				}
+			}
+
+			public string CustomizeFeatureR
+			{
+				get
+				{
+					return customizeFeatureR;
+				}
+				set	
+				{
+					customizeFeatureR = value;
 				}
 			}
 
@@ -514,18 +584,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
-			public string InventoryStatus
-			{
-				get
-				{
-					return inventoryStatus;
-				}
-				set	
-				{
-					inventoryStatus = value;
-				}
-			}
-
 			public string PromotionReason
 			{
 				get
@@ -535,6 +593,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					promotionReason = value;
+				}
+			}
+
+			public string InventoryStatus
+			{
+				get
+				{
+					return inventoryStatus;
+				}
+				set	
+				{
+					inventoryStatus = value;
 				}
 			}
 
@@ -658,18 +728,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
-			public string Manufacturer
-			{
-				get
-				{
-					return manufacturer;
-				}
-				set	
-				{
-					manufacturer = value;
-				}
-			}
-
 			public string SourceCode
 			{
 				get
@@ -679,6 +737,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					sourceCode = value;
+				}
+			}
+
+			public string Manufacturer
+			{
+				get
+				{
+					return manufacturer;
+				}
+				set	
+				{
+					manufacturer = value;
 				}
 			}
 
@@ -706,6 +776,42 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
+			public string CustomizeFeatureS
+			{
+				get
+				{
+					return customizeFeatureS;
+				}
+				set	
+				{
+					customizeFeatureS = value;
+				}
+			}
+
+			public string CustomizeFeatureT
+			{
+				get
+				{
+					return customizeFeatureT;
+				}
+				set	
+				{
+					customizeFeatureT = value;
+				}
+			}
+
+			public string CustomizeFeatureU
+			{
+				get
+				{
+					return customizeFeatureU;
+				}
+				set	
+				{
+					customizeFeatureU = value;
+				}
+			}
+
 			public string TemplateSceneId
 			{
 				get
@@ -715,6 +821,66 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					templateSceneId = value;
+				}
+			}
+
+			public string CustomizeFeatureV
+			{
+				get
+				{
+					return customizeFeatureV;
+				}
+				set	
+				{
+					customizeFeatureV = value;
+				}
+			}
+
+			public string CustomizeFeatureW
+			{
+				get
+				{
+					return customizeFeatureW;
+				}
+				set	
+				{
+					customizeFeatureW = value;
+				}
+			}
+
+			public string CustomizeFeatureX
+			{
+				get
+				{
+					return customizeFeatureX;
+				}
+				set	
+				{
+					customizeFeatureX = value;
+				}
+			}
+
+			public string CustomizeFeatureY
+			{
+				get
+				{
+					return customizeFeatureY;
+				}
+				set	
+				{
+					customizeFeatureY = value;
+				}
+			}
+
+			public string CustomizeFeatureZ
+			{
+				get
+				{
+					return customizeFeatureZ;
+				}
+				set	
+				{
+					customizeFeatureZ = value;
 				}
 			}
 
@@ -754,18 +920,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
-			public string ForestSecondId
-			{
-				get
-				{
-					return forestSecondId;
-				}
-				set	
-				{
-					forestSecondId = value;
-				}
-			}
-
 			public string ItemPicUrl
 			{
 				get
@@ -775,6 +929,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					itemPicUrl = value;
+				}
+			}
+
+			public string ForestSecondId
+			{
+				get
+				{
+					return forestSecondId;
+				}
+				set	
+				{
+					forestSecondId = value;
 				}
 			}
 

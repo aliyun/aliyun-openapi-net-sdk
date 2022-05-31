@@ -31,14 +31,14 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 			BindEslDeviceResponse bindEslDeviceResponse = new BindEslDeviceResponse();
 
 			bindEslDeviceResponse.HttpResponse = _ctx.HttpResponse;
-			bindEslDeviceResponse.ErrorMessage = _ctx.StringValue("BindEslDevice.ErrorMessage");
-			bindEslDeviceResponse.ErrorCode = _ctx.StringValue("BindEslDevice.ErrorCode");
-			bindEslDeviceResponse.Message = _ctx.StringValue("BindEslDevice.Message");
-			bindEslDeviceResponse.DynamicCode = _ctx.StringValue("BindEslDevice.DynamicCode");
-			bindEslDeviceResponse.Code = _ctx.StringValue("BindEslDevice.Code");
-			bindEslDeviceResponse.DynamicMessage = _ctx.StringValue("BindEslDevice.DynamicMessage");
 			bindEslDeviceResponse.RequestId = _ctx.StringValue("BindEslDevice.RequestId");
+			bindEslDeviceResponse.ErrorMessage = _ctx.StringValue("BindEslDevice.ErrorMessage");
 			bindEslDeviceResponse.Success = _ctx.BooleanValue("BindEslDevice.Success");
+			bindEslDeviceResponse.ErrorCode = _ctx.StringValue("BindEslDevice.ErrorCode");
+			bindEslDeviceResponse.Code = _ctx.StringValue("BindEslDevice.Code");
+			bindEslDeviceResponse.Message = _ctx.StringValue("BindEslDevice.Message");
+			bindEslDeviceResponse.DynamicMessage = _ctx.StringValue("BindEslDevice.DynamicMessage");
+			bindEslDeviceResponse.DynamicCode = _ctx.StringValue("BindEslDevice.DynamicCode");
         
 			return bindEslDeviceResponse;
         }
