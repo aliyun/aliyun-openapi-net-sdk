@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -56,37 +56,25 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		public class DescribeTaskInfo_TaskInfo
 		{
 
-			private int? taskId;
-
-			private string beginTime;
+			private string status;
 
 			private string finishTime;
 
 			private string progress;
 
-			private string status;
+			private string beginTime;
 
-			public int? TaskId
+			private int? taskId;
+
+			public string Status
 			{
 				get
 				{
-					return taskId;
+					return status;
 				}
 				set	
 				{
-					taskId = value;
-				}
-			}
-
-			public string BeginTime
-			{
-				get
-				{
-					return beginTime;
-				}
-				set	
-				{
-					beginTime = value;
+					status = value;
 				}
 			}
 
@@ -114,15 +102,27 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public string Status
+			public string BeginTime
 			{
 				get
 				{
-					return status;
+					return beginTime;
 				}
 				set	
 				{
-					status = value;
+					beginTime = value;
+				}
+			}
+
+			public int? TaskId
+			{
+				get
+				{
+					return taskId;
+				}
+				set	
+				{
+					taskId = value;
 				}
 			}
 		}

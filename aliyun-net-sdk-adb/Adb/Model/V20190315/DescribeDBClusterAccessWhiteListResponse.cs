@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -56,21 +56,21 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		public class DescribeDBClusterAccessWhiteList_IPArray
 		{
 
-			private string dBClusterIPArrayName;
+			private string dBClusterIPArrayAttribute;
 
 			private string securityIPList;
 
-			private string dBClusterIPArrayAttribute;
+			private string dBClusterIPArrayName;
 
-			public string DBClusterIPArrayName
+			public string DBClusterIPArrayAttribute
 			{
 				get
 				{
-					return dBClusterIPArrayName;
+					return dBClusterIPArrayAttribute;
 				}
 				set	
 				{
-					dBClusterIPArrayName = value;
+					dBClusterIPArrayAttribute = value;
 				}
 			}
 
@@ -86,15 +86,15 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public string DBClusterIPArrayAttribute
+			public string DBClusterIPArrayName
 			{
 				get
 				{
-					return dBClusterIPArrayAttribute;
+					return dBClusterIPArrayName;
 				}
 				set	
 				{
-					dBClusterIPArrayAttribute = value;
+					dBClusterIPArrayName = value;
 				}
 			}
 		}

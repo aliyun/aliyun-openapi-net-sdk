@@ -36,9 +36,9 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			List<DescribeRegionsResponse.DescribeRegions_Region> describeRegionsResponse_regions = new List<DescribeRegionsResponse.DescribeRegions_Region>();
 			for (int i = 0; i < _ctx.Length("DescribeRegions.Regions.Length"); i++) {
 				DescribeRegionsResponse.DescribeRegions_Region region = new DescribeRegionsResponse.DescribeRegions_Region();
-				region.RegionId = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
-				region.LocalName = _ctx.StringValue("DescribeRegions.Regions["+ i +"].LocalName");
 				region.RegionEndpoint = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionEndpoint");
+				region.LocalName = _ctx.StringValue("DescribeRegions.Regions["+ i +"].LocalName");
+				region.RegionId = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
 
 				List<DescribeRegionsResponse.DescribeRegions_Region.DescribeRegions_Zone> region_zones = new List<DescribeRegionsResponse.DescribeRegions_Region.DescribeRegions_Zone>();
 				for (int j = 0; j < _ctx.Length("DescribeRegions.Regions["+ i +"].Zones.Length"); j++) {

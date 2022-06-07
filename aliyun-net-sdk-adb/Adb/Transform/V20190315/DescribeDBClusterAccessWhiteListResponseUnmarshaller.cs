@@ -36,9 +36,9 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			List<DescribeDBClusterAccessWhiteListResponse.DescribeDBClusterAccessWhiteList_IPArray> describeDBClusterAccessWhiteListResponse_items = new List<DescribeDBClusterAccessWhiteListResponse.DescribeDBClusterAccessWhiteList_IPArray>();
 			for (int i = 0; i < _ctx.Length("DescribeDBClusterAccessWhiteList.Items.Length"); i++) {
 				DescribeDBClusterAccessWhiteListResponse.DescribeDBClusterAccessWhiteList_IPArray iPArray = new DescribeDBClusterAccessWhiteListResponse.DescribeDBClusterAccessWhiteList_IPArray();
-				iPArray.DBClusterIPArrayName = _ctx.StringValue("DescribeDBClusterAccessWhiteList.Items["+ i +"].DBClusterIPArrayName");
-				iPArray.SecurityIPList = _ctx.StringValue("DescribeDBClusterAccessWhiteList.Items["+ i +"].SecurityIPList");
 				iPArray.DBClusterIPArrayAttribute = _ctx.StringValue("DescribeDBClusterAccessWhiteList.Items["+ i +"].DBClusterIPArrayAttribute");
+				iPArray.SecurityIPList = _ctx.StringValue("DescribeDBClusterAccessWhiteList.Items["+ i +"].SecurityIPList");
+				iPArray.DBClusterIPArrayName = _ctx.StringValue("DescribeDBClusterAccessWhiteList.Items["+ i +"].DBClusterIPArrayName");
 
 				describeDBClusterAccessWhiteListResponse_items.Add(iPArray);
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -26,6 +26,8 @@ namespace Aliyun.Acs.adb.Model.V20190315
 	{
 
 		private string requestId;
+
+		private bool? updateSucceed;
 
 		public string RequestId
 		{
@@ -36,6 +38,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? UpdateSucceed
+		{
+			get
+			{
+				return updateSucceed;
+			}
+			set	
+			{
+				updateSucceed = value;
 			}
 		}
 	}

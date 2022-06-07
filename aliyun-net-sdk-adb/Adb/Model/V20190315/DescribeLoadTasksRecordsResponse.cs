@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string totalCount;
 
-		private string requestId;
-
 		private string pageSize;
+
+		private string requestId;
 
 		private string pageNumber;
 
@@ -49,18 +49,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
 		public string PageSize
 		{
 			get
@@ -70,6 +58,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -112,31 +112,31 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		public class DescribeLoadTasksRecords_LoadTaskRecord
 		{
 
-			private long? processRows;
+			private string sql;
 
 			private string state;
 
 			private string createTime;
 
-			private string jobName;
-
-			private string updateTime;
-
 			private string dBName;
 
 			private string processID;
 
-			private string sql;
+			private string updateTime;
 
-			public long? ProcessRows
+			private string jobName;
+
+			private long? processRows;
+
+			public string Sql
 			{
 				get
 				{
-					return processRows;
+					return sql;
 				}
 				set	
 				{
-					processRows = value;
+					sql = value;
 				}
 			}
 
@@ -164,30 +164,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public string JobName
-			{
-				get
-				{
-					return jobName;
-				}
-				set	
-				{
-					jobName = value;
-				}
-			}
-
-			public string UpdateTime
-			{
-				get
-				{
-					return updateTime;
-				}
-				set	
-				{
-					updateTime = value;
-				}
-			}
-
 			public string DBName
 			{
 				get
@@ -212,15 +188,39 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public string Sql
+			public string UpdateTime
 			{
 				get
 				{
-					return sql;
+					return updateTime;
 				}
 				set	
 				{
-					sql = value;
+					updateTime = value;
+				}
+			}
+
+			public string JobName
+			{
+				get
+				{
+					return jobName;
+				}
+				set	
+				{
+					jobName = value;
+				}
+			}
+
+			public long? ProcessRows
+			{
+				get
+				{
+					return processRows;
+				}
+				set	
+				{
+					processRows = value;
 				}
 			}
 		}

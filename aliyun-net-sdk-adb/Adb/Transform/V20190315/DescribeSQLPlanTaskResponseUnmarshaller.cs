@@ -36,18 +36,18 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			List<DescribeSQLPlanTaskResponse.DescribeSQLPlanTask_SqlPlanTask> describeSQLPlanTaskResponse_taskList = new List<DescribeSQLPlanTaskResponse.DescribeSQLPlanTask_SqlPlanTask>();
 			for (int i = 0; i < _ctx.Length("DescribeSQLPlanTask.TaskList.Length"); i++) {
 				DescribeSQLPlanTaskResponse.DescribeSQLPlanTask_SqlPlanTask sqlPlanTask = new DescribeSQLPlanTaskResponse.DescribeSQLPlanTask_SqlPlanTask();
-				sqlPlanTask.TaskId = _ctx.IntegerValue("DescribeSQLPlanTask.TaskList["+ i +"].TaskId");
-				sqlPlanTask.State = _ctx.StringValue("DescribeSQLPlanTask.TaskList["+ i +"].State");
-				sqlPlanTask.ElapsedTime = _ctx.LongValue("DescribeSQLPlanTask.TaskList["+ i +"].ElapsedTime");
-				sqlPlanTask.PeakMemory = _ctx.LongValue("DescribeSQLPlanTask.TaskList["+ i +"].PeakMemory");
-				sqlPlanTask.OperatorCost = _ctx.LongValue("DescribeSQLPlanTask.TaskList["+ i +"].OperatorCost");
-				sqlPlanTask.InputRows = _ctx.LongValue("DescribeSQLPlanTask.TaskList["+ i +"].InputRows");
-				sqlPlanTask.InputSize = _ctx.LongValue("DescribeSQLPlanTask.TaskList["+ i +"].InputSize");
-				sqlPlanTask.OutputRows = _ctx.LongValue("DescribeSQLPlanTask.TaskList["+ i +"].OutputRows");
-				sqlPlanTask.OutputSize = _ctx.LongValue("DescribeSQLPlanTask.TaskList["+ i +"].OutputSize");
-				sqlPlanTask.ScanRows = _ctx.LongValue("DescribeSQLPlanTask.TaskList["+ i +"].ScanRows");
-				sqlPlanTask.ScanSize = _ctx.LongValue("DescribeSQLPlanTask.TaskList["+ i +"].ScanSize");
 				sqlPlanTask.ScanCost = _ctx.LongValue("DescribeSQLPlanTask.TaskList["+ i +"].ScanCost");
+				sqlPlanTask.OutputSize = _ctx.LongValue("DescribeSQLPlanTask.TaskList["+ i +"].OutputSize");
+				sqlPlanTask.InputSize = _ctx.LongValue("DescribeSQLPlanTask.TaskList["+ i +"].InputSize");
+				sqlPlanTask.State = _ctx.StringValue("DescribeSQLPlanTask.TaskList["+ i +"].State");
+				sqlPlanTask.OperatorCost = _ctx.LongValue("DescribeSQLPlanTask.TaskList["+ i +"].OperatorCost");
+				sqlPlanTask.OutputRows = _ctx.LongValue("DescribeSQLPlanTask.TaskList["+ i +"].OutputRows");
+				sqlPlanTask.ScanSize = _ctx.LongValue("DescribeSQLPlanTask.TaskList["+ i +"].ScanSize");
+				sqlPlanTask.ElapsedTime = _ctx.LongValue("DescribeSQLPlanTask.TaskList["+ i +"].ElapsedTime");
+				sqlPlanTask.ScanRows = _ctx.LongValue("DescribeSQLPlanTask.TaskList["+ i +"].ScanRows");
+				sqlPlanTask.PeakMemory = _ctx.LongValue("DescribeSQLPlanTask.TaskList["+ i +"].PeakMemory");
+				sqlPlanTask.TaskId = _ctx.IntegerValue("DescribeSQLPlanTask.TaskList["+ i +"].TaskId");
+				sqlPlanTask.InputRows = _ctx.LongValue("DescribeSQLPlanTask.TaskList["+ i +"].InputRows");
 
 				describeSQLPlanTaskResponse_taskList.Add(sqlPlanTask);
 			}

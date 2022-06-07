@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.adb.Model.V20190315
 	public class DescribeDBClusterNetInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string clusterNetworkType;
 
-		private List<DescribeDBClusterNetInfo_Address> items;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeDBClusterNetInfo_Address> items;
 
 		public string ClusterNetworkType
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				clusterNetworkType = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,9 +70,9 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		public class DescribeDBClusterNetInfo_Address
 		{
 
-			private string connectionString;
+			private string vSwitchId;
 
-			private string iPAddress;
+			private string connectionString;
 
 			private string netType;
 
@@ -80,7 +80,21 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 			private string vPCId;
 
-			private string vSwitchId;
+			private string iPAddress;
+
+			private string connectionStringPrefix;
+
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
 
 			public string ConnectionString
 			{
@@ -91,18 +105,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					connectionString = value;
-				}
-			}
-
-			public string IPAddress
-			{
-				get
-				{
-					return iPAddress;
-				}
-				set	
-				{
-					iPAddress = value;
 				}
 			}
 
@@ -142,15 +144,27 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public string VSwitchId
+			public string IPAddress
 			{
 				get
 				{
-					return vSwitchId;
+					return iPAddress;
 				}
 				set	
 				{
-					vSwitchId = value;
+					iPAddress = value;
+				}
+			}
+
+			public string ConnectionStringPrefix
+			{
+				get
+				{
+					return connectionStringPrefix;
+				}
+				set	
+				{
+					connectionStringPrefix = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -31,9 +31,9 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string dBClusterId;
 
-		private List<DescribeConnectionCountRecords_Users> userRecords;
-
 		private List<DescribeConnectionCountRecords_AccessIps> accessIpRecords;
+
+		private List<DescribeConnectionCountRecords_Users> userRecords;
 
 		public string TotalCount
 		{
@@ -71,18 +71,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public List<DescribeConnectionCountRecords_Users> UserRecords
-		{
-			get
-			{
-				return userRecords;
-			}
-			set	
-			{
-				userRecords = value;
-			}
-		}
-
 		public List<DescribeConnectionCountRecords_AccessIps> AccessIpRecords
 		{
 			get
@@ -95,35 +83,15 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public class DescribeConnectionCountRecords_Users
+		public List<DescribeConnectionCountRecords_Users> UserRecords
 		{
-
-			private string user;
-
-			private long? count;
-
-			public string User
+			get
 			{
-				get
-				{
-					return user;
-				}
-				set	
-				{
-					user = value;
-				}
+				return userRecords;
 			}
-
-			public long? Count
+			set	
 			{
-				get
-				{
-					return count;
-				}
-				set	
-				{
-					count = value;
-				}
+				userRecords = value;
 			}
 		}
 
@@ -143,6 +111,38 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					accessIp = value;
+				}
+			}
+
+			public long? Count
+			{
+				get
+				{
+					return count;
+				}
+				set	
+				{
+					count = value;
+				}
+			}
+		}
+
+		public class DescribeConnectionCountRecords_Users
+		{
+
+			private string user;
+
+			private long? count;
+
+			public string User
+			{
+				get
+				{
+					return user;
+				}
+				set	
+				{
+					user = value;
 				}
 			}
 

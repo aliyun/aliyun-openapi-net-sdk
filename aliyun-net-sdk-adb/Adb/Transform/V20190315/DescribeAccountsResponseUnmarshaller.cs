@@ -36,10 +36,10 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			List<DescribeAccountsResponse.DescribeAccounts_DBAccount> describeAccountsResponse_accountList = new List<DescribeAccountsResponse.DescribeAccounts_DBAccount>();
 			for (int i = 0; i < _ctx.Length("DescribeAccounts.AccountList.Length"); i++) {
 				DescribeAccountsResponse.DescribeAccounts_DBAccount dBAccount = new DescribeAccountsResponse.DescribeAccounts_DBAccount();
-				dBAccount.AccountName = _ctx.StringValue("DescribeAccounts.AccountList["+ i +"].AccountName");
 				dBAccount.AccountStatus = _ctx.StringValue("DescribeAccounts.AccountList["+ i +"].AccountStatus");
 				dBAccount.AccountDescription = _ctx.StringValue("DescribeAccounts.AccountList["+ i +"].AccountDescription");
 				dBAccount.AccountType = _ctx.StringValue("DescribeAccounts.AccountList["+ i +"].AccountType");
+				dBAccount.AccountName = _ctx.StringValue("DescribeAccounts.AccountList["+ i +"].AccountName");
 
 				describeAccountsResponse_accountList.Add(dBAccount);
 			}

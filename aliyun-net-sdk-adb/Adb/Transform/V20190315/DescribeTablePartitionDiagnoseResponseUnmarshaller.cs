@@ -32,8 +32,8 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 
 			describeTablePartitionDiagnoseResponse.HttpResponse = _ctx.HttpResponse;
 			describeTablePartitionDiagnoseResponse.TotalCount = _ctx.IntegerValue("DescribeTablePartitionDiagnose.TotalCount");
-			describeTablePartitionDiagnoseResponse.PageSize = _ctx.IntegerValue("DescribeTablePartitionDiagnose.PageSize");
 			describeTablePartitionDiagnoseResponse.RequestId = _ctx.StringValue("DescribeTablePartitionDiagnose.RequestId");
+			describeTablePartitionDiagnoseResponse.PageSize = _ctx.IntegerValue("DescribeTablePartitionDiagnose.PageSize");
 			describeTablePartitionDiagnoseResponse.PageNumber = _ctx.IntegerValue("DescribeTablePartitionDiagnose.PageNumber");
 			describeTablePartitionDiagnoseResponse.DBClusterId = _ctx.StringValue("DescribeTablePartitionDiagnose.DBClusterId");
 			describeTablePartitionDiagnoseResponse.SuggestMaxRecordsPerPartition = _ctx.LongValue("DescribeTablePartitionDiagnose.SuggestMaxRecordsPerPartition");
@@ -43,9 +43,9 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			for (int i = 0; i < _ctx.Length("DescribeTablePartitionDiagnose.Items.Length"); i++) {
 				DescribeTablePartitionDiagnoseResponse.DescribeTablePartitionDiagnose_TablePartitionDiagnose tablePartitionDiagnose = new DescribeTablePartitionDiagnoseResponse.DescribeTablePartitionDiagnose_TablePartitionDiagnose();
 				tablePartitionDiagnose.TableName = _ctx.StringValue("DescribeTablePartitionDiagnose.Items["+ i +"].TableName");
-				tablePartitionDiagnose.PartitionNumber = _ctx.IntegerValue("DescribeTablePartitionDiagnose.Items["+ i +"].PartitionNumber");
 				tablePartitionDiagnose.PartitionDetail = _ctx.StringValue("DescribeTablePartitionDiagnose.Items["+ i +"].PartitionDetail");
 				tablePartitionDiagnose.SchemaName = _ctx.StringValue("DescribeTablePartitionDiagnose.Items["+ i +"].SchemaName");
+				tablePartitionDiagnose.PartitionNumber = _ctx.IntegerValue("DescribeTablePartitionDiagnose.Items["+ i +"].PartitionNumber");
 
 				describeTablePartitionDiagnoseResponse_items.Add(tablePartitionDiagnose);
 			}

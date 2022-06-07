@@ -36,13 +36,13 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			List<DescribeColumnsResponse.DescribeColumns_Column> describeColumnsResponse_items = new List<DescribeColumnsResponse.DescribeColumns_Column>();
 			for (int i = 0; i < _ctx.Length("DescribeColumns.Items.Length"); i++) {
 				DescribeColumnsResponse.DescribeColumns_Column column = new DescribeColumnsResponse.DescribeColumns_Column();
-				column.DBClusterId = _ctx.StringValue("DescribeColumns.Items["+ i +"].DBClusterId");
-				column.SchemaName = _ctx.StringValue("DescribeColumns.Items["+ i +"].SchemaName");
-				column.TableName = _ctx.StringValue("DescribeColumns.Items["+ i +"].TableName");
-				column.ColumnName = _ctx.StringValue("DescribeColumns.Items["+ i +"].ColumnName");
 				column.Type = _ctx.StringValue("DescribeColumns.Items["+ i +"].Type");
-				column.PrimaryKey = _ctx.BooleanValue("DescribeColumns.Items["+ i +"].PrimaryKey");
+				column.ColumnName = _ctx.StringValue("DescribeColumns.Items["+ i +"].ColumnName");
+				column.TableName = _ctx.StringValue("DescribeColumns.Items["+ i +"].TableName");
 				column.AutoIncrementColumn = _ctx.BooleanValue("DescribeColumns.Items["+ i +"].AutoIncrementColumn");
+				column.DBClusterId = _ctx.StringValue("DescribeColumns.Items["+ i +"].DBClusterId");
+				column.PrimaryKey = _ctx.BooleanValue("DescribeColumns.Items["+ i +"].PrimaryKey");
+				column.SchemaName = _ctx.StringValue("DescribeColumns.Items["+ i +"].SchemaName");
 
 				describeColumnsResponse_items.Add(column);
 			}

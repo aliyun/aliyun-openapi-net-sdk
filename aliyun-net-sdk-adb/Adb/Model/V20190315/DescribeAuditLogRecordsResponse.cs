@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -25,29 +25,17 @@ namespace Aliyun.Acs.adb.Model.V20190315
 	public class DescribeAuditLogRecordsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string totalCount;
 
-		private string pageNumber;
-
 		private string pageSize;
+
+		private string requestId;
+
+		private string pageNumber;
 
 		private string dBClusterId;
 
 		private List<DescribeAuditLogRecords_SlowLogRecord> items;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public string TotalCount
 		{
@@ -61,18 +49,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
 		public string PageSize
 		{
 			get
@@ -82,6 +58,30 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
 			}
 		}
 
@@ -114,21 +114,23 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 			private string hostAddress;
 
-			private string dBName;
+			private string succeed;
 
 			private string sQLText;
 
-			private string sQLType;
+			private string totalTime;
 
 			private string connId;
 
+			private string dBName;
+
+			private string sQLType;
+
 			private string executeTime;
 
-			private string succeed;
-
-			private string totalTime;
-
 			private string processID;
+
+			private string user;
 
 			public string HostAddress
 			{
@@ -139,66 +141,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					hostAddress = value;
-				}
-			}
-
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
-				}
-			}
-
-			public string SQLText
-			{
-				get
-				{
-					return sQLText;
-				}
-				set	
-				{
-					sQLText = value;
-				}
-			}
-
-			public string SQLType
-			{
-				get
-				{
-					return sQLType;
-				}
-				set	
-				{
-					sQLType = value;
-				}
-			}
-
-			public string ConnId
-			{
-				get
-				{
-					return connId;
-				}
-				set	
-				{
-					connId = value;
-				}
-			}
-
-			public string ExecuteTime
-			{
-				get
-				{
-					return executeTime;
-				}
-				set	
-				{
-					executeTime = value;
 				}
 			}
 
@@ -214,6 +156,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
+			public string SQLText
+			{
+				get
+				{
+					return sQLText;
+				}
+				set	
+				{
+					sQLText = value;
+				}
+			}
+
 			public string TotalTime
 			{
 				get
@@ -226,6 +180,54 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
+			public string ConnId
+			{
+				get
+				{
+					return connId;
+				}
+				set	
+				{
+					connId = value;
+				}
+			}
+
+			public string DBName
+			{
+				get
+				{
+					return dBName;
+				}
+				set	
+				{
+					dBName = value;
+				}
+			}
+
+			public string SQLType
+			{
+				get
+				{
+					return sQLType;
+				}
+				set	
+				{
+					sQLType = value;
+				}
+			}
+
+			public string ExecuteTime
+			{
+				get
+				{
+					return executeTime;
+				}
+				set	
+				{
+					executeTime = value;
+				}
+			}
+
 			public string ProcessID
 			{
 				get
@@ -235,6 +237,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					processID = value;
+				}
+			}
+
+			public string User
+			{
+				get
+				{
+					return user;
+				}
+				set	
+				{
+					user = value;
 				}
 			}
 		}

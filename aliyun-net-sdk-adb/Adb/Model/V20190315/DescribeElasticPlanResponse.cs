@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -56,71 +56,23 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		public class DescribeElasticPlan_ElasticPlanInfo
 		{
 
-			private string planName;
-
-			private string resourcePoolName;
-
-			private int? elasticNodeNum;
-
-			private string startTime;
-
 			private string endTime;
 
 			private string weeklyRepeat;
 
+			private string startTime;
+
+			private string resourcePoolName;
+
 			private string startDay;
 
-			private string endDay;
+			private int? elasticNodeNum;
 
 			private bool? enable;
 
-			public string PlanName
-			{
-				get
-				{
-					return planName;
-				}
-				set	
-				{
-					planName = value;
-				}
-			}
+			private string endDay;
 
-			public string ResourcePoolName
-			{
-				get
-				{
-					return resourcePoolName;
-				}
-				set	
-				{
-					resourcePoolName = value;
-				}
-			}
-
-			public int? ElasticNodeNum
-			{
-				get
-				{
-					return elasticNodeNum;
-				}
-				set	
-				{
-					elasticNodeNum = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
+			private string planName;
 
 			public string EndTime
 			{
@@ -146,6 +98,30 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			public string ResourcePoolName
+			{
+				get
+				{
+					return resourcePoolName;
+				}
+				set	
+				{
+					resourcePoolName = value;
+				}
+			}
+
 			public string StartDay
 			{
 				get
@@ -155,6 +131,30 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					startDay = value;
+				}
+			}
+
+			public int? ElasticNodeNum
+			{
+				get
+				{
+					return elasticNodeNum;
+				}
+				set	
+				{
+					elasticNodeNum = value;
+				}
+			}
+
+			public bool? Enable
+			{
+				get
+				{
+					return enable;
+				}
+				set	
+				{
+					enable = value;
 				}
 			}
 
@@ -170,15 +170,15 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public bool? Enable
+			public string PlanName
 			{
 				get
 				{
-					return enable;
+					return planName;
 				}
 				set	
 				{
-					enable = value;
+					planName = value;
 				}
 			}
 		}

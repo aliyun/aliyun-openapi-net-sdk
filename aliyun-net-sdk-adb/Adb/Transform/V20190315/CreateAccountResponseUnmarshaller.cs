@@ -31,9 +31,9 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			CreateAccountResponse createAccountResponse = new CreateAccountResponse();
 
 			createAccountResponse.HttpResponse = _ctx.HttpResponse;
+			createAccountResponse.TaskId = _ctx.IntegerValue("CreateAccount.TaskId");
 			createAccountResponse.RequestId = _ctx.StringValue("CreateAccount.RequestId");
 			createAccountResponse.DBClusterId = _ctx.StringValue("CreateAccount.DBClusterId");
-			createAccountResponse.TaskId = _ctx.IntegerValue("CreateAccount.TaskId");
         
 			return createAccountResponse;
         }

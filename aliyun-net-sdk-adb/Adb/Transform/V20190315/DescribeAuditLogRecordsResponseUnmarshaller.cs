@@ -31,24 +31,25 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			DescribeAuditLogRecordsResponse describeAuditLogRecordsResponse = new DescribeAuditLogRecordsResponse();
 
 			describeAuditLogRecordsResponse.HttpResponse = _ctx.HttpResponse;
-			describeAuditLogRecordsResponse.RequestId = _ctx.StringValue("DescribeAuditLogRecords.RequestId");
 			describeAuditLogRecordsResponse.TotalCount = _ctx.StringValue("DescribeAuditLogRecords.TotalCount");
-			describeAuditLogRecordsResponse.PageNumber = _ctx.StringValue("DescribeAuditLogRecords.PageNumber");
 			describeAuditLogRecordsResponse.PageSize = _ctx.StringValue("DescribeAuditLogRecords.PageSize");
+			describeAuditLogRecordsResponse.RequestId = _ctx.StringValue("DescribeAuditLogRecords.RequestId");
+			describeAuditLogRecordsResponse.PageNumber = _ctx.StringValue("DescribeAuditLogRecords.PageNumber");
 			describeAuditLogRecordsResponse.DBClusterId = _ctx.StringValue("DescribeAuditLogRecords.DBClusterId");
 
 			List<DescribeAuditLogRecordsResponse.DescribeAuditLogRecords_SlowLogRecord> describeAuditLogRecordsResponse_items = new List<DescribeAuditLogRecordsResponse.DescribeAuditLogRecords_SlowLogRecord>();
 			for (int i = 0; i < _ctx.Length("DescribeAuditLogRecords.Items.Length"); i++) {
 				DescribeAuditLogRecordsResponse.DescribeAuditLogRecords_SlowLogRecord slowLogRecord = new DescribeAuditLogRecordsResponse.DescribeAuditLogRecords_SlowLogRecord();
 				slowLogRecord.HostAddress = _ctx.StringValue("DescribeAuditLogRecords.Items["+ i +"].HostAddress");
-				slowLogRecord.DBName = _ctx.StringValue("DescribeAuditLogRecords.Items["+ i +"].DBName");
-				slowLogRecord.SQLText = _ctx.StringValue("DescribeAuditLogRecords.Items["+ i +"].SQLText");
-				slowLogRecord.SQLType = _ctx.StringValue("DescribeAuditLogRecords.Items["+ i +"].SQLType");
-				slowLogRecord.ConnId = _ctx.StringValue("DescribeAuditLogRecords.Items["+ i +"].ConnId");
-				slowLogRecord.ExecuteTime = _ctx.StringValue("DescribeAuditLogRecords.Items["+ i +"].ExecuteTime");
 				slowLogRecord.Succeed = _ctx.StringValue("DescribeAuditLogRecords.Items["+ i +"].Succeed");
+				slowLogRecord.SQLText = _ctx.StringValue("DescribeAuditLogRecords.Items["+ i +"].SQLText");
 				slowLogRecord.TotalTime = _ctx.StringValue("DescribeAuditLogRecords.Items["+ i +"].TotalTime");
+				slowLogRecord.ConnId = _ctx.StringValue("DescribeAuditLogRecords.Items["+ i +"].ConnId");
+				slowLogRecord.DBName = _ctx.StringValue("DescribeAuditLogRecords.Items["+ i +"].DBName");
+				slowLogRecord.SQLType = _ctx.StringValue("DescribeAuditLogRecords.Items["+ i +"].SQLType");
+				slowLogRecord.ExecuteTime = _ctx.StringValue("DescribeAuditLogRecords.Items["+ i +"].ExecuteTime");
 				slowLogRecord.ProcessID = _ctx.StringValue("DescribeAuditLogRecords.Items["+ i +"].ProcessID");
+				slowLogRecord.User = _ctx.StringValue("DescribeAuditLogRecords.Items["+ i +"].User");
 
 				describeAuditLogRecordsResponse_items.Add(slowLogRecord);
 			}

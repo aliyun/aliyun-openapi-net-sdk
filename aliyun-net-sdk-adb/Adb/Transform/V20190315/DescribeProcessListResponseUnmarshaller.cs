@@ -31,22 +31,22 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			DescribeProcessListResponse describeProcessListResponse = new DescribeProcessListResponse();
 
 			describeProcessListResponse.HttpResponse = _ctx.HttpResponse;
-			describeProcessListResponse.RequestId = _ctx.StringValue("DescribeProcessList.RequestId");
 			describeProcessListResponse.TotalCount = _ctx.StringValue("DescribeProcessList.TotalCount");
-			describeProcessListResponse.PageNumber = _ctx.StringValue("DescribeProcessList.PageNumber");
 			describeProcessListResponse.PageSize = _ctx.StringValue("DescribeProcessList.PageSize");
+			describeProcessListResponse.RequestId = _ctx.StringValue("DescribeProcessList.RequestId");
+			describeProcessListResponse.PageNumber = _ctx.StringValue("DescribeProcessList.PageNumber");
 
 			List<DescribeProcessListResponse.DescribeProcessList_Process> describeProcessListResponse_items = new List<DescribeProcessListResponse.DescribeProcessList_Process>();
 			for (int i = 0; i < _ctx.Length("DescribeProcessList.Items.Length"); i++) {
 				DescribeProcessListResponse.DescribeProcessList_Process process = new DescribeProcessListResponse.DescribeProcessList_Process();
-				process.Id = _ctx.IntegerValue("DescribeProcessList.Items["+ i +"].Id");
+				process.StartTime = _ctx.StringValue("DescribeProcessList.Items["+ i +"].StartTime");
+				process.Time = _ctx.IntegerValue("DescribeProcessList.Items["+ i +"].Time");
 				process.ProcessId = _ctx.StringValue("DescribeProcessList.Items["+ i +"].ProcessId");
-				process.User = _ctx.StringValue("DescribeProcessList.Items["+ i +"].User");
 				process.Host = _ctx.StringValue("DescribeProcessList.Items["+ i +"].Host");
 				process.DB = _ctx.StringValue("DescribeProcessList.Items["+ i +"].DB");
 				process.Command = _ctx.StringValue("DescribeProcessList.Items["+ i +"].Command");
-				process.Time = _ctx.IntegerValue("DescribeProcessList.Items["+ i +"].Time");
-				process.StartTime = _ctx.StringValue("DescribeProcessList.Items["+ i +"].StartTime");
+				process.User = _ctx.StringValue("DescribeProcessList.Items["+ i +"].User");
+				process.Id = _ctx.IntegerValue("DescribeProcessList.Items["+ i +"].Id");
 				process.Info = _ctx.StringValue("DescribeProcessList.Items["+ i +"].Info");
 
 				describeProcessListResponse_items.Add(process);

@@ -32,22 +32,22 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 
 			describeLoadTasksRecordsResponse.HttpResponse = _ctx.HttpResponse;
 			describeLoadTasksRecordsResponse.TotalCount = _ctx.StringValue("DescribeLoadTasksRecords.TotalCount");
-			describeLoadTasksRecordsResponse.RequestId = _ctx.StringValue("DescribeLoadTasksRecords.RequestId");
 			describeLoadTasksRecordsResponse.PageSize = _ctx.StringValue("DescribeLoadTasksRecords.PageSize");
+			describeLoadTasksRecordsResponse.RequestId = _ctx.StringValue("DescribeLoadTasksRecords.RequestId");
 			describeLoadTasksRecordsResponse.PageNumber = _ctx.StringValue("DescribeLoadTasksRecords.PageNumber");
 			describeLoadTasksRecordsResponse.DBClusterId = _ctx.StringValue("DescribeLoadTasksRecords.DBClusterId");
 
 			List<DescribeLoadTasksRecordsResponse.DescribeLoadTasksRecords_LoadTaskRecord> describeLoadTasksRecordsResponse_loadTasksRecords = new List<DescribeLoadTasksRecordsResponse.DescribeLoadTasksRecords_LoadTaskRecord>();
 			for (int i = 0; i < _ctx.Length("DescribeLoadTasksRecords.LoadTasksRecords.Length"); i++) {
 				DescribeLoadTasksRecordsResponse.DescribeLoadTasksRecords_LoadTaskRecord loadTaskRecord = new DescribeLoadTasksRecordsResponse.DescribeLoadTasksRecords_LoadTaskRecord();
-				loadTaskRecord.ProcessRows = _ctx.LongValue("DescribeLoadTasksRecords.LoadTasksRecords["+ i +"].ProcessRows");
+				loadTaskRecord.Sql = _ctx.StringValue("DescribeLoadTasksRecords.LoadTasksRecords["+ i +"].Sql");
 				loadTaskRecord.State = _ctx.StringValue("DescribeLoadTasksRecords.LoadTasksRecords["+ i +"].State");
 				loadTaskRecord.CreateTime = _ctx.StringValue("DescribeLoadTasksRecords.LoadTasksRecords["+ i +"].CreateTime");
-				loadTaskRecord.JobName = _ctx.StringValue("DescribeLoadTasksRecords.LoadTasksRecords["+ i +"].JobName");
-				loadTaskRecord.UpdateTime = _ctx.StringValue("DescribeLoadTasksRecords.LoadTasksRecords["+ i +"].UpdateTime");
 				loadTaskRecord.DBName = _ctx.StringValue("DescribeLoadTasksRecords.LoadTasksRecords["+ i +"].DBName");
 				loadTaskRecord.ProcessID = _ctx.StringValue("DescribeLoadTasksRecords.LoadTasksRecords["+ i +"].ProcessID");
-				loadTaskRecord.Sql = _ctx.StringValue("DescribeLoadTasksRecords.LoadTasksRecords["+ i +"].Sql");
+				loadTaskRecord.UpdateTime = _ctx.StringValue("DescribeLoadTasksRecords.LoadTasksRecords["+ i +"].UpdateTime");
+				loadTaskRecord.JobName = _ctx.StringValue("DescribeLoadTasksRecords.LoadTasksRecords["+ i +"].JobName");
+				loadTaskRecord.ProcessRows = _ctx.LongValue("DescribeLoadTasksRecords.LoadTasksRecords["+ i +"].ProcessRows");
 
 				describeLoadTasksRecordsResponse_loadTasksRecords.Add(loadTaskRecord);
 			}

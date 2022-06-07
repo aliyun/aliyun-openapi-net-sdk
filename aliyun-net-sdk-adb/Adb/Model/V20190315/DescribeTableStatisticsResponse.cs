@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string totalCount;
 
-		private string requestId;
-
 		private string pageSize;
+
+		private string requestId;
 
 		private string pageNumber;
 
@@ -49,18 +49,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
 		public string PageSize
 		{
 			get
@@ -70,6 +58,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -112,21 +112,33 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		public class DescribeTableStatistics_TableStatisticRecords
 		{
 
+			private string schemaName;
+
 			private string tableName;
-
-			private long? coldDataSize;
-
-			private long? dataSize;
-
-			private long? primaryKeyIndexSize;
-
-			private long? indexSize;
 
 			private long? rowCount;
 
+			private long? dataSize;
+
+			private long? indexSize;
+
+			private long? primaryKeyIndexSize;
+
 			private long? partitionCount;
 
-			private string schemaName;
+			private long? coldDataSize;
+
+			public string SchemaName
+			{
+				get
+				{
+					return schemaName;
+				}
+				set	
+				{
+					schemaName = value;
+				}
+			}
 
 			public string TableName
 			{
@@ -137,54 +149,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					tableName = value;
-				}
-			}
-
-			public long? ColdDataSize
-			{
-				get
-				{
-					return coldDataSize;
-				}
-				set	
-				{
-					coldDataSize = value;
-				}
-			}
-
-			public long? DataSize
-			{
-				get
-				{
-					return dataSize;
-				}
-				set	
-				{
-					dataSize = value;
-				}
-			}
-
-			public long? PrimaryKeyIndexSize
-			{
-				get
-				{
-					return primaryKeyIndexSize;
-				}
-				set	
-				{
-					primaryKeyIndexSize = value;
-				}
-			}
-
-			public long? IndexSize
-			{
-				get
-				{
-					return indexSize;
-				}
-				set	
-				{
-					indexSize = value;
 				}
 			}
 
@@ -200,6 +164,42 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
+			public long? DataSize
+			{
+				get
+				{
+					return dataSize;
+				}
+				set	
+				{
+					dataSize = value;
+				}
+			}
+
+			public long? IndexSize
+			{
+				get
+				{
+					return indexSize;
+				}
+				set	
+				{
+					indexSize = value;
+				}
+			}
+
+			public long? PrimaryKeyIndexSize
+			{
+				get
+				{
+					return primaryKeyIndexSize;
+				}
+				set	
+				{
+					primaryKeyIndexSize = value;
+				}
+			}
+
 			public long? PartitionCount
 			{
 				get
@@ -212,15 +212,15 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public string SchemaName
+			public long? ColdDataSize
 			{
 				get
 				{
-					return schemaName;
+					return coldDataSize;
 				}
 				set	
 				{
-					schemaName = value;
+					coldDataSize = value;
 				}
 			}
 		}

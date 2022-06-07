@@ -31,10 +31,10 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			DescribeDBClusterResourcePoolPerformanceResponse describeDBClusterResourcePoolPerformanceResponse = new DescribeDBClusterResourcePoolPerformanceResponse();
 
 			describeDBClusterResourcePoolPerformanceResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBClusterResourcePoolPerformanceResponse.RequestId = _ctx.StringValue("DescribeDBClusterResourcePoolPerformance.RequestId");
-			describeDBClusterResourcePoolPerformanceResponse.DBClusterId = _ctx.StringValue("DescribeDBClusterResourcePoolPerformance.DBClusterId");
-			describeDBClusterResourcePoolPerformanceResponse.StartTime = _ctx.StringValue("DescribeDBClusterResourcePoolPerformance.StartTime");
 			describeDBClusterResourcePoolPerformanceResponse.EndTime = _ctx.StringValue("DescribeDBClusterResourcePoolPerformance.EndTime");
+			describeDBClusterResourcePoolPerformanceResponse.RequestId = _ctx.StringValue("DescribeDBClusterResourcePoolPerformance.RequestId");
+			describeDBClusterResourcePoolPerformanceResponse.StartTime = _ctx.StringValue("DescribeDBClusterResourcePoolPerformance.StartTime");
+			describeDBClusterResourcePoolPerformanceResponse.DBClusterId = _ctx.StringValue("DescribeDBClusterResourcePoolPerformance.DBClusterId");
 
 			List<DescribeDBClusterResourcePoolPerformanceResponse.DescribeDBClusterResourcePoolPerformance_PerformanceItem> describeDBClusterResourcePoolPerformanceResponse_performances = new List<DescribeDBClusterResourcePoolPerformanceResponse.DescribeDBClusterResourcePoolPerformance_PerformanceItem>();
 			for (int i = 0; i < _ctx.Length("DescribeDBClusterResourcePoolPerformance.Performances.Length"); i++) {

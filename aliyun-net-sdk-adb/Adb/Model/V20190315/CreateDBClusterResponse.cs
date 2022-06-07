@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -27,11 +27,11 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string requestId;
 
+		private string resourceGroupId;
+
 		private string dBClusterId;
 
 		private string orderId;
-
-		private string resourceGroupId;
 
 		public string RequestId
 		{
@@ -42,6 +42,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
 			}
 		}
 
@@ -66,18 +78,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				orderId = value;
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
 			}
 		}
 	}

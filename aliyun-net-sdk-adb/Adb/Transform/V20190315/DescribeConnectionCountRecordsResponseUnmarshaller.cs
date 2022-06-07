@@ -35,16 +35,6 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			describeConnectionCountRecordsResponse.RequestId = _ctx.StringValue("DescribeConnectionCountRecords.RequestId");
 			describeConnectionCountRecordsResponse.DBClusterId = _ctx.StringValue("DescribeConnectionCountRecords.DBClusterId");
 
-			List<DescribeConnectionCountRecordsResponse.DescribeConnectionCountRecords_Users> describeConnectionCountRecordsResponse_userRecords = new List<DescribeConnectionCountRecordsResponse.DescribeConnectionCountRecords_Users>();
-			for (int i = 0; i < _ctx.Length("DescribeConnectionCountRecords.UserRecords.Length"); i++) {
-				DescribeConnectionCountRecordsResponse.DescribeConnectionCountRecords_Users users = new DescribeConnectionCountRecordsResponse.DescribeConnectionCountRecords_Users();
-				users.User = _ctx.StringValue("DescribeConnectionCountRecords.UserRecords["+ i +"].User");
-				users.Count = _ctx.LongValue("DescribeConnectionCountRecords.UserRecords["+ i +"].Count");
-
-				describeConnectionCountRecordsResponse_userRecords.Add(users);
-			}
-			describeConnectionCountRecordsResponse.UserRecords = describeConnectionCountRecordsResponse_userRecords;
-
 			List<DescribeConnectionCountRecordsResponse.DescribeConnectionCountRecords_AccessIps> describeConnectionCountRecordsResponse_accessIpRecords = new List<DescribeConnectionCountRecordsResponse.DescribeConnectionCountRecords_AccessIps>();
 			for (int i = 0; i < _ctx.Length("DescribeConnectionCountRecords.AccessIpRecords.Length"); i++) {
 				DescribeConnectionCountRecordsResponse.DescribeConnectionCountRecords_AccessIps accessIps = new DescribeConnectionCountRecordsResponse.DescribeConnectionCountRecords_AccessIps();
@@ -54,6 +44,16 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 				describeConnectionCountRecordsResponse_accessIpRecords.Add(accessIps);
 			}
 			describeConnectionCountRecordsResponse.AccessIpRecords = describeConnectionCountRecordsResponse_accessIpRecords;
+
+			List<DescribeConnectionCountRecordsResponse.DescribeConnectionCountRecords_Users> describeConnectionCountRecordsResponse_userRecords = new List<DescribeConnectionCountRecordsResponse.DescribeConnectionCountRecords_Users>();
+			for (int i = 0; i < _ctx.Length("DescribeConnectionCountRecords.UserRecords.Length"); i++) {
+				DescribeConnectionCountRecordsResponse.DescribeConnectionCountRecords_Users users = new DescribeConnectionCountRecordsResponse.DescribeConnectionCountRecords_Users();
+				users.User = _ctx.StringValue("DescribeConnectionCountRecords.UserRecords["+ i +"].User");
+				users.Count = _ctx.LongValue("DescribeConnectionCountRecords.UserRecords["+ i +"].Count");
+
+				describeConnectionCountRecordsResponse_userRecords.Add(users);
+			}
+			describeConnectionCountRecordsResponse.UserRecords = describeConnectionCountRecordsResponse_userRecords;
         
 			return describeConnectionCountRecordsResponse;
         }

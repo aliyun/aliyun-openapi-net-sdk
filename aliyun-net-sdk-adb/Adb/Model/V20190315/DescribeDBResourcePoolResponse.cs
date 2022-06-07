@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -56,29 +56,17 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		public class DescribeDBResourcePool_PoolInfo
 		{
 
-			private string poolName;
-
 			private string queryType;
-
-			private int? nodeNum;
-
-			private string poolUsers;
-
-			private string createTime;
 
 			private string updateTime;
 
-			public string PoolName
-			{
-				get
-				{
-					return poolName;
-				}
-				set	
-				{
-					poolName = value;
-				}
-			}
+			private string poolName;
+
+			private string createTime;
+
+			private string poolUsers;
+
+			private int? nodeNum;
 
 			public string QueryType
 			{
@@ -92,27 +80,27 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public int? NodeNum
+			public string UpdateTime
 			{
 				get
 				{
-					return nodeNum;
+					return updateTime;
 				}
 				set	
 				{
-					nodeNum = value;
+					updateTime = value;
 				}
 			}
 
-			public string PoolUsers
+			public string PoolName
 			{
 				get
 				{
-					return poolUsers;
+					return poolName;
 				}
 				set	
 				{
-					poolUsers = value;
+					poolName = value;
 				}
 			}
 
@@ -128,15 +116,27 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public string UpdateTime
+			public string PoolUsers
 			{
 				get
 				{
-					return updateTime;
+					return poolUsers;
 				}
 				set	
 				{
-					updateTime = value;
+					poolUsers = value;
+				}
+			}
+
+			public int? NodeNum
+			{
+				get
+				{
+					return nodeNum;
+				}
+				set	
+				{
+					nodeNum = value;
 				}
 			}
 		}

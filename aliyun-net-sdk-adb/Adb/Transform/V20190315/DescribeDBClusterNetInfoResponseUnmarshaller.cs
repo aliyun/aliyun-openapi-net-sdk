@@ -31,18 +31,19 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			DescribeDBClusterNetInfoResponse describeDBClusterNetInfoResponse = new DescribeDBClusterNetInfoResponse();
 
 			describeDBClusterNetInfoResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBClusterNetInfoResponse.RequestId = _ctx.StringValue("DescribeDBClusterNetInfo.RequestId");
 			describeDBClusterNetInfoResponse.ClusterNetworkType = _ctx.StringValue("DescribeDBClusterNetInfo.ClusterNetworkType");
+			describeDBClusterNetInfoResponse.RequestId = _ctx.StringValue("DescribeDBClusterNetInfo.RequestId");
 
 			List<DescribeDBClusterNetInfoResponse.DescribeDBClusterNetInfo_Address> describeDBClusterNetInfoResponse_items = new List<DescribeDBClusterNetInfoResponse.DescribeDBClusterNetInfo_Address>();
 			for (int i = 0; i < _ctx.Length("DescribeDBClusterNetInfo.Items.Length"); i++) {
 				DescribeDBClusterNetInfoResponse.DescribeDBClusterNetInfo_Address address = new DescribeDBClusterNetInfoResponse.DescribeDBClusterNetInfo_Address();
+				address.VSwitchId = _ctx.StringValue("DescribeDBClusterNetInfo.Items["+ i +"].VSwitchId");
 				address.ConnectionString = _ctx.StringValue("DescribeDBClusterNetInfo.Items["+ i +"].ConnectionString");
-				address.IPAddress = _ctx.StringValue("DescribeDBClusterNetInfo.Items["+ i +"].IPAddress");
 				address.NetType = _ctx.StringValue("DescribeDBClusterNetInfo.Items["+ i +"].NetType");
 				address.Port = _ctx.StringValue("DescribeDBClusterNetInfo.Items["+ i +"].Port");
 				address.VPCId = _ctx.StringValue("DescribeDBClusterNetInfo.Items["+ i +"].VPCId");
-				address.VSwitchId = _ctx.StringValue("DescribeDBClusterNetInfo.Items["+ i +"].VSwitchId");
+				address.IPAddress = _ctx.StringValue("DescribeDBClusterNetInfo.Items["+ i +"].IPAddress");
+				address.ConnectionStringPrefix = _ctx.StringValue("DescribeDBClusterNetInfo.Items["+ i +"].ConnectionStringPrefix");
 
 				describeDBClusterNetInfoResponse_items.Add(address);
 			}

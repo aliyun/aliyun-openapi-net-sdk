@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -56,11 +56,23 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		public class DescribeTables_Table
 		{
 
+			private string tableName;
+
 			private string dBClusterId;
 
 			private string schemaName;
 
-			private string tableName;
+			public string TableName
+			{
+				get
+				{
+					return tableName;
+				}
+				set	
+				{
+					tableName = value;
+				}
+			}
 
 			public string DBClusterId
 			{
@@ -83,18 +95,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					schemaName = value;
-				}
-			}
-
-			public string TableName
-			{
-				get
-				{
-					return tableName;
-				}
-				set	
-				{
-					tableName = value;
 				}
 			}
 		}

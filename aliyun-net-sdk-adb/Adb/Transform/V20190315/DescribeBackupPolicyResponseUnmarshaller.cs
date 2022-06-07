@@ -31,12 +31,12 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			DescribeBackupPolicyResponse describeBackupPolicyResponse = new DescribeBackupPolicyResponse();
 
 			describeBackupPolicyResponse.HttpResponse = _ctx.HttpResponse;
-			describeBackupPolicyResponse.RequestId = _ctx.StringValue("DescribeBackupPolicy.RequestId");
-			describeBackupPolicyResponse.BackupRetentionPeriod = _ctx.IntegerValue("DescribeBackupPolicy.BackupRetentionPeriod");
-			describeBackupPolicyResponse.PreferredBackupTime = _ctx.StringValue("DescribeBackupPolicy.PreferredBackupTime");
 			describeBackupPolicyResponse.PreferredBackupPeriod = _ctx.StringValue("DescribeBackupPolicy.PreferredBackupPeriod");
-			describeBackupPolicyResponse.EnableBackupLog = _ctx.StringValue("DescribeBackupPolicy.EnableBackupLog");
 			describeBackupPolicyResponse.LogBackupRetentionPeriod = _ctx.IntegerValue("DescribeBackupPolicy.LogBackupRetentionPeriod");
+			describeBackupPolicyResponse.RequestId = _ctx.StringValue("DescribeBackupPolicy.RequestId");
+			describeBackupPolicyResponse.PreferredBackupTime = _ctx.StringValue("DescribeBackupPolicy.PreferredBackupTime");
+			describeBackupPolicyResponse.EnableBackupLog = _ctx.StringValue("DescribeBackupPolicy.EnableBackupLog");
+			describeBackupPolicyResponse.BackupRetentionPeriod = _ctx.IntegerValue("DescribeBackupPolicy.BackupRetentionPeriod");
         
 			return describeBackupPolicyResponse;
         }

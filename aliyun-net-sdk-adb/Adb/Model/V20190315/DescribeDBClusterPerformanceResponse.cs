@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.adb.Model.V20190315
 	public class DescribeDBClusterPerformanceResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string endTime;
 
-		private string dBClusterId;
+		private string requestId;
 
 		private string startTime;
 
-		private string endTime;
+		private string dBClusterId;
 
 		private List<DescribeDBClusterPerformance_PerformanceItem> performances;
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string DBClusterId
-		{
-			get
-			{
-				return dBClusterId;
-			}
-			set	
-			{
-				dBClusterId = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string EndTime
+		public string DBClusterId
 		{
 			get
 			{
-				return endTime;
+				return dBClusterId;
 			}
 			set	
 			{
-				endTime = value;
+				dBClusterId = value;
 			}
 		}
 

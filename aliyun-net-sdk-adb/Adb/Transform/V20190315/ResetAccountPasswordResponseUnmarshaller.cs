@@ -31,9 +31,9 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			ResetAccountPasswordResponse resetAccountPasswordResponse = new ResetAccountPasswordResponse();
 
 			resetAccountPasswordResponse.HttpResponse = _ctx.HttpResponse;
+			resetAccountPasswordResponse.TaskId = _ctx.IntegerValue("ResetAccountPassword.TaskId");
 			resetAccountPasswordResponse.RequestId = _ctx.StringValue("ResetAccountPassword.RequestId");
 			resetAccountPasswordResponse.DBClusterId = _ctx.StringValue("ResetAccountPassword.DBClusterId");
-			resetAccountPasswordResponse.TaskId = _ctx.IntegerValue("ResetAccountPassword.TaskId");
         
 			return resetAccountPasswordResponse;
         }

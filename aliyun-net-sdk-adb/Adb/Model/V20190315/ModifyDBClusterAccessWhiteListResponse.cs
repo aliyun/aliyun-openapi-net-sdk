@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -25,11 +25,23 @@ namespace Aliyun.Acs.adb.Model.V20190315
 	public class ModifyDBClusterAccessWhiteListResponse : AcsResponse
 	{
 
+		private int? taskId;
+
 		private string requestId;
 
 		private string dBClusterId;
 
-		private int? taskId;
+		public int? TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -52,18 +64,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				dBClusterId = value;
-			}
-		}
-
-		public int? TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
 			}
 		}
 	}

@@ -31,18 +31,18 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			DescribeInclinedTablesResponse describeInclinedTablesResponse = new DescribeInclinedTablesResponse();
 
 			describeInclinedTablesResponse.HttpResponse = _ctx.HttpResponse;
-			describeInclinedTablesResponse.RequestId = _ctx.StringValue("DescribeInclinedTables.RequestId");
 			describeInclinedTablesResponse.TotalCount = _ctx.StringValue("DescribeInclinedTables.TotalCount");
-			describeInclinedTablesResponse.PageNumber = _ctx.StringValue("DescribeInclinedTables.PageNumber");
 			describeInclinedTablesResponse.PageSize = _ctx.StringValue("DescribeInclinedTables.PageSize");
+			describeInclinedTablesResponse.RequestId = _ctx.StringValue("DescribeInclinedTables.RequestId");
+			describeInclinedTablesResponse.PageNumber = _ctx.StringValue("DescribeInclinedTables.PageNumber");
 
 			List<DescribeInclinedTablesResponse.DescribeInclinedTables_Table> describeInclinedTablesResponse_items = new List<DescribeInclinedTablesResponse.DescribeInclinedTables_Table>();
 			for (int i = 0; i < _ctx.Length("DescribeInclinedTables.Items.Length"); i++) {
 				DescribeInclinedTablesResponse.DescribeInclinedTables_Table table = new DescribeInclinedTablesResponse.DescribeInclinedTables_Table();
-				table.Schema = _ctx.StringValue("DescribeInclinedTables.Items["+ i +"].Schema");
-				table.Name = _ctx.StringValue("DescribeInclinedTables.Items["+ i +"].Name");
 				table.Type = _ctx.StringValue("DescribeInclinedTables.Items["+ i +"].Type");
+				table.Schema = _ctx.StringValue("DescribeInclinedTables.Items["+ i +"].Schema");
 				table.Size = _ctx.LongValue("DescribeInclinedTables.Items["+ i +"].Size");
+				table.Name = _ctx.StringValue("DescribeInclinedTables.Items["+ i +"].Name");
 				table.IsIncline = _ctx.BooleanValue("DescribeInclinedTables.Items["+ i +"].IsIncline");
 
 				describeInclinedTablesResponse_items.Add(table);

@@ -31,21 +31,21 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			DescribeBackupsResponse describeBackupsResponse = new DescribeBackupsResponse();
 
 			describeBackupsResponse.HttpResponse = _ctx.HttpResponse;
-			describeBackupsResponse.RequestId = _ctx.StringValue("DescribeBackups.RequestId");
 			describeBackupsResponse.TotalCount = _ctx.StringValue("DescribeBackups.TotalCount");
-			describeBackupsResponse.PageNumber = _ctx.StringValue("DescribeBackups.PageNumber");
 			describeBackupsResponse.PageSize = _ctx.StringValue("DescribeBackups.PageSize");
+			describeBackupsResponse.RequestId = _ctx.StringValue("DescribeBackups.RequestId");
+			describeBackupsResponse.PageNumber = _ctx.StringValue("DescribeBackups.PageNumber");
 
 			List<DescribeBackupsResponse.DescribeBackups_Backup> describeBackupsResponse_items = new List<DescribeBackupsResponse.DescribeBackups_Backup>();
 			for (int i = 0; i < _ctx.Length("DescribeBackups.Items.Length"); i++) {
 				DescribeBackupsResponse.DescribeBackups_Backup backup = new DescribeBackupsResponse.DescribeBackups_Backup();
-				backup.BackupId = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupId");
 				backup.DBClusterId = _ctx.StringValue("DescribeBackups.Items["+ i +"].DBClusterId");
-				backup.BackupStartTime = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupStartTime");
-				backup.BackupEndTime = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupEndTime");
-				backup.BackupSize = _ctx.IntegerValue("DescribeBackups.Items["+ i +"].BackupSize");
-				backup.BackupMethod = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupMethod");
 				backup.BackupType = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupType");
+				backup.BackupStartTime = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupStartTime");
+				backup.BackupSize = _ctx.IntegerValue("DescribeBackups.Items["+ i +"].BackupSize");
+				backup.BackupEndTime = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupEndTime");
+				backup.BackupId = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupId");
+				backup.BackupMethod = _ctx.StringValue("DescribeBackups.Items["+ i +"].BackupMethod");
 
 				describeBackupsResponse_items.Add(backup);
 			}

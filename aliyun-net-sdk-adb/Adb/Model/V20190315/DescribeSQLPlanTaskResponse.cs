@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -56,123 +56,39 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		public class DescribeSQLPlanTask_SqlPlanTask
 		{
 
-			private int? taskId;
-
-			private string state;
-
-			private long? elapsedTime;
-
-			private long? peakMemory;
-
-			private long? operatorCost;
-
-			private long? inputRows;
-
-			private long? inputSize;
-
-			private long? outputRows;
+			private long? scanCost;
 
 			private long? outputSize;
 
-			private long? scanRows;
+			private long? inputSize;
+
+			private string state;
+
+			private long? operatorCost;
+
+			private long? outputRows;
 
 			private long? scanSize;
 
-			private long? scanCost;
+			private long? elapsedTime;
 
-			public int? TaskId
+			private long? scanRows;
+
+			private long? peakMemory;
+
+			private int? taskId;
+
+			private long? inputRows;
+
+			public long? ScanCost
 			{
 				get
 				{
-					return taskId;
+					return scanCost;
 				}
 				set	
 				{
-					taskId = value;
-				}
-			}
-
-			public string State
-			{
-				get
-				{
-					return state;
-				}
-				set	
-				{
-					state = value;
-				}
-			}
-
-			public long? ElapsedTime
-			{
-				get
-				{
-					return elapsedTime;
-				}
-				set	
-				{
-					elapsedTime = value;
-				}
-			}
-
-			public long? PeakMemory
-			{
-				get
-				{
-					return peakMemory;
-				}
-				set	
-				{
-					peakMemory = value;
-				}
-			}
-
-			public long? OperatorCost
-			{
-				get
-				{
-					return operatorCost;
-				}
-				set	
-				{
-					operatorCost = value;
-				}
-			}
-
-			public long? InputRows
-			{
-				get
-				{
-					return inputRows;
-				}
-				set	
-				{
-					inputRows = value;
-				}
-			}
-
-			public long? InputSize
-			{
-				get
-				{
-					return inputSize;
-				}
-				set	
-				{
-					inputSize = value;
-				}
-			}
-
-			public long? OutputRows
-			{
-				get
-				{
-					return outputRows;
-				}
-				set	
-				{
-					outputRows = value;
+					scanCost = value;
 				}
 			}
 
@@ -188,15 +104,51 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public long? ScanRows
+			public long? InputSize
 			{
 				get
 				{
-					return scanRows;
+					return inputSize;
 				}
 				set	
 				{
-					scanRows = value;
+					inputSize = value;
+				}
+			}
+
+			public string State
+			{
+				get
+				{
+					return state;
+				}
+				set	
+				{
+					state = value;
+				}
+			}
+
+			public long? OperatorCost
+			{
+				get
+				{
+					return operatorCost;
+				}
+				set	
+				{
+					operatorCost = value;
+				}
+			}
+
+			public long? OutputRows
+			{
+				get
+				{
+					return outputRows;
+				}
+				set	
+				{
+					outputRows = value;
 				}
 			}
 
@@ -212,15 +164,63 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public long? ScanCost
+			public long? ElapsedTime
 			{
 				get
 				{
-					return scanCost;
+					return elapsedTime;
 				}
 				set	
 				{
-					scanCost = value;
+					elapsedTime = value;
+				}
+			}
+
+			public long? ScanRows
+			{
+				get
+				{
+					return scanRows;
+				}
+				set	
+				{
+					scanRows = value;
+				}
+			}
+
+			public long? PeakMemory
+			{
+				get
+				{
+					return peakMemory;
+				}
+				set	
+				{
+					peakMemory = value;
+				}
+			}
+
+			public int? TaskId
+			{
+				get
+				{
+					return taskId;
+				}
+				set	
+				{
+					taskId = value;
+				}
+			}
+
+			public long? InputRows
+			{
+				get
+				{
+					return inputRows;
+				}
+				set	
+				{
+					inputRows = value;
 				}
 			}
 		}

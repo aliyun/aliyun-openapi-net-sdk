@@ -42,8 +42,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private long? resourceOwnerId;
 
-		private string range;
-
 		private string startTime;
 
 		private int? pageNumber;
@@ -76,19 +74,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string Range
-		{
-			get
-			{
-				return range;
-			}
-			set	
-			{
-				range = value;
-				DictionaryUtil.Add(QueryParameters, "Range", value);
 			}
 		}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.adb.Model.V20190315
 	public class DescribeBackupsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string totalCount;
-
-		private string pageNumber;
 
 		private string pageSize;
 
-		private List<DescribeBackups_Backup> items;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string pageNumber;
+
+		private List<DescribeBackups_Backup> items;
 
 		public string TotalCount
 		{
@@ -59,18 +47,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
 		public string PageSize
 		{
 			get
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
 			}
 		}
 
@@ -98,31 +98,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		public class DescribeBackups_Backup
 		{
 
-			private string backupId;
-
 			private string dBClusterId;
-
-			private string backupStartTime;
-
-			private string backupEndTime;
-
-			private int? backupSize;
-
-			private string backupMethod;
 
 			private string backupType;
 
-			public string BackupId
-			{
-				get
-				{
-					return backupId;
-				}
-				set	
-				{
-					backupId = value;
-				}
-			}
+			private string backupStartTime;
+
+			private int? backupSize;
+
+			private string backupEndTime;
+
+			private string backupId;
+
+			private string backupMethod;
 
 			public string DBClusterId
 			{
@@ -133,6 +121,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					dBClusterId = value;
+				}
+			}
+
+			public string BackupType
+			{
+				get
+				{
+					return backupType;
+				}
+				set	
+				{
+					backupType = value;
 				}
 			}
 
@@ -148,18 +148,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public string BackupEndTime
-			{
-				get
-				{
-					return backupEndTime;
-				}
-				set	
-				{
-					backupEndTime = value;
-				}
-			}
-
 			public int? BackupSize
 			{
 				get
@@ -172,6 +160,30 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
+			public string BackupEndTime
+			{
+				get
+				{
+					return backupEndTime;
+				}
+				set	
+				{
+					backupEndTime = value;
+				}
+			}
+
+			public string BackupId
+			{
+				get
+				{
+					return backupId;
+				}
+				set	
+				{
+					backupId = value;
+				}
+			}
+
 			public string BackupMethod
 			{
 				get
@@ -181,18 +193,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					backupMethod = value;
-				}
-			}
-
-			public string BackupType
-			{
-				get
-				{
-					return backupType;
-				}
-				set	
-				{
-					backupType = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -56,53 +56,29 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		public class DescribeColumns_Column
 		{
 
-			private string dBClusterId;
-
-			private string schemaName;
-
-			private string tableName;
+			private string type;
 
 			private string columnName;
 
-			private string type;
-
-			private bool? primaryKey;
+			private string tableName;
 
 			private bool? autoIncrementColumn;
 
-			public string DBClusterId
-			{
-				get
-				{
-					return dBClusterId;
-				}
-				set	
-				{
-					dBClusterId = value;
-				}
-			}
+			private string dBClusterId;
 
-			public string SchemaName
-			{
-				get
-				{
-					return schemaName;
-				}
-				set	
-				{
-					schemaName = value;
-				}
-			}
+			private bool? primaryKey;
 
-			public string TableName
+			private string schemaName;
+
+			public string Type
 			{
 				get
 				{
-					return tableName;
+					return type;
 				}
 				set	
 				{
-					tableName = value;
+					type = value;
 				}
 			}
 
@@ -118,15 +94,39 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public string Type
+			public string TableName
 			{
 				get
 				{
-					return type;
+					return tableName;
 				}
 				set	
 				{
-					type = value;
+					tableName = value;
+				}
+			}
+
+			public bool? AutoIncrementColumn
+			{
+				get
+				{
+					return autoIncrementColumn;
+				}
+				set	
+				{
+					autoIncrementColumn = value;
+				}
+			}
+
+			public string DBClusterId
+			{
+				get
+				{
+					return dBClusterId;
+				}
+				set	
+				{
+					dBClusterId = value;
 				}
 			}
 
@@ -142,15 +142,15 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public bool? AutoIncrementColumn
+			public string SchemaName
 			{
 				get
 				{
-					return autoIncrementColumn;
+					return schemaName;
 				}
 				set	
 				{
-					autoIncrementColumn = value;
+					schemaName = value;
 				}
 			}
 		}

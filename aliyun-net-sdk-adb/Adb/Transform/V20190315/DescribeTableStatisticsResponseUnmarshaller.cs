@@ -32,22 +32,22 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 
 			describeTableStatisticsResponse.HttpResponse = _ctx.HttpResponse;
 			describeTableStatisticsResponse.TotalCount = _ctx.StringValue("DescribeTableStatistics.TotalCount");
-			describeTableStatisticsResponse.RequestId = _ctx.StringValue("DescribeTableStatistics.RequestId");
 			describeTableStatisticsResponse.PageSize = _ctx.StringValue("DescribeTableStatistics.PageSize");
+			describeTableStatisticsResponse.RequestId = _ctx.StringValue("DescribeTableStatistics.RequestId");
 			describeTableStatisticsResponse.PageNumber = _ctx.StringValue("DescribeTableStatistics.PageNumber");
 			describeTableStatisticsResponse.DBClusterId = _ctx.StringValue("DescribeTableStatistics.DBClusterId");
 
 			List<DescribeTableStatisticsResponse.DescribeTableStatistics_TableStatisticRecords> describeTableStatisticsResponse_items = new List<DescribeTableStatisticsResponse.DescribeTableStatistics_TableStatisticRecords>();
 			for (int i = 0; i < _ctx.Length("DescribeTableStatistics.Items.Length"); i++) {
 				DescribeTableStatisticsResponse.DescribeTableStatistics_TableStatisticRecords tableStatisticRecords = new DescribeTableStatisticsResponse.DescribeTableStatistics_TableStatisticRecords();
-				tableStatisticRecords.TableName = _ctx.StringValue("DescribeTableStatistics.Items["+ i +"].TableName");
-				tableStatisticRecords.ColdDataSize = _ctx.LongValue("DescribeTableStatistics.Items["+ i +"].ColdDataSize");
-				tableStatisticRecords.DataSize = _ctx.LongValue("DescribeTableStatistics.Items["+ i +"].DataSize");
-				tableStatisticRecords.PrimaryKeyIndexSize = _ctx.LongValue("DescribeTableStatistics.Items["+ i +"].PrimaryKeyIndexSize");
-				tableStatisticRecords.IndexSize = _ctx.LongValue("DescribeTableStatistics.Items["+ i +"].IndexSize");
-				tableStatisticRecords.RowCount = _ctx.LongValue("DescribeTableStatistics.Items["+ i +"].RowCount");
-				tableStatisticRecords.PartitionCount = _ctx.LongValue("DescribeTableStatistics.Items["+ i +"].PartitionCount");
 				tableStatisticRecords.SchemaName = _ctx.StringValue("DescribeTableStatistics.Items["+ i +"].SchemaName");
+				tableStatisticRecords.TableName = _ctx.StringValue("DescribeTableStatistics.Items["+ i +"].TableName");
+				tableStatisticRecords.RowCount = _ctx.LongValue("DescribeTableStatistics.Items["+ i +"].RowCount");
+				tableStatisticRecords.DataSize = _ctx.LongValue("DescribeTableStatistics.Items["+ i +"].DataSize");
+				tableStatisticRecords.IndexSize = _ctx.LongValue("DescribeTableStatistics.Items["+ i +"].IndexSize");
+				tableStatisticRecords.PrimaryKeyIndexSize = _ctx.LongValue("DescribeTableStatistics.Items["+ i +"].PrimaryKeyIndexSize");
+				tableStatisticRecords.PartitionCount = _ctx.LongValue("DescribeTableStatistics.Items["+ i +"].PartitionCount");
+				tableStatisticRecords.ColdDataSize = _ctx.LongValue("DescribeTableStatistics.Items["+ i +"].ColdDataSize");
 
 				describeTableStatisticsResponse_items.Add(tableStatisticRecords);
 			}

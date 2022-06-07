@@ -50,15 +50,17 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private int? pageSize;
 
+		private string order;
+
 		private string sqlType;
 
 		private string resourceOwnerAccount;
 
 		private string dBClusterId;
 
-		private string ownerAccount;
-
 		private string queryKeyword;
+
+		private string ownerAccount;
 
 		private string endTime;
 
@@ -137,6 +139,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
+		public string Order
+		{
+			get
+			{
+				return order;
+			}
+			set	
+			{
+				order = value;
+				DictionaryUtil.Add(QueryParameters, "Order", value);
+			}
+		}
+
 		public string SqlType
 		{
 			get
@@ -176,19 +191,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public string QueryKeyword
 		{
 			get
@@ -199,6 +201,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				queryKeyword = value;
 				DictionaryUtil.Add(QueryParameters, "QueryKeyword", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 

@@ -64,6 +64,8 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string computeResource;
 
+		private string elasticIOResource;
+
 		private string sourceDBInstanceName;
 
 		private string clientToken;
@@ -249,6 +251,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				computeResource = value;
 				DictionaryUtil.Add(QueryParameters, "ComputeResource", value);
+			}
+		}
+
+		public string ElasticIOResource
+		{
+			get
+			{
+				return elasticIOResource;
+			}
+			set	
+			{
+				elasticIOResource = value;
+				DictionaryUtil.Add(QueryParameters, "ElasticIOResource", value);
 			}
 		}
 
