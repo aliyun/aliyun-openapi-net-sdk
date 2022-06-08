@@ -118,6 +118,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string serviceMode;
 
+			private bool? supportMulticast;
+
 			public string CreationTime
 			{
 				get
@@ -235,6 +237,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					serviceMode = value;
+				}
+			}
+
+			public bool? SupportMulticast
+			{
+				get
+				{
+					return supportMulticast;
+				}
+				set	
+				{
+					supportMulticast = value;
 				}
 			}
 		}

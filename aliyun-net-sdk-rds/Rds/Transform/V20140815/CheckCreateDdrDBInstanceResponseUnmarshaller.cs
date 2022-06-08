@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			CheckCreateDdrDBInstanceResponse checkCreateDdrDBInstanceResponse = new CheckCreateDdrDBInstanceResponse();
 
 			checkCreateDdrDBInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			checkCreateDdrDBInstanceResponse.RequestId = _ctx.StringValue("CheckCreateDdrDBInstance.RequestId");
 			checkCreateDdrDBInstanceResponse.IsValid = _ctx.StringValue("CheckCreateDdrDBInstance.IsValid");
+			checkCreateDdrDBInstanceResponse.RequestId = _ctx.StringValue("CheckCreateDdrDBInstance.RequestId");
         
 			return checkCreateDdrDBInstanceResponse;
         }

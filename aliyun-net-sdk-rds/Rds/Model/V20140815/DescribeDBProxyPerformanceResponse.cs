@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,52 +25,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDBProxyPerformanceResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string dBInstanceId;
+		private string endTime;
 
 		private string startTime;
 
-		private string endTime;
+		private string dBInstanceId;
+
+		private string requestId;
 
 		private List<DescribeDBProxyPerformance_PerformanceKey> performanceKeys;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
 		{
 			get
@@ -83,6 +48,46 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBInstanceId")]
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PerformanceKeys")]
 		public List<DescribeDBProxyPerformance_PerformanceKey> PerformanceKeys
 		{
 			get
@@ -98,24 +103,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeDBProxyPerformance_PerformanceKey
 		{
 
-			private string key;
-
 			private string valueFormat;
+
+			private string key;
 
 			private List<DescribeDBProxyPerformance_PerformanceValue> values;
 
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "ValueFormat")]
 			public string ValueFormat
 			{
 				get
@@ -128,6 +122,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Key")]
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Values")]
 			public List<DescribeDBProxyPerformance_PerformanceValue> Values
 			{
 				get
@@ -143,22 +151,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			public class DescribeDBProxyPerformance_PerformanceValue
 			{
 
-				private string _value;
-
 				private string date;
 
-				public string _Value
-				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
-				}
+				private string _value;
 
+				[JsonProperty(PropertyName = "Date")]
 				public string Date
 				{
 					get
@@ -168,6 +165,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						date = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "_Value")]
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

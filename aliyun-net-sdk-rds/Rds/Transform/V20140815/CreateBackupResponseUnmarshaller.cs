@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			CreateBackupResponse createBackupResponse = new CreateBackupResponse();
 
 			createBackupResponse.HttpResponse = _ctx.HttpResponse;
-			createBackupResponse.RequestId = _ctx.StringValue("CreateBackup.RequestId");
 			createBackupResponse.BackupJobId = _ctx.StringValue("CreateBackup.BackupJobId");
+			createBackupResponse.RequestId = _ctx.StringValue("CreateBackup.RequestId");
         
 			return createBackupResponse;
         }

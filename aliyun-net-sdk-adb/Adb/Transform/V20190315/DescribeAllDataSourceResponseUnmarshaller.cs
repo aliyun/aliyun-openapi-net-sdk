@@ -33,6 +33,32 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			describeAllDataSourceResponse.HttpResponse = _ctx.HttpResponse;
 			describeAllDataSourceResponse.RequestId = _ctx.StringValue("DescribeAllDataSource.RequestId");
 
+			List<DescribeAllDataSourceResponse.DescribeAllDataSource_Table> describeAllDataSourceResponse_tables = new List<DescribeAllDataSourceResponse.DescribeAllDataSource_Table>();
+			for (int i = 0; i < _ctx.Length("DescribeAllDataSource.Tables.Length"); i++) {
+				DescribeAllDataSourceResponse.DescribeAllDataSource_Table table = new DescribeAllDataSourceResponse.DescribeAllDataSource_Table();
+				table.TableName = _ctx.StringValue("DescribeAllDataSource.Tables["+ i +"].TableName");
+				table.DBClusterId = _ctx.StringValue("DescribeAllDataSource.Tables["+ i +"].DBClusterId");
+				table.SchemaName = _ctx.StringValue("DescribeAllDataSource.Tables["+ i +"].SchemaName");
+
+				describeAllDataSourceResponse_tables.Add(table);
+			}
+			describeAllDataSourceResponse.Tables = describeAllDataSourceResponse_tables;
+
+			List<DescribeAllDataSourceResponse.DescribeAllDataSource_Column> describeAllDataSourceResponse_columns = new List<DescribeAllDataSourceResponse.DescribeAllDataSource_Column>();
+			for (int i = 0; i < _ctx.Length("DescribeAllDataSource.Columns.Length"); i++) {
+				DescribeAllDataSourceResponse.DescribeAllDataSource_Column column = new DescribeAllDataSourceResponse.DescribeAllDataSource_Column();
+				column.Type = _ctx.StringValue("DescribeAllDataSource.Columns["+ i +"].Type");
+				column.ColumnName = _ctx.StringValue("DescribeAllDataSource.Columns["+ i +"].ColumnName");
+				column.TableName = _ctx.StringValue("DescribeAllDataSource.Columns["+ i +"].TableName");
+				column.AutoIncrementColumn = _ctx.BooleanValue("DescribeAllDataSource.Columns["+ i +"].AutoIncrementColumn");
+				column.DBClusterId = _ctx.StringValue("DescribeAllDataSource.Columns["+ i +"].DBClusterId");
+				column.PrimaryKey = _ctx.BooleanValue("DescribeAllDataSource.Columns["+ i +"].PrimaryKey");
+				column.SchemaName = _ctx.StringValue("DescribeAllDataSource.Columns["+ i +"].SchemaName");
+
+				describeAllDataSourceResponse_columns.Add(column);
+			}
+			describeAllDataSourceResponse.Columns = describeAllDataSourceResponse_columns;
+
 			List<DescribeAllDataSourceResponse.DescribeAllDataSource_Schema> describeAllDataSourceResponse_schemas = new List<DescribeAllDataSourceResponse.DescribeAllDataSource_Schema>();
 			for (int i = 0; i < _ctx.Length("DescribeAllDataSource.Schemas.Length"); i++) {
 				DescribeAllDataSourceResponse.DescribeAllDataSource_Schema schema = new DescribeAllDataSourceResponse.DescribeAllDataSource_Schema();
@@ -42,32 +68,6 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 				describeAllDataSourceResponse_schemas.Add(schema);
 			}
 			describeAllDataSourceResponse.Schemas = describeAllDataSourceResponse_schemas;
-
-			List<DescribeAllDataSourceResponse.DescribeAllDataSource_Table> describeAllDataSourceResponse_tables = new List<DescribeAllDataSourceResponse.DescribeAllDataSource_Table>();
-			for (int i = 0; i < _ctx.Length("DescribeAllDataSource.Tables.Length"); i++) {
-				DescribeAllDataSourceResponse.DescribeAllDataSource_Table table = new DescribeAllDataSourceResponse.DescribeAllDataSource_Table();
-				table.DBClusterId = _ctx.StringValue("DescribeAllDataSource.Tables["+ i +"].DBClusterId");
-				table.SchemaName = _ctx.StringValue("DescribeAllDataSource.Tables["+ i +"].SchemaName");
-				table.TableName = _ctx.StringValue("DescribeAllDataSource.Tables["+ i +"].TableName");
-
-				describeAllDataSourceResponse_tables.Add(table);
-			}
-			describeAllDataSourceResponse.Tables = describeAllDataSourceResponse_tables;
-
-			List<DescribeAllDataSourceResponse.DescribeAllDataSource_Column> describeAllDataSourceResponse_columns = new List<DescribeAllDataSourceResponse.DescribeAllDataSource_Column>();
-			for (int i = 0; i < _ctx.Length("DescribeAllDataSource.Columns.Length"); i++) {
-				DescribeAllDataSourceResponse.DescribeAllDataSource_Column column = new DescribeAllDataSourceResponse.DescribeAllDataSource_Column();
-				column.DBClusterId = _ctx.StringValue("DescribeAllDataSource.Columns["+ i +"].DBClusterId");
-				column.SchemaName = _ctx.StringValue("DescribeAllDataSource.Columns["+ i +"].SchemaName");
-				column.TableName = _ctx.StringValue("DescribeAllDataSource.Columns["+ i +"].TableName");
-				column.ColumnName = _ctx.StringValue("DescribeAllDataSource.Columns["+ i +"].ColumnName");
-				column.Type = _ctx.StringValue("DescribeAllDataSource.Columns["+ i +"].Type");
-				column.PrimaryKey = _ctx.BooleanValue("DescribeAllDataSource.Columns["+ i +"].PrimaryKey");
-				column.AutoIncrementColumn = _ctx.BooleanValue("DescribeAllDataSource.Columns["+ i +"].AutoIncrementColumn");
-
-				describeAllDataSourceResponse_columns.Add(column);
-			}
-			describeAllDataSourceResponse.Columns = describeAllDataSourceResponse_columns;
         
 			return describeAllDataSourceResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
+		[JsonProperty(PropertyName = "TaskId")]
 		public string TaskId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get

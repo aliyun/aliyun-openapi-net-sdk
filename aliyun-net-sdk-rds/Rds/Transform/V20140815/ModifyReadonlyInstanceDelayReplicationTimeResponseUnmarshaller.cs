@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			ModifyReadonlyInstanceDelayReplicationTimeResponse modifyReadonlyInstanceDelayReplicationTimeResponse = new ModifyReadonlyInstanceDelayReplicationTimeResponse();
 
 			modifyReadonlyInstanceDelayReplicationTimeResponse.HttpResponse = _ctx.HttpResponse;
-			modifyReadonlyInstanceDelayReplicationTimeResponse.RequestId = _ctx.StringValue("ModifyReadonlyInstanceDelayReplicationTime.RequestId");
 			modifyReadonlyInstanceDelayReplicationTimeResponse.DBInstanceId = _ctx.StringValue("ModifyReadonlyInstanceDelayReplicationTime.DBInstanceId");
-			modifyReadonlyInstanceDelayReplicationTimeResponse.ReadSQLReplicationTime = _ctx.StringValue("ModifyReadonlyInstanceDelayReplicationTime.ReadSQLReplicationTime");
+			modifyReadonlyInstanceDelayReplicationTimeResponse.RequestId = _ctx.StringValue("ModifyReadonlyInstanceDelayReplicationTime.RequestId");
 			modifyReadonlyInstanceDelayReplicationTimeResponse.TaskId = _ctx.StringValue("ModifyReadonlyInstanceDelayReplicationTime.TaskId");
+			modifyReadonlyInstanceDelayReplicationTimeResponse.ReadSQLReplicationTime = _ctx.StringValue("ModifyReadonlyInstanceDelayReplicationTime.ReadSQLReplicationTime");
         
 			return modifyReadonlyInstanceDelayReplicationTimeResponse;
         }

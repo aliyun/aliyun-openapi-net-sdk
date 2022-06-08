@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -84,6 +85,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string tag4key;
 
+		[JsonProperty(PropertyName = "Tag.4.value")]
 		public string Tag4value
 		{
 			get
@@ -97,6 +99,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -110,6 +113,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tag.2.key")]
 		public string Tag2key
 		{
 			get
@@ -123,6 +127,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ClientToken")]
 		public string ClientToken
 		{
 			get
@@ -136,6 +141,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tag.3.key")]
 		public string Tag3key
 		{
 			get
@@ -149,6 +155,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -162,6 +169,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tag.1.value")]
 		public string Tag1value
 		{
 			get
@@ -175,6 +183,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "SortKey")]
 		public string SortKey
 		{
 			get
@@ -188,6 +197,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -201,6 +211,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -214,6 +225,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tag.3.value")]
 		public string Tag3value
 		{
 			get
@@ -227,6 +239,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "proxyId")]
 		public string ProxyId
 		{
 			get
@@ -240,6 +253,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tag.5.key")]
 		public string Tag5key
 		{
 			get
@@ -253,6 +267,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -266,6 +281,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -279,6 +295,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -292,6 +309,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tag.5.value")]
 		public string Tag5value
 		{
 			get
@@ -305,6 +323,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tags")]
 		public string Tags
 		{
 			get
@@ -318,6 +337,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tag.1.key")]
 		public string Tag1key
 		{
 			get
@@ -331,6 +351,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "SortMethod")]
 		public string SortMethod
 		{
 			get
@@ -344,6 +365,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tag.2.value")]
 		public string Tag2value
 		{
 			get
@@ -357,6 +379,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tag.4.key")]
 		public string Tag4key
 		{
 			get

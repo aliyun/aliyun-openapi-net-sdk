@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeDBInstanceIpHostnameResponse describeDBInstanceIpHostnameResponse = new DescribeDBInstanceIpHostnameResponse();
 
 			describeDBInstanceIpHostnameResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBInstanceIpHostnameResponse.RequestId = _ctx.StringValue("DescribeDBInstanceIpHostname.RequestId");
 			describeDBInstanceIpHostnameResponse.DBInstanceId = _ctx.StringValue("DescribeDBInstanceIpHostname.DBInstanceId");
+			describeDBInstanceIpHostnameResponse.RequestId = _ctx.StringValue("DescribeDBInstanceIpHostname.RequestId");
 			describeDBInstanceIpHostnameResponse.IpHostnameInfos = _ctx.StringValue("DescribeDBInstanceIpHostname.IpHostnameInfos");
         
 			return describeDBInstanceIpHostnameResponse;

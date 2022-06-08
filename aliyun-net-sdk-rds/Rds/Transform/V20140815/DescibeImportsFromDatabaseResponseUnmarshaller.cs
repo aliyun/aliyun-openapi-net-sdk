@@ -32,18 +32,18 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			descibeImportsFromDatabaseResponse.HttpResponse = _ctx.HttpResponse;
 			descibeImportsFromDatabaseResponse.RequestId = _ctx.StringValue("DescibeImportsFromDatabase.RequestId");
-			descibeImportsFromDatabaseResponse.TotalRecordCount = _ctx.IntegerValue("DescibeImportsFromDatabase.TotalRecordCount");
 			descibeImportsFromDatabaseResponse.PageNumber = _ctx.IntegerValue("DescibeImportsFromDatabase.PageNumber");
 			descibeImportsFromDatabaseResponse.PageRecordCount = _ctx.IntegerValue("DescibeImportsFromDatabase.PageRecordCount");
+			descibeImportsFromDatabaseResponse.TotalRecordCount = _ctx.IntegerValue("DescibeImportsFromDatabase.TotalRecordCount");
 
 			List<DescibeImportsFromDatabaseResponse.DescibeImportsFromDatabase_ImportResultFromDB> descibeImportsFromDatabaseResponse_items = new List<DescibeImportsFromDatabaseResponse.DescibeImportsFromDatabase_ImportResultFromDB>();
 			for (int i = 0; i < _ctx.Length("DescibeImportsFromDatabase.Items.Length"); i++) {
 				DescibeImportsFromDatabaseResponse.DescibeImportsFromDatabase_ImportResultFromDB importResultFromDB = new DescibeImportsFromDatabaseResponse.DescibeImportsFromDatabase_ImportResultFromDB();
-				importResultFromDB.ImportId = _ctx.IntegerValue("DescibeImportsFromDatabase.Items["+ i +"].ImportId");
-				importResultFromDB.ImportDataType = _ctx.StringValue("DescibeImportsFromDatabase.Items["+ i +"].ImportDataType");
-				importResultFromDB.ImportDataStatus = _ctx.StringValue("DescibeImportsFromDatabase.Items["+ i +"].ImportDataStatus");
-				importResultFromDB.ImportDataStatusDescription = _ctx.StringValue("DescibeImportsFromDatabase.Items["+ i +"].ImportDataStatusDescription");
 				importResultFromDB.IncrementalImportingTime = _ctx.StringValue("DescibeImportsFromDatabase.Items["+ i +"].IncrementalImportingTime");
+				importResultFromDB.ImportId = _ctx.IntegerValue("DescibeImportsFromDatabase.Items["+ i +"].ImportId");
+				importResultFromDB.ImportDataStatus = _ctx.StringValue("DescibeImportsFromDatabase.Items["+ i +"].ImportDataStatus");
+				importResultFromDB.ImportDataType = _ctx.StringValue("DescibeImportsFromDatabase.Items["+ i +"].ImportDataType");
+				importResultFromDB.ImportDataStatusDescription = _ctx.StringValue("DescibeImportsFromDatabase.Items["+ i +"].ImportDataStatusDescription");
 
 				descibeImportsFromDatabaseResponse_items.Add(importResultFromDB);
 			}

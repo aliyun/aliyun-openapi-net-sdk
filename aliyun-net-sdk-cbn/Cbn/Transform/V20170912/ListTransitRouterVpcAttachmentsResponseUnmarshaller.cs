@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				transitRouterAttachment.VpcRegionId = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].VpcRegionId");
 				transitRouterAttachment.TransitRouterAttachmentName = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].TransitRouterAttachmentName");
 				transitRouterAttachment.ServiceMode = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].ServiceMode");
+				transitRouterAttachment.ChargeType = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].ChargeType");
 
 				List<ListTransitRouterVpcAttachmentsResponse.ListTransitRouterVpcAttachments_TransitRouterAttachment.ListTransitRouterVpcAttachments_ZoneMapping> transitRouterAttachment_zoneMappings = new List<ListTransitRouterVpcAttachmentsResponse.ListTransitRouterVpcAttachments_TransitRouterAttachment.ListTransitRouterVpcAttachments_ZoneMapping>();
 				for (int j = 0; j < _ctx.Length("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].ZoneMappings.Length"); j++) {

@@ -31,21 +31,15 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeReadDBInstanceDelayResponse describeReadDBInstanceDelayResponse = new DescribeReadDBInstanceDelayResponse();
 
 			describeReadDBInstanceDelayResponse.HttpResponse = _ctx.HttpResponse;
-			describeReadDBInstanceDelayResponse.RequestId = _ctx.StringValue("DescribeReadDBInstanceDelay.RequestId");
 			describeReadDBInstanceDelayResponse.DBInstanceId = _ctx.StringValue("DescribeReadDBInstanceDelay.DBInstanceId");
-			describeReadDBInstanceDelayResponse.ReadDBInstanceId = _ctx.StringValue("DescribeReadDBInstanceDelay.ReadDBInstanceId");
+			describeReadDBInstanceDelayResponse.RequestId = _ctx.StringValue("DescribeReadDBInstanceDelay.RequestId");
 			describeReadDBInstanceDelayResponse.DelayTime = _ctx.IntegerValue("DescribeReadDBInstanceDelay.DelayTime");
+			describeReadDBInstanceDelayResponse.ReadDBInstanceId = _ctx.StringValue("DescribeReadDBInstanceDelay.ReadDBInstanceId");
 
 			List<DescribeReadDBInstanceDelayResponse.DescribeReadDBInstanceDelay_ItemsItem> describeReadDBInstanceDelayResponse_items = new List<DescribeReadDBInstanceDelayResponse.DescribeReadDBInstanceDelay_ItemsItem>();
 			for (int i = 0; i < _ctx.Length("DescribeReadDBInstanceDelay.Items.Length"); i++) {
 				DescribeReadDBInstanceDelayResponse.DescribeReadDBInstanceDelay_ItemsItem itemsItem = new DescribeReadDBInstanceDelayResponse.DescribeReadDBInstanceDelay_ItemsItem();
 				itemsItem.DBInstanceId = _ctx.StringValue("DescribeReadDBInstanceDelay.Items["+ i +"].DBInstanceId");
-
-				List<string> itemsItem_readDBInstanceNames = new List<string>();
-				for (int j = 0; j < _ctx.Length("DescribeReadDBInstanceDelay.Items["+ i +"].ReadDBInstanceNames.Length"); j++) {
-					itemsItem_readDBInstanceNames.Add(_ctx.StringValue("DescribeReadDBInstanceDelay.Items["+ i +"].ReadDBInstanceNames["+ j +"]"));
-				}
-				itemsItem.ReadDBInstanceNames = itemsItem_readDBInstanceNames;
 
 				List<string> itemsItem_readDelayTimes = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeReadDBInstanceDelay.Items["+ i +"].ReadDelayTimes.Length"); j++) {
@@ -53,17 +47,23 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				}
 				itemsItem.ReadDelayTimes = itemsItem_readDelayTimes;
 
+				List<string> itemsItem_readDBInstanceNames = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeReadDBInstanceDelay.Items["+ i +"].ReadDBInstanceNames.Length"); j++) {
+					itemsItem_readDBInstanceNames.Add(_ctx.StringValue("DescribeReadDBInstanceDelay.Items["+ i +"].ReadDBInstanceNames["+ j +"]"));
+				}
+				itemsItem.ReadDBInstanceNames = itemsItem_readDBInstanceNames;
+
 				List<DescribeReadDBInstanceDelayResponse.DescribeReadDBInstanceDelay_ItemsItem.DescribeReadDBInstanceDelay_ReadonlyInstanceDelayItem> itemsItem_readonlyInstanceDelay = new List<DescribeReadDBInstanceDelayResponse.DescribeReadDBInstanceDelay_ItemsItem.DescribeReadDBInstanceDelay_ReadonlyInstanceDelayItem>();
 				for (int j = 0; j < _ctx.Length("DescribeReadDBInstanceDelay.Items["+ i +"].ReadonlyInstanceDelay.Length"); j++) {
 					DescribeReadDBInstanceDelayResponse.DescribeReadDBInstanceDelay_ItemsItem.DescribeReadDBInstanceDelay_ReadonlyInstanceDelayItem readonlyInstanceDelayItem = new DescribeReadDBInstanceDelayResponse.DescribeReadDBInstanceDelay_ItemsItem.DescribeReadDBInstanceDelay_ReadonlyInstanceDelayItem();
-					readonlyInstanceDelayItem.ReplayLatency = _ctx.StringValue("DescribeReadDBInstanceDelay.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].ReplayLatency");
-					readonlyInstanceDelayItem.FlushLag = _ctx.StringValue("DescribeReadDBInstanceDelay.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].FlushLag");
-					readonlyInstanceDelayItem.FlushLatency = _ctx.StringValue("DescribeReadDBInstanceDelay.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].FlushLatency");
-					readonlyInstanceDelayItem.SendLatency = _ctx.StringValue("DescribeReadDBInstanceDelay.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].SendLatency");
-					readonlyInstanceDelayItem.WriteLag = _ctx.StringValue("DescribeReadDBInstanceDelay.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].WriteLag");
-					readonlyInstanceDelayItem.ReplayLag = _ctx.StringValue("DescribeReadDBInstanceDelay.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].ReplayLag");
 					readonlyInstanceDelayItem.WriteLatency = _ctx.StringValue("DescribeReadDBInstanceDelay.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].WriteLatency");
+					readonlyInstanceDelayItem.FlushLatency = _ctx.StringValue("DescribeReadDBInstanceDelay.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].FlushLatency");
 					readonlyInstanceDelayItem.ReadDBInstanceName = _ctx.StringValue("DescribeReadDBInstanceDelay.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].ReadDBInstanceName");
+					readonlyInstanceDelayItem.WriteLag = _ctx.StringValue("DescribeReadDBInstanceDelay.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].WriteLag");
+					readonlyInstanceDelayItem.FlushLag = _ctx.StringValue("DescribeReadDBInstanceDelay.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].FlushLag");
+					readonlyInstanceDelayItem.SendLatency = _ctx.StringValue("DescribeReadDBInstanceDelay.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].SendLatency");
+					readonlyInstanceDelayItem.ReplayLag = _ctx.StringValue("DescribeReadDBInstanceDelay.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].ReplayLag");
+					readonlyInstanceDelayItem.ReplayLatency = _ctx.StringValue("DescribeReadDBInstanceDelay.Items["+ i +"].ReadonlyInstanceDelay["+ j +"].ReplayLatency");
 
 					itemsItem_readonlyInstanceDelay.Add(readonlyInstanceDelayItem);
 				}

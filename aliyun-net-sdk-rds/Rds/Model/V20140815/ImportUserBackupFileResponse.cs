@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,24 +25,26 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class ImportUserBackupFileResponse : AcsResponse
 	{
 
-		private string backupId;
+		private bool? status;
 
 		private string requestId;
 
-		private bool? status;
+		private string backupId;
 
-		public string BackupId
+		[JsonProperty(PropertyName = "Status")]
+		public bool? Status
 		{
 			get
 			{
-				return backupId;
+				return status;
 			}
 			set	
 			{
-				backupId = value;
+				status = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -55,15 +57,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public bool? Status
+		[JsonProperty(PropertyName = "BackupId")]
+		public string BackupId
 		{
 			get
 			{
-				return status;
+				return backupId;
 			}
 			set	
 			{
-				status = value;
+				backupId = value;
 			}
 		}
 	}

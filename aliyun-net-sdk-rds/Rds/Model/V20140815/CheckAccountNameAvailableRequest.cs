@@ -40,8 +40,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			Method = MethodType.POST;
         }
 
-		private long? resourceOwnerId;
-
 		private string clientToken;
 
 		private string accountName;
@@ -53,19 +51,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
 
 		public string ClientToken
 		{

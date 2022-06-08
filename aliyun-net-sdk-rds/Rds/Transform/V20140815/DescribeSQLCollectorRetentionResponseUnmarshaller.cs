@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeSQLCollectorRetentionResponse describeSQLCollectorRetentionResponse = new DescribeSQLCollectorRetentionResponse();
 
 			describeSQLCollectorRetentionResponse.HttpResponse = _ctx.HttpResponse;
-			describeSQLCollectorRetentionResponse.RequestId = _ctx.StringValue("DescribeSQLCollectorRetention.RequestId");
 			describeSQLCollectorRetentionResponse.ConfigValue = _ctx.StringValue("DescribeSQLCollectorRetention.ConfigValue");
+			describeSQLCollectorRetentionResponse.RequestId = _ctx.StringValue("DescribeSQLCollectorRetention.RequestId");
         
 			return describeSQLCollectorRetentionResponse;
         }

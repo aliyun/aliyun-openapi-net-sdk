@@ -25,23 +25,35 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 	public class BatchInsertItemsResponse : AcsResponse
 	{
 
-		private string errorMessage;
-
-		private string errorCode;
-
-		private string message;
-
-		private string dynamicCode;
-
-		private string code;
-
-		private string dynamicMessage;
-
 		private string requestId;
+
+		private string errorMessage;
 
 		private bool? success;
 
+		private string errorCode;
+
+		private string code;
+
+		private string message;
+
+		private string dynamicMessage;
+
+		private string dynamicCode;
+
 		private List<BatchInsertItems_BatchResult> batchResults;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string ErrorMessage
 		{
@@ -52,6 +64,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			set	
 			{
 				errorMessage = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -67,30 +91,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public string DynamicCode
-		{
-			get
-			{
-				return dynamicCode;
-			}
-			set	
-			{
-				dynamicCode = value;
-			}
-		}
-
 		public string Code
 		{
 			get
@@ -100,6 +100,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			set	
 			{
 				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -115,27 +127,15 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string RequestId
+		public string DynamicCode
 		{
 			get
 			{
-				return requestId;
+				return dynamicCode;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
+				dynamicCode = value;
 			}
 		}
 
@@ -154,25 +154,13 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 		public class BatchInsertItems_BatchResult
 		{
 
-			private string message;
-
 			private int? index;
 
-			private string errorCode;
+			private string message;
 
 			private bool? success;
 
-			public string Message
-			{
-				get
-				{
-					return message;
-				}
-				set	
-				{
-					message = value;
-				}
-			}
+			private string errorCode;
 
 			public int? Index
 			{
@@ -186,15 +174,15 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
-			public string ErrorCode
+			public string Message
 			{
 				get
 				{
-					return errorCode;
+					return message;
 				}
 				set	
 				{
-					errorCode = value;
+					message = value;
 				}
 			}
 
@@ -207,6 +195,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					success = value;
+				}
+			}
+
+			public string ErrorCode
+			{
+				get
+				{
+					return errorCode;
+				}
+				set	
+				{
+					errorCode = value;
 				}
 			}
 		}

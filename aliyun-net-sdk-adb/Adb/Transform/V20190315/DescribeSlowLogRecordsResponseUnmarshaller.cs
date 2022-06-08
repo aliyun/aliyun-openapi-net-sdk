@@ -32,32 +32,32 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 
 			describeSlowLogRecordsResponse.HttpResponse = _ctx.HttpResponse;
 			describeSlowLogRecordsResponse.TotalCount = _ctx.StringValue("DescribeSlowLogRecords.TotalCount");
-			describeSlowLogRecordsResponse.RequestId = _ctx.StringValue("DescribeSlowLogRecords.RequestId");
 			describeSlowLogRecordsResponse.PageSize = _ctx.StringValue("DescribeSlowLogRecords.PageSize");
+			describeSlowLogRecordsResponse.RequestId = _ctx.StringValue("DescribeSlowLogRecords.RequestId");
 			describeSlowLogRecordsResponse.PageNumber = _ctx.StringValue("DescribeSlowLogRecords.PageNumber");
 			describeSlowLogRecordsResponse.DBClusterId = _ctx.StringValue("DescribeSlowLogRecords.DBClusterId");
 
 			List<DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_SlowLogRecord> describeSlowLogRecordsResponse_items = new List<DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_SlowLogRecord>();
 			for (int i = 0; i < _ctx.Length("DescribeSlowLogRecords.Items.Length"); i++) {
 				DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_SlowLogRecord slowLogRecord = new DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_SlowLogRecord();
-				slowLogRecord.OutputSize = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].OutputSize");
-				slowLogRecord.UserName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].UserName");
-				slowLogRecord.PeakMemoryUsage = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].PeakMemoryUsage");
-				slowLogRecord.ExecutionStartTime = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].ExecutionStartTime");
-				slowLogRecord.ParseRowCounts = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].ParseRowCounts");
-				slowLogRecord.QueryTime = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].QueryTime");
-				slowLogRecord.ScanTime = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].ScanTime");
 				slowLogRecord.HostAddress = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].HostAddress");
+				slowLogRecord.ScanTime = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].ScanTime");
 				slowLogRecord.SQLText = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].SQLText");
-				slowLogRecord.WallTime = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].WallTime");
-				slowLogRecord.ScanRows = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].ScanRows");
+				slowLogRecord.OutputSize = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].OutputSize");
+				slowLogRecord.PeakMemoryUsage = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].PeakMemoryUsage");
 				slowLogRecord.State = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].State");
-				slowLogRecord.ReturnRowCounts = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].ReturnRowCounts");
-				slowLogRecord.PlanningTime = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].PlanningTime");
-				slowLogRecord.DBName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].DBName");
-				slowLogRecord.QueueTime = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].QueueTime");
-				slowLogRecord.ProcessID = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].ProcessID");
+				slowLogRecord.WallTime = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].WallTime");
 				slowLogRecord.ScanSize = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].ScanSize");
+				slowLogRecord.ExecutionStartTime = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].ExecutionStartTime");
+				slowLogRecord.QueryTime = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].QueryTime");
+				slowLogRecord.ReturnRowCounts = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].ReturnRowCounts");
+				slowLogRecord.ScanRows = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].ScanRows");
+				slowLogRecord.ParseRowCounts = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].ParseRowCounts");
+				slowLogRecord.DBName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].DBName");
+				slowLogRecord.PlanningTime = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].PlanningTime");
+				slowLogRecord.QueueTime = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].QueueTime");
+				slowLogRecord.UserName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].UserName");
+				slowLogRecord.ProcessID = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].ProcessID");
 
 				describeSlowLogRecordsResponse_items.Add(slowLogRecord);
 			}

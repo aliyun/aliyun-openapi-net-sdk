@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeDatabases_Database> databases;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Databases")]
 		public List<DescribeDatabases_Database> Databases
 		{
 			get
@@ -56,80 +58,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeDatabases_Database
 		{
 
+			private string dBDescription;
+
+			private string dBStatus;
+
 			private string dBName;
 
 			private string dBInstanceId;
 
 			private string engine;
 
-			private string dBStatus;
-
 			private string characterSetName;
-
-			private string dBDescription;
 
 			private List<DescribeDatabases_AccountPrivilegeInfo> accounts;
 
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
-				}
-			}
-
-			public string DBInstanceId
-			{
-				get
-				{
-					return dBInstanceId;
-				}
-				set	
-				{
-					dBInstanceId = value;
-				}
-			}
-
-			public string Engine
-			{
-				get
-				{
-					return engine;
-				}
-				set	
-				{
-					engine = value;
-				}
-			}
-
-			public string DBStatus
-			{
-				get
-				{
-					return dBStatus;
-				}
-				set	
-				{
-					dBStatus = value;
-				}
-			}
-
-			public string CharacterSetName
-			{
-				get
-				{
-					return characterSetName;
-				}
-				set	
-				{
-					characterSetName = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "DBDescription")]
 			public string DBDescription
 			{
 				get
@@ -142,6 +85,72 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DBStatus")]
+			public string DBStatus
+			{
+				get
+				{
+					return dBStatus;
+				}
+				set	
+				{
+					dBStatus = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBName")]
+			public string DBName
+			{
+				get
+				{
+					return dBName;
+				}
+				set	
+				{
+					dBName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceId")]
+			public string DBInstanceId
+			{
+				get
+				{
+					return dBInstanceId;
+				}
+				set	
+				{
+					dBInstanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Engine")]
+			public string Engine
+			{
+				get
+				{
+					return engine;
+				}
+				set	
+				{
+					engine = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CharacterSetName")]
+			public string CharacterSetName
+			{
+				get
+				{
+					return characterSetName;
+				}
+				set	
+				{
+					characterSetName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Accounts")]
 			public List<DescribeDatabases_AccountPrivilegeInfo> Accounts
 			{
 				get
@@ -163,6 +172,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 				private string accountPrivilegeDetail;
 
+				[JsonProperty(PropertyName = "Account")]
 				public string Account
 				{
 					get
@@ -175,6 +185,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "AccountPrivilege")]
 				public string AccountPrivilege
 				{
 					get
@@ -187,6 +198,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "AccountPrivilegeDetail")]
 				public string AccountPrivilegeDetail
 				{
 					get

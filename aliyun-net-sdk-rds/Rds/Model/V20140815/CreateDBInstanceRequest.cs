@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -42,6 +43,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBParamGroupId;
 
+		private string babelfishConfig;
+
 		private long? resourceOwnerId;
 
 		private int? dBInstanceStorage;
@@ -50,13 +53,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string engineVersion;
 
+		private bool? deletionProtection;
+
 		private string resourceGroupId;
 
 		private string targetDedicatedHostIdForMaster;
 
 		private string dBInstanceDescription;
 
-		private List<Tag> tags = new List<Tag>(){ };
+		private List<string> tags = new List<string>(){ };
 
 		private string businessInfo;
 
@@ -112,6 +117,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? amount;
 
+		private ServerlessConfig serverlessConfig_;
+
 		private string usedTime;
 
 		private string targetMinorVersion;
@@ -128,6 +135,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string payType;
 
+		[JsonProperty(PropertyName = "DBParamGroupId")]
 		public string DBParamGroupId
 		{
 			get
@@ -141,6 +149,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "BabelfishConfig")]
+		public string BabelfishConfig
+		{
+			get
+			{
+				return babelfishConfig;
+			}
+			set	
+			{
+				babelfishConfig = value;
+				DictionaryUtil.Add(QueryParameters, "BabelfishConfig", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -154,6 +177,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceStorage")]
 		public int? DBInstanceStorage
 		{
 			get
@@ -167,6 +191,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "SystemDBCharset")]
 		public string SystemDBCharset
 		{
 			get
@@ -180,6 +205,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "EngineVersion")]
 		public string EngineVersion
 		{
 			get
@@ -193,6 +219,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DeletionProtection")]
+		public bool? DeletionProtection
+		{
+			get
+			{
+				return deletionProtection;
+			}
+			set	
+			{
+				deletionProtection = value;
+				DictionaryUtil.Add(QueryParameters, "DeletionProtection", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "ResourceGroupId")]
 		public string ResourceGroupId
 		{
 			get
@@ -206,6 +247,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TargetDedicatedHostIdForMaster")]
 		public string TargetDedicatedHostIdForMaster
 		{
 			get
@@ -219,6 +261,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceDescription")]
 		public string DBInstanceDescription
 		{
 			get
@@ -232,7 +275,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<Tag> Tags
+		[JsonProperty(PropertyName = "Tag")]
+		public List<string> Tags
 		{
 			get
 			{
@@ -242,14 +286,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set
 			{
 				tags = value;
-				for (int i = 0; i < tags.Count; i++)
+				if(tags != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
 				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "BusinessInfo")]
 		public string BusinessInfo
 		{
 			get
@@ -263,6 +311,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Period")]
 		public string Period
 		{
 			get
@@ -276,6 +325,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DryRun")]
 		public bool? DryRun
 		{
 			get
@@ -289,6 +339,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "EncryptionKey")]
 		public string EncryptionKey
 		{
 			get
@@ -302,6 +353,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceClass")]
 		public string DBInstanceClass
 		{
 			get
@@ -315,6 +367,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecurityIPList")]
 		public string SecurityIPList
 		{
 			get
@@ -328,6 +381,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "VSwitchId")]
 		public string VSwitchId
 		{
 			get
@@ -341,6 +395,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PrivateIpAddress")]
 		public string PrivateIpAddress
 		{
 			get
@@ -354,6 +409,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TargetDedicatedHostIdForLog")]
 		public string TargetDedicatedHostIdForLog
 		{
 			get
@@ -367,6 +423,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "AutoRenew")]
 		public string AutoRenew
 		{
 			get
@@ -380,6 +437,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RoleARN")]
 		public string RoleARN
 		{
 			get
@@ -393,6 +451,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ZoneId")]
 		public string ZoneId
 		{
 			get
@@ -406,6 +465,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "StorageAutoScale")]
 		public string StorageAutoScale
 		{
 			get
@@ -419,6 +479,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceNetworkType")]
 		public string InstanceNetworkType
 		{
 			get
@@ -432,6 +493,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ConnectionMode")]
 		public string ConnectionMode
 		{
 			get
@@ -445,6 +507,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ClientToken")]
 		public string ClientToken
 		{
 			get
@@ -458,6 +521,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TargetDedicatedHostIdForSlave")]
 		public string TargetDedicatedHostIdForSlave
 		{
 			get
@@ -471,6 +535,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ZoneIdSlave1")]
 		public string ZoneIdSlave1
 		{
 			get
@@ -484,6 +549,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ZoneIdSlave2")]
 		public string ZoneIdSlave2
 		{
 			get
@@ -497,6 +563,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBIsIgnoreCase")]
 		public string DBIsIgnoreCase
 		{
 			get
@@ -510,6 +577,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Engine")]
 		public string Engine
 		{
 			get
@@ -523,6 +591,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBTimeZone")]
 		public string DBTimeZone
 		{
 			get
@@ -536,6 +605,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceStorageType")]
 		public string DBInstanceStorageType
 		{
 			get
@@ -549,6 +619,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DedicatedHostGroupId")]
 		public string DedicatedHostGroupId
 		{
 			get
@@ -562,6 +633,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "CreateStrategy")]
 		public string CreateStrategy
 		{
 			get
@@ -575,6 +647,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceNetType")]
 		public string DBInstanceNetType
 		{
 			get
@@ -588,6 +661,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Amount")]
 		public int? Amount
 		{
 			get
@@ -601,6 +675,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ServerlessConfig")]
+		public ServerlessConfig ServerlessConfig_
+		{
+			get
+			{
+				return serverlessConfig_;
+			}
+
+			set
+			{
+				serverlessConfig_ = value;
+				DictionaryUtil.Add(QueryParameters, "ServerlessConfig", JsonConvert.SerializeObject(value));
+
+			}
+		}
+
+		[JsonProperty(PropertyName = "UsedTime")]
 		public string UsedTime
 		{
 			get
@@ -614,6 +705,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TargetMinorVersion")]
 		public string TargetMinorVersion
 		{
 			get
@@ -627,6 +719,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserBackupId")]
 		public string UserBackupId
 		{
 			get
@@ -640,6 +733,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "StorageUpperBound")]
 		public int? StorageUpperBound
 		{
 			get
@@ -653,6 +747,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "StorageThreshold")]
 		public int? StorageThreshold
 		{
 			get
@@ -666,6 +761,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "VPCId")]
 		public string VPCId
 		{
 			get
@@ -679,6 +775,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Category")]
 		public string Category
 		{
 			get
@@ -692,6 +789,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PayType")]
 		public string PayType
 		{
 			get
@@ -712,7 +810,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string key;
 
-			public string Value
+			[JsonProperty(PropertyName = "Value")]
+			public string Value_
 			{
 				get
 				{
@@ -724,6 +823,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Key")]
 			public string Key
 			{
 				get
@@ -733,6 +833,40 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					key = value;
+				}
+			}
+		}
+
+		public class ServerlessConfig
+		{
+
+			private double? minCapacity;
+
+			private double? maxCapacity;
+
+			[JsonProperty(PropertyName = "MinCapacity")]
+			public double? MinCapacity
+			{
+				get
+				{
+					return minCapacity;
+				}
+				set	
+				{
+					minCapacity = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaxCapacity")]
+			public double? MaxCapacity
+			{
+				get
+				{
+					return maxCapacity;
+				}
+				set	
+				{
+					maxCapacity = value;
 				}
 			}
 		}

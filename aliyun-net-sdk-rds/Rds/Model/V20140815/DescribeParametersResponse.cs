@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeParameters_DBInstanceParameter> runningParameters;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Engine")]
 		public string Engine
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "EngineVersion")]
 		public string EngineVersion
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ConfigParameters")]
 		public List<DescribeParameters_DBInstanceParameter> ConfigParameters
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RunningParameters")]
 		public List<DescribeParameters_DBInstanceParameter> RunningParameters
 		{
 			get
@@ -98,12 +103,26 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeParameters_DBInstanceParameter
 		{
 
+			private string parameterDescription;
+
 			private string parameterName;
 
 			private string parameterValue;
 
-			private string parameterDescription;
+			[JsonProperty(PropertyName = "ParameterDescription")]
+			public string ParameterDescription
+			{
+				get
+				{
+					return parameterDescription;
+				}
+				set	
+				{
+					parameterDescription = value;
+				}
+			}
 
+			[JsonProperty(PropertyName = "ParameterName")]
 			public string ParameterName
 			{
 				get
@@ -116,6 +135,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ParameterValue")]
 			public string ParameterValue
 			{
 				get
@@ -125,18 +145,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					parameterValue = value;
-				}
-			}
-
-			public string ParameterDescription
-			{
-				get
-				{
-					return parameterDescription;
-				}
-				set	
-				{
-					parameterDescription = value;
 				}
 			}
 		}

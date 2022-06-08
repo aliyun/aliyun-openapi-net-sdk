@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,16 +25,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class TransformDBInstancePayTypeResponse : AcsResponse
 	{
 
+		private string dBInstanceId;
+
 		private string requestId;
+
+		private string expiredTime;
 
 		private long? orderId;
 
 		private string chargeType;
 
-		private string expiredTime;
+		[JsonProperty(PropertyName = "DBInstanceId")]
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+			}
+		}
 
-		private string dBInstanceId;
-
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,30 +61,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
-
-		public string ChargeType
-		{
-			get
-			{
-				return chargeType;
-			}
-			set	
-			{
-				chargeType = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ExpiredTime")]
 		public string ExpiredTime
 		{
 			get
@@ -83,15 +74,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
+		[JsonProperty(PropertyName = "OrderId")]
+		public long? OrderId
 		{
 			get
 			{
-				return dBInstanceId;
+				return orderId;
 			}
 			set	
 			{
-				dBInstanceId = value;
+				orderId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ChargeType")]
+		public string ChargeType
+		{
+			get
+			{
+				return chargeType;
+			}
+			set	
+			{
+				chargeType = value;
 			}
 		}
 	}

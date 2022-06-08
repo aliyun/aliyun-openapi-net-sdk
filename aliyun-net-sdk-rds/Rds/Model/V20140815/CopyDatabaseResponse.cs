@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -27,10 +27,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBName;
 
-		private string dBStatus;
-
 		private string taskId;
 
+		private string dBStatus;
+
+		[JsonProperty(PropertyName = "DBName")]
 		public string DBName
 		{
 			get
@@ -43,18 +44,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBStatus
-		{
-			get
-			{
-				return dBStatus;
-			}
-			set	
-			{
-				dBStatus = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TaskId")]
 		public string TaskId
 		{
 			get
@@ -64,6 +54,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				taskId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBStatus")]
+		public string DBStatus
+		{
+			get
+			{
+				return dBStatus;
+			}
+			set	
+			{
+				dBStatus = value;
 			}
 		}
 	}

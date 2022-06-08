@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -104,6 +105,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string sourceRegion;
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -117,6 +119,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceStorage")]
 		public int? DBInstanceStorage
 		{
 			get
@@ -130,6 +133,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "SystemDBCharset")]
 		public string SystemDBCharset
 		{
 			get
@@ -143,6 +147,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "BinlogRole")]
 		public string BinlogRole
 		{
 			get
@@ -156,6 +161,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "EngineVersion")]
 		public string EngineVersion
 		{
 			get
@@ -169,6 +175,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceGroupId")]
 		public string ResourceGroupId
 		{
 			get
@@ -182,6 +189,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceDescription")]
 		public string DBInstanceDescription
 		{
 			get
@@ -195,6 +203,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Period")]
 		public string Period
 		{
 			get
@@ -208,6 +217,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "BackupSetId")]
 		public string BackupSetId
 		{
 			get
@@ -221,6 +231,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -234,6 +245,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceClass")]
 		public string DBInstanceClass
 		{
 			get
@@ -247,6 +259,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecurityIPList")]
 		public string SecurityIPList
 		{
 			get
@@ -260,6 +273,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "VSwitchId")]
 		public string VSwitchId
 		{
 			get
@@ -273,6 +287,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PrivateIpAddress")]
 		public string PrivateIpAddress
 		{
 			get
@@ -286,6 +301,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "BinlogName")]
 		public string BinlogName
 		{
 			get
@@ -299,6 +315,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ZoneId")]
 		public string ZoneId
 		{
 			get
@@ -312,6 +329,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceNetworkType")]
 		public string InstanceNetworkType
 		{
 			get
@@ -325,6 +343,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ConnectionMode")]
 		public string ConnectionMode
 		{
 			get
@@ -338,6 +357,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "SourceDBInstanceName")]
 		public string SourceDBInstanceName
 		{
 			get
@@ -351,6 +371,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ClientToken")]
 		public string ClientToken
 		{
 			get
@@ -364,6 +385,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Engine")]
 		public string Engine
 		{
 			get
@@ -377,6 +399,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceStorageType")]
 		public string DBInstanceStorageType
 		{
 			get
@@ -390,6 +413,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceNetType")]
 		public string DBInstanceNetType
 		{
 			get
@@ -403,6 +427,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RestoreTime")]
 		public string RestoreTime
 		{
 			get
@@ -416,6 +441,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -429,6 +455,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -442,6 +469,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "UsedTime")]
 		public string UsedTime
 		{
 			get
@@ -455,6 +483,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "BinlogPosition")]
 		public string BinlogPosition
 		{
 			get
@@ -468,6 +497,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RestoreType")]
 		public string RestoreType
 		{
 			get
@@ -481,6 +511,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "VPCId")]
 		public string VPCId
 		{
 			get
@@ -494,6 +525,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PayType")]
 		public string PayType
 		{
 			get
@@ -507,6 +539,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "SourceRegion")]
 		public string SourceRegion
 		{
 			get

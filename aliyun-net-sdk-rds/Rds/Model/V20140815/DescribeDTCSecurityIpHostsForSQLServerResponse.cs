@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,26 +25,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDTCSecurityIpHostsForSQLServerResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dBInstanceId;
+
+		private string requestId;
 
 		private string ipHostPairNum;
 
 		private List<DescribeDTCSecurityIpHostsForSQLServer_WhiteListGroups> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -57,6 +46,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "IpHostPairNum")]
 		public string IpHostPairNum
 		{
 			get
@@ -69,6 +72,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeDTCSecurityIpHostsForSQLServer_WhiteListGroups> Items
 		{
 			get
@@ -88,6 +92,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string whitelistGroupName;
 
+			[JsonProperty(PropertyName = "SecurityIpHosts")]
 			public string SecurityIpHosts
 			{
 				get
@@ -100,6 +105,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "WhitelistGroupName")]
 			public string WhitelistGroupName
 			{
 				get

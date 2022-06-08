@@ -31,20 +31,20 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			ListClassesResponse listClassesResponse = new ListClassesResponse();
 
 			listClassesResponse.HttpResponse = _ctx.HttpResponse;
-			listClassesResponse.RegionId = _ctx.StringValue("ListClasses.RegionId");
 			listClassesResponse.RequestId = _ctx.StringValue("ListClasses.RequestId");
+			listClassesResponse.RegionId = _ctx.StringValue("ListClasses.RegionId");
 
 			List<ListClassesResponse.ListClasses_ClassList> listClassesResponse_items = new List<ListClassesResponse.ListClasses_ClassList>();
 			for (int i = 0; i < _ctx.Length("ListClasses.Items.Length"); i++) {
 				ListClassesResponse.ListClasses_ClassList classList = new ListClassesResponse.ListClasses_ClassList();
+				classList.MaxIOPS = _ctx.StringValue("ListClasses.Items["+ i +"].MaxIOPS");
+				classList.Cpu = _ctx.StringValue("ListClasses.Items["+ i +"].Cpu");
+				classList.ReferencePrice = _ctx.StringValue("ListClasses.Items["+ i +"].ReferencePrice");
+				classList.MaxConnections = _ctx.StringValue("ListClasses.Items["+ i +"].MaxConnections");
+				classList.MemoryClass = _ctx.StringValue("ListClasses.Items["+ i +"].MemoryClass");
 				classList.ClassCode = _ctx.StringValue("ListClasses.Items["+ i +"].ClassCode");
 				classList.ClassGroup = _ctx.StringValue("ListClasses.Items["+ i +"].ClassGroup");
-				classList.Cpu = _ctx.StringValue("ListClasses.Items["+ i +"].Cpu");
-				classList.MaxConnections = _ctx.StringValue("ListClasses.Items["+ i +"].MaxConnections");
 				classList.MaxIOMBPS = _ctx.StringValue("ListClasses.Items["+ i +"].MaxIOMBPS");
-				classList.MaxIOPS = _ctx.StringValue("ListClasses.Items["+ i +"].MaxIOPS");
-				classList.MemoryClass = _ctx.StringValue("ListClasses.Items["+ i +"].MemoryClass");
-				classList.ReferencePrice = _ctx.StringValue("ListClasses.Items["+ i +"].ReferencePrice");
 
 				listClassesResponse_items.Add(classList);
 			}

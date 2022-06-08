@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
-		private long? totalCount;
+		private int? totalCount;
 
-		private long? pageNumber;
+		private int? pageNumber;
 
-		private long? pageSize;
+		private int? pageSize;
 
 		private List<DescribeVSwitches_VSwitch> vSwitchs;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,7 +48,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? TotalCount
+		[JsonProperty(PropertyName = "TotalCount")]
+		public int? TotalCount
 		{
 			get
 			{
@@ -59,7 +61,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? PageNumber
+		[JsonProperty(PropertyName = "PageNumber")]
+		public int? PageNumber
 		{
 			get
 			{
@@ -71,7 +74,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? PageSize
+		[JsonProperty(PropertyName = "PageSize")]
+		public int? PageSize
 		{
 			get
 			{
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "VSwitchs")]
 		public List<DescribeVSwitches_VSwitch> VSwitchs
 		{
 			get
@@ -122,6 +127,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string vSwitchName;
 
+			[JsonProperty(PropertyName = "AliUid")]
 			public string AliUid
 			{
 				get
@@ -134,6 +140,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Bid")]
 			public string Bid
 			{
 				get
@@ -146,6 +153,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "CidrBlock")]
 			public string CidrBlock
 			{
 				get
@@ -158,6 +166,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Description")]
 			public string Description
 			{
 				get
@@ -170,6 +179,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "GmtCreate")]
 			public string GmtCreate
 			{
 				get
@@ -182,6 +192,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "GmtModified")]
 			public string GmtModified
 			{
 				get
@@ -194,6 +205,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "IsDefault")]
 			public bool? IsDefault
 			{
 				get
@@ -206,6 +218,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "IzNo")]
 			public string IzNo
 			{
 				get
@@ -218,6 +231,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "RegionNo")]
 			public string RegionNo
 			{
 				get
@@ -230,6 +244,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Status")]
 			public string Status
 			{
 				get
@@ -242,6 +257,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "VSwitchId")]
 			public string VSwitchId
 			{
 				get
@@ -254,6 +270,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "VSwitchName")]
 			public string VSwitchName
 			{
 				get

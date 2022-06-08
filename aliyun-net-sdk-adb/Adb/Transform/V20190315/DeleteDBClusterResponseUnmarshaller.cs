@@ -31,8 +31,8 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			DeleteDBClusterResponse deleteDBClusterResponse = new DeleteDBClusterResponse();
 
 			deleteDBClusterResponse.HttpResponse = _ctx.HttpResponse;
-			deleteDBClusterResponse.RequestId = _ctx.StringValue("DeleteDBCluster.RequestId");
 			deleteDBClusterResponse.TaskId = _ctx.IntegerValue("DeleteDBCluster.TaskId");
+			deleteDBClusterResponse.RequestId = _ctx.StringValue("DeleteDBCluster.RequestId");
 			deleteDBClusterResponse.DBClusterId = _ctx.StringValue("DeleteDBCluster.DBClusterId");
         
 			return deleteDBClusterResponse;

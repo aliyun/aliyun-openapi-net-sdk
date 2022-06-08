@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -44,6 +45,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string gadInstanceName;
 
+		[JsonProperty(PropertyName = "MemberInstanceName")]
 		public string MemberInstanceName
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "GadInstanceName")]
 		public string GadInstanceName
 		{
 			get

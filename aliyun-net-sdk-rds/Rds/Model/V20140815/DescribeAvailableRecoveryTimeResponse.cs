@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,42 +25,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeAvailableRecoveryTimeResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string recoveryBeginTime;
-
 		private string recoveryEndTime;
 
-		private string dBInstanceId;
-
-		private string regionId;
+		private string requestId;
 
 		private int? crossBackupId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string dBInstanceId;
 
-		public string RecoveryBeginTime
-		{
-			get
-			{
-				return recoveryBeginTime;
-			}
-			set	
-			{
-				recoveryBeginTime = value;
-			}
-		}
+		private string recoveryBeginTime;
 
+		private string regionId;
+
+		[JsonProperty(PropertyName = "RecoveryEndTime")]
 		public string RecoveryEndTime
 		{
 			get
@@ -73,6 +50,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "CrossBackupId")]
+		public int? CrossBackupId
+		{
+			get
+			{
+				return crossBackupId;
+			}
+			set	
+			{
+				crossBackupId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -85,6 +89,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RecoveryBeginTime")]
+		public string RecoveryBeginTime
+		{
+			get
+			{
+				return recoveryBeginTime;
+			}
+			set	
+			{
+				recoveryBeginTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RegionId")]
 		public string RegionId
 		{
 			get
@@ -94,18 +112,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				regionId = value;
-			}
-		}
-
-		public int? CrossBackupId
-		{
-			get
-			{
-				return crossBackupId;
-			}
-			set	
-			{
-				crossBackupId = value;
 			}
 		}
 	}

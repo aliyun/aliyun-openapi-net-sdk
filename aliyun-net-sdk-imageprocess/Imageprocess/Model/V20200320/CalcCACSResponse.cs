@@ -27,6 +27,10 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 
 		private string requestId;
 
+		private string code;
+
+		private string message;
+
 		private CalcCACS_Data data;
 
 		public string RequestId
@@ -38,6 +42,30 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -60,6 +88,10 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 
 			private string score;
 
+			private string volumeScore;
+
+			private List<CalcCACS_DetectionsItem> detections;
+
 			public string ResultUrl
 			{
 				get
@@ -81,6 +113,76 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 				set	
 				{
 					score = value;
+				}
+			}
+
+			public string VolumeScore
+			{
+				get
+				{
+					return volumeScore;
+				}
+				set	
+				{
+					volumeScore = value;
+				}
+			}
+
+			public List<CalcCACS_DetectionsItem> Detections
+			{
+				get
+				{
+					return detections;
+				}
+				set	
+				{
+					detections = value;
+				}
+			}
+
+			public class CalcCACS_DetectionsItem
+			{
+
+				private long? calciumId;
+
+				private float? calciumScore;
+
+				private float? calciumVolume;
+
+				public long? CalciumId
+				{
+					get
+					{
+						return calciumId;
+					}
+					set	
+					{
+						calciumId = value;
+					}
+				}
+
+				public float? CalciumScore
+				{
+					get
+					{
+						return calciumScore;
+					}
+					set	
+					{
+						calciumScore = value;
+					}
+				}
+
+				public float? CalciumVolume
+				{
+					get
+					{
+						return calciumVolume;
+					}
+					set	
+					{
+						calciumVolume = value;
+					}
 				}
 			}
 		}

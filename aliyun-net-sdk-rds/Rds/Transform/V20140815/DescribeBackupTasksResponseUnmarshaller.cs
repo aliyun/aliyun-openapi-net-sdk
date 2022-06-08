@@ -36,13 +36,13 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			List<DescribeBackupTasksResponse.DescribeBackupTasks_BackupJob> describeBackupTasksResponse_items = new List<DescribeBackupTasksResponse.DescribeBackupTasks_BackupJob>();
 			for (int i = 0; i < _ctx.Length("DescribeBackupTasks.Items.Length"); i++) {
 				DescribeBackupTasksResponse.DescribeBackupTasks_BackupJob backupJob = new DescribeBackupTasksResponse.DescribeBackupTasks_BackupJob();
-				backupJob.BackupProgressStatus = _ctx.StringValue("DescribeBackupTasks.Items["+ i +"].BackupProgressStatus");
+				backupJob.Process = _ctx.StringValue("DescribeBackupTasks.Items["+ i +"].Process");
+				backupJob.BackupJobId = _ctx.StringValue("DescribeBackupTasks.Items["+ i +"].BackupJobId");
 				backupJob.BackupStatus = _ctx.StringValue("DescribeBackupTasks.Items["+ i +"].BackupStatus");
 				backupJob.JobMode = _ctx.StringValue("DescribeBackupTasks.Items["+ i +"].JobMode");
-				backupJob.Process = _ctx.StringValue("DescribeBackupTasks.Items["+ i +"].Process");
-				backupJob.TaskAction = _ctx.StringValue("DescribeBackupTasks.Items["+ i +"].TaskAction");
-				backupJob.BackupJobId = _ctx.StringValue("DescribeBackupTasks.Items["+ i +"].BackupJobId");
+				backupJob.BackupProgressStatus = _ctx.StringValue("DescribeBackupTasks.Items["+ i +"].BackupProgressStatus");
 				backupJob.BackupId = _ctx.StringValue("DescribeBackupTasks.Items["+ i +"].BackupId");
+				backupJob.TaskAction = _ctx.StringValue("DescribeBackupTasks.Items["+ i +"].TaskAction");
 
 				describeBackupTasksResponse_items.Add(backupJob);
 			}

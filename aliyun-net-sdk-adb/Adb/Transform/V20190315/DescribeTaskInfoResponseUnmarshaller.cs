@@ -34,11 +34,11 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			describeTaskInfoResponse.RequestId = _ctx.StringValue("DescribeTaskInfo.RequestId");
 
 			DescribeTaskInfoResponse.DescribeTaskInfo_TaskInfo taskInfo = new DescribeTaskInfoResponse.DescribeTaskInfo_TaskInfo();
-			taskInfo.TaskId = _ctx.IntegerValue("DescribeTaskInfo.TaskInfo.TaskId");
-			taskInfo.BeginTime = _ctx.StringValue("DescribeTaskInfo.TaskInfo.BeginTime");
+			taskInfo.Status = _ctx.StringValue("DescribeTaskInfo.TaskInfo.Status");
 			taskInfo.FinishTime = _ctx.StringValue("DescribeTaskInfo.TaskInfo.FinishTime");
 			taskInfo.Progress = _ctx.StringValue("DescribeTaskInfo.TaskInfo.Progress");
-			taskInfo.Status = _ctx.StringValue("DescribeTaskInfo.TaskInfo.Status");
+			taskInfo.BeginTime = _ctx.StringValue("DescribeTaskInfo.TaskInfo.BeginTime");
+			taskInfo.TaskId = _ctx.IntegerValue("DescribeTaskInfo.TaskInfo.TaskId");
 			describeTaskInfoResponse.TaskInfo = taskInfo;
         
 			return describeTaskInfoResponse;

@@ -31,9 +31,9 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			ModifyDBClusterAccessWhiteListResponse modifyDBClusterAccessWhiteListResponse = new ModifyDBClusterAccessWhiteListResponse();
 
 			modifyDBClusterAccessWhiteListResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDBClusterAccessWhiteListResponse.TaskId = _ctx.IntegerValue("ModifyDBClusterAccessWhiteList.TaskId");
 			modifyDBClusterAccessWhiteListResponse.RequestId = _ctx.StringValue("ModifyDBClusterAccessWhiteList.RequestId");
 			modifyDBClusterAccessWhiteListResponse.DBClusterId = _ctx.StringValue("ModifyDBClusterAccessWhiteList.DBClusterId");
-			modifyDBClusterAccessWhiteListResponse.TaskId = _ctx.IntegerValue("ModifyDBClusterAccessWhiteList.TaskId");
         
 			return modifyDBClusterAccessWhiteListResponse;
         }

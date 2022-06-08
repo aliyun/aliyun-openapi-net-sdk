@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -42,6 +43,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private long? dBInstanceStorage;
+
+		private string isModifySpec;
+
 		private string zoneIdSlave1;
 
 		private string zoneIdSlave2;
@@ -50,11 +55,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBInstanceId;
 
+		private string switchTime;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string dBInstanceClass;
 
 		private string vSwitchId;
 
@@ -64,6 +73,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string category;
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -77,6 +87,35 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceStorage")]
+		public long? DBInstanceStorage
+		{
+			get
+			{
+				return dBInstanceStorage;
+			}
+			set	
+			{
+				dBInstanceStorage = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceStorage", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "IsModifySpec")]
+		public string IsModifySpec
+		{
+			get
+			{
+				return isModifySpec;
+			}
+			set	
+			{
+				isModifySpec = value;
+				DictionaryUtil.Add(QueryParameters, "IsModifySpec", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ZoneIdSlave1")]
 		public string ZoneIdSlave1
 		{
 			get
@@ -90,6 +129,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ZoneIdSlave2")]
 		public string ZoneIdSlave2
 		{
 			get
@@ -103,6 +143,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "EffectiveTime")]
 		public string EffectiveTime
 		{
 			get
@@ -116,6 +157,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -129,6 +171,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "SwitchTime")]
+		public string SwitchTime
+		{
+			get
+			{
+				return switchTime;
+			}
+			set	
+			{
+				switchTime = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchTime", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -142,6 +199,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -155,6 +213,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -168,6 +227,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceClass")]
+		public string DBInstanceClass
+		{
+			get
+			{
+				return dBInstanceClass;
+			}
+			set	
+			{
+				dBInstanceClass = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "VSwitchId")]
 		public string VSwitchId
 		{
 			get
@@ -181,6 +255,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "VPCId")]
 		public string VPCId
 		{
 			get
@@ -194,6 +269,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ZoneId")]
 		public string ZoneId
 		{
 			get
@@ -207,6 +283,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Category")]
 		public string Category
 		{
 			get

@@ -873,6 +873,8 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 
 						private int? to;
 
+						private string customizeCode;
+
 						public int? From
 						{
 							get
@@ -942,6 +944,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							set	
 							{
 								to = value;
+							}
+						}
+
+						public string CustomizeCode
+						{
+							get
+							{
+								return customizeCode;
+							}
+							set	
+							{
+								customizeCode = value;
 							}
 						}
 					}

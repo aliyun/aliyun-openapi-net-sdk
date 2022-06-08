@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class CheckCreateDdrDBInstanceResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string isValid;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string IsValid
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				isValid = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

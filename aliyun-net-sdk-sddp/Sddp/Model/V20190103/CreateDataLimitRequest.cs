@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private int? ocrStatus;
 
+		private int? samplingSize;
+
 		private string parentId;
 
 		private string password;
@@ -78,6 +80,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				ocrStatus = value;
 				DictionaryUtil.Add(QueryParameters, "OcrStatus", value.ToString());
+			}
+		}
+
+		public int? SamplingSize
+		{
+			get
+			{
+				return samplingSize;
+			}
+			set	
+			{
+				samplingSize = value;
+				DictionaryUtil.Add(QueryParameters, "SamplingSize", value.ToString());
 			}
 		}
 

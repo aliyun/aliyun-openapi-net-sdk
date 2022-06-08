@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,28 +25,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class CreateDdrInstanceResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dBInstanceId;
 
-		private string orderId;
-
-		private string connectionString;
+		private string requestId;
 
 		private string port;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string connectionString;
 
+		private string orderId;
+
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -59,18 +48,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string OrderId
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return orderId;
+				return requestId;
 			}
 			set	
 			{
-				orderId = value;
+				requestId = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "Port")]
+		public string Port
+		{
+			get
+			{
+				return port;
+			}
+			set	
+			{
+				port = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ConnectionString")]
 		public string ConnectionString
 		{
 			get
@@ -83,15 +87,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Port
+		[JsonProperty(PropertyName = "OrderId")]
+		public string OrderId
 		{
 			get
 			{
-				return port;
+				return orderId;
 			}
 			set	
 			{
-				port = value;
+				orderId = value;
 			}
 		}
 	}

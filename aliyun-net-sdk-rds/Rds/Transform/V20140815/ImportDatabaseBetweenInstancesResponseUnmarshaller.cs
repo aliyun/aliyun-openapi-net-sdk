@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			ImportDatabaseBetweenInstancesResponse importDatabaseBetweenInstancesResponse = new ImportDatabaseBetweenInstancesResponse();
 
 			importDatabaseBetweenInstancesResponse.HttpResponse = _ctx.HttpResponse;
-			importDatabaseBetweenInstancesResponse.RequestId = _ctx.StringValue("ImportDatabaseBetweenInstances.RequestId");
 			importDatabaseBetweenInstancesResponse.ImportId = _ctx.StringValue("ImportDatabaseBetweenInstances.ImportId");
+			importDatabaseBetweenInstancesResponse.RequestId = _ctx.StringValue("ImportDatabaseBetweenInstances.RequestId");
         
 			return importDatabaseBetweenInstancesResponse;
         }

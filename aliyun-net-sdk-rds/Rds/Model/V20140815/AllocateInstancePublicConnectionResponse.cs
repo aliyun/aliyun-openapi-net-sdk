@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,11 +25,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class AllocateInstancePublicConnectionResponse : AcsResponse
 	{
 
+		private string dbInstanceName;
+
 		private string requestId;
 
 		private string connectionString;
 
-		private string dbInstanceName;
+		public string DbInstanceName
+		{
+			get
+			{
+				return dbInstanceName;
+			}
+			set	
+			{
+				dbInstanceName = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -52,18 +64,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				connectionString = value;
-			}
-		}
-
-		public string DbInstanceName
-		{
-			get
-			{
-				return dbInstanceName;
-			}
-			set	
-			{
-				dbInstanceName = value;
 			}
 		}
 	}

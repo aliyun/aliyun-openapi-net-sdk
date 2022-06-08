@@ -31,22 +31,22 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 			BatchInsertItemsResponse batchInsertItemsResponse = new BatchInsertItemsResponse();
 
 			batchInsertItemsResponse.HttpResponse = _ctx.HttpResponse;
-			batchInsertItemsResponse.ErrorMessage = _ctx.StringValue("BatchInsertItems.ErrorMessage");
-			batchInsertItemsResponse.ErrorCode = _ctx.StringValue("BatchInsertItems.ErrorCode");
-			batchInsertItemsResponse.Message = _ctx.StringValue("BatchInsertItems.Message");
-			batchInsertItemsResponse.DynamicCode = _ctx.StringValue("BatchInsertItems.DynamicCode");
-			batchInsertItemsResponse.Code = _ctx.StringValue("BatchInsertItems.Code");
-			batchInsertItemsResponse.DynamicMessage = _ctx.StringValue("BatchInsertItems.DynamicMessage");
 			batchInsertItemsResponse.RequestId = _ctx.StringValue("BatchInsertItems.RequestId");
+			batchInsertItemsResponse.ErrorMessage = _ctx.StringValue("BatchInsertItems.ErrorMessage");
 			batchInsertItemsResponse.Success = _ctx.BooleanValue("BatchInsertItems.Success");
+			batchInsertItemsResponse.ErrorCode = _ctx.StringValue("BatchInsertItems.ErrorCode");
+			batchInsertItemsResponse.Code = _ctx.StringValue("BatchInsertItems.Code");
+			batchInsertItemsResponse.Message = _ctx.StringValue("BatchInsertItems.Message");
+			batchInsertItemsResponse.DynamicMessage = _ctx.StringValue("BatchInsertItems.DynamicMessage");
+			batchInsertItemsResponse.DynamicCode = _ctx.StringValue("BatchInsertItems.DynamicCode");
 
 			List<BatchInsertItemsResponse.BatchInsertItems_BatchResult> batchInsertItemsResponse_batchResults = new List<BatchInsertItemsResponse.BatchInsertItems_BatchResult>();
 			for (int i = 0; i < _ctx.Length("BatchInsertItems.BatchResults.Length"); i++) {
 				BatchInsertItemsResponse.BatchInsertItems_BatchResult batchResult = new BatchInsertItemsResponse.BatchInsertItems_BatchResult();
-				batchResult.Message = _ctx.StringValue("BatchInsertItems.BatchResults["+ i +"].Message");
 				batchResult.Index = _ctx.IntegerValue("BatchInsertItems.BatchResults["+ i +"].Index");
-				batchResult.ErrorCode = _ctx.StringValue("BatchInsertItems.BatchResults["+ i +"].ErrorCode");
+				batchResult.Message = _ctx.StringValue("BatchInsertItems.BatchResults["+ i +"].Message");
 				batchResult.Success = _ctx.BooleanValue("BatchInsertItems.BatchResults["+ i +"].Success");
+				batchResult.ErrorCode = _ctx.StringValue("BatchInsertItems.BatchResults["+ i +"].ErrorCode");
 
 				batchInsertItemsResponse_batchResults.Add(batchResult);
 			}

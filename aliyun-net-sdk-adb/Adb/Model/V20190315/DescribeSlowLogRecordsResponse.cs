@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string totalCount;
 
-		private string requestId;
-
 		private string pageSize;
+
+		private string requestId;
 
 		private string pageNumber;
 
@@ -49,18 +49,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
 		public string PageSize
 		{
 			get
@@ -70,6 +58,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -112,111 +112,51 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		public class DescribeSlowLogRecords_SlowLogRecord
 		{
 
-			private string outputSize;
-
-			private string userName;
-
-			private string peakMemoryUsage;
-
-			private string executionStartTime;
-
-			private long? parseRowCounts;
-
-			private long? queryTime;
+			private string hostAddress;
 
 			private long? scanTime;
 
-			private string hostAddress;
-
 			private string sQLText;
 
-			private long? wallTime;
+			private string outputSize;
 
-			private long? scanRows;
+			private string peakMemoryUsage;
 
 			private string state;
 
-			private long? returnRowCounts;
-
-			private long? planningTime;
-
-			private string dBName;
-
-			private long? queueTime;
-
-			private string processID;
+			private long? wallTime;
 
 			private string scanSize;
 
-			public string OutputSize
-			{
-				get
-				{
-					return outputSize;
-				}
-				set	
-				{
-					outputSize = value;
-				}
-			}
+			private string executionStartTime;
 
-			public string UserName
-			{
-				get
-				{
-					return userName;
-				}
-				set	
-				{
-					userName = value;
-				}
-			}
+			private long? queryTime;
 
-			public string PeakMemoryUsage
-			{
-				get
-				{
-					return peakMemoryUsage;
-				}
-				set	
-				{
-					peakMemoryUsage = value;
-				}
-			}
+			private long? returnRowCounts;
 
-			public string ExecutionStartTime
-			{
-				get
-				{
-					return executionStartTime;
-				}
-				set	
-				{
-					executionStartTime = value;
-				}
-			}
+			private long? scanRows;
 
-			public long? ParseRowCounts
-			{
-				get
-				{
-					return parseRowCounts;
-				}
-				set	
-				{
-					parseRowCounts = value;
-				}
-			}
+			private long? parseRowCounts;
 
-			public long? QueryTime
+			private string dBName;
+
+			private long? planningTime;
+
+			private long? queueTime;
+
+			private string userName;
+
+			private string processID;
+
+			public string HostAddress
 			{
 				get
 				{
-					return queryTime;
+					return hostAddress;
 				}
 				set	
 				{
-					queryTime = value;
+					hostAddress = value;
 				}
 			}
 
@@ -232,18 +172,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public string HostAddress
-			{
-				get
-				{
-					return hostAddress;
-				}
-				set	
-				{
-					hostAddress = value;
-				}
-			}
-
 			public string SQLText
 			{
 				get
@@ -256,27 +184,27 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public long? WallTime
+			public string OutputSize
 			{
 				get
 				{
-					return wallTime;
+					return outputSize;
 				}
 				set	
 				{
-					wallTime = value;
+					outputSize = value;
 				}
 			}
 
-			public long? ScanRows
+			public string PeakMemoryUsage
 			{
 				get
 				{
-					return scanRows;
+					return peakMemoryUsage;
 				}
 				set	
 				{
-					scanRows = value;
+					peakMemoryUsage = value;
 				}
 			}
 
@@ -292,6 +220,54 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
+			public long? WallTime
+			{
+				get
+				{
+					return wallTime;
+				}
+				set	
+				{
+					wallTime = value;
+				}
+			}
+
+			public string ScanSize
+			{
+				get
+				{
+					return scanSize;
+				}
+				set	
+				{
+					scanSize = value;
+				}
+			}
+
+			public string ExecutionStartTime
+			{
+				get
+				{
+					return executionStartTime;
+				}
+				set	
+				{
+					executionStartTime = value;
+				}
+			}
+
+			public long? QueryTime
+			{
+				get
+				{
+					return queryTime;
+				}
+				set	
+				{
+					queryTime = value;
+				}
+			}
+
 			public long? ReturnRowCounts
 			{
 				get
@@ -304,15 +280,27 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public long? PlanningTime
+			public long? ScanRows
 			{
 				get
 				{
-					return planningTime;
+					return scanRows;
 				}
 				set	
 				{
-					planningTime = value;
+					scanRows = value;
+				}
+			}
+
+			public long? ParseRowCounts
+			{
+				get
+				{
+					return parseRowCounts;
+				}
+				set	
+				{
+					parseRowCounts = value;
 				}
 			}
 
@@ -328,6 +316,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
+			public long? PlanningTime
+			{
+				get
+				{
+					return planningTime;
+				}
+				set	
+				{
+					planningTime = value;
+				}
+			}
+
 			public long? QueueTime
 			{
 				get
@@ -340,6 +340,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
+			public string UserName
+			{
+				get
+				{
+					return userName;
+				}
+				set	
+				{
+					userName = value;
+				}
+			}
+
 			public string ProcessID
 			{
 				get
@@ -349,18 +361,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					processID = value;
-				}
-			}
-
-			public string ScanSize
-			{
-				get
-				{
-					return scanSize;
-				}
-				set	
-				{
-					scanSize = value;
 				}
 			}
 		}

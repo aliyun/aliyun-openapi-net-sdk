@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.adb.Model.V20190315
 	public class DescribeAvailableResourceResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string regionId;
 
-		private List<DescribeAvailableResource_AvailableZone> availableZoneList;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeAvailableResource_AvailableZone> availableZoneList;
 
 		public string RegionId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				regionId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -179,9 +179,9 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 						private string storageType;
 
-						private List<string> supportedStorageResource;
-
 						private List<string> supportedComputeResource;
+
+						private List<string> supportedStorageResource;
 
 						private DescribeAvailableResource_SupportedElasticIOResource supportedElasticIOResource;
 
@@ -197,18 +197,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 							}
 						}
 
-						public List<string> SupportedStorageResource
-						{
-							get
-							{
-								return supportedStorageResource;
-							}
-							set	
-							{
-								supportedStorageResource = value;
-							}
-						}
-
 						public List<string> SupportedComputeResource
 						{
 							get
@@ -218,6 +206,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 							set	
 							{
 								supportedComputeResource = value;
+							}
+						}
+
+						public List<string> SupportedStorageResource
+						{
+							get
+							{
+								return supportedStorageResource;
+							}
+							set	
+							{
+								supportedStorageResource = value;
 							}
 						}
 
@@ -236,11 +236,23 @@ namespace Aliyun.Acs.adb.Model.V20190315
 						public class DescribeAvailableResource_SupportedElasticIOResource
 						{
 
+							private string step;
+
 							private string minCount;
 
 							private string maxCount;
 
-							private string step;
+							public string Step
+							{
+								get
+								{
+									return step;
+								}
+								set	
+								{
+									step = value;
+								}
+							}
 
 							public string MinCount
 							{
@@ -263,18 +275,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 								set	
 								{
 									maxCount = value;
-								}
-							}
-
-							public string Step
-							{
-								get
-								{
-									return step;
-								}
-								set	
-								{
-									step = value;
 								}
 							}
 						}
@@ -373,11 +373,23 @@ namespace Aliyun.Acs.adb.Model.V20190315
 							public class DescribeAvailableResource_NodeCount
 							{
 
+								private string step;
+
 								private string minCount;
 
 								private string maxCount;
 
-								private string step;
+								public string Step
+								{
+									get
+									{
+										return step;
+									}
+									set	
+									{
+										step = value;
+									}
+								}
 
 								public string MinCount
 								{
@@ -400,18 +412,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 									set	
 									{
 										maxCount = value;
-									}
-								}
-
-								public string Step
-								{
-									get
-									{
-										return step;
-									}
-									set	
-									{
-										step = value;
 									}
 								}
 							}
@@ -437,11 +437,23 @@ namespace Aliyun.Acs.adb.Model.V20190315
 							public class DescribeAvailableResource_NodeCount1
 							{
 
+								private string step;
+
 								private string minCount;
 
 								private string maxCount;
 
-								private string step;
+								public string Step
+								{
+									get
+									{
+										return step;
+									}
+									set	
+									{
+										step = value;
+									}
+								}
 
 								public string MinCount
 								{
@@ -464,18 +476,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 									set	
 									{
 										maxCount = value;
-									}
-								}
-
-								public string Step
-								{
-									get
-									{
-										return step;
-									}
-									set	
-									{
-										step = value;
 									}
 								}
 							}

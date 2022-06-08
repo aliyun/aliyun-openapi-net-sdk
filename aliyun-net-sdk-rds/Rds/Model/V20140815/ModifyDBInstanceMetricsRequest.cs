@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -48,6 +49,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string scope;
 
+		[JsonProperty(PropertyName = "DBInstanceName")]
 		public string DBInstanceName
 		{
 			get
@@ -61,6 +63,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -74,6 +77,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "MetricsConfig")]
 		public string MetricsConfig
 		{
 			get
@@ -87,6 +91,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Scope")]
 		public string Scope
 		{
 			get

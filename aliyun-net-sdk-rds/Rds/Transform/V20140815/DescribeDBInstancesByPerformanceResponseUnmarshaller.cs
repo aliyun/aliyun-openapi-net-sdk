@@ -33,18 +33,18 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBInstancesByPerformanceResponse.HttpResponse = _ctx.HttpResponse;
 			describeDBInstancesByPerformanceResponse.RequestId = _ctx.StringValue("DescribeDBInstancesByPerformance.RequestId");
 			describeDBInstancesByPerformanceResponse.PageNumber = _ctx.IntegerValue("DescribeDBInstancesByPerformance.PageNumber");
-			describeDBInstancesByPerformanceResponse.TotalRecordCount = _ctx.IntegerValue("DescribeDBInstancesByPerformance.TotalRecordCount");
 			describeDBInstancesByPerformanceResponse.PageRecordCount = _ctx.IntegerValue("DescribeDBInstancesByPerformance.PageRecordCount");
+			describeDBInstancesByPerformanceResponse.TotalRecordCount = _ctx.IntegerValue("DescribeDBInstancesByPerformance.TotalRecordCount");
 
 			List<DescribeDBInstancesByPerformanceResponse.DescribeDBInstancesByPerformance_DBInstancePerformance> describeDBInstancesByPerformanceResponse_items = new List<DescribeDBInstancesByPerformanceResponse.DescribeDBInstancesByPerformance_DBInstancePerformance>();
 			for (int i = 0; i < _ctx.Length("DescribeDBInstancesByPerformance.Items.Length"); i++) {
 				DescribeDBInstancesByPerformanceResponse.DescribeDBInstancesByPerformance_DBInstancePerformance dBInstancePerformance = new DescribeDBInstancesByPerformanceResponse.DescribeDBInstancesByPerformance_DBInstancePerformance();
 				dBInstancePerformance.CPUUsage = _ctx.StringValue("DescribeDBInstancesByPerformance.Items["+ i +"].CPUUsage");
-				dBInstancePerformance.IOPSUsage = _ctx.StringValue("DescribeDBInstancesByPerformance.Items["+ i +"].IOPSUsage");
-				dBInstancePerformance.DiskUsage = _ctx.StringValue("DescribeDBInstancesByPerformance.Items["+ i +"].DiskUsage");
 				dBInstancePerformance.SessionUsage = _ctx.StringValue("DescribeDBInstancesByPerformance.Items["+ i +"].SessionUsage");
 				dBInstancePerformance.DBInstanceId = _ctx.StringValue("DescribeDBInstancesByPerformance.Items["+ i +"].DBInstanceId");
 				dBInstancePerformance.DBInstanceDescription = _ctx.StringValue("DescribeDBInstancesByPerformance.Items["+ i +"].DBInstanceDescription");
+				dBInstancePerformance.IOPSUsage = _ctx.StringValue("DescribeDBInstancesByPerformance.Items["+ i +"].IOPSUsage");
+				dBInstancePerformance.DiskUsage = _ctx.StringValue("DescribeDBInstancesByPerformance.Items["+ i +"].DiskUsage");
 
 				describeDBInstancesByPerformanceResponse_items.Add(dBInstancePerformance);
 			}

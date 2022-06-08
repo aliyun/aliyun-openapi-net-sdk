@@ -31,9 +31,9 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			DescribeOperatorPermissionResponse describeOperatorPermissionResponse = new DescribeOperatorPermissionResponse();
 
 			describeOperatorPermissionResponse.HttpResponse = _ctx.HttpResponse;
+			describeOperatorPermissionResponse.CreatedTime = _ctx.StringValue("DescribeOperatorPermission.CreatedTime");
 			describeOperatorPermissionResponse.RequestId = _ctx.StringValue("DescribeOperatorPermission.RequestId");
 			describeOperatorPermissionResponse.Privileges = _ctx.StringValue("DescribeOperatorPermission.Privileges");
-			describeOperatorPermissionResponse.CreatedTime = _ctx.StringValue("DescribeOperatorPermission.CreatedTime");
 			describeOperatorPermissionResponse.ExpiredTime = _ctx.StringValue("DescribeOperatorPermission.ExpiredTime");
 			describeOperatorPermissionResponse.DBClusterId = _ctx.StringValue("DescribeOperatorPermission.DBClusterId");
         

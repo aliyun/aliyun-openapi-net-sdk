@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -48,6 +49,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dbProxyEndpointId;
 
+		[JsonProperty(PropertyName = "DbProxySslEnabled")]
 		public string DbProxySslEnabled
 		{
 			get
@@ -61,6 +63,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DbProxyConnectString")]
 		public string DbProxyConnectString
 		{
 			get
@@ -74,6 +77,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DbInstanceId")]
 		public string DbInstanceId
 		{
 			get
@@ -87,6 +91,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DbProxyEndpointId")]
 		public string DbProxyEndpointId
 		{
 			get

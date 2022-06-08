@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class ModifySecurityGroupConfigurationResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dBInstanceName;
+
+		private string requestId;
 
 		private List<ModifySecurityGroupConfiguration_EcsSecurityGroupRelation> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "DBInstanceName")]
 		public string DBInstanceName
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Items")]
 		public List<ModifySecurityGroupConfiguration_EcsSecurityGroupRelation> Items
 		{
 			get
@@ -70,24 +73,26 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class ModifySecurityGroupConfiguration_EcsSecurityGroupRelation
 		{
 
-			private string regionId;
+			private string networkType;
 
 			private string securityGroupId;
 
-			private string networkType;
+			private string regionId;
 
-			public string RegionId
+			[JsonProperty(PropertyName = "NetworkType")]
+			public string NetworkType
 			{
 				get
 				{
-					return regionId;
+					return networkType;
 				}
 				set	
 				{
-					regionId = value;
+					networkType = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "SecurityGroupId")]
 			public string SecurityGroupId
 			{
 				get
@@ -100,15 +105,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string NetworkType
+			[JsonProperty(PropertyName = "RegionId")]
+			public string RegionId
 			{
 				get
 				{
-					return networkType;
+					return regionId;
 				}
 				set	
 				{
-					networkType = value;
+					regionId = value;
 				}
 			}
 		}

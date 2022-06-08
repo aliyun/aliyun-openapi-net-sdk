@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.adb.Model.V20190315
 	public class DescribeOperatorPermissionResponse : AcsResponse
 	{
 
+		private string createdTime;
+
 		private string requestId;
 
 		private string privileges;
 
-		private string createdTime;
-
 		private string expiredTime;
 
 		private string dBClusterId;
+
+		public string CreatedTime
+		{
+			get
+			{
+				return createdTime;
+			}
+			set	
+			{
+				createdTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -56,18 +68,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				privileges = value;
-			}
-		}
-
-		public string CreatedTime
-		{
-			get
-			{
-				return createdTime;
-			}
-			set	
-			{
-				createdTime = value;
 			}
 		}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,30 +25,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeMigrateTasksResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dBInstanceId;
-
-		private int? totalRecordCount;
 
 		private int? pageNumber;
 
+		private string requestId;
+
 		private int? pageRecordCount;
+
+		private int? totalRecordCount;
 
 		private List<DescribeMigrateTasks_MigrateTask> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -61,18 +50,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -85,6 +63,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageRecordCount")]
 		public int? PageRecordCount
 		{
 			get
@@ -97,6 +89,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalRecordCount")]
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeMigrateTasks_MigrateTask> Items
 		{
 			get
@@ -112,58 +118,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeMigrateTasks_MigrateTask
 		{
 
-			private string dBName;
-
-			private string migrateTaskId;
-
-			private string createTime;
-
 			private string endTime;
-
-			private string backupMode;
 
 			private string status;
 
-			private string isDBReplaced;
-
 			private string description;
 
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
-				}
-			}
+			private string createTime;
 
-			public string MigrateTaskId
-			{
-				get
-				{
-					return migrateTaskId;
-				}
-				set	
-				{
-					migrateTaskId = value;
-				}
-			}
+			private string dBName;
 
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
+			private string backupMode;
 
+			private string migrateTaskId;
+
+			private string isDBReplaced;
+
+			[JsonProperty(PropertyName = "EndTime")]
 			public string EndTime
 			{
 				get
@@ -176,18 +147,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string BackupMode
-			{
-				get
-				{
-					return backupMode;
-				}
-				set	
-				{
-					backupMode = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Status")]
 			public string Status
 			{
 				get
@@ -200,18 +160,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string IsDBReplaced
-			{
-				get
-				{
-					return isDBReplaced;
-				}
-				set	
-				{
-					isDBReplaced = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Description")]
 			public string Description
 			{
 				get
@@ -221,6 +170,71 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					description = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreateTime")]
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBName")]
+			public string DBName
+			{
+				get
+				{
+					return dBName;
+				}
+				set	
+				{
+					dBName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BackupMode")]
+			public string BackupMode
+			{
+				get
+				{
+					return backupMode;
+				}
+				set	
+				{
+					backupMode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MigrateTaskId")]
+			public string MigrateTaskId
+			{
+				get
+				{
+					return migrateTaskId;
+				}
+				set	
+				{
+					migrateTaskId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IsDBReplaced")]
+			public string IsDBReplaced
+			{
+				get
+				{
+					return isDBReplaced;
+				}
+				set	
+				{
+					isDBReplaced = value;
 				}
 			}
 		}

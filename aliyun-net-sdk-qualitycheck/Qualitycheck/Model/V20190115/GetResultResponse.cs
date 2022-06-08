@@ -194,6 +194,10 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 
 			private List<GetResult_HitScoreItem> hitScore;
 
+			private List<string> schemeIdList;
+
+			private List<string> schemeNameList;
+
 			private GetResult_Recording recording;
 
 			private GetResult_Agent agent;
@@ -438,6 +442,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
+			public List<string> SchemeIdList
+			{
+				get
+				{
+					return schemeIdList;
+				}
+				set	
+				{
+					schemeIdList = value;
+				}
+			}
+
+			public List<string> SchemeNameList
+			{
+				get
+				{
+					return schemeNameList;
+				}
+				set	
+				{
+					schemeNameList = value;
+				}
+			}
+
 			public GetResult_Recording Recording
 			{
 				get
@@ -561,6 +589,10 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 
 				private string rid;
 
+				private long? schemeId;
+
+				private long? schemeVersion;
+
 				private List<GetResult_Hit> hits;
 
 				public string Type
@@ -608,6 +640,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					set	
 					{
 						rid = value;
+					}
+				}
+
+				public long? SchemeId
+				{
+					get
+					{
+						return schemeId;
+					}
+					set	
+					{
+						schemeId = value;
+					}
+				}
+
+				public long? SchemeVersion
+				{
+					get
+					{
+						return schemeVersion;
+					}
+					set	
+					{
+						schemeVersion = value;
 					}
 				}
 

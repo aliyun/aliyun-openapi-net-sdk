@@ -32,6 +32,7 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 
 			modifyAuditLogConfigResponse.HttpResponse = _ctx.HttpResponse;
 			modifyAuditLogConfigResponse.RequestId = _ctx.StringValue("ModifyAuditLogConfig.RequestId");
+			modifyAuditLogConfigResponse.UpdateSucceed = _ctx.BooleanValue("ModifyAuditLogConfig.UpdateSucceed");
         
 			return modifyAuditLogConfigResponse;
         }

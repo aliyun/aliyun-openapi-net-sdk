@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private DescribePrice_PriceInfo priceInfo;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -43,6 +44,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Rules")]
 		public List<DescribePrice_Rule> Rules
 		{
 			get
@@ -55,6 +57,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PriceInfo")]
 		public DescribePrice_PriceInfo PriceInfo
 		{
 			get
@@ -76,6 +79,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private long? ruleId;
 
+			[JsonProperty(PropertyName = "Name")]
 			public string Name
 			{
 				get
@@ -88,6 +92,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Description")]
 			public string Description
 			{
 				get
@@ -100,6 +105,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "RuleId")]
 			public long? RuleId
 			{
 				get
@@ -130,6 +136,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private DescribePrice_ActivityInfo activityInfo;
 
+			[JsonProperty(PropertyName = "OriginalPrice")]
 			public float? OriginalPrice
 			{
 				get
@@ -142,6 +149,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DiscountPrice")]
 			public float? DiscountPrice
 			{
 				get
@@ -154,6 +162,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Currency")]
 			public string Currency
 			{
 				get
@@ -166,6 +175,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "TradePrice")]
 			public float? TradePrice
 			{
 				get
@@ -178,6 +188,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Coupons")]
 			public List<DescribePrice_Coupon> Coupons
 			{
 				get
@@ -190,6 +201,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "RuleIds")]
 			public List<string> RuleIds
 			{
 				get
@@ -202,6 +214,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ActivityInfo")]
 			public DescribePrice_ActivityInfo ActivityInfo
 			{
 				get
@@ -225,6 +238,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 				private string description;
 
+				[JsonProperty(PropertyName = "IsSelected")]
 				public string IsSelected
 				{
 					get
@@ -237,6 +251,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "CouponNo")]
 				public string CouponNo
 				{
 					get
@@ -249,6 +264,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "Name")]
 				public string Name
 				{
 					get
@@ -261,6 +277,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "Description")]
 				public string Description
 				{
 					get
@@ -283,6 +300,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 				private string success;
 
+				[JsonProperty(PropertyName = "CheckErrMsg")]
 				public string CheckErrMsg
 				{
 					get
@@ -295,6 +313,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "ErrorCode")]
 				public string ErrorCode
 				{
 					get
@@ -307,6 +326,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "Success")]
 				public string Success
 				{
 					get

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -29,12 +29,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageNumber;
 
-		private int? totalRecordCount;
-
 		private int? pageRecordCount;
+
+		private int? totalRecordCount;
 
 		private List<DescribeDBInstancesForClone_DBInstance> items;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -59,18 +61,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "PageRecordCount")]
 		public int? PageRecordCount
 		{
 			get
@@ -83,6 +74,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalRecordCount")]
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeDBInstancesForClone_DBInstance> Items
 		{
 			get
@@ -98,380 +103,69 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeDBInstancesForClone_DBInstance
 		{
 
-			private int? insId;
+			private string vpcId;
 
-			private string dBInstanceId;
+			private string replicateId;
 
-			private string dBInstanceDescription;
+			private string tempDBInstanceId;
+
+			private string dBInstanceStorageType;
+
+			private string createTime;
 
 			private string payType;
 
-			private string dBInstanceType;
-
-			private string regionId;
-
-			private string expireTime;
-
-			private string destroyTime;
-
-			private string dBInstanceStatus;
-
-			private string engine;
-
-			private string dBInstanceNetType;
+			private bool? mutriORsignle;
 
 			private string connectionMode;
 
 			private string lockMode;
 
-			private string category;
-
-			private string dBInstanceStorageType;
-
-			private string dBInstanceClass;
-
-			private string instanceNetworkType;
+			private string engineVersion;
 
 			private string vpcCloudInstanceId;
 
-			private string lockReason;
+			private int? insId;
 
-			private string zoneId;
-
-			private bool? mutriORsignle;
-
-			private string createTime;
-
-			private string engineVersion;
-
-			private string guardDBInstanceId;
-
-			private string tempDBInstanceId;
+			private string instanceNetworkType;
 
 			private string masterInstanceId;
 
-			private string vpcId;
+			private string dBInstanceDescription;
+
+			private string expireTime;
+
+			private string dBInstanceNetType;
+
+			private string dBInstanceType;
+
+			private string destroyTime;
+
+			private string lockReason;
+
+			private string dBInstanceStatus;
+
+			private string guardDBInstanceId;
+
+			private string regionId;
 
 			private string vSwitchId;
 
-			private string replicateId;
-
 			private string resourceGroupId;
+
+			private string zoneId;
+
+			private string dBInstanceId;
+
+			private string category;
+
+			private string engine;
+
+			private string dBInstanceClass;
 
 			private List<DescribeDBInstancesForClone_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
-			public int? InsId
-			{
-				get
-				{
-					return insId;
-				}
-				set	
-				{
-					insId = value;
-				}
-			}
-
-			public string DBInstanceId
-			{
-				get
-				{
-					return dBInstanceId;
-				}
-				set	
-				{
-					dBInstanceId = value;
-				}
-			}
-
-			public string DBInstanceDescription
-			{
-				get
-				{
-					return dBInstanceDescription;
-				}
-				set	
-				{
-					dBInstanceDescription = value;
-				}
-			}
-
-			public string PayType
-			{
-				get
-				{
-					return payType;
-				}
-				set	
-				{
-					payType = value;
-				}
-			}
-
-			public string DBInstanceType
-			{
-				get
-				{
-					return dBInstanceType;
-				}
-				set	
-				{
-					dBInstanceType = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string ExpireTime
-			{
-				get
-				{
-					return expireTime;
-				}
-				set	
-				{
-					expireTime = value;
-				}
-			}
-
-			public string DestroyTime
-			{
-				get
-				{
-					return destroyTime;
-				}
-				set	
-				{
-					destroyTime = value;
-				}
-			}
-
-			public string DBInstanceStatus
-			{
-				get
-				{
-					return dBInstanceStatus;
-				}
-				set	
-				{
-					dBInstanceStatus = value;
-				}
-			}
-
-			public string Engine
-			{
-				get
-				{
-					return engine;
-				}
-				set	
-				{
-					engine = value;
-				}
-			}
-
-			public string DBInstanceNetType
-			{
-				get
-				{
-					return dBInstanceNetType;
-				}
-				set	
-				{
-					dBInstanceNetType = value;
-				}
-			}
-
-			public string ConnectionMode
-			{
-				get
-				{
-					return connectionMode;
-				}
-				set	
-				{
-					connectionMode = value;
-				}
-			}
-
-			public string LockMode
-			{
-				get
-				{
-					return lockMode;
-				}
-				set	
-				{
-					lockMode = value;
-				}
-			}
-
-			public string Category
-			{
-				get
-				{
-					return category;
-				}
-				set	
-				{
-					category = value;
-				}
-			}
-
-			public string DBInstanceStorageType
-			{
-				get
-				{
-					return dBInstanceStorageType;
-				}
-				set	
-				{
-					dBInstanceStorageType = value;
-				}
-			}
-
-			public string DBInstanceClass
-			{
-				get
-				{
-					return dBInstanceClass;
-				}
-				set	
-				{
-					dBInstanceClass = value;
-				}
-			}
-
-			public string InstanceNetworkType
-			{
-				get
-				{
-					return instanceNetworkType;
-				}
-				set	
-				{
-					instanceNetworkType = value;
-				}
-			}
-
-			public string VpcCloudInstanceId
-			{
-				get
-				{
-					return vpcCloudInstanceId;
-				}
-				set	
-				{
-					vpcCloudInstanceId = value;
-				}
-			}
-
-			public string LockReason
-			{
-				get
-				{
-					return lockReason;
-				}
-				set	
-				{
-					lockReason = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
-			public bool? MutriORsignle
-			{
-				get
-				{
-					return mutriORsignle;
-				}
-				set	
-				{
-					mutriORsignle = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string EngineVersion
-			{
-				get
-				{
-					return engineVersion;
-				}
-				set	
-				{
-					engineVersion = value;
-				}
-			}
-
-			public string GuardDBInstanceId
-			{
-				get
-				{
-					return guardDBInstanceId;
-				}
-				set	
-				{
-					guardDBInstanceId = value;
-				}
-			}
-
-			public string TempDBInstanceId
-			{
-				get
-				{
-					return tempDBInstanceId;
-				}
-				set	
-				{
-					tempDBInstanceId = value;
-				}
-			}
-
-			public string MasterInstanceId
-			{
-				get
-				{
-					return masterInstanceId;
-				}
-				set	
-				{
-					masterInstanceId = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "VpcId")]
 			public string VpcId
 			{
 				get
@@ -484,18 +178,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string VSwitchId
-			{
-				get
-				{
-					return vSwitchId;
-				}
-				set	
-				{
-					vSwitchId = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "ReplicateId")]
 			public string ReplicateId
 			{
 				get
@@ -508,6 +191,293 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "TempDBInstanceId")]
+			public string TempDBInstanceId
+			{
+				get
+				{
+					return tempDBInstanceId;
+				}
+				set	
+				{
+					tempDBInstanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceStorageType")]
+			public string DBInstanceStorageType
+			{
+				get
+				{
+					return dBInstanceStorageType;
+				}
+				set	
+				{
+					dBInstanceStorageType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreateTime")]
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PayType")]
+			public string PayType
+			{
+				get
+				{
+					return payType;
+				}
+				set	
+				{
+					payType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MutriORsignle")]
+			public bool? MutriORsignle
+			{
+				get
+				{
+					return mutriORsignle;
+				}
+				set	
+				{
+					mutriORsignle = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ConnectionMode")]
+			public string ConnectionMode
+			{
+				get
+				{
+					return connectionMode;
+				}
+				set	
+				{
+					connectionMode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LockMode")]
+			public string LockMode
+			{
+				get
+				{
+					return lockMode;
+				}
+				set	
+				{
+					lockMode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EngineVersion")]
+			public string EngineVersion
+			{
+				get
+				{
+					return engineVersion;
+				}
+				set	
+				{
+					engineVersion = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "VpcCloudInstanceId")]
+			public string VpcCloudInstanceId
+			{
+				get
+				{
+					return vpcCloudInstanceId;
+				}
+				set	
+				{
+					vpcCloudInstanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InsId")]
+			public int? InsId
+			{
+				get
+				{
+					return insId;
+				}
+				set	
+				{
+					insId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceNetworkType")]
+			public string InstanceNetworkType
+			{
+				get
+				{
+					return instanceNetworkType;
+				}
+				set	
+				{
+					instanceNetworkType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MasterInstanceId")]
+			public string MasterInstanceId
+			{
+				get
+				{
+					return masterInstanceId;
+				}
+				set	
+				{
+					masterInstanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceDescription")]
+			public string DBInstanceDescription
+			{
+				get
+				{
+					return dBInstanceDescription;
+				}
+				set	
+				{
+					dBInstanceDescription = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExpireTime")]
+			public string ExpireTime
+			{
+				get
+				{
+					return expireTime;
+				}
+				set	
+				{
+					expireTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceNetType")]
+			public string DBInstanceNetType
+			{
+				get
+				{
+					return dBInstanceNetType;
+				}
+				set	
+				{
+					dBInstanceNetType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceType")]
+			public string DBInstanceType
+			{
+				get
+				{
+					return dBInstanceType;
+				}
+				set	
+				{
+					dBInstanceType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DestroyTime")]
+			public string DestroyTime
+			{
+				get
+				{
+					return destroyTime;
+				}
+				set	
+				{
+					destroyTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LockReason")]
+			public string LockReason
+			{
+				get
+				{
+					return lockReason;
+				}
+				set	
+				{
+					lockReason = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceStatus")]
+			public string DBInstanceStatus
+			{
+				get
+				{
+					return dBInstanceStatus;
+				}
+				set	
+				{
+					dBInstanceStatus = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "GuardDBInstanceId")]
+			public string GuardDBInstanceId
+			{
+				get
+				{
+					return guardDBInstanceId;
+				}
+				set	
+				{
+					guardDBInstanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RegionId")]
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "VSwitchId")]
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ResourceGroupId")]
 			public string ResourceGroupId
 			{
 				get
@@ -520,6 +490,72 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ZoneId")]
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceId")]
+			public string DBInstanceId
+			{
+				get
+				{
+					return dBInstanceId;
+				}
+				set	
+				{
+					dBInstanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Category")]
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Engine")]
+			public string Engine
+			{
+				get
+				{
+					return engine;
+				}
+				set	
+				{
+					engine = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBInstanceClass")]
+			public string DBInstanceClass
+			{
+				get
+				{
+					return dBInstanceClass;
+				}
+				set	
+				{
+					dBInstanceClass = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ReadOnlyDBInstanceIds")]
 			public List<DescribeDBInstancesForClone_ReadOnlyDBInstanceId> ReadOnlyDBInstanceIds
 			{
 				get
@@ -537,6 +573,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 				private string dBInstanceId;
 
+				[JsonProperty(PropertyName = "DBInstanceId")]
 				public string DBInstanceId
 				{
 					get

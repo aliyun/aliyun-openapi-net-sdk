@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,72 +25,25 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeSlowLogsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string dBInstanceId;
-
-		private string engine;
+		private string endTime;
 
 		private string startTime;
 
-		private string endTime;
-
-		private int? totalRecordCount;
-
-		private int? pageNumber;
+		private string requestId;
 
 		private int? pageRecordCount;
 
+		private int? totalRecordCount;
+
+		private string dBInstanceId;
+
+		private int? pageNumber;
+
+		private string engine;
+
 		private List<DescribeSlowLogs_SQLSlowLog> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-			}
-		}
-
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
 		{
 			get
@@ -103,30 +56,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? TotalRecordCount
+		[JsonProperty(PropertyName = "StartTime")]
+		public string StartTime
 		{
 			get
 			{
-				return totalRecordCount;
+				return startTime;
 			}
 			set	
 			{
-				totalRecordCount = value;
+				startTime = value;
 			}
 		}
 
-		public int? PageNumber
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return pageNumber;
+				return requestId;
 			}
 			set	
 			{
-				pageNumber = value;
+				requestId = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageRecordCount")]
 		public int? PageRecordCount
 		{
 			get
@@ -139,6 +95,59 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalRecordCount")]
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBInstanceId")]
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageNumber")]
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Engine")]
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeSlowLogs_SQLSlowLog> Items
 		{
 			get
@@ -154,37 +163,47 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeSlowLogs_SQLSlowLog
 		{
 
-			private long? slowLogId;
-
-			private string sQLHASH;
-
-			private string sQLIdStr;
-
-			private string dBName;
-
-			private string sQLText;
-
-			private long? mySQLTotalExecutionCounts;
-
-			private long? mySQLTotalExecutionTimes;
-
-			private long? totalLockTimes;
-
-			private long? maxLockTime;
-
-			private long? parseTotalRowCounts;
-
-			private long? parseMaxRowCount;
-
-			private long? returnTotalRowCounts;
+			private long? maxLastRowsAffectedCounts;
 
 			private long? returnMaxRowCount;
 
+			private string sQLText;
+
+			private long? sQLServerMaxCpuTime;
+
 			private string createTime;
+
+			private long? avgLastRowsAffectedCounts;
+
+			private long? minLastRowsAffectedCounts;
+
+			private long? parseTotalRowCounts;
+
+			private long? totalLockTimes;
+
+			private long? mySQLTotalExecutionCounts;
+
+			private long? sQLServerMinCpuTime;
+
+			private string sQLHASH;
+
+			private long? minIOWriteCounts;
+
+			private long? parseMaxRowCount;
+
+			private long? maxLogicalReadCounts;
+
+			private long? mySQLTotalExecutionTimes;
 
 			private long? sQLServerTotalExecutionCounts;
 
-			private long? sQLServerTotalExecutionTimes;
+			private long? returnTotalRowCounts;
+
+			private long? maxLockTime;
+
+			private string dBName;
+
+			private long? minRowsAffectedCounts;
 
 			private long? totalLogicalReadCounts;
 
@@ -192,516 +211,49 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string reportTime;
 
+			private long? maxPhysicalReadCounts;
+
+			private long? sQLServerTotalCpuTime;
+
+			private long? totalIOWriteCounts;
+
+			private long? maxRowsAffectedCounts;
+
+			private long? avgIOWriteCounts;
+
+			private long? minPhysicalReadCounts;
+
+			private long? slowLogId;
+
 			private long? maxExecutionTime;
 
 			private long? avgExecutionTime;
 
-			private long? totalPhysicalReadCounts1;
-
-			private long? avgPhysicalReadCounts;
-
-			private long? maxPhysicalReadCounts;
-
-			private long? minPhysicalReadCounts;
-
-			private long? avgLogicalReadCounts;
-
-			private long? maxLogicalReadCounts;
-
-			private long? minLogicalReadCounts;
-
-			private long? totalIOWriteCounts;
-
-			private long? avgIOWriteCounts;
+			private long? sQLServerAvgExecutionTime;
 
 			private long? maxIOWriteCounts;
 
-			private long? minIOWriteCounts;
-
-			private long? totalRowsAffectedCounts;
-
-			private long? avgRowsAffectedCounts;
-
-			private long? maxRowsAffectedCounts;
-
-			private long? minRowsAffectedCounts;
+			private long? sQLServerAvgCpuTime;
 
 			private long? totalLastRowsAffectedCounts;
 
-			private long? avgLastRowsAffectedCounts;
-
-			private long? maxLastRowsAffectedCounts;
-
-			private long? minLastRowsAffectedCounts;
+			private long? avgLogicalReadCounts;
 
 			private long? sQLServerMinExecutionTime;
 
-			private long? sQLServerAvgExecutionTime;
+			private string sQLIdStr;
 
-			private long? sQLServerTotalCpuTime;
+			private long? sQLServerTotalExecutionTimes;
 
-			private long? sQLServerAvgCpuTime;
+			private long? avgRowsAffectedCounts;
 
-			private long? sQLServerMaxCpuTime;
+			private long? totalRowsAffectedCounts;
 
-			private long? sQLServerMinCpuTime;
+			private long? avgPhysicalReadCounts;
 
-			public long? SlowLogId
-			{
-				get
-				{
-					return slowLogId;
-				}
-				set	
-				{
-					slowLogId = value;
-				}
-			}
+			private long? minLogicalReadCounts;
 
-			public string SQLHASH
-			{
-				get
-				{
-					return sQLHASH;
-				}
-				set	
-				{
-					sQLHASH = value;
-				}
-			}
-
-			public string SQLIdStr
-			{
-				get
-				{
-					return sQLIdStr;
-				}
-				set	
-				{
-					sQLIdStr = value;
-				}
-			}
-
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
-				}
-			}
-
-			public string SQLText
-			{
-				get
-				{
-					return sQLText;
-				}
-				set	
-				{
-					sQLText = value;
-				}
-			}
-
-			public long? MySQLTotalExecutionCounts
-			{
-				get
-				{
-					return mySQLTotalExecutionCounts;
-				}
-				set	
-				{
-					mySQLTotalExecutionCounts = value;
-				}
-			}
-
-			public long? MySQLTotalExecutionTimes
-			{
-				get
-				{
-					return mySQLTotalExecutionTimes;
-				}
-				set	
-				{
-					mySQLTotalExecutionTimes = value;
-				}
-			}
-
-			public long? TotalLockTimes
-			{
-				get
-				{
-					return totalLockTimes;
-				}
-				set	
-				{
-					totalLockTimes = value;
-				}
-			}
-
-			public long? MaxLockTime
-			{
-				get
-				{
-					return maxLockTime;
-				}
-				set	
-				{
-					maxLockTime = value;
-				}
-			}
-
-			public long? ParseTotalRowCounts
-			{
-				get
-				{
-					return parseTotalRowCounts;
-				}
-				set	
-				{
-					parseTotalRowCounts = value;
-				}
-			}
-
-			public long? ParseMaxRowCount
-			{
-				get
-				{
-					return parseMaxRowCount;
-				}
-				set	
-				{
-					parseMaxRowCount = value;
-				}
-			}
-
-			public long? ReturnTotalRowCounts
-			{
-				get
-				{
-					return returnTotalRowCounts;
-				}
-				set	
-				{
-					returnTotalRowCounts = value;
-				}
-			}
-
-			public long? ReturnMaxRowCount
-			{
-				get
-				{
-					return returnMaxRowCount;
-				}
-				set	
-				{
-					returnMaxRowCount = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public long? SQLServerTotalExecutionCounts
-			{
-				get
-				{
-					return sQLServerTotalExecutionCounts;
-				}
-				set	
-				{
-					sQLServerTotalExecutionCounts = value;
-				}
-			}
-
-			public long? SQLServerTotalExecutionTimes
-			{
-				get
-				{
-					return sQLServerTotalExecutionTimes;
-				}
-				set	
-				{
-					sQLServerTotalExecutionTimes = value;
-				}
-			}
-
-			public long? TotalLogicalReadCounts
-			{
-				get
-				{
-					return totalLogicalReadCounts;
-				}
-				set	
-				{
-					totalLogicalReadCounts = value;
-				}
-			}
-
-			public long? TotalPhysicalReadCounts
-			{
-				get
-				{
-					return totalPhysicalReadCounts;
-				}
-				set	
-				{
-					totalPhysicalReadCounts = value;
-				}
-			}
-
-			public string ReportTime
-			{
-				get
-				{
-					return reportTime;
-				}
-				set	
-				{
-					reportTime = value;
-				}
-			}
-
-			public long? MaxExecutionTime
-			{
-				get
-				{
-					return maxExecutionTime;
-				}
-				set	
-				{
-					maxExecutionTime = value;
-				}
-			}
-
-			public long? AvgExecutionTime
-			{
-				get
-				{
-					return avgExecutionTime;
-				}
-				set	
-				{
-					avgExecutionTime = value;
-				}
-			}
-
-			public long? TotalPhysicalReadCounts1
-			{
-				get
-				{
-					return totalPhysicalReadCounts1;
-				}
-				set	
-				{
-					totalPhysicalReadCounts1 = value;
-				}
-			}
-
-			public long? AvgPhysicalReadCounts
-			{
-				get
-				{
-					return avgPhysicalReadCounts;
-				}
-				set	
-				{
-					avgPhysicalReadCounts = value;
-				}
-			}
-
-			public long? MaxPhysicalReadCounts
-			{
-				get
-				{
-					return maxPhysicalReadCounts;
-				}
-				set	
-				{
-					maxPhysicalReadCounts = value;
-				}
-			}
-
-			public long? MinPhysicalReadCounts
-			{
-				get
-				{
-					return minPhysicalReadCounts;
-				}
-				set	
-				{
-					minPhysicalReadCounts = value;
-				}
-			}
-
-			public long? AvgLogicalReadCounts
-			{
-				get
-				{
-					return avgLogicalReadCounts;
-				}
-				set	
-				{
-					avgLogicalReadCounts = value;
-				}
-			}
-
-			public long? MaxLogicalReadCounts
-			{
-				get
-				{
-					return maxLogicalReadCounts;
-				}
-				set	
-				{
-					maxLogicalReadCounts = value;
-				}
-			}
-
-			public long? MinLogicalReadCounts
-			{
-				get
-				{
-					return minLogicalReadCounts;
-				}
-				set	
-				{
-					minLogicalReadCounts = value;
-				}
-			}
-
-			public long? TotalIOWriteCounts
-			{
-				get
-				{
-					return totalIOWriteCounts;
-				}
-				set	
-				{
-					totalIOWriteCounts = value;
-				}
-			}
-
-			public long? AvgIOWriteCounts
-			{
-				get
-				{
-					return avgIOWriteCounts;
-				}
-				set	
-				{
-					avgIOWriteCounts = value;
-				}
-			}
-
-			public long? MaxIOWriteCounts
-			{
-				get
-				{
-					return maxIOWriteCounts;
-				}
-				set	
-				{
-					maxIOWriteCounts = value;
-				}
-			}
-
-			public long? MinIOWriteCounts
-			{
-				get
-				{
-					return minIOWriteCounts;
-				}
-				set	
-				{
-					minIOWriteCounts = value;
-				}
-			}
-
-			public long? TotalRowsAffectedCounts
-			{
-				get
-				{
-					return totalRowsAffectedCounts;
-				}
-				set	
-				{
-					totalRowsAffectedCounts = value;
-				}
-			}
-
-			public long? AvgRowsAffectedCounts
-			{
-				get
-				{
-					return avgRowsAffectedCounts;
-				}
-				set	
-				{
-					avgRowsAffectedCounts = value;
-				}
-			}
-
-			public long? MaxRowsAffectedCounts
-			{
-				get
-				{
-					return maxRowsAffectedCounts;
-				}
-				set	
-				{
-					maxRowsAffectedCounts = value;
-				}
-			}
-
-			public long? MinRowsAffectedCounts
-			{
-				get
-				{
-					return minRowsAffectedCounts;
-				}
-				set	
-				{
-					minRowsAffectedCounts = value;
-				}
-			}
-
-			public long? TotalLastRowsAffectedCounts
-			{
-				get
-				{
-					return totalLastRowsAffectedCounts;
-				}
-				set	
-				{
-					totalLastRowsAffectedCounts = value;
-				}
-			}
-
-			public long? AvgLastRowsAffectedCounts
-			{
-				get
-				{
-					return avgLastRowsAffectedCounts;
-				}
-				set	
-				{
-					avgLastRowsAffectedCounts = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "MaxLastRowsAffectedCounts")]
 			public long? MaxLastRowsAffectedCounts
 			{
 				get
@@ -714,66 +266,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public long? MinLastRowsAffectedCounts
+			[JsonProperty(PropertyName = "ReturnMaxRowCount")]
+			public long? ReturnMaxRowCount
 			{
 				get
 				{
-					return minLastRowsAffectedCounts;
+					return returnMaxRowCount;
 				}
 				set	
 				{
-					minLastRowsAffectedCounts = value;
+					returnMaxRowCount = value;
 				}
 			}
 
-			public long? SQLServerMinExecutionTime
+			[JsonProperty(PropertyName = "SQLText")]
+			public string SQLText
 			{
 				get
 				{
-					return sQLServerMinExecutionTime;
+					return sQLText;
 				}
 				set	
 				{
-					sQLServerMinExecutionTime = value;
+					sQLText = value;
 				}
 			}
 
-			public long? SQLServerAvgExecutionTime
-			{
-				get
-				{
-					return sQLServerAvgExecutionTime;
-				}
-				set	
-				{
-					sQLServerAvgExecutionTime = value;
-				}
-			}
-
-			public long? SQLServerTotalCpuTime
-			{
-				get
-				{
-					return sQLServerTotalCpuTime;
-				}
-				set	
-				{
-					sQLServerTotalCpuTime = value;
-				}
-			}
-
-			public long? SQLServerAvgCpuTime
-			{
-				get
-				{
-					return sQLServerAvgCpuTime;
-				}
-				set	
-				{
-					sQLServerAvgCpuTime = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "SQLServerMaxCpuTime")]
 			public long? SQLServerMaxCpuTime
 			{
 				get
@@ -786,6 +305,85 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "CreateTime")]
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AvgLastRowsAffectedCounts")]
+			public long? AvgLastRowsAffectedCounts
+			{
+				get
+				{
+					return avgLastRowsAffectedCounts;
+				}
+				set	
+				{
+					avgLastRowsAffectedCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MinLastRowsAffectedCounts")]
+			public long? MinLastRowsAffectedCounts
+			{
+				get
+				{
+					return minLastRowsAffectedCounts;
+				}
+				set	
+				{
+					minLastRowsAffectedCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ParseTotalRowCounts")]
+			public long? ParseTotalRowCounts
+			{
+				get
+				{
+					return parseTotalRowCounts;
+				}
+				set	
+				{
+					parseTotalRowCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TotalLockTimes")]
+			public long? TotalLockTimes
+			{
+				get
+				{
+					return totalLockTimes;
+				}
+				set	
+				{
+					totalLockTimes = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MySQLTotalExecutionCounts")]
+			public long? MySQLTotalExecutionCounts
+			{
+				get
+				{
+					return mySQLTotalExecutionCounts;
+				}
+				set	
+				{
+					mySQLTotalExecutionCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SQLServerMinCpuTime")]
 			public long? SQLServerMinCpuTime
 			{
 				get
@@ -795,6 +393,448 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					sQLServerMinCpuTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SQLHASH")]
+			public string SQLHASH
+			{
+				get
+				{
+					return sQLHASH;
+				}
+				set	
+				{
+					sQLHASH = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MinIOWriteCounts")]
+			public long? MinIOWriteCounts
+			{
+				get
+				{
+					return minIOWriteCounts;
+				}
+				set	
+				{
+					minIOWriteCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ParseMaxRowCount")]
+			public long? ParseMaxRowCount
+			{
+				get
+				{
+					return parseMaxRowCount;
+				}
+				set	
+				{
+					parseMaxRowCount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaxLogicalReadCounts")]
+			public long? MaxLogicalReadCounts
+			{
+				get
+				{
+					return maxLogicalReadCounts;
+				}
+				set	
+				{
+					maxLogicalReadCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MySQLTotalExecutionTimes")]
+			public long? MySQLTotalExecutionTimes
+			{
+				get
+				{
+					return mySQLTotalExecutionTimes;
+				}
+				set	
+				{
+					mySQLTotalExecutionTimes = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SQLServerTotalExecutionCounts")]
+			public long? SQLServerTotalExecutionCounts
+			{
+				get
+				{
+					return sQLServerTotalExecutionCounts;
+				}
+				set	
+				{
+					sQLServerTotalExecutionCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ReturnTotalRowCounts")]
+			public long? ReturnTotalRowCounts
+			{
+				get
+				{
+					return returnTotalRowCounts;
+				}
+				set	
+				{
+					returnTotalRowCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaxLockTime")]
+			public long? MaxLockTime
+			{
+				get
+				{
+					return maxLockTime;
+				}
+				set	
+				{
+					maxLockTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBName")]
+			public string DBName
+			{
+				get
+				{
+					return dBName;
+				}
+				set	
+				{
+					dBName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MinRowsAffectedCounts")]
+			public long? MinRowsAffectedCounts
+			{
+				get
+				{
+					return minRowsAffectedCounts;
+				}
+				set	
+				{
+					minRowsAffectedCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TotalLogicalReadCounts")]
+			public long? TotalLogicalReadCounts
+			{
+				get
+				{
+					return totalLogicalReadCounts;
+				}
+				set	
+				{
+					totalLogicalReadCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TotalPhysicalReadCounts")]
+			public long? TotalPhysicalReadCounts
+			{
+				get
+				{
+					return totalPhysicalReadCounts;
+				}
+				set	
+				{
+					totalPhysicalReadCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ReportTime")]
+			public string ReportTime
+			{
+				get
+				{
+					return reportTime;
+				}
+				set	
+				{
+					reportTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaxPhysicalReadCounts")]
+			public long? MaxPhysicalReadCounts
+			{
+				get
+				{
+					return maxPhysicalReadCounts;
+				}
+				set	
+				{
+					maxPhysicalReadCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SQLServerTotalCpuTime")]
+			public long? SQLServerTotalCpuTime
+			{
+				get
+				{
+					return sQLServerTotalCpuTime;
+				}
+				set	
+				{
+					sQLServerTotalCpuTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TotalIOWriteCounts")]
+			public long? TotalIOWriteCounts
+			{
+				get
+				{
+					return totalIOWriteCounts;
+				}
+				set	
+				{
+					totalIOWriteCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaxRowsAffectedCounts")]
+			public long? MaxRowsAffectedCounts
+			{
+				get
+				{
+					return maxRowsAffectedCounts;
+				}
+				set	
+				{
+					maxRowsAffectedCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AvgIOWriteCounts")]
+			public long? AvgIOWriteCounts
+			{
+				get
+				{
+					return avgIOWriteCounts;
+				}
+				set	
+				{
+					avgIOWriteCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MinPhysicalReadCounts")]
+			public long? MinPhysicalReadCounts
+			{
+				get
+				{
+					return minPhysicalReadCounts;
+				}
+				set	
+				{
+					minPhysicalReadCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SlowLogId")]
+			public long? SlowLogId
+			{
+				get
+				{
+					return slowLogId;
+				}
+				set	
+				{
+					slowLogId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaxExecutionTime")]
+			public long? MaxExecutionTime
+			{
+				get
+				{
+					return maxExecutionTime;
+				}
+				set	
+				{
+					maxExecutionTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AvgExecutionTime")]
+			public long? AvgExecutionTime
+			{
+				get
+				{
+					return avgExecutionTime;
+				}
+				set	
+				{
+					avgExecutionTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SQLServerAvgExecutionTime")]
+			public long? SQLServerAvgExecutionTime
+			{
+				get
+				{
+					return sQLServerAvgExecutionTime;
+				}
+				set	
+				{
+					sQLServerAvgExecutionTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaxIOWriteCounts")]
+			public long? MaxIOWriteCounts
+			{
+				get
+				{
+					return maxIOWriteCounts;
+				}
+				set	
+				{
+					maxIOWriteCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SQLServerAvgCpuTime")]
+			public long? SQLServerAvgCpuTime
+			{
+				get
+				{
+					return sQLServerAvgCpuTime;
+				}
+				set	
+				{
+					sQLServerAvgCpuTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TotalLastRowsAffectedCounts")]
+			public long? TotalLastRowsAffectedCounts
+			{
+				get
+				{
+					return totalLastRowsAffectedCounts;
+				}
+				set	
+				{
+					totalLastRowsAffectedCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AvgLogicalReadCounts")]
+			public long? AvgLogicalReadCounts
+			{
+				get
+				{
+					return avgLogicalReadCounts;
+				}
+				set	
+				{
+					avgLogicalReadCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SQLServerMinExecutionTime")]
+			public long? SQLServerMinExecutionTime
+			{
+				get
+				{
+					return sQLServerMinExecutionTime;
+				}
+				set	
+				{
+					sQLServerMinExecutionTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SQLIdStr")]
+			public string SQLIdStr
+			{
+				get
+				{
+					return sQLIdStr;
+				}
+				set	
+				{
+					sQLIdStr = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SQLServerTotalExecutionTimes")]
+			public long? SQLServerTotalExecutionTimes
+			{
+				get
+				{
+					return sQLServerTotalExecutionTimes;
+				}
+				set	
+				{
+					sQLServerTotalExecutionTimes = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AvgRowsAffectedCounts")]
+			public long? AvgRowsAffectedCounts
+			{
+				get
+				{
+					return avgRowsAffectedCounts;
+				}
+				set	
+				{
+					avgRowsAffectedCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TotalRowsAffectedCounts")]
+			public long? TotalRowsAffectedCounts
+			{
+				get
+				{
+					return totalRowsAffectedCounts;
+				}
+				set	
+				{
+					totalRowsAffectedCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AvgPhysicalReadCounts")]
+			public long? AvgPhysicalReadCounts
+			{
+				get
+				{
+					return avgPhysicalReadCounts;
+				}
+				set	
+				{
+					avgPhysicalReadCounts = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MinLogicalReadCounts")]
+			public long? MinLogicalReadCounts
+			{
+				get
+				{
+					return minLogicalReadCounts;
+				}
+				set	
+				{
+					minLogicalReadCounts = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,38 +25,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDBInstanceNetInfoResponse : AcsResponse
 	{
 
+		private string securityIPMode;
+
 		private string requestId;
 
 		private string instanceNetworkType;
 
-		private string securityIPMode;
-
 		private List<DescribeDBInstanceNetInfo_DBInstanceNetInfo> dBInstanceNetInfos;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string InstanceNetworkType
-		{
-			get
-			{
-				return instanceNetworkType;
-			}
-			set	
-			{
-				instanceNetworkType = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "SecurityIPMode")]
 		public string SecurityIPMode
 		{
 			get
@@ -69,6 +46,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "InstanceNetworkType")]
+		public string InstanceNetworkType
+		{
+			get
+			{
+				return instanceNetworkType;
+			}
+			set	
+			{
+				instanceNetworkType = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBInstanceNetInfos")]
 		public List<DescribeDBInstanceNetInfo_DBInstanceNetInfo> DBInstanceNetInfos
 		{
 			get
@@ -84,116 +88,35 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeDBInstanceNetInfo_DBInstanceNetInfo
 		{
 
-			private string upgradeable;
+			private string vSwitchId;
 
-			private string expiredTime;
+			private string connectionStringType;
 
 			private string connectionString;
 
-			private string iPAddress;
+			private string expiredTime;
+
+			private string upgradeable;
+
+			private string maxDelayTime;
 
 			private string iPType;
 
 			private string port;
 
+			private string babelfishPort;
+
 			private string vPCId;
 
-			private string vSwitchId;
-
-			private string connectionStringType;
-
-			private string maxDelayTime;
-
 			private string distributionType;
+
+			private string iPAddress;
 
 			private List<DescribeDBInstanceNetInfo_SecurityIPGroup> securityIPGroups;
 
 			private List<DescribeDBInstanceNetInfo_DBInstanceWeight> dBInstanceWeights;
 
-			public string Upgradeable
-			{
-				get
-				{
-					return upgradeable;
-				}
-				set	
-				{
-					upgradeable = value;
-				}
-			}
-
-			public string ExpiredTime
-			{
-				get
-				{
-					return expiredTime;
-				}
-				set	
-				{
-					expiredTime = value;
-				}
-			}
-
-			public string ConnectionString
-			{
-				get
-				{
-					return connectionString;
-				}
-				set	
-				{
-					connectionString = value;
-				}
-			}
-
-			public string IPAddress
-			{
-				get
-				{
-					return iPAddress;
-				}
-				set	
-				{
-					iPAddress = value;
-				}
-			}
-
-			public string IPType
-			{
-				get
-				{
-					return iPType;
-				}
-				set	
-				{
-					iPType = value;
-				}
-			}
-
-			public string Port
-			{
-				get
-				{
-					return port;
-				}
-				set	
-				{
-					port = value;
-				}
-			}
-
-			public string VPCId
-			{
-				get
-				{
-					return vPCId;
-				}
-				set	
-				{
-					vPCId = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "VSwitchId")]
 			public string VSwitchId
 			{
 				get
@@ -206,6 +129,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ConnectionStringType")]
 			public string ConnectionStringType
 			{
 				get
@@ -218,6 +142,46 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ConnectionString")]
+			public string ConnectionString
+			{
+				get
+				{
+					return connectionString;
+				}
+				set	
+				{
+					connectionString = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExpiredTime")]
+			public string ExpiredTime
+			{
+				get
+				{
+					return expiredTime;
+				}
+				set	
+				{
+					expiredTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Upgradeable")]
+			public string Upgradeable
+			{
+				get
+				{
+					return upgradeable;
+				}
+				set	
+				{
+					upgradeable = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaxDelayTime")]
 			public string MaxDelayTime
 			{
 				get
@@ -230,6 +194,59 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "IPType")]
+			public string IPType
+			{
+				get
+				{
+					return iPType;
+				}
+				set	
+				{
+					iPType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Port")]
+			public string Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BabelfishPort")]
+			public string BabelfishPort
+			{
+				get
+				{
+					return babelfishPort;
+				}
+				set	
+				{
+					babelfishPort = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "VPCId")]
+			public string VPCId
+			{
+				get
+				{
+					return vPCId;
+				}
+				set	
+				{
+					vPCId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DistributionType")]
 			public string DistributionType
 			{
 				get
@@ -242,6 +259,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "IPAddress")]
+			public string IPAddress
+			{
+				get
+				{
+					return iPAddress;
+				}
+				set	
+				{
+					iPAddress = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SecurityIPGroups")]
 			public List<DescribeDBInstanceNetInfo_SecurityIPGroup> SecurityIPGroups
 			{
 				get
@@ -254,6 +285,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DBInstanceWeights")]
 			public List<DescribeDBInstanceNetInfo_DBInstanceWeight> DBInstanceWeights
 			{
 				get
@@ -269,22 +301,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			public class DescribeDBInstanceNetInfo_SecurityIPGroup
 			{
 
-				private string securityIPGroupName;
-
 				private string securityIPs;
 
-				public string SecurityIPGroupName
-				{
-					get
-					{
-						return securityIPGroupName;
-					}
-					set	
-					{
-						securityIPGroupName = value;
-					}
-				}
+				private string securityIPGroupName;
 
+				[JsonProperty(PropertyName = "SecurityIPs")]
 				public string SecurityIPs
 				{
 					get
@@ -296,45 +317,35 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 						securityIPs = value;
 					}
 				}
+
+				[JsonProperty(PropertyName = "SecurityIPGroupName")]
+				public string SecurityIPGroupName
+				{
+					get
+					{
+						return securityIPGroupName;
+					}
+					set	
+					{
+						securityIPGroupName = value;
+					}
+				}
 			}
 
 			public class DescribeDBInstanceNetInfo_DBInstanceWeight
 			{
 
-				private string dBInstanceId;
-
-				private string dBInstanceType;
-
 				private string availability;
 
 				private string weight;
 
+				private string dBInstanceId;
+
 				private string role;
 
-				public string DBInstanceId
-				{
-					get
-					{
-						return dBInstanceId;
-					}
-					set	
-					{
-						dBInstanceId = value;
-					}
-				}
+				private string dBInstanceType;
 
-				public string DBInstanceType
-				{
-					get
-					{
-						return dBInstanceType;
-					}
-					set	
-					{
-						dBInstanceType = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "Availability")]
 				public string Availability
 				{
 					get
@@ -347,6 +358,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "Weight")]
 				public string Weight
 				{
 					get
@@ -359,6 +371,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "DBInstanceId")]
+				public string DBInstanceId
+				{
+					get
+					{
+						return dBInstanceId;
+					}
+					set	
+					{
+						dBInstanceId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Role")]
 				public string Role
 				{
 					get
@@ -368,6 +394,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						role = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "DBInstanceType")]
+				public string DBInstanceType
+				{
+					get
+					{
+						return dBInstanceType;
+					}
+					set	
+					{
+						dBInstanceType = value;
 					}
 				}
 			}

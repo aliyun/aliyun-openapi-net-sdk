@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.adb.Model.V20190315
 	public class DescribeDBClustersResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? pageNumber;
-
 		private int? totalCount;
 
 		private int? pageSize;
 
+		private string requestId;
+
+		private int? pageNumber;
+
 		private List<DescribeDBClusters_DBCluster> items;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
 
 		public int? TotalCount
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
 		public List<DescribeDBClusters_DBCluster> Items
 		{
 			get
@@ -98,145 +98,97 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		public class DescribeDBClusters_DBCluster
 		{
 
-			private string dBClusterId;
+			private string dtsJobId;
 
-			private string dBClusterType;
-
-			private string dBClusterDescription;
-
-			private string payType;
-
-			private string regionId;
-
-			private string expireTime;
+			private long? dBNodeCount;
 
 			private string expired;
 
-			private string dBClusterStatus;
+			private string createTime;
 
-			private string dBVersion;
+			private string payType;
+
+			private string diskType;
+
+			private string mode;
+
+			private string port;
 
 			private string lockMode;
 
-			private string lockReason;
+			private string storageResource;
 
-			private string createTime;
+			private string executorCount;
+
+			private string dBClusterId;
+
+			private string connectionString;
+
+			private string rdsInstanceId;
+
+			private string dBClusterType;
+
+			private string commodityCode;
+
+			private string expireTime;
 
 			private long? dBNodeStorage;
 
 			private string dBNodeClass;
 
-			private long? dBNodeCount;
-
-			private string commodityCode;
-
-			private string category;
-
-			private string rdsInstanceId;
-
-			private string dtsJobId;
-
-			private string executorCount;
-
-			private string diskType;
-
-			private string vPCCloudInstanceId;
-
-			private string engine;
-
-			private string dBClusterNetworkType;
+			private string lockReason;
 
 			private string vPCId;
 
-			private string vSwitchId;
-
-			private string zoneId;
-
-			private string connectionString;
-
-			private string port;
+			private string regionId;
 
 			private string computeResource;
 
-			private string storageResource;
+			private int? elasticIOResource;
 
-			private string mode;
+			private string vSwitchId;
+
+			private string dBVersion;
+
+			private string vPCCloudInstanceId;
+
+			private string dBClusterStatus;
 
 			private string resourceGroupId;
 
-			private int? elasticIOResource;
+			private string dBClusterNetworkType;
+
+			private string dBClusterDescription;
+
+			private string zoneId;
+
+			private string category;
+
+			private string engine;
 
 			private List<DescribeDBClusters_Tag> tags;
 
-			public string DBClusterId
+			public string DtsJobId
 			{
 				get
 				{
-					return dBClusterId;
+					return dtsJobId;
 				}
 				set	
 				{
-					dBClusterId = value;
+					dtsJobId = value;
 				}
 			}
 
-			public string DBClusterType
+			public long? DBNodeCount
 			{
 				get
 				{
-					return dBClusterType;
+					return dBNodeCount;
 				}
 				set	
 				{
-					dBClusterType = value;
-				}
-			}
-
-			public string DBClusterDescription
-			{
-				get
-				{
-					return dBClusterDescription;
-				}
-				set	
-				{
-					dBClusterDescription = value;
-				}
-			}
-
-			public string PayType
-			{
-				get
-				{
-					return payType;
-				}
-				set	
-				{
-					payType = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string ExpireTime
-			{
-				get
-				{
-					return expireTime;
-				}
-				set	
-				{
-					expireTime = value;
+					dBNodeCount = value;
 				}
 			}
 
@@ -252,27 +204,63 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public string DBClusterStatus
+			public string CreateTime
 			{
 				get
 				{
-					return dBClusterStatus;
+					return createTime;
 				}
 				set	
 				{
-					dBClusterStatus = value;
+					createTime = value;
 				}
 			}
 
-			public string DBVersion
+			public string PayType
 			{
 				get
 				{
-					return dBVersion;
+					return payType;
 				}
 				set	
 				{
-					dBVersion = value;
+					payType = value;
+				}
+			}
+
+			public string DiskType
+			{
+				get
+				{
+					return diskType;
+				}
+				set	
+				{
+					diskType = value;
+				}
+			}
+
+			public string Mode
+			{
+				get
+				{
+					return mode;
+				}
+				set	
+				{
+					mode = value;
+				}
+			}
+
+			public string Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
 				}
 			}
 
@@ -288,27 +276,99 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public string LockReason
+			public string StorageResource
 			{
 				get
 				{
-					return lockReason;
+					return storageResource;
 				}
 				set	
 				{
-					lockReason = value;
+					storageResource = value;
 				}
 			}
 
-			public string CreateTime
+			public string ExecutorCount
 			{
 				get
 				{
-					return createTime;
+					return executorCount;
 				}
 				set	
 				{
-					createTime = value;
+					executorCount = value;
+				}
+			}
+
+			public string DBClusterId
+			{
+				get
+				{
+					return dBClusterId;
+				}
+				set	
+				{
+					dBClusterId = value;
+				}
+			}
+
+			public string ConnectionString
+			{
+				get
+				{
+					return connectionString;
+				}
+				set	
+				{
+					connectionString = value;
+				}
+			}
+
+			public string RdsInstanceId
+			{
+				get
+				{
+					return rdsInstanceId;
+				}
+				set	
+				{
+					rdsInstanceId = value;
+				}
+			}
+
+			public string DBClusterType
+			{
+				get
+				{
+					return dBClusterType;
+				}
+				set	
+				{
+					dBClusterType = value;
+				}
+			}
+
+			public string CommodityCode
+			{
+				get
+				{
+					return commodityCode;
+				}
+				set	
+				{
+					commodityCode = value;
+				}
+			}
+
+			public string ExpireTime
+			{
+				get
+				{
+					return expireTime;
+				}
+				set	
+				{
+					expireTime = value;
 				}
 			}
 
@@ -336,123 +396,15 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public long? DBNodeCount
+			public string LockReason
 			{
 				get
 				{
-					return dBNodeCount;
+					return lockReason;
 				}
 				set	
 				{
-					dBNodeCount = value;
-				}
-			}
-
-			public string CommodityCode
-			{
-				get
-				{
-					return commodityCode;
-				}
-				set	
-				{
-					commodityCode = value;
-				}
-			}
-
-			public string Category
-			{
-				get
-				{
-					return category;
-				}
-				set	
-				{
-					category = value;
-				}
-			}
-
-			public string RdsInstanceId
-			{
-				get
-				{
-					return rdsInstanceId;
-				}
-				set	
-				{
-					rdsInstanceId = value;
-				}
-			}
-
-			public string DtsJobId
-			{
-				get
-				{
-					return dtsJobId;
-				}
-				set	
-				{
-					dtsJobId = value;
-				}
-			}
-
-			public string ExecutorCount
-			{
-				get
-				{
-					return executorCount;
-				}
-				set	
-				{
-					executorCount = value;
-				}
-			}
-
-			public string DiskType
-			{
-				get
-				{
-					return diskType;
-				}
-				set	
-				{
-					diskType = value;
-				}
-			}
-
-			public string VPCCloudInstanceId
-			{
-				get
-				{
-					return vPCCloudInstanceId;
-				}
-				set	
-				{
-					vPCCloudInstanceId = value;
-				}
-			}
-
-			public string Engine
-			{
-				get
-				{
-					return engine;
-				}
-				set	
-				{
-					engine = value;
-				}
-			}
-
-			public string DBClusterNetworkType
-			{
-				get
-				{
-					return dBClusterNetworkType;
-				}
-				set	
-				{
-					dBClusterNetworkType = value;
+					lockReason = value;
 				}
 			}
 
@@ -468,51 +420,15 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public string VSwitchId
+			public string RegionId
 			{
 				get
 				{
-					return vSwitchId;
+					return regionId;
 				}
 				set	
 				{
-					vSwitchId = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
-			public string ConnectionString
-			{
-				get
-				{
-					return connectionString;
-				}
-				set	
-				{
-					connectionString = value;
-				}
-			}
-
-			public string Port
-			{
-				get
-				{
-					return port;
-				}
-				set	
-				{
-					port = value;
+					regionId = value;
 				}
 			}
 
@@ -528,27 +444,63 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public string StorageResource
+			public int? ElasticIOResource
 			{
 				get
 				{
-					return storageResource;
+					return elasticIOResource;
 				}
 				set	
 				{
-					storageResource = value;
+					elasticIOResource = value;
 				}
 			}
 
-			public string Mode
+			public string VSwitchId
 			{
 				get
 				{
-					return mode;
+					return vSwitchId;
 				}
 				set	
 				{
-					mode = value;
+					vSwitchId = value;
+				}
+			}
+
+			public string DBVersion
+			{
+				get
+				{
+					return dBVersion;
+				}
+				set	
+				{
+					dBVersion = value;
+				}
+			}
+
+			public string VPCCloudInstanceId
+			{
+				get
+				{
+					return vPCCloudInstanceId;
+				}
+				set	
+				{
+					vPCCloudInstanceId = value;
+				}
+			}
+
+			public string DBClusterStatus
+			{
+				get
+				{
+					return dBClusterStatus;
+				}
+				set	
+				{
+					dBClusterStatus = value;
 				}
 			}
 
@@ -564,15 +516,63 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public int? ElasticIOResource
+			public string DBClusterNetworkType
 			{
 				get
 				{
-					return elasticIOResource;
+					return dBClusterNetworkType;
 				}
 				set	
 				{
-					elasticIOResource = value;
+					dBClusterNetworkType = value;
+				}
+			}
+
+			public string DBClusterDescription
+			{
+				get
+				{
+					return dBClusterDescription;
+				}
+				set	
+				{
+					dBClusterDescription = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			public string Engine
+			{
+				get
+				{
+					return engine;
+				}
+				set	
+				{
+					engine = value;
 				}
 			}
 

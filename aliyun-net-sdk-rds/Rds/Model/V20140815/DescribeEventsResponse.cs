@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,52 +25,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeEventsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageNumber;
 
-		private int? totalRecordCount;
+		private string requestId;
 
 		private int? pageSize;
 
-		private int? pageNumber;
+		private int? totalRecordCount;
 
 		private List<DescribeEvents_EventItemsItem> eventItems;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -83,6 +48,46 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageSize")]
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalRecordCount")]
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "EventItems")]
 		public List<DescribeEvents_EventItemsItem> EventItems
 		{
 			get
@@ -98,54 +103,31 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeEvents_EventItemsItem
 		{
 
-			private int? eventId;
-
-			private string eventType;
-
 			private string eventName;
 
 			private string eventTime;
 
-			private string resourceType;
-
-			private string resourceName;
-
-			private string regionId;
-
 			private string eventUserType;
-
-			private string eventReason;
-
-			private string eventPayload;
 
 			private string eventRecordTime;
 
 			private long? callerUid;
 
-			public int? EventId
-			{
-				get
-				{
-					return eventId;
-				}
-				set	
-				{
-					eventId = value;
-				}
-			}
+			private string regionId;
 
-			public string EventType
-			{
-				get
-				{
-					return eventType;
-				}
-				set	
-				{
-					eventType = value;
-				}
-			}
+			private int? eventId;
 
+			private string eventType;
+
+			private string resourceType;
+
+			private string eventPayload;
+
+			private string eventReason;
+
+			private string resourceName;
+
+			[JsonProperty(PropertyName = "EventName")]
 			public string EventName
 			{
 				get
@@ -158,6 +140,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "EventTime")]
 			public string EventTime
 			{
 				get
@@ -170,42 +153,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string ResourceType
-			{
-				get
-				{
-					return resourceType;
-				}
-				set	
-				{
-					resourceType = value;
-				}
-			}
-
-			public string ResourceName
-			{
-				get
-				{
-					return resourceName;
-				}
-				set	
-				{
-					resourceName = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "EventUserType")]
 			public string EventUserType
 			{
 				get
@@ -218,30 +166,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string EventReason
-			{
-				get
-				{
-					return eventReason;
-				}
-				set	
-				{
-					eventReason = value;
-				}
-			}
-
-			public string EventPayload
-			{
-				get
-				{
-					return eventPayload;
-				}
-				set	
-				{
-					eventPayload = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "EventRecordTime")]
 			public string EventRecordTime
 			{
 				get
@@ -254,6 +179,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "CallerUid")]
 			public long? CallerUid
 			{
 				get
@@ -263,6 +189,97 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					callerUid = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RegionId")]
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EventId")]
+			public int? EventId
+			{
+				get
+				{
+					return eventId;
+				}
+				set	
+				{
+					eventId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EventType")]
+			public string EventType
+			{
+				get
+				{
+					return eventType;
+				}
+				set	
+				{
+					eventType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ResourceType")]
+			public string ResourceType
+			{
+				get
+				{
+					return resourceType;
+				}
+				set	
+				{
+					resourceType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EventPayload")]
+			public string EventPayload
+			{
+				get
+				{
+					return eventPayload;
+				}
+				set	
+				{
+					eventPayload = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EventReason")]
+			public string EventReason
+			{
+				get
+				{
+					return eventReason;
+				}
+				set	
+				{
+					eventReason = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ResourceName")]
+			public string ResourceName
+			{
+				get
+				{
+					return resourceName;
+				}
+				set	
+				{
+					resourceName = value;
 				}
 			}
 		}

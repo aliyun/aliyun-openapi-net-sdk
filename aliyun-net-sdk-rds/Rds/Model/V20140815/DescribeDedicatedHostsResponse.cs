@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDedicatedHostsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dedicatedHostGroupId;
+
+		private string requestId;
 
 		private List<DescribeDedicatedHosts_DedicatedHostsItem> dedicatedHosts;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "DedicatedHostGroupId")]
 		public string DedicatedHostGroupId
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DedicatedHosts")]
 		public List<DescribeDedicatedHosts_DedicatedHostsItem> DedicatedHosts
 		{
 			get
@@ -70,242 +73,63 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeDedicatedHosts_DedicatedHostsItem
 		{
 
-			private string hostName;
-
-			private string hostStatus;
-
-			private string instanceNumber;
-
-			private string cPUAllocationRatio;
-
-			private string memAllocationRatio;
-
-			private string diskAllocationRatio;
-
-			private string vPCId;
-
-			private string vSwitchId;
-
-			private string zoneId;
-
-			private string iPAddress;
-
-			private string hostClass;
-
-			private string createdTime;
-
-			private string dedicatedHostId;
-
-			private string allocationStatus;
-
-			private string endTime;
-
 			private string hostType;
-
-			private string bastionInstanceId;
-
-			private string openPermission;
-
-			private string accountName;
-
-			private string hostCPU;
-
-			private string hostMem;
 
 			private string hostStorage;
 
-			private string cpuUsed;
-
 			private string memoryUsed;
-
-			private string storageUsed;
-
-			private string imageCategory;
 
 			private string dedicatedHostGroupId;
 
+			private string allocationStatus;
+
+			private string storageUsed;
+
+			private string dedicatedHostId;
+
+			private string memAllocationRatio;
+
+			private string createdTime;
+
+			private string iPAddress;
+
+			private string hostStatus;
+
+			private string hostName;
+
+			private string hostCPU;
+
+			private string instanceNumber;
+
+			private string openPermission;
+
+			private string cpuUsed;
+
+			private string vPCId;
+
+			private string hostClass;
+
+			private string endTime;
+
+			private string vSwitchId;
+
+			private string cPUAllocationRatio;
+
+			private string zoneId;
+
+			private string imageCategory;
+
 			private string engine;
 
-			public string HostName
-			{
-				get
-				{
-					return hostName;
-				}
-				set	
-				{
-					hostName = value;
-				}
-			}
+			private string diskAllocationRatio;
 
-			public string HostStatus
-			{
-				get
-				{
-					return hostStatus;
-				}
-				set	
-				{
-					hostStatus = value;
-				}
-			}
+			private string hostMem;
 
-			public string InstanceNumber
-			{
-				get
-				{
-					return instanceNumber;
-				}
-				set	
-				{
-					instanceNumber = value;
-				}
-			}
+			private string bastionInstanceId;
 
-			public string CPUAllocationRatio
-			{
-				get
-				{
-					return cPUAllocationRatio;
-				}
-				set	
-				{
-					cPUAllocationRatio = value;
-				}
-			}
+			private string accountName;
 
-			public string MemAllocationRatio
-			{
-				get
-				{
-					return memAllocationRatio;
-				}
-				set	
-				{
-					memAllocationRatio = value;
-				}
-			}
-
-			public string DiskAllocationRatio
-			{
-				get
-				{
-					return diskAllocationRatio;
-				}
-				set	
-				{
-					diskAllocationRatio = value;
-				}
-			}
-
-			public string VPCId
-			{
-				get
-				{
-					return vPCId;
-				}
-				set	
-				{
-					vPCId = value;
-				}
-			}
-
-			public string VSwitchId
-			{
-				get
-				{
-					return vSwitchId;
-				}
-				set	
-				{
-					vSwitchId = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
-			public string IPAddress
-			{
-				get
-				{
-					return iPAddress;
-				}
-				set	
-				{
-					iPAddress = value;
-				}
-			}
-
-			public string HostClass
-			{
-				get
-				{
-					return hostClass;
-				}
-				set	
-				{
-					hostClass = value;
-				}
-			}
-
-			public string CreatedTime
-			{
-				get
-				{
-					return createdTime;
-				}
-				set	
-				{
-					createdTime = value;
-				}
-			}
-
-			public string DedicatedHostId
-			{
-				get
-				{
-					return dedicatedHostId;
-				}
-				set	
-				{
-					dedicatedHostId = value;
-				}
-			}
-
-			public string AllocationStatus
-			{
-				get
-				{
-					return allocationStatus;
-				}
-				set	
-				{
-					allocationStatus = value;
-				}
-			}
-
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "HostType")]
 			public string HostType
 			{
 				get
@@ -318,66 +142,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string BastionInstanceId
-			{
-				get
-				{
-					return bastionInstanceId;
-				}
-				set	
-				{
-					bastionInstanceId = value;
-				}
-			}
-
-			public string OpenPermission
-			{
-				get
-				{
-					return openPermission;
-				}
-				set	
-				{
-					openPermission = value;
-				}
-			}
-
-			public string AccountName
-			{
-				get
-				{
-					return accountName;
-				}
-				set	
-				{
-					accountName = value;
-				}
-			}
-
-			public string HostCPU
-			{
-				get
-				{
-					return hostCPU;
-				}
-				set	
-				{
-					hostCPU = value;
-				}
-			}
-
-			public string HostMem
-			{
-				get
-				{
-					return hostMem;
-				}
-				set	
-				{
-					hostMem = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "HostStorage")]
 			public string HostStorage
 			{
 				get
@@ -390,18 +155,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string CpuUsed
-			{
-				get
-				{
-					return cpuUsed;
-				}
-				set	
-				{
-					cpuUsed = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "MemoryUsed")]
 			public string MemoryUsed
 			{
 				get
@@ -414,30 +168,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string StorageUsed
-			{
-				get
-				{
-					return storageUsed;
-				}
-				set	
-				{
-					storageUsed = value;
-				}
-			}
-
-			public string ImageCategory
-			{
-				get
-				{
-					return imageCategory;
-				}
-				set	
-				{
-					imageCategory = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "DedicatedHostGroupId")]
 			public string DedicatedHostGroupId
 			{
 				get
@@ -450,6 +181,254 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "AllocationStatus")]
+			public string AllocationStatus
+			{
+				get
+				{
+					return allocationStatus;
+				}
+				set	
+				{
+					allocationStatus = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StorageUsed")]
+			public string StorageUsed
+			{
+				get
+				{
+					return storageUsed;
+				}
+				set	
+				{
+					storageUsed = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DedicatedHostId")]
+			public string DedicatedHostId
+			{
+				get
+				{
+					return dedicatedHostId;
+				}
+				set	
+				{
+					dedicatedHostId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MemAllocationRatio")]
+			public string MemAllocationRatio
+			{
+				get
+				{
+					return memAllocationRatio;
+				}
+				set	
+				{
+					memAllocationRatio = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreatedTime")]
+			public string CreatedTime
+			{
+				get
+				{
+					return createdTime;
+				}
+				set	
+				{
+					createdTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IPAddress")]
+			public string IPAddress
+			{
+				get
+				{
+					return iPAddress;
+				}
+				set	
+				{
+					iPAddress = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "HostStatus")]
+			public string HostStatus
+			{
+				get
+				{
+					return hostStatus;
+				}
+				set	
+				{
+					hostStatus = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "HostName")]
+			public string HostName
+			{
+				get
+				{
+					return hostName;
+				}
+				set	
+				{
+					hostName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "HostCPU")]
+			public string HostCPU
+			{
+				get
+				{
+					return hostCPU;
+				}
+				set	
+				{
+					hostCPU = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceNumber")]
+			public string InstanceNumber
+			{
+				get
+				{
+					return instanceNumber;
+				}
+				set	
+				{
+					instanceNumber = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OpenPermission")]
+			public string OpenPermission
+			{
+				get
+				{
+					return openPermission;
+				}
+				set	
+				{
+					openPermission = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CpuUsed")]
+			public string CpuUsed
+			{
+				get
+				{
+					return cpuUsed;
+				}
+				set	
+				{
+					cpuUsed = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "VPCId")]
+			public string VPCId
+			{
+				get
+				{
+					return vPCId;
+				}
+				set	
+				{
+					vPCId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "HostClass")]
+			public string HostClass
+			{
+				get
+				{
+					return hostClass;
+				}
+				set	
+				{
+					hostClass = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EndTime")]
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "VSwitchId")]
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CPUAllocationRatio")]
+			public string CPUAllocationRatio
+			{
+				get
+				{
+					return cPUAllocationRatio;
+				}
+				set	
+				{
+					cPUAllocationRatio = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ZoneId")]
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ImageCategory")]
+			public string ImageCategory
+			{
+				get
+				{
+					return imageCategory;
+				}
+				set	
+				{
+					imageCategory = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Engine")]
 			public string Engine
 			{
 				get
@@ -459,6 +438,58 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					engine = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DiskAllocationRatio")]
+			public string DiskAllocationRatio
+			{
+				get
+				{
+					return diskAllocationRatio;
+				}
+				set	
+				{
+					diskAllocationRatio = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "HostMem")]
+			public string HostMem
+			{
+				get
+				{
+					return hostMem;
+				}
+				set	
+				{
+					hostMem = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BastionInstanceId")]
+			public string BastionInstanceId
+			{
+				get
+				{
+					return bastionInstanceId;
+				}
+				set	
+				{
+					bastionInstanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AccountName")]
+			public string AccountName
+			{
+				get
+				{
+					return accountName;
+				}
+				set	
+				{
+					accountName = value;
 				}
 			}
 		}

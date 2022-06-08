@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeRegions_RDSRegion> regions;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Regions")]
 		public List<DescribeRegions_RDSRegion> Regions
 		{
 			get
@@ -66,6 +68,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string zoneName;
 
+			[JsonProperty(PropertyName = "ZoneId")]
 			public string ZoneId
 			{
 				get
@@ -78,6 +81,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "RegionEndpoint")]
 			public string RegionEndpoint
 			{
 				get
@@ -90,6 +94,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "LocalName")]
 			public string LocalName
 			{
 				get
@@ -102,6 +107,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "RegionId")]
 			public string RegionId
 			{
 				get
@@ -114,6 +120,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ZoneName")]
 			public string ZoneName
 			{
 				get

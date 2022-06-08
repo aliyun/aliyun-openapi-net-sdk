@@ -33,18 +33,18 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBInstancesByExpireTimeResponse.HttpResponse = _ctx.HttpResponse;
 			describeDBInstancesByExpireTimeResponse.RequestId = _ctx.StringValue("DescribeDBInstancesByExpireTime.RequestId");
 			describeDBInstancesByExpireTimeResponse.PageNumber = _ctx.IntegerValue("DescribeDBInstancesByExpireTime.PageNumber");
-			describeDBInstancesByExpireTimeResponse.TotalRecordCount = _ctx.IntegerValue("DescribeDBInstancesByExpireTime.TotalRecordCount");
 			describeDBInstancesByExpireTimeResponse.PageRecordCount = _ctx.IntegerValue("DescribeDBInstancesByExpireTime.PageRecordCount");
+			describeDBInstancesByExpireTimeResponse.TotalRecordCount = _ctx.IntegerValue("DescribeDBInstancesByExpireTime.TotalRecordCount");
 
 			List<DescribeDBInstancesByExpireTimeResponse.DescribeDBInstancesByExpireTime_DBInstanceExpireTime> describeDBInstancesByExpireTimeResponse_items = new List<DescribeDBInstancesByExpireTimeResponse.DescribeDBInstancesByExpireTime_DBInstanceExpireTime>();
 			for (int i = 0; i < _ctx.Length("DescribeDBInstancesByExpireTime.Items.Length"); i++) {
 				DescribeDBInstancesByExpireTimeResponse.DescribeDBInstancesByExpireTime_DBInstanceExpireTime dBInstanceExpireTime = new DescribeDBInstancesByExpireTimeResponse.DescribeDBInstancesByExpireTime_DBInstanceExpireTime();
-				dBInstanceExpireTime.DBInstanceId = _ctx.StringValue("DescribeDBInstancesByExpireTime.Items["+ i +"].DBInstanceId");
-				dBInstanceExpireTime.DBInstanceDescription = _ctx.StringValue("DescribeDBInstancesByExpireTime.Items["+ i +"].DBInstanceDescription");
 				dBInstanceExpireTime.ExpireTime = _ctx.StringValue("DescribeDBInstancesByExpireTime.Items["+ i +"].ExpireTime");
-				dBInstanceExpireTime.DBInstanceStatus = _ctx.StringValue("DescribeDBInstancesByExpireTime.Items["+ i +"].DBInstanceStatus");
-				dBInstanceExpireTime.LockMode = _ctx.StringValue("DescribeDBInstancesByExpireTime.Items["+ i +"].LockMode");
 				dBInstanceExpireTime.PayType = _ctx.StringValue("DescribeDBInstancesByExpireTime.Items["+ i +"].PayType");
+				dBInstanceExpireTime.DBInstanceId = _ctx.StringValue("DescribeDBInstancesByExpireTime.Items["+ i +"].DBInstanceId");
+				dBInstanceExpireTime.DBInstanceStatus = _ctx.StringValue("DescribeDBInstancesByExpireTime.Items["+ i +"].DBInstanceStatus");
+				dBInstanceExpireTime.DBInstanceDescription = _ctx.StringValue("DescribeDBInstancesByExpireTime.Items["+ i +"].DBInstanceDescription");
+				dBInstanceExpireTime.LockMode = _ctx.StringValue("DescribeDBInstancesByExpireTime.Items["+ i +"].LockMode");
 
 				describeDBInstancesByExpireTimeResponse_items.Add(dBInstanceExpireTime);
 			}

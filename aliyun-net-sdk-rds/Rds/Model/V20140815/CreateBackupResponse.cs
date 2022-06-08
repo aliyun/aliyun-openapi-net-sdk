@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,22 +25,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class CreateBackupResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string backupJobId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
+		[JsonProperty(PropertyName = "BackupJobId")]
 		public string BackupJobId
 		{
 			get
@@ -50,6 +39,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				backupJobId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

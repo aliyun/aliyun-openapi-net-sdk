@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -66,6 +67,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? readWriteSplittingClassicExpiredDays;
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -79,6 +81,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ClassicExpiredDays")]
 		public string ClassicExpiredDays
 		{
 			get
@@ -92,6 +95,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -105,6 +109,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ReadWriteSplittingPrivateIpAddress")]
 		public string ReadWriteSplittingPrivateIpAddress
 		{
 			get
@@ -118,6 +123,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -131,6 +137,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -144,6 +151,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -157,6 +165,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "VSwitchId")]
 		public string VSwitchId
 		{
 			get
@@ -170,6 +179,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PrivateIpAddress")]
 		public string PrivateIpAddress
 		{
 			get
@@ -183,6 +193,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RetainClassic")]
 		public string RetainClassic
 		{
 			get
@@ -196,6 +207,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "VPCId")]
 		public string VPCId
 		{
 			get
@@ -209,6 +221,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceNetworkType")]
 		public string InstanceNetworkType
 		{
 			get
@@ -222,6 +235,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ReadWriteSplittingClassicExpiredDays")]
 		public int? ReadWriteSplittingClassicExpiredDays
 		{
 			get

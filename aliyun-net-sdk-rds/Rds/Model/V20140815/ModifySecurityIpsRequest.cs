@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -58,6 +59,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBInstanceIPArrayAttribute;
 
+		[JsonProperty(PropertyName = "DBInstanceIPArrayName")]
 		public string DBInstanceIPArrayName
 		{
 			get
@@ -71,6 +73,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -84,6 +87,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecurityIps")]
 		public string SecurityIps
 		{
 			get
@@ -97,6 +101,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "WhitelistNetworkType")]
 		public string WhitelistNetworkType
 		{
 			get
@@ -110,6 +115,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecurityIPType")]
 		public string SecurityIPType
 		{
 			get
@@ -123,6 +129,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -136,6 +143,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ModifyMode")]
 		public string ModifyMode
 		{
 			get
@@ -149,6 +157,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "FreshWhiteListReadins")]
 		public string FreshWhiteListReadins
 		{
 			get
@@ -162,6 +171,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceIPArrayAttribute")]
 		public string DBInstanceIPArrayAttribute
 		{
 			get

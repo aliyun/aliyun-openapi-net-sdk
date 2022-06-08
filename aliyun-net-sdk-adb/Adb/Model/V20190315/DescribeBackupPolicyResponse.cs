@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -25,17 +25,41 @@ namespace Aliyun.Acs.adb.Model.V20190315
 	public class DescribeBackupPolicyResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string preferredBackupPeriod;
 
-		private int? backupRetentionPeriod;
+		private int? logBackupRetentionPeriod;
+
+		private string requestId;
 
 		private string preferredBackupTime;
 
-		private string preferredBackupPeriod;
-
 		private string enableBackupLog;
 
-		private int? logBackupRetentionPeriod;
+		private int? backupRetentionPeriod;
+
+		public string PreferredBackupPeriod
+		{
+			get
+			{
+				return preferredBackupPeriod;
+			}
+			set	
+			{
+				preferredBackupPeriod = value;
+			}
+		}
+
+		public int? LogBackupRetentionPeriod
+		{
+			get
+			{
+				return logBackupRetentionPeriod;
+			}
+			set	
+			{
+				logBackupRetentionPeriod = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -46,18 +70,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? BackupRetentionPeriod
-		{
-			get
-			{
-				return backupRetentionPeriod;
-			}
-			set	
-			{
-				backupRetentionPeriod = value;
 			}
 		}
 
@@ -73,18 +85,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string PreferredBackupPeriod
-		{
-			get
-			{
-				return preferredBackupPeriod;
-			}
-			set	
-			{
-				preferredBackupPeriod = value;
-			}
-		}
-
 		public string EnableBackupLog
 		{
 			get
@@ -97,15 +97,15 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public int? LogBackupRetentionPeriod
+		public int? BackupRetentionPeriod
 		{
 			get
 			{
-				return logBackupRetentionPeriod;
+				return backupRetentionPeriod;
 			}
 			set	
 			{
-				logBackupRetentionPeriod = value;
+				backupRetentionPeriod = value;
 			}
 		}
 	}

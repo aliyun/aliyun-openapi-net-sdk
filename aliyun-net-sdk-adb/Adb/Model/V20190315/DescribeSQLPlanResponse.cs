@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -84,49 +84,37 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		public class DescribeSQLPlan_SqlPlanStage
 		{
 
-			private int? stageId;
-
 			private string state;
-
-			private long? operatorCost;
-
-			private long? peakMemory;
-
-			private long? cPUTimeMin;
-
-			private long? cPUTimeMax;
 
 			private long? cPUTimeAvg;
 
-			private long? inputSizeMin;
+			private long? cPUTimeMax;
 
-			private long? inputSizeMax;
-
-			private long? inputSizeAvg;
-
-			private long? scanSizeMin;
-
-			private long? scanSizeMax;
-
-			private long? scanSizeAvg;
-
-			private long? scanTimeMin;
+			private long? operatorCost;
 
 			private long? scanTimeMax;
 
+			private long? inputSizeMax;
+
+			private int? stageId;
+
+			private long? scanSizeMax;
+
+			private long? cPUTimeMin;
+
+			private long? scanTimeMin;
+
+			private long? scanSizeMin;
+
+			private long? inputSizeMin;
+
+			private long? peakMemory;
+
 			private long? scanTimeAvg;
 
-			public int? StageId
-			{
-				get
-				{
-					return stageId;
-				}
-				set	
-				{
-					stageId = value;
-				}
-			}
+			private long? scanSizeAvg;
+
+			private long? inputSizeAvg;
 
 			public string State
 			{
@@ -137,54 +125,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					state = value;
-				}
-			}
-
-			public long? OperatorCost
-			{
-				get
-				{
-					return operatorCost;
-				}
-				set	
-				{
-					operatorCost = value;
-				}
-			}
-
-			public long? PeakMemory
-			{
-				get
-				{
-					return peakMemory;
-				}
-				set	
-				{
-					peakMemory = value;
-				}
-			}
-
-			public long? CPUTimeMin
-			{
-				get
-				{
-					return cPUTimeMin;
-				}
-				set	
-				{
-					cPUTimeMin = value;
-				}
-			}
-
-			public long? CPUTimeMax
-			{
-				get
-				{
-					return cPUTimeMax;
-				}
-				set	
-				{
-					cPUTimeMax = value;
 				}
 			}
 
@@ -200,87 +140,27 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public long? InputSizeMin
+			public long? CPUTimeMax
 			{
 				get
 				{
-					return inputSizeMin;
+					return cPUTimeMax;
 				}
 				set	
 				{
-					inputSizeMin = value;
+					cPUTimeMax = value;
 				}
 			}
 
-			public long? InputSizeMax
+			public long? OperatorCost
 			{
 				get
 				{
-					return inputSizeMax;
+					return operatorCost;
 				}
 				set	
 				{
-					inputSizeMax = value;
-				}
-			}
-
-			public long? InputSizeAvg
-			{
-				get
-				{
-					return inputSizeAvg;
-				}
-				set	
-				{
-					inputSizeAvg = value;
-				}
-			}
-
-			public long? ScanSizeMin
-			{
-				get
-				{
-					return scanSizeMin;
-				}
-				set	
-				{
-					scanSizeMin = value;
-				}
-			}
-
-			public long? ScanSizeMax
-			{
-				get
-				{
-					return scanSizeMax;
-				}
-				set	
-				{
-					scanSizeMax = value;
-				}
-			}
-
-			public long? ScanSizeAvg
-			{
-				get
-				{
-					return scanSizeAvg;
-				}
-				set	
-				{
-					scanSizeAvg = value;
-				}
-			}
-
-			public long? ScanTimeMin
-			{
-				get
-				{
-					return scanTimeMin;
-				}
-				set	
-				{
-					scanTimeMin = value;
+					operatorCost = value;
 				}
 			}
 
@@ -296,6 +176,102 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
+			public long? InputSizeMax
+			{
+				get
+				{
+					return inputSizeMax;
+				}
+				set	
+				{
+					inputSizeMax = value;
+				}
+			}
+
+			public int? StageId
+			{
+				get
+				{
+					return stageId;
+				}
+				set	
+				{
+					stageId = value;
+				}
+			}
+
+			public long? ScanSizeMax
+			{
+				get
+				{
+					return scanSizeMax;
+				}
+				set	
+				{
+					scanSizeMax = value;
+				}
+			}
+
+			public long? CPUTimeMin
+			{
+				get
+				{
+					return cPUTimeMin;
+				}
+				set	
+				{
+					cPUTimeMin = value;
+				}
+			}
+
+			public long? ScanTimeMin
+			{
+				get
+				{
+					return scanTimeMin;
+				}
+				set	
+				{
+					scanTimeMin = value;
+				}
+			}
+
+			public long? ScanSizeMin
+			{
+				get
+				{
+					return scanSizeMin;
+				}
+				set	
+				{
+					scanSizeMin = value;
+				}
+			}
+
+			public long? InputSizeMin
+			{
+				get
+				{
+					return inputSizeMin;
+				}
+				set	
+				{
+					inputSizeMin = value;
+				}
+			}
+
+			public long? PeakMemory
+			{
+				get
+				{
+					return peakMemory;
+				}
+				set	
+				{
+					peakMemory = value;
+				}
+			}
+
 			public long? ScanTimeAvg
 			{
 				get
@@ -307,6 +283,30 @@ namespace Aliyun.Acs.adb.Model.V20190315
 					scanTimeAvg = value;
 				}
 			}
+
+			public long? ScanSizeAvg
+			{
+				get
+				{
+					return scanSizeAvg;
+				}
+				set	
+				{
+					scanSizeAvg = value;
+				}
+			}
+
+			public long? InputSizeAvg
+			{
+				get
+				{
+					return inputSizeAvg;
+				}
+				set	
+				{
+					inputSizeAvg = value;
+				}
+			}
 		}
 
 		public class DescribeSQLPlan_Detail
@@ -314,33 +314,33 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 			private string sQL;
 
+			private long? outputSize;
+
 			private string state;
-
-			private string user;
-
-			private string clientIP;
-
-			private string database;
-
-			private long? totalStage;
-
-			private long? totalTask;
 
 			private long? outputRows;
 
-			private long? outputSize;
+			private string user;
 
 			private string startTime;
 
-			private long? totalTime;
+			private long? totalStage;
 
 			private long? queuedTime;
+
+			private long? totalTime;
+
+			private long? totalTask;
+
+			private string database;
+
+			private long? peakMemory;
+
+			private string clientIP;
 
 			private long? planningTime;
 
 			private long? cPUTime;
-
-			private long? peakMemory;
 
 			public string SQL
 			{
@@ -351,90 +351,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					sQL = value;
-				}
-			}
-
-			public string State
-			{
-				get
-				{
-					return state;
-				}
-				set	
-				{
-					state = value;
-				}
-			}
-
-			public string User
-			{
-				get
-				{
-					return user;
-				}
-				set	
-				{
-					user = value;
-				}
-			}
-
-			public string ClientIP
-			{
-				get
-				{
-					return clientIP;
-				}
-				set	
-				{
-					clientIP = value;
-				}
-			}
-
-			public string Database
-			{
-				get
-				{
-					return database;
-				}
-				set	
-				{
-					database = value;
-				}
-			}
-
-			public long? TotalStage
-			{
-				get
-				{
-					return totalStage;
-				}
-				set	
-				{
-					totalStage = value;
-				}
-			}
-
-			public long? TotalTask
-			{
-				get
-				{
-					return totalTask;
-				}
-				set	
-				{
-					totalTask = value;
-				}
-			}
-
-			public long? OutputRows
-			{
-				get
-				{
-					return outputRows;
-				}
-				set	
-				{
-					outputRows = value;
 				}
 			}
 
@@ -450,6 +366,42 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
+			public string State
+			{
+				get
+				{
+					return state;
+				}
+				set	
+				{
+					state = value;
+				}
+			}
+
+			public long? OutputRows
+			{
+				get
+				{
+					return outputRows;
+				}
+				set	
+				{
+					outputRows = value;
+				}
+			}
+
+			public string User
+			{
+				get
+				{
+					return user;
+				}
+				set	
+				{
+					user = value;
+				}
+			}
+
 			public string StartTime
 			{
 				get
@@ -459,6 +411,30 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					startTime = value;
+				}
+			}
+
+			public long? TotalStage
+			{
+				get
+				{
+					return totalStage;
+				}
+				set	
+				{
+					totalStage = value;
+				}
+			}
+
+			public long? QueuedTime
+			{
+				get
+				{
+					return queuedTime;
+				}
+				set	
+				{
+					queuedTime = value;
 				}
 			}
 
@@ -474,15 +450,51 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public long? QueuedTime
+			public long? TotalTask
 			{
 				get
 				{
-					return queuedTime;
+					return totalTask;
 				}
 				set	
 				{
-					queuedTime = value;
+					totalTask = value;
+				}
+			}
+
+			public string Database
+			{
+				get
+				{
+					return database;
+				}
+				set	
+				{
+					database = value;
+				}
+			}
+
+			public long? PeakMemory
+			{
+				get
+				{
+					return peakMemory;
+				}
+				set	
+				{
+					peakMemory = value;
+				}
+			}
+
+			public string ClientIP
+			{
+				get
+				{
+					return clientIP;
+				}
+				set	
+				{
+					clientIP = value;
 				}
 			}
 
@@ -507,18 +519,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					cPUTime = value;
-				}
-			}
-
-			public long? PeakMemory
-			{
-				get
-				{
-					return peakMemory;
-				}
-				set	
-				{
-					peakMemory = value;
 				}
 			}
 		}

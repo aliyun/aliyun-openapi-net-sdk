@@ -32,10 +32,24 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 
 			calcCACSResponse.HttpResponse = _ctx.HttpResponse;
 			calcCACSResponse.RequestId = _ctx.StringValue("CalcCACS.RequestId");
+			calcCACSResponse.Code = _ctx.StringValue("CalcCACS.Code");
+			calcCACSResponse.Message = _ctx.StringValue("CalcCACS.Message");
 
 			CalcCACSResponse.CalcCACS_Data data = new CalcCACSResponse.CalcCACS_Data();
 			data.ResultUrl = _ctx.StringValue("CalcCACS.Data.ResultUrl");
 			data.Score = _ctx.StringValue("CalcCACS.Data.Score");
+			data.VolumeScore = _ctx.StringValue("CalcCACS.Data.VolumeScore");
+
+			List<CalcCACSResponse.CalcCACS_Data.CalcCACS_DetectionsItem> data_detections = new List<CalcCACSResponse.CalcCACS_Data.CalcCACS_DetectionsItem>();
+			for (int i = 0; i < _ctx.Length("CalcCACS.Data.Detections.Length"); i++) {
+				CalcCACSResponse.CalcCACS_Data.CalcCACS_DetectionsItem detectionsItem = new CalcCACSResponse.CalcCACS_Data.CalcCACS_DetectionsItem();
+				detectionsItem.CalciumId = _ctx.LongValue("CalcCACS.Data.Detections["+ i +"].CalciumId");
+				detectionsItem.CalciumScore = _ctx.FloatValue("CalcCACS.Data.Detections["+ i +"].CalciumScore");
+				detectionsItem.CalciumVolume = _ctx.FloatValue("CalcCACS.Data.Detections["+ i +"].CalciumVolume");
+
+				data_detections.Add(detectionsItem);
+			}
+			data.Detections = data_detections;
 			calcCACSResponse.Data = data;
         
 			return calcCACSResponse;

@@ -54,6 +54,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
+		private string babelfishPort;
+
 		private string port;
 
 		public long? ResourceOwnerId
@@ -144,6 +146,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string BabelfishPort
+		{
+			get
+			{
+				return babelfishPort;
+			}
+			set	
+			{
+				babelfishPort = value;
+				DictionaryUtil.Add(QueryParameters, "BabelfishPort", value);
 			}
 		}
 

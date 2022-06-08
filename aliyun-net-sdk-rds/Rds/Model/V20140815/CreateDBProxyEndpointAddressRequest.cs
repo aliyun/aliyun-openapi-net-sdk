@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -54,6 +55,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string vPCId;
 
+		[JsonProperty(PropertyName = "ConnectionStringPrefix")]
 		public string ConnectionStringPrefix
 		{
 			get
@@ -67,6 +69,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBProxyConnectStringNetType")]
 		public string DBProxyConnectStringNetType
 		{
 			get
@@ -80,6 +83,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -93,6 +97,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBProxyNewConnectStringPort")]
 		public string DBProxyNewConnectStringPort
 		{
 			get
@@ -106,6 +111,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "VSwitchId")]
 		public string VSwitchId
 		{
 			get
@@ -119,6 +125,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBProxyEndpointId")]
 		public string DBProxyEndpointId
 		{
 			get
@@ -132,6 +139,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "VPCId")]
 		public string VPCId
 		{
 			get

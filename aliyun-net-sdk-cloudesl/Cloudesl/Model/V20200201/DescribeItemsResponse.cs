@@ -25,31 +25,43 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 	public class DescribeItemsResponse : AcsResponse
 	{
 
+		private string templateSceneId;
+
 		private string errorMessage;
 
-		private string errorCode;
-
-		private int? pageNumber;
+		private bool? success;
 
 		private string message;
-
-		private int? pageSize;
-
-		private string dynamicCode;
-
-		private string code;
 
 		private string dynamicMessage;
 
 		private int? totalCount;
 
+		private string dynamicCode;
+
 		private string requestId;
 
-		private bool? success;
+		private string errorCode;
 
-		private string templateSceneId;
+		private string code;
+
+		private int? pageNumber;
+
+		private int? pageSize;
 
 		private List<DescribeItems_ItemInfo> items;
+
+		public string TemplateSceneId
+		{
+			get
+			{
+				return templateSceneId;
+			}
+			set	
+			{
+				templateSceneId = value;
+			}
+		}
 
 		public string ErrorMessage
 		{
@@ -63,27 +75,15 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string ErrorCode
+		public bool? Success
 		{
 			get
 			{
-				return errorCode;
+				return success;
 			}
 			set	
 			{
-				errorCode = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
+				success = value;
 			}
 		}
 
@@ -96,42 +96,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			set	
 			{
 				message = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public string DynamicCode
-		{
-			get
-			{
-				return dynamicCode;
-			}
-			set	
-			{
-				dynamicCode = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
 			}
 		}
 
@@ -159,6 +123,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
+		public string DynamicCode
+		{
+			get
+			{
+				return dynamicCode;
+			}
+			set	
+			{
+				dynamicCode = value;
+			}
+		}
+
 		public string RequestId
 		{
 			get
@@ -171,27 +147,51 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public bool? Success
+		public string ErrorCode
 		{
 			get
 			{
-				return success;
+				return errorCode;
 			}
 			set	
 			{
-				success = value;
+				errorCode = value;
 			}
 		}
 
-		public string TemplateSceneId
+		public string Code
 		{
 			get
 			{
-				return templateSceneId;
+				return code;
 			}
 			set	
 			{
-				templateSceneId = value;
+				code = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
 			}
 		}
 
@@ -210,243 +210,145 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 		public class DescribeItems_ItemInfo
 		{
 
-			private string categoryName;
-
-			private string energyEfficiency;
-
-			private string customizeFeatureO;
-
-			private string manufacturer;
-
-			private string customizeFeatureM;
-
-			private string customizeFeatureN;
-
-			private string customizeFeatureK;
-
-			private string customizeFeatureL;
-
-			private string promotionEnd;
-
-			private int? originalPrice;
-
-			private string customizeFeatureI;
+			private int? actionPrice;
 
 			private string itemTitle;
 
-			private string customizeFeatureJ;
-
-			private string customizeFeatureG;
-
-			private string saleSpec;
-
-			private string customizeFeatureH;
-
-			private string customizeFeatureE;
-
-			private string customizeFeatureF;
-
-			private string customizeFeatureC;
-
-			private string customizeFeatureD;
-
-			private string customizeFeatureA;
-
-			private string customizeFeatureB;
-
-			private string taxFee;
-
-			private string promotionText;
-
-			private int? memberPrice;
-
-			private string supplierName;
-
-			private string forestFirstId;
-
-			private string modelNumber;
-
-			private string itemShortTitle;
-
-			private string material;
-
-			private bool? bePromotion;
-
-			private string forestSecondId;
-
-			private bool? beSourceCode;
-
-			private int? salesPrice;
-
-			private string itemPicUrl;
-
-			private string skuId;
-
-			private int? suggestPrice;
-
-			private string rank;
+			private string brandName;
 
 			private string sourceCode;
 
-			private string productionPlace;
-
-			private int? itemInfoIndex;
-
-			private string inventoryStatus;
-
 			private string priceUnit;
 
-			private int? actionPrice;
+			private string forestFirstId;
 
-			private string brandName;
+			private string customizeFeatureF;
 
-			private string itemQrCode;
+			private string customizeFeatureA;
 
-			private string promotionReason;
-
-			private string itemBarCode;
-
-			private string itemId;
-
-			private string promotionStart;
-
-			private string gmtCreate;
-
-			private string gmtModified;
-
-			private bool? beMember;
+			private string customizeFeatureK;
 
 			private string templateSceneId;
 
-			public string CategoryName
-			{
-				get
-				{
-					return categoryName;
-				}
-				set	
-				{
-					categoryName = value;
-				}
-			}
+			private string customizeFeatureD;
 
-			public string EnergyEfficiency
-			{
-				get
-				{
-					return energyEfficiency;
-				}
-				set	
-				{
-					energyEfficiency = value;
-				}
-			}
+			private int? memberPrice;
 
-			public string CustomizeFeatureO
-			{
-				get
-				{
-					return customizeFeatureO;
-				}
-				set	
-				{
-					customizeFeatureO = value;
-				}
-			}
+			private string promotionStart;
 
-			public string Manufacturer
-			{
-				get
-				{
-					return manufacturer;
-				}
-				set	
-				{
-					manufacturer = value;
-				}
-			}
+			private string modelNumber;
 
-			public string CustomizeFeatureM
-			{
-				get
-				{
-					return customizeFeatureM;
-				}
-				set	
-				{
-					customizeFeatureM = value;
-				}
-			}
+			private string categoryName;
 
-			public string CustomizeFeatureN
-			{
-				get
-				{
-					return customizeFeatureN;
-				}
-				set	
-				{
-					customizeFeatureN = value;
-				}
-			}
+			private string customizeFeatureE;
 
-			public string CustomizeFeatureK
-			{
-				get
-				{
-					return customizeFeatureK;
-				}
-				set	
-				{
-					customizeFeatureK = value;
-				}
-			}
+			private int? suggestPrice;
 
-			public string CustomizeFeatureL
-			{
-				get
-				{
-					return customizeFeatureL;
-				}
-				set	
-				{
-					customizeFeatureL = value;
-				}
-			}
+			private string saleSpec;
 
-			public string PromotionEnd
-			{
-				get
-				{
-					return promotionEnd;
-				}
-				set	
-				{
-					promotionEnd = value;
-				}
-			}
+			private string promotionText;
 
-			public int? OriginalPrice
-			{
-				get
-				{
-					return originalPrice;
-				}
-				set	
-				{
-					originalPrice = value;
-				}
-			}
+			private string rank;
 
-			public string CustomizeFeatureI
+			private string promotionReason;
+
+			private string customizeFeatureG;
+
+			private int? salesPrice;
+
+			private string customizeFeatureH;
+
+			private int? originalPrice;
+
+			private string gmtModified;
+
+			private string customizeFeatureI;
+
+			private string productionPlace;
+
+			private string customizeFeatureB;
+
+			private string itemShortTitle;
+
+			private string customizeFeatureN;
+
+			private bool? beMember;
+
+			private string taxFee;
+
+			private string inventoryStatus;
+
+			private string supplierName;
+
+			private string itemPicUrl;
+
+			private string energyEfficiency;
+
+			private string customizeFeatureL;
+
+			private string customizeFeatureC;
+
+			private string itemId;
+
+			private string manufacturer;
+
+			private string material;
+
+			private string customizeFeatureO;
+
+			private string customizeFeatureP;
+
+			private string customizeFeatureQ;
+
+			private string customizeFeatureR;
+
+			private string customizeFeatureS;
+
+			private string customizeFeatureT;
+
+			private string customizeFeatureU;
+
+			private string customizeFeatureV;
+
+			private string customizeFeatureW;
+
+			private string customizeFeatureX;
+
+			private string customizeFeatureY;
+
+			private string customizeFeatureZ;
+
+			private string customizeFeatureJ;
+
+			private string gmtCreate;
+
+			private string customizeFeatureM;
+
+			private bool? bePromotion;
+
+			private string skuId;
+
+			private bool? beSourceCode;
+
+			private string forestSecondId;
+
+			private string itemQrCode;
+
+			private int? itemInfoIndex;
+
+			private string promotionEnd;
+
+			private string itemBarCode;
+
+			public int? ActionPrice
 			{
 				get
 				{
-					return customizeFeatureI;
+					return actionPrice;
 				}
 				set	
 				{
-					customizeFeatureI = value;
+					actionPrice = value;
 				}
 			}
 
@@ -462,315 +364,15 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
-			public string CustomizeFeatureJ
+			public string BrandName
 			{
 				get
 				{
-					return customizeFeatureJ;
+					return brandName;
 				}
 				set	
 				{
-					customizeFeatureJ = value;
-				}
-			}
-
-			public string CustomizeFeatureG
-			{
-				get
-				{
-					return customizeFeatureG;
-				}
-				set	
-				{
-					customizeFeatureG = value;
-				}
-			}
-
-			public string SaleSpec
-			{
-				get
-				{
-					return saleSpec;
-				}
-				set	
-				{
-					saleSpec = value;
-				}
-			}
-
-			public string CustomizeFeatureH
-			{
-				get
-				{
-					return customizeFeatureH;
-				}
-				set	
-				{
-					customizeFeatureH = value;
-				}
-			}
-
-			public string CustomizeFeatureE
-			{
-				get
-				{
-					return customizeFeatureE;
-				}
-				set	
-				{
-					customizeFeatureE = value;
-				}
-			}
-
-			public string CustomizeFeatureF
-			{
-				get
-				{
-					return customizeFeatureF;
-				}
-				set	
-				{
-					customizeFeatureF = value;
-				}
-			}
-
-			public string CustomizeFeatureC
-			{
-				get
-				{
-					return customizeFeatureC;
-				}
-				set	
-				{
-					customizeFeatureC = value;
-				}
-			}
-
-			public string CustomizeFeatureD
-			{
-				get
-				{
-					return customizeFeatureD;
-				}
-				set	
-				{
-					customizeFeatureD = value;
-				}
-			}
-
-			public string CustomizeFeatureA
-			{
-				get
-				{
-					return customizeFeatureA;
-				}
-				set	
-				{
-					customizeFeatureA = value;
-				}
-			}
-
-			public string CustomizeFeatureB
-			{
-				get
-				{
-					return customizeFeatureB;
-				}
-				set	
-				{
-					customizeFeatureB = value;
-				}
-			}
-
-			public string TaxFee
-			{
-				get
-				{
-					return taxFee;
-				}
-				set	
-				{
-					taxFee = value;
-				}
-			}
-
-			public string PromotionText
-			{
-				get
-				{
-					return promotionText;
-				}
-				set	
-				{
-					promotionText = value;
-				}
-			}
-
-			public int? MemberPrice
-			{
-				get
-				{
-					return memberPrice;
-				}
-				set	
-				{
-					memberPrice = value;
-				}
-			}
-
-			public string SupplierName
-			{
-				get
-				{
-					return supplierName;
-				}
-				set	
-				{
-					supplierName = value;
-				}
-			}
-
-			public string ForestFirstId
-			{
-				get
-				{
-					return forestFirstId;
-				}
-				set	
-				{
-					forestFirstId = value;
-				}
-			}
-
-			public string ModelNumber
-			{
-				get
-				{
-					return modelNumber;
-				}
-				set	
-				{
-					modelNumber = value;
-				}
-			}
-
-			public string ItemShortTitle
-			{
-				get
-				{
-					return itemShortTitle;
-				}
-				set	
-				{
-					itemShortTitle = value;
-				}
-			}
-
-			public string Material
-			{
-				get
-				{
-					return material;
-				}
-				set	
-				{
-					material = value;
-				}
-			}
-
-			public bool? BePromotion
-			{
-				get
-				{
-					return bePromotion;
-				}
-				set	
-				{
-					bePromotion = value;
-				}
-			}
-
-			public string ForestSecondId
-			{
-				get
-				{
-					return forestSecondId;
-				}
-				set	
-				{
-					forestSecondId = value;
-				}
-			}
-
-			public bool? BeSourceCode
-			{
-				get
-				{
-					return beSourceCode;
-				}
-				set	
-				{
-					beSourceCode = value;
-				}
-			}
-
-			public int? SalesPrice
-			{
-				get
-				{
-					return salesPrice;
-				}
-				set	
-				{
-					salesPrice = value;
-				}
-			}
-
-			public string ItemPicUrl
-			{
-				get
-				{
-					return itemPicUrl;
-				}
-				set	
-				{
-					itemPicUrl = value;
-				}
-			}
-
-			public string SkuId
-			{
-				get
-				{
-					return skuId;
-				}
-				set	
-				{
-					skuId = value;
-				}
-			}
-
-			public int? SuggestPrice
-			{
-				get
-				{
-					return suggestPrice;
-				}
-				set	
-				{
-					suggestPrice = value;
-				}
-			}
-
-			public string Rank
-			{
-				get
-				{
-					return rank;
-				}
-				set	
-				{
-					rank = value;
+					brandName = value;
 				}
 			}
 
@@ -786,42 +388,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
-			public string ProductionPlace
-			{
-				get
-				{
-					return productionPlace;
-				}
-				set	
-				{
-					productionPlace = value;
-				}
-			}
-
-			public int? ItemInfoIndex
-			{
-				get
-				{
-					return itemInfoIndex;
-				}
-				set	
-				{
-					itemInfoIndex = value;
-				}
-			}
-
-			public string InventoryStatus
-			{
-				get
-				{
-					return inventoryStatus;
-				}
-				set	
-				{
-					inventoryStatus = value;
-				}
-			}
-
 			public string PriceUnit
 			{
 				get
@@ -834,75 +400,87 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
-			public int? ActionPrice
+			public string ForestFirstId
 			{
 				get
 				{
-					return actionPrice;
+					return forestFirstId;
 				}
 				set	
 				{
-					actionPrice = value;
+					forestFirstId = value;
 				}
 			}
 
-			public string BrandName
+			public string CustomizeFeatureF
 			{
 				get
 				{
-					return brandName;
+					return customizeFeatureF;
 				}
 				set	
 				{
-					brandName = value;
+					customizeFeatureF = value;
 				}
 			}
 
-			public string ItemQrCode
+			public string CustomizeFeatureA
 			{
 				get
 				{
-					return itemQrCode;
+					return customizeFeatureA;
 				}
 				set	
 				{
-					itemQrCode = value;
+					customizeFeatureA = value;
 				}
 			}
 
-			public string PromotionReason
+			public string CustomizeFeatureK
 			{
 				get
 				{
-					return promotionReason;
+					return customizeFeatureK;
 				}
 				set	
 				{
-					promotionReason = value;
+					customizeFeatureK = value;
 				}
 			}
 
-			public string ItemBarCode
+			public string TemplateSceneId
 			{
 				get
 				{
-					return itemBarCode;
+					return templateSceneId;
 				}
 				set	
 				{
-					itemBarCode = value;
+					templateSceneId = value;
 				}
 			}
 
-			public string ItemId
+			public string CustomizeFeatureD
 			{
 				get
 				{
-					return itemId;
+					return customizeFeatureD;
 				}
 				set	
 				{
-					itemId = value;
+					customizeFeatureD = value;
+				}
+			}
+
+			public int? MemberPrice
+			{
+				get
+				{
+					return memberPrice;
+				}
+				set	
+				{
+					memberPrice = value;
 				}
 			}
 
@@ -918,15 +496,147 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
-			public string GmtCreate
+			public string ModelNumber
 			{
 				get
 				{
-					return gmtCreate;
+					return modelNumber;
 				}
 				set	
 				{
-					gmtCreate = value;
+					modelNumber = value;
+				}
+			}
+
+			public string CategoryName
+			{
+				get
+				{
+					return categoryName;
+				}
+				set	
+				{
+					categoryName = value;
+				}
+			}
+
+			public string CustomizeFeatureE
+			{
+				get
+				{
+					return customizeFeatureE;
+				}
+				set	
+				{
+					customizeFeatureE = value;
+				}
+			}
+
+			public int? SuggestPrice
+			{
+				get
+				{
+					return suggestPrice;
+				}
+				set	
+				{
+					suggestPrice = value;
+				}
+			}
+
+			public string SaleSpec
+			{
+				get
+				{
+					return saleSpec;
+				}
+				set	
+				{
+					saleSpec = value;
+				}
+			}
+
+			public string PromotionText
+			{
+				get
+				{
+					return promotionText;
+				}
+				set	
+				{
+					promotionText = value;
+				}
+			}
+
+			public string Rank
+			{
+				get
+				{
+					return rank;
+				}
+				set	
+				{
+					rank = value;
+				}
+			}
+
+			public string PromotionReason
+			{
+				get
+				{
+					return promotionReason;
+				}
+				set	
+				{
+					promotionReason = value;
+				}
+			}
+
+			public string CustomizeFeatureG
+			{
+				get
+				{
+					return customizeFeatureG;
+				}
+				set	
+				{
+					customizeFeatureG = value;
+				}
+			}
+
+			public int? SalesPrice
+			{
+				get
+				{
+					return salesPrice;
+				}
+				set	
+				{
+					salesPrice = value;
+				}
+			}
+
+			public string CustomizeFeatureH
+			{
+				get
+				{
+					return customizeFeatureH;
+				}
+				set	
+				{
+					customizeFeatureH = value;
+				}
+			}
+
+			public int? OriginalPrice
+			{
+				get
+				{
+					return originalPrice;
+				}
+				set	
+				{
+					originalPrice = value;
 				}
 			}
 
@@ -942,6 +652,66 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
+			public string CustomizeFeatureI
+			{
+				get
+				{
+					return customizeFeatureI;
+				}
+				set	
+				{
+					customizeFeatureI = value;
+				}
+			}
+
+			public string ProductionPlace
+			{
+				get
+				{
+					return productionPlace;
+				}
+				set	
+				{
+					productionPlace = value;
+				}
+			}
+
+			public string CustomizeFeatureB
+			{
+				get
+				{
+					return customizeFeatureB;
+				}
+				set	
+				{
+					customizeFeatureB = value;
+				}
+			}
+
+			public string ItemShortTitle
+			{
+				get
+				{
+					return itemShortTitle;
+				}
+				set	
+				{
+					itemShortTitle = value;
+				}
+			}
+
+			public string CustomizeFeatureN
+			{
+				get
+				{
+					return customizeFeatureN;
+				}
+				set	
+				{
+					customizeFeatureN = value;
+				}
+			}
+
 			public bool? BeMember
 			{
 				get
@@ -954,15 +724,399 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
-			public string TemplateSceneId
+			public string TaxFee
 			{
 				get
 				{
-					return templateSceneId;
+					return taxFee;
 				}
 				set	
 				{
-					templateSceneId = value;
+					taxFee = value;
+				}
+			}
+
+			public string InventoryStatus
+			{
+				get
+				{
+					return inventoryStatus;
+				}
+				set	
+				{
+					inventoryStatus = value;
+				}
+			}
+
+			public string SupplierName
+			{
+				get
+				{
+					return supplierName;
+				}
+				set	
+				{
+					supplierName = value;
+				}
+			}
+
+			public string ItemPicUrl
+			{
+				get
+				{
+					return itemPicUrl;
+				}
+				set	
+				{
+					itemPicUrl = value;
+				}
+			}
+
+			public string EnergyEfficiency
+			{
+				get
+				{
+					return energyEfficiency;
+				}
+				set	
+				{
+					energyEfficiency = value;
+				}
+			}
+
+			public string CustomizeFeatureL
+			{
+				get
+				{
+					return customizeFeatureL;
+				}
+				set	
+				{
+					customizeFeatureL = value;
+				}
+			}
+
+			public string CustomizeFeatureC
+			{
+				get
+				{
+					return customizeFeatureC;
+				}
+				set	
+				{
+					customizeFeatureC = value;
+				}
+			}
+
+			public string ItemId
+			{
+				get
+				{
+					return itemId;
+				}
+				set	
+				{
+					itemId = value;
+				}
+			}
+
+			public string Manufacturer
+			{
+				get
+				{
+					return manufacturer;
+				}
+				set	
+				{
+					manufacturer = value;
+				}
+			}
+
+			public string Material
+			{
+				get
+				{
+					return material;
+				}
+				set	
+				{
+					material = value;
+				}
+			}
+
+			public string CustomizeFeatureO
+			{
+				get
+				{
+					return customizeFeatureO;
+				}
+				set	
+				{
+					customizeFeatureO = value;
+				}
+			}
+
+			public string CustomizeFeatureP
+			{
+				get
+				{
+					return customizeFeatureP;
+				}
+				set	
+				{
+					customizeFeatureP = value;
+				}
+			}
+
+			public string CustomizeFeatureQ
+			{
+				get
+				{
+					return customizeFeatureQ;
+				}
+				set	
+				{
+					customizeFeatureQ = value;
+				}
+			}
+
+			public string CustomizeFeatureR
+			{
+				get
+				{
+					return customizeFeatureR;
+				}
+				set	
+				{
+					customizeFeatureR = value;
+				}
+			}
+
+			public string CustomizeFeatureS
+			{
+				get
+				{
+					return customizeFeatureS;
+				}
+				set	
+				{
+					customizeFeatureS = value;
+				}
+			}
+
+			public string CustomizeFeatureT
+			{
+				get
+				{
+					return customizeFeatureT;
+				}
+				set	
+				{
+					customizeFeatureT = value;
+				}
+			}
+
+			public string CustomizeFeatureU
+			{
+				get
+				{
+					return customizeFeatureU;
+				}
+				set	
+				{
+					customizeFeatureU = value;
+				}
+			}
+
+			public string CustomizeFeatureV
+			{
+				get
+				{
+					return customizeFeatureV;
+				}
+				set	
+				{
+					customizeFeatureV = value;
+				}
+			}
+
+			public string CustomizeFeatureW
+			{
+				get
+				{
+					return customizeFeatureW;
+				}
+				set	
+				{
+					customizeFeatureW = value;
+				}
+			}
+
+			public string CustomizeFeatureX
+			{
+				get
+				{
+					return customizeFeatureX;
+				}
+				set	
+				{
+					customizeFeatureX = value;
+				}
+			}
+
+			public string CustomizeFeatureY
+			{
+				get
+				{
+					return customizeFeatureY;
+				}
+				set	
+				{
+					customizeFeatureY = value;
+				}
+			}
+
+			public string CustomizeFeatureZ
+			{
+				get
+				{
+					return customizeFeatureZ;
+				}
+				set	
+				{
+					customizeFeatureZ = value;
+				}
+			}
+
+			public string CustomizeFeatureJ
+			{
+				get
+				{
+					return customizeFeatureJ;
+				}
+				set	
+				{
+					customizeFeatureJ = value;
+				}
+			}
+
+			public string GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
+				}
+			}
+
+			public string CustomizeFeatureM
+			{
+				get
+				{
+					return customizeFeatureM;
+				}
+				set	
+				{
+					customizeFeatureM = value;
+				}
+			}
+
+			public bool? BePromotion
+			{
+				get
+				{
+					return bePromotion;
+				}
+				set	
+				{
+					bePromotion = value;
+				}
+			}
+
+			public string SkuId
+			{
+				get
+				{
+					return skuId;
+				}
+				set	
+				{
+					skuId = value;
+				}
+			}
+
+			public bool? BeSourceCode
+			{
+				get
+				{
+					return beSourceCode;
+				}
+				set	
+				{
+					beSourceCode = value;
+				}
+			}
+
+			public string ForestSecondId
+			{
+				get
+				{
+					return forestSecondId;
+				}
+				set	
+				{
+					forestSecondId = value;
+				}
+			}
+
+			public string ItemQrCode
+			{
+				get
+				{
+					return itemQrCode;
+				}
+				set	
+				{
+					itemQrCode = value;
+				}
+			}
+
+			public int? ItemInfoIndex
+			{
+				get
+				{
+					return itemInfoIndex;
+				}
+				set	
+				{
+					itemInfoIndex = value;
+				}
+			}
+
+			public string PromotionEnd
+			{
+				get
+				{
+					return promotionEnd;
+				}
+				set	
+				{
+					promotionEnd = value;
+				}
+			}
+
+			public string ItemBarCode
+			{
+				get
+				{
+					return itemBarCode;
+				}
+				set	
+				{
+					itemBarCode = value;
 				}
 			}
 		}

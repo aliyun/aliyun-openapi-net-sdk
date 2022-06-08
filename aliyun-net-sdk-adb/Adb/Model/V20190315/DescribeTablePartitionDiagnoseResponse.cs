@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private int? totalCount;
 
-		private int? pageSize;
-
 		private string requestId;
+
+		private int? pageSize;
 
 		private int? pageNumber;
 
@@ -53,18 +53,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
 		public string RequestId
 		{
 			get
@@ -74,6 +62,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
 			}
 		}
 
@@ -142,11 +142,11 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 			private string tableName;
 
-			private int? partitionNumber;
-
 			private string partitionDetail;
 
 			private string schemaName;
+
+			private int? partitionNumber;
 
 			public string TableName
 			{
@@ -157,18 +157,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					tableName = value;
-				}
-			}
-
-			public int? PartitionNumber
-			{
-				get
-				{
-					return partitionNumber;
-				}
-				set	
-				{
-					partitionNumber = value;
 				}
 			}
 
@@ -193,6 +181,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					schemaName = value;
+				}
+			}
+
+			public int? PartitionNumber
+			{
+				get
+				{
+					return partitionNumber;
+				}
+				set	
+				{
+					partitionNumber = value;
 				}
 			}
 		}

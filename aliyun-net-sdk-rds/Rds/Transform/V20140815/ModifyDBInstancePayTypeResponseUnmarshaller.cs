@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			ModifyDBInstancePayTypeResponse modifyDBInstancePayTypeResponse = new ModifyDBInstancePayTypeResponse();
 
 			modifyDBInstancePayTypeResponse.HttpResponse = _ctx.HttpResponse;
-			modifyDBInstancePayTypeResponse.RequestId = _ctx.StringValue("ModifyDBInstancePayType.RequestId");
 			modifyDBInstancePayTypeResponse.DBInstanceId = _ctx.StringValue("ModifyDBInstancePayType.DBInstanceId");
+			modifyDBInstancePayTypeResponse.RequestId = _ctx.StringValue("ModifyDBInstancePayType.RequestId");
 			modifyDBInstancePayTypeResponse.OrderId = _ctx.LongValue("ModifyDBInstancePayType.OrderId");
         
 			return modifyDBInstancePayTypeResponse;

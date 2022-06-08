@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			ModifyDTCSecurityIpHostsForSQLServerResponse modifyDTCSecurityIpHostsForSQLServerResponse = new ModifyDTCSecurityIpHostsForSQLServerResponse();
 
 			modifyDTCSecurityIpHostsForSQLServerResponse.HttpResponse = _ctx.HttpResponse;
-			modifyDTCSecurityIpHostsForSQLServerResponse.RequestId = _ctx.StringValue("ModifyDTCSecurityIpHostsForSQLServer.RequestId");
 			modifyDTCSecurityIpHostsForSQLServerResponse.DBInstanceId = _ctx.StringValue("ModifyDTCSecurityIpHostsForSQLServer.DBInstanceId");
-			modifyDTCSecurityIpHostsForSQLServerResponse.DTCSetResult = _ctx.StringValue("ModifyDTCSecurityIpHostsForSQLServer.DTCSetResult");
+			modifyDTCSecurityIpHostsForSQLServerResponse.RequestId = _ctx.StringValue("ModifyDTCSecurityIpHostsForSQLServer.RequestId");
 			modifyDTCSecurityIpHostsForSQLServerResponse.TaskId = _ctx.StringValue("ModifyDTCSecurityIpHostsForSQLServer.TaskId");
+			modifyDTCSecurityIpHostsForSQLServerResponse.DTCSetResult = _ctx.StringValue("ModifyDTCSecurityIpHostsForSQLServer.DTCSetResult");
         
 			return modifyDTCSecurityIpHostsForSQLServerResponse;
         }

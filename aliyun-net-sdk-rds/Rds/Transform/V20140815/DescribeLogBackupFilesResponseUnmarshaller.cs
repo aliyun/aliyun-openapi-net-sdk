@@ -31,21 +31,21 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeLogBackupFilesResponse describeLogBackupFilesResponse = new DescribeLogBackupFilesResponse();
 
 			describeLogBackupFilesResponse.HttpResponse = _ctx.HttpResponse;
-			describeLogBackupFilesResponse.RequestId = _ctx.StringValue("DescribeLogBackupFiles.RequestId");
-			describeLogBackupFilesResponse.TotalRecordCount = _ctx.IntegerValue("DescribeLogBackupFiles.TotalRecordCount");
-			describeLogBackupFilesResponse.PageNumber = _ctx.IntegerValue("DescribeLogBackupFiles.PageNumber");
-			describeLogBackupFilesResponse.PageRecordCount = _ctx.IntegerValue("DescribeLogBackupFiles.PageRecordCount");
 			describeLogBackupFilesResponse.TotalFileSize = _ctx.LongValue("DescribeLogBackupFiles.TotalFileSize");
+			describeLogBackupFilesResponse.PageNumber = _ctx.IntegerValue("DescribeLogBackupFiles.PageNumber");
+			describeLogBackupFilesResponse.RequestId = _ctx.StringValue("DescribeLogBackupFiles.RequestId");
+			describeLogBackupFilesResponse.PageRecordCount = _ctx.IntegerValue("DescribeLogBackupFiles.PageRecordCount");
+			describeLogBackupFilesResponse.TotalRecordCount = _ctx.IntegerValue("DescribeLogBackupFiles.TotalRecordCount");
 
 			List<DescribeLogBackupFilesResponse.DescribeLogBackupFiles_BinLogFile> describeLogBackupFilesResponse_items = new List<DescribeLogBackupFilesResponse.DescribeLogBackupFiles_BinLogFile>();
 			for (int i = 0; i < _ctx.Length("DescribeLogBackupFiles.Items.Length"); i++) {
 				DescribeLogBackupFilesResponse.DescribeLogBackupFiles_BinLogFile binLogFile = new DescribeLogBackupFilesResponse.DescribeLogBackupFiles_BinLogFile();
-				binLogFile.FileSize = _ctx.LongValue("DescribeLogBackupFiles.Items["+ i +"].FileSize");
 				binLogFile.LogBeginTime = _ctx.StringValue("DescribeLogBackupFiles.Items["+ i +"].LogBeginTime");
-				binLogFile.LogEndTime = _ctx.StringValue("DescribeLogBackupFiles.Items["+ i +"].LogEndTime");
-				binLogFile.DownloadLink = _ctx.StringValue("DescribeLogBackupFiles.Items["+ i +"].DownloadLink");
 				binLogFile.IntranetDownloadLink = _ctx.StringValue("DescribeLogBackupFiles.Items["+ i +"].IntranetDownloadLink");
 				binLogFile.LinkExpiredTime = _ctx.StringValue("DescribeLogBackupFiles.Items["+ i +"].LinkExpiredTime");
+				binLogFile.DownloadLink = _ctx.StringValue("DescribeLogBackupFiles.Items["+ i +"].DownloadLink");
+				binLogFile.LogEndTime = _ctx.StringValue("DescribeLogBackupFiles.Items["+ i +"].LogEndTime");
+				binLogFile.FileSize = _ctx.LongValue("DescribeLogBackupFiles.Items["+ i +"].FileSize");
 
 				describeLogBackupFilesResponse_items.Add(binLogFile);
 			}

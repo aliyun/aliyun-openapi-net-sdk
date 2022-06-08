@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			UpgradeDBInstanceEngineVersionResponse upgradeDBInstanceEngineVersionResponse = new UpgradeDBInstanceEngineVersionResponse();
 
 			upgradeDBInstanceEngineVersionResponse.HttpResponse = _ctx.HttpResponse;
-			upgradeDBInstanceEngineVersionResponse.RequestId = _ctx.StringValue("UpgradeDBInstanceEngineVersion.RequestId");
 			upgradeDBInstanceEngineVersionResponse.TaskId = _ctx.StringValue("UpgradeDBInstanceEngineVersion.TaskId");
+			upgradeDBInstanceEngineVersionResponse.RequestId = _ctx.StringValue("UpgradeDBInstanceEngineVersion.RequestId");
         
 			return upgradeDBInstanceEngineVersionResponse;
         }

@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private List<string> destinationCidrBlockss = new List<string>(){ };
 
+		private string transitRouterRouteTableId;
+
 		private List<string> sourceInstanceIdss = new List<string>(){ };
 
 		private List<string> sourceRegionIdss = new List<string>(){ };
@@ -165,6 +167,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				destinationCidrBlockss = value;
+			}
+		}
+
+		public string TransitRouterRouteTableId
+		{
+			get
+			{
+				return transitRouterRouteTableId;
+			}
+			set	
+			{
+				transitRouterRouteTableId = value;
+				DictionaryUtil.Add(QueryParameters, "TransitRouterRouteTableId", value);
 			}
 		}
 

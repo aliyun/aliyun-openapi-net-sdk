@@ -31,10 +31,10 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			DescribeDBClusterPerformanceResponse describeDBClusterPerformanceResponse = new DescribeDBClusterPerformanceResponse();
 
 			describeDBClusterPerformanceResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBClusterPerformanceResponse.RequestId = _ctx.StringValue("DescribeDBClusterPerformance.RequestId");
-			describeDBClusterPerformanceResponse.DBClusterId = _ctx.StringValue("DescribeDBClusterPerformance.DBClusterId");
-			describeDBClusterPerformanceResponse.StartTime = _ctx.StringValue("DescribeDBClusterPerformance.StartTime");
 			describeDBClusterPerformanceResponse.EndTime = _ctx.StringValue("DescribeDBClusterPerformance.EndTime");
+			describeDBClusterPerformanceResponse.RequestId = _ctx.StringValue("DescribeDBClusterPerformance.RequestId");
+			describeDBClusterPerformanceResponse.StartTime = _ctx.StringValue("DescribeDBClusterPerformance.StartTime");
+			describeDBClusterPerformanceResponse.DBClusterId = _ctx.StringValue("DescribeDBClusterPerformance.DBClusterId");
 
 			List<DescribeDBClusterPerformanceResponse.DescribeDBClusterPerformance_PerformanceItem> describeDBClusterPerformanceResponse_performances = new List<DescribeDBClusterPerformanceResponse.DescribeDBClusterPerformance_PerformanceItem>();
 			for (int i = 0; i < _ctx.Length("DescribeDBClusterPerformance.Performances.Length"); i++) {

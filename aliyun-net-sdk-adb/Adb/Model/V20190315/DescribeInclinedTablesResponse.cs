@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.adb.Model.V20190315
 	public class DescribeInclinedTablesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string totalCount;
-
-		private string pageNumber;
 
 		private string pageSize;
 
-		private List<DescribeInclinedTables_Table> items;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string pageNumber;
+
+		private List<DescribeInclinedTables_Table> items;
 
 		public string TotalCount
 		{
@@ -59,18 +47,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
 		public string PageSize
 		{
 			get
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
 			}
 		}
 
@@ -98,39 +98,15 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		public class DescribeInclinedTables_Table
 		{
 
-			private string schema;
-
-			private string name;
-
 			private string type;
+
+			private string schema;
 
 			private long? size;
 
+			private string name;
+
 			private bool? isIncline;
-
-			public string Schema
-			{
-				get
-				{
-					return schema;
-				}
-				set	
-				{
-					schema = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
 
 			public string Type
 			{
@@ -144,6 +120,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
+			public string Schema
+			{
+				get
+				{
+					return schema;
+				}
+				set	
+				{
+					schema = value;
+				}
+			}
+
 			public long? Size
 			{
 				get
@@ -153,6 +141,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					size = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 

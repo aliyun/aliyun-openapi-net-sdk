@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -29,12 +29,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string engine;
 
-		private string engineVersion;
-
 		private string parameterCount;
+
+		private string engineVersion;
 
 		private List<DescribeParameterTemplates_TemplateRecord> parameters;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Engine")]
 		public string Engine
 		{
 			get
@@ -59,18 +61,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string EngineVersion
-		{
-			get
-			{
-				return engineVersion;
-			}
-			set	
-			{
-				engineVersion = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ParameterCount")]
 		public string ParameterCount
 		{
 			get
@@ -83,6 +74,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "EngineVersion")]
+		public string EngineVersion
+		{
+			get
+			{
+				return engineVersion;
+			}
+			set	
+			{
+				engineVersion = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Parameters")]
 		public List<DescribeParameterTemplates_TemplateRecord> Parameters
 		{
 			get
@@ -98,6 +103,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeParameterTemplates_TemplateRecord
 		{
 
+			private string checkingCode;
+
 			private string parameterName;
 
 			private string parameterValue;
@@ -106,58 +113,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string forceRestart;
 
-			private string checkingCode;
-
 			private string parameterDescription;
 
-			public string ParameterName
-			{
-				get
-				{
-					return parameterName;
-				}
-				set	
-				{
-					parameterName = value;
-				}
-			}
-
-			public string ParameterValue
-			{
-				get
-				{
-					return parameterValue;
-				}
-				set	
-				{
-					parameterValue = value;
-				}
-			}
-
-			public string ForceModify
-			{
-				get
-				{
-					return forceModify;
-				}
-				set	
-				{
-					forceModify = value;
-				}
-			}
-
-			public string ForceRestart
-			{
-				get
-				{
-					return forceRestart;
-				}
-				set	
-				{
-					forceRestart = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "CheckingCode")]
 			public string CheckingCode
 			{
 				get
@@ -170,6 +128,59 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ParameterName")]
+			public string ParameterName
+			{
+				get
+				{
+					return parameterName;
+				}
+				set	
+				{
+					parameterName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ParameterValue")]
+			public string ParameterValue
+			{
+				get
+				{
+					return parameterValue;
+				}
+				set	
+				{
+					parameterValue = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ForceModify")]
+			public string ForceModify
+			{
+				get
+				{
+					return forceModify;
+				}
+				set	
+				{
+					forceModify = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ForceRestart")]
+			public string ForceRestart
+			{
+				get
+				{
+					return forceRestart;
+				}
+				set	
+				{
+					forceRestart = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ParameterDescription")]
 			public string ParameterDescription
 			{
 				get

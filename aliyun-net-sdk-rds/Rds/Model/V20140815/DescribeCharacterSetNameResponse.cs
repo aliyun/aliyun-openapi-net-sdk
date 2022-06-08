@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeCharacterSetNameResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string engine;
+
+		private string requestId;
 
 		private List<string> characterSetNameItems;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Engine")]
 		public string Engine
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "CharacterSetNameItems")]
 		public List<string> CharacterSetNameItems
 		{
 			get

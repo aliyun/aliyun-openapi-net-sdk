@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -52,8 +53,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string centralRegionId;
 
-		private List<UnitNode> unitNodes = new List<UnitNode>(){ };
+		private List<long?> unitNodes = new List<long?>(){ };
 
+		[JsonProperty(PropertyName = "DBList")]
 		public string DBList
 		{
 			get
@@ -67,6 +69,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "CentralDBInstanceId")]
 		public string CentralDBInstanceId
 		{
 			get
@@ -80,6 +83,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "CentralRdsDtsAdminPassword")]
 		public string CentralRdsDtsAdminPassword
 		{
 			get
@@ -93,6 +97,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -106,6 +111,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "CentralRdsDtsAdminAccount")]
 		public string CentralRdsDtsAdminAccount
 		{
 			get
@@ -119,6 +125,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "CentralRegionId")]
 		public string CentralRegionId
 		{
 			get
@@ -132,7 +139,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public List<UnitNode> UnitNodes
+		[JsonProperty(PropertyName = "UnitNode")]
+		public List<long?> UnitNodes
 		{
 			get
 			{
@@ -142,23 +150,26 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set
 			{
 				unitNodes = value;
-				for (int i = 0; i < unitNodes.Count; i++)
+				if(unitNodes != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"UnitNode." + (i + 1) + ".DBInstanceStorage", unitNodes[i].DBInstanceStorage);
-					DictionaryUtil.Add(QueryParameters,"UnitNode." + (i + 1) + ".ZoneIDSlave1", unitNodes[i].ZoneIDSlave1);
-					DictionaryUtil.Add(QueryParameters,"UnitNode." + (i + 1) + ".ZoneIDSlave2", unitNodes[i].ZoneIDSlave2);
-					DictionaryUtil.Add(QueryParameters,"UnitNode." + (i + 1) + ".EngineVersion", unitNodes[i].EngineVersion);
-					DictionaryUtil.Add(QueryParameters,"UnitNode." + (i + 1) + ".DbInstanceClass", unitNodes[i].DbInstanceClass);
-					DictionaryUtil.Add(QueryParameters,"UnitNode." + (i + 1) + ".SecurityIPList", unitNodes[i].SecurityIPList);
-					DictionaryUtil.Add(QueryParameters,"UnitNode." + (i + 1) + ".VSwitchID", unitNodes[i].VSwitchID);
-					DictionaryUtil.Add(QueryParameters,"UnitNode." + (i + 1) + ".RegionID", unitNodes[i].RegionID);
-					DictionaryUtil.Add(QueryParameters,"UnitNode." + (i + 1) + ".Engine", unitNodes[i].Engine);
-					DictionaryUtil.Add(QueryParameters,"UnitNode." + (i + 1) + ".DtsInstanceClass", unitNodes[i].DtsInstanceClass);
-					DictionaryUtil.Add(QueryParameters,"UnitNode." + (i + 1) + ".VpcID", unitNodes[i].VpcID);
-					DictionaryUtil.Add(QueryParameters,"UnitNode." + (i + 1) + ".ZoneID", unitNodes[i].ZoneID);
-					DictionaryUtil.Add(QueryParameters,"UnitNode." + (i + 1) + ".DBInstanceDescription", unitNodes[i].DBInstanceDescription);
-					DictionaryUtil.Add(QueryParameters,"UnitNode." + (i + 1) + ".PayType", unitNodes[i].PayType);
-					DictionaryUtil.Add(QueryParameters,"UnitNode." + (i + 1) + ".DtsConflict", unitNodes[i].DtsConflict);
+					for (int depth1 = 0; depth1 < unitNodes.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
+					}
 				}
 			}
 		}
@@ -196,6 +207,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string dtsConflict;
 
+			[JsonProperty(PropertyName = "DBInstanceStorage")]
 			public long? DBInstanceStorage
 			{
 				get
@@ -208,6 +220,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ZoneIDSlave1")]
 			public string ZoneIDSlave1
 			{
 				get
@@ -220,6 +233,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ZoneIDSlave2")]
 			public string ZoneIDSlave2
 			{
 				get
@@ -232,6 +246,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "EngineVersion")]
 			public string EngineVersion
 			{
 				get
@@ -244,6 +259,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DbInstanceClass")]
 			public string DbInstanceClass
 			{
 				get
@@ -256,6 +272,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "SecurityIPList")]
 			public string SecurityIPList
 			{
 				get
@@ -268,6 +285,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "VSwitchID")]
 			public string VSwitchID
 			{
 				get
@@ -280,6 +298,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "RegionID")]
 			public string RegionID
 			{
 				get
@@ -292,6 +311,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Engine")]
 			public string Engine
 			{
 				get
@@ -304,6 +324,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DtsInstanceClass")]
 			public string DtsInstanceClass
 			{
 				get
@@ -316,6 +337,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "VpcID")]
 			public string VpcID
 			{
 				get
@@ -328,6 +350,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ZoneID")]
 			public string ZoneID
 			{
 				get
@@ -340,6 +363,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DBInstanceDescription")]
 			public string DBInstanceDescription
 			{
 				get
@@ -352,6 +376,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "PayType")]
 			public string PayType
 			{
 				get
@@ -364,6 +389,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DtsConflict")]
 			public string DtsConflict
 			{
 				get

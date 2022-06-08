@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -62,6 +63,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -75,6 +77,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "SpecifiedTime")]
 		public string SpecifiedTime
 		{
 			get
@@ -88,6 +91,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TargetDedicatedHostIdForSlave")]
 		public string TargetDedicatedHostIdForSlave
 		{
 			get
@@ -101,6 +105,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ZoneIdForFollower")]
 		public string ZoneIdForFollower
 		{
 			get
@@ -114,6 +119,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "EffectiveTime")]
 		public string EffectiveTime
 		{
 			get
@@ -127,6 +133,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TargetDedicatedHostIdForMaster")]
 		public string TargetDedicatedHostIdForMaster
 		{
 			get
@@ -140,6 +147,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -153,6 +161,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DedicatedHostGroupId")]
 		public string DedicatedHostGroupId
 		{
 			get
@@ -166,6 +175,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -179,6 +189,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ZoneIdForLog")]
 		public string ZoneIdForLog
 		{
 			get
@@ -192,6 +203,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get

@@ -136,6 +136,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private string displayTime;
 
+			private int? dataManagerRole;
+
 			public long? UseOssSize
 			{
 				get
@@ -613,6 +615,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					displayTime = value;
+				}
+			}
+
+			public int? DataManagerRole
+			{
+				get
+				{
+					return dataManagerRole;
+				}
+				set	
+				{
+					dataManagerRole = value;
 				}
 			}
 		}

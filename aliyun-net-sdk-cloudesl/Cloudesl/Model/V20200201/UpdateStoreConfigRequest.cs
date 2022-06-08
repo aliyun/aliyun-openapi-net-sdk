@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.cloudesl;
 using Aliyun.Acs.cloudesl.Transform;
 using Aliyun.Acs.cloudesl.Transform.V20200201;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
     public class UpdateStoreConfigRequest : RpcAcsRequest<UpdateStoreConfigResponse>
     {
         public UpdateStoreConfigRequest()
-            : base("cloudesl", "2020-02-01", "UpdateStoreConfig", "cloudesl", "openAPI")
+            : base("cloudesl", "2020-02-01", "UpdateStoreConfig")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,6 +44,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 		private string extraParams;
 
 		private string storeId;
+
+		private string subscribeContents;
 
 		private bool? enableNotification;
 
@@ -73,6 +76,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				storeId = value;
 				DictionaryUtil.Add(BodyParameters, "StoreId", value);
+			}
+		}
+
+		public string SubscribeContents
+		{
+			get
+			{
+				return subscribeContents;
+			}
+			set	
+			{
+				subscribeContents = value;
+				DictionaryUtil.Add(BodyParameters, "SubscribeContents", value);
 			}
 		}
 

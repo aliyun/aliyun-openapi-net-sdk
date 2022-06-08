@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -56,253 +56,87 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		public class DescribeDBClusterAttribute_DBCluster
 		{
 
-			private string regionId;
-
-			private string zoneId;
-
-			private string dBClusterId;
-
-			private string dBClusterType;
-
-			private string dBClusterDescription;
-
-			private string category;
-
-			private string lockMode;
-
-			private string lockReason;
-
-			private string payType;
-
-			private string dBVersion;
-
-			private string dBClusterStatus;
-
-			private long? dBNodeStorage;
-
-			private string dBNodeClass;
-
-			private long? dBNodeCount;
-
 			private string creationTime;
 
-			private string expireTime;
+			private bool? enableSpark;
+
+			private string dtsJobId;
+
+			private long? dBNodeCount;
 
 			private string expired;
 
 			private string maintainTime;
 
-			private string engine;
-
-			private string vPCId;
-
-			private string vSwitchId;
-
-			private string vPCCloudInstanceId;
-
-			private string commodityCode;
-
-			private string dBClusterNetworkType;
-
-			private string connectionString;
-
-			private int? port;
-
-			private string rdsInstanceId;
-
-			private string dtsJobId;
-
-			private string executorCount;
+			private string payType;
 
 			private string diskType;
 
-			private string computeResource;
-
-			private string storageResource;
-
 			private string mode;
 
-			private string resourceGroupId;
+			private int? port;
 
-			private int? elasticIOResource;
+			private string lockMode;
 
 			private string engineVersion;
 
-			private bool? userENIStatus;
-
-			private bool? enableSpark;
-
 			private bool? enableAirflow;
 
+			private string executorCount;
+
+			private string storageResource;
+
+			private string dBClusterId;
+
+			private string connectionString;
+
+			private string rdsInstanceId;
+
+			private string dBClusterType;
+
+			private string commodityCode;
+
+			private string expireTime;
+
+			private long? dBNodeStorage;
+
+			private string dBNodeClass;
+
+			private string lockReason;
+
+			private string vPCId;
+
+			private string computeResource;
+
+			private string regionId;
+
+			private int? elasticIOResource;
+
+			private string vSwitchId;
+
+			private string dBVersion;
+
+			private string vPCCloudInstanceId;
+
+			private string dBClusterStatus;
+
+			private string resourceGroupId;
+
+			private string dBClusterNetworkType;
+
+			private string dBClusterDescription;
+
+			private bool? userENIStatus;
+
+			private string zoneId;
+
+			private string category;
+
+			private string engine;
+
+			private string kmsId;
+
 			private List<DescribeDBClusterAttribute_Tag> tags;
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
-			public string DBClusterId
-			{
-				get
-				{
-					return dBClusterId;
-				}
-				set	
-				{
-					dBClusterId = value;
-				}
-			}
-
-			public string DBClusterType
-			{
-				get
-				{
-					return dBClusterType;
-				}
-				set	
-				{
-					dBClusterType = value;
-				}
-			}
-
-			public string DBClusterDescription
-			{
-				get
-				{
-					return dBClusterDescription;
-				}
-				set	
-				{
-					dBClusterDescription = value;
-				}
-			}
-
-			public string Category
-			{
-				get
-				{
-					return category;
-				}
-				set	
-				{
-					category = value;
-				}
-			}
-
-			public string LockMode
-			{
-				get
-				{
-					return lockMode;
-				}
-				set	
-				{
-					lockMode = value;
-				}
-			}
-
-			public string LockReason
-			{
-				get
-				{
-					return lockReason;
-				}
-				set	
-				{
-					lockReason = value;
-				}
-			}
-
-			public string PayType
-			{
-				get
-				{
-					return payType;
-				}
-				set	
-				{
-					payType = value;
-				}
-			}
-
-			public string DBVersion
-			{
-				get
-				{
-					return dBVersion;
-				}
-				set	
-				{
-					dBVersion = value;
-				}
-			}
-
-			public string DBClusterStatus
-			{
-				get
-				{
-					return dBClusterStatus;
-				}
-				set	
-				{
-					dBClusterStatus = value;
-				}
-			}
-
-			public long? DBNodeStorage
-			{
-				get
-				{
-					return dBNodeStorage;
-				}
-				set	
-				{
-					dBNodeStorage = value;
-				}
-			}
-
-			public string DBNodeClass
-			{
-				get
-				{
-					return dBNodeClass;
-				}
-				set	
-				{
-					dBNodeClass = value;
-				}
-			}
-
-			public long? DBNodeCount
-			{
-				get
-				{
-					return dBNodeCount;
-				}
-				set	
-				{
-					dBNodeCount = value;
-				}
-			}
 
 			public string CreationTime
 			{
@@ -316,15 +150,39 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public string ExpireTime
+			public bool? EnableSpark
 			{
 				get
 				{
-					return expireTime;
+					return enableSpark;
 				}
 				set	
 				{
-					expireTime = value;
+					enableSpark = value;
+				}
+			}
+
+			public string DtsJobId
+			{
+				get
+				{
+					return dtsJobId;
+				}
+				set	
+				{
+					dtsJobId = value;
+				}
+			}
+
+			public long? DBNodeCount
+			{
+				get
+				{
+					return dBNodeCount;
+				}
+				set	
+				{
+					dBNodeCount = value;
 				}
 			}
 
@@ -352,135 +210,15 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public string Engine
+			public string PayType
 			{
 				get
 				{
-					return engine;
+					return payType;
 				}
 				set	
 				{
-					engine = value;
-				}
-			}
-
-			public string VPCId
-			{
-				get
-				{
-					return vPCId;
-				}
-				set	
-				{
-					vPCId = value;
-				}
-			}
-
-			public string VSwitchId
-			{
-				get
-				{
-					return vSwitchId;
-				}
-				set	
-				{
-					vSwitchId = value;
-				}
-			}
-
-			public string VPCCloudInstanceId
-			{
-				get
-				{
-					return vPCCloudInstanceId;
-				}
-				set	
-				{
-					vPCCloudInstanceId = value;
-				}
-			}
-
-			public string CommodityCode
-			{
-				get
-				{
-					return commodityCode;
-				}
-				set	
-				{
-					commodityCode = value;
-				}
-			}
-
-			public string DBClusterNetworkType
-			{
-				get
-				{
-					return dBClusterNetworkType;
-				}
-				set	
-				{
-					dBClusterNetworkType = value;
-				}
-			}
-
-			public string ConnectionString
-			{
-				get
-				{
-					return connectionString;
-				}
-				set	
-				{
-					connectionString = value;
-				}
-			}
-
-			public int? Port
-			{
-				get
-				{
-					return port;
-				}
-				set	
-				{
-					port = value;
-				}
-			}
-
-			public string RdsInstanceId
-			{
-				get
-				{
-					return rdsInstanceId;
-				}
-				set	
-				{
-					rdsInstanceId = value;
-				}
-			}
-
-			public string DtsJobId
-			{
-				get
-				{
-					return dtsJobId;
-				}
-				set	
-				{
-					dtsJobId = value;
-				}
-			}
-
-			public string ExecutorCount
-			{
-				get
-				{
-					return executorCount;
-				}
-				set	
-				{
-					executorCount = value;
+					payType = value;
 				}
 			}
 
@@ -496,30 +234,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public string ComputeResource
-			{
-				get
-				{
-					return computeResource;
-				}
-				set	
-				{
-					computeResource = value;
-				}
-			}
-
-			public string StorageResource
-			{
-				get
-				{
-					return storageResource;
-				}
-				set	
-				{
-					storageResource = value;
-				}
-			}
-
 			public string Mode
 			{
 				get
@@ -532,27 +246,27 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public string ResourceGroupId
+			public int? Port
 			{
 				get
 				{
-					return resourceGroupId;
+					return port;
 				}
 				set	
 				{
-					resourceGroupId = value;
+					port = value;
 				}
 			}
 
-			public int? ElasticIOResource
+			public string LockMode
 			{
 				get
 				{
-					return elasticIOResource;
+					return lockMode;
 				}
 				set	
 				{
-					elasticIOResource = value;
+					lockMode = value;
 				}
 			}
 
@@ -568,6 +282,282 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
+			public bool? EnableAirflow
+			{
+				get
+				{
+					return enableAirflow;
+				}
+				set	
+				{
+					enableAirflow = value;
+				}
+			}
+
+			public string ExecutorCount
+			{
+				get
+				{
+					return executorCount;
+				}
+				set	
+				{
+					executorCount = value;
+				}
+			}
+
+			public string StorageResource
+			{
+				get
+				{
+					return storageResource;
+				}
+				set	
+				{
+					storageResource = value;
+				}
+			}
+
+			public string DBClusterId
+			{
+				get
+				{
+					return dBClusterId;
+				}
+				set	
+				{
+					dBClusterId = value;
+				}
+			}
+
+			public string ConnectionString
+			{
+				get
+				{
+					return connectionString;
+				}
+				set	
+				{
+					connectionString = value;
+				}
+			}
+
+			public string RdsInstanceId
+			{
+				get
+				{
+					return rdsInstanceId;
+				}
+				set	
+				{
+					rdsInstanceId = value;
+				}
+			}
+
+			public string DBClusterType
+			{
+				get
+				{
+					return dBClusterType;
+				}
+				set	
+				{
+					dBClusterType = value;
+				}
+			}
+
+			public string CommodityCode
+			{
+				get
+				{
+					return commodityCode;
+				}
+				set	
+				{
+					commodityCode = value;
+				}
+			}
+
+			public string ExpireTime
+			{
+				get
+				{
+					return expireTime;
+				}
+				set	
+				{
+					expireTime = value;
+				}
+			}
+
+			public long? DBNodeStorage
+			{
+				get
+				{
+					return dBNodeStorage;
+				}
+				set	
+				{
+					dBNodeStorage = value;
+				}
+			}
+
+			public string DBNodeClass
+			{
+				get
+				{
+					return dBNodeClass;
+				}
+				set	
+				{
+					dBNodeClass = value;
+				}
+			}
+
+			public string LockReason
+			{
+				get
+				{
+					return lockReason;
+				}
+				set	
+				{
+					lockReason = value;
+				}
+			}
+
+			public string VPCId
+			{
+				get
+				{
+					return vPCId;
+				}
+				set	
+				{
+					vPCId = value;
+				}
+			}
+
+			public string ComputeResource
+			{
+				get
+				{
+					return computeResource;
+				}
+				set	
+				{
+					computeResource = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public int? ElasticIOResource
+			{
+				get
+				{
+					return elasticIOResource;
+				}
+				set	
+				{
+					elasticIOResource = value;
+				}
+			}
+
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
+
+			public string DBVersion
+			{
+				get
+				{
+					return dBVersion;
+				}
+				set	
+				{
+					dBVersion = value;
+				}
+			}
+
+			public string VPCCloudInstanceId
+			{
+				get
+				{
+					return vPCCloudInstanceId;
+				}
+				set	
+				{
+					vPCCloudInstanceId = value;
+				}
+			}
+
+			public string DBClusterStatus
+			{
+				get
+				{
+					return dBClusterStatus;
+				}
+				set	
+				{
+					dBClusterStatus = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string DBClusterNetworkType
+			{
+				get
+				{
+					return dBClusterNetworkType;
+				}
+				set	
+				{
+					dBClusterNetworkType = value;
+				}
+			}
+
+			public string DBClusterDescription
+			{
+				get
+				{
+					return dBClusterDescription;
+				}
+				set	
+				{
+					dBClusterDescription = value;
+				}
+			}
+
 			public bool? UserENIStatus
 			{
 				get
@@ -580,27 +570,51 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public bool? EnableSpark
+			public string ZoneId
 			{
 				get
 				{
-					return enableSpark;
+					return zoneId;
 				}
 				set	
 				{
-					enableSpark = value;
+					zoneId = value;
 				}
 			}
 
-			public bool? EnableAirflow
+			public string Category
 			{
 				get
 				{
-					return enableAirflow;
+					return category;
 				}
 				set	
 				{
-					enableAirflow = value;
+					category = value;
+				}
+			}
+
+			public string Engine
+			{
+				get
+				{
+					return engine;
+				}
+				set	
+				{
+					engine = value;
+				}
+			}
+
+			public string KmsId
+			{
+				get
+				{
+					return kmsId;
+				}
+				set	
+				{
+					kmsId = value;
 				}
 			}
 

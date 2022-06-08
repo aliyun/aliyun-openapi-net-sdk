@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeGadInstances_GadInstancesItem> gadInstances;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "GadInstances")]
 		public List<DescribeGadInstances_GadInstancesItem> GadInstances
 		{
 			get
@@ -70,6 +72,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private List<DescribeGadInstances_GadInstanceMembersItem> gadInstanceMembers;
 
+			[JsonProperty(PropertyName = "GadInstanceName")]
 			public string GadInstanceName
 			{
 				get
@@ -82,6 +85,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Description")]
 			public string Description
 			{
 				get
@@ -94,6 +98,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Status")]
 			public string Status
 			{
 				get
@@ -106,6 +111,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "CreationTime")]
 			public string CreationTime
 			{
 				get
@@ -118,6 +124,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ModificationTime")]
 			public string ModificationTime
 			{
 				get
@@ -130,6 +137,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Service")]
 			public string Service
 			{
 				get
@@ -142,6 +150,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "GadInstanceMembers")]
 			public List<DescribeGadInstances_GadInstanceMembersItem> GadInstanceMembers
 			{
 				get
@@ -171,6 +180,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 				private string dtsInstance;
 
+				[JsonProperty(PropertyName = "DBInstanceID")]
 				public string DBInstanceID
 				{
 					get
@@ -183,6 +193,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "Engine")]
 				public string Engine
 				{
 					get
@@ -195,6 +206,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "EngineVersion")]
 				public string EngineVersion
 				{
 					get
@@ -207,6 +219,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "RegionId")]
 				public string RegionId
 				{
 					get
@@ -219,6 +232,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "Role")]
 				public string Role
 				{
 					get
@@ -231,6 +245,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "Status")]
 				public string Status
 				{
 					get
@@ -243,6 +258,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "DtsInstance")]
 				public string DtsInstance
 				{
 					get

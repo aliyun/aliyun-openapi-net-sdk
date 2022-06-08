@@ -32,11 +32,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public DescribeRegionsRequest()
             : base("Dds", "2015-12-01", "DescribeRegions", "dds", "openAPI")
         {
-            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
-            {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
-            }
 			Method = MethodType.POST;
         }
 
@@ -49,6 +44,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string acceptLanguage;
 
 		public long? ResourceOwnerId
 		{
@@ -112,6 +109,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AcceptLanguage
+		{
+			get
+			{
+				return acceptLanguage;
+			}
+			set	
+			{
+				acceptLanguage = value;
+				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
 			}
 		}
 

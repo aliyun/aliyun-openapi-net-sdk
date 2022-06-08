@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -58,8 +59,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? usedTime;
 
+		private string autoRenew;
+
 		private string payType;
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -73,6 +77,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ClientToken")]
 		public string ClientToken
 		{
 			get
@@ -86,6 +91,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -99,6 +105,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "BusinessInfo")]
 		public string BusinessInfo
 		{
 			get
@@ -112,6 +119,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Period")]
 		public string Period
 		{
 			get
@@ -125,6 +133,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -138,6 +147,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -151,6 +161,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -164,6 +175,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "UsedTime")]
 		public int? UsedTime
 		{
 			get
@@ -177,6 +189,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "AutoRenew")]
+		public string AutoRenew
+		{
+			get
+			{
+				return autoRenew;
+			}
+			set	
+			{
+				autoRenew = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenew", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "PayType")]
 		public string PayType
 		{
 			get

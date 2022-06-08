@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,22 +25,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDBInstanceMonitorResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string period;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
+		[JsonProperty(PropertyName = "Period")]
 		public string Period
 		{
 			get
@@ -50,6 +39,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				period = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

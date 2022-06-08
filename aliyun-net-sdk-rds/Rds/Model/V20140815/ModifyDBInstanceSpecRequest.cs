@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -48,6 +49,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string resourceGroupId;
 
+		private ServerlessConfiguration serverlessConfiguration_;
+
 		private string effectiveTime;
 
 		private string dBInstanceId;
@@ -74,8 +77,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string zoneId;
 
+		private string category;
+
 		private string payType;
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -89,6 +95,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceStorage")]
 		public int? DBInstanceStorage
 		{
 			get
@@ -102,6 +109,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "EngineVersion")]
 		public string EngineVersion
 		{
 			get
@@ -115,6 +123,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceGroupId")]
 		public string ResourceGroupId
 		{
 			get
@@ -128,6 +137,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ServerlessConfiguration")]
+		public ServerlessConfiguration ServerlessConfiguration_
+		{
+			get
+			{
+				return serverlessConfiguration_;
+			}
+
+			set
+			{
+				serverlessConfiguration_ = value;
+				DictionaryUtil.Add(QueryParameters, "ServerlessConfiguration", JsonConvert.SerializeObject(value));
+
+			}
+		}
+
+		[JsonProperty(PropertyName = "EffectiveTime")]
 		public string EffectiveTime
 		{
 			get
@@ -141,6 +167,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -154,6 +181,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "SwitchTime")]
 		public string SwitchTime
 		{
 			get
@@ -167,6 +195,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceStorageType")]
 		public string DBInstanceStorageType
 		{
 			get
@@ -180,6 +209,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "SourceBiz")]
 		public string SourceBiz
 		{
 			get
@@ -193,6 +223,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DedicatedHostGroupId")]
 		public string DedicatedHostGroupId
 		{
 			get
@@ -206,6 +237,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Direction")]
 		public string Direction
 		{
 			get
@@ -219,6 +251,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -232,6 +265,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -245,6 +279,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -258,6 +293,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "UsedTime")]
 		public long? UsedTime
 		{
 			get
@@ -271,6 +307,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceClass")]
 		public string DBInstanceClass
 		{
 			get
@@ -284,6 +321,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ZoneId")]
 		public string ZoneId
 		{
 			get
@@ -297,6 +335,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Category")]
+		public string Category
+		{
+			get
+			{
+				return category;
+			}
+			set	
+			{
+				category = value;
+				DictionaryUtil.Add(QueryParameters, "Category", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "PayType")]
 		public string PayType
 		{
 			get
@@ -307,6 +360,40 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				payType = value;
 				DictionaryUtil.Add(QueryParameters, "PayType", value);
+			}
+		}
+
+		public class ServerlessConfiguration
+		{
+
+			private double? minCapacity;
+
+			private double? maxCapacity;
+
+			[JsonProperty(PropertyName = "MinCapacity")]
+			public double? MinCapacity
+			{
+				get
+				{
+					return minCapacity;
+				}
+				set	
+				{
+					minCapacity = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaxCapacity")]
+			public double? MaxCapacity
+			{
+				get
+				{
+					return maxCapacity;
+				}
+				set	
+				{
+					maxCapacity = value;
+				}
 			}
 		}
 

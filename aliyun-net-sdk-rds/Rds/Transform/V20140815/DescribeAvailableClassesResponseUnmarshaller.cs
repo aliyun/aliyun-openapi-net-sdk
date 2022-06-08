@@ -36,13 +36,13 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			List<DescribeAvailableClassesResponse.DescribeAvailableClasses_DBInstanceClass> describeAvailableClassesResponse_dBInstanceClasses = new List<DescribeAvailableClassesResponse.DescribeAvailableClasses_DBInstanceClass>();
 			for (int i = 0; i < _ctx.Length("DescribeAvailableClasses.DBInstanceClasses.Length"); i++) {
 				DescribeAvailableClassesResponse.DescribeAvailableClasses_DBInstanceClass dBInstanceClass = new DescribeAvailableClassesResponse.DescribeAvailableClasses_DBInstanceClass();
-				dBInstanceClass.DBInstanceClass = _ctx.StringValue("DescribeAvailableClasses.DBInstanceClasses["+ i +"].DBInstanceClass");
 				dBInstanceClass.StorageRange = _ctx.StringValue("DescribeAvailableClasses.DBInstanceClasses["+ i +"].StorageRange");
+				dBInstanceClass.DBInstanceClass = _ctx.StringValue("DescribeAvailableClasses.DBInstanceClasses["+ i +"].DBInstanceClass");
 
 				DescribeAvailableClassesResponse.DescribeAvailableClasses_DBInstanceClass.DescribeAvailableClasses_DBInstanceStorageRange dBInstanceStorageRange = new DescribeAvailableClassesResponse.DescribeAvailableClasses_DBInstanceClass.DescribeAvailableClasses_DBInstanceStorageRange();
-				dBInstanceStorageRange.MaxValue = _ctx.IntegerValue("DescribeAvailableClasses.DBInstanceClasses["+ i +"].DBInstanceStorageRange.MaxValue");
-				dBInstanceStorageRange.MinValue = _ctx.IntegerValue("DescribeAvailableClasses.DBInstanceClasses["+ i +"].DBInstanceStorageRange.MinValue");
 				dBInstanceStorageRange.Step = _ctx.IntegerValue("DescribeAvailableClasses.DBInstanceClasses["+ i +"].DBInstanceStorageRange.Step");
+				dBInstanceStorageRange.MinValue = _ctx.IntegerValue("DescribeAvailableClasses.DBInstanceClasses["+ i +"].DBInstanceStorageRange.MinValue");
+				dBInstanceStorageRange.MaxValue = _ctx.IntegerValue("DescribeAvailableClasses.DBInstanceClasses["+ i +"].DBInstanceStorageRange.MaxValue");
 				dBInstanceClass.DBInstanceStorageRange = dBInstanceStorageRange;
 
 				describeAvailableClassesResponse_dBInstanceClasses.Add(dBInstanceClass);

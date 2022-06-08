@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeCharacterSetNameResponse describeCharacterSetNameResponse = new DescribeCharacterSetNameResponse();
 
 			describeCharacterSetNameResponse.HttpResponse = _ctx.HttpResponse;
-			describeCharacterSetNameResponse.RequestId = _ctx.StringValue("DescribeCharacterSetName.RequestId");
 			describeCharacterSetNameResponse.Engine = _ctx.StringValue("DescribeCharacterSetName.Engine");
+			describeCharacterSetNameResponse.RequestId = _ctx.StringValue("DescribeCharacterSetName.RequestId");
 
 			List<string> describeCharacterSetNameResponse_characterSetNameItems = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeCharacterSetName.CharacterSetNameItems.Length"); i++) {

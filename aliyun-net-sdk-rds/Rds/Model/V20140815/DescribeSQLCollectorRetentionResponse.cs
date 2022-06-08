@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,22 +25,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeSQLCollectorRetentionResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string configValue;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
+		[JsonProperty(PropertyName = "ConfigValue")]
 		public string ConfigValue
 		{
 			get
@@ -50,6 +39,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				configValue = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

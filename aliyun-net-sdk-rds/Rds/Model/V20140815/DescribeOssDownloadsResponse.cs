@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,26 +25,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeOssDownloadsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dBInstanceId;
+
+		private string requestId;
 
 		private string migrateTaskId;
 
 		private List<DescribeOssDownloads_OssDownload> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -57,6 +46,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "MigrateTaskId")]
 		public string MigrateTaskId
 		{
 			get
@@ -69,6 +72,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeOssDownloads_OssDownload> Items
 		{
 			get
@@ -84,46 +88,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeOssDownloads_OssDownload
 		{
 
-			private string fileName;
-
-			private string createTime;
-
 			private string endTime;
-
-			private string backupMode;
-
-			private string fileSize;
 
 			private string status;
 
-			private string isAvailable;
-
 			private string description;
 
-			public string FileName
-			{
-				get
-				{
-					return fileName;
-				}
-				set	
-				{
-					fileName = value;
-				}
-			}
+			private string createTime;
 
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
+			private string backupMode;
 
+			private string isAvailable;
+
+			private string fileName;
+
+			private string fileSize;
+
+			[JsonProperty(PropertyName = "EndTime")]
 			public string EndTime
 			{
 				get
@@ -136,30 +117,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string BackupMode
-			{
-				get
-				{
-					return backupMode;
-				}
-				set	
-				{
-					backupMode = value;
-				}
-			}
-
-			public string FileSize
-			{
-				get
-				{
-					return fileSize;
-				}
-				set	
-				{
-					fileSize = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Status")]
 			public string Status
 			{
 				get
@@ -172,6 +130,46 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Description")]
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreateTime")]
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BackupMode")]
+			public string BackupMode
+			{
+				get
+				{
+					return backupMode;
+				}
+				set	
+				{
+					backupMode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IsAvailable")]
 			public string IsAvailable
 			{
 				get
@@ -184,15 +182,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string Description
+			[JsonProperty(PropertyName = "FileName")]
+			public string FileName
 			{
 				get
 				{
-					return description;
+					return fileName;
 				}
 				set	
 				{
-					description = value;
+					fileName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "FileSize")]
+			public string FileSize
+			{
+				get
+				{
+					return fileSize;
+				}
+				set	
+				{
+					fileSize = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeAvailableMetrics_Metrics> items;
 
+		[JsonProperty(PropertyName = "TotalRecordCount")]
 		public int? TotalRecordCount
 		{
 			get
@@ -43,6 +44,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -55,6 +57,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeAvailableMetrics_Metrics> Items
 		{
 			get
@@ -90,6 +93,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string dimension;
 
+			[JsonProperty(PropertyName = "GroupKey")]
 			public string GroupKey
 			{
 				get
@@ -102,6 +106,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "SortRule")]
 			public int? SortRule
 			{
 				get
@@ -114,6 +119,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Description")]
 			public string Description
 			{
 				get
@@ -126,6 +132,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Unit")]
 			public string Unit
 			{
 				get
@@ -138,6 +145,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DbType")]
 			public string DbType
 			{
 				get
@@ -150,6 +158,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "MetricsKey")]
 			public string MetricsKey
 			{
 				get
@@ -162,6 +171,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "GroupKeyType")]
 			public string GroupKeyType
 			{
 				get
@@ -174,6 +184,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "MetricsKeyAlias")]
 			public string MetricsKeyAlias
 			{
 				get
@@ -186,6 +197,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Method")]
 			public string Method
 			{
 				get
@@ -198,6 +210,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Dimension")]
 			public string Dimension
 			{
 				get

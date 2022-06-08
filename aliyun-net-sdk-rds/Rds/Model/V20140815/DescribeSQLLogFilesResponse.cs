@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
-		private int? totalRecordCount;
-
 		private int? pageNumber;
 
 		private int? pageRecordCount;
 
+		private int? totalRecordCount;
+
 		private List<DescribeSQLLogFiles_LogFile> items;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,18 +48,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -71,6 +61,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageRecordCount")]
 		public int? PageRecordCount
 		{
 			get
@@ -83,6 +74,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalRecordCount")]
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeSQLLogFiles_LogFile> Items
 		{
 			get
@@ -100,16 +105,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string fileID;
 
-			private string logStatus;
-
-			private string logDownloadURL;
+			private string logStartTime;
 
 			private string logSize;
 
-			private string logStartTime;
+			private string logDownloadURL;
 
 			private string logEndTime;
 
+			private string logStatus;
+
+			[JsonProperty(PropertyName = "FileID")]
 			public string FileID
 			{
 				get
@@ -122,42 +128,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string LogStatus
-			{
-				get
-				{
-					return logStatus;
-				}
-				set	
-				{
-					logStatus = value;
-				}
-			}
-
-			public string LogDownloadURL
-			{
-				get
-				{
-					return logDownloadURL;
-				}
-				set	
-				{
-					logDownloadURL = value;
-				}
-			}
-
-			public string LogSize
-			{
-				get
-				{
-					return logSize;
-				}
-				set	
-				{
-					logSize = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "LogStartTime")]
 			public string LogStartTime
 			{
 				get
@@ -170,6 +141,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "LogSize")]
+			public string LogSize
+			{
+				get
+				{
+					return logSize;
+				}
+				set	
+				{
+					logSize = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LogDownloadURL")]
+			public string LogDownloadURL
+			{
+				get
+				{
+					return logDownloadURL;
+				}
+				set	
+				{
+					logDownloadURL = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LogEndTime")]
 			public string LogEndTime
 			{
 				get
@@ -179,6 +177,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					logEndTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LogStatus")]
+			public string LogStatus
+			{
+				get
+				{
+					return logStatus;
+				}
+				set	
+				{
+					logStatus = value;
 				}
 			}
 		}

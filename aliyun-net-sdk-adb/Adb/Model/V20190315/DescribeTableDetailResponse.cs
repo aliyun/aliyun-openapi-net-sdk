@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.adb.Model.V20190315
 	public class DescribeTableDetailResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? avgSize;
 
-		private List<DescribeTableDetail_Shard> items;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeTableDetail_Shard> items;
 
 		public long? AvgSize
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				avgSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,21 +70,9 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		public class DescribeTableDetail_Shard
 		{
 
-			private int? id;
-
 			private long? size;
 
-			public int? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private int? id;
 
 			public long? Size
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					size = value;
+				}
+			}
+
+			public int? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 		}

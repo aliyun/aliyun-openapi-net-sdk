@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -56,25 +56,13 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		public class DescribeAccounts_DBAccount
 		{
 
-			private string accountName;
-
 			private string accountStatus;
 
 			private string accountDescription;
 
 			private string accountType;
 
-			public string AccountName
-			{
-				get
-				{
-					return accountName;
-				}
-				set	
-				{
-					accountName = value;
-				}
-			}
+			private string accountName;
 
 			public string AccountStatus
 			{
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					accountType = value;
+				}
+			}
+
+			public string AccountName
+			{
+				get
+				{
+					return accountName;
+				}
+				set	
+				{
+					accountName = value;
 				}
 			}
 		}

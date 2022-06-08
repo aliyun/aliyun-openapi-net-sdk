@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.cloudesl;
 using Aliyun.Acs.cloudesl.Transform;
 using Aliyun.Acs.cloudesl.Transform.V20200201;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
     public class UnassignUserRequest : RpcAcsRequest<UnassignUserResponse>
     {
         public UnassignUserRequest()
-            : base("cloudesl", "2020-02-01", "UnassignUser", "cloudesl", "openAPI")
+            : base("cloudesl", "2020-02-01", "UnassignUser")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

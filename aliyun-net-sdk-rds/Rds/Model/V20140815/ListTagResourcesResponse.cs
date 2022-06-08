@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class ListTagResourcesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
+
+		private string requestId;
 
 		private List<ListTagResources_TagResource> tagResources;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TagResources")]
 		public List<ListTagResources_TagResource> TagResources
 		{
 			get
@@ -70,26 +73,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class ListTagResources_TagResource
 		{
 
-			private string tagKey;
-
 			private string tagValue;
 
 			private string resourceType;
 
 			private string resourceId;
 
-			public string TagKey
-			{
-				get
-				{
-					return tagKey;
-				}
-				set	
-				{
-					tagKey = value;
-				}
-			}
+			private string tagKey;
 
+			[JsonProperty(PropertyName = "TagValue")]
 			public string TagValue
 			{
 				get
@@ -102,6 +94,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ResourceType")]
 			public string ResourceType
 			{
 				get
@@ -114,6 +107,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ResourceId")]
 			public string ResourceId
 			{
 				get
@@ -123,6 +117,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					resourceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TagKey")]
+			public string TagKey
+			{
+				get
+				{
+					return tagKey;
+				}
+				set	
+				{
+					tagKey = value;
 				}
 			}
 		}

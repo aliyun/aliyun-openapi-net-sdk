@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
-		private long? totalRecordCount;
-
 		private int? pageNumber;
 
 		private int? pageRecordCount;
 
+		private long? totalRecordCount;
+
 		private List<DescribeSQLLogRecords_SQLRecord> items;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,18 +48,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -71,6 +61,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageRecordCount")]
 		public int? PageRecordCount
 		{
 			get
@@ -83,6 +74,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalRecordCount")]
+		public long? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeSQLLogRecords_SQLRecord> Items
 		{
 			get
@@ -98,46 +103,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeSQLLogRecords_SQLRecord
 		{
 
-			private string dBName;
-
-			private string accountName;
-
 			private string hostAddress;
 
 			private string sQLText;
 
-			private long? totalExecutionTimes;
-
 			private long? returnRowCounts;
+
+			private string dBName;
 
 			private string executeTime;
 
 			private string threadID;
 
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
-				}
-			}
+			private long? totalExecutionTimes;
 
-			public string AccountName
-			{
-				get
-				{
-					return accountName;
-				}
-				set	
-				{
-					accountName = value;
-				}
-			}
+			private string accountName;
 
+			[JsonProperty(PropertyName = "HostAddress")]
 			public string HostAddress
 			{
 				get
@@ -150,6 +132,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "SQLText")]
 			public string SQLText
 			{
 				get
@@ -162,18 +145,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public long? TotalExecutionTimes
-			{
-				get
-				{
-					return totalExecutionTimes;
-				}
-				set	
-				{
-					totalExecutionTimes = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "ReturnRowCounts")]
 			public long? ReturnRowCounts
 			{
 				get
@@ -186,6 +158,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DBName")]
+			public string DBName
+			{
+				get
+				{
+					return dBName;
+				}
+				set	
+				{
+					dBName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExecuteTime")]
 			public string ExecuteTime
 			{
 				get
@@ -198,6 +184,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ThreadID")]
 			public string ThreadID
 			{
 				get
@@ -207,6 +194,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					threadID = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TotalExecutionTimes")]
+			public long? TotalExecutionTimes
+			{
+				get
+				{
+					return totalExecutionTimes;
+				}
+				set	
+				{
+					totalExecutionTimes = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AccountName")]
+			public string AccountName
+			{
+				get
+				{
+					return accountName;
+				}
+				set	
+				{
+					accountName = value;
 				}
 			}
 		}

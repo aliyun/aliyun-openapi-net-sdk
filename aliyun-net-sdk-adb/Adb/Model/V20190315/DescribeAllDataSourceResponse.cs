@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -27,11 +27,11 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string requestId;
 
-		private List<DescribeAllDataSource_Schema> schemas;
-
 		private List<DescribeAllDataSource_Table> tables;
 
 		private List<DescribeAllDataSource_Column> columns;
+
+		private List<DescribeAllDataSource_Schema> schemas;
 
 		public string RequestId
 		{
@@ -42,18 +42,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public List<DescribeAllDataSource_Schema> Schemas
-		{
-			get
-			{
-				return schemas;
-			}
-			set	
-			{
-				schemas = value;
 			}
 		}
 
@@ -78,6 +66,166 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				columns = value;
+			}
+		}
+
+		public List<DescribeAllDataSource_Schema> Schemas
+		{
+			get
+			{
+				return schemas;
+			}
+			set	
+			{
+				schemas = value;
+			}
+		}
+
+		public class DescribeAllDataSource_Table
+		{
+
+			private string tableName;
+
+			private string dBClusterId;
+
+			private string schemaName;
+
+			public string TableName
+			{
+				get
+				{
+					return tableName;
+				}
+				set	
+				{
+					tableName = value;
+				}
+			}
+
+			public string DBClusterId
+			{
+				get
+				{
+					return dBClusterId;
+				}
+				set	
+				{
+					dBClusterId = value;
+				}
+			}
+
+			public string SchemaName
+			{
+				get
+				{
+					return schemaName;
+				}
+				set	
+				{
+					schemaName = value;
+				}
+			}
+		}
+
+		public class DescribeAllDataSource_Column
+		{
+
+			private string type;
+
+			private string columnName;
+
+			private string tableName;
+
+			private bool? autoIncrementColumn;
+
+			private string dBClusterId;
+
+			private bool? primaryKey;
+
+			private string schemaName;
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
+
+			public string ColumnName
+			{
+				get
+				{
+					return columnName;
+				}
+				set	
+				{
+					columnName = value;
+				}
+			}
+
+			public string TableName
+			{
+				get
+				{
+					return tableName;
+				}
+				set	
+				{
+					tableName = value;
+				}
+			}
+
+			public bool? AutoIncrementColumn
+			{
+				get
+				{
+					return autoIncrementColumn;
+				}
+				set	
+				{
+					autoIncrementColumn = value;
+				}
+			}
+
+			public string DBClusterId
+			{
+				get
+				{
+					return dBClusterId;
+				}
+				set	
+				{
+					dBClusterId = value;
+				}
+			}
+
+			public bool? PrimaryKey
+			{
+				get
+				{
+					return primaryKey;
+				}
+				set	
+				{
+					primaryKey = value;
+				}
+			}
+
+			public string SchemaName
+			{
+				get
+				{
+					return schemaName;
+				}
+				set	
+				{
+					schemaName = value;
+				}
 			}
 		}
 
@@ -109,154 +257,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					schemaName = value;
-				}
-			}
-		}
-
-		public class DescribeAllDataSource_Table
-		{
-
-			private string dBClusterId;
-
-			private string schemaName;
-
-			private string tableName;
-
-			public string DBClusterId
-			{
-				get
-				{
-					return dBClusterId;
-				}
-				set	
-				{
-					dBClusterId = value;
-				}
-			}
-
-			public string SchemaName
-			{
-				get
-				{
-					return schemaName;
-				}
-				set	
-				{
-					schemaName = value;
-				}
-			}
-
-			public string TableName
-			{
-				get
-				{
-					return tableName;
-				}
-				set	
-				{
-					tableName = value;
-				}
-			}
-		}
-
-		public class DescribeAllDataSource_Column
-		{
-
-			private string dBClusterId;
-
-			private string schemaName;
-
-			private string tableName;
-
-			private string columnName;
-
-			private string type;
-
-			private bool? primaryKey;
-
-			private bool? autoIncrementColumn;
-
-			public string DBClusterId
-			{
-				get
-				{
-					return dBClusterId;
-				}
-				set	
-				{
-					dBClusterId = value;
-				}
-			}
-
-			public string SchemaName
-			{
-				get
-				{
-					return schemaName;
-				}
-				set	
-				{
-					schemaName = value;
-				}
-			}
-
-			public string TableName
-			{
-				get
-				{
-					return tableName;
-				}
-				set	
-				{
-					tableName = value;
-				}
-			}
-
-			public string ColumnName
-			{
-				get
-				{
-					return columnName;
-				}
-				set	
-				{
-					columnName = value;
-				}
-			}
-
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-
-			public bool? PrimaryKey
-			{
-				get
-				{
-					return primaryKey;
-				}
-				set	
-				{
-					primaryKey = value;
-				}
-			}
-
-			public bool? AutoIncrementColumn
-			{
-				get
-				{
-					return autoIncrementColumn;
-				}
-				set	
-				{
-					autoIncrementColumn = value;
 				}
 			}
 		}

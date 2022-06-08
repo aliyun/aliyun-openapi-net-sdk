@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeInstanceKeywordsResponse describeInstanceKeywordsResponse = new DescribeInstanceKeywordsResponse();
 
 			describeInstanceKeywordsResponse.HttpResponse = _ctx.HttpResponse;
-			describeInstanceKeywordsResponse.RequestId = _ctx.StringValue("DescribeInstanceKeywords.RequestId");
 			describeInstanceKeywordsResponse.Key = _ctx.StringValue("DescribeInstanceKeywords.Key");
+			describeInstanceKeywordsResponse.RequestId = _ctx.StringValue("DescribeInstanceKeywords.RequestId");
 
 			List<string> describeInstanceKeywordsResponse_words = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceKeywords.Words.Length"); i++) {

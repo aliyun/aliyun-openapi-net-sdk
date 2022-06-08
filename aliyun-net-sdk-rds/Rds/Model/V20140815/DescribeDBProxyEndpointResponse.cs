@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,78 +25,31 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDBProxyEndpointResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string dBProxyEndpointId;
-
-		private string dBProxyConnectString;
-
-		private string dBProxyConnectStringPort;
-
 		private string dBProxyConnectStringNetType;
 
 		private string dBProxyFeatures;
 
-		private string readOnlyInstanceMaxDelayTime;
-
-		private string readOnlyInstanceDistributionType;
+		private string requestId;
 
 		private string readOnlyInstanceWeight;
 
-		private string dbProxyEndpointAliases;
+		private string readOnlyInstanceDistributionType;
+
+		private string readOnlyInstanceMaxDelayTime;
 
 		private string dbProxyEndpointReadWriteMode;
 
+		private string dbProxyEndpointAliases;
+
+		private string dBProxyEndpointId;
+
+		private string dBProxyConnectStringPort;
+
+		private string dBProxyConnectString;
+
 		private List<DescribeDBProxyEndpoint_EndpointConnectItemsItem> endpointConnectItems;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string DBProxyEndpointId
-		{
-			get
-			{
-				return dBProxyEndpointId;
-			}
-			set	
-			{
-				dBProxyEndpointId = value;
-			}
-		}
-
-		public string DBProxyConnectString
-		{
-			get
-			{
-				return dBProxyConnectString;
-			}
-			set	
-			{
-				dBProxyConnectString = value;
-			}
-		}
-
-		public string DBProxyConnectStringPort
-		{
-			get
-			{
-				return dBProxyConnectStringPort;
-			}
-			set	
-			{
-				dBProxyConnectStringPort = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "DBProxyConnectStringNetType")]
 		public string DBProxyConnectStringNetType
 		{
 			get
@@ -109,6 +62,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBProxyFeatures")]
 		public string DBProxyFeatures
 		{
 			get
@@ -121,30 +75,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ReadOnlyInstanceMaxDelayTime
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return readOnlyInstanceMaxDelayTime;
+				return requestId;
 			}
 			set	
 			{
-				readOnlyInstanceMaxDelayTime = value;
+				requestId = value;
 			}
 		}
 
-		public string ReadOnlyInstanceDistributionType
-		{
-			get
-			{
-				return readOnlyInstanceDistributionType;
-			}
-			set	
-			{
-				readOnlyInstanceDistributionType = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ReadOnlyInstanceWeight")]
 		public string ReadOnlyInstanceWeight
 		{
 			get
@@ -157,18 +101,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DbProxyEndpointAliases
+		[JsonProperty(PropertyName = "ReadOnlyInstanceDistributionType")]
+		public string ReadOnlyInstanceDistributionType
 		{
 			get
 			{
-				return dbProxyEndpointAliases;
+				return readOnlyInstanceDistributionType;
 			}
 			set	
 			{
-				dbProxyEndpointAliases = value;
+				readOnlyInstanceDistributionType = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "ReadOnlyInstanceMaxDelayTime")]
+		public string ReadOnlyInstanceMaxDelayTime
+		{
+			get
+			{
+				return readOnlyInstanceMaxDelayTime;
+			}
+			set	
+			{
+				readOnlyInstanceMaxDelayTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DbProxyEndpointReadWriteMode")]
 		public string DbProxyEndpointReadWriteMode
 		{
 			get
@@ -181,6 +140,59 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DbProxyEndpointAliases")]
+		public string DbProxyEndpointAliases
+		{
+			get
+			{
+				return dbProxyEndpointAliases;
+			}
+			set	
+			{
+				dbProxyEndpointAliases = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBProxyEndpointId")]
+		public string DBProxyEndpointId
+		{
+			get
+			{
+				return dBProxyEndpointId;
+			}
+			set	
+			{
+				dBProxyEndpointId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBProxyConnectStringPort")]
+		public string DBProxyConnectStringPort
+		{
+			get
+			{
+				return dBProxyConnectStringPort;
+			}
+			set	
+			{
+				dBProxyConnectStringPort = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBProxyConnectString")]
+		public string DBProxyConnectString
+		{
+			get
+			{
+				return dBProxyConnectString;
+			}
+			set	
+			{
+				dBProxyConnectString = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "EndpointConnectItems")]
 		public List<DescribeDBProxyEndpoint_EndpointConnectItemsItem> EndpointConnectItems
 		{
 			get
@@ -196,24 +208,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeDBProxyEndpoint_EndpointConnectItemsItem
 		{
 
-			private string dbProxyEndpointConnectString;
-
 			private string dbProxyEndpointPort;
+
+			private string dbProxyEndpointConnectString;
 
 			private string dbProxyEndpointNetType;
 
-			public string DbProxyEndpointConnectString
-			{
-				get
-				{
-					return dbProxyEndpointConnectString;
-				}
-				set	
-				{
-					dbProxyEndpointConnectString = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "DbProxyEndpointPort")]
 			public string DbProxyEndpointPort
 			{
 				get
@@ -226,6 +227,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DbProxyEndpointConnectString")]
+			public string DbProxyEndpointConnectString
+			{
+				get
+				{
+					return dbProxyEndpointConnectString;
+				}
+				set	
+				{
+					dbProxyEndpointConnectString = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DbProxyEndpointNetType")]
 			public string DbProxyEndpointNetType
 			{
 				get

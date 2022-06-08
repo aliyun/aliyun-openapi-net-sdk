@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeDiagnosticReportList_Report> reportList;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ReportList")]
 		public List<DescribeDiagnosticReportList_Report> ReportList
 		{
 			get
@@ -56,52 +58,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeDiagnosticReportList_Report
 		{
 
-			private string diagnosticTime;
+			private string endTime;
 
-			private int? score;
+			private string diagnosticTime;
 
 			private string startTime;
 
-			private string endTime;
+			private int? score;
 
 			private string downloadURL;
 
-			public string DiagnosticTime
-			{
-				get
-				{
-					return diagnosticTime;
-				}
-				set	
-				{
-					diagnosticTime = value;
-				}
-			}
-
-			public int? Score
-			{
-				get
-				{
-					return score;
-				}
-				set	
-				{
-					score = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "EndTime")]
 			public string EndTime
 			{
 				get
@@ -114,6 +81,46 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DiagnosticTime")]
+			public string DiagnosticTime
+			{
+				get
+				{
+					return diagnosticTime;
+				}
+				set	
+				{
+					diagnosticTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StartTime")]
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Score")]
+			public int? Score
+			{
+				get
+				{
+					return score;
+				}
+				set	
+				{
+					score = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DownloadURL")]
 			public string DownloadURL
 			{
 				get

@@ -36,12 +36,12 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			List<DescribeDBResourcePoolResponse.DescribeDBResourcePool_PoolInfo> describeDBResourcePoolResponse_poolsInfo = new List<DescribeDBResourcePoolResponse.DescribeDBResourcePool_PoolInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeDBResourcePool.PoolsInfo.Length"); i++) {
 				DescribeDBResourcePoolResponse.DescribeDBResourcePool_PoolInfo poolInfo = new DescribeDBResourcePoolResponse.DescribeDBResourcePool_PoolInfo();
-				poolInfo.PoolName = _ctx.StringValue("DescribeDBResourcePool.PoolsInfo["+ i +"].PoolName");
 				poolInfo.QueryType = _ctx.StringValue("DescribeDBResourcePool.PoolsInfo["+ i +"].QueryType");
-				poolInfo.NodeNum = _ctx.IntegerValue("DescribeDBResourcePool.PoolsInfo["+ i +"].NodeNum");
-				poolInfo.PoolUsers = _ctx.StringValue("DescribeDBResourcePool.PoolsInfo["+ i +"].PoolUsers");
-				poolInfo.CreateTime = _ctx.StringValue("DescribeDBResourcePool.PoolsInfo["+ i +"].CreateTime");
 				poolInfo.UpdateTime = _ctx.StringValue("DescribeDBResourcePool.PoolsInfo["+ i +"].UpdateTime");
+				poolInfo.PoolName = _ctx.StringValue("DescribeDBResourcePool.PoolsInfo["+ i +"].PoolName");
+				poolInfo.CreateTime = _ctx.StringValue("DescribeDBResourcePool.PoolsInfo["+ i +"].CreateTime");
+				poolInfo.PoolUsers = _ctx.StringValue("DescribeDBResourcePool.PoolsInfo["+ i +"].PoolUsers");
+				poolInfo.NodeNum = _ctx.IntegerValue("DescribeDBResourcePool.PoolsInfo["+ i +"].NodeNum");
 
 				describeDBResourcePoolResponse_poolsInfo.Add(poolInfo);
 			}

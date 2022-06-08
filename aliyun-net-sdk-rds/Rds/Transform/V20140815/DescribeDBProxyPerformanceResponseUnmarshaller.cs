@@ -31,22 +31,22 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeDBProxyPerformanceResponse describeDBProxyPerformanceResponse = new DescribeDBProxyPerformanceResponse();
 
 			describeDBProxyPerformanceResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBProxyPerformanceResponse.RequestId = _ctx.StringValue("DescribeDBProxyPerformance.RequestId");
-			describeDBProxyPerformanceResponse.DBInstanceId = _ctx.StringValue("DescribeDBProxyPerformance.DBInstanceId");
-			describeDBProxyPerformanceResponse.StartTime = _ctx.StringValue("DescribeDBProxyPerformance.StartTime");
 			describeDBProxyPerformanceResponse.EndTime = _ctx.StringValue("DescribeDBProxyPerformance.EndTime");
+			describeDBProxyPerformanceResponse.StartTime = _ctx.StringValue("DescribeDBProxyPerformance.StartTime");
+			describeDBProxyPerformanceResponse.DBInstanceId = _ctx.StringValue("DescribeDBProxyPerformance.DBInstanceId");
+			describeDBProxyPerformanceResponse.RequestId = _ctx.StringValue("DescribeDBProxyPerformance.RequestId");
 
 			List<DescribeDBProxyPerformanceResponse.DescribeDBProxyPerformance_PerformanceKey> describeDBProxyPerformanceResponse_performanceKeys = new List<DescribeDBProxyPerformanceResponse.DescribeDBProxyPerformance_PerformanceKey>();
 			for (int i = 0; i < _ctx.Length("DescribeDBProxyPerformance.PerformanceKeys.Length"); i++) {
 				DescribeDBProxyPerformanceResponse.DescribeDBProxyPerformance_PerformanceKey performanceKey = new DescribeDBProxyPerformanceResponse.DescribeDBProxyPerformance_PerformanceKey();
-				performanceKey.Key = _ctx.StringValue("DescribeDBProxyPerformance.PerformanceKeys["+ i +"].Key");
 				performanceKey.ValueFormat = _ctx.StringValue("DescribeDBProxyPerformance.PerformanceKeys["+ i +"].ValueFormat");
+				performanceKey.Key = _ctx.StringValue("DescribeDBProxyPerformance.PerformanceKeys["+ i +"].Key");
 
 				List<DescribeDBProxyPerformanceResponse.DescribeDBProxyPerformance_PerformanceKey.DescribeDBProxyPerformance_PerformanceValue> performanceKey_values = new List<DescribeDBProxyPerformanceResponse.DescribeDBProxyPerformance_PerformanceKey.DescribeDBProxyPerformance_PerformanceValue>();
 				for (int j = 0; j < _ctx.Length("DescribeDBProxyPerformance.PerformanceKeys["+ i +"].Values.Length"); j++) {
 					DescribeDBProxyPerformanceResponse.DescribeDBProxyPerformance_PerformanceKey.DescribeDBProxyPerformance_PerformanceValue performanceValue = new DescribeDBProxyPerformanceResponse.DescribeDBProxyPerformance_PerformanceKey.DescribeDBProxyPerformance_PerformanceValue();
-					performanceValue._Value = _ctx.StringValue("DescribeDBProxyPerformance.PerformanceKeys["+ i +"].Values["+ j +"].Value");
 					performanceValue.Date = _ctx.StringValue("DescribeDBProxyPerformance.PerformanceKeys["+ i +"].Values["+ j +"].Date");
+					performanceValue._Value = _ctx.StringValue("DescribeDBProxyPerformance.PerformanceKeys["+ i +"].Values["+ j +"].Value");
 
 					performanceKey_values.Add(performanceValue);
 				}

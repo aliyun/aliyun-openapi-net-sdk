@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -39,6 +39,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeBackups_Backup> items;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -51,6 +52,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalEcsSnapshotSize")]
 		public long? TotalEcsSnapshotSize
 		{
 			get
@@ -63,6 +65,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageRecordCount")]
 		public string PageRecordCount
 		{
 			get
@@ -75,6 +78,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalRecordCount")]
 		public string TotalRecordCount
 		{
 			get
@@ -87,6 +91,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalBackupSize")]
 		public long? TotalBackupSize
 		{
 			get
@@ -99,6 +104,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public string PageNumber
 		{
 			get
@@ -111,6 +117,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeBackups_Backup> Items
 		{
 			get
@@ -182,6 +189,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private List<DescribeBackups_BackupDownloadLinkByDBItem> backupDownloadLinkByDB;
 
+			[JsonProperty(PropertyName = "StorageClass")]
 			public string StorageClass
 			{
 				get
@@ -194,6 +202,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Encryption")]
 			public string Encryption
 			{
 				get
@@ -206,6 +215,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "BackupStatus")]
 			public string BackupStatus
 			{
 				get
@@ -218,6 +228,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "StoreStatus")]
 			public string StoreStatus
 			{
 				get
@@ -230,6 +241,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ConsistentTime")]
 			public long? ConsistentTime
 			{
 				get
@@ -242,6 +254,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "BackupType")]
 			public string BackupType
 			{
 				get
@@ -254,6 +267,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "CopyOnlyBackup")]
 			public string CopyOnlyBackup
 			{
 				get
@@ -266,6 +280,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "BackupEndTime")]
 			public string BackupEndTime
 			{
 				get
@@ -278,6 +293,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "MetaStatus")]
 			public string MetaStatus
 			{
 				get
@@ -290,6 +306,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "BackupScale")]
 			public string BackupScale
 			{
 				get
@@ -302,6 +319,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "BackupInitiator")]
 			public string BackupInitiator
 			{
 				get
@@ -314,6 +332,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "BackupIntranetDownloadURL")]
 			public string BackupIntranetDownloadURL
 			{
 				get
@@ -326,6 +345,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "BackupMethod")]
 			public string BackupMethod
 			{
 				get
@@ -338,6 +358,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "SlaveStatus")]
 			public string SlaveStatus
 			{
 				get
@@ -350,6 +371,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "BackupStartTime")]
 			public string BackupStartTime
 			{
 				get
@@ -362,6 +384,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "BackupLocation")]
 			public string BackupLocation
 			{
 				get
@@ -374,6 +397,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalBackupSize")]
 			public long? TotalBackupSize
 			{
 				get
@@ -386,6 +410,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "BackupDownloadURL")]
 			public string BackupDownloadURL
 			{
 				get
@@ -398,6 +423,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "IsAvail")]
 			public int? IsAvail
 			{
 				get
@@ -410,6 +436,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "BackupId")]
 			public string BackupId
 			{
 				get
@@ -422,6 +449,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "BackupDBNames")]
 			public string BackupDBNames
 			{
 				get
@@ -434,6 +462,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "HostInstanceID")]
 			public string HostInstanceID
 			{
 				get
@@ -446,6 +475,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "BackupSize")]
 			public long? BackupSize
 			{
 				get
@@ -458,6 +488,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "BackupMode")]
 			public string BackupMode
 			{
 				get
@@ -470,6 +501,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "DBInstanceId")]
 			public string DBInstanceId
 			{
 				get
@@ -482,6 +514,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "BackupExtractionStatus")]
 			public string BackupExtractionStatus
 			{
 				get
@@ -494,6 +527,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "Checksum")]
 			public string Checksum
 			{
 				get
@@ -506,6 +540,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "BackupDownloadLinkByDB")]
 			public List<DescribeBackups_BackupDownloadLinkByDBItem> BackupDownloadLinkByDB
 			{
 				get
@@ -527,6 +562,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 				private string downloadLink;
 
+				[JsonProperty(PropertyName = "IntranetDownloadLink")]
 				public string IntranetDownloadLink
 				{
 					get
@@ -539,6 +575,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "DataBase")]
 				public string DataBase
 				{
 					get
@@ -551,6 +588,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "DownloadLink")]
 				public string DownloadLink
 				{
 					get

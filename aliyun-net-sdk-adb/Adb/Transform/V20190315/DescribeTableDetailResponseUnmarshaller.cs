@@ -31,14 +31,14 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 			DescribeTableDetailResponse describeTableDetailResponse = new DescribeTableDetailResponse();
 
 			describeTableDetailResponse.HttpResponse = _ctx.HttpResponse;
-			describeTableDetailResponse.RequestId = _ctx.StringValue("DescribeTableDetail.RequestId");
 			describeTableDetailResponse.AvgSize = _ctx.LongValue("DescribeTableDetail.AvgSize");
+			describeTableDetailResponse.RequestId = _ctx.StringValue("DescribeTableDetail.RequestId");
 
 			List<DescribeTableDetailResponse.DescribeTableDetail_Shard> describeTableDetailResponse_items = new List<DescribeTableDetailResponse.DescribeTableDetail_Shard>();
 			for (int i = 0; i < _ctx.Length("DescribeTableDetail.Items.Length"); i++) {
 				DescribeTableDetailResponse.DescribeTableDetail_Shard shard = new DescribeTableDetailResponse.DescribeTableDetail_Shard();
-				shard.Id = _ctx.IntegerValue("DescribeTableDetail.Items["+ i +"].Id");
 				shard.Size = _ctx.LongValue("DescribeTableDetail.Items["+ i +"].Size");
+				shard.Id = _ctx.IntegerValue("DescribeTableDetail.Items["+ i +"].Id");
 
 				describeTableDetailResponse_items.Add(shard);
 			}

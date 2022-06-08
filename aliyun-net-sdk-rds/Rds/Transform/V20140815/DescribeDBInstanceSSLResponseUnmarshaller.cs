@@ -31,24 +31,24 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeDBInstanceSSLResponse describeDBInstanceSSLResponse = new DescribeDBInstanceSSLResponse();
 
 			describeDBInstanceSSLResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBInstanceSSLResponse.RequestId = _ctx.StringValue("DescribeDBInstanceSSL.RequestId");
-			describeDBInstanceSSLResponse.ConnectionString = _ctx.StringValue("DescribeDBInstanceSSL.ConnectionString");
-			describeDBInstanceSSLResponse.SSLExpireTime = _ctx.StringValue("DescribeDBInstanceSSL.SSLExpireTime");
-			describeDBInstanceSSLResponse.SSLEnabled = _ctx.StringValue("DescribeDBInstanceSSL.SSLEnabled");
-			describeDBInstanceSSLResponse.RequireUpdateReason = _ctx.StringValue("DescribeDBInstanceSSL.RequireUpdateReason");
-			describeDBInstanceSSLResponse.CAType = _ctx.StringValue("DescribeDBInstanceSSL.CAType");
 			describeDBInstanceSSLResponse.ServerCert = _ctx.StringValue("DescribeDBInstanceSSL.ServerCert");
-			describeDBInstanceSSLResponse.ServerKey = _ctx.StringValue("DescribeDBInstanceSSL.ServerKey");
-			describeDBInstanceSSLResponse.SSLCreateTime = _ctx.StringValue("DescribeDBInstanceSSL.SSLCreateTime");
-			describeDBInstanceSSLResponse.ClientCACert = _ctx.StringValue("DescribeDBInstanceSSL.ClientCACert");
 			describeDBInstanceSSLResponse.ClientCACertExpireTime = _ctx.StringValue("DescribeDBInstanceSSL.ClientCACertExpireTime");
-			describeDBInstanceSSLResponse.ClientCertRevocationList = _ctx.StringValue("DescribeDBInstanceSSL.ClientCertRevocationList");
-			describeDBInstanceSSLResponse.ACL = _ctx.StringValue("DescribeDBInstanceSSL.ACL");
-			describeDBInstanceSSLResponse.ReplicationACL = _ctx.StringValue("DescribeDBInstanceSSL.ReplicationACL");
+			describeDBInstanceSSLResponse.RequireUpdateItem = _ctx.StringValue("DescribeDBInstanceSSL.RequireUpdateItem");
 			describeDBInstanceSSLResponse.ServerCAUrl = _ctx.StringValue("DescribeDBInstanceSSL.ServerCAUrl");
 			describeDBInstanceSSLResponse.RequireUpdate = _ctx.StringValue("DescribeDBInstanceSSL.RequireUpdate");
-			describeDBInstanceSSLResponse.RequireUpdateItem = _ctx.StringValue("DescribeDBInstanceSSL.RequireUpdateItem");
+			describeDBInstanceSSLResponse.ClientCertRevocationList = _ctx.StringValue("DescribeDBInstanceSSL.ClientCertRevocationList");
+			describeDBInstanceSSLResponse.SSLExpireTime = _ctx.StringValue("DescribeDBInstanceSSL.SSLExpireTime");
+			describeDBInstanceSSLResponse.CAType = _ctx.StringValue("DescribeDBInstanceSSL.CAType");
+			describeDBInstanceSSLResponse.SSLCreateTime = _ctx.StringValue("DescribeDBInstanceSSL.SSLCreateTime");
+			describeDBInstanceSSLResponse.ReplicationACL = _ctx.StringValue("DescribeDBInstanceSSL.ReplicationACL");
+			describeDBInstanceSSLResponse.ACL = _ctx.StringValue("DescribeDBInstanceSSL.ACL");
+			describeDBInstanceSSLResponse.RequestId = _ctx.StringValue("DescribeDBInstanceSSL.RequestId");
 			describeDBInstanceSSLResponse.LastModifyStatus = _ctx.StringValue("DescribeDBInstanceSSL.LastModifyStatus");
+			describeDBInstanceSSLResponse.SSLEnabled = _ctx.StringValue("DescribeDBInstanceSSL.SSLEnabled");
+			describeDBInstanceSSLResponse.ConnectionString = _ctx.StringValue("DescribeDBInstanceSSL.ConnectionString");
+			describeDBInstanceSSLResponse.RequireUpdateReason = _ctx.StringValue("DescribeDBInstanceSSL.RequireUpdateReason");
+			describeDBInstanceSSLResponse.ClientCACert = _ctx.StringValue("DescribeDBInstanceSSL.ClientCACert");
+			describeDBInstanceSSLResponse.ServerKey = _ctx.StringValue("DescribeDBInstanceSSL.ServerKey");
 			describeDBInstanceSSLResponse.ModifyStatusReason = _ctx.StringValue("DescribeDBInstanceSSL.ModifyStatusReason");
         
 			return describeDBInstanceSSLResponse;

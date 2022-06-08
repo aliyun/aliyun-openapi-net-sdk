@@ -36,11 +36,11 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			List<DescribeDBInstanceIPArrayListResponse.DescribeDBInstanceIPArrayList_DBInstanceIPArray> describeDBInstanceIPArrayListResponse_items = new List<DescribeDBInstanceIPArrayListResponse.DescribeDBInstanceIPArrayList_DBInstanceIPArray>();
 			for (int i = 0; i < _ctx.Length("DescribeDBInstanceIPArrayList.Items.Length"); i++) {
 				DescribeDBInstanceIPArrayListResponse.DescribeDBInstanceIPArrayList_DBInstanceIPArray dBInstanceIPArray = new DescribeDBInstanceIPArrayListResponse.DescribeDBInstanceIPArrayList_DBInstanceIPArray();
-				dBInstanceIPArray.DBInstanceIPArrayName = _ctx.StringValue("DescribeDBInstanceIPArrayList.Items["+ i +"].DBInstanceIPArrayName");
 				dBInstanceIPArray.DBInstanceIPArrayAttribute = _ctx.StringValue("DescribeDBInstanceIPArrayList.Items["+ i +"].DBInstanceIPArrayAttribute");
+				dBInstanceIPArray.WhitelistNetworkType = _ctx.StringValue("DescribeDBInstanceIPArrayList.Items["+ i +"].WhitelistNetworkType");
+				dBInstanceIPArray.DBInstanceIPArrayName = _ctx.StringValue("DescribeDBInstanceIPArrayList.Items["+ i +"].DBInstanceIPArrayName");
 				dBInstanceIPArray.SecurityIPType = _ctx.StringValue("DescribeDBInstanceIPArrayList.Items["+ i +"].SecurityIPType");
 				dBInstanceIPArray.SecurityIPList = _ctx.StringValue("DescribeDBInstanceIPArrayList.Items["+ i +"].SecurityIPList");
-				dBInstanceIPArray.WhitelistNetworkType = _ctx.StringValue("DescribeDBInstanceIPArrayList.Items["+ i +"].WhitelistNetworkType");
 
 				describeDBInstanceIPArrayListResponse_items.Add(dBInstanceIPArray);
 			}

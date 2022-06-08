@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
-		private int? totalRecordCount;
-
 		private int? pageNumber;
 
 		private int? pageRecordCount;
 
+		private int? totalRecordCount;
+
 		private List<DescibeImportsFromDatabase_ImportResultFromDB> items;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,18 +48,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -71,6 +61,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageRecordCount")]
 		public int? PageRecordCount
 		{
 			get
@@ -83,6 +74,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalRecordCount")]
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescibeImportsFromDatabase_ImportResultFromDB> Items
 		{
 			get
@@ -98,16 +103,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescibeImportsFromDatabase_ImportResultFromDB
 		{
 
-			private int? importId;
+			private string incrementalImportingTime;
 
-			private string importDataType;
+			private int? importId;
 
 			private string importDataStatus;
 
+			private string importDataType;
+
 			private string importDataStatusDescription;
 
-			private string incrementalImportingTime;
+			[JsonProperty(PropertyName = "IncrementalImportingTime")]
+			public string IncrementalImportingTime
+			{
+				get
+				{
+					return incrementalImportingTime;
+				}
+				set	
+				{
+					incrementalImportingTime = value;
+				}
+			}
 
+			[JsonProperty(PropertyName = "ImportId")]
 			public int? ImportId
 			{
 				get
@@ -120,18 +139,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string ImportDataType
-			{
-				get
-				{
-					return importDataType;
-				}
-				set	
-				{
-					importDataType = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "ImportDataStatus")]
 			public string ImportDataStatus
 			{
 				get
@@ -144,6 +152,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ImportDataType")]
+			public string ImportDataType
+			{
+				get
+				{
+					return importDataType;
+				}
+				set	
+				{
+					importDataType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ImportDataStatusDescription")]
 			public string ImportDataStatusDescription
 			{
 				get
@@ -153,18 +175,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					importDataStatusDescription = value;
-				}
-			}
-
-			public string IncrementalImportingTime
-			{
-				get
-				{
-					return incrementalImportingTime;
-				}
-				set	
-				{
-					incrementalImportingTime = value;
 				}
 			}
 		}

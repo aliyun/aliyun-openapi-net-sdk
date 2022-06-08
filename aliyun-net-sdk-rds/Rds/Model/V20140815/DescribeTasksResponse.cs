@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
-		private int? totalRecordCount;
-
 		private int? pageNumber;
 
 		private int? pageRecordCount;
 
+		private int? totalRecordCount;
+
 		private List<DescribeTasks_TaskProgressInfo> items;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,18 +48,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -71,6 +61,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageRecordCount")]
 		public int? PageRecordCount
 		{
 			get
@@ -83,6 +74,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalRecordCount")]
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeTasks_TaskProgressInfo> Items
 		{
 			get
@@ -98,132 +103,37 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeTasks_TaskProgressInfo
 		{
 
-			private string dBName;
-
-			private string beginTime;
-
-			private string progressInfo;
+			private string status;
 
 			private string finishTime;
 
-			private string taskAction;
-
-			private string taskId;
-
 			private string progress;
-
-			private string expectedFinishTime;
-
-			private string status;
-
-			private string taskErrorCode;
-
-			private string taskErrorMessage;
 
 			private string stepsInfo;
 
-			private int? remain;
+			private string beginTime;
 
-			private string stepProgressInfo;
+			private string expectedFinishTime;
+
+			private string taskErrorCode;
 
 			private string currentStepName;
 
-			public string DBName
-			{
-				get
-				{
-					return dBName;
-				}
-				set	
-				{
-					dBName = value;
-				}
-			}
+			private string progressInfo;
 
-			public string BeginTime
-			{
-				get
-				{
-					return beginTime;
-				}
-				set	
-				{
-					beginTime = value;
-				}
-			}
+			private string stepProgressInfo;
 
-			public string ProgressInfo
-			{
-				get
-				{
-					return progressInfo;
-				}
-				set	
-				{
-					progressInfo = value;
-				}
-			}
+			private string taskErrorMessage;
 
-			public string FinishTime
-			{
-				get
-				{
-					return finishTime;
-				}
-				set	
-				{
-					finishTime = value;
-				}
-			}
+			private string taskAction;
 
-			public string TaskAction
-			{
-				get
-				{
-					return taskAction;
-				}
-				set	
-				{
-					taskAction = value;
-				}
-			}
+			private int? remain;
 
-			public string TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
+			private string dBName;
 
-			public string Progress
-			{
-				get
-				{
-					return progress;
-				}
-				set	
-				{
-					progress = value;
-				}
-			}
+			private string taskId;
 
-			public string ExpectedFinishTime
-			{
-				get
-				{
-					return expectedFinishTime;
-				}
-				set	
-				{
-					expectedFinishTime = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Status")]
 			public string Status
 			{
 				get
@@ -236,30 +146,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string TaskErrorCode
+			[JsonProperty(PropertyName = "FinishTime")]
+			public string FinishTime
 			{
 				get
 				{
-					return taskErrorCode;
+					return finishTime;
 				}
 				set	
 				{
-					taskErrorCode = value;
+					finishTime = value;
 				}
 			}
 
-			public string TaskErrorMessage
+			[JsonProperty(PropertyName = "Progress")]
+			public string Progress
 			{
 				get
 				{
-					return taskErrorMessage;
+					return progress;
 				}
 				set	
 				{
-					taskErrorMessage = value;
+					progress = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "StepsInfo")]
 			public string StepsInfo
 			{
 				get
@@ -272,18 +185,72 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public int? Remain
+			[JsonProperty(PropertyName = "BeginTime")]
+			public string BeginTime
 			{
 				get
 				{
-					return remain;
+					return beginTime;
 				}
 				set	
 				{
-					remain = value;
+					beginTime = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "ExpectedFinishTime")]
+			public string ExpectedFinishTime
+			{
+				get
+				{
+					return expectedFinishTime;
+				}
+				set	
+				{
+					expectedFinishTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TaskErrorCode")]
+			public string TaskErrorCode
+			{
+				get
+				{
+					return taskErrorCode;
+				}
+				set	
+				{
+					taskErrorCode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CurrentStepName")]
+			public string CurrentStepName
+			{
+				get
+				{
+					return currentStepName;
+				}
+				set	
+				{
+					currentStepName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ProgressInfo")]
+			public string ProgressInfo
+			{
+				get
+				{
+					return progressInfo;
+				}
+				set	
+				{
+					progressInfo = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StepProgressInfo")]
 			public string StepProgressInfo
 			{
 				get
@@ -296,15 +263,68 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string CurrentStepName
+			[JsonProperty(PropertyName = "TaskErrorMessage")]
+			public string TaskErrorMessage
 			{
 				get
 				{
-					return currentStepName;
+					return taskErrorMessage;
 				}
 				set	
 				{
-					currentStepName = value;
+					taskErrorMessage = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TaskAction")]
+			public string TaskAction
+			{
+				get
+				{
+					return taskAction;
+				}
+				set	
+				{
+					taskAction = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Remain")]
+			public int? Remain
+			{
+				get
+				{
+					return remain;
+				}
+				set	
+				{
+					remain = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DBName")]
+			public string DBName
+			{
+				get
+				{
+					return dBName;
+				}
+				set	
+				{
+					dBName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TaskId")]
+			public string TaskId
+			{
+				get
+				{
+					return taskId;
+				}
+				set	
+				{
+					taskId = value;
 				}
 			}
 		}

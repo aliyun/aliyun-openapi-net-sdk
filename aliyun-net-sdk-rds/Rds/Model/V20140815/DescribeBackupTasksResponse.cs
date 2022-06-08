@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeBackupTasks_BackupJob> items;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeBackupTasks_BackupJob> Items
 		{
 			get
@@ -56,56 +58,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeBackupTasks_BackupJob
 		{
 
-			private string backupProgressStatus;
+			private string process;
+
+			private string backupJobId;
 
 			private string backupStatus;
 
 			private string jobMode;
 
-			private string process;
-
-			private string taskAction;
-
-			private string backupJobId;
+			private string backupProgressStatus;
 
 			private string backupId;
 
-			public string BackupProgressStatus
-			{
-				get
-				{
-					return backupProgressStatus;
-				}
-				set	
-				{
-					backupProgressStatus = value;
-				}
-			}
+			private string taskAction;
 
-			public string BackupStatus
-			{
-				get
-				{
-					return backupStatus;
-				}
-				set	
-				{
-					backupStatus = value;
-				}
-			}
-
-			public string JobMode
-			{
-				get
-				{
-					return jobMode;
-				}
-				set	
-				{
-					jobMode = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Process")]
 			public string Process
 			{
 				get
@@ -118,18 +85,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string TaskAction
-			{
-				get
-				{
-					return taskAction;
-				}
-				set	
-				{
-					taskAction = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "BackupJobId")]
 			public string BackupJobId
 			{
 				get
@@ -142,6 +98,46 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "BackupStatus")]
+			public string BackupStatus
+			{
+				get
+				{
+					return backupStatus;
+				}
+				set	
+				{
+					backupStatus = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "JobMode")]
+			public string JobMode
+			{
+				get
+				{
+					return jobMode;
+				}
+				set	
+				{
+					jobMode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BackupProgressStatus")]
+			public string BackupProgressStatus
+			{
+				get
+				{
+					return backupProgressStatus;
+				}
+				set	
+				{
+					backupProgressStatus = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BackupId")]
 			public string BackupId
 			{
 				get
@@ -151,6 +147,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					backupId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TaskAction")]
+			public string TaskAction
+			{
+				get
+				{
+					return taskAction;
+				}
+				set	
+				{
+					taskAction = value;
 				}
 			}
 		}

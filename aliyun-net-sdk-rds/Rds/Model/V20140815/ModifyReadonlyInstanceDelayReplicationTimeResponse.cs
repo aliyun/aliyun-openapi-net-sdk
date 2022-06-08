@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,26 +25,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class ModifyReadonlyInstanceDelayReplicationTimeResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dBInstanceId;
 
-		private string readSQLReplicationTime;
+		private string requestId;
 
 		private string taskId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string readSQLReplicationTime;
 
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -57,18 +46,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ReadSQLReplicationTime
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return readSQLReplicationTime;
+				return requestId;
 			}
 			set	
 			{
-				readSQLReplicationTime = value;
+				requestId = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "TaskId")]
 		public string TaskId
 		{
 			get
@@ -78,6 +69,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				taskId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ReadSQLReplicationTime")]
+		public string ReadSQLReplicationTime
+		{
+			get
+			{
+				return readSQLReplicationTime;
+			}
+			set	
+			{
+				readSQLReplicationTime = value;
 			}
 		}
 	}

@@ -32,11 +32,11 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			createMigrateTaskResponse.HttpResponse = _ctx.HttpResponse;
 			createMigrateTaskResponse.RequestId = _ctx.StringValue("CreateMigrateTask.RequestId");
-			createMigrateTaskResponse.DBInstanceId = _ctx.StringValue("CreateMigrateTask.DBInstanceId");
-			createMigrateTaskResponse.TaskId = _ctx.StringValue("CreateMigrateTask.TaskId");
 			createMigrateTaskResponse.DBName = _ctx.StringValue("CreateMigrateTask.DBName");
-			createMigrateTaskResponse.MigrateTaskId = _ctx.StringValue("CreateMigrateTask.MigrateTaskId");
 			createMigrateTaskResponse.BackupMode = _ctx.StringValue("CreateMigrateTask.BackupMode");
+			createMigrateTaskResponse.DBInstanceId = _ctx.StringValue("CreateMigrateTask.DBInstanceId");
+			createMigrateTaskResponse.MigrateTaskId = _ctx.StringValue("CreateMigrateTask.MigrateTaskId");
+			createMigrateTaskResponse.TaskId = _ctx.StringValue("CreateMigrateTask.TaskId");
         
 			return createMigrateTaskResponse;
         }

@@ -38,6 +38,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				DescribeRegionsResponse.DescribeRegions_DdsRegion ddsRegion = new DescribeRegionsResponse.DescribeRegions_DdsRegion();
 				ddsRegion.ZoneIds = _ctx.StringValue("DescribeRegions.Regions["+ i +"].ZoneIds");
 				ddsRegion.RegionId = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
+				ddsRegion.RegionName = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionName");
 
 				List<DescribeRegionsResponse.DescribeRegions_DdsRegion.DescribeRegions_Zone> ddsRegion_zones = new List<DescribeRegionsResponse.DescribeRegions_DdsRegion.DescribeRegions_Zone>();
 				for (int j = 0; j < _ctx.Length("DescribeRegions.Regions["+ i +"].Zones.Length"); j++) {

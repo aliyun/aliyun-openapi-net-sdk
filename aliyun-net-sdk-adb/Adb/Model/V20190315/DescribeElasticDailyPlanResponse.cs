@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -56,105 +56,33 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		public class DescribeElasticDailyPlan_ElasticDailyPlanInfo
 		{
 
-			private string planName;
-
-			private string resourcePoolName;
-
-			private int? elasticNodeNum;
-
-			private string planStartTs;
-
-			private string planEndTs;
-
-			private string startTs;
-
-			private string endTs;
+			private int? status;
 
 			private string day;
 
-			private int? status;
+			private string resourcePoolName;
 
-			public string PlanName
+			private string startTs;
+
+			private string planEndTs;
+
+			private string planStartTs;
+
+			private int? elasticNodeNum;
+
+			private string endTs;
+
+			private string planName;
+
+			public int? Status
 			{
 				get
 				{
-					return planName;
+					return status;
 				}
 				set	
 				{
-					planName = value;
-				}
-			}
-
-			public string ResourcePoolName
-			{
-				get
-				{
-					return resourcePoolName;
-				}
-				set	
-				{
-					resourcePoolName = value;
-				}
-			}
-
-			public int? ElasticNodeNum
-			{
-				get
-				{
-					return elasticNodeNum;
-				}
-				set	
-				{
-					elasticNodeNum = value;
-				}
-			}
-
-			public string PlanStartTs
-			{
-				get
-				{
-					return planStartTs;
-				}
-				set	
-				{
-					planStartTs = value;
-				}
-			}
-
-			public string PlanEndTs
-			{
-				get
-				{
-					return planEndTs;
-				}
-				set	
-				{
-					planEndTs = value;
-				}
-			}
-
-			public string StartTs
-			{
-				get
-				{
-					return startTs;
-				}
-				set	
-				{
-					startTs = value;
-				}
-			}
-
-			public string EndTs
-			{
-				get
-				{
-					return endTs;
-				}
-				set	
-				{
-					endTs = value;
+					status = value;
 				}
 			}
 
@@ -170,15 +98,87 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public int? Status
+			public string ResourcePoolName
 			{
 				get
 				{
-					return status;
+					return resourcePoolName;
 				}
 				set	
 				{
-					status = value;
+					resourcePoolName = value;
+				}
+			}
+
+			public string StartTs
+			{
+				get
+				{
+					return startTs;
+				}
+				set	
+				{
+					startTs = value;
+				}
+			}
+
+			public string PlanEndTs
+			{
+				get
+				{
+					return planEndTs;
+				}
+				set	
+				{
+					planEndTs = value;
+				}
+			}
+
+			public string PlanStartTs
+			{
+				get
+				{
+					return planStartTs;
+				}
+				set	
+				{
+					planStartTs = value;
+				}
+			}
+
+			public int? ElasticNodeNum
+			{
+				get
+				{
+					return elasticNodeNum;
+				}
+				set	
+				{
+					elasticNodeNum = value;
+				}
+			}
+
+			public string EndTs
+			{
+				get
+				{
+					return endTs;
+				}
+				set	
+				{
+					endTs = value;
+				}
+			}
+
+			public string PlanName
+			{
+				get
+				{
+					return planName;
+				}
+				set	
+				{
+					planName = value;
 				}
 			}
 		}

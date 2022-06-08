@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.adb.Model.V20190315
 	public class DescribeProcessListResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string totalCount;
-
-		private string pageNumber;
 
 		private string pageSize;
 
-		private List<DescribeProcessList_Process> items;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string pageNumber;
+
+		private List<DescribeProcessList_Process> items;
 
 		public string TotalCount
 		{
@@ -59,18 +47,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
 		public string PageSize
 		{
 			get
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
 			}
 		}
 
@@ -98,11 +98,11 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		public class DescribeProcessList_Process
 		{
 
-			private int? id;
+			private string startTime;
+
+			private int? time;
 
 			private string processId;
-
-			private string user;
 
 			private string host;
 
@@ -110,21 +110,33 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 			private string command;
 
-			private int? time;
+			private string user;
 
-			private string startTime;
+			private int? id;
 
 			private string info;
 
-			public int? Id
+			public string StartTime
 			{
 				get
 				{
-					return id;
+					return startTime;
 				}
 				set	
 				{
-					id = value;
+					startTime = value;
+				}
+			}
+
+			public int? Time
+			{
+				get
+				{
+					return time;
+				}
+				set	
+				{
+					time = value;
 				}
 			}
 
@@ -137,18 +149,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					processId = value;
-				}
-			}
-
-			public string User
-			{
-				get
-				{
-					return user;
-				}
-				set	
-				{
-					user = value;
 				}
 			}
 
@@ -188,27 +188,27 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public int? Time
+			public string User
 			{
 				get
 				{
-					return time;
+					return user;
 				}
 				set	
 				{
-					time = value;
+					user = value;
 				}
 			}
 
-			public string StartTime
+			public int? Id
 			{
 				get
 				{
-					return startTime;
+					return id;
 				}
 				set	
 				{
-					startTime = value;
+					id = value;
 				}
 			}
 

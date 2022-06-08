@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeActionEventPolicyResponse describeActionEventPolicyResponse = new DescribeActionEventPolicyResponse();
 
 			describeActionEventPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			describeActionEventPolicyResponse.EnableEventLog = _ctx.StringValue("DescribeActionEventPolicy.EnableEventLog");
 			describeActionEventPolicyResponse.RequestId = _ctx.StringValue("DescribeActionEventPolicy.RequestId");
 			describeActionEventPolicyResponse.RegionId = _ctx.StringValue("DescribeActionEventPolicy.RegionId");
-			describeActionEventPolicyResponse.EnableEventLog = _ctx.StringValue("DescribeActionEventPolicy.EnableEventLog");
         
 			return describeActionEventPolicyResponse;
         }

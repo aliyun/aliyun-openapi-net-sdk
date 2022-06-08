@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeRdsResourceSettings_RdsInstanceResourceSetting> rdsInstanceResourceSettings;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RdsInstanceResourceSettings")]
 		public List<DescribeRdsResourceSettings_RdsInstanceResourceSetting> RdsInstanceResourceSettings
 		{
 			get
@@ -56,84 +58,25 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeRdsResourceSettings_RdsInstanceResourceSetting
 		{
 
-			private string startDate;
-
-			private string endDate;
-
-			private string resourceNiche;
+			private string poppedUpButtonType;
 
 			private string noticeBarContent;
 
-			private string poppedUpButtonText;
-
-			private string poppedUpButtonType;
-
-			private string poppedUpButtonUrl;
+			private string endDate;
 
 			private string poppedUpContent;
 
+			private string startDate;
+
+			private string poppedUpButtonText;
+
 			private string isTop;
 
-			public string StartDate
-			{
-				get
-				{
-					return startDate;
-				}
-				set	
-				{
-					startDate = value;
-				}
-			}
+			private string resourceNiche;
 
-			public string EndDate
-			{
-				get
-				{
-					return endDate;
-				}
-				set	
-				{
-					endDate = value;
-				}
-			}
+			private string poppedUpButtonUrl;
 
-			public string ResourceNiche
-			{
-				get
-				{
-					return resourceNiche;
-				}
-				set	
-				{
-					resourceNiche = value;
-				}
-			}
-
-			public string NoticeBarContent
-			{
-				get
-				{
-					return noticeBarContent;
-				}
-				set	
-				{
-					noticeBarContent = value;
-				}
-			}
-
-			public string PoppedUpButtonText
-			{
-				get
-				{
-					return poppedUpButtonText;
-				}
-				set	
-				{
-					poppedUpButtonText = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "PoppedUpButtonType")]
 			public string PoppedUpButtonType
 			{
 				get
@@ -146,18 +89,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string PoppedUpButtonUrl
+			[JsonProperty(PropertyName = "NoticeBarContent")]
+			public string NoticeBarContent
 			{
 				get
 				{
-					return poppedUpButtonUrl;
+					return noticeBarContent;
 				}
 				set	
 				{
-					poppedUpButtonUrl = value;
+					noticeBarContent = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "EndDate")]
+			public string EndDate
+			{
+				get
+				{
+					return endDate;
+				}
+				set	
+				{
+					endDate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PoppedUpContent")]
 			public string PoppedUpContent
 			{
 				get
@@ -170,6 +128,33 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "StartDate")]
+			public string StartDate
+			{
+				get
+				{
+					return startDate;
+				}
+				set	
+				{
+					startDate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PoppedUpButtonText")]
+			public string PoppedUpButtonText
+			{
+				get
+				{
+					return poppedUpButtonText;
+				}
+				set	
+				{
+					poppedUpButtonText = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IsTop")]
 			public string IsTop
 			{
 				get
@@ -179,6 +164,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					isTop = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ResourceNiche")]
+			public string ResourceNiche
+			{
+				get
+				{
+					return resourceNiche;
+				}
+				set	
+				{
+					resourceNiche = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PoppedUpButtonUrl")]
+			public string PoppedUpButtonUrl
+			{
+				get
+				{
+					return poppedUpButtonUrl;
+				}
+				set	
+				{
+					poppedUpButtonUrl = value;
 				}
 			}
 		}

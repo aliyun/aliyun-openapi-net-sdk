@@ -31,20 +31,33 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 			DescribeStoreConfigResponse describeStoreConfigResponse = new DescribeStoreConfigResponse();
 
 			describeStoreConfigResponse.HttpResponse = _ctx.HttpResponse;
-			describeStoreConfigResponse.ErrorMessage = _ctx.StringValue("DescribeStoreConfig.ErrorMessage");
-			describeStoreConfigResponse.ErrorCode = _ctx.StringValue("DescribeStoreConfig.ErrorCode");
-			describeStoreConfigResponse.Message = _ctx.StringValue("DescribeStoreConfig.Message");
-			describeStoreConfigResponse.DynamicCode = _ctx.StringValue("DescribeStoreConfig.DynamicCode");
-			describeStoreConfigResponse.Code = _ctx.StringValue("DescribeStoreConfig.Code");
-			describeStoreConfigResponse.DynamicMessage = _ctx.StringValue("DescribeStoreConfig.DynamicMessage");
 			describeStoreConfigResponse.RequestId = _ctx.StringValue("DescribeStoreConfig.RequestId");
+			describeStoreConfigResponse.ErrorMessage = _ctx.StringValue("DescribeStoreConfig.ErrorMessage");
 			describeStoreConfigResponse.Success = _ctx.BooleanValue("DescribeStoreConfig.Success");
+			describeStoreConfigResponse.ErrorCode = _ctx.StringValue("DescribeStoreConfig.ErrorCode");
+			describeStoreConfigResponse.Code = _ctx.StringValue("DescribeStoreConfig.Code");
+			describeStoreConfigResponse.Message = _ctx.StringValue("DescribeStoreConfig.Message");
+			describeStoreConfigResponse.DynamicMessage = _ctx.StringValue("DescribeStoreConfig.DynamicMessage");
+			describeStoreConfigResponse.DynamicCode = _ctx.StringValue("DescribeStoreConfig.DynamicCode");
 
 			DescribeStoreConfigResponse.DescribeStoreConfig_StoreConfigInfo storeConfigInfo = new DescribeStoreConfigResponse.DescribeStoreConfig_StoreConfigInfo();
+			storeConfigInfo.StoreId = _ctx.StringValue("DescribeStoreConfig.StoreConfigInfo.StoreId");
 			storeConfigInfo.EnableNotification = _ctx.BooleanValue("DescribeStoreConfig.StoreConfigInfo.EnableNotification");
 			storeConfigInfo.NotificationWebHook = _ctx.StringValue("DescribeStoreConfig.StoreConfigInfo.NotificationWebHook");
 			storeConfigInfo.NotificationSilentTimes = _ctx.StringValue("DescribeStoreConfig.StoreConfigInfo.NotificationSilentTimes");
-			storeConfigInfo.StoreId = _ctx.StringValue("DescribeStoreConfig.StoreConfigInfo.StoreId");
+
+			List<DescribeStoreConfigResponse.DescribeStoreConfig_StoreConfigInfo.DescribeStoreConfig_SubscribeContent> storeConfigInfo_subscribeContents = new List<DescribeStoreConfigResponse.DescribeStoreConfig_StoreConfigInfo.DescribeStoreConfig_SubscribeContent>();
+			for (int i = 0; i < _ctx.Length("DescribeStoreConfig.StoreConfigInfo.SubscribeContents.Length"); i++) {
+				DescribeStoreConfigResponse.DescribeStoreConfig_StoreConfigInfo.DescribeStoreConfig_SubscribeContent subscribeContent = new DescribeStoreConfigResponse.DescribeStoreConfig_StoreConfigInfo.DescribeStoreConfig_SubscribeContent();
+				subscribeContent.Category = _ctx.StringValue("DescribeStoreConfig.StoreConfigInfo.SubscribeContents["+ i +"].Category");
+				subscribeContent.Enable = _ctx.BooleanValue("DescribeStoreConfig.StoreConfigInfo.SubscribeContents["+ i +"].Enable");
+				subscribeContent.Threshold = _ctx.StringValue("DescribeStoreConfig.StoreConfigInfo.SubscribeContents["+ i +"].Threshold");
+				subscribeContent.AtAll = _ctx.BooleanValue("DescribeStoreConfig.StoreConfigInfo.SubscribeContents["+ i +"].AtAll");
+				subscribeContent.AtMobileList = _ctx.StringValue("DescribeStoreConfig.StoreConfigInfo.SubscribeContents["+ i +"].AtMobileList");
+
+				storeConfigInfo_subscribeContents.Add(subscribeContent);
+			}
+			storeConfigInfo.SubscribeContents = storeConfigInfo_subscribeContents;
 			describeStoreConfigResponse.StoreConfigInfo = storeConfigInfo;
         
 			return describeStoreConfigResponse;

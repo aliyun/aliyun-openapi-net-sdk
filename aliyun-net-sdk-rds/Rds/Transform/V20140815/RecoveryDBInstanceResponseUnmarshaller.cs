@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			RecoveryDBInstanceResponse recoveryDBInstanceResponse = new RecoveryDBInstanceResponse();
 
 			recoveryDBInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			recoveryDBInstanceResponse.RequestId = _ctx.StringValue("RecoveryDBInstance.RequestId");
 			recoveryDBInstanceResponse.DBInstanceId = _ctx.StringValue("RecoveryDBInstance.DBInstanceId");
+			recoveryDBInstanceResponse.RequestId = _ctx.StringValue("RecoveryDBInstance.RequestId");
 			recoveryDBInstanceResponse.OrderId = _ctx.StringValue("RecoveryDBInstance.OrderId");
         
 			return recoveryDBInstanceResponse;

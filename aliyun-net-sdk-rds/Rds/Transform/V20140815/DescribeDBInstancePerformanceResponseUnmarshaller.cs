@@ -31,24 +31,24 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeDBInstancePerformanceResponse describeDBInstancePerformanceResponse = new DescribeDBInstancePerformanceResponse();
 
 			describeDBInstancePerformanceResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBInstancePerformanceResponse.RequestId = _ctx.StringValue("DescribeDBInstancePerformance.RequestId");
+			describeDBInstancePerformanceResponse.EndTime = _ctx.StringValue("DescribeDBInstancePerformance.EndTime");
+			describeDBInstancePerformanceResponse.StartTime = _ctx.StringValue("DescribeDBInstancePerformance.StartTime");
 			describeDBInstancePerformanceResponse.DBInstanceId = _ctx.StringValue("DescribeDBInstancePerformance.DBInstanceId");
 			describeDBInstancePerformanceResponse.Engine = _ctx.StringValue("DescribeDBInstancePerformance.Engine");
-			describeDBInstancePerformanceResponse.StartTime = _ctx.StringValue("DescribeDBInstancePerformance.StartTime");
-			describeDBInstancePerformanceResponse.EndTime = _ctx.StringValue("DescribeDBInstancePerformance.EndTime");
+			describeDBInstancePerformanceResponse.RequestId = _ctx.StringValue("DescribeDBInstancePerformance.RequestId");
 
 			List<DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey> describeDBInstancePerformanceResponse_performanceKeys = new List<DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey>();
 			for (int i = 0; i < _ctx.Length("DescribeDBInstancePerformance.PerformanceKeys.Length"); i++) {
 				DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey performanceKey = new DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey();
 				performanceKey.Key = _ctx.StringValue("DescribeDBInstancePerformance.PerformanceKeys["+ i +"].Key");
-				performanceKey.Unit = _ctx.StringValue("DescribeDBInstancePerformance.PerformanceKeys["+ i +"].Unit");
 				performanceKey.ValueFormat = _ctx.StringValue("DescribeDBInstancePerformance.PerformanceKeys["+ i +"].ValueFormat");
+				performanceKey.Unit = _ctx.StringValue("DescribeDBInstancePerformance.PerformanceKeys["+ i +"].Unit");
 
 				List<DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey.DescribeDBInstancePerformance_PerformanceValue> performanceKey_values = new List<DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey.DescribeDBInstancePerformance_PerformanceValue>();
 				for (int j = 0; j < _ctx.Length("DescribeDBInstancePerformance.PerformanceKeys["+ i +"].Values.Length"); j++) {
 					DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey.DescribeDBInstancePerformance_PerformanceValue performanceValue = new DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey.DescribeDBInstancePerformance_PerformanceValue();
-					performanceValue._Value = _ctx.StringValue("DescribeDBInstancePerformance.PerformanceKeys["+ i +"].Values["+ j +"].Value");
 					performanceValue.Date = _ctx.StringValue("DescribeDBInstancePerformance.PerformanceKeys["+ i +"].Values["+ j +"].Date");
+					performanceValue._Value = _ctx.StringValue("DescribeDBInstancePerformance.PerformanceKeys["+ i +"].Values["+ j +"].Value");
 
 					performanceKey_values.Add(performanceValue);
 				}

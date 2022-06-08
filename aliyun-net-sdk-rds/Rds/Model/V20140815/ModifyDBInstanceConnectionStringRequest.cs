@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -54,10 +55,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
+		private string babelfishPort;
+
 		private string currentConnectionString;
 
 		private string port;
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -71,6 +75,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ConnectionStringPrefix")]
 		public string ConnectionStringPrefix
 		{
 			get
@@ -84,6 +89,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "GeneralGroupName")]
 		public string GeneralGroupName
 		{
 			get
@@ -97,6 +103,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -110,6 +117,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -123,6 +131,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -136,6 +145,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -149,6 +159,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "BabelfishPort")]
+		public string BabelfishPort
+		{
+			get
+			{
+				return babelfishPort;
+			}
+			set	
+			{
+				babelfishPort = value;
+				DictionaryUtil.Add(QueryParameters, "BabelfishPort", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "CurrentConnectionString")]
 		public string CurrentConnectionString
 		{
 			get
@@ -162,6 +187,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Port")]
 		public string Port
 		{
 			get

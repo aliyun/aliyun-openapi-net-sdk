@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
@@ -25,28 +25,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeReadDBInstanceDelayResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dBInstanceId;
 
-		private string readDBInstanceId;
+		private string requestId;
 
 		private int? delayTime;
 
+		private string readDBInstanceId;
+
 		private List<DescribeReadDBInstanceDelay_ItemsItem> items;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -59,18 +48,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ReadDBInstanceId
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return readDBInstanceId;
+				return requestId;
 			}
 			set	
 			{
-				readDBInstanceId = value;
+				requestId = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "DelayTime")]
 		public int? DelayTime
 		{
 			get
@@ -83,6 +74,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ReadDBInstanceId")]
+		public string ReadDBInstanceId
+		{
+			get
+			{
+				return readDBInstanceId;
+			}
+			set	
+			{
+				readDBInstanceId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Items")]
 		public List<DescribeReadDBInstanceDelay_ItemsItem> Items
 		{
 			get
@@ -102,10 +107,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private List<DescribeReadDBInstanceDelay_ReadonlyInstanceDelayItem> readonlyInstanceDelay;
 
-			private List<string> readDBInstanceNames;
-
 			private List<string> readDelayTimes;
 
+			private List<string> readDBInstanceNames;
+
+			[JsonProperty(PropertyName = "DBInstanceId")]
 			public string DBInstanceId
 			{
 				get
@@ -118,6 +124,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ReadonlyInstanceDelay")]
 			public List<DescribeReadDBInstanceDelay_ReadonlyInstanceDelayItem> ReadonlyInstanceDelay
 			{
 				get
@@ -130,18 +137,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public List<string> ReadDBInstanceNames
-			{
-				get
-				{
-					return readDBInstanceNames;
-				}
-				set	
-				{
-					readDBInstanceNames = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "ReadDelayTimes")]
 			public List<string> ReadDelayTimes
 			{
 				get
@@ -154,97 +150,39 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
+			[JsonProperty(PropertyName = "ReadDBInstanceNames")]
+			public List<string> ReadDBInstanceNames
+			{
+				get
+				{
+					return readDBInstanceNames;
+				}
+				set	
+				{
+					readDBInstanceNames = value;
+				}
+			}
+
 			public class DescribeReadDBInstanceDelay_ReadonlyInstanceDelayItem
 			{
 
-				private string replayLatency;
-
-				private string flushLag;
+				private string writeLatency;
 
 				private string flushLatency;
 
-				private string sendLatency;
+				private string readDBInstanceName;
 
 				private string writeLag;
 
+				private string flushLag;
+
+				private string sendLatency;
+
 				private string replayLag;
 
-				private string writeLatency;
+				private string replayLatency;
 
-				private string readDBInstanceName;
-
-				public string ReplayLatency
-				{
-					get
-					{
-						return replayLatency;
-					}
-					set	
-					{
-						replayLatency = value;
-					}
-				}
-
-				public string FlushLag
-				{
-					get
-					{
-						return flushLag;
-					}
-					set	
-					{
-						flushLag = value;
-					}
-				}
-
-				public string FlushLatency
-				{
-					get
-					{
-						return flushLatency;
-					}
-					set	
-					{
-						flushLatency = value;
-					}
-				}
-
-				public string SendLatency
-				{
-					get
-					{
-						return sendLatency;
-					}
-					set	
-					{
-						sendLatency = value;
-					}
-				}
-
-				public string WriteLag
-				{
-					get
-					{
-						return writeLag;
-					}
-					set	
-					{
-						writeLag = value;
-					}
-				}
-
-				public string ReplayLag
-				{
-					get
-					{
-						return replayLag;
-					}
-					set	
-					{
-						replayLag = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "WriteLatency")]
 				public string WriteLatency
 				{
 					get
@@ -257,6 +195,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				[JsonProperty(PropertyName = "FlushLatency")]
+				public string FlushLatency
+				{
+					get
+					{
+						return flushLatency;
+					}
+					set	
+					{
+						flushLatency = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ReadDBInstanceName")]
 				public string ReadDBInstanceName
 				{
 					get
@@ -266,6 +218,71 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						readDBInstanceName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "WriteLag")]
+				public string WriteLag
+				{
+					get
+					{
+						return writeLag;
+					}
+					set	
+					{
+						writeLag = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "FlushLag")]
+				public string FlushLag
+				{
+					get
+					{
+						return flushLag;
+					}
+					set	
+					{
+						flushLag = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "SendLatency")]
+				public string SendLatency
+				{
+					get
+					{
+						return sendLatency;
+					}
+					set	
+					{
+						sendLatency = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ReplayLag")]
+				public string ReplayLag
+				{
+					get
+					{
+						return replayLag;
+					}
+					set	
+					{
+						replayLag = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ReplayLatency")]
+				public string ReplayLatency
+				{
+					get
+					{
+						return replayLatency;
+					}
+					set	
+					{
+						replayLatency = value;
 					}
 				}
 			}

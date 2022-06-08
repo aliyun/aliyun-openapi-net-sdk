@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -90,6 +91,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string logBackupRetentionPeriod;
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -103,6 +105,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "LocalLogRetentionHours")]
 		public string LocalLogRetentionHours
 		{
 			get
@@ -116,6 +119,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "LogBackupFrequency")]
 		public string LogBackupFrequency
 		{
 			get
@@ -129,6 +133,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ArchiveBackupKeepCount")]
 		public int? ArchiveBackupKeepCount
 		{
 			get
@@ -142,6 +147,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "BackupLog")]
 		public string BackupLog
 		{
 			get
@@ -155,6 +161,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "BackupInterval")]
 		public string BackupInterval
 		{
 			get
@@ -168,6 +175,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "HighSpaceUsageProtection")]
 		public string HighSpaceUsageProtection
 		{
 			get
@@ -181,6 +189,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "LogBackupLocalRetentionNumber")]
 		public int? LogBackupLocalRetentionNumber
 		{
 			get
@@ -194,6 +203,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -207,6 +217,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "EnableBackupLog")]
 		public string EnableBackupLog
 		{
 			get
@@ -220,6 +231,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "BackupPolicyMode")]
 		public string BackupPolicyMode
 		{
 			get
@@ -233,6 +245,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PreferredBackupPeriod")]
 		public string PreferredBackupPeriod
 		{
 			get
@@ -246,6 +259,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ReleasedKeepPolicy")]
 		public string ReleasedKeepPolicy
 		{
 			get
@@ -259,6 +273,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -272,6 +287,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -285,6 +301,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "CompressType")]
 		public string CompressType
 		{
 			get
@@ -298,6 +315,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "LocalLogRetentionSpace")]
 		public string LocalLogRetentionSpace
 		{
 			get
@@ -311,6 +329,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -324,6 +343,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ArchiveBackupKeepPolicy")]
 		public string ArchiveBackupKeepPolicy
 		{
 			get
@@ -337,6 +357,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PreferredBackupTime")]
 		public string PreferredBackupTime
 		{
 			get
@@ -350,6 +371,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "BackupRetentionPeriod")]
 		public string BackupRetentionPeriod
 		{
 			get
@@ -363,6 +385,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "BackupMethod")]
 		public string BackupMethod
 		{
 			get
@@ -376,6 +399,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ArchiveBackupRetentionPeriod")]
 		public string ArchiveBackupRetentionPeriod
 		{
 			get
@@ -389,6 +413,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Category")]
 		public string Category
 		{
 			get
@@ -402,6 +427,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "LogBackupRetentionPeriod")]
 		public string LogBackupRetentionPeriod
 		{
 			get

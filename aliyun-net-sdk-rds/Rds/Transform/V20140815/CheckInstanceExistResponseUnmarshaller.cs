@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			CheckInstanceExistResponse checkInstanceExistResponse = new CheckInstanceExistResponse();
 
 			checkInstanceExistResponse.HttpResponse = _ctx.HttpResponse;
-			checkInstanceExistResponse.RequestId = _ctx.StringValue("CheckInstanceExist.RequestId");
 			checkInstanceExistResponse.IsExistInstance = _ctx.BooleanValue("CheckInstanceExist.IsExistInstance");
+			checkInstanceExistResponse.RequestId = _ctx.StringValue("CheckInstanceExist.RequestId");
         
 			return checkInstanceExistResponse;
         }

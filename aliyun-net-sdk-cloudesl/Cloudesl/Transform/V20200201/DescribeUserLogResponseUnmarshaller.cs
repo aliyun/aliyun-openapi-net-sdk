@@ -31,40 +31,41 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 			DescribeUserLogResponse describeUserLogResponse = new DescribeUserLogResponse();
 
 			describeUserLogResponse.HttpResponse = _ctx.HttpResponse;
-			describeUserLogResponse.ErrorMessage = _ctx.StringValue("DescribeUserLog.ErrorMessage");
-			describeUserLogResponse.ErrorCode = _ctx.StringValue("DescribeUserLog.ErrorCode");
-			describeUserLogResponse.PageNumber = _ctx.IntegerValue("DescribeUserLog.PageNumber");
-			describeUserLogResponse.Message = _ctx.StringValue("DescribeUserLog.Message");
-			describeUserLogResponse.DynamicCode = _ctx.StringValue("DescribeUserLog.DynamicCode");
-			describeUserLogResponse.Code = _ctx.StringValue("DescribeUserLog.Code");
-			describeUserLogResponse.PageSize = _ctx.IntegerValue("DescribeUserLog.PageSize");
-			describeUserLogResponse.DynamicMessage = _ctx.StringValue("DescribeUserLog.DynamicMessage");
 			describeUserLogResponse.RequestId = _ctx.StringValue("DescribeUserLog.RequestId");
+			describeUserLogResponse.ErrorMessage = _ctx.StringValue("DescribeUserLog.ErrorMessage");
 			describeUserLogResponse.Success = _ctx.BooleanValue("DescribeUserLog.Success");
+			describeUserLogResponse.ErrorCode = _ctx.StringValue("DescribeUserLog.ErrorCode");
+			describeUserLogResponse.Code = _ctx.StringValue("DescribeUserLog.Code");
+			describeUserLogResponse.Message = _ctx.StringValue("DescribeUserLog.Message");
+			describeUserLogResponse.DynamicMessage = _ctx.StringValue("DescribeUserLog.DynamicMessage");
+			describeUserLogResponse.PageSize = _ctx.IntegerValue("DescribeUserLog.PageSize");
+			describeUserLogResponse.PageNumber = _ctx.IntegerValue("DescribeUserLog.PageNumber");
 			describeUserLogResponse.TotalCount = _ctx.IntegerValue("DescribeUserLog.TotalCount");
+			describeUserLogResponse.DynamicCode = _ctx.StringValue("DescribeUserLog.DynamicCode");
 
 			List<DescribeUserLogResponse.DescribeUserLog_UserLogInfo> describeUserLogResponse_userLogs = new List<DescribeUserLogResponse.DescribeUserLog_UserLogInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeUserLog.UserLogs.Length"); i++) {
 				DescribeUserLogResponse.DescribeUserLog_UserLogInfo userLogInfo = new DescribeUserLogResponse.DescribeUserLog_UserLogInfo();
-				userLogInfo.ResultCode = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].ResultCode");
+				userLogInfo.EslBarCode = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].EslBarCode");
 				userLogInfo.OperationSendTime = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].OperationSendTime");
-				userLogInfo.GmtCreate = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].GmtCreate");
-				userLogInfo.StoreId = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].StoreId");
-				userLogInfo.GmtModified = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].GmtModified");
 				userLogInfo.ActionPrice = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].ActionPrice");
-				userLogInfo.OperationStatus = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].OperationStatus");
+				userLogInfo.UserId = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].UserId");
 				userLogInfo.PriceUnit = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].PriceUnit");
-				userLogInfo.LogId = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].LogId");
-				userLogInfo.ItemShortTitle = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].ItemShortTitle");
+				userLogInfo.ResultCode = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].ResultCode");
+				userLogInfo.ItemId = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].ItemId");
+				userLogInfo.GmtModified = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].GmtModified");
 				userLogInfo.OperationType = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].OperationType");
 				userLogInfo.OperationResponseTime = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].OperationResponseTime");
-				userLogInfo.SpendTime = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].SpendTime");
-				userLogInfo.EslBarCode = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].EslBarCode");
-				userLogInfo.ItemId = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].ItemId");
-				userLogInfo.ItemBarCode = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].ItemBarCode");
+				userLogInfo.OperationStatus = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].OperationStatus");
+				userLogInfo.StoreId = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].StoreId");
+				userLogInfo.ItemShortTitle = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].ItemShortTitle");
+				userLogInfo.LogId = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].LogId");
 				userLogInfo.BePromotion = _ctx.BooleanValue("DescribeUserLog.UserLogs["+ i +"].BePromotion");
-				userLogInfo.UserId = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].UserId");
+				userLogInfo.GmtCreate = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].GmtCreate");
 				userLogInfo.EslSignal = _ctx.IntegerValue("DescribeUserLog.UserLogs["+ i +"].EslSignal");
+				userLogInfo.SpendTime = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].SpendTime");
+				userLogInfo.ItemBarCode = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].ItemBarCode");
+				userLogInfo.I18nResultKey = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].I18nResultKey");
 
 				describeUserLogResponse_userLogs.Add(userLogInfo);
 			}

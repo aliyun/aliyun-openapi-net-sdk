@@ -144,6 +144,7 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 						keyWord.Tid = _ctx.StringValue("GetResultToReview.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].Tid");
 						keyWord.Cid = _ctx.StringValue("GetResultToReview.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].Cid");
 						keyWord.To = _ctx.IntegerValue("GetResultToReview.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].To");
+						keyWord.CustomizeCode = _ctx.StringValue("GetResultToReview.Data.HitRuleReviewInfoList["+ i +"].ConditionHitInfoList["+ j +"].KeyWords["+ k +"].CustomizeCode");
 
 						conditionHitInfo_keyWords.Add(keyWord);
 					}

@@ -32,9 +32,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			describeVSwitchesResponse.HttpResponse = _ctx.HttpResponse;
 			describeVSwitchesResponse.RequestId = _ctx.StringValue("DescribeVSwitches.RequestId");
-			describeVSwitchesResponse.TotalCount = _ctx.LongValue("DescribeVSwitches.TotalCount");
-			describeVSwitchesResponse.PageNumber = _ctx.LongValue("DescribeVSwitches.PageNumber");
-			describeVSwitchesResponse.PageSize = _ctx.LongValue("DescribeVSwitches.PageSize");
+			describeVSwitchesResponse.TotalCount = _ctx.IntegerValue("DescribeVSwitches.TotalCount");
+			describeVSwitchesResponse.PageNumber = _ctx.IntegerValue("DescribeVSwitches.PageNumber");
+			describeVSwitchesResponse.PageSize = _ctx.IntegerValue("DescribeVSwitches.PageSize");
 
 			List<DescribeVSwitchesResponse.DescribeVSwitches_VSwitch> describeVSwitchesResponse_vSwitchs = new List<DescribeVSwitchesResponse.DescribeVSwitches_VSwitch>();
 			for (int i = 0; i < _ctx.Length("DescribeVSwitches.VSwitchs.Length"); i++) {
