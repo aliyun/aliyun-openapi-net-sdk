@@ -50,6 +50,8 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 
 		private string orgId;
 
+		private long? verbose;
+
 		public string OrgName
 		{
 			get
@@ -119,6 +121,19 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			{
 				orgId = value;
 				DictionaryUtil.Add(BodyParameters, "OrgId", value);
+			}
+		}
+
+		public long? Verbose
+		{
+			get
+			{
+				return verbose;
+			}
+			set	
+			{
+				verbose = value;
+				DictionaryUtil.Add(BodyParameters, "Verbose", value.ToString());
 			}
 		}
 
