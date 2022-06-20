@@ -46,6 +46,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.EndTime = _ctx.StringValue("GetSoundCodeSchedule.Data.EndTime");
 			data.StartDate = _ctx.StringValue("GetSoundCodeSchedule.Data.StartDate");
 			data.EndDate = _ctx.StringValue("GetSoundCodeSchedule.Data.EndDate");
+			data.OpenType = _ctx.StringValue("GetSoundCodeSchedule.Data.OpenType");
 			getSoundCodeScheduleResponse.Data = data;
         
 			return getSoundCodeScheduleResponse;

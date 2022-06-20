@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CreateSoundCodeRequest : RpcAcsRequest<CreateSoundCodeResponse>
+    public class BatchCheckImportDeviceRequest : RpcAcsRequest<BatchCheckImportDeviceResponse>
     {
-        public CreateSoundCodeRequest()
-            : base("Iot", "2018-01-20", "CreateSoundCode")
+        public BatchCheckImportDeviceRequest()
+            : base("Iot", "2018-01-20", "BatchCheckImportDevice")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,28 +41,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private int? duration;
-
 		private string iotInstanceId;
 
-		private string soundCodeContent;
+		private string productKey;
 
-		private string name;
-
-		private string openType;
-
-		public int? Duration
-		{
-			get
-			{
-				return duration;
-			}
-			set	
-			{
-				duration = value;
-				DictionaryUtil.Add(BodyParameters, "Duration", value.ToString());
-			}
-		}
+		private List<DeviceList> deviceLists = new List<DeviceList>(){ };
 
 		public string IotInstanceId
 		{
@@ -73,52 +56,96 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				iotInstanceId = value;
-				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 
-		public string SoundCodeContent
+		public string ProductKey
 		{
 			get
 			{
-				return soundCodeContent;
+				return productKey;
 			}
 			set	
 			{
-				soundCodeContent = value;
-				DictionaryUtil.Add(BodyParameters, "SoundCodeContent", value);
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 
-		public string Name
+		public List<DeviceList> DeviceLists
 		{
 			get
 			{
-				return name;
+				return deviceLists;
 			}
-			set	
+
+			set
 			{
-				name = value;
-				DictionaryUtil.Add(BodyParameters, "Name", value);
+				deviceLists = value;
+				for (int i = 0; i < deviceLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"DeviceList." + (i + 1) + ".DeviceSecret", deviceLists[i].DeviceSecret);
+					DictionaryUtil.Add(QueryParameters,"DeviceList." + (i + 1) + ".DeviceName", deviceLists[i].DeviceName);
+					DictionaryUtil.Add(QueryParameters,"DeviceList." + (i + 1) + ".Sn", deviceLists[i].Sn);
+				}
 			}
 		}
 
-		public string OpenType
+		public class DeviceList
 		{
-			get
+
+			private string deviceSecret;
+
+			private string deviceName;
+
+			private string sn;
+
+			public string DeviceSecret
 			{
-				return openType;
+				get
+				{
+					return deviceSecret;
+				}
+				set	
+				{
+					deviceSecret = value;
+				}
 			}
-			set	
+
+			public string DeviceName
 			{
-				openType = value;
-				DictionaryUtil.Add(BodyParameters, "OpenType", value);
+				get
+				{
+					return deviceName;
+				}
+				set	
+				{
+					deviceName = value;
+				}
+			}
+
+			public string Sn
+			{
+				get
+				{
+					return sn;
+				}
+				set	
+				{
+					sn = value;
+				}
 			}
 		}
 
-        public override CreateSoundCodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override BatchCheckImportDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateSoundCodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BatchCheckImportDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

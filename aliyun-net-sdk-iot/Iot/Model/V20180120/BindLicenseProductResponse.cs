@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class ResetThingResponse : AcsResponse
+	public class BindLicenseProductResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private string jobId;
+		private bool? data;
 
 		public string RequestId
 		{
@@ -83,15 +83,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string JobId
+		public bool? Data
 		{
 			get
 			{
-				return jobId;
+				return data;
 			}
 			set	
 			{
-				jobId = value;
+				data = value;
 			}
 		}
 	}

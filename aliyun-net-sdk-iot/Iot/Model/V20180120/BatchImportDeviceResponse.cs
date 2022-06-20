@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QuerySoundCodeListResponse : AcsResponse
+	public class BatchImportDeviceResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private QuerySoundCodeList_Data data;
+		private BatchImportDevice_Data data;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public QuerySoundCodeList_Data Data
+		public BatchImportDevice_Data Data
 		{
 			get
 			{
@@ -95,150 +95,76 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class QuerySoundCodeList_Data
+		public class BatchImportDevice_Data
 		{
 
-			private int? total;
+			private long? applyId;
 
-			private int? pageId;
+			private List<string> repeatedDeviceNameList;
 
-			private int? pageSize;
+			private List<string> invalidDeviceNameList;
 
-			private List<QuerySoundCodeList_Items> list;
+			private List<string> invalidDeviceSecretList;
 
-			public int? Total
+			private List<string> invalidSnList;
+
+			public long? ApplyId
 			{
 				get
 				{
-					return total;
+					return applyId;
 				}
 				set	
 				{
-					total = value;
+					applyId = value;
 				}
 			}
 
-			public int? PageId
+			public List<string> RepeatedDeviceNameList
 			{
 				get
 				{
-					return pageId;
+					return repeatedDeviceNameList;
 				}
 				set	
 				{
-					pageId = value;
+					repeatedDeviceNameList = value;
 				}
 			}
 
-			public int? PageSize
+			public List<string> InvalidDeviceNameList
 			{
 				get
 				{
-					return pageSize;
+					return invalidDeviceNameList;
 				}
 				set	
 				{
-					pageSize = value;
+					invalidDeviceNameList = value;
 				}
 			}
 
-			public List<QuerySoundCodeList_Items> List
+			public List<string> InvalidDeviceSecretList
 			{
 				get
 				{
-					return list;
+					return invalidDeviceSecretList;
 				}
 				set	
 				{
-					list = value;
+					invalidDeviceSecretList = value;
 				}
 			}
 
-			public class QuerySoundCodeList_Items
+			public List<string> InvalidSnList
 			{
-
-				private string soundCode;
-
-				private string soundCodeContent;
-
-				private int? duration;
-
-				private long? gmtCreate;
-
-				private string openType;
-
-				private string name;
-
-				public string SoundCode
+				get
 				{
-					get
-					{
-						return soundCode;
-					}
-					set	
-					{
-						soundCode = value;
-					}
+					return invalidSnList;
 				}
-
-				public string SoundCodeContent
+				set	
 				{
-					get
-					{
-						return soundCodeContent;
-					}
-					set	
-					{
-						soundCodeContent = value;
-					}
-				}
-
-				public int? Duration
-				{
-					get
-					{
-						return duration;
-					}
-					set	
-					{
-						duration = value;
-					}
-				}
-
-				public long? GmtCreate
-				{
-					get
-					{
-						return gmtCreate;
-					}
-					set	
-					{
-						gmtCreate = value;
-					}
-				}
-
-				public string OpenType
-				{
-					get
-					{
-						return openType;
-					}
-					set	
-					{
-						openType = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
+					invalidSnList = value;
 				}
 			}
 		}

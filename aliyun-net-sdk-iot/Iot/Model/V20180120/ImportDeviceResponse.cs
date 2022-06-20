@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QuerySoundCodeListResponse : AcsResponse
+	public class ImportDeviceResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private QuerySoundCodeList_Data data;
+		private ImportDevice_Data data;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public QuerySoundCodeList_Data Data
+		public ImportDevice_Data Data
 		{
 			get
 			{
@@ -95,150 +95,90 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class QuerySoundCodeList_Data
+		public class ImportDevice_Data
 		{
 
-			private int? total;
+			private string iotId;
 
-			private int? pageId;
+			private string productKey;
 
-			private int? pageSize;
+			private string deviceName;
 
-			private List<QuerySoundCodeList_Items> list;
+			private string deviceSecret;
 
-			public int? Total
+			private string sn;
+
+			private string nickname;
+
+			public string IotId
 			{
 				get
 				{
-					return total;
+					return iotId;
 				}
 				set	
 				{
-					total = value;
+					iotId = value;
 				}
 			}
 
-			public int? PageId
+			public string ProductKey
 			{
 				get
 				{
-					return pageId;
+					return productKey;
 				}
 				set	
 				{
-					pageId = value;
+					productKey = value;
 				}
 			}
 
-			public int? PageSize
+			public string DeviceName
 			{
 				get
 				{
-					return pageSize;
+					return deviceName;
 				}
 				set	
 				{
-					pageSize = value;
+					deviceName = value;
 				}
 			}
 
-			public List<QuerySoundCodeList_Items> List
+			public string DeviceSecret
 			{
 				get
 				{
-					return list;
+					return deviceSecret;
 				}
 				set	
 				{
-					list = value;
+					deviceSecret = value;
 				}
 			}
 
-			public class QuerySoundCodeList_Items
+			public string Sn
 			{
-
-				private string soundCode;
-
-				private string soundCodeContent;
-
-				private int? duration;
-
-				private long? gmtCreate;
-
-				private string openType;
-
-				private string name;
-
-				public string SoundCode
+				get
 				{
-					get
-					{
-						return soundCode;
-					}
-					set	
-					{
-						soundCode = value;
-					}
+					return sn;
 				}
-
-				public string SoundCodeContent
+				set	
 				{
-					get
-					{
-						return soundCodeContent;
-					}
-					set	
-					{
-						soundCodeContent = value;
-					}
+					sn = value;
 				}
+			}
 
-				public int? Duration
+			public string Nickname
+			{
+				get
 				{
-					get
-					{
-						return duration;
-					}
-					set	
-					{
-						duration = value;
-					}
+					return nickname;
 				}
-
-				public long? GmtCreate
+				set	
 				{
-					get
-					{
-						return gmtCreate;
-					}
-					set	
-					{
-						gmtCreate = value;
-					}
-				}
-
-				public string OpenType
-				{
-					get
-					{
-						return openType;
-					}
-					set	
-					{
-						openType = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
+					nickname = value;
 				}
 			}
 		}

@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CreateSoundCodeRequest : RpcAcsRequest<CreateSoundCodeResponse>
+    public class UpdateSoundCodeRequest : RpcAcsRequest<UpdateSoundCodeResponse>
     {
-        public CreateSoundCodeRequest()
-            : base("Iot", "2018-01-20", "CreateSoundCode")
+        public UpdateSoundCodeRequest()
+            : base("Iot", "2018-01-20", "UpdateSoundCode")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private string soundCode;
+
 		private int? duration;
 
 		private string iotInstanceId;
@@ -49,7 +51,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string name;
 
-		private string openType;
+		public string SoundCode
+		{
+			get
+			{
+				return soundCode;
+			}
+			set	
+			{
+				soundCode = value;
+				DictionaryUtil.Add(BodyParameters, "SoundCode", value);
+			}
+		}
 
 		public int? Duration
 		{
@@ -103,22 +116,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string OpenType
-		{
-			get
-			{
-				return openType;
-			}
-			set	
-			{
-				openType = value;
-				DictionaryUtil.Add(BodyParameters, "OpenType", value);
-			}
-		}
-
-        public override CreateSoundCodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateSoundCodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateSoundCodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateSoundCodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

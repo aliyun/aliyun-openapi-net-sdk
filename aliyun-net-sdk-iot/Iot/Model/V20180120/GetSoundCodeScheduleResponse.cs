@@ -116,6 +116,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string endDate;
 
+			private string openType;
+
 			public string ScheduleCode
 			{
 				get
@@ -221,6 +223,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					endDate = value;
+				}
+			}
+
+			public string OpenType
+			{
+				get
+				{
+					return openType;
+				}
+				set	
+				{
+					openType = value;
 				}
 			}
 		}

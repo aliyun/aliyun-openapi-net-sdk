@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QuerySoundCodeScheduleListResponse : AcsResponse
+	public class QueryLicenseDeviceListResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private QuerySoundCodeScheduleList_Data data;
+		private QueryLicenseDeviceList_Data data;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public QuerySoundCodeScheduleList_Data Data
+		public QueryLicenseDeviceList_Data Data
 		{
 			get
 			{
@@ -95,26 +95,26 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class QuerySoundCodeScheduleList_Data
+		public class QueryLicenseDeviceList_Data
 		{
-
-			private int? total;
-
-			private int? pageId;
 
 			private int? pageSize;
 
-			private List<QuerySoundCodeScheduleList_Items> list;
+			private int? pageId;
 
-			public int? Total
+			private int? total;
+
+			private List<QueryLicenseDeviceList_Item> deviceList;
+
+			public int? PageSize
 			{
 				get
 				{
-					return total;
+					return pageSize;
 				}
 				set	
 				{
-					total = value;
+					pageSize = value;
 				}
 			}
 
@@ -130,86 +130,104 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public int? PageSize
+			public int? Total
 			{
 				get
 				{
-					return pageSize;
+					return total;
 				}
 				set	
 				{
-					pageSize = value;
+					total = value;
 				}
 			}
 
-			public List<QuerySoundCodeScheduleList_Items> List
+			public List<QueryLicenseDeviceList_Item> DeviceList
 			{
 				get
 				{
-					return list;
+					return deviceList;
 				}
 				set	
 				{
-					list = value;
+					deviceList = value;
 				}
 			}
 
-			public class QuerySoundCodeScheduleList_Items
+			public class QueryLicenseDeviceList_Item
 			{
 
-				private string scheduleCode;
+				private string productName;
 
-				private string name;
+				private string licenseCode;
 
-				private string description;
+				private string productKey;
+
+				private string deviceName;
+
+				private long? expiryTime;
 
 				private long? gmtCreate;
 
-				private string status;
+				private string iotId;
 
-				private string startTime;
-
-				private string endTime;
-
-				private string startDate;
-
-				private string endDate;
-
-				private string openType;
-
-				public string ScheduleCode
+				public string ProductName
 				{
 					get
 					{
-						return scheduleCode;
+						return productName;
 					}
 					set	
 					{
-						scheduleCode = value;
+						productName = value;
 					}
 				}
 
-				public string Name
+				public string LicenseCode
 				{
 					get
 					{
-						return name;
+						return licenseCode;
 					}
 					set	
 					{
-						name = value;
+						licenseCode = value;
 					}
 				}
 
-				public string Description
+				public string ProductKey
 				{
 					get
 					{
-						return description;
+						return productKey;
 					}
 					set	
 					{
-						description = value;
+						productKey = value;
+					}
+				}
+
+				public string DeviceName
+				{
+					get
+					{
+						return deviceName;
+					}
+					set	
+					{
+						deviceName = value;
+					}
+				}
+
+				public long? ExpiryTime
+				{
+					get
+					{
+						return expiryTime;
+					}
+					set	
+					{
+						expiryTime = value;
 					}
 				}
 
@@ -225,75 +243,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					}
 				}
 
-				public string Status
+				public string IotId
 				{
 					get
 					{
-						return status;
+						return iotId;
 					}
 					set	
 					{
-						status = value;
-					}
-				}
-
-				public string StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
-					}
-				}
-
-				public string EndTime
-				{
-					get
-					{
-						return endTime;
-					}
-					set	
-					{
-						endTime = value;
-					}
-				}
-
-				public string StartDate
-				{
-					get
-					{
-						return startDate;
-					}
-					set	
-					{
-						startDate = value;
-					}
-				}
-
-				public string EndDate
-				{
-					get
-					{
-						return endDate;
-					}
-					set	
-					{
-						endDate = value;
-					}
-				}
-
-				public string OpenType
-				{
-					get
-					{
-						return openType;
-					}
-					set	
-					{
-						openType = value;
+						iotId = value;
 					}
 				}
 			}

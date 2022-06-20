@@ -24,20 +24,19 @@ using Aliyun.Acs.Iot.Model.V20180120;
 
 namespace Aliyun.Acs.Iot.Transform.V20180120
 {
-    public class ResetThingResponseUnmarshaller
+    public class UpdateSoundCodeResponseUnmarshaller
     {
-        public static ResetThingResponse Unmarshall(UnmarshallerContext _ctx)
+        public static UpdateSoundCodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			ResetThingResponse resetThingResponse = new ResetThingResponse();
+			UpdateSoundCodeResponse updateSoundCodeResponse = new UpdateSoundCodeResponse();
 
-			resetThingResponse.HttpResponse = _ctx.HttpResponse;
-			resetThingResponse.RequestId = _ctx.StringValue("ResetThing.RequestId");
-			resetThingResponse.Success = _ctx.BooleanValue("ResetThing.Success");
-			resetThingResponse.Code = _ctx.StringValue("ResetThing.Code");
-			resetThingResponse.ErrorMessage = _ctx.StringValue("ResetThing.ErrorMessage");
-			resetThingResponse.JobId = _ctx.StringValue("ResetThing.JobId");
+			updateSoundCodeResponse.HttpResponse = _ctx.HttpResponse;
+			updateSoundCodeResponse.RequestId = _ctx.StringValue("UpdateSoundCode.RequestId");
+			updateSoundCodeResponse.Success = _ctx.BooleanValue("UpdateSoundCode.Success");
+			updateSoundCodeResponse.Code = _ctx.StringValue("UpdateSoundCode.Code");
+			updateSoundCodeResponse.ErrorMessage = _ctx.StringValue("UpdateSoundCode.ErrorMessage");
         
-			return resetThingResponse;
+			return updateSoundCodeResponse;
         }
     }
 }

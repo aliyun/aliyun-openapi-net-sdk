@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CreateSoundCodeRequest : RpcAcsRequest<CreateSoundCodeResponse>
+    public class QueryLicenseDeviceListRequest : RpcAcsRequest<QueryLicenseDeviceListResponse>
     {
-        public CreateSoundCodeRequest()
-            : base("Iot", "2018-01-20", "CreateSoundCode")
+        public QueryLicenseDeviceListRequest()
+            : base("Iot", "2018-01-20", "QueryLicenseDeviceList")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,26 +41,58 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private int? duration;
+		private long? startTime;
+
+		private int? pageId;
+
+		private string iotId;
 
 		private string iotInstanceId;
 
-		private string soundCodeContent;
+		private int? pageSize;
 
-		private string name;
+		private long? endTime;
 
-		private string openType;
+		private string productKey;
 
-		public int? Duration
+		private string licenseCode;
+
+		public long? StartTime
 		{
 			get
 			{
-				return duration;
+				return startTime;
 			}
 			set	
 			{
-				duration = value;
-				DictionaryUtil.Add(BodyParameters, "Duration", value.ToString());
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public int? PageId
+		{
+			get
+			{
+				return pageId;
+			}
+			set	
+			{
+				pageId = value;
+				DictionaryUtil.Add(QueryParameters, "PageId", value.ToString());
+			}
+		}
+
+		public string IotId
+		{
+			get
+			{
+				return iotId;
+			}
+			set	
+			{
+				iotId = value;
+				DictionaryUtil.Add(QueryParameters, "IotId", value);
 			}
 		}
 
@@ -73,52 +105,65 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				iotInstanceId = value;
-				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 
-		public string SoundCodeContent
+		public int? PageSize
 		{
 			get
 			{
-				return soundCodeContent;
+				return pageSize;
 			}
 			set	
 			{
-				soundCodeContent = value;
-				DictionaryUtil.Add(BodyParameters, "SoundCodeContent", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string Name
+		public long? EndTime
 		{
 			get
 			{
-				return name;
+				return endTime;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(BodyParameters, "Name", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
 			}
 		}
 
-		public string OpenType
+		public string ProductKey
 		{
 			get
 			{
-				return openType;
+				return productKey;
 			}
 			set	
 			{
-				openType = value;
-				DictionaryUtil.Add(BodyParameters, "OpenType", value);
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 
-        public override CreateSoundCodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string LicenseCode
+		{
+			get
+			{
+				return licenseCode;
+			}
+			set	
+			{
+				licenseCode = value;
+				DictionaryUtil.Add(QueryParameters, "LicenseCode", value);
+			}
+		}
+
+        public override QueryLicenseDeviceListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateSoundCodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryLicenseDeviceListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -16,28 +16,69 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Iot.Model.V20180120;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Iot.Transform.V20180120
+namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class ResetThingResponseUnmarshaller
-    {
-        public static ResetThingResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			ResetThingResponse resetThingResponse = new ResetThingResponse();
+	public class UpdateSoundCodeResponse : AcsResponse
+	{
 
-			resetThingResponse.HttpResponse = _ctx.HttpResponse;
-			resetThingResponse.RequestId = _ctx.StringValue("ResetThing.RequestId");
-			resetThingResponse.Success = _ctx.BooleanValue("ResetThing.Success");
-			resetThingResponse.Code = _ctx.StringValue("ResetThing.Code");
-			resetThingResponse.ErrorMessage = _ctx.StringValue("ResetThing.ErrorMessage");
-			resetThingResponse.JobId = _ctx.StringValue("ResetThing.JobId");
-        
-			return resetThingResponse;
-        }
-    }
+		private string requestId;
+
+		private bool? success;
+
+		private string code;
+
+		private string errorMessage;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+	}
 }

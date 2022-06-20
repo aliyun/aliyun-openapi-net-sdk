@@ -24,20 +24,20 @@ using Aliyun.Acs.Iot.Model.V20180120;
 
 namespace Aliyun.Acs.Iot.Transform.V20180120
 {
-    public class ResetThingResponseUnmarshaller
+    public class BindLicenseProductResponseUnmarshaller
     {
-        public static ResetThingResponse Unmarshall(UnmarshallerContext _ctx)
+        public static BindLicenseProductResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			ResetThingResponse resetThingResponse = new ResetThingResponse();
+			BindLicenseProductResponse bindLicenseProductResponse = new BindLicenseProductResponse();
 
-			resetThingResponse.HttpResponse = _ctx.HttpResponse;
-			resetThingResponse.RequestId = _ctx.StringValue("ResetThing.RequestId");
-			resetThingResponse.Success = _ctx.BooleanValue("ResetThing.Success");
-			resetThingResponse.Code = _ctx.StringValue("ResetThing.Code");
-			resetThingResponse.ErrorMessage = _ctx.StringValue("ResetThing.ErrorMessage");
-			resetThingResponse.JobId = _ctx.StringValue("ResetThing.JobId");
+			bindLicenseProductResponse.HttpResponse = _ctx.HttpResponse;
+			bindLicenseProductResponse.RequestId = _ctx.StringValue("BindLicenseProduct.RequestId");
+			bindLicenseProductResponse.Success = _ctx.BooleanValue("BindLicenseProduct.Success");
+			bindLicenseProductResponse.Code = _ctx.StringValue("BindLicenseProduct.Code");
+			bindLicenseProductResponse.ErrorMessage = _ctx.StringValue("BindLicenseProduct.ErrorMessage");
+			bindLicenseProductResponse.Data = _ctx.BooleanValue("BindLicenseProduct.Data");
         
-			return resetThingResponse;
+			return bindLicenseProductResponse;
         }
     }
 }

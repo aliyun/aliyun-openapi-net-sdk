@@ -53,6 +53,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				items.EndTime = _ctx.StringValue("QuerySoundCodeScheduleList.Data.List["+ i +"].EndTime");
 				items.StartDate = _ctx.StringValue("QuerySoundCodeScheduleList.Data.List["+ i +"].StartDate");
 				items.EndDate = _ctx.StringValue("QuerySoundCodeScheduleList.Data.List["+ i +"].EndDate");
+				items.OpenType = _ctx.StringValue("QuerySoundCodeScheduleList.Data.List["+ i +"].OpenType");
 
 				data_list.Add(items);
 			}

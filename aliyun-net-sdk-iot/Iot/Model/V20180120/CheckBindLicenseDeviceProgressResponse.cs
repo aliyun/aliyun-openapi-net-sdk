@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QuerySoundCodeListResponse : AcsResponse
+	public class CheckBindLicenseDeviceProgressResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private QuerySoundCodeList_Data data;
+		private CheckBindLicenseDeviceProgress_Data data;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public QuerySoundCodeList_Data Data
+		public CheckBindLicenseDeviceProgress_Data Data
 		{
 			get
 			{
@@ -95,150 +95,62 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class QuerySoundCodeList_Data
+		public class CheckBindLicenseDeviceProgress_Data
 		{
 
-			private int? total;
+			private long? successSum;
 
-			private int? pageId;
+			private long? failSum;
 
-			private int? pageSize;
+			private string resultCsvFile;
 
-			private List<QuerySoundCodeList_Items> list;
+			private int? progress;
 
-			public int? Total
+			public long? SuccessSum
 			{
 				get
 				{
-					return total;
+					return successSum;
 				}
 				set	
 				{
-					total = value;
+					successSum = value;
 				}
 			}
 
-			public int? PageId
+			public long? FailSum
 			{
 				get
 				{
-					return pageId;
+					return failSum;
 				}
 				set	
 				{
-					pageId = value;
+					failSum = value;
 				}
 			}
 
-			public int? PageSize
+			public string ResultCsvFile
 			{
 				get
 				{
-					return pageSize;
+					return resultCsvFile;
 				}
 				set	
 				{
-					pageSize = value;
+					resultCsvFile = value;
 				}
 			}
 
-			public List<QuerySoundCodeList_Items> List
+			public int? Progress
 			{
 				get
 				{
-					return list;
+					return progress;
 				}
 				set	
 				{
-					list = value;
-				}
-			}
-
-			public class QuerySoundCodeList_Items
-			{
-
-				private string soundCode;
-
-				private string soundCodeContent;
-
-				private int? duration;
-
-				private long? gmtCreate;
-
-				private string openType;
-
-				private string name;
-
-				public string SoundCode
-				{
-					get
-					{
-						return soundCode;
-					}
-					set	
-					{
-						soundCode = value;
-					}
-				}
-
-				public string SoundCodeContent
-				{
-					get
-					{
-						return soundCodeContent;
-					}
-					set	
-					{
-						soundCodeContent = value;
-					}
-				}
-
-				public int? Duration
-				{
-					get
-					{
-						return duration;
-					}
-					set	
-					{
-						duration = value;
-					}
-				}
-
-				public long? GmtCreate
-				{
-					get
-					{
-						return gmtCreate;
-					}
-					set	
-					{
-						gmtCreate = value;
-					}
-				}
-
-				public string OpenType
-				{
-					get
-					{
-						return openType;
-					}
-					set	
-					{
-						openType = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
+					progress = value;
 				}
 			}
 		}

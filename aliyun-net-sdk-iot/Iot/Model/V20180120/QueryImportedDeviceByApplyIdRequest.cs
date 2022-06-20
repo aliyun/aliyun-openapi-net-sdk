@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CreateSoundCodeRequest : RpcAcsRequest<CreateSoundCodeResponse>
+    public class QueryImportedDeviceByApplyIdRequest : RpcAcsRequest<QueryImportedDeviceByApplyIdResponse>
     {
-        public CreateSoundCodeRequest()
-            : base("Iot", "2018-01-20", "CreateSoundCode")
+        public QueryImportedDeviceByApplyIdRequest()
+            : base("Iot", "2018-01-20", "QueryImportedDeviceByApplyId")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,28 +41,13 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private int? duration;
-
 		private string iotInstanceId;
 
-		private string soundCodeContent;
+		private int? pageSize;
 
-		private string name;
+		private long? applyId;
 
-		private string openType;
-
-		public int? Duration
-		{
-			get
-			{
-				return duration;
-			}
-			set	
-			{
-				duration = value;
-				DictionaryUtil.Add(BodyParameters, "Duration", value.ToString());
-			}
-		}
+		private int? pageNo;
 
 		public string IotInstanceId
 		{
@@ -73,52 +58,52 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				iotInstanceId = value;
-				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 
-		public string SoundCodeContent
+		public int? PageSize
 		{
 			get
 			{
-				return soundCodeContent;
+				return pageSize;
 			}
 			set	
 			{
-				soundCodeContent = value;
-				DictionaryUtil.Add(BodyParameters, "SoundCodeContent", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string Name
+		public long? ApplyId
 		{
 			get
 			{
-				return name;
+				return applyId;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(BodyParameters, "Name", value);
+				applyId = value;
+				DictionaryUtil.Add(QueryParameters, "ApplyId", value.ToString());
 			}
 		}
 
-		public string OpenType
+		public int? PageNo
 		{
 			get
 			{
-				return openType;
+				return pageNo;
 			}
 			set	
 			{
-				openType = value;
-				DictionaryUtil.Add(BodyParameters, "OpenType", value);
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
 			}
 		}
 
-        public override CreateSoundCodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryImportedDeviceByApplyIdResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateSoundCodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryImportedDeviceByApplyIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

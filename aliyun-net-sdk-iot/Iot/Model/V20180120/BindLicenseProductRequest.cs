@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CreateSoundCodeRequest : RpcAcsRequest<CreateSoundCodeResponse>
+    public class BindLicenseProductRequest : RpcAcsRequest<BindLicenseProductResponse>
     {
-        public CreateSoundCodeRequest()
-            : base("Iot", "2018-01-20", "CreateSoundCode")
+        public BindLicenseProductRequest()
+            : base("Iot", "2018-01-20", "BindLicenseProduct")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,28 +41,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private int? duration;
-
 		private string iotInstanceId;
 
-		private string soundCodeContent;
+		private string productKey;
 
-		private string name;
-
-		private string openType;
-
-		public int? Duration
-		{
-			get
-			{
-				return duration;
-			}
-			set	
-			{
-				duration = value;
-				DictionaryUtil.Add(BodyParameters, "Duration", value.ToString());
-			}
-		}
+		private string licenseCode;
 
 		public string IotInstanceId
 		{
@@ -73,52 +56,39 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				iotInstanceId = value;
-				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 
-		public string SoundCodeContent
+		public string ProductKey
 		{
 			get
 			{
-				return soundCodeContent;
+				return productKey;
 			}
 			set	
 			{
-				soundCodeContent = value;
-				DictionaryUtil.Add(BodyParameters, "SoundCodeContent", value);
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 
-		public string Name
+		public string LicenseCode
 		{
 			get
 			{
-				return name;
+				return licenseCode;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(BodyParameters, "Name", value);
+				licenseCode = value;
+				DictionaryUtil.Add(QueryParameters, "LicenseCode", value);
 			}
 		}
 
-		public string OpenType
-		{
-			get
-			{
-				return openType;
-			}
-			set	
-			{
-				openType = value;
-				DictionaryUtil.Add(BodyParameters, "OpenType", value);
-			}
-		}
-
-        public override CreateSoundCodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override BindLicenseProductResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateSoundCodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BindLicenseProductResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
