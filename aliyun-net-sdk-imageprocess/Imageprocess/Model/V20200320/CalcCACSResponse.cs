@@ -149,6 +149,8 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 
 				private float? calciumVolume;
 
+				private List<string> calciumCenter;
+
 				public long? CalciumId
 				{
 					get
@@ -182,6 +184,18 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 					set	
 					{
 						calciumVolume = value;
+					}
+				}
+
+				public List<string> CalciumCenter
+				{
+					get
+					{
+						return calciumCenter;
+					}
+					set	
+					{
+						calciumCenter = value;
 					}
 				}
 			}

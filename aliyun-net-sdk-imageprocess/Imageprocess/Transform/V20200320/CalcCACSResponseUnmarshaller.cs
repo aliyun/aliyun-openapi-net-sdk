@@ -47,6 +47,12 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 				detectionsItem.CalciumScore = _ctx.FloatValue("CalcCACS.Data.Detections["+ i +"].CalciumScore");
 				detectionsItem.CalciumVolume = _ctx.FloatValue("CalcCACS.Data.Detections["+ i +"].CalciumVolume");
 
+				List<string> detectionsItem_calciumCenter = new List<string>();
+				for (int j = 0; j < _ctx.Length("CalcCACS.Data.Detections["+ i +"].CalciumCenter.Length"); j++) {
+					detectionsItem_calciumCenter.Add(_ctx.StringValue("CalcCACS.Data.Detections["+ i +"].CalciumCenter["+ j +"]"));
+				}
+				detectionsItem.CalciumCenter = detectionsItem_calciumCenter;
+
 				data_detections.Add(detectionsItem);
 			}
 			data.Detections = data_detections;
