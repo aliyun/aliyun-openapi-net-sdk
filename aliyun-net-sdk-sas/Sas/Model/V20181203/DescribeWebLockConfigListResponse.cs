@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeWebLockConfigListResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
 
-		private List<DescribeWebLockConfigList_ConfigInfo> configList;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeWebLockConfigList_ConfigInfo> configList;
 
 		public int? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,37 +70,37 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeWebLockConfigList_ConfigInfo
 		{
 
-			private string id;
+			private string exclusiveDir;
 
 			private string uuid;
 
-			private string dir;
-
-			private string exclusiveDir;
-
-			private string exclusiveFileType;
-
-			private string localBackupDir;
-
-			private string mode;
-
 			private string inclusiveFileType;
-
-			private string exclusiveFile;
-
-			private string inclusiveFile;
 
 			private string defenceMode;
 
-			public string Id
+			private string exclusiveFileType;
+
+			private string inclusiveFile;
+
+			private string mode;
+
+			private string dir;
+
+			private string exclusiveFile;
+
+			private string id;
+
+			private string localBackupDir;
+
+			public string ExclusiveDir
 			{
 				get
 				{
-					return id;
+					return exclusiveDir;
 				}
 				set	
 				{
-					id = value;
+					exclusiveDir = value;
 				}
 			}
 
@@ -116,27 +116,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Dir
+			public string InclusiveFileType
 			{
 				get
 				{
-					return dir;
+					return inclusiveFileType;
 				}
 				set	
 				{
-					dir = value;
+					inclusiveFileType = value;
 				}
 			}
 
-			public string ExclusiveDir
+			public string DefenceMode
 			{
 				get
 				{
-					return exclusiveDir;
+					return defenceMode;
 				}
 				set	
 				{
-					exclusiveDir = value;
+					defenceMode = value;
 				}
 			}
 
@@ -152,15 +152,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string LocalBackupDir
+			public string InclusiveFile
 			{
 				get
 				{
-					return localBackupDir;
+					return inclusiveFile;
 				}
 				set	
 				{
-					localBackupDir = value;
+					inclusiveFile = value;
 				}
 			}
 
@@ -176,15 +176,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string InclusiveFileType
+			public string Dir
 			{
 				get
 				{
-					return inclusiveFileType;
+					return dir;
 				}
 				set	
 				{
-					inclusiveFileType = value;
+					dir = value;
 				}
 			}
 
@@ -200,27 +200,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string InclusiveFile
+			public string Id
 			{
 				get
 				{
-					return inclusiveFile;
+					return id;
 				}
 				set	
 				{
-					inclusiveFile = value;
+					id = value;
 				}
 			}
 
-			public string DefenceMode
+			public string LocalBackupDir
 			{
 				get
 				{
-					return defenceMode;
+					return localBackupDir;
 				}
 				set	
 				{
-					defenceMode = value;
+					localBackupDir = value;
 				}
 			}
 		}

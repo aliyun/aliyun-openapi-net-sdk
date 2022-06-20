@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
 {
-	public class StartImageVulScanResponse : AcsResponse
+	public class ModifyStrategyTargetResponse : AcsResponse
 	{
 
 		private string requestId;

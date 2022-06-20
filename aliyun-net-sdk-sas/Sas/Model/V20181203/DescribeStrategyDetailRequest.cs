@@ -28,10 +28,10 @@ using Aliyun.Acs.Sas.Transform.V20181203;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
 {
-    public class DeleteVulAutoRepairConfigRequest : RpcAcsRequest<DeleteVulAutoRepairConfigResponse>
+    public class DescribeStrategyDetailRequest : RpcAcsRequest<DescribeStrategyDetailResponse>
     {
-        public DeleteVulAutoRepairConfigRequest()
-            : base("Sas", "2018-12-03", "DeleteVulAutoRepairConfig")
+        public DescribeStrategyDetailRequest()
+            : base("Sas", "2018-12-03", "DescribeStrategyDetail")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,33 +41,48 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			Method = MethodType.POST;
         }
 
-		private string type;
+		private string sourceIp;
 
-		private string aliasName;
+		private string id;
 
-		public string Type
+		private string lang;
+
+		public string SourceIp
 		{
 			get
 			{
-				return type;
+				return sourceIp;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 
-		public string AliasName
+		public string Id
 		{
 			get
 			{
-				return aliasName;
+				return id;
 			}
 			set	
 			{
-				aliasName = value;
-				DictionaryUtil.Add(QueryParameters, "AliasName", value);
+				id = value;
+				DictionaryUtil.Add(QueryParameters, "Id", value);
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
@@ -76,9 +91,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			return false;
 		}
 
-        public override DeleteVulAutoRepairConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeStrategyDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteVulAutoRepairConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeStrategyDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

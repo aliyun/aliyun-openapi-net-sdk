@@ -31,15 +31,15 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeExportInfoResponse describeExportInfoResponse = new DescribeExportInfoResponse();
 
 			describeExportInfoResponse.HttpResponse = _ctx.HttpResponse;
-			describeExportInfoResponse.RequestId = _ctx.StringValue("DescribeExportInfo.RequestId");
-			describeExportInfoResponse.Id = _ctx.LongValue("DescribeExportInfo.Id");
-			describeExportInfoResponse.FileName = _ctx.StringValue("DescribeExportInfo.FileName");
-			describeExportInfoResponse.CurrentCount = _ctx.IntegerValue("DescribeExportInfo.CurrentCount");
-			describeExportInfoResponse.TotalCount = _ctx.IntegerValue("DescribeExportInfo.TotalCount");
-			describeExportInfoResponse.Progress = _ctx.IntegerValue("DescribeExportInfo.Progress");
-			describeExportInfoResponse.ExportStatus = _ctx.StringValue("DescribeExportInfo.ExportStatus");
-			describeExportInfoResponse.Message = _ctx.StringValue("DescribeExportInfo.Message");
 			describeExportInfoResponse.Link = _ctx.StringValue("DescribeExportInfo.Link");
+			describeExportInfoResponse.Progress = _ctx.IntegerValue("DescribeExportInfo.Progress");
+			describeExportInfoResponse.RequestId = _ctx.StringValue("DescribeExportInfo.RequestId");
+			describeExportInfoResponse.CurrentCount = _ctx.IntegerValue("DescribeExportInfo.CurrentCount");
+			describeExportInfoResponse.Message = _ctx.StringValue("DescribeExportInfo.Message");
+			describeExportInfoResponse.FileName = _ctx.StringValue("DescribeExportInfo.FileName");
+			describeExportInfoResponse.TotalCount = _ctx.IntegerValue("DescribeExportInfo.TotalCount");
+			describeExportInfoResponse.ExportStatus = _ctx.StringValue("DescribeExportInfo.ExportStatus");
+			describeExportInfoResponse.Id = _ctx.LongValue("DescribeExportInfo.Id");
         
 			return describeExportInfoResponse;
         }

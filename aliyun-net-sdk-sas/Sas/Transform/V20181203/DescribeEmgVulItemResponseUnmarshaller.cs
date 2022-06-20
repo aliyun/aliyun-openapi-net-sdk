@@ -41,6 +41,7 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				DescribeEmgVulItemResponse.DescribeEmgVulItem_GroupedVulItem groupedVulItem = new DescribeEmgVulItemResponse.DescribeEmgVulItem_GroupedVulItem();
 				groupedVulItem.Status = _ctx.IntegerValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].Status");
 				groupedVulItem.Type = _ctx.StringValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].Type");
+				groupedVulItem.CheckType = _ctx.IntegerValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].CheckType");
 				groupedVulItem.GmtLastCheck = _ctx.LongValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].GmtLastCheck");
 				groupedVulItem.Progress = _ctx.IntegerValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].Progress");
 				groupedVulItem.Description = _ctx.StringValue("DescribeEmgVulItem.GroupedVulItems["+ i +"].Description");

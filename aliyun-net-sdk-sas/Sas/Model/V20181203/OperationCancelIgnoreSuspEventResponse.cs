@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
 {
-	public class RetryInstallProbeResponse : AcsResponse
+	public class OperationCancelIgnoreSuspEventResponse : AcsResponse
 	{
 
 		private bool? success;
@@ -34,6 +34,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		private string requestId;
 
 		private int? httpStatusCode;
+
+		private long? timeCost;
 
 		public bool? Success
 		{
@@ -92,6 +94,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				httpStatusCode = value;
+			}
+		}
+
+		public long? TimeCost
+		{
+			get
+			{
+				return timeCost;
+			}
+			set	
+			{
+				timeCost = value;
 			}
 		}
 	}

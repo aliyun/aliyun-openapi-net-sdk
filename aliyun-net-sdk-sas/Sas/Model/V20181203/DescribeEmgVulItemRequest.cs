@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string scanType;
 
+		private int? checkType;
+
 		private int? pageSize;
 
 		private string lang;
@@ -63,6 +65,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				scanType = value;
 				DictionaryUtil.Add(QueryParameters, "ScanType", value);
+			}
+		}
+
+		public int? CheckType
+		{
+			get
+			{
+				return checkType;
+			}
+			set	
+			{
+				checkType = value;
+				DictionaryUtil.Add(QueryParameters, "CheckType", value.ToString());
 			}
 		}
 

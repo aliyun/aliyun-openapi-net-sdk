@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -25,51 +25,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class GetSuspiciousStatisticsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? totalCount;
-
-		private int? temindCount;
+		private int? suspiciousCount;
 
 		private int? remindCount;
 
-		private int? suspiciousCount;
+		private string requestId;
+
+		private int? temindCount;
 
 		private int? seriousCount;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private int? totalCount;
 
-		public int? TotalCount
+		public int? SuspiciousCount
 		{
 			get
 			{
-				return totalCount;
+				return suspiciousCount;
 			}
 			set	
 			{
-				totalCount = value;
-			}
-		}
-
-		public int? TemindCount
-		{
-			get
-			{
-				return temindCount;
-			}
-			set	
-			{
-				temindCount = value;
+				suspiciousCount = value;
 			}
 		}
 
@@ -85,15 +61,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public int? SuspiciousCount
+		public string RequestId
 		{
 			get
 			{
-				return suspiciousCount;
+				return requestId;
 			}
 			set	
 			{
-				suspiciousCount = value;
+				requestId = value;
+			}
+		}
+
+		public int? TemindCount
+		{
+			get
+			{
+				return temindCount;
+			}
+			set	
+			{
+				temindCount = value;
 			}
 		}
 
@@ -106,6 +94,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				seriousCount = value;
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
 			}
 		}
 	}

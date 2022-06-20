@@ -31,19 +31,19 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeVpcListResponse describeVpcListResponse = new DescribeVpcListResponse();
 
 			describeVpcListResponse.HttpResponse = _ctx.HttpResponse;
-			describeVpcListResponse.RequestId = _ctx.StringValue("DescribeVpcList.RequestId");
 			describeVpcListResponse.Count = _ctx.IntegerValue("DescribeVpcList.Count");
+			describeVpcListResponse.RequestId = _ctx.StringValue("DescribeVpcList.RequestId");
 
 			List<DescribeVpcListResponse.DescribeVpcList_Vpc> describeVpcListResponse_vpcList = new List<DescribeVpcListResponse.DescribeVpcList_Vpc>();
 			for (int i = 0; i < _ctx.Length("DescribeVpcList.VpcList.Length"); i++) {
 				DescribeVpcListResponse.DescribeVpcList_Vpc vpc = new DescribeVpcListResponse.DescribeVpcList_Vpc();
-				vpc.InstanceId = _ctx.StringValue("DescribeVpcList.VpcList["+ i +"].InstanceId");
-				vpc.MiddleStatus = _ctx.IntegerValue("DescribeVpcList.VpcList["+ i +"].MiddleStatus");
-				vpc.InstanceName = _ctx.StringValue("DescribeVpcList.VpcList["+ i +"].InstanceName");
-				vpc.RegionId = _ctx.StringValue("DescribeVpcList.VpcList["+ i +"].RegionId");
-				vpc.InstanceDesc = _ctx.StringValue("DescribeVpcList.VpcList["+ i +"].InstanceDesc");
-				vpc.EcsCount = _ctx.IntegerValue("DescribeVpcList.VpcList["+ i +"].EcsCount");
 				vpc.Status = _ctx.IntegerValue("DescribeVpcList.VpcList["+ i +"].Status");
+				vpc.InstanceDesc = _ctx.StringValue("DescribeVpcList.VpcList["+ i +"].InstanceDesc");
+				vpc.InstanceName = _ctx.StringValue("DescribeVpcList.VpcList["+ i +"].InstanceName");
+				vpc.EcsCount = _ctx.IntegerValue("DescribeVpcList.VpcList["+ i +"].EcsCount");
+				vpc.MiddleStatus = _ctx.IntegerValue("DescribeVpcList.VpcList["+ i +"].MiddleStatus");
+				vpc.InstanceId = _ctx.StringValue("DescribeVpcList.VpcList["+ i +"].InstanceId");
+				vpc.RegionId = _ctx.StringValue("DescribeVpcList.VpcList["+ i +"].RegionId");
 
 				describeVpcListResponse_vpcList.Add(vpc);
 			}

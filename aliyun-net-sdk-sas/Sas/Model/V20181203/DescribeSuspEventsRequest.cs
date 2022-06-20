@@ -59,6 +59,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string from;
 
+		private long? id;
+
 		private string tacticId;
 
 		private string lang;
@@ -204,6 +206,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public long? Id
+		{
+			get
+			{
+				return id;
+			}
+			set	
+			{
+				id = value;
+				DictionaryUtil.Add(QueryParameters, "Id", value.ToString());
+			}
+		}
+
 		public string TacticId
 		{
 			get
@@ -318,10 +333,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set
 			{
 				operateErrorCodeLists = value;
-				for (int i = 0; i < operateErrorCodeLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"OperateErrorCodeList." + (i + 1) , operateErrorCodeLists[i]);
-				}
 			}
 		}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -70,21 +70,21 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeInstanceAntiBruteForceRules_InstanceAntiBruteForceRule
 		{
 
-			private long? id;
+			private string uuid;
 
 			private string name;
 
-			private string uuid;
+			private long? id;
 
-			public long? Id
+			public string Uuid
 			{
 				get
 				{
-					return id;
+					return uuid;
 				}
 				set	
 				{
-					id = value;
+					uuid = value;
 				}
 			}
 
@@ -100,15 +100,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Uuid
+			public long? Id
 			{
 				get
 				{
-					return uuid;
+					return id;
 				}
 				set	
 				{
-					uuid = value;
+					id = value;
 				}
 			}
 		}
@@ -116,23 +116,23 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeInstanceAntiBruteForceRules_PageInfo
 		{
 
-			private int? count;
+			private int? currentPage;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? currentPage;
+			private int? count;
 
-			public int? Count
+			public int? CurrentPage
 			{
 				get
 				{
-					return count;
+					return currentPage;
 				}
 				set	
 				{
-					count = value;
+					currentPage = value;
 				}
 			}
 
@@ -160,15 +160,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? CurrentPage
+			public int? Count
 			{
 				get
 				{
-					return currentPage;
+					return count;
 				}
 				set	
 				{
-					currentPage = value;
+					count = value;
 				}
 			}
 		}

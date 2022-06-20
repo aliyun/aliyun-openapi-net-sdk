@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -25,11 +25,23 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeScanTaskProgressResponse : AcsResponse
 	{
 
+		private string targetInfo;
+
 		private string requestId;
 
 		private string scanTaskProgress;
 
-		private string targetInfo;
+		public string TargetInfo
+		{
+			get
+			{
+				return targetInfo;
+			}
+			set	
+			{
+				targetInfo = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -52,18 +64,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				scanTaskProgress = value;
-			}
-		}
-
-		public string TargetInfo
-		{
-			get
-			{
-				return targetInfo;
-			}
-			set	
-			{
-				targetInfo = value;
 			}
 		}
 	}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -70,55 +70,31 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeExposedStatisticsDetail_StatisticsDetail
 		{
 
-			private string exposureComponent;
-
-			private string exposureType;
-
-			private string exposureTypeId;
+			private string exposureIp;
 
 			private string exposurePort;
-
-			private string exposureIp;
 
 			private string exposureTypeInstanceName;
 
 			private int? exposedCount;
 
+			private string exposureType;
+
 			private string regionId;
 
-			public string ExposureComponent
-			{
-				get
-				{
-					return exposureComponent;
-				}
-				set	
-				{
-					exposureComponent = value;
-				}
-			}
+			private string exposureComponent;
 
-			public string ExposureType
-			{
-				get
-				{
-					return exposureType;
-				}
-				set	
-				{
-					exposureType = value;
-				}
-			}
+			private string exposureTypeId;
 
-			public string ExposureTypeId
+			public string ExposureIp
 			{
 				get
 				{
-					return exposureTypeId;
+					return exposureIp;
 				}
 				set	
 				{
-					exposureTypeId = value;
+					exposureIp = value;
 				}
 			}
 
@@ -131,18 +107,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					exposurePort = value;
-				}
-			}
-
-			public string ExposureIp
-			{
-				get
-				{
-					return exposureIp;
-				}
-				set	
-				{
-					exposureIp = value;
 				}
 			}
 
@@ -170,6 +134,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string ExposureType
+			{
+				get
+				{
+					return exposureType;
+				}
+				set	
+				{
+					exposureType = value;
+				}
+			}
+
 			public string RegionId
 			{
 				get
@@ -181,28 +157,52 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					regionId = value;
 				}
 			}
+
+			public string ExposureComponent
+			{
+				get
+				{
+					return exposureComponent;
+				}
+				set	
+				{
+					exposureComponent = value;
+				}
+			}
+
+			public string ExposureTypeId
+			{
+				get
+				{
+					return exposureTypeId;
+				}
+				set	
+				{
+					exposureTypeId = value;
+				}
+			}
 		}
 
 		public class DescribeExposedStatisticsDetail_PageInfo
 		{
 
-			private int? count;
+			private int? currentPage;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? currentPage;
+			private int? count;
 
-			public int? Count
+			public int? CurrentPage
 			{
 				get
 				{
-					return count;
+					return currentPage;
 				}
 				set	
 				{
-					count = value;
+					currentPage = value;
 				}
 			}
 
@@ -230,15 +230,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? CurrentPage
+			public int? Count
 			{
 				get
 				{
-					return currentPage;
+					return count;
 				}
 				set	
 				{
-					currentPage = value;
+					count = value;
 				}
 			}
 		}

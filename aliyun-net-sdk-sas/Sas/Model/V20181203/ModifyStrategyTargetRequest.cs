@@ -28,10 +28,10 @@ using Aliyun.Acs.Sas.Transform.V20181203;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
 {
-    public class GetOpaDefenceDetailRequest : RpcAcsRequest<GetOpaDefenceDetailResponse>
+    public class ModifyStrategyTargetRequest : RpcAcsRequest<ModifyStrategyTargetResponse>
     {
-        public GetOpaDefenceDetailRequest()
-            : base("Sas", "2018-12-03", "GetOpaDefenceDetail")
+        public ModifyStrategyTargetRequest()
+            : base("Sas", "2018-12-03", "ModifyStrategyTarget")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,48 +41,63 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			Method = MethodType.POST;
         }
 
-		private long? interceptionId;
+		private string type;
 
-		private int? pageSize;
+		private string sourceIp;
 
-		private int? currentPage;
+		private string target;
 
-		public long? InterceptionId
+		private string config;
+
+		public string Type
 		{
 			get
 			{
-				return interceptionId;
+				return type;
 			}
 			set	
 			{
-				interceptionId = value;
-				DictionaryUtil.Add(QueryParameters, "InterceptionId", value.ToString());
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 
-		public int? PageSize
+		public string SourceIp
 		{
 			get
 			{
-				return pageSize;
+				return sourceIp;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 
-		public int? CurrentPage
+		public string Target
 		{
 			get
 			{
-				return currentPage;
+				return target;
 			}
 			set	
 			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+				target = value;
+				DictionaryUtil.Add(QueryParameters, "Target", value);
+			}
+		}
+
+		public string Config
+		{
+			get
+			{
+				return config;
+			}
+			set	
+			{
+				config = value;
+				DictionaryUtil.Add(QueryParameters, "Config", value);
 			}
 		}
 
@@ -91,9 +106,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			return false;
 		}
 
-        public override GetOpaDefenceDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyStrategyTargetResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetOpaDefenceDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyStrategyTargetResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

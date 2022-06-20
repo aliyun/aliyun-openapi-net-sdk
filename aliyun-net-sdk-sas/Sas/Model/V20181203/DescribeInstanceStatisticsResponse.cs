@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -79,6 +79,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			private int? health;
 
 			private int? sysNum;
+
+			private int? weakPWNum;
 
 			public int? Account
 			{
@@ -221,6 +223,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					sysNum = value;
+				}
+			}
+
+			public int? WeakPWNum
+			{
+				get
+				{
+					return weakPWNum;
+				}
+				set	
+				{
+					weakPWNum = value;
 				}
 			}
 		}

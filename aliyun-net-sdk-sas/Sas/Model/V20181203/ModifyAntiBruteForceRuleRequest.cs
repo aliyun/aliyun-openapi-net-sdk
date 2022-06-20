@@ -121,10 +121,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set
 			{
 				uuidLists = value;
-				for (int i = 0; i < uuidLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"UuidList." + (i + 1) , uuidLists[i]);
-				}
 			}
 		}
 

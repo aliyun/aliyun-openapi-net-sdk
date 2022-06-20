@@ -24,16 +24,20 @@ using Aliyun.Acs.Sas.Model.V20181203;
 
 namespace Aliyun.Acs.Sas.Transform.V20181203
 {
-    public class StartImageVulScanResponseUnmarshaller
+    public class CreateSuspEventNoteResponseUnmarshaller
     {
-        public static StartImageVulScanResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateSuspEventNoteResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			StartImageVulScanResponse startImageVulScanResponse = new StartImageVulScanResponse();
+			CreateSuspEventNoteResponse createSuspEventNoteResponse = new CreateSuspEventNoteResponse();
 
-			startImageVulScanResponse.HttpResponse = _ctx.HttpResponse;
-			startImageVulScanResponse.RequestId = _ctx.StringValue("StartImageVulScan.RequestId");
+			createSuspEventNoteResponse.HttpResponse = _ctx.HttpResponse;
+			createSuspEventNoteResponse.Success = _ctx.BooleanValue("CreateSuspEventNote.Success");
+			createSuspEventNoteResponse.Code = _ctx.StringValue("CreateSuspEventNote.Code");
+			createSuspEventNoteResponse.Message = _ctx.StringValue("CreateSuspEventNote.Message");
+			createSuspEventNoteResponse.RequestId = _ctx.StringValue("CreateSuspEventNote.RequestId");
+			createSuspEventNoteResponse.HttpStatusCode = _ctx.IntegerValue("CreateSuspEventNote.HttpStatusCode");
         
-			return startImageVulScanResponse;
+			return createSuspEventNoteResponse;
         }
     }
 }

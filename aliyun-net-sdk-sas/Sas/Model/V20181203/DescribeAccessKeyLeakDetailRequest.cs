@@ -28,10 +28,10 @@ using Aliyun.Acs.Sas.Transform.V20181203;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
 {
-    public class ListCriteriaStrategyRequest : RpcAcsRequest<ListCriteriaStrategyResponse>
+    public class DescribeAccessKeyLeakDetailRequest : RpcAcsRequest<DescribeAccessKeyLeakDetailResponse>
     {
-        public ListCriteriaStrategyRequest()
-            : base("Sas", "2018-12-03", "ListCriteriaStrategy")
+        public DescribeAccessKeyLeakDetailRequest()
+            : base("Sas", "2018-12-03", "DescribeAccessKeyLeakDetail")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,78 +41,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			Method = MethodType.POST;
         }
 
-		private string imageName;
+		private long? id;
 
-		private string clusterId;
-
-		private string label;
-
-		private string strategyName;
-
-		private string _namespace;
-
-		public string ImageName
+		public long? Id
 		{
 			get
 			{
-				return imageName;
+				return id;
 			}
 			set	
 			{
-				imageName = value;
-				DictionaryUtil.Add(QueryParameters, "ImageName", value);
-			}
-		}
-
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
-		public string Label
-		{
-			get
-			{
-				return label;
-			}
-			set	
-			{
-				label = value;
-				DictionaryUtil.Add(QueryParameters, "Label", value);
-			}
-		}
-
-		public string StrategyName
-		{
-			get
-			{
-				return strategyName;
-			}
-			set	
-			{
-				strategyName = value;
-				DictionaryUtil.Add(QueryParameters, "StrategyName", value);
-			}
-		}
-
-		public string _Namespace
-		{
-			get
-			{
-				return _namespace;
-			}
-			set	
-			{
-				_namespace = value;
-				DictionaryUtil.Add(QueryParameters, "Namespace", value);
+				id = value;
+				DictionaryUtil.Add(QueryParameters, "Id", value.ToString());
 			}
 		}
 
@@ -121,9 +61,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			return false;
 		}
 
-        public override ListCriteriaStrategyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeAccessKeyLeakDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListCriteriaStrategyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeAccessKeyLeakDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

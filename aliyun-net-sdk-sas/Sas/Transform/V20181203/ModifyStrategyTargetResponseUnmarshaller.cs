@@ -24,15 +24,16 @@ using Aliyun.Acs.Sas.Model.V20181203;
 
 namespace Aliyun.Acs.Sas.Transform.V20181203
 {
-    public class GetOpaDefenceDetailResponseUnmarshaller
+    public class ModifyStrategyTargetResponseUnmarshaller
     {
-        public static GetOpaDefenceDetailResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ModifyStrategyTargetResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetOpaDefenceDetailResponse getOpaDefenceDetailResponse = new GetOpaDefenceDetailResponse();
+			ModifyStrategyTargetResponse modifyStrategyTargetResponse = new ModifyStrategyTargetResponse();
 
-			getOpaDefenceDetailResponse.HttpResponse = _ctx.HttpResponse;
+			modifyStrategyTargetResponse.HttpResponse = _ctx.HttpResponse;
+			modifyStrategyTargetResponse.RequestId = _ctx.StringValue("ModifyStrategyTarget.RequestId");
         
-			return getOpaDefenceDetailResponse;
+			return modifyStrategyTargetResponse;
         }
     }
 }

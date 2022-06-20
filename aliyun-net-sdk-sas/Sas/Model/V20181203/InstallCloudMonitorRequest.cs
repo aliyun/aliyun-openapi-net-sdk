@@ -87,10 +87,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set
 			{
 				uuidLists = value;
-				for (int i = 0; i < uuidLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"UuidList." + (i + 1) , uuidLists[i]);
-				}
 			}
 		}
 
@@ -117,10 +113,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set
 			{
 				instanceIdLists = value;
-				for (int i = 0; i < instanceIdLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceIdList." + (i + 1) , instanceIdLists[i]);
-				}
 			}
 		}
 

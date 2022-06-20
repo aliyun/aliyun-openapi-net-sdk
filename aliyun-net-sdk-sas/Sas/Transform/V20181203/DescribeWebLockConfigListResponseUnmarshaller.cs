@@ -31,23 +31,23 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeWebLockConfigListResponse describeWebLockConfigListResponse = new DescribeWebLockConfigListResponse();
 
 			describeWebLockConfigListResponse.HttpResponse = _ctx.HttpResponse;
-			describeWebLockConfigListResponse.RequestId = _ctx.StringValue("DescribeWebLockConfigList.RequestId");
 			describeWebLockConfigListResponse.TotalCount = _ctx.IntegerValue("DescribeWebLockConfigList.TotalCount");
+			describeWebLockConfigListResponse.RequestId = _ctx.StringValue("DescribeWebLockConfigList.RequestId");
 
 			List<DescribeWebLockConfigListResponse.DescribeWebLockConfigList_ConfigInfo> describeWebLockConfigListResponse_configList = new List<DescribeWebLockConfigListResponse.DescribeWebLockConfigList_ConfigInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeWebLockConfigList.ConfigList.Length"); i++) {
 				DescribeWebLockConfigListResponse.DescribeWebLockConfigList_ConfigInfo configInfo = new DescribeWebLockConfigListResponse.DescribeWebLockConfigList_ConfigInfo();
-				configInfo.Id = _ctx.StringValue("DescribeWebLockConfigList.ConfigList["+ i +"].Id");
-				configInfo.Uuid = _ctx.StringValue("DescribeWebLockConfigList.ConfigList["+ i +"].Uuid");
-				configInfo.Dir = _ctx.StringValue("DescribeWebLockConfigList.ConfigList["+ i +"].Dir");
 				configInfo.ExclusiveDir = _ctx.StringValue("DescribeWebLockConfigList.ConfigList["+ i +"].ExclusiveDir");
-				configInfo.ExclusiveFileType = _ctx.StringValue("DescribeWebLockConfigList.ConfigList["+ i +"].ExclusiveFileType");
-				configInfo.LocalBackupDir = _ctx.StringValue("DescribeWebLockConfigList.ConfigList["+ i +"].LocalBackupDir");
-				configInfo.Mode = _ctx.StringValue("DescribeWebLockConfigList.ConfigList["+ i +"].Mode");
+				configInfo.Uuid = _ctx.StringValue("DescribeWebLockConfigList.ConfigList["+ i +"].Uuid");
 				configInfo.InclusiveFileType = _ctx.StringValue("DescribeWebLockConfigList.ConfigList["+ i +"].InclusiveFileType");
-				configInfo.ExclusiveFile = _ctx.StringValue("DescribeWebLockConfigList.ConfigList["+ i +"].ExclusiveFile");
-				configInfo.InclusiveFile = _ctx.StringValue("DescribeWebLockConfigList.ConfigList["+ i +"].InclusiveFile");
 				configInfo.DefenceMode = _ctx.StringValue("DescribeWebLockConfigList.ConfigList["+ i +"].DefenceMode");
+				configInfo.ExclusiveFileType = _ctx.StringValue("DescribeWebLockConfigList.ConfigList["+ i +"].ExclusiveFileType");
+				configInfo.InclusiveFile = _ctx.StringValue("DescribeWebLockConfigList.ConfigList["+ i +"].InclusiveFile");
+				configInfo.Mode = _ctx.StringValue("DescribeWebLockConfigList.ConfigList["+ i +"].Mode");
+				configInfo.Dir = _ctx.StringValue("DescribeWebLockConfigList.ConfigList["+ i +"].Dir");
+				configInfo.ExclusiveFile = _ctx.StringValue("DescribeWebLockConfigList.ConfigList["+ i +"].ExclusiveFile");
+				configInfo.Id = _ctx.StringValue("DescribeWebLockConfigList.ConfigList["+ i +"].Id");
+				configInfo.LocalBackupDir = _ctx.StringValue("DescribeWebLockConfigList.ConfigList["+ i +"].LocalBackupDir");
 
 				describeWebLockConfigListResponse_configList.Add(configInfo);
 			}

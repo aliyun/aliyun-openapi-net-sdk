@@ -17,23 +17,35 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
 {
-	public class DeleteVulAutoRepairConfigResponse : AcsResponse
+	public class ModifyStrategyResponse : AcsResponse
 	{
+
+		private int? httpStatusCode;
 
 		private string requestId;
 
+		private int? totalCount;
+
 		private bool? success;
 
-		private string code;
+		private ModifyStrategy_Result result;
 
-		private string message;
-
-		private int? httpStatusCode;
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,6 +56,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
 			}
 		}
 
@@ -59,39 +83,33 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string Code
+		public ModifyStrategy_Result Result
 		{
 			get
 			{
-				return code;
+				return result;
 			}
 			set	
 			{
-				code = value;
+				result = value;
 			}
 		}
 
-		public string Message
+		public class ModifyStrategy_Result
 		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
 
-		public int? HttpStatusCode
-		{
-			get
+			private int? strategyId;
+
+			public int? StrategyId
 			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
+				get
+				{
+					return strategyId;
+				}
+				set	
+				{
+					strategyId = value;
+				}
 			}
 		}
 	}

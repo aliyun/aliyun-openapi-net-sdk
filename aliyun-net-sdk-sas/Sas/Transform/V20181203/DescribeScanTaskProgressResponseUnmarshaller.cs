@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeScanTaskProgressResponse describeScanTaskProgressResponse = new DescribeScanTaskProgressResponse();
 
 			describeScanTaskProgressResponse.HttpResponse = _ctx.HttpResponse;
+			describeScanTaskProgressResponse.TargetInfo = _ctx.StringValue("DescribeScanTaskProgress.TargetInfo");
 			describeScanTaskProgressResponse.RequestId = _ctx.StringValue("DescribeScanTaskProgress.RequestId");
 			describeScanTaskProgressResponse.ScanTaskProgress = _ctx.StringValue("DescribeScanTaskProgress.ScanTaskProgress");
-			describeScanTaskProgressResponse.TargetInfo = _ctx.StringValue("DescribeScanTaskProgress.TargetInfo");
         
 			return describeScanTaskProgressResponse;
         }

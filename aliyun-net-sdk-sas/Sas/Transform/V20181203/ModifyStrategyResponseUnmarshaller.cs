@@ -24,20 +24,23 @@ using Aliyun.Acs.Sas.Model.V20181203;
 
 namespace Aliyun.Acs.Sas.Transform.V20181203
 {
-    public class RetryInstallProbeResponseUnmarshaller
+    public class ModifyStrategyResponseUnmarshaller
     {
-        public static RetryInstallProbeResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ModifyStrategyResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			RetryInstallProbeResponse retryInstallProbeResponse = new RetryInstallProbeResponse();
+			ModifyStrategyResponse modifyStrategyResponse = new ModifyStrategyResponse();
 
-			retryInstallProbeResponse.HttpResponse = _ctx.HttpResponse;
-			retryInstallProbeResponse.Success = _ctx.BooleanValue("RetryInstallProbe.Success");
-			retryInstallProbeResponse.Code = _ctx.StringValue("RetryInstallProbe.Code");
-			retryInstallProbeResponse.Message = _ctx.StringValue("RetryInstallProbe.Message");
-			retryInstallProbeResponse.RequestId = _ctx.StringValue("RetryInstallProbe.RequestId");
-			retryInstallProbeResponse.HttpStatusCode = _ctx.IntegerValue("RetryInstallProbe.HttpStatusCode");
+			modifyStrategyResponse.HttpResponse = _ctx.HttpResponse;
+			modifyStrategyResponse.HttpStatusCode = _ctx.IntegerValue("ModifyStrategy.HttpStatusCode");
+			modifyStrategyResponse.RequestId = _ctx.StringValue("ModifyStrategy.RequestId");
+			modifyStrategyResponse.TotalCount = _ctx.IntegerValue("ModifyStrategy.TotalCount");
+			modifyStrategyResponse.Success = _ctx.BooleanValue("ModifyStrategy.Success");
+
+			ModifyStrategyResponse.ModifyStrategy_Result result = new ModifyStrategyResponse.ModifyStrategy_Result();
+			result.StrategyId = _ctx.IntegerValue("ModifyStrategy.Result.StrategyId");
+			modifyStrategyResponse.Result = result;
         
-			return retryInstallProbeResponse;
+			return modifyStrategyResponse;
         }
     }
 }

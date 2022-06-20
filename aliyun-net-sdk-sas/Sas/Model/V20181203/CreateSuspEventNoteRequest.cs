@@ -28,10 +28,10 @@ using Aliyun.Acs.Sas.Transform.V20181203;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
 {
-    public class RetryInstallProbeRequest : RpcAcsRequest<RetryInstallProbeResponse>
+    public class CreateSuspEventNoteRequest : RpcAcsRequest<CreateSuspEventNoteResponse>
     {
-        public RetryInstallProbeRequest()
-            : base("Sas", "2018-12-03", "RetryInstallProbe")
+        public CreateSuspEventNoteRequest()
+            : base("Sas", "2018-12-03", "CreateSuspEventNote")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,108 +41,33 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			Method = MethodType.POST;
         }
 
-		private string probeId;
+		private long? eventId;
 
-		private string uuid;
+		private string note;
 
-		private string probeVersion;
-
-		private int? pageSize;
-
-		private string lang;
-
-		private int? currentPage;
-
-		private string vpcId;
-
-		public string ProbeId
+		public long? EventId
 		{
 			get
 			{
-				return probeId;
+				return eventId;
 			}
 			set	
 			{
-				probeId = value;
-				DictionaryUtil.Add(QueryParameters, "ProbeId", value);
+				eventId = value;
+				DictionaryUtil.Add(QueryParameters, "EventId", value.ToString());
 			}
 		}
 
-		public string Uuid
+		public string Note
 		{
 			get
 			{
-				return uuid;
+				return note;
 			}
 			set	
 			{
-				uuid = value;
-				DictionaryUtil.Add(QueryParameters, "Uuid", value);
-			}
-		}
-
-		public string ProbeVersion
-		{
-			get
-			{
-				return probeVersion;
-			}
-			set	
-			{
-				probeVersion = value;
-				DictionaryUtil.Add(QueryParameters, "ProbeVersion", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
-
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+				note = value;
+				DictionaryUtil.Add(QueryParameters, "Note", value);
 			}
 		}
 
@@ -151,9 +76,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			return false;
 		}
 
-        public override RetryInstallProbeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateSuspEventNoteResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RetryInstallProbeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateSuspEventNoteResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

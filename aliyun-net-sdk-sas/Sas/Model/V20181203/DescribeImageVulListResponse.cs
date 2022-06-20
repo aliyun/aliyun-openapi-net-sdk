@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -133,6 +133,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			private string name;
 
 			private string level;
+
+			private string canFix;
 
 			private List<string> layers;
 
@@ -351,6 +353,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					level = value;
+				}
+			}
+
+			public string CanFix
+			{
+				get
+				{
+					return canFix;
+				}
+				set	
+				{
+					canFix = value;
 				}
 			}
 

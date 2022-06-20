@@ -34,17 +34,17 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describeDomainListResponse.RequestId = _ctx.StringValue("DescribeDomainList.RequestId");
 
 			DescribeDomainListResponse.DescribeDomainList_PageInfo pageInfo = new DescribeDomainListResponse.DescribeDomainList_PageInfo();
-			pageInfo.Count = _ctx.IntegerValue("DescribeDomainList.PageInfo.Count");
+			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeDomainList.PageInfo.CurrentPage");
 			pageInfo.PageSize = _ctx.IntegerValue("DescribeDomainList.PageInfo.PageSize");
 			pageInfo.TotalCount = _ctx.IntegerValue("DescribeDomainList.PageInfo.TotalCount");
-			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeDomainList.PageInfo.CurrentPage");
+			pageInfo.Count = _ctx.IntegerValue("DescribeDomainList.PageInfo.Count");
 			describeDomainListResponse.PageInfo = pageInfo;
 
 			List<DescribeDomainListResponse.DescribeDomainList_DomainResponse> describeDomainListResponse_domainListResponseList = new List<DescribeDomainListResponse.DescribeDomainList_DomainResponse>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainList.DomainListResponseList.Length"); i++) {
 				DescribeDomainListResponse.DescribeDomainList_DomainResponse domainResponse = new DescribeDomainListResponse.DescribeDomainList_DomainResponse();
-				domainResponse.Domain = _ctx.StringValue("DescribeDomainList.DomainListResponseList["+ i +"].Domain");
 				domainResponse.IpList = _ctx.StringValue("DescribeDomainList.DomainListResponseList["+ i +"].IpList");
+				domainResponse.Domain = _ctx.StringValue("DescribeDomainList.DomainListResponseList["+ i +"].Domain");
 
 				describeDomainListResponse_domainListResponseList.Add(domainResponse);
 			}

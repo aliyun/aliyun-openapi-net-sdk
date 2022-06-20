@@ -57,6 +57,7 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				vulRecord.AliasName = _ctx.StringValue("DescribeImageVulList.VulRecords["+ i +"].AliasName");
 				vulRecord.Name = _ctx.StringValue("DescribeImageVulList.VulRecords["+ i +"].Name");
 				vulRecord.Level = _ctx.StringValue("DescribeImageVulList.VulRecords["+ i +"].Level");
+				vulRecord.CanFix = _ctx.StringValue("DescribeImageVulList.VulRecords["+ i +"].CanFix");
 
 				List<string> vulRecord_layers = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeImageVulList.VulRecords["+ i +"].Layers.Length"); j++) {

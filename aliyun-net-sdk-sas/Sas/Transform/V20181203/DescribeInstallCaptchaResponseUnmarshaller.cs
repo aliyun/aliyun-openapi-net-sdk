@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeInstallCaptchaResponse describeInstallCaptchaResponse = new DescribeInstallCaptchaResponse();
 
 			describeInstallCaptchaResponse.HttpResponse = _ctx.HttpResponse;
+			describeInstallCaptchaResponse.Deadline = _ctx.StringValue("DescribeInstallCaptcha.Deadline");
 			describeInstallCaptchaResponse.RequestId = _ctx.StringValue("DescribeInstallCaptcha.RequestId");
 			describeInstallCaptchaResponse.CaptchaCode = _ctx.StringValue("DescribeInstallCaptcha.CaptchaCode");
-			describeInstallCaptchaResponse.Deadline = _ctx.StringValue("DescribeInstallCaptcha.Deadline");
         
 			return describeInstallCaptchaResponse;
         }

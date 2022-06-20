@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			SasInstallCodeResponse sasInstallCodeResponse = new SasInstallCodeResponse();
 
 			sasInstallCodeResponse.HttpResponse = _ctx.HttpResponse;
-			sasInstallCodeResponse.RequestId = _ctx.StringValue("SasInstallCode.RequestId");
 			sasInstallCodeResponse.Data = _ctx.StringValue("SasInstallCode.data");
+			sasInstallCodeResponse.RequestId = _ctx.StringValue("SasInstallCode.RequestId");
         
 			return sasInstallCodeResponse;
         }

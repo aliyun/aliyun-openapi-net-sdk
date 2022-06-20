@@ -102,10 +102,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set
 			{
 				instanceIdss = value;
-				for (int i = 0; i < instanceIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceIds." + (i + 1) , instanceIdss[i]);
-				}
 			}
 		}
 

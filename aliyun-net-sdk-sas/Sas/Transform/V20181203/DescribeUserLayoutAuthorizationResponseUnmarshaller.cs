@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeUserLayoutAuthorizationResponse describeUserLayoutAuthorizationResponse = new DescribeUserLayoutAuthorizationResponse();
 
 			describeUserLayoutAuthorizationResponse.HttpResponse = _ctx.HttpResponse;
-			describeUserLayoutAuthorizationResponse.RequestId = _ctx.StringValue("DescribeUserLayoutAuthorization.RequestId");
 			describeUserLayoutAuthorizationResponse.Authorized = _ctx.BooleanValue("DescribeUserLayoutAuthorization.Authorized");
+			describeUserLayoutAuthorizationResponse.RequestId = _ctx.StringValue("DescribeUserLayoutAuthorization.RequestId");
         
 			return describeUserLayoutAuthorizationResponse;
         }

@@ -34,10 +34,10 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describePropertyUserItemResponse.RequestId = _ctx.StringValue("DescribePropertyUserItem.RequestId");
 
 			DescribePropertyUserItemResponse.DescribePropertyUserItem_PageInfo pageInfo = new DescribePropertyUserItemResponse.DescribePropertyUserItem_PageInfo();
-			pageInfo.Count = _ctx.IntegerValue("DescribePropertyUserItem.PageInfo.Count");
+			pageInfo.CurrentPage = _ctx.IntegerValue("DescribePropertyUserItem.PageInfo.CurrentPage");
 			pageInfo.PageSize = _ctx.IntegerValue("DescribePropertyUserItem.PageInfo.PageSize");
 			pageInfo.TotalCount = _ctx.IntegerValue("DescribePropertyUserItem.PageInfo.TotalCount");
-			pageInfo.CurrentPage = _ctx.IntegerValue("DescribePropertyUserItem.PageInfo.CurrentPage");
+			pageInfo.Count = _ctx.IntegerValue("DescribePropertyUserItem.PageInfo.Count");
 			describePropertyUserItemResponse.PageInfo = pageInfo;
 
 			List<DescribePropertyUserItemResponse.DescribePropertyUserItem_PropertyUserItem> describePropertyUserItemResponse_propertyItems = new List<DescribePropertyUserItemResponse.DescribePropertyUserItem_PropertyUserItem>();

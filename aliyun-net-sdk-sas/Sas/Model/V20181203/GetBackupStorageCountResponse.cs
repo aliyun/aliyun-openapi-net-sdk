@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -56,15 +56,39 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class GetBackupStorageCount_BackupStorageCount
 		{
 
+			private int? overflow;
+
+			private long? uniUsageStorageByte;
+
 			private long? buyStorageByte;
 
 			private long? usageStorageByte;
 
 			private long? ecsUsageStorageByte;
 
-			private long? uniUsageStorageByte;
+			public int? Overflow
+			{
+				get
+				{
+					return overflow;
+				}
+				set	
+				{
+					overflow = value;
+				}
+			}
 
-			private int? overflow;
+			public long? UniUsageStorageByte
+			{
+				get
+				{
+					return uniUsageStorageByte;
+				}
+				set	
+				{
+					uniUsageStorageByte = value;
+				}
+			}
 
 			public long? BuyStorageByte
 			{
@@ -99,30 +123,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					ecsUsageStorageByte = value;
-				}
-			}
-
-			public long? UniUsageStorageByte
-			{
-				get
-				{
-					return uniUsageStorageByte;
-				}
-				set	
-				{
-					uniUsageStorageByte = value;
-				}
-			}
-
-			public int? Overflow
-			{
-				get
-				{
-					return overflow;
-				}
-				set	
-				{
-					overflow = value;
 				}
 			}
 		}

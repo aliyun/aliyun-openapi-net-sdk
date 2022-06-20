@@ -89,10 +89,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set
 			{
 				idss = value;
-				for (int i = 0; i < idss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Ids." + (i + 1) , idss[i]);
-				}
 			}
 		}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -70,59 +70,47 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeBackupPolicies_BackupPolicy
 		{
 
-			private long? id;
-
-			private string name;
+			private int? clientErrorCount;
 
 			private string status;
 
+			private string policyVersion;
+
 			private string policy;
 
-			private string policyVersion;
+			private string upgradeStatus;
+
+			private int? serviceErrorCount;
 
 			private string policyRegionId;
 
 			private string clientStatus;
 
-			private int? clientErrorCount;
-
-			private int? serviceErrorCount;
+			private string name;
 
 			private int? healthClientCount;
 
-			private string upgradeStatus;
+			private long? id;
 
-			private List<string> uuidList;
+			private List<string> clientErrorUuidList;
 
 			private List<string> remarkedUuidList;
 
-			private List<string> clientErrorUuidList;
+			private List<string> uuidList;
 
 			private List<string> serviceErrorUuidList;
 
 			private List<string> healthClientUuidList;
 
-			public long? Id
+			public int? ClientErrorCount
 			{
 				get
 				{
-					return id;
+					return clientErrorCount;
 				}
 				set	
 				{
-					id = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
+					clientErrorCount = value;
 				}
 			}
 
@@ -138,6 +126,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string PolicyVersion
+			{
+				get
+				{
+					return policyVersion;
+				}
+				set	
+				{
+					policyVersion = value;
+				}
+			}
+
 			public string Policy
 			{
 				get
@@ -150,15 +150,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string PolicyVersion
+			public string UpgradeStatus
 			{
 				get
 				{
-					return policyVersion;
+					return upgradeStatus;
 				}
 				set	
 				{
-					policyVersion = value;
+					upgradeStatus = value;
+				}
+			}
+
+			public int? ServiceErrorCount
+			{
+				get
+				{
+					return serviceErrorCount;
+				}
+				set	
+				{
+					serviceErrorCount = value;
 				}
 			}
 
@@ -186,27 +198,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? ClientErrorCount
+			public string Name
 			{
 				get
 				{
-					return clientErrorCount;
+					return name;
 				}
 				set	
 				{
-					clientErrorCount = value;
-				}
-			}
-
-			public int? ServiceErrorCount
-			{
-				get
-				{
-					return serviceErrorCount;
-				}
-				set	
-				{
-					serviceErrorCount = value;
+					name = value;
 				}
 			}
 
@@ -222,27 +222,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string UpgradeStatus
+			public long? Id
 			{
 				get
 				{
-					return upgradeStatus;
+					return id;
 				}
 				set	
 				{
-					upgradeStatus = value;
+					id = value;
 				}
 			}
 
-			public List<string> UuidList
+			public List<string> ClientErrorUuidList
 			{
 				get
 				{
-					return uuidList;
+					return clientErrorUuidList;
 				}
 				set	
 				{
-					uuidList = value;
+					clientErrorUuidList = value;
 				}
 			}
 
@@ -258,15 +258,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public List<string> ClientErrorUuidList
+			public List<string> UuidList
 			{
 				get
 				{
-					return clientErrorUuidList;
+					return uuidList;
 				}
 				set	
 				{
-					clientErrorUuidList = value;
+					uuidList = value;
 				}
 			}
 
@@ -298,23 +298,23 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeBackupPolicies_PageInfo
 		{
 
-			private int? count;
+			private int? currentPage;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? currentPage;
+			private int? count;
 
-			public int? Count
+			public int? CurrentPage
 			{
 				get
 				{
-					return count;
+					return currentPage;
 				}
 				set	
 				{
-					count = value;
+					currentPage = value;
 				}
 			}
 
@@ -342,15 +342,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? CurrentPage
+			public int? Count
 			{
 				get
 				{
-					return currentPage;
+					return count;
 				}
 				set	
 				{
-					currentPage = value;
+					count = value;
 				}
 			}
 		}

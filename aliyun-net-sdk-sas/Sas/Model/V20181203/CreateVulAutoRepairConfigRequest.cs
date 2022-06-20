@@ -45,7 +45,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string type;
 
-		private List<VulAutoRepairConfigList> vulAutoRepairConfigLists = new List<VulAutoRepairConfigList>(){ };
+		private List<string> vulAutoRepairConfigLists = new List<string>(){ };
 
 		public string Reason
 		{
@@ -73,7 +73,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public List<VulAutoRepairConfigList> VulAutoRepairConfigLists
+		public List<string> VulAutoRepairConfigLists
 		{
 			get
 			{
@@ -83,10 +83,13 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set
 			{
 				vulAutoRepairConfigLists = value;
-				for (int i = 0; i < vulAutoRepairConfigLists.Count; i++)
+				if(vulAutoRepairConfigLists != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"VulAutoRepairConfigList." + (i + 1) + ".AliasName", vulAutoRepairConfigLists[i].AliasName);
-					DictionaryUtil.Add(QueryParameters,"VulAutoRepairConfigList." + (i + 1) + ".Name", vulAutoRepairConfigLists[i].Name);
+					for (int depth1 = 0; depth1 < vulAutoRepairConfigLists.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"VulAutoRepairConfigList." + (depth1 + 1), vulAutoRepairConfigLists[depth1]);
+						DictionaryUtil.Add(QueryParameters,"VulAutoRepairConfigList." + (depth1 + 1), vulAutoRepairConfigLists[depth1]);
+					}
 				}
 			}
 		}

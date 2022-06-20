@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
 {
-	public class ListCriteriaStrategyResponse : AcsResponse
+	public class CreateSuspEventNoteResponse : AcsResponse
 	{
 
 		private bool? success;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string requestId;
 
-		private List<ListCriteriaStrategy_DataItem> data;
+		private int? httpStatusCode;
 
 		public bool? Success
 		{
@@ -83,47 +83,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public List<ListCriteriaStrategy_DataItem> Data
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return data;
+				return httpStatusCode;
 			}
 			set	
 			{
-				data = value;
-			}
-		}
-
-		public class ListCriteriaStrategy_DataItem
-		{
-
-			private long? id;
-
-			private string _value;
-
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
-
-			public string _Value
-			{
-				get
-				{
-					return _value;
-				}
-				set	
-				{
-					_value = value;
-				}
+				httpStatusCode = value;
 			}
 		}
 	}

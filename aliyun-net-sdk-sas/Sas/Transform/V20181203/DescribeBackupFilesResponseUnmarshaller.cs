@@ -34,17 +34,17 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describeBackupFilesResponse.RequestId = _ctx.StringValue("DescribeBackupFiles.RequestId");
 
 			DescribeBackupFilesResponse.DescribeBackupFiles_PageInfo pageInfo = new DescribeBackupFilesResponse.DescribeBackupFiles_PageInfo();
-			pageInfo.Count = _ctx.IntegerValue("DescribeBackupFiles.PageInfo.Count");
+			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeBackupFiles.PageInfo.CurrentPage");
 			pageInfo.PageSize = _ctx.IntegerValue("DescribeBackupFiles.PageInfo.PageSize");
 			pageInfo.TotalCount = _ctx.IntegerValue("DescribeBackupFiles.PageInfo.TotalCount");
-			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeBackupFiles.PageInfo.CurrentPage");
+			pageInfo.Count = _ctx.IntegerValue("DescribeBackupFiles.PageInfo.Count");
 			describeBackupFilesResponse.PageInfo = pageInfo;
 
 			List<DescribeBackupFilesResponse.DescribeBackupFiles_BrowseFile> describeBackupFilesResponse_backupFiles = new List<DescribeBackupFilesResponse.DescribeBackupFiles_BrowseFile>();
 			for (int i = 0; i < _ctx.Length("DescribeBackupFiles.BackupFiles.Length"); i++) {
 				DescribeBackupFilesResponse.DescribeBackupFiles_BrowseFile browseFile = new DescribeBackupFilesResponse.DescribeBackupFiles_BrowseFile();
-				browseFile.Name = _ctx.StringValue("DescribeBackupFiles.BackupFiles["+ i +"].Name");
 				browseFile.Type = _ctx.StringValue("DescribeBackupFiles.BackupFiles["+ i +"].Type");
+				browseFile.Name = _ctx.StringValue("DescribeBackupFiles.BackupFiles["+ i +"].Name");
 				browseFile.Subtree = _ctx.StringValue("DescribeBackupFiles.BackupFiles["+ i +"].Subtree");
 				browseFile.Size = _ctx.LongValue("DescribeBackupFiles.BackupFiles["+ i +"].Size");
 

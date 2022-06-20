@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			List<DescribeUserBackupMachinesResponse.DescribeUserBackupMachines_SimpleBackupMachine> describeUserBackupMachinesResponse_machines = new List<DescribeUserBackupMachinesResponse.DescribeUserBackupMachines_SimpleBackupMachine>();
 			for (int i = 0; i < _ctx.Length("DescribeUserBackupMachines.Machines.Length"); i++) {
 				DescribeUserBackupMachinesResponse.DescribeUserBackupMachines_SimpleBackupMachine simpleBackupMachine = new DescribeUserBackupMachinesResponse.DescribeUserBackupMachines_SimpleBackupMachine();
-				simpleBackupMachine.Id = _ctx.LongValue("DescribeUserBackupMachines.Machines["+ i +"].Id");
 				simpleBackupMachine.Uuid = _ctx.StringValue("DescribeUserBackupMachines.Machines["+ i +"].Uuid");
 				simpleBackupMachine.PolicyName = _ctx.StringValue("DescribeUserBackupMachines.Machines["+ i +"].PolicyName");
+				simpleBackupMachine.Id = _ctx.LongValue("DescribeUserBackupMachines.Machines["+ i +"].Id");
 
 				describeUserBackupMachinesResponse_machines.Add(simpleBackupMachine);
 			}

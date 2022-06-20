@@ -24,20 +24,21 @@ using Aliyun.Acs.Sas.Model.V20181203;
 
 namespace Aliyun.Acs.Sas.Transform.V20181203
 {
-    public class DeleteVulAutoRepairConfigResponseUnmarshaller
+    public class PublicPreCheckImageScanTaskResponseUnmarshaller
     {
-        public static DeleteVulAutoRepairConfigResponse Unmarshall(UnmarshallerContext _ctx)
+        public static PublicPreCheckImageScanTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DeleteVulAutoRepairConfigResponse deleteVulAutoRepairConfigResponse = new DeleteVulAutoRepairConfigResponse();
+			PublicPreCheckImageScanTaskResponse publicPreCheckImageScanTaskResponse = new PublicPreCheckImageScanTaskResponse();
 
-			deleteVulAutoRepairConfigResponse.HttpResponse = _ctx.HttpResponse;
-			deleteVulAutoRepairConfigResponse.RequestId = _ctx.StringValue("DeleteVulAutoRepairConfig.RequestId");
-			deleteVulAutoRepairConfigResponse.Success = _ctx.BooleanValue("DeleteVulAutoRepairConfig.Success");
-			deleteVulAutoRepairConfigResponse.Code = _ctx.StringValue("DeleteVulAutoRepairConfig.Code");
-			deleteVulAutoRepairConfigResponse.Message = _ctx.StringValue("DeleteVulAutoRepairConfig.Message");
-			deleteVulAutoRepairConfigResponse.HttpStatusCode = _ctx.IntegerValue("DeleteVulAutoRepairConfig.HttpStatusCode");
+			publicPreCheckImageScanTaskResponse.HttpResponse = _ctx.HttpResponse;
+			publicPreCheckImageScanTaskResponse.RequestId = _ctx.StringValue("PublicPreCheckImageScanTask.RequestId");
+
+			PublicPreCheckImageScanTaskResponse.PublicPreCheckImageScanTask_Data data = new PublicPreCheckImageScanTaskResponse.PublicPreCheckImageScanTask_Data();
+			data.ScanImageCount = _ctx.IntegerValue("PublicPreCheckImageScanTask.Data.ScanImageCount");
+			data.NeedAuthCount = _ctx.IntegerValue("PublicPreCheckImageScanTask.Data.NeedAuthCount");
+			publicPreCheckImageScanTaskResponse.Data = data;
         
-			return deleteVulAutoRepairConfigResponse;
+			return publicPreCheckImageScanTaskResponse;
         }
     }
 }

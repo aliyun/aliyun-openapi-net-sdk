@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -25,81 +25,33 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeExportInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private long? id;
-
-		private string fileName;
-
-		private int? currentCount;
-
-		private int? totalCount;
+		private string link;
 
 		private int? progress;
 
-		private string exportStatus;
+		private string requestId;
+
+		private int? currentCount;
 
 		private string message;
 
-		private string link;
+		private string fileName;
 
-		public string RequestId
+		private int? totalCount;
+
+		private string exportStatus;
+
+		private long? id;
+
+		public string Link
 		{
 			get
 			{
-				return requestId;
+				return link;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public long? Id
-		{
-			get
-			{
-				return id;
-			}
-			set	
-			{
-				id = value;
-			}
-		}
-
-		public string FileName
-		{
-			get
-			{
-				return fileName;
-			}
-			set	
-			{
-				fileName = value;
-			}
-		}
-
-		public int? CurrentCount
-		{
-			get
-			{
-				return currentCount;
-			}
-			set	
-			{
-				currentCount = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
+				link = value;
 			}
 		}
 
@@ -115,15 +67,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string ExportStatus
+		public string RequestId
 		{
 			get
 			{
-				return exportStatus;
+				return requestId;
 			}
 			set	
 			{
-				exportStatus = value;
+				requestId = value;
+			}
+		}
+
+		public int? CurrentCount
+		{
+			get
+			{
+				return currentCount;
+			}
+			set	
+			{
+				currentCount = value;
 			}
 		}
 
@@ -139,15 +103,51 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string Link
+		public string FileName
 		{
 			get
 			{
-				return link;
+				return fileName;
 			}
 			set	
 			{
-				link = value;
+				fileName = value;
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public string ExportStatus
+		{
+			get
+			{
+				return exportStatus;
+			}
+			set	
+			{
+				exportStatus = value;
+			}
+		}
+
+		public long? Id
+		{
+			get
+			{
+				return id;
+			}
+			set	
+			{
+				id = value;
 			}
 		}
 	}

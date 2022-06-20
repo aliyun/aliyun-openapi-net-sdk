@@ -34,23 +34,23 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describeAntiBruteForceRulesResponse.RequestId = _ctx.StringValue("DescribeAntiBruteForceRules.RequestId");
 
 			DescribeAntiBruteForceRulesResponse.DescribeAntiBruteForceRules_PageInfo pageInfo = new DescribeAntiBruteForceRulesResponse.DescribeAntiBruteForceRules_PageInfo();
-			pageInfo.Count = _ctx.IntegerValue("DescribeAntiBruteForceRules.PageInfo.Count");
+			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeAntiBruteForceRules.PageInfo.CurrentPage");
 			pageInfo.PageSize = _ctx.IntegerValue("DescribeAntiBruteForceRules.PageInfo.PageSize");
 			pageInfo.TotalCount = _ctx.IntegerValue("DescribeAntiBruteForceRules.PageInfo.TotalCount");
-			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeAntiBruteForceRules.PageInfo.CurrentPage");
+			pageInfo.Count = _ctx.IntegerValue("DescribeAntiBruteForceRules.PageInfo.Count");
 			describeAntiBruteForceRulesResponse.PageInfo = pageInfo;
 
 			List<DescribeAntiBruteForceRulesResponse.DescribeAntiBruteForceRules_AntiBruteForceRule> describeAntiBruteForceRulesResponse_rules = new List<DescribeAntiBruteForceRulesResponse.DescribeAntiBruteForceRules_AntiBruteForceRule>();
 			for (int i = 0; i < _ctx.Length("DescribeAntiBruteForceRules.Rules.Length"); i++) {
 				DescribeAntiBruteForceRulesResponse.DescribeAntiBruteForceRules_AntiBruteForceRule antiBruteForceRule = new DescribeAntiBruteForceRulesResponse.DescribeAntiBruteForceRules_AntiBruteForceRule();
-				antiBruteForceRule.Id = _ctx.LongValue("DescribeAntiBruteForceRules.Rules["+ i +"].Id");
-				antiBruteForceRule.DefaultRule = _ctx.BooleanValue("DescribeAntiBruteForceRules.Rules["+ i +"].DefaultRule");
-				antiBruteForceRule.Name = _ctx.StringValue("DescribeAntiBruteForceRules.Rules["+ i +"].Name");
-				antiBruteForceRule.Span = _ctx.IntegerValue("DescribeAntiBruteForceRules.Rules["+ i +"].Span");
+				antiBruteForceRule.MachineCount = _ctx.IntegerValue("DescribeAntiBruteForceRules.Rules["+ i +"].MachineCount");
+				antiBruteForceRule.EnableSmartRule = _ctx.BooleanValue("DescribeAntiBruteForceRules.Rules["+ i +"].EnableSmartRule");
 				antiBruteForceRule.FailCount = _ctx.IntegerValue("DescribeAntiBruteForceRules.Rules["+ i +"].FailCount");
 				antiBruteForceRule.ForbiddenTime = _ctx.IntegerValue("DescribeAntiBruteForceRules.Rules["+ i +"].ForbiddenTime");
-				antiBruteForceRule.EnableSmartRule = _ctx.BooleanValue("DescribeAntiBruteForceRules.Rules["+ i +"].EnableSmartRule");
-				antiBruteForceRule.MachineCount = _ctx.IntegerValue("DescribeAntiBruteForceRules.Rules["+ i +"].MachineCount");
+				antiBruteForceRule.Span = _ctx.IntegerValue("DescribeAntiBruteForceRules.Rules["+ i +"].Span");
+				antiBruteForceRule.DefaultRule = _ctx.BooleanValue("DescribeAntiBruteForceRules.Rules["+ i +"].DefaultRule");
+				antiBruteForceRule.Name = _ctx.StringValue("DescribeAntiBruteForceRules.Rules["+ i +"].Name");
+				antiBruteForceRule.Id = _ctx.LongValue("DescribeAntiBruteForceRules.Rules["+ i +"].Id");
 
 				List<string> antiBruteForceRule_uuidList = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeAntiBruteForceRules.Rules["+ i +"].UuidList.Length"); j++) {

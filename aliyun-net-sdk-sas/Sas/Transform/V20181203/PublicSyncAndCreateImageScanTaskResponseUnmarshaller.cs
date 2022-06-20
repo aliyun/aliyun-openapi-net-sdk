@@ -34,13 +34,13 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			publicSyncAndCreateImageScanTaskResponse.RequestId = _ctx.StringValue("PublicSyncAndCreateImageScanTask.RequestId");
 
 			PublicSyncAndCreateImageScanTaskResponse.PublicSyncAndCreateImageScanTask_Data data = new PublicSyncAndCreateImageScanTaskResponse.PublicSyncAndCreateImageScanTask_Data();
-			data.Status = _ctx.StringValue("PublicSyncAndCreateImageScanTask.Data.Status");
-			data.TotalCount = _ctx.IntegerValue("PublicSyncAndCreateImageScanTask.Data.TotalCount");
-			data.Progress = _ctx.IntegerValue("PublicSyncAndCreateImageScanTask.Data.Progress");
 			data.TaskId = _ctx.StringValue("PublicSyncAndCreateImageScanTask.Data.TaskId");
-			data.CollectTime = _ctx.LongValue("PublicSyncAndCreateImageScanTask.Data.CollectTime");
+			data.TotalCount = _ctx.IntegerValue("PublicSyncAndCreateImageScanTask.Data.TotalCount");
 			data.FinishCount = _ctx.IntegerValue("PublicSyncAndCreateImageScanTask.Data.FinishCount");
+			data.CollectTime = _ctx.LongValue("PublicSyncAndCreateImageScanTask.Data.CollectTime");
 			data.ExecTime = _ctx.LongValue("PublicSyncAndCreateImageScanTask.Data.ExecTime");
+			data.Status = _ctx.StringValue("PublicSyncAndCreateImageScanTask.Data.Status");
+			data.Progress = _ctx.IntegerValue("PublicSyncAndCreateImageScanTask.Data.Progress");
 			data.Result = _ctx.StringValue("PublicSyncAndCreateImageScanTask.Data.Result");
 			data.CanCreate = _ctx.BooleanValue("PublicSyncAndCreateImageScanTask.Data.CanCreate");
 			publicSyncAndCreateImageScanTaskResponse.Data = data;

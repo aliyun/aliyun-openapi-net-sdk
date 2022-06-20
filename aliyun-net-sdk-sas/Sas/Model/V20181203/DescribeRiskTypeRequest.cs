@@ -28,10 +28,10 @@ using Aliyun.Acs.Sas.Transform.V20181203;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
 {
-    public class GetHoneypotNodeRequest : RpcAcsRequest<GetHoneypotNodeResponse>
+    public class DescribeRiskTypeRequest : RpcAcsRequest<DescribeRiskTypeResponse>
     {
-        public GetHoneypotNodeRequest()
-            : base("Sas", "2018-12-03", "GetHoneypotNode")
+        public DescribeRiskTypeRequest()
+            : base("Sas", "2018-12-03", "DescribeRiskType")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,18 +41,33 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			Method = MethodType.POST;
         }
 
-		private string nodeId;
+		private string sourceIp;
 
-		public string NodeId
+		private string lang;
+
+		public string SourceIp
 		{
 			get
 			{
-				return nodeId;
+				return sourceIp;
 			}
 			set	
 			{
-				nodeId = value;
-				DictionaryUtil.Add(QueryParameters, "NodeId", value);
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
@@ -61,9 +76,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			return false;
 		}
 
-        public override GetHoneypotNodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeRiskTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetHoneypotNodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeRiskTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

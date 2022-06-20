@@ -32,9 +32,9 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 
 			getVulStatisticsResponse.HttpResponse = _ctx.HttpResponse;
 			getVulStatisticsResponse.RequestId = _ctx.StringValue("GetVulStatistics.RequestId");
-			getVulStatisticsResponse.VulAsapSum = _ctx.IntegerValue("GetVulStatistics.VulAsapSum");
 			getVulStatisticsResponse.VulLaterSum = _ctx.IntegerValue("GetVulStatistics.VulLaterSum");
 			getVulStatisticsResponse.VulNntfSum = _ctx.IntegerValue("GetVulStatistics.VulNntfSum");
+			getVulStatisticsResponse.VulAsapSum = _ctx.IntegerValue("GetVulStatistics.VulAsapSum");
         
 			return getVulStatisticsResponse;
         }

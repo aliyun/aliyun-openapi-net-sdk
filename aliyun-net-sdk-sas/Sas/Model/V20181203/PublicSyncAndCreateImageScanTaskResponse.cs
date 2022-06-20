@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -56,33 +56,33 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class PublicSyncAndCreateImageScanTask_Data
 		{
 
-			private string status;
+			private string taskId;
 
 			private int? totalCount;
 
-			private int? progress;
-
-			private string taskId;
+			private int? finishCount;
 
 			private long? collectTime;
 
-			private int? finishCount;
-
 			private long? execTime;
+
+			private string status;
+
+			private int? progress;
 
 			private string result;
 
 			private bool? canCreate;
 
-			public string Status
+			public string TaskId
 			{
 				get
 				{
-					return status;
+					return taskId;
 				}
 				set	
 				{
-					status = value;
+					taskId = value;
 				}
 			}
 
@@ -98,27 +98,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? Progress
+			public int? FinishCount
 			{
 				get
 				{
-					return progress;
+					return finishCount;
 				}
 				set	
 				{
-					progress = value;
-				}
-			}
-
-			public string TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
+					finishCount = value;
 				}
 			}
 
@@ -134,18 +122,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? FinishCount
-			{
-				get
-				{
-					return finishCount;
-				}
-				set	
-				{
-					finishCount = value;
-				}
-			}
-
 			public long? ExecTime
 			{
 				get
@@ -155,6 +131,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					execTime = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public int? Progress
+			{
+				get
+				{
+					return progress;
+				}
+				set	
+				{
+					progress = value;
 				}
 			}
 

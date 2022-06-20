@@ -31,19 +31,19 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			DescribeVulWhitelistResponse describeVulWhitelistResponse = new DescribeVulWhitelistResponse();
 
 			describeVulWhitelistResponse.HttpResponse = _ctx.HttpResponse;
+			describeVulWhitelistResponse.CurrentPage = _ctx.IntegerValue("DescribeVulWhitelist.CurrentPage");
 			describeVulWhitelistResponse.RequestId = _ctx.StringValue("DescribeVulWhitelist.RequestId");
 			describeVulWhitelistResponse.PageSize = _ctx.IntegerValue("DescribeVulWhitelist.PageSize");
-			describeVulWhitelistResponse.CurrentPage = _ctx.IntegerValue("DescribeVulWhitelist.CurrentPage");
 			describeVulWhitelistResponse.TotalCount = _ctx.IntegerValue("DescribeVulWhitelist.TotalCount");
 
 			List<DescribeVulWhitelistResponse.DescribeVulWhitelist_VulWhitelist> describeVulWhitelistResponse_vulWhitelists = new List<DescribeVulWhitelistResponse.DescribeVulWhitelist_VulWhitelist>();
 			for (int i = 0; i < _ctx.Length("DescribeVulWhitelist.VulWhitelists.Length"); i++) {
 				DescribeVulWhitelistResponse.DescribeVulWhitelist_VulWhitelist vulWhitelist = new DescribeVulWhitelistResponse.DescribeVulWhitelist_VulWhitelist();
-				vulWhitelist.Name = _ctx.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].Name");
 				vulWhitelist.Type = _ctx.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].Type");
-				vulWhitelist.AliasName = _ctx.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].AliasName");
-				vulWhitelist.Reason = _ctx.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].Reason");
 				vulWhitelist.TargetInfo = _ctx.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].TargetInfo");
+				vulWhitelist.AliasName = _ctx.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].AliasName");
+				vulWhitelist.Name = _ctx.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].Name");
+				vulWhitelist.Reason = _ctx.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].Reason");
 				vulWhitelist.Id = _ctx.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].Id");
 
 				describeVulWhitelistResponse_vulWhitelists.Add(vulWhitelist);

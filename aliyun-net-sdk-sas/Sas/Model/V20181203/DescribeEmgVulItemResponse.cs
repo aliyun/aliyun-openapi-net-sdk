@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -102,6 +102,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string type;
 
+			private int? checkType;
+
 			private long? gmtLastCheck;
 
 			private int? progress;
@@ -137,6 +139,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					type = value;
+				}
+			}
+
+			public int? CheckType
+			{
+				get
+				{
+					return checkType;
+				}
+				set	
+				{
+					checkType = value;
 				}
 			}
 

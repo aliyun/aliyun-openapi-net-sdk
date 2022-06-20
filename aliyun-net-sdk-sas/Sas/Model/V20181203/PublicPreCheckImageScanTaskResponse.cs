@@ -17,12 +17,72 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
 {
-	public class GetOpaDefenceDetailResponse : AcsResponse
+	public class PublicPreCheckImageScanTaskResponse : AcsResponse
 	{
+
+		private string requestId;
+
+		private PublicPreCheckImageScanTask_Data data;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public PublicPreCheckImageScanTask_Data Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class PublicPreCheckImageScanTask_Data
+		{
+
+			private int? scanImageCount;
+
+			private int? needAuthCount;
+
+			public int? ScanImageCount
+			{
+				get
+				{
+					return scanImageCount;
+				}
+				set	
+				{
+					scanImageCount = value;
+				}
+			}
+
+			public int? NeedAuthCount
+			{
+				get
+				{
+					return needAuthCount;
+				}
+				set	
+				{
+					needAuthCount = value;
+				}
+			}
+		}
 	}
 }

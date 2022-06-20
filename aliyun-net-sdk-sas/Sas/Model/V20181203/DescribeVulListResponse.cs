@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -175,6 +175,12 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			private string containerName;
 
 			private string level;
+
+			private bool? bind;
+
+			private string osName;
+
+			private string authVersion;
 
 			private DescribeVulList_ExtendContentJson extendContentJson;
 
@@ -645,6 +651,42 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					level = value;
+				}
+			}
+
+			public bool? Bind
+			{
+				get
+				{
+					return bind;
+				}
+				set	
+				{
+					bind = value;
+				}
+			}
+
+			public string OsName
+			{
+				get
+				{
+					return osName;
+				}
+				set	
+				{
+					osName = value;
+				}
+			}
+
+			public string AuthVersion
+			{
+				get
+				{
+					return authVersion;
+				}
+				set	
+				{
+					authVersion = value;
 				}
 			}
 

@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string aliasName;
 
+		private string name;
+
 		private string necessity;
 
 		private string uuids;
@@ -127,6 +129,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				aliasName = value;
 				DictionaryUtil.Add(QueryParameters, "AliasName", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

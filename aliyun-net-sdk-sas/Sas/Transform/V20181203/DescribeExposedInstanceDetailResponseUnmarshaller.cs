@@ -36,27 +36,27 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			List<DescribeExposedInstanceDetailResponse.DescribeExposedInstanceDetail_ExposedChain> describeExposedInstanceDetailResponse_exposedChains = new List<DescribeExposedInstanceDetailResponse.DescribeExposedInstanceDetail_ExposedChain>();
 			for (int i = 0; i < _ctx.Length("DescribeExposedInstanceDetail.ExposedChains.Length"); i++) {
 				DescribeExposedInstanceDetailResponse.DescribeExposedInstanceDetail_ExposedChain exposedChain = new DescribeExposedInstanceDetailResponse.DescribeExposedInstanceDetail_ExposedChain();
-				exposedChain.Uuid = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].Uuid");
-				exposedChain.IntranetIp = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].IntranetIp");
-				exposedChain.InternetIp = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].InternetIp");
-				exposedChain.ExposureComponent = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].ExposureComponent");
-				exposedChain.ExposureType = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].ExposureType");
-				exposedChain.ExposurePort = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].ExposurePort");
 				exposedChain.ExposureIp = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].ExposureIp");
-				exposedChain.ExposureTypeId = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].ExposureTypeId");
-				exposedChain.InstanceId = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].InstanceId");
-				exposedChain.InstanceName = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].InstanceName");
-				exposedChain.RegionId = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].RegionId");
 				exposedChain.GroupNo = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].GroupNo");
+				exposedChain.InternetIp = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].InternetIp");
+				exposedChain.InstanceId = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].InstanceId");
+				exposedChain.ExposureType = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].ExposureType");
+				exposedChain.IntranetIp = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].IntranetIp");
+				exposedChain.ExposureTypeId = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].ExposureTypeId");
+				exposedChain.RegionId = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].RegionId");
+				exposedChain.Uuid = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].Uuid");
+				exposedChain.ExposurePort = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].ExposurePort");
+				exposedChain.InstanceName = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].InstanceName");
+				exposedChain.ExposureComponent = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].ExposureComponent");
 
 				List<DescribeExposedInstanceDetailResponse.DescribeExposedInstanceDetail_ExposedChain.DescribeExposedInstanceDetail_ScaVulRecord> exposedChain_realVulList = new List<DescribeExposedInstanceDetailResponse.DescribeExposedInstanceDetail_ExposedChain.DescribeExposedInstanceDetail_ScaVulRecord>();
 				for (int j = 0; j < _ctx.Length("DescribeExposedInstanceDetail.ExposedChains["+ i +"].RealVulList.Length"); j++) {
 					DescribeExposedInstanceDetailResponse.DescribeExposedInstanceDetail_ExposedChain.DescribeExposedInstanceDetail_ScaVulRecord scaVulRecord = new DescribeExposedInstanceDetailResponse.DescribeExposedInstanceDetail_ExposedChain.DescribeExposedInstanceDetail_ScaVulRecord();
-					scaVulRecord.AliasName = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].RealVulList["+ j +"].AliasName");
-					scaVulRecord.Necessity = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].RealVulList["+ j +"].Necessity");
-					scaVulRecord.Name = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].RealVulList["+ j +"].Name");
 					scaVulRecord.Type = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].RealVulList["+ j +"].Type");
+					scaVulRecord.Necessity = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].RealVulList["+ j +"].Necessity");
 					scaVulRecord.Uuid = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].RealVulList["+ j +"].Uuid");
+					scaVulRecord.AliasName = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].RealVulList["+ j +"].AliasName");
+					scaVulRecord.Name = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].RealVulList["+ j +"].Name");
 
 					exposedChain_realVulList.Add(scaVulRecord);
 				}
@@ -65,11 +65,11 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				List<DescribeExposedInstanceDetailResponse.DescribeExposedInstanceDetail_ExposedChain.DescribeExposedInstanceDetail_ScaVulRecord> exposedChain_allVulList = new List<DescribeExposedInstanceDetailResponse.DescribeExposedInstanceDetail_ExposedChain.DescribeExposedInstanceDetail_ScaVulRecord>();
 				for (int j = 0; j < _ctx.Length("DescribeExposedInstanceDetail.ExposedChains["+ i +"].AllVulList.Length"); j++) {
 					DescribeExposedInstanceDetailResponse.DescribeExposedInstanceDetail_ExposedChain.DescribeExposedInstanceDetail_ScaVulRecord scaVulRecord = new DescribeExposedInstanceDetailResponse.DescribeExposedInstanceDetail_ExposedChain.DescribeExposedInstanceDetail_ScaVulRecord();
-					scaVulRecord.AliasName = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].AllVulList["+ j +"].AliasName");
-					scaVulRecord.Necessity = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].AllVulList["+ j +"].Necessity");
-					scaVulRecord.Name = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].AllVulList["+ j +"].Name");
 					scaVulRecord.Type = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].AllVulList["+ j +"].Type");
+					scaVulRecord.Necessity = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].AllVulList["+ j +"].Necessity");
 					scaVulRecord.Uuid = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].AllVulList["+ j +"].Uuid");
+					scaVulRecord.AliasName = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].AllVulList["+ j +"].AliasName");
+					scaVulRecord.Name = _ctx.StringValue("DescribeExposedInstanceDetail.ExposedChains["+ i +"].AllVulList["+ j +"].Name");
 
 					exposedChain_allVulList.Add(scaVulRecord);
 				}

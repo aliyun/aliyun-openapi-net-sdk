@@ -31,12 +31,12 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			GetSuspiciousStatisticsResponse getSuspiciousStatisticsResponse = new GetSuspiciousStatisticsResponse();
 
 			getSuspiciousStatisticsResponse.HttpResponse = _ctx.HttpResponse;
-			getSuspiciousStatisticsResponse.RequestId = _ctx.StringValue("GetSuspiciousStatistics.RequestId");
-			getSuspiciousStatisticsResponse.TotalCount = _ctx.IntegerValue("GetSuspiciousStatistics.TotalCount");
-			getSuspiciousStatisticsResponse.TemindCount = _ctx.IntegerValue("GetSuspiciousStatistics.TemindCount");
-			getSuspiciousStatisticsResponse.RemindCount = _ctx.IntegerValue("GetSuspiciousStatistics.RemindCount");
 			getSuspiciousStatisticsResponse.SuspiciousCount = _ctx.IntegerValue("GetSuspiciousStatistics.SuspiciousCount");
+			getSuspiciousStatisticsResponse.RemindCount = _ctx.IntegerValue("GetSuspiciousStatistics.RemindCount");
+			getSuspiciousStatisticsResponse.RequestId = _ctx.StringValue("GetSuspiciousStatistics.RequestId");
+			getSuspiciousStatisticsResponse.TemindCount = _ctx.IntegerValue("GetSuspiciousStatistics.TemindCount");
 			getSuspiciousStatisticsResponse.SeriousCount = _ctx.IntegerValue("GetSuspiciousStatistics.SeriousCount");
+			getSuspiciousStatisticsResponse.TotalCount = _ctx.IntegerValue("GetSuspiciousStatistics.TotalCount");
         
 			return getSuspiciousStatisticsResponse;
         }

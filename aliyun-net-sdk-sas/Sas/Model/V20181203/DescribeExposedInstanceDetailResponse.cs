@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -56,55 +56,55 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeExposedInstanceDetail_ExposedChain
 		{
 
-			private string uuid;
+			private string exposureIp;
 
-			private string intranetIp;
+			private string groupNo;
 
 			private string internetIp;
 
-			private string exposureComponent;
+			private string instanceId;
 
 			private string exposureType;
 
-			private string exposurePort;
-
-			private string exposureIp;
+			private string intranetIp;
 
 			private string exposureTypeId;
 
-			private string instanceId;
+			private string regionId;
+
+			private string uuid;
+
+			private string exposurePort;
 
 			private string instanceName;
 
-			private string regionId;
-
-			private string groupNo;
+			private string exposureComponent;
 
 			private List<DescribeExposedInstanceDetail_ScaVulRecord> realVulList;
 
 			private List<DescribeExposedInstanceDetail_ScaVulRecord> allVulList;
 
-			public string Uuid
+			public string ExposureIp
 			{
 				get
 				{
-					return uuid;
+					return exposureIp;
 				}
 				set	
 				{
-					uuid = value;
+					exposureIp = value;
 				}
 			}
 
-			public string IntranetIp
+			public string GroupNo
 			{
 				get
 				{
-					return intranetIp;
+					return groupNo;
 				}
 				set	
 				{
-					intranetIp = value;
+					groupNo = value;
 				}
 			}
 
@@ -120,15 +120,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string ExposureComponent
+			public string InstanceId
 			{
 				get
 				{
-					return exposureComponent;
+					return instanceId;
 				}
 				set	
 				{
-					exposureComponent = value;
+					instanceId = value;
 				}
 			}
 
@@ -144,27 +144,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string ExposurePort
+			public string IntranetIp
 			{
 				get
 				{
-					return exposurePort;
+					return intranetIp;
 				}
 				set	
 				{
-					exposurePort = value;
-				}
-			}
-
-			public string ExposureIp
-			{
-				get
-				{
-					return exposureIp;
-				}
-				set	
-				{
-					exposureIp = value;
+					intranetIp = value;
 				}
 			}
 
@@ -180,15 +168,39 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string InstanceId
+			public string RegionId
 			{
 				get
 				{
-					return instanceId;
+					return regionId;
 				}
 				set	
 				{
-					instanceId = value;
+					regionId = value;
+				}
+			}
+
+			public string Uuid
+			{
+				get
+				{
+					return uuid;
+				}
+				set	
+				{
+					uuid = value;
+				}
+			}
+
+			public string ExposurePort
+			{
+				get
+				{
+					return exposurePort;
+				}
+				set	
+				{
+					exposurePort = value;
 				}
 			}
 
@@ -204,27 +216,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string RegionId
+			public string ExposureComponent
 			{
 				get
 				{
-					return regionId;
+					return exposureComponent;
 				}
 				set	
 				{
-					regionId = value;
-				}
-			}
-
-			public string GroupNo
-			{
-				get
-				{
-					return groupNo;
-				}
-				set	
-				{
-					groupNo = value;
+					exposureComponent = value;
 				}
 			}
 
@@ -255,25 +255,25 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			public class DescribeExposedInstanceDetail_ScaVulRecord
 			{
 
-				private string aliasName;
+				private string type;
 
 				private string necessity;
 
-				private string name;
-
-				private string type;
-
 				private string uuid;
 
-				public string AliasName
+				private string aliasName;
+
+				private string name;
+
+				public string Type
 				{
 					get
 					{
-						return aliasName;
+						return type;
 					}
 					set	
 					{
-						aliasName = value;
+						type = value;
 					}
 				}
 
@@ -289,30 +289,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					}
 				}
 
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
-				public string Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
-					}
-				}
-
 				public string Uuid
 				{
 					get
@@ -322,6 +298,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					set	
 					{
 						uuid = value;
+					}
+				}
+
+				public string AliasName
+				{
+					get
+					{
+						return aliasName;
+					}
+					set	
+					{
+						aliasName = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 			}
