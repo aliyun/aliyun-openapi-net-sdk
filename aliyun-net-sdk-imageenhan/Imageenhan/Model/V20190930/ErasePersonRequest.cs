@@ -40,22 +40,9 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 			Method = MethodType.POST;
         }
 
-		private string imageURL;
-
 		private string userMask;
 
-		public string ImageURL
-		{
-			get
-			{
-				return imageURL;
-			}
-			set	
-			{
-				imageURL = value;
-				DictionaryUtil.Add(BodyParameters, "ImageURL", value);
-			}
-		}
+		private string imageURL;
 
 		public string UserMask
 		{
@@ -67,6 +54,19 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 			{
 				userMask = value;
 				DictionaryUtil.Add(BodyParameters, "UserMask", value);
+			}
+		}
+
+		public string ImageURL
+		{
+			get
+			{
+				return imageURL;
+			}
+			set	
+			{
+				imageURL = value;
+				DictionaryUtil.Add(BodyParameters, "ImageURL", value);
 			}
 		}
 

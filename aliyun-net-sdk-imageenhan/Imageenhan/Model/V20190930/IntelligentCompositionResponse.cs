@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imageenhan.Model.V20190930
@@ -75,13 +75,13 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 
 				private int? minX;
 
-				private int? minY;
-
-				private int? maxX;
+				private float? score;
 
 				private int? maxY;
 
-				private float? score;
+				private int? maxX;
+
+				private int? minY;
 
 				public int? MinX
 				{
@@ -95,27 +95,15 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 					}
 				}
 
-				public int? MinY
+				public float? Score
 				{
 					get
 					{
-						return minY;
+						return score;
 					}
 					set	
 					{
-						minY = value;
-					}
-				}
-
-				public int? MaxX
-				{
-					get
-					{
-						return maxX;
-					}
-					set	
-					{
-						maxX = value;
+						score = value;
 					}
 				}
 
@@ -131,15 +119,27 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 					}
 				}
 
-				public float? Score
+				public int? MaxX
 				{
 					get
 					{
-						return score;
+						return maxX;
 					}
 					set	
 					{
-						score = value;
+						maxX = value;
+					}
+				}
+
+				public int? MinY
+				{
+					get
+					{
+						return minY;
+					}
+					set	
+					{
+						minY = value;
 					}
 				}
 			}

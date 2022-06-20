@@ -42,15 +42,15 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 
 		private string watermarkImageURL;
 
+		private string outputFileType;
+
+		private string text;
+
 		private int? qualityFactor;
 
 		private string functionType;
 
-		private string outputFileType;
-
 		private string originImageURL;
-
-		private string text;
 
 		public string WatermarkImageURL
 		{
@@ -62,6 +62,32 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 			{
 				watermarkImageURL = value;
 				DictionaryUtil.Add(BodyParameters, "WatermarkImageURL", value);
+			}
+		}
+
+		public string OutputFileType
+		{
+			get
+			{
+				return outputFileType;
+			}
+			set	
+			{
+				outputFileType = value;
+				DictionaryUtil.Add(BodyParameters, "OutputFileType", value);
+			}
+		}
+
+		public string Text
+		{
+			get
+			{
+				return text;
+			}
+			set	
+			{
+				text = value;
+				DictionaryUtil.Add(BodyParameters, "Text", value);
 			}
 		}
 
@@ -91,19 +117,6 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 			}
 		}
 
-		public string OutputFileType
-		{
-			get
-			{
-				return outputFileType;
-			}
-			set	
-			{
-				outputFileType = value;
-				DictionaryUtil.Add(BodyParameters, "OutputFileType", value);
-			}
-		}
-
 		public string OriginImageURL
 		{
 			get
@@ -114,19 +127,6 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 			{
 				originImageURL = value;
 				DictionaryUtil.Add(BodyParameters, "OriginImageURL", value);
-			}
-		}
-
-		public string Text
-		{
-			get
-			{
-				return text;
-			}
-			set	
-			{
-				text = value;
-				DictionaryUtil.Add(BodyParameters, "Text", value);
 			}
 		}
 
