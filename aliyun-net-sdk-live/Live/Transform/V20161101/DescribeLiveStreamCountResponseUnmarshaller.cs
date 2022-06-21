@@ -36,15 +36,15 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveStreamCountResponse.DescribeLiveStreamCount_StreamCountInfo> describeLiveStreamCountResponse_streamCountInfos = new List<DescribeLiveStreamCountResponse.DescribeLiveStreamCount_StreamCountInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveStreamCount.StreamCountInfos.Length"); i++) {
 				DescribeLiveStreamCountResponse.DescribeLiveStreamCount_StreamCountInfo streamCountInfo = new DescribeLiveStreamCountResponse.DescribeLiveStreamCount_StreamCountInfo();
-				streamCountInfo.Type = _ctx.StringValue("DescribeLiveStreamCount.StreamCountInfos["+ i +"].Type");
 				streamCountInfo.Count = _ctx.LongValue("DescribeLiveStreamCount.StreamCountInfos["+ i +"].Count");
 				streamCountInfo.Limit = _ctx.LongValue("DescribeLiveStreamCount.StreamCountInfos["+ i +"].Limit");
+				streamCountInfo.Type = _ctx.StringValue("DescribeLiveStreamCount.StreamCountInfos["+ i +"].Type");
 
 				List<DescribeLiveStreamCountResponse.DescribeLiveStreamCount_StreamCountInfo.DescribeLiveStreamCount_StreamCountDetail> streamCountInfo_streamCountDetails = new List<DescribeLiveStreamCountResponse.DescribeLiveStreamCount_StreamCountInfo.DescribeLiveStreamCount_StreamCountDetail>();
 				for (int j = 0; j < _ctx.Length("DescribeLiveStreamCount.StreamCountInfos["+ i +"].StreamCountDetails.Length"); j++) {
 					DescribeLiveStreamCountResponse.DescribeLiveStreamCount_StreamCountInfo.DescribeLiveStreamCount_StreamCountDetail streamCountDetail = new DescribeLiveStreamCountResponse.DescribeLiveStreamCount_StreamCountInfo.DescribeLiveStreamCount_StreamCountDetail();
-					streamCountDetail.VideoDataRate = _ctx.LongValue("DescribeLiveStreamCount.StreamCountInfos["+ i +"].StreamCountDetails["+ j +"].VideoDataRate");
 					streamCountDetail.Format = _ctx.StringValue("DescribeLiveStreamCount.StreamCountInfos["+ i +"].StreamCountDetails["+ j +"].Format");
+					streamCountDetail.VideoDataRate = _ctx.LongValue("DescribeLiveStreamCount.StreamCountInfos["+ i +"].StreamCountDetails["+ j +"].VideoDataRate");
 					streamCountDetail.Count = _ctx.LongValue("DescribeLiveStreamCount.StreamCountInfos["+ i +"].StreamCountDetails["+ j +"].Count");
 
 					streamCountInfo_streamCountDetails.Add(streamCountDetail);

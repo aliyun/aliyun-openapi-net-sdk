@@ -31,23 +31,23 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeCasterVideoResourcesResponse describeCasterVideoResourcesResponse = new DescribeCasterVideoResourcesResponse();
 
 			describeCasterVideoResourcesResponse.HttpResponse = _ctx.HttpResponse;
-			describeCasterVideoResourcesResponse.Total = _ctx.IntegerValue("DescribeCasterVideoResources.Total");
 			describeCasterVideoResourcesResponse.RequestId = _ctx.StringValue("DescribeCasterVideoResources.RequestId");
+			describeCasterVideoResourcesResponse.Total = _ctx.IntegerValue("DescribeCasterVideoResources.Total");
 
 			List<DescribeCasterVideoResourcesResponse.DescribeCasterVideoResources_VideoResource> describeCasterVideoResourcesResponse_videoResources = new List<DescribeCasterVideoResourcesResponse.DescribeCasterVideoResources_VideoResource>();
 			for (int i = 0; i < _ctx.Length("DescribeCasterVideoResources.VideoResources.Length"); i++) {
 				DescribeCasterVideoResourcesResponse.DescribeCasterVideoResources_VideoResource videoResource = new DescribeCasterVideoResourcesResponse.DescribeCasterVideoResources_VideoResource();
-				videoResource.EndOffset = _ctx.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].EndOffset");
-				videoResource.FlvUrl = _ctx.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].FlvUrl");
-				videoResource.BeginOffset = _ctx.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].BeginOffset");
-				videoResource.PtsCallbackInterval = _ctx.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].PtsCallbackInterval");
 				videoResource.MaterialId = _ctx.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].MaterialId");
+				videoResource.ResourceId = _ctx.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].ResourceId");
+				videoResource.ResourceName = _ctx.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].ResourceName");
 				videoResource.LocationId = _ctx.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].LocationId");
 				videoResource.LiveStreamUrl = _ctx.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].LiveStreamUrl");
-				videoResource.VodUrl = _ctx.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].VodUrl");
-				videoResource.ResourceId = _ctx.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].ResourceId");
+				videoResource.FlvUrl = _ctx.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].FlvUrl");
 				videoResource.RepeatNum = _ctx.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].RepeatNum");
-				videoResource.ResourceName = _ctx.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].ResourceName");
+				videoResource.VodUrl = _ctx.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].VodUrl");
+				videoResource.BeginOffset = _ctx.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].BeginOffset");
+				videoResource.EndOffset = _ctx.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].EndOffset");
+				videoResource.PtsCallbackInterval = _ctx.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].PtsCallbackInterval");
 
 				describeCasterVideoResourcesResponse_videoResources.Add(videoResource);
 			}

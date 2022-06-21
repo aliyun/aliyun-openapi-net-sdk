@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeShowListResponse : AcsResponse
 	{
 
-		private string showList;
-
 		private string requestId;
 
-		private DescribeShowList_ShowListInfo showListInfo;
+		private string showList;
 
-		public string ShowList
-		{
-			get
-			{
-				return showList;
-			}
-			set	
-			{
-				showList = value;
-			}
-		}
+		private DescribeShowList_ShowListInfo showListInfo;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ShowList
+		{
+			get
+			{
+				return showList;
+			}
+			set	
+			{
+				showList = value;
 			}
 		}
 
@@ -70,27 +70,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeShowList_ShowListInfo
 		{
 
-			private string highPriorityShowStartTime;
+			private int? showListRepeatTimes;
 
 			private int? totalShowListRepeatTimes;
 
-			private int? showListRepeatTimes;
+			private string highPriorityShowId;
+
+			private string highPriorityShowStartTime;
 
 			private string currentShowId;
 
-			private string highPriorityShowId;
-
 			private List<DescribeShowList_Show> showList;
 
-			public string HighPriorityShowStartTime
+			public int? ShowListRepeatTimes
 			{
 				get
 				{
-					return highPriorityShowStartTime;
+					return showListRepeatTimes;
 				}
 				set	
 				{
-					highPriorityShowStartTime = value;
+					showListRepeatTimes = value;
 				}
 			}
 
@@ -106,15 +106,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? ShowListRepeatTimes
+			public string HighPriorityShowId
 			{
 				get
 				{
-					return showListRepeatTimes;
+					return highPriorityShowId;
 				}
 				set	
 				{
-					showListRepeatTimes = value;
+					highPriorityShowId = value;
+				}
+			}
+
+			public string HighPriorityShowStartTime
+			{
+				get
+				{
+					return highPriorityShowStartTime;
+				}
+				set	
+				{
+					highPriorityShowStartTime = value;
 				}
 			}
 
@@ -127,18 +139,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					currentShowId = value;
-				}
-			}
-
-			public string HighPriorityShowId
-			{
-				get
-				{
-					return highPriorityShowId;
-				}
-				set	
-				{
-					highPriorityShowId = value;
 				}
 			}
 
@@ -157,15 +157,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeShowList_Show
 			{
 
+				private string showId;
+
 				private string showName;
 
 				private long? duration;
 
 				private int? repeatTimes;
 
-				private string showId;
-
 				private DescribeShowList_ResourceInfo resourceInfo;
+
+				public string ShowId
+				{
+					get
+					{
+						return showId;
+					}
+					set	
+					{
+						showId = value;
+					}
+				}
 
 				public string ShowName
 				{
@@ -203,18 +215,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public string ShowId
-				{
-					get
-					{
-						return showId;
-					}
-					set	
-					{
-						showId = value;
-					}
-				}
-
 				public DescribeShowList_ResourceInfo ResourceInfo
 				{
 					get
@@ -230,23 +230,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 				public class DescribeShowList_ResourceInfo
 				{
 
-					private int? liveInputType;
+					private string resourceId;
 
 					private string resourceUrl;
 
 					private string resourceType;
 
-					private string resourceId;
+					private int? liveInputType;
 
-					public int? LiveInputType
+					public string ResourceId
 					{
 						get
 						{
-							return liveInputType;
+							return resourceId;
 						}
 						set	
 						{
-							liveInputType = value;
+							resourceId = value;
 						}
 					}
 
@@ -274,15 +274,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 						}
 					}
 
-					public string ResourceId
+					public int? LiveInputType
 					{
 						get
 						{
-							return resourceId;
+							return liveInputType;
 						}
 						set	
 						{
-							resourceId = value;
+							liveInputType = value;
 						}
 					}
 				}

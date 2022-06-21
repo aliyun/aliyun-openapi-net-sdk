@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamMonitorListResponse : AcsResponse
 	{
 
-		private int? total;
-
 		private string requestId;
 
-		private List<DescribeLiveStreamMonitorList_LiveStreamMonitorInfo> liveStreamMonitorList;
+		private int? total;
 
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
+		private List<DescribeLiveStreamMonitorList_LiveStreamMonitorInfo> liveStreamMonitorList;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
 			}
 		}
 
@@ -70,51 +70,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamMonitorList_LiveStreamMonitorInfo
 		{
 
-			private int? status;
-
-			private string startTime;
-
 			private string monitorId;
+
+			private string monitorName;
 
 			private string domain;
 
 			private string outputTemplate;
 
+			private int? status;
+
 			private string region;
 
 			private int? audioFrom;
 
-			private string monitorName;
+			private string startTime;
 
 			private string stopTime;
 
 			private List<DescribeLiveStreamMonitorList_InputConfig> inputList;
 
 			private DescribeLiveStreamMonitorList_OutputUrls outputUrls;
-
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
 
 			public string MonitorId
 			{
@@ -125,6 +101,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					monitorId = value;
+				}
+			}
+
+			public string MonitorName
+			{
+				get
+				{
+					return monitorName;
+				}
+				set	
+				{
+					monitorName = value;
 				}
 			}
 
@@ -152,6 +140,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
 			public string Region
 			{
 				get
@@ -176,15 +176,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string MonitorName
+			public string StartTime
 			{
 				get
 				{
-					return monitorName;
+					return startTime;
 				}
 				set	
 				{
-					monitorName = value;
+					startTime = value;
 				}
 			}
 
@@ -229,11 +229,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private int? index;
 
-				private string inputUrl;
-
 				private int? layoutId;
 
 				private string streamName;
+
+				private string inputUrl;
 
 				private DescribeLiveStreamMonitorList_LayoutConfig layoutConfig;
 
@@ -248,18 +248,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						index = value;
-					}
-				}
-
-				public string InputUrl
-				{
-					get
-					{
-						return inputUrl;
-					}
-					set	
-					{
-						inputUrl = value;
 					}
 				}
 
@@ -284,6 +272,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						streamName = value;
+					}
+				}
+
+				public string InputUrl
+				{
+					get
+					{
+						return inputUrl;
+					}
+					set	
+					{
+						inputUrl = value;
 					}
 				}
 
@@ -393,21 +393,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeLiveStreamMonitorList_OutputUrls
 			{
 
-				private string flvUrl;
-
 				private string rtmpUrl;
 
-				public string FlvUrl
-				{
-					get
-					{
-						return flvUrl;
-					}
-					set	
-					{
-						flvUrl = value;
-					}
-				}
+				private string flvUrl;
 
 				public string RtmpUrl
 				{
@@ -418,6 +406,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						rtmpUrl = value;
+					}
+				}
+
+				public string FlvUrl
+				{
+					get
+					{
+						return flvUrl;
+					}
+					set	
+					{
+						flvUrl = value;
 					}
 				}
 			}

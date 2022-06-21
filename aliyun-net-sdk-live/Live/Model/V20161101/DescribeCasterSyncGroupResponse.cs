@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeCasterSyncGroupResponse : AcsResponse
 	{
 
-		private string casterId;
-
 		private string requestId;
 
-		private List<DescribeCasterSyncGroup_SyncGroup> syncGroups;
+		private string casterId;
 
-		public string CasterId
-		{
-			get
-			{
-				return casterId;
-			}
-			set	
-			{
-				casterId = value;
-			}
-		}
+		private List<DescribeCasterSyncGroup_SyncGroup> syncGroups;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string CasterId
+		{
+			get
+			{
+				return casterId;
+			}
+			set	
+			{
+				casterId = value;
 			}
 		}
 
@@ -70,23 +70,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeCasterSyncGroup_SyncGroup
 		{
 
-			private string hostResourceId;
-
 			private int? mode;
 
-			private List<string> resourceIds;
+			private string hostResourceId;
 
-			public string HostResourceId
-			{
-				get
-				{
-					return hostResourceId;
-				}
-				set	
-				{
-					hostResourceId = value;
-				}
-			}
+			private List<string> resourceIds;
 
 			public int? Mode
 			{
@@ -97,6 +85,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					mode = value;
+				}
+			}
+
+			public string HostResourceId
+			{
+				get
+				{
+					return hostResourceId;
+				}
+				set	
+				{
+					hostResourceId = value;
 				}
 			}
 

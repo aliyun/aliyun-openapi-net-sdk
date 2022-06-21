@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string requestId;
 
-		private string customTemplate;
-
 		private string template;
+
+		private string customTemplate;
 
 		public string RequestId
 		{
@@ -43,18 +43,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string CustomTemplate
-		{
-			get
-			{
-				return customTemplate;
-			}
-			set	
-			{
-				customTemplate = value;
-			}
-		}
-
 		public string Template
 		{
 			get
@@ -64,6 +52,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				template = value;
+			}
+		}
+
+		public string CustomTemplate
+		{
+			get
+			{
+				return customTemplate;
+			}
+			set	
+			{
+				customTemplate = value;
 			}
 		}
 	}

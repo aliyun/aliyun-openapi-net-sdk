@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string requestId;
 
-		private string casterId;
-
 		private string programId;
+
+		private string casterId;
 
 		private EditPlaylist_Items items;
 
@@ -45,18 +45,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string CasterId
-		{
-			get
-			{
-				return casterId;
-			}
-			set	
-			{
-				casterId = value;
-			}
-		}
-
 		public string ProgramId
 		{
 			get
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				programId = value;
+			}
+		}
+
+		public string CasterId
+		{
+			get
+			{
+				return casterId;
+			}
+			set	
+			{
+				casterId = value;
 			}
 		}
 
@@ -115,21 +115,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class EditPlaylist_SuccessItem
 			{
 
-				private string itemName;
-
 				private string itemId;
 
-				public string ItemName
-				{
-					get
-					{
-						return itemName;
-					}
-					set	
-					{
-						itemName = value;
-					}
-				}
+				private string itemName;
 
 				public string ItemId
 				{
@@ -140,6 +128,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						itemId = value;
+					}
+				}
+
+				public string ItemName
+				{
+					get
+					{
+						return itemName;
+					}
+					set	
+					{
+						itemName = value;
 					}
 				}
 			}
@@ -147,21 +147,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class EditPlaylist_FailedItem
 			{
 
-				private string itemName;
-
 				private string itemId;
 
-				public string ItemName
-				{
-					get
-					{
-						return itemName;
-					}
-					set	
-					{
-						itemName = value;
-					}
-				}
+				private string itemName;
 
 				public string ItemId
 				{
@@ -172,6 +160,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						itemId = value;
+					}
+				}
+
+				public string ItemName
+				{
+					get
+					{
+						return itemName;
+					}
+					set	
+					{
+						itemName = value;
 					}
 				}
 			}

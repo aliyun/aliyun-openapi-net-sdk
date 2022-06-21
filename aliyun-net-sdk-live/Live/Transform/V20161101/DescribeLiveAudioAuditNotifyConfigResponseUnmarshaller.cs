@@ -36,9 +36,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveAudioAuditNotifyConfigResponse.DescribeLiveAudioAuditNotifyConfig_LiveAudioAuditNotifyConfig> describeLiveAudioAuditNotifyConfigResponse_liveAudioAuditNotifyConfigList = new List<DescribeLiveAudioAuditNotifyConfigResponse.DescribeLiveAudioAuditNotifyConfig_LiveAudioAuditNotifyConfig>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveAudioAuditNotifyConfig.LiveAudioAuditNotifyConfigList.Length"); i++) {
 				DescribeLiveAudioAuditNotifyConfigResponse.DescribeLiveAudioAuditNotifyConfig_LiveAudioAuditNotifyConfig liveAudioAuditNotifyConfig = new DescribeLiveAudioAuditNotifyConfigResponse.DescribeLiveAudioAuditNotifyConfig_LiveAudioAuditNotifyConfig();
-				liveAudioAuditNotifyConfig.CallbackTemplate = _ctx.StringValue("DescribeLiveAudioAuditNotifyConfig.LiveAudioAuditNotifyConfigList["+ i +"].CallbackTemplate");
 				liveAudioAuditNotifyConfig.DomainName = _ctx.StringValue("DescribeLiveAudioAuditNotifyConfig.LiveAudioAuditNotifyConfigList["+ i +"].DomainName");
 				liveAudioAuditNotifyConfig.Callback = _ctx.StringValue("DescribeLiveAudioAuditNotifyConfig.LiveAudioAuditNotifyConfigList["+ i +"].Callback");
+				liveAudioAuditNotifyConfig.CallbackTemplate = _ctx.StringValue("DescribeLiveAudioAuditNotifyConfig.LiveAudioAuditNotifyConfigList["+ i +"].CallbackTemplate");
 
 				describeLiveAudioAuditNotifyConfigResponse_liveAudioAuditNotifyConfigList.Add(liveAudioAuditNotifyConfig);
 			}

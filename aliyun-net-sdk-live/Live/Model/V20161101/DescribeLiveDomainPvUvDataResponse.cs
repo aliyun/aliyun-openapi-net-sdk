@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,41 +25,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveDomainPvUvDataResponse : AcsResponse
 	{
 
-		private string endTime;
-
-		private string startTime;
-
 		private string requestId;
 
 		private string domainName;
 
+		private string startTime;
+
+		private string endTime;
+
 		private string dataInterval;
 
 		private List<DescribeLiveDomainPvUvData_PvUvDataInfo> pvUvDataInfos;
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
 
 		public string RequestId
 		{
@@ -82,6 +58,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				domainName = value;
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
 			}
 		}
 
@@ -114,9 +114,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string pV;
 
-			private string timeStamp;
-
 			private string uV;
+
+			private string timeStamp;
 
 			public string PV
 			{
@@ -130,18 +130,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
-
 			public string UV
 			{
 				get
@@ -151,6 +139,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					uV = value;
+				}
+			}
+
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
 				}
 			}
 		}

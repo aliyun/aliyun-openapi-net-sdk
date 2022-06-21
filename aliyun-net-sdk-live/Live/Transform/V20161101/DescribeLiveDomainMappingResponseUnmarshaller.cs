@@ -36,8 +36,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveDomainMappingResponse.DescribeLiveDomainMapping_LiveDomainModel> describeLiveDomainMappingResponse_liveDomainModels = new List<DescribeLiveDomainMappingResponse.DescribeLiveDomainMapping_LiveDomainModel>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDomainMapping.LiveDomainModels.Length"); i++) {
 				DescribeLiveDomainMappingResponse.DescribeLiveDomainMapping_LiveDomainModel liveDomainModel = new DescribeLiveDomainMappingResponse.DescribeLiveDomainMapping_LiveDomainModel();
-				liveDomainModel.Type = _ctx.StringValue("DescribeLiveDomainMapping.LiveDomainModels["+ i +"].Type");
 				liveDomainModel.DomainName = _ctx.StringValue("DescribeLiveDomainMapping.LiveDomainModels["+ i +"].DomainName");
+				liveDomainModel.Type = _ctx.StringValue("DescribeLiveDomainMapping.LiveDomainModels["+ i +"].Type");
 
 				describeLiveDomainMappingResponse_liveDomainModels.Add(liveDomainModel);
 			}

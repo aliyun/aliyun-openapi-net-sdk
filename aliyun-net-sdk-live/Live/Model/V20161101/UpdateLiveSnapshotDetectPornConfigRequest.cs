@@ -94,6 +94,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				scenes = value;
+				for (int i = 0; i < scenes.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Scene." + (i + 1) , scenes[i]);
+				}
 			}
 		}
 

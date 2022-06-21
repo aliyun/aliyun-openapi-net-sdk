@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeRoomListResponse : AcsResponse
 	{
 
-		private int? totalPage;
-
 		private string requestId;
 
 		private int? totalNum;
 
-		private List<DescribeRoomList_Room> roomList;
+		private int? totalPage;
 
-		public int? TotalPage
-		{
-			get
-			{
-				return totalPage;
-			}
-			set	
-			{
-				totalPage = value;
-			}
-		}
+		private List<DescribeRoomList_Room> roomList;
 
 		public string RequestId
 		{
@@ -69,6 +57,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public int? TotalPage
+		{
+			get
+			{
+				return totalPage;
+			}
+			set	
+			{
+				totalPage = value;
+			}
+		}
+
 		public List<DescribeRoomList_Room> RoomList
 		{
 			get
@@ -84,25 +84,25 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeRoomList_Room
 		{
 
-			private string forbidStream;
+			private string roomId;
 
 			private string anchorId;
 
-			private string roomId;
+			private int? roomStatus;
+
+			private string forbidStream;
 
 			private string createTime;
 
-			private int? roomStatus;
-
-			public string ForbidStream
+			public string RoomId
 			{
 				get
 				{
-					return forbidStream;
+					return roomId;
 				}
 				set	
 				{
-					forbidStream = value;
+					roomId = value;
 				}
 			}
 
@@ -118,15 +118,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string RoomId
+			public int? RoomStatus
 			{
 				get
 				{
-					return roomId;
+					return roomStatus;
 				}
 				set	
 				{
-					roomId = value;
+					roomStatus = value;
+				}
+			}
+
+			public string ForbidStream
+			{
+				get
+				{
+					return forbidStream;
+				}
+				set	
+				{
+					forbidStream = value;
 				}
 			}
 
@@ -139,18 +151,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					createTime = value;
-				}
-			}
-
-			public int? RoomStatus
-			{
-				get
-				{
-					return roomStatus;
-				}
-				set	
-				{
-					roomStatus = value;
 				}
 			}
 		}

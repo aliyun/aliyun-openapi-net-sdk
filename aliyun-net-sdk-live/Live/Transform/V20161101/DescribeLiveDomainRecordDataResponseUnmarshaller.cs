@@ -40,9 +40,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				recordDataInfo.Total = _ctx.IntegerValue("DescribeLiveDomainRecordData.RecordDataInfos["+ i +"].Total");
 
 				DescribeLiveDomainRecordDataResponse.DescribeLiveDomainRecordData_RecordDataInfo.DescribeLiveDomainRecordData_Detail detail = new DescribeLiveDomainRecordDataResponse.DescribeLiveDomainRecordData_RecordDataInfo.DescribeLiveDomainRecordData_Detail();
+				detail.MP4 = _ctx.IntegerValue("DescribeLiveDomainRecordData.RecordDataInfos["+ i +"].Detail.MP4");
 				detail.FLV = _ctx.IntegerValue("DescribeLiveDomainRecordData.RecordDataInfos["+ i +"].Detail.FLV");
 				detail.TS = _ctx.IntegerValue("DescribeLiveDomainRecordData.RecordDataInfos["+ i +"].Detail.TS");
-				detail.MP4 = _ctx.IntegerValue("DescribeLiveDomainRecordData.RecordDataInfos["+ i +"].Detail.MP4");
 				recordDataInfo.Detail = detail;
 
 				describeLiveDomainRecordDataResponse_recordDataInfos.Add(recordDataInfo);

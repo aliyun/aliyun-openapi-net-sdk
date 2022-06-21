@@ -46,7 +46,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string sideOutputUrl;
 
-		private List<string> items = new List<string>(){ };
+		private List<Item> items = new List<Item>(){ };
 
 		private string domainName;
 
@@ -95,7 +95,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<string> Items
+		public List<Item> Items
 		{
 			get
 			{
@@ -105,13 +105,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				items = value;
-				if(items != null)
+				for (int i = 0; i < items.Count; i++)
 				{
-					for (int depth1 = 0; depth1 < items.Count; depth1++)
-					{
-						DictionaryUtil.Add(QueryParameters,"Item." + (depth1 + 1), items[depth1]);
-						DictionaryUtil.Add(QueryParameters,"Item." + (depth1 + 1), items[depth1]);
-					}
+					DictionaryUtil.Add(QueryParameters,"Item." + (i + 1) + ".ItemName", items[i].ItemName);
+					DictionaryUtil.Add(QueryParameters,"Item." + (i + 1) + ".VodUrl", items[i].VodUrl);
 				}
 			}
 		}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			CopyCasterResponse copyCasterResponse = new CopyCasterResponse();
 
 			copyCasterResponse.HttpResponse = _ctx.HttpResponse;
-			copyCasterResponse.CasterId = _ctx.StringValue("CopyCaster.CasterId");
 			copyCasterResponse.RequestId = _ctx.StringValue("CopyCaster.RequestId");
+			copyCasterResponse.CasterId = _ctx.StringValue("CopyCaster.CasterId");
         
 			return copyCasterResponse;
         }

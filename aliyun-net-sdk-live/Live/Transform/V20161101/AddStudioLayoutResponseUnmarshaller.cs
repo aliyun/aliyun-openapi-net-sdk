@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			AddStudioLayoutResponse addStudioLayoutResponse = new AddStudioLayoutResponse();
 
 			addStudioLayoutResponse.HttpResponse = _ctx.HttpResponse;
-			addStudioLayoutResponse.LayoutId = _ctx.StringValue("AddStudioLayout.LayoutId");
 			addStudioLayoutResponse.RequestId = _ctx.StringValue("AddStudioLayout.RequestId");
+			addStudioLayoutResponse.LayoutId = _ctx.StringValue("AddStudioLayout.LayoutId");
         
 			return addStudioLayoutResponse;
         }

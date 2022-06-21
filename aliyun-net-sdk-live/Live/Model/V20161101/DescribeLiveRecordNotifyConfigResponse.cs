@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,37 +56,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveRecordNotifyConfig_LiveRecordNotifyConfig
 		{
 
-			private bool? needStatusNotify;
-
-			private string onDemandUrl;
-
 			private string domainName;
 
 			private string notifyUrl;
 
-			public bool? NeedStatusNotify
-			{
-				get
-				{
-					return needStatusNotify;
-				}
-				set	
-				{
-					needStatusNotify = value;
-				}
-			}
+			private string onDemandUrl;
 
-			public string OnDemandUrl
-			{
-				get
-				{
-					return onDemandUrl;
-				}
-				set	
-				{
-					onDemandUrl = value;
-				}
-			}
+			private bool? needStatusNotify;
 
 			public string DomainName
 			{
@@ -109,6 +85,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					notifyUrl = value;
+				}
+			}
+
+			public string OnDemandUrl
+			{
+				get
+				{
+					return onDemandUrl;
+				}
+				set	
+				{
+					onDemandUrl = value;
+				}
+			}
+
+			public bool? NeedStatusNotify
+			{
+				get
+				{
+					return needStatusNotify;
+				}
+				set	
+				{
+					needStatusNotify = value;
 				}
 			}
 		}

@@ -31,19 +31,19 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeDomainUsageDataResponse describeDomainUsageDataResponse = new DescribeDomainUsageDataResponse();
 
 			describeDomainUsageDataResponse.HttpResponse = _ctx.HttpResponse;
-			describeDomainUsageDataResponse.EndTime = _ctx.StringValue("DescribeDomainUsageData.EndTime");
-			describeDomainUsageDataResponse.StartTime = _ctx.StringValue("DescribeDomainUsageData.StartTime");
 			describeDomainUsageDataResponse.RequestId = _ctx.StringValue("DescribeDomainUsageData.RequestId");
-			describeDomainUsageDataResponse.Area = _ctx.StringValue("DescribeDomainUsageData.Area");
-			describeDomainUsageDataResponse.Field = _ctx.StringValue("DescribeDomainUsageData.Field");
 			describeDomainUsageDataResponse.DomainName = _ctx.StringValue("DescribeDomainUsageData.DomainName");
+			describeDomainUsageDataResponse.StartTime = _ctx.StringValue("DescribeDomainUsageData.StartTime");
+			describeDomainUsageDataResponse.EndTime = _ctx.StringValue("DescribeDomainUsageData.EndTime");
+			describeDomainUsageDataResponse.Field = _ctx.StringValue("DescribeDomainUsageData.Field");
+			describeDomainUsageDataResponse.Area = _ctx.StringValue("DescribeDomainUsageData.Area");
 			describeDomainUsageDataResponse.DataInterval = _ctx.StringValue("DescribeDomainUsageData.DataInterval");
 
 			List<DescribeDomainUsageDataResponse.DescribeDomainUsageData_DataModule> describeDomainUsageDataResponse_usageDataPerInterval = new List<DescribeDomainUsageDataResponse.DescribeDomainUsageData_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainUsageData.UsageDataPerInterval.Length"); i++) {
 				DescribeDomainUsageDataResponse.DescribeDomainUsageData_DataModule dataModule = new DescribeDomainUsageDataResponse.DescribeDomainUsageData_DataModule();
-				dataModule._Value = _ctx.StringValue("DescribeDomainUsageData.UsageDataPerInterval["+ i +"].Value");
 				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainUsageData.UsageDataPerInterval["+ i +"].TimeStamp");
+				dataModule._Value = _ctx.StringValue("DescribeDomainUsageData.UsageDataPerInterval["+ i +"].Value");
 
 				describeDomainUsageDataResponse_usageDataPerInterval.Add(dataModule);
 			}

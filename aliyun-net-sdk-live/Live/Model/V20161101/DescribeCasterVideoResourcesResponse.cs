@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeCasterVideoResourcesResponse : AcsResponse
 	{
 
-		private int? total;
-
 		private string requestId;
 
-		private List<DescribeCasterVideoResources_VideoResource> videoResources;
+		private int? total;
 
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
+		private List<DescribeCasterVideoResources_VideoResource> videoResources;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
 			}
 		}
 
@@ -70,75 +70,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeCasterVideoResources_VideoResource
 		{
 
-			private int? endOffset;
-
-			private string flvUrl;
-
-			private int? beginOffset;
-
-			private int? ptsCallbackInterval;
-
 			private string materialId;
+
+			private string resourceId;
+
+			private string resourceName;
 
 			private string locationId;
 
 			private string liveStreamUrl;
 
-			private string vodUrl;
-
-			private string resourceId;
+			private string flvUrl;
 
 			private int? repeatNum;
 
-			private string resourceName;
+			private string vodUrl;
 
-			public int? EndOffset
-			{
-				get
-				{
-					return endOffset;
-				}
-				set	
-				{
-					endOffset = value;
-				}
-			}
+			private int? beginOffset;
 
-			public string FlvUrl
-			{
-				get
-				{
-					return flvUrl;
-				}
-				set	
-				{
-					flvUrl = value;
-				}
-			}
+			private int? endOffset;
 
-			public int? BeginOffset
-			{
-				get
-				{
-					return beginOffset;
-				}
-				set	
-				{
-					beginOffset = value;
-				}
-			}
-
-			public int? PtsCallbackInterval
-			{
-				get
-				{
-					return ptsCallbackInterval;
-				}
-				set	
-				{
-					ptsCallbackInterval = value;
-				}
-			}
+			private int? ptsCallbackInterval;
 
 			public string MaterialId
 			{
@@ -149,6 +101,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					materialId = value;
+				}
+			}
+
+			public string ResourceId
+			{
+				get
+				{
+					return resourceId;
+				}
+				set	
+				{
+					resourceId = value;
+				}
+			}
+
+			public string ResourceName
+			{
+				get
+				{
+					return resourceName;
+				}
+				set	
+				{
+					resourceName = value;
 				}
 			}
 
@@ -176,27 +152,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string VodUrl
+			public string FlvUrl
 			{
 				get
 				{
-					return vodUrl;
+					return flvUrl;
 				}
 				set	
 				{
-					vodUrl = value;
-				}
-			}
-
-			public string ResourceId
-			{
-				get
-				{
-					return resourceId;
-				}
-				set	
-				{
-					resourceId = value;
+					flvUrl = value;
 				}
 			}
 
@@ -212,15 +176,51 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string ResourceName
+			public string VodUrl
 			{
 				get
 				{
-					return resourceName;
+					return vodUrl;
 				}
 				set	
 				{
-					resourceName = value;
+					vodUrl = value;
+				}
+			}
+
+			public int? BeginOffset
+			{
+				get
+				{
+					return beginOffset;
+				}
+				set	
+				{
+					beginOffset = value;
+				}
+			}
+
+			public int? EndOffset
+			{
+				get
+				{
+					return endOffset;
+				}
+				set	
+				{
+					endOffset = value;
+				}
+			}
+
+			public int? PtsCallbackInterval
+			{
+				get
+				{
+					return ptsCallbackInterval;
+				}
+				set	
+				{
+					ptsCallbackInterval = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveDomainBpsDataByTimeStampResponse : AcsResponse
 	{
 
-		private string timeStamp;
-
 		private string requestId;
 
 		private string domainName;
 
-		private List<DescribeLiveDomainBpsDataByTimeStamp_BpsDataModel> bpsDataList;
+		private string timeStamp;
 
-		public string TimeStamp
-		{
-			get
-			{
-				return timeStamp;
-			}
-			set	
-			{
-				timeStamp = value;
-			}
-		}
+		private List<DescribeLiveDomainBpsDataByTimeStamp_BpsDataModel> bpsDataList;
 
 		public string RequestId
 		{
@@ -69,6 +57,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string TimeStamp
+		{
+			get
+			{
+				return timeStamp;
+			}
+			set	
+			{
+				timeStamp = value;
+			}
+		}
+
 		public List<DescribeLiveDomainBpsDataByTimeStamp_BpsDataModel> BpsDataList
 		{
 			get
@@ -84,25 +84,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainBpsDataByTimeStamp_BpsDataModel
 		{
 
-			private string locationName;
-
 			private string timeStamp;
+
+			private string locationName;
 
 			private string ispName;
 
 			private long? bps;
-
-			public string LocationName
-			{
-				get
-				{
-					return locationName;
-				}
-				set	
-				{
-					locationName = value;
-				}
-			}
 
 			public string TimeStamp
 			{
@@ -113,6 +101,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					timeStamp = value;
+				}
+			}
+
+			public string LocationName
+			{
+				get
+				{
+					return locationName;
+				}
+				set	
+				{
+					locationName = value;
 				}
 			}
 

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			PlayChoosenShowResponse playChoosenShowResponse = new PlayChoosenShowResponse();
 
 			playChoosenShowResponse.HttpResponse = _ctx.HttpResponse;
-			playChoosenShowResponse.ShowId = _ctx.StringValue("PlayChoosenShow.ShowId");
 			playChoosenShowResponse.RequestId = _ctx.StringValue("PlayChoosenShow.RequestId");
+			playChoosenShowResponse.ShowId = _ctx.StringValue("PlayChoosenShow.ShowId");
         
 			return playChoosenShowResponse;
         }

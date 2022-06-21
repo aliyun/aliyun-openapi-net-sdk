@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,29 +56,53 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamWatermarks_Watermark
 		{
 
+			private string templateId;
+
+			private string name;
+
 			private int? type;
 
-			private float? xOffset;
+			private string description;
 
 			private int? refWidth;
+
+			private int? refHeight;
+
+			private float? xOffset;
 
 			private float? yOffset;
 
 			private int? height;
 
-			private int? refHeight;
-
-			private string pictureUrl;
-
 			private int? transparency;
-
-			private string description;
 
 			private string offsetCorner;
 
-			private string name;
+			private string pictureUrl;
 
-			private string templateId;
+			public string TemplateId
+			{
+				get
+				{
+					return templateId;
+				}
+				set	
+				{
+					templateId = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
 
 			public int? Type
 			{
@@ -92,15 +116,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public float? XOffset
+			public string Description
 			{
 				get
 				{
-					return xOffset;
+					return description;
 				}
 				set	
 				{
-					xOffset = value;
+					description = value;
 				}
 			}
 
@@ -113,6 +137,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					refWidth = value;
+				}
+			}
+
+			public int? RefHeight
+			{
+				get
+				{
+					return refHeight;
+				}
+				set	
+				{
+					refHeight = value;
+				}
+			}
+
+			public float? XOffset
+			{
+				get
+				{
+					return xOffset;
+				}
+				set	
+				{
+					xOffset = value;
 				}
 			}
 
@@ -140,30 +188,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? RefHeight
-			{
-				get
-				{
-					return refHeight;
-				}
-				set	
-				{
-					refHeight = value;
-				}
-			}
-
-			public string PictureUrl
-			{
-				get
-				{
-					return pictureUrl;
-				}
-				set	
-				{
-					pictureUrl = value;
-				}
-			}
-
 			public int? Transparency
 			{
 				get
@@ -173,18 +197,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					transparency = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
 				}
 			}
 
@@ -200,27 +212,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string Name
+			public string PictureUrl
 			{
 				get
 				{
-					return name;
+					return pictureUrl;
 				}
 				set	
 				{
-					name = value;
-				}
-			}
-
-			public string TemplateId
-			{
-				get
-				{
-					return templateId;
-				}
-				set	
-				{
-					templateId = value;
+					pictureUrl = value;
 				}
 			}
 		}

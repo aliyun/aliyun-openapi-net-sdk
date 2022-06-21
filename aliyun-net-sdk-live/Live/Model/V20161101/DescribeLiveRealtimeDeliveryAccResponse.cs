@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -58,9 +58,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string timeStamp;
 
-			private int? failedNum;
-
 			private int? successNum;
+
+			private int? failedNum;
 
 			public string TimeStamp
 			{
@@ -74,18 +74,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? FailedNum
-			{
-				get
-				{
-					return failedNum;
-				}
-				set	
-				{
-					failedNum = value;
-				}
-			}
-
 			public int? SuccessNum
 			{
 				get
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					successNum = value;
+				}
+			}
+
+			public int? FailedNum
+			{
+				get
+				{
+					return failedNum;
+				}
+				set	
+				{
+					failedNum = value;
 				}
 			}
 		}

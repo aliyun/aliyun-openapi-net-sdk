@@ -36,12 +36,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<ListLiveRealtimeLogDeliveryResponse.ListLiveRealtimeLogDelivery_RealtimeLogDeliveryInfo> listLiveRealtimeLogDeliveryResponse_content = new List<ListLiveRealtimeLogDeliveryResponse.ListLiveRealtimeLogDelivery_RealtimeLogDeliveryInfo>();
 			for (int i = 0; i < _ctx.Length("ListLiveRealtimeLogDelivery.Content.Length"); i++) {
 				ListLiveRealtimeLogDeliveryResponse.ListLiveRealtimeLogDelivery_RealtimeLogDeliveryInfo realtimeLogDeliveryInfo = new ListLiveRealtimeLogDeliveryResponse.ListLiveRealtimeLogDelivery_RealtimeLogDeliveryInfo();
-				realtimeLogDeliveryInfo.Status = _ctx.StringValue("ListLiveRealtimeLogDelivery.Content["+ i +"].Status");
-				realtimeLogDeliveryInfo.DmId = _ctx.IntegerValue("ListLiveRealtimeLogDelivery.Content["+ i +"].DmId");
-				realtimeLogDeliveryInfo.Region = _ctx.StringValue("ListLiveRealtimeLogDelivery.Content["+ i +"].Region");
-				realtimeLogDeliveryInfo.Logstore = _ctx.StringValue("ListLiveRealtimeLogDelivery.Content["+ i +"].Logstore");
 				realtimeLogDeliveryInfo.Project = _ctx.StringValue("ListLiveRealtimeLogDelivery.Content["+ i +"].Project");
+				realtimeLogDeliveryInfo.Logstore = _ctx.StringValue("ListLiveRealtimeLogDelivery.Content["+ i +"].Logstore");
+				realtimeLogDeliveryInfo.Region = _ctx.StringValue("ListLiveRealtimeLogDelivery.Content["+ i +"].Region");
 				realtimeLogDeliveryInfo.DomainName = _ctx.StringValue("ListLiveRealtimeLogDelivery.Content["+ i +"].DomainName");
+				realtimeLogDeliveryInfo.DmId = _ctx.IntegerValue("ListLiveRealtimeLogDelivery.Content["+ i +"].DmId");
+				realtimeLogDeliveryInfo.Status = _ctx.StringValue("ListLiveRealtimeLogDelivery.Content["+ i +"].Status");
 
 				listLiveRealtimeLogDeliveryResponse_content.Add(realtimeLogDeliveryInfo);
 			}

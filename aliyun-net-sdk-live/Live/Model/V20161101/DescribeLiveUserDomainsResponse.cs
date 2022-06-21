@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -98,21 +98,57 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveUserDomains_PageData
 		{
 
-			private string gmtCreated;
+			private string domainName;
+
+			private string cname;
 
 			private string liveDomainType;
+
+			private string gmtCreated;
+
+			private string gmtModified;
+
+			private string description;
 
 			private string liveDomainStatus;
 
 			private string regionName;
 
-			private string description;
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
 
-			private string cname;
+			public string Cname
+			{
+				get
+				{
+					return cname;
+				}
+				set	
+				{
+					cname = value;
+				}
+			}
 
-			private string gmtModified;
-
-			private string domainName;
+			public string LiveDomainType
+			{
+				get
+				{
+					return liveDomainType;
+				}
+				set	
+				{
+					liveDomainType = value;
+				}
+			}
 
 			public string GmtCreated
 			{
@@ -126,15 +162,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string LiveDomainType
+			public string GmtModified
 			{
 				get
 				{
-					return liveDomainType;
+					return gmtModified;
 				}
 				set	
 				{
-					liveDomainType = value;
+					gmtModified = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 
@@ -159,54 +207,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					regionName = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string Cname
-			{
-				get
-				{
-					return cname;
-				}
-				set	
-				{
-					cname = value;
-				}
-			}
-
-			public string GmtModified
-			{
-				get
-				{
-					return gmtModified;
-				}
-				set	
-				{
-					gmtModified = value;
-				}
-			}
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
 				}
 			}
 		}

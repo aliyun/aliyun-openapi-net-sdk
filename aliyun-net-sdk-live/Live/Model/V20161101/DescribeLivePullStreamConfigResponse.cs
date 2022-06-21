@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,31 +56,31 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLivePullStreamConfig_LiveAppRecord
 		{
 
-			private string endTime;
+			private string domainName;
 
 			private string appName;
 
-			private string sourceUrl;
-
-			private string startTime;
-
-			private string always;
-
 			private string streamName;
+
+			private string sourceUrl;
 
 			private string sourceUsing;
 
-			private string domainName;
+			private string startTime;
 
-			public string EndTime
+			private string endTime;
+
+			private string always;
+
+			public string DomainName
 			{
 				get
 				{
-					return endTime;
+					return domainName;
 				}
 				set	
 				{
-					endTime = value;
+					domainName = value;
 				}
 			}
 
@@ -96,42 +96,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string SourceUrl
-			{
-				get
-				{
-					return sourceUrl;
-				}
-				set	
-				{
-					sourceUrl = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
-			public string Always
-			{
-				get
-				{
-					return always;
-				}
-				set	
-				{
-					always = value;
-				}
-			}
-
 			public string StreamName
 			{
 				get
@@ -141,6 +105,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					streamName = value;
+				}
+			}
+
+			public string SourceUrl
+			{
+				get
+				{
+					return sourceUrl;
+				}
+				set	
+				{
+					sourceUrl = value;
 				}
 			}
 
@@ -156,15 +132,39 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string DomainName
+			public string StartTime
 			{
 				get
 				{
-					return domainName;
+					return startTime;
 				}
 				set	
 				{
-					domainName = value;
+					startTime = value;
+				}
+			}
+
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			public string Always
+			{
+				get
+				{
+					return always;
+				}
+				set	
+				{
+					always = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class ListLiveRealtimeLogDeliveryDomains_Domains
 		{
 
-			private string status;
-
 			private string domainName;
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+			private string status;
 
 			public string DomainName
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					domainName = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string requestId;
 
-		private int? userCount;
-
 		private int? streamCount;
+
+		private int? userCount;
 
 		private List<DescribeLiveDomainOnlineUserNum_LiveStreamOnlineUserNumInfo> onlineUserInfo;
 
@@ -45,18 +45,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? UserCount
-		{
-			get
-			{
-				return userCount;
-			}
-			set	
-			{
-				userCount = value;
-			}
-		}
-
 		public int? StreamCount
 		{
 			get
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				streamCount = value;
+			}
+		}
+
+		public int? UserCount
+		{
+			get
+			{
+				return userCount;
+			}
+			set	
+			{
+				userCount = value;
 			}
 		}
 
@@ -115,21 +115,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeLiveDomainOnlineUserNum_Info
 			{
 
-				private long? userNumber;
-
 				private string transcodeTemplate;
 
-				public long? UserNumber
-				{
-					get
-					{
-						return userNumber;
-					}
-					set	
-					{
-						userNumber = value;
-					}
-				}
+				private long? userNumber;
 
 				public string TranscodeTemplate
 				{
@@ -140,6 +128,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						transcodeTemplate = value;
+					}
+				}
+
+				public long? UserNumber
+				{
+					get
+					{
+						return userNumber;
+					}
+					set	
+					{
+						userNumber = value;
 					}
 				}
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,37 +56,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainFrameRateAndBitRateData_FrameRateAndBitRateInfo
 		{
 
-			private float? videoFrameRate;
-
-			private string streamUrl;
-
 			private float? audioFrameRate;
 
 			private float? bitRate;
 
-			public float? VideoFrameRate
-			{
-				get
-				{
-					return videoFrameRate;
-				}
-				set	
-				{
-					videoFrameRate = value;
-				}
-			}
+			private float? videoFrameRate;
 
-			public string StreamUrl
-			{
-				get
-				{
-					return streamUrl;
-				}
-				set	
-				{
-					streamUrl = value;
-				}
-			}
+			private string streamUrl;
 
 			public float? AudioFrameRate
 			{
@@ -109,6 +85,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					bitRate = value;
+				}
+			}
+
+			public float? VideoFrameRate
+			{
+				get
+				{
+					return videoFrameRate;
+				}
+				set	
+				{
+					videoFrameRate = value;
+				}
+			}
+
+			public string StreamUrl
+			{
+				get
+				{
+					return streamUrl;
+				}
+				set	
+				{
+					streamUrl = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveAudioAuditNotifyConfig_LiveAudioAuditNotifyConfig
 		{
 
-			private string callbackTemplate;
-
 			private string domainName;
 
 			private string callback;
 
-			public string CallbackTemplate
-			{
-				get
-				{
-					return callbackTemplate;
-				}
-				set	
-				{
-					callbackTemplate = value;
-				}
-			}
+			private string callbackTemplate;
 
 			public string DomainName
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					callback = value;
+				}
+			}
+
+			public string CallbackTemplate
+			{
+				get
+				{
+					return callbackTemplate;
+				}
+				set	
+				{
+					callbackTemplate = value;
 				}
 			}
 		}

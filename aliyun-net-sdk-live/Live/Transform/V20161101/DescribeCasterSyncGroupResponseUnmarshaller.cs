@@ -31,14 +31,14 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeCasterSyncGroupResponse describeCasterSyncGroupResponse = new DescribeCasterSyncGroupResponse();
 
 			describeCasterSyncGroupResponse.HttpResponse = _ctx.HttpResponse;
-			describeCasterSyncGroupResponse.CasterId = _ctx.StringValue("DescribeCasterSyncGroup.CasterId");
 			describeCasterSyncGroupResponse.RequestId = _ctx.StringValue("DescribeCasterSyncGroup.RequestId");
+			describeCasterSyncGroupResponse.CasterId = _ctx.StringValue("DescribeCasterSyncGroup.CasterId");
 
 			List<DescribeCasterSyncGroupResponse.DescribeCasterSyncGroup_SyncGroup> describeCasterSyncGroupResponse_syncGroups = new List<DescribeCasterSyncGroupResponse.DescribeCasterSyncGroup_SyncGroup>();
 			for (int i = 0; i < _ctx.Length("DescribeCasterSyncGroup.SyncGroups.Length"); i++) {
 				DescribeCasterSyncGroupResponse.DescribeCasterSyncGroup_SyncGroup syncGroup = new DescribeCasterSyncGroupResponse.DescribeCasterSyncGroup_SyncGroup();
-				syncGroup.HostResourceId = _ctx.StringValue("DescribeCasterSyncGroup.SyncGroups["+ i +"].HostResourceId");
 				syncGroup.Mode = _ctx.IntegerValue("DescribeCasterSyncGroup.SyncGroups["+ i +"].Mode");
+				syncGroup.HostResourceId = _ctx.StringValue("DescribeCasterSyncGroup.SyncGroups["+ i +"].HostResourceId");
 
 				List<string> syncGroup_resourceIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeCasterSyncGroup.SyncGroups["+ i +"].ResourceIds.Length"); j++) {

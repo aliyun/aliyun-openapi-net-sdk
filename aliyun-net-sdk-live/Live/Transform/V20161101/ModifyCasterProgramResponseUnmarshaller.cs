@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			ModifyCasterProgramResponse modifyCasterProgramResponse = new ModifyCasterProgramResponse();
 
 			modifyCasterProgramResponse.HttpResponse = _ctx.HttpResponse;
-			modifyCasterProgramResponse.CasterId = _ctx.StringValue("ModifyCasterProgram.CasterId");
 			modifyCasterProgramResponse.RequestId = _ctx.StringValue("ModifyCasterProgram.RequestId");
+			modifyCasterProgramResponse.CasterId = _ctx.StringValue("ModifyCasterProgram.CasterId");
         
 			return modifyCasterProgramResponse;
         }

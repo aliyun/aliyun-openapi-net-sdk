@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,31 +25,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveSnapshotConfigResponse : AcsResponse
 	{
 
-		private int? pageNum;
-
 		private string requestId;
 
-		private string order;
-
-		private int? totalPage;
+		private int? pageNum;
 
 		private int? pageSize;
 
+		private string order;
+
 		private int? totalNum;
 
-		private List<DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig> liveStreamSnapshotConfigList;
+		private int? totalPage;
 
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-			}
-		}
+		private List<DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig> liveStreamSnapshotConfigList;
 
 		public string RequestId
 		{
@@ -63,27 +51,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Order
+		public int? PageNum
 		{
 			get
 			{
-				return order;
+				return pageNum;
 			}
 			set	
 			{
-				order = value;
-			}
-		}
-
-		public int? TotalPage
-		{
-			get
-			{
-				return totalPage;
-			}
-			set	
-			{
-				totalPage = value;
+				pageNum = value;
 			}
 		}
 
@@ -99,6 +75,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string Order
+		{
+			get
+			{
+				return order;
+			}
+			set	
+			{
+				order = value;
+			}
+		}
+
 		public int? TotalNum
 		{
 			get
@@ -108,6 +96,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				totalNum = value;
+			}
+		}
+
+		public int? TotalPage
+		{
+			get
+			{
+				return totalPage;
+			}
+			set	
+			{
+				totalPage = value;
 			}
 		}
 
@@ -126,45 +126,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig
 		{
 
-			private string overwriteOssObject;
-
-			private int? timeInterval;
+			private string domainName;
 
 			private string appName;
 
-			private string createTime;
-
-			private string ossBucket;
-
-			private string domainName;
-
-			private string callback;
-
-			private string sequenceOssObject;
+			private int? timeInterval;
 
 			private string ossEndpoint;
 
-			public string OverwriteOssObject
-			{
-				get
-				{
-					return overwriteOssObject;
-				}
-				set	
-				{
-					overwriteOssObject = value;
-				}
-			}
+			private string ossBucket;
 
-			public int? TimeInterval
+			private string overwriteOssObject;
+
+			private string sequenceOssObject;
+
+			private string createTime;
+
+			private string callback;
+
+			public string DomainName
 			{
 				get
 				{
-					return timeInterval;
+					return domainName;
 				}
 				set	
 				{
-					timeInterval = value;
+					domainName = value;
 				}
 			}
 
@@ -180,15 +168,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string CreateTime
+			public int? TimeInterval
 			{
 				get
 				{
-					return createTime;
+					return timeInterval;
 				}
 				set	
 				{
-					createTime = value;
+					timeInterval = value;
+				}
+			}
+
+			public string OssEndpoint
+			{
+				get
+				{
+					return ossEndpoint;
+				}
+				set	
+				{
+					ossEndpoint = value;
 				}
 			}
 
@@ -204,27 +204,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string DomainName
+			public string OverwriteOssObject
 			{
 				get
 				{
-					return domainName;
+					return overwriteOssObject;
 				}
 				set	
 				{
-					domainName = value;
-				}
-			}
-
-			public string Callback
-			{
-				get
-				{
-					return callback;
-				}
-				set	
-				{
-					callback = value;
+					overwriteOssObject = value;
 				}
 			}
 
@@ -240,15 +228,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string OssEndpoint
+			public string CreateTime
 			{
 				get
 				{
-					return ossEndpoint;
+					return createTime;
 				}
 				set	
 				{
-					ossEndpoint = value;
+					createTime = value;
+				}
+			}
+
+			public string Callback
+			{
+				get
+				{
+					return callback;
+				}
+				set	
+				{
+					callback = value;
 				}
 			}
 		}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			VerifyLiveDomainOwnerResponse verifyLiveDomainOwnerResponse = new VerifyLiveDomainOwnerResponse();
 
 			verifyLiveDomainOwnerResponse.HttpResponse = _ctx.HttpResponse;
-			verifyLiveDomainOwnerResponse.Content = _ctx.StringValue("VerifyLiveDomainOwner.Content");
 			verifyLiveDomainOwnerResponse.RequestId = _ctx.StringValue("VerifyLiveDomainOwner.RequestId");
+			verifyLiveDomainOwnerResponse.Content = _ctx.StringValue("VerifyLiveDomainOwner.Content");
         
 			return verifyLiveDomainOwnerResponse;
         }

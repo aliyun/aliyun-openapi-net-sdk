@@ -31,9 +31,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DeleteMultiRateConfigResponse deleteMultiRateConfigResponse = new DeleteMultiRateConfigResponse();
 
 			deleteMultiRateConfigResponse.HttpResponse = _ctx.HttpResponse;
-			deleteMultiRateConfigResponse.Code = _ctx.IntegerValue("DeleteMultiRateConfig.Code");
-			deleteMultiRateConfigResponse.Message = _ctx.StringValue("DeleteMultiRateConfig.Message");
 			deleteMultiRateConfigResponse.RequestId = _ctx.StringValue("DeleteMultiRateConfig.RequestId");
+			deleteMultiRateConfigResponse.Message = _ctx.StringValue("DeleteMultiRateConfig.Message");
+			deleteMultiRateConfigResponse.Code = _ctx.IntegerValue("DeleteMultiRateConfig.Code");
         
 			return deleteMultiRateConfigResponse;
         }

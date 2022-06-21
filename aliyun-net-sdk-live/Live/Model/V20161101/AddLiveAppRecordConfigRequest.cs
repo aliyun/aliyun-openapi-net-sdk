@@ -50,7 +50,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string securityToken;
 
-		private List<string> transcodeRecordFormats = new List<string>(){ };
+		private List<TranscodeRecordFormat> transcodeRecordFormats = new List<TranscodeRecordFormat>(){ };
 
 		private int? onDemand;
 
@@ -64,7 +64,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
-		private List<string> recordFormats = new List<string>(){ };
+		private List<RecordFormat> recordFormats = new List<RecordFormat>(){ };
 
 		public string OssEndpoint
 		{
@@ -89,6 +89,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				transcodeTemplatess = value;
+				for (int i = 0; i < transcodeTemplatess.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"TranscodeTemplates." + (i + 1) , transcodeTemplatess[i]);
+				}
 			}
 		}
 
@@ -131,7 +135,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<string> TranscodeRecordFormats
+		public List<TranscodeRecordFormat> TranscodeRecordFormats
 		{
 			get
 			{
@@ -141,16 +145,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				transcodeRecordFormats = value;
-				if(transcodeRecordFormats != null)
+				for (int i = 0; i < transcodeRecordFormats.Count; i++)
 				{
-					for (int depth1 = 0; depth1 < transcodeRecordFormats.Count; depth1++)
-					{
-						DictionaryUtil.Add(QueryParameters,"TranscodeRecordFormat." + (depth1 + 1), transcodeRecordFormats[depth1]);
-						DictionaryUtil.Add(QueryParameters,"TranscodeRecordFormat." + (depth1 + 1), transcodeRecordFormats[depth1]);
-						DictionaryUtil.Add(QueryParameters,"TranscodeRecordFormat." + (depth1 + 1), transcodeRecordFormats[depth1]);
-						DictionaryUtil.Add(QueryParameters,"TranscodeRecordFormat." + (depth1 + 1), transcodeRecordFormats[depth1]);
-						DictionaryUtil.Add(QueryParameters,"TranscodeRecordFormat." + (depth1 + 1), transcodeRecordFormats[depth1]);
-					}
+					DictionaryUtil.Add(QueryParameters,"TranscodeRecordFormat." + (i + 1) + ".SliceOssObjectPrefix", transcodeRecordFormats[i].SliceOssObjectPrefix);
+					DictionaryUtil.Add(QueryParameters,"TranscodeRecordFormat." + (i + 1) + ".SliceDuration", transcodeRecordFormats[i].SliceDuration);
+					DictionaryUtil.Add(QueryParameters,"TranscodeRecordFormat." + (i + 1) + ".Format", transcodeRecordFormats[i].Format);
+					DictionaryUtil.Add(QueryParameters,"TranscodeRecordFormat." + (i + 1) + ".OssObjectPrefix", transcodeRecordFormats[i].OssObjectPrefix);
+					DictionaryUtil.Add(QueryParameters,"TranscodeRecordFormat." + (i + 1) + ".CycleDuration", transcodeRecordFormats[i].CycleDuration);
 				}
 			}
 		}
@@ -233,7 +234,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<string> RecordFormats
+		public List<RecordFormat> RecordFormats
 		{
 			get
 			{
@@ -243,16 +244,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				recordFormats = value;
-				if(recordFormats != null)
+				for (int i = 0; i < recordFormats.Count; i++)
 				{
-					for (int depth1 = 0; depth1 < recordFormats.Count; depth1++)
-					{
-						DictionaryUtil.Add(QueryParameters,"RecordFormat." + (depth1 + 1), recordFormats[depth1]);
-						DictionaryUtil.Add(QueryParameters,"RecordFormat." + (depth1 + 1), recordFormats[depth1]);
-						DictionaryUtil.Add(QueryParameters,"RecordFormat." + (depth1 + 1), recordFormats[depth1]);
-						DictionaryUtil.Add(QueryParameters,"RecordFormat." + (depth1 + 1), recordFormats[depth1]);
-						DictionaryUtil.Add(QueryParameters,"RecordFormat." + (depth1 + 1), recordFormats[depth1]);
-					}
+					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".SliceOssObjectPrefix", recordFormats[i].SliceOssObjectPrefix);
+					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".SliceDuration", recordFormats[i].SliceDuration);
+					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".Format", recordFormats[i].Format);
+					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".OssObjectPrefix", recordFormats[i].OssObjectPrefix);
+					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".CycleDuration", recordFormats[i].CycleDuration);
 				}
 			}
 		}
@@ -264,9 +262,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private int? sliceDuration;
 
-			private string ossObjectPrefix;
-
 			private string format;
+
+			private string ossObjectPrefix;
 
 			private int? cycleDuration;
 
@@ -294,18 +292,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string OssObjectPrefix
-			{
-				get
-				{
-					return ossObjectPrefix;
-				}
-				set	
-				{
-					ossObjectPrefix = value;
-				}
-			}
-
 			public string Format
 			{
 				get
@@ -315,6 +301,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					format = value;
+				}
+			}
+
+			public string OssObjectPrefix
+			{
+				get
+				{
+					return ossObjectPrefix;
+				}
+				set	
+				{
+					ossObjectPrefix = value;
 				}
 			}
 
@@ -338,9 +336,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private int? sliceDuration;
 
-			private string ossObjectPrefix;
-
 			private string format;
+
+			private string ossObjectPrefix;
 
 			private int? cycleDuration;
 
@@ -368,18 +366,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string OssObjectPrefix
-			{
-				get
-				{
-					return ossObjectPrefix;
-				}
-				set	
-				{
-					ossObjectPrefix = value;
-				}
-			}
-
 			public string Format
 			{
 				get
@@ -389,6 +375,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					format = value;
+				}
+			}
+
+			public string OssObjectPrefix
+			{
+				get
+				{
+					return ossObjectPrefix;
+				}
+				set	
+				{
+					ossObjectPrefix = value;
 				}
 			}
 

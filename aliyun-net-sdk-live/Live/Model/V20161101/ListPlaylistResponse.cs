@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class ListPlaylistResponse : AcsResponse
 	{
 
-		private int? total;
-
 		private string requestId;
 
-		private List<ListPlaylist_ProgramInfo> programList;
+		private int? total;
 
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
+		private List<ListPlaylist_ProgramInfo> programList;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
 			}
 		}
 
@@ -70,39 +70,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class ListPlaylist_ProgramInfo
 		{
 
-			private int? status;
-
-			private int? repeatNumber;
+			private string programId;
 
 			private string programName;
-
-			private string programId;
 
 			private string casterId;
 
 			private string domainName;
 
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+			private int? repeatNumber;
 
-			public int? RepeatNumber
+			private int? status;
+
+			public string ProgramId
 			{
 				get
 				{
-					return repeatNumber;
+					return programId;
 				}
 				set	
 				{
-					repeatNumber = value;
+					programId = value;
 				}
 			}
 
@@ -115,18 +103,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					programName = value;
-				}
-			}
-
-			public string ProgramId
-			{
-				get
-				{
-					return programId;
-				}
-				set	
-				{
-					programId = value;
 				}
 			}
 
@@ -151,6 +127,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					domainName = value;
+				}
+			}
+
+			public int? RepeatNumber
+			{
+				get
+				{
+					return repeatNumber;
+				}
+				set	
+				{
+					repeatNumber = value;
+				}
+			}
+
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

@@ -31,27 +31,27 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			AddMultiRateConfigResponse addMultiRateConfigResponse = new AddMultiRateConfigResponse();
 
 			addMultiRateConfigResponse.HttpResponse = _ctx.HttpResponse;
-			addMultiRateConfigResponse.Code = _ctx.IntegerValue("AddMultiRateConfig.Code");
-			addMultiRateConfigResponse.Message = _ctx.StringValue("AddMultiRateConfig.Message");
 			addMultiRateConfigResponse.RequestId = _ctx.StringValue("AddMultiRateConfig.RequestId");
+			addMultiRateConfigResponse.Message = _ctx.StringValue("AddMultiRateConfig.Message");
+			addMultiRateConfigResponse.Code = _ctx.IntegerValue("AddMultiRateConfig.Code");
 
 			List<AddMultiRateConfigResponse.AddMultiRateConfig_FailedTemplates> addMultiRateConfigResponse_body = new List<AddMultiRateConfigResponse.AddMultiRateConfig_FailedTemplates>();
 			for (int i = 0; i < _ctx.Length("AddMultiRateConfig.Body.Length"); i++) {
 				AddMultiRateConfigResponse.AddMultiRateConfig_FailedTemplates failedTemplates = new AddMultiRateConfigResponse.AddMultiRateConfig_FailedTemplates();
-				failedTemplates.AudioBitrate = _ctx.IntegerValue("AddMultiRateConfig.Body["+ i +"].AudioBitrate");
 				failedTemplates.Template = _ctx.StringValue("AddMultiRateConfig.Body["+ i +"].Template");
-				failedTemplates.Height = _ctx.IntegerValue("AddMultiRateConfig.Body["+ i +"].Height");
 				failedTemplates.TemplateType = _ctx.StringValue("AddMultiRateConfig.Body["+ i +"].TemplateType");
-				failedTemplates.BandWidth = _ctx.IntegerValue("AddMultiRateConfig.Body["+ i +"].BandWidth");
-				failedTemplates.Profile = _ctx.IntegerValue("AddMultiRateConfig.Body["+ i +"].Profile");
-				failedTemplates.AudioRate = _ctx.IntegerValue("AddMultiRateConfig.Body["+ i +"].AudioRate");
-				failedTemplates.AudioCodec = _ctx.StringValue("AddMultiRateConfig.Body["+ i +"].AudioCodec");
-				failedTemplates.Gop = _ctx.StringValue("AddMultiRateConfig.Body["+ i +"].Gop");
+				failedTemplates.Height = _ctx.IntegerValue("AddMultiRateConfig.Body["+ i +"].Height");
 				failedTemplates.Width = _ctx.IntegerValue("AddMultiRateConfig.Body["+ i +"].Width");
-				failedTemplates.VideoBitrate = _ctx.IntegerValue("AddMultiRateConfig.Body["+ i +"].VideoBitrate");
-				failedTemplates.AudioChannelNum = _ctx.IntegerValue("AddMultiRateConfig.Body["+ i +"].AudioChannelNum");
 				failedTemplates.Fps = _ctx.IntegerValue("AddMultiRateConfig.Body["+ i +"].Fps");
+				failedTemplates.Gop = _ctx.StringValue("AddMultiRateConfig.Body["+ i +"].Gop");
+				failedTemplates.VideoBitrate = _ctx.IntegerValue("AddMultiRateConfig.Body["+ i +"].VideoBitrate");
+				failedTemplates.Profile = _ctx.IntegerValue("AddMultiRateConfig.Body["+ i +"].Profile");
 				failedTemplates.AudioProfile = _ctx.StringValue("AddMultiRateConfig.Body["+ i +"].AudioProfile");
+				failedTemplates.AudioCodec = _ctx.StringValue("AddMultiRateConfig.Body["+ i +"].AudioCodec");
+				failedTemplates.AudioRate = _ctx.IntegerValue("AddMultiRateConfig.Body["+ i +"].AudioRate");
+				failedTemplates.AudioBitrate = _ctx.IntegerValue("AddMultiRateConfig.Body["+ i +"].AudioBitrate");
+				failedTemplates.AudioChannelNum = _ctx.IntegerValue("AddMultiRateConfig.Body["+ i +"].AudioChannelNum");
+				failedTemplates.BandWidth = _ctx.IntegerValue("AddMultiRateConfig.Body["+ i +"].BandWidth");
 
 				addMultiRateConfigResponse_body.Add(failedTemplates);
 			}

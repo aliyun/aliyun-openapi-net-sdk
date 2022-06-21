@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class AddPlaylistItemsResponse : AcsResponse
 	{
 
-		private string programId;
-
 		private string requestId;
 
-		private AddPlaylistItems_Items items;
+		private string programId;
 
-		public string ProgramId
-		{
-			get
-			{
-				return programId;
-			}
-			set	
-			{
-				programId = value;
-			}
-		}
+		private AddPlaylistItems_Items items;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ProgramId
+		{
+			get
+			{
+				return programId;
+			}
+			set	
+			{
+				programId = value;
 			}
 		}
 
@@ -101,21 +101,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class AddPlaylistItems_SuccessItem
 			{
 
-				private string itemName;
-
 				private string itemId;
 
-				public string ItemName
-				{
-					get
-					{
-						return itemName;
-					}
-					set	
-					{
-						itemName = value;
-					}
-				}
+				private string itemName;
 
 				public string ItemId
 				{
@@ -126,6 +114,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						itemId = value;
+					}
+				}
+
+				public string ItemName
+				{
+					get
+					{
+						return itemName;
+					}
+					set	
+					{
+						itemName = value;
 					}
 				}
 			}
@@ -133,21 +133,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class AddPlaylistItems_FailedItem
 			{
 
-				private string itemName;
-
 				private string itemId;
 
-				public string ItemName
-				{
-					get
-					{
-						return itemName;
-					}
-					set	
-					{
-						itemName = value;
-					}
-				}
+				private string itemName;
 
 				public string ItemId
 				{
@@ -158,6 +146,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						itemId = value;
+					}
+				}
+
+				public string ItemName
+				{
+					get
+					{
+						return itemName;
+					}
+					set	
+					{
+						itemName = value;
 					}
 				}
 			}

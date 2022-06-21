@@ -31,16 +31,16 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			AddPlaylistItemsResponse addPlaylistItemsResponse = new AddPlaylistItemsResponse();
 
 			addPlaylistItemsResponse.HttpResponse = _ctx.HttpResponse;
-			addPlaylistItemsResponse.ProgramId = _ctx.StringValue("AddPlaylistItems.ProgramId");
 			addPlaylistItemsResponse.RequestId = _ctx.StringValue("AddPlaylistItems.RequestId");
+			addPlaylistItemsResponse.ProgramId = _ctx.StringValue("AddPlaylistItems.ProgramId");
 
 			AddPlaylistItemsResponse.AddPlaylistItems_Items items = new AddPlaylistItemsResponse.AddPlaylistItems_Items();
 
 			List<AddPlaylistItemsResponse.AddPlaylistItems_Items.AddPlaylistItems_SuccessItem> items_successItems = new List<AddPlaylistItemsResponse.AddPlaylistItems_Items.AddPlaylistItems_SuccessItem>();
 			for (int i = 0; i < _ctx.Length("AddPlaylistItems.Items.SuccessItems.Length"); i++) {
 				AddPlaylistItemsResponse.AddPlaylistItems_Items.AddPlaylistItems_SuccessItem successItem = new AddPlaylistItemsResponse.AddPlaylistItems_Items.AddPlaylistItems_SuccessItem();
-				successItem.ItemName = _ctx.StringValue("AddPlaylistItems.Items.SuccessItems["+ i +"].ItemName");
 				successItem.ItemId = _ctx.StringValue("AddPlaylistItems.Items.SuccessItems["+ i +"].ItemId");
+				successItem.ItemName = _ctx.StringValue("AddPlaylistItems.Items.SuccessItems["+ i +"].ItemName");
 
 				items_successItems.Add(successItem);
 			}
@@ -49,8 +49,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<AddPlaylistItemsResponse.AddPlaylistItems_Items.AddPlaylistItems_FailedItem> items_failedItems = new List<AddPlaylistItemsResponse.AddPlaylistItems_Items.AddPlaylistItems_FailedItem>();
 			for (int i = 0; i < _ctx.Length("AddPlaylistItems.Items.FailedItems.Length"); i++) {
 				AddPlaylistItemsResponse.AddPlaylistItems_Items.AddPlaylistItems_FailedItem failedItem = new AddPlaylistItemsResponse.AddPlaylistItems_Items.AddPlaylistItems_FailedItem();
-				failedItem.ItemName = _ctx.StringValue("AddPlaylistItems.Items.FailedItems["+ i +"].ItemName");
 				failedItem.ItemId = _ctx.StringValue("AddPlaylistItems.Items.FailedItems["+ i +"].ItemId");
+				failedItem.ItemName = _ctx.StringValue("AddPlaylistItems.Items.FailedItems["+ i +"].ItemName");
 
 				items_failedItems.Add(failedItem);
 			}

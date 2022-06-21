@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -101,11 +101,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeLiveDomainRecordData_Detail
 			{
 
+				private int? mP4;
+
 				private int? fLV;
 
 				private int? tS;
 
-				private int? mP4;
+				public int? MP4
+				{
+					get
+					{
+						return mP4;
+					}
+					set	
+					{
+						mP4 = value;
+					}
+				}
 
 				public int? FLV
 				{
@@ -128,18 +140,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						tS = value;
-					}
-				}
-
-				public int? MP4
-				{
-					get
-					{
-						return mP4;
-					}
-					set	
-					{
-						mP4 = value;
 					}
 				}
 			}

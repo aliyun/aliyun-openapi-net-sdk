@@ -36,16 +36,16 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveDomainCertificateInfoResponse.DescribeLiveDomainCertificateInfo_CertInfo> describeLiveDomainCertificateInfoResponse_certInfos = new List<DescribeLiveDomainCertificateInfoResponse.DescribeLiveDomainCertificateInfo_CertInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDomainCertificateInfo.CertInfos.Length"); i++) {
 				DescribeLiveDomainCertificateInfoResponse.DescribeLiveDomainCertificateInfo_CertInfo certInfo = new DescribeLiveDomainCertificateInfoResponse.DescribeLiveDomainCertificateInfo_CertInfo();
-				certInfo.Status = _ctx.StringValue("DescribeLiveDomainCertificateInfo.CertInfos["+ i +"].Status");
-				certInfo.CertLife = _ctx.StringValue("DescribeLiveDomainCertificateInfo.CertInfos["+ i +"].CertLife");
-				certInfo.CertExpireTime = _ctx.StringValue("DescribeLiveDomainCertificateInfo.CertInfos["+ i +"].CertExpireTime");
-				certInfo.SSLPub = _ctx.StringValue("DescribeLiveDomainCertificateInfo.CertInfos["+ i +"].SSLPub");
-				certInfo.SSLProtocol = _ctx.StringValue("DescribeLiveDomainCertificateInfo.CertInfos["+ i +"].SSLProtocol");
-				certInfo.CertType = _ctx.StringValue("DescribeLiveDomainCertificateInfo.CertInfos["+ i +"].CertType");
-				certInfo.CertDomainName = _ctx.StringValue("DescribeLiveDomainCertificateInfo.CertInfos["+ i +"].CertDomainName");
-				certInfo.CertName = _ctx.StringValue("DescribeLiveDomainCertificateInfo.CertInfos["+ i +"].CertName");
-				certInfo.CertOrg = _ctx.StringValue("DescribeLiveDomainCertificateInfo.CertInfos["+ i +"].CertOrg");
 				certInfo.DomainName = _ctx.StringValue("DescribeLiveDomainCertificateInfo.CertInfos["+ i +"].DomainName");
+				certInfo.CertName = _ctx.StringValue("DescribeLiveDomainCertificateInfo.CertInfos["+ i +"].CertName");
+				certInfo.CertDomainName = _ctx.StringValue("DescribeLiveDomainCertificateInfo.CertInfos["+ i +"].CertDomainName");
+				certInfo.CertExpireTime = _ctx.StringValue("DescribeLiveDomainCertificateInfo.CertInfos["+ i +"].CertExpireTime");
+				certInfo.CertLife = _ctx.StringValue("DescribeLiveDomainCertificateInfo.CertInfos["+ i +"].CertLife");
+				certInfo.CertOrg = _ctx.StringValue("DescribeLiveDomainCertificateInfo.CertInfos["+ i +"].CertOrg");
+				certInfo.CertType = _ctx.StringValue("DescribeLiveDomainCertificateInfo.CertInfos["+ i +"].CertType");
+				certInfo.SSLProtocol = _ctx.StringValue("DescribeLiveDomainCertificateInfo.CertInfos["+ i +"].SSLProtocol");
+				certInfo.Status = _ctx.StringValue("DescribeLiveDomainCertificateInfo.CertInfos["+ i +"].Status");
+				certInfo.SSLPub = _ctx.StringValue("DescribeLiveDomainCertificateInfo.CertInfos["+ i +"].SSLPub");
 
 				describeLiveDomainCertificateInfoResponse_certInfos.Add(certInfo);
 			}

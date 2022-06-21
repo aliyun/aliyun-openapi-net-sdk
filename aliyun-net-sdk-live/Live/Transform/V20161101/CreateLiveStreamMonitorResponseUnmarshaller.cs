@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			CreateLiveStreamMonitorResponse createLiveStreamMonitorResponse = new CreateLiveStreamMonitorResponse();
 
 			createLiveStreamMonitorResponse.HttpResponse = _ctx.HttpResponse;
-			createLiveStreamMonitorResponse.MonitorId = _ctx.StringValue("CreateLiveStreamMonitor.MonitorId");
 			createLiveStreamMonitorResponse.RequestId = _ctx.StringValue("CreateLiveStreamMonitor.RequestId");
+			createLiveStreamMonitorResponse.MonitorId = _ctx.StringValue("CreateLiveStreamMonitor.MonitorId");
         
 			return createLiveStreamMonitorResponse;
         }

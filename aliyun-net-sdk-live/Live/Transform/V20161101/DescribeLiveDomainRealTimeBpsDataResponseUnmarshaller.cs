@@ -31,17 +31,17 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveDomainRealTimeBpsDataResponse describeLiveDomainRealTimeBpsDataResponse = new DescribeLiveDomainRealTimeBpsDataResponse();
 
 			describeLiveDomainRealTimeBpsDataResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveDomainRealTimeBpsDataResponse.EndTime = _ctx.StringValue("DescribeLiveDomainRealTimeBpsData.EndTime");
-			describeLiveDomainRealTimeBpsDataResponse.StartTime = _ctx.StringValue("DescribeLiveDomainRealTimeBpsData.StartTime");
 			describeLiveDomainRealTimeBpsDataResponse.RequestId = _ctx.StringValue("DescribeLiveDomainRealTimeBpsData.RequestId");
 			describeLiveDomainRealTimeBpsDataResponse.DomainName = _ctx.StringValue("DescribeLiveDomainRealTimeBpsData.DomainName");
+			describeLiveDomainRealTimeBpsDataResponse.StartTime = _ctx.StringValue("DescribeLiveDomainRealTimeBpsData.StartTime");
+			describeLiveDomainRealTimeBpsDataResponse.EndTime = _ctx.StringValue("DescribeLiveDomainRealTimeBpsData.EndTime");
 			describeLiveDomainRealTimeBpsDataResponse.DataInterval = _ctx.StringValue("DescribeLiveDomainRealTimeBpsData.DataInterval");
 
 			List<DescribeLiveDomainRealTimeBpsDataResponse.DescribeLiveDomainRealTimeBpsData_DataModule> describeLiveDomainRealTimeBpsDataResponse_realTimeBpsDataPerInterval = new List<DescribeLiveDomainRealTimeBpsDataResponse.DescribeLiveDomainRealTimeBpsData_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDomainRealTimeBpsData.RealTimeBpsDataPerInterval.Length"); i++) {
 				DescribeLiveDomainRealTimeBpsDataResponse.DescribeLiveDomainRealTimeBpsData_DataModule dataModule = new DescribeLiveDomainRealTimeBpsDataResponse.DescribeLiveDomainRealTimeBpsData_DataModule();
-				dataModule._Value = _ctx.StringValue("DescribeLiveDomainRealTimeBpsData.RealTimeBpsDataPerInterval["+ i +"].Value");
 				dataModule.TimeStamp = _ctx.StringValue("DescribeLiveDomainRealTimeBpsData.RealTimeBpsDataPerInterval["+ i +"].TimeStamp");
+				dataModule._Value = _ctx.StringValue("DescribeLiveDomainRealTimeBpsData.RealTimeBpsDataPerInterval["+ i +"].Value");
 
 				describeLiveDomainRealTimeBpsDataResponse_realTimeBpsDataPerInterval.Add(dataModule);
 			}

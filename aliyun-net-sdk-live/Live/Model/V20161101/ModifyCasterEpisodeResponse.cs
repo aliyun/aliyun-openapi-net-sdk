@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class ModifyCasterEpisodeResponse : AcsResponse
 	{
 
-		private string episodeId;
-
 		private string requestId;
 
 		private string casterId;
 
-		public string EpisodeId
-		{
-			get
-			{
-				return episodeId;
-			}
-			set	
-			{
-				episodeId = value;
-			}
-		}
+		private string episodeId;
 
 		public string RequestId
 		{
@@ -64,6 +52,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				casterId = value;
+			}
+		}
+
+		public string EpisodeId
+		{
+			get
+			{
+				return episodeId;
+			}
+			set	
+			{
+				episodeId = value;
 			}
 		}
 	}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -84,27 +84,39 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeCasterStreamUrl_CasterStream
 		{
 
-			private string rtsUrl;
-
-			private string rtmpUrl;
-
 			private string sceneId;
-
-			private int? outputType;
 
 			private string streamUrl;
 
+			private string rtmpUrl;
+
+			private string rtsUrl;
+
+			private int? outputType;
+
 			private List<DescribeCasterStreamUrl_StreamInfo> streamInfos;
 
-			public string RtsUrl
+			public string SceneId
 			{
 				get
 				{
-					return rtsUrl;
+					return sceneId;
 				}
 				set	
 				{
-					rtsUrl = value;
+					sceneId = value;
+				}
+			}
+
+			public string StreamUrl
+			{
+				get
+				{
+					return streamUrl;
+				}
+				set	
+				{
+					streamUrl = value;
 				}
 			}
 
@@ -120,15 +132,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string SceneId
+			public string RtsUrl
 			{
 				get
 				{
-					return sceneId;
+					return rtsUrl;
 				}
 				set	
 				{
-					sceneId = value;
+					rtsUrl = value;
 				}
 			}
 
@@ -141,18 +153,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					outputType = value;
-				}
-			}
-
-			public string StreamUrl
-			{
-				get
-				{
-					return streamUrl;
-				}
-				set	
-				{
-					streamUrl = value;
 				}
 			}
 
@@ -171,11 +171,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeCasterStreamUrl_StreamInfo
 			{
 
+				private string transcodeConfig;
+
 				private string videoFormat;
 
 				private string outputStreamUrl;
 
-				private string transcodeConfig;
+				public string TranscodeConfig
+				{
+					get
+					{
+						return transcodeConfig;
+					}
+					set	
+					{
+						transcodeConfig = value;
+					}
+				}
 
 				public string VideoFormat
 				{
@@ -198,18 +210,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						outputStreamUrl = value;
-					}
-				}
-
-				public string TranscodeConfig
-				{
-					get
-					{
-						return transcodeConfig;
-					}
-					set	
-					{
-						transcodeConfig = value;
 					}
 				}
 			}

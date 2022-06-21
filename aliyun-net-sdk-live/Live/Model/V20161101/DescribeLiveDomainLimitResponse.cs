@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainLimit_LiveDomainLimit
 		{
 
-			private int? limitTranscodeNum;
-
 			private string domainName;
 
 			private int? limitNum;
 
-			public int? LimitTranscodeNum
-			{
-				get
-				{
-					return limitTranscodeNum;
-				}
-				set	
-				{
-					limitTranscodeNum = value;
-				}
-			}
+			private int? limitTranscodeNum;
 
 			public string DomainName
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					limitNum = value;
+				}
+			}
+
+			public int? LimitTranscodeNum
+			{
+				get
+				{
+					return limitTranscodeNum;
+				}
+				set	
+				{
+					limitTranscodeNum = value;
 				}
 			}
 		}

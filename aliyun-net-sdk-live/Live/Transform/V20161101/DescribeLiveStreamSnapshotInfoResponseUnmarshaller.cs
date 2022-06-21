@@ -31,16 +31,16 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveStreamSnapshotInfoResponse describeLiveStreamSnapshotInfoResponse = new DescribeLiveStreamSnapshotInfoResponse();
 
 			describeLiveStreamSnapshotInfoResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveStreamSnapshotInfoResponse.NextStartTime = _ctx.StringValue("DescribeLiveStreamSnapshotInfo.NextStartTime");
 			describeLiveStreamSnapshotInfoResponse.RequestId = _ctx.StringValue("DescribeLiveStreamSnapshotInfo.RequestId");
+			describeLiveStreamSnapshotInfoResponse.NextStartTime = _ctx.StringValue("DescribeLiveStreamSnapshotInfo.NextStartTime");
 
 			List<DescribeLiveStreamSnapshotInfoResponse.DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo> describeLiveStreamSnapshotInfoResponse_liveStreamSnapshotInfoList = new List<DescribeLiveStreamSnapshotInfoResponse.DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList.Length"); i++) {
 				DescribeLiveStreamSnapshotInfoResponse.DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo liveStreamSnapshotInfo = new DescribeLiveStreamSnapshotInfoResponse.DescribeLiveStreamSnapshotInfo_LiveStreamSnapshotInfo();
-				liveStreamSnapshotInfo.OssObject = _ctx.StringValue("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList["+ i +"].OssObject");
-				liveStreamSnapshotInfo.OssBucket = _ctx.StringValue("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList["+ i +"].OssBucket");
-				liveStreamSnapshotInfo.CreateTime = _ctx.StringValue("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList["+ i +"].CreateTime");
 				liveStreamSnapshotInfo.OssEndpoint = _ctx.StringValue("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList["+ i +"].OssEndpoint");
+				liveStreamSnapshotInfo.OssBucket = _ctx.StringValue("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList["+ i +"].OssBucket");
+				liveStreamSnapshotInfo.OssObject = _ctx.StringValue("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList["+ i +"].OssObject");
+				liveStreamSnapshotInfo.CreateTime = _ctx.StringValue("DescribeLiveStreamSnapshotInfo.LiveStreamSnapshotInfoList["+ i +"].CreateTime");
 
 				describeLiveStreamSnapshotInfoResponse_liveStreamSnapshotInfoList.Add(liveStreamSnapshotInfo);
 			}

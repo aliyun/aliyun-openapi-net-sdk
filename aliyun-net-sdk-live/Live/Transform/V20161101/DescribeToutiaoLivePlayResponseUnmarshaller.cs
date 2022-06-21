@@ -31,19 +31,19 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeToutiaoLivePlayResponse describeToutiaoLivePlayResponse = new DescribeToutiaoLivePlayResponse();
 
 			describeToutiaoLivePlayResponse.HttpResponse = _ctx.HttpResponse;
-			describeToutiaoLivePlayResponse.Description = _ctx.StringValue("DescribeToutiaoLivePlay.Description");
 			describeToutiaoLivePlayResponse.RequestId = _ctx.StringValue("DescribeToutiaoLivePlay.RequestId");
+			describeToutiaoLivePlayResponse.Description = _ctx.StringValue("DescribeToutiaoLivePlay.Description");
 
 			List<DescribeToutiaoLivePlayResponse.DescribeToutiaoLivePlay_ContentItem> describeToutiaoLivePlayResponse_content = new List<DescribeToutiaoLivePlayResponse.DescribeToutiaoLivePlay_ContentItem>();
 			for (int i = 0; i < _ctx.Length("DescribeToutiaoLivePlay.Content.Length"); i++) {
 				DescribeToutiaoLivePlayResponse.DescribeToutiaoLivePlay_ContentItem contentItem = new DescribeToutiaoLivePlayResponse.DescribeToutiaoLivePlay_ContentItem();
-				contentItem.Domain = _ctx.StringValue("DescribeToutiaoLivePlay.Content["+ i +"].Domain");
-				contentItem.Bandwidth = _ctx.FloatValue("DescribeToutiaoLivePlay.Content["+ i +"].Bandwidth");
-				contentItem.StreamName = _ctx.StringValue("DescribeToutiaoLivePlay.Content["+ i +"].StreamName");
 				contentItem.App = _ctx.StringValue("DescribeToutiaoLivePlay.Content["+ i +"].App");
-				contentItem.PlayNum = _ctx.LongValue("DescribeToutiaoLivePlay.Content["+ i +"].PlayNum");
-				contentItem.Timestamp = _ctx.LongValue("DescribeToutiaoLivePlay.Content["+ i +"].Timestamp");
+				contentItem.Bandwidth = _ctx.FloatValue("DescribeToutiaoLivePlay.Content["+ i +"].Bandwidth");
 				contentItem.CdnName = _ctx.StringValue("DescribeToutiaoLivePlay.Content["+ i +"].CdnName");
+				contentItem.Domain = _ctx.StringValue("DescribeToutiaoLivePlay.Content["+ i +"].Domain");
+				contentItem.PlayNum = _ctx.LongValue("DescribeToutiaoLivePlay.Content["+ i +"].PlayNum");
+				contentItem.StreamName = _ctx.StringValue("DescribeToutiaoLivePlay.Content["+ i +"].StreamName");
+				contentItem.Timestamp = _ctx.LongValue("DescribeToutiaoLivePlay.Content["+ i +"].Timestamp");
 
 				describeToutiaoLivePlayResponse_content.Add(contentItem);
 			}
