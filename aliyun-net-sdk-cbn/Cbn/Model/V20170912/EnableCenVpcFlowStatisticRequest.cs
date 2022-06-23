@@ -28,10 +28,10 @@ using Aliyun.Acs.Cbn.Transform.V20170912;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
 {
-    public class CreateFlowlogRequest : RpcAcsRequest<CreateFlowlogResponse>
+    public class EnableCenVpcFlowStatisticRequest : RpcAcsRequest<EnableCenVpcFlowStatisticResponse>
     {
-        public CreateFlowlogRequest()
-            : base("Cbn", "2017-09-12", "CreateFlowlog")
+        public EnableCenVpcFlowStatisticRequest()
+            : base("Cbn", "2017-09-12", "EnableCenVpcFlowStatistic")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -47,23 +47,13 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private string cenId;
 
-		private string description;
-
-		private string projectName;
-
-		private string logStoreName;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		private string transitRouterAttachmentId;
-
-		private long? interval;
-
-		private string flowLogName;
+		private int? days;
 
 		public long? ResourceOwnerId
 		{
@@ -101,45 +91,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				cenId = value;
 				DictionaryUtil.Add(QueryParameters, "CenId", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string ProjectName
-		{
-			get
-			{
-				return projectName;
-			}
-			set	
-			{
-				projectName = value;
-				DictionaryUtil.Add(QueryParameters, "ProjectName", value);
-			}
-		}
-
-		public string LogStoreName
-		{
-			get
-			{
-				return logStoreName;
-			}
-			set	
-			{
-				logStoreName = value;
-				DictionaryUtil.Add(QueryParameters, "LogStoreName", value);
 			}
 		}
 
@@ -182,48 +133,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string TransitRouterAttachmentId
+		public int? Days
 		{
 			get
 			{
-				return transitRouterAttachmentId;
+				return days;
 			}
 			set	
 			{
-				transitRouterAttachmentId = value;
-				DictionaryUtil.Add(QueryParameters, "TransitRouterAttachmentId", value);
+				days = value;
+				DictionaryUtil.Add(QueryParameters, "Days", value.ToString());
 			}
 		}
 
-		public long? Interval
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return interval;
-			}
-			set	
-			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value.ToString());
-			}
+			return false;
 		}
 
-		public string FlowLogName
-		{
-			get
-			{
-				return flowLogName;
-			}
-			set	
-			{
-				flowLogName = value;
-				DictionaryUtil.Add(QueryParameters, "FlowLogName", value);
-			}
-		}
-
-        public override CreateFlowlogResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override EnableCenVpcFlowStatisticResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateFlowlogResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return EnableCenVpcFlowStatisticResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

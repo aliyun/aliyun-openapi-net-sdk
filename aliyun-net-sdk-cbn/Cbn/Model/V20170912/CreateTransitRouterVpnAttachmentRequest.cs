@@ -28,10 +28,10 @@ using Aliyun.Acs.Cbn.Transform.V20170912;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
 {
-    public class CreateFlowlogRequest : RpcAcsRequest<CreateFlowlogResponse>
+    public class CreateTransitRouterVpnAttachmentRequest : RpcAcsRequest<CreateTransitRouterVpnAttachmentResponse>
     {
-        public CreateFlowlogRequest()
-            : base("Cbn", "2017-09-12", "CreateFlowlog")
+        public CreateTransitRouterVpnAttachmentRequest()
+            : base("Cbn", "2017-09-12", "CreateTransitRouterVpnAttachment")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -47,11 +47,13 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private string cenId;
 
-		private string description;
+		private string transitRouterAttachmentName;
 
-		private string projectName;
+		private List<string> zones = new List<string>(){ };
 
-		private string logStoreName;
+		private bool? autoPublishRouteEnabled;
+
+		private bool? dryRun;
 
 		private string resourceOwnerAccount;
 
@@ -59,11 +61,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private long? ownerId;
 
-		private string transitRouterAttachmentId;
+		private string transitRouterId;
 
-		private long? interval;
+		private string transitRouterAttachmentDescription;
 
-		private string flowLogName;
+		private long? vpnOwnerId;
+
+		private string chargeType;
+
+		private string vpnId;
 
 		public long? ResourceOwnerId
 		{
@@ -104,42 +110,62 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string Description
+		public string TransitRouterAttachmentName
 		{
 			get
 			{
-				return description;
+				return transitRouterAttachmentName;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				transitRouterAttachmentName = value;
+				DictionaryUtil.Add(QueryParameters, "TransitRouterAttachmentName", value);
 			}
 		}
 
-		public string ProjectName
+		public List<string> Zones
 		{
 			get
 			{
-				return projectName;
+				return zones;
 			}
-			set	
+
+			set
 			{
-				projectName = value;
-				DictionaryUtil.Add(QueryParameters, "ProjectName", value);
+				zones = value;
+				if(zones != null)
+				{
+					for (int depth1 = 0; depth1 < zones.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Zone." + (depth1 + 1), zones[depth1]);
+					}
+				}
 			}
 		}
 
-		public string LogStoreName
+		public bool? AutoPublishRouteEnabled
 		{
 			get
 			{
-				return logStoreName;
+				return autoPublishRouteEnabled;
 			}
 			set	
 			{
-				logStoreName = value;
-				DictionaryUtil.Add(QueryParameters, "LogStoreName", value);
+				autoPublishRouteEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPublishRouteEnabled", value.ToString());
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 
@@ -182,48 +208,97 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string TransitRouterAttachmentId
+		public string TransitRouterId
 		{
 			get
 			{
-				return transitRouterAttachmentId;
+				return transitRouterId;
 			}
 			set	
 			{
-				transitRouterAttachmentId = value;
-				DictionaryUtil.Add(QueryParameters, "TransitRouterAttachmentId", value);
+				transitRouterId = value;
+				DictionaryUtil.Add(QueryParameters, "TransitRouterId", value);
 			}
 		}
 
-		public long? Interval
+		public string TransitRouterAttachmentDescription
 		{
 			get
 			{
-				return interval;
+				return transitRouterAttachmentDescription;
 			}
 			set	
 			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value.ToString());
+				transitRouterAttachmentDescription = value;
+				DictionaryUtil.Add(QueryParameters, "TransitRouterAttachmentDescription", value);
 			}
 		}
 
-		public string FlowLogName
+		public long? VpnOwnerId
 		{
 			get
 			{
-				return flowLogName;
+				return vpnOwnerId;
 			}
 			set	
 			{
-				flowLogName = value;
-				DictionaryUtil.Add(QueryParameters, "FlowLogName", value);
+				vpnOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "VpnOwnerId", value.ToString());
 			}
 		}
 
-        public override CreateFlowlogResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string ChargeType
+		{
+			get
+			{
+				return chargeType;
+			}
+			set	
+			{
+				chargeType = value;
+				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
+			}
+		}
+
+		public string VpnId
+		{
+			get
+			{
+				return vpnId;
+			}
+			set	
+			{
+				vpnId = value;
+				DictionaryUtil.Add(QueryParameters, "VpnId", value);
+			}
+		}
+
+		public class Zone
+		{
+
+			private string zoneId;
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override CreateTransitRouterVpnAttachmentResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateFlowlogResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateTransitRouterVpnAttachmentResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

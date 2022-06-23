@@ -28,10 +28,10 @@ using Aliyun.Acs.Cbn.Transform.V20170912;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
 {
-    public class CreateFlowlogRequest : RpcAcsRequest<CreateFlowlogResponse>
+    public class DeleteTransitRouterVpnAttachmentRequest : RpcAcsRequest<DeleteTransitRouterVpnAttachmentResponse>
     {
-        public CreateFlowlogRequest()
-            : base("Cbn", "2017-09-12", "CreateFlowlog")
+        public DeleteTransitRouterVpnAttachmentRequest()
+            : base("Cbn", "2017-09-12", "DeleteTransitRouterVpnAttachment")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,13 +45,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private string clientToken;
 
-		private string cenId;
-
-		private string description;
-
-		private string projectName;
-
-		private string logStoreName;
+		private bool? dryRun;
 
 		private string resourceOwnerAccount;
 
@@ -60,10 +54,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		private long? ownerId;
 
 		private string transitRouterAttachmentId;
-
-		private long? interval;
-
-		private string flowLogName;
 
 		public long? ResourceOwnerId
 		{
@@ -91,55 +81,16 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string CenId
+		public bool? DryRun
 		{
 			get
 			{
-				return cenId;
+				return dryRun;
 			}
 			set	
 			{
-				cenId = value;
-				DictionaryUtil.Add(QueryParameters, "CenId", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string ProjectName
-		{
-			get
-			{
-				return projectName;
-			}
-			set	
-			{
-				projectName = value;
-				DictionaryUtil.Add(QueryParameters, "ProjectName", value);
-			}
-		}
-
-		public string LogStoreName
-		{
-			get
-			{
-				return logStoreName;
-			}
-			set	
-			{
-				logStoreName = value;
-				DictionaryUtil.Add(QueryParameters, "LogStoreName", value);
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 
@@ -195,35 +146,14 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public long? Interval
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return interval;
-			}
-			set	
-			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value.ToString());
-			}
+			return false;
 		}
 
-		public string FlowLogName
-		{
-			get
-			{
-				return flowLogName;
-			}
-			set	
-			{
-				flowLogName = value;
-				DictionaryUtil.Add(QueryParameters, "FlowLogName", value);
-			}
-		}
-
-        public override CreateFlowlogResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteTransitRouterVpnAttachmentResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateFlowlogResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteTransitRouterVpnAttachmentResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
