@@ -118,6 +118,8 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 
 			private bool? sandBox;
 
+			private string calledNumber;
+
 			public long? EndTime
 			{
 				get
@@ -235,6 +237,18 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 				set	
 				{
 					sandBox = value;
+				}
+			}
+
+			public string CalledNumber
+			{
+				get
+				{
+					return calledNumber;
+				}
+				set	
+				{
+					calledNumber = value;
 				}
 			}
 		}
