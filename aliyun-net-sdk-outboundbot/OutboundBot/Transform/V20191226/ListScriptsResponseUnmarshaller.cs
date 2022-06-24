@@ -53,12 +53,13 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 				script.ScriptDescription = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].ScriptDescription");
 				script.IsDrafted = _ctx.BooleanValue("ListScripts.Scripts.List["+ i +"].IsDrafted");
 				script.DebugStatus = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].DebugStatus");
-				script.MiniPlaybackEnabled = _ctx.BooleanValue("ListScripts.Scripts.List["+ i +"].MiniPlaybackEnabled");
+				script.MiniPlaybackEnable = _ctx.BooleanValue("ListScripts.Scripts.List["+ i +"].MiniPlaybackEnable");
 				script.RejectReason = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].RejectReason");
 				script.FailReason = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].FailReason");
 				script.Scene = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].Scene");
 				script.ScriptName = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].ScriptName");
 				script.NewBargeInEnable = _ctx.BooleanValue("ListScripts.Scripts.List["+ i +"].NewBargeInEnable");
+				script.LongWaitEnable = _ctx.BooleanValue("ListScripts.Scripts.List["+ i +"].LongWaitEnable");
 
 				scripts_list.Add(script);
 			}

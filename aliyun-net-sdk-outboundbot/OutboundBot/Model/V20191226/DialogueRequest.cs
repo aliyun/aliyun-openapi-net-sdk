@@ -42,6 +42,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string callId;
 
+		private string scriptId;
+
 		private string calledNumber;
 
 		private string callType;
@@ -70,6 +72,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				callId = value;
 				DictionaryUtil.Add(QueryParameters, "CallId", value);
+			}
+		}
+
+		public string ScriptId
+		{
+			get
+			{
+				return scriptId;
+			}
+			set	
+			{
+				scriptId = value;
+				DictionaryUtil.Add(QueryParameters, "ScriptId", value);
 			}
 		}
 

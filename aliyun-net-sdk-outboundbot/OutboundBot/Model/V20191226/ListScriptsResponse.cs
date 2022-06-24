@@ -187,7 +187,7 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 				private string debugStatus;
 
-				private bool? miniPlaybackEnabled;
+				private bool? miniPlaybackEnable;
 
 				private string rejectReason;
 
@@ -198,6 +198,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				private string scriptName;
 
 				private bool? newBargeInEnable;
+
+				private bool? longWaitEnable;
 
 				public string Status
 				{
@@ -295,15 +297,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public bool? MiniPlaybackEnabled
+				public bool? MiniPlaybackEnable
 				{
 					get
 					{
-						return miniPlaybackEnabled;
+						return miniPlaybackEnable;
 					}
 					set	
 					{
-						miniPlaybackEnabled = value;
+						miniPlaybackEnable = value;
 					}
 				}
 
@@ -364,6 +366,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						newBargeInEnable = value;
+					}
+				}
+
+				public bool? LongWaitEnable
+				{
+					get
+					{
+						return longWaitEnable;
+					}
+					set	
+					{
+						longWaitEnable = value;
 					}
 				}
 			}

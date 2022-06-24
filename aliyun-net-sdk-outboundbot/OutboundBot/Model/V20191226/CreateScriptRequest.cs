@@ -62,6 +62,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string scriptDescription;
 
+		private bool? longWaitEnable;
+
 		private List<string> scriptContents = new List<string>(){ };
 
 		public string TtsConfig
@@ -204,6 +206,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				scriptDescription = value;
 				DictionaryUtil.Add(QueryParameters, "ScriptDescription", value);
+			}
+		}
+
+		public bool? LongWaitEnable
+		{
+			get
+			{
+				return longWaitEnable;
+			}
+			set	
+			{
+				longWaitEnable = value;
+				DictionaryUtil.Add(QueryParameters, "LongWaitEnable", value.ToString());
 			}
 		}
 

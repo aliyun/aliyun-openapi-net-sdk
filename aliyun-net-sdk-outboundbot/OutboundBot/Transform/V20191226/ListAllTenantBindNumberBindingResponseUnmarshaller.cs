@@ -46,6 +46,7 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 				listItem.Number = _ctx.StringValue("ListAllTenantBindNumberBinding.Data.List["+ i +"].Number");
 				listItem.TrunkName = _ctx.StringValue("ListAllTenantBindNumberBinding.Data.List["+ i +"].TrunkName");
 				listItem.SerializedParams = _ctx.StringValue("ListAllTenantBindNumberBinding.Data.List["+ i +"].SerializedParams");
+				listItem.BillingType = _ctx.StringValue("ListAllTenantBindNumberBinding.Data.List["+ i +"].BillingType");
 
 				List<string> listItem_instanceNameList = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListAllTenantBindNumberBinding.Data.List["+ i +"].InstanceNameList.Length"); j++) {

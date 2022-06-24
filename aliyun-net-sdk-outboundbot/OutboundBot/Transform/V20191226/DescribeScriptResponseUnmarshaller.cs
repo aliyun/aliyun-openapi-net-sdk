@@ -49,13 +49,15 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			script.IsDebugDrafted = _ctx.BooleanValue("DescribeScript.Script.IsDebugDrafted");
 			script.Industry = _ctx.StringValue("DescribeScript.Script.Industry");
 			script.ScriptDescription = _ctx.StringValue("DescribeScript.Script.ScriptDescription");
-			script.MiniPlaybackConfigEnabled = _ctx.BooleanValue("DescribeScript.Script.MiniPlaybackConfigEnabled");
+			script.MiniPlaybackEnable = _ctx.BooleanValue("DescribeScript.Script.MiniPlaybackEnable");
 			script.IsDrafted = _ctx.BooleanValue("DescribeScript.Script.IsDrafted");
 			script.TtsConfig = _ctx.StringValue("DescribeScript.Script.TtsConfig");
 			script.DebugStatus = _ctx.StringValue("DescribeScript.Script.DebugStatus");
 			script.AsrConfig = _ctx.StringValue("DescribeScript.Script.AsrConfig");
 			script.Scene = _ctx.StringValue("DescribeScript.Script.Scene");
 			script.ScriptName = _ctx.StringValue("DescribeScript.Script.ScriptName");
+			script.NewBargeInEnable = _ctx.BooleanValue("DescribeScript.Script.NewBargeInEnable");
+			script.LongWaitEnable = _ctx.BooleanValue("DescribeScript.Script.LongWaitEnable");
 			describeScriptResponse.Script = script;
         
 			return describeScriptResponse;
