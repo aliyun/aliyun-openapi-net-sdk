@@ -36,9 +36,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<StartCasterResponse.StartCaster_SceneInfo> startCasterResponse_pvwSceneInfos = new List<StartCasterResponse.StartCaster_SceneInfo>();
 			for (int i = 0; i < _ctx.Length("StartCaster.PvwSceneInfos.Length"); i++) {
 				StartCasterResponse.StartCaster_SceneInfo sceneInfo = new StartCasterResponse.StartCaster_SceneInfo();
-				sceneInfo.RtsUrl = _ctx.StringValue("StartCaster.PvwSceneInfos["+ i +"].RtsUrl");
 				sceneInfo.SceneId = _ctx.StringValue("StartCaster.PvwSceneInfos["+ i +"].SceneId");
 				sceneInfo.StreamUrl = _ctx.StringValue("StartCaster.PvwSceneInfos["+ i +"].StreamUrl");
+				sceneInfo.RtsUrl = _ctx.StringValue("StartCaster.PvwSceneInfos["+ i +"].RtsUrl");
 
 				startCasterResponse_pvwSceneInfos.Add(sceneInfo);
 			}
@@ -47,16 +47,16 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<StartCasterResponse.StartCaster_SceneInfo1> startCasterResponse_pgmSceneInfos = new List<StartCasterResponse.StartCaster_SceneInfo1>();
 			for (int i = 0; i < _ctx.Length("StartCaster.PgmSceneInfos.Length"); i++) {
 				StartCasterResponse.StartCaster_SceneInfo1 sceneInfo1 = new StartCasterResponse.StartCaster_SceneInfo1();
-				sceneInfo1.RtsUrl = _ctx.StringValue("StartCaster.PgmSceneInfos["+ i +"].RtsUrl");
 				sceneInfo1.SceneId = _ctx.StringValue("StartCaster.PgmSceneInfos["+ i +"].SceneId");
 				sceneInfo1.StreamUrl = _ctx.StringValue("StartCaster.PgmSceneInfos["+ i +"].StreamUrl");
+				sceneInfo1.RtsUrl = _ctx.StringValue("StartCaster.PgmSceneInfos["+ i +"].RtsUrl");
 
 				List<StartCasterResponse.StartCaster_SceneInfo1.StartCaster_StreamInfo> sceneInfo1_streamInfos = new List<StartCasterResponse.StartCaster_SceneInfo1.StartCaster_StreamInfo>();
 				for (int j = 0; j < _ctx.Length("StartCaster.PgmSceneInfos["+ i +"].StreamInfos.Length"); j++) {
 					StartCasterResponse.StartCaster_SceneInfo1.StartCaster_StreamInfo streamInfo = new StartCasterResponse.StartCaster_SceneInfo1.StartCaster_StreamInfo();
+					streamInfo.TranscodeConfig = _ctx.StringValue("StartCaster.PgmSceneInfos["+ i +"].StreamInfos["+ j +"].TranscodeConfig");
 					streamInfo.VideoFormat = _ctx.StringValue("StartCaster.PgmSceneInfos["+ i +"].StreamInfos["+ j +"].VideoFormat");
 					streamInfo.OutputStreamUrl = _ctx.StringValue("StartCaster.PgmSceneInfos["+ i +"].StreamInfos["+ j +"].OutputStreamUrl");
-					streamInfo.TranscodeConfig = _ctx.StringValue("StartCaster.PgmSceneInfos["+ i +"].StreamInfos["+ j +"].TranscodeConfig");
 
 					sceneInfo1_streamInfos.Add(streamInfo);
 				}

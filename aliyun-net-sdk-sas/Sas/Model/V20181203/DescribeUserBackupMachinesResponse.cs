@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeUserBackupMachines_SimpleBackupMachine
 		{
 
-			private long? id;
-
 			private string uuid;
 
 			private string policyName;
 
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private long? id;
 
 			public string Uuid
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					policyName = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 		}

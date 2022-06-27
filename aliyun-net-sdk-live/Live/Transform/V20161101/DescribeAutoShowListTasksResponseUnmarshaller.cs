@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeAutoShowListTasksResponse describeAutoShowListTasksResponse = new DescribeAutoShowListTasksResponse();
 
 			describeAutoShowListTasksResponse.HttpResponse = _ctx.HttpResponse;
-			describeAutoShowListTasksResponse.AutoShowListTasks = _ctx.StringValue("DescribeAutoShowListTasks.AutoShowListTasks");
 			describeAutoShowListTasksResponse.RequestId = _ctx.StringValue("DescribeAutoShowListTasks.RequestId");
+			describeAutoShowListTasksResponse.AutoShowListTasks = _ctx.StringValue("DescribeAutoShowListTasks.AutoShowListTasks");
         
 			return describeAutoShowListTasksResponse;
         }

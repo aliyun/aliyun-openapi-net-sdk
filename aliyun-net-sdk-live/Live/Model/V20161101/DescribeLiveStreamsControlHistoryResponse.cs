@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,13 +56,25 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamsControlHistory_LiveStreamControlInfo
 		{
 
-			private string clientIP;
+			private string streamName;
 
-			private string timeStamp;
+			private string clientIP;
 
 			private string action;
 
-			private string streamName;
+			private string timeStamp;
+
+			public string StreamName
+			{
+				get
+				{
+					return streamName;
+				}
+				set	
+				{
+					streamName = value;
+				}
+			}
 
 			public string ClientIP
 			{
@@ -73,18 +85,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					clientIP = value;
-				}
-			}
-
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
 				}
 			}
 
@@ -100,15 +100,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string StreamName
+			public string TimeStamp
 			{
 				get
 				{
-					return streamName;
+					return timeStamp;
 				}
 				set	
 				{
-					streamName = value;
+					timeStamp = value;
 				}
 			}
 		}

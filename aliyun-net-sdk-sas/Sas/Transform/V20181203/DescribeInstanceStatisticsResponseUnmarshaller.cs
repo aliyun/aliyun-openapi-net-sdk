@@ -48,6 +48,7 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				dataItem.Vul = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].Vul");
 				dataItem.Health = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].Health");
 				dataItem.SysNum = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].SysNum");
+				dataItem.WeakPWNum = _ctx.IntegerValue("DescribeInstanceStatistics.Data["+ i +"].WeakPWNum");
 
 				describeInstanceStatisticsResponse_data.Add(dataItem);
 			}

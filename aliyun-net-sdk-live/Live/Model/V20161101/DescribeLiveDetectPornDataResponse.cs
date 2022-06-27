@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,43 +56,31 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDetectPornData_DataModule
 		{
 
-			private string domain;
-
-			private string region;
+			private string timeStamp;
 
 			private string app;
 
+			private string domain;
+
 			private string stream;
-
-			private string timeStamp;
-
-			private long? count;
-
-			private string scene;
 
 			private string fee;
 
-			public string Domain
-			{
-				get
-				{
-					return domain;
-				}
-				set	
-				{
-					domain = value;
-				}
-			}
+			private string scene;
 
-			public string Region
+			private string region;
+
+			private long? count;
+
+			public string TimeStamp
 			{
 				get
 				{
-					return region;
+					return timeStamp;
 				}
 				set	
 				{
-					region = value;
+					timeStamp = value;
 				}
 			}
 
@@ -108,6 +96,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			public string Domain
+			{
+				get
+				{
+					return domain;
+				}
+				set	
+				{
+					domain = value;
+				}
+			}
+
 			public string Stream
 			{
 				get
@@ -120,27 +120,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string TimeStamp
+			public string Fee
 			{
 				get
 				{
-					return timeStamp;
+					return fee;
 				}
 				set	
 				{
-					timeStamp = value;
-				}
-			}
-
-			public long? Count
-			{
-				get
-				{
-					return count;
-				}
-				set	
-				{
-					count = value;
+					fee = value;
 				}
 			}
 
@@ -156,15 +144,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string Fee
+			public string Region
 			{
 				get
 				{
-					return fee;
+					return region;
 				}
 				set	
 				{
-					fee = value;
+					region = value;
+				}
+			}
+
+			public long? Count
+			{
+				get
+				{
+					return count;
+				}
+				set	
+				{
+					count = value;
 				}
 			}
 		}

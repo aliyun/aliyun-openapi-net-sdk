@@ -40,7 +40,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private List<string> tags = new List<string>(){ };
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private List<string> resourceIds = new List<string>(){ };
 
@@ -48,7 +48,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string resourceType;
 
-		public List<string> Tags
+		public List<Tag> Tags
 		{
 			get
 			{
@@ -58,13 +58,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				tags = value;
-				if(tags != null)
+				for (int i = 0; i < tags.Count; i++)
 				{
-					for (int depth1 = 0; depth1 < tags.Count; depth1++)
-					{
-						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
-						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
-					}
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 				}
 			}
 		}
@@ -79,6 +76,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				resourceIds = value;
+				for (int i = 0; i < resourceIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
+				}
 			}
 		}
 
@@ -127,7 +128,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string Value_
+			public string Value
 			{
 				get
 				{

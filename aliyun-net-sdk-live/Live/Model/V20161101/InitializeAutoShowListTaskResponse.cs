@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class InitializeAutoShowListTaskResponse : AcsResponse
 	{
 
-		private string streamList;
-
 		private string requestId;
 
 		private string casterId;
 
-		public string StreamList
-		{
-			get
-			{
-				return streamList;
-			}
-			set	
-			{
-				streamList = value;
-			}
-		}
+		private string streamList;
 
 		public string RequestId
 		{
@@ -64,6 +52,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				casterId = value;
+			}
+		}
+
+		public string StreamList
+		{
+			get
+			{
+				return streamList;
+			}
+			set	
+			{
+				streamList = value;
 			}
 		}
 	}

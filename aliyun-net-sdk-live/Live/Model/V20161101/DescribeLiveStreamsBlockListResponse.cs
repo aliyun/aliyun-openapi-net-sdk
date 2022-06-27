@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,31 +25,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamsBlockListResponse : AcsResponse
 	{
 
-		private int? pageNum;
-
 		private string requestId;
 
-		private int? totalPage;
+		private string domainName;
+
+		private int? pageNum;
 
 		private int? pageSize;
 
 		private int? totalNum;
 
-		private string domainName;
+		private int? totalPage;
 
 		private List<string> streamUrls;
-
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-			}
-		}
 
 		public string RequestId
 		{
@@ -63,15 +51,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? TotalPage
+		public string DomainName
 		{
 			get
 			{
-				return totalPage;
+				return domainName;
 			}
 			set	
 			{
-				totalPage = value;
+				domainName = value;
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
 			}
 		}
 
@@ -99,15 +99,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string DomainName
+		public int? TotalPage
 		{
 			get
 			{
-				return domainName;
+				return totalPage;
 			}
 			set	
 			{
-				domainName = value;
+				totalPage = value;
 			}
 		}
 

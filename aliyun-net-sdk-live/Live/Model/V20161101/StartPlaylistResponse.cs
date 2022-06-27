@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class StartPlaylistResponse : AcsResponse
 	{
 
-		private string programId;
-
 		private string requestId;
 
-		private StartPlaylist_StreamInfo streamInfo;
+		private string programId;
 
-		public string ProgramId
-		{
-			get
-			{
-				return programId;
-			}
-			set	
-			{
-				programId = value;
-			}
-		}
+		private StartPlaylist_StreamInfo streamInfo;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ProgramId
+		{
+			get
+			{
+				return programId;
+			}
+			set	
+			{
+				programId = value;
 			}
 		}
 
@@ -70,25 +70,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class StartPlaylist_StreamInfo
 		{
 
-			private string appName;
-
 			private string domainName;
+
+			private string appName;
 
 			private string streamName;
 
 			private List<StartPlaylist_Stream> streams;
-
-			public string AppName
-			{
-				get
-				{
-					return appName;
-				}
-				set	
-				{
-					appName = value;
-				}
-			}
 
 			public string DomainName
 			{
@@ -99,6 +87,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					domainName = value;
+				}
+			}
+
+			public string AppName
+			{
+				get
+				{
+					return appName;
+				}
+				set	
+				{
+					appName = value;
 				}
 			}
 
@@ -129,25 +129,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class StartPlaylist_Stream
 			{
 
-				private string quality;
-
 				private string pullFlvUrl;
-
-				private string pullM3U8Url;
 
 				private string pullRtmpUrl;
 
-				public string Quality
-				{
-					get
-					{
-						return quality;
-					}
-					set	
-					{
-						quality = value;
-					}
-				}
+				private string pullM3U8Url;
+
+				private string quality;
 
 				public string PullFlvUrl
 				{
@@ -158,6 +146,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						pullFlvUrl = value;
+					}
+				}
+
+				public string PullRtmpUrl
+				{
+					get
+					{
+						return pullRtmpUrl;
+					}
+					set	
+					{
+						pullRtmpUrl = value;
 					}
 				}
 
@@ -173,15 +173,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public string PullRtmpUrl
+				public string Quality
 				{
 					get
 					{
-						return pullRtmpUrl;
+						return quality;
 					}
 					set	
 					{
-						pullRtmpUrl = value;
+						quality = value;
 					}
 				}
 			}

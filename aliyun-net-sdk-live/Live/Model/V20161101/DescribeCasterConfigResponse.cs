@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,35 +25,95 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeCasterConfigResponse : AcsResponse
 	{
 
+		private string requestId;
+
+		private string casterId;
+
+		private string casterName;
+
+		private string domainName;
+
+		private string sideOutputUrlList;
+
 		private float? delay;
 
 		private string urgentMaterialId;
+
+		private string sideOutputUrl;
 
 		private string callbackUrl;
 
 		private string programName;
 
-		private string casterName;
-
-		private string casterId;
-
 		private int? programEffect;
 
-		private string domainName;
-
 		private int? channelEnable;
-
-		private string requestId;
-
-		private string sideOutputUrlList;
-
-		private string sideOutputUrl;
 
 		private List<DescribeCasterConfig_SyncGroup> syncGroupsConfig;
 
 		private DescribeCasterConfig_TranscodeConfig transcodeConfig;
 
 		private DescribeCasterConfig_RecordConfig recordConfig;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string CasterId
+		{
+			get
+			{
+				return casterId;
+			}
+			set	
+			{
+				casterId = value;
+			}
+		}
+
+		public string CasterName
+		{
+			get
+			{
+				return casterName;
+			}
+			set	
+			{
+				casterName = value;
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+			}
+		}
+
+		public string SideOutputUrlList
+		{
+			get
+			{
+				return sideOutputUrlList;
+			}
+			set	
+			{
+				sideOutputUrlList = value;
+			}
+		}
 
 		public float? Delay
 		{
@@ -76,6 +136,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				urgentMaterialId = value;
+			}
+		}
+
+		public string SideOutputUrl
+		{
+			get
+			{
+				return sideOutputUrl;
+			}
+			set	
+			{
+				sideOutputUrl = value;
 			}
 		}
 
@@ -103,30 +175,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string CasterName
-		{
-			get
-			{
-				return casterName;
-			}
-			set	
-			{
-				casterName = value;
-			}
-		}
-
-		public string CasterId
-		{
-			get
-			{
-				return casterId;
-			}
-			set	
-			{
-				casterId = value;
-			}
-		}
-
 		public int? ProgramEffect
 		{
 			get
@@ -139,18 +187,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
-
 		public int? ChannelEnable
 		{
 			get
@@ -160,42 +196,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				channelEnable = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string SideOutputUrlList
-		{
-			get
-			{
-				return sideOutputUrlList;
-			}
-			set	
-			{
-				sideOutputUrlList = value;
-			}
-		}
-
-		public string SideOutputUrl
-		{
-			get
-			{
-				return sideOutputUrl;
-			}
-			set	
-			{
-				sideOutputUrl = value;
 			}
 		}
 
@@ -238,23 +238,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeCasterConfig_SyncGroup
 		{
 
-			private string hostResourceId;
-
 			private int? mode;
 
-			private List<string> resourceIds;
+			private string hostResourceId;
 
-			public string HostResourceId
-			{
-				get
-				{
-					return hostResourceId;
-				}
-				set	
-				{
-					hostResourceId = value;
-				}
-			}
+			private List<string> resourceIds;
 
 			public int? Mode
 			{
@@ -265,6 +253,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					mode = value;
+				}
+			}
+
+			public string HostResourceId
+			{
+				get
+				{
+					return hostResourceId;
+				}
+				set	
+				{
+					hostResourceId = value;
 				}
 			}
 
@@ -361,35 +361,23 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeCasterConfig_RecordFormatItem
 			{
 
-				private int? cycleDuration;
-
-				private string sliceOssObjectPrefix;
+				private string format;
 
 				private string ossObjectPrefix;
 
-				private string format;
+				private string sliceOssObjectPrefix;
 
-				public int? CycleDuration
+				private int? cycleDuration;
+
+				public string Format
 				{
 					get
 					{
-						return cycleDuration;
+						return format;
 					}
 					set	
 					{
-						cycleDuration = value;
-					}
-				}
-
-				public string SliceOssObjectPrefix
-				{
-					get
-					{
-						return sliceOssObjectPrefix;
-					}
-					set	
-					{
-						sliceOssObjectPrefix = value;
+						format = value;
 					}
 				}
 
@@ -405,15 +393,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public string Format
+				public string SliceOssObjectPrefix
 				{
 					get
 					{
-						return format;
+						return sliceOssObjectPrefix;
 					}
 					set	
 					{
-						format = value;
+						sliceOssObjectPrefix = value;
+					}
+				}
+
+				public int? CycleDuration
+				{
+					get
+					{
+						return cycleDuration;
+					}
+					set	
+					{
+						cycleDuration = value;
 					}
 				}
 			}

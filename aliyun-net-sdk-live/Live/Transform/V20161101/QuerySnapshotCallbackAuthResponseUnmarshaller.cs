@@ -32,9 +32,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 
 			querySnapshotCallbackAuthResponse.HttpResponse = _ctx.HttpResponse;
 			querySnapshotCallbackAuthResponse.RequestId = _ctx.StringValue("QuerySnapshotCallbackAuth.RequestId");
-			querySnapshotCallbackAuthResponse.CallbackAuthKey = _ctx.StringValue("QuerySnapshotCallbackAuth.CallbackAuthKey");
 			querySnapshotCallbackAuthResponse.DomainName = _ctx.StringValue("QuerySnapshotCallbackAuth.DomainName");
 			querySnapshotCallbackAuthResponse.CallbackReqAuth = _ctx.StringValue("QuerySnapshotCallbackAuth.CallbackReqAuth");
+			querySnapshotCallbackAuthResponse.CallbackAuthKey = _ctx.StringValue("QuerySnapshotCallbackAuth.CallbackAuthKey");
         
 			return querySnapshotCallbackAuthResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class ListLiveRealtimeLogDeliveryInfos_RealtimeLogDeliveryInfos
 		{
 
-			private string logstore;
-
 			private string project;
 
-			private string region;
+			private string logstore;
 
-			public string Logstore
-			{
-				get
-				{
-					return logstore;
-				}
-				set	
-				{
-					logstore = value;
-				}
-			}
+			private string region;
 
 			public string Project
 			{
@@ -83,6 +71,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					project = value;
+				}
+			}
+
+			public string Logstore
+			{
+				get
+				{
+					return logstore;
+				}
+				set	
+				{
+					logstore = value;
 				}
 			}
 

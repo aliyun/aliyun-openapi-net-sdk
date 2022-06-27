@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeUserLayoutAuthorizationResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? authorized;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public bool? Authorized
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				authorized = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

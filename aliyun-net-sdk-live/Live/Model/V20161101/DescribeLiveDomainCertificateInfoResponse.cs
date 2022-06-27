@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,107 +56,35 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainCertificateInfo_CertInfo
 		{
 
-			private string status;
-
-			private string certLife;
-
-			private string certExpireTime;
-
-			private string sSLPub;
-
-			private string sSLProtocol;
-
-			private string certType;
-
-			private string certDomainName;
+			private string domainName;
 
 			private string certName;
 
+			private string certDomainName;
+
+			private string certExpireTime;
+
+			private string certLife;
+
 			private string certOrg;
 
-			private string domainName;
+			private string certType;
 
-			public string Status
+			private string sSLProtocol;
+
+			private string status;
+
+			private string sSLPub;
+
+			public string DomainName
 			{
 				get
 				{
-					return status;
+					return domainName;
 				}
 				set	
 				{
-					status = value;
-				}
-			}
-
-			public string CertLife
-			{
-				get
-				{
-					return certLife;
-				}
-				set	
-				{
-					certLife = value;
-				}
-			}
-
-			public string CertExpireTime
-			{
-				get
-				{
-					return certExpireTime;
-				}
-				set	
-				{
-					certExpireTime = value;
-				}
-			}
-
-			public string SSLPub
-			{
-				get
-				{
-					return sSLPub;
-				}
-				set	
-				{
-					sSLPub = value;
-				}
-			}
-
-			public string SSLProtocol
-			{
-				get
-				{
-					return sSLProtocol;
-				}
-				set	
-				{
-					sSLProtocol = value;
-				}
-			}
-
-			public string CertType
-			{
-				get
-				{
-					return certType;
-				}
-				set	
-				{
-					certType = value;
-				}
-			}
-
-			public string CertDomainName
-			{
-				get
-				{
-					return certDomainName;
-				}
-				set	
-				{
-					certDomainName = value;
+					domainName = value;
 				}
 			}
 
@@ -172,6 +100,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			public string CertDomainName
+			{
+				get
+				{
+					return certDomainName;
+				}
+				set	
+				{
+					certDomainName = value;
+				}
+			}
+
+			public string CertExpireTime
+			{
+				get
+				{
+					return certExpireTime;
+				}
+				set	
+				{
+					certExpireTime = value;
+				}
+			}
+
+			public string CertLife
+			{
+				get
+				{
+					return certLife;
+				}
+				set	
+				{
+					certLife = value;
+				}
+			}
+
 			public string CertOrg
 			{
 				get
@@ -184,15 +148,51 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string DomainName
+			public string CertType
 			{
 				get
 				{
-					return domainName;
+					return certType;
 				}
 				set	
 				{
-					domainName = value;
+					certType = value;
+				}
+			}
+
+			public string SSLProtocol
+			{
+				get
+				{
+					return sSLProtocol;
+				}
+				set	
+				{
+					sSLProtocol = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string SSLPub
+			{
+				get
+				{
+					return sSLPub;
+				}
+				set	
+				{
+					sSLPub = value;
 				}
 			}
 		}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			AddCasterEpisodeGroupContentResponse addCasterEpisodeGroupContentResponse = new AddCasterEpisodeGroupContentResponse();
 
 			addCasterEpisodeGroupContentResponse.HttpResponse = _ctx.HttpResponse;
-			addCasterEpisodeGroupContentResponse.ProgramId = _ctx.StringValue("AddCasterEpisodeGroupContent.ProgramId");
 			addCasterEpisodeGroupContentResponse.RequestId = _ctx.StringValue("AddCasterEpisodeGroupContent.RequestId");
+			addCasterEpisodeGroupContentResponse.ProgramId = _ctx.StringValue("AddCasterEpisodeGroupContent.ProgramId");
 
 			List<string> addCasterEpisodeGroupContentResponse_itemIds = new List<string>();
 			for (int i = 0; i < _ctx.Length("AddCasterEpisodeGroupContent.ItemIds.Length"); i++) {

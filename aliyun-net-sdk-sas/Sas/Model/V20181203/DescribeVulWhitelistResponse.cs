@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeVulWhitelistResponse : AcsResponse
 	{
 
+		private int? currentPage;
+
 		private string requestId;
 
 		private int? pageSize;
 
-		private int? currentPage;
-
 		private int? totalCount;
 
 		private List<DescribeVulWhitelist_VulWhitelist> vulWhitelists;
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -56,18 +68,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				pageSize = value;
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
 			}
 		}
 
@@ -98,29 +98,17 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeVulWhitelist_VulWhitelist
 		{
 
-			private string name;
-
 			private string type;
-
-			private string aliasName;
-
-			private string reason;
 
 			private string targetInfo;
 
-			private string id;
+			private string aliasName;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private string name;
+
+			private string reason;
+
+			private string id;
 
 			public string Type
 			{
@@ -131,6 +119,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					type = value;
+				}
+			}
+
+			public string TargetInfo
+			{
+				get
+				{
+					return targetInfo;
+				}
+				set	
+				{
+					targetInfo = value;
 				}
 			}
 
@@ -146,6 +146,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
 			public string Reason
 			{
 				get
@@ -155,18 +167,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					reason = value;
-				}
-			}
-
-			public string TargetInfo
-			{
-				get
-				{
-					return targetInfo;
-				}
-				set	
-				{
-					targetInfo = value;
 				}
 			}
 

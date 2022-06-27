@@ -46,9 +46,9 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 
 		private float? bX;
 
-		private string imageURL;
-
 		private float? bY;
+
+		private string imageURL;
 
 		public float? BH
 		{
@@ -89,19 +89,6 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 			}
 		}
 
-		public string ImageURL
-		{
-			get
-			{
-				return imageURL;
-			}
-			set	
-			{
-				imageURL = value;
-				DictionaryUtil.Add(BodyParameters, "ImageURL", value);
-			}
-		}
-
 		public float? BY
 		{
 			get
@@ -112,6 +99,19 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 			{
 				bY = value;
 				DictionaryUtil.Add(BodyParameters, "BY", value.ToString());
+			}
+		}
+
+		public string ImageURL
+		{
+			get
+			{
+				return imageURL;
+			}
+			set	
+			{
+				imageURL = value;
+				DictionaryUtil.Add(BodyParameters, "ImageURL", value);
 			}
 		}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,41 +25,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveDomainRealTimeHttpCodeDataResponse : AcsResponse
 	{
 
-		private string endTime;
-
-		private string startTime;
-
 		private string requestId;
 
 		private string domainName;
 
+		private string startTime;
+
+		private string endTime;
+
 		private string dataInterval;
 
 		private List<DescribeLiveDomainRealTimeHttpCodeData_UsageData> realTimeHttpCodeData;
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
 
 		public string RequestId
 		{
@@ -82,6 +58,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				domainName = value;
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
 			}
 		}
 

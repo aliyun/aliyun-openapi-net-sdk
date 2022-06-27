@@ -182,7 +182,7 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 			private string scriptDescription;
 
-			private bool? miniPlaybackConfigEnabled;
+			private bool? miniPlaybackEnable;
 
 			private bool? isDrafted;
 
@@ -195,6 +195,10 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			private string scene;
 
 			private string scriptName;
+
+			private bool? newBargeInEnable;
+
+			private bool? longWaitEnable;
 
 			public string Status
 			{
@@ -280,15 +284,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public bool? MiniPlaybackConfigEnabled
+			public bool? MiniPlaybackEnable
 			{
 				get
 				{
-					return miniPlaybackConfigEnabled;
+					return miniPlaybackEnable;
 				}
 				set	
 				{
-					miniPlaybackConfigEnabled = value;
+					miniPlaybackEnable = value;
 				}
 			}
 
@@ -361,6 +365,30 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					scriptName = value;
+				}
+			}
+
+			public bool? NewBargeInEnable
+			{
+				get
+				{
+					return newBargeInEnable;
+				}
+				set	
+				{
+					newBargeInEnable = value;
+				}
+			}
+
+			public bool? LongWaitEnable
+			{
+				get
+				{
+					return longWaitEnable;
+				}
+				set	
+				{
+					longWaitEnable = value;
 				}
 			}
 		}

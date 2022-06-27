@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			StopPlaylistResponse stopPlaylistResponse = new StopPlaylistResponse();
 
 			stopPlaylistResponse.HttpResponse = _ctx.HttpResponse;
-			stopPlaylistResponse.ProgramId = _ctx.StringValue("StopPlaylist.ProgramId");
 			stopPlaylistResponse.RequestId = _ctx.StringValue("StopPlaylist.RequestId");
+			stopPlaylistResponse.ProgramId = _ctx.StringValue("StopPlaylist.ProgramId");
         
 			return stopPlaylistResponse;
         }

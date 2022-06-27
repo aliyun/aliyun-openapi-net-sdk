@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			AddCasterLayoutResponse addCasterLayoutResponse = new AddCasterLayoutResponse();
 
 			addCasterLayoutResponse.HttpResponse = _ctx.HttpResponse;
-			addCasterLayoutResponse.LayoutId = _ctx.StringValue("AddCasterLayout.LayoutId");
 			addCasterLayoutResponse.RequestId = _ctx.StringValue("AddCasterLayout.RequestId");
+			addCasterLayoutResponse.LayoutId = _ctx.StringValue("AddCasterLayout.LayoutId");
         
 			return addCasterLayoutResponse;
         }

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			SendRoomNotificationResponse sendRoomNotificationResponse = new SendRoomNotificationResponse();
 
 			sendRoomNotificationResponse.HttpResponse = _ctx.HttpResponse;
-			sendRoomNotificationResponse.MessageId = _ctx.StringValue("SendRoomNotification.MessageId");
 			sendRoomNotificationResponse.RequestId = _ctx.StringValue("SendRoomNotification.RequestId");
+			sendRoomNotificationResponse.MessageId = _ctx.StringValue("SendRoomNotification.MessageId");
         
 			return sendRoomNotificationResponse;
         }

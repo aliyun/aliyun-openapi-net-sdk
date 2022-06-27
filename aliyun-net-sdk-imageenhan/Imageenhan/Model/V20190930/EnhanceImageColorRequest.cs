@@ -42,9 +42,9 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 
 		private string mode;
 
-		private string imageURL;
-
 		private string outputFormat;
+
+		private string imageURL;
 
 		public string Mode
 		{
@@ -59,19 +59,6 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 			}
 		}
 
-		public string ImageURL
-		{
-			get
-			{
-				return imageURL;
-			}
-			set	
-			{
-				imageURL = value;
-				DictionaryUtil.Add(BodyParameters, "ImageURL", value);
-			}
-		}
-
 		public string OutputFormat
 		{
 			get
@@ -82,6 +69,19 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 			{
 				outputFormat = value;
 				DictionaryUtil.Add(BodyParameters, "OutputFormat", value);
+			}
+		}
+
+		public string ImageURL
+		{
+			get
+			{
+				return imageURL;
+			}
+			set	
+			{
+				imageURL = value;
+				DictionaryUtil.Add(BodyParameters, "ImageURL", value);
 			}
 		}
 

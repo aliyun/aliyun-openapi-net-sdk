@@ -36,10 +36,10 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeUpBpsPeakDataResponse.DescribeUpBpsPeakData_DescribeUpPeakTraffic> describeUpBpsPeakDataResponse_describeUpPeakTraffics = new List<DescribeUpBpsPeakDataResponse.DescribeUpBpsPeakData_DescribeUpPeakTraffic>();
 			for (int i = 0; i < _ctx.Length("DescribeUpBpsPeakData.DescribeUpPeakTraffics.Length"); i++) {
 				DescribeUpBpsPeakDataResponse.DescribeUpBpsPeakData_DescribeUpPeakTraffic describeUpPeakTraffic = new DescribeUpBpsPeakDataResponse.DescribeUpBpsPeakData_DescribeUpPeakTraffic();
-				describeUpPeakTraffic.QueryTime = _ctx.StringValue("DescribeUpBpsPeakData.DescribeUpPeakTraffics["+ i +"].QueryTime");
-				describeUpPeakTraffic.BandWidth = _ctx.StringValue("DescribeUpBpsPeakData.DescribeUpPeakTraffics["+ i +"].BandWidth");
-				describeUpPeakTraffic.StatName = _ctx.StringValue("DescribeUpBpsPeakData.DescribeUpPeakTraffics["+ i +"].StatName");
 				describeUpPeakTraffic.PeakTime = _ctx.StringValue("DescribeUpBpsPeakData.DescribeUpPeakTraffics["+ i +"].PeakTime");
+				describeUpPeakTraffic.QueryTime = _ctx.StringValue("DescribeUpBpsPeakData.DescribeUpPeakTraffics["+ i +"].QueryTime");
+				describeUpPeakTraffic.StatName = _ctx.StringValue("DescribeUpBpsPeakData.DescribeUpPeakTraffics["+ i +"].StatName");
+				describeUpPeakTraffic.BandWidth = _ctx.StringValue("DescribeUpBpsPeakData.DescribeUpPeakTraffics["+ i +"].BandWidth");
 
 				describeUpBpsPeakDataResponse_describeUpPeakTraffics.Add(describeUpPeakTraffic);
 			}

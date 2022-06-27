@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -27,11 +27,11 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string requestId;
 
-		private int? vulAsapSum;
-
 		private int? vulLaterSum;
 
 		private int? vulNntfSum;
+
+		private int? vulAsapSum;
 
 		public string RequestId
 		{
@@ -42,18 +42,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? VulAsapSum
-		{
-			get
-			{
-				return vulAsapSum;
-			}
-			set	
-			{
-				vulAsapSum = value;
 			}
 		}
 
@@ -78,6 +66,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				vulNntfSum = value;
+			}
+		}
+
+		public int? VulAsapSum
+		{
+			get
+			{
+				return vulAsapSum;
+			}
+			set	
+			{
+				vulAsapSum = value;
 			}
 		}
 	}

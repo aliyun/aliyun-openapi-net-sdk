@@ -31,17 +31,17 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeForbidPushStreamRoomListResponse describeForbidPushStreamRoomListResponse = new DescribeForbidPushStreamRoomListResponse();
 
 			describeForbidPushStreamRoomListResponse.HttpResponse = _ctx.HttpResponse;
-			describeForbidPushStreamRoomListResponse.TotalPage = _ctx.IntegerValue("DescribeForbidPushStreamRoomList.TotalPage");
 			describeForbidPushStreamRoomListResponse.RequestId = _ctx.StringValue("DescribeForbidPushStreamRoomList.RequestId");
 			describeForbidPushStreamRoomListResponse.TotalNum = _ctx.IntegerValue("DescribeForbidPushStreamRoomList.TotalNum");
+			describeForbidPushStreamRoomListResponse.TotalPage = _ctx.IntegerValue("DescribeForbidPushStreamRoomList.TotalPage");
 
 			List<DescribeForbidPushStreamRoomListResponse.DescribeForbidPushStreamRoomList_Room> describeForbidPushStreamRoomListResponse_roomList = new List<DescribeForbidPushStreamRoomListResponse.DescribeForbidPushStreamRoomList_Room>();
 			for (int i = 0; i < _ctx.Length("DescribeForbidPushStreamRoomList.RoomList.Length"); i++) {
 				DescribeForbidPushStreamRoomListResponse.DescribeForbidPushStreamRoomList_Room room = new DescribeForbidPushStreamRoomListResponse.DescribeForbidPushStreamRoomList_Room();
-				room.OpEndTime = _ctx.StringValue("DescribeForbidPushStreamRoomList.RoomList["+ i +"].OpEndTime");
+				room.RoomId = _ctx.StringValue("DescribeForbidPushStreamRoomList.RoomList["+ i +"].RoomId");
 				room.AnchorId = _ctx.StringValue("DescribeForbidPushStreamRoomList.RoomList["+ i +"].AnchorId");
 				room.OpStartTime = _ctx.StringValue("DescribeForbidPushStreamRoomList.RoomList["+ i +"].OpStartTime");
-				room.RoomId = _ctx.StringValue("DescribeForbidPushStreamRoomList.RoomList["+ i +"].RoomId");
+				room.OpEndTime = _ctx.StringValue("DescribeForbidPushStreamRoomList.RoomList["+ i +"].OpEndTime");
 
 				describeForbidPushStreamRoomListResponse_roomList.Add(room);
 			}

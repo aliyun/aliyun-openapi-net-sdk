@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string requestId;
 
-		private string layoutId;
-
 		private string casterId;
+
+		private string layoutId;
 
 		public string RequestId
 		{
@@ -43,18 +43,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string LayoutId
-		{
-			get
-			{
-				return layoutId;
-			}
-			set	
-			{
-				layoutId = value;
-			}
-		}
-
 		public string CasterId
 		{
 			get
@@ -64,6 +52,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				casterId = value;
+			}
+		}
+
+		public string LayoutId
+		{
+			get
+			{
+				return layoutId;
+			}
+			set	
+			{
+				layoutId = value;
 			}
 		}
 	}

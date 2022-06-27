@@ -31,10 +31,10 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveCertificateDetailResponse describeLiveCertificateDetailResponse = new DescribeLiveCertificateDetailResponse();
 
 			describeLiveCertificateDetailResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveCertificateDetailResponse.CertName = _ctx.StringValue("DescribeLiveCertificateDetail.CertName");
-			describeLiveCertificateDetailResponse.Cert = _ctx.StringValue("DescribeLiveCertificateDetail.Cert");
 			describeLiveCertificateDetailResponse.RequestId = _ctx.StringValue("DescribeLiveCertificateDetail.RequestId");
+			describeLiveCertificateDetailResponse.Cert = _ctx.StringValue("DescribeLiveCertificateDetail.Cert");
 			describeLiveCertificateDetailResponse.CertId = _ctx.LongValue("DescribeLiveCertificateDetail.CertId");
+			describeLiveCertificateDetailResponse.CertName = _ctx.StringValue("DescribeLiveCertificateDetail.CertName");
         
 			return describeLiveCertificateDetailResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -56,11 +56,23 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class OperateAgentClientInstall_AegisCelintInstallRespose
 		{
 
+			private string uuid;
+
 			private string instanceId;
 
 			private long? recordId;
 
-			private string uuid;
+			public string Uuid
+			{
+				get
+				{
+					return uuid;
+				}
+				set	
+				{
+					uuid = value;
+				}
+			}
 
 			public string InstanceId
 			{
@@ -83,18 +95,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					recordId = value;
-				}
-			}
-
-			public string Uuid
-			{
-				get
-				{
-					return uuid;
-				}
-				set	
-				{
-					uuid = value;
 				}
 			}
 		}

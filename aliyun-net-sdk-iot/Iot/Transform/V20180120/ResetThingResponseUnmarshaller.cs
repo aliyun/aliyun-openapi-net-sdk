@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			resetThingResponse.Success = _ctx.BooleanValue("ResetThing.Success");
 			resetThingResponse.Code = _ctx.StringValue("ResetThing.Code");
 			resetThingResponse.ErrorMessage = _ctx.StringValue("ResetThing.ErrorMessage");
+			resetThingResponse.JobId = _ctx.StringValue("ResetThing.JobId");
         
 			return resetThingResponse;
         }

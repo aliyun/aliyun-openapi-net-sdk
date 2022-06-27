@@ -53,9 +53,13 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string from;
 
+		private long? id;
+
 		private string tacticId;
 
 		private string lang;
+
+		private string uniqueInfo;
 
 		private string groupId;
 
@@ -145,6 +149,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public long? Id
+		{
+			get
+			{
+				return id;
+			}
+			set	
+			{
+				id = value;
+				DictionaryUtil.Add(QueryParameters, "Id", value.ToString());
+			}
+		}
+
 		public string TacticId
 		{
 			get
@@ -168,6 +185,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string UniqueInfo
+		{
+			get
+			{
+				return uniqueInfo;
+			}
+			set	
+			{
+				uniqueInfo = value;
+				DictionaryUtil.Add(QueryParameters, "UniqueInfo", value);
 			}
 		}
 
@@ -220,10 +250,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set
 			{
 				operateErrorCodeLists = value;
-				for (int i = 0; i < operateErrorCodeLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"OperateErrorCodeList." + (i + 1) , operateErrorCodeLists[i]);
-				}
 			}
 		}
 

@@ -34,11 +34,11 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			getBackupStorageCountResponse.RequestId = _ctx.StringValue("GetBackupStorageCount.RequestId");
 
 			GetBackupStorageCountResponse.GetBackupStorageCount_BackupStorageCount backupStorageCount = new GetBackupStorageCountResponse.GetBackupStorageCount_BackupStorageCount();
+			backupStorageCount.Overflow = _ctx.IntegerValue("GetBackupStorageCount.BackupStorageCount.Overflow");
+			backupStorageCount.UniUsageStorageByte = _ctx.LongValue("GetBackupStorageCount.BackupStorageCount.UniUsageStorageByte");
 			backupStorageCount.BuyStorageByte = _ctx.LongValue("GetBackupStorageCount.BackupStorageCount.BuyStorageByte");
 			backupStorageCount.UsageStorageByte = _ctx.LongValue("GetBackupStorageCount.BackupStorageCount.UsageStorageByte");
 			backupStorageCount.EcsUsageStorageByte = _ctx.LongValue("GetBackupStorageCount.BackupStorageCount.EcsUsageStorageByte");
-			backupStorageCount.UniUsageStorageByte = _ctx.LongValue("GetBackupStorageCount.BackupStorageCount.UniUsageStorageByte");
-			backupStorageCount.Overflow = _ctx.IntegerValue("GetBackupStorageCount.BackupStorageCount.Overflow");
 			getBackupStorageCountResponse.BackupStorageCount = backupStorageCount;
         
 			return getBackupStorageCountResponse;

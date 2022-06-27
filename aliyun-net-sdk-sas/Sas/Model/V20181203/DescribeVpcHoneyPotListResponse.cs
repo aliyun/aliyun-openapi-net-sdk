@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -70,41 +70,29 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeVpcHoneyPotList_VpcHoneyPotDTO
 		{
 
-			private string vpcId;
-
 			private string vpcName;
 
-			private string vpcRegionId;
-
-			private long? createTime;
-
-			private string vpcStatus;
-
-			private string cidrBlock;
-
-			private bool? honeyPotExistence;
-
-			private string honeyPotVpcSwitchId;
-
-			private string honeyPotInstanceStatus;
+			private string vpcId;
 
 			private string honeyPotEniInstanceId;
 
+			private string cidrBlock;
+
+			private string vpcStatus;
+
+			private long? createTime;
+
+			private string honeyPotVpcSwitchId;
+
+			private bool? honeyPotExistence;
+
+			private string vpcRegionId;
+
 			private string honeyPotEcsInstanceStatus;
 
-			private List<DescribeVpcHoneyPotList_VpcSwitchInfo> vpcSwitchIdList;
+			private string honeyPotInstanceStatus;
 
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
-				}
-			}
+			private List<DescribeVpcHoneyPotList_VpcSwitchInfo> vpcSwitchIdList;
 
 			public string VpcName
 			{
@@ -118,87 +106,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string VpcRegionId
+			public string VpcId
 			{
 				get
 				{
-					return vpcRegionId;
+					return vpcId;
 				}
 				set	
 				{
-					vpcRegionId = value;
-				}
-			}
-
-			public long? CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string VpcStatus
-			{
-				get
-				{
-					return vpcStatus;
-				}
-				set	
-				{
-					vpcStatus = value;
-				}
-			}
-
-			public string CidrBlock
-			{
-				get
-				{
-					return cidrBlock;
-				}
-				set	
-				{
-					cidrBlock = value;
-				}
-			}
-
-			public bool? HoneyPotExistence
-			{
-				get
-				{
-					return honeyPotExistence;
-				}
-				set	
-				{
-					honeyPotExistence = value;
-				}
-			}
-
-			public string HoneyPotVpcSwitchId
-			{
-				get
-				{
-					return honeyPotVpcSwitchId;
-				}
-				set	
-				{
-					honeyPotVpcSwitchId = value;
-				}
-			}
-
-			public string HoneyPotInstanceStatus
-			{
-				get
-				{
-					return honeyPotInstanceStatus;
-				}
-				set	
-				{
-					honeyPotInstanceStatus = value;
+					vpcId = value;
 				}
 			}
 
@@ -214,6 +130,78 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string CidrBlock
+			{
+				get
+				{
+					return cidrBlock;
+				}
+				set	
+				{
+					cidrBlock = value;
+				}
+			}
+
+			public string VpcStatus
+			{
+				get
+				{
+					return vpcStatus;
+				}
+				set	
+				{
+					vpcStatus = value;
+				}
+			}
+
+			public long? CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string HoneyPotVpcSwitchId
+			{
+				get
+				{
+					return honeyPotVpcSwitchId;
+				}
+				set	
+				{
+					honeyPotVpcSwitchId = value;
+				}
+			}
+
+			public bool? HoneyPotExistence
+			{
+				get
+				{
+					return honeyPotExistence;
+				}
+				set	
+				{
+					honeyPotExistence = value;
+				}
+			}
+
+			public string VpcRegionId
+			{
+				get
+				{
+					return vpcRegionId;
+				}
+				set	
+				{
+					vpcRegionId = value;
+				}
+			}
+
 			public string HoneyPotEcsInstanceStatus
 			{
 				get
@@ -223,6 +211,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					honeyPotEcsInstanceStatus = value;
+				}
+			}
+
+			public string HoneyPotInstanceStatus
+			{
+				get
+				{
+					return honeyPotInstanceStatus;
+				}
+				set	
+				{
+					honeyPotInstanceStatus = value;
 				}
 			}
 
@@ -241,23 +241,11 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			public class DescribeVpcHoneyPotList_VpcSwitchInfo
 			{
 
-				private string vpcSwitchId;
-
 				private string vpcSwitchName;
 
 				private string zoneId;
 
-				public string VpcSwitchId
-				{
-					get
-					{
-						return vpcSwitchId;
-					}
-					set	
-					{
-						vpcSwitchId = value;
-					}
-				}
+				private string vpcSwitchId;
 
 				public string VpcSwitchName
 				{
@@ -282,29 +270,41 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 						zoneId = value;
 					}
 				}
+
+				public string VpcSwitchId
+				{
+					get
+					{
+						return vpcSwitchId;
+					}
+					set	
+					{
+						vpcSwitchId = value;
+					}
+				}
 			}
 		}
 
 		public class DescribeVpcHoneyPotList_PageInfo
 		{
 
-			private int? count;
+			private int? currentPage;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? currentPage;
+			private int? count;
 
-			public int? Count
+			public int? CurrentPage
 			{
 				get
 				{
-					return count;
+					return currentPage;
 				}
 				set	
 				{
-					count = value;
+					currentPage = value;
 				}
 			}
 
@@ -332,15 +332,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? CurrentPage
+			public int? Count
 			{
 				get
 				{
-					return currentPage;
+					return count;
 				}
 				set	
 				{
-					currentPage = value;
+					count = value;
 				}
 			}
 		}

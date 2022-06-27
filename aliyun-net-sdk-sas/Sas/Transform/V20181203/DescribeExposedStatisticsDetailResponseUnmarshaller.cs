@@ -34,23 +34,23 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describeExposedStatisticsDetailResponse.RequestId = _ctx.StringValue("DescribeExposedStatisticsDetail.RequestId");
 
 			DescribeExposedStatisticsDetailResponse.DescribeExposedStatisticsDetail_PageInfo pageInfo = new DescribeExposedStatisticsDetailResponse.DescribeExposedStatisticsDetail_PageInfo();
-			pageInfo.Count = _ctx.IntegerValue("DescribeExposedStatisticsDetail.PageInfo.Count");
+			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeExposedStatisticsDetail.PageInfo.CurrentPage");
 			pageInfo.PageSize = _ctx.IntegerValue("DescribeExposedStatisticsDetail.PageInfo.PageSize");
 			pageInfo.TotalCount = _ctx.IntegerValue("DescribeExposedStatisticsDetail.PageInfo.TotalCount");
-			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeExposedStatisticsDetail.PageInfo.CurrentPage");
+			pageInfo.Count = _ctx.IntegerValue("DescribeExposedStatisticsDetail.PageInfo.Count");
 			describeExposedStatisticsDetailResponse.PageInfo = pageInfo;
 
 			List<DescribeExposedStatisticsDetailResponse.DescribeExposedStatisticsDetail_StatisticsDetail> describeExposedStatisticsDetailResponse_statisticsDetails = new List<DescribeExposedStatisticsDetailResponse.DescribeExposedStatisticsDetail_StatisticsDetail>();
 			for (int i = 0; i < _ctx.Length("DescribeExposedStatisticsDetail.StatisticsDetails.Length"); i++) {
 				DescribeExposedStatisticsDetailResponse.DescribeExposedStatisticsDetail_StatisticsDetail statisticsDetail = new DescribeExposedStatisticsDetailResponse.DescribeExposedStatisticsDetail_StatisticsDetail();
-				statisticsDetail.ExposureComponent = _ctx.StringValue("DescribeExposedStatisticsDetail.StatisticsDetails["+ i +"].ExposureComponent");
-				statisticsDetail.ExposureType = _ctx.StringValue("DescribeExposedStatisticsDetail.StatisticsDetails["+ i +"].ExposureType");
-				statisticsDetail.ExposureTypeId = _ctx.StringValue("DescribeExposedStatisticsDetail.StatisticsDetails["+ i +"].ExposureTypeId");
-				statisticsDetail.ExposurePort = _ctx.StringValue("DescribeExposedStatisticsDetail.StatisticsDetails["+ i +"].ExposurePort");
 				statisticsDetail.ExposureIp = _ctx.StringValue("DescribeExposedStatisticsDetail.StatisticsDetails["+ i +"].ExposureIp");
+				statisticsDetail.ExposurePort = _ctx.StringValue("DescribeExposedStatisticsDetail.StatisticsDetails["+ i +"].ExposurePort");
 				statisticsDetail.ExposureTypeInstanceName = _ctx.StringValue("DescribeExposedStatisticsDetail.StatisticsDetails["+ i +"].ExposureTypeInstanceName");
 				statisticsDetail.ExposedCount = _ctx.IntegerValue("DescribeExposedStatisticsDetail.StatisticsDetails["+ i +"].ExposedCount");
+				statisticsDetail.ExposureType = _ctx.StringValue("DescribeExposedStatisticsDetail.StatisticsDetails["+ i +"].ExposureType");
 				statisticsDetail.RegionId = _ctx.StringValue("DescribeExposedStatisticsDetail.StatisticsDetails["+ i +"].RegionId");
+				statisticsDetail.ExposureComponent = _ctx.StringValue("DescribeExposedStatisticsDetail.StatisticsDetails["+ i +"].ExposureComponent");
+				statisticsDetail.ExposureTypeId = _ctx.StringValue("DescribeExposedStatisticsDetail.StatisticsDetails["+ i +"].ExposureTypeId");
 
 				describeExposedStatisticsDetailResponse_statisticsDetails.Add(statisticsDetail);
 			}

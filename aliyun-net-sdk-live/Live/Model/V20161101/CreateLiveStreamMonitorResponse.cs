@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class CreateLiveStreamMonitorResponse : AcsResponse
 	{
 
-		private string monitorId;
-
 		private string requestId;
 
-		public string MonitorId
-		{
-			get
-			{
-				return monitorId;
-			}
-			set	
-			{
-				monitorId = value;
-			}
-		}
+		private string monitorId;
 
 		public string RequestId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string MonitorId
+		{
+			get
+			{
+				return monitorId;
+			}
+			set	
+			{
+				monitorId = value;
 			}
 		}
 	}

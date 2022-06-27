@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -164,6 +164,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string operate;
 
+			private string disposalWay;
+
 			public long? GmtCreate
 			{
 				get
@@ -305,6 +307,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					operate = value;
+				}
+			}
+
+			public string DisposalWay
+			{
+				get
+				{
+					return disposalWay;
+				}
+				set	
+				{
+					disposalWay = value;
 				}
 			}
 		}

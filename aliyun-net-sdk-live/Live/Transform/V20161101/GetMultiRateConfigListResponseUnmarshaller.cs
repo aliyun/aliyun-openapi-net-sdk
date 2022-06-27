@@ -31,17 +31,17 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			GetMultiRateConfigListResponse getMultiRateConfigListResponse = new GetMultiRateConfigListResponse();
 
 			getMultiRateConfigListResponse.HttpResponse = _ctx.HttpResponse;
-			getMultiRateConfigListResponse.Code = _ctx.IntegerValue("GetMultiRateConfigList.Code");
-			getMultiRateConfigListResponse.Message = _ctx.StringValue("GetMultiRateConfigList.Message");
 			getMultiRateConfigListResponse.RequestId = _ctx.StringValue("GetMultiRateConfigList.RequestId");
+			getMultiRateConfigListResponse.Message = _ctx.StringValue("GetMultiRateConfigList.Message");
+			getMultiRateConfigListResponse.Code = _ctx.IntegerValue("GetMultiRateConfigList.Code");
 
 			List<GetMultiRateConfigListResponse.GetMultiRateConfigList_Info> getMultiRateConfigListResponse_groupInfo = new List<GetMultiRateConfigListResponse.GetMultiRateConfigList_Info>();
 			for (int i = 0; i < _ctx.Length("GetMultiRateConfigList.GroupInfo.Length"); i++) {
 				GetMultiRateConfigListResponse.GetMultiRateConfigList_Info info = new GetMultiRateConfigListResponse.GetMultiRateConfigList_Info();
-				info.GroupId = _ctx.StringValue("GetMultiRateConfigList.GroupInfo["+ i +"].GroupId");
-				info.Count = _ctx.IntegerValue("GetMultiRateConfigList.GroupInfo["+ i +"].Count");
 				info.App = _ctx.StringValue("GetMultiRateConfigList.GroupInfo["+ i +"].App");
 				info.AvFormat = _ctx.StringValue("GetMultiRateConfigList.GroupInfo["+ i +"].AvFormat");
+				info.GroupId = _ctx.StringValue("GetMultiRateConfigList.GroupInfo["+ i +"].GroupId");
+				info.Count = _ctx.IntegerValue("GetMultiRateConfigList.GroupInfo["+ i +"].Count");
 
 				getMultiRateConfigListResponse_groupInfo.Add(info);
 			}

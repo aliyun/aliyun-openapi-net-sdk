@@ -34,18 +34,18 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describeInstanceAntiBruteForceRulesResponse.RequestId = _ctx.StringValue("DescribeInstanceAntiBruteForceRules.RequestId");
 
 			DescribeInstanceAntiBruteForceRulesResponse.DescribeInstanceAntiBruteForceRules_PageInfo pageInfo = new DescribeInstanceAntiBruteForceRulesResponse.DescribeInstanceAntiBruteForceRules_PageInfo();
-			pageInfo.Count = _ctx.IntegerValue("DescribeInstanceAntiBruteForceRules.PageInfo.Count");
+			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeInstanceAntiBruteForceRules.PageInfo.CurrentPage");
 			pageInfo.PageSize = _ctx.IntegerValue("DescribeInstanceAntiBruteForceRules.PageInfo.PageSize");
 			pageInfo.TotalCount = _ctx.IntegerValue("DescribeInstanceAntiBruteForceRules.PageInfo.TotalCount");
-			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeInstanceAntiBruteForceRules.PageInfo.CurrentPage");
+			pageInfo.Count = _ctx.IntegerValue("DescribeInstanceAntiBruteForceRules.PageInfo.Count");
 			describeInstanceAntiBruteForceRulesResponse.PageInfo = pageInfo;
 
 			List<DescribeInstanceAntiBruteForceRulesResponse.DescribeInstanceAntiBruteForceRules_InstanceAntiBruteForceRule> describeInstanceAntiBruteForceRulesResponse_rules = new List<DescribeInstanceAntiBruteForceRulesResponse.DescribeInstanceAntiBruteForceRules_InstanceAntiBruteForceRule>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceAntiBruteForceRules.Rules.Length"); i++) {
 				DescribeInstanceAntiBruteForceRulesResponse.DescribeInstanceAntiBruteForceRules_InstanceAntiBruteForceRule instanceAntiBruteForceRule = new DescribeInstanceAntiBruteForceRulesResponse.DescribeInstanceAntiBruteForceRules_InstanceAntiBruteForceRule();
-				instanceAntiBruteForceRule.Id = _ctx.LongValue("DescribeInstanceAntiBruteForceRules.Rules["+ i +"].Id");
-				instanceAntiBruteForceRule.Name = _ctx.StringValue("DescribeInstanceAntiBruteForceRules.Rules["+ i +"].Name");
 				instanceAntiBruteForceRule.Uuid = _ctx.StringValue("DescribeInstanceAntiBruteForceRules.Rules["+ i +"].Uuid");
+				instanceAntiBruteForceRule.Name = _ctx.StringValue("DescribeInstanceAntiBruteForceRules.Rules["+ i +"].Name");
+				instanceAntiBruteForceRule.Id = _ctx.LongValue("DescribeInstanceAntiBruteForceRules.Rules["+ i +"].Id");
 
 				describeInstanceAntiBruteForceRulesResponse_rules.Add(instanceAntiBruteForceRule);
 			}

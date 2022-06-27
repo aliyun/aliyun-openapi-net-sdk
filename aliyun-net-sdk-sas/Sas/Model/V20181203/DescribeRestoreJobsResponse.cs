@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -70,179 +70,95 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeRestoreJobs_RestoreJob
 		{
 
-			private long? createdTime;
-
-			private long? updatedTime;
-
-			private string uuid;
-
-			private string message;
-
-			private string restoreId;
-
-			private string clientId;
-
-			private string vaultId;
-
-			private string snapshotId;
+			private string status;
 
 			private string snapshotHash;
 
-			private string source;
-
-			private string target;
-
-			private string status;
-
-			private string restoreType;
-
-			private long? speed;
-
-			private long? completeTime;
-
-			private long? eta;
-
-			private long? errorCount;
-
-			private long? bytesDone;
-
-			private long? bytesTotal;
-
-			private long? itemsDone;
-
-			private long? itemsTotal;
-
-			private long? actualBytes;
-
-			private int? percentage;
-
-			private string errorType;
-
 			private string sourceClientId;
-
-			private string snapshotVersion;
-
-			private string instanceName;
-
-			private string internetIp;
-
-			private string intranetIp;
 
 			private string errorFileUrl;
 
-			private string requestId;
+			private string includes;
 
 			private string restoreName;
 
-			private string instanceId;
+			private string internetIp;
 
-			private long? duration;
+			private string vaultId;
 
-			private string exitCode;
+			private long? actualBytes;
 
-			private string errorFile;
+			private string message;
 
-			private string gmtCreate;
+			private int? percentage;
 
 			private string gmtModified;
 
+			private string restoreType;
+
+			private string exitCode;
+
+			private string clientId;
+
+			private long? itemsDone;
+
+			private long? bytesTotal;
+
+			private string requestId;
+
+			private string instanceName;
+
+			private long? completeTime;
+
+			private string errorType;
+
+			private string snapshotVersion;
+
+			private string target;
+
+			private long? createdTime;
+
+			private string instanceId;
+
+			private string source;
+
+			private string intranetIp;
+
+			private string errorFile;
+
+			private string uuid;
+
 			private string excludes;
 
-			private string includes;
+			private long? speed;
 
-			public long? CreatedTime
+			private string snapshotId;
+
+			private long? updatedTime;
+
+			private string restoreId;
+
+			private string gmtCreate;
+
+			private long? eta;
+
+			private long? duration;
+
+			private long? errorCount;
+
+			private long? itemsTotal;
+
+			private long? bytesDone;
+
+			public string Status
 			{
 				get
 				{
-					return createdTime;
+					return status;
 				}
 				set	
 				{
-					createdTime = value;
-				}
-			}
-
-			public long? UpdatedTime
-			{
-				get
-				{
-					return updatedTime;
-				}
-				set	
-				{
-					updatedTime = value;
-				}
-			}
-
-			public string Uuid
-			{
-				get
-				{
-					return uuid;
-				}
-				set	
-				{
-					uuid = value;
-				}
-			}
-
-			public string Message
-			{
-				get
-				{
-					return message;
-				}
-				set	
-				{
-					message = value;
-				}
-			}
-
-			public string RestoreId
-			{
-				get
-				{
-					return restoreId;
-				}
-				set	
-				{
-					restoreId = value;
-				}
-			}
-
-			public string ClientId
-			{
-				get
-				{
-					return clientId;
-				}
-				set	
-				{
-					clientId = value;
-				}
-			}
-
-			public string VaultId
-			{
-				get
-				{
-					return vaultId;
-				}
-				set	
-				{
-					vaultId = value;
-				}
-			}
-
-			public string SnapshotId
-			{
-				get
-				{
-					return snapshotId;
-				}
-				set	
-				{
-					snapshotId = value;
+					status = value;
 				}
 			}
 
@@ -258,186 +174,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Source
-			{
-				get
-				{
-					return source;
-				}
-				set	
-				{
-					source = value;
-				}
-			}
-
-			public string Target
-			{
-				get
-				{
-					return target;
-				}
-				set	
-				{
-					target = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string RestoreType
-			{
-				get
-				{
-					return restoreType;
-				}
-				set	
-				{
-					restoreType = value;
-				}
-			}
-
-			public long? Speed
-			{
-				get
-				{
-					return speed;
-				}
-				set	
-				{
-					speed = value;
-				}
-			}
-
-			public long? CompleteTime
-			{
-				get
-				{
-					return completeTime;
-				}
-				set	
-				{
-					completeTime = value;
-				}
-			}
-
-			public long? Eta
-			{
-				get
-				{
-					return eta;
-				}
-				set	
-				{
-					eta = value;
-				}
-			}
-
-			public long? ErrorCount
-			{
-				get
-				{
-					return errorCount;
-				}
-				set	
-				{
-					errorCount = value;
-				}
-			}
-
-			public long? BytesDone
-			{
-				get
-				{
-					return bytesDone;
-				}
-				set	
-				{
-					bytesDone = value;
-				}
-			}
-
-			public long? BytesTotal
-			{
-				get
-				{
-					return bytesTotal;
-				}
-				set	
-				{
-					bytesTotal = value;
-				}
-			}
-
-			public long? ItemsDone
-			{
-				get
-				{
-					return itemsDone;
-				}
-				set	
-				{
-					itemsDone = value;
-				}
-			}
-
-			public long? ItemsTotal
-			{
-				get
-				{
-					return itemsTotal;
-				}
-				set	
-				{
-					itemsTotal = value;
-				}
-			}
-
-			public long? ActualBytes
-			{
-				get
-				{
-					return actualBytes;
-				}
-				set	
-				{
-					actualBytes = value;
-				}
-			}
-
-			public int? Percentage
-			{
-				get
-				{
-					return percentage;
-				}
-				set	
-				{
-					percentage = value;
-				}
-			}
-
-			public string ErrorType
-			{
-				get
-				{
-					return errorType;
-				}
-				set	
-				{
-					errorType = value;
-				}
-			}
-
 			public string SourceClientId
 			{
 				get
@@ -447,54 +183,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					sourceClientId = value;
-				}
-			}
-
-			public string SnapshotVersion
-			{
-				get
-				{
-					return snapshotVersion;
-				}
-				set	
-				{
-					snapshotVersion = value;
-				}
-			}
-
-			public string InstanceName
-			{
-				get
-				{
-					return instanceName;
-				}
-				set	
-				{
-					instanceName = value;
-				}
-			}
-
-			public string InternetIp
-			{
-				get
-				{
-					return internetIp;
-				}
-				set	
-				{
-					internetIp = value;
-				}
-			}
-
-			public string IntranetIp
-			{
-				get
-				{
-					return intranetIp;
-				}
-				set	
-				{
-					intranetIp = value;
 				}
 			}
 
@@ -510,15 +198,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string RequestId
+			public string Includes
 			{
 				get
 				{
-					return requestId;
+					return includes;
 				}
 				set	
 				{
-					requestId = value;
+					includes = value;
 				}
 			}
 
@@ -534,63 +222,63 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string InstanceId
+			public string InternetIp
 			{
 				get
 				{
-					return instanceId;
+					return internetIp;
 				}
 				set	
 				{
-					instanceId = value;
+					internetIp = value;
 				}
 			}
 
-			public long? Duration
+			public string VaultId
 			{
 				get
 				{
-					return duration;
+					return vaultId;
 				}
 				set	
 				{
-					duration = value;
+					vaultId = value;
 				}
 			}
 
-			public string ExitCode
+			public long? ActualBytes
 			{
 				get
 				{
-					return exitCode;
+					return actualBytes;
 				}
 				set	
 				{
-					exitCode = value;
+					actualBytes = value;
 				}
 			}
 
-			public string ErrorFile
+			public string Message
 			{
 				get
 				{
-					return errorFile;
+					return message;
 				}
 				set	
 				{
-					errorFile = value;
+					message = value;
 				}
 			}
 
-			public string GmtCreate
+			public int? Percentage
 			{
 				get
 				{
-					return gmtCreate;
+					return percentage;
 				}
 				set	
 				{
-					gmtCreate = value;
+					percentage = value;
 				}
 			}
 
@@ -606,6 +294,210 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string RestoreType
+			{
+				get
+				{
+					return restoreType;
+				}
+				set	
+				{
+					restoreType = value;
+				}
+			}
+
+			public string ExitCode
+			{
+				get
+				{
+					return exitCode;
+				}
+				set	
+				{
+					exitCode = value;
+				}
+			}
+
+			public string ClientId
+			{
+				get
+				{
+					return clientId;
+				}
+				set	
+				{
+					clientId = value;
+				}
+			}
+
+			public long? ItemsDone
+			{
+				get
+				{
+					return itemsDone;
+				}
+				set	
+				{
+					itemsDone = value;
+				}
+			}
+
+			public long? BytesTotal
+			{
+				get
+				{
+					return bytesTotal;
+				}
+				set	
+				{
+					bytesTotal = value;
+				}
+			}
+
+			public string RequestId
+			{
+				get
+				{
+					return requestId;
+				}
+				set	
+				{
+					requestId = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public long? CompleteTime
+			{
+				get
+				{
+					return completeTime;
+				}
+				set	
+				{
+					completeTime = value;
+				}
+			}
+
+			public string ErrorType
+			{
+				get
+				{
+					return errorType;
+				}
+				set	
+				{
+					errorType = value;
+				}
+			}
+
+			public string SnapshotVersion
+			{
+				get
+				{
+					return snapshotVersion;
+				}
+				set	
+				{
+					snapshotVersion = value;
+				}
+			}
+
+			public string Target
+			{
+				get
+				{
+					return target;
+				}
+				set	
+				{
+					target = value;
+				}
+			}
+
+			public long? CreatedTime
+			{
+				get
+				{
+					return createdTime;
+				}
+				set	
+				{
+					createdTime = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string Source
+			{
+				get
+				{
+					return source;
+				}
+				set	
+				{
+					source = value;
+				}
+			}
+
+			public string IntranetIp
+			{
+				get
+				{
+					return intranetIp;
+				}
+				set	
+				{
+					intranetIp = value;
+				}
+			}
+
+			public string ErrorFile
+			{
+				get
+				{
+					return errorFile;
+				}
+				set	
+				{
+					errorFile = value;
+				}
+			}
+
+			public string Uuid
+			{
+				get
+				{
+					return uuid;
+				}
+				set	
+				{
+					uuid = value;
+				}
+			}
+
 			public string Excludes
 			{
 				get
@@ -618,15 +510,123 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string Includes
+			public long? Speed
 			{
 				get
 				{
-					return includes;
+					return speed;
 				}
 				set	
 				{
-					includes = value;
+					speed = value;
+				}
+			}
+
+			public string SnapshotId
+			{
+				get
+				{
+					return snapshotId;
+				}
+				set	
+				{
+					snapshotId = value;
+				}
+			}
+
+			public long? UpdatedTime
+			{
+				get
+				{
+					return updatedTime;
+				}
+				set	
+				{
+					updatedTime = value;
+				}
+			}
+
+			public string RestoreId
+			{
+				get
+				{
+					return restoreId;
+				}
+				set	
+				{
+					restoreId = value;
+				}
+			}
+
+			public string GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
+				}
+			}
+
+			public long? Eta
+			{
+				get
+				{
+					return eta;
+				}
+				set	
+				{
+					eta = value;
+				}
+			}
+
+			public long? Duration
+			{
+				get
+				{
+					return duration;
+				}
+				set	
+				{
+					duration = value;
+				}
+			}
+
+			public long? ErrorCount
+			{
+				get
+				{
+					return errorCount;
+				}
+				set	
+				{
+					errorCount = value;
+				}
+			}
+
+			public long? ItemsTotal
+			{
+				get
+				{
+					return itemsTotal;
+				}
+				set	
+				{
+					itemsTotal = value;
+				}
+			}
+
+			public long? BytesDone
+			{
+				get
+				{
+					return bytesDone;
+				}
+				set	
+				{
+					bytesDone = value;
 				}
 			}
 		}
@@ -634,23 +634,23 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeRestoreJobs_PageInfo
 		{
 
-			private int? count;
+			private int? currentPage;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? currentPage;
+			private int? count;
 
-			public int? Count
+			public int? CurrentPage
 			{
 				get
 				{
-					return count;
+					return currentPage;
 				}
 				set	
 				{
-					count = value;
+					currentPage = value;
 				}
 			}
 
@@ -678,15 +678,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? CurrentPage
+			public int? Count
 			{
 				get
 				{
-					return currentPage;
+					return count;
 				}
 				set	
 				{
-					currentPage = value;
+					count = value;
 				}
 			}
 		}

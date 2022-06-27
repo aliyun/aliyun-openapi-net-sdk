@@ -34,12 +34,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			describeLiveStreamsNotifyUrlConfigResponse.RequestId = _ctx.StringValue("DescribeLiveStreamsNotifyUrlConfig.RequestId");
 
 			DescribeLiveStreamsNotifyUrlConfigResponse.DescribeLiveStreamsNotifyUrlConfig_LiveStreamsNotifyConfig liveStreamsNotifyConfig = new DescribeLiveStreamsNotifyUrlConfigResponse.DescribeLiveStreamsNotifyUrlConfig_LiveStreamsNotifyConfig();
-			liveStreamsNotifyConfig.NotifyReqAuth = _ctx.StringValue("DescribeLiveStreamsNotifyUrlConfig.LiveStreamsNotifyConfig.NotifyReqAuth");
-			liveStreamsNotifyConfig.AuthType = _ctx.StringValue("DescribeLiveStreamsNotifyUrlConfig.LiveStreamsNotifyConfig.AuthType");
-			liveStreamsNotifyConfig.NotifyUrl = _ctx.StringValue("DescribeLiveStreamsNotifyUrlConfig.LiveStreamsNotifyConfig.NotifyUrl");
-			liveStreamsNotifyConfig.NotifyAuthKey = _ctx.StringValue("DescribeLiveStreamsNotifyUrlConfig.LiveStreamsNotifyConfig.NotifyAuthKey");
-			liveStreamsNotifyConfig.AuthKey = _ctx.StringValue("DescribeLiveStreamsNotifyUrlConfig.LiveStreamsNotifyConfig.AuthKey");
 			liveStreamsNotifyConfig.DomainName = _ctx.StringValue("DescribeLiveStreamsNotifyUrlConfig.LiveStreamsNotifyConfig.DomainName");
+			liveStreamsNotifyConfig.NotifyUrl = _ctx.StringValue("DescribeLiveStreamsNotifyUrlConfig.LiveStreamsNotifyConfig.NotifyUrl");
+			liveStreamsNotifyConfig.NotifyReqAuth = _ctx.StringValue("DescribeLiveStreamsNotifyUrlConfig.LiveStreamsNotifyConfig.NotifyReqAuth");
+			liveStreamsNotifyConfig.NotifyAuthKey = _ctx.StringValue("DescribeLiveStreamsNotifyUrlConfig.LiveStreamsNotifyConfig.NotifyAuthKey");
+			liveStreamsNotifyConfig.AuthType = _ctx.StringValue("DescribeLiveStreamsNotifyUrlConfig.LiveStreamsNotifyConfig.AuthType");
+			liveStreamsNotifyConfig.AuthKey = _ctx.StringValue("DescribeLiveStreamsNotifyUrlConfig.LiveStreamsNotifyConfig.AuthKey");
 			describeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig = liveStreamsNotifyConfig;
         
 			return describeLiveStreamsNotifyUrlConfigResponse;

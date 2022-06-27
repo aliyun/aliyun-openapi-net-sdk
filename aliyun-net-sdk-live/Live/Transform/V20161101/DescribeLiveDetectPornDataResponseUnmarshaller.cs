@@ -36,14 +36,14 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveDetectPornDataResponse.DescribeLiveDetectPornData_DataModule> describeLiveDetectPornDataResponse_detectPornData = new List<DescribeLiveDetectPornDataResponse.DescribeLiveDetectPornData_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDetectPornData.DetectPornData.Length"); i++) {
 				DescribeLiveDetectPornDataResponse.DescribeLiveDetectPornData_DataModule dataModule = new DescribeLiveDetectPornDataResponse.DescribeLiveDetectPornData_DataModule();
-				dataModule.Domain = _ctx.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Domain");
-				dataModule.Region = _ctx.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Region");
-				dataModule.App = _ctx.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].App");
-				dataModule.Stream = _ctx.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Stream");
 				dataModule.TimeStamp = _ctx.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].TimeStamp");
-				dataModule.Count = _ctx.LongValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Count");
-				dataModule.Scene = _ctx.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Scene");
+				dataModule.App = _ctx.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].App");
+				dataModule.Domain = _ctx.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Domain");
+				dataModule.Stream = _ctx.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Stream");
 				dataModule.Fee = _ctx.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Fee");
+				dataModule.Scene = _ctx.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Scene");
+				dataModule.Region = _ctx.StringValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Region");
+				dataModule.Count = _ctx.LongValue("DescribeLiveDetectPornData.DetectPornData["+ i +"].Count");
 
 				describeLiveDetectPornDataResponse_detectPornData.Add(dataModule);
 			}

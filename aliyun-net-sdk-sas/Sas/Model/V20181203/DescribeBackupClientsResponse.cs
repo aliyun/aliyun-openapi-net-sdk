@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -60,9 +60,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string instanceId;
 
-			private string clientId;
-
 			private string clientStatus;
+
+			private string clientId;
 
 			public string Uuid
 			{
@@ -88,18 +88,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string ClientId
-			{
-				get
-				{
-					return clientId;
-				}
-				set	
-				{
-					clientId = value;
-				}
-			}
-
 			public string ClientStatus
 			{
 				get
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					clientStatus = value;
+				}
+			}
+
+			public string ClientId
+			{
+				get
+				{
+					return clientId;
+				}
+				set	
+				{
+					clientId = value;
 				}
 			}
 		}

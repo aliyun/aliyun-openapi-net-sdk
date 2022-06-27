@@ -59,6 +59,10 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private long? ownerId;
 
+		private string transitRouterAttachmentId;
+
+		private long? interval;
+
 		private string flowLogName;
 
 		public long? ResourceOwnerId
@@ -175,6 +179,32 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string TransitRouterAttachmentId
+		{
+			get
+			{
+				return transitRouterAttachmentId;
+			}
+			set	
+			{
+				transitRouterAttachmentId = value;
+				DictionaryUtil.Add(QueryParameters, "TransitRouterAttachmentId", value);
+			}
+		}
+
+		public long? Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value.ToString());
 			}
 		}
 

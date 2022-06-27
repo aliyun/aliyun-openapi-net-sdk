@@ -57,6 +57,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string productKey;
 
+		private string deviceName;
+
 		public List<UserProp> UserProps
 		{
 			get
@@ -84,7 +86,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				messageContent = value;
-				DictionaryUtil.Add(QueryParameters, "MessageContent", value);
+				DictionaryUtil.Add(BodyParameters, "MessageContent", value);
 			}
 		}
 
@@ -163,6 +165,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public string DeviceName
+		{
+			get
+			{
+				return deviceName;
+			}
+			set	
+			{
+				deviceName = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
 			}
 		}
 

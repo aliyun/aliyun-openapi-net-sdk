@@ -31,18 +31,18 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			ListPlaylistResponse listPlaylistResponse = new ListPlaylistResponse();
 
 			listPlaylistResponse.HttpResponse = _ctx.HttpResponse;
-			listPlaylistResponse.Total = _ctx.IntegerValue("ListPlaylist.Total");
 			listPlaylistResponse.RequestId = _ctx.StringValue("ListPlaylist.RequestId");
+			listPlaylistResponse.Total = _ctx.IntegerValue("ListPlaylist.Total");
 
 			List<ListPlaylistResponse.ListPlaylist_ProgramInfo> listPlaylistResponse_programList = new List<ListPlaylistResponse.ListPlaylist_ProgramInfo>();
 			for (int i = 0; i < _ctx.Length("ListPlaylist.ProgramList.Length"); i++) {
 				ListPlaylistResponse.ListPlaylist_ProgramInfo programInfo = new ListPlaylistResponse.ListPlaylist_ProgramInfo();
-				programInfo.Status = _ctx.IntegerValue("ListPlaylist.ProgramList["+ i +"].Status");
-				programInfo.RepeatNumber = _ctx.IntegerValue("ListPlaylist.ProgramList["+ i +"].RepeatNumber");
-				programInfo.ProgramName = _ctx.StringValue("ListPlaylist.ProgramList["+ i +"].ProgramName");
 				programInfo.ProgramId = _ctx.StringValue("ListPlaylist.ProgramList["+ i +"].ProgramId");
+				programInfo.ProgramName = _ctx.StringValue("ListPlaylist.ProgramList["+ i +"].ProgramName");
 				programInfo.CasterId = _ctx.StringValue("ListPlaylist.ProgramList["+ i +"].CasterId");
 				programInfo.DomainName = _ctx.StringValue("ListPlaylist.ProgramList["+ i +"].DomainName");
+				programInfo.RepeatNumber = _ctx.IntegerValue("ListPlaylist.ProgramList["+ i +"].RepeatNumber");
+				programInfo.Status = _ctx.IntegerValue("ListPlaylist.ProgramList["+ i +"].Status");
 
 				listPlaylistResponse_programList.Add(programInfo);
 			}

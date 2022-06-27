@@ -40,45 +40,15 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 			Method = MethodType.POST;
         }
 
-		private List<ColorTemplate> colorTemplates = new List<ColorTemplate>(){ };
-
-		private string url;
-
 		private string mode;
 
 		private int? colorCount;
 
+		private List<string> colorTemplates = new List<string>(){ };
+
+		private string url;
+
 		private string refUrl;
-
-		public List<ColorTemplate> ColorTemplates
-		{
-			get
-			{
-				return colorTemplates;
-			}
-
-			set
-			{
-				colorTemplates = value;
-				for (int i = 0; i < colorTemplates.Count; i++)
-				{
-					DictionaryUtil.Add(BodyParameters,"ColorTemplate." + (i + 1) + ".Color", colorTemplates[i].Color);
-				}
-			}
-		}
-
-		public string Url
-		{
-			get
-			{
-				return url;
-			}
-			set	
-			{
-				url = value;
-				DictionaryUtil.Add(BodyParameters, "Url", value);
-			}
-		}
 
 		public string Mode
 		{
@@ -103,6 +73,39 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 			{
 				colorCount = value;
 				DictionaryUtil.Add(BodyParameters, "ColorCount", value.ToString());
+			}
+		}
+
+		public List<string> ColorTemplates
+		{
+			get
+			{
+				return colorTemplates;
+			}
+
+			set
+			{
+				colorTemplates = value;
+				if(colorTemplates != null)
+				{
+					for (int depth1 = 0; depth1 < colorTemplates.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"ColorTemplate." + (depth1 + 1), colorTemplates[depth1]);
+					}
+				}
+			}
+		}
+
+		public string Url
+		{
+			get
+			{
+				return url;
+			}
+			set	
+			{
+				url = value;
+				DictionaryUtil.Add(BodyParameters, "Url", value);
 			}
 		}
 

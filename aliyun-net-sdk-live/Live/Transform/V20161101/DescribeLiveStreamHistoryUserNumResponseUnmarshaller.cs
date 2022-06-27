@@ -36,8 +36,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveStreamHistoryUserNumResponse.DescribeLiveStreamHistoryUserNum_LiveStreamUserNumInfo> describeLiveStreamHistoryUserNumResponse_liveStreamUserNumInfos = new List<DescribeLiveStreamHistoryUserNumResponse.DescribeLiveStreamHistoryUserNum_LiveStreamUserNumInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveStreamHistoryUserNum.LiveStreamUserNumInfos.Length"); i++) {
 				DescribeLiveStreamHistoryUserNumResponse.DescribeLiveStreamHistoryUserNum_LiveStreamUserNumInfo liveStreamUserNumInfo = new DescribeLiveStreamHistoryUserNumResponse.DescribeLiveStreamHistoryUserNum_LiveStreamUserNumInfo();
-				liveStreamUserNumInfo.UserNum = _ctx.StringValue("DescribeLiveStreamHistoryUserNum.LiveStreamUserNumInfos["+ i +"].UserNum");
 				liveStreamUserNumInfo.StreamTime = _ctx.StringValue("DescribeLiveStreamHistoryUserNum.LiveStreamUserNumInfos["+ i +"].StreamTime");
+				liveStreamUserNumInfo.UserNum = _ctx.StringValue("DescribeLiveStreamHistoryUserNum.LiveStreamUserNumInfos["+ i +"].UserNum");
 
 				describeLiveStreamHistoryUserNumResponse_liveStreamUserNumInfos.Add(liveStreamUserNumInfo);
 			}

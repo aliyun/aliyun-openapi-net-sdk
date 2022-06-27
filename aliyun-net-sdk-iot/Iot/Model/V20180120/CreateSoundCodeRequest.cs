@@ -47,6 +47,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string soundCodeContent;
 
+		private string name;
+
+		private string openType;
+
 		public int? Duration
 		{
 			get
@@ -83,6 +87,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				soundCodeContent = value;
 				DictionaryUtil.Add(BodyParameters, "SoundCodeContent", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(BodyParameters, "Name", value);
+			}
+		}
+
+		public string OpenType
+		{
+			get
+			{
+				return openType;
+			}
+			set	
+			{
+				openType = value;
+				DictionaryUtil.Add(BodyParameters, "OpenType", value);
 			}
 		}
 

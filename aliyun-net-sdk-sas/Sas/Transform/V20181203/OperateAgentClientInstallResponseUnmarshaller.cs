@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			List<OperateAgentClientInstallResponse.OperateAgentClientInstall_AegisCelintInstallRespose> operateAgentClientInstallResponse_aegisCelintInstallResposeList = new List<OperateAgentClientInstallResponse.OperateAgentClientInstall_AegisCelintInstallRespose>();
 			for (int i = 0; i < _ctx.Length("OperateAgentClientInstall.AegisCelintInstallResposeList.Length"); i++) {
 				OperateAgentClientInstallResponse.OperateAgentClientInstall_AegisCelintInstallRespose aegisCelintInstallRespose = new OperateAgentClientInstallResponse.OperateAgentClientInstall_AegisCelintInstallRespose();
+				aegisCelintInstallRespose.Uuid = _ctx.StringValue("OperateAgentClientInstall.AegisCelintInstallResposeList["+ i +"].Uuid");
 				aegisCelintInstallRespose.InstanceId = _ctx.StringValue("OperateAgentClientInstall.AegisCelintInstallResposeList["+ i +"].InstanceId");
 				aegisCelintInstallRespose.RecordId = _ctx.LongValue("OperateAgentClientInstall.AegisCelintInstallResposeList["+ i +"].RecordId");
-				aegisCelintInstallRespose.Uuid = _ctx.StringValue("OperateAgentClientInstall.AegisCelintInstallResposeList["+ i +"].Uuid");
 
 				operateAgentClientInstallResponse_aegisCelintInstallResposeList.Add(aegisCelintInstallRespose);
 			}

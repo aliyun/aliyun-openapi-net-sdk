@@ -31,21 +31,21 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			StartPlaylistResponse startPlaylistResponse = new StartPlaylistResponse();
 
 			startPlaylistResponse.HttpResponse = _ctx.HttpResponse;
-			startPlaylistResponse.ProgramId = _ctx.StringValue("StartPlaylist.ProgramId");
 			startPlaylistResponse.RequestId = _ctx.StringValue("StartPlaylist.RequestId");
+			startPlaylistResponse.ProgramId = _ctx.StringValue("StartPlaylist.ProgramId");
 
 			StartPlaylistResponse.StartPlaylist_StreamInfo streamInfo = new StartPlaylistResponse.StartPlaylist_StreamInfo();
-			streamInfo.AppName = _ctx.StringValue("StartPlaylist.StreamInfo.AppName");
 			streamInfo.DomainName = _ctx.StringValue("StartPlaylist.StreamInfo.DomainName");
+			streamInfo.AppName = _ctx.StringValue("StartPlaylist.StreamInfo.AppName");
 			streamInfo.StreamName = _ctx.StringValue("StartPlaylist.StreamInfo.StreamName");
 
 			List<StartPlaylistResponse.StartPlaylist_StreamInfo.StartPlaylist_Stream> streamInfo_streams = new List<StartPlaylistResponse.StartPlaylist_StreamInfo.StartPlaylist_Stream>();
 			for (int i = 0; i < _ctx.Length("StartPlaylist.StreamInfo.Streams.Length"); i++) {
 				StartPlaylistResponse.StartPlaylist_StreamInfo.StartPlaylist_Stream stream = new StartPlaylistResponse.StartPlaylist_StreamInfo.StartPlaylist_Stream();
-				stream.Quality = _ctx.StringValue("StartPlaylist.StreamInfo.Streams["+ i +"].Quality");
 				stream.PullFlvUrl = _ctx.StringValue("StartPlaylist.StreamInfo.Streams["+ i +"].PullFlvUrl");
-				stream.PullM3U8Url = _ctx.StringValue("StartPlaylist.StreamInfo.Streams["+ i +"].PullM3U8Url");
 				stream.PullRtmpUrl = _ctx.StringValue("StartPlaylist.StreamInfo.Streams["+ i +"].PullRtmpUrl");
+				stream.PullM3U8Url = _ctx.StringValue("StartPlaylist.StreamInfo.Streams["+ i +"].PullM3U8Url");
+				stream.Quality = _ctx.StringValue("StartPlaylist.StreamInfo.Streams["+ i +"].Quality");
 
 				streamInfo_streams.Add(stream);
 			}

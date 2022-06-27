@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string name;
 
+		private string openType;
+
 		public string Description
 		{
 			get
@@ -113,6 +115,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				name = value;
 				DictionaryUtil.Add(BodyParameters, "Name", value);
+			}
+		}
+
+		public string OpenType
+		{
+			get
+			{
+				return openType;
+			}
+			set	
+			{
+				openType = value;
+				DictionaryUtil.Add(BodyParameters, "OpenType", value);
 			}
 		}
 

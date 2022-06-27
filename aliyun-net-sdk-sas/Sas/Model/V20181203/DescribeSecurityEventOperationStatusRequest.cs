@@ -72,10 +72,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set
 			{
 				securityEventIdss = value;
-				for (int i = 0; i < securityEventIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SecurityEventIds." + (i + 1) , securityEventIdss[i]);
-				}
 			}
 		}
 

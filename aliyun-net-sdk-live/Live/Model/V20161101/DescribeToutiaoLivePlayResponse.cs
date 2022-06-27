@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeToutiaoLivePlayResponse : AcsResponse
 	{
 
-		private string description;
-
 		private string requestId;
 
-		private List<DescribeToutiaoLivePlay_ContentItem> content;
+		private string description;
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-			}
-		}
+		private List<DescribeToutiaoLivePlay_ContentItem> content;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
 			}
 		}
 
@@ -70,29 +70,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeToutiaoLivePlay_ContentItem
 		{
 
-			private string domain;
+			private string app;
 
 			private float? bandwidth;
 
-			private string streamName;
+			private string cdnName;
 
-			private string app;
+			private string domain;
 
 			private long? playNum;
 
+			private string streamName;
+
 			private long? timestamp;
 
-			private string cdnName;
-
-			public string Domain
+			public string App
 			{
 				get
 				{
-					return domain;
+					return app;
 				}
 				set	
 				{
-					domain = value;
+					app = value;
 				}
 			}
 
@@ -108,27 +108,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string StreamName
+			public string CdnName
 			{
 				get
 				{
-					return streamName;
+					return cdnName;
 				}
 				set	
 				{
-					streamName = value;
+					cdnName = value;
 				}
 			}
 
-			public string App
+			public string Domain
 			{
 				get
 				{
-					return app;
+					return domain;
 				}
 				set	
 				{
-					app = value;
+					domain = value;
 				}
 			}
 
@@ -144,6 +144,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			public string StreamName
+			{
+				get
+				{
+					return streamName;
+				}
+				set	
+				{
+					streamName = value;
+				}
+			}
+
 			public long? Timestamp
 			{
 				get
@@ -153,18 +165,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					timestamp = value;
-				}
-			}
-
-			public string CdnName
-			{
-				get
-				{
-					return cdnName;
-				}
-				set	
-				{
-					cdnName = value;
 				}
 			}
 		}

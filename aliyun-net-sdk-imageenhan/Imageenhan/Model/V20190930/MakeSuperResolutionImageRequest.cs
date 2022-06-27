@@ -44,7 +44,11 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 
 		private string mode;
 
+		private string outputFormat;
+
 		private string url;
+
+		private long? outputQuality;
 
 		public long? UpscaleFactor
 		{
@@ -72,6 +76,19 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 			}
 		}
 
+		public string OutputFormat
+		{
+			get
+			{
+				return outputFormat;
+			}
+			set	
+			{
+				outputFormat = value;
+				DictionaryUtil.Add(BodyParameters, "OutputFormat", value);
+			}
+		}
+
 		public string Url
 		{
 			get
@@ -82,6 +99,19 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 			{
 				url = value;
 				DictionaryUtil.Add(BodyParameters, "Url", value);
+			}
+		}
+
+		public long? OutputQuality
+		{
+			get
+			{
+				return outputQuality;
+			}
+			set	
+			{
+				outputQuality = value;
+				DictionaryUtil.Add(BodyParameters, "OutputQuality", value.ToString());
 			}
 		}
 

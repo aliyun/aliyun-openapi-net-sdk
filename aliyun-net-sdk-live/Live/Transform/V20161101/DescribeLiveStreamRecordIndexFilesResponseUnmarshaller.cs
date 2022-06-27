@@ -31,30 +31,30 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveStreamRecordIndexFilesResponse describeLiveStreamRecordIndexFilesResponse = new DescribeLiveStreamRecordIndexFilesResponse();
 
 			describeLiveStreamRecordIndexFilesResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveStreamRecordIndexFilesResponse.PageNum = _ctx.IntegerValue("DescribeLiveStreamRecordIndexFiles.PageNum");
 			describeLiveStreamRecordIndexFilesResponse.RequestId = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.RequestId");
-			describeLiveStreamRecordIndexFilesResponse.Order = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.Order");
-			describeLiveStreamRecordIndexFilesResponse.TotalPage = _ctx.IntegerValue("DescribeLiveStreamRecordIndexFiles.TotalPage");
+			describeLiveStreamRecordIndexFilesResponse.PageNum = _ctx.IntegerValue("DescribeLiveStreamRecordIndexFiles.PageNum");
 			describeLiveStreamRecordIndexFilesResponse.PageSize = _ctx.IntegerValue("DescribeLiveStreamRecordIndexFiles.PageSize");
+			describeLiveStreamRecordIndexFilesResponse.Order = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.Order");
 			describeLiveStreamRecordIndexFilesResponse.TotalNum = _ctx.IntegerValue("DescribeLiveStreamRecordIndexFiles.TotalNum");
+			describeLiveStreamRecordIndexFilesResponse.TotalPage = _ctx.IntegerValue("DescribeLiveStreamRecordIndexFiles.TotalPage");
 
 			List<DescribeLiveStreamRecordIndexFilesResponse.DescribeLiveStreamRecordIndexFiles_RecordIndexInfo> describeLiveStreamRecordIndexFilesResponse_recordIndexInfoList = new List<DescribeLiveStreamRecordIndexFilesResponse.DescribeLiveStreamRecordIndexFiles_RecordIndexInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList.Length"); i++) {
 				DescribeLiveStreamRecordIndexFilesResponse.DescribeLiveStreamRecordIndexFiles_RecordIndexInfo recordIndexInfo = new DescribeLiveStreamRecordIndexFilesResponse.DescribeLiveStreamRecordIndexFiles_RecordIndexInfo();
-				recordIndexInfo.RecordUrl = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].RecordUrl");
-				recordIndexInfo.StreamName = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].StreamName");
-				recordIndexInfo.CreateTime = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].CreateTime");
 				recordIndexInfo.RecordId = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].RecordId");
-				recordIndexInfo.Height = _ctx.IntegerValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].Height");
-				recordIndexInfo.OssBucket = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].OssBucket");
+				recordIndexInfo.RecordUrl = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].RecordUrl");
 				recordIndexInfo.DomainName = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].DomainName");
-				recordIndexInfo.OssObject = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].OssObject");
-				recordIndexInfo.EndTime = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].EndTime");
 				recordIndexInfo.AppName = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].AppName");
-				recordIndexInfo.StartTime = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].StartTime");
-				recordIndexInfo.Width = _ctx.IntegerValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].Width");
-				recordIndexInfo.Duration = _ctx.FloatValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].Duration");
+				recordIndexInfo.StreamName = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].StreamName");
+				recordIndexInfo.OssBucket = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].OssBucket");
 				recordIndexInfo.OssEndpoint = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].OssEndpoint");
+				recordIndexInfo.OssObject = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].OssObject");
+				recordIndexInfo.StartTime = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].StartTime");
+				recordIndexInfo.EndTime = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].EndTime");
+				recordIndexInfo.Duration = _ctx.FloatValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].Duration");
+				recordIndexInfo.Height = _ctx.IntegerValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].Height");
+				recordIndexInfo.Width = _ctx.IntegerValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].Width");
+				recordIndexInfo.CreateTime = _ctx.StringValue("DescribeLiveStreamRecordIndexFiles.RecordIndexInfoList["+ i +"].CreateTime");
 
 				describeLiveStreamRecordIndexFilesResponse_recordIndexInfoList.Add(recordIndexInfo);
 			}

@@ -43,7 +43,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private long? resourceOwnerId;
 
-		private List<long?> itemIdss = new List<long?>(){ };
+		private List<string> itemIdss = new List<string>(){ };
 
 		private string type;
 
@@ -64,7 +64,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public List<long?> ItemIdss
+		public List<string> ItemIdss
 		{
 			get
 			{
@@ -74,10 +74,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set
 			{
 				itemIdss = value;
-				for (int i = 0; i < itemIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ItemIds." + (i + 1) , itemIdss[i]);
-				}
 			}
 		}
 

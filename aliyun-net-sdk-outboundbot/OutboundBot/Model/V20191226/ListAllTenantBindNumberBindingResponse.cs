@@ -137,6 +137,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 				private string serializedParams;
 
+				private string billingType;
+
 				private List<string> instanceNameList;
 
 				public string BindingId
@@ -184,6 +186,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						serializedParams = value;
+					}
+				}
+
+				public string BillingType
+				{
+					get
+					{
+						return billingType;
+					}
+					set	
+					{
+						billingType = value;
 					}
 				}
 

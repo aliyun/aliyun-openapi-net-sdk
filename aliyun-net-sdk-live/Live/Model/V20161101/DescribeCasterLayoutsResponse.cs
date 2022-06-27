@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeCasterLayoutsResponse : AcsResponse
 	{
 
-		private int? total;
-
 		private string requestId;
 
-		private List<DescribeCasterLayouts_Layout> layouts;
+		private int? total;
 
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
+		private List<DescribeCasterLayouts_Layout> layouts;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
 			}
 		}
 
@@ -76,9 +76,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private List<DescribeCasterLayouts_AudioLayer> audioLayers;
 
-			private List<string> mixList;
-
 			private List<string> blendList;
+
+			private List<string> mixList;
 
 			public string LayoutId
 			{
@@ -116,18 +116,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public List<string> MixList
-			{
-				get
-				{
-					return mixList;
-				}
-				set	
-				{
-					mixList = value;
-				}
-			}
-
 			public List<string> BlendList
 			{
 				get
@@ -140,42 +128,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			public List<string> MixList
+			{
+				get
+				{
+					return mixList;
+				}
+				set	
+				{
+					mixList = value;
+				}
+			}
+
 			public class DescribeCasterLayouts_VideoLayer
 			{
 
-				private float? widthNormalized;
-
-				private int? fixedDelayDuration;
+				private string fillMode;
 
 				private float? heightNormalized;
 
-				private string fillMode;
+				private float? widthNormalized;
 
 				private string positionRefer;
 
+				private int? fixedDelayDuration;
+
 				private List<string> positionNormalizeds;
 
-				public float? WidthNormalized
+				public string FillMode
 				{
 					get
 					{
-						return widthNormalized;
+						return fillMode;
 					}
 					set	
 					{
-						widthNormalized = value;
-					}
-				}
-
-				public int? FixedDelayDuration
-				{
-					get
-					{
-						return fixedDelayDuration;
-					}
-					set	
-					{
-						fixedDelayDuration = value;
+						fillMode = value;
 					}
 				}
 
@@ -191,15 +179,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public string FillMode
+				public float? WidthNormalized
 				{
 					get
 					{
-						return fillMode;
+						return widthNormalized;
 					}
 					set	
 					{
-						fillMode = value;
+						widthNormalized = value;
 					}
 				}
 
@@ -212,6 +200,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						positionRefer = value;
+					}
+				}
+
+				public int? FixedDelayDuration
+				{
+					get
+					{
+						return fixedDelayDuration;
+					}
+					set	
+					{
+						fixedDelayDuration = value;
 					}
 				}
 
@@ -233,9 +233,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private float? volumeRate;
 
-				private int? fixedDelayDuration;
-
 				private string validChannel;
+
+				private int? fixedDelayDuration;
 
 				public float? VolumeRate
 				{
@@ -249,18 +249,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 					}
 				}
 
-				public int? FixedDelayDuration
-				{
-					get
-					{
-						return fixedDelayDuration;
-					}
-					set	
-					{
-						fixedDelayDuration = value;
-					}
-				}
-
 				public string ValidChannel
 				{
 					get
@@ -270,6 +258,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						validChannel = value;
+					}
+				}
+
+				public int? FixedDelayDuration
+				{
+					get
+					{
+						return fixedDelayDuration;
+					}
+					set	
+					{
+						fixedDelayDuration = value;
 					}
 				}
 			}

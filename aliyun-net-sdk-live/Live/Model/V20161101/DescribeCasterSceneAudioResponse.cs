@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -100,9 +100,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private float? volumeRate;
 
-			private int? fixedDelayDuration;
-
 			private string validChannel;
+
+			private int? fixedDelayDuration;
 
 			public float? VolumeRate
 			{
@@ -116,18 +116,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? FixedDelayDuration
-			{
-				get
-				{
-					return fixedDelayDuration;
-				}
-				set	
-				{
-					fixedDelayDuration = value;
-				}
-			}
-
 			public string ValidChannel
 			{
 				get
@@ -137,6 +125,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					validChannel = value;
+				}
+			}
+
+			public int? FixedDelayDuration
+			{
+				get
+				{
+					return fixedDelayDuration;
+				}
+				set	
+				{
+					fixedDelayDuration = value;
 				}
 			}
 		}

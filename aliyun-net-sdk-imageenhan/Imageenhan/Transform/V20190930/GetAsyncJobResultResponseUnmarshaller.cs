@@ -34,11 +34,11 @@ namespace Aliyun.Acs.imageenhan.Transform.V20190930
 			getAsyncJobResultResponse.RequestId = _ctx.StringValue("GetAsyncJobResult.RequestId");
 
 			GetAsyncJobResultResponse.GetAsyncJobResult_Data data = new GetAsyncJobResultResponse.GetAsyncJobResult_Data();
-			data.JobId = _ctx.StringValue("GetAsyncJobResult.Data.JobId");
 			data.Status = _ctx.StringValue("GetAsyncJobResult.Data.Status");
+			data.ErrorMessage = _ctx.StringValue("GetAsyncJobResult.Data.ErrorMessage");
 			data.Result = _ctx.StringValue("GetAsyncJobResult.Data.Result");
 			data.ErrorCode = _ctx.StringValue("GetAsyncJobResult.Data.ErrorCode");
-			data.ErrorMessage = _ctx.StringValue("GetAsyncJobResult.Data.ErrorMessage");
+			data.JobId = _ctx.StringValue("GetAsyncJobResult.Data.JobId");
 			getAsyncJobResultResponse.Data = data;
         
 			return getAsyncJobResultResponse;

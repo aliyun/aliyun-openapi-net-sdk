@@ -60,6 +60,7 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				listItem.FiledAliasName = _ctx.StringValue("QueryGroupedSecurityEventMarkMissList.List["+ i +"].FiledAliasName");
 				listItem.FieldValue = _ctx.StringValue("QueryGroupedSecurityEventMarkMissList.List["+ i +"].FieldValue");
 				listItem.Operate = _ctx.StringValue("QueryGroupedSecurityEventMarkMissList.List["+ i +"].Operate");
+				listItem.DisposalWay = _ctx.StringValue("QueryGroupedSecurityEventMarkMissList.List["+ i +"].DisposalWay");
 
 				queryGroupedSecurityEventMarkMissListResponse_list.Add(listItem);
 			}

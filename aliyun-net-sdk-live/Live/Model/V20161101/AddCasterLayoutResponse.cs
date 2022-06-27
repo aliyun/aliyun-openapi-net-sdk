@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class AddCasterLayoutResponse : AcsResponse
 	{
 
-		private string layoutId;
-
 		private string requestId;
 
-		public string LayoutId
-		{
-			get
-			{
-				return layoutId;
-			}
-			set	
-			{
-				layoutId = value;
-			}
-		}
+		private string layoutId;
 
 		public string RequestId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string LayoutId
+		{
+			get
+			{
+				return layoutId;
+			}
+			set	
+			{
+				layoutId = value;
 			}
 		}
 	}

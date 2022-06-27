@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,21 +56,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveLazyPullStreamConfig_LiveLazyPullConfig
 		{
 
+			private string domainName;
+
 			private string appName;
 
-			private string pullArgs;
+			private string pullDomainName;
 
 			private string pullAppName;
 
 			private string pullProtocol;
 
+			private string pullAuthType;
+
 			private string pullAuthKey;
 
-			private string pullDomainName;
+			private string pullArgs;
 
-			private string domainName;
-
-			private string pullAuthType;
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
 
 			public string AppName
 			{
@@ -84,15 +96,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string PullArgs
+			public string PullDomainName
 			{
 				get
 				{
-					return pullArgs;
+					return pullDomainName;
 				}
 				set	
 				{
-					pullArgs = value;
+					pullDomainName = value;
 				}
 			}
 
@@ -120,6 +132,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			public string PullAuthType
+			{
+				get
+				{
+					return pullAuthType;
+				}
+				set	
+				{
+					pullAuthType = value;
+				}
+			}
+
 			public string PullAuthKey
 			{
 				get
@@ -132,39 +156,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string PullDomainName
+			public string PullArgs
 			{
 				get
 				{
-					return pullDomainName;
+					return pullArgs;
 				}
 				set	
 				{
-					pullDomainName = value;
-				}
-			}
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
-			public string PullAuthType
-			{
-				get
-				{
-					return pullAuthType;
-				}
-				set	
-				{
-					pullAuthType = value;
+					pullArgs = value;
 				}
 			}
 		}

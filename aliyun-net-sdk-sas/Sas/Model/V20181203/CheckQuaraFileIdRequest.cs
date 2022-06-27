@@ -55,10 +55,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set
 			{
 				quaraFileIdss = value;
-				for (int i = 0; i < quaraFileIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"QuaraFileIds." + (i + 1) , quaraFileIdss[i]);
-				}
 			}
 		}
 

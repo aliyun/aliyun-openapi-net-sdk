@@ -73,6 +73,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set
 			{
 				componentIds = value;
+				for (int i = 0; i < componentIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ComponentId." + (i + 1) , componentIds[i]);
+				}
 			}
 		}
 

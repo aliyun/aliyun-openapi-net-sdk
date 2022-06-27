@@ -40,11 +40,24 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 			Method = MethodType.POST;
         }
 
+		private int? height;
+
 		private string url;
 
 		private int? width;
 
-		private int? height;
+		public int? Height
+		{
+			get
+			{
+				return height;
+			}
+			set	
+			{
+				height = value;
+				DictionaryUtil.Add(BodyParameters, "Height", value.ToString());
+			}
+		}
 
 		public string Url
 		{
@@ -69,19 +82,6 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 			{
 				width = value;
 				DictionaryUtil.Add(BodyParameters, "Width", value.ToString());
-			}
-		}
-
-		public int? Height
-		{
-			get
-			{
-				return height;
-			}
-			set	
-			{
-				height = value;
-				DictionaryUtil.Add(BodyParameters, "Height", value.ToString());
 			}
 		}
 

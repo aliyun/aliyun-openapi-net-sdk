@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				items.SoundCodeContent = _ctx.StringValue("QuerySoundCodeList.Data.List["+ i +"].SoundCodeContent");
 				items.Duration = _ctx.IntegerValue("QuerySoundCodeList.Data.List["+ i +"].Duration");
 				items.GmtCreate = _ctx.LongValue("QuerySoundCodeList.Data.List["+ i +"].GmtCreate");
+				items.OpenType = _ctx.StringValue("QuerySoundCodeList.Data.List["+ i +"].OpenType");
+				items.Name = _ctx.StringValue("QuerySoundCodeList.Data.List["+ i +"].Name");
 
 				data_list.Add(items);
 			}

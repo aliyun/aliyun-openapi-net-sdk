@@ -39,10 +39,10 @@ namespace Aliyun.Acs.imageenhan.Transform.V20190930
 			for (int i = 0; i < _ctx.Length("IntelligentComposition.Data.Elements.Length"); i++) {
 				IntelligentCompositionResponse.IntelligentComposition_Data.IntelligentComposition_Element element = new IntelligentCompositionResponse.IntelligentComposition_Data.IntelligentComposition_Element();
 				element.MinX = _ctx.IntegerValue("IntelligentComposition.Data.Elements["+ i +"].MinX");
-				element.MinY = _ctx.IntegerValue("IntelligentComposition.Data.Elements["+ i +"].MinY");
-				element.MaxX = _ctx.IntegerValue("IntelligentComposition.Data.Elements["+ i +"].MaxX");
-				element.MaxY = _ctx.IntegerValue("IntelligentComposition.Data.Elements["+ i +"].MaxY");
 				element.Score = _ctx.FloatValue("IntelligentComposition.Data.Elements["+ i +"].Score");
+				element.MaxY = _ctx.IntegerValue("IntelligentComposition.Data.Elements["+ i +"].MaxY");
+				element.MaxX = _ctx.IntegerValue("IntelligentComposition.Data.Elements["+ i +"].MaxX");
+				element.MinY = _ctx.IntegerValue("IntelligentComposition.Data.Elements["+ i +"].MinY");
 
 				data_elements.Add(element);
 			}

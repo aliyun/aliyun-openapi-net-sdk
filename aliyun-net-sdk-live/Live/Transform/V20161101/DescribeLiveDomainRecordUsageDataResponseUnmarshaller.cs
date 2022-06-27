@@ -36,10 +36,10 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveDomainRecordUsageDataResponse.DescribeLiveDomainRecordUsageData_DataModule> describeLiveDomainRecordUsageDataResponse_recordUsageData = new List<DescribeLiveDomainRecordUsageDataResponse.DescribeLiveDomainRecordUsageData_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDomainRecordUsageData.RecordUsageData.Length"); i++) {
 				DescribeLiveDomainRecordUsageDataResponse.DescribeLiveDomainRecordUsageData_DataModule dataModule = new DescribeLiveDomainRecordUsageDataResponse.DescribeLiveDomainRecordUsageData_DataModule();
+				dataModule.TimeStamp = _ctx.StringValue("DescribeLiveDomainRecordUsageData.RecordUsageData["+ i +"].TimeStamp");
+				dataModule.Domain = _ctx.StringValue("DescribeLiveDomainRecordUsageData.RecordUsageData["+ i +"].Domain");
 				dataModule.Type = _ctx.StringValue("DescribeLiveDomainRecordUsageData.RecordUsageData["+ i +"].Type");
 				dataModule.Duration = _ctx.LongValue("DescribeLiveDomainRecordUsageData.RecordUsageData["+ i +"].Duration");
-				dataModule.Domain = _ctx.StringValue("DescribeLiveDomainRecordUsageData.RecordUsageData["+ i +"].Domain");
-				dataModule.TimeStamp = _ctx.StringValue("DescribeLiveDomainRecordUsageData.RecordUsageData["+ i +"].TimeStamp");
 				dataModule.Count = _ctx.LongValue("DescribeLiveDomainRecordUsageData.RecordUsageData["+ i +"].Count");
 
 				describeLiveDomainRecordUsageDataResponse_recordUsageData.Add(dataModule);

@@ -31,12 +31,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveStreamsBlockListResponse describeLiveStreamsBlockListResponse = new DescribeLiveStreamsBlockListResponse();
 
 			describeLiveStreamsBlockListResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveStreamsBlockListResponse.PageNum = _ctx.IntegerValue("DescribeLiveStreamsBlockList.PageNum");
 			describeLiveStreamsBlockListResponse.RequestId = _ctx.StringValue("DescribeLiveStreamsBlockList.RequestId");
-			describeLiveStreamsBlockListResponse.TotalPage = _ctx.IntegerValue("DescribeLiveStreamsBlockList.TotalPage");
+			describeLiveStreamsBlockListResponse.DomainName = _ctx.StringValue("DescribeLiveStreamsBlockList.DomainName");
+			describeLiveStreamsBlockListResponse.PageNum = _ctx.IntegerValue("DescribeLiveStreamsBlockList.PageNum");
 			describeLiveStreamsBlockListResponse.PageSize = _ctx.IntegerValue("DescribeLiveStreamsBlockList.PageSize");
 			describeLiveStreamsBlockListResponse.TotalNum = _ctx.IntegerValue("DescribeLiveStreamsBlockList.TotalNum");
-			describeLiveStreamsBlockListResponse.DomainName = _ctx.StringValue("DescribeLiveStreamsBlockList.DomainName");
+			describeLiveStreamsBlockListResponse.TotalPage = _ctx.IntegerValue("DescribeLiveStreamsBlockList.TotalPage");
 
 			List<string> describeLiveStreamsBlockListResponse_streamUrls = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveStreamsBlockList.StreamUrls.Length"); i++) {

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -70,69 +70,45 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeAntiBruteForceRules_AntiBruteForceRule
 		{
 
-			private long? id;
+			private int? machineCount;
 
-			private bool? defaultRule;
-
-			private string name;
-
-			private int? span;
+			private bool? enableSmartRule;
 
 			private int? failCount;
 
 			private int? forbiddenTime;
 
-			private bool? enableSmartRule;
+			private int? span;
 
-			private int? machineCount;
+			private bool? defaultRule;
+
+			private string name;
+
+			private long? id;
 
 			private List<string> uuidList;
 
-			public long? Id
+			public int? MachineCount
 			{
 				get
 				{
-					return id;
+					return machineCount;
 				}
 				set	
 				{
-					id = value;
+					machineCount = value;
 				}
 			}
 
-			public bool? DefaultRule
+			public bool? EnableSmartRule
 			{
 				get
 				{
-					return defaultRule;
+					return enableSmartRule;
 				}
 				set	
 				{
-					defaultRule = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public int? Span
-			{
-				get
-				{
-					return span;
-				}
-				set	
-				{
-					span = value;
+					enableSmartRule = value;
 				}
 			}
 
@@ -160,27 +136,51 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public bool? EnableSmartRule
+			public int? Span
 			{
 				get
 				{
-					return enableSmartRule;
+					return span;
 				}
 				set	
 				{
-					enableSmartRule = value;
+					span = value;
 				}
 			}
 
-			public int? MachineCount
+			public bool? DefaultRule
 			{
 				get
 				{
-					return machineCount;
+					return defaultRule;
 				}
 				set	
 				{
-					machineCount = value;
+					defaultRule = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 
@@ -200,23 +200,23 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeAntiBruteForceRules_PageInfo
 		{
 
-			private int? count;
+			private int? currentPage;
 
 			private int? pageSize;
 
 			private int? totalCount;
 
-			private int? currentPage;
+			private int? count;
 
-			public int? Count
+			public int? CurrentPage
 			{
 				get
 				{
-					return count;
+					return currentPage;
 				}
 				set	
 				{
-					count = value;
+					currentPage = value;
 				}
 			}
 
@@ -244,15 +244,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? CurrentPage
+			public int? Count
 			{
 				get
 				{
-					return currentPage;
+					return count;
 				}
 				set	
 				{
-					currentPage = value;
+					count = value;
 				}
 			}
 		}

@@ -45,8 +45,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			for (int i = 0; i < _ctx.Length("DescribeCasterSceneAudio.AudioLayers.Length"); i++) {
 				DescribeCasterSceneAudioResponse.DescribeCasterSceneAudio_AudioLayer audioLayer = new DescribeCasterSceneAudioResponse.DescribeCasterSceneAudio_AudioLayer();
 				audioLayer.VolumeRate = _ctx.FloatValue("DescribeCasterSceneAudio.AudioLayers["+ i +"].VolumeRate");
-				audioLayer.FixedDelayDuration = _ctx.IntegerValue("DescribeCasterSceneAudio.AudioLayers["+ i +"].FixedDelayDuration");
 				audioLayer.ValidChannel = _ctx.StringValue("DescribeCasterSceneAudio.AudioLayers["+ i +"].ValidChannel");
+				audioLayer.FixedDelayDuration = _ctx.IntegerValue("DescribeCasterSceneAudio.AudioLayers["+ i +"].FixedDelayDuration");
 
 				describeCasterSceneAudioResponse_audioLayers.Add(audioLayer);
 			}

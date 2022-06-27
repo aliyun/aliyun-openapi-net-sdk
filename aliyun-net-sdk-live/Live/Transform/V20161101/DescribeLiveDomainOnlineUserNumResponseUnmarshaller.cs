@@ -32,8 +32,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 
 			describeLiveDomainOnlineUserNumResponse.HttpResponse = _ctx.HttpResponse;
 			describeLiveDomainOnlineUserNumResponse.RequestId = _ctx.StringValue("DescribeLiveDomainOnlineUserNum.RequestId");
-			describeLiveDomainOnlineUserNumResponse.UserCount = _ctx.IntegerValue("DescribeLiveDomainOnlineUserNum.UserCount");
 			describeLiveDomainOnlineUserNumResponse.StreamCount = _ctx.IntegerValue("DescribeLiveDomainOnlineUserNum.StreamCount");
+			describeLiveDomainOnlineUserNumResponse.UserCount = _ctx.IntegerValue("DescribeLiveDomainOnlineUserNum.UserCount");
 
 			List<DescribeLiveDomainOnlineUserNumResponse.DescribeLiveDomainOnlineUserNum_LiveStreamOnlineUserNumInfo> describeLiveDomainOnlineUserNumResponse_onlineUserInfo = new List<DescribeLiveDomainOnlineUserNumResponse.DescribeLiveDomainOnlineUserNum_LiveStreamOnlineUserNumInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveDomainOnlineUserNum.OnlineUserInfo.Length"); i++) {
@@ -43,8 +43,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				List<DescribeLiveDomainOnlineUserNumResponse.DescribeLiveDomainOnlineUserNum_LiveStreamOnlineUserNumInfo.DescribeLiveDomainOnlineUserNum_Info> liveStreamOnlineUserNumInfo_infos = new List<DescribeLiveDomainOnlineUserNumResponse.DescribeLiveDomainOnlineUserNum_LiveStreamOnlineUserNumInfo.DescribeLiveDomainOnlineUserNum_Info>();
 				for (int j = 0; j < _ctx.Length("DescribeLiveDomainOnlineUserNum.OnlineUserInfo["+ i +"].Infos.Length"); j++) {
 					DescribeLiveDomainOnlineUserNumResponse.DescribeLiveDomainOnlineUserNum_LiveStreamOnlineUserNumInfo.DescribeLiveDomainOnlineUserNum_Info info = new DescribeLiveDomainOnlineUserNumResponse.DescribeLiveDomainOnlineUserNum_LiveStreamOnlineUserNumInfo.DescribeLiveDomainOnlineUserNum_Info();
-					info.UserNumber = _ctx.LongValue("DescribeLiveDomainOnlineUserNum.OnlineUserInfo["+ i +"].Infos["+ j +"].UserNumber");
 					info.TranscodeTemplate = _ctx.StringValue("DescribeLiveDomainOnlineUserNum.OnlineUserInfo["+ i +"].Infos["+ j +"].TranscodeTemplate");
+					info.UserNumber = _ctx.LongValue("DescribeLiveDomainOnlineUserNum.OnlineUserInfo["+ i +"].Infos["+ j +"].UserNumber");
 
 					liveStreamOnlineUserNumInfo_infos.Add(info);
 				}

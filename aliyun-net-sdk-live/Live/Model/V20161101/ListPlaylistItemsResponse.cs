@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class ListPlaylistItemsResponse : AcsResponse
 	{
 
-		private int? total;
-
 		private string requestId;
 
-		private List<ListPlaylistItems_ProgramItem> programItems;
+		private int? total;
 
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
+		private List<ListPlaylistItems_ProgramItem> programItems;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
 			}
 		}
 
@@ -70,39 +70,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class ListPlaylistItems_ProgramItem
 		{
 
-			private int? index;
-
-			private string resourceType;
+			private string programId;
 
 			private string programItemId;
 
-			private string programId;
-
 			private string programItemName;
+
+			private string resourceType;
 
 			private string resourceValue;
 
-			public int? Index
-			{
-				get
-				{
-					return index;
-				}
-				set	
-				{
-					index = value;
-				}
-			}
+			private int? index;
 
-			public string ResourceType
+			public string ProgramId
 			{
 				get
 				{
-					return resourceType;
+					return programId;
 				}
 				set	
 				{
-					resourceType = value;
+					programId = value;
 				}
 			}
 
@@ -118,18 +106,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string ProgramId
-			{
-				get
-				{
-					return programId;
-				}
-				set	
-				{
-					programId = value;
-				}
-			}
-
 			public string ProgramItemName
 			{
 				get
@@ -142,6 +118,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			public string ResourceType
+			{
+				get
+				{
+					return resourceType;
+				}
+				set	
+				{
+					resourceType = value;
+				}
+			}
+
 			public string ResourceValue
 			{
 				get
@@ -151,6 +139,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					resourceValue = value;
+				}
+			}
+
+			public int? Index
+			{
+				get
+				{
+					return index;
+				}
+				set	
+				{
+					index = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -56,25 +56,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveStreamCount_StreamCountInfo
 		{
 
-			private string type;
-
 			private long? count;
 
 			private long? limit;
 
-			private List<DescribeLiveStreamCount_StreamCountDetail> streamCountDetails;
+			private string type;
 
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
+			private List<DescribeLiveStreamCount_StreamCountDetail> streamCountDetails;
 
 			public long? Count
 			{
@@ -100,6 +88,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
+
 			public List<DescribeLiveStreamCount_StreamCountDetail> StreamCountDetails
 			{
 				get
@@ -115,23 +115,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 			public class DescribeLiveStreamCount_StreamCountDetail
 			{
 
-				private long? videoDataRate;
-
 				private string format;
 
-				private long? count;
+				private long? videoDataRate;
 
-				public long? VideoDataRate
-				{
-					get
-					{
-						return videoDataRate;
-					}
-					set	
-					{
-						videoDataRate = value;
-					}
-				}
+				private long? count;
 
 				public string Format
 				{
@@ -142,6 +130,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						format = value;
+					}
+				}
+
+				public long? VideoDataRate
+				{
+					get
+					{
+						return videoDataRate;
+					}
+					set	
+					{
+						videoDataRate = value;
 					}
 				}
 

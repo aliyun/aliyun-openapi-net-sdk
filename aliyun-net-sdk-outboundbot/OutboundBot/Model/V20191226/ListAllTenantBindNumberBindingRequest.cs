@@ -40,21 +40,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			Method = MethodType.POST;
         }
 
-		private string tenant;
-
-		public string Tenant
-		{
-			get
-			{
-				return tenant;
-			}
-			set	
-			{
-				tenant = value;
-				DictionaryUtil.Add(QueryParameters, "Tenant", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;

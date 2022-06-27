@@ -31,11 +31,11 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveStreamTranscodeStreamNumResponse describeLiveStreamTranscodeStreamNumResponse = new DescribeLiveStreamTranscodeStreamNumResponse();
 
 			describeLiveStreamTranscodeStreamNumResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveStreamTranscodeStreamNumResponse.UntranscodeNumber = _ctx.LongValue("DescribeLiveStreamTranscodeStreamNum.UntranscodeNumber");
-			describeLiveStreamTranscodeStreamNumResponse.LazyTranscodedNumber = _ctx.LongValue("DescribeLiveStreamTranscodeStreamNum.LazyTranscodedNumber");
-			describeLiveStreamTranscodeStreamNumResponse.TranscodedNumber = _ctx.LongValue("DescribeLiveStreamTranscodeStreamNum.TranscodedNumber");
 			describeLiveStreamTranscodeStreamNumResponse.RequestId = _ctx.StringValue("DescribeLiveStreamTranscodeStreamNum.RequestId");
 			describeLiveStreamTranscodeStreamNumResponse.Total = _ctx.LongValue("DescribeLiveStreamTranscodeStreamNum.Total");
+			describeLiveStreamTranscodeStreamNumResponse.TranscodedNumber = _ctx.LongValue("DescribeLiveStreamTranscodeStreamNum.TranscodedNumber");
+			describeLiveStreamTranscodeStreamNumResponse.UntranscodeNumber = _ctx.LongValue("DescribeLiveStreamTranscodeStreamNum.UntranscodeNumber");
+			describeLiveStreamTranscodeStreamNumResponse.LazyTranscodedNumber = _ctx.LongValue("DescribeLiveStreamTranscodeStreamNum.LazyTranscodedNumber");
         
 			return describeLiveStreamTranscodeStreamNumResponse;
         }

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DeleteMixStreamResponse deleteMixStreamResponse = new DeleteMixStreamResponse();
 
 			deleteMixStreamResponse.HttpResponse = _ctx.HttpResponse;
-			deleteMixStreamResponse.MixStreamId = _ctx.StringValue("DeleteMixStream.MixStreamId");
 			deleteMixStreamResponse.RequestId = _ctx.StringValue("DeleteMixStream.RequestId");
+			deleteMixStreamResponse.MixStreamId = _ctx.StringValue("DeleteMixStream.MixStreamId");
         
 			return deleteMixStreamResponse;
         }

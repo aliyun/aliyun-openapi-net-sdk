@@ -31,18 +31,18 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeRoomListResponse describeRoomListResponse = new DescribeRoomListResponse();
 
 			describeRoomListResponse.HttpResponse = _ctx.HttpResponse;
-			describeRoomListResponse.TotalPage = _ctx.IntegerValue("DescribeRoomList.TotalPage");
 			describeRoomListResponse.RequestId = _ctx.StringValue("DescribeRoomList.RequestId");
 			describeRoomListResponse.TotalNum = _ctx.IntegerValue("DescribeRoomList.TotalNum");
+			describeRoomListResponse.TotalPage = _ctx.IntegerValue("DescribeRoomList.TotalPage");
 
 			List<DescribeRoomListResponse.DescribeRoomList_Room> describeRoomListResponse_roomList = new List<DescribeRoomListResponse.DescribeRoomList_Room>();
 			for (int i = 0; i < _ctx.Length("DescribeRoomList.RoomList.Length"); i++) {
 				DescribeRoomListResponse.DescribeRoomList_Room room = new DescribeRoomListResponse.DescribeRoomList_Room();
-				room.ForbidStream = _ctx.StringValue("DescribeRoomList.RoomList["+ i +"].ForbidStream");
-				room.AnchorId = _ctx.StringValue("DescribeRoomList.RoomList["+ i +"].AnchorId");
 				room.RoomId = _ctx.StringValue("DescribeRoomList.RoomList["+ i +"].RoomId");
-				room.CreateTime = _ctx.StringValue("DescribeRoomList.RoomList["+ i +"].CreateTime");
+				room.AnchorId = _ctx.StringValue("DescribeRoomList.RoomList["+ i +"].AnchorId");
 				room.RoomStatus = _ctx.IntegerValue("DescribeRoomList.RoomList["+ i +"].RoomStatus");
+				room.ForbidStream = _ctx.StringValue("DescribeRoomList.RoomList["+ i +"].ForbidStream");
+				room.CreateTime = _ctx.StringValue("DescribeRoomList.RoomList["+ i +"].CreateTime");
 
 				describeRoomListResponse_roomList.Add(room);
 			}

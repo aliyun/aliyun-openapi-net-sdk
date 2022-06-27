@@ -78,6 +78,9 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				vulRecord.K8sNodeName = _ctx.StringValue("DescribeVulList.VulRecords["+ i +"].K8sNodeName");
 				vulRecord.ContainerName = _ctx.StringValue("DescribeVulList.VulRecords["+ i +"].ContainerName");
 				vulRecord.Level = _ctx.StringValue("DescribeVulList.VulRecords["+ i +"].Level");
+				vulRecord.Bind = _ctx.BooleanValue("DescribeVulList.VulRecords["+ i +"].Bind");
+				vulRecord.OsName = _ctx.StringValue("DescribeVulList.VulRecords["+ i +"].OsName");
+				vulRecord.AuthVersion = _ctx.StringValue("DescribeVulList.VulRecords["+ i +"].AuthVersion");
 
 				DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ExtendContentJson extendContentJson = new DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ExtendContentJson();
 				extendContentJson.Status = _ctx.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.Status");

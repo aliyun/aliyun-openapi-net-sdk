@@ -146,10 +146,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set
 			{
 				vulNamess = value;
-				for (int i = 0; i < vulNamess.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"VulNames." + (i + 1) , vulNamess[i]);
-				}
 			}
 		}
 

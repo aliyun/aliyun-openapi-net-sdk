@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeCasterChannelsResponse : AcsResponse
 	{
 
-		private int? total;
-
 		private string requestId;
 
-		private List<DescribeCasterChannels_Channel> channels;
+		private int? total;
 
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
+		private List<DescribeCasterChannels_Channel> channels;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
 			}
 		}
 
@@ -70,43 +70,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeCasterChannels_Channel
 		{
 
-			private int? inputType;
-
-			private string rtmpUrl;
-
 			private string channelId;
-
-			private string rtsUrl;
-
-			private string faceBeauty;
 
 			private string resourceId;
 
 			private string streamUrl;
 
-			public int? InputType
-			{
-				get
-				{
-					return inputType;
-				}
-				set	
-				{
-					inputType = value;
-				}
-			}
+			private string rtmpUrl;
 
-			public string RtmpUrl
-			{
-				get
-				{
-					return rtmpUrl;
-				}
-				set	
-				{
-					rtmpUrl = value;
-				}
-			}
+			private string rtsUrl;
+
+			private int? inputType;
+
+			private string faceBeauty;
 
 			public string ChannelId
 			{
@@ -117,30 +93,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					channelId = value;
-				}
-			}
-
-			public string RtsUrl
-			{
-				get
-				{
-					return rtsUrl;
-				}
-				set	
-				{
-					rtsUrl = value;
-				}
-			}
-
-			public string FaceBeauty
-			{
-				get
-				{
-					return faceBeauty;
-				}
-				set	
-				{
-					faceBeauty = value;
 				}
 			}
 
@@ -165,6 +117,54 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					streamUrl = value;
+				}
+			}
+
+			public string RtmpUrl
+			{
+				get
+				{
+					return rtmpUrl;
+				}
+				set	
+				{
+					rtmpUrl = value;
+				}
+			}
+
+			public string RtsUrl
+			{
+				get
+				{
+					return rtsUrl;
+				}
+				set	
+				{
+					rtsUrl = value;
+				}
+			}
+
+			public int? InputType
+			{
+				get
+				{
+					return inputType;
+				}
+				set	
+				{
+					inputType = value;
+				}
+			}
+
+			public string FaceBeauty
+			{
+				get
+				{
+					return faceBeauty;
+				}
+				set	
+				{
+					faceBeauty = value;
 				}
 			}
 		}

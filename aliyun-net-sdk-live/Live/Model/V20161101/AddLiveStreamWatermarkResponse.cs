@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class AddLiveStreamWatermarkResponse : AcsResponse
 	{
 
-		private string templateId;
-
 		private string requestId;
 
-		public string TemplateId
-		{
-			get
-			{
-				return templateId;
-			}
-			set	
-			{
-				templateId = value;
-			}
-		}
+		private string templateId;
 
 		public string RequestId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string TemplateId
+		{
+			get
+			{
+				return templateId;
+			}
+			set	
+			{
+				templateId = value;
 			}
 		}
 	}

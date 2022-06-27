@@ -36,10 +36,10 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLine_DescribeUpBpsPeakOfLine> describeUpBpsPeakOfLineResponse_describeUpBpsPeakOfLines = new List<DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLine_DescribeUpBpsPeakOfLine>();
 			for (int i = 0; i < _ctx.Length("DescribeUpBpsPeakOfLine.DescribeUpBpsPeakOfLines.Length"); i++) {
 				DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLine_DescribeUpBpsPeakOfLine describeUpBpsPeakOfLine = new DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLine_DescribeUpBpsPeakOfLine();
-				describeUpBpsPeakOfLine.QueryTime = _ctx.StringValue("DescribeUpBpsPeakOfLine.DescribeUpBpsPeakOfLines["+ i +"].QueryTime");
-				describeUpBpsPeakOfLine.StatName = _ctx.StringValue("DescribeUpBpsPeakOfLine.DescribeUpBpsPeakOfLines["+ i +"].StatName");
 				describeUpBpsPeakOfLine.BandWidth = _ctx.FloatValue("DescribeUpBpsPeakOfLine.DescribeUpBpsPeakOfLines["+ i +"].BandWidth");
 				describeUpBpsPeakOfLine.PeakTime = _ctx.StringValue("DescribeUpBpsPeakOfLine.DescribeUpBpsPeakOfLines["+ i +"].PeakTime");
+				describeUpBpsPeakOfLine.QueryTime = _ctx.StringValue("DescribeUpBpsPeakOfLine.DescribeUpBpsPeakOfLines["+ i +"].QueryTime");
+				describeUpBpsPeakOfLine.StatName = _ctx.StringValue("DescribeUpBpsPeakOfLine.DescribeUpBpsPeakOfLines["+ i +"].StatName");
 
 				describeUpBpsPeakOfLineResponse_describeUpBpsPeakOfLines.Add(describeUpBpsPeakOfLine);
 			}

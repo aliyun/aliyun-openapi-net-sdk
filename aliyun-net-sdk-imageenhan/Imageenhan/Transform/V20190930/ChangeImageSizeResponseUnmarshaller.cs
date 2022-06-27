@@ -37,10 +37,10 @@ namespace Aliyun.Acs.imageenhan.Transform.V20190930
 			data.Url = _ctx.StringValue("ChangeImageSize.Data.Url");
 
 			ChangeImageSizeResponse.ChangeImageSize_Data.ChangeImageSize_RetainLocation retainLocation = new ChangeImageSizeResponse.ChangeImageSize_Data.ChangeImageSize_RetainLocation();
-			retainLocation.X = _ctx.IntegerValue("ChangeImageSize.Data.RetainLocation.X");
-			retainLocation.Y = _ctx.IntegerValue("ChangeImageSize.Data.RetainLocation.Y");
 			retainLocation.Width = _ctx.IntegerValue("ChangeImageSize.Data.RetainLocation.Width");
 			retainLocation.Height = _ctx.IntegerValue("ChangeImageSize.Data.RetainLocation.Height");
+			retainLocation.Y = _ctx.IntegerValue("ChangeImageSize.Data.RetainLocation.Y");
+			retainLocation.X = _ctx.IntegerValue("ChangeImageSize.Data.RetainLocation.X");
 			data.RetainLocation = retainLocation;
 			changeImageSizeResponse.Data = data;
         

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,41 +25,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveDomainBpsDataResponse : AcsResponse
 	{
 
-		private string endTime;
-
-		private string startTime;
-
 		private string requestId;
 
 		private string domainName;
 
+		private string startTime;
+
+		private string endTime;
+
 		private string dataInterval;
 
 		private List<DescribeLiveDomainBpsData_DataModule> bpsDataPerInterval;
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
 
 		public string RequestId
 		{
@@ -82,6 +58,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				domainName = value;
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
 			}
 		}
 
@@ -112,25 +112,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeLiveDomainBpsData_DataModule
 		{
 
-			private string bpsValue;
-
 			private string timeStamp;
 
-			private string httpsBpsValue;
+			private string bpsValue;
 
 			private string httpBpsValue;
 
-			public string BpsValue
-			{
-				get
-				{
-					return bpsValue;
-				}
-				set	
-				{
-					bpsValue = value;
-				}
-			}
+			private string httpsBpsValue;
 
 			public string TimeStamp
 			{
@@ -144,15 +132,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string HttpsBpsValue
+			public string BpsValue
 			{
 				get
 				{
-					return httpsBpsValue;
+					return bpsValue;
 				}
 				set	
 				{
-					httpsBpsValue = value;
+					bpsValue = value;
 				}
 			}
 
@@ -165,6 +153,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					httpBpsValue = value;
+				}
+			}
+
+			public string HttpsBpsValue
+			{
+				get
+				{
+					return httpsBpsValue;
+				}
+				set	
+				{
+					httpsBpsValue = value;
 				}
 			}
 		}

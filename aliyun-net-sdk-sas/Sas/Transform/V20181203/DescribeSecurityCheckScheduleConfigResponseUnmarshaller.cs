@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describeSecurityCheckScheduleConfigResponse.RequestId = _ctx.StringValue("DescribeSecurityCheckScheduleConfig.RequestId");
 
 			DescribeSecurityCheckScheduleConfigResponse.DescribeSecurityCheckScheduleConfig_RiskCheckJobConfig riskCheckJobConfig = new DescribeSecurityCheckScheduleConfigResponse.DescribeSecurityCheckScheduleConfig_RiskCheckJobConfig();
-			riskCheckJobConfig.StartTime = _ctx.IntegerValue("DescribeSecurityCheckScheduleConfig.RiskCheckJobConfig.StartTime");
 			riskCheckJobConfig.EndTime = _ctx.IntegerValue("DescribeSecurityCheckScheduleConfig.RiskCheckJobConfig.EndTime");
+			riskCheckJobConfig.StartTime = _ctx.IntegerValue("DescribeSecurityCheckScheduleConfig.RiskCheckJobConfig.StartTime");
 			riskCheckJobConfig.DaysOfWeek = _ctx.StringValue("DescribeSecurityCheckScheduleConfig.RiskCheckJobConfig.DaysOfWeek");
 			describeSecurityCheckScheduleConfigResponse.RiskCheckJobConfig = riskCheckJobConfig;
         

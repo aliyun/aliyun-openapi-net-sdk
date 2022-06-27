@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,39 +25,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class GetMultiRateConfigResponse : AcsResponse
 	{
 
-		private string domain;
-
 		private string requestId;
 
-		private string groupId;
-
-		private string app;
-
-		private string avFormat;
-
-		private string stream;
+		private string message;
 
 		private int? code;
 
-		private string message;
+		private string domain;
+
+		private string app;
+
+		private string stream;
+
+		private string avFormat;
+
+		private string groupId;
 
 		private string isLazy;
 
 		private string isTimeAlign;
 
 		private List<GetMultiRateConfig_Detail> templatesInfo;
-
-		public string Domain
-		{
-			get
-			{
-				return domain;
-			}
-			set	
-			{
-				domain = value;
-			}
-		}
 
 		public string RequestId
 		{
@@ -71,51 +59,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string GroupId
+		public string Message
 		{
 			get
 			{
-				return groupId;
+				return message;
 			}
 			set	
 			{
-				groupId = value;
-			}
-		}
-
-		public string App
-		{
-			get
-			{
-				return app;
-			}
-			set	
-			{
-				app = value;
-			}
-		}
-
-		public string AvFormat
-		{
-			get
-			{
-				return avFormat;
-			}
-			set	
-			{
-				avFormat = value;
-			}
-		}
-
-		public string Stream
-		{
-			get
-			{
-				return stream;
-			}
-			set	
-			{
-				stream = value;
+				message = value;
 			}
 		}
 
@@ -131,15 +83,63 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Message
+		public string Domain
 		{
 			get
 			{
-				return message;
+				return domain;
 			}
 			set	
 			{
-				message = value;
+				domain = value;
+			}
+		}
+
+		public string App
+		{
+			get
+			{
+				return app;
+			}
+			set	
+			{
+				app = value;
+			}
+		}
+
+		public string Stream
+		{
+			get
+			{
+				return stream;
+			}
+			set	
+			{
+				stream = value;
+			}
+		}
+
+		public string AvFormat
+		{
+			get
+			{
+				return avFormat;
+			}
+			set	
+			{
+				avFormat = value;
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
 			}
 		}
 
@@ -182,45 +182,33 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class GetMultiRateConfig_Detail
 		{
 
-			private int? audioBitrate;
-
 			private string template;
-
-			private int? height;
 
 			private string templateType;
 
-			private int? bandWidth;
-
-			private int? profile;
-
-			private int? audioRate;
-
-			private string audioCodec;
-
-			private string gop;
+			private int? height;
 
 			private int? width;
 
+			private int? fps;
+
+			private string gop;
+
 			private int? videoBitrate;
 
-			private int? audioChannelNum;
-
-			private int? fps;
+			private int? profile;
 
 			private string audioProfile;
 
-			public int? AudioBitrate
-			{
-				get
-				{
-					return audioBitrate;
-				}
-				set	
-				{
-					audioBitrate = value;
-				}
-			}
+			private string audioCodec;
+
+			private int? audioRate;
+
+			private int? audioBitrate;
+
+			private int? audioChannelNum;
+
+			private int? bandWidth;
 
 			public string Template
 			{
@@ -231,18 +219,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					template = value;
-				}
-			}
-
-			public int? Height
-			{
-				get
-				{
-					return height;
-				}
-				set	
-				{
-					height = value;
 				}
 			}
 
@@ -258,63 +234,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? BandWidth
+			public int? Height
 			{
 				get
 				{
-					return bandWidth;
+					return height;
 				}
 				set	
 				{
-					bandWidth = value;
-				}
-			}
-
-			public int? Profile
-			{
-				get
-				{
-					return profile;
-				}
-				set	
-				{
-					profile = value;
-				}
-			}
-
-			public int? AudioRate
-			{
-				get
-				{
-					return audioRate;
-				}
-				set	
-				{
-					audioRate = value;
-				}
-			}
-
-			public string AudioCodec
-			{
-				get
-				{
-					return audioCodec;
-				}
-				set	
-				{
-					audioCodec = value;
-				}
-			}
-
-			public string Gop
-			{
-				get
-				{
-					return gop;
-				}
-				set	
-				{
-					gop = value;
+					height = value;
 				}
 			}
 
@@ -330,6 +258,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			public int? Fps
+			{
+				get
+				{
+					return fps;
+				}
+				set	
+				{
+					fps = value;
+				}
+			}
+
+			public string Gop
+			{
+				get
+				{
+					return gop;
+				}
+				set	
+				{
+					gop = value;
+				}
+			}
+
 			public int? VideoBitrate
 			{
 				get
@@ -339,6 +291,66 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					videoBitrate = value;
+				}
+			}
+
+			public int? Profile
+			{
+				get
+				{
+					return profile;
+				}
+				set	
+				{
+					profile = value;
+				}
+			}
+
+			public string AudioProfile
+			{
+				get
+				{
+					return audioProfile;
+				}
+				set	
+				{
+					audioProfile = value;
+				}
+			}
+
+			public string AudioCodec
+			{
+				get
+				{
+					return audioCodec;
+				}
+				set	
+				{
+					audioCodec = value;
+				}
+			}
+
+			public int? AudioRate
+			{
+				get
+				{
+					return audioRate;
+				}
+				set	
+				{
+					audioRate = value;
+				}
+			}
+
+			public int? AudioBitrate
+			{
+				get
+				{
+					return audioBitrate;
+				}
+				set	
+				{
+					audioBitrate = value;
 				}
 			}
 
@@ -354,27 +366,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public int? Fps
+			public int? BandWidth
 			{
 				get
 				{
-					return fps;
+					return bandWidth;
 				}
 				set	
 				{
-					fps = value;
-				}
-			}
-
-			public string AudioProfile
-			{
-				get
-				{
-					return audioProfile;
-				}
-				set	
-				{
-					audioProfile = value;
+					bandWidth = value;
 				}
 			}
 		}

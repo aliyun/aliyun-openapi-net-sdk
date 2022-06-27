@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			List<DescribeVpcHoneyPotCriteriaResponse.DescribeVpcHoneyPotCriteria_Criteria> describeVpcHoneyPotCriteriaResponse_criteriaList = new List<DescribeVpcHoneyPotCriteriaResponse.DescribeVpcHoneyPotCriteria_Criteria>();
 			for (int i = 0; i < _ctx.Length("DescribeVpcHoneyPotCriteria.CriteriaList.Length"); i++) {
 				DescribeVpcHoneyPotCriteriaResponse.DescribeVpcHoneyPotCriteria_Criteria criteria = new DescribeVpcHoneyPotCriteriaResponse.DescribeVpcHoneyPotCriteria_Criteria();
-				criteria.Values = _ctx.StringValue("DescribeVpcHoneyPotCriteria.CriteriaList["+ i +"].Values");
-				criteria.Name = _ctx.StringValue("DescribeVpcHoneyPotCriteria.CriteriaList["+ i +"].Name");
 				criteria.Type = _ctx.StringValue("DescribeVpcHoneyPotCriteria.CriteriaList["+ i +"].Type");
+				criteria.Name = _ctx.StringValue("DescribeVpcHoneyPotCriteria.CriteriaList["+ i +"].Name");
+				criteria.Values = _ctx.StringValue("DescribeVpcHoneyPotCriteria.CriteriaList["+ i +"].Values");
 
 				describeVpcHoneyPotCriteriaResponse_criteriaList.Add(criteria);
 			}

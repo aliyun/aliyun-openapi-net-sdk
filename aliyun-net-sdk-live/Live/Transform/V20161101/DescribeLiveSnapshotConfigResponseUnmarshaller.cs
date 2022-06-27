@@ -31,25 +31,25 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeLiveSnapshotConfigResponse describeLiveSnapshotConfigResponse = new DescribeLiveSnapshotConfigResponse();
 
 			describeLiveSnapshotConfigResponse.HttpResponse = _ctx.HttpResponse;
-			describeLiveSnapshotConfigResponse.PageNum = _ctx.IntegerValue("DescribeLiveSnapshotConfig.PageNum");
 			describeLiveSnapshotConfigResponse.RequestId = _ctx.StringValue("DescribeLiveSnapshotConfig.RequestId");
-			describeLiveSnapshotConfigResponse.Order = _ctx.StringValue("DescribeLiveSnapshotConfig.Order");
-			describeLiveSnapshotConfigResponse.TotalPage = _ctx.IntegerValue("DescribeLiveSnapshotConfig.TotalPage");
+			describeLiveSnapshotConfigResponse.PageNum = _ctx.IntegerValue("DescribeLiveSnapshotConfig.PageNum");
 			describeLiveSnapshotConfigResponse.PageSize = _ctx.IntegerValue("DescribeLiveSnapshotConfig.PageSize");
+			describeLiveSnapshotConfigResponse.Order = _ctx.StringValue("DescribeLiveSnapshotConfig.Order");
 			describeLiveSnapshotConfigResponse.TotalNum = _ctx.IntegerValue("DescribeLiveSnapshotConfig.TotalNum");
+			describeLiveSnapshotConfigResponse.TotalPage = _ctx.IntegerValue("DescribeLiveSnapshotConfig.TotalPage");
 
 			List<DescribeLiveSnapshotConfigResponse.DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig> describeLiveSnapshotConfigResponse_liveStreamSnapshotConfigList = new List<DescribeLiveSnapshotConfigResponse.DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList.Length"); i++) {
 				DescribeLiveSnapshotConfigResponse.DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig liveStreamSnapshotConfig = new DescribeLiveSnapshotConfigResponse.DescribeLiveSnapshotConfig_LiveStreamSnapshotConfig();
-				liveStreamSnapshotConfig.OverwriteOssObject = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].OverwriteOssObject");
-				liveStreamSnapshotConfig.TimeInterval = _ctx.IntegerValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].TimeInterval");
-				liveStreamSnapshotConfig.AppName = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].AppName");
-				liveStreamSnapshotConfig.CreateTime = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].CreateTime");
-				liveStreamSnapshotConfig.OssBucket = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].OssBucket");
 				liveStreamSnapshotConfig.DomainName = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].DomainName");
-				liveStreamSnapshotConfig.Callback = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].Callback");
-				liveStreamSnapshotConfig.SequenceOssObject = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].SequenceOssObject");
+				liveStreamSnapshotConfig.AppName = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].AppName");
+				liveStreamSnapshotConfig.TimeInterval = _ctx.IntegerValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].TimeInterval");
 				liveStreamSnapshotConfig.OssEndpoint = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].OssEndpoint");
+				liveStreamSnapshotConfig.OssBucket = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].OssBucket");
+				liveStreamSnapshotConfig.OverwriteOssObject = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].OverwriteOssObject");
+				liveStreamSnapshotConfig.SequenceOssObject = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].SequenceOssObject");
+				liveStreamSnapshotConfig.CreateTime = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].CreateTime");
+				liveStreamSnapshotConfig.Callback = _ctx.StringValue("DescribeLiveSnapshotConfig.LiveStreamSnapshotConfigList["+ i +"].Callback");
 
 				describeLiveSnapshotConfigResponse_liveStreamSnapshotConfigList.Add(liveStreamSnapshotConfig);
 			}

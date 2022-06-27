@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeSecurityCheckScheduleConfig_RiskCheckJobConfig
 		{
 
-			private int? startTime;
-
 			private int? endTime;
 
-			private string daysOfWeek;
+			private int? startTime;
 
-			public int? StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
+			private string daysOfWeek;
 
 			public int? EndTime
 			{
@@ -83,6 +71,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					endTime = value;
+				}
+			}
+
+			public int? StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
 				}
 			}
 

@@ -56,13 +56,17 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string nlsConfig;
 
-		private bool? miniPlaybackEnabled;
+		private bool? newBargeInEnable;
+
+		private bool? miniPlaybackEnable;
 
 		private string chatbotId;
 
 		private string instanceId;
 
 		private string scriptDescription;
+
+		private bool? longWaitEnable;
 
 		private List<string> scriptContents = new List<string>(){ };
 
@@ -170,16 +174,29 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public bool? MiniPlaybackEnabled
+		public bool? NewBargeInEnable
 		{
 			get
 			{
-				return miniPlaybackEnabled;
+				return newBargeInEnable;
 			}
 			set	
 			{
-				miniPlaybackEnabled = value;
-				DictionaryUtil.Add(QueryParameters, "MiniPlaybackEnabled", value.ToString());
+				newBargeInEnable = value;
+				DictionaryUtil.Add(QueryParameters, "NewBargeInEnable", value.ToString());
+			}
+		}
+
+		public bool? MiniPlaybackEnable
+		{
+			get
+			{
+				return miniPlaybackEnable;
+			}
+			set	
+			{
+				miniPlaybackEnable = value;
+				DictionaryUtil.Add(QueryParameters, "MiniPlaybackEnable", value.ToString());
 			}
 		}
 
@@ -219,6 +236,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				scriptDescription = value;
 				DictionaryUtil.Add(QueryParameters, "ScriptDescription", value);
+			}
+		}
+
+		public bool? LongWaitEnable
+		{
+			get
+			{
+				return longWaitEnable;
+			}
+			set	
+			{
+				longWaitEnable = value;
+				DictionaryUtil.Add(QueryParameters, "LongWaitEnable", value.ToString());
 			}
 		}
 

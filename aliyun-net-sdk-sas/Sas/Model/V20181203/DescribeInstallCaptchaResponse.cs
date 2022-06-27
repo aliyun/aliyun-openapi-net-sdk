@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
@@ -25,11 +25,23 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class DescribeInstallCaptchaResponse : AcsResponse
 	{
 
+		private string deadline;
+
 		private string requestId;
 
 		private string captchaCode;
 
-		private string deadline;
+		public string Deadline
+		{
+			get
+			{
+				return deadline;
+			}
+			set	
+			{
+				deadline = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -52,18 +64,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				captchaCode = value;
-			}
-		}
-
-		public string Deadline
-		{
-			get
-			{
-				return deadline;
-			}
-			set	
-			{
-				deadline = value;
 			}
 		}
 	}

@@ -31,23 +31,23 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeCasterProgramResponse describeCasterProgramResponse = new DescribeCasterProgramResponse();
 
 			describeCasterProgramResponse.HttpResponse = _ctx.HttpResponse;
-			describeCasterProgramResponse.ProgramName = _ctx.StringValue("DescribeCasterProgram.ProgramName");
 			describeCasterProgramResponse.RequestId = _ctx.StringValue("DescribeCasterProgram.RequestId");
-			describeCasterProgramResponse.ProgramEffect = _ctx.IntegerValue("DescribeCasterProgram.ProgramEffect");
 			describeCasterProgramResponse.CasterId = _ctx.StringValue("DescribeCasterProgram.CasterId");
+			describeCasterProgramResponse.ProgramName = _ctx.StringValue("DescribeCasterProgram.ProgramName");
+			describeCasterProgramResponse.ProgramEffect = _ctx.IntegerValue("DescribeCasterProgram.ProgramEffect");
 			describeCasterProgramResponse.Total = _ctx.IntegerValue("DescribeCasterProgram.Total");
 
 			List<DescribeCasterProgramResponse.DescribeCasterProgram_Episode> describeCasterProgramResponse_episodes = new List<DescribeCasterProgramResponse.DescribeCasterProgram_Episode>();
 			for (int i = 0; i < _ctx.Length("DescribeCasterProgram.Episodes.Length"); i++) {
 				DescribeCasterProgramResponse.DescribeCasterProgram_Episode episode = new DescribeCasterProgramResponse.DescribeCasterProgram_Episode();
-				episode.Status = _ctx.IntegerValue("DescribeCasterProgram.Episodes["+ i +"].Status");
-				episode.EndTime = _ctx.StringValue("DescribeCasterProgram.Episodes["+ i +"].EndTime");
-				episode.StartTime = _ctx.StringValue("DescribeCasterProgram.Episodes["+ i +"].StartTime");
-				episode.EpisodeName = _ctx.StringValue("DescribeCasterProgram.Episodes["+ i +"].EpisodeName");
-				episode.EpisodeType = _ctx.StringValue("DescribeCasterProgram.Episodes["+ i +"].EpisodeType");
 				episode.EpisodeId = _ctx.StringValue("DescribeCasterProgram.Episodes["+ i +"].EpisodeId");
+				episode.EpisodeType = _ctx.StringValue("DescribeCasterProgram.Episodes["+ i +"].EpisodeType");
+				episode.EpisodeName = _ctx.StringValue("DescribeCasterProgram.Episodes["+ i +"].EpisodeName");
 				episode.ResourceId = _ctx.StringValue("DescribeCasterProgram.Episodes["+ i +"].ResourceId");
+				episode.StartTime = _ctx.StringValue("DescribeCasterProgram.Episodes["+ i +"].StartTime");
+				episode.EndTime = _ctx.StringValue("DescribeCasterProgram.Episodes["+ i +"].EndTime");
 				episode.SwitchType = _ctx.StringValue("DescribeCasterProgram.Episodes["+ i +"].SwitchType");
+				episode.Status = _ctx.IntegerValue("DescribeCasterProgram.Episodes["+ i +"].Status");
 
 				List<string> episode_componentIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeCasterProgram.Episodes["+ i +"].ComponentIds.Length"); j++) {

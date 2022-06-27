@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,51 +25,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeLiveStreamTranscodeStreamNumResponse : AcsResponse
 	{
 
-		private long? untranscodeNumber;
-
-		private long? lazyTranscodedNumber;
-
-		private long? transcodedNumber;
-
 		private string requestId;
 
 		private long? total;
 
-		public long? UntranscodeNumber
-		{
-			get
-			{
-				return untranscodeNumber;
-			}
-			set	
-			{
-				untranscodeNumber = value;
-			}
-		}
+		private long? transcodedNumber;
 
-		public long? LazyTranscodedNumber
-		{
-			get
-			{
-				return lazyTranscodedNumber;
-			}
-			set	
-			{
-				lazyTranscodedNumber = value;
-			}
-		}
+		private long? untranscodeNumber;
 
-		public long? TranscodedNumber
-		{
-			get
-			{
-				return transcodedNumber;
-			}
-			set	
-			{
-				transcodedNumber = value;
-			}
-		}
+		private long? lazyTranscodedNumber;
 
 		public string RequestId
 		{
@@ -92,6 +56,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				total = value;
+			}
+		}
+
+		public long? TranscodedNumber
+		{
+			get
+			{
+				return transcodedNumber;
+			}
+			set	
+			{
+				transcodedNumber = value;
+			}
+		}
+
+		public long? UntranscodeNumber
+		{
+			get
+			{
+				return untranscodeNumber;
+			}
+			set	
+			{
+				untranscodeNumber = value;
+			}
+		}
+
+		public long? LazyTranscodedNumber
+		{
+			get
+			{
+				return lazyTranscodedNumber;
+			}
+			set	
+			{
+				lazyTranscodedNumber = value;
 			}
 		}
 	}

@@ -45,7 +45,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string eventName;
 
-		private long? maxId;
+		private string disposalWay;
 
 		private string sourceIp;
 
@@ -83,16 +83,16 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public long? MaxId
+		public string DisposalWay
 		{
 			get
 			{
-				return maxId;
+				return disposalWay;
 			}
 			set	
 			{
-				maxId = value;
-				DictionaryUtil.Add(BodyParameters, "MaxId", value.ToString());
+				disposalWay = value;
+				DictionaryUtil.Add(QueryParameters, "DisposalWay", value);
 			}
 		}
 

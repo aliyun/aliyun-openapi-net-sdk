@@ -165,6 +165,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 				private long? gmtCreate;
 
+				private string openType;
+
+				private string name;
+
 				public string SoundCode
 				{
 					get
@@ -210,6 +214,30 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					set	
 					{
 						gmtCreate = value;
+					}
+				}
+
+				public string OpenType
+				{
+					get
+					{
+						return openType;
+					}
+					set	
+					{
+						openType = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 			}

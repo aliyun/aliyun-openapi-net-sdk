@@ -31,19 +31,13 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			DescribeCasterLayoutsResponse describeCasterLayoutsResponse = new DescribeCasterLayoutsResponse();
 
 			describeCasterLayoutsResponse.HttpResponse = _ctx.HttpResponse;
-			describeCasterLayoutsResponse.Total = _ctx.IntegerValue("DescribeCasterLayouts.Total");
 			describeCasterLayoutsResponse.RequestId = _ctx.StringValue("DescribeCasterLayouts.RequestId");
+			describeCasterLayoutsResponse.Total = _ctx.IntegerValue("DescribeCasterLayouts.Total");
 
 			List<DescribeCasterLayoutsResponse.DescribeCasterLayouts_Layout> describeCasterLayoutsResponse_layouts = new List<DescribeCasterLayoutsResponse.DescribeCasterLayouts_Layout>();
 			for (int i = 0; i < _ctx.Length("DescribeCasterLayouts.Layouts.Length"); i++) {
 				DescribeCasterLayoutsResponse.DescribeCasterLayouts_Layout layout = new DescribeCasterLayoutsResponse.DescribeCasterLayouts_Layout();
 				layout.LayoutId = _ctx.StringValue("DescribeCasterLayouts.Layouts["+ i +"].LayoutId");
-
-				List<string> layout_mixList = new List<string>();
-				for (int j = 0; j < _ctx.Length("DescribeCasterLayouts.Layouts["+ i +"].MixList.Length"); j++) {
-					layout_mixList.Add(_ctx.StringValue("DescribeCasterLayouts.Layouts["+ i +"].MixList["+ j +"]"));
-				}
-				layout.MixList = layout_mixList;
 
 				List<string> layout_blendList = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeCasterLayouts.Layouts["+ i +"].BlendList.Length"); j++) {
@@ -51,14 +45,20 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				}
 				layout.BlendList = layout_blendList;
 
+				List<string> layout_mixList = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeCasterLayouts.Layouts["+ i +"].MixList.Length"); j++) {
+					layout_mixList.Add(_ctx.StringValue("DescribeCasterLayouts.Layouts["+ i +"].MixList["+ j +"]"));
+				}
+				layout.MixList = layout_mixList;
+
 				List<DescribeCasterLayoutsResponse.DescribeCasterLayouts_Layout.DescribeCasterLayouts_VideoLayer> layout_videoLayers = new List<DescribeCasterLayoutsResponse.DescribeCasterLayouts_Layout.DescribeCasterLayouts_VideoLayer>();
 				for (int j = 0; j < _ctx.Length("DescribeCasterLayouts.Layouts["+ i +"].VideoLayers.Length"); j++) {
 					DescribeCasterLayoutsResponse.DescribeCasterLayouts_Layout.DescribeCasterLayouts_VideoLayer videoLayer = new DescribeCasterLayoutsResponse.DescribeCasterLayouts_Layout.DescribeCasterLayouts_VideoLayer();
-					videoLayer.WidthNormalized = _ctx.FloatValue("DescribeCasterLayouts.Layouts["+ i +"].VideoLayers["+ j +"].WidthNormalized");
-					videoLayer.FixedDelayDuration = _ctx.IntegerValue("DescribeCasterLayouts.Layouts["+ i +"].VideoLayers["+ j +"].FixedDelayDuration");
-					videoLayer.HeightNormalized = _ctx.FloatValue("DescribeCasterLayouts.Layouts["+ i +"].VideoLayers["+ j +"].HeightNormalized");
 					videoLayer.FillMode = _ctx.StringValue("DescribeCasterLayouts.Layouts["+ i +"].VideoLayers["+ j +"].FillMode");
+					videoLayer.HeightNormalized = _ctx.FloatValue("DescribeCasterLayouts.Layouts["+ i +"].VideoLayers["+ j +"].HeightNormalized");
+					videoLayer.WidthNormalized = _ctx.FloatValue("DescribeCasterLayouts.Layouts["+ i +"].VideoLayers["+ j +"].WidthNormalized");
 					videoLayer.PositionRefer = _ctx.StringValue("DescribeCasterLayouts.Layouts["+ i +"].VideoLayers["+ j +"].PositionRefer");
+					videoLayer.FixedDelayDuration = _ctx.IntegerValue("DescribeCasterLayouts.Layouts["+ i +"].VideoLayers["+ j +"].FixedDelayDuration");
 
 					List<string> videoLayer_positionNormalizeds = new List<string>();
 					for (int k = 0; k < _ctx.Length("DescribeCasterLayouts.Layouts["+ i +"].VideoLayers["+ j +"].PositionNormalizeds.Length"); k++) {
@@ -74,8 +74,8 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				for (int j = 0; j < _ctx.Length("DescribeCasterLayouts.Layouts["+ i +"].AudioLayers.Length"); j++) {
 					DescribeCasterLayoutsResponse.DescribeCasterLayouts_Layout.DescribeCasterLayouts_AudioLayer audioLayer = new DescribeCasterLayoutsResponse.DescribeCasterLayouts_Layout.DescribeCasterLayouts_AudioLayer();
 					audioLayer.VolumeRate = _ctx.FloatValue("DescribeCasterLayouts.Layouts["+ i +"].AudioLayers["+ j +"].VolumeRate");
-					audioLayer.FixedDelayDuration = _ctx.IntegerValue("DescribeCasterLayouts.Layouts["+ i +"].AudioLayers["+ j +"].FixedDelayDuration");
 					audioLayer.ValidChannel = _ctx.StringValue("DescribeCasterLayouts.Layouts["+ i +"].AudioLayers["+ j +"].ValidChannel");
+					audioLayer.FixedDelayDuration = _ctx.IntegerValue("DescribeCasterLayouts.Layouts["+ i +"].AudioLayers["+ j +"].FixedDelayDuration");
 
 					layout_audioLayers.Add(audioLayer);
 				}

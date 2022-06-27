@@ -38,8 +38,8 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				DescribeBackupClientsResponse.DescribeBackupClients_BackupMachineDTO backupMachineDTO = new DescribeBackupClientsResponse.DescribeBackupClients_BackupMachineDTO();
 				backupMachineDTO.Uuid = _ctx.StringValue("DescribeBackupClients.Clients["+ i +"].Uuid");
 				backupMachineDTO.InstanceId = _ctx.StringValue("DescribeBackupClients.Clients["+ i +"].InstanceId");
-				backupMachineDTO.ClientId = _ctx.StringValue("DescribeBackupClients.Clients["+ i +"].ClientId");
 				backupMachineDTO.ClientStatus = _ctx.StringValue("DescribeBackupClients.Clients["+ i +"].ClientStatus");
+				backupMachineDTO.ClientId = _ctx.StringValue("DescribeBackupClients.Clients["+ i +"].ClientId");
 
 				describeBackupClientsResponse_clients.Add(backupMachineDTO);
 			}

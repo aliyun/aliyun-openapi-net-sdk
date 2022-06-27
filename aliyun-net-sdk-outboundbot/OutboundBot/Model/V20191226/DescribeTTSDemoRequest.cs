@@ -52,6 +52,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private int? speechRate;
 
+		private int? pitchRate;
+
 		public string Voice
 		{
 			get
@@ -127,6 +129,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				speechRate = value;
 				DictionaryUtil.Add(QueryParameters, "SpeechRate", value.ToString());
+			}
+		}
+
+		public int? PitchRate
+		{
+			get
+			{
+				return pitchRate;
+			}
+			set	
+			{
+				pitchRate = value;
+				DictionaryUtil.Add(QueryParameters, "PitchRate", value.ToString());
 			}
 		}
 

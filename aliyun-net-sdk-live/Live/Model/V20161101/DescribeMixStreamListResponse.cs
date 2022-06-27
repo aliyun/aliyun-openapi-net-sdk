@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 	public class DescribeMixStreamListResponse : AcsResponse
 	{
 
-		private int? total;
-
 		private string requestId;
 
-		private List<DescribeMixStreamList_MixStreamInfo> mixStreamList;
+		private int? total;
 
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
+		private List<DescribeMixStreamList_MixStreamInfo> mixStreamList;
 
 		public string RequestId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
 			}
 		}
 
@@ -70,33 +70,45 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class DescribeMixStreamList_MixStreamInfo
 		{
 
-			private string mixStreamTemplate;
-
-			private string appName;
-
-			private string layoutId;
-
-			private string streamName;
-
-			private string gmtCreate;
-
 			private string mixstreamId;
-
-			private string gmtModified;
-
-			private int? inputStreamNumber;
 
 			private string domainName;
 
-			public string MixStreamTemplate
+			private string appName;
+
+			private string streamName;
+
+			private string layoutId;
+
+			private int? inputStreamNumber;
+
+			private string mixStreamTemplate;
+
+			private string gmtCreate;
+
+			private string gmtModified;
+
+			public string MixstreamId
 			{
 				get
 				{
-					return mixStreamTemplate;
+					return mixstreamId;
 				}
 				set	
 				{
-					mixStreamTemplate = value;
+					mixstreamId = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 
@@ -112,18 +124,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string LayoutId
-			{
-				get
-				{
-					return layoutId;
-				}
-				set	
-				{
-					layoutId = value;
-				}
-			}
-
 			public string StreamName
 			{
 				get
@@ -136,39 +136,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string GmtCreate
+			public string LayoutId
 			{
 				get
 				{
-					return gmtCreate;
+					return layoutId;
 				}
 				set	
 				{
-					gmtCreate = value;
-				}
-			}
-
-			public string MixstreamId
-			{
-				get
-				{
-					return mixstreamId;
-				}
-				set	
-				{
-					mixstreamId = value;
-				}
-			}
-
-			public string GmtModified
-			{
-				get
-				{
-					return gmtModified;
-				}
-				set	
-				{
-					gmtModified = value;
+					layoutId = value;
 				}
 			}
 
@@ -184,15 +160,39 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string DomainName
+			public string MixStreamTemplate
 			{
 				get
 				{
-					return domainName;
+					return mixStreamTemplate;
 				}
 				set	
 				{
-					domainName = value;
+					mixStreamTemplate = value;
+				}
+			}
+
+			public string GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
+				}
+			}
+
+			public string GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
 				}
 			}
 		}
