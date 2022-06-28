@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 
 		private string requestId;
 
-		private List<ThreeElementsVerification_DataItem> data;
+		private ThreeElementsVerification_Data data;
 
 		public string Code
 		{
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 			}
 		}
 
-		public List<ThreeElementsVerification_DataItem> Data
+		public ThreeElementsVerification_Data Data
 		{
 			get
 			{
@@ -81,24 +81,12 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 			}
 		}
 
-		public class ThreeElementsVerification_DataItem
+		public class ThreeElementsVerification_Data
 		{
-
-			private int? isConsistent;
 
 			private string basicCarrier;
 
-			public int? IsConsistent
-			{
-				get
-				{
-					return isConsistent;
-				}
-				set	
-				{
-					isConsistent = value;
-				}
-			}
+			private int? isConsistent;
 
 			public string BasicCarrier
 			{
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 				set	
 				{
 					basicCarrier = value;
+				}
+			}
+
+			public int? IsConsistent
+			{
+				get
+				{
+					return isConsistent;
+				}
+				set	
+				{
+					isConsistent = value;
 				}
 			}
 		}

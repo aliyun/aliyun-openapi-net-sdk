@@ -35,15 +35,10 @@ namespace Aliyun.Acs.Dytnsapi.Transform.V20200217
 			twoElementsVerificationResponse.Message = _ctx.StringValue("TwoElementsVerification.Message");
 			twoElementsVerificationResponse.RequestId = _ctx.StringValue("TwoElementsVerification.RequestId");
 
-			List<TwoElementsVerificationResponse.TwoElementsVerification_DataItem> twoElementsVerificationResponse_data = new List<TwoElementsVerificationResponse.TwoElementsVerification_DataItem>();
-			for (int i = 0; i < _ctx.Length("TwoElementsVerification.Data.Length"); i++) {
-				TwoElementsVerificationResponse.TwoElementsVerification_DataItem dataItem = new TwoElementsVerificationResponse.TwoElementsVerification_DataItem();
-				dataItem.IsConsistent = _ctx.IntegerValue("TwoElementsVerification.Data["+ i +"].IsConsistent");
-				dataItem.BasicCarrier = _ctx.StringValue("TwoElementsVerification.Data["+ i +"].BasicCarrier");
-
-				twoElementsVerificationResponse_data.Add(dataItem);
-			}
-			twoElementsVerificationResponse.Data = twoElementsVerificationResponse_data;
+			TwoElementsVerificationResponse.TwoElementsVerification_Data data = new TwoElementsVerificationResponse.TwoElementsVerification_Data();
+			data.IsConsistent = _ctx.IntegerValue("TwoElementsVerification.Data.IsConsistent");
+			data.BasicCarrier = _ctx.StringValue("TwoElementsVerification.Data.BasicCarrier");
+			twoElementsVerificationResponse.Data = data;
         
 			return twoElementsVerificationResponse;
         }

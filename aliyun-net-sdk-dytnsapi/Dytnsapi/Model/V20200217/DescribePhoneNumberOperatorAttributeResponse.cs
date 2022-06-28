@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 {
-	public class TwoElementsVerificationResponse : AcsResponse
+	public class DescribePhoneNumberOperatorAttributeResponse : AcsResponse
 	{
 
 		private string code;
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 
 		private string requestId;
 
-		private TwoElementsVerification_Data data;
+		private DescribePhoneNumberOperatorAttribute_Data data;
 
 		public string Code
 		{
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 			}
 		}
 
-		public TwoElementsVerification_Data Data
+		public DescribePhoneNumberOperatorAttribute_Data Data
 		{
 			get
 			{
@@ -81,24 +81,20 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 			}
 		}
 
-		public class TwoElementsVerification_Data
+		public class DescribePhoneNumberOperatorAttribute_Data
 		{
-
-			private int? isConsistent;
 
 			private string basicCarrier;
 
-			public int? IsConsistent
-			{
-				get
-				{
-					return isConsistent;
-				}
-				set	
-				{
-					isConsistent = value;
-				}
-			}
+			private string carrier;
+
+			private bool? isNumberPortability;
+
+			private long? numberSegment;
+
+			private string city;
+
+			private string province;
 
 			public string BasicCarrier
 			{
@@ -109,6 +105,66 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 				set	
 				{
 					basicCarrier = value;
+				}
+			}
+
+			public string Carrier
+			{
+				get
+				{
+					return carrier;
+				}
+				set	
+				{
+					carrier = value;
+				}
+			}
+
+			public bool? IsNumberPortability
+			{
+				get
+				{
+					return isNumberPortability;
+				}
+				set	
+				{
+					isNumberPortability = value;
+				}
+			}
+
+			public long? NumberSegment
+			{
+				get
+				{
+					return numberSegment;
+				}
+				set	
+				{
+					numberSegment = value;
+				}
+			}
+
+			public string City
+			{
+				get
+				{
+					return city;
+				}
+				set	
+				{
+					city = value;
+				}
+			}
+
+			public string Province
+			{
+				get
+				{
+					return province;
+				}
+				set	
+				{
+					province = value;
 				}
 			}
 		}
