@@ -179,6 +179,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string deductFee;
 
+				private long? ownerId;
+
 				public string EndTime
 				{
 					get
@@ -308,6 +310,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						deductFee = value;
+					}
+				}
+
+				public long? OwnerId
+				{
+					get
+					{
+						return ownerId;
+					}
+					set	
+					{
+						ownerId = value;
 					}
 				}
 			}
