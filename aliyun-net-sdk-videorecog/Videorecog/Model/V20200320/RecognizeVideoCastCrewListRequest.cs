@@ -28,10 +28,10 @@ using Aliyun.Acs.videorecog.Transform.V20200320;
 
 namespace Aliyun.Acs.videorecog.Model.V20200320
 {
-    public class UnderstandVideoContentRequest : RpcAcsRequest<UnderstandVideoContentResponse>
+    public class RecognizeVideoCastCrewListRequest : RpcAcsRequest<RecognizeVideoCastCrewListResponse>
     {
-        public UnderstandVideoContentRequest()
-            : base("videorecog", "2020-03-20", "UnderstandVideoContent", "videorecog", "openAPI")
+        public RecognizeVideoCastCrewListRequest()
+            : base("videorecog", "2020-03-20", "RecognizeVideoCastCrewList", "videorecog", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,19 +41,81 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 			Method = MethodType.POST;
         }
 
-		private string videoURL;
+		private List<Params> _params = new List<Params>(){ };
 
-		[JsonProperty(PropertyName = "VideoURL")]
-		public string VideoURL
+		private string registerUrl;
+
+		private string videoUrl;
+
+		[JsonProperty(PropertyName = "Params")]
+		public List<Params> _Params
 		{
 			get
 			{
-				return videoURL;
+				return _params;
+			}
+
+			set
+			{
+				_params = value;
+				if(_params != null)
+				{
+					for (int depth1 = 0; depth1 < _params.Count; depth1++)
+					{
+						if(_params[depth1] != null)
+						{
+
+							DictionaryUtil.Add(BodyParameters,"Params." + (depth1 + 1) +".Type", _params[depth1].Type);
+						}
+					}
+				}
+			}
+		}
+
+		[JsonProperty(PropertyName = "RegisterUrl")]
+		public string RegisterUrl
+		{
+			get
+			{
+				return registerUrl;
 			}
 			set	
 			{
-				videoURL = value;
-				DictionaryUtil.Add(BodyParameters, "VideoURL", value);
+				registerUrl = value;
+				DictionaryUtil.Add(BodyParameters, "RegisterUrl", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "VideoUrl")]
+		public string VideoUrl
+		{
+			get
+			{
+				return videoUrl;
+			}
+			set	
+			{
+				videoUrl = value;
+				DictionaryUtil.Add(BodyParameters, "VideoUrl", value);
+			}
+		}
+
+		public class Params
+		{
+
+			private string type;
+
+			[JsonProperty(PropertyName = "Type")]
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
 			}
 		}
 
@@ -62,9 +124,9 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 			return false;
 		}
 
-        public override UnderstandVideoContentResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RecognizeVideoCastCrewListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UnderstandVideoContentResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RecognizeVideoCastCrewListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

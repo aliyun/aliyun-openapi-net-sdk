@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.videorecog.Model.V20200320
 {
-	public class UnderstandVideoContentResponse : AcsResponse
+	public class SplitVideoPartsResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 
 		private string message;
 
-		private UnderstandVideoContent_Data data;
+		private SplitVideoParts_Data data;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -73,7 +73,7 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 		}
 
 		[JsonProperty(PropertyName = "Data")]
-		public UnderstandVideoContent_Data Data
+		public SplitVideoParts_Data Data
 		{
 			get
 			{
@@ -85,99 +85,69 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 			}
 		}
 
-		public class UnderstandVideoContent_Data
+		public class SplitVideoParts_Data
 		{
 
-			private string tagInfo;
+			private List<SplitVideoParts_ElementsItem> elements;
 
-			private UnderstandVideoContent_VideoInfo videoInfo;
-
-			[JsonProperty(PropertyName = "TagInfo")]
-			public string TagInfo
+			[JsonProperty(PropertyName = "Elements")]
+			public List<SplitVideoParts_ElementsItem> Elements
 			{
 				get
 				{
-					return tagInfo;
+					return elements;
 				}
 				set	
 				{
-					tagInfo = value;
+					elements = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "VideoInfo")]
-			public UnderstandVideoContent_VideoInfo VideoInfo
-			{
-				get
-				{
-					return videoInfo;
-				}
-				set	
-				{
-					videoInfo = value;
-				}
-			}
-
-			public class UnderstandVideoContent_VideoInfo
+			public class SplitVideoParts_ElementsItem
 			{
 
-				private long? width;
+				private float? beginTime;
 
-				private long? height;
+				private float? endTime;
 
-				private long? duration;
+				private long? index;
 
-				private float? fps;
-
-				[JsonProperty(PropertyName = "Width")]
-				public long? Width
+				[JsonProperty(PropertyName = "BeginTime")]
+				public float? BeginTime
 				{
 					get
 					{
-						return width;
+						return beginTime;
 					}
 					set	
 					{
-						width = value;
+						beginTime = value;
 					}
 				}
 
-				[JsonProperty(PropertyName = "Height")]
-				public long? Height
+				[JsonProperty(PropertyName = "EndTime")]
+				public float? EndTime
 				{
 					get
 					{
-						return height;
+						return endTime;
 					}
 					set	
 					{
-						height = value;
+						endTime = value;
 					}
 				}
 
-				[JsonProperty(PropertyName = "Duration")]
-				public long? Duration
+				[JsonProperty(PropertyName = "Index")]
+				public long? Index
 				{
 					get
 					{
-						return duration;
+						return index;
 					}
 					set	
 					{
-						duration = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "Fps")]
-				public float? Fps
-				{
-					get
-					{
-						return fps;
-					}
-					set	
-					{
-						fps = value;
+						index = value;
 					}
 				}
 			}

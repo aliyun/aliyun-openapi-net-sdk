@@ -22,53 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.videorecog.Model.V20200320
 {
-	public class DetectVideoShotResponse : AcsResponse
+	public class RecognizeVideoCastCrewListResponse : AcsResponse
 	{
-
-		private string requestId;
-
-		private DetectVideoShot_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public DetectVideoShot_Data Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
-			}
-		}
-
-		public class DetectVideoShot_Data
-		{
-
-			private List<string> shotFrameIds;
-
-			public List<string> ShotFrameIds
-			{
-				get
-				{
-					return shotFrameIds;
-				}
-				set	
-				{
-					shotFrameIds = value;
-				}
-			}
-		}
 	}
 }

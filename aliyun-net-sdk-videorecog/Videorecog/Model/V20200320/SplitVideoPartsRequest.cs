@@ -28,10 +28,10 @@ using Aliyun.Acs.videorecog.Transform.V20200320;
 
 namespace Aliyun.Acs.videorecog.Model.V20200320
 {
-    public class UnderstandVideoContentRequest : RpcAcsRequest<UnderstandVideoContentResponse>
+    public class SplitVideoPartsRequest : RpcAcsRequest<SplitVideoPartsResponse>
     {
-        public UnderstandVideoContentRequest()
-            : base("videorecog", "2020-03-20", "UnderstandVideoContent", "videorecog", "openAPI")
+        public SplitVideoPartsRequest()
+            : base("videorecog", "2020-03-20", "SplitVideoParts", "videorecog", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,19 +41,19 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 			Method = MethodType.POST;
         }
 
-		private string videoURL;
+		private string videoUrl;
 
-		[JsonProperty(PropertyName = "VideoURL")]
-		public string VideoURL
+		[JsonProperty(PropertyName = "VideoUrl")]
+		public string VideoUrl
 		{
 			get
 			{
-				return videoURL;
+				return videoUrl;
 			}
 			set	
 			{
-				videoURL = value;
-				DictionaryUtil.Add(BodyParameters, "VideoURL", value);
+				videoUrl = value;
+				DictionaryUtil.Add(BodyParameters, "VideoUrl", value);
 			}
 		}
 
@@ -62,9 +62,9 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 			return false;
 		}
 
-        public override UnderstandVideoContentResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SplitVideoPartsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UnderstandVideoContentResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SplitVideoPartsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

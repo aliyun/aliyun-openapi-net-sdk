@@ -24,24 +24,15 @@ using Aliyun.Acs.videorecog.Model.V20200320;
 
 namespace Aliyun.Acs.videorecog.Transform.V20200320
 {
-    public class GetAsyncJobResultResponseUnmarshaller
+    public class RecognizeVideoCastCrewListResponseUnmarshaller
     {
-        public static GetAsyncJobResultResponse Unmarshall(UnmarshallerContext _ctx)
+        public static RecognizeVideoCastCrewListResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetAsyncJobResultResponse getAsyncJobResultResponse = new GetAsyncJobResultResponse();
+			RecognizeVideoCastCrewListResponse recognizeVideoCastCrewListResponse = new RecognizeVideoCastCrewListResponse();
 
-			getAsyncJobResultResponse.HttpResponse = _ctx.HttpResponse;
-			getAsyncJobResultResponse.RequestId = _ctx.StringValue("GetAsyncJobResult.RequestId");
-
-			GetAsyncJobResultResponse.GetAsyncJobResult_Data data = new GetAsyncJobResultResponse.GetAsyncJobResult_Data();
-			data.Status = _ctx.StringValue("GetAsyncJobResult.Data.Status");
-			data.ErrorMessage = _ctx.StringValue("GetAsyncJobResult.Data.ErrorMessage");
-			data.Result = _ctx.StringValue("GetAsyncJobResult.Data.Result");
-			data.ErrorCode = _ctx.StringValue("GetAsyncJobResult.Data.ErrorCode");
-			data.JobId = _ctx.StringValue("GetAsyncJobResult.Data.JobId");
-			getAsyncJobResultResponse.Data = data;
+			recognizeVideoCastCrewListResponse.HttpResponse = _ctx.HttpResponse;
         
-			return getAsyncJobResultResponse;
+			return recognizeVideoCastCrewListResponse;
         }
     }
 }
