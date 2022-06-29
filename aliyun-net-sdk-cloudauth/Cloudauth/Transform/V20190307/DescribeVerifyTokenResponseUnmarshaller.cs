@@ -31,18 +31,18 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			DescribeVerifyTokenResponse describeVerifyTokenResponse = new DescribeVerifyTokenResponse();
 
 			describeVerifyTokenResponse.HttpResponse = _ctx.HttpResponse;
-			describeVerifyTokenResponse.RequestId = _ctx.StringValue("DescribeVerifyToken.RequestId");
 			describeVerifyTokenResponse.VerifyPageUrl = _ctx.StringValue("DescribeVerifyToken.VerifyPageUrl");
+			describeVerifyTokenResponse.RequestId = _ctx.StringValue("DescribeVerifyToken.RequestId");
 			describeVerifyTokenResponse.VerifyToken = _ctx.StringValue("DescribeVerifyToken.VerifyToken");
 
 			DescribeVerifyTokenResponse.DescribeVerifyToken_OssUploadToken ossUploadToken = new DescribeVerifyTokenResponse.DescribeVerifyToken_OssUploadToken();
-			ossUploadToken.Bucket = _ctx.StringValue("DescribeVerifyToken.OssUploadToken.Bucket");
-			ossUploadToken.EndPoint = _ctx.StringValue("DescribeVerifyToken.OssUploadToken.EndPoint");
-			ossUploadToken.Path = _ctx.StringValue("DescribeVerifyToken.OssUploadToken.Path");
-			ossUploadToken.Expired = _ctx.LongValue("DescribeVerifyToken.OssUploadToken.Expired");
-			ossUploadToken.Secret = _ctx.StringValue("DescribeVerifyToken.OssUploadToken.Secret");
 			ossUploadToken.Key = _ctx.StringValue("DescribeVerifyToken.OssUploadToken.Key");
 			ossUploadToken.Token = _ctx.StringValue("DescribeVerifyToken.OssUploadToken.Token");
+			ossUploadToken.Secret = _ctx.StringValue("DescribeVerifyToken.OssUploadToken.Secret");
+			ossUploadToken.Expired = _ctx.LongValue("DescribeVerifyToken.OssUploadToken.Expired");
+			ossUploadToken.Path = _ctx.StringValue("DescribeVerifyToken.OssUploadToken.Path");
+			ossUploadToken.EndPoint = _ctx.StringValue("DescribeVerifyToken.OssUploadToken.EndPoint");
+			ossUploadToken.Bucket = _ctx.StringValue("DescribeVerifyToken.OssUploadToken.Bucket");
 			describeVerifyTokenResponse.OssUploadToken = ossUploadToken;
         
 			return describeVerifyTokenResponse;

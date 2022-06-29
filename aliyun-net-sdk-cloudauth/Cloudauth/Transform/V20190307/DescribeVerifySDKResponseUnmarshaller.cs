@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			DescribeVerifySDKResponse describeVerifySDKResponse = new DescribeVerifySDKResponse();
 
 			describeVerifySDKResponse.HttpResponse = _ctx.HttpResponse;
-			describeVerifySDKResponse.RequestId = _ctx.StringValue("DescribeVerifySDK.RequestId");
 			describeVerifySDKResponse.SdkUrl = _ctx.StringValue("DescribeVerifySDK.SdkUrl");
+			describeVerifySDKResponse.RequestId = _ctx.StringValue("DescribeVerifySDK.RequestId");
         
 			return describeVerifySDKResponse;
         }

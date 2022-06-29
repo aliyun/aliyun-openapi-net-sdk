@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20190307
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 	public class DescribeDeviceInfoResponse : AcsResponse
 	{
 
+		private int? currentPage;
+
 		private string requestId;
 
 		private int? pageSize;
 
-		private int? currentPage;
-
 		private int? totalCount;
 
 		private List<DescribeDeviceInfo_DeviceInfo> deviceInfoList;
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -56,18 +68,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				pageSize = value;
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
 			}
 		}
 
@@ -98,25 +98,25 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 		public class DescribeDeviceInfo_DeviceInfo
 		{
 
-			private string deviceId;
+			private string expiredDay;
 
 			private string userDeviceId;
 
-			private string bizType;
+			private string deviceId;
 
 			private string beginDay;
 
-			private string expiredDay;
+			private string bizType;
 
-			public string DeviceId
+			public string ExpiredDay
 			{
 				get
 				{
-					return deviceId;
+					return expiredDay;
 				}
 				set	
 				{
-					deviceId = value;
+					expiredDay = value;
 				}
 			}
 
@@ -132,15 +132,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				}
 			}
 
-			public string BizType
+			public string DeviceId
 			{
 				get
 				{
-					return bizType;
+					return deviceId;
 				}
 				set	
 				{
-					bizType = value;
+					deviceId = value;
 				}
 			}
 
@@ -156,15 +156,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				}
 			}
 
-			public string ExpiredDay
+			public string BizType
 			{
 				get
 				{
-					return expiredDay;
+					return bizType;
 				}
 				set	
 				{
-					expiredDay = value;
+					bizType = value;
 				}
 			}
 		}

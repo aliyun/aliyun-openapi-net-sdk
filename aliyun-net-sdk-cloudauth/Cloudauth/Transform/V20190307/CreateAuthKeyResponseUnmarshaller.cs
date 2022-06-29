@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			CreateAuthKeyResponse createAuthKeyResponse = new CreateAuthKeyResponse();
 
 			createAuthKeyResponse.HttpResponse = _ctx.HttpResponse;
-			createAuthKeyResponse.RequestId = _ctx.StringValue("CreateAuthKey.RequestId");
 			createAuthKeyResponse.AuthKey = _ctx.StringValue("CreateAuthKey.AuthKey");
+			createAuthKeyResponse.RequestId = _ctx.StringValue("CreateAuthKey.RequestId");
         
 			return createAuthKeyResponse;
         }

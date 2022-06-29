@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20190307
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 	public class CreateAuthKeyResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string authKey;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string AuthKey
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				authKey = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

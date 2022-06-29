@@ -31,19 +31,19 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			DescribeDeviceInfoResponse describeDeviceInfoResponse = new DescribeDeviceInfoResponse();
 
 			describeDeviceInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeDeviceInfoResponse.CurrentPage = _ctx.IntegerValue("DescribeDeviceInfo.CurrentPage");
 			describeDeviceInfoResponse.RequestId = _ctx.StringValue("DescribeDeviceInfo.RequestId");
 			describeDeviceInfoResponse.PageSize = _ctx.IntegerValue("DescribeDeviceInfo.PageSize");
-			describeDeviceInfoResponse.CurrentPage = _ctx.IntegerValue("DescribeDeviceInfo.CurrentPage");
 			describeDeviceInfoResponse.TotalCount = _ctx.IntegerValue("DescribeDeviceInfo.TotalCount");
 
 			List<DescribeDeviceInfoResponse.DescribeDeviceInfo_DeviceInfo> describeDeviceInfoResponse_deviceInfoList = new List<DescribeDeviceInfoResponse.DescribeDeviceInfo_DeviceInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeDeviceInfo.DeviceInfoList.Length"); i++) {
 				DescribeDeviceInfoResponse.DescribeDeviceInfo_DeviceInfo deviceInfo = new DescribeDeviceInfoResponse.DescribeDeviceInfo_DeviceInfo();
-				deviceInfo.DeviceId = _ctx.StringValue("DescribeDeviceInfo.DeviceInfoList["+ i +"].DeviceId");
-				deviceInfo.UserDeviceId = _ctx.StringValue("DescribeDeviceInfo.DeviceInfoList["+ i +"].UserDeviceId");
-				deviceInfo.BizType = _ctx.StringValue("DescribeDeviceInfo.DeviceInfoList["+ i +"].BizType");
-				deviceInfo.BeginDay = _ctx.StringValue("DescribeDeviceInfo.DeviceInfoList["+ i +"].BeginDay");
 				deviceInfo.ExpiredDay = _ctx.StringValue("DescribeDeviceInfo.DeviceInfoList["+ i +"].ExpiredDay");
+				deviceInfo.UserDeviceId = _ctx.StringValue("DescribeDeviceInfo.DeviceInfoList["+ i +"].UserDeviceId");
+				deviceInfo.DeviceId = _ctx.StringValue("DescribeDeviceInfo.DeviceInfoList["+ i +"].DeviceId");
+				deviceInfo.BeginDay = _ctx.StringValue("DescribeDeviceInfo.DeviceInfoList["+ i +"].BeginDay");
+				deviceInfo.BizType = _ctx.StringValue("DescribeDeviceInfo.DeviceInfoList["+ i +"].BizType");
 
 				describeDeviceInfoResponse_deviceInfoList.Add(deviceInfo);
 			}

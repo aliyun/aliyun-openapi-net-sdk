@@ -34,13 +34,13 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			describeOssUploadTokenResponse.RequestId = _ctx.StringValue("DescribeOssUploadToken.RequestId");
 
 			DescribeOssUploadTokenResponse.DescribeOssUploadToken_OssUploadToken ossUploadToken = new DescribeOssUploadTokenResponse.DescribeOssUploadToken_OssUploadToken();
-			ossUploadToken.Bucket = _ctx.StringValue("DescribeOssUploadToken.OssUploadToken.Bucket");
-			ossUploadToken.EndPoint = _ctx.StringValue("DescribeOssUploadToken.OssUploadToken.EndPoint");
-			ossUploadToken.Path = _ctx.StringValue("DescribeOssUploadToken.OssUploadToken.Path");
-			ossUploadToken.Expired = _ctx.LongValue("DescribeOssUploadToken.OssUploadToken.Expired");
-			ossUploadToken.Secret = _ctx.StringValue("DescribeOssUploadToken.OssUploadToken.Secret");
 			ossUploadToken.Key = _ctx.StringValue("DescribeOssUploadToken.OssUploadToken.Key");
 			ossUploadToken.Token = _ctx.StringValue("DescribeOssUploadToken.OssUploadToken.Token");
+			ossUploadToken.Secret = _ctx.StringValue("DescribeOssUploadToken.OssUploadToken.Secret");
+			ossUploadToken.Expired = _ctx.LongValue("DescribeOssUploadToken.OssUploadToken.Expired");
+			ossUploadToken.Path = _ctx.StringValue("DescribeOssUploadToken.OssUploadToken.Path");
+			ossUploadToken.EndPoint = _ctx.StringValue("DescribeOssUploadToken.OssUploadToken.EndPoint");
+			ossUploadToken.Bucket = _ctx.StringValue("DescribeOssUploadToken.OssUploadToken.Bucket");
 			describeOssUploadTokenResponse.OssUploadToken = ossUploadToken;
         
 			return describeOssUploadTokenResponse;

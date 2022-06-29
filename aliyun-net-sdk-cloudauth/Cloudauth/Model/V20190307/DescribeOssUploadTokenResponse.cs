@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20190307
@@ -56,79 +56,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 		public class DescribeOssUploadToken_OssUploadToken
 		{
 
-			private string bucket;
-
-			private string endPoint;
-
-			private string path;
-
-			private long? expired;
-
-			private string secret;
-
 			private string key;
 
 			private string token;
 
-			public string Bucket
-			{
-				get
-				{
-					return bucket;
-				}
-				set	
-				{
-					bucket = value;
-				}
-			}
+			private string secret;
 
-			public string EndPoint
-			{
-				get
-				{
-					return endPoint;
-				}
-				set	
-				{
-					endPoint = value;
-				}
-			}
+			private long? expired;
 
-			public string Path
-			{
-				get
-				{
-					return path;
-				}
-				set	
-				{
-					path = value;
-				}
-			}
+			private string path;
 
-			public long? Expired
-			{
-				get
-				{
-					return expired;
-				}
-				set	
-				{
-					expired = value;
-				}
-			}
+			private string endPoint;
 
-			public string Secret
-			{
-				get
-				{
-					return secret;
-				}
-				set	
-				{
-					secret = value;
-				}
-			}
+			private string bucket;
 
 			public string Key
 			{
@@ -151,6 +91,66 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				set	
 				{
 					token = value;
+				}
+			}
+
+			public string Secret
+			{
+				get
+				{
+					return secret;
+				}
+				set	
+				{
+					secret = value;
+				}
+			}
+
+			public long? Expired
+			{
+				get
+				{
+					return expired;
+				}
+				set	
+				{
+					expired = value;
+				}
+			}
+
+			public string Path
+			{
+				get
+				{
+					return path;
+				}
+				set	
+				{
+					path = value;
+				}
+			}
+
+			public string EndPoint
+			{
+				get
+				{
+					return endPoint;
+				}
+				set	
+				{
+					endPoint = value;
+				}
+			}
+
+			public string Bucket
+			{
+				get
+				{
+					return bucket;
+				}
+				set	
+				{
+					bucket = value;
 				}
 			}
 		}

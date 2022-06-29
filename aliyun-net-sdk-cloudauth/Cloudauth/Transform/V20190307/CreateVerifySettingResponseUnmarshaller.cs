@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			CreateVerifySettingResponse createVerifySettingResponse = new CreateVerifySettingResponse();
 
 			createVerifySettingResponse.HttpResponse = _ctx.HttpResponse;
-			createVerifySettingResponse.RequestId = _ctx.StringValue("CreateVerifySetting.RequestId");
-			createVerifySettingResponse.BizType = _ctx.StringValue("CreateVerifySetting.BizType");
 			createVerifySettingResponse.BizName = _ctx.StringValue("CreateVerifySetting.BizName");
+			createVerifySettingResponse.RequestId = _ctx.StringValue("CreateVerifySetting.RequestId");
 			createVerifySettingResponse.Solution = _ctx.StringValue("CreateVerifySetting.Solution");
+			createVerifySettingResponse.BizType = _ctx.StringValue("CreateVerifySetting.BizType");
 
 			List<string> createVerifySettingResponse_stepList = new List<string>();
 			for (int i = 0; i < _ctx.Length("CreateVerifySetting.StepList.Length"); i++) {
