@@ -31,23 +31,23 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeInstancesResponse describeInstancesResponse = new DescribeInstancesResponse();
 
 			describeInstancesResponse.HttpResponse = _ctx.HttpResponse;
-			describeInstancesResponse.RequestId = _ctx.StringValue("DescribeInstances.RequestId");
 			describeInstancesResponse.TotalCount = _ctx.LongValue("DescribeInstances.TotalCount");
+			describeInstancesResponse.RequestId = _ctx.StringValue("DescribeInstances.RequestId");
 
 			List<DescribeInstancesResponse.DescribeInstances_Instance> describeInstancesResponse_instances = new List<DescribeInstancesResponse.DescribeInstances_Instance>();
 			for (int i = 0; i < _ctx.Length("DescribeInstances.Instances.Length"); i++) {
 				DescribeInstancesResponse.DescribeInstances_Instance instance = new DescribeInstancesResponse.DescribeInstances_Instance();
-				instance.InstanceId = _ctx.StringValue("DescribeInstances.Instances["+ i +"].InstanceId");
-				instance.Remark = _ctx.StringValue("DescribeInstances.Instances["+ i +"].Remark");
 				instance.Status = _ctx.IntegerValue("DescribeInstances.Instances["+ i +"].Status");
-				instance.DebtStatus = _ctx.IntegerValue("DescribeInstances.Instances["+ i +"].DebtStatus");
-				instance.ExpireTime = _ctx.LongValue("DescribeInstances.Instances["+ i +"].ExpireTime");
-				instance.CreateTime = _ctx.LongValue("DescribeInstances.Instances["+ i +"].CreateTime");
-				instance.Edition = _ctx.IntegerValue("DescribeInstances.Instances["+ i +"].Edition");
-				instance.Enabled = _ctx.IntegerValue("DescribeInstances.Instances["+ i +"].Enabled");
-				instance.ConnInstanceId = _ctx.StringValue("DescribeInstances.Instances["+ i +"].ConnInstanceId");
-				instance.IpVersion = _ctx.StringValue("DescribeInstances.Instances["+ i +"].IpVersion");
 				instance.IpMode = _ctx.StringValue("DescribeInstances.Instances["+ i +"].IpMode");
+				instance.DebtStatus = _ctx.IntegerValue("DescribeInstances.Instances["+ i +"].DebtStatus");
+				instance.Edition = _ctx.IntegerValue("DescribeInstances.Instances["+ i +"].Edition");
+				instance.IpVersion = _ctx.StringValue("DescribeInstances.Instances["+ i +"].IpVersion");
+				instance.ExpireTime = _ctx.LongValue("DescribeInstances.Instances["+ i +"].ExpireTime");
+				instance.Remark = _ctx.StringValue("DescribeInstances.Instances["+ i +"].Remark");
+				instance.CreateTime = _ctx.LongValue("DescribeInstances.Instances["+ i +"].CreateTime");
+				instance.Enabled = _ctx.IntegerValue("DescribeInstances.Instances["+ i +"].Enabled");
+				instance.InstanceId = _ctx.StringValue("DescribeInstances.Instances["+ i +"].InstanceId");
+				instance.ConnInstanceId = _ctx.StringValue("DescribeInstances.Instances["+ i +"].ConnInstanceId");
 
 				describeInstancesResponse_instances.Add(instance);
 			}

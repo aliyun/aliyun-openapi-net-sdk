@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeSceneDefensePoliciesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private List<DescribeSceneDefensePolicies_Policy> policies;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeSceneDefensePolicies_Policy> policies;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,69 +70,33 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeSceneDefensePolicies_Policy
 		{
 
-			private string policyId;
-
-			private string name;
-
-			private string template;
-
-			private long? startTime;
+			private int? done;
 
 			private long? endTime;
 
 			private int? status;
 
-			private int? done;
+			private long? startTime;
 
 			private int? objectCount;
 
+			private string template;
+
+			private string policyId;
+
+			private string name;
+
 			private List<DescribeSceneDefensePolicies_Policy1> runtimePolicies;
 
-			public string PolicyId
+			public int? Done
 			{
 				get
 				{
-					return policyId;
+					return done;
 				}
 				set	
 				{
-					policyId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Template
-			{
-				get
-				{
-					return template;
-				}
-				set	
-				{
-					template = value;
-				}
-			}
-
-			public long? StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
+					done = value;
 				}
 			}
 
@@ -160,15 +124,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public int? Done
+			public long? StartTime
 			{
 				get
 				{
-					return done;
+					return startTime;
 				}
 				set	
 				{
-					done = value;
+					startTime = value;
 				}
 			}
 
@@ -181,6 +145,42 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					objectCount = value;
+				}
+			}
+
+			public string Template
+			{
+				get
+				{
+					return template;
+				}
+				set	
+				{
+					template = value;
+				}
+			}
+
+			public string PolicyId
+			{
+				get
+				{
+					return policyId;
+				}
+				set	
+				{
+					policyId = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 
@@ -199,25 +199,13 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			public class DescribeSceneDefensePolicies_Policy1
 			{
 
-				private int? policyType;
-
 				private int? status;
 
 				private string oldValue;
 
 				private string newValue;
 
-				public int? PolicyType
-				{
-					get
-					{
-						return policyType;
-					}
-					set	
-					{
-						policyType = value;
-					}
-				}
+				private int? policyType;
 
 				public int? Status
 				{
@@ -252,6 +240,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 					set	
 					{
 						newValue = value;
+					}
+				}
+
+				public int? PolicyType
+				{
+					get
+					{
+						return policyType;
+					}
+					set	
+					{
+						policyType = value;
 					}
 				}
 			}

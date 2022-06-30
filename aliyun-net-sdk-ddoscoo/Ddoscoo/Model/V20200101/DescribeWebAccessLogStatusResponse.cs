@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,23 +25,23 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeWebAccessLogStatusResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string slsLogstore;
 
 		private bool? slsStatus;
 
-		private string slsLogstore;
-
 		private string slsProject;
 
-		public string RequestId
+		private string requestId;
+
+		public string SlsLogstore
 		{
 			get
 			{
-				return requestId;
+				return slsLogstore;
 			}
 			set	
 			{
-				requestId = value;
+				slsLogstore = value;
 			}
 		}
 
@@ -57,18 +57,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			}
 		}
 
-		public string SlsLogstore
-		{
-			get
-			{
-				return slsLogstore;
-			}
-			set	
-			{
-				slsLogstore = value;
-			}
-		}
-
 		public string SlsProject
 		{
 			get
@@ -78,6 +66,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				slsProject = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

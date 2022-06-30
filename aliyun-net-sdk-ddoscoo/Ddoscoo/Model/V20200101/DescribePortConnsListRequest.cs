@@ -47,9 +47,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 		private long? endTime;
 
-		private List<string> instanceIdss = new List<string>(){ };
-
 		private string port;
+
+		private List<string> instanceIdss = new List<string>(){ };
 
 		private int? interval;
 
@@ -92,23 +92,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			}
 		}
 
-		public List<string> InstanceIdss
-		{
-			get
-			{
-				return instanceIdss;
-			}
-
-			set
-			{
-				instanceIdss = value;
-				for (int i = 0; i < instanceIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceIds." + (i + 1) , instanceIdss[i]);
-				}
-			}
-		}
-
 		public string Port
 		{
 			get
@@ -119,6 +102,19 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			{
 				port = value;
 				DictionaryUtil.Add(QueryParameters, "Port", value);
+			}
+		}
+
+		public List<string> InstanceIdss
+		{
+			get
+			{
+				return instanceIdss;
+			}
+
+			set
+			{
+				instanceIdss = value;
 			}
 		}
 

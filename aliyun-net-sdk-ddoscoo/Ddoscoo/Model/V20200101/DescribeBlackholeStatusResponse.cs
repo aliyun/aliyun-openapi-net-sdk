@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,25 +56,13 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeBlackholeStatus_BlackholeStatusItem
 		{
 
-			private long? startTime;
-
 			private long? endTime;
+
+			private long? startTime;
 
 			private string ip;
 
 			private string blackStatus;
-
-			public long? StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
 
 			public long? EndTime
 			{
@@ -85,6 +73,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					endTime = value;
+				}
+			}
+
+			public long? StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
 				}
 			}
 

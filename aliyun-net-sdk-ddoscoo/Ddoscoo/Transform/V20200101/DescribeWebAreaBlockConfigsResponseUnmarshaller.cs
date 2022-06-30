@@ -41,8 +41,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 				List<DescribeWebAreaBlockConfigsResponse.DescribeWebAreaBlockConfigs_AreaBlockConfig.DescribeWebAreaBlockConfigs_Region> areaBlockConfig_regionList = new List<DescribeWebAreaBlockConfigsResponse.DescribeWebAreaBlockConfigs_AreaBlockConfig.DescribeWebAreaBlockConfigs_Region>();
 				for (int j = 0; j < _ctx.Length("DescribeWebAreaBlockConfigs.AreaBlockConfigs["+ i +"].RegionList.Length"); j++) {
 					DescribeWebAreaBlockConfigsResponse.DescribeWebAreaBlockConfigs_AreaBlockConfig.DescribeWebAreaBlockConfigs_Region region = new DescribeWebAreaBlockConfigsResponse.DescribeWebAreaBlockConfigs_AreaBlockConfig.DescribeWebAreaBlockConfigs_Region();
-					region.Block = _ctx.IntegerValue("DescribeWebAreaBlockConfigs.AreaBlockConfigs["+ i +"].RegionList["+ j +"].Block");
 					region.Region = _ctx.StringValue("DescribeWebAreaBlockConfigs.AreaBlockConfigs["+ i +"].RegionList["+ j +"].Region");
+					region.Block = _ctx.IntegerValue("DescribeWebAreaBlockConfigs.AreaBlockConfigs["+ i +"].RegionList["+ j +"].Block");
 
 					areaBlockConfig_regionList.Add(region);
 				}

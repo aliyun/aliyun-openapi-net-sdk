@@ -31,10 +31,10 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeDDosEventMaxResponse describeDDosEventMaxResponse = new DescribeDDosEventMaxResponse();
 
 			describeDDosEventMaxResponse.HttpResponse = _ctx.HttpResponse;
-			describeDDosEventMaxResponse.RequestId = _ctx.StringValue("DescribeDDosEventMax.RequestId");
-			describeDDosEventMaxResponse.Mbps = _ctx.LongValue("DescribeDDosEventMax.Mbps");
 			describeDDosEventMaxResponse.Qps = _ctx.LongValue("DescribeDDosEventMax.Qps");
+			describeDDosEventMaxResponse.RequestId = _ctx.StringValue("DescribeDDosEventMax.RequestId");
 			describeDDosEventMaxResponse.Cps = _ctx.LongValue("DescribeDDosEventMax.Cps");
+			describeDDosEventMaxResponse.Mbps = _ctx.LongValue("DescribeDDosEventMax.Mbps");
         
 			return describeDDosEventMaxResponse;
         }

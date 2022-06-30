@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -28,8 +28,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		private string requestId;
 
 		private List<DescribeDomainStatusCodeList_StatusCode> statusCodeList;
-
-		private List<DescribeDomainStatusCodeList_StatusCode> statusCodeList1;
 
 		public string RequestId
 		{
@@ -55,48 +53,36 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			}
 		}
 
-		public List<DescribeDomainStatusCodeList_StatusCode> StatusCodeList1
-		{
-			get
-			{
-				return statusCodeList1;
-			}
-			set	
-			{
-				statusCodeList1 = value;
-			}
-		}
-
 		public class DescribeDomainStatusCodeList_StatusCode
 		{
 
 			private int? index;
 
+			private long? status502;
+
 			private long? time;
+
+			private long? status405;
+
+			private long? status3XX;
+
+			private long? status503;
+
+			private long? status4XX;
 
 			private long? status2XX;
 
-			private long? status501;
-
-			private long? status502;
-
-			private long? status503;
+			private long? status5XX;
 
 			private long? status504;
 
 			private long? status200;
 
-			private long? status405;
-
-			private long? status5XX;
-
-			private long? status4XX;
-
 			private long? status403;
 
 			private long? status404;
 
-			private long? status3XX;
+			private long? status501;
 
 			public int? Index
 			{
@@ -107,42 +93,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					index = value;
-				}
-			}
-
-			public long? Time
-			{
-				get
-				{
-					return time;
-				}
-				set	
-				{
-					time = value;
-				}
-			}
-
-			public long? Status2XX
-			{
-				get
-				{
-					return status2XX;
-				}
-				set	
-				{
-					status2XX = value;
-				}
-			}
-
-			public long? Status501
-			{
-				get
-				{
-					return status501;
-				}
-				set	
-				{
-					status501 = value;
 				}
 			}
 
@@ -158,6 +108,42 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
+			public long? Time
+			{
+				get
+				{
+					return time;
+				}
+				set	
+				{
+					time = value;
+				}
+			}
+
+			public long? Status405
+			{
+				get
+				{
+					return status405;
+				}
+				set	
+				{
+					status405 = value;
+				}
+			}
+
+			public long? Status3XX
+			{
+				get
+				{
+					return status3XX;
+				}
+				set	
+				{
+					status3XX = value;
+				}
+			}
+
 			public long? Status503
 			{
 				get
@@ -167,6 +153,42 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					status503 = value;
+				}
+			}
+
+			public long? Status4XX
+			{
+				get
+				{
+					return status4XX;
+				}
+				set	
+				{
+					status4XX = value;
+				}
+			}
+
+			public long? Status2XX
+			{
+				get
+				{
+					return status2XX;
+				}
+				set	
+				{
+					status2XX = value;
+				}
+			}
+
+			public long? Status5XX
+			{
+				get
+				{
+					return status5XX;
+				}
+				set	
+				{
+					status5XX = value;
 				}
 			}
 
@@ -194,42 +216,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public long? Status405
-			{
-				get
-				{
-					return status405;
-				}
-				set	
-				{
-					status405 = value;
-				}
-			}
-
-			public long? Status5XX
-			{
-				get
-				{
-					return status5XX;
-				}
-				set	
-				{
-					status5XX = value;
-				}
-			}
-
-			public long? Status4XX
-			{
-				get
-				{
-					return status4XX;
-				}
-				set	
-				{
-					status4XX = value;
-				}
-			}
-
 			public long? Status403
 			{
 				get
@@ -254,15 +240,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public long? Status3XX
+			public long? Status501
 			{
 				get
 				{
-					return status3XX;
+					return status501;
 				}
 				set	
 				{
-					status3XX = value;
+					status501 = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,15 +56,39 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeHealthCheckStatus_Status
 		{
 
+			private string status;
+
+			private int? frontendPort;
+
 			private string instanceId;
 
 			private string protocol;
 
-			private int? frontendPort;
-
-			private string status;
-
 			private List<DescribeHealthCheckStatus_RealServerStatus> realServerStatusList;
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public int? FrontendPort
+			{
+				get
+				{
+					return frontendPort;
+				}
+				set	
+				{
+					frontendPort = value;
+				}
+			}
 
 			public string InstanceId
 			{
@@ -90,30 +114,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public int? FrontendPort
-			{
-				get
-				{
-					return frontendPort;
-				}
-				set	
-				{
-					frontendPort = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
 			public List<DescribeHealthCheckStatus_RealServerStatus> RealServerStatusList
 			{
 				get
@@ -129,21 +129,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			public class DescribeHealthCheckStatus_RealServerStatus
 			{
 
-				private string address;
-
 				private string status;
 
-				public string Address
-				{
-					get
-					{
-						return address;
-					}
-					set	
-					{
-						address = value;
-					}
-				}
+				private string address;
 
 				public string Status
 				{
@@ -154,6 +142,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 					set	
 					{
 						status = value;
+					}
+				}
+
+				public string Address
+				{
+					get
+					{
+						return address;
+					}
+					set	
+					{
+						address = value;
 					}
 				}
 			}

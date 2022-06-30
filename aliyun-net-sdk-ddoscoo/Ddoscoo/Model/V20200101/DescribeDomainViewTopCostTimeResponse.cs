@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -58,9 +58,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 			private float? costTime;
 
-			private string domain;
-
 			private string url;
+
+			private string domain;
 
 			public float? CostTime
 			{
@@ -74,18 +74,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public string Domain
-			{
-				get
-				{
-					return domain;
-				}
-				set	
-				{
-					domain = value;
-				}
-			}
-
 			public string Url
 			{
 				get
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					url = value;
+				}
+			}
+
+			public string Domain
+			{
+				get
+				{
+					return domain;
+				}
+				set	
+				{
+					domain = value;
 				}
 			}
 		}

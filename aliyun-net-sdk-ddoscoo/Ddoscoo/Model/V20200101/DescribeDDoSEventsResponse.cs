@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeDDoSEventsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? total;
 
-		private List<DescribeDDoSEvents_Data> dDoSEvents;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeDDoSEvents_Data> dDoSEvents;
 
 		public long? Total
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				total = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,21 +70,93 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeDDoSEvents_Data
 		{
 
+			private long? endTime;
+
+			private long? startTime;
+
+			private string eventType;
+
+			private string region;
+
+			private string ip;
+
+			private string port;
+
 			private long? bps;
 
 			private long? pps;
 
-			private string eventType;
+			public long? EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
 
-			private string ip;
+			public long? StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
 
-			private long? startTime;
+			public string EventType
+			{
+				get
+				{
+					return eventType;
+				}
+				set	
+				{
+					eventType = value;
+				}
+			}
 
-			private long? endTime;
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
+				}
+			}
 
-			private string port;
+			public string Ip
+			{
+				get
+				{
+					return ip;
+				}
+				set	
+				{
+					ip = value;
+				}
+			}
 
-			private string region;
+			public string Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
+				}
+			}
 
 			public long? Bps
 			{
@@ -107,78 +179,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					pps = value;
-				}
-			}
-
-			public string EventType
-			{
-				get
-				{
-					return eventType;
-				}
-				set	
-				{
-					eventType = value;
-				}
-			}
-
-			public string Ip
-			{
-				get
-				{
-					return ip;
-				}
-				set	
-				{
-					ip = value;
-				}
-			}
-
-			public long? StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
-			public long? EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
-
-			public string Port
-			{
-				get
-				{
-					return port;
-				}
-				set	
-				{
-					port = value;
-				}
-			}
-
-			public string Region
-			{
-				get
-				{
-					return region;
-				}
-				set	
-				{
-					region = value;
 				}
 			}
 		}

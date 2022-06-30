@@ -31,15 +31,15 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeSchedulerRulesResponse describeSchedulerRulesResponse = new DescribeSchedulerRulesResponse();
 
 			describeSchedulerRulesResponse.HttpResponse = _ctx.HttpResponse;
-			describeSchedulerRulesResponse.RequestId = _ctx.StringValue("DescribeSchedulerRules.RequestId");
 			describeSchedulerRulesResponse.TotalCount = _ctx.StringValue("DescribeSchedulerRules.TotalCount");
+			describeSchedulerRulesResponse.RequestId = _ctx.StringValue("DescribeSchedulerRules.RequestId");
 
 			List<DescribeSchedulerRulesResponse.DescribeSchedulerRules_SchedulerRule> describeSchedulerRulesResponse_schedulerRules = new List<DescribeSchedulerRulesResponse.DescribeSchedulerRules_SchedulerRule>();
 			for (int i = 0; i < _ctx.Length("DescribeSchedulerRules.SchedulerRules.Length"); i++) {
 				DescribeSchedulerRulesResponse.DescribeSchedulerRules_SchedulerRule schedulerRule = new DescribeSchedulerRulesResponse.DescribeSchedulerRules_SchedulerRule();
-				schedulerRule.RuleName = _ctx.StringValue("DescribeSchedulerRules.SchedulerRules["+ i +"].RuleName");
-				schedulerRule.Cname = _ctx.StringValue("DescribeSchedulerRules.SchedulerRules["+ i +"].Cname");
 				schedulerRule.RuleType = _ctx.StringValue("DescribeSchedulerRules.SchedulerRules["+ i +"].RuleType");
+				schedulerRule.Cname = _ctx.StringValue("DescribeSchedulerRules.SchedulerRules["+ i +"].Cname");
+				schedulerRule.RuleName = _ctx.StringValue("DescribeSchedulerRules.SchedulerRules["+ i +"].RuleName");
 
 				DescribeSchedulerRulesResponse.DescribeSchedulerRules_SchedulerRule.DescribeSchedulerRules_Param param = new DescribeSchedulerRulesResponse.DescribeSchedulerRules_SchedulerRule.DescribeSchedulerRules_Param();
 				param.ParamType = _ctx.StringValue("DescribeSchedulerRules.SchedulerRules["+ i +"].Param.ParamType");
@@ -53,12 +53,12 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 				for (int j = 0; j < _ctx.Length("DescribeSchedulerRules.SchedulerRules["+ i +"].Rules.Length"); j++) {
 					DescribeSchedulerRulesResponse.DescribeSchedulerRules_SchedulerRule.DescribeSchedulerRules_Rule rule = new DescribeSchedulerRulesResponse.DescribeSchedulerRules_SchedulerRule.DescribeSchedulerRules_Rule();
 					rule.Type = _ctx.StringValue("DescribeSchedulerRules.SchedulerRules["+ i +"].Rules["+ j +"].Type");
+					rule.Status = _ctx.IntegerValue("DescribeSchedulerRules.SchedulerRules["+ i +"].Rules["+ j +"].Status");
 					rule._Value = _ctx.StringValue("DescribeSchedulerRules.SchedulerRules["+ i +"].Rules["+ j +"].Value");
 					rule.ValueType = _ctx.IntegerValue("DescribeSchedulerRules.SchedulerRules["+ i +"].Rules["+ j +"].ValueType");
 					rule.Priority = _ctx.IntegerValue("DescribeSchedulerRules.SchedulerRules["+ i +"].Rules["+ j +"].Priority");
-					rule.Status = _ctx.IntegerValue("DescribeSchedulerRules.SchedulerRules["+ i +"].Rules["+ j +"].Status");
-					rule.RegionId = _ctx.StringValue("DescribeSchedulerRules.SchedulerRules["+ i +"].Rules["+ j +"].RegionId");
 					rule.RestoreDelay = _ctx.IntegerValue("DescribeSchedulerRules.SchedulerRules["+ i +"].Rules["+ j +"].RestoreDelay");
+					rule.RegionId = _ctx.StringValue("DescribeSchedulerRules.SchedulerRules["+ i +"].Rules["+ j +"].RegionId");
 
 					schedulerRule_rules.Add(rule);
 				}

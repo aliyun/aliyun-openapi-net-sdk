@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeWebCCRulesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? totalCount;
 
-		private List<DescribeWebCCRules_WebCCRule> webCCRules;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeWebCCRules_WebCCRule> webCCRules;
 
 		public long? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,29 +70,29 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeWebCCRules_WebCCRule
 		{
 
-			private string name;
+			private int? ttl;
 
 			private string act;
-
-			private int? count;
 
 			private int? interval;
 
 			private string mode;
 
-			private int? ttl;
+			private string name;
 
 			private string uri;
 
-			public string Name
+			private int? count;
+
+			public int? Ttl
 			{
 				get
 				{
-					return name;
+					return ttl;
 				}
 				set	
 				{
-					name = value;
+					ttl = value;
 				}
 			}
 
@@ -105,18 +105,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					act = value;
-				}
-			}
-
-			public int? Count
-			{
-				get
-				{
-					return count;
-				}
-				set	
-				{
-					count = value;
 				}
 			}
 
@@ -144,15 +132,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public int? Ttl
+			public string Name
 			{
 				get
 				{
-					return ttl;
+					return name;
 				}
 				set	
 				{
-					ttl = value;
+					name = value;
 				}
 			}
 
@@ -165,6 +153,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					uri = value;
+				}
+			}
+
+			public int? Count
+			{
+				get
+				{
+					return count;
+				}
+				set	
+				{
+					count = value;
 				}
 			}
 		}

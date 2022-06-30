@@ -31,19 +31,19 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeWebCCRulesResponse describeWebCCRulesResponse = new DescribeWebCCRulesResponse();
 
 			describeWebCCRulesResponse.HttpResponse = _ctx.HttpResponse;
-			describeWebCCRulesResponse.RequestId = _ctx.StringValue("DescribeWebCCRules.RequestId");
 			describeWebCCRulesResponse.TotalCount = _ctx.LongValue("DescribeWebCCRules.TotalCount");
+			describeWebCCRulesResponse.RequestId = _ctx.StringValue("DescribeWebCCRules.RequestId");
 
 			List<DescribeWebCCRulesResponse.DescribeWebCCRules_WebCCRule> describeWebCCRulesResponse_webCCRules = new List<DescribeWebCCRulesResponse.DescribeWebCCRules_WebCCRule>();
 			for (int i = 0; i < _ctx.Length("DescribeWebCCRules.WebCCRules.Length"); i++) {
 				DescribeWebCCRulesResponse.DescribeWebCCRules_WebCCRule webCCRule = new DescribeWebCCRulesResponse.DescribeWebCCRules_WebCCRule();
-				webCCRule.Name = _ctx.StringValue("DescribeWebCCRules.WebCCRules["+ i +"].Name");
+				webCCRule.Ttl = _ctx.IntegerValue("DescribeWebCCRules.WebCCRules["+ i +"].Ttl");
 				webCCRule.Act = _ctx.StringValue("DescribeWebCCRules.WebCCRules["+ i +"].Act");
-				webCCRule.Count = _ctx.IntegerValue("DescribeWebCCRules.WebCCRules["+ i +"].Count");
 				webCCRule.Interval = _ctx.IntegerValue("DescribeWebCCRules.WebCCRules["+ i +"].Interval");
 				webCCRule.Mode = _ctx.StringValue("DescribeWebCCRules.WebCCRules["+ i +"].Mode");
-				webCCRule.Ttl = _ctx.IntegerValue("DescribeWebCCRules.WebCCRules["+ i +"].Ttl");
+				webCCRule.Name = _ctx.StringValue("DescribeWebCCRules.WebCCRules["+ i +"].Name");
 				webCCRule.Uri = _ctx.StringValue("DescribeWebCCRules.WebCCRules["+ i +"].Uri");
+				webCCRule.Count = _ctx.IntegerValue("DescribeWebCCRules.WebCCRules["+ i +"].Count");
 
 				describeWebCCRulesResponse_webCCRules.Add(webCCRule);
 			}

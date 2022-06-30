@@ -89,10 +89,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set
 			{
 				realServerss = value;
-				for (int i = 0; i < realServerss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"RealServers." + (i + 1) , realServerss[i]);
-				}
 			}
 		}
 
@@ -106,13 +102,12 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set
 			{
 				proxyTypess = value;
-				for (int i = 0; i < proxyTypess.Count; i++)
+				if(proxyTypess != null)
 				{
-					for (int j = 0; j < proxyTypess[i].ProxyPortss.Count; j++)
+					for (int depth1 = 0; depth1 < proxyTypess.Count; depth1++)
 					{
-						DictionaryUtil.Add(QueryParameters,"ProxyTypes." + (i + 1) + ".ProxyPorts." +(j + 1), proxyTypess[i].ProxyPortss[j]);
+						DictionaryUtil.Add(QueryParameters,"ProxyTypes." + (depth1 + 1), proxyTypess[depth1]);
 					}
-					DictionaryUtil.Add(QueryParameters,"ProxyTypes." + (i + 1) + ".ProxyType", proxyTypess[i].ProxyType);
 				}
 			}
 		}
@@ -127,10 +122,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set
 			{
 				instanceIdss = value;
-				for (int i = 0; i < instanceIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceIds." + (i + 1) , instanceIdss[i]);
-				}
 			}
 		}
 
@@ -150,11 +141,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class ProxyTypes
 		{
 
-			private List<int?> proxyPortss = new List<int?>(){ };
+			private List<string> proxyPortss = new List<string>(){ };
 
 			private string proxyType;
 
-			public List<int?> ProxyPortss
+			public List<string> ProxyPortss
 			{
 				get
 				{

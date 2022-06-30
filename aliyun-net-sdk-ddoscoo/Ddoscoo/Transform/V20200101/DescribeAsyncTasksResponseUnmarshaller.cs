@@ -31,19 +31,19 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeAsyncTasksResponse describeAsyncTasksResponse = new DescribeAsyncTasksResponse();
 
 			describeAsyncTasksResponse.HttpResponse = _ctx.HttpResponse;
-			describeAsyncTasksResponse.RequestId = _ctx.StringValue("DescribeAsyncTasks.RequestId");
 			describeAsyncTasksResponse.TotalCount = _ctx.IntegerValue("DescribeAsyncTasks.TotalCount");
+			describeAsyncTasksResponse.RequestId = _ctx.StringValue("DescribeAsyncTasks.RequestId");
 
 			List<DescribeAsyncTasksResponse.DescribeAsyncTasks_AsyncTask> describeAsyncTasksResponse_asyncTasks = new List<DescribeAsyncTasksResponse.DescribeAsyncTasks_AsyncTask>();
 			for (int i = 0; i < _ctx.Length("DescribeAsyncTasks.AsyncTasks.Length"); i++) {
 				DescribeAsyncTasksResponse.DescribeAsyncTasks_AsyncTask asyncTask = new DescribeAsyncTasksResponse.DescribeAsyncTasks_AsyncTask();
-				asyncTask.TaskId = _ctx.LongValue("DescribeAsyncTasks.AsyncTasks["+ i +"].TaskId");
 				asyncTask.EndTime = _ctx.LongValue("DescribeAsyncTasks.AsyncTasks["+ i +"].EndTime");
+				asyncTask.TaskType = _ctx.IntegerValue("DescribeAsyncTasks.AsyncTasks["+ i +"].TaskType");
 				asyncTask.StartTime = _ctx.LongValue("DescribeAsyncTasks.AsyncTasks["+ i +"].StartTime");
+				asyncTask.TaskParams = _ctx.StringValue("DescribeAsyncTasks.AsyncTasks["+ i +"].TaskParams");
 				asyncTask.TaskStatus = _ctx.IntegerValue("DescribeAsyncTasks.AsyncTasks["+ i +"].TaskStatus");
 				asyncTask.TaskResult = _ctx.StringValue("DescribeAsyncTasks.AsyncTasks["+ i +"].TaskResult");
-				asyncTask.TaskParams = _ctx.StringValue("DescribeAsyncTasks.AsyncTasks["+ i +"].TaskParams");
-				asyncTask.TaskType = _ctx.IntegerValue("DescribeAsyncTasks.AsyncTasks["+ i +"].TaskType");
+				asyncTask.TaskId = _ctx.LongValue("DescribeAsyncTasks.AsyncTasks["+ i +"].TaskId");
 
 				describeAsyncTasksResponse_asyncTasks.Add(asyncTask);
 			}

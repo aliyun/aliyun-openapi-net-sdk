@@ -31,11 +31,11 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribePortConnsCountResponse describePortConnsCountResponse = new DescribePortConnsCountResponse();
 
 			describePortConnsCountResponse.HttpResponse = _ctx.HttpResponse;
-			describePortConnsCountResponse.RequestId = _ctx.StringValue("DescribePortConnsCount.RequestId");
-			describePortConnsCountResponse.Conns = _ctx.LongValue("DescribePortConnsCount.Conns");
-			describePortConnsCountResponse.ActConns = _ctx.LongValue("DescribePortConnsCount.ActConns");
 			describePortConnsCountResponse.InActConns = _ctx.LongValue("DescribePortConnsCount.InActConns");
+			describePortConnsCountResponse.ActConns = _ctx.LongValue("DescribePortConnsCount.ActConns");
+			describePortConnsCountResponse.RequestId = _ctx.StringValue("DescribePortConnsCount.RequestId");
 			describePortConnsCountResponse.Cps = _ctx.LongValue("DescribePortConnsCount.Cps");
+			describePortConnsCountResponse.Conns = _ctx.LongValue("DescribePortConnsCount.Conns");
         
 			return describePortConnsCountResponse;
         }

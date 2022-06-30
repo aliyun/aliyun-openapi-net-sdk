@@ -31,16 +31,16 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeAutoCcBlacklistResponse describeAutoCcBlacklistResponse = new DescribeAutoCcBlacklistResponse();
 
 			describeAutoCcBlacklistResponse.HttpResponse = _ctx.HttpResponse;
-			describeAutoCcBlacklistResponse.RequestId = _ctx.StringValue("DescribeAutoCcBlacklist.RequestId");
 			describeAutoCcBlacklistResponse.TotalCount = _ctx.LongValue("DescribeAutoCcBlacklist.TotalCount");
+			describeAutoCcBlacklistResponse.RequestId = _ctx.StringValue("DescribeAutoCcBlacklist.RequestId");
 
 			List<DescribeAutoCcBlacklistResponse.DescribeAutoCcBlacklist_AutoCcBlacklistItem> describeAutoCcBlacklistResponse_autoCcBlacklist = new List<DescribeAutoCcBlacklistResponse.DescribeAutoCcBlacklist_AutoCcBlacklistItem>();
 			for (int i = 0; i < _ctx.Length("DescribeAutoCcBlacklist.AutoCcBlacklist.Length"); i++) {
 				DescribeAutoCcBlacklistResponse.DescribeAutoCcBlacklist_AutoCcBlacklistItem autoCcBlacklistItem = new DescribeAutoCcBlacklistResponse.DescribeAutoCcBlacklist_AutoCcBlacklistItem();
-				autoCcBlacklistItem.DestIp = _ctx.StringValue("DescribeAutoCcBlacklist.AutoCcBlacklist["+ i +"].DestIp");
-				autoCcBlacklistItem.SourceIp = _ctx.StringValue("DescribeAutoCcBlacklist.AutoCcBlacklist["+ i +"].SourceIp");
-				autoCcBlacklistItem.EndTime = _ctx.LongValue("DescribeAutoCcBlacklist.AutoCcBlacklist["+ i +"].EndTime");
 				autoCcBlacklistItem.Type = _ctx.StringValue("DescribeAutoCcBlacklist.AutoCcBlacklist["+ i +"].Type");
+				autoCcBlacklistItem.DestIp = _ctx.StringValue("DescribeAutoCcBlacklist.AutoCcBlacklist["+ i +"].DestIp");
+				autoCcBlacklistItem.EndTime = _ctx.LongValue("DescribeAutoCcBlacklist.AutoCcBlacklist["+ i +"].EndTime");
+				autoCcBlacklistItem.SourceIp = _ctx.StringValue("DescribeAutoCcBlacklist.AutoCcBlacklist["+ i +"].SourceIp");
 
 				describeAutoCcBlacklistResponse_autoCcBlacklist.Add(autoCcBlacklistItem);
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeDomainTopAttackList_Data
 		{
 
-			private long? count;
-
 			private long? attack;
 
 			private string domain;
 
-			public long? Count
-			{
-				get
-				{
-					return count;
-				}
-				set	
-				{
-					count = value;
-				}
-			}
+			private long? count;
 
 			public long? Attack
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					domain = value;
+				}
+			}
+
+			public long? Count
+			{
+				get
+				{
+					return count;
+				}
+				set	
+				{
+					count = value;
 				}
 			}
 		}

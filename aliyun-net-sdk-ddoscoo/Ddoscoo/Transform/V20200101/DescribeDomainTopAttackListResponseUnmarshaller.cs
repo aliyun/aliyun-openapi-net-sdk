@@ -36,9 +36,9 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribeDomainTopAttackListResponse.DescribeDomainTopAttackList_Data> describeDomainTopAttackListResponse_attackList = new List<DescribeDomainTopAttackListResponse.DescribeDomainTopAttackList_Data>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainTopAttackList.AttackList.Length"); i++) {
 				DescribeDomainTopAttackListResponse.DescribeDomainTopAttackList_Data data = new DescribeDomainTopAttackListResponse.DescribeDomainTopAttackList_Data();
-				data.Count = _ctx.LongValue("DescribeDomainTopAttackList.AttackList["+ i +"].Count");
 				data.Attack = _ctx.LongValue("DescribeDomainTopAttackList.AttackList["+ i +"].Attack");
 				data.Domain = _ctx.StringValue("DescribeDomainTopAttackList.AttackList["+ i +"].Domain");
+				data.Count = _ctx.LongValue("DescribeDomainTopAttackList.AttackList["+ i +"].Count");
 
 				describeDomainTopAttackListResponse_attackList.Add(data);
 			}

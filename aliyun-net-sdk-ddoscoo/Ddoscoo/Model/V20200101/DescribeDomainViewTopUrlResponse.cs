@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,21 +56,21 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeDomainViewTopUrl_Url
 		{
 
-			private long? count;
+			private string url;
 
 			private string domain;
 
-			private string url;
+			private long? count;
 
-			public long? Count
+			public string Url
 			{
 				get
 				{
-					return count;
+					return url;
 				}
 				set	
 				{
-					count = value;
+					url = value;
 				}
 			}
 
@@ -86,15 +86,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public string Url
+			public long? Count
 			{
 				get
 				{
-					return url;
+					return count;
 				}
 				set	
 				{
-					url = value;
+					count = value;
 				}
 			}
 		}

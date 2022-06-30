@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,37 +56,25 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeWebCcProtectSwitch_ProtectSwitch
 		{
 
-			private string domain;
-
 			private int? blackWhiteListEnable;
-
-			private int? regionBlockEnable;
-
-			private int? ccEnable;
-
-			private int? ccCustomRuleEnable;
-
-			private int? preciseRuleEnable;
-
-			private int? aiRuleEnable;
-
-			private string ccTemplate;
 
 			private string aiTemplate;
 
+			private int? preciseRuleEnable;
+
+			private string domain;
+
 			private string aiMode;
 
-			public string Domain
-			{
-				get
-				{
-					return domain;
-				}
-				set	
-				{
-					domain = value;
-				}
-			}
+			private int? aiRuleEnable;
+
+			private int? regionBlockEnable;
+
+			private string ccTemplate;
+
+			private int? ccCustomRuleEnable;
+
+			private int? ccEnable;
 
 			public int? BlackWhiteListEnable
 			{
@@ -97,78 +85,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					blackWhiteListEnable = value;
-				}
-			}
-
-			public int? RegionBlockEnable
-			{
-				get
-				{
-					return regionBlockEnable;
-				}
-				set	
-				{
-					regionBlockEnable = value;
-				}
-			}
-
-			public int? CcEnable
-			{
-				get
-				{
-					return ccEnable;
-				}
-				set	
-				{
-					ccEnable = value;
-				}
-			}
-
-			public int? CcCustomRuleEnable
-			{
-				get
-				{
-					return ccCustomRuleEnable;
-				}
-				set	
-				{
-					ccCustomRuleEnable = value;
-				}
-			}
-
-			public int? PreciseRuleEnable
-			{
-				get
-				{
-					return preciseRuleEnable;
-				}
-				set	
-				{
-					preciseRuleEnable = value;
-				}
-			}
-
-			public int? AiRuleEnable
-			{
-				get
-				{
-					return aiRuleEnable;
-				}
-				set	
-				{
-					aiRuleEnable = value;
-				}
-			}
-
-			public string CcTemplate
-			{
-				get
-				{
-					return ccTemplate;
-				}
-				set	
-				{
-					ccTemplate = value;
 				}
 			}
 
@@ -184,6 +100,30 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
+			public int? PreciseRuleEnable
+			{
+				get
+				{
+					return preciseRuleEnable;
+				}
+				set	
+				{
+					preciseRuleEnable = value;
+				}
+			}
+
+			public string Domain
+			{
+				get
+				{
+					return domain;
+				}
+				set	
+				{
+					domain = value;
+				}
+			}
+
 			public string AiMode
 			{
 				get
@@ -193,6 +133,66 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					aiMode = value;
+				}
+			}
+
+			public int? AiRuleEnable
+			{
+				get
+				{
+					return aiRuleEnable;
+				}
+				set	
+				{
+					aiRuleEnable = value;
+				}
+			}
+
+			public int? RegionBlockEnable
+			{
+				get
+				{
+					return regionBlockEnable;
+				}
+				set	
+				{
+					regionBlockEnable = value;
+				}
+			}
+
+			public string CcTemplate
+			{
+				get
+				{
+					return ccTemplate;
+				}
+				set	
+				{
+					ccTemplate = value;
+				}
+			}
+
+			public int? CcCustomRuleEnable
+			{
+				get
+				{
+					return ccCustomRuleEnable;
+				}
+				set	
+				{
+					ccCustomRuleEnable = value;
+				}
+			}
+
+			public int? CcEnable
+			{
+				get
+				{
+					return ccEnable;
+				}
+				set	
+				{
+					ccEnable = value;
 				}
 			}
 		}

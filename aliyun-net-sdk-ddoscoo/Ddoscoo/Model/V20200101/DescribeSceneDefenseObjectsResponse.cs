@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeSceneDefenseObjectsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private List<DescribeSceneDefenseObjects__Object> objects;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeSceneDefenseObjects__Object> objects;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,23 +70,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeSceneDefenseObjects__Object
 		{
 
-			private string policyId;
-
 			private string domain;
 
-			private string vip;
+			private string policyId;
 
-			public string PolicyId
-			{
-				get
-				{
-					return policyId;
-				}
-				set	
-				{
-					policyId = value;
-				}
-			}
+			private string vip;
 
 			public string Domain
 			{
@@ -97,6 +85,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					domain = value;
+				}
+			}
+
+			public string PolicyId
+			{
+				get
+				{
+					return policyId;
+				}
+				set	
+				{
+					policyId = value;
 				}
 			}
 

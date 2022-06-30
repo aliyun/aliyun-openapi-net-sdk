@@ -37,8 +37,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			for (int i = 0; i < _ctx.Length("DescribeCnameReuses.CnameReuses.Length"); i++) {
 				DescribeCnameReusesResponse.DescribeCnameReuses_CnameReuse cnameReuse = new DescribeCnameReusesResponse.DescribeCnameReuses_CnameReuse();
 				cnameReuse.Domain = _ctx.StringValue("DescribeCnameReuses.CnameReuses["+ i +"].Domain");
-				cnameReuse.Enable = _ctx.IntegerValue("DescribeCnameReuses.CnameReuses["+ i +"].Enable");
 				cnameReuse.Cname = _ctx.StringValue("DescribeCnameReuses.CnameReuses["+ i +"].Cname");
+				cnameReuse.Enable = _ctx.IntegerValue("DescribeCnameReuses.CnameReuses["+ i +"].Enable");
 
 				describeCnameReusesResponse_cnameReuses.Add(cnameReuse);
 			}

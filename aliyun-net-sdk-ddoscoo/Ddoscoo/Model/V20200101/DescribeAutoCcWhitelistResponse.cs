@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeAutoCcWhitelistResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? totalCount;
 
-		private List<DescribeAutoCcWhitelist_AutoCcWhitelistItem> autoCcWhitelist;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeAutoCcWhitelist_AutoCcWhitelistItem> autoCcWhitelist;
 
 		public long? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,13 +70,25 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeAutoCcWhitelist_AutoCcWhitelistItem
 		{
 
-			private string destIp;
+			private string type;
 
-			private string sourceIp;
+			private string destIp;
 
 			private long? endTime;
 
-			private string type;
+			private string sourceIp;
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
 
 			public string DestIp
 			{
@@ -87,18 +99,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					destIp = value;
-				}
-			}
-
-			public string SourceIp
-			{
-				get
-				{
-					return sourceIp;
-				}
-				set	
-				{
-					sourceIp = value;
 				}
 			}
 
@@ -114,15 +114,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public string Type
+			public string SourceIp
 			{
 				get
 				{
-					return type;
+					return sourceIp;
 				}
 				set	
 				{
-					type = value;
+					sourceIp = value;
 				}
 			}
 		}

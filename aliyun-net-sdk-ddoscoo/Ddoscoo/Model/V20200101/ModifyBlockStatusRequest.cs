@@ -72,10 +72,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set
 			{
 				liness = value;
-				for (int i = 0; i < liness.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Lines." + (i + 1) , liness[i]);
-				}
 			}
 		}
 

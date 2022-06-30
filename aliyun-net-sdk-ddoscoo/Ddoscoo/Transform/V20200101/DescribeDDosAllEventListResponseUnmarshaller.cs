@@ -31,21 +31,21 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeDDosAllEventListResponse describeDDosAllEventListResponse = new DescribeDDosAllEventListResponse();
 
 			describeDDosAllEventListResponse.HttpResponse = _ctx.HttpResponse;
-			describeDDosAllEventListResponse.RequestId = _ctx.StringValue("DescribeDDosAllEventList.RequestId");
 			describeDDosAllEventListResponse.Total = _ctx.LongValue("DescribeDDosAllEventList.Total");
+			describeDDosAllEventListResponse.RequestId = _ctx.StringValue("DescribeDDosAllEventList.RequestId");
 
 			List<DescribeDDosAllEventListResponse.DescribeDDosAllEventList_AttackEvent> describeDDosAllEventListResponse_attackEvents = new List<DescribeDDosAllEventListResponse.DescribeDDosAllEventList_AttackEvent>();
 			for (int i = 0; i < _ctx.Length("DescribeDDosAllEventList.AttackEvents.Length"); i++) {
 				DescribeDDosAllEventListResponse.DescribeDDosAllEventList_AttackEvent attackEvent = new DescribeDDosAllEventListResponse.DescribeDDosAllEventList_AttackEvent();
-				attackEvent.Pps = _ctx.LongValue("DescribeDDosAllEventList.AttackEvents["+ i +"].Pps");
-				attackEvent.EventType = _ctx.StringValue("DescribeDDosAllEventList.AttackEvents["+ i +"].EventType");
-				attackEvent.Port = _ctx.StringValue("DescribeDDosAllEventList.AttackEvents["+ i +"].Port");
-				attackEvent.Ip = _ctx.StringValue("DescribeDDosAllEventList.AttackEvents["+ i +"].Ip");
-				attackEvent.StartTime = _ctx.LongValue("DescribeDDosAllEventList.AttackEvents["+ i +"].StartTime");
 				attackEvent.EndTime = _ctx.LongValue("DescribeDDosAllEventList.AttackEvents["+ i +"].EndTime");
-				attackEvent.Mbps = _ctx.LongValue("DescribeDDosAllEventList.AttackEvents["+ i +"].Mbps");
+				attackEvent.StartTime = _ctx.LongValue("DescribeDDosAllEventList.AttackEvents["+ i +"].StartTime");
+				attackEvent.EventType = _ctx.StringValue("DescribeDDosAllEventList.AttackEvents["+ i +"].EventType");
 				attackEvent.Region = _ctx.StringValue("DescribeDDosAllEventList.AttackEvents["+ i +"].Region");
+				attackEvent.Mbps = _ctx.LongValue("DescribeDDosAllEventList.AttackEvents["+ i +"].Mbps");
+				attackEvent.Ip = _ctx.StringValue("DescribeDDosAllEventList.AttackEvents["+ i +"].Ip");
 				attackEvent.Area = _ctx.StringValue("DescribeDDosAllEventList.AttackEvents["+ i +"].Area");
+				attackEvent.Port = _ctx.StringValue("DescribeDDosAllEventList.AttackEvents["+ i +"].Port");
+				attackEvent.Pps = _ctx.LongValue("DescribeDDosAllEventList.AttackEvents["+ i +"].Pps");
 
 				describeDDosAllEventListResponse_attackEvents.Add(attackEvent);
 			}

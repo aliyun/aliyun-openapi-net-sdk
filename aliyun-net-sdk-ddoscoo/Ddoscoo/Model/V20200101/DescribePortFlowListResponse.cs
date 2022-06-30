@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,59 +56,23 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribePortFlowList_PortFlow
 		{
 
-			private long? attackBps;
-
-			private long? attackPps;
-
-			private long? outPps;
-
 			private long? index;
 
 			private long? time;
 
-			private long? inBps;
-
-			private long? outBps;
-
 			private long? inPps;
+
+			private long? inBps;
 
 			private string region;
 
-			public long? AttackBps
-			{
-				get
-				{
-					return attackBps;
-				}
-				set	
-				{
-					attackBps = value;
-				}
-			}
+			private long? outPps;
 
-			public long? AttackPps
-			{
-				get
-				{
-					return attackPps;
-				}
-				set	
-				{
-					attackPps = value;
-				}
-			}
+			private long? attackPps;
 
-			public long? OutPps
-			{
-				get
-				{
-					return outPps;
-				}
-				set	
-				{
-					outPps = value;
-				}
-			}
+			private long? outBps;
+
+			private long? attackBps;
 
 			public long? Index
 			{
@@ -134,6 +98,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
+			public long? InPps
+			{
+				get
+				{
+					return inPps;
+				}
+				set	
+				{
+					inPps = value;
+				}
+			}
+
 			public long? InBps
 			{
 				get
@@ -143,6 +119,42 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					inBps = value;
+				}
+			}
+
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
+				}
+			}
+
+			public long? OutPps
+			{
+				get
+				{
+					return outPps;
+				}
+				set	
+				{
+					outPps = value;
+				}
+			}
+
+			public long? AttackPps
+			{
+				get
+				{
+					return attackPps;
+				}
+				set	
+				{
+					attackPps = value;
 				}
 			}
 
@@ -158,27 +170,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public long? InPps
+			public long? AttackBps
 			{
 				get
 				{
-					return inPps;
+					return attackBps;
 				}
 				set	
 				{
-					inPps = value;
-				}
-			}
-
-			public string Region
-			{
-				get
-				{
-					return region;
-				}
-				set	
-				{
-					region = value;
+					attackBps = value;
 				}
 			}
 		}

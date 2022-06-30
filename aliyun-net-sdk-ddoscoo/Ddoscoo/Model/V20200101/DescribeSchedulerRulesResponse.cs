@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeSchedulerRulesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string totalCount;
 
-		private List<DescribeSchedulerRules_SchedulerRule> schedulerRules;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeSchedulerRules_SchedulerRule> schedulerRules;
 
 		public string TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,25 +70,25 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeSchedulerRules_SchedulerRule
 		{
 
-			private string ruleName;
+			private string ruleType;
 
 			private string cname;
 
-			private string ruleType;
+			private string ruleName;
 
 			private List<DescribeSchedulerRules_Rule> rules;
 
 			private DescribeSchedulerRules_Param param;
 
-			public string RuleName
+			public string RuleType
 			{
 				get
 				{
-					return ruleName;
+					return ruleType;
 				}
 				set	
 				{
-					ruleName = value;
+					ruleType = value;
 				}
 			}
 
@@ -104,15 +104,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public string RuleType
+			public string RuleName
 			{
 				get
 				{
-					return ruleType;
+					return ruleName;
 				}
 				set	
 				{
-					ruleType = value;
+					ruleName = value;
 				}
 			}
 
@@ -145,17 +145,17 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 				private string type;
 
+				private int? status;
+
 				private string _value;
 
 				private int? valueType;
 
 				private int? priority;
 
-				private int? status;
+				private int? restoreDelay;
 
 				private string regionId;
-
-				private int? restoreDelay;
 
 				public string Type
 				{
@@ -166,6 +166,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 					set	
 					{
 						type = value;
+					}
+				}
+
+				public int? Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
 					}
 				}
 
@@ -205,15 +217,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 					}
 				}
 
-				public int? Status
+				public int? RestoreDelay
 				{
 					get
 					{
-						return status;
+						return restoreDelay;
 					}
 					set	
 					{
-						status = value;
+						restoreDelay = value;
 					}
 				}
 
@@ -226,18 +238,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 					set	
 					{
 						regionId = value;
-					}
-				}
-
-				public int? RestoreDelay
-				{
-					get
-					{
-						return restoreDelay;
-					}
-					set	
-					{
-						restoreDelay = value;
 					}
 				}
 			}

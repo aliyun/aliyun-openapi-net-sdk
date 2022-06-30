@@ -32,8 +32,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 
 			describeDomainOverviewResponse.HttpResponse = _ctx.HttpResponse;
 			describeDomainOverviewResponse.RequestId = _ctx.StringValue("DescribeDomainOverview.RequestId");
-			describeDomainOverviewResponse.MaxHttps = _ctx.LongValue("DescribeDomainOverview.MaxHttps");
 			describeDomainOverviewResponse.MaxHttp = _ctx.LongValue("DescribeDomainOverview.MaxHttp");
+			describeDomainOverviewResponse.MaxHttps = _ctx.LongValue("DescribeDomainOverview.MaxHttps");
         
 			return describeDomainOverviewResponse;
         }

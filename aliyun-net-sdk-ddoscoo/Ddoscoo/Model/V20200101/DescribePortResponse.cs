@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -74,9 +74,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 			private bool? isAutoCreate;
 
-			private string frontendProtocol;
-
 			private string instanceId;
+
+			private string frontendProtocol;
 
 			private int? backendPort;
 
@@ -106,18 +106,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public string FrontendProtocol
-			{
-				get
-				{
-					return frontendProtocol;
-				}
-				set	
-				{
-					frontendProtocol = value;
-				}
-			}
-
 			public string InstanceId
 			{
 				get
@@ -127,6 +115,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					instanceId = value;
+				}
+			}
+
+			public string FrontendProtocol
+			{
+				get
+				{
+					return frontendProtocol;
+				}
+				set	
+				{
+					frontendProtocol = value;
 				}
 			}
 

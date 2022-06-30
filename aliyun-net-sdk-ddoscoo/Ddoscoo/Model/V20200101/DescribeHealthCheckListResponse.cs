@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,13 +56,25 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeHealthCheckList_HealthCheckItem
 		{
 
+			private int? frontendPort;
+
 			private string instanceId;
 
 			private string protocol;
 
-			private int? frontendPort;
-
 			private DescribeHealthCheckList_HealthCheck healthCheck;
+
+			public int? FrontendPort
+			{
+				get
+				{
+					return frontendPort;
+				}
+				set	
+				{
+					frontendPort = value;
+				}
+			}
 
 			public string InstanceId
 			{
@@ -88,18 +100,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public int? FrontendPort
-			{
-				get
-				{
-					return frontendPort;
-				}
-				set	
-				{
-					frontendPort = value;
-				}
-			}
-
 			public DescribeHealthCheckList_HealthCheck HealthCheck
 			{
 				get
@@ -115,21 +115,33 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			public class DescribeHealthCheckList_HealthCheck
 			{
 
+				private int? timeout;
+
 				private string type;
 
 				private string domain;
 
-				private string uri;
+				private int? interval;
+
+				private int? up;
 
 				private int? down;
 
-				private int? interval;
-
 				private int? port;
 
-				private int? timeout;
+				private string uri;
 
-				private int? up;
+				public int? Timeout
+				{
+					get
+					{
+						return timeout;
+					}
+					set	
+					{
+						timeout = value;
+					}
+				}
 
 				public string Type
 				{
@@ -155,15 +167,27 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 					}
 				}
 
-				public string Uri
+				public int? Interval
 				{
 					get
 					{
-						return uri;
+						return interval;
 					}
 					set	
 					{
-						uri = value;
+						interval = value;
+					}
+				}
+
+				public int? Up
+				{
+					get
+					{
+						return up;
+					}
+					set	
+					{
+						up = value;
 					}
 				}
 
@@ -179,18 +203,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 					}
 				}
 
-				public int? Interval
-				{
-					get
-					{
-						return interval;
-					}
-					set	
-					{
-						interval = value;
-					}
-				}
-
 				public int? Port
 				{
 					get
@@ -203,27 +215,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 					}
 				}
 
-				public int? Timeout
+				public string Uri
 				{
 					get
 					{
-						return timeout;
+						return uri;
 					}
 					set	
 					{
-						timeout = value;
-					}
-				}
-
-				public int? Up
-				{
-					get
-					{
-						return up;
-					}
-					set	
-					{
-						up = value;
+						uri = value;
 					}
 				}
 			}

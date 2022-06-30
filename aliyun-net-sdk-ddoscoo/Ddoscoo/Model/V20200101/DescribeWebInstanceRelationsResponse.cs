@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -87,23 +87,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			public class DescribeWebInstanceRelations_InstanceDetail
 			{
 
-				private string instanceId;
-
 				private string functionVersion;
 
-				private List<string> eipList;
+				private string instanceId;
 
-				public string InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
-					}
-				}
+				private List<string> eipList;
 
 				public string FunctionVersion
 				{
@@ -114,6 +102,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 					set	
 					{
 						functionVersion = value;
+					}
+				}
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
 					}
 				}
 

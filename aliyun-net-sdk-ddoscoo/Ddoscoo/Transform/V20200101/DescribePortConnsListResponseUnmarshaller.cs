@@ -36,12 +36,12 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribePortConnsListResponse.DescribePortConnsList_Conn> describePortConnsListResponse_connsList = new List<DescribePortConnsListResponse.DescribePortConnsList_Conn>();
 			for (int i = 0; i < _ctx.Length("DescribePortConnsList.ConnsList.Length"); i++) {
 				DescribePortConnsListResponse.DescribePortConnsList_Conn conn = new DescribePortConnsListResponse.DescribePortConnsList_Conn();
-				conn.Conns = _ctx.LongValue("DescribePortConnsList.ConnsList["+ i +"].Conns");
 				conn.ActConns = _ctx.LongValue("DescribePortConnsList.ConnsList["+ i +"].ActConns");
 				conn.InActConns = _ctx.LongValue("DescribePortConnsList.ConnsList["+ i +"].InActConns");
-				conn.Cps = _ctx.LongValue("DescribePortConnsList.ConnsList["+ i +"].Cps");
 				conn.Index = _ctx.LongValue("DescribePortConnsList.ConnsList["+ i +"].Index");
 				conn.Time = _ctx.LongValue("DescribePortConnsList.ConnsList["+ i +"].Time");
+				conn.Cps = _ctx.LongValue("DescribePortConnsList.ConnsList["+ i +"].Cps");
+				conn.Conns = _ctx.LongValue("DescribePortConnsList.ConnsList["+ i +"].Conns");
 
 				describePortConnsListResponse_connsList.Add(conn);
 			}

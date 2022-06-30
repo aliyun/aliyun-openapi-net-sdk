@@ -72,10 +72,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set
 			{
 				blackLists = value;
-				for (int i = 0; i < blackLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"BlackList." + (i + 1) , blackLists[i]);
-				}
 			}
 		}
 
@@ -89,10 +85,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set
 			{
 				whiteLists = value;
-				for (int i = 0; i < whiteLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"WhiteList." + (i + 1) , whiteLists[i]);
-				}
 			}
 		}
 

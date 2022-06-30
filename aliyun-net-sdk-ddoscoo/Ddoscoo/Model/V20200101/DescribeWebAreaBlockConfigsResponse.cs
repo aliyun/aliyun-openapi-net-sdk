@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -87,21 +87,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			public class DescribeWebAreaBlockConfigs_Region
 			{
 
-				private int? block;
-
 				private string region;
 
-				public int? Block
-				{
-					get
-					{
-						return block;
-					}
-					set	
-					{
-						block = value;
-					}
-				}
+				private int? block;
 
 				public string Region
 				{
@@ -112,6 +100,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 					set	
 					{
 						region = value;
+					}
+				}
+
+				public int? Block
+				{
+					get
+					{
+						return block;
+					}
+					set	
+					{
+						block = value;
 					}
 				}
 			}

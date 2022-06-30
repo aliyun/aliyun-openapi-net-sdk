@@ -31,8 +31,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DetachSceneDefenseObjectResponse detachSceneDefenseObjectResponse = new DetachSceneDefenseObjectResponse();
 
 			detachSceneDefenseObjectResponse.HttpResponse = _ctx.HttpResponse;
-			detachSceneDefenseObjectResponse.RequestId = _ctx.StringValue("DetachSceneDefenseObject.RequestId");
 			detachSceneDefenseObjectResponse.Success = _ctx.BooleanValue("DetachSceneDefenseObject.Success");
+			detachSceneDefenseObjectResponse.RequestId = _ctx.StringValue("DetachSceneDefenseObject.RequestId");
         
 			return detachSceneDefenseObjectResponse;
         }

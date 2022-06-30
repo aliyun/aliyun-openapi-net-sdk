@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeDDosAllEventListResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? total;
 
-		private List<DescribeDDosAllEventList_AttackEvent> attackEvents;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeDDosAllEventList_AttackEvent> attackEvents;
 
 		public long? Total
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				total = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,69 +70,33 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeDDosAllEventList_AttackEvent
 		{
 
-			private long? pps;
-
-			private string eventType;
-
-			private string port;
-
-			private string ip;
+			private long? endTime;
 
 			private long? startTime;
 
-			private long? endTime;
-
-			private long? mbps;
+			private string eventType;
 
 			private string region;
 
+			private long? mbps;
+
+			private string ip;
+
 			private string area;
 
-			public long? Pps
-			{
-				get
-				{
-					return pps;
-				}
-				set	
-				{
-					pps = value;
-				}
-			}
+			private string port;
 
-			public string EventType
-			{
-				get
-				{
-					return eventType;
-				}
-				set	
-				{
-					eventType = value;
-				}
-			}
+			private long? pps;
 
-			public string Port
+			public long? EndTime
 			{
 				get
 				{
-					return port;
+					return endTime;
 				}
 				set	
 				{
-					port = value;
-				}
-			}
-
-			public string Ip
-			{
-				get
-				{
-					return ip;
-				}
-				set	
-				{
-					ip = value;
+					endTime = value;
 				}
 			}
 
@@ -148,27 +112,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public long? EndTime
+			public string EventType
 			{
 				get
 				{
-					return endTime;
+					return eventType;
 				}
 				set	
 				{
-					endTime = value;
-				}
-			}
-
-			public long? Mbps
-			{
-				get
-				{
-					return mbps;
-				}
-				set	
-				{
-					mbps = value;
+					eventType = value;
 				}
 			}
 
@@ -184,6 +136,30 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
+			public long? Mbps
+			{
+				get
+				{
+					return mbps;
+				}
+				set	
+				{
+					mbps = value;
+				}
+			}
+
+			public string Ip
+			{
+				get
+				{
+					return ip;
+				}
+				set	
+				{
+					ip = value;
+				}
+			}
+
 			public string Area
 			{
 				get
@@ -193,6 +169,30 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					area = value;
+				}
+			}
+
+			public string Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
+				}
+			}
+
+			public long? Pps
+			{
+				get
+				{
+					return pps;
+				}
+				set	
+				{
+					pps = value;
 				}
 			}
 		}

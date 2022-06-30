@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,47 +25,23 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeLayer4RulePolicyResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string instanceId;
-
 		private int? frontendPort;
-
-		private int? backendPort;
-
-		private string forwardProtocol;
 
 		private string bakMode;
 
+		private string requestId;
+
 		private int? currentIndex;
+
+		private string forwardProtocol;
+
+		private string instanceId;
+
+		private int? backendPort;
 
 		private List<DescribeLayer4RulePolicy_PriRealServersItem> priRealServers;
 
 		private List<DescribeLayer4RulePolicy_SecRealServersItem> secRealServers;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
 
 		public int? FrontendPort
 		{
@@ -76,30 +52,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				frontendPort = value;
-			}
-		}
-
-		public int? BackendPort
-		{
-			get
-			{
-				return backendPort;
-			}
-			set	
-			{
-				backendPort = value;
-			}
-		}
-
-		public string ForwardProtocol
-		{
-			get
-			{
-				return forwardProtocol;
-			}
-			set	
-			{
-				forwardProtocol = value;
 			}
 		}
 
@@ -115,6 +67,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public int? CurrentIndex
 		{
 			get
@@ -124,6 +88,42 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				currentIndex = value;
+			}
+		}
+
+		public string ForwardProtocol
+		{
+			get
+			{
+				return forwardProtocol;
+			}
+			set	
+			{
+				forwardProtocol = value;
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+			}
+		}
+
+		public int? BackendPort
+		{
+			get
+			{
+				return backendPort;
+			}
+			set	
+			{
+				backendPort = value;
 			}
 		}
 
@@ -154,27 +154,27 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeLayer4RulePolicy_PriRealServersItem
 		{
 
-			private string instanceId;
+			private int? frontendPort;
 
 			private string eip;
 
-			private int? frontendPort;
-
 			private string protocol;
-
-			private string realServer;
 
 			private int? currentIndex;
 
-			public string InstanceId
+			private string instanceId;
+
+			private string realServer;
+
+			public int? FrontendPort
 			{
 				get
 				{
-					return instanceId;
+					return frontendPort;
 				}
 				set	
 				{
-					instanceId = value;
+					frontendPort = value;
 				}
 			}
 
@@ -190,18 +190,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public int? FrontendPort
-			{
-				get
-				{
-					return frontendPort;
-				}
-				set	
-				{
-					frontendPort = value;
-				}
-			}
-
 			public string Protocol
 			{
 				get
@@ -214,18 +202,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public string RealServer
-			{
-				get
-				{
-					return realServer;
-				}
-				set	
-				{
-					realServer = value;
-				}
-			}
-
 			public int? CurrentIndex
 			{
 				get
@@ -235,6 +211,30 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					currentIndex = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string RealServer
+			{
+				get
+				{
+					return realServer;
+				}
+				set	
+				{
+					realServer = value;
 				}
 			}
 		}
@@ -242,27 +242,27 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeLayer4RulePolicy_SecRealServersItem
 		{
 
-			private string instanceId;
+			private int? frontendPort;
 
 			private string eip;
 
-			private int? frontendPort;
-
 			private string protocol;
-
-			private string realServer;
 
 			private int? currentIndex;
 
-			public string InstanceId
+			private string instanceId;
+
+			private string realServer;
+
+			public int? FrontendPort
 			{
 				get
 				{
-					return instanceId;
+					return frontendPort;
 				}
 				set	
 				{
-					instanceId = value;
+					frontendPort = value;
 				}
 			}
 
@@ -278,18 +278,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public int? FrontendPort
-			{
-				get
-				{
-					return frontendPort;
-				}
-				set	
-				{
-					frontendPort = value;
-				}
-			}
-
 			public string Protocol
 			{
 				get
@@ -302,18 +290,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public string RealServer
-			{
-				get
-				{
-					return realServer;
-				}
-				set	
-				{
-					realServer = value;
-				}
-			}
-
 			public int? CurrentIndex
 			{
 				get
@@ -323,6 +299,30 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					currentIndex = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string RealServer
+			{
+				get
+				{
+					return realServer;
+				}
+				set	
+				{
+					realServer = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeDomainAttackEventsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? totalCount;
 
-		private List<DescribeDomainAttackEvents_Data> domainAttackEvents;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeDomainAttackEvents_Data> domainAttackEvents;
 
 		public long? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,23 +70,23 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeDomainAttackEvents_Data
 		{
 
-			private string domain;
+			private long? endTime;
 
 			private long? startTime;
 
-			private long? endTime;
+			private string domain;
 
 			private long? maxQps;
 
-			public string Domain
+			public long? EndTime
 			{
 				get
 				{
-					return domain;
+					return endTime;
 				}
 				set	
 				{
-					domain = value;
+					endTime = value;
 				}
 			}
 
@@ -102,15 +102,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public long? EndTime
+			public string Domain
 			{
 				get
 				{
-					return endTime;
+					return domain;
 				}
 				set	
 				{
-					endTime = value;
+					domain = value;
 				}
 			}
 

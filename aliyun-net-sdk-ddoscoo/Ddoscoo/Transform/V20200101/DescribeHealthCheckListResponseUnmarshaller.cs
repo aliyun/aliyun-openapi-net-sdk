@@ -36,19 +36,19 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribeHealthCheckListResponse.DescribeHealthCheckList_HealthCheckItem> describeHealthCheckListResponse_healthCheckList = new List<DescribeHealthCheckListResponse.DescribeHealthCheckList_HealthCheckItem>();
 			for (int i = 0; i < _ctx.Length("DescribeHealthCheckList.HealthCheckList.Length"); i++) {
 				DescribeHealthCheckListResponse.DescribeHealthCheckList_HealthCheckItem healthCheckItem = new DescribeHealthCheckListResponse.DescribeHealthCheckList_HealthCheckItem();
+				healthCheckItem.FrontendPort = _ctx.IntegerValue("DescribeHealthCheckList.HealthCheckList["+ i +"].FrontendPort");
 				healthCheckItem.InstanceId = _ctx.StringValue("DescribeHealthCheckList.HealthCheckList["+ i +"].InstanceId");
 				healthCheckItem.Protocol = _ctx.StringValue("DescribeHealthCheckList.HealthCheckList["+ i +"].Protocol");
-				healthCheckItem.FrontendPort = _ctx.IntegerValue("DescribeHealthCheckList.HealthCheckList["+ i +"].FrontendPort");
 
 				DescribeHealthCheckListResponse.DescribeHealthCheckList_HealthCheckItem.DescribeHealthCheckList_HealthCheck healthCheck = new DescribeHealthCheckListResponse.DescribeHealthCheckList_HealthCheckItem.DescribeHealthCheckList_HealthCheck();
+				healthCheck.Timeout = _ctx.IntegerValue("DescribeHealthCheckList.HealthCheckList["+ i +"].HealthCheck.Timeout");
 				healthCheck.Type = _ctx.StringValue("DescribeHealthCheckList.HealthCheckList["+ i +"].HealthCheck.Type");
 				healthCheck.Domain = _ctx.StringValue("DescribeHealthCheckList.HealthCheckList["+ i +"].HealthCheck.Domain");
-				healthCheck.Uri = _ctx.StringValue("DescribeHealthCheckList.HealthCheckList["+ i +"].HealthCheck.Uri");
-				healthCheck.Down = _ctx.IntegerValue("DescribeHealthCheckList.HealthCheckList["+ i +"].HealthCheck.Down");
 				healthCheck.Interval = _ctx.IntegerValue("DescribeHealthCheckList.HealthCheckList["+ i +"].HealthCheck.Interval");
-				healthCheck.Port = _ctx.IntegerValue("DescribeHealthCheckList.HealthCheckList["+ i +"].HealthCheck.Port");
-				healthCheck.Timeout = _ctx.IntegerValue("DescribeHealthCheckList.HealthCheckList["+ i +"].HealthCheck.Timeout");
 				healthCheck.Up = _ctx.IntegerValue("DescribeHealthCheckList.HealthCheckList["+ i +"].HealthCheck.Up");
+				healthCheck.Down = _ctx.IntegerValue("DescribeHealthCheckList.HealthCheckList["+ i +"].HealthCheck.Down");
+				healthCheck.Port = _ctx.IntegerValue("DescribeHealthCheckList.HealthCheckList["+ i +"].HealthCheck.Port");
+				healthCheck.Uri = _ctx.StringValue("DescribeHealthCheckList.HealthCheckList["+ i +"].HealthCheck.Uri");
 				healthCheckItem.HealthCheck = healthCheck;
 
 				describeHealthCheckListResponse_healthCheckList.Add(healthCheckItem);

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeLogStoreExistStatusResponse describeLogStoreExistStatusResponse = new DescribeLogStoreExistStatusResponse();
 
 			describeLogStoreExistStatusResponse.HttpResponse = _ctx.HttpResponse;
-			describeLogStoreExistStatusResponse.RequestId = _ctx.StringValue("DescribeLogStoreExistStatus.RequestId");
 			describeLogStoreExistStatusResponse.ExistStatus = _ctx.BooleanValue("DescribeLogStoreExistStatus.ExistStatus");
+			describeLogStoreExistStatusResponse.RequestId = _ctx.StringValue("DescribeLogStoreExistStatus.RequestId");
         
 			return describeLogStoreExistStatusResponse;
         }

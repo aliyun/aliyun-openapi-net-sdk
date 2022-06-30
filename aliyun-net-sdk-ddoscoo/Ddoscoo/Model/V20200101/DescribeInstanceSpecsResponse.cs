@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,39 +56,27 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeInstanceSpecs_InstanceSpec
 		{
 
-			private string instanceId;
-
 			private int? baseBandwidth;
-
-			private int? elasticBandwidth;
-
-			private int? portLimit;
-
-			private int? siteLimit;
-
-			private int? domainLimit;
-
-			private int? bandwidthMbps;
-
-			private int? defenseCount;
-
-			private string functionVersion;
 
 			private int? qpsLimit;
 
+			private int? bandwidthMbps;
+
 			private int? elasticBw;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private int? defenseCount;
+
+			private int? siteLimit;
+
+			private int? portLimit;
+
+			private int? elasticBandwidth;
+
+			private string functionVersion;
+
+			private string instanceId;
+
+			private int? domainLimit;
 
 			public int? BaseBandwidth
 			{
@@ -99,90 +87,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					baseBandwidth = value;
-				}
-			}
-
-			public int? ElasticBandwidth
-			{
-				get
-				{
-					return elasticBandwidth;
-				}
-				set	
-				{
-					elasticBandwidth = value;
-				}
-			}
-
-			public int? PortLimit
-			{
-				get
-				{
-					return portLimit;
-				}
-				set	
-				{
-					portLimit = value;
-				}
-			}
-
-			public int? SiteLimit
-			{
-				get
-				{
-					return siteLimit;
-				}
-				set	
-				{
-					siteLimit = value;
-				}
-			}
-
-			public int? DomainLimit
-			{
-				get
-				{
-					return domainLimit;
-				}
-				set	
-				{
-					domainLimit = value;
-				}
-			}
-
-			public int? BandwidthMbps
-			{
-				get
-				{
-					return bandwidthMbps;
-				}
-				set	
-				{
-					bandwidthMbps = value;
-				}
-			}
-
-			public int? DefenseCount
-			{
-				get
-				{
-					return defenseCount;
-				}
-				set	
-				{
-					defenseCount = value;
-				}
-			}
-
-			public string FunctionVersion
-			{
-				get
-				{
-					return functionVersion;
-				}
-				set	
-				{
-					functionVersion = value;
 				}
 			}
 
@@ -198,6 +102,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
+			public int? BandwidthMbps
+			{
+				get
+				{
+					return bandwidthMbps;
+				}
+				set	
+				{
+					bandwidthMbps = value;
+				}
+			}
+
 			public int? ElasticBw
 			{
 				get
@@ -207,6 +123,90 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					elasticBw = value;
+				}
+			}
+
+			public int? DefenseCount
+			{
+				get
+				{
+					return defenseCount;
+				}
+				set	
+				{
+					defenseCount = value;
+				}
+			}
+
+			public int? SiteLimit
+			{
+				get
+				{
+					return siteLimit;
+				}
+				set	
+				{
+					siteLimit = value;
+				}
+			}
+
+			public int? PortLimit
+			{
+				get
+				{
+					return portLimit;
+				}
+				set	
+				{
+					portLimit = value;
+				}
+			}
+
+			public int? ElasticBandwidth
+			{
+				get
+				{
+					return elasticBandwidth;
+				}
+				set	
+				{
+					elasticBandwidth = value;
+				}
+			}
+
+			public string FunctionVersion
+			{
+				get
+				{
+					return functionVersion;
+				}
+				set	
+				{
+					functionVersion = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public int? DomainLimit
+			{
+				get
+				{
+					return domainLimit;
+				}
+				set	
+				{
+					domainLimit = value;
 				}
 			}
 		}

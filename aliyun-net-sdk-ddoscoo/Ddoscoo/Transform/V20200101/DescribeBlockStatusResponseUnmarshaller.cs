@@ -41,9 +41,9 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 				List<DescribeBlockStatusResponse.DescribeBlockStatus_StatusItem.DescribeBlockStatus_BlockStatusItem> statusItem_blockStatusList = new List<DescribeBlockStatusResponse.DescribeBlockStatus_StatusItem.DescribeBlockStatus_BlockStatusItem>();
 				for (int j = 0; j < _ctx.Length("DescribeBlockStatus.StatusList["+ i +"].BlockStatusList.Length"); j++) {
 					DescribeBlockStatusResponse.DescribeBlockStatus_StatusItem.DescribeBlockStatus_BlockStatusItem blockStatusItem = new DescribeBlockStatusResponse.DescribeBlockStatus_StatusItem.DescribeBlockStatus_BlockStatusItem();
+					blockStatusItem.EndTime = _ctx.LongValue("DescribeBlockStatus.StatusList["+ i +"].BlockStatusList["+ j +"].EndTime");
 					blockStatusItem.StartTime = _ctx.LongValue("DescribeBlockStatus.StatusList["+ i +"].BlockStatusList["+ j +"].StartTime");
 					blockStatusItem.Line = _ctx.StringValue("DescribeBlockStatus.StatusList["+ i +"].BlockStatusList["+ j +"].Line");
-					blockStatusItem.EndTime = _ctx.LongValue("DescribeBlockStatus.StatusList["+ i +"].BlockStatusList["+ j +"].EndTime");
 					blockStatusItem.BlockStatus = _ctx.StringValue("DescribeBlockStatus.StatusList["+ i +"].BlockStatusList["+ j +"].BlockStatus");
 
 					statusItem_blockStatusList.Add(blockStatusItem);

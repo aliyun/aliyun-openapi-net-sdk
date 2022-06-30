@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeAsyncTasksResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
 
-		private List<DescribeAsyncTasks_AsyncTask> asyncTasks;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeAsyncTasks_AsyncTask> asyncTasks;
 
 		public int? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,31 +70,19 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeAsyncTasks_AsyncTask
 		{
 
-			private long? taskId;
-
 			private long? endTime;
 
+			private int? taskType;
+
 			private long? startTime;
+
+			private string taskParams;
 
 			private int? taskStatus;
 
 			private string taskResult;
 
-			private string taskParams;
-
-			private int? taskType;
-
-			public long? TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
+			private long? taskId;
 
 			public long? EndTime
 			{
@@ -108,6 +96,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
+			public int? TaskType
+			{
+				get
+				{
+					return taskType;
+				}
+				set	
+				{
+					taskType = value;
+				}
+			}
+
 			public long? StartTime
 			{
 				get
@@ -117,6 +117,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					startTime = value;
+				}
+			}
+
+			public string TaskParams
+			{
+				get
+				{
+					return taskParams;
+				}
+				set	
+				{
+					taskParams = value;
 				}
 			}
 
@@ -144,27 +156,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public string TaskParams
+			public long? TaskId
 			{
 				get
 				{
-					return taskParams;
+					return taskId;
 				}
 				set	
 				{
-					taskParams = value;
-				}
-			}
-
-			public int? TaskType
-			{
-				get
-				{
-					return taskType;
-				}
-				set	
-				{
-					taskType = value;
+					taskId = value;
 				}
 			}
 		}

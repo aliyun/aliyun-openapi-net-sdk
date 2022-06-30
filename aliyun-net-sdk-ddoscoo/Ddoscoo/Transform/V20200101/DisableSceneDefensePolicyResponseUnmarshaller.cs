@@ -31,8 +31,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DisableSceneDefensePolicyResponse disableSceneDefensePolicyResponse = new DisableSceneDefensePolicyResponse();
 
 			disableSceneDefensePolicyResponse.HttpResponse = _ctx.HttpResponse;
-			disableSceneDefensePolicyResponse.RequestId = _ctx.StringValue("DisableSceneDefensePolicy.RequestId");
 			disableSceneDefensePolicyResponse.Success = _ctx.BooleanValue("DisableSceneDefensePolicy.Success");
+			disableSceneDefensePolicyResponse.RequestId = _ctx.StringValue("DisableSceneDefensePolicy.RequestId");
         
 			return disableSceneDefensePolicyResponse;
         }

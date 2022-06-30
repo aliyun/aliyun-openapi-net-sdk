@@ -36,15 +36,15 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribePortFlowListResponse.DescribePortFlowList_PortFlow> describePortFlowListResponse_portFlowList = new List<DescribePortFlowListResponse.DescribePortFlowList_PortFlow>();
 			for (int i = 0; i < _ctx.Length("DescribePortFlowList.PortFlowList.Length"); i++) {
 				DescribePortFlowListResponse.DescribePortFlowList_PortFlow portFlow = new DescribePortFlowListResponse.DescribePortFlowList_PortFlow();
-				portFlow.AttackBps = _ctx.LongValue("DescribePortFlowList.PortFlowList["+ i +"].AttackBps");
-				portFlow.AttackPps = _ctx.LongValue("DescribePortFlowList.PortFlowList["+ i +"].AttackPps");
-				portFlow.OutPps = _ctx.LongValue("DescribePortFlowList.PortFlowList["+ i +"].OutPps");
 				portFlow.Index = _ctx.LongValue("DescribePortFlowList.PortFlowList["+ i +"].Index");
 				portFlow.Time = _ctx.LongValue("DescribePortFlowList.PortFlowList["+ i +"].Time");
-				portFlow.InBps = _ctx.LongValue("DescribePortFlowList.PortFlowList["+ i +"].InBps");
-				portFlow.OutBps = _ctx.LongValue("DescribePortFlowList.PortFlowList["+ i +"].OutBps");
 				portFlow.InPps = _ctx.LongValue("DescribePortFlowList.PortFlowList["+ i +"].InPps");
+				portFlow.InBps = _ctx.LongValue("DescribePortFlowList.PortFlowList["+ i +"].InBps");
 				portFlow.Region = _ctx.StringValue("DescribePortFlowList.PortFlowList["+ i +"].Region");
+				portFlow.OutPps = _ctx.LongValue("DescribePortFlowList.PortFlowList["+ i +"].OutPps");
+				portFlow.AttackPps = _ctx.LongValue("DescribePortFlowList.PortFlowList["+ i +"].AttackPps");
+				portFlow.OutBps = _ctx.LongValue("DescribePortFlowList.PortFlowList["+ i +"].OutBps");
+				portFlow.AttackBps = _ctx.LongValue("DescribePortFlowList.PortFlowList["+ i +"].AttackBps");
 
 				describePortFlowListResponse_portFlowList.Add(portFlow);
 			}

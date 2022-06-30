@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,37 +56,25 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeInstanceIds_Instance
 		{
 
-			private string instanceId;
-
-			private string remark;
+			private string ipMode;
 
 			private int? edition;
 
+			private string instanceId;
+
 			private string ipVersion;
 
-			private string ipMode;
+			private string remark;
 
-			public string InstanceId
+			public string IpMode
 			{
 				get
 				{
-					return instanceId;
+					return ipMode;
 				}
 				set	
 				{
-					instanceId = value;
-				}
-			}
-
-			public string Remark
-			{
-				get
-				{
-					return remark;
-				}
-				set	
-				{
-					remark = value;
+					ipMode = value;
 				}
 			}
 
@@ -102,6 +90,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
 			public string IpVersion
 			{
 				get
@@ -114,15 +114,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public string IpMode
+			public string Remark
 			{
 				get
 				{
-					return ipMode;
+					return remark;
 				}
 				set	
 				{
-					ipMode = value;
+					remark = value;
 				}
 			}
 		}

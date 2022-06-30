@@ -36,8 +36,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribeBlackholeStatusResponse.DescribeBlackholeStatus_BlackholeStatusItem> describeBlackholeStatusResponse_blackholeStatus = new List<DescribeBlackholeStatusResponse.DescribeBlackholeStatus_BlackholeStatusItem>();
 			for (int i = 0; i < _ctx.Length("DescribeBlackholeStatus.BlackholeStatus.Length"); i++) {
 				DescribeBlackholeStatusResponse.DescribeBlackholeStatus_BlackholeStatusItem blackholeStatusItem = new DescribeBlackholeStatusResponse.DescribeBlackholeStatus_BlackholeStatusItem();
-				blackholeStatusItem.StartTime = _ctx.LongValue("DescribeBlackholeStatus.BlackholeStatus["+ i +"].StartTime");
 				blackholeStatusItem.EndTime = _ctx.LongValue("DescribeBlackholeStatus.BlackholeStatus["+ i +"].EndTime");
+				blackholeStatusItem.StartTime = _ctx.LongValue("DescribeBlackholeStatus.BlackholeStatus["+ i +"].StartTime");
 				blackholeStatusItem.Ip = _ctx.StringValue("DescribeBlackholeStatus.BlackholeStatus["+ i +"].Ip");
 				blackholeStatusItem.BlackStatus = _ctx.StringValue("DescribeBlackholeStatus.BlackholeStatus["+ i +"].BlackStatus");
 

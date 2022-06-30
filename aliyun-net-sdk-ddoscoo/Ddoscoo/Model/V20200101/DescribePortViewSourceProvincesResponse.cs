@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribePortViewSourceProvinces_Province
 		{
 
-			private long? count;
-
 			private string provinceId;
 
-			public long? Count
-			{
-				get
-				{
-					return count;
-				}
-				set	
-				{
-					count = value;
-				}
-			}
+			private long? count;
 
 			public string ProvinceId
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					provinceId = value;
+				}
+			}
+
+			public long? Count
+			{
+				get
+				{
+					return count;
+				}
+				set	
+				{
+					count = value;
 				}
 			}
 		}

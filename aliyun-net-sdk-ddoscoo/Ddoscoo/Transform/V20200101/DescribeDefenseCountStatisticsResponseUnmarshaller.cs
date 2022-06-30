@@ -34,9 +34,10 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			describeDefenseCountStatisticsResponse.RequestId = _ctx.StringValue("DescribeDefenseCountStatistics.RequestId");
 
 			DescribeDefenseCountStatisticsResponse.DescribeDefenseCountStatistics_DefenseCountStatistics defenseCountStatistics = new DescribeDefenseCountStatisticsResponse.DescribeDefenseCountStatistics_DefenseCountStatistics();
-			defenseCountStatistics.DefenseCountTotalUsageOfCurrentMonth = _ctx.IntegerValue("DescribeDefenseCountStatistics.DefenseCountStatistics.DefenseCountTotalUsageOfCurrentMonth");
 			defenseCountStatistics.FlowPackCountRemain = _ctx.IntegerValue("DescribeDefenseCountStatistics.DefenseCountStatistics.FlowPackCountRemain");
 			defenseCountStatistics.MaxUsableDefenseCountCurrentMonth = _ctx.IntegerValue("DescribeDefenseCountStatistics.DefenseCountStatistics.MaxUsableDefenseCountCurrentMonth");
+			defenseCountStatistics.DefenseCountTotalUsageOfCurrentMonth = _ctx.IntegerValue("DescribeDefenseCountStatistics.DefenseCountStatistics.DefenseCountTotalUsageOfCurrentMonth");
+			defenseCountStatistics.SecHighSpeedCountRemain = _ctx.IntegerValue("DescribeDefenseCountStatistics.DefenseCountStatistics.SecHighSpeedCountRemain");
 			describeDefenseCountStatisticsResponse.DefenseCountStatistics = defenseCountStatistics;
         
 			return describeDefenseCountStatisticsResponse;

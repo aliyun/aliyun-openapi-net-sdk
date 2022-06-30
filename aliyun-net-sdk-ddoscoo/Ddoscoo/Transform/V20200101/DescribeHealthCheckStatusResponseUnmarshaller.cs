@@ -36,16 +36,16 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribeHealthCheckStatusResponse.DescribeHealthCheckStatus_Status> describeHealthCheckStatusResponse_healthCheckStatus = new List<DescribeHealthCheckStatusResponse.DescribeHealthCheckStatus_Status>();
 			for (int i = 0; i < _ctx.Length("DescribeHealthCheckStatus.HealthCheckStatus.Length"); i++) {
 				DescribeHealthCheckStatusResponse.DescribeHealthCheckStatus_Status status = new DescribeHealthCheckStatusResponse.DescribeHealthCheckStatus_Status();
+				status.Status = _ctx.StringValue("DescribeHealthCheckStatus.HealthCheckStatus["+ i +"].Status");
+				status.FrontendPort = _ctx.IntegerValue("DescribeHealthCheckStatus.HealthCheckStatus["+ i +"].FrontendPort");
 				status.InstanceId = _ctx.StringValue("DescribeHealthCheckStatus.HealthCheckStatus["+ i +"].InstanceId");
 				status.Protocol = _ctx.StringValue("DescribeHealthCheckStatus.HealthCheckStatus["+ i +"].Protocol");
-				status.FrontendPort = _ctx.IntegerValue("DescribeHealthCheckStatus.HealthCheckStatus["+ i +"].FrontendPort");
-				status.Status = _ctx.StringValue("DescribeHealthCheckStatus.HealthCheckStatus["+ i +"].Status");
 
 				List<DescribeHealthCheckStatusResponse.DescribeHealthCheckStatus_Status.DescribeHealthCheckStatus_RealServerStatus> status_realServerStatusList = new List<DescribeHealthCheckStatusResponse.DescribeHealthCheckStatus_Status.DescribeHealthCheckStatus_RealServerStatus>();
 				for (int j = 0; j < _ctx.Length("DescribeHealthCheckStatus.HealthCheckStatus["+ i +"].RealServerStatusList.Length"); j++) {
 					DescribeHealthCheckStatusResponse.DescribeHealthCheckStatus_Status.DescribeHealthCheckStatus_RealServerStatus realServerStatus = new DescribeHealthCheckStatusResponse.DescribeHealthCheckStatus_Status.DescribeHealthCheckStatus_RealServerStatus();
-					realServerStatus.Address = _ctx.StringValue("DescribeHealthCheckStatus.HealthCheckStatus["+ i +"].RealServerStatusList["+ j +"].Address");
 					realServerStatus.Status = _ctx.StringValue("DescribeHealthCheckStatus.HealthCheckStatus["+ i +"].RealServerStatusList["+ j +"].Status");
+					realServerStatus.Address = _ctx.StringValue("DescribeHealthCheckStatus.HealthCheckStatus["+ i +"].RealServerStatusList["+ j +"].Address");
 
 					status_realServerStatusList.Add(realServerStatus);
 				}

@@ -31,28 +31,28 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeSceneDefensePoliciesResponse describeSceneDefensePoliciesResponse = new DescribeSceneDefensePoliciesResponse();
 
 			describeSceneDefensePoliciesResponse.HttpResponse = _ctx.HttpResponse;
-			describeSceneDefensePoliciesResponse.RequestId = _ctx.StringValue("DescribeSceneDefensePolicies.RequestId");
 			describeSceneDefensePoliciesResponse.Success = _ctx.BooleanValue("DescribeSceneDefensePolicies.Success");
+			describeSceneDefensePoliciesResponse.RequestId = _ctx.StringValue("DescribeSceneDefensePolicies.RequestId");
 
 			List<DescribeSceneDefensePoliciesResponse.DescribeSceneDefensePolicies_Policy> describeSceneDefensePoliciesResponse_policies = new List<DescribeSceneDefensePoliciesResponse.DescribeSceneDefensePolicies_Policy>();
 			for (int i = 0; i < _ctx.Length("DescribeSceneDefensePolicies.Policies.Length"); i++) {
 				DescribeSceneDefensePoliciesResponse.DescribeSceneDefensePolicies_Policy policy = new DescribeSceneDefensePoliciesResponse.DescribeSceneDefensePolicies_Policy();
-				policy.PolicyId = _ctx.StringValue("DescribeSceneDefensePolicies.Policies["+ i +"].PolicyId");
-				policy.Name = _ctx.StringValue("DescribeSceneDefensePolicies.Policies["+ i +"].Name");
-				policy.Template = _ctx.StringValue("DescribeSceneDefensePolicies.Policies["+ i +"].Template");
-				policy.StartTime = _ctx.LongValue("DescribeSceneDefensePolicies.Policies["+ i +"].StartTime");
+				policy.Done = _ctx.IntegerValue("DescribeSceneDefensePolicies.Policies["+ i +"].Done");
 				policy.EndTime = _ctx.LongValue("DescribeSceneDefensePolicies.Policies["+ i +"].EndTime");
 				policy.Status = _ctx.IntegerValue("DescribeSceneDefensePolicies.Policies["+ i +"].Status");
-				policy.Done = _ctx.IntegerValue("DescribeSceneDefensePolicies.Policies["+ i +"].Done");
+				policy.StartTime = _ctx.LongValue("DescribeSceneDefensePolicies.Policies["+ i +"].StartTime");
 				policy.ObjectCount = _ctx.IntegerValue("DescribeSceneDefensePolicies.Policies["+ i +"].ObjectCount");
+				policy.Template = _ctx.StringValue("DescribeSceneDefensePolicies.Policies["+ i +"].Template");
+				policy.PolicyId = _ctx.StringValue("DescribeSceneDefensePolicies.Policies["+ i +"].PolicyId");
+				policy.Name = _ctx.StringValue("DescribeSceneDefensePolicies.Policies["+ i +"].Name");
 
 				List<DescribeSceneDefensePoliciesResponse.DescribeSceneDefensePolicies_Policy.DescribeSceneDefensePolicies_Policy1> policy_runtimePolicies = new List<DescribeSceneDefensePoliciesResponse.DescribeSceneDefensePolicies_Policy.DescribeSceneDefensePolicies_Policy1>();
 				for (int j = 0; j < _ctx.Length("DescribeSceneDefensePolicies.Policies["+ i +"].RuntimePolicies.Length"); j++) {
 					DescribeSceneDefensePoliciesResponse.DescribeSceneDefensePolicies_Policy.DescribeSceneDefensePolicies_Policy1 policy1 = new DescribeSceneDefensePoliciesResponse.DescribeSceneDefensePolicies_Policy.DescribeSceneDefensePolicies_Policy1();
-					policy1.PolicyType = _ctx.IntegerValue("DescribeSceneDefensePolicies.Policies["+ i +"].RuntimePolicies["+ j +"].PolicyType");
 					policy1.Status = _ctx.IntegerValue("DescribeSceneDefensePolicies.Policies["+ i +"].RuntimePolicies["+ j +"].Status");
 					policy1.OldValue = _ctx.StringValue("DescribeSceneDefensePolicies.Policies["+ i +"].RuntimePolicies["+ j +"].oldValue");
 					policy1.NewValue = _ctx.StringValue("DescribeSceneDefensePolicies.Policies["+ i +"].RuntimePolicies["+ j +"].NewValue");
+					policy1.PolicyType = _ctx.IntegerValue("DescribeSceneDefensePolicies.Policies["+ i +"].RuntimePolicies["+ j +"].PolicyType");
 
 					policy_runtimePolicies.Add(policy1);
 				}

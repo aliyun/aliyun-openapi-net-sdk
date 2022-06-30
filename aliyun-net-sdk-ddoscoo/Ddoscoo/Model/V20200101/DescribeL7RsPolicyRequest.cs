@@ -70,10 +70,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set
 			{
 				realServerss = value;
-				for (int i = 0; i < realServerss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"RealServers." + (i + 1) , realServerss[i]);
-				}
 			}
 		}
 

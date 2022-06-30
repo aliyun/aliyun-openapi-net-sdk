@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -87,15 +87,27 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			public class DescribeWebPreciseAccessRule_Rule
 			{
 
+				private string action;
+
 				private string owner;
 
 				private long? expires;
 
 				private string name;
 
-				private string action;
-
 				private List<DescribeWebPreciseAccessRule_Condition> conditionList;
+
+				public string Action
+				{
+					get
+					{
+						return action;
+					}
+					set	
+					{
+						action = value;
+					}
+				}
 
 				public string Owner
 				{
@@ -133,18 +145,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 					}
 				}
 
-				public string Action
-				{
-					get
-					{
-						return action;
-					}
-					set	
-					{
-						action = value;
-					}
-				}
-
 				public List<DescribeWebPreciseAccessRule_Condition> ConditionList
 				{
 					get
@@ -164,9 +164,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 					private string field;
 
-					private string headerName;
-
 					private string content;
+
+					private string headerName;
 
 					public string MatchMethod
 					{
@@ -192,18 +192,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 						}
 					}
 
-					public string HeaderName
-					{
-						get
-						{
-							return headerName;
-						}
-						set	
-						{
-							headerName = value;
-						}
-					}
-
 					public string Content
 					{
 						get
@@ -213,6 +201,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 						set	
 						{
 							content = value;
+						}
+					}
+
+					public string HeaderName
+					{
+						get
+						{
+							return headerName;
+						}
+						set	
+						{
+							headerName = value;
 						}
 					}
 				}

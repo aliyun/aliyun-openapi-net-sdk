@@ -31,14 +31,14 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeWebAccessLogDispatchStatusResponse describeWebAccessLogDispatchStatusResponse = new DescribeWebAccessLogDispatchStatusResponse();
 
 			describeWebAccessLogDispatchStatusResponse.HttpResponse = _ctx.HttpResponse;
-			describeWebAccessLogDispatchStatusResponse.RequestId = _ctx.StringValue("DescribeWebAccessLogDispatchStatus.RequestId");
 			describeWebAccessLogDispatchStatusResponse.TotalCount = _ctx.IntegerValue("DescribeWebAccessLogDispatchStatus.TotalCount");
+			describeWebAccessLogDispatchStatusResponse.RequestId = _ctx.StringValue("DescribeWebAccessLogDispatchStatus.RequestId");
 
 			List<DescribeWebAccessLogDispatchStatusResponse.DescribeWebAccessLogDispatchStatus_SlsConfigStatusItem> describeWebAccessLogDispatchStatusResponse_slsConfigStatus = new List<DescribeWebAccessLogDispatchStatusResponse.DescribeWebAccessLogDispatchStatus_SlsConfigStatusItem>();
 			for (int i = 0; i < _ctx.Length("DescribeWebAccessLogDispatchStatus.SlsConfigStatus.Length"); i++) {
 				DescribeWebAccessLogDispatchStatusResponse.DescribeWebAccessLogDispatchStatus_SlsConfigStatusItem slsConfigStatusItem = new DescribeWebAccessLogDispatchStatusResponse.DescribeWebAccessLogDispatchStatus_SlsConfigStatusItem();
-				slsConfigStatusItem.Enable = _ctx.BooleanValue("DescribeWebAccessLogDispatchStatus.SlsConfigStatus["+ i +"].Enable");
 				slsConfigStatusItem.Domain = _ctx.StringValue("DescribeWebAccessLogDispatchStatus.SlsConfigStatus["+ i +"].Domain");
+				slsConfigStatusItem.Enable = _ctx.BooleanValue("DescribeWebAccessLogDispatchStatus.SlsConfigStatus["+ i +"].Enable");
 
 				describeWebAccessLogDispatchStatusResponse_slsConfigStatus.Add(slsConfigStatusItem);
 			}

@@ -70,10 +70,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set
 			{
 				ruleNamess = value;
-				for (int i = 0; i < ruleNamess.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"RuleNames." + (i + 1) , ruleNamess[i]);
-				}
 			}
 		}
 

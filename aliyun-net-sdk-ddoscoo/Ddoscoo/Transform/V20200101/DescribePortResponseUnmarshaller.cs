@@ -39,8 +39,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 				DescribePortResponse.DescribePort_NetworkRule networkRule = new DescribePortResponse.DescribePort_NetworkRule();
 				networkRule.FrontendPort = _ctx.IntegerValue("DescribePort.NetworkRules["+ i +"].FrontendPort");
 				networkRule.IsAutoCreate = _ctx.BooleanValue("DescribePort.NetworkRules["+ i +"].IsAutoCreate");
-				networkRule.FrontendProtocol = _ctx.StringValue("DescribePort.NetworkRules["+ i +"].FrontendProtocol");
 				networkRule.InstanceId = _ctx.StringValue("DescribePort.NetworkRules["+ i +"].InstanceId");
+				networkRule.FrontendProtocol = _ctx.StringValue("DescribePort.NetworkRules["+ i +"].FrontendProtocol");
 				networkRule.BackendPort = _ctx.IntegerValue("DescribePort.NetworkRules["+ i +"].BackendPort");
 
 				List<string> networkRule_realServers = new List<string>();

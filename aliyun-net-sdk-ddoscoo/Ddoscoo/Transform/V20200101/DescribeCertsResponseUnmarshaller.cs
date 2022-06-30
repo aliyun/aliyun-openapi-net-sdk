@@ -36,13 +36,13 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribeCertsResponse.DescribeCerts_CertItem> describeCertsResponse_certs = new List<DescribeCertsResponse.DescribeCerts_CertItem>();
 			for (int i = 0; i < _ctx.Length("DescribeCerts.Certs.Length"); i++) {
 				DescribeCertsResponse.DescribeCerts_CertItem certItem = new DescribeCertsResponse.DescribeCerts_CertItem();
-				certItem.Id = _ctx.IntegerValue("DescribeCerts.Certs["+ i +"].Id");
-				certItem.Name = _ctx.StringValue("DescribeCerts.Certs["+ i +"].Name");
-				certItem.Common = _ctx.StringValue("DescribeCerts.Certs["+ i +"].Common");
-				certItem.Issuer = _ctx.StringValue("DescribeCerts.Certs["+ i +"].Issuer");
-				certItem.StartDate = _ctx.StringValue("DescribeCerts.Certs["+ i +"].StartDate");
 				certItem.EndDate = _ctx.StringValue("DescribeCerts.Certs["+ i +"].EndDate");
 				certItem.DomainRelated = _ctx.BooleanValue("DescribeCerts.Certs["+ i +"].DomainRelated");
+				certItem.StartDate = _ctx.StringValue("DescribeCerts.Certs["+ i +"].StartDate");
+				certItem.Issuer = _ctx.StringValue("DescribeCerts.Certs["+ i +"].Issuer");
+				certItem.Name = _ctx.StringValue("DescribeCerts.Certs["+ i +"].Name");
+				certItem.Common = _ctx.StringValue("DescribeCerts.Certs["+ i +"].Common");
+				certItem.Id = _ctx.IntegerValue("DescribeCerts.Certs["+ i +"].Id");
 
 				describeCertsResponse_certs.Add(certItem);
 			}

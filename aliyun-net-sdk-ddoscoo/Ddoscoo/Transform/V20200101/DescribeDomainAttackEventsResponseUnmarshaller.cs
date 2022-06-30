@@ -31,15 +31,15 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeDomainAttackEventsResponse describeDomainAttackEventsResponse = new DescribeDomainAttackEventsResponse();
 
 			describeDomainAttackEventsResponse.HttpResponse = _ctx.HttpResponse;
-			describeDomainAttackEventsResponse.RequestId = _ctx.StringValue("DescribeDomainAttackEvents.RequestId");
 			describeDomainAttackEventsResponse.TotalCount = _ctx.LongValue("DescribeDomainAttackEvents.TotalCount");
+			describeDomainAttackEventsResponse.RequestId = _ctx.StringValue("DescribeDomainAttackEvents.RequestId");
 
 			List<DescribeDomainAttackEventsResponse.DescribeDomainAttackEvents_Data> describeDomainAttackEventsResponse_domainAttackEvents = new List<DescribeDomainAttackEventsResponse.DescribeDomainAttackEvents_Data>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainAttackEvents.DomainAttackEvents.Length"); i++) {
 				DescribeDomainAttackEventsResponse.DescribeDomainAttackEvents_Data data = new DescribeDomainAttackEventsResponse.DescribeDomainAttackEvents_Data();
-				data.Domain = _ctx.StringValue("DescribeDomainAttackEvents.DomainAttackEvents["+ i +"].Domain");
-				data.StartTime = _ctx.LongValue("DescribeDomainAttackEvents.DomainAttackEvents["+ i +"].StartTime");
 				data.EndTime = _ctx.LongValue("DescribeDomainAttackEvents.DomainAttackEvents["+ i +"].EndTime");
+				data.StartTime = _ctx.LongValue("DescribeDomainAttackEvents.DomainAttackEvents["+ i +"].StartTime");
+				data.Domain = _ctx.StringValue("DescribeDomainAttackEvents.DomainAttackEvents["+ i +"].Domain");
 				data.MaxQps = _ctx.LongValue("DescribeDomainAttackEvents.DomainAttackEvents["+ i +"].MaxQps");
 
 				describeDomainAttackEventsResponse_domainAttackEvents.Add(data);

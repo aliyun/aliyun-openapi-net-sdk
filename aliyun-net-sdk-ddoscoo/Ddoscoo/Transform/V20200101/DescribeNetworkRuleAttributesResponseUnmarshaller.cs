@@ -36,30 +36,30 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribeNetworkRuleAttributesResponse.DescribeNetworkRuleAttributes_NetworkRuleAttribute> describeNetworkRuleAttributesResponse_networkRuleAttributes = new List<DescribeNetworkRuleAttributesResponse.DescribeNetworkRuleAttributes_NetworkRuleAttribute>();
 			for (int i = 0; i < _ctx.Length("DescribeNetworkRuleAttributes.NetworkRuleAttributes.Length"); i++) {
 				DescribeNetworkRuleAttributesResponse.DescribeNetworkRuleAttributes_NetworkRuleAttribute networkRuleAttribute = new DescribeNetworkRuleAttributesResponse.DescribeNetworkRuleAttributes_NetworkRuleAttribute();
+				networkRuleAttribute.FrontendPort = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].FrontendPort");
 				networkRuleAttribute.InstanceId = _ctx.StringValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].InstanceId");
 				networkRuleAttribute.Protocol = _ctx.StringValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Protocol");
-				networkRuleAttribute.FrontendPort = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].FrontendPort");
 
 				DescribeNetworkRuleAttributesResponse.DescribeNetworkRuleAttributes_NetworkRuleAttribute.DescribeNetworkRuleAttributes_Config config = new DescribeNetworkRuleAttributesResponse.DescribeNetworkRuleAttributes_NetworkRuleAttribute.DescribeNetworkRuleAttributes_Config();
-				config.PersistenceTimeout = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.PersistenceTimeout");
-				config.Synproxy = _ctx.StringValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Synproxy");
 				config.NodataConn = _ctx.StringValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.NodataConn");
+				config.Synproxy = _ctx.StringValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Synproxy");
+				config.PersistenceTimeout = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.PersistenceTimeout");
 
 				DescribeNetworkRuleAttributesResponse.DescribeNetworkRuleAttributes_NetworkRuleAttribute.DescribeNetworkRuleAttributes_Config.DescribeNetworkRuleAttributes_Sla sla = new DescribeNetworkRuleAttributesResponse.DescribeNetworkRuleAttributes_NetworkRuleAttribute.DescribeNetworkRuleAttributes_Config.DescribeNetworkRuleAttributes_Sla();
+				sla.MaxconnEnable = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Sla.MaxconnEnable");
+				sla.CpsEnable = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Sla.CpsEnable");
 				sla.Cps = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Sla.Cps");
 				sla.Maxconn = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Sla.Maxconn");
-				sla.CpsEnable = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Sla.CpsEnable");
-				sla.MaxconnEnable = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Sla.MaxconnEnable");
 				config.Sla = sla;
 
 				DescribeNetworkRuleAttributesResponse.DescribeNetworkRuleAttributes_NetworkRuleAttribute.DescribeNetworkRuleAttributes_Config.DescribeNetworkRuleAttributes_Slimit slimit = new DescribeNetworkRuleAttributesResponse.DescribeNetworkRuleAttributes_NetworkRuleAttribute.DescribeNetworkRuleAttributes_Config.DescribeNetworkRuleAttributes_Slimit();
-				slimit.Cps = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Slimit.Cps");
-				slimit.Maxconn = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Slimit.Maxconn");
-				slimit.CpsEnable = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Slimit.CpsEnable");
-				slimit.CpsMode = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Slimit.CpsMode");
 				slimit.MaxconnEnable = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Slimit.MaxconnEnable");
-				slimit.Bps = _ctx.LongValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Slimit.Bps");
+				slimit.CpsEnable = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Slimit.CpsEnable");
+				slimit.Cps = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Slimit.Cps");
 				slimit.Pps = _ctx.LongValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Slimit.Pps");
+				slimit.Bps = _ctx.LongValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Slimit.Bps");
+				slimit.Maxconn = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Slimit.Maxconn");
+				slimit.CpsMode = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Slimit.CpsMode");
 				config.Slimit = slimit;
 
 				DescribeNetworkRuleAttributesResponse.DescribeNetworkRuleAttributes_NetworkRuleAttribute.DescribeNetworkRuleAttributes_Config.DescribeNetworkRuleAttributes_PayloadLen payloadLen = new DescribeNetworkRuleAttributesResponse.DescribeNetworkRuleAttributes_NetworkRuleAttribute.DescribeNetworkRuleAttributes_Config.DescribeNetworkRuleAttributes_PayloadLen();
@@ -72,10 +72,10 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 				List<DescribeNetworkRuleAttributesResponse.DescribeNetworkRuleAttributes_NetworkRuleAttribute.DescribeNetworkRuleAttributes_Config.DescribeNetworkRuleAttributes_Cc.DescribeNetworkRuleAttributes_SblackItem> cc_sblack = new List<DescribeNetworkRuleAttributesResponse.DescribeNetworkRuleAttributes_NetworkRuleAttribute.DescribeNetworkRuleAttributes_Config.DescribeNetworkRuleAttributes_Cc.DescribeNetworkRuleAttributes_SblackItem>();
 				for (int j = 0; j < _ctx.Length("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Cc.Sblack.Length"); j++) {
 					DescribeNetworkRuleAttributesResponse.DescribeNetworkRuleAttributes_NetworkRuleAttribute.DescribeNetworkRuleAttributes_Config.DescribeNetworkRuleAttributes_Cc.DescribeNetworkRuleAttributes_SblackItem sblackItem = new DescribeNetworkRuleAttributesResponse.DescribeNetworkRuleAttributes_NetworkRuleAttribute.DescribeNetworkRuleAttributes_Config.DescribeNetworkRuleAttributes_Cc.DescribeNetworkRuleAttributes_SblackItem();
+					sblackItem.Type = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Cc.Sblack["+ j +"].Type");
 					sblackItem.During = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Cc.Sblack["+ j +"].During");
 					sblackItem.Expires = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Cc.Sblack["+ j +"].Expires");
 					sblackItem.Cnt = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Cc.Sblack["+ j +"].Cnt");
-					sblackItem.Type = _ctx.IntegerValue("DescribeNetworkRuleAttributes.NetworkRuleAttributes["+ i +"].Config.Cc.Sblack["+ j +"].Type");
 
 					cc_sblack.Add(sblackItem);
 				}

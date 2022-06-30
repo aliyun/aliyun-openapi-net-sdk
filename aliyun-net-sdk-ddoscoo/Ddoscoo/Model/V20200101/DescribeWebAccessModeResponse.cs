@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeWebAccessMode_DomainMode
 		{
 
-			private string domain;
-
 			private int? accessMode;
 
-			public string Domain
-			{
-				get
-				{
-					return domain;
-				}
-				set	
-				{
-					domain = value;
-				}
-			}
+			private string domain;
 
 			public int? AccessMode
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					accessMode = value;
+				}
+			}
+
+			public string Domain
+			{
+				get
+				{
+					return domain;
+				}
+				set	
+				{
+					domain = value;
 				}
 			}
 		}

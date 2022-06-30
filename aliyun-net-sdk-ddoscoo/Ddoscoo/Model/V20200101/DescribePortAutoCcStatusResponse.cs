@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,13 +56,25 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribePortAutoCcStatus_Status
 		{
 
+			private string _switch;
+
 			private string mode;
 
 			private string webSwitch;
 
 			private string webMode;
 
-			private string _switch;
+			public string _Switch
+			{
+				get
+				{
+					return _switch;
+				}
+				set	
+				{
+					_switch = value;
+				}
+			}
 
 			public string Mode
 			{
@@ -97,18 +109,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					webMode = value;
-				}
-			}
-
-			public string _Switch
-			{
-				get
-				{
-					return _switch;
-				}
-				set	
-				{
-					_switch = value;
 				}
 			}
 		}

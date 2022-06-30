@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribePortMaxConns_PortMaxConnsItem
 		{
 
-			private string port;
-
 			private string ip;
 
-			private long? cps;
+			private string port;
 
-			public string Port
-			{
-				get
-				{
-					return port;
-				}
-				set	
-				{
-					port = value;
-				}
-			}
+			private long? cps;
 
 			public string Ip
 			{
@@ -83,6 +71,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					ip = value;
+				}
+			}
+
+			public string Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
 				}
 			}
 

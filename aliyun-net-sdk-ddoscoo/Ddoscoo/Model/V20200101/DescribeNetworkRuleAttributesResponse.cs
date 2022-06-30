@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,13 +56,25 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeNetworkRuleAttributes_NetworkRuleAttribute
 		{
 
+			private int? frontendPort;
+
 			private string instanceId;
 
 			private string protocol;
 
-			private int? frontendPort;
-
 			private DescribeNetworkRuleAttributes_Config config;
+
+			public int? FrontendPort
+			{
+				get
+				{
+					return frontendPort;
+				}
+				set	
+				{
+					frontendPort = value;
+				}
+			}
 
 			public string InstanceId
 			{
@@ -88,18 +100,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public int? FrontendPort
-			{
-				get
-				{
-					return frontendPort;
-				}
-				set	
-				{
-					frontendPort = value;
-				}
-			}
-
 			public DescribeNetworkRuleAttributes_Config Config
 			{
 				get
@@ -115,11 +115,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			public class DescribeNetworkRuleAttributes_Config
 			{
 
-				private int? persistenceTimeout;
+				private string nodataConn;
 
 				private string synproxy;
 
-				private string nodataConn;
+				private int? persistenceTimeout;
 
 				private DescribeNetworkRuleAttributes_Sla sla;
 
@@ -129,15 +129,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 				private DescribeNetworkRuleAttributes_Cc cc;
 
-				public int? PersistenceTimeout
+				public string NodataConn
 				{
 					get
 					{
-						return persistenceTimeout;
+						return nodataConn;
 					}
 					set	
 					{
-						persistenceTimeout = value;
+						nodataConn = value;
 					}
 				}
 
@@ -153,15 +153,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 					}
 				}
 
-				public string NodataConn
+				public int? PersistenceTimeout
 				{
 					get
 					{
-						return nodataConn;
+						return persistenceTimeout;
 					}
 					set	
 					{
-						nodataConn = value;
+						persistenceTimeout = value;
 					}
 				}
 
@@ -216,13 +216,37 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				public class DescribeNetworkRuleAttributes_Sla
 				{
 
+					private int? maxconnEnable;
+
+					private int? cpsEnable;
+
 					private int? cps;
 
 					private int? maxconn;
 
-					private int? cpsEnable;
+					public int? MaxconnEnable
+					{
+						get
+						{
+							return maxconnEnable;
+						}
+						set	
+						{
+							maxconnEnable = value;
+						}
+					}
 
-					private int? maxconnEnable;
+					public int? CpsEnable
+					{
+						get
+						{
+							return cpsEnable;
+						}
+						set	
+						{
+							cpsEnable = value;
+						}
+					}
 
 					public int? Cps
 					{
@@ -245,30 +269,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 						set	
 						{
 							maxconn = value;
-						}
-					}
-
-					public int? CpsEnable
-					{
-						get
-						{
-							return cpsEnable;
-						}
-						set	
-						{
-							cpsEnable = value;
-						}
-					}
-
-					public int? MaxconnEnable
-					{
-						get
-						{
-							return maxconnEnable;
-						}
-						set	
-						{
-							maxconnEnable = value;
 						}
 					}
 				}
@@ -276,41 +276,29 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				public class DescribeNetworkRuleAttributes_Slimit
 				{
 
-					private int? cps;
-
-					private int? maxconn;
+					private int? maxconnEnable;
 
 					private int? cpsEnable;
 
-					private int? cpsMode;
-
-					private int? maxconnEnable;
-
-					private long? bps;
+					private int? cps;
 
 					private long? pps;
 
-					public int? Cps
-					{
-						get
-						{
-							return cps;
-						}
-						set	
-						{
-							cps = value;
-						}
-					}
+					private long? bps;
 
-					public int? Maxconn
+					private int? maxconn;
+
+					private int? cpsMode;
+
+					public int? MaxconnEnable
 					{
 						get
 						{
-							return maxconn;
+							return maxconnEnable;
 						}
 						set	
 						{
-							maxconn = value;
+							maxconnEnable = value;
 						}
 					}
 
@@ -326,27 +314,27 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 						}
 					}
 
-					public int? CpsMode
+					public int? Cps
 					{
 						get
 						{
-							return cpsMode;
+							return cps;
 						}
 						set	
 						{
-							cpsMode = value;
+							cps = value;
 						}
 					}
 
-					public int? MaxconnEnable
+					public long? Pps
 					{
 						get
 						{
-							return maxconnEnable;
+							return pps;
 						}
 						set	
 						{
-							maxconnEnable = value;
+							pps = value;
 						}
 					}
 
@@ -362,15 +350,27 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 						}
 					}
 
-					public long? Pps
+					public int? Maxconn
 					{
 						get
 						{
-							return pps;
+							return maxconn;
 						}
 						set	
 						{
-							pps = value;
+							maxconn = value;
+						}
+					}
+
+					public int? CpsMode
+					{
+						get
+						{
+							return cpsMode;
+						}
+						set	
+						{
+							cpsMode = value;
 						}
 					}
 				}
@@ -427,13 +427,25 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 					public class DescribeNetworkRuleAttributes_SblackItem
 					{
 
+						private int? type;
+
 						private int? during;
 
 						private int? expires;
 
 						private int? cnt;
 
-						private int? type;
+						public int? Type
+						{
+							get
+							{
+								return type;
+							}
+							set	
+							{
+								type = value;
+							}
+						}
 
 						public int? During
 						{
@@ -468,18 +480,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 							set	
 							{
 								cnt = value;
-							}
-						}
-
-						public int? Type
-						{
-							get
-							{
-								return type;
-							}
-							set	
-							{
-								type = value;
 							}
 						}
 					}

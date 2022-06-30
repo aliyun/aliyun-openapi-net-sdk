@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeInstanceDetails_InstanceDetail
 		{
 
-			private string instanceId;
-
 			private string line;
 
-			private List<DescribeInstanceDetails_EipInfo> eipInfos;
+			private string instanceId;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private List<DescribeInstanceDetails_EipInfo> eipInfos;
 
 			public string Line
 			{
@@ -83,6 +71,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					line = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 
@@ -101,25 +101,13 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			public class DescribeInstanceDetails_EipInfo
 			{
 
-				private string eip;
-
 				private string status;
-
-				private string ipVersion;
 
 				private string ipMode;
 
-				public string Eip
-				{
-					get
-					{
-						return eip;
-					}
-					set	
-					{
-						eip = value;
-					}
-				}
+				private string eip;
+
+				private string ipVersion;
 
 				public string Status
 				{
@@ -133,18 +121,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 					}
 				}
 
-				public string IpVersion
-				{
-					get
-					{
-						return ipVersion;
-					}
-					set	
-					{
-						ipVersion = value;
-					}
-				}
-
 				public string IpMode
 				{
 					get
@@ -154,6 +130,30 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 					set	
 					{
 						ipMode = value;
+					}
+				}
+
+				public string Eip
+				{
+					get
+					{
+						return eip;
+					}
+					set	
+					{
+						eip = value;
+					}
+				}
+
+				public string IpVersion
+				{
+					get
+					{
+						return ipVersion;
+					}
+					set	
+					{
+						ipVersion = value;
 					}
 				}
 			}

@@ -31,15 +31,15 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeOpEntitiesResponse describeOpEntitiesResponse = new DescribeOpEntitiesResponse();
 
 			describeOpEntitiesResponse.HttpResponse = _ctx.HttpResponse;
-			describeOpEntitiesResponse.RequestId = _ctx.StringValue("DescribeOpEntities.RequestId");
 			describeOpEntitiesResponse.TotalCount = _ctx.LongValue("DescribeOpEntities.TotalCount");
+			describeOpEntitiesResponse.RequestId = _ctx.StringValue("DescribeOpEntities.RequestId");
 
 			List<DescribeOpEntitiesResponse.DescribeOpEntities_OpEntity> describeOpEntitiesResponse_opEntities = new List<DescribeOpEntitiesResponse.DescribeOpEntities_OpEntity>();
 			for (int i = 0; i < _ctx.Length("DescribeOpEntities.OpEntities.Length"); i++) {
 				DescribeOpEntitiesResponse.DescribeOpEntities_OpEntity opEntity = new DescribeOpEntitiesResponse.DescribeOpEntities_OpEntity();
-				opEntity.GmtCreate = _ctx.LongValue("DescribeOpEntities.OpEntities["+ i +"].GmtCreate");
 				opEntity.EntityType = _ctx.IntegerValue("DescribeOpEntities.OpEntities["+ i +"].EntityType");
 				opEntity.EntityObject = _ctx.StringValue("DescribeOpEntities.OpEntities["+ i +"].EntityObject");
+				opEntity.GmtCreate = _ctx.LongValue("DescribeOpEntities.OpEntities["+ i +"].GmtCreate");
 				opEntity.OpAction = _ctx.IntegerValue("DescribeOpEntities.OpEntities["+ i +"].OpAction");
 				opEntity.OpAccount = _ctx.StringValue("DescribeOpEntities.OpEntities["+ i +"].OpAccount");
 				opEntity.OpDesc = _ctx.StringValue("DescribeOpEntities.OpEntities["+ i +"].OpDesc");

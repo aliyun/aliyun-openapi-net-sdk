@@ -41,18 +41,18 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 				List<DescribeWebPreciseAccessRuleResponse.DescribeWebPreciseAccessRule_PreciseAccessConfig.DescribeWebPreciseAccessRule_Rule> preciseAccessConfig_ruleList = new List<DescribeWebPreciseAccessRuleResponse.DescribeWebPreciseAccessRule_PreciseAccessConfig.DescribeWebPreciseAccessRule_Rule>();
 				for (int j = 0; j < _ctx.Length("DescribeWebPreciseAccessRule.PreciseAccessConfigList["+ i +"].RuleList.Length"); j++) {
 					DescribeWebPreciseAccessRuleResponse.DescribeWebPreciseAccessRule_PreciseAccessConfig.DescribeWebPreciseAccessRule_Rule rule = new DescribeWebPreciseAccessRuleResponse.DescribeWebPreciseAccessRule_PreciseAccessConfig.DescribeWebPreciseAccessRule_Rule();
+					rule.Action = _ctx.StringValue("DescribeWebPreciseAccessRule.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].Action");
 					rule.Owner = _ctx.StringValue("DescribeWebPreciseAccessRule.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].Owner");
 					rule.Expires = _ctx.LongValue("DescribeWebPreciseAccessRule.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].Expires");
 					rule.Name = _ctx.StringValue("DescribeWebPreciseAccessRule.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].Name");
-					rule.Action = _ctx.StringValue("DescribeWebPreciseAccessRule.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].Action");
 
 					List<DescribeWebPreciseAccessRuleResponse.DescribeWebPreciseAccessRule_PreciseAccessConfig.DescribeWebPreciseAccessRule_Rule.DescribeWebPreciseAccessRule_Condition> rule_conditionList = new List<DescribeWebPreciseAccessRuleResponse.DescribeWebPreciseAccessRule_PreciseAccessConfig.DescribeWebPreciseAccessRule_Rule.DescribeWebPreciseAccessRule_Condition>();
 					for (int k = 0; k < _ctx.Length("DescribeWebPreciseAccessRule.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].ConditionList.Length"); k++) {
 						DescribeWebPreciseAccessRuleResponse.DescribeWebPreciseAccessRule_PreciseAccessConfig.DescribeWebPreciseAccessRule_Rule.DescribeWebPreciseAccessRule_Condition condition = new DescribeWebPreciseAccessRuleResponse.DescribeWebPreciseAccessRule_PreciseAccessConfig.DescribeWebPreciseAccessRule_Rule.DescribeWebPreciseAccessRule_Condition();
 						condition.MatchMethod = _ctx.StringValue("DescribeWebPreciseAccessRule.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].ConditionList["+ k +"].MatchMethod");
 						condition.Field = _ctx.StringValue("DescribeWebPreciseAccessRule.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].ConditionList["+ k +"].Field");
-						condition.HeaderName = _ctx.StringValue("DescribeWebPreciseAccessRule.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].ConditionList["+ k +"].HeaderName");
 						condition.Content = _ctx.StringValue("DescribeWebPreciseAccessRule.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].ConditionList["+ k +"].Content");
+						condition.HeaderName = _ctx.StringValue("DescribeWebPreciseAccessRule.PreciseAccessConfigList["+ i +"].RuleList["+ j +"].ConditionList["+ k +"].HeaderName");
 
 						rule_conditionList.Add(condition);
 					}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,29 +25,41 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeDomainQpsWithCacheResponse : AcsResponse
 	{
 
+		private long? startTime;
+
 		private string requestId;
 
 		private int? interval;
 
-		private long? startTime;
-
-		private List<string> totals;
-
 		private List<string> blocks;
 
-		private List<string> cacheHits;
-
-		private List<string> preciseBlocks;
-
-		private List<string> regionBlocks;
-
-		private List<string> ipBlockQps;
-
-		private List<string> ccJsQps;
+		private List<string> ccBlockQps;
 
 		private List<string> preciseJsQps;
 
-		private List<string> ccBlockQps;
+		private List<string> ccJsQps;
+
+		private List<string> regionBlocks;
+
+		private List<string> preciseBlocks;
+
+		private List<string> cacheHits;
+
+		private List<string> totals;
+
+		private List<string> ipBlockQps;
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -73,30 +85,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			}
 		}
 
-		public long? StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
-		public List<string> Totals
-		{
-			get
-			{
-				return totals;
-			}
-			set	
-			{
-				totals = value;
-			}
-		}
-
 		public List<string> Blocks
 		{
 			get
@@ -109,63 +97,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			}
 		}
 
-		public List<string> CacheHits
+		public List<string> CcBlockQps
 		{
 			get
 			{
-				return cacheHits;
+				return ccBlockQps;
 			}
 			set	
 			{
-				cacheHits = value;
-			}
-		}
-
-		public List<string> PreciseBlocks
-		{
-			get
-			{
-				return preciseBlocks;
-			}
-			set	
-			{
-				preciseBlocks = value;
-			}
-		}
-
-		public List<string> RegionBlocks
-		{
-			get
-			{
-				return regionBlocks;
-			}
-			set	
-			{
-				regionBlocks = value;
-			}
-		}
-
-		public List<string> IpBlockQps
-		{
-			get
-			{
-				return ipBlockQps;
-			}
-			set	
-			{
-				ipBlockQps = value;
-			}
-		}
-
-		public List<string> CcJsQps
-		{
-			get
-			{
-				return ccJsQps;
-			}
-			set	
-			{
-				ccJsQps = value;
+				ccBlockQps = value;
 			}
 		}
 
@@ -181,15 +121,75 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			}
 		}
 
-		public List<string> CcBlockQps
+		public List<string> CcJsQps
 		{
 			get
 			{
-				return ccBlockQps;
+				return ccJsQps;
 			}
 			set	
 			{
-				ccBlockQps = value;
+				ccJsQps = value;
+			}
+		}
+
+		public List<string> RegionBlocks
+		{
+			get
+			{
+				return regionBlocks;
+			}
+			set	
+			{
+				regionBlocks = value;
+			}
+		}
+
+		public List<string> PreciseBlocks
+		{
+			get
+			{
+				return preciseBlocks;
+			}
+			set	
+			{
+				preciseBlocks = value;
+			}
+		}
+
+		public List<string> CacheHits
+		{
+			get
+			{
+				return cacheHits;
+			}
+			set	
+			{
+				cacheHits = value;
+			}
+		}
+
+		public List<string> Totals
+		{
+			get
+			{
+				return totals;
+			}
+			set	
+			{
+				totals = value;
+			}
+		}
+
+		public List<string> IpBlockQps
+		{
+			get
+			{
+				return ipBlockQps;
+			}
+			set	
+			{
+				ipBlockQps = value;
 			}
 		}
 	}

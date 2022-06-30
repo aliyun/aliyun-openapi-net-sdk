@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -80,17 +80,19 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 			private string ccTemplate;
 
+			private string httpsExt;
+
 			private bool? ccEnabled;
 
 			private string sslCiphers;
 
-			private bool? ssl13Enabled;
-
 			private bool? ccRuleEnabled;
 
-			private bool? punishStatus;
+			private bool? ssl13Enabled;
 
 			private int? rsType;
+
+			private bool? punishStatus;
 
 			private bool? proxyEnabled;
 
@@ -104,19 +106,17 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 			private bool? https2HttpEnable;
 
-			private string httpsExt;
-
 			private List<DescribeDomainResource_ProxyConfig> proxyTypes;
 
-			private List<string> blackList;
-
-			private List<string> whiteList;
+			private List<string> instanceIds;
 
 			private List<string> customCiphers;
 
-			private List<string> realServers;
+			private List<string> whiteList;
 
-			private List<string> instanceIds;
+			private List<string> blackList;
+
+			private List<string> realServers;
 
 			public string Domain
 			{
@@ -178,6 +178,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
+			public string HttpsExt
+			{
+				get
+				{
+					return httpsExt;
+				}
+				set	
+				{
+					httpsExt = value;
+				}
+			}
+
 			public bool? CcEnabled
 			{
 				get
@@ -202,18 +214,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public bool? Ssl13Enabled
-			{
-				get
-				{
-					return ssl13Enabled;
-				}
-				set	
-				{
-					ssl13Enabled = value;
-				}
-			}
-
 			public bool? CcRuleEnabled
 			{
 				get
@@ -226,15 +226,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public bool? PunishStatus
+			public bool? Ssl13Enabled
 			{
 				get
 				{
-					return punishStatus;
+					return ssl13Enabled;
 				}
 				set	
 				{
-					punishStatus = value;
+					ssl13Enabled = value;
 				}
 			}
 
@@ -247,6 +247,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					rsType = value;
+				}
+			}
+
+			public bool? PunishStatus
+			{
+				get
+				{
+					return punishStatus;
+				}
+				set	
+				{
+					punishStatus = value;
 				}
 			}
 
@@ -322,18 +334,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public string HttpsExt
-			{
-				get
-				{
-					return httpsExt;
-				}
-				set	
-				{
-					httpsExt = value;
-				}
-			}
-
 			public List<DescribeDomainResource_ProxyConfig> ProxyTypes
 			{
 				get
@@ -346,27 +346,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public List<string> BlackList
+			public List<string> InstanceIds
 			{
 				get
 				{
-					return blackList;
+					return instanceIds;
 				}
 				set	
 				{
-					blackList = value;
-				}
-			}
-
-			public List<string> WhiteList
-			{
-				get
-				{
-					return whiteList;
-				}
-				set	
-				{
-					whiteList = value;
+					instanceIds = value;
 				}
 			}
 
@@ -382,6 +370,30 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
+			public List<string> WhiteList
+			{
+				get
+				{
+					return whiteList;
+				}
+				set	
+				{
+					whiteList = value;
+				}
+			}
+
+			public List<string> BlackList
+			{
+				get
+				{
+					return blackList;
+				}
+				set	
+				{
+					blackList = value;
+				}
+			}
+
 			public List<string> RealServers
 			{
 				get
@@ -391,18 +403,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					realServers = value;
-				}
-			}
-
-			public List<string> InstanceIds
-			{
-				get
-				{
-					return instanceIds;
-				}
-				set	
-				{
-					instanceIds = value;
 				}
 			}
 

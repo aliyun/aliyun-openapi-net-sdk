@@ -39,8 +39,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribeTagKeysResponse.DescribeTagKeys_TagKey> describeTagKeysResponse_tagKeys = new List<DescribeTagKeysResponse.DescribeTagKeys_TagKey>();
 			for (int i = 0; i < _ctx.Length("DescribeTagKeys.TagKeys.Length"); i++) {
 				DescribeTagKeysResponse.DescribeTagKeys_TagKey tagKey = new DescribeTagKeysResponse.DescribeTagKeys_TagKey();
-				tagKey.TagKey = _ctx.StringValue("DescribeTagKeys.TagKeys["+ i +"].TagKey");
 				tagKey.TagCount = _ctx.IntegerValue("DescribeTagKeys.TagKeys["+ i +"].TagCount");
+				tagKey.TagKey = _ctx.StringValue("DescribeTagKeys.TagKeys["+ i +"].TagKey");
 
 				describeTagKeysResponse_tagKeys.Add(tagKey);
 			}

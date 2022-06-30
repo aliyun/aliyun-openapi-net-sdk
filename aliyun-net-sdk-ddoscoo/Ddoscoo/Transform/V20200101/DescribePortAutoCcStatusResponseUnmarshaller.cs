@@ -36,10 +36,10 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribePortAutoCcStatusResponse.DescribePortAutoCcStatus_Status> describePortAutoCcStatusResponse_portAutoCcStatus = new List<DescribePortAutoCcStatusResponse.DescribePortAutoCcStatus_Status>();
 			for (int i = 0; i < _ctx.Length("DescribePortAutoCcStatus.PortAutoCcStatus.Length"); i++) {
 				DescribePortAutoCcStatusResponse.DescribePortAutoCcStatus_Status status = new DescribePortAutoCcStatusResponse.DescribePortAutoCcStatus_Status();
+				status._Switch = _ctx.StringValue("DescribePortAutoCcStatus.PortAutoCcStatus["+ i +"].Switch");
 				status.Mode = _ctx.StringValue("DescribePortAutoCcStatus.PortAutoCcStatus["+ i +"].Mode");
 				status.WebSwitch = _ctx.StringValue("DescribePortAutoCcStatus.PortAutoCcStatus["+ i +"].WebSwitch");
 				status.WebMode = _ctx.StringValue("DescribePortAutoCcStatus.PortAutoCcStatus["+ i +"].WebMode");
-				status._Switch = _ctx.StringValue("DescribePortAutoCcStatus.PortAutoCcStatus["+ i +"].Switch");
 
 				describePortAutoCcStatusResponse_portAutoCcStatus.Add(status);
 			}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeL7RsPolicyResponse describeL7RsPolicyResponse = new DescribeL7RsPolicyResponse();
 
 			describeL7RsPolicyResponse.HttpResponse = _ctx.HttpResponse;
-			describeL7RsPolicyResponse.RequestId = _ctx.StringValue("DescribeL7RsPolicy.RequestId");
 			describeL7RsPolicyResponse.ProxyMode = _ctx.StringValue("DescribeL7RsPolicy.ProxyMode");
+			describeL7RsPolicyResponse.RequestId = _ctx.StringValue("DescribeL7RsPolicy.RequestId");
 
 			List<DescribeL7RsPolicyResponse.DescribeL7RsPolicy_AttributeItem> describeL7RsPolicyResponse_attributes = new List<DescribeL7RsPolicyResponse.DescribeL7RsPolicy_AttributeItem>();
 			for (int i = 0; i < _ctx.Length("DescribeL7RsPolicy.Attributes.Length"); i++) {

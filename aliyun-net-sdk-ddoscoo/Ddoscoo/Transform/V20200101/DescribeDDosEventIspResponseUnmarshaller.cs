@@ -36,8 +36,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribeDDosEventIspResponse.DescribeDDosEventIsp_EventIsp> describeDDosEventIspResponse_isps = new List<DescribeDDosEventIspResponse.DescribeDDosEventIsp_EventIsp>();
 			for (int i = 0; i < _ctx.Length("DescribeDDosEventIsp.Isps.Length"); i++) {
 				DescribeDDosEventIspResponse.DescribeDDosEventIsp_EventIsp eventIsp = new DescribeDDosEventIspResponse.DescribeDDosEventIsp_EventIsp();
-				eventIsp.Isp = _ctx.StringValue("DescribeDDosEventIsp.Isps["+ i +"].Isp");
 				eventIsp.InPkts = _ctx.LongValue("DescribeDDosEventIsp.Isps["+ i +"].InPkts");
+				eventIsp.Isp = _ctx.StringValue("DescribeDDosEventIsp.Isps["+ i +"].Isp");
 
 				describeDDosEventIspResponse_isps.Add(eventIsp);
 			}

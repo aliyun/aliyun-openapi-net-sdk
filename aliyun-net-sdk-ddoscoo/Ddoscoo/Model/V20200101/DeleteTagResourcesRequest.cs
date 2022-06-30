@@ -100,10 +100,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set
 			{
 				tagKeys = value;
-				for (int i = 0; i < tagKeys.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TagKey." + (i + 1) , tagKeys[i]);
-				}
 			}
 		}
 
@@ -117,10 +113,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set
 			{
 				resourceIdss = value;
-				for (int i = 0; i < resourceIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ResourceIds." + (i + 1) , resourceIdss[i]);
-				}
 			}
 		}
 

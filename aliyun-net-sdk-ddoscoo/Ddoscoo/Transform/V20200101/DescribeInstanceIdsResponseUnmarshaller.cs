@@ -36,11 +36,11 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribeInstanceIdsResponse.DescribeInstanceIds_Instance> describeInstanceIdsResponse_instanceIds = new List<DescribeInstanceIdsResponse.DescribeInstanceIds_Instance>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceIds.InstanceIds.Length"); i++) {
 				DescribeInstanceIdsResponse.DescribeInstanceIds_Instance instance = new DescribeInstanceIdsResponse.DescribeInstanceIds_Instance();
-				instance.InstanceId = _ctx.StringValue("DescribeInstanceIds.InstanceIds["+ i +"].InstanceId");
-				instance.Remark = _ctx.StringValue("DescribeInstanceIds.InstanceIds["+ i +"].Remark");
-				instance.Edition = _ctx.IntegerValue("DescribeInstanceIds.InstanceIds["+ i +"].Edition");
-				instance.IpVersion = _ctx.StringValue("DescribeInstanceIds.InstanceIds["+ i +"].IpVersion");
 				instance.IpMode = _ctx.StringValue("DescribeInstanceIds.InstanceIds["+ i +"].IpMode");
+				instance.Edition = _ctx.IntegerValue("DescribeInstanceIds.InstanceIds["+ i +"].Edition");
+				instance.InstanceId = _ctx.StringValue("DescribeInstanceIds.InstanceIds["+ i +"].InstanceId");
+				instance.IpVersion = _ctx.StringValue("DescribeInstanceIds.InstanceIds["+ i +"].IpVersion");
+				instance.Remark = _ctx.StringValue("DescribeInstanceIds.InstanceIds["+ i +"].Remark");
 
 				describeInstanceIdsResponse_instanceIds.Add(instance);
 			}

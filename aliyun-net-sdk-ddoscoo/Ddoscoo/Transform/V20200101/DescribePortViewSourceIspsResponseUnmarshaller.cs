@@ -36,8 +36,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribePortViewSourceIspsResponse.DescribePortViewSourceIsps_Isp> describePortViewSourceIspsResponse_isps = new List<DescribePortViewSourceIspsResponse.DescribePortViewSourceIsps_Isp>();
 			for (int i = 0; i < _ctx.Length("DescribePortViewSourceIsps.Isps.Length"); i++) {
 				DescribePortViewSourceIspsResponse.DescribePortViewSourceIsps_Isp isp = new DescribePortViewSourceIspsResponse.DescribePortViewSourceIsps_Isp();
-				isp.IspId = _ctx.StringValue("DescribePortViewSourceIsps.Isps["+ i +"].IspId");
 				isp.Count = _ctx.LongValue("DescribePortViewSourceIsps.Isps["+ i +"].Count");
+				isp.IspId = _ctx.StringValue("DescribePortViewSourceIsps.Isps["+ i +"].IspId");
 
 				describePortViewSourceIspsResponse_isps.Add(isp);
 			}

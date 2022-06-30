@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeDDosEventAttackType_EventAttackType
 		{
 
-			private string attackType;
-
 			private long? inPkts;
 
-			public string AttackType
-			{
-				get
-				{
-					return attackType;
-				}
-				set	
-				{
-					attackType = value;
-				}
-			}
+			private string attackType;
 
 			public long? InPkts
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					inPkts = value;
+				}
+			}
+
+			public string AttackType
+			{
+				get
+				{
+					return attackType;
+				}
+				set	
+				{
+					attackType = value;
 				}
 			}
 		}
