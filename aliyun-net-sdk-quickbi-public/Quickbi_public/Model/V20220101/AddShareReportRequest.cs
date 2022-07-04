@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class AddShareReportRequest : RpcAcsRequest<AddShareReportResponse>
     {
         public AddShareReportRequest()
-            : base("quickbi-public", "2022-01-01", "AddShareReport", "quick", "openAPI")
+            : base("quickbi-public", "2022-01-01", "AddShareReport", "quickbi", "openAPI")
         {
 			Method = MethodType.POST;
         }

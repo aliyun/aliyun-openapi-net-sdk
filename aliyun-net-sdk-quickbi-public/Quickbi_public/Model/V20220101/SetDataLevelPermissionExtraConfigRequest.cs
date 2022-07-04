@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class SetDataLevelPermissionExtraConfigRequest : RpcAcsRequest<SetDataLevelPermissionExtraConfigResponse>
     {
         public SetDataLevelPermissionExtraConfigRequest()
-            : base("quickbi-public", "2022-01-01", "SetDataLevelPermissionExtraConfig", "quick", "openAPI")
+            : base("quickbi-public", "2022-01-01", "SetDataLevelPermissionExtraConfig", "quickbi", "openAPI")
         {
 			Method = MethodType.POST;
         }

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class UpdateEmbeddedStatusRequest : RpcAcsRequest<UpdateEmbeddedStatusResponse>
     {
         public UpdateEmbeddedStatusRequest()
-            : base("quickbi-public", "2022-01-01", "UpdateEmbeddedStatus", "quick", "openAPI")
+            : base("quickbi-public", "2022-01-01", "UpdateEmbeddedStatus", "quickbi", "openAPI")
         {
 			Method = MethodType.POST;
         }

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class ListUserGroupsByUserIdRequest : RpcAcsRequest<ListUserGroupsByUserIdResponse>
     {
         public ListUserGroupsByUserIdRequest()
-            : base("quickbi-public", "2022-01-01", "ListUserGroupsByUserId", "quick", "openAPI")
+            : base("quickbi-public", "2022-01-01", "ListUserGroupsByUserId", "quickbi", "openAPI")
         {
 			Method = MethodType.POST;
         }

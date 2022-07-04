@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class QueryUserGroupListByParentIdRequest : RpcAcsRequest<QueryUserGroupListByParentIdResponse>
     {
         public QueryUserGroupListByParentIdRequest()
-            : base("quickbi-public", "2022-01-01", "QueryUserGroupListByParentId", "quick", "openAPI")
+            : base("quickbi-public", "2022-01-01", "QueryUserGroupListByParentId", "quickbi", "openAPI")
         {
 			Method = MethodType.POST;
         }

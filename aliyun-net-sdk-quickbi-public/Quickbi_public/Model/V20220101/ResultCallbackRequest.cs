@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class ResultCallbackRequest : RpcAcsRequest<ResultCallbackResponse>
     {
         public ResultCallbackRequest()
-            : base("quickbi-public", "2022-01-01", "ResultCallback", "quick", "openAPI")
+            : base("quickbi-public", "2022-01-01", "ResultCallback", "quickbi", "openAPI")
         {
 			Method = MethodType.POST;
         }

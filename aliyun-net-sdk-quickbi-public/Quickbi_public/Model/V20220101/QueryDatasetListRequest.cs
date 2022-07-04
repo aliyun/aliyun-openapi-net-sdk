@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class QueryDatasetListRequest : RpcAcsRequest<QueryDatasetListResponse>
     {
         public QueryDatasetListRequest()
-            : base("quickbi-public", "2022-01-01", "QueryDatasetList", "quick", "openAPI")
+            : base("quickbi-public", "2022-01-01", "QueryDatasetList", "quickbi", "openAPI")
         {
 			Method = MethodType.POST;
         }

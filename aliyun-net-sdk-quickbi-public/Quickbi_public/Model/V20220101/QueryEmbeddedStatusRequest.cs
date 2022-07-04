@@ -27,41 +27,26 @@ using Aliyun.Acs.quickbi_public.Transform.V20220101;
 
 namespace Aliyun.Acs.quickbi_public.Model.V20220101
 {
-    public class DeleteUserGroupMemberRequest : RpcAcsRequest<DeleteUserGroupMemberResponse>
+    public class QueryEmbeddedStatusRequest : RpcAcsRequest<QueryEmbeddedStatusResponse>
     {
-        public DeleteUserGroupMemberRequest()
-            : base("quickbi-public", "2022-01-01", "DeleteUserGroupMember", "quickbi", "openAPI")
+        public QueryEmbeddedStatusRequest()
+            : base("quickbi-public", "2022-01-01", "QueryEmbeddedStatus", "quickbi", "openAPI")
         {
 			Method = MethodType.POST;
         }
 
-		private string userGroupId;
+		private string worksId;
 
-		private string userId;
-
-		public string UserGroupId
+		public string WorksId
 		{
 			get
 			{
-				return userGroupId;
+				return worksId;
 			}
 			set	
 			{
-				userGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "UserGroupId", value);
-			}
-		}
-
-		public string UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
+				worksId = value;
+				DictionaryUtil.Add(QueryParameters, "WorksId", value);
 			}
 		}
 
@@ -70,9 +55,9 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
 			return false;
 		}
 
-        public override DeleteUserGroupMemberResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryEmbeddedStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteUserGroupMemberResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryEmbeddedStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class QueryUserRoleInfoInWorkspaceRequest : RpcAcsRequest<QueryUserRoleInfoInWorkspaceResponse>
     {
         public QueryUserRoleInfoInWorkspaceRequest()
-            : base("quickbi-public", "2022-01-01", "QueryUserRoleInfoInWorkspace", "quick", "openAPI")
+            : base("quickbi-public", "2022-01-01", "QueryUserRoleInfoInWorkspace", "quickbi", "openAPI")
         {
 			Method = MethodType.POST;
         }

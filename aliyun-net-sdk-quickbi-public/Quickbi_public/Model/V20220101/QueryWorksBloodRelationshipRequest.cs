@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class QueryWorksBloodRelationshipRequest : RpcAcsRequest<QueryWorksBloodRelationshipResponse>
     {
         public QueryWorksBloodRelationshipRequest()
-            : base("quickbi-public", "2022-01-01", "QueryWorksBloodRelationship", "quick", "openAPI")
+            : base("quickbi-public", "2022-01-01", "QueryWorksBloodRelationship", "quickbi", "openAPI")
         {
 			Method = MethodType.POST;
         }

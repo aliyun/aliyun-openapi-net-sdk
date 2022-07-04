@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class CancelReportShareRequest : RpcAcsRequest<CancelReportShareResponse>
     {
         public CancelReportShareRequest()
-            : base("quickbi-public", "2022-01-01", "CancelReportShare", "quick", "openAPI")
+            : base("quickbi-public", "2022-01-01", "CancelReportShare", "quickbi", "openAPI")
         {
 			Method = MethodType.POST;
         }

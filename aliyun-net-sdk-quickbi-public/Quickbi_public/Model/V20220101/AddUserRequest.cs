@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class AddUserRequest : RpcAcsRequest<AddUserResponse>
     {
         public AddUserRequest()
-            : base("quickbi-public", "2022-01-01", "AddUser", "quick", "openAPI")
+            : base("quickbi-public", "2022-01-01", "AddUser", "quickbi", "openAPI")
         {
 			Method = MethodType.POST;
         }

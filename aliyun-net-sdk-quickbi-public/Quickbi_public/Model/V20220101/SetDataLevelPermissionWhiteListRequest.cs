@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class SetDataLevelPermissionWhiteListRequest : RpcAcsRequest<SetDataLevelPermissionWhiteListResponse>
     {
         public SetDataLevelPermissionWhiteListRequest()
-            : base("quickbi-public", "2022-01-01", "SetDataLevelPermissionWhiteList", "quick", "openAPI")
+            : base("quickbi-public", "2022-01-01", "SetDataLevelPermissionWhiteList", "quickbi", "openAPI")
         {
 			Method = MethodType.POST;
         }

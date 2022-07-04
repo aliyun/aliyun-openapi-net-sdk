@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class ListCubeDataLevelPermissionConfigRequest : RpcAcsRequest<ListCubeDataLevelPermissionConfigResponse>
     {
         public ListCubeDataLevelPermissionConfigRequest()
-            : base("quickbi-public", "2022-01-01", "ListCubeDataLevelPermissionConfig", "quick", "openAPI")
+            : base("quickbi-public", "2022-01-01", "ListCubeDataLevelPermissionConfig", "quickbi", "openAPI")
         {
 			Method = MethodType.POST;
         }

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class DelayTicketExpireTimeRequest : RpcAcsRequest<DelayTicketExpireTimeResponse>
     {
         public DelayTicketExpireTimeRequest()
-            : base("quickbi-public", "2022-01-01", "DelayTicketExpireTime", "quick", "openAPI")
+            : base("quickbi-public", "2022-01-01", "DelayTicketExpireTime", "quickbi", "openAPI")
         {
 			Method = MethodType.POST;
         }

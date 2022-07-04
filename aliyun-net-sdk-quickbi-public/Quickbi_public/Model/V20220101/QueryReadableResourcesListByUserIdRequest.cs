@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class QueryReadableResourcesListByUserIdRequest : RpcAcsRequest<QueryReadableResourcesListByUserIdResponse>
     {
         public QueryReadableResourcesListByUserIdRequest()
-            : base("quickbi-public", "2022-01-01", "QueryReadableResourcesListByUserId", "quick", "openAPI")
+            : base("quickbi-public", "2022-01-01", "QueryReadableResourcesListByUserId", "quickbi", "openAPI")
         {
 			Method = MethodType.POST;
         }

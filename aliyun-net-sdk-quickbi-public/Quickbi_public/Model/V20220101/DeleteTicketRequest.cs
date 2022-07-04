@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class DeleteTicketRequest : RpcAcsRequest<DeleteTicketResponse>
     {
         public DeleteTicketRequest()
-            : base("quickbi-public", "2022-01-01", "DeleteTicket", "quick", "openAPI")
+            : base("quickbi-public", "2022-01-01", "DeleteTicket", "quickbi", "openAPI")
         {
 			Method = MethodType.POST;
         }

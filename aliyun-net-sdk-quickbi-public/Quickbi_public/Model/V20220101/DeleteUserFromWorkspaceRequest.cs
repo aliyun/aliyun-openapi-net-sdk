@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class DeleteUserFromWorkspaceRequest : RpcAcsRequest<DeleteUserFromWorkspaceResponse>
     {
         public DeleteUserFromWorkspaceRequest()
-            : base("quickbi-public", "2022-01-01", "DeleteUserFromWorkspace", "quick", "openAPI")
+            : base("quickbi-public", "2022-01-01", "DeleteUserFromWorkspace", "quickbi", "openAPI")
         {
 			Method = MethodType.POST;
         }

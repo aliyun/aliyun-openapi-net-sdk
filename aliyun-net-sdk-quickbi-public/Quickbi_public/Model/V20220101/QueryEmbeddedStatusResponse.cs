@@ -17,47 +17,54 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.quickbi_public.Transform;
-using Aliyun.Acs.quickbi_public.Transform.V20220101;
 
 namespace Aliyun.Acs.quickbi_public.Model.V20220101
 {
-    public class QueryDatasetInfoRequest : RpcAcsRequest<QueryDatasetInfoResponse>
-    {
-        public QueryDatasetInfoRequest()
-            : base("quickbi-public", "2022-01-01", "QueryDatasetInfo", "quickbi", "openAPI")
-        {
-			Method = MethodType.POST;
-        }
+	public class QueryEmbeddedStatusResponse : AcsResponse
+	{
 
-		private string datasetId;
+		private string requestId;
 
-		public string DatasetId
+		private bool? result;
+
+		private bool? success;
+
+		public string RequestId
 		{
 			get
 			{
-				return datasetId;
+				return requestId;
 			}
 			set	
 			{
-				datasetId = value;
-				DictionaryUtil.Add(QueryParameters, "DatasetId", value);
+				requestId = value;
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public bool? Result
 		{
-			return false;
+			get
+			{
+				return result;
+			}
+			set	
+			{
+				result = value;
+			}
 		}
 
-        public override QueryDatasetInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
-        {
-            return QueryDatasetInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
-        }
-    }
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+	}
 }

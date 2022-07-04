@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class AddUserGroupMemberRequest : RpcAcsRequest<AddUserGroupMemberResponse>
     {
         public AddUserGroupMemberRequest()
-            : base("quickbi-public", "2022-01-01", "AddUserGroupMember", "quick", "openAPI")
+            : base("quickbi-public", "2022-01-01", "AddUserGroupMember", "quickbi", "openAPI")
         {
 			Method = MethodType.POST;
         }

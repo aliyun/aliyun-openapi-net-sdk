@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class QueryUserListRequest : RpcAcsRequest<QueryUserListResponse>
     {
         public QueryUserListRequest()
-            : base("quickbi-public", "2022-01-01", "QueryUserList", "quick", "openAPI")
+            : base("quickbi-public", "2022-01-01", "QueryUserList", "quickbi", "openAPI")
         {
         }
 

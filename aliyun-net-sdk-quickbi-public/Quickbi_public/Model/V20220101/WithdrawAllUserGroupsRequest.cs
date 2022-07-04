@@ -30,7 +30,7 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class WithdrawAllUserGroupsRequest : RpcAcsRequest<WithdrawAllUserGroupsResponse>
     {
         public WithdrawAllUserGroupsRequest()
-            : base("quickbi-public", "2022-01-01", "WithdrawAllUserGroups", "quick", "openAPI")
+            : base("quickbi-public", "2022-01-01", "WithdrawAllUserGroups", "quickbi", "openAPI")
         {
 			Method = MethodType.POST;
         }
