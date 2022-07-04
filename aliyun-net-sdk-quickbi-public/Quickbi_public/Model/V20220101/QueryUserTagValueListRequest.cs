@@ -30,13 +30,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class QueryUserTagValueListRequest : RpcAcsRequest<QueryUserTagValueListResponse>
     {
         public QueryUserTagValueListRequest()
-            : base("quickbi-public", "2022-01-01", "QueryUserTagValueList", "quickbi", "openAPI")
+            : base("quickbi-public", "2022-01-01", "QueryUserTagValueList", "quick", "openAPI")
         {
-            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
-            {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.quickbi_public.Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.quickbi_public.Endpoint.endpointRegionalType, null);
-            }
         }
 
 		private string userId;

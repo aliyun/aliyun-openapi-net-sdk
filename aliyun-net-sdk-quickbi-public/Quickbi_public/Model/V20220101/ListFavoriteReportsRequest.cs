@@ -30,13 +30,8 @@ namespace Aliyun.Acs.quickbi_public.Model.V20220101
     public class ListFavoriteReportsRequest : RpcAcsRequest<ListFavoriteReportsResponse>
     {
         public ListFavoriteReportsRequest()
-            : base("quickbi-public", "2022-01-01", "ListFavoriteReports", "quickbi", "openAPI")
+            : base("quickbi-public", "2022-01-01", "ListFavoriteReports", "quick", "openAPI")
         {
-            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
-            {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.quickbi_public.Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.quickbi_public.Endpoint.endpointRegionalType, null);
-            }
 			Method = MethodType.POST;
         }
 
