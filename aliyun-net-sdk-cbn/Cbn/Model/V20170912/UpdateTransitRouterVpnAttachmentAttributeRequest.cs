@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private string transitRouterAttachmentName;
 
+		private bool? autoPublishRouteEnabled;
+
 		private bool? dryRun;
 
 		private string resourceOwnerAccount;
@@ -95,6 +97,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				transitRouterAttachmentName = value;
 				DictionaryUtil.Add(QueryParameters, "TransitRouterAttachmentName", value);
+			}
+		}
+
+		public bool? AutoPublishRouteEnabled
+		{
+			get
+			{
+				return autoPublishRouteEnabled;
+			}
+			set	
+			{
+				autoPublishRouteEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPublishRouteEnabled", value.ToString());
 			}
 		}
 
