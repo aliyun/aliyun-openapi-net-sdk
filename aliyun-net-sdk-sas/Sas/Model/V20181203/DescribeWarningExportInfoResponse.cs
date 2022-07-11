@@ -22,12 +22,50 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
 {
-	public class DescribeAssetSummaryResponse : AcsResponse
+	public class DescribeWarningExportInfoResponse : AcsResponse
 	{
+
+		private string link;
+
+		private int? progress;
 
 		private string requestId;
 
-		private DescribeAssetSummary_AssetsSummary assetsSummary;
+		private int? currentCount;
+
+		private string message;
+
+		private string fileName;
+
+		private int? totalCount;
+
+		private string exportStatus;
+
+		private long? id;
+
+		public string Link
+		{
+			get
+			{
+				return link;
+			}
+			set	
+			{
+				link = value;
+			}
+		}
+
+		public int? Progress
+		{
+			get
+			{
+				return progress;
+			}
+			set	
+			{
+				progress = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -41,61 +79,75 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public DescribeAssetSummary_AssetsSummary AssetsSummary
+		public int? CurrentCount
 		{
 			get
 			{
-				return assetsSummary;
+				return currentCount;
 			}
 			set	
 			{
-				assetsSummary = value;
+				currentCount = value;
 			}
 		}
 
-		public class DescribeAssetSummary_AssetsSummary
+		public string Message
 		{
-
-			private int? totalCoreNum;
-
-			private int? totalAssetAllRegion;
-
-			private int? totalCoreAllRegion;
-
-			public int? TotalCoreNum
+			get
 			{
-				get
-				{
-					return totalCoreNum;
-				}
-				set	
-				{
-					totalCoreNum = value;
-				}
+				return message;
 			}
-
-			public int? TotalAssetAllRegion
+			set	
 			{
-				get
-				{
-					return totalAssetAllRegion;
-				}
-				set	
-				{
-					totalAssetAllRegion = value;
-				}
+				message = value;
 			}
+		}
 
-			public int? TotalCoreAllRegion
+		public string FileName
+		{
+			get
 			{
-				get
-				{
-					return totalCoreAllRegion;
-				}
-				set	
-				{
-					totalCoreAllRegion = value;
-				}
+				return fileName;
+			}
+			set	
+			{
+				fileName = value;
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public string ExportStatus
+		{
+			get
+			{
+				return exportStatus;
+			}
+			set	
+			{
+				exportStatus = value;
+			}
+		}
+
+		public long? Id
+		{
+			get
+			{
+				return id;
+			}
+			set	
+			{
+				id = value;
 			}
 		}
 	}

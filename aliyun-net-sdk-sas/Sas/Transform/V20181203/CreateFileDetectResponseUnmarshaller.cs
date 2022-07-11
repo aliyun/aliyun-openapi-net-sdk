@@ -24,22 +24,17 @@ using Aliyun.Acs.Sas.Model.V20181203;
 
 namespace Aliyun.Acs.Sas.Transform.V20181203
 {
-    public class DescribeAssetSummaryResponseUnmarshaller
+    public class CreateFileDetectResponseUnmarshaller
     {
-        public static DescribeAssetSummaryResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateFileDetectResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DescribeAssetSummaryResponse describeAssetSummaryResponse = new DescribeAssetSummaryResponse();
+			CreateFileDetectResponse createFileDetectResponse = new CreateFileDetectResponse();
 
-			describeAssetSummaryResponse.HttpResponse = _ctx.HttpResponse;
-			describeAssetSummaryResponse.RequestId = _ctx.StringValue("DescribeAssetSummary.RequestId");
-
-			DescribeAssetSummaryResponse.DescribeAssetSummary_AssetsSummary assetsSummary = new DescribeAssetSummaryResponse.DescribeAssetSummary_AssetsSummary();
-			assetsSummary.TotalCoreNum = _ctx.IntegerValue("DescribeAssetSummary.AssetsSummary.TotalCoreNum");
-			assetsSummary.TotalAssetAllRegion = _ctx.IntegerValue("DescribeAssetSummary.AssetsSummary.TotalAssetAllRegion");
-			assetsSummary.TotalCoreAllRegion = _ctx.IntegerValue("DescribeAssetSummary.AssetsSummary.TotalCoreAllRegion");
-			describeAssetSummaryResponse.AssetsSummary = assetsSummary;
+			createFileDetectResponse.HttpResponse = _ctx.HttpResponse;
+			createFileDetectResponse.RequestId = _ctx.StringValue("CreateFileDetect.RequestId");
+			createFileDetectResponse.HashKey = _ctx.StringValue("CreateFileDetect.HashKey");
         
-			return describeAssetSummaryResponse;
+			return createFileDetectResponse;
         }
     }
 }

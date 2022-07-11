@@ -89,6 +89,10 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private int? userDefinedAlarms;
 
+		private long? openTime;
+
+		private bool? isNewContainerVersion;
+
 		public int? MVAuthCount
 		{
 			get
@@ -470,6 +474,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				userDefinedAlarms = value;
+			}
+		}
+
+		public long? OpenTime
+		{
+			get
+			{
+				return openTime;
+			}
+			set	
+			{
+				openTime = value;
+			}
+		}
+
+		public bool? IsNewContainerVersion
+		{
+			get
+			{
+				return isNewContainerVersion;
+			}
+			set	
+			{
+				isNewContainerVersion = value;
 			}
 		}
 	}

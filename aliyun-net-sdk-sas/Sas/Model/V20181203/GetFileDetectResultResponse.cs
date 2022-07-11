@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
 {
-	public class DescribeAssetSummaryResponse : AcsResponse
+	public class GetFileDetectResultResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private DescribeAssetSummary_AssetsSummary assetsSummary;
+		private List<GetFileDetectResult_Result> resultList;
 
 		public string RequestId
 		{
@@ -41,60 +41,78 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public DescribeAssetSummary_AssetsSummary AssetsSummary
+		public List<GetFileDetectResult_Result> ResultList
 		{
 			get
 			{
-				return assetsSummary;
+				return resultList;
 			}
 			set	
 			{
-				assetsSummary = value;
+				resultList = value;
 			}
 		}
 
-		public class DescribeAssetSummary_AssetsSummary
+		public class GetFileDetectResult_Result
 		{
 
-			private int? totalCoreNum;
+			private int? result;
 
-			private int? totalAssetAllRegion;
+			private string hashKey;
 
-			private int? totalCoreAllRegion;
+			private GetFileDetectResult_Ext ext;
 
-			public int? TotalCoreNum
+			public int? Result
 			{
 				get
 				{
-					return totalCoreNum;
+					return result;
 				}
 				set	
 				{
-					totalCoreNum = value;
+					result = value;
 				}
 			}
 
-			public int? TotalAssetAllRegion
+			public string HashKey
 			{
 				get
 				{
-					return totalAssetAllRegion;
+					return hashKey;
 				}
 				set	
 				{
-					totalAssetAllRegion = value;
+					hashKey = value;
 				}
 			}
 
-			public int? TotalCoreAllRegion
+			public GetFileDetectResult_Ext Ext
 			{
 				get
 				{
-					return totalCoreAllRegion;
+					return ext;
 				}
 				set	
 				{
-					totalCoreAllRegion = value;
+					ext = value;
+				}
+			}
+
+			public class GetFileDetectResult_Ext
+			{
+
+				private string virusName;
+
+				public string VirusName
+				{
+					get
+					{
+						return virusName;
+					}
+					set	
+					{
+						virusName = value;
+					}
 				}
 			}
 		}

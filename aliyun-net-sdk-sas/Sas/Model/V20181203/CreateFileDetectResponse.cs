@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
 {
-	public class DescribeAssetSummaryResponse : AcsResponse
+	public class CreateFileDetectResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private DescribeAssetSummary_AssetsSummary assetsSummary;
+		private string hashKey;
 
 		public string RequestId
 		{
@@ -41,61 +41,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public DescribeAssetSummary_AssetsSummary AssetsSummary
+		public string HashKey
 		{
 			get
 			{
-				return assetsSummary;
+				return hashKey;
 			}
 			set	
 			{
-				assetsSummary = value;
-			}
-		}
-
-		public class DescribeAssetSummary_AssetsSummary
-		{
-
-			private int? totalCoreNum;
-
-			private int? totalAssetAllRegion;
-
-			private int? totalCoreAllRegion;
-
-			public int? TotalCoreNum
-			{
-				get
-				{
-					return totalCoreNum;
-				}
-				set	
-				{
-					totalCoreNum = value;
-				}
-			}
-
-			public int? TotalAssetAllRegion
-			{
-				get
-				{
-					return totalAssetAllRegion;
-				}
-				set	
-				{
-					totalAssetAllRegion = value;
-				}
-			}
-
-			public int? TotalCoreAllRegion
-			{
-				get
-				{
-					return totalCoreAllRegion;
-				}
-				set	
-				{
-					totalCoreAllRegion = value;
-				}
+				hashKey = value;
 			}
 		}
 	}
