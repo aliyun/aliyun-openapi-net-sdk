@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private bool? removeFromDeploymentSet;
+
 		private int? deploymentSetGroupNo;
 
 		private string dedicatedHostClusterId;
@@ -80,6 +82,20 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "RemoveFromDeploymentSet")]
+		public bool? RemoveFromDeploymentSet
+		{
+			get
+			{
+				return removeFromDeploymentSet;
+			}
+			set	
+			{
+				removeFromDeploymentSet = value;
+				DictionaryUtil.Add(QueryParameters, "RemoveFromDeploymentSet", value.ToString());
 			}
 		}
 

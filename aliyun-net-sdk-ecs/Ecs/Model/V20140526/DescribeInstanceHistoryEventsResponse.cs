@@ -329,6 +329,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string onlineRepairPolicy;
 
+				private string rack;
+
 				private List<DescribeInstanceHistoryEvents_InactiveDisk> inactiveDisks;
 
 				private List<string> migrationOptions;
@@ -390,6 +392,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						onlineRepairPolicy = value;
+					}
+				}
+
+				public string Rack
+				{
+					get
+					{
+						return rack;
+					}
+					set	
+					{
+						rack = value;
 					}
 				}
 

@@ -68,6 +68,26 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				image.LoginAsNonRootSupported = _ctx.BooleanValue("DescribeImages.Images["+ i +"].LoginAsNonRootSupported");
 				image.SupplierName = _ctx.StringValue("DescribeImages.Images["+ i +"].SupplierName");
 
+				DescribeImagesResponse.DescribeImages_Image.DescribeImages_DetectionOptions detectionOptions = new DescribeImagesResponse.DescribeImages_Image.DescribeImages_DetectionOptions();
+				detectionOptions.Status = _ctx.StringValue("DescribeImages.Images["+ i +"].DetectionOptions.Status");
+
+				List<DescribeImagesResponse.DescribeImages_Image.DescribeImages_DetectionOptions.DescribeImages_Item> detectionOptions_items = new List<DescribeImagesResponse.DescribeImages_Image.DescribeImages_DetectionOptions.DescribeImages_Item>();
+				for (int j = 0; j < _ctx.Length("DescribeImages.Images["+ i +"].DetectionOptions.Items.Length"); j++) {
+					DescribeImagesResponse.DescribeImages_Image.DescribeImages_DetectionOptions.DescribeImages_Item item = new DescribeImagesResponse.DescribeImages_Image.DescribeImages_DetectionOptions.DescribeImages_Item();
+					item.Name = _ctx.StringValue("DescribeImages.Images["+ i +"].DetectionOptions.Items["+ j +"].Name");
+					item._Value = _ctx.StringValue("DescribeImages.Images["+ i +"].DetectionOptions.Items["+ j +"].Value");
+					item.RiskLevel = _ctx.StringValue("DescribeImages.Images["+ i +"].DetectionOptions.Items["+ j +"].RiskLevel");
+					item.RiskCode = _ctx.StringValue("DescribeImages.Images["+ i +"].DetectionOptions.Items["+ j +"].RiskCode");
+
+					detectionOptions_items.Add(item);
+				}
+				detectionOptions.Items = detectionOptions_items;
+				image.DetectionOptions = detectionOptions;
+
+				DescribeImagesResponse.DescribeImages_Image.DescribeImages_Features features = new DescribeImagesResponse.DescribeImages_Image.DescribeImages_Features();
+				features.NvmeSupport = _ctx.StringValue("DescribeImages.Images["+ i +"].Features.NvmeSupport");
+				image.Features = features;
+
 				List<DescribeImagesResponse.DescribeImages_Image.DescribeImages_DiskDeviceMapping> image_diskDeviceMappings = new List<DescribeImagesResponse.DescribeImages_Image.DescribeImages_DiskDeviceMapping>();
 				for (int j = 0; j < _ctx.Length("DescribeImages.Images["+ i +"].DiskDeviceMappings.Length"); j++) {
 					DescribeImagesResponse.DescribeImages_Image.DescribeImages_DiskDeviceMapping diskDeviceMapping = new DescribeImagesResponse.DescribeImages_Image.DescribeImages_DiskDeviceMapping();

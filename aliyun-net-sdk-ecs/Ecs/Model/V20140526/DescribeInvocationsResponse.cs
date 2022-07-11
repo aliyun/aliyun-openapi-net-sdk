@@ -120,9 +120,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string commandName;
 
+			private string commandDescription;
+
 			private string invokeId;
 
 			private string username;
+
+			private string workingDir;
+
+			private long? timeout;
 
 			private List<DescribeInvocations_InvokeInstance> invokeInstances;
 
@@ -258,6 +264,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string CommandDescription
+			{
+				get
+				{
+					return commandDescription;
+				}
+				set	
+				{
+					commandDescription = value;
+				}
+			}
+
 			public string InvokeId
 			{
 				get
@@ -279,6 +297,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					username = value;
+				}
+			}
+
+			public string WorkingDir
+			{
+				get
+				{
+					return workingDir;
+				}
+				set	
+				{
+					workingDir = value;
+				}
+			}
+
+			public long? Timeout
+			{
+				get
+				{
+					return timeout;
+				}
+				set	
+				{
+					timeout = value;
 				}
 			}
 

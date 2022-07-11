@@ -328,15 +328,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				systemDisk_ = value;
-				if(SystemDisk_ != null)
+				if(systemDisk_ != null)
 				{
 
-					DictionaryUtil.Add(QueryParameters,"SystemDisk.StorageClusterId", SystemDisk_.StorageClusterId);
-					DictionaryUtil.Add(QueryParameters,"SystemDisk.ProvisionedIops", SystemDisk_.ProvisionedIops);
-					DictionaryUtil.Add(QueryParameters,"SystemDisk.BurstingEnabled", SystemDisk_.BurstingEnabled);
-					DictionaryUtil.Add(QueryParameters,"SystemDisk.Encrypted", SystemDisk_.Encrypted);
-					DictionaryUtil.Add(QueryParameters,"SystemDisk.KMSKeyId", SystemDisk_.KMSKeyId);
-					DictionaryUtil.Add(QueryParameters,"SystemDisk.EncryptAlgorithm", SystemDisk_.EncryptAlgorithm);
+					DictionaryUtil.Add(QueryParameters,"SystemDisk.StorageClusterId", systemDisk_.StorageClusterId);
+					DictionaryUtil.Add(QueryParameters,"SystemDisk.ProvisionedIops", systemDisk_.ProvisionedIops);
+					DictionaryUtil.Add(QueryParameters,"SystemDisk.BurstingEnabled", systemDisk_.BurstingEnabled);
+					DictionaryUtil.Add(QueryParameters,"SystemDisk.Encrypted", systemDisk_.Encrypted);
+					DictionaryUtil.Add(QueryParameters,"SystemDisk.KMSKeyId", systemDisk_.KMSKeyId);
+					DictionaryUtil.Add(QueryParameters,"SystemDisk.EncryptAlgorithm", systemDisk_.EncryptAlgorithm);
 				}
 			}
 		}

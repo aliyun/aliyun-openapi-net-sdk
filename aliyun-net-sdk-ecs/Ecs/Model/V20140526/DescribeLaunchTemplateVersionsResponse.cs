@@ -279,6 +279,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private int? systemDiskIops;
 
+				private string systemDiskAutoSnapshotPolicyId;
+
 				private int? internetMaxBandwidthOut;
 
 				private int? internetMaxBandwidthIn;
@@ -302,6 +304,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				private string zoneId;
 
 				private int? ipv6AddressCount;
+
+				private long? systemDiskProvisionedIops;
+
+				private bool? systemDiskBurstingEnabled;
 
 				private List<DescribeLaunchTemplateVersions_DataDisk> dataDisks;
 
@@ -623,6 +629,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
+				public string SystemDiskAutoSnapshotPolicyId
+				{
+					get
+					{
+						return systemDiskAutoSnapshotPolicyId;
+					}
+					set	
+					{
+						systemDiskAutoSnapshotPolicyId = value;
+					}
+				}
+
 				public int? InternetMaxBandwidthOut
 				{
 					get
@@ -767,6 +785,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
+				public long? SystemDiskProvisionedIops
+				{
+					get
+					{
+						return systemDiskProvisionedIops;
+					}
+					set	
+					{
+						systemDiskProvisionedIops = value;
+					}
+				}
+
+				public bool? SystemDiskBurstingEnabled
+				{
+					get
+					{
+						return systemDiskBurstingEnabled;
+					}
+					set	
+					{
+						systemDiskBurstingEnabled = value;
+					}
+				}
+
 				public List<DescribeLaunchTemplateVersions_DataDisk> DataDisks
 				{
 					get
@@ -835,6 +877,12 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					private bool? deleteWithInstance;
 
 					private string encrypted;
+
+					private long? provisionedIops;
+
+					private bool? burstingEnabled;
+
+					private string autoSnapshotPolicyId;
 
 					public string PerformanceLevel
 					{
@@ -943,6 +991,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 							encrypted = value;
 						}
 					}
+
+					public long? ProvisionedIops
+					{
+						get
+						{
+							return provisionedIops;
+						}
+						set	
+						{
+							provisionedIops = value;
+						}
+					}
+
+					public bool? BurstingEnabled
+					{
+						get
+						{
+							return burstingEnabled;
+						}
+						set	
+						{
+							burstingEnabled = value;
+						}
+					}
+
+					public string AutoSnapshotPolicyId
+					{
+						get
+						{
+							return autoSnapshotPolicyId;
+						}
+						set	
+						{
+							autoSnapshotPolicyId = value;
+						}
+					}
 				}
 
 				public class DescribeLaunchTemplateVersions_NetworkInterface
@@ -957,6 +1041,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					private string primaryIpAddress;
 
 					private string securityGroupId;
+
+					private string instanceType;
+
+					private string networkInterfaceTrafficMode;
 
 					private List<string> securityGroupIds1;
 
@@ -1017,6 +1105,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						set	
 						{
 							securityGroupId = value;
+						}
+					}
+
+					public string InstanceType
+					{
+						get
+						{
+							return instanceType;
+						}
+						set	
+						{
+							instanceType = value;
+						}
+					}
+
+					public string NetworkInterfaceTrafficMode
+					{
+						get
+						{
+							return networkInterfaceTrafficMode;
+						}
+						set	
+						{
+							networkInterfaceTrafficMode = value;
 						}
 					}
 

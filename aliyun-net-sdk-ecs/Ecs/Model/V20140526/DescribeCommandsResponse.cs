@@ -126,6 +126,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private bool? enableParameter;
 
+			private List<DescribeCommands_ParameterDefinition> parameterDefinitions;
+
 			private List<string> parameterNames;
 
 			public string CreationTime
@@ -296,6 +298,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public List<DescribeCommands_ParameterDefinition> ParameterDefinitions
+			{
+				get
+				{
+					return parameterDefinitions;
+				}
+				set	
+				{
+					parameterDefinitions = value;
+				}
+			}
+
 			public List<string> ParameterNames
 			{
 				get
@@ -305,6 +319,80 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					parameterNames = value;
+				}
+			}
+
+			public class DescribeCommands_ParameterDefinition
+			{
+
+				private bool? required;
+
+				private string description;
+
+				private string defaultValue;
+
+				private string parameterName;
+
+				private List<string> possibleValues;
+
+				public bool? Required
+				{
+					get
+					{
+						return required;
+					}
+					set	
+					{
+						required = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
+				public string DefaultValue
+				{
+					get
+					{
+						return defaultValue;
+					}
+					set	
+					{
+						defaultValue = value;
+					}
+				}
+
+				public string ParameterName
+				{
+					get
+					{
+						return parameterName;
+					}
+					set	
+					{
+						parameterName = value;
+					}
+				}
+
+				public List<string> PossibleValues
+				{
+					get
+					{
+						return possibleValues;
+					}
+					set	
+					{
+						possibleValues = value;
+					}
 				}
 			}
 		}

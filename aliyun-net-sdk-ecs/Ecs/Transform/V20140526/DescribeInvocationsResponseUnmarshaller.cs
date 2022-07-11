@@ -50,8 +50,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				invocation.Timed = _ctx.BooleanValue("DescribeInvocations.Invocations["+ i +"].Timed");
 				invocation.CommandContent = _ctx.StringValue("DescribeInvocations.Invocations["+ i +"].CommandContent");
 				invocation.CommandName = _ctx.StringValue("DescribeInvocations.Invocations["+ i +"].CommandName");
+				invocation.CommandDescription = _ctx.StringValue("DescribeInvocations.Invocations["+ i +"].CommandDescription");
 				invocation.InvokeId = _ctx.StringValue("DescribeInvocations.Invocations["+ i +"].InvokeId");
 				invocation.Username = _ctx.StringValue("DescribeInvocations.Invocations["+ i +"].Username");
+				invocation.WorkingDir = _ctx.StringValue("DescribeInvocations.Invocations["+ i +"].WorkingDir");
+				invocation.Timeout = _ctx.LongValue("DescribeInvocations.Invocations["+ i +"].Timeout");
 
 				List<DescribeInvocationsResponse.DescribeInvocations_Invocation.DescribeInvocations_InvokeInstance> invocation_invokeInstances = new List<DescribeInvocationsResponse.DescribeInvocations_Invocation.DescribeInvocations_InvokeInstance>();
 				for (int j = 0; j < _ctx.Length("DescribeInvocations.Invocations["+ i +"].InvokeInstances.Length"); j++) {

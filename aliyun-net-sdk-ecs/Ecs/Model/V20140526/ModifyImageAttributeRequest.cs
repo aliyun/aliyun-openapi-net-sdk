@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string description;
 
+		private Features features_;
+
 		private string bootMode;
 
 		private string imageName;
@@ -102,6 +104,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Features")]
+		public Features Features_
+		{
+			get
+			{
+				return features_;
+			}
+
+			set
+			{
+				features_ = value;
+				if(features_ != null)
+				{
+
+					DictionaryUtil.Add(QueryParameters,"Features.NvmeSupport", features_.NvmeSupport);
+				}
 			}
 		}
 
@@ -214,6 +235,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				status = value;
 				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+		public class Features
+		{
+
+			private string nvmeSupport;
+
+			[JsonProperty(PropertyName = "NvmeSupport")]
+			public string NvmeSupport
+			{
+				get
+				{
+					return nvmeSupport;
+				}
+				set	
+				{
+					nvmeSupport = value;
+				}
 			}
 		}
 

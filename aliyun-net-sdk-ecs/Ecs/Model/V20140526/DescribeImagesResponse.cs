@@ -170,6 +170,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private List<DescribeImages_Tag> tags;
 
+			private DescribeImages_DetectionOptions detectionOptions;
+
+			private DescribeImages_Features features;
+
 			public string CreationTime
 			{
 				get
@@ -518,6 +522,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public DescribeImages_DetectionOptions DetectionOptions
+			{
+				get
+				{
+					return detectionOptions;
+				}
+				set	
+				{
+					detectionOptions = value;
+				}
+			}
+
+			public DescribeImages_Features Features
+			{
+				get
+				{
+					return features;
+				}
+				set	
+				{
+					features = value;
+				}
+			}
+
 			public class DescribeImages_DiskDeviceMapping
 			{
 
@@ -676,6 +704,116 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						tagKey = value;
+					}
+				}
+			}
+
+			public class DescribeImages_DetectionOptions
+			{
+
+				private string status;
+
+				private List<DescribeImages_Item> items;
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public List<DescribeImages_Item> Items
+				{
+					get
+					{
+						return items;
+					}
+					set	
+					{
+						items = value;
+					}
+				}
+
+				public class DescribeImages_Item
+				{
+
+					private string name;
+
+					private string _value;
+
+					private string riskLevel;
+
+					private string riskCode;
+
+					public string Name
+					{
+						get
+						{
+							return name;
+						}
+						set	
+						{
+							name = value;
+						}
+					}
+
+					public string _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
+						}
+					}
+
+					public string RiskLevel
+					{
+						get
+						{
+							return riskLevel;
+						}
+						set	
+						{
+							riskLevel = value;
+						}
+					}
+
+					public string RiskCode
+					{
+						get
+						{
+							return riskCode;
+						}
+						set	
+						{
+							riskCode = value;
+						}
+					}
+				}
+			}
+
+			public class DescribeImages_Features
+			{
+
+				private string nvmeSupport;
+
+				public string NvmeSupport
+				{
+					get
+					{
+						return nvmeSupport;
+					}
+					set	
+					{
+						nvmeSupport = value;
 					}
 				}
 			}

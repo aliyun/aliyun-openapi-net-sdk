@@ -88,6 +88,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private float? maxSpotPrice;
 
+		private List<string> launchConfigurationArns = new List<string>(){ };
+
 		private bool? launchConfigurationPasswordInherit;
 
 		private string clientToken;
@@ -101,6 +103,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string launchConfigurationUserData;
 
 		private string launchConfigurationCreditSpecification;
+
+		private LaunchConfigurationSystemDisk launchConfigurationSystemDisk_;
 
 		private string launchConfigurationInstanceName;
 
@@ -494,6 +498,28 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public List<string> LaunchConfigurationArns
+		{
+			get
+			{
+				return launchConfigurationArns;
+			}
+
+			set
+			{
+				launchConfigurationArns = value;
+				if(launchConfigurationArns != null)
+				{
+					for (int depth1 = 0; depth1 < launchConfigurationArns.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.Arn." + (depth1 + 1), launchConfigurationArns[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.Arn." + (depth1 + 1), launchConfigurationArns[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.Arn." + (depth1 + 1), launchConfigurationArns[depth1]);
+					}
+				}
+			}
+		}
+
 		public bool? LaunchConfigurationPasswordInherit
 		{
 			get
@@ -582,6 +608,26 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				launchConfigurationCreditSpecification = value;
 				DictionaryUtil.Add(QueryParameters, "LaunchConfiguration.CreditSpecification", value);
+			}
+		}
+
+		public LaunchConfigurationSystemDisk LaunchConfigurationSystemDisk_
+		{
+			get
+			{
+				return launchConfigurationSystemDisk_;
+			}
+
+			set
+			{
+				launchConfigurationSystemDisk_ = value;
+				if(launchConfigurationSystemDisk_ != null)
+				{
+
+					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.SystemDisk.Encrypted", launchConfigurationSystemDisk_.Encrypted);
+					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.SystemDisk.KMSKeyId", launchConfigurationSystemDisk_.KMSKeyId);
+					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.SystemDisk.EncryptAlgorithm", launchConfigurationSystemDisk_.EncryptAlgorithm);
+				}
 			}
 		}
 
@@ -1105,6 +1151,98 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					diskCategory = value;
+				}
+			}
+		}
+
+		public class LaunchConfigurationArn
+		{
+
+			private string rolearn;
+
+			private string roleType;
+
+			private long? assumeRoleFor;
+
+			public string Rolearn
+			{
+				get
+				{
+					return rolearn;
+				}
+				set	
+				{
+					rolearn = value;
+				}
+			}
+
+			public string RoleType
+			{
+				get
+				{
+					return roleType;
+				}
+				set	
+				{
+					roleType = value;
+				}
+			}
+
+			public long? AssumeRoleFor
+			{
+				get
+				{
+					return assumeRoleFor;
+				}
+				set	
+				{
+					assumeRoleFor = value;
+				}
+			}
+		}
+
+		public class LaunchConfigurationSystemDisk
+		{
+
+			private string encrypted;
+
+			private string kMSKeyId;
+
+			private string encryptAlgorithm;
+
+			public string Encrypted
+			{
+				get
+				{
+					return encrypted;
+				}
+				set	
+				{
+					encrypted = value;
+				}
+			}
+
+			public string KMSKeyId
+			{
+				get
+				{
+					return kMSKeyId;
+				}
+				set	
+				{
+					kMSKeyId = value;
+				}
+			}
+
+			public string EncryptAlgorithm
+			{
+				get
+				{
+					return encryptAlgorithm;
+				}
+				set	
+				{
+					encryptAlgorithm = value;
 				}
 			}
 		}

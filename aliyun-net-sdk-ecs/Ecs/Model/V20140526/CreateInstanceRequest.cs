@@ -325,10 +325,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				systemDisk_ = value;
-				if(SystemDisk_ != null)
+				if(systemDisk_ != null)
 				{
 
-					DictionaryUtil.Add(QueryParameters,"SystemDisk.StorageClusterId", SystemDisk_.StorageClusterId);
+					DictionaryUtil.Add(QueryParameters,"SystemDisk.StorageClusterId", systemDisk_.StorageClusterId);
 				}
 			}
 		}

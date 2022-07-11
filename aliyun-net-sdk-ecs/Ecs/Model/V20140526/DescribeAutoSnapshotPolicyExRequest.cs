@@ -58,6 +58,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
+		private string autoSnapshotPolicyName;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -180,6 +182,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AutoSnapshotPolicyName
+		{
+			get
+			{
+				return autoSnapshotPolicyName;
+			}
+			set	
+			{
+				autoSnapshotPolicyName = value;
+				DictionaryUtil.Add(QueryParameters, "AutoSnapshotPolicyName", value);
 			}
 		}
 
