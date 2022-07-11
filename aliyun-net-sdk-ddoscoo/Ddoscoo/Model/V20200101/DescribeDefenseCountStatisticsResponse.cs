@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,23 +56,13 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeDefenseCountStatistics_DefenseCountStatistics
 		{
 
-			private int? defenseCountTotalUsageOfCurrentMonth;
-
 			private int? flowPackCountRemain;
 
 			private int? maxUsableDefenseCountCurrentMonth;
 
-			public int? DefenseCountTotalUsageOfCurrentMonth
-			{
-				get
-				{
-					return defenseCountTotalUsageOfCurrentMonth;
-				}
-				set	
-				{
-					defenseCountTotalUsageOfCurrentMonth = value;
-				}
-			}
+			private int? defenseCountTotalUsageOfCurrentMonth;
+
+			private int? secHighSpeedCountRemain;
 
 			public int? FlowPackCountRemain
 			{
@@ -95,6 +85,30 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					maxUsableDefenseCountCurrentMonth = value;
+				}
+			}
+
+			public int? DefenseCountTotalUsageOfCurrentMonth
+			{
+				get
+				{
+					return defenseCountTotalUsageOfCurrentMonth;
+				}
+				set	
+				{
+					defenseCountTotalUsageOfCurrentMonth = value;
+				}
+			}
+
+			public int? SecHighSpeedCountRemain
+			{
+				get
+				{
+					return secHighSpeedCountRemain;
+				}
+				set	
+				{
+					secHighSpeedCountRemain = value;
 				}
 			}
 		}

@@ -31,16 +31,16 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeTagResourcesResponse describeTagResourcesResponse = new DescribeTagResourcesResponse();
 
 			describeTagResourcesResponse.HttpResponse = _ctx.HttpResponse;
-			describeTagResourcesResponse.RequestId = _ctx.StringValue("DescribeTagResources.RequestId");
 			describeTagResourcesResponse.NextToken = _ctx.StringValue("DescribeTagResources.NextToken");
+			describeTagResourcesResponse.RequestId = _ctx.StringValue("DescribeTagResources.RequestId");
 
 			List<DescribeTagResourcesResponse.DescribeTagResources_TagResource> describeTagResourcesResponse_tagResources = new List<DescribeTagResourcesResponse.DescribeTagResources_TagResource>();
 			for (int i = 0; i < _ctx.Length("DescribeTagResources.TagResources.Length"); i++) {
 				DescribeTagResourcesResponse.DescribeTagResources_TagResource tagResource = new DescribeTagResourcesResponse.DescribeTagResources_TagResource();
+				tagResource.TagValue = _ctx.StringValue("DescribeTagResources.TagResources["+ i +"].TagValue");
 				tagResource.ResourceType = _ctx.StringValue("DescribeTagResources.TagResources["+ i +"].ResourceType");
 				tagResource.ResourceId = _ctx.StringValue("DescribeTagResources.TagResources["+ i +"].ResourceId");
 				tagResource.TagKey = _ctx.StringValue("DescribeTagResources.TagResources["+ i +"].TagKey");
-				tagResource.TagValue = _ctx.StringValue("DescribeTagResources.TagResources["+ i +"].TagValue");
 
 				describeTagResourcesResponse_tagResources.Add(tagResource);
 			}

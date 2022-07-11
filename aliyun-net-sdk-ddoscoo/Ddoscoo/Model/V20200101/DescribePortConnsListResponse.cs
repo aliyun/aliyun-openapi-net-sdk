@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,29 +56,17 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribePortConnsList_Conn
 		{
 
-			private long? conns;
-
 			private long? actConns;
 
 			private long? inActConns;
-
-			private long? cps;
 
 			private long? index;
 
 			private long? time;
 
-			public long? Conns
-			{
-				get
-				{
-					return conns;
-				}
-				set	
-				{
-					conns = value;
-				}
-			}
+			private long? cps;
+
+			private long? conns;
 
 			public long? ActConns
 			{
@@ -104,18 +92,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public long? Cps
-			{
-				get
-				{
-					return cps;
-				}
-				set	
-				{
-					cps = value;
-				}
-			}
-
 			public long? Index
 			{
 				get
@@ -137,6 +113,30 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					time = value;
+				}
+			}
+
+			public long? Cps
+			{
+				get
+				{
+					return cps;
+				}
+				set	
+				{
+					cps = value;
+				}
+			}
+
+			public long? Conns
+			{
+				get
+				{
+					return conns;
+				}
+				set	
+				{
+					conns = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeWebAccessLogDispatchStatusResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
 
-		private List<DescribeWebAccessLogDispatchStatus_SlsConfigStatusItem> slsConfigStatus;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeWebAccessLogDispatchStatus_SlsConfigStatusItem> slsConfigStatus;
 
 		public int? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,21 +70,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeWebAccessLogDispatchStatus_SlsConfigStatusItem
 		{
 
-			private bool? enable;
-
 			private string domain;
 
-			public bool? Enable
-			{
-				get
-				{
-					return enable;
-				}
-				set	
-				{
-					enable = value;
-				}
-			}
+			private bool? enable;
 
 			public string Domain
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					domain = value;
+				}
+			}
+
+			public bool? Enable
+			{
+				get
+				{
+					return enable;
+				}
+				set	
+				{
+					enable = value;
 				}
 			}
 		}

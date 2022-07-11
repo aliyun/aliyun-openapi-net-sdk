@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeSystemLogResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? total;
 
-		private List<DescribeSystemLog_SystemLogItem> systemLog;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeSystemLog_SystemLogItem> systemLog;
 
 		public long? Total
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				total = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,43 +70,31 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeSystemLog_SystemLogItem
 		{
 
-			private long? gmtCreate;
-
-			private long? gmtModified;
+			private int? status;
 
 			private int? entityType;
 
 			private string entityObject;
 
+			private long? gmtCreate;
+
 			private int? opAction;
+
+			private long? gmtModified;
 
 			private string opAccount;
 
 			private string opDesc;
 
-			private int? status;
-
-			public long? GmtCreate
+			public int? Status
 			{
 				get
 				{
-					return gmtCreate;
+					return status;
 				}
 				set	
 				{
-					gmtCreate = value;
-				}
-			}
-
-			public long? GmtModified
-			{
-				get
-				{
-					return gmtModified;
-				}
-				set	
-				{
-					gmtModified = value;
+					status = value;
 				}
 			}
 
@@ -134,6 +122,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
+			public long? GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
+				}
+			}
+
 			public int? OpAction
 			{
 				get
@@ -143,6 +143,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					opAction = value;
+				}
+			}
+
+			public long? GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
 				}
 			}
 
@@ -167,18 +179,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					opDesc = value;
-				}
-			}
-
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
 				}
 			}
 		}

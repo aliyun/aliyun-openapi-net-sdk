@@ -92,6 +92,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string poc;
 
+			private string otherId;
+
 			private List<DescribeVulDetails_Classify> classifys;
 
 			public string Summary
@@ -307,6 +309,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					poc = value;
+				}
+			}
+
+			public string OtherId
+			{
+				get
+				{
+					return otherId;
+				}
+				set	
+				{
+					otherId = value;
 				}
 			}
 

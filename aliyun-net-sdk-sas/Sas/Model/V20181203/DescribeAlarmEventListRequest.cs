@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			Method = MethodType.POST;
         }
 
+		private string timeEnd;
+
 		private string alarmEventType;
 
 		private string remark;
@@ -67,9 +69,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private int? currentPage;
 
+		private string operateTimeEnd;
+
 		private List<string> operateErrorCodeLists = new List<string>(){ };
 
+		private string operateTimeStart;
+
+		private string timeStart;
+
 		private string levels;
+
+		private string uuids;
+
+		public string TimeEnd
+		{
+			get
+			{
+				return timeEnd;
+			}
+			set	
+			{
+				timeEnd = value;
+				DictionaryUtil.Add(QueryParameters, "TimeEnd", value);
+			}
+		}
 
 		public string AlarmEventType
 		{
@@ -240,6 +263,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public string OperateTimeEnd
+		{
+			get
+			{
+				return operateTimeEnd;
+			}
+			set	
+			{
+				operateTimeEnd = value;
+				DictionaryUtil.Add(QueryParameters, "OperateTimeEnd", value);
+			}
+		}
+
 		public List<string> OperateErrorCodeLists
 		{
 			get
@@ -253,6 +289,32 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public string OperateTimeStart
+		{
+			get
+			{
+				return operateTimeStart;
+			}
+			set	
+			{
+				operateTimeStart = value;
+				DictionaryUtil.Add(QueryParameters, "OperateTimeStart", value);
+			}
+		}
+
+		public string TimeStart
+		{
+			get
+			{
+				return timeStart;
+			}
+			set	
+			{
+				timeStart = value;
+				DictionaryUtil.Add(QueryParameters, "TimeStart", value);
+			}
+		}
+
 		public string Levels
 		{
 			get
@@ -263,6 +325,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				levels = value;
 				DictionaryUtil.Add(QueryParameters, "Levels", value);
+			}
+		}
+
+		public string Uuids
+		{
+			get
+			{
+				return uuids;
+			}
+			set	
+			{
+				uuids = value;
+				DictionaryUtil.Add(QueryParameters, "Uuids", value);
 			}
 		}
 

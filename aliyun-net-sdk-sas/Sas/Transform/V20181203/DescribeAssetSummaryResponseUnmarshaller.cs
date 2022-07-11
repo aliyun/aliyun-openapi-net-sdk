@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 
 			DescribeAssetSummaryResponse.DescribeAssetSummary_AssetsSummary assetsSummary = new DescribeAssetSummaryResponse.DescribeAssetSummary_AssetsSummary();
 			assetsSummary.TotalCoreNum = _ctx.IntegerValue("DescribeAssetSummary.AssetsSummary.TotalCoreNum");
+			assetsSummary.TotalAssetAllRegion = _ctx.IntegerValue("DescribeAssetSummary.AssetsSummary.TotalAssetAllRegion");
+			assetsSummary.TotalCoreAllRegion = _ctx.IntegerValue("DescribeAssetSummary.AssetsSummary.TotalCoreAllRegion");
 			describeAssetSummaryResponse.AssetsSummary = assetsSummary;
         
 			return describeAssetSummaryResponse;

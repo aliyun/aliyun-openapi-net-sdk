@@ -36,8 +36,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribeDDosEventAreaResponse.DescribeDDosEventArea_EventArea> describeDDosEventAreaResponse_areas = new List<DescribeDDosEventAreaResponse.DescribeDDosEventArea_EventArea>();
 			for (int i = 0; i < _ctx.Length("DescribeDDosEventArea.Areas.Length"); i++) {
 				DescribeDDosEventAreaResponse.DescribeDDosEventArea_EventArea eventArea = new DescribeDDosEventAreaResponse.DescribeDDosEventArea_EventArea();
-				eventArea.Area = _ctx.StringValue("DescribeDDosEventArea.Areas["+ i +"].Area");
 				eventArea.InPkts = _ctx.LongValue("DescribeDDosEventArea.Areas["+ i +"].InPkts");
+				eventArea.Area = _ctx.StringValue("DescribeDDosEventArea.Areas["+ i +"].Area");
 
 				describeDDosEventAreaResponse_areas.Add(eventArea);
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,11 +25,23 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeInstanceStatusResponse : AcsResponse
 	{
 
+		private int? instanceStatus;
+
 		private string requestId;
 
 		private string instanceId;
 
-		private int? instanceStatus;
+		public int? InstanceStatus
+		{
+			get
+			{
+				return instanceStatus;
+			}
+			set	
+			{
+				instanceStatus = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -52,18 +64,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				instanceId = value;
-			}
-		}
-
-		public int? InstanceStatus
-		{
-			get
-			{
-				return instanceStatus;
-			}
-			set	
-			{
-				instanceStatus = value;
 			}
 		}
 	}

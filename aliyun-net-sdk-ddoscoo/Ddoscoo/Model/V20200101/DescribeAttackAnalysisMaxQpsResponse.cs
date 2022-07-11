@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeAttackAnalysisMaxQpsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? qps;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public long? Qps
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				qps = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

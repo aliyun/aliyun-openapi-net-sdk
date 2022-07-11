@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -98,21 +98,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeTagKeys_TagKey
 		{
 
-			private string tagKey;
-
 			private int? tagCount;
 
-			public string TagKey
-			{
-				get
-				{
-					return tagKey;
-				}
-				set	
-				{
-					tagKey = value;
-				}
-			}
+			private string tagKey;
 
 			public int? TagCount
 			{
@@ -123,6 +111,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					tagCount = value;
+				}
+			}
+
+			public string TagKey
+			{
+				get
+				{
+					return tagKey;
+				}
+				set	
+				{
+					tagKey = value;
 				}
 			}
 		}

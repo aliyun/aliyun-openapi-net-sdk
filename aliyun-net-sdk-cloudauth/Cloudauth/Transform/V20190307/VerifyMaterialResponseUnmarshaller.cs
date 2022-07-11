@@ -31,32 +31,32 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			VerifyMaterialResponse verifyMaterialResponse = new VerifyMaterialResponse();
 
 			verifyMaterialResponse.HttpResponse = _ctx.HttpResponse;
+			verifyMaterialResponse.AuthorityComparisionScore = _ctx.FloatValue("VerifyMaterial.AuthorityComparisionScore");
+			verifyMaterialResponse.VerifyStatus = _ctx.IntegerValue("VerifyMaterial.VerifyStatus");
 			verifyMaterialResponse.RequestId = _ctx.StringValue("VerifyMaterial.RequestId");
 			verifyMaterialResponse.VerifyToken = _ctx.StringValue("VerifyMaterial.VerifyToken");
-			verifyMaterialResponse.VerifyStatus = _ctx.IntegerValue("VerifyMaterial.VerifyStatus");
-			verifyMaterialResponse.AuthorityComparisionScore = _ctx.FloatValue("VerifyMaterial.AuthorityComparisionScore");
 			verifyMaterialResponse.IdCardFaceComparisonScore = _ctx.FloatValue("VerifyMaterial.IdCardFaceComparisonScore");
 
 			VerifyMaterialResponse.VerifyMaterial_Material material = new VerifyMaterialResponse.VerifyMaterial_Material();
-			material.FaceImageUrl = _ctx.StringValue("VerifyMaterial.Material.FaceImageUrl");
-			material.IdCardName = _ctx.StringValue("VerifyMaterial.Material.IdCardName");
 			material.IdCardNumber = _ctx.StringValue("VerifyMaterial.Material.IdCardNumber");
-			material.FaceQuality = _ctx.StringValue("VerifyMaterial.Material.FaceQuality");
 			material.FaceGlobalUrl = _ctx.StringValue("VerifyMaterial.Material.FaceGlobalUrl");
+			material.FaceImageUrl = _ctx.StringValue("VerifyMaterial.Material.FaceImageUrl");
 			material.FaceMask = _ctx.StringValue("VerifyMaterial.Material.FaceMask");
+			material.IdCardName = _ctx.StringValue("VerifyMaterial.Material.IdCardName");
+			material.FaceQuality = _ctx.StringValue("VerifyMaterial.Material.FaceQuality");
 
 			VerifyMaterialResponse.VerifyMaterial_Material.VerifyMaterial_IdCardInfo idCardInfo = new VerifyMaterialResponse.VerifyMaterial_Material.VerifyMaterial_IdCardInfo();
-			idCardInfo.Number = _ctx.StringValue("VerifyMaterial.Material.IdCardInfo.Number");
-			idCardInfo.Address = _ctx.StringValue("VerifyMaterial.Material.IdCardInfo.Address");
-			idCardInfo.Nationality = _ctx.StringValue("VerifyMaterial.Material.IdCardInfo.Nationality");
-			idCardInfo.EndDate = _ctx.StringValue("VerifyMaterial.Material.IdCardInfo.EndDate");
-			idCardInfo.FrontImageUrl = _ctx.StringValue("VerifyMaterial.Material.IdCardInfo.FrontImageUrl");
-			idCardInfo.Authority = _ctx.StringValue("VerifyMaterial.Material.IdCardInfo.Authority");
 			idCardInfo.Sex = _ctx.StringValue("VerifyMaterial.Material.IdCardInfo.Sex");
-			idCardInfo.Name = _ctx.StringValue("VerifyMaterial.Material.IdCardInfo.Name");
-			idCardInfo.Birth = _ctx.StringValue("VerifyMaterial.Material.IdCardInfo.Birth");
-			idCardInfo.BackImageUrl = _ctx.StringValue("VerifyMaterial.Material.IdCardInfo.BackImageUrl");
+			idCardInfo.EndDate = _ctx.StringValue("VerifyMaterial.Material.IdCardInfo.EndDate");
+			idCardInfo.Authority = _ctx.StringValue("VerifyMaterial.Material.IdCardInfo.Authority");
+			idCardInfo.Address = _ctx.StringValue("VerifyMaterial.Material.IdCardInfo.Address");
+			idCardInfo.Number = _ctx.StringValue("VerifyMaterial.Material.IdCardInfo.Number");
 			idCardInfo.StartDate = _ctx.StringValue("VerifyMaterial.Material.IdCardInfo.StartDate");
+			idCardInfo.BackImageUrl = _ctx.StringValue("VerifyMaterial.Material.IdCardInfo.BackImageUrl");
+			idCardInfo.Nationality = _ctx.StringValue("VerifyMaterial.Material.IdCardInfo.Nationality");
+			idCardInfo.Birth = _ctx.StringValue("VerifyMaterial.Material.IdCardInfo.Birth");
+			idCardInfo.Name = _ctx.StringValue("VerifyMaterial.Material.IdCardInfo.Name");
+			idCardInfo.FrontImageUrl = _ctx.StringValue("VerifyMaterial.Material.IdCardInfo.FrontImageUrl");
 			material.IdCardInfo = idCardInfo;
 			verifyMaterialResponse.Material = material;
         

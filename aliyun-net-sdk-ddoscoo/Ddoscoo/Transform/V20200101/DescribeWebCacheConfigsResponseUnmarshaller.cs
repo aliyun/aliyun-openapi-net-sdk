@@ -36,16 +36,16 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribeWebCacheConfigsResponse.DescribeWebCacheConfigs_CacheConfig> describeWebCacheConfigsResponse_domainCacheConfigs = new List<DescribeWebCacheConfigsResponse.DescribeWebCacheConfigs_CacheConfig>();
 			for (int i = 0; i < _ctx.Length("DescribeWebCacheConfigs.DomainCacheConfigs.Length"); i++) {
 				DescribeWebCacheConfigsResponse.DescribeWebCacheConfigs_CacheConfig cacheConfig = new DescribeWebCacheConfigsResponse.DescribeWebCacheConfigs_CacheConfig();
+				cacheConfig.Domain = _ctx.StringValue("DescribeWebCacheConfigs.DomainCacheConfigs["+ i +"].Domain");
 				cacheConfig.Mode = _ctx.StringValue("DescribeWebCacheConfigs.DomainCacheConfigs["+ i +"].Mode");
 				cacheConfig.Enable = _ctx.IntegerValue("DescribeWebCacheConfigs.DomainCacheConfigs["+ i +"].Enable");
-				cacheConfig.Domain = _ctx.StringValue("DescribeWebCacheConfigs.DomainCacheConfigs["+ i +"].Domain");
 
 				List<DescribeWebCacheConfigsResponse.DescribeWebCacheConfigs_CacheConfig.DescribeWebCacheConfigs_CustomRule> cacheConfig_customRules = new List<DescribeWebCacheConfigsResponse.DescribeWebCacheConfigs_CacheConfig.DescribeWebCacheConfigs_CustomRule>();
 				for (int j = 0; j < _ctx.Length("DescribeWebCacheConfigs.DomainCacheConfigs["+ i +"].CustomRules.Length"); j++) {
 					DescribeWebCacheConfigsResponse.DescribeWebCacheConfigs_CacheConfig.DescribeWebCacheConfigs_CustomRule customRule = new DescribeWebCacheConfigsResponse.DescribeWebCacheConfigs_CacheConfig.DescribeWebCacheConfigs_CustomRule();
 					customRule.Mode = _ctx.StringValue("DescribeWebCacheConfigs.DomainCacheConfigs["+ i +"].CustomRules["+ j +"].Mode");
-					customRule.Name = _ctx.StringValue("DescribeWebCacheConfigs.DomainCacheConfigs["+ i +"].CustomRules["+ j +"].Name");
 					customRule.CacheTtl = _ctx.LongValue("DescribeWebCacheConfigs.DomainCacheConfigs["+ i +"].CustomRules["+ j +"].CacheTtl");
+					customRule.Name = _ctx.StringValue("DescribeWebCacheConfigs.DomainCacheConfigs["+ i +"].CustomRules["+ j +"].Name");
 					customRule.Uri = _ctx.StringValue("DescribeWebCacheConfigs.DomainCacheConfigs["+ i +"].CustomRules["+ j +"].Uri");
 
 					cacheConfig_customRules.Add(customRule);

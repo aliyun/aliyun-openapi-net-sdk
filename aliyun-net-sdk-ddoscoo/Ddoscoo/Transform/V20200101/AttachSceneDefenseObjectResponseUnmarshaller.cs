@@ -31,8 +31,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			AttachSceneDefenseObjectResponse attachSceneDefenseObjectResponse = new AttachSceneDefenseObjectResponse();
 
 			attachSceneDefenseObjectResponse.HttpResponse = _ctx.HttpResponse;
-			attachSceneDefenseObjectResponse.RequestId = _ctx.StringValue("AttachSceneDefenseObject.RequestId");
 			attachSceneDefenseObjectResponse.Success = _ctx.BooleanValue("AttachSceneDefenseObject.Success");
+			attachSceneDefenseObjectResponse.RequestId = _ctx.StringValue("AttachSceneDefenseObject.RequestId");
         
 			return attachSceneDefenseObjectResponse;
         }

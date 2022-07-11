@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20190307
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 	public class CreateVerifySettingResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string bizType;
-
 		private string bizName;
+
+		private string requestId;
 
 		private string solution;
 
+		private string bizType;
+
 		private List<string> stepList;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string BizType
-		{
-			get
-			{
-				return bizType;
-			}
-			set	
-			{
-				bizType = value;
-			}
-		}
 
 		public string BizName
 		{
@@ -71,6 +47,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public string Solution
 		{
 			get
@@ -80,6 +68,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				solution = value;
+			}
+		}
+
+		public string BizType
+		{
+			get
+			{
+				return bizType;
+			}
+			set	
+			{
+				bizType = value;
 			}
 		}
 

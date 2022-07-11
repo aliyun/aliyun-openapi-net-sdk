@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribePortViewSourceIsps_Isp
 		{
 
-			private string ispId;
-
 			private long? count;
 
-			public string IspId
-			{
-				get
-				{
-					return ispId;
-				}
-				set	
-				{
-					ispId = value;
-				}
-			}
+			private string ispId;
 
 			public long? Count
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					count = value;
+				}
+			}
+
+			public string IspId
+			{
+				get
+				{
+					return ispId;
+				}
+				set	
+				{
+					ispId = value;
 				}
 			}
 		}

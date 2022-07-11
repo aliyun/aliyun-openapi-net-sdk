@@ -32,11 +32,11 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 
 			modifyDeviceInfoResponse.HttpResponse = _ctx.HttpResponse;
 			modifyDeviceInfoResponse.RequestId = _ctx.StringValue("ModifyDeviceInfo.RequestId");
-			modifyDeviceInfoResponse.DeviceId = _ctx.StringValue("ModifyDeviceInfo.DeviceId");
 			modifyDeviceInfoResponse.UserDeviceId = _ctx.StringValue("ModifyDeviceInfo.UserDeviceId");
-			modifyDeviceInfoResponse.BizType = _ctx.StringValue("ModifyDeviceInfo.BizType");
-			modifyDeviceInfoResponse.BeginDay = _ctx.StringValue("ModifyDeviceInfo.BeginDay");
+			modifyDeviceInfoResponse.DeviceId = _ctx.StringValue("ModifyDeviceInfo.DeviceId");
 			modifyDeviceInfoResponse.ExpiredDay = _ctx.StringValue("ModifyDeviceInfo.ExpiredDay");
+			modifyDeviceInfoResponse.BeginDay = _ctx.StringValue("ModifyDeviceInfo.BeginDay");
+			modifyDeviceInfoResponse.BizType = _ctx.StringValue("ModifyDeviceInfo.BizType");
         
 			return modifyDeviceInfoResponse;
         }

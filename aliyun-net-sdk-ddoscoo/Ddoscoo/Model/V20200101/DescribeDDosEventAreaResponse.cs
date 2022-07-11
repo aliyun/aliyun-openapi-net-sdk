@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeDDosEventArea_EventArea
 		{
 
-			private string area;
-
 			private long? inPkts;
 
-			public string Area
-			{
-				get
-				{
-					return area;
-				}
-				set	
-				{
-					area = value;
-				}
-			}
+			private string area;
 
 			public long? InPkts
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					inPkts = value;
+				}
+			}
+
+			public string Area
+			{
+				get
+				{
+					return area;
+				}
+				set	
+				{
+					area = value;
 				}
 			}
 		}

@@ -31,9 +31,9 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeInstanceStatusResponse describeInstanceStatusResponse = new DescribeInstanceStatusResponse();
 
 			describeInstanceStatusResponse.HttpResponse = _ctx.HttpResponse;
+			describeInstanceStatusResponse.InstanceStatus = _ctx.IntegerValue("DescribeInstanceStatus.InstanceStatus");
 			describeInstanceStatusResponse.RequestId = _ctx.StringValue("DescribeInstanceStatus.RequestId");
 			describeInstanceStatusResponse.InstanceId = _ctx.StringValue("DescribeInstanceStatus.InstanceId");
-			describeInstanceStatusResponse.InstanceStatus = _ctx.IntegerValue("DescribeInstanceStatus.InstanceStatus");
         
 			return describeInstanceStatusResponse;
         }

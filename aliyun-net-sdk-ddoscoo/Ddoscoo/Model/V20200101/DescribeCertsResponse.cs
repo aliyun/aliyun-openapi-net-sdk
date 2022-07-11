@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,29 +56,65 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeCerts_CertItem
 		{
 
-			private int? id;
+			private string endDate;
+
+			private bool? domainRelated;
+
+			private string startDate;
+
+			private string issuer;
 
 			private string name;
 
 			private string common;
 
-			private string issuer;
+			private int? id;
 
-			private string startDate;
-
-			private string endDate;
-
-			private bool? domainRelated;
-
-			public int? Id
+			public string EndDate
 			{
 				get
 				{
-					return id;
+					return endDate;
 				}
 				set	
 				{
-					id = value;
+					endDate = value;
+				}
+			}
+
+			public bool? DomainRelated
+			{
+				get
+				{
+					return domainRelated;
+				}
+				set	
+				{
+					domainRelated = value;
+				}
+			}
+
+			public string StartDate
+			{
+				get
+				{
+					return startDate;
+				}
+				set	
+				{
+					startDate = value;
+				}
+			}
+
+			public string Issuer
+			{
+				get
+				{
+					return issuer;
+				}
+				set	
+				{
+					issuer = value;
 				}
 			}
 
@@ -106,51 +142,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public string Issuer
+			public int? Id
 			{
 				get
 				{
-					return issuer;
+					return id;
 				}
 				set	
 				{
-					issuer = value;
-				}
-			}
-
-			public string StartDate
-			{
-				get
-				{
-					return startDate;
-				}
-				set	
-				{
-					startDate = value;
-				}
-			}
-
-			public string EndDate
-			{
-				get
-				{
-					return endDate;
-				}
-				set	
-				{
-					endDate = value;
-				}
-			}
-
-			public bool? DomainRelated
-			{
-				get
-				{
-					return domainRelated;
-				}
-				set	
-				{
-					domainRelated = value;
+					id = value;
 				}
 			}
 		}

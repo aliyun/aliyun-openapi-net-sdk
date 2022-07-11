@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeTagResourcesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
 
-		private List<DescribeTagResources_TagResource> tagResources;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeTagResources_TagResource> tagResources;
 
 		public string NextToken
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,13 +70,25 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeTagResources_TagResource
 		{
 
+			private string tagValue;
+
 			private string resourceType;
 
 			private string resourceId;
 
 			private string tagKey;
 
-			private string tagValue;
+			public string TagValue
+			{
+				get
+				{
+					return tagValue;
+				}
+				set	
+				{
+					tagValue = value;
+				}
+			}
 
 			public string ResourceType
 			{
@@ -111,18 +123,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					tagKey = value;
-				}
-			}
-
-			public string TagValue
-			{
-				get
-				{
-					return tagValue;
-				}
-				set	
-				{
-					tagValue = value;
 				}
 			}
 		}

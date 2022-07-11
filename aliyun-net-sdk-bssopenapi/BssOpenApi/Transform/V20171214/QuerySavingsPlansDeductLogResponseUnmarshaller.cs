@@ -55,6 +55,7 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				savingsPlansDeductDetailResponse.DeductCommodity = _ctx.StringValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].DeductCommodity");
 				savingsPlansDeductDetailResponse.DeductRate = _ctx.StringValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].DeductRate");
 				savingsPlansDeductDetailResponse.DeductFee = _ctx.StringValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].DeductFee");
+				savingsPlansDeductDetailResponse.OwnerId = _ctx.LongValue("QuerySavingsPlansDeductLog.Data.Items["+ i +"].OwnerId");
 
 				data_items.Add(savingsPlansDeductDetailResponse);
 			}

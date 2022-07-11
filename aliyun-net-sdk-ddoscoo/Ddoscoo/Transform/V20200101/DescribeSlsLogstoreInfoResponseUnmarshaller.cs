@@ -31,12 +31,12 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeSlsLogstoreInfoResponse describeSlsLogstoreInfoResponse = new DescribeSlsLogstoreInfoResponse();
 
 			describeSlsLogstoreInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeSlsLogstoreInfoResponse.Ttl = _ctx.IntegerValue("DescribeSlsLogstoreInfo.Ttl");
 			describeSlsLogstoreInfoResponse.RequestId = _ctx.StringValue("DescribeSlsLogstoreInfo.RequestId");
 			describeSlsLogstoreInfoResponse.Quota = _ctx.LongValue("DescribeSlsLogstoreInfo.Quota");
 			describeSlsLogstoreInfoResponse.LogStore = _ctx.StringValue("DescribeSlsLogstoreInfo.LogStore");
 			describeSlsLogstoreInfoResponse.Used = _ctx.LongValue("DescribeSlsLogstoreInfo.Used");
 			describeSlsLogstoreInfoResponse.Project = _ctx.StringValue("DescribeSlsLogstoreInfo.Project");
-			describeSlsLogstoreInfoResponse.Ttl = _ctx.IntegerValue("DescribeSlsLogstoreInfo.Ttl");
         
 			return describeSlsLogstoreInfoResponse;
         }

@@ -41,6 +41,8 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			Method = MethodType.POST;
         }
 
+		private string cname;
+
 		private int? pageNumber;
 
 		private string resourceGroupId;
@@ -52,6 +54,19 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		private string queryDomainPattern;
 
 		private string domain;
+
+		public string Cname
+		{
+			get
+			{
+				return cname;
+			}
+			set	
+			{
+				cname = value;
+				DictionaryUtil.Add(QueryParameters, "Cname", value);
+			}
+		}
 
 		public int? PageNumber
 		{
@@ -102,10 +117,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set
 			{
 				instanceIdss = value;
-				for (int i = 0; i < instanceIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceIds." + (i + 1) , instanceIdss[i]);
-				}
 			}
 		}
 

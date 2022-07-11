@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeInstancesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? totalCount;
 
-		private List<DescribeInstances_Instance> instances;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeInstances_Instance> instances;
 
 		public long? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,51 +70,27 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeInstances_Instance
 		{
 
-			private string instanceId;
-
-			private string remark;
-
 			private int? status;
-
-			private int? debtStatus;
-
-			private long? expireTime;
-
-			private long? createTime;
-
-			private int? edition;
-
-			private int? enabled;
-
-			private string connInstanceId;
-
-			private string ipVersion;
 
 			private string ipMode;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private int? debtStatus;
 
-			public string Remark
-			{
-				get
-				{
-					return remark;
-				}
-				set	
-				{
-					remark = value;
-				}
-			}
+			private int? edition;
+
+			private string ipVersion;
+
+			private long? expireTime;
+
+			private string remark;
+
+			private long? createTime;
+
+			private int? enabled;
+
+			private string instanceId;
+
+			private string connInstanceId;
 
 			public int? Status
 			{
@@ -125,6 +101,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string IpMode
+			{
+				get
+				{
+					return ipMode;
+				}
+				set	
+				{
+					ipMode = value;
 				}
 			}
 
@@ -140,30 +128,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public long? ExpireTime
-			{
-				get
-				{
-					return expireTime;
-				}
-				set	
-				{
-					expireTime = value;
-				}
-			}
-
-			public long? CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
 			public int? Edition
 			{
 				get
@@ -173,30 +137,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					edition = value;
-				}
-			}
-
-			public int? Enabled
-			{
-				get
-				{
-					return enabled;
-				}
-				set	
-				{
-					enabled = value;
-				}
-			}
-
-			public string ConnInstanceId
-			{
-				get
-				{
-					return connInstanceId;
-				}
-				set	
-				{
-					connInstanceId = value;
 				}
 			}
 
@@ -212,15 +152,75 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public string IpMode
+			public long? ExpireTime
 			{
 				get
 				{
-					return ipMode;
+					return expireTime;
 				}
 				set	
 				{
-					ipMode = value;
+					expireTime = value;
+				}
+			}
+
+			public string Remark
+			{
+				get
+				{
+					return remark;
+				}
+				set	
+				{
+					remark = value;
+				}
+			}
+
+			public long? CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public int? Enabled
+			{
+				get
+				{
+					return enabled;
+				}
+				set	
+				{
+					enabled = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string ConnInstanceId
+			{
+				get
+				{
+					return connInstanceId;
+				}
+				set	
+				{
+					connInstanceId = value;
 				}
 			}
 		}

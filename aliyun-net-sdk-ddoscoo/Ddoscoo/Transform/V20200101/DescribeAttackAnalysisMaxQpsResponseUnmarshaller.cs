@@ -31,8 +31,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeAttackAnalysisMaxQpsResponse describeAttackAnalysisMaxQpsResponse = new DescribeAttackAnalysisMaxQpsResponse();
 
 			describeAttackAnalysisMaxQpsResponse.HttpResponse = _ctx.HttpResponse;
-			describeAttackAnalysisMaxQpsResponse.RequestId = _ctx.StringValue("DescribeAttackAnalysisMaxQps.RequestId");
 			describeAttackAnalysisMaxQpsResponse.Qps = _ctx.LongValue("DescribeAttackAnalysisMaxQps.Qps");
+			describeAttackAnalysisMaxQpsResponse.RequestId = _ctx.StringValue("DescribeAttackAnalysisMaxQps.RequestId");
         
 			return describeAttackAnalysisMaxQpsResponse;
         }

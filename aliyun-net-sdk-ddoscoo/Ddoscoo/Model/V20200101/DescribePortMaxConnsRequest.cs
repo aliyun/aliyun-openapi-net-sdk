@@ -98,10 +98,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set
 			{
 				instanceIdss = value;
-				for (int i = 0; i < instanceIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceIds." + (i + 1) , instanceIdss[i]);
-				}
 			}
 		}
 

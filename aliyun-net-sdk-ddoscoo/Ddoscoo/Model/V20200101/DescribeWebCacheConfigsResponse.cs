@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,13 +56,25 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeWebCacheConfigs_CacheConfig
 		{
 
+			private string domain;
+
 			private string mode;
 
 			private int? enable;
 
-			private string domain;
-
 			private List<DescribeWebCacheConfigs_CustomRule> customRules;
+
+			public string Domain
+			{
+				get
+				{
+					return domain;
+				}
+				set	
+				{
+					domain = value;
+				}
+			}
 
 			public string Mode
 			{
@@ -88,18 +100,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public string Domain
-			{
-				get
-				{
-					return domain;
-				}
-				set	
-				{
-					domain = value;
-				}
-			}
-
 			public List<DescribeWebCacheConfigs_CustomRule> CustomRules
 			{
 				get
@@ -117,9 +117,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 				private string mode;
 
-				private string name;
-
 				private long? cacheTtl;
+
+				private string name;
 
 				private string uri;
 
@@ -135,18 +135,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 					}
 				}
 
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
 				public long? CacheTtl
 				{
 					get
@@ -156,6 +144,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 					set	
 					{
 						cacheTtl = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 

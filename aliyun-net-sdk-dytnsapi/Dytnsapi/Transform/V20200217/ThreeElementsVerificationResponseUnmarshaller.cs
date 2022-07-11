@@ -35,15 +35,10 @@ namespace Aliyun.Acs.Dytnsapi.Transform.V20200217
 			threeElementsVerificationResponse.Message = _ctx.StringValue("ThreeElementsVerification.Message");
 			threeElementsVerificationResponse.RequestId = _ctx.StringValue("ThreeElementsVerification.RequestId");
 
-			List<ThreeElementsVerificationResponse.ThreeElementsVerification_DataItem> threeElementsVerificationResponse_data = new List<ThreeElementsVerificationResponse.ThreeElementsVerification_DataItem>();
-			for (int i = 0; i < _ctx.Length("ThreeElementsVerification.Data.Length"); i++) {
-				ThreeElementsVerificationResponse.ThreeElementsVerification_DataItem dataItem = new ThreeElementsVerificationResponse.ThreeElementsVerification_DataItem();
-				dataItem.IsConsistent = _ctx.IntegerValue("ThreeElementsVerification.Data["+ i +"].IsConsistent");
-				dataItem.BasicCarrier = _ctx.StringValue("ThreeElementsVerification.Data["+ i +"].BasicCarrier");
-
-				threeElementsVerificationResponse_data.Add(dataItem);
-			}
-			threeElementsVerificationResponse.Data = threeElementsVerificationResponse_data;
+			ThreeElementsVerificationResponse.ThreeElementsVerification_Data data = new ThreeElementsVerificationResponse.ThreeElementsVerification_Data();
+			data.BasicCarrier = _ctx.StringValue("ThreeElementsVerification.Data.BasicCarrier");
+			data.IsConsistent = _ctx.IntegerValue("ThreeElementsVerification.Data.IsConsistent");
+			threeElementsVerificationResponse.Data = data;
         
 			return threeElementsVerificationResponse;
         }

@@ -31,15 +31,9 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeDomainQpsWithCacheResponse describeDomainQpsWithCacheResponse = new DescribeDomainQpsWithCacheResponse();
 
 			describeDomainQpsWithCacheResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainQpsWithCacheResponse.StartTime = _ctx.LongValue("DescribeDomainQpsWithCache.StartTime");
 			describeDomainQpsWithCacheResponse.RequestId = _ctx.StringValue("DescribeDomainQpsWithCache.RequestId");
 			describeDomainQpsWithCacheResponse.Interval = _ctx.IntegerValue("DescribeDomainQpsWithCache.Interval");
-			describeDomainQpsWithCacheResponse.StartTime = _ctx.LongValue("DescribeDomainQpsWithCache.StartTime");
-
-			List<string> describeDomainQpsWithCacheResponse_totals = new List<string>();
-			for (int i = 0; i < _ctx.Length("DescribeDomainQpsWithCache.Totals.Length"); i++) {
-				describeDomainQpsWithCacheResponse_totals.Add(_ctx.StringValue("DescribeDomainQpsWithCache.Totals["+ i +"]"));
-			}
-			describeDomainQpsWithCacheResponse.Totals = describeDomainQpsWithCacheResponse_totals;
 
 			List<string> describeDomainQpsWithCacheResponse_blocks = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainQpsWithCache.Blocks.Length"); i++) {
@@ -47,35 +41,11 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			}
 			describeDomainQpsWithCacheResponse.Blocks = describeDomainQpsWithCacheResponse_blocks;
 
-			List<string> describeDomainQpsWithCacheResponse_cacheHits = new List<string>();
-			for (int i = 0; i < _ctx.Length("DescribeDomainQpsWithCache.CacheHits.Length"); i++) {
-				describeDomainQpsWithCacheResponse_cacheHits.Add(_ctx.StringValue("DescribeDomainQpsWithCache.CacheHits["+ i +"]"));
+			List<string> describeDomainQpsWithCacheResponse_ccBlockQps = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeDomainQpsWithCache.CcBlockQps.Length"); i++) {
+				describeDomainQpsWithCacheResponse_ccBlockQps.Add(_ctx.StringValue("DescribeDomainQpsWithCache.CcBlockQps["+ i +"]"));
 			}
-			describeDomainQpsWithCacheResponse.CacheHits = describeDomainQpsWithCacheResponse_cacheHits;
-
-			List<string> describeDomainQpsWithCacheResponse_preciseBlocks = new List<string>();
-			for (int i = 0; i < _ctx.Length("DescribeDomainQpsWithCache.PreciseBlocks.Length"); i++) {
-				describeDomainQpsWithCacheResponse_preciseBlocks.Add(_ctx.StringValue("DescribeDomainQpsWithCache.PreciseBlocks["+ i +"]"));
-			}
-			describeDomainQpsWithCacheResponse.PreciseBlocks = describeDomainQpsWithCacheResponse_preciseBlocks;
-
-			List<string> describeDomainQpsWithCacheResponse_regionBlocks = new List<string>();
-			for (int i = 0; i < _ctx.Length("DescribeDomainQpsWithCache.RegionBlocks.Length"); i++) {
-				describeDomainQpsWithCacheResponse_regionBlocks.Add(_ctx.StringValue("DescribeDomainQpsWithCache.RegionBlocks["+ i +"]"));
-			}
-			describeDomainQpsWithCacheResponse.RegionBlocks = describeDomainQpsWithCacheResponse_regionBlocks;
-
-			List<string> describeDomainQpsWithCacheResponse_ipBlockQps = new List<string>();
-			for (int i = 0; i < _ctx.Length("DescribeDomainQpsWithCache.IpBlockQps.Length"); i++) {
-				describeDomainQpsWithCacheResponse_ipBlockQps.Add(_ctx.StringValue("DescribeDomainQpsWithCache.IpBlockQps["+ i +"]"));
-			}
-			describeDomainQpsWithCacheResponse.IpBlockQps = describeDomainQpsWithCacheResponse_ipBlockQps;
-
-			List<string> describeDomainQpsWithCacheResponse_ccJsQps = new List<string>();
-			for (int i = 0; i < _ctx.Length("DescribeDomainQpsWithCache.CcJsQps.Length"); i++) {
-				describeDomainQpsWithCacheResponse_ccJsQps.Add(_ctx.StringValue("DescribeDomainQpsWithCache.CcJsQps["+ i +"]"));
-			}
-			describeDomainQpsWithCacheResponse.CcJsQps = describeDomainQpsWithCacheResponse_ccJsQps;
+			describeDomainQpsWithCacheResponse.CcBlockQps = describeDomainQpsWithCacheResponse_ccBlockQps;
 
 			List<string> describeDomainQpsWithCacheResponse_preciseJsQps = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainQpsWithCache.PreciseJsQps.Length"); i++) {
@@ -83,11 +53,41 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			}
 			describeDomainQpsWithCacheResponse.PreciseJsQps = describeDomainQpsWithCacheResponse_preciseJsQps;
 
-			List<string> describeDomainQpsWithCacheResponse_ccBlockQps = new List<string>();
-			for (int i = 0; i < _ctx.Length("DescribeDomainQpsWithCache.CcBlockQps.Length"); i++) {
-				describeDomainQpsWithCacheResponse_ccBlockQps.Add(_ctx.StringValue("DescribeDomainQpsWithCache.CcBlockQps["+ i +"]"));
+			List<string> describeDomainQpsWithCacheResponse_ccJsQps = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeDomainQpsWithCache.CcJsQps.Length"); i++) {
+				describeDomainQpsWithCacheResponse_ccJsQps.Add(_ctx.StringValue("DescribeDomainQpsWithCache.CcJsQps["+ i +"]"));
 			}
-			describeDomainQpsWithCacheResponse.CcBlockQps = describeDomainQpsWithCacheResponse_ccBlockQps;
+			describeDomainQpsWithCacheResponse.CcJsQps = describeDomainQpsWithCacheResponse_ccJsQps;
+
+			List<string> describeDomainQpsWithCacheResponse_regionBlocks = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeDomainQpsWithCache.RegionBlocks.Length"); i++) {
+				describeDomainQpsWithCacheResponse_regionBlocks.Add(_ctx.StringValue("DescribeDomainQpsWithCache.RegionBlocks["+ i +"]"));
+			}
+			describeDomainQpsWithCacheResponse.RegionBlocks = describeDomainQpsWithCacheResponse_regionBlocks;
+
+			List<string> describeDomainQpsWithCacheResponse_preciseBlocks = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeDomainQpsWithCache.PreciseBlocks.Length"); i++) {
+				describeDomainQpsWithCacheResponse_preciseBlocks.Add(_ctx.StringValue("DescribeDomainQpsWithCache.PreciseBlocks["+ i +"]"));
+			}
+			describeDomainQpsWithCacheResponse.PreciseBlocks = describeDomainQpsWithCacheResponse_preciseBlocks;
+
+			List<string> describeDomainQpsWithCacheResponse_cacheHits = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeDomainQpsWithCache.CacheHits.Length"); i++) {
+				describeDomainQpsWithCacheResponse_cacheHits.Add(_ctx.StringValue("DescribeDomainQpsWithCache.CacheHits["+ i +"]"));
+			}
+			describeDomainQpsWithCacheResponse.CacheHits = describeDomainQpsWithCacheResponse_cacheHits;
+
+			List<string> describeDomainQpsWithCacheResponse_totals = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeDomainQpsWithCache.Totals.Length"); i++) {
+				describeDomainQpsWithCacheResponse_totals.Add(_ctx.StringValue("DescribeDomainQpsWithCache.Totals["+ i +"]"));
+			}
+			describeDomainQpsWithCacheResponse.Totals = describeDomainQpsWithCacheResponse_totals;
+
+			List<string> describeDomainQpsWithCacheResponse_ipBlockQps = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeDomainQpsWithCache.IpBlockQps.Length"); i++) {
+				describeDomainQpsWithCacheResponse_ipBlockQps.Add(_ctx.StringValue("DescribeDomainQpsWithCache.IpBlockQps["+ i +"]"));
+			}
+			describeDomainQpsWithCacheResponse.IpBlockQps = describeDomainQpsWithCacheResponse_ipBlockQps;
         
 			return describeDomainQpsWithCacheResponse;
         }

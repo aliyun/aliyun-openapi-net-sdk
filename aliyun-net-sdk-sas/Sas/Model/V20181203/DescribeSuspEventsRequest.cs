@@ -41,21 +41,13 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			Method = MethodType.POST;
         }
 
-		private string targetType;
-
-		private string remark;
-
 		private string source;
 
 		private string containerFieldName;
 
 		private string sourceIp;
 
-		private string containerFieldValue;
-
 		private string eventNames;
-
-		private string pageSize;
 
 		private string from;
 
@@ -63,13 +55,31 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string tacticId;
 
-		private string lang;
-
 		private string alarmUniqueInfo;
 
 		private string uniqueInfo;
 
 		private long? groupId;
+
+		private string operateTimeEnd;
+
+		private string name;
+
+		private string status;
+
+		private string uuids;
+
+		private string timeEnd;
+
+		private string targetType;
+
+		private string remark;
+
+		private string containerFieldValue;
+
+		private string pageSize;
+
+		private string lang;
 
 		private string dealed;
 
@@ -79,41 +89,13 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private List<string> operateErrorCodeLists = new List<string>(){ };
 
-		private string name;
+		private string operateTimeStart;
+
+		private string timeStart;
 
 		private string levels;
 
 		private string parentEventTypes;
-
-		private string status;
-
-		private string uuids;
-
-		public string TargetType
-		{
-			get
-			{
-				return targetType;
-			}
-			set	
-			{
-				targetType = value;
-				DictionaryUtil.Add(QueryParameters, "TargetType", value);
-			}
-		}
-
-		public string Remark
-		{
-			get
-			{
-				return remark;
-			}
-			set	
-			{
-				remark = value;
-				DictionaryUtil.Add(QueryParameters, "Remark", value);
-			}
-		}
 
 		public string Source
 		{
@@ -154,19 +136,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string ContainerFieldValue
-		{
-			get
-			{
-				return containerFieldValue;
-			}
-			set	
-			{
-				containerFieldValue = value;
-				DictionaryUtil.Add(QueryParameters, "ContainerFieldValue", value);
-			}
-		}
-
 		public string EventNames
 		{
 			get
@@ -177,19 +146,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				eventNames = value;
 				DictionaryUtil.Add(QueryParameters, "EventNames", value);
-			}
-		}
-
-		public string PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value);
 			}
 		}
 
@@ -232,19 +188,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
 		public string AlarmUniqueInfo
 		{
 			get
@@ -281,6 +224,136 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				groupId = value;
 				DictionaryUtil.Add(QueryParameters, "GroupId", value.ToString());
+			}
+		}
+
+		public string OperateTimeEnd
+		{
+			get
+			{
+				return operateTimeEnd;
+			}
+			set	
+			{
+				operateTimeEnd = value;
+				DictionaryUtil.Add(QueryParameters, "OperateTimeEnd", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+		public string Uuids
+		{
+			get
+			{
+				return uuids;
+			}
+			set	
+			{
+				uuids = value;
+				DictionaryUtil.Add(QueryParameters, "Uuids", value);
+			}
+		}
+
+		public string TimeEnd
+		{
+			get
+			{
+				return timeEnd;
+			}
+			set	
+			{
+				timeEnd = value;
+				DictionaryUtil.Add(QueryParameters, "TimeEnd", value);
+			}
+		}
+
+		public string TargetType
+		{
+			get
+			{
+				return targetType;
+			}
+			set	
+			{
+				targetType = value;
+				DictionaryUtil.Add(QueryParameters, "TargetType", value);
+			}
+		}
+
+		public string Remark
+		{
+			get
+			{
+				return remark;
+			}
+			set	
+			{
+				remark = value;
+				DictionaryUtil.Add(QueryParameters, "Remark", value);
+			}
+		}
+
+		public string ContainerFieldValue
+		{
+			get
+			{
+				return containerFieldValue;
+			}
+			set	
+			{
+				containerFieldValue = value;
+				DictionaryUtil.Add(QueryParameters, "ContainerFieldValue", value);
+			}
+		}
+
+		public string PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value);
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
@@ -336,16 +409,29 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string Name
+		public string OperateTimeStart
 		{
 			get
 			{
-				return name;
+				return operateTimeStart;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				operateTimeStart = value;
+				DictionaryUtil.Add(QueryParameters, "OperateTimeStart", value);
+			}
+		}
+
+		public string TimeStart
+		{
+			get
+			{
+				return timeStart;
+			}
+			set	
+			{
+				timeStart = value;
+				DictionaryUtil.Add(QueryParameters, "TimeStart", value);
 			}
 		}
 
@@ -372,32 +458,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				parentEventTypes = value;
 				DictionaryUtil.Add(QueryParameters, "ParentEventTypes", value);
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
-			}
-		}
-
-		public string Uuids
-		{
-			get
-			{
-				return uuids;
-			}
-			set	
-			{
-				uuids = value;
-				DictionaryUtil.Add(QueryParameters, "Uuids", value);
 			}
 		}
 

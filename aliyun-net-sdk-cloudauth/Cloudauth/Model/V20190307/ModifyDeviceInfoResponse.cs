@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20190307
@@ -27,15 +27,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 		private string requestId;
 
-		private string deviceId;
-
 		private string userDeviceId;
 
-		private string bizType;
+		private string deviceId;
+
+		private string expiredDay;
 
 		private string beginDay;
 
-		private string expiredDay;
+		private string bizType;
 
 		public string RequestId
 		{
@@ -46,18 +46,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string DeviceId
-		{
-			get
-			{
-				return deviceId;
-			}
-			set	
-			{
-				deviceId = value;
 			}
 		}
 
@@ -73,15 +61,27 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public string BizType
+		public string DeviceId
 		{
 			get
 			{
-				return bizType;
+				return deviceId;
 			}
 			set	
 			{
-				bizType = value;
+				deviceId = value;
+			}
+		}
+
+		public string ExpiredDay
+		{
+			get
+			{
+				return expiredDay;
+			}
+			set	
+			{
+				expiredDay = value;
 			}
 		}
 
@@ -97,15 +97,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public string ExpiredDay
+		public string BizType
 		{
 			get
 			{
-				return expiredDay;
+				return bizType;
 			}
 			set	
 			{
-				expiredDay = value;
+				bizType = value;
 			}
 		}
 	}

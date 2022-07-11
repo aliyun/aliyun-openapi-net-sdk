@@ -63,6 +63,8 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describeVersionConfigResponse.ImageScanCapacity = _ctx.LongValue("DescribeVersionConfig.ImageScanCapacity");
 			describeVersionConfigResponse.IsTrialVersion = _ctx.IntegerValue("DescribeVersionConfig.IsTrialVersion");
 			describeVersionConfigResponse.UserDefinedAlarms = _ctx.IntegerValue("DescribeVersionConfig.UserDefinedAlarms");
+			describeVersionConfigResponse.OpenTime = _ctx.LongValue("DescribeVersionConfig.OpenTime");
+			describeVersionConfigResponse.IsNewContainerVersion = _ctx.BooleanValue("DescribeVersionConfig.IsNewContainerVersion");
         
 			return describeVersionConfigResponse;
         }

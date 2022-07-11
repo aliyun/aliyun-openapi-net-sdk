@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -58,9 +58,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 			private string domain;
 
-			private int? enable;
-
 			private string cname;
+
+			private int? enable;
 
 			public string Domain
 			{
@@ -74,18 +74,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public int? Enable
-			{
-				get
-				{
-					return enable;
-				}
-				set	
-				{
-					enable = value;
-				}
-			}
-
 			public string Cname
 			{
 				get
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					cname = value;
+				}
+			}
+
+			public int? Enable
+			{
+				get
+				{
+					return enable;
+				}
+				set	
+				{
+					enable = value;
 				}
 			}
 		}

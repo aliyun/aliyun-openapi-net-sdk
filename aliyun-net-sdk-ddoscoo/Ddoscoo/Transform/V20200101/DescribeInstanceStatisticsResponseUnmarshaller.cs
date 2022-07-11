@@ -36,11 +36,11 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribeInstanceStatisticsResponse.DescribeInstanceStatistics_InstanceStatistic> describeInstanceStatisticsResponse_instanceStatistics = new List<DescribeInstanceStatisticsResponse.DescribeInstanceStatistics_InstanceStatistic>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceStatistics.InstanceStatistics.Length"); i++) {
 				DescribeInstanceStatisticsResponse.DescribeInstanceStatistics_InstanceStatistic instanceStatistic = new DescribeInstanceStatisticsResponse.DescribeInstanceStatistics_InstanceStatistic();
-				instanceStatistic.InstanceId = _ctx.StringValue("DescribeInstanceStatistics.InstanceStatistics["+ i +"].InstanceId");
-				instanceStatistic.PortUsage = _ctx.IntegerValue("DescribeInstanceStatistics.InstanceStatistics["+ i +"].PortUsage");
 				instanceStatistic.DomainUsage = _ctx.IntegerValue("DescribeInstanceStatistics.InstanceStatistics["+ i +"].DomainUsage");
-				instanceStatistic.SiteUsage = _ctx.IntegerValue("DescribeInstanceStatistics.InstanceStatistics["+ i +"].SiteUsage");
 				instanceStatistic.DefenseCountUsage = _ctx.IntegerValue("DescribeInstanceStatistics.InstanceStatistics["+ i +"].DefenseCountUsage");
+				instanceStatistic.InstanceId = _ctx.StringValue("DescribeInstanceStatistics.InstanceStatistics["+ i +"].InstanceId");
+				instanceStatistic.SiteUsage = _ctx.IntegerValue("DescribeInstanceStatistics.InstanceStatistics["+ i +"].SiteUsage");
+				instanceStatistic.PortUsage = _ctx.IntegerValue("DescribeInstanceStatistics.InstanceStatistics["+ i +"].PortUsage");
 
 				describeInstanceStatisticsResponse_instanceStatistics.Add(instanceStatistic);
 			}

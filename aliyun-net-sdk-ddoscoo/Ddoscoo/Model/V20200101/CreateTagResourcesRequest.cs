@@ -43,7 +43,7 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 		private string resourceType;
 
-		private List<Tags> tagss = new List<Tags>(){ };
+		private List<string> tagss = new List<string>(){ };
 
 		private string resourceGroupId;
 
@@ -62,7 +62,7 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			}
 		}
 
-		public List<Tags> Tagss
+		public List<string> Tagss
 		{
 			get
 			{
@@ -72,10 +72,13 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set
 			{
 				tagss = value;
-				for (int i = 0; i < tagss.Count; i++)
+				if(tagss != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".Value", tagss[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".Key", tagss[i].Key);
+					for (int depth1 = 0; depth1 < tagss.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tags." + (depth1 + 1), tagss[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tags." + (depth1 + 1), tagss[depth1]);
+					}
 				}
 			}
 		}
@@ -103,10 +106,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set
 			{
 				resourceIdss = value;
-				for (int i = 0; i < resourceIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ResourceIds." + (i + 1) , resourceIdss[i]);
-				}
 			}
 		}
 
@@ -117,7 +116,7 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 			private string key;
 
-			public string Value
+			public string Value_
 			{
 				get
 				{

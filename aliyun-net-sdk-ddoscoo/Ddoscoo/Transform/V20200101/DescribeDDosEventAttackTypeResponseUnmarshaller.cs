@@ -36,8 +36,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribeDDosEventAttackTypeResponse.DescribeDDosEventAttackType_EventAttackType> describeDDosEventAttackTypeResponse_attackTypes = new List<DescribeDDosEventAttackTypeResponse.DescribeDDosEventAttackType_EventAttackType>();
 			for (int i = 0; i < _ctx.Length("DescribeDDosEventAttackType.AttackTypes.Length"); i++) {
 				DescribeDDosEventAttackTypeResponse.DescribeDDosEventAttackType_EventAttackType eventAttackType = new DescribeDDosEventAttackTypeResponse.DescribeDDosEventAttackType_EventAttackType();
-				eventAttackType.AttackType = _ctx.StringValue("DescribeDDosEventAttackType.AttackTypes["+ i +"].AttackType");
 				eventAttackType.InPkts = _ctx.LongValue("DescribeDDosEventAttackType.AttackTypes["+ i +"].InPkts");
+				eventAttackType.AttackType = _ctx.StringValue("DescribeDDosEventAttackType.AttackTypes["+ i +"].AttackType");
 
 				describeDDosEventAttackTypeResponse_attackTypes.Add(eventAttackType);
 			}

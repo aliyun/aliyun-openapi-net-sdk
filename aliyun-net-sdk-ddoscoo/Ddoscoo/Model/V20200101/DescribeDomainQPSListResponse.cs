@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,107 +56,23 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeDomainQPSList_DomainQPS
 		{
 
-			private long? maxQps;
-
-			private long? maxAttackQps;
-
-			private long? maxNormalQps;
-
-			private long? attackQps;
-
-			private long? totalQps;
-
-			private long? cacheHits;
-
-			private long? totalCount;
-
 			private long? index;
 
 			private long? time;
 
-			public long? MaxQps
-			{
-				get
-				{
-					return maxQps;
-				}
-				set	
-				{
-					maxQps = value;
-				}
-			}
+			private long? maxAttackQps;
 
-			public long? MaxAttackQps
-			{
-				get
-				{
-					return maxAttackQps;
-				}
-				set	
-				{
-					maxAttackQps = value;
-				}
-			}
+			private long? attackQps;
 
-			public long? MaxNormalQps
-			{
-				get
-				{
-					return maxNormalQps;
-				}
-				set	
-				{
-					maxNormalQps = value;
-				}
-			}
+			private long? maxQps;
 
-			public long? AttackQps
-			{
-				get
-				{
-					return attackQps;
-				}
-				set	
-				{
-					attackQps = value;
-				}
-			}
+			private long? maxNormalQps;
 
-			public long? TotalQps
-			{
-				get
-				{
-					return totalQps;
-				}
-				set	
-				{
-					totalQps = value;
-				}
-			}
+			private long? totalQps;
 
-			public long? CacheHits
-			{
-				get
-				{
-					return cacheHits;
-				}
-				set	
-				{
-					cacheHits = value;
-				}
-			}
+			private long? totalCount;
 
-			public long? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
+			private long? cacheHits;
 
 			public long? Index
 			{
@@ -179,6 +95,90 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					time = value;
+				}
+			}
+
+			public long? MaxAttackQps
+			{
+				get
+				{
+					return maxAttackQps;
+				}
+				set	
+				{
+					maxAttackQps = value;
+				}
+			}
+
+			public long? AttackQps
+			{
+				get
+				{
+					return attackQps;
+				}
+				set	
+				{
+					attackQps = value;
+				}
+			}
+
+			public long? MaxQps
+			{
+				get
+				{
+					return maxQps;
+				}
+				set	
+				{
+					maxQps = value;
+				}
+			}
+
+			public long? MaxNormalQps
+			{
+				get
+				{
+					return maxNormalQps;
+				}
+				set	
+				{
+					maxNormalQps = value;
+				}
+			}
+
+			public long? TotalQps
+			{
+				get
+				{
+					return totalQps;
+				}
+				set	
+				{
+					totalQps = value;
+				}
+			}
+
+			public long? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
+				}
+			}
+
+			public long? CacheHits
+			{
+				get
+				{
+					return cacheHits;
+				}
+				set	
+				{
+					cacheHits = value;
 				}
 			}
 		}

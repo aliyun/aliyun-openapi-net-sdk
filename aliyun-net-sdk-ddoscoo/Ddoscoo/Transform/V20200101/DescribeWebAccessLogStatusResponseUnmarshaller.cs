@@ -31,10 +31,10 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeWebAccessLogStatusResponse describeWebAccessLogStatusResponse = new DescribeWebAccessLogStatusResponse();
 
 			describeWebAccessLogStatusResponse.HttpResponse = _ctx.HttpResponse;
-			describeWebAccessLogStatusResponse.RequestId = _ctx.StringValue("DescribeWebAccessLogStatus.RequestId");
-			describeWebAccessLogStatusResponse.SlsStatus = _ctx.BooleanValue("DescribeWebAccessLogStatus.SlsStatus");
 			describeWebAccessLogStatusResponse.SlsLogstore = _ctx.StringValue("DescribeWebAccessLogStatus.SlsLogstore");
+			describeWebAccessLogStatusResponse.SlsStatus = _ctx.BooleanValue("DescribeWebAccessLogStatus.SlsStatus");
 			describeWebAccessLogStatusResponse.SlsProject = _ctx.StringValue("DescribeWebAccessLogStatus.SlsProject");
+			describeWebAccessLogStatusResponse.RequestId = _ctx.StringValue("DescribeWebAccessLogStatus.RequestId");
         
 			return describeWebAccessLogStatusResponse;
         }

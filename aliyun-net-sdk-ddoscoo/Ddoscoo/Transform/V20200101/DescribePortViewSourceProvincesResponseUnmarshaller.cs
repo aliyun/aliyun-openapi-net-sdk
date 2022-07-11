@@ -36,8 +36,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribePortViewSourceProvincesResponse.DescribePortViewSourceProvinces_Province> describePortViewSourceProvincesResponse_sourceProvinces = new List<DescribePortViewSourceProvincesResponse.DescribePortViewSourceProvinces_Province>();
 			for (int i = 0; i < _ctx.Length("DescribePortViewSourceProvinces.SourceProvinces.Length"); i++) {
 				DescribePortViewSourceProvincesResponse.DescribePortViewSourceProvinces_Province province = new DescribePortViewSourceProvincesResponse.DescribePortViewSourceProvinces_Province();
-				province.Count = _ctx.LongValue("DescribePortViewSourceProvinces.SourceProvinces["+ i +"].Count");
 				province.ProvinceId = _ctx.StringValue("DescribePortViewSourceProvinces.SourceProvinces["+ i +"].ProvinceId");
+				province.Count = _ctx.LongValue("DescribePortViewSourceProvinces.SourceProvinces["+ i +"].Count");
 
 				describePortViewSourceProvincesResponse_sourceProvinces.Add(province);
 			}

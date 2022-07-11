@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.videorecog.Model.V20200320
@@ -25,26 +25,15 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 	public class UnderstandVideoContentResponse : AcsResponse
 	{
 
-		private string message;
-
 		private string requestId;
 
 		private string code;
 
+		private string message;
+
 		private UnderstandVideoContent_Data data;
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -57,6 +46,7 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 			}
 		}
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -69,6 +59,20 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Data")]
 		public UnderstandVideoContent_Data Data
 		{
 			get
@@ -88,6 +92,7 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 
 			private UnderstandVideoContent_VideoInfo videoInfo;
 
+			[JsonProperty(PropertyName = "TagInfo")]
 			public string TagInfo
 			{
 				get
@@ -100,6 +105,7 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 				}
 			}
 
+			[JsonProperty(PropertyName = "VideoInfo")]
 			public UnderstandVideoContent_VideoInfo VideoInfo
 			{
 				get
@@ -115,38 +121,28 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 			public class UnderstandVideoContent_VideoInfo
 			{
 
-				private float? fps;
-
-				private long? duration;
+				private long? width;
 
 				private long? height;
 
-				private long? width;
+				private long? duration;
 
-				public float? Fps
+				private float? fps;
+
+				[JsonProperty(PropertyName = "Width")]
+				public long? Width
 				{
 					get
 					{
-						return fps;
+						return width;
 					}
 					set	
 					{
-						fps = value;
+						width = value;
 					}
 				}
 
-				public long? Duration
-				{
-					get
-					{
-						return duration;
-					}
-					set	
-					{
-						duration = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "Height")]
 				public long? Height
 				{
 					get
@@ -159,15 +155,29 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 					}
 				}
 
-				public long? Width
+				[JsonProperty(PropertyName = "Duration")]
+				public long? Duration
 				{
 					get
 					{
-						return width;
+						return duration;
 					}
 					set	
 					{
-						width = value;
+						duration = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Fps")]
+				public float? Fps
+				{
+					get
+					{
+						return fps;
+					}
+					set	
+					{
+						fps = value;
 					}
 				}
 			}

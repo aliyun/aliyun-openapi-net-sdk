@@ -36,16 +36,16 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribeInstanceDetailsResponse.DescribeInstanceDetails_InstanceDetail> describeInstanceDetailsResponse_instanceDetails = new List<DescribeInstanceDetailsResponse.DescribeInstanceDetails_InstanceDetail>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceDetails.InstanceDetails.Length"); i++) {
 				DescribeInstanceDetailsResponse.DescribeInstanceDetails_InstanceDetail instanceDetail = new DescribeInstanceDetailsResponse.DescribeInstanceDetails_InstanceDetail();
-				instanceDetail.InstanceId = _ctx.StringValue("DescribeInstanceDetails.InstanceDetails["+ i +"].InstanceId");
 				instanceDetail.Line = _ctx.StringValue("DescribeInstanceDetails.InstanceDetails["+ i +"].Line");
+				instanceDetail.InstanceId = _ctx.StringValue("DescribeInstanceDetails.InstanceDetails["+ i +"].InstanceId");
 
 				List<DescribeInstanceDetailsResponse.DescribeInstanceDetails_InstanceDetail.DescribeInstanceDetails_EipInfo> instanceDetail_eipInfos = new List<DescribeInstanceDetailsResponse.DescribeInstanceDetails_InstanceDetail.DescribeInstanceDetails_EipInfo>();
 				for (int j = 0; j < _ctx.Length("DescribeInstanceDetails.InstanceDetails["+ i +"].EipInfos.Length"); j++) {
 					DescribeInstanceDetailsResponse.DescribeInstanceDetails_InstanceDetail.DescribeInstanceDetails_EipInfo eipInfo = new DescribeInstanceDetailsResponse.DescribeInstanceDetails_InstanceDetail.DescribeInstanceDetails_EipInfo();
-					eipInfo.Eip = _ctx.StringValue("DescribeInstanceDetails.InstanceDetails["+ i +"].EipInfos["+ j +"].Eip");
 					eipInfo.Status = _ctx.StringValue("DescribeInstanceDetails.InstanceDetails["+ i +"].EipInfos["+ j +"].Status");
-					eipInfo.IpVersion = _ctx.StringValue("DescribeInstanceDetails.InstanceDetails["+ i +"].EipInfos["+ j +"].IpVersion");
 					eipInfo.IpMode = _ctx.StringValue("DescribeInstanceDetails.InstanceDetails["+ i +"].EipInfos["+ j +"].IpMode");
+					eipInfo.Eip = _ctx.StringValue("DescribeInstanceDetails.InstanceDetails["+ i +"].EipInfos["+ j +"].Eip");
+					eipInfo.IpVersion = _ctx.StringValue("DescribeInstanceDetails.InstanceDetails["+ i +"].EipInfos["+ j +"].IpVersion");
 
 					instanceDetail_eipInfos.Add(eipInfo);
 				}

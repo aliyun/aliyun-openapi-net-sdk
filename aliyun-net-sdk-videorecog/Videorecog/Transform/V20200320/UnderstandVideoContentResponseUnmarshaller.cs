@@ -31,18 +31,18 @@ namespace Aliyun.Acs.videorecog.Transform.V20200320
 			UnderstandVideoContentResponse understandVideoContentResponse = new UnderstandVideoContentResponse();
 
 			understandVideoContentResponse.HttpResponse = _ctx.HttpResponse;
-			understandVideoContentResponse.Message = _ctx.StringValue("UnderstandVideoContent.Message");
 			understandVideoContentResponse.RequestId = _ctx.StringValue("UnderstandVideoContent.RequestId");
 			understandVideoContentResponse.Code = _ctx.StringValue("UnderstandVideoContent.Code");
+			understandVideoContentResponse.Message = _ctx.StringValue("UnderstandVideoContent.Message");
 
 			UnderstandVideoContentResponse.UnderstandVideoContent_Data data = new UnderstandVideoContentResponse.UnderstandVideoContent_Data();
 			data.TagInfo = _ctx.StringValue("UnderstandVideoContent.Data.TagInfo");
 
 			UnderstandVideoContentResponse.UnderstandVideoContent_Data.UnderstandVideoContent_VideoInfo videoInfo = new UnderstandVideoContentResponse.UnderstandVideoContent_Data.UnderstandVideoContent_VideoInfo();
-			videoInfo.Fps = _ctx.FloatValue("UnderstandVideoContent.Data.VideoInfo.Fps");
-			videoInfo.Duration = _ctx.LongValue("UnderstandVideoContent.Data.VideoInfo.Duration");
-			videoInfo.Height = _ctx.LongValue("UnderstandVideoContent.Data.VideoInfo.Height");
 			videoInfo.Width = _ctx.LongValue("UnderstandVideoContent.Data.VideoInfo.Width");
+			videoInfo.Height = _ctx.LongValue("UnderstandVideoContent.Data.VideoInfo.Height");
+			videoInfo.Duration = _ctx.LongValue("UnderstandVideoContent.Data.VideoInfo.Duration");
+			videoInfo.Fps = _ctx.FloatValue("UnderstandVideoContent.Data.VideoInfo.Fps");
 			data.VideoInfo = videoInfo;
 			understandVideoContentResponse.Data = data;
         

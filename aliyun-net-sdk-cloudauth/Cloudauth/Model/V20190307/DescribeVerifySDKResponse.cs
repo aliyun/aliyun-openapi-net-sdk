@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20190307
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 	public class DescribeVerifySDKResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string sdkUrl;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string SdkUrl
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				sdkUrl = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

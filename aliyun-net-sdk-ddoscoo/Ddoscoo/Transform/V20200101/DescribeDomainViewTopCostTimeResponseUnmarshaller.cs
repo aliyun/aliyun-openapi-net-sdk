@@ -37,8 +37,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			for (int i = 0; i < _ctx.Length("DescribeDomainViewTopCostTime.UrlList.Length"); i++) {
 				DescribeDomainViewTopCostTimeResponse.DescribeDomainViewTopCostTime_Url url = new DescribeDomainViewTopCostTimeResponse.DescribeDomainViewTopCostTime_Url();
 				url.CostTime = _ctx.FloatValue("DescribeDomainViewTopCostTime.UrlList["+ i +"].CostTime");
-				url.Domain = _ctx.StringValue("DescribeDomainViewTopCostTime.UrlList["+ i +"].Domain");
 				url.Url = _ctx.StringValue("DescribeDomainViewTopCostTime.UrlList["+ i +"].Url");
+				url.Domain = _ctx.StringValue("DescribeDomainViewTopCostTime.UrlList["+ i +"].Domain");
 
 				describeDomainViewTopCostTimeResponse_urlList.Add(url);
 			}

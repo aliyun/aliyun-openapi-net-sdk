@@ -57,10 +57,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set
 			{
 				regionss = value;
-				for (int i = 0; i < regionss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Regions." + (i + 1) , regionss[i]);
-				}
 			}
 		}
 

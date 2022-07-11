@@ -17,13 +17,15 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
 {
 	public class DescribeSlsLogstoreInfoResponse : AcsResponse
 	{
+
+		private int? ttl;
 
 		private string requestId;
 
@@ -35,7 +37,17 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 		private string project;
 
-		private int? ttl;
+		public int? Ttl
+		{
+			get
+			{
+				return ttl;
+			}
+			set	
+			{
+				ttl = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -94,18 +106,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				project = value;
-			}
-		}
-
-		public int? Ttl
-		{
-			get
-			{
-				return ttl;
-			}
-			set	
-			{
-				ttl = value;
 			}
 		}
 	}

@@ -36,15 +36,15 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribeDomainQPSListResponse.DescribeDomainQPSList_DomainQPS> describeDomainQPSListResponse_domainQPSList = new List<DescribeDomainQPSListResponse.DescribeDomainQPSList_DomainQPS>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainQPSList.DomainQPSList.Length"); i++) {
 				DescribeDomainQPSListResponse.DescribeDomainQPSList_DomainQPS domainQPS = new DescribeDomainQPSListResponse.DescribeDomainQPSList_DomainQPS();
-				domainQPS.MaxQps = _ctx.LongValue("DescribeDomainQPSList.DomainQPSList["+ i +"].MaxQps");
-				domainQPS.MaxAttackQps = _ctx.LongValue("DescribeDomainQPSList.DomainQPSList["+ i +"].MaxAttackQps");
-				domainQPS.MaxNormalQps = _ctx.LongValue("DescribeDomainQPSList.DomainQPSList["+ i +"].MaxNormalQps");
-				domainQPS.AttackQps = _ctx.LongValue("DescribeDomainQPSList.DomainQPSList["+ i +"].AttackQps");
-				domainQPS.TotalQps = _ctx.LongValue("DescribeDomainQPSList.DomainQPSList["+ i +"].TotalQps");
-				domainQPS.CacheHits = _ctx.LongValue("DescribeDomainQPSList.DomainQPSList["+ i +"].CacheHits");
-				domainQPS.TotalCount = _ctx.LongValue("DescribeDomainQPSList.DomainQPSList["+ i +"].TotalCount");
 				domainQPS.Index = _ctx.LongValue("DescribeDomainQPSList.DomainQPSList["+ i +"].Index");
 				domainQPS.Time = _ctx.LongValue("DescribeDomainQPSList.DomainQPSList["+ i +"].Time");
+				domainQPS.MaxAttackQps = _ctx.LongValue("DescribeDomainQPSList.DomainQPSList["+ i +"].MaxAttackQps");
+				domainQPS.AttackQps = _ctx.LongValue("DescribeDomainQPSList.DomainQPSList["+ i +"].AttackQps");
+				domainQPS.MaxQps = _ctx.LongValue("DescribeDomainQPSList.DomainQPSList["+ i +"].MaxQps");
+				domainQPS.MaxNormalQps = _ctx.LongValue("DescribeDomainQPSList.DomainQPSList["+ i +"].MaxNormalQps");
+				domainQPS.TotalQps = _ctx.LongValue("DescribeDomainQPSList.DomainQPSList["+ i +"].TotalQps");
+				domainQPS.TotalCount = _ctx.LongValue("DescribeDomainQPSList.DomainQPSList["+ i +"].TotalCount");
+				domainQPS.CacheHits = _ctx.LongValue("DescribeDomainQPSList.DomainQPSList["+ i +"].CacheHits");
 
 				describeDomainQPSListResponse_domainQPSList.Add(domainQPS);
 			}

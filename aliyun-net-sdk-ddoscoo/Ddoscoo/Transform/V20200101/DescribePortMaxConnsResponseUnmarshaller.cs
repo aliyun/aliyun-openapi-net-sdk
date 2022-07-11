@@ -36,8 +36,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribePortMaxConnsResponse.DescribePortMaxConns_PortMaxConnsItem> describePortMaxConnsResponse_portMaxConns = new List<DescribePortMaxConnsResponse.DescribePortMaxConns_PortMaxConnsItem>();
 			for (int i = 0; i < _ctx.Length("DescribePortMaxConns.PortMaxConns.Length"); i++) {
 				DescribePortMaxConnsResponse.DescribePortMaxConns_PortMaxConnsItem portMaxConnsItem = new DescribePortMaxConnsResponse.DescribePortMaxConns_PortMaxConnsItem();
-				portMaxConnsItem.Port = _ctx.StringValue("DescribePortMaxConns.PortMaxConns["+ i +"].Port");
 				portMaxConnsItem.Ip = _ctx.StringValue("DescribePortMaxConns.PortMaxConns["+ i +"].Ip");
+				portMaxConnsItem.Port = _ctx.StringValue("DescribePortMaxConns.PortMaxConns["+ i +"].Port");
 				portMaxConnsItem.Cps = _ctx.LongValue("DescribePortMaxConns.PortMaxConns["+ i +"].Cps");
 
 				describePortMaxConnsResponse_portMaxConns.Add(portMaxConnsItem);

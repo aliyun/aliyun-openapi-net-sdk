@@ -31,18 +31,18 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeDefenseRecordsResponse describeDefenseRecordsResponse = new DescribeDefenseRecordsResponse();
 
 			describeDefenseRecordsResponse.HttpResponse = _ctx.HttpResponse;
-			describeDefenseRecordsResponse.RequestId = _ctx.StringValue("DescribeDefenseRecords.RequestId");
 			describeDefenseRecordsResponse.TotalCount = _ctx.LongValue("DescribeDefenseRecords.TotalCount");
+			describeDefenseRecordsResponse.RequestId = _ctx.StringValue("DescribeDefenseRecords.RequestId");
 
 			List<DescribeDefenseRecordsResponse.DescribeDefenseRecords_DefenseRecord> describeDefenseRecordsResponse_defenseRecords = new List<DescribeDefenseRecordsResponse.DescribeDefenseRecords_DefenseRecord>();
 			for (int i = 0; i < _ctx.Length("DescribeDefenseRecords.DefenseRecords.Length"); i++) {
 				DescribeDefenseRecordsResponse.DescribeDefenseRecords_DefenseRecord defenseRecord = new DescribeDefenseRecordsResponse.DescribeDefenseRecords_DefenseRecord();
-				defenseRecord.StartTime = _ctx.LongValue("DescribeDefenseRecords.DefenseRecords["+ i +"].StartTime");
 				defenseRecord.EndTime = _ctx.LongValue("DescribeDefenseRecords.DefenseRecords["+ i +"].EndTime");
-				defenseRecord.InstanceId = _ctx.StringValue("DescribeDefenseRecords.DefenseRecords["+ i +"].InstanceId");
 				defenseRecord.Status = _ctx.IntegerValue("DescribeDefenseRecords.DefenseRecords["+ i +"].Status");
-				defenseRecord.AttackPeak = _ctx.LongValue("DescribeDefenseRecords.DefenseRecords["+ i +"].AttackPeak");
+				defenseRecord.StartTime = _ctx.LongValue("DescribeDefenseRecords.DefenseRecords["+ i +"].StartTime");
 				defenseRecord.EventCount = _ctx.IntegerValue("DescribeDefenseRecords.DefenseRecords["+ i +"].EventCount");
+				defenseRecord.InstanceId = _ctx.StringValue("DescribeDefenseRecords.DefenseRecords["+ i +"].InstanceId");
+				defenseRecord.AttackPeak = _ctx.LongValue("DescribeDefenseRecords.DefenseRecords["+ i +"].AttackPeak");
 
 				describeDefenseRecordsResponse_defenseRecords.Add(defenseRecord);
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeDDosEventIsp_EventIsp
 		{
 
-			private string isp;
-
 			private long? inPkts;
 
-			public string Isp
-			{
-				get
-				{
-					return isp;
-				}
-				set	
-				{
-					isp = value;
-				}
-			}
+			private string isp;
 
 			public long? InPkts
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					inPkts = value;
+				}
+			}
+
+			public string Isp
+			{
+				get
+				{
+					return isp;
+				}
+				set	
+				{
+					isp = value;
 				}
 			}
 		}

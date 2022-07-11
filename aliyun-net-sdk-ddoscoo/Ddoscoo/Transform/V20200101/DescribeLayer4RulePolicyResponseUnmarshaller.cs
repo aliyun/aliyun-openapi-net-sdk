@@ -31,23 +31,23 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeLayer4RulePolicyResponse describeLayer4RulePolicyResponse = new DescribeLayer4RulePolicyResponse();
 
 			describeLayer4RulePolicyResponse.HttpResponse = _ctx.HttpResponse;
-			describeLayer4RulePolicyResponse.RequestId = _ctx.StringValue("DescribeLayer4RulePolicy.RequestId");
-			describeLayer4RulePolicyResponse.InstanceId = _ctx.StringValue("DescribeLayer4RulePolicy.InstanceId");
 			describeLayer4RulePolicyResponse.FrontendPort = _ctx.IntegerValue("DescribeLayer4RulePolicy.FrontendPort");
-			describeLayer4RulePolicyResponse.BackendPort = _ctx.IntegerValue("DescribeLayer4RulePolicy.BackendPort");
-			describeLayer4RulePolicyResponse.ForwardProtocol = _ctx.StringValue("DescribeLayer4RulePolicy.ForwardProtocol");
 			describeLayer4RulePolicyResponse.BakMode = _ctx.StringValue("DescribeLayer4RulePolicy.BakMode");
+			describeLayer4RulePolicyResponse.RequestId = _ctx.StringValue("DescribeLayer4RulePolicy.RequestId");
 			describeLayer4RulePolicyResponse.CurrentIndex = _ctx.IntegerValue("DescribeLayer4RulePolicy.CurrentIndex");
+			describeLayer4RulePolicyResponse.ForwardProtocol = _ctx.StringValue("DescribeLayer4RulePolicy.ForwardProtocol");
+			describeLayer4RulePolicyResponse.InstanceId = _ctx.StringValue("DescribeLayer4RulePolicy.InstanceId");
+			describeLayer4RulePolicyResponse.BackendPort = _ctx.IntegerValue("DescribeLayer4RulePolicy.BackendPort");
 
 			List<DescribeLayer4RulePolicyResponse.DescribeLayer4RulePolicy_PriRealServersItem> describeLayer4RulePolicyResponse_priRealServers = new List<DescribeLayer4RulePolicyResponse.DescribeLayer4RulePolicy_PriRealServersItem>();
 			for (int i = 0; i < _ctx.Length("DescribeLayer4RulePolicy.PriRealServers.Length"); i++) {
 				DescribeLayer4RulePolicyResponse.DescribeLayer4RulePolicy_PriRealServersItem priRealServersItem = new DescribeLayer4RulePolicyResponse.DescribeLayer4RulePolicy_PriRealServersItem();
-				priRealServersItem.InstanceId = _ctx.StringValue("DescribeLayer4RulePolicy.PriRealServers["+ i +"].InstanceId");
-				priRealServersItem.Eip = _ctx.StringValue("DescribeLayer4RulePolicy.PriRealServers["+ i +"].Eip");
 				priRealServersItem.FrontendPort = _ctx.IntegerValue("DescribeLayer4RulePolicy.PriRealServers["+ i +"].FrontendPort");
+				priRealServersItem.Eip = _ctx.StringValue("DescribeLayer4RulePolicy.PriRealServers["+ i +"].Eip");
 				priRealServersItem.Protocol = _ctx.StringValue("DescribeLayer4RulePolicy.PriRealServers["+ i +"].Protocol");
-				priRealServersItem.RealServer = _ctx.StringValue("DescribeLayer4RulePolicy.PriRealServers["+ i +"].RealServer");
 				priRealServersItem.CurrentIndex = _ctx.IntegerValue("DescribeLayer4RulePolicy.PriRealServers["+ i +"].CurrentIndex");
+				priRealServersItem.InstanceId = _ctx.StringValue("DescribeLayer4RulePolicy.PriRealServers["+ i +"].InstanceId");
+				priRealServersItem.RealServer = _ctx.StringValue("DescribeLayer4RulePolicy.PriRealServers["+ i +"].RealServer");
 
 				describeLayer4RulePolicyResponse_priRealServers.Add(priRealServersItem);
 			}
@@ -56,12 +56,12 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribeLayer4RulePolicyResponse.DescribeLayer4RulePolicy_SecRealServersItem> describeLayer4RulePolicyResponse_secRealServers = new List<DescribeLayer4RulePolicyResponse.DescribeLayer4RulePolicy_SecRealServersItem>();
 			for (int i = 0; i < _ctx.Length("DescribeLayer4RulePolicy.SecRealServers.Length"); i++) {
 				DescribeLayer4RulePolicyResponse.DescribeLayer4RulePolicy_SecRealServersItem secRealServersItem = new DescribeLayer4RulePolicyResponse.DescribeLayer4RulePolicy_SecRealServersItem();
-				secRealServersItem.InstanceId = _ctx.StringValue("DescribeLayer4RulePolicy.SecRealServers["+ i +"].InstanceId");
-				secRealServersItem.Eip = _ctx.StringValue("DescribeLayer4RulePolicy.SecRealServers["+ i +"].Eip");
 				secRealServersItem.FrontendPort = _ctx.IntegerValue("DescribeLayer4RulePolicy.SecRealServers["+ i +"].FrontendPort");
+				secRealServersItem.Eip = _ctx.StringValue("DescribeLayer4RulePolicy.SecRealServers["+ i +"].Eip");
 				secRealServersItem.Protocol = _ctx.StringValue("DescribeLayer4RulePolicy.SecRealServers["+ i +"].Protocol");
-				secRealServersItem.RealServer = _ctx.StringValue("DescribeLayer4RulePolicy.SecRealServers["+ i +"].RealServer");
 				secRealServersItem.CurrentIndex = _ctx.IntegerValue("DescribeLayer4RulePolicy.SecRealServers["+ i +"].CurrentIndex");
+				secRealServersItem.InstanceId = _ctx.StringValue("DescribeLayer4RulePolicy.SecRealServers["+ i +"].InstanceId");
+				secRealServersItem.RealServer = _ctx.StringValue("DescribeLayer4RulePolicy.SecRealServers["+ i +"].RealServer");
 
 				describeLayer4RulePolicyResponse_secRealServers.Add(secRealServersItem);
 			}

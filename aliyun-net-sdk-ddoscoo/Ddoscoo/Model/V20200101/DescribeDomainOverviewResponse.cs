@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 		private string requestId;
 
-		private long? maxHttps;
-
 		private long? maxHttp;
+
+		private long? maxHttps;
 
 		public string RequestId
 		{
@@ -43,18 +43,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			}
 		}
 
-		public long? MaxHttps
-		{
-			get
-			{
-				return maxHttps;
-			}
-			set	
-			{
-				maxHttps = value;
-			}
-		}
-
 		public long? MaxHttp
 		{
 			get
@@ -64,6 +52,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				maxHttp = value;
+			}
+		}
+
+		public long? MaxHttps
+		{
+			get
+			{
+				return maxHttps;
+			}
+			set	
+			{
+				maxHttps = value;
 			}
 		}
 	}

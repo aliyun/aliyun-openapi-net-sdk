@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeL7RsPolicyResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string proxyMode;
 
-		private List<DescribeL7RsPolicy_AttributeItem> attributes;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeL7RsPolicy_AttributeItem> attributes;
 
 		public string ProxyMode
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				proxyMode = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

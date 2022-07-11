@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeOpEntitiesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? totalCount;
 
-		private List<DescribeOpEntities_OpEntity> opEntities;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeOpEntities_OpEntity> opEntities;
 
 		public long? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,29 +70,17 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeOpEntities_OpEntity
 		{
 
-			private long? gmtCreate;
-
 			private int? entityType;
 
 			private string entityObject;
+
+			private long? gmtCreate;
 
 			private int? opAction;
 
 			private string opAccount;
 
 			private string opDesc;
-
-			public long? GmtCreate
-			{
-				get
-				{
-					return gmtCreate;
-				}
-				set	
-				{
-					gmtCreate = value;
-				}
-			}
 
 			public int? EntityType
 			{
@@ -115,6 +103,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					entityObject = value;
+				}
+			}
+
+			public long? GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
 				}
 			}
 

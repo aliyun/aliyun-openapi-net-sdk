@@ -37,45 +37,23 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			for (int i = 0; i < _ctx.Length("DescribeDomainStatusCodeList.StatusCodeList.Length"); i++) {
 				DescribeDomainStatusCodeListResponse.DescribeDomainStatusCodeList_StatusCode statusCode = new DescribeDomainStatusCodeListResponse.DescribeDomainStatusCodeList_StatusCode();
 				statusCode.Index = _ctx.IntegerValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Index");
-				statusCode.Time = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Time");
-				statusCode.Status2XX = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status2XX");
-				statusCode.Status501 = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status501");
 				statusCode.Status502 = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status502");
+				statusCode.Time = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Time");
+				statusCode.Status405 = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status405");
+				statusCode.Status3XX = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status3XX");
 				statusCode.Status503 = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status503");
+				statusCode.Status4XX = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status4XX");
+				statusCode.Status2XX = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status2XX");
+				statusCode.Status5XX = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status5XX");
 				statusCode.Status504 = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status504");
 				statusCode.Status200 = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status200");
-				statusCode.Status405 = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status405");
-				statusCode.Status5XX = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status5XX");
-				statusCode.Status4XX = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status4XX");
 				statusCode.Status403 = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status403");
 				statusCode.Status404 = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status404");
-				statusCode.Status3XX = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status3XX");
+				statusCode.Status501 = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status501");
 
 				describeDomainStatusCodeListResponse_statusCodeList.Add(statusCode);
 			}
 			describeDomainStatusCodeListResponse.StatusCodeList = describeDomainStatusCodeListResponse_statusCodeList;
-
-			List<DescribeDomainStatusCodeListResponse.DescribeDomainStatusCodeList_StatusCode> describeDomainStatusCodeListResponse_statusCodeList1 = new List<DescribeDomainStatusCodeListResponse.DescribeDomainStatusCodeList_StatusCode>();
-			for (int i = 0; i < _ctx.Length("DescribeDomainStatusCodeList.StatusCodeList.Length"); i++) {
-				DescribeDomainStatusCodeListResponse.DescribeDomainStatusCodeList_StatusCode statusCode = new DescribeDomainStatusCodeListResponse.DescribeDomainStatusCodeList_StatusCode();
-				statusCode.Index = _ctx.IntegerValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Index");
-				statusCode.Time = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Time");
-				statusCode.Status2XX = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status2XX");
-				statusCode.Status501 = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status501");
-				statusCode.Status502 = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status502");
-				statusCode.Status503 = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status503");
-				statusCode.Status504 = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status504");
-				statusCode.Status200 = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status200");
-				statusCode.Status405 = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status405");
-				statusCode.Status5XX = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status5XX");
-				statusCode.Status4XX = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status4XX");
-				statusCode.Status403 = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status403");
-				statusCode.Status404 = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status404");
-				statusCode.Status3XX = _ctx.LongValue("DescribeDomainStatusCodeList.StatusCodeList["+ i +"].Status3XX");
-
-				describeDomainStatusCodeListResponse_statusCodeList1.Add(statusCode);
-			}
-			describeDomainStatusCodeListResponse.StatusCodeList1 = describeDomainStatusCodeListResponse_statusCodeList1;
         
 			return describeDomainStatusCodeListResponse;
         }

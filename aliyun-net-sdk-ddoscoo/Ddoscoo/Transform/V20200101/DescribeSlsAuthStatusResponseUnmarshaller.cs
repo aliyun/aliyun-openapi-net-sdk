@@ -31,8 +31,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeSlsAuthStatusResponse describeSlsAuthStatusResponse = new DescribeSlsAuthStatusResponse();
 
 			describeSlsAuthStatusResponse.HttpResponse = _ctx.HttpResponse;
-			describeSlsAuthStatusResponse.RequestId = _ctx.StringValue("DescribeSlsAuthStatus.RequestId");
 			describeSlsAuthStatusResponse.SlsAuthStatus = _ctx.BooleanValue("DescribeSlsAuthStatus.SlsAuthStatus");
+			describeSlsAuthStatusResponse.RequestId = _ctx.StringValue("DescribeSlsAuthStatus.RequestId");
         
 			return describeSlsAuthStatusResponse;
         }

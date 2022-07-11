@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -56,39 +56,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeInstanceStatistics_InstanceStatistic
 		{
 
-			private string instanceId;
-
-			private int? portUsage;
-
 			private int? domainUsage;
-
-			private int? siteUsage;
 
 			private int? defenseCountUsage;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private string instanceId;
 
-			public int? PortUsage
-			{
-				get
-				{
-					return portUsage;
-				}
-				set	
-				{
-					portUsage = value;
-				}
-			}
+			private int? siteUsage;
+
+			private int? portUsage;
 
 			public int? DomainUsage
 			{
@@ -99,6 +75,30 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					domainUsage = value;
+				}
+			}
+
+			public int? DefenseCountUsage
+			{
+				get
+				{
+					return defenseCountUsage;
+				}
+				set	
+				{
+					defenseCountUsage = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 
@@ -114,15 +114,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public int? DefenseCountUsage
+			public int? PortUsage
 			{
 				get
 				{
-					return defenseCountUsage;
+					return portUsage;
 				}
 				set	
 				{
-					defenseCountUsage = value;
+					portUsage = value;
 				}
 			}
 		}

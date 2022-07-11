@@ -36,8 +36,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribeDomainViewSourceProvincesResponse.DescribeDomainViewSourceProvinces_Province> describeDomainViewSourceProvincesResponse_sourceProvinces = new List<DescribeDomainViewSourceProvincesResponse.DescribeDomainViewSourceProvinces_Province>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainViewSourceProvinces.SourceProvinces.Length"); i++) {
 				DescribeDomainViewSourceProvincesResponse.DescribeDomainViewSourceProvinces_Province province = new DescribeDomainViewSourceProvincesResponse.DescribeDomainViewSourceProvinces_Province();
-				province.Count = _ctx.LongValue("DescribeDomainViewSourceProvinces.SourceProvinces["+ i +"].Count");
 				province.ProvinceId = _ctx.StringValue("DescribeDomainViewSourceProvinces.SourceProvinces["+ i +"].ProvinceId");
+				province.Count = _ctx.LongValue("DescribeDomainViewSourceProvinces.SourceProvinces["+ i +"].Count");
 
 				describeDomainViewSourceProvincesResponse_sourceProvinces.Add(province);
 			}

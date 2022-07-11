@@ -36,8 +36,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribeWebAccessModeResponse.DescribeWebAccessMode_DomainMode> describeWebAccessModeResponse_domainModes = new List<DescribeWebAccessModeResponse.DescribeWebAccessMode_DomainMode>();
 			for (int i = 0; i < _ctx.Length("DescribeWebAccessMode.DomainModes.Length"); i++) {
 				DescribeWebAccessModeResponse.DescribeWebAccessMode_DomainMode domainMode = new DescribeWebAccessModeResponse.DescribeWebAccessMode_DomainMode();
-				domainMode.Domain = _ctx.StringValue("DescribeWebAccessMode.DomainModes["+ i +"].Domain");
 				domainMode.AccessMode = _ctx.IntegerValue("DescribeWebAccessMode.DomainModes["+ i +"].AccessMode");
+				domainMode.Domain = _ctx.StringValue("DescribeWebAccessMode.DomainModes["+ i +"].Domain");
 
 				describeWebAccessModeResponse_domainModes.Add(domainMode);
 			}

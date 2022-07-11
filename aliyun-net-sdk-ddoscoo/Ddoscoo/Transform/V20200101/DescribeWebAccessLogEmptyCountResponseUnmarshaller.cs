@@ -31,8 +31,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeWebAccessLogEmptyCountResponse describeWebAccessLogEmptyCountResponse = new DescribeWebAccessLogEmptyCountResponse();
 
 			describeWebAccessLogEmptyCountResponse.HttpResponse = _ctx.HttpResponse;
-			describeWebAccessLogEmptyCountResponse.RequestId = _ctx.StringValue("DescribeWebAccessLogEmptyCount.RequestId");
 			describeWebAccessLogEmptyCountResponse.AvailableCount = _ctx.IntegerValue("DescribeWebAccessLogEmptyCount.AvailableCount");
+			describeWebAccessLogEmptyCountResponse.RequestId = _ctx.StringValue("DescribeWebAccessLogEmptyCount.RequestId");
         
 			return describeWebAccessLogEmptyCountResponse;
         }

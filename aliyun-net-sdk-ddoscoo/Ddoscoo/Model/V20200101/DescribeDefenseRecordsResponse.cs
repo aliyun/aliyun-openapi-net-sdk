@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeDefenseRecordsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? totalCount;
 
-		private List<DescribeDefenseRecords_DefenseRecord> defenseRecords;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeDefenseRecords_DefenseRecord> defenseRecords;
 
 		public long? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,29 +70,17 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeDefenseRecords_DefenseRecord
 		{
 
-			private long? startTime;
-
 			private long? endTime;
-
-			private string instanceId;
 
 			private int? status;
 
-			private long? attackPeak;
+			private long? startTime;
 
 			private int? eventCount;
 
-			public long? StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
+			private string instanceId;
+
+			private long? attackPeak;
 
 			public long? EndTime
 			{
@@ -103,18 +91,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					endTime = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
 				}
 			}
 
@@ -130,15 +106,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public long? AttackPeak
+			public long? StartTime
 			{
 				get
 				{
-					return attackPeak;
+					return startTime;
 				}
 				set	
 				{
-					attackPeak = value;
+					startTime = value;
 				}
 			}
 
@@ -151,6 +127,30 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					eventCount = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public long? AttackPeak
+			{
+				get
+				{
+					return attackPeak;
+				}
+				set	
+				{
+					attackPeak = value;
 				}
 			}
 		}

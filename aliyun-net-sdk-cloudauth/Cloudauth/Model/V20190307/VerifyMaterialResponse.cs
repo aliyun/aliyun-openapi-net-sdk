@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20190307
@@ -25,17 +25,41 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 	public class VerifyMaterialResponse : AcsResponse
 	{
 
+		private float? authorityComparisionScore;
+
+		private int? verifyStatus;
+
 		private string requestId;
 
 		private string verifyToken;
 
-		private int? verifyStatus;
-
-		private float? authorityComparisionScore;
-
 		private float? idCardFaceComparisonScore;
 
 		private VerifyMaterial_Material material;
+
+		public float? AuthorityComparisionScore
+		{
+			get
+			{
+				return authorityComparisionScore;
+			}
+			set	
+			{
+				authorityComparisionScore = value;
+			}
+		}
+
+		public int? VerifyStatus
+		{
+			get
+			{
+				return verifyStatus;
+			}
+			set	
+			{
+				verifyStatus = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -58,30 +82,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				verifyToken = value;
-			}
-		}
-
-		public int? VerifyStatus
-		{
-			get
-			{
-				return verifyStatus;
-			}
-			set	
-			{
-				verifyStatus = value;
-			}
-		}
-
-		public float? AuthorityComparisionScore
-		{
-			get
-			{
-				return authorityComparisionScore;
-			}
-			set	
-			{
-				authorityComparisionScore = value;
 			}
 		}
 
@@ -112,43 +112,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 		public class VerifyMaterial_Material
 		{
 
-			private string faceImageUrl;
-
-			private string idCardName;
-
 			private string idCardNumber;
-
-			private string faceQuality;
 
 			private string faceGlobalUrl;
 
+			private string faceImageUrl;
+
 			private string faceMask;
 
+			private string idCardName;
+
+			private string faceQuality;
+
 			private VerifyMaterial_IdCardInfo idCardInfo;
-
-			public string FaceImageUrl
-			{
-				get
-				{
-					return faceImageUrl;
-				}
-				set	
-				{
-					faceImageUrl = value;
-				}
-			}
-
-			public string IdCardName
-			{
-				get
-				{
-					return idCardName;
-				}
-				set	
-				{
-					idCardName = value;
-				}
-			}
 
 			public string IdCardNumber
 			{
@@ -159,18 +135,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				set	
 				{
 					idCardNumber = value;
-				}
-			}
-
-			public string FaceQuality
-			{
-				get
-				{
-					return faceQuality;
-				}
-				set	
-				{
-					faceQuality = value;
 				}
 			}
 
@@ -186,6 +150,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				}
 			}
 
+			public string FaceImageUrl
+			{
+				get
+				{
+					return faceImageUrl;
+				}
+				set	
+				{
+					faceImageUrl = value;
+				}
+			}
+
 			public string FaceMask
 			{
 				get
@@ -195,6 +171,30 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				set	
 				{
 					faceMask = value;
+				}
+			}
+
+			public string IdCardName
+			{
+				get
+				{
+					return idCardName;
+				}
+				set	
+				{
+					idCardName = value;
+				}
+			}
+
+			public string FaceQuality
+			{
+				get
+				{
+					return faceQuality;
+				}
+				set	
+				{
+					faceQuality = value;
 				}
 			}
 
@@ -213,61 +213,37 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			public class VerifyMaterial_IdCardInfo
 			{
 
-				private string number;
-
-				private string address;
-
-				private string nationality;
+				private string sex;
 
 				private string endDate;
 
-				private string frontImageUrl;
-
 				private string authority;
 
-				private string sex;
+				private string address;
 
-				private string name;
-
-				private string birth;
-
-				private string backImageUrl;
+				private string number;
 
 				private string startDate;
 
-				public string Number
-				{
-					get
-					{
-						return number;
-					}
-					set	
-					{
-						number = value;
-					}
-				}
+				private string backImageUrl;
 
-				public string Address
-				{
-					get
-					{
-						return address;
-					}
-					set	
-					{
-						address = value;
-					}
-				}
+				private string nationality;
 
-				public string Nationality
+				private string birth;
+
+				private string name;
+
+				private string frontImageUrl;
+
+				public string Sex
 				{
 					get
 					{
-						return nationality;
+						return sex;
 					}
 					set	
 					{
-						nationality = value;
+						sex = value;
 					}
 				}
 
@@ -283,18 +259,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 					}
 				}
 
-				public string FrontImageUrl
-				{
-					get
-					{
-						return frontImageUrl;
-					}
-					set	
-					{
-						frontImageUrl = value;
-					}
-				}
-
 				public string Authority
 				{
 					get
@@ -307,39 +271,39 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 					}
 				}
 
-				public string Sex
+				public string Address
 				{
 					get
 					{
-						return sex;
+						return address;
 					}
 					set	
 					{
-						sex = value;
+						address = value;
 					}
 				}
 
-				public string Name
+				public string Number
 				{
 					get
 					{
-						return name;
+						return number;
 					}
 					set	
 					{
-						name = value;
+						number = value;
 					}
 				}
 
-				public string Birth
+				public string StartDate
 				{
 					get
 					{
-						return birth;
+						return startDate;
 					}
 					set	
 					{
-						birth = value;
+						startDate = value;
 					}
 				}
 
@@ -355,15 +319,51 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 					}
 				}
 
-				public string StartDate
+				public string Nationality
 				{
 					get
 					{
-						return startDate;
+						return nationality;
 					}
 					set	
 					{
-						startDate = value;
+						nationality = value;
+					}
+				}
+
+				public string Birth
+				{
+					get
+					{
+						return birth;
+					}
+					set	
+					{
+						birth = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public string FrontImageUrl
+				{
+					get
+					{
+						return frontImageUrl;
+					}
+					set	
+					{
+						frontImageUrl = value;
 					}
 				}
 			}

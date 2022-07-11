@@ -36,16 +36,16 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribeWebCcProtectSwitchResponse.DescribeWebCcProtectSwitch_ProtectSwitch> describeWebCcProtectSwitchResponse_protectSwitchList = new List<DescribeWebCcProtectSwitchResponse.DescribeWebCcProtectSwitch_ProtectSwitch>();
 			for (int i = 0; i < _ctx.Length("DescribeWebCcProtectSwitch.ProtectSwitchList.Length"); i++) {
 				DescribeWebCcProtectSwitchResponse.DescribeWebCcProtectSwitch_ProtectSwitch protectSwitch = new DescribeWebCcProtectSwitchResponse.DescribeWebCcProtectSwitch_ProtectSwitch();
-				protectSwitch.Domain = _ctx.StringValue("DescribeWebCcProtectSwitch.ProtectSwitchList["+ i +"].Domain");
 				protectSwitch.BlackWhiteListEnable = _ctx.IntegerValue("DescribeWebCcProtectSwitch.ProtectSwitchList["+ i +"].BlackWhiteListEnable");
-				protectSwitch.RegionBlockEnable = _ctx.IntegerValue("DescribeWebCcProtectSwitch.ProtectSwitchList["+ i +"].RegionBlockEnable");
-				protectSwitch.CcEnable = _ctx.IntegerValue("DescribeWebCcProtectSwitch.ProtectSwitchList["+ i +"].CcEnable");
-				protectSwitch.CcCustomRuleEnable = _ctx.IntegerValue("DescribeWebCcProtectSwitch.ProtectSwitchList["+ i +"].CcCustomRuleEnable");
-				protectSwitch.PreciseRuleEnable = _ctx.IntegerValue("DescribeWebCcProtectSwitch.ProtectSwitchList["+ i +"].PreciseRuleEnable");
-				protectSwitch.AiRuleEnable = _ctx.IntegerValue("DescribeWebCcProtectSwitch.ProtectSwitchList["+ i +"].AiRuleEnable");
-				protectSwitch.CcTemplate = _ctx.StringValue("DescribeWebCcProtectSwitch.ProtectSwitchList["+ i +"].CcTemplate");
 				protectSwitch.AiTemplate = _ctx.StringValue("DescribeWebCcProtectSwitch.ProtectSwitchList["+ i +"].AiTemplate");
+				protectSwitch.PreciseRuleEnable = _ctx.IntegerValue("DescribeWebCcProtectSwitch.ProtectSwitchList["+ i +"].PreciseRuleEnable");
+				protectSwitch.Domain = _ctx.StringValue("DescribeWebCcProtectSwitch.ProtectSwitchList["+ i +"].Domain");
 				protectSwitch.AiMode = _ctx.StringValue("DescribeWebCcProtectSwitch.ProtectSwitchList["+ i +"].AiMode");
+				protectSwitch.AiRuleEnable = _ctx.IntegerValue("DescribeWebCcProtectSwitch.ProtectSwitchList["+ i +"].AiRuleEnable");
+				protectSwitch.RegionBlockEnable = _ctx.IntegerValue("DescribeWebCcProtectSwitch.ProtectSwitchList["+ i +"].RegionBlockEnable");
+				protectSwitch.CcTemplate = _ctx.StringValue("DescribeWebCcProtectSwitch.ProtectSwitchList["+ i +"].CcTemplate");
+				protectSwitch.CcCustomRuleEnable = _ctx.IntegerValue("DescribeWebCcProtectSwitch.ProtectSwitchList["+ i +"].CcCustomRuleEnable");
+				protectSwitch.CcEnable = _ctx.IntegerValue("DescribeWebCcProtectSwitch.ProtectSwitchList["+ i +"].CcEnable");
 
 				describeWebCcProtectSwitchResponse_protectSwitchList.Add(protectSwitch);
 			}

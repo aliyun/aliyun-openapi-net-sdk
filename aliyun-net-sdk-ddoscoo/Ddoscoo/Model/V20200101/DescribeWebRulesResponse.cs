@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeWebRulesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? totalCount;
 
-		private List<DescribeWebRules_WebRule> webRules;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeWebRules_WebRule> webRules;
 
 		public long? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -72,37 +72,37 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 			private string domain;
 
-			private bool? ccEnabled;
-
-			private bool? ccRuleEnabled;
-
-			private string ccTemplate;
+			private bool? http2HttpsEnable;
 
 			private string sslProtocols;
 
+			private int? punishReason;
+
+			private string ccTemplate;
+
+			private bool? ccEnabled;
+
 			private string sslCiphers;
-
-			private bool? http2Enable;
-
-			private bool? ocspEnabled;
-
-			private bool? http2HttpsEnable;
-
-			private bool? https2HttpEnable;
-
-			private string policyMode;
-
-			private bool? proxyEnabled;
 
 			private bool? ssl13Enabled;
 
+			private bool? ccRuleEnabled;
+
+			private bool? ocspEnabled;
+
 			private bool? punishStatus;
 
-			private int? punishReason;
+			private bool? proxyEnabled;
+
+			private string certName;
+
+			private string policyMode;
 
 			private string cname;
 
-			private string certName;
+			private bool? http2Enable;
+
+			private bool? https2HttpEnable;
 
 			private List<DescribeWebRules_ProxyConfig> proxyTypes;
 
@@ -114,6 +114,8 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 			private List<string> customCiphers;
 
+			private DescribeWebRules_GmCert gmCert;
+
 			public string Domain
 			{
 				get
@@ -123,90 +125,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					domain = value;
-				}
-			}
-
-			public bool? CcEnabled
-			{
-				get
-				{
-					return ccEnabled;
-				}
-				set	
-				{
-					ccEnabled = value;
-				}
-			}
-
-			public bool? CcRuleEnabled
-			{
-				get
-				{
-					return ccRuleEnabled;
-				}
-				set	
-				{
-					ccRuleEnabled = value;
-				}
-			}
-
-			public string CcTemplate
-			{
-				get
-				{
-					return ccTemplate;
-				}
-				set	
-				{
-					ccTemplate = value;
-				}
-			}
-
-			public string SslProtocols
-			{
-				get
-				{
-					return sslProtocols;
-				}
-				set	
-				{
-					sslProtocols = value;
-				}
-			}
-
-			public string SslCiphers
-			{
-				get
-				{
-					return sslCiphers;
-				}
-				set	
-				{
-					sslCiphers = value;
-				}
-			}
-
-			public bool? Http2Enable
-			{
-				get
-				{
-					return http2Enable;
-				}
-				set	
-				{
-					http2Enable = value;
-				}
-			}
-
-			public bool? OcspEnabled
-			{
-				get
-				{
-					return ocspEnabled;
-				}
-				set	
-				{
-					ocspEnabled = value;
 				}
 			}
 
@@ -222,63 +140,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public bool? Https2HttpEnable
+			public string SslProtocols
 			{
 				get
 				{
-					return https2HttpEnable;
+					return sslProtocols;
 				}
 				set	
 				{
-					https2HttpEnable = value;
-				}
-			}
-
-			public string PolicyMode
-			{
-				get
-				{
-					return policyMode;
-				}
-				set	
-				{
-					policyMode = value;
-				}
-			}
-
-			public bool? ProxyEnabled
-			{
-				get
-				{
-					return proxyEnabled;
-				}
-				set	
-				{
-					proxyEnabled = value;
-				}
-			}
-
-			public bool? Ssl13Enabled
-			{
-				get
-				{
-					return ssl13Enabled;
-				}
-				set	
-				{
-					ssl13Enabled = value;
-				}
-			}
-
-			public bool? PunishStatus
-			{
-				get
-				{
-					return punishStatus;
-				}
-				set	
-				{
-					punishStatus = value;
+					sslProtocols = value;
 				}
 			}
 
@@ -294,15 +164,99 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public string Cname
+			public string CcTemplate
 			{
 				get
 				{
-					return cname;
+					return ccTemplate;
 				}
 				set	
 				{
-					cname = value;
+					ccTemplate = value;
+				}
+			}
+
+			public bool? CcEnabled
+			{
+				get
+				{
+					return ccEnabled;
+				}
+				set	
+				{
+					ccEnabled = value;
+				}
+			}
+
+			public string SslCiphers
+			{
+				get
+				{
+					return sslCiphers;
+				}
+				set	
+				{
+					sslCiphers = value;
+				}
+			}
+
+			public bool? Ssl13Enabled
+			{
+				get
+				{
+					return ssl13Enabled;
+				}
+				set	
+				{
+					ssl13Enabled = value;
+				}
+			}
+
+			public bool? CcRuleEnabled
+			{
+				get
+				{
+					return ccRuleEnabled;
+				}
+				set	
+				{
+					ccRuleEnabled = value;
+				}
+			}
+
+			public bool? OcspEnabled
+			{
+				get
+				{
+					return ocspEnabled;
+				}
+				set	
+				{
+					ocspEnabled = value;
+				}
+			}
+
+			public bool? PunishStatus
+			{
+				get
+				{
+					return punishStatus;
+				}
+				set	
+				{
+					punishStatus = value;
+				}
+			}
+
+			public bool? ProxyEnabled
+			{
+				get
+				{
+					return proxyEnabled;
+				}
+				set	
+				{
+					proxyEnabled = value;
 				}
 			}
 
@@ -315,6 +269,54 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					certName = value;
+				}
+			}
+
+			public string PolicyMode
+			{
+				get
+				{
+					return policyMode;
+				}
+				set	
+				{
+					policyMode = value;
+				}
+			}
+
+			public string Cname
+			{
+				get
+				{
+					return cname;
+				}
+				set	
+				{
+					cname = value;
+				}
+			}
+
+			public bool? Http2Enable
+			{
+				get
+				{
+					return http2Enable;
+				}
+				set	
+				{
+					http2Enable = value;
+				}
+			}
+
+			public bool? Https2HttpEnable
+			{
+				get
+				{
+					return https2HttpEnable;
+				}
+				set	
+				{
+					https2HttpEnable = value;
 				}
 			}
 
@@ -378,6 +380,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
+			public DescribeWebRules_GmCert GmCert
+			{
+				get
+				{
+					return gmCert;
+				}
+				set	
+				{
+					gmCert = value;
+				}
+			}
+
 			public class DescribeWebRules_ProxyConfig
 			{
 
@@ -438,6 +452,52 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 					set	
 					{
 						realServer = value;
+					}
+				}
+			}
+
+			public class DescribeWebRules_GmCert
+			{
+
+				private string certId;
+
+				private long? gmEnable;
+
+				private long? gmOnly;
+
+				public string CertId
+				{
+					get
+					{
+						return certId;
+					}
+					set	
+					{
+						certId = value;
+					}
+				}
+
+				public long? GmEnable
+				{
+					get
+					{
+						return gmEnable;
+					}
+					set	
+					{
+						gmEnable = value;
+					}
+				}
+
+				public long? GmOnly
+				{
+					get
+					{
+						return gmOnly;
+					}
+					set	
+					{
+						gmOnly = value;
 					}
 				}
 			}

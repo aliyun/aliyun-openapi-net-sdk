@@ -1,3 +1,39 @@
+2022-07-11 Version: 1.1.14
+- Add open file detect api.
+
+2022-07-11 Version: 1.0.1
+- Automatically generate sdk tasks.
+
+2022-07-11 Version: 1.0.0
+- Automatically generate sdk tasks.
+
+2022-07-04 Version: 2.0.2
+- Add API QueryEmbeddedStaus.
+
+2022-07-04 Version: 2.0.1
+- Update API error codes.
+- Adjust parameters verification rules for some APIs.
+
+2022-07-04 Version: 1.0.20
+- Support autoPulibshRoute for UpdateTransitRouterVpnAttachment.
+- Support Vpn-Attachment.
+- Support Sys-Flowlog.
+
+2022-06-30 Version: 1.0.5
+- Update sdk.
+
+2022-06-29 Version: 2.0.33
+- For 2019-03-07.
+
+2022-06-28 Version: 1.7.10
+- Update QuerySavingsPlansDeductLog add field OwnerId.
+
+2022-06-28 Version: 0.0.3
+- Update RecognizeVideoCastCrewList.
+
+2022-06-28 Version: 1.0.6
+- Support Service of number analysis.
+
 2022-06-24 Version: 0.0.16
 - Update ScreenChestCT.
 

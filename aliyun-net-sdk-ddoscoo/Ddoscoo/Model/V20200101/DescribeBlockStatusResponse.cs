@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -87,13 +87,25 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			public class DescribeBlockStatus_BlockStatusItem
 			{
 
+				private long? endTime;
+
 				private long? startTime;
 
 				private string line;
 
-				private long? endTime;
-
 				private string blockStatus;
+
+				public long? EndTime
+				{
+					get
+					{
+						return endTime;
+					}
+					set	
+					{
+						endTime = value;
+					}
+				}
 
 				public long? StartTime
 				{
@@ -116,18 +128,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 					set	
 					{
 						line = value;
-					}
-				}
-
-				public long? EndTime
-				{
-					get
-					{
-						return endTime;
-					}
-					set	
-					{
-						endTime = value;
 					}
 				}
 

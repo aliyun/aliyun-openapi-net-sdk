@@ -55,10 +55,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set
 			{
 				domainss = value;
-				for (int i = 0; i < domainss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Domains." + (i + 1) , domainss[i]);
-				}
 			}
 		}
 

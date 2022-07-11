@@ -54,6 +54,7 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				cve.Solution = _ctx.StringValue("DescribeVulDetails.Cves["+ i +"].Solution");
 				cve.Content = _ctx.StringValue("DescribeVulDetails.Cves["+ i +"].Content");
 				cve.Poc = _ctx.StringValue("DescribeVulDetails.Cves["+ i +"].Poc");
+				cve.OtherId = _ctx.StringValue("DescribeVulDetails.Cves["+ i +"].OtherId");
 
 				List<DescribeVulDetailsResponse.DescribeVulDetails_Cve.DescribeVulDetails_Classify> cve_classifys = new List<DescribeVulDetailsResponse.DescribeVulDetails_Cve.DescribeVulDetails_Classify>();
 				for (int j = 0; j < _ctx.Length("DescribeVulDetails.Cves["+ i +"].Classifys.Length"); j++) {

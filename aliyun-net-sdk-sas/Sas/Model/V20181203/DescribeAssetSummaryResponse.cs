@@ -58,6 +58,10 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private int? totalCoreNum;
 
+			private int? totalAssetAllRegion;
+
+			private int? totalCoreAllRegion;
+
 			public int? TotalCoreNum
 			{
 				get
@@ -67,6 +71,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					totalCoreNum = value;
+				}
+			}
+
+			public int? TotalAssetAllRegion
+			{
+				get
+				{
+					return totalAssetAllRegion;
+				}
+				set	
+				{
+					totalAssetAllRegion = value;
+				}
+			}
+
+			public int? TotalCoreAllRegion
+			{
+				get
+				{
+					return totalCoreAllRegion;
+				}
+				set	
+				{
+					totalCoreAllRegion = value;
 				}
 			}
 		}

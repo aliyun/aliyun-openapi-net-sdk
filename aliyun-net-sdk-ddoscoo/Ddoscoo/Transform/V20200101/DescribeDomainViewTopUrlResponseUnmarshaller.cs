@@ -36,9 +36,9 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			List<DescribeDomainViewTopUrlResponse.DescribeDomainViewTopUrl_Url> describeDomainViewTopUrlResponse_urlList = new List<DescribeDomainViewTopUrlResponse.DescribeDomainViewTopUrl_Url>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainViewTopUrl.UrlList.Length"); i++) {
 				DescribeDomainViewTopUrlResponse.DescribeDomainViewTopUrl_Url url = new DescribeDomainViewTopUrlResponse.DescribeDomainViewTopUrl_Url();
-				url.Count = _ctx.LongValue("DescribeDomainViewTopUrl.UrlList["+ i +"].Count");
-				url.Domain = _ctx.StringValue("DescribeDomainViewTopUrl.UrlList["+ i +"].Domain");
 				url.Url = _ctx.StringValue("DescribeDomainViewTopUrl.UrlList["+ i +"].Url");
+				url.Domain = _ctx.StringValue("DescribeDomainViewTopUrl.UrlList["+ i +"].Domain");
+				url.Count = _ctx.LongValue("DescribeDomainViewTopUrl.UrlList["+ i +"].Count");
 
 				describeDomainViewTopUrlResponse_urlList.Add(url);
 			}

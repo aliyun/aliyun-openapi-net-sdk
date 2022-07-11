@@ -31,20 +31,20 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeSystemLogResponse describeSystemLogResponse = new DescribeSystemLogResponse();
 
 			describeSystemLogResponse.HttpResponse = _ctx.HttpResponse;
-			describeSystemLogResponse.RequestId = _ctx.StringValue("DescribeSystemLog.RequestId");
 			describeSystemLogResponse.Total = _ctx.LongValue("DescribeSystemLog.Total");
+			describeSystemLogResponse.RequestId = _ctx.StringValue("DescribeSystemLog.RequestId");
 
 			List<DescribeSystemLogResponse.DescribeSystemLog_SystemLogItem> describeSystemLogResponse_systemLog = new List<DescribeSystemLogResponse.DescribeSystemLog_SystemLogItem>();
 			for (int i = 0; i < _ctx.Length("DescribeSystemLog.SystemLog.Length"); i++) {
 				DescribeSystemLogResponse.DescribeSystemLog_SystemLogItem systemLogItem = new DescribeSystemLogResponse.DescribeSystemLog_SystemLogItem();
-				systemLogItem.GmtCreate = _ctx.LongValue("DescribeSystemLog.SystemLog["+ i +"].GmtCreate");
-				systemLogItem.GmtModified = _ctx.LongValue("DescribeSystemLog.SystemLog["+ i +"].GmtModified");
+				systemLogItem.Status = _ctx.IntegerValue("DescribeSystemLog.SystemLog["+ i +"].Status");
 				systemLogItem.EntityType = _ctx.IntegerValue("DescribeSystemLog.SystemLog["+ i +"].EntityType");
 				systemLogItem.EntityObject = _ctx.StringValue("DescribeSystemLog.SystemLog["+ i +"].EntityObject");
+				systemLogItem.GmtCreate = _ctx.LongValue("DescribeSystemLog.SystemLog["+ i +"].GmtCreate");
 				systemLogItem.OpAction = _ctx.IntegerValue("DescribeSystemLog.SystemLog["+ i +"].OpAction");
+				systemLogItem.GmtModified = _ctx.LongValue("DescribeSystemLog.SystemLog["+ i +"].GmtModified");
 				systemLogItem.OpAccount = _ctx.StringValue("DescribeSystemLog.SystemLog["+ i +"].OpAccount");
 				systemLogItem.OpDesc = _ctx.StringValue("DescribeSystemLog.SystemLog["+ i +"].OpDesc");
-				systemLogItem.Status = _ctx.IntegerValue("DescribeSystemLog.SystemLog["+ i +"].Status");
 
 				describeSystemLogResponse_systemLog.Add(systemLogItem);
 			}

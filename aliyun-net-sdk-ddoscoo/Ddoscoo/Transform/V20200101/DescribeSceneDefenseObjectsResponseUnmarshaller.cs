@@ -31,14 +31,14 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeSceneDefenseObjectsResponse describeSceneDefenseObjectsResponse = new DescribeSceneDefenseObjectsResponse();
 
 			describeSceneDefenseObjectsResponse.HttpResponse = _ctx.HttpResponse;
-			describeSceneDefenseObjectsResponse.RequestId = _ctx.StringValue("DescribeSceneDefenseObjects.RequestId");
 			describeSceneDefenseObjectsResponse.Success = _ctx.BooleanValue("DescribeSceneDefenseObjects.Success");
+			describeSceneDefenseObjectsResponse.RequestId = _ctx.StringValue("DescribeSceneDefenseObjects.RequestId");
 
 			List<DescribeSceneDefenseObjectsResponse.DescribeSceneDefenseObjects__Object> describeSceneDefenseObjectsResponse_objects = new List<DescribeSceneDefenseObjectsResponse.DescribeSceneDefenseObjects__Object>();
 			for (int i = 0; i < _ctx.Length("DescribeSceneDefenseObjects.Objects.Length"); i++) {
 				DescribeSceneDefenseObjectsResponse.DescribeSceneDefenseObjects__Object _object = new DescribeSceneDefenseObjectsResponse.DescribeSceneDefenseObjects__Object();
-				_object.PolicyId = _ctx.StringValue("DescribeSceneDefenseObjects.Objects["+ i +"].PolicyId");
 				_object.Domain = _ctx.StringValue("DescribeSceneDefenseObjects.Objects["+ i +"].Domain");
+				_object.PolicyId = _ctx.StringValue("DescribeSceneDefenseObjects.Objects["+ i +"].PolicyId");
 				_object.Vip = _ctx.StringValue("DescribeSceneDefenseObjects.Objects["+ i +"].Vip");
 
 				describeSceneDefenseObjectsResponse_objects.Add(_object);

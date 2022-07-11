@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeNetworkRulesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? totalCount;
 
-		private List<DescribeNetworkRules_NetworkRule> networkRules;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeNetworkRules_NetworkRule> networkRules;
 
 		public long? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,17 +70,41 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribeNetworkRules_NetworkRule
 		{
 
+			private int? frontendPort;
+
+			private bool? isAutoCreate;
+
 			private string instanceId;
 
 			private string protocol;
 
-			private int? frontendPort;
-
 			private int? backendPort;
 
-			private bool? isAutoCreate;
-
 			private List<string> realServers;
+
+			public int? FrontendPort
+			{
+				get
+				{
+					return frontendPort;
+				}
+				set	
+				{
+					frontendPort = value;
+				}
+			}
+
+			public bool? IsAutoCreate
+			{
+				get
+				{
+					return isAutoCreate;
+				}
+				set	
+				{
+					isAutoCreate = value;
+				}
+			}
 
 			public string InstanceId
 			{
@@ -106,18 +130,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public int? FrontendPort
-			{
-				get
-				{
-					return frontendPort;
-				}
-				set	
-				{
-					frontendPort = value;
-				}
-			}
-
 			public int? BackendPort
 			{
 				get
@@ -127,18 +139,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					backendPort = value;
-				}
-			}
-
-			public bool? IsAutoCreate
-			{
-				get
-				{
-					return isAutoCreate;
-				}
-				set	
-				{
-					isAutoCreate = value;
 				}
 			}
 

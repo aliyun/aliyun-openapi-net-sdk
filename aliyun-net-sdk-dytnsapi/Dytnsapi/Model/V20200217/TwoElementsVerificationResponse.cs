@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 
 		private string requestId;
 
-		private List<TwoElementsVerification_DataItem> data;
+		private TwoElementsVerification_Data data;
 
 		public string Code
 		{
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 			}
 		}
 
-		public List<TwoElementsVerification_DataItem> Data
+		public TwoElementsVerification_Data Data
 		{
 			get
 			{
@@ -81,7 +81,7 @@ namespace Aliyun.Acs.Dytnsapi.Model.V20200217
 			}
 		}
 
-		public class TwoElementsVerification_DataItem
+		public class TwoElementsVerification_Data
 		{
 
 			private int? isConsistent;

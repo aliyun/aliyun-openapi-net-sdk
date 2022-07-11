@@ -31,29 +31,29 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeWebRulesResponse describeWebRulesResponse = new DescribeWebRulesResponse();
 
 			describeWebRulesResponse.HttpResponse = _ctx.HttpResponse;
-			describeWebRulesResponse.RequestId = _ctx.StringValue("DescribeWebRules.RequestId");
 			describeWebRulesResponse.TotalCount = _ctx.LongValue("DescribeWebRules.TotalCount");
+			describeWebRulesResponse.RequestId = _ctx.StringValue("DescribeWebRules.RequestId");
 
 			List<DescribeWebRulesResponse.DescribeWebRules_WebRule> describeWebRulesResponse_webRules = new List<DescribeWebRulesResponse.DescribeWebRules_WebRule>();
 			for (int i = 0; i < _ctx.Length("DescribeWebRules.WebRules.Length"); i++) {
 				DescribeWebRulesResponse.DescribeWebRules_WebRule webRule = new DescribeWebRulesResponse.DescribeWebRules_WebRule();
 				webRule.Domain = _ctx.StringValue("DescribeWebRules.WebRules["+ i +"].Domain");
-				webRule.CcEnabled = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].CcEnabled");
-				webRule.CcRuleEnabled = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].CcRuleEnabled");
-				webRule.CcTemplate = _ctx.StringValue("DescribeWebRules.WebRules["+ i +"].CcTemplate");
-				webRule.SslProtocols = _ctx.StringValue("DescribeWebRules.WebRules["+ i +"].SslProtocols");
-				webRule.SslCiphers = _ctx.StringValue("DescribeWebRules.WebRules["+ i +"].SslCiphers");
-				webRule.Http2Enable = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].Http2Enable");
-				webRule.OcspEnabled = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].OcspEnabled");
 				webRule.Http2HttpsEnable = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].Http2HttpsEnable");
-				webRule.Https2HttpEnable = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].Https2HttpEnable");
-				webRule.PolicyMode = _ctx.StringValue("DescribeWebRules.WebRules["+ i +"].PolicyMode");
-				webRule.ProxyEnabled = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].ProxyEnabled");
-				webRule.Ssl13Enabled = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].Ssl13Enabled");
-				webRule.PunishStatus = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].PunishStatus");
+				webRule.SslProtocols = _ctx.StringValue("DescribeWebRules.WebRules["+ i +"].SslProtocols");
 				webRule.PunishReason = _ctx.IntegerValue("DescribeWebRules.WebRules["+ i +"].PunishReason");
-				webRule.Cname = _ctx.StringValue("DescribeWebRules.WebRules["+ i +"].Cname");
+				webRule.CcTemplate = _ctx.StringValue("DescribeWebRules.WebRules["+ i +"].CcTemplate");
+				webRule.CcEnabled = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].CcEnabled");
+				webRule.SslCiphers = _ctx.StringValue("DescribeWebRules.WebRules["+ i +"].SslCiphers");
+				webRule.Ssl13Enabled = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].Ssl13Enabled");
+				webRule.CcRuleEnabled = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].CcRuleEnabled");
+				webRule.OcspEnabled = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].OcspEnabled");
+				webRule.PunishStatus = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].PunishStatus");
+				webRule.ProxyEnabled = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].ProxyEnabled");
 				webRule.CertName = _ctx.StringValue("DescribeWebRules.WebRules["+ i +"].CertName");
+				webRule.PolicyMode = _ctx.StringValue("DescribeWebRules.WebRules["+ i +"].PolicyMode");
+				webRule.Cname = _ctx.StringValue("DescribeWebRules.WebRules["+ i +"].Cname");
+				webRule.Http2Enable = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].Http2Enable");
+				webRule.Https2HttpEnable = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].Https2HttpEnable");
 
 				List<string> webRule_whiteList = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeWebRules.WebRules["+ i +"].WhiteList.Length"); j++) {
@@ -72,6 +72,12 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 					webRule_customCiphers.Add(_ctx.StringValue("DescribeWebRules.WebRules["+ i +"].CustomCiphers["+ j +"]"));
 				}
 				webRule.CustomCiphers = webRule_customCiphers;
+
+				DescribeWebRulesResponse.DescribeWebRules_WebRule.DescribeWebRules_GmCert gmCert = new DescribeWebRulesResponse.DescribeWebRules_WebRule.DescribeWebRules_GmCert();
+				gmCert.CertId = _ctx.StringValue("DescribeWebRules.WebRules["+ i +"].GmCert.CertId");
+				gmCert.GmEnable = _ctx.LongValue("DescribeWebRules.WebRules["+ i +"].GmCert.GmEnable");
+				gmCert.GmOnly = _ctx.LongValue("DescribeWebRules.WebRules["+ i +"].GmCert.GmOnly");
+				webRule.GmCert = gmCert;
 
 				List<DescribeWebRulesResponse.DescribeWebRules_WebRule.DescribeWebRules_ProxyConfig> webRule_proxyTypes = new List<DescribeWebRulesResponse.DescribeWebRules_WebRule.DescribeWebRules_ProxyConfig>();
 				for (int j = 0; j < _ctx.Length("DescribeWebRules.WebRules["+ i +"].ProxyTypes.Length"); j++) {

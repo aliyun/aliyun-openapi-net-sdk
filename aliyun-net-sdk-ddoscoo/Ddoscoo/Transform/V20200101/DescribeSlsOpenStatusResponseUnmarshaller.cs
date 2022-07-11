@@ -31,8 +31,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeSlsOpenStatusResponse describeSlsOpenStatusResponse = new DescribeSlsOpenStatusResponse();
 
 			describeSlsOpenStatusResponse.HttpResponse = _ctx.HttpResponse;
-			describeSlsOpenStatusResponse.RequestId = _ctx.StringValue("DescribeSlsOpenStatus.RequestId");
 			describeSlsOpenStatusResponse.SlsOpenStatus = _ctx.BooleanValue("DescribeSlsOpenStatus.SlsOpenStatus");
+			describeSlsOpenStatusResponse.RequestId = _ctx.StringValue("DescribeSlsOpenStatus.RequestId");
         
 			return describeSlsOpenStatusResponse;
         }
