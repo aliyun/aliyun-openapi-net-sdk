@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class ListDataSourceItemResponse : AcsResponse
+	public class GetParserResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,13 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private int? page;
-
-		private int? pageSize;
-
-		private int? total;
-
-		private List<ListDataSourceItem_DataSourceItem> dataSourceItems;
+		private GetParser_Data data;
 
 		public string RequestId
 		{
@@ -89,124 +83,144 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public int? Page
+		public GetParser_Data Data
 		{
 			get
 			{
-				return page;
+				return data;
 			}
 			set	
 			{
-				page = value;
+				data = value;
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
-
-		public List<ListDataSourceItem_DataSourceItem> DataSourceItems
-		{
-			get
-			{
-				return dataSourceItems;
-			}
-			set	
-			{
-				dataSourceItems = value;
-			}
-		}
-
-		public class ListDataSourceItem_DataSourceItem
+		public class GetParser_Data
 		{
 
-			private long? dataSourceItemId;
+			private long? parserId;
 
-			private string topic;
+			private string name;
 
-			private string scopeType;
+			private long? dataSourceId;
 
-			private string productKey;
+			private string status;
 
-			private string deviceName;
+			private string utcCreated;
 
-			public long? DataSourceItemId
+			private string utcModified;
+
+			private string scriptDraft;
+
+			private string script;
+
+			private string description;
+
+			public long? ParserId
 			{
 				get
 				{
-					return dataSourceItemId;
+					return parserId;
 				}
 				set	
 				{
-					dataSourceItemId = value;
+					parserId = value;
 				}
 			}
 
-			public string Topic
+			public string Name
 			{
 				get
 				{
-					return topic;
+					return name;
 				}
 				set	
 				{
-					topic = value;
+					name = value;
 				}
 			}
 
-			public string ScopeType
+			public long? DataSourceId
 			{
 				get
 				{
-					return scopeType;
+					return dataSourceId;
 				}
 				set	
 				{
-					scopeType = value;
+					dataSourceId = value;
 				}
 			}
 
-			public string ProductKey
+			public string Status
 			{
 				get
 				{
-					return productKey;
+					return status;
 				}
 				set	
 				{
-					productKey = value;
+					status = value;
 				}
 			}
 
-			public string DeviceName
+			public string UtcCreated
 			{
 				get
 				{
-					return deviceName;
+					return utcCreated;
 				}
 				set	
 				{
-					deviceName = value;
+					utcCreated = value;
+				}
+			}
+
+			public string UtcModified
+			{
+				get
+				{
+					return utcModified;
+				}
+				set	
+				{
+					utcModified = value;
+				}
+			}
+
+			public string ScriptDraft
+			{
+				get
+				{
+					return scriptDraft;
+				}
+				set	
+				{
+					scriptDraft = value;
+				}
+			}
+
+			public string Script
+			{
+				get
+				{
+					return script;
+				}
+				set	
+				{
+					script = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 		}

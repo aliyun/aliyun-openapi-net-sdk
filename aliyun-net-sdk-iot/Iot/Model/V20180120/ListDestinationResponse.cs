@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class ListDataSourceItemResponse : AcsResponse
+	public class ListDestinationResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private int? total;
 
-		private List<ListDataSourceItem_DataSourceItem> dataSourceItems;
+		private List<ListDestination_DestinationsItem> destinations;
 
 		public string RequestId
 		{
@@ -125,88 +125,116 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public List<ListDataSourceItem_DataSourceItem> DataSourceItems
+		public List<ListDestination_DestinationsItem> Destinations
 		{
 			get
 			{
-				return dataSourceItems;
+				return destinations;
 			}
 			set	
 			{
-				dataSourceItems = value;
+				destinations = value;
 			}
 		}
 
-		public class ListDataSourceItem_DataSourceItem
+		public class ListDestination_DestinationsItem
 		{
 
-			private long? dataSourceItemId;
+			private long? destinationId;
 
-			private string topic;
+			private string name;
 
-			private string scopeType;
+			private string type;
 
-			private string productKey;
+			private string configuration;
 
-			private string deviceName;
+			private bool? isFailover;
 
-			public long? DataSourceItemId
+			private string utcCreated;
+
+			private string description;
+
+			public long? DestinationId
 			{
 				get
 				{
-					return dataSourceItemId;
+					return destinationId;
 				}
 				set	
 				{
-					dataSourceItemId = value;
+					destinationId = value;
 				}
 			}
 
-			public string Topic
+			public string Name
 			{
 				get
 				{
-					return topic;
+					return name;
 				}
 				set	
 				{
-					topic = value;
+					name = value;
 				}
 			}
 
-			public string ScopeType
+			public string Type
 			{
 				get
 				{
-					return scopeType;
+					return type;
 				}
 				set	
 				{
-					scopeType = value;
+					type = value;
 				}
 			}
 
-			public string ProductKey
+			public string Configuration
 			{
 				get
 				{
-					return productKey;
+					return configuration;
 				}
 				set	
 				{
-					productKey = value;
+					configuration = value;
 				}
 			}
 
-			public string DeviceName
+			public bool? IsFailover
 			{
 				get
 				{
-					return deviceName;
+					return isFailover;
 				}
 				set	
 				{
-					deviceName = value;
+					isFailover = value;
+				}
+			}
+
+			public string UtcCreated
+			{
+				get
+				{
+					return utcCreated;
+				}
+				set	
+				{
+					utcCreated = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 		}

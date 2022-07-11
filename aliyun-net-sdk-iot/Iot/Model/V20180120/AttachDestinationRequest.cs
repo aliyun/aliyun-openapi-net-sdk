@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CreateDataSourceItemRequest : RpcAcsRequest<CreateDataSourceItemResponse>
+    public class AttachDestinationRequest : RpcAcsRequest<AttachDestinationResponse>
     {
-        public CreateDataSourceItemRequest()
-            : base("Iot", "2018-01-20", "CreateDataSourceItem")
+        public AttachDestinationRequest()
+            : base("Iot", "2018-01-20", "AttachDestination")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,30 +41,13 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string scopeType;
-
 		private string iotInstanceId;
 
-		private string productKey;
+		private long? destinationId;
 
-		private long? dataSourceId;
+		private long? parserId;
 
-		private string topic;
-
-		private string deviceName;
-
-		public string ScopeType
-		{
-			get
-			{
-				return scopeType;
-			}
-			set	
-			{
-				scopeType = value;
-				DictionaryUtil.Add(QueryParameters, "ScopeType", value);
-			}
-		}
+		private bool? isFailover;
 
 		public string IotInstanceId
 		{
@@ -79,61 +62,48 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string ProductKey
+		public long? DestinationId
 		{
 			get
 			{
-				return productKey;
+				return destinationId;
 			}
 			set	
 			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+				destinationId = value;
+				DictionaryUtil.Add(QueryParameters, "DestinationId", value.ToString());
 			}
 		}
 
-		public long? DataSourceId
+		public long? ParserId
 		{
 			get
 			{
-				return dataSourceId;
+				return parserId;
 			}
 			set	
 			{
-				dataSourceId = value;
-				DictionaryUtil.Add(QueryParameters, "DataSourceId", value.ToString());
+				parserId = value;
+				DictionaryUtil.Add(QueryParameters, "ParserId", value.ToString());
 			}
 		}
 
-		public string Topic
+		public bool? IsFailover
 		{
 			get
 			{
-				return topic;
+				return isFailover;
 			}
 			set	
 			{
-				topic = value;
-				DictionaryUtil.Add(QueryParameters, "Topic", value);
+				isFailover = value;
+				DictionaryUtil.Add(QueryParameters, "IsFailover", value.ToString());
 			}
 		}
 
-		public string DeviceName
-		{
-			get
-			{
-				return deviceName;
-			}
-			set	
-			{
-				deviceName = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
-			}
-		}
-
-        public override CreateDataSourceItemResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override AttachDestinationResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateDataSourceItemResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AttachDestinationResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

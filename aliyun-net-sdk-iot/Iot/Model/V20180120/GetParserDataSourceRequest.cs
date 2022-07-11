@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CreateDataSourceItemRequest : RpcAcsRequest<CreateDataSourceItemResponse>
+    public class GetParserDataSourceRequest : RpcAcsRequest<GetParserDataSourceResponse>
     {
-        public CreateDataSourceItemRequest()
-            : base("Iot", "2018-01-20", "CreateDataSourceItem")
+        public GetParserDataSourceRequest()
+            : base("Iot", "2018-01-20", "GetParserDataSource")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,30 +41,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string scopeType;
-
 		private string iotInstanceId;
 
-		private string productKey;
-
 		private long? dataSourceId;
-
-		private string topic;
-
-		private string deviceName;
-
-		public string ScopeType
-		{
-			get
-			{
-				return scopeType;
-			}
-			set	
-			{
-				scopeType = value;
-				DictionaryUtil.Add(QueryParameters, "ScopeType", value);
-			}
-		}
 
 		public string IotInstanceId
 		{
@@ -76,19 +55,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
-
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 
@@ -105,35 +71,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string Topic
-		{
-			get
-			{
-				return topic;
-			}
-			set	
-			{
-				topic = value;
-				DictionaryUtil.Add(QueryParameters, "Topic", value);
-			}
-		}
-
-		public string DeviceName
-		{
-			get
-			{
-				return deviceName;
-			}
-			set	
-			{
-				deviceName = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
-			}
-		}
-
-        public override CreateDataSourceItemResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetParserDataSourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateDataSourceItemResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetParserDataSourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

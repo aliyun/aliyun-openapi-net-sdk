@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class ListDataSourceItemResponse : AcsResponse
+	public class ListParserDataSourceResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private int? total;
 
-		private List<ListDataSourceItem_DataSourceItem> dataSourceItems;
+		private List<ListParserDataSource_DataSource> data;
 
 		public string RequestId
 		{
@@ -125,88 +125,74 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public List<ListDataSourceItem_DataSourceItem> DataSourceItems
+		public List<ListParserDataSource_DataSource> Data
 		{
 			get
 			{
-				return dataSourceItems;
+				return data;
 			}
 			set	
 			{
-				dataSourceItems = value;
+				data = value;
 			}
 		}
 
-		public class ListDataSourceItem_DataSourceItem
+		public class ListParserDataSource_DataSource
 		{
 
-			private long? dataSourceItemId;
+			private string name;
 
-			private string topic;
+			private string description;
 
-			private string scopeType;
+			private long? dataSourceId;
 
-			private string productKey;
+			private string utcCreated;
 
-			private string deviceName;
-
-			public long? DataSourceItemId
+			public string Name
 			{
 				get
 				{
-					return dataSourceItemId;
+					return name;
 				}
 				set	
 				{
-					dataSourceItemId = value;
+					name = value;
 				}
 			}
 
-			public string Topic
+			public string Description
 			{
 				get
 				{
-					return topic;
+					return description;
 				}
 				set	
 				{
-					topic = value;
+					description = value;
 				}
 			}
 
-			public string ScopeType
+			public long? DataSourceId
 			{
 				get
 				{
-					return scopeType;
+					return dataSourceId;
 				}
 				set	
 				{
-					scopeType = value;
+					dataSourceId = value;
 				}
 			}
 
-			public string ProductKey
+			public string UtcCreated
 			{
 				get
 				{
-					return productKey;
+					return utcCreated;
 				}
 				set	
 				{
-					productKey = value;
-				}
-			}
-
-			public string DeviceName
-			{
-				get
-				{
-					return deviceName;
-				}
-				set	
-				{
-					deviceName = value;
+					utcCreated = value;
 				}
 			}
 		}

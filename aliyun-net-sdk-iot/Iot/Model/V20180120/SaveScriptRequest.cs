@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CreateDataSourceItemRequest : RpcAcsRequest<CreateDataSourceItemResponse>
+    public class SaveScriptRequest : RpcAcsRequest<SaveScriptResponse>
     {
-        public CreateDataSourceItemRequest()
-            : base("Iot", "2018-01-20", "CreateDataSourceItem")
+        public SaveScriptRequest()
+            : base("Iot", "2018-01-20", "SaveScript")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,30 +41,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string scopeType;
-
 		private string iotInstanceId;
 
-		private string productKey;
+		private string scriptDraft;
 
-		private long? dataSourceId;
-
-		private string topic;
-
-		private string deviceName;
-
-		public string ScopeType
-		{
-			get
-			{
-				return scopeType;
-			}
-			set	
-			{
-				scopeType = value;
-				DictionaryUtil.Add(QueryParameters, "ScopeType", value);
-			}
-		}
+		private long? parserId;
 
 		public string IotInstanceId
 		{
@@ -79,61 +60,35 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string ProductKey
+		public string ScriptDraft
 		{
 			get
 			{
-				return productKey;
+				return scriptDraft;
 			}
 			set	
 			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+				scriptDraft = value;
+				DictionaryUtil.Add(QueryParameters, "ScriptDraft", value);
 			}
 		}
 
-		public long? DataSourceId
+		public long? ParserId
 		{
 			get
 			{
-				return dataSourceId;
+				return parserId;
 			}
 			set	
 			{
-				dataSourceId = value;
-				DictionaryUtil.Add(QueryParameters, "DataSourceId", value.ToString());
+				parserId = value;
+				DictionaryUtil.Add(QueryParameters, "ParserId", value.ToString());
 			}
 		}
 
-		public string Topic
-		{
-			get
-			{
-				return topic;
-			}
-			set	
-			{
-				topic = value;
-				DictionaryUtil.Add(QueryParameters, "Topic", value);
-			}
-		}
-
-		public string DeviceName
-		{
-			get
-			{
-				return deviceName;
-			}
-			set	
-			{
-				deviceName = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
-			}
-		}
-
-        public override CreateDataSourceItemResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SaveScriptResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateDataSourceItemResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SaveScriptResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

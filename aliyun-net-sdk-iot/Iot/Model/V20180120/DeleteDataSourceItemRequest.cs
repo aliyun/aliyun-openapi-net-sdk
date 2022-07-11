@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CreateDataSourceItemRequest : RpcAcsRequest<CreateDataSourceItemResponse>
+    public class DeleteDataSourceItemRequest : RpcAcsRequest<DeleteDataSourceItemResponse>
     {
-        public CreateDataSourceItemRequest()
-            : base("Iot", "2018-01-20", "CreateDataSourceItem")
+        public DeleteDataSourceItemRequest()
+            : base("Iot", "2018-01-20", "DeleteDataSourceItem")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,30 +41,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string scopeType;
-
 		private string iotInstanceId;
 
-		private string productKey;
+		private long? dataSourceItemId;
 
 		private long? dataSourceId;
-
-		private string topic;
-
-		private string deviceName;
-
-		public string ScopeType
-		{
-			get
-			{
-				return scopeType;
-			}
-			set	
-			{
-				scopeType = value;
-				DictionaryUtil.Add(QueryParameters, "ScopeType", value);
-			}
-		}
 
 		public string IotInstanceId
 		{
@@ -79,16 +60,16 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string ProductKey
+		public long? DataSourceItemId
 		{
 			get
 			{
-				return productKey;
+				return dataSourceItemId;
 			}
 			set	
 			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+				dataSourceItemId = value;
+				DictionaryUtil.Add(QueryParameters, "DataSourceItemId", value.ToString());
 			}
 		}
 
@@ -105,35 +86,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string Topic
-		{
-			get
-			{
-				return topic;
-			}
-			set	
-			{
-				topic = value;
-				DictionaryUtil.Add(QueryParameters, "Topic", value);
-			}
-		}
-
-		public string DeviceName
-		{
-			get
-			{
-				return deviceName;
-			}
-			set	
-			{
-				deviceName = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
-			}
-		}
-
-        public override CreateDataSourceItemResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteDataSourceItemResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateDataSourceItemResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteDataSourceItemResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

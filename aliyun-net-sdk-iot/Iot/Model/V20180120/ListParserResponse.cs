@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class ListDataSourceItemResponse : AcsResponse
+	public class ListParserResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,13 +33,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private int? page;
-
-		private int? pageSize;
-
 		private int? total;
 
-		private List<ListDataSourceItem_DataSourceItem> dataSourceItems;
+		private List<ListParser_ParserList> data;
 
 		public string RequestId
 		{
@@ -89,30 +85,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public int? Page
-		{
-			get
-			{
-				return page;
-			}
-			set	
-			{
-				page = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
 		public int? Total
 		{
 			get
@@ -125,88 +97,102 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public List<ListDataSourceItem_DataSourceItem> DataSourceItems
+		public List<ListParser_ParserList> Data
 		{
 			get
 			{
-				return dataSourceItems;
+				return data;
 			}
 			set	
 			{
-				dataSourceItems = value;
+				data = value;
 			}
 		}
 
-		public class ListDataSourceItem_DataSourceItem
+		public class ListParser_ParserList
 		{
 
-			private long? dataSourceItemId;
+			private string name;
 
-			private string topic;
+			private long? parserId;
 
-			private string scopeType;
+			private string description;
 
-			private string productKey;
+			private string status;
 
-			private string deviceName;
+			private string utcCreated;
 
-			public long? DataSourceItemId
+			private string utcModified;
+
+			public string Name
 			{
 				get
 				{
-					return dataSourceItemId;
+					return name;
 				}
 				set	
 				{
-					dataSourceItemId = value;
+					name = value;
 				}
 			}
 
-			public string Topic
+			public long? ParserId
 			{
 				get
 				{
-					return topic;
+					return parserId;
 				}
 				set	
 				{
-					topic = value;
+					parserId = value;
 				}
 			}
 
-			public string ScopeType
+			public string Description
 			{
 				get
 				{
-					return scopeType;
+					return description;
 				}
 				set	
 				{
-					scopeType = value;
+					description = value;
 				}
 			}
 
-			public string ProductKey
+			public string Status
 			{
 				get
 				{
-					return productKey;
+					return status;
 				}
 				set	
 				{
-					productKey = value;
+					status = value;
 				}
 			}
 
-			public string DeviceName
+			public string UtcCreated
 			{
 				get
 				{
-					return deviceName;
+					return utcCreated;
 				}
 				set	
 				{
-					deviceName = value;
+					utcCreated = value;
+				}
+			}
+
+			public string UtcModified
+			{
+				get
+				{
+					return utcModified;
+				}
+				set	
+				{
+					utcModified = value;
 				}
 			}
 		}

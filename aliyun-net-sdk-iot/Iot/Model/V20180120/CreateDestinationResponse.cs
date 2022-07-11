@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class ListDataSourceItemResponse : AcsResponse
+	public class CreateDestinationResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,13 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private int? page;
-
-		private int? pageSize;
-
-		private int? total;
-
-		private List<ListDataSourceItem_DataSourceItem> dataSourceItems;
+		private CreateDestination_Destination destination;
 
 		public string RequestId
 		{
@@ -89,124 +83,102 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public int? Page
+		public CreateDestination_Destination Destination
 		{
 			get
 			{
-				return page;
+				return destination;
 			}
 			set	
 			{
-				page = value;
+				destination = value;
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
-
-		public List<ListDataSourceItem_DataSourceItem> DataSourceItems
-		{
-			get
-			{
-				return dataSourceItems;
-			}
-			set	
-			{
-				dataSourceItems = value;
-			}
-		}
-
-		public class ListDataSourceItem_DataSourceItem
+		public class CreateDestination_Destination
 		{
 
-			private long? dataSourceItemId;
+			private long? destinationId;
 
-			private string topic;
+			private string name;
 
-			private string scopeType;
+			private string type;
 
-			private string productKey;
+			private string configuration;
 
-			private string deviceName;
+			private bool? isFailover;
 
-			public long? DataSourceItemId
+			private string utcCreated;
+
+			public long? DestinationId
 			{
 				get
 				{
-					return dataSourceItemId;
+					return destinationId;
 				}
 				set	
 				{
-					dataSourceItemId = value;
+					destinationId = value;
 				}
 			}
 
-			public string Topic
+			public string Name
 			{
 				get
 				{
-					return topic;
+					return name;
 				}
 				set	
 				{
-					topic = value;
+					name = value;
 				}
 			}
 
-			public string ScopeType
+			public string Type
 			{
 				get
 				{
-					return scopeType;
+					return type;
 				}
 				set	
 				{
-					scopeType = value;
+					type = value;
 				}
 			}
 
-			public string ProductKey
+			public string Configuration
 			{
 				get
 				{
-					return productKey;
+					return configuration;
 				}
 				set	
 				{
-					productKey = value;
+					configuration = value;
 				}
 			}
 
-			public string DeviceName
+			public bool? IsFailover
 			{
 				get
 				{
-					return deviceName;
+					return isFailover;
 				}
 				set	
 				{
-					deviceName = value;
+					isFailover = value;
+				}
+			}
+
+			public string UtcCreated
+			{
+				get
+				{
+					return utcCreated;
+				}
+				set	
+				{
+					utcCreated = value;
 				}
 			}
 		}

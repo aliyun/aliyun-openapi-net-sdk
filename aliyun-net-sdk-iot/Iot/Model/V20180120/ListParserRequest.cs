@@ -28,10 +28,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CreateDataSourceItemRequest : RpcAcsRequest<CreateDataSourceItemResponse>
+    public class ListParserRequest : RpcAcsRequest<ListParserResponse>
     {
-        public CreateDataSourceItemRequest()
-            : base("Iot", "2018-01-20", "CreateDataSourceItem")
+        public ListParserRequest()
+            : base("Iot", "2018-01-20", "ListParser")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,28 +41,24 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string scopeType;
+		private string searchName;
 
 		private string iotInstanceId;
 
-		private string productKey;
+		private int? pageSize;
 
-		private long? dataSourceId;
+		private int? currentPage;
 
-		private string topic;
-
-		private string deviceName;
-
-		public string ScopeType
+		public string SearchName
 		{
 			get
 			{
-				return scopeType;
+				return searchName;
 			}
 			set	
 			{
-				scopeType = value;
-				DictionaryUtil.Add(QueryParameters, "ScopeType", value);
+				searchName = value;
+				DictionaryUtil.Add(QueryParameters, "SearchName", value);
 			}
 		}
 
@@ -79,61 +75,35 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string ProductKey
+		public int? PageSize
 		{
 			get
 			{
-				return productKey;
+				return pageSize;
 			}
 			set	
 			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public long? DataSourceId
+		public int? CurrentPage
 		{
 			get
 			{
-				return dataSourceId;
+				return currentPage;
 			}
 			set	
 			{
-				dataSourceId = value;
-				DictionaryUtil.Add(QueryParameters, "DataSourceId", value.ToString());
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 
-		public string Topic
-		{
-			get
-			{
-				return topic;
-			}
-			set	
-			{
-				topic = value;
-				DictionaryUtil.Add(QueryParameters, "Topic", value);
-			}
-		}
-
-		public string DeviceName
-		{
-			get
-			{
-				return deviceName;
-			}
-			set	
-			{
-				deviceName = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
-			}
-		}
-
-        public override CreateDataSourceItemResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListParserResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateDataSourceItemResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListParserResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
