@@ -44,6 +44,9 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				ListDataSourceItemResponse.ListDataSourceItem_DataSourceItem dataSourceItem = new ListDataSourceItemResponse.ListDataSourceItem_DataSourceItem();
 				dataSourceItem.DataSourceItemId = _ctx.LongValue("ListDataSourceItem.DataSourceItems["+ i +"].DataSourceItemId");
 				dataSourceItem.Topic = _ctx.StringValue("ListDataSourceItem.DataSourceItems["+ i +"].Topic");
+				dataSourceItem.ScopeType = _ctx.StringValue("ListDataSourceItem.DataSourceItems["+ i +"].ScopeType");
+				dataSourceItem.ProductKey = _ctx.StringValue("ListDataSourceItem.DataSourceItems["+ i +"].ProductKey");
+				dataSourceItem.DeviceName = _ctx.StringValue("ListDataSourceItem.DataSourceItems["+ i +"].DeviceName");
 
 				listDataSourceItemResponse_dataSourceItems.Add(dataSourceItem);
 			}

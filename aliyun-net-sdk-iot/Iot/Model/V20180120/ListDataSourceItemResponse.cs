@@ -144,6 +144,12 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string topic;
 
+			private string scopeType;
+
+			private string productKey;
+
+			private string deviceName;
+
 			public long? DataSourceItemId
 			{
 				get
@@ -165,6 +171,42 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					topic = value;
+				}
+			}
+
+			public string ScopeType
+			{
+				get
+				{
+					return scopeType;
+				}
+				set	
+				{
+					scopeType = value;
+				}
+			}
+
+			public string ProductKey
+			{
+				get
+				{
+					return productKey;
+				}
+				set	
+				{
+					productKey = value;
+				}
+			}
+
+			public string DeviceName
+			{
+				get
+				{
+					return deviceName;
+				}
+				set	
+				{
+					deviceName = value;
 				}
 			}
 		}

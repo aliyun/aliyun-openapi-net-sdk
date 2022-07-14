@@ -60,6 +60,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string licenseType;
 
+		private string detectionStrategy;
+
 		private string resourceOwnerAccount;
 
 		private string roleName;
@@ -215,6 +217,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				licenseType = value;
 				DictionaryUtil.Add(QueryParameters, "LicenseType", value);
+			}
+		}
+
+		public string DetectionStrategy
+		{
+			get
+			{
+				return detectionStrategy;
+			}
+			set	
+			{
+				detectionStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "DetectionStrategy", value);
 			}
 		}
 

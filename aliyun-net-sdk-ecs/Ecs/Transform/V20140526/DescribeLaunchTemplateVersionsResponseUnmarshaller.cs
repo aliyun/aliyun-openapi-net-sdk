@@ -75,6 +75,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				launchTemplateData.ImageOwnerAlias = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.ImageOwnerAlias");
 				launchTemplateData.HostName = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.HostName");
 				launchTemplateData.SystemDiskIops = _ctx.IntegerValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.Iops");
+				launchTemplateData.SystemDiskAutoSnapshotPolicyId = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.AutoSnapshotPolicyId");
 				launchTemplateData.InternetMaxBandwidthOut = _ctx.IntegerValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InternetMaxBandwidthOut");
 				launchTemplateData.InternetMaxBandwidthIn = _ctx.IntegerValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InternetMaxBandwidthIn");
 				launchTemplateData.InstanceType = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InstanceType");
@@ -87,6 +88,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				launchTemplateData.InternetChargeType = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InternetChargeType");
 				launchTemplateData.ZoneId = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.ZoneId");
 				launchTemplateData.Ipv6AddressCount = _ctx.IntegerValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Ipv6AddressCount");
+				launchTemplateData.SystemDiskProvisionedIops = _ctx.LongValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.ProvisionedIops");
+				launchTemplateData.SystemDiskBurstingEnabled = _ctx.BooleanValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.BurstingEnabled");
 
 				List<string> launchTemplateData_securityGroupIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SecurityGroupIds.Length"); j++) {
@@ -106,6 +109,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					dataDisk.Category = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].Category");
 					dataDisk.DeleteWithInstance = _ctx.BooleanValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].DeleteWithInstance");
 					dataDisk.Encrypted = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].Encrypted");
+					dataDisk.ProvisionedIops = _ctx.LongValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].ProvisionedIops");
+					dataDisk.BurstingEnabled = _ctx.BooleanValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].BurstingEnabled");
+					dataDisk.AutoSnapshotPolicyId = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].AutoSnapshotPolicyId");
 
 					launchTemplateData_dataDisks.Add(dataDisk);
 				}
@@ -119,6 +125,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					networkInterface.Description = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].Description");
 					networkInterface.PrimaryIpAddress = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].PrimaryIpAddress");
 					networkInterface.SecurityGroupId = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].SecurityGroupId");
+					networkInterface.InstanceType = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].InstanceType");
+					networkInterface.NetworkInterfaceTrafficMode = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].NetworkInterfaceTrafficMode");
 
 					List<string> networkInterface_securityGroupIds1 = new List<string>();
 					for (int k = 0; k < _ctx.Length("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].SecurityGroupIds.Length"); k++) {

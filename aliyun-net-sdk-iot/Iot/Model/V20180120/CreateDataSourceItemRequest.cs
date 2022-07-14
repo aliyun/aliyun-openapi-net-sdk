@@ -41,11 +41,30 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private string scopeType;
+
 		private string iotInstanceId;
+
+		private string productKey;
 
 		private long? dataSourceId;
 
 		private string topic;
+
+		private string deviceName;
+
+		public string ScopeType
+		{
+			get
+			{
+				return scopeType;
+			}
+			set	
+			{
+				scopeType = value;
+				DictionaryUtil.Add(QueryParameters, "ScopeType", value);
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -57,6 +76,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 
@@ -83,6 +115,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				topic = value;
 				DictionaryUtil.Add(QueryParameters, "Topic", value);
+			}
+		}
+
+		public string DeviceName
+		{
+			get
+			{
+				return deviceName;
+			}
+			set	
+			{
+				deviceName = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
 			}
 		}
 

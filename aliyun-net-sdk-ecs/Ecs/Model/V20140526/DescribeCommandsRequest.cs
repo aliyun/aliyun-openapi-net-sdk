@@ -56,6 +56,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? pageSize;
 
+		private bool? latest;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -165,6 +167,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public bool? Latest
+		{
+			get
+			{
+				return latest;
+			}
+			set	
+			{
+				latest = value;
+				DictionaryUtil.Add(QueryParameters, "Latest", value.ToString());
 			}
 		}
 

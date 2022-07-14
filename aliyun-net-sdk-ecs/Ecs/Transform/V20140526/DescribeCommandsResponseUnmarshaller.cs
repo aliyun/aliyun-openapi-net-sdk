@@ -60,6 +60,24 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				}
 				command.ParameterNames = command_parameterNames;
 
+				List<DescribeCommandsResponse.DescribeCommands_Command.DescribeCommands_ParameterDefinition> command_parameterDefinitions = new List<DescribeCommandsResponse.DescribeCommands_Command.DescribeCommands_ParameterDefinition>();
+				for (int j = 0; j < _ctx.Length("DescribeCommands.Commands["+ i +"].ParameterDefinitions.Length"); j++) {
+					DescribeCommandsResponse.DescribeCommands_Command.DescribeCommands_ParameterDefinition parameterDefinition = new DescribeCommandsResponse.DescribeCommands_Command.DescribeCommands_ParameterDefinition();
+					parameterDefinition.Required = _ctx.BooleanValue("DescribeCommands.Commands["+ i +"].ParameterDefinitions["+ j +"].Required");
+					parameterDefinition.Description = _ctx.StringValue("DescribeCommands.Commands["+ i +"].ParameterDefinitions["+ j +"].Description");
+					parameterDefinition.DefaultValue = _ctx.StringValue("DescribeCommands.Commands["+ i +"].ParameterDefinitions["+ j +"].DefaultValue");
+					parameterDefinition.ParameterName = _ctx.StringValue("DescribeCommands.Commands["+ i +"].ParameterDefinitions["+ j +"].ParameterName");
+
+					List<string> parameterDefinition_possibleValues = new List<string>();
+					for (int k = 0; k < _ctx.Length("DescribeCommands.Commands["+ i +"].ParameterDefinitions["+ j +"].PossibleValues.Length"); k++) {
+						parameterDefinition_possibleValues.Add(_ctx.StringValue("DescribeCommands.Commands["+ i +"].ParameterDefinitions["+ j +"].PossibleValues["+ k +"]"));
+					}
+					parameterDefinition.PossibleValues = parameterDefinition_possibleValues;
+
+					command_parameterDefinitions.Add(parameterDefinition);
+				}
+				command.ParameterDefinitions = command_parameterDefinitions;
+
 				describeCommandsResponse_commands.Add(command);
 			}
 			describeCommandsResponse.Commands = describeCommandsResponse_commands;

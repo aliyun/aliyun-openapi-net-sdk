@@ -294,11 +294,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				remoteConnectionOptions_ = value;
-				if(RemoteConnectionOptions_ != null)
+				if(remoteConnectionOptions_ != null)
 				{
 
-					DictionaryUtil.Add(QueryParameters,"RemoteConnectionOptions.Password", RemoteConnectionOptions_.Password);
-					DictionaryUtil.Add(QueryParameters,"RemoteConnectionOptions.Type", RemoteConnectionOptions_.Type);
+					DictionaryUtil.Add(QueryParameters,"RemoteConnectionOptions.Password", remoteConnectionOptions_.Password);
+					DictionaryUtil.Add(QueryParameters,"RemoteConnectionOptions.Type", remoteConnectionOptions_.Type);
 				}
 			}
 		}

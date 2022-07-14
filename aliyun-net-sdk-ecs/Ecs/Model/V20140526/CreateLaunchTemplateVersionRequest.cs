@@ -62,6 +62,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<string> tags = new List<string>(){ };
 
+		private string systemDiskAutoSnapshotPolicyId;
+
 		private int? period;
 
 		private string launchTemplateId;
@@ -75,6 +77,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string spotStrategy;
 
 		private string privateIpAddress;
+
+		private bool? systemDiskBurstingEnabled;
 
 		private string instanceName;
 
@@ -131,6 +135,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private List<string> securityGroupIdss = new List<string>(){ };
 
 		private List<string> dataDisks = new List<string>(){ };
+
+		private long? systemDiskProvisionedIops;
 
 		private int? systemDiskSize;
 
@@ -289,6 +295,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string SystemDiskAutoSnapshotPolicyId
+		{
+			get
+			{
+				return systemDiskAutoSnapshotPolicyId;
+			}
+			set	
+			{
+				systemDiskAutoSnapshotPolicyId = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDisk.AutoSnapshotPolicyId", value);
+			}
+		}
+
 		public int? Period
 		{
 			get
@@ -377,6 +396,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				privateIpAddress = value;
 				DictionaryUtil.Add(QueryParameters, "PrivateIpAddress", value);
+			}
+		}
+
+		public bool? SystemDiskBurstingEnabled
+		{
+			get
+			{
+				return systemDiskBurstingEnabled;
+			}
+			set	
+			{
+				systemDiskBurstingEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDisk.BurstingEnabled", value.ToString());
 			}
 		}
 
@@ -646,6 +678,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
 						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
 						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
+						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
+						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
 					}
 				}
 			}
@@ -765,8 +799,24 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
 						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
 						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
 					}
 				}
+			}
+		}
+
+		public long? SystemDiskProvisionedIops
+		{
+			get
+			{
+				return systemDiskProvisionedIops;
+			}
+			set	
+			{
+				systemDiskProvisionedIops = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDisk.ProvisionedIops", value.ToString());
 			}
 		}
 
@@ -856,6 +906,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private List<string> securityGroupIdss = new List<string>(){ };
 
+			private string instanceType;
+
+			private string networkInterfaceTrafficMode;
+
 			public string VSwitchId
 			{
 				get
@@ -927,6 +981,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					securityGroupIdss = value;
 				}
 			}
+
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
+				}
+			}
+
+			public string NetworkInterfaceTrafficMode
+			{
+				get
+				{
+					return networkInterfaceTrafficMode;
+				}
+				set	
+				{
+					networkInterfaceTrafficMode = value;
+				}
+			}
 		}
 
 		public class DataDisk
@@ -949,6 +1027,12 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			private bool? deleteWithInstance;
 
 			private string encrypted;
+
+			private long? provisionedIops;
+
+			private bool? burstingEnabled;
+
+			private string autoSnapshotPolicyId;
 
 			public string PerformanceLevel
 			{
@@ -1055,6 +1139,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					encrypted = value;
+				}
+			}
+
+			public long? ProvisionedIops
+			{
+				get
+				{
+					return provisionedIops;
+				}
+				set	
+				{
+					provisionedIops = value;
+				}
+			}
+
+			public bool? BurstingEnabled
+			{
+				get
+				{
+					return burstingEnabled;
+				}
+				set	
+				{
+					burstingEnabled = value;
+				}
+			}
+
+			public string AutoSnapshotPolicyId
+			{
+				get
+				{
+					return autoSnapshotPolicyId;
+				}
+				set	
+				{
+					autoSnapshotPolicyId = value;
 				}
 			}
 		}

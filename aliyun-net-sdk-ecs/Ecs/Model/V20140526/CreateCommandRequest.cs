@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? timeout;
 
+		private string contentEncoding;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -137,6 +139,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				timeout = value;
 				DictionaryUtil.Add(QueryParameters, "Timeout", value.ToString());
+			}
+		}
+
+		public string ContentEncoding
+		{
+			get
+			{
+				return contentEncoding;
+			}
+			set	
+			{
+				contentEncoding = value;
+				DictionaryUtil.Add(QueryParameters, "ContentEncoding", value);
 			}
 		}
 

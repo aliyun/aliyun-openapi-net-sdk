@@ -64,6 +64,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				extendedAttribute.HostType = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.HostType");
 				extendedAttribute.HostId = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.HostId");
 				extendedAttribute.OnlineRepairPolicy = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.OnlineRepairPolicy");
+				extendedAttribute.Rack = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.Rack");
 
 				List<string> extendedAttribute_migrationOptions = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.MigrationOptions.Length"); j++) {

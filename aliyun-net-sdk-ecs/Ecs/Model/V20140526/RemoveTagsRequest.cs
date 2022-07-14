@@ -152,7 +152,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string key;
 
-			[JsonProperty(PropertyName = "value")]
+			[JsonProperty(PropertyName = "Value")]
 			public string Value_
 			{
 				get
