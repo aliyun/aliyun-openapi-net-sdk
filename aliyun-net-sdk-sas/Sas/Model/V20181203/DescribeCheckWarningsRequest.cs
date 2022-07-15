@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string uuid;
 
+		private string checkType;
+
 		private string sourceIp;
 
 		private int? pageSize;
@@ -65,6 +67,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				uuid = value;
 				DictionaryUtil.Add(QueryParameters, "Uuid", value);
+			}
+		}
+
+		public string CheckType
+		{
+			get
+			{
+				return checkType;
+			}
+			set	
+			{
+				checkType = value;
+				DictionaryUtil.Add(QueryParameters, "CheckType", value);
 			}
 		}
 

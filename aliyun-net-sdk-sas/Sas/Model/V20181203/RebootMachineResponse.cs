@@ -22,12 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
 {
-	public class DescribeCriteriaResponse : AcsResponse
+	public class RebootMachineResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private List<DescribeCriteria_Criteria> criteriaList;
 
 		public string RequestId
 		{
@@ -38,78 +36,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public List<DescribeCriteria_Criteria> CriteriaList
-		{
-			get
-			{
-				return criteriaList;
-			}
-			set	
-			{
-				criteriaList = value;
-			}
-		}
-
-		public class DescribeCriteria_Criteria
-		{
-
-			private string type;
-
-			private string name;
-
-			private string values;
-
-			private string multiValues;
-
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Values
-			{
-				get
-				{
-					return values;
-				}
-				set	
-				{
-					values = value;
-				}
-			}
-
-			public string MultiValues
-			{
-				get
-				{
-					return multiValues;
-				}
-				set	
-				{
-					multiValues = value;
-				}
 			}
 		}
 	}

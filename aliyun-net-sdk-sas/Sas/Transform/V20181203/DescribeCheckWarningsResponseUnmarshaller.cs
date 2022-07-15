@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				checkWarning.Item = _ctx.StringValue("DescribeCheckWarnings.CheckWarnings["+ i +"].Item");
 				checkWarning.CheckId = _ctx.LongValue("DescribeCheckWarnings.CheckWarnings["+ i +"].CheckId");
 				checkWarning.Level = _ctx.StringValue("DescribeCheckWarnings.CheckWarnings["+ i +"].Level");
+				checkWarning.Reason = _ctx.StringValue("DescribeCheckWarnings.CheckWarnings["+ i +"].Reason");
+				checkWarning.FixStatus = _ctx.IntegerValue("DescribeCheckWarnings.CheckWarnings["+ i +"].FixStatus");
 
 				describeCheckWarningsResponse_checkWarnings.Add(checkWarning);
 			}

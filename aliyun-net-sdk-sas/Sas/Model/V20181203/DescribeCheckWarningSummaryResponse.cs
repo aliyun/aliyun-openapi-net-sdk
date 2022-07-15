@@ -134,6 +134,10 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string level;
 
+			private bool? checkExploit;
+
+			private bool? databaseRisk;
+
 			public int? LowWarningCount
 			{
 				get
@@ -263,6 +267,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					level = value;
+				}
+			}
+
+			public bool? CheckExploit
+			{
+				get
+				{
+					return checkExploit;
+				}
+				set	
+				{
+					checkExploit = value;
+				}
+			}
+
+			public bool? DatabaseRisk
+			{
+				get
+				{
+					return databaseRisk;
+				}
+				set	
+				{
+					databaseRisk = value;
 				}
 			}
 		}

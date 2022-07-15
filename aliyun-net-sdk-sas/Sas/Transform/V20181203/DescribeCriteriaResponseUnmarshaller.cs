@@ -39,6 +39,7 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				criteria.Type = _ctx.StringValue("DescribeCriteria.CriteriaList["+ i +"].Type");
 				criteria.Name = _ctx.StringValue("DescribeCriteria.CriteriaList["+ i +"].Name");
 				criteria.Values = _ctx.StringValue("DescribeCriteria.CriteriaList["+ i +"].Values");
+				criteria.MultiValues = _ctx.StringValue("DescribeCriteria.CriteriaList["+ i +"].MultiValues");
 
 				describeCriteriaResponse_criteriaList.Add(criteria);
 			}

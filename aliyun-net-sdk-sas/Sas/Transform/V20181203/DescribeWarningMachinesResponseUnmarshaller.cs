@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				warningMachine.MediumWarningCount = _ctx.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].MediumWarningCount");
 				warningMachine.PassCount = _ctx.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].PassCount");
 				warningMachine.InstanceName = _ctx.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].InstanceName");
+				warningMachine.Bind = _ctx.BooleanValue("DescribeWarningMachines.WarningMachines["+ i +"].Bind");
+				warningMachine.AuthVersion = _ctx.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].AuthVersion");
 
 				describeWarningMachinesResponse_warningMachines.Add(warningMachine);
 			}
