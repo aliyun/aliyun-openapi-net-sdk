@@ -41,8 +41,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			Method = MethodType.POST;
         }
 
-		private List<string> instanceSubTypess = new List<string>(){ };
-
 		private List<string> standardIdss = new List<string>(){ };
 
 		private List<string> riskLevelss = new List<string>(){ };
@@ -66,19 +64,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		private List<string> instanceIdss = new List<string>(){ };
 
 		private List<string> statusess = new List<string>(){ };
-
-		public List<string> InstanceSubTypess
-		{
-			get
-			{
-				return instanceSubTypess;
-			}
-
-			set
-			{
-				instanceSubTypess = value;
-			}
-		}
 
 		public List<string> StandardIdss
 		{
