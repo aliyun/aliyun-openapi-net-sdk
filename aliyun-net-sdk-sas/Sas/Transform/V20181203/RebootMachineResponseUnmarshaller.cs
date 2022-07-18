@@ -16,13 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Sas.Model.V20181203
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Sas.Model.V20181203;
+
+namespace Aliyun.Acs.Sas.Transform.V20181203
 {
-	public class DescribeRiskCheckItemResultResponse : AcsResponse
-	{
-	}
+    public class RebootMachineResponseUnmarshaller
+    {
+        public static RebootMachineResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			RebootMachineResponse rebootMachineResponse = new RebootMachineResponse();
+
+			rebootMachineResponse.HttpResponse = _ctx.HttpResponse;
+			rebootMachineResponse.RequestId = _ctx.StringValue("RebootMachine.RequestId");
+        
+			return rebootMachineResponse;
+        }
+    }
 }

@@ -28,10 +28,10 @@ using Aliyun.Acs.Sas.Transform.V20181203;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
 {
-    public class DescribeCheckWarningsRequest : RpcAcsRequest<DescribeCheckWarningsResponse>
+    public class ListCheckResultRequest : RpcAcsRequest<ListCheckResultResponse>
     {
-        public DescribeCheckWarningsRequest()
-            : base("Sas", "2018-12-03", "DescribeCheckWarnings")
+        public ListCheckResultRequest()
+            : base("Sas", "2018-12-03", "ListCheckResult")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,58 +41,94 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			Method = MethodType.POST;
         }
 
-		private string uuid;
+		private List<string> instanceSubTypess = new List<string>(){ };
 
-		private string checkType;
+		private List<string> standardIdss = new List<string>(){ };
 
-		private string sourceIp;
+		private List<string> riskLevelss = new List<string>(){ };
+
+		private List<string> instanceTypess = new List<string>(){ };
+
+		private string checkKey;
 
 		private int? pageSize;
 
 		private string lang;
 
-		private long? checkId;
+		private List<string> vendorss = new List<string>(){ };
 
 		private int? currentPage;
 
-		private long? riskId;
+		private List<string> requirementIdss = new List<string>(){ };
 
-		public string Uuid
+		private List<string> sortTypess = new List<string>(){ };
+
+		private List<string> instanceIdss = new List<string>(){ };
+
+		private List<string> statusess = new List<string>(){ };
+
+		public List<string> InstanceSubTypess
 		{
 			get
 			{
-				return uuid;
+				return instanceSubTypess;
 			}
-			set	
+
+			set
 			{
-				uuid = value;
-				DictionaryUtil.Add(QueryParameters, "Uuid", value);
+				instanceSubTypess = value;
 			}
 		}
 
-		public string CheckType
+		public List<string> StandardIdss
 		{
 			get
 			{
-				return checkType;
+				return standardIdss;
 			}
-			set	
+
+			set
 			{
-				checkType = value;
-				DictionaryUtil.Add(QueryParameters, "CheckType", value);
+				standardIdss = value;
 			}
 		}
 
-		public string SourceIp
+		public List<string> RiskLevelss
 		{
 			get
 			{
-				return sourceIp;
+				return riskLevelss;
+			}
+
+			set
+			{
+				riskLevelss = value;
+			}
+		}
+
+		public List<string> InstanceTypess
+		{
+			get
+			{
+				return instanceTypess;
+			}
+
+			set
+			{
+				instanceTypess = value;
+			}
+		}
+
+		public string CheckKey
+		{
+			get
+			{
+				return checkKey;
 			}
 			set	
 			{
-				sourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
+				checkKey = value;
+				DictionaryUtil.Add(QueryParameters, "CheckKey", value);
 			}
 		}
 
@@ -122,16 +158,16 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public long? CheckId
+		public List<string> Vendorss
 		{
 			get
 			{
-				return checkId;
+				return vendorss;
 			}
-			set	
+
+			set
 			{
-				checkId = value;
-				DictionaryUtil.Add(QueryParameters, "CheckId", value.ToString());
+				vendorss = value;
 			}
 		}
 
@@ -148,16 +184,55 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public long? RiskId
+		public List<string> RequirementIdss
 		{
 			get
 			{
-				return riskId;
+				return requirementIdss;
 			}
-			set	
+
+			set
 			{
-				riskId = value;
-				DictionaryUtil.Add(QueryParameters, "RiskId", value.ToString());
+				requirementIdss = value;
+			}
+		}
+
+		public List<string> SortTypess
+		{
+			get
+			{
+				return sortTypess;
+			}
+
+			set
+			{
+				sortTypess = value;
+			}
+		}
+
+		public List<string> InstanceIdss
+		{
+			get
+			{
+				return instanceIdss;
+			}
+
+			set
+			{
+				instanceIdss = value;
+			}
+		}
+
+		public List<string> Statusess
+		{
+			get
+			{
+				return statusess;
+			}
+
+			set
+			{
+				statusess = value;
 			}
 		}
 
@@ -166,9 +241,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			return false;
 		}
 
-        public override DescribeCheckWarningsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListCheckResultResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCheckWarningsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListCheckResultResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

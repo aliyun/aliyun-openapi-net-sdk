@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				warningSummary.TypeAlias = _ctx.StringValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].TypeAlias");
 				warningSummary.RiskName = _ctx.StringValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].RiskName");
 				warningSummary.Level = _ctx.StringValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].Level");
+				warningSummary.CheckExploit = _ctx.BooleanValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].CheckExploit");
+				warningSummary.DatabaseRisk = _ctx.BooleanValue("DescribeCheckWarningSummary.WarningSummarys["+ i +"].DatabaseRisk");
 
 				describeCheckWarningSummaryResponse_warningSummarys.Add(warningSummary);
 			}

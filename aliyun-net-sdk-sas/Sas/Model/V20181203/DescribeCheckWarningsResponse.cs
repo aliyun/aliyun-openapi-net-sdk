@@ -126,6 +126,10 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string level;
 
+			private string reason;
+
+			private int? fixStatus;
+
 			public int? Status
 			{
 				get
@@ -207,6 +211,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					level = value;
+				}
+			}
+
+			public string Reason
+			{
+				get
+				{
+					return reason;
+				}
+				set	
+				{
+					reason = value;
+				}
+			}
+
+			public int? FixStatus
+			{
+				get
+				{
+					return fixStatus;
+				}
+				set	
+				{
+					fixStatus = value;
 				}
 			}
 		}

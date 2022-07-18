@@ -22,12 +22,26 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
 {
-	public class DescribeCriteriaResponse : AcsResponse
+	public class DescribeInstanceRebootStatusResponse : AcsResponse
 	{
+
+		private int? totalCount;
 
 		private string requestId;
 
-		private List<DescribeCriteria_Criteria> criteriaList;
+		private List<DescribeInstanceRebootStatus_RebootStatus> rebootStatuses;
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -41,74 +55,74 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public List<DescribeCriteria_Criteria> CriteriaList
+		public List<DescribeInstanceRebootStatus_RebootStatus> RebootStatuses
 		{
 			get
 			{
-				return criteriaList;
+				return rebootStatuses;
 			}
 			set	
 			{
-				criteriaList = value;
+				rebootStatuses = value;
 			}
 		}
 
-		public class DescribeCriteria_Criteria
+		public class DescribeInstanceRebootStatus_RebootStatus
 		{
 
-			private string type;
+			private string uuid;
 
-			private string name;
+			private int? rebootStatus;
 
-			private string values;
+			private string code;
 
-			private string multiValues;
+			private string msg;
 
-			public string Type
+			public string Uuid
 			{
 				get
 				{
-					return type;
+					return uuid;
 				}
 				set	
 				{
-					type = value;
+					uuid = value;
 				}
 			}
 
-			public string Name
+			public int? RebootStatus
 			{
 				get
 				{
-					return name;
+					return rebootStatus;
 				}
 				set	
 				{
-					name = value;
+					rebootStatus = value;
 				}
 			}
 
-			public string Values
+			public string Code
 			{
 				get
 				{
-					return values;
+					return code;
 				}
 				set	
 				{
-					values = value;
+					code = value;
 				}
 			}
 
-			public string MultiValues
+			public string Msg
 			{
 				get
 				{
-					return multiValues;
+					return msg;
 				}
 				set	
 				{
-					multiValues = value;
+					msg = value;
 				}
 			}
 		}

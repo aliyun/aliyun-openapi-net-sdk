@@ -136,6 +136,10 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string instanceName;
 
+			private bool? bind;
+
+			private int? authVersion;
+
 			public int? Status
 			{
 				get
@@ -277,6 +281,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					instanceName = value;
+				}
+			}
+
+			public bool? Bind
+			{
+				get
+				{
+					return bind;
+				}
+				set	
+				{
+					bind = value;
+				}
+			}
+
+			public int? AuthVersion
+			{
+				get
+				{
+					return authVersion;
+				}
+				set	
+				{
+					authVersion = value;
 				}
 			}
 		}
