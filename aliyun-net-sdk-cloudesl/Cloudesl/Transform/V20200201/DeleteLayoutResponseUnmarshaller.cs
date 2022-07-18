@@ -24,23 +24,23 @@ using Aliyun.Acs.cloudesl.Model.V20200201;
 
 namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
-    public class UnbindEslDeviceResponseUnmarshaller
+    public class DeleteLayoutResponseUnmarshaller
     {
-        public static UnbindEslDeviceResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DeleteLayoutResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			UnbindEslDeviceResponse unbindEslDeviceResponse = new UnbindEslDeviceResponse();
+			DeleteLayoutResponse deleteLayoutResponse = new DeleteLayoutResponse();
 
-			unbindEslDeviceResponse.HttpResponse = _ctx.HttpResponse;
-			unbindEslDeviceResponse.RequestId = _ctx.StringValue("UnbindEslDevice.RequestId");
-			unbindEslDeviceResponse.ErrorMessage = _ctx.StringValue("UnbindEslDevice.ErrorMessage");
-			unbindEslDeviceResponse.Success = _ctx.BooleanValue("UnbindEslDevice.Success");
-			unbindEslDeviceResponse.ErrorCode = _ctx.StringValue("UnbindEslDevice.ErrorCode");
-			unbindEslDeviceResponse.Code = _ctx.StringValue("UnbindEslDevice.Code");
-			unbindEslDeviceResponse.Message = _ctx.StringValue("UnbindEslDevice.Message");
-			unbindEslDeviceResponse.DynamicMessage = _ctx.StringValue("UnbindEslDevice.DynamicMessage");
-			unbindEslDeviceResponse.DynamicCode = _ctx.StringValue("UnbindEslDevice.DynamicCode");
+			deleteLayoutResponse.HttpResponse = _ctx.HttpResponse;
+			deleteLayoutResponse.RequestId = _ctx.StringValue("DeleteLayout.RequestId");
+			deleteLayoutResponse.Success = _ctx.BooleanValue("DeleteLayout.Success");
+			deleteLayoutResponse.Message = _ctx.StringValue("DeleteLayout.Message");
+			deleteLayoutResponse.ErrorCode = _ctx.StringValue("DeleteLayout.ErrorCode");
+			deleteLayoutResponse.ErrorMessage = _ctx.StringValue("DeleteLayout.ErrorMessage");
+			deleteLayoutResponse.Code = _ctx.StringValue("DeleteLayout.Code");
+			deleteLayoutResponse.DynamicCode = _ctx.StringValue("DeleteLayout.DynamicCode");
+			deleteLayoutResponse.DynamicMessage = _ctx.StringValue("DeleteLayout.DynamicMessage");
         
-			return unbindEslDeviceResponse;
+			return deleteLayoutResponse;
         }
     }
 }

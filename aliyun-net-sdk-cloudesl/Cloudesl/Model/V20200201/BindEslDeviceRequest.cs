@@ -43,17 +43,25 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private string extraParams;
 
+		private string containerName;
+
 		private string storeId;
+
+		private string layoutId;
 
 		private int? layer;
 
 		private string eslBarCode;
+
+		private string layoutName;
 
 		private string itemBarCode;
 
 		private string column;
 
 		private string shelf;
+
+		private string containerId;
 
 		public string ExtraParams
 		{
@@ -68,6 +76,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
+		public string ContainerName
+		{
+			get
+			{
+				return containerName;
+			}
+			set	
+			{
+				containerName = value;
+				DictionaryUtil.Add(BodyParameters, "ContainerName", value);
+			}
+		}
+
 		public string StoreId
 		{
 			get
@@ -78,6 +99,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				storeId = value;
 				DictionaryUtil.Add(BodyParameters, "StoreId", value);
+			}
+		}
+
+		public string LayoutId
+		{
+			get
+			{
+				return layoutId;
+			}
+			set	
+			{
+				layoutId = value;
+				DictionaryUtil.Add(BodyParameters, "LayoutId", value);
 			}
 		}
 
@@ -104,6 +138,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				eslBarCode = value;
 				DictionaryUtil.Add(BodyParameters, "EslBarCode", value);
+			}
+		}
+
+		public string LayoutName
+		{
+			get
+			{
+				return layoutName;
+			}
+			set	
+			{
+				layoutName = value;
+				DictionaryUtil.Add(BodyParameters, "LayoutName", value);
 			}
 		}
 
@@ -143,6 +190,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				shelf = value;
 				DictionaryUtil.Add(BodyParameters, "Shelf", value);
+			}
+		}
+
+		public string ContainerId
+		{
+			get
+			{
+				return containerId;
+			}
+			set	
+			{
+				containerId = value;
+				DictionaryUtil.Add(BodyParameters, "ContainerId", value);
 			}
 		}
 

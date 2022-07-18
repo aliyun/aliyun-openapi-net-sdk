@@ -28,10 +28,10 @@ using Aliyun.Acs.cloudesl.Transform.V20200201;
 
 namespace Aliyun.Acs.cloudesl.Model.V20200201
 {
-    public class UnbindEslDeviceRequest : RpcAcsRequest<UnbindEslDeviceResponse>
+    public class UpdateCompanyTemplateRequest : RpcAcsRequest<UpdateCompanyTemplateResponse>
     {
-        public UnbindEslDeviceRequest()
-            : base("cloudesl", "2020-02-01", "UnbindEslDevice")
+        public UpdateCompanyTemplateRequest()
+            : base("cloudesl", "2020-02-01", "UpdateCompanyTemplate")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,19 +43,13 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private string extraParams;
 
-		private string containerName;
+		private string scene;
 
-		private string storeId;
+		private string templateVersion;
 
-		private int? layer;
+		private string templateName;
 
-		private string eslBarCode;
-
-		private string itemBarCode;
-
-		private string column;
-
-		private string shelf;
+		private string templateId;
 
 		public string ExtraParams
 		{
@@ -70,105 +64,61 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string ContainerName
+		public string Scene
 		{
 			get
 			{
-				return containerName;
+				return scene;
 			}
 			set	
 			{
-				containerName = value;
-				DictionaryUtil.Add(BodyParameters, "ContainerName", value);
+				scene = value;
+				DictionaryUtil.Add(BodyParameters, "Scene", value);
 			}
 		}
 
-		public string StoreId
+		public string TemplateVersion
 		{
 			get
 			{
-				return storeId;
+				return templateVersion;
 			}
 			set	
 			{
-				storeId = value;
-				DictionaryUtil.Add(BodyParameters, "StoreId", value);
+				templateVersion = value;
+				DictionaryUtil.Add(BodyParameters, "TemplateVersion", value);
 			}
 		}
 
-		public int? Layer
+		public string TemplateName
 		{
 			get
 			{
-				return layer;
+				return templateName;
 			}
 			set	
 			{
-				layer = value;
-				DictionaryUtil.Add(BodyParameters, "Layer", value.ToString());
+				templateName = value;
+				DictionaryUtil.Add(BodyParameters, "TemplateName", value);
 			}
 		}
 
-		public string EslBarCode
+		public string TemplateId
 		{
 			get
 			{
-				return eslBarCode;
+				return templateId;
 			}
 			set	
 			{
-				eslBarCode = value;
-				DictionaryUtil.Add(BodyParameters, "EslBarCode", value);
+				templateId = value;
+				DictionaryUtil.Add(BodyParameters, "TemplateId", value);
 			}
 		}
 
-		public string ItemBarCode
-		{
-			get
-			{
-				return itemBarCode;
-			}
-			set	
-			{
-				itemBarCode = value;
-				DictionaryUtil.Add(BodyParameters, "ItemBarCode", value);
-			}
-		}
-
-		public string Column
-		{
-			get
-			{
-				return column;
-			}
-			set	
-			{
-				column = value;
-				DictionaryUtil.Add(BodyParameters, "Column", value);
-			}
-		}
-
-		public string Shelf
-		{
-			get
-			{
-				return shelf;
-			}
-			set	
-			{
-				shelf = value;
-				DictionaryUtil.Add(BodyParameters, "Shelf", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override UnbindEslDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateCompanyTemplateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UnbindEslDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateCompanyTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -28,10 +28,10 @@ using Aliyun.Acs.cloudesl.Transform.V20200201;
 
 namespace Aliyun.Acs.cloudesl.Model.V20200201
 {
-    public class UnbindEslDeviceRequest : RpcAcsRequest<UnbindEslDeviceResponse>
+    public class QueryLayoutByDeviceRequest : RpcAcsRequest<QueryLayoutByDeviceResponse>
     {
-        public UnbindEslDeviceRequest()
-            : base("cloudesl", "2020-02-01", "UnbindEslDevice")
+        public QueryLayoutByDeviceRequest()
+            : base("cloudesl", "2020-02-01", "QueryLayoutByDevice")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,47 +41,17 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			Method = MethodType.POST;
         }
 
-		private string extraParams;
-
-		private string containerName;
-
 		private string storeId;
 
-		private int? layer;
+		private int? pageNumber;
+
+		private string templateVersion;
 
 		private string eslBarCode;
 
-		private string itemBarCode;
+		private int? pageSize;
 
-		private string column;
-
-		private string shelf;
-
-		public string ExtraParams
-		{
-			get
-			{
-				return extraParams;
-			}
-			set	
-			{
-				extraParams = value;
-				DictionaryUtil.Add(BodyParameters, "ExtraParams", value);
-			}
-		}
-
-		public string ContainerName
-		{
-			get
-			{
-				return containerName;
-			}
-			set	
-			{
-				containerName = value;
-				DictionaryUtil.Add(BodyParameters, "ContainerName", value);
-			}
-		}
+		private string eslModelId;
 
 		public string StoreId
 		{
@@ -96,16 +66,29 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public int? Layer
+		public int? PageNumber
 		{
 			get
 			{
-				return layer;
+				return pageNumber;
 			}
 			set	
 			{
-				layer = value;
-				DictionaryUtil.Add(BodyParameters, "Layer", value.ToString());
+				pageNumber = value;
+				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string TemplateVersion
+		{
+			get
+			{
+				return templateVersion;
+			}
+			set	
+			{
+				templateVersion = value;
+				DictionaryUtil.Add(BodyParameters, "TemplateVersion", value);
 			}
 		}
 
@@ -122,42 +105,29 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string ItemBarCode
+		public int? PageSize
 		{
 			get
 			{
-				return itemBarCode;
+				return pageSize;
 			}
 			set	
 			{
-				itemBarCode = value;
-				DictionaryUtil.Add(BodyParameters, "ItemBarCode", value);
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string Column
+		public string EslModelId
 		{
 			get
 			{
-				return column;
+				return eslModelId;
 			}
 			set	
 			{
-				column = value;
-				DictionaryUtil.Add(BodyParameters, "Column", value);
-			}
-		}
-
-		public string Shelf
-		{
-			get
-			{
-				return shelf;
-			}
-			set	
-			{
-				shelf = value;
-				DictionaryUtil.Add(BodyParameters, "Shelf", value);
+				eslModelId = value;
+				DictionaryUtil.Add(BodyParameters, "EslModelId", value);
 			}
 		}
 
@@ -166,9 +136,9 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			return false;
 		}
 
-        public override UnbindEslDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryLayoutByDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UnbindEslDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryLayoutByDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

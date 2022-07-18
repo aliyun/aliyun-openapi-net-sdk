@@ -24,23 +24,16 @@ using Aliyun.Acs.cloudesl.Model.V20200201;
 
 namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
-    public class UnbindEslDeviceResponseUnmarshaller
+    public class GetAddMaterialStatusResponseUnmarshaller
     {
-        public static UnbindEslDeviceResponse Unmarshall(UnmarshallerContext _ctx)
+        public static GetAddMaterialStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			UnbindEslDeviceResponse unbindEslDeviceResponse = new UnbindEslDeviceResponse();
+			GetAddMaterialStatusResponse getAddMaterialStatusResponse = new GetAddMaterialStatusResponse();
 
-			unbindEslDeviceResponse.HttpResponse = _ctx.HttpResponse;
-			unbindEslDeviceResponse.RequestId = _ctx.StringValue("UnbindEslDevice.RequestId");
-			unbindEslDeviceResponse.ErrorMessage = _ctx.StringValue("UnbindEslDevice.ErrorMessage");
-			unbindEslDeviceResponse.Success = _ctx.BooleanValue("UnbindEslDevice.Success");
-			unbindEslDeviceResponse.ErrorCode = _ctx.StringValue("UnbindEslDevice.ErrorCode");
-			unbindEslDeviceResponse.Code = _ctx.StringValue("UnbindEslDevice.Code");
-			unbindEslDeviceResponse.Message = _ctx.StringValue("UnbindEslDevice.Message");
-			unbindEslDeviceResponse.DynamicMessage = _ctx.StringValue("UnbindEslDevice.DynamicMessage");
-			unbindEslDeviceResponse.DynamicCode = _ctx.StringValue("UnbindEslDevice.DynamicCode");
+			getAddMaterialStatusResponse.HttpResponse = _ctx.HttpResponse;
+			getAddMaterialStatusResponse.RequestId = _ctx.StringValue("GetAddMaterialStatus.RequestId");
         
-			return unbindEslDeviceResponse;
+			return getAddMaterialStatusResponse;
         }
     }
 }

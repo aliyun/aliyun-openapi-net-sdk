@@ -112,6 +112,7 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 				itemInfo.ItemInfoIndex = _ctx.IntegerValue("DescribeItems.Items["+ i +"].ItemInfoIndex");
 				itemInfo.PromotionEnd = _ctx.StringValue("DescribeItems.Items["+ i +"].PromotionEnd");
 				itemInfo.ItemBarCode = _ctx.StringValue("DescribeItems.Items["+ i +"].ItemBarCode");
+				itemInfo.BeClearance = _ctx.BooleanValue("DescribeItems.Items["+ i +"].BeClearance");
 
 				describeItemsResponse_items.Add(itemInfo);
 			}

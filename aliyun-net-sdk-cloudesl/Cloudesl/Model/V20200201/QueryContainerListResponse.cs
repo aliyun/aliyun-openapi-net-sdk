@@ -22,32 +22,32 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.cloudesl.Model.V20200201
 {
-	public class DescribeTemplateByModelResponse : AcsResponse
+	public class QueryContainerListResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string errorMessage;
-
 		private bool? success;
-
-		private string errorCode;
-
-		private string code;
 
 		private string message;
 
-		private string dynamicMessage;
+		private string errorCode;
+
+		private string errorMessage;
+
+		private string code;
 
 		private string dynamicCode;
 
-		private int? totalCount;
+		private string dynamicMessage;
 
 		private int? pageSize;
 
 		private int? pageNumber;
 
-		private List<DescribeTemplateByModel_SelectItemInfo> items;
+		private int? totalCount;
+
+		private List<QueryContainerList_Container> containerList;
 
 		public string RequestId
 		{
@@ -58,18 +58,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
 			}
 		}
 
@@ -85,6 +73,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
 		public string ErrorCode
 		{
 			get
@@ -94,6 +94,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			set	
 			{
 				errorCode = value;
+			}
+		}
+
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
 			}
 		}
 
@@ -109,30 +121,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public string DynamicMessage
-		{
-			get
-			{
-				return dynamicMessage;
-			}
-			set	
-			{
-				dynamicMessage = value;
-			}
-		}
-
 		public string DynamicCode
 		{
 			get
@@ -145,15 +133,15 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public int? TotalCount
+		public string DynamicMessage
 		{
 			get
 			{
-				return totalCount;
+				return dynamicMessage;
 			}
 			set	
 			{
-				totalCount = value;
+				dynamicMessage = value;
 			}
 		}
 
@@ -181,186 +169,184 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public List<DescribeTemplateByModel_SelectItemInfo> Items
+		public int? TotalCount
 		{
 			get
 			{
-				return items;
+				return totalCount;
 			}
 			set	
 			{
-				items = value;
+				totalCount = value;
 			}
 		}
 
-		public class DescribeTemplateByModel_SelectItemInfo
+		public List<QueryContainerList_Container> ContainerList
+		{
+			get
+			{
+				return containerList;
+			}
+			set	
+			{
+				containerList = value;
+			}
+		}
+
+		public class QueryContainerList_Container
 		{
 
-			private string basePicture;
+			private string containerId;
 
-			private string templateId;
+			private string containerName;
 
-			private string templateName;
+			private string description;
 
-			private string eslSize;
+			private int? topPx;
 
-			private string eslType;
+			private int? leftPx;
 
-			private long? width;
+			private int? widthPx;
 
-			private long? height;
+			private int? heightPx;
 
-			private string templateVersion;
+			private string groupId;
 
-			private string layout;
+			private string groupName;
 
-			private string scene;
+			private string demoTemplateId;
 
-			private string brand;
+			private string demoTemplateName;
 
-			private string templateSceneId;
-
-			public string BasePicture
+			public string ContainerId
 			{
 				get
 				{
-					return basePicture;
+					return containerId;
 				}
 				set	
 				{
-					basePicture = value;
+					containerId = value;
 				}
 			}
 
-			public string TemplateId
+			public string ContainerName
 			{
 				get
 				{
-					return templateId;
+					return containerName;
 				}
 				set	
 				{
-					templateId = value;
+					containerName = value;
 				}
 			}
 
-			public string TemplateName
+			public string Description
 			{
 				get
 				{
-					return templateName;
+					return description;
 				}
 				set	
 				{
-					templateName = value;
+					description = value;
 				}
 			}
 
-			public string EslSize
+			public int? TopPx
 			{
 				get
 				{
-					return eslSize;
+					return topPx;
 				}
 				set	
 				{
-					eslSize = value;
+					topPx = value;
 				}
 			}
 
-			public string EslType
+			public int? LeftPx
 			{
 				get
 				{
-					return eslType;
+					return leftPx;
 				}
 				set	
 				{
-					eslType = value;
+					leftPx = value;
 				}
 			}
 
-			public long? Width
+			public int? WidthPx
 			{
 				get
 				{
-					return width;
+					return widthPx;
 				}
 				set	
 				{
-					width = value;
+					widthPx = value;
 				}
 			}
 
-			public long? Height
+			public int? HeightPx
 			{
 				get
 				{
-					return height;
+					return heightPx;
 				}
 				set	
 				{
-					height = value;
+					heightPx = value;
 				}
 			}
 
-			public string TemplateVersion
+			public string GroupId
 			{
 				get
 				{
-					return templateVersion;
+					return groupId;
 				}
 				set	
 				{
-					templateVersion = value;
+					groupId = value;
 				}
 			}
 
-			public string Layout
+			public string GroupName
 			{
 				get
 				{
-					return layout;
+					return groupName;
 				}
 				set	
 				{
-					layout = value;
+					groupName = value;
 				}
 			}
 
-			public string Scene
+			public string DemoTemplateId
 			{
 				get
 				{
-					return scene;
+					return demoTemplateId;
 				}
 				set	
 				{
-					scene = value;
+					demoTemplateId = value;
 				}
 			}
 
-			public string Brand
+			public string DemoTemplateName
 			{
 				get
 				{
-					return brand;
+					return demoTemplateName;
 				}
 				set	
 				{
-					brand = value;
-				}
-			}
-
-			public string TemplateSceneId
-			{
-				get
-				{
-					return templateSceneId;
-				}
-				set	
-				{
-					templateSceneId = value;
+					demoTemplateName = value;
 				}
 			}
 		}

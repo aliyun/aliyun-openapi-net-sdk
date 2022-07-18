@@ -22,24 +22,38 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.cloudesl.Model.V20200201
 {
-	public class UnbindEslDeviceResponse : AcsResponse
+	public class QueryLayoutDetailResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string errorMessage;
-
 		private bool? success;
-
-		private string errorCode;
-
-		private string code;
 
 		private string message;
 
-		private string dynamicMessage;
+		private string errorCode;
+
+		private string errorMessage;
+
+		private string code;
 
 		private string dynamicCode;
+
+		private string dynamicMessage;
+
+		private long? layoutId;
+
+		private string layoutName;
+
+		private string description;
+
+		private long? layoutTemplateId;
+
+		private string eslModelId;
+
+		private string templateVersion;
+
+		private string brandId;
 
 		public string RequestId
 		{
@@ -50,18 +64,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
 			}
 		}
 
@@ -77,6 +79,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
 		public string ErrorCode
 		{
 			get
@@ -86,6 +100,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			set	
 			{
 				errorCode = value;
+			}
+		}
+
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
 			}
 		}
 
@@ -101,15 +127,15 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string Message
+		public string DynamicCode
 		{
 			get
 			{
-				return message;
+				return dynamicCode;
 			}
 			set	
 			{
-				message = value;
+				dynamicCode = value;
 			}
 		}
 
@@ -125,15 +151,87 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string DynamicCode
+		public long? LayoutId
 		{
 			get
 			{
-				return dynamicCode;
+				return layoutId;
 			}
 			set	
 			{
-				dynamicCode = value;
+				layoutId = value;
+			}
+		}
+
+		public string LayoutName
+		{
+			get
+			{
+				return layoutName;
+			}
+			set	
+			{
+				layoutName = value;
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+			}
+		}
+
+		public long? LayoutTemplateId
+		{
+			get
+			{
+				return layoutTemplateId;
+			}
+			set	
+			{
+				layoutTemplateId = value;
+			}
+		}
+
+		public string EslModelId
+		{
+			get
+			{
+				return eslModelId;
+			}
+			set	
+			{
+				eslModelId = value;
+			}
+		}
+
+		public string TemplateVersion
+		{
+			get
+			{
+				return templateVersion;
+			}
+			set	
+			{
+				templateVersion = value;
+			}
+		}
+
+		public string BrandId
+		{
+			get
+			{
+				return brandId;
+			}
+			set	
+			{
+				brandId = value;
 			}
 		}
 	}

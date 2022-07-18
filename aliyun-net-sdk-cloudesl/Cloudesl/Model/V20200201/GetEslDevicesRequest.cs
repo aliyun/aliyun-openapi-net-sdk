@@ -28,10 +28,10 @@ using Aliyun.Acs.cloudesl.Transform.V20200201;
 
 namespace Aliyun.Acs.cloudesl.Model.V20200201
 {
-    public class UnbindEslDeviceRequest : RpcAcsRequest<UnbindEslDeviceResponse>
+    public class GetEslDevicesRequest : RpcAcsRequest<GetEslDevicesResponse>
     {
-        public UnbindEslDeviceRequest()
-            : base("cloudesl", "2020-02-01", "UnbindEslDevice")
+        public GetEslDevicesRequest()
+            : base("cloudesl", "2020-02-01", "GetEslDevices")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,47 +41,9 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			Method = MethodType.POST;
         }
 
-		private string extraParams;
-
-		private string containerName;
-
 		private string storeId;
 
-		private int? layer;
-
 		private string eslBarCode;
-
-		private string itemBarCode;
-
-		private string column;
-
-		private string shelf;
-
-		public string ExtraParams
-		{
-			get
-			{
-				return extraParams;
-			}
-			set	
-			{
-				extraParams = value;
-				DictionaryUtil.Add(BodyParameters, "ExtraParams", value);
-			}
-		}
-
-		public string ContainerName
-		{
-			get
-			{
-				return containerName;
-			}
-			set	
-			{
-				containerName = value;
-				DictionaryUtil.Add(BodyParameters, "ContainerName", value);
-			}
-		}
 
 		public string StoreId
 		{
@@ -93,19 +55,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				storeId = value;
 				DictionaryUtil.Add(BodyParameters, "StoreId", value);
-			}
-		}
-
-		public int? Layer
-		{
-			get
-			{
-				return layer;
-			}
-			set	
-			{
-				layer = value;
-				DictionaryUtil.Add(BodyParameters, "Layer", value.ToString());
 			}
 		}
 
@@ -122,53 +71,14 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string ItemBarCode
-		{
-			get
-			{
-				return itemBarCode;
-			}
-			set	
-			{
-				itemBarCode = value;
-				DictionaryUtil.Add(BodyParameters, "ItemBarCode", value);
-			}
-		}
-
-		public string Column
-		{
-			get
-			{
-				return column;
-			}
-			set	
-			{
-				column = value;
-				DictionaryUtil.Add(BodyParameters, "Column", value);
-			}
-		}
-
-		public string Shelf
-		{
-			get
-			{
-				return shelf;
-			}
-			set	
-			{
-				shelf = value;
-				DictionaryUtil.Add(BodyParameters, "Shelf", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override UnbindEslDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetEslDevicesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UnbindEslDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetEslDevicesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

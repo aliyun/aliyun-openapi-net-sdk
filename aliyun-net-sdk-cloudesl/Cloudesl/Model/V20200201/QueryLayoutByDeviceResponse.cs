@@ -22,20 +22,22 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.cloudesl.Model.V20200201
 {
-	public class DescribeEslDevicesResponse : AcsResponse
+	public class QueryLayoutByDeviceResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string errorMessage;
-
 		private bool? success;
+
+		private string message;
 
 		private string errorCode;
 
+		private string errorMessage;
+
 		private string code;
 
-		private string message;
+		private string dynamicCode;
 
 		private string dynamicMessage;
 
@@ -45,9 +47,7 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private int? totalCount;
 
-		private string dynamicCode;
-
-		private List<DescribeEslDevices_EslDeviceInfo> eslDevices;
+		private List<QueryLayoutByDevice_Layout> layoutList;
 
 		public string RequestId
 		{
@@ -58,18 +58,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
 			}
 		}
 
@@ -85,6 +73,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
 		public string ErrorCode
 		{
 			get
@@ -94,6 +94,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			set	
 			{
 				errorCode = value;
+			}
+		}
+
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
 			}
 		}
 
@@ -109,15 +121,15 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string Message
+		public string DynamicCode
 		{
 			get
 			{
-				return message;
+				return dynamicCode;
 			}
 			set	
 			{
-				message = value;
+				dynamicCode = value;
 			}
 		}
 
@@ -169,204 +181,34 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string DynamicCode
+		public List<QueryLayoutByDevice_Layout> LayoutList
 		{
 			get
 			{
-				return dynamicCode;
+				return layoutList;
 			}
 			set	
 			{
-				dynamicCode = value;
+				layoutList = value;
 			}
 		}
 
-		public List<DescribeEslDevices_EslDeviceInfo> EslDevices
+		public class QueryLayoutByDevice_Layout
 		{
-			get
-			{
-				return eslDevices;
-			}
-			set	
-			{
-				eslDevices = value;
-			}
-		}
-
-		public class DescribeEslDevices_EslDeviceInfo
-		{
-
-			private string type;
-
-			private string storeId;
-
-			private string eslBarCode;
-
-			private string model;
-
-			private string lastCommunicateTime;
-
-			private int? screenHeight;
-
-			private int? screenWidth;
-
-			private int? eslSignal;
-
-			private int? batteryLevel;
-
-			private string eslStatus;
-
-			private string mac;
-
-			private string typeEncode;
 
 			private string layoutId;
 
 			private string layoutName;
 
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
+			private string description;
 
-			public string StoreId
-			{
-				get
-				{
-					return storeId;
-				}
-				set	
-				{
-					storeId = value;
-				}
-			}
+			private string layoutTemplateId;
 
-			public string EslBarCode
-			{
-				get
-				{
-					return eslBarCode;
-				}
-				set	
-				{
-					eslBarCode = value;
-				}
-			}
+			private bool? isBind;
 
-			public string Model
-			{
-				get
-				{
-					return model;
-				}
-				set	
-				{
-					model = value;
-				}
-			}
+			private string brand;
 
-			public string LastCommunicateTime
-			{
-				get
-				{
-					return lastCommunicateTime;
-				}
-				set	
-				{
-					lastCommunicateTime = value;
-				}
-			}
-
-			public int? ScreenHeight
-			{
-				get
-				{
-					return screenHeight;
-				}
-				set	
-				{
-					screenHeight = value;
-				}
-			}
-
-			public int? ScreenWidth
-			{
-				get
-				{
-					return screenWidth;
-				}
-				set	
-				{
-					screenWidth = value;
-				}
-			}
-
-			public int? EslSignal
-			{
-				get
-				{
-					return eslSignal;
-				}
-				set	
-				{
-					eslSignal = value;
-				}
-			}
-
-			public int? BatteryLevel
-			{
-				get
-				{
-					return batteryLevel;
-				}
-				set	
-				{
-					batteryLevel = value;
-				}
-			}
-
-			public string EslStatus
-			{
-				get
-				{
-					return eslStatus;
-				}
-				set	
-				{
-					eslStatus = value;
-				}
-			}
-
-			public string Mac
-			{
-				get
-				{
-					return mac;
-				}
-				set	
-				{
-					mac = value;
-				}
-			}
-
-			public string TypeEncode
-			{
-				get
-				{
-					return typeEncode;
-				}
-				set	
-				{
-					typeEncode = value;
-				}
-			}
+			private string basePic;
 
 			public string LayoutId
 			{
@@ -389,6 +231,66 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					layoutName = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string LayoutTemplateId
+			{
+				get
+				{
+					return layoutTemplateId;
+				}
+				set	
+				{
+					layoutTemplateId = value;
+				}
+			}
+
+			public bool? IsBind
+			{
+				get
+				{
+					return isBind;
+				}
+				set	
+				{
+					isBind = value;
+				}
+			}
+
+			public string Brand
+			{
+				get
+				{
+					return brand;
+				}
+				set	
+				{
+					brand = value;
+				}
+			}
+
+			public string BasePic
+			{
+				get
+				{
+					return basePic;
+				}
+				set	
+				{
+					basePic = value;
 				}
 			}
 		}

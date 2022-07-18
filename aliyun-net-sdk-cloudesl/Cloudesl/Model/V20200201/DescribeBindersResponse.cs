@@ -25,29 +25,41 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 	public class DescribeBindersResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string errorMessage;
+
+		private bool? success;
 
 		private string errorCode;
 
-		private int? totalCount;
+		private string code;
 
 		private string message;
-
-		private int? pageSize;
-
-		private string dynamicCode;
-
-		private string code;
 
 		private string dynamicMessage;
 
 		private int? pageNumber;
 
-		private string requestId;
+		private int? pageSize;
 
-		private bool? success;
+		private int? totalCount;
+
+		private string dynamicCode;
 
 		private List<DescribeBinders_EslItemBindInfo> eslItemBindInfos;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string ErrorMessage
 		{
@@ -58,6 +70,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			set	
 			{
 				errorMessage = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -73,15 +97,15 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public int? TotalCount
+		public string Code
 		{
 			get
 			{
-				return totalCount;
+				return code;
 			}
 			set	
 			{
-				totalCount = value;
+				code = value;
 			}
 		}
 
@@ -94,42 +118,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			set	
 			{
 				message = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public string DynamicCode
-		{
-			get
-			{
-				return dynamicCode;
-			}
-			set	
-			{
-				dynamicCode = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
 			}
 		}
 
@@ -157,27 +145,39 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string RequestId
+		public int? PageSize
 		{
 			get
 			{
-				return requestId;
+				return pageSize;
 			}
 			set	
 			{
-				requestId = value;
+				pageSize = value;
 			}
 		}
 
-		public bool? Success
+		public int? TotalCount
 		{
 			get
 			{
-				return success;
+				return totalCount;
 			}
 			set	
 			{
-				success = value;
+				totalCount = value;
+			}
+		}
+
+		public string DynamicCode
+		{
+			get
+			{
+				return dynamicCode;
+			}
+			set	
+			{
+				dynamicCode = value;
 			}
 		}
 
@@ -196,143 +196,61 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 		public class DescribeBinders_EslItemBindInfo
 		{
 
-			private string promotionText;
-
-			private string bindId;
-
-			private string storeId;
-
-			private string templateId;
-
-			private string eslPic;
-
-			private string eslStatus;
-
-			private string itemTitle;
-
-			private string originalPrice;
+			private string eslBarCode;
 
 			private string templateSceneId;
 
-			private string gmtModified;
-
 			private string actionPrice;
 
-			private string priceUnit;
-
-			private string eslConnectAp;
-
-			private string skuId;
-
-			private string eslBarCode;
-
-			private string itemShortTitle;
-
-			private bool? bePromotion;
-
-			private string eslModel;
-
-			private string itemBarCode;
-
-			private string itemId;
+			private string itemTitle;
 
 			private string promotionStart;
 
+			private string priceUnit;
+
+			private string originalPrice;
+
+			private string itemId;
+
+			private string gmtModified;
+
+			private string eslPic;
+
+			private string storeId;
+
+			private string itemShortTitle;
+
+			private string bindId;
+
+			private string promotionText;
+
+			private string eslModel;
+
+			private bool? bePromotion;
+
+			private string skuId;
+
+			private string eslConnectAp;
+
+			private string eslStatus;
+
+			private string templateId;
+
 			private string promotionEnd;
 
-			public string PromotionText
-			{
-				get
-				{
-					return promotionText;
-				}
-				set	
-				{
-					promotionText = value;
-				}
-			}
+			private string itemBarCode;
 
-			public string BindId
-			{
-				get
-				{
-					return bindId;
-				}
-				set	
-				{
-					bindId = value;
-				}
-			}
+			private string containerName;
 
-			public string StoreId
+			public string EslBarCode
 			{
 				get
 				{
-					return storeId;
+					return eslBarCode;
 				}
 				set	
 				{
-					storeId = value;
-				}
-			}
-
-			public string TemplateId
-			{
-				get
-				{
-					return templateId;
-				}
-				set	
-				{
-					templateId = value;
-				}
-			}
-
-			public string EslPic
-			{
-				get
-				{
-					return eslPic;
-				}
-				set	
-				{
-					eslPic = value;
-				}
-			}
-
-			public string EslStatus
-			{
-				get
-				{
-					return eslStatus;
-				}
-				set	
-				{
-					eslStatus = value;
-				}
-			}
-
-			public string ItemTitle
-			{
-				get
-				{
-					return itemTitle;
-				}
-				set	
-				{
-					itemTitle = value;
-				}
-			}
-
-			public string OriginalPrice
-			{
-				get
-				{
-					return originalPrice;
-				}
-				set	
-				{
-					originalPrice = value;
+					eslBarCode = value;
 				}
 			}
 
@@ -348,18 +266,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
-			public string GmtModified
-			{
-				get
-				{
-					return gmtModified;
-				}
-				set	
-				{
-					gmtModified = value;
-				}
-			}
-
 			public string ActionPrice
 			{
 				get
@@ -372,111 +278,15 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
-			public string PriceUnit
+			public string ItemTitle
 			{
 				get
 				{
-					return priceUnit;
+					return itemTitle;
 				}
 				set	
 				{
-					priceUnit = value;
-				}
-			}
-
-			public string EslConnectAp
-			{
-				get
-				{
-					return eslConnectAp;
-				}
-				set	
-				{
-					eslConnectAp = value;
-				}
-			}
-
-			public string SkuId
-			{
-				get
-				{
-					return skuId;
-				}
-				set	
-				{
-					skuId = value;
-				}
-			}
-
-			public string EslBarCode
-			{
-				get
-				{
-					return eslBarCode;
-				}
-				set	
-				{
-					eslBarCode = value;
-				}
-			}
-
-			public string ItemShortTitle
-			{
-				get
-				{
-					return itemShortTitle;
-				}
-				set	
-				{
-					itemShortTitle = value;
-				}
-			}
-
-			public bool? BePromotion
-			{
-				get
-				{
-					return bePromotion;
-				}
-				set	
-				{
-					bePromotion = value;
-				}
-			}
-
-			public string EslModel
-			{
-				get
-				{
-					return eslModel;
-				}
-				set	
-				{
-					eslModel = value;
-				}
-			}
-
-			public string ItemBarCode
-			{
-				get
-				{
-					return itemBarCode;
-				}
-				set	
-				{
-					itemBarCode = value;
-				}
-			}
-
-			public string ItemId
-			{
-				get
-				{
-					return itemId;
-				}
-				set	
-				{
-					itemId = value;
+					itemTitle = value;
 				}
 			}
 
@@ -492,6 +302,186 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
+			public string PriceUnit
+			{
+				get
+				{
+					return priceUnit;
+				}
+				set	
+				{
+					priceUnit = value;
+				}
+			}
+
+			public string OriginalPrice
+			{
+				get
+				{
+					return originalPrice;
+				}
+				set	
+				{
+					originalPrice = value;
+				}
+			}
+
+			public string ItemId
+			{
+				get
+				{
+					return itemId;
+				}
+				set	
+				{
+					itemId = value;
+				}
+			}
+
+			public string GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
+				}
+			}
+
+			public string EslPic
+			{
+				get
+				{
+					return eslPic;
+				}
+				set	
+				{
+					eslPic = value;
+				}
+			}
+
+			public string StoreId
+			{
+				get
+				{
+					return storeId;
+				}
+				set	
+				{
+					storeId = value;
+				}
+			}
+
+			public string ItemShortTitle
+			{
+				get
+				{
+					return itemShortTitle;
+				}
+				set	
+				{
+					itemShortTitle = value;
+				}
+			}
+
+			public string BindId
+			{
+				get
+				{
+					return bindId;
+				}
+				set	
+				{
+					bindId = value;
+				}
+			}
+
+			public string PromotionText
+			{
+				get
+				{
+					return promotionText;
+				}
+				set	
+				{
+					promotionText = value;
+				}
+			}
+
+			public string EslModel
+			{
+				get
+				{
+					return eslModel;
+				}
+				set	
+				{
+					eslModel = value;
+				}
+			}
+
+			public bool? BePromotion
+			{
+				get
+				{
+					return bePromotion;
+				}
+				set	
+				{
+					bePromotion = value;
+				}
+			}
+
+			public string SkuId
+			{
+				get
+				{
+					return skuId;
+				}
+				set	
+				{
+					skuId = value;
+				}
+			}
+
+			public string EslConnectAp
+			{
+				get
+				{
+					return eslConnectAp;
+				}
+				set	
+				{
+					eslConnectAp = value;
+				}
+			}
+
+			public string EslStatus
+			{
+				get
+				{
+					return eslStatus;
+				}
+				set	
+				{
+					eslStatus = value;
+				}
+			}
+
+			public string TemplateId
+			{
+				get
+				{
+					return templateId;
+				}
+				set	
+				{
+					templateId = value;
+				}
+			}
+
 			public string PromotionEnd
 			{
 				get
@@ -501,6 +491,30 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					promotionEnd = value;
+				}
+			}
+
+			public string ItemBarCode
+			{
+				get
+				{
+					return itemBarCode;
+				}
+				set	
+				{
+					itemBarCode = value;
+				}
+			}
+
+			public string ContainerName
+			{
+				get
+				{
+					return containerName;
+				}
+				set	
+				{
+					containerName = value;
 				}
 			}
 		}

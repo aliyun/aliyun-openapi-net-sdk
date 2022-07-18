@@ -28,10 +28,10 @@ using Aliyun.Acs.cloudesl.Transform.V20200201;
 
 namespace Aliyun.Acs.cloudesl.Model.V20200201
 {
-    public class UnbindEslDeviceRequest : RpcAcsRequest<UnbindEslDeviceResponse>
+    public class QueryTemplateGroupListRequest : RpcAcsRequest<QueryTemplateGroupListResponse>
     {
-        public UnbindEslDeviceRequest()
-            : base("cloudesl", "2020-02-01", "UnbindEslDevice")
+        public QueryTemplateGroupListRequest()
+            : base("cloudesl", "2020-02-01", "QueryTemplateGroupList")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,123 +41,108 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			Method = MethodType.POST;
         }
 
-		private string extraParams;
+		private int? pageNumber;
 
-		private string containerName;
+		private string templateVersion;
 
-		private string storeId;
+		private int? pageSize;
 
-		private int? layer;
+		private string eslModelId;
 
-		private string eslBarCode;
+		private int? widthPx;
 
-		private string itemBarCode;
+		private string groupIds;
 
-		private string column;
+		private int? heightPx;
 
-		private string shelf;
-
-		public string ExtraParams
+		public int? PageNumber
 		{
 			get
 			{
-				return extraParams;
+				return pageNumber;
 			}
 			set	
 			{
-				extraParams = value;
-				DictionaryUtil.Add(BodyParameters, "ExtraParams", value);
+				pageNumber = value;
+				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string ContainerName
+		public string TemplateVersion
 		{
 			get
 			{
-				return containerName;
+				return templateVersion;
 			}
 			set	
 			{
-				containerName = value;
-				DictionaryUtil.Add(BodyParameters, "ContainerName", value);
+				templateVersion = value;
+				DictionaryUtil.Add(BodyParameters, "TemplateVersion", value);
 			}
 		}
 
-		public string StoreId
+		public int? PageSize
 		{
 			get
 			{
-				return storeId;
+				return pageSize;
 			}
 			set	
 			{
-				storeId = value;
-				DictionaryUtil.Add(BodyParameters, "StoreId", value);
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public int? Layer
+		public string EslModelId
 		{
 			get
 			{
-				return layer;
+				return eslModelId;
 			}
 			set	
 			{
-				layer = value;
-				DictionaryUtil.Add(BodyParameters, "Layer", value.ToString());
+				eslModelId = value;
+				DictionaryUtil.Add(BodyParameters, "EslModelId", value);
 			}
 		}
 
-		public string EslBarCode
+		public int? WidthPx
 		{
 			get
 			{
-				return eslBarCode;
+				return widthPx;
 			}
 			set	
 			{
-				eslBarCode = value;
-				DictionaryUtil.Add(BodyParameters, "EslBarCode", value);
+				widthPx = value;
+				DictionaryUtil.Add(BodyParameters, "WidthPx", value.ToString());
 			}
 		}
 
-		public string ItemBarCode
+		public string GroupIds
 		{
 			get
 			{
-				return itemBarCode;
+				return groupIds;
 			}
 			set	
 			{
-				itemBarCode = value;
-				DictionaryUtil.Add(BodyParameters, "ItemBarCode", value);
+				groupIds = value;
+				DictionaryUtil.Add(BodyParameters, "GroupIds", value);
 			}
 		}
 
-		public string Column
+		public int? HeightPx
 		{
 			get
 			{
-				return column;
+				return heightPx;
 			}
 			set	
 			{
-				column = value;
-				DictionaryUtil.Add(BodyParameters, "Column", value);
-			}
-		}
-
-		public string Shelf
-		{
-			get
-			{
-				return shelf;
-			}
-			set	
-			{
-				shelf = value;
-				DictionaryUtil.Add(BodyParameters, "Shelf", value);
+				heightPx = value;
+				DictionaryUtil.Add(BodyParameters, "HeightPx", value.ToString());
 			}
 		}
 
@@ -166,9 +151,9 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			return false;
 		}
 
-        public override UnbindEslDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryTemplateGroupListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UnbindEslDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryTemplateGroupListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

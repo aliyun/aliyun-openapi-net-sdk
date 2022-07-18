@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.cloudesl.Model.V20200201
 {
-	public class UnbindEslDeviceResponse : AcsResponse
+	public class UpdateCompanyTemplateViewResponse : AcsResponse
 	{
 
 		private string requestId;

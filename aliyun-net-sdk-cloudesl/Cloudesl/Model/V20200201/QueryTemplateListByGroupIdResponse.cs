@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.cloudesl.Model.V20200201
 {
-	public class DescribeTemplateByModelResponse : AcsResponse
+	public class QueryTemplateListByGroupIdResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -47,7 +47,7 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private int? pageNumber;
 
-		private List<DescribeTemplateByModel_SelectItemInfo> items;
+		private List<QueryTemplateListByGroupId_Template> templateList;
 
 		public string RequestId
 		{
@@ -181,19 +181,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public List<DescribeTemplateByModel_SelectItemInfo> Items
+		public List<QueryTemplateListByGroupId_Template> TemplateList
 		{
 			get
 			{
-				return items;
+				return templateList;
 			}
 			set	
 			{
-				items = value;
+				templateList = value;
 			}
 		}
 
-		public class DescribeTemplateByModel_SelectItemInfo
+		public class QueryTemplateListByGroupId_Template
 		{
 
 			private string basePicture;
@@ -218,7 +218,11 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 			private string brand;
 
+			private string groupId;
+
 			private string templateSceneId;
+
+			private bool? relation;
 
 			public string BasePicture
 			{
@@ -352,6 +356,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
+			public string GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
+				}
+			}
+
 			public string TemplateSceneId
 			{
 				get
@@ -361,6 +377,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					templateSceneId = value;
+				}
+			}
+
+			public bool? Relation
+			{
+				get
+				{
+					return relation;
+				}
+				set	
+				{
+					relation = value;
 				}
 			}
 		}

@@ -24,23 +24,23 @@ using Aliyun.Acs.cloudesl.Model.V20200201;
 
 namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
-    public class UnbindEslDeviceResponseUnmarshaller
+    public class SaveLayoutResponseUnmarshaller
     {
-        public static UnbindEslDeviceResponse Unmarshall(UnmarshallerContext _ctx)
+        public static SaveLayoutResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			UnbindEslDeviceResponse unbindEslDeviceResponse = new UnbindEslDeviceResponse();
+			SaveLayoutResponse saveLayoutResponse = new SaveLayoutResponse();
 
-			unbindEslDeviceResponse.HttpResponse = _ctx.HttpResponse;
-			unbindEslDeviceResponse.RequestId = _ctx.StringValue("UnbindEslDevice.RequestId");
-			unbindEslDeviceResponse.ErrorMessage = _ctx.StringValue("UnbindEslDevice.ErrorMessage");
-			unbindEslDeviceResponse.Success = _ctx.BooleanValue("UnbindEslDevice.Success");
-			unbindEslDeviceResponse.ErrorCode = _ctx.StringValue("UnbindEslDevice.ErrorCode");
-			unbindEslDeviceResponse.Code = _ctx.StringValue("UnbindEslDevice.Code");
-			unbindEslDeviceResponse.Message = _ctx.StringValue("UnbindEslDevice.Message");
-			unbindEslDeviceResponse.DynamicMessage = _ctx.StringValue("UnbindEslDevice.DynamicMessage");
-			unbindEslDeviceResponse.DynamicCode = _ctx.StringValue("UnbindEslDevice.DynamicCode");
+			saveLayoutResponse.HttpResponse = _ctx.HttpResponse;
+			saveLayoutResponse.RequestId = _ctx.StringValue("SaveLayout.RequestId");
+			saveLayoutResponse.Success = _ctx.BooleanValue("SaveLayout.Success");
+			saveLayoutResponse.Message = _ctx.StringValue("SaveLayout.Message");
+			saveLayoutResponse.ErrorCode = _ctx.StringValue("SaveLayout.ErrorCode");
+			saveLayoutResponse.ErrorMessage = _ctx.StringValue("SaveLayout.ErrorMessage");
+			saveLayoutResponse.Code = _ctx.StringValue("SaveLayout.Code");
+			saveLayoutResponse.DynamicCode = _ctx.StringValue("SaveLayout.DynamicCode");
+			saveLayoutResponse.DynamicMessage = _ctx.StringValue("SaveLayout.DynamicMessage");
         
-			return unbindEslDeviceResponse;
+			return saveLayoutResponse;
         }
     }
 }

@@ -28,10 +28,10 @@ using Aliyun.Acs.cloudesl.Transform.V20200201;
 
 namespace Aliyun.Acs.cloudesl.Model.V20200201
 {
-    public class UnbindEslDeviceRequest : RpcAcsRequest<UnbindEslDeviceResponse>
+    public class SaveLayoutRequest : RpcAcsRequest<SaveLayoutResponse>
     {
-        public UnbindEslDeviceRequest()
-            : base("cloudesl", "2020-02-01", "UnbindEslDevice")
+        public SaveLayoutRequest()
+            : base("cloudesl", "2020-02-01", "SaveLayout")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,123 +41,63 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			Method = MethodType.POST;
         }
 
-		private string extraParams;
+		private string layoutId;
 
-		private string containerName;
+		private string templateVersion;
 
-		private string storeId;
+		private string layoutName;
 
-		private int? layer;
+		private string eslModelId;
 
-		private string eslBarCode;
-
-		private string itemBarCode;
-
-		private string column;
-
-		private string shelf;
-
-		public string ExtraParams
+		public string LayoutId
 		{
 			get
 			{
-				return extraParams;
+				return layoutId;
 			}
 			set	
 			{
-				extraParams = value;
-				DictionaryUtil.Add(BodyParameters, "ExtraParams", value);
+				layoutId = value;
+				DictionaryUtil.Add(BodyParameters, "LayoutId", value);
 			}
 		}
 
-		public string ContainerName
+		public string TemplateVersion
 		{
 			get
 			{
-				return containerName;
+				return templateVersion;
 			}
 			set	
 			{
-				containerName = value;
-				DictionaryUtil.Add(BodyParameters, "ContainerName", value);
+				templateVersion = value;
+				DictionaryUtil.Add(BodyParameters, "TemplateVersion", value);
 			}
 		}
 
-		public string StoreId
+		public string LayoutName
 		{
 			get
 			{
-				return storeId;
+				return layoutName;
 			}
 			set	
 			{
-				storeId = value;
-				DictionaryUtil.Add(BodyParameters, "StoreId", value);
+				layoutName = value;
+				DictionaryUtil.Add(BodyParameters, "LayoutName", value);
 			}
 		}
 
-		public int? Layer
+		public string EslModelId
 		{
 			get
 			{
-				return layer;
+				return eslModelId;
 			}
 			set	
 			{
-				layer = value;
-				DictionaryUtil.Add(BodyParameters, "Layer", value.ToString());
-			}
-		}
-
-		public string EslBarCode
-		{
-			get
-			{
-				return eslBarCode;
-			}
-			set	
-			{
-				eslBarCode = value;
-				DictionaryUtil.Add(BodyParameters, "EslBarCode", value);
-			}
-		}
-
-		public string ItemBarCode
-		{
-			get
-			{
-				return itemBarCode;
-			}
-			set	
-			{
-				itemBarCode = value;
-				DictionaryUtil.Add(BodyParameters, "ItemBarCode", value);
-			}
-		}
-
-		public string Column
-		{
-			get
-			{
-				return column;
-			}
-			set	
-			{
-				column = value;
-				DictionaryUtil.Add(BodyParameters, "Column", value);
-			}
-		}
-
-		public string Shelf
-		{
-			get
-			{
-				return shelf;
-			}
-			set	
-			{
-				shelf = value;
-				DictionaryUtil.Add(BodyParameters, "Shelf", value);
+				eslModelId = value;
+				DictionaryUtil.Add(BodyParameters, "EslModelId", value);
 			}
 		}
 
@@ -166,9 +106,9 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			return false;
 		}
 
-        public override UnbindEslDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SaveLayoutResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UnbindEslDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SaveLayoutResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

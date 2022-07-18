@@ -340,6 +340,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 			private string itemBarCode;
 
+			private bool? beClearance;
+
 			public int? ActionPrice
 			{
 				get
@@ -1117,6 +1119,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					itemBarCode = value;
+				}
+			}
+
+			public bool? BeClearance
+			{
+				get
+				{
+					return beClearance;
+				}
+				set	
+				{
+					beClearance = value;
 				}
 			}
 		}
