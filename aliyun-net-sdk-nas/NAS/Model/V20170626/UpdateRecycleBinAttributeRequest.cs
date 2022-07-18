@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class UpdateRecycleBinAttributeRequest : RpcAcsRequest<UpdateRecycleBinAttributeResponse>
     {
         public UpdateRecycleBinAttributeRequest()
-            : base("NAS", "2017-06-26", "UpdateRecycleBinAttribute", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "UpdateRecycleBinAttribute", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class OpenNASServiceRequest : RpcAcsRequest<OpenNASServiceResponse>
     {
         public OpenNASServiceRequest()
-            : base("NAS", "2017-06-26", "OpenNASService", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "OpenNASService", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

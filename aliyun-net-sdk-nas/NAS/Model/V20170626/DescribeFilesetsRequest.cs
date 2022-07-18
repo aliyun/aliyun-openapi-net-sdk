@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class DescribeFilesetsRequest : RpcAcsRequest<DescribeFilesetsResponse>
     {
         public DescribeFilesetsRequest()
-            : base("NAS", "2017-06-26", "DescribeFilesets", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "DescribeFilesets", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

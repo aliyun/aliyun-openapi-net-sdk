@@ -112,6 +112,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string networkType;
 
+			private string iPVersion;
+
 			private List<DescribeMountTargets_ClientMasterNode> clientMasterNodes;
 
 			private List<DescribeMountTargets_Tag> tags;
@@ -197,6 +199,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					networkType = value;
+				}
+			}
+
+			public string IPVersion
+			{
+				get
+				{
+					return iPVersion;
+				}
+				set	
+				{
+					iPVersion = value;
 				}
 			}
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class DescribeLifecyclePoliciesRequest : RpcAcsRequest<DescribeLifecyclePoliciesResponse>
     {
         public DescribeLifecyclePoliciesRequest()
-            : base("NAS", "2017-06-26", "DescribeLifecyclePolicies", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "DescribeLifecyclePolicies", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

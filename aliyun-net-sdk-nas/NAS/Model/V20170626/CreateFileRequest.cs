@@ -27,10 +27,10 @@ using Aliyun.Acs.NAS.Transform.V20170626;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
 {
-    public class CancelDataFlowTaskRequest : RpcAcsRequest<CancelDataFlowTaskResponse>
+    public class CreateFileRequest : RpcAcsRequest<CreateFileResponse>
     {
-        public CancelDataFlowTaskRequest()
-            : base("NAS", "2017-06-26", "CancelDataFlowTask", "NAS", "openAPI")
+        public CreateFileRequest()
+            : base("NAS", "2017-06-26", "CreateFile", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,39 +40,52 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			Method = MethodType.POST;
         }
 
-		private string clientToken;
+		private bool? ownerAccessInheritable;
 
-		private string taskId;
+		private string type;
+
+		private string path;
 
 		private string fileSystemId;
 
-		private bool? dryRun;
+		private string owner;
 
-		private string dataFlowId;
-
-		public string ClientToken
+		public bool? OwnerAccessInheritable
 		{
 			get
 			{
-				return clientToken;
+				return ownerAccessInheritable;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+				ownerAccessInheritable = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccessInheritable", value.ToString());
 			}
 		}
 
-		public string TaskId
+		public string Type
 		{
 			get
 			{
-				return taskId;
+				return type;
 			}
 			set	
 			{
-				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value);
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
+		public string Path
+		{
+			get
+			{
+				return path;
+			}
+			set	
+			{
+				path = value;
+				DictionaryUtil.Add(QueryParameters, "Path", value);
 			}
 		}
 
@@ -89,35 +102,27 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
-		public bool? DryRun
+		public string Owner
 		{
 			get
 			{
-				return dryRun;
+				return owner;
 			}
 			set	
 			{
-				dryRun = value;
-				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
+				owner = value;
+				DictionaryUtil.Add(QueryParameters, "Owner", value);
 			}
 		}
 
-		public string DataFlowId
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return dataFlowId;
-			}
-			set	
-			{
-				dataFlowId = value;
-				DictionaryUtil.Add(QueryParameters, "DataFlowId", value);
-			}
+			return false;
 		}
 
-        public override CancelDataFlowTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateFileResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CancelDataFlowTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateFileResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

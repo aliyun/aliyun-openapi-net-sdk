@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class GetDirectoryOrFilePropertiesRequest : RpcAcsRequest<GetDirectoryOrFilePropertiesResponse>
     {
         public GetDirectoryOrFilePropertiesRequest()
-            : base("NAS", "2017-06-26", "GetDirectoryOrFileProperties", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "GetDirectoryOrFileProperties", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class ModifyMountTargetRequest : RpcAcsRequest<ModifyMountTargetResponse>
     {
         public ModifyMountTargetRequest()
-            : base("NAS", "2017-06-26", "ModifyMountTarget", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "ModifyMountTarget", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

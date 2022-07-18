@@ -48,6 +48,7 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 				entry.RetrieveTime = _ctx.StringValue("ListDirectoriesAndFiles.Entries["+ i +"].RetrieveTime");
 				entry.Inode = _ctx.StringValue("ListDirectoriesAndFiles.Entries["+ i +"].Inode");
 				entry.FileId = _ctx.StringValue("ListDirectoriesAndFiles.Entries["+ i +"].FileId");
+				entry.Owner = _ctx.StringValue("ListDirectoriesAndFiles.Entries["+ i +"].Owner");
 
 				listDirectoriesAndFilesResponse_entries.Add(entry);
 			}

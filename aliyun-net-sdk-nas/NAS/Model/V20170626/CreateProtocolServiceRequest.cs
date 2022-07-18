@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class CreateProtocolServiceRequest : RpcAcsRequest<CreateProtocolServiceResponse>
     {
         public CreateProtocolServiceRequest()
-            : base("NAS", "2017-06-26", "CreateProtocolService", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "CreateProtocolService", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

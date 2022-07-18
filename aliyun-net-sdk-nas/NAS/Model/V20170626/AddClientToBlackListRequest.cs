@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class AddClientToBlackListRequest : RpcAcsRequest<AddClientToBlackListResponse>
     {
         public AddClientToBlackListRequest()
-            : base("NAS", "2017-06-26", "AddClientToBlackList", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "AddClientToBlackList", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

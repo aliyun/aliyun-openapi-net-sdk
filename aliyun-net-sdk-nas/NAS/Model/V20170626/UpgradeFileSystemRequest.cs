@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class UpgradeFileSystemRequest : RpcAcsRequest<UpgradeFileSystemResponse>
     {
         public UpgradeFileSystemRequest()
-            : base("NAS", "2017-06-26", "UpgradeFileSystem", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "UpgradeFileSystem", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

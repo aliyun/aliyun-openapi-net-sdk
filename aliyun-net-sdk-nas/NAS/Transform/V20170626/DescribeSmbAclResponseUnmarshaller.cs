@@ -35,6 +35,7 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 
 			DescribeSmbAclResponse.DescribeSmbAcl_Acl acl = new DescribeSmbAclResponse.DescribeSmbAcl_Acl();
 			acl.AuthMethod = _ctx.StringValue("DescribeSmbAcl.Acl.AuthMethod");
+			acl.AuthCenter = _ctx.StringValue("DescribeSmbAcl.Acl.AuthCenter");
 			acl.EnableAnonymousAccess = _ctx.BooleanValue("DescribeSmbAcl.Acl.EnableAnonymousAccess");
 			acl.Enabled = _ctx.BooleanValue("DescribeSmbAcl.Acl.Enabled");
 			acl.EncryptData = _ctx.BooleanValue("DescribeSmbAcl.Acl.EncryptData");

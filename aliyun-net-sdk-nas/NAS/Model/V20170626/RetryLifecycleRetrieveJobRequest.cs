@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class RetryLifecycleRetrieveJobRequest : RpcAcsRequest<RetryLifecycleRetrieveJobResponse>
     {
         public RetryLifecycleRetrieveJobRequest()
-            : base("NAS", "2017-06-26", "RetryLifecycleRetrieveJob", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "RetryLifecycleRetrieveJob", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
