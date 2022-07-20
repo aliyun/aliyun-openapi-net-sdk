@@ -22,28 +22,32 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Actiontrail.Model.V20200706
 {
-	public class GetTrailStatusResponse : AcsResponse
+	public class GetAccessKeyLastUsedInfoResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string startLoggingTime;
+		private string accessKeyId;
 
-		private string latestDeliveryError;
+		private string accountId;
 
-		private string stopLoggingTime;
+		private string ownerId;
 
-		private bool? isLogging;
+		private string userName;
 
-		private string latestDeliveryTime;
+		private string accountType;
 
-		private string latestDeliveryLogServiceError;
+		private long? usedTimestamp;
 
-		private string latestDeliveryLogServiceTime;
+		private string detail;
 
-		private bool? ossBucketStatus;
+		private string source;
 
-		private bool? slsLogStoreStatus;
+		private string serviceName;
+
+		private string serviceNameCn;
+
+		private string serviceNameEn;
 
 		public string RequestId
 		{
@@ -57,111 +61,135 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 			}
 		}
 
-		public string StartLoggingTime
+		public string AccessKeyId
 		{
 			get
 			{
-				return startLoggingTime;
+				return accessKeyId;
 			}
 			set	
 			{
-				startLoggingTime = value;
+				accessKeyId = value;
 			}
 		}
 
-		public string LatestDeliveryError
+		public string AccountId
 		{
 			get
 			{
-				return latestDeliveryError;
+				return accountId;
 			}
 			set	
 			{
-				latestDeliveryError = value;
+				accountId = value;
 			}
 		}
 
-		public string StopLoggingTime
+		public string OwnerId
 		{
 			get
 			{
-				return stopLoggingTime;
+				return ownerId;
 			}
 			set	
 			{
-				stopLoggingTime = value;
+				ownerId = value;
 			}
 		}
 
-		public bool? IsLogging
+		public string UserName
 		{
 			get
 			{
-				return isLogging;
+				return userName;
 			}
 			set	
 			{
-				isLogging = value;
+				userName = value;
 			}
 		}
 
-		public string LatestDeliveryTime
+		public string AccountType
 		{
 			get
 			{
-				return latestDeliveryTime;
+				return accountType;
 			}
 			set	
 			{
-				latestDeliveryTime = value;
+				accountType = value;
 			}
 		}
 
-		public string LatestDeliveryLogServiceError
+		public long? UsedTimestamp
 		{
 			get
 			{
-				return latestDeliveryLogServiceError;
+				return usedTimestamp;
 			}
 			set	
 			{
-				latestDeliveryLogServiceError = value;
+				usedTimestamp = value;
 			}
 		}
 
-		public string LatestDeliveryLogServiceTime
+		public string Detail
 		{
 			get
 			{
-				return latestDeliveryLogServiceTime;
+				return detail;
 			}
 			set	
 			{
-				latestDeliveryLogServiceTime = value;
+				detail = value;
 			}
 		}
 
-		public bool? OssBucketStatus
+		public string Source
 		{
 			get
 			{
-				return ossBucketStatus;
+				return source;
 			}
 			set	
 			{
-				ossBucketStatus = value;
+				source = value;
 			}
 		}
 
-		public bool? SlsLogStoreStatus
+		public string ServiceName
 		{
 			get
 			{
-				return slsLogStoreStatus;
+				return serviceName;
 			}
 			set	
 			{
-				slsLogStoreStatus = value;
+				serviceName = value;
+			}
+		}
+
+		public string ServiceNameCn
+		{
+			get
+			{
+				return serviceNameCn;
+			}
+			set	
+			{
+				serviceNameCn = value;
+			}
+		}
+
+		public string ServiceNameEn
+		{
+			get
+			{
+				return serviceNameEn;
+			}
+			set	
+			{
+				serviceNameEn = value;
 			}
 		}
 	}

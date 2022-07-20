@@ -22,28 +22,24 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Actiontrail.Model.V20200706
 {
-	public class LookupEventsResponse : AcsResponse
+	public class GetAccessKeyLastUsedEventsResponse : AcsResponse
 	{
-
-		private string endTime;
-
-		private string nextToken;
 
 		private string requestId;
 
-		private string startTime;
+		private string nextToken;
 
-		private List<Dictionary<string, string>> events;
+		private List<GetAccessKeyLastUsedEvents_EventsItem> events;
 
-		public string EndTime
+		public string RequestId
 		{
 			get
 			{
-				return endTime;
+				return requestId;
 			}
 			set	
 			{
-				endTime = value;
+				requestId = value;
 			}
 		}
 
@@ -59,31 +55,7 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
-		public List<Dictionary<string, string>> Events
+		public List<GetAccessKeyLastUsedEvents_EventsItem> Events
 		{
 			get
 			{
@@ -92,6 +64,66 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 			set	
 			{
 				events = value;
+			}
+		}
+
+		public class GetAccessKeyLastUsedEvents_EventsItem
+		{
+
+			private long? usedTimestamp;
+
+			private string detail;
+
+			private string eventName;
+
+			private string source;
+
+			public long? UsedTimestamp
+			{
+				get
+				{
+					return usedTimestamp;
+				}
+				set	
+				{
+					usedTimestamp = value;
+				}
+			}
+
+			public string Detail
+			{
+				get
+				{
+					return detail;
+				}
+				set	
+				{
+					detail = value;
+				}
+			}
+
+			public string EventName
+			{
+				get
+				{
+					return eventName;
+				}
+				set	
+				{
+					eventName = value;
+				}
+			}
+
+			public string Source
+			{
+				get
+				{
+					return source;
+				}
+				set	
+				{
+					source = value;
+				}
 			}
 		}
 	}

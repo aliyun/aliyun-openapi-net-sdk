@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Actiontrail.Model.V20200706
 {
-	public class DescribeRegionsResponse : AcsResponse
+	public class GetAccessKeyLastUsedProductsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeRegions_Region> regions;
+		private List<GetAccessKeyLastUsedProducts_ProductsItem> products;
 
 		public string RequestId
 		{
@@ -41,60 +41,102 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 			}
 		}
 
-		public List<DescribeRegions_Region> Regions
+		public List<GetAccessKeyLastUsedProducts_ProductsItem> Products
 		{
 			get
 			{
-				return regions;
+				return products;
 			}
 			set	
 			{
-				regions = value;
+				products = value;
 			}
 		}
 
-		public class DescribeRegions_Region
+		public class GetAccessKeyLastUsedProducts_ProductsItem
 		{
 
-			private string regionId;
+			private long? usedTimestamp;
 
-			private string regionEndpoint;
+			private string detail;
 
-			private string localName;
+			private string source;
 
-			public string RegionId
+			private string serviceName;
+
+			private string serviceNameCn;
+
+			private string serviceNameEn;
+
+			public long? UsedTimestamp
 			{
 				get
 				{
-					return regionId;
+					return usedTimestamp;
 				}
 				set	
 				{
-					regionId = value;
+					usedTimestamp = value;
 				}
 			}
 
-			public string RegionEndpoint
+			public string Detail
 			{
 				get
 				{
-					return regionEndpoint;
+					return detail;
 				}
 				set	
 				{
-					regionEndpoint = value;
+					detail = value;
 				}
 			}
 
-			public string LocalName
+			public string Source
 			{
 				get
 				{
-					return localName;
+					return source;
 				}
 				set	
 				{
-					localName = value;
+					source = value;
+				}
+			}
+
+			public string ServiceName
+			{
+				get
+				{
+					return serviceName;
+				}
+				set	
+				{
+					serviceName = value;
+				}
+			}
+
+			public string ServiceNameCn
+			{
+				get
+				{
+					return serviceNameCn;
+				}
+				set	
+				{
+					serviceNameCn = value;
+				}
+			}
+
+			public string ServiceNameEn
+			{
+				get
+				{
+					return serviceNameEn;
+				}
+				set	
+				{
+					serviceNameEn = value;
 				}
 			}
 		}

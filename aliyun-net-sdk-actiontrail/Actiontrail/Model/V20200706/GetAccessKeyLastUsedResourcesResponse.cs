@@ -22,28 +22,24 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Actiontrail.Model.V20200706
 {
-	public class LookupEventsResponse : AcsResponse
+	public class GetAccessKeyLastUsedResourcesResponse : AcsResponse
 	{
-
-		private string endTime;
-
-		private string nextToken;
 
 		private string requestId;
 
-		private string startTime;
+		private string nextToken;
 
-		private List<Dictionary<string, string>> events;
+		private List<GetAccessKeyLastUsedResources_ResourcesItem> resources;
 
-		public string EndTime
+		public string RequestId
 		{
 			get
 			{
-				return endTime;
+				return requestId;
 			}
 			set	
 			{
-				endTime = value;
+				requestId = value;
 			}
 		}
 
@@ -59,39 +55,89 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 			}
 		}
 
-		public string RequestId
+		public List<GetAccessKeyLastUsedResources_ResourcesItem> Resources
 		{
 			get
 			{
-				return requestId;
+				return resources;
 			}
 			set	
 			{
-				requestId = value;
+				resources = value;
 			}
 		}
 
-		public string StartTime
+		public class GetAccessKeyLastUsedResources_ResourcesItem
 		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
 
-		public List<Dictionary<string, string>> Events
-		{
-			get
+			private long? usedTimestamp;
+
+			private string detail;
+
+			private string resourceName;
+
+			private string resourceType;
+
+			private string source;
+
+			public long? UsedTimestamp
 			{
-				return events;
+				get
+				{
+					return usedTimestamp;
+				}
+				set	
+				{
+					usedTimestamp = value;
+				}
 			}
-			set	
+
+			public string Detail
 			{
-				events = value;
+				get
+				{
+					return detail;
+				}
+				set	
+				{
+					detail = value;
+				}
+			}
+
+			public string ResourceName
+			{
+				get
+				{
+					return resourceName;
+				}
+				set	
+				{
+					resourceName = value;
+				}
+			}
+
+			public string ResourceType
+			{
+				get
+				{
+					return resourceType;
+				}
+				set	
+				{
+					resourceType = value;
+				}
+			}
+
+			public string Source
+			{
+				get
+				{
+					return source;
+				}
+				set	
+				{
+					source = value;
+				}
 			}
 		}
 	}

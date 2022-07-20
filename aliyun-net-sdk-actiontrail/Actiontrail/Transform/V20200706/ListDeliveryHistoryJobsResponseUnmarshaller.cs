@@ -31,22 +31,22 @@ namespace Aliyun.Acs.Actiontrail.Transform.V20200706
 			ListDeliveryHistoryJobsResponse listDeliveryHistoryJobsResponse = new ListDeliveryHistoryJobsResponse();
 
 			listDeliveryHistoryJobsResponse.HttpResponse = _ctx.HttpResponse;
-			listDeliveryHistoryJobsResponse.RequestId = _ctx.StringValue("ListDeliveryHistoryJobs.RequestId");
 			listDeliveryHistoryJobsResponse.TotalCount = _ctx.IntegerValue("ListDeliveryHistoryJobs.TotalCount");
-			listDeliveryHistoryJobsResponse.PageNumber = _ctx.IntegerValue("ListDeliveryHistoryJobs.PageNumber");
 			listDeliveryHistoryJobsResponse.PageSize = _ctx.IntegerValue("ListDeliveryHistoryJobs.PageSize");
+			listDeliveryHistoryJobsResponse.RequestId = _ctx.StringValue("ListDeliveryHistoryJobs.RequestId");
+			listDeliveryHistoryJobsResponse.PageNumber = _ctx.IntegerValue("ListDeliveryHistoryJobs.PageNumber");
 
 			List<ListDeliveryHistoryJobsResponse.ListDeliveryHistoryJobs_DeliveryHistoryJob> listDeliveryHistoryJobsResponse_deliveryHistoryJobs = new List<ListDeliveryHistoryJobsResponse.ListDeliveryHistoryJobs_DeliveryHistoryJob>();
 			for (int i = 0; i < _ctx.Length("ListDeliveryHistoryJobs.DeliveryHistoryJobs.Length"); i++) {
 				ListDeliveryHistoryJobsResponse.ListDeliveryHistoryJobs_DeliveryHistoryJob deliveryHistoryJob = new ListDeliveryHistoryJobsResponse.ListDeliveryHistoryJobs_DeliveryHistoryJob();
 				deliveryHistoryJob.TrailName = _ctx.StringValue("ListDeliveryHistoryJobs.DeliveryHistoryJobs["+ i +"].TrailName");
-				deliveryHistoryJob.CreatedTime = _ctx.StringValue("ListDeliveryHistoryJobs.DeliveryHistoryJobs["+ i +"].CreatedTime");
-				deliveryHistoryJob.UpdatedTime = _ctx.StringValue("ListDeliveryHistoryJobs.DeliveryHistoryJobs["+ i +"].UpdatedTime");
-				deliveryHistoryJob.HomeRegion = _ctx.StringValue("ListDeliveryHistoryJobs.DeliveryHistoryJobs["+ i +"].HomeRegion");
-				deliveryHistoryJob.StartTime = _ctx.StringValue("ListDeliveryHistoryJobs.DeliveryHistoryJobs["+ i +"].StartTime");
 				deliveryHistoryJob.EndTime = _ctx.StringValue("ListDeliveryHistoryJobs.DeliveryHistoryJobs["+ i +"].EndTime");
-				deliveryHistoryJob.JobId = _ctx.LongValue("ListDeliveryHistoryJobs.DeliveryHistoryJobs["+ i +"].JobId");
+				deliveryHistoryJob.StartTime = _ctx.StringValue("ListDeliveryHistoryJobs.DeliveryHistoryJobs["+ i +"].StartTime");
 				deliveryHistoryJob.JobStatus = _ctx.IntegerValue("ListDeliveryHistoryJobs.DeliveryHistoryJobs["+ i +"].JobStatus");
+				deliveryHistoryJob.HomeRegion = _ctx.StringValue("ListDeliveryHistoryJobs.DeliveryHistoryJobs["+ i +"].HomeRegion");
+				deliveryHistoryJob.UpdatedTime = _ctx.StringValue("ListDeliveryHistoryJobs.DeliveryHistoryJobs["+ i +"].UpdatedTime");
+				deliveryHistoryJob.JobId = _ctx.LongValue("ListDeliveryHistoryJobs.DeliveryHistoryJobs["+ i +"].JobId");
+				deliveryHistoryJob.CreatedTime = _ctx.StringValue("ListDeliveryHistoryJobs.DeliveryHistoryJobs["+ i +"].CreatedTime");
 
 				listDeliveryHistoryJobsResponse_deliveryHistoryJobs.Add(deliveryHistoryJob);
 			}

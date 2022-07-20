@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Actiontrail;
 using Aliyun.Acs.Actiontrail.Transform;
 using Aliyun.Acs.Actiontrail.Transform.V20200706;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
     public class LookupEventsRequest : RpcAcsRequest<LookupEventsResponse>
     {
         public LookupEventsRequest()
-            : base("Actiontrail", "2020-07-06", "LookupEvents", "actiontrail", "openAPI")
+            : base("Actiontrail", "2020-07-06", "LookupEvents")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -46,7 +47,7 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 
 		private string nextToken;
 
-		private List<LookupAttribute> lookupAttributes = new List<LookupAttribute>(){ };
+		private List<string> lookupAttributes = new List<string>(){ };
 
 		private string maxResults;
 
@@ -91,7 +92,7 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 			}
 		}
 
-		public List<LookupAttribute> LookupAttributes
+		public List<string> LookupAttributes
 		{
 			get
 			{
@@ -101,10 +102,13 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 			set
 			{
 				lookupAttributes = value;
-				for (int i = 0; i < lookupAttributes.Count; i++)
+				if(lookupAttributes != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"LookupAttribute." + (i + 1) + ".Value", lookupAttributes[i].Value);
-					DictionaryUtil.Add(QueryParameters,"LookupAttribute." + (i + 1) + ".Key", lookupAttributes[i].Key);
+					for (int depth1 = 0; depth1 < lookupAttributes.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"LookupAttribute." + (depth1 + 1), lookupAttributes[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LookupAttribute." + (depth1 + 1), lookupAttributes[depth1]);
+					}
 				}
 			}
 		}
@@ -142,7 +146,7 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 
 			private string key;
 
-			public string Value
+			public string Value_
 			{
 				get
 				{

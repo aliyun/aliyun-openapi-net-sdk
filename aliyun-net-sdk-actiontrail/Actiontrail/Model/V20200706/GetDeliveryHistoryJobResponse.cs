@@ -22,62 +22,62 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Actiontrail.Model.V20200706
 {
-	public class UpdateTrailResponse : AcsResponse
+	public class GetDeliveryHistoryJobResponse : AcsResponse
 	{
 
-		private string slsProjectArn;
+		private int? jobStatus;
 
-		private string ossWriteRoleArn;
+		private string createdTime;
 
-		private string eventRW;
+		private string endTime;
 
 		private string requestId;
 
+		private string startTime;
+
+		private string trailName;
+
+		private string updatedTime;
+
+		private long? jobId;
+
 		private string homeRegion;
 
-		private string ossKeyPrefix;
+		private List<GetDeliveryHistoryJob_StatusItem> status;
 
-		private string ossBucketName;
-
-		private string slsWriteRoleArn;
-
-		private string trailRegion;
-
-		private string name;
-
-		public string SlsProjectArn
+		public int? JobStatus
 		{
 			get
 			{
-				return slsProjectArn;
+				return jobStatus;
 			}
 			set	
 			{
-				slsProjectArn = value;
+				jobStatus = value;
 			}
 		}
 
-		public string OssWriteRoleArn
+		public string CreatedTime
 		{
 			get
 			{
-				return ossWriteRoleArn;
+				return createdTime;
 			}
 			set	
 			{
-				ossWriteRoleArn = value;
+				createdTime = value;
 			}
 		}
 
-		public string EventRW
+		public string EndTime
 		{
 			get
 			{
-				return eventRW;
+				return endTime;
 			}
 			set	
 			{
-				eventRW = value;
+				endTime = value;
 			}
 		}
 
@@ -93,6 +93,54 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 			}
 		}
 
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
+
+		public string TrailName
+		{
+			get
+			{
+				return trailName;
+			}
+			set	
+			{
+				trailName = value;
+			}
+		}
+
+		public string UpdatedTime
+		{
+			get
+			{
+				return updatedTime;
+			}
+			set	
+			{
+				updatedTime = value;
+			}
+		}
+
+		public long? JobId
+		{
+			get
+			{
+				return jobId;
+			}
+			set	
+			{
+				jobId = value;
+			}
+		}
+
 		public string HomeRegion
 		{
 			get
@@ -105,63 +153,47 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 			}
 		}
 
-		public string OssKeyPrefix
+		public List<GetDeliveryHistoryJob_StatusItem> Status
 		{
 			get
 			{
-				return ossKeyPrefix;
+				return status;
 			}
 			set	
 			{
-				ossKeyPrefix = value;
+				status = value;
 			}
 		}
 
-		public string OssBucketName
+		public class GetDeliveryHistoryJob_StatusItem
 		{
-			get
-			{
-				return ossBucketName;
-			}
-			set	
-			{
-				ossBucketName = value;
-			}
-		}
 
-		public string SlsWriteRoleArn
-		{
-			get
-			{
-				return slsWriteRoleArn;
-			}
-			set	
-			{
-				slsWriteRoleArn = value;
-			}
-		}
+			private int? status;
 
-		public string TrailRegion
-		{
-			get
-			{
-				return trailRegion;
-			}
-			set	
-			{
-				trailRegion = value;
-			}
-		}
+			private string region;
 
-		public string Name
-		{
-			get
+			public int? Status
 			{
-				return name;
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
 			}
-			set	
+
+			public string Region
 			{
-				name = value;
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
+				}
 			}
 		}
 	}

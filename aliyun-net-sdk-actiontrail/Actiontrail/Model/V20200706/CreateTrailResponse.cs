@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Actiontrail.Model.V20200706
@@ -26,6 +26,8 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 	{
 
 		private string slsProjectArn;
+
+		private string ossWriteRoleArn;
 
 		private string eventRW;
 
@@ -38,8 +40,6 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 		private string ossBucketName;
 
 		private string slsWriteRoleArn;
-
-		private string ossWriteRoleArn;
 
 		private string trailRegion;
 
@@ -54,6 +54,18 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 			set	
 			{
 				slsProjectArn = value;
+			}
+		}
+
+		public string OssWriteRoleArn
+		{
+			get
+			{
+				return ossWriteRoleArn;
+			}
+			set	
+			{
+				ossWriteRoleArn = value;
 			}
 		}
 
@@ -126,18 +138,6 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 			set	
 			{
 				slsWriteRoleArn = value;
-			}
-		}
-
-		public string OssWriteRoleArn
-		{
-			get
-			{
-				return ossWriteRoleArn;
-			}
-			set	
-			{
-				ossWriteRoleArn = value;
 			}
 		}
 

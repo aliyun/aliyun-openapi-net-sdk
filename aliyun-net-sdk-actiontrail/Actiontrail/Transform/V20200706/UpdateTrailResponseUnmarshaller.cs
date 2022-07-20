@@ -32,13 +32,13 @@ namespace Aliyun.Acs.Actiontrail.Transform.V20200706
 
 			updateTrailResponse.HttpResponse = _ctx.HttpResponse;
 			updateTrailResponse.SlsProjectArn = _ctx.StringValue("UpdateTrail.SlsProjectArn");
+			updateTrailResponse.OssWriteRoleArn = _ctx.StringValue("UpdateTrail.OssWriteRoleArn");
 			updateTrailResponse.EventRW = _ctx.StringValue("UpdateTrail.EventRW");
 			updateTrailResponse.RequestId = _ctx.StringValue("UpdateTrail.RequestId");
 			updateTrailResponse.HomeRegion = _ctx.StringValue("UpdateTrail.HomeRegion");
 			updateTrailResponse.OssKeyPrefix = _ctx.StringValue("UpdateTrail.OssKeyPrefix");
 			updateTrailResponse.OssBucketName = _ctx.StringValue("UpdateTrail.OssBucketName");
 			updateTrailResponse.SlsWriteRoleArn = _ctx.StringValue("UpdateTrail.SlsWriteRoleArn");
-			updateTrailResponse.OssWriteRoleArn = _ctx.StringValue("UpdateTrail.OssWriteRoleArn");
 			updateTrailResponse.TrailRegion = _ctx.StringValue("UpdateTrail.TrailRegion");
 			updateTrailResponse.Name = _ctx.StringValue("UpdateTrail.Name");
         

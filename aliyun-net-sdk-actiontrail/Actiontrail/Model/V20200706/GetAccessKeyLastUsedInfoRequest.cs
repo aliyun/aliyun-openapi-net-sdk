@@ -28,10 +28,10 @@ using Aliyun.Acs.Actiontrail.Transform.V20200706;
 
 namespace Aliyun.Acs.Actiontrail.Model.V20200706
 {
-    public class ListDeliveryHistoryJobsRequest : RpcAcsRequest<ListDeliveryHistoryJobsResponse>
+    public class GetAccessKeyLastUsedInfoRequest : RpcAcsRequest<GetAccessKeyLastUsedInfoResponse>
     {
-        public ListDeliveryHistoryJobsRequest()
-            : base("Actiontrail", "2020-07-06", "ListDeliveryHistoryJobs")
+        public GetAccessKeyLastUsedInfoRequest()
+            : base("Actiontrail", "2020-07-06", "GetAccessKeyLastUsedInfo")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,33 +41,18 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 			Method = MethodType.POST;
         }
 
-		private int? pageNumber;
+		private string accessKey;
 
-		private int? pageSize;
-
-		public int? PageNumber
+		public string AccessKey
 		{
 			get
 			{
-				return pageNumber;
+				return accessKey;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				accessKey = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKey", value);
 			}
 		}
 
@@ -76,9 +61,9 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 			return false;
 		}
 
-        public override ListDeliveryHistoryJobsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetAccessKeyLastUsedInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListDeliveryHistoryJobsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetAccessKeyLastUsedInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

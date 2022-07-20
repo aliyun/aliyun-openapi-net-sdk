@@ -1,0 +1,50 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+using System;
+using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Actiontrail.Model.V20200706;
+
+namespace Aliyun.Acs.Actiontrail.Transform.V20200706
+{
+    public class GetAccessKeyLastUsedInfoResponseUnmarshaller
+    {
+        public static GetAccessKeyLastUsedInfoResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			GetAccessKeyLastUsedInfoResponse getAccessKeyLastUsedInfoResponse = new GetAccessKeyLastUsedInfoResponse();
+
+			getAccessKeyLastUsedInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getAccessKeyLastUsedInfoResponse.RequestId = _ctx.StringValue("GetAccessKeyLastUsedInfo.RequestId");
+			getAccessKeyLastUsedInfoResponse.AccessKeyId = _ctx.StringValue("GetAccessKeyLastUsedInfo.AccessKeyId");
+			getAccessKeyLastUsedInfoResponse.AccountId = _ctx.StringValue("GetAccessKeyLastUsedInfo.AccountId");
+			getAccessKeyLastUsedInfoResponse.OwnerId = _ctx.StringValue("GetAccessKeyLastUsedInfo.OwnerId");
+			getAccessKeyLastUsedInfoResponse.UserName = _ctx.StringValue("GetAccessKeyLastUsedInfo.UserName");
+			getAccessKeyLastUsedInfoResponse.AccountType = _ctx.StringValue("GetAccessKeyLastUsedInfo.AccountType");
+			getAccessKeyLastUsedInfoResponse.UsedTimestamp = _ctx.LongValue("GetAccessKeyLastUsedInfo.UsedTimestamp");
+			getAccessKeyLastUsedInfoResponse.Detail = _ctx.StringValue("GetAccessKeyLastUsedInfo.Detail");
+			getAccessKeyLastUsedInfoResponse.Source = _ctx.StringValue("GetAccessKeyLastUsedInfo.Source");
+			getAccessKeyLastUsedInfoResponse.ServiceName = _ctx.StringValue("GetAccessKeyLastUsedInfo.ServiceName");
+			getAccessKeyLastUsedInfoResponse.ServiceNameCn = _ctx.StringValue("GetAccessKeyLastUsedInfo.ServiceNameCn");
+			getAccessKeyLastUsedInfoResponse.ServiceNameEn = _ctx.StringValue("GetAccessKeyLastUsedInfo.ServiceNameEn");
+        
+			return getAccessKeyLastUsedInfoResponse;
+        }
+    }
+}
