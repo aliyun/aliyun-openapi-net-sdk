@@ -56,11 +56,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class GetFileDetectResult_Result
 		{
 
-			private int? result;
-
 			private string hashKey;
 
+			private int? result;
+
+			private int? score;
+
+			private string virusType;
+
 			private GetFileDetectResult_Ext ext;
+
+			public string HashKey
+			{
+				get
+				{
+					return hashKey;
+				}
+				set	
+				{
+					hashKey = value;
+				}
+			}
 
 			public int? Result
 			{
@@ -74,15 +90,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public string HashKey
+			public int? Score
 			{
 				get
 				{
-					return hashKey;
+					return score;
 				}
 				set	
 				{
-					hashKey = value;
+					score = value;
+				}
+			}
+
+			public string VirusType
+			{
+				get
+				{
+					return virusType;
+				}
+				set	
+				{
+					virusType = value;
 				}
 			}
 
