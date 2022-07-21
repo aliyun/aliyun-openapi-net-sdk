@@ -43,9 +43,9 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string fileToUpload;
 
-		private List<string> domainNames = new List<string>(){ };
-
 		private bool? replace;
+
+		private List<string> domainNames = new List<string>(){ };
 
 		private long? domainGroupId;
 
@@ -68,23 +68,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public List<string> DomainNames
-		{
-			get
-			{
-				return domainNames;
-			}
-
-			set
-			{
-				domainNames = value;
-				for (int i = 0; i < domainNames.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DomainName." + (i + 1) , domainNames[i]);
-				}
-			}
-		}
-
 		public bool? Replace
 		{
 			get
@@ -95,6 +78,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				replace = value;
 				DictionaryUtil.Add(QueryParameters, "Replace", value.ToString());
+			}
+		}
+
+		public List<string> DomainNames
+		{
+			get
+			{
+				return domainNames;
+			}
+
+			set
+			{
+				domainNames = value;
 			}
 		}
 

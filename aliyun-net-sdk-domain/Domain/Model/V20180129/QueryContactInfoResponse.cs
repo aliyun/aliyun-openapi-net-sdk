@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,135 +25,51 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class QueryContactInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string createDate;
-
-		private string registrantName;
-
-		private string registrantOrganization;
-
-		private string country;
-
-		private string province;
-
-		private string city;
-
-		private string address;
+		private string zhProvince;
 
 		private string email;
 
-		private string postalCode;
-
-		private string telArea;
-
 		private string telephone;
 
-		private string telExt;
+		private string requestId;
+
+		private string address;
+
+		private string postalCode;
 
 		private string zhRegistrantName;
 
-		private string zhRegistrantOrganization;
+		private string city;
 
-		private string zhProvince;
+		private string createDate;
+
+		private string province;
 
 		private string zhCity;
 
+		private string registrantName;
+
+		private string zhRegistrantOrganization;
+
+		private string country;
+
+		private string registrantOrganization;
+
+		private string telExt;
+
+		private string telArea;
+
 		private string zhAddress;
 
-		public string RequestId
+		public string ZhProvince
 		{
 			get
 			{
-				return requestId;
+				return zhProvince;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string CreateDate
-		{
-			get
-			{
-				return createDate;
-			}
-			set	
-			{
-				createDate = value;
-			}
-		}
-
-		public string RegistrantName
-		{
-			get
-			{
-				return registrantName;
-			}
-			set	
-			{
-				registrantName = value;
-			}
-		}
-
-		public string RegistrantOrganization
-		{
-			get
-			{
-				return registrantOrganization;
-			}
-			set	
-			{
-				registrantOrganization = value;
-			}
-		}
-
-		public string Country
-		{
-			get
-			{
-				return country;
-			}
-			set	
-			{
-				country = value;
-			}
-		}
-
-		public string Province
-		{
-			get
-			{
-				return province;
-			}
-			set	
-			{
-				province = value;
-			}
-		}
-
-		public string City
-		{
-			get
-			{
-				return city;
-			}
-			set	
-			{
-				city = value;
-			}
-		}
-
-		public string Address
-		{
-			get
-			{
-				return address;
-			}
-			set	
-			{
-				address = value;
+				zhProvince = value;
 			}
 		}
 
@@ -169,30 +85,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string PostalCode
-		{
-			get
-			{
-				return postalCode;
-			}
-			set	
-			{
-				postalCode = value;
-			}
-		}
-
-		public string TelArea
-		{
-			get
-			{
-				return telArea;
-			}
-			set	
-			{
-				telArea = value;
-			}
-		}
-
 		public string Telephone
 		{
 			get
@@ -205,15 +97,39 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string TelExt
+		public string RequestId
 		{
 			get
 			{
-				return telExt;
+				return requestId;
 			}
 			set	
 			{
-				telExt = value;
+				requestId = value;
+			}
+		}
+
+		public string Address
+		{
+			get
+			{
+				return address;
+			}
+			set	
+			{
+				address = value;
+			}
+		}
+
+		public string PostalCode
+		{
+			get
+			{
+				return postalCode;
+			}
+			set	
+			{
+				postalCode = value;
 			}
 		}
 
@@ -229,27 +145,39 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string ZhRegistrantOrganization
+		public string City
 		{
 			get
 			{
-				return zhRegistrantOrganization;
+				return city;
 			}
 			set	
 			{
-				zhRegistrantOrganization = value;
+				city = value;
 			}
 		}
 
-		public string ZhProvince
+		public string CreateDate
 		{
 			get
 			{
-				return zhProvince;
+				return createDate;
 			}
 			set	
 			{
-				zhProvince = value;
+				createDate = value;
+			}
+		}
+
+		public string Province
+		{
+			get
+			{
+				return province;
+			}
+			set	
+			{
+				province = value;
 			}
 		}
 
@@ -262,6 +190,78 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				zhCity = value;
+			}
+		}
+
+		public string RegistrantName
+		{
+			get
+			{
+				return registrantName;
+			}
+			set	
+			{
+				registrantName = value;
+			}
+		}
+
+		public string ZhRegistrantOrganization
+		{
+			get
+			{
+				return zhRegistrantOrganization;
+			}
+			set	
+			{
+				zhRegistrantOrganization = value;
+			}
+		}
+
+		public string Country
+		{
+			get
+			{
+				return country;
+			}
+			set	
+			{
+				country = value;
+			}
+		}
+
+		public string RegistrantOrganization
+		{
+			get
+			{
+				return registrantOrganization;
+			}
+			set	
+			{
+				registrantOrganization = value;
+			}
+		}
+
+		public string TelExt
+		{
+			get
+			{
+				return telExt;
+			}
+			set	
+			{
+				telExt = value;
+			}
+		}
+
+		public string TelArea
+		{
+			get
+			{
+				return telArea;
+			}
+			set	
+			{
+				telArea = value;
 			}
 		}
 

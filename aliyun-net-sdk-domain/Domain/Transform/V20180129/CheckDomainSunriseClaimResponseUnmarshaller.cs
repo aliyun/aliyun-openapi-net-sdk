@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			CheckDomainSunriseClaimResponse checkDomainSunriseClaimResponse = new CheckDomainSunriseClaimResponse();
 
 			checkDomainSunriseClaimResponse.HttpResponse = _ctx.HttpResponse;
+			checkDomainSunriseClaimResponse.ClaimKey = _ctx.StringValue("CheckDomainSunriseClaim.ClaimKey");
 			checkDomainSunriseClaimResponse.RequestId = _ctx.StringValue("CheckDomainSunriseClaim.RequestId");
 			checkDomainSunriseClaimResponse.Result = _ctx.IntegerValue("CheckDomainSunriseClaim.Result");
-			checkDomainSunriseClaimResponse.ClaimKey = _ctx.StringValue("CheckDomainSunriseClaim.ClaimKey");
         
 			return checkDomainSunriseClaimResponse;
         }

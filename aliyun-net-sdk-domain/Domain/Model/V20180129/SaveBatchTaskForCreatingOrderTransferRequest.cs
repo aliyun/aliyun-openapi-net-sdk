@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			Method = MethodType.POST;
         }
 
-		private List<OrderTransferParam> orderTransferParams = new List<OrderTransferParam>(){ };
+		private List<bool?> orderTransferParams = new List<bool?>(){ };
 
 		private string couponNo;
 
@@ -55,7 +55,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private bool? usePromotion;
 
-		public List<OrderTransferParam> OrderTransferParams
+		public List<bool?> OrderTransferParams
 		{
 			get
 			{
@@ -65,12 +65,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set
 			{
 				orderTransferParams = value;
-				for (int i = 0; i < orderTransferParams.Count; i++)
+				if(orderTransferParams != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"OrderTransferParam." + (i + 1) + ".PermitPremiumTransfer", orderTransferParams[i].PermitPremiumTransfer);
-					DictionaryUtil.Add(QueryParameters,"OrderTransferParam." + (i + 1) + ".AuthorizationCode", orderTransferParams[i].AuthorizationCode);
-					DictionaryUtil.Add(QueryParameters,"OrderTransferParam." + (i + 1) + ".DomainName", orderTransferParams[i].DomainName);
-					DictionaryUtil.Add(QueryParameters,"OrderTransferParam." + (i + 1) + ".RegistrantProfileId", orderTransferParams[i].RegistrantProfileId);
+					for (int depth1 = 0; depth1 < orderTransferParams.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"OrderTransferParam." + (depth1 + 1), orderTransferParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderTransferParam." + (depth1 + 1), orderTransferParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderTransferParam." + (depth1 + 1), orderTransferParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderTransferParam." + (depth1 + 1), orderTransferParams[depth1]);
+					}
 				}
 			}
 		}
@@ -160,9 +163,9 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 			private string authorizationCode;
 
-			private string domainName;
-
 			private long? registrantProfileId;
+
+			private string domainName;
 
 			public bool? PermitPremiumTransfer
 			{
@@ -188,18 +191,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
 			public long? RegistrantProfileId
 			{
 				get
@@ -209,6 +200,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					registrantProfileId = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 		}

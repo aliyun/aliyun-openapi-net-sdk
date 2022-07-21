@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,43 +25,31 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class QueryOperationAuditInfoListResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? totalItemNum;
+		private bool? prePage;
 
 		private int? currentPageNum;
 
-		private int? totalPageNum;
+		private string requestId;
 
 		private int? pageSize;
 
-		private bool? prePage;
+		private int? totalPageNum;
+
+		private int? totalItemNum;
 
 		private bool? nextPage;
 
 		private List<QueryOperationAuditInfoList_OperationAuditRecord> data;
 
-		public string RequestId
+		public bool? PrePage
 		{
 			get
 			{
-				return requestId;
+				return prePage;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalItemNum
-		{
-			get
-			{
-				return totalItemNum;
-			}
-			set	
-			{
-				totalItemNum = value;
+				prePage = value;
 			}
 		}
 
@@ -77,15 +65,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public int? TotalPageNum
+		public string RequestId
 		{
 			get
 			{
-				return totalPageNum;
+				return requestId;
 			}
 			set	
 			{
-				totalPageNum = value;
+				requestId = value;
 			}
 		}
 
@@ -101,15 +89,27 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public bool? PrePage
+		public int? TotalPageNum
 		{
 			get
 			{
-				return prePage;
+				return totalPageNum;
 			}
 			set	
 			{
-				prePage = value;
+				totalPageNum = value;
+			}
+		}
+
+		public int? TotalItemNum
+		{
+			get
+			{
+				return totalItemNum;
+			}
+			set	
+			{
+				totalItemNum = value;
 			}
 		}
 
@@ -140,33 +140,45 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 		public class QueryOperationAuditInfoList_OperationAuditRecord
 		{
 
-			private long? id;
-
-			private long? createTime;
-
 			private long? updateTime;
-
-			private string businessName;
-
-			private string domainName;
-
-			private int? auditType;
-
-			private int? auditStatus;
-
-			private string auditInfo;
 
 			private string remark;
 
-			public long? Id
+			private long? createTime;
+
+			private int? auditType;
+
+			private string businessName;
+
+			private string auditInfo;
+
+			private string domainName;
+
+			private int? auditStatus;
+
+			private long? id;
+
+			public long? UpdateTime
 			{
 				get
 				{
-					return id;
+					return updateTime;
 				}
 				set	
 				{
-					id = value;
+					updateTime = value;
+				}
+			}
+
+			public string Remark
+			{
+				get
+				{
+					return remark;
+				}
+				set	
+				{
+					remark = value;
 				}
 			}
 
@@ -182,15 +194,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public long? UpdateTime
+			public int? AuditType
 			{
 				get
 				{
-					return updateTime;
+					return auditType;
 				}
 				set	
 				{
-					updateTime = value;
+					auditType = value;
 				}
 			}
 
@@ -206,6 +218,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			public string AuditInfo
+			{
+				get
+				{
+					return auditInfo;
+				}
+				set	
+				{
+					auditInfo = value;
+				}
+			}
+
 			public string DomainName
 			{
 				get
@@ -215,18 +239,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					domainName = value;
-				}
-			}
-
-			public int? AuditType
-			{
-				get
-				{
-					return auditType;
-				}
-				set	
-				{
-					auditType = value;
 				}
 			}
 
@@ -242,27 +254,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public string AuditInfo
+			public long? Id
 			{
 				get
 				{
-					return auditInfo;
+					return id;
 				}
 				set	
 				{
-					auditInfo = value;
-				}
-			}
-
-			public string Remark
-			{
-				get
-				{
-					return remark;
-				}
-				set	
-				{
-					remark = value;
+					id = value;
 				}
 			}
 		}

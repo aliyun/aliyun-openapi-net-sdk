@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,29 +25,17 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class QueryTaskInfoHistoryResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? pageSize;
+
+		private string requestId;
 
 		private List<QueryTaskInfoHistory_TaskInfoHistory> objects;
 
 		private QueryTaskInfoHistory_CurrentPageCursor currentPageCursor;
 
-		private QueryTaskInfoHistory_NextPageCursor nextPageCursor;
-
 		private QueryTaskInfoHistory_PrePageCursor prePageCursor;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private QueryTaskInfoHistory_NextPageCursor nextPageCursor;
 
 		public int? PageSize
 		{
@@ -58,6 +46,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -85,18 +85,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public QueryTaskInfoHistory_NextPageCursor NextPageCursor
-		{
-			get
-			{
-				return nextPageCursor;
-			}
-			set	
-			{
-				nextPageCursor = value;
-			}
-		}
-
 		public QueryTaskInfoHistory_PrePageCursor PrePageCursor
 		{
 			get
@@ -109,26 +97,38 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		public QueryTaskInfoHistory_NextPageCursor NextPageCursor
+		{
+			get
+			{
+				return nextPageCursor;
+			}
+			set	
+			{
+				nextPageCursor = value;
+			}
+		}
+
 		public class QueryTaskInfoHistory_TaskInfoHistory
 		{
 
 			private string taskType;
 
-			private int? taskNum;
-
-			private string taskStatus;
-
-			private string createTime;
-
-			private string clientip;
-
 			private string taskNo;
-
-			private long? createTimeLong;
 
 			private int? taskStatusCode;
 
+			private string taskStatus;
+
 			private string taskTypeDescription;
+
+			private int? taskNum;
+
+			private string createTime;
+
+			private long? createTimeLong;
+
+			private string clientip;
 
 			public string TaskType
 			{
@@ -139,54 +139,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					taskType = value;
-				}
-			}
-
-			public int? TaskNum
-			{
-				get
-				{
-					return taskNum;
-				}
-				set	
-				{
-					taskNum = value;
-				}
-			}
-
-			public string TaskStatus
-			{
-				get
-				{
-					return taskStatus;
-				}
-				set	
-				{
-					taskStatus = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string Clientip
-			{
-				get
-				{
-					return clientip;
-				}
-				set	
-				{
-					clientip = value;
 				}
 			}
 
@@ -202,18 +154,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public long? CreateTimeLong
-			{
-				get
-				{
-					return createTimeLong;
-				}
-				set	
-				{
-					createTimeLong = value;
-				}
-			}
-
 			public int? TaskStatusCode
 			{
 				get
@@ -226,6 +166,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			public string TaskStatus
+			{
+				get
+				{
+					return taskStatus;
+				}
+				set	
+				{
+					taskStatus = value;
+				}
+			}
+
 			public string TaskTypeDescription
 			{
 				get
@@ -235,6 +187,54 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					taskTypeDescription = value;
+				}
+			}
+
+			public int? TaskNum
+			{
+				get
+				{
+					return taskNum;
+				}
+				set	
+				{
+					taskNum = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public long? CreateTimeLong
+			{
+				get
+				{
+					return createTimeLong;
+				}
+				set	
+				{
+					createTimeLong = value;
+				}
+			}
+
+			public string Clientip
+			{
+				get
+				{
+					return clientip;
+				}
+				set	
+				{
+					clientip = value;
 				}
 			}
 		}
@@ -244,21 +244,21 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 			private string taskType;
 
-			private int? taskNum;
-
-			private string taskStatus;
-
-			private string createTime;
-
-			private string clientip;
-
 			private string taskNo;
-
-			private long? createTimeLong;
 
 			private int? taskStatusCode;
 
+			private string taskStatus;
+
 			private string taskTypeDescription;
+
+			private int? taskNum;
+
+			private string createTime;
+
+			private long? createTimeLong;
+
+			private string clientip;
 
 			public string TaskType
 			{
@@ -269,54 +269,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					taskType = value;
-				}
-			}
-
-			public int? TaskNum
-			{
-				get
-				{
-					return taskNum;
-				}
-				set	
-				{
-					taskNum = value;
-				}
-			}
-
-			public string TaskStatus
-			{
-				get
-				{
-					return taskStatus;
-				}
-				set	
-				{
-					taskStatus = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string Clientip
-			{
-				get
-				{
-					return clientip;
-				}
-				set	
-				{
-					clientip = value;
 				}
 			}
 
@@ -332,18 +284,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public long? CreateTimeLong
-			{
-				get
-				{
-					return createTimeLong;
-				}
-				set	
-				{
-					createTimeLong = value;
-				}
-			}
-
 			public int? TaskStatusCode
 			{
 				get
@@ -353,64 +293,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					taskStatusCode = value;
-				}
-			}
-
-			public string TaskTypeDescription
-			{
-				get
-				{
-					return taskTypeDescription;
-				}
-				set	
-				{
-					taskTypeDescription = value;
-				}
-			}
-		}
-
-		public class QueryTaskInfoHistory_NextPageCursor
-		{
-
-			private string taskType;
-
-			private int? taskNum;
-
-			private string taskStatus;
-
-			private string createTime;
-
-			private string clientip;
-
-			private string taskNo;
-
-			private long? createTimeLong;
-
-			private int? taskStatusCode;
-
-			private string taskTypeDescription;
-
-			public string TaskType
-			{
-				get
-				{
-					return taskType;
-				}
-				set	
-				{
-					taskType = value;
-				}
-			}
-
-			public int? TaskNum
-			{
-				get
-				{
-					return taskNum;
-				}
-				set	
-				{
-					taskNum = value;
 				}
 			}
 
@@ -426,6 +308,30 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			public string TaskTypeDescription
+			{
+				get
+				{
+					return taskTypeDescription;
+				}
+				set	
+				{
+					taskTypeDescription = value;
+				}
+			}
+
+			public int? TaskNum
+			{
+				get
+				{
+					return taskNum;
+				}
+				set	
+				{
+					taskNum = value;
+				}
+			}
+
 			public string CreateTime
 			{
 				get
@@ -435,30 +341,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					createTime = value;
-				}
-			}
-
-			public string Clientip
-			{
-				get
-				{
-					return clientip;
-				}
-				set	
-				{
-					clientip = value;
-				}
-			}
-
-			public string TaskNo
-			{
-				get
-				{
-					return taskNo;
-				}
-				set	
-				{
-					taskNo = value;
 				}
 			}
 
@@ -474,27 +356,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public int? TaskStatusCode
+			public string Clientip
 			{
 				get
 				{
-					return taskStatusCode;
+					return clientip;
 				}
 				set	
 				{
-					taskStatusCode = value;
-				}
-			}
-
-			public string TaskTypeDescription
-			{
-				get
-				{
-					return taskTypeDescription;
-				}
-				set	
-				{
-					taskTypeDescription = value;
+					clientip = value;
 				}
 			}
 		}
@@ -504,21 +374,21 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 			private string taskType;
 
-			private int? taskNum;
-
-			private string taskStatus;
-
-			private string createTime;
-
-			private string clientip;
-
 			private string taskNo;
-
-			private long? createTimeLong;
 
 			private int? taskStatusCode;
 
+			private string taskStatus;
+
 			private string taskTypeDescription;
+
+			private int? taskNum;
+
+			private string createTime;
+
+			private long? createTimeLong;
+
+			private string clientip;
 
 			public string TaskType
 			{
@@ -529,54 +399,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					taskType = value;
-				}
-			}
-
-			public int? TaskNum
-			{
-				get
-				{
-					return taskNum;
-				}
-				set	
-				{
-					taskNum = value;
-				}
-			}
-
-			public string TaskStatus
-			{
-				get
-				{
-					return taskStatus;
-				}
-				set	
-				{
-					taskStatus = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string Clientip
-			{
-				get
-				{
-					return clientip;
-				}
-				set	
-				{
-					clientip = value;
 				}
 			}
 
@@ -592,6 +414,66 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			public int? TaskStatusCode
+			{
+				get
+				{
+					return taskStatusCode;
+				}
+				set	
+				{
+					taskStatusCode = value;
+				}
+			}
+
+			public string TaskStatus
+			{
+				get
+				{
+					return taskStatus;
+				}
+				set	
+				{
+					taskStatus = value;
+				}
+			}
+
+			public string TaskTypeDescription
+			{
+				get
+				{
+					return taskTypeDescription;
+				}
+				set	
+				{
+					taskTypeDescription = value;
+				}
+			}
+
+			public int? TaskNum
+			{
+				get
+				{
+					return taskNum;
+				}
+				set	
+				{
+					taskNum = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
 			public long? CreateTimeLong
 			{
 				get
@@ -601,6 +483,64 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					createTimeLong = value;
+				}
+			}
+
+			public string Clientip
+			{
+				get
+				{
+					return clientip;
+				}
+				set	
+				{
+					clientip = value;
+				}
+			}
+		}
+
+		public class QueryTaskInfoHistory_NextPageCursor
+		{
+
+			private string taskType;
+
+			private string taskNo;
+
+			private int? taskStatusCode;
+
+			private string taskStatus;
+
+			private string taskTypeDescription;
+
+			private int? taskNum;
+
+			private string createTime;
+
+			private long? createTimeLong;
+
+			private string clientip;
+
+			public string TaskType
+			{
+				get
+				{
+					return taskType;
+				}
+				set	
+				{
+					taskType = value;
+				}
+			}
+
+			public string TaskNo
+			{
+				get
+				{
+					return taskNo;
+				}
+				set	
+				{
+					taskNo = value;
 				}
 			}
 
@@ -616,6 +556,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			public string TaskStatus
+			{
+				get
+				{
+					return taskStatus;
+				}
+				set	
+				{
+					taskStatus = value;
+				}
+			}
+
 			public string TaskTypeDescription
 			{
 				get
@@ -625,6 +577,54 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					taskTypeDescription = value;
+				}
+			}
+
+			public int? TaskNum
+			{
+				get
+				{
+					return taskNum;
+				}
+				set	
+				{
+					taskNum = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public long? CreateTimeLong
+			{
+				get
+				{
+					return createTimeLong;
+				}
+				set	
+				{
+					createTimeLong = value;
+				}
+			}
+
+			public string Clientip
+			{
+				get
+				{
+					return clientip;
+				}
+				set	
+				{
+					clientip = value;
 				}
 			}
 		}

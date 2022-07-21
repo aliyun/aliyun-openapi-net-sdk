@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,21 +25,33 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class QueryDomainRealNameVerificationInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string submissionDate;
-
-		private string identityCredential;
-
-		private string identityCredentialNo;
-
 		private string identityCredentialType;
 
-		private string domainName;
+		private string requestId;
 
 		private string instanceId;
 
+		private string domainName;
+
+		private string identityCredential;
+
+		private string submissionDate;
+
+		private string identityCredentialNo;
+
 		private string identityCredentialUrl;
+
+		public string IdentityCredentialType
+		{
+			get
+			{
+				return identityCredentialType;
+			}
+			set	
+			{
+				identityCredentialType = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -53,51 +65,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string SubmissionDate
+		public string InstanceId
 		{
 			get
 			{
-				return submissionDate;
+				return instanceId;
 			}
 			set	
 			{
-				submissionDate = value;
-			}
-		}
-
-		public string IdentityCredential
-		{
-			get
-			{
-				return identityCredential;
-			}
-			set	
-			{
-				identityCredential = value;
-			}
-		}
-
-		public string IdentityCredentialNo
-		{
-			get
-			{
-				return identityCredentialNo;
-			}
-			set	
-			{
-				identityCredentialNo = value;
-			}
-		}
-
-		public string IdentityCredentialType
-		{
-			get
-			{
-				return identityCredentialType;
-			}
-			set	
-			{
-				identityCredentialType = value;
+				instanceId = value;
 			}
 		}
 
@@ -113,15 +89,39 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string InstanceId
+		public string IdentityCredential
 		{
 			get
 			{
-				return instanceId;
+				return identityCredential;
 			}
 			set	
 			{
-				instanceId = value;
+				identityCredential = value;
+			}
+		}
+
+		public string SubmissionDate
+		{
+			get
+			{
+				return submissionDate;
+			}
+			set	
+			{
+				submissionDate = value;
+			}
+		}
+
+		public string IdentityCredentialNo
+		{
+			get
+			{
+				return identityCredentialNo;
+			}
+			set	
+			{
+				identityCredentialNo = value;
 			}
 		}
 

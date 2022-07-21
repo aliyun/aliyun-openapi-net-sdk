@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			CheckTransferInFeasibilityResponse checkTransferInFeasibilityResponse = new CheckTransferInFeasibilityResponse();
 
 			checkTransferInFeasibilityResponse.HttpResponse = _ctx.HttpResponse;
-			checkTransferInFeasibilityResponse.RequestId = _ctx.StringValue("CheckTransferInFeasibility.RequestId");
 			checkTransferInFeasibilityResponse.CanTransfer = _ctx.BooleanValue("CheckTransferInFeasibility.CanTransfer");
-			checkTransferInFeasibilityResponse.Code = _ctx.StringValue("CheckTransferInFeasibility.Code");
 			checkTransferInFeasibilityResponse.Message = _ctx.StringValue("CheckTransferInFeasibility.Message");
+			checkTransferInFeasibilityResponse.RequestId = _ctx.StringValue("CheckTransferInFeasibility.RequestId");
 			checkTransferInFeasibilityResponse.ProductId = _ctx.StringValue("CheckTransferInFeasibility.ProductId");
+			checkTransferInFeasibilityResponse.Code = _ctx.StringValue("CheckTransferInFeasibility.Code");
         
 			return checkTransferInFeasibilityResponse;
         }

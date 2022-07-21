@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,11 +25,23 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class CheckDomainSunriseClaimResponse : AcsResponse
 	{
 
+		private string claimKey;
+
 		private string requestId;
 
 		private int? result;
 
-		private string claimKey;
+		public string ClaimKey
+		{
+			get
+			{
+				return claimKey;
+			}
+			set	
+			{
+				claimKey = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -52,18 +64,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				result = value;
-			}
-		}
-
-		public string ClaimKey
-		{
-			get
-			{
-				return claimKey;
-			}
-			set	
-			{
-				claimKey = value;
 			}
 		}
 	}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,21 +25,33 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class QueryRegistrantProfileRealNameVerificationInfoResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string identityCredentialType;
 
-		private string submissionDate;
+		private string requestId;
 
 		private string modificationDate;
 
 		private string identityCredential;
 
-		private long? registrantProfileId;
+		private string submissionDate;
 
 		private string identityCredentialNo;
 
-		private string identityCredentialType;
+		private long? registrantProfileId;
 
 		private string identityCredentialUrl;
+
+		public string IdentityCredentialType
+		{
+			get
+			{
+				return identityCredentialType;
+			}
+			set	
+			{
+				identityCredentialType = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -50,18 +62,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string SubmissionDate
-		{
-			get
-			{
-				return submissionDate;
-			}
-			set	
-			{
-				submissionDate = value;
 			}
 		}
 
@@ -89,15 +89,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public long? RegistrantProfileId
+		public string SubmissionDate
 		{
 			get
 			{
-				return registrantProfileId;
+				return submissionDate;
 			}
 			set	
 			{
-				registrantProfileId = value;
+				submissionDate = value;
 			}
 		}
 
@@ -113,15 +113,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string IdentityCredentialType
+		public long? RegistrantProfileId
 		{
 			get
 			{
-				return identityCredentialType;
+				return registrantProfileId;
 			}
 			set	
 			{
-				identityCredentialType = value;
+				registrantProfileId = value;
 			}
 		}
 

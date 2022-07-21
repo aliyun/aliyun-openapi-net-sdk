@@ -31,24 +31,24 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			QueryChangeLogListResponse queryChangeLogListResponse = new QueryChangeLogListResponse();
 
 			queryChangeLogListResponse.HttpResponse = _ctx.HttpResponse;
-			queryChangeLogListResponse.RequestId = _ctx.StringValue("QueryChangeLogList.RequestId");
-			queryChangeLogListResponse.TotalItemNum = _ctx.IntegerValue("QueryChangeLogList.TotalItemNum");
-			queryChangeLogListResponse.CurrentPageNum = _ctx.IntegerValue("QueryChangeLogList.CurrentPageNum");
-			queryChangeLogListResponse.TotalPageNum = _ctx.IntegerValue("QueryChangeLogList.TotalPageNum");
-			queryChangeLogListResponse.PageSize = _ctx.IntegerValue("QueryChangeLogList.PageSize");
 			queryChangeLogListResponse.PrePage = _ctx.BooleanValue("QueryChangeLogList.PrePage");
-			queryChangeLogListResponse.NextPage = _ctx.BooleanValue("QueryChangeLogList.NextPage");
+			queryChangeLogListResponse.CurrentPageNum = _ctx.IntegerValue("QueryChangeLogList.CurrentPageNum");
+			queryChangeLogListResponse.RequestId = _ctx.StringValue("QueryChangeLogList.RequestId");
+			queryChangeLogListResponse.PageSize = _ctx.IntegerValue("QueryChangeLogList.PageSize");
+			queryChangeLogListResponse.TotalPageNum = _ctx.IntegerValue("QueryChangeLogList.TotalPageNum");
 			queryChangeLogListResponse.ResultLimit = _ctx.BooleanValue("QueryChangeLogList.ResultLimit");
+			queryChangeLogListResponse.TotalItemNum = _ctx.IntegerValue("QueryChangeLogList.TotalItemNum");
+			queryChangeLogListResponse.NextPage = _ctx.BooleanValue("QueryChangeLogList.NextPage");
 
 			List<QueryChangeLogListResponse.QueryChangeLogList_ChangeLog> queryChangeLogListResponse_data = new List<QueryChangeLogListResponse.QueryChangeLogList_ChangeLog>();
 			for (int i = 0; i < _ctx.Length("QueryChangeLogList.Data.Length"); i++) {
 				QueryChangeLogListResponse.QueryChangeLogList_ChangeLog changeLog = new QueryChangeLogListResponse.QueryChangeLogList_ChangeLog();
-				changeLog.DomainName = _ctx.StringValue("QueryChangeLogList.Data["+ i +"].DomainName");
-				changeLog.Result = _ctx.StringValue("QueryChangeLogList.Data["+ i +"].Result");
 				changeLog.Operation = _ctx.StringValue("QueryChangeLogList.Data["+ i +"].Operation");
+				changeLog.Time = _ctx.StringValue("QueryChangeLogList.Data["+ i +"].Time");
+				changeLog.Result = _ctx.StringValue("QueryChangeLogList.Data["+ i +"].Result");
+				changeLog.DomainName = _ctx.StringValue("QueryChangeLogList.Data["+ i +"].DomainName");
 				changeLog.OperationIPAddress = _ctx.StringValue("QueryChangeLogList.Data["+ i +"].OperationIPAddress");
 				changeLog.Details = _ctx.StringValue("QueryChangeLogList.Data["+ i +"].Details");
-				changeLog.Time = _ctx.StringValue("QueryChangeLogList.Data["+ i +"].Time");
 
 				queryChangeLogListResponse_data.Add(changeLog);
 			}

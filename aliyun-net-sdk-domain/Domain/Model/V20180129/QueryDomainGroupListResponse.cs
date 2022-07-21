@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -56,19 +56,43 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 		public class QueryDomainGroupList_DomainGroup
 		{
 
+			private bool? beingDeleted;
+
+			private string domainGroupStatus;
+
 			private string domainGroupId;
 
 			private string domainGroupName;
+
+			private string modificationDate;
 
 			private int? totalNumber;
 
 			private string creationDate;
 
-			private string modificationDate;
+			public bool? BeingDeleted
+			{
+				get
+				{
+					return beingDeleted;
+				}
+				set	
+				{
+					beingDeleted = value;
+				}
+			}
 
-			private string domainGroupStatus;
-
-			private bool? beingDeleted;
+			public string DomainGroupStatus
+			{
+				get
+				{
+					return domainGroupStatus;
+				}
+				set	
+				{
+					domainGroupStatus = value;
+				}
+			}
 
 			public string DomainGroupId
 			{
@@ -94,6 +118,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			public string ModificationDate
+			{
+				get
+				{
+					return modificationDate;
+				}
+				set	
+				{
+					modificationDate = value;
+				}
+			}
+
 			public int? TotalNumber
 			{
 				get
@@ -115,42 +151,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					creationDate = value;
-				}
-			}
-
-			public string ModificationDate
-			{
-				get
-				{
-					return modificationDate;
-				}
-				set	
-				{
-					modificationDate = value;
-				}
-			}
-
-			public string DomainGroupStatus
-			{
-				get
-				{
-					return domainGroupStatus;
-				}
-				set	
-				{
-					domainGroupStatus = value;
-				}
-			}
-
-			public bool? BeingDeleted
-			{
-				get
-				{
-					return beingDeleted;
-				}
-				set	
-				{
-					beingDeleted = value;
 				}
 			}
 		}

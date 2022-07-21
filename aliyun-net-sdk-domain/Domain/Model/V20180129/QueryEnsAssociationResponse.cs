@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class QueryEnsAssociationResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string address;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string Address
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				address = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

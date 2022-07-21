@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class CheckTransferInFeasibilityResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? canTransfer;
-
-		private string code;
 
 		private string message;
 
+		private string requestId;
+
 		private string productId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string code;
 
 		public bool? CanTransfer
 		{
@@ -56,18 +44,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				canTransfer = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
 			}
 		}
 
@@ -83,6 +59,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public string ProductId
 		{
 			get
@@ -92,6 +80,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				productId = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 	}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -27,13 +27,13 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string requestId;
 
+		private string label;
+
 		private long? id;
 
 		private string notBefore;
 
 		private string notAfter;
-
-		private string label;
 
 		private List<LookupTmchNotice_Claim> claims;
 
@@ -46,6 +46,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Label
+		{
+			get
+			{
+				return label;
+			}
+			set	
+			{
+				label = value;
 			}
 		}
 
@@ -85,18 +97,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string Label
-		{
-			get
-			{
-				return label;
-			}
-			set	
-			{
-				label = value;
-			}
-		}
-
 		public List<LookupTmchNotice_Claim> Claims
 		{
 			get
@@ -112,29 +112,17 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 		public class LookupTmchNotice_Claim
 		{
 
-			private string markName;
-
 			private string goodsAndServices;
 
-			private List<LookupTmchNotice_Holder> holders;
+			private string markName;
 
 			private List<LookupTmchNotice_Contact> contacts;
 
 			private List<LookupTmchNotice_ClassDesc> classDescs;
 
-			private LookupTmchNotice_JurDesc jurDesc;
+			private List<LookupTmchNotice_Holder> holders;
 
-			public string MarkName
-			{
-				get
-				{
-					return markName;
-				}
-				set	
-				{
-					markName = value;
-				}
-			}
+			private LookupTmchNotice_JurDesc jurDesc;
 
 			public string GoodsAndServices
 			{
@@ -148,15 +136,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public List<LookupTmchNotice_Holder> Holders
+			public string MarkName
 			{
 				get
 				{
-					return holders;
+					return markName;
 				}
 				set	
 				{
-					holders = value;
+					markName = value;
 				}
 			}
 
@@ -184,6 +172,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			public List<LookupTmchNotice_Holder> Holders
+			{
+				get
+				{
+					return holders;
+				}
+				set	
+				{
+					holders = value;
+				}
+			}
+
 			public LookupTmchNotice_JurDesc JurDesc
 			{
 				get
@@ -196,24 +196,68 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public class LookupTmchNotice_Holder
+			public class LookupTmchNotice_Contact
 			{
 
-				private string entitlement;
+				private string type;
+
+				private string voice;
+
+				private string email;
+
+				private string fax;
 
 				private string org;
 
+				private string name;
+
 				private LookupTmchNotice_Addr addr;
 
-				public string Entitlement
+				public string Type
 				{
 					get
 					{
-						return entitlement;
+						return type;
 					}
 					set	
 					{
-						entitlement = value;
+						type = value;
+					}
+				}
+
+				public string Voice
+				{
+					get
+					{
+						return voice;
+					}
+					set	
+					{
+						voice = value;
+					}
+				}
+
+				public string Email
+				{
+					get
+					{
+						return email;
+					}
+					set	
+					{
+						email = value;
+					}
+				}
+
+				public string Fax
+				{
+					get
+					{
+						return fax;
+					}
+					set	
+					{
+						fax = value;
 					}
 				}
 
@@ -226,6 +270,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 					set	
 					{
 						org = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 
@@ -244,25 +300,25 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				public class LookupTmchNotice_Addr
 				{
 
-					private string city;
+					private string cc;
 
 					private string sp;
 
 					private string pc;
 
-					private string cc;
+					private string city;
 
 					private List<string> street;
 
-					public string City
+					public string Cc
 					{
 						get
 						{
-							return city;
+							return cc;
 						}
 						set	
 						{
-							city = value;
+							cc = value;
 						}
 					}
 
@@ -290,15 +346,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 						}
 					}
 
-					public string Cc
+					public string City
 					{
 						get
 						{
-							return cc;
+							return city;
 						}
 						set	
 						{
-							cc = value;
+							city = value;
 						}
 					}
 
@@ -311,182 +367,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 						set	
 						{
 							street = value;
-						}
-					}
-				}
-			}
-
-			public class LookupTmchNotice_Contact
-			{
-
-				private string type;
-
-				private string name;
-
-				private string org;
-
-				private string voice;
-
-				private string fax;
-
-				private string email;
-
-				private LookupTmchNotice_Addr1 addr1;
-
-				public string Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
-				public string Org
-				{
-					get
-					{
-						return org;
-					}
-					set	
-					{
-						org = value;
-					}
-				}
-
-				public string Voice
-				{
-					get
-					{
-						return voice;
-					}
-					set	
-					{
-						voice = value;
-					}
-				}
-
-				public string Fax
-				{
-					get
-					{
-						return fax;
-					}
-					set	
-					{
-						fax = value;
-					}
-				}
-
-				public string Email
-				{
-					get
-					{
-						return email;
-					}
-					set	
-					{
-						email = value;
-					}
-				}
-
-				public LookupTmchNotice_Addr1 Addr1
-				{
-					get
-					{
-						return addr1;
-					}
-					set	
-					{
-						addr1 = value;
-					}
-				}
-
-				public class LookupTmchNotice_Addr1
-				{
-
-					private string city;
-
-					private string sp;
-
-					private string pc;
-
-					private string cc;
-
-					private List<string> street2;
-
-					public string City
-					{
-						get
-						{
-							return city;
-						}
-						set	
-						{
-							city = value;
-						}
-					}
-
-					public string Sp
-					{
-						get
-						{
-							return sp;
-						}
-						set	
-						{
-							sp = value;
-						}
-					}
-
-					public string Pc
-					{
-						get
-						{
-							return pc;
-						}
-						set	
-						{
-							pc = value;
-						}
-					}
-
-					public string Cc
-					{
-						get
-						{
-							return cc;
-						}
-						set	
-						{
-							cc = value;
-						}
-					}
-
-					public List<string> Street2
-					{
-						get
-						{
-							return street2;
-						}
-						set	
-						{
-							street2 = value;
 						}
 					}
 				}
@@ -520,6 +400,126 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 					set	
 					{
 						desc = value;
+					}
+				}
+			}
+
+			public class LookupTmchNotice_Holder
+			{
+
+				private string entitlement;
+
+				private string org;
+
+				private LookupTmchNotice_Addr1 addr1;
+
+				public string Entitlement
+				{
+					get
+					{
+						return entitlement;
+					}
+					set	
+					{
+						entitlement = value;
+					}
+				}
+
+				public string Org
+				{
+					get
+					{
+						return org;
+					}
+					set	
+					{
+						org = value;
+					}
+				}
+
+				public LookupTmchNotice_Addr1 Addr1
+				{
+					get
+					{
+						return addr1;
+					}
+					set	
+					{
+						addr1 = value;
+					}
+				}
+
+				public class LookupTmchNotice_Addr1
+				{
+
+					private string cc;
+
+					private string sp;
+
+					private string pc;
+
+					private string city;
+
+					private List<string> street2;
+
+					public string Cc
+					{
+						get
+						{
+							return cc;
+						}
+						set	
+						{
+							cc = value;
+						}
+					}
+
+					public string Sp
+					{
+						get
+						{
+							return sp;
+						}
+						set	
+						{
+							sp = value;
+						}
+					}
+
+					public string Pc
+					{
+						get
+						{
+							return pc;
+						}
+						set	
+						{
+							pc = value;
+						}
+					}
+
+					public string City
+					{
+						get
+						{
+							return city;
+						}
+						set	
+						{
+							city = value;
+						}
+					}
+
+					public List<string> Street2
+					{
+						get
+						{
+							return street2;
+						}
+						set	
+						{
+							street2 = value;
+						}
 					}
 				}
 			}

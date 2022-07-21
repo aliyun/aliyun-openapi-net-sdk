@@ -31,13 +31,13 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			QueryRegistrantProfileRealNameVerificationInfoResponse queryRegistrantProfileRealNameVerificationInfoResponse = new QueryRegistrantProfileRealNameVerificationInfoResponse();
 
 			queryRegistrantProfileRealNameVerificationInfoResponse.HttpResponse = _ctx.HttpResponse;
+			queryRegistrantProfileRealNameVerificationInfoResponse.IdentityCredentialType = _ctx.StringValue("QueryRegistrantProfileRealNameVerificationInfo.IdentityCredentialType");
 			queryRegistrantProfileRealNameVerificationInfoResponse.RequestId = _ctx.StringValue("QueryRegistrantProfileRealNameVerificationInfo.RequestId");
-			queryRegistrantProfileRealNameVerificationInfoResponse.SubmissionDate = _ctx.StringValue("QueryRegistrantProfileRealNameVerificationInfo.SubmissionDate");
 			queryRegistrantProfileRealNameVerificationInfoResponse.ModificationDate = _ctx.StringValue("QueryRegistrantProfileRealNameVerificationInfo.ModificationDate");
 			queryRegistrantProfileRealNameVerificationInfoResponse.IdentityCredential = _ctx.StringValue("QueryRegistrantProfileRealNameVerificationInfo.IdentityCredential");
-			queryRegistrantProfileRealNameVerificationInfoResponse.RegistrantProfileId = _ctx.LongValue("QueryRegistrantProfileRealNameVerificationInfo.RegistrantProfileId");
+			queryRegistrantProfileRealNameVerificationInfoResponse.SubmissionDate = _ctx.StringValue("QueryRegistrantProfileRealNameVerificationInfo.SubmissionDate");
 			queryRegistrantProfileRealNameVerificationInfoResponse.IdentityCredentialNo = _ctx.StringValue("QueryRegistrantProfileRealNameVerificationInfo.IdentityCredentialNo");
-			queryRegistrantProfileRealNameVerificationInfoResponse.IdentityCredentialType = _ctx.StringValue("QueryRegistrantProfileRealNameVerificationInfo.IdentityCredentialType");
+			queryRegistrantProfileRealNameVerificationInfoResponse.RegistrantProfileId = _ctx.LongValue("QueryRegistrantProfileRealNameVerificationInfo.RegistrantProfileId");
 			queryRegistrantProfileRealNameVerificationInfoResponse.IdentityCredentialUrl = _ctx.StringValue("QueryRegistrantProfileRealNameVerificationInfo.IdentityCredentialUrl");
         
 			return queryRegistrantProfileRealNameVerificationInfoResponse;

@@ -31,26 +31,26 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			ListEmailVerificationResponse listEmailVerificationResponse = new ListEmailVerificationResponse();
 
 			listEmailVerificationResponse.HttpResponse = _ctx.HttpResponse;
-			listEmailVerificationResponse.RequestId = _ctx.StringValue("ListEmailVerification.RequestId");
-			listEmailVerificationResponse.TotalItemNum = _ctx.IntegerValue("ListEmailVerification.TotalItemNum");
-			listEmailVerificationResponse.CurrentPageNum = _ctx.IntegerValue("ListEmailVerification.CurrentPageNum");
-			listEmailVerificationResponse.TotalPageNum = _ctx.IntegerValue("ListEmailVerification.TotalPageNum");
-			listEmailVerificationResponse.PageSize = _ctx.IntegerValue("ListEmailVerification.PageSize");
 			listEmailVerificationResponse.PrePage = _ctx.BooleanValue("ListEmailVerification.PrePage");
+			listEmailVerificationResponse.CurrentPageNum = _ctx.IntegerValue("ListEmailVerification.CurrentPageNum");
+			listEmailVerificationResponse.RequestId = _ctx.StringValue("ListEmailVerification.RequestId");
+			listEmailVerificationResponse.PageSize = _ctx.IntegerValue("ListEmailVerification.PageSize");
+			listEmailVerificationResponse.TotalPageNum = _ctx.IntegerValue("ListEmailVerification.TotalPageNum");
+			listEmailVerificationResponse.TotalItemNum = _ctx.IntegerValue("ListEmailVerification.TotalItemNum");
 			listEmailVerificationResponse.NextPage = _ctx.BooleanValue("ListEmailVerification.NextPage");
 
 			List<ListEmailVerificationResponse.ListEmailVerification_EmailVerification> listEmailVerificationResponse_data = new List<ListEmailVerificationResponse.ListEmailVerification_EmailVerification>();
 			for (int i = 0; i < _ctx.Length("ListEmailVerification.Data.Length"); i++) {
 				ListEmailVerificationResponse.ListEmailVerification_EmailVerification emailVerification = new ListEmailVerificationResponse.ListEmailVerification_EmailVerification();
-				emailVerification.GmtCreate = _ctx.StringValue("ListEmailVerification.Data["+ i +"].GmtCreate");
-				emailVerification.GmtModified = _ctx.StringValue("ListEmailVerification.Data["+ i +"].GmtModified");
-				emailVerification.Email = _ctx.StringValue("ListEmailVerification.Data["+ i +"].Email");
-				emailVerification.UserId = _ctx.StringValue("ListEmailVerification.Data["+ i +"].UserId");
-				emailVerification.EmailVerificationNo = _ctx.StringValue("ListEmailVerification.Data["+ i +"].EmailVerificationNo");
-				emailVerification.TokenSendTime = _ctx.StringValue("ListEmailVerification.Data["+ i +"].TokenSendTime");
-				emailVerification.VerificationStatus = _ctx.IntegerValue("ListEmailVerification.Data["+ i +"].VerificationStatus");
 				emailVerification.VerificationTime = _ctx.StringValue("ListEmailVerification.Data["+ i +"].VerificationTime");
+				emailVerification.Email = _ctx.StringValue("ListEmailVerification.Data["+ i +"].Email");
+				emailVerification.EmailVerificationNo = _ctx.StringValue("ListEmailVerification.Data["+ i +"].EmailVerificationNo");
+				emailVerification.UserId = _ctx.StringValue("ListEmailVerification.Data["+ i +"].UserId");
+				emailVerification.GmtCreate = _ctx.StringValue("ListEmailVerification.Data["+ i +"].GmtCreate");
+				emailVerification.VerificationStatus = _ctx.IntegerValue("ListEmailVerification.Data["+ i +"].VerificationStatus");
+				emailVerification.TokenSendTime = _ctx.StringValue("ListEmailVerification.Data["+ i +"].TokenSendTime");
 				emailVerification.SendIp = _ctx.StringValue("ListEmailVerification.Data["+ i +"].SendIp");
+				emailVerification.GmtModified = _ctx.StringValue("ListEmailVerification.Data["+ i +"].GmtModified");
 				emailVerification.ConfirmIp = _ctx.StringValue("ListEmailVerification.Data["+ i +"].ConfirmIp");
 
 				listEmailVerificationResponse_data.Add(emailVerification);

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,33 +25,21 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class QueryTransferOutInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? status;
 
 		private string email;
 
-		private string transferAuthorizationCodeSendDate;
-
 		private string expirationDate;
+
+		private string requestId;
+
+		private string resultMsg;
 
 		private string pendingRequestDate;
 
 		private string resultCode;
 
-		private string resultMsg;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string transferAuthorizationCodeSendDate;
 
 		public int? Status
 		{
@@ -77,18 +65,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string TransferAuthorizationCodeSendDate
-		{
-			get
-			{
-				return transferAuthorizationCodeSendDate;
-			}
-			set	
-			{
-				transferAuthorizationCodeSendDate = value;
-			}
-		}
-
 		public string ExpirationDate
 		{
 			get
@@ -98,6 +74,30 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				expirationDate = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string ResultMsg
+		{
+			get
+			{
+				return resultMsg;
+			}
+			set	
+			{
+				resultMsg = value;
 			}
 		}
 
@@ -125,15 +125,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string ResultMsg
+		public string TransferAuthorizationCodeSendDate
 		{
 			get
 			{
-				return resultMsg;
+				return transferAuthorizationCodeSendDate;
 			}
 			set	
 			{
-				resultMsg = value;
+				transferAuthorizationCodeSendDate = value;
 			}
 		}
 	}

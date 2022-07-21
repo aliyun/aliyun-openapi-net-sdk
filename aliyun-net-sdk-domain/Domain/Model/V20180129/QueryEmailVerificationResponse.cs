@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,37 +25,37 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class QueryEmailVerificationResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? verificationStatus;
 
 		private string gmtCreate;
 
-		private string gmtModified;
-
 		private string email;
-
-		private string userId;
 
 		private string emailVerificationNo;
 
-		private string tokenSendTime;
+		private string confirmIp;
 
-		private int? verificationStatus;
+		private string requestId;
 
-		private string verificationTime;
+		private string userId;
+
+		private string gmtModified;
 
 		private string sendIp;
 
-		private string confirmIp;
+		private string verificationTime;
 
-		public string RequestId
+		private string tokenSendTime;
+
+		public int? VerificationStatus
 		{
 			get
 			{
-				return requestId;
+				return verificationStatus;
 			}
 			set	
 			{
-				requestId = value;
+				verificationStatus = value;
 			}
 		}
 
@@ -71,18 +71,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string GmtModified
-		{
-			get
-			{
-				return gmtModified;
-			}
-			set	
-			{
-				gmtModified = value;
-			}
-		}
-
 		public string Email
 		{
 			get
@@ -92,18 +80,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				email = value;
-			}
-		}
-
-		public string UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
 			}
 		}
 
@@ -119,39 +95,51 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string TokenSendTime
+		public string ConfirmIp
 		{
 			get
 			{
-				return tokenSendTime;
+				return confirmIp;
 			}
 			set	
 			{
-				tokenSendTime = value;
+				confirmIp = value;
 			}
 		}
 
-		public int? VerificationStatus
+		public string RequestId
 		{
 			get
 			{
-				return verificationStatus;
+				return requestId;
 			}
 			set	
 			{
-				verificationStatus = value;
+				requestId = value;
 			}
 		}
 
-		public string VerificationTime
+		public string UserId
 		{
 			get
 			{
-				return verificationTime;
+				return userId;
 			}
 			set	
 			{
-				verificationTime = value;
+				userId = value;
+			}
+		}
+
+		public string GmtModified
+		{
+			get
+			{
+				return gmtModified;
+			}
+			set	
+			{
+				gmtModified = value;
 			}
 		}
 
@@ -167,15 +155,27 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string ConfirmIp
+		public string VerificationTime
 		{
 			get
 			{
-				return confirmIp;
+				return verificationTime;
 			}
 			set	
 			{
-				confirmIp = value;
+				verificationTime = value;
+			}
+		}
+
+		public string TokenSendTime
+		{
+			get
+			{
+				return tokenSendTime;
+			}
+			set	
+			{
+				tokenSendTime = value;
 			}
 		}
 	}

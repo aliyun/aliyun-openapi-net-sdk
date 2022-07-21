@@ -74,10 +74,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set
 			{
 				domainNames = value;
-				for (int i = 0; i < domainNames.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DomainName." + (i + 1) , domainNames[i]);
-				}
 			}
 		}
 

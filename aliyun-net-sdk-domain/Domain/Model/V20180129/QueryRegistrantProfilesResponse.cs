@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,9 +25,13 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class QueryRegistrantProfilesResponse : AcsResponse
 	{
 
+		private bool? nextPage;
+
 		private string requestId;
 
 		private int? totalItemNum;
+
+		private bool? prePage;
 
 		private int? currentPageNum;
 
@@ -35,11 +39,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private int? pageSize;
 
-		private bool? prePage;
-
-		private bool? nextPage;
-
 		private List<QueryRegistrantProfiles_RegistrantProfile> registrantProfiles;
+
+		public bool? NextPage
+		{
+			get
+			{
+				return nextPage;
+			}
+			set	
+			{
+				nextPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -62,6 +74,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				totalItemNum = value;
+			}
+		}
+
+		public bool? PrePage
+		{
+			get
+			{
+				return prePage;
+			}
+			set	
+			{
+				prePage = value;
 			}
 		}
 
@@ -101,30 +125,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public bool? PrePage
-		{
-			get
-			{
-				return prePage;
-			}
-			set	
-			{
-				prePage = value;
-			}
-		}
-
-		public bool? NextPage
-		{
-			get
-			{
-				return nextPage;
-			}
-			set	
-			{
-				nextPage = value;
-			}
-		}
-
 		public List<QueryRegistrantProfiles_RegistrantProfile> RegistrantProfiles
 		{
 			get
@@ -140,75 +140,63 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 		public class QueryRegistrantProfiles_RegistrantProfile
 		{
 
-			private long? registrantProfileId;
-
-			private string createTime;
+			private string telExt;
 
 			private string updateTime;
 
-			private bool? defaultRegistrantProfile;
+			private string zhProvince;
 
-			private string registrantName;
-
-			private string registrantOrganization;
-
-			private string country;
-
-			private string province;
-
-			private string city;
-
-			private string address;
-
-			private string email;
-
-			private string postalCode;
-
-			private string telArea;
+			private string createTime;
 
 			private string telephone;
 
-			private string telExt;
+			private string registrantOrganization;
 
-			private int? emailVerificationStatus;
-
-			private string zhRegistrantName;
-
-			private string zhRegistrantOrganization;
-
-			private string zhProvince;
+			private string city;
 
 			private string zhCity;
 
-			private string zhAddress;
+			private string telArea;
 
-			private string registrantType;
+			private string address;
 
 			private string realNameStatus;
 
+			private string postalCode;
+
 			private string registrantProfileType;
 
-			public long? RegistrantProfileId
-			{
-				get
-				{
-					return registrantProfileId;
-				}
-				set	
-				{
-					registrantProfileId = value;
-				}
-			}
+			private long? registrantProfileId;
 
-			public string CreateTime
+			private string zhRegistrantOrganization;
+
+			private bool? defaultRegistrantProfile;
+
+			private string email;
+
+			private string zhRegistrantName;
+
+			private string registrantType;
+
+			private string country;
+
+			private string registrantName;
+
+			private int? emailVerificationStatus;
+
+			private string zhAddress;
+
+			private string province;
+
+			public string TelExt
 			{
 				get
 				{
-					return createTime;
+					return telExt;
 				}
 				set	
 				{
-					createTime = value;
+					telExt = value;
 				}
 			}
 
@@ -224,123 +212,27 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public bool? DefaultRegistrantProfile
+			public string ZhProvince
 			{
 				get
 				{
-					return defaultRegistrantProfile;
+					return zhProvince;
 				}
 				set	
 				{
-					defaultRegistrantProfile = value;
+					zhProvince = value;
 				}
 			}
 
-			public string RegistrantName
+			public string CreateTime
 			{
 				get
 				{
-					return registrantName;
+					return createTime;
 				}
 				set	
 				{
-					registrantName = value;
-				}
-			}
-
-			public string RegistrantOrganization
-			{
-				get
-				{
-					return registrantOrganization;
-				}
-				set	
-				{
-					registrantOrganization = value;
-				}
-			}
-
-			public string Country
-			{
-				get
-				{
-					return country;
-				}
-				set	
-				{
-					country = value;
-				}
-			}
-
-			public string Province
-			{
-				get
-				{
-					return province;
-				}
-				set	
-				{
-					province = value;
-				}
-			}
-
-			public string City
-			{
-				get
-				{
-					return city;
-				}
-				set	
-				{
-					city = value;
-				}
-			}
-
-			public string Address
-			{
-				get
-				{
-					return address;
-				}
-				set	
-				{
-					address = value;
-				}
-			}
-
-			public string Email
-			{
-				get
-				{
-					return email;
-				}
-				set	
-				{
-					email = value;
-				}
-			}
-
-			public string PostalCode
-			{
-				get
-				{
-					return postalCode;
-				}
-				set	
-				{
-					postalCode = value;
-				}
-			}
-
-			public string TelArea
-			{
-				get
-				{
-					return telArea;
-				}
-				set	
-				{
-					telArea = value;
+					createTime = value;
 				}
 			}
 
@@ -356,63 +248,27 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public string TelExt
+			public string RegistrantOrganization
 			{
 				get
 				{
-					return telExt;
+					return registrantOrganization;
 				}
 				set	
 				{
-					telExt = value;
+					registrantOrganization = value;
 				}
 			}
 
-			public int? EmailVerificationStatus
+			public string City
 			{
 				get
 				{
-					return emailVerificationStatus;
+					return city;
 				}
 				set	
 				{
-					emailVerificationStatus = value;
-				}
-			}
-
-			public string ZhRegistrantName
-			{
-				get
-				{
-					return zhRegistrantName;
-				}
-				set	
-				{
-					zhRegistrantName = value;
-				}
-			}
-
-			public string ZhRegistrantOrganization
-			{
-				get
-				{
-					return zhRegistrantOrganization;
-				}
-				set	
-				{
-					zhRegistrantOrganization = value;
-				}
-			}
-
-			public string ZhProvince
-			{
-				get
-				{
-					return zhProvince;
-				}
-				set	
-				{
-					zhProvince = value;
+					city = value;
 				}
 			}
 
@@ -428,27 +284,27 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public string ZhAddress
+			public string TelArea
 			{
 				get
 				{
-					return zhAddress;
+					return telArea;
 				}
 				set	
 				{
-					zhAddress = value;
+					telArea = value;
 				}
 			}
 
-			public string RegistrantType
+			public string Address
 			{
 				get
 				{
-					return registrantType;
+					return address;
 				}
 				set	
 				{
-					registrantType = value;
+					address = value;
 				}
 			}
 
@@ -464,6 +320,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			public string PostalCode
+			{
+				get
+				{
+					return postalCode;
+				}
+				set	
+				{
+					postalCode = value;
+				}
+			}
+
 			public string RegistrantProfileType
 			{
 				get
@@ -473,6 +341,138 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					registrantProfileType = value;
+				}
+			}
+
+			public long? RegistrantProfileId
+			{
+				get
+				{
+					return registrantProfileId;
+				}
+				set	
+				{
+					registrantProfileId = value;
+				}
+			}
+
+			public string ZhRegistrantOrganization
+			{
+				get
+				{
+					return zhRegistrantOrganization;
+				}
+				set	
+				{
+					zhRegistrantOrganization = value;
+				}
+			}
+
+			public bool? DefaultRegistrantProfile
+			{
+				get
+				{
+					return defaultRegistrantProfile;
+				}
+				set	
+				{
+					defaultRegistrantProfile = value;
+				}
+			}
+
+			public string Email
+			{
+				get
+				{
+					return email;
+				}
+				set	
+				{
+					email = value;
+				}
+			}
+
+			public string ZhRegistrantName
+			{
+				get
+				{
+					return zhRegistrantName;
+				}
+				set	
+				{
+					zhRegistrantName = value;
+				}
+			}
+
+			public string RegistrantType
+			{
+				get
+				{
+					return registrantType;
+				}
+				set	
+				{
+					registrantType = value;
+				}
+			}
+
+			public string Country
+			{
+				get
+				{
+					return country;
+				}
+				set	
+				{
+					country = value;
+				}
+			}
+
+			public string RegistrantName
+			{
+				get
+				{
+					return registrantName;
+				}
+				set	
+				{
+					registrantName = value;
+				}
+			}
+
+			public int? EmailVerificationStatus
+			{
+				get
+				{
+					return emailVerificationStatus;
+				}
+				set	
+				{
+					emailVerificationStatus = value;
+				}
+			}
+
+			public string ZhAddress
+			{
+				get
+				{
+					return zhAddress;
+				}
+				set	
+				{
+					zhAddress = value;
+				}
+			}
+
+			public string Province
+			{
+				get
+				{
+					return province;
+				}
+				set	
+				{
+					province = value;
 				}
 			}
 		}

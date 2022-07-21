@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,19 +25,43 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class GetOperationOssUploadPolicyResponse : AcsResponse
 	{
 
+		private string fileDir;
+
+		private string encodedPolicy;
+
 		private string requestId;
 
 		private string accessid;
 
-		private string encodedPolicy;
-
 		private string signature;
-
-		private string fileDir;
 
 		private string host;
 
 		private string expireTime;
+
+		public string FileDir
+		{
+			get
+			{
+				return fileDir;
+			}
+			set	
+			{
+				fileDir = value;
+			}
+		}
+
+		public string EncodedPolicy
+		{
+			get
+			{
+				return encodedPolicy;
+			}
+			set	
+			{
+				encodedPolicy = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -63,18 +87,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string EncodedPolicy
-		{
-			get
-			{
-				return encodedPolicy;
-			}
-			set	
-			{
-				encodedPolicy = value;
-			}
-		}
-
 		public string Signature
 		{
 			get
@@ -84,18 +96,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				signature = value;
-			}
-		}
-
-		public string FileDir
-		{
-			get
-			{
-				return fileDir;
-			}
-			set	
-			{
-				fileDir = value;
 			}
 		}
 

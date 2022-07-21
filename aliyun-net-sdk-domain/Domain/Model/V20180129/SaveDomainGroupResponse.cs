@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,21 +25,45 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class SaveDomainGroupResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private long? domainGroupId;
-
-		private string domainGroupName;
-
-		private int? totalNumber;
+		private bool? beingDeleted;
 
 		private string creationDate;
+
+		private string requestId;
+
+		private string domainGroupName;
 
 		private string modificationDate;
 
 		private string domainGroupStatus;
 
-		private bool? beingDeleted;
+		private long? domainGroupId;
+
+		private int? totalNumber;
+
+		public bool? BeingDeleted
+		{
+			get
+			{
+				return beingDeleted;
+			}
+			set	
+			{
+				beingDeleted = value;
+			}
+		}
+
+		public string CreationDate
+		{
+			get
+			{
+				return creationDate;
+			}
+			set	
+			{
+				creationDate = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -53,18 +77,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public long? DomainGroupId
-		{
-			get
-			{
-				return domainGroupId;
-			}
-			set	
-			{
-				domainGroupId = value;
-			}
-		}
-
 		public string DomainGroupName
 		{
 			get
@@ -74,30 +86,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				domainGroupName = value;
-			}
-		}
-
-		public int? TotalNumber
-		{
-			get
-			{
-				return totalNumber;
-			}
-			set	
-			{
-				totalNumber = value;
-			}
-		}
-
-		public string CreationDate
-		{
-			get
-			{
-				return creationDate;
-			}
-			set	
-			{
-				creationDate = value;
 			}
 		}
 
@@ -125,15 +113,27 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public bool? BeingDeleted
+		public long? DomainGroupId
 		{
 			get
 			{
-				return beingDeleted;
+				return domainGroupId;
 			}
 			set	
 			{
-				beingDeleted = value;
+				domainGroupId = value;
+			}
+		}
+
+		public int? TotalNumber
+		{
+			get
+			{
+				return totalNumber;
+			}
+			set	
+			{
+				totalNumber = value;
 			}
 		}
 	}

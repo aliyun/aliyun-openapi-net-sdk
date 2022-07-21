@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,37 +25,37 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class QueryServerLockResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string startDate;
 
 		private string gmtCreate;
 
-		private string gmtModified;
+		private string requestId;
 
-		private string userId;
+		private string expireDate;
 
 		private string domainName;
 
+		private string userId;
+
+		private string gmtModified;
+
 		private string domainInstanceId;
-
-		private string lockProductId;
-
-		private string startDate;
-
-		private string expireDate;
 
 		private string lockInstanceId;
 
 		private int? serverLockStatus;
 
-		public string RequestId
+		private string lockProductId;
+
+		public string StartDate
 		{
 			get
 			{
-				return requestId;
+				return startDate;
 			}
 			set	
 			{
-				requestId = value;
+				startDate = value;
 			}
 		}
 
@@ -71,27 +71,27 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string GmtModified
+		public string RequestId
 		{
 			get
 			{
-				return gmtModified;
+				return requestId;
 			}
 			set	
 			{
-				gmtModified = value;
+				requestId = value;
 			}
 		}
 
-		public string UserId
+		public string ExpireDate
 		{
 			get
 			{
-				return userId;
+				return expireDate;
 			}
 			set	
 			{
-				userId = value;
+				expireDate = value;
 			}
 		}
 
@@ -107,6 +107,30 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		public string UserId
+		{
+			get
+			{
+				return userId;
+			}
+			set	
+			{
+				userId = value;
+			}
+		}
+
+		public string GmtModified
+		{
+			get
+			{
+				return gmtModified;
+			}
+			set	
+			{
+				gmtModified = value;
+			}
+		}
+
 		public string DomainInstanceId
 		{
 			get
@@ -116,42 +140,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				domainInstanceId = value;
-			}
-		}
-
-		public string LockProductId
-		{
-			get
-			{
-				return lockProductId;
-			}
-			set	
-			{
-				lockProductId = value;
-			}
-		}
-
-		public string StartDate
-		{
-			get
-			{
-				return startDate;
-			}
-			set	
-			{
-				startDate = value;
-			}
-		}
-
-		public string ExpireDate
-		{
-			get
-			{
-				return expireDate;
-			}
-			set	
-			{
-				expireDate = value;
 			}
 		}
 
@@ -176,6 +164,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				serverLockStatus = value;
+			}
+		}
+
+		public string LockProductId
+		{
+			get
+			{
+				return lockProductId;
+			}
+			set	
+			{
+				lockProductId = value;
 			}
 		}
 	}

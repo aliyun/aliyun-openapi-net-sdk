@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -27,17 +27,17 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string requestId;
 
-		private string domainName;
-
 		private string avail;
-
-		private string premium;
-
-		private string reason;
 
 		private long? price;
 
+		private string domainName;
+
+		private string premium;
+
 		private bool? dynamicCheck;
+
+		private string reason;
 
 		public string RequestId
 		{
@@ -48,18 +48,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
 			}
 		}
 
@@ -75,30 +63,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string Premium
-		{
-			get
-			{
-				return premium;
-			}
-			set	
-			{
-				premium = value;
-			}
-		}
-
-		public string Reason
-		{
-			get
-			{
-				return reason;
-			}
-			set	
-			{
-				reason = value;
-			}
-		}
-
 		public long? Price
 		{
 			get
@@ -111,6 +75,30 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+			}
+		}
+
+		public string Premium
+		{
+			get
+			{
+				return premium;
+			}
+			set	
+			{
+				premium = value;
+			}
+		}
+
 		public bool? DynamicCheck
 		{
 			get
@@ -120,6 +108,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				dynamicCheck = value;
+			}
+		}
+
+		public string Reason
+		{
+			get
+			{
+				return reason;
+			}
+			set	
+			{
+				reason = value;
 			}
 		}
 	}

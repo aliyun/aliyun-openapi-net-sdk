@@ -31,13 +31,13 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			QueryDomainRealNameVerificationInfoResponse queryDomainRealNameVerificationInfoResponse = new QueryDomainRealNameVerificationInfoResponse();
 
 			queryDomainRealNameVerificationInfoResponse.HttpResponse = _ctx.HttpResponse;
-			queryDomainRealNameVerificationInfoResponse.RequestId = _ctx.StringValue("QueryDomainRealNameVerificationInfo.RequestId");
-			queryDomainRealNameVerificationInfoResponse.SubmissionDate = _ctx.StringValue("QueryDomainRealNameVerificationInfo.SubmissionDate");
-			queryDomainRealNameVerificationInfoResponse.IdentityCredential = _ctx.StringValue("QueryDomainRealNameVerificationInfo.IdentityCredential");
-			queryDomainRealNameVerificationInfoResponse.IdentityCredentialNo = _ctx.StringValue("QueryDomainRealNameVerificationInfo.IdentityCredentialNo");
 			queryDomainRealNameVerificationInfoResponse.IdentityCredentialType = _ctx.StringValue("QueryDomainRealNameVerificationInfo.IdentityCredentialType");
-			queryDomainRealNameVerificationInfoResponse.DomainName = _ctx.StringValue("QueryDomainRealNameVerificationInfo.DomainName");
+			queryDomainRealNameVerificationInfoResponse.RequestId = _ctx.StringValue("QueryDomainRealNameVerificationInfo.RequestId");
 			queryDomainRealNameVerificationInfoResponse.InstanceId = _ctx.StringValue("QueryDomainRealNameVerificationInfo.InstanceId");
+			queryDomainRealNameVerificationInfoResponse.DomainName = _ctx.StringValue("QueryDomainRealNameVerificationInfo.DomainName");
+			queryDomainRealNameVerificationInfoResponse.IdentityCredential = _ctx.StringValue("QueryDomainRealNameVerificationInfo.IdentityCredential");
+			queryDomainRealNameVerificationInfoResponse.SubmissionDate = _ctx.StringValue("QueryDomainRealNameVerificationInfo.SubmissionDate");
+			queryDomainRealNameVerificationInfoResponse.IdentityCredentialNo = _ctx.StringValue("QueryDomainRealNameVerificationInfo.IdentityCredentialNo");
 			queryDomainRealNameVerificationInfoResponse.IdentityCredentialUrl = _ctx.StringValue("QueryDomainRealNameVerificationInfo.IdentityCredentialUrl");
         
 			return queryDomainRealNameVerificationInfoResponse;

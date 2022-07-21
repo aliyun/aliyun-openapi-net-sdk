@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,43 +25,31 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class ListEmailVerificationResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? totalItemNum;
+		private bool? prePage;
 
 		private int? currentPageNum;
 
-		private int? totalPageNum;
+		private string requestId;
 
 		private int? pageSize;
 
-		private bool? prePage;
+		private int? totalPageNum;
+
+		private int? totalItemNum;
 
 		private bool? nextPage;
 
 		private List<ListEmailVerification_EmailVerification> data;
 
-		public string RequestId
+		public bool? PrePage
 		{
 			get
 			{
-				return requestId;
+				return prePage;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalItemNum
-		{
-			get
-			{
-				return totalItemNum;
-			}
-			set	
-			{
-				totalItemNum = value;
+				prePage = value;
 			}
 		}
 
@@ -77,15 +65,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public int? TotalPageNum
+		public string RequestId
 		{
 			get
 			{
-				return totalPageNum;
+				return requestId;
 			}
 			set	
 			{
-				totalPageNum = value;
+				requestId = value;
 			}
 		}
 
@@ -101,15 +89,27 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public bool? PrePage
+		public int? TotalPageNum
 		{
 			get
 			{
-				return prePage;
+				return totalPageNum;
 			}
 			set	
 			{
-				prePage = value;
+				totalPageNum = value;
+			}
+		}
+
+		public int? TotalItemNum
+		{
+			get
+			{
+				return totalItemNum;
+			}
+			set	
+			{
+				totalItemNum = value;
 			}
 		}
 
@@ -140,47 +140,35 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 		public class ListEmailVerification_EmailVerification
 		{
 
-			private string gmtCreate;
-
-			private string gmtModified;
+			private string verificationTime;
 
 			private string email;
 
-			private string userId;
-
 			private string emailVerificationNo;
 
-			private string tokenSendTime;
+			private string userId;
+
+			private string gmtCreate;
 
 			private int? verificationStatus;
 
-			private string verificationTime;
+			private string tokenSendTime;
 
 			private string sendIp;
 
+			private string gmtModified;
+
 			private string confirmIp;
 
-			public string GmtCreate
+			public string VerificationTime
 			{
 				get
 				{
-					return gmtCreate;
+					return verificationTime;
 				}
 				set	
 				{
-					gmtCreate = value;
-				}
-			}
-
-			public string GmtModified
-			{
-				get
-				{
-					return gmtModified;
-				}
-				set	
-				{
-					gmtModified = value;
+					verificationTime = value;
 				}
 			}
 
@@ -196,18 +184,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public string UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
-
 			public string EmailVerificationNo
 			{
 				get
@@ -220,15 +196,27 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public string TokenSendTime
+			public string UserId
 			{
 				get
 				{
-					return tokenSendTime;
+					return userId;
 				}
 				set	
 				{
-					tokenSendTime = value;
+					userId = value;
+				}
+			}
+
+			public string GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
 				}
 			}
 
@@ -244,15 +232,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public string VerificationTime
+			public string TokenSendTime
 			{
 				get
 				{
-					return verificationTime;
+					return tokenSendTime;
 				}
 				set	
 				{
-					verificationTime = value;
+					tokenSendTime = value;
 				}
 			}
 
@@ -265,6 +253,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					sendIp = value;
+				}
+			}
+
+			public string GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
 				}
 			}
 

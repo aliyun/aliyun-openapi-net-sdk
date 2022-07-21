@@ -31,17 +31,17 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			QueryServerLockResponse queryServerLockResponse = new QueryServerLockResponse();
 
 			queryServerLockResponse.HttpResponse = _ctx.HttpResponse;
-			queryServerLockResponse.RequestId = _ctx.StringValue("QueryServerLock.RequestId");
-			queryServerLockResponse.GmtCreate = _ctx.StringValue("QueryServerLock.GmtCreate");
-			queryServerLockResponse.GmtModified = _ctx.StringValue("QueryServerLock.GmtModified");
-			queryServerLockResponse.UserId = _ctx.StringValue("QueryServerLock.UserId");
-			queryServerLockResponse.DomainName = _ctx.StringValue("QueryServerLock.DomainName");
-			queryServerLockResponse.DomainInstanceId = _ctx.StringValue("QueryServerLock.DomainInstanceId");
-			queryServerLockResponse.LockProductId = _ctx.StringValue("QueryServerLock.LockProductId");
 			queryServerLockResponse.StartDate = _ctx.StringValue("QueryServerLock.StartDate");
+			queryServerLockResponse.GmtCreate = _ctx.StringValue("QueryServerLock.GmtCreate");
+			queryServerLockResponse.RequestId = _ctx.StringValue("QueryServerLock.RequestId");
 			queryServerLockResponse.ExpireDate = _ctx.StringValue("QueryServerLock.ExpireDate");
+			queryServerLockResponse.DomainName = _ctx.StringValue("QueryServerLock.DomainName");
+			queryServerLockResponse.UserId = _ctx.StringValue("QueryServerLock.UserId");
+			queryServerLockResponse.GmtModified = _ctx.StringValue("QueryServerLock.GmtModified");
+			queryServerLockResponse.DomainInstanceId = _ctx.StringValue("QueryServerLock.DomainInstanceId");
 			queryServerLockResponse.LockInstanceId = _ctx.StringValue("QueryServerLock.LockInstanceId");
 			queryServerLockResponse.ServerLockStatus = _ctx.IntegerValue("QueryServerLock.ServerLockStatus");
+			queryServerLockResponse.LockProductId = _ctx.StringValue("QueryServerLock.LockProductId");
         
 			return queryServerLockResponse;
         }

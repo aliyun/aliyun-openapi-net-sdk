@@ -31,26 +31,26 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			QueryOperationAuditInfoListResponse queryOperationAuditInfoListResponse = new QueryOperationAuditInfoListResponse();
 
 			queryOperationAuditInfoListResponse.HttpResponse = _ctx.HttpResponse;
-			queryOperationAuditInfoListResponse.RequestId = _ctx.StringValue("QueryOperationAuditInfoList.RequestId");
-			queryOperationAuditInfoListResponse.TotalItemNum = _ctx.IntegerValue("QueryOperationAuditInfoList.TotalItemNum");
-			queryOperationAuditInfoListResponse.CurrentPageNum = _ctx.IntegerValue("QueryOperationAuditInfoList.CurrentPageNum");
-			queryOperationAuditInfoListResponse.TotalPageNum = _ctx.IntegerValue("QueryOperationAuditInfoList.TotalPageNum");
-			queryOperationAuditInfoListResponse.PageSize = _ctx.IntegerValue("QueryOperationAuditInfoList.PageSize");
 			queryOperationAuditInfoListResponse.PrePage = _ctx.BooleanValue("QueryOperationAuditInfoList.PrePage");
+			queryOperationAuditInfoListResponse.CurrentPageNum = _ctx.IntegerValue("QueryOperationAuditInfoList.CurrentPageNum");
+			queryOperationAuditInfoListResponse.RequestId = _ctx.StringValue("QueryOperationAuditInfoList.RequestId");
+			queryOperationAuditInfoListResponse.PageSize = _ctx.IntegerValue("QueryOperationAuditInfoList.PageSize");
+			queryOperationAuditInfoListResponse.TotalPageNum = _ctx.IntegerValue("QueryOperationAuditInfoList.TotalPageNum");
+			queryOperationAuditInfoListResponse.TotalItemNum = _ctx.IntegerValue("QueryOperationAuditInfoList.TotalItemNum");
 			queryOperationAuditInfoListResponse.NextPage = _ctx.BooleanValue("QueryOperationAuditInfoList.NextPage");
 
 			List<QueryOperationAuditInfoListResponse.QueryOperationAuditInfoList_OperationAuditRecord> queryOperationAuditInfoListResponse_data = new List<QueryOperationAuditInfoListResponse.QueryOperationAuditInfoList_OperationAuditRecord>();
 			for (int i = 0; i < _ctx.Length("QueryOperationAuditInfoList.Data.Length"); i++) {
 				QueryOperationAuditInfoListResponse.QueryOperationAuditInfoList_OperationAuditRecord operationAuditRecord = new QueryOperationAuditInfoListResponse.QueryOperationAuditInfoList_OperationAuditRecord();
-				operationAuditRecord.Id = _ctx.LongValue("QueryOperationAuditInfoList.Data["+ i +"].Id");
-				operationAuditRecord.CreateTime = _ctx.LongValue("QueryOperationAuditInfoList.Data["+ i +"].CreateTime");
 				operationAuditRecord.UpdateTime = _ctx.LongValue("QueryOperationAuditInfoList.Data["+ i +"].UpdateTime");
-				operationAuditRecord.BusinessName = _ctx.StringValue("QueryOperationAuditInfoList.Data["+ i +"].BusinessName");
-				operationAuditRecord.DomainName = _ctx.StringValue("QueryOperationAuditInfoList.Data["+ i +"].DomainName");
-				operationAuditRecord.AuditType = _ctx.IntegerValue("QueryOperationAuditInfoList.Data["+ i +"].AuditType");
-				operationAuditRecord.AuditStatus = _ctx.IntegerValue("QueryOperationAuditInfoList.Data["+ i +"].AuditStatus");
-				operationAuditRecord.AuditInfo = _ctx.StringValue("QueryOperationAuditInfoList.Data["+ i +"].AuditInfo");
 				operationAuditRecord.Remark = _ctx.StringValue("QueryOperationAuditInfoList.Data["+ i +"].Remark");
+				operationAuditRecord.CreateTime = _ctx.LongValue("QueryOperationAuditInfoList.Data["+ i +"].CreateTime");
+				operationAuditRecord.AuditType = _ctx.IntegerValue("QueryOperationAuditInfoList.Data["+ i +"].AuditType");
+				operationAuditRecord.BusinessName = _ctx.StringValue("QueryOperationAuditInfoList.Data["+ i +"].BusinessName");
+				operationAuditRecord.AuditInfo = _ctx.StringValue("QueryOperationAuditInfoList.Data["+ i +"].AuditInfo");
+				operationAuditRecord.DomainName = _ctx.StringValue("QueryOperationAuditInfoList.Data["+ i +"].DomainName");
+				operationAuditRecord.AuditStatus = _ctx.IntegerValue("QueryOperationAuditInfoList.Data["+ i +"].AuditStatus");
+				operationAuditRecord.Id = _ctx.LongValue("QueryOperationAuditInfoList.Data["+ i +"].Id");
 
 				queryOperationAuditInfoListResponse_data.Add(operationAuditRecord);
 			}

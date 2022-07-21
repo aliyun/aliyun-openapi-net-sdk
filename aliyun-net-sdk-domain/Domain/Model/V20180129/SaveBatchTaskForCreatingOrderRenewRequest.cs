@@ -49,7 +49,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string userClientIp;
 
-		private List<OrderRenewParam> orderRenewParams = new List<OrderRenewParam>(){ };
+		private List<int?> orderRenewParams = new List<int?>(){ };
 
 		private string lang;
 
@@ -107,7 +107,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public List<OrderRenewParam> OrderRenewParams
+		public List<int?> OrderRenewParams
 		{
 			get
 			{
@@ -117,11 +117,14 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set
 			{
 				orderRenewParams = value;
-				for (int i = 0; i < orderRenewParams.Count; i++)
+				if(orderRenewParams != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"OrderRenewParam." + (i + 1) + ".SubscriptionDuration", orderRenewParams[i].SubscriptionDuration);
-					DictionaryUtil.Add(QueryParameters,"OrderRenewParam." + (i + 1) + ".CurrentExpirationDate", orderRenewParams[i].CurrentExpirationDate);
-					DictionaryUtil.Add(QueryParameters,"OrderRenewParam." + (i + 1) + ".DomainName", orderRenewParams[i].DomainName);
+					for (int depth1 = 0; depth1 < orderRenewParams.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"OrderRenewParam." + (depth1 + 1), orderRenewParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderRenewParam." + (depth1 + 1), orderRenewParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderRenewParam." + (depth1 + 1), orderRenewParams[depth1]);
+					}
 				}
 			}
 		}

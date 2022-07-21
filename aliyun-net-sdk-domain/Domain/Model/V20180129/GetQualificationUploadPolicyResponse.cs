@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,21 +25,45 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class GetQualificationUploadPolicyResponse : AcsResponse
 	{
 
+		private string policy;
+
+		private string expire;
+
 		private string requestId;
 
 		private string accessid;
 
-		private string policy;
-
 		private string signature;
-
-		private string dir;
-
-		private string prefix;
 
 		private string host;
 
-		private string expire;
+		private string prefix;
+
+		private string dir;
+
+		public string Policy
+		{
+			get
+			{
+				return policy;
+			}
+			set	
+			{
+				policy = value;
+			}
+		}
+
+		public string Expire
+		{
+			get
+			{
+				return expire;
+			}
+			set	
+			{
+				expire = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -65,18 +89,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string Policy
-		{
-			get
-			{
-				return policy;
-			}
-			set	
-			{
-				policy = value;
-			}
-		}
-
 		public string Signature
 		{
 			get
@@ -86,30 +98,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				signature = value;
-			}
-		}
-
-		public string Dir
-		{
-			get
-			{
-				return dir;
-			}
-			set	
-			{
-				dir = value;
-			}
-		}
-
-		public string Prefix
-		{
-			get
-			{
-				return prefix;
-			}
-			set	
-			{
-				prefix = value;
 			}
 		}
 
@@ -125,15 +113,27 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string Expire
+		public string Prefix
 		{
 			get
 			{
-				return expire;
+				return prefix;
 			}
 			set	
 			{
-				expire = value;
+				prefix = value;
+			}
+		}
+
+		public string Dir
+		{
+			get
+			{
+				return dir;
+			}
+			set	
+			{
+				dir = value;
 			}
 		}
 	}

@@ -57,10 +57,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set
 			{
 				taskDetailNos = value;
-				for (int i = 0; i < taskDetailNos.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TaskDetailNo." + (i + 1) , taskDetailNos[i]);
-				}
 			}
 		}
 

@@ -31,17 +31,17 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			QueryArtExtensionResponse queryArtExtensionResponse = new QueryArtExtensionResponse();
 
 			queryArtExtensionResponse.HttpResponse = _ctx.HttpResponse;
-			queryArtExtensionResponse.RequestId = _ctx.StringValue("QueryArtExtension.RequestId");
 			queryArtExtensionResponse.ObjectType = _ctx.StringValue("QueryArtExtension.ObjectType");
 			queryArtExtensionResponse.MaterialsAndTechniques = _ctx.StringValue("QueryArtExtension.MaterialsAndTechniques");
+			queryArtExtensionResponse.InscriptionsAndMarkings = _ctx.StringValue("QueryArtExtension.InscriptionsAndMarkings");
+			queryArtExtensionResponse.RequestId = _ctx.StringValue("QueryArtExtension.RequestId");
+			queryArtExtensionResponse.Reference = _ctx.StringValue("QueryArtExtension.Reference");
+			queryArtExtensionResponse.DateOrPeriod = _ctx.StringValue("QueryArtExtension.DateOrPeriod");
 			queryArtExtensionResponse.Dimensions = _ctx.StringValue("QueryArtExtension.Dimensions");
 			queryArtExtensionResponse.Title = _ctx.StringValue("QueryArtExtension.Title");
-			queryArtExtensionResponse.DateOrPeriod = _ctx.StringValue("QueryArtExtension.DateOrPeriod");
-			queryArtExtensionResponse.Maker = _ctx.StringValue("QueryArtExtension.Maker");
-			queryArtExtensionResponse.InscriptionsAndMarkings = _ctx.StringValue("QueryArtExtension.InscriptionsAndMarkings");
-			queryArtExtensionResponse.Subject = _ctx.StringValue("QueryArtExtension.Subject");
 			queryArtExtensionResponse.Features = _ctx.StringValue("QueryArtExtension.Features");
-			queryArtExtensionResponse.Reference = _ctx.StringValue("QueryArtExtension.Reference");
+			queryArtExtensionResponse.Subject = _ctx.StringValue("QueryArtExtension.Subject");
+			queryArtExtensionResponse.Maker = _ctx.StringValue("QueryArtExtension.Maker");
         
 			return queryArtExtensionResponse;
         }
