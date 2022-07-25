@@ -31,11 +31,22 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			ListCheckInstanceResultResponse listCheckInstanceResultResponse = new ListCheckInstanceResultResponse();
 
 			listCheckInstanceResultResponse.HttpResponse = _ctx.HttpResponse;
-			listCheckInstanceResultResponse.NextToken = _ctx.StringValue("ListCheckInstanceResult.NextToken");
-			listCheckInstanceResultResponse.MaxResults = _ctx.IntegerValue("ListCheckInstanceResult.MaxResults");
-			listCheckInstanceResultResponse.TotalCount = _ctx.IntegerValue("ListCheckInstanceResult.TotalCount");
 			listCheckInstanceResultResponse.RequestId = _ctx.StringValue("ListCheckInstanceResult.RequestId");
-			listCheckInstanceResultResponse.Checks = _ctx.StringValue("ListCheckInstanceResult.Checks");
+
+			List<Dictionary<string, string>> listCheckInstanceResultResponse_checks = new List<Dictionary<string, string>>();
+			for (int i = 0; i < _ctx.Length("ListCheckInstanceResult.Checks.Length"); i++) {
+				Dictionary<string, string> tmp = new Dictionary<string, string>() { };
+				foreach (var _item in _ctx.ResponseDictionary){
+					string prefix = "ListCheckInstanceResult.Checks["+ i +"].";
+					if (_item.Key.IndexOf(prefix) == 0){
+						tmp.Add(_item.Key.Substring(prefix.Length), _item.Value);
+					}
+				}
+				if (tmp.Count > 0){
+					listCheckInstanceResultResponse_checks.Add(tmp);
+				}
+			}
+			listCheckInstanceResultResponse.Checks = listCheckInstanceResultResponse_checks;
 
 			ListCheckInstanceResultResponse.ListCheckInstanceResult_PageInfo pageInfo = new ListCheckInstanceResultResponse.ListCheckInstanceResult_PageInfo();
 			pageInfo.CurrentPage = _ctx.IntegerValue("ListCheckInstanceResult.PageInfo.CurrentPage");

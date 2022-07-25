@@ -25,57 +25,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 	public class ListCheckInstanceResultResponse : AcsResponse
 	{
 
-		private string nextToken;
-
-		private int? maxResults;
-
-		private int? totalCount;
-
 		private string requestId;
-
-		private string checks;
 
 		private List<ListCheckInstanceResult_BasicDataItem> basicData;
 
 		private List<ListCheckInstanceResult_ColumnsItem> columns;
 
+		private List<Dictionary<string, string>> checks;
+
 		private ListCheckInstanceResult_PageInfo pageInfo;
-
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
 
 		public string RequestId
 		{
@@ -86,18 +44,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string Checks
-		{
-			get
-			{
-				return checks;
-			}
-			set	
-			{
-				checks = value;
 			}
 		}
 
@@ -122,6 +68,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				columns = value;
+			}
+		}
+
+		public List<Dictionary<string, string>> Checks
+		{
+			get
+			{
+				return checks;
+			}
+			set	
+			{
+				checks = value;
 			}
 		}
 
