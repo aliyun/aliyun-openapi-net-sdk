@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -56,75 +56,41 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		public class CreateParameter_Parameter
 		{
 
-			private string id;
-
-			private string name;
-
-			private string createdDate;
-
-			private string createdBy;
+			private string type;
 
 			private string updatedDate;
 
 			private string updatedBy;
 
+			private string tags;
+
 			private string description;
-
-			private string shareType;
-
-			private int? parameterVersion;
-
-			private string type;
 
 			private string constraints;
 
-			private string tags;
+			private string resourceGroupId;
 
-			public string Id
+			private string createdBy;
+
+			private string createdDate;
+
+			private int? parameterVersion;
+
+			private string name;
+
+			private string id;
+
+			private string shareType;
+
+			public string Type
 			{
 				get
 				{
-					return id;
+					return type;
 				}
 				set	
 				{
-					id = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string CreatedDate
-			{
-				get
-				{
-					return createdDate;
-				}
-				set	
-				{
-					createdDate = value;
-				}
-			}
-
-			public string CreatedBy
-			{
-				get
-				{
-					return createdBy;
-				}
-				set	
-				{
-					createdBy = value;
+					type = value;
 				}
 			}
 
@@ -152,6 +118,18 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			public string Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public string Description
 			{
 				get
@@ -161,42 +139,6 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					description = value;
-				}
-			}
-
-			public string ShareType
-			{
-				get
-				{
-					return shareType;
-				}
-				set	
-				{
-					shareType = value;
-				}
-			}
-
-			public int? ParameterVersion
-			{
-				get
-				{
-					return parameterVersion;
-				}
-				set	
-				{
-					parameterVersion = value;
-				}
-			}
-
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
 				}
 			}
 
@@ -212,15 +154,87 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
-			public string Tags
+			public string ResourceGroupId
 			{
 				get
 				{
-					return tags;
+					return resourceGroupId;
 				}
 				set	
 				{
-					tags = value;
+					resourceGroupId = value;
+				}
+			}
+
+			public string CreatedBy
+			{
+				get
+				{
+					return createdBy;
+				}
+				set	
+				{
+					createdBy = value;
+				}
+			}
+
+			public string CreatedDate
+			{
+				get
+				{
+					return createdDate;
+				}
+				set	
+				{
+					createdDate = value;
+				}
+			}
+
+			public int? ParameterVersion
+			{
+				get
+				{
+					return parameterVersion;
+				}
+				set	
+				{
+					parameterVersion = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string ShareType
+			{
+				get
+				{
+					return shareType;
+				}
+				set	
+				{
+					shareType = value;
 				}
 			}
 		}

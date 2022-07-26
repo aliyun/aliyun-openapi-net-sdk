@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class ListTemplatesRequest : RpcAcsRequest<ListTemplatesResponse>
     {
         public ListTemplatesRequest()
-            : base("oos", "2019-06-01", "ListTemplates")
+            : base("oos", "2019-06-01", "ListTemplates", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,6 +40,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
             }
 			Method = MethodType.POST;
         }
+
+		private string resourceGroupId;
 
 		private string createdDateBefore;
 
@@ -70,6 +71,21 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string category;
 
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "CreatedDateBefore")]
 		public string CreatedDateBefore
 		{
 			get
@@ -83,6 +99,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "CreatedBy")]
 		public string CreatedBy
 		{
 			get
@@ -96,6 +113,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -109,6 +127,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "TemplateType")]
 		public string TemplateType
 		{
 			get
@@ -122,6 +141,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "TemplateName")]
 		public string TemplateName
 		{
 			get
@@ -135,6 +155,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "SortOrder")]
 		public string SortOrder
 		{
 			get
@@ -148,6 +169,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ShareType")]
 		public string ShareType
 		{
 			get
@@ -161,6 +183,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "HasTrigger")]
 		public bool? HasTrigger
 		{
 			get
@@ -174,6 +197,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "CreatedDateAfter")]
 		public string CreatedDateAfter
 		{
 			get
@@ -187,6 +211,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tags")]
 		public Dictionary<object,object> Tags
 		{
 			get
@@ -200,6 +225,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxResults")]
 		public int? MaxResults
 		{
 			get
@@ -213,6 +239,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "TemplateFormat")]
 		public string TemplateFormat
 		{
 			get
@@ -226,6 +253,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "SortField")]
 		public string SortField
 		{
 			get
@@ -239,6 +267,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Category")]
 		public string Category
 		{
 			get

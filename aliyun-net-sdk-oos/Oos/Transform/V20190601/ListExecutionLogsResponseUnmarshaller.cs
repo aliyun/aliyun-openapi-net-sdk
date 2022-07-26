@@ -31,18 +31,18 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			ListExecutionLogsResponse listExecutionLogsResponse = new ListExecutionLogsResponse();
 
 			listExecutionLogsResponse.HttpResponse = _ctx.HttpResponse;
-			listExecutionLogsResponse.RequestId = _ctx.StringValue("ListExecutionLogs.RequestId");
-			listExecutionLogsResponse.MaxResults = _ctx.IntegerValue("ListExecutionLogs.MaxResults");
 			listExecutionLogsResponse.NextToken = _ctx.StringValue("ListExecutionLogs.NextToken");
+			listExecutionLogsResponse.RequestId = _ctx.StringValue("ListExecutionLogs.RequestId");
 			listExecutionLogsResponse.IsTruncated = _ctx.BooleanValue("ListExecutionLogs.IsTruncated");
+			listExecutionLogsResponse.MaxResults = _ctx.IntegerValue("ListExecutionLogs.MaxResults");
 
 			List<ListExecutionLogsResponse.ListExecutionLogs_ExecutionLog> listExecutionLogsResponse_executionLogs = new List<ListExecutionLogsResponse.ListExecutionLogs_ExecutionLog>();
 			for (int i = 0; i < _ctx.Length("ListExecutionLogs.ExecutionLogs.Length"); i++) {
 				ListExecutionLogsResponse.ListExecutionLogs_ExecutionLog executionLog = new ListExecutionLogsResponse.ListExecutionLogs_ExecutionLog();
-				executionLog.Timestamp = _ctx.StringValue("ListExecutionLogs.ExecutionLogs["+ i +"].Timestamp");
-				executionLog.Message = _ctx.StringValue("ListExecutionLogs.ExecutionLogs["+ i +"].Message");
 				executionLog.TaskExecutionId = _ctx.StringValue("ListExecutionLogs.ExecutionLogs["+ i +"].TaskExecutionId");
+				executionLog.Message = _ctx.StringValue("ListExecutionLogs.ExecutionLogs["+ i +"].Message");
 				executionLog.LogType = _ctx.StringValue("ListExecutionLogs.ExecutionLogs["+ i +"].LogType");
+				executionLog.Timestamp = _ctx.StringValue("ListExecutionLogs.ExecutionLogs["+ i +"].Timestamp");
 
 				listExecutionLogsResponse_executionLogs.Add(executionLog);
 			}

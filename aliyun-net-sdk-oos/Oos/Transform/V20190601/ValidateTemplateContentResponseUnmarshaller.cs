@@ -31,19 +31,19 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			ValidateTemplateContentResponse validateTemplateContentResponse = new ValidateTemplateContentResponse();
 
 			validateTemplateContentResponse.HttpResponse = _ctx.HttpResponse;
+			validateTemplateContentResponse.Outputs = _ctx.StringValue("ValidateTemplateContent.Outputs");
 			validateTemplateContentResponse.RequestId = _ctx.StringValue("ValidateTemplateContent.RequestId");
 			validateTemplateContentResponse.Parameters = _ctx.StringValue("ValidateTemplateContent.Parameters");
 			validateTemplateContentResponse.RamRole = _ctx.StringValue("ValidateTemplateContent.RamRole");
-			validateTemplateContentResponse.Outputs = _ctx.StringValue("ValidateTemplateContent.Outputs");
 
 			List<ValidateTemplateContentResponse.ValidateTemplateContent_Task> validateTemplateContentResponse_tasks = new List<ValidateTemplateContentResponse.ValidateTemplateContent_Task>();
 			for (int i = 0; i < _ctx.Length("ValidateTemplateContent.Tasks.Length"); i++) {
 				ValidateTemplateContentResponse.ValidateTemplateContent_Task task = new ValidateTemplateContentResponse.ValidateTemplateContent_Task();
-				task.Name = _ctx.StringValue("ValidateTemplateContent.Tasks["+ i +"].Name");
+				task.Outputs = _ctx.StringValue("ValidateTemplateContent.Tasks["+ i +"].Outputs");
 				task.Type = _ctx.StringValue("ValidateTemplateContent.Tasks["+ i +"].Type");
 				task.Description = _ctx.StringValue("ValidateTemplateContent.Tasks["+ i +"].Description");
+				task.Name = _ctx.StringValue("ValidateTemplateContent.Tasks["+ i +"].Name");
 				task.Properties = _ctx.StringValue("ValidateTemplateContent.Tasks["+ i +"].Properties");
-				task.Outputs = _ctx.StringValue("ValidateTemplateContent.Tasks["+ i +"].Outputs");
 
 				validateTemplateContentResponse_tasks.Add(task);
 			}

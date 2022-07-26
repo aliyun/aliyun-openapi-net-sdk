@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -25,24 +25,15 @@ namespace Aliyun.Acs.oos.Model.V20190601
 	public class GetInventorySchemaResponse : AcsResponse
 	{
 
+		private string nextToken;
+
 		private string requestId;
 
-		private string nextToken;
+		private string maxResults;
 
 		private List<GetInventorySchema_Schema> schemas;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -55,6 +46,33 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "MaxResults")]
+		public string MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Schemas")]
 		public List<GetInventorySchema_Schema> Schemas
 		{
 			get
@@ -70,24 +88,13 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		public class GetInventorySchema_Schema
 		{
 
-			private string typeName;
-
 			private string version;
+
+			private string typeName;
 
 			private List<GetInventorySchema_Attribute> attributes;
 
-			public string TypeName
-			{
-				get
-				{
-					return typeName;
-				}
-				set	
-				{
-					typeName = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Version")]
 			public string Version
 			{
 				get
@@ -100,6 +107,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "TypeName")]
+			public string TypeName
+			{
+				get
+				{
+					return typeName;
+				}
+				set	
+				{
+					typeName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Attributes")]
 			public List<GetInventorySchema_Attribute> Attributes
 			{
 				get
@@ -119,6 +140,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 				private string dataType;
 
+				[JsonProperty(PropertyName = "Name")]
 				public string Name
 				{
 					get
@@ -131,6 +153,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 					}
 				}
 
+				[JsonProperty(PropertyName = "DataType")]
 				public string DataType
 				{
 					get

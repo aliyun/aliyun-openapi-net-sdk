@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -25,38 +25,15 @@ namespace Aliyun.Acs.oos.Model.V20190601
 	public class ListResourceExecutionStatusResponse : AcsResponse
 	{
 
+		private string nextToken;
+
 		private string requestId;
 
 		private int? maxResults;
 
-		private string nextToken;
-
 		private List<ListResourceExecutionStatus_Status> resourceExecutionStatus;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -69,6 +46,33 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "MaxResults")]
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ResourceExecutionStatus")]
 		public List<ListResourceExecutionStatus_Status> ResourceExecutionStatus
 		{
 			get
@@ -84,52 +88,17 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		public class ListResourceExecutionStatus_Status
 		{
 
-			private string resourceId;
-
-			private string executionTime;
+			private string outputs;
 
 			private string status;
 
-			private string outputs;
+			private string executionTime;
+
+			private string resourceId;
 
 			private string executionId;
 
-			public string ResourceId
-			{
-				get
-				{
-					return resourceId;
-				}
-				set	
-				{
-					resourceId = value;
-				}
-			}
-
-			public string ExecutionTime
-			{
-				get
-				{
-					return executionTime;
-				}
-				set	
-				{
-					executionTime = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Outputs")]
 			public string Outputs
 			{
 				get
@@ -142,6 +111,46 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Status")]
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExecutionTime")]
+			public string ExecutionTime
+			{
+				get
+				{
+					return executionTime;
+				}
+				set	
+				{
+					executionTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ResourceId")]
+			public string ResourceId
+			{
+				get
+				{
+					return resourceId;
+				}
+				set	
+				{
+					resourceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExecutionId")]
 			public string ExecutionId
 			{
 				get

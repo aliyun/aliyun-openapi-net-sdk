@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private List<DescribeRegions_Region> regions;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Regions")]
 		public List<DescribeRegions_Region> Regions
 		{
 			get
@@ -56,24 +58,13 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		public class DescribeRegions_Region
 		{
 
-			private string regionId;
-
 			private string regionEndpoint;
 
 			private string localName;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+			private string regionId;
 
+			[JsonProperty(PropertyName = "RegionEndpoint")]
 			public string RegionEndpoint
 			{
 				get
@@ -86,6 +77,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "LocalName")]
 			public string LocalName
 			{
 				get
@@ -95,6 +87,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					localName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RegionId")]
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 		}

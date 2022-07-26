@@ -34,16 +34,17 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			getPatchBaselineResponse.RequestId = _ctx.StringValue("GetPatchBaseline.RequestId");
 
 			GetPatchBaselineResponse.GetPatchBaseline_PatchBaseline patchBaseline = new GetPatchBaselineResponse.GetPatchBaseline_PatchBaseline();
-			patchBaseline.Id = _ctx.StringValue("GetPatchBaseline.PatchBaseline.Id");
-			patchBaseline.Name = _ctx.StringValue("GetPatchBaseline.PatchBaseline.Name");
-			patchBaseline.CreatedDate = _ctx.StringValue("GetPatchBaseline.PatchBaseline.CreatedDate");
-			patchBaseline.CreatedBy = _ctx.StringValue("GetPatchBaseline.PatchBaseline.CreatedBy");
+			patchBaseline.OperationSystem = _ctx.StringValue("GetPatchBaseline.PatchBaseline.OperationSystem");
+			patchBaseline.IsDefault = _ctx.BooleanValue("GetPatchBaseline.PatchBaseline.IsDefault");
+			patchBaseline.Description = _ctx.StringValue("GetPatchBaseline.PatchBaseline.Description");
 			patchBaseline.UpdatedDate = _ctx.StringValue("GetPatchBaseline.PatchBaseline.UpdatedDate");
 			patchBaseline.UpdatedBy = _ctx.StringValue("GetPatchBaseline.PatchBaseline.UpdatedBy");
-			patchBaseline.Description = _ctx.StringValue("GetPatchBaseline.PatchBaseline.Description");
-			patchBaseline.ShareType = _ctx.StringValue("GetPatchBaseline.PatchBaseline.ShareType");
-			patchBaseline.OperationSystem = _ctx.StringValue("GetPatchBaseline.PatchBaseline.OperationSystem");
+			patchBaseline.CreatedBy = _ctx.StringValue("GetPatchBaseline.PatchBaseline.CreatedBy");
+			patchBaseline.CreatedDate = _ctx.StringValue("GetPatchBaseline.PatchBaseline.CreatedDate");
+			patchBaseline.Name = _ctx.StringValue("GetPatchBaseline.PatchBaseline.Name");
 			patchBaseline.ApprovalRules = _ctx.StringValue("GetPatchBaseline.PatchBaseline.ApprovalRules");
+			patchBaseline.Id = _ctx.StringValue("GetPatchBaseline.PatchBaseline.Id");
+			patchBaseline.ShareType = _ctx.StringValue("GetPatchBaseline.PatchBaseline.ShareType");
 			getPatchBaselineResponse.PatchBaseline = patchBaseline;
         
 			return getPatchBaselineResponse;

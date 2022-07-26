@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class ListStateConfigurationsRequest : RpcAcsRequest<ListStateConfigurationsResponse>
     {
         public ListStateConfigurationsRequest()
-            : base("oos", "2019-06-01", "ListStateConfigurations")
+            : base("oos", "2019-06-01", "ListStateConfigurations", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -46,14 +45,17 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string tags;
 
+		private string resourceGroupId;
+
 		private string templateVersion;
 
 		private string nextToken;
 
-		private string maxResults;
+		private int? maxResults;
 
 		private string templateName;
 
+		[JsonProperty(PropertyName = "StateConfigurationIds")]
 		public string StateConfigurationIds
 		{
 			get
@@ -67,6 +69,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tags")]
 		public string Tags
 		{
 			get
@@ -80,6 +83,21 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "TemplateVersion")]
 		public string TemplateVersion
 		{
 			get
@@ -93,6 +111,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -106,7 +125,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public string MaxResults
+		[JsonProperty(PropertyName = "MaxResults")]
+		public int? MaxResults
 		{
 			get
 			{
@@ -115,10 +135,11 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			set	
 			{
 				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value);
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
 			}
 		}
 
+		[JsonProperty(PropertyName = "TemplateName")]
 		public string TemplateName
 		{
 			get

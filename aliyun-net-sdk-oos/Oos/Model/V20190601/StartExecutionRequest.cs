@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class StartExecutionRequest : RpcAcsRequest<StartExecutionResponse>
     {
         public StartExecutionRequest()
-            : base("oos", "2019-06-01", "StartExecution")
+            : base("oos", "2019-06-01", "StartExecution", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -47,6 +46,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		private string description;
 
 		private string mode;
+
+		private string resourceGroupId;
 
 		private string templateVersion;
 
@@ -64,6 +65,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string parameters;
 
+		[JsonProperty(PropertyName = "ClientToken")]
 		public string ClientToken
 		{
 			get
@@ -77,6 +79,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -90,6 +93,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Mode")]
 		public string Mode
 		{
 			get
@@ -103,6 +107,21 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "TemplateVersion")]
 		public string TemplateVersion
 		{
 			get
@@ -116,6 +135,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "TemplateName")]
 		public string TemplateName
 		{
 			get
@@ -129,6 +149,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "LoopMode")]
 		public string LoopMode
 		{
 			get
@@ -142,6 +163,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "SafetyCheck")]
 		public string SafetyCheck
 		{
 			get
@@ -155,6 +177,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tags")]
 		public Dictionary<object,object> Tags
 		{
 			get
@@ -168,6 +191,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "TemplateContent")]
 		public string TemplateContent
 		{
 			get
@@ -181,6 +205,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ParentExecutionId")]
 		public string ParentExecutionId
 		{
 			get
@@ -194,6 +219,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Parameters")]
 		public string Parameters
 		{
 			get

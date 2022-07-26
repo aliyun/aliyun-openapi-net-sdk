@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private List<UpdateStateConfiguration_StateConfigurationItem> stateConfiguration;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "StateConfiguration")]
 		public List<UpdateStateConfiguration_StateConfigurationItem> StateConfiguration
 		{
 			get
@@ -56,164 +58,35 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		public class UpdateStateConfiguration_StateConfigurationItem
 		{
 
+			private string updateTime;
+
 			private string createTime;
 
-			private string description;
+			private string targets;
+
+			private string tags;
 
 			private string stateConfigurationId;
 
-			private string templateId;
+			private string scheduleExpression;
 
 			private string templateName;
 
 			private string templateVersion;
 
-			private string parameters;
-
 			private string configureMode;
 
 			private string scheduleType;
 
-			private string scheduleExpression;
+			private string parameters;
 
-			private string targets;
+			private string description;
 
-			private string updateTime;
+			private string resourceGroupId;
 
-			private string tags;
+			private string templateId;
 
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string StateConfigurationId
-			{
-				get
-				{
-					return stateConfigurationId;
-				}
-				set	
-				{
-					stateConfigurationId = value;
-				}
-			}
-
-			public string TemplateId
-			{
-				get
-				{
-					return templateId;
-				}
-				set	
-				{
-					templateId = value;
-				}
-			}
-
-			public string TemplateName
-			{
-				get
-				{
-					return templateName;
-				}
-				set	
-				{
-					templateName = value;
-				}
-			}
-
-			public string TemplateVersion
-			{
-				get
-				{
-					return templateVersion;
-				}
-				set	
-				{
-					templateVersion = value;
-				}
-			}
-
-			public string Parameters
-			{
-				get
-				{
-					return parameters;
-				}
-				set	
-				{
-					parameters = value;
-				}
-			}
-
-			public string ConfigureMode
-			{
-				get
-				{
-					return configureMode;
-				}
-				set	
-				{
-					configureMode = value;
-				}
-			}
-
-			public string ScheduleType
-			{
-				get
-				{
-					return scheduleType;
-				}
-				set	
-				{
-					scheduleType = value;
-				}
-			}
-
-			public string ScheduleExpression
-			{
-				get
-				{
-					return scheduleExpression;
-				}
-				set	
-				{
-					scheduleExpression = value;
-				}
-			}
-
-			public string Targets
-			{
-				get
-				{
-					return targets;
-				}
-				set	
-				{
-					targets = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "UpdateTime")]
 			public string UpdateTime
 			{
 				get
@@ -226,6 +99,33 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "CreateTime")]
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Targets")]
+			public string Targets
+			{
+				get
+				{
+					return targets;
+				}
+				set	
+				{
+					targets = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Tags")]
 			public string Tags
 			{
 				get
@@ -235,6 +135,136 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					tags = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StateConfigurationId")]
+			public string StateConfigurationId
+			{
+				get
+				{
+					return stateConfigurationId;
+				}
+				set	
+				{
+					stateConfigurationId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ScheduleExpression")]
+			public string ScheduleExpression
+			{
+				get
+				{
+					return scheduleExpression;
+				}
+				set	
+				{
+					scheduleExpression = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TemplateName")]
+			public string TemplateName
+			{
+				get
+				{
+					return templateName;
+				}
+				set	
+				{
+					templateName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TemplateVersion")]
+			public string TemplateVersion
+			{
+				get
+				{
+					return templateVersion;
+				}
+				set	
+				{
+					templateVersion = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ConfigureMode")]
+			public string ConfigureMode
+			{
+				get
+				{
+					return configureMode;
+				}
+				set	
+				{
+					configureMode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ScheduleType")]
+			public string ScheduleType
+			{
+				get
+				{
+					return scheduleType;
+				}
+				set	
+				{
+					scheduleType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Parameters")]
+			public string Parameters
+			{
+				get
+				{
+					return parameters;
+				}
+				set	
+				{
+					parameters = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Description")]
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ResourceGroupId")]
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TemplateId")]
+			public string TemplateId
+			{
+				get
+				{
+					return templateId;
+				}
+				set	
+				{
+					templateId = value;
 				}
 			}
 		}

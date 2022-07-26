@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -56,71 +56,47 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		public class CreatePatchBaseline_PatchBaseline
 		{
 
-			private string id;
+			private string operationSystem;
 
-			private string name;
-
-			private string createdDate;
-
-			private string createdBy;
+			private string description;
 
 			private string updatedDate;
 
 			private string updatedBy;
 
-			private string description;
+			private string createdBy;
 
-			private string shareType;
+			private string createdDate;
 
-			private string operationSystem;
+			private string name;
 
 			private string approvalRules;
 
-			public string Id
+			private string id;
+
+			private string shareType;
+
+			public string OperationSystem
 			{
 				get
 				{
-					return id;
+					return operationSystem;
 				}
 				set	
 				{
-					id = value;
+					operationSystem = value;
 				}
 			}
 
-			public string Name
+			public string Description
 			{
 				get
 				{
-					return name;
+					return description;
 				}
 				set	
 				{
-					name = value;
-				}
-			}
-
-			public string CreatedDate
-			{
-				get
-				{
-					return createdDate;
-				}
-				set	
-				{
-					createdDate = value;
-				}
-			}
-
-			public string CreatedBy
-			{
-				get
-				{
-					return createdBy;
-				}
-				set	
-				{
-					createdBy = value;
+					description = value;
 				}
 			}
 
@@ -148,39 +124,39 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
-			public string Description
+			public string CreatedBy
 			{
 				get
 				{
-					return description;
+					return createdBy;
 				}
 				set	
 				{
-					description = value;
+					createdBy = value;
 				}
 			}
 
-			public string ShareType
+			public string CreatedDate
 			{
 				get
 				{
-					return shareType;
+					return createdDate;
 				}
 				set	
 				{
-					shareType = value;
+					createdDate = value;
 				}
 			}
 
-			public string OperationSystem
+			public string Name
 			{
 				get
 				{
-					return operationSystem;
+					return name;
 				}
 				set	
 				{
-					operationSystem = value;
+					name = value;
 				}
 			}
 
@@ -193,6 +169,30 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					approvalRules = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string ShareType
+			{
+				get
+				{
+					return shareType;
+				}
+				set	
+				{
+					shareType = value;
 				}
 			}
 		}

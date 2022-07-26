@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private GetPatchBaseline_PatchBaseline patchBaseline;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "PatchBaseline")]
 		public GetPatchBaseline_PatchBaseline PatchBaseline
 		{
 			get
@@ -56,122 +58,29 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		public class GetPatchBaseline_PatchBaseline
 		{
 
-			private string id;
+			private string operationSystem;
 
-			private string name;
+			private bool? isDefault;
 
-			private string createdDate;
-
-			private string createdBy;
+			private string description;
 
 			private string updatedDate;
 
 			private string updatedBy;
 
-			private string description;
+			private string createdBy;
 
-			private string shareType;
+			private string createdDate;
 
-			private string operationSystem;
+			private string name;
 
 			private string approvalRules;
 
-			public string Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private string id;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private string shareType;
 
-			public string CreatedDate
-			{
-				get
-				{
-					return createdDate;
-				}
-				set	
-				{
-					createdDate = value;
-				}
-			}
-
-			public string CreatedBy
-			{
-				get
-				{
-					return createdBy;
-				}
-				set	
-				{
-					createdBy = value;
-				}
-			}
-
-			public string UpdatedDate
-			{
-				get
-				{
-					return updatedDate;
-				}
-				set	
-				{
-					updatedDate = value;
-				}
-			}
-
-			public string UpdatedBy
-			{
-				get
-				{
-					return updatedBy;
-				}
-				set	
-				{
-					updatedBy = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string ShareType
-			{
-				get
-				{
-					return shareType;
-				}
-				set	
-				{
-					shareType = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "OperationSystem")]
 			public string OperationSystem
 			{
 				get
@@ -184,6 +93,98 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "IsDefault")]
+			public bool? IsDefault
+			{
+				get
+				{
+					return isDefault;
+				}
+				set	
+				{
+					isDefault = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Description")]
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UpdatedDate")]
+			public string UpdatedDate
+			{
+				get
+				{
+					return updatedDate;
+				}
+				set	
+				{
+					updatedDate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UpdatedBy")]
+			public string UpdatedBy
+			{
+				get
+				{
+					return updatedBy;
+				}
+				set	
+				{
+					updatedBy = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreatedBy")]
+			public string CreatedBy
+			{
+				get
+				{
+					return createdBy;
+				}
+				set	
+				{
+					createdBy = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreatedDate")]
+			public string CreatedDate
+			{
+				get
+				{
+					return createdDate;
+				}
+				set	
+				{
+					createdDate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Name")]
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ApprovalRules")]
 			public string ApprovalRules
 			{
 				get
@@ -193,6 +194,32 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					approvalRules = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Id")]
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ShareType")]
+			public string ShareType
+			{
+				get
+				{
+					return shareType;
+				}
+				set	
+				{
+					shareType = value;
 				}
 			}
 		}

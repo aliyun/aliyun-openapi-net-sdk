@@ -31,23 +31,24 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			CreateTemplateResponse createTemplateResponse = new CreateTemplateResponse();
 
 			createTemplateResponse.HttpResponse = _ctx.HttpResponse;
-			createTemplateResponse.RequestId = _ctx.StringValue("CreateTemplate.RequestId");
 			createTemplateResponse.TemplateType = _ctx.StringValue("CreateTemplate.TemplateType");
+			createTemplateResponse.RequestId = _ctx.StringValue("CreateTemplate.RequestId");
 
 			CreateTemplateResponse.CreateTemplate_Template template = new CreateTemplateResponse.CreateTemplate_Template();
-			template.TemplateName = _ctx.StringValue("CreateTemplate.Template.TemplateName");
-			template.TemplateId = _ctx.StringValue("CreateTemplate.Template.TemplateId");
-			template.CreatedDate = _ctx.StringValue("CreateTemplate.Template.CreatedDate");
-			template.CreatedBy = _ctx.StringValue("CreateTemplate.Template.CreatedBy");
+			template.Hash = _ctx.StringValue("CreateTemplate.Template.Hash");
 			template.UpdatedDate = _ctx.StringValue("CreateTemplate.Template.UpdatedDate");
 			template.UpdatedBy = _ctx.StringValue("CreateTemplate.Template.UpdatedBy");
-			template.Hash = _ctx.StringValue("CreateTemplate.Template.Hash");
-			template.Description = _ctx.StringValue("CreateTemplate.Template.Description");
-			template.ShareType = _ctx.StringValue("CreateTemplate.Template.ShareType");
-			template.TemplateFormat = _ctx.StringValue("CreateTemplate.Template.TemplateFormat");
-			template.TemplateVersion = _ctx.StringValue("CreateTemplate.Template.TemplateVersion");
-			template.HasTrigger = _ctx.BooleanValue("CreateTemplate.Template.HasTrigger");
 			template.Tags = _ctx.StringValue("CreateTemplate.Template.Tags");
+			template.TemplateName = _ctx.StringValue("CreateTemplate.Template.TemplateName");
+			template.TemplateVersion = _ctx.StringValue("CreateTemplate.Template.TemplateVersion");
+			template.TemplateFormat = _ctx.StringValue("CreateTemplate.Template.TemplateFormat");
+			template.Description = _ctx.StringValue("CreateTemplate.Template.Description");
+			template.ResourceGroupId = _ctx.StringValue("CreateTemplate.Template.ResourceGroupId");
+			template.CreatedBy = _ctx.StringValue("CreateTemplate.Template.CreatedBy");
+			template.CreatedDate = _ctx.StringValue("CreateTemplate.Template.CreatedDate");
+			template.TemplateId = _ctx.StringValue("CreateTemplate.Template.TemplateId");
+			template.HasTrigger = _ctx.BooleanValue("CreateTemplate.Template.HasTrigger");
+			template.ShareType = _ctx.StringValue("CreateTemplate.Template.ShareType");
 			createTemplateResponse.Template = template;
         
 			return createTemplateResponse;

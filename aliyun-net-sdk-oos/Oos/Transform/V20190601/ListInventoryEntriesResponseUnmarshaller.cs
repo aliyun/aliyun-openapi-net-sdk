@@ -31,13 +31,13 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			ListInventoryEntriesResponse listInventoryEntriesResponse = new ListInventoryEntriesResponse();
 
 			listInventoryEntriesResponse.HttpResponse = _ctx.HttpResponse;
-			listInventoryEntriesResponse.RequestId = _ctx.StringValue("ListInventoryEntries.RequestId");
 			listInventoryEntriesResponse.NextToken = _ctx.StringValue("ListInventoryEntries.NextToken");
-			listInventoryEntriesResponse.InstanceId = _ctx.StringValue("ListInventoryEntries.InstanceId");
-			listInventoryEntriesResponse.CaptureTime = _ctx.StringValue("ListInventoryEntries.CaptureTime");
-			listInventoryEntriesResponse.TypeName = _ctx.StringValue("ListInventoryEntries.TypeName");
+			listInventoryEntriesResponse.RequestId = _ctx.StringValue("ListInventoryEntries.RequestId");
 			listInventoryEntriesResponse.SchemaVersion = _ctx.StringValue("ListInventoryEntries.SchemaVersion");
 			listInventoryEntriesResponse.MaxResults = _ctx.IntegerValue("ListInventoryEntries.MaxResults");
+			listInventoryEntriesResponse.CaptureTime = _ctx.StringValue("ListInventoryEntries.CaptureTime");
+			listInventoryEntriesResponse.TypeName = _ctx.StringValue("ListInventoryEntries.TypeName");
+			listInventoryEntriesResponse.InstanceId = _ctx.StringValue("ListInventoryEntries.InstanceId");
 
 			List<Dictionary<string, string>> listInventoryEntriesResponse_entries = new List<Dictionary<string, string>>();
 			for (int i = 0; i < _ctx.Length("ListInventoryEntries.Entries.Length"); i++) {

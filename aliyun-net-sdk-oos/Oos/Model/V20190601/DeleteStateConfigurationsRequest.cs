@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class DeleteStateConfigurationsRequest : RpcAcsRequest<DeleteStateConfigurationsResponse>
     {
         public DeleteStateConfigurationsRequest()
-            : base("oos", "2019-06-01", "DeleteStateConfigurations")
+            : base("oos", "2019-06-01", "DeleteStateConfigurations", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -46,6 +45,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string clientToken;
 
+		[JsonProperty(PropertyName = "StateConfigurationIds")]
 		public string StateConfigurationIds
 		{
 			get
@@ -59,6 +59,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ClientToken")]
 		public string ClientToken
 		{
 			get

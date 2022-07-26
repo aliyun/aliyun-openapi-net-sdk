@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class TriggerExecutionRequest : RpcAcsRequest<TriggerExecutionResponse>
     {
         public TriggerExecutionRequest()
-            : base("oos", "2019-06-01", "TriggerExecution")
+            : base("oos", "2019-06-01", "TriggerExecution", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -50,6 +49,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string executionId;
 
+		[JsonProperty(PropertyName = "ClientToken")]
 		public string ClientToken
 		{
 			get
@@ -63,6 +63,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Type")]
 		public string Type
 		{
 			get
@@ -76,6 +77,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Content")]
 		public string Content
 		{
 			get
@@ -89,6 +91,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ExecutionId")]
 		public string ExecutionId
 		{
 			get

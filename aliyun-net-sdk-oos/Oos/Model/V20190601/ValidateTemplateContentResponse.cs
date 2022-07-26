@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -25,52 +25,17 @@ namespace Aliyun.Acs.oos.Model.V20190601
 	public class ValidateTemplateContentResponse : AcsResponse
 	{
 
+		private string outputs;
+
 		private string requestId;
 
 		private string parameters;
 
 		private string ramRole;
 
-		private string outputs;
-
 		private List<ValidateTemplateContent_Task> tasks;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string Parameters
-		{
-			get
-			{
-				return parameters;
-			}
-			set	
-			{
-				parameters = value;
-			}
-		}
-
-		public string RamRole
-		{
-			get
-			{
-				return ramRole;
-			}
-			set	
-			{
-				ramRole = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Outputs")]
 		public string Outputs
 		{
 			get
@@ -83,6 +48,46 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Parameters")]
+		public string Parameters
+		{
+			get
+			{
+				return parameters;
+			}
+			set	
+			{
+				parameters = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RamRole")]
+		public string RamRole
+		{
+			get
+			{
+				return ramRole;
+			}
+			set	
+			{
+				ramRole = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Tasks")]
 		public List<ValidateTemplateContent_Task> Tasks
 		{
 			get
@@ -98,28 +103,30 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		public class ValidateTemplateContent_Task
 		{
 
-			private string name;
+			private string outputs;
 
 			private string type;
 
 			private string description;
 
+			private string name;
+
 			private string properties;
 
-			private string outputs;
-
-			public string Name
+			[JsonProperty(PropertyName = "Outputs")]
+			public string Outputs
 			{
 				get
 				{
-					return name;
+					return outputs;
 				}
 				set	
 				{
-					name = value;
+					outputs = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "Type")]
 			public string Type
 			{
 				get
@@ -132,6 +139,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Description")]
 			public string Description
 			{
 				get
@@ -144,6 +152,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Name")]
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Properties")]
 			public string Properties
 			{
 				get
@@ -153,18 +175,6 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					properties = value;
-				}
-			}
-
-			public string Outputs
-			{
-				get
-				{
-					return outputs;
-				}
-				set	
-				{
-					outputs = value;
 				}
 			}
 		}

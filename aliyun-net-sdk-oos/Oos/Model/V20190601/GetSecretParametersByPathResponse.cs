@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -25,28 +25,17 @@ namespace Aliyun.Acs.oos.Model.V20190601
 	public class GetSecretParametersByPathResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
 
-		private int? maxResults;
+		private string requestId;
 
 		private int? totalCount;
 
+		private int? maxResults;
+
 		private List<GetSecretParametersByPath_Parameter> parameters;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -59,18 +48,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public int? MaxResults
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return maxResults;
+				return requestId;
 			}
 			set	
 			{
-				maxResults = value;
+				requestId = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalCount")]
 		public int? TotalCount
 		{
 			get
@@ -83,6 +74,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxResults")]
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Parameters")]
 		public List<GetSecretParametersByPath_Parameter> Parameters
 		{
 			get
@@ -98,140 +103,33 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		public class GetSecretParametersByPath_Parameter
 		{
 
-			private string id;
-
-			private string name;
-
-			private string createdDate;
-
-			private string createdBy;
+			private string type;
 
 			private string updatedDate;
 
 			private string updatedBy;
 
-			private string description;
-
-			private string shareType;
-
-			private int? parameterVersion;
-
-			private string type;
+			private string keyId;
 
 			private string _value;
 
+			private string description;
+
 			private string constraints;
 
-			private string keyId;
+			private string createdBy;
 
-			public string Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private string createdDate;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private int? parameterVersion;
 
-			public string CreatedDate
-			{
-				get
-				{
-					return createdDate;
-				}
-				set	
-				{
-					createdDate = value;
-				}
-			}
+			private string name;
 
-			public string CreatedBy
-			{
-				get
-				{
-					return createdBy;
-				}
-				set	
-				{
-					createdBy = value;
-				}
-			}
+			private string id;
 
-			public string UpdatedDate
-			{
-				get
-				{
-					return updatedDate;
-				}
-				set	
-				{
-					updatedDate = value;
-				}
-			}
+			private string shareType;
 
-			public string UpdatedBy
-			{
-				get
-				{
-					return updatedBy;
-				}
-				set	
-				{
-					updatedBy = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string ShareType
-			{
-				get
-				{
-					return shareType;
-				}
-				set	
-				{
-					shareType = value;
-				}
-			}
-
-			public int? ParameterVersion
-			{
-				get
-				{
-					return parameterVersion;
-				}
-				set	
-				{
-					parameterVersion = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Type")]
 			public string Type
 			{
 				get
@@ -244,6 +142,46 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "UpdatedDate")]
+			public string UpdatedDate
+			{
+				get
+				{
+					return updatedDate;
+				}
+				set	
+				{
+					updatedDate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UpdatedBy")]
+			public string UpdatedBy
+			{
+				get
+				{
+					return updatedBy;
+				}
+				set	
+				{
+					updatedBy = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "KeyId")]
+			public string KeyId
+			{
+				get
+				{
+					return keyId;
+				}
+				set	
+				{
+					keyId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "_Value")]
 			public string _Value
 			{
 				get
@@ -256,6 +194,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Description")]
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Constraints")]
 			public string Constraints
 			{
 				get
@@ -268,15 +220,81 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
-			public string KeyId
+			[JsonProperty(PropertyName = "CreatedBy")]
+			public string CreatedBy
 			{
 				get
 				{
-					return keyId;
+					return createdBy;
 				}
 				set	
 				{
-					keyId = value;
+					createdBy = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreatedDate")]
+			public string CreatedDate
+			{
+				get
+				{
+					return createdDate;
+				}
+				set	
+				{
+					createdDate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ParameterVersion")]
+			public int? ParameterVersion
+			{
+				get
+				{
+					return parameterVersion;
+				}
+				set	
+				{
+					parameterVersion = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Name")]
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Id")]
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ShareType")]
+			public string ShareType
+			{
+				get
+				{
+					return shareType;
+				}
+				set	
+				{
+					shareType = value;
 				}
 			}
 		}

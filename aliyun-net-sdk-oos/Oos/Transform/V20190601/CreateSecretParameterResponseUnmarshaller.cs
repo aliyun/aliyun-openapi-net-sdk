@@ -34,19 +34,20 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			createSecretParameterResponse.RequestId = _ctx.StringValue("CreateSecretParameter.RequestId");
 
 			CreateSecretParameterResponse.CreateSecretParameter_Parameter parameter = new CreateSecretParameterResponse.CreateSecretParameter_Parameter();
-			parameter.Id = _ctx.StringValue("CreateSecretParameter.Parameter.Id");
-			parameter.Name = _ctx.StringValue("CreateSecretParameter.Parameter.Name");
-			parameter.CreatedDate = _ctx.StringValue("CreateSecretParameter.Parameter.CreatedDate");
-			parameter.CreatedBy = _ctx.StringValue("CreateSecretParameter.Parameter.CreatedBy");
+			parameter.Type = _ctx.StringValue("CreateSecretParameter.Parameter.Type");
 			parameter.UpdatedDate = _ctx.StringValue("CreateSecretParameter.Parameter.UpdatedDate");
 			parameter.UpdatedBy = _ctx.StringValue("CreateSecretParameter.Parameter.UpdatedBy");
-			parameter.Description = _ctx.StringValue("CreateSecretParameter.Parameter.Description");
-			parameter.ShareType = _ctx.StringValue("CreateSecretParameter.Parameter.ShareType");
-			parameter.ParameterVersion = _ctx.IntegerValue("CreateSecretParameter.Parameter.ParameterVersion");
-			parameter.Type = _ctx.StringValue("CreateSecretParameter.Parameter.Type");
-			parameter.Constraints = _ctx.StringValue("CreateSecretParameter.Parameter.Constraints");
 			parameter.KeyId = _ctx.StringValue("CreateSecretParameter.Parameter.KeyId");
 			parameter.Tags = _ctx.StringValue("CreateSecretParameter.Parameter.Tags");
+			parameter.Description = _ctx.StringValue("CreateSecretParameter.Parameter.Description");
+			parameter.Constraints = _ctx.StringValue("CreateSecretParameter.Parameter.Constraints");
+			parameter.ResourceGroupId = _ctx.StringValue("CreateSecretParameter.Parameter.ResourceGroupId");
+			parameter.CreatedBy = _ctx.StringValue("CreateSecretParameter.Parameter.CreatedBy");
+			parameter.CreatedDate = _ctx.StringValue("CreateSecretParameter.Parameter.CreatedDate");
+			parameter.ParameterVersion = _ctx.IntegerValue("CreateSecretParameter.Parameter.ParameterVersion");
+			parameter.Name = _ctx.StringValue("CreateSecretParameter.Parameter.Name");
+			parameter.Id = _ctx.StringValue("CreateSecretParameter.Parameter.Id");
+			parameter.ShareType = _ctx.StringValue("CreateSecretParameter.Parameter.ShareType");
 			createSecretParameterResponse.Parameter = parameter;
         
 			return createSecretParameterResponse;

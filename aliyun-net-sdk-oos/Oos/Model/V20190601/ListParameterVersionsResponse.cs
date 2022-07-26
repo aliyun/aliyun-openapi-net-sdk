@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -25,100 +25,29 @@ namespace Aliyun.Acs.oos.Model.V20190601
 	public class ListParameterVersionsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? maxResults;
+		private string type;
 
 		private string nextToken;
 
-		private int? totalCount;
-
-		private string name;
-
-		private string id;
-
-		private string type;
+		private string requestId;
 
 		private string description;
 
-		private string createdDate;
+		private int? maxResults;
 
 		private string createdBy;
 
+		private string createdDate;
+
+		private string name;
+
+		private int? totalCount;
+
+		private string id;
+
 		private List<ListParameterVersions_ParameterVersion> parameterVersions;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-			}
-		}
-
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
-
-		public string Id
-		{
-			get
-			{
-				return id;
-			}
-			set	
-			{
-				id = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Type")]
 		public string Type
 		{
 			get
@@ -131,6 +60,33 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "NextToken")]
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -143,18 +99,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public string CreatedDate
+		[JsonProperty(PropertyName = "MaxResults")]
+		public int? MaxResults
 		{
 			get
 			{
-				return createdDate;
+				return maxResults;
 			}
 			set	
 			{
-				createdDate = value;
+				maxResults = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "CreatedBy")]
 		public string CreatedBy
 		{
 			get
@@ -167,6 +125,59 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "CreatedDate")]
+		public string CreatedDate
+		{
+			get
+			{
+				return createdDate;
+			}
+			set	
+			{
+				createdDate = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Name")]
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalCount")]
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Id")]
+		public string Id
+		{
+			get
+			{
+				return id;
+			}
+			set	
+			{
+				id = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ParameterVersions")]
 		public List<ListParameterVersions_ParameterVersion> ParameterVersions
 		{
 			get
@@ -182,38 +193,15 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		public class ListParameterVersions_ParameterVersion
 		{
 
-			private string updatedDate;
-
-			private string updatedBy;
-
 			private int? parameterVersion;
 
 			private string _value;
 
-			public string UpdatedDate
-			{
-				get
-				{
-					return updatedDate;
-				}
-				set	
-				{
-					updatedDate = value;
-				}
-			}
+			private string updatedDate;
 
-			public string UpdatedBy
-			{
-				get
-				{
-					return updatedBy;
-				}
-				set	
-				{
-					updatedBy = value;
-				}
-			}
+			private string updatedBy;
 
+			[JsonProperty(PropertyName = "ParameterVersion")]
 			public int? ParameterVersion
 			{
 				get
@@ -226,6 +214,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "_Value")]
 			public string _Value
 			{
 				get
@@ -235,6 +224,32 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					_value = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UpdatedDate")]
+			public string UpdatedDate
+			{
+				get
+				{
+					return updatedDate;
+				}
+				set	
+				{
+					updatedDate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UpdatedBy")]
+			public string UpdatedBy
+			{
+				get
+				{
+					return updatedBy;
+				}
+				set	
+				{
+					updatedBy = value;
 				}
 			}
 		}

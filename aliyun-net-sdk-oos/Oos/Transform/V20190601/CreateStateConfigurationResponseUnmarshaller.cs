@@ -35,17 +35,18 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 
 			CreateStateConfigurationResponse.CreateStateConfiguration_StateConfiguration stateConfiguration = new CreateStateConfigurationResponse.CreateStateConfiguration_StateConfiguration();
 			stateConfiguration.CreateTime = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.CreateTime");
-			stateConfiguration.Description = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.Description");
-			stateConfiguration.StateConfigurationId = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.StateConfigurationId");
-			stateConfiguration.TemplateId = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.TemplateId");
-			stateConfiguration.TemplateName = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.TemplateName");
-			stateConfiguration.TemplateVersion = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.TemplateVersion");
-			stateConfiguration.Parameters = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.Parameters");
-			stateConfiguration.ConfigureMode = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.ConfigureMode");
-			stateConfiguration.ScheduleType = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.ScheduleType");
-			stateConfiguration.ScheduleExpression = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.ScheduleExpression");
 			stateConfiguration.Targets = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.Targets");
 			stateConfiguration.Tags = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.Tags");
+			stateConfiguration.StateConfigurationId = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.StateConfigurationId");
+			stateConfiguration.ScheduleExpression = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.ScheduleExpression");
+			stateConfiguration.TemplateName = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.TemplateName");
+			stateConfiguration.TemplateVersion = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.TemplateVersion");
+			stateConfiguration.ConfigureMode = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.ConfigureMode");
+			stateConfiguration.ScheduleType = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.ScheduleType");
+			stateConfiguration.Parameters = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.Parameters");
+			stateConfiguration.Description = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.Description");
+			stateConfiguration.ResourceGroupId = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.ResourceGroupId");
+			stateConfiguration.TemplateId = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.TemplateId");
 			createStateConfigurationResponse.StateConfiguration = stateConfiguration;
         
 			return createStateConfigurationResponse;

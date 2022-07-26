@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -25,26 +25,15 @@ namespace Aliyun.Acs.oos.Model.V20190601
 	public class ListInstancePatchStatesResponse : AcsResponse
 	{
 
-		private int? maxResults;
-
 		private string nextToken;
 
 		private string requestId;
 
+		private int? maxResults;
+
 		private List<ListInstancePatchStates_InstancePatchState> instancePatchStates;
 
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -57,6 +46,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -69,6 +59,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxResults")]
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "InstancePatchStates")]
 		public List<ListInstancePatchStates_InstancePatchState> InstancePatchStates
 		{
 			get
@@ -84,128 +88,33 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		public class ListInstancePatchStates_InstancePatchState
 		{
 
-			private string instanceId;
+			private string missingCount;
 
-			private string patchGroup;
-
-			private string baselineId;
+			private string operationEndTime;
 
 			private string ownerInformation;
 
-			private string installedCount;
-
 			private string installedOtherCount;
 
-			private string installedPendingRebootCount;
-
-			private string installedRejectedCount;
-
-			private string missingCount;
-
-			private string failedCount;
+			private string instanceId;
 
 			private string operationType;
 
 			private string operationStartTime;
 
-			private string operationEndTime;
+			private string failedCount;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private string baselineId;
 
-			public string PatchGroup
-			{
-				get
-				{
-					return patchGroup;
-				}
-				set	
-				{
-					patchGroup = value;
-				}
-			}
+			private string installedPendingRebootCount;
 
-			public string BaselineId
-			{
-				get
-				{
-					return baselineId;
-				}
-				set	
-				{
-					baselineId = value;
-				}
-			}
+			private string installedRejectedCount;
 
-			public string OwnerInformation
-			{
-				get
-				{
-					return ownerInformation;
-				}
-				set	
-				{
-					ownerInformation = value;
-				}
-			}
+			private string patchGroup;
 
-			public string InstalledCount
-			{
-				get
-				{
-					return installedCount;
-				}
-				set	
-				{
-					installedCount = value;
-				}
-			}
+			private string installedCount;
 
-			public string InstalledOtherCount
-			{
-				get
-				{
-					return installedOtherCount;
-				}
-				set	
-				{
-					installedOtherCount = value;
-				}
-			}
-
-			public string InstalledPendingRebootCount
-			{
-				get
-				{
-					return installedPendingRebootCount;
-				}
-				set	
-				{
-					installedPendingRebootCount = value;
-				}
-			}
-
-			public string InstalledRejectedCount
-			{
-				get
-				{
-					return installedRejectedCount;
-				}
-				set	
-				{
-					installedRejectedCount = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "MissingCount")]
 			public string MissingCount
 			{
 				get
@@ -218,18 +127,59 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
-			public string FailedCount
+			[JsonProperty(PropertyName = "OperationEndTime")]
+			public string OperationEndTime
 			{
 				get
 				{
-					return failedCount;
+					return operationEndTime;
 				}
 				set	
 				{
-					failedCount = value;
+					operationEndTime = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "OwnerInformation")]
+			public string OwnerInformation
+			{
+				get
+				{
+					return ownerInformation;
+				}
+				set	
+				{
+					ownerInformation = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstalledOtherCount")]
+			public string InstalledOtherCount
+			{
+				get
+				{
+					return installedOtherCount;
+				}
+				set	
+				{
+					installedOtherCount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceId")]
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OperationType")]
 			public string OperationType
 			{
 				get
@@ -242,6 +192,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "OperationStartTime")]
 			public string OperationStartTime
 			{
 				get
@@ -254,15 +205,81 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
-			public string OperationEndTime
+			[JsonProperty(PropertyName = "FailedCount")]
+			public string FailedCount
 			{
 				get
 				{
-					return operationEndTime;
+					return failedCount;
 				}
 				set	
 				{
-					operationEndTime = value;
+					failedCount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BaselineId")]
+			public string BaselineId
+			{
+				get
+				{
+					return baselineId;
+				}
+				set	
+				{
+					baselineId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstalledPendingRebootCount")]
+			public string InstalledPendingRebootCount
+			{
+				get
+				{
+					return installedPendingRebootCount;
+				}
+				set	
+				{
+					installedPendingRebootCount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstalledRejectedCount")]
+			public string InstalledRejectedCount
+			{
+				get
+				{
+					return installedRejectedCount;
+				}
+				set	
+				{
+					installedRejectedCount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PatchGroup")]
+			public string PatchGroup
+			{
+				get
+				{
+					return patchGroup;
+				}
+				set	
+				{
+					patchGroup = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstalledCount")]
+			public string InstalledCount
+			{
+				get
+				{
+					return installedCount;
+				}
+				set	
+				{
+					installedCount = value;
 				}
 			}
 		}

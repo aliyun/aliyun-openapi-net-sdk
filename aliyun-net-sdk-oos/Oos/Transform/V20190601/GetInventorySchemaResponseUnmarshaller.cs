@@ -31,14 +31,15 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			GetInventorySchemaResponse getInventorySchemaResponse = new GetInventorySchemaResponse();
 
 			getInventorySchemaResponse.HttpResponse = _ctx.HttpResponse;
-			getInventorySchemaResponse.RequestId = _ctx.StringValue("GetInventorySchema.RequestId");
 			getInventorySchemaResponse.NextToken = _ctx.StringValue("GetInventorySchema.NextToken");
+			getInventorySchemaResponse.RequestId = _ctx.StringValue("GetInventorySchema.RequestId");
+			getInventorySchemaResponse.MaxResults = _ctx.StringValue("GetInventorySchema.MaxResults");
 
 			List<GetInventorySchemaResponse.GetInventorySchema_Schema> getInventorySchemaResponse_schemas = new List<GetInventorySchemaResponse.GetInventorySchema_Schema>();
 			for (int i = 0; i < _ctx.Length("GetInventorySchema.Schemas.Length"); i++) {
 				GetInventorySchemaResponse.GetInventorySchema_Schema schema = new GetInventorySchemaResponse.GetInventorySchema_Schema();
-				schema.TypeName = _ctx.StringValue("GetInventorySchema.Schemas["+ i +"].TypeName");
 				schema.Version = _ctx.StringValue("GetInventorySchema.Schemas["+ i +"].Version");
+				schema.TypeName = _ctx.StringValue("GetInventorySchema.Schemas["+ i +"].TypeName");
 
 				List<GetInventorySchemaResponse.GetInventorySchema_Schema.GetInventorySchema_Attribute> schema_attributes = new List<GetInventorySchemaResponse.GetInventorySchema_Schema.GetInventorySchema_Attribute>();
 				for (int j = 0; j < _ctx.Length("GetInventorySchema.Schemas["+ i +"].Attributes.Length"); j++) {

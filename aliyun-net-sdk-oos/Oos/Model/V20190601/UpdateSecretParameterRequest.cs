@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class UpdateSecretParameterRequest : RpcAcsRequest<UpdateSecretParameterResponse>
     {
         public UpdateSecretParameterRequest()
-            : base("oos", "2019-06-01", "UpdateSecretParameter")
+            : base("oos", "2019-06-01", "UpdateSecretParameter", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -46,10 +45,13 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string tags;
 
+		private string resourceGroupId;
+
 		private string name;
 
 		private string _value;
 
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -63,6 +65,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tags")]
 		public string Tags
 		{
 			get
@@ -76,6 +79,21 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Name")]
 		public string Name
 		{
 			get
@@ -89,6 +107,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Value")]
 		public string _Value
 		{
 			get

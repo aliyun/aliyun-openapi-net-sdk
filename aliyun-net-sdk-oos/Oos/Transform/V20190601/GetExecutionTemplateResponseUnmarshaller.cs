@@ -31,22 +31,22 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			GetExecutionTemplateResponse getExecutionTemplateResponse = new GetExecutionTemplateResponse();
 
 			getExecutionTemplateResponse.HttpResponse = _ctx.HttpResponse;
-			getExecutionTemplateResponse.RequestId = _ctx.StringValue("GetExecutionTemplate.RequestId");
 			getExecutionTemplateResponse.Content = _ctx.StringValue("GetExecutionTemplate.Content");
+			getExecutionTemplateResponse.RequestId = _ctx.StringValue("GetExecutionTemplate.RequestId");
 
 			GetExecutionTemplateResponse.GetExecutionTemplate_Template template = new GetExecutionTemplateResponse.GetExecutionTemplate_Template();
-			template.TemplateName = _ctx.StringValue("GetExecutionTemplate.Template.TemplateName");
-			template.TemplateId = _ctx.StringValue("GetExecutionTemplate.Template.TemplateId");
-			template.CreatedDate = _ctx.StringValue("GetExecutionTemplate.Template.CreatedDate");
-			template.CreatedBy = _ctx.StringValue("GetExecutionTemplate.Template.CreatedBy");
+			template.Hash = _ctx.StringValue("GetExecutionTemplate.Template.Hash");
 			template.UpdatedDate = _ctx.StringValue("GetExecutionTemplate.Template.UpdatedDate");
 			template.UpdatedBy = _ctx.StringValue("GetExecutionTemplate.Template.UpdatedBy");
-			template.Hash = _ctx.StringValue("GetExecutionTemplate.Template.Hash");
-			template.Description = _ctx.StringValue("GetExecutionTemplate.Template.Description");
-			template.ShareType = _ctx.StringValue("GetExecutionTemplate.Template.ShareType");
-			template.TemplateFormat = _ctx.StringValue("GetExecutionTemplate.Template.TemplateFormat");
-			template.TemplateVersion = _ctx.StringValue("GetExecutionTemplate.Template.TemplateVersion");
 			template.Tags = _ctx.StringValue("GetExecutionTemplate.Template.Tags");
+			template.TemplateName = _ctx.StringValue("GetExecutionTemplate.Template.TemplateName");
+			template.TemplateVersion = _ctx.StringValue("GetExecutionTemplate.Template.TemplateVersion");
+			template.TemplateFormat = _ctx.StringValue("GetExecutionTemplate.Template.TemplateFormat");
+			template.Description = _ctx.StringValue("GetExecutionTemplate.Template.Description");
+			template.CreatedBy = _ctx.StringValue("GetExecutionTemplate.Template.CreatedBy");
+			template.CreatedDate = _ctx.StringValue("GetExecutionTemplate.Template.CreatedDate");
+			template.TemplateId = _ctx.StringValue("GetExecutionTemplate.Template.TemplateId");
+			template.ShareType = _ctx.StringValue("GetExecutionTemplate.Template.ShareType");
 			getExecutionTemplateResponse.Template = template;
         
 			return getExecutionTemplateResponse;

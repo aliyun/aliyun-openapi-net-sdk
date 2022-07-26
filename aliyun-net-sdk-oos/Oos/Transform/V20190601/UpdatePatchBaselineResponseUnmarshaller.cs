@@ -34,16 +34,16 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			updatePatchBaselineResponse.RequestId = _ctx.StringValue("UpdatePatchBaseline.RequestId");
 
 			UpdatePatchBaselineResponse.UpdatePatchBaseline_PatchBaseline patchBaseline = new UpdatePatchBaselineResponse.UpdatePatchBaseline_PatchBaseline();
-			patchBaseline.Id = _ctx.StringValue("UpdatePatchBaseline.PatchBaseline.Id");
-			patchBaseline.Name = _ctx.StringValue("UpdatePatchBaseline.PatchBaseline.Name");
-			patchBaseline.CreatedDate = _ctx.StringValue("UpdatePatchBaseline.PatchBaseline.CreatedDate");
-			patchBaseline.CreatedBy = _ctx.StringValue("UpdatePatchBaseline.PatchBaseline.CreatedBy");
+			patchBaseline.OperationSystem = _ctx.StringValue("UpdatePatchBaseline.PatchBaseline.OperationSystem");
+			patchBaseline.Description = _ctx.StringValue("UpdatePatchBaseline.PatchBaseline.Description");
 			patchBaseline.UpdatedDate = _ctx.StringValue("UpdatePatchBaseline.PatchBaseline.UpdatedDate");
 			patchBaseline.UpdatedBy = _ctx.StringValue("UpdatePatchBaseline.PatchBaseline.UpdatedBy");
-			patchBaseline.Description = _ctx.StringValue("UpdatePatchBaseline.PatchBaseline.Description");
-			patchBaseline.ShareType = _ctx.StringValue("UpdatePatchBaseline.PatchBaseline.ShareType");
-			patchBaseline.OperationSystem = _ctx.StringValue("UpdatePatchBaseline.PatchBaseline.OperationSystem");
+			patchBaseline.CreatedBy = _ctx.StringValue("UpdatePatchBaseline.PatchBaseline.CreatedBy");
+			patchBaseline.CreatedDate = _ctx.StringValue("UpdatePatchBaseline.PatchBaseline.CreatedDate");
+			patchBaseline.Name = _ctx.StringValue("UpdatePatchBaseline.PatchBaseline.Name");
 			patchBaseline.ApprovalRules = _ctx.StringValue("UpdatePatchBaseline.PatchBaseline.ApprovalRules");
+			patchBaseline.Id = _ctx.StringValue("UpdatePatchBaseline.PatchBaseline.Id");
+			patchBaseline.ShareType = _ctx.StringValue("UpdatePatchBaseline.PatchBaseline.ShareType");
 			updatePatchBaselineResponse.PatchBaseline = patchBaseline;
         
 			return updatePatchBaselineResponse;

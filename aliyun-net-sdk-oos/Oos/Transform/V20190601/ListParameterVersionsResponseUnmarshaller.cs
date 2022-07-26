@@ -31,24 +31,24 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			ListParameterVersionsResponse listParameterVersionsResponse = new ListParameterVersionsResponse();
 
 			listParameterVersionsResponse.HttpResponse = _ctx.HttpResponse;
-			listParameterVersionsResponse.RequestId = _ctx.StringValue("ListParameterVersions.RequestId");
-			listParameterVersionsResponse.MaxResults = _ctx.IntegerValue("ListParameterVersions.MaxResults");
-			listParameterVersionsResponse.NextToken = _ctx.StringValue("ListParameterVersions.NextToken");
-			listParameterVersionsResponse.TotalCount = _ctx.IntegerValue("ListParameterVersions.TotalCount");
-			listParameterVersionsResponse.Name = _ctx.StringValue("ListParameterVersions.Name");
-			listParameterVersionsResponse.Id = _ctx.StringValue("ListParameterVersions.Id");
 			listParameterVersionsResponse.Type = _ctx.StringValue("ListParameterVersions.Type");
+			listParameterVersionsResponse.NextToken = _ctx.StringValue("ListParameterVersions.NextToken");
+			listParameterVersionsResponse.RequestId = _ctx.StringValue("ListParameterVersions.RequestId");
 			listParameterVersionsResponse.Description = _ctx.StringValue("ListParameterVersions.Description");
-			listParameterVersionsResponse.CreatedDate = _ctx.StringValue("ListParameterVersions.CreatedDate");
+			listParameterVersionsResponse.MaxResults = _ctx.IntegerValue("ListParameterVersions.MaxResults");
 			listParameterVersionsResponse.CreatedBy = _ctx.StringValue("ListParameterVersions.CreatedBy");
+			listParameterVersionsResponse.CreatedDate = _ctx.StringValue("ListParameterVersions.CreatedDate");
+			listParameterVersionsResponse.Name = _ctx.StringValue("ListParameterVersions.Name");
+			listParameterVersionsResponse.TotalCount = _ctx.IntegerValue("ListParameterVersions.TotalCount");
+			listParameterVersionsResponse.Id = _ctx.StringValue("ListParameterVersions.Id");
 
 			List<ListParameterVersionsResponse.ListParameterVersions_ParameterVersion> listParameterVersionsResponse_parameterVersions = new List<ListParameterVersionsResponse.ListParameterVersions_ParameterVersion>();
 			for (int i = 0; i < _ctx.Length("ListParameterVersions.ParameterVersions.Length"); i++) {
 				ListParameterVersionsResponse.ListParameterVersions_ParameterVersion parameterVersion = new ListParameterVersionsResponse.ListParameterVersions_ParameterVersion();
-				parameterVersion.UpdatedDate = _ctx.StringValue("ListParameterVersions.ParameterVersions["+ i +"].UpdatedDate");
-				parameterVersion.UpdatedBy = _ctx.StringValue("ListParameterVersions.ParameterVersions["+ i +"].UpdatedBy");
 				parameterVersion.ParameterVersion = _ctx.IntegerValue("ListParameterVersions.ParameterVersions["+ i +"].ParameterVersion");
 				parameterVersion._Value = _ctx.StringValue("ListParameterVersions.ParameterVersions["+ i +"].Value");
+				parameterVersion.UpdatedDate = _ctx.StringValue("ListParameterVersions.ParameterVersions["+ i +"].UpdatedDate");
+				parameterVersion.UpdatedBy = _ctx.StringValue("ListParameterVersions.ParameterVersions["+ i +"].UpdatedBy");
 
 				listParameterVersionsResponse_parameterVersions.Add(parameterVersion);
 			}

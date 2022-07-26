@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class ListSecretParametersRequest : RpcAcsRequest<ListSecretParametersResponse>
     {
         public ListSecretParametersRequest()
-            : base("oos", "2019-06-01", "ListSecretParameters")
+            : base("oos", "2019-06-01", "ListSecretParameters", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,20 +43,23 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private bool? recursive;
 
-		private string tags;
-
 		private string path;
 
+		private string resourceGroupId;
+
 		private string nextToken;
+
+		private string sortOrder;
+
+		private string tags;
 
 		private string name;
 
 		private int? maxResults;
 
-		private string sortOrder;
-
 		private string sortField;
 
+		[JsonProperty(PropertyName = "Recursive")]
 		public bool? Recursive
 		{
 			get
@@ -71,19 +73,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "Path")]
 		public string Path
 		{
 			get
@@ -97,6 +87,21 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -110,32 +115,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
-			}
-		}
-
+		[JsonProperty(PropertyName = "SortOrder")]
 		public string SortOrder
 		{
 			get
@@ -149,6 +129,49 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tags")]
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Name")]
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "MaxResults")]
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "SortField")]
 		public string SortField
 		{
 			get

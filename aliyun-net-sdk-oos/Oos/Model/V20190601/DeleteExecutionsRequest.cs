@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class DeleteExecutionsRequest : RpcAcsRequest<DeleteExecutionsResponse>
     {
         public DeleteExecutionsRequest()
-            : base("oos", "2019-06-01", "DeleteExecutions")
+            : base("oos", "2019-06-01", "DeleteExecutions", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,6 +43,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string executionIds;
 
+		[JsonProperty(PropertyName = "ExecutionIds")]
 		public string ExecutionIds
 		{
 			get

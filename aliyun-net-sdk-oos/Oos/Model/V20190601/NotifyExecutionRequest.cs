@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class NotifyExecutionRequest : RpcAcsRequest<NotifyExecutionResponse>
     {
         public NotifyExecutionRequest()
-            : base("oos", "2019-06-01", "NotifyExecution")
+            : base("oos", "2019-06-01", "NotifyExecution", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -60,6 +59,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string parameters;
 
+		[JsonProperty(PropertyName = "TaskName")]
 		public string TaskName
 		{
 			get
@@ -73,6 +73,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ExecutionId")]
 		public string ExecutionId
 		{
 			get
@@ -86,6 +87,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "NotifyType")]
 		public string NotifyType
 		{
 			get
@@ -99,6 +101,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ExecutionStatus")]
 		public string ExecutionStatus
 		{
 			get
@@ -112,6 +115,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "NotifyNote")]
 		public string NotifyNote
 		{
 			get
@@ -125,6 +129,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "LoopItem")]
 		public string LoopItem
 		{
 			get
@@ -138,6 +143,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "TaskExecutionIds")]
 		public string TaskExecutionIds
 		{
 			get
@@ -151,6 +157,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "TaskExecutionId")]
 		public string TaskExecutionId
 		{
 			get
@@ -164,6 +171,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Parameters")]
 		public string Parameters
 		{
 			get

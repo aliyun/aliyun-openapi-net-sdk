@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -25,40 +25,17 @@ namespace Aliyun.Acs.oos.Model.V20190601
 	public class ListExecutionLogsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? maxResults;
-
 		private string nextToken;
+
+		private string requestId;
 
 		private bool? isTruncated;
 
+		private int? maxResults;
+
 		private List<ListExecutionLogs_ExecutionLog> executionLogs;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -71,6 +48,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "IsTruncated")]
 		public bool? IsTruncated
 		{
 			get
@@ -83,6 +74,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxResults")]
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ExecutionLogs")]
 		public List<ListExecutionLogs_ExecutionLog> ExecutionLogs
 		{
 			get
@@ -98,38 +103,15 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		public class ListExecutionLogs_ExecutionLog
 		{
 
-			private string timestamp;
+			private string taskExecutionId;
 
 			private string message;
 
-			private string taskExecutionId;
-
 			private string logType;
 
-			public string Timestamp
-			{
-				get
-				{
-					return timestamp;
-				}
-				set	
-				{
-					timestamp = value;
-				}
-			}
+			private string timestamp;
 
-			public string Message
-			{
-				get
-				{
-					return message;
-				}
-				set	
-				{
-					message = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "TaskExecutionId")]
 			public string TaskExecutionId
 			{
 				get
@@ -142,6 +124,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Message")]
+			public string Message
+			{
+				get
+				{
+					return message;
+				}
+				set	
+				{
+					message = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LogType")]
 			public string LogType
 			{
 				get
@@ -151,6 +147,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					logType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Timestamp")]
+			public string Timestamp
+			{
+				get
+				{
+					return timestamp;
+				}
+				set	
+				{
+					timestamp = value;
 				}
 			}
 		}

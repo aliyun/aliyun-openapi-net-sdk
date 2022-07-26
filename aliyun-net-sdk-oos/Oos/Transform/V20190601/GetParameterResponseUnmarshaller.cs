@@ -34,19 +34,20 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			getParameterResponse.RequestId = _ctx.StringValue("GetParameter.RequestId");
 
 			GetParameterResponse.GetParameter_Parameter parameter = new GetParameterResponse.GetParameter_Parameter();
-			parameter.Id = _ctx.StringValue("GetParameter.Parameter.Id");
-			parameter.Name = _ctx.StringValue("GetParameter.Parameter.Name");
-			parameter.CreatedDate = _ctx.StringValue("GetParameter.Parameter.CreatedDate");
-			parameter.CreatedBy = _ctx.StringValue("GetParameter.Parameter.CreatedBy");
+			parameter.Type = _ctx.StringValue("GetParameter.Parameter.Type");
 			parameter.UpdatedDate = _ctx.StringValue("GetParameter.Parameter.UpdatedDate");
 			parameter.UpdatedBy = _ctx.StringValue("GetParameter.Parameter.UpdatedBy");
-			parameter.Description = _ctx.StringValue("GetParameter.Parameter.Description");
-			parameter.ShareType = _ctx.StringValue("GetParameter.Parameter.ShareType");
-			parameter.ParameterVersion = _ctx.IntegerValue("GetParameter.Parameter.ParameterVersion");
-			parameter.Type = _ctx.StringValue("GetParameter.Parameter.Type");
-			parameter._Value = _ctx.StringValue("GetParameter.Parameter.Value");
-			parameter.Constraints = _ctx.StringValue("GetParameter.Parameter.Constraints");
 			parameter.Tags = _ctx.StringValue("GetParameter.Parameter.Tags");
+			parameter._Value = _ctx.StringValue("GetParameter.Parameter.Value");
+			parameter.Description = _ctx.StringValue("GetParameter.Parameter.Description");
+			parameter.Constraints = _ctx.StringValue("GetParameter.Parameter.Constraints");
+			parameter.ResourceGroupId = _ctx.StringValue("GetParameter.Parameter.ResourceGroupId");
+			parameter.CreatedBy = _ctx.StringValue("GetParameter.Parameter.CreatedBy");
+			parameter.CreatedDate = _ctx.StringValue("GetParameter.Parameter.CreatedDate");
+			parameter.ParameterVersion = _ctx.IntegerValue("GetParameter.Parameter.ParameterVersion");
+			parameter.Name = _ctx.StringValue("GetParameter.Parameter.Name");
+			parameter.Id = _ctx.StringValue("GetParameter.Parameter.Id");
+			parameter.ShareType = _ctx.StringValue("GetParameter.Parameter.ShareType");
 			getParameterResponse.Parameter = parameter;
         
 			return getParameterResponse;

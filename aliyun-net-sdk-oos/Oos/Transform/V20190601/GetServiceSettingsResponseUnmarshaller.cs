@@ -36,11 +36,12 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			List<GetServiceSettingsResponse.GetServiceSettings_ServiceSetting> getServiceSettingsResponse_serviceSettings = new List<GetServiceSettingsResponse.GetServiceSettings_ServiceSetting>();
 			for (int i = 0; i < _ctx.Length("GetServiceSettings.ServiceSettings.Length"); i++) {
 				GetServiceSettingsResponse.GetServiceSettings_ServiceSetting serviceSetting = new GetServiceSettingsResponse.GetServiceSettings_ServiceSetting();
-				serviceSetting.DeliveryOssEnabled = _ctx.BooleanValue("GetServiceSettings.ServiceSettings["+ i +"].DeliveryOssEnabled");
 				serviceSetting.DeliveryOssBucketName = _ctx.StringValue("GetServiceSettings.ServiceSettings["+ i +"].DeliveryOssBucketName");
 				serviceSetting.DeliveryOssKeyPrefix = _ctx.StringValue("GetServiceSettings.ServiceSettings["+ i +"].DeliveryOssKeyPrefix");
+				serviceSetting.DeliveryOssEnabled = _ctx.BooleanValue("GetServiceSettings.ServiceSettings["+ i +"].DeliveryOssEnabled");
 				serviceSetting.DeliverySlsEnabled = _ctx.BooleanValue("GetServiceSettings.ServiceSettings["+ i +"].DeliverySlsEnabled");
 				serviceSetting.DeliverySlsProjectName = _ctx.StringValue("GetServiceSettings.ServiceSettings["+ i +"].DeliverySlsProjectName");
+				serviceSetting.RdcEnterpriseId = _ctx.StringValue("GetServiceSettings.ServiceSettings["+ i +"].RdcEnterpriseId");
 
 				getServiceSettingsResponse_serviceSettings.Add(serviceSetting);
 			}

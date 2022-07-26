@@ -31,26 +31,26 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			ListInstancePatchStatesResponse listInstancePatchStatesResponse = new ListInstancePatchStatesResponse();
 
 			listInstancePatchStatesResponse.HttpResponse = _ctx.HttpResponse;
-			listInstancePatchStatesResponse.MaxResults = _ctx.IntegerValue("ListInstancePatchStates.MaxResults");
 			listInstancePatchStatesResponse.NextToken = _ctx.StringValue("ListInstancePatchStates.NextToken");
 			listInstancePatchStatesResponse.RequestId = _ctx.StringValue("ListInstancePatchStates.RequestId");
+			listInstancePatchStatesResponse.MaxResults = _ctx.IntegerValue("ListInstancePatchStates.MaxResults");
 
 			List<ListInstancePatchStatesResponse.ListInstancePatchStates_InstancePatchState> listInstancePatchStatesResponse_instancePatchStates = new List<ListInstancePatchStatesResponse.ListInstancePatchStates_InstancePatchState>();
 			for (int i = 0; i < _ctx.Length("ListInstancePatchStates.InstancePatchStates.Length"); i++) {
 				ListInstancePatchStatesResponse.ListInstancePatchStates_InstancePatchState instancePatchState = new ListInstancePatchStatesResponse.ListInstancePatchStates_InstancePatchState();
-				instancePatchState.InstanceId = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].InstanceId");
-				instancePatchState.PatchGroup = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].PatchGroup");
-				instancePatchState.BaselineId = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].BaselineId");
-				instancePatchState.OwnerInformation = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].OwnerInformation");
-				instancePatchState.InstalledCount = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].InstalledCount");
-				instancePatchState.InstalledOtherCount = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].InstalledOtherCount");
-				instancePatchState.InstalledPendingRebootCount = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].InstalledPendingRebootCount");
-				instancePatchState.InstalledRejectedCount = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].InstalledRejectedCount");
 				instancePatchState.MissingCount = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].MissingCount");
-				instancePatchState.FailedCount = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].FailedCount");
+				instancePatchState.OperationEndTime = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].OperationEndTime");
+				instancePatchState.OwnerInformation = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].OwnerInformation");
+				instancePatchState.InstalledOtherCount = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].InstalledOtherCount");
+				instancePatchState.InstanceId = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].InstanceId");
 				instancePatchState.OperationType = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].OperationType");
 				instancePatchState.OperationStartTime = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].OperationStartTime");
-				instancePatchState.OperationEndTime = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].OperationEndTime");
+				instancePatchState.FailedCount = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].FailedCount");
+				instancePatchState.BaselineId = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].BaselineId");
+				instancePatchState.InstalledPendingRebootCount = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].InstalledPendingRebootCount");
+				instancePatchState.InstalledRejectedCount = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].InstalledRejectedCount");
+				instancePatchState.PatchGroup = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].PatchGroup");
+				instancePatchState.InstalledCount = _ctx.StringValue("ListInstancePatchStates.InstancePatchStates["+ i +"].InstalledCount");
 
 				listInstancePatchStatesResponse_instancePatchStates.Add(instancePatchState);
 			}

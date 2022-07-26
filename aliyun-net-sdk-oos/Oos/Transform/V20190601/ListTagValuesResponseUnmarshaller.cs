@@ -31,9 +31,9 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			ListTagValuesResponse listTagValuesResponse = new ListTagValuesResponse();
 
 			listTagValuesResponse.HttpResponse = _ctx.HttpResponse;
+			listTagValuesResponse.NextToken = _ctx.StringValue("ListTagValues.NextToken");
 			listTagValuesResponse.RequestId = _ctx.StringValue("ListTagValues.RequestId");
 			listTagValuesResponse.MaxResults = _ctx.IntegerValue("ListTagValues.MaxResults");
-			listTagValuesResponse.NextToken = _ctx.StringValue("ListTagValues.NextToken");
 
 			List<string> listTagValuesResponse_values = new List<string>();
 			for (int i = 0; i < _ctx.Length("ListTagValues.Values.Length"); i++) {

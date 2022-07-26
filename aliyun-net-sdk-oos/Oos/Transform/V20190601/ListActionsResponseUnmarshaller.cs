@@ -31,19 +31,20 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			ListActionsResponse listActionsResponse = new ListActionsResponse();
 
 			listActionsResponse.HttpResponse = _ctx.HttpResponse;
+			listActionsResponse.NextToken = _ctx.StringValue("ListActions.NextToken");
 			listActionsResponse.RequestId = _ctx.StringValue("ListActions.RequestId");
 			listActionsResponse.MaxResults = _ctx.IntegerValue("ListActions.MaxResults");
-			listActionsResponse.NextToken = _ctx.StringValue("ListActions.NextToken");
 
 			List<ListActionsResponse.ListActions_Action> listActionsResponse_actions = new List<ListActionsResponse.ListActions_Action>();
 			for (int i = 0; i < _ctx.Length("ListActions.Actions.Length"); i++) {
 				ListActionsResponse.ListActions_Action action = new ListActionsResponse.ListActions_Action();
-				action.OOSActionName = _ctx.StringValue("ListActions.Actions["+ i +"].OOSActionName");
-				action.Description = _ctx.StringValue("ListActions.Actions["+ i +"].Description");
+				action.Popularity = _ctx.IntegerValue("ListActions.Actions["+ i +"].Popularity");
 				action.ActionType = _ctx.StringValue("ListActions.Actions["+ i +"].ActionType");
+				action.Description = _ctx.StringValue("ListActions.Actions["+ i +"].Description");
 				action.CreatedDate = _ctx.StringValue("ListActions.Actions["+ i +"].CreatedDate");
-				action.Properties = _ctx.StringValue("ListActions.Actions["+ i +"].Properties");
 				action.TemplateVersion = _ctx.StringValue("ListActions.Actions["+ i +"].TemplateVersion");
+				action.OOSActionName = _ctx.StringValue("ListActions.Actions["+ i +"].OOSActionName");
+				action.Properties = _ctx.StringValue("ListActions.Actions["+ i +"].Properties");
 
 				listActionsResponse_actions.Add(action);
 			}

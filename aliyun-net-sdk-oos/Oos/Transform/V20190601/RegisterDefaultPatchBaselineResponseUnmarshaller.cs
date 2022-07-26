@@ -34,16 +34,16 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			registerDefaultPatchBaselineResponse.RequestId = _ctx.StringValue("RegisterDefaultPatchBaseline.RequestId");
 
 			RegisterDefaultPatchBaselineResponse.RegisterDefaultPatchBaseline_PatchBaseline patchBaseline = new RegisterDefaultPatchBaselineResponse.RegisterDefaultPatchBaseline_PatchBaseline();
-			patchBaseline.Id = _ctx.StringValue("RegisterDefaultPatchBaseline.PatchBaseline.Id");
-			patchBaseline.Name = _ctx.StringValue("RegisterDefaultPatchBaseline.PatchBaseline.Name");
-			patchBaseline.CreatedDate = _ctx.StringValue("RegisterDefaultPatchBaseline.PatchBaseline.CreatedDate");
-			patchBaseline.CreatedBy = _ctx.StringValue("RegisterDefaultPatchBaseline.PatchBaseline.CreatedBy");
+			patchBaseline.OperationSystem = _ctx.StringValue("RegisterDefaultPatchBaseline.PatchBaseline.OperationSystem");
+			patchBaseline.Description = _ctx.StringValue("RegisterDefaultPatchBaseline.PatchBaseline.Description");
 			patchBaseline.UpdatedDate = _ctx.StringValue("RegisterDefaultPatchBaseline.PatchBaseline.UpdatedDate");
 			patchBaseline.UpdatedBy = _ctx.StringValue("RegisterDefaultPatchBaseline.PatchBaseline.UpdatedBy");
-			patchBaseline.Description = _ctx.StringValue("RegisterDefaultPatchBaseline.PatchBaseline.Description");
-			patchBaseline.ShareType = _ctx.StringValue("RegisterDefaultPatchBaseline.PatchBaseline.ShareType");
-			patchBaseline.OperationSystem = _ctx.StringValue("RegisterDefaultPatchBaseline.PatchBaseline.OperationSystem");
+			patchBaseline.CreatedBy = _ctx.StringValue("RegisterDefaultPatchBaseline.PatchBaseline.CreatedBy");
+			patchBaseline.CreatedDate = _ctx.StringValue("RegisterDefaultPatchBaseline.PatchBaseline.CreatedDate");
+			patchBaseline.Name = _ctx.StringValue("RegisterDefaultPatchBaseline.PatchBaseline.Name");
 			patchBaseline.ApprovalRules = _ctx.StringValue("RegisterDefaultPatchBaseline.PatchBaseline.ApprovalRules");
+			patchBaseline.Id = _ctx.StringValue("RegisterDefaultPatchBaseline.PatchBaseline.Id");
+			patchBaseline.ShareType = _ctx.StringValue("RegisterDefaultPatchBaseline.PatchBaseline.ShareType");
 			registerDefaultPatchBaselineResponse.PatchBaseline = patchBaseline;
         
 			return registerDefaultPatchBaselineResponse;
