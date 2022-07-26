@@ -40,10 +40,7 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				result.Result = _ctx.IntegerValue("GetFileDetectResult.ResultList["+ i +"].Result");
 				result.Score = _ctx.IntegerValue("GetFileDetectResult.ResultList["+ i +"].Score");
 				result.VirusType = _ctx.StringValue("GetFileDetectResult.ResultList["+ i +"].VirusType");
-
-				GetFileDetectResultResponse.GetFileDetectResult_Result.GetFileDetectResult_Ext ext = new GetFileDetectResultResponse.GetFileDetectResult_Result.GetFileDetectResult_Ext();
-				ext.VirusName = _ctx.StringValue("GetFileDetectResult.ResultList["+ i +"].Ext.VirusName");
-				result.Ext = ext;
+				result.Ext = _ctx.StringValue("GetFileDetectResult.ResultList["+ i +"].Ext");
 
 				getFileDetectResultResponse_resultList.Add(result);
 			}

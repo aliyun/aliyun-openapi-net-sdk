@@ -64,7 +64,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string virusType;
 
-			private GetFileDetectResult_Ext ext;
+			private string ext;
 
 			public string HashKey
 			{
@@ -114,7 +114,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public GetFileDetectResult_Ext Ext
+			public string Ext
 			{
 				get
 				{
@@ -123,24 +123,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					ext = value;
-				}
-			}
-
-			public class GetFileDetectResult_Ext
-			{
-
-				private string virusName;
-
-				public string VirusName
-				{
-					get
-					{
-						return virusName;
-					}
-					set	
-					{
-						virusName = value;
-					}
 				}
 			}
 		}
