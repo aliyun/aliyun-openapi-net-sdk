@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 			FtDynamicAddressHttpVpcResponse ftDynamicAddressHttpVpcResponse = new FtDynamicAddressHttpVpcResponse();
 
 			ftDynamicAddressHttpVpcResponse.HttpResponse = _ctx.HttpResponse;
-			ftDynamicAddressHttpVpcResponse._Params = _ctx.StringValue("FtDynamicAddressHttpVpc.Params");
 			ftDynamicAddressHttpVpcResponse.ServiceRpcSign = _ctx.StringValue("FtDynamicAddressHttpVpc.ServiceRpcSign");
+			ftDynamicAddressHttpVpcResponse._Params = _ctx.StringValue("FtDynamicAddressHttpVpc.Params");
         
 			return ftDynamicAddressHttpVpcResponse;
         }

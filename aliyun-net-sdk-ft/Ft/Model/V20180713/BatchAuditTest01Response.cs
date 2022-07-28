@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 	public class BatchAuditTest01Response : AcsResponse
 	{
 
-		private string requestId;
-
 		private string name;
 
-		private BatchAuditTest01_Demo01 demo01;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private BatchAuditTest01_Demo01 demo01;
 
 		public string Name
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			set	
 			{
 				name = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
