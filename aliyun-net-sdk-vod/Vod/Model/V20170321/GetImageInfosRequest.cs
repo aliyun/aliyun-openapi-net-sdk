@@ -27,10 +27,10 @@ using Aliyun.Acs.vod.Transform.V20170321;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GenerateKMSDataKeyRequest : RpcAcsRequest<GenerateKMSDataKeyResponse>
+    public class GetImageInfosRequest : RpcAcsRequest<GetImageInfosResponse>
     {
-        public GenerateKMSDataKeyRequest()
-            : base("vod", "2017-03-21", "GenerateKMSDataKey", "vod", "openAPI")
+        public GetImageInfosRequest()
+            : base("vod", "2017-03-21", "GetImageInfos", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,63 +40,48 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			Method = MethodType.POST;
         }
 
-		private string resourceOwnerId;
+		private string outputType;
 
-		private string resourceOwnerAccount;
+		private long? authTimeout;
 
-		private string ownerAccount;
+		private string imageIds;
 
-		private string ownerId;
-
-		public string ResourceOwnerId
+		public string OutputType
 		{
 			get
 			{
-				return resourceOwnerId;
+				return outputType;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
+				outputType = value;
+				DictionaryUtil.Add(QueryParameters, "OutputType", value);
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public long? AuthTimeout
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return authTimeout;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				authTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "AuthTimeout", value.ToString());
 			}
 		}
 
-		public string OwnerAccount
+		public string ImageIds
 		{
 			get
 			{
-				return ownerAccount;
+				return imageIds;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+				imageIds = value;
+				DictionaryUtil.Add(QueryParameters, "ImageIds", value);
 			}
 		}
 
@@ -105,9 +90,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			return false;
 		}
 
-        public override GenerateKMSDataKeyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetImageInfosResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GenerateKMSDataKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetImageInfosResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

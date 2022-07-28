@@ -42,10 +42,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string resourceOwnerId;
 
-		private long? resourceRealOwnerId;
-
-		private string kmsRegionId;
-
 		private string cipherText;
 
 		private string resourceOwnerAccount;
@@ -64,32 +60,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
-			}
-		}
-
-		public long? ResourceRealOwnerId
-		{
-			get
-			{
-				return resourceRealOwnerId;
-			}
-			set	
-			{
-				resourceRealOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceRealOwnerId", value.ToString());
-			}
-		}
-
-		public string KmsRegionId
-		{
-			get
-			{
-				return kmsRegionId;
-			}
-			set	
-			{
-				kmsRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "KmsRegionId", value);
 			}
 		}
 
