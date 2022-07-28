@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			InitializeDbsServiceLinkedRoleResponse initializeDbsServiceLinkedRoleResponse = new InitializeDbsServiceLinkedRoleResponse();
 
 			initializeDbsServiceLinkedRoleResponse.HttpResponse = _ctx.HttpResponse;
-			initializeDbsServiceLinkedRoleResponse.ErrorCode = _ctx.StringValue("InitializeDbsServiceLinkedRole.ErrorCode");
 			initializeDbsServiceLinkedRoleResponse.Data = _ctx.StringValue("InitializeDbsServiceLinkedRole.Data");
-			initializeDbsServiceLinkedRoleResponse.ErrMessage = _ctx.StringValue("InitializeDbsServiceLinkedRole.ErrMessage");
 			initializeDbsServiceLinkedRoleResponse.RequestId = _ctx.StringValue("InitializeDbsServiceLinkedRole.RequestId");
 			initializeDbsServiceLinkedRoleResponse.Success = _ctx.StringValue("InitializeDbsServiceLinkedRole.Success");
+			initializeDbsServiceLinkedRoleResponse.ErrorCode = _ctx.StringValue("InitializeDbsServiceLinkedRole.ErrorCode");
+			initializeDbsServiceLinkedRoleResponse.ErrMessage = _ctx.StringValue("InitializeDbsServiceLinkedRole.ErrMessage");
         
 			return initializeDbsServiceLinkedRoleResponse;
         }

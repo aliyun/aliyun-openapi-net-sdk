@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
@@ -25,61 +25,25 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 	public class DescribeFullBackupListResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errCode;
-
-		private string errMessage;
-
 		private int? httpStatusCode;
-
-		private string requestId;
-
-		private int? totalPages;
-
-		private int? pageSize;
 
 		private int? pageNum;
 
+		private string requestId;
+
+		private string errCode;
+
+		private bool? success;
+
+		private string errMessage;
+
+		private int? totalPages;
+
 		private int? totalElements;
 
+		private int? pageSize;
+
 		private List<DescribeFullBackupList_FullBackupFile> items;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrCode
-		{
-			get
-			{
-				return errCode;
-			}
-			set	
-			{
-				errCode = value;
-			}
-		}
-
-		public string ErrMessage
-		{
-			get
-			{
-				return errMessage;
-			}
-			set	
-			{
-				errMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -90,42 +54,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			set	
 			{
 				httpStatusCode = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalPages
-		{
-			get
-			{
-				return totalPages;
-			}
-			set	
-			{
-				totalPages = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
 			}
 		}
 
@@ -141,6 +69,66 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string ErrCode
+		{
+			get
+			{
+				return errCode;
+			}
+			set	
+			{
+				errCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string ErrMessage
+		{
+			get
+			{
+				return errMessage;
+			}
+			set	
+			{
+				errMessage = value;
+			}
+		}
+
+		public int? TotalPages
+		{
+			get
+			{
+				return totalPages;
+			}
+			set	
+			{
+				totalPages = value;
+			}
+		}
+
 		public int? TotalElements
 		{
 			get
@@ -150,6 +138,18 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			set	
 			{
 				totalElements = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
 			}
 		}
 
@@ -168,75 +168,39 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		public class DescribeFullBackupList_FullBackupFile
 		{
 
-			private string backupSetId;
-
-			private string sourceEndpointIpPort;
-
-			private long? startTime;
-
-			private long? endTime;
+			private long? finishTime;
 
 			private string backupStatus;
 
-			private long? backupSetExpiredTime;
+			private string sourceEndpointIpPort;
 
-			private long? backupSize;
-
-			private string storageMethod;
+			private long? createTime;
 
 			private string errMessage;
 
 			private string backupObjects;
 
-			private long? createTime;
+			private long? endTime;
 
-			private long? finishTime;
+			private long? startTime;
 
-			public string BackupSetId
+			private long? backupSetExpiredTime;
+
+			private string storageMethod;
+
+			private string backupSetId;
+
+			private long? backupSize;
+
+			public long? FinishTime
 			{
 				get
 				{
-					return backupSetId;
+					return finishTime;
 				}
 				set	
 				{
-					backupSetId = value;
-				}
-			}
-
-			public string SourceEndpointIpPort
-			{
-				get
-				{
-					return sourceEndpointIpPort;
-				}
-				set	
-				{
-					sourceEndpointIpPort = value;
-				}
-			}
-
-			public long? StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
-			public long? EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
+					finishTime = value;
 				}
 			}
 
@@ -252,39 +216,27 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public long? BackupSetExpiredTime
+			public string SourceEndpointIpPort
 			{
 				get
 				{
-					return backupSetExpiredTime;
+					return sourceEndpointIpPort;
 				}
 				set	
 				{
-					backupSetExpiredTime = value;
+					sourceEndpointIpPort = value;
 				}
 			}
 
-			public long? BackupSize
+			public long? CreateTime
 			{
 				get
 				{
-					return backupSize;
+					return createTime;
 				}
 				set	
 				{
-					backupSize = value;
-				}
-			}
-
-			public string StorageMethod
-			{
-				get
-				{
-					return storageMethod;
-				}
-				set	
-				{
-					storageMethod = value;
+					createTime = value;
 				}
 			}
 
@@ -312,27 +264,75 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public long? CreateTime
+			public long? EndTime
 			{
 				get
 				{
-					return createTime;
+					return endTime;
 				}
 				set	
 				{
-					createTime = value;
+					endTime = value;
 				}
 			}
 
-			public long? FinishTime
+			public long? StartTime
 			{
 				get
 				{
-					return finishTime;
+					return startTime;
 				}
 				set	
 				{
-					finishTime = value;
+					startTime = value;
+				}
+			}
+
+			public long? BackupSetExpiredTime
+			{
+				get
+				{
+					return backupSetExpiredTime;
+				}
+				set	
+				{
+					backupSetExpiredTime = value;
+				}
+			}
+
+			public string StorageMethod
+			{
+				get
+				{
+					return storageMethod;
+				}
+				set	
+				{
+					storageMethod = value;
+				}
+			}
+
+			public string BackupSetId
+			{
+				get
+				{
+					return backupSetId;
+				}
+				set	
+				{
+					backupSetId = value;
+				}
+			}
+
+			public long? BackupSize
+			{
+				get
+				{
+					return backupSize;
+				}
+				set	
+				{
+					backupSize = value;
 				}
 			}
 		}

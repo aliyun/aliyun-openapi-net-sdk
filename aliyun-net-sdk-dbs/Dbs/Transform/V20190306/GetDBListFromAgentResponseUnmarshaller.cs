@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			GetDBListFromAgentResponse getDBListFromAgentResponse = new GetDBListFromAgentResponse();
 
 			getDBListFromAgentResponse.HttpResponse = _ctx.HttpResponse;
-			getDBListFromAgentResponse.Success = _ctx.BooleanValue("GetDBListFromAgent.Success");
-			getDBListFromAgentResponse.ErrCode = _ctx.StringValue("GetDBListFromAgent.ErrCode");
-			getDBListFromAgentResponse.ErrMessage = _ctx.StringValue("GetDBListFromAgent.ErrMessage");
 			getDBListFromAgentResponse.HttpStatusCode = _ctx.IntegerValue("GetDBListFromAgent.HttpStatusCode");
 			getDBListFromAgentResponse.RequestId = _ctx.StringValue("GetDBListFromAgent.RequestId");
+			getDBListFromAgentResponse.ErrCode = _ctx.StringValue("GetDBListFromAgent.ErrCode");
+			getDBListFromAgentResponse.Success = _ctx.BooleanValue("GetDBListFromAgent.Success");
+			getDBListFromAgentResponse.ErrMessage = _ctx.StringValue("GetDBListFromAgent.ErrMessage");
 
 			List<string> getDBListFromAgentResponse_dbList = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetDBListFromAgent.DbList.Length"); i++) {

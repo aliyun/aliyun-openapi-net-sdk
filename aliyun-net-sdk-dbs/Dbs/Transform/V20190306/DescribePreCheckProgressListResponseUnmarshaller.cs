@@ -32,24 +32,24 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 
 			describePreCheckProgressListResponse.HttpResponse = _ctx.HttpResponse;
 			describePreCheckProgressListResponse.Status = _ctx.StringValue("DescribePreCheckProgressList.Status");
-			describePreCheckProgressListResponse.Progress = _ctx.IntegerValue("DescribePreCheckProgressList.Progress");
-			describePreCheckProgressListResponse.Success = _ctx.BooleanValue("DescribePreCheckProgressList.Success");
-			describePreCheckProgressListResponse.ErrCode = _ctx.StringValue("DescribePreCheckProgressList.ErrCode");
-			describePreCheckProgressListResponse.ErrMessage = _ctx.StringValue("DescribePreCheckProgressList.ErrMessage");
 			describePreCheckProgressListResponse.HttpStatusCode = _ctx.IntegerValue("DescribePreCheckProgressList.HttpStatusCode");
 			describePreCheckProgressListResponse.RequestId = _ctx.StringValue("DescribePreCheckProgressList.RequestId");
+			describePreCheckProgressListResponse.Progress = _ctx.IntegerValue("DescribePreCheckProgressList.Progress");
+			describePreCheckProgressListResponse.ErrCode = _ctx.StringValue("DescribePreCheckProgressList.ErrCode");
+			describePreCheckProgressListResponse.Success = _ctx.BooleanValue("DescribePreCheckProgressList.Success");
+			describePreCheckProgressListResponse.ErrMessage = _ctx.StringValue("DescribePreCheckProgressList.ErrMessage");
 
 			List<DescribePreCheckProgressListResponse.DescribePreCheckProgressList_PreCheckProgressDetail> describePreCheckProgressListResponse_items = new List<DescribePreCheckProgressListResponse.DescribePreCheckProgressList_PreCheckProgressDetail>();
 			for (int i = 0; i < _ctx.Length("DescribePreCheckProgressList.Items.Length"); i++) {
 				DescribePreCheckProgressListResponse.DescribePreCheckProgressList_PreCheckProgressDetail preCheckProgressDetail = new DescribePreCheckProgressListResponse.DescribePreCheckProgressList_PreCheckProgressDetail();
-				preCheckProgressDetail.JobId = _ctx.StringValue("DescribePreCheckProgressList.Items["+ i +"].JobId");
-				preCheckProgressDetail.State = _ctx.StringValue("DescribePreCheckProgressList.Items["+ i +"].State");
-				preCheckProgressDetail.OrderNum = _ctx.StringValue("DescribePreCheckProgressList.Items["+ i +"].OrderNum");
-				preCheckProgressDetail.ErrMsg = _ctx.StringValue("DescribePreCheckProgressList.Items["+ i +"].ErrMsg");
-				preCheckProgressDetail.Names = _ctx.StringValue("DescribePreCheckProgressList.Items["+ i +"].Names");
-				preCheckProgressDetail.Item = _ctx.StringValue("DescribePreCheckProgressList.Items["+ i +"].Item");
-				preCheckProgressDetail.BootTime = _ctx.LongValue("DescribePreCheckProgressList.Items["+ i +"].BootTime");
 				preCheckProgressDetail.FinishTime = _ctx.LongValue("DescribePreCheckProgressList.Items["+ i +"].FinishTime");
+				preCheckProgressDetail.State = _ctx.StringValue("DescribePreCheckProgressList.Items["+ i +"].State");
+				preCheckProgressDetail.BootTime = _ctx.LongValue("DescribePreCheckProgressList.Items["+ i +"].BootTime");
+				preCheckProgressDetail.JobId = _ctx.StringValue("DescribePreCheckProgressList.Items["+ i +"].JobId");
+				preCheckProgressDetail.Item = _ctx.StringValue("DescribePreCheckProgressList.Items["+ i +"].Item");
+				preCheckProgressDetail.ErrMsg = _ctx.StringValue("DescribePreCheckProgressList.Items["+ i +"].ErrMsg");
+				preCheckProgressDetail.OrderNum = _ctx.StringValue("DescribePreCheckProgressList.Items["+ i +"].OrderNum");
+				preCheckProgressDetail.Names = _ctx.StringValue("DescribePreCheckProgressList.Items["+ i +"].Names");
 
 				describePreCheckProgressListResponse_items.Add(preCheckProgressDetail);
 			}

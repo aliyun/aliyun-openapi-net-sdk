@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Dbs;
 using Aliyun.Acs.Dbs.Transform;
 using Aliyun.Acs.Dbs.Transform.V20190306;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
     public class CreateAndStartBackupPlanRequest : RpcAcsRequest<CreateAndStartBackupPlanResponse>
     {
         public CreateAndStartBackupPlanRequest()
-            : base("Dbs", "2019-03-06", "CreateAndStartBackupPlan", "cbs", "openAPI")
+            : base("Dbs", "2019-03-06", "CreateAndStartBackupPlan")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -49,6 +50,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		private string storageType;
 
 		private string databaseRegion;
+
+		private string resourceGroupId;
 
 		private string backupStartTime;
 
@@ -184,6 +187,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				databaseRegion = value;
 				DictionaryUtil.Add(QueryParameters, "DatabaseRegion", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

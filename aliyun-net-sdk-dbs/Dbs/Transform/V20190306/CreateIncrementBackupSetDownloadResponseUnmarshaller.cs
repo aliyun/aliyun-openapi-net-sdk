@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			CreateIncrementBackupSetDownloadResponse createIncrementBackupSetDownloadResponse = new CreateIncrementBackupSetDownloadResponse();
 
 			createIncrementBackupSetDownloadResponse.HttpResponse = _ctx.HttpResponse;
-			createIncrementBackupSetDownloadResponse.Success = _ctx.BooleanValue("CreateIncrementBackupSetDownload.Success");
-			createIncrementBackupSetDownloadResponse.ErrCode = _ctx.StringValue("CreateIncrementBackupSetDownload.ErrCode");
-			createIncrementBackupSetDownloadResponse.ErrMessage = _ctx.StringValue("CreateIncrementBackupSetDownload.ErrMessage");
 			createIncrementBackupSetDownloadResponse.HttpStatusCode = _ctx.IntegerValue("CreateIncrementBackupSetDownload.HttpStatusCode");
 			createIncrementBackupSetDownloadResponse.RequestId = _ctx.StringValue("CreateIncrementBackupSetDownload.RequestId");
+			createIncrementBackupSetDownloadResponse.ErrCode = _ctx.StringValue("CreateIncrementBackupSetDownload.ErrCode");
+			createIncrementBackupSetDownloadResponse.Success = _ctx.BooleanValue("CreateIncrementBackupSetDownload.Success");
+			createIncrementBackupSetDownloadResponse.ErrMessage = _ctx.StringValue("CreateIncrementBackupSetDownload.ErrMessage");
 			createIncrementBackupSetDownloadResponse.BackupSetDownloadTaskId = _ctx.StringValue("CreateIncrementBackupSetDownload.BackupSetDownloadTaskId");
         
 			return createIncrementBackupSetDownloadResponse;

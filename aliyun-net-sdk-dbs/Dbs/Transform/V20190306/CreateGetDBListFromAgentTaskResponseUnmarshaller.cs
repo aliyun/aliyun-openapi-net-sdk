@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			CreateGetDBListFromAgentTaskResponse createGetDBListFromAgentTaskResponse = new CreateGetDBListFromAgentTaskResponse();
 
 			createGetDBListFromAgentTaskResponse.HttpResponse = _ctx.HttpResponse;
-			createGetDBListFromAgentTaskResponse.Success = _ctx.BooleanValue("CreateGetDBListFromAgentTask.Success");
-			createGetDBListFromAgentTaskResponse.ErrCode = _ctx.StringValue("CreateGetDBListFromAgentTask.ErrCode");
-			createGetDBListFromAgentTaskResponse.ErrMessage = _ctx.StringValue("CreateGetDBListFromAgentTask.ErrMessage");
 			createGetDBListFromAgentTaskResponse.HttpStatusCode = _ctx.IntegerValue("CreateGetDBListFromAgentTask.HttpStatusCode");
 			createGetDBListFromAgentTaskResponse.RequestId = _ctx.StringValue("CreateGetDBListFromAgentTask.RequestId");
+			createGetDBListFromAgentTaskResponse.ErrCode = _ctx.StringValue("CreateGetDBListFromAgentTask.ErrCode");
+			createGetDBListFromAgentTaskResponse.Success = _ctx.BooleanValue("CreateGetDBListFromAgentTask.Success");
+			createGetDBListFromAgentTaskResponse.ErrMessage = _ctx.StringValue("CreateGetDBListFromAgentTask.ErrMessage");
 			createGetDBListFromAgentTaskResponse.TaskId = _ctx.LongValue("CreateGetDBListFromAgentTask.TaskId");
         
 			return createGetDBListFromAgentTaskResponse;

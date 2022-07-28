@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			DescribeRegionsResponse describeRegionsResponse = new DescribeRegionsResponse();
 
 			describeRegionsResponse.HttpResponse = _ctx.HttpResponse;
-			describeRegionsResponse.Success = _ctx.BooleanValue("DescribeRegions.Success");
-			describeRegionsResponse.ErrCode = _ctx.StringValue("DescribeRegions.ErrCode");
-			describeRegionsResponse.ErrMessage = _ctx.StringValue("DescribeRegions.ErrMessage");
 			describeRegionsResponse.HttpStatusCode = _ctx.IntegerValue("DescribeRegions.HttpStatusCode");
 			describeRegionsResponse.RequestId = _ctx.StringValue("DescribeRegions.RequestId");
+			describeRegionsResponse.ErrCode = _ctx.StringValue("DescribeRegions.ErrCode");
+			describeRegionsResponse.Success = _ctx.BooleanValue("DescribeRegions.Success");
+			describeRegionsResponse.ErrMessage = _ctx.StringValue("DescribeRegions.ErrMessage");
 
 			List<string> describeRegionsResponse_regions = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeRegions.Regions.Length"); i++) {

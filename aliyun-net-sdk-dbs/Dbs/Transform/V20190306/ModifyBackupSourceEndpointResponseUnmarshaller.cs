@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			ModifyBackupSourceEndpointResponse modifyBackupSourceEndpointResponse = new ModifyBackupSourceEndpointResponse();
 
 			modifyBackupSourceEndpointResponse.HttpResponse = _ctx.HttpResponse;
-			modifyBackupSourceEndpointResponse.Success = _ctx.BooleanValue("ModifyBackupSourceEndpoint.Success");
-			modifyBackupSourceEndpointResponse.ErrCode = _ctx.StringValue("ModifyBackupSourceEndpoint.ErrCode");
-			modifyBackupSourceEndpointResponse.ErrMessage = _ctx.StringValue("ModifyBackupSourceEndpoint.ErrMessage");
 			modifyBackupSourceEndpointResponse.HttpStatusCode = _ctx.IntegerValue("ModifyBackupSourceEndpoint.HttpStatusCode");
 			modifyBackupSourceEndpointResponse.RequestId = _ctx.StringValue("ModifyBackupSourceEndpoint.RequestId");
+			modifyBackupSourceEndpointResponse.ErrCode = _ctx.StringValue("ModifyBackupSourceEndpoint.ErrCode");
+			modifyBackupSourceEndpointResponse.Success = _ctx.BooleanValue("ModifyBackupSourceEndpoint.Success");
+			modifyBackupSourceEndpointResponse.ErrMessage = _ctx.StringValue("ModifyBackupSourceEndpoint.ErrMessage");
 			modifyBackupSourceEndpointResponse.BackupPlanId = _ctx.StringValue("ModifyBackupSourceEndpoint.BackupPlanId");
 			modifyBackupSourceEndpointResponse.NeedPrecheck = _ctx.BooleanValue("ModifyBackupSourceEndpoint.NeedPrecheck");
         

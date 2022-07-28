@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			StopBackupPlanResponse stopBackupPlanResponse = new StopBackupPlanResponse();
 
 			stopBackupPlanResponse.HttpResponse = _ctx.HttpResponse;
-			stopBackupPlanResponse.Success = _ctx.BooleanValue("StopBackupPlan.Success");
-			stopBackupPlanResponse.ErrCode = _ctx.StringValue("StopBackupPlan.ErrCode");
-			stopBackupPlanResponse.ErrMessage = _ctx.StringValue("StopBackupPlan.ErrMessage");
 			stopBackupPlanResponse.HttpStatusCode = _ctx.IntegerValue("StopBackupPlan.HttpStatusCode");
 			stopBackupPlanResponse.RequestId = _ctx.StringValue("StopBackupPlan.RequestId");
+			stopBackupPlanResponse.ErrCode = _ctx.StringValue("StopBackupPlan.ErrCode");
+			stopBackupPlanResponse.Success = _ctx.BooleanValue("StopBackupPlan.Success");
+			stopBackupPlanResponse.ErrMessage = _ctx.StringValue("StopBackupPlan.ErrMessage");
 			stopBackupPlanResponse.BackupPlanId = _ctx.StringValue("StopBackupPlan.BackupPlanId");
         
 			return stopBackupPlanResponse;

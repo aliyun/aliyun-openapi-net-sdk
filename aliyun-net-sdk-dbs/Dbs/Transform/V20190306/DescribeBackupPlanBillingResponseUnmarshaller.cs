@@ -31,27 +31,28 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			DescribeBackupPlanBillingResponse describeBackupPlanBillingResponse = new DescribeBackupPlanBillingResponse();
 
 			describeBackupPlanBillingResponse.HttpResponse = _ctx.HttpResponse;
-			describeBackupPlanBillingResponse.Success = _ctx.BooleanValue("DescribeBackupPlanBilling.Success");
-			describeBackupPlanBillingResponse.ErrCode = _ctx.StringValue("DescribeBackupPlanBilling.ErrCode");
-			describeBackupPlanBillingResponse.ErrMessage = _ctx.StringValue("DescribeBackupPlanBilling.ErrMessage");
 			describeBackupPlanBillingResponse.HttpStatusCode = _ctx.IntegerValue("DescribeBackupPlanBilling.HttpStatusCode");
 			describeBackupPlanBillingResponse.RequestId = _ctx.StringValue("DescribeBackupPlanBilling.RequestId");
+			describeBackupPlanBillingResponse.ErrCode = _ctx.StringValue("DescribeBackupPlanBilling.ErrCode");
+			describeBackupPlanBillingResponse.Success = _ctx.BooleanValue("DescribeBackupPlanBilling.Success");
+			describeBackupPlanBillingResponse.ErrMessage = _ctx.StringValue("DescribeBackupPlanBilling.ErrMessage");
 
 			DescribeBackupPlanBillingResponse.DescribeBackupPlanBilling_Item item = new DescribeBackupPlanBillingResponse.DescribeBackupPlanBilling_Item();
-			item.BuySpec = _ctx.StringValue("DescribeBackupPlanBilling.Item.BuySpec");
-			item.BuyChargeType = _ctx.StringValue("DescribeBackupPlanBilling.Item.BuyChargeType");
+			item.BuyCreateTimestamp = _ctx.LongValue("DescribeBackupPlanBilling.Item.BuyCreateTimestamp");
+			item.FullStorageSize = _ctx.LongValue("DescribeBackupPlanBilling.Item.FullStorageSize");
 			item.BuyExpiredTimestamp = _ctx.LongValue("DescribeBackupPlanBilling.Item.BuyExpiredTimestamp");
+			item.BuySpec = _ctx.StringValue("DescribeBackupPlanBilling.Item.BuySpec");
+			item.QuotaEndTimestamp = _ctx.LongValue("DescribeBackupPlanBilling.Item.QuotaEndTimestamp");
+			item.IsExpired = _ctx.BooleanValue("DescribeBackupPlanBilling.Item.IsExpired");
+			item.QuotaStartTimestamp = _ctx.LongValue("DescribeBackupPlanBilling.Item.QuotaStartTimestamp");
 			item.TotalFreeBytes = _ctx.LongValue("DescribeBackupPlanBilling.Item.TotalFreeBytes");
 			item.PaiedBytes = _ctx.LongValue("DescribeBackupPlanBilling.Item.PaiedBytes");
 			item.UsedFullBytes = _ctx.LongValue("DescribeBackupPlanBilling.Item.UsedFullBytes");
-			item.UsedIncrementBytes = _ctx.LongValue("DescribeBackupPlanBilling.Item.UsedIncrementBytes");
-			item.QuotaStartTimestamp = _ctx.LongValue("DescribeBackupPlanBilling.Item.QuotaStartTimestamp");
-			item.QuotaEndTimestamp = _ctx.LongValue("DescribeBackupPlanBilling.Item.QuotaEndTimestamp");
-			item.BuyCreateTimestamp = _ctx.LongValue("DescribeBackupPlanBilling.Item.BuyCreateTimestamp");
-			item.FullStorageSize = _ctx.LongValue("DescribeBackupPlanBilling.Item.FullStorageSize");
-			item.ContStorageSize = _ctx.LongValue("DescribeBackupPlanBilling.Item.ContStorageSize");
-			item.IsExpired = _ctx.BooleanValue("DescribeBackupPlanBilling.Item.IsExpired");
 			item.IsFreeBytesUnlimited = _ctx.BooleanValue("DescribeBackupPlanBilling.Item.IsFreeBytesUnlimited");
+			item.ContStorageSize = _ctx.LongValue("DescribeBackupPlanBilling.Item.ContStorageSize");
+			item.BuyChargeType = _ctx.StringValue("DescribeBackupPlanBilling.Item.BuyChargeType");
+			item.UsedIncrementBytes = _ctx.LongValue("DescribeBackupPlanBilling.Item.UsedIncrementBytes");
+			item.ResourceGroupId = _ctx.StringValue("DescribeBackupPlanBilling.Item.ResourceGroupId");
 			describeBackupPlanBillingResponse.Item = item;
         
 			return describeBackupPlanBillingResponse;

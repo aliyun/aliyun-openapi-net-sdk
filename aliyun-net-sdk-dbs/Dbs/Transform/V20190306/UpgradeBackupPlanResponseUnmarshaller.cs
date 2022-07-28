@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			UpgradeBackupPlanResponse upgradeBackupPlanResponse = new UpgradeBackupPlanResponse();
 
 			upgradeBackupPlanResponse.HttpResponse = _ctx.HttpResponse;
-			upgradeBackupPlanResponse.Success = _ctx.BooleanValue("UpgradeBackupPlan.Success");
-			upgradeBackupPlanResponse.ErrCode = _ctx.StringValue("UpgradeBackupPlan.ErrCode");
-			upgradeBackupPlanResponse.ErrMessage = _ctx.StringValue("UpgradeBackupPlan.ErrMessage");
 			upgradeBackupPlanResponse.HttpStatusCode = _ctx.IntegerValue("UpgradeBackupPlan.HttpStatusCode");
 			upgradeBackupPlanResponse.RequestId = _ctx.StringValue("UpgradeBackupPlan.RequestId");
+			upgradeBackupPlanResponse.ErrCode = _ctx.StringValue("UpgradeBackupPlan.ErrCode");
+			upgradeBackupPlanResponse.Success = _ctx.BooleanValue("UpgradeBackupPlan.Success");
+			upgradeBackupPlanResponse.ErrMessage = _ctx.StringValue("UpgradeBackupPlan.ErrMessage");
 			upgradeBackupPlanResponse.BackupPlanId = _ctx.StringValue("UpgradeBackupPlan.BackupPlanId");
 			upgradeBackupPlanResponse.OrderId = _ctx.StringValue("UpgradeBackupPlan.OrderId");
         

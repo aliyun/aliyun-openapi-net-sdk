@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			CreateRestoreTaskResponse createRestoreTaskResponse = new CreateRestoreTaskResponse();
 
 			createRestoreTaskResponse.HttpResponse = _ctx.HttpResponse;
-			createRestoreTaskResponse.Success = _ctx.BooleanValue("CreateRestoreTask.Success");
-			createRestoreTaskResponse.ErrCode = _ctx.StringValue("CreateRestoreTask.ErrCode");
-			createRestoreTaskResponse.ErrMessage = _ctx.StringValue("CreateRestoreTask.ErrMessage");
 			createRestoreTaskResponse.HttpStatusCode = _ctx.IntegerValue("CreateRestoreTask.HttpStatusCode");
 			createRestoreTaskResponse.RequestId = _ctx.StringValue("CreateRestoreTask.RequestId");
+			createRestoreTaskResponse.ErrCode = _ctx.StringValue("CreateRestoreTask.ErrCode");
+			createRestoreTaskResponse.Success = _ctx.BooleanValue("CreateRestoreTask.Success");
+			createRestoreTaskResponse.ErrMessage = _ctx.StringValue("CreateRestoreTask.ErrMessage");
 			createRestoreTaskResponse.RestoreTaskId = _ctx.StringValue("CreateRestoreTask.RestoreTaskId");
         
 			return createRestoreTaskResponse;

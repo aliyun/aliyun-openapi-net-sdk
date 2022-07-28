@@ -31,27 +31,27 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			DescribeRestoreRangeInfoResponse describeRestoreRangeInfoResponse = new DescribeRestoreRangeInfoResponse();
 
 			describeRestoreRangeInfoResponse.HttpResponse = _ctx.HttpResponse;
-			describeRestoreRangeInfoResponse.Success = _ctx.BooleanValue("DescribeRestoreRangeInfo.Success");
-			describeRestoreRangeInfoResponse.ErrCode = _ctx.StringValue("DescribeRestoreRangeInfo.ErrCode");
-			describeRestoreRangeInfoResponse.ErrMessage = _ctx.StringValue("DescribeRestoreRangeInfo.ErrMessage");
 			describeRestoreRangeInfoResponse.HttpStatusCode = _ctx.IntegerValue("DescribeRestoreRangeInfo.HttpStatusCode");
 			describeRestoreRangeInfoResponse.RequestId = _ctx.StringValue("DescribeRestoreRangeInfo.RequestId");
+			describeRestoreRangeInfoResponse.ErrCode = _ctx.StringValue("DescribeRestoreRangeInfo.ErrCode");
+			describeRestoreRangeInfoResponse.Success = _ctx.BooleanValue("DescribeRestoreRangeInfo.Success");
+			describeRestoreRangeInfoResponse.ErrMessage = _ctx.StringValue("DescribeRestoreRangeInfo.ErrMessage");
 
 			List<DescribeRestoreRangeInfoResponse.DescribeRestoreRangeInfo_DBSRecoverRange> describeRestoreRangeInfoResponse_items = new List<DescribeRestoreRangeInfoResponse.DescribeRestoreRangeInfo_DBSRecoverRange>();
 			for (int i = 0; i < _ctx.Length("DescribeRestoreRangeInfo.Items.Length"); i++) {
 				DescribeRestoreRangeInfoResponse.DescribeRestoreRangeInfo_DBSRecoverRange dBSRecoverRange = new DescribeRestoreRangeInfoResponse.DescribeRestoreRangeInfo_DBSRecoverRange();
-				dBSRecoverRange.SourceEndpointInstanceType = _ctx.StringValue("DescribeRestoreRangeInfo.Items["+ i +"].SourceEndpointInstanceType");
-				dBSRecoverRange.SourceEndpointInstanceID = _ctx.StringValue("DescribeRestoreRangeInfo.Items["+ i +"].SourceEndpointInstanceID");
-				dBSRecoverRange.BeginTimestampForRestore = _ctx.LongValue("DescribeRestoreRangeInfo.Items["+ i +"].BeginTimestampForRestore");
 				dBSRecoverRange.EndTimestampForRestore = _ctx.LongValue("DescribeRestoreRangeInfo.Items["+ i +"].EndTimestampForRestore");
+				dBSRecoverRange.SourceEndpointInstanceType = _ctx.StringValue("DescribeRestoreRangeInfo.Items["+ i +"].SourceEndpointInstanceType");
 				dBSRecoverRange.RangeType = _ctx.StringValue("DescribeRestoreRangeInfo.Items["+ i +"].RangeType");
+				dBSRecoverRange.BeginTimestampForRestore = _ctx.LongValue("DescribeRestoreRangeInfo.Items["+ i +"].BeginTimestampForRestore");
+				dBSRecoverRange.SourceEndpointInstanceID = _ctx.StringValue("DescribeRestoreRangeInfo.Items["+ i +"].SourceEndpointInstanceID");
 
 				List<DescribeRestoreRangeInfoResponse.DescribeRestoreRangeInfo_DBSRecoverRange.DescribeRestoreRangeInfo_FullBackupDetail> dBSRecoverRange_fullBackupList = new List<DescribeRestoreRangeInfoResponse.DescribeRestoreRangeInfo_DBSRecoverRange.DescribeRestoreRangeInfo_FullBackupDetail>();
 				for (int j = 0; j < _ctx.Length("DescribeRestoreRangeInfo.Items["+ i +"].FullBackupList.Length"); j++) {
 					DescribeRestoreRangeInfoResponse.DescribeRestoreRangeInfo_DBSRecoverRange.DescribeRestoreRangeInfo_FullBackupDetail fullBackupDetail = new DescribeRestoreRangeInfoResponse.DescribeRestoreRangeInfo_DBSRecoverRange.DescribeRestoreRangeInfo_FullBackupDetail();
-					fullBackupDetail.BackupSetId = _ctx.StringValue("DescribeRestoreRangeInfo.Items["+ i +"].FullBackupList["+ j +"].BackupSetId");
-					fullBackupDetail.StartTime = _ctx.LongValue("DescribeRestoreRangeInfo.Items["+ i +"].FullBackupList["+ j +"].StartTime");
 					fullBackupDetail.EndTime = _ctx.LongValue("DescribeRestoreRangeInfo.Items["+ i +"].FullBackupList["+ j +"].EndTime");
+					fullBackupDetail.StartTime = _ctx.LongValue("DescribeRestoreRangeInfo.Items["+ i +"].FullBackupList["+ j +"].StartTime");
+					fullBackupDetail.BackupSetId = _ctx.StringValue("DescribeRestoreRangeInfo.Items["+ i +"].FullBackupList["+ j +"].BackupSetId");
 
 					dBSRecoverRange_fullBackupList.Add(fullBackupDetail);
 				}

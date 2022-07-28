@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			EnableBackupLogResponse enableBackupLogResponse = new EnableBackupLogResponse();
 
 			enableBackupLogResponse.HttpResponse = _ctx.HttpResponse;
-			enableBackupLogResponse.Success = _ctx.BooleanValue("EnableBackupLog.Success");
-			enableBackupLogResponse.ErrCode = _ctx.StringValue("EnableBackupLog.ErrCode");
-			enableBackupLogResponse.ErrMessage = _ctx.StringValue("EnableBackupLog.ErrMessage");
 			enableBackupLogResponse.HttpStatusCode = _ctx.IntegerValue("EnableBackupLog.HttpStatusCode");
 			enableBackupLogResponse.RequestId = _ctx.StringValue("EnableBackupLog.RequestId");
+			enableBackupLogResponse.ErrCode = _ctx.StringValue("EnableBackupLog.ErrCode");
+			enableBackupLogResponse.Success = _ctx.BooleanValue("EnableBackupLog.Success");
+			enableBackupLogResponse.ErrMessage = _ctx.StringValue("EnableBackupLog.ErrMessage");
 			enableBackupLogResponse.BackupPlanId = _ctx.StringValue("EnableBackupLog.BackupPlanId");
 			enableBackupLogResponse.NeedPrecheck = _ctx.BooleanValue("EnableBackupLog.NeedPrecheck");
         

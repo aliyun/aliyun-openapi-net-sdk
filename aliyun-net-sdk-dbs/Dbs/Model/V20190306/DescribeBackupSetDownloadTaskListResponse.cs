@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
@@ -25,61 +25,25 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 	public class DescribeBackupSetDownloadTaskListResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errCode;
-
-		private string errMessage;
-
 		private int? httpStatusCode;
-
-		private string requestId;
-
-		private int? totalPages;
-
-		private int? pageSize;
 
 		private int? pageNum;
 
+		private string requestId;
+
+		private string errCode;
+
+		private bool? success;
+
+		private string errMessage;
+
+		private int? totalPages;
+
 		private int? totalElements;
 
+		private int? pageSize;
+
 		private List<DescribeBackupSetDownloadTaskList_BackupSetDownloadTaskDetail> items;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrCode
-		{
-			get
-			{
-				return errCode;
-			}
-			set	
-			{
-				errCode = value;
-			}
-		}
-
-		public string ErrMessage
-		{
-			get
-			{
-				return errMessage;
-			}
-			set	
-			{
-				errMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -90,42 +54,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			set	
 			{
 				httpStatusCode = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalPages
-		{
-			get
-			{
-				return totalPages;
-			}
-			set	
-			{
-				totalPages = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
 			}
 		}
 
@@ -141,6 +69,66 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string ErrCode
+		{
+			get
+			{
+				return errCode;
+			}
+			set	
+			{
+				errCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string ErrMessage
+		{
+			get
+			{
+				return errMessage;
+			}
+			set	
+			{
+				errMessage = value;
+			}
+		}
+
+		public int? TotalPages
+		{
+			get
+			{
+				return totalPages;
+			}
+			set	
+			{
+				totalPages = value;
+			}
+		}
+
 		public int? TotalElements
 		{
 			get
@@ -150,6 +138,18 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			set	
 			{
 				totalElements = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
 			}
 		}
 
@@ -168,43 +168,115 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		public class DescribeBackupSetDownloadTaskList_BackupSetDownloadTaskDetail
 		{
 
+			private string backupSetDownloadStatus;
+
+			private long? backupSetDataSize;
+
+			private string backupSetDownloadTargetType;
+
+			private string backupSetDownloadDir;
+
+			private string errMessage;
+
+			private long? backupSetDownloadCreateTime;
+
 			private string backupPlanId;
+
+			private string backupSetDbType;
+
+			private string backupSetDownloadInternetUrl;
+
+			private string backupSetId;
+
+			private string backupSetDownloadIntranetUrl;
+
+			private long? backupGatewayId;
+
+			private string backupSetDownloadWay;
+
+			private long? backupSetDownloadFinishTime;
+
+			private string backupSetJobType;
 
 			private string backupSetDownloadTaskId;
 
 			private string backupSetDownloadTaskName;
 
-			private string backupSetDownloadStatus;
-
-			private long? backupSetDownloadCreateTime;
-
-			private long? backupSetDownloadFinishTime;
-
-			private string backupSetId;
+			private string backupSetDataFormat;
 
 			private string backupSetCode;
 
-			private string backupSetJobType;
+			public string BackupSetDownloadStatus
+			{
+				get
+				{
+					return backupSetDownloadStatus;
+				}
+				set	
+				{
+					backupSetDownloadStatus = value;
+				}
+			}
 
-			private long? backupSetDataSize;
+			public long? BackupSetDataSize
+			{
+				get
+				{
+					return backupSetDataSize;
+				}
+				set	
+				{
+					backupSetDataSize = value;
+				}
+			}
 
-			private string backupSetDataFormat;
+			public string BackupSetDownloadTargetType
+			{
+				get
+				{
+					return backupSetDownloadTargetType;
+				}
+				set	
+				{
+					backupSetDownloadTargetType = value;
+				}
+			}
 
-			private string backupSetDbType;
+			public string BackupSetDownloadDir
+			{
+				get
+				{
+					return backupSetDownloadDir;
+				}
+				set	
+				{
+					backupSetDownloadDir = value;
+				}
+			}
 
-			private string backupSetDownloadWay;
+			public string ErrMessage
+			{
+				get
+				{
+					return errMessage;
+				}
+				set	
+				{
+					errMessage = value;
+				}
+			}
 
-			private string backupSetDownloadDir;
-
-			private string backupSetDownloadTargetType;
-
-			private long? backupGatewayId;
-
-			private string backupSetDownloadIntranetUrl;
-
-			private string backupSetDownloadInternetUrl;
-
-			private string errMessage;
+			public long? BackupSetDownloadCreateTime
+			{
+				get
+				{
+					return backupSetDownloadCreateTime;
+				}
+				set	
+				{
+					backupSetDownloadCreateTime = value;
+				}
+			}
 
 			public string BackupPlanId
 			{
@@ -215,6 +287,102 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				set	
 				{
 					backupPlanId = value;
+				}
+			}
+
+			public string BackupSetDbType
+			{
+				get
+				{
+					return backupSetDbType;
+				}
+				set	
+				{
+					backupSetDbType = value;
+				}
+			}
+
+			public string BackupSetDownloadInternetUrl
+			{
+				get
+				{
+					return backupSetDownloadInternetUrl;
+				}
+				set	
+				{
+					backupSetDownloadInternetUrl = value;
+				}
+			}
+
+			public string BackupSetId
+			{
+				get
+				{
+					return backupSetId;
+				}
+				set	
+				{
+					backupSetId = value;
+				}
+			}
+
+			public string BackupSetDownloadIntranetUrl
+			{
+				get
+				{
+					return backupSetDownloadIntranetUrl;
+				}
+				set	
+				{
+					backupSetDownloadIntranetUrl = value;
+				}
+			}
+
+			public long? BackupGatewayId
+			{
+				get
+				{
+					return backupGatewayId;
+				}
+				set	
+				{
+					backupGatewayId = value;
+				}
+			}
+
+			public string BackupSetDownloadWay
+			{
+				get
+				{
+					return backupSetDownloadWay;
+				}
+				set	
+				{
+					backupSetDownloadWay = value;
+				}
+			}
+
+			public long? BackupSetDownloadFinishTime
+			{
+				get
+				{
+					return backupSetDownloadFinishTime;
+				}
+				set	
+				{
+					backupSetDownloadFinishTime = value;
+				}
+			}
+
+			public string BackupSetJobType
+			{
+				get
+				{
+					return backupSetJobType;
+				}
+				set	
+				{
+					backupSetJobType = value;
 				}
 			}
 
@@ -242,90 +410,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public string BackupSetDownloadStatus
-			{
-				get
-				{
-					return backupSetDownloadStatus;
-				}
-				set	
-				{
-					backupSetDownloadStatus = value;
-				}
-			}
-
-			public long? BackupSetDownloadCreateTime
-			{
-				get
-				{
-					return backupSetDownloadCreateTime;
-				}
-				set	
-				{
-					backupSetDownloadCreateTime = value;
-				}
-			}
-
-			public long? BackupSetDownloadFinishTime
-			{
-				get
-				{
-					return backupSetDownloadFinishTime;
-				}
-				set	
-				{
-					backupSetDownloadFinishTime = value;
-				}
-			}
-
-			public string BackupSetId
-			{
-				get
-				{
-					return backupSetId;
-				}
-				set	
-				{
-					backupSetId = value;
-				}
-			}
-
-			public string BackupSetCode
-			{
-				get
-				{
-					return backupSetCode;
-				}
-				set	
-				{
-					backupSetCode = value;
-				}
-			}
-
-			public string BackupSetJobType
-			{
-				get
-				{
-					return backupSetJobType;
-				}
-				set	
-				{
-					backupSetJobType = value;
-				}
-			}
-
-			public long? BackupSetDataSize
-			{
-				get
-				{
-					return backupSetDataSize;
-				}
-				set	
-				{
-					backupSetDataSize = value;
-				}
-			}
-
 			public string BackupSetDataFormat
 			{
 				get
@@ -338,99 +422,15 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public string BackupSetDbType
+			public string BackupSetCode
 			{
 				get
 				{
-					return backupSetDbType;
+					return backupSetCode;
 				}
 				set	
 				{
-					backupSetDbType = value;
-				}
-			}
-
-			public string BackupSetDownloadWay
-			{
-				get
-				{
-					return backupSetDownloadWay;
-				}
-				set	
-				{
-					backupSetDownloadWay = value;
-				}
-			}
-
-			public string BackupSetDownloadDir
-			{
-				get
-				{
-					return backupSetDownloadDir;
-				}
-				set	
-				{
-					backupSetDownloadDir = value;
-				}
-			}
-
-			public string BackupSetDownloadTargetType
-			{
-				get
-				{
-					return backupSetDownloadTargetType;
-				}
-				set	
-				{
-					backupSetDownloadTargetType = value;
-				}
-			}
-
-			public long? BackupGatewayId
-			{
-				get
-				{
-					return backupGatewayId;
-				}
-				set	
-				{
-					backupGatewayId = value;
-				}
-			}
-
-			public string BackupSetDownloadIntranetUrl
-			{
-				get
-				{
-					return backupSetDownloadIntranetUrl;
-				}
-				set	
-				{
-					backupSetDownloadIntranetUrl = value;
-				}
-			}
-
-			public string BackupSetDownloadInternetUrl
-			{
-				get
-				{
-					return backupSetDownloadInternetUrl;
-				}
-				set	
-				{
-					backupSetDownloadInternetUrl = value;
-				}
-			}
-
-			public string ErrMessage
-			{
-				get
-				{
-					return errMessage;
-				}
-				set	
-				{
-					errMessage = value;
+					backupSetCode = value;
 				}
 			}
 		}

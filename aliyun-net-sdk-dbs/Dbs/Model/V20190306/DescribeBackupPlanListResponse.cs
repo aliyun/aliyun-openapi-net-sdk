@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
@@ -25,61 +25,25 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 	public class DescribeBackupPlanListResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errCode;
-
-		private string errMessage;
-
 		private int? httpStatusCode;
-
-		private string requestId;
-
-		private int? totalPages;
-
-		private int? pageSize;
 
 		private int? pageNum;
 
+		private string requestId;
+
+		private string errCode;
+
+		private bool? success;
+
+		private string errMessage;
+
+		private int? totalPages;
+
 		private int? totalElements;
 
+		private int? pageSize;
+
 		private List<DescribeBackupPlanList_BackupPlanDetail> items;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrCode
-		{
-			get
-			{
-				return errCode;
-			}
-			set	
-			{
-				errCode = value;
-			}
-		}
-
-		public string ErrMessage
-		{
-			get
-			{
-				return errMessage;
-			}
-			set	
-			{
-				errMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -90,42 +54,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			set	
 			{
 				httpStatusCode = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalPages
-		{
-			get
-			{
-				return totalPages;
-			}
-			set	
-			{
-				totalPages = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
 			}
 		}
 
@@ -141,6 +69,66 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string ErrCode
+		{
+			get
+			{
+				return errCode;
+			}
+			set	
+			{
+				errCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string ErrMessage
+		{
+			get
+			{
+				return errMessage;
+			}
+			set	
+			{
+				errMessage = value;
+			}
+		}
+
+		public int? TotalPages
+		{
+			get
+			{
+				return totalPages;
+			}
+			set	
+			{
+				totalPages = value;
+			}
+		}
+
 		public int? TotalElements
 		{
 			get
@@ -150,6 +138,18 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			set	
 			{
 				totalElements = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
 			}
 		}
 
@@ -168,85 +168,87 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		public class DescribeBackupPlanList_BackupPlanDetail
 		{
 
-			private string backupPlanId;
+			private string crossRoleName;
 
 			private string sourceEndpointInstanceType;
 
-			private string sourceEndpointRegion;
-
-			private string sourceEndpointInstanceID;
+			private string backupSetDownloadDir;
 
 			private string sourceEndpointIpPort;
 
-			private string sourceEndpointDatabaseName;
-
-			private string sourceEndpointUserName;
-
-			private string backupObjects;
-
-			private long? backupGatewayId;
-
-			private string oSSBucketRegion;
-
-			private string oSSBucketName;
-
-			private string backupPeriod;
-
-			private string backupStartTime;
-
-			private bool? enableBackupLog;
-
-			private int? backupRetentionPeriod;
-
-			private int? duplicationInfrequentAccessPeriod;
+			private string crossAliyunId;
 
 			private int? duplicationArchivePeriod;
 
-			private string backupPlanName;
-
-			private string sourceEndpointOracleSID;
-
-			private string instanceClass;
-
-			private string backupMethod;
-
-			private long? backupPlanCreateTime;
-
-			private string backupPlanStatus;
-
-			private long? beginTimestampForRestore;
+			private string backupPlanId;
 
 			private long? endTimestampForRestore;
 
-			private bool? openBackupSetAutoDownload;
-
-			private string backupSetDownloadTargetType;
-
-			private string backupSetDownloadDir;
-
-			private long? backupSetDownloadGatewayId;
+			private string backupPlanStatus;
 
 			private string backupSetDownloadFullDataFormat;
 
-			private string backupSetDownloadIncrementDataFormat;
+			private int? backupRetentionPeriod;
 
-			private string crossAliyunId;
+			private string oSSBucketRegion;
 
-			private string crossRoleName;
+			private string sourceEndpointOracleSID;
 
 			private string backupStorageType;
 
+			private string backupMethod;
+
+			private string sourceEndpointRegion;
+
+			private string backupPeriod;
+
+			private string sourceEndpointDatabaseName;
+
+			private long? backupSetDownloadGatewayId;
+
+			private long? backupPlanCreateTime;
+
+			private string instanceClass;
+
+			private string backupSetDownloadTargetType;
+
+			private int? duplicationInfrequentAccessPeriod;
+
+			private string backupStartTime;
+
 			private string errMessage;
 
-			public string BackupPlanId
+			private string backupObjects;
+
+			private long? beginTimestampForRestore;
+
+			private string sourceEndpointInstanceID;
+
+			private bool? openBackupSetAutoDownload;
+
+			private string backupPlanName;
+
+			private string oSSBucketName;
+
+			private long? backupGatewayId;
+
+			private string sourceEndpointUserName;
+
+			private string backupSetDownloadIncrementDataFormat;
+
+			private bool? enableBackupLog;
+
+			private string resourceGroupId;
+
+			public string CrossRoleName
 			{
 				get
 				{
-					return backupPlanId;
+					return crossRoleName;
 				}
 				set	
 				{
-					backupPlanId = value;
+					crossRoleName = value;
 				}
 			}
 
@@ -262,27 +264,15 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public string SourceEndpointRegion
+			public string BackupSetDownloadDir
 			{
 				get
 				{
-					return sourceEndpointRegion;
+					return backupSetDownloadDir;
 				}
 				set	
 				{
-					sourceEndpointRegion = value;
-				}
-			}
-
-			public string SourceEndpointInstanceID
-			{
-				get
-				{
-					return sourceEndpointInstanceID;
-				}
-				set	
-				{
-					sourceEndpointInstanceID = value;
+					backupSetDownloadDir = value;
 				}
 			}
 
@@ -298,135 +288,15 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public string SourceEndpointDatabaseName
+			public string CrossAliyunId
 			{
 				get
 				{
-					return sourceEndpointDatabaseName;
+					return crossAliyunId;
 				}
 				set	
 				{
-					sourceEndpointDatabaseName = value;
-				}
-			}
-
-			public string SourceEndpointUserName
-			{
-				get
-				{
-					return sourceEndpointUserName;
-				}
-				set	
-				{
-					sourceEndpointUserName = value;
-				}
-			}
-
-			public string BackupObjects
-			{
-				get
-				{
-					return backupObjects;
-				}
-				set	
-				{
-					backupObjects = value;
-				}
-			}
-
-			public long? BackupGatewayId
-			{
-				get
-				{
-					return backupGatewayId;
-				}
-				set	
-				{
-					backupGatewayId = value;
-				}
-			}
-
-			public string OSSBucketRegion
-			{
-				get
-				{
-					return oSSBucketRegion;
-				}
-				set	
-				{
-					oSSBucketRegion = value;
-				}
-			}
-
-			public string OSSBucketName
-			{
-				get
-				{
-					return oSSBucketName;
-				}
-				set	
-				{
-					oSSBucketName = value;
-				}
-			}
-
-			public string BackupPeriod
-			{
-				get
-				{
-					return backupPeriod;
-				}
-				set	
-				{
-					backupPeriod = value;
-				}
-			}
-
-			public string BackupStartTime
-			{
-				get
-				{
-					return backupStartTime;
-				}
-				set	
-				{
-					backupStartTime = value;
-				}
-			}
-
-			public bool? EnableBackupLog
-			{
-				get
-				{
-					return enableBackupLog;
-				}
-				set	
-				{
-					enableBackupLog = value;
-				}
-			}
-
-			public int? BackupRetentionPeriod
-			{
-				get
-				{
-					return backupRetentionPeriod;
-				}
-				set	
-				{
-					backupRetentionPeriod = value;
-				}
-			}
-
-			public int? DuplicationInfrequentAccessPeriod
-			{
-				get
-				{
-					return duplicationInfrequentAccessPeriod;
-				}
-				set	
-				{
-					duplicationInfrequentAccessPeriod = value;
+					crossAliyunId = value;
 				}
 			}
 
@@ -442,87 +312,15 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public string BackupPlanName
+			public string BackupPlanId
 			{
 				get
 				{
-					return backupPlanName;
+					return backupPlanId;
 				}
 				set	
 				{
-					backupPlanName = value;
-				}
-			}
-
-			public string SourceEndpointOracleSID
-			{
-				get
-				{
-					return sourceEndpointOracleSID;
-				}
-				set	
-				{
-					sourceEndpointOracleSID = value;
-				}
-			}
-
-			public string InstanceClass
-			{
-				get
-				{
-					return instanceClass;
-				}
-				set	
-				{
-					instanceClass = value;
-				}
-			}
-
-			public string BackupMethod
-			{
-				get
-				{
-					return backupMethod;
-				}
-				set	
-				{
-					backupMethod = value;
-				}
-			}
-
-			public long? BackupPlanCreateTime
-			{
-				get
-				{
-					return backupPlanCreateTime;
-				}
-				set	
-				{
-					backupPlanCreateTime = value;
-				}
-			}
-
-			public string BackupPlanStatus
-			{
-				get
-				{
-					return backupPlanStatus;
-				}
-				set	
-				{
-					backupPlanStatus = value;
-				}
-			}
-
-			public long? BeginTimestampForRestore
-			{
-				get
-				{
-					return beginTimestampForRestore;
-				}
-				set	
-				{
-					beginTimestampForRestore = value;
+					backupPlanId = value;
 				}
 			}
 
@@ -538,51 +336,15 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public bool? OpenBackupSetAutoDownload
+			public string BackupPlanStatus
 			{
 				get
 				{
-					return openBackupSetAutoDownload;
+					return backupPlanStatus;
 				}
 				set	
 				{
-					openBackupSetAutoDownload = value;
-				}
-			}
-
-			public string BackupSetDownloadTargetType
-			{
-				get
-				{
-					return backupSetDownloadTargetType;
-				}
-				set	
-				{
-					backupSetDownloadTargetType = value;
-				}
-			}
-
-			public string BackupSetDownloadDir
-			{
-				get
-				{
-					return backupSetDownloadDir;
-				}
-				set	
-				{
-					backupSetDownloadDir = value;
-				}
-			}
-
-			public long? BackupSetDownloadGatewayId
-			{
-				get
-				{
-					return backupSetDownloadGatewayId;
-				}
-				set	
-				{
-					backupSetDownloadGatewayId = value;
+					backupPlanStatus = value;
 				}
 			}
 
@@ -598,39 +360,39 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public string BackupSetDownloadIncrementDataFormat
+			public int? BackupRetentionPeriod
 			{
 				get
 				{
-					return backupSetDownloadIncrementDataFormat;
+					return backupRetentionPeriod;
 				}
 				set	
 				{
-					backupSetDownloadIncrementDataFormat = value;
+					backupRetentionPeriod = value;
 				}
 			}
 
-			public string CrossAliyunId
+			public string OSSBucketRegion
 			{
 				get
 				{
-					return crossAliyunId;
+					return oSSBucketRegion;
 				}
 				set	
 				{
-					crossAliyunId = value;
+					oSSBucketRegion = value;
 				}
 			}
 
-			public string CrossRoleName
+			public string SourceEndpointOracleSID
 			{
 				get
 				{
-					return crossRoleName;
+					return sourceEndpointOracleSID;
 				}
 				set	
 				{
-					crossRoleName = value;
+					sourceEndpointOracleSID = value;
 				}
 			}
 
@@ -646,6 +408,126 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
+			public string BackupMethod
+			{
+				get
+				{
+					return backupMethod;
+				}
+				set	
+				{
+					backupMethod = value;
+				}
+			}
+
+			public string SourceEndpointRegion
+			{
+				get
+				{
+					return sourceEndpointRegion;
+				}
+				set	
+				{
+					sourceEndpointRegion = value;
+				}
+			}
+
+			public string BackupPeriod
+			{
+				get
+				{
+					return backupPeriod;
+				}
+				set	
+				{
+					backupPeriod = value;
+				}
+			}
+
+			public string SourceEndpointDatabaseName
+			{
+				get
+				{
+					return sourceEndpointDatabaseName;
+				}
+				set	
+				{
+					sourceEndpointDatabaseName = value;
+				}
+			}
+
+			public long? BackupSetDownloadGatewayId
+			{
+				get
+				{
+					return backupSetDownloadGatewayId;
+				}
+				set	
+				{
+					backupSetDownloadGatewayId = value;
+				}
+			}
+
+			public long? BackupPlanCreateTime
+			{
+				get
+				{
+					return backupPlanCreateTime;
+				}
+				set	
+				{
+					backupPlanCreateTime = value;
+				}
+			}
+
+			public string InstanceClass
+			{
+				get
+				{
+					return instanceClass;
+				}
+				set	
+				{
+					instanceClass = value;
+				}
+			}
+
+			public string BackupSetDownloadTargetType
+			{
+				get
+				{
+					return backupSetDownloadTargetType;
+				}
+				set	
+				{
+					backupSetDownloadTargetType = value;
+				}
+			}
+
+			public int? DuplicationInfrequentAccessPeriod
+			{
+				get
+				{
+					return duplicationInfrequentAccessPeriod;
+				}
+				set	
+				{
+					duplicationInfrequentAccessPeriod = value;
+				}
+			}
+
+			public string BackupStartTime
+			{
+				get
+				{
+					return backupStartTime;
+				}
+				set	
+				{
+					backupStartTime = value;
+				}
+			}
+
 			public string ErrMessage
 			{
 				get
@@ -655,6 +537,138 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				set	
 				{
 					errMessage = value;
+				}
+			}
+
+			public string BackupObjects
+			{
+				get
+				{
+					return backupObjects;
+				}
+				set	
+				{
+					backupObjects = value;
+				}
+			}
+
+			public long? BeginTimestampForRestore
+			{
+				get
+				{
+					return beginTimestampForRestore;
+				}
+				set	
+				{
+					beginTimestampForRestore = value;
+				}
+			}
+
+			public string SourceEndpointInstanceID
+			{
+				get
+				{
+					return sourceEndpointInstanceID;
+				}
+				set	
+				{
+					sourceEndpointInstanceID = value;
+				}
+			}
+
+			public bool? OpenBackupSetAutoDownload
+			{
+				get
+				{
+					return openBackupSetAutoDownload;
+				}
+				set	
+				{
+					openBackupSetAutoDownload = value;
+				}
+			}
+
+			public string BackupPlanName
+			{
+				get
+				{
+					return backupPlanName;
+				}
+				set	
+				{
+					backupPlanName = value;
+				}
+			}
+
+			public string OSSBucketName
+			{
+				get
+				{
+					return oSSBucketName;
+				}
+				set	
+				{
+					oSSBucketName = value;
+				}
+			}
+
+			public long? BackupGatewayId
+			{
+				get
+				{
+					return backupGatewayId;
+				}
+				set	
+				{
+					backupGatewayId = value;
+				}
+			}
+
+			public string SourceEndpointUserName
+			{
+				get
+				{
+					return sourceEndpointUserName;
+				}
+				set	
+				{
+					sourceEndpointUserName = value;
+				}
+			}
+
+			public string BackupSetDownloadIncrementDataFormat
+			{
+				get
+				{
+					return backupSetDownloadIncrementDataFormat;
+				}
+				set	
+				{
+					backupSetDownloadIncrementDataFormat = value;
+				}
+			}
+
+			public bool? EnableBackupLog
+			{
+				get
+				{
+					return enableBackupLog;
+				}
+				set	
+				{
+					enableBackupLog = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 		}

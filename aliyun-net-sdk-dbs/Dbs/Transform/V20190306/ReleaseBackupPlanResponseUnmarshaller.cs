@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			ReleaseBackupPlanResponse releaseBackupPlanResponse = new ReleaseBackupPlanResponse();
 
 			releaseBackupPlanResponse.HttpResponse = _ctx.HttpResponse;
-			releaseBackupPlanResponse.Success = _ctx.BooleanValue("ReleaseBackupPlan.Success");
-			releaseBackupPlanResponse.ErrCode = _ctx.StringValue("ReleaseBackupPlan.ErrCode");
-			releaseBackupPlanResponse.ErrMessage = _ctx.StringValue("ReleaseBackupPlan.ErrMessage");
 			releaseBackupPlanResponse.HttpStatusCode = _ctx.IntegerValue("ReleaseBackupPlan.HttpStatusCode");
 			releaseBackupPlanResponse.RequestId = _ctx.StringValue("ReleaseBackupPlan.RequestId");
+			releaseBackupPlanResponse.ErrCode = _ctx.StringValue("ReleaseBackupPlan.ErrCode");
+			releaseBackupPlanResponse.Success = _ctx.BooleanValue("ReleaseBackupPlan.Success");
+			releaseBackupPlanResponse.ErrMessage = _ctx.StringValue("ReleaseBackupPlan.ErrMessage");
 			releaseBackupPlanResponse.BackupPlanId = _ctx.StringValue("ReleaseBackupPlan.BackupPlanId");
         
 			return releaseBackupPlanResponse;
