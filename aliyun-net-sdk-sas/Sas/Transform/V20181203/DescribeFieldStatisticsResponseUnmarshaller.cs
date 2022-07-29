@@ -54,6 +54,7 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			groupedFields.RiskInstanceCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.RiskInstanceCount");
 			groupedFields.HuaweiInstanceCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.HuaweiInstanceCount");
 			groupedFields.AwsInstanceCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.AwsInstanceCount");
+			groupedFields.OutMachineInstanceCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.OutMachineInstanceCount");
 			describeFieldStatisticsResponse.GroupedFields = groupedFields;
         
 			return describeFieldStatisticsResponse;

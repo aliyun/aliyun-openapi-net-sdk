@@ -96,6 +96,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private int? awsInstanceCount;
 
+			private int? outMachineInstanceCount;
+
 			public int? OfflineInstanceCount
 			{
 				get
@@ -333,6 +335,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					awsInstanceCount = value;
+				}
+			}
+
+			public int? OutMachineInstanceCount
+			{
+				get
+				{
+					return outMachineInstanceCount;
+				}
+				set	
+				{
+					outMachineInstanceCount = value;
 				}
 			}
 		}
