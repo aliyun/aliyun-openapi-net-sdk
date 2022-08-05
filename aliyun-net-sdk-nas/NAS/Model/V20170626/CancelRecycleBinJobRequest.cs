@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class CancelRecycleBinJobRequest : RpcAcsRequest<CancelRecycleBinJobResponse>
     {
         public CancelRecycleBinJobRequest()
-            : base("NAS", "2017-06-26", "CancelRecycleBinJob", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "CancelRecycleBinJob", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

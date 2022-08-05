@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -25,38 +25,15 @@ namespace Aliyun.Acs.oos.Model.V20190601
 	public class ListActionsResponse : AcsResponse
 	{
 
+		private string nextToken;
+
 		private string requestId;
 
 		private int? maxResults;
 
-		private string nextToken;
-
 		private List<ListActions_Action> actions;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -69,6 +46,33 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "MaxResults")]
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Actions")]
 		public List<ListActions_Action> Actions
 		{
 			get
@@ -84,42 +88,34 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		public class ListActions_Action
 		{
 
-			private string oOSActionName;
-
-			private string description;
+			private int? popularity;
 
 			private string actionType;
 
-			private string createdDate;
+			private string description;
 
-			private string properties;
+			private string createdDate;
 
 			private string templateVersion;
 
-			public string OOSActionName
+			private string oOSActionName;
+
+			private string properties;
+
+			[JsonProperty(PropertyName = "Popularity")]
+			public int? Popularity
 			{
 				get
 				{
-					return oOSActionName;
+					return popularity;
 				}
 				set	
 				{
-					oOSActionName = value;
+					popularity = value;
 				}
 			}
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "ActionType")]
 			public string ActionType
 			{
 				get
@@ -132,6 +128,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Description")]
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreatedDate")]
 			public string CreatedDate
 			{
 				get
@@ -144,18 +154,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
-			public string Properties
-			{
-				get
-				{
-					return properties;
-				}
-				set	
-				{
-					properties = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "TemplateVersion")]
 			public string TemplateVersion
 			{
 				get
@@ -165,6 +164,32 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					templateVersion = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OOSActionName")]
+			public string OOSActionName
+			{
+				get
+				{
+					return oOSActionName;
+				}
+				set	
+				{
+					oOSActionName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Properties")]
+			public string Properties
+			{
+				get
+				{
+					return properties;
+				}
+				set	
+				{
+					properties = value;
 				}
 			}
 		}

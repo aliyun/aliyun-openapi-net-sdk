@@ -41,7 +41,13 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			Method = MethodType.POST;
         }
 
+		private string targetType;
+
+		private string containerFieldName;
+
 		private string sourceIp;
+
+		private string containerFieldValue;
 
 		private int? pageSize;
 
@@ -51,11 +57,39 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private int? currentPage;
 
+		private string clusterId;
+
 		private long? riskId;
 
 		private long? strategyId;
 
 		private string uuids;
+
+		public string TargetType
+		{
+			get
+			{
+				return targetType;
+			}
+			set	
+			{
+				targetType = value;
+				DictionaryUtil.Add(QueryParameters, "TargetType", value);
+			}
+		}
+
+		public string ContainerFieldName
+		{
+			get
+			{
+				return containerFieldName;
+			}
+			set	
+			{
+				containerFieldName = value;
+				DictionaryUtil.Add(QueryParameters, "ContainerFieldName", value);
+			}
+		}
 
 		public string SourceIp
 		{
@@ -67,6 +101,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				sourceIp = value;
 				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
+			}
+		}
+
+		public string ContainerFieldValue
+		{
+			get
+			{
+				return containerFieldValue;
+			}
+			set	
+			{
+				containerFieldValue = value;
+				DictionaryUtil.Add(QueryParameters, "ContainerFieldValue", value);
 			}
 		}
 
@@ -119,6 +166,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				currentPage = value;
 				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
 			}
 		}
 

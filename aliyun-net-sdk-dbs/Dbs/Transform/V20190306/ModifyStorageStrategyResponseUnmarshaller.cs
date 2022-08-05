@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			ModifyStorageStrategyResponse modifyStorageStrategyResponse = new ModifyStorageStrategyResponse();
 
 			modifyStorageStrategyResponse.HttpResponse = _ctx.HttpResponse;
-			modifyStorageStrategyResponse.Success = _ctx.BooleanValue("ModifyStorageStrategy.Success");
-			modifyStorageStrategyResponse.ErrCode = _ctx.StringValue("ModifyStorageStrategy.ErrCode");
-			modifyStorageStrategyResponse.ErrMessage = _ctx.StringValue("ModifyStorageStrategy.ErrMessage");
 			modifyStorageStrategyResponse.HttpStatusCode = _ctx.IntegerValue("ModifyStorageStrategy.HttpStatusCode");
 			modifyStorageStrategyResponse.RequestId = _ctx.StringValue("ModifyStorageStrategy.RequestId");
+			modifyStorageStrategyResponse.ErrCode = _ctx.StringValue("ModifyStorageStrategy.ErrCode");
+			modifyStorageStrategyResponse.Success = _ctx.BooleanValue("ModifyStorageStrategy.Success");
+			modifyStorageStrategyResponse.ErrMessage = _ctx.StringValue("ModifyStorageStrategy.ErrMessage");
 			modifyStorageStrategyResponse.BackupPlanId = _ctx.StringValue("ModifyStorageStrategy.BackupPlanId");
 			modifyStorageStrategyResponse.NeedPrecheck = _ctx.BooleanValue("ModifyStorageStrategy.NeedPrecheck");
         

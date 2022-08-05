@@ -31,25 +31,26 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			GetTemplateResponse getTemplateResponse = new GetTemplateResponse();
 
 			getTemplateResponse.HttpResponse = _ctx.HttpResponse;
-			getTemplateResponse.RequestId = _ctx.StringValue("GetTemplate.RequestId");
 			getTemplateResponse.Content = _ctx.StringValue("GetTemplate.Content");
+			getTemplateResponse.RequestId = _ctx.StringValue("GetTemplate.RequestId");
 
 			GetTemplateResponse.GetTemplate_Template template = new GetTemplateResponse.GetTemplate_Template();
-			template.TemplateName = _ctx.StringValue("GetTemplate.Template.TemplateName");
-			template.TemplateId = _ctx.StringValue("GetTemplate.Template.TemplateId");
-			template.CreatedDate = _ctx.StringValue("GetTemplate.Template.CreatedDate");
-			template.CreatedBy = _ctx.StringValue("GetTemplate.Template.CreatedBy");
+			template.Hash = _ctx.StringValue("GetTemplate.Template.Hash");
 			template.UpdatedDate = _ctx.StringValue("GetTemplate.Template.UpdatedDate");
 			template.UpdatedBy = _ctx.StringValue("GetTemplate.Template.UpdatedBy");
-			template.Hash = _ctx.StringValue("GetTemplate.Template.Hash");
-			template.Description = _ctx.StringValue("GetTemplate.Template.Description");
-			template.ShareType = _ctx.StringValue("GetTemplate.Template.ShareType");
-			template.TemplateFormat = _ctx.StringValue("GetTemplate.Template.TemplateFormat");
-			template.TemplateVersion = _ctx.StringValue("GetTemplate.Template.TemplateVersion");
-			template.HasTrigger = _ctx.BooleanValue("GetTemplate.Template.HasTrigger");
-			template.Tags = _ctx.StringValue("GetTemplate.Template.Tags");
 			template.TemplateType = _ctx.StringValue("GetTemplate.Template.TemplateType");
+			template.Tags = _ctx.StringValue("GetTemplate.Template.Tags");
+			template.TemplateName = _ctx.StringValue("GetTemplate.Template.TemplateName");
+			template.TemplateVersion = _ctx.StringValue("GetTemplate.Template.TemplateVersion");
+			template.TemplateFormat = _ctx.StringValue("GetTemplate.Template.TemplateFormat");
+			template.Description = _ctx.StringValue("GetTemplate.Template.Description");
+			template.ResourceGroupId = _ctx.StringValue("GetTemplate.Template.ResourceGroupId");
+			template.CreatedBy = _ctx.StringValue("GetTemplate.Template.CreatedBy");
+			template.CreatedDate = _ctx.StringValue("GetTemplate.Template.CreatedDate");
 			template.VersionName = _ctx.StringValue("GetTemplate.Template.VersionName");
+			template.TemplateId = _ctx.StringValue("GetTemplate.Template.TemplateId");
+			template.HasTrigger = _ctx.BooleanValue("GetTemplate.Template.HasTrigger");
+			template.ShareType = _ctx.StringValue("GetTemplate.Template.ShareType");
 			getTemplateResponse.Template = template;
         
 			return getTemplateResponse;

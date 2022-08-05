@@ -31,15 +31,15 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			QueryQualificationDetailResponse queryQualificationDetailResponse = new QueryQualificationDetailResponse();
 
 			queryQualificationDetailResponse.HttpResponse = _ctx.HttpResponse;
-			queryQualificationDetailResponse.TrackId = _ctx.StringValue("QueryQualificationDetail.TrackId");
 			queryQualificationDetailResponse.AuditStatus = _ctx.IntegerValue("QueryQualificationDetail.AuditStatus");
 			queryQualificationDetailResponse.RequestId = _ctx.StringValue("QueryQualificationDetail.RequestId");
+			queryQualificationDetailResponse.TrackId = _ctx.StringValue("QueryQualificationDetail.TrackId");
 
 			List<QueryQualificationDetailResponse.QueryQualificationDetail_QualificationCredential> queryQualificationDetailResponse_credentials = new List<QueryQualificationDetailResponse.QueryQualificationDetail_QualificationCredential>();
 			for (int i = 0; i < _ctx.Length("QueryQualificationDetail.Credentials.Length"); i++) {
 				QueryQualificationDetailResponse.QueryQualificationDetail_QualificationCredential qualificationCredential = new QueryQualificationDetailResponse.QueryQualificationDetail_QualificationCredential();
-				qualificationCredential.CredentialNo = _ctx.StringValue("QueryQualificationDetail.Credentials["+ i +"].CredentialNo");
 				qualificationCredential.CredentialType = _ctx.StringValue("QueryQualificationDetail.Credentials["+ i +"].CredentialType");
+				qualificationCredential.CredentialNo = _ctx.StringValue("QueryQualificationDetail.Credentials["+ i +"].CredentialNo");
 				qualificationCredential.CredentialUrl = _ctx.StringValue("QueryQualificationDetail.Credentials["+ i +"].CredentialUrl");
 
 				queryQualificationDetailResponse_credentials.Add(qualificationCredential);

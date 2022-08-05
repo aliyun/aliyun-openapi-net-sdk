@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -25,38 +25,15 @@ namespace Aliyun.Acs.oos.Model.V20190601
 	public class ListTagKeysResponse : AcsResponse
 	{
 
+		private string nextToken;
+
 		private string requestId;
 
 		private int? maxResults;
 
-		private string nextToken;
-
 		private List<string> keys;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -69,6 +46,33 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "MaxResults")]
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Keys")]
 		public List<string> Keys
 		{
 			get

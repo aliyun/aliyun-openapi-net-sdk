@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,43 +25,31 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class QueryTransferInListResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? totalItemNum;
+		private bool? prePage;
 
 		private int? currentPageNum;
 
-		private int? totalPageNum;
+		private string requestId;
 
 		private int? pageSize;
 
-		private bool? prePage;
+		private int? totalPageNum;
+
+		private int? totalItemNum;
 
 		private bool? nextPage;
 
 		private List<QueryTransferInList_TransferInInfo> data;
 
-		public string RequestId
+		public bool? PrePage
 		{
 			get
 			{
-				return requestId;
+				return prePage;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalItemNum
-		{
-			get
-			{
-				return totalItemNum;
-			}
-			set	
-			{
-				totalItemNum = value;
+				prePage = value;
 			}
 		}
 
@@ -77,15 +65,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public int? TotalPageNum
+		public string RequestId
 		{
 			get
 			{
-				return totalPageNum;
+				return requestId;
 			}
 			set	
 			{
-				totalPageNum = value;
+				requestId = value;
 			}
 		}
 
@@ -101,15 +89,27 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public bool? PrePage
+		public int? TotalPageNum
 		{
 			get
 			{
-				return prePage;
+				return totalPageNum;
 			}
 			set	
 			{
-				prePage = value;
+				totalPageNum = value;
+			}
+		}
+
+		public int? TotalItemNum
+		{
+			get
+			{
+				return totalItemNum;
+			}
+			set	
+			{
+				totalItemNum = value;
 			}
 		}
 
@@ -140,57 +140,69 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 		public class QueryTransferInList_TransferInInfo
 		{
 
-			private string submissionDate;
+			private int? status;
+
+			private string userId;
 
 			private string modificationDate;
 
-			private string userId;
+			private long? transferAuthorizationCodeSubmissionDateLong;
+
+			private long? submissionDateLong;
+
+			private string resultCode;
+
+			private bool? needMailCheck;
+
+			private long? modificationDateLong;
 
 			private string instanceId;
 
 			private string domainName;
 
-			private int? status;
-
-			private string simpleTransferInStatus;
-
-			private string resultCode;
-
-			private string resultDate;
+			private int? progressBarType;
 
 			private string resultMsg;
 
-			private string transferAuthorizationCodeSubmissionDate;
+			private long? resultDateLong;
 
-			private bool? needMailCheck;
+			private string expirationDate;
 
 			private string email;
 
 			private bool? whoisMailStatus;
 
-			private string expirationDate;
+			private string transferAuthorizationCodeSubmissionDate;
 
-			private int? progressBarType;
-
-			private long? submissionDateLong;
-
-			private long? modificationDateLong;
-
-			private long? resultDateLong;
+			private string submissionDate;
 
 			private long? expirationDateLong;
 
-			private long? transferAuthorizationCodeSubmissionDateLong;
+			private string simpleTransferInStatus;
 
-			public string SubmissionDate
+			private string resultDate;
+
+			public int? Status
 			{
 				get
 				{
-					return submissionDate;
+					return status;
 				}
 				set	
 				{
-					submissionDate = value;
+					status = value;
+				}
+			}
+
+			public string UserId
+			{
+				get
+				{
+					return userId;
+				}
+				set	
+				{
+					userId = value;
 				}
 			}
 
@@ -206,15 +218,63 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public string UserId
+			public long? TransferAuthorizationCodeSubmissionDateLong
 			{
 				get
 				{
-					return userId;
+					return transferAuthorizationCodeSubmissionDateLong;
 				}
 				set	
 				{
-					userId = value;
+					transferAuthorizationCodeSubmissionDateLong = value;
+				}
+			}
+
+			public long? SubmissionDateLong
+			{
+				get
+				{
+					return submissionDateLong;
+				}
+				set	
+				{
+					submissionDateLong = value;
+				}
+			}
+
+			public string ResultCode
+			{
+				get
+				{
+					return resultCode;
+				}
+				set	
+				{
+					resultCode = value;
+				}
+			}
+
+			public bool? NeedMailCheck
+			{
+				get
+				{
+					return needMailCheck;
+				}
+				set	
+				{
+					needMailCheck = value;
+				}
+			}
+
+			public long? ModificationDateLong
+			{
+				get
+				{
+					return modificationDateLong;
+				}
+				set	
+				{
+					modificationDateLong = value;
 				}
 			}
 
@@ -242,51 +302,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public int? Status
+			public int? ProgressBarType
 			{
 				get
 				{
-					return status;
+					return progressBarType;
 				}
 				set	
 				{
-					status = value;
-				}
-			}
-
-			public string SimpleTransferInStatus
-			{
-				get
-				{
-					return simpleTransferInStatus;
-				}
-				set	
-				{
-					simpleTransferInStatus = value;
-				}
-			}
-
-			public string ResultCode
-			{
-				get
-				{
-					return resultCode;
-				}
-				set	
-				{
-					resultCode = value;
-				}
-			}
-
-			public string ResultDate
-			{
-				get
-				{
-					return resultDate;
-				}
-				set	
-				{
-					resultDate = value;
+					progressBarType = value;
 				}
 			}
 
@@ -302,27 +326,27 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public string TransferAuthorizationCodeSubmissionDate
+			public long? ResultDateLong
 			{
 				get
 				{
-					return transferAuthorizationCodeSubmissionDate;
+					return resultDateLong;
 				}
 				set	
 				{
-					transferAuthorizationCodeSubmissionDate = value;
+					resultDateLong = value;
 				}
 			}
 
-			public bool? NeedMailCheck
+			public string ExpirationDate
 			{
 				get
 				{
-					return needMailCheck;
+					return expirationDate;
 				}
 				set	
 				{
-					needMailCheck = value;
+					expirationDate = value;
 				}
 			}
 
@@ -350,63 +374,27 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public string ExpirationDate
+			public string TransferAuthorizationCodeSubmissionDate
 			{
 				get
 				{
-					return expirationDate;
+					return transferAuthorizationCodeSubmissionDate;
 				}
 				set	
 				{
-					expirationDate = value;
+					transferAuthorizationCodeSubmissionDate = value;
 				}
 			}
 
-			public int? ProgressBarType
+			public string SubmissionDate
 			{
 				get
 				{
-					return progressBarType;
+					return submissionDate;
 				}
 				set	
 				{
-					progressBarType = value;
-				}
-			}
-
-			public long? SubmissionDateLong
-			{
-				get
-				{
-					return submissionDateLong;
-				}
-				set	
-				{
-					submissionDateLong = value;
-				}
-			}
-
-			public long? ModificationDateLong
-			{
-				get
-				{
-					return modificationDateLong;
-				}
-				set	
-				{
-					modificationDateLong = value;
-				}
-			}
-
-			public long? ResultDateLong
-			{
-				get
-				{
-					return resultDateLong;
-				}
-				set	
-				{
-					resultDateLong = value;
+					submissionDate = value;
 				}
 			}
 
@@ -422,15 +410,27 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public long? TransferAuthorizationCodeSubmissionDateLong
+			public string SimpleTransferInStatus
 			{
 				get
 				{
-					return transferAuthorizationCodeSubmissionDateLong;
+					return simpleTransferInStatus;
 				}
 				set	
 				{
-					transferAuthorizationCodeSubmissionDateLong = value;
+					simpleTransferInStatus = value;
+				}
+			}
+
+			public string ResultDate
+			{
+				get
+				{
+					return resultDate;
+				}
+				set	
+				{
+					resultDate = value;
 				}
 			}
 		}

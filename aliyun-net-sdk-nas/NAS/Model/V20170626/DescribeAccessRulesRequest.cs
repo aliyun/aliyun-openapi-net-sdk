@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class DescribeAccessRulesRequest : RpcAcsRequest<DescribeAccessRulesResponse>
     {
         public DescribeAccessRulesRequest()
-            : base("NAS", "2017-06-26", "DescribeAccessRules", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "DescribeAccessRules", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

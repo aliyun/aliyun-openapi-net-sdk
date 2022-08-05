@@ -36,10 +36,10 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			List<QueryDSRecordResponse.QueryDSRecord_DSRecord> queryDSRecordResponse_dSRecordList = new List<QueryDSRecordResponse.QueryDSRecord_DSRecord>();
 			for (int i = 0; i < _ctx.Length("QueryDSRecord.DSRecordList.Length"); i++) {
 				QueryDSRecordResponse.QueryDSRecord_DSRecord dSRecord = new QueryDSRecordResponse.QueryDSRecord_DSRecord();
-				dSRecord.KeyTag = _ctx.IntegerValue("QueryDSRecord.DSRecordList["+ i +"].KeyTag");
-				dSRecord.Algorithm = _ctx.IntegerValue("QueryDSRecord.DSRecordList["+ i +"].Algorithm");
 				dSRecord.DigestType = _ctx.IntegerValue("QueryDSRecord.DSRecordList["+ i +"].DigestType");
 				dSRecord.Digest = _ctx.StringValue("QueryDSRecord.DSRecordList["+ i +"].Digest");
+				dSRecord.Algorithm = _ctx.IntegerValue("QueryDSRecord.DSRecordList["+ i +"].Algorithm");
+				dSRecord.KeyTag = _ctx.IntegerValue("QueryDSRecord.DSRecordList["+ i +"].KeyTag");
 
 				queryDSRecordResponse_dSRecordList.Add(dSRecord);
 			}

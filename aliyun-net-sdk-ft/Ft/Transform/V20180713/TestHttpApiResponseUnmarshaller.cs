@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 			TestHttpApiResponse testHttpApiResponse = new TestHttpApiResponse();
 
 			testHttpApiResponse.HttpResponse = _ctx.HttpResponse;
-			testHttpApiResponse._Params = _ctx.StringValue("TestHttpApi.Params");
 			testHttpApiResponse.ServiceRpcSign = _ctx.StringValue("TestHttpApi.ServiceRpcSign");
+			testHttpApiResponse._Params = _ctx.StringValue("TestHttpApi.Params");
         
 			return testHttpApiResponse;
         }

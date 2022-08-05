@@ -36,12 +36,11 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			List<GetFileDetectResultResponse.GetFileDetectResult_Result> getFileDetectResultResponse_resultList = new List<GetFileDetectResultResponse.GetFileDetectResult_Result>();
 			for (int i = 0; i < _ctx.Length("GetFileDetectResult.ResultList.Length"); i++) {
 				GetFileDetectResultResponse.GetFileDetectResult_Result result = new GetFileDetectResultResponse.GetFileDetectResult_Result();
-				result.Result = _ctx.IntegerValue("GetFileDetectResult.ResultList["+ i +"].Result");
 				result.HashKey = _ctx.StringValue("GetFileDetectResult.ResultList["+ i +"].HashKey");
-
-				GetFileDetectResultResponse.GetFileDetectResult_Result.GetFileDetectResult_Ext ext = new GetFileDetectResultResponse.GetFileDetectResult_Result.GetFileDetectResult_Ext();
-				ext.VirusName = _ctx.StringValue("GetFileDetectResult.ResultList["+ i +"].Ext.VirusName");
-				result.Ext = ext;
+				result.Result = _ctx.IntegerValue("GetFileDetectResult.ResultList["+ i +"].Result");
+				result.Score = _ctx.IntegerValue("GetFileDetectResult.ResultList["+ i +"].Score");
+				result.VirusType = _ctx.StringValue("GetFileDetectResult.ResultList["+ i +"].VirusType");
+				result.Ext = _ctx.StringValue("GetFileDetectResult.ResultList["+ i +"].Ext");
 
 				getFileDetectResultResponse_resultList.Add(result);
 			}

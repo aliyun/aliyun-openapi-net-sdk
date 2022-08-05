@@ -31,24 +31,24 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			ListSecretParameterVersionsResponse listSecretParameterVersionsResponse = new ListSecretParameterVersionsResponse();
 
 			listSecretParameterVersionsResponse.HttpResponse = _ctx.HttpResponse;
-			listSecretParameterVersionsResponse.RequestId = _ctx.StringValue("ListSecretParameterVersions.RequestId");
-			listSecretParameterVersionsResponse.MaxResults = _ctx.IntegerValue("ListSecretParameterVersions.MaxResults");
-			listSecretParameterVersionsResponse.NextToken = _ctx.StringValue("ListSecretParameterVersions.NextToken");
-			listSecretParameterVersionsResponse.TotalCount = _ctx.IntegerValue("ListSecretParameterVersions.TotalCount");
-			listSecretParameterVersionsResponse.Name = _ctx.StringValue("ListSecretParameterVersions.Name");
-			listSecretParameterVersionsResponse.Id = _ctx.StringValue("ListSecretParameterVersions.Id");
 			listSecretParameterVersionsResponse.Type = _ctx.StringValue("ListSecretParameterVersions.Type");
+			listSecretParameterVersionsResponse.NextToken = _ctx.StringValue("ListSecretParameterVersions.NextToken");
+			listSecretParameterVersionsResponse.RequestId = _ctx.StringValue("ListSecretParameterVersions.RequestId");
 			listSecretParameterVersionsResponse.Description = _ctx.StringValue("ListSecretParameterVersions.Description");
-			listSecretParameterVersionsResponse.CreatedDate = _ctx.StringValue("ListSecretParameterVersions.CreatedDate");
+			listSecretParameterVersionsResponse.MaxResults = _ctx.IntegerValue("ListSecretParameterVersions.MaxResults");
 			listSecretParameterVersionsResponse.CreatedBy = _ctx.StringValue("ListSecretParameterVersions.CreatedBy");
+			listSecretParameterVersionsResponse.CreatedDate = _ctx.StringValue("ListSecretParameterVersions.CreatedDate");
+			listSecretParameterVersionsResponse.Name = _ctx.StringValue("ListSecretParameterVersions.Name");
+			listSecretParameterVersionsResponse.TotalCount = _ctx.IntegerValue("ListSecretParameterVersions.TotalCount");
+			listSecretParameterVersionsResponse.Id = _ctx.StringValue("ListSecretParameterVersions.Id");
 
 			List<ListSecretParameterVersionsResponse.ListSecretParameterVersions_ParameterVersion> listSecretParameterVersionsResponse_parameterVersions = new List<ListSecretParameterVersionsResponse.ListSecretParameterVersions_ParameterVersion>();
 			for (int i = 0; i < _ctx.Length("ListSecretParameterVersions.ParameterVersions.Length"); i++) {
 				ListSecretParameterVersionsResponse.ListSecretParameterVersions_ParameterVersion parameterVersion = new ListSecretParameterVersionsResponse.ListSecretParameterVersions_ParameterVersion();
-				parameterVersion.UpdatedDate = _ctx.StringValue("ListSecretParameterVersions.ParameterVersions["+ i +"].UpdatedDate");
-				parameterVersion.UpdatedBy = _ctx.StringValue("ListSecretParameterVersions.ParameterVersions["+ i +"].UpdatedBy");
 				parameterVersion.ParameterVersion = _ctx.IntegerValue("ListSecretParameterVersions.ParameterVersions["+ i +"].ParameterVersion");
 				parameterVersion._Value = _ctx.StringValue("ListSecretParameterVersions.ParameterVersions["+ i +"].Value");
+				parameterVersion.UpdatedDate = _ctx.StringValue("ListSecretParameterVersions.ParameterVersions["+ i +"].UpdatedDate");
+				parameterVersion.UpdatedBy = _ctx.StringValue("ListSecretParameterVersions.ParameterVersions["+ i +"].UpdatedBy");
 
 				listSecretParameterVersionsResponse_parameterVersions.Add(parameterVersion);
 			}

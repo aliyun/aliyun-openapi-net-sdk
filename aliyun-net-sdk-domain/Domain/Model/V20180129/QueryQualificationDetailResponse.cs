@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class QueryQualificationDetailResponse : AcsResponse
 	{
 
-		private string trackId;
-
 		private int? auditStatus;
 
 		private string requestId;
 
-		private List<QueryQualificationDetail_QualificationCredential> credentials;
+		private string trackId;
 
-		public string TrackId
-		{
-			get
-			{
-				return trackId;
-			}
-			set	
-			{
-				trackId = value;
-			}
-		}
+		private List<QueryQualificationDetail_QualificationCredential> credentials;
 
 		public int? AuditStatus
 		{
@@ -69,6 +57,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		public string TrackId
+		{
+			get
+			{
+				return trackId;
+			}
+			set	
+			{
+				trackId = value;
+			}
+		}
+
 		public List<QueryQualificationDetail_QualificationCredential> Credentials
 		{
 			get
@@ -84,23 +84,11 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 		public class QueryQualificationDetail_QualificationCredential
 		{
 
-			private string credentialNo;
-
 			private string credentialType;
 
-			private string credentialUrl;
+			private string credentialNo;
 
-			public string CredentialNo
-			{
-				get
-				{
-					return credentialNo;
-				}
-				set	
-				{
-					credentialNo = value;
-				}
-			}
+			private string credentialUrl;
 
 			public string CredentialType
 			{
@@ -111,6 +99,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					credentialType = value;
+				}
+			}
+
+			public string CredentialNo
+			{
+				get
+				{
+					return credentialNo;
+				}
+				set	
+				{
+					credentialNo = value;
 				}
 			}
 

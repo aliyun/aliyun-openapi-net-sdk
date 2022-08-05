@@ -32,12 +32,12 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 
 			checkDomainResponse.HttpResponse = _ctx.HttpResponse;
 			checkDomainResponse.RequestId = _ctx.StringValue("CheckDomain.RequestId");
-			checkDomainResponse.DomainName = _ctx.StringValue("CheckDomain.DomainName");
 			checkDomainResponse.Avail = _ctx.StringValue("CheckDomain.Avail");
-			checkDomainResponse.Premium = _ctx.StringValue("CheckDomain.Premium");
-			checkDomainResponse.Reason = _ctx.StringValue("CheckDomain.Reason");
 			checkDomainResponse.Price = _ctx.LongValue("CheckDomain.Price");
+			checkDomainResponse.DomainName = _ctx.StringValue("CheckDomain.DomainName");
+			checkDomainResponse.Premium = _ctx.StringValue("CheckDomain.Premium");
 			checkDomainResponse.DynamicCheck = _ctx.BooleanValue("CheckDomain.DynamicCheck");
+			checkDomainResponse.Reason = _ctx.StringValue("CheckDomain.Reason");
         
 			return checkDomainResponse;
         }

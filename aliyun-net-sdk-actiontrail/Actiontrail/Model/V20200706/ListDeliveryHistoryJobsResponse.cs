@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Actiontrail.Model.V20200706
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 	public class ListDeliveryHistoryJobsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
-
-		private int? pageNumber;
 
 		private int? pageSize;
 
-		private List<ListDeliveryHistoryJobs_DeliveryHistoryJob> deliveryHistoryJobs;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private int? pageNumber;
+
+		private List<ListDeliveryHistoryJobs_DeliveryHistoryJob> deliveryHistoryJobs;
 
 		public int? TotalCount
 		{
@@ -59,18 +47,6 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
 			}
 		}
 
@@ -100,19 +100,19 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 
 			private string trailName;
 
-			private string createdTime;
-
-			private string updatedTime;
-
-			private string homeRegion;
+			private string endTime;
 
 			private string startTime;
 
-			private string endTime;
+			private int? jobStatus;
+
+			private string homeRegion;
+
+			private string updatedTime;
 
 			private long? jobId;
 
-			private int? jobStatus;
+			private string createdTime;
 
 			public string TrailName
 			{
@@ -123,54 +123,6 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 				set	
 				{
 					trailName = value;
-				}
-			}
-
-			public string CreatedTime
-			{
-				get
-				{
-					return createdTime;
-				}
-				set	
-				{
-					createdTime = value;
-				}
-			}
-
-			public string UpdatedTime
-			{
-				get
-				{
-					return updatedTime;
-				}
-				set	
-				{
-					updatedTime = value;
-				}
-			}
-
-			public string HomeRegion
-			{
-				get
-				{
-					return homeRegion;
-				}
-				set	
-				{
-					homeRegion = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
 				}
 			}
 
@@ -186,15 +138,15 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 				}
 			}
 
-			public long? JobId
+			public string StartTime
 			{
 				get
 				{
-					return jobId;
+					return startTime;
 				}
 				set	
 				{
-					jobId = value;
+					startTime = value;
 				}
 			}
 
@@ -207,6 +159,54 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 				set	
 				{
 					jobStatus = value;
+				}
+			}
+
+			public string HomeRegion
+			{
+				get
+				{
+					return homeRegion;
+				}
+				set	
+				{
+					homeRegion = value;
+				}
+			}
+
+			public string UpdatedTime
+			{
+				get
+				{
+					return updatedTime;
+				}
+				set	
+				{
+					updatedTime = value;
+				}
+			}
+
+			public long? JobId
+			{
+				get
+				{
+					return jobId;
+				}
+				set	
+				{
+					jobId = value;
+				}
+			}
+
+			public string CreatedTime
+			{
+				get
+				{
+					return createdTime;
+				}
+				set	
+				{
+					createdTime = value;
 				}
 			}
 		}

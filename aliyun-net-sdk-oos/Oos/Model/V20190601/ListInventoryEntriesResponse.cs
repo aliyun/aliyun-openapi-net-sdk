@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -25,34 +25,23 @@ namespace Aliyun.Acs.oos.Model.V20190601
 	public class ListInventoryEntriesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
 
-		private string instanceId;
-
-		private string captureTime;
-
-		private string typeName;
+		private string requestId;
 
 		private string schemaVersion;
 
 		private int? maxResults;
 
+		private string captureTime;
+
+		private string typeName;
+
+		private string instanceId;
+
 		private List<Dictionary<string, string>> entries;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -65,42 +54,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public string InstanceId
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return instanceId;
+				return requestId;
 			}
 			set	
 			{
-				instanceId = value;
+				requestId = value;
 			}
 		}
 
-		public string CaptureTime
-		{
-			get
-			{
-				return captureTime;
-			}
-			set	
-			{
-				captureTime = value;
-			}
-		}
-
-		public string TypeName
-		{
-			get
-			{
-				return typeName;
-			}
-			set	
-			{
-				typeName = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "SchemaVersion")]
 		public string SchemaVersion
 		{
 			get
@@ -113,6 +80,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxResults")]
 		public int? MaxResults
 		{
 			get
@@ -125,6 +93,46 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "CaptureTime")]
+		public string CaptureTime
+		{
+			get
+			{
+				return captureTime;
+			}
+			set	
+			{
+				captureTime = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TypeName")]
+		public string TypeName
+		{
+			get
+			{
+				return typeName;
+			}
+			set	
+			{
+				typeName = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "InstanceId")]
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Entries")]
 		public List<Dictionary<string, string>> Entries
 		{
 			get

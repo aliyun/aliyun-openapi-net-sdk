@@ -57,6 +57,7 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 				selectItemInfo.Layout = _ctx.StringValue("DescribeTemplateByModel.Items["+ i +"].Layout");
 				selectItemInfo.Scene = _ctx.StringValue("DescribeTemplateByModel.Items["+ i +"].Scene");
 				selectItemInfo.Brand = _ctx.StringValue("DescribeTemplateByModel.Items["+ i +"].Brand");
+				selectItemInfo.TemplateSceneId = _ctx.StringValue("DescribeTemplateByModel.Items["+ i +"].TemplateSceneId");
 
 				describeTemplateByModelResponse_items.Add(selectItemInfo);
 			}

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class ModifySmbAclRequest : RpcAcsRequest<ModifySmbAclResponse>
     {
         public ModifySmbAclRequest()
-            : base("NAS", "2017-06-26", "ModifySmbAcl", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "ModifySmbAcl", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -52,9 +52,13 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 		private string fileSystemId;
 
+		private string authCenter;
+
 		private string homeDirPath;
 
 		private bool? enableAnonymousAccess;
+
+		private string authMethod;
 
 		public bool? EncryptData
 		{
@@ -134,6 +138,19 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		public string AuthCenter
+		{
+			get
+			{
+				return authCenter;
+			}
+			set	
+			{
+				authCenter = value;
+				DictionaryUtil.Add(QueryParameters, "AuthCenter", value);
+			}
+		}
+
 		public string HomeDirPath
 		{
 			get
@@ -157,6 +174,19 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				enableAnonymousAccess = value;
 				DictionaryUtil.Add(QueryParameters, "EnableAnonymousAccess", value.ToString());
+			}
+		}
+
+		public string AuthMethod
+		{
+			get
+			{
+				return authMethod;
+			}
+			set	
+			{
+				authMethod = value;
+				DictionaryUtil.Add(QueryParameters, "AuthMethod", value);
 			}
 		}
 

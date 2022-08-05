@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 	public class InitializeDbsServiceLinkedRoleResponse : AcsResponse
 	{
 
-		private string errorCode;
-
 		private string data;
-
-		private string errMessage;
 
 		private string requestId;
 
 		private string success;
 
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
+		private string errorCode;
+
+		private string errMessage;
 
 		public string Data
 		{
@@ -56,18 +44,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			set	
 			{
 				data = value;
-			}
-		}
-
-		public string ErrMessage
-		{
-			get
-			{
-				return errMessage;
-			}
-			set	
-			{
-				errMessage = value;
 			}
 		}
 
@@ -92,6 +68,30 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public string ErrMessage
+		{
+			get
+			{
+				return errMessage;
+			}
+			set	
+			{
+				errMessage = value;
 			}
 		}
 	}

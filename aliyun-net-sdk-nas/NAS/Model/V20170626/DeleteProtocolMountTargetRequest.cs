@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class DeleteProtocolMountTargetRequest : RpcAcsRequest<DeleteProtocolMountTargetResponse>
     {
         public DeleteProtocolMountTargetRequest()
-            : base("NAS", "2017-06-26", "DeleteProtocolMountTarget", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "DeleteProtocolMountTarget", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

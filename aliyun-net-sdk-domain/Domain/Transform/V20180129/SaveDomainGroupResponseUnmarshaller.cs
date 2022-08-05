@@ -31,14 +31,14 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			SaveDomainGroupResponse saveDomainGroupResponse = new SaveDomainGroupResponse();
 
 			saveDomainGroupResponse.HttpResponse = _ctx.HttpResponse;
-			saveDomainGroupResponse.RequestId = _ctx.StringValue("SaveDomainGroup.RequestId");
-			saveDomainGroupResponse.DomainGroupId = _ctx.LongValue("SaveDomainGroup.DomainGroupId");
-			saveDomainGroupResponse.DomainGroupName = _ctx.StringValue("SaveDomainGroup.DomainGroupName");
-			saveDomainGroupResponse.TotalNumber = _ctx.IntegerValue("SaveDomainGroup.TotalNumber");
+			saveDomainGroupResponse.BeingDeleted = _ctx.BooleanValue("SaveDomainGroup.BeingDeleted");
 			saveDomainGroupResponse.CreationDate = _ctx.StringValue("SaveDomainGroup.CreationDate");
+			saveDomainGroupResponse.RequestId = _ctx.StringValue("SaveDomainGroup.RequestId");
+			saveDomainGroupResponse.DomainGroupName = _ctx.StringValue("SaveDomainGroup.DomainGroupName");
 			saveDomainGroupResponse.ModificationDate = _ctx.StringValue("SaveDomainGroup.ModificationDate");
 			saveDomainGroupResponse.DomainGroupStatus = _ctx.StringValue("SaveDomainGroup.DomainGroupStatus");
-			saveDomainGroupResponse.BeingDeleted = _ctx.BooleanValue("SaveDomainGroup.BeingDeleted");
+			saveDomainGroupResponse.DomainGroupId = _ctx.LongValue("SaveDomainGroup.DomainGroupId");
+			saveDomainGroupResponse.TotalNumber = _ctx.IntegerValue("SaveDomainGroup.TotalNumber");
         
 			return saveDomainGroupResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
@@ -27,17 +27,17 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string status;
 
-		private int? progress;
-
-		private bool? success;
-
-		private string errCode;
-
-		private string errMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
+
+		private int? progress;
+
+		private string errCode;
+
+		private bool? success;
+
+		private string errMessage;
 
 		private List<DescribePreCheckProgressList_PreCheckProgressDetail> items;
 
@@ -50,54 +50,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			set	
 			{
 				status = value;
-			}
-		}
-
-		public int? Progress
-		{
-			get
-			{
-				return progress;
-			}
-			set	
-			{
-				progress = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrCode
-		{
-			get
-			{
-				return errCode;
-			}
-			set	
-			{
-				errCode = value;
-			}
-		}
-
-		public string ErrMessage
-		{
-			get
-			{
-				return errMessage;
-			}
-			set	
-			{
-				errMessage = value;
 			}
 		}
 
@@ -125,6 +77,54 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
+		public int? Progress
+		{
+			get
+			{
+				return progress;
+			}
+			set	
+			{
+				progress = value;
+			}
+		}
+
+		public string ErrCode
+		{
+			get
+			{
+				return errCode;
+			}
+			set	
+			{
+				errCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string ErrMessage
+		{
+			get
+			{
+				return errMessage;
+			}
+			set	
+			{
+				errMessage = value;
+			}
+		}
+
 		public List<DescribePreCheckProgressList_PreCheckProgressDetail> Items
 		{
 			get
@@ -140,31 +140,31 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		public class DescribePreCheckProgressList_PreCheckProgressDetail
 		{
 
-			private string jobId;
+			private long? finishTime;
 
 			private string state;
 
-			private string orderNum;
+			private long? bootTime;
 
-			private string errMsg;
-
-			private string names;
+			private string jobId;
 
 			private string item;
 
-			private long? bootTime;
+			private string errMsg;
 
-			private long? finishTime;
+			private string orderNum;
 
-			public string JobId
+			private string names;
+
+			public long? FinishTime
 			{
 				get
 				{
-					return jobId;
+					return finishTime;
 				}
 				set	
 				{
-					jobId = value;
+					finishTime = value;
 				}
 			}
 
@@ -180,39 +180,27 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public string OrderNum
+			public long? BootTime
 			{
 				get
 				{
-					return orderNum;
+					return bootTime;
 				}
 				set	
 				{
-					orderNum = value;
+					bootTime = value;
 				}
 			}
 
-			public string ErrMsg
+			public string JobId
 			{
 				get
 				{
-					return errMsg;
+					return jobId;
 				}
 				set	
 				{
-					errMsg = value;
-				}
-			}
-
-			public string Names
-			{
-				get
-				{
-					return names;
-				}
-				set	
-				{
-					names = value;
+					jobId = value;
 				}
 			}
 
@@ -228,27 +216,39 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public long? BootTime
+			public string ErrMsg
 			{
 				get
 				{
-					return bootTime;
+					return errMsg;
 				}
 				set	
 				{
-					bootTime = value;
+					errMsg = value;
 				}
 			}
 
-			public long? FinishTime
+			public string OrderNum
 			{
 				get
 				{
-					return finishTime;
+					return orderNum;
 				}
 				set	
 				{
-					finishTime = value;
+					orderNum = value;
+				}
+			}
+
+			public string Names
+			{
+				get
+				{
+					return names;
+				}
+				set	
+				{
+					names = value;
 				}
 			}
 		}

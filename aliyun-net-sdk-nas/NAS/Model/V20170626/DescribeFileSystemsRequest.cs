@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class DescribeFileSystemsRequest : RpcAcsRequest<DescribeFileSystemsResponse>
     {
         public DescribeFileSystemsRequest()
-            : base("NAS", "2017-06-26", "DescribeFileSystems", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "DescribeFileSystems", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

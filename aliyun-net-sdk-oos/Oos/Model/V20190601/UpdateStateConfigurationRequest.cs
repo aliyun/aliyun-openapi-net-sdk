@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class UpdateStateConfigurationRequest : RpcAcsRequest<UpdateStateConfigurationResponse>
     {
         public UpdateStateConfigurationRequest()
-            : base("oos", "2019-06-01", "UpdateStateConfiguration")
+            : base("oos", "2019-06-01", "UpdateStateConfiguration", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -50,6 +49,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string targets;
 
+		private string resourceGroupId;
+
 		private string scheduleExpression;
 
 		private string configureMode;
@@ -60,6 +61,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string stateConfigurationId;
 
+		[JsonProperty(PropertyName = "ScheduleType")]
 		public string ScheduleType
 		{
 			get
@@ -73,6 +75,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ClientToken")]
 		public string ClientToken
 		{
 			get
@@ -86,6 +89,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -99,6 +103,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Targets")]
 		public string Targets
 		{
 			get
@@ -112,6 +117,21 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ScheduleExpression")]
 		public string ScheduleExpression
 		{
 			get
@@ -125,6 +145,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ConfigureMode")]
 		public string ConfigureMode
 		{
 			get
@@ -138,6 +159,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tags")]
 		public string Tags
 		{
 			get
@@ -151,6 +173,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Parameters")]
 		public string Parameters
 		{
 			get
@@ -164,6 +187,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "StateConfigurationId")]
 		public string StateConfigurationId
 		{
 			get

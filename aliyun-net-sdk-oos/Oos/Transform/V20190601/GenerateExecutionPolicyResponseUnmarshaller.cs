@@ -31,8 +31,8 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			GenerateExecutionPolicyResponse generateExecutionPolicyResponse = new GenerateExecutionPolicyResponse();
 
 			generateExecutionPolicyResponse.HttpResponse = _ctx.HttpResponse;
-			generateExecutionPolicyResponse.RequestId = _ctx.StringValue("GenerateExecutionPolicy.RequestId");
 			generateExecutionPolicyResponse.Policy = _ctx.StringValue("GenerateExecutionPolicy.Policy");
+			generateExecutionPolicyResponse.RequestId = _ctx.StringValue("GenerateExecutionPolicy.RequestId");
         
 			return generateExecutionPolicyResponse;
         }

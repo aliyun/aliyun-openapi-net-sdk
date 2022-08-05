@@ -155,6 +155,7 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".ItemPicUrl", itemInfos[i].ItemPicUrl);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".ForestSecondId", itemInfos[i].ForestSecondId);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".SupplierName", itemInfos[i].SupplierName);
+					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".BeClearance", itemInfos[i].BeClearance);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".Material", itemInfos[i].Material);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".ModelNumber", itemInfos[i].ModelNumber);
 					DictionaryUtil.Add(BodyParameters,"ItemInfo." + (i + 1) + ".SaleSpec", itemInfos[i].SaleSpec);
@@ -279,6 +280,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			private string forestSecondId;
 
 			private string supplierName;
+
+			private bool? beClearance;
 
 			private string material;
 
@@ -953,6 +956,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					supplierName = value;
+				}
+			}
+
+			public bool? BeClearance
+			{
+				get
+				{
+					return beClearance;
+				}
+				set	
+				{
+					beClearance = value;
 				}
 			}
 

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Dbs;
 using Aliyun.Acs.Dbs.Transform;
 using Aliyun.Acs.Dbs.Transform.V20190306;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
     public class DescribeBackupPlanBillingRequest : RpcAcsRequest<DescribeBackupPlanBillingResponse>
     {
         public DescribeBackupPlanBillingRequest()
-            : base("Dbs", "2019-03-06", "DescribeBackupPlanBilling", "cbs", "openAPI")
+            : base("Dbs", "2019-03-06", "DescribeBackupPlanBilling")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -92,6 +92,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string fileId;
 
+			private string owner;
+
 			public string Type
 			{
 				get
@@ -221,6 +223,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					fileId = value;
+				}
+			}
+
+			public string Owner
+			{
+				get
+				{
+					return owner;
+				}
+				set	
+				{
+					owner = value;
 				}
 			}
 		}

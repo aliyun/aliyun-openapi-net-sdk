@@ -42,20 +42,21 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			List<GetSecretParametersResponse.GetSecretParameters_Parameter> getSecretParametersResponse_parameters = new List<GetSecretParametersResponse.GetSecretParameters_Parameter>();
 			for (int i = 0; i < _ctx.Length("GetSecretParameters.Parameters.Length"); i++) {
 				GetSecretParametersResponse.GetSecretParameters_Parameter parameter = new GetSecretParametersResponse.GetSecretParameters_Parameter();
-				parameter.Id = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].Id");
-				parameter.Name = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].Name");
-				parameter.CreatedDate = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].CreatedDate");
-				parameter.CreatedBy = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].CreatedBy");
+				parameter.Type = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].Type");
 				parameter.UpdatedDate = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].UpdatedDate");
 				parameter.UpdatedBy = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].UpdatedBy");
-				parameter.Description = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].Description");
-				parameter.ShareType = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].ShareType");
-				parameter.ParameterVersion = _ctx.IntegerValue("GetSecretParameters.Parameters["+ i +"].ParameterVersion");
-				parameter.Type = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].Type");
-				parameter._Value = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].Value");
-				parameter.Constraints = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].Constraints");
 				parameter.KeyId = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].KeyId");
 				parameter.Tags = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].Tags");
+				parameter._Value = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].Value");
+				parameter.Description = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].Description");
+				parameter.Constraints = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].Constraints");
+				parameter.ResourceGroupId = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].ResourceGroupId");
+				parameter.CreatedBy = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].CreatedBy");
+				parameter.CreatedDate = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].CreatedDate");
+				parameter.ParameterVersion = _ctx.IntegerValue("GetSecretParameters.Parameters["+ i +"].ParameterVersion");
+				parameter.Name = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].Name");
+				parameter.Id = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].Id");
+				parameter.ShareType = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].ShareType");
 
 				getSecretParametersResponse_parameters.Add(parameter);
 			}

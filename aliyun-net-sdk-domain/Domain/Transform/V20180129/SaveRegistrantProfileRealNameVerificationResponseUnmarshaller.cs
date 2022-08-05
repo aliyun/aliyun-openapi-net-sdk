@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			SaveRegistrantProfileRealNameVerificationResponse saveRegistrantProfileRealNameVerificationResponse = new SaveRegistrantProfileRealNameVerificationResponse();
 
 			saveRegistrantProfileRealNameVerificationResponse.HttpResponse = _ctx.HttpResponse;
-			saveRegistrantProfileRealNameVerificationResponse.RequestId = _ctx.StringValue("SaveRegistrantProfileRealNameVerification.RequestId");
 			saveRegistrantProfileRealNameVerificationResponse.RegistrantProfileId = _ctx.LongValue("SaveRegistrantProfileRealNameVerification.RegistrantProfileId");
+			saveRegistrantProfileRealNameVerificationResponse.RequestId = _ctx.StringValue("SaveRegistrantProfileRealNameVerification.RequestId");
         
 			return saveRegistrantProfileRealNameVerificationResponse;
         }

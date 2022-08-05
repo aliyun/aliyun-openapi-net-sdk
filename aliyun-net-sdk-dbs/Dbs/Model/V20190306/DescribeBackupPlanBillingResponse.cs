@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
@@ -25,53 +25,17 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 	public class DescribeBackupPlanBillingResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errCode;
-
-		private string errMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
+		private string errCode;
+
+		private bool? success;
+
+		private string errMessage;
+
 		private DescribeBackupPlanBilling_Item item;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrCode
-		{
-			get
-			{
-				return errCode;
-			}
-			set	
-			{
-				errCode = value;
-			}
-		}
-
-		public string ErrMessage
-		{
-			get
-			{
-				return errMessage;
-			}
-			set	
-			{
-				errMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -97,6 +61,42 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
+		public string ErrCode
+		{
+			get
+			{
+				return errCode;
+			}
+			set	
+			{
+				errCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string ErrMessage
+		{
+			get
+			{
+				return errMessage;
+			}
+			set	
+			{
+				errMessage = value;
+			}
+		}
+
 		public DescribeBackupPlanBilling_Item Item
 		{
 			get
@@ -112,11 +112,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		public class DescribeBackupPlanBilling_Item
 		{
 
-			private string buySpec;
+			private long? buyCreateTimestamp;
 
-			private string buyChargeType;
+			private long? fullStorageSize;
 
 			private long? buyExpiredTimestamp;
+
+			private string buySpec;
+
+			private long? quotaEndTimestamp;
+
+			private bool? isExpired;
+
+			private long? quotaStartTimestamp;
 
 			private long? totalFreeBytes;
 
@@ -124,21 +132,51 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 			private long? usedFullBytes;
 
-			private long? usedIncrementBytes;
-
-			private long? quotaStartTimestamp;
-
-			private long? quotaEndTimestamp;
-
-			private long? buyCreateTimestamp;
-
-			private long? fullStorageSize;
+			private bool? isFreeBytesUnlimited;
 
 			private long? contStorageSize;
 
-			private bool? isExpired;
+			private string buyChargeType;
 
-			private bool? isFreeBytesUnlimited;
+			private long? usedIncrementBytes;
+
+			private string resourceGroupId;
+
+			public long? BuyCreateTimestamp
+			{
+				get
+				{
+					return buyCreateTimestamp;
+				}
+				set	
+				{
+					buyCreateTimestamp = value;
+				}
+			}
+
+			public long? FullStorageSize
+			{
+				get
+				{
+					return fullStorageSize;
+				}
+				set	
+				{
+					fullStorageSize = value;
+				}
+			}
+
+			public long? BuyExpiredTimestamp
+			{
+				get
+				{
+					return buyExpiredTimestamp;
+				}
+				set	
+				{
+					buyExpiredTimestamp = value;
+				}
+			}
 
 			public string BuySpec
 			{
@@ -152,27 +190,39 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public string BuyChargeType
+			public long? QuotaEndTimestamp
 			{
 				get
 				{
-					return buyChargeType;
+					return quotaEndTimestamp;
 				}
 				set	
 				{
-					buyChargeType = value;
+					quotaEndTimestamp = value;
 				}
 			}
 
-			public long? BuyExpiredTimestamp
+			public bool? IsExpired
 			{
 				get
 				{
-					return buyExpiredTimestamp;
+					return isExpired;
 				}
 				set	
 				{
-					buyExpiredTimestamp = value;
+					isExpired = value;
+				}
+			}
+
+			public long? QuotaStartTimestamp
+			{
+				get
+				{
+					return quotaStartTimestamp;
+				}
+				set	
+				{
+					quotaStartTimestamp = value;
 				}
 			}
 
@@ -212,63 +262,15 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public long? UsedIncrementBytes
+			public bool? IsFreeBytesUnlimited
 			{
 				get
 				{
-					return usedIncrementBytes;
+					return isFreeBytesUnlimited;
 				}
 				set	
 				{
-					usedIncrementBytes = value;
-				}
-			}
-
-			public long? QuotaStartTimestamp
-			{
-				get
-				{
-					return quotaStartTimestamp;
-				}
-				set	
-				{
-					quotaStartTimestamp = value;
-				}
-			}
-
-			public long? QuotaEndTimestamp
-			{
-				get
-				{
-					return quotaEndTimestamp;
-				}
-				set	
-				{
-					quotaEndTimestamp = value;
-				}
-			}
-
-			public long? BuyCreateTimestamp
-			{
-				get
-				{
-					return buyCreateTimestamp;
-				}
-				set	
-				{
-					buyCreateTimestamp = value;
-				}
-			}
-
-			public long? FullStorageSize
-			{
-				get
-				{
-					return fullStorageSize;
-				}
-				set	
-				{
-					fullStorageSize = value;
+					isFreeBytesUnlimited = value;
 				}
 			}
 
@@ -284,27 +286,39 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public bool? IsExpired
+			public string BuyChargeType
 			{
 				get
 				{
-					return isExpired;
+					return buyChargeType;
 				}
 				set	
 				{
-					isExpired = value;
+					buyChargeType = value;
 				}
 			}
 
-			public bool? IsFreeBytesUnlimited
+			public long? UsedIncrementBytes
 			{
 				get
 				{
-					return isFreeBytesUnlimited;
+					return usedIncrementBytes;
 				}
 				set	
 				{
-					isFreeBytesUnlimited = value;
+					usedIncrementBytes = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 		}

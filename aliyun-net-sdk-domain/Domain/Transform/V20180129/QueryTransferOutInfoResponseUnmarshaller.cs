@@ -31,14 +31,14 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			QueryTransferOutInfoResponse queryTransferOutInfoResponse = new QueryTransferOutInfoResponse();
 
 			queryTransferOutInfoResponse.HttpResponse = _ctx.HttpResponse;
-			queryTransferOutInfoResponse.RequestId = _ctx.StringValue("QueryTransferOutInfo.RequestId");
 			queryTransferOutInfoResponse.Status = _ctx.IntegerValue("QueryTransferOutInfo.Status");
 			queryTransferOutInfoResponse.Email = _ctx.StringValue("QueryTransferOutInfo.Email");
-			queryTransferOutInfoResponse.TransferAuthorizationCodeSendDate = _ctx.StringValue("QueryTransferOutInfo.TransferAuthorizationCodeSendDate");
 			queryTransferOutInfoResponse.ExpirationDate = _ctx.StringValue("QueryTransferOutInfo.ExpirationDate");
+			queryTransferOutInfoResponse.RequestId = _ctx.StringValue("QueryTransferOutInfo.RequestId");
+			queryTransferOutInfoResponse.ResultMsg = _ctx.StringValue("QueryTransferOutInfo.ResultMsg");
 			queryTransferOutInfoResponse.PendingRequestDate = _ctx.StringValue("QueryTransferOutInfo.PendingRequestDate");
 			queryTransferOutInfoResponse.ResultCode = _ctx.StringValue("QueryTransferOutInfo.ResultCode");
-			queryTransferOutInfoResponse.ResultMsg = _ctx.StringValue("QueryTransferOutInfo.ResultMsg");
+			queryTransferOutInfoResponse.TransferAuthorizationCodeSendDate = _ctx.StringValue("QueryTransferOutInfo.TransferAuthorizationCodeSendDate");
         
 			return queryTransferOutInfoResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
@@ -25,53 +25,17 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 	public class DescribeRestoreRangeInfoResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errCode;
-
-		private string errMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
+		private string errCode;
+
+		private bool? success;
+
+		private string errMessage;
+
 		private List<DescribeRestoreRangeInfo_DBSRecoverRange> items;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrCode
-		{
-			get
-			{
-				return errCode;
-			}
-			set	
-			{
-				errCode = value;
-			}
-		}
-
-		public string ErrMessage
-		{
-			get
-			{
-				return errMessage;
-			}
-			set	
-			{
-				errMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -97,6 +61,42 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
+		public string ErrCode
+		{
+			get
+			{
+				return errCode;
+			}
+			set	
+			{
+				errCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string ErrMessage
+		{
+			get
+			{
+				return errMessage;
+			}
+			set	
+			{
+				errMessage = value;
+			}
+		}
+
 		public List<DescribeRestoreRangeInfo_DBSRecoverRange> Items
 		{
 			get
@@ -112,17 +112,29 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		public class DescribeRestoreRangeInfo_DBSRecoverRange
 		{
 
-			private string sourceEndpointInstanceType;
-
-			private string sourceEndpointInstanceID;
-
-			private long? beginTimestampForRestore;
-
 			private long? endTimestampForRestore;
+
+			private string sourceEndpointInstanceType;
 
 			private string rangeType;
 
+			private long? beginTimestampForRestore;
+
+			private string sourceEndpointInstanceID;
+
 			private List<DescribeRestoreRangeInfo_FullBackupDetail> fullBackupList;
+
+			public long? EndTimestampForRestore
+			{
+				get
+				{
+					return endTimestampForRestore;
+				}
+				set	
+				{
+					endTimestampForRestore = value;
+				}
+			}
 
 			public string SourceEndpointInstanceType
 			{
@@ -136,15 +148,15 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public string SourceEndpointInstanceID
+			public string RangeType
 			{
 				get
 				{
-					return sourceEndpointInstanceID;
+					return rangeType;
 				}
 				set	
 				{
-					sourceEndpointInstanceID = value;
+					rangeType = value;
 				}
 			}
 
@@ -160,27 +172,15 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public long? EndTimestampForRestore
+			public string SourceEndpointInstanceID
 			{
 				get
 				{
-					return endTimestampForRestore;
+					return sourceEndpointInstanceID;
 				}
 				set	
 				{
-					endTimestampForRestore = value;
-				}
-			}
-
-			public string RangeType
-			{
-				get
-				{
-					return rangeType;
-				}
-				set	
-				{
-					rangeType = value;
+					sourceEndpointInstanceID = value;
 				}
 			}
 
@@ -199,21 +199,21 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			public class DescribeRestoreRangeInfo_FullBackupDetail
 			{
 
-				private string backupSetId;
+				private long? endTime;
 
 				private long? startTime;
 
-				private long? endTime;
+				private string backupSetId;
 
-				public string BackupSetId
+				public long? EndTime
 				{
 					get
 					{
-						return backupSetId;
+						return endTime;
 					}
 					set	
 					{
-						backupSetId = value;
+						endTime = value;
 					}
 				}
 
@@ -229,15 +229,15 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 					}
 				}
 
-				public long? EndTime
+				public string BackupSetId
 				{
 					get
 					{
-						return endTime;
+						return backupSetId;
 					}
 					set	
 					{
-						endTime = value;
+						backupSetId = value;
 					}
 				}
 			}

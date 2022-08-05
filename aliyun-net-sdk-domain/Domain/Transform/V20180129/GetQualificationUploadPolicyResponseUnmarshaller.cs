@@ -31,14 +31,14 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			GetQualificationUploadPolicyResponse getQualificationUploadPolicyResponse = new GetQualificationUploadPolicyResponse();
 
 			getQualificationUploadPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			getQualificationUploadPolicyResponse.Policy = _ctx.StringValue("GetQualificationUploadPolicy.Policy");
+			getQualificationUploadPolicyResponse.Expire = _ctx.StringValue("GetQualificationUploadPolicy.Expire");
 			getQualificationUploadPolicyResponse.RequestId = _ctx.StringValue("GetQualificationUploadPolicy.RequestId");
 			getQualificationUploadPolicyResponse.Accessid = _ctx.StringValue("GetQualificationUploadPolicy.Accessid");
-			getQualificationUploadPolicyResponse.Policy = _ctx.StringValue("GetQualificationUploadPolicy.Policy");
 			getQualificationUploadPolicyResponse.Signature = _ctx.StringValue("GetQualificationUploadPolicy.Signature");
-			getQualificationUploadPolicyResponse.Dir = _ctx.StringValue("GetQualificationUploadPolicy.Dir");
-			getQualificationUploadPolicyResponse.Prefix = _ctx.StringValue("GetQualificationUploadPolicy.Prefix");
 			getQualificationUploadPolicyResponse.Host = _ctx.StringValue("GetQualificationUploadPolicy.Host");
-			getQualificationUploadPolicyResponse.Expire = _ctx.StringValue("GetQualificationUploadPolicy.Expire");
+			getQualificationUploadPolicyResponse.Prefix = _ctx.StringValue("GetQualificationUploadPolicy.Prefix");
+			getQualificationUploadPolicyResponse.Dir = _ctx.StringValue("GetQualificationUploadPolicy.Dir");
         
 			return getQualificationUploadPolicyResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -25,26 +25,15 @@ namespace Aliyun.Acs.oos.Model.V20190601
 	public class ListInstancePatchesResponse : AcsResponse
 	{
 
-		private int? maxResults;
-
 		private string nextToken;
 
 		private string requestId;
 
+		private int? maxResults;
+
 		private List<ListInstancePatches_Patch> patches;
 
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -57,6 +46,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -69,6 +59,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxResults")]
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Patches")]
 		public List<ListInstancePatches_Patch> Patches
 		{
 			get
@@ -84,54 +88,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		public class ListInstancePatches_Patch
 		{
 
-			private string classification;
+			private string severity;
+
+			private string status;
 
 			private string installedTime;
 
 			private string kBId;
 
-			private string severity;
-
-			private string status;
-
 			private string title;
 
-			public string Classification
-			{
-				get
-				{
-					return classification;
-				}
-				set	
-				{
-					classification = value;
-				}
-			}
+			private string classification;
 
-			public string InstalledTime
-			{
-				get
-				{
-					return installedTime;
-				}
-				set	
-				{
-					installedTime = value;
-				}
-			}
-
-			public string KBId
-			{
-				get
-				{
-					return kBId;
-				}
-				set	
-				{
-					kBId = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Severity")]
 			public string Severity
 			{
 				get
@@ -144,6 +113,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Status")]
 			public string Status
 			{
 				get
@@ -156,6 +126,33 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "InstalledTime")]
+			public string InstalledTime
+			{
+				get
+				{
+					return installedTime;
+				}
+				set	
+				{
+					installedTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "KBId")]
+			public string KBId
+			{
+				get
+				{
+					return kBId;
+				}
+				set	
+				{
+					kBId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Title")]
 			public string Title
 			{
 				get
@@ -165,6 +162,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					title = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Classification")]
+			public string Classification
+			{
+				get
+				{
+					return classification;
+				}
+				set	
+				{
+					classification = value;
 				}
 			}
 		}

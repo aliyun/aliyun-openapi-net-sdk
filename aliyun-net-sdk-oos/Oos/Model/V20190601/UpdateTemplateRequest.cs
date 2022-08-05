@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class UpdateTemplateRequest : RpcAcsRequest<UpdateTemplateResponse>
     {
         public UpdateTemplateRequest()
-            : base("oos", "2019-06-01", "UpdateTemplate")
+            : base("oos", "2019-06-01", "UpdateTemplate", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -46,10 +45,13 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private Dictionary<object,object> tags;
 
+		private string resourceGroupId;
+
 		private string templateName;
 
 		private string versionName;
 
+		[JsonProperty(PropertyName = "Content")]
 		public string Content
 		{
 			get
@@ -63,6 +65,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tags")]
 		public Dictionary<object,object> Tags
 		{
 			get
@@ -76,6 +79,21 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "TemplateName")]
 		public string TemplateName
 		{
 			get
@@ -89,6 +107,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "VersionName")]
 		public string VersionName
 		{
 			get

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private List<ListExecutionRiskyTasks_RiskyTask> riskyTasks;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "RiskyTasks")]
 		public List<ListExecutionRiskyTasks_RiskyTask> RiskyTasks
 		{
 			get
@@ -64,6 +66,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private List<string> template;
 
+			[JsonProperty(PropertyName = "Service")]
 			public string Service
 			{
 				get
@@ -76,6 +79,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "API")]
 			public string API
 			{
 				get
@@ -88,6 +92,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Task")]
 			public List<string> Task
 			{
 				get
@@ -100,6 +105,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Template")]
 			public List<string> Template
 			{
 				get

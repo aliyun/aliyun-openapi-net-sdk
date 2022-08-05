@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
@@ -25,61 +25,25 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 	public class DescribeRestoreTaskListResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errCode;
-
-		private string errMessage;
-
 		private int? httpStatusCode;
-
-		private string requestId;
-
-		private int? totalPages;
-
-		private int? pageSize;
 
 		private int? pageNum;
 
+		private string requestId;
+
+		private string errCode;
+
+		private bool? success;
+
+		private string errMessage;
+
+		private int? totalPages;
+
 		private int? totalElements;
 
+		private int? pageSize;
+
 		private List<DescribeRestoreTaskList_RestoreTaskDetail> items;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrCode
-		{
-			get
-			{
-				return errCode;
-			}
-			set	
-			{
-				errCode = value;
-			}
-		}
-
-		public string ErrMessage
-		{
-			get
-			{
-				return errMessage;
-			}
-			set	
-			{
-				errMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -90,42 +54,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			set	
 			{
 				httpStatusCode = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalPages
-		{
-			get
-			{
-				return totalPages;
-			}
-			set	
-			{
-				totalPages = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
 			}
 		}
 
@@ -141,6 +69,66 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string ErrCode
+		{
+			get
+			{
+				return errCode;
+			}
+			set	
+			{
+				errCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string ErrMessage
+		{
+			get
+			{
+				return errMessage;
+			}
+			set	
+			{
+				errMessage = value;
+			}
+		}
+
+		public int? TotalPages
+		{
+			get
+			{
+				return totalPages;
+			}
+			set	
+			{
+				totalPages = value;
+			}
+		}
+
 		public int? TotalElements
 		{
 			get
@@ -150,6 +138,18 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			set	
 			{
 				totalElements = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
 			}
 		}
 
@@ -168,55 +168,127 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		public class DescribeRestoreTaskList_RestoreTaskDetail
 		{
 
-			private string backupPlanId;
+			private string restoreStatus;
 
-			private string destinationEndpointInstanceType;
+			private int? fullStruAfterRestoreProgress;
+
+			private string crossRoleName;
+
+			private string restoreDir;
+
+			private string crossAliyunId;
+
+			private string restoreObjects;
+
+			private string backupPlanId;
 
 			private string destinationEndpointRegion;
 
-			private string destinationEndpointInstanceID;
+			private long? restoreTaskCreateTime;
+
+			private string destinationEndpointUserName;
+
+			private long? restoreTaskFinishTime;
 
 			private string destinationEndpointIpPort;
 
 			private string destinationEndpointDatabaseName;
 
-			private string destinationEndpointUserName;
+			private string destinationEndpointInstanceType;
 
 			private string destinationEndpointOracleSID;
 
-			private string restoreObjects;
+			private int? fullStruforeRestoreProgress;
 
-			private long? backupGatewayId;
-
-			private string restoreDir;
-
-			private string restoreTaskName;
-
-			private string backupSetId;
-
-			private long? restoreTime;
-
-			private long? restoreTaskCreateTime;
-
-			private long? restoreTaskFinishTime;
-
-			private string restoreStatus;
+			private string errMessage;
 
 			private string restoreTaskId;
-
-			private int? fullStruforeRestoreProgress;
 
 			private int? fullDataRestoreProgress;
 
 			private int? continuousRestoreProgress;
 
-			private int? fullStruAfterRestoreProgress;
+			private string destinationEndpointInstanceID;
 
-			private string crossAliyunId;
+			private string backupSetId;
 
-			private string crossRoleName;
+			private long? backupGatewayId;
 
-			private string errMessage;
+			private string restoreTaskName;
+
+			private long? restoreTime;
+
+			public string RestoreStatus
+			{
+				get
+				{
+					return restoreStatus;
+				}
+				set	
+				{
+					restoreStatus = value;
+				}
+			}
+
+			public int? FullStruAfterRestoreProgress
+			{
+				get
+				{
+					return fullStruAfterRestoreProgress;
+				}
+				set	
+				{
+					fullStruAfterRestoreProgress = value;
+				}
+			}
+
+			public string CrossRoleName
+			{
+				get
+				{
+					return crossRoleName;
+				}
+				set	
+				{
+					crossRoleName = value;
+				}
+			}
+
+			public string RestoreDir
+			{
+				get
+				{
+					return restoreDir;
+				}
+				set	
+				{
+					restoreDir = value;
+				}
+			}
+
+			public string CrossAliyunId
+			{
+				get
+				{
+					return crossAliyunId;
+				}
+				set	
+				{
+					crossAliyunId = value;
+				}
+			}
+
+			public string RestoreObjects
+			{
+				get
+				{
+					return restoreObjects;
+				}
+				set	
+				{
+					restoreObjects = value;
+				}
+			}
 
 			public string BackupPlanId
 			{
@@ -227,18 +299,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				set	
 				{
 					backupPlanId = value;
-				}
-			}
-
-			public string DestinationEndpointInstanceType
-			{
-				get
-				{
-					return destinationEndpointInstanceType;
-				}
-				set	
-				{
-					destinationEndpointInstanceType = value;
 				}
 			}
 
@@ -254,15 +314,39 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public string DestinationEndpointInstanceID
+			public long? RestoreTaskCreateTime
 			{
 				get
 				{
-					return destinationEndpointInstanceID;
+					return restoreTaskCreateTime;
 				}
 				set	
 				{
-					destinationEndpointInstanceID = value;
+					restoreTaskCreateTime = value;
+				}
+			}
+
+			public string DestinationEndpointUserName
+			{
+				get
+				{
+					return destinationEndpointUserName;
+				}
+				set	
+				{
+					destinationEndpointUserName = value;
+				}
+			}
+
+			public long? RestoreTaskFinishTime
+			{
+				get
+				{
+					return restoreTaskFinishTime;
+				}
+				set	
+				{
+					restoreTaskFinishTime = value;
 				}
 			}
 
@@ -290,15 +374,15 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public string DestinationEndpointUserName
+			public string DestinationEndpointInstanceType
 			{
 				get
 				{
-					return destinationEndpointUserName;
+					return destinationEndpointInstanceType;
 				}
 				set	
 				{
-					destinationEndpointUserName = value;
+					destinationEndpointInstanceType = value;
 				}
 			}
 
@@ -314,111 +398,27 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public string RestoreObjects
+			public int? FullStruforeRestoreProgress
 			{
 				get
 				{
-					return restoreObjects;
+					return fullStruforeRestoreProgress;
 				}
 				set	
 				{
-					restoreObjects = value;
+					fullStruforeRestoreProgress = value;
 				}
 			}
 
-			public long? BackupGatewayId
+			public string ErrMessage
 			{
 				get
 				{
-					return backupGatewayId;
+					return errMessage;
 				}
 				set	
 				{
-					backupGatewayId = value;
-				}
-			}
-
-			public string RestoreDir
-			{
-				get
-				{
-					return restoreDir;
-				}
-				set	
-				{
-					restoreDir = value;
-				}
-			}
-
-			public string RestoreTaskName
-			{
-				get
-				{
-					return restoreTaskName;
-				}
-				set	
-				{
-					restoreTaskName = value;
-				}
-			}
-
-			public string BackupSetId
-			{
-				get
-				{
-					return backupSetId;
-				}
-				set	
-				{
-					backupSetId = value;
-				}
-			}
-
-			public long? RestoreTime
-			{
-				get
-				{
-					return restoreTime;
-				}
-				set	
-				{
-					restoreTime = value;
-				}
-			}
-
-			public long? RestoreTaskCreateTime
-			{
-				get
-				{
-					return restoreTaskCreateTime;
-				}
-				set	
-				{
-					restoreTaskCreateTime = value;
-				}
-			}
-
-			public long? RestoreTaskFinishTime
-			{
-				get
-				{
-					return restoreTaskFinishTime;
-				}
-				set	
-				{
-					restoreTaskFinishTime = value;
-				}
-			}
-
-			public string RestoreStatus
-			{
-				get
-				{
-					return restoreStatus;
-				}
-				set	
-				{
-					restoreStatus = value;
+					errMessage = value;
 				}
 			}
 
@@ -431,18 +431,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				set	
 				{
 					restoreTaskId = value;
-				}
-			}
-
-			public int? FullStruforeRestoreProgress
-			{
-				get
-				{
-					return fullStruforeRestoreProgress;
-				}
-				set	
-				{
-					fullStruforeRestoreProgress = value;
 				}
 			}
 
@@ -470,51 +458,63 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public int? FullStruAfterRestoreProgress
+			public string DestinationEndpointInstanceID
 			{
 				get
 				{
-					return fullStruAfterRestoreProgress;
+					return destinationEndpointInstanceID;
 				}
 				set	
 				{
-					fullStruAfterRestoreProgress = value;
+					destinationEndpointInstanceID = value;
 				}
 			}
 
-			public string CrossAliyunId
+			public string BackupSetId
 			{
 				get
 				{
-					return crossAliyunId;
+					return backupSetId;
 				}
 				set	
 				{
-					crossAliyunId = value;
+					backupSetId = value;
 				}
 			}
 
-			public string CrossRoleName
+			public long? BackupGatewayId
 			{
 				get
 				{
-					return crossRoleName;
+					return backupGatewayId;
 				}
 				set	
 				{
-					crossRoleName = value;
+					backupGatewayId = value;
 				}
 			}
 
-			public string ErrMessage
+			public string RestoreTaskName
 			{
 				get
 				{
-					return errMessage;
+					return restoreTaskName;
 				}
 				set	
 				{
-					errMessage = value;
+					restoreTaskName = value;
+				}
+			}
+
+			public long? RestoreTime
+			{
+				get
+				{
+					return restoreTime;
+				}
+				set	
+				{
+					restoreTime = value;
 				}
 			}
 		}

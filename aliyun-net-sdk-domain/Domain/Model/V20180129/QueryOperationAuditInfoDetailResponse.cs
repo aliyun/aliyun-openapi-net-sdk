@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,25 +25,49 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class QueryOperationAuditInfoDetailResponse : AcsResponse
 	{
 
+		private string auditInfo;
+
+		private int? auditStatus;
+
 		private string requestId;
 
-		private string id;
+		private string businessName;
+
+		private int? auditType;
+
+		private string domainName;
 
 		private long? createTime;
 
 		private long? updateTime;
 
-		private string businessName;
-
-		private string domainName;
-
-		private int? auditType;
-
-		private int? auditStatus;
-
-		private string auditInfo;
+		private string id;
 
 		private string remark;
+
+		public string AuditInfo
+		{
+			get
+			{
+				return auditInfo;
+			}
+			set	
+			{
+				auditInfo = value;
+			}
+		}
+
+		public int? AuditStatus
+		{
+			get
+			{
+				return auditStatus;
+			}
+			set	
+			{
+				auditStatus = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -57,15 +81,39 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string Id
+		public string BusinessName
 		{
 			get
 			{
-				return id;
+				return businessName;
 			}
 			set	
 			{
-				id = value;
+				businessName = value;
+			}
+		}
+
+		public int? AuditType
+		{
+			get
+			{
+				return auditType;
+			}
+			set	
+			{
+				auditType = value;
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
 			}
 		}
 
@@ -93,63 +141,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string BusinessName
+		public string Id
 		{
 			get
 			{
-				return businessName;
+				return id;
 			}
 			set	
 			{
-				businessName = value;
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
-
-		public int? AuditType
-		{
-			get
-			{
-				return auditType;
-			}
-			set	
-			{
-				auditType = value;
-			}
-		}
-
-		public int? AuditStatus
-		{
-			get
-			{
-				return auditStatus;
-			}
-			set	
-			{
-				auditStatus = value;
-			}
-		}
-
-		public string AuditInfo
-		{
-			get
-			{
-				return auditInfo;
-			}
-			set	
-			{
-				auditInfo = value;
+				id = value;
 			}
 		}
 

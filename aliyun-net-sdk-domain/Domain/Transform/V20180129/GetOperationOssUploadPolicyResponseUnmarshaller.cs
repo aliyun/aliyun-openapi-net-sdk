@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			GetOperationOssUploadPolicyResponse getOperationOssUploadPolicyResponse = new GetOperationOssUploadPolicyResponse();
 
 			getOperationOssUploadPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			getOperationOssUploadPolicyResponse.FileDir = _ctx.StringValue("GetOperationOssUploadPolicy.FileDir");
+			getOperationOssUploadPolicyResponse.EncodedPolicy = _ctx.StringValue("GetOperationOssUploadPolicy.EncodedPolicy");
 			getOperationOssUploadPolicyResponse.RequestId = _ctx.StringValue("GetOperationOssUploadPolicy.RequestId");
 			getOperationOssUploadPolicyResponse.Accessid = _ctx.StringValue("GetOperationOssUploadPolicy.Accessid");
-			getOperationOssUploadPolicyResponse.EncodedPolicy = _ctx.StringValue("GetOperationOssUploadPolicy.EncodedPolicy");
 			getOperationOssUploadPolicyResponse.Signature = _ctx.StringValue("GetOperationOssUploadPolicy.Signature");
-			getOperationOssUploadPolicyResponse.FileDir = _ctx.StringValue("GetOperationOssUploadPolicy.FileDir");
 			getOperationOssUploadPolicyResponse.Host = _ctx.StringValue("GetOperationOssUploadPolicy.Host");
 			getOperationOssUploadPolicyResponse.ExpireTime = _ctx.StringValue("GetOperationOssUploadPolicy.ExpireTime");
         

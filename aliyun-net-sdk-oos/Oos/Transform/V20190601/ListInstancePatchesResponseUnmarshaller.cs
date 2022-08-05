@@ -31,19 +31,19 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			ListInstancePatchesResponse listInstancePatchesResponse = new ListInstancePatchesResponse();
 
 			listInstancePatchesResponse.HttpResponse = _ctx.HttpResponse;
-			listInstancePatchesResponse.MaxResults = _ctx.IntegerValue("ListInstancePatches.MaxResults");
 			listInstancePatchesResponse.NextToken = _ctx.StringValue("ListInstancePatches.NextToken");
 			listInstancePatchesResponse.RequestId = _ctx.StringValue("ListInstancePatches.RequestId");
+			listInstancePatchesResponse.MaxResults = _ctx.IntegerValue("ListInstancePatches.MaxResults");
 
 			List<ListInstancePatchesResponse.ListInstancePatches_Patch> listInstancePatchesResponse_patches = new List<ListInstancePatchesResponse.ListInstancePatches_Patch>();
 			for (int i = 0; i < _ctx.Length("ListInstancePatches.Patches.Length"); i++) {
 				ListInstancePatchesResponse.ListInstancePatches_Patch patch = new ListInstancePatchesResponse.ListInstancePatches_Patch();
-				patch.Classification = _ctx.StringValue("ListInstancePatches.Patches["+ i +"].Classification");
-				patch.InstalledTime = _ctx.StringValue("ListInstancePatches.Patches["+ i +"].InstalledTime");
-				patch.KBId = _ctx.StringValue("ListInstancePatches.Patches["+ i +"].KBId");
 				patch.Severity = _ctx.StringValue("ListInstancePatches.Patches["+ i +"].Severity");
 				patch.Status = _ctx.StringValue("ListInstancePatches.Patches["+ i +"].Status");
+				patch.InstalledTime = _ctx.StringValue("ListInstancePatches.Patches["+ i +"].InstalledTime");
+				patch.KBId = _ctx.StringValue("ListInstancePatches.Patches["+ i +"].KBId");
 				patch.Title = _ctx.StringValue("ListInstancePatches.Patches["+ i +"].Title");
+				patch.Classification = _ctx.StringValue("ListInstancePatches.Patches["+ i +"].Classification");
 
 				listInstancePatchesResponse_patches.Add(patch);
 			}

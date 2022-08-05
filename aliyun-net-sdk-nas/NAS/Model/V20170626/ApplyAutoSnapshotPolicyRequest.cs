@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class ApplyAutoSnapshotPolicyRequest : RpcAcsRequest<ApplyAutoSnapshotPolicyResponse>
     {
         public ApplyAutoSnapshotPolicyRequest()
-            : base("NAS", "2017-06-26", "ApplyAutoSnapshotPolicy", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "ApplyAutoSnapshotPolicy", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

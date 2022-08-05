@@ -31,23 +31,23 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			DescribeNodeCidrListResponse describeNodeCidrListResponse = new DescribeNodeCidrListResponse();
 
 			describeNodeCidrListResponse.HttpResponse = _ctx.HttpResponse;
-			describeNodeCidrListResponse.Success = _ctx.BooleanValue("DescribeNodeCidrList.Success");
-			describeNodeCidrListResponse.ErrCode = _ctx.StringValue("DescribeNodeCidrList.ErrCode");
-			describeNodeCidrListResponse.ErrMessage = _ctx.StringValue("DescribeNodeCidrList.ErrMessage");
 			describeNodeCidrListResponse.HttpStatusCode = _ctx.IntegerValue("DescribeNodeCidrList.HttpStatusCode");
 			describeNodeCidrListResponse.RequestId = _ctx.StringValue("DescribeNodeCidrList.RequestId");
-
-			List<string> describeNodeCidrListResponse_internetIPs = new List<string>();
-			for (int i = 0; i < _ctx.Length("DescribeNodeCidrList.InternetIPs.Length"); i++) {
-				describeNodeCidrListResponse_internetIPs.Add(_ctx.StringValue("DescribeNodeCidrList.InternetIPs["+ i +"]"));
-			}
-			describeNodeCidrListResponse.InternetIPs = describeNodeCidrListResponse_internetIPs;
+			describeNodeCidrListResponse.ErrCode = _ctx.StringValue("DescribeNodeCidrList.ErrCode");
+			describeNodeCidrListResponse.Success = _ctx.BooleanValue("DescribeNodeCidrList.Success");
+			describeNodeCidrListResponse.ErrMessage = _ctx.StringValue("DescribeNodeCidrList.ErrMessage");
 
 			List<string> describeNodeCidrListResponse_intranetIPs = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeNodeCidrList.IntranetIPs.Length"); i++) {
 				describeNodeCidrListResponse_intranetIPs.Add(_ctx.StringValue("DescribeNodeCidrList.IntranetIPs["+ i +"]"));
 			}
 			describeNodeCidrListResponse.IntranetIPs = describeNodeCidrListResponse_intranetIPs;
+
+			List<string> describeNodeCidrListResponse_internetIPs = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeNodeCidrList.InternetIPs.Length"); i++) {
+				describeNodeCidrListResponse_internetIPs.Add(_ctx.StringValue("DescribeNodeCidrList.InternetIPs["+ i +"]"));
+			}
+			describeNodeCidrListResponse.InternetIPs = describeNodeCidrListResponse_internetIPs;
         
 			return describeNodeCidrListResponse;
         }

@@ -61,7 +61,11 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private string templateName;
 
+		private string templateSceneId;
+
 		private bool? ifSourceCode;
+
+		private string groupId;
 
 		private bool? ifMember;
 
@@ -199,6 +203,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
+		public string TemplateSceneId
+		{
+			get
+			{
+				return templateSceneId;
+			}
+			set	
+			{
+				templateSceneId = value;
+				DictionaryUtil.Add(BodyParameters, "TemplateSceneId", value);
+			}
+		}
+
 		public bool? IfSourceCode
 		{
 			get
@@ -209,6 +226,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				ifSourceCode = value;
 				DictionaryUtil.Add(BodyParameters, "IfSourceCode", value.ToString());
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(BodyParameters, "GroupId", value);
 			}
 		}
 

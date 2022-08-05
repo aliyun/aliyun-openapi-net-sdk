@@ -31,31 +31,31 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			DescribeFullBackupListResponse describeFullBackupListResponse = new DescribeFullBackupListResponse();
 
 			describeFullBackupListResponse.HttpResponse = _ctx.HttpResponse;
-			describeFullBackupListResponse.Success = _ctx.BooleanValue("DescribeFullBackupList.Success");
-			describeFullBackupListResponse.ErrCode = _ctx.StringValue("DescribeFullBackupList.ErrCode");
-			describeFullBackupListResponse.ErrMessage = _ctx.StringValue("DescribeFullBackupList.ErrMessage");
 			describeFullBackupListResponse.HttpStatusCode = _ctx.IntegerValue("DescribeFullBackupList.HttpStatusCode");
-			describeFullBackupListResponse.RequestId = _ctx.StringValue("DescribeFullBackupList.RequestId");
-			describeFullBackupListResponse.TotalPages = _ctx.IntegerValue("DescribeFullBackupList.TotalPages");
-			describeFullBackupListResponse.PageSize = _ctx.IntegerValue("DescribeFullBackupList.PageSize");
 			describeFullBackupListResponse.PageNum = _ctx.IntegerValue("DescribeFullBackupList.PageNum");
+			describeFullBackupListResponse.RequestId = _ctx.StringValue("DescribeFullBackupList.RequestId");
+			describeFullBackupListResponse.ErrCode = _ctx.StringValue("DescribeFullBackupList.ErrCode");
+			describeFullBackupListResponse.Success = _ctx.BooleanValue("DescribeFullBackupList.Success");
+			describeFullBackupListResponse.ErrMessage = _ctx.StringValue("DescribeFullBackupList.ErrMessage");
+			describeFullBackupListResponse.TotalPages = _ctx.IntegerValue("DescribeFullBackupList.TotalPages");
 			describeFullBackupListResponse.TotalElements = _ctx.IntegerValue("DescribeFullBackupList.TotalElements");
+			describeFullBackupListResponse.PageSize = _ctx.IntegerValue("DescribeFullBackupList.PageSize");
 
 			List<DescribeFullBackupListResponse.DescribeFullBackupList_FullBackupFile> describeFullBackupListResponse_items = new List<DescribeFullBackupListResponse.DescribeFullBackupList_FullBackupFile>();
 			for (int i = 0; i < _ctx.Length("DescribeFullBackupList.Items.Length"); i++) {
 				DescribeFullBackupListResponse.DescribeFullBackupList_FullBackupFile fullBackupFile = new DescribeFullBackupListResponse.DescribeFullBackupList_FullBackupFile();
-				fullBackupFile.BackupSetId = _ctx.StringValue("DescribeFullBackupList.Items["+ i +"].BackupSetId");
-				fullBackupFile.SourceEndpointIpPort = _ctx.StringValue("DescribeFullBackupList.Items["+ i +"].SourceEndpointIpPort");
-				fullBackupFile.StartTime = _ctx.LongValue("DescribeFullBackupList.Items["+ i +"].StartTime");
-				fullBackupFile.EndTime = _ctx.LongValue("DescribeFullBackupList.Items["+ i +"].EndTime");
+				fullBackupFile.FinishTime = _ctx.LongValue("DescribeFullBackupList.Items["+ i +"].FinishTime");
 				fullBackupFile.BackupStatus = _ctx.StringValue("DescribeFullBackupList.Items["+ i +"].BackupStatus");
-				fullBackupFile.BackupSetExpiredTime = _ctx.LongValue("DescribeFullBackupList.Items["+ i +"].BackupSetExpiredTime");
-				fullBackupFile.BackupSize = _ctx.LongValue("DescribeFullBackupList.Items["+ i +"].BackupSize");
-				fullBackupFile.StorageMethod = _ctx.StringValue("DescribeFullBackupList.Items["+ i +"].StorageMethod");
+				fullBackupFile.SourceEndpointIpPort = _ctx.StringValue("DescribeFullBackupList.Items["+ i +"].SourceEndpointIpPort");
+				fullBackupFile.CreateTime = _ctx.LongValue("DescribeFullBackupList.Items["+ i +"].CreateTime");
 				fullBackupFile.ErrMessage = _ctx.StringValue("DescribeFullBackupList.Items["+ i +"].ErrMessage");
 				fullBackupFile.BackupObjects = _ctx.StringValue("DescribeFullBackupList.Items["+ i +"].BackupObjects");
-				fullBackupFile.CreateTime = _ctx.LongValue("DescribeFullBackupList.Items["+ i +"].CreateTime");
-				fullBackupFile.FinishTime = _ctx.LongValue("DescribeFullBackupList.Items["+ i +"].FinishTime");
+				fullBackupFile.EndTime = _ctx.LongValue("DescribeFullBackupList.Items["+ i +"].EndTime");
+				fullBackupFile.StartTime = _ctx.LongValue("DescribeFullBackupList.Items["+ i +"].StartTime");
+				fullBackupFile.BackupSetExpiredTime = _ctx.LongValue("DescribeFullBackupList.Items["+ i +"].BackupSetExpiredTime");
+				fullBackupFile.StorageMethod = _ctx.StringValue("DescribeFullBackupList.Items["+ i +"].StorageMethod");
+				fullBackupFile.BackupSetId = _ctx.StringValue("DescribeFullBackupList.Items["+ i +"].BackupSetId");
+				fullBackupFile.BackupSize = _ctx.LongValue("DescribeFullBackupList.Items["+ i +"].BackupSize");
 
 				describeFullBackupListResponse_items.Add(fullBackupFile);
 			}

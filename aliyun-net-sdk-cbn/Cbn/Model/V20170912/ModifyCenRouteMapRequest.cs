@@ -75,6 +75,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private List<string> routeTypess = new List<string>(){ };
 
+		private string matchAddressType;
+
 		private string cidrMatchMode;
 
 		private string cenId;
@@ -321,6 +323,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				routeTypess = value;
+			}
+		}
+
+		public string MatchAddressType
+		{
+			get
+			{
+				return matchAddressType;
+			}
+			set	
+			{
+				matchAddressType = value;
+				DictionaryUtil.Add(QueryParameters, "MatchAddressType", value);
 			}
 		}
 

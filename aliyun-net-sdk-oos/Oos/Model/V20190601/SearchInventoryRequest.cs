@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class SearchInventoryRequest : RpcAcsRequest<SearchInventoryResponse>
     {
         public SearchInventoryRequest()
-            : base("oos", "2019-06-01", "SearchInventory")
+            : base("oos", "2019-06-01", "SearchInventory", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,12 +43,13 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private List<string> aggregators = new List<string>(){ };
 
-		private List<Filter> filters = new List<Filter>(){ };
+		private List<string> filters = new List<string>(){ };
 
 		private string nextToken;
 
 		private int? maxResults;
 
+		[JsonProperty(PropertyName = "Aggregator")]
 		public List<string> Aggregators
 		{
 			get
@@ -60,14 +60,11 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			set
 			{
 				aggregators = value;
-				for (int i = 0; i < aggregators.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Aggregator." + (i + 1) , aggregators[i]);
-				}
 			}
 		}
 
-		public List<Filter> Filters
+		[JsonProperty(PropertyName = "Filter")]
+		public List<string> Filters
 		{
 			get
 			{
@@ -77,18 +74,18 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			set
 			{
 				filters = value;
-				for (int i = 0; i < filters.Count; i++)
+				if(filters != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Name", filters[i].Name);
-					for (int j = 0; j < filters[i].Values.Count; j++)
+					for (int depth1 = 0; depth1 < filters.Count; depth1++)
 					{
-						DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Value." +(j + 1), filters[i].Values[j]);
+						DictionaryUtil.Add(QueryParameters,"Filter." + (depth1 + 1), filters[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Filter." + (depth1 + 1), filters[depth1]);
 					}
-					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Operator", filters[i].Operator);
 				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -102,6 +99,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxResults")]
 		public int? MaxResults
 		{
 			get
@@ -124,6 +122,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string operator_;
 
+			[JsonProperty(PropertyName = "Name")]
 			public string Name
 			{
 				get
@@ -136,6 +135,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Value")]
 			public List<string> Values
 			{
 				get
@@ -148,7 +148,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
-			public string Operator
+			[JsonProperty(PropertyName = "Operator")]
+			public string Operator_
 			{
 				get
 				{

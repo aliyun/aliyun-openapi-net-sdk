@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -25,38 +25,15 @@ namespace Aliyun.Acs.oos.Model.V20190601
 	public class ListTaskExecutionsResponse : AcsResponse
 	{
 
+		private string nextToken;
+
 		private string requestId;
 
 		private int? maxResults;
 
-		private string nextToken;
-
 		private List<ListTaskExecutions_TaskExecution> taskExecutions;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -69,6 +46,33 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "MaxResults")]
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TaskExecutions")]
 		public List<ListTaskExecutions_TaskExecution> TaskExecutions
 		{
 			get
@@ -84,200 +88,45 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		public class ListTaskExecutions_TaskExecution
 		{
 
-			private string executionId;
-
-			private string taskExecutionId;
-
-			private string templateId;
-
-			private string startDate;
-
-			private string endDate;
-
-			private string createDate;
-
-			private string updateDate;
-
-			private string status;
-
-			private string properties;
+			private string childExecutionId;
 
 			private string outputs;
 
-			private string taskAction;
+			private string status;
 
-			private string taskName;
-
-			private string statusMessage;
-
-			private string childExecutionId;
+			private string endDate;
 
 			private string parentTaskExecutionId;
 
+			private string taskName;
+
+			private string startDate;
+
 			private string loopItem;
+
+			private string createDate;
+
+			private string executionId;
+
+			private string taskAction;
+
+			private string taskExecutionId;
+
+			private string updateDate;
 
 			private string loop;
 
-			private string extraData;
+			private string templateId;
 
 			private int? loopBatchNumber;
 
-			public string ExecutionId
-			{
-				get
-				{
-					return executionId;
-				}
-				set	
-				{
-					executionId = value;
-				}
-			}
+			private string statusMessage;
 
-			public string TaskExecutionId
-			{
-				get
-				{
-					return taskExecutionId;
-				}
-				set	
-				{
-					taskExecutionId = value;
-				}
-			}
+			private string extraData;
 
-			public string TemplateId
-			{
-				get
-				{
-					return templateId;
-				}
-				set	
-				{
-					templateId = value;
-				}
-			}
+			private string properties;
 
-			public string StartDate
-			{
-				get
-				{
-					return startDate;
-				}
-				set	
-				{
-					startDate = value;
-				}
-			}
-
-			public string EndDate
-			{
-				get
-				{
-					return endDate;
-				}
-				set	
-				{
-					endDate = value;
-				}
-			}
-
-			public string CreateDate
-			{
-				get
-				{
-					return createDate;
-				}
-				set	
-				{
-					createDate = value;
-				}
-			}
-
-			public string UpdateDate
-			{
-				get
-				{
-					return updateDate;
-				}
-				set	
-				{
-					updateDate = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string Properties
-			{
-				get
-				{
-					return properties;
-				}
-				set	
-				{
-					properties = value;
-				}
-			}
-
-			public string Outputs
-			{
-				get
-				{
-					return outputs;
-				}
-				set	
-				{
-					outputs = value;
-				}
-			}
-
-			public string TaskAction
-			{
-				get
-				{
-					return taskAction;
-				}
-				set	
-				{
-					taskAction = value;
-				}
-			}
-
-			public string TaskName
-			{
-				get
-				{
-					return taskName;
-				}
-				set	
-				{
-					taskName = value;
-				}
-			}
-
-			public string StatusMessage
-			{
-				get
-				{
-					return statusMessage;
-				}
-				set	
-				{
-					statusMessage = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "ChildExecutionId")]
 			public string ChildExecutionId
 			{
 				get
@@ -290,6 +139,46 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Outputs")]
+			public string Outputs
+			{
+				get
+				{
+					return outputs;
+				}
+				set	
+				{
+					outputs = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Status")]
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EndDate")]
+			public string EndDate
+			{
+				get
+				{
+					return endDate;
+				}
+				set	
+				{
+					endDate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ParentTaskExecutionId")]
 			public string ParentTaskExecutionId
 			{
 				get
@@ -302,6 +191,33 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "TaskName")]
+			public string TaskName
+			{
+				get
+				{
+					return taskName;
+				}
+				set	
+				{
+					taskName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StartDate")]
+			public string StartDate
+			{
+				get
+				{
+					return startDate;
+				}
+				set	
+				{
+					startDate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LoopItem")]
 			public string LoopItem
 			{
 				get
@@ -314,6 +230,72 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "CreateDate")]
+			public string CreateDate
+			{
+				get
+				{
+					return createDate;
+				}
+				set	
+				{
+					createDate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExecutionId")]
+			public string ExecutionId
+			{
+				get
+				{
+					return executionId;
+				}
+				set	
+				{
+					executionId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TaskAction")]
+			public string TaskAction
+			{
+				get
+				{
+					return taskAction;
+				}
+				set	
+				{
+					taskAction = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TaskExecutionId")]
+			public string TaskExecutionId
+			{
+				get
+				{
+					return taskExecutionId;
+				}
+				set	
+				{
+					taskExecutionId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UpdateDate")]
+			public string UpdateDate
+			{
+				get
+				{
+					return updateDate;
+				}
+				set	
+				{
+					updateDate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Loop")]
 			public string Loop
 			{
 				get
@@ -326,6 +308,46 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "TemplateId")]
+			public string TemplateId
+			{
+				get
+				{
+					return templateId;
+				}
+				set	
+				{
+					templateId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LoopBatchNumber")]
+			public int? LoopBatchNumber
+			{
+				get
+				{
+					return loopBatchNumber;
+				}
+				set	
+				{
+					loopBatchNumber = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StatusMessage")]
+			public string StatusMessage
+			{
+				get
+				{
+					return statusMessage;
+				}
+				set	
+				{
+					statusMessage = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExtraData")]
 			public string ExtraData
 			{
 				get
@@ -338,15 +360,16 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
-			public int? LoopBatchNumber
+			[JsonProperty(PropertyName = "Properties")]
+			public string Properties
 			{
 				get
 				{
-					return loopBatchNumber;
+					return properties;
 				}
 				set	
 				{
-					loopBatchNumber = value;
+					properties = value;
 				}
 			}
 		}

@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			ModifyBackupSetDownloadRulesResponse modifyBackupSetDownloadRulesResponse = new ModifyBackupSetDownloadRulesResponse();
 
 			modifyBackupSetDownloadRulesResponse.HttpResponse = _ctx.HttpResponse;
-			modifyBackupSetDownloadRulesResponse.Success = _ctx.BooleanValue("ModifyBackupSetDownloadRules.Success");
-			modifyBackupSetDownloadRulesResponse.ErrCode = _ctx.StringValue("ModifyBackupSetDownloadRules.ErrCode");
-			modifyBackupSetDownloadRulesResponse.ErrMessage = _ctx.StringValue("ModifyBackupSetDownloadRules.ErrMessage");
 			modifyBackupSetDownloadRulesResponse.HttpStatusCode = _ctx.IntegerValue("ModifyBackupSetDownloadRules.HttpStatusCode");
 			modifyBackupSetDownloadRulesResponse.RequestId = _ctx.StringValue("ModifyBackupSetDownloadRules.RequestId");
+			modifyBackupSetDownloadRulesResponse.ErrCode = _ctx.StringValue("ModifyBackupSetDownloadRules.ErrCode");
+			modifyBackupSetDownloadRulesResponse.Success = _ctx.BooleanValue("ModifyBackupSetDownloadRules.Success");
+			modifyBackupSetDownloadRulesResponse.ErrMessage = _ctx.StringValue("ModifyBackupSetDownloadRules.ErrMessage");
 			modifyBackupSetDownloadRulesResponse.BackupPlanId = _ctx.StringValue("ModifyBackupSetDownloadRules.BackupPlanId");
         
 			return modifyBackupSetDownloadRulesResponse;

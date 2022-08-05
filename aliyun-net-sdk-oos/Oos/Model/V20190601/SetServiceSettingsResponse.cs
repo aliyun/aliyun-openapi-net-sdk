@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private List<SetServiceSettings_ServiceSetting> serviceSettings;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ServiceSettings")]
 		public List<SetServiceSettings_ServiceSetting> ServiceSettings
 		{
 			get
@@ -56,28 +58,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		public class SetServiceSettings_ServiceSetting
 		{
 
-			private bool? deliveryOssEnabled;
-
 			private string deliveryOssBucketName;
 
 			private string deliveryOssKeyPrefix;
+
+			private bool? deliveryOssEnabled;
 
 			private bool? deliverySlsEnabled;
 
 			private string deliverySlsProjectName;
 
-			public bool? DeliveryOssEnabled
-			{
-				get
-				{
-					return deliveryOssEnabled;
-				}
-				set	
-				{
-					deliveryOssEnabled = value;
-				}
-			}
+			private string rdcEnterpriseId;
 
+			[JsonProperty(PropertyName = "DeliveryOssBucketName")]
 			public string DeliveryOssBucketName
 			{
 				get
@@ -90,6 +83,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "DeliveryOssKeyPrefix")]
 			public string DeliveryOssKeyPrefix
 			{
 				get
@@ -102,6 +96,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "DeliveryOssEnabled")]
+			public bool? DeliveryOssEnabled
+			{
+				get
+				{
+					return deliveryOssEnabled;
+				}
+				set	
+				{
+					deliveryOssEnabled = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DeliverySlsEnabled")]
 			public bool? DeliverySlsEnabled
 			{
 				get
@@ -114,6 +122,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "DeliverySlsProjectName")]
 			public string DeliverySlsProjectName
 			{
 				get
@@ -123,6 +132,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					deliverySlsProjectName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RdcEnterpriseId")]
+			public string RdcEnterpriseId
+			{
+				get
+				{
+					return rdcEnterpriseId;
+				}
+				set	
+				{
+					rdcEnterpriseId = value;
 				}
 			}
 		}

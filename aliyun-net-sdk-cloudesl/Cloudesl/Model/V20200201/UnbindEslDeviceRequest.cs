@@ -43,6 +43,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private string extraParams;
 
+		private string containerName;
+
 		private string storeId;
 
 		private int? layer;
@@ -65,6 +67,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				extraParams = value;
 				DictionaryUtil.Add(BodyParameters, "ExtraParams", value);
+			}
+		}
+
+		public string ContainerName
+		{
+			get
+			{
+				return containerName;
+			}
+			set	
+			{
+				containerName = value;
+				DictionaryUtil.Add(BodyParameters, "ContainerName", value);
 			}
 		}
 

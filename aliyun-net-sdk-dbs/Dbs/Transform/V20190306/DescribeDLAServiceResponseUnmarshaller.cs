@@ -31,12 +31,12 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			DescribeDLAServiceResponse describeDLAServiceResponse = new DescribeDLAServiceResponse();
 
 			describeDLAServiceResponse.HttpResponse = _ctx.HttpResponse;
-			describeDLAServiceResponse.Success = _ctx.BooleanValue("DescribeDLAService.Success");
-			describeDLAServiceResponse.ErrCode = _ctx.StringValue("DescribeDLAService.ErrCode");
-			describeDLAServiceResponse.ErrMessage = _ctx.StringValue("DescribeDLAService.ErrMessage");
 			describeDLAServiceResponse.HttpStatusCode = _ctx.IntegerValue("DescribeDLAService.HttpStatusCode");
 			describeDLAServiceResponse.RequestId = _ctx.StringValue("DescribeDLAService.RequestId");
+			describeDLAServiceResponse.ErrCode = _ctx.StringValue("DescribeDLAService.ErrCode");
+			describeDLAServiceResponse.Success = _ctx.BooleanValue("DescribeDLAService.Success");
 			describeDLAServiceResponse.State = _ctx.StringValue("DescribeDLAService.State");
+			describeDLAServiceResponse.ErrMessage = _ctx.StringValue("DescribeDLAService.ErrMessage");
 			describeDLAServiceResponse.AutoAdd = _ctx.BooleanValue("DescribeDLAService.AutoAdd");
 			describeDLAServiceResponse.HaveJobFailed = _ctx.BooleanValue("DescribeDLAService.HaveJobFailed");
         

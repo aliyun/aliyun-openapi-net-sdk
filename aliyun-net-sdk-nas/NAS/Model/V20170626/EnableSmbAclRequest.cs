@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class EnableSmbAclRequest : RpcAcsRequest<EnableSmbAclResponse>
     {
         public EnableSmbAclRequest()
-            : base("NAS", "2017-06-26", "EnableSmbAcl", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "EnableSmbAcl", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,6 +45,10 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 		private string keytabMd5;
 
 		private string fileSystemId;
+
+		private string authCenter;
+
+		private string authMethod;
 
 		public string Keytab
 		{
@@ -82,6 +86,32 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				fileSystemId = value;
 				DictionaryUtil.Add(QueryParameters, "FileSystemId", value);
+			}
+		}
+
+		public string AuthCenter
+		{
+			get
+			{
+				return authCenter;
+			}
+			set	
+			{
+				authCenter = value;
+				DictionaryUtil.Add(QueryParameters, "AuthCenter", value);
+			}
+		}
+
+		public string AuthMethod
+		{
+			get
+			{
+				return authMethod;
+			}
+			set	
+			{
+				authMethod = value;
+				DictionaryUtil.Add(QueryParameters, "AuthMethod", value);
 			}
 		}
 

@@ -36,19 +36,20 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			List<ListStateConfigurationsResponse.ListStateConfigurations_StateConfiguration> listStateConfigurationsResponse_stateConfigurations = new List<ListStateConfigurationsResponse.ListStateConfigurations_StateConfiguration>();
 			for (int i = 0; i < _ctx.Length("ListStateConfigurations.StateConfigurations.Length"); i++) {
 				ListStateConfigurationsResponse.ListStateConfigurations_StateConfiguration stateConfiguration = new ListStateConfigurationsResponse.ListStateConfigurations_StateConfiguration();
+				stateConfiguration.UpdateTime = _ctx.StringValue("ListStateConfigurations.StateConfigurations["+ i +"].UpdateTime");
 				stateConfiguration.CreateTime = _ctx.StringValue("ListStateConfigurations.StateConfigurations["+ i +"].CreateTime");
-				stateConfiguration.Description = _ctx.StringValue("ListStateConfigurations.StateConfigurations["+ i +"].Description");
+				stateConfiguration.Targets = _ctx.StringValue("ListStateConfigurations.StateConfigurations["+ i +"].Targets");
+				stateConfiguration.Tags = _ctx.StringValue("ListStateConfigurations.StateConfigurations["+ i +"].Tags");
 				stateConfiguration.StateConfigurationId = _ctx.StringValue("ListStateConfigurations.StateConfigurations["+ i +"].StateConfigurationId");
-				stateConfiguration.TemplateId = _ctx.StringValue("ListStateConfigurations.StateConfigurations["+ i +"].TemplateId");
+				stateConfiguration.ScheduleExpression = _ctx.StringValue("ListStateConfigurations.StateConfigurations["+ i +"].ScheduleExpression");
 				stateConfiguration.TemplateName = _ctx.StringValue("ListStateConfigurations.StateConfigurations["+ i +"].TemplateName");
 				stateConfiguration.TemplateVersion = _ctx.StringValue("ListStateConfigurations.StateConfigurations["+ i +"].TemplateVersion");
-				stateConfiguration.Parameters = _ctx.StringValue("ListStateConfigurations.StateConfigurations["+ i +"].Parameters");
 				stateConfiguration.ConfigureMode = _ctx.StringValue("ListStateConfigurations.StateConfigurations["+ i +"].ConfigureMode");
 				stateConfiguration.ScheduleType = _ctx.StringValue("ListStateConfigurations.StateConfigurations["+ i +"].ScheduleType");
-				stateConfiguration.ScheduleExpression = _ctx.StringValue("ListStateConfigurations.StateConfigurations["+ i +"].ScheduleExpression");
-				stateConfiguration.Targets = _ctx.StringValue("ListStateConfigurations.StateConfigurations["+ i +"].Targets");
-				stateConfiguration.UpdateTime = _ctx.StringValue("ListStateConfigurations.StateConfigurations["+ i +"].UpdateTime");
-				stateConfiguration.Tags = _ctx.StringValue("ListStateConfigurations.StateConfigurations["+ i +"].Tags");
+				stateConfiguration.Parameters = _ctx.StringValue("ListStateConfigurations.StateConfigurations["+ i +"].Parameters");
+				stateConfiguration.Description = _ctx.StringValue("ListStateConfigurations.StateConfigurations["+ i +"].Description");
+				stateConfiguration.ResourceGroupId = _ctx.StringValue("ListStateConfigurations.StateConfigurations["+ i +"].ResourceGroupId");
+				stateConfiguration.TemplateId = _ctx.StringValue("ListStateConfigurations.StateConfigurations["+ i +"].TemplateId");
 
 				listStateConfigurationsResponse_stateConfigurations.Add(stateConfiguration);
 			}

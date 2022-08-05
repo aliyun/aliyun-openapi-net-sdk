@@ -31,15 +31,15 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			QueryOperationAuditInfoDetailResponse queryOperationAuditInfoDetailResponse = new QueryOperationAuditInfoDetailResponse();
 
 			queryOperationAuditInfoDetailResponse.HttpResponse = _ctx.HttpResponse;
+			queryOperationAuditInfoDetailResponse.AuditInfo = _ctx.StringValue("QueryOperationAuditInfoDetail.AuditInfo");
+			queryOperationAuditInfoDetailResponse.AuditStatus = _ctx.IntegerValue("QueryOperationAuditInfoDetail.AuditStatus");
 			queryOperationAuditInfoDetailResponse.RequestId = _ctx.StringValue("QueryOperationAuditInfoDetail.RequestId");
-			queryOperationAuditInfoDetailResponse.Id = _ctx.StringValue("QueryOperationAuditInfoDetail.Id");
+			queryOperationAuditInfoDetailResponse.BusinessName = _ctx.StringValue("QueryOperationAuditInfoDetail.BusinessName");
+			queryOperationAuditInfoDetailResponse.AuditType = _ctx.IntegerValue("QueryOperationAuditInfoDetail.AuditType");
+			queryOperationAuditInfoDetailResponse.DomainName = _ctx.StringValue("QueryOperationAuditInfoDetail.DomainName");
 			queryOperationAuditInfoDetailResponse.CreateTime = _ctx.LongValue("QueryOperationAuditInfoDetail.CreateTime");
 			queryOperationAuditInfoDetailResponse.UpdateTime = _ctx.LongValue("QueryOperationAuditInfoDetail.UpdateTime");
-			queryOperationAuditInfoDetailResponse.BusinessName = _ctx.StringValue("QueryOperationAuditInfoDetail.BusinessName");
-			queryOperationAuditInfoDetailResponse.DomainName = _ctx.StringValue("QueryOperationAuditInfoDetail.DomainName");
-			queryOperationAuditInfoDetailResponse.AuditType = _ctx.IntegerValue("QueryOperationAuditInfoDetail.AuditType");
-			queryOperationAuditInfoDetailResponse.AuditStatus = _ctx.IntegerValue("QueryOperationAuditInfoDetail.AuditStatus");
-			queryOperationAuditInfoDetailResponse.AuditInfo = _ctx.StringValue("QueryOperationAuditInfoDetail.AuditInfo");
+			queryOperationAuditInfoDetailResponse.Id = _ctx.StringValue("QueryOperationAuditInfoDetail.Id");
 			queryOperationAuditInfoDetailResponse.Remark = _ctx.StringValue("QueryOperationAuditInfoDetail.Remark");
         
 			return queryOperationAuditInfoDetailResponse;

@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class ListTaskExecutionsRequest : RpcAcsRequest<ListTaskExecutionsResponse>
     {
         public ListTaskExecutionsRequest()
-            : base("oos", "2019-06-01", "ListTaskExecutions")
+            : base("oos", "2019-06-01", "ListTaskExecutions", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -72,6 +71,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string status;
 
+		[JsonProperty(PropertyName = "TaskName")]
 		public string TaskName
 		{
 			get
@@ -85,6 +85,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "IncludeChildTaskExecution")]
 		public bool? IncludeChildTaskExecution
 		{
 			get
@@ -98,6 +99,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ExecutionId")]
 		public string ExecutionId
 		{
 			get
@@ -111,6 +113,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ParentTaskExecutionId")]
 		public string ParentTaskExecutionId
 		{
 			get
@@ -124,6 +127,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -137,6 +141,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndDateBefore")]
 		public string EndDateBefore
 		{
 			get
@@ -150,6 +155,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "SortOrder")]
 		public string SortOrder
 		{
 			get
@@ -163,6 +169,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartDateAfter")]
 		public string StartDateAfter
 		{
 			get
@@ -176,6 +183,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartDateBefore")]
 		public string StartDateBefore
 		{
 			get
@@ -189,6 +197,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndDateAfter")]
 		public string EndDateAfter
 		{
 			get
@@ -202,6 +211,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxResults")]
 		public int? MaxResults
 		{
 			get
@@ -215,6 +225,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "TaskExecutionId")]
 		public string TaskExecutionId
 		{
 			get
@@ -228,6 +239,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "SortField")]
 		public string SortField
 		{
 			get
@@ -241,6 +253,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "TaskAction")]
 		public string TaskAction
 		{
 			get
@@ -254,6 +267,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Status")]
 		public string Status
 		{
 			get

@@ -31,19 +31,19 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			ListTemplateVersionsResponse listTemplateVersionsResponse = new ListTemplateVersionsResponse();
 
 			listTemplateVersionsResponse.HttpResponse = _ctx.HttpResponse;
+			listTemplateVersionsResponse.NextToken = _ctx.StringValue("ListTemplateVersions.NextToken");
 			listTemplateVersionsResponse.RequestId = _ctx.StringValue("ListTemplateVersions.RequestId");
 			listTemplateVersionsResponse.MaxResults = _ctx.IntegerValue("ListTemplateVersions.MaxResults");
-			listTemplateVersionsResponse.NextToken = _ctx.StringValue("ListTemplateVersions.NextToken");
 
 			List<ListTemplateVersionsResponse.ListTemplateVersions_TemplateVersion> listTemplateVersionsResponse_templateVersions = new List<ListTemplateVersionsResponse.ListTemplateVersions_TemplateVersion>();
 			for (int i = 0; i < _ctx.Length("ListTemplateVersions.TemplateVersions.Length"); i++) {
 				ListTemplateVersionsResponse.ListTemplateVersions_TemplateVersion templateVersion = new ListTemplateVersionsResponse.ListTemplateVersions_TemplateVersion();
 				templateVersion.Description = _ctx.StringValue("ListTemplateVersions.TemplateVersions["+ i +"].Description");
-				templateVersion.TemplateFormat = _ctx.StringValue("ListTemplateVersions.TemplateVersions["+ i +"].TemplateFormat");
-				templateVersion.TemplateVersion = _ctx.StringValue("ListTemplateVersions.TemplateVersions["+ i +"].TemplateVersion");
 				templateVersion.UpdatedDate = _ctx.StringValue("ListTemplateVersions.TemplateVersions["+ i +"].UpdatedDate");
 				templateVersion.UpdatedBy = _ctx.StringValue("ListTemplateVersions.TemplateVersions["+ i +"].UpdatedBy");
 				templateVersion.VersionName = _ctx.StringValue("ListTemplateVersions.TemplateVersions["+ i +"].VersionName");
+				templateVersion.TemplateVersion = _ctx.StringValue("ListTemplateVersions.TemplateVersions["+ i +"].TemplateVersion");
+				templateVersion.TemplateFormat = _ctx.StringValue("ListTemplateVersions.TemplateVersions["+ i +"].TemplateFormat");
 
 				listTemplateVersionsResponse_templateVersions.Add(templateVersion);
 			}

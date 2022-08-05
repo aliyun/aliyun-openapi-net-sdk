@@ -31,28 +31,28 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			QueryTransferInByInstanceIdResponse queryTransferInByInstanceIdResponse = new QueryTransferInByInstanceIdResponse();
 
 			queryTransferInByInstanceIdResponse.HttpResponse = _ctx.HttpResponse;
+			queryTransferInByInstanceIdResponse.Status = _ctx.IntegerValue("QueryTransferInByInstanceId.Status");
+			queryTransferInByInstanceIdResponse.TransferAuthorizationCodeSubmissionDate = _ctx.StringValue("QueryTransferInByInstanceId.TransferAuthorizationCodeSubmissionDate");
+			queryTransferInByInstanceIdResponse.Email = _ctx.StringValue("QueryTransferInByInstanceId.Email");
+			queryTransferInByInstanceIdResponse.ProgressBarType = _ctx.IntegerValue("QueryTransferInByInstanceId.ProgressBarType");
 			queryTransferInByInstanceIdResponse.RequestId = _ctx.StringValue("QueryTransferInByInstanceId.RequestId");
-			queryTransferInByInstanceIdResponse.SubmissionDate = _ctx.StringValue("QueryTransferInByInstanceId.SubmissionDate");
-			queryTransferInByInstanceIdResponse.ModificationDate = _ctx.StringValue("QueryTransferInByInstanceId.ModificationDate");
-			queryTransferInByInstanceIdResponse.UserId = _ctx.StringValue("QueryTransferInByInstanceId.UserId");
 			queryTransferInByInstanceIdResponse.InstanceId = _ctx.StringValue("QueryTransferInByInstanceId.InstanceId");
 			queryTransferInByInstanceIdResponse.DomainName = _ctx.StringValue("QueryTransferInByInstanceId.DomainName");
-			queryTransferInByInstanceIdResponse.Status = _ctx.IntegerValue("QueryTransferInByInstanceId.Status");
+			queryTransferInByInstanceIdResponse.SubmissionDateLong = _ctx.LongValue("QueryTransferInByInstanceId.SubmissionDateLong");
+			queryTransferInByInstanceIdResponse.SubmissionDate = _ctx.StringValue("QueryTransferInByInstanceId.SubmissionDate");
 			queryTransferInByInstanceIdResponse.SimpleTransferInStatus = _ctx.StringValue("QueryTransferInByInstanceId.SimpleTransferInStatus");
+			queryTransferInByInstanceIdResponse.TransferAuthorizationCodeSubmissionDateLong = _ctx.LongValue("QueryTransferInByInstanceId.TransferAuthorizationCodeSubmissionDateLong");
+			queryTransferInByInstanceIdResponse.ExpirationDateLong = _ctx.LongValue("QueryTransferInByInstanceId.ExpirationDateLong");
+			queryTransferInByInstanceIdResponse.ExpirationDate = _ctx.StringValue("QueryTransferInByInstanceId.ExpirationDate");
+			queryTransferInByInstanceIdResponse.NeedMailCheck = _ctx.BooleanValue("QueryTransferInByInstanceId.NeedMailCheck");
+			queryTransferInByInstanceIdResponse.UserId = _ctx.StringValue("QueryTransferInByInstanceId.UserId");
+			queryTransferInByInstanceIdResponse.ModificationDate = _ctx.StringValue("QueryTransferInByInstanceId.ModificationDate");
+			queryTransferInByInstanceIdResponse.ResultDateLong = _ctx.LongValue("QueryTransferInByInstanceId.ResultDateLong");
+			queryTransferInByInstanceIdResponse.ResultMsg = _ctx.StringValue("QueryTransferInByInstanceId.ResultMsg");
+			queryTransferInByInstanceIdResponse.WhoisMailStatus = _ctx.BooleanValue("QueryTransferInByInstanceId.WhoisMailStatus");
+			queryTransferInByInstanceIdResponse.ModificationDateLong = _ctx.LongValue("QueryTransferInByInstanceId.ModificationDateLong");
 			queryTransferInByInstanceIdResponse.ResultCode = _ctx.StringValue("QueryTransferInByInstanceId.ResultCode");
 			queryTransferInByInstanceIdResponse.ResultDate = _ctx.StringValue("QueryTransferInByInstanceId.ResultDate");
-			queryTransferInByInstanceIdResponse.ResultMsg = _ctx.StringValue("QueryTransferInByInstanceId.ResultMsg");
-			queryTransferInByInstanceIdResponse.TransferAuthorizationCodeSubmissionDate = _ctx.StringValue("QueryTransferInByInstanceId.TransferAuthorizationCodeSubmissionDate");
-			queryTransferInByInstanceIdResponse.NeedMailCheck = _ctx.BooleanValue("QueryTransferInByInstanceId.NeedMailCheck");
-			queryTransferInByInstanceIdResponse.Email = _ctx.StringValue("QueryTransferInByInstanceId.Email");
-			queryTransferInByInstanceIdResponse.WhoisMailStatus = _ctx.BooleanValue("QueryTransferInByInstanceId.WhoisMailStatus");
-			queryTransferInByInstanceIdResponse.ExpirationDate = _ctx.StringValue("QueryTransferInByInstanceId.ExpirationDate");
-			queryTransferInByInstanceIdResponse.ProgressBarType = _ctx.IntegerValue("QueryTransferInByInstanceId.ProgressBarType");
-			queryTransferInByInstanceIdResponse.SubmissionDateLong = _ctx.LongValue("QueryTransferInByInstanceId.SubmissionDateLong");
-			queryTransferInByInstanceIdResponse.ModificationDateLong = _ctx.LongValue("QueryTransferInByInstanceId.ModificationDateLong");
-			queryTransferInByInstanceIdResponse.ResultDateLong = _ctx.LongValue("QueryTransferInByInstanceId.ResultDateLong");
-			queryTransferInByInstanceIdResponse.ExpirationDateLong = _ctx.LongValue("QueryTransferInByInstanceId.ExpirationDateLong");
-			queryTransferInByInstanceIdResponse.TransferAuthorizationCodeSubmissionDateLong = _ctx.LongValue("QueryTransferInByInstanceId.TransferAuthorizationCodeSubmissionDateLong");
         
 			return queryTransferInByInstanceIdResponse;
         }

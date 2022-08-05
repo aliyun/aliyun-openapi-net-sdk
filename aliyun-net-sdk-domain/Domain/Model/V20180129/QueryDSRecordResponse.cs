@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -56,37 +56,13 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 		public class QueryDSRecord_DSRecord
 		{
 
-			private int? keyTag;
-
-			private int? algorithm;
-
 			private int? digestType;
 
 			private string digest;
 
-			public int? KeyTag
-			{
-				get
-				{
-					return keyTag;
-				}
-				set	
-				{
-					keyTag = value;
-				}
-			}
+			private int? algorithm;
 
-			public int? Algorithm
-			{
-				get
-				{
-					return algorithm;
-				}
-				set	
-				{
-					algorithm = value;
-				}
-			}
+			private int? keyTag;
 
 			public int? DigestType
 			{
@@ -109,6 +85,30 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					digest = value;
+				}
+			}
+
+			public int? Algorithm
+			{
+				get
+				{
+					return algorithm;
+				}
+				set	
+				{
+					algorithm = value;
+				}
+			}
+
+			public int? KeyTag
+			{
+				get
+				{
+					return keyTag;
+				}
+				set	
+				{
+					keyTag = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -58,27 +58,29 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string createTime;
 
-			private string description;
+			private string targets;
+
+			private string tags;
 
 			private string stateConfigurationId;
 
-			private string templateId;
+			private string scheduleExpression;
 
 			private string templateName;
 
 			private string templateVersion;
 
-			private string parameters;
-
 			private string configureMode;
 
 			private string scheduleType;
 
-			private string scheduleExpression;
+			private string parameters;
 
-			private string targets;
+			private string description;
 
-			private string tags;
+			private string resourceGroupId;
+
+			private string templateId;
 
 			public string CreateTime
 			{
@@ -92,15 +94,27 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
-			public string Description
+			public string Targets
 			{
 				get
 				{
-					return description;
+					return targets;
 				}
 				set	
 				{
-					description = value;
+					targets = value;
+				}
+			}
+
+			public string Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
 				}
 			}
 
@@ -116,15 +130,15 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
-			public string TemplateId
+			public string ScheduleExpression
 			{
 				get
 				{
-					return templateId;
+					return scheduleExpression;
 				}
 				set	
 				{
-					templateId = value;
+					scheduleExpression = value;
 				}
 			}
 
@@ -152,18 +166,6 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
-			public string Parameters
-			{
-				get
-				{
-					return parameters;
-				}
-				set	
-				{
-					parameters = value;
-				}
-			}
-
 			public string ConfigureMode
 			{
 				get
@@ -188,39 +190,51 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
-			public string ScheduleExpression
+			public string Parameters
 			{
 				get
 				{
-					return scheduleExpression;
+					return parameters;
 				}
 				set	
 				{
-					scheduleExpression = value;
+					parameters = value;
 				}
 			}
 
-			public string Targets
+			public string Description
 			{
 				get
 				{
-					return targets;
+					return description;
 				}
 				set	
 				{
-					targets = value;
+					description = value;
 				}
 			}
 
-			public string Tags
+			public string ResourceGroupId
 			{
 				get
 				{
-					return tags;
+					return resourceGroupId;
 				}
 				set	
 				{
-					tags = value;
+					resourceGroupId = value;
+				}
+			}
+
+			public string TemplateId
+			{
+				get
+				{
+					return templateId;
+				}
+				set	
+				{
+					templateId = value;
 				}
 			}
 		}

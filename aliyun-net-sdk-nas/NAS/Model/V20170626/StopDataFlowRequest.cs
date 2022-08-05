@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class StopDataFlowRequest : RpcAcsRequest<StopDataFlowResponse>
     {
         public StopDataFlowRequest()
-            : base("NAS", "2017-06-26", "StopDataFlow", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "StopDataFlow", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class DescribeStoragePackagesRequest : RpcAcsRequest<DescribeStoragePackagesResponse>
     {
         public DescribeStoragePackagesRequest()
-            : base("NAS", "2017-06-26", "DescribeStoragePackages", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "DescribeStoragePackages", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

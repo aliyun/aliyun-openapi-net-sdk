@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			Method = MethodType.POST;
         }
 
-		private List<OrderActivateParam> orderActivateParams = new List<OrderActivateParam>(){ };
+		private List<string> orderActivateParams = new List<string>(){ };
 
 		private string couponNo;
 
@@ -55,7 +55,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private bool? usePromotion;
 
-		public List<OrderActivateParam> OrderActivateParams
+		public List<string> OrderActivateParams
 		{
 			get
 			{
@@ -65,34 +65,37 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set
 			{
 				orderActivateParams = value;
-				for (int i = 0; i < orderActivateParams.Count; i++)
+				if(orderActivateParams != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".Country", orderActivateParams[i].Country);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".SubscriptionDuration", orderActivateParams[i].SubscriptionDuration);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".PermitPremiumActivation", orderActivateParams[i].PermitPremiumActivation);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".City", orderActivateParams[i].City);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".Dns2", orderActivateParams[i].Dns2);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".Dns1", orderActivateParams[i].Dns1);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".RegistrantProfileId", orderActivateParams[i].RegistrantProfileId);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".AliyunDns", orderActivateParams[i].AliyunDns);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".ZhCity", orderActivateParams[i].ZhCity);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".TelExt", orderActivateParams[i].TelExt);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".ZhRegistrantName", orderActivateParams[i].ZhRegistrantName);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".Province", orderActivateParams[i].Province);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".PostalCode", orderActivateParams[i].PostalCode);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".Email", orderActivateParams[i].Email);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".ZhRegistrantOrganization", orderActivateParams[i].ZhRegistrantOrganization);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".Address", orderActivateParams[i].Address);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".TelArea", orderActivateParams[i].TelArea);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".DomainName", orderActivateParams[i].DomainName);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".ZhAddress", orderActivateParams[i].ZhAddress);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".RegistrantType", orderActivateParams[i].RegistrantType);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".Telephone", orderActivateParams[i].Telephone);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".TrademarkDomainActivation", orderActivateParams[i].TrademarkDomainActivation);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".ZhProvince", orderActivateParams[i].ZhProvince);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".RegistrantOrganization", orderActivateParams[i].RegistrantOrganization);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".EnableDomainProxy", orderActivateParams[i].EnableDomainProxy);
-					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".RegistrantName", orderActivateParams[i].RegistrantName);
+					for (int depth1 = 0; depth1 < orderActivateParams.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (depth1 + 1), orderActivateParams[depth1]);
+					}
 				}
 			}
 		}
@@ -214,9 +217,9 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 			private string domainName;
 
-			private string zhAddress;
-
 			private string registrantType;
+
+			private string zhAddress;
 
 			private string telephone;
 
@@ -446,18 +449,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public string ZhAddress
-			{
-				get
-				{
-					return zhAddress;
-				}
-				set	
-				{
-					zhAddress = value;
-				}
-			}
-
 			public string RegistrantType
 			{
 				get
@@ -467,6 +458,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					registrantType = value;
+				}
+			}
+
+			public string ZhAddress
+			{
+				get
+				{
+					return zhAddress;
+				}
+				set	
+				{
+					zhAddress = value;
 				}
 			}
 

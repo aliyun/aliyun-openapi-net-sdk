@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,43 +25,31 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class QueryTaskListResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? totalItemNum;
+		private bool? prePage;
 
 		private int? currentPageNum;
 
-		private int? totalPageNum;
+		private string requestId;
 
 		private int? pageSize;
 
-		private bool? prePage;
+		private int? totalPageNum;
+
+		private int? totalItemNum;
 
 		private bool? nextPage;
 
 		private List<QueryTaskList_TaskInfo> data;
 
-		public string RequestId
+		public bool? PrePage
 		{
 			get
 			{
-				return requestId;
+				return prePage;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalItemNum
-		{
-			get
-			{
-				return totalItemNum;
-			}
-			set	
-			{
-				totalItemNum = value;
+				prePage = value;
 			}
 		}
 
@@ -77,15 +65,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public int? TotalPageNum
+		public string RequestId
 		{
 			get
 			{
-				return totalPageNum;
+				return requestId;
 			}
 			set	
 			{
-				totalPageNum = value;
+				requestId = value;
 			}
 		}
 
@@ -101,15 +89,27 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public bool? PrePage
+		public int? TotalPageNum
 		{
 			get
 			{
-				return prePage;
+				return totalPageNum;
 			}
 			set	
 			{
-				prePage = value;
+				totalPageNum = value;
+			}
+		}
+
+		public int? TotalItemNum
+		{
+			get
+			{
+				return totalItemNum;
+			}
+			set	
+			{
+				totalItemNum = value;
 			}
 		}
 
@@ -142,23 +142,23 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 			private string taskType;
 
-			private int? taskNum;
+			private string taskCancelStatus;
+
+			private string taskNo;
+
+			private int? taskCancelStatusCode;
+
+			private int? taskStatusCode;
 
 			private string taskStatus;
+
+			private string taskTypeDescription;
+
+			private int? taskNum;
 
 			private string createTime;
 
 			private string clientip;
-
-			private string taskNo;
-
-			private int? taskStatusCode;
-
-			private string taskTypeDescription;
-
-			private string taskCancelStatus;
-
-			private int? taskCancelStatusCode;
 
 			public string TaskType
 			{
@@ -172,15 +172,51 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public int? TaskNum
+			public string TaskCancelStatus
 			{
 				get
 				{
-					return taskNum;
+					return taskCancelStatus;
 				}
 				set	
 				{
-					taskNum = value;
+					taskCancelStatus = value;
+				}
+			}
+
+			public string TaskNo
+			{
+				get
+				{
+					return taskNo;
+				}
+				set	
+				{
+					taskNo = value;
+				}
+			}
+
+			public int? TaskCancelStatusCode
+			{
+				get
+				{
+					return taskCancelStatusCode;
+				}
+				set	
+				{
+					taskCancelStatusCode = value;
+				}
+			}
+
+			public int? TaskStatusCode
+			{
+				get
+				{
+					return taskStatusCode;
+				}
+				set	
+				{
+					taskStatusCode = value;
 				}
 			}
 
@@ -193,6 +229,30 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					taskStatus = value;
+				}
+			}
+
+			public string TaskTypeDescription
+			{
+				get
+				{
+					return taskTypeDescription;
+				}
+				set	
+				{
+					taskTypeDescription = value;
+				}
+			}
+
+			public int? TaskNum
+			{
+				get
+				{
+					return taskNum;
+				}
+				set	
+				{
+					taskNum = value;
 				}
 			}
 
@@ -217,66 +277,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					clientip = value;
-				}
-			}
-
-			public string TaskNo
-			{
-				get
-				{
-					return taskNo;
-				}
-				set	
-				{
-					taskNo = value;
-				}
-			}
-
-			public int? TaskStatusCode
-			{
-				get
-				{
-					return taskStatusCode;
-				}
-				set	
-				{
-					taskStatusCode = value;
-				}
-			}
-
-			public string TaskTypeDescription
-			{
-				get
-				{
-					return taskTypeDescription;
-				}
-				set	
-				{
-					taskTypeDescription = value;
-				}
-			}
-
-			public string TaskCancelStatus
-			{
-				get
-				{
-					return taskCancelStatus;
-				}
-				set	
-				{
-					taskCancelStatus = value;
-				}
-			}
-
-			public int? TaskCancelStatusCode
-			{
-				get
-				{
-					return taskCancelStatusCode;
-				}
-				set	
-				{
-					taskCancelStatusCode = value;
 				}
 			}
 		}

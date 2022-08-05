@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -27,11 +27,11 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string requestId;
 
+		private List<SubmitEmailVerification_SendResult> existList;
+
 		private List<SubmitEmailVerification_SendResult> successList;
 
 		private List<SubmitEmailVerification_SendResult> failList;
-
-		private List<SubmitEmailVerification_SendResult> existList;
 
 		public string RequestId
 		{
@@ -42,6 +42,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public List<SubmitEmailVerification_SendResult> ExistList
+		{
+			get
+			{
+				return existList;
+			}
+			set	
+			{
+				existList = value;
 			}
 		}
 
@@ -66,18 +78,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				failList = value;
-			}
-		}
-
-		public List<SubmitEmailVerification_SendResult> ExistList
-		{
-			get
-			{
-				return existList;
-			}
-			set	
-			{
-				existList = value;
 			}
 		}
 

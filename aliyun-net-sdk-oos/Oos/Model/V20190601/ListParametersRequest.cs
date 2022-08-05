@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class ListParametersRequest : RpcAcsRequest<ListParametersResponse>
     {
         public ListParametersRequest()
-            : base("oos", "2019-06-01", "ListParameters")
+            : base("oos", "2019-06-01", "ListParameters", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -48,6 +47,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string path;
 
+		private string resourceGroupId;
+
 		private string nextToken;
 
 		private string sortOrder;
@@ -60,6 +61,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string sortField;
 
+		[JsonProperty(PropertyName = "Type")]
 		public string Type
 		{
 			get
@@ -73,6 +75,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Recursive")]
 		public bool? Recursive
 		{
 			get
@@ -86,6 +89,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Path")]
 		public string Path
 		{
 			get
@@ -99,6 +103,21 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -112,6 +131,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "SortOrder")]
 		public string SortOrder
 		{
 			get
@@ -125,6 +145,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tags")]
 		public string Tags
 		{
 			get
@@ -138,6 +159,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Name")]
 		public string Name
 		{
 			get
@@ -151,6 +173,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxResults")]
 		public int? MaxResults
 		{
 			get
@@ -164,6 +187,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "SortField")]
 		public string SortField
 		{
 			get

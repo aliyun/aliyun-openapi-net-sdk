@@ -1,3 +1,81 @@
+2022-07-29 Version: 1.22.20
+- AMP version.
+
+2022-07-29 Version: 1.1.24
+- Change ListCheckInstanceResult Public.
+
+2022-07-29 Version: 1.22.19
+- AMP version.
+
+2022-07-29 Version: 1.22.18
+- AMP version.
+
+2022-07-28 Version: 1.22.12
+- AMP version.
+
+2022-07-28 Version: 1.0.34
+- Automatically generate sdk tasks.
+
+2022-07-28 Version: 2.16.9
+- Add GetImageInfos api.
+
+2022-07-27 Version: 1.5.6
+ - Update.
+
+2022-07-26 Version: 1.0.7
+- Support Service of number analysis.
+
+2022-07-26 Version: 1.1.23
+- Change ListCheckInstanceResult Public.
+
+2022-07-26 Version: 1.5.5
+- Add cmsGroupId parameter to CreateApplicationGroupRequest.
+
+2022-07-26 Version: 1.1.22
+- Change ListCheckInstanceResult Public.
+
+2022-07-25 Version: 1.1.21
+- Change ListCheckInstanceResult GetCheckDetail Public.
+
+2022-07-25 Version: 0.0.19
+- Update  SegmentOAR.
+
+2022-07-25 Version: 1.1.20
+- Change ListCheckInstanceResult GetCheckDetail Public.
+
+2022-07-22 Version: 1.1.19
+- Change ListCheckInstanceResult GetCheckDetail Public.
+
+2022-07-22 Version: 0.0.18
+- Update ScreenChestCT  Release SegmentOAR.
+
+2022-07-22 Version: 0.0.17
+- Update ScreenChestCT - Release SegmentOAR.
+
+2022-07-21 Version: 2.16.8
+- Add kms apis.
+
+2022-07-21 Version: 3.14.9
+- Ram action config.
+
+2022-07-20 Version: 1.1.18
+- Change getFileDetectResult.
+
+2022-07-20 Version: 1.1.0
+- Support AK Audit API.
+
+2022-07-19 Version: 1.0.21
+- Support MatchAddressType in RouteMap API.
+
+2022-07-18 Version: 2.1.1
+- Add Mutimedia Screen API Support.
+
+2022-07-18 Version: 1.1.17
+- Change cspm ListCheckResult api.
+
+2022-07-18 Version: 3.2.5
+- Support Elastic Desktop Service.
+
 2022-07-15 Version: 1.1.16
 - Add cspm ListCheckResult api.
 

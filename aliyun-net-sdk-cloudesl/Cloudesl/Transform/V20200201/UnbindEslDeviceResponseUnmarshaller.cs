@@ -31,14 +31,14 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 			UnbindEslDeviceResponse unbindEslDeviceResponse = new UnbindEslDeviceResponse();
 
 			unbindEslDeviceResponse.HttpResponse = _ctx.HttpResponse;
-			unbindEslDeviceResponse.ErrorMessage = _ctx.StringValue("UnbindEslDevice.ErrorMessage");
-			unbindEslDeviceResponse.ErrorCode = _ctx.StringValue("UnbindEslDevice.ErrorCode");
-			unbindEslDeviceResponse.Message = _ctx.StringValue("UnbindEslDevice.Message");
-			unbindEslDeviceResponse.DynamicCode = _ctx.StringValue("UnbindEslDevice.DynamicCode");
-			unbindEslDeviceResponse.Code = _ctx.StringValue("UnbindEslDevice.Code");
-			unbindEslDeviceResponse.DynamicMessage = _ctx.StringValue("UnbindEslDevice.DynamicMessage");
 			unbindEslDeviceResponse.RequestId = _ctx.StringValue("UnbindEslDevice.RequestId");
+			unbindEslDeviceResponse.ErrorMessage = _ctx.StringValue("UnbindEslDevice.ErrorMessage");
 			unbindEslDeviceResponse.Success = _ctx.BooleanValue("UnbindEslDevice.Success");
+			unbindEslDeviceResponse.ErrorCode = _ctx.StringValue("UnbindEslDevice.ErrorCode");
+			unbindEslDeviceResponse.Code = _ctx.StringValue("UnbindEslDevice.Code");
+			unbindEslDeviceResponse.Message = _ctx.StringValue("UnbindEslDevice.Message");
+			unbindEslDeviceResponse.DynamicMessage = _ctx.StringValue("UnbindEslDevice.DynamicMessage");
+			unbindEslDeviceResponse.DynamicCode = _ctx.StringValue("UnbindEslDevice.DynamicCode");
         
 			return unbindEslDeviceResponse;
         }

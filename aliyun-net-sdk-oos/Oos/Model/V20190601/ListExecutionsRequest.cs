@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class ListExecutionsRequest : RpcAcsRequest<ListExecutionsResponse>
     {
         public ListExecutionsRequest()
-            : base("oos", "2019-06-01", "ListExecutions")
+            : base("oos", "2019-06-01", "ListExecutions", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -49,6 +48,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		private string mode;
 
 		private string executionId;
+
+		private string resourceGroupId;
 
 		private string ramRole;
 
@@ -82,6 +83,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string status;
 
+		[JsonProperty(PropertyName = "ExecutedBy")]
 		public string ExecutedBy
 		{
 			get
@@ -95,6 +97,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "IncludeChildExecution")]
 		public bool? IncludeChildExecution
 		{
 			get
@@ -108,6 +111,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Mode")]
 		public string Mode
 		{
 			get
@@ -121,6 +125,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ExecutionId")]
 		public string ExecutionId
 		{
 			get
@@ -134,6 +139,21 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "RamRole")]
 		public string RamRole
 		{
 			get
@@ -147,6 +167,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -160,6 +181,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "TemplateName")]
 		public string TemplateName
 		{
 			get
@@ -173,6 +195,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndDateBefore")]
 		public string EndDateBefore
 		{
 			get
@@ -186,6 +209,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "SortOrder")]
 		public string SortOrder
 		{
 			get
@@ -199,6 +223,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceId")]
 		public string ResourceId
 		{
 			get
@@ -212,6 +237,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartDateAfter")]
 		public string StartDateAfter
 		{
 			get
@@ -225,6 +251,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartDateBefore")]
 		public string StartDateBefore
 		{
 			get
@@ -238,6 +265,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tags")]
 		public Dictionary<object,object> Tags
 		{
 			get
@@ -251,6 +279,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ParentExecutionId")]
 		public string ParentExecutionId
 		{
 			get
@@ -264,6 +293,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "EndDateAfter")]
 		public string EndDateAfter
 		{
 			get
@@ -277,6 +307,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxResults")]
 		public int? MaxResults
 		{
 			get
@@ -290,6 +321,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "SortField")]
 		public string SortField
 		{
 			get
@@ -303,6 +335,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Category")]
 		public string Category
 		{
 			get
@@ -316,6 +349,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceTemplateName")]
 		public string ResourceTemplateName
 		{
 			get
@@ -329,6 +363,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "Status")]
 		public string Status
 		{
 			get

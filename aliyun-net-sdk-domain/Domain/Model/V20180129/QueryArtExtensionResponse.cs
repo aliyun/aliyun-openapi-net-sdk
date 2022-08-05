@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,39 +25,27 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class QueryArtExtensionResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string objectType;
 
 		private string materialsAndTechniques;
+
+		private string inscriptionsAndMarkings;
+
+		private string requestId;
+
+		private string reference;
+
+		private string dateOrPeriod;
 
 		private string dimensions;
 
 		private string title;
 
-		private string dateOrPeriod;
-
-		private string maker;
-
-		private string inscriptionsAndMarkings;
+		private string features;
 
 		private string subject;
 
-		private string features;
-
-		private string reference;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string maker;
 
 		public string ObjectType
 		{
@@ -80,6 +68,54 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				materialsAndTechniques = value;
+			}
+		}
+
+		public string InscriptionsAndMarkings
+		{
+			get
+			{
+				return inscriptionsAndMarkings;
+			}
+			set	
+			{
+				inscriptionsAndMarkings = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string Reference
+		{
+			get
+			{
+				return reference;
+			}
+			set	
+			{
+				reference = value;
+			}
+		}
+
+		public string DateOrPeriod
+		{
+			get
+			{
+				return dateOrPeriod;
+			}
+			set	
+			{
+				dateOrPeriod = value;
 			}
 		}
 
@@ -107,39 +143,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string DateOrPeriod
+		public string Features
 		{
 			get
 			{
-				return dateOrPeriod;
+				return features;
 			}
 			set	
 			{
-				dateOrPeriod = value;
-			}
-		}
-
-		public string Maker
-		{
-			get
-			{
-				return maker;
-			}
-			set	
-			{
-				maker = value;
-			}
-		}
-
-		public string InscriptionsAndMarkings
-		{
-			get
-			{
-				return inscriptionsAndMarkings;
-			}
-			set	
-			{
-				inscriptionsAndMarkings = value;
+				features = value;
 			}
 		}
 
@@ -155,27 +167,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string Features
+		public string Maker
 		{
 			get
 			{
-				return features;
+				return maker;
 			}
 			set	
 			{
-				features = value;
-			}
-		}
-
-		public string Reference
-		{
-			get
-			{
-				return reference;
-			}
-			set	
-			{
-				reference = value;
+				maker = value;
 			}
 		}
 	}

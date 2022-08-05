@@ -31,29 +31,29 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			DescribeBackupGatewayListResponse describeBackupGatewayListResponse = new DescribeBackupGatewayListResponse();
 
 			describeBackupGatewayListResponse.HttpResponse = _ctx.HttpResponse;
-			describeBackupGatewayListResponse.Success = _ctx.BooleanValue("DescribeBackupGatewayList.Success");
-			describeBackupGatewayListResponse.ErrCode = _ctx.StringValue("DescribeBackupGatewayList.ErrCode");
-			describeBackupGatewayListResponse.ErrMessage = _ctx.StringValue("DescribeBackupGatewayList.ErrMessage");
 			describeBackupGatewayListResponse.HttpStatusCode = _ctx.IntegerValue("DescribeBackupGatewayList.HttpStatusCode");
-			describeBackupGatewayListResponse.RequestId = _ctx.StringValue("DescribeBackupGatewayList.RequestId");
-			describeBackupGatewayListResponse.TotalPages = _ctx.IntegerValue("DescribeBackupGatewayList.TotalPages");
-			describeBackupGatewayListResponse.PageSize = _ctx.IntegerValue("DescribeBackupGatewayList.PageSize");
 			describeBackupGatewayListResponse.PageNum = _ctx.IntegerValue("DescribeBackupGatewayList.PageNum");
+			describeBackupGatewayListResponse.RequestId = _ctx.StringValue("DescribeBackupGatewayList.RequestId");
+			describeBackupGatewayListResponse.ErrCode = _ctx.StringValue("DescribeBackupGatewayList.ErrCode");
+			describeBackupGatewayListResponse.Success = _ctx.BooleanValue("DescribeBackupGatewayList.Success");
+			describeBackupGatewayListResponse.ErrMessage = _ctx.StringValue("DescribeBackupGatewayList.ErrMessage");
+			describeBackupGatewayListResponse.TotalPages = _ctx.IntegerValue("DescribeBackupGatewayList.TotalPages");
 			describeBackupGatewayListResponse.TotalElements = _ctx.IntegerValue("DescribeBackupGatewayList.TotalElements");
+			describeBackupGatewayListResponse.PageSize = _ctx.IntegerValue("DescribeBackupGatewayList.PageSize");
 
 			List<DescribeBackupGatewayListResponse.DescribeBackupGatewayList_BackupGateway> describeBackupGatewayListResponse_items = new List<DescribeBackupGatewayListResponse.DescribeBackupGatewayList_BackupGateway>();
 			for (int i = 0; i < _ctx.Length("DescribeBackupGatewayList.Items.Length"); i++) {
 				DescribeBackupGatewayListResponse.DescribeBackupGatewayList_BackupGateway backupGateway = new DescribeBackupGatewayListResponse.DescribeBackupGatewayList_BackupGateway();
-				backupGateway.BackupGatewayId = _ctx.StringValue("DescribeBackupGatewayList.Items["+ i +"].BackupGatewayId");
-				backupGateway.SourceEndpointInternetIP = _ctx.StringValue("DescribeBackupGatewayList.Items["+ i +"].SourceEndpointInternetIP");
-				backupGateway.SourceEndpointIntranetIP = _ctx.StringValue("DescribeBackupGatewayList.Items["+ i +"].SourceEndpointIntranetIP");
-				backupGateway.SourceEndpointHostname = _ctx.StringValue("DescribeBackupGatewayList.Items["+ i +"].SourceEndpointHostname");
-				backupGateway.BackupGatewayStatus = _ctx.StringValue("DescribeBackupGatewayList.Items["+ i +"].BackupGatewayStatus");
-				backupGateway.LastHeartbeatTime = _ctx.LongValue("DescribeBackupGatewayList.Items["+ i +"].LastHeartbeatTime");
-				backupGateway.BackupGatewayCreateTime = _ctx.LongValue("DescribeBackupGatewayList.Items["+ i +"].BackupGatewayCreateTime");
-				backupGateway.Region = _ctx.StringValue("DescribeBackupGatewayList.Items["+ i +"].Region");
 				backupGateway.DisplayName = _ctx.StringValue("DescribeBackupGatewayList.Items["+ i +"].DisplayName");
+				backupGateway.BackupGatewayCreateTime = _ctx.LongValue("DescribeBackupGatewayList.Items["+ i +"].BackupGatewayCreateTime");
+				backupGateway.BackupGatewayId = _ctx.StringValue("DescribeBackupGatewayList.Items["+ i +"].BackupGatewayId");
+				backupGateway.Region = _ctx.StringValue("DescribeBackupGatewayList.Items["+ i +"].Region");
 				backupGateway.Identifier = _ctx.StringValue("DescribeBackupGatewayList.Items["+ i +"].Identifier");
+				backupGateway.SourceEndpointInternetIP = _ctx.StringValue("DescribeBackupGatewayList.Items["+ i +"].SourceEndpointInternetIP");
+				backupGateway.BackupGatewayStatus = _ctx.StringValue("DescribeBackupGatewayList.Items["+ i +"].BackupGatewayStatus");
+				backupGateway.SourceEndpointIntranetIP = _ctx.StringValue("DescribeBackupGatewayList.Items["+ i +"].SourceEndpointIntranetIP");
+				backupGateway.LastHeartbeatTime = _ctx.LongValue("DescribeBackupGatewayList.Items["+ i +"].LastHeartbeatTime");
+				backupGateway.SourceEndpointHostname = _ctx.StringValue("DescribeBackupGatewayList.Items["+ i +"].SourceEndpointHostname");
 
 				describeBackupGatewayListResponse_items.Add(backupGateway);
 			}

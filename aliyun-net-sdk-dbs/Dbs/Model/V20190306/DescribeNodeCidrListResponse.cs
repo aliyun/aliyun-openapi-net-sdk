@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
@@ -25,55 +25,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 	public class DescribeNodeCidrListResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errCode;
-
-		private string errMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
-		private List<string> internetIPs;
+		private string errCode;
+
+		private bool? success;
+
+		private string errMessage;
 
 		private List<string> intranetIPs;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrCode
-		{
-			get
-			{
-				return errCode;
-			}
-			set	
-			{
-				errCode = value;
-			}
-		}
-
-		public string ErrMessage
-		{
-			get
-			{
-				return errMessage;
-			}
-			set	
-			{
-				errMessage = value;
-			}
-		}
+		private List<string> internetIPs;
 
 		public int? HttpStatusCode
 		{
@@ -99,15 +63,39 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public List<string> InternetIPs
+		public string ErrCode
 		{
 			get
 			{
-				return internetIPs;
+				return errCode;
 			}
 			set	
 			{
-				internetIPs = value;
+				errCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string ErrMessage
+		{
+			get
+			{
+				return errMessage;
+			}
+			set	
+			{
+				errMessage = value;
 			}
 		}
 
@@ -120,6 +108,18 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			set	
 			{
 				intranetIPs = value;
+			}
+		}
+
+		public List<string> InternetIPs
+		{
+			get
+			{
+				return internetIPs;
+			}
+			set	
+			{
+				internetIPs = value;
 			}
 		}
 	}

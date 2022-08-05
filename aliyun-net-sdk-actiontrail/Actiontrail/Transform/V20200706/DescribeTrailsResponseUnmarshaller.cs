@@ -36,25 +36,26 @@ namespace Aliyun.Acs.Actiontrail.Transform.V20200706
 			List<DescribeTrailsResponse.DescribeTrails_Trail> describeTrailsResponse_trailList = new List<DescribeTrailsResponse.DescribeTrails_Trail>();
 			for (int i = 0; i < _ctx.Length("DescribeTrails.TrailList.Length"); i++) {
 				DescribeTrailsResponse.DescribeTrails_Trail trail = new DescribeTrailsResponse.DescribeTrails_Trail();
-				trail.Status = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].Status");
-				trail.HomeRegion = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].HomeRegion");
-				trail.StartLoggingTime = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].StartLoggingTime");
-				trail.CreateTime = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].CreateTime");
-				trail.StopLoggingTime = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].StopLoggingTime");
-				trail.OrganizationId = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].OrganizationId");
-				trail.SlsWriteRoleArn = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].SlsWriteRoleArn");
-				trail.OssBucketLocation = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].OssBucketLocation");
 				trail.TrailRegion = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].TrailRegion");
-				trail.Name = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].Name");
-				trail.IsOrganizationTrail = _ctx.BooleanValue("DescribeTrails.TrailList["+ i +"].IsOrganizationTrail");
-				trail.SlsProjectArn = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].SlsProjectArn");
-				trail.EventRW = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].EventRW");
-				trail.OssKeyPrefix = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].OssKeyPrefix");
+				trail.Status = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].Status");
 				trail.UpdateTime = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].UpdateTime");
-				trail.Region = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].Region");
-				trail.OssBucketName = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].OssBucketName");
+				trail.HomeRegion = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].HomeRegion");
+				trail.CreateTime = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].CreateTime");
+				trail.OssKeyPrefix = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].OssKeyPrefix");
+				trail.EventRW = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].EventRW");
+				trail.StartLoggingTime = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].StartLoggingTime");
 				trail.OssWriteRoleArn = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].OssWriteRoleArn");
+				trail.SlsProjectArn = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].SlsProjectArn");
+				trail.IsOrganizationTrail = _ctx.BooleanValue("DescribeTrails.TrailList["+ i +"].IsOrganizationTrail");
+				trail.SlsWriteRoleArn = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].SlsWriteRoleArn");
+				trail.StopLoggingTime = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].StopLoggingTime");
+				trail.Name = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].Name");
+				trail.OssBucketName = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].OssBucketName");
+				trail.Region = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].Region");
+				trail.OrganizationId = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].OrganizationId");
+				trail.OssBucketLocation = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].OssBucketLocation");
 				trail.IsShadowTrail = _ctx.LongValue("DescribeTrails.TrailList["+ i +"].IsShadowTrail");
+				trail.TrailArn = _ctx.StringValue("DescribeTrails.TrailList["+ i +"].TrailArn");
 
 				describeTrailsResponse_trailList.Add(trail);
 			}

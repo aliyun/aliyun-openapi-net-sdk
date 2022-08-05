@@ -31,30 +31,31 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			ListTemplatesResponse listTemplatesResponse = new ListTemplatesResponse();
 
 			listTemplatesResponse.HttpResponse = _ctx.HttpResponse;
+			listTemplatesResponse.NextToken = _ctx.StringValue("ListTemplates.NextToken");
 			listTemplatesResponse.RequestId = _ctx.StringValue("ListTemplates.RequestId");
 			listTemplatesResponse.MaxResults = _ctx.IntegerValue("ListTemplates.MaxResults");
-			listTemplatesResponse.NextToken = _ctx.StringValue("ListTemplates.NextToken");
 
 			List<ListTemplatesResponse.ListTemplates_Template> listTemplatesResponse_templates = new List<ListTemplatesResponse.ListTemplates_Template>();
 			for (int i = 0; i < _ctx.Length("ListTemplates.Templates.Length"); i++) {
 				ListTemplatesResponse.ListTemplates_Template template = new ListTemplatesResponse.ListTemplates_Template();
-				template.TemplateName = _ctx.StringValue("ListTemplates.Templates["+ i +"].TemplateName");
-				template.TemplateId = _ctx.StringValue("ListTemplates.Templates["+ i +"].TemplateId");
-				template.CreatedDate = _ctx.StringValue("ListTemplates.Templates["+ i +"].CreatedDate");
-				template.CreatedBy = _ctx.StringValue("ListTemplates.Templates["+ i +"].CreatedBy");
+				template.Hash = _ctx.StringValue("ListTemplates.Templates["+ i +"].Hash");
 				template.UpdatedDate = _ctx.StringValue("ListTemplates.Templates["+ i +"].UpdatedDate");
 				template.UpdatedBy = _ctx.StringValue("ListTemplates.Templates["+ i +"].UpdatedBy");
-				template.Hash = _ctx.StringValue("ListTemplates.Templates["+ i +"].Hash");
-				template.Description = _ctx.StringValue("ListTemplates.Templates["+ i +"].Description");
-				template.ShareType = _ctx.StringValue("ListTemplates.Templates["+ i +"].ShareType");
-				template.TemplateFormat = _ctx.StringValue("ListTemplates.Templates["+ i +"].TemplateFormat");
-				template.TemplateVersion = _ctx.StringValue("ListTemplates.Templates["+ i +"].TemplateVersion");
-				template.HasTrigger = _ctx.BooleanValue("ListTemplates.Templates["+ i +"].HasTrigger");
-				template.TotalExecutionCount = _ctx.IntegerValue("ListTemplates.Templates["+ i +"].TotalExecutionCount");
-				template.Popularity = _ctx.IntegerValue("ListTemplates.Templates["+ i +"].Popularity");
-				template.Tags = _ctx.StringValue("ListTemplates.Templates["+ i +"].Tags");
-				template.Category = _ctx.StringValue("ListTemplates.Templates["+ i +"].Category");
 				template.TemplateType = _ctx.StringValue("ListTemplates.Templates["+ i +"].TemplateType");
+				template.Tags = _ctx.StringValue("ListTemplates.Templates["+ i +"].Tags");
+				template.TemplateName = _ctx.StringValue("ListTemplates.Templates["+ i +"].TemplateName");
+				template.TemplateVersion = _ctx.StringValue("ListTemplates.Templates["+ i +"].TemplateVersion");
+				template.TemplateFormat = _ctx.StringValue("ListTemplates.Templates["+ i +"].TemplateFormat");
+				template.Popularity = _ctx.IntegerValue("ListTemplates.Templates["+ i +"].Popularity");
+				template.TotalExecutionCount = _ctx.IntegerValue("ListTemplates.Templates["+ i +"].TotalExecutionCount");
+				template.Description = _ctx.StringValue("ListTemplates.Templates["+ i +"].Description");
+				template.ResourceGroupId = _ctx.StringValue("ListTemplates.Templates["+ i +"].ResourceGroupId");
+				template.CreatedBy = _ctx.StringValue("ListTemplates.Templates["+ i +"].CreatedBy");
+				template.CreatedDate = _ctx.StringValue("ListTemplates.Templates["+ i +"].CreatedDate");
+				template.Category = _ctx.StringValue("ListTemplates.Templates["+ i +"].Category");
+				template.HasTrigger = _ctx.BooleanValue("ListTemplates.Templates["+ i +"].HasTrigger");
+				template.TemplateId = _ctx.StringValue("ListTemplates.Templates["+ i +"].TemplateId");
+				template.ShareType = _ctx.StringValue("ListTemplates.Templates["+ i +"].ShareType");
 
 				listTemplatesResponse_templates.Add(template);
 			}

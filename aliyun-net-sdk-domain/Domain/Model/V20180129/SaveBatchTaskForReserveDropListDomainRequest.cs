@@ -41,11 +41,11 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			Method = MethodType.POST;
         }
 
-		private List<Domains> domainss = new List<Domains>(){ };
+		private List<string> domainss = new List<string>(){ };
 
 		private string contactTemplateId;
 
-		public List<Domains> Domainss
+		public List<string> Domainss
 		{
 			get
 			{
@@ -55,9 +55,12 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set
 			{
 				domainss = value;
-				for (int i = 0; i < domainss.Count; i++)
+				if(domainss != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Domains." + (i + 1) + ".DomainName", domainss[i].DomainName);
+					for (int depth1 = 0; depth1 < domainss.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Domains." + (depth1 + 1), domainss[depth1]);
+					}
 				}
 			}
 		}

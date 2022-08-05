@@ -61,10 +61,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set
 			{
 				ips = value;
-				for (int i = 0; i < ips.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Ip." + (i + 1) , ips[i]);
-				}
 			}
 		}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,43 +25,31 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class ListServerLockResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? totalItemNum;
+		private bool? prePage;
 
 		private int? currentPageNum;
 
-		private int? totalPageNum;
+		private string requestId;
 
 		private int? pageSize;
 
-		private bool? prePage;
+		private int? totalPageNum;
+
+		private int? totalItemNum;
 
 		private bool? nextPage;
 
 		private List<ListServerLock_QueryTransferInResponse> data;
 
-		public string RequestId
+		public bool? PrePage
 		{
 			get
 			{
-				return requestId;
+				return prePage;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalItemNum
-		{
-			get
-			{
-				return totalItemNum;
-			}
-			set	
-			{
-				totalItemNum = value;
+				prePage = value;
 			}
 		}
 
@@ -77,15 +65,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public int? TotalPageNum
+		public string RequestId
 		{
 			get
 			{
-				return totalPageNum;
+				return requestId;
 			}
 			set	
 			{
-				totalPageNum = value;
+				requestId = value;
 			}
 		}
 
@@ -101,15 +89,27 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public bool? PrePage
+		public int? TotalPageNum
 		{
 			get
 			{
-				return prePage;
+				return totalPageNum;
 			}
 			set	
 			{
-				prePage = value;
+				totalPageNum = value;
+			}
+		}
+
+		public int? TotalItemNum
+		{
+			get
+			{
+				return totalItemNum;
+			}
+			set	
+			{
+				totalItemNum = value;
 			}
 		}
 
@@ -140,119 +140,35 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 		public class ListServerLock_QueryTransferInResponse
 		{
 
-			private string gmtCreate;
-
-			private string gmtModified;
-
-			private string userId;
-
-			private string domainName;
-
-			private string domainInstanceId;
-
-			private string lockProductId;
-
-			private string startDate;
-
-			private string expireDate;
+			private string serverLockStatus;
 
 			private string lockInstanceId;
 
-			private string serverLockStatus;
+			private string userId;
 
-			public string GmtCreate
+			private string gmtCreate;
+
+			private string expireDate;
+
+			private string startDate;
+
+			private string lockProductId;
+
+			private string domainInstanceId;
+
+			private string gmtModified;
+
+			private string domainName;
+
+			public string ServerLockStatus
 			{
 				get
 				{
-					return gmtCreate;
+					return serverLockStatus;
 				}
 				set	
 				{
-					gmtCreate = value;
-				}
-			}
-
-			public string GmtModified
-			{
-				get
-				{
-					return gmtModified;
-				}
-				set	
-				{
-					gmtModified = value;
-				}
-			}
-
-			public string UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
-			public string DomainInstanceId
-			{
-				get
-				{
-					return domainInstanceId;
-				}
-				set	
-				{
-					domainInstanceId = value;
-				}
-			}
-
-			public string LockProductId
-			{
-				get
-				{
-					return lockProductId;
-				}
-				set	
-				{
-					lockProductId = value;
-				}
-			}
-
-			public string StartDate
-			{
-				get
-				{
-					return startDate;
-				}
-				set	
-				{
-					startDate = value;
-				}
-			}
-
-			public string ExpireDate
-			{
-				get
-				{
-					return expireDate;
-				}
-				set	
-				{
-					expireDate = value;
+					serverLockStatus = value;
 				}
 			}
 
@@ -268,15 +184,99 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public string ServerLockStatus
+			public string UserId
 			{
 				get
 				{
-					return serverLockStatus;
+					return userId;
 				}
 				set	
 				{
-					serverLockStatus = value;
+					userId = value;
+				}
+			}
+
+			public string GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
+				}
+			}
+
+			public string ExpireDate
+			{
+				get
+				{
+					return expireDate;
+				}
+				set	
+				{
+					expireDate = value;
+				}
+			}
+
+			public string StartDate
+			{
+				get
+				{
+					return startDate;
+				}
+				set	
+				{
+					startDate = value;
+				}
+			}
+
+			public string LockProductId
+			{
+				get
+				{
+					return lockProductId;
+				}
+				set	
+				{
+					lockProductId = value;
+				}
+			}
+
+			public string DomainInstanceId
+			{
+				get
+				{
+					return domainInstanceId;
+				}
+				set	
+				{
+					domainInstanceId = value;
+				}
+			}
+
+			public string GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 		}

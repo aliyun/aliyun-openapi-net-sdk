@@ -31,9 +31,9 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			SearchInventoryResponse searchInventoryResponse = new SearchInventoryResponse();
 
 			searchInventoryResponse.HttpResponse = _ctx.HttpResponse;
+			searchInventoryResponse.NextToken = _ctx.StringValue("SearchInventory.NextToken");
 			searchInventoryResponse.RequestId = _ctx.StringValue("SearchInventory.RequestId");
 			searchInventoryResponse.MaxResults = _ctx.IntegerValue("SearchInventory.MaxResults");
-			searchInventoryResponse.NextToken = _ctx.StringValue("SearchInventory.NextToken");
 
 			List<Dictionary<string, string>> searchInventoryResponse_entities = new List<Dictionary<string, string>>();
 			for (int i = 0; i < _ctx.Length("SearchInventory.Entities.Length"); i++) {

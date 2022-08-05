@@ -55,15 +55,10 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			set
 			{
 				disks = value;
-				for (int i = 0; i < disks.Count; i++)
+				if(disks != null)
 				{
-					for (int j = 0; j < disks[i].Sizes.Count; j++)
+					for (int depth1 = 0; depth1 < disks.Count; depth1++)
 					{
-						DictionaryUtil.Add(QueryParameters,"Disk." + (i + 1) + ".Size." +(j + 1), disks[i].Sizes[j]);
-					}
-					for (int j = 0; j < disks[i].Types.Count; j++)
-					{
-						DictionaryUtil.Add(QueryParameters,"Disk." + (i + 1) + ".Type." +(j + 1), disks[i].Types[j]);
 					}
 				}
 			}

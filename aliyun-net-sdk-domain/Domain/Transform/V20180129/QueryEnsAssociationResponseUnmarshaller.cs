@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			QueryEnsAssociationResponse queryEnsAssociationResponse = new QueryEnsAssociationResponse();
 
 			queryEnsAssociationResponse.HttpResponse = _ctx.HttpResponse;
-			queryEnsAssociationResponse.RequestId = _ctx.StringValue("QueryEnsAssociation.RequestId");
 			queryEnsAssociationResponse.Address = _ctx.StringValue("QueryEnsAssociation.Address");
+			queryEnsAssociationResponse.RequestId = _ctx.StringValue("QueryEnsAssociation.RequestId");
         
 			return queryEnsAssociationResponse;
         }

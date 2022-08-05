@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -25,22 +25,11 @@ namespace Aliyun.Acs.oos.Model.V20190601
 	public class GenerateExecutionPolicyResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string policy;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
+		[JsonProperty(PropertyName = "Policy")]
 		public string Policy
 		{
 			get
@@ -50,6 +39,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			set	
 			{
 				policy = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

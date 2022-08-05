@@ -36,13 +36,13 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			List<QueryDomainGroupListResponse.QueryDomainGroupList_DomainGroup> queryDomainGroupListResponse_data = new List<QueryDomainGroupListResponse.QueryDomainGroupList_DomainGroup>();
 			for (int i = 0; i < _ctx.Length("QueryDomainGroupList.Data.Length"); i++) {
 				QueryDomainGroupListResponse.QueryDomainGroupList_DomainGroup domainGroup = new QueryDomainGroupListResponse.QueryDomainGroupList_DomainGroup();
+				domainGroup.BeingDeleted = _ctx.BooleanValue("QueryDomainGroupList.Data["+ i +"].BeingDeleted");
+				domainGroup.DomainGroupStatus = _ctx.StringValue("QueryDomainGroupList.Data["+ i +"].DomainGroupStatus");
 				domainGroup.DomainGroupId = _ctx.StringValue("QueryDomainGroupList.Data["+ i +"].DomainGroupId");
 				domainGroup.DomainGroupName = _ctx.StringValue("QueryDomainGroupList.Data["+ i +"].DomainGroupName");
+				domainGroup.ModificationDate = _ctx.StringValue("QueryDomainGroupList.Data["+ i +"].ModificationDate");
 				domainGroup.TotalNumber = _ctx.IntegerValue("QueryDomainGroupList.Data["+ i +"].TotalNumber");
 				domainGroup.CreationDate = _ctx.StringValue("QueryDomainGroupList.Data["+ i +"].CreationDate");
-				domainGroup.ModificationDate = _ctx.StringValue("QueryDomainGroupList.Data["+ i +"].ModificationDate");
-				domainGroup.DomainGroupStatus = _ctx.StringValue("QueryDomainGroupList.Data["+ i +"].DomainGroupStatus");
-				domainGroup.BeingDeleted = _ctx.BooleanValue("QueryDomainGroupList.Data["+ i +"].BeingDeleted");
 
 				queryDomainGroupListResponse_data.Add(domainGroup);
 			}

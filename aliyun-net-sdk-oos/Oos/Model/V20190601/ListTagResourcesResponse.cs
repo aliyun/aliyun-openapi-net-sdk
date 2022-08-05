@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.oos.Model.V20190601
 	public class ListTagResourcesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
+
+		private string requestId;
 
 		private List<ListTagResources_TagResource> tagResources;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TagResources")]
 		public List<ListTagResources_TagResource> TagResources
 		{
 			get
@@ -70,26 +73,28 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		public class ListTagResources_TagResource
 		{
 
-			private string tagKey;
+			private string resourceType;
 
 			private string tagValue;
 
 			private string resourceId;
 
-			private string resourceType;
+			private string tagKey;
 
-			public string TagKey
+			[JsonProperty(PropertyName = "ResourceType")]
+			public string ResourceType
 			{
 				get
 				{
-					return tagKey;
+					return resourceType;
 				}
 				set	
 				{
-					tagKey = value;
+					resourceType = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "TagValue")]
 			public string TagValue
 			{
 				get
@@ -102,6 +107,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "ResourceId")]
 			public string ResourceId
 			{
 				get
@@ -114,15 +120,16 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
-			public string ResourceType
+			[JsonProperty(PropertyName = "TagKey")]
+			public string TagKey
 			{
 				get
 				{
-					return resourceType;
+					return tagKey;
 				}
 				set	
 				{
-					resourceType = value;
+					tagKey = value;
 				}
 			}
 		}

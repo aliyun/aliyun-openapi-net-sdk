@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
@@ -25,38 +25,15 @@ namespace Aliyun.Acs.oos.Model.V20190601
 	public class ListExecutionsResponse : AcsResponse
 	{
 
+		private string nextToken;
+
 		private string requestId;
 
 		private int? maxResults;
 
-		private string nextToken;
-
 		private List<ListExecutions_Execution> executions;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -69,6 +46,33 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "MaxResults")]
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Executions")]
 		public List<ListExecutions_Execution> Executions
 		{
 			get
@@ -84,186 +88,69 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		public class ListExecutions_Execution
 		{
 
-			private string executionId;
+			private string status;
 
-			private string templateName;
+			private string waitingStatus;
 
-			private string templateId;
+			private string targets;
 
-			private string templateVersion;
+			private string statusReason;
+
+			private string tags;
+
+			private string lastSuccessfulTriggerTime;
 
 			private string mode;
 
-			private string executedBy;
+			private string safetyCheck;
 
-			private string startDate;
+			private string templateName;
 
-			private string endDate;
+			private string templateVersion;
 
 			private string createDate;
 
 			private string updateDate;
 
-			private string status;
-
-			private string statusMessage;
-
-			private string statusReason;
-
-			private string waitingStatus;
-
-			private string parentExecutionId;
-
-			private string parameters;
-
-			private string outputs;
-
-			private string safetyCheck;
-
-			private bool? isParent;
-
-			private string ramRole;
-
-			private string counters;
-
-			private string category;
-
-			private string tags;
-
 			private string description;
-
-			private string targets;
 
 			private string lastTriggerTime;
 
+			private string parentExecutionId;
+
 			private string lastTriggerStatus;
 
-			private string lastSuccessfulTriggerTime;
+			private string statusMessage;
+
+			private string outputs;
+
+			private string executedBy;
+
+			private string endDate;
+
+			private bool? isParent;
+
+			private string startDate;
+
+			private string executionId;
+
+			private string parameters;
+
+			private string counters;
+
+			private string resourceGroupId;
+
+			private string category;
+
+			private string templateId;
+
+			private string ramRole;
 
 			private string resourceStatus;
 
 			private List<ListExecutions_CurrentTask> currentTasks;
 
-			public string ExecutionId
-			{
-				get
-				{
-					return executionId;
-				}
-				set	
-				{
-					executionId = value;
-				}
-			}
-
-			public string TemplateName
-			{
-				get
-				{
-					return templateName;
-				}
-				set	
-				{
-					templateName = value;
-				}
-			}
-
-			public string TemplateId
-			{
-				get
-				{
-					return templateId;
-				}
-				set	
-				{
-					templateId = value;
-				}
-			}
-
-			public string TemplateVersion
-			{
-				get
-				{
-					return templateVersion;
-				}
-				set	
-				{
-					templateVersion = value;
-				}
-			}
-
-			public string Mode
-			{
-				get
-				{
-					return mode;
-				}
-				set	
-				{
-					mode = value;
-				}
-			}
-
-			public string ExecutedBy
-			{
-				get
-				{
-					return executedBy;
-				}
-				set	
-				{
-					executedBy = value;
-				}
-			}
-
-			public string StartDate
-			{
-				get
-				{
-					return startDate;
-				}
-				set	
-				{
-					startDate = value;
-				}
-			}
-
-			public string EndDate
-			{
-				get
-				{
-					return endDate;
-				}
-				set	
-				{
-					endDate = value;
-				}
-			}
-
-			public string CreateDate
-			{
-				get
-				{
-					return createDate;
-				}
-				set	
-				{
-					createDate = value;
-				}
-			}
-
-			public string UpdateDate
-			{
-				get
-				{
-					return updateDate;
-				}
-				set	
-				{
-					updateDate = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Status")]
 			public string Status
 			{
 				get
@@ -276,30 +163,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
-			public string StatusMessage
-			{
-				get
-				{
-					return statusMessage;
-				}
-				set	
-				{
-					statusMessage = value;
-				}
-			}
-
-			public string StatusReason
-			{
-				get
-				{
-					return statusReason;
-				}
-				set	
-				{
-					statusReason = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "WaitingStatus")]
 			public string WaitingStatus
 			{
 				get
@@ -312,126 +176,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
-			public string ParentExecutionId
-			{
-				get
-				{
-					return parentExecutionId;
-				}
-				set	
-				{
-					parentExecutionId = value;
-				}
-			}
-
-			public string Parameters
-			{
-				get
-				{
-					return parameters;
-				}
-				set	
-				{
-					parameters = value;
-				}
-			}
-
-			public string Outputs
-			{
-				get
-				{
-					return outputs;
-				}
-				set	
-				{
-					outputs = value;
-				}
-			}
-
-			public string SafetyCheck
-			{
-				get
-				{
-					return safetyCheck;
-				}
-				set	
-				{
-					safetyCheck = value;
-				}
-			}
-
-			public bool? IsParent
-			{
-				get
-				{
-					return isParent;
-				}
-				set	
-				{
-					isParent = value;
-				}
-			}
-
-			public string RamRole
-			{
-				get
-				{
-					return ramRole;
-				}
-				set	
-				{
-					ramRole = value;
-				}
-			}
-
-			public string Counters
-			{
-				get
-				{
-					return counters;
-				}
-				set	
-				{
-					counters = value;
-				}
-			}
-
-			public string Category
-			{
-				get
-				{
-					return category;
-				}
-				set	
-				{
-					category = value;
-				}
-			}
-
-			public string Tags
-			{
-				get
-				{
-					return tags;
-				}
-				set	
-				{
-					tags = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Targets")]
 			public string Targets
 			{
 				get
@@ -444,30 +189,33 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
-			public string LastTriggerTime
+			[JsonProperty(PropertyName = "StatusReason")]
+			public string StatusReason
 			{
 				get
 				{
-					return lastTriggerTime;
+					return statusReason;
 				}
 				set	
 				{
-					lastTriggerTime = value;
+					statusReason = value;
 				}
 			}
 
-			public string LastTriggerStatus
+			[JsonProperty(PropertyName = "Tags")]
+			public string Tags
 			{
 				get
 				{
-					return lastTriggerStatus;
+					return tags;
 				}
 				set	
 				{
-					lastTriggerStatus = value;
+					tags = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "LastSuccessfulTriggerTime")]
 			public string LastSuccessfulTriggerTime
 			{
 				get
@@ -480,6 +228,306 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "Mode")]
+			public string Mode
+			{
+				get
+				{
+					return mode;
+				}
+				set	
+				{
+					mode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SafetyCheck")]
+			public string SafetyCheck
+			{
+				get
+				{
+					return safetyCheck;
+				}
+				set	
+				{
+					safetyCheck = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TemplateName")]
+			public string TemplateName
+			{
+				get
+				{
+					return templateName;
+				}
+				set	
+				{
+					templateName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TemplateVersion")]
+			public string TemplateVersion
+			{
+				get
+				{
+					return templateVersion;
+				}
+				set	
+				{
+					templateVersion = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreateDate")]
+			public string CreateDate
+			{
+				get
+				{
+					return createDate;
+				}
+				set	
+				{
+					createDate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UpdateDate")]
+			public string UpdateDate
+			{
+				get
+				{
+					return updateDate;
+				}
+				set	
+				{
+					updateDate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Description")]
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LastTriggerTime")]
+			public string LastTriggerTime
+			{
+				get
+				{
+					return lastTriggerTime;
+				}
+				set	
+				{
+					lastTriggerTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ParentExecutionId")]
+			public string ParentExecutionId
+			{
+				get
+				{
+					return parentExecutionId;
+				}
+				set	
+				{
+					parentExecutionId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LastTriggerStatus")]
+			public string LastTriggerStatus
+			{
+				get
+				{
+					return lastTriggerStatus;
+				}
+				set	
+				{
+					lastTriggerStatus = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StatusMessage")]
+			public string StatusMessage
+			{
+				get
+				{
+					return statusMessage;
+				}
+				set	
+				{
+					statusMessage = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Outputs")]
+			public string Outputs
+			{
+				get
+				{
+					return outputs;
+				}
+				set	
+				{
+					outputs = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExecutedBy")]
+			public string ExecutedBy
+			{
+				get
+				{
+					return executedBy;
+				}
+				set	
+				{
+					executedBy = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EndDate")]
+			public string EndDate
+			{
+				get
+				{
+					return endDate;
+				}
+				set	
+				{
+					endDate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IsParent")]
+			public bool? IsParent
+			{
+				get
+				{
+					return isParent;
+				}
+				set	
+				{
+					isParent = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StartDate")]
+			public string StartDate
+			{
+				get
+				{
+					return startDate;
+				}
+				set	
+				{
+					startDate = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExecutionId")]
+			public string ExecutionId
+			{
+				get
+				{
+					return executionId;
+				}
+				set	
+				{
+					executionId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Parameters")]
+			public string Parameters
+			{
+				get
+				{
+					return parameters;
+				}
+				set	
+				{
+					parameters = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Counters")]
+			public string Counters
+			{
+				get
+				{
+					return counters;
+				}
+				set	
+				{
+					counters = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ResourceGroupId")]
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Category")]
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TemplateId")]
+			public string TemplateId
+			{
+				get
+				{
+					return templateId;
+				}
+				set	
+				{
+					templateId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RamRole")]
+			public string RamRole
+			{
+				get
+				{
+					return ramRole;
+				}
+				set	
+				{
+					ramRole = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ResourceStatus")]
 			public string ResourceStatus
 			{
 				get
@@ -492,6 +540,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			[JsonProperty(PropertyName = "CurrentTasks")]
 			public List<ListExecutions_CurrentTask> CurrentTasks
 			{
 				get
@@ -513,6 +562,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 				private string taskAction;
 
+				[JsonProperty(PropertyName = "TaskExecutionId")]
 				public string TaskExecutionId
 				{
 					get
@@ -525,6 +575,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 					}
 				}
 
+				[JsonProperty(PropertyName = "TaskName")]
 				public string TaskName
 				{
 					get
@@ -537,6 +588,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 					}
 				}
 
+				[JsonProperty(PropertyName = "TaskAction")]
 				public string TaskAction
 				{
 					get

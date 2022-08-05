@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class DeleteAccessRuleRequest : RpcAcsRequest<DeleteAccessRuleResponse>
     {
         public DeleteAccessRuleRequest()
-            : base("NAS", "2017-06-26", "DeleteAccessRule", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "DeleteAccessRule", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

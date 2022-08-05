@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class ListInstancePatchesRequest : RpcAcsRequest<ListInstancePatchesResponse>
     {
         public ListInstancePatchesRequest()
-            : base("oos", "2019-06-01", "ListInstancePatches")
+            : base("oos", "2019-06-01", "ListInstancePatches", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -48,6 +47,9 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private int? maxResults;
 
+		private string patchStatuses;
+
+		[JsonProperty(PropertyName = "InstanceId")]
 		public string InstanceId
 		{
 			get
@@ -61,6 +63,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "NextToken")]
 		public string NextToken
 		{
 			get
@@ -74,6 +77,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxResults")]
 		public int? MaxResults
 		{
 			get
@@ -84,6 +88,20 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				maxResults = value;
 				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "PatchStatuses")]
+		public string PatchStatuses
+		{
+			get
+			{
+				return patchStatuses;
+			}
+			set	
+			{
+				patchStatuses = value;
+				DictionaryUtil.Add(QueryParameters, "PatchStatuses", value);
 			}
 		}
 

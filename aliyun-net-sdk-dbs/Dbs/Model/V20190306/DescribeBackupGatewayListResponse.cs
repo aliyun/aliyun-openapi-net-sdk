@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
@@ -25,61 +25,25 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 	public class DescribeBackupGatewayListResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errCode;
-
-		private string errMessage;
-
 		private int? httpStatusCode;
-
-		private string requestId;
-
-		private int? totalPages;
-
-		private int? pageSize;
 
 		private int? pageNum;
 
+		private string requestId;
+
+		private string errCode;
+
+		private bool? success;
+
+		private string errMessage;
+
+		private int? totalPages;
+
 		private int? totalElements;
 
+		private int? pageSize;
+
 		private List<DescribeBackupGatewayList_BackupGateway> items;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrCode
-		{
-			get
-			{
-				return errCode;
-			}
-			set	
-			{
-				errCode = value;
-			}
-		}
-
-		public string ErrMessage
-		{
-			get
-			{
-				return errMessage;
-			}
-			set	
-			{
-				errMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -90,42 +54,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			set	
 			{
 				httpStatusCode = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalPages
-		{
-			get
-			{
-				return totalPages;
-			}
-			set	
-			{
-				totalPages = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
 			}
 		}
 
@@ -141,6 +69,66 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string ErrCode
+		{
+			get
+			{
+				return errCode;
+			}
+			set	
+			{
+				errCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string ErrMessage
+		{
+			get
+			{
+				return errMessage;
+			}
+			set	
+			{
+				errMessage = value;
+			}
+		}
+
+		public int? TotalPages
+		{
+			get
+			{
+				return totalPages;
+			}
+			set	
+			{
+				totalPages = value;
+			}
+		}
+
 		public int? TotalElements
 		{
 			get
@@ -150,6 +138,18 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			set	
 			{
 				totalElements = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
 			}
 		}
 
@@ -168,95 +168,35 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		public class DescribeBackupGatewayList_BackupGateway
 		{
 
-			private string backupGatewayId;
-
-			private string sourceEndpointInternetIP;
-
-			private string sourceEndpointIntranetIP;
-
-			private string sourceEndpointHostname;
-
-			private string backupGatewayStatus;
-
-			private long? lastHeartbeatTime;
+			private string displayName;
 
 			private long? backupGatewayCreateTime;
 
-			private string region;
+			private string backupGatewayId;
 
-			private string displayName;
+			private string region;
 
 			private string identifier;
 
-			public string BackupGatewayId
-			{
-				get
-				{
-					return backupGatewayId;
-				}
-				set	
-				{
-					backupGatewayId = value;
-				}
-			}
+			private string sourceEndpointInternetIP;
 
-			public string SourceEndpointInternetIP
-			{
-				get
-				{
-					return sourceEndpointInternetIP;
-				}
-				set	
-				{
-					sourceEndpointInternetIP = value;
-				}
-			}
+			private string backupGatewayStatus;
 
-			public string SourceEndpointIntranetIP
-			{
-				get
-				{
-					return sourceEndpointIntranetIP;
-				}
-				set	
-				{
-					sourceEndpointIntranetIP = value;
-				}
-			}
+			private string sourceEndpointIntranetIP;
 
-			public string SourceEndpointHostname
-			{
-				get
-				{
-					return sourceEndpointHostname;
-				}
-				set	
-				{
-					sourceEndpointHostname = value;
-				}
-			}
+			private long? lastHeartbeatTime;
 
-			public string BackupGatewayStatus
-			{
-				get
-				{
-					return backupGatewayStatus;
-				}
-				set	
-				{
-					backupGatewayStatus = value;
-				}
-			}
+			private string sourceEndpointHostname;
 
-			public long? LastHeartbeatTime
+			public string DisplayName
 			{
 				get
 				{
-					return lastHeartbeatTime;
+					return displayName;
 				}
 				set	
 				{
-					lastHeartbeatTime = value;
+					displayName = value;
 				}
 			}
 
@@ -272,6 +212,18 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
+			public string BackupGatewayId
+			{
+				get
+				{
+					return backupGatewayId;
+				}
+				set	
+				{
+					backupGatewayId = value;
+				}
+			}
+
 			public string Region
 			{
 				get
@@ -284,18 +236,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public string DisplayName
-			{
-				get
-				{
-					return displayName;
-				}
-				set	
-				{
-					displayName = value;
-				}
-			}
-
 			public string Identifier
 			{
 				get
@@ -305,6 +245,66 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				set	
 				{
 					identifier = value;
+				}
+			}
+
+			public string SourceEndpointInternetIP
+			{
+				get
+				{
+					return sourceEndpointInternetIP;
+				}
+				set	
+				{
+					sourceEndpointInternetIP = value;
+				}
+			}
+
+			public string BackupGatewayStatus
+			{
+				get
+				{
+					return backupGatewayStatus;
+				}
+				set	
+				{
+					backupGatewayStatus = value;
+				}
+			}
+
+			public string SourceEndpointIntranetIP
+			{
+				get
+				{
+					return sourceEndpointIntranetIP;
+				}
+				set	
+				{
+					sourceEndpointIntranetIP = value;
+				}
+			}
+
+			public long? LastHeartbeatTime
+			{
+				get
+				{
+					return lastHeartbeatTime;
+				}
+				set	
+				{
+					lastHeartbeatTime = value;
+				}
+			}
+
+			public string SourceEndpointHostname
+			{
+				get
+				{
+					return sourceEndpointHostname;
+				}
+				set	
+				{
+					sourceEndpointHostname = value;
 				}
 			}
 		}

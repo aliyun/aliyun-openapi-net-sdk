@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Dbs;
 using Aliyun.Acs.Dbs.Transform;
 using Aliyun.Acs.Dbs.Transform.V20190306;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
     public class ConfigureBackupPlanRequest : RpcAcsRequest<ConfigureBackupPlanResponse>
     {
         public ConfigureBackupPlanRequest()
-            : base("Dbs", "2019-03-06", "ConfigureBackupPlan", "cbs", "openAPI")
+            : base("Dbs", "2019-03-06", "ConfigureBackupPlan")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -55,6 +56,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		private string sourceEndpointDatabaseName;
 
 		private int? duplicationInfrequentAccessPeriod;
+
+		private string resourceGroupId;
 
 		private string backupStartTime;
 
@@ -201,6 +204,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				duplicationInfrequentAccessPeriod = value;
 				DictionaryUtil.Add(QueryParameters, "DuplicationInfrequentAccessPeriod", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
@@ -25,53 +25,17 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 	public class DescribeJobErrorCodeResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errCode;
-
-		private string errMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
+		private string errCode;
+
+		private bool? success;
+
+		private string errMessage;
+
 		private DescribeJobErrorCode_Item item;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrCode
-		{
-			get
-			{
-				return errCode;
-			}
-			set	
-			{
-				errCode = value;
-			}
-		}
-
-		public string ErrMessage
-		{
-			get
-			{
-				return errMessage;
-			}
-			set	
-			{
-				errMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -97,6 +61,42 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
+		public string ErrCode
+		{
+			get
+			{
+				return errCode;
+			}
+			set	
+			{
+				errCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string ErrMessage
+		{
+			get
+			{
+				return errMessage;
+			}
+			set	
+			{
+				errMessage = value;
+			}
+		}
+
 		public DescribeJobErrorCode_Item Item
 		{
 			get
@@ -112,51 +112,27 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		public class DescribeJobErrorCode_Item
 		{
 
-			private string jobId;
-
-			private string language;
-
-			private string errorCode;
+			private string jobState;
 
 			private string errorMessage;
 
+			private string errorCode;
+
+			private string jobId;
+
 			private string jobType;
 
-			private string jobState;
+			private string language;
 
-			public string JobId
+			public string JobState
 			{
 				get
 				{
-					return jobId;
+					return jobState;
 				}
 				set	
 				{
-					jobId = value;
-				}
-			}
-
-			public string Language
-			{
-				get
-				{
-					return language;
-				}
-				set	
-				{
-					language = value;
-				}
-			}
-
-			public string ErrorCode
-			{
-				get
-				{
-					return errorCode;
-				}
-				set	
-				{
-					errorCode = value;
+					jobState = value;
 				}
 			}
 
@@ -172,6 +148,30 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
+			public string ErrorCode
+			{
+				get
+				{
+					return errorCode;
+				}
+				set	
+				{
+					errorCode = value;
+				}
+			}
+
+			public string JobId
+			{
+				get
+				{
+					return jobId;
+				}
+				set	
+				{
+					jobId = value;
+				}
+			}
+
 			public string JobType
 			{
 				get
@@ -184,15 +184,15 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public string JobState
+			public string Language
 			{
 				get
 				{
-					return jobState;
+					return language;
 				}
 				set	
 				{
-					jobState = value;
+					language = value;
 				}
 			}
 		}

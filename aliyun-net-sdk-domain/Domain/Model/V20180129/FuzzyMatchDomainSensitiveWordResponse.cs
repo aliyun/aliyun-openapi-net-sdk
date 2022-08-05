@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,13 +25,25 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class FuzzyMatchDomainSensitiveWordResponse : AcsResponse
 	{
 
+		private bool? exist;
+
 		private string requestId;
 
 		private string keyword;
 
-		private bool? exist;
-
 		private List<FuzzyMatchDomainSensitiveWord_MatchedSensitiveWord> matchedSentiveWords;
+
+		public bool? Exist
+		{
+			get
+			{
+				return exist;
+			}
+			set	
+			{
+				exist = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -54,18 +66,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				keyword = value;
-			}
-		}
-
-		public bool? Exist
-		{
-			get
-			{
-				return exist;
-			}
-			set	
-			{
-				exist = value;
 			}
 		}
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class DescribeAccessGroupsRequest : RpcAcsRequest<DescribeAccessGroupsResponse>
     {
         public DescribeAccessGroupsRequest()
-            : base("NAS", "2017-06-26", "DescribeAccessGroups", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "DescribeAccessGroups", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

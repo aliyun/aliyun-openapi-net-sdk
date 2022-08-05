@@ -58,6 +58,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private long? size;
 
+			private long? secondarySize;
+
 			private string status;
 
 			private long? reservedDays;
@@ -73,6 +75,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					size = value;
+				}
+			}
+
+			public long? SecondarySize
+			{
+				get
+				{
+					return secondarySize;
+				}
+				set	
+				{
+					secondarySize = value;
 				}
 			}
 

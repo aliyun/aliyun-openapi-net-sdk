@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			RenewBackupPlanResponse renewBackupPlanResponse = new RenewBackupPlanResponse();
 
 			renewBackupPlanResponse.HttpResponse = _ctx.HttpResponse;
-			renewBackupPlanResponse.Success = _ctx.BooleanValue("RenewBackupPlan.Success");
-			renewBackupPlanResponse.ErrCode = _ctx.StringValue("RenewBackupPlan.ErrCode");
-			renewBackupPlanResponse.ErrMessage = _ctx.StringValue("RenewBackupPlan.ErrMessage");
 			renewBackupPlanResponse.HttpStatusCode = _ctx.IntegerValue("RenewBackupPlan.HttpStatusCode");
 			renewBackupPlanResponse.RequestId = _ctx.StringValue("RenewBackupPlan.RequestId");
+			renewBackupPlanResponse.ErrCode = _ctx.StringValue("RenewBackupPlan.ErrCode");
+			renewBackupPlanResponse.Success = _ctx.BooleanValue("RenewBackupPlan.Success");
+			renewBackupPlanResponse.ErrMessage = _ctx.StringValue("RenewBackupPlan.ErrMessage");
 			renewBackupPlanResponse.BackupPlanId = _ctx.StringValue("RenewBackupPlan.BackupPlanId");
 			renewBackupPlanResponse.OrderId = _ctx.StringValue("RenewBackupPlan.OrderId");
         

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,45 +25,33 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class QueryChangeLogListResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? totalItemNum;
+		private bool? prePage;
 
 		private int? currentPageNum;
 
-		private int? totalPageNum;
+		private string requestId;
 
 		private int? pageSize;
 
-		private bool? prePage;
-
-		private bool? nextPage;
+		private int? totalPageNum;
 
 		private bool? resultLimit;
 
+		private int? totalItemNum;
+
+		private bool? nextPage;
+
 		private List<QueryChangeLogList_ChangeLog> data;
 
-		public string RequestId
+		public bool? PrePage
 		{
 			get
 			{
-				return requestId;
+				return prePage;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalItemNum
-		{
-			get
-			{
-				return totalItemNum;
-			}
-			set	
-			{
-				totalItemNum = value;
+				prePage = value;
 			}
 		}
 
@@ -79,15 +67,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public int? TotalPageNum
+		public string RequestId
 		{
 			get
 			{
-				return totalPageNum;
+				return requestId;
 			}
 			set	
 			{
-				totalPageNum = value;
+				requestId = value;
 			}
 		}
 
@@ -103,27 +91,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public bool? PrePage
+		public int? TotalPageNum
 		{
 			get
 			{
-				return prePage;
+				return totalPageNum;
 			}
 			set	
 			{
-				prePage = value;
-			}
-		}
-
-		public bool? NextPage
-		{
-			get
-			{
-				return nextPage;
-			}
-			set	
-			{
-				nextPage = value;
+				totalPageNum = value;
 			}
 		}
 
@@ -136,6 +112,30 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				resultLimit = value;
+			}
+		}
+
+		public int? TotalItemNum
+		{
+			get
+			{
+				return totalItemNum;
+			}
+			set	
+			{
+				totalItemNum = value;
+			}
+		}
+
+		public bool? NextPage
+		{
+			get
+			{
+				return nextPage;
+			}
+			set	
+			{
+				nextPage = value;
 			}
 		}
 
@@ -154,27 +154,39 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 		public class QueryChangeLogList_ChangeLog
 		{
 
-			private string domainName;
+			private string operation;
+
+			private string time;
 
 			private string result;
 
-			private string operation;
+			private string domainName;
 
 			private string operationIPAddress;
 
 			private string details;
 
-			private string time;
-
-			public string DomainName
+			public string Operation
 			{
 				get
 				{
-					return domainName;
+					return operation;
 				}
 				set	
 				{
-					domainName = value;
+					operation = value;
+				}
+			}
+
+			public string Time
+			{
+				get
+				{
+					return time;
+				}
+				set	
+				{
+					time = value;
 				}
 			}
 
@@ -190,15 +202,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
-			public string Operation
+			public string DomainName
 			{
 				get
 				{
-					return operation;
+					return domainName;
 				}
 				set	
 				{
-					operation = value;
+					domainName = value;
 				}
 			}
 
@@ -223,18 +235,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					details = value;
-				}
-			}
-
-			public string Time
-			{
-				get
-				{
-					return time;
-				}
-				set	
-				{
-					time = value;
 				}
 			}
 		}

@@ -31,26 +31,26 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			GetParametersByPathResponse getParametersByPathResponse = new GetParametersByPathResponse();
 
 			getParametersByPathResponse.HttpResponse = _ctx.HttpResponse;
-			getParametersByPathResponse.RequestId = _ctx.StringValue("GetParametersByPath.RequestId");
 			getParametersByPathResponse.NextToken = _ctx.StringValue("GetParametersByPath.NextToken");
-			getParametersByPathResponse.MaxResults = _ctx.IntegerValue("GetParametersByPath.MaxResults");
+			getParametersByPathResponse.RequestId = _ctx.StringValue("GetParametersByPath.RequestId");
 			getParametersByPathResponse.TotalCount = _ctx.IntegerValue("GetParametersByPath.TotalCount");
+			getParametersByPathResponse.MaxResults = _ctx.IntegerValue("GetParametersByPath.MaxResults");
 
 			List<GetParametersByPathResponse.GetParametersByPath_Parameter> getParametersByPathResponse_parameters = new List<GetParametersByPathResponse.GetParametersByPath_Parameter>();
 			for (int i = 0; i < _ctx.Length("GetParametersByPath.Parameters.Length"); i++) {
 				GetParametersByPathResponse.GetParametersByPath_Parameter parameter = new GetParametersByPathResponse.GetParametersByPath_Parameter();
-				parameter.Id = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].Id");
-				parameter.Name = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].Name");
-				parameter.CreatedDate = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].CreatedDate");
-				parameter.CreatedBy = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].CreatedBy");
+				parameter.Type = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].Type");
 				parameter.UpdatedDate = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].UpdatedDate");
 				parameter.UpdatedBy = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].UpdatedBy");
-				parameter.Description = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].Description");
-				parameter.ShareType = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].ShareType");
-				parameter.ParameterVersion = _ctx.IntegerValue("GetParametersByPath.Parameters["+ i +"].ParameterVersion");
-				parameter.Type = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].Type");
 				parameter._Value = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].Value");
+				parameter.Description = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].Description");
 				parameter.Constraints = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].Constraints");
+				parameter.CreatedBy = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].CreatedBy");
+				parameter.CreatedDate = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].CreatedDate");
+				parameter.ParameterVersion = _ctx.IntegerValue("GetParametersByPath.Parameters["+ i +"].ParameterVersion");
+				parameter.Name = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].Name");
+				parameter.Id = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].Id");
+				parameter.ShareType = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].ShareType");
 
 				getParametersByPathResponse_parameters.Add(parameter);
 			}

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class DescribeDirQuotasRequest : RpcAcsRequest<DescribeDirQuotasResponse>
     {
         public DescribeDirQuotasRequest()
-            : base("NAS", "2017-06-26", "DescribeDirQuotas", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "DescribeDirQuotas", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

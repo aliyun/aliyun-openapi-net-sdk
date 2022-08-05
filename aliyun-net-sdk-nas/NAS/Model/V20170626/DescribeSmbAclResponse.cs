@@ -58,6 +58,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string authMethod;
 
+			private string authCenter;
+
 			private bool? enableAnonymousAccess;
 
 			private bool? enabled;
@@ -79,6 +81,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					authMethod = value;
+				}
+			}
+
+			public string AuthCenter
+			{
+				get
+				{
+					return authCenter;
+				}
+				set	
+				{
+					authCenter = value;
 				}
 			}
 

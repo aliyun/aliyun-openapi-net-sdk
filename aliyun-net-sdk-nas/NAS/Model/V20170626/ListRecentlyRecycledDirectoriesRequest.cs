@@ -30,7 +30,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
     public class ListRecentlyRecycledDirectoriesRequest : RpcAcsRequest<ListRecentlyRecycledDirectoriesResponse>
     {
         public ListRecentlyRecycledDirectoriesRequest()
-            : base("NAS", "2017-06-26", "ListRecentlyRecycledDirectories", "nas", "openAPI")
+            : base("NAS", "2017-06-26", "ListRecentlyRecycledDirectories", "NAS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

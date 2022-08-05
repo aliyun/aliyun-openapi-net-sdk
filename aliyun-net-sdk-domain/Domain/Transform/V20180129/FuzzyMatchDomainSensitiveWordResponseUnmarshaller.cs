@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			FuzzyMatchDomainSensitiveWordResponse fuzzyMatchDomainSensitiveWordResponse = new FuzzyMatchDomainSensitiveWordResponse();
 
 			fuzzyMatchDomainSensitiveWordResponse.HttpResponse = _ctx.HttpResponse;
+			fuzzyMatchDomainSensitiveWordResponse.Exist = _ctx.BooleanValue("FuzzyMatchDomainSensitiveWord.Exist");
 			fuzzyMatchDomainSensitiveWordResponse.RequestId = _ctx.StringValue("FuzzyMatchDomainSensitiveWord.RequestId");
 			fuzzyMatchDomainSensitiveWordResponse.Keyword = _ctx.StringValue("FuzzyMatchDomainSensitiveWord.Keyword");
-			fuzzyMatchDomainSensitiveWordResponse.Exist = _ctx.BooleanValue("FuzzyMatchDomainSensitiveWord.Exist");
 
 			List<FuzzyMatchDomainSensitiveWordResponse.FuzzyMatchDomainSensitiveWord_MatchedSensitiveWord> fuzzyMatchDomainSensitiveWordResponse_matchedSentiveWords = new List<FuzzyMatchDomainSensitiveWordResponse.FuzzyMatchDomainSensitiveWord_MatchedSensitiveWord>();
 			for (int i = 0; i < _ctx.Length("FuzzyMatchDomainSensitiveWord.MatchedSentiveWords.Length"); i++) {

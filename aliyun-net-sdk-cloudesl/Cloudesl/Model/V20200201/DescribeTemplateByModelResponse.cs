@@ -218,6 +218,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 			private string brand;
 
+			private string templateSceneId;
+
 			public string BasePicture
 			{
 				get
@@ -347,6 +349,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					brand = value;
+				}
+			}
+
+			public string TemplateSceneId
+			{
+				get
+				{
+					return templateSceneId;
+				}
+				set	
+				{
+					templateSceneId = value;
 				}
 			}
 		}

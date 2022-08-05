@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,43 +25,31 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class QueryDomainListResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? totalItemNum;
+		private bool? prePage;
 
 		private int? currentPageNum;
 
-		private int? totalPageNum;
+		private string requestId;
 
 		private int? pageSize;
 
-		private bool? prePage;
+		private int? totalPageNum;
+
+		private int? totalItemNum;
 
 		private bool? nextPage;
 
 		private List<QueryDomainList_Domain> data;
 
-		public string RequestId
+		public bool? PrePage
 		{
 			get
 			{
-				return requestId;
+				return prePage;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalItemNum
-		{
-			get
-			{
-				return totalItemNum;
-			}
-			set	
-			{
-				totalItemNum = value;
+				prePage = value;
 			}
 		}
 
@@ -77,15 +65,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public int? TotalPageNum
+		public string RequestId
 		{
 			get
 			{
-				return totalPageNum;
+				return requestId;
 			}
 			set	
 			{
-				totalPageNum = value;
+				requestId = value;
 			}
 		}
 
@@ -101,15 +89,27 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public bool? PrePage
+		public int? TotalPageNum
 		{
 			get
 			{
-				return prePage;
+				return totalPageNum;
 			}
 			set	
 			{
-				prePage = value;
+				totalPageNum = value;
+			}
+		}
+
+		public int? TotalItemNum
+		{
+			get
+			{
+				return totalItemNum;
+			}
+			set	
+			{
+				totalItemNum = value;
 			}
 		}
 
@@ -140,31 +140,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 		public class QueryDomainList_Domain
 		{
 
-			private string domainName;
-
-			private string instanceId;
-
-			private string expirationDate;
-
-			private string registrationDate;
-
-			private string domainType;
-
-			private string domainStatus;
-
-			private string productId;
-
-			private long? expirationDateLong;
-
-			private long? registrationDateLong;
-
-			private bool? premium;
-
 			private string domainAuditStatus;
-
-			private string expirationDateStatus;
-
-			private string registrantType;
 
 			private string domainGroupId;
 
@@ -172,127 +148,31 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 			private string domainGroupName;
 
+			private string registrationDate;
+
+			private string instanceId;
+
+			private string domainName;
+
+			private string expirationDateStatus;
+
+			private string expirationDate;
+
+			private string registrantType;
+
+			private long? expirationDateLong;
+
 			private int? expirationCurrDateDiff;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+			private bool? premium;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private long? registrationDateLong;
 
-			public string ExpirationDate
-			{
-				get
-				{
-					return expirationDate;
-				}
-				set	
-				{
-					expirationDate = value;
-				}
-			}
+			private string productId;
 
-			public string RegistrationDate
-			{
-				get
-				{
-					return registrationDate;
-				}
-				set	
-				{
-					registrationDate = value;
-				}
-			}
+			private string domainStatus;
 
-			public string DomainType
-			{
-				get
-				{
-					return domainType;
-				}
-				set	
-				{
-					domainType = value;
-				}
-			}
-
-			public string DomainStatus
-			{
-				get
-				{
-					return domainStatus;
-				}
-				set	
-				{
-					domainStatus = value;
-				}
-			}
-
-			public string ProductId
-			{
-				get
-				{
-					return productId;
-				}
-				set	
-				{
-					productId = value;
-				}
-			}
-
-			public long? ExpirationDateLong
-			{
-				get
-				{
-					return expirationDateLong;
-				}
-				set	
-				{
-					expirationDateLong = value;
-				}
-			}
-
-			public long? RegistrationDateLong
-			{
-				get
-				{
-					return registrationDateLong;
-				}
-				set	
-				{
-					registrationDateLong = value;
-				}
-			}
-
-			public bool? Premium
-			{
-				get
-				{
-					return premium;
-				}
-				set	
-				{
-					premium = value;
-				}
-			}
+			private string domainType;
 
 			public string DomainAuditStatus
 			{
@@ -303,30 +183,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					domainAuditStatus = value;
-				}
-			}
-
-			public string ExpirationDateStatus
-			{
-				get
-				{
-					return expirationDateStatus;
-				}
-				set	
-				{
-					expirationDateStatus = value;
-				}
-			}
-
-			public string RegistrantType
-			{
-				get
-				{
-					return registrantType;
-				}
-				set	
-				{
-					registrantType = value;
 				}
 			}
 
@@ -366,6 +222,90 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				}
 			}
 
+			public string RegistrationDate
+			{
+				get
+				{
+					return registrationDate;
+				}
+				set	
+				{
+					registrationDate = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
+			}
+
+			public string ExpirationDateStatus
+			{
+				get
+				{
+					return expirationDateStatus;
+				}
+				set	
+				{
+					expirationDateStatus = value;
+				}
+			}
+
+			public string ExpirationDate
+			{
+				get
+				{
+					return expirationDate;
+				}
+				set	
+				{
+					expirationDate = value;
+				}
+			}
+
+			public string RegistrantType
+			{
+				get
+				{
+					return registrantType;
+				}
+				set	
+				{
+					registrantType = value;
+				}
+			}
+
+			public long? ExpirationDateLong
+			{
+				get
+				{
+					return expirationDateLong;
+				}
+				set	
+				{
+					expirationDateLong = value;
+				}
+			}
+
 			public int? ExpirationCurrDateDiff
 			{
 				get
@@ -375,6 +315,66 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					expirationCurrDateDiff = value;
+				}
+			}
+
+			public bool? Premium
+			{
+				get
+				{
+					return premium;
+				}
+				set	
+				{
+					premium = value;
+				}
+			}
+
+			public long? RegistrationDateLong
+			{
+				get
+				{
+					return registrationDateLong;
+				}
+				set	
+				{
+					registrationDateLong = value;
+				}
+			}
+
+			public string ProductId
+			{
+				get
+				{
+					return productId;
+				}
+				set	
+				{
+					productId = value;
+				}
+			}
+
+			public string DomainStatus
+			{
+				get
+				{
+					return domainStatus;
+				}
+				set	
+				{
+					domainStatus = value;
+				}
+			}
+
+			public string DomainType
+			{
+				get
+				{
+					return domainType;
+				}
+				set	
+				{
+					domainType = value;
 				}
 			}
 		}

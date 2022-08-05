@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class SetServiceSettingsRequest : RpcAcsRequest<SetServiceSettingsResponse>
     {
         public SetServiceSettingsRequest()
-            : base("oos", "2019-06-01", "SetServiceSettings")
+            : base("oos", "2019-06-01", "SetServiceSettings", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,6 +43,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private bool? deliverySlsEnabled;
 
+		private string rdcEnterpriseId;
+
 		private string deliveryOssKeyPrefix;
 
 		private bool? deliveryOssEnabled;
@@ -52,6 +53,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string deliveryOssBucketName;
 
+		[JsonProperty(PropertyName = "DeliverySlsEnabled")]
 		public bool? DeliverySlsEnabled
 		{
 			get
@@ -65,6 +67,21 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "RdcEnterpriseId")]
+		public string RdcEnterpriseId
+		{
+			get
+			{
+				return rdcEnterpriseId;
+			}
+			set	
+			{
+				rdcEnterpriseId = value;
+				DictionaryUtil.Add(QueryParameters, "RdcEnterpriseId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DeliveryOssKeyPrefix")]
 		public string DeliveryOssKeyPrefix
 		{
 			get
@@ -78,6 +95,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "DeliveryOssEnabled")]
 		public bool? DeliveryOssEnabled
 		{
 			get
@@ -91,6 +109,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "DeliverySlsProjectName")]
 		public string DeliverySlsProjectName
 		{
 			get
@@ -104,6 +123,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		[JsonProperty(PropertyName = "DeliveryOssBucketName")]
 		public string DeliveryOssBucketName
 		{
 			get

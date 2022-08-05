@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class CreateSecretParameterRequest : RpcAcsRequest<CreateSecretParameterResponse>
     {
         public CreateSecretParameterRequest()
-            : base("oos", "2019-06-01", "CreateSecretParameter")
+            : base("oos", "2019-06-01", "CreateSecretParameter", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -48,6 +47,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		private string type;
 
 		private string constraints;
+
+		private string resourceGroupId;
 
 		private string _value;
 
@@ -106,6 +107,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				constraints = value;
 				DictionaryUtil.Add(QueryParameters, "Constraints", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

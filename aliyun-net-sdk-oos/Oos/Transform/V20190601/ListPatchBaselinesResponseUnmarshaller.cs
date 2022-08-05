@@ -31,23 +31,23 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			ListPatchBaselinesResponse listPatchBaselinesResponse = new ListPatchBaselinesResponse();
 
 			listPatchBaselinesResponse.HttpResponse = _ctx.HttpResponse;
+			listPatchBaselinesResponse.NextToken = _ctx.StringValue("ListPatchBaselines.NextToken");
 			listPatchBaselinesResponse.RequestId = _ctx.StringValue("ListPatchBaselines.RequestId");
 			listPatchBaselinesResponse.MaxResults = _ctx.IntegerValue("ListPatchBaselines.MaxResults");
-			listPatchBaselinesResponse.NextToken = _ctx.StringValue("ListPatchBaselines.NextToken");
 
 			List<ListPatchBaselinesResponse.ListPatchBaselines_PatchBaseline> listPatchBaselinesResponse_patchBaselines = new List<ListPatchBaselinesResponse.ListPatchBaselines_PatchBaseline>();
 			for (int i = 0; i < _ctx.Length("ListPatchBaselines.PatchBaselines.Length"); i++) {
 				ListPatchBaselinesResponse.ListPatchBaselines_PatchBaseline patchBaseline = new ListPatchBaselinesResponse.ListPatchBaselines_PatchBaseline();
-				patchBaseline.Id = _ctx.StringValue("ListPatchBaselines.PatchBaselines["+ i +"].Id");
-				patchBaseline.Name = _ctx.StringValue("ListPatchBaselines.PatchBaselines["+ i +"].Name");
-				patchBaseline.CreatedDate = _ctx.StringValue("ListPatchBaselines.PatchBaselines["+ i +"].CreatedDate");
-				patchBaseline.CreatedBy = _ctx.StringValue("ListPatchBaselines.PatchBaselines["+ i +"].CreatedBy");
-				patchBaseline.UpdatedDate = _ctx.StringValue("ListPatchBaselines.PatchBaselines["+ i +"].UpdatedDate");
-				patchBaseline.UpdatedBy = _ctx.StringValue("ListPatchBaselines.PatchBaselines["+ i +"].UpdatedBy");
-				patchBaseline.Description = _ctx.StringValue("ListPatchBaselines.PatchBaselines["+ i +"].Description");
-				patchBaseline.ShareType = _ctx.StringValue("ListPatchBaselines.PatchBaselines["+ i +"].ShareType");
 				patchBaseline.OperationSystem = _ctx.StringValue("ListPatchBaselines.PatchBaselines["+ i +"].OperationSystem");
 				patchBaseline.IsDefault = _ctx.BooleanValue("ListPatchBaselines.PatchBaselines["+ i +"].IsDefault");
+				patchBaseline.Description = _ctx.StringValue("ListPatchBaselines.PatchBaselines["+ i +"].Description");
+				patchBaseline.UpdatedDate = _ctx.StringValue("ListPatchBaselines.PatchBaselines["+ i +"].UpdatedDate");
+				patchBaseline.UpdatedBy = _ctx.StringValue("ListPatchBaselines.PatchBaselines["+ i +"].UpdatedBy");
+				patchBaseline.CreatedBy = _ctx.StringValue("ListPatchBaselines.PatchBaselines["+ i +"].CreatedBy");
+				patchBaseline.CreatedDate = _ctx.StringValue("ListPatchBaselines.PatchBaselines["+ i +"].CreatedDate");
+				patchBaseline.Name = _ctx.StringValue("ListPatchBaselines.PatchBaselines["+ i +"].Name");
+				patchBaseline.Id = _ctx.StringValue("ListPatchBaselines.PatchBaselines["+ i +"].Id");
+				patchBaseline.ShareType = _ctx.StringValue("ListPatchBaselines.PatchBaselines["+ i +"].ShareType");
 
 				listPatchBaselinesResponse_patchBaselines.Add(patchBaseline);
 			}

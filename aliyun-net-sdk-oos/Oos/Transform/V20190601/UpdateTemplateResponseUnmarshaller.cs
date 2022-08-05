@@ -34,19 +34,20 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			updateTemplateResponse.RequestId = _ctx.StringValue("UpdateTemplate.RequestId");
 
 			UpdateTemplateResponse.UpdateTemplate_Template template = new UpdateTemplateResponse.UpdateTemplate_Template();
-			template.TemplateName = _ctx.StringValue("UpdateTemplate.Template.TemplateName");
-			template.TemplateId = _ctx.StringValue("UpdateTemplate.Template.TemplateId");
-			template.CreatedDate = _ctx.StringValue("UpdateTemplate.Template.CreatedDate");
-			template.CreatedBy = _ctx.StringValue("UpdateTemplate.Template.CreatedBy");
+			template.Hash = _ctx.StringValue("UpdateTemplate.Template.Hash");
 			template.UpdatedDate = _ctx.StringValue("UpdateTemplate.Template.UpdatedDate");
 			template.UpdatedBy = _ctx.StringValue("UpdateTemplate.Template.UpdatedBy");
-			template.Hash = _ctx.StringValue("UpdateTemplate.Template.Hash");
-			template.Description = _ctx.StringValue("UpdateTemplate.Template.Description");
-			template.ShareType = _ctx.StringValue("UpdateTemplate.Template.ShareType");
-			template.TemplateFormat = _ctx.StringValue("UpdateTemplate.Template.TemplateFormat");
-			template.TemplateVersion = _ctx.StringValue("UpdateTemplate.Template.TemplateVersion");
-			template.HasTrigger = _ctx.BooleanValue("UpdateTemplate.Template.HasTrigger");
 			template.Tags = _ctx.StringValue("UpdateTemplate.Template.Tags");
+			template.TemplateName = _ctx.StringValue("UpdateTemplate.Template.TemplateName");
+			template.TemplateVersion = _ctx.StringValue("UpdateTemplate.Template.TemplateVersion");
+			template.TemplateFormat = _ctx.StringValue("UpdateTemplate.Template.TemplateFormat");
+			template.Description = _ctx.StringValue("UpdateTemplate.Template.Description");
+			template.ResourceGroupId = _ctx.StringValue("UpdateTemplate.Template.ResourceGroupId");
+			template.CreatedBy = _ctx.StringValue("UpdateTemplate.Template.CreatedBy");
+			template.CreatedDate = _ctx.StringValue("UpdateTemplate.Template.CreatedDate");
+			template.TemplateId = _ctx.StringValue("UpdateTemplate.Template.TemplateId");
+			template.HasTrigger = _ctx.BooleanValue("UpdateTemplate.Template.HasTrigger");
+			template.ShareType = _ctx.StringValue("UpdateTemplate.Template.ShareType");
 			updateTemplateResponse.Template = template;
         
 			return updateTemplateResponse;

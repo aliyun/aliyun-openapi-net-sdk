@@ -34,18 +34,19 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			updateParameterResponse.RequestId = _ctx.StringValue("UpdateParameter.RequestId");
 
 			UpdateParameterResponse.UpdateParameter_Parameter parameter = new UpdateParameterResponse.UpdateParameter_Parameter();
-			parameter.Id = _ctx.StringValue("UpdateParameter.Parameter.Id");
-			parameter.Name = _ctx.StringValue("UpdateParameter.Parameter.Name");
-			parameter.CreatedDate = _ctx.StringValue("UpdateParameter.Parameter.CreatedDate");
-			parameter.CreatedBy = _ctx.StringValue("UpdateParameter.Parameter.CreatedBy");
+			parameter.Type = _ctx.StringValue("UpdateParameter.Parameter.Type");
 			parameter.UpdatedDate = _ctx.StringValue("UpdateParameter.Parameter.UpdatedDate");
 			parameter.UpdatedBy = _ctx.StringValue("UpdateParameter.Parameter.UpdatedBy");
-			parameter.Description = _ctx.StringValue("UpdateParameter.Parameter.Description");
-			parameter.ShareType = _ctx.StringValue("UpdateParameter.Parameter.ShareType");
-			parameter.ParameterVersion = _ctx.IntegerValue("UpdateParameter.Parameter.ParameterVersion");
-			parameter.Type = _ctx.StringValue("UpdateParameter.Parameter.Type");
-			parameter.Constraints = _ctx.StringValue("UpdateParameter.Parameter.Constraints");
 			parameter.Tags = _ctx.StringValue("UpdateParameter.Parameter.Tags");
+			parameter.Description = _ctx.StringValue("UpdateParameter.Parameter.Description");
+			parameter.Constraints = _ctx.StringValue("UpdateParameter.Parameter.Constraints");
+			parameter.ResourceGroupId = _ctx.StringValue("UpdateParameter.Parameter.ResourceGroupId");
+			parameter.CreatedBy = _ctx.StringValue("UpdateParameter.Parameter.CreatedBy");
+			parameter.CreatedDate = _ctx.StringValue("UpdateParameter.Parameter.CreatedDate");
+			parameter.ParameterVersion = _ctx.IntegerValue("UpdateParameter.Parameter.ParameterVersion");
+			parameter.Name = _ctx.StringValue("UpdateParameter.Parameter.Name");
+			parameter.Id = _ctx.StringValue("UpdateParameter.Parameter.Id");
+			parameter.ShareType = _ctx.StringValue("UpdateParameter.Parameter.ShareType");
 			updateParameterResponse.Parameter = parameter;
         
 			return updateParameterResponse;

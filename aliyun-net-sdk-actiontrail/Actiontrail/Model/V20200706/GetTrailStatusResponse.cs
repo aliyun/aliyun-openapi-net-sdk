@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Actiontrail.Model.V20200706
@@ -25,37 +25,25 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 	public class GetTrailStatusResponse : AcsResponse
 	{
 
-		private string latestDeliveryLogServiceTime;
-
 		private string requestId;
 
-		private string latestDeliveryLogServiceError;
-
 		private string startLoggingTime;
-
-		private bool? ossBucketStatus;
 
 		private string latestDeliveryError;
 
 		private string stopLoggingTime;
 
-		private bool? slsLogStoreStatus;
+		private bool? isLogging;
 
 		private string latestDeliveryTime;
 
-		private bool? isLogging;
+		private string latestDeliveryLogServiceError;
 
-		public string LatestDeliveryLogServiceTime
-		{
-			get
-			{
-				return latestDeliveryLogServiceTime;
-			}
-			set	
-			{
-				latestDeliveryLogServiceTime = value;
-			}
-		}
+		private string latestDeliveryLogServiceTime;
+
+		private bool? ossBucketStatus;
+
+		private bool? slsLogStoreStatus;
 
 		public string RequestId
 		{
@@ -69,18 +57,6 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 			}
 		}
 
-		public string LatestDeliveryLogServiceError
-		{
-			get
-			{
-				return latestDeliveryLogServiceError;
-			}
-			set	
-			{
-				latestDeliveryLogServiceError = value;
-			}
-		}
-
 		public string StartLoggingTime
 		{
 			get
@@ -90,18 +66,6 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 			set	
 			{
 				startLoggingTime = value;
-			}
-		}
-
-		public bool? OssBucketStatus
-		{
-			get
-			{
-				return ossBucketStatus;
-			}
-			set	
-			{
-				ossBucketStatus = value;
 			}
 		}
 
@@ -129,15 +93,15 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 			}
 		}
 
-		public bool? SlsLogStoreStatus
+		public bool? IsLogging
 		{
 			get
 			{
-				return slsLogStoreStatus;
+				return isLogging;
 			}
 			set	
 			{
-				slsLogStoreStatus = value;
+				isLogging = value;
 			}
 		}
 
@@ -153,15 +117,51 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 			}
 		}
 
-		public bool? IsLogging
+		public string LatestDeliveryLogServiceError
 		{
 			get
 			{
-				return isLogging;
+				return latestDeliveryLogServiceError;
 			}
 			set	
 			{
-				isLogging = value;
+				latestDeliveryLogServiceError = value;
+			}
+		}
+
+		public string LatestDeliveryLogServiceTime
+		{
+			get
+			{
+				return latestDeliveryLogServiceTime;
+			}
+			set	
+			{
+				latestDeliveryLogServiceTime = value;
+			}
+		}
+
+		public bool? OssBucketStatus
+		{
+			get
+			{
+				return ossBucketStatus;
+			}
+			set	
+			{
+				ossBucketStatus = value;
+			}
+		}
+
+		public bool? SlsLogStoreStatus
+		{
+			get
+			{
+				return slsLogStoreStatus;
+			}
+			set	
+			{
+				slsLogStoreStatus = value;
 			}
 		}
 	}

@@ -58,6 +58,8 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 				eslDeviceInfo.EslStatus = _ctx.StringValue("DescribeEslDevices.EslDevices["+ i +"].EslStatus");
 				eslDeviceInfo.Mac = _ctx.StringValue("DescribeEslDevices.EslDevices["+ i +"].Mac");
 				eslDeviceInfo.TypeEncode = _ctx.StringValue("DescribeEslDevices.EslDevices["+ i +"].TypeEncode");
+				eslDeviceInfo.LayoutId = _ctx.StringValue("DescribeEslDevices.EslDevices["+ i +"].LayoutId");
+				eslDeviceInfo.LayoutName = _ctx.StringValue("DescribeEslDevices.EslDevices["+ i +"].LayoutName");
 
 				describeEslDevicesResponse_eslDevices.Add(eslDeviceInfo);
 			}

@@ -33,6 +33,17 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			submitEmailVerificationResponse.HttpResponse = _ctx.HttpResponse;
 			submitEmailVerificationResponse.RequestId = _ctx.StringValue("SubmitEmailVerification.RequestId");
 
+			List<SubmitEmailVerificationResponse.SubmitEmailVerification_SendResult> submitEmailVerificationResponse_existList = new List<SubmitEmailVerificationResponse.SubmitEmailVerification_SendResult>();
+			for (int i = 0; i < _ctx.Length("SubmitEmailVerification.ExistList.Length"); i++) {
+				SubmitEmailVerificationResponse.SubmitEmailVerification_SendResult sendResult = new SubmitEmailVerificationResponse.SubmitEmailVerification_SendResult();
+				sendResult.Email = _ctx.StringValue("SubmitEmailVerification.ExistList["+ i +"].Email");
+				sendResult.Code = _ctx.StringValue("SubmitEmailVerification.ExistList["+ i +"].Code");
+				sendResult.Message = _ctx.StringValue("SubmitEmailVerification.ExistList["+ i +"].Message");
+
+				submitEmailVerificationResponse_existList.Add(sendResult);
+			}
+			submitEmailVerificationResponse.ExistList = submitEmailVerificationResponse_existList;
+
 			List<SubmitEmailVerificationResponse.SubmitEmailVerification_SendResult> submitEmailVerificationResponse_successList = new List<SubmitEmailVerificationResponse.SubmitEmailVerification_SendResult>();
 			for (int i = 0; i < _ctx.Length("SubmitEmailVerification.SuccessList.Length"); i++) {
 				SubmitEmailVerificationResponse.SubmitEmailVerification_SendResult sendResult = new SubmitEmailVerificationResponse.SubmitEmailVerification_SendResult();
@@ -54,17 +65,6 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 				submitEmailVerificationResponse_failList.Add(sendResult);
 			}
 			submitEmailVerificationResponse.FailList = submitEmailVerificationResponse_failList;
-
-			List<SubmitEmailVerificationResponse.SubmitEmailVerification_SendResult> submitEmailVerificationResponse_existList = new List<SubmitEmailVerificationResponse.SubmitEmailVerification_SendResult>();
-			for (int i = 0; i < _ctx.Length("SubmitEmailVerification.ExistList.Length"); i++) {
-				SubmitEmailVerificationResponse.SubmitEmailVerification_SendResult sendResult = new SubmitEmailVerificationResponse.SubmitEmailVerification_SendResult();
-				sendResult.Email = _ctx.StringValue("SubmitEmailVerification.ExistList["+ i +"].Email");
-				sendResult.Code = _ctx.StringValue("SubmitEmailVerification.ExistList["+ i +"].Code");
-				sendResult.Message = _ctx.StringValue("SubmitEmailVerification.ExistList["+ i +"].Message");
-
-				submitEmailVerificationResponse_existList.Add(sendResult);
-			}
-			submitEmailVerificationResponse.ExistList = submitEmailVerificationResponse_existList;
         
 			return submitEmailVerificationResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 	public class SaveRegistrantProfileRealNameVerificationResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? registrantProfileId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public long? RegistrantProfileId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set	
 			{
 				registrantProfileId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

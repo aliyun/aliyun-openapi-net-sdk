@@ -47,7 +47,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string promotionNo;
 
-		private List<OrderRedeemParam> orderRedeemParams = new List<OrderRedeemParam>(){ };
+		private List<long?> orderRedeemParams = new List<long?>(){ };
 
 		private string userClientIp;
 
@@ -94,7 +94,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public List<OrderRedeemParam> OrderRedeemParams
+		public List<long?> OrderRedeemParams
 		{
 			get
 			{
@@ -104,10 +104,13 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			set
 			{
 				orderRedeemParams = value;
-				for (int i = 0; i < orderRedeemParams.Count; i++)
+				if(orderRedeemParams != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"OrderRedeemParam." + (i + 1) + ".CurrentExpirationDate", orderRedeemParams[i].CurrentExpirationDate);
-					DictionaryUtil.Add(QueryParameters,"OrderRedeemParam." + (i + 1) + ".DomainName", orderRedeemParams[i].DomainName);
+					for (int depth1 = 0; depth1 < orderRedeemParams.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"OrderRedeemParam." + (depth1 + 1), orderRedeemParams[depth1]);
+						DictionaryUtil.Add(QueryParameters,"OrderRedeemParam." + (depth1 + 1), orderRedeemParams[depth1]);
+					}
 				}
 			}
 		}

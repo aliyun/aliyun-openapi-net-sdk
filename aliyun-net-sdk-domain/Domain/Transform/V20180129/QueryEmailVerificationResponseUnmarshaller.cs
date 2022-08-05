@@ -31,17 +31,17 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 			QueryEmailVerificationResponse queryEmailVerificationResponse = new QueryEmailVerificationResponse();
 
 			queryEmailVerificationResponse.HttpResponse = _ctx.HttpResponse;
-			queryEmailVerificationResponse.RequestId = _ctx.StringValue("QueryEmailVerification.RequestId");
-			queryEmailVerificationResponse.GmtCreate = _ctx.StringValue("QueryEmailVerification.GmtCreate");
-			queryEmailVerificationResponse.GmtModified = _ctx.StringValue("QueryEmailVerification.GmtModified");
-			queryEmailVerificationResponse.Email = _ctx.StringValue("QueryEmailVerification.Email");
-			queryEmailVerificationResponse.UserId = _ctx.StringValue("QueryEmailVerification.UserId");
-			queryEmailVerificationResponse.EmailVerificationNo = _ctx.StringValue("QueryEmailVerification.EmailVerificationNo");
-			queryEmailVerificationResponse.TokenSendTime = _ctx.StringValue("QueryEmailVerification.TokenSendTime");
 			queryEmailVerificationResponse.VerificationStatus = _ctx.IntegerValue("QueryEmailVerification.VerificationStatus");
-			queryEmailVerificationResponse.VerificationTime = _ctx.StringValue("QueryEmailVerification.VerificationTime");
-			queryEmailVerificationResponse.SendIp = _ctx.StringValue("QueryEmailVerification.SendIp");
+			queryEmailVerificationResponse.GmtCreate = _ctx.StringValue("QueryEmailVerification.GmtCreate");
+			queryEmailVerificationResponse.Email = _ctx.StringValue("QueryEmailVerification.Email");
+			queryEmailVerificationResponse.EmailVerificationNo = _ctx.StringValue("QueryEmailVerification.EmailVerificationNo");
 			queryEmailVerificationResponse.ConfirmIp = _ctx.StringValue("QueryEmailVerification.ConfirmIp");
+			queryEmailVerificationResponse.RequestId = _ctx.StringValue("QueryEmailVerification.RequestId");
+			queryEmailVerificationResponse.UserId = _ctx.StringValue("QueryEmailVerification.UserId");
+			queryEmailVerificationResponse.GmtModified = _ctx.StringValue("QueryEmailVerification.GmtModified");
+			queryEmailVerificationResponse.SendIp = _ctx.StringValue("QueryEmailVerification.SendIp");
+			queryEmailVerificationResponse.VerificationTime = _ctx.StringValue("QueryEmailVerification.VerificationTime");
+			queryEmailVerificationResponse.TokenSendTime = _ctx.StringValue("QueryEmailVerification.TokenSendTime");
         
 			return queryEmailVerificationResponse;
         }

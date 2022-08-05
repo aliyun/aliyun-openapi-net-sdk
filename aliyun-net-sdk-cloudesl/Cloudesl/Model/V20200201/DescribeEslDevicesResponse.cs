@@ -220,6 +220,10 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 			private string typeEncode;
 
+			private string layoutId;
+
+			private string layoutName;
+
 			public string Type
 			{
 				get
@@ -361,6 +365,30 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					typeEncode = value;
+				}
+			}
+
+			public string LayoutId
+			{
+				get
+				{
+					return layoutId;
+				}
+				set	
+				{
+					layoutId = value;
+				}
+			}
+
+			public string LayoutName
+			{
+				get
+				{
+					return layoutName;
+				}
+				set	
+				{
+					layoutName = value;
 				}
 			}
 		}
