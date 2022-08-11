@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 			BatchAuditTest01Response batchAuditTest01Response = new BatchAuditTest01Response();
 
 			batchAuditTest01Response.HttpResponse = _ctx.HttpResponse;
-			batchAuditTest01Response.Name = _ctx.StringValue("BatchAuditTest01.Name");
 			batchAuditTest01Response.RequestId = _ctx.StringValue("BatchAuditTest01.RequestId");
+			batchAuditTest01Response.Name = _ctx.StringValue("BatchAuditTest01.Name");
 
 			BatchAuditTest01Response.BatchAuditTest01_Demo01 demo01 = new BatchAuditTest01Response.BatchAuditTest01_Demo01();
 

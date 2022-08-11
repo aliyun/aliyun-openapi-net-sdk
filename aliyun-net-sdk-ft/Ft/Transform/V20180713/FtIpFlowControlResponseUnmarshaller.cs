@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 			FtIpFlowControlResponse ftIpFlowControlResponse = new FtIpFlowControlResponse();
 
 			ftIpFlowControlResponse.HttpResponse = _ctx.HttpResponse;
-			ftIpFlowControlResponse.Name = _ctx.StringValue("FtIpFlowControl.Name");
 			ftIpFlowControlResponse.RequestId = _ctx.StringValue("FtIpFlowControl.RequestId");
+			ftIpFlowControlResponse.Name = _ctx.StringValue("FtIpFlowControl.Name");
         
 			return ftIpFlowControlResponse;
         }

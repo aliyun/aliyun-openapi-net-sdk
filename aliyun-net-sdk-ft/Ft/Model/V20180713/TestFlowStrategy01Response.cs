@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
@@ -31,7 +31,6 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 
 		private List<string> names;
 
-		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -44,7 +43,6 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			}
 		}
 
-		[JsonProperty(PropertyName = "List")]
 		public List<string> List
 		{
 			get
@@ -57,7 +55,6 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			}
 		}
 
-		[JsonProperty(PropertyName = "Names")]
 		public List<string> Names
 		{
 			get

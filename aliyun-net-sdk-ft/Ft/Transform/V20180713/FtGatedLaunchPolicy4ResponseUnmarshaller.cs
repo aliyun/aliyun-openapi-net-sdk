@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 			FtGatedLaunchPolicy4Response ftGatedLaunchPolicy4Response = new FtGatedLaunchPolicy4Response();
 
 			ftGatedLaunchPolicy4Response.HttpResponse = _ctx.HttpResponse;
-			ftGatedLaunchPolicy4Response.IsGatedLaunch = _ctx.StringValue("FtGatedLaunchPolicy4.IsGatedLaunch");
 			ftGatedLaunchPolicy4Response.RequestId = _ctx.StringValue("FtGatedLaunchPolicy4.RequestId");
+			ftGatedLaunchPolicy4Response.IsGatedLaunch = _ctx.StringValue("FtGatedLaunchPolicy4.IsGatedLaunch");
         
 			return ftGatedLaunchPolicy4Response;
         }

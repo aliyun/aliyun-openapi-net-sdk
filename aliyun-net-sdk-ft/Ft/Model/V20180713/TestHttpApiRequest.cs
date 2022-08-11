@@ -50,7 +50,6 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 
 		private string defaultValue;
 
-		[JsonProperty(PropertyName = "StringValue")]
 		public string StringValue
 		{
 			get
@@ -64,7 +63,6 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			}
 		}
 
-		[JsonProperty(PropertyName = "OtherParam")]
 		public string OtherParam
 		{
 			get
@@ -78,7 +76,6 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			}
 		}
 
-		[JsonProperty(PropertyName = "BooleanParam")]
 		public bool? BooleanParam
 		{
 			get
@@ -92,7 +89,6 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			}
 		}
 
-		[JsonProperty(PropertyName = "DefaultValue")]
 		public string DefaultValue
 		{
 			get

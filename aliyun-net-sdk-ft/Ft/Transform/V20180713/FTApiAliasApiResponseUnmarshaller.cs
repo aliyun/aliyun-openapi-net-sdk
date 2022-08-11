@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 			FTApiAliasApiResponse fTApiAliasApiResponse = new FTApiAliasApiResponse();
 
 			fTApiAliasApiResponse.HttpResponse = _ctx.HttpResponse;
-			fTApiAliasApiResponse.Name = _ctx.StringValue("FTApiAliasApi.Name");
 			fTApiAliasApiResponse.RequestId = _ctx.StringValue("FTApiAliasApi.RequestId");
+			fTApiAliasApiResponse.Name = _ctx.StringValue("FTApiAliasApi.Name");
         
 			return fTApiAliasApiResponse;
         }

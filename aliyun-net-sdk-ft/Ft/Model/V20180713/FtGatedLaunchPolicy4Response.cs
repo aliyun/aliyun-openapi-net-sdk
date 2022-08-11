@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 	public class FtGatedLaunchPolicy4Response : AcsResponse
 	{
 
-		private string isGatedLaunch;
-
 		private string requestId;
 
-		public string IsGatedLaunch
-		{
-			get
-			{
-				return isGatedLaunch;
-			}
-			set	
-			{
-				isGatedLaunch = value;
-			}
-		}
+		private string isGatedLaunch;
 
 		public string RequestId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string IsGatedLaunch
+		{
+			get
+			{
+				return isGatedLaunch;
+			}
+			set	
+			{
+				isGatedLaunch = value;
 			}
 		}
 	}

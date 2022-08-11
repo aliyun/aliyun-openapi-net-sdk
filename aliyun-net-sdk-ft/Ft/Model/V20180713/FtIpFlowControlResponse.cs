@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 	public class FtIpFlowControlResponse : AcsResponse
 	{
 
-		private string name;
-
 		private string requestId;
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
+		private string name;
 
 		public string RequestId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
 			}
 		}
 	}
