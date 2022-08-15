@@ -48,6 +48,8 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private string duration;
 
+		private string resourceGroupId;
+
 		private string securityToken;
 
 		private int? tsdbNum;
@@ -137,6 +139,19 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			{
 				duration = value;
 				DictionaryUtil.Add(QueryParameters, "Duration", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

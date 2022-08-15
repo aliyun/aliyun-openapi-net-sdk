@@ -132,6 +132,10 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 			private bool? enableStream;
 
+			private bool? enableCompute;
+
+			private string resourceGroupId;
+
 			private List<GetLindormInstanceList_Tag> tags;
 
 			public string VpcId
@@ -335,6 +339,30 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 				set	
 				{
 					enableStream = value;
+				}
+			}
+
+			public bool? EnableCompute
+			{
+				get
+				{
+					return enableCompute;
+				}
+				set	
+				{
+					enableCompute = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 

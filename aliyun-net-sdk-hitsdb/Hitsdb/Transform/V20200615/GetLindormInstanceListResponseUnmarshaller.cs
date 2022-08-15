@@ -56,6 +56,8 @@ namespace Aliyun.Acs.hitsdb.Transform.V20200615
 				lindormInstanceSummary.InstanceStatus = _ctx.StringValue("GetLindormInstanceList.InstanceList["+ i +"].InstanceStatus");
 				lindormInstanceSummary.ExpiredMilliseconds = _ctx.LongValue("GetLindormInstanceList.InstanceList["+ i +"].ExpiredMilliseconds");
 				lindormInstanceSummary.EnableStream = _ctx.BooleanValue("GetLindormInstanceList.InstanceList["+ i +"].EnableStream");
+				lindormInstanceSummary.EnableCompute = _ctx.BooleanValue("GetLindormInstanceList.InstanceList["+ i +"].EnableCompute");
+				lindormInstanceSummary.ResourceGroupId = _ctx.StringValue("GetLindormInstanceList.InstanceList["+ i +"].ResourceGroupId");
 
 				List<GetLindormInstanceListResponse.GetLindormInstanceList_LindormInstanceSummary.GetLindormInstanceList_Tag> lindormInstanceSummary_tags = new List<GetLindormInstanceListResponse.GetLindormInstanceList_LindormInstanceSummary.GetLindormInstanceList_Tag>();
 				for (int j = 0; j < _ctx.Length("GetLindormInstanceList.InstanceList["+ i +"].Tags.Length"); j++) {
