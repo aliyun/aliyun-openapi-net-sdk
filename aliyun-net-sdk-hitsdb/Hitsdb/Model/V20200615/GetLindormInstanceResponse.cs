@@ -91,6 +91,12 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private bool? enableShs;
 
+		private string maintainStartTime;
+
+		private string maintainEndTime;
+
+		private string resourceGroupId;
+
 		private List<GetLindormInstance_Engine> engineList;
 
 		public string VpcId
@@ -486,6 +492,42 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			set	
 			{
 				enableShs = value;
+			}
+		}
+
+		public string MaintainStartTime
+		{
+			get
+			{
+				return maintainStartTime;
+			}
+			set	
+			{
+				maintainStartTime = value;
+			}
+		}
+
+		public string MaintainEndTime
+		{
+			get
+			{
+				return maintainEndTime;
+			}
+			set	
+			{
+				maintainEndTime = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
 			}
 		}
 

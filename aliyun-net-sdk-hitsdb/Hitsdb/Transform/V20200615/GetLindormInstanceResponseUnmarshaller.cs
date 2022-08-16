@@ -64,6 +64,9 @@ namespace Aliyun.Acs.hitsdb.Transform.V20200615
 			getLindormInstanceResponse.EnableCdc = _ctx.BooleanValue("GetLindormInstance.EnableCdc");
 			getLindormInstanceResponse.EnableStream = _ctx.BooleanValue("GetLindormInstance.EnableStream");
 			getLindormInstanceResponse.EnableShs = _ctx.BooleanValue("GetLindormInstance.EnableShs");
+			getLindormInstanceResponse.MaintainStartTime = _ctx.StringValue("GetLindormInstance.MaintainStartTime");
+			getLindormInstanceResponse.MaintainEndTime = _ctx.StringValue("GetLindormInstance.MaintainEndTime");
+			getLindormInstanceResponse.ResourceGroupId = _ctx.StringValue("GetLindormInstance.ResourceGroupId");
 
 			List<GetLindormInstanceResponse.GetLindormInstance_Engine> getLindormInstanceResponse_engineList = new List<GetLindormInstanceResponse.GetLindormInstance_Engine>();
 			for (int i = 0; i < _ctx.Length("GetLindormInstance.EngineList.Length"); i++) {

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 			FtParamListResponse ftParamListResponse = new FtParamListResponse();
 
 			ftParamListResponse.HttpResponse = _ctx.HttpResponse;
-			ftParamListResponse.Name = _ctx.StringValue("FtParamList.Name");
 			ftParamListResponse.RequestId = _ctx.StringValue("FtParamList.RequestId");
+			ftParamListResponse.Name = _ctx.StringValue("FtParamList.Name");
         
 			return ftParamListResponse;
         }

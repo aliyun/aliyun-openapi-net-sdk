@@ -44,7 +44,6 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 
 		private List<object> names;
 
-		[JsonProperty(PropertyName = "Names")]
 		public List<object> Names
 		{
 			get

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
@@ -25,24 +25,10 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 	public class TestHttpApiResponse : AcsResponse
 	{
 
-		private string serviceRpcSign;
-
 		private string _params;
 
-		[JsonProperty(PropertyName = "ServiceRpcSign")]
-		public string ServiceRpcSign
-		{
-			get
-			{
-				return serviceRpcSign;
-			}
-			set	
-			{
-				serviceRpcSign = value;
-			}
-		}
+		private string serviceRpcSign;
 
-		[JsonProperty(PropertyName = "_Params")]
 		public string _Params
 		{
 			get
@@ -52,6 +38,18 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			set	
 			{
 				_params = value;
+			}
+		}
+
+		public string ServiceRpcSign
+		{
+			get
+			{
+				return serviceRpcSign;
+			}
+			set	
+			{
+				serviceRpcSign = value;
 			}
 		}
 	}
