@@ -40,6 +40,8 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			Method = MethodType.POST;
         }
 
+		private string voiceSliceRecordingList;
+
 		private string conversationId;
 
 		private long? startTime;
@@ -55,6 +57,19 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 		private string filePath;
 
 		private long? instanceOwnerId;
+
+		public string VoiceSliceRecordingList
+		{
+			get
+			{
+				return voiceSliceRecordingList;
+			}
+			set	
+			{
+				voiceSliceRecordingList = value;
+				DictionaryUtil.Add(QueryParameters, "VoiceSliceRecordingList", value);
+			}
+		}
 
 		public string ConversationId
 		{

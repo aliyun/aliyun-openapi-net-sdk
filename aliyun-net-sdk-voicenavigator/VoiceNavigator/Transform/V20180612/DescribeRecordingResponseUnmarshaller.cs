@@ -34,6 +34,7 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 			describeRecordingResponse.FilePath = _ctx.StringValue("DescribeRecording.FilePath");
 			describeRecordingResponse.RequestId = _ctx.StringValue("DescribeRecording.RequestId");
 			describeRecordingResponse.FileName = _ctx.StringValue("DescribeRecording.FileName");
+			describeRecordingResponse.VoiceSliceRecordingListJson = _ctx.StringValue("DescribeRecording.VoiceSliceRecordingListJson");
         
 			return describeRecordingResponse;
         }
