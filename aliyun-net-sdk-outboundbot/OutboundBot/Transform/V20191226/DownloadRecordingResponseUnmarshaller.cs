@@ -40,6 +40,7 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DownloadRecordingResponse.DownloadRecording_DownloadParams downloadParams = new DownloadRecordingResponse.DownloadRecording_DownloadParams();
 			downloadParams.SignatureUrl = _ctx.StringValue("DownloadRecording.DownloadParams.SignatureUrl");
 			downloadParams.FileName = _ctx.StringValue("DownloadRecording.DownloadParams.FileName");
+			downloadParams.VoiceSliceRecordingListJson = _ctx.StringValue("DownloadRecording.DownloadParams.VoiceSliceRecordingListJson");
 			downloadRecordingResponse.DownloadParams = downloadParams;
         
 			return downloadRecordingResponse;

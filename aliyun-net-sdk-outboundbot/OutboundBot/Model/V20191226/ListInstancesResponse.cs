@@ -363,6 +363,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 				private string endpoint;
 
+				private string agentId;
+
 				public string AccessKey
 				{
 					get
@@ -396,6 +398,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						endpoint = value;
+					}
+				}
+
+				public string AgentId
+				{
+					get
+					{
+						return agentId;
+					}
+					set	
+					{
+						agentId = value;
 					}
 				}
 			}

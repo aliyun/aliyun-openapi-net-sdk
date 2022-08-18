@@ -54,6 +54,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string asrConfig;
 
+		private string miniPlaybackConfigListJsonString;
+
 		private string nlsConfig;
 
 		private bool? newBargeInEnable;
@@ -158,6 +160,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				asrConfig = value;
 				DictionaryUtil.Add(QueryParameters, "AsrConfig", value);
+			}
+		}
+
+		public string MiniPlaybackConfigListJsonString
+		{
+			get
+			{
+				return miniPlaybackConfigListJsonString;
+			}
+			set	
+			{
+				miniPlaybackConfigListJsonString = value;
+				DictionaryUtil.Add(QueryParameters, "MiniPlaybackConfigListJsonString", value);
 			}
 		}
 

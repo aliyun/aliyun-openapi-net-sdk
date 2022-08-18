@@ -40,9 +40,24 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			Method = MethodType.POST;
         }
 
+		private bool? needVoiceSliceRecording;
+
 		private string instanceId;
 
 		private string taskId;
+
+		public bool? NeedVoiceSliceRecording
+		{
+			get
+			{
+				return needVoiceSliceRecording;
+			}
+			set	
+			{
+				needVoiceSliceRecording = value;
+				DictionaryUtil.Add(QueryParameters, "NeedVoiceSliceRecording", value.ToString());
+			}
+		}
 
 		public string InstanceId
 		{

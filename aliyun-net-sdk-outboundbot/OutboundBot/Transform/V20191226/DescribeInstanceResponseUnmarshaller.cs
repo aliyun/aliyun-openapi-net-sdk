@@ -55,6 +55,7 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			nluProfile.AccessKey = _ctx.StringValue("DescribeInstance.Instance.NluProfile.AccessKey");
 			nluProfile.SecretKey = _ctx.StringValue("DescribeInstance.Instance.NluProfile.SecretKey");
 			nluProfile.Endpoint = _ctx.StringValue("DescribeInstance.Instance.NluProfile.Endpoint");
+			nluProfile.AgentId = _ctx.StringValue("DescribeInstance.Instance.NluProfile.AgentId");
 			instance.NluProfile = nluProfile;
 			describeInstanceResponse.Instance = instance;
         
