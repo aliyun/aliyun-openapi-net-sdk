@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			CreateVbrHaResponse createVbrHaResponse = new CreateVbrHaResponse();
 
 			createVbrHaResponse.HttpResponse = _ctx.HttpResponse;
-			createVbrHaResponse.RequestId = _ctx.StringValue("CreateVbrHa.RequestId");
 			createVbrHaResponse.VbrHaId = _ctx.StringValue("CreateVbrHa.VbrHaId");
+			createVbrHaResponse.RequestId = _ctx.StringValue("CreateVbrHa.RequestId");
         
 			return createVbrHaResponse;
         }

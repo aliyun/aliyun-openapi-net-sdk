@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,65 +25,29 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeIpv6GatewayAttributeResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string regionId;
-
-		private string ipv6GatewayId;
-
 		private string vpcId;
 
 		private string status;
 
-		private string businessStatus;
-
-		private string name;
-
-		private string description;
+		private string creationTime;
 
 		private string spec;
 
+		private string regionId;
+
 		private string instanceChargeType;
+
+		private string requestId;
+
+		private string ipv6GatewayId;
+
+		private string description;
 
 		private string expiredTime;
 
-		private string creationTime;
+		private string businessStatus;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
-
-		public string Ipv6GatewayId
-		{
-			get
-			{
-				return ipv6GatewayId;
-			}
-			set	
-			{
-				ipv6GatewayId = value;
-			}
-		}
+		private string name;
 
 		public string VpcId
 		{
@@ -109,6 +73,102 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string CreationTime
+		{
+			get
+			{
+				return creationTime;
+			}
+			set	
+			{
+				creationTime = value;
+			}
+		}
+
+		public string Spec
+		{
+			get
+			{
+				return spec;
+			}
+			set	
+			{
+				spec = value;
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+			}
+		}
+
+		public string InstanceChargeType
+		{
+			get
+			{
+				return instanceChargeType;
+			}
+			set	
+			{
+				instanceChargeType = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string Ipv6GatewayId
+		{
+			get
+			{
+				return ipv6GatewayId;
+			}
+			set	
+			{
+				ipv6GatewayId = value;
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+			}
+		}
+
+		public string ExpiredTime
+		{
+			get
+			{
+				return expiredTime;
+			}
+			set	
+			{
+				expiredTime = value;
+			}
+		}
+
 		public string BusinessStatus
 		{
 			get
@@ -130,66 +190,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				name = value;
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-			}
-		}
-
-		public string Spec
-		{
-			get
-			{
-				return spec;
-			}
-			set	
-			{
-				spec = value;
-			}
-		}
-
-		public string InstanceChargeType
-		{
-			get
-			{
-				return instanceChargeType;
-			}
-			set	
-			{
-				instanceChargeType = value;
-			}
-		}
-
-		public string ExpiredTime
-		{
-			get
-			{
-				return expiredTime;
-			}
-			set	
-			{
-				expiredTime = value;
-			}
-		}
-
-		public string CreationTime
-		{
-			get
-			{
-				return creationTime;
-			}
-			set	
-			{
-				creationTime = value;
 			}
 		}
 	}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,17 +25,29 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class GetNatGatewayConvertStatusResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string natGatewayId;
-
-		private string bid;
-
 		private long? aliUid;
+
+		private string requestId;
 
 		private string dstNatType;
 
+		private string bid;
+
+		private string natGatewayId;
+
 		private List<GetNatGatewayConvertStatus_ConvertStep> convertSteps;
+
+		public long? AliUid
+		{
+			get
+			{
+				return aliUid;
+			}
+			set	
+			{
+				aliUid = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -49,15 +61,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string NatGatewayId
+		public string DstNatType
 		{
 			get
 			{
-				return natGatewayId;
+				return dstNatType;
 			}
 			set	
 			{
-				natGatewayId = value;
+				dstNatType = value;
 			}
 		}
 
@@ -73,27 +85,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public long? AliUid
+		public string NatGatewayId
 		{
 			get
 			{
-				return aliUid;
+				return natGatewayId;
 			}
 			set	
 			{
-				aliUid = value;
-			}
-		}
-
-		public string DstNatType
-		{
-			get
-			{
-				return dstNatType;
-			}
-			set	
-			{
-				dstNatType = value;
+				natGatewayId = value;
 			}
 		}
 
@@ -112,11 +112,23 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class GetNatGatewayConvertStatus_ConvertStep
 		{
 
+			private string stepStartTime;
+
 			private string stepName;
 
 			private string stepStatus;
 
-			private string stepStartTime;
+			public string StepStartTime
+			{
+				get
+				{
+					return stepStartTime;
+				}
+				set	
+				{
+					stepStartTime = value;
+				}
+			}
 
 			public string StepName
 			{
@@ -139,18 +151,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					stepStatus = value;
-				}
-			}
-
-			public string StepStartTime
-			{
-				get
-				{
-					return stepStartTime;
-				}
-				set	
-				{
-					stepStartTime = value;
 				}
 			}
 		}

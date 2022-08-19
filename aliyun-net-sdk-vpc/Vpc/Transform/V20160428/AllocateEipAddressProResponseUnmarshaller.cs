@@ -32,10 +32,10 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 
 			allocateEipAddressProResponse.HttpResponse = _ctx.HttpResponse;
 			allocateEipAddressProResponse.RequestId = _ctx.StringValue("AllocateEipAddressPro.RequestId");
-			allocateEipAddressProResponse.AllocationId = _ctx.StringValue("AllocateEipAddressPro.AllocationId");
-			allocateEipAddressProResponse.EipAddress = _ctx.StringValue("AllocateEipAddressPro.EipAddress");
 			allocateEipAddressProResponse.OrderId = _ctx.LongValue("AllocateEipAddressPro.OrderId");
 			allocateEipAddressProResponse.ResourceGroupId = _ctx.StringValue("AllocateEipAddressPro.ResourceGroupId");
+			allocateEipAddressProResponse.EipAddress = _ctx.StringValue("AllocateEipAddressPro.EipAddress");
+			allocateEipAddressProResponse.AllocationId = _ctx.StringValue("AllocateEipAddressPro.AllocationId");
         
 			return allocateEipAddressProResponse;
         }

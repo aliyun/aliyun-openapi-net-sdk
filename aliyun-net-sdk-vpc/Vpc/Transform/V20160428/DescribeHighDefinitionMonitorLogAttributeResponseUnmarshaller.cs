@@ -31,12 +31,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeHighDefinitionMonitorLogAttributeResponse describeHighDefinitionMonitorLogAttributeResponse = new DescribeHighDefinitionMonitorLogAttributeResponse();
 
 			describeHighDefinitionMonitorLogAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			describeHighDefinitionMonitorLogAttributeResponse.LogProject = _ctx.StringValue("DescribeHighDefinitionMonitorLogAttribute.LogProject");
 			describeHighDefinitionMonitorLogAttributeResponse.RequestId = _ctx.StringValue("DescribeHighDefinitionMonitorLogAttribute.RequestId");
+			describeHighDefinitionMonitorLogAttributeResponse.LogStore = _ctx.StringValue("DescribeHighDefinitionMonitorLogAttribute.LogStore");
 			describeHighDefinitionMonitorLogAttributeResponse.Success = _ctx.StringValue("DescribeHighDefinitionMonitorLogAttribute.Success");
 			describeHighDefinitionMonitorLogAttributeResponse.InstanceId = _ctx.StringValue("DescribeHighDefinitionMonitorLogAttribute.InstanceId");
 			describeHighDefinitionMonitorLogAttributeResponse.InstanceType = _ctx.StringValue("DescribeHighDefinitionMonitorLogAttribute.InstanceType");
-			describeHighDefinitionMonitorLogAttributeResponse.LogProject = _ctx.StringValue("DescribeHighDefinitionMonitorLogAttribute.LogProject");
-			describeHighDefinitionMonitorLogAttributeResponse.LogStore = _ctx.StringValue("DescribeHighDefinitionMonitorLogAttribute.LogStore");
         
 			return describeHighDefinitionMonitorLogAttributeResponse;
         }

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			CreateCommonBandwidthPackageResponse createCommonBandwidthPackageResponse = new CreateCommonBandwidthPackageResponse();
 
 			createCommonBandwidthPackageResponse.HttpResponse = _ctx.HttpResponse;
-			createCommonBandwidthPackageResponse.RequestId = _ctx.StringValue("CreateCommonBandwidthPackage.RequestId");
 			createCommonBandwidthPackageResponse.BandwidthPackageId = _ctx.StringValue("CreateCommonBandwidthPackage.BandwidthPackageId");
+			createCommonBandwidthPackageResponse.RequestId = _ctx.StringValue("CreateCommonBandwidthPackage.RequestId");
 			createCommonBandwidthPackageResponse.ResourceGroupId = _ctx.StringValue("CreateCommonBandwidthPackage.ResourceGroupId");
         
 			return createCommonBandwidthPackageResponse;

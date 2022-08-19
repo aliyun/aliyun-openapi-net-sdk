@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeEipGatewayInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string code;
 
 		private string message;
 
-		private List<DescribeEipGatewayInfo_EipInfo> eipInfos;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeEipGatewayInfo_EipInfo> eipInfos;
 
 		public string Code
 		{
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string description;
 
+		private bool? icmpReplyEnabled;
+
 		private string natGatewayId;
 
 		private string resourceOwnerAccount;
@@ -77,6 +79,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public bool? IcmpReplyEnabled
+		{
+			get
+			{
+				return icmpReplyEnabled;
+			}
+			set	
+			{
+				icmpReplyEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "IcmpReplyEnabled", value.ToString());
 			}
 		}
 

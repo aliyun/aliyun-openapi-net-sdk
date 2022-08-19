@@ -92,10 +92,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set
 			{
 				ipInstanceIdss = value;
-				for (int i = 0; i < ipInstanceIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"IpInstanceIds." + (i + 1) , ipInstanceIdss[i]);
-				}
 			}
 		}
 

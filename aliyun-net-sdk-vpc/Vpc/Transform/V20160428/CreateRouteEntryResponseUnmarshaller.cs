@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			CreateRouteEntryResponse createRouteEntryResponse = new CreateRouteEntryResponse();
 
 			createRouteEntryResponse.HttpResponse = _ctx.HttpResponse;
-			createRouteEntryResponse.RequestId = _ctx.StringValue("CreateRouteEntry.RequestId");
 			createRouteEntryResponse.RouteEntryId = _ctx.StringValue("CreateRouteEntry.RouteEntryId");
+			createRouteEntryResponse.RequestId = _ctx.StringValue("CreateRouteEntry.RequestId");
         
 			return createRouteEntryResponse;
         }

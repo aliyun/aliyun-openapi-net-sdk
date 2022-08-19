@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string ipAddress;
 
+		private string authKey;
+
 		private long? resourceOwnerId;
 
 		private string clientToken;
@@ -68,6 +70,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ipAddress = value;
 				DictionaryUtil.Add(QueryParameters, "IpAddress", value);
+			}
+		}
+
+		public string AuthKey
+		{
+			get
+			{
+				return authKey;
+			}
+			set	
+			{
+				authKey = value;
+				DictionaryUtil.Add(QueryParameters, "AuthKey", value);
 			}
 		}
 

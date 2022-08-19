@@ -33,6 +33,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			createRouteTableResponse.HttpResponse = _ctx.HttpResponse;
 			createRouteTableResponse.RequestId = _ctx.StringValue("CreateRouteTable.RequestId");
 			createRouteTableResponse.RouteTableId = _ctx.StringValue("CreateRouteTable.RouteTableId");
+			createRouteTableResponse.AssociateType = _ctx.StringValue("CreateRouteTable.AssociateType");
         
 			return createRouteTableResponse;
         }

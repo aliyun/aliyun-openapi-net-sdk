@@ -31,21 +31,21 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeSnatTableEntriesResponse describeSnatTableEntriesResponse = new DescribeSnatTableEntriesResponse();
 
 			describeSnatTableEntriesResponse.HttpResponse = _ctx.HttpResponse;
-			describeSnatTableEntriesResponse.RequestId = _ctx.StringValue("DescribeSnatTableEntries.RequestId");
-			describeSnatTableEntriesResponse.TotalCount = _ctx.IntegerValue("DescribeSnatTableEntries.TotalCount");
-			describeSnatTableEntriesResponse.PageNumber = _ctx.IntegerValue("DescribeSnatTableEntries.PageNumber");
 			describeSnatTableEntriesResponse.PageSize = _ctx.IntegerValue("DescribeSnatTableEntries.PageSize");
+			describeSnatTableEntriesResponse.RequestId = _ctx.StringValue("DescribeSnatTableEntries.RequestId");
+			describeSnatTableEntriesResponse.PageNumber = _ctx.IntegerValue("DescribeSnatTableEntries.PageNumber");
+			describeSnatTableEntriesResponse.TotalCount = _ctx.IntegerValue("DescribeSnatTableEntries.TotalCount");
 
 			List<DescribeSnatTableEntriesResponse.DescribeSnatTableEntries_SnatTableEntry> describeSnatTableEntriesResponse_snatTableEntries = new List<DescribeSnatTableEntriesResponse.DescribeSnatTableEntries_SnatTableEntry>();
 			for (int i = 0; i < _ctx.Length("DescribeSnatTableEntries.SnatTableEntries.Length"); i++) {
 				DescribeSnatTableEntriesResponse.DescribeSnatTableEntries_SnatTableEntry snatTableEntry = new DescribeSnatTableEntriesResponse.DescribeSnatTableEntries_SnatTableEntry();
-				snatTableEntry.SnatTableId = _ctx.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].SnatTableId");
-				snatTableEntry.SnatEntryId = _ctx.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].SnatEntryId");
-				snatTableEntry.SourceVSwitchId = _ctx.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].SourceVSwitchId");
-				snatTableEntry.SourceCIDR = _ctx.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].SourceCIDR");
-				snatTableEntry.SnatIp = _ctx.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].SnatIp");
 				snatTableEntry.Status = _ctx.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].Status");
 				snatTableEntry.SnatEntryName = _ctx.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].SnatEntryName");
+				snatTableEntry.SourceVSwitchId = _ctx.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].SourceVSwitchId");
+				snatTableEntry.SourceCIDR = _ctx.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].SourceCIDR");
+				snatTableEntry.SnatEntryId = _ctx.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].SnatEntryId");
+				snatTableEntry.SnatTableId = _ctx.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].SnatTableId");
+				snatTableEntry.SnatIp = _ctx.StringValue("DescribeSnatTableEntries.SnatTableEntries["+ i +"].SnatIp");
 
 				describeSnatTableEntriesResponse_snatTableEntries.Add(snatTableEntry);
 			}

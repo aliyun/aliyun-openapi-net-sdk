@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeCommonBandwidthPackagesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeCommonBandwidthPackages_CommonBandwidthPackage> commonBandwidthPackages;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,59 +98,145 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeCommonBandwidthPackages_CommonBandwidthPackage
 		{
 
-			private string bandwidthPackageId;
+			private string reservationActiveTime;
+
+			private string status;
+
+			private string creationTime;
+
+			private string reservationOrderType;
+
+			private bool? deletionProtection;
+
+			private string reservationInternetChargeType;
+
+			private int? ratio;
+
+			private string instanceChargeType;
 
 			private string regionId;
 
-			private string name;
+			private string bandwidthPackageId;
 
-			private string description;
+			private int? serviceManaged;
 
 			private string bandwidth;
 
-			private string instanceChargeType;
+			private string description;
+
+			private string expiredTime;
+
+			private string reservationBandwidth;
+
+			private string resourceGroupId;
 
 			private string internetChargeType;
 
 			private string businessStatus;
 
-			private string creationTime;
-
-			private string expiredTime;
-
-			private string status;
-
-			private int? ratio;
-
-			private string resourceGroupId;
-
-			private string hasReservationData;
-
-			private string reservationBandwidth;
-
-			private string reservationInternetChargeType;
-
-			private string reservationActiveTime;
-
-			private string reservationOrderType;
+			private string name;
 
 			private string iSP;
 
-			private bool? deletionProtection;
-
-			private int? serviceManaged;
+			private string hasReservationData;
 
 			private List<DescribeCommonBandwidthPackages_PublicIpAddresse> publicIpAddresses;
 
-			public string BandwidthPackageId
+			private List<string> securityProtectionTypes;
+
+			public string ReservationActiveTime
 			{
 				get
 				{
-					return bandwidthPackageId;
+					return reservationActiveTime;
 				}
 				set	
 				{
-					bandwidthPackageId = value;
+					reservationActiveTime = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
+				}
+			}
+
+			public string ReservationOrderType
+			{
+				get
+				{
+					return reservationOrderType;
+				}
+				set	
+				{
+					reservationOrderType = value;
+				}
+			}
+
+			public bool? DeletionProtection
+			{
+				get
+				{
+					return deletionProtection;
+				}
+				set	
+				{
+					deletionProtection = value;
+				}
+			}
+
+			public string ReservationInternetChargeType
+			{
+				get
+				{
+					return reservationInternetChargeType;
+				}
+				set	
+				{
+					reservationInternetChargeType = value;
+				}
+			}
+
+			public int? Ratio
+			{
+				get
+				{
+					return ratio;
+				}
+				set	
+				{
+					ratio = value;
+				}
+			}
+
+			public string InstanceChargeType
+			{
+				get
+				{
+					return instanceChargeType;
+				}
+				set	
+				{
+					instanceChargeType = value;
 				}
 			}
 
@@ -166,27 +252,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Name
+			public string BandwidthPackageId
 			{
 				get
 				{
-					return name;
+					return bandwidthPackageId;
 				}
 				set	
 				{
-					name = value;
+					bandwidthPackageId = value;
 				}
 			}
 
-			public string Description
+			public int? ServiceManaged
 			{
 				get
 				{
-					return description;
+					return serviceManaged;
 				}
 				set	
 				{
-					description = value;
+					serviceManaged = value;
 				}
 			}
 
@@ -202,15 +288,51 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string InstanceChargeType
+			public string Description
 			{
 				get
 				{
-					return instanceChargeType;
+					return description;
 				}
 				set	
 				{
-					instanceChargeType = value;
+					description = value;
+				}
+			}
+
+			public string ExpiredTime
+			{
+				get
+				{
+					return expiredTime;
+				}
+				set	
+				{
+					expiredTime = value;
+				}
+			}
+
+			public string ReservationBandwidth
+			{
+				get
+				{
+					return reservationBandwidth;
+				}
+				set	
+				{
+					reservationBandwidth = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 
@@ -238,123 +360,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string CreationTime
+			public string Name
 			{
 				get
 				{
-					return creationTime;
+					return name;
 				}
 				set	
 				{
-					creationTime = value;
-				}
-			}
-
-			public string ExpiredTime
-			{
-				get
-				{
-					return expiredTime;
-				}
-				set	
-				{
-					expiredTime = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public int? Ratio
-			{
-				get
-				{
-					return ratio;
-				}
-				set	
-				{
-					ratio = value;
-				}
-			}
-
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
-				}
-			}
-
-			public string HasReservationData
-			{
-				get
-				{
-					return hasReservationData;
-				}
-				set	
-				{
-					hasReservationData = value;
-				}
-			}
-
-			public string ReservationBandwidth
-			{
-				get
-				{
-					return reservationBandwidth;
-				}
-				set	
-				{
-					reservationBandwidth = value;
-				}
-			}
-
-			public string ReservationInternetChargeType
-			{
-				get
-				{
-					return reservationInternetChargeType;
-				}
-				set	
-				{
-					reservationInternetChargeType = value;
-				}
-			}
-
-			public string ReservationActiveTime
-			{
-				get
-				{
-					return reservationActiveTime;
-				}
-				set	
-				{
-					reservationActiveTime = value;
-				}
-			}
-
-			public string ReservationOrderType
-			{
-				get
-				{
-					return reservationOrderType;
-				}
-				set	
-				{
-					reservationOrderType = value;
+					name = value;
 				}
 			}
 
@@ -370,27 +384,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public bool? DeletionProtection
+			public string HasReservationData
 			{
 				get
 				{
-					return deletionProtection;
+					return hasReservationData;
 				}
 				set	
 				{
-					deletionProtection = value;
-				}
-			}
-
-			public int? ServiceManaged
-			{
-				get
-				{
-					return serviceManaged;
-				}
-				set	
-				{
-					serviceManaged = value;
+					hasReservationData = value;
 				}
 			}
 
@@ -406,26 +408,26 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public List<string> SecurityProtectionTypes
+			{
+				get
+				{
+					return securityProtectionTypes;
+				}
+				set	
+				{
+					securityProtectionTypes = value;
+				}
+			}
+
 			public class DescribeCommonBandwidthPackages_PublicIpAddresse
 			{
 
-				private string allocationId;
-
 				private string ipAddress;
 
-				private string bandwidthPackageIpRelationStatus;
+				private string allocationId;
 
-				public string AllocationId
-				{
-					get
-					{
-						return allocationId;
-					}
-					set	
-					{
-						allocationId = value;
-					}
-				}
+				private string bandwidthPackageIpRelationStatus;
 
 				public string IpAddress
 				{
@@ -436,6 +438,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						ipAddress = value;
+					}
+				}
+
+				public string AllocationId
+				{
+					get
+					{
+						return allocationId;
+					}
+					set	
+					{
+						allocationId = value;
 					}
 				}
 

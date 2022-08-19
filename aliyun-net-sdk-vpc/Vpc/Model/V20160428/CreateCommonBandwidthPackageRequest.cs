@@ -64,6 +64,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string name;
 
+		private List<string> securityProtectionTypess = new List<string>(){ };
+
 		private int? ratio;
 
 		public long? ResourceOwnerId
@@ -219,6 +221,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public List<string> SecurityProtectionTypess
+		{
+			get
+			{
+				return securityProtectionTypess;
+			}
+
+			set
+			{
+				securityProtectionTypess = value;
 			}
 		}
 

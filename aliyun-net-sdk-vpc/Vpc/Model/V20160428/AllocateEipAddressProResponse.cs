@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -27,13 +27,13 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string requestId;
 
-		private string allocationId;
-
-		private string eipAddress;
-
 		private long? orderId;
 
 		private string resourceGroupId;
+
+		private string eipAddress;
+
+		private string allocationId;
 
 		public string RequestId
 		{
@@ -44,30 +44,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string AllocationId
-		{
-			get
-			{
-				return allocationId;
-			}
-			set	
-			{
-				allocationId = value;
-			}
-		}
-
-		public string EipAddress
-		{
-			get
-			{
-				return eipAddress;
-			}
-			set	
-			{
-				eipAddress = value;
 			}
 		}
 
@@ -92,6 +68,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				resourceGroupId = value;
+			}
+		}
+
+		public string EipAddress
+		{
+			get
+			{
+				return eipAddress;
+			}
+			set	
+			{
+				eipAddress = value;
+			}
+		}
+
+		public string AllocationId
+		{
+			get
+			{
+				return allocationId;
+			}
+			set	
+			{
+				allocationId = value;
 			}
 		}
 	}

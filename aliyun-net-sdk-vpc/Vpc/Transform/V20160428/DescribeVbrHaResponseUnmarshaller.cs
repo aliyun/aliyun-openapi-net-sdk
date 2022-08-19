@@ -31,15 +31,15 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeVbrHaResponse describeVbrHaResponse = new DescribeVbrHaResponse();
 
 			describeVbrHaResponse.HttpResponse = _ctx.HttpResponse;
-			describeVbrHaResponse.RequestId = _ctx.StringValue("DescribeVbrHa.RequestId");
-			describeVbrHaResponse.VbrHaId = _ctx.StringValue("DescribeVbrHa.VbrHaId");
-			describeVbrHaResponse.RegionId = _ctx.StringValue("DescribeVbrHa.RegionId");
-			describeVbrHaResponse.Name = _ctx.StringValue("DescribeVbrHa.Name");
-			describeVbrHaResponse.Description = _ctx.StringValue("DescribeVbrHa.Description");
-			describeVbrHaResponse.Status = _ctx.StringValue("DescribeVbrHa.Status");
-			describeVbrHaResponse.VbrId = _ctx.StringValue("DescribeVbrHa.VbrId");
 			describeVbrHaResponse.CreationTime = _ctx.StringValue("DescribeVbrHa.CreationTime");
+			describeVbrHaResponse.Status = _ctx.StringValue("DescribeVbrHa.Status");
+			describeVbrHaResponse.RequestId = _ctx.StringValue("DescribeVbrHa.RequestId");
+			describeVbrHaResponse.Description = _ctx.StringValue("DescribeVbrHa.Description");
+			describeVbrHaResponse.VbrHaId = _ctx.StringValue("DescribeVbrHa.VbrHaId");
 			describeVbrHaResponse.PeerVbrId = _ctx.StringValue("DescribeVbrHa.PeerVbrId");
+			describeVbrHaResponse.Name = _ctx.StringValue("DescribeVbrHa.Name");
+			describeVbrHaResponse.VbrId = _ctx.StringValue("DescribeVbrHa.VbrId");
+			describeVbrHaResponse.RegionId = _ctx.StringValue("DescribeVbrHa.RegionId");
         
 			return describeVbrHaResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class CreateIpv6GatewayResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string ipv6GatewayId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string Ipv6GatewayId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				ipv6GatewayId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

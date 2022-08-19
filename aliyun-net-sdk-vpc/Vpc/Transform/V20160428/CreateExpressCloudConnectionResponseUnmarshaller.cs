@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			CreateExpressCloudConnectionResponse createExpressCloudConnectionResponse = new CreateExpressCloudConnectionResponse();
 
 			createExpressCloudConnectionResponse.HttpResponse = _ctx.HttpResponse;
-			createExpressCloudConnectionResponse.RequestId = _ctx.StringValue("CreateExpressCloudConnection.RequestId");
 			createExpressCloudConnectionResponse.EccId = _ctx.StringValue("CreateExpressCloudConnection.EccId");
+			createExpressCloudConnectionResponse.RequestId = _ctx.StringValue("CreateExpressCloudConnection.RequestId");
         
 			return createExpressCloudConnectionResponse;
         }

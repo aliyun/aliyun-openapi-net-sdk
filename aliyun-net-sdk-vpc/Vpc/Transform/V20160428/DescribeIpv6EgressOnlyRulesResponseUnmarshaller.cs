@@ -31,20 +31,20 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeIpv6EgressOnlyRulesResponse describeIpv6EgressOnlyRulesResponse = new DescribeIpv6EgressOnlyRulesResponse();
 
 			describeIpv6EgressOnlyRulesResponse.HttpResponse = _ctx.HttpResponse;
-			describeIpv6EgressOnlyRulesResponse.RequestId = _ctx.StringValue("DescribeIpv6EgressOnlyRules.RequestId");
-			describeIpv6EgressOnlyRulesResponse.TotalCount = _ctx.IntegerValue("DescribeIpv6EgressOnlyRules.TotalCount");
-			describeIpv6EgressOnlyRulesResponse.PageNumber = _ctx.IntegerValue("DescribeIpv6EgressOnlyRules.PageNumber");
 			describeIpv6EgressOnlyRulesResponse.PageSize = _ctx.IntegerValue("DescribeIpv6EgressOnlyRules.PageSize");
+			describeIpv6EgressOnlyRulesResponse.RequestId = _ctx.StringValue("DescribeIpv6EgressOnlyRules.RequestId");
+			describeIpv6EgressOnlyRulesResponse.PageNumber = _ctx.IntegerValue("DescribeIpv6EgressOnlyRules.PageNumber");
+			describeIpv6EgressOnlyRulesResponse.TotalCount = _ctx.IntegerValue("DescribeIpv6EgressOnlyRules.TotalCount");
 
 			List<DescribeIpv6EgressOnlyRulesResponse.DescribeIpv6EgressOnlyRules_Ipv6EgressOnlyRule> describeIpv6EgressOnlyRulesResponse_ipv6EgressOnlyRules = new List<DescribeIpv6EgressOnlyRulesResponse.DescribeIpv6EgressOnlyRules_Ipv6EgressOnlyRule>();
 			for (int i = 0; i < _ctx.Length("DescribeIpv6EgressOnlyRules.Ipv6EgressOnlyRules.Length"); i++) {
 				DescribeIpv6EgressOnlyRulesResponse.DescribeIpv6EgressOnlyRules_Ipv6EgressOnlyRule ipv6EgressOnlyRule = new DescribeIpv6EgressOnlyRulesResponse.DescribeIpv6EgressOnlyRules_Ipv6EgressOnlyRule();
-				ipv6EgressOnlyRule.Ipv6EgressOnlyRuleId = _ctx.StringValue("DescribeIpv6EgressOnlyRules.Ipv6EgressOnlyRules["+ i +"].Ipv6EgressOnlyRuleId");
-				ipv6EgressOnlyRule.InstanceType = _ctx.StringValue("DescribeIpv6EgressOnlyRules.Ipv6EgressOnlyRules["+ i +"].InstanceType");
-				ipv6EgressOnlyRule.InstanceId = _ctx.StringValue("DescribeIpv6EgressOnlyRules.Ipv6EgressOnlyRules["+ i +"].InstanceId");
 				ipv6EgressOnlyRule.Status = _ctx.StringValue("DescribeIpv6EgressOnlyRules.Ipv6EgressOnlyRules["+ i +"].Status");
-				ipv6EgressOnlyRule.Name = _ctx.StringValue("DescribeIpv6EgressOnlyRules.Ipv6EgressOnlyRules["+ i +"].Name");
 				ipv6EgressOnlyRule.Description = _ctx.StringValue("DescribeIpv6EgressOnlyRules.Ipv6EgressOnlyRules["+ i +"].Description");
+				ipv6EgressOnlyRule.Ipv6EgressOnlyRuleId = _ctx.StringValue("DescribeIpv6EgressOnlyRules.Ipv6EgressOnlyRules["+ i +"].Ipv6EgressOnlyRuleId");
+				ipv6EgressOnlyRule.InstanceId = _ctx.StringValue("DescribeIpv6EgressOnlyRules.Ipv6EgressOnlyRules["+ i +"].InstanceId");
+				ipv6EgressOnlyRule.InstanceType = _ctx.StringValue("DescribeIpv6EgressOnlyRules.Ipv6EgressOnlyRules["+ i +"].InstanceType");
+				ipv6EgressOnlyRule.Name = _ctx.StringValue("DescribeIpv6EgressOnlyRules.Ipv6EgressOnlyRules["+ i +"].Name");
 
 				describeIpv6EgressOnlyRulesResponse_ipv6EgressOnlyRules.Add(ipv6EgressOnlyRule);
 			}

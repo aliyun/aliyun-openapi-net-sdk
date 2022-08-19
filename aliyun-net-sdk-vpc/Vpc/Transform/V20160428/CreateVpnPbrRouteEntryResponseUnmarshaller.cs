@@ -31,16 +31,16 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			CreateVpnPbrRouteEntryResponse createVpnPbrRouteEntryResponse = new CreateVpnPbrRouteEntryResponse();
 
 			createVpnPbrRouteEntryResponse.HttpResponse = _ctx.HttpResponse;
-			createVpnPbrRouteEntryResponse.RequestId = _ctx.StringValue("CreateVpnPbrRouteEntry.RequestId");
-			createVpnPbrRouteEntryResponse.VpnInstanceId = _ctx.StringValue("CreateVpnPbrRouteEntry.VpnInstanceId");
-			createVpnPbrRouteEntryResponse.RouteSource = _ctx.StringValue("CreateVpnPbrRouteEntry.RouteSource");
-			createVpnPbrRouteEntryResponse.RouteDest = _ctx.StringValue("CreateVpnPbrRouteEntry.RouteDest");
 			createVpnPbrRouteEntryResponse.NextHop = _ctx.StringValue("CreateVpnPbrRouteEntry.NextHop");
 			createVpnPbrRouteEntryResponse.Weight = _ctx.IntegerValue("CreateVpnPbrRouteEntry.Weight");
-			createVpnPbrRouteEntryResponse.OverlayMode = _ctx.StringValue("CreateVpnPbrRouteEntry.OverlayMode");
+			createVpnPbrRouteEntryResponse.RouteDest = _ctx.StringValue("CreateVpnPbrRouteEntry.RouteDest");
+			createVpnPbrRouteEntryResponse.RequestId = _ctx.StringValue("CreateVpnPbrRouteEntry.RequestId");
 			createVpnPbrRouteEntryResponse.Description = _ctx.StringValue("CreateVpnPbrRouteEntry.Description");
 			createVpnPbrRouteEntryResponse.State = _ctx.StringValue("CreateVpnPbrRouteEntry.State");
 			createVpnPbrRouteEntryResponse.CreateTime = _ctx.LongValue("CreateVpnPbrRouteEntry.CreateTime");
+			createVpnPbrRouteEntryResponse.OverlayMode = _ctx.StringValue("CreateVpnPbrRouteEntry.OverlayMode");
+			createVpnPbrRouteEntryResponse.RouteSource = _ctx.StringValue("CreateVpnPbrRouteEntry.RouteSource");
+			createVpnPbrRouteEntryResponse.VpnInstanceId = _ctx.StringValue("CreateVpnPbrRouteEntry.VpnInstanceId");
         
 			return createVpnPbrRouteEntryResponse;
         }

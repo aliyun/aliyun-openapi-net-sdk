@@ -34,26 +34,26 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			describeNetworkAclAttributesResponse.RequestId = _ctx.StringValue("DescribeNetworkAclAttributes.RequestId");
 
 			DescribeNetworkAclAttributesResponse.DescribeNetworkAclAttributes_NetworkAclAttribute networkAclAttribute = new DescribeNetworkAclAttributesResponse.DescribeNetworkAclAttributes_NetworkAclAttribute();
-			networkAclAttribute.NetworkAclId = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.NetworkAclId");
-			networkAclAttribute.RegionId = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.RegionId");
-			networkAclAttribute.NetworkAclName = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.NetworkAclName");
-			networkAclAttribute.Description = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.Description");
+			networkAclAttribute.Status = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.Status");
 			networkAclAttribute.VpcId = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.VpcId");
 			networkAclAttribute.CreationTime = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.CreationTime");
-			networkAclAttribute.Status = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.Status");
+			networkAclAttribute.Description = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.Description");
+			networkAclAttribute.NetworkAclName = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.NetworkAclName");
+			networkAclAttribute.NetworkAclId = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.NetworkAclId");
 			networkAclAttribute.OwnerId = _ctx.LongValue("DescribeNetworkAclAttributes.NetworkAclAttribute.OwnerId");
+			networkAclAttribute.RegionId = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.RegionId");
 
 			List<DescribeNetworkAclAttributesResponse.DescribeNetworkAclAttributes_NetworkAclAttribute.DescribeNetworkAclAttributes_IngressAclEntry> networkAclAttribute_ingressAclEntries = new List<DescribeNetworkAclAttributesResponse.DescribeNetworkAclAttributes_NetworkAclAttribute.DescribeNetworkAclAttributes_IngressAclEntry>();
 			for (int i = 0; i < _ctx.Length("DescribeNetworkAclAttributes.NetworkAclAttribute.IngressAclEntries.Length"); i++) {
 				DescribeNetworkAclAttributesResponse.DescribeNetworkAclAttributes_NetworkAclAttribute.DescribeNetworkAclAttributes_IngressAclEntry ingressAclEntry = new DescribeNetworkAclAttributesResponse.DescribeNetworkAclAttributes_NetworkAclAttribute.DescribeNetworkAclAttributes_IngressAclEntry();
 				ingressAclEntry.NetworkAclEntryId = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.IngressAclEntries["+ i +"].NetworkAclEntryId");
-				ingressAclEntry.Policy = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.IngressAclEntries["+ i +"].Policy");
-				ingressAclEntry.Protocol = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.IngressAclEntries["+ i +"].Protocol");
-				ingressAclEntry.SourceCidrIp = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.IngressAclEntries["+ i +"].SourceCidrIp");
-				ingressAclEntry.Port = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.IngressAclEntries["+ i +"].Port");
 				ingressAclEntry.EntryType = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.IngressAclEntries["+ i +"].EntryType");
 				ingressAclEntry.NetworkAclEntryName = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.IngressAclEntries["+ i +"].NetworkAclEntryName");
+				ingressAclEntry.Policy = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.IngressAclEntries["+ i +"].Policy");
 				ingressAclEntry.Description = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.IngressAclEntries["+ i +"].Description");
+				ingressAclEntry.SourceCidrIp = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.IngressAclEntries["+ i +"].SourceCidrIp");
+				ingressAclEntry.Protocol = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.IngressAclEntries["+ i +"].Protocol");
+				ingressAclEntry.Port = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.IngressAclEntries["+ i +"].Port");
 
 				networkAclAttribute_ingressAclEntries.Add(ingressAclEntry);
 			}
@@ -63,13 +63,13 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			for (int i = 0; i < _ctx.Length("DescribeNetworkAclAttributes.NetworkAclAttribute.EgressAclEntries.Length"); i++) {
 				DescribeNetworkAclAttributesResponse.DescribeNetworkAclAttributes_NetworkAclAttribute.DescribeNetworkAclAttributes_EgressAclEntry egressAclEntry = new DescribeNetworkAclAttributesResponse.DescribeNetworkAclAttributes_NetworkAclAttribute.DescribeNetworkAclAttributes_EgressAclEntry();
 				egressAclEntry.NetworkAclEntryId = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.EgressAclEntries["+ i +"].NetworkAclEntryId");
+				egressAclEntry.EntryType = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.EgressAclEntries["+ i +"].EntryType");
+				egressAclEntry.NetworkAclEntryName = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.EgressAclEntries["+ i +"].NetworkAclEntryName");
 				egressAclEntry.Policy = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.EgressAclEntries["+ i +"].Policy");
+				egressAclEntry.Description = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.EgressAclEntries["+ i +"].Description");
 				egressAclEntry.Protocol = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.EgressAclEntries["+ i +"].Protocol");
 				egressAclEntry.DestinationCidrIp = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.EgressAclEntries["+ i +"].DestinationCidrIp");
 				egressAclEntry.Port = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.EgressAclEntries["+ i +"].Port");
-				egressAclEntry.EntryType = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.EgressAclEntries["+ i +"].EntryType");
-				egressAclEntry.Description = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.EgressAclEntries["+ i +"].Description");
-				egressAclEntry.NetworkAclEntryName = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.EgressAclEntries["+ i +"].NetworkAclEntryName");
 
 				networkAclAttribute_egressAclEntries.Add(egressAclEntry);
 			}
@@ -78,9 +78,9 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			List<DescribeNetworkAclAttributesResponse.DescribeNetworkAclAttributes_NetworkAclAttribute.DescribeNetworkAclAttributes_Resource> networkAclAttribute_resources = new List<DescribeNetworkAclAttributesResponse.DescribeNetworkAclAttributes_NetworkAclAttribute.DescribeNetworkAclAttributes_Resource>();
 			for (int i = 0; i < _ctx.Length("DescribeNetworkAclAttributes.NetworkAclAttribute.Resources.Length"); i++) {
 				DescribeNetworkAclAttributesResponse.DescribeNetworkAclAttributes_NetworkAclAttribute.DescribeNetworkAclAttributes_Resource resource = new DescribeNetworkAclAttributesResponse.DescribeNetworkAclAttributes_NetworkAclAttribute.DescribeNetworkAclAttributes_Resource();
-				resource.ResourceId = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.Resources["+ i +"].ResourceId");
-				resource.ResourceType = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.Resources["+ i +"].ResourceType");
 				resource.Status = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.Resources["+ i +"].Status");
+				resource.ResourceType = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.Resources["+ i +"].ResourceType");
+				resource.ResourceId = _ctx.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.Resources["+ i +"].ResourceId");
 
 				networkAclAttribute_resources.Add(resource);
 			}

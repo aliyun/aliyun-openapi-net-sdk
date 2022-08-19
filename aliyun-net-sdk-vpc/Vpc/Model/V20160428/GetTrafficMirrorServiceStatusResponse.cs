@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class GetTrafficMirrorServiceStatusResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? enabled;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public bool? Enabled
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				enabled = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

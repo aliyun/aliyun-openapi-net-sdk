@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class CreateNetworkAclResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string networkAclId;
 
-		private CreateNetworkAcl_NetworkAclAttribute networkAclAttribute;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private CreateNetworkAcl_NetworkAclAttribute networkAclAttribute;
 
 		public string NetworkAclId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				networkAclId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,19 +70,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class CreateNetworkAcl_NetworkAclAttribute
 		{
 
-			private string networkAclId;
-
-			private string regionId;
-
-			private string networkAclName;
-
-			private string description;
+			private string status;
 
 			private string vpcId;
 
 			private string creationTime;
 
-			private string status;
+			private string description;
+
+			private string networkAclName;
+
+			private string networkAclId;
+
+			private string regionId;
 
 			private List<CreateNetworkAcl_IngressAclEntry> ingressAclEntries;
 
@@ -90,51 +90,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private List<CreateNetworkAcl_Resource> resources;
 
-			public string NetworkAclId
+			public string Status
 			{
 				get
 				{
-					return networkAclId;
+					return status;
 				}
 				set	
 				{
-					networkAclId = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string NetworkAclName
-			{
-				get
-				{
-					return networkAclName;
-				}
-				set	
-				{
-					networkAclName = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
+					status = value;
 				}
 			}
 
@@ -162,15 +126,51 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Status
+			public string Description
 			{
 				get
 				{
-					return status;
+					return description;
 				}
 				set	
 				{
-					status = value;
+					description = value;
+				}
+			}
+
+			public string NetworkAclName
+			{
+				get
+				{
+					return networkAclName;
+				}
+				set	
+				{
+					networkAclName = value;
+				}
+			}
+
+			public string NetworkAclId
+			{
+				get
+				{
+					return networkAclId;
+				}
+				set	
+				{
+					networkAclId = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 
@@ -215,19 +215,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 				private string networkAclEntryId;
 
-				private string policy;
-
-				private string protocol;
-
-				private string sourceCidrIp;
-
-				private string port;
-
 				private string entryType;
 
 				private string networkAclEntryName;
 
+				private string policy;
+
 				private string description;
+
+				private string sourceCidrIp;
+
+				private string protocol;
+
+				private string port;
 
 				public string NetworkAclEntryId
 				{
@@ -238,54 +238,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						networkAclEntryId = value;
-					}
-				}
-
-				public string Policy
-				{
-					get
-					{
-						return policy;
-					}
-					set	
-					{
-						policy = value;
-					}
-				}
-
-				public string Protocol
-				{
-					get
-					{
-						return protocol;
-					}
-					set	
-					{
-						protocol = value;
-					}
-				}
-
-				public string SourceCidrIp
-				{
-					get
-					{
-						return sourceCidrIp;
-					}
-					set	
-					{
-						sourceCidrIp = value;
-					}
-				}
-
-				public string Port
-				{
-					get
-					{
-						return port;
-					}
-					set	
-					{
-						port = value;
 					}
 				}
 
@@ -313,6 +265,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
+				public string Policy
+				{
+					get
+					{
+						return policy;
+					}
+					set	
+					{
+						policy = value;
+					}
+				}
+
 				public string Description
 				{
 					get
@@ -324,6 +288,42 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 						description = value;
 					}
 				}
+
+				public string SourceCidrIp
+				{
+					get
+					{
+						return sourceCidrIp;
+					}
+					set	
+					{
+						sourceCidrIp = value;
+					}
+				}
+
+				public string Protocol
+				{
+					get
+					{
+						return protocol;
+					}
+					set	
+					{
+						protocol = value;
+					}
+				}
+
+				public string Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
+					}
+				}
 			}
 
 			public class CreateNetworkAcl_EgressAclEntry
@@ -331,19 +331,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 				private string networkAclEntryId;
 
+				private string entryType;
+
+				private string networkAclEntryName;
+
 				private string policy;
+
+				private string description;
 
 				private string protocol;
 
 				private string destinationCidrIp;
 
 				private string port;
-
-				private string entryType;
-
-				private string description;
-
-				private string networkAclEntryName;
 
 				public string NetworkAclEntryId
 				{
@@ -357,6 +357,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
+				public string EntryType
+				{
+					get
+					{
+						return entryType;
+					}
+					set	
+					{
+						entryType = value;
+					}
+				}
+
+				public string NetworkAclEntryName
+				{
+					get
+					{
+						return networkAclEntryName;
+					}
+					set	
+					{
+						networkAclEntryName = value;
+					}
+				}
+
 				public string Policy
 				{
 					get
@@ -366,6 +390,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						policy = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
 					}
 				}
 
@@ -404,62 +440,26 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 						port = value;
 					}
 				}
-
-				public string EntryType
-				{
-					get
-					{
-						return entryType;
-					}
-					set	
-					{
-						entryType = value;
-					}
-				}
-
-				public string Description
-				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
-					}
-				}
-
-				public string NetworkAclEntryName
-				{
-					get
-					{
-						return networkAclEntryName;
-					}
-					set	
-					{
-						networkAclEntryName = value;
-					}
-				}
 			}
 
 			public class CreateNetworkAcl_Resource
 			{
 
-				private string resourceId;
+				private string status;
 
 				private string resourceType;
 
-				private string status;
+				private string resourceId;
 
-				public string ResourceId
+				public string Status
 				{
 					get
 					{
-						return resourceId;
+						return status;
 					}
 					set	
 					{
-						resourceId = value;
+						status = value;
 					}
 				}
 
@@ -475,15 +475,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
-				public string Status
+				public string ResourceId
 				{
 					get
 					{
-						return status;
+						return resourceId;
 					}
 					set	
 					{
-						status = value;
+						resourceId = value;
 					}
 				}
 			}

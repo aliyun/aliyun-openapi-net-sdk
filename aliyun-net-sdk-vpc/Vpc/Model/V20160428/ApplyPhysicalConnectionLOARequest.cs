@@ -64,7 +64,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string companyName;
 
-		private List<PMInfo> pMInfos = new List<PMInfo>(){ };
+		private List<string> pMInfos = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -222,7 +222,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public List<PMInfo> PMInfos
+		public List<string> PMInfos
 		{
 			get
 			{
@@ -232,13 +232,16 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set
 			{
 				pMInfos = value;
-				for (int i = 0; i < pMInfos.Count; i++)
+				if(pMInfos != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"PMInfo." + (i + 1) + ".PMCertificateNo", pMInfos[i].PMCertificateNo);
-					DictionaryUtil.Add(QueryParameters,"PMInfo." + (i + 1) + ".PMName", pMInfos[i].PMName);
-					DictionaryUtil.Add(QueryParameters,"PMInfo." + (i + 1) + ".PMCertificateType", pMInfos[i].PMCertificateType);
-					DictionaryUtil.Add(QueryParameters,"PMInfo." + (i + 1) + ".PMContactInfo", pMInfos[i].PMContactInfo);
-					DictionaryUtil.Add(QueryParameters,"PMInfo." + (i + 1) + ".PMGender", pMInfos[i].PMGender);
+					for (int depth1 = 0; depth1 < pMInfos.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"PMInfo." + (depth1 + 1), pMInfos[depth1]);
+						DictionaryUtil.Add(QueryParameters,"PMInfo." + (depth1 + 1), pMInfos[depth1]);
+						DictionaryUtil.Add(QueryParameters,"PMInfo." + (depth1 + 1), pMInfos[depth1]);
+						DictionaryUtil.Add(QueryParameters,"PMInfo." + (depth1 + 1), pMInfos[depth1]);
+						DictionaryUtil.Add(QueryParameters,"PMInfo." + (depth1 + 1), pMInfos[depth1]);
+					}
 				}
 			}
 		}
@@ -252,9 +255,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string pMCertificateType;
 
-			private string pMContactInfo;
-
 			private string pMGender;
+
+			private string pMContactInfo;
 
 			public string PMCertificateNo
 			{
@@ -292,18 +295,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string PMContactInfo
-			{
-				get
-				{
-					return pMContactInfo;
-				}
-				set	
-				{
-					pMContactInfo = value;
-				}
-			}
-
 			public string PMGender
 			{
 				get
@@ -313,6 +304,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					pMGender = value;
+				}
+			}
+
+			public string PMContactInfo
+			{
+				get
+				{
+					return pMContactInfo;
+				}
+				set	
+				{
+					pMContactInfo = value;
 				}
 			}
 		}

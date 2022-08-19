@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,9 +25,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class CreateNatGatewayResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string natGatewayId;
+
+		private string requestId;
 
 		private List<string> forwardTableIds;
 
@@ -35,17 +35,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private List<string> bandwidthPackageIds;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<string> fullNatTableIds;
 
 		public string NatGatewayId
 		{
@@ -56,6 +46,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				natGatewayId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -92,6 +94,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				bandwidthPackageIds = value;
+			}
+		}
+
+		public List<string> FullNatTableIds
+		{
+			get
+			{
+				return fullNatTableIds;
+			}
+			set	
+			{
+				fullNatTableIds = value;
 			}
 		}
 	}

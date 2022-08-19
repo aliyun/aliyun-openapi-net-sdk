@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,59 +25,35 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class ModifyVpnGatewayAttributeResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string vpnGatewayId;
-
 		private string vpcId;
-
-		private string vSwitchId;
-
-		private string internetIp;
-
-		private string intranetIp;
-
-		private long? createTime;
-
-		private long? endTime;
-
-		private string spec;
-
-		private string name;
-
-		private string description;
 
 		private string status;
 
-		private string businessStatus;
+		private string internetIp;
 
-		private bool? enableBgp;
+		private string spec;
+
+		private long? createTime;
 
 		private bool? autoPropagate;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string vpnGatewayId;
 
-		public string VpnGatewayId
-		{
-			get
-			{
-				return vpnGatewayId;
-			}
-			set	
-			{
-				vpnGatewayId = value;
-			}
-		}
+		private string intranetIp;
+
+		private long? endTime;
+
+		private string vSwitchId;
+
+		private string requestId;
+
+		private string description;
+
+		private bool? enableBgp;
+
+		private string businessStatus;
+
+		private string name;
 
 		public string VpcId
 		{
@@ -88,102 +64,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				vpcId = value;
-			}
-		}
-
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-			}
-		}
-
-		public string InternetIp
-		{
-			get
-			{
-				return internetIp;
-			}
-			set	
-			{
-				internetIp = value;
-			}
-		}
-
-		public string IntranetIp
-		{
-			get
-			{
-				return intranetIp;
-			}
-			set	
-			{
-				intranetIp = value;
-			}
-		}
-
-		public long? CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
-			}
-		}
-
-		public long? EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
-
-		public string Spec
-		{
-			get
-			{
-				return spec;
-			}
-			set	
-			{
-				spec = value;
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
 			}
 		}
 
@@ -199,15 +79,123 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string BusinessStatus
+		public string InternetIp
 		{
 			get
 			{
-				return businessStatus;
+				return internetIp;
 			}
 			set	
 			{
-				businessStatus = value;
+				internetIp = value;
+			}
+		}
+
+		public string Spec
+		{
+			get
+			{
+				return spec;
+			}
+			set	
+			{
+				spec = value;
+			}
+		}
+
+		public long? CreateTime
+		{
+			get
+			{
+				return createTime;
+			}
+			set	
+			{
+				createTime = value;
+			}
+		}
+
+		public bool? AutoPropagate
+		{
+			get
+			{
+				return autoPropagate;
+			}
+			set	
+			{
+				autoPropagate = value;
+			}
+		}
+
+		public string VpnGatewayId
+		{
+			get
+			{
+				return vpnGatewayId;
+			}
+			set	
+			{
+				vpnGatewayId = value;
+			}
+		}
+
+		public string IntranetIp
+		{
+			get
+			{
+				return intranetIp;
+			}
+			set	
+			{
+				intranetIp = value;
+			}
+		}
+
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
 			}
 		}
 
@@ -223,15 +211,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public bool? AutoPropagate
+		public string BusinessStatus
 		{
 			get
 			{
-				return autoPropagate;
+				return businessStatus;
 			}
 			set	
 			{
-				autoPropagate = value;
+				businessStatus = value;
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
 			}
 		}
 	}

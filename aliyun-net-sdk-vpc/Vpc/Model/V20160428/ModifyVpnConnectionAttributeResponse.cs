@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,29 +25,29 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class ModifyVpnConnectionAttributeResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string vpnConnectionId;
-
-		private string customerGatewayId;
-
-		private string vpnGatewayId;
-
-		private string name;
-
-		private string description;
-
-		private string localSubnet;
-
-		private string remoteSubnet;
+		private bool? enableNatTraversal;
 
 		private long? createTime;
 
 		private bool? effectImmediately;
 
-		private bool? enableDpd;
+		private string vpnGatewayId;
 
-		private bool? enableNatTraversal;
+		private string localSubnet;
+
+		private string requestId;
+
+		private string vpnConnectionId;
+
+		private string description;
+
+		private string remoteSubnet;
+
+		private string customerGatewayId;
+
+		private string name;
+
+		private bool? enableDpd;
 
 		private ModifyVpnConnectionAttribute_IkeConfig ikeConfig;
 
@@ -57,99 +57,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private ModifyVpnConnectionAttribute_VpnBgpConfig vpnBgpConfig;
 
-		public string RequestId
+		public bool? EnableNatTraversal
 		{
 			get
 			{
-				return requestId;
+				return enableNatTraversal;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string VpnConnectionId
-		{
-			get
-			{
-				return vpnConnectionId;
-			}
-			set	
-			{
-				vpnConnectionId = value;
-			}
-		}
-
-		public string CustomerGatewayId
-		{
-			get
-			{
-				return customerGatewayId;
-			}
-			set	
-			{
-				customerGatewayId = value;
-			}
-		}
-
-		public string VpnGatewayId
-		{
-			get
-			{
-				return vpnGatewayId;
-			}
-			set	
-			{
-				vpnGatewayId = value;
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-			}
-		}
-
-		public string LocalSubnet
-		{
-			get
-			{
-				return localSubnet;
-			}
-			set	
-			{
-				localSubnet = value;
-			}
-		}
-
-		public string RemoteSubnet
-		{
-			get
-			{
-				return remoteSubnet;
-			}
-			set	
-			{
-				remoteSubnet = value;
+				enableNatTraversal = value;
 			}
 		}
 
@@ -177,6 +93,102 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string VpnGatewayId
+		{
+			get
+			{
+				return vpnGatewayId;
+			}
+			set	
+			{
+				vpnGatewayId = value;
+			}
+		}
+
+		public string LocalSubnet
+		{
+			get
+			{
+				return localSubnet;
+			}
+			set	
+			{
+				localSubnet = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string VpnConnectionId
+		{
+			get
+			{
+				return vpnConnectionId;
+			}
+			set	
+			{
+				vpnConnectionId = value;
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+			}
+		}
+
+		public string RemoteSubnet
+		{
+			get
+			{
+				return remoteSubnet;
+			}
+			set	
+			{
+				remoteSubnet = value;
+			}
+		}
+
+		public string CustomerGatewayId
+		{
+			get
+			{
+				return customerGatewayId;
+			}
+			set	
+			{
+				customerGatewayId = value;
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+			}
+		}
+
 		public bool? EnableDpd
 		{
 			get
@@ -186,18 +198,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				enableDpd = value;
-			}
-		}
-
-		public bool? EnableNatTraversal
-		{
-			get
-			{
-				return enableNatTraversal;
-			}
-			set	
-			{
-				enableNatTraversal = value;
 			}
 		}
 
@@ -252,93 +252,33 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class ModifyVpnConnectionAttribute_IkeConfig
 		{
 
-			private string psk;
-
-			private string ikeVersion;
-
-			private string ikeMode;
-
-			private string ikeEncAlg;
-
-			private string ikeAuthAlg;
-
-			private string ikePfs;
+			private string remoteId;
 
 			private long? ikeLifetime;
 
+			private string ikeEncAlg;
+
 			private string localId;
 
-			private string remoteId;
+			private string ikeMode;
 
-			public string Psk
+			private string ikeVersion;
+
+			private string ikePfs;
+
+			private string psk;
+
+			private string ikeAuthAlg;
+
+			public string RemoteId
 			{
 				get
 				{
-					return psk;
+					return remoteId;
 				}
 				set	
 				{
-					psk = value;
-				}
-			}
-
-			public string IkeVersion
-			{
-				get
-				{
-					return ikeVersion;
-				}
-				set	
-				{
-					ikeVersion = value;
-				}
-			}
-
-			public string IkeMode
-			{
-				get
-				{
-					return ikeMode;
-				}
-				set	
-				{
-					ikeMode = value;
-				}
-			}
-
-			public string IkeEncAlg
-			{
-				get
-				{
-					return ikeEncAlg;
-				}
-				set	
-				{
-					ikeEncAlg = value;
-				}
-			}
-
-			public string IkeAuthAlg
-			{
-				get
-				{
-					return ikeAuthAlg;
-				}
-				set	
-				{
-					ikeAuthAlg = value;
-				}
-			}
-
-			public string IkePfs
-			{
-				get
-				{
-					return ikePfs;
-				}
-				set	
-				{
-					ikePfs = value;
+					remoteId = value;
 				}
 			}
 
@@ -354,6 +294,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string IkeEncAlg
+			{
+				get
+				{
+					return ikeEncAlg;
+				}
+				set	
+				{
+					ikeEncAlg = value;
+				}
+			}
+
 			public string LocalId
 			{
 				get
@@ -366,15 +318,63 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string RemoteId
+			public string IkeMode
 			{
 				get
 				{
-					return remoteId;
+					return ikeMode;
 				}
 				set	
 				{
-					remoteId = value;
+					ikeMode = value;
+				}
+			}
+
+			public string IkeVersion
+			{
+				get
+				{
+					return ikeVersion;
+				}
+				set	
+				{
+					ikeVersion = value;
+				}
+			}
+
+			public string IkePfs
+			{
+				get
+				{
+					return ikePfs;
+				}
+				set	
+				{
+					ikePfs = value;
+				}
+			}
+
+			public string Psk
+			{
+				get
+				{
+					return psk;
+				}
+				set	
+				{
+					psk = value;
+				}
+			}
+
+			public string IkeAuthAlg
+			{
+				get
+				{
+					return ikeAuthAlg;
+				}
+				set	
+				{
+					ikeAuthAlg = value;
 				}
 			}
 		}
@@ -382,25 +382,13 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class ModifyVpnConnectionAttribute_IpsecConfig
 		{
 
-			private string ipsecEncAlg;
-
 			private string ipsecAuthAlg;
-
-			private string ipsecPfs;
 
 			private long? ipsecLifetime;
 
-			public string IpsecEncAlg
-			{
-				get
-				{
-					return ipsecEncAlg;
-				}
-				set	
-				{
-					ipsecEncAlg = value;
-				}
-			}
+			private string ipsecEncAlg;
+
+			private string ipsecPfs;
 
 			public string IpsecAuthAlg
 			{
@@ -411,18 +399,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					ipsecAuthAlg = value;
-				}
-			}
-
-			public string IpsecPfs
-			{
-				get
-				{
-					return ipsecPfs;
-				}
-				set	
-				{
-					ipsecPfs = value;
 				}
 			}
 
@@ -437,14 +413,34 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					ipsecLifetime = value;
 				}
 			}
+
+			public string IpsecEncAlg
+			{
+				get
+				{
+					return ipsecEncAlg;
+				}
+				set	
+				{
+					ipsecEncAlg = value;
+				}
+			}
+
+			public string IpsecPfs
+			{
+				get
+				{
+					return ipsecPfs;
+				}
+				set	
+				{
+					ipsecPfs = value;
+				}
+			}
 		}
 
 		public class ModifyVpnConnectionAttribute_VcoHealthCheck
 		{
-
-			private string enable;
-
-			private string sip;
 
 			private string dip;
 
@@ -452,29 +448,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private int? retry;
 
-			public string Enable
-			{
-				get
-				{
-					return enable;
-				}
-				set	
-				{
-					enable = value;
-				}
-			}
+			private string sip;
 
-			public string Sip
-			{
-				get
-				{
-					return sip;
-				}
-				set	
-				{
-					sip = value;
-				}
-			}
+			private string enable;
 
 			public string Dip
 			{
@@ -511,58 +487,58 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					retry = value;
 				}
 			}
+
+			public string Sip
+			{
+				get
+				{
+					return sip;
+				}
+				set	
+				{
+					sip = value;
+				}
+			}
+
+			public string Enable
+			{
+				get
+				{
+					return enable;
+				}
+				set	
+				{
+					enable = value;
+				}
+			}
 		}
 
 		public class ModifyVpnConnectionAttribute_VpnBgpConfig
 		{
 
-			private string enableBgp;
-
-			private string tunnelCidr;
-
-			private string localBgpIp;
+			private string status;
 
 			private string peerBgpIp;
 
-			private int? localAsn;
+			private string tunnelCidr;
+
+			private string enableBgp;
+
+			private string localBgpIp;
 
 			private int? peerAsn;
 
-			private string status;
+			private int? localAsn;
 
-			public string EnableBgp
+			public string Status
 			{
 				get
 				{
-					return enableBgp;
+					return status;
 				}
 				set	
 				{
-					enableBgp = value;
-				}
-			}
-
-			public string TunnelCidr
-			{
-				get
-				{
-					return tunnelCidr;
-				}
-				set	
-				{
-					tunnelCidr = value;
-				}
-			}
-
-			public string LocalBgpIp
-			{
-				get
-				{
-					return localBgpIp;
-				}
-				set	
-				{
-					localBgpIp = value;
+					status = value;
 				}
 			}
 
@@ -578,15 +554,39 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public int? LocalAsn
+			public string TunnelCidr
 			{
 				get
 				{
-					return localAsn;
+					return tunnelCidr;
 				}
 				set	
 				{
-					localAsn = value;
+					tunnelCidr = value;
+				}
+			}
+
+			public string EnableBgp
+			{
+				get
+				{
+					return enableBgp;
+				}
+				set	
+				{
+					enableBgp = value;
+				}
+			}
+
+			public string LocalBgpIp
+			{
+				get
+				{
+					return localBgpIp;
+				}
+				set	
+				{
+					localBgpIp = value;
 				}
 			}
 
@@ -602,15 +602,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Status
+			public int? LocalAsn
 			{
 				get
 				{
-					return status;
+					return localAsn;
 				}
 				set	
 				{
-					status = value;
+					localAsn = value;
 				}
 			}
 		}

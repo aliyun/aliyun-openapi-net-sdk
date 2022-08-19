@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? resourceOwnerId;
 
+		private string publicIpAddressPoolId;
+
 		private string clientToken;
 
 		private string iSP;
@@ -72,6 +74,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string name;
 
+		private List<string> securityProtectionTypess = new List<string>(){ };
+
 		private string pricingCycle;
 
 		public long? ResourceOwnerId
@@ -84,6 +88,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string PublicIpAddressPoolId
+		{
+			get
+			{
+				return publicIpAddressPoolId;
+			}
+			set	
+			{
+				publicIpAddressPoolId = value;
+				DictionaryUtil.Add(QueryParameters, "PublicIpAddressPoolId", value);
 			}
 		}
 
@@ -279,6 +296,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public List<string> SecurityProtectionTypess
+		{
+			get
+			{
+				return securityProtectionTypess;
+			}
+
+			set
+			{
+				securityProtectionTypess = value;
 			}
 		}
 

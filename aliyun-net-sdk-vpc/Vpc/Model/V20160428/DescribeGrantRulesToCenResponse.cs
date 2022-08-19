@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeGrantRulesToCenResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeGrantRulesToCen_CbnGrantRule> cenGrantRules;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 

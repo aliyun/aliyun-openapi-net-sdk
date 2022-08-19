@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string requestId;
 
-		private string haVipId;
-
 		private string ipAddress;
+
+		private string haVipId;
 
 		public string RequestId
 		{
@@ -43,18 +43,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string HaVipId
-		{
-			get
-			{
-				return haVipId;
-			}
-			set	
-			{
-				haVipId = value;
-			}
-		}
-
 		public string IpAddress
 		{
 			get
@@ -64,6 +52,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				ipAddress = value;
+			}
+		}
+
+		public string HaVipId
+		{
+			get
+			{
+				return haVipId;
+			}
+			set	
+			{
+				haVipId = value;
 			}
 		}
 	}

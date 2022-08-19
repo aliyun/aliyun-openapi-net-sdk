@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class CreateVpcResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string vpcId;
 
 		private string vRouterId;
 
+		private string requestId;
+
 		private string routeTableId;
 
 		private string resourceGroupId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public string VpcId
 		{
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				vRouterId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

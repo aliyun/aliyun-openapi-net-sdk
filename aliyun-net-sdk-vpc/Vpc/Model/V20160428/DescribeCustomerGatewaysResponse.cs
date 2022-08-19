@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeCustomerGatewaysResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeCustomerGateways_CustomerGateway> customerGateways;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,41 +98,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeCustomerGateways_CustomerGateway
 		{
 
-			private string customerGatewayId;
-
-			private string name;
-
 			private string ipAddress;
+
+			private long? asn;
 
 			private string description;
 
+			private string customerGatewayId;
+
 			private long? createTime;
 
-			private int? asn;
+			private string name;
 
-			public string CustomerGatewayId
-			{
-				get
-				{
-					return customerGatewayId;
-				}
-				set	
-				{
-					customerGatewayId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private string authKey;
 
 			public string IpAddress
 			{
@@ -143,6 +121,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					ipAddress = value;
+				}
+			}
+
+			public long? Asn
+			{
+				get
+				{
+					return asn;
+				}
+				set	
+				{
+					asn = value;
 				}
 			}
 
@@ -158,6 +148,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string CustomerGatewayId
+			{
+				get
+				{
+					return customerGatewayId;
+				}
+				set	
+				{
+					customerGatewayId = value;
+				}
+			}
+
 			public long? CreateTime
 			{
 				get
@@ -170,15 +172,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public int? Asn
+			public string Name
 			{
 				get
 				{
-					return asn;
+					return name;
 				}
 				set	
 				{
-					asn = value;
+					name = value;
+				}
+			}
+
+			public string AuthKey
+			{
+				get
+				{
+					return authKey;
+				}
+				set	
+				{
+					authKey = value;
 				}
 			}
 		}

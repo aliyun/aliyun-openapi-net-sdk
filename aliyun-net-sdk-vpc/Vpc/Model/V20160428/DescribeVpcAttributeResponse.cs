@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,39 +25,43 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeVpcAttributeResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string vpcId;
-
-		private string regionId;
+		private string creationTime;
 
 		private string status;
 
-		private string vpcName;
-
-		private string creationTime;
-
-		private string cidrBlock;
-
-		private string ipv6CidrBlock;
-
-		private string vRouterId;
-
-		private string description;
+		private string vpcId;
 
 		private bool? isDefault;
 
 		private bool? classicLinkEnabled;
 
-		private string resourceGroupId;
+		private long? ownerId;
+
+		private string regionId;
+
+		private string vpcName;
+
+		private string vRouterId;
+
+		private string dhcpOptionsSetStatus;
+
+		private string cidrBlock;
+
+		private string requestId;
+
+		private string description;
 
 		private string networkAclNum;
 
-		private long? ownerId;
+		private string resourceGroupId;
 
 		private string dhcpOptionsSetId;
 
-		private string dhcpOptionsSetStatus;
+		private string ipv6CidrBlock;
+
+		private bool? supportIpv4Gateway;
+
+		private string ipv4GatewayId;
 
 		private List<DescribeVpcAttribute_AssociatedCen> associatedCens;
 
@@ -71,39 +75,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private List<string> secondaryCidrBlocks;
 
-		public string RequestId
+		public string CreationTime
 		{
 			get
 			{
-				return requestId;
+				return creationTime;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
+				creationTime = value;
 			}
 		}
 
@@ -119,75 +99,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string VpcName
+		public string VpcId
 		{
 			get
 			{
-				return vpcName;
+				return vpcId;
 			}
 			set	
 			{
-				vpcName = value;
-			}
-		}
-
-		public string CreationTime
-		{
-			get
-			{
-				return creationTime;
-			}
-			set	
-			{
-				creationTime = value;
-			}
-		}
-
-		public string CidrBlock
-		{
-			get
-			{
-				return cidrBlock;
-			}
-			set	
-			{
-				cidrBlock = value;
-			}
-		}
-
-		public string Ipv6CidrBlock
-		{
-			get
-			{
-				return ipv6CidrBlock;
-			}
-			set	
-			{
-				ipv6CidrBlock = value;
-			}
-		}
-
-		public string VRouterId
-		{
-			get
-			{
-				return vRouterId;
-			}
-			set	
-			{
-				vRouterId = value;
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
+				vpcId = value;
 			}
 		}
 
@@ -215,15 +135,99 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string ResourceGroupId
+		public long? OwnerId
 		{
 			get
 			{
-				return resourceGroupId;
+				return ownerId;
 			}
 			set	
 			{
-				resourceGroupId = value;
+				ownerId = value;
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+			}
+		}
+
+		public string VpcName
+		{
+			get
+			{
+				return vpcName;
+			}
+			set	
+			{
+				vpcName = value;
+			}
+		}
+
+		public string VRouterId
+		{
+			get
+			{
+				return vRouterId;
+			}
+			set	
+			{
+				vRouterId = value;
+			}
+		}
+
+		public string DhcpOptionsSetStatus
+		{
+			get
+			{
+				return dhcpOptionsSetStatus;
+			}
+			set	
+			{
+				dhcpOptionsSetStatus = value;
+			}
+		}
+
+		public string CidrBlock
+		{
+			get
+			{
+				return cidrBlock;
+			}
+			set	
+			{
+				cidrBlock = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
 			}
 		}
 
@@ -239,15 +243,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public long? OwnerId
+		public string ResourceGroupId
 		{
 			get
 			{
-				return ownerId;
+				return resourceGroupId;
 			}
 			set	
 			{
-				ownerId = value;
+				resourceGroupId = value;
 			}
 		}
 
@@ -263,15 +267,39 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string DhcpOptionsSetStatus
+		public string Ipv6CidrBlock
 		{
 			get
 			{
-				return dhcpOptionsSetStatus;
+				return ipv6CidrBlock;
 			}
 			set	
 			{
-				dhcpOptionsSetStatus = value;
+				ipv6CidrBlock = value;
+			}
+		}
+
+		public bool? SupportIpv4Gateway
+		{
+			get
+			{
+				return supportIpv4Gateway;
+			}
+			set	
+			{
+				supportIpv4Gateway = value;
+			}
+		}
+
+		public string Ipv4GatewayId
+		{
+			get
+			{
+				return ipv4GatewayId;
+			}
+			set	
+			{
+				ipv4GatewayId = value;
 			}
 		}
 
@@ -350,23 +378,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeVpcAttribute_AssociatedCen
 		{
 
-			private string cenId;
-
 			private long? cenOwnerId;
 
-			private string cenStatus;
+			private string cenId;
 
-			public string CenId
-			{
-				get
-				{
-					return cenId;
-				}
-				set	
-				{
-					cenId = value;
-				}
-			}
+			private string cenStatus;
 
 			public long? CenOwnerId
 			{
@@ -377,6 +393,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					cenOwnerId = value;
+				}
+			}
+
+			public string CenId
+			{
+				get
+				{
+					return cenId;
+				}
+				set	
+				{
+					cenId = value;
 				}
 			}
 
@@ -396,21 +424,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeVpcAttribute_CloudResourceSetType
 		{
 
-			private string resourceType;
-
 			private int? resourceCount;
 
-			public string ResourceType
-			{
-				get
-				{
-					return resourceType;
-				}
-				set	
-				{
-					resourceType = value;
-				}
-			}
+			private string resourceType;
 
 			public int? ResourceCount
 			{
@@ -423,26 +439,26 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					resourceCount = value;
 				}
 			}
+
+			public string ResourceType
+			{
+				get
+				{
+					return resourceType;
+				}
+				set	
+				{
+					resourceType = value;
+				}
+			}
 		}
 
 		public class DescribeVpcAttribute_Ipv6CidrBlock
 		{
 
-			private string ipv6CidrBlock;
-
 			private string ipv6Isp;
 
-			public string Ipv6CidrBlock
-			{
-				get
-				{
-					return ipv6CidrBlock;
-				}
-				set	
-				{
-					ipv6CidrBlock = value;
-				}
-			}
+			private string ipv6CidrBlock;
 
 			public string Ipv6Isp
 			{
@@ -453,6 +469,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					ipv6Isp = value;
+				}
+			}
+
+			public string Ipv6CidrBlock
+			{
+				get
+				{
+					return ipv6CidrBlock;
+				}
+				set	
+				{
+					ipv6CidrBlock = value;
 				}
 			}
 		}

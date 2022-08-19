@@ -31,18 +31,18 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeSslVpnClientCertResponse describeSslVpnClientCertResponse = new DescribeSslVpnClientCertResponse();
 
 			describeSslVpnClientCertResponse.HttpResponse = _ctx.HttpResponse;
-			describeSslVpnClientCertResponse.RequestId = _ctx.StringValue("DescribeSslVpnClientCert.RequestId");
-			describeSslVpnClientCertResponse.RegionId = _ctx.StringValue("DescribeSslVpnClientCert.RegionId");
-			describeSslVpnClientCertResponse.SslVpnClientCertId = _ctx.StringValue("DescribeSslVpnClientCert.SslVpnClientCertId");
-			describeSslVpnClientCertResponse.Name = _ctx.StringValue("DescribeSslVpnClientCert.Name");
-			describeSslVpnClientCertResponse.SslVpnServerId = _ctx.StringValue("DescribeSslVpnClientCert.SslVpnServerId");
-			describeSslVpnClientCertResponse.CaCert = _ctx.StringValue("DescribeSslVpnClientCert.CaCert");
-			describeSslVpnClientCertResponse.ClientCert = _ctx.StringValue("DescribeSslVpnClientCert.ClientCert");
-			describeSslVpnClientCertResponse.ClientKey = _ctx.StringValue("DescribeSslVpnClientCert.ClientKey");
-			describeSslVpnClientCertResponse.ClientConfig = _ctx.StringValue("DescribeSslVpnClientCert.ClientConfig");
-			describeSslVpnClientCertResponse.CreateTime = _ctx.LongValue("DescribeSslVpnClientCert.CreateTime");
-			describeSslVpnClientCertResponse.EndTime = _ctx.LongValue("DescribeSslVpnClientCert.EndTime");
 			describeSslVpnClientCertResponse.Status = _ctx.StringValue("DescribeSslVpnClientCert.Status");
+			describeSslVpnClientCertResponse.CreateTime = _ctx.LongValue("DescribeSslVpnClientCert.CreateTime");
+			describeSslVpnClientCertResponse.ClientKey = _ctx.StringValue("DescribeSslVpnClientCert.ClientKey");
+			describeSslVpnClientCertResponse.RegionId = _ctx.StringValue("DescribeSslVpnClientCert.RegionId");
+			describeSslVpnClientCertResponse.ClientConfig = _ctx.StringValue("DescribeSslVpnClientCert.ClientConfig");
+			describeSslVpnClientCertResponse.EndTime = _ctx.LongValue("DescribeSslVpnClientCert.EndTime");
+			describeSslVpnClientCertResponse.RequestId = _ctx.StringValue("DescribeSslVpnClientCert.RequestId");
+			describeSslVpnClientCertResponse.ClientCert = _ctx.StringValue("DescribeSslVpnClientCert.ClientCert");
+			describeSslVpnClientCertResponse.CaCert = _ctx.StringValue("DescribeSslVpnClientCert.CaCert");
+			describeSslVpnClientCertResponse.SslVpnClientCertId = _ctx.StringValue("DescribeSslVpnClientCert.SslVpnClientCertId");
+			describeSslVpnClientCertResponse.SslVpnServerId = _ctx.StringValue("DescribeSslVpnClientCert.SslVpnServerId");
+			describeSslVpnClientCertResponse.Name = _ctx.StringValue("DescribeSslVpnClientCert.Name");
         
 			return describeSslVpnClientCertResponse;
         }

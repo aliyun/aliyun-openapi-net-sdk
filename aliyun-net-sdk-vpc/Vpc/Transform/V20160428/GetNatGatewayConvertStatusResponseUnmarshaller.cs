@@ -31,18 +31,18 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			GetNatGatewayConvertStatusResponse getNatGatewayConvertStatusResponse = new GetNatGatewayConvertStatusResponse();
 
 			getNatGatewayConvertStatusResponse.HttpResponse = _ctx.HttpResponse;
-			getNatGatewayConvertStatusResponse.RequestId = _ctx.StringValue("GetNatGatewayConvertStatus.RequestId");
-			getNatGatewayConvertStatusResponse.NatGatewayId = _ctx.StringValue("GetNatGatewayConvertStatus.NatGatewayId");
-			getNatGatewayConvertStatusResponse.Bid = _ctx.StringValue("GetNatGatewayConvertStatus.Bid");
 			getNatGatewayConvertStatusResponse.AliUid = _ctx.LongValue("GetNatGatewayConvertStatus.AliUid");
+			getNatGatewayConvertStatusResponse.RequestId = _ctx.StringValue("GetNatGatewayConvertStatus.RequestId");
 			getNatGatewayConvertStatusResponse.DstNatType = _ctx.StringValue("GetNatGatewayConvertStatus.DstNatType");
+			getNatGatewayConvertStatusResponse.Bid = _ctx.StringValue("GetNatGatewayConvertStatus.Bid");
+			getNatGatewayConvertStatusResponse.NatGatewayId = _ctx.StringValue("GetNatGatewayConvertStatus.NatGatewayId");
 
 			List<GetNatGatewayConvertStatusResponse.GetNatGatewayConvertStatus_ConvertStep> getNatGatewayConvertStatusResponse_convertSteps = new List<GetNatGatewayConvertStatusResponse.GetNatGatewayConvertStatus_ConvertStep>();
 			for (int i = 0; i < _ctx.Length("GetNatGatewayConvertStatus.ConvertSteps.Length"); i++) {
 				GetNatGatewayConvertStatusResponse.GetNatGatewayConvertStatus_ConvertStep convertStep = new GetNatGatewayConvertStatusResponse.GetNatGatewayConvertStatus_ConvertStep();
+				convertStep.StepStartTime = _ctx.StringValue("GetNatGatewayConvertStatus.ConvertSteps["+ i +"].StepStartTime");
 				convertStep.StepName = _ctx.StringValue("GetNatGatewayConvertStatus.ConvertSteps["+ i +"].StepName");
 				convertStep.StepStatus = _ctx.StringValue("GetNatGatewayConvertStatus.ConvertSteps["+ i +"].StepStatus");
-				convertStep.StepStartTime = _ctx.StringValue("GetNatGatewayConvertStatus.ConvertSteps["+ i +"].StepStartTime");
 
 				getNatGatewayConvertStatusResponse_convertSteps.Add(convertStep);
 			}

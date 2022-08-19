@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,45 +25,21 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class GetDhcpOptionsSetResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string dhcpOptionsSetName;
-
 		private string dhcpOptionsSetDescription;
+
+		private string status;
+
+		private string requestId;
 
 		private string dhcpOptionsSetId;
 
-		private long? ownerId;
+		private string dhcpOptionsSetName;
 
-		private string status;
+		private long? ownerId;
 
 		private List<GetDhcpOptionsSet_AssociateVpc> associateVpcs;
 
 		private GetDhcpOptionsSet_DhcpOptions dhcpOptions;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string DhcpOptionsSetName
-		{
-			get
-			{
-				return dhcpOptionsSetName;
-			}
-			set	
-			{
-				dhcpOptionsSetName = value;
-			}
-		}
 
 		public string DhcpOptionsSetDescription
 		{
@@ -74,6 +50,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				dhcpOptionsSetDescription = value;
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -89,6 +89,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string DhcpOptionsSetName
+		{
+			get
+			{
+				return dhcpOptionsSetName;
+			}
+			set	
+			{
+				dhcpOptionsSetName = value;
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -98,18 +110,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				ownerId = value;
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
 			}
 		}
 
@@ -140,21 +140,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class GetDhcpOptionsSet_AssociateVpc
 		{
 
-			private string vpcId;
-
 			private string associateStatus;
 
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
-				}
-			}
+			private string vpcId;
 
 			public string AssociateStatus
 			{
@@ -167,18 +155,46 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					associateStatus = value;
 				}
 			}
+
+			public string VpcId
+			{
+				get
+				{
+					return vpcId;
+				}
+				set	
+				{
+					vpcId = value;
+				}
+			}
 		}
 
 		public class GetDhcpOptionsSet_DhcpOptions
 		{
 
+			private string tFTPServerName;
+
 			private string domainNameServers;
 
 			private string domainName;
 
-			private string tFTPServerName;
-
 			private string bootFileName;
+
+			private string leaseTime;
+
+			private string ipv6LeaseTime;
+
+			public string TFTPServerName
+			{
+				get
+				{
+					return tFTPServerName;
+				}
+				set	
+				{
+					tFTPServerName = value;
+				}
+			}
 
 			public string DomainNameServers
 			{
@@ -204,18 +220,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string TFTPServerName
-			{
-				get
-				{
-					return tFTPServerName;
-				}
-				set	
-				{
-					tFTPServerName = value;
-				}
-			}
-
 			public string BootFileName
 			{
 				get
@@ -225,6 +229,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					bootFileName = value;
+				}
+			}
+
+			public string LeaseTime
+			{
+				get
+				{
+					return leaseTime;
+				}
+				set	
+				{
+					leaseTime = value;
+				}
+			}
+
+			public string Ipv6LeaseTime
+			{
+				get
+				{
+					return ipv6LeaseTime;
+				}
+				set	
+				{
+					ipv6LeaseTime = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,31 +25,37 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class GetNatGatewayAttributeResponse : AcsResponse
 	{
 
+		private string vpcId;
+
+		private string creationTime;
+
+		private string status;
+
+		private string natType;
+
+		private string networkType;
+
+		private string regionId;
+
+		private bool? ecsMetricEnabled;
+
 		private string requestId;
 
 		private string description;
 
-		private string natType;
+		private string expiredTime;
 
-		private bool? ecsMetricEnabled;
-
-		private string vpcId;
+		private string resourceGroupId;
 
 		private string natGatewayId;
 
-		private string creationTime;
-
-		private string expiredTime;
+		private string businessStatus;
 
 		private string name;
 
-		private string status;
+		private bool? privateLinkEnabled;
 
-		private string businessStatus;
-
-		private string regionId;
-
-		private string resourceGroupId;
+		private string privateLinkMode;
 
 		private List<GetNatGatewayAttribute_IpListItem> ipList;
 
@@ -57,11 +63,97 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private GetNatGatewayAttribute_SnatTable snatTable;
 
+		private GetNatGatewayAttribute_FullNatTable fullNatTable;
+
 		private GetNatGatewayAttribute_BillingConfig billingConfig;
 
 		private GetNatGatewayAttribute_PrivateInfo privateInfo;
 
 		private GetNatGatewayAttribute_DeletionProtectionInfo deletionProtectionInfo;
+
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+			}
+		}
+
+		public string CreationTime
+		{
+			get
+			{
+				return creationTime;
+			}
+			set	
+			{
+				creationTime = value;
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+			}
+		}
+
+		public string NatType
+		{
+			get
+			{
+				return natType;
+			}
+			set	
+			{
+				natType = value;
+			}
+		}
+
+		public string NetworkType
+		{
+			get
+			{
+				return networkType;
+			}
+			set	
+			{
+				networkType = value;
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+			}
+		}
+
+		public bool? EcsMetricEnabled
+		{
+			get
+			{
+				return ecsMetricEnabled;
+			}
+			set	
+			{
+				ecsMetricEnabled = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -87,39 +179,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string NatType
+		public string ExpiredTime
 		{
 			get
 			{
-				return natType;
+				return expiredTime;
 			}
 			set	
 			{
-				natType = value;
+				expiredTime = value;
 			}
 		}
 
-		public bool? EcsMetricEnabled
+		public string ResourceGroupId
 		{
 			get
 			{
-				return ecsMetricEnabled;
+				return resourceGroupId;
 			}
 			set	
 			{
-				ecsMetricEnabled = value;
-			}
-		}
-
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
+				resourceGroupId = value;
 			}
 		}
 
@@ -135,27 +215,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string CreationTime
+		public string BusinessStatus
 		{
 			get
 			{
-				return creationTime;
+				return businessStatus;
 			}
 			set	
 			{
-				creationTime = value;
-			}
-		}
-
-		public string ExpiredTime
-		{
-			get
-			{
-				return expiredTime;
-			}
-			set	
-			{
-				expiredTime = value;
+				businessStatus = value;
 			}
 		}
 
@@ -171,51 +239,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Status
+		public bool? PrivateLinkEnabled
 		{
 			get
 			{
-				return status;
+				return privateLinkEnabled;
 			}
 			set	
 			{
-				status = value;
+				privateLinkEnabled = value;
 			}
 		}
 
-		public string BusinessStatus
+		public string PrivateLinkMode
 		{
 			get
 			{
-				return businessStatus;
+				return privateLinkMode;
 			}
 			set	
 			{
-				businessStatus = value;
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
+				privateLinkMode = value;
 			}
 		}
 
@@ -252,6 +296,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				snatTable = value;
+			}
+		}
+
+		public GetNatGatewayAttribute_FullNatTable FullNatTable
+		{
+			get
+			{
+				return fullNatTable;
+			}
+			set	
+			{
+				fullNatTable = value;
 			}
 		}
 
@@ -294,11 +350,23 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class GetNatGatewayAttribute_IpListItem
 		{
 
+			private string usingStatus;
+
 			private string ipAddress;
 
 			private string allocationId;
 
-			private string usingStatus;
+			public string UsingStatus
+			{
+				get
+				{
+					return usingStatus;
+				}
+				set	
+				{
+					usingStatus = value;
+				}
+			}
 
 			public string IpAddress
 			{
@@ -321,18 +389,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					allocationId = value;
-				}
-			}
-
-			public string UsingStatus
-			{
-				get
-				{
-					return usingStatus;
-				}
-				set	
-				{
-					usingStatus = value;
 				}
 			}
 		}
@@ -372,21 +428,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class GetNatGatewayAttribute_SnatTable
 		{
 
-			private string snatTableId;
-
 			private int? snatEntryCount;
 
-			public string SnatTableId
-			{
-				get
-				{
-					return snatTableId;
-				}
-				set	
-				{
-					snatTableId = value;
-				}
-			}
+			private string snatTableId;
 
 			public int? SnatEntryCount
 			{
@@ -399,30 +443,62 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					snatEntryCount = value;
 				}
 			}
+
+			public string SnatTableId
+			{
+				get
+				{
+					return snatTableId;
+				}
+				set	
+				{
+					snatTableId = value;
+				}
+			}
+		}
+
+		public class GetNatGatewayAttribute_FullNatTable
+		{
+
+			private long? fullNatEntryCount;
+
+			private string fullNatTableId;
+
+			public long? FullNatEntryCount
+			{
+				get
+				{
+					return fullNatEntryCount;
+				}
+				set	
+				{
+					fullNatEntryCount = value;
+				}
+			}
+
+			public string FullNatTableId
+			{
+				get
+				{
+					return fullNatTableId;
+				}
+				set	
+				{
+					fullNatTableId = value;
+				}
+			}
 		}
 
 		public class GetNatGatewayAttribute_BillingConfig
 		{
 
-			private string spec;
-
 			private string internetChargeType;
-
-			private string instanceChargeType;
 
 			private string autoPay;
 
-			public string Spec
-			{
-				get
-				{
-					return spec;
-				}
-				set	
-				{
-					spec = value;
-				}
-			}
+			private string spec;
+
+			private string instanceChargeType;
 
 			public string InternetChargeType
 			{
@@ -433,18 +509,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					internetChargeType = value;
-				}
-			}
-
-			public string InstanceChargeType
-			{
-				get
-				{
-					return instanceChargeType;
-				}
-				set	
-				{
-					instanceChargeType = value;
 				}
 			}
 
@@ -459,44 +523,44 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					autoPay = value;
 				}
 			}
+
+			public string Spec
+			{
+				get
+				{
+					return spec;
+				}
+				set	
+				{
+					spec = value;
+				}
+			}
+
+			public string InstanceChargeType
+			{
+				get
+				{
+					return instanceChargeType;
+				}
+				set	
+				{
+					instanceChargeType = value;
+				}
+			}
 		}
 
 		public class GetNatGatewayAttribute_PrivateInfo
 		{
 
-			private string eniInstanceId;
-
-			private string izNo;
-
 			private int? maxBandwidth;
-
-			private string privateIpAddress;
 
 			private string vswitchId;
 
-			public string EniInstanceId
-			{
-				get
-				{
-					return eniInstanceId;
-				}
-				set	
-				{
-					eniInstanceId = value;
-				}
-			}
+			private string privateIpAddress;
 
-			public string IzNo
-			{
-				get
-				{
-					return izNo;
-				}
-				set	
-				{
-					izNo = value;
-				}
-			}
+			private string izNo;
+
+			private string eniInstanceId;
 
 			public int? MaxBandwidth
 			{
@@ -507,6 +571,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					maxBandwidth = value;
+				}
+			}
+
+			public string VswitchId
+			{
+				get
+				{
+					return vswitchId;
+				}
+				set	
+				{
+					vswitchId = value;
 				}
 			}
 
@@ -522,15 +598,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string VswitchId
+			public string IzNo
 			{
 				get
 				{
-					return vswitchId;
+					return izNo;
 				}
 				set	
 				{
-					vswitchId = value;
+					izNo = value;
+				}
+			}
+
+			public string EniInstanceId
+			{
+				get
+				{
+					return eniInstanceId;
+				}
+				set	
+				{
+					eniInstanceId = value;
 				}
 			}
 		}

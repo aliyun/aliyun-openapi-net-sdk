@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeRouteEntryListResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
 
-		private List<DescribeRouteEntryList_RouteEntry> routeEntrys;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeRouteEntryList_RouteEntry> routeEntrys;
 
 		public string NextToken
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,45 +70,35 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeRouteEntryList_RouteEntry
 		{
 
-			private string routeTableId;
-
-			private string destinationCidrBlock;
+			private string status;
 
 			private string type;
 
-			private string routeEntryId;
-
-			private string routeEntryName;
+			private string ipVersion;
 
 			private string description;
 
-			private string status;
+			private string routeEntryName;
 
-			private string ipVersion;
+			private string destinationCidrBlock;
+
+			private string routeEntryId;
+
+			private string routeTableId;
+
+			private string gmtModified;
 
 			private List<DescribeRouteEntryList_NextHop> nextHops;
 
-			public string RouteTableId
+			public string Status
 			{
 				get
 				{
-					return routeTableId;
+					return status;
 				}
 				set	
 				{
-					routeTableId = value;
-				}
-			}
-
-			public string DestinationCidrBlock
-			{
-				get
-				{
-					return destinationCidrBlock;
-				}
-				set	
-				{
-					destinationCidrBlock = value;
+					status = value;
 				}
 			}
 
@@ -124,27 +114,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string RouteEntryId
+			public string IpVersion
 			{
 				get
 				{
-					return routeEntryId;
+					return ipVersion;
 				}
 				set	
 				{
-					routeEntryId = value;
-				}
-			}
-
-			public string RouteEntryName
-			{
-				get
-				{
-					return routeEntryName;
-				}
-				set	
-				{
-					routeEntryName = value;
+					ipVersion = value;
 				}
 			}
 
@@ -160,27 +138,63 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Status
+			public string RouteEntryName
 			{
 				get
 				{
-					return status;
+					return routeEntryName;
 				}
 				set	
 				{
-					status = value;
+					routeEntryName = value;
 				}
 			}
 
-			public string IpVersion
+			public string DestinationCidrBlock
 			{
 				get
 				{
-					return ipVersion;
+					return destinationCidrBlock;
 				}
 				set	
 				{
-					ipVersion = value;
+					destinationCidrBlock = value;
+				}
+			}
+
+			public string RouteEntryId
+			{
+				get
+				{
+					return routeEntryId;
+				}
+				set	
+				{
+					routeEntryId = value;
+				}
+			}
+
+			public string RouteTableId
+			{
+				get
+				{
+					return routeTableId;
+				}
+				set	
+				{
+					routeTableId = value;
+				}
+			}
+
+			public string GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
 				}
 			}
 
@@ -199,27 +213,39 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			public class DescribeRouteEntryList_NextHop
 			{
 
-				private string nextHopType;
+				private string nextHopRegionId;
+
+				private int? weight;
 
 				private string nextHopId;
 
 				private int? enabled;
 
-				private int? weight;
-
-				private string nextHopRegionId;
+				private string nextHopType;
 
 				private DescribeRouteEntryList_NextHopRelatedInfo nextHopRelatedInfo;
 
-				public string NextHopType
+				public string NextHopRegionId
 				{
 					get
 					{
-						return nextHopType;
+						return nextHopRegionId;
 					}
 					set	
 					{
-						nextHopType = value;
+						nextHopRegionId = value;
+					}
+				}
+
+				public int? Weight
+				{
+					get
+					{
+						return weight;
+					}
+					set	
+					{
+						weight = value;
 					}
 				}
 
@@ -247,27 +273,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
-				public int? Weight
+				public string NextHopType
 				{
 					get
 					{
-						return weight;
+						return nextHopType;
 					}
 					set	
 					{
-						weight = value;
-					}
-				}
-
-				public string NextHopRegionId
-				{
-					get
-					{
-						return nextHopRegionId;
-					}
-					set	
-					{
-						nextHopRegionId = value;
+						nextHopType = value;
 					}
 				}
 
@@ -286,11 +300,23 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				public class DescribeRouteEntryList_NextHopRelatedInfo
 				{
 
+					private string instanceId;
+
 					private string instanceType;
 
 					private string regionId;
 
-					private string instanceId;
+					public string InstanceId
+					{
+						get
+						{
+							return instanceId;
+						}
+						set	
+						{
+							instanceId = value;
+						}
+					}
 
 					public string InstanceType
 					{
@@ -313,18 +339,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 						set	
 						{
 							regionId = value;
-						}
-					}
-
-					public string InstanceId
-					{
-						get
-						{
-							return instanceId;
-						}
-						set	
-						{
-							instanceId = value;
 						}
 					}
 				}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			CreateVpnGatewayResponse createVpnGatewayResponse = new CreateVpnGatewayResponse();
 
 			createVpnGatewayResponse.HttpResponse = _ctx.HttpResponse;
-			createVpnGatewayResponse.RequestId = _ctx.StringValue("CreateVpnGateway.RequestId");
 			createVpnGatewayResponse.VpnGatewayId = _ctx.StringValue("CreateVpnGateway.VpnGatewayId");
+			createVpnGatewayResponse.RequestId = _ctx.StringValue("CreateVpnGateway.RequestId");
 			createVpnGatewayResponse.Name = _ctx.StringValue("CreateVpnGateway.Name");
 			createVpnGatewayResponse.OrderId = _ctx.LongValue("CreateVpnGateway.OrderId");
         

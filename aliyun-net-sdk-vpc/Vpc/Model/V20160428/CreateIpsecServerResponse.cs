@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,39 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class CreateIpsecServerResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string regionId;
+		private string creationTime;
 
 		private string ipsecServerId;
+
+		private string requestId;
 
 		private string ipsecServerName;
 
 		private string vpnGatewayId;
 
-		private string creationTime;
+		private string regionId;
 
-		public string RequestId
+		public string CreationTime
 		{
 			get
 			{
-				return requestId;
+				return creationTime;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
+				creationTime = value;
 			}
 		}
 
@@ -70,6 +58,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				ipsecServerId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -97,15 +97,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string CreationTime
+		public string RegionId
 		{
 			get
 			{
-				return creationTime;
+				return regionId;
 			}
 			set	
 			{
-				creationTime = value;
+				regionId = value;
 			}
 		}
 	}

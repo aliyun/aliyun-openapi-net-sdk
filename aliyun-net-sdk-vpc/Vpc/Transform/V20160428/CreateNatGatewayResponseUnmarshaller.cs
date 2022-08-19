@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			CreateNatGatewayResponse createNatGatewayResponse = new CreateNatGatewayResponse();
 
 			createNatGatewayResponse.HttpResponse = _ctx.HttpResponse;
-			createNatGatewayResponse.RequestId = _ctx.StringValue("CreateNatGateway.RequestId");
 			createNatGatewayResponse.NatGatewayId = _ctx.StringValue("CreateNatGateway.NatGatewayId");
+			createNatGatewayResponse.RequestId = _ctx.StringValue("CreateNatGateway.RequestId");
 
 			List<string> createNatGatewayResponse_forwardTableIds = new List<string>();
 			for (int i = 0; i < _ctx.Length("CreateNatGateway.ForwardTableIds.Length"); i++) {
@@ -51,6 +51,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				createNatGatewayResponse_bandwidthPackageIds.Add(_ctx.StringValue("CreateNatGateway.BandwidthPackageIds["+ i +"]"));
 			}
 			createNatGatewayResponse.BandwidthPackageIds = createNatGatewayResponse_bandwidthPackageIds;
+
+			List<string> createNatGatewayResponse_fullNatTableIds = new List<string>();
+			for (int i = 0; i < _ctx.Length("CreateNatGateway.FullNatTableIds.Length"); i++) {
+				createNatGatewayResponse_fullNatTableIds.Add(_ctx.StringValue("CreateNatGateway.FullNatTableIds["+ i +"]"));
+			}
+			createNatGatewayResponse.FullNatTableIds = createNatGatewayResponse_fullNatTableIds;
         
 			return createNatGatewayResponse;
         }

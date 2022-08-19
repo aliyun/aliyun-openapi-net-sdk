@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,17 +25,13 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class CreateVpnRouteEntryResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string vpnInstanceId;
-
-		private string routeDest;
-
 		private string nextHop;
 
 		private int? weight;
 
-		private string overlayMode;
+		private string routeDest;
+
+		private string requestId;
 
 		private string description;
 
@@ -43,41 +39,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? createTime;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string overlayMode;
 
-		public string VpnInstanceId
-		{
-			get
-			{
-				return vpnInstanceId;
-			}
-			set	
-			{
-				vpnInstanceId = value;
-			}
-		}
-
-		public string RouteDest
-		{
-			get
-			{
-				return routeDest;
-			}
-			set	
-			{
-				routeDest = value;
-			}
-		}
+		private string vpnInstanceId;
 
 		public string NextHop
 		{
@@ -103,15 +67,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string OverlayMode
+		public string RouteDest
 		{
 			get
 			{
-				return overlayMode;
+				return routeDest;
 			}
 			set	
 			{
-				overlayMode = value;
+				routeDest = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -148,6 +124,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				createTime = value;
+			}
+		}
+
+		public string OverlayMode
+		{
+			get
+			{
+				return overlayMode;
+			}
+			set	
+			{
+				overlayMode = value;
+			}
+		}
+
+		public string VpnInstanceId
+		{
+			get
+			{
+				return vpnInstanceId;
+			}
+			set	
+			{
+				vpnInstanceId = value;
 			}
 		}
 	}

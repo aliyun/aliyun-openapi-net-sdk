@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -56,85 +56,37 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribePhysicalConnectionLOA_PhysicalConnectionLOAType
 		{
 
-			private string instanceId;
-
-			private string companyName;
-
-			private string companyLocalizedName;
-
-			private string lineType;
-
-			private string lineCode;
+			private string status;
 
 			private string lineLabel;
 
+			private string lineCode;
+
 			private string constructionTime;
-
-			private string status;
-
-			private string loaUrl;
 
 			private string sI;
 
+			private string loaUrl;
+
+			private string companyLocalizedName;
+
+			private string instanceId;
+
+			private string lineType;
+
+			private string companyName;
+
 			private List<DescribePhysicalConnectionLOA_PMInfoItem> pMInfo;
 
-			public string InstanceId
+			public string Status
 			{
 				get
 				{
-					return instanceId;
+					return status;
 				}
 				set	
 				{
-					instanceId = value;
-				}
-			}
-
-			public string CompanyName
-			{
-				get
-				{
-					return companyName;
-				}
-				set	
-				{
-					companyName = value;
-				}
-			}
-
-			public string CompanyLocalizedName
-			{
-				get
-				{
-					return companyLocalizedName;
-				}
-				set	
-				{
-					companyLocalizedName = value;
-				}
-			}
-
-			public string LineType
-			{
-				get
-				{
-					return lineType;
-				}
-				set	
-				{
-					lineType = value;
-				}
-			}
-
-			public string LineCode
-			{
-				get
-				{
-					return lineCode;
-				}
-				set	
-				{
-					lineCode = value;
+					status = value;
 				}
 			}
 
@@ -150,6 +102,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string LineCode
+			{
+				get
+				{
+					return lineCode;
+				}
+				set	
+				{
+					lineCode = value;
+				}
+			}
+
 			public string ConstructionTime
 			{
 				get
@@ -162,15 +126,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Status
+			public string SI
 			{
 				get
 				{
-					return status;
+					return sI;
 				}
 				set	
 				{
-					status = value;
+					sI = value;
 				}
 			}
 
@@ -186,15 +150,51 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string SI
+			public string CompanyLocalizedName
 			{
 				get
 				{
-					return sI;
+					return companyLocalizedName;
 				}
 				set	
 				{
-					sI = value;
+					companyLocalizedName = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string LineType
+			{
+				get
+				{
+					return lineType;
+				}
+				set	
+				{
+					lineType = value;
+				}
+			}
+
+			public string CompanyName
+			{
+				get
+				{
+					return companyName;
+				}
+				set	
+				{
+					companyName = value;
 				}
 			}
 
@@ -213,49 +213,25 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			public class DescribePhysicalConnectionLOA_PMInfoItem
 			{
 
-				private string pMName;
-
-				private string pMContactInfo;
-
-				private string pMCertificateType;
+				private string pMGender;
 
 				private string pMCertificateNo;
 
-				private string pMGender;
+				private string pMName;
 
-				public string PMName
+				private string pMCertificateType;
+
+				private string pMContactInfo;
+
+				public string PMGender
 				{
 					get
 					{
-						return pMName;
+						return pMGender;
 					}
 					set	
 					{
-						pMName = value;
-					}
-				}
-
-				public string PMContactInfo
-				{
-					get
-					{
-						return pMContactInfo;
-					}
-					set	
-					{
-						pMContactInfo = value;
-					}
-				}
-
-				public string PMCertificateType
-				{
-					get
-					{
-						return pMCertificateType;
-					}
-					set	
-					{
-						pMCertificateType = value;
+						pMGender = value;
 					}
 				}
 
@@ -271,15 +247,39 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
-				public string PMGender
+				public string PMName
 				{
 					get
 					{
-						return pMGender;
+						return pMName;
 					}
 					set	
 					{
-						pMGender = value;
+						pMName = value;
+					}
+				}
+
+				public string PMCertificateType
+				{
+					get
+					{
+						return pMCertificateType;
+					}
+					set	
+					{
+						pMCertificateType = value;
+					}
+				}
+
+				public string PMContactInfo
+				{
+					get
+					{
+						return pMContactInfo;
+					}
+					set	
+					{
+						pMContactInfo = value;
 					}
 				}
 			}

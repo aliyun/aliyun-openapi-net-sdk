@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -27,11 +27,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string requestId;
 
+		private bool? success;
+
 		private string code;
 
 		private string message;
-
-		private bool? success;
 
 		private int? pageSize;
 
@@ -50,6 +50,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -74,18 +86,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				message = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
 			}
 		}
 
@@ -142,29 +142,33 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string vpcId;
 
-			private string routerType;
-
-			private string routerId;
-
-			private string routeTableId;
-
-			private string routeTableName;
-
-			private string routeTableType;
-
-			private string description;
-
-			private string resourceGroupId;
-
 			private string creationTime;
 
 			private string status;
 
+			private string routerId;
+
+			private string associateType;
+
+			private string routeTableId;
+
 			private long? ownerId;
+
+			private string description;
+
+			private string routeTableType;
+
+			private string resourceGroupId;
+
+			private string routerType;
+
+			private string routeTableName;
 
 			private List<DescribeRouteTableList_Tag> tags;
 
 			private List<string> vSwitchIds;
+
+			private List<string> gatewayIds;
 
 			public string VpcId
 			{
@@ -175,90 +179,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					vpcId = value;
-				}
-			}
-
-			public string RouterType
-			{
-				get
-				{
-					return routerType;
-				}
-				set	
-				{
-					routerType = value;
-				}
-			}
-
-			public string RouterId
-			{
-				get
-				{
-					return routerId;
-				}
-				set	
-				{
-					routerId = value;
-				}
-			}
-
-			public string RouteTableId
-			{
-				get
-				{
-					return routeTableId;
-				}
-				set	
-				{
-					routeTableId = value;
-				}
-			}
-
-			public string RouteTableName
-			{
-				get
-				{
-					return routeTableName;
-				}
-				set	
-				{
-					routeTableName = value;
-				}
-			}
-
-			public string RouteTableType
-			{
-				get
-				{
-					return routeTableType;
-				}
-				set	
-				{
-					routeTableType = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
 				}
 			}
 
@@ -286,6 +206,42 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string RouterId
+			{
+				get
+				{
+					return routerId;
+				}
+				set	
+				{
+					routerId = value;
+				}
+			}
+
+			public string AssociateType
+			{
+				get
+				{
+					return associateType;
+				}
+				set	
+				{
+					associateType = value;
+				}
+			}
+
+			public string RouteTableId
+			{
+				get
+				{
+					return routeTableId;
+				}
+				set	
+				{
+					routeTableId = value;
+				}
+			}
+
 			public long? OwnerId
 			{
 				get
@@ -295,6 +251,66 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					ownerId = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string RouteTableType
+			{
+				get
+				{
+					return routeTableType;
+				}
+				set	
+				{
+					routeTableType = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string RouterType
+			{
+				get
+				{
+					return routerType;
+				}
+				set	
+				{
+					routerType = value;
+				}
+			}
+
+			public string RouteTableName
+			{
+				get
+				{
+					return routeTableName;
+				}
+				set	
+				{
+					routeTableName = value;
 				}
 			}
 
@@ -319,6 +335,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					vSwitchIds = value;
+				}
+			}
+
+			public List<string> GatewayIds
+			{
+				get
+				{
+					return gatewayIds;
+				}
+				set	
+				{
+					gatewayIds = value;
 				}
 			}
 

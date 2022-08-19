@@ -31,23 +31,25 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeVpcAttributeResponse describeVpcAttributeResponse = new DescribeVpcAttributeResponse();
 
 			describeVpcAttributeResponse.HttpResponse = _ctx.HttpResponse;
-			describeVpcAttributeResponse.RequestId = _ctx.StringValue("DescribeVpcAttribute.RequestId");
-			describeVpcAttributeResponse.VpcId = _ctx.StringValue("DescribeVpcAttribute.VpcId");
-			describeVpcAttributeResponse.RegionId = _ctx.StringValue("DescribeVpcAttribute.RegionId");
-			describeVpcAttributeResponse.Status = _ctx.StringValue("DescribeVpcAttribute.Status");
-			describeVpcAttributeResponse.VpcName = _ctx.StringValue("DescribeVpcAttribute.VpcName");
 			describeVpcAttributeResponse.CreationTime = _ctx.StringValue("DescribeVpcAttribute.CreationTime");
-			describeVpcAttributeResponse.CidrBlock = _ctx.StringValue("DescribeVpcAttribute.CidrBlock");
-			describeVpcAttributeResponse.Ipv6CidrBlock = _ctx.StringValue("DescribeVpcAttribute.Ipv6CidrBlock");
-			describeVpcAttributeResponse.VRouterId = _ctx.StringValue("DescribeVpcAttribute.VRouterId");
-			describeVpcAttributeResponse.Description = _ctx.StringValue("DescribeVpcAttribute.Description");
+			describeVpcAttributeResponse.Status = _ctx.StringValue("DescribeVpcAttribute.Status");
+			describeVpcAttributeResponse.VpcId = _ctx.StringValue("DescribeVpcAttribute.VpcId");
 			describeVpcAttributeResponse.IsDefault = _ctx.BooleanValue("DescribeVpcAttribute.IsDefault");
 			describeVpcAttributeResponse.ClassicLinkEnabled = _ctx.BooleanValue("DescribeVpcAttribute.ClassicLinkEnabled");
-			describeVpcAttributeResponse.ResourceGroupId = _ctx.StringValue("DescribeVpcAttribute.ResourceGroupId");
-			describeVpcAttributeResponse.NetworkAclNum = _ctx.StringValue("DescribeVpcAttribute.NetworkAclNum");
 			describeVpcAttributeResponse.OwnerId = _ctx.LongValue("DescribeVpcAttribute.OwnerId");
-			describeVpcAttributeResponse.DhcpOptionsSetId = _ctx.StringValue("DescribeVpcAttribute.DhcpOptionsSetId");
+			describeVpcAttributeResponse.RegionId = _ctx.StringValue("DescribeVpcAttribute.RegionId");
+			describeVpcAttributeResponse.VpcName = _ctx.StringValue("DescribeVpcAttribute.VpcName");
+			describeVpcAttributeResponse.VRouterId = _ctx.StringValue("DescribeVpcAttribute.VRouterId");
 			describeVpcAttributeResponse.DhcpOptionsSetStatus = _ctx.StringValue("DescribeVpcAttribute.DhcpOptionsSetStatus");
+			describeVpcAttributeResponse.CidrBlock = _ctx.StringValue("DescribeVpcAttribute.CidrBlock");
+			describeVpcAttributeResponse.RequestId = _ctx.StringValue("DescribeVpcAttribute.RequestId");
+			describeVpcAttributeResponse.Description = _ctx.StringValue("DescribeVpcAttribute.Description");
+			describeVpcAttributeResponse.NetworkAclNum = _ctx.StringValue("DescribeVpcAttribute.NetworkAclNum");
+			describeVpcAttributeResponse.ResourceGroupId = _ctx.StringValue("DescribeVpcAttribute.ResourceGroupId");
+			describeVpcAttributeResponse.DhcpOptionsSetId = _ctx.StringValue("DescribeVpcAttribute.DhcpOptionsSetId");
+			describeVpcAttributeResponse.Ipv6CidrBlock = _ctx.StringValue("DescribeVpcAttribute.Ipv6CidrBlock");
+			describeVpcAttributeResponse.SupportIpv4Gateway = _ctx.BooleanValue("DescribeVpcAttribute.SupportIpv4Gateway");
+			describeVpcAttributeResponse.Ipv4GatewayId = _ctx.StringValue("DescribeVpcAttribute.Ipv4GatewayId");
 
 			List<string> describeVpcAttributeResponse_vSwitchIds = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeVpcAttribute.VSwitchIds.Length"); i++) {
@@ -70,8 +72,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			List<DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen> describeVpcAttributeResponse_associatedCens = new List<DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen>();
 			for (int i = 0; i < _ctx.Length("DescribeVpcAttribute.AssociatedCens.Length"); i++) {
 				DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen associatedCen = new DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen();
-				associatedCen.CenId = _ctx.StringValue("DescribeVpcAttribute.AssociatedCens["+ i +"].CenId");
 				associatedCen.CenOwnerId = _ctx.LongValue("DescribeVpcAttribute.AssociatedCens["+ i +"].CenOwnerId");
+				associatedCen.CenId = _ctx.StringValue("DescribeVpcAttribute.AssociatedCens["+ i +"].CenId");
 				associatedCen.CenStatus = _ctx.StringValue("DescribeVpcAttribute.AssociatedCens["+ i +"].CenStatus");
 
 				describeVpcAttributeResponse_associatedCens.Add(associatedCen);
@@ -81,8 +83,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			List<DescribeVpcAttributeResponse.DescribeVpcAttribute_CloudResourceSetType> describeVpcAttributeResponse_cloudResources = new List<DescribeVpcAttributeResponse.DescribeVpcAttribute_CloudResourceSetType>();
 			for (int i = 0; i < _ctx.Length("DescribeVpcAttribute.CloudResources.Length"); i++) {
 				DescribeVpcAttributeResponse.DescribeVpcAttribute_CloudResourceSetType cloudResourceSetType = new DescribeVpcAttributeResponse.DescribeVpcAttribute_CloudResourceSetType();
-				cloudResourceSetType.ResourceType = _ctx.StringValue("DescribeVpcAttribute.CloudResources["+ i +"].ResourceType");
 				cloudResourceSetType.ResourceCount = _ctx.IntegerValue("DescribeVpcAttribute.CloudResources["+ i +"].ResourceCount");
+				cloudResourceSetType.ResourceType = _ctx.StringValue("DescribeVpcAttribute.CloudResources["+ i +"].ResourceType");
 
 				describeVpcAttributeResponse_cloudResources.Add(cloudResourceSetType);
 			}
@@ -91,8 +93,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			List<DescribeVpcAttributeResponse.DescribeVpcAttribute_Ipv6CidrBlock> describeVpcAttributeResponse_ipv6CidrBlocks = new List<DescribeVpcAttributeResponse.DescribeVpcAttribute_Ipv6CidrBlock>();
 			for (int i = 0; i < _ctx.Length("DescribeVpcAttribute.Ipv6CidrBlocks.Length"); i++) {
 				DescribeVpcAttributeResponse.DescribeVpcAttribute_Ipv6CidrBlock ipv6CidrBlock = new DescribeVpcAttributeResponse.DescribeVpcAttribute_Ipv6CidrBlock();
-				ipv6CidrBlock.Ipv6CidrBlock = _ctx.StringValue("DescribeVpcAttribute.Ipv6CidrBlocks["+ i +"].Ipv6CidrBlock");
 				ipv6CidrBlock.Ipv6Isp = _ctx.StringValue("DescribeVpcAttribute.Ipv6CidrBlocks["+ i +"].Ipv6Isp");
+				ipv6CidrBlock.Ipv6CidrBlock = _ctx.StringValue("DescribeVpcAttribute.Ipv6CidrBlocks["+ i +"].Ipv6CidrBlock");
 
 				describeVpcAttributeResponse_ipv6CidrBlocks.Add(ipv6CidrBlock);
 			}

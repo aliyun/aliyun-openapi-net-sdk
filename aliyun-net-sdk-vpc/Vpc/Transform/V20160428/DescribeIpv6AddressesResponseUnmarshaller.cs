@@ -31,34 +31,34 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeIpv6AddressesResponse describeIpv6AddressesResponse = new DescribeIpv6AddressesResponse();
 
 			describeIpv6AddressesResponse.HttpResponse = _ctx.HttpResponse;
-			describeIpv6AddressesResponse.RequestId = _ctx.StringValue("DescribeIpv6Addresses.RequestId");
-			describeIpv6AddressesResponse.TotalCount = _ctx.IntegerValue("DescribeIpv6Addresses.TotalCount");
-			describeIpv6AddressesResponse.PageNumber = _ctx.IntegerValue("DescribeIpv6Addresses.PageNumber");
 			describeIpv6AddressesResponse.PageSize = _ctx.IntegerValue("DescribeIpv6Addresses.PageSize");
+			describeIpv6AddressesResponse.RequestId = _ctx.StringValue("DescribeIpv6Addresses.RequestId");
+			describeIpv6AddressesResponse.PageNumber = _ctx.IntegerValue("DescribeIpv6Addresses.PageNumber");
+			describeIpv6AddressesResponse.TotalCount = _ctx.IntegerValue("DescribeIpv6Addresses.TotalCount");
 
 			List<DescribeIpv6AddressesResponse.DescribeIpv6Addresses_Ipv6Address> describeIpv6AddressesResponse_ipv6Addresses = new List<DescribeIpv6AddressesResponse.DescribeIpv6Addresses_Ipv6Address>();
 			for (int i = 0; i < _ctx.Length("DescribeIpv6Addresses.Ipv6Addresses.Length"); i++) {
 				DescribeIpv6AddressesResponse.DescribeIpv6Addresses_Ipv6Address ipv6Address = new DescribeIpv6AddressesResponse.DescribeIpv6Addresses_Ipv6Address();
-				ipv6Address.Ipv6AddressId = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].Ipv6AddressId");
-				ipv6Address.Ipv6AddressName = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].Ipv6AddressName");
-				ipv6Address.VSwitchId = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].VSwitchId");
 				ipv6Address.VpcId = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].VpcId");
-				ipv6Address.Ipv6GatewayId = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].Ipv6GatewayId");
-				ipv6Address.Ipv6Address = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].Ipv6Address");
-				ipv6Address.AssociatedInstanceId = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].AssociatedInstanceId");
-				ipv6Address.AssociatedInstanceType = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].AssociatedInstanceType");
 				ipv6Address.Status = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].Status");
-				ipv6Address.NetworkType = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].NetworkType");
-				ipv6Address.RealBandwidth = _ctx.IntegerValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].RealBandwidth");
+				ipv6Address.Ipv6AddressId = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].Ipv6AddressId");
 				ipv6Address.AllocationTime = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].AllocationTime");
+				ipv6Address.Ipv6AddressName = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].Ipv6AddressName");
+				ipv6Address.AssociatedInstanceType = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].AssociatedInstanceType");
+				ipv6Address.AssociatedInstanceId = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].AssociatedInstanceId");
+				ipv6Address.NetworkType = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].NetworkType");
+				ipv6Address.Ipv6Address = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].Ipv6Address");
 				ipv6Address.Ipv6Isp = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].Ipv6Isp");
+				ipv6Address.VSwitchId = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].VSwitchId");
+				ipv6Address.Ipv6GatewayId = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].Ipv6GatewayId");
+				ipv6Address.RealBandwidth = _ctx.IntegerValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].RealBandwidth");
 
 				DescribeIpv6AddressesResponse.DescribeIpv6Addresses_Ipv6Address.DescribeIpv6Addresses_Ipv6InternetBandwidth ipv6InternetBandwidth = new DescribeIpv6AddressesResponse.DescribeIpv6Addresses_Ipv6Address.DescribeIpv6Addresses_Ipv6InternetBandwidth();
-				ipv6InternetBandwidth.Bandwidth = _ctx.IntegerValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].Ipv6InternetBandwidth.Bandwidth");
-				ipv6InternetBandwidth.InstanceChargeType = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].Ipv6InternetBandwidth.InstanceChargeType");
 				ipv6InternetBandwidth.InternetChargeType = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].Ipv6InternetBandwidth.InternetChargeType");
 				ipv6InternetBandwidth.BusinessStatus = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].Ipv6InternetBandwidth.BusinessStatus");
+				ipv6InternetBandwidth.Bandwidth = _ctx.IntegerValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].Ipv6InternetBandwidth.Bandwidth");
 				ipv6InternetBandwidth.Ipv6InternetBandwidthId = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].Ipv6InternetBandwidth.Ipv6InternetBandwidthId");
+				ipv6InternetBandwidth.InstanceChargeType = _ctx.StringValue("DescribeIpv6Addresses.Ipv6Addresses["+ i +"].Ipv6InternetBandwidth.InstanceChargeType");
 				ipv6Address.Ipv6InternetBandwidth = ipv6InternetBandwidth;
 
 				describeIpv6AddressesResponse_ipv6Addresses.Add(ipv6Address);

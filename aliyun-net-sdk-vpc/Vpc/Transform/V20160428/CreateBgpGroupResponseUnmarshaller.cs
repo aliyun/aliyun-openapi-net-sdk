@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			CreateBgpGroupResponse createBgpGroupResponse = new CreateBgpGroupResponse();
 
 			createBgpGroupResponse.HttpResponse = _ctx.HttpResponse;
-			createBgpGroupResponse.RequestId = _ctx.StringValue("CreateBgpGroup.RequestId");
 			createBgpGroupResponse.BgpGroupId = _ctx.StringValue("CreateBgpGroup.BgpGroupId");
+			createBgpGroupResponse.RequestId = _ctx.StringValue("CreateBgpGroup.RequestId");
         
 			return createBgpGroupResponse;
         }

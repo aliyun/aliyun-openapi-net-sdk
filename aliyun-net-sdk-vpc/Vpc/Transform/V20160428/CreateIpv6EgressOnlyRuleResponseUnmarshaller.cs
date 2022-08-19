@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			CreateIpv6EgressOnlyRuleResponse createIpv6EgressOnlyRuleResponse = new CreateIpv6EgressOnlyRuleResponse();
 
 			createIpv6EgressOnlyRuleResponse.HttpResponse = _ctx.HttpResponse;
-			createIpv6EgressOnlyRuleResponse.RequestId = _ctx.StringValue("CreateIpv6EgressOnlyRule.RequestId");
 			createIpv6EgressOnlyRuleResponse.Ipv6EgressRuleId = _ctx.StringValue("CreateIpv6EgressOnlyRule.Ipv6EgressRuleId");
+			createIpv6EgressOnlyRuleResponse.RequestId = _ctx.StringValue("CreateIpv6EgressOnlyRule.RequestId");
         
 			return createIpv6EgressOnlyRuleResponse;
         }

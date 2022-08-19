@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeSnatTableEntriesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeSnatTableEntries_SnatTableEntry> snatTableEntries;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,41 +98,41 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeSnatTableEntries_SnatTableEntry
 		{
 
-			private string snatTableId;
+			private string status;
 
-			private string snatEntryId;
+			private string snatEntryName;
 
 			private string sourceVSwitchId;
 
 			private string sourceCIDR;
 
+			private string snatEntryId;
+
+			private string snatTableId;
+
 			private string snatIp;
 
-			private string status;
-
-			private string snatEntryName;
-
-			public string SnatTableId
+			public string Status
 			{
 				get
 				{
-					return snatTableId;
+					return status;
 				}
 				set	
 				{
-					snatTableId = value;
+					status = value;
 				}
 			}
 
-			public string SnatEntryId
+			public string SnatEntryName
 			{
 				get
 				{
-					return snatEntryId;
+					return snatEntryName;
 				}
 				set	
 				{
-					snatEntryId = value;
+					snatEntryName = value;
 				}
 			}
 
@@ -160,6 +160,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string SnatEntryId
+			{
+				get
+				{
+					return snatEntryId;
+				}
+				set	
+				{
+					snatEntryId = value;
+				}
+			}
+
+			public string SnatTableId
+			{
+				get
+				{
+					return snatTableId;
+				}
+				set	
+				{
+					snatTableId = value;
+				}
+			}
+
 			public string SnatIp
 			{
 				get
@@ -169,30 +193,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					snatIp = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string SnatEntryName
-			{
-				get
-				{
-					return snatEntryName;
-				}
-				set	
-				{
-					snatEntryName = value;
 				}
 			}
 		}

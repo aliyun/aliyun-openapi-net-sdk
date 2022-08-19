@@ -54,6 +54,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string ownerAccount;
 
+		private int? aggregationInterval;
+
 		private long? ownerId;
 
 		private string resourceType;
@@ -150,6 +152,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public int? AggregationInterval
+		{
+			get
+			{
+				return aggregationInterval;
+			}
+			set	
+			{
+				aggregationInterval = value;
+				DictionaryUtil.Add(QueryParameters, "AggregationInterval", value.ToString());
 			}
 		}
 

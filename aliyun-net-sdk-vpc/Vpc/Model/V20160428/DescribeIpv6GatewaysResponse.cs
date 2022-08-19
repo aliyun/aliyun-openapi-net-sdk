@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeIpv6GatewaysResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeIpv6Gateways_Ipv6Gateway> ipv6Gateways;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,61 +98,37 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeIpv6Gateways_Ipv6Gateway
 		{
 
-			private string regionId;
-
-			private string ipv6GatewayId;
-
-			private string vpcId;
+			private string creationTime;
 
 			private string status;
 
-			private string name;
-
-			private string description;
+			private string vpcId;
 
 			private string spec;
 
-			private string instanceChargeType;
+			private string description;
 
-			private string businessStatus;
+			private string ipv6GatewayId;
 
 			private string expiredTime;
 
-			private string creationTime;
+			private string businessStatus;
 
-			public string RegionId
+			private string name;
+
+			private string instanceChargeType;
+
+			private string regionId;
+
+			public string CreationTime
 			{
 				get
 				{
-					return regionId;
+					return creationTime;
 				}
 				set	
 				{
-					regionId = value;
-				}
-			}
-
-			public string Ipv6GatewayId
-			{
-				get
-				{
-					return ipv6GatewayId;
-				}
-				set	
-				{
-					ipv6GatewayId = value;
-				}
-			}
-
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
+					creationTime = value;
 				}
 			}
 
@@ -168,27 +144,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Name
+			public string VpcId
 			{
 				get
 				{
-					return name;
+					return vpcId;
 				}
 				set	
 				{
-					name = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
+					vpcId = value;
 				}
 			}
 
@@ -204,27 +168,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string InstanceChargeType
+			public string Description
 			{
 				get
 				{
-					return instanceChargeType;
+					return description;
 				}
 				set	
 				{
-					instanceChargeType = value;
+					description = value;
 				}
 			}
 
-			public string BusinessStatus
+			public string Ipv6GatewayId
 			{
 				get
 				{
-					return businessStatus;
+					return ipv6GatewayId;
 				}
 				set	
 				{
-					businessStatus = value;
+					ipv6GatewayId = value;
 				}
 			}
 
@@ -240,15 +204,51 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string CreationTime
+			public string BusinessStatus
 			{
 				get
 				{
-					return creationTime;
+					return businessStatus;
 				}
 				set	
 				{
-					creationTime = value;
+					businessStatus = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string InstanceChargeType
+			{
+				get
+				{
+					return instanceChargeType;
+				}
+				set	
+				{
+					instanceChargeType = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 		}

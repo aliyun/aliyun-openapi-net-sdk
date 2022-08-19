@@ -31,13 +31,14 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeCustomerGatewayResponse describeCustomerGatewayResponse = new DescribeCustomerGatewayResponse();
 
 			describeCustomerGatewayResponse.HttpResponse = _ctx.HttpResponse;
+			describeCustomerGatewayResponse.Asn = _ctx.LongValue("DescribeCustomerGateway.Asn");
 			describeCustomerGatewayResponse.RequestId = _ctx.StringValue("DescribeCustomerGateway.RequestId");
-			describeCustomerGatewayResponse.CustomerGatewayId = _ctx.StringValue("DescribeCustomerGateway.CustomerGatewayId");
 			describeCustomerGatewayResponse.IpAddress = _ctx.StringValue("DescribeCustomerGateway.IpAddress");
-			describeCustomerGatewayResponse.Name = _ctx.StringValue("DescribeCustomerGateway.Name");
 			describeCustomerGatewayResponse.Description = _ctx.StringValue("DescribeCustomerGateway.Description");
+			describeCustomerGatewayResponse.CustomerGatewayId = _ctx.StringValue("DescribeCustomerGateway.CustomerGatewayId");
 			describeCustomerGatewayResponse.CreateTime = _ctx.LongValue("DescribeCustomerGateway.CreateTime");
-			describeCustomerGatewayResponse.Asn = _ctx.IntegerValue("DescribeCustomerGateway.Asn");
+			describeCustomerGatewayResponse.Name = _ctx.StringValue("DescribeCustomerGateway.Name");
+			describeCustomerGatewayResponse.AuthKey = _ctx.StringValue("DescribeCustomerGateway.AuthKey");
         
 			return describeCustomerGatewayResponse;
         }

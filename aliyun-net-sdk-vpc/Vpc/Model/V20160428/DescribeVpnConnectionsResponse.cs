@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeVpnConnectionsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeVpnConnections_VpnConnection> vpnConnections;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,29 +98,45 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeVpnConnections_VpnConnection
 		{
 
-			private string vpnConnectionId;
+			private string status;
 
-			private string customerGatewayId;
+			private bool? enableNatTraversal;
 
-			private string vpnGatewayId;
-
-			private string name;
-
-			private string localSubnet;
-
-			private string remoteSubnet;
+			private string remoteCaCertificate;
 
 			private long? createTime;
 
 			private bool? effectImmediately;
 
-			private string status;
+			private string vpnGatewayId;
+
+			private string localSubnet;
+
+			private string vpnConnectionId;
+
+			private string remoteSubnet;
+
+			private string customerGatewayId;
+
+			private string name;
 
 			private bool? enableDpd;
 
-			private bool? enableNatTraversal;
+			private string attachType;
 
-			private string remoteCaCertificate;
+			private string networkType;
+
+			private string attachInstanceId;
+
+			private string spec;
+
+			private string state;
+
+			private string transitRouterId;
+
+			private string transitRouterName;
+
+			private bool? crossAccountAuthorized;
 
 			private DescribeVpnConnections_IkeConfig ikeConfig;
 
@@ -130,75 +146,39 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private DescribeVpnConnections_VpnBgpConfig vpnBgpConfig;
 
-			public string VpnConnectionId
+			public string Status
 			{
 				get
 				{
-					return vpnConnectionId;
+					return status;
 				}
 				set	
 				{
-					vpnConnectionId = value;
+					status = value;
 				}
 			}
 
-			public string CustomerGatewayId
+			public bool? EnableNatTraversal
 			{
 				get
 				{
-					return customerGatewayId;
+					return enableNatTraversal;
 				}
 				set	
 				{
-					customerGatewayId = value;
+					enableNatTraversal = value;
 				}
 			}
 
-			public string VpnGatewayId
+			public string RemoteCaCertificate
 			{
 				get
 				{
-					return vpnGatewayId;
+					return remoteCaCertificate;
 				}
 				set	
 				{
-					vpnGatewayId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string LocalSubnet
-			{
-				get
-				{
-					return localSubnet;
-				}
-				set	
-				{
-					localSubnet = value;
-				}
-			}
-
-			public string RemoteSubnet
-			{
-				get
-				{
-					return remoteSubnet;
-				}
-				set	
-				{
-					remoteSubnet = value;
+					remoteCaCertificate = value;
 				}
 			}
 
@@ -226,15 +206,75 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Status
+			public string VpnGatewayId
 			{
 				get
 				{
-					return status;
+					return vpnGatewayId;
 				}
 				set	
 				{
-					status = value;
+					vpnGatewayId = value;
+				}
+			}
+
+			public string LocalSubnet
+			{
+				get
+				{
+					return localSubnet;
+				}
+				set	
+				{
+					localSubnet = value;
+				}
+			}
+
+			public string VpnConnectionId
+			{
+				get
+				{
+					return vpnConnectionId;
+				}
+				set	
+				{
+					vpnConnectionId = value;
+				}
+			}
+
+			public string RemoteSubnet
+			{
+				get
+				{
+					return remoteSubnet;
+				}
+				set	
+				{
+					remoteSubnet = value;
+				}
+			}
+
+			public string CustomerGatewayId
+			{
+				get
+				{
+					return customerGatewayId;
+				}
+				set	
+				{
+					customerGatewayId = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 
@@ -250,27 +290,99 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public bool? EnableNatTraversal
+			public string AttachType
 			{
 				get
 				{
-					return enableNatTraversal;
+					return attachType;
 				}
 				set	
 				{
-					enableNatTraversal = value;
+					attachType = value;
 				}
 			}
 
-			public string RemoteCaCertificate
+			public string NetworkType
 			{
 				get
 				{
-					return remoteCaCertificate;
+					return networkType;
 				}
 				set	
 				{
-					remoteCaCertificate = value;
+					networkType = value;
+				}
+			}
+
+			public string AttachInstanceId
+			{
+				get
+				{
+					return attachInstanceId;
+				}
+				set	
+				{
+					attachInstanceId = value;
+				}
+			}
+
+			public string Spec
+			{
+				get
+				{
+					return spec;
+				}
+				set	
+				{
+					spec = value;
+				}
+			}
+
+			public string State
+			{
+				get
+				{
+					return state;
+				}
+				set	
+				{
+					state = value;
+				}
+			}
+
+			public string TransitRouterId
+			{
+				get
+				{
+					return transitRouterId;
+				}
+				set	
+				{
+					transitRouterId = value;
+				}
+			}
+
+			public string TransitRouterName
+			{
+				get
+				{
+					return transitRouterName;
+				}
+				set	
+				{
+					transitRouterName = value;
+				}
+			}
+
+			public bool? CrossAccountAuthorized
+			{
+				get
+				{
+					return crossAccountAuthorized;
+				}
+				set	
+				{
+					crossAccountAuthorized = value;
 				}
 			}
 
@@ -325,93 +437,33 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			public class DescribeVpnConnections_IkeConfig
 			{
 
-				private string psk;
-
-				private string ikeVersion;
-
-				private string ikeMode;
-
-				private string ikeEncAlg;
-
-				private string ikeAuthAlg;
-
-				private string ikePfs;
+				private string remoteId;
 
 				private long? ikeLifetime;
 
+				private string ikeEncAlg;
+
 				private string localId;
 
-				private string remoteId;
+				private string ikeMode;
 
-				public string Psk
+				private string ikeVersion;
+
+				private string ikePfs;
+
+				private string psk;
+
+				private string ikeAuthAlg;
+
+				public string RemoteId
 				{
 					get
 					{
-						return psk;
+						return remoteId;
 					}
 					set	
 					{
-						psk = value;
-					}
-				}
-
-				public string IkeVersion
-				{
-					get
-					{
-						return ikeVersion;
-					}
-					set	
-					{
-						ikeVersion = value;
-					}
-				}
-
-				public string IkeMode
-				{
-					get
-					{
-						return ikeMode;
-					}
-					set	
-					{
-						ikeMode = value;
-					}
-				}
-
-				public string IkeEncAlg
-				{
-					get
-					{
-						return ikeEncAlg;
-					}
-					set	
-					{
-						ikeEncAlg = value;
-					}
-				}
-
-				public string IkeAuthAlg
-				{
-					get
-					{
-						return ikeAuthAlg;
-					}
-					set	
-					{
-						ikeAuthAlg = value;
-					}
-				}
-
-				public string IkePfs
-				{
-					get
-					{
-						return ikePfs;
-					}
-					set	
-					{
-						ikePfs = value;
+						remoteId = value;
 					}
 				}
 
@@ -427,6 +479,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
+				public string IkeEncAlg
+				{
+					get
+					{
+						return ikeEncAlg;
+					}
+					set	
+					{
+						ikeEncAlg = value;
+					}
+				}
+
 				public string LocalId
 				{
 					get
@@ -439,15 +503,63 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
-				public string RemoteId
+				public string IkeMode
 				{
 					get
 					{
-						return remoteId;
+						return ikeMode;
 					}
 					set	
 					{
-						remoteId = value;
+						ikeMode = value;
+					}
+				}
+
+				public string IkeVersion
+				{
+					get
+					{
+						return ikeVersion;
+					}
+					set	
+					{
+						ikeVersion = value;
+					}
+				}
+
+				public string IkePfs
+				{
+					get
+					{
+						return ikePfs;
+					}
+					set	
+					{
+						ikePfs = value;
+					}
+				}
+
+				public string Psk
+				{
+					get
+					{
+						return psk;
+					}
+					set	
+					{
+						psk = value;
+					}
+				}
+
+				public string IkeAuthAlg
+				{
+					get
+					{
+						return ikeAuthAlg;
+					}
+					set	
+					{
+						ikeAuthAlg = value;
 					}
 				}
 			}
@@ -455,25 +567,13 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			public class DescribeVpnConnections_IpsecConfig
 			{
 
-				private string ipsecEncAlg;
-
 				private string ipsecAuthAlg;
-
-				private string ipsecPfs;
 
 				private long? ipsecLifetime;
 
-				public string IpsecEncAlg
-				{
-					get
-					{
-						return ipsecEncAlg;
-					}
-					set	
-					{
-						ipsecEncAlg = value;
-					}
-				}
+				private string ipsecEncAlg;
+
+				private string ipsecPfs;
 
 				public string IpsecAuthAlg
 				{
@@ -484,18 +584,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						ipsecAuthAlg = value;
-					}
-				}
-
-				public string IpsecPfs
-				{
-					get
-					{
-						return ipsecPfs;
-					}
-					set	
-					{
-						ipsecPfs = value;
 					}
 				}
 
@@ -510,14 +598,36 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 						ipsecLifetime = value;
 					}
 				}
+
+				public string IpsecEncAlg
+				{
+					get
+					{
+						return ipsecEncAlg;
+					}
+					set	
+					{
+						ipsecEncAlg = value;
+					}
+				}
+
+				public string IpsecPfs
+				{
+					get
+					{
+						return ipsecPfs;
+					}
+					set	
+					{
+						ipsecPfs = value;
+					}
+				}
 			}
 
 			public class DescribeVpnConnections_VcoHealthCheck
 			{
 
-				private string enable;
-
-				private string sip;
+				private string status;
 
 				private string dip;
 
@@ -525,29 +635,21 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 				private int? retry;
 
-				private string status;
+				private string sip;
 
-				public string Enable
+				private string enable;
+
+				private string policy;
+
+				public string Status
 				{
 					get
 					{
-						return enable;
+						return status;
 					}
 					set	
 					{
-						enable = value;
-					}
-				}
-
-				public string Sip
-				{
-					get
-					{
-						return sip;
-					}
-					set	
-					{
-						sip = value;
+						status = value;
 					}
 				}
 
@@ -587,6 +689,60 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
+				public string Sip
+				{
+					get
+					{
+						return sip;
+					}
+					set	
+					{
+						sip = value;
+					}
+				}
+
+				public string Enable
+				{
+					get
+					{
+						return enable;
+					}
+					set	
+					{
+						enable = value;
+					}
+				}
+
+				public string Policy
+				{
+					get
+					{
+						return policy;
+					}
+					set	
+					{
+						policy = value;
+					}
+				}
+			}
+
+			public class DescribeVpnConnections_VpnBgpConfig
+			{
+
+				private string status;
+
+				private string peerBgpIp;
+
+				private string tunnelCidr;
+
+				private string localBgpIp;
+
+				private long? peerAsn;
+
+				private long? localAsn;
+
+				private string authKey;
+
 				public string Status
 				{
 					get
@@ -598,22 +754,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 						status = value;
 					}
 				}
-			}
 
-			public class DescribeVpnConnections_VpnBgpConfig
-			{
-
-				private string tunnelCidr;
-
-				private string localBgpIp;
-
-				private string peerBgpIp;
-
-				private string localAsn;
-
-				private string peerAsn;
-
-				private string status;
+				public string PeerBgpIp
+				{
+					get
+					{
+						return peerBgpIp;
+					}
+					set	
+					{
+						peerBgpIp = value;
+					}
+				}
 
 				public string TunnelCidr
 				{
@@ -639,31 +791,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
-				public string PeerBgpIp
-				{
-					get
-					{
-						return peerBgpIp;
-					}
-					set	
-					{
-						peerBgpIp = value;
-					}
-				}
-
-				public string LocalAsn
-				{
-					get
-					{
-						return localAsn;
-					}
-					set	
-					{
-						localAsn = value;
-					}
-				}
-
-				public string PeerAsn
+				public long? PeerAsn
 				{
 					get
 					{
@@ -675,15 +803,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
-				public string Status
+				public long? LocalAsn
 				{
 					get
 					{
-						return status;
+						return localAsn;
 					}
 					set	
 					{
-						status = value;
+						localAsn = value;
+					}
+				}
+
+				public string AuthKey
+				{
+					get
+					{
+						return authKey;
+					}
+					set	
+					{
+						authKey = value;
 					}
 				}
 			}

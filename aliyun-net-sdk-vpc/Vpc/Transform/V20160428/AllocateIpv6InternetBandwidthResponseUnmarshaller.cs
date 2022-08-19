@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			AllocateIpv6InternetBandwidthResponse allocateIpv6InternetBandwidthResponse = new AllocateIpv6InternetBandwidthResponse();
 
 			allocateIpv6InternetBandwidthResponse.HttpResponse = _ctx.HttpResponse;
-			allocateIpv6InternetBandwidthResponse.RequestId = _ctx.StringValue("AllocateIpv6InternetBandwidth.RequestId");
 			allocateIpv6InternetBandwidthResponse.Ipv6AddressId = _ctx.StringValue("AllocateIpv6InternetBandwidth.Ipv6AddressId");
+			allocateIpv6InternetBandwidthResponse.RequestId = _ctx.StringValue("AllocateIpv6InternetBandwidth.RequestId");
 			allocateIpv6InternetBandwidthResponse.InternetBandwidthId = _ctx.StringValue("AllocateIpv6InternetBandwidth.InternetBandwidthId");
         
 			return allocateIpv6InternetBandwidthResponse;

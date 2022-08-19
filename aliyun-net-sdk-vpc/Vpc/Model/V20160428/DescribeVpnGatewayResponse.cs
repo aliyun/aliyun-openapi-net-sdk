@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,71 +25,71 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeVpnGatewayResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string vpnType;
 
-		private string vpnGatewayId;
+		private string status;
 
 		private string vpcId;
 
-		private string vSwitchId;
+		private long? sslMaxConnections;
+
+		private string spec;
 
 		private string internetIp;
 
 		private long? createTime;
 
-		private long? endTime;
-
-		private string spec;
-
-		private string name;
-
-		private string description;
-
-		private string status;
-
-		private string businessStatus;
+		private bool? autoPropagate;
 
 		private string chargeType;
 
-		private string ipsecVpn;
-
-		private string sslVpn;
-
-		private long? sslMaxConnections;
+		private string vpnGatewayId;
 
 		private string tag;
 
+		private string ipsecVpn;
+
+		private long? endTime;
+
+		private string vSwitchId;
+
+		private string requestId;
+
+		private string description;
+
 		private bool? enableBgp;
 
-		private bool? autoPropagate;
+		private string businessStatus;
 
-		private string vpnType;
+		private string sslVpn;
+
+		private string name;
 
 		private List<DescribeVpnGateway_Tag> tags;
 
 		private DescribeVpnGateway_ReservationData reservationData;
 
-		public string RequestId
+		public string VpnType
 		{
 			get
 			{
-				return requestId;
+				return vpnType;
 			}
 			set	
 			{
-				requestId = value;
+				vpnType = value;
 			}
 		}
 
-		public string VpnGatewayId
+		public string Status
 		{
 			get
 			{
-				return vpnGatewayId;
+				return status;
 			}
 			set	
 			{
-				vpnGatewayId = value;
+				status = value;
 			}
 		}
 
@@ -105,15 +105,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string VSwitchId
+		public long? SslMaxConnections
 		{
 			get
 			{
-				return vSwitchId;
+				return sslMaxConnections;
 			}
 			set	
 			{
-				vSwitchId = value;
+				sslMaxConnections = value;
+			}
+		}
+
+		public string Spec
+		{
+			get
+			{
+				return spec;
+			}
+			set	
+			{
+				spec = value;
 			}
 		}
 
@@ -141,75 +153,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public long? EndTime
+		public bool? AutoPropagate
 		{
 			get
 			{
-				return endTime;
+				return autoPropagate;
 			}
 			set	
 			{
-				endTime = value;
-			}
-		}
-
-		public string Spec
-		{
-			get
-			{
-				return spec;
-			}
-			set	
-			{
-				spec = value;
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-			}
-		}
-
-		public string BusinessStatus
-		{
-			get
-			{
-				return businessStatus;
-			}
-			set	
-			{
-				businessStatus = value;
+				autoPropagate = value;
 			}
 		}
 
@@ -225,39 +177,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string IpsecVpn
+		public string VpnGatewayId
 		{
 			get
 			{
-				return ipsecVpn;
+				return vpnGatewayId;
 			}
 			set	
 			{
-				ipsecVpn = value;
-			}
-		}
-
-		public string SslVpn
-		{
-			get
-			{
-				return sslVpn;
-			}
-			set	
-			{
-				sslVpn = value;
-			}
-		}
-
-		public long? SslMaxConnections
-		{
-			get
-			{
-				return sslMaxConnections;
-			}
-			set	
-			{
-				sslMaxConnections = value;
+				vpnGatewayId = value;
 			}
 		}
 
@@ -273,6 +201,66 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string IpsecVpn
+		{
+			get
+			{
+				return ipsecVpn;
+			}
+			set	
+			{
+				ipsecVpn = value;
+			}
+		}
+
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+			}
+		}
+
 		public bool? EnableBgp
 		{
 			get
@@ -285,27 +273,39 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public bool? AutoPropagate
+		public string BusinessStatus
 		{
 			get
 			{
-				return autoPropagate;
+				return businessStatus;
 			}
 			set	
 			{
-				autoPropagate = value;
+				businessStatus = value;
 			}
 		}
 
-		public string VpnType
+		public string SslVpn
 		{
 			get
 			{
-				return vpnType;
+				return sslVpn;
 			}
 			set	
 			{
-				vpnType = value;
+				sslVpn = value;
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
 			}
 		}
 
@@ -370,17 +370,17 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string status;
 
-			private string reservationEndTime;
-
 			private string reservationOrderType;
 
-			private string reservationSpec;
-
 			private string reservationIpsec;
+
+			private string reservationSpec;
 
 			private string reservationSsl;
 
 			private int? reservationMaxConnections;
+
+			private string reservationEndTime;
 
 			public string Status
 			{
@@ -391,18 +391,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					status = value;
-				}
-			}
-
-			public string ReservationEndTime
-			{
-				get
-				{
-					return reservationEndTime;
-				}
-				set	
-				{
-					reservationEndTime = value;
 				}
 			}
 
@@ -418,18 +406,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string ReservationSpec
-			{
-				get
-				{
-					return reservationSpec;
-				}
-				set	
-				{
-					reservationSpec = value;
-				}
-			}
-
 			public string ReservationIpsec
 			{
 				get
@@ -439,6 +415,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					reservationIpsec = value;
+				}
+			}
+
+			public string ReservationSpec
+			{
+				get
+				{
+					return reservationSpec;
+				}
+				set	
+				{
+					reservationSpec = value;
 				}
 			}
 
@@ -463,6 +451,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					reservationMaxConnections = value;
+				}
+			}
+
+			public string ReservationEndTime
+			{
+				get
+				{
+					return reservationEndTime;
+				}
+				set	
+				{
+					reservationEndTime = value;
 				}
 			}
 		}

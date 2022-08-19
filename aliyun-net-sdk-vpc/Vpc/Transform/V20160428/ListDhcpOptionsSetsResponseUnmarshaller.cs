@@ -31,22 +31,24 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			ListDhcpOptionsSetsResponse listDhcpOptionsSetsResponse = new ListDhcpOptionsSetsResponse();
 
 			listDhcpOptionsSetsResponse.HttpResponse = _ctx.HttpResponse;
-			listDhcpOptionsSetsResponse.RequestId = _ctx.StringValue("ListDhcpOptionsSets.RequestId");
 			listDhcpOptionsSetsResponse.NextToken = _ctx.StringValue("ListDhcpOptionsSets.NextToken");
+			listDhcpOptionsSetsResponse.RequestId = _ctx.StringValue("ListDhcpOptionsSets.RequestId");
 
 			List<ListDhcpOptionsSetsResponse.ListDhcpOptionsSets_DhcpOptionsSet> listDhcpOptionsSetsResponse_dhcpOptionsSets = new List<ListDhcpOptionsSetsResponse.ListDhcpOptionsSets_DhcpOptionsSet>();
 			for (int i = 0; i < _ctx.Length("ListDhcpOptionsSets.DhcpOptionsSets.Length"); i++) {
 				ListDhcpOptionsSetsResponse.ListDhcpOptionsSets_DhcpOptionsSet dhcpOptionsSet = new ListDhcpOptionsSetsResponse.ListDhcpOptionsSets_DhcpOptionsSet();
-				dhcpOptionsSet.DhcpOptionsSetName = _ctx.StringValue("ListDhcpOptionsSets.DhcpOptionsSets["+ i +"].DhcpOptionsSetName");
 				dhcpOptionsSet.DhcpOptionsSetDescription = _ctx.StringValue("ListDhcpOptionsSets.DhcpOptionsSets["+ i +"].DhcpOptionsSetDescription");
-				dhcpOptionsSet.OwnerId = _ctx.LongValue("ListDhcpOptionsSets.DhcpOptionsSets["+ i +"].OwnerId");
 				dhcpOptionsSet.Status = _ctx.StringValue("ListDhcpOptionsSets.DhcpOptionsSets["+ i +"].Status");
 				dhcpOptionsSet.DhcpOptionsSetId = _ctx.StringValue("ListDhcpOptionsSets.DhcpOptionsSets["+ i +"].DhcpOptionsSetId");
+				dhcpOptionsSet.DhcpOptionsSetName = _ctx.StringValue("ListDhcpOptionsSets.DhcpOptionsSets["+ i +"].DhcpOptionsSetName");
 				dhcpOptionsSet.AssociateVpcCount = _ctx.IntegerValue("ListDhcpOptionsSets.DhcpOptionsSets["+ i +"].AssociateVpcCount");
+				dhcpOptionsSet.OwnerId = _ctx.LongValue("ListDhcpOptionsSets.DhcpOptionsSets["+ i +"].OwnerId");
 
 				ListDhcpOptionsSetsResponse.ListDhcpOptionsSets_DhcpOptionsSet.ListDhcpOptionsSets_DhcpOptions dhcpOptions = new ListDhcpOptionsSetsResponse.ListDhcpOptionsSets_DhcpOptionsSet.ListDhcpOptionsSets_DhcpOptions();
 				dhcpOptions.DomainNameServers = _ctx.StringValue("ListDhcpOptionsSets.DhcpOptionsSets["+ i +"].DhcpOptions.DomainNameServers");
 				dhcpOptions.DomainName = _ctx.StringValue("ListDhcpOptionsSets.DhcpOptionsSets["+ i +"].DhcpOptions.DomainName");
+				dhcpOptions.LeaseTime = _ctx.StringValue("ListDhcpOptionsSets.DhcpOptionsSets["+ i +"].DhcpOptions.LeaseTime");
+				dhcpOptions.Ipv6LeaseTime = _ctx.StringValue("ListDhcpOptionsSets.DhcpOptionsSets["+ i +"].DhcpOptions.Ipv6LeaseTime");
 				dhcpOptionsSet.DhcpOptions = dhcpOptions;
 
 				listDhcpOptionsSetsResponse_dhcpOptionsSets.Add(dhcpOptionsSet);

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class CreateCommonBandwidthPackageResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string bandwidthPackageId;
 
-		private string resourceGroupId;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string resourceGroupId;
 
 		public string BandwidthPackageId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				bandwidthPackageId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

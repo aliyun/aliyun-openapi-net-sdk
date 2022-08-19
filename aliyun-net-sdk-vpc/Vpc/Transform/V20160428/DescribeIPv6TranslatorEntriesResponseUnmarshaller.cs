@@ -31,29 +31,29 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeIPv6TranslatorEntriesResponse describeIPv6TranslatorEntriesResponse = new DescribeIPv6TranslatorEntriesResponse();
 
 			describeIPv6TranslatorEntriesResponse.HttpResponse = _ctx.HttpResponse;
-			describeIPv6TranslatorEntriesResponse.RequestId = _ctx.StringValue("DescribeIPv6TranslatorEntries.RequestId");
-			describeIPv6TranslatorEntriesResponse.TotalCount = _ctx.IntegerValue("DescribeIPv6TranslatorEntries.TotalCount");
-			describeIPv6TranslatorEntriesResponse.PageNumber = _ctx.IntegerValue("DescribeIPv6TranslatorEntries.PageNumber");
 			describeIPv6TranslatorEntriesResponse.PageSize = _ctx.IntegerValue("DescribeIPv6TranslatorEntries.PageSize");
+			describeIPv6TranslatorEntriesResponse.RequestId = _ctx.StringValue("DescribeIPv6TranslatorEntries.RequestId");
+			describeIPv6TranslatorEntriesResponse.PageNumber = _ctx.IntegerValue("DescribeIPv6TranslatorEntries.PageNumber");
+			describeIPv6TranslatorEntriesResponse.TotalCount = _ctx.IntegerValue("DescribeIPv6TranslatorEntries.TotalCount");
 
 			List<DescribeIPv6TranslatorEntriesResponse.DescribeIPv6TranslatorEntries_Ipv6TranslatorEntry> describeIPv6TranslatorEntriesResponse_ipv6TranslatorEntries = new List<DescribeIPv6TranslatorEntriesResponse.DescribeIPv6TranslatorEntries_Ipv6TranslatorEntry>();
 			for (int i = 0; i < _ctx.Length("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries.Length"); i++) {
 				DescribeIPv6TranslatorEntriesResponse.DescribeIPv6TranslatorEntries_Ipv6TranslatorEntry ipv6TranslatorEntry = new DescribeIPv6TranslatorEntriesResponse.DescribeIPv6TranslatorEntries_Ipv6TranslatorEntry();
+				ipv6TranslatorEntry.AclType = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].AclType");
+				ipv6TranslatorEntry.EntryStatus = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].EntryStatus");
+				ipv6TranslatorEntry.TransProtocol = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].TransProtocol");
 				ipv6TranslatorEntry.Ipv6TranslatorId = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].Ipv6TranslatorId");
+				ipv6TranslatorEntry.EntryDescription = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].EntryDescription");
 				ipv6TranslatorEntry.Ipv6TranslatorEntryId = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].Ipv6TranslatorEntryId");
-				ipv6TranslatorEntry.AllocateIpv6Addr = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].AllocateIpv6Addr");
 				ipv6TranslatorEntry.AllocateIpv6Port = _ctx.IntegerValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].AllocateIpv6Port");
 				ipv6TranslatorEntry.BackendIpv4Addr = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].BackendIpv4Addr");
 				ipv6TranslatorEntry.BackendIpv4Port = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].BackendIpv4Port");
-				ipv6TranslatorEntry.TransProtocol = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].TransProtocol");
-				ipv6TranslatorEntry.EntryBandwidth = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].EntryBandwidth");
-				ipv6TranslatorEntry.EntryDescription = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].EntryDescription");
-				ipv6TranslatorEntry.EntryName = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].EntryName");
-				ipv6TranslatorEntry.EntryStatus = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].EntryStatus");
-				ipv6TranslatorEntry.AclStatus = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].AclStatus");
-				ipv6TranslatorEntry.AclType = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].AclType");
-				ipv6TranslatorEntry.AclId = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].AclId");
 				ipv6TranslatorEntry.RegionId = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].RegionId");
+				ipv6TranslatorEntry.EntryBandwidth = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].EntryBandwidth");
+				ipv6TranslatorEntry.AclId = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].AclId");
+				ipv6TranslatorEntry.EntryName = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].EntryName");
+				ipv6TranslatorEntry.AclStatus = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].AclStatus");
+				ipv6TranslatorEntry.AllocateIpv6Addr = _ctx.StringValue("DescribeIPv6TranslatorEntries.Ipv6TranslatorEntries["+ i +"].AllocateIpv6Addr");
 
 				describeIPv6TranslatorEntriesResponse_ipv6TranslatorEntries.Add(ipv6TranslatorEntry);
 			}

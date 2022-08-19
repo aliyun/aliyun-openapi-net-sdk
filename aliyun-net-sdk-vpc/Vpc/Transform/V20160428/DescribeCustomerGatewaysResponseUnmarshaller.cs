@@ -31,20 +31,21 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeCustomerGatewaysResponse describeCustomerGatewaysResponse = new DescribeCustomerGatewaysResponse();
 
 			describeCustomerGatewaysResponse.HttpResponse = _ctx.HttpResponse;
-			describeCustomerGatewaysResponse.RequestId = _ctx.StringValue("DescribeCustomerGateways.RequestId");
-			describeCustomerGatewaysResponse.TotalCount = _ctx.IntegerValue("DescribeCustomerGateways.TotalCount");
-			describeCustomerGatewaysResponse.PageNumber = _ctx.IntegerValue("DescribeCustomerGateways.PageNumber");
 			describeCustomerGatewaysResponse.PageSize = _ctx.IntegerValue("DescribeCustomerGateways.PageSize");
+			describeCustomerGatewaysResponse.RequestId = _ctx.StringValue("DescribeCustomerGateways.RequestId");
+			describeCustomerGatewaysResponse.PageNumber = _ctx.IntegerValue("DescribeCustomerGateways.PageNumber");
+			describeCustomerGatewaysResponse.TotalCount = _ctx.IntegerValue("DescribeCustomerGateways.TotalCount");
 
 			List<DescribeCustomerGatewaysResponse.DescribeCustomerGateways_CustomerGateway> describeCustomerGatewaysResponse_customerGateways = new List<DescribeCustomerGatewaysResponse.DescribeCustomerGateways_CustomerGateway>();
 			for (int i = 0; i < _ctx.Length("DescribeCustomerGateways.CustomerGateways.Length"); i++) {
 				DescribeCustomerGatewaysResponse.DescribeCustomerGateways_CustomerGateway customerGateway = new DescribeCustomerGatewaysResponse.DescribeCustomerGateways_CustomerGateway();
-				customerGateway.CustomerGatewayId = _ctx.StringValue("DescribeCustomerGateways.CustomerGateways["+ i +"].CustomerGatewayId");
-				customerGateway.Name = _ctx.StringValue("DescribeCustomerGateways.CustomerGateways["+ i +"].Name");
 				customerGateway.IpAddress = _ctx.StringValue("DescribeCustomerGateways.CustomerGateways["+ i +"].IpAddress");
+				customerGateway.Asn = _ctx.LongValue("DescribeCustomerGateways.CustomerGateways["+ i +"].Asn");
 				customerGateway.Description = _ctx.StringValue("DescribeCustomerGateways.CustomerGateways["+ i +"].Description");
+				customerGateway.CustomerGatewayId = _ctx.StringValue("DescribeCustomerGateways.CustomerGateways["+ i +"].CustomerGatewayId");
 				customerGateway.CreateTime = _ctx.LongValue("DescribeCustomerGateways.CustomerGateways["+ i +"].CreateTime");
-				customerGateway.Asn = _ctx.IntegerValue("DescribeCustomerGateways.CustomerGateways["+ i +"].Asn");
+				customerGateway.Name = _ctx.StringValue("DescribeCustomerGateways.CustomerGateways["+ i +"].Name");
+				customerGateway.AuthKey = _ctx.StringValue("DescribeCustomerGateways.CustomerGateways["+ i +"].AuthKey");
 
 				describeCustomerGatewaysResponse_customerGateways.Add(customerGateway);
 			}

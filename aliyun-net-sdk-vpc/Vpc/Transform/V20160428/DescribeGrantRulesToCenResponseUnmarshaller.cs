@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeGrantRulesToCenResponse describeGrantRulesToCenResponse = new DescribeGrantRulesToCenResponse();
 
 			describeGrantRulesToCenResponse.HttpResponse = _ctx.HttpResponse;
-			describeGrantRulesToCenResponse.RequestId = _ctx.StringValue("DescribeGrantRulesToCen.RequestId");
-			describeGrantRulesToCenResponse.TotalCount = _ctx.IntegerValue("DescribeGrantRulesToCen.TotalCount");
-			describeGrantRulesToCenResponse.PageNumber = _ctx.IntegerValue("DescribeGrantRulesToCen.PageNumber");
 			describeGrantRulesToCenResponse.PageSize = _ctx.IntegerValue("DescribeGrantRulesToCen.PageSize");
+			describeGrantRulesToCenResponse.RequestId = _ctx.StringValue("DescribeGrantRulesToCen.RequestId");
+			describeGrantRulesToCenResponse.PageNumber = _ctx.IntegerValue("DescribeGrantRulesToCen.PageNumber");
+			describeGrantRulesToCenResponse.TotalCount = _ctx.IntegerValue("DescribeGrantRulesToCen.TotalCount");
 
 			List<DescribeGrantRulesToCenResponse.DescribeGrantRulesToCen_CbnGrantRule> describeGrantRulesToCenResponse_cenGrantRules = new List<DescribeGrantRulesToCenResponse.DescribeGrantRulesToCen_CbnGrantRule>();
 			for (int i = 0; i < _ctx.Length("DescribeGrantRulesToCen.CenGrantRules.Length"); i++) {

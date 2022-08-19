@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class ListVpnCertificateAssociationsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
 
-		private int? maxResults;
+		private string requestId;
 
 		private int? totalCount;
 
-		private List<ListVpnCertificateAssociations_VpnCertificateRelation> vpnCertificateRelations;
+		private int? maxResults;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<ListVpnCertificateAssociations_VpnCertificateRelation> vpnCertificateRelations;
 
 		public string NextToken
 		{
@@ -59,15 +47,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? MaxResults
+		public string RequestId
 		{
 			get
 			{
-				return maxResults;
+				return requestId;
 			}
 			set	
 			{
-				maxResults = value;
+				requestId = value;
 			}
 		}
 
@@ -80,6 +68,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
 			}
 		}
 
@@ -98,27 +98,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class ListVpnCertificateAssociations_VpnCertificateRelation
 		{
 
-			private string regionId;
-
 			private string vpnGatewayId;
-
-			private string certificateId;
 
 			private string certificateType;
 
+			private string certificateId;
+
 			private string associationTime;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+			private string regionId;
 
 			public string VpnGatewayId
 			{
@@ -129,18 +117,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					vpnGatewayId = value;
-				}
-			}
-
-			public string CertificateId
-			{
-				get
-				{
-					return certificateId;
-				}
-				set	
-				{
-					certificateId = value;
 				}
 			}
 
@@ -156,6 +132,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string CertificateId
+			{
+				get
+				{
+					return certificateId;
+				}
+				set	
+				{
+					certificateId = value;
+				}
+			}
+
 			public string AssociationTime
 			{
 				get
@@ -165,6 +153,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					associationTime = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 		}

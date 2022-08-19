@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,31 +25,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeIPv6TranslatorAclListAttributesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string aclId;
 
-		private string aclName;
-
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
 		private int? pageSize;
 
-		private List<DescribeIPv6TranslatorAclListAttributes_AclEntry> aclEntries;
+		private int? totalCount;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string aclName;
+
+		private List<DescribeIPv6TranslatorAclListAttributes_AclEntry> aclEntries;
 
 		public string AclId
 		{
@@ -63,27 +51,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string AclName
+		public string RequestId
 		{
 			get
 			{
-				return aclName;
+				return requestId;
 			}
 			set	
 			{
-				aclName = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
+				requestId = value;
 			}
 		}
 
@@ -111,6 +87,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public string AclName
+		{
+			get
+			{
+				return aclName;
+			}
+			set	
+			{
+				aclName = value;
+			}
+		}
+
 		public List<DescribeIPv6TranslatorAclListAttributes_AclEntry> AclEntries
 		{
 			get
@@ -126,11 +126,23 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeIPv6TranslatorAclListAttributes_AclEntry
 		{
 
+			private string aclEntryComment;
+
 			private string aclEntryId;
 
 			private string aclEntryIp;
 
-			private string aclEntryComment;
+			public string AclEntryComment
+			{
+				get
+				{
+					return aclEntryComment;
+				}
+				set	
+				{
+					aclEntryComment = value;
+				}
+			}
 
 			public string AclEntryId
 			{
@@ -153,18 +165,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					aclEntryIp = value;
-				}
-			}
-
-			public string AclEntryComment
-			{
-				get
-				{
-					return aclEntryComment;
-				}
-				set	
-				{
-					aclEntryComment = value;
 				}
 			}
 		}

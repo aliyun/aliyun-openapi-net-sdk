@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeVpnPbrRouteEntriesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeVpnPbrRouteEntries_VpnPbrRouteEntry> vpnPbrRouteEntries;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,55 +98,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeVpnPbrRouteEntries_VpnPbrRouteEntry
 		{
 
-			private string vpnInstanceId;
-
-			private string routeSource;
-
-			private string routeDest;
-
 			private string nextHop;
 
 			private int? weight;
 
-			private long? createTime;
+			private string routeDest;
 
 			private string state;
 
-			public string VpnInstanceId
-			{
-				get
-				{
-					return vpnInstanceId;
-				}
-				set	
-				{
-					vpnInstanceId = value;
-				}
-			}
+			private long? createTime;
 
-			public string RouteSource
-			{
-				get
-				{
-					return routeSource;
-				}
-				set	
-				{
-					routeSource = value;
-				}
-			}
+			private string vpnInstanceId;
 
-			public string RouteDest
-			{
-				get
-				{
-					return routeDest;
-				}
-				set	
-				{
-					routeDest = value;
-				}
-			}
+			private string routeSource;
 
 			public string NextHop
 			{
@@ -172,15 +136,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public long? CreateTime
+			public string RouteDest
 			{
 				get
 				{
-					return createTime;
+					return routeDest;
 				}
 				set	
 				{
-					createTime = value;
+					routeDest = value;
 				}
 			}
 
@@ -193,6 +157,42 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					state = value;
+				}
+			}
+
+			public long? CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string VpnInstanceId
+			{
+				get
+				{
+					return vpnInstanceId;
+				}
+				set	
+				{
+					vpnInstanceId = value;
+				}
+			}
+
+			public string RouteSource
+			{
+				get
+				{
+					return routeSource;
+				}
+				set	
+				{
+					routeSource = value;
 				}
 			}
 		}

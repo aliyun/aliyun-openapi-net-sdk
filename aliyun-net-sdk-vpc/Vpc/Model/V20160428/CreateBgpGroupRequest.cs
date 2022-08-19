@@ -64,8 +64,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string name;
 
-		private long? localAsn;
-
 		public string AuthKey
 		{
 			get
@@ -219,19 +217,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public long? LocalAsn
-		{
-			get
-			{
-				return localAsn;
-			}
-			set	
-			{
-				localAsn = value;
-				DictionaryUtil.Add(QueryParameters, "LocalAsn", value.ToString());
 			}
 		}
 

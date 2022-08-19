@@ -31,25 +31,27 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			GetDhcpOptionsSetResponse getDhcpOptionsSetResponse = new GetDhcpOptionsSetResponse();
 
 			getDhcpOptionsSetResponse.HttpResponse = _ctx.HttpResponse;
-			getDhcpOptionsSetResponse.RequestId = _ctx.StringValue("GetDhcpOptionsSet.RequestId");
-			getDhcpOptionsSetResponse.DhcpOptionsSetName = _ctx.StringValue("GetDhcpOptionsSet.DhcpOptionsSetName");
 			getDhcpOptionsSetResponse.DhcpOptionsSetDescription = _ctx.StringValue("GetDhcpOptionsSet.DhcpOptionsSetDescription");
-			getDhcpOptionsSetResponse.DhcpOptionsSetId = _ctx.StringValue("GetDhcpOptionsSet.DhcpOptionsSetId");
-			getDhcpOptionsSetResponse.OwnerId = _ctx.LongValue("GetDhcpOptionsSet.OwnerId");
 			getDhcpOptionsSetResponse.Status = _ctx.StringValue("GetDhcpOptionsSet.Status");
+			getDhcpOptionsSetResponse.RequestId = _ctx.StringValue("GetDhcpOptionsSet.RequestId");
+			getDhcpOptionsSetResponse.DhcpOptionsSetId = _ctx.StringValue("GetDhcpOptionsSet.DhcpOptionsSetId");
+			getDhcpOptionsSetResponse.DhcpOptionsSetName = _ctx.StringValue("GetDhcpOptionsSet.DhcpOptionsSetName");
+			getDhcpOptionsSetResponse.OwnerId = _ctx.LongValue("GetDhcpOptionsSet.OwnerId");
 
 			GetDhcpOptionsSetResponse.GetDhcpOptionsSet_DhcpOptions dhcpOptions = new GetDhcpOptionsSetResponse.GetDhcpOptionsSet_DhcpOptions();
+			dhcpOptions.TFTPServerName = _ctx.StringValue("GetDhcpOptionsSet.DhcpOptions.TFTPServerName");
 			dhcpOptions.DomainNameServers = _ctx.StringValue("GetDhcpOptionsSet.DhcpOptions.DomainNameServers");
 			dhcpOptions.DomainName = _ctx.StringValue("GetDhcpOptionsSet.DhcpOptions.DomainName");
-			dhcpOptions.TFTPServerName = _ctx.StringValue("GetDhcpOptionsSet.DhcpOptions.TFTPServerName");
 			dhcpOptions.BootFileName = _ctx.StringValue("GetDhcpOptionsSet.DhcpOptions.BootFileName");
+			dhcpOptions.LeaseTime = _ctx.StringValue("GetDhcpOptionsSet.DhcpOptions.LeaseTime");
+			dhcpOptions.Ipv6LeaseTime = _ctx.StringValue("GetDhcpOptionsSet.DhcpOptions.Ipv6LeaseTime");
 			getDhcpOptionsSetResponse.DhcpOptions = dhcpOptions;
 
 			List<GetDhcpOptionsSetResponse.GetDhcpOptionsSet_AssociateVpc> getDhcpOptionsSetResponse_associateVpcs = new List<GetDhcpOptionsSetResponse.GetDhcpOptionsSet_AssociateVpc>();
 			for (int i = 0; i < _ctx.Length("GetDhcpOptionsSet.AssociateVpcs.Length"); i++) {
 				GetDhcpOptionsSetResponse.GetDhcpOptionsSet_AssociateVpc associateVpc = new GetDhcpOptionsSetResponse.GetDhcpOptionsSet_AssociateVpc();
-				associateVpc.VpcId = _ctx.StringValue("GetDhcpOptionsSet.AssociateVpcs["+ i +"].VpcId");
 				associateVpc.AssociateStatus = _ctx.StringValue("GetDhcpOptionsSet.AssociateVpcs["+ i +"].AssociateStatus");
+				associateVpc.VpcId = _ctx.StringValue("GetDhcpOptionsSet.AssociateVpcs["+ i +"].VpcId");
 
 				getDhcpOptionsSetResponse_associateVpcs.Add(associateVpc);
 			}

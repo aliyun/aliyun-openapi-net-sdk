@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -98,35 +98,23 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeAccessPoints_AccessPointType
 		{
 
-			private string accessPointId;
-
 			private string status;
 
 			private string type;
 
-			private string attachedRegionNo;
-
-			private string location;
-
 			private string hostOperator;
-
-			private string name;
 
 			private string description;
 
-			private List<DescribeAccessPoints_AccessPointFeatureModel> accessPointFeatureModels;
+			private string attachedRegionNo;
 
-			public string AccessPointId
-			{
-				get
-				{
-					return accessPointId;
-				}
-				set	
-				{
-					accessPointId = value;
-				}
-			}
+			private string name;
+
+			private string accessPointId;
+
+			private string location;
+
+			private List<DescribeAccessPoints_AccessPointFeatureModel> accessPointFeatureModels;
 
 			public string Status
 			{
@@ -152,30 +140,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string AttachedRegionNo
-			{
-				get
-				{
-					return attachedRegionNo;
-				}
-				set	
-				{
-					attachedRegionNo = value;
-				}
-			}
-
-			public string Location
-			{
-				get
-				{
-					return location;
-				}
-				set	
-				{
-					location = value;
-				}
-			}
-
 			public string HostOperator
 			{
 				get
@@ -185,6 +149,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					hostOperator = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string AttachedRegionNo
+			{
+				get
+				{
+					return attachedRegionNo;
+				}
+				set	
+				{
+					attachedRegionNo = value;
 				}
 			}
 
@@ -200,15 +188,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Description
+			public string AccessPointId
 			{
 				get
 				{
-					return description;
+					return accessPointId;
 				}
 				set	
 				{
-					description = value;
+					accessPointId = value;
+				}
+			}
+
+			public string Location
+			{
+				get
+				{
+					return location;
+				}
+				set	
+				{
+					location = value;
 				}
 			}
 
@@ -227,21 +227,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			public class DescribeAccessPoints_AccessPointFeatureModel
 			{
 
-				private string featureKey;
-
 				private string featureValue;
 
-				public string FeatureKey
-				{
-					get
-					{
-						return featureKey;
-					}
-					set	
-					{
-						featureKey = value;
-					}
-				}
+				private string featureKey;
 
 				public string FeatureValue
 				{
@@ -252,6 +240,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						featureValue = value;
+					}
+				}
+
+				public string FeatureKey
+				{
+					get
+					{
+						return featureKey;
+					}
+					set	
+					{
+						featureKey = value;
 					}
 				}
 			}

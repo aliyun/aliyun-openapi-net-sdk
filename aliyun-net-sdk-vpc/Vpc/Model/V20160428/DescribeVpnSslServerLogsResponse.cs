@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,17 +25,41 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeVpnSslServerLogsResponse : AcsResponse
 	{
 
+		private int? pageSize;
+
+		private int? pageNumber;
+
 		private string requestId;
 
 		private int? count;
 
 		private bool? isCompleted;
 
-		private int? pageNumber;
-
-		private int? pageSize;
-
 		private List<string> data;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -70,30 +94,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				isCompleted = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
 			}
 		}
 

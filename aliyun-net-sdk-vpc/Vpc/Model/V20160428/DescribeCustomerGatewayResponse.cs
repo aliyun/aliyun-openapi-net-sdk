@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,19 +25,33 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeCustomerGatewayResponse : AcsResponse
 	{
 
-		private string requestId;
+		private long? asn;
 
-		private string customerGatewayId;
+		private string requestId;
 
 		private string ipAddress;
 
-		private string name;
-
 		private string description;
+
+		private string customerGatewayId;
 
 		private long? createTime;
 
-		private int? asn;
+		private string name;
+
+		private string authKey;
+
+		public long? Asn
+		{
+			get
+			{
+				return asn;
+			}
+			set	
+			{
+				asn = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -48,18 +62,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string CustomerGatewayId
-		{
-			get
-			{
-				return customerGatewayId;
-			}
-			set	
-			{
-				customerGatewayId = value;
 			}
 		}
 
@@ -75,18 +77,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
-
 		public string Description
 		{
 			get
@@ -96,6 +86,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				description = value;
+			}
+		}
+
+		public string CustomerGatewayId
+		{
+			get
+			{
+				return customerGatewayId;
+			}
+			set	
+			{
+				customerGatewayId = value;
 			}
 		}
 
@@ -111,15 +113,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? Asn
+		public string Name
 		{
 			get
 			{
-				return asn;
+				return name;
 			}
 			set	
 			{
-				asn = value;
+				name = value;
+			}
+		}
+
+		public string AuthKey
+		{
+			get
+			{
+				return authKey;
+			}
+			set	
+			{
+				authKey = value;
 			}
 		}
 	}

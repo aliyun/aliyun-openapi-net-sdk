@@ -31,18 +31,19 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeBgpNetworksResponse describeBgpNetworksResponse = new DescribeBgpNetworksResponse();
 
 			describeBgpNetworksResponse.HttpResponse = _ctx.HttpResponse;
-			describeBgpNetworksResponse.RequestId = _ctx.StringValue("DescribeBgpNetworks.RequestId");
-			describeBgpNetworksResponse.TotalCount = _ctx.IntegerValue("DescribeBgpNetworks.TotalCount");
-			describeBgpNetworksResponse.PageNumber = _ctx.IntegerValue("DescribeBgpNetworks.PageNumber");
 			describeBgpNetworksResponse.PageSize = _ctx.IntegerValue("DescribeBgpNetworks.PageSize");
+			describeBgpNetworksResponse.RequestId = _ctx.StringValue("DescribeBgpNetworks.RequestId");
+			describeBgpNetworksResponse.PageNumber = _ctx.IntegerValue("DescribeBgpNetworks.PageNumber");
+			describeBgpNetworksResponse.TotalCount = _ctx.IntegerValue("DescribeBgpNetworks.TotalCount");
 
 			List<DescribeBgpNetworksResponse.DescribeBgpNetworks_BgpNetwork> describeBgpNetworksResponse_bgpNetworks = new List<DescribeBgpNetworksResponse.DescribeBgpNetworks_BgpNetwork>();
 			for (int i = 0; i < _ctx.Length("DescribeBgpNetworks.BgpNetworks.Length"); i++) {
 				DescribeBgpNetworksResponse.DescribeBgpNetworks_BgpNetwork bgpNetwork = new DescribeBgpNetworksResponse.DescribeBgpNetworks_BgpNetwork();
+				bgpNetwork.Status = _ctx.StringValue("DescribeBgpNetworks.BgpNetworks["+ i +"].Status");
 				bgpNetwork.VpcId = _ctx.StringValue("DescribeBgpNetworks.BgpNetworks["+ i +"].VpcId");
 				bgpNetwork.DstCidrBlock = _ctx.StringValue("DescribeBgpNetworks.BgpNetworks["+ i +"].DstCidrBlock");
 				bgpNetwork.RouterId = _ctx.StringValue("DescribeBgpNetworks.BgpNetworks["+ i +"].RouterId");
-				bgpNetwork.Status = _ctx.StringValue("DescribeBgpNetworks.BgpNetworks["+ i +"].Status");
+				bgpNetwork.IpVersion = _ctx.StringValue("DescribeBgpNetworks.BgpNetworks["+ i +"].IpVersion");
 
 				describeBgpNetworksResponse_bgpNetworks.Add(bgpNetwork);
 			}

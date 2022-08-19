@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeGlobalAccelerationInstancesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeGlobalAccelerationInstances_GlobalAccelerationInstance> globalAccelerationInstances;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,43 +98,43 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeGlobalAccelerationInstances_GlobalAccelerationInstance
 		{
 
-			private string regionId;
-
-			private string globalAccelerationInstanceId;
-
-			private string ipAddress;
-
-			private string status;
-
-			private string bandwidth;
-
-			private string internetChargeType;
-
-			private string chargeType;
-
-			private string bandwidthType;
-
-			private string accelerationLocation;
-
-			private string serviceLocation;
-
-			private string name;
-
-			private string description;
-
-			private string expiredTime;
+			private string reservationActiveTime;
 
 			private string creationTime;
 
-			private string hasReservationData;
+			private string status;
 
-			private string reservationBandwidth;
+			private string reservationOrderType;
+
+			private string bandwidthType;
+
+			private string chargeType;
+
+			private string globalAccelerationInstanceId;
+
+			private string serviceLocation;
 
 			private string reservationInternetChargeType;
 
-			private string reservationActiveTime;
+			private string regionId;
 
-			private string reservationOrderType;
+			private string accelerationLocation;
+
+			private string ipAddress;
+
+			private string description;
+
+			private string bandwidth;
+
+			private string expiredTime;
+
+			private string reservationBandwidth;
+
+			private string internetChargeType;
+
+			private string name;
+
+			private string hasReservationData;
 
 			private List<DescribeGlobalAccelerationInstances_LockReason> operationLocks;
 
@@ -142,159 +142,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private List<DescribeGlobalAccelerationInstances_PublicIpAddress> publicIpAddresses;
 
-			public string RegionId
+			public string ReservationActiveTime
 			{
 				get
 				{
-					return regionId;
+					return reservationActiveTime;
 				}
 				set	
 				{
-					regionId = value;
-				}
-			}
-
-			public string GlobalAccelerationInstanceId
-			{
-				get
-				{
-					return globalAccelerationInstanceId;
-				}
-				set	
-				{
-					globalAccelerationInstanceId = value;
-				}
-			}
-
-			public string IpAddress
-			{
-				get
-				{
-					return ipAddress;
-				}
-				set	
-				{
-					ipAddress = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string Bandwidth
-			{
-				get
-				{
-					return bandwidth;
-				}
-				set	
-				{
-					bandwidth = value;
-				}
-			}
-
-			public string InternetChargeType
-			{
-				get
-				{
-					return internetChargeType;
-				}
-				set	
-				{
-					internetChargeType = value;
-				}
-			}
-
-			public string ChargeType
-			{
-				get
-				{
-					return chargeType;
-				}
-				set	
-				{
-					chargeType = value;
-				}
-			}
-
-			public string BandwidthType
-			{
-				get
-				{
-					return bandwidthType;
-				}
-				set	
-				{
-					bandwidthType = value;
-				}
-			}
-
-			public string AccelerationLocation
-			{
-				get
-				{
-					return accelerationLocation;
-				}
-				set	
-				{
-					accelerationLocation = value;
-				}
-			}
-
-			public string ServiceLocation
-			{
-				get
-				{
-					return serviceLocation;
-				}
-				set	
-				{
-					serviceLocation = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string ExpiredTime
-			{
-				get
-				{
-					return expiredTime;
-				}
-				set	
-				{
-					expiredTime = value;
+					reservationActiveTime = value;
 				}
 			}
 
@@ -310,27 +166,75 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string HasReservationData
+			public string Status
 			{
 				get
 				{
-					return hasReservationData;
+					return status;
 				}
 				set	
 				{
-					hasReservationData = value;
+					status = value;
 				}
 			}
 
-			public string ReservationBandwidth
+			public string ReservationOrderType
 			{
 				get
 				{
-					return reservationBandwidth;
+					return reservationOrderType;
 				}
 				set	
 				{
-					reservationBandwidth = value;
+					reservationOrderType = value;
+				}
+			}
+
+			public string BandwidthType
+			{
+				get
+				{
+					return bandwidthType;
+				}
+				set	
+				{
+					bandwidthType = value;
+				}
+			}
+
+			public string ChargeType
+			{
+				get
+				{
+					return chargeType;
+				}
+				set	
+				{
+					chargeType = value;
+				}
+			}
+
+			public string GlobalAccelerationInstanceId
+			{
+				get
+				{
+					return globalAccelerationInstanceId;
+				}
+				set	
+				{
+					globalAccelerationInstanceId = value;
+				}
+			}
+
+			public string ServiceLocation
+			{
+				get
+				{
+					return serviceLocation;
+				}
+				set	
+				{
+					serviceLocation = value;
 				}
 			}
 
@@ -346,27 +250,123 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string ReservationActiveTime
+			public string RegionId
 			{
 				get
 				{
-					return reservationActiveTime;
+					return regionId;
 				}
 				set	
 				{
-					reservationActiveTime = value;
+					regionId = value;
 				}
 			}
 
-			public string ReservationOrderType
+			public string AccelerationLocation
 			{
 				get
 				{
-					return reservationOrderType;
+					return accelerationLocation;
 				}
 				set	
 				{
-					reservationOrderType = value;
+					accelerationLocation = value;
+				}
+			}
+
+			public string IpAddress
+			{
+				get
+				{
+					return ipAddress;
+				}
+				set	
+				{
+					ipAddress = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string Bandwidth
+			{
+				get
+				{
+					return bandwidth;
+				}
+				set	
+				{
+					bandwidth = value;
+				}
+			}
+
+			public string ExpiredTime
+			{
+				get
+				{
+					return expiredTime;
+				}
+				set	
+				{
+					expiredTime = value;
+				}
+			}
+
+			public string ReservationBandwidth
+			{
+				get
+				{
+					return reservationBandwidth;
+				}
+				set	
+				{
+					reservationBandwidth = value;
+				}
+			}
+
+			public string InternetChargeType
+			{
+				get
+				{
+					return internetChargeType;
+				}
+				set	
+				{
+					internetChargeType = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string HasReservationData
+			{
+				get
+				{
+					return hasReservationData;
+				}
+				set	
+				{
+					hasReservationData = value;
 				}
 			}
 
@@ -427,23 +427,23 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			public class DescribeGlobalAccelerationInstances_BackendServer
 			{
 
-				private string regionId;
+				private string serverIpAddress;
 
 				private string serverId;
 
-				private string serverIpAddress;
-
 				private string serverType;
 
-				public string RegionId
+				private string regionId;
+
+				public string ServerIpAddress
 				{
 					get
 					{
-						return regionId;
+						return serverIpAddress;
 					}
 					set	
 					{
-						regionId = value;
+						serverIpAddress = value;
 					}
 				}
 
@@ -459,18 +459,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
-				public string ServerIpAddress
-				{
-					get
-					{
-						return serverIpAddress;
-					}
-					set	
-					{
-						serverIpAddress = value;
-					}
-				}
-
 				public string ServerType
 				{
 					get
@@ -482,26 +470,26 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 						serverType = value;
 					}
 				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
+				}
 			}
 
 			public class DescribeGlobalAccelerationInstances_PublicIpAddress
 			{
 
-				private string allocationId;
-
 				private string ipAddress;
 
-				public string AllocationId
-				{
-					get
-					{
-						return allocationId;
-					}
-					set	
-					{
-						allocationId = value;
-					}
-				}
+				private string allocationId;
 
 				public string IpAddress
 				{
@@ -512,6 +500,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						ipAddress = value;
+					}
+				}
+
+				public string AllocationId
+				{
+					get
+					{
+						return allocationId;
+					}
+					set	
+					{
+						allocationId = value;
 					}
 				}
 			}

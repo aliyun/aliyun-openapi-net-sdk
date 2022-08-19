@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DeleteFlowLogResponse deleteFlowLogResponse = new DeleteFlowLogResponse();
 
 			deleteFlowLogResponse.HttpResponse = _ctx.HttpResponse;
-			deleteFlowLogResponse.RequestId = _ctx.StringValue("DeleteFlowLog.RequestId");
 			deleteFlowLogResponse.Success = _ctx.StringValue("DeleteFlowLog.Success");
+			deleteFlowLogResponse.RequestId = _ctx.StringValue("DeleteFlowLog.RequestId");
         
 			return deleteFlowLogResponse;
         }

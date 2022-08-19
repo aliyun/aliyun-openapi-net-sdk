@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			Method = MethodType.POST;
         }
 
+		private string authKey;
+
 		private long? resourceOwnerId;
 
 		private string clientToken;
@@ -55,6 +57,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private long? ownerId;
 
 		private string name;
+
+		public string AuthKey
+		{
+			get
+			{
+				return authKey;
+			}
+			set	
+			{
+				authKey = value;
+				DictionaryUtil.Add(QueryParameters, "AuthKey", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{

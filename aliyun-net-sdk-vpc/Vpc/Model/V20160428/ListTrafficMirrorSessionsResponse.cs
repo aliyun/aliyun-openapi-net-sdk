@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class ListTrafficMirrorSessionsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
+
+		private string requestId;
 
 		private string totalCount;
 
 		private List<ListTrafficMirrorSessions_TrafficMirrorSession> trafficMirrorSessions;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public string NextToken
 		{
@@ -54,6 +42,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -84,53 +84,41 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class ListTrafficMirrorSessions_TrafficMirrorSession
 		{
 
-			private string trafficMirrorSessionName;
-
-			private string trafficMirrorSessionDescription;
+			private string trafficMirrorTargetId;
 
 			private string trafficMirrorSessionId;
 
-			private string trafficMirrorSessionStatus;
-
-			private string trafficMirrorTargetId;
+			private int? priority;
 
 			private string trafficMirrorTargetType;
 
-			private string trafficMirrorFilterId;
+			private int? packetLength;
 
-			private int? virtualNetworkId;
+			private string trafficMirrorSessionDescription;
 
-			private int? priority;
+			private string trafficMirrorSessionStatus;
 
 			private bool? enabled;
 
-			private int? packetLength;
-
 			private string trafficMirrorSessionBusinessStatus;
+
+			private int? virtualNetworkId;
+
+			private string trafficMirrorFilterId;
+
+			private string trafficMirrorSessionName;
 
 			private List<string> trafficMirrorSourceIds;
 
-			public string TrafficMirrorSessionName
+			public string TrafficMirrorTargetId
 			{
 				get
 				{
-					return trafficMirrorSessionName;
+					return trafficMirrorTargetId;
 				}
 				set	
 				{
-					trafficMirrorSessionName = value;
-				}
-			}
-
-			public string TrafficMirrorSessionDescription
-			{
-				get
-				{
-					return trafficMirrorSessionDescription;
-				}
-				set	
-				{
-					trafficMirrorSessionDescription = value;
+					trafficMirrorTargetId = value;
 				}
 			}
 
@@ -146,27 +134,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string TrafficMirrorSessionStatus
+			public int? Priority
 			{
 				get
 				{
-					return trafficMirrorSessionStatus;
+					return priority;
 				}
 				set	
 				{
-					trafficMirrorSessionStatus = value;
-				}
-			}
-
-			public string TrafficMirrorTargetId
-			{
-				get
-				{
-					return trafficMirrorTargetId;
-				}
-				set	
-				{
-					trafficMirrorTargetId = value;
+					priority = value;
 				}
 			}
 
@@ -182,39 +158,39 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string TrafficMirrorFilterId
+			public int? PacketLength
 			{
 				get
 				{
-					return trafficMirrorFilterId;
+					return packetLength;
 				}
 				set	
 				{
-					trafficMirrorFilterId = value;
+					packetLength = value;
 				}
 			}
 
-			public int? VirtualNetworkId
+			public string TrafficMirrorSessionDescription
 			{
 				get
 				{
-					return virtualNetworkId;
+					return trafficMirrorSessionDescription;
 				}
 				set	
 				{
-					virtualNetworkId = value;
+					trafficMirrorSessionDescription = value;
 				}
 			}
 
-			public int? Priority
+			public string TrafficMirrorSessionStatus
 			{
 				get
 				{
-					return priority;
+					return trafficMirrorSessionStatus;
 				}
 				set	
 				{
-					priority = value;
+					trafficMirrorSessionStatus = value;
 				}
 			}
 
@@ -230,18 +206,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public int? PacketLength
-			{
-				get
-				{
-					return packetLength;
-				}
-				set	
-				{
-					packetLength = value;
-				}
-			}
-
 			public string TrafficMirrorSessionBusinessStatus
 			{
 				get
@@ -251,6 +215,42 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					trafficMirrorSessionBusinessStatus = value;
+				}
+			}
+
+			public int? VirtualNetworkId
+			{
+				get
+				{
+					return virtualNetworkId;
+				}
+				set	
+				{
+					virtualNetworkId = value;
+				}
+			}
+
+			public string TrafficMirrorFilterId
+			{
+				get
+				{
+					return trafficMirrorFilterId;
+				}
+				set	
+				{
+					trafficMirrorFilterId = value;
+				}
+			}
+
+			public string TrafficMirrorSessionName
+			{
+				get
+				{
+					return trafficMirrorSessionName;
+				}
+				set	
+				{
+					trafficMirrorSessionName = value;
 				}
 			}
 

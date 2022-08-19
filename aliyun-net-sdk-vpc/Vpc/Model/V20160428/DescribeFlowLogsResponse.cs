@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,51 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeFlowLogsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string success;
-
-		private string totalCount;
+		private string pageSize;
 
 		private string pageNumber;
 
-		private string pageSize;
+		private string requestId;
+
+		private string totalCount;
+
+		private string success;
 
 		private List<DescribeFlowLogs_FlowLog> flowLogs;
 
-		public string RequestId
+		public string PageSize
 		{
 			get
 			{
-				return requestId;
+				return pageSize;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
+				pageSize = value;
 			}
 		}
 
@@ -85,15 +61,39 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string PageSize
+		public string RequestId
 		{
 			get
 			{
-				return pageSize;
+				return requestId;
 			}
 			set	
 			{
-				pageSize = value;
+				requestId = value;
+			}
+		}
+
+		public string TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public string Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -112,61 +112,41 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeFlowLogs_FlowLog
 		{
 
-			private string flowLogId;
-
-			private string flowLogName;
-
-			private string description;
+			private string status;
 
 			private string creationTime;
 
+			private string flowLogName;
+
+			private string trafficType;
+
 			private string resourceType;
 
-			private string resourceId;
+			private string description;
 
 			private string projectName;
 
 			private string logStoreName;
 
-			private string status;
-
-			private string trafficType;
+			private string resourceId;
 
 			private string regionId;
 
-			public string FlowLogId
-			{
-				get
-				{
-					return flowLogId;
-				}
-				set	
-				{
-					flowLogId = value;
-				}
-			}
+			private string flowLogId;
 
-			public string FlowLogName
-			{
-				get
-				{
-					return flowLogName;
-				}
-				set	
-				{
-					flowLogName = value;
-				}
-			}
+			private string businessStatus;
 
-			public string Description
+			private int? aggregationInterval;
+
+			public string Status
 			{
 				get
 				{
-					return description;
+					return status;
 				}
 				set	
 				{
-					description = value;
+					status = value;
 				}
 			}
 
@@ -182,6 +162,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string FlowLogName
+			{
+				get
+				{
+					return flowLogName;
+				}
+				set	
+				{
+					flowLogName = value;
+				}
+			}
+
+			public string TrafficType
+			{
+				get
+				{
+					return trafficType;
+				}
+				set	
+				{
+					trafficType = value;
+				}
+			}
+
 			public string ResourceType
 			{
 				get
@@ -194,15 +198,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string ResourceId
+			public string Description
 			{
 				get
 				{
-					return resourceId;
+					return description;
 				}
 				set	
 				{
-					resourceId = value;
+					description = value;
 				}
 			}
 
@@ -230,27 +234,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Status
+			public string ResourceId
 			{
 				get
 				{
-					return status;
+					return resourceId;
 				}
 				set	
 				{
-					status = value;
-				}
-			}
-
-			public string TrafficType
-			{
-				get
-				{
-					return trafficType;
-				}
-				set	
-				{
-					trafficType = value;
+					resourceId = value;
 				}
 			}
 
@@ -263,6 +255,42 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public string FlowLogId
+			{
+				get
+				{
+					return flowLogId;
+				}
+				set	
+				{
+					flowLogId = value;
+				}
+			}
+
+			public string BusinessStatus
+			{
+				get
+				{
+					return businessStatus;
+				}
+				set	
+				{
+					businessStatus = value;
+				}
+			}
+
+			public int? AggregationInterval
+			{
+				get
+				{
+					return aggregationInterval;
+				}
+				set	
+				{
+					aggregationInterval = value;
 				}
 			}
 		}
