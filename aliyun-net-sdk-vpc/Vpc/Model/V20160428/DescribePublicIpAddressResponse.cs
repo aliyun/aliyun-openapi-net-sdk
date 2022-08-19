@@ -41,9 +41,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string regionId;
 
-		private string publicIpAddress;
-
 		private List<string> ipRange;
+
+		private List<string> publicIpAddress;
 
 		public string RequestId
 		{
@@ -141,18 +141,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string PublicIpAddress
-		{
-			get
-			{
-				return publicIpAddress;
-			}
-			set	
-			{
-				publicIpAddress = value;
-			}
-		}
-
 		public List<string> IpRange
 		{
 			get
@@ -162,6 +150,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				ipRange = value;
+			}
+		}
+
+		public List<string> PublicIpAddress
+		{
+			get
+			{
+				return publicIpAddress;
+			}
+			set	
+			{
+				publicIpAddress = value;
 			}
 		}
 	}

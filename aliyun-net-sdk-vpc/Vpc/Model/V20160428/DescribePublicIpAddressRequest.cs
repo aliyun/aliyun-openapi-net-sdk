@@ -130,6 +130,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
         public override DescribePublicIpAddressResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribePublicIpAddressResponseUnmarshaller.Unmarshall(unmarshallerContext);

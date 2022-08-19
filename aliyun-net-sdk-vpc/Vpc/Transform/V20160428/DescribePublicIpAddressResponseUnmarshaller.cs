@@ -39,13 +39,18 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			describePublicIpAddressResponse.PageNumber = _ctx.IntegerValue("DescribePublicIpAddress.PageNumber");
 			describePublicIpAddressResponse.TotalCount = _ctx.IntegerValue("DescribePublicIpAddress.TotalCount");
 			describePublicIpAddressResponse.RegionId = _ctx.StringValue("DescribePublicIpAddress.RegionId");
-			describePublicIpAddressResponse.PublicIpAddress = _ctx.StringValue("DescribePublicIpAddress.PublicIpAddress");
 
 			List<string> describePublicIpAddressResponse_ipRange = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribePublicIpAddress.IpRange.Length"); i++) {
 				describePublicIpAddressResponse_ipRange.Add(_ctx.StringValue("DescribePublicIpAddress.IpRange["+ i +"]"));
 			}
 			describePublicIpAddressResponse.IpRange = describePublicIpAddressResponse_ipRange;
+
+			List<string> describePublicIpAddressResponse_publicIpAddress = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribePublicIpAddress.PublicIpAddress.Length"); i++) {
+				describePublicIpAddressResponse_publicIpAddress.Add(_ctx.StringValue("DescribePublicIpAddress.PublicIpAddress["+ i +"]"));
+			}
+			describePublicIpAddressResponse.PublicIpAddress = describePublicIpAddressResponse_publicIpAddress;
         
 			return describePublicIpAddressResponse;
         }
