@@ -31,8 +31,8 @@ namespace Aliyun.Acs.DBFS.Transform.V20200418
 			CreateSnapshotResponse createSnapshotResponse = new CreateSnapshotResponse();
 
 			createSnapshotResponse.HttpResponse = _ctx.HttpResponse;
-			createSnapshotResponse.RequestId = _ctx.StringValue("CreateSnapshot.RequestId");
 			createSnapshotResponse.SnapshotId = _ctx.StringValue("CreateSnapshot.SnapshotId");
+			createSnapshotResponse.RequestId = _ctx.StringValue("CreateSnapshot.RequestId");
         
 			return createSnapshotResponse;
         }

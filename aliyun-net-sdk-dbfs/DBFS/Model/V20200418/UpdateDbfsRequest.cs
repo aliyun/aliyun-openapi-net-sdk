@@ -22,16 +22,15 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.DBFS;
 using Aliyun.Acs.DBFS.Transform;
 using Aliyun.Acs.DBFS.Transform.V20200418;
 
 namespace Aliyun.Acs.DBFS.Model.V20200418
 {
-    public class GetSynchronizConstantsRequest : RpcAcsRequest<GetSynchronizConstantsResponse>
+    public class UpdateDbfsRequest : RpcAcsRequest<UpdateDbfsResponse>
     {
-        public GetSynchronizConstantsRequest()
-            : base("DBFS", "2020-04-18", "GetSynchronizConstants")
+        public UpdateDbfsRequest()
+            : base("DBFS", "2020-04-18", "UpdateDbfs", "dbfs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,33 +40,63 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			Method = MethodType.POST;
         }
 
-		private int? pageNumber;
+		private string usedScene;
 
-		private int? pageSize;
+		private string fsId;
 
-		public int? PageNumber
+		private string instanceType;
+
+		private string advancedFeatures;
+
+		public string UsedScene
 		{
 			get
 			{
-				return pageNumber;
+				return usedScene;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				usedScene = value;
+				DictionaryUtil.Add(QueryParameters, "UsedScene", value);
 			}
 		}
 
-		public int? PageSize
+		public string FsId
 		{
 			get
 			{
-				return pageSize;
+				return fsId;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				fsId = value;
+				DictionaryUtil.Add(QueryParameters, "FsId", value);
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+			}
+		}
+
+		public string AdvancedFeatures
+		{
+			get
+			{
+				return advancedFeatures;
+			}
+			set	
+			{
+				advancedFeatures = value;
+				DictionaryUtil.Add(QueryParameters, "AdvancedFeatures", value);
 			}
 		}
 
@@ -76,9 +105,9 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			return false;
 		}
 
-        public override GetSynchronizConstantsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateDbfsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetSynchronizConstantsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateDbfsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.DBFS.Model.V20200418
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 	public class GetServiceLinkedRoleResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string accountId;
 
-		private string regionId;
+		private string requestId;
 
 		private bool? dbfsLinkedRole;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string regionId;
 
 		public string AccountId
 		{
@@ -57,15 +45,15 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
-		public string RegionId
+		public string RequestId
 		{
 			get
 			{
-				return regionId;
+				return requestId;
 			}
 			set	
 			{
-				regionId = value;
+				requestId = value;
 			}
 		}
 
@@ -78,6 +66,18 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			set	
 			{
 				dbfsLinkedRole = value;
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
 			}
 		}
 	}

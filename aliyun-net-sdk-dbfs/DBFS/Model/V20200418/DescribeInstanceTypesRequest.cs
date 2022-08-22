@@ -22,16 +22,15 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.DBFS;
 using Aliyun.Acs.DBFS.Transform;
 using Aliyun.Acs.DBFS.Transform.V20200418;
 
 namespace Aliyun.Acs.DBFS.Model.V20200418
 {
-    public class OpreateConstantsRequest : RpcAcsRequest<OpreateConstantsResponse>
+    public class DescribeInstanceTypesRequest : RpcAcsRequest<DescribeInstanceTypesResponse>
     {
-        public OpreateConstantsRequest()
-            : base("DBFS", "2020-04-18", "OpreateConstants")
+        public DescribeInstanceTypesRequest()
+            : base("DBFS", "2020-04-18", "DescribeInstanceTypes", "dbfs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,59 +40,14 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			Method = MethodType.POST;
         }
 
-		private int? pageNumber;
-
-		private string constantsData;
-
-		private int? pageSize;
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string ConstantsData
-		{
-			get
-			{
-				return constantsData;
-			}
-			set	
-			{
-				constantsData = value;
-				DictionaryUtil.Add(QueryParameters, "ConstantsData", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override OpreateConstantsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeInstanceTypesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return OpreateConstantsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeInstanceTypesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

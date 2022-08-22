@@ -22,16 +22,15 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.DBFS;
 using Aliyun.Acs.DBFS.Transform;
 using Aliyun.Acs.DBFS.Transform.V20200418;
 
 namespace Aliyun.Acs.DBFS.Model.V20200418
 {
-    public class GenerateUpgradeRecordRequest : RpcAcsRequest<GenerateUpgradeRecordResponse>
+    public class ListDbfsAttachableEcsInstancesRequest : RpcAcsRequest<ListDbfsAttachableEcsInstancesResponse>
     {
-        public GenerateUpgradeRecordRequest()
-            : base("DBFS", "2020-04-18", "GenerateUpgradeRecord")
+        public ListDbfsAttachableEcsInstancesRequest()
+            : base("DBFS", "2020-04-18", "ListDbfsAttachableEcsInstances", "dbfs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,37 +40,9 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			Method = MethodType.POST;
         }
 
-		private int? pageNumber;
-
-		private string batchStrategyList;
-
 		private int? pageSize;
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string BatchStrategyList
-		{
-			get
-			{
-				return batchStrategyList;
-			}
-			set	
-			{
-				batchStrategyList = value;
-				DictionaryUtil.Add(QueryParameters, "BatchStrategyList", value);
-			}
-		}
+		private int? pageNumber;
 
 		public int? PageSize
 		{
@@ -86,14 +57,27 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override GenerateUpgradeRecordResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListDbfsAttachableEcsInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GenerateUpgradeRecordResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListDbfsAttachableEcsInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -24,16 +24,16 @@ using Aliyun.Acs.DBFS.Model.V20200418;
 
 namespace Aliyun.Acs.DBFS.Transform.V20200418
 {
-    public class PublishUpgradeTaskResponseUnmarshaller
+    public class UpdateDbfsResponseUnmarshaller
     {
-        public static PublishUpgradeTaskResponse Unmarshall(UnmarshallerContext _ctx)
+        public static UpdateDbfsResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			PublishUpgradeTaskResponse publishUpgradeTaskResponse = new PublishUpgradeTaskResponse();
+			UpdateDbfsResponse updateDbfsResponse = new UpdateDbfsResponse();
 
-			publishUpgradeTaskResponse.HttpResponse = _ctx.HttpResponse;
-			publishUpgradeTaskResponse.RequestId = _ctx.StringValue("PublishUpgradeTask.RequestId");
+			updateDbfsResponse.HttpResponse = _ctx.HttpResponse;
+			updateDbfsResponse.RequestId = _ctx.StringValue("UpdateDbfs.RequestId");
         
-			return publishUpgradeTaskResponse;
+			return updateDbfsResponse;
         }
     }
 }

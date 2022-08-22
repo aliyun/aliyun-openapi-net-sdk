@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.DBFS.Model.V20200418
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 	public class ListSnapshotResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
-
-		private int? pageNumber;
 
 		private int? pageSize;
 
-		private List<ListSnapshot_SnapshotsItem> snapshots;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private int? pageNumber;
+
+		private List<ListSnapshot_SnapshotsItem> snapshots;
 
 		public int? TotalCount
 		{
@@ -59,18 +47,6 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
 			}
 		}
 
@@ -98,41 +98,43 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 		public class ListSnapshot_SnapshotsItem
 		{
 
-			private string category;
+			private string status;
 
 			private string creationTime;
 
-			private string description;
-
-			private string lastModifiedTime;
-
 			private string progress;
-
-			private int? remainTime;
-
-			private int? retentionDays;
-
-			private string snapshotId;
-
-			private string snapshotName;
-
-			private string snapshotType;
-
-			private string status;
-
-			private string sourceFsId;
 
 			private int? sourceFsSize;
 
-			public string Category
+			private int? retentionDays;
+
+			private int? remainTime;
+
+			private string lastModifiedTime;
+
+			private string snapshotType;
+
+			private string snapshotName;
+
+			private string description;
+
+			private string sourceFsId;
+
+			private string snapshotId;
+
+			private string category;
+
+			private int? sourceFsStripeWidth;
+
+			public string Status
 			{
 				get
 				{
-					return category;
+					return status;
 				}
 				set	
 				{
-					category = value;
+					status = value;
 				}
 			}
 
@@ -148,30 +150,6 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string LastModifiedTime
-			{
-				get
-				{
-					return lastModifiedTime;
-				}
-				set	
-				{
-					lastModifiedTime = value;
-				}
-			}
-
 			public string Progress
 			{
 				get
@@ -184,15 +162,15 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
-			public int? RemainTime
+			public int? SourceFsSize
 			{
 				get
 				{
-					return remainTime;
+					return sourceFsSize;
 				}
 				set	
 				{
-					remainTime = value;
+					sourceFsSize = value;
 				}
 			}
 
@@ -208,27 +186,27 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
-			public string SnapshotId
+			public int? RemainTime
 			{
 				get
 				{
-					return snapshotId;
+					return remainTime;
 				}
 				set	
 				{
-					snapshotId = value;
+					remainTime = value;
 				}
 			}
 
-			public string SnapshotName
+			public string LastModifiedTime
 			{
 				get
 				{
-					return snapshotName;
+					return lastModifiedTime;
 				}
 				set	
 				{
-					snapshotName = value;
+					lastModifiedTime = value;
 				}
 			}
 
@@ -244,15 +222,27 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
-			public string Status
+			public string SnapshotName
 			{
 				get
 				{
-					return status;
+					return snapshotName;
 				}
 				set	
 				{
-					status = value;
+					snapshotName = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 
@@ -268,15 +258,39 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				}
 			}
 
-			public int? SourceFsSize
+			public string SnapshotId
 			{
 				get
 				{
-					return sourceFsSize;
+					return snapshotId;
 				}
 				set	
 				{
-					sourceFsSize = value;
+					snapshotId = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			public int? SourceFsStripeWidth
+			{
+				get
+				{
+					return sourceFsStripeWidth;
+				}
+				set	
+				{
+					sourceFsStripeWidth = value;
 				}
 			}
 		}

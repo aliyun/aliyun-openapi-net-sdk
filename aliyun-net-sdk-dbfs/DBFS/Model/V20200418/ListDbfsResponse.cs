@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.DBFS.Model.V20200418
@@ -135,6 +135,10 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			private bool? enableRaid;
 
 			private int? raidStrip;
+
+			private string instanceType;
+
+			private string lastFailed;
 
 			private List<ListDbfs_TagList> tags;
 
@@ -367,6 +371,30 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 				set	
 				{
 					raidStrip = value;
+				}
+			}
+
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
+				}
+			}
+
+			public string LastFailed
+			{
+				get
+				{
+					return lastFailed;
+				}
+				set	
+				{
+					lastFailed = value;
 				}
 			}
 

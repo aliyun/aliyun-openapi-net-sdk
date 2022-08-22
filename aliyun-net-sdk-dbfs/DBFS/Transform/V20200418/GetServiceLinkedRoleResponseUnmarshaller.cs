@@ -31,10 +31,10 @@ namespace Aliyun.Acs.DBFS.Transform.V20200418
 			GetServiceLinkedRoleResponse getServiceLinkedRoleResponse = new GetServiceLinkedRoleResponse();
 
 			getServiceLinkedRoleResponse.HttpResponse = _ctx.HttpResponse;
-			getServiceLinkedRoleResponse.RequestId = _ctx.StringValue("GetServiceLinkedRole.RequestId");
 			getServiceLinkedRoleResponse.AccountId = _ctx.StringValue("GetServiceLinkedRole.AccountId");
-			getServiceLinkedRoleResponse.RegionId = _ctx.StringValue("GetServiceLinkedRole.RegionId");
+			getServiceLinkedRoleResponse.RequestId = _ctx.StringValue("GetServiceLinkedRole.RequestId");
 			getServiceLinkedRoleResponse.DbfsLinkedRole = _ctx.BooleanValue("GetServiceLinkedRole.DbfsLinkedRole");
+			getServiceLinkedRoleResponse.RegionId = _ctx.StringValue("GetServiceLinkedRole.RegionId");
         
 			return getServiceLinkedRoleResponse;
         }

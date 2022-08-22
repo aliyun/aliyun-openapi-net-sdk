@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.DBFS.Model.V20200418
 {
-	public class ResetDbfsResponse : AcsResponse
+	public class UpdateDbfsResponse : AcsResponse
 	{
 
 		private string requestId;

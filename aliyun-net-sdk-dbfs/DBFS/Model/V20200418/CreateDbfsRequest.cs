@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.DBFS;
 using Aliyun.Acs.DBFS.Transform;
 using Aliyun.Acs.DBFS.Transform.V20200418;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
     public class CreateDbfsRequest : RpcAcsRequest<CreateDbfsResponse>
     {
         public CreateDbfsRequest()
-            : base("DBFS", "2020-04-18", "CreateDbfs")
+            : base("DBFS", "2020-04-18", "CreateDbfs", "dbfs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -54,6 +53,10 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 		private int? raidStripeUnitNumber;
 
 		private bool? encryption;
+
+		private string instanceType;
+
+		private string advancedFeatures;
 
 		private string performanceLevel;
 
@@ -155,6 +158,32 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			{
 				encryption = value;
 				DictionaryUtil.Add(QueryParameters, "Encryption", value.ToString());
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+			}
+		}
+
+		public string AdvancedFeatures
+		{
+			get
+			{
+				return advancedFeatures;
+			}
+			set	
+			{
+				advancedFeatures = value;
+				DictionaryUtil.Add(QueryParameters, "AdvancedFeatures", value);
 			}
 		}
 

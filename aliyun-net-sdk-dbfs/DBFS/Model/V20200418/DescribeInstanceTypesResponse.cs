@@ -17,23 +17,17 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.DBFS.Model.V20200418
 {
-	public class InsertSynchronizConstantsResponse : AcsResponse
+	public class DescribeInstanceTypesResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string data;
-
-		private long? pageSize;
-
-		private long? totalCount;
-
-		private long? pageNumber;
+		private List<DescribeInstanceTypes_InstanceTypesItem> instanceTypes;
 
 		public string RequestId
 		{
@@ -47,51 +41,75 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			}
 		}
 
-		public string Data
+		public List<DescribeInstanceTypes_InstanceTypesItem> InstanceTypes
 		{
 			get
 			{
-				return data;
+				return instanceTypes;
 			}
 			set	
 			{
-				data = value;
+				instanceTypes = value;
 			}
 		}
 
-		public long? PageSize
+		public class DescribeInstanceTypes_InstanceTypesItem
 		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
 
-		public long? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+			private string instanceTypeId;
 
-		public long? PageNumber
-		{
-			get
+			private float? cpuCoreCount;
+
+			private float? memorySize;
+
+			private string instanceTypeDescription;
+
+			public string InstanceTypeId
 			{
-				return pageNumber;
+				get
+				{
+					return instanceTypeId;
+				}
+				set	
+				{
+					instanceTypeId = value;
+				}
 			}
-			set	
+
+			public float? CpuCoreCount
 			{
-				pageNumber = value;
+				get
+				{
+					return cpuCoreCount;
+				}
+				set	
+				{
+					cpuCoreCount = value;
+				}
+			}
+
+			public float? MemorySize
+			{
+				get
+				{
+					return memorySize;
+				}
+				set	
+				{
+					memorySize = value;
+				}
+			}
+
+			public string InstanceTypeDescription
+			{
+				get
+				{
+					return instanceTypeDescription;
+				}
+				set	
+				{
+					instanceTypeDescription = value;
+				}
 			}
 		}
 	}

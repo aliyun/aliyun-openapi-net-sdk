@@ -22,16 +22,15 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.DBFS;
 using Aliyun.Acs.DBFS.Transform;
 using Aliyun.Acs.DBFS.Transform.V20200418;
 
 namespace Aliyun.Acs.DBFS.Model.V20200418
 {
-    public class ResetDbfsRequest : RpcAcsRequest<ResetDbfsResponse>
+    public class ListDbfsAttachedEcsInstancesRequest : RpcAcsRequest<ListDbfsAttachedEcsInstancesResponse>
     {
-        public ResetDbfsRequest()
-            : base("DBFS", "2020-04-18", "ResetDbfs")
+        public ListDbfsAttachedEcsInstancesRequest()
+            : base("DBFS", "2020-04-18", "ListDbfsAttachedEcsInstances", "dbfs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,22 +40,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			Method = MethodType.POST;
         }
 
-		private string snapshotId;
-
 		private string fsId;
-
-		public string SnapshotId
-		{
-			get
-			{
-				return snapshotId;
-			}
-			set	
-			{
-				snapshotId = value;
-				DictionaryUtil.Add(QueryParameters, "SnapshotId", value);
-			}
-		}
 
 		public string FsId
 		{
@@ -76,9 +60,9 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			return false;
 		}
 
-        public override ResetDbfsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListDbfsAttachedEcsInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ResetDbfsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListDbfsAttachedEcsInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

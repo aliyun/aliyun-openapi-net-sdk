@@ -53,7 +53,9 @@ namespace Aliyun.Acs.DBFS.Transform.V20200418
 			dBFSInfo.LastMountTime = _ctx.StringValue("GetDbfs.DBFSInfo.LastMountTime");
 			dBFSInfo.LastUmountTime = _ctx.StringValue("GetDbfs.DBFSInfo.LastUmountTime");
 			dBFSInfo.EnableRaid = _ctx.BooleanValue("GetDbfs.DBFSInfo.EnableRaid");
+			dBFSInfo.InstanceType = _ctx.StringValue("GetDbfs.DBFSInfo.InstanceType");
 			dBFSInfo.RaidStrip = _ctx.IntegerValue("GetDbfs.DBFSInfo.RaidStrip");
+			dBFSInfo.LastFailed = _ctx.StringValue("GetDbfs.DBFSInfo.LastFailed");
 
 			List<GetDbfsResponse.GetDbfs_DBFSInfo.GetDbfs_TagList> dBFSInfo_tags = new List<GetDbfsResponse.GetDbfs_DBFSInfo.GetDbfs_TagList>();
 			for (int i = 0; i < _ctx.Length("GetDbfs.DBFSInfo.Tags.Length"); i++) {
