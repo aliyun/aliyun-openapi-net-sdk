@@ -143,10 +143,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set
 			{
 				trafficMirrorSessionIdss = value;
-				for (int i = 0; i < trafficMirrorSessionIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TrafficMirrorSessionIds." + (i + 1) , trafficMirrorSessionIdss[i]);
-				}
 			}
 		}
 

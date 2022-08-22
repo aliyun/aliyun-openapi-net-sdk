@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeEipSegmentResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeEipSegment_EipSegment> eipSegments;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,43 +98,31 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeEipSegment_EipSegment
 		{
 
-			private string instanceId;
-
-			private string segment;
+			private string creationTime;
 
 			private string status;
 
-			private string regionId;
+			private string descritpion;
+
+			private string instanceId;
 
 			private string ipCount;
 
 			private string name;
 
-			private string descritpion;
+			private string segment;
 
-			private string creationTime;
+			private string regionId;
 
-			public string InstanceId
+			public string CreationTime
 			{
 				get
 				{
-					return instanceId;
+					return creationTime;
 				}
 				set	
 				{
-					instanceId = value;
-				}
-			}
-
-			public string Segment
-			{
-				get
-				{
-					return segment;
-				}
-				set	
-				{
-					segment = value;
+					creationTime = value;
 				}
 			}
 
@@ -150,15 +138,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string RegionId
+			public string Descritpion
 			{
 				get
 				{
-					return regionId;
+					return descritpion;
 				}
 				set	
 				{
-					regionId = value;
+					descritpion = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 
@@ -186,27 +186,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Descritpion
+			public string Segment
 			{
 				get
 				{
-					return descritpion;
+					return segment;
 				}
 				set	
 				{
-					descritpion = value;
+					segment = value;
 				}
 			}
 
-			public string CreationTime
+			public string RegionId
 			{
 				get
 				{
-					return creationTime;
+					return regionId;
 				}
 				set	
 				{
-					creationTime = value;
+					regionId = value;
 				}
 			}
 		}

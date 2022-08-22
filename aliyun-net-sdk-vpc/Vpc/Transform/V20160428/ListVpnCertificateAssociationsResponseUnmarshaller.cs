@@ -31,19 +31,19 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			ListVpnCertificateAssociationsResponse listVpnCertificateAssociationsResponse = new ListVpnCertificateAssociationsResponse();
 
 			listVpnCertificateAssociationsResponse.HttpResponse = _ctx.HttpResponse;
-			listVpnCertificateAssociationsResponse.RequestId = _ctx.StringValue("ListVpnCertificateAssociations.RequestId");
 			listVpnCertificateAssociationsResponse.NextToken = _ctx.StringValue("ListVpnCertificateAssociations.NextToken");
-			listVpnCertificateAssociationsResponse.MaxResults = _ctx.IntegerValue("ListVpnCertificateAssociations.MaxResults");
+			listVpnCertificateAssociationsResponse.RequestId = _ctx.StringValue("ListVpnCertificateAssociations.RequestId");
 			listVpnCertificateAssociationsResponse.TotalCount = _ctx.IntegerValue("ListVpnCertificateAssociations.TotalCount");
+			listVpnCertificateAssociationsResponse.MaxResults = _ctx.IntegerValue("ListVpnCertificateAssociations.MaxResults");
 
 			List<ListVpnCertificateAssociationsResponse.ListVpnCertificateAssociations_VpnCertificateRelation> listVpnCertificateAssociationsResponse_vpnCertificateRelations = new List<ListVpnCertificateAssociationsResponse.ListVpnCertificateAssociations_VpnCertificateRelation>();
 			for (int i = 0; i < _ctx.Length("ListVpnCertificateAssociations.VpnCertificateRelations.Length"); i++) {
 				ListVpnCertificateAssociationsResponse.ListVpnCertificateAssociations_VpnCertificateRelation vpnCertificateRelation = new ListVpnCertificateAssociationsResponse.ListVpnCertificateAssociations_VpnCertificateRelation();
-				vpnCertificateRelation.RegionId = _ctx.StringValue("ListVpnCertificateAssociations.VpnCertificateRelations["+ i +"].RegionId");
 				vpnCertificateRelation.VpnGatewayId = _ctx.StringValue("ListVpnCertificateAssociations.VpnCertificateRelations["+ i +"].VpnGatewayId");
-				vpnCertificateRelation.CertificateId = _ctx.StringValue("ListVpnCertificateAssociations.VpnCertificateRelations["+ i +"].CertificateId");
 				vpnCertificateRelation.CertificateType = _ctx.StringValue("ListVpnCertificateAssociations.VpnCertificateRelations["+ i +"].CertificateType");
+				vpnCertificateRelation.CertificateId = _ctx.StringValue("ListVpnCertificateAssociations.VpnCertificateRelations["+ i +"].CertificateId");
 				vpnCertificateRelation.AssociationTime = _ctx.StringValue("ListVpnCertificateAssociations.VpnCertificateRelations["+ i +"].AssociationTime");
+				vpnCertificateRelation.RegionId = _ctx.StringValue("ListVpnCertificateAssociations.VpnCertificateRelations["+ i +"].RegionId");
 
 				listVpnCertificateAssociationsResponse_vpnCertificateRelations.Add(vpnCertificateRelation);
 			}

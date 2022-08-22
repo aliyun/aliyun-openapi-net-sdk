@@ -157,10 +157,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set
 			{
 				trafficMirrorFilterRuleIdss = value;
-				for (int i = 0; i < trafficMirrorFilterRuleIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TrafficMirrorFilterRuleIds." + (i + 1) , trafficMirrorFilterRuleIdss[i]);
-				}
 			}
 		}
 

@@ -31,25 +31,25 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			ListTrafficMirrorSessionsResponse listTrafficMirrorSessionsResponse = new ListTrafficMirrorSessionsResponse();
 
 			listTrafficMirrorSessionsResponse.HttpResponse = _ctx.HttpResponse;
-			listTrafficMirrorSessionsResponse.RequestId = _ctx.StringValue("ListTrafficMirrorSessions.RequestId");
 			listTrafficMirrorSessionsResponse.NextToken = _ctx.StringValue("ListTrafficMirrorSessions.NextToken");
+			listTrafficMirrorSessionsResponse.RequestId = _ctx.StringValue("ListTrafficMirrorSessions.RequestId");
 			listTrafficMirrorSessionsResponse.TotalCount = _ctx.StringValue("ListTrafficMirrorSessions.TotalCount");
 
 			List<ListTrafficMirrorSessionsResponse.ListTrafficMirrorSessions_TrafficMirrorSession> listTrafficMirrorSessionsResponse_trafficMirrorSessions = new List<ListTrafficMirrorSessionsResponse.ListTrafficMirrorSessions_TrafficMirrorSession>();
 			for (int i = 0; i < _ctx.Length("ListTrafficMirrorSessions.TrafficMirrorSessions.Length"); i++) {
 				ListTrafficMirrorSessionsResponse.ListTrafficMirrorSessions_TrafficMirrorSession trafficMirrorSession = new ListTrafficMirrorSessionsResponse.ListTrafficMirrorSessions_TrafficMirrorSession();
-				trafficMirrorSession.TrafficMirrorSessionName = _ctx.StringValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].TrafficMirrorSessionName");
-				trafficMirrorSession.TrafficMirrorSessionDescription = _ctx.StringValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].TrafficMirrorSessionDescription");
-				trafficMirrorSession.TrafficMirrorSessionId = _ctx.StringValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].TrafficMirrorSessionId");
-				trafficMirrorSession.TrafficMirrorSessionStatus = _ctx.StringValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].TrafficMirrorSessionStatus");
 				trafficMirrorSession.TrafficMirrorTargetId = _ctx.StringValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].TrafficMirrorTargetId");
-				trafficMirrorSession.TrafficMirrorTargetType = _ctx.StringValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].TrafficMirrorTargetType");
-				trafficMirrorSession.TrafficMirrorFilterId = _ctx.StringValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].TrafficMirrorFilterId");
-				trafficMirrorSession.VirtualNetworkId = _ctx.IntegerValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].VirtualNetworkId");
+				trafficMirrorSession.TrafficMirrorSessionId = _ctx.StringValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].TrafficMirrorSessionId");
 				trafficMirrorSession.Priority = _ctx.IntegerValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].Priority");
-				trafficMirrorSession.Enabled = _ctx.BooleanValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].Enabled");
+				trafficMirrorSession.TrafficMirrorTargetType = _ctx.StringValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].TrafficMirrorTargetType");
 				trafficMirrorSession.PacketLength = _ctx.IntegerValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].PacketLength");
+				trafficMirrorSession.TrafficMirrorSessionDescription = _ctx.StringValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].TrafficMirrorSessionDescription");
+				trafficMirrorSession.TrafficMirrorSessionStatus = _ctx.StringValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].TrafficMirrorSessionStatus");
+				trafficMirrorSession.Enabled = _ctx.BooleanValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].Enabled");
 				trafficMirrorSession.TrafficMirrorSessionBusinessStatus = _ctx.StringValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].TrafficMirrorSessionBusinessStatus");
+				trafficMirrorSession.VirtualNetworkId = _ctx.IntegerValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].VirtualNetworkId");
+				trafficMirrorSession.TrafficMirrorFilterId = _ctx.StringValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].TrafficMirrorFilterId");
+				trafficMirrorSession.TrafficMirrorSessionName = _ctx.StringValue("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].TrafficMirrorSessionName");
 
 				List<string> trafficMirrorSession_trafficMirrorSourceIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListTrafficMirrorSessions.TrafficMirrorSessions["+ i +"].TrafficMirrorSourceIds.Length"); j++) {

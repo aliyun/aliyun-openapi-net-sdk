@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string tFTPServerName;
 
+		private string leaseTime;
+
 		private string domainNameServers;
 
 		private string dhcpOptionsSetDescription;
@@ -65,6 +67,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private long? ownerId;
 
 		private string dhcpOptionsSetName;
+
+		private string ipv6LeaseTime;
 
 		public string BootFileName
 		{
@@ -115,6 +119,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				tFTPServerName = value;
 				DictionaryUtil.Add(QueryParameters, "TFTPServerName", value);
+			}
+		}
+
+		public string LeaseTime
+		{
+			get
+			{
+				return leaseTime;
+			}
+			set	
+			{
+				leaseTime = value;
+				DictionaryUtil.Add(QueryParameters, "LeaseTime", value);
 			}
 		}
 
@@ -232,6 +249,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				dhcpOptionsSetName = value;
 				DictionaryUtil.Add(QueryParameters, "DhcpOptionsSetName", value);
+			}
+		}
+
+		public string Ipv6LeaseTime
+		{
+			get
+			{
+				return ipv6LeaseTime;
+			}
+			set	
+			{
+				ipv6LeaseTime = value;
+				DictionaryUtil.Add(QueryParameters, "Ipv6LeaseTime", value);
 			}
 		}
 

@@ -31,12 +31,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			CreateIpsecServerResponse createIpsecServerResponse = new CreateIpsecServerResponse();
 
 			createIpsecServerResponse.HttpResponse = _ctx.HttpResponse;
-			createIpsecServerResponse.RequestId = _ctx.StringValue("CreateIpsecServer.RequestId");
-			createIpsecServerResponse.RegionId = _ctx.StringValue("CreateIpsecServer.RegionId");
+			createIpsecServerResponse.CreationTime = _ctx.StringValue("CreateIpsecServer.CreationTime");
 			createIpsecServerResponse.IpsecServerId = _ctx.StringValue("CreateIpsecServer.IpsecServerId");
+			createIpsecServerResponse.RequestId = _ctx.StringValue("CreateIpsecServer.RequestId");
 			createIpsecServerResponse.IpsecServerName = _ctx.StringValue("CreateIpsecServer.IpsecServerName");
 			createIpsecServerResponse.VpnGatewayId = _ctx.StringValue("CreateIpsecServer.VpnGatewayId");
-			createIpsecServerResponse.CreationTime = _ctx.StringValue("CreateIpsecServer.CreationTime");
+			createIpsecServerResponse.RegionId = _ctx.StringValue("CreateIpsecServer.RegionId");
         
 			return createIpsecServerResponse;
         }

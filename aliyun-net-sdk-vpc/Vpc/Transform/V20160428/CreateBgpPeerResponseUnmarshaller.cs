@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			CreateBgpPeerResponse createBgpPeerResponse = new CreateBgpPeerResponse();
 
 			createBgpPeerResponse.HttpResponse = _ctx.HttpResponse;
-			createBgpPeerResponse.RequestId = _ctx.StringValue("CreateBgpPeer.RequestId");
 			createBgpPeerResponse.BgpPeerId = _ctx.StringValue("CreateBgpPeer.BgpPeerId");
+			createBgpPeerResponse.RequestId = _ctx.StringValue("CreateBgpPeer.RequestId");
         
 			return createBgpPeerResponse;
         }

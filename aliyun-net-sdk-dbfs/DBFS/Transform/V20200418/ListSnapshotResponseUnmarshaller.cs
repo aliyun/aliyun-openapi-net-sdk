@@ -31,27 +31,28 @@ namespace Aliyun.Acs.DBFS.Transform.V20200418
 			ListSnapshotResponse listSnapshotResponse = new ListSnapshotResponse();
 
 			listSnapshotResponse.HttpResponse = _ctx.HttpResponse;
-			listSnapshotResponse.RequestId = _ctx.StringValue("ListSnapshot.RequestId");
 			listSnapshotResponse.TotalCount = _ctx.IntegerValue("ListSnapshot.TotalCount");
-			listSnapshotResponse.PageNumber = _ctx.IntegerValue("ListSnapshot.PageNumber");
 			listSnapshotResponse.PageSize = _ctx.IntegerValue("ListSnapshot.PageSize");
+			listSnapshotResponse.RequestId = _ctx.StringValue("ListSnapshot.RequestId");
+			listSnapshotResponse.PageNumber = _ctx.IntegerValue("ListSnapshot.PageNumber");
 
 			List<ListSnapshotResponse.ListSnapshot_SnapshotsItem> listSnapshotResponse_snapshots = new List<ListSnapshotResponse.ListSnapshot_SnapshotsItem>();
 			for (int i = 0; i < _ctx.Length("ListSnapshot.Snapshots.Length"); i++) {
 				ListSnapshotResponse.ListSnapshot_SnapshotsItem snapshotsItem = new ListSnapshotResponse.ListSnapshot_SnapshotsItem();
-				snapshotsItem.Category = _ctx.StringValue("ListSnapshot.Snapshots["+ i +"].Category");
-				snapshotsItem.CreationTime = _ctx.StringValue("ListSnapshot.Snapshots["+ i +"].CreationTime");
-				snapshotsItem.Description = _ctx.StringValue("ListSnapshot.Snapshots["+ i +"].Description");
-				snapshotsItem.LastModifiedTime = _ctx.StringValue("ListSnapshot.Snapshots["+ i +"].LastModifiedTime");
-				snapshotsItem.Progress = _ctx.StringValue("ListSnapshot.Snapshots["+ i +"].Progress");
-				snapshotsItem.RemainTime = _ctx.IntegerValue("ListSnapshot.Snapshots["+ i +"].RemainTime");
-				snapshotsItem.RetentionDays = _ctx.IntegerValue("ListSnapshot.Snapshots["+ i +"].RetentionDays");
-				snapshotsItem.SnapshotId = _ctx.StringValue("ListSnapshot.Snapshots["+ i +"].SnapshotId");
-				snapshotsItem.SnapshotName = _ctx.StringValue("ListSnapshot.Snapshots["+ i +"].SnapshotName");
-				snapshotsItem.SnapshotType = _ctx.StringValue("ListSnapshot.Snapshots["+ i +"].SnapshotType");
 				snapshotsItem.Status = _ctx.StringValue("ListSnapshot.Snapshots["+ i +"].Status");
-				snapshotsItem.SourceFsId = _ctx.StringValue("ListSnapshot.Snapshots["+ i +"].SourceFsId");
+				snapshotsItem.CreationTime = _ctx.StringValue("ListSnapshot.Snapshots["+ i +"].CreationTime");
+				snapshotsItem.Progress = _ctx.StringValue("ListSnapshot.Snapshots["+ i +"].Progress");
 				snapshotsItem.SourceFsSize = _ctx.IntegerValue("ListSnapshot.Snapshots["+ i +"].SourceFsSize");
+				snapshotsItem.RetentionDays = _ctx.IntegerValue("ListSnapshot.Snapshots["+ i +"].RetentionDays");
+				snapshotsItem.RemainTime = _ctx.IntegerValue("ListSnapshot.Snapshots["+ i +"].RemainTime");
+				snapshotsItem.LastModifiedTime = _ctx.StringValue("ListSnapshot.Snapshots["+ i +"].LastModifiedTime");
+				snapshotsItem.SnapshotType = _ctx.StringValue("ListSnapshot.Snapshots["+ i +"].SnapshotType");
+				snapshotsItem.SnapshotName = _ctx.StringValue("ListSnapshot.Snapshots["+ i +"].SnapshotName");
+				snapshotsItem.Description = _ctx.StringValue("ListSnapshot.Snapshots["+ i +"].Description");
+				snapshotsItem.SourceFsId = _ctx.StringValue("ListSnapshot.Snapshots["+ i +"].SourceFsId");
+				snapshotsItem.SnapshotId = _ctx.StringValue("ListSnapshot.Snapshots["+ i +"].SnapshotId");
+				snapshotsItem.Category = _ctx.StringValue("ListSnapshot.Snapshots["+ i +"].Category");
+				snapshotsItem.SourceFsStripeWidth = _ctx.IntegerValue("ListSnapshot.Snapshots["+ i +"].SourceFsStripeWidth");
 
 				listSnapshotResponse_snapshots.Add(snapshotsItem);
 			}

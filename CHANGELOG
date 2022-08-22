@@ -1,3 +1,21 @@
+2022-08-22 Version: 2.0.2
+- Automatically generate sdk tasks.
+
+2022-08-22 Version: 2.0.1
+- Automatically generate sdk tasks.
+
+2022-08-19 Version: 3.0.10
+- Optimize DescribePublicIpAddress API.
+
+2022-08-19 Version: 3.0.9
+- Add DescribePublicIpAddress Interface.
+
+2022-08-18 Version: 1.6.0
+- Supported new features etc.
+
+2022-08-18 Version: 1.6.0
+- Supported new features for outbound.
+
 2022-08-16 Version: 3.0.6
 - Update Lindorm OpenAPI.
 

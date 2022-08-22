@@ -32,8 +32,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 
 			allocateEipSegmentAddressResponse.HttpResponse = _ctx.HttpResponse;
 			allocateEipSegmentAddressResponse.RequestId = _ctx.StringValue("AllocateEipSegmentAddress.RequestId");
-			allocateEipSegmentAddressResponse.EipSegmentInstanceId = _ctx.StringValue("AllocateEipSegmentAddress.EipSegmentInstanceId");
 			allocateEipSegmentAddressResponse.OrderId = _ctx.LongValue("AllocateEipSegmentAddress.OrderId");
+			allocateEipSegmentAddressResponse.EipSegmentInstanceId = _ctx.StringValue("AllocateEipSegmentAddress.EipSegmentInstanceId");
         
 			return allocateEipSegmentAddressResponse;
         }

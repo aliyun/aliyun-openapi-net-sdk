@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeIPv6TranslatorEntriesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeIPv6TranslatorEntries_Ipv6TranslatorEntry> ipv6TranslatorEntries;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,11 +98,17 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeIPv6TranslatorEntries_Ipv6TranslatorEntry
 		{
 
+			private string aclType;
+
+			private string entryStatus;
+
+			private string transProtocol;
+
 			private string ipv6TranslatorId;
 
-			private string ipv6TranslatorEntryId;
+			private string entryDescription;
 
-			private string allocateIpv6Addr;
+			private string ipv6TranslatorEntryId;
 
 			private int? allocateIpv6Port;
 
@@ -110,23 +116,53 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string backendIpv4Port;
 
-			private string transProtocol;
+			private string regionId;
 
 			private string entryBandwidth;
 
-			private string entryDescription;
+			private string aclId;
 
 			private string entryName;
 
-			private string entryStatus;
-
 			private string aclStatus;
 
-			private string aclType;
+			private string allocateIpv6Addr;
 
-			private string aclId;
+			public string AclType
+			{
+				get
+				{
+					return aclType;
+				}
+				set	
+				{
+					aclType = value;
+				}
+			}
 
-			private string regionId;
+			public string EntryStatus
+			{
+				get
+				{
+					return entryStatus;
+				}
+				set	
+				{
+					entryStatus = value;
+				}
+			}
+
+			public string TransProtocol
+			{
+				get
+				{
+					return transProtocol;
+				}
+				set	
+				{
+					transProtocol = value;
+				}
+			}
 
 			public string Ipv6TranslatorId
 			{
@@ -140,6 +176,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string EntryDescription
+			{
+				get
+				{
+					return entryDescription;
+				}
+				set	
+				{
+					entryDescription = value;
+				}
+			}
+
 			public string Ipv6TranslatorEntryId
 			{
 				get
@@ -149,18 +197,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					ipv6TranslatorEntryId = value;
-				}
-			}
-
-			public string AllocateIpv6Addr
-			{
-				get
-				{
-					return allocateIpv6Addr;
-				}
-				set	
-				{
-					allocateIpv6Addr = value;
 				}
 			}
 
@@ -200,15 +236,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string TransProtocol
+			public string RegionId
 			{
 				get
 				{
-					return transProtocol;
+					return regionId;
 				}
 				set	
 				{
-					transProtocol = value;
+					regionId = value;
 				}
 			}
 
@@ -224,15 +260,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string EntryDescription
+			public string AclId
 			{
 				get
 				{
-					return entryDescription;
+					return aclId;
 				}
 				set	
 				{
-					entryDescription = value;
+					aclId = value;
 				}
 			}
 
@@ -248,18 +284,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string EntryStatus
-			{
-				get
-				{
-					return entryStatus;
-				}
-				set	
-				{
-					entryStatus = value;
-				}
-			}
-
 			public string AclStatus
 			{
 				get
@@ -272,39 +296,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string AclType
+			public string AllocateIpv6Addr
 			{
 				get
 				{
-					return aclType;
+					return allocateIpv6Addr;
 				}
 				set	
 				{
-					aclType = value;
-				}
-			}
-
-			public string AclId
-			{
-				get
-				{
-					return aclId;
-				}
-				set	
-				{
-					aclId = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
+					allocateIpv6Addr = value;
 				}
 			}
 		}

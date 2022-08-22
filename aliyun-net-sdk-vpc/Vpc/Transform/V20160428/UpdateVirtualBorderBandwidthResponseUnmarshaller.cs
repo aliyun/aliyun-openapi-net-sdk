@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			UpdateVirtualBorderBandwidthResponse updateVirtualBorderBandwidthResponse = new UpdateVirtualBorderBandwidthResponse();
 
 			updateVirtualBorderBandwidthResponse.HttpResponse = _ctx.HttpResponse;
+			updateVirtualBorderBandwidthResponse.Code = _ctx.StringValue("UpdateVirtualBorderBandwidth.Code");
+			updateVirtualBorderBandwidthResponse.HttpStatusCode = _ctx.IntegerValue("UpdateVirtualBorderBandwidth.HttpStatusCode");
+			updateVirtualBorderBandwidthResponse.Message = _ctx.StringValue("UpdateVirtualBorderBandwidth.Message");
 			updateVirtualBorderBandwidthResponse.RequestId = _ctx.StringValue("UpdateVirtualBorderBandwidth.RequestId");
 			updateVirtualBorderBandwidthResponse.Success = _ctx.BooleanValue("UpdateVirtualBorderBandwidth.Success");
-			updateVirtualBorderBandwidthResponse.HttpStatusCode = _ctx.StringValue("UpdateVirtualBorderBandwidth.HttpStatusCode");
-			updateVirtualBorderBandwidthResponse.Message = _ctx.StringValue("UpdateVirtualBorderBandwidth.Message");
-			updateVirtualBorderBandwidthResponse.Code = _ctx.StringValue("UpdateVirtualBorderBandwidth.Code");
         
 			return updateVirtualBorderBandwidthResponse;
         }

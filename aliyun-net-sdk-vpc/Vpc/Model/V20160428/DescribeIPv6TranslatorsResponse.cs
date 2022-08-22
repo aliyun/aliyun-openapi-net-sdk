@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeIPv6TranslatorsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeIPv6Translators_Ipv6Translator> ipv6Translators;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,27 +98,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeIPv6Translators_Ipv6Translator
 		{
 
-			private string ipv6TranslatorId;
-
-			private long? createTime;
-
-			private long? endTime;
+			private string status;
 
 			private string spec;
 
-			private string name;
-
-			private string description;
-
-			private string status;
-
-			private string businessStatus;
+			private long? createTime;
 
 			private string payType;
 
-			private int? bandwidth;
-
-			private string allocateIpv6Addr;
+			private string ipv6TranslatorId;
 
 			private string allocateIpv4Addr;
 
@@ -126,41 +114,29 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string regionId;
 
+			private long? endTime;
+
+			private string description;
+
+			private int? bandwidth;
+
+			private string businessStatus;
+
+			private string allocateIpv6Addr;
+
+			private string name;
+
 			private List<string> ipv6TranslatorEntryIds;
 
-			public string Ipv6TranslatorId
+			public string Status
 			{
 				get
 				{
-					return ipv6TranslatorId;
+					return status;
 				}
 				set	
 				{
-					ipv6TranslatorId = value;
-				}
-			}
-
-			public long? CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public long? EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
+					status = value;
 				}
 			}
 
@@ -176,51 +152,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Name
+			public long? CreateTime
 			{
 				get
 				{
-					return name;
+					return createTime;
 				}
 				set	
 				{
-					name = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string BusinessStatus
-			{
-				get
-				{
-					return businessStatus;
-				}
-				set	
-				{
-					businessStatus = value;
+					createTime = value;
 				}
 			}
 
@@ -236,27 +176,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public int? Bandwidth
+			public string Ipv6TranslatorId
 			{
 				get
 				{
-					return bandwidth;
+					return ipv6TranslatorId;
 				}
 				set	
 				{
-					bandwidth = value;
-				}
-			}
-
-			public string AllocateIpv6Addr
-			{
-				get
-				{
-					return allocateIpv6Addr;
-				}
-				set	
-				{
-					allocateIpv6Addr = value;
+					ipv6TranslatorId = value;
 				}
 			}
 
@@ -293,6 +221,78 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public long? EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public int? Bandwidth
+			{
+				get
+				{
+					return bandwidth;
+				}
+				set	
+				{
+					bandwidth = value;
+				}
+			}
+
+			public string BusinessStatus
+			{
+				get
+				{
+					return businessStatus;
+				}
+				set	
+				{
+					businessStatus = value;
+				}
+			}
+
+			public string AllocateIpv6Addr
+			{
+				get
+				{
+					return allocateIpv6Addr;
+				}
+				set	
+				{
+					allocateIpv6Addr = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 

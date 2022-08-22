@@ -31,23 +31,23 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			ModifySslVpnServerResponse modifySslVpnServerResponse = new ModifySslVpnServerResponse();
 
 			modifySslVpnServerResponse.HttpResponse = _ctx.HttpResponse;
-			modifySslVpnServerResponse.RequestId = _ctx.StringValue("ModifySslVpnServer.RequestId");
-			modifySslVpnServerResponse.RegionId = _ctx.StringValue("ModifySslVpnServer.RegionId");
-			modifySslVpnServerResponse.SslVpnServerId = _ctx.StringValue("ModifySslVpnServer.SslVpnServerId");
-			modifySslVpnServerResponse.VpnGatewayId = _ctx.StringValue("ModifySslVpnServer.VpnGatewayId");
-			modifySslVpnServerResponse.Name = _ctx.StringValue("ModifySslVpnServer.Name");
-			modifySslVpnServerResponse.LocalSubnet = _ctx.StringValue("ModifySslVpnServer.LocalSubnet");
-			modifySslVpnServerResponse.ClientIpPool = _ctx.StringValue("ModifySslVpnServer.ClientIpPool");
-			modifySslVpnServerResponse.CreateTime = _ctx.LongValue("ModifySslVpnServer.CreateTime");
-			modifySslVpnServerResponse.Cipher = _ctx.StringValue("ModifySslVpnServer.Cipher");
-			modifySslVpnServerResponse.Proto = _ctx.StringValue("ModifySslVpnServer.Proto");
-			modifySslVpnServerResponse.Port = _ctx.IntegerValue("ModifySslVpnServer.Port");
-			modifySslVpnServerResponse.Compress = _ctx.BooleanValue("ModifySslVpnServer.Compress");
-			modifySslVpnServerResponse.Connections = _ctx.IntegerValue("ModifySslVpnServer.Connections");
-			modifySslVpnServerResponse.MaxConnections = _ctx.IntegerValue("ModifySslVpnServer.MaxConnections");
 			modifySslVpnServerResponse.InternetIp = _ctx.StringValue("ModifySslVpnServer.InternetIp");
-			modifySslVpnServerResponse.EnableMultiFactorAuth = _ctx.BooleanValue("ModifySslVpnServer.EnableMultiFactorAuth");
 			modifySslVpnServerResponse.IDaaSInstanceId = _ctx.StringValue("ModifySslVpnServer.IDaaSInstanceId");
+			modifySslVpnServerResponse.CreateTime = _ctx.LongValue("ModifySslVpnServer.CreateTime");
+			modifySslVpnServerResponse.VpnGatewayId = _ctx.StringValue("ModifySslVpnServer.VpnGatewayId");
+			modifySslVpnServerResponse.Compress = _ctx.BooleanValue("ModifySslVpnServer.Compress");
+			modifySslVpnServerResponse.Port = _ctx.IntegerValue("ModifySslVpnServer.Port");
+			modifySslVpnServerResponse.LocalSubnet = _ctx.StringValue("ModifySslVpnServer.LocalSubnet");
+			modifySslVpnServerResponse.RegionId = _ctx.StringValue("ModifySslVpnServer.RegionId");
+			modifySslVpnServerResponse.Cipher = _ctx.StringValue("ModifySslVpnServer.Cipher");
+			modifySslVpnServerResponse.RequestId = _ctx.StringValue("ModifySslVpnServer.RequestId");
+			modifySslVpnServerResponse.Connections = _ctx.IntegerValue("ModifySslVpnServer.Connections");
+			modifySslVpnServerResponse.SslVpnServerId = _ctx.StringValue("ModifySslVpnServer.SslVpnServerId");
+			modifySslVpnServerResponse.MaxConnections = _ctx.IntegerValue("ModifySslVpnServer.MaxConnections");
+			modifySslVpnServerResponse.Name = _ctx.StringValue("ModifySslVpnServer.Name");
+			modifySslVpnServerResponse.EnableMultiFactorAuth = _ctx.BooleanValue("ModifySslVpnServer.EnableMultiFactorAuth");
+			modifySslVpnServerResponse.ClientIpPool = _ctx.StringValue("ModifySslVpnServer.ClientIpPool");
+			modifySslVpnServerResponse.Proto = _ctx.StringValue("ModifySslVpnServer.Proto");
         
 			return modifySslVpnServerResponse;
         }

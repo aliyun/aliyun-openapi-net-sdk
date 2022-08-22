@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.DBFS;
 using Aliyun.Acs.DBFS.Transform;
 using Aliyun.Acs.DBFS.Transform.V20200418;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
     public class AttachDbfsRequest : RpcAcsRequest<AttachDbfsResponse>
     {
         public AttachDbfsRequest()
-            : base("DBFS", "2020-04-18", "AttachDbfs")
+            : base("DBFS", "2020-04-18", "AttachDbfs", "dbfs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,9 +42,13 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 		private string eCSInstanceId;
 
+		private string attachPoint;
+
 		private string serverUrl;
 
 		private string fsId;
+
+		private string attachMode;
 
 		public string ECSInstanceId
 		{
@@ -57,6 +60,19 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			{
 				eCSInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "ECSInstanceId", value);
+			}
+		}
+
+		public string AttachPoint
+		{
+			get
+			{
+				return attachPoint;
+			}
+			set	
+			{
+				attachPoint = value;
+				DictionaryUtil.Add(QueryParameters, "AttachPoint", value);
 			}
 		}
 
@@ -83,6 +99,19 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			{
 				fsId = value;
 				DictionaryUtil.Add(QueryParameters, "FsId", value);
+			}
+		}
+
+		public string AttachMode
+		{
+			get
+			{
+				return attachMode;
+			}
+			set	
+			{
+				attachMode = value;
+				DictionaryUtil.Add(QueryParameters, "AttachMode", value);
 			}
 		}
 

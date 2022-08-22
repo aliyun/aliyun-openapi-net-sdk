@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeIpv6AddressesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeIpv6Addresses_Ipv6Address> ipv6Addresses;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,69 +98,33 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeIpv6Addresses_Ipv6Address
 		{
 
-			private string ipv6AddressId;
-
-			private string ipv6AddressName;
-
-			private string vSwitchId;
-
 			private string vpcId;
-
-			private string ipv6GatewayId;
-
-			private string ipv6Address;
-
-			private string associatedInstanceId;
-
-			private string associatedInstanceType;
 
 			private string status;
 
-			private string networkType;
-
-			private int? realBandwidth;
+			private string ipv6AddressId;
 
 			private string allocationTime;
 
+			private string ipv6AddressName;
+
+			private string associatedInstanceType;
+
+			private string associatedInstanceId;
+
+			private string networkType;
+
+			private string ipv6Address;
+
 			private string ipv6Isp;
 
+			private string vSwitchId;
+
+			private string ipv6GatewayId;
+
+			private int? realBandwidth;
+
 			private DescribeIpv6Addresses_Ipv6InternetBandwidth ipv6InternetBandwidth;
-
-			public string Ipv6AddressId
-			{
-				get
-				{
-					return ipv6AddressId;
-				}
-				set	
-				{
-					ipv6AddressId = value;
-				}
-			}
-
-			public string Ipv6AddressName
-			{
-				get
-				{
-					return ipv6AddressName;
-				}
-				set	
-				{
-					ipv6AddressName = value;
-				}
-			}
-
-			public string VSwitchId
-			{
-				get
-				{
-					return vSwitchId;
-				}
-				set	
-				{
-					vSwitchId = value;
-				}
-			}
 
 			public string VpcId
 			{
@@ -171,54 +135,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					vpcId = value;
-				}
-			}
-
-			public string Ipv6GatewayId
-			{
-				get
-				{
-					return ipv6GatewayId;
-				}
-				set	
-				{
-					ipv6GatewayId = value;
-				}
-			}
-
-			public string Ipv6Address
-			{
-				get
-				{
-					return ipv6Address;
-				}
-				set	
-				{
-					ipv6Address = value;
-				}
-			}
-
-			public string AssociatedInstanceId
-			{
-				get
-				{
-					return associatedInstanceId;
-				}
-				set	
-				{
-					associatedInstanceId = value;
-				}
-			}
-
-			public string AssociatedInstanceType
-			{
-				get
-				{
-					return associatedInstanceType;
-				}
-				set	
-				{
-					associatedInstanceType = value;
 				}
 			}
 
@@ -234,27 +150,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string NetworkType
+			public string Ipv6AddressId
 			{
 				get
 				{
-					return networkType;
+					return ipv6AddressId;
 				}
 				set	
 				{
-					networkType = value;
-				}
-			}
-
-			public int? RealBandwidth
-			{
-				get
-				{
-					return realBandwidth;
-				}
-				set	
-				{
-					realBandwidth = value;
+					ipv6AddressId = value;
 				}
 			}
 
@@ -270,6 +174,66 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string Ipv6AddressName
+			{
+				get
+				{
+					return ipv6AddressName;
+				}
+				set	
+				{
+					ipv6AddressName = value;
+				}
+			}
+
+			public string AssociatedInstanceType
+			{
+				get
+				{
+					return associatedInstanceType;
+				}
+				set	
+				{
+					associatedInstanceType = value;
+				}
+			}
+
+			public string AssociatedInstanceId
+			{
+				get
+				{
+					return associatedInstanceId;
+				}
+				set	
+				{
+					associatedInstanceId = value;
+				}
+			}
+
+			public string NetworkType
+			{
+				get
+				{
+					return networkType;
+				}
+				set	
+				{
+					networkType = value;
+				}
+			}
+
+			public string Ipv6Address
+			{
+				get
+				{
+					return ipv6Address;
+				}
+				set	
+				{
+					ipv6Address = value;
+				}
+			}
+
 			public string Ipv6Isp
 			{
 				get
@@ -279,6 +243,42 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					ipv6Isp = value;
+				}
+			}
+
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
+
+			public string Ipv6GatewayId
+			{
+				get
+				{
+					return ipv6GatewayId;
+				}
+				set	
+				{
+					ipv6GatewayId = value;
+				}
+			}
+
+			public int? RealBandwidth
+			{
+				get
+				{
+					return realBandwidth;
+				}
+				set	
+				{
+					realBandwidth = value;
 				}
 			}
 
@@ -297,39 +297,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			public class DescribeIpv6Addresses_Ipv6InternetBandwidth
 			{
 
-				private int? bandwidth;
-
-				private string instanceChargeType;
-
 				private string internetChargeType;
 
 				private string businessStatus;
 
+				private int? bandwidth;
+
 				private string ipv6InternetBandwidthId;
 
-				public int? Bandwidth
-				{
-					get
-					{
-						return bandwidth;
-					}
-					set	
-					{
-						bandwidth = value;
-					}
-				}
-
-				public string InstanceChargeType
-				{
-					get
-					{
-						return instanceChargeType;
-					}
-					set	
-					{
-						instanceChargeType = value;
-					}
-				}
+				private string instanceChargeType;
 
 				public string InternetChargeType
 				{
@@ -355,6 +331,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
+				public int? Bandwidth
+				{
+					get
+					{
+						return bandwidth;
+					}
+					set	
+					{
+						bandwidth = value;
+					}
+				}
+
 				public string Ipv6InternetBandwidthId
 				{
 					get
@@ -364,6 +352,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						ipv6InternetBandwidthId = value;
+					}
+				}
+
+				public string InstanceChargeType
+				{
+					get
+					{
+						return instanceChargeType;
+					}
+					set	
+					{
+						instanceChargeType = value;
 					}
 				}
 			}

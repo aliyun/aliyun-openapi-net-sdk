@@ -42,9 +42,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? resourceOwnerId;
 
+		private string publicIpAddressPoolId;
+
 		private string filter2Value;
 
+		private bool? securityProtectionEnabled;
+
 		private string iSP;
+
+		private string eipName;
 
 		private string allocationId;
 
@@ -97,6 +103,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string PublicIpAddressPoolId
+		{
+			get
+			{
+				return publicIpAddressPoolId;
+			}
+			set	
+			{
+				publicIpAddressPoolId = value;
+				DictionaryUtil.Add(QueryParameters, "PublicIpAddressPoolId", value);
+			}
+		}
+
 		public string Filter2Value
 		{
 			get
@@ -110,6 +129,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public bool? SecurityProtectionEnabled
+		{
+			get
+			{
+				return securityProtectionEnabled;
+			}
+			set	
+			{
+				securityProtectionEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityProtectionEnabled", value.ToString());
+			}
+		}
+
 		public string ISP
 		{
 			get
@@ -120,6 +152,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				iSP = value;
 				DictionaryUtil.Add(QueryParameters, "ISP", value);
+			}
+		}
+
+		public string EipName
+		{
+			get
+			{
+				return eipName;
+			}
+			set	
+			{
+				eipName = value;
+				DictionaryUtil.Add(QueryParameters, "EipName", value);
 			}
 		}
 

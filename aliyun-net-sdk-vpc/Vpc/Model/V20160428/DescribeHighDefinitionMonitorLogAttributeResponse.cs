@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,7 +25,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeHighDefinitionMonitorLogAttributeResponse : AcsResponse
 	{
 
+		private string logProject;
+
 		private string requestId;
+
+		private string logStore;
 
 		private string success;
 
@@ -33,9 +37,17 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string instanceType;
 
-		private string logProject;
-
-		private string logStore;
+		public string LogProject
+		{
+			get
+			{
+				return logProject;
+			}
+			set	
+			{
+				logProject = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -46,6 +58,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string LogStore
+		{
+			get
+			{
+				return logStore;
+			}
+			set	
+			{
+				logStore = value;
 			}
 		}
 
@@ -82,30 +106,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				instanceType = value;
-			}
-		}
-
-		public string LogProject
-		{
-			get
-			{
-				return logProject;
-			}
-			set	
-			{
-				logProject = value;
-			}
-		}
-
-		public string LogStore
-		{
-			get
-			{
-				return logStore;
-			}
-			set	
-			{
-				logStore = value;
 			}
 		}
 	}

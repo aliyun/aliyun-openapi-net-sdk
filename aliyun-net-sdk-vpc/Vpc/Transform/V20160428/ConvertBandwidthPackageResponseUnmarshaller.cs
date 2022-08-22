@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			ConvertBandwidthPackageResponse convertBandwidthPackageResponse = new ConvertBandwidthPackageResponse();
 
 			convertBandwidthPackageResponse.HttpResponse = _ctx.HttpResponse;
-			convertBandwidthPackageResponse.RequestId = _ctx.StringValue("ConvertBandwidthPackage.RequestId");
 			convertBandwidthPackageResponse.ConvertInstanceId = _ctx.StringValue("ConvertBandwidthPackage.ConvertInstanceId");
+			convertBandwidthPackageResponse.RequestId = _ctx.StringValue("ConvertBandwidthPackage.RequestId");
         
 			return convertBandwidthPackageResponse;
         }

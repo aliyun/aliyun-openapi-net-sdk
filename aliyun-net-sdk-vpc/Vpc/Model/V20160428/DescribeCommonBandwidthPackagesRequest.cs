@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? resourceOwnerId;
 
+		private bool? securityProtectionEnabled;
+
 		private bool? includeReservationData;
 
 		private int? pageNumber;
@@ -72,6 +74,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? SecurityProtectionEnabled
+		{
+			get
+			{
+				return securityProtectionEnabled;
+			}
+			set	
+			{
+				securityProtectionEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityProtectionEnabled", value.ToString());
 			}
 		}
 

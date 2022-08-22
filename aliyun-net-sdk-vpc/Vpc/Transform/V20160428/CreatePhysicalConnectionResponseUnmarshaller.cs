@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			CreatePhysicalConnectionResponse createPhysicalConnectionResponse = new CreatePhysicalConnectionResponse();
 
 			createPhysicalConnectionResponse.HttpResponse = _ctx.HttpResponse;
-			createPhysicalConnectionResponse.RequestId = _ctx.StringValue("CreatePhysicalConnection.RequestId");
 			createPhysicalConnectionResponse.PhysicalConnectionId = _ctx.StringValue("CreatePhysicalConnection.PhysicalConnectionId");
+			createPhysicalConnectionResponse.RequestId = _ctx.StringValue("CreatePhysicalConnection.RequestId");
         
 			return createPhysicalConnectionResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -98,81 +98,73 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribePhysicalConnections_PhysicalConnectionType
 		{
 
-			private string physicalConnectionId;
-
-			private string accessPointId;
-
 			private string type;
 
 			private string status;
 
-			private string businessStatus;
-
 			private string creationTime;
 
-			private string enabledTime;
-
-			private string lineOperator;
-
-			private string spec;
-
-			private string peerLocation;
-
-			private string portType;
-
-			private string redundantPhysicalConnectionId;
-
-			private string name;
-
-			private string description;
-
 			private string adLocation;
-
-			private string portNumber;
-
-			private string circuitCode;
-
-			private long? bandwidth;
-
-			private string loaStatus;
-
-			private string spec1;
-
-			private string hasReservationData;
-
-			private string reservationInternetChargeType;
 
 			private string reservationActiveTime;
 
 			private string reservationOrderType;
 
-			private string endTime;
+			private string portNumber;
+
+			private string spec;
 
 			private string chargeType;
 
-			public string PhysicalConnectionId
-			{
-				get
-				{
-					return physicalConnectionId;
-				}
-				set	
-				{
-					physicalConnectionId = value;
-				}
-			}
+			private string reservationInternetChargeType;
 
-			public string AccessPointId
-			{
-				get
-				{
-					return accessPointId;
-				}
-				set	
-				{
-					accessPointId = value;
-				}
-			}
+			private string description;
+
+			private long? bandwidth;
+
+			private string enabledTime;
+
+			private string lineOperator;
+
+			private string peerLocation;
+
+			private string redundantPhysicalConnectionId;
+
+			private string name;
+
+			private string circuitCode;
+
+			private string endTime;
+
+			private string portType;
+
+			private string businessStatus;
+
+			private string loaStatus;
+
+			private string accessPointId;
+
+			private string accessPointType;
+
+			private string hasReservationData;
+
+			private string physicalConnectionId;
+
+			private string productType;
+
+			private int? virtualPhysicalConnectionCount;
+
+			private string parentPhysicalConnectionId;
+
+			private long? parentPhysicalConnectionAliUid;
+
+			private string vlanId;
+
+			private string orderMode;
+
+			private string vpconnStatus;
+
+			private string expectSpec;
 
 			public string Type
 			{
@@ -198,18 +190,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string BusinessStatus
-			{
-				get
-				{
-					return businessStatus;
-				}
-				set	
-				{
-					businessStatus = value;
-				}
-			}
-
 			public string CreationTime
 			{
 				get
@@ -222,102 +202,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string EnabledTime
-			{
-				get
-				{
-					return enabledTime;
-				}
-				set	
-				{
-					enabledTime = value;
-				}
-			}
-
-			public string LineOperator
-			{
-				get
-				{
-					return lineOperator;
-				}
-				set	
-				{
-					lineOperator = value;
-				}
-			}
-
-			public string Spec
-			{
-				get
-				{
-					return spec;
-				}
-				set	
-				{
-					spec = value;
-				}
-			}
-
-			public string PeerLocation
-			{
-				get
-				{
-					return peerLocation;
-				}
-				set	
-				{
-					peerLocation = value;
-				}
-			}
-
-			public string PortType
-			{
-				get
-				{
-					return portType;
-				}
-				set	
-				{
-					portType = value;
-				}
-			}
-
-			public string RedundantPhysicalConnectionId
-			{
-				get
-				{
-					return redundantPhysicalConnectionId;
-				}
-				set	
-				{
-					redundantPhysicalConnectionId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
 			public string AdLocation
 			{
 				get
@@ -327,90 +211,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					adLocation = value;
-				}
-			}
-
-			public string PortNumber
-			{
-				get
-				{
-					return portNumber;
-				}
-				set	
-				{
-					portNumber = value;
-				}
-			}
-
-			public string CircuitCode
-			{
-				get
-				{
-					return circuitCode;
-				}
-				set	
-				{
-					circuitCode = value;
-				}
-			}
-
-			public long? Bandwidth
-			{
-				get
-				{
-					return bandwidth;
-				}
-				set	
-				{
-					bandwidth = value;
-				}
-			}
-
-			public string LoaStatus
-			{
-				get
-				{
-					return loaStatus;
-				}
-				set	
-				{
-					loaStatus = value;
-				}
-			}
-
-			public string Spec1
-			{
-				get
-				{
-					return spec1;
-				}
-				set	
-				{
-					spec1 = value;
-				}
-			}
-
-			public string HasReservationData
-			{
-				get
-				{
-					return hasReservationData;
-				}
-				set	
-				{
-					hasReservationData = value;
-				}
-			}
-
-			public string ReservationInternetChargeType
-			{
-				get
-				{
-					return reservationInternetChargeType;
-				}
-				set	
-				{
-					reservationInternetChargeType = value;
 				}
 			}
 
@@ -438,15 +238,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string EndTime
+			public string PortNumber
 			{
 				get
 				{
-					return endTime;
+					return portNumber;
 				}
 				set	
 				{
-					endTime = value;
+					portNumber = value;
+				}
+			}
+
+			public string Spec
+			{
+				get
+				{
+					return spec;
+				}
+				set	
+				{
+					spec = value;
 				}
 			}
 
@@ -459,6 +271,306 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					chargeType = value;
+				}
+			}
+
+			public string ReservationInternetChargeType
+			{
+				get
+				{
+					return reservationInternetChargeType;
+				}
+				set	
+				{
+					reservationInternetChargeType = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public long? Bandwidth
+			{
+				get
+				{
+					return bandwidth;
+				}
+				set	
+				{
+					bandwidth = value;
+				}
+			}
+
+			public string EnabledTime
+			{
+				get
+				{
+					return enabledTime;
+				}
+				set	
+				{
+					enabledTime = value;
+				}
+			}
+
+			public string LineOperator
+			{
+				get
+				{
+					return lineOperator;
+				}
+				set	
+				{
+					lineOperator = value;
+				}
+			}
+
+			public string PeerLocation
+			{
+				get
+				{
+					return peerLocation;
+				}
+				set	
+				{
+					peerLocation = value;
+				}
+			}
+
+			public string RedundantPhysicalConnectionId
+			{
+				get
+				{
+					return redundantPhysicalConnectionId;
+				}
+				set	
+				{
+					redundantPhysicalConnectionId = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string CircuitCode
+			{
+				get
+				{
+					return circuitCode;
+				}
+				set	
+				{
+					circuitCode = value;
+				}
+			}
+
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			public string PortType
+			{
+				get
+				{
+					return portType;
+				}
+				set	
+				{
+					portType = value;
+				}
+			}
+
+			public string BusinessStatus
+			{
+				get
+				{
+					return businessStatus;
+				}
+				set	
+				{
+					businessStatus = value;
+				}
+			}
+
+			public string LoaStatus
+			{
+				get
+				{
+					return loaStatus;
+				}
+				set	
+				{
+					loaStatus = value;
+				}
+			}
+
+			public string AccessPointId
+			{
+				get
+				{
+					return accessPointId;
+				}
+				set	
+				{
+					accessPointId = value;
+				}
+			}
+
+			public string AccessPointType
+			{
+				get
+				{
+					return accessPointType;
+				}
+				set	
+				{
+					accessPointType = value;
+				}
+			}
+
+			public string HasReservationData
+			{
+				get
+				{
+					return hasReservationData;
+				}
+				set	
+				{
+					hasReservationData = value;
+				}
+			}
+
+			public string PhysicalConnectionId
+			{
+				get
+				{
+					return physicalConnectionId;
+				}
+				set	
+				{
+					physicalConnectionId = value;
+				}
+			}
+
+			public string ProductType
+			{
+				get
+				{
+					return productType;
+				}
+				set	
+				{
+					productType = value;
+				}
+			}
+
+			public int? VirtualPhysicalConnectionCount
+			{
+				get
+				{
+					return virtualPhysicalConnectionCount;
+				}
+				set	
+				{
+					virtualPhysicalConnectionCount = value;
+				}
+			}
+
+			public string ParentPhysicalConnectionId
+			{
+				get
+				{
+					return parentPhysicalConnectionId;
+				}
+				set	
+				{
+					parentPhysicalConnectionId = value;
+				}
+			}
+
+			public long? ParentPhysicalConnectionAliUid
+			{
+				get
+				{
+					return parentPhysicalConnectionAliUid;
+				}
+				set	
+				{
+					parentPhysicalConnectionAliUid = value;
+				}
+			}
+
+			public string VlanId
+			{
+				get
+				{
+					return vlanId;
+				}
+				set	
+				{
+					vlanId = value;
+				}
+			}
+
+			public string OrderMode
+			{
+				get
+				{
+					return orderMode;
+				}
+				set	
+				{
+					orderMode = value;
+				}
+			}
+
+			public string VpconnStatus
+			{
+				get
+				{
+					return vpconnStatus;
+				}
+				set	
+				{
+					vpconnStatus = value;
+				}
+			}
+
+			public string ExpectSpec
+			{
+				get
+				{
+					return expectSpec;
+				}
+				set	
+				{
+					expectSpec = value;
 				}
 			}
 		}

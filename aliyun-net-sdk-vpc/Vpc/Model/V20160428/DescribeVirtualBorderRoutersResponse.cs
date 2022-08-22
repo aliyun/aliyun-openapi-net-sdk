@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -98,83 +98,73 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeVirtualBorderRouters_VirtualBorderRouterType
 		{
 
-			private string vbrId;
-
 			private string creationTime;
 
-			private string activationTime;
-
-			private string terminationTime;
-
-			private string recoveryTime;
-
 			private string status;
-
-			private int? vlanId;
-
-			private string circuitCode;
-
-			private string routeTableId;
-
-			private string vlanInterfaceId;
-
-			private string localGatewayIp;
-
-			private string peerGatewayIp;
-
-			private string peeringSubnetMask;
-
-			private string physicalConnectionId;
-
-			private string physicalConnectionStatus;
-
-			private string physicalConnectionBusinessStatus;
-
-			private string physicalConnectionOwnerUid;
-
-			private string accessPointId;
-
-			private string name;
-
-			private string description;
-
-			private string pConnVbrExpireTime;
-
-			private string eccId;
 
 			private string type;
 
 			private long? minTxInterval;
 
+			private string peerIpv6GatewayIp;
+
+			private string pConnVbrExpireTime;
+
+			private string physicalConnectionOwnerUid;
+
+			private string activationTime;
+
+			private string physicalConnectionBusinessStatus;
+
+			private string description;
+
+			private string terminationTime;
+
 			private long? minRxInterval;
 
-			private long? detectMultiplier;
+			private string peerGatewayIp;
+
+			private string name;
+
+			private string vbrId;
+
+			private int? vlanId;
+
+			private string vlanInterfaceId;
+
+			private string circuitCode;
 
 			private string localIpv6GatewayIp;
 
-			private string peerIpv6GatewayIp;
+			private string localGatewayIp;
 
-			private string peeringIpv6SubnetMask;
+			private string peeringSubnetMask;
 
 			private bool? enableIpv6;
 
+			private string routeTableId;
+
+			private long? detectMultiplier;
+
+			private string eccId;
+
 			private string cloudBoxInstanceId;
+
+			private string recoveryTime;
+
+			private string physicalConnectionStatus;
+
+			private string peeringIpv6SubnetMask;
+
+			private string accessPointId;
+
+			private string pConnVbrChargeType;
+
+			private string physicalConnectionId;
 
 			private List<DescribeVirtualBorderRouters_AssociatedPhysicalConnection> associatedPhysicalConnections;
 
 			private List<DescribeVirtualBorderRouters_AssociatedCen> associatedCens;
-
-			public string VbrId
-			{
-				get
-				{
-					return vbrId;
-				}
-				set	
-				{
-					vbrId = value;
-				}
-			}
 
 			public string CreationTime
 			{
@@ -188,42 +178,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string ActivationTime
-			{
-				get
-				{
-					return activationTime;
-				}
-				set	
-				{
-					activationTime = value;
-				}
-			}
-
-			public string TerminationTime
-			{
-				get
-				{
-					return terminationTime;
-				}
-				set	
-				{
-					terminationTime = value;
-				}
-			}
-
-			public string RecoveryTime
-			{
-				get
-				{
-					return recoveryTime;
-				}
-				set	
-				{
-					recoveryTime = value;
-				}
-			}
-
 			public string Status
 			{
 				get
@@ -233,198 +187,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					status = value;
-				}
-			}
-
-			public int? VlanId
-			{
-				get
-				{
-					return vlanId;
-				}
-				set	
-				{
-					vlanId = value;
-				}
-			}
-
-			public string CircuitCode
-			{
-				get
-				{
-					return circuitCode;
-				}
-				set	
-				{
-					circuitCode = value;
-				}
-			}
-
-			public string RouteTableId
-			{
-				get
-				{
-					return routeTableId;
-				}
-				set	
-				{
-					routeTableId = value;
-				}
-			}
-
-			public string VlanInterfaceId
-			{
-				get
-				{
-					return vlanInterfaceId;
-				}
-				set	
-				{
-					vlanInterfaceId = value;
-				}
-			}
-
-			public string LocalGatewayIp
-			{
-				get
-				{
-					return localGatewayIp;
-				}
-				set	
-				{
-					localGatewayIp = value;
-				}
-			}
-
-			public string PeerGatewayIp
-			{
-				get
-				{
-					return peerGatewayIp;
-				}
-				set	
-				{
-					peerGatewayIp = value;
-				}
-			}
-
-			public string PeeringSubnetMask
-			{
-				get
-				{
-					return peeringSubnetMask;
-				}
-				set	
-				{
-					peeringSubnetMask = value;
-				}
-			}
-
-			public string PhysicalConnectionId
-			{
-				get
-				{
-					return physicalConnectionId;
-				}
-				set	
-				{
-					physicalConnectionId = value;
-				}
-			}
-
-			public string PhysicalConnectionStatus
-			{
-				get
-				{
-					return physicalConnectionStatus;
-				}
-				set	
-				{
-					physicalConnectionStatus = value;
-				}
-			}
-
-			public string PhysicalConnectionBusinessStatus
-			{
-				get
-				{
-					return physicalConnectionBusinessStatus;
-				}
-				set	
-				{
-					physicalConnectionBusinessStatus = value;
-				}
-			}
-
-			public string PhysicalConnectionOwnerUid
-			{
-				get
-				{
-					return physicalConnectionOwnerUid;
-				}
-				set	
-				{
-					physicalConnectionOwnerUid = value;
-				}
-			}
-
-			public string AccessPointId
-			{
-				get
-				{
-					return accessPointId;
-				}
-				set	
-				{
-					accessPointId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string PConnVbrExpireTime
-			{
-				get
-				{
-					return pConnVbrExpireTime;
-				}
-				set	
-				{
-					pConnVbrExpireTime = value;
-				}
-			}
-
-			public string EccId
-			{
-				get
-				{
-					return eccId;
-				}
-				set	
-				{
-					eccId = value;
 				}
 			}
 
@@ -452,6 +214,90 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string PeerIpv6GatewayIp
+			{
+				get
+				{
+					return peerIpv6GatewayIp;
+				}
+				set	
+				{
+					peerIpv6GatewayIp = value;
+				}
+			}
+
+			public string PConnVbrExpireTime
+			{
+				get
+				{
+					return pConnVbrExpireTime;
+				}
+				set	
+				{
+					pConnVbrExpireTime = value;
+				}
+			}
+
+			public string PhysicalConnectionOwnerUid
+			{
+				get
+				{
+					return physicalConnectionOwnerUid;
+				}
+				set	
+				{
+					physicalConnectionOwnerUid = value;
+				}
+			}
+
+			public string ActivationTime
+			{
+				get
+				{
+					return activationTime;
+				}
+				set	
+				{
+					activationTime = value;
+				}
+			}
+
+			public string PhysicalConnectionBusinessStatus
+			{
+				get
+				{
+					return physicalConnectionBusinessStatus;
+				}
+				set	
+				{
+					physicalConnectionBusinessStatus = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string TerminationTime
+			{
+				get
+				{
+					return terminationTime;
+				}
+				set	
+				{
+					terminationTime = value;
+				}
+			}
+
 			public long? MinRxInterval
 			{
 				get
@@ -464,15 +310,75 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public long? DetectMultiplier
+			public string PeerGatewayIp
 			{
 				get
 				{
-					return detectMultiplier;
+					return peerGatewayIp;
 				}
 				set	
 				{
-					detectMultiplier = value;
+					peerGatewayIp = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string VbrId
+			{
+				get
+				{
+					return vbrId;
+				}
+				set	
+				{
+					vbrId = value;
+				}
+			}
+
+			public int? VlanId
+			{
+				get
+				{
+					return vlanId;
+				}
+				set	
+				{
+					vlanId = value;
+				}
+			}
+
+			public string VlanInterfaceId
+			{
+				get
+				{
+					return vlanInterfaceId;
+				}
+				set	
+				{
+					vlanInterfaceId = value;
+				}
+			}
+
+			public string CircuitCode
+			{
+				get
+				{
+					return circuitCode;
+				}
+				set	
+				{
+					circuitCode = value;
 				}
 			}
 
@@ -488,27 +394,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string PeerIpv6GatewayIp
+			public string LocalGatewayIp
 			{
 				get
 				{
-					return peerIpv6GatewayIp;
+					return localGatewayIp;
 				}
 				set	
 				{
-					peerIpv6GatewayIp = value;
+					localGatewayIp = value;
 				}
 			}
 
-			public string PeeringIpv6SubnetMask
+			public string PeeringSubnetMask
 			{
 				get
 				{
-					return peeringIpv6SubnetMask;
+					return peeringSubnetMask;
 				}
 				set	
 				{
-					peeringIpv6SubnetMask = value;
+					peeringSubnetMask = value;
 				}
 			}
 
@@ -524,6 +430,42 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string RouteTableId
+			{
+				get
+				{
+					return routeTableId;
+				}
+				set	
+				{
+					routeTableId = value;
+				}
+			}
+
+			public long? DetectMultiplier
+			{
+				get
+				{
+					return detectMultiplier;
+				}
+				set	
+				{
+					detectMultiplier = value;
+				}
+			}
+
+			public string EccId
+			{
+				get
+				{
+					return eccId;
+				}
+				set	
+				{
+					eccId = value;
+				}
+			}
+
 			public string CloudBoxInstanceId
 			{
 				get
@@ -533,6 +475,78 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					cloudBoxInstanceId = value;
+				}
+			}
+
+			public string RecoveryTime
+			{
+				get
+				{
+					return recoveryTime;
+				}
+				set	
+				{
+					recoveryTime = value;
+				}
+			}
+
+			public string PhysicalConnectionStatus
+			{
+				get
+				{
+					return physicalConnectionStatus;
+				}
+				set	
+				{
+					physicalConnectionStatus = value;
+				}
+			}
+
+			public string PeeringIpv6SubnetMask
+			{
+				get
+				{
+					return peeringIpv6SubnetMask;
+				}
+				set	
+				{
+					peeringIpv6SubnetMask = value;
+				}
+			}
+
+			public string AccessPointId
+			{
+				get
+				{
+					return accessPointId;
+				}
+				set	
+				{
+					accessPointId = value;
+				}
+			}
+
+			public string PConnVbrChargeType
+			{
+				get
+				{
+					return pConnVbrChargeType;
+				}
+				set	
+				{
+					pConnVbrChargeType = value;
+				}
+			}
+
+			public string PhysicalConnectionId
+			{
+				get
+				{
+					return physicalConnectionId;
+				}
+				set	
+				{
+					physicalConnectionId = value;
 				}
 			}
 
@@ -563,45 +577,45 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			public class DescribeVirtualBorderRouters_AssociatedPhysicalConnection
 			{
 
-				private string circuitCode;
+				private string status;
 
 				private string vlanInterfaceId;
 
-				private string localGatewayIp;
-
-				private string peerGatewayIp;
-
-				private string peeringSubnetMask;
-
-				private string physicalConnectionId;
-
-				private string physicalConnectionStatus;
-
-				private string physicalConnectionBusinessStatus;
-
-				private string physicalConnectionOwnerUid;
-
-				private string vlanId;
-
-				private string localIpv6GatewayIp;
+				private string circuitCode;
 
 				private string peerIpv6GatewayIp;
 
-				private string peeringIpv6SubnetMask;
+				private string localIpv6GatewayIp;
 
-				private string status;
+				private string physicalConnectionOwnerUid;
+
+				private string localGatewayIp;
+
+				private string physicalConnectionBusinessStatus;
+
+				private string peeringSubnetMask;
 
 				private bool? enableIpv6;
 
-				public string CircuitCode
+				private string physicalConnectionStatus;
+
+				private string peerGatewayIp;
+
+				private string peeringIpv6SubnetMask;
+
+				private string physicalConnectionId;
+
+				private string vlanId;
+
+				public string Status
 				{
 					get
 					{
-						return circuitCode;
+						return status;
 					}
 					set	
 					{
-						circuitCode = value;
+						status = value;
 					}
 				}
 
@@ -617,111 +631,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
-				public string LocalGatewayIp
+				public string CircuitCode
 				{
 					get
 					{
-						return localGatewayIp;
+						return circuitCode;
 					}
 					set	
 					{
-						localGatewayIp = value;
-					}
-				}
-
-				public string PeerGatewayIp
-				{
-					get
-					{
-						return peerGatewayIp;
-					}
-					set	
-					{
-						peerGatewayIp = value;
-					}
-				}
-
-				public string PeeringSubnetMask
-				{
-					get
-					{
-						return peeringSubnetMask;
-					}
-					set	
-					{
-						peeringSubnetMask = value;
-					}
-				}
-
-				public string PhysicalConnectionId
-				{
-					get
-					{
-						return physicalConnectionId;
-					}
-					set	
-					{
-						physicalConnectionId = value;
-					}
-				}
-
-				public string PhysicalConnectionStatus
-				{
-					get
-					{
-						return physicalConnectionStatus;
-					}
-					set	
-					{
-						physicalConnectionStatus = value;
-					}
-				}
-
-				public string PhysicalConnectionBusinessStatus
-				{
-					get
-					{
-						return physicalConnectionBusinessStatus;
-					}
-					set	
-					{
-						physicalConnectionBusinessStatus = value;
-					}
-				}
-
-				public string PhysicalConnectionOwnerUid
-				{
-					get
-					{
-						return physicalConnectionOwnerUid;
-					}
-					set	
-					{
-						physicalConnectionOwnerUid = value;
-					}
-				}
-
-				public string VlanId
-				{
-					get
-					{
-						return vlanId;
-					}
-					set	
-					{
-						vlanId = value;
-					}
-				}
-
-				public string LocalIpv6GatewayIp
-				{
-					get
-					{
-						return localIpv6GatewayIp;
-					}
-					set	
-					{
-						localIpv6GatewayIp = value;
+						circuitCode = value;
 					}
 				}
 
@@ -737,27 +655,63 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
-				public string PeeringIpv6SubnetMask
+				public string LocalIpv6GatewayIp
 				{
 					get
 					{
-						return peeringIpv6SubnetMask;
+						return localIpv6GatewayIp;
 					}
 					set	
 					{
-						peeringIpv6SubnetMask = value;
+						localIpv6GatewayIp = value;
 					}
 				}
 
-				public string Status
+				public string PhysicalConnectionOwnerUid
 				{
 					get
 					{
-						return status;
+						return physicalConnectionOwnerUid;
 					}
 					set	
 					{
-						status = value;
+						physicalConnectionOwnerUid = value;
+					}
+				}
+
+				public string LocalGatewayIp
+				{
+					get
+					{
+						return localGatewayIp;
+					}
+					set	
+					{
+						localGatewayIp = value;
+					}
+				}
+
+				public string PhysicalConnectionBusinessStatus
+				{
+					get
+					{
+						return physicalConnectionBusinessStatus;
+					}
+					set	
+					{
+						physicalConnectionBusinessStatus = value;
+					}
+				}
+
+				public string PeeringSubnetMask
+				{
+					get
+					{
+						return peeringSubnetMask;
+					}
+					set	
+					{
+						peeringSubnetMask = value;
 					}
 				}
 
@@ -772,28 +726,76 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 						enableIpv6 = value;
 					}
 				}
+
+				public string PhysicalConnectionStatus
+				{
+					get
+					{
+						return physicalConnectionStatus;
+					}
+					set	
+					{
+						physicalConnectionStatus = value;
+					}
+				}
+
+				public string PeerGatewayIp
+				{
+					get
+					{
+						return peerGatewayIp;
+					}
+					set	
+					{
+						peerGatewayIp = value;
+					}
+				}
+
+				public string PeeringIpv6SubnetMask
+				{
+					get
+					{
+						return peeringIpv6SubnetMask;
+					}
+					set	
+					{
+						peeringIpv6SubnetMask = value;
+					}
+				}
+
+				public string PhysicalConnectionId
+				{
+					get
+					{
+						return physicalConnectionId;
+					}
+					set	
+					{
+						physicalConnectionId = value;
+					}
+				}
+
+				public string VlanId
+				{
+					get
+					{
+						return vlanId;
+					}
+					set	
+					{
+						vlanId = value;
+					}
+				}
 			}
 
 			public class DescribeVirtualBorderRouters_AssociatedCen
 			{
 
-				private string cenId;
-
 				private long? cenOwnerId;
 
-				private string cenStatus;
+				private string cenId;
 
-				public string CenId
-				{
-					get
-					{
-						return cenId;
-					}
-					set	
-					{
-						cenId = value;
-					}
-				}
+				private string cenStatus;
 
 				public long? CenOwnerId
 				{
@@ -804,6 +806,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						cenOwnerId = value;
+					}
+				}
+
+				public string CenId
+				{
+					get
+					{
+						return cenId;
+					}
+					set	
+					{
+						cenId = value;
 					}
 				}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class AllocateIpv6InternetBandwidthResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string ipv6AddressId;
 
-		private string internetBandwidthId;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string internetBandwidthId;
 
 		public string Ipv6AddressId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				ipv6AddressId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

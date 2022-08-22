@@ -44,11 +44,17 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string clientToken;
 
+		private bool? securityProtectionEnabled;
+
 		private string description;
+
+		private string networkType;
 
 		private string spec;
 
 		private string duration;
+
+		private bool? icmpReplyEnabled;
 
 		private string natType;
 
@@ -69,6 +75,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private string vpcId;
 
 		private string name;
+
+		private string eipBindMode;
 
 		private string pricingCycle;
 
@@ -98,6 +106,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public bool? SecurityProtectionEnabled
+		{
+			get
+			{
+				return securityProtectionEnabled;
+			}
+			set	
+			{
+				securityProtectionEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityProtectionEnabled", value.ToString());
+			}
+		}
+
 		public string Description
 		{
 			get
@@ -108,6 +129,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string NetworkType
+		{
+			get
+			{
+				return networkType;
+			}
+			set	
+			{
+				networkType = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
 			}
 		}
 
@@ -134,6 +168,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				duration = value;
 				DictionaryUtil.Add(QueryParameters, "Duration", value);
+			}
+		}
+
+		public bool? IcmpReplyEnabled
+		{
+			get
+			{
+				return icmpReplyEnabled;
+			}
+			set	
+			{
+				icmpReplyEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "IcmpReplyEnabled", value.ToString());
 			}
 		}
 
@@ -264,6 +311,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string EipBindMode
+		{
+			get
+			{
+				return eipBindMode;
+			}
+			set	
+			{
+				eipBindMode = value;
+				DictionaryUtil.Add(QueryParameters, "EipBindMode", value);
 			}
 		}
 

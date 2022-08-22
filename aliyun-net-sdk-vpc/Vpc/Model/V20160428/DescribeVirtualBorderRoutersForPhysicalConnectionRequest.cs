@@ -129,13 +129,12 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set
 			{
 				filters = value;
-				for (int i = 0; i < filters.Count; i++)
+				if(filters != null)
 				{
-					for (int j = 0; j < filters[i].Values.Count; j++)
+					for (int depth1 = 0; depth1 < filters.Count; depth1++)
 					{
-						DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Value." +(j + 1), filters[i].Values[j]);
+						DictionaryUtil.Add(QueryParameters,"Filter." + (depth1 + 1), filters[depth1]);
 					}
-					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Key", filters[i].Key);
 				}
 			}
 		}

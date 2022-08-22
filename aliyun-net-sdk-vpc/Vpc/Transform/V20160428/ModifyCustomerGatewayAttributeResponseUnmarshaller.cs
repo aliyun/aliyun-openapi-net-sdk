@@ -32,11 +32,11 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 
 			modifyCustomerGatewayAttributeResponse.HttpResponse = _ctx.HttpResponse;
 			modifyCustomerGatewayAttributeResponse.RequestId = _ctx.StringValue("ModifyCustomerGatewayAttribute.RequestId");
-			modifyCustomerGatewayAttributeResponse.CustomerGatewayId = _ctx.StringValue("ModifyCustomerGatewayAttribute.CustomerGatewayId");
 			modifyCustomerGatewayAttributeResponse.IpAddress = _ctx.StringValue("ModifyCustomerGatewayAttribute.IpAddress");
-			modifyCustomerGatewayAttributeResponse.Name = _ctx.StringValue("ModifyCustomerGatewayAttribute.Name");
 			modifyCustomerGatewayAttributeResponse.Description = _ctx.StringValue("ModifyCustomerGatewayAttribute.Description");
+			modifyCustomerGatewayAttributeResponse.CustomerGatewayId = _ctx.StringValue("ModifyCustomerGatewayAttribute.CustomerGatewayId");
 			modifyCustomerGatewayAttributeResponse.CreateTime = _ctx.LongValue("ModifyCustomerGatewayAttribute.CreateTime");
+			modifyCustomerGatewayAttributeResponse.Name = _ctx.StringValue("ModifyCustomerGatewayAttribute.Name");
         
 			return modifyCustomerGatewayAttributeResponse;
         }

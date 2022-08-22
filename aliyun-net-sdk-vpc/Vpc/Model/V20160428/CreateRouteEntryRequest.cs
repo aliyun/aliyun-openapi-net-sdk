@@ -62,7 +62,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? ownerId;
 
-		private List<NextHopList> nextHopLists = new List<NextHopList>(){ };
+		private List<int?> nextHopLists = new List<int?>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -207,7 +207,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public List<NextHopList> NextHopLists
+		public List<int?> NextHopLists
 		{
 			get
 			{
@@ -217,11 +217,14 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set
 			{
 				nextHopLists = value;
-				for (int i = 0; i < nextHopLists.Count; i++)
+				if(nextHopLists != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".Weight", nextHopLists[i].Weight);
-					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".NextHopId", nextHopLists[i].NextHopId);
-					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".NextHopType", nextHopLists[i].NextHopType);
+					for (int depth1 = 0; depth1 < nextHopLists.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"NextHopList." + (depth1 + 1), nextHopLists[depth1]);
+						DictionaryUtil.Add(QueryParameters,"NextHopList." + (depth1 + 1), nextHopLists[depth1]);
+						DictionaryUtil.Add(QueryParameters,"NextHopList." + (depth1 + 1), nextHopLists[depth1]);
+					}
 				}
 			}
 		}

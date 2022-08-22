@@ -58,6 +58,7 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 				nluProfile.AccessKey = _ctx.StringValue("ListInstances.Instances["+ i +"].NluProfile.AccessKey");
 				nluProfile.SecretKey = _ctx.StringValue("ListInstances.Instances["+ i +"].NluProfile.SecretKey");
 				nluProfile.Endpoint = _ctx.StringValue("ListInstances.Instances["+ i +"].NluProfile.Endpoint");
+				nluProfile.AgentId = _ctx.StringValue("ListInstances.Instances["+ i +"].NluProfile.AgentId");
 				instance.NluProfile = nluProfile;
 
 				List<ListInstancesResponse.ListInstances_Instance.ListInstances_ResourceTag> instance_resourceTags = new List<ListInstancesResponse.ListInstances_Instance.ListInstances_ResourceTag>();

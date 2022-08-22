@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			OpenTrafficMirrorServiceResponse openTrafficMirrorServiceResponse = new OpenTrafficMirrorServiceResponse();
 
 			openTrafficMirrorServiceResponse.HttpResponse = _ctx.HttpResponse;
-			openTrafficMirrorServiceResponse.RequestId = _ctx.StringValue("OpenTrafficMirrorService.RequestId");
 			openTrafficMirrorServiceResponse.OrderId = _ctx.StringValue("OpenTrafficMirrorService.OrderId");
+			openTrafficMirrorServiceResponse.RequestId = _ctx.StringValue("OpenTrafficMirrorService.RequestId");
         
 			return openTrafficMirrorServiceResponse;
         }

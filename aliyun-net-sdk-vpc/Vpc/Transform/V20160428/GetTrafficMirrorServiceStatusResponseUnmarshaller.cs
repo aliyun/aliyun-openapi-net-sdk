@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			GetTrafficMirrorServiceStatusResponse getTrafficMirrorServiceStatusResponse = new GetTrafficMirrorServiceStatusResponse();
 
 			getTrafficMirrorServiceStatusResponse.HttpResponse = _ctx.HttpResponse;
-			getTrafficMirrorServiceStatusResponse.RequestId = _ctx.StringValue("GetTrafficMirrorServiceStatus.RequestId");
 			getTrafficMirrorServiceStatusResponse.Enabled = _ctx.BooleanValue("GetTrafficMirrorServiceStatus.Enabled");
+			getTrafficMirrorServiceStatusResponse.RequestId = _ctx.StringValue("GetTrafficMirrorServiceStatus.RequestId");
         
 			return getTrafficMirrorServiceStatusResponse;
         }

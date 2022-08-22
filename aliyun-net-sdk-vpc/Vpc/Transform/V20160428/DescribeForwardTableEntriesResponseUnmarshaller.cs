@@ -31,23 +31,23 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeForwardTableEntriesResponse describeForwardTableEntriesResponse = new DescribeForwardTableEntriesResponse();
 
 			describeForwardTableEntriesResponse.HttpResponse = _ctx.HttpResponse;
-			describeForwardTableEntriesResponse.RequestId = _ctx.StringValue("DescribeForwardTableEntries.RequestId");
-			describeForwardTableEntriesResponse.TotalCount = _ctx.IntegerValue("DescribeForwardTableEntries.TotalCount");
-			describeForwardTableEntriesResponse.PageNumber = _ctx.IntegerValue("DescribeForwardTableEntries.PageNumber");
 			describeForwardTableEntriesResponse.PageSize = _ctx.IntegerValue("DescribeForwardTableEntries.PageSize");
+			describeForwardTableEntriesResponse.RequestId = _ctx.StringValue("DescribeForwardTableEntries.RequestId");
+			describeForwardTableEntriesResponse.PageNumber = _ctx.IntegerValue("DescribeForwardTableEntries.PageNumber");
+			describeForwardTableEntriesResponse.TotalCount = _ctx.IntegerValue("DescribeForwardTableEntries.TotalCount");
 
 			List<DescribeForwardTableEntriesResponse.DescribeForwardTableEntries_ForwardTableEntry> describeForwardTableEntriesResponse_forwardTableEntries = new List<DescribeForwardTableEntriesResponse.DescribeForwardTableEntries_ForwardTableEntry>();
 			for (int i = 0; i < _ctx.Length("DescribeForwardTableEntries.ForwardTableEntries.Length"); i++) {
 				DescribeForwardTableEntriesResponse.DescribeForwardTableEntries_ForwardTableEntry forwardTableEntry = new DescribeForwardTableEntriesResponse.DescribeForwardTableEntries_ForwardTableEntry();
-				forwardTableEntry.ForwardTableId = _ctx.StringValue("DescribeForwardTableEntries.ForwardTableEntries["+ i +"].ForwardTableId");
+				forwardTableEntry.Status = _ctx.StringValue("DescribeForwardTableEntries.ForwardTableEntries["+ i +"].Status");
 				forwardTableEntry.ForwardEntryId = _ctx.StringValue("DescribeForwardTableEntries.ForwardTableEntries["+ i +"].ForwardEntryId");
-				forwardTableEntry.ExternalIp = _ctx.StringValue("DescribeForwardTableEntries.ForwardTableEntries["+ i +"].ExternalIp");
-				forwardTableEntry.ExternalPort = _ctx.StringValue("DescribeForwardTableEntries.ForwardTableEntries["+ i +"].ExternalPort");
-				forwardTableEntry.IpProtocol = _ctx.StringValue("DescribeForwardTableEntries.ForwardTableEntries["+ i +"].IpProtocol");
 				forwardTableEntry.InternalIp = _ctx.StringValue("DescribeForwardTableEntries.ForwardTableEntries["+ i +"].InternalIp");
 				forwardTableEntry.InternalPort = _ctx.StringValue("DescribeForwardTableEntries.ForwardTableEntries["+ i +"].InternalPort");
-				forwardTableEntry.Status = _ctx.StringValue("DescribeForwardTableEntries.ForwardTableEntries["+ i +"].Status");
 				forwardTableEntry.ForwardEntryName = _ctx.StringValue("DescribeForwardTableEntries.ForwardTableEntries["+ i +"].ForwardEntryName");
+				forwardTableEntry.ForwardTableId = _ctx.StringValue("DescribeForwardTableEntries.ForwardTableEntries["+ i +"].ForwardTableId");
+				forwardTableEntry.IpProtocol = _ctx.StringValue("DescribeForwardTableEntries.ForwardTableEntries["+ i +"].IpProtocol");
+				forwardTableEntry.ExternalPort = _ctx.StringValue("DescribeForwardTableEntries.ForwardTableEntries["+ i +"].ExternalPort");
+				forwardTableEntry.ExternalIp = _ctx.StringValue("DescribeForwardTableEntries.ForwardTableEntries["+ i +"].ExternalIp");
 
 				describeForwardTableEntriesResponse_forwardTableEntries.Add(forwardTableEntry);
 			}

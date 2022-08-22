@@ -116,6 +116,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 			private string fileName;
 
+			private string voiceSliceRecordingListJson;
+
 			public string SignatureUrl
 			{
 				get
@@ -137,6 +139,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					fileName = value;
+				}
+			}
+
+			public string VoiceSliceRecordingListJson
+			{
+				get
+				{
+					return voiceSliceRecordingListJson;
+				}
+				set	
+				{
+					voiceSliceRecordingListJson = value;
 				}
 			}
 		}

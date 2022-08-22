@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			ModifyIPv6TranslatorBandwidthResponse modifyIPv6TranslatorBandwidthResponse = new ModifyIPv6TranslatorBandwidthResponse();
 
 			modifyIPv6TranslatorBandwidthResponse.HttpResponse = _ctx.HttpResponse;
-			modifyIPv6TranslatorBandwidthResponse.RequestId = _ctx.StringValue("ModifyIPv6TranslatorBandwidth.RequestId");
 			modifyIPv6TranslatorBandwidthResponse.OrderId = _ctx.StringValue("ModifyIPv6TranslatorBandwidth.OrderId");
+			modifyIPv6TranslatorBandwidthResponse.RequestId = _ctx.StringValue("ModifyIPv6TranslatorBandwidth.RequestId");
         
 			return modifyIPv6TranslatorBandwidthResponse;
         }

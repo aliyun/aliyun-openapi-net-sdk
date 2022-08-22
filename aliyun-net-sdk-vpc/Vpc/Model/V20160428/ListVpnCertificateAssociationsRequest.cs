@@ -60,10 +60,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set
 			{
 				certificateIds = value;
-				for (int i = 0; i < certificateIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"CertificateId." + (i + 1) , certificateIds[i]);
-				}
 			}
 		}
 
@@ -77,10 +73,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set
 			{
 				vpnGatewayIds = value;
-				for (int i = 0; i < vpnGatewayIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"VpnGatewayId." + (i + 1) , vpnGatewayIds[i]);
-				}
 			}
 		}
 

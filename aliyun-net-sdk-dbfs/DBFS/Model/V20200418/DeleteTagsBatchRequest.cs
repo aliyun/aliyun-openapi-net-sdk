@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.DBFS;
 using Aliyun.Acs.DBFS.Transform;
 using Aliyun.Acs.DBFS.Transform.V20200418;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
     public class DeleteTagsBatchRequest : RpcAcsRequest<DeleteTagsBatchResponse>
     {
         public DeleteTagsBatchRequest()
-            : base("DBFS", "2020-04-18", "DeleteTagsBatch")
+            : base("DBFS", "2020-04-18", "DeleteTagsBatch", "dbfs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

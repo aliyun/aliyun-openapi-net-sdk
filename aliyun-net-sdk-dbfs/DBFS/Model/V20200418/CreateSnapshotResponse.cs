@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.DBFS.Model.V20200418
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 	public class CreateSnapshotResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string snapshotId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string SnapshotId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			set	
 			{
 				snapshotId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

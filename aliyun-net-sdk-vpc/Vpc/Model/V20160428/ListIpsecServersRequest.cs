@@ -112,10 +112,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set
 			{
 				ipsecServerIds = value;
-				for (int i = 0; i < ipsecServerIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"IpsecServerId." + (i + 1) , ipsecServerIds[i]);
-				}
 			}
 		}
 

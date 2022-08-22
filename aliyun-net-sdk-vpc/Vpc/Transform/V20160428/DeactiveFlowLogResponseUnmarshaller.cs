@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DeactiveFlowLogResponse deactiveFlowLogResponse = new DeactiveFlowLogResponse();
 
 			deactiveFlowLogResponse.HttpResponse = _ctx.HttpResponse;
-			deactiveFlowLogResponse.RequestId = _ctx.StringValue("DeactiveFlowLog.RequestId");
 			deactiveFlowLogResponse.Success = _ctx.StringValue("DeactiveFlowLog.Success");
+			deactiveFlowLogResponse.RequestId = _ctx.StringValue("DeactiveFlowLog.RequestId");
         
 			return deactiveFlowLogResponse;
         }

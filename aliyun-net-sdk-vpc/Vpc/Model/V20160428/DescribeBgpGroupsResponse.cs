@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeBgpGroupsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeBgpGroups_BgpGroup> bgpGroups;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,55 +98,45 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeBgpGroups_BgpGroup
 		{
 
-			private string name;
-
-			private string description;
+			private string status;
 
 			private string bgpGroupId;
 
-			private string peerAsn;
-
-			private string authKey;
-
 			private string routerId;
 
-			private string status;
-
-			private string keepalive;
+			private string peerAsn;
 
 			private string localAsn;
 
+			private string regionId;
+
 			private string hold;
+
+			private string ipVersion;
+
+			private string description;
+
+			private string keepalive;
 
 			private string isFake;
 
 			private string routeLimit;
 
-			private string regionId;
+			private int? routeQuota;
 
-			private string ipVersion;
+			private string name;
 
-			public string Name
+			private string authKey;
+
+			public string Status
 			{
 				get
 				{
-					return name;
+					return status;
 				}
 				set	
 				{
-					name = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
+					status = value;
 				}
 			}
 
@@ -162,30 +152,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string PeerAsn
-			{
-				get
-				{
-					return peerAsn;
-				}
-				set	
-				{
-					peerAsn = value;
-				}
-			}
-
-			public string AuthKey
-			{
-				get
-				{
-					return authKey;
-				}
-				set	
-				{
-					authKey = value;
-				}
-			}
-
 			public string RouterId
 			{
 				get
@@ -198,27 +164,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Status
+			public string PeerAsn
 			{
 				get
 				{
-					return status;
+					return peerAsn;
 				}
 				set	
 				{
-					status = value;
-				}
-			}
-
-			public string Keepalive
-			{
-				get
-				{
-					return keepalive;
-				}
-				set	
-				{
-					keepalive = value;
+					peerAsn = value;
 				}
 			}
 
@@ -234,6 +188,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
 			public string Hold
 			{
 				get
@@ -243,6 +209,42 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					hold = value;
+				}
+			}
+
+			public string IpVersion
+			{
+				get
+				{
+					return ipVersion;
+				}
+				set	
+				{
+					ipVersion = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string Keepalive
+			{
+				get
+				{
+					return keepalive;
+				}
+				set	
+				{
+					keepalive = value;
 				}
 			}
 
@@ -270,27 +272,39 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string RegionId
+			public int? RouteQuota
 			{
 				get
 				{
-					return regionId;
+					return routeQuota;
 				}
 				set	
 				{
-					regionId = value;
+					routeQuota = value;
 				}
 			}
 
-			public string IpVersion
+			public string Name
 			{
 				get
 				{
-					return ipVersion;
+					return name;
 				}
 				set	
 				{
-					ipVersion = value;
+					name = value;
+				}
+			}
+
+			public string AuthKey
+			{
+				get
+				{
+					return authKey;
+				}
+				set	
+				{
+					authKey = value;
 				}
 			}
 		}

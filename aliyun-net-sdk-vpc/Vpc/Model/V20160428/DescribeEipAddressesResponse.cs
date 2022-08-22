@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeEipAddressesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeEipAddresses_EipAddress> eipAddresses;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,73 +98,77 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeEipAddresses_EipAddress
 		{
 
-			private string regionId;
-
-			private string ipAddress;
-
-			private string privateIpAddress;
-
-			private string allocationId;
+			private string reservationActiveTime;
 
 			private string status;
 
-			private string instanceId;
-
-			private string bandwidth;
-
-			private string eipBandwidth;
-
-			private string internetChargeType;
+			private string reservationOrderType;
 
 			private string allocationTime;
 
-			private string instanceType;
-
-			private string instanceRegionId;
+			private string netmode;
 
 			private string chargeType;
 
-			private string expiredTime;
-
-			private string hDMonitorStatus;
-
-			private string name;
-
-			private string iSP;
-
 			private string descritpion;
 
-			private string bandwidthPackageId;
-
-			private string bandwidthPackageType;
-
-			private string bandwidthPackageBandwidth;
-
-			private string resourceGroupId;
-
-			private string hasReservationData;
-
-			private string reservationBandwidth;
-
-			private string reservationInternetChargeType;
-
-			private string reservationActiveTime;
-
-			private string reservationOrderType;
+			private string description;
 
 			private string mode;
 
+			private string segmentInstanceId;
+
+			private string reservationInternetChargeType;
+
+			private string bandwidthPackageId;
+
+			private string ipAddress;
+
+			private string bandwidth;
+
+			private string reservationBandwidth;
+
+			private string eipBandwidth;
+
+			private string name;
+
+			private string privateIpAddress;
+
+			private string instanceRegionId;
+
 			private bool? deletionProtection;
+
+			private string instanceId;
 
 			private bool? secondLimited;
 
-			private string segmentInstanceId;
+			private string instanceType;
 
-			private string netmode;
+			private string hDMonitorStatus;
+
+			private string regionId;
+
+			private string bandwidthPackageBandwidth;
 
 			private int? serviceManaged;
 
+			private string expiredTime;
+
+			private string resourceGroupId;
+
+			private string allocationId;
+
+			private string internetChargeType;
+
 			private string businessStatus;
+
+			private string bandwidthPackageType;
+
+			private string hasReservationData;
+
+			private string iSP;
+
+			private string publicIpAddressPoolId;
 
 			private List<DescribeEipAddresses_LockReason> operationLocks;
 
@@ -172,51 +176,17 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private List<string> availableRegions;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+			private List<string> securityProtectionTypes;
 
-			public string IpAddress
+			public string ReservationActiveTime
 			{
 				get
 				{
-					return ipAddress;
+					return reservationActiveTime;
 				}
 				set	
 				{
-					ipAddress = value;
-				}
-			}
-
-			public string PrivateIpAddress
-			{
-				get
-				{
-					return privateIpAddress;
-				}
-				set	
-				{
-					privateIpAddress = value;
-				}
-			}
-
-			public string AllocationId
-			{
-				get
-				{
-					return allocationId;
-				}
-				set	
-				{
-					allocationId = value;
+					reservationActiveTime = value;
 				}
 			}
 
@@ -232,51 +202,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string InstanceId
+			public string ReservationOrderType
 			{
 				get
 				{
-					return instanceId;
+					return reservationOrderType;
 				}
 				set	
 				{
-					instanceId = value;
-				}
-			}
-
-			public string Bandwidth
-			{
-				get
-				{
-					return bandwidth;
-				}
-				set	
-				{
-					bandwidth = value;
-				}
-			}
-
-			public string EipBandwidth
-			{
-				get
-				{
-					return eipBandwidth;
-				}
-				set	
-				{
-					eipBandwidth = value;
-				}
-			}
-
-			public string InternetChargeType
-			{
-				get
-				{
-					return internetChargeType;
-				}
-				set	
-				{
-					internetChargeType = value;
+					reservationOrderType = value;
 				}
 			}
 
@@ -292,27 +226,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string InstanceType
+			public string Netmode
 			{
 				get
 				{
-					return instanceType;
+					return netmode;
 				}
 				set	
 				{
-					instanceType = value;
-				}
-			}
-
-			public string InstanceRegionId
-			{
-				get
-				{
-					return instanceRegionId;
-				}
-				set	
-				{
-					instanceRegionId = value;
+					netmode = value;
 				}
 			}
 
@@ -328,54 +250,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string ExpiredTime
-			{
-				get
-				{
-					return expiredTime;
-				}
-				set	
-				{
-					expiredTime = value;
-				}
-			}
-
-			public string HDMonitorStatus
-			{
-				get
-				{
-					return hDMonitorStatus;
-				}
-				set	
-				{
-					hDMonitorStatus = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string ISP
-			{
-				get
-				{
-					return iSP;
-				}
-				set	
-				{
-					iSP = value;
-				}
-			}
-
 			public string Descritpion
 			{
 				get
@@ -388,111 +262,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string BandwidthPackageId
+			public string Description
 			{
 				get
 				{
-					return bandwidthPackageId;
+					return description;
 				}
 				set	
 				{
-					bandwidthPackageId = value;
-				}
-			}
-
-			public string BandwidthPackageType
-			{
-				get
-				{
-					return bandwidthPackageType;
-				}
-				set	
-				{
-					bandwidthPackageType = value;
-				}
-			}
-
-			public string BandwidthPackageBandwidth
-			{
-				get
-				{
-					return bandwidthPackageBandwidth;
-				}
-				set	
-				{
-					bandwidthPackageBandwidth = value;
-				}
-			}
-
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
-				}
-			}
-
-			public string HasReservationData
-			{
-				get
-				{
-					return hasReservationData;
-				}
-				set	
-				{
-					hasReservationData = value;
-				}
-			}
-
-			public string ReservationBandwidth
-			{
-				get
-				{
-					return reservationBandwidth;
-				}
-				set	
-				{
-					reservationBandwidth = value;
-				}
-			}
-
-			public string ReservationInternetChargeType
-			{
-				get
-				{
-					return reservationInternetChargeType;
-				}
-				set	
-				{
-					reservationInternetChargeType = value;
-				}
-			}
-
-			public string ReservationActiveTime
-			{
-				get
-				{
-					return reservationActiveTime;
-				}
-				set	
-				{
-					reservationActiveTime = value;
-				}
-			}
-
-			public string ReservationOrderType
-			{
-				get
-				{
-					return reservationOrderType;
-				}
-				set	
-				{
-					reservationOrderType = value;
+					description = value;
 				}
 			}
 
@@ -508,6 +286,126 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string SegmentInstanceId
+			{
+				get
+				{
+					return segmentInstanceId;
+				}
+				set	
+				{
+					segmentInstanceId = value;
+				}
+			}
+
+			public string ReservationInternetChargeType
+			{
+				get
+				{
+					return reservationInternetChargeType;
+				}
+				set	
+				{
+					reservationInternetChargeType = value;
+				}
+			}
+
+			public string BandwidthPackageId
+			{
+				get
+				{
+					return bandwidthPackageId;
+				}
+				set	
+				{
+					bandwidthPackageId = value;
+				}
+			}
+
+			public string IpAddress
+			{
+				get
+				{
+					return ipAddress;
+				}
+				set	
+				{
+					ipAddress = value;
+				}
+			}
+
+			public string Bandwidth
+			{
+				get
+				{
+					return bandwidth;
+				}
+				set	
+				{
+					bandwidth = value;
+				}
+			}
+
+			public string ReservationBandwidth
+			{
+				get
+				{
+					return reservationBandwidth;
+				}
+				set	
+				{
+					reservationBandwidth = value;
+				}
+			}
+
+			public string EipBandwidth
+			{
+				get
+				{
+					return eipBandwidth;
+				}
+				set	
+				{
+					eipBandwidth = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string PrivateIpAddress
+			{
+				get
+				{
+					return privateIpAddress;
+				}
+				set	
+				{
+					privateIpAddress = value;
+				}
+			}
+
+			public string InstanceRegionId
+			{
+				get
+				{
+					return instanceRegionId;
+				}
+				set	
+				{
+					instanceRegionId = value;
+				}
+			}
+
 			public bool? DeletionProtection
 			{
 				get
@@ -517,6 +415,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					deletionProtection = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 
@@ -532,27 +442,51 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string SegmentInstanceId
+			public string InstanceType
 			{
 				get
 				{
-					return segmentInstanceId;
+					return instanceType;
 				}
 				set	
 				{
-					segmentInstanceId = value;
+					instanceType = value;
 				}
 			}
 
-			public string Netmode
+			public string HDMonitorStatus
 			{
 				get
 				{
-					return netmode;
+					return hDMonitorStatus;
 				}
 				set	
 				{
-					netmode = value;
+					hDMonitorStatus = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string BandwidthPackageBandwidth
+			{
+				get
+				{
+					return bandwidthPackageBandwidth;
+				}
+				set	
+				{
+					bandwidthPackageBandwidth = value;
 				}
 			}
 
@@ -568,6 +502,54 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string ExpiredTime
+			{
+				get
+				{
+					return expiredTime;
+				}
+				set	
+				{
+					expiredTime = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string AllocationId
+			{
+				get
+				{
+					return allocationId;
+				}
+				set	
+				{
+					allocationId = value;
+				}
+			}
+
+			public string InternetChargeType
+			{
+				get
+				{
+					return internetChargeType;
+				}
+				set	
+				{
+					internetChargeType = value;
+				}
+			}
+
 			public string BusinessStatus
 			{
 				get
@@ -577,6 +559,54 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					businessStatus = value;
+				}
+			}
+
+			public string BandwidthPackageType
+			{
+				get
+				{
+					return bandwidthPackageType;
+				}
+				set	
+				{
+					bandwidthPackageType = value;
+				}
+			}
+
+			public string HasReservationData
+			{
+				get
+				{
+					return hasReservationData;
+				}
+				set	
+				{
+					hasReservationData = value;
+				}
+			}
+
+			public string ISP
+			{
+				get
+				{
+					return iSP;
+				}
+				set	
+				{
+					iSP = value;
+				}
+			}
+
+			public string PublicIpAddressPoolId
+			{
+				get
+				{
+					return publicIpAddressPoolId;
+				}
+				set	
+				{
+					publicIpAddressPoolId = value;
 				}
 			}
 
@@ -613,6 +643,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					availableRegions = value;
+				}
+			}
+
+			public List<string> SecurityProtectionTypes
+			{
+				get
+				{
+					return securityProtectionTypes;
+				}
+				set	
+				{
+					securityProtectionTypes = value;
 				}
 			}
 

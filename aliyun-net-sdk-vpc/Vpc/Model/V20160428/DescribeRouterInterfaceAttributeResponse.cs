@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,437 +25,101 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeRouterInterfaceAttributeResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string code;
-
-		private string message;
-
-		private bool? success;
-
-		private string routerInterfaceId;
-
-		private string oppositeRegionId;
-
-		private string role;
-
-		private string spec;
-
-		private string name;
-
-		private string description;
-
-		private string routerId;
-
-		private string routerType;
-
-		private string creationTime;
-
-		private string gmtModified;
-
-		private string endTime;
-
-		private string chargeType;
-
-		private string status;
-
-		private string businessStatus;
-
-		private string connectedTime;
-
-		private string oppositeInterfaceId;
-
-		private string oppositeInterfaceSpec;
-
-		private string oppositeInterfaceStatus;
-
-		private string oppositeInterfaceBusinessStatus;
-
-		private string oppositeRouterId;
-
-		private string oppositeRouterType;
-
-		private string oppositeInterfaceOwnerId;
-
-		private string accessPointId;
-
-		private string oppositeAccessPointId;
-
-		private string healthCheckSourceIp;
+		private string reservationActiveTime;
 
 		private string healthCheckTargetIp;
 
-		private string oppositeVpcInstanceId;
+		private string status;
 
-		private int? bandwidth;
-
-		private string vpcInstanceId;
-
-		private int? oppositeBandwidth;
-
-		private string hasReservationData;
-
-		private string reservationBandwidth;
-
-		private string reservationInternetChargeType;
-
-		private string reservationActiveTime;
+		private string creationTime;
 
 		private string reservationOrderType;
 
-		private bool? crossBorder;
+		private string oppositeInterfaceId;
+
+		private string spec;
+
+		private string chargeType;
+
+		private string routerInterfaceId;
+
+		private string message;
 
 		private int? hcThreshold;
 
+		private string oppositeRouterType;
+
+		private string gmtModified;
+
+		private string vpcInstanceId;
+
+		private string oppositeInterfaceOwnerId;
+
+		private string oppositeVpcInstanceId;
+
+		private string reservationInternetChargeType;
+
+		private bool? crossBorder;
+
+		private string requestId;
+
+		private int? bandwidth;
+
+		private string description;
+
 		private int? hcRate;
+
+		private string reservationBandwidth;
+
+		private string code;
+
+		private string name;
+
+		private string oppositeRouterId;
+
+		private string oppositeInterfaceSpec;
+
+		private string routerId;
+
+		private bool? success;
+
+		private string oppositeInterfaceBusinessStatus;
+
+		private string connectedTime;
+
+		private string healthCheckSourceIp;
+
+		private string oppositeInterfaceStatus;
+
+		private string endTime;
+
+		private string oppositeRegionId;
+
+		private string oppositeAccessPointId;
+
+		private string businessStatus;
 
 		private string healthCheckStatus;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private int? oppositeBandwidth;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private string routerType;
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+		private string role;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private string hasReservationData;
 
-		public string RouterInterfaceId
-		{
-			get
-			{
-				return routerInterfaceId;
-			}
-			set	
-			{
-				routerInterfaceId = value;
-			}
-		}
+		private string accessPointId;
 
-		public string OppositeRegionId
+		public string ReservationActiveTime
 		{
 			get
 			{
-				return oppositeRegionId;
+				return reservationActiveTime;
 			}
 			set	
 			{
-				oppositeRegionId = value;
-			}
-		}
-
-		public string Role
-		{
-			get
-			{
-				return role;
-			}
-			set	
-			{
-				role = value;
-			}
-		}
-
-		public string Spec
-		{
-			get
-			{
-				return spec;
-			}
-			set	
-			{
-				spec = value;
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-			}
-		}
-
-		public string RouterId
-		{
-			get
-			{
-				return routerId;
-			}
-			set	
-			{
-				routerId = value;
-			}
-		}
-
-		public string RouterType
-		{
-			get
-			{
-				return routerType;
-			}
-			set	
-			{
-				routerType = value;
-			}
-		}
-
-		public string CreationTime
-		{
-			get
-			{
-				return creationTime;
-			}
-			set	
-			{
-				creationTime = value;
-			}
-		}
-
-		public string GmtModified
-		{
-			get
-			{
-				return gmtModified;
-			}
-			set	
-			{
-				gmtModified = value;
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
-
-		public string ChargeType
-		{
-			get
-			{
-				return chargeType;
-			}
-			set	
-			{
-				chargeType = value;
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-			}
-		}
-
-		public string BusinessStatus
-		{
-			get
-			{
-				return businessStatus;
-			}
-			set	
-			{
-				businessStatus = value;
-			}
-		}
-
-		public string ConnectedTime
-		{
-			get
-			{
-				return connectedTime;
-			}
-			set	
-			{
-				connectedTime = value;
-			}
-		}
-
-		public string OppositeInterfaceId
-		{
-			get
-			{
-				return oppositeInterfaceId;
-			}
-			set	
-			{
-				oppositeInterfaceId = value;
-			}
-		}
-
-		public string OppositeInterfaceSpec
-		{
-			get
-			{
-				return oppositeInterfaceSpec;
-			}
-			set	
-			{
-				oppositeInterfaceSpec = value;
-			}
-		}
-
-		public string OppositeInterfaceStatus
-		{
-			get
-			{
-				return oppositeInterfaceStatus;
-			}
-			set	
-			{
-				oppositeInterfaceStatus = value;
-			}
-		}
-
-		public string OppositeInterfaceBusinessStatus
-		{
-			get
-			{
-				return oppositeInterfaceBusinessStatus;
-			}
-			set	
-			{
-				oppositeInterfaceBusinessStatus = value;
-			}
-		}
-
-		public string OppositeRouterId
-		{
-			get
-			{
-				return oppositeRouterId;
-			}
-			set	
-			{
-				oppositeRouterId = value;
-			}
-		}
-
-		public string OppositeRouterType
-		{
-			get
-			{
-				return oppositeRouterType;
-			}
-			set	
-			{
-				oppositeRouterType = value;
-			}
-		}
-
-		public string OppositeInterfaceOwnerId
-		{
-			get
-			{
-				return oppositeInterfaceOwnerId;
-			}
-			set	
-			{
-				oppositeInterfaceOwnerId = value;
-			}
-		}
-
-		public string AccessPointId
-		{
-			get
-			{
-				return accessPointId;
-			}
-			set	
-			{
-				accessPointId = value;
-			}
-		}
-
-		public string OppositeAccessPointId
-		{
-			get
-			{
-				return oppositeAccessPointId;
-			}
-			set	
-			{
-				oppositeAccessPointId = value;
-			}
-		}
-
-		public string HealthCheckSourceIp
-		{
-			get
-			{
-				return healthCheckSourceIp;
-			}
-			set	
-			{
-				healthCheckSourceIp = value;
+				reservationActiveTime = value;
 			}
 		}
 
@@ -471,99 +135,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string OppositeVpcInstanceId
+		public string Status
 		{
 			get
 			{
-				return oppositeVpcInstanceId;
+				return status;
 			}
 			set	
 			{
-				oppositeVpcInstanceId = value;
+				status = value;
 			}
 		}
 
-		public int? Bandwidth
+		public string CreationTime
 		{
 			get
 			{
-				return bandwidth;
+				return creationTime;
 			}
 			set	
 			{
-				bandwidth = value;
-			}
-		}
-
-		public string VpcInstanceId
-		{
-			get
-			{
-				return vpcInstanceId;
-			}
-			set	
-			{
-				vpcInstanceId = value;
-			}
-		}
-
-		public int? OppositeBandwidth
-		{
-			get
-			{
-				return oppositeBandwidth;
-			}
-			set	
-			{
-				oppositeBandwidth = value;
-			}
-		}
-
-		public string HasReservationData
-		{
-			get
-			{
-				return hasReservationData;
-			}
-			set	
-			{
-				hasReservationData = value;
-			}
-		}
-
-		public string ReservationBandwidth
-		{
-			get
-			{
-				return reservationBandwidth;
-			}
-			set	
-			{
-				reservationBandwidth = value;
-			}
-		}
-
-		public string ReservationInternetChargeType
-		{
-			get
-			{
-				return reservationInternetChargeType;
-			}
-			set	
-			{
-				reservationInternetChargeType = value;
-			}
-		}
-
-		public string ReservationActiveTime
-		{
-			get
-			{
-				return reservationActiveTime;
-			}
-			set	
-			{
-				reservationActiveTime = value;
+				creationTime = value;
 			}
 		}
 
@@ -579,15 +171,63 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public bool? CrossBorder
+		public string OppositeInterfaceId
 		{
 			get
 			{
-				return crossBorder;
+				return oppositeInterfaceId;
 			}
 			set	
 			{
-				crossBorder = value;
+				oppositeInterfaceId = value;
+			}
+		}
+
+		public string Spec
+		{
+			get
+			{
+				return spec;
+			}
+			set	
+			{
+				spec = value;
+			}
+		}
+
+		public string ChargeType
+		{
+			get
+			{
+				return chargeType;
+			}
+			set	
+			{
+				chargeType = value;
+			}
+		}
+
+		public string RouterInterfaceId
+		{
+			get
+			{
+				return routerInterfaceId;
+			}
+			set	
+			{
+				routerInterfaceId = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -603,6 +243,126 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string OppositeRouterType
+		{
+			get
+			{
+				return oppositeRouterType;
+			}
+			set	
+			{
+				oppositeRouterType = value;
+			}
+		}
+
+		public string GmtModified
+		{
+			get
+			{
+				return gmtModified;
+			}
+			set	
+			{
+				gmtModified = value;
+			}
+		}
+
+		public string VpcInstanceId
+		{
+			get
+			{
+				return vpcInstanceId;
+			}
+			set	
+			{
+				vpcInstanceId = value;
+			}
+		}
+
+		public string OppositeInterfaceOwnerId
+		{
+			get
+			{
+				return oppositeInterfaceOwnerId;
+			}
+			set	
+			{
+				oppositeInterfaceOwnerId = value;
+			}
+		}
+
+		public string OppositeVpcInstanceId
+		{
+			get
+			{
+				return oppositeVpcInstanceId;
+			}
+			set	
+			{
+				oppositeVpcInstanceId = value;
+			}
+		}
+
+		public string ReservationInternetChargeType
+		{
+			get
+			{
+				return reservationInternetChargeType;
+			}
+			set	
+			{
+				reservationInternetChargeType = value;
+			}
+		}
+
+		public bool? CrossBorder
+		{
+			get
+			{
+				return crossBorder;
+			}
+			set	
+			{
+				crossBorder = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? Bandwidth
+		{
+			get
+			{
+				return bandwidth;
+			}
+			set	
+			{
+				bandwidth = value;
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+			}
+		}
+
 		public int? HcRate
 		{
 			get
@@ -615,6 +375,186 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string ReservationBandwidth
+		{
+			get
+			{
+				return reservationBandwidth;
+			}
+			set	
+			{
+				reservationBandwidth = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+			}
+		}
+
+		public string OppositeRouterId
+		{
+			get
+			{
+				return oppositeRouterId;
+			}
+			set	
+			{
+				oppositeRouterId = value;
+			}
+		}
+
+		public string OppositeInterfaceSpec
+		{
+			get
+			{
+				return oppositeInterfaceSpec;
+			}
+			set	
+			{
+				oppositeInterfaceSpec = value;
+			}
+		}
+
+		public string RouterId
+		{
+			get
+			{
+				return routerId;
+			}
+			set	
+			{
+				routerId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string OppositeInterfaceBusinessStatus
+		{
+			get
+			{
+				return oppositeInterfaceBusinessStatus;
+			}
+			set	
+			{
+				oppositeInterfaceBusinessStatus = value;
+			}
+		}
+
+		public string ConnectedTime
+		{
+			get
+			{
+				return connectedTime;
+			}
+			set	
+			{
+				connectedTime = value;
+			}
+		}
+
+		public string HealthCheckSourceIp
+		{
+			get
+			{
+				return healthCheckSourceIp;
+			}
+			set	
+			{
+				healthCheckSourceIp = value;
+			}
+		}
+
+		public string OppositeInterfaceStatus
+		{
+			get
+			{
+				return oppositeInterfaceStatus;
+			}
+			set	
+			{
+				oppositeInterfaceStatus = value;
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public string OppositeRegionId
+		{
+			get
+			{
+				return oppositeRegionId;
+			}
+			set	
+			{
+				oppositeRegionId = value;
+			}
+		}
+
+		public string OppositeAccessPointId
+		{
+			get
+			{
+				return oppositeAccessPointId;
+			}
+			set	
+			{
+				oppositeAccessPointId = value;
+			}
+		}
+
+		public string BusinessStatus
+		{
+			get
+			{
+				return businessStatus;
+			}
+			set	
+			{
+				businessStatus = value;
+			}
+		}
+
 		public string HealthCheckStatus
 		{
 			get
@@ -624,6 +564,66 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				healthCheckStatus = value;
+			}
+		}
+
+		public int? OppositeBandwidth
+		{
+			get
+			{
+				return oppositeBandwidth;
+			}
+			set	
+			{
+				oppositeBandwidth = value;
+			}
+		}
+
+		public string RouterType
+		{
+			get
+			{
+				return routerType;
+			}
+			set	
+			{
+				routerType = value;
+			}
+		}
+
+		public string Role
+		{
+			get
+			{
+				return role;
+			}
+			set	
+			{
+				role = value;
+			}
+		}
+
+		public string HasReservationData
+		{
+			get
+			{
+				return hasReservationData;
+			}
+			set	
+			{
+				hasReservationData = value;
+			}
+		}
+
+		public string AccessPointId
+		{
+			get
+			{
+				return accessPointId;
+			}
+			set	
+			{
+				accessPointId = value;
 			}
 		}
 	}

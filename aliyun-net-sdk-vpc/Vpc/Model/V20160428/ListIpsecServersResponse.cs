@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class ListIpsecServersResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
 
-		private int? maxResults;
+		private string requestId;
 
 		private int? totalCount;
 
-		private List<ListIpsecServers_IpsecServer> ipsecServers;
+		private int? maxResults;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<ListIpsecServers_IpsecServer> ipsecServers;
 
 		public string NextToken
 		{
@@ -59,15 +47,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? MaxResults
+		public string RequestId
 		{
 			get
 			{
-				return maxResults;
+				return requestId;
 			}
 			set	
 			{
-				maxResults = value;
+				requestId = value;
 			}
 		}
 
@@ -80,6 +68,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
 			}
 		}
 
@@ -98,61 +98,73 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class ListIpsecServers_IpsecServer
 		{
 
-			private string regionId;
+			private string creationTime;
 
-			private string ipsecServerId;
+			private int? onlineClientCount;
+
+			private string internetIp;
 
 			private string ipsecServerName;
+
+			private string iDaaSInstanceId;
+
+			private bool? effectImmediately;
 
 			private string vpnGatewayId;
 
 			private string localSubnet;
 
-			private string clientIpPool;
+			private string psk;
 
-			private bool? effectImmediately;
+			private string regionId;
 
 			private bool? pskEnabled;
 
+			private string ipsecServerId;
+
 			private bool? multiFactorAuthEnabled;
-
-			private string psk;
-
-			private string iDaaSInstanceId;
-
-			private int? onlineClientCount;
 
 			private int? maxConnections;
 
-			private string creationTime;
-
-			private string internetIp;
+			private string clientIpPool;
 
 			private ListIpsecServers_IkeConfig ikeConfig;
 
 			private ListIpsecServers_IpsecConfig ipsecConfig;
 
-			public string RegionId
+			public string CreationTime
 			{
 				get
 				{
-					return regionId;
+					return creationTime;
 				}
 				set	
 				{
-					regionId = value;
+					creationTime = value;
 				}
 			}
 
-			public string IpsecServerId
+			public int? OnlineClientCount
 			{
 				get
 				{
-					return ipsecServerId;
+					return onlineClientCount;
 				}
 				set	
 				{
-					ipsecServerId = value;
+					onlineClientCount = value;
+				}
+			}
+
+			public string InternetIp
+			{
+				get
+				{
+					return internetIp;
+				}
+				set	
+				{
+					internetIp = value;
 				}
 			}
 
@@ -165,6 +177,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					ipsecServerName = value;
+				}
+			}
+
+			public string IDaaSInstanceId
+			{
+				get
+				{
+					return iDaaSInstanceId;
+				}
+				set	
+				{
+					iDaaSInstanceId = value;
+				}
+			}
+
+			public bool? EffectImmediately
+			{
+				get
+				{
+					return effectImmediately;
+				}
+				set	
+				{
+					effectImmediately = value;
 				}
 			}
 
@@ -192,27 +228,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string ClientIpPool
+			public string Psk
 			{
 				get
 				{
-					return clientIpPool;
+					return psk;
 				}
 				set	
 				{
-					clientIpPool = value;
+					psk = value;
 				}
 			}
 
-			public bool? EffectImmediately
+			public string RegionId
 			{
 				get
 				{
-					return effectImmediately;
+					return regionId;
 				}
 				set	
 				{
-					effectImmediately = value;
+					regionId = value;
 				}
 			}
 
@@ -228,6 +264,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string IpsecServerId
+			{
+				get
+				{
+					return ipsecServerId;
+				}
+				set	
+				{
+					ipsecServerId = value;
+				}
+			}
+
 			public bool? MultiFactorAuthEnabled
 			{
 				get
@@ -237,42 +285,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					multiFactorAuthEnabled = value;
-				}
-			}
-
-			public string Psk
-			{
-				get
-				{
-					return psk;
-				}
-				set	
-				{
-					psk = value;
-				}
-			}
-
-			public string IDaaSInstanceId
-			{
-				get
-				{
-					return iDaaSInstanceId;
-				}
-				set	
-				{
-					iDaaSInstanceId = value;
-				}
-			}
-
-			public int? OnlineClientCount
-			{
-				get
-				{
-					return onlineClientCount;
-				}
-				set	
-				{
-					onlineClientCount = value;
 				}
 			}
 
@@ -288,27 +300,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string CreationTime
+			public string ClientIpPool
 			{
 				get
 				{
-					return creationTime;
+					return clientIpPool;
 				}
 				set	
 				{
-					creationTime = value;
-				}
-			}
-
-			public string InternetIp
-			{
-				get
-				{
-					return internetIp;
-				}
-				set	
-				{
-					internetIp = value;
+					clientIpPool = value;
 				}
 			}
 
@@ -339,79 +339,31 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			public class ListIpsecServers_IkeConfig
 			{
 
-				private string ikeVersion;
-
-				private string ikeMode;
-
-				private string ikeEncAlg;
-
-				private string ikeAuthAlg;
-
-				private string ikePfs;
+				private string remoteId;
 
 				private long? ikeLifetime;
 
+				private string ikeEncAlg;
+
 				private string localId;
 
-				private string remoteId;
+				private string ikeMode;
 
-				public string IkeVersion
+				private string ikeVersion;
+
+				private string ikePfs;
+
+				private string ikeAuthAlg;
+
+				public string RemoteId
 				{
 					get
 					{
-						return ikeVersion;
+						return remoteId;
 					}
 					set	
 					{
-						ikeVersion = value;
-					}
-				}
-
-				public string IkeMode
-				{
-					get
-					{
-						return ikeMode;
-					}
-					set	
-					{
-						ikeMode = value;
-					}
-				}
-
-				public string IkeEncAlg
-				{
-					get
-					{
-						return ikeEncAlg;
-					}
-					set	
-					{
-						ikeEncAlg = value;
-					}
-				}
-
-				public string IkeAuthAlg
-				{
-					get
-					{
-						return ikeAuthAlg;
-					}
-					set	
-					{
-						ikeAuthAlg = value;
-					}
-				}
-
-				public string IkePfs
-				{
-					get
-					{
-						return ikePfs;
-					}
-					set	
-					{
-						ikePfs = value;
+						remoteId = value;
 					}
 				}
 
@@ -427,6 +379,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
+				public string IkeEncAlg
+				{
+					get
+					{
+						return ikeEncAlg;
+					}
+					set	
+					{
+						ikeEncAlg = value;
+					}
+				}
+
 				public string LocalId
 				{
 					get
@@ -439,15 +403,51 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
-				public string RemoteId
+				public string IkeMode
 				{
 					get
 					{
-						return remoteId;
+						return ikeMode;
 					}
 					set	
 					{
-						remoteId = value;
+						ikeMode = value;
+					}
+				}
+
+				public string IkeVersion
+				{
+					get
+					{
+						return ikeVersion;
+					}
+					set	
+					{
+						ikeVersion = value;
+					}
+				}
+
+				public string IkePfs
+				{
+					get
+					{
+						return ikePfs;
+					}
+					set	
+					{
+						ikePfs = value;
+					}
+				}
+
+				public string IkeAuthAlg
+				{
+					get
+					{
+						return ikeAuthAlg;
+					}
+					set	
+					{
+						ikeAuthAlg = value;
 					}
 				}
 			}
@@ -455,25 +455,13 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			public class ListIpsecServers_IpsecConfig
 			{
 
-				private string ipsecEncAlg;
-
 				private string ipsecAuthAlg;
-
-				private string ipsecPfs;
 
 				private long? ipsecLifetime;
 
-				public string IpsecEncAlg
-				{
-					get
-					{
-						return ipsecEncAlg;
-					}
-					set	
-					{
-						ipsecEncAlg = value;
-					}
-				}
+				private string ipsecEncAlg;
+
+				private string ipsecPfs;
 
 				public string IpsecAuthAlg
 				{
@@ -487,18 +475,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
-				public string IpsecPfs
-				{
-					get
-					{
-						return ipsecPfs;
-					}
-					set	
-					{
-						ipsecPfs = value;
-					}
-				}
-
 				public long? IpsecLifetime
 				{
 					get
@@ -508,6 +484,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						ipsecLifetime = value;
+					}
+				}
+
+				public string IpsecEncAlg
+				{
+					get
+					{
+						return ipsecEncAlg;
+					}
+					set	
+					{
+						ipsecEncAlg = value;
+					}
+				}
+
+				public string IpsecPfs
+				{
+					get
+					{
+						return ipsecPfs;
+					}
+					set	
+					{
+						ipsecPfs = value;
 					}
 				}
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class CreateVpnGatewayResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string vpnGatewayId;
+
+		private string requestId;
 
 		private string name;
 
 		private long? orderId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public string VpnGatewayId
 		{
@@ -54,6 +42,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				vpnGatewayId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

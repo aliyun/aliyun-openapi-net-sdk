@@ -32,9 +32,9 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 
 			describeRouteTableListResponse.HttpResponse = _ctx.HttpResponse;
 			describeRouteTableListResponse.RequestId = _ctx.StringValue("DescribeRouteTableList.RequestId");
+			describeRouteTableListResponse.Success = _ctx.BooleanValue("DescribeRouteTableList.Success");
 			describeRouteTableListResponse.Code = _ctx.StringValue("DescribeRouteTableList.Code");
 			describeRouteTableListResponse.Message = _ctx.StringValue("DescribeRouteTableList.Message");
-			describeRouteTableListResponse.Success = _ctx.BooleanValue("DescribeRouteTableList.Success");
 			describeRouteTableListResponse.PageSize = _ctx.IntegerValue("DescribeRouteTableList.PageSize");
 			describeRouteTableListResponse.PageNumber = _ctx.IntegerValue("DescribeRouteTableList.PageNumber");
 			describeRouteTableListResponse.TotalCount = _ctx.IntegerValue("DescribeRouteTableList.TotalCount");
@@ -43,22 +43,29 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			for (int i = 0; i < _ctx.Length("DescribeRouteTableList.RouterTableList.Length"); i++) {
 				DescribeRouteTableListResponse.DescribeRouteTableList_RouterTableListType routerTableListType = new DescribeRouteTableListResponse.DescribeRouteTableList_RouterTableListType();
 				routerTableListType.VpcId = _ctx.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].VpcId");
-				routerTableListType.RouterType = _ctx.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].RouterType");
-				routerTableListType.RouterId = _ctx.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].RouterId");
-				routerTableListType.RouteTableId = _ctx.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].RouteTableId");
-				routerTableListType.RouteTableName = _ctx.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].RouteTableName");
-				routerTableListType.RouteTableType = _ctx.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].RouteTableType");
-				routerTableListType.Description = _ctx.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].Description");
-				routerTableListType.ResourceGroupId = _ctx.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].ResourceGroupId");
 				routerTableListType.CreationTime = _ctx.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].CreationTime");
 				routerTableListType.Status = _ctx.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].Status");
+				routerTableListType.RouterId = _ctx.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].RouterId");
+				routerTableListType.AssociateType = _ctx.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].AssociateType");
+				routerTableListType.RouteTableId = _ctx.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].RouteTableId");
 				routerTableListType.OwnerId = _ctx.LongValue("DescribeRouteTableList.RouterTableList["+ i +"].OwnerId");
+				routerTableListType.Description = _ctx.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].Description");
+				routerTableListType.RouteTableType = _ctx.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].RouteTableType");
+				routerTableListType.ResourceGroupId = _ctx.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].ResourceGroupId");
+				routerTableListType.RouterType = _ctx.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].RouterType");
+				routerTableListType.RouteTableName = _ctx.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].RouteTableName");
 
 				List<string> routerTableListType_vSwitchIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeRouteTableList.RouterTableList["+ i +"].VSwitchIds.Length"); j++) {
 					routerTableListType_vSwitchIds.Add(_ctx.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].VSwitchIds["+ j +"]"));
 				}
 				routerTableListType.VSwitchIds = routerTableListType_vSwitchIds;
+
+				List<string> routerTableListType_gatewayIds = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeRouteTableList.RouterTableList["+ i +"].GatewayIds.Length"); j++) {
+					routerTableListType_gatewayIds.Add(_ctx.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].GatewayIds["+ j +"]"));
+				}
+				routerTableListType.GatewayIds = routerTableListType_gatewayIds;
 
 				List<DescribeRouteTableListResponse.DescribeRouteTableList_RouterTableListType.DescribeRouteTableList_Tag> routerTableListType_tags = new List<DescribeRouteTableListResponse.DescribeRouteTableList_RouterTableListType.DescribeRouteTableList_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeRouteTableList.RouterTableList["+ i +"].Tags.Length"); j++) {

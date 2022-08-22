@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string routeTableName;
 
+		private string associateType;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -105,6 +107,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				routeTableName = value;
 				DictionaryUtil.Add(QueryParameters, "RouteTableName", value);
+			}
+		}
+
+		public string AssociateType
+		{
+			get
+			{
+				return associateType;
+			}
+			set	
+			{
+				associateType = value;
+				DictionaryUtil.Add(QueryParameters, "AssociateType", value);
 			}
 		}
 

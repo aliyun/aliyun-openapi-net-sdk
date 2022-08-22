@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -56,39 +56,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DownloadVpnConnectionConfig_VpnConnectionConfig
 		{
 
-			private string localSubnet;
-
-			private string remoteSubnet;
+			private string remote;
 
 			private string local;
 
-			private string remote;
+			private string remoteSubnet;
+
+			private string localSubnet;
 
 			private DownloadVpnConnectionConfig_IkeConfig ikeConfig;
 
 			private DownloadVpnConnectionConfig_IpsecConfig ipsecConfig;
 
-			public string LocalSubnet
+			public string Remote
 			{
 				get
 				{
-					return localSubnet;
+					return remote;
 				}
 				set	
 				{
-					localSubnet = value;
-				}
-			}
-
-			public string RemoteSubnet
-			{
-				get
-				{
-					return remoteSubnet;
-				}
-				set	
-				{
-					remoteSubnet = value;
+					remote = value;
 				}
 			}
 
@@ -104,15 +92,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Remote
+			public string RemoteSubnet
 			{
 				get
 				{
-					return remote;
+					return remoteSubnet;
 				}
 				set	
 				{
-					remote = value;
+					remoteSubnet = value;
+				}
+			}
+
+			public string LocalSubnet
+			{
+				get
+				{
+					return localSubnet;
+				}
+				set	
+				{
+					localSubnet = value;
 				}
 			}
 
@@ -143,93 +143,33 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			public class DownloadVpnConnectionConfig_IkeConfig
 			{
 
-				private string psk;
-
-				private string ikeVersion;
-
-				private string ikeMode;
-
-				private string ikeEncAlg;
-
-				private string ikeAuthAlg;
-
-				private string ikePfs;
+				private string remoteId;
 
 				private long? ikeLifetime;
 
+				private string ikeEncAlg;
+
 				private string localId;
 
-				private string remoteId;
+				private string ikeMode;
 
-				public string Psk
+				private string ikeVersion;
+
+				private string ikePfs;
+
+				private string psk;
+
+				private string ikeAuthAlg;
+
+				public string RemoteId
 				{
 					get
 					{
-						return psk;
+						return remoteId;
 					}
 					set	
 					{
-						psk = value;
-					}
-				}
-
-				public string IkeVersion
-				{
-					get
-					{
-						return ikeVersion;
-					}
-					set	
-					{
-						ikeVersion = value;
-					}
-				}
-
-				public string IkeMode
-				{
-					get
-					{
-						return ikeMode;
-					}
-					set	
-					{
-						ikeMode = value;
-					}
-				}
-
-				public string IkeEncAlg
-				{
-					get
-					{
-						return ikeEncAlg;
-					}
-					set	
-					{
-						ikeEncAlg = value;
-					}
-				}
-
-				public string IkeAuthAlg
-				{
-					get
-					{
-						return ikeAuthAlg;
-					}
-					set	
-					{
-						ikeAuthAlg = value;
-					}
-				}
-
-				public string IkePfs
-				{
-					get
-					{
-						return ikePfs;
-					}
-					set	
-					{
-						ikePfs = value;
+						remoteId = value;
 					}
 				}
 
@@ -245,6 +185,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
+				public string IkeEncAlg
+				{
+					get
+					{
+						return ikeEncAlg;
+					}
+					set	
+					{
+						ikeEncAlg = value;
+					}
+				}
+
 				public string LocalId
 				{
 					get
@@ -257,15 +209,63 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
-				public string RemoteId
+				public string IkeMode
 				{
 					get
 					{
-						return remoteId;
+						return ikeMode;
 					}
 					set	
 					{
-						remoteId = value;
+						ikeMode = value;
+					}
+				}
+
+				public string IkeVersion
+				{
+					get
+					{
+						return ikeVersion;
+					}
+					set	
+					{
+						ikeVersion = value;
+					}
+				}
+
+				public string IkePfs
+				{
+					get
+					{
+						return ikePfs;
+					}
+					set	
+					{
+						ikePfs = value;
+					}
+				}
+
+				public string Psk
+				{
+					get
+					{
+						return psk;
+					}
+					set	
+					{
+						psk = value;
+					}
+				}
+
+				public string IkeAuthAlg
+				{
+					get
+					{
+						return ikeAuthAlg;
+					}
+					set	
+					{
+						ikeAuthAlg = value;
 					}
 				}
 			}
@@ -273,25 +273,13 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			public class DownloadVpnConnectionConfig_IpsecConfig
 			{
 
-				private string ipsecEncAlg;
-
 				private string ipsecAuthAlg;
-
-				private string ipsecPfs;
 
 				private long? ipsecLifetime;
 
-				public string IpsecEncAlg
-				{
-					get
-					{
-						return ipsecEncAlg;
-					}
-					set	
-					{
-						ipsecEncAlg = value;
-					}
-				}
+				private string ipsecEncAlg;
+
+				private string ipsecPfs;
 
 				public string IpsecAuthAlg
 				{
@@ -305,18 +293,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
-				public string IpsecPfs
-				{
-					get
-					{
-						return ipsecPfs;
-					}
-					set	
-					{
-						ipsecPfs = value;
-					}
-				}
-
 				public long? IpsecLifetime
 				{
 					get
@@ -326,6 +302,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						ipsecLifetime = value;
+					}
+				}
+
+				public string IpsecEncAlg
+				{
+					get
+					{
+						return ipsecEncAlg;
+					}
+					set	
+					{
+						ipsecEncAlg = value;
+					}
+				}
+
+				public string IpsecPfs
+				{
+					get
+					{
+						return ipsecPfs;
+					}
+					set	
+					{
+						ipsecPfs = value;
 					}
 				}
 			}

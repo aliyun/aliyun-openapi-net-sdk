@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			CreateSslVpnServerResponse createSslVpnServerResponse = new CreateSslVpnServerResponse();
 
 			createSslVpnServerResponse.HttpResponse = _ctx.HttpResponse;
-			createSslVpnServerResponse.RequestId = _ctx.StringValue("CreateSslVpnServer.RequestId");
 			createSslVpnServerResponse.SslVpnServerId = _ctx.StringValue("CreateSslVpnServer.SslVpnServerId");
+			createSslVpnServerResponse.RequestId = _ctx.StringValue("CreateSslVpnServer.RequestId");
 			createSslVpnServerResponse.Name = _ctx.StringValue("CreateSslVpnServer.Name");
         
 			return createSslVpnServerResponse;

@@ -31,6 +31,8 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 
 		private string fileName;
 
+		private string voiceSliceRecordingListJson;
+
 		public string FilePath
 		{
 			get
@@ -64,6 +66,18 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			set	
 			{
 				fileName = value;
+			}
+		}
+
+		public string VoiceSliceRecordingListJson
+		{
+			get
+			{
+				return voiceSliceRecordingListJson;
+			}
+			set	
+			{
+				voiceSliceRecordingListJson = value;
 			}
 		}
 	}

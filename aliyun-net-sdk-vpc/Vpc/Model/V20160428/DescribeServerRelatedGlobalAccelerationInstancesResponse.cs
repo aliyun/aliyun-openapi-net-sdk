@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -56,23 +56,23 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeServerRelatedGlobalAccelerationInstances_GlobalAccelerationInstance
 		{
 
-			private string regionId;
+			private string serverIpAddress;
 
 			private string globalAccelerationInstanceId;
 
 			private string ipAddress;
 
-			private string serverIpAddress;
+			private string regionId;
 
-			public string RegionId
+			public string ServerIpAddress
 			{
 				get
 				{
-					return regionId;
+					return serverIpAddress;
 				}
 				set	
 				{
-					regionId = value;
+					serverIpAddress = value;
 				}
 			}
 
@@ -100,15 +100,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string ServerIpAddress
+			public string RegionId
 			{
 				get
 				{
-					return serverIpAddress;
+					return regionId;
 				}
 				set	
 				{
-					serverIpAddress = value;
+					regionId = value;
 				}
 			}
 		}

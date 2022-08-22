@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeSslVpnServersResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeSslVpnServers_SslVpnServer> sslVpnServers;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,195 +98,39 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeSslVpnServers_SslVpnServer
 		{
 
-			private string regionId;
-
-			private string sslVpnServerId;
-
-			private string vpnGatewayId;
-
-			private string name;
-
-			private string localSubnet;
-
-			private string clientIpPool;
-
-			private long? createTime;
-
-			private string cipher;
-
-			private string proto;
-
-			private int? port;
-
-			private bool? compress;
-
-			private int? connections;
-
-			private int? maxConnections;
-
 			private string internetIp;
-
-			private bool? enableMultiFactorAuth;
 
 			private string iDaaSInstanceId;
 
+			private long? createTime;
+
+			private string vpnGatewayId;
+
 			private string iDaaSRegionId;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+			private bool? compress;
 
-			public string SslVpnServerId
-			{
-				get
-				{
-					return sslVpnServerId;
-				}
-				set	
-				{
-					sslVpnServerId = value;
-				}
-			}
+			private int? port;
 
-			public string VpnGatewayId
-			{
-				get
-				{
-					return vpnGatewayId;
-				}
-				set	
-				{
-					vpnGatewayId = value;
-				}
-			}
+			private string localSubnet;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private string regionId;
 
-			public string LocalSubnet
-			{
-				get
-				{
-					return localSubnet;
-				}
-				set	
-				{
-					localSubnet = value;
-				}
-			}
+			private string cipher;
 
-			public string ClientIpPool
-			{
-				get
-				{
-					return clientIpPool;
-				}
-				set	
-				{
-					clientIpPool = value;
-				}
-			}
+			private int? connections;
 
-			public long? CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
+			private string sslVpnServerId;
 
-			public string Cipher
-			{
-				get
-				{
-					return cipher;
-				}
-				set	
-				{
-					cipher = value;
-				}
-			}
+			private int? maxConnections;
 
-			public string Proto
-			{
-				get
-				{
-					return proto;
-				}
-				set	
-				{
-					proto = value;
-				}
-			}
+			private string name;
 
-			public int? Port
-			{
-				get
-				{
-					return port;
-				}
-				set	
-				{
-					port = value;
-				}
-			}
+			private bool? enableMultiFactorAuth;
 
-			public bool? Compress
-			{
-				get
-				{
-					return compress;
-				}
-				set	
-				{
-					compress = value;
-				}
-			}
+			private string clientIpPool;
 
-			public int? Connections
-			{
-				get
-				{
-					return connections;
-				}
-				set	
-				{
-					connections = value;
-				}
-			}
-
-			public int? MaxConnections
-			{
-				get
-				{
-					return maxConnections;
-				}
-				set	
-				{
-					maxConnections = value;
-				}
-			}
+			private string proto;
 
 			public string InternetIp
 			{
@@ -297,18 +141,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					internetIp = value;
-				}
-			}
-
-			public bool? EnableMultiFactorAuth
-			{
-				get
-				{
-					return enableMultiFactorAuth;
-				}
-				set	
-				{
-					enableMultiFactorAuth = value;
 				}
 			}
 
@@ -324,6 +156,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public long? CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string VpnGatewayId
+			{
+				get
+				{
+					return vpnGatewayId;
+				}
+				set	
+				{
+					vpnGatewayId = value;
+				}
+			}
+
 			public string IDaaSRegionId
 			{
 				get
@@ -333,6 +189,150 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					iDaaSRegionId = value;
+				}
+			}
+
+			public bool? Compress
+			{
+				get
+				{
+					return compress;
+				}
+				set	
+				{
+					compress = value;
+				}
+			}
+
+			public int? Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
+				}
+			}
+
+			public string LocalSubnet
+			{
+				get
+				{
+					return localSubnet;
+				}
+				set	
+				{
+					localSubnet = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string Cipher
+			{
+				get
+				{
+					return cipher;
+				}
+				set	
+				{
+					cipher = value;
+				}
+			}
+
+			public int? Connections
+			{
+				get
+				{
+					return connections;
+				}
+				set	
+				{
+					connections = value;
+				}
+			}
+
+			public string SslVpnServerId
+			{
+				get
+				{
+					return sslVpnServerId;
+				}
+				set	
+				{
+					sslVpnServerId = value;
+				}
+			}
+
+			public int? MaxConnections
+			{
+				get
+				{
+					return maxConnections;
+				}
+				set	
+				{
+					maxConnections = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public bool? EnableMultiFactorAuth
+			{
+				get
+				{
+					return enableMultiFactorAuth;
+				}
+				set	
+				{
+					enableMultiFactorAuth = value;
+				}
+			}
+
+			public string ClientIpPool
+			{
+				get
+				{
+					return clientIpPool;
+				}
+				set	
+				{
+					clientIpPool = value;
+				}
+			}
+
+			public string Proto
+			{
+				get
+				{
+					return proto;
+				}
+				set	
+				{
+					proto = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,81 +25,33 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeVbrHaResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string vbrHaId;
-
-		private string regionId;
-
-		private string name;
-
-		private string description;
+		private string creationTime;
 
 		private string status;
 
-		private string vbrId;
+		private string requestId;
 
-		private string creationTime;
+		private string description;
+
+		private string vbrHaId;
 
 		private string peerVbrId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string name;
 
-		public string VbrHaId
-		{
-			get
-			{
-				return vbrHaId;
-			}
-			set	
-			{
-				vbrHaId = value;
-			}
-		}
+		private string vbrId;
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
+		private string regionId;
 
-		public string Name
+		public string CreationTime
 		{
 			get
 			{
-				return name;
+				return creationTime;
 			}
 			set	
 			{
-				name = value;
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
+				creationTime = value;
 			}
 		}
 
@@ -115,27 +67,39 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string VbrId
+		public string RequestId
 		{
 			get
 			{
-				return vbrId;
+				return requestId;
 			}
 			set	
 			{
-				vbrId = value;
+				requestId = value;
 			}
 		}
 
-		public string CreationTime
+		public string Description
 		{
 			get
 			{
-				return creationTime;
+				return description;
 			}
 			set	
 			{
-				creationTime = value;
+				description = value;
+			}
+		}
+
+		public string VbrHaId
+		{
+			get
+			{
+				return vbrHaId;
+			}
+			set	
+			{
+				vbrHaId = value;
 			}
 		}
 
@@ -148,6 +112,42 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				peerVbrId = value;
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+			}
+		}
+
+		public string VbrId
+		{
+			get
+			{
+				return vbrId;
+			}
+			set	
+			{
+				vbrId = value;
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
 			}
 		}
 	}

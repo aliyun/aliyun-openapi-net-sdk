@@ -34,28 +34,28 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			downloadVpnConnectionConfigResponse.RequestId = _ctx.StringValue("DownloadVpnConnectionConfig.RequestId");
 
 			DownloadVpnConnectionConfigResponse.DownloadVpnConnectionConfig_VpnConnectionConfig vpnConnectionConfig = new DownloadVpnConnectionConfigResponse.DownloadVpnConnectionConfig_VpnConnectionConfig();
-			vpnConnectionConfig.LocalSubnet = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.LocalSubnet");
-			vpnConnectionConfig.RemoteSubnet = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.RemoteSubnet");
-			vpnConnectionConfig.Local = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.Local");
 			vpnConnectionConfig.Remote = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.Remote");
+			vpnConnectionConfig.Local = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.Local");
+			vpnConnectionConfig.RemoteSubnet = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.RemoteSubnet");
+			vpnConnectionConfig.LocalSubnet = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.LocalSubnet");
 
 			DownloadVpnConnectionConfigResponse.DownloadVpnConnectionConfig_VpnConnectionConfig.DownloadVpnConnectionConfig_IkeConfig ikeConfig = new DownloadVpnConnectionConfigResponse.DownloadVpnConnectionConfig_VpnConnectionConfig.DownloadVpnConnectionConfig_IkeConfig();
-			ikeConfig.Psk = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IkeConfig.Psk");
-			ikeConfig.IkeVersion = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IkeConfig.IkeVersion");
-			ikeConfig.IkeMode = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IkeConfig.IkeMode");
-			ikeConfig.IkeEncAlg = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IkeConfig.IkeEncAlg");
-			ikeConfig.IkeAuthAlg = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IkeConfig.IkeAuthAlg");
-			ikeConfig.IkePfs = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IkeConfig.IkePfs");
-			ikeConfig.IkeLifetime = _ctx.LongValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IkeConfig.IkeLifetime");
-			ikeConfig.LocalId = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IkeConfig.LocalId");
 			ikeConfig.RemoteId = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IkeConfig.RemoteId");
+			ikeConfig.IkeLifetime = _ctx.LongValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IkeConfig.IkeLifetime");
+			ikeConfig.IkeEncAlg = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IkeConfig.IkeEncAlg");
+			ikeConfig.LocalId = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IkeConfig.LocalId");
+			ikeConfig.IkeMode = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IkeConfig.IkeMode");
+			ikeConfig.IkeVersion = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IkeConfig.IkeVersion");
+			ikeConfig.IkePfs = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IkeConfig.IkePfs");
+			ikeConfig.Psk = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IkeConfig.Psk");
+			ikeConfig.IkeAuthAlg = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IkeConfig.IkeAuthAlg");
 			vpnConnectionConfig.IkeConfig = ikeConfig;
 
 			DownloadVpnConnectionConfigResponse.DownloadVpnConnectionConfig_VpnConnectionConfig.DownloadVpnConnectionConfig_IpsecConfig ipsecConfig = new DownloadVpnConnectionConfigResponse.DownloadVpnConnectionConfig_VpnConnectionConfig.DownloadVpnConnectionConfig_IpsecConfig();
-			ipsecConfig.IpsecEncAlg = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IpsecConfig.IpsecEncAlg");
 			ipsecConfig.IpsecAuthAlg = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IpsecConfig.IpsecAuthAlg");
-			ipsecConfig.IpsecPfs = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IpsecConfig.IpsecPfs");
 			ipsecConfig.IpsecLifetime = _ctx.LongValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IpsecConfig.IpsecLifetime");
+			ipsecConfig.IpsecEncAlg = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IpsecConfig.IpsecEncAlg");
+			ipsecConfig.IpsecPfs = _ctx.StringValue("DownloadVpnConnectionConfig.VpnConnectionConfig.IpsecConfig.IpsecPfs");
 			vpnConnectionConfig.IpsecConfig = ipsecConfig;
 			downloadVpnConnectionConfigResponse.VpnConnectionConfig = vpnConnectionConfig;
         

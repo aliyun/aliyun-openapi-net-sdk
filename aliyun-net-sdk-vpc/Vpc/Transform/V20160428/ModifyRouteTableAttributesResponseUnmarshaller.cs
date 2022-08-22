@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			ModifyRouteTableAttributesResponse modifyRouteTableAttributesResponse = new ModifyRouteTableAttributesResponse();
 
 			modifyRouteTableAttributesResponse.HttpResponse = _ctx.HttpResponse;
-			modifyRouteTableAttributesResponse.RequestId = _ctx.StringValue("ModifyRouteTableAttributes.RequestId");
 			modifyRouteTableAttributesResponse.Code = _ctx.StringValue("ModifyRouteTableAttributes.Code");
 			modifyRouteTableAttributesResponse.Message = _ctx.StringValue("ModifyRouteTableAttributes.Message");
+			modifyRouteTableAttributesResponse.RequestId = _ctx.StringValue("ModifyRouteTableAttributes.RequestId");
 			modifyRouteTableAttributesResponse.Success = _ctx.BooleanValue("ModifyRouteTableAttributes.Success");
         
 			return modifyRouteTableAttributesResponse;

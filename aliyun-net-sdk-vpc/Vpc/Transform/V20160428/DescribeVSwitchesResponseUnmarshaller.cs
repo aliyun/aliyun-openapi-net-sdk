@@ -31,28 +31,28 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeVSwitchesResponse describeVSwitchesResponse = new DescribeVSwitchesResponse();
 
 			describeVSwitchesResponse.HttpResponse = _ctx.HttpResponse;
-			describeVSwitchesResponse.RequestId = _ctx.StringValue("DescribeVSwitches.RequestId");
-			describeVSwitchesResponse.TotalCount = _ctx.IntegerValue("DescribeVSwitches.TotalCount");
-			describeVSwitchesResponse.PageNumber = _ctx.IntegerValue("DescribeVSwitches.PageNumber");
 			describeVSwitchesResponse.PageSize = _ctx.IntegerValue("DescribeVSwitches.PageSize");
+			describeVSwitchesResponse.RequestId = _ctx.StringValue("DescribeVSwitches.RequestId");
+			describeVSwitchesResponse.PageNumber = _ctx.IntegerValue("DescribeVSwitches.PageNumber");
+			describeVSwitchesResponse.TotalCount = _ctx.IntegerValue("DescribeVSwitches.TotalCount");
 
 			List<DescribeVSwitchesResponse.DescribeVSwitches_VSwitch> describeVSwitchesResponse_vSwitches = new List<DescribeVSwitchesResponse.DescribeVSwitches_VSwitch>();
 			for (int i = 0; i < _ctx.Length("DescribeVSwitches.VSwitches.Length"); i++) {
 				DescribeVSwitchesResponse.DescribeVSwitches_VSwitch vSwitch = new DescribeVSwitchesResponse.DescribeVSwitches_VSwitch();
-				vSwitch.VSwitchId = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].VSwitchId");
 				vSwitch.VpcId = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].VpcId");
 				vSwitch.Status = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].Status");
-				vSwitch.CidrBlock = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].CidrBlock");
-				vSwitch.Ipv6CidrBlock = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].Ipv6CidrBlock");
-				vSwitch.ZoneId = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].ZoneId");
-				vSwitch.AvailableIpAddressCount = _ctx.LongValue("DescribeVSwitches.VSwitches["+ i +"].AvailableIpAddressCount");
-				vSwitch.Description = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].Description");
-				vSwitch.VSwitchName = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].VSwitchName");
 				vSwitch.CreationTime = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].CreationTime");
 				vSwitch.IsDefault = _ctx.BooleanValue("DescribeVSwitches.VSwitches["+ i +"].IsDefault");
-				vSwitch.ResourceGroupId = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].ResourceGroupId");
+				vSwitch.AvailableIpAddressCount = _ctx.LongValue("DescribeVSwitches.VSwitches["+ i +"].AvailableIpAddressCount");
 				vSwitch.NetworkAclId = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].NetworkAclId");
 				vSwitch.OwnerId = _ctx.LongValue("DescribeVSwitches.VSwitches["+ i +"].OwnerId");
+				vSwitch.VSwitchId = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].VSwitchId");
+				vSwitch.CidrBlock = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].CidrBlock");
+				vSwitch.Description = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].Description");
+				vSwitch.ResourceGroupId = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].ResourceGroupId");
+				vSwitch.ZoneId = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].ZoneId");
+				vSwitch.Ipv6CidrBlock = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].Ipv6CidrBlock");
+				vSwitch.VSwitchName = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].VSwitchName");
 				vSwitch.ShareType = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].ShareType");
 
 				DescribeVSwitchesResponse.DescribeVSwitches_VSwitch.DescribeVSwitches_RouteTable routeTable = new DescribeVSwitchesResponse.DescribeVSwitches_VSwitch.DescribeVSwitches_RouteTable();

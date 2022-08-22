@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private bool? enableIpsec;
 
+		private string networkType;
+
 		private string instanceChargeType;
 
 		private int? period;
@@ -108,6 +110,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				enableIpsec = value;
 				DictionaryUtil.Add(QueryParameters, "EnableIpsec", value.ToString());
+			}
+		}
+
+		public string NetworkType
+		{
+			get
+			{
+				return networkType;
+			}
+			set	
+			{
+				networkType = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
 			}
 		}
 

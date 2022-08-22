@@ -31,33 +31,36 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeBgpPeersResponse describeBgpPeersResponse = new DescribeBgpPeersResponse();
 
 			describeBgpPeersResponse.HttpResponse = _ctx.HttpResponse;
-			describeBgpPeersResponse.RequestId = _ctx.StringValue("DescribeBgpPeers.RequestId");
-			describeBgpPeersResponse.TotalCount = _ctx.IntegerValue("DescribeBgpPeers.TotalCount");
-			describeBgpPeersResponse.PageNumber = _ctx.IntegerValue("DescribeBgpPeers.PageNumber");
 			describeBgpPeersResponse.PageSize = _ctx.IntegerValue("DescribeBgpPeers.PageSize");
+			describeBgpPeersResponse.RequestId = _ctx.StringValue("DescribeBgpPeers.RequestId");
+			describeBgpPeersResponse.PageNumber = _ctx.IntegerValue("DescribeBgpPeers.PageNumber");
+			describeBgpPeersResponse.TotalCount = _ctx.IntegerValue("DescribeBgpPeers.TotalCount");
 
 			List<DescribeBgpPeersResponse.DescribeBgpPeers_BgpPeer> describeBgpPeersResponse_bgpPeers = new List<DescribeBgpPeersResponse.DescribeBgpPeers_BgpPeer>();
 			for (int i = 0; i < _ctx.Length("DescribeBgpPeers.BgpPeers.Length"); i++) {
 				DescribeBgpPeersResponse.DescribeBgpPeers_BgpPeer bgpPeer = new DescribeBgpPeersResponse.DescribeBgpPeers_BgpPeer();
-				bgpPeer.Name = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].Name");
-				bgpPeer.Description = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].Description");
-				bgpPeer.BgpPeerId = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].BgpPeerId");
-				bgpPeer.BgpGroupId = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].BgpGroupId");
-				bgpPeer.PeerIpAddress = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].PeerIpAddress");
-				bgpPeer.PeerAsn = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].PeerAsn");
-				bgpPeer.AuthKey = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].AuthKey");
-				bgpPeer.RouterId = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].RouterId");
-				bgpPeer.BgpStatus = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].BgpStatus");
 				bgpPeer.Status = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].Status");
-				bgpPeer.Keepalive = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].Keepalive");
-				bgpPeer.LocalAsn = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].LocalAsn");
-				bgpPeer.Hold = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].Hold");
-				bgpPeer.IsFake = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].IsFake");
-				bgpPeer.RouteLimit = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].RouteLimit");
-				bgpPeer.RegionId = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].RegionId");
-				bgpPeer.EnableBfd = _ctx.BooleanValue("DescribeBgpPeers.BgpPeers["+ i +"].EnableBfd");
-				bgpPeer.IpVersion = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].IpVersion");
+				bgpPeer.PeerIpAddress = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].PeerIpAddress");
+				bgpPeer.RouterId = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].RouterId");
+				bgpPeer.BgpGroupId = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].BgpGroupId");
+				bgpPeer.BgpStatus = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].BgpStatus");
 				bgpPeer.BfdMultiHop = _ctx.IntegerValue("DescribeBgpPeers.BgpPeers["+ i +"].BfdMultiHop");
+				bgpPeer.PeerAsn = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].PeerAsn");
+				bgpPeer.LocalAsn = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].LocalAsn");
+				bgpPeer.RegionId = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].RegionId");
+				bgpPeer.BgpPeerId = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].BgpPeerId");
+				bgpPeer.EnableBfd = _ctx.BooleanValue("DescribeBgpPeers.BgpPeers["+ i +"].EnableBfd");
+				bgpPeer.Hold = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].Hold");
+				bgpPeer.IpVersion = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].IpVersion");
+				bgpPeer.Keepalive = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].Keepalive");
+				bgpPeer.Description = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].Description");
+				bgpPeer.RouteLimit = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].RouteLimit");
+				bgpPeer.IsFake = _ctx.BooleanValue("DescribeBgpPeers.BgpPeers["+ i +"].IsFake");
+				bgpPeer.AuthKey = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].AuthKey");
+				bgpPeer.Name = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].Name");
+				bgpPeer.AdvertisedRouteCount = _ctx.IntegerValue("DescribeBgpPeers.BgpPeers["+ i +"].AdvertisedRouteCount");
+				bgpPeer.ReceivedRouteCount = _ctx.IntegerValue("DescribeBgpPeers.BgpPeers["+ i +"].ReceivedRouteCount");
+				bgpPeer.GmtModified = _ctx.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].GmtModified");
 
 				describeBgpPeersResponse_bgpPeers.Add(bgpPeer);
 			}

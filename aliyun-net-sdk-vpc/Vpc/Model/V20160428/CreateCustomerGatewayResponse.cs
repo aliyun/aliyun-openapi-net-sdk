@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -27,15 +27,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string requestId;
 
-		private string customerGatewayId;
-
 		private string ipAddress;
-
-		private string name;
 
 		private string description;
 
+		private string customerGatewayId;
+
 		private long? createTime;
+
+		private string name;
 
 		public string RequestId
 		{
@@ -46,18 +46,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string CustomerGatewayId
-		{
-			get
-			{
-				return customerGatewayId;
-			}
-			set	
-			{
-				customerGatewayId = value;
 			}
 		}
 
@@ -73,18 +61,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
-
 		public string Description
 		{
 			get
@@ -97,6 +73,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string CustomerGatewayId
+		{
+			get
+			{
+				return customerGatewayId;
+			}
+			set	
+			{
+				customerGatewayId = value;
+			}
+		}
+
 		public long? CreateTime
 		{
 			get
@@ -106,6 +94,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				createTime = value;
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
 			}
 		}
 	}

@@ -31,26 +31,28 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeFlowLogsResponse describeFlowLogsResponse = new DescribeFlowLogsResponse();
 
 			describeFlowLogsResponse.HttpResponse = _ctx.HttpResponse;
-			describeFlowLogsResponse.RequestId = _ctx.StringValue("DescribeFlowLogs.RequestId");
-			describeFlowLogsResponse.Success = _ctx.StringValue("DescribeFlowLogs.Success");
-			describeFlowLogsResponse.TotalCount = _ctx.StringValue("DescribeFlowLogs.TotalCount");
-			describeFlowLogsResponse.PageNumber = _ctx.StringValue("DescribeFlowLogs.PageNumber");
 			describeFlowLogsResponse.PageSize = _ctx.StringValue("DescribeFlowLogs.PageSize");
+			describeFlowLogsResponse.PageNumber = _ctx.StringValue("DescribeFlowLogs.PageNumber");
+			describeFlowLogsResponse.RequestId = _ctx.StringValue("DescribeFlowLogs.RequestId");
+			describeFlowLogsResponse.TotalCount = _ctx.StringValue("DescribeFlowLogs.TotalCount");
+			describeFlowLogsResponse.Success = _ctx.StringValue("DescribeFlowLogs.Success");
 
 			List<DescribeFlowLogsResponse.DescribeFlowLogs_FlowLog> describeFlowLogsResponse_flowLogs = new List<DescribeFlowLogsResponse.DescribeFlowLogs_FlowLog>();
 			for (int i = 0; i < _ctx.Length("DescribeFlowLogs.FlowLogs.Length"); i++) {
 				DescribeFlowLogsResponse.DescribeFlowLogs_FlowLog flowLog = new DescribeFlowLogsResponse.DescribeFlowLogs_FlowLog();
-				flowLog.FlowLogId = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].FlowLogId");
-				flowLog.FlowLogName = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].FlowLogName");
-				flowLog.Description = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].Description");
+				flowLog.Status = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].Status");
 				flowLog.CreationTime = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].CreationTime");
+				flowLog.FlowLogName = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].FlowLogName");
+				flowLog.TrafficType = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].TrafficType");
 				flowLog.ResourceType = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].ResourceType");
-				flowLog.ResourceId = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].ResourceId");
+				flowLog.Description = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].Description");
 				flowLog.ProjectName = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].ProjectName");
 				flowLog.LogStoreName = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].LogStoreName");
-				flowLog.Status = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].Status");
-				flowLog.TrafficType = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].TrafficType");
+				flowLog.ResourceId = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].ResourceId");
 				flowLog.RegionId = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].RegionId");
+				flowLog.FlowLogId = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].FlowLogId");
+				flowLog.BusinessStatus = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].BusinessStatus");
+				flowLog.AggregationInterval = _ctx.IntegerValue("DescribeFlowLogs.FlowLogs["+ i +"].AggregationInterval");
 
 				describeFlowLogsResponse_flowLogs.Add(flowLog);
 			}

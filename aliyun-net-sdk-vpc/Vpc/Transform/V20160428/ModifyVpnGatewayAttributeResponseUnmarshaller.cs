@@ -31,21 +31,21 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			ModifyVpnGatewayAttributeResponse modifyVpnGatewayAttributeResponse = new ModifyVpnGatewayAttributeResponse();
 
 			modifyVpnGatewayAttributeResponse.HttpResponse = _ctx.HttpResponse;
-			modifyVpnGatewayAttributeResponse.RequestId = _ctx.StringValue("ModifyVpnGatewayAttribute.RequestId");
-			modifyVpnGatewayAttributeResponse.VpnGatewayId = _ctx.StringValue("ModifyVpnGatewayAttribute.VpnGatewayId");
 			modifyVpnGatewayAttributeResponse.VpcId = _ctx.StringValue("ModifyVpnGatewayAttribute.VpcId");
-			modifyVpnGatewayAttributeResponse.VSwitchId = _ctx.StringValue("ModifyVpnGatewayAttribute.VSwitchId");
-			modifyVpnGatewayAttributeResponse.InternetIp = _ctx.StringValue("ModifyVpnGatewayAttribute.InternetIp");
-			modifyVpnGatewayAttributeResponse.IntranetIp = _ctx.StringValue("ModifyVpnGatewayAttribute.IntranetIp");
-			modifyVpnGatewayAttributeResponse.CreateTime = _ctx.LongValue("ModifyVpnGatewayAttribute.CreateTime");
-			modifyVpnGatewayAttributeResponse.EndTime = _ctx.LongValue("ModifyVpnGatewayAttribute.EndTime");
-			modifyVpnGatewayAttributeResponse.Spec = _ctx.StringValue("ModifyVpnGatewayAttribute.Spec");
-			modifyVpnGatewayAttributeResponse.Name = _ctx.StringValue("ModifyVpnGatewayAttribute.Name");
-			modifyVpnGatewayAttributeResponse.Description = _ctx.StringValue("ModifyVpnGatewayAttribute.Description");
 			modifyVpnGatewayAttributeResponse.Status = _ctx.StringValue("ModifyVpnGatewayAttribute.Status");
-			modifyVpnGatewayAttributeResponse.BusinessStatus = _ctx.StringValue("ModifyVpnGatewayAttribute.BusinessStatus");
-			modifyVpnGatewayAttributeResponse.EnableBgp = _ctx.BooleanValue("ModifyVpnGatewayAttribute.EnableBgp");
+			modifyVpnGatewayAttributeResponse.InternetIp = _ctx.StringValue("ModifyVpnGatewayAttribute.InternetIp");
+			modifyVpnGatewayAttributeResponse.Spec = _ctx.StringValue("ModifyVpnGatewayAttribute.Spec");
+			modifyVpnGatewayAttributeResponse.CreateTime = _ctx.LongValue("ModifyVpnGatewayAttribute.CreateTime");
 			modifyVpnGatewayAttributeResponse.AutoPropagate = _ctx.BooleanValue("ModifyVpnGatewayAttribute.AutoPropagate");
+			modifyVpnGatewayAttributeResponse.VpnGatewayId = _ctx.StringValue("ModifyVpnGatewayAttribute.VpnGatewayId");
+			modifyVpnGatewayAttributeResponse.IntranetIp = _ctx.StringValue("ModifyVpnGatewayAttribute.IntranetIp");
+			modifyVpnGatewayAttributeResponse.EndTime = _ctx.LongValue("ModifyVpnGatewayAttribute.EndTime");
+			modifyVpnGatewayAttributeResponse.VSwitchId = _ctx.StringValue("ModifyVpnGatewayAttribute.VSwitchId");
+			modifyVpnGatewayAttributeResponse.RequestId = _ctx.StringValue("ModifyVpnGatewayAttribute.RequestId");
+			modifyVpnGatewayAttributeResponse.Description = _ctx.StringValue("ModifyVpnGatewayAttribute.Description");
+			modifyVpnGatewayAttributeResponse.EnableBgp = _ctx.BooleanValue("ModifyVpnGatewayAttribute.EnableBgp");
+			modifyVpnGatewayAttributeResponse.BusinessStatus = _ctx.StringValue("ModifyVpnGatewayAttribute.BusinessStatus");
+			modifyVpnGatewayAttributeResponse.Name = _ctx.StringValue("ModifyVpnGatewayAttribute.Name");
         
 			return modifyVpnGatewayAttributeResponse;
         }

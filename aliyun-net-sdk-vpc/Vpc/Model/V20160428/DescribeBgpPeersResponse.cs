@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeBgpPeersResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeBgpPeers_BgpPeer> bgpPeers;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,89 +98,59 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeBgpPeers_BgpPeer
 		{
 
-			private string name;
-
-			private string description;
-
-			private string bgpPeerId;
-
-			private string bgpGroupId;
+			private string status;
 
 			private string peerIpAddress;
 
-			private string peerAsn;
-
-			private string authKey;
-
 			private string routerId;
+
+			private string bgpGroupId;
 
 			private string bgpStatus;
 
-			private string status;
+			private int? bfdMultiHop;
 
-			private string keepalive;
+			private string peerAsn;
 
 			private string localAsn;
 
-			private string hold;
-
-			private string isFake;
-
-			private string routeLimit;
-
 			private string regionId;
+
+			private string bgpPeerId;
 
 			private bool? enableBfd;
 
+			private string hold;
+
 			private string ipVersion;
 
-			private int? bfdMultiHop;
+			private string keepalive;
 
-			public string Name
+			private string description;
+
+			private string routeLimit;
+
+			private bool? isFake;
+
+			private string authKey;
+
+			private string name;
+
+			private int? advertisedRouteCount;
+
+			private int? receivedRouteCount;
+
+			private string gmtModified;
+
+			public string Status
 			{
 				get
 				{
-					return name;
+					return status;
 				}
 				set	
 				{
-					name = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string BgpPeerId
-			{
-				get
-				{
-					return bgpPeerId;
-				}
-				set	
-				{
-					bgpPeerId = value;
-				}
-			}
-
-			public string BgpGroupId
-			{
-				get
-				{
-					return bgpGroupId;
-				}
-				set	
-				{
-					bgpGroupId = value;
+					status = value;
 				}
 			}
 
@@ -196,30 +166,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string PeerAsn
-			{
-				get
-				{
-					return peerAsn;
-				}
-				set	
-				{
-					peerAsn = value;
-				}
-			}
-
-			public string AuthKey
-			{
-				get
-				{
-					return authKey;
-				}
-				set	
-				{
-					authKey = value;
-				}
-			}
-
 			public string RouterId
 			{
 				get
@@ -229,6 +175,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					routerId = value;
+				}
+			}
+
+			public string BgpGroupId
+			{
+				get
+				{
+					return bgpGroupId;
+				}
+				set	
+				{
+					bgpGroupId = value;
 				}
 			}
 
@@ -244,27 +202,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Status
+			public int? BfdMultiHop
 			{
 				get
 				{
-					return status;
+					return bfdMultiHop;
 				}
 				set	
 				{
-					status = value;
+					bfdMultiHop = value;
 				}
 			}
 
-			public string Keepalive
+			public string PeerAsn
 			{
 				get
 				{
-					return keepalive;
+					return peerAsn;
 				}
 				set	
 				{
-					keepalive = value;
+					peerAsn = value;
 				}
 			}
 
@@ -280,42 +238,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Hold
-			{
-				get
-				{
-					return hold;
-				}
-				set	
-				{
-					hold = value;
-				}
-			}
-
-			public string IsFake
-			{
-				get
-				{
-					return isFake;
-				}
-				set	
-				{
-					isFake = value;
-				}
-			}
-
-			public string RouteLimit
-			{
-				get
-				{
-					return routeLimit;
-				}
-				set	
-				{
-					routeLimit = value;
-				}
-			}
-
 			public string RegionId
 			{
 				get
@@ -325,6 +247,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public string BgpPeerId
+			{
+				get
+				{
+					return bgpPeerId;
+				}
+				set	
+				{
+					bgpPeerId = value;
 				}
 			}
 
@@ -340,6 +274,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string Hold
+			{
+				get
+				{
+					return hold;
+				}
+				set	
+				{
+					hold = value;
+				}
+			}
+
 			public string IpVersion
 			{
 				get
@@ -352,15 +298,111 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public int? BfdMultiHop
+			public string Keepalive
 			{
 				get
 				{
-					return bfdMultiHop;
+					return keepalive;
 				}
 				set	
 				{
-					bfdMultiHop = value;
+					keepalive = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string RouteLimit
+			{
+				get
+				{
+					return routeLimit;
+				}
+				set	
+				{
+					routeLimit = value;
+				}
+			}
+
+			public bool? IsFake
+			{
+				get
+				{
+					return isFake;
+				}
+				set	
+				{
+					isFake = value;
+				}
+			}
+
+			public string AuthKey
+			{
+				get
+				{
+					return authKey;
+				}
+				set	
+				{
+					authKey = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public int? AdvertisedRouteCount
+			{
+				get
+				{
+					return advertisedRouteCount;
+				}
+				set	
+				{
+					advertisedRouteCount = value;
+				}
+			}
+
+			public int? ReceivedRouteCount
+			{
+				get
+				{
+					return receivedRouteCount;
+				}
+				set	
+				{
+					receivedRouteCount = value;
+				}
+			}
+
+			public string GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
 				}
 			}
 		}

@@ -31,54 +31,62 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeEipAddressesResponse describeEipAddressesResponse = new DescribeEipAddressesResponse();
 
 			describeEipAddressesResponse.HttpResponse = _ctx.HttpResponse;
-			describeEipAddressesResponse.RequestId = _ctx.StringValue("DescribeEipAddresses.RequestId");
-			describeEipAddressesResponse.TotalCount = _ctx.IntegerValue("DescribeEipAddresses.TotalCount");
-			describeEipAddressesResponse.PageNumber = _ctx.IntegerValue("DescribeEipAddresses.PageNumber");
 			describeEipAddressesResponse.PageSize = _ctx.IntegerValue("DescribeEipAddresses.PageSize");
+			describeEipAddressesResponse.RequestId = _ctx.StringValue("DescribeEipAddresses.RequestId");
+			describeEipAddressesResponse.PageNumber = _ctx.IntegerValue("DescribeEipAddresses.PageNumber");
+			describeEipAddressesResponse.TotalCount = _ctx.IntegerValue("DescribeEipAddresses.TotalCount");
 
 			List<DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress> describeEipAddressesResponse_eipAddresses = new List<DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress>();
 			for (int i = 0; i < _ctx.Length("DescribeEipAddresses.EipAddresses.Length"); i++) {
 				DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress eipAddress = new DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress();
-				eipAddress.RegionId = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].RegionId");
-				eipAddress.IpAddress = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].IpAddress");
-				eipAddress.PrivateIpAddress = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].PrivateIpAddress");
-				eipAddress.AllocationId = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].AllocationId");
-				eipAddress.Status = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Status");
-				eipAddress.InstanceId = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].InstanceId");
-				eipAddress.Bandwidth = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Bandwidth");
-				eipAddress.EipBandwidth = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].EipBandwidth");
-				eipAddress.InternetChargeType = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].InternetChargeType");
-				eipAddress.AllocationTime = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].AllocationTime");
-				eipAddress.InstanceType = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].InstanceType");
-				eipAddress.InstanceRegionId = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].InstanceRegionId");
-				eipAddress.ChargeType = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ChargeType");
-				eipAddress.ExpiredTime = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ExpiredTime");
-				eipAddress.HDMonitorStatus = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].HDMonitorStatus");
-				eipAddress.Name = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Name");
-				eipAddress.ISP = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ISP");
-				eipAddress.Descritpion = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Descritpion");
-				eipAddress.BandwidthPackageId = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].BandwidthPackageId");
-				eipAddress.BandwidthPackageType = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].BandwidthPackageType");
-				eipAddress.BandwidthPackageBandwidth = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].BandwidthPackageBandwidth");
-				eipAddress.ResourceGroupId = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ResourceGroupId");
-				eipAddress.HasReservationData = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].HasReservationData");
-				eipAddress.ReservationBandwidth = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ReservationBandwidth");
-				eipAddress.ReservationInternetChargeType = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ReservationInternetChargeType");
 				eipAddress.ReservationActiveTime = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ReservationActiveTime");
+				eipAddress.Status = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Status");
 				eipAddress.ReservationOrderType = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ReservationOrderType");
-				eipAddress.Mode = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Mode");
-				eipAddress.DeletionProtection = _ctx.BooleanValue("DescribeEipAddresses.EipAddresses["+ i +"].DeletionProtection");
-				eipAddress.SecondLimited = _ctx.BooleanValue("DescribeEipAddresses.EipAddresses["+ i +"].SecondLimited");
-				eipAddress.SegmentInstanceId = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].SegmentInstanceId");
+				eipAddress.AllocationTime = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].AllocationTime");
 				eipAddress.Netmode = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Netmode");
+				eipAddress.ChargeType = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ChargeType");
+				eipAddress.Descritpion = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Descritpion");
+				eipAddress.Description = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Description");
+				eipAddress.Mode = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Mode");
+				eipAddress.SegmentInstanceId = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].SegmentInstanceId");
+				eipAddress.ReservationInternetChargeType = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ReservationInternetChargeType");
+				eipAddress.BandwidthPackageId = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].BandwidthPackageId");
+				eipAddress.IpAddress = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].IpAddress");
+				eipAddress.Bandwidth = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Bandwidth");
+				eipAddress.ReservationBandwidth = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ReservationBandwidth");
+				eipAddress.EipBandwidth = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].EipBandwidth");
+				eipAddress.Name = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Name");
+				eipAddress.PrivateIpAddress = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].PrivateIpAddress");
+				eipAddress.InstanceRegionId = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].InstanceRegionId");
+				eipAddress.DeletionProtection = _ctx.BooleanValue("DescribeEipAddresses.EipAddresses["+ i +"].DeletionProtection");
+				eipAddress.InstanceId = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].InstanceId");
+				eipAddress.SecondLimited = _ctx.BooleanValue("DescribeEipAddresses.EipAddresses["+ i +"].SecondLimited");
+				eipAddress.InstanceType = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].InstanceType");
+				eipAddress.HDMonitorStatus = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].HDMonitorStatus");
+				eipAddress.RegionId = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].RegionId");
+				eipAddress.BandwidthPackageBandwidth = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].BandwidthPackageBandwidth");
 				eipAddress.ServiceManaged = _ctx.IntegerValue("DescribeEipAddresses.EipAddresses["+ i +"].ServiceManaged");
+				eipAddress.ExpiredTime = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ExpiredTime");
+				eipAddress.ResourceGroupId = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ResourceGroupId");
+				eipAddress.AllocationId = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].AllocationId");
+				eipAddress.InternetChargeType = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].InternetChargeType");
 				eipAddress.BusinessStatus = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].BusinessStatus");
+				eipAddress.BandwidthPackageType = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].BandwidthPackageType");
+				eipAddress.HasReservationData = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].HasReservationData");
+				eipAddress.ISP = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ISP");
+				eipAddress.PublicIpAddressPoolId = _ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].PublicIpAddressPoolId");
 
 				List<string> eipAddress_availableRegions = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeEipAddresses.EipAddresses["+ i +"].AvailableRegions.Length"); j++) {
 					eipAddress_availableRegions.Add(_ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].AvailableRegions["+ j +"]"));
 				}
 				eipAddress.AvailableRegions = eipAddress_availableRegions;
+
+				List<string> eipAddress_securityProtectionTypes = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeEipAddresses.EipAddresses["+ i +"].SecurityProtectionTypes.Length"); j++) {
+					eipAddress_securityProtectionTypes.Add(_ctx.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].SecurityProtectionTypes["+ j +"]"));
+				}
+				eipAddress.SecurityProtectionTypes = eipAddress_securityProtectionTypes;
 
 				List<DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress.DescribeEipAddresses_LockReason> eipAddress_operationLocks = new List<DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress.DescribeEipAddresses_LockReason>();
 				for (int j = 0; j < _ctx.Length("DescribeEipAddresses.EipAddresses["+ i +"].OperationLocks.Length"); j++) {

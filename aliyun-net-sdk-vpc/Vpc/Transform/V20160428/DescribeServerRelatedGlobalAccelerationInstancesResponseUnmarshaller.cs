@@ -36,10 +36,10 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			List<DescribeServerRelatedGlobalAccelerationInstancesResponse.DescribeServerRelatedGlobalAccelerationInstances_GlobalAccelerationInstance> describeServerRelatedGlobalAccelerationInstancesResponse_globalAccelerationInstances = new List<DescribeServerRelatedGlobalAccelerationInstancesResponse.DescribeServerRelatedGlobalAccelerationInstances_GlobalAccelerationInstance>();
 			for (int i = 0; i < _ctx.Length("DescribeServerRelatedGlobalAccelerationInstances.GlobalAccelerationInstances.Length"); i++) {
 				DescribeServerRelatedGlobalAccelerationInstancesResponse.DescribeServerRelatedGlobalAccelerationInstances_GlobalAccelerationInstance globalAccelerationInstance = new DescribeServerRelatedGlobalAccelerationInstancesResponse.DescribeServerRelatedGlobalAccelerationInstances_GlobalAccelerationInstance();
-				globalAccelerationInstance.RegionId = _ctx.StringValue("DescribeServerRelatedGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].RegionId");
+				globalAccelerationInstance.ServerIpAddress = _ctx.StringValue("DescribeServerRelatedGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].ServerIpAddress");
 				globalAccelerationInstance.GlobalAccelerationInstanceId = _ctx.StringValue("DescribeServerRelatedGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].GlobalAccelerationInstanceId");
 				globalAccelerationInstance.IpAddress = _ctx.StringValue("DescribeServerRelatedGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].IpAddress");
-				globalAccelerationInstance.ServerIpAddress = _ctx.StringValue("DescribeServerRelatedGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].ServerIpAddress");
+				globalAccelerationInstance.RegionId = _ctx.StringValue("DescribeServerRelatedGlobalAccelerationInstances.GlobalAccelerationInstances["+ i +"].RegionId");
 
 				describeServerRelatedGlobalAccelerationInstancesResponse_globalAccelerationInstances.Add(globalAccelerationInstance);
 			}

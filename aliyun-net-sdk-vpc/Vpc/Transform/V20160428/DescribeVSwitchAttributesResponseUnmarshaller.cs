@@ -31,21 +31,21 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeVSwitchAttributesResponse describeVSwitchAttributesResponse = new DescribeVSwitchAttributesResponse();
 
 			describeVSwitchAttributesResponse.HttpResponse = _ctx.HttpResponse;
-			describeVSwitchAttributesResponse.RequestId = _ctx.StringValue("DescribeVSwitchAttributes.RequestId");
-			describeVSwitchAttributesResponse.VSwitchId = _ctx.StringValue("DescribeVSwitchAttributes.VSwitchId");
 			describeVSwitchAttributesResponse.VpcId = _ctx.StringValue("DescribeVSwitchAttributes.VpcId");
 			describeVSwitchAttributesResponse.Status = _ctx.StringValue("DescribeVSwitchAttributes.Status");
-			describeVSwitchAttributesResponse.CidrBlock = _ctx.StringValue("DescribeVSwitchAttributes.CidrBlock");
-			describeVSwitchAttributesResponse.Ipv6CidrBlock = _ctx.StringValue("DescribeVSwitchAttributes.Ipv6CidrBlock");
-			describeVSwitchAttributesResponse.ZoneId = _ctx.StringValue("DescribeVSwitchAttributes.ZoneId");
-			describeVSwitchAttributesResponse.AvailableIpAddressCount = _ctx.LongValue("DescribeVSwitchAttributes.AvailableIpAddressCount");
-			describeVSwitchAttributesResponse.Description = _ctx.StringValue("DescribeVSwitchAttributes.Description");
-			describeVSwitchAttributesResponse.VSwitchName = _ctx.StringValue("DescribeVSwitchAttributes.VSwitchName");
 			describeVSwitchAttributesResponse.CreationTime = _ctx.StringValue("DescribeVSwitchAttributes.CreationTime");
 			describeVSwitchAttributesResponse.IsDefault = _ctx.BooleanValue("DescribeVSwitchAttributes.IsDefault");
-			describeVSwitchAttributesResponse.ResourceGroupId = _ctx.StringValue("DescribeVSwitchAttributes.ResourceGroupId");
+			describeVSwitchAttributesResponse.AvailableIpAddressCount = _ctx.LongValue("DescribeVSwitchAttributes.AvailableIpAddressCount");
 			describeVSwitchAttributesResponse.NetworkAclId = _ctx.StringValue("DescribeVSwitchAttributes.NetworkAclId");
 			describeVSwitchAttributesResponse.OwnerId = _ctx.LongValue("DescribeVSwitchAttributes.OwnerId");
+			describeVSwitchAttributesResponse.VSwitchId = _ctx.StringValue("DescribeVSwitchAttributes.VSwitchId");
+			describeVSwitchAttributesResponse.RequestId = _ctx.StringValue("DescribeVSwitchAttributes.RequestId");
+			describeVSwitchAttributesResponse.CidrBlock = _ctx.StringValue("DescribeVSwitchAttributes.CidrBlock");
+			describeVSwitchAttributesResponse.Description = _ctx.StringValue("DescribeVSwitchAttributes.Description");
+			describeVSwitchAttributesResponse.ResourceGroupId = _ctx.StringValue("DescribeVSwitchAttributes.ResourceGroupId");
+			describeVSwitchAttributesResponse.ZoneId = _ctx.StringValue("DescribeVSwitchAttributes.ZoneId");
+			describeVSwitchAttributesResponse.Ipv6CidrBlock = _ctx.StringValue("DescribeVSwitchAttributes.Ipv6CidrBlock");
+			describeVSwitchAttributesResponse.VSwitchName = _ctx.StringValue("DescribeVSwitchAttributes.VSwitchName");
 			describeVSwitchAttributesResponse.ShareType = _ctx.StringValue("DescribeVSwitchAttributes.ShareType");
 
 			DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_RouteTable routeTable = new DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_RouteTable();
@@ -56,8 +56,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			List<DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_CloudResourceSetType> describeVSwitchAttributesResponse_cloudResources = new List<DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_CloudResourceSetType>();
 			for (int i = 0; i < _ctx.Length("DescribeVSwitchAttributes.CloudResources.Length"); i++) {
 				DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_CloudResourceSetType cloudResourceSetType = new DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_CloudResourceSetType();
-				cloudResourceSetType.ResourceType = _ctx.StringValue("DescribeVSwitchAttributes.CloudResources["+ i +"].ResourceType");
 				cloudResourceSetType.ResourceCount = _ctx.IntegerValue("DescribeVSwitchAttributes.CloudResources["+ i +"].ResourceCount");
+				cloudResourceSetType.ResourceType = _ctx.StringValue("DescribeVSwitchAttributes.CloudResources["+ i +"].ResourceType");
 
 				describeVSwitchAttributesResponse_cloudResources.Add(cloudResourceSetType);
 			}

@@ -34,25 +34,25 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			describePhysicalConnectionLOAResponse.RequestId = _ctx.StringValue("DescribePhysicalConnectionLOA.RequestId");
 
 			DescribePhysicalConnectionLOAResponse.DescribePhysicalConnectionLOA_PhysicalConnectionLOAType physicalConnectionLOAType = new DescribePhysicalConnectionLOAResponse.DescribePhysicalConnectionLOA_PhysicalConnectionLOAType();
-			physicalConnectionLOAType.InstanceId = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.InstanceId");
-			physicalConnectionLOAType.CompanyName = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.CompanyName");
-			physicalConnectionLOAType.CompanyLocalizedName = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.CompanyLocalizedName");
-			physicalConnectionLOAType.LineType = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.LineType");
-			physicalConnectionLOAType.LineCode = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.LineCode");
-			physicalConnectionLOAType.LineLabel = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.LineLabel");
-			physicalConnectionLOAType.ConstructionTime = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.ConstructionTime");
 			physicalConnectionLOAType.Status = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.Status");
-			physicalConnectionLOAType.LoaUrl = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.LoaUrl");
+			physicalConnectionLOAType.LineLabel = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.LineLabel");
+			physicalConnectionLOAType.LineCode = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.LineCode");
+			physicalConnectionLOAType.ConstructionTime = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.ConstructionTime");
 			physicalConnectionLOAType.SI = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.SI");
+			physicalConnectionLOAType.LoaUrl = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.LoaUrl");
+			physicalConnectionLOAType.CompanyLocalizedName = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.CompanyLocalizedName");
+			physicalConnectionLOAType.InstanceId = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.InstanceId");
+			physicalConnectionLOAType.LineType = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.LineType");
+			physicalConnectionLOAType.CompanyName = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.CompanyName");
 
 			List<DescribePhysicalConnectionLOAResponse.DescribePhysicalConnectionLOA_PhysicalConnectionLOAType.DescribePhysicalConnectionLOA_PMInfoItem> physicalConnectionLOAType_pMInfo = new List<DescribePhysicalConnectionLOAResponse.DescribePhysicalConnectionLOA_PhysicalConnectionLOAType.DescribePhysicalConnectionLOA_PMInfoItem>();
 			for (int i = 0; i < _ctx.Length("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.PMInfo.Length"); i++) {
 				DescribePhysicalConnectionLOAResponse.DescribePhysicalConnectionLOA_PhysicalConnectionLOAType.DescribePhysicalConnectionLOA_PMInfoItem pMInfoItem = new DescribePhysicalConnectionLOAResponse.DescribePhysicalConnectionLOA_PhysicalConnectionLOAType.DescribePhysicalConnectionLOA_PMInfoItem();
-				pMInfoItem.PMName = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.PMInfo["+ i +"].PMName");
-				pMInfoItem.PMContactInfo = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.PMInfo["+ i +"].PMContactInfo");
-				pMInfoItem.PMCertificateType = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.PMInfo["+ i +"].PMCertificateType");
-				pMInfoItem.PMCertificateNo = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.PMInfo["+ i +"].PMCertificateNo");
 				pMInfoItem.PMGender = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.PMInfo["+ i +"].PMGender");
+				pMInfoItem.PMCertificateNo = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.PMInfo["+ i +"].PMCertificateNo");
+				pMInfoItem.PMName = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.PMInfo["+ i +"].PMName");
+				pMInfoItem.PMCertificateType = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.PMInfo["+ i +"].PMCertificateType");
+				pMInfoItem.PMContactInfo = _ctx.StringValue("DescribePhysicalConnectionLOA.PhysicalConnectionLOAType.PMInfo["+ i +"].PMContactInfo");
 
 				physicalConnectionLOAType_pMInfo.Add(pMInfoItem);
 			}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			CreateDhcpOptionsSetResponse createDhcpOptionsSetResponse = new CreateDhcpOptionsSetResponse();
 
 			createDhcpOptionsSetResponse.HttpResponse = _ctx.HttpResponse;
-			createDhcpOptionsSetResponse.RequestId = _ctx.StringValue("CreateDhcpOptionsSet.RequestId");
 			createDhcpOptionsSetResponse.DhcpOptionsSetId = _ctx.StringValue("CreateDhcpOptionsSet.DhcpOptionsSetId");
+			createDhcpOptionsSetResponse.RequestId = _ctx.StringValue("CreateDhcpOptionsSet.RequestId");
         
 			return createDhcpOptionsSetResponse;
         }

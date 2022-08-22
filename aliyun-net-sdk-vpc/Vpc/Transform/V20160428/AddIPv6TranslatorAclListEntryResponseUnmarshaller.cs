@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			AddIPv6TranslatorAclListEntryResponse addIPv6TranslatorAclListEntryResponse = new AddIPv6TranslatorAclListEntryResponse();
 
 			addIPv6TranslatorAclListEntryResponse.HttpResponse = _ctx.HttpResponse;
-			addIPv6TranslatorAclListEntryResponse.RequestId = _ctx.StringValue("AddIPv6TranslatorAclListEntry.RequestId");
 			addIPv6TranslatorAclListEntryResponse.AclEntryId = _ctx.StringValue("AddIPv6TranslatorAclListEntry.AclEntryId");
+			addIPv6TranslatorAclListEntryResponse.RequestId = _ctx.StringValue("AddIPv6TranslatorAclListEntry.RequestId");
         
 			return addIPv6TranslatorAclListEntryResponse;
         }

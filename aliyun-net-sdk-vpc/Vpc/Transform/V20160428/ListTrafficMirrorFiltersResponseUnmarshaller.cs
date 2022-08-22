@@ -31,32 +31,32 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			ListTrafficMirrorFiltersResponse listTrafficMirrorFiltersResponse = new ListTrafficMirrorFiltersResponse();
 
 			listTrafficMirrorFiltersResponse.HttpResponse = _ctx.HttpResponse;
-			listTrafficMirrorFiltersResponse.RequestId = _ctx.StringValue("ListTrafficMirrorFilters.RequestId");
 			listTrafficMirrorFiltersResponse.NextToken = _ctx.StringValue("ListTrafficMirrorFilters.NextToken");
+			listTrafficMirrorFiltersResponse.RequestId = _ctx.StringValue("ListTrafficMirrorFilters.RequestId");
 			listTrafficMirrorFiltersResponse.TotalCount = _ctx.StringValue("ListTrafficMirrorFilters.TotalCount");
 
 			List<ListTrafficMirrorFiltersResponse.ListTrafficMirrorFilters_TrafficMirrorFilter> listTrafficMirrorFiltersResponse_trafficMirrorFilters = new List<ListTrafficMirrorFiltersResponse.ListTrafficMirrorFilters_TrafficMirrorFilter>();
 			for (int i = 0; i < _ctx.Length("ListTrafficMirrorFilters.TrafficMirrorFilters.Length"); i++) {
 				ListTrafficMirrorFiltersResponse.ListTrafficMirrorFilters_TrafficMirrorFilter trafficMirrorFilter = new ListTrafficMirrorFiltersResponse.ListTrafficMirrorFilters_TrafficMirrorFilter();
-				trafficMirrorFilter.TrafficMirrorFilterName = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterName");
+				trafficMirrorFilter.TrafficMirrorFilterStatus = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterStatus");
 				trafficMirrorFilter.TrafficMirrorFilterDescription = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterDescription");
 				trafficMirrorFilter.TrafficMirrorFilterId = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterId");
-				trafficMirrorFilter.TrafficMirrorFilterStatus = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterStatus");
+				trafficMirrorFilter.TrafficMirrorFilterName = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].TrafficMirrorFilterName");
 
 				List<ListTrafficMirrorFiltersResponse.ListTrafficMirrorFilters_TrafficMirrorFilter.ListTrafficMirrorFilters_TrafficMirrorRule> trafficMirrorFilter_ingressRules = new List<ListTrafficMirrorFiltersResponse.ListTrafficMirrorFilters_TrafficMirrorFilter.ListTrafficMirrorFilters_TrafficMirrorRule>();
 				for (int j = 0; j < _ctx.Length("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules.Length"); j++) {
 					ListTrafficMirrorFiltersResponse.ListTrafficMirrorFilters_TrafficMirrorFilter.ListTrafficMirrorFilters_TrafficMirrorRule trafficMirrorRule = new ListTrafficMirrorFiltersResponse.ListTrafficMirrorFilters_TrafficMirrorFilter.ListTrafficMirrorFilters_TrafficMirrorRule();
-					trafficMirrorRule.TrafficMirrorFilterRuleId = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].TrafficMirrorFilterRuleId");
-					trafficMirrorRule.TrafficMirrorFilterId = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].TrafficMirrorFilterId");
-					trafficMirrorRule.TrafficDirection = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].TrafficDirection");
-					trafficMirrorRule.Priority = _ctx.IntegerValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].Priority");
-					trafficMirrorRule.Protocol = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].Protocol");
-					trafficMirrorRule.Action = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].Action");
-					trafficMirrorRule.DestinationCidrBlock = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].DestinationCidrBlock");
-					trafficMirrorRule.DestinationPortRange = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].DestinationPortRange");
-					trafficMirrorRule.SourceCidrBlock = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].SourceCidrBlock");
-					trafficMirrorRule.SourcePortRange = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].SourcePortRange");
 					trafficMirrorRule.TrafficMirrorFilterRuleStatus = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].TrafficMirrorFilterRuleStatus");
+					trafficMirrorRule.Action = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].Action");
+					trafficMirrorRule.SourceCidrBlock = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].SourceCidrBlock");
+					trafficMirrorRule.TrafficDirection = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].TrafficDirection");
+					trafficMirrorRule.Protocol = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].Protocol");
+					trafficMirrorRule.DestinationPortRange = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].DestinationPortRange");
+					trafficMirrorRule.TrafficMirrorFilterRuleId = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].TrafficMirrorFilterRuleId");
+					trafficMirrorRule.DestinationCidrBlock = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].DestinationCidrBlock");
+					trafficMirrorRule.Priority = _ctx.IntegerValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].Priority");
+					trafficMirrorRule.TrafficMirrorFilterId = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].TrafficMirrorFilterId");
+					trafficMirrorRule.SourcePortRange = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].IngressRules["+ j +"].SourcePortRange");
 
 					trafficMirrorFilter_ingressRules.Add(trafficMirrorRule);
 				}
@@ -65,17 +65,17 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				List<ListTrafficMirrorFiltersResponse.ListTrafficMirrorFilters_TrafficMirrorFilter.ListTrafficMirrorFilters_TrafficMirrorRule> trafficMirrorFilter_egressRules = new List<ListTrafficMirrorFiltersResponse.ListTrafficMirrorFilters_TrafficMirrorFilter.ListTrafficMirrorFilters_TrafficMirrorRule>();
 				for (int j = 0; j < _ctx.Length("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules.Length"); j++) {
 					ListTrafficMirrorFiltersResponse.ListTrafficMirrorFilters_TrafficMirrorFilter.ListTrafficMirrorFilters_TrafficMirrorRule trafficMirrorRule = new ListTrafficMirrorFiltersResponse.ListTrafficMirrorFilters_TrafficMirrorFilter.ListTrafficMirrorFilters_TrafficMirrorRule();
-					trafficMirrorRule.TrafficMirrorFilterRuleId = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].TrafficMirrorFilterRuleId");
-					trafficMirrorRule.TrafficMirrorFilterId = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].TrafficMirrorFilterId");
-					trafficMirrorRule.TrafficDirection = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].TrafficDirection");
-					trafficMirrorRule.Priority = _ctx.IntegerValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].Priority");
-					trafficMirrorRule.Protocol = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].Protocol");
-					trafficMirrorRule.Action = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].Action");
-					trafficMirrorRule.DestinationCidrBlock = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].DestinationCidrBlock");
-					trafficMirrorRule.DestinationPortRange = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].DestinationPortRange");
-					trafficMirrorRule.SourceCidrBlock = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].SourceCidrBlock");
-					trafficMirrorRule.SourcePortRange = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].SourcePortRange");
 					trafficMirrorRule.TrafficMirrorFilterRuleStatus = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].TrafficMirrorFilterRuleStatus");
+					trafficMirrorRule.Action = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].Action");
+					trafficMirrorRule.SourceCidrBlock = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].SourceCidrBlock");
+					trafficMirrorRule.TrafficDirection = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].TrafficDirection");
+					trafficMirrorRule.Protocol = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].Protocol");
+					trafficMirrorRule.DestinationPortRange = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].DestinationPortRange");
+					trafficMirrorRule.TrafficMirrorFilterRuleId = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].TrafficMirrorFilterRuleId");
+					trafficMirrorRule.DestinationCidrBlock = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].DestinationCidrBlock");
+					trafficMirrorRule.Priority = _ctx.IntegerValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].Priority");
+					trafficMirrorRule.TrafficMirrorFilterId = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].TrafficMirrorFilterId");
+					trafficMirrorRule.SourcePortRange = _ctx.StringValue("ListTrafficMirrorFilters.TrafficMirrorFilters["+ i +"].EgressRules["+ j +"].SourcePortRange");
 
 					trafficMirrorFilter_egressRules.Add(trafficMirrorRule);
 				}

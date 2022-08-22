@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string sourceVSwitchId;
 
+		private int? eipAffinity;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -122,6 +124,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				sourceVSwitchId = value;
 				DictionaryUtil.Add(QueryParameters, "SourceVSwitchId", value);
+			}
+		}
+
+		public int? EipAffinity
+		{
+			get
+			{
+				return eipAffinity;
+			}
+			set	
+			{
+				eipAffinity = value;
+				DictionaryUtil.Add(QueryParameters, "EipAffinity", value.ToString());
 			}
 		}
 

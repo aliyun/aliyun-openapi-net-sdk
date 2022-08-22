@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? ownerId;
 
+		private string iPv6CidrBlock;
+
 		private string secondaryCidrBlock;
 
 		private string vpcId;
@@ -131,6 +133,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string IPv6CidrBlock
+		{
+			get
+			{
+				return iPv6CidrBlock;
+			}
+			set	
+			{
+				iPv6CidrBlock = value;
+				DictionaryUtil.Add(QueryParameters, "IPv6CidrBlock", value);
 			}
 		}
 

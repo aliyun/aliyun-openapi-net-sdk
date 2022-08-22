@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeHaVipsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeHaVips_HaVip> haVips;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,33 +98,57 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeHaVips_HaVip
 		{
 
+			private string vpcId;
+
+			private string status;
+
 			private string haVipId;
 
-			private string regionId;
+			private string associatedInstanceType;
 
-			private string vpcId;
+			private string createTime;
+
+			private string chargeType;
+
+			private string regionId;
 
 			private string vSwitchId;
 
 			private string ipAddress;
 
-			private string status;
+			private string description;
 
 			private string masterInstanceId;
 
-			private string description;
-
 			private string name;
 
-			private string chargeType;
-
-			private string createTime;
-
-			private string associatedInstanceType;
+			private List<string> associatedEipAddresses;
 
 			private List<string> associatedInstances;
 
-			private List<string> associatedEipAddresses;
+			public string VpcId
+			{
+				get
+				{
+					return vpcId;
+				}
+				set	
+				{
+					vpcId = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
 
 			public string HaVipId
 			{
@@ -138,6 +162,42 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string AssociatedInstanceType
+			{
+				get
+				{
+					return associatedInstanceType;
+				}
+				set	
+				{
+					associatedInstanceType = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string ChargeType
+			{
+				get
+				{
+					return chargeType;
+				}
+				set	
+				{
+					chargeType = value;
+				}
+			}
+
 			public string RegionId
 			{
 				get
@@ -147,18 +207,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					regionId = value;
-				}
-			}
-
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
 				}
 			}
 
@@ -186,15 +234,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Status
+			public string Description
 			{
 				get
 				{
-					return status;
+					return description;
 				}
 				set	
 				{
-					status = value;
+					description = value;
 				}
 			}
 
@@ -210,18 +258,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
 			public string Name
 			{
 				get
@@ -234,39 +270,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string ChargeType
+			public List<string> AssociatedEipAddresses
 			{
 				get
 				{
-					return chargeType;
+					return associatedEipAddresses;
 				}
 				set	
 				{
-					chargeType = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string AssociatedInstanceType
-			{
-				get
-				{
-					return associatedInstanceType;
-				}
-				set	
-				{
-					associatedInstanceType = value;
+					associatedEipAddresses = value;
 				}
 			}
 
@@ -279,18 +291,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					associatedInstances = value;
-				}
-			}
-
-			public List<string> AssociatedEipAddresses
-			{
-				get
-				{
-					return associatedEipAddresses;
-				}
-				set	
-				{
-					associatedEipAddresses = value;
 				}
 			}
 		}

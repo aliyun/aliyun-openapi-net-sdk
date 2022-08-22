@@ -31,16 +31,16 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeIPv6TranslatorAclListsResponse describeIPv6TranslatorAclListsResponse = new DescribeIPv6TranslatorAclListsResponse();
 
 			describeIPv6TranslatorAclListsResponse.HttpResponse = _ctx.HttpResponse;
-			describeIPv6TranslatorAclListsResponse.RequestId = _ctx.StringValue("DescribeIPv6TranslatorAclLists.RequestId");
-			describeIPv6TranslatorAclListsResponse.TotalCount = _ctx.IntegerValue("DescribeIPv6TranslatorAclLists.TotalCount");
-			describeIPv6TranslatorAclListsResponse.PageNumber = _ctx.IntegerValue("DescribeIPv6TranslatorAclLists.PageNumber");
 			describeIPv6TranslatorAclListsResponse.PageSize = _ctx.IntegerValue("DescribeIPv6TranslatorAclLists.PageSize");
+			describeIPv6TranslatorAclListsResponse.RequestId = _ctx.StringValue("DescribeIPv6TranslatorAclLists.RequestId");
+			describeIPv6TranslatorAclListsResponse.PageNumber = _ctx.IntegerValue("DescribeIPv6TranslatorAclLists.PageNumber");
+			describeIPv6TranslatorAclListsResponse.TotalCount = _ctx.IntegerValue("DescribeIPv6TranslatorAclLists.TotalCount");
 
 			List<DescribeIPv6TranslatorAclListsResponse.DescribeIPv6TranslatorAclLists_IPv6TranslatorAcl> describeIPv6TranslatorAclListsResponse_ipv6TranslatorAcls = new List<DescribeIPv6TranslatorAclListsResponse.DescribeIPv6TranslatorAclLists_IPv6TranslatorAcl>();
 			for (int i = 0; i < _ctx.Length("DescribeIPv6TranslatorAclLists.Ipv6TranslatorAcls.Length"); i++) {
 				DescribeIPv6TranslatorAclListsResponse.DescribeIPv6TranslatorAclLists_IPv6TranslatorAcl iPv6TranslatorAcl = new DescribeIPv6TranslatorAclListsResponse.DescribeIPv6TranslatorAclLists_IPv6TranslatorAcl();
-				iPv6TranslatorAcl.AclId = _ctx.StringValue("DescribeIPv6TranslatorAclLists.Ipv6TranslatorAcls["+ i +"].AclId");
 				iPv6TranslatorAcl.AclName = _ctx.StringValue("DescribeIPv6TranslatorAclLists.Ipv6TranslatorAcls["+ i +"].AclName");
+				iPv6TranslatorAcl.AclId = _ctx.StringValue("DescribeIPv6TranslatorAclLists.Ipv6TranslatorAcls["+ i +"].AclId");
 
 				describeIPv6TranslatorAclListsResponse_ipv6TranslatorAcls.Add(iPv6TranslatorAcl);
 			}

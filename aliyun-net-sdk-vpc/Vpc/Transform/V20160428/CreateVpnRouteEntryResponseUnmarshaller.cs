@@ -31,15 +31,15 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			CreateVpnRouteEntryResponse createVpnRouteEntryResponse = new CreateVpnRouteEntryResponse();
 
 			createVpnRouteEntryResponse.HttpResponse = _ctx.HttpResponse;
-			createVpnRouteEntryResponse.RequestId = _ctx.StringValue("CreateVpnRouteEntry.RequestId");
-			createVpnRouteEntryResponse.VpnInstanceId = _ctx.StringValue("CreateVpnRouteEntry.VpnInstanceId");
-			createVpnRouteEntryResponse.RouteDest = _ctx.StringValue("CreateVpnRouteEntry.RouteDest");
 			createVpnRouteEntryResponse.NextHop = _ctx.StringValue("CreateVpnRouteEntry.NextHop");
 			createVpnRouteEntryResponse.Weight = _ctx.IntegerValue("CreateVpnRouteEntry.Weight");
-			createVpnRouteEntryResponse.OverlayMode = _ctx.StringValue("CreateVpnRouteEntry.OverlayMode");
+			createVpnRouteEntryResponse.RouteDest = _ctx.StringValue("CreateVpnRouteEntry.RouteDest");
+			createVpnRouteEntryResponse.RequestId = _ctx.StringValue("CreateVpnRouteEntry.RequestId");
 			createVpnRouteEntryResponse.Description = _ctx.StringValue("CreateVpnRouteEntry.Description");
 			createVpnRouteEntryResponse.State = _ctx.StringValue("CreateVpnRouteEntry.State");
 			createVpnRouteEntryResponse.CreateTime = _ctx.LongValue("CreateVpnRouteEntry.CreateTime");
+			createVpnRouteEntryResponse.OverlayMode = _ctx.StringValue("CreateVpnRouteEntry.OverlayMode");
+			createVpnRouteEntryResponse.VpnInstanceId = _ctx.StringValue("CreateVpnRouteEntry.VpnInstanceId");
         
 			return createVpnRouteEntryResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeSslVpnClientCertsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeSslVpnClientCerts_SslVpnClientCertKey> sslVpnClientCertKeys;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,77 +98,29 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeSslVpnClientCerts_SslVpnClientCertKey
 		{
 
-			private string regionId;
-
-			private string sslVpnClientCertId;
-
-			private string name;
-
-			private string sslVpnServerId;
-
-			private long? createTime;
+			private string status;
 
 			private long? endTime;
 
-			private string status;
+			private long? createTime;
 
-			public string RegionId
+			private string sslVpnClientCertId;
+
+			private string sslVpnServerId;
+
+			private string name;
+
+			private string regionId;
+
+			public string Status
 			{
 				get
 				{
-					return regionId;
+					return status;
 				}
 				set	
 				{
-					regionId = value;
-				}
-			}
-
-			public string SslVpnClientCertId
-			{
-				get
-				{
-					return sslVpnClientCertId;
-				}
-				set	
-				{
-					sslVpnClientCertId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string SslVpnServerId
-			{
-				get
-				{
-					return sslVpnServerId;
-				}
-				set	
-				{
-					sslVpnServerId = value;
-				}
-			}
-
-			public long? CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
+					status = value;
 				}
 			}
 
@@ -184,15 +136,63 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Status
+			public long? CreateTime
 			{
 				get
 				{
-					return status;
+					return createTime;
 				}
 				set	
 				{
-					status = value;
+					createTime = value;
+				}
+			}
+
+			public string SslVpnClientCertId
+			{
+				get
+				{
+					return sslVpnClientCertId;
+				}
+				set	
+				{
+					sslVpnClientCertId = value;
+				}
+			}
+
+			public string SslVpnServerId
+			{
+				get
+				{
+					return sslVpnServerId;
+				}
+				set	
+				{
+					sslVpnServerId = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 		}

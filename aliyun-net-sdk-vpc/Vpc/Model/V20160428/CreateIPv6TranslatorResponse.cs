@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class CreateIPv6TranslatorResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string ipv6TranslatorId;
 
-		private string name;
+		private string requestId;
 
 		private string spec;
 
-		private long? orderId;
+		private string name;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private long? orderId;
 
 		public string Ipv6TranslatorId
 		{
@@ -59,15 +47,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Name
+		public string RequestId
 		{
 			get
 			{
-				return name;
+				return requestId;
 			}
 			set	
 			{
-				name = value;
+				requestId = value;
 			}
 		}
 
@@ -80,6 +68,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				spec = value;
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
 			}
 		}
 

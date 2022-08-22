@@ -94,10 +94,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set
 			{
 				dhcpOptionsSetIds = value;
-				for (int i = 0; i < dhcpOptionsSetIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DhcpOptionsSetId." + (i + 1) , dhcpOptionsSetIds[i]);
-				}
 			}
 		}
 

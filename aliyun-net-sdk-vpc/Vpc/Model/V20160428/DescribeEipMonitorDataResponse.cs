@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -56,29 +56,17 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeEipMonitorData_EipMonitorData
 		{
 
-			private long? eipRX;
-
 			private long? eipTX;
-
-			private int? eipFlow;
-
-			private int? eipBandwidth;
 
 			private int? eipPackets;
 
+			private int? eipBandwidth;
+
 			private string timeStamp;
 
-			public long? EipRX
-			{
-				get
-				{
-					return eipRX;
-				}
-				set	
-				{
-					eipRX = value;
-				}
-			}
+			private int? eipFlow;
+
+			private long? eipRX;
 
 			public long? EipTX
 			{
@@ -89,30 +77,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					eipTX = value;
-				}
-			}
-
-			public int? EipFlow
-			{
-				get
-				{
-					return eipFlow;
-				}
-				set	
-				{
-					eipFlow = value;
-				}
-			}
-
-			public int? EipBandwidth
-			{
-				get
-				{
-					return eipBandwidth;
-				}
-				set	
-				{
-					eipBandwidth = value;
 				}
 			}
 
@@ -128,6 +92,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public int? EipBandwidth
+			{
+				get
+				{
+					return eipBandwidth;
+				}
+				set	
+				{
+					eipBandwidth = value;
+				}
+			}
+
 			public string TimeStamp
 			{
 				get
@@ -137,6 +113,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					timeStamp = value;
+				}
+			}
+
+			public int? EipFlow
+			{
+				get
+				{
+					return eipFlow;
+				}
+				set	
+				{
+					eipFlow = value;
+				}
+			}
+
+			public long? EipRX
+			{
+				get
+				{
+					return eipRX;
+				}
+				set	
+				{
+					eipRX = value;
 				}
 			}
 		}

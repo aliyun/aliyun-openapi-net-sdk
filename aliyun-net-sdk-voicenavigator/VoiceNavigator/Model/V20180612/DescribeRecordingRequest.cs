@@ -39,9 +39,24 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
             }
         }
 
+		private bool? needVoiceSliceRecording;
+
 		private string conversationId;
 
 		private string instanceId;
+
+		public bool? NeedVoiceSliceRecording
+		{
+			get
+			{
+				return needVoiceSliceRecording;
+			}
+			set	
+			{
+				needVoiceSliceRecording = value;
+				DictionaryUtil.Add(QueryParameters, "NeedVoiceSliceRecording", value.ToString());
+			}
+		}
 
 		public string ConversationId
 		{

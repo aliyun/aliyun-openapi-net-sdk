@@ -42,7 +42,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? resourceOwnerId;
 
-		private List<EgressAclEntries> egressAclEntriess = new List<EgressAclEntries>(){ };
+		private List<string> egressAclEntriess = new List<string>(){ };
 
 		private string clientToken;
 
@@ -56,7 +56,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? ownerId;
 
-		private List<IngressAclEntries> ingressAclEntriess = new List<IngressAclEntries>(){ };
+		private List<string> ingressAclEntriess = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -71,7 +71,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public List<EgressAclEntries> EgressAclEntriess
+		public List<string> EgressAclEntriess
 		{
 			get
 			{
@@ -81,16 +81,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set
 			{
 				egressAclEntriess = value;
-				for (int i = 0; i < egressAclEntriess.Count; i++)
+				if(egressAclEntriess != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"EgressAclEntries." + (i + 1) + ".NetworkAclEntryName", egressAclEntriess[i].NetworkAclEntryName);
-					DictionaryUtil.Add(QueryParameters,"EgressAclEntries." + (i + 1) + ".NetworkAclEntryId", egressAclEntriess[i].NetworkAclEntryId);
-					DictionaryUtil.Add(QueryParameters,"EgressAclEntries." + (i + 1) + ".Policy", egressAclEntriess[i].Policy);
-					DictionaryUtil.Add(QueryParameters,"EgressAclEntries." + (i + 1) + ".Protocol", egressAclEntriess[i].Protocol);
-					DictionaryUtil.Add(QueryParameters,"EgressAclEntries." + (i + 1) + ".DestinationCidrIp", egressAclEntriess[i].DestinationCidrIp);
-					DictionaryUtil.Add(QueryParameters,"EgressAclEntries." + (i + 1) + ".Port", egressAclEntriess[i].Port);
-					DictionaryUtil.Add(QueryParameters,"EgressAclEntries." + (i + 1) + ".EntryType", egressAclEntriess[i].EntryType);
-					DictionaryUtil.Add(QueryParameters,"EgressAclEntries." + (i + 1) + ".Description", egressAclEntriess[i].Description);
+					for (int depth1 = 0; depth1 < egressAclEntriess.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"EgressAclEntries." + (depth1 + 1), egressAclEntriess[depth1]);
+						DictionaryUtil.Add(QueryParameters,"EgressAclEntries." + (depth1 + 1), egressAclEntriess[depth1]);
+						DictionaryUtil.Add(QueryParameters,"EgressAclEntries." + (depth1 + 1), egressAclEntriess[depth1]);
+						DictionaryUtil.Add(QueryParameters,"EgressAclEntries." + (depth1 + 1), egressAclEntriess[depth1]);
+						DictionaryUtil.Add(QueryParameters,"EgressAclEntries." + (depth1 + 1), egressAclEntriess[depth1]);
+						DictionaryUtil.Add(QueryParameters,"EgressAclEntries." + (depth1 + 1), egressAclEntriess[depth1]);
+						DictionaryUtil.Add(QueryParameters,"EgressAclEntries." + (depth1 + 1), egressAclEntriess[depth1]);
+						DictionaryUtil.Add(QueryParameters,"EgressAclEntries." + (depth1 + 1), egressAclEntriess[depth1]);
+					}
 				}
 			}
 		}
@@ -173,7 +176,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public List<IngressAclEntries> IngressAclEntriess
+		public List<string> IngressAclEntriess
 		{
 			get
 			{
@@ -183,16 +186,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set
 			{
 				ingressAclEntriess = value;
-				for (int i = 0; i < ingressAclEntriess.Count; i++)
+				if(ingressAclEntriess != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"IngressAclEntries." + (i + 1) + ".NetworkAclEntryName", ingressAclEntriess[i].NetworkAclEntryName);
-					DictionaryUtil.Add(QueryParameters,"IngressAclEntries." + (i + 1) + ".NetworkAclEntryId", ingressAclEntriess[i].NetworkAclEntryId);
-					DictionaryUtil.Add(QueryParameters,"IngressAclEntries." + (i + 1) + ".Policy", ingressAclEntriess[i].Policy);
-					DictionaryUtil.Add(QueryParameters,"IngressAclEntries." + (i + 1) + ".Protocol", ingressAclEntriess[i].Protocol);
-					DictionaryUtil.Add(QueryParameters,"IngressAclEntries." + (i + 1) + ".SourceCidrIp", ingressAclEntriess[i].SourceCidrIp);
-					DictionaryUtil.Add(QueryParameters,"IngressAclEntries." + (i + 1) + ".Port", ingressAclEntriess[i].Port);
-					DictionaryUtil.Add(QueryParameters,"IngressAclEntries." + (i + 1) + ".EntryType", ingressAclEntriess[i].EntryType);
-					DictionaryUtil.Add(QueryParameters,"IngressAclEntries." + (i + 1) + ".Description", ingressAclEntriess[i].Description);
+					for (int depth1 = 0; depth1 < ingressAclEntriess.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"IngressAclEntries." + (depth1 + 1), ingressAclEntriess[depth1]);
+						DictionaryUtil.Add(QueryParameters,"IngressAclEntries." + (depth1 + 1), ingressAclEntriess[depth1]);
+						DictionaryUtil.Add(QueryParameters,"IngressAclEntries." + (depth1 + 1), ingressAclEntriess[depth1]);
+						DictionaryUtil.Add(QueryParameters,"IngressAclEntries." + (depth1 + 1), ingressAclEntriess[depth1]);
+						DictionaryUtil.Add(QueryParameters,"IngressAclEntries." + (depth1 + 1), ingressAclEntriess[depth1]);
+						DictionaryUtil.Add(QueryParameters,"IngressAclEntries." + (depth1 + 1), ingressAclEntriess[depth1]);
+						DictionaryUtil.Add(QueryParameters,"IngressAclEntries." + (depth1 + 1), ingressAclEntriess[depth1]);
+						DictionaryUtil.Add(QueryParameters,"IngressAclEntries." + (depth1 + 1), ingressAclEntriess[depth1]);
+					}
 				}
 			}
 		}
@@ -200,33 +206,21 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class EgressAclEntries
 		{
 
-			private string networkAclEntryName;
-
 			private string networkAclEntryId;
 
+			private string entryType;
+
+			private string networkAclEntryName;
+
 			private string policy;
+
+			private string description;
 
 			private string protocol;
 
 			private string destinationCidrIp;
 
 			private string port;
-
-			private string entryType;
-
-			private string description;
-
-			public string NetworkAclEntryName
-			{
-				get
-				{
-					return networkAclEntryName;
-				}
-				set	
-				{
-					networkAclEntryName = value;
-				}
-			}
 
 			public string NetworkAclEntryId
 			{
@@ -240,6 +234,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string EntryType
+			{
+				get
+				{
+					return entryType;
+				}
+				set	
+				{
+					entryType = value;
+				}
+			}
+
+			public string NetworkAclEntryName
+			{
+				get
+				{
+					return networkAclEntryName;
+				}
+				set	
+				{
+					networkAclEntryName = value;
+				}
+			}
+
 			public string Policy
 			{
 				get
@@ -249,6 +267,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					policy = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 
@@ -287,6 +317,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					port = value;
 				}
 			}
+		}
+
+		public class IngressAclEntries
+		{
+
+			private string networkAclEntryId;
+
+			private string entryType;
+
+			private string networkAclEntryName;
+
+			private string policy;
+
+			private string sourceCidrIp;
+
+			private string description;
+
+			private string protocol;
+
+			private string port;
+
+			public string NetworkAclEntryId
+			{
+				get
+				{
+					return networkAclEntryId;
+				}
+				set	
+				{
+					networkAclEntryId = value;
+				}
+			}
 
 			public string EntryType
 			{
@@ -300,38 +362,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-		}
-
-		public class IngressAclEntries
-		{
-
-			private string networkAclEntryName;
-
-			private string networkAclEntryId;
-
-			private string policy;
-
-			private string protocol;
-
-			private string sourceCidrIp;
-
-			private string port;
-
-			private string entryType;
-
-			private string description;
-
 			public string NetworkAclEntryName
 			{
 				get
@@ -341,18 +371,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					networkAclEntryName = value;
-				}
-			}
-
-			public string NetworkAclEntryId
-			{
-				get
-				{
-					return networkAclEntryId;
-				}
-				set	
-				{
-					networkAclEntryId = value;
 				}
 			}
 
@@ -368,18 +386,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Protocol
-			{
-				get
-				{
-					return protocol;
-				}
-				set	
-				{
-					protocol = value;
-				}
-			}
-
 			public string SourceCidrIp
 			{
 				get
@@ -392,30 +398,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Port
-			{
-				get
-				{
-					return port;
-				}
-				set	
-				{
-					port = value;
-				}
-			}
-
-			public string EntryType
-			{
-				get
-				{
-					return entryType;
-				}
-				set	
-				{
-					entryType = value;
-				}
-			}
-
 			public string Description
 			{
 				get
@@ -425,6 +407,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string Protocol
+			{
+				get
+				{
+					return protocol;
+				}
+				set	
+				{
+					protocol = value;
+				}
+			}
+
+			public string Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
 				}
 			}
 		}

@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeEipGatewayInfoResponse describeEipGatewayInfoResponse = new DescribeEipGatewayInfoResponse();
 
 			describeEipGatewayInfoResponse.HttpResponse = _ctx.HttpResponse;
-			describeEipGatewayInfoResponse.RequestId = _ctx.StringValue("DescribeEipGatewayInfo.RequestId");
 			describeEipGatewayInfoResponse.Code = _ctx.StringValue("DescribeEipGatewayInfo.Code");
 			describeEipGatewayInfoResponse.Message = _ctx.StringValue("DescribeEipGatewayInfo.Message");
+			describeEipGatewayInfoResponse.RequestId = _ctx.StringValue("DescribeEipGatewayInfo.RequestId");
 
 			List<DescribeEipGatewayInfoResponse.DescribeEipGatewayInfo_EipInfo> describeEipGatewayInfoResponse_eipInfos = new List<DescribeEipGatewayInfoResponse.DescribeEipGatewayInfo_EipInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeEipGatewayInfo.EipInfos.Length"); i++) {

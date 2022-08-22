@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeVSwitchesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeVSwitches_VSwitch> vSwitches;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,51 +98,39 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeVSwitches_VSwitch
 		{
 
-			private string vSwitchId;
-
 			private string vpcId;
 
 			private string status;
-
-			private string cidrBlock;
-
-			private string ipv6CidrBlock;
-
-			private string zoneId;
-
-			private long? availableIpAddressCount;
-
-			private string description;
-
-			private string vSwitchName;
 
 			private string creationTime;
 
 			private bool? isDefault;
 
-			private string resourceGroupId;
+			private long? availableIpAddressCount;
 
 			private string networkAclId;
 
 			private long? ownerId;
+
+			private string vSwitchId;
+
+			private string cidrBlock;
+
+			private string description;
+
+			private string resourceGroupId;
+
+			private string zoneId;
+
+			private string ipv6CidrBlock;
+
+			private string vSwitchName;
 
 			private string shareType;
 
 			private List<DescribeVSwitches_Tag> tags;
 
 			private DescribeVSwitches_RouteTable routeTable;
-
-			public string VSwitchId
-			{
-				get
-				{
-					return vSwitchId;
-				}
-				set	
-				{
-					vSwitchId = value;
-				}
-			}
 
 			public string VpcId
 			{
@@ -165,78 +153,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					status = value;
-				}
-			}
-
-			public string CidrBlock
-			{
-				get
-				{
-					return cidrBlock;
-				}
-				set	
-				{
-					cidrBlock = value;
-				}
-			}
-
-			public string Ipv6CidrBlock
-			{
-				get
-				{
-					return ipv6CidrBlock;
-				}
-				set	
-				{
-					ipv6CidrBlock = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
-			public long? AvailableIpAddressCount
-			{
-				get
-				{
-					return availableIpAddressCount;
-				}
-				set	
-				{
-					availableIpAddressCount = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string VSwitchName
-			{
-				get
-				{
-					return vSwitchName;
-				}
-				set	
-				{
-					vSwitchName = value;
 				}
 			}
 
@@ -264,15 +180,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string ResourceGroupId
+			public long? AvailableIpAddressCount
 			{
 				get
 				{
-					return resourceGroupId;
+					return availableIpAddressCount;
 				}
 				set	
 				{
-					resourceGroupId = value;
+					availableIpAddressCount = value;
 				}
 			}
 
@@ -297,6 +213,90 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					ownerId = value;
+				}
+			}
+
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
+
+			public string CidrBlock
+			{
+				get
+				{
+					return cidrBlock;
+				}
+				set	
+				{
+					cidrBlock = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public string Ipv6CidrBlock
+			{
+				get
+				{
+					return ipv6CidrBlock;
+				}
+				set	
+				{
+					ipv6CidrBlock = value;
+				}
+			}
+
+			public string VSwitchName
+			{
+				get
+				{
+					return vSwitchName;
+				}
+				set	
+				{
+					vSwitchName = value;
 				}
 			}
 

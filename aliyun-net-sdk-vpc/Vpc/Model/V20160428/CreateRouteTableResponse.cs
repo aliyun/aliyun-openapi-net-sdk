@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -28,6 +28,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private string requestId;
 
 		private string routeTableId;
+
+		private string associateType;
 
 		public string RequestId
 		{
@@ -50,6 +52,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				routeTableId = value;
+			}
+		}
+
+		public string AssociateType
+		{
+			get
+			{
+				return associateType;
+			}
+			set	
+			{
+				associateType = value;
 			}
 		}
 	}

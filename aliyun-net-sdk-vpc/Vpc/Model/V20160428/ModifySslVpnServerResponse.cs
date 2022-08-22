@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,121 +25,61 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class ModifySslVpnServerResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string regionId;
-
-		private string sslVpnServerId;
-
-		private string vpnGatewayId;
-
-		private string name;
-
-		private string localSubnet;
-
-		private string clientIpPool;
-
-		private long? createTime;
-
-		private string cipher;
-
-		private string proto;
-
-		private int? port;
-
-		private bool? compress;
-
-		private int? connections;
-
-		private int? maxConnections;
-
 		private string internetIp;
-
-		private bool? enableMultiFactorAuth;
 
 		private string iDaaSInstanceId;
 
-		public string RequestId
+		private long? createTime;
+
+		private string vpnGatewayId;
+
+		private bool? compress;
+
+		private int? port;
+
+		private string localSubnet;
+
+		private string regionId;
+
+		private string cipher;
+
+		private string requestId;
+
+		private int? connections;
+
+		private string sslVpnServerId;
+
+		private int? maxConnections;
+
+		private string name;
+
+		private bool? enableMultiFactorAuth;
+
+		private string clientIpPool;
+
+		private string proto;
+
+		public string InternetIp
 		{
 			get
 			{
-				return requestId;
+				return internetIp;
 			}
 			set	
 			{
-				requestId = value;
+				internetIp = value;
 			}
 		}
 
-		public string RegionId
+		public string IDaaSInstanceId
 		{
 			get
 			{
-				return regionId;
+				return iDaaSInstanceId;
 			}
 			set	
 			{
-				regionId = value;
-			}
-		}
-
-		public string SslVpnServerId
-		{
-			get
-			{
-				return sslVpnServerId;
-			}
-			set	
-			{
-				sslVpnServerId = value;
-			}
-		}
-
-		public string VpnGatewayId
-		{
-			get
-			{
-				return vpnGatewayId;
-			}
-			set	
-			{
-				vpnGatewayId = value;
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-			}
-		}
-
-		public string LocalSubnet
-		{
-			get
-			{
-				return localSubnet;
-			}
-			set	
-			{
-				localSubnet = value;
-			}
-		}
-
-		public string ClientIpPool
-		{
-			get
-			{
-				return clientIpPool;
-			}
-			set	
-			{
-				clientIpPool = value;
+				iDaaSInstanceId = value;
 			}
 		}
 
@@ -155,39 +95,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Cipher
+		public string VpnGatewayId
 		{
 			get
 			{
-				return cipher;
+				return vpnGatewayId;
 			}
 			set	
 			{
-				cipher = value;
-			}
-		}
-
-		public string Proto
-		{
-			get
-			{
-				return proto;
-			}
-			set	
-			{
-				proto = value;
-			}
-		}
-
-		public int? Port
-		{
-			get
-			{
-				return port;
-			}
-			set	
-			{
-				port = value;
+				vpnGatewayId = value;
 			}
 		}
 
@@ -203,6 +119,66 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public int? Port
+		{
+			get
+			{
+				return port;
+			}
+			set	
+			{
+				port = value;
+			}
+		}
+
+		public string LocalSubnet
+		{
+			get
+			{
+				return localSubnet;
+			}
+			set	
+			{
+				localSubnet = value;
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+			}
+		}
+
+		public string Cipher
+		{
+			get
+			{
+				return cipher;
+			}
+			set	
+			{
+				cipher = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public int? Connections
 		{
 			get
@@ -212,6 +188,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				connections = value;
+			}
+		}
+
+		public string SslVpnServerId
+		{
+			get
+			{
+				return sslVpnServerId;
+			}
+			set	
+			{
+				sslVpnServerId = value;
 			}
 		}
 
@@ -227,15 +215,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string InternetIp
+		public string Name
 		{
 			get
 			{
-				return internetIp;
+				return name;
 			}
 			set	
 			{
-				internetIp = value;
+				name = value;
 			}
 		}
 
@@ -251,15 +239,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string IDaaSInstanceId
+		public string ClientIpPool
 		{
 			get
 			{
-				return iDaaSInstanceId;
+				return clientIpPool;
 			}
 			set	
 			{
-				iDaaSInstanceId = value;
+				clientIpPool = value;
+			}
+		}
+
+		public string Proto
+		{
+			get
+			{
+				return proto;
+			}
+			set	
+			{
+				proto = value;
 			}
 		}
 	}

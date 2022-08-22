@@ -44,9 +44,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string clientToken;
 
-		private List<IngressRules> ingressRuless = new List<IngressRules>(){ };
+		private List<string> ingressRuless = new List<string>(){ };
 
-		private List<EgressRules> egressRuless = new List<EgressRules>(){ };
+		private List<string> egressRuless = new List<string>(){ };
 
 		private bool? dryRun;
 
@@ -84,7 +84,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public List<IngressRules> IngressRuless
+		public List<string> IngressRuless
 		{
 			get
 			{
@@ -94,20 +94,23 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set
 			{
 				ingressRuless = value;
-				for (int i = 0; i < ingressRuless.Count; i++)
+				if(ingressRuless != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"IngressRules." + (i + 1) + ".Priority", ingressRuless[i].Priority);
-					DictionaryUtil.Add(QueryParameters,"IngressRules." + (i + 1) + ".Action", ingressRuless[i].Action);
-					DictionaryUtil.Add(QueryParameters,"IngressRules." + (i + 1) + ".Protocol", ingressRuless[i].Protocol);
-					DictionaryUtil.Add(QueryParameters,"IngressRules." + (i + 1) + ".DestinationCidrBlock", ingressRuless[i].DestinationCidrBlock);
-					DictionaryUtil.Add(QueryParameters,"IngressRules." + (i + 1) + ".SourceCidrBlock", ingressRuless[i].SourceCidrBlock);
-					DictionaryUtil.Add(QueryParameters,"IngressRules." + (i + 1) + ".DestinationPortRange", ingressRuless[i].DestinationPortRange);
-					DictionaryUtil.Add(QueryParameters,"IngressRules." + (i + 1) + ".SourcePortRange", ingressRuless[i].SourcePortRange);
+					for (int depth1 = 0; depth1 < ingressRuless.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"IngressRules." + (depth1 + 1), ingressRuless[depth1]);
+						DictionaryUtil.Add(QueryParameters,"IngressRules." + (depth1 + 1), ingressRuless[depth1]);
+						DictionaryUtil.Add(QueryParameters,"IngressRules." + (depth1 + 1), ingressRuless[depth1]);
+						DictionaryUtil.Add(QueryParameters,"IngressRules." + (depth1 + 1), ingressRuless[depth1]);
+						DictionaryUtil.Add(QueryParameters,"IngressRules." + (depth1 + 1), ingressRuless[depth1]);
+						DictionaryUtil.Add(QueryParameters,"IngressRules." + (depth1 + 1), ingressRuless[depth1]);
+						DictionaryUtil.Add(QueryParameters,"IngressRules." + (depth1 + 1), ingressRuless[depth1]);
+					}
 				}
 			}
 		}
 
-		public List<EgressRules> EgressRuless
+		public List<string> EgressRuless
 		{
 			get
 			{
@@ -117,15 +120,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set
 			{
 				egressRuless = value;
-				for (int i = 0; i < egressRuless.Count; i++)
+				if(egressRuless != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"EgressRules." + (i + 1) + ".Priority", egressRuless[i].Priority);
-					DictionaryUtil.Add(QueryParameters,"EgressRules." + (i + 1) + ".Action", egressRuless[i].Action);
-					DictionaryUtil.Add(QueryParameters,"EgressRules." + (i + 1) + ".Protocol", egressRuless[i].Protocol);
-					DictionaryUtil.Add(QueryParameters,"EgressRules." + (i + 1) + ".DestinationCidrBlock", egressRuless[i].DestinationCidrBlock);
-					DictionaryUtil.Add(QueryParameters,"EgressRules." + (i + 1) + ".SourceCidrBlock", egressRuless[i].SourceCidrBlock);
-					DictionaryUtil.Add(QueryParameters,"EgressRules." + (i + 1) + ".DestinationPortRange", egressRuless[i].DestinationPortRange);
-					DictionaryUtil.Add(QueryParameters,"EgressRules." + (i + 1) + ".SourcePortRange", egressRuless[i].SourcePortRange);
+					for (int depth1 = 0; depth1 < egressRuless.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"EgressRules." + (depth1 + 1), egressRuless[depth1]);
+						DictionaryUtil.Add(QueryParameters,"EgressRules." + (depth1 + 1), egressRuless[depth1]);
+						DictionaryUtil.Add(QueryParameters,"EgressRules." + (depth1 + 1), egressRuless[depth1]);
+						DictionaryUtil.Add(QueryParameters,"EgressRules." + (depth1 + 1), egressRuless[depth1]);
+						DictionaryUtil.Add(QueryParameters,"EgressRules." + (depth1 + 1), egressRuless[depth1]);
+						DictionaryUtil.Add(QueryParameters,"EgressRules." + (depth1 + 1), egressRuless[depth1]);
+						DictionaryUtil.Add(QueryParameters,"EgressRules." + (depth1 + 1), egressRuless[depth1]);
+					}
 				}
 			}
 		}
@@ -198,31 +204,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class IngressRules
 		{
 
-			private int? priority;
-
 			private string action;
-
-			private string protocol;
-
-			private string destinationCidrBlock;
 
 			private string sourceCidrBlock;
 
+			private string protocol;
+
 			private string destinationPortRange;
 
-			private string sourcePortRange;
+			private int? priority;
 
-			public int? Priority
-			{
-				get
-				{
-					return priority;
-				}
-				set	
-				{
-					priority = value;
-				}
-			}
+			private string destinationCidrBlock;
+
+			private string sourcePortRange;
 
 			public string Action
 			{
@@ -233,30 +227,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					action = value;
-				}
-			}
-
-			public string Protocol
-			{
-				get
-				{
-					return protocol;
-				}
-				set	
-				{
-					protocol = value;
-				}
-			}
-
-			public string DestinationCidrBlock
-			{
-				get
-				{
-					return destinationCidrBlock;
-				}
-				set	
-				{
-					destinationCidrBlock = value;
 				}
 			}
 
@@ -272,6 +242,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string Protocol
+			{
+				get
+				{
+					return protocol;
+				}
+				set	
+				{
+					protocol = value;
+				}
+			}
+
 			public string DestinationPortRange
 			{
 				get
@@ -281,6 +263,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					destinationPortRange = value;
+				}
+			}
+
+			public int? Priority
+			{
+				get
+				{
+					return priority;
+				}
+				set	
+				{
+					priority = value;
+				}
+			}
+
+			public string DestinationCidrBlock
+			{
+				get
+				{
+					return destinationCidrBlock;
+				}
+				set	
+				{
+					destinationCidrBlock = value;
 				}
 			}
 
@@ -300,31 +306,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class EgressRules
 		{
 
-			private int? priority;
-
 			private string action;
-
-			private string protocol;
-
-			private string destinationCidrBlock;
 
 			private string sourceCidrBlock;
 
+			private string protocol;
+
 			private string destinationPortRange;
 
-			private string sourcePortRange;
+			private int? priority;
 
-			public int? Priority
-			{
-				get
-				{
-					return priority;
-				}
-				set	
-				{
-					priority = value;
-				}
-			}
+			private string destinationCidrBlock;
+
+			private string sourcePortRange;
 
 			public string Action
 			{
@@ -335,30 +329,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					action = value;
-				}
-			}
-
-			public string Protocol
-			{
-				get
-				{
-					return protocol;
-				}
-				set	
-				{
-					protocol = value;
-				}
-			}
-
-			public string DestinationCidrBlock
-			{
-				get
-				{
-					return destinationCidrBlock;
-				}
-				set	
-				{
-					destinationCidrBlock = value;
 				}
 			}
 
@@ -374,6 +344,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string Protocol
+			{
+				get
+				{
+					return protocol;
+				}
+				set	
+				{
+					protocol = value;
+				}
+			}
+
 			public string DestinationPortRange
 			{
 				get
@@ -383,6 +365,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					destinationPortRange = value;
+				}
+			}
+
+			public int? Priority
+			{
+				get
+				{
+					return priority;
+				}
+				set	
+				{
+					priority = value;
+				}
+			}
+
+			public string DestinationCidrBlock
+			{
+				get
+				{
+					return destinationCidrBlock;
+				}
+				set	
+				{
+					destinationCidrBlock = value;
 				}
 			}
 

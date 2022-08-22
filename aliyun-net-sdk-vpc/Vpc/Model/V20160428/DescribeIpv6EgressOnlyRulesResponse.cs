@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class DescribeIpv6EgressOnlyRulesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeIpv6EgressOnlyRules_Ipv6EgressOnlyRule> ipv6EgressOnlyRules;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,17 +98,41 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeIpv6EgressOnlyRules_Ipv6EgressOnlyRule
 		{
 
-			private string ipv6EgressOnlyRuleId;
+			private string status;
 
-			private string instanceType;
+			private string description;
+
+			private string ipv6EgressOnlyRuleId;
 
 			private string instanceId;
 
-			private string status;
+			private string instanceType;
 
 			private string name;
 
-			private string description;
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
 
 			public string Ipv6EgressOnlyRuleId
 			{
@@ -119,18 +143,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					ipv6EgressOnlyRuleId = value;
-				}
-			}
-
-			public string InstanceType
-			{
-				get
-				{
-					return instanceType;
-				}
-				set	
-				{
-					instanceType = value;
 				}
 			}
 
@@ -146,15 +158,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string Status
+			public string InstanceType
 			{
 				get
 				{
-					return status;
+					return instanceType;
 				}
 				set	
 				{
-					status = value;
+					instanceType = value;
 				}
 			}
 
@@ -167,18 +179,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					name = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
 				}
 			}
 		}

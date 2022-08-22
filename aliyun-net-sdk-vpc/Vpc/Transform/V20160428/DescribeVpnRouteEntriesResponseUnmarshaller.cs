@@ -31,24 +31,24 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeVpnRouteEntriesResponse describeVpnRouteEntriesResponse = new DescribeVpnRouteEntriesResponse();
 
 			describeVpnRouteEntriesResponse.HttpResponse = _ctx.HttpResponse;
-			describeVpnRouteEntriesResponse.RequestId = _ctx.StringValue("DescribeVpnRouteEntries.RequestId");
-			describeVpnRouteEntriesResponse.TotalCount = _ctx.IntegerValue("DescribeVpnRouteEntries.TotalCount");
-			describeVpnRouteEntriesResponse.PageNumber = _ctx.IntegerValue("DescribeVpnRouteEntries.PageNumber");
 			describeVpnRouteEntriesResponse.PageSize = _ctx.IntegerValue("DescribeVpnRouteEntries.PageSize");
+			describeVpnRouteEntriesResponse.RequestId = _ctx.StringValue("DescribeVpnRouteEntries.RequestId");
+			describeVpnRouteEntriesResponse.PageNumber = _ctx.IntegerValue("DescribeVpnRouteEntries.PageNumber");
+			describeVpnRouteEntriesResponse.TotalCount = _ctx.IntegerValue("DescribeVpnRouteEntries.TotalCount");
 
 			List<DescribeVpnRouteEntriesResponse.DescribeVpnRouteEntries_VpnRouteEntry> describeVpnRouteEntriesResponse_vpnRouteEntries = new List<DescribeVpnRouteEntriesResponse.DescribeVpnRouteEntries_VpnRouteEntry>();
 			for (int i = 0; i < _ctx.Length("DescribeVpnRouteEntries.VpnRouteEntries.Length"); i++) {
 				DescribeVpnRouteEntriesResponse.DescribeVpnRouteEntries_VpnRouteEntry vpnRouteEntry = new DescribeVpnRouteEntriesResponse.DescribeVpnRouteEntries_VpnRouteEntry();
-				vpnRouteEntry.VpnInstanceId = _ctx.StringValue("DescribeVpnRouteEntries.VpnRouteEntries["+ i +"].VpnInstanceId");
-				vpnRouteEntry.RouteDest = _ctx.StringValue("DescribeVpnRouteEntries.VpnRouteEntries["+ i +"].RouteDest");
+				vpnRouteEntry.RouteEntryType = _ctx.StringValue("DescribeVpnRouteEntries.VpnRouteEntries["+ i +"].RouteEntryType");
 				vpnRouteEntry.NextHop = _ctx.StringValue("DescribeVpnRouteEntries.VpnRouteEntries["+ i +"].NextHop");
 				vpnRouteEntry.Weight = _ctx.IntegerValue("DescribeVpnRouteEntries.VpnRouteEntries["+ i +"].Weight");
-				vpnRouteEntry.CreateTime = _ctx.LongValue("DescribeVpnRouteEntries.VpnRouteEntries["+ i +"].CreateTime");
-				vpnRouteEntry.State = _ctx.StringValue("DescribeVpnRouteEntries.VpnRouteEntries["+ i +"].State");
+				vpnRouteEntry.RouteDest = _ctx.StringValue("DescribeVpnRouteEntries.VpnRouteEntries["+ i +"].RouteDest");
 				vpnRouteEntry.AsPath = _ctx.StringValue("DescribeVpnRouteEntries.VpnRouteEntries["+ i +"].AsPath");
+				vpnRouteEntry.State = _ctx.StringValue("DescribeVpnRouteEntries.VpnRouteEntries["+ i +"].State");
+				vpnRouteEntry.CreateTime = _ctx.LongValue("DescribeVpnRouteEntries.VpnRouteEntries["+ i +"].CreateTime");
 				vpnRouteEntry.Community = _ctx.StringValue("DescribeVpnRouteEntries.VpnRouteEntries["+ i +"].Community");
 				vpnRouteEntry.Source = _ctx.StringValue("DescribeVpnRouteEntries.VpnRouteEntries["+ i +"].Source");
-				vpnRouteEntry.RouteEntryType = _ctx.StringValue("DescribeVpnRouteEntries.VpnRouteEntries["+ i +"].RouteEntryType");
+				vpnRouteEntry.VpnInstanceId = _ctx.StringValue("DescribeVpnRouteEntries.VpnRouteEntries["+ i +"].VpnInstanceId");
 
 				describeVpnRouteEntriesResponse_vpnRouteEntries.Add(vpnRouteEntry);
 			}

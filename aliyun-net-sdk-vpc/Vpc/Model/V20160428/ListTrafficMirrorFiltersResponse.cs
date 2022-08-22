@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 	public class ListTrafficMirrorFiltersResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
+
+		private string requestId;
 
 		private string totalCount;
 
 		private List<ListTrafficMirrorFilters_TrafficMirrorFilter> trafficMirrorFilters;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public string NextToken
 		{
@@ -54,6 +42,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -84,27 +84,27 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class ListTrafficMirrorFilters_TrafficMirrorFilter
 		{
 
-			private string trafficMirrorFilterName;
+			private string trafficMirrorFilterStatus;
 
 			private string trafficMirrorFilterDescription;
 
 			private string trafficMirrorFilterId;
 
-			private string trafficMirrorFilterStatus;
+			private string trafficMirrorFilterName;
 
 			private List<ListTrafficMirrorFilters_TrafficMirrorRule> ingressRules;
 
 			private List<ListTrafficMirrorFilters_TrafficMirrorRule> egressRules;
 
-			public string TrafficMirrorFilterName
+			public string TrafficMirrorFilterStatus
 			{
 				get
 				{
-					return trafficMirrorFilterName;
+					return trafficMirrorFilterStatus;
 				}
 				set	
 				{
-					trafficMirrorFilterName = value;
+					trafficMirrorFilterStatus = value;
 				}
 			}
 
@@ -132,15 +132,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string TrafficMirrorFilterStatus
+			public string TrafficMirrorFilterName
 			{
 				get
 				{
-					return trafficMirrorFilterStatus;
+					return trafficMirrorFilterName;
 				}
 				set	
 				{
-					trafficMirrorFilterStatus = value;
+					trafficMirrorFilterName = value;
 				}
 			}
 
@@ -171,85 +171,37 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			public class ListTrafficMirrorFilters_TrafficMirrorRule
 			{
 
-				private string trafficMirrorFilterRuleId;
-
-				private string trafficMirrorFilterId;
-
-				private string trafficDirection;
-
-				private int? priority;
-
-				private string protocol;
+				private string trafficMirrorFilterRuleStatus;
 
 				private string action;
 
-				private string destinationCidrBlock;
+				private string sourceCidrBlock;
+
+				private string trafficDirection;
+
+				private string protocol;
 
 				private string destinationPortRange;
 
-				private string sourceCidrBlock;
+				private string trafficMirrorFilterRuleId;
+
+				private string destinationCidrBlock;
+
+				private int? priority;
+
+				private string trafficMirrorFilterId;
 
 				private string sourcePortRange;
 
-				private string trafficMirrorFilterRuleStatus;
-
-				public string TrafficMirrorFilterRuleId
+				public string TrafficMirrorFilterRuleStatus
 				{
 					get
 					{
-						return trafficMirrorFilterRuleId;
+						return trafficMirrorFilterRuleStatus;
 					}
 					set	
 					{
-						trafficMirrorFilterRuleId = value;
-					}
-				}
-
-				public string TrafficMirrorFilterId
-				{
-					get
-					{
-						return trafficMirrorFilterId;
-					}
-					set	
-					{
-						trafficMirrorFilterId = value;
-					}
-				}
-
-				public string TrafficDirection
-				{
-					get
-					{
-						return trafficDirection;
-					}
-					set	
-					{
-						trafficDirection = value;
-					}
-				}
-
-				public int? Priority
-				{
-					get
-					{
-						return priority;
-					}
-					set	
-					{
-						priority = value;
-					}
-				}
-
-				public string Protocol
-				{
-					get
-					{
-						return protocol;
-					}
-					set	
-					{
-						protocol = value;
+						trafficMirrorFilterRuleStatus = value;
 					}
 				}
 
@@ -265,15 +217,39 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
-				public string DestinationCidrBlock
+				public string SourceCidrBlock
 				{
 					get
 					{
-						return destinationCidrBlock;
+						return sourceCidrBlock;
 					}
 					set	
 					{
-						destinationCidrBlock = value;
+						sourceCidrBlock = value;
+					}
+				}
+
+				public string TrafficDirection
+				{
+					get
+					{
+						return trafficDirection;
+					}
+					set	
+					{
+						trafficDirection = value;
+					}
+				}
+
+				public string Protocol
+				{
+					get
+					{
+						return protocol;
+					}
+					set	
+					{
+						protocol = value;
 					}
 				}
 
@@ -289,15 +265,51 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					}
 				}
 
-				public string SourceCidrBlock
+				public string TrafficMirrorFilterRuleId
 				{
 					get
 					{
-						return sourceCidrBlock;
+						return trafficMirrorFilterRuleId;
 					}
 					set	
 					{
-						sourceCidrBlock = value;
+						trafficMirrorFilterRuleId = value;
+					}
+				}
+
+				public string DestinationCidrBlock
+				{
+					get
+					{
+						return destinationCidrBlock;
+					}
+					set	
+					{
+						destinationCidrBlock = value;
+					}
+				}
+
+				public int? Priority
+				{
+					get
+					{
+						return priority;
+					}
+					set	
+					{
+						priority = value;
+					}
+				}
+
+				public string TrafficMirrorFilterId
+				{
+					get
+					{
+						return trafficMirrorFilterId;
+					}
+					set	
+					{
+						trafficMirrorFilterId = value;
 					}
 				}
 
@@ -310,18 +322,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						sourcePortRange = value;
-					}
-				}
-
-				public string TrafficMirrorFilterRuleStatus
-				{
-					get
-					{
-						return trafficMirrorFilterRuleStatus;
-					}
-					set	
-					{
-						trafficMirrorFilterRuleStatus = value;
 					}
 				}
 			}

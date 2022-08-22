@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			DescribeVpnSslServerLogsResponse describeVpnSslServerLogsResponse = new DescribeVpnSslServerLogsResponse();
 
 			describeVpnSslServerLogsResponse.HttpResponse = _ctx.HttpResponse;
+			describeVpnSslServerLogsResponse.PageSize = _ctx.IntegerValue("DescribeVpnSslServerLogs.PageSize");
+			describeVpnSslServerLogsResponse.PageNumber = _ctx.IntegerValue("DescribeVpnSslServerLogs.PageNumber");
 			describeVpnSslServerLogsResponse.RequestId = _ctx.StringValue("DescribeVpnSslServerLogs.RequestId");
 			describeVpnSslServerLogsResponse.Count = _ctx.IntegerValue("DescribeVpnSslServerLogs.Count");
 			describeVpnSslServerLogsResponse.IsCompleted = _ctx.BooleanValue("DescribeVpnSslServerLogs.IsCompleted");
-			describeVpnSslServerLogsResponse.PageNumber = _ctx.IntegerValue("DescribeVpnSslServerLogs.PageNumber");
-			describeVpnSslServerLogsResponse.PageSize = _ctx.IntegerValue("DescribeVpnSslServerLogs.PageSize");
 
 			List<string> describeVpnSslServerLogsResponse_data = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeVpnSslServerLogs.Data.Length"); i++) {

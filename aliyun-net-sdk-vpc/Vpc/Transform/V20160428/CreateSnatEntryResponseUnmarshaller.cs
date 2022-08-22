@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			CreateSnatEntryResponse createSnatEntryResponse = new CreateSnatEntryResponse();
 
 			createSnatEntryResponse.HttpResponse = _ctx.HttpResponse;
-			createSnatEntryResponse.RequestId = _ctx.StringValue("CreateSnatEntry.RequestId");
 			createSnatEntryResponse.SnatEntryId = _ctx.StringValue("CreateSnatEntry.SnatEntryId");
+			createSnatEntryResponse.RequestId = _ctx.StringValue("CreateSnatEntry.RequestId");
         
 			return createSnatEntryResponse;
         }
