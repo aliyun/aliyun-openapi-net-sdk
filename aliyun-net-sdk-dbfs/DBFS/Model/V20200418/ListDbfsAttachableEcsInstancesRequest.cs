@@ -40,9 +40,26 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			Method = MethodType.POST;
         }
 
+		private string filterKey;
+
 		private int? pageSize;
 
+		private string filterValue;
+
 		private int? pageNumber;
+
+		public string FilterKey
+		{
+			get
+			{
+				return filterKey;
+			}
+			set	
+			{
+				filterKey = value;
+				DictionaryUtil.Add(QueryParameters, "FilterKey", value);
+			}
+		}
 
 		public int? PageSize
 		{
@@ -54,6 +71,19 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string FilterValue
+		{
+			get
+			{
+				return filterValue;
+			}
+			set	
+			{
+				filterValue = value;
+				DictionaryUtil.Add(QueryParameters, "FilterValue", value);
 			}
 		}
 
