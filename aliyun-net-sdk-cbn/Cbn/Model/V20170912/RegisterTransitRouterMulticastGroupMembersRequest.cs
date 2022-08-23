@@ -61,6 +61,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private long? ownerId;
 
+		private string vpcId;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -188,6 +190,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
 			}
 		}
 

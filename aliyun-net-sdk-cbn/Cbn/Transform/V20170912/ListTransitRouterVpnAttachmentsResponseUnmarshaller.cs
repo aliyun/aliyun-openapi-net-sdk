@@ -51,12 +51,12 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				transitRouterAttachment.AutoPublishRouteEnabled = _ctx.BooleanValue("ListTransitRouterVpnAttachments.TransitRouterAttachments["+ i +"].AutoPublishRouteEnabled");
 				transitRouterAttachment.TransitRouterAttachmentName = _ctx.StringValue("ListTransitRouterVpnAttachments.TransitRouterAttachments["+ i +"].TransitRouterAttachmentName");
 
-				List<ListTransitRouterVpnAttachmentsResponse.ListTransitRouterVpnAttachments_TransitRouterAttachment.ListTransitRouterVpnAttachments_Zone> transitRouterAttachment_zones = new List<ListTransitRouterVpnAttachmentsResponse.ListTransitRouterVpnAttachments_TransitRouterAttachment.ListTransitRouterVpnAttachments_Zone>();
+				List<ListTransitRouterVpnAttachmentsResponse.ListTransitRouterVpnAttachments_TransitRouterAttachment.ListTransitRouterVpnAttachments_ZoneMapping> transitRouterAttachment_zones = new List<ListTransitRouterVpnAttachmentsResponse.ListTransitRouterVpnAttachments_TransitRouterAttachment.ListTransitRouterVpnAttachments_ZoneMapping>();
 				for (int j = 0; j < _ctx.Length("ListTransitRouterVpnAttachments.TransitRouterAttachments["+ i +"].Zones.Length"); j++) {
-					ListTransitRouterVpnAttachmentsResponse.ListTransitRouterVpnAttachments_TransitRouterAttachment.ListTransitRouterVpnAttachments_Zone zone = new ListTransitRouterVpnAttachmentsResponse.ListTransitRouterVpnAttachments_TransitRouterAttachment.ListTransitRouterVpnAttachments_Zone();
-					zone.ZoneId = _ctx.StringValue("ListTransitRouterVpnAttachments.TransitRouterAttachments["+ i +"].Zones["+ j +"].ZoneId");
+					ListTransitRouterVpnAttachmentsResponse.ListTransitRouterVpnAttachments_TransitRouterAttachment.ListTransitRouterVpnAttachments_ZoneMapping zoneMapping = new ListTransitRouterVpnAttachmentsResponse.ListTransitRouterVpnAttachments_TransitRouterAttachment.ListTransitRouterVpnAttachments_ZoneMapping();
+					zoneMapping.ZoneId = _ctx.StringValue("ListTransitRouterVpnAttachments.TransitRouterAttachments["+ i +"].Zones["+ j +"].ZoneId");
 
-					transitRouterAttachment_zones.Add(zone);
+					transitRouterAttachment_zones.Add(zoneMapping);
 				}
 				transitRouterAttachment.Zones = transitRouterAttachment_zones;
 
