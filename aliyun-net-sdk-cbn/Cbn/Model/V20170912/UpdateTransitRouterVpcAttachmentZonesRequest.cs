@@ -28,10 +28,10 @@ using Aliyun.Acs.Cbn.Transform.V20170912;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
 {
-    public class DeleteTransitRouterPrefixListAssociationRequest : RpcAcsRequest<DeleteTransitRouterPrefixListAssociationResponse>
+    public class UpdateTransitRouterVpcAttachmentZonesRequest : RpcAcsRequest<UpdateTransitRouterVpcAttachmentZonesResponse>
     {
-        public DeleteTransitRouterPrefixListAssociationRequest()
-            : base("Cbn", "2017-09-12", "DeleteTransitRouterPrefixListAssociation")
+        public UpdateTransitRouterVpcAttachmentZonesRequest()
+            : base("Cbn", "2017-09-12", "UpdateTransitRouterVpcAttachmentZones")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,7 +45,9 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private string clientToken;
 
-		private string prefixListId;
+		private List<string> removeZoneMappingss = new List<string>(){ };
+
+		private List<string> addZoneMappingss = new List<string>(){ };
 
 		private bool? dryRun;
 
@@ -55,11 +57,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private long? ownerId;
 
-		private string transitRouterId;
-
-		private string transitRouterTableId;
-
-		private string nextHop;
+		private string transitRouterAttachmentId;
 
 		public long? ResourceOwnerId
 		{
@@ -87,16 +85,45 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string PrefixListId
+		public List<string> RemoveZoneMappingss
 		{
 			get
 			{
-				return prefixListId;
+				return removeZoneMappingss;
 			}
-			set	
+
+			set
 			{
-				prefixListId = value;
-				DictionaryUtil.Add(QueryParameters, "PrefixListId", value);
+				removeZoneMappingss = value;
+				if(removeZoneMappingss != null)
+				{
+					for (int depth1 = 0; depth1 < removeZoneMappingss.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"RemoveZoneMappings." + (depth1 + 1), removeZoneMappingss[depth1]);
+						DictionaryUtil.Add(QueryParameters,"RemoveZoneMappings." + (depth1 + 1), removeZoneMappingss[depth1]);
+					}
+				}
+			}
+		}
+
+		public List<string> AddZoneMappingss
+		{
+			get
+			{
+				return addZoneMappingss;
+			}
+
+			set
+			{
+				addZoneMappingss = value;
+				if(addZoneMappingss != null)
+				{
+					for (int depth1 = 0; depth1 < addZoneMappingss.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"AddZoneMappings." + (depth1 + 1), addZoneMappingss[depth1]);
+						DictionaryUtil.Add(QueryParameters,"AddZoneMappings." + (depth1 + 1), addZoneMappingss[depth1]);
+					}
+				}
 			}
 		}
 
@@ -152,42 +179,80 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string TransitRouterId
+		public string TransitRouterAttachmentId
 		{
 			get
 			{
-				return transitRouterId;
+				return transitRouterAttachmentId;
 			}
 			set	
 			{
-				transitRouterId = value;
-				DictionaryUtil.Add(QueryParameters, "TransitRouterId", value);
+				transitRouterAttachmentId = value;
+				DictionaryUtil.Add(QueryParameters, "TransitRouterAttachmentId", value);
 			}
 		}
 
-		public string TransitRouterTableId
+		public class RemoveZoneMappings
 		{
-			get
+
+			private string vSwitchId;
+
+			private string zoneId;
+
+			public string VSwitchId
 			{
-				return transitRouterTableId;
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
 			}
-			set	
+
+			public string ZoneId
 			{
-				transitRouterTableId = value;
-				DictionaryUtil.Add(QueryParameters, "TransitRouterTableId", value);
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
 			}
 		}
 
-		public string NextHop
+		public class AddZoneMappings
 		{
-			get
+
+			private string vSwitchId;
+
+			private string zoneId;
+
+			public string VSwitchId
 			{
-				return nextHop;
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
 			}
-			set	
+
+			public string ZoneId
 			{
-				nextHop = value;
-				DictionaryUtil.Add(QueryParameters, "NextHop", value);
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
 			}
 		}
 
@@ -196,9 +261,9 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			return false;
 		}
 
-        public override DeleteTransitRouterPrefixListAssociationResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateTransitRouterVpcAttachmentZonesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteTransitRouterPrefixListAssociationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateTransitRouterVpcAttachmentZonesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
