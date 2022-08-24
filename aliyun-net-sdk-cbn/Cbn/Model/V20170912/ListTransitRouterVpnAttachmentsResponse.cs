@@ -120,7 +120,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string transitRouterAttachmentName;
 
-			private List<ListTransitRouterVpnAttachments_Zone> zones;
+			private List<ListTransitRouterVpnAttachments_ZoneMapping> zones;
 
 			public string CreationTime
 			{
@@ -254,7 +254,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public List<ListTransitRouterVpnAttachments_Zone> Zones
+			public List<ListTransitRouterVpnAttachments_ZoneMapping> Zones
 			{
 				get
 				{
@@ -266,7 +266,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public class ListTransitRouterVpnAttachments_Zone
+			public class ListTransitRouterVpnAttachments_ZoneMapping
 			{
 
 				private string zoneId;
