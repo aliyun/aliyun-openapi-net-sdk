@@ -31,6 +31,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private List<string> masterZones;
 
+		private List<string> availableZones;
+
 		public string RequestId
 		{
 			get
@@ -64,6 +66,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set	
 			{
 				masterZones = value;
+			}
+		}
+
+		public List<string> AvailableZones
+		{
+			get
+			{
+				return availableZones;
+			}
+			set	
+			{
+				availableZones = value;
 			}
 		}
 	}
