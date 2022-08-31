@@ -31,17 +31,17 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeDomainSrcBpsDataResponse describeDomainSrcBpsDataResponse = new DescribeDomainSrcBpsDataResponse();
 
 			describeDomainSrcBpsDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainSrcBpsDataResponse.EndTime = _ctx.StringValue("DescribeDomainSrcBpsData.EndTime");
+			describeDomainSrcBpsDataResponse.StartTime = _ctx.StringValue("DescribeDomainSrcBpsData.StartTime");
 			describeDomainSrcBpsDataResponse.RequestId = _ctx.StringValue("DescribeDomainSrcBpsData.RequestId");
 			describeDomainSrcBpsDataResponse.DomainName = _ctx.StringValue("DescribeDomainSrcBpsData.DomainName");
-			describeDomainSrcBpsDataResponse.StartTime = _ctx.StringValue("DescribeDomainSrcBpsData.StartTime");
-			describeDomainSrcBpsDataResponse.EndTime = _ctx.StringValue("DescribeDomainSrcBpsData.EndTime");
 			describeDomainSrcBpsDataResponse.DataInterval = _ctx.StringValue("DescribeDomainSrcBpsData.DataInterval");
 
 			List<DescribeDomainSrcBpsDataResponse.DescribeDomainSrcBpsData_DataModule> describeDomainSrcBpsDataResponse_srcBpsDataPerInterval = new List<DescribeDomainSrcBpsDataResponse.DescribeDomainSrcBpsData_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainSrcBpsData.SrcBpsDataPerInterval.Length"); i++) {
 				DescribeDomainSrcBpsDataResponse.DescribeDomainSrcBpsData_DataModule dataModule = new DescribeDomainSrcBpsDataResponse.DescribeDomainSrcBpsData_DataModule();
-				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainSrcBpsData.SrcBpsDataPerInterval["+ i +"].TimeStamp");
 				dataModule._Value = _ctx.StringValue("DescribeDomainSrcBpsData.SrcBpsDataPerInterval["+ i +"].Value");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainSrcBpsData.SrcBpsDataPerInterval["+ i +"].TimeStamp");
 				dataModule.HttpsValue = _ctx.StringValue("DescribeDomainSrcBpsData.SrcBpsDataPerInterval["+ i +"].HttpsValue");
 
 				describeDomainSrcBpsDataResponse_srcBpsDataPerInterval.Add(dataModule);

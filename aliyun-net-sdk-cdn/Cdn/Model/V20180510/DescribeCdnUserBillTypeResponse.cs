@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -56,17 +56,29 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeCdnUserBillType_BillTypeDataItem
 		{
 
+			private string endTime;
+
 			private string startTime;
 
-			private string endTime;
+			private string billingCycle;
 
 			private string product;
 
-			private string dimension;
-
 			private string billType;
 
-			private string billingCycle;
+			private string dimension;
+
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
 
 			public string StartTime
 			{
@@ -80,15 +92,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string EndTime
+			public string BillingCycle
 			{
 				get
 				{
-					return endTime;
+					return billingCycle;
 				}
 				set	
 				{
-					endTime = value;
+					billingCycle = value;
 				}
 			}
 
@@ -104,18 +116,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string Dimension
-			{
-				get
-				{
-					return dimension;
-				}
-				set	
-				{
-					dimension = value;
-				}
-			}
-
 			public string BillType
 			{
 				get
@@ -128,15 +128,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string BillingCycle
+			public string Dimension
 			{
 				get
 				{
-					return billingCycle;
+					return dimension;
 				}
 				set	
 				{
-					billingCycle = value;
+					dimension = value;
 				}
 			}
 		}

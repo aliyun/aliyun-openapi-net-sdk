@@ -31,14 +31,16 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeCdnDomainStagingConfigResponse describeCdnDomainStagingConfigResponse = new DescribeCdnDomainStagingConfigResponse();
 
 			describeCdnDomainStagingConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeCdnDomainStagingConfigResponse.DomainName = _ctx.StringValue("DescribeCdnDomainStagingConfig.DomainName");
 			describeCdnDomainStagingConfigResponse.RequestId = _ctx.StringValue("DescribeCdnDomainStagingConfig.RequestId");
 
 			List<DescribeCdnDomainStagingConfigResponse.DescribeCdnDomainStagingConfig_DomainConfig> describeCdnDomainStagingConfigResponse_domainConfigs = new List<DescribeCdnDomainStagingConfigResponse.DescribeCdnDomainStagingConfig_DomainConfig>();
 			for (int i = 0; i < _ctx.Length("DescribeCdnDomainStagingConfig.DomainConfigs.Length"); i++) {
 				DescribeCdnDomainStagingConfigResponse.DescribeCdnDomainStagingConfig_DomainConfig domainConfig = new DescribeCdnDomainStagingConfigResponse.DescribeCdnDomainStagingConfig_DomainConfig();
-				domainConfig.FunctionName = _ctx.StringValue("DescribeCdnDomainStagingConfig.DomainConfigs["+ i +"].FunctionName");
-				domainConfig.ConfigId = _ctx.StringValue("DescribeCdnDomainStagingConfig.DomainConfigs["+ i +"].ConfigId");
 				domainConfig.Status = _ctx.StringValue("DescribeCdnDomainStagingConfig.DomainConfigs["+ i +"].Status");
+				domainConfig.ParentId = _ctx.StringValue("DescribeCdnDomainStagingConfig.DomainConfigs["+ i +"].ParentId");
+				domainConfig.ConfigId = _ctx.StringValue("DescribeCdnDomainStagingConfig.DomainConfigs["+ i +"].ConfigId");
+				domainConfig.FunctionName = _ctx.StringValue("DescribeCdnDomainStagingConfig.DomainConfigs["+ i +"].FunctionName");
 
 				List<DescribeCdnDomainStagingConfigResponse.DescribeCdnDomainStagingConfig_DomainConfig.DescribeCdnDomainStagingConfig_FunctionArg> domainConfig_functionArgs = new List<DescribeCdnDomainStagingConfigResponse.DescribeCdnDomainStagingConfig_DomainConfig.DescribeCdnDomainStagingConfig_FunctionArg>();
 				for (int j = 0; j < _ctx.Length("DescribeCdnDomainStagingConfig.DomainConfigs["+ i +"].FunctionArgs.Length"); j++) {

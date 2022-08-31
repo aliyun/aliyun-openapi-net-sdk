@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -56,23 +56,83 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeCdnUserResourcePackage_ResourcePackageInfo
 		{
 
+			private string endTime;
+
+			private string status;
+
+			private string displayName;
+
+			private string startTime;
+
+			private string commodityCode;
+
 			private string currCapacity;
 
 			private string initCapacity;
 
-			private string commodityCode;
-
-			private string displayName;
+			private string instanceId;
 
 			private string templateName;
 
-			private string instanceId;
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
 
-			private string status;
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
 
-			private string startTime;
+			public string DisplayName
+			{
+				get
+				{
+					return displayName;
+				}
+				set	
+				{
+					displayName = value;
+				}
+			}
 
-			private string endTime;
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			public string CommodityCode
+			{
+				get
+				{
+					return commodityCode;
+				}
+				set	
+				{
+					commodityCode = value;
+				}
+			}
 
 			public string CurrCapacity
 			{
@@ -98,42 +158,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string CommodityCode
-			{
-				get
-				{
-					return commodityCode;
-				}
-				set	
-				{
-					commodityCode = value;
-				}
-			}
-
-			public string DisplayName
-			{
-				get
-				{
-					return displayName;
-				}
-				set	
-				{
-					displayName = value;
-				}
-			}
-
-			public string TemplateName
-			{
-				get
-				{
-					return templateName;
-				}
-				set	
-				{
-					templateName = value;
-				}
-			}
-
 			public string InstanceId
 			{
 				get
@@ -146,39 +170,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string Status
+			public string TemplateName
 			{
 				get
 				{
-					return status;
+					return templateName;
 				}
 				set	
 				{
-					status = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
+					templateName = value;
 				}
 			}
 		}

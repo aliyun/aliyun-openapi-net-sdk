@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,41 +25,29 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeDomainMax95BpsDataResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string domainName;
+		private string endTime;
 
 		private string startTime;
 
-		private string endTime;
-
-		private string max95Bps;
+		private string requestId;
 
 		private string domesticMax95Bps;
 
 		private string overseasMax95Bps;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string max95Bps;
 
-		public string DomainName
+		private string domainName;
+
+		public string EndTime
 		{
 			get
 			{
-				return domainName;
+				return endTime;
 			}
 			set	
 			{
-				domainName = value;
+				endTime = value;
 			}
 		}
 
@@ -75,27 +63,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string EndTime
+		public string RequestId
 		{
 			get
 			{
-				return endTime;
+				return requestId;
 			}
 			set	
 			{
-				endTime = value;
-			}
-		}
-
-		public string Max95Bps
-		{
-			get
-			{
-				return max95Bps;
-			}
-			set	
-			{
-				max95Bps = value;
+				requestId = value;
 			}
 		}
 
@@ -120,6 +96,30 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				overseasMax95Bps = value;
+			}
+		}
+
+		public string Max95Bps
+		{
+			get
+			{
+				return max95Bps;
+			}
+			set	
+			{
+				max95Bps = value;
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
 			}
 		}
 	}

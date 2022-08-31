@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,25 +25,25 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeDomainMultiUsageDataResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string endTime;
 
 		private string startTime;
 
-		private string endTime;
+		private string requestId;
 
 		private List<DescribeDomainMultiUsageData_RequestDataModule> requestPerInterval;
 
 		private List<DescribeDomainMultiUsageData_TrafficDataModule> trafficPerInterval;
 
-		public string RequestId
+		public string EndTime
 		{
 			get
 			{
-				return requestId;
+				return endTime;
 			}
 			set	
 			{
-				requestId = value;
+				endTime = value;
 			}
 		}
 
@@ -59,15 +59,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string EndTime
+		public string RequestId
 		{
 			get
 			{
-				return endTime;
+				return requestId;
 			}
 			set	
 			{
-				endTime = value;
+				requestId = value;
 			}
 		}
 
@@ -98,13 +98,25 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeDomainMultiUsageData_RequestDataModule
 		{
 
+			private string type;
+
 			private string timeStamp;
 
 			private string domain;
 
 			private long? request;
 
-			private string type;
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
 
 			public string TimeStamp
 			{
@@ -141,6 +153,20 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 					request = value;
 				}
 			}
+		}
+
+		public class DescribeDomainMultiUsageData_TrafficDataModule
+		{
+
+			private string type;
+
+			private string domain;
+
+			private string timeStamp;
+
+			private string area;
+
+			private float? bps;
 
 			public string Type
 			{
@@ -151,32 +177,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					type = value;
-				}
-			}
-		}
-
-		public class DescribeDomainMultiUsageData_TrafficDataModule
-		{
-
-			private string timeStamp;
-
-			private string domain;
-
-			private float? bps;
-
-			private string type;
-
-			private string area;
-
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
 				}
 			}
 
@@ -192,27 +192,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public float? Bps
+			public string TimeStamp
 			{
 				get
 				{
-					return bps;
+					return timeStamp;
 				}
 				set	
 				{
-					bps = value;
-				}
-			}
-
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
+					timeStamp = value;
 				}
 			}
 
@@ -225,6 +213,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					area = value;
+				}
+			}
+
+			public float? Bps
+			{
+				get
+				{
+					return bps;
+				}
+				set	
+				{
+					bps = value;
 				}
 			}
 		}

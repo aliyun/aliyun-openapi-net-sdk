@@ -41,11 +41,24 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			Method = MethodType.POST;
         }
 
+		private string property;
+
 		private string domainName;
 
 		private long? ownerId;
 
-		private string property;
+		public string Property
+		{
+			get
+			{
+				return property;
+			}
+			set	
+			{
+				property = value;
+				DictionaryUtil.Add(QueryParameters, "Property", value);
+			}
+		}
 
 		public string DomainName
 		{
@@ -70,19 +83,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Property
-		{
-			get
-			{
-				return property;
-			}
-			set	
-			{
-				property = value;
-				DictionaryUtil.Add(QueryParameters, "Property", value);
 			}
 		}
 

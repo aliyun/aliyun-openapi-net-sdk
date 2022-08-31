@@ -39,24 +39,24 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			List<DescribeCdnUserDomainsByFuncResponse.DescribeCdnUserDomainsByFunc_PageData> describeCdnUserDomainsByFuncResponse_domains = new List<DescribeCdnUserDomainsByFuncResponse.DescribeCdnUserDomainsByFunc_PageData>();
 			for (int i = 0; i < _ctx.Length("DescribeCdnUserDomainsByFunc.Domains.Length"); i++) {
 				DescribeCdnUserDomainsByFuncResponse.DescribeCdnUserDomainsByFunc_PageData pageData = new DescribeCdnUserDomainsByFuncResponse.DescribeCdnUserDomainsByFunc_PageData();
-				pageData.DomainName = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].DomainName");
-				pageData.Cname = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Cname");
-				pageData.CdnType = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].CdnType");
-				pageData.DomainStatus = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].DomainStatus");
 				pageData.GmtCreated = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].GmtCreated");
-				pageData.GmtModified = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].GmtModified");
-				pageData.Description = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Description");
 				pageData.SslProtocol = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].SslProtocol");
+				pageData.Description = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Description");
 				pageData.ResourceGroupId = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].ResourceGroupId");
+				pageData.DomainStatus = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].DomainStatus");
+				pageData.Cname = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Cname");
+				pageData.GmtModified = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].GmtModified");
+				pageData.CdnType = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].CdnType");
+				pageData.DomainName = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].DomainName");
 
 				List<DescribeCdnUserDomainsByFuncResponse.DescribeCdnUserDomainsByFunc_PageData.DescribeCdnUserDomainsByFunc_Source> pageData_sources = new List<DescribeCdnUserDomainsByFuncResponse.DescribeCdnUserDomainsByFunc_PageData.DescribeCdnUserDomainsByFunc_Source>();
 				for (int j = 0; j < _ctx.Length("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources.Length"); j++) {
 					DescribeCdnUserDomainsByFuncResponse.DescribeCdnUserDomainsByFunc_PageData.DescribeCdnUserDomainsByFunc_Source source = new DescribeCdnUserDomainsByFuncResponse.DescribeCdnUserDomainsByFunc_PageData.DescribeCdnUserDomainsByFunc_Source();
 					source.Type = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources["+ j +"].Type");
-					source.Content = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources["+ j +"].Content");
-					source.Port = _ctx.IntegerValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources["+ j +"].Port");
-					source.Priority = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources["+ j +"].Priority");
 					source.Weight = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources["+ j +"].Weight");
+					source.Priority = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources["+ j +"].Priority");
+					source.Port = _ctx.IntegerValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources["+ j +"].Port");
+					source.Content = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources["+ j +"].Content");
 
 					pageData_sources.Add(source);
 				}

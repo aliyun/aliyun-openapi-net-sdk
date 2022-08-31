@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeUserCertificateExpireCountResponse describeUserCertificateExpireCountResponse = new DescribeUserCertificateExpireCountResponse();
 
 			describeUserCertificateExpireCountResponse.HttpResponse = _ctx.HttpResponse;
-			describeUserCertificateExpireCountResponse.RequestId = _ctx.StringValue("DescribeUserCertificateExpireCount.RequestId");
 			describeUserCertificateExpireCountResponse.ExpireWithin30DaysCount = _ctx.IntegerValue("DescribeUserCertificateExpireCount.ExpireWithin30DaysCount");
+			describeUserCertificateExpireCountResponse.RequestId = _ctx.StringValue("DescribeUserCertificateExpireCount.RequestId");
 			describeUserCertificateExpireCountResponse.ExpiredCount = _ctx.IntegerValue("DescribeUserCertificateExpireCount.ExpiredCount");
         
 			return describeUserCertificateExpireCountResponse;

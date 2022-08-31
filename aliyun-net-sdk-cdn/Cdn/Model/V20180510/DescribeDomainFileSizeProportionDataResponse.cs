@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,17 +25,41 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeDomainFileSizeProportionDataResponse : AcsResponse
 	{
 
+		private string endTime;
+
+		private string startTime;
+
 		private string requestId;
 
 		private string domainName;
 
 		private string dataInterval;
 
-		private string startTime;
-
-		private string endTime;
-
 		private List<DescribeDomainFileSizeProportionData_UsageData> fileSizeProportionDataInterval;
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -70,30 +94,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				dataInterval = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
 			}
 		}
 
@@ -143,21 +143,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			public class DescribeDomainFileSizeProportionData_FileSizeProportionData
 			{
 
-				private string fileSize;
-
 				private string proportion;
 
-				public string FileSize
-				{
-					get
-					{
-						return fileSize;
-					}
-					set	
-					{
-						fileSize = value;
-					}
-				}
+				private string fileSize;
 
 				public string Proportion
 				{
@@ -168,6 +156,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 					set	
 					{
 						proportion = value;
+					}
+				}
+
+				public string FileSize
+				{
+					get
+					{
+						return fileSize;
+					}
+					set	
+					{
+						fileSize = value;
 					}
 				}
 			}

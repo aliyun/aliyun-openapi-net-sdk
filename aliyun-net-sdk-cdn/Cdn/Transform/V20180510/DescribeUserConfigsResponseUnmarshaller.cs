@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeUserConfigsResponse.DescribeUserConfigs_Configs configs = new DescribeUserConfigsResponse.DescribeUserConfigs_Configs();
 
 			DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_OssLogConfig ossLogConfig = new DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_OssLogConfig();
+			ossLogConfig.Prefix = _ctx.StringValue("DescribeUserConfigs.Configs.OssLogConfig.Prefix");
 			ossLogConfig.Enable = _ctx.StringValue("DescribeUserConfigs.Configs.OssLogConfig.Enable");
 			ossLogConfig.Bucket = _ctx.StringValue("DescribeUserConfigs.Configs.OssLogConfig.Bucket");
-			ossLogConfig.Prefix = _ctx.StringValue("DescribeUserConfigs.Configs.OssLogConfig.Prefix");
 			configs.OssLogConfig = ossLogConfig;
 
 			DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_WafConfig wafConfig = new DescribeUserConfigsResponse.DescribeUserConfigs_Configs.DescribeUserConfigs_WafConfig();

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -56,10 +56,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class ListFCTrigger_FCTrigger
 		{
 
-			private string eventMetaName;
-
-			private string eventMetaVersion;
-
 			private string triggerARN;
 
 			private string roleARN;
@@ -68,29 +64,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 			private string notes;
 
-			public string EventMetaName
-			{
-				get
-				{
-					return eventMetaName;
-				}
-				set	
-				{
-					eventMetaName = value;
-				}
-			}
+			private string eventMetaName;
 
-			public string EventMetaVersion
-			{
-				get
-				{
-					return eventMetaVersion;
-				}
-				set	
-				{
-					eventMetaVersion = value;
-				}
-			}
+			private string eventMetaVersion;
 
 			public string TriggerARN
 			{
@@ -137,6 +113,30 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					notes = value;
+				}
+			}
+
+			public string EventMetaName
+			{
+				get
+				{
+					return eventMetaName;
+				}
+				set	
+				{
+					eventMetaName = value;
+				}
+			}
+
+			public string EventMetaVersion
+			{
+				get
+				{
+					return eventMetaVersion;
+				}
+				set	
+				{
+					eventMetaVersion = value;
 				}
 			}
 		}

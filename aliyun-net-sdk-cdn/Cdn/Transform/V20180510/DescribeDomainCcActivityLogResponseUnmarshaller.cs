@@ -31,20 +31,20 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeDomainCcActivityLogResponse describeDomainCcActivityLogResponse = new DescribeDomainCcActivityLogResponse();
 
 			describeDomainCcActivityLogResponse.HttpResponse = _ctx.HttpResponse;
-			describeDomainCcActivityLogResponse.RequestId = _ctx.StringValue("DescribeDomainCcActivityLog.RequestId");
 			describeDomainCcActivityLogResponse.PageIndex = _ctx.LongValue("DescribeDomainCcActivityLog.PageIndex");
+			describeDomainCcActivityLogResponse.RequestId = _ctx.StringValue("DescribeDomainCcActivityLog.RequestId");
 			describeDomainCcActivityLogResponse.PageSize = _ctx.LongValue("DescribeDomainCcActivityLog.PageSize");
 			describeDomainCcActivityLogResponse.Total = _ctx.LongValue("DescribeDomainCcActivityLog.Total");
 
 			List<DescribeDomainCcActivityLogResponse.DescribeDomainCcActivityLog_LogInfo> describeDomainCcActivityLogResponse_activityLog = new List<DescribeDomainCcActivityLogResponse.DescribeDomainCcActivityLog_LogInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainCcActivityLog.ActivityLog.Length"); i++) {
 				DescribeDomainCcActivityLogResponse.DescribeDomainCcActivityLog_LogInfo logInfo = new DescribeDomainCcActivityLogResponse.DescribeDomainCcActivityLog_LogInfo();
-				logInfo.TimeStamp = _ctx.StringValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].TimeStamp");
 				logInfo._Value = _ctx.StringValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].Value");
-				logInfo.TriggerObject = _ctx.StringValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].TriggerObject");
-				logInfo.DomainName = _ctx.StringValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].DomainName");
 				logInfo.Ttl = _ctx.LongValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].Ttl");
 				logInfo.Action = _ctx.StringValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].Action");
+				logInfo.TriggerObject = _ctx.StringValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].TriggerObject");
+				logInfo.TimeStamp = _ctx.StringValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].TimeStamp");
+				logInfo.DomainName = _ctx.StringValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].DomainName");
 				logInfo.RuleName = _ctx.StringValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].RuleName");
 
 				describeDomainCcActivityLogResponse_activityLog.Add(logInfo);

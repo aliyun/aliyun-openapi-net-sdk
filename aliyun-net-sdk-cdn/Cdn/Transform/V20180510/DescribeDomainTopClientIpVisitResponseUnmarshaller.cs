@@ -38,8 +38,8 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 				DescribeDomainTopClientIpVisitResponse.DescribeDomainTopClientIpVisit_ClientIp clientIp = new DescribeDomainTopClientIpVisitResponse.DescribeDomainTopClientIpVisit_ClientIp();
 				clientIp.Rank = _ctx.IntegerValue("DescribeDomainTopClientIpVisit.ClientIpList["+ i +"].Rank");
 				clientIp.ClientIp = _ctx.StringValue("DescribeDomainTopClientIpVisit.ClientIpList["+ i +"].ClientIp");
-				clientIp.Traffic = _ctx.LongValue("DescribeDomainTopClientIpVisit.ClientIpList["+ i +"].Traffic");
 				clientIp.Acc = _ctx.LongValue("DescribeDomainTopClientIpVisit.ClientIpList["+ i +"].Acc");
+				clientIp.Traffic = _ctx.LongValue("DescribeDomainTopClientIpVisit.ClientIpList["+ i +"].Traffic");
 
 				describeDomainTopClientIpVisitResponse_clientIpList.Add(clientIp);
 			}

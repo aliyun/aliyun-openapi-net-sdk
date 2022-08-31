@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -56,61 +56,37 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeDomainDetailDataByLayer_DataModule
 		{
 
-			private string timeStamp;
-
-			private string domainName;
-
-			private float? bps;
+			private long? traf;
 
 			private float? qps;
 
-			private long? traf;
+			private float? ipv6Qps;
+
+			private float? ipv6Bps;
 
 			private long? acc;
 
 			private long? ipv6Traf;
 
-			private float? ipv6Bps;
-
 			private long? ipv6Acc;
 
-			private float? ipv6Qps;
+			private string timeStamp;
 
 			private string httpCode;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private float? bps;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+			private string domainName;
 
-			public float? Bps
+			public long? Traf
 			{
 				get
 				{
-					return bps;
+					return traf;
 				}
 				set	
 				{
-					bps = value;
+					traf = value;
 				}
 			}
 
@@ -126,15 +102,27 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public long? Traf
+			public float? Ipv6Qps
 			{
 				get
 				{
-					return traf;
+					return ipv6Qps;
 				}
 				set	
 				{
-					traf = value;
+					ipv6Qps = value;
+				}
+			}
+
+			public float? Ipv6Bps
+			{
+				get
+				{
+					return ipv6Bps;
+				}
+				set	
+				{
+					ipv6Bps = value;
 				}
 			}
 
@@ -162,18 +150,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public float? Ipv6Bps
-			{
-				get
-				{
-					return ipv6Bps;
-				}
-				set	
-				{
-					ipv6Bps = value;
-				}
-			}
-
 			public long? Ipv6Acc
 			{
 				get
@@ -186,15 +162,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public float? Ipv6Qps
+			public string TimeStamp
 			{
 				get
 				{
-					return ipv6Qps;
+					return timeStamp;
 				}
 				set	
 				{
-					ipv6Qps = value;
+					timeStamp = value;
 				}
 			}
 
@@ -207,6 +183,30 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					httpCode = value;
+				}
+			}
+
+			public float? Bps
+			{
+				get
+				{
+					return bps;
+				}
+				set	
+				{
+					bps = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 		}

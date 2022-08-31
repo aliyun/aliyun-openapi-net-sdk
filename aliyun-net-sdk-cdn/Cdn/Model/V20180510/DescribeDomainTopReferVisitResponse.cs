@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,13 +25,25 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeDomainTopReferVisitResponse : AcsResponse
 	{
 
+		private string startTime;
+
 		private string requestId;
 
 		private string domainName;
 
-		private string startTime;
-
 		private List<DescribeDomainTopReferVisit_ReferList> topReferList;
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -57,18 +69,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
 		public List<DescribeDomainTopReferVisit_ReferList> TopReferList
 		{
 			get
@@ -84,51 +84,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeDomainTopReferVisit_ReferList
 		{
 
-			private string referDetail;
-
-			private string visitData;
-
-			private float? visitProportion;
-
 			private string flow;
 
 			private float? flowProportion;
 
-			public string ReferDetail
-			{
-				get
-				{
-					return referDetail;
-				}
-				set	
-				{
-					referDetail = value;
-				}
-			}
+			private string visitData;
 
-			public string VisitData
-			{
-				get
-				{
-					return visitData;
-				}
-				set	
-				{
-					visitData = value;
-				}
-			}
+			private string referDetail;
 
-			public float? VisitProportion
-			{
-				get
-				{
-					return visitProportion;
-				}
-				set	
-				{
-					visitProportion = value;
-				}
-			}
+			private float? visitProportion;
 
 			public string Flow
 			{
@@ -151,6 +115,42 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					flowProportion = value;
+				}
+			}
+
+			public string VisitData
+			{
+				get
+				{
+					return visitData;
+				}
+				set	
+				{
+					visitData = value;
+				}
+			}
+
+			public string ReferDetail
+			{
+				get
+				{
+					return referDetail;
+				}
+				set	
+				{
+					referDetail = value;
+				}
+			}
+
+			public float? VisitProportion
+			{
+				get
+				{
+					return visitProportion;
+				}
+				set	
+				{
+					visitProportion = value;
 				}
 			}
 		}

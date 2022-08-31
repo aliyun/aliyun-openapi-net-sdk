@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -98,21 +98,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeCdnDeletedDomains_PageData
 		{
 
-			private string domainName;
-
 			private string gmtModified;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+			private string domainName;
 
 			public string GmtModified
 			{
@@ -123,6 +111,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					gmtModified = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 		}

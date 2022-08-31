@@ -38,17 +38,17 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 				DescribeEsExceptionDataResponse.DescribeEsExceptionData_Content content = new DescribeEsExceptionDataResponse.DescribeEsExceptionData_Content();
 				content.Name = _ctx.StringValue("DescribeEsExceptionData.Contents["+ i +"].Name");
 
-				List<string> content_columns = new List<string>();
-				for (int j = 0; j < _ctx.Length("DescribeEsExceptionData.Contents["+ i +"].Columns.Length"); j++) {
-					content_columns.Add(_ctx.StringValue("DescribeEsExceptionData.Contents["+ i +"].Columns["+ j +"]"));
-				}
-				content.Columns = content_columns;
-
 				List<string> content_points = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeEsExceptionData.Contents["+ i +"].Points.Length"); j++) {
 					content_points.Add(_ctx.StringValue("DescribeEsExceptionData.Contents["+ i +"].Points["+ j +"]"));
 				}
 				content.Points = content_points;
+
+				List<string> content_columns = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeEsExceptionData.Contents["+ i +"].Columns.Length"); j++) {
+					content_columns.Add(_ctx.StringValue("DescribeEsExceptionData.Contents["+ i +"].Columns["+ j +"]"));
+				}
+				content.Columns = content_columns;
 
 				describeEsExceptionDataResponse_contents.Add(content);
 			}

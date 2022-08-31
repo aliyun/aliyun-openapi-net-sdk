@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,9 +25,23 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeCdnDomainStagingConfigResponse : AcsResponse
 	{
 
+		private string domainName;
+
 		private string requestId;
 
 		private List<DescribeCdnDomainStagingConfig_DomainConfig> domainConfigs;
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -56,23 +70,37 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeCdnDomainStagingConfig_DomainConfig
 		{
 
-			private string functionName;
+			private string status;
+
+			private string parentId;
 
 			private string configId;
 
-			private string status;
+			private string functionName;
 
 			private List<DescribeCdnDomainStagingConfig_FunctionArg> functionArgs;
 
-			public string FunctionName
+			public string Status
 			{
 				get
 				{
-					return functionName;
+					return status;
 				}
 				set	
 				{
-					functionName = value;
+					status = value;
+				}
+			}
+
+			public string ParentId
+			{
+				get
+				{
+					return parentId;
+				}
+				set	
+				{
+					parentId = value;
 				}
 			}
 
@@ -88,15 +116,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string Status
+			public string FunctionName
 			{
 				get
 				{
-					return status;
+					return functionName;
 				}
 				set	
 				{
-					status = value;
+					functionName = value;
 				}
 			}
 

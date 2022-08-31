@@ -36,13 +36,13 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			List<DescribeCertificateInfoByIDResponse.DescribeCertificateInfoByID_CertInfo> describeCertificateInfoByIDResponse_certInfos = new List<DescribeCertificateInfoByIDResponse.DescribeCertificateInfoByID_CertInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeCertificateInfoByID.CertInfos.Length"); i++) {
 				DescribeCertificateInfoByIDResponse.DescribeCertificateInfoByID_CertInfo certInfo = new DescribeCertificateInfoByIDResponse.DescribeCertificateInfoByID_CertInfo();
-				certInfo.CertId = _ctx.StringValue("DescribeCertificateInfoByID.CertInfos["+ i +"].CertId");
-				certInfo.CertName = _ctx.StringValue("DescribeCertificateInfoByID.CertInfos["+ i +"].CertName");
-				certInfo.CreateTime = _ctx.StringValue("DescribeCertificateInfoByID.CertInfos["+ i +"].CreateTime");
-				certInfo.HttpsCrt = _ctx.StringValue("DescribeCertificateInfoByID.CertInfos["+ i +"].HttpsCrt");
-				certInfo.CertType = _ctx.StringValue("DescribeCertificateInfoByID.CertInfos["+ i +"].CertType");
 				certInfo.CertExpireTime = _ctx.StringValue("DescribeCertificateInfoByID.CertInfos["+ i +"].CertExpireTime");
+				certInfo.CreateTime = _ctx.StringValue("DescribeCertificateInfoByID.CertInfos["+ i +"].CreateTime");
+				certInfo.CertType = _ctx.StringValue("DescribeCertificateInfoByID.CertInfos["+ i +"].CertType");
+				certInfo.CertName = _ctx.StringValue("DescribeCertificateInfoByID.CertInfos["+ i +"].CertName");
+				certInfo.CertId = _ctx.StringValue("DescribeCertificateInfoByID.CertInfos["+ i +"].CertId");
 				certInfo.DomainList = _ctx.StringValue("DescribeCertificateInfoByID.CertInfos["+ i +"].DomainList");
+				certInfo.HttpsCrt = _ctx.StringValue("DescribeCertificateInfoByID.CertInfos["+ i +"].HttpsCrt");
 
 				describeCertificateInfoByIDResponse_certInfos.Add(certInfo);
 			}

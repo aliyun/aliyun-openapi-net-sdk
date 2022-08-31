@@ -31,17 +31,17 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeDomainAverageResponseTimeResponse describeDomainAverageResponseTimeResponse = new DescribeDomainAverageResponseTimeResponse();
 
 			describeDomainAverageResponseTimeResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainAverageResponseTimeResponse.EndTime = _ctx.StringValue("DescribeDomainAverageResponseTime.EndTime");
+			describeDomainAverageResponseTimeResponse.StartTime = _ctx.StringValue("DescribeDomainAverageResponseTime.StartTime");
 			describeDomainAverageResponseTimeResponse.RequestId = _ctx.StringValue("DescribeDomainAverageResponseTime.RequestId");
 			describeDomainAverageResponseTimeResponse.DomainName = _ctx.StringValue("DescribeDomainAverageResponseTime.DomainName");
-			describeDomainAverageResponseTimeResponse.StartTime = _ctx.StringValue("DescribeDomainAverageResponseTime.StartTime");
-			describeDomainAverageResponseTimeResponse.EndTime = _ctx.StringValue("DescribeDomainAverageResponseTime.EndTime");
 			describeDomainAverageResponseTimeResponse.DataInterval = _ctx.StringValue("DescribeDomainAverageResponseTime.DataInterval");
 
 			List<DescribeDomainAverageResponseTimeResponse.DescribeDomainAverageResponseTime_DataModule> describeDomainAverageResponseTimeResponse_avgRTPerInterval = new List<DescribeDomainAverageResponseTimeResponse.DescribeDomainAverageResponseTime_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainAverageResponseTime.AvgRTPerInterval.Length"); i++) {
 				DescribeDomainAverageResponseTimeResponse.DescribeDomainAverageResponseTime_DataModule dataModule = new DescribeDomainAverageResponseTimeResponse.DescribeDomainAverageResponseTime_DataModule();
-				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainAverageResponseTime.AvgRTPerInterval["+ i +"].TimeStamp");
 				dataModule._Value = _ctx.StringValue("DescribeDomainAverageResponseTime.AvgRTPerInterval["+ i +"].Value");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainAverageResponseTime.AvgRTPerInterval["+ i +"].TimeStamp");
 
 				describeDomainAverageResponseTimeResponse_avgRTPerInterval.Add(dataModule);
 			}

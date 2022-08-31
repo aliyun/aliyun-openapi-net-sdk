@@ -31,17 +31,17 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeDomainSrcQpsDataResponse describeDomainSrcQpsDataResponse = new DescribeDomainSrcQpsDataResponse();
 
 			describeDomainSrcQpsDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainSrcQpsDataResponse.EndTime = _ctx.StringValue("DescribeDomainSrcQpsData.EndTime");
+			describeDomainSrcQpsDataResponse.StartTime = _ctx.StringValue("DescribeDomainSrcQpsData.StartTime");
 			describeDomainSrcQpsDataResponse.RequestId = _ctx.StringValue("DescribeDomainSrcQpsData.RequestId");
 			describeDomainSrcQpsDataResponse.DomainName = _ctx.StringValue("DescribeDomainSrcQpsData.DomainName");
-			describeDomainSrcQpsDataResponse.StartTime = _ctx.StringValue("DescribeDomainSrcQpsData.StartTime");
-			describeDomainSrcQpsDataResponse.EndTime = _ctx.StringValue("DescribeDomainSrcQpsData.EndTime");
 			describeDomainSrcQpsDataResponse.DataInterval = _ctx.StringValue("DescribeDomainSrcQpsData.DataInterval");
 
 			List<DescribeDomainSrcQpsDataResponse.DescribeDomainSrcQpsData_DataModule> describeDomainSrcQpsDataResponse_srcQpsDataPerInterval = new List<DescribeDomainSrcQpsDataResponse.DescribeDomainSrcQpsData_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainSrcQpsData.SrcQpsDataPerInterval.Length"); i++) {
 				DescribeDomainSrcQpsDataResponse.DescribeDomainSrcQpsData_DataModule dataModule = new DescribeDomainSrcQpsDataResponse.DescribeDomainSrcQpsData_DataModule();
-				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainSrcQpsData.SrcQpsDataPerInterval["+ i +"].TimeStamp");
 				dataModule._Value = _ctx.StringValue("DescribeDomainSrcQpsData.SrcQpsDataPerInterval["+ i +"].Value");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainSrcQpsData.SrcQpsDataPerInterval["+ i +"].TimeStamp");
 
 				describeDomainSrcQpsDataResponse_srcQpsDataPerInterval.Add(dataModule);
 			}

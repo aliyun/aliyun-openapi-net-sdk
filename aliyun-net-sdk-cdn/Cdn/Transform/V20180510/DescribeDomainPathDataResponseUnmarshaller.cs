@@ -31,21 +31,21 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeDomainPathDataResponse describeDomainPathDataResponse = new DescribeDomainPathDataResponse();
 
 			describeDomainPathDataResponse.HttpResponse = _ctx.HttpResponse;
-			describeDomainPathDataResponse.DomainName = _ctx.StringValue("DescribeDomainPathData.DomainName");
-			describeDomainPathDataResponse.StartTime = _ctx.StringValue("DescribeDomainPathData.StartTime");
 			describeDomainPathDataResponse.EndTime = _ctx.StringValue("DescribeDomainPathData.EndTime");
+			describeDomainPathDataResponse.StartTime = _ctx.StringValue("DescribeDomainPathData.StartTime");
 			describeDomainPathDataResponse.PageSize = _ctx.IntegerValue("DescribeDomainPathData.PageSize");
 			describeDomainPathDataResponse.PageNumber = _ctx.IntegerValue("DescribeDomainPathData.PageNumber");
-			describeDomainPathDataResponse.DataInterval = _ctx.StringValue("DescribeDomainPathData.DataInterval");
 			describeDomainPathDataResponse.TotalCount = _ctx.IntegerValue("DescribeDomainPathData.TotalCount");
+			describeDomainPathDataResponse.DomainName = _ctx.StringValue("DescribeDomainPathData.DomainName");
+			describeDomainPathDataResponse.DataInterval = _ctx.StringValue("DescribeDomainPathData.DataInterval");
 
 			List<DescribeDomainPathDataResponse.DescribeDomainPathData_UsageData> describeDomainPathDataResponse_pathDataPerInterval = new List<DescribeDomainPathDataResponse.DescribeDomainPathData_UsageData>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainPathData.PathDataPerInterval.Length"); i++) {
 				DescribeDomainPathDataResponse.DescribeDomainPathData_UsageData usageData = new DescribeDomainPathDataResponse.DescribeDomainPathData_UsageData();
-				usageData.Traffic = _ctx.IntegerValue("DescribeDomainPathData.PathDataPerInterval["+ i +"].Traffic");
-				usageData.Acc = _ctx.IntegerValue("DescribeDomainPathData.PathDataPerInterval["+ i +"].Acc");
 				usageData.Path = _ctx.StringValue("DescribeDomainPathData.PathDataPerInterval["+ i +"].Path");
 				usageData.Time = _ctx.StringValue("DescribeDomainPathData.PathDataPerInterval["+ i +"].Time");
+				usageData.Acc = _ctx.IntegerValue("DescribeDomainPathData.PathDataPerInterval["+ i +"].Acc");
+				usageData.Traffic = _ctx.IntegerValue("DescribeDomainPathData.PathDataPerInterval["+ i +"].Traffic");
 
 				describeDomainPathDataResponse_pathDataPerInterval.Add(usageData);
 			}

@@ -43,8 +43,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string startTime;
 
-		private string percent;
-
 		private string domainName;
 
 		private string endTime;
@@ -63,19 +61,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string Percent
-		{
-			get
-			{
-				return percent;
-			}
-			set	
-			{
-				percent = value;
-				DictionaryUtil.Add(QueryParameters, "Percent", value);
 			}
 		}
 

@@ -31,36 +31,36 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeDomainsUsageByDayResponse describeDomainsUsageByDayResponse = new DescribeDomainsUsageByDayResponse();
 
 			describeDomainsUsageByDayResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainsUsageByDayResponse.EndTime = _ctx.StringValue("DescribeDomainsUsageByDay.EndTime");
+			describeDomainsUsageByDayResponse.StartTime = _ctx.StringValue("DescribeDomainsUsageByDay.StartTime");
 			describeDomainsUsageByDayResponse.RequestId = _ctx.StringValue("DescribeDomainsUsageByDay.RequestId");
 			describeDomainsUsageByDayResponse.DomainName = _ctx.StringValue("DescribeDomainsUsageByDay.DomainName");
 			describeDomainsUsageByDayResponse.DataInterval = _ctx.StringValue("DescribeDomainsUsageByDay.DataInterval");
-			describeDomainsUsageByDayResponse.StartTime = _ctx.StringValue("DescribeDomainsUsageByDay.StartTime");
-			describeDomainsUsageByDayResponse.EndTime = _ctx.StringValue("DescribeDomainsUsageByDay.EndTime");
 
 			DescribeDomainsUsageByDayResponse.DescribeDomainsUsageByDay_UsageTotal usageTotal = new DescribeDomainsUsageByDayResponse.DescribeDomainsUsageByDay_UsageTotal();
-			usageTotal.BytesHitRate = _ctx.StringValue("DescribeDomainsUsageByDay.UsageTotal.BytesHitRate");
+			usageTotal.MaxSrcBpsTime = _ctx.StringValue("DescribeDomainsUsageByDay.UsageTotal.MaxSrcBpsTime");
 			usageTotal.RequestHitRate = _ctx.StringValue("DescribeDomainsUsageByDay.UsageTotal.RequestHitRate");
 			usageTotal.MaxBps = _ctx.StringValue("DescribeDomainsUsageByDay.UsageTotal.MaxBps");
+			usageTotal.TotalAccess = _ctx.StringValue("DescribeDomainsUsageByDay.UsageTotal.TotalAccess");
+			usageTotal.BytesHitRate = _ctx.StringValue("DescribeDomainsUsageByDay.UsageTotal.BytesHitRate");
+			usageTotal.TotalTraffic = _ctx.StringValue("DescribeDomainsUsageByDay.UsageTotal.TotalTraffic");
 			usageTotal.MaxBpsTime = _ctx.StringValue("DescribeDomainsUsageByDay.UsageTotal.MaxBpsTime");
 			usageTotal.MaxSrcBps = _ctx.StringValue("DescribeDomainsUsageByDay.UsageTotal.MaxSrcBps");
-			usageTotal.MaxSrcBpsTime = _ctx.StringValue("DescribeDomainsUsageByDay.UsageTotal.MaxSrcBpsTime");
-			usageTotal.TotalAccess = _ctx.StringValue("DescribeDomainsUsageByDay.UsageTotal.TotalAccess");
-			usageTotal.TotalTraffic = _ctx.StringValue("DescribeDomainsUsageByDay.UsageTotal.TotalTraffic");
 			describeDomainsUsageByDayResponse.UsageTotal = usageTotal;
 
 			List<DescribeDomainsUsageByDayResponse.DescribeDomainsUsageByDay_UsageByDay> describeDomainsUsageByDayResponse_usageByDays = new List<DescribeDomainsUsageByDayResponse.DescribeDomainsUsageByDay_UsageByDay>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainsUsageByDay.UsageByDays.Length"); i++) {
 				DescribeDomainsUsageByDayResponse.DescribeDomainsUsageByDay_UsageByDay usageByDay = new DescribeDomainsUsageByDayResponse.DescribeDomainsUsageByDay_UsageByDay();
-				usageByDay.TimeStamp = _ctx.StringValue("DescribeDomainsUsageByDay.UsageByDays["+ i +"].TimeStamp");
+				usageByDay.MaxSrcBpsTime = _ctx.StringValue("DescribeDomainsUsageByDay.UsageByDays["+ i +"].MaxSrcBpsTime");
 				usageByDay.Qps = _ctx.StringValue("DescribeDomainsUsageByDay.UsageByDays["+ i +"].Qps");
-				usageByDay.BytesHitRate = _ctx.StringValue("DescribeDomainsUsageByDay.UsageByDays["+ i +"].BytesHitRate");
 				usageByDay.RequestHitRate = _ctx.StringValue("DescribeDomainsUsageByDay.UsageByDays["+ i +"].RequestHitRate");
 				usageByDay.MaxBps = _ctx.StringValue("DescribeDomainsUsageByDay.UsageByDays["+ i +"].MaxBps");
-				usageByDay.MaxBpsTime = _ctx.StringValue("DescribeDomainsUsageByDay.UsageByDays["+ i +"].MaxBpsTime");
-				usageByDay.MaxSrcBps = _ctx.StringValue("DescribeDomainsUsageByDay.UsageByDays["+ i +"].MaxSrcBps");
-				usageByDay.MaxSrcBpsTime = _ctx.StringValue("DescribeDomainsUsageByDay.UsageByDays["+ i +"].MaxSrcBpsTime");
 				usageByDay.TotalAccess = _ctx.StringValue("DescribeDomainsUsageByDay.UsageByDays["+ i +"].TotalAccess");
+				usageByDay.TimeStamp = _ctx.StringValue("DescribeDomainsUsageByDay.UsageByDays["+ i +"].TimeStamp");
+				usageByDay.BytesHitRate = _ctx.StringValue("DescribeDomainsUsageByDay.UsageByDays["+ i +"].BytesHitRate");
 				usageByDay.TotalTraffic = _ctx.StringValue("DescribeDomainsUsageByDay.UsageByDays["+ i +"].TotalTraffic");
+				usageByDay.MaxSrcBps = _ctx.StringValue("DescribeDomainsUsageByDay.UsageByDays["+ i +"].MaxSrcBps");
+				usageByDay.MaxBpsTime = _ctx.StringValue("DescribeDomainsUsageByDay.UsageByDays["+ i +"].MaxBpsTime");
 
 				describeDomainsUsageByDayResponse_usageByDays.Add(usageByDay);
 			}

@@ -31,14 +31,14 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeDomainHttpCodeDataByLayerResponse describeDomainHttpCodeDataByLayerResponse = new DescribeDomainHttpCodeDataByLayerResponse();
 
 			describeDomainHttpCodeDataByLayerResponse.HttpResponse = _ctx.HttpResponse;
-			describeDomainHttpCodeDataByLayerResponse.RequestId = _ctx.StringValue("DescribeDomainHttpCodeDataByLayer.RequestId");
 			describeDomainHttpCodeDataByLayerResponse.DataInterval = _ctx.StringValue("DescribeDomainHttpCodeDataByLayer.DataInterval");
+			describeDomainHttpCodeDataByLayerResponse.RequestId = _ctx.StringValue("DescribeDomainHttpCodeDataByLayer.RequestId");
 
 			List<DescribeDomainHttpCodeDataByLayerResponse.DescribeDomainHttpCodeDataByLayer_DataModule> describeDomainHttpCodeDataByLayerResponse_httpCodeDataInterval = new List<DescribeDomainHttpCodeDataByLayerResponse.DescribeDomainHttpCodeDataByLayer_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainHttpCodeDataByLayer.HttpCodeDataInterval.Length"); i++) {
 				DescribeDomainHttpCodeDataByLayerResponse.DescribeDomainHttpCodeDataByLayer_DataModule dataModule = new DescribeDomainHttpCodeDataByLayerResponse.DescribeDomainHttpCodeDataByLayer_DataModule();
-				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainHttpCodeDataByLayer.HttpCodeDataInterval["+ i +"].TimeStamp");
 				dataModule._Value = _ctx.StringValue("DescribeDomainHttpCodeDataByLayer.HttpCodeDataInterval["+ i +"].Value");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainHttpCodeDataByLayer.HttpCodeDataInterval["+ i +"].TimeStamp");
 				dataModule.TotalValue = _ctx.StringValue("DescribeDomainHttpCodeDataByLayer.HttpCodeDataInterval["+ i +"].TotalValue");
 
 				describeDomainHttpCodeDataByLayerResponse_httpCodeDataInterval.Add(dataModule);

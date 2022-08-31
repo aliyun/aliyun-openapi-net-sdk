@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -60,9 +60,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 			private string clientIp;
 
-			private long? traffic;
-
 			private long? acc;
+
+			private long? traffic;
 
 			public int? Rank
 			{
@@ -88,18 +88,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public long? Traffic
-			{
-				get
-				{
-					return traffic;
-				}
-				set	
-				{
-					traffic = value;
-				}
-			}
-
 			public long? Acc
 			{
 				get
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					acc = value;
+				}
+			}
+
+			public long? Traffic
+			{
+				get
+				{
+					return traffic;
+				}
+				set	
+				{
+					traffic = value;
 				}
 			}
 		}

@@ -31,12 +31,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeCdnServiceResponse describeCdnServiceResponse = new DescribeCdnServiceResponse();
 
 			describeCdnServiceResponse.HttpResponse = _ctx.HttpResponse;
-			describeCdnServiceResponse.RequestId = _ctx.StringValue("DescribeCdnService.RequestId");
-			describeCdnServiceResponse.InstanceId = _ctx.StringValue("DescribeCdnService.InstanceId");
-			describeCdnServiceResponse.InternetChargeType = _ctx.StringValue("DescribeCdnService.InternetChargeType");
-			describeCdnServiceResponse.OpeningTime = _ctx.StringValue("DescribeCdnService.OpeningTime");
-			describeCdnServiceResponse.ChangingChargeType = _ctx.StringValue("DescribeCdnService.ChangingChargeType");
 			describeCdnServiceResponse.ChangingAffectTime = _ctx.StringValue("DescribeCdnService.ChangingAffectTime");
+			describeCdnServiceResponse.RequestId = _ctx.StringValue("DescribeCdnService.RequestId");
+			describeCdnServiceResponse.ChangingChargeType = _ctx.StringValue("DescribeCdnService.ChangingChargeType");
+			describeCdnServiceResponse.OpeningTime = _ctx.StringValue("DescribeCdnService.OpeningTime");
+			describeCdnServiceResponse.InternetChargeType = _ctx.StringValue("DescribeCdnService.InternetChargeType");
+			describeCdnServiceResponse.InstanceId = _ctx.StringValue("DescribeCdnService.InstanceId");
 
 			List<DescribeCdnServiceResponse.DescribeCdnService_LockReason> describeCdnServiceResponse_operationLocks = new List<DescribeCdnServiceResponse.DescribeCdnService_LockReason>();
 			for (int i = 0; i < _ctx.Length("DescribeCdnService.OperationLocks.Length"); i++) {

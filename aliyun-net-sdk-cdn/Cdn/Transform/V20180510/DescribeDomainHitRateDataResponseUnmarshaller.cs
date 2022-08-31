@@ -31,17 +31,17 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeDomainHitRateDataResponse describeDomainHitRateDataResponse = new DescribeDomainHitRateDataResponse();
 
 			describeDomainHitRateDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainHitRateDataResponse.EndTime = _ctx.StringValue("DescribeDomainHitRateData.EndTime");
+			describeDomainHitRateDataResponse.StartTime = _ctx.StringValue("DescribeDomainHitRateData.StartTime");
 			describeDomainHitRateDataResponse.RequestId = _ctx.StringValue("DescribeDomainHitRateData.RequestId");
 			describeDomainHitRateDataResponse.DomainName = _ctx.StringValue("DescribeDomainHitRateData.DomainName");
-			describeDomainHitRateDataResponse.StartTime = _ctx.StringValue("DescribeDomainHitRateData.StartTime");
-			describeDomainHitRateDataResponse.EndTime = _ctx.StringValue("DescribeDomainHitRateData.EndTime");
 			describeDomainHitRateDataResponse.DataInterval = _ctx.StringValue("DescribeDomainHitRateData.DataInterval");
 
 			List<DescribeDomainHitRateDataResponse.DescribeDomainHitRateData_DataModule> describeDomainHitRateDataResponse_hitRateInterval = new List<DescribeDomainHitRateDataResponse.DescribeDomainHitRateData_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainHitRateData.HitRateInterval.Length"); i++) {
 				DescribeDomainHitRateDataResponse.DescribeDomainHitRateData_DataModule dataModule = new DescribeDomainHitRateDataResponse.DescribeDomainHitRateData_DataModule();
-				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainHitRateData.HitRateInterval["+ i +"].TimeStamp");
 				dataModule._Value = _ctx.StringValue("DescribeDomainHitRateData.HitRateInterval["+ i +"].Value");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainHitRateData.HitRateInterval["+ i +"].TimeStamp");
 				dataModule.HttpsValue = _ctx.StringValue("DescribeDomainHitRateData.HitRateInterval["+ i +"].HttpsValue");
 
 				describeDomainHitRateDataResponse_hitRateInterval.Add(dataModule);

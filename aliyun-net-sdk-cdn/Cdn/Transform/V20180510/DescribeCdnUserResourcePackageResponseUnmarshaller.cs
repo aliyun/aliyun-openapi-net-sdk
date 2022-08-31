@@ -36,15 +36,15 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			List<DescribeCdnUserResourcePackageResponse.DescribeCdnUserResourcePackage_ResourcePackageInfo> describeCdnUserResourcePackageResponse_resourcePackageInfos = new List<DescribeCdnUserResourcePackageResponse.DescribeCdnUserResourcePackage_ResourcePackageInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeCdnUserResourcePackage.ResourcePackageInfos.Length"); i++) {
 				DescribeCdnUserResourcePackageResponse.DescribeCdnUserResourcePackage_ResourcePackageInfo resourcePackageInfo = new DescribeCdnUserResourcePackageResponse.DescribeCdnUserResourcePackage_ResourcePackageInfo();
+				resourcePackageInfo.EndTime = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].EndTime");
+				resourcePackageInfo.Status = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].Status");
+				resourcePackageInfo.DisplayName = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].DisplayName");
+				resourcePackageInfo.StartTime = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].StartTime");
+				resourcePackageInfo.CommodityCode = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].CommodityCode");
 				resourcePackageInfo.CurrCapacity = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].CurrCapacity");
 				resourcePackageInfo.InitCapacity = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].InitCapacity");
-				resourcePackageInfo.CommodityCode = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].CommodityCode");
-				resourcePackageInfo.DisplayName = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].DisplayName");
-				resourcePackageInfo.TemplateName = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].TemplateName");
 				resourcePackageInfo.InstanceId = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].InstanceId");
-				resourcePackageInfo.Status = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].Status");
-				resourcePackageInfo.StartTime = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].StartTime");
-				resourcePackageInfo.EndTime = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].EndTime");
+				resourcePackageInfo.TemplateName = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].TemplateName");
 
 				describeCdnUserResourcePackageResponse_resourcePackageInfos.Add(resourcePackageInfo);
 			}

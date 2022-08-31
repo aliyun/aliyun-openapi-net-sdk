@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			CreateUsageDetailDataExportTaskResponse createUsageDetailDataExportTaskResponse = new CreateUsageDetailDataExportTaskResponse();
 
 			createUsageDetailDataExportTaskResponse.HttpResponse = _ctx.HttpResponse;
-			createUsageDetailDataExportTaskResponse.RequestId = _ctx.StringValue("CreateUsageDetailDataExportTask.RequestId");
-			createUsageDetailDataExportTaskResponse.StartTime = _ctx.StringValue("CreateUsageDetailDataExportTask.StartTime");
 			createUsageDetailDataExportTaskResponse.EndTime = _ctx.StringValue("CreateUsageDetailDataExportTask.EndTime");
+			createUsageDetailDataExportTaskResponse.StartTime = _ctx.StringValue("CreateUsageDetailDataExportTask.StartTime");
+			createUsageDetailDataExportTaskResponse.RequestId = _ctx.StringValue("CreateUsageDetailDataExportTask.RequestId");
 			createUsageDetailDataExportTaskResponse.TaskId = _ctx.StringValue("CreateUsageDetailDataExportTask.TaskId");
         
 			return createUsageDetailDataExportTaskResponse;

@@ -36,8 +36,8 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			List<ListRealtimeLogDeliveryDomainsResponse.ListRealtimeLogDeliveryDomains_Domains> listRealtimeLogDeliveryDomainsResponse_content = new List<ListRealtimeLogDeliveryDomainsResponse.ListRealtimeLogDeliveryDomains_Domains>();
 			for (int i = 0; i < _ctx.Length("ListRealtimeLogDeliveryDomains.Content.Length"); i++) {
 				ListRealtimeLogDeliveryDomainsResponse.ListRealtimeLogDeliveryDomains_Domains domains = new ListRealtimeLogDeliveryDomainsResponse.ListRealtimeLogDeliveryDomains_Domains();
-				domains.DomainName = _ctx.StringValue("ListRealtimeLogDeliveryDomains.Content["+ i +"].DomainName");
 				domains.Status = _ctx.StringValue("ListRealtimeLogDeliveryDomains.Content["+ i +"].Status");
+				domains.DomainName = _ctx.StringValue("ListRealtimeLogDeliveryDomains.Content["+ i +"].DomainName");
 
 				listRealtimeLogDeliveryDomainsResponse_content.Add(domains);
 			}

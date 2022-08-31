@@ -39,13 +39,13 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			List<DescribeRefreshTasksResponse.DescribeRefreshTasks_CDNTask> describeRefreshTasksResponse_tasks = new List<DescribeRefreshTasksResponse.DescribeRefreshTasks_CDNTask>();
 			for (int i = 0; i < _ctx.Length("DescribeRefreshTasks.Tasks.Length"); i++) {
 				DescribeRefreshTasksResponse.DescribeRefreshTasks_CDNTask cDNTask = new DescribeRefreshTasksResponse.DescribeRefreshTasks_CDNTask();
-				cDNTask.TaskId = _ctx.StringValue("DescribeRefreshTasks.Tasks["+ i +"].TaskId");
-				cDNTask.ObjectPath = _ctx.StringValue("DescribeRefreshTasks.Tasks["+ i +"].ObjectPath");
-				cDNTask.Process = _ctx.StringValue("DescribeRefreshTasks.Tasks["+ i +"].Process");
 				cDNTask.Status = _ctx.StringValue("DescribeRefreshTasks.Tasks["+ i +"].Status");
 				cDNTask.CreationTime = _ctx.StringValue("DescribeRefreshTasks.Tasks["+ i +"].CreationTime");
-				cDNTask.Description = _ctx.StringValue("DescribeRefreshTasks.Tasks["+ i +"].Description");
 				cDNTask.ObjectType = _ctx.StringValue("DescribeRefreshTasks.Tasks["+ i +"].ObjectType");
+				cDNTask.Process = _ctx.StringValue("DescribeRefreshTasks.Tasks["+ i +"].Process");
+				cDNTask.Description = _ctx.StringValue("DescribeRefreshTasks.Tasks["+ i +"].Description");
+				cDNTask.ObjectPath = _ctx.StringValue("DescribeRefreshTasks.Tasks["+ i +"].ObjectPath");
+				cDNTask.TaskId = _ctx.StringValue("DescribeRefreshTasks.Tasks["+ i +"].TaskId");
 
 				describeRefreshTasksResponse_tasks.Add(cDNTask);
 			}

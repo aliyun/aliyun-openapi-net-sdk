@@ -31,22 +31,22 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeTopDomainsByFlowResponse describeTopDomainsByFlowResponse = new DescribeTopDomainsByFlowResponse();
 
 			describeTopDomainsByFlowResponse.HttpResponse = _ctx.HttpResponse;
-			describeTopDomainsByFlowResponse.RequestId = _ctx.StringValue("DescribeTopDomainsByFlow.RequestId");
-			describeTopDomainsByFlowResponse.StartTime = _ctx.StringValue("DescribeTopDomainsByFlow.StartTime");
-			describeTopDomainsByFlowResponse.EndTime = _ctx.StringValue("DescribeTopDomainsByFlow.EndTime");
-			describeTopDomainsByFlowResponse.DomainCount = _ctx.LongValue("DescribeTopDomainsByFlow.DomainCount");
 			describeTopDomainsByFlowResponse.DomainOnlineCount = _ctx.LongValue("DescribeTopDomainsByFlow.DomainOnlineCount");
+			describeTopDomainsByFlowResponse.EndTime = _ctx.StringValue("DescribeTopDomainsByFlow.EndTime");
+			describeTopDomainsByFlowResponse.StartTime = _ctx.StringValue("DescribeTopDomainsByFlow.StartTime");
+			describeTopDomainsByFlowResponse.RequestId = _ctx.StringValue("DescribeTopDomainsByFlow.RequestId");
+			describeTopDomainsByFlowResponse.DomainCount = _ctx.LongValue("DescribeTopDomainsByFlow.DomainCount");
 
 			List<DescribeTopDomainsByFlowResponse.DescribeTopDomainsByFlow_TopDomain> describeTopDomainsByFlowResponse_topDomains = new List<DescribeTopDomainsByFlowResponse.DescribeTopDomainsByFlow_TopDomain>();
 			for (int i = 0; i < _ctx.Length("DescribeTopDomainsByFlow.TopDomains.Length"); i++) {
 				DescribeTopDomainsByFlowResponse.DescribeTopDomainsByFlow_TopDomain topDomain = new DescribeTopDomainsByFlowResponse.DescribeTopDomainsByFlow_TopDomain();
-				topDomain.DomainName = _ctx.StringValue("DescribeTopDomainsByFlow.TopDomains["+ i +"].DomainName");
-				topDomain.Rank = _ctx.LongValue("DescribeTopDomainsByFlow.TopDomains["+ i +"].Rank");
-				topDomain.TotalTraffic = _ctx.StringValue("DescribeTopDomainsByFlow.TopDomains["+ i +"].TotalTraffic");
-				topDomain.TrafficPercent = _ctx.StringValue("DescribeTopDomainsByFlow.TopDomains["+ i +"].TrafficPercent");
 				topDomain.MaxBps = _ctx.FloatValue("DescribeTopDomainsByFlow.TopDomains["+ i +"].MaxBps");
-				topDomain.MaxBpsTime = _ctx.StringValue("DescribeTopDomainsByFlow.TopDomains["+ i +"].MaxBpsTime");
+				topDomain.Rank = _ctx.LongValue("DescribeTopDomainsByFlow.TopDomains["+ i +"].Rank");
 				topDomain.TotalAccess = _ctx.LongValue("DescribeTopDomainsByFlow.TopDomains["+ i +"].TotalAccess");
+				topDomain.TrafficPercent = _ctx.StringValue("DescribeTopDomainsByFlow.TopDomains["+ i +"].TrafficPercent");
+				topDomain.DomainName = _ctx.StringValue("DescribeTopDomainsByFlow.TopDomains["+ i +"].DomainName");
+				topDomain.TotalTraffic = _ctx.StringValue("DescribeTopDomainsByFlow.TopDomains["+ i +"].TotalTraffic");
+				topDomain.MaxBpsTime = _ctx.StringValue("DescribeTopDomainsByFlow.TopDomains["+ i +"].MaxBpsTime");
 
 				describeTopDomainsByFlowResponse_topDomains.Add(topDomain);
 			}

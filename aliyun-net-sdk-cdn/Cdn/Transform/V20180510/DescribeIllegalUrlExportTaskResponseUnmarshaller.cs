@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeIllegalUrlExportTaskResponse describeIllegalUrlExportTaskResponse = new DescribeIllegalUrlExportTaskResponse();
 
 			describeIllegalUrlExportTaskResponse.HttpResponse = _ctx.HttpResponse;
-			describeIllegalUrlExportTaskResponse.RequestId = _ctx.StringValue("DescribeIllegalUrlExportTask.RequestId");
 			describeIllegalUrlExportTaskResponse.Status = _ctx.StringValue("DescribeIllegalUrlExportTask.Status");
+			describeIllegalUrlExportTaskResponse.RequestId = _ctx.StringValue("DescribeIllegalUrlExportTask.RequestId");
 			describeIllegalUrlExportTaskResponse.DownloadUrl = _ctx.StringValue("DescribeIllegalUrlExportTask.DownloadUrl");
         
 			return describeIllegalUrlExportTaskResponse;

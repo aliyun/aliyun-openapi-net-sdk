@@ -31,19 +31,19 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeRefreshTaskByIdResponse describeRefreshTaskByIdResponse = new DescribeRefreshTaskByIdResponse();
 
 			describeRefreshTaskByIdResponse.HttpResponse = _ctx.HttpResponse;
-			describeRefreshTaskByIdResponse.RequestId = _ctx.StringValue("DescribeRefreshTaskById.RequestId");
 			describeRefreshTaskByIdResponse.TotalCount = _ctx.LongValue("DescribeRefreshTaskById.TotalCount");
+			describeRefreshTaskByIdResponse.RequestId = _ctx.StringValue("DescribeRefreshTaskById.RequestId");
 
 			List<DescribeRefreshTaskByIdResponse.DescribeRefreshTaskById_CDNTask> describeRefreshTaskByIdResponse_tasks = new List<DescribeRefreshTaskByIdResponse.DescribeRefreshTaskById_CDNTask>();
 			for (int i = 0; i < _ctx.Length("DescribeRefreshTaskById.Tasks.Length"); i++) {
 				DescribeRefreshTaskByIdResponse.DescribeRefreshTaskById_CDNTask cDNTask = new DescribeRefreshTaskByIdResponse.DescribeRefreshTaskById_CDNTask();
-				cDNTask.TaskId = _ctx.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].TaskId");
-				cDNTask.ObjectPath = _ctx.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].ObjectPath");
-				cDNTask.Process = _ctx.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].Process");
 				cDNTask.Status = _ctx.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].Status");
 				cDNTask.CreationTime = _ctx.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].CreationTime");
-				cDNTask.Description = _ctx.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].Description");
 				cDNTask.ObjectType = _ctx.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].ObjectType");
+				cDNTask.Process = _ctx.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].Process");
+				cDNTask.Description = _ctx.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].Description");
+				cDNTask.ObjectPath = _ctx.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].ObjectPath");
+				cDNTask.TaskId = _ctx.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].TaskId");
 
 				describeRefreshTaskByIdResponse_tasks.Add(cDNTask);
 			}

@@ -32,9 +32,9 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 
 			createCdnCertificateSigningRequestResponse.HttpResponse = _ctx.HttpResponse;
 			createCdnCertificateSigningRequestResponse.RequestId = _ctx.StringValue("CreateCdnCertificateSigningRequest.RequestId");
-			createCdnCertificateSigningRequestResponse.CommonName = _ctx.StringValue("CreateCdnCertificateSigningRequest.CommonName");
-			createCdnCertificateSigningRequestResponse.Csr = _ctx.StringValue("CreateCdnCertificateSigningRequest.Csr");
 			createCdnCertificateSigningRequestResponse.PubMd5 = _ctx.StringValue("CreateCdnCertificateSigningRequest.PubMd5");
+			createCdnCertificateSigningRequestResponse.Csr = _ctx.StringValue("CreateCdnCertificateSigningRequest.Csr");
+			createCdnCertificateSigningRequestResponse.CommonName = _ctx.StringValue("CreateCdnCertificateSigningRequest.CommonName");
         
 			return createCdnCertificateSigningRequestResponse;
         }

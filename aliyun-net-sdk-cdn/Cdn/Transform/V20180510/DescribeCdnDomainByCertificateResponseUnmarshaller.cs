@@ -36,15 +36,15 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			List<DescribeCdnDomainByCertificateResponse.DescribeCdnDomainByCertificate_CertInfo> describeCdnDomainByCertificateResponse_certInfos = new List<DescribeCdnDomainByCertificateResponse.DescribeCdnDomainByCertificate_CertInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeCdnDomainByCertificate.CertInfos.Length"); i++) {
 				DescribeCdnDomainByCertificateResponse.DescribeCdnDomainByCertificate_CertInfo certInfo = new DescribeCdnDomainByCertificateResponse.DescribeCdnDomainByCertificate_CertInfo();
-				certInfo.Issuer = _ctx.StringValue("DescribeCdnDomainByCertificate.CertInfos["+ i +"].Issuer");
-				certInfo.CertType = _ctx.StringValue("DescribeCdnDomainByCertificate.CertInfos["+ i +"].CertType");
-				certInfo.CertSubjectCommonName = _ctx.StringValue("DescribeCdnDomainByCertificate.CertInfos["+ i +"].CertSubjectCommonName");
-				certInfo.CertExpireTime = _ctx.StringValue("DescribeCdnDomainByCertificate.CertInfos["+ i +"].CertExpireTime");
 				certInfo.CertStartTime = _ctx.StringValue("DescribeCdnDomainByCertificate.CertInfos["+ i +"].CertStartTime");
-				certInfo.DomainNames = _ctx.StringValue("DescribeCdnDomainByCertificate.CertInfos["+ i +"].DomainNames");
-				certInfo.DomainList = _ctx.StringValue("DescribeCdnDomainByCertificate.CertInfos["+ i +"].DomainList");
-				certInfo.CertExpired = _ctx.StringValue("DescribeCdnDomainByCertificate.CertInfos["+ i +"].CertExpired");
+				certInfo.CertExpireTime = _ctx.StringValue("DescribeCdnDomainByCertificate.CertInfos["+ i +"].CertExpireTime");
 				certInfo.CertCaIsLegacy = _ctx.StringValue("DescribeCdnDomainByCertificate.CertInfos["+ i +"].CertCaIsLegacy");
+				certInfo.CertSubjectCommonName = _ctx.StringValue("DescribeCdnDomainByCertificate.CertInfos["+ i +"].CertSubjectCommonName");
+				certInfo.CertType = _ctx.StringValue("DescribeCdnDomainByCertificate.CertInfos["+ i +"].CertType");
+				certInfo.DomainNames = _ctx.StringValue("DescribeCdnDomainByCertificate.CertInfos["+ i +"].DomainNames");
+				certInfo.CertExpired = _ctx.StringValue("DescribeCdnDomainByCertificate.CertInfos["+ i +"].CertExpired");
+				certInfo.Issuer = _ctx.StringValue("DescribeCdnDomainByCertificate.CertInfos["+ i +"].Issuer");
+				certInfo.DomainList = _ctx.StringValue("DescribeCdnDomainByCertificate.CertInfos["+ i +"].DomainList");
 
 				describeCdnDomainByCertificateResponse_certInfos.Add(certInfo);
 			}

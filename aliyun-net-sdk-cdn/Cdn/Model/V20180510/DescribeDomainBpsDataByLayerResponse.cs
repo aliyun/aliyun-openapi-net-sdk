@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeDomainBpsDataByLayerResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dataInterval;
 
-		private List<DescribeDomainBpsDataByLayer_DataModule> bpsDataInterval;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeDomainBpsDataByLayer_DataModule> bpsDataInterval;
 
 		public string DataInterval
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				dataInterval = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,23 +70,11 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeDomainBpsDataByLayer_DataModule
 		{
 
-			private string timeStamp;
-
 			private string _value;
 
 			private string trafficValue;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private string timeStamp;
 
 			public string _Value
 			{
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					trafficValue = value;
+				}
+			}
+
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
 				}
 			}
 		}

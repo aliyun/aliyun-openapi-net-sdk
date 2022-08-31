@@ -31,17 +31,17 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeDomainReqHitRateDataResponse describeDomainReqHitRateDataResponse = new DescribeDomainReqHitRateDataResponse();
 
 			describeDomainReqHitRateDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainReqHitRateDataResponse.EndTime = _ctx.StringValue("DescribeDomainReqHitRateData.EndTime");
+			describeDomainReqHitRateDataResponse.StartTime = _ctx.StringValue("DescribeDomainReqHitRateData.StartTime");
 			describeDomainReqHitRateDataResponse.RequestId = _ctx.StringValue("DescribeDomainReqHitRateData.RequestId");
 			describeDomainReqHitRateDataResponse.DomainName = _ctx.StringValue("DescribeDomainReqHitRateData.DomainName");
 			describeDomainReqHitRateDataResponse.DataInterval = _ctx.StringValue("DescribeDomainReqHitRateData.DataInterval");
-			describeDomainReqHitRateDataResponse.StartTime = _ctx.StringValue("DescribeDomainReqHitRateData.StartTime");
-			describeDomainReqHitRateDataResponse.EndTime = _ctx.StringValue("DescribeDomainReqHitRateData.EndTime");
 
 			List<DescribeDomainReqHitRateDataResponse.DescribeDomainReqHitRateData_DataModule> describeDomainReqHitRateDataResponse_reqHitRateInterval = new List<DescribeDomainReqHitRateDataResponse.DescribeDomainReqHitRateData_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainReqHitRateData.ReqHitRateInterval.Length"); i++) {
 				DescribeDomainReqHitRateDataResponse.DescribeDomainReqHitRateData_DataModule dataModule = new DescribeDomainReqHitRateDataResponse.DescribeDomainReqHitRateData_DataModule();
-				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainReqHitRateData.ReqHitRateInterval["+ i +"].TimeStamp");
 				dataModule._Value = _ctx.StringValue("DescribeDomainReqHitRateData.ReqHitRateInterval["+ i +"].Value");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainReqHitRateData.ReqHitRateInterval["+ i +"].TimeStamp");
 				dataModule.HttpsValue = _ctx.StringValue("DescribeDomainReqHitRateData.ReqHitRateInterval["+ i +"].HttpsValue");
 
 				describeDomainReqHitRateDataResponse_reqHitRateInterval.Add(dataModule);

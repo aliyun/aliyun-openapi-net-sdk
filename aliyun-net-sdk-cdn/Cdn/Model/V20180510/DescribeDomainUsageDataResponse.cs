@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,57 +25,21 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeDomainUsageDataResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string domainName;
-
-		private string startTime;
-
 		private string endTime;
 
 		private string type;
 
+		private string startTime;
+
+		private string requestId;
+
 		private string area;
+
+		private string domainName;
 
 		private string dataInterval;
 
 		private List<DescribeDomainUsageData_DataModule> usageDataPerInterval;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
 
 		public string EndTime
 		{
@@ -101,6 +65,30 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public string Area
 		{
 			get
@@ -110,6 +98,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				area = value;
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
 			}
 		}
 
@@ -140,13 +140,25 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeDomainUsageData_DataModule
 		{
 
+			private string _value;
+
 			private string timeStamp;
 
 			private string peakTime;
 
-			private string _value;
-
 			private string specialValue;
+
+			public string _Value
+			{
+				get
+				{
+					return _value;
+				}
+				set	
+				{
+					_value = value;
+				}
+			}
 
 			public string TimeStamp
 			{
@@ -169,18 +181,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					peakTime = value;
-				}
-			}
-
-			public string _Value
-			{
-				get
-				{
-					return _value;
-				}
-				set	
-				{
-					_value = value;
 				}
 			}
 

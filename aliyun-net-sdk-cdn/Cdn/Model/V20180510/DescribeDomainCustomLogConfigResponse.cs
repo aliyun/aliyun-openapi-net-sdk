@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeDomainCustomLogConfigResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string configId;
+
+		private string tag;
+
+		private string requestId;
 
 		private string remark;
 
 		private string sample;
-
-		private string tag;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public string ConfigId
 		{
@@ -56,6 +44,30 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				configId = value;
+			}
+		}
+
+		public string Tag
+		{
+			get
+			{
+				return tag;
+			}
+			set	
+			{
+				tag = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -80,18 +92,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				sample = value;
-			}
-		}
-
-		public string Tag
-		{
-			get
-			{
-				return tag;
-			}
-			set	
-			{
-				tag = value;
 			}
 		}
 	}

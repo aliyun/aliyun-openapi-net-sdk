@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,25 +25,25 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeCdnUserBillPredictionResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string endTime;
 
 		private string startTime;
 
-		private string endTime;
+		private string requestId;
 
 		private string billType;
 
 		private List<DescribeCdnUserBillPrediction_BillPredictionDataItem> billPredictionData;
 
-		public string RequestId
+		public string EndTime
 		{
 			get
 			{
-				return requestId;
+				return endTime;
 			}
 			set	
 			{
-				requestId = value;
+				endTime = value;
 			}
 		}
 
@@ -59,15 +59,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string EndTime
+		public string RequestId
 		{
 			get
 			{
-				return endTime;
+				return requestId;
 			}
 			set	
 			{
-				endTime = value;
+				requestId = value;
 			}
 		}
 
@@ -100,9 +100,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 			private float? _value;
 
-			private string area;
-
 			private string timeStp;
+
+			private string area;
 
 			public float? _Value
 			{
@@ -116,18 +116,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string Area
-			{
-				get
-				{
-					return area;
-				}
-				set	
-				{
-					area = value;
-				}
-			}
-
 			public string TimeStp
 			{
 				get
@@ -137,6 +125,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					timeStp = value;
+				}
+			}
+
+			public string Area
+			{
+				get
+				{
+					return area;
+				}
+				set	
+				{
+					area = value;
 				}
 			}
 		}

@@ -31,19 +31,19 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeRefreshQuotaResponse describeRefreshQuotaResponse = new DescribeRefreshQuotaResponse();
 
 			describeRefreshQuotaResponse.HttpResponse = _ctx.HttpResponse;
-			describeRefreshQuotaResponse.RequestId = _ctx.StringValue("DescribeRefreshQuota.RequestId");
-			describeRefreshQuotaResponse.UrlQuota = _ctx.StringValue("DescribeRefreshQuota.UrlQuota");
-			describeRefreshQuotaResponse.DirQuota = _ctx.StringValue("DescribeRefreshQuota.DirQuota");
-			describeRefreshQuotaResponse.UrlRemain = _ctx.StringValue("DescribeRefreshQuota.UrlRemain");
-			describeRefreshQuotaResponse.DirRemain = _ctx.StringValue("DescribeRefreshQuota.DirRemain");
-			describeRefreshQuotaResponse.PreloadQuota = _ctx.StringValue("DescribeRefreshQuota.PreloadQuota");
-			describeRefreshQuotaResponse.BlockQuota = _ctx.StringValue("DescribeRefreshQuota.BlockQuota");
 			describeRefreshQuotaResponse.PreloadRemain = _ctx.StringValue("DescribeRefreshQuota.PreloadRemain");
 			describeRefreshQuotaResponse.BlockRemain = _ctx.StringValue("DescribeRefreshQuota.BlockRemain");
-			describeRefreshQuotaResponse.RegexQuota = _ctx.StringValue("DescribeRefreshQuota.RegexQuota");
 			describeRefreshQuotaResponse.RegexRemain = _ctx.StringValue("DescribeRefreshQuota.RegexRemain");
+			describeRefreshQuotaResponse.UrlRemain = _ctx.StringValue("DescribeRefreshQuota.UrlRemain");
+			describeRefreshQuotaResponse.DirRemain = _ctx.StringValue("DescribeRefreshQuota.DirRemain");
+			describeRefreshQuotaResponse.UrlQuota = _ctx.StringValue("DescribeRefreshQuota.UrlQuota");
+			describeRefreshQuotaResponse.BlockQuota = _ctx.StringValue("DescribeRefreshQuota.BlockQuota");
+			describeRefreshQuotaResponse.RequestId = _ctx.StringValue("DescribeRefreshQuota.RequestId");
+			describeRefreshQuotaResponse.DirQuota = _ctx.StringValue("DescribeRefreshQuota.DirQuota");
 			describeRefreshQuotaResponse.PreloadEdgeQuota = _ctx.StringValue("DescribeRefreshQuota.PreloadEdgeQuota");
 			describeRefreshQuotaResponse.PreloadEdgeRemain = _ctx.StringValue("DescribeRefreshQuota.PreloadEdgeRemain");
+			describeRefreshQuotaResponse.PreloadQuota = _ctx.StringValue("DescribeRefreshQuota.PreloadQuota");
+			describeRefreshQuotaResponse.RegexQuota = _ctx.StringValue("DescribeRefreshQuota.RegexQuota");
         
 			return describeRefreshQuotaResponse;
         }

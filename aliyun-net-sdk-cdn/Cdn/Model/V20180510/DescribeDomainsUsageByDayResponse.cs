@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,19 +25,43 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeDomainsUsageByDayResponse : AcsResponse
 	{
 
+		private string endTime;
+
+		private string startTime;
+
 		private string requestId;
 
 		private string domainName;
 
 		private string dataInterval;
 
-		private string startTime;
-
-		private string endTime;
-
 		private List<DescribeDomainsUsageByDay_UsageByDay> usageByDays;
 
 		private DescribeDomainsUsageByDay_UsageTotal usageTotal;
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -75,30 +99,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
-
 		public List<DescribeDomainsUsageByDay_UsageByDay> UsageByDays
 		{
 			get
@@ -126,35 +126,35 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeDomainsUsageByDay_UsageByDay
 		{
 
-			private string timeStamp;
+			private string maxSrcBpsTime;
 
 			private string qps;
-
-			private string bytesHitRate;
 
 			private string requestHitRate;
 
 			private string maxBps;
 
-			private string maxBpsTime;
-
-			private string maxSrcBps;
-
-			private string maxSrcBpsTime;
-
 			private string totalAccess;
+
+			private string timeStamp;
+
+			private string bytesHitRate;
 
 			private string totalTraffic;
 
-			public string TimeStamp
+			private string maxSrcBps;
+
+			private string maxBpsTime;
+
+			public string MaxSrcBpsTime
 			{
 				get
 				{
-					return timeStamp;
+					return maxSrcBpsTime;
 				}
 				set	
 				{
-					timeStamp = value;
+					maxSrcBpsTime = value;
 				}
 			}
 
@@ -170,18 +170,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string BytesHitRate
-			{
-				get
-				{
-					return bytesHitRate;
-				}
-				set	
-				{
-					bytesHitRate = value;
-				}
-			}
-
 			public string RequestHitRate
 			{
 				get
@@ -206,15 +194,51 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string MaxBpsTime
+			public string TotalAccess
 			{
 				get
 				{
-					return maxBpsTime;
+					return totalAccess;
 				}
 				set	
 				{
-					maxBpsTime = value;
+					totalAccess = value;
+				}
+			}
+
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
+				}
+			}
+
+			public string BytesHitRate
+			{
+				get
+				{
+					return bytesHitRate;
+				}
+				set	
+				{
+					bytesHitRate = value;
+				}
+			}
+
+			public string TotalTraffic
+			{
+				get
+				{
+					return totalTraffic;
+				}
+				set	
+				{
+					totalTraffic = value;
 				}
 			}
 
@@ -230,39 +254,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string MaxSrcBpsTime
+			public string MaxBpsTime
 			{
 				get
 				{
-					return maxSrcBpsTime;
+					return maxBpsTime;
 				}
 				set	
 				{
-					maxSrcBpsTime = value;
-				}
-			}
-
-			public string TotalAccess
-			{
-				get
-				{
-					return totalAccess;
-				}
-				set	
-				{
-					totalAccess = value;
-				}
-			}
-
-			public string TotalTraffic
-			{
-				get
-				{
-					return totalTraffic;
-				}
-				set	
-				{
-					totalTraffic = value;
+					maxBpsTime = value;
 				}
 			}
 		}
@@ -270,31 +270,31 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeDomainsUsageByDay_UsageTotal
 		{
 
-			private string bytesHitRate;
+			private string maxSrcBpsTime;
 
 			private string requestHitRate;
 
 			private string maxBps;
 
+			private string totalAccess;
+
+			private string bytesHitRate;
+
+			private string totalTraffic;
+
 			private string maxBpsTime;
 
 			private string maxSrcBps;
 
-			private string maxSrcBpsTime;
-
-			private string totalAccess;
-
-			private string totalTraffic;
-
-			public string BytesHitRate
+			public string MaxSrcBpsTime
 			{
 				get
 				{
-					return bytesHitRate;
+					return maxSrcBpsTime;
 				}
 				set	
 				{
-					bytesHitRate = value;
+					maxSrcBpsTime = value;
 				}
 			}
 
@@ -322,6 +322,42 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
+			public string TotalAccess
+			{
+				get
+				{
+					return totalAccess;
+				}
+				set	
+				{
+					totalAccess = value;
+				}
+			}
+
+			public string BytesHitRate
+			{
+				get
+				{
+					return bytesHitRate;
+				}
+				set	
+				{
+					bytesHitRate = value;
+				}
+			}
+
+			public string TotalTraffic
+			{
+				get
+				{
+					return totalTraffic;
+				}
+				set	
+				{
+					totalTraffic = value;
+				}
+			}
+
 			public string MaxBpsTime
 			{
 				get
@@ -343,42 +379,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					maxSrcBps = value;
-				}
-			}
-
-			public string MaxSrcBpsTime
-			{
-				get
-				{
-					return maxSrcBpsTime;
-				}
-				set	
-				{
-					maxSrcBpsTime = value;
-				}
-			}
-
-			public string TotalAccess
-			{
-				get
-				{
-					return totalAccess;
-				}
-				set	
-				{
-					totalAccess = value;
-				}
-			}
-
-			public string TotalTraffic
-			{
-				get
-				{
-					return totalTraffic;
-				}
-				set	
-				{
-					totalTraffic = value;
 				}
 			}
 		}

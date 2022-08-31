@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -56,25 +56,13 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeUserUsageDetailDataExportTask_UsageDataPerPage
 		{
 
-			private int? totalCount;
-
 			private int? pageSize;
 
 			private int? pageNumber;
 
-			private List<DescribeUserUsageDetailDataExportTask_DataItem> data;
+			private int? totalCount;
 
-			public int? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
+			private List<DescribeUserUsageDetailDataExportTask_DataItem> data;
 
 			public int? PageSize
 			{
@@ -100,6 +88,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
+			public int? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
+				}
+			}
+
 			public List<DescribeUserUsageDetailDataExportTask_DataItem> Data
 			{
 				get
@@ -115,19 +115,67 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			public class DescribeUserUsageDetailDataExportTask_DataItem
 			{
 
+				private string status;
+
+				private string updateTime;
+
+				private string downloadUrl;
+
+				private string createTime;
+
 				private string taskName;
 
 				private string taskId;
 
-				private string createTime;
-
-				private string updateTime;
-
-				private string status;
-
-				private string downloadUrl;
-
 				private DescribeUserUsageDetailDataExportTask_TaskConfig taskConfig;
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string UpdateTime
+				{
+					get
+					{
+						return updateTime;
+					}
+					set	
+					{
+						updateTime = value;
+					}
+				}
+
+				public string DownloadUrl
+				{
+					get
+					{
+						return downloadUrl;
+					}
+					set	
+					{
+						downloadUrl = value;
+					}
+				}
+
+				public string CreateTime
+				{
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
+					}
+				}
 
 				public string TaskName
 				{
@@ -153,54 +201,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 					}
 				}
 
-				public string CreateTime
-				{
-					get
-					{
-						return createTime;
-					}
-					set	
-					{
-						createTime = value;
-					}
-				}
-
-				public string UpdateTime
-				{
-					get
-					{
-						return updateTime;
-					}
-					set	
-					{
-						updateTime = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				public string DownloadUrl
-				{
-					get
-					{
-						return downloadUrl;
-					}
-					set	
-					{
-						downloadUrl = value;
-					}
-				}
-
 				public DescribeUserUsageDetailDataExportTask_TaskConfig TaskConfig
 				{
 					get
@@ -216,21 +216,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				public class DescribeUserUsageDetailDataExportTask_TaskConfig
 				{
 
-					private string startTime;
-
 					private string endTime;
 
-					public string StartTime
-					{
-						get
-						{
-							return startTime;
-						}
-						set	
-						{
-							startTime = value;
-						}
-					}
+					private string startTime;
 
 					public string EndTime
 					{
@@ -241,6 +229,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 						set	
 						{
 							endTime = value;
+						}
+					}
+
+					public string StartTime
+					{
+						get
+						{
+							return startTime;
+						}
+						set	
+						{
+							startTime = value;
 						}
 					}
 				}

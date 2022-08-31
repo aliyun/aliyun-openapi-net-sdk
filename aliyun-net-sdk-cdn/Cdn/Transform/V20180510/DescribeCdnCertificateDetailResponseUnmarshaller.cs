@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeCdnCertificateDetailResponse describeCdnCertificateDetailResponse = new DescribeCdnCertificateDetailResponse();
 
 			describeCdnCertificateDetailResponse.HttpResponse = _ctx.HttpResponse;
-			describeCdnCertificateDetailResponse.RequestId = _ctx.StringValue("DescribeCdnCertificateDetail.RequestId");
-			describeCdnCertificateDetailResponse.Cert = _ctx.StringValue("DescribeCdnCertificateDetail.Cert");
-			describeCdnCertificateDetailResponse.Key = _ctx.StringValue("DescribeCdnCertificateDetail.Key");
-			describeCdnCertificateDetailResponse.CertId = _ctx.LongValue("DescribeCdnCertificateDetail.CertId");
 			describeCdnCertificateDetailResponse.CertName = _ctx.StringValue("DescribeCdnCertificateDetail.CertName");
+			describeCdnCertificateDetailResponse.Key = _ctx.StringValue("DescribeCdnCertificateDetail.Key");
+			describeCdnCertificateDetailResponse.Cert = _ctx.StringValue("DescribeCdnCertificateDetail.Cert");
+			describeCdnCertificateDetailResponse.CertId = _ctx.LongValue("DescribeCdnCertificateDetail.CertId");
+			describeCdnCertificateDetailResponse.RequestId = _ctx.StringValue("DescribeCdnCertificateDetail.RequestId");
         
 			return describeCdnCertificateDetailResponse;
         }

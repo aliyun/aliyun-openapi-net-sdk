@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeDomainsBySourceResponse describeDomainsBySourceResponse = new DescribeDomainsBySourceResponse();
 
 			describeDomainsBySourceResponse.HttpResponse = _ctx.HttpResponse;
-			describeDomainsBySourceResponse.RequestId = _ctx.StringValue("DescribeDomainsBySource.RequestId");
 			describeDomainsBySourceResponse.Sources = _ctx.StringValue("DescribeDomainsBySource.Sources");
+			describeDomainsBySourceResponse.RequestId = _ctx.StringValue("DescribeDomainsBySource.RequestId");
 
 			List<DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData> describeDomainsBySourceResponse_domainsList = new List<DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainsBySource.DomainsList.Length"); i++) {
@@ -48,12 +48,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 				List<DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData.DescribeDomainsBySource_DomainInfo> domainsData_domainInfos = new List<DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData.DescribeDomainsBySource_DomainInfo>();
 				for (int j = 0; j < _ctx.Length("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos.Length"); j++) {
 					DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData.DescribeDomainsBySource_DomainInfo domainInfo = new DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData.DescribeDomainsBySource_DomainInfo();
-					domainInfo.DomainName = _ctx.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].DomainName");
-					domainInfo.DomainCname = _ctx.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].DomainCname");
-					domainInfo.CreateTime = _ctx.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].CreateTime");
-					domainInfo.UpdateTime = _ctx.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].UpdateTime");
 					domainInfo.Status = _ctx.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].Status");
+					domainInfo.UpdateTime = _ctx.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].UpdateTime");
+					domainInfo.CreateTime = _ctx.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].CreateTime");
+					domainInfo.DomainCname = _ctx.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].DomainCname");
 					domainInfo.CdnType = _ctx.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].CdnType");
+					domainInfo.DomainName = _ctx.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].DomainName");
 
 					domainsData_domainInfos.Add(domainInfo);
 				}

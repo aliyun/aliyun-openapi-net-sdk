@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeCdnWafDomainResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
 
-		private List<DescribeCdnWafDomain_OutPutDomain> outPutDomains;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeCdnWafDomain_OutPutDomain> outPutDomains;
 
 		public int? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,15 +70,27 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeCdnWafDomain_OutPutDomain
 		{
 
+			private string aclStatus;
+
 			private string status;
 
 			private string domain;
 
-			private string wafStatus;
-
 			private string ccStatus;
 
-			private string aclStatus;
+			private string wafStatus;
+
+			public string AclStatus
+			{
+				get
+				{
+					return aclStatus;
+				}
+				set	
+				{
+					aclStatus = value;
+				}
+			}
 
 			public string Status
 			{
@@ -104,18 +116,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string WafStatus
-			{
-				get
-				{
-					return wafStatus;
-				}
-				set	
-				{
-					wafStatus = value;
-				}
-			}
-
 			public string CcStatus
 			{
 				get
@@ -128,15 +128,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string AclStatus
+			public string WafStatus
 			{
 				get
 				{
-					return aclStatus;
+					return wafStatus;
 				}
 				set	
 				{
-					aclStatus = value;
+					wafStatus = value;
 				}
 			}
 		}

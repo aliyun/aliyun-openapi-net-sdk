@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeVerifyContentResponse describeVerifyContentResponse = new DescribeVerifyContentResponse();
 
 			describeVerifyContentResponse.HttpResponse = _ctx.HttpResponse;
-			describeVerifyContentResponse.RequestId = _ctx.StringValue("DescribeVerifyContent.RequestId");
 			describeVerifyContentResponse.Content = _ctx.StringValue("DescribeVerifyContent.Content");
+			describeVerifyContentResponse.RequestId = _ctx.StringValue("DescribeVerifyContent.RequestId");
         
 			return describeVerifyContentResponse;
         }

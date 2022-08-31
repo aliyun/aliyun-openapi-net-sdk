@@ -31,17 +31,17 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeDomainSrcTrafficDataResponse describeDomainSrcTrafficDataResponse = new DescribeDomainSrcTrafficDataResponse();
 
 			describeDomainSrcTrafficDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainSrcTrafficDataResponse.EndTime = _ctx.StringValue("DescribeDomainSrcTrafficData.EndTime");
+			describeDomainSrcTrafficDataResponse.StartTime = _ctx.StringValue("DescribeDomainSrcTrafficData.StartTime");
 			describeDomainSrcTrafficDataResponse.RequestId = _ctx.StringValue("DescribeDomainSrcTrafficData.RequestId");
 			describeDomainSrcTrafficDataResponse.DomainName = _ctx.StringValue("DescribeDomainSrcTrafficData.DomainName");
-			describeDomainSrcTrafficDataResponse.StartTime = _ctx.StringValue("DescribeDomainSrcTrafficData.StartTime");
-			describeDomainSrcTrafficDataResponse.EndTime = _ctx.StringValue("DescribeDomainSrcTrafficData.EndTime");
 			describeDomainSrcTrafficDataResponse.DataInterval = _ctx.StringValue("DescribeDomainSrcTrafficData.DataInterval");
 
 			List<DescribeDomainSrcTrafficDataResponse.DescribeDomainSrcTrafficData_DataModule> describeDomainSrcTrafficDataResponse_srcTrafficDataPerInterval = new List<DescribeDomainSrcTrafficDataResponse.DescribeDomainSrcTrafficData_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainSrcTrafficData.SrcTrafficDataPerInterval.Length"); i++) {
 				DescribeDomainSrcTrafficDataResponse.DescribeDomainSrcTrafficData_DataModule dataModule = new DescribeDomainSrcTrafficDataResponse.DescribeDomainSrcTrafficData_DataModule();
-				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainSrcTrafficData.SrcTrafficDataPerInterval["+ i +"].TimeStamp");
 				dataModule._Value = _ctx.StringValue("DescribeDomainSrcTrafficData.SrcTrafficDataPerInterval["+ i +"].Value");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainSrcTrafficData.SrcTrafficDataPerInterval["+ i +"].TimeStamp");
 				dataModule.HttpsValue = _ctx.StringValue("DescribeDomainSrcTrafficData.SrcTrafficDataPerInterval["+ i +"].HttpsValue");
 
 				describeDomainSrcTrafficDataResponse_srcTrafficDataPerInterval.Add(dataModule);

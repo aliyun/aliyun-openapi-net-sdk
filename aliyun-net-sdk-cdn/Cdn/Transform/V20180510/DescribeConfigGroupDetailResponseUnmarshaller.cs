@@ -31,13 +31,13 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeConfigGroupDetailResponse describeConfigGroupDetailResponse = new DescribeConfigGroupDetailResponse();
 
 			describeConfigGroupDetailResponse.HttpResponse = _ctx.HttpResponse;
-			describeConfigGroupDetailResponse.RequestId = _ctx.StringValue("DescribeConfigGroupDetail.RequestId");
-			describeConfigGroupDetailResponse.ConfigGroupId = _ctx.StringValue("DescribeConfigGroupDetail.ConfigGroupId");
-			describeConfigGroupDetailResponse.ConfigGroupName = _ctx.StringValue("DescribeConfigGroupDetail.ConfigGroupName");
-			describeConfigGroupDetailResponse.Description = _ctx.StringValue("DescribeConfigGroupDetail.Description");
-			describeConfigGroupDetailResponse.BizName = _ctx.StringValue("DescribeConfigGroupDetail.BizName");
-			describeConfigGroupDetailResponse.CreateTime = _ctx.StringValue("DescribeConfigGroupDetail.CreateTime");
 			describeConfigGroupDetailResponse.UpdateTime = _ctx.StringValue("DescribeConfigGroupDetail.UpdateTime");
+			describeConfigGroupDetailResponse.RequestId = _ctx.StringValue("DescribeConfigGroupDetail.RequestId");
+			describeConfigGroupDetailResponse.Description = _ctx.StringValue("DescribeConfigGroupDetail.Description");
+			describeConfigGroupDetailResponse.ConfigGroupName = _ctx.StringValue("DescribeConfigGroupDetail.ConfigGroupName");
+			describeConfigGroupDetailResponse.CreateTime = _ctx.StringValue("DescribeConfigGroupDetail.CreateTime");
+			describeConfigGroupDetailResponse.BizName = _ctx.StringValue("DescribeConfigGroupDetail.BizName");
+			describeConfigGroupDetailResponse.ConfigGroupId = _ctx.StringValue("DescribeConfigGroupDetail.ConfigGroupId");
         
 			return describeConfigGroupDetailResponse;
         }

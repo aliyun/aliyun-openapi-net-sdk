@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,17 +25,41 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeDomainQpsDataResponse : AcsResponse
 	{
 
+		private string endTime;
+
+		private string startTime;
+
 		private string requestId;
 
 		private string domainName;
 
-		private string startTime;
-
-		private string endTime;
-
 		private string dataInterval;
 
 		private List<DescribeDomainQpsData_DataModule> qpsDataInterval;
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -58,30 +82,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				domainName = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
 			}
 		}
 
@@ -112,14 +112,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeDomainQpsData_DataModule
 		{
 
-			private string timeStamp;
-
-			private string _value;
-
-			private string domesticValue;
-
-			private string overseasValue;
-
 			private string accValue;
 
 			private string accDomesticValue;
@@ -128,63 +120,23 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 			private string httpsValue;
 
-			private string httpsDomesticValue;
-
 			private string httpsOverseasValue;
 
-			private string httpsAccValue;
-
-			private string httpsAccDomesticValue;
+			private string domesticValue;
 
 			private string httpsAccOverseasValue;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private string httpsDomesticValue;
 
-			public string _Value
-			{
-				get
-				{
-					return _value;
-				}
-				set	
-				{
-					_value = value;
-				}
-			}
+			private string httpsAccValue;
 
-			public string DomesticValue
-			{
-				get
-				{
-					return domesticValue;
-				}
-				set	
-				{
-					domesticValue = value;
-				}
-			}
+			private string _value;
 
-			public string OverseasValue
-			{
-				get
-				{
-					return overseasValue;
-				}
-				set	
-				{
-					overseasValue = value;
-				}
-			}
+			private string overseasValue;
+
+			private string timeStamp;
+
+			private string httpsAccDomesticValue;
 
 			public string AccValue
 			{
@@ -234,18 +186,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string HttpsDomesticValue
-			{
-				get
-				{
-					return httpsDomesticValue;
-				}
-				set	
-				{
-					httpsDomesticValue = value;
-				}
-			}
-
 			public string HttpsOverseasValue
 			{
 				get
@@ -255,6 +195,42 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					httpsOverseasValue = value;
+				}
+			}
+
+			public string DomesticValue
+			{
+				get
+				{
+					return domesticValue;
+				}
+				set	
+				{
+					domesticValue = value;
+				}
+			}
+
+			public string HttpsAccOverseasValue
+			{
+				get
+				{
+					return httpsAccOverseasValue;
+				}
+				set	
+				{
+					httpsAccOverseasValue = value;
+				}
+			}
+
+			public string HttpsDomesticValue
+			{
+				get
+				{
+					return httpsDomesticValue;
+				}
+				set	
+				{
+					httpsDomesticValue = value;
 				}
 			}
 
@@ -270,6 +246,42 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
+			public string _Value
+			{
+				get
+				{
+					return _value;
+				}
+				set	
+				{
+					_value = value;
+				}
+			}
+
+			public string OverseasValue
+			{
+				get
+				{
+					return overseasValue;
+				}
+				set	
+				{
+					overseasValue = value;
+				}
+			}
+
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
+				}
+			}
+
 			public string HttpsAccDomesticValue
 			{
 				get
@@ -279,18 +291,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					httpsAccDomesticValue = value;
-				}
-			}
-
-			public string HttpsAccOverseasValue
-			{
-				get
-				{
-					return httpsAccOverseasValue;
-				}
-				set	
-				{
-					httpsAccOverseasValue = value;
 				}
 			}
 		}

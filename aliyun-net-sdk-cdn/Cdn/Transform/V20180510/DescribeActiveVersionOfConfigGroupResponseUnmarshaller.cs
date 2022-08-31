@@ -31,16 +31,16 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeActiveVersionOfConfigGroupResponse describeActiveVersionOfConfigGroupResponse = new DescribeActiveVersionOfConfigGroupResponse();
 
 			describeActiveVersionOfConfigGroupResponse.HttpResponse = _ctx.HttpResponse;
+			describeActiveVersionOfConfigGroupResponse.Status = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.Status");
+			describeActiveVersionOfConfigGroupResponse.UpdateTime = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.UpdateTime");
 			describeActiveVersionOfConfigGroupResponse.RequestId = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.RequestId");
+			describeActiveVersionOfConfigGroupResponse.SeqId = _ctx.LongValue("DescribeActiveVersionOfConfigGroup.SeqId");
+			describeActiveVersionOfConfigGroupResponse.Description = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.Description");
+			describeActiveVersionOfConfigGroupResponse.CreateTime = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.CreateTime");
 			describeActiveVersionOfConfigGroupResponse.VersionId = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.VersionId");
 			describeActiveVersionOfConfigGroupResponse.ConfigGroupId = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.ConfigGroupId");
-			describeActiveVersionOfConfigGroupResponse.BaseVersionId = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.BaseVersionId");
-			describeActiveVersionOfConfigGroupResponse.Description = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.Description");
-			describeActiveVersionOfConfigGroupResponse.SeqId = _ctx.LongValue("DescribeActiveVersionOfConfigGroup.SeqId");
-			describeActiveVersionOfConfigGroupResponse.Status = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.Status");
 			describeActiveVersionOfConfigGroupResponse._Operator = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.Operator");
-			describeActiveVersionOfConfigGroupResponse.CreateTime = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.CreateTime");
-			describeActiveVersionOfConfigGroupResponse.UpdateTime = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.UpdateTime");
+			describeActiveVersionOfConfigGroupResponse.BaseVersionId = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.BaseVersionId");
         
 			return describeActiveVersionOfConfigGroupResponse;
         }

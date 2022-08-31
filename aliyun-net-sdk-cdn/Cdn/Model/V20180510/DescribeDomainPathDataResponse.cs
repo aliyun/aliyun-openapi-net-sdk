@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -25,31 +25,31 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 	public class DescribeDomainPathDataResponse : AcsResponse
 	{
 
-		private string domainName;
+		private string endTime;
 
 		private string startTime;
-
-		private string endTime;
 
 		private int? pageSize;
 
 		private int? pageNumber;
 
-		private string dataInterval;
-
 		private int? totalCount;
+
+		private string domainName;
+
+		private string dataInterval;
 
 		private List<DescribeDomainPathData_UsageData> pathDataPerInterval;
 
-		public string DomainName
+		public string EndTime
 		{
 			get
 			{
-				return domainName;
+				return endTime;
 			}
 			set	
 			{
-				domainName = value;
+				endTime = value;
 			}
 		}
 
@@ -62,18 +62,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				startTime = value;
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
 			}
 		}
 
@@ -101,18 +89,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
-			}
-		}
-
 		public int? TotalCount
 		{
 			get
@@ -122,6 +98,30 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+			}
+		}
+
+		public string DataInterval
+		{
+			get
+			{
+				return dataInterval;
+			}
+			set	
+			{
+				dataInterval = value;
 			}
 		}
 
@@ -140,37 +140,13 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeDomainPathData_UsageData
 		{
 
-			private int? traffic;
-
-			private int? acc;
-
 			private string path;
 
 			private string time;
 
-			public int? Traffic
-			{
-				get
-				{
-					return traffic;
-				}
-				set	
-				{
-					traffic = value;
-				}
-			}
+			private int? acc;
 
-			public int? Acc
-			{
-				get
-				{
-					return acc;
-				}
-				set	
-				{
-					acc = value;
-				}
-			}
+			private int? traffic;
 
 			public string Path
 			{
@@ -193,6 +169,30 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					time = value;
+				}
+			}
+
+			public int? Acc
+			{
+				get
+				{
+					return acc;
+				}
+				set	
+				{
+					acc = value;
+				}
+			}
+
+			public int? Traffic
+			{
+				get
+				{
+					return traffic;
+				}
+				set	
+				{
+					traffic = value;
 				}
 			}
 		}

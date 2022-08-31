@@ -31,16 +31,16 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeCdnUserQuotaResponse describeCdnUserQuotaResponse = new DescribeCdnUserQuotaResponse();
 
 			describeCdnUserQuotaResponse.HttpResponse = _ctx.HttpResponse;
-			describeCdnUserQuotaResponse.RequestId = _ctx.StringValue("DescribeCdnUserQuota.RequestId");
-			describeCdnUserQuotaResponse.DomainQuota = _ctx.IntegerValue("DescribeCdnUserQuota.DomainQuota");
-			describeCdnUserQuotaResponse.RefreshUrlQuota = _ctx.IntegerValue("DescribeCdnUserQuota.RefreshUrlQuota");
-			describeCdnUserQuotaResponse.RefreshDirQuota = _ctx.IntegerValue("DescribeCdnUserQuota.RefreshDirQuota");
-			describeCdnUserQuotaResponse.RefreshUrlRemain = _ctx.IntegerValue("DescribeCdnUserQuota.RefreshUrlRemain");
-			describeCdnUserQuotaResponse.RefreshDirRemain = _ctx.IntegerValue("DescribeCdnUserQuota.RefreshDirRemain");
-			describeCdnUserQuotaResponse.PreloadQuota = _ctx.IntegerValue("DescribeCdnUserQuota.PreloadQuota");
-			describeCdnUserQuotaResponse.PreloadRemain = _ctx.IntegerValue("DescribeCdnUserQuota.PreloadRemain");
 			describeCdnUserQuotaResponse.BlockQuota = _ctx.IntegerValue("DescribeCdnUserQuota.BlockQuota");
+			describeCdnUserQuotaResponse.RefreshUrlRemain = _ctx.IntegerValue("DescribeCdnUserQuota.RefreshUrlRemain");
+			describeCdnUserQuotaResponse.DomainQuota = _ctx.IntegerValue("DescribeCdnUserQuota.DomainQuota");
 			describeCdnUserQuotaResponse.BlockRemain = _ctx.IntegerValue("DescribeCdnUserQuota.BlockRemain");
+			describeCdnUserQuotaResponse.PreloadRemain = _ctx.IntegerValue("DescribeCdnUserQuota.PreloadRemain");
+			describeCdnUserQuotaResponse.RequestId = _ctx.StringValue("DescribeCdnUserQuota.RequestId");
+			describeCdnUserQuotaResponse.RefreshUrlQuota = _ctx.IntegerValue("DescribeCdnUserQuota.RefreshUrlQuota");
+			describeCdnUserQuotaResponse.PreloadQuota = _ctx.IntegerValue("DescribeCdnUserQuota.PreloadQuota");
+			describeCdnUserQuotaResponse.RefreshDirQuota = _ctx.IntegerValue("DescribeCdnUserQuota.RefreshDirQuota");
+			describeCdnUserQuotaResponse.RefreshDirRemain = _ctx.IntegerValue("DescribeCdnUserQuota.RefreshDirRemain");
         
 			return describeCdnUserQuotaResponse;
         }

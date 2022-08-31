@@ -36,12 +36,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			List<ListFCTriggerResponse.ListFCTrigger_FCTrigger> listFCTriggerResponse_fCTriggers = new List<ListFCTriggerResponse.ListFCTrigger_FCTrigger>();
 			for (int i = 0; i < _ctx.Length("ListFCTrigger.FCTriggers.Length"); i++) {
 				ListFCTriggerResponse.ListFCTrigger_FCTrigger fCTrigger = new ListFCTriggerResponse.ListFCTrigger_FCTrigger();
-				fCTrigger.EventMetaName = _ctx.StringValue("ListFCTrigger.FCTriggers["+ i +"].EventMetaName");
-				fCTrigger.EventMetaVersion = _ctx.StringValue("ListFCTrigger.FCTriggers["+ i +"].EventMetaVersion");
 				fCTrigger.TriggerARN = _ctx.StringValue("ListFCTrigger.FCTriggers["+ i +"].TriggerARN");
 				fCTrigger.RoleARN = _ctx.StringValue("ListFCTrigger.FCTriggers["+ i +"].RoleARN");
 				fCTrigger.SourceArn = _ctx.StringValue("ListFCTrigger.FCTriggers["+ i +"].SourceArn");
 				fCTrigger.Notes = _ctx.StringValue("ListFCTrigger.FCTriggers["+ i +"].Notes");
+				fCTrigger.EventMetaName = _ctx.StringValue("ListFCTrigger.FCTriggers["+ i +"].EventMetaName");
+				fCTrigger.EventMetaVersion = _ctx.StringValue("ListFCTrigger.FCTriggers["+ i +"].EventMetaVersion");
 
 				listFCTriggerResponse_fCTriggers.Add(fCTrigger);
 			}

@@ -31,17 +31,17 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeDomainRealTimeTrafficDataResponse describeDomainRealTimeTrafficDataResponse = new DescribeDomainRealTimeTrafficDataResponse();
 
 			describeDomainRealTimeTrafficDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainRealTimeTrafficDataResponse.EndTime = _ctx.StringValue("DescribeDomainRealTimeTrafficData.EndTime");
+			describeDomainRealTimeTrafficDataResponse.StartTime = _ctx.StringValue("DescribeDomainRealTimeTrafficData.StartTime");
 			describeDomainRealTimeTrafficDataResponse.RequestId = _ctx.StringValue("DescribeDomainRealTimeTrafficData.RequestId");
 			describeDomainRealTimeTrafficDataResponse.DomainName = _ctx.StringValue("DescribeDomainRealTimeTrafficData.DomainName");
-			describeDomainRealTimeTrafficDataResponse.StartTime = _ctx.StringValue("DescribeDomainRealTimeTrafficData.StartTime");
-			describeDomainRealTimeTrafficDataResponse.EndTime = _ctx.StringValue("DescribeDomainRealTimeTrafficData.EndTime");
 			describeDomainRealTimeTrafficDataResponse.DataInterval = _ctx.StringValue("DescribeDomainRealTimeTrafficData.DataInterval");
 
 			List<DescribeDomainRealTimeTrafficDataResponse.DescribeDomainRealTimeTrafficData_DataModule> describeDomainRealTimeTrafficDataResponse_realTimeTrafficDataPerInterval = new List<DescribeDomainRealTimeTrafficDataResponse.DescribeDomainRealTimeTrafficData_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainRealTimeTrafficData.RealTimeTrafficDataPerInterval.Length"); i++) {
 				DescribeDomainRealTimeTrafficDataResponse.DescribeDomainRealTimeTrafficData_DataModule dataModule = new DescribeDomainRealTimeTrafficDataResponse.DescribeDomainRealTimeTrafficData_DataModule();
-				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainRealTimeTrafficData.RealTimeTrafficDataPerInterval["+ i +"].TimeStamp");
 				dataModule._Value = _ctx.StringValue("DescribeDomainRealTimeTrafficData.RealTimeTrafficDataPerInterval["+ i +"].Value");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainRealTimeTrafficData.RealTimeTrafficDataPerInterval["+ i +"].TimeStamp");
 
 				describeDomainRealTimeTrafficDataResponse_realTimeTrafficDataPerInterval.Add(dataModule);
 			}

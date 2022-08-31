@@ -43,11 +43,11 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 				List<DescribeCdnUserBillHistoryResponse.DescribeCdnUserBillHistory_BillHistoryDataItem.DescribeCdnUserBillHistory_BillingDataItem> billHistoryDataItem_billingData = new List<DescribeCdnUserBillHistoryResponse.DescribeCdnUserBillHistory_BillHistoryDataItem.DescribeCdnUserBillHistory_BillingDataItem>();
 				for (int j = 0; j < _ctx.Length("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillingData.Length"); j++) {
 					DescribeCdnUserBillHistoryResponse.DescribeCdnUserBillHistory_BillHistoryDataItem.DescribeCdnUserBillHistory_BillingDataItem billingDataItem = new DescribeCdnUserBillHistoryResponse.DescribeCdnUserBillHistory_BillHistoryDataItem.DescribeCdnUserBillHistory_BillingDataItem();
-					billingDataItem.ChargeType = _ctx.StringValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillingData["+ j +"].ChargeType");
-					billingDataItem.CdnRegion = _ctx.StringValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillingData["+ j +"].CdnRegion");
-					billingDataItem.Bandwidth = _ctx.FloatValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillingData["+ j +"].Bandwidth");
 					billingDataItem.Flow = _ctx.FloatValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillingData["+ j +"].Flow");
+					billingDataItem.Bandwidth = _ctx.FloatValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillingData["+ j +"].Bandwidth");
 					billingDataItem.Count = _ctx.FloatValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillingData["+ j +"].Count");
+					billingDataItem.CdnRegion = _ctx.StringValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillingData["+ j +"].CdnRegion");
+					billingDataItem.ChargeType = _ctx.StringValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillingData["+ j +"].ChargeType");
 
 					billHistoryDataItem_billingData.Add(billingDataItem);
 				}

@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			DescribeDomainSrcHttpCodeDataResponse describeDomainSrcHttpCodeDataResponse = new DescribeDomainSrcHttpCodeDataResponse();
 
 			describeDomainSrcHttpCodeDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainSrcHttpCodeDataResponse.EndTime = _ctx.StringValue("DescribeDomainSrcHttpCodeData.EndTime");
+			describeDomainSrcHttpCodeDataResponse.StartTime = _ctx.StringValue("DescribeDomainSrcHttpCodeData.StartTime");
 			describeDomainSrcHttpCodeDataResponse.RequestId = _ctx.StringValue("DescribeDomainSrcHttpCodeData.RequestId");
 			describeDomainSrcHttpCodeDataResponse.DomainName = _ctx.StringValue("DescribeDomainSrcHttpCodeData.DomainName");
-			describeDomainSrcHttpCodeDataResponse.StartTime = _ctx.StringValue("DescribeDomainSrcHttpCodeData.StartTime");
-			describeDomainSrcHttpCodeDataResponse.EndTime = _ctx.StringValue("DescribeDomainSrcHttpCodeData.EndTime");
 			describeDomainSrcHttpCodeDataResponse.DataInterval = _ctx.StringValue("DescribeDomainSrcHttpCodeData.DataInterval");
 
 			List<DescribeDomainSrcHttpCodeDataResponse.DescribeDomainSrcHttpCodeData_UsageData> describeDomainSrcHttpCodeDataResponse_httpCodeData = new List<DescribeDomainSrcHttpCodeDataResponse.DescribeDomainSrcHttpCodeData_UsageData>();

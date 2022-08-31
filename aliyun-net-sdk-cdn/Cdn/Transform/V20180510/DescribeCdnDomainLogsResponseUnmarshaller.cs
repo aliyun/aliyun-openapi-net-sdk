@@ -36,8 +36,8 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			List<DescribeCdnDomainLogsResponse.DescribeCdnDomainLogs_DomainLogDetail> describeCdnDomainLogsResponse_domainLogDetails = new List<DescribeCdnDomainLogsResponse.DescribeCdnDomainLogs_DomainLogDetail>();
 			for (int i = 0; i < _ctx.Length("DescribeCdnDomainLogs.DomainLogDetails.Length"); i++) {
 				DescribeCdnDomainLogsResponse.DescribeCdnDomainLogs_DomainLogDetail domainLogDetail = new DescribeCdnDomainLogsResponse.DescribeCdnDomainLogs_DomainLogDetail();
-				domainLogDetail.DomainName = _ctx.StringValue("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].DomainName");
 				domainLogDetail.LogCount = _ctx.LongValue("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].LogCount");
+				domainLogDetail.DomainName = _ctx.StringValue("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].DomainName");
 
 				DescribeCdnDomainLogsResponse.DescribeCdnDomainLogs_DomainLogDetail.DescribeCdnDomainLogs_PageInfos pageInfos = new DescribeCdnDomainLogsResponse.DescribeCdnDomainLogs_DomainLogDetail.DescribeCdnDomainLogs_PageInfos();
 				pageInfos.PageIndex = _ctx.LongValue("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].PageInfos.PageIndex");
@@ -48,11 +48,11 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 				List<DescribeCdnDomainLogsResponse.DescribeCdnDomainLogs_DomainLogDetail.DescribeCdnDomainLogs_LogInfoDetail> domainLogDetail_logInfos = new List<DescribeCdnDomainLogsResponse.DescribeCdnDomainLogs_DomainLogDetail.DescribeCdnDomainLogs_LogInfoDetail>();
 				for (int j = 0; j < _ctx.Length("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].LogInfos.Length"); j++) {
 					DescribeCdnDomainLogsResponse.DescribeCdnDomainLogs_DomainLogDetail.DescribeCdnDomainLogs_LogInfoDetail logInfoDetail = new DescribeCdnDomainLogsResponse.DescribeCdnDomainLogs_DomainLogDetail.DescribeCdnDomainLogs_LogInfoDetail();
-					logInfoDetail.LogName = _ctx.StringValue("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogName");
-					logInfoDetail.LogPath = _ctx.StringValue("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogPath");
+					logInfoDetail.EndTime = _ctx.StringValue("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].LogInfos["+ j +"].EndTime");
 					logInfoDetail.LogSize = _ctx.LongValue("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogSize");
 					logInfoDetail.StartTime = _ctx.StringValue("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].LogInfos["+ j +"].StartTime");
-					logInfoDetail.EndTime = _ctx.StringValue("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].LogInfos["+ j +"].EndTime");
+					logInfoDetail.LogName = _ctx.StringValue("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogName");
+					logInfoDetail.LogPath = _ctx.StringValue("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogPath");
 
 					domainLogDetail_logInfos.Add(logInfoDetail);
 				}

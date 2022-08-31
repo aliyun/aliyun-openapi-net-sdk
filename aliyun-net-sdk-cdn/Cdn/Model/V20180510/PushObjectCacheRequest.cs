@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string securityToken;
 
+		private bool? l2Preload;
+
 		private string area;
 
 		private long? ownerId;
@@ -72,6 +74,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public bool? L2Preload
+		{
+			get
+			{
+				return l2Preload;
+			}
+			set	
+			{
+				l2Preload = value;
+				DictionaryUtil.Add(QueryParameters, "L2Preload", value.ToString());
 			}
 		}
 

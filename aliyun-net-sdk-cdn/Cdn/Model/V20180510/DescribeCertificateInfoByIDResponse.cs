@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
@@ -56,41 +56,29 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeCertificateInfoByID_CertInfo
 		{
 
-			private string certId;
-
-			private string certName;
+			private string certExpireTime;
 
 			private string createTime;
 
-			private string httpsCrt;
-
 			private string certType;
 
-			private string certExpireTime;
+			private string certName;
+
+			private string certId;
 
 			private string domainList;
 
-			public string CertId
-			{
-				get
-				{
-					return certId;
-				}
-				set	
-				{
-					certId = value;
-				}
-			}
+			private string httpsCrt;
 
-			public string CertName
+			public string CertExpireTime
 			{
 				get
 				{
-					return certName;
+					return certExpireTime;
 				}
 				set	
 				{
-					certName = value;
+					certExpireTime = value;
 				}
 			}
 
@@ -106,18 +94,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string HttpsCrt
-			{
-				get
-				{
-					return httpsCrt;
-				}
-				set	
-				{
-					httpsCrt = value;
-				}
-			}
-
 			public string CertType
 			{
 				get
@@ -130,15 +106,27 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public string CertExpireTime
+			public string CertName
 			{
 				get
 				{
-					return certExpireTime;
+					return certName;
 				}
 				set	
 				{
-					certExpireTime = value;
+					certName = value;
+				}
+			}
+
+			public string CertId
+			{
+				get
+				{
+					return certId;
+				}
+				set	
+				{
+					certId = value;
 				}
 			}
 
@@ -151,6 +139,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					domainList = value;
+				}
+			}
+
+			public string HttpsCrt
+			{
+				get
+				{
+					return httpsCrt;
+				}
+				set	
+				{
+					httpsCrt = value;
 				}
 			}
 		}
