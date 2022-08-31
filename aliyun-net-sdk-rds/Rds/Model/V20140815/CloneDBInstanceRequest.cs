@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -72,6 +73,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string restoreTime;
 
+		private ServerlessConfig serverlessConfig_;
+
 		private string restoreTable;
 
 		private int? usedTime;
@@ -84,6 +87,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string payType;
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -97,6 +101,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceStorage")]
 		public int? DBInstanceStorage
 		{
 			get
@@ -110,6 +115,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DeletionProtection")]
 		public bool? DeletionProtection
 		{
 			get
@@ -123,6 +129,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "BackupType")]
 		public string BackupType
 		{
 			get
@@ -136,6 +143,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Period")]
 		public string Period
 		{
 			get
@@ -149,6 +157,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "BackupId")]
 		public string BackupId
 		{
 			get
@@ -162,6 +171,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceClass")]
 		public string DBInstanceClass
 		{
 			get
@@ -175,6 +185,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "VSwitchId")]
 		public string VSwitchId
 		{
 			get
@@ -188,6 +199,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PrivateIpAddress")]
 		public string PrivateIpAddress
 		{
 			get
@@ -201,6 +213,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ZoneId")]
 		public string ZoneId
 		{
 			get
@@ -214,6 +227,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceNetworkType")]
 		public string InstanceNetworkType
 		{
 			get
@@ -227,6 +241,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TableMeta")]
 		public string TableMeta
 		{
 			get
@@ -240,6 +255,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
 			get
@@ -253,6 +269,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DBInstanceStorageType")]
 		public string DBInstanceStorageType
 		{
 			get
@@ -266,6 +283,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DedicatedHostGroupId")]
 		public string DedicatedHostGroupId
 		{
 			get
@@ -279,6 +297,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "RestoreTime")]
 		public string RestoreTime
 		{
 			get
@@ -292,6 +311,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ServerlessConfig")]
+		public ServerlessConfig ServerlessConfig_
+		{
+			get
+			{
+				return serverlessConfig_;
+			}
+
+			set
+			{
+				serverlessConfig_ = value;
+				DictionaryUtil.Add(QueryParameters, "ServerlessConfig", JsonConvert.SerializeObject(value));
+
+			}
+		}
+
+		[JsonProperty(PropertyName = "RestoreTable")]
 		public string RestoreTable
 		{
 			get
@@ -305,6 +341,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "UsedTime")]
 		public int? UsedTime
 		{
 			get
@@ -318,6 +355,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "DbNames")]
 		public string DbNames
 		{
 			get
@@ -331,6 +369,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "VPCId")]
 		public string VPCId
 		{
 			get
@@ -344,6 +383,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "Category")]
 		public string Category
 		{
 			get
@@ -357,6 +397,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "PayType")]
 		public string PayType
 		{
 			get
@@ -367,6 +408,70 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				payType = value;
 				DictionaryUtil.Add(QueryParameters, "PayType", value);
+			}
+		}
+
+		public class ServerlessConfig
+		{
+
+			private double? minCapacity;
+
+			private double? maxCapacity;
+
+			private bool? autoPause;
+
+			private bool? switchForce;
+
+			[JsonProperty(PropertyName = "MinCapacity")]
+			public double? MinCapacity
+			{
+				get
+				{
+					return minCapacity;
+				}
+				set	
+				{
+					minCapacity = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaxCapacity")]
+			public double? MaxCapacity
+			{
+				get
+				{
+					return maxCapacity;
+				}
+				set	
+				{
+					maxCapacity = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AutoPause")]
+			public bool? AutoPause
+			{
+				get
+				{
+					return autoPause;
+				}
+				set	
+				{
+					autoPause = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SwitchForce")]
+			public bool? SwitchForce
+			{
+				get
+				{
+					return switchForce;
+				}
+				set	
+				{
+					switchForce = value;
+				}
 			}
 		}
 

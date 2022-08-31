@@ -27,6 +27,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
+		private string dBInstanceId;
+
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
@@ -37,6 +39,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBInstanceId")]
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
 			}
 		}
 	}

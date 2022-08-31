@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -54,6 +55,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string parameterGroupDesc;
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -67,6 +69,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ParameterGroupId")]
 		public string ParameterGroupId
 		{
 			get
@@ -80,6 +83,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -93,6 +97,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -106,6 +111,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "TargetRegionId")]
 		public string TargetRegionId
 		{
 			get
@@ -119,6 +125,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ParameterGroupName")]
 		public string ParameterGroupName
 		{
 			get
@@ -132,6 +139,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ParameterGroupDesc")]
 		public string ParameterGroupDesc
 		{
 			get

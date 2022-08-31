@@ -29,6 +29,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
+		private string dBInstanceName;
+
 		private List<DescribeDBInstanceMetrics_Metrics> items;
 
 		[JsonProperty(PropertyName = "TotalRecordCount")]
@@ -54,6 +56,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBInstanceName")]
+		public string DBInstanceName
+		{
+			get
+			{
+				return dBInstanceName;
+			}
+			set	
+			{
+				dBInstanceName = value;
 			}
 		}
 

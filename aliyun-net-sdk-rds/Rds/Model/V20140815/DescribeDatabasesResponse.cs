@@ -70,6 +70,14 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string characterSetName;
 
+			private int? pageNumber;
+
+			private int? pageSize;
+
+			private int? totalCount;
+
+			private string resourceGroupId;
+
 			private List<DescribeDatabases_AccountPrivilegeInfo> accounts;
 
 			[JsonProperty(PropertyName = "DBDescription")]
@@ -147,6 +155,58 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					characterSetName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PageNumber")]
+			public int? PageNumber
+			{
+				get
+				{
+					return pageNumber;
+				}
+				set	
+				{
+					pageNumber = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PageSize")]
+			public int? PageSize
+			{
+				get
+				{
+					return pageSize;
+				}
+				set	
+				{
+					pageSize = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TotalCount")]
+			public int? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ResourceGroupId")]
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 

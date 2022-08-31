@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describePGHbaConfigResponse.ModifyStatusReason = _ctx.StringValue("DescribePGHbaConfig.ModifyStatusReason");
 			describePGHbaConfigResponse.RequestId = _ctx.StringValue("DescribePGHbaConfig.RequestId");
 			describePGHbaConfigResponse.LastModifyStatus = _ctx.StringValue("DescribePGHbaConfig.LastModifyStatus");
+			describePGHbaConfigResponse.DBInstanceId = _ctx.StringValue("DescribePGHbaConfig.DBInstanceId");
 
 			List<DescribePGHbaConfigResponse.DescribePGHbaConfig_HbaItem> describePGHbaConfigResponse_defaultHbaItems = new List<DescribePGHbaConfigResponse.DescribePGHbaConfig_HbaItem>();
 			for (int i = 0; i < _ctx.Length("DescribePGHbaConfig.DefaultHbaItems.Length"); i++) {

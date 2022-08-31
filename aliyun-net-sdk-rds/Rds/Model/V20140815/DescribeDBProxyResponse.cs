@@ -43,6 +43,12 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBProxyInstanceSize;
 
+		private string dBProxyEngineType;
+
+		private string accountName;
+
+		private string resourceGroupId;
+
 		private List<DescribeDBProxy_DBProxyConnectStringItemsItem> dBProxyConnectStringItems;
 
 		private List<DescribeDBProxy_DbProxyEndpointItemsItem> dbProxyEndpointItems;
@@ -161,6 +167,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				dBProxyInstanceSize = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBProxyEngineType")]
+		public string DBProxyEngineType
+		{
+			get
+			{
+				return dBProxyEngineType;
+			}
+			set	
+			{
+				dBProxyEngineType = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "AccountName")]
+		public string AccountName
+		{
+			get
+			{
+				return accountName;
+			}
+			set	
+			{
+				accountName = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
 			}
 		}
 

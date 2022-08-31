@@ -47,9 +47,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageNumber;
 
+		private string resourceGroupId;
+
 		private int? pageSize;
 
 		private string dBInstanceId;
+
+		private string backupType;
 
 		private string backupId;
 
@@ -101,6 +105,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
 		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
@@ -126,6 +144,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "BackupType")]
+		public string BackupType
+		{
+			get
+			{
+				return backupType;
+			}
+			set	
+			{
+				backupType = value;
+				DictionaryUtil.Add(QueryParameters, "BackupType", value);
 			}
 		}
 

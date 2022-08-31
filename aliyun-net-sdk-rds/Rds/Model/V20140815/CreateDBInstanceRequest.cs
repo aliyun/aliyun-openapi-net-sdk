@@ -844,6 +844,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private double? maxCapacity;
 
+			private bool? autoPause;
+
+			private bool? switchForce;
+
 			[JsonProperty(PropertyName = "MinCapacity")]
 			public double? MinCapacity
 			{
@@ -867,6 +871,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					maxCapacity = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AutoPause")]
+			public bool? AutoPause
+			{
+				get
+				{
+					return autoPause;
+				}
+				set	
+				{
+					autoPause = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SwitchForce")]
+			public bool? SwitchForce
+			{
+				get
+				{
+					return switchForce;
+				}
+				set	
+				{
+					switchForce = value;
 				}
 			}
 		}

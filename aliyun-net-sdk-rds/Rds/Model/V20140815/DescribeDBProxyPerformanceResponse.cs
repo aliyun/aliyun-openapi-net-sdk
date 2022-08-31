@@ -33,6 +33,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
+		private string dBProxyEngineType;
+
 		private List<DescribeDBProxyPerformance_PerformanceKey> performanceKeys;
 
 		[JsonProperty(PropertyName = "EndTime")]
@@ -84,6 +86,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBProxyEngineType")]
+		public string DBProxyEngineType
+		{
+			get
+			{
+				return dBProxyEngineType;
+			}
+			set	
+			{
+				dBProxyEngineType = value;
 			}
 		}
 

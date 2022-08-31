@@ -289,6 +289,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private long? lastRowsAffectedCount;
 
+			private string sQLHash;
+
 			[JsonProperty(PropertyName = "HostAddress")]
 			public string HostAddress
 			{
@@ -520,6 +522,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					lastRowsAffectedCount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SQLHash")]
+			public string SQLHash
+			{
+				get
+				{
+					return sQLHash;
+				}
+				set	
+				{
+					sQLHash = value;
 				}
 			}
 		}

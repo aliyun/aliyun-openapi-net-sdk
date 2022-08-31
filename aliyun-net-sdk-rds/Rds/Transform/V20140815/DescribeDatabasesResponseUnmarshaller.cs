@@ -42,6 +42,10 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				database.DBInstanceId = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].DBInstanceId");
 				database.Engine = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].Engine");
 				database.CharacterSetName = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].CharacterSetName");
+				database.PageNumber = _ctx.IntegerValue("DescribeDatabases.Databases["+ i +"].PageNumber");
+				database.PageSize = _ctx.IntegerValue("DescribeDatabases.Databases["+ i +"].PageSize");
+				database.TotalCount = _ctx.IntegerValue("DescribeDatabases.Databases["+ i +"].TotalCount");
+				database.ResourceGroupId = _ctx.StringValue("DescribeDatabases.Databases["+ i +"].ResourceGroupId");
 
 				List<DescribeDatabasesResponse.DescribeDatabases_Database.DescribeDatabases_AccountPrivilegeInfo> database_accounts = new List<DescribeDatabasesResponse.DescribeDatabases_Database.DescribeDatabases_AccountPrivilegeInfo>();
 				for (int j = 0; j < _ctx.Length("DescribeDatabases.Databases["+ i +"].Accounts.Length"); j++) {

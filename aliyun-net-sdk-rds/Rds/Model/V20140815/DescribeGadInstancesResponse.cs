@@ -180,6 +180,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 				private string dtsInstance;
 
+				private string resourceGroupId;
+
 				[JsonProperty(PropertyName = "DBInstanceID")]
 				public string DBInstanceID
 				{
@@ -268,6 +270,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						dtsInstance = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ResourceGroupId")]
+				public string ResourceGroupId
+				{
+					get
+					{
+						return resourceGroupId;
+					}
+					set	
+					{
+						resourceGroupId = value;
 					}
 				}
 			}

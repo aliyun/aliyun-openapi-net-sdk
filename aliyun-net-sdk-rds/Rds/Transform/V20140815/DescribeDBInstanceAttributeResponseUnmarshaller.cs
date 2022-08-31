@@ -115,6 +115,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstanceAttribute.DBInstanceClass = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DBInstanceClass");
 				dBInstanceAttribute.Engine = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Engine");
 				dBInstanceAttribute.DeletionProtection = _ctx.BooleanValue("DescribeDBInstanceAttribute.Items["+ i +"].DeletionProtection");
+				dBInstanceAttribute.KindCode = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].kindCode");
 
 				DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_Extra extra = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_Extra();
 				extra.ReplicaGroupStatus = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Extra.ReplicaGroupStatus");
@@ -131,6 +132,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_ServerlessConfig serverlessConfig = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_ServerlessConfig();
 				serverlessConfig.ScaleMin = _ctx.DoubleValue("DescribeDBInstanceAttribute.Items["+ i +"].ServerlessConfig.ScaleMin");
 				serverlessConfig.ScaleMax = _ctx.DoubleValue("DescribeDBInstanceAttribute.Items["+ i +"].ServerlessConfig.ScaleMax");
+				serverlessConfig.AutoPause = _ctx.BooleanValue("DescribeDBInstanceAttribute.Items["+ i +"].ServerlessConfig.AutoPause");
+				serverlessConfig.SwitchForce = _ctx.BooleanValue("DescribeDBInstanceAttribute.Items["+ i +"].ServerlessConfig.SwitchForce");
 				dBInstanceAttribute.ServerlessConfig = serverlessConfig;
 
 				DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_BabelfishConfig babelfishConfig = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_BabelfishConfig();

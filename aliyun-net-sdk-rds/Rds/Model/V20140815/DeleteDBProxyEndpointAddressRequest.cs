@@ -43,9 +43,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBProxyConnectStringNetType;
 
-		private string dBProxyEndpointId;
-
 		private string dBInstanceId;
+
+		private string dBProxyEngineType;
+
+		private string dBProxyEndpointId;
 
 		[JsonProperty(PropertyName = "DBProxyConnectStringNetType")]
 		public string DBProxyConnectStringNetType
@@ -61,20 +63,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		[JsonProperty(PropertyName = "DBProxyEndpointId")]
-		public string DBProxyEndpointId
-		{
-			get
-			{
-				return dBProxyEndpointId;
-			}
-			set	
-			{
-				dBProxyEndpointId = value;
-				DictionaryUtil.Add(QueryParameters, "DBProxyEndpointId", value);
-			}
-		}
-
 		[JsonProperty(PropertyName = "DBInstanceId")]
 		public string DBInstanceId
 		{
@@ -86,6 +74,34 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBProxyEngineType")]
+		public string DBProxyEngineType
+		{
+			get
+			{
+				return dBProxyEngineType;
+			}
+			set	
+			{
+				dBProxyEngineType = value;
+				DictionaryUtil.Add(QueryParameters, "DBProxyEngineType", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBProxyEndpointId")]
+		public string DBProxyEndpointId
+		{
+			get
+			{
+				return dBProxyEndpointId;
+			}
+			set	
+			{
+				dBProxyEndpointId = value;
+				DictionaryUtil.Add(QueryParameters, "DBProxyEndpointId", value);
 			}
 		}
 

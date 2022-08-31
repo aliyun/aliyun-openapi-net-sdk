@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string pattern;
 
+		private string resourceGroupId;
+
 		private int? pageSize;
 
 		private string dBInstanceId;
@@ -104,6 +106,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				pattern = value;
 				DictionaryUtil.Add(QueryParameters, "Pattern", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

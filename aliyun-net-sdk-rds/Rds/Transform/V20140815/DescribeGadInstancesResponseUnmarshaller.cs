@@ -53,6 +53,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 					gadInstanceMembersItem.Role = _ctx.StringValue("DescribeGadInstances.GadInstances["+ i +"].GadInstanceMembers["+ j +"].Role");
 					gadInstanceMembersItem.Status = _ctx.StringValue("DescribeGadInstances.GadInstances["+ i +"].GadInstanceMembers["+ j +"].Status");
 					gadInstanceMembersItem.DtsInstance = _ctx.StringValue("DescribeGadInstances.GadInstances["+ i +"].GadInstanceMembers["+ j +"].DtsInstance");
+					gadInstanceMembersItem.ResourceGroupId = _ctx.StringValue("DescribeGadInstances.GadInstances["+ i +"].GadInstanceMembers["+ j +"].ResourceGroupId");
 
 					gadInstancesItem_gadInstanceMembers.Add(gadInstanceMembersItem);
 				}

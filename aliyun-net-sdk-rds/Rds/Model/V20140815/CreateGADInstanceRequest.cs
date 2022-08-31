@@ -41,61 +41,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			Method = MethodType.POST;
         }
 
-		private string dBList;
-
-		private string centralDBInstanceId;
-
-		private string centralRdsDtsAdminPassword;
-
 		private string description;
 
 		private string centralRdsDtsAdminAccount;
 
 		private string centralRegionId;
 
+		private string resourceGroupId;
+
+		private List<string> tags = new List<string>(){ };
+
 		private List<long?> unitNodes = new List<long?>(){ };
 
-		[JsonProperty(PropertyName = "DBList")]
-		public string DBList
-		{
-			get
-			{
-				return dBList;
-			}
-			set	
-			{
-				dBList = value;
-				DictionaryUtil.Add(QueryParameters, "DBList", value);
-			}
-		}
+		private string dBList;
 
-		[JsonProperty(PropertyName = "CentralDBInstanceId")]
-		public string CentralDBInstanceId
-		{
-			get
-			{
-				return centralDBInstanceId;
-			}
-			set	
-			{
-				centralDBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "CentralDBInstanceId", value);
-			}
-		}
+		private string centralDBInstanceId;
 
-		[JsonProperty(PropertyName = "CentralRdsDtsAdminPassword")]
-		public string CentralRdsDtsAdminPassword
-		{
-			get
-			{
-				return centralRdsDtsAdminPassword;
-			}
-			set	
-			{
-				centralRdsDtsAdminPassword = value;
-				DictionaryUtil.Add(QueryParameters, "CentralRdsDtsAdminPassword", value);
-			}
-		}
+		private string centralRdsDtsAdminPassword;
 
 		[JsonProperty(PropertyName = "Description")]
 		public string Description
@@ -139,6 +101,42 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Tag")]
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
+			}
+		}
+
 		[JsonProperty(PropertyName = "UnitNode")]
 		public List<long?> UnitNodes
 		{
@@ -170,6 +168,82 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
 						DictionaryUtil.Add(QueryParameters,"UnitNode." + (depth1 + 1), unitNodes[depth1]);
 					}
+				}
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBList")]
+		public string DBList
+		{
+			get
+			{
+				return dBList;
+			}
+			set	
+			{
+				dBList = value;
+				DictionaryUtil.Add(QueryParameters, "DBList", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "CentralDBInstanceId")]
+		public string CentralDBInstanceId
+		{
+			get
+			{
+				return centralDBInstanceId;
+			}
+			set	
+			{
+				centralDBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "CentralDBInstanceId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "CentralRdsDtsAdminPassword")]
+		public string CentralRdsDtsAdminPassword
+		{
+			get
+			{
+				return centralRdsDtsAdminPassword;
+			}
+			set	
+			{
+				centralRdsDtsAdminPassword = value;
+				DictionaryUtil.Add(QueryParameters, "CentralRdsDtsAdminPassword", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			[JsonProperty(PropertyName = "Value")]
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Key")]
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
 				}
 			}
 		}

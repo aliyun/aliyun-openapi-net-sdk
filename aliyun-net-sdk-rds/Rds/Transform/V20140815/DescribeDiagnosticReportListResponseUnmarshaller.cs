@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			describeDiagnosticReportListResponse.HttpResponse = _ctx.HttpResponse;
 			describeDiagnosticReportListResponse.RequestId = _ctx.StringValue("DescribeDiagnosticReportList.RequestId");
+			describeDiagnosticReportListResponse.DBInstanceId = _ctx.StringValue("DescribeDiagnosticReportList.DBInstanceId");
 
 			List<DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report> describeDiagnosticReportListResponse_reportList = new List<DescribeDiagnosticReportListResponse.DescribeDiagnosticReportList_Report>();
 			for (int i = 0; i < _ctx.Length("DescribeDiagnosticReportList.ReportList.Length"); i++) {

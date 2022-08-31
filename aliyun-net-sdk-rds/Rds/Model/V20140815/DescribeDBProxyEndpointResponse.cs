@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBProxyConnectString;
 
+		private string dBProxyEngineType;
+
 		private List<DescribeDBProxyEndpoint_EndpointConnectItemsItem> endpointConnectItems;
 
 		[JsonProperty(PropertyName = "DBProxyConnectStringNetType")]
@@ -189,6 +191,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				dBProxyConnectString = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "DBProxyEngineType")]
+		public string DBProxyEngineType
+		{
+			get
+			{
+				return dBProxyEngineType;
+			}
+			set	
+			{
+				dBProxyEngineType = value;
 			}
 		}
 

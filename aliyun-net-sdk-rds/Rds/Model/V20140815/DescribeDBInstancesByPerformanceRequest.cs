@@ -55,6 +55,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string tag1value;
 
+		private string resourceGroupId;
+
 		private string sortKey;
 
 		private int? pageSize;
@@ -180,6 +182,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				tag1value = value;
 				DictionaryUtil.Add(QueryParameters, "Tag.1.value", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ResourceGroupId")]
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
