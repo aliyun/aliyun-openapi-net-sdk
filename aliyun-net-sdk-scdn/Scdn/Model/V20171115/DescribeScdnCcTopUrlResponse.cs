@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -84,21 +84,9 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 		public class DescribeScdnCcTopUrl_AttackUrlDatas
 		{
 
-			private string url;
-
 			private string attackCount;
 
-			public string Url
-			{
-				get
-				{
-					return url;
-				}
-				set	
-				{
-					url = value;
-				}
-			}
+			private string url;
 
 			public string AttackCount
 			{
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				set	
 				{
 					attackCount = value;
+				}
+			}
+
+			public string Url
+			{
+				get
+				{
+					return url;
+				}
+				set	
+				{
+					url = value;
 				}
 			}
 		}

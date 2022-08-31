@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 		public class BatchSetScdnDomainConfigs_DomainConfigModel
 		{
 
-			private string domainName;
-
 			private long? configId;
 
-			private string functionName;
+			private string domainName;
 
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
+			private string functionName;
 
 			public long? ConfigId
 			{
@@ -83,6 +71,18 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				set	
 				{
 					configId = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
 				}
 			}
 

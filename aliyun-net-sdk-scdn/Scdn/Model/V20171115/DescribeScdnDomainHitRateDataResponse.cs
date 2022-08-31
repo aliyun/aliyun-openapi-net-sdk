@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -25,17 +25,41 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 	public class DescribeScdnDomainHitRateDataResponse : AcsResponse
 	{
 
+		private string endTime;
+
+		private string startTime;
+
 		private string requestId;
 
 		private string domainName;
 
-		private string startTime;
-
-		private string endTime;
-
 		private string dataInterval;
 
 		private List<DescribeScdnDomainHitRateData_DataModule> hitRatePerInterval;
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -58,30 +82,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			set	
 			{
 				domainName = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
 			}
 		}
 
@@ -114,9 +114,9 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 			private string timeStamp;
 
-			private string reqHitRate;
-
 			private string byteHitRate;
+
+			private string reqHitRate;
 
 			public string TimeStamp
 			{
@@ -130,18 +130,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				}
 			}
 
-			public string ReqHitRate
-			{
-				get
-				{
-					return reqHitRate;
-				}
-				set	
-				{
-					reqHitRate = value;
-				}
-			}
-
 			public string ByteHitRate
 			{
 				get
@@ -151,6 +139,18 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				set	
 				{
 					byteHitRate = value;
+				}
+			}
+
+			public string ReqHitRate
+			{
+				get
+				{
+					return reqHitRate;
+				}
+				set	
+				{
+					reqHitRate = value;
 				}
 			}
 		}

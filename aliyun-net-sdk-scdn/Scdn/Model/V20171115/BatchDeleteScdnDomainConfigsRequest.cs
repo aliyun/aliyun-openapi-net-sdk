@@ -45,11 +45,11 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 		private string domainNames;
 
+		private string securityToken;
+
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string securityToken;
 
 		public string FunctionNames
 		{
@@ -77,6 +77,19 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -100,19 +113,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

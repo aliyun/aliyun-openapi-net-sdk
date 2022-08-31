@@ -31,10 +31,10 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			DescribeScdnDomainPvDataResponse describeScdnDomainPvDataResponse = new DescribeScdnDomainPvDataResponse();
 
 			describeScdnDomainPvDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnDomainPvDataResponse.EndTime = _ctx.StringValue("DescribeScdnDomainPvData.EndTime");
+			describeScdnDomainPvDataResponse.StartTime = _ctx.StringValue("DescribeScdnDomainPvData.StartTime");
 			describeScdnDomainPvDataResponse.RequestId = _ctx.StringValue("DescribeScdnDomainPvData.RequestId");
 			describeScdnDomainPvDataResponse.DomainName = _ctx.StringValue("DescribeScdnDomainPvData.DomainName");
-			describeScdnDomainPvDataResponse.StartTime = _ctx.StringValue("DescribeScdnDomainPvData.StartTime");
-			describeScdnDomainPvDataResponse.EndTime = _ctx.StringValue("DescribeScdnDomainPvData.EndTime");
 			describeScdnDomainPvDataResponse.DataInterval = _ctx.StringValue("DescribeScdnDomainPvData.DataInterval");
 
 			List<DescribeScdnDomainPvDataResponse.DescribeScdnDomainPvData_UsageData> describeScdnDomainPvDataResponse_pvDataInterval = new List<DescribeScdnDomainPvDataResponse.DescribeScdnDomainPvData_UsageData>();

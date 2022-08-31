@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -56,23 +56,37 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 		public class DescribeScdnDomainConfigs_DomainConfig
 		{
 
-			private string functionName;
+			private string status;
+
+			private string parentId;
 
 			private string configId;
 
-			private string status;
+			private string functionName;
 
 			private List<DescribeScdnDomainConfigs_FunctionArg> functionArgs;
 
-			public string FunctionName
+			public string Status
 			{
 				get
 				{
-					return functionName;
+					return status;
 				}
 				set	
 				{
-					functionName = value;
+					status = value;
+				}
+			}
+
+			public string ParentId
+			{
+				get
+				{
+					return parentId;
+				}
+				set	
+				{
+					parentId = value;
 				}
 			}
 
@@ -88,15 +102,15 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				}
 			}
 
-			public string Status
+			public string FunctionName
 			{
 				get
 				{
-					return status;
+					return functionName;
 				}
 				set	
 				{
-					status = value;
+					functionName = value;
 				}
 			}
 

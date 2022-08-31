@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -29,9 +29,9 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 		private List<DescribeScdnCcQpsInfo_TimeScope> timeScopes;
 
-		private List<string> totals;
-
 		private List<string> attacks;
+
+		private List<string> totals;
 
 		public string RequestId
 		{
@@ -57,18 +57,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public List<string> Totals
-		{
-			get
-			{
-				return totals;
-			}
-			set	
-			{
-				totals = value;
-			}
-		}
-
 		public List<string> Attacks
 		{
 			get
@@ -78,6 +66,18 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			set	
 			{
 				attacks = value;
+			}
+		}
+
+		public List<string> Totals
+		{
+			get
+			{
+				return totals;
+			}
+			set	
+			{
+				totals = value;
 			}
 		}
 

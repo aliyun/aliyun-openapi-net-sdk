@@ -31,18 +31,18 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			DescribeScdnDomainHitRateDataResponse describeScdnDomainHitRateDataResponse = new DescribeScdnDomainHitRateDataResponse();
 
 			describeScdnDomainHitRateDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnDomainHitRateDataResponse.EndTime = _ctx.StringValue("DescribeScdnDomainHitRateData.EndTime");
+			describeScdnDomainHitRateDataResponse.StartTime = _ctx.StringValue("DescribeScdnDomainHitRateData.StartTime");
 			describeScdnDomainHitRateDataResponse.RequestId = _ctx.StringValue("DescribeScdnDomainHitRateData.RequestId");
 			describeScdnDomainHitRateDataResponse.DomainName = _ctx.StringValue("DescribeScdnDomainHitRateData.DomainName");
-			describeScdnDomainHitRateDataResponse.StartTime = _ctx.StringValue("DescribeScdnDomainHitRateData.StartTime");
-			describeScdnDomainHitRateDataResponse.EndTime = _ctx.StringValue("DescribeScdnDomainHitRateData.EndTime");
 			describeScdnDomainHitRateDataResponse.DataInterval = _ctx.StringValue("DescribeScdnDomainHitRateData.DataInterval");
 
 			List<DescribeScdnDomainHitRateDataResponse.DescribeScdnDomainHitRateData_DataModule> describeScdnDomainHitRateDataResponse_hitRatePerInterval = new List<DescribeScdnDomainHitRateDataResponse.DescribeScdnDomainHitRateData_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeScdnDomainHitRateData.HitRatePerInterval.Length"); i++) {
 				DescribeScdnDomainHitRateDataResponse.DescribeScdnDomainHitRateData_DataModule dataModule = new DescribeScdnDomainHitRateDataResponse.DescribeScdnDomainHitRateData_DataModule();
 				dataModule.TimeStamp = _ctx.StringValue("DescribeScdnDomainHitRateData.HitRatePerInterval["+ i +"].TimeStamp");
-				dataModule.ReqHitRate = _ctx.StringValue("DescribeScdnDomainHitRateData.HitRatePerInterval["+ i +"].ReqHitRate");
 				dataModule.ByteHitRate = _ctx.StringValue("DescribeScdnDomainHitRateData.HitRatePerInterval["+ i +"].ByteHitRate");
+				dataModule.ReqHitRate = _ctx.StringValue("DescribeScdnDomainHitRateData.HitRatePerInterval["+ i +"].ReqHitRate");
 
 				describeScdnDomainHitRateDataResponse_hitRatePerInterval.Add(dataModule);
 			}

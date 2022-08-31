@@ -31,8 +31,8 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			DescribeScdnDomainLogResponse describeScdnDomainLogResponse = new DescribeScdnDomainLogResponse();
 
 			describeScdnDomainLogResponse.HttpResponse = _ctx.HttpResponse;
-			describeScdnDomainLogResponse.RequestId = _ctx.StringValue("DescribeScdnDomainLog.RequestId");
 			describeScdnDomainLogResponse.DomainName = _ctx.StringValue("DescribeScdnDomainLog.DomainName");
+			describeScdnDomainLogResponse.RequestId = _ctx.StringValue("DescribeScdnDomainLog.RequestId");
 
 			List<DescribeScdnDomainLogResponse.DescribeScdnDomainLog_DomainLogDetail> describeScdnDomainLogResponse_domainLogDetails = new List<DescribeScdnDomainLogResponse.DescribeScdnDomainLog_DomainLogDetail>();
 			for (int i = 0; i < _ctx.Length("DescribeScdnDomainLog.DomainLogDetails.Length"); i++) {
@@ -48,11 +48,11 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 				List<DescribeScdnDomainLogResponse.DescribeScdnDomainLog_DomainLogDetail.DescribeScdnDomainLog_LogInfoDetail> domainLogDetail_logInfos = new List<DescribeScdnDomainLogResponse.DescribeScdnDomainLog_DomainLogDetail.DescribeScdnDomainLog_LogInfoDetail>();
 				for (int j = 0; j < _ctx.Length("DescribeScdnDomainLog.DomainLogDetails["+ i +"].LogInfos.Length"); j++) {
 					DescribeScdnDomainLogResponse.DescribeScdnDomainLog_DomainLogDetail.DescribeScdnDomainLog_LogInfoDetail logInfoDetail = new DescribeScdnDomainLogResponse.DescribeScdnDomainLog_DomainLogDetail.DescribeScdnDomainLog_LogInfoDetail();
-					logInfoDetail.LogName = _ctx.StringValue("DescribeScdnDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogName");
-					logInfoDetail.LogPath = _ctx.StringValue("DescribeScdnDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogPath");
+					logInfoDetail.EndTime = _ctx.StringValue("DescribeScdnDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].EndTime");
 					logInfoDetail.LogSize = _ctx.LongValue("DescribeScdnDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogSize");
 					logInfoDetail.StartTime = _ctx.StringValue("DescribeScdnDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].StartTime");
-					logInfoDetail.EndTime = _ctx.StringValue("DescribeScdnDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].EndTime");
+					logInfoDetail.LogName = _ctx.StringValue("DescribeScdnDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogName");
+					logInfoDetail.LogPath = _ctx.StringValue("DescribeScdnDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogPath");
 
 					domainLogDetail_logInfos.Add(logInfoDetail);
 				}

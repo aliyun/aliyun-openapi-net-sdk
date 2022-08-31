@@ -40,21 +40,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
             }
         }
 
-		private long? ownerId;
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
         public override DescribeScdnUserProtectInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeScdnUserProtectInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);

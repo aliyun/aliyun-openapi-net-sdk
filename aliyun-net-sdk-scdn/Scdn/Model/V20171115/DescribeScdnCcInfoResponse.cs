@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 	public class DescribeScdnCcInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string status;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string Status
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			set	
 			{
 				status = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

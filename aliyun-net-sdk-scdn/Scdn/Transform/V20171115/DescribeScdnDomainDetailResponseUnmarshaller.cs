@@ -35,25 +35,25 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 
 			DescribeScdnDomainDetailResponse.DescribeScdnDomainDetail_DomainDetail domainDetail = new DescribeScdnDomainDetailResponse.DescribeScdnDomainDetail_DomainDetail();
 			domainDetail.GmtCreated = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.GmtCreated");
-			domainDetail.GmtModified = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.GmtModified");
-			domainDetail.DomainStatus = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.DomainStatus");
-			domainDetail.Cname = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.Cname");
-			domainDetail.DomainName = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.DomainName");
+			domainDetail.SSLPub = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.SSLPub");
 			domainDetail.Description = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.Description");
 			domainDetail.SSLProtocol = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.SSLProtocol");
-			domainDetail.SSLPub = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.SSLPub");
-			domainDetail.Scope = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.Scope");
-			domainDetail.CertName = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.CertName");
 			domainDetail.ResourceGroupId = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.ResourceGroupId");
+			domainDetail.CertName = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.CertName");
+			domainDetail.Scope = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.Scope");
+			domainDetail.Cname = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.Cname");
+			domainDetail.DomainStatus = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.DomainStatus");
+			domainDetail.GmtModified = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.GmtModified");
+			domainDetail.DomainName = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.DomainName");
 
 			List<DescribeScdnDomainDetailResponse.DescribeScdnDomainDetail_DomainDetail.DescribeScdnDomainDetail_Source> domainDetail_sources = new List<DescribeScdnDomainDetailResponse.DescribeScdnDomainDetail_DomainDetail.DescribeScdnDomainDetail_Source>();
 			for (int i = 0; i < _ctx.Length("DescribeScdnDomainDetail.DomainDetail.Sources.Length"); i++) {
 				DescribeScdnDomainDetailResponse.DescribeScdnDomainDetail_DomainDetail.DescribeScdnDomainDetail_Source source = new DescribeScdnDomainDetailResponse.DescribeScdnDomainDetail_DomainDetail.DescribeScdnDomainDetail_Source();
-				source.Content = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.Sources["+ i +"].Content");
 				source.Type = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.Sources["+ i +"].Type");
-				source.Port = _ctx.IntegerValue("DescribeScdnDomainDetail.DomainDetail.Sources["+ i +"].Port");
-				source.Enabled = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.Sources["+ i +"].Enabled");
 				source.Priority = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.Sources["+ i +"].Priority");
+				source.Port = _ctx.IntegerValue("DescribeScdnDomainDetail.DomainDetail.Sources["+ i +"].Port");
+				source.Content = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.Sources["+ i +"].Content");
+				source.Enabled = _ctx.StringValue("DescribeScdnDomainDetail.DomainDetail.Sources["+ i +"].Enabled");
 
 				domainDetail_sources.Add(source);
 			}

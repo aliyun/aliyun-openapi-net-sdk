@@ -42,11 +42,9 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 		private string line;
 
-		private string startTime;
-
 		private string endTime;
 
-		private long? ownerId;
+		private string startTime;
 
 		public string Line
 		{
@@ -58,19 +56,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				line = value;
 				DictionaryUtil.Add(QueryParameters, "Line", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -87,16 +72,16 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public long? OwnerId
+		public string StartTime
 		{
 			get
 			{
-				return ownerId;
+				return startTime;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 

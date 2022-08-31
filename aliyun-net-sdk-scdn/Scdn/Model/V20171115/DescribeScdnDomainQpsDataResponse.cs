@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -25,17 +25,41 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 	public class DescribeScdnDomainQpsDataResponse : AcsResponse
 	{
 
+		private string endTime;
+
+		private string startTime;
+
 		private string requestId;
 
 		private string domainName;
 
-		private string startTime;
-
-		private string endTime;
-
 		private string dataInterval;
 
 		private List<DescribeScdnDomainQpsData_DataModule> qpsDataPerInterval;
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -58,30 +82,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			set	
 			{
 				domainName = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
 			}
 		}
 
@@ -112,29 +112,29 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 		public class DescribeScdnDomainQpsData_DataModule
 		{
 
-			private string timeStamp;
+			private string httpsAccValue;
 
 			private string qpsValue;
 
+			private string accValue;
+
 			private string httpQpsValue;
+
+			private string timeStamp;
 
 			private string httpsQpsValue;
 
-			private string accValue;
-
 			private string httpAccValue;
 
-			private string httpsAccValue;
-
-			public string TimeStamp
+			public string HttpsAccValue
 			{
 				get
 				{
-					return timeStamp;
+					return httpsAccValue;
 				}
 				set	
 				{
-					timeStamp = value;
+					httpsAccValue = value;
 				}
 			}
 
@@ -150,6 +150,18 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				}
 			}
 
+			public string AccValue
+			{
+				get
+				{
+					return accValue;
+				}
+				set	
+				{
+					accValue = value;
+				}
+			}
+
 			public string HttpQpsValue
 			{
 				get
@@ -159,6 +171,18 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				set	
 				{
 					httpQpsValue = value;
+				}
+			}
+
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
 				}
 			}
 
@@ -174,18 +198,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				}
 			}
 
-			public string AccValue
-			{
-				get
-				{
-					return accValue;
-				}
-				set	
-				{
-					accValue = value;
-				}
-			}
-
 			public string HttpAccValue
 			{
 				get
@@ -195,18 +207,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				set	
 				{
 					httpAccValue = value;
-				}
-			}
-
-			public string HttpsAccValue
-			{
-				get
-				{
-					return httpsAccValue;
-				}
-				set	
-				{
-					httpsAccValue = value;
 				}
 			}
 		}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			DescribeScdnCcInfoResponse describeScdnCcInfoResponse = new DescribeScdnCcInfoResponse();
 
 			describeScdnCcInfoResponse.HttpResponse = _ctx.HttpResponse;
-			describeScdnCcInfoResponse.RequestId = _ctx.StringValue("DescribeScdnCcInfo.RequestId");
 			describeScdnCcInfoResponse.Status = _ctx.StringValue("DescribeScdnCcInfo.Status");
+			describeScdnCcInfoResponse.RequestId = _ctx.StringValue("DescribeScdnCcInfo.RequestId");
         
 			return describeScdnCcInfoResponse;
         }

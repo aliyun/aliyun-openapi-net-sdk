@@ -31,22 +31,22 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			DescribeScdnDomainQpsDataResponse describeScdnDomainQpsDataResponse = new DescribeScdnDomainQpsDataResponse();
 
 			describeScdnDomainQpsDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnDomainQpsDataResponse.EndTime = _ctx.StringValue("DescribeScdnDomainQpsData.EndTime");
+			describeScdnDomainQpsDataResponse.StartTime = _ctx.StringValue("DescribeScdnDomainQpsData.StartTime");
 			describeScdnDomainQpsDataResponse.RequestId = _ctx.StringValue("DescribeScdnDomainQpsData.RequestId");
 			describeScdnDomainQpsDataResponse.DomainName = _ctx.StringValue("DescribeScdnDomainQpsData.DomainName");
-			describeScdnDomainQpsDataResponse.StartTime = _ctx.StringValue("DescribeScdnDomainQpsData.StartTime");
-			describeScdnDomainQpsDataResponse.EndTime = _ctx.StringValue("DescribeScdnDomainQpsData.EndTime");
 			describeScdnDomainQpsDataResponse.DataInterval = _ctx.StringValue("DescribeScdnDomainQpsData.DataInterval");
 
 			List<DescribeScdnDomainQpsDataResponse.DescribeScdnDomainQpsData_DataModule> describeScdnDomainQpsDataResponse_qpsDataPerInterval = new List<DescribeScdnDomainQpsDataResponse.DescribeScdnDomainQpsData_DataModule>();
 			for (int i = 0; i < _ctx.Length("DescribeScdnDomainQpsData.QpsDataPerInterval.Length"); i++) {
 				DescribeScdnDomainQpsDataResponse.DescribeScdnDomainQpsData_DataModule dataModule = new DescribeScdnDomainQpsDataResponse.DescribeScdnDomainQpsData_DataModule();
-				dataModule.TimeStamp = _ctx.StringValue("DescribeScdnDomainQpsData.QpsDataPerInterval["+ i +"].TimeStamp");
-				dataModule.QpsValue = _ctx.StringValue("DescribeScdnDomainQpsData.QpsDataPerInterval["+ i +"].QpsValue");
-				dataModule.HttpQpsValue = _ctx.StringValue("DescribeScdnDomainQpsData.QpsDataPerInterval["+ i +"].HttpQpsValue");
-				dataModule.HttpsQpsValue = _ctx.StringValue("DescribeScdnDomainQpsData.QpsDataPerInterval["+ i +"].HttpsQpsValue");
-				dataModule.AccValue = _ctx.StringValue("DescribeScdnDomainQpsData.QpsDataPerInterval["+ i +"].AccValue");
-				dataModule.HttpAccValue = _ctx.StringValue("DescribeScdnDomainQpsData.QpsDataPerInterval["+ i +"].HttpAccValue");
 				dataModule.HttpsAccValue = _ctx.StringValue("DescribeScdnDomainQpsData.QpsDataPerInterval["+ i +"].HttpsAccValue");
+				dataModule.QpsValue = _ctx.StringValue("DescribeScdnDomainQpsData.QpsDataPerInterval["+ i +"].QpsValue");
+				dataModule.AccValue = _ctx.StringValue("DescribeScdnDomainQpsData.QpsDataPerInterval["+ i +"].AccValue");
+				dataModule.HttpQpsValue = _ctx.StringValue("DescribeScdnDomainQpsData.QpsDataPerInterval["+ i +"].HttpQpsValue");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeScdnDomainQpsData.QpsDataPerInterval["+ i +"].TimeStamp");
+				dataModule.HttpsQpsValue = _ctx.StringValue("DescribeScdnDomainQpsData.QpsDataPerInterval["+ i +"].HttpsQpsValue");
+				dataModule.HttpAccValue = _ctx.StringValue("DescribeScdnDomainQpsData.QpsDataPerInterval["+ i +"].HttpAccValue");
 
 				describeScdnDomainQpsDataResponse_qpsDataPerInterval.Add(dataModule);
 			}

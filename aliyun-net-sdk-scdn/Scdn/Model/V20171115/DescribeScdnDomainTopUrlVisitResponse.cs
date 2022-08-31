@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
@@ -25,11 +25,11 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 	public class DescribeScdnDomainTopUrlVisitResponse : AcsResponse
 	{
 
+		private string startTime;
+
 		private string requestId;
 
 		private string domainName;
-
-		private string startTime;
 
 		private List<DescribeScdnDomainTopUrlVisit_UrlList> allUrlList;
 
@@ -40,6 +40,18 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 		private List<DescribeScdnDomainTopUrlVisit_UrlList> url400List;
 
 		private List<DescribeScdnDomainTopUrlVisit_UrlList> url500List;
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -62,18 +74,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			set	
 			{
 				domainName = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
 			}
 		}
 
@@ -140,15 +140,27 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 		public class DescribeScdnDomainTopUrlVisit_UrlList
 		{
 
+			private string flow;
+
 			private string urlDetail;
+
+			private float? flowProportion;
 
 			private string visitData;
 
 			private float? visitProportion;
 
-			private string flow;
-
-			private float? flowProportion;
+			public string Flow
+			{
+				get
+				{
+					return flow;
+				}
+				set	
+				{
+					flow = value;
+				}
+			}
 
 			public string UrlDetail
 			{
@@ -159,6 +171,18 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				set	
 				{
 					urlDetail = value;
+				}
+			}
+
+			public float? FlowProportion
+			{
+				get
+				{
+					return flowProportion;
+				}
+				set	
+				{
+					flowProportion = value;
 				}
 			}
 
@@ -183,30 +207,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				set	
 				{
 					visitProportion = value;
-				}
-			}
-
-			public string Flow
-			{
-				get
-				{
-					return flow;
-				}
-				set	
-				{
-					flow = value;
-				}
-			}
-
-			public float? FlowProportion
-			{
-				get
-				{
-					return flowProportion;
-				}
-				set	
-				{
-					flowProportion = value;
 				}
 			}
 		}

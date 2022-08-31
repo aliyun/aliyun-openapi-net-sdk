@@ -38,8 +38,8 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			List<DescribeScdnCcTopUrlResponse.DescribeScdnCcTopUrl_AttackUrlDatas> describeScdnCcTopUrlResponse_attackUrlDataList = new List<DescribeScdnCcTopUrlResponse.DescribeScdnCcTopUrl_AttackUrlDatas>();
 			for (int i = 0; i < _ctx.Length("DescribeScdnCcTopUrl.AttackUrlDataList.Length"); i++) {
 				DescribeScdnCcTopUrlResponse.DescribeScdnCcTopUrl_AttackUrlDatas attackUrlDatas = new DescribeScdnCcTopUrlResponse.DescribeScdnCcTopUrl_AttackUrlDatas();
-				attackUrlDatas.Url = _ctx.StringValue("DescribeScdnCcTopUrl.AttackUrlDataList["+ i +"].Url");
 				attackUrlDatas.AttackCount = _ctx.StringValue("DescribeScdnCcTopUrl.AttackUrlDataList["+ i +"].AttackCount");
+				attackUrlDatas.Url = _ctx.StringValue("DescribeScdnCcTopUrl.AttackUrlDataList["+ i +"].Url");
 
 				describeScdnCcTopUrlResponse_attackUrlDataList.Add(attackUrlDatas);
 			}

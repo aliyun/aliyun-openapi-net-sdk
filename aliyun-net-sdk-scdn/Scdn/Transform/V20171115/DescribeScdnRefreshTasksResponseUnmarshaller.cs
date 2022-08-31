@@ -39,13 +39,13 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			List<DescribeScdnRefreshTasksResponse.DescribeScdnRefreshTasks_Task> describeScdnRefreshTasksResponse_tasks = new List<DescribeScdnRefreshTasksResponse.DescribeScdnRefreshTasks_Task>();
 			for (int i = 0; i < _ctx.Length("DescribeScdnRefreshTasks.Tasks.Length"); i++) {
 				DescribeScdnRefreshTasksResponse.DescribeScdnRefreshTasks_Task task = new DescribeScdnRefreshTasksResponse.DescribeScdnRefreshTasks_Task();
-				task.TaskId = _ctx.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].TaskId");
-				task.ObjectPath = _ctx.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].ObjectPath");
-				task.Process = _ctx.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].Process");
 				task.Status = _ctx.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].Status");
 				task.CreationTime = _ctx.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].CreationTime");
-				task.Description = _ctx.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].Description");
 				task.ObjectType = _ctx.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].ObjectType");
+				task.Process = _ctx.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].Process");
+				task.Description = _ctx.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].Description");
+				task.ObjectPath = _ctx.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].ObjectPath");
+				task.TaskId = _ctx.StringValue("DescribeScdnRefreshTasks.Tasks["+ i +"].TaskId");
 
 				describeScdnRefreshTasksResponse_tasks.Add(task);
 			}
