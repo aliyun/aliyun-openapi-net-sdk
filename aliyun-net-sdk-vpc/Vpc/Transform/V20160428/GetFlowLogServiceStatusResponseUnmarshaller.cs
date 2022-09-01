@@ -24,16 +24,17 @@ using Aliyun.Acs.Vpc.Model.V20160428;
 
 namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
-    public class ModifyCommonBandwidthPackageInternetChargeTypeResponseUnmarshaller
+    public class GetFlowLogServiceStatusResponseUnmarshaller
     {
-        public static ModifyCommonBandwidthPackageInternetChargeTypeResponse Unmarshall(UnmarshallerContext _ctx)
+        public static GetFlowLogServiceStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			ModifyCommonBandwidthPackageInternetChargeTypeResponse modifyCommonBandwidthPackageInternetChargeTypeResponse = new ModifyCommonBandwidthPackageInternetChargeTypeResponse();
+			GetFlowLogServiceStatusResponse getFlowLogServiceStatusResponse = new GetFlowLogServiceStatusResponse();
 
-			modifyCommonBandwidthPackageInternetChargeTypeResponse.HttpResponse = _ctx.HttpResponse;
-			modifyCommonBandwidthPackageInternetChargeTypeResponse.RequestId = _ctx.StringValue("ModifyCommonBandwidthPackageInternetChargeType.RequestId");
+			getFlowLogServiceStatusResponse.HttpResponse = _ctx.HttpResponse;
+			getFlowLogServiceStatusResponse.RequestId = _ctx.StringValue("GetFlowLogServiceStatus.RequestId");
+			getFlowLogServiceStatusResponse.Enabled = _ctx.BooleanValue("GetFlowLogServiceStatus.Enabled");
         
-			return modifyCommonBandwidthPackageInternetChargeTypeResponse;
+			return getFlowLogServiceStatusResponse;
         }
     }
 }

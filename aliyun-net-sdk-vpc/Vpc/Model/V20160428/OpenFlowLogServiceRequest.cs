@@ -27,10 +27,10 @@ using Aliyun.Acs.Vpc.Transform.V20160428;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-    public class ModifyCommonBandwidthPackageInternetChargeTypeRequest : RpcAcsRequest<ModifyCommonBandwidthPackageInternetChargeTypeResponse>
+    public class OpenFlowLogServiceRequest : RpcAcsRequest<OpenFlowLogServiceResponse>
     {
-        public ModifyCommonBandwidthPackageInternetChargeTypeRequest()
-            : base("Vpc", "2016-04-28", "ModifyCommonBandwidthPackageInternetChargeType", "vpc", "openAPI")
+        public OpenFlowLogServiceRequest()
+            : base("Vpc", "2016-04-28", "OpenFlowLogService", "vpc", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,23 +42,13 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? resourceOwnerId;
 
-		private string instanceChargeType;
-
-		private string bandwidthPackageId;
-
-		private bool? autoPay;
+		private string clientToken;
 
 		private string resourceOwnerAccount;
-
-		private int? bandwidth;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string internetChargeType;
-
-		private int? ratio;
 
 		public long? ResourceOwnerId
 		{
@@ -73,42 +63,16 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string InstanceChargeType
+		public string ClientToken
 		{
 			get
 			{
-				return instanceChargeType;
+				return clientToken;
 			}
 			set	
 			{
-				instanceChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
-			}
-		}
-
-		public string BandwidthPackageId
-		{
-			get
-			{
-				return bandwidthPackageId;
-			}
-			set	
-			{
-				bandwidthPackageId = value;
-				DictionaryUtil.Add(QueryParameters, "BandwidthPackageId", value);
-			}
-		}
-
-		public bool? AutoPay
-		{
-			get
-			{
-				return autoPay;
-			}
-			set	
-			{
-				autoPay = value;
-				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -122,19 +86,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public int? Bandwidth
-		{
-			get
-			{
-				return bandwidth;
-			}
-			set	
-			{
-				bandwidth = value;
-				DictionaryUtil.Add(QueryParameters, "Bandwidth", value.ToString());
 			}
 		}
 
@@ -164,40 +115,14 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string InternetChargeType
-		{
-			get
-			{
-				return internetChargeType;
-			}
-			set	
-			{
-				internetChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InternetChargeType", value);
-			}
-		}
-
-		public int? Ratio
-		{
-			get
-			{
-				return ratio;
-			}
-			set	
-			{
-				ratio = value;
-				DictionaryUtil.Add(QueryParameters, "Ratio", value.ToString());
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ModifyCommonBandwidthPackageInternetChargeTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override OpenFlowLogServiceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyCommonBandwidthPackageInternetChargeTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return OpenFlowLogServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

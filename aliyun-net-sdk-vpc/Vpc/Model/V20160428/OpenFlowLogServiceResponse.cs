@@ -22,10 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
-	public class ModifyCommonBandwidthPackageInternetChargeTypeResponse : AcsResponse
+	public class OpenFlowLogServiceResponse : AcsResponse
 	{
 
 		private string requestId;
+
+		private string code;
+
+		private string message;
 
 		public string RequestId
 		{
@@ -36,6 +40,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 	}
